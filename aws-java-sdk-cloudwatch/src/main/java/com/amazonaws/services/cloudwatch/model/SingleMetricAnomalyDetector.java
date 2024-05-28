@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.
+ * Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input. If
+ * you have enabled unified cross-account observability, and this account is a monitoring account, the metric can be in
+ * the same account or a source account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SingleMetricAnomalyDetector"
@@ -26,6 +28,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SingleMetricAnomalyDetector implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in another
+     * account, specify that account ID here. If you omit this parameter, the current account is used.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * The namespace of the metric to create the anomaly detection model for.
@@ -50,6 +59,52 @@ public class SingleMetricAnomalyDetector implements Serializable, Cloneable {
      * </p>
      */
     private String stat;
+
+    /**
+     * <p>
+     * If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in another
+     * account, specify that account ID here. If you omit this parameter, the current account is used.
+     * </p>
+     * 
+     * @param accountId
+     *        If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in
+     *        another account, specify that account ID here. If you omit this parameter, the current account is used.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in another
+     * account, specify that account ID here. If you omit this parameter, the current account is used.
+     * </p>
+     * 
+     * @return If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in
+     *         another account, specify that account ID here. If you omit this parameter, the current account is used.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in another
+     * account, specify that account ID here. If you omit this parameter, the current account is used.
+     * </p>
+     * 
+     * @param accountId
+     *        If the CloudWatch metric that provides the time series that the anomaly detector uses as input is in
+     *        another account, specify that account ID here. If you omit this parameter, the current account is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SingleMetricAnomalyDetector withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -256,6 +311,8 @@ public class SingleMetricAnomalyDetector implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getNamespace() != null)
             sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getMetricName() != null)
@@ -278,6 +335,10 @@ public class SingleMetricAnomalyDetector implements Serializable, Cloneable {
         if (obj instanceof SingleMetricAnomalyDetector == false)
             return false;
         SingleMetricAnomalyDetector other = (SingleMetricAnomalyDetector) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getNamespace() == null ^ this.getNamespace() == null)
             return false;
         if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
@@ -302,6 +363,7 @@ public class SingleMetricAnomalyDetector implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());

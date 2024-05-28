@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,13 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The name of a container.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      */
     private Integer exitCode;
@@ -44,11 +50,51 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The name of a container.
+     * </p>
+     * 
+     * @param name
+     *        The name of a container.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of a container.
+     * </p>
+     * 
+     * @return The name of a container.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of a container.
+     * </p>
+     * 
+     * @param name
+     *        The name of a container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EksAttemptContainerDetail withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered failed.
+     *        The exit code returned for the job attempt. A non-zero exit code is considered failed.
      */
 
     public void setExitCode(Integer exitCode) {
@@ -57,10 +103,10 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
-     * @return The exit code for the job attempt. A non-zero exit code is considered failed.
+     * @return The exit code returned for the job attempt. A non-zero exit code is considered failed.
      */
 
     public Integer getExitCode() {
@@ -69,11 +115,11 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered failed.
+     *        The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,6 +186,8 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getExitCode() != null)
             sb.append("ExitCode: ").append(getExitCode()).append(",");
         if (getReason() != null)
@@ -158,6 +206,10 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
         if (obj instanceof EksAttemptContainerDetail == false)
             return false;
         EksAttemptContainerDetail other = (EksAttemptContainerDetail) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getExitCode() == null ^ this.getExitCode() == null)
             return false;
         if (other.getExitCode() != null && other.getExitCode().equals(this.getExitCode()) == false)
@@ -174,6 +226,7 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;

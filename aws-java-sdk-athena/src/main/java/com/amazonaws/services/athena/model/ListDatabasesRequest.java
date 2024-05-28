@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,13 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
@@ -179,6 +186,52 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity
+     *        Center enabled Glue Data Catalog.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     * 
+     * @return The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity
+     *         Center enabled Glue Data Catalog.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity
+     *        Center enabled Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDatabasesRequest withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -195,7 +248,9 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +277,10 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +292,7 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getCatalogName() == null) ? 0 : getCatalogName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 

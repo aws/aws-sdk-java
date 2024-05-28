@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class GetClusterCredentialsWithIAMRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private Integer durationSeconds;
+    /**
+     * <p>
+     * The custom domain name for the IAM message cluster credentials.
+     * </p>
+     */
+    private String customDomainName;
 
     /**
      * <p>
@@ -197,6 +203,46 @@ public class GetClusterCredentialsWithIAMRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The custom domain name for the IAM message cluster credentials.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name for the IAM message cluster credentials.
+     */
+
+    public void setCustomDomainName(String customDomainName) {
+        this.customDomainName = customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name for the IAM message cluster credentials.
+     * </p>
+     * 
+     * @return The custom domain name for the IAM message cluster credentials.
+     */
+
+    public String getCustomDomainName() {
+        return this.customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name for the IAM message cluster credentials.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name for the IAM message cluster credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetClusterCredentialsWithIAMRequest withCustomDomainName(String customDomainName) {
+        setCustomDomainName(customDomainName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +259,9 @@ public class GetClusterCredentialsWithIAMRequest extends com.amazonaws.AmazonWeb
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: ").append(getDurationSeconds());
+            sb.append("DurationSeconds: ").append(getDurationSeconds()).append(",");
+        if (getCustomDomainName() != null)
+            sb.append("CustomDomainName: ").append(getCustomDomainName());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +288,10 @@ public class GetClusterCredentialsWithIAMRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getDurationSeconds() != null && other.getDurationSeconds().equals(this.getDurationSeconds()) == false)
             return false;
+        if (other.getCustomDomainName() == null ^ this.getCustomDomainName() == null)
+            return false;
+        if (other.getCustomDomainName() != null && other.getCustomDomainName().equals(this.getCustomDomainName()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +303,7 @@ public class GetClusterCredentialsWithIAMRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getDbName() == null) ? 0 : getDbName().hashCode());
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDurationSeconds() == null) ? 0 : getDurationSeconds().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainName() == null) ? 0 : getCustomDomainName().hashCode());
         return hashCode;
     }
 

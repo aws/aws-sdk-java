@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,6 +123,26 @@ public class PostgreSQLSettingsJsonUnmarshaller implements Unmarshaller<PostgreS
                 if (context.testExpression("TrimSpaceInChar", targetDepth)) {
                     context.nextToken();
                     postgreSQLSettings.setTrimSpaceInChar(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MapBooleanAsBoolean", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setMapBooleanAsBoolean(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MapJsonbAsClob", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setMapJsonbAsClob(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MapLongVarcharAs", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setMapLongVarcharAs(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DatabaseMode", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setDatabaseMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BabelfishDatabaseName", targetDepth)) {
+                    context.nextToken();
+                    postgreSQLSettings.setBabelfishDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

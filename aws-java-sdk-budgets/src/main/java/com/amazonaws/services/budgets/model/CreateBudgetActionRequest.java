@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,13 @@ public class CreateBudgetActionRequest extends com.amazonaws.AmazonWebServiceReq
     private String approvalModel;
 
     private java.util.List<Subscriber> subscribers;
+    /**
+     * <p>
+     * An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value,
+     * and each key must be unique for the resource.
+     * </p>
+     */
+    private java.util.List<ResourceTag> resourceTags;
 
     /**
      * @param accountId
@@ -414,6 +421,84 @@ public class CreateBudgetActionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value,
+     * and each key must be unique for the resource.
+     * </p>
+     * 
+     * @return An optional list of tags to associate with the specified budget action. Each tag consists of a key and a
+     *         value, and each key must be unique for the resource.
+     */
+
+    public java.util.List<ResourceTag> getResourceTags() {
+        return resourceTags;
+    }
+
+    /**
+     * <p>
+     * An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value,
+     * and each key must be unique for the resource.
+     * </p>
+     * 
+     * @param resourceTags
+     *        An optional list of tags to associate with the specified budget action. Each tag consists of a key and a
+     *        value, and each key must be unique for the resource.
+     */
+
+    public void setResourceTags(java.util.Collection<ResourceTag> resourceTags) {
+        if (resourceTags == null) {
+            this.resourceTags = null;
+            return;
+        }
+
+        this.resourceTags = new java.util.ArrayList<ResourceTag>(resourceTags);
+    }
+
+    /**
+     * <p>
+     * An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value,
+     * and each key must be unique for the resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceTags(java.util.Collection)} or {@link #withResourceTags(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param resourceTags
+     *        An optional list of tags to associate with the specified budget action. Each tag consists of a key and a
+     *        value, and each key must be unique for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBudgetActionRequest withResourceTags(ResourceTag... resourceTags) {
+        if (this.resourceTags == null) {
+            setResourceTags(new java.util.ArrayList<ResourceTag>(resourceTags.length));
+        }
+        for (ResourceTag ele : resourceTags) {
+            this.resourceTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value,
+     * and each key must be unique for the resource.
+     * </p>
+     * 
+     * @param resourceTags
+     *        An optional list of tags to associate with the specified budget action. Each tag consists of a key and a
+     *        value, and each key must be unique for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBudgetActionRequest withResourceTags(java.util.Collection<ResourceTag> resourceTags) {
+        setResourceTags(resourceTags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -442,7 +527,9 @@ public class CreateBudgetActionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getApprovalModel() != null)
             sb.append("ApprovalModel: ").append(getApprovalModel()).append(",");
         if (getSubscribers() != null)
-            sb.append("Subscribers: ").append(getSubscribers());
+            sb.append("Subscribers: ").append(getSubscribers()).append(",");
+        if (getResourceTags() != null)
+            sb.append("ResourceTags: ").append(getResourceTags());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +580,10 @@ public class CreateBudgetActionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSubscribers() != null && other.getSubscribers().equals(this.getSubscribers()) == false)
             return false;
+        if (other.getResourceTags() == null ^ this.getResourceTags() == null)
+            return false;
+        if (other.getResourceTags() != null && other.getResourceTags().equals(this.getResourceTags()) == false)
+            return false;
         return true;
     }
 
@@ -510,6 +601,7 @@ public class CreateBudgetActionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getApprovalModel() == null) ? 0 : getApprovalModel().hashCode());
         hashCode = prime * hashCode + ((getSubscribers() == null) ? 0 : getSubscribers().hashCode());
+        hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
         return hashCode;
     }
 

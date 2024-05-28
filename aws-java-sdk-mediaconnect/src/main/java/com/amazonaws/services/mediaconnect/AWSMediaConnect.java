@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,58 @@ public interface AWSMediaConnect {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "mediaconnect";
+
+    /**
+     * Adds outputs to an existing bridge.
+     * 
+     * @param addBridgeOutputsRequest
+     *        A request to add outputs to the specified bridge.
+     * @return Result of the AddBridgeOutputs operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.AddBridgeOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AddBridgeOutputsResult addBridgeOutputs(AddBridgeOutputsRequest addBridgeOutputsRequest);
+
+    /**
+     * Adds sources to an existing bridge.
+     * 
+     * @param addBridgeSourcesRequest
+     *        A request to add sources to the specified bridge.
+     * @return Result of the AddBridgeSources operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.AddBridgeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AddBridgeSourcesResult addBridgeSources(AddBridgeSourcesRequest addBridgeSourcesRequest);
 
     /**
      * Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a
@@ -141,6 +193,33 @@ public interface AWSMediaConnect {
     AddFlowVpcInterfacesResult addFlowVpcInterfaces(AddFlowVpcInterfacesRequest addFlowVpcInterfacesRequest);
 
     /**
+     * Creates a new bridge. The request must include one source.
+     * 
+     * @param createBridgeRequest
+     *        Creates a new bridge. The request must include one source.
+     * @return Result of the CreateBridge operation returned by the service.
+     * @throws CreateBridge420Exception
+     *         Your account already contains the maximum number of bridges per account, per Region. For more
+     *         information, contact AWS Customer Support.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.CreateBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateBridgeResult createBridge(CreateBridgeRequest createBridgeRequest);
+
+    /**
      * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
@@ -168,6 +247,58 @@ public interface AWSMediaConnect {
     CreateFlowResult createFlow(CreateFlowRequest createFlowRequest);
 
     /**
+     * Creates a new gateway. The request must include at least one network (up to 4).
+     * 
+     * @param createGatewayRequest
+     *        Creates a new gateway. The request must include at least one network (up to 4).
+     * @return Result of the CreateGateway operation returned by the service.
+     * @throws CreateGateway420Exception
+     *         Your account already contains the maximum number of gateways per account, per Region. For more
+     *         information, contact AWS Customer Support.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.CreateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateGatewayResult createGateway(CreateGatewayRequest createGatewayRequest);
+
+    /**
+     * Deletes a bridge. Before you can delete a bridge, you must stop the bridge.
+     * 
+     * @param deleteBridgeRequest
+     * @return Result of the DeleteBridge operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.DeleteBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteBridgeResult deleteBridge(DeleteBridgeRequest deleteBridgeRequest);
+
+    /**
      * Deletes a flow. Before you can delete a flow, you must stop the flow.
      * 
      * @param deleteFlowRequest
@@ -189,6 +320,82 @@ public interface AWSMediaConnect {
      *      Documentation</a>
      */
     DeleteFlowResult deleteFlow(DeleteFlowRequest deleteFlowRequest);
+
+    /**
+     * Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.
+     * 
+     * @param deleteGatewayRequest
+     * @return Result of the DeleteGateway operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.DeleteGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest);
+
+    /**
+     * Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped.
+     * If you want to deregister an instance without stopping the bridges, you must use the --force option.
+     * 
+     * @param deregisterGatewayInstanceRequest
+     * @return Result of the DeregisterGatewayInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.DeregisterGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterGatewayInstanceResult deregisterGatewayInstance(DeregisterGatewayInstanceRequest deregisterGatewayInstanceRequest);
+
+    /**
+     * Displays the details of a bridge.
+     * 
+     * @param describeBridgeRequest
+     * @return Result of the DescribeBridge operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.DescribeBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeBridgeResult describeBridge(DescribeBridgeRequest describeBridgeRequest);
 
     /**
      * Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as
@@ -213,6 +420,81 @@ public interface AWSMediaConnect {
      *      Documentation</a>
      */
     DescribeFlowResult describeFlow(DescribeFlowRequest describeFlowRequest);
+
+    /**
+     * Displays details of the flow's source stream. The response contains information about the contents of the stream
+     * and its programs.
+     * 
+     * @param describeFlowSourceMetadataRequest
+     * @return Result of the DescribeFlowSourceMetadata operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.DescribeFlowSourceMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFlowSourceMetadataResult describeFlowSourceMetadata(DescribeFlowSourceMetadataRequest describeFlowSourceMetadataRequest);
+
+    /**
+     * Displays the details of a gateway. The response includes the gateway ARN, name, and CIDR blocks, as well as
+     * details about the networks.
+     * 
+     * @param describeGatewayRequest
+     * @return Result of the DescribeGateway operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.DescribeGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeGatewayResult describeGateway(DescribeGatewayRequest describeGatewayRequest);
+
+    /**
+     * Displays the details of an instance.
+     * 
+     * @param describeGatewayInstanceRequest
+     * @return Result of the DescribeGatewayInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.DescribeGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeGatewayInstanceResult describeGatewayInstance(DescribeGatewayInstanceRequest describeGatewayInstanceRequest);
 
     /**
      * Displays the details of an offering. The response includes the offering description, duration, outbound
@@ -287,6 +569,28 @@ public interface AWSMediaConnect {
     GrantFlowEntitlementsResult grantFlowEntitlements(GrantFlowEntitlementsRequest grantFlowEntitlementsRequest);
 
     /**
+     * Displays a list of bridges that are associated with this account and an optionally specified Arn. This request
+     * returns a paginated result.
+     * 
+     * @param listBridgesRequest
+     * @return Result of the ListBridges operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.ListBridges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListBridgesResult listBridges(ListBridgesRequest listBridgesRequest);
+
+    /**
      * Displays a list of all entitlements that have been granted to this account. This request returns 20 results per
      * page.
      * 
@@ -324,6 +628,50 @@ public interface AWSMediaConnect {
      *      Documentation</a>
      */
     ListFlowsResult listFlows(ListFlowsRequest listFlowsRequest);
+
+    /**
+     * Displays a list of instances associated with the AWS account. This request returns a paginated result. You can
+     * use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource
+     * Name (ARN).
+     * 
+     * @param listGatewayInstancesRequest
+     * @return Result of the ListGatewayInstances operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.ListGatewayInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListGatewayInstancesResult listGatewayInstances(ListGatewayInstancesRequest listGatewayInstancesRequest);
+
+    /**
+     * Displays a list of gateways that are associated with this account. This request returns a paginated result.
+     * 
+     * @param listGatewaysRequest
+     * @return Result of the ListGateways operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest);
 
     /**
      * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an
@@ -407,6 +755,56 @@ public interface AWSMediaConnect {
      *      API Documentation</a>
      */
     PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
+
+    /**
+     * Removes an output from a bridge.
+     * 
+     * @param removeBridgeOutputRequest
+     * @return Result of the RemoveBridgeOutput operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.RemoveBridgeOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveBridgeOutputResult removeBridgeOutput(RemoveBridgeOutputRequest removeBridgeOutputRequest);
+
+    /**
+     * Removes a source from a bridge.
+     * 
+     * @param removeBridgeSourceRequest
+     * @return Result of the RemoveBridgeSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.RemoveBridgeSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveBridgeSourceResult removeBridgeSource(RemoveBridgeSourceRequest removeBridgeSourceRequest);
 
     /**
      * Removes a media stream from a flow. This action is only available if the media stream is not associated with a
@@ -615,6 +1013,110 @@ public interface AWSMediaConnect {
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
+     * Updates the bridge
+     * 
+     * @param updateBridgeRequest
+     *        A request to update the bridge.
+     * @return Result of the UpdateBridge operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.UpdateBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateBridgeResult updateBridge(UpdateBridgeRequest updateBridgeRequest);
+
+    /**
+     * Updates an existing bridge output.
+     * 
+     * @param updateBridgeOutputRequest
+     *        The fields that you want to update in the bridge output.
+     * @return Result of the UpdateBridgeOutput operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.UpdateBridgeOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateBridgeOutputResult updateBridgeOutput(UpdateBridgeOutputRequest updateBridgeOutputRequest);
+
+    /**
+     * Updates an existing bridge source.
+     * 
+     * @param updateBridgeSourceRequest
+     *        The fields that you want to update in the bridge source.
+     * @return Result of the UpdateBridgeSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.UpdateBridgeSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateBridgeSourceResult updateBridgeSource(UpdateBridgeSourceRequest updateBridgeSourceRequest);
+
+    /**
+     * Updates the bridge state
+     * 
+     * @param updateBridgeStateRequest
+     *        A request to update the bridge state.
+     * @return Result of the UpdateBridgeState operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.UpdateBridgeState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateBridgeStateResult updateBridgeState(UpdateBridgeStateRequest updateBridgeStateRequest);
+
+    /**
      * Updates flow
      * 
      * @param updateFlowRequest
@@ -734,6 +1236,32 @@ public interface AWSMediaConnect {
      *      API Documentation</a>
      */
     UpdateFlowSourceResult updateFlowSource(UpdateFlowSourceRequest updateFlowSourceRequest);
+
+    /**
+     * Updates the configuration of an existing Gateway Instance.
+     * 
+     * @param updateGatewayInstanceRequest
+     *        A request to update gateway instance state.
+     * @return Result of the UpdateGatewayInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSMediaConnect.UpdateGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateGatewayInstanceResult updateGatewayInstance(UpdateGatewayInstanceRequest updateGatewayInstanceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

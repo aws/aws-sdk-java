@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -162,6 +162,20 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean noHexPrefix;
+    /**
+     * <p>
+     * For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0
+     * and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code>
+     * </p>
+     */
+    private String saslMechanism;
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     */
+    private String sslEndpointIdentificationAlgorithm;
 
     /**
      * <p>
@@ -1199,6 +1213,140 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0
+     * and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code>
+     * </p>
+     * 
+     * @param saslMechanism
+     *        For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS
+     *        versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code>
+     *        mechanism, set this parameter to <code>PLAIN.</code>
+     * @see KafkaSaslMechanism
+     */
+
+    public void setSaslMechanism(String saslMechanism) {
+        this.saslMechanism = saslMechanism;
+    }
+
+    /**
+     * <p>
+     * For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0
+     * and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code>
+     * </p>
+     * 
+     * @return For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS
+     *         versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code>
+     *         mechanism, set this parameter to <code>PLAIN.</code>
+     * @see KafkaSaslMechanism
+     */
+
+    public String getSaslMechanism() {
+        return this.saslMechanism;
+    }
+
+    /**
+     * <p>
+     * For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0
+     * and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code>
+     * </p>
+     * 
+     * @param saslMechanism
+     *        For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS
+     *        versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code>
+     *        mechanism, set this parameter to <code>PLAIN.</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSaslMechanism
+     */
+
+    public KafkaSettings withSaslMechanism(String saslMechanism) {
+        setSaslMechanism(saslMechanism);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0
+     * and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this
+     * parameter to <code>PLAIN.</code>
+     * </p>
+     * 
+     * @param saslMechanism
+     *        For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS
+     *        versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code>
+     *        mechanism, set this parameter to <code>PLAIN.</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSaslMechanism
+     */
+
+    public KafkaSettings withSaslMechanism(KafkaSaslMechanism saslMechanism) {
+        this.saslMechanism = saslMechanism.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @param sslEndpointIdentificationAlgorithm
+     *        Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public void setSslEndpointIdentificationAlgorithm(String sslEndpointIdentificationAlgorithm) {
+        this.sslEndpointIdentificationAlgorithm = sslEndpointIdentificationAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @return Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public String getSslEndpointIdentificationAlgorithm() {
+        return this.sslEndpointIdentificationAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @param sslEndpointIdentificationAlgorithm
+     *        Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public KafkaSettings withSslEndpointIdentificationAlgorithm(String sslEndpointIdentificationAlgorithm) {
+        setSslEndpointIdentificationAlgorithm(sslEndpointIdentificationAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * </p>
+     * 
+     * @param sslEndpointIdentificationAlgorithm
+     *        Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSslEndpointIdentificationAlgorithm
+     */
+
+    public KafkaSettings withSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm sslEndpointIdentificationAlgorithm) {
+        this.sslEndpointIdentificationAlgorithm = sslEndpointIdentificationAlgorithm.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1245,7 +1393,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSaslPassword() != null)
             sb.append("SaslPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getNoHexPrefix() != null)
-            sb.append("NoHexPrefix: ").append(getNoHexPrefix());
+            sb.append("NoHexPrefix: ").append(getNoHexPrefix()).append(",");
+        if (getSaslMechanism() != null)
+            sb.append("SaslMechanism: ").append(getSaslMechanism()).append(",");
+        if (getSslEndpointIdentificationAlgorithm() != null)
+            sb.append("SslEndpointIdentificationAlgorithm: ").append(getSslEndpointIdentificationAlgorithm());
         sb.append("}");
         return sb.toString();
     }
@@ -1332,6 +1484,15 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNoHexPrefix() != null && other.getNoHexPrefix().equals(this.getNoHexPrefix()) == false)
             return false;
+        if (other.getSaslMechanism() == null ^ this.getSaslMechanism() == null)
+            return false;
+        if (other.getSaslMechanism() != null && other.getSaslMechanism().equals(this.getSaslMechanism()) == false)
+            return false;
+        if (other.getSslEndpointIdentificationAlgorithm() == null ^ this.getSslEndpointIdentificationAlgorithm() == null)
+            return false;
+        if (other.getSslEndpointIdentificationAlgorithm() != null
+                && other.getSslEndpointIdentificationAlgorithm().equals(this.getSslEndpointIdentificationAlgorithm()) == false)
+            return false;
         return true;
     }
 
@@ -1358,6 +1519,8 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSaslUsername() == null) ? 0 : getSaslUsername().hashCode());
         hashCode = prime * hashCode + ((getSaslPassword() == null) ? 0 : getSaslPassword().hashCode());
         hashCode = prime * hashCode + ((getNoHexPrefix() == null) ? 0 : getNoHexPrefix().hashCode());
+        hashCode = prime * hashCode + ((getSaslMechanism() == null) ? 0 : getSaslMechanism().hashCode());
+        hashCode = prime * hashCode + ((getSslEndpointIdentificationAlgorithm() == null) ? 0 : getSslEndpointIdentificationAlgorithm().hashCode());
         return hashCode;
     }
 

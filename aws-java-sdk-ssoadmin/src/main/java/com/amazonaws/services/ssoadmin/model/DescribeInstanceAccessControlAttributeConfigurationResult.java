@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
 
     /**
      * <p>
+     * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
+     * </p>
+     */
+    private InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration;
+    /**
+     * <p>
      * The status of the attribute configuration process.
      * </p>
      */
@@ -37,12 +43,50 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
      * </p>
      */
     private String statusReason;
+
     /**
      * <p>
      * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
      * </p>
+     * 
+     * @param instanceAccessControlAttributeConfiguration
+     *        Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC
+     *        configuration.
      */
-    private InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration;
+
+    public void setInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration) {
+        this.instanceAccessControlAttributeConfiguration = instanceAccessControlAttributeConfiguration;
+    }
+
+    /**
+     * <p>
+     * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
+     * </p>
+     * 
+     * @return Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC
+     *         configuration.
+     */
+
+    public InstanceAccessControlAttributeConfiguration getInstanceAccessControlAttributeConfiguration() {
+        return this.instanceAccessControlAttributeConfiguration;
+    }
+
+    /**
+     * <p>
+     * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
+     * </p>
+     * 
+     * @param instanceAccessControlAttributeConfiguration
+     *        Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstanceAccessControlAttributeConfigurationResult withInstanceAccessControlAttributeConfiguration(
+            InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration) {
+        setInstanceAccessControlAttributeConfiguration(instanceAccessControlAttributeConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -144,50 +188,6 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
     }
 
     /**
-     * <p>
-     * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
-     * </p>
-     * 
-     * @param instanceAccessControlAttributeConfiguration
-     *        Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC
-     *        configuration.
-     */
-
-    public void setInstanceAccessControlAttributeConfiguration(InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration) {
-        this.instanceAccessControlAttributeConfiguration = instanceAccessControlAttributeConfiguration;
-    }
-
-    /**
-     * <p>
-     * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
-     * </p>
-     * 
-     * @return Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC
-     *         configuration.
-     */
-
-    public InstanceAccessControlAttributeConfiguration getInstanceAccessControlAttributeConfiguration() {
-        return this.instanceAccessControlAttributeConfiguration;
-    }
-
-    /**
-     * <p>
-     * Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC configuration.
-     * </p>
-     * 
-     * @param instanceAccessControlAttributeConfiguration
-     *        Gets the list of IAM Identity Center identity store attributes that have been added to your ABAC
-     *        configuration.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeInstanceAccessControlAttributeConfigurationResult withInstanceAccessControlAttributeConfiguration(
-            InstanceAccessControlAttributeConfiguration instanceAccessControlAttributeConfiguration) {
-        setInstanceAccessControlAttributeConfiguration(instanceAccessControlAttributeConfiguration);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -199,12 +199,12 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getInstanceAccessControlAttributeConfiguration() != null)
+            sb.append("InstanceAccessControlAttributeConfiguration: ").append(getInstanceAccessControlAttributeConfiguration()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason()).append(",");
-        if (getInstanceAccessControlAttributeConfiguration() != null)
-            sb.append("InstanceAccessControlAttributeConfiguration: ").append(getInstanceAccessControlAttributeConfiguration());
+            sb.append("StatusReason: ").append(getStatusReason());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +219,11 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
         if (obj instanceof DescribeInstanceAccessControlAttributeConfigurationResult == false)
             return false;
         DescribeInstanceAccessControlAttributeConfigurationResult other = (DescribeInstanceAccessControlAttributeConfigurationResult) obj;
+        if (other.getInstanceAccessControlAttributeConfiguration() == null ^ this.getInstanceAccessControlAttributeConfiguration() == null)
+            return false;
+        if (other.getInstanceAccessControlAttributeConfiguration() != null
+                && other.getInstanceAccessControlAttributeConfiguration().equals(this.getInstanceAccessControlAttributeConfiguration()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -226,11 +231,6 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
-            return false;
-        if (other.getInstanceAccessControlAttributeConfiguration() == null ^ this.getInstanceAccessControlAttributeConfiguration() == null)
-            return false;
-        if (other.getInstanceAccessControlAttributeConfiguration() != null
-                && other.getInstanceAccessControlAttributeConfiguration().equals(this.getInstanceAccessControlAttributeConfiguration()) == false)
             return false;
         return true;
     }
@@ -240,10 +240,10 @@ public class DescribeInstanceAccessControlAttributeConfigurationResult extends c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode
                 + ((getInstanceAccessControlAttributeConfiguration() == null) ? 0 : getInstanceAccessControlAttributeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cloudtrail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class StartQueryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryStatement").build();
     private static final MarshallingInfo<String> DELIVERYS3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryS3Uri").build();
+    private static final MarshallingInfo<String> QUERYALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryAlias").build();
+    private static final MarshallingInfo<List> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryParameters").build();
 
     private static final StartQueryRequestMarshaller instance = new StartQueryRequestMarshaller();
 
@@ -50,6 +55,8 @@ public class StartQueryRequestMarshaller {
         try {
             protocolMarshaller.marshall(startQueryRequest.getQueryStatement(), QUERYSTATEMENT_BINDING);
             protocolMarshaller.marshall(startQueryRequest.getDeliveryS3Uri(), DELIVERYS3URI_BINDING);
+            protocolMarshaller.marshall(startQueryRequest.getQueryAlias(), QUERYALIAS_BINDING);
+            protocolMarshaller.marshall(startQueryRequest.getQueryParameters(), QUERYPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

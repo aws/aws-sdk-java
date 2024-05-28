@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,13 +58,29 @@ public interface AmazonKinesisVideo {
      *         You have reached the maximum limit of active signaling channels for this Amazon Web Services account in
      *         this region.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws TagsPerResourceExceededLimitException
@@ -102,13 +118,29 @@ public interface AmazonKinesisVideo {
      * @throws DeviceStreamLimitExceededException
      *         Not implemented.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws InvalidDeviceException
      *         Not implemented.
      * @throws InvalidArgumentException
@@ -124,6 +156,41 @@ public interface AmazonKinesisVideo {
      *      Documentation</a>
      */
     CreateStreamResult createStream(CreateStreamRequest createStreamRequest);
+
+    /**
+     * <p>
+     * An asynchronous API that deletes a stream’s existing edge configuration, as well as the corresponding media from
+     * the Edge Agent.
+     * </p>
+     * <p>
+     * When you invoke this API, the sync status is set to <code>DELETING</code>. A deletion process starts, in which
+     * active edge jobs are stopped and all media is deleted from the edge device. The time to delete varies, depending
+     * on the total amount of stored media. If the deletion process fails, the sync status changes to
+     * <code>DELETE_FAILED</code>. You will need to re-try the deletion.
+     * </p>
+     * <p>
+     * When the deletion process has completed successfully, the edge configuration is no longer accessible.
+     * </p>
+     * 
+     * @param deleteEdgeConfigurationRequest
+     * @return Result of the DeleteEdgeConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws StreamEdgeConfigurationNotFoundException
+     *         The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that
+     *         you specified.
+     * @sample AmazonKinesisVideo.DeleteEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEdgeConfigurationResult deleteEdgeConfiguration(DeleteEdgeConfigurationRequest deleteEdgeConfigurationRequest);
 
     /**
      * <p>
@@ -148,13 +215,29 @@ public interface AmazonKinesisVideo {
      *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
      *         API.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @sample AmazonKinesisVideo.DeleteSignalingChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel"
      *      target="_top">AWS API Documentation</a>
@@ -196,18 +279,62 @@ public interface AmazonKinesisVideo {
      *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
      *         API.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @sample AmazonKinesisVideo.DeleteStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest);
+
+    /**
+     * <p>
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API and
+     * the latest status of the edge agent's recorder and uploader jobs. Use this API to get the status of the
+     * configuration to determine if the configuration is in sync with the Edge Agent. Use this API to evaluate the
+     * health of the Edge Agent.
+     * </p>
+     * 
+     * @param describeEdgeConfigurationRequest
+     * @return Result of the DescribeEdgeConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws StreamEdgeConfigurationNotFoundException
+     *         The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that
+     *         you specified.
+     * @sample AmazonKinesisVideo.DescribeEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEdgeConfigurationResult describeEdgeConfiguration(DescribeEdgeConfigurationRequest describeEdgeConfigurationRequest);
 
     /**
      * <p>
@@ -232,6 +359,53 @@ public interface AmazonKinesisVideo {
      */
     DescribeImageGenerationConfigurationResult describeImageGenerationConfiguration(
             DescribeImageGenerationConfigurationRequest describeImageGenerationConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code>
+     * should be provided in the input.
+     * </p>
+     * 
+     * @param describeMappedResourceConfigurationRequest
+     * @return Result of the DescribeMappedResourceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @sample AmazonKinesisVideo.DescribeMappedResourceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMappedResourceConfigurationResult describeMappedResourceConfiguration(
+            DescribeMappedResourceConfigurationRequest describeMappedResourceConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the most current information about the channel. Specify the <code>ChannelName</code> or
+     * <code>ChannelARN</code> in the input.
+     * </p>
+     * 
+     * @param describeMediaStorageConfigurationRequest
+     * @return Result of the DescribeMediaStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @sample AmazonKinesisVideo.DescribeMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMediaStorageConfigurationResult describeMediaStorageConfiguration(DescribeMediaStorageConfigurationRequest describeMediaStorageConfigurationRequest);
 
     /**
      * <p>
@@ -362,13 +536,29 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @sample AmazonKinesisVideo.GetSignalingChannelEndpoint
@@ -376,6 +566,29 @@ public interface AmazonKinesisVideo {
      *      target="_top">AWS API Documentation</a>
      */
     GetSignalingChannelEndpointResult getSignalingChannelEndpoint(GetSignalingChannelEndpointRequest getSignalingChannelEndpointRequest);
+
+    /**
+     * <p>
+     * Returns an array of edge configurations associated with the specified Edge Agent.
+     * </p>
+     * <p>
+     * In the request, you must specify the Edge Agent <code>HubDeviceArn</code>.
+     * </p>
+     * 
+     * @param listEdgeAgentConfigurationsRequest
+     * @return Result of the ListEdgeAgentConfigurations operation returned by the service.
+     * @throws NotAuthorizedException
+     *         The caller is not authorized to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @sample AmazonKinesisVideo.ListEdgeAgentConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListEdgeAgentConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEdgeAgentConfigurationsResult listEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest listEdgeAgentConfigurationsRequest);
 
     /**
      * <p>
@@ -465,6 +678,70 @@ public interface AmazonKinesisVideo {
      *      API Documentation</a>
      */
     ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest);
+
+    /**
+     * <p>
+     * An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the
+     * stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at
+     * your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The
+     * <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge
+     * Agent.
+     * </p>
+     * <p>
+     * If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync
+     * status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state
+     * such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API
+     * during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the
+     * stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will
+     * transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * <p>
+     * To move an edge configuration from one device to another, use <a>DeleteEdgeConfiguration</a> to delete the
+     * current edge configuration. You can then invoke StartEdgeConfigurationUpdate with an updated Hub Device ARN.
+     * </p>
+     * 
+     * @param startEdgeConfigurationUpdateRequest
+     * @return Result of the StartEdgeConfigurationUpdate operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws NoDataRetentionException
+     *         The Stream data retention in hours is equal to zero.
+     * @throws ResourceInUseException
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @sample AmazonKinesisVideo.StartEdgeConfigurationUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartEdgeConfigurationUpdateResult startEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest startEdgeConfigurationUpdateRequest);
 
     /**
      * <p>
@@ -592,11 +869,6 @@ public interface AmazonKinesisVideo {
      * want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the
      * request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
      * </p>
-     * <note>
-     * <p>
-     * The retention period that you specify replaces the current value.
-     * </p>
-     * </note>
      * <p>
      * This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code> action.
      * </p>
@@ -630,13 +902,29 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NotAuthorizedException
      *         The caller is not authorized to perform this operation.
      * @throws VersionMismatchException
@@ -667,13 +955,29 @@ public interface AmazonKinesisVideo {
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NoDataRetentionException
      *         The Stream data retention in hours is equal to zero.
      * @sample AmazonKinesisVideo.UpdateImageGenerationConfiguration
@@ -682,6 +986,76 @@ public interface AmazonKinesisVideo {
      */
     UpdateImageGenerationConfigurationResult updateImageGenerationConfiguration(
             UpdateImageGenerationConfigurationRequest updateImageGenerationConfigurationRequest);
+
+    /**
+     * <p>
+     * Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that you
+     * can specify :
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code> provided. In
+     * order for WebRTC Ingestion to work, the stream must have data retention enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter will
+     * not be needed.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * If <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer) connections no longer occur. Peers
+     * connect directly to the storage session. You must call the <code>JoinStorageSession</code> API to trigger an SDP
+     * offer send and establish a connection between a peer and the storage session.
+     * </p>
+     * </important>
+     * 
+     * @param updateMediaStorageConfigurationRequest
+     * @return Result of the UpdateMediaStorageConfiguration operation returned by the service.
+     * @throws ResourceInUseException
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws NoDataRetentionException
+     *         The Stream data retention in hours is equal to zero.
+     * @sample AmazonKinesisVideo.UpdateMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMediaStorageConfigurationResult updateMediaStorageConfiguration(UpdateMediaStorageConfigurationRequest updateMediaStorageConfigurationRequest);
 
     /**
      * <p>
@@ -700,13 +1074,29 @@ public interface AmazonKinesisVideo {
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NoDataRetentionException
      *         The Stream data retention in hours is equal to zero.
      * @sample AmazonKinesisVideo.UpdateNotificationConfiguration
@@ -735,13 +1125,29 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws VersionMismatchException
@@ -781,13 +1187,29 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NotAuthorizedException
      *         The caller is not authorized to perform this operation.
      * @throws VersionMismatchException

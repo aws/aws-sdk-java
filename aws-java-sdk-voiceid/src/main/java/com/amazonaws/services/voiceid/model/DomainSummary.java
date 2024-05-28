@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,19 +36,19 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The timestamp showing when the domain is created.
+     * The timestamp of when the domain was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The client-provided description of the domain.
+     * The description of the domain.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The service-generated identifier for the domain.
+     * The identifier of the domain.
      * </p>
      */
     private String domainId;
@@ -81,10 +81,16 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     private ServerSideEncryptionUpdateDetails serverSideEncryptionUpdateDetails;
     /**
      * <p>
-     * The timestamp showing the domain's last update.
+     * The timestamp of when the domain was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     * </p>
+     */
+    private WatchlistDetails watchlistDetails;
 
     /**
      * <p>
@@ -128,11 +134,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp showing when the domain is created.
+     * The timestamp of when the domain was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp showing when the domain is created.
+     *        The timestamp of when the domain was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -141,10 +147,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp showing when the domain is created.
+     * The timestamp of when the domain was created.
      * </p>
      * 
-     * @return The timestamp showing when the domain is created.
+     * @return The timestamp of when the domain was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -153,11 +159,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp showing when the domain is created.
+     * The timestamp of when the domain was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp showing when the domain is created.
+     *        The timestamp of when the domain was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +174,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client-provided description of the domain.
+     * The description of the domain.
      * </p>
      * 
      * @param description
-     *        The client-provided description of the domain.
+     *        The description of the domain.
      */
 
     public void setDescription(String description) {
@@ -181,10 +187,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client-provided description of the domain.
+     * The description of the domain.
      * </p>
      * 
-     * @return The client-provided description of the domain.
+     * @return The description of the domain.
      */
 
     public String getDescription() {
@@ -193,11 +199,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client-provided description of the domain.
+     * The description of the domain.
      * </p>
      * 
      * @param description
-     *        The client-provided description of the domain.
+     *        The description of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +214,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service-generated identifier for the domain.
+     * The identifier of the domain.
      * </p>
      * 
      * @param domainId
-     *        The service-generated identifier for the domain.
+     *        The identifier of the domain.
      */
 
     public void setDomainId(String domainId) {
@@ -221,10 +227,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service-generated identifier for the domain.
+     * The identifier of the domain.
      * </p>
      * 
-     * @return The service-generated identifier for the domain.
+     * @return The identifier of the domain.
      */
 
     public String getDomainId() {
@@ -233,11 +239,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service-generated identifier for the domain.
+     * The identifier of the domain.
      * </p>
      * 
      * @param domainId
-     *        The service-generated identifier for the domain.
+     *        The identifier of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,11 +451,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp showing the domain's last update.
+     * The timestamp of when the domain was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The timestamp showing the domain's last update.
+     *        The timestamp of when the domain was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -458,10 +464,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp showing the domain's last update.
+     * The timestamp of when the domain was last updated.
      * </p>
      * 
-     * @return The timestamp showing the domain's last update.
+     * @return The timestamp of when the domain was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -470,16 +476,56 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp showing the domain's last update.
+     * The timestamp of when the domain was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The timestamp showing the domain's last update.
+     *        The timestamp of when the domain was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainSummary withUpdatedAt(java.util.Date updatedAt) {
         setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     * </p>
+     * 
+     * @param watchlistDetails
+     *        Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     */
+
+    public void setWatchlistDetails(WatchlistDetails watchlistDetails) {
+        this.watchlistDetails = watchlistDetails;
+    }
+
+    /**
+     * <p>
+     * Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     * </p>
+     * 
+     * @return Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     */
+
+    public WatchlistDetails getWatchlistDetails() {
+        return this.watchlistDetails;
+    }
+
+    /**
+     * <p>
+     * Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     * </p>
+     * 
+     * @param watchlistDetails
+     *        Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainSummary withWatchlistDetails(WatchlistDetails watchlistDetails) {
+        setWatchlistDetails(watchlistDetails);
         return this;
     }
 
@@ -512,7 +558,9 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
         if (getServerSideEncryptionUpdateDetails() != null)
             sb.append("ServerSideEncryptionUpdateDetails: ").append(getServerSideEncryptionUpdateDetails()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getWatchlistDetails() != null)
+            sb.append("WatchlistDetails: ").append(getWatchlistDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -565,6 +613,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getWatchlistDetails() == null ^ this.getWatchlistDetails() == null)
+            return false;
+        if (other.getWatchlistDetails() != null && other.getWatchlistDetails().equals(this.getWatchlistDetails()) == false)
+            return false;
         return true;
     }
 
@@ -582,6 +634,7 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionUpdateDetails() == null) ? 0 : getServerSideEncryptionUpdateDetails().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getWatchlistDetails() == null) ? 0 : getWatchlistDetails().hashCode());
         return hashCode;
     }
 

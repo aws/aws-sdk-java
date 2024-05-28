@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     * <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
+     * </p>
      */
     private String callerReference;
     /**
@@ -101,6 +105,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     * <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
+     * </p>
      * 
      * @param callerReference
      *        A unique string that identifies the request and that allows you to retry a failed
@@ -133,6 +141,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        settings identical to an existing health check, Route 53 creates the health check.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     *        <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
      */
 
     public void setCallerReference(String callerReference) {
@@ -171,6 +183,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     * <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
+     * </p>
      * 
      * @return A unique string that identifies the request and that allows you to retry a failed
      *         <code>CreateHealthCheck</code> request without the risk of creating two identical health checks:</p>
@@ -202,6 +218,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *         settings identical to an existing health check, Route 53 creates the health check.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     *         <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
      */
 
     public String getCallerReference() {
@@ -240,6 +260,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     * <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
+     * </p>
      * 
      * @param callerReference
      *        A unique string that identifies the request and that allows you to retry a failed
@@ -272,6 +296,10 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        settings identical to an existing health check, Route 53 creates the health check.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Route 53 does not store the <code>CallerReference</code> for a deleted health check indefinitely. The
+     *        <code>CallerReference</code> for a deleted health check will be deleted after a number of days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

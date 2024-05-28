@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -173,7 +173,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * </p>
      * <p>
      * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
-     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * is met. For example, the criteria might be that at least one routing control state is On after the transaction so
      * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      * scenario.
      * </p>
@@ -207,7 +207,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * </p>
      * <p>
      * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
-     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * is met. For example, the criteria might be that at least one routing control state is On after the transaction so
      * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      * scenario.
      * </p>
@@ -507,6 +507,39 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      */
     java.util.concurrent.Future<DescribeSafetyRuleResult> describeSafetyRuleAsync(DescribeSafetyRuleRequest describeSafetyRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeSafetyRuleRequest, DescribeSafetyRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get information about the resource policy for a cluster.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsync.GetResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Get information about the resource policy for a cluster.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSRoute53RecoveryControlConfigAsyncHandler.GetResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
 
     /**
      * <p>

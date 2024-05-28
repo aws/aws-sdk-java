@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetSearchSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon SageMaker resource to search for.
+     * The name of the SageMaker resource to search for.
      * </p>
      */
     private String resource;
@@ -40,11 +40,11 @@ public class GetSearchSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon SageMaker resource to search for.
+     * The name of the SageMaker resource to search for.
      * </p>
      * 
      * @param resource
-     *        The name of the Amazon SageMaker resource to search for.
+     *        The name of the SageMaker resource to search for.
      * @see ResourceType
      */
 
@@ -54,10 +54,10 @@ public class GetSearchSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon SageMaker resource to search for.
+     * The name of the SageMaker resource to search for.
      * </p>
      * 
-     * @return The name of the Amazon SageMaker resource to search for.
+     * @return The name of the SageMaker resource to search for.
      * @see ResourceType
      */
 
@@ -67,11 +67,11 @@ public class GetSearchSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon SageMaker resource to search for.
+     * The name of the SageMaker resource to search for.
      * </p>
      * 
      * @param resource
-     *        The name of the Amazon SageMaker resource to search for.
+     *        The name of the SageMaker resource to search for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -83,11 +83,11 @@ public class GetSearchSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon SageMaker resource to search for.
+     * The name of the SageMaker resource to search for.
      * </p>
      * 
      * @param resource
-     *        The name of the Amazon SageMaker resource to search for.
+     *        The name of the SageMaker resource to search for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

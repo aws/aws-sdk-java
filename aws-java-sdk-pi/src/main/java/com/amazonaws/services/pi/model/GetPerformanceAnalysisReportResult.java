@@ -1,0 +1,126 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.pi.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetPerformanceAnalysisReportResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The summary of the performance analysis report created for a time period.
+     * </p>
+     */
+    private AnalysisReport analysisReport;
+
+    /**
+     * <p>
+     * The summary of the performance analysis report created for a time period.
+     * </p>
+     * 
+     * @param analysisReport
+     *        The summary of the performance analysis report created for a time period.
+     */
+
+    public void setAnalysisReport(AnalysisReport analysisReport) {
+        this.analysisReport = analysisReport;
+    }
+
+    /**
+     * <p>
+     * The summary of the performance analysis report created for a time period.
+     * </p>
+     * 
+     * @return The summary of the performance analysis report created for a time period.
+     */
+
+    public AnalysisReport getAnalysisReport() {
+        return this.analysisReport;
+    }
+
+    /**
+     * <p>
+     * The summary of the performance analysis report created for a time period.
+     * </p>
+     * 
+     * @param analysisReport
+     *        The summary of the performance analysis report created for a time period.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPerformanceAnalysisReportResult withAnalysisReport(AnalysisReport analysisReport) {
+        setAnalysisReport(analysisReport);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAnalysisReport() != null)
+            sb.append("AnalysisReport: ").append(getAnalysisReport());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetPerformanceAnalysisReportResult == false)
+            return false;
+        GetPerformanceAnalysisReportResult other = (GetPerformanceAnalysisReportResult) obj;
+        if (other.getAnalysisReport() == null ^ this.getAnalysisReport() == null)
+            return false;
+        if (other.getAnalysisReport() != null && other.getAnalysisReport().equals(this.getAnalysisReport()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAnalysisReport() == null) ? 0 : getAnalysisReport().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GetPerformanceAnalysisReportResult clone() {
+        try {
+            return (GetPerformanceAnalysisReportResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

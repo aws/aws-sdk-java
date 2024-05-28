@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,31 @@ public class RefreshPreferencesStaxUnmarshaller implements Unmarshaller<RefreshP
 
                 if (context.testExpression("SkipMatching", targetDepth)) {
                     refreshPreferences.setSkipMatching(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AutoRollback", targetDepth)) {
+                    refreshPreferences.setAutoRollback(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ScaleInProtectedInstances", targetDepth)) {
+                    refreshPreferences.setScaleInProtectedInstances(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StandbyInstances", targetDepth)) {
+                    refreshPreferences.setStandbyInstances(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AlarmSpecification", targetDepth)) {
+                    refreshPreferences.setAlarmSpecification(AlarmSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxHealthyPercentage", targetDepth)) {
+                    refreshPreferences.setMaxHealthyPercentage(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

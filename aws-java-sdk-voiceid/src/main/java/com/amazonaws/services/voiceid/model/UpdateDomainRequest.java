@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of the domain.
+     * A brief description about this domain.
      * </p>
      */
     private String description;
@@ -55,11 +55,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of the domain.
+     * A brief description about this domain.
      * </p>
      * 
      * @param description
-     *        A brief description of the domain.
+     *        A brief description about this domain.
      */
 
     public void setDescription(String description) {
@@ -68,10 +68,10 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of the domain.
+     * A brief description about this domain.
      * </p>
      * 
-     * @return A brief description of the domain.
+     * @return A brief description about this domain.
      */
 
     public String getDescription() {
@@ -80,11 +80,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of the domain.
+     * A brief description about this domain.
      * </p>
      * 
      * @param description
-     *        A brief description of the domain.
+     *        A brief description about this domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

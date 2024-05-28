@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,10 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     context.nextToken();
                     historyEvent.setExecutionTimedOutEventDetails(ExecutionTimedOutEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("executionRedrivenEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setExecutionRedrivenEventDetails(ExecutionRedrivenEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("mapStateStartedEventDetails", targetDepth)) {
                     context.nextToken();
                     historyEvent.setMapStateStartedEventDetails(MapStateStartedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -193,6 +197,18 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                 if (context.testExpression("stateExitedEventDetails", targetDepth)) {
                     context.nextToken();
                     historyEvent.setStateExitedEventDetails(StateExitedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapRunStartedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapRunStartedEventDetails(MapRunStartedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapRunFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapRunFailedEventDetails(MapRunFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapRunRedrivenEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapRunRedrivenEventDetails(MapRunRedrivenEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

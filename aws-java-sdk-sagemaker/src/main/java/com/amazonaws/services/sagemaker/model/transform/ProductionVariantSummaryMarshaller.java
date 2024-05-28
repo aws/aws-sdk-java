@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class ProductionVariantSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentServerlessConfig").build();
     private static final MarshallingInfo<StructuredPojo> DESIREDSERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredServerlessConfig").build();
+    private static final MarshallingInfo<StructuredPojo> MANAGEDINSTANCESCALING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedInstanceScaling").build();
+    private static final MarshallingInfo<StructuredPojo> ROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingConfig").build();
 
     private static final ProductionVariantSummaryMarshaller instance = new ProductionVariantSummaryMarshaller();
 
@@ -72,6 +76,8 @@ public class ProductionVariantSummaryMarshaller {
             protocolMarshaller.marshall(productionVariantSummary.getVariantStatus(), VARIANTSTATUS_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getCurrentServerlessConfig(), CURRENTSERVERLESSCONFIG_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getDesiredServerlessConfig(), DESIREDSERVERLESSCONFIG_BINDING);
+            protocolMarshaller.marshall(productionVariantSummary.getManagedInstanceScaling(), MANAGEDINSTANCESCALING_BINDING);
+            protocolMarshaller.marshall(productionVariantSummary.getRoutingConfig(), ROUTINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

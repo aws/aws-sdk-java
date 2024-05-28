@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,13 @@ public enum AMITypes {
     BOTTLEROCKET_ARM_64("BOTTLEROCKET_ARM_64"),
     BOTTLEROCKET_x86_64("BOTTLEROCKET_x86_64"),
     BOTTLEROCKET_ARM_64_NVIDIA("BOTTLEROCKET_ARM_64_NVIDIA"),
-    BOTTLEROCKET_x86_64_NVIDIA("BOTTLEROCKET_x86_64_NVIDIA");
+    BOTTLEROCKET_x86_64_NVIDIA("BOTTLEROCKET_x86_64_NVIDIA"),
+    WINDOWS_CORE_2019_x86_64("WINDOWS_CORE_2019_x86_64"),
+    WINDOWS_FULL_2019_x86_64("WINDOWS_FULL_2019_x86_64"),
+    WINDOWS_CORE_2022_x86_64("WINDOWS_CORE_2022_x86_64"),
+    WINDOWS_FULL_2022_x86_64("WINDOWS_FULL_2022_x86_64"),
+    AL2023_x86_64_STANDARD("AL2023_x86_64_STANDARD"),
+    AL2023_ARM_64_STANDARD("AL2023_ARM_64_STANDARD");
 
     private String value;
 

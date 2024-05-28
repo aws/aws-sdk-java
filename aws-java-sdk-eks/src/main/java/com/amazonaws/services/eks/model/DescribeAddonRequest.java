@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeAddonRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -41,11 +41,11 @@ public class DescribeAddonRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -54,10 +54,10 @@ public class DescribeAddonRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -66,11 +66,11 @@ public class DescribeAddonRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The customer-managed-key(CMK) used when creating a Data Store. If a customer owned key is not specified, an AWS owned
+ * The customer-managed-key(CMK) used when creating a data store. If a customer owned key is not specified, an AWS owned
  * key will be used for encryption.
  * </p>
  * 
@@ -31,26 +31,26 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned
+     * The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned
      * CMKs and AWS owned CMKs.
      * </p>
      */
     private String cmkType;
     /**
      * <p>
-     * The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     * The KMS encryption key id/alias used to encrypt the data store contents at rest.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned
+     * The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned
      * CMKs and AWS owned CMKs.
      * </p>
      * 
      * @param cmkType
-     *        The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer
+     *        The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer
      *        owned CMKs and AWS owned CMKs.
      * @see CmkType
      */
@@ -61,11 +61,11 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned
+     * The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned
      * CMKs and AWS owned CMKs.
      * </p>
      * 
-     * @return The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer
+     * @return The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer
      *         owned CMKs and AWS owned CMKs.
      * @see CmkType
      */
@@ -76,12 +76,12 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned
+     * The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned
      * CMKs and AWS owned CMKs.
      * </p>
      * 
      * @param cmkType
-     *        The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer
+     *        The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer
      *        owned CMKs and AWS owned CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmkType
@@ -94,12 +94,12 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer owned
+     * The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer owned
      * CMKs and AWS owned CMKs.
      * </p>
      * 
      * @param cmkType
-     *        The type of customer-managed-key(CMK) used for encyrption. The two types of supported CMKs are customer
+     *        The type of customer-managed-key(CMK) used for encryption. The two types of supported CMKs are customer
      *        owned CMKs and AWS owned CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmkType
@@ -112,11 +112,11 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     * The KMS encryption key id/alias used to encrypt the data store contents at rest.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     *        The KMS encryption key id/alias used to encrypt the data store contents at rest.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -125,10 +125,10 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     * The KMS encryption key id/alias used to encrypt the data store contents at rest.
      * </p>
      * 
-     * @return The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     * @return The KMS encryption key id/alias used to encrypt the data store contents at rest.
      */
 
     public String getKmsKeyId() {
@@ -137,11 +137,11 @@ public class KmsEncryptionConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     * The KMS encryption key id/alias used to encrypt the data store contents at rest.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+     *        The KMS encryption key id/alias used to encrypt the data store contents at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

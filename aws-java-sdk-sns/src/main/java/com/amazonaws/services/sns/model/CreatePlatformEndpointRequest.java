@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     * <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      */
     private String platformApplicationArn;
@@ -53,18 +53,20 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     * <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     *        <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an
+     *        endpoint.
      */
 
     public void setPlatformApplicationArn(String platformApplicationArn) {
@@ -73,10 +75,11 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     * <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      * 
-     * @return PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     * @return <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an
+     *         endpoint.
      */
 
     public String getPlatformApplicationArn() {
@@ -85,11 +88,12 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     * <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.
+     *        <code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an
+     *        endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,12 +209,13 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.
      * </p>
      * 
      * @return For a list of attributes, see <a
-     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     *         >SetEndpointAttributes</a>.
+     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     *         <code>SetEndpointAttributes</code> </a>.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -223,13 +228,14 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     *        >SetEndpointAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     *        <code>SetEndpointAttributes</code> </a>.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -239,13 +245,14 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
-     *        >SetEndpointAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     *        <code>SetEndpointAttributes</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

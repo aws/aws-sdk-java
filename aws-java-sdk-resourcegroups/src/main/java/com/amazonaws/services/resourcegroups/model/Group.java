@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,21 +19,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A resource group that contains AWS resources. You can assign resources to the group by associating either of the
- * following elements with the group:
+ * A resource group that contains Amazon Web Services resources. You can assign resources to the group by associating
+ * either of the following elements with the group:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS
- * Region and AWS account that have those keys with the same values are included in the group. You can add a resource
- * query when you create the group, or later by using the <a>PutGroupConfiguration</a> operation.
+ * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same Amazon
+ * Web Services Region and Amazon Web Services account that have those keys with the same values are included in the
+ * group. You can add a resource query when you create the group, or later by using the <a>PutGroupConfiguration</a>
+ * operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration
- * specifies which resource types can be included in the group.
+ * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an Amazon Web Services service.
+ * The configuration specifies which resource types can be included in the group.
  * </p>
  * </li>
  * </ul>

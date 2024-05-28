@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public class CreateWebACLRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChallengeConfig").build();
     private static final MarshallingInfo<List> TOKENDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TokenDomains").build();
+    private static final MarshallingInfo<StructuredPojo> ASSOCIATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationConfig").build();
 
     private static final CreateWebACLRequestMarshaller instance = new CreateWebACLRequestMarshaller();
 
@@ -79,6 +81,7 @@ public class CreateWebACLRequestMarshaller {
             protocolMarshaller.marshall(createWebACLRequest.getCaptchaConfig(), CAPTCHACONFIG_BINDING);
             protocolMarshaller.marshall(createWebACLRequest.getChallengeConfig(), CHALLENGECONFIG_BINDING);
             protocolMarshaller.marshall(createWebACLRequest.getTokenDomains(), TOKENDOMAINS_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getAssociationConfig(), ASSOCIATIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

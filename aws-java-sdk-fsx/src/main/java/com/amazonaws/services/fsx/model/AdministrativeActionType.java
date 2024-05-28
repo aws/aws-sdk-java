@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,19 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <code>THROUGHPUT_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
+ * throughput capacity has been completed successfully, a <code>THROUGHPUT_OPTIMIZATION</code> task starts.
+ * </p>
+ * <p>
+ * You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>THROUGHPUT_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code>
+ * action status changes to <code>COMPLETED</code>. For more information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing throughput
+ * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
  * storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts.
  * </p>
@@ -48,8 +61,8 @@ import javax.annotation.Generated;
  * status changes to <code>COMPLETED</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
  * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a
- * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
- * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a
+ * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+ * capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a
  * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and
  * provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
  * </p>
@@ -72,8 +85,39 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume
- * initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).
+ * <code>IOPS_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
+ * throughput capacity has been completed successfully, a <code>IOPS_OPTIMIZATION</code> task starts.
+ * </p>
+ * <p>
+ * You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>IOPS_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action
+ * status changes to <code>COMPLETED</code>. For more information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-provisioned-ssd-iops.html">Managing provisioned
+ * SSD IOPS</a> in the Amazon FSx for Windows File Server User Guide.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>STORAGE_TYPE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's
+ * throughput capacity has been completed successfully, a <code>STORAGE_TYPE_OPTIMIZATION</code> task starts.
+ * </p>
+ * <p>
+ * You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When
+ * <code>STORAGE_TYPE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code>
+ * action status changes to <code>COMPLETED</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx
+ * console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified
+ * snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (
+ * <code>restore-volume-from-snapshot</code>).
  * </p>
  * </li>
  * <li>
@@ -88,6 +132,20 @@ import javax.annotation.Generated;
  * OpenZFS file system.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for
+ * OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (
+ * <code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS
+ * file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or
+ * CLI (<code>copy-snapshot-and-update-volume</code>).
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -99,7 +157,14 @@ public enum AdministrativeActionType {
     FILE_SYSTEM_ALIAS_DISASSOCIATION("FILE_SYSTEM_ALIAS_DISASSOCIATION"),
     VOLUME_UPDATE("VOLUME_UPDATE"),
     SNAPSHOT_UPDATE("SNAPSHOT_UPDATE"),
-    RELEASE_NFS_V3_LOCKS("RELEASE_NFS_V3_LOCKS");
+    RELEASE_NFS_V3_LOCKS("RELEASE_NFS_V3_LOCKS"),
+    VOLUME_RESTORE("VOLUME_RESTORE"),
+    THROUGHPUT_OPTIMIZATION("THROUGHPUT_OPTIMIZATION"),
+    IOPS_OPTIMIZATION("IOPS_OPTIMIZATION"),
+    STORAGE_TYPE_OPTIMIZATION("STORAGE_TYPE_OPTIMIZATION"),
+    MISCONFIGURED_STATE_RECOVERY("MISCONFIGURED_STATE_RECOVERY"),
+    VOLUME_UPDATE_WITH_SNAPSHOT("VOLUME_UPDATE_WITH_SNAPSHOT"),
+    VOLUME_INITIALIZE_WITH_SNAPSHOT("VOLUME_INITIALIZE_WITH_SNAPSHOT");
 
     private String value;
 

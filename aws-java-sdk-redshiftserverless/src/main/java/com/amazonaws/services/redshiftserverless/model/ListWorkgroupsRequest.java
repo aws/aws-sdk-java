@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,27 +28,33 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     * <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     * <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     */
+    private String ownerAccount;
 
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -58,11 +64,11 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @return An optional parameter that specifies the maximum number of results to return. You can use
-     *         <code>nextToken</code> to get the next page of results.
+     *         <code>nextToken</code> to display the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -72,12 +78,12 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,12 +95,12 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     * <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     * <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     *        <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     *        <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -104,11 +110,11 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     * <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     * <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      * </p>
      * 
      * @return If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     *         <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     *         <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -118,17 +124,57 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     * <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     * <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned
-     *        <code>nextToken</code> in subsequent ListNamespaces operations, which returns results in the next page.
+     *        <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListWorkgroupsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     * 
+     * @param ownerAccount
+     *        The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     */
+
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+    }
+
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     * 
+     * @return The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     */
+
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
+
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     * 
+     * @param ownerAccount
+     *        The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWorkgroupsRequest withOwnerAccount(String ownerAccount) {
+        setOwnerAccount(ownerAccount);
         return this;
     }
 
@@ -147,7 +193,9 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getOwnerAccount() != null)
+            sb.append("OwnerAccount: ").append(getOwnerAccount());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +218,10 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
+            return false;
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
+            return false;
         return true;
     }
 
@@ -180,6 +232,7 @@ public class ListWorkgroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         return hashCode;
     }
 

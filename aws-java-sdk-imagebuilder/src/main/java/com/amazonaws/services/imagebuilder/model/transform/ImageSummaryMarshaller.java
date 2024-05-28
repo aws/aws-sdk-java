@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,12 @@ public class ImageSummaryMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> BUILDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildType").build();
+    private static final MarshallingInfo<String> IMAGESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageSource").build();
+    private static final MarshallingInfo<java.util.Date> DEPRECATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LIFECYCLEEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleExecutionId").build();
 
     private static final ImageSummaryMarshaller instance = new ImageSummaryMarshaller();
 
@@ -82,6 +88,9 @@ public class ImageSummaryMarshaller {
             protocolMarshaller.marshall(imageSummary.getOutputResources(), OUTPUTRESOURCES_BINDING);
             protocolMarshaller.marshall(imageSummary.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(imageSummary.getBuildType(), BUILDTYPE_BINDING);
+            protocolMarshaller.marshall(imageSummary.getImageSource(), IMAGESOURCE_BINDING);
+            protocolMarshaller.marshall(imageSummary.getDeprecationTime(), DEPRECATIONTIME_BINDING);
+            protocolMarshaller.marshall(imageSummary.getLifecycleExecutionId(), LIFECYCLEEXECUTIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

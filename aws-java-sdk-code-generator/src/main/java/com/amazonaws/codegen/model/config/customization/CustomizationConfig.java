@@ -15,11 +15,13 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
+import com.amazonaws.codegen.customization.processors.PruneUnsupportedShapesProcessor;
 import com.amazonaws.codegen.internal.Constants;
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -214,6 +216,18 @@ public class CustomizationConfig {
      * different type that is adapted to the real type
      */
     private final List<ConvenienceTypeOverload> convenienceTypeOverloads = new ArrayList<ConvenienceTypeOverload>();
+
+    /**
+     * A set of shapes to skip pruning. See {@link PruneUnsupportedShapesProcessor}.
+     * <p>
+     * <b>WARNING</b>
+     * <p>
+     * Shapes are pruned because they are not supported in the SDK and
+     * will never be supported. Even if you skip pruning, those shapes still don't work as expected.
+     * This customization config only exists for backwards compatibility reasons. DO
+     * NOT use it without consulting with the AWS SDK for Java team.
+     */
+    private Set<String> shapesToSkipPruning = new HashSet<>();
 
     /**
      * Skips generating smoketests if set to true.
@@ -628,5 +642,13 @@ public class CustomizationConfig {
 
     public void setS3ArnableFields(Map<String, S3ArnableField> s3ArnableFields) {
         this.s3ArnableFields = s3ArnableFields;
+    }
+
+    public Set<String> getShapesToSkipPruning() {
+        return shapesToSkipPruning;
+    }
+
+    public void setShapesToSkipPruning(Set<String> shapesToSkipPruning) {
+        this.shapesToSkipPruning = shapesToSkipPruning;
     }
 }

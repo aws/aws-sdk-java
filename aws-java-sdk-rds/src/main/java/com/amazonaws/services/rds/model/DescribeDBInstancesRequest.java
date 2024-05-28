@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the identifier of an existing DBInstance.
+     * If supplied, must match the identifier of an existing DB instance.
      * </p>
      * </li>
      * </ul>
@@ -48,7 +48,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * A filter that specifies one or more DB instances to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -66,7 +66,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include
+     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
      * information about the DB instances identified by these DB instance resource identifiers.
      * </p>
      * </li>
@@ -119,7 +119,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the identifier of an existing DBInstance.
+     * If supplied, must match the identifier of an existing DB instance.
      * </p>
      * </li>
      * </ul>
@@ -134,7 +134,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the identifier of an existing DBInstance.
+     *        If supplied, must match the identifier of an existing DB instance.
      *        </p>
      *        </li>
      */
@@ -154,7 +154,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the identifier of an existing DBInstance.
+     * If supplied, must match the identifier of an existing DB instance.
      * </p>
      * </li>
      * </ul>
@@ -168,7 +168,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         If supplied, must match the identifier of an existing DBInstance.
+     *         If supplied, must match the identifier of an existing DB instance.
      *         </p>
      *         </li>
      */
@@ -188,7 +188,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the identifier of an existing DBInstance.
+     * If supplied, must match the identifier of an existing DB instance.
      * </p>
      * </li>
      * </ul>
@@ -203,7 +203,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the identifier of an existing DBInstance.
+     *        If supplied, must match the identifier of an existing DB instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -219,7 +219,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * A filter that specifies one or more DB instances to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -237,7 +237,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include
+     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
      * information about the DB instances identified by these DB instance resource identifiers.
      * </p>
      * </li>
@@ -257,7 +257,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return A filter that specifies one or more DB instances to describe.</p>
      *         <p>
-     *         Supported filters:
+     *         Supported Filters:
      *         </p>
      *         <ul>
      *         <li>
@@ -275,8 +275,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only
-     *         include information about the DB instances identified by these DB instance resource identifiers.
+     *         <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
+     *         information about the DB instances identified by these DB instance resource identifiers.
      *         </p>
      *         </li>
      *         <li>
@@ -305,7 +305,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * A filter that specifies one or more DB instances to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -323,7 +323,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include
+     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
      * information about the DB instances identified by these DB instance resource identifiers.
      * </p>
      * </li>
@@ -344,7 +344,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param filters
      *        A filter that specifies one or more DB instances to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Supported Filters:
      *        </p>
      *        <ul>
      *        <li>
@@ -362,8 +362,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only
-     *        include information about the DB instances identified by these DB instance resource identifiers.
+     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
+     *        information about the DB instances identified by these DB instance resource identifiers.
      *        </p>
      *        </li>
      *        <li>
@@ -394,7 +394,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * A filter that specifies one or more DB instances to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -412,7 +412,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include
+     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
      * information about the DB instances identified by these DB instance resource identifiers.
      * </p>
      * </li>
@@ -438,7 +438,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param filters
      *        A filter that specifies one or more DB instances to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Supported Filters:
      *        </p>
      *        <ul>
      *        <li>
@@ -456,8 +456,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only
-     *        include information about the DB instances identified by these DB instance resource identifiers.
+     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
+     *        information about the DB instances identified by these DB instance resource identifiers.
      *        </p>
      *        </li>
      *        <li>
@@ -490,7 +490,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * A filter that specifies one or more DB instances to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -508,7 +508,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only include
+     * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
      * information about the DB instances identified by these DB instance resource identifiers.
      * </p>
      * </li>
@@ -529,7 +529,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param filters
      *        A filter that specifies one or more DB instances to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Supported Filters:
      *        </p>
      *        <ul>
      *        <li>
@@ -547,8 +547,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list will only
-     *        include information about the DB instances identified by these DB instance resource identifiers.
+     *        <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes
+     *        information about the DB instances identified by these DB instance resource identifiers.
      *        </p>
      *        </li>
      *        <li>

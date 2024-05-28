@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,7 @@ public enum NodegroupIssueCode {
     Ec2SubnetNotFound("Ec2SubnetNotFound"),
     Ec2SubnetInvalidConfiguration("Ec2SubnetInvalidConfiguration"),
     IamInstanceProfileNotFound("IamInstanceProfileNotFound"),
+    Ec2SubnetMissingIpv6Assignment("Ec2SubnetMissingIpv6Assignment"),
     IamLimitExceeded("IamLimitExceeded"),
     IamNodeRoleNotFound("IamNodeRoleNotFound"),
     NodeCreationFailure("NodeCreationFailure"),
@@ -38,7 +39,22 @@ public enum NodegroupIssueCode {
     AccessDenied("AccessDenied"),
     InternalFailure("InternalFailure"),
     ClusterUnreachable("ClusterUnreachable"),
-    Ec2SubnetMissingIpv6Assignment("Ec2SubnetMissingIpv6Assignment");
+    AmiIdNotFound("AmiIdNotFound"),
+    AutoScalingGroupOptInRequired("AutoScalingGroupOptInRequired"),
+    AutoScalingGroupRateLimitExceeded("AutoScalingGroupRateLimitExceeded"),
+    Ec2LaunchTemplateDeletionFailure("Ec2LaunchTemplateDeletionFailure"),
+    Ec2LaunchTemplateInvalidConfiguration("Ec2LaunchTemplateInvalidConfiguration"),
+    Ec2LaunchTemplateMaxLimitExceeded("Ec2LaunchTemplateMaxLimitExceeded"),
+    Ec2SubnetListTooLong("Ec2SubnetListTooLong"),
+    IamThrottling("IamThrottling"),
+    NodeTerminationFailure("NodeTerminationFailure"),
+    PodEvictionFailure("PodEvictionFailure"),
+    SourceEc2LaunchTemplateNotFound("SourceEc2LaunchTemplateNotFound"),
+    LimitExceeded("LimitExceeded"),
+    Unknown("Unknown"),
+    AutoScalingGroupInstanceRefreshActive("AutoScalingGroupInstanceRefreshActive"),
+    KubernetesLabelInvalid("KubernetesLabelInvalid"),
+    Ec2LaunchTemplateVersionMaxLimitExceeded("Ec2LaunchTemplateVersionMaxLimitExceeded");
 
     private String value;
 

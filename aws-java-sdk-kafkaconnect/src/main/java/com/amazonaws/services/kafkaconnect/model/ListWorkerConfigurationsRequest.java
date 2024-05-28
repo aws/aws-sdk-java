@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class ListWorkerConfigurationsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Lists worker configuration names that start with the specified text string.
+     * </p>
+     */
+    private String namePrefix;
     /**
      * <p>
      * If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this
@@ -76,6 +82,46 @@ public class ListWorkerConfigurationsRequest extends com.amazonaws.AmazonWebServ
 
     public ListWorkerConfigurationsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists worker configuration names that start with the specified text string.
+     * </p>
+     * 
+     * @param namePrefix
+     *        Lists worker configuration names that start with the specified text string.
+     */
+
+    public void setNamePrefix(String namePrefix) {
+        this.namePrefix = namePrefix;
+    }
+
+    /**
+     * <p>
+     * Lists worker configuration names that start with the specified text string.
+     * </p>
+     * 
+     * @return Lists worker configuration names that start with the specified text string.
+     */
+
+    public String getNamePrefix() {
+        return this.namePrefix;
+    }
+
+    /**
+     * <p>
+     * Lists worker configuration names that start with the specified text string.
+     * </p>
+     * 
+     * @param namePrefix
+     *        Lists worker configuration names that start with the specified text string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListWorkerConfigurationsRequest withNamePrefix(String namePrefix) {
+        setNamePrefix(namePrefix);
         return this;
     }
 
@@ -139,6 +185,8 @@ public class ListWorkerConfigurationsRequest extends com.amazonaws.AmazonWebServ
         sb.append("{");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNamePrefix() != null)
+            sb.append("NamePrefix: ").append(getNamePrefix()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -159,6 +207,10 @@ public class ListWorkerConfigurationsRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getNamePrefix() == null ^ this.getNamePrefix() == null)
+            return false;
+        if (other.getNamePrefix() != null && other.getNamePrefix().equals(this.getNamePrefix()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -172,6 +224,7 @@ public class ListWorkerConfigurationsRequest extends com.amazonaws.AmazonWebServ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNamePrefix() == null) ? 0 : getNamePrefix().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

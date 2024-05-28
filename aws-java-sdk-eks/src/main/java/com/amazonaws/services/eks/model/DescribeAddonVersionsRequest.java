@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,26 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes versions that the add-on can be used with.
+     * The Kubernetes versions that you can use the add-on with.
      * </p>
      */
     private String kubernetesVersion;
     /**
      * <p>
-     * The maximum number of results to return.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code>
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -58,14 +63,32 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String addonName;
+    /**
+     * <p>
+     * The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * </p>
+     */
+    private java.util.List<String> types;
+    /**
+     * <p>
+     * The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * </p>
+     */
+    private java.util.List<String> publishers;
+    /**
+     * <p>
+     * The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * </p>
+     */
+    private java.util.List<String> owners;
 
     /**
      * <p>
-     * The Kubernetes versions that the add-on can be used with.
+     * The Kubernetes versions that you can use the add-on with.
      * </p>
      * 
      * @param kubernetesVersion
-     *        The Kubernetes versions that the add-on can be used with.
+     *        The Kubernetes versions that you can use the add-on with.
      */
 
     public void setKubernetesVersion(String kubernetesVersion) {
@@ -74,10 +97,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes versions that the add-on can be used with.
+     * The Kubernetes versions that you can use the add-on with.
      * </p>
      * 
-     * @return The Kubernetes versions that the add-on can be used with.
+     * @return The Kubernetes versions that you can use the add-on with.
      */
 
     public String getKubernetesVersion() {
@@ -86,11 +109,11 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes versions that the add-on can be used with.
+     * The Kubernetes versions that you can use the add-on with.
      * </p>
      * 
      * @param kubernetesVersion
-     *        The Kubernetes versions that the add-on can be used with.
+     *        The Kubernetes versions that you can use the add-on with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +124,19 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of results to return.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return.
+     *        The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a
+     *        single page, along with a <code>nextToken</code> response element. You can see the remaining results of
+     *        the initial request by sending another request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value,
+     *        if applicable, are returned.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -114,10 +145,18 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of results to return.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      * 
-     * @return The maximum number of results to return.
+     * @return The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a
+     *         single page, along with a <code>nextToken</code> response element. You can see the remaining results of
+     *         the initial request by sending another request with the returned <code>nextToken</code> value. This value
+     *         can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code>
+     *         value, if applicable, are returned.
      */
 
     public Integer getMaxResults() {
@@ -126,11 +165,19 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of results to return.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return.
+     *        The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a
+     *        single page, along with a <code>nextToken</code> response element. You can see the remaining results of
+     *        the initial request by sending another request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value,
+     *        if applicable, are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,9 +188,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code>
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -153,10 +201,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated
-     *        <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded
-     *        the value of that parameter. Pagination continues from the end of the previous results that returned the
-     *        <code>nextToken</code> value.</p> <note>
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -169,9 +217,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code>
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -180,10 +229,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * </note>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated
-     *         <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded
-     *         the value of that parameter. Pagination continues from the end of the previous results that returned the
-     *         <code>nextToken</code> value.</p> <note>
+     * @return The <code>nextToken</code> value returned from a previous paginated request, where
+     *         <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *         is null when there are no more results to return.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -196,9 +245,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code>
-     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -208,10 +258,10 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated
-     *        <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded
-     *        the value of that parameter. Pagination continues from the end of the previous results that returned the
-     *        <code>nextToken</code> value.</p> <note>
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -274,6 +324,216 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @return The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     */
+
+    public java.util.List<String> getTypes() {
+        return types;
+    }
+
+    /**
+     * <p>
+     * The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @param types
+     *        The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     */
+
+    public void setTypes(java.util.Collection<String> types) {
+        if (types == null) {
+            this.types = null;
+            return;
+        }
+
+        this.types = new java.util.ArrayList<String>(types);
+    }
+
+    /**
+     * <p>
+     * The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTypes(java.util.Collection)} or {@link #withTypes(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param types
+     *        The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddonVersionsRequest withTypes(String... types) {
+        if (this.types == null) {
+            setTypes(new java.util.ArrayList<String>(types.length));
+        }
+        for (String ele : types) {
+            this.types.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @param types
+     *        The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddonVersionsRequest withTypes(java.util.Collection<String> types) {
+        setTypes(types);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @return The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     */
+
+    public java.util.List<String> getPublishers() {
+        return publishers;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @param publishers
+     *        The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     */
+
+    public void setPublishers(java.util.Collection<String> publishers) {
+        if (publishers == null) {
+            this.publishers = null;
+            return;
+        }
+
+        this.publishers = new java.util.ArrayList<String>(publishers);
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPublishers(java.util.Collection)} or {@link #withPublishers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param publishers
+     *        The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddonVersionsRequest withPublishers(String... publishers) {
+        if (this.publishers == null) {
+            setPublishers(new java.util.ArrayList<String>(publishers.length));
+        }
+        for (String ele : publishers) {
+            this.publishers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @param publishers
+     *        The publisher of the add-on. For valid <code>publishers</code>, don't specify a value for this property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddonVersionsRequest withPublishers(java.util.Collection<String> publishers) {
+        setPublishers(publishers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @return The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     */
+
+    public java.util.List<String> getOwners() {
+        return owners;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @param owners
+     *        The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     */
+
+    public void setOwners(java.util.Collection<String> owners) {
+        if (owners == null) {
+            this.owners = null;
+            return;
+        }
+
+        this.owners = new java.util.ArrayList<String>(owners);
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOwners(java.util.Collection)} or {@link #withOwners(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param owners
+     *        The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddonVersionsRequest withOwners(String... owners) {
+        if (this.owners == null) {
+            setOwners(new java.util.ArrayList<String>(owners.length));
+        }
+        for (String ele : owners) {
+            this.owners.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * </p>
+     * 
+     * @param owners
+     *        The owner of the add-on. For valid <code>owners</code>, don't specify a value for this property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddonVersionsRequest withOwners(java.util.Collection<String> owners) {
+        setOwners(owners);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -292,7 +552,13 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getAddonName() != null)
-            sb.append("AddonName: ").append(getAddonName());
+            sb.append("AddonName: ").append(getAddonName()).append(",");
+        if (getTypes() != null)
+            sb.append("Types: ").append(getTypes()).append(",");
+        if (getPublishers() != null)
+            sb.append("Publishers: ").append(getPublishers()).append(",");
+        if (getOwners() != null)
+            sb.append("Owners: ").append(getOwners());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +589,18 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAddonName() != null && other.getAddonName().equals(this.getAddonName()) == false)
             return false;
+        if (other.getTypes() == null ^ this.getTypes() == null)
+            return false;
+        if (other.getTypes() != null && other.getTypes().equals(this.getTypes()) == false)
+            return false;
+        if (other.getPublishers() == null ^ this.getPublishers() == null)
+            return false;
+        if (other.getPublishers() != null && other.getPublishers().equals(this.getPublishers()) == false)
+            return false;
+        if (other.getOwners() == null ^ this.getOwners() == null)
+            return false;
+        if (other.getOwners() != null && other.getOwners().equals(this.getOwners()) == false)
+            return false;
         return true;
     }
 
@@ -335,6 +613,9 @@ public class DescribeAddonVersionsRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getAddonName() == null) ? 0 : getAddonName().hashCode());
+        hashCode = prime * hashCode + ((getTypes() == null) ? 0 : getTypes().hashCode());
+        hashCode = prime * hashCode + ((getPublishers() == null) ? 0 : getPublishers().hashCode());
+        hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode());
         return hashCode;
     }
 

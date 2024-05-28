@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+ * Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CaptionSourceType {

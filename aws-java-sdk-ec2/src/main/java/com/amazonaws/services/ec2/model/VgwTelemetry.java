@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class VgwTelemetry implements Serializable, Cloneable {
     private Integer acceptedRouteCount;
     /**
      * <p>
-     * The date and time of the last change in status.
+     * The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase
+     * 2), or BGP status are detected.
      * </p>
      */
     private java.util.Date lastStatusChange;
@@ -105,11 +106,13 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the last change in status.
+     * The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase
+     * 2), or BGP status are detected.
      * </p>
      * 
      * @param lastStatusChange
-     *        The date and time of the last change in status.
+     *        The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec
+     *        (Phase 2), or BGP status are detected.
      */
 
     public void setLastStatusChange(java.util.Date lastStatusChange) {
@@ -118,10 +121,12 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the last change in status.
+     * The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase
+     * 2), or BGP status are detected.
      * </p>
      * 
-     * @return The date and time of the last change in status.
+     * @return The date and time of the last change in status. This field is updated when changes in IKE (Phase 1),
+     *         IPSec (Phase 2), or BGP status are detected.
      */
 
     public java.util.Date getLastStatusChange() {
@@ -130,11 +135,13 @@ public class VgwTelemetry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the last change in status.
+     * The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec (Phase
+     * 2), or BGP status are detected.
      * </p>
      * 
      * @param lastStatusChange
-     *        The date and time of the last change in status.
+     *        The date and time of the last change in status. This field is updated when changes in IKE (Phase 1), IPSec
+     *        (Phase 2), or BGP status are detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

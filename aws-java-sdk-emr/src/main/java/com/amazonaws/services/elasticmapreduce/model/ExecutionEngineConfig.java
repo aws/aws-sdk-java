@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the execution engine (cluster) to run the notebook and perform the notebook execution, for example, an EMR
- * cluster.
+ * Specifies the execution engine (cluster) to run the notebook and perform the notebook execution, for example, an
+ * Amazon EMR cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ExecutionEngineConfig"
@@ -31,33 +31,39 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     * The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     * The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this
-     * notebook execution. For more information see <a
+     * An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR
+     * cluster for this notebook execution. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     * >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      * </p>
      */
     private String masterInstanceSecurityGroupId;
+    /**
+     * <p>
+     * The execution role ARN required for the notebook execution.
+     * </p>
+     */
+    private String executionRoleArn;
 
     /**
      * <p>
-     * The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     * The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     *        The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      */
 
     public void setId(String id) {
@@ -66,10 +72,10 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     * The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      * </p>
      * 
-     * @return The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     * @return The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      */
 
     public String getId() {
@@ -78,11 +84,11 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     * The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the execution engine. For an EMR cluster, this is the cluster ID.
+     *        The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +99,11 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     * The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * </p>
      * 
      * @param type
-     *        The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     *        The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * @see ExecutionEngineType
      */
 
@@ -107,10 +113,10 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     * The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * </p>
      * 
-     * @return The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     * @return The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * @see ExecutionEngineType
      */
 
@@ -120,11 +126,11 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     * The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * </p>
      * 
      * @param type
-     *        The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     *        The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionEngineType
      */
@@ -136,11 +142,11 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     * The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * </p>
      * 
      * @param type
-     *        The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.
+     *        The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionEngineType
      */
@@ -152,17 +158,17 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this
-     * notebook execution. For more information see <a
+     * An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR
+     * cluster for this notebook execution. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     * >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @param masterInstanceSecurityGroupId
-     *        An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster
-     *        for this notebook execution. For more information see <a
+     *        An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon
+     *        EMR cluster for this notebook execution. For more information see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     *        >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     *        >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      */
 
     public void setMasterInstanceSecurityGroupId(String masterInstanceSecurityGroupId) {
@@ -171,16 +177,16 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this
-     * notebook execution. For more information see <a
+     * An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR
+     * cluster for this notebook execution. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     * >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
-     * @return An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster
-     *         for this notebook execution. For more information see <a href=
+     * @return An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon
+     *         EMR cluster for this notebook execution. For more information see <a href=
      *         "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     *         >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     *         >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      */
 
     public String getMasterInstanceSecurityGroupId() {
@@ -189,22 +195,62 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster for this
-     * notebook execution. For more information see <a
+     * An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR
+     * cluster for this notebook execution. For more information see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     * >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @param masterInstanceSecurityGroupId
-     *        An optional unique ID of an EC2 security group to associate with the master instance of the EMR cluster
-     *        for this notebook execution. For more information see <a
+     *        An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon
+     *        EMR cluster for this notebook execution. For more information see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     *        >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     *        >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExecutionEngineConfig withMasterInstanceSecurityGroupId(String masterInstanceSecurityGroupId) {
         setMasterInstanceSecurityGroupId(masterInstanceSecurityGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The execution role ARN required for the notebook execution.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The execution role ARN required for the notebook execution.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The execution role ARN required for the notebook execution.
+     * </p>
+     * 
+     * @return The execution role ARN required for the notebook execution.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The execution role ARN required for the notebook execution.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The execution role ARN required for the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionEngineConfig withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
         return this;
     }
 
@@ -225,7 +271,9 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getMasterInstanceSecurityGroupId() != null)
-            sb.append("MasterInstanceSecurityGroupId: ").append(getMasterInstanceSecurityGroupId());
+            sb.append("MasterInstanceSecurityGroupId: ").append(getMasterInstanceSecurityGroupId()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -253,6 +301,10 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
         if (other.getMasterInstanceSecurityGroupId() != null
                 && other.getMasterInstanceSecurityGroupId().equals(this.getMasterInstanceSecurityGroupId()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -264,6 +316,7 @@ public class ExecutionEngineConfig implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getMasterInstanceSecurityGroupId() == null) ? 0 : getMasterInstanceSecurityGroupId().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         return hashCode;
     }
 

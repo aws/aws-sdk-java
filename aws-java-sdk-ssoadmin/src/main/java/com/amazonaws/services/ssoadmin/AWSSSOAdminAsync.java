@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,20 +26,19 @@ import com.amazonaws.services.ssoadmin.model.*;
  * </p>
  * <p>
  * <p>
- * AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely create, or connect, your workforce
- * identities and manage their access centrally across AWS accounts and applications. IAM Identity Center is the
- * recommended approach for workforce authentication and authorization in AWS, for organizations of any size and type.
+ * IAM Identity Center (successor to Single Sign-On) helps you securely create, or connect, your workforce identities
+ * and manage their access centrally across Amazon Web Services accounts and applications. IAM Identity Center is the
+ * recommended approach for workforce authentication and authorization in Amazon Web Services, for organizations of any
+ * size and type.
  * </p>
  * <note>
  * <p>
- * Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will
- * continue to retain their original name for backward compatibility purposes. For more information, see <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.
+ * IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
  * </p>
  * </note>
  * <p>
  * This reference guide provides information on single sign-on operations which could be used for access management of
- * AWS accounts. For information about IAM Identity Center features, see the <a
+ * Amazon Web Services accounts. For information about IAM Identity Center features, see the <a
  * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
  * <p>
@@ -50,10 +49,11 @@ import com.amazonaws.services.ssoadmin.model.*;
  * </p>
  * <note>
  * <p>
- * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
- * Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity
- * Center and other AWS services. For more information about the AWS SDKs, including how to download and install them,
- * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and
+ * platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access
+ * to IAM Identity Center and other Amazon Web Services services. For more information about the Amazon Web Services
+ * SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+ * Services</a>.
  * </p>
  * </note>
  */
@@ -99,7 +99,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Attaches an AWS managed policy ARN to a permission set.
+     * Attaches an Amazon Web Services managed policy ARN to a permission set.
      * </p>
      * <note>
      * <p>
@@ -121,7 +121,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Attaches an AWS managed policy ARN to a permission set.
+     * Attaches an Amazon Web Services managed policy ARN to a permission set.
      * </p>
      * <note>
      * <p>
@@ -148,7 +148,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Assigns access to a principal for a specified AWS account using a specified permission set.
+     * Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
      * <p>
@@ -179,7 +179,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Assigns access to a principal for a specified AWS account using a specified permission set.
+     * Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
      * <p>
@@ -212,6 +212,135 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      */
     java.util.concurrent.Future<CreateAccountAssignmentResult> createAccountAssignmentAsync(CreateAccountAssignmentRequest createAccountAssignmentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAccountAssignmentRequest, CreateAccountAssignmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an application in IAM Identity Center for the given application provider.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AWSSSOAdminAsync.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * Creates an application in IAM Identity Center for the given application provider.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Grant application access to a user or group.
+     * </p>
+     * 
+     * @param createApplicationAssignmentRequest
+     * @return A Java Future containing the result of the CreateApplicationAssignment operation returned by the service.
+     * @sample AWSSSOAdminAsync.CreateApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationAssignmentResult> createApplicationAssignmentAsync(
+            CreateApplicationAssignmentRequest createApplicationAssignmentRequest);
+
+    /**
+     * <p>
+     * Grant application access to a user or group.
+     * </p>
+     * 
+     * @param createApplicationAssignmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplicationAssignment operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.CreateApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationAssignmentResult> createApplicationAssignmentAsync(
+            CreateApplicationAssignmentRequest createApplicationAssignmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationAssignmentRequest, CreateApplicationAssignmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an instance of IAM Identity Center for a standalone Amazon Web Services account that is not managed by
+     * Organizations or a member Amazon Web Services account in an organization. You can create only one instance per
+     * account and across all Amazon Web Services Regions.
+     * </p>
+     * <p>
+     * The CreateInstance request is rejected if the following apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The instance is created within the organization management account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An instance already exists in the same account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createInstanceRequest
+     * @return A Java Future containing the result of the CreateInstance operation returned by the service.
+     * @sample AWSSSOAdminAsync.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest createInstanceRequest);
+
+    /**
+     * <p>
+     * Creates an instance of IAM Identity Center for a standalone Amazon Web Services account that is not managed by
+     * Organizations or a member Amazon Web Services account in an organization. You can create only one instance per
+     * account and across all Amazon Web Services Regions.
+     * </p>
+     * <p>
+     * The CreateInstance request is rejected if the following apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The instance is created within the organization management account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An instance already exists in the same account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInstance operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest createInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceRequest, CreateInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -274,7 +403,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      * </p>
      * <note>
      * <p>
-     * To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a> </code>.
+     * To grant users and groups access to Amazon Web Services account resources, use
+     * <code> <a>CreateAccountAssignment</a> </code>.
      * </p>
      * </note>
      * 
@@ -292,7 +422,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      * </p>
      * <note>
      * <p>
-     * To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a> </code>.
+     * To grant users and groups access to Amazon Web Services account resources, use
+     * <code> <a>CreateAccountAssignment</a> </code>.
      * </p>
      * </note>
      * 
@@ -311,11 +442,56 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Deletes a principal's access from a specified AWS account using a specified permission set.
+     * Creates a connection to a trusted token issuer in an instance of IAM Identity Center. A trusted token issuer
+     * enables trusted identity propagation to be used with applications that authenticate outside of Amazon Web
+     * Services.
+     * </p>
+     * <p>
+     * This trusted token issuer describes an external identity provider (IdP) that can generate claims or assertions in
+     * the form of access tokens for a user. Applications enabled for IAM Identity Center can use these tokens for
+     * authentication.
+     * </p>
+     * 
+     * @param createTrustedTokenIssuerRequest
+     * @return A Java Future containing the result of the CreateTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsync.CreateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrustedTokenIssuerResult> createTrustedTokenIssuerAsync(CreateTrustedTokenIssuerRequest createTrustedTokenIssuerRequest);
+
+    /**
+     * <p>
+     * Creates a connection to a trusted token issuer in an instance of IAM Identity Center. A trusted token issuer
+     * enables trusted identity propagation to be used with applications that authenticate outside of Amazon Web
+     * Services.
+     * </p>
+     * <p>
+     * This trusted token issuer describes an external identity provider (IdP) that can generate claims or assertions in
+     * the form of access tokens for a user. Applications enabled for IAM Identity Center can use these tokens for
+     * authentication.
+     * </p>
+     * 
+     * @param createTrustedTokenIssuerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.CreateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrustedTokenIssuerResult> createTrustedTokenIssuerAsync(CreateTrustedTokenIssuerRequest createTrustedTokenIssuerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrustedTokenIssuerRequest, CreateTrustedTokenIssuerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
      * <p>
-     * After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of
+     * After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status of
      * an assignment deletion request.
      * </p>
      * </note>
@@ -330,11 +506,11 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Deletes a principal's access from a specified AWS account using a specified permission set.
+     * Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
      * <p>
-     * After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of
+     * After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status of
      * an assignment deletion request.
      * </p>
      * </note>
@@ -351,6 +527,171 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      */
     java.util.concurrent.Future<DeleteAccountAssignmentResult> deleteAccountAssignmentAsync(DeleteAccountAssignmentRequest deleteAccountAssignmentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the association with the application. The connected service resource still exists.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AWSSSOAdminAsync.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes the association with the application. The connected service resource still exists.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an IAM Identity Center access scope from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAccessScopeRequest
+     * @return A Java Future containing the result of the DeleteApplicationAccessScope operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsync.DeleteApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationAccessScopeResult> deleteApplicationAccessScopeAsync(
+            DeleteApplicationAccessScopeRequest deleteApplicationAccessScopeRequest);
+
+    /**
+     * <p>
+     * Deletes an IAM Identity Center access scope from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAccessScopeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplicationAccessScope operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationAccessScopeResult> deleteApplicationAccessScopeAsync(
+            DeleteApplicationAccessScopeRequest deleteApplicationAccessScopeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationAccessScopeRequest, DeleteApplicationAccessScopeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Revoke application access to an application by deleting application assignments for a user or group.
+     * </p>
+     * 
+     * @param deleteApplicationAssignmentRequest
+     * @return A Java Future containing the result of the DeleteApplicationAssignment operation returned by the service.
+     * @sample AWSSSOAdminAsync.DeleteApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationAssignmentResult> deleteApplicationAssignmentAsync(
+            DeleteApplicationAssignmentRequest deleteApplicationAssignmentRequest);
+
+    /**
+     * <p>
+     * Revoke application access to an application by deleting application assignments for a user or group.
+     * </p>
+     * 
+     * @param deleteApplicationAssignmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplicationAssignment operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationAssignmentResult> deleteApplicationAssignmentAsync(
+            DeleteApplicationAssignmentRequest deleteApplicationAssignmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationAssignmentRequest, DeleteApplicationAssignmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an authentication method from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAuthenticationMethodRequest
+     * @return A Java Future containing the result of the DeleteApplicationAuthenticationMethod operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsync.DeleteApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationAuthenticationMethodResult> deleteApplicationAuthenticationMethodAsync(
+            DeleteApplicationAuthenticationMethodRequest deleteApplicationAuthenticationMethodRequest);
+
+    /**
+     * <p>
+     * Deletes an authentication method from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAuthenticationMethodRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplicationAuthenticationMethod operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationAuthenticationMethodResult> deleteApplicationAuthenticationMethodAsync(
+            DeleteApplicationAuthenticationMethodRequest deleteApplicationAuthenticationMethodRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationAuthenticationMethodRequest, DeleteApplicationAuthenticationMethodResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a grant from an application.
+     * </p>
+     * 
+     * @param deleteApplicationGrantRequest
+     * @return A Java Future containing the result of the DeleteApplicationGrant operation returned by the service.
+     * @sample AWSSSOAdminAsync.DeleteApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationGrantResult> deleteApplicationGrantAsync(DeleteApplicationGrantRequest deleteApplicationGrantRequest);
+
+    /**
+     * <p>
+     * Deletes a grant from an application.
+     * </p>
+     * 
+     * @param deleteApplicationGrantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplicationGrant operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationGrantResult> deleteApplicationGrantAsync(DeleteApplicationGrantRequest deleteApplicationGrantRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationGrantRequest, DeleteApplicationGrantResult> asyncHandler);
 
     /**
      * <p>
@@ -386,6 +727,41 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
     java.util.concurrent.Future<DeleteInlinePolicyFromPermissionSetResult> deleteInlinePolicyFromPermissionSetAsync(
             DeleteInlinePolicyFromPermissionSetRequest deleteInlinePolicyFromPermissionSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInlinePolicyFromPermissionSetRequest, DeleteInlinePolicyFromPermissionSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the instance of IAM Identity Center. Only the account that owns the instance can call this API. Neither
+     * the delegated administrator nor member account can delete the organization instance, but those roles can delete
+     * their own instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
+     * @sample AWSSSOAdminAsync.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest);
+
+    /**
+     * <p>
+     * Deletes the instance of IAM Identity Center. Only the account that owns the instance can call this API. Neither
+     * the delegated administrator nor member account can delete the organization instance, but those roles can delete
+     * their own instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -502,6 +878,49 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
+     * Deletes a trusted token issuer configuration from an instance of IAM Identity Center.
+     * </p>
+     * <note>
+     * <p>
+     * Deleting this trusted token issuer configuration will cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTrustedTokenIssuerRequest
+     * @return A Java Future containing the result of the DeleteTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsync.DeleteTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrustedTokenIssuerResult> deleteTrustedTokenIssuerAsync(DeleteTrustedTokenIssuerRequest deleteTrustedTokenIssuerRequest);
+
+    /**
+     * <p>
+     * Deletes a trusted token issuer configuration from an instance of IAM Identity Center.
+     * </p>
+     * <note>
+     * <p>
+     * Deleting this trusted token issuer configuration will cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTrustedTokenIssuerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DeleteTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrustedTokenIssuerResult> deleteTrustedTokenIssuerAsync(DeleteTrustedTokenIssuerRequest deleteTrustedTokenIssuerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrustedTokenIssuerRequest, DeleteTrustedTokenIssuerResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the status of the assignment creation request.
      * </p>
      * 
@@ -573,6 +992,182 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
     java.util.concurrent.Future<DescribeAccountAssignmentDeletionStatusResult> describeAccountAssignmentDeletionStatusAsync(
             DescribeAccountAssignmentDeletionStatusRequest describeAccountAssignmentDeletionStatusRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details of an application associated with an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationRequest
+     * @return A Java Future containing the result of the DescribeApplication operation returned by the service.
+     * @sample AWSSSOAdminAsync.DescribeApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest describeApplicationRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of an application associated with an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplication operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DescribeApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest describeApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a direct assignment of a user or group to an application. If the user doesn’t have a direct assignment
+     * to the application, the user may still have access to the application through a group. Therefore, don’t use this
+     * API to test access to an application for a user. Instead use <a>ListApplicationAssignmentsForPrincipal</a>.
+     * </p>
+     * 
+     * @param describeApplicationAssignmentRequest
+     * @return A Java Future containing the result of the DescribeApplicationAssignment operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsync.DescribeApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationAssignmentResult> describeApplicationAssignmentAsync(
+            DescribeApplicationAssignmentRequest describeApplicationAssignmentRequest);
+
+    /**
+     * <p>
+     * Retrieves a direct assignment of a user or group to an application. If the user doesn’t have a direct assignment
+     * to the application, the user may still have access to the application through a group. Therefore, don’t use this
+     * API to test access to an application for a user. Instead use <a>ListApplicationAssignmentsForPrincipal</a>.
+     * </p>
+     * 
+     * @param describeApplicationAssignmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplicationAssignment operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsyncHandler.DescribeApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationAssignmentResult> describeApplicationAssignmentAsync(
+            DescribeApplicationAssignmentRequest describeApplicationAssignmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationAssignmentRequest, DescribeApplicationAssignmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about a provider that can be used to connect an Amazon Web Services managed application or
+     * customer managed application to IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationProviderRequest
+     * @return A Java Future containing the result of the DescribeApplicationProvider operation returned by the service.
+     * @sample AWSSSOAdminAsync.DescribeApplicationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationProviderResult> describeApplicationProviderAsync(
+            DescribeApplicationProviderRequest describeApplicationProviderRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a provider that can be used to connect an Amazon Web Services managed application or
+     * customer managed application to IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplicationProvider operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DescribeApplicationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationProviderResult> describeApplicationProviderAsync(
+            DescribeApplicationProviderRequest describeApplicationProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationProviderRequest, DescribeApplicationProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the details of an instance of IAM Identity Center. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created. When the instance is ready for
+     * use, DescribeInstance returns the status of <code>ACTIVE</code>. While the instance is in the
+     * <code>CREATE_IN_PROGRESS</code> state, you can call only DescribeInstance and DeleteInstance operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code> after
+     * the delete operation completes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The instance is active.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRequest
+     * @return A Java Future containing the result of the DescribeInstance operation returned by the service.
+     * @sample AWSSSOAdminAsync.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest describeInstanceRequest);
+
+    /**
+     * <p>
+     * Returns the details of an instance of IAM Identity Center. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created. When the instance is ready for
+     * use, DescribeInstance returns the status of <code>ACTIVE</code>. While the instance is in the
+     * <code>CREATE_IN_PROGRESS</code> state, you can call only DescribeInstance and DeleteInstance operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code> after
+     * the delete operation completes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The instance is active.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstance operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest describeInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceRequest, DescribeInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -689,6 +1284,43 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
+     * Retrieves details about a trusted token issuer configuration stored in an instance of IAM Identity Center.
+     * Details include the name of the trusted token issuer, the issuer URL, and the path of the source attribute and
+     * the destination attribute for a trusted token issuer configuration.
+     * </p>
+     * 
+     * @param describeTrustedTokenIssuerRequest
+     * @return A Java Future containing the result of the DescribeTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsync.DescribeTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustedTokenIssuerResult> describeTrustedTokenIssuerAsync(
+            DescribeTrustedTokenIssuerRequest describeTrustedTokenIssuerRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a trusted token issuer configuration stored in an instance of IAM Identity Center.
+     * Details include the name of the trusted token issuer, the issuer URL, and the path of the source attribute and
+     * the destination attribute for a trusted token issuer configuration.
+     * </p>
+     * 
+     * @param describeTrustedTokenIssuerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.DescribeTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustedTokenIssuerResult> describeTrustedTokenIssuerAsync(
+            DescribeTrustedTokenIssuerRequest describeTrustedTokenIssuerRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrustedTokenIssuerRequest, DescribeTrustedTokenIssuerResult> asyncHandler);
+
+    /**
+     * <p>
      * Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
      * </p>
      * 
@@ -726,7 +1358,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Detaches the attached AWS managed policy ARN from the specified permission set.
+     * Detaches the attached Amazon Web Services managed policy ARN from the specified permission set.
      * </p>
      * 
      * @param detachManagedPolicyFromPermissionSetRequest
@@ -741,7 +1373,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Detaches the attached AWS managed policy ARN from the specified permission set.
+     * Detaches the attached Amazon Web Services managed policy ARN from the specified permission set.
      * </p>
      * 
      * @param detachManagedPolicyFromPermissionSetRequest
@@ -758,6 +1390,140 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
     java.util.concurrent.Future<DetachManagedPolicyFromPermissionSetResult> detachManagedPolicyFromPermissionSetAsync(
             DetachManagedPolicyFromPermissionSetRequest detachManagedPolicyFromPermissionSetRequest,
             com.amazonaws.handlers.AsyncHandler<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param getApplicationAccessScopeRequest
+     * @return A Java Future containing the result of the GetApplicationAccessScope operation returned by the service.
+     * @sample AWSSSOAdminAsync.GetApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationAccessScopeResult> getApplicationAccessScopeAsync(
+            GetApplicationAccessScopeRequest getApplicationAccessScopeRequest);
+
+    /**
+     * <p>
+     * Retrieves the authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param getApplicationAccessScopeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApplicationAccessScope operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.GetApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationAccessScopeResult> getApplicationAccessScopeAsync(
+            GetApplicationAccessScopeRequest getApplicationAccessScopeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationAccessScopeRequest, GetApplicationAccessScopeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.
+     * </p>
+     * 
+     * @param getApplicationAssignmentConfigurationRequest
+     * @return A Java Future containing the result of the GetApplicationAssignmentConfiguration operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsync.GetApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationAssignmentConfigurationResult> getApplicationAssignmentConfigurationAsync(
+            GetApplicationAssignmentConfigurationRequest getApplicationAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.
+     * </p>
+     * 
+     * @param getApplicationAssignmentConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApplicationAssignmentConfiguration operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsyncHandler.GetApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationAssignmentConfigurationResult> getApplicationAssignmentConfigurationAsync(
+            GetApplicationAssignmentConfigurationRequest getApplicationAssignmentConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationAssignmentConfigurationRequest, GetApplicationAssignmentConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about an authentication method used by an application.
+     * </p>
+     * 
+     * @param getApplicationAuthenticationMethodRequest
+     * @return A Java Future containing the result of the GetApplicationAuthenticationMethod operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsync.GetApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationAuthenticationMethodResult> getApplicationAuthenticationMethodAsync(
+            GetApplicationAuthenticationMethodRequest getApplicationAuthenticationMethodRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an authentication method used by an application.
+     * </p>
+     * 
+     * @param getApplicationAuthenticationMethodRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApplicationAuthenticationMethod operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsyncHandler.GetApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationAuthenticationMethodResult> getApplicationAuthenticationMethodAsync(
+            GetApplicationAuthenticationMethodRequest getApplicationAuthenticationMethodRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationAuthenticationMethodRequest, GetApplicationAuthenticationMethodResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about an application grant.
+     * </p>
+     * 
+     * @param getApplicationGrantRequest
+     * @return A Java Future containing the result of the GetApplicationGrant operation returned by the service.
+     * @sample AWSSSOAdminAsync.GetApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationGrantResult> getApplicationGrantAsync(GetApplicationGrantRequest getApplicationGrantRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an application grant.
+     * </p>
+     * 
+     * @param getApplicationGrantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApplicationGrant operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.GetApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApplicationGrantResult> getApplicationGrantAsync(GetApplicationGrantRequest getApplicationGrantRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationGrantRequest, GetApplicationGrantResult> asyncHandler);
 
     /**
      * <p>
@@ -831,7 +1597,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the status of the AWS account assignment creation requests for a specified IAM Identity Center instance.
+     * Lists the status of the Amazon Web Services account assignment creation requests for a specified IAM Identity
+     * Center instance.
      * </p>
      * 
      * @param listAccountAssignmentCreationStatusRequest
@@ -846,7 +1613,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the status of the AWS account assignment creation requests for a specified IAM Identity Center instance.
+     * Lists the status of the Amazon Web Services account assignment creation requests for a specified IAM Identity
+     * Center instance.
      * </p>
      * 
      * @param listAccountAssignmentCreationStatusRequest
@@ -866,7 +1634,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the status of the AWS account assignment deletion requests for a specified IAM Identity Center instance.
+     * Lists the status of the Amazon Web Services account assignment deletion requests for a specified IAM Identity
+     * Center instance.
      * </p>
      * 
      * @param listAccountAssignmentDeletionStatusRequest
@@ -881,7 +1650,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the status of the AWS account assignment deletion requests for a specified IAM Identity Center instance.
+     * Lists the status of the Amazon Web Services account assignment deletion requests for a specified IAM Identity
+     * Center instance.
      * </p>
      * 
      * @param listAccountAssignmentDeletionStatusRequest
@@ -901,7 +1671,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the assignee of the specified AWS account with the specified permission set.
+     * Lists the assignee of the specified Amazon Web Services account with the specified permission set.
      * </p>
      * 
      * @param listAccountAssignmentsRequest
@@ -914,7 +1684,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the assignee of the specified AWS account with the specified permission set.
+     * Lists the assignee of the specified Amazon Web Services account with the specified permission set.
      * </p>
      * 
      * @param listAccountAssignmentsRequest
@@ -932,7 +1702,44 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists all the AWS accounts where the specified permission set is provisioned.
+     * Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts that the principal has access
+     * to.
+     * </p>
+     * 
+     * @param listAccountAssignmentsForPrincipalRequest
+     * @return A Java Future containing the result of the ListAccountAssignmentsForPrincipal operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsync.ListAccountAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccountAssignmentsForPrincipalResult> listAccountAssignmentsForPrincipalAsync(
+            ListAccountAssignmentsForPrincipalRequest listAccountAssignmentsForPrincipalRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts that the principal has access
+     * to.
+     * </p>
+     * 
+     * @param listAccountAssignmentsForPrincipalRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccountAssignmentsForPrincipal operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsyncHandler.ListAccountAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccountAssignmentsForPrincipalResult> listAccountAssignmentsForPrincipalAsync(
+            ListAccountAssignmentsForPrincipalRequest listAccountAssignmentsForPrincipalRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccountAssignmentsForPrincipalRequest, ListAccountAssignmentsForPrincipalResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
      * </p>
      * 
      * @param listAccountsForProvisionedPermissionSetRequest
@@ -948,7 +1755,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists all the AWS accounts where the specified permission set is provisioned.
+     * Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
      * </p>
      * 
      * @param listAccountsForProvisionedPermissionSetRequest
@@ -966,6 +1773,239 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
     java.util.concurrent.Future<ListAccountsForProvisionedPermissionSetResult> listAccountsForProvisionedPermissionSetAsync(
             ListAccountsForProvisionedPermissionSetRequest listAccountsForProvisionedPermissionSetRequest,
             com.amazonaws.handlers.AsyncHandler<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the access scopes and authorized targets associated with an application.
+     * </p>
+     * 
+     * @param listApplicationAccessScopesRequest
+     * @return A Java Future containing the result of the ListApplicationAccessScopes operation returned by the service.
+     * @sample AWSSSOAdminAsync.ListApplicationAccessScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAccessScopesResult> listApplicationAccessScopesAsync(
+            ListApplicationAccessScopesRequest listApplicationAccessScopesRequest);
+
+    /**
+     * <p>
+     * Lists the access scopes and authorized targets associated with an application.
+     * </p>
+     * 
+     * @param listApplicationAccessScopesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationAccessScopes operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplicationAccessScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAccessScopesResult> listApplicationAccessScopesAsync(
+            ListApplicationAccessScopesRequest listApplicationAccessScopesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAccessScopesRequest, ListApplicationAccessScopesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists Amazon Web Services account users that are assigned to an application.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsRequest
+     * @return A Java Future containing the result of the ListApplicationAssignments operation returned by the service.
+     * @sample AWSSSOAdminAsync.ListApplicationAssignments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAssignmentsResult> listApplicationAssignmentsAsync(
+            ListApplicationAssignmentsRequest listApplicationAssignmentsRequest);
+
+    /**
+     * <p>
+     * Lists Amazon Web Services account users that are assigned to an application.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationAssignments operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplicationAssignments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAssignmentsResult> listApplicationAssignmentsAsync(
+            ListApplicationAssignmentsRequest listApplicationAssignmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAssignmentsRequest, ListApplicationAssignmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the applications to which a specified principal is assigned.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsForPrincipalRequest
+     * @return A Java Future containing the result of the ListApplicationAssignmentsForPrincipal operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsync.ListApplicationAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAssignmentsForPrincipalResult> listApplicationAssignmentsForPrincipalAsync(
+            ListApplicationAssignmentsForPrincipalRequest listApplicationAssignmentsForPrincipalRequest);
+
+    /**
+     * <p>
+     * Lists the applications to which a specified principal is assigned.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsForPrincipalRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationAssignmentsForPrincipal operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplicationAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAssignmentsForPrincipalResult> listApplicationAssignmentsForPrincipalAsync(
+            ListApplicationAssignmentsForPrincipalRequest listApplicationAssignmentsForPrincipalRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAssignmentsForPrincipalRequest, ListApplicationAssignmentsForPrincipalResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the authentication methods supported by the specified application.
+     * </p>
+     * 
+     * @param listApplicationAuthenticationMethodsRequest
+     * @return A Java Future containing the result of the ListApplicationAuthenticationMethods operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsync.ListApplicationAuthenticationMethods
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAuthenticationMethodsResult> listApplicationAuthenticationMethodsAsync(
+            ListApplicationAuthenticationMethodsRequest listApplicationAuthenticationMethodsRequest);
+
+    /**
+     * <p>
+     * Lists all of the authentication methods supported by the specified application.
+     * </p>
+     * 
+     * @param listApplicationAuthenticationMethodsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationAuthenticationMethods operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplicationAuthenticationMethods
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationAuthenticationMethodsResult> listApplicationAuthenticationMethodsAsync(
+            ListApplicationAuthenticationMethodsRequest listApplicationAuthenticationMethodsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAuthenticationMethodsRequest, ListApplicationAuthenticationMethodsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the grants associated with an application.
+     * </p>
+     * 
+     * @param listApplicationGrantsRequest
+     * @return A Java Future containing the result of the ListApplicationGrants operation returned by the service.
+     * @sample AWSSSOAdminAsync.ListApplicationGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationGrantsResult> listApplicationGrantsAsync(ListApplicationGrantsRequest listApplicationGrantsRequest);
+
+    /**
+     * <p>
+     * List the grants associated with an application.
+     * </p>
+     * 
+     * @param listApplicationGrantsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationGrants operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplicationGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationGrantsResult> listApplicationGrantsAsync(ListApplicationGrantsRequest listApplicationGrantsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationGrantsRequest, ListApplicationGrantsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the application providers configured in the IAM Identity Center identity store.
+     * </p>
+     * 
+     * @param listApplicationProvidersRequest
+     * @return A Java Future containing the result of the ListApplicationProviders operation returned by the service.
+     * @sample AWSSSOAdminAsync.ListApplicationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationProvidersResult> listApplicationProvidersAsync(ListApplicationProvidersRequest listApplicationProvidersRequest);
+
+    /**
+     * <p>
+     * Lists the application providers configured in the IAM Identity Center identity store.
+     * </p>
+     * 
+     * @param listApplicationProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationProviders operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplicationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationProvidersResult> listApplicationProvidersAsync(ListApplicationProvidersRequest listApplicationProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationProvidersRequest, ListApplicationProvidersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all applications associated with the instance of IAM Identity Center. When listing applications for an
+     * instance in the management account, member accounts must use the <code>applicationAccount</code> parameter to
+     * filter the list to only applications created from that account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return A Java Future containing the result of the ListApplications operation returned by the service.
+     * @sample AWSSSOAdminAsync.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest);
+
+    /**
+     * <p>
+     * Lists all applications associated with the instance of IAM Identity Center. When listing applications for an
+     * instance in the management account, member accounts must use the <code>applicationAccount</code> parameter to
+     * filter the list to only applications created from that account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplications operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1006,7 +2046,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the IAM Identity Center instances that the caller has access to.
+     * Lists the details of the organization and account instances of IAM Identity Center that were created in or
+     * visible to the account calling this API.
      * </p>
      * 
      * @param listInstancesRequest
@@ -1019,7 +2060,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the IAM Identity Center instances that the caller has access to.
+     * Lists the details of the organization and account instances of IAM Identity Center that were created in or
+     * visible to the account calling this API.
      * </p>
      * 
      * @param listInstancesRequest
@@ -1037,7 +2079,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the AWS managed policy that is attached to a specified permission set.
+     * Lists the Amazon Web Services managed policy that is attached to a specified permission set.
      * </p>
      * 
      * @param listManagedPoliciesInPermissionSetRequest
@@ -1052,7 +2094,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the AWS managed policy that is attached to a specified permission set.
+     * Lists the Amazon Web Services managed policy that is attached to a specified permission set.
      * </p>
      * 
      * @param listManagedPoliciesInPermissionSetRequest
@@ -1138,7 +2180,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists all the permission sets that are provisioned to a specified AWS account.
+     * Lists all the permission sets that are provisioned to a specified Amazon Web Services account.
      * </p>
      * 
      * @param listPermissionSetsProvisionedToAccountRequest
@@ -1153,7 +2195,7 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists all the permission sets that are provisioned to a specified AWS account.
+     * Lists all the permission sets that are provisioned to a specified Amazon Web Services account.
      * </p>
      * 
      * @param listPermissionSetsProvisionedToAccountRequest
@@ -1204,6 +2246,37 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
+     * Lists all the trusted token issuers configured in an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param listTrustedTokenIssuersRequest
+     * @return A Java Future containing the result of the ListTrustedTokenIssuers operation returned by the service.
+     * @sample AWSSSOAdminAsync.ListTrustedTokenIssuers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrustedTokenIssuersResult> listTrustedTokenIssuersAsync(ListTrustedTokenIssuersRequest listTrustedTokenIssuersRequest);
+
+    /**
+     * <p>
+     * Lists all the trusted token issuers configured in an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param listTrustedTokenIssuersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTrustedTokenIssuers operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.ListTrustedTokenIssuers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrustedTokenIssuersResult> listTrustedTokenIssuersAsync(ListTrustedTokenIssuersRequest listTrustedTokenIssuersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTrustedTokenIssuersRequest, ListTrustedTokenIssuersResult> asyncHandler);
+
+    /**
+     * <p>
      * The process by which a specified permission set is provisioned to the specified target.
      * </p>
      * 
@@ -1232,6 +2305,154 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      */
     java.util.concurrent.Future<ProvisionPermissionSetResult> provisionPermissionSetAsync(ProvisionPermissionSetRequest provisionPermissionSetRequest,
             com.amazonaws.handlers.AsyncHandler<ProvisionPermissionSetRequest, ProvisionPermissionSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates the list of authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param putApplicationAccessScopeRequest
+     * @return A Java Future containing the result of the PutApplicationAccessScope operation returned by the service.
+     * @sample AWSSSOAdminAsync.PutApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationAccessScopeResult> putApplicationAccessScopeAsync(
+            PutApplicationAccessScopeRequest putApplicationAccessScopeRequest);
+
+    /**
+     * <p>
+     * Adds or updates the list of authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param putApplicationAccessScopeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutApplicationAccessScope operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.PutApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationAccessScopeResult> putApplicationAccessScopeAsync(
+            PutApplicationAccessScopeRequest putApplicationAccessScopeRequest,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationAccessScopeRequest, PutApplicationAccessScopeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Configure how users gain access to an application. If <code>AssignmentsRequired</code> is <code>true</code>
+     * (default value), users don’t have access to the application unless an assignment is created using the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application. If an
+     * assignment is created using <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment</a>., the user retains access if <code>AssignmentsRequired</code> is set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param putApplicationAssignmentConfigurationRequest
+     * @return A Java Future containing the result of the PutApplicationAssignmentConfiguration operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsync.PutApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationAssignmentConfigurationResult> putApplicationAssignmentConfigurationAsync(
+            PutApplicationAssignmentConfigurationRequest putApplicationAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Configure how users gain access to an application. If <code>AssignmentsRequired</code> is <code>true</code>
+     * (default value), users don’t have access to the application unless an assignment is created using the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application. If an
+     * assignment is created using <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment</a>., the user retains access if <code>AssignmentsRequired</code> is set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param putApplicationAssignmentConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutApplicationAssignmentConfiguration operation returned by
+     *         the service.
+     * @sample AWSSSOAdminAsyncHandler.PutApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationAssignmentConfigurationResult> putApplicationAssignmentConfigurationAsync(
+            PutApplicationAssignmentConfigurationRequest putApplicationAssignmentConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationAssignmentConfigurationRequest, PutApplicationAssignmentConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates an authentication method for an application.
+     * </p>
+     * 
+     * @param putApplicationAuthenticationMethodRequest
+     * @return A Java Future containing the result of the PutApplicationAuthenticationMethod operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsync.PutApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationAuthenticationMethodResult> putApplicationAuthenticationMethodAsync(
+            PutApplicationAuthenticationMethodRequest putApplicationAuthenticationMethodRequest);
+
+    /**
+     * <p>
+     * Adds or updates an authentication method for an application.
+     * </p>
+     * 
+     * @param putApplicationAuthenticationMethodRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutApplicationAuthenticationMethod operation returned by the
+     *         service.
+     * @sample AWSSSOAdminAsyncHandler.PutApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationAuthenticationMethodResult> putApplicationAuthenticationMethodAsync(
+            PutApplicationAuthenticationMethodRequest putApplicationAuthenticationMethodRequest,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationAuthenticationMethodRequest, PutApplicationAuthenticationMethodResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a grant to an application.
+     * </p>
+     * 
+     * @param putApplicationGrantRequest
+     * @return A Java Future containing the result of the PutApplicationGrant operation returned by the service.
+     * @sample AWSSSOAdminAsync.PutApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationGrantResult> putApplicationGrantAsync(PutApplicationGrantRequest putApplicationGrantRequest);
+
+    /**
+     * <p>
+     * Adds a grant to an application.
+     * </p>
+     * 
+     * @param putApplicationGrantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutApplicationGrant operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.PutApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutApplicationGrantResult> putApplicationGrantAsync(PutApplicationGrantRequest putApplicationGrantRequest,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationGrantRequest, PutApplicationGrantResult> asyncHandler);
 
     /**
      * <p>
@@ -1284,8 +2505,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Attaches an AWS managed or customer managed policy to the specified <a>PermissionSet</a> as a permissions
-     * boundary.
+     * Attaches an Amazon Web Services managed or customer managed policy to the specified <a>PermissionSet</a> as a
+     * permissions boundary.
      * </p>
      * 
      * @param putPermissionsBoundaryToPermissionSetRequest
@@ -1300,8 +2521,8 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
-     * Attaches an AWS managed or customer managed policy to the specified <a>PermissionSet</a> as a permissions
-     * boundary.
+     * Attaches an Amazon Web Services managed or customer managed policy to the specified <a>PermissionSet</a> as a
+     * permissions boundary.
      * </p>
      * 
      * @param putPermissionsBoundaryToPermissionSetRequest
@@ -1383,6 +2604,68 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
 
     /**
      * <p>
+     * Updates application properties.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AWSSSOAdminAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Updates application properties.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the details for the instance of IAM Identity Center that is owned by the Amazon Web Services account.
+     * </p>
+     * 
+     * @param updateInstanceRequest
+     * @return A Java Future containing the result of the UpdateInstance operation returned by the service.
+     * @sample AWSSSOAdminAsync.UpdateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(UpdateInstanceRequest updateInstanceRequest);
+
+    /**
+     * <p>
+     * Update the details for the instance of IAM Identity Center that is owned by the Amazon Web Services account.
+     * </p>
+     * 
+     * @param updateInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstance operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.UpdateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(UpdateInstanceRequest updateInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the IAM Identity Center identity store attributes that you can use with the IAM Identity Center instance
      * for attributes-based access control (ABAC). When using an external identity provider as an identity source, you
      * can pass attributes through the SAML assertion as an alternative to configuring attributes from the IAM Identity
@@ -1460,5 +2743,50 @@ public interface AWSSSOAdminAsync extends AWSSSOAdmin {
      */
     java.util.concurrent.Future<UpdatePermissionSetResult> updatePermissionSetAsync(UpdatePermissionSetRequest updatePermissionSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePermissionSetRequest, UpdatePermissionSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name of the trusted token issuer, or the path of a source attribute or destination attribute for a
+     * trusted token issuer configuration.
+     * </p>
+     * <note>
+     * <p>
+     * Updating this trusted token issuer configuration might cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param updateTrustedTokenIssuerRequest
+     * @return A Java Future containing the result of the UpdateTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsync.UpdateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrustedTokenIssuerResult> updateTrustedTokenIssuerAsync(UpdateTrustedTokenIssuerRequest updateTrustedTokenIssuerRequest);
+
+    /**
+     * <p>
+     * Updates the name of the trusted token issuer, or the path of a source attribute or destination attribute for a
+     * trusted token issuer configuration.
+     * </p>
+     * <note>
+     * <p>
+     * Updating this trusted token issuer configuration might cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param updateTrustedTokenIssuerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTrustedTokenIssuer operation returned by the service.
+     * @sample AWSSSOAdminAsyncHandler.UpdateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrustedTokenIssuerResult> updateTrustedTokenIssuerAsync(UpdateTrustedTokenIssuerRequest updateTrustedTokenIssuerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTrustedTokenIssuerRequest, UpdateTrustedTokenIssuerResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CampaignSummaryMarshaller {
 
-    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("arn").build();
-    private static final MarshallingInfo<String> CONNECTINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectInstanceId").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> CONNECTINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectInstanceId").build();
 
     private static final CampaignSummaryMarshaller instance = new CampaignSummaryMarshaller();
 
@@ -52,10 +52,10 @@ public class CampaignSummaryMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(campaignSummary.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(campaignSummary.getConnectInstanceId(), CONNECTINSTANCEID_BINDING);
             protocolMarshaller.marshall(campaignSummary.getId(), ID_BINDING);
+            protocolMarshaller.marshall(campaignSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(campaignSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(campaignSummary.getConnectInstanceId(), CONNECTINSTANCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

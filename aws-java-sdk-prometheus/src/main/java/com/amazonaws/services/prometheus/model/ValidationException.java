@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The input fails to satisfy the constraints specified by an AWS service.
+ * The input fails to satisfy the constraints specified by an Amazon Web Services service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,8 +25,7 @@ public class ValidationException extends com.amazonaws.services.prometheus.model
 
     /**
      * <p>
-     * The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate
-     * in the message.
+     * The field that caused the error, if applicable.
      * </p>
      */
     private java.util.List<ValidationExceptionField> fieldList;
@@ -49,12 +48,10 @@ public class ValidationException extends com.amazonaws.services.prometheus.model
 
     /**
      * <p>
-     * The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate
-     * in the message.
+     * The field that caused the error, if applicable.
      * </p>
      * 
-     * @return The field that caused the error, if applicable. If more than one field caused the error, pick one and
-     *         elaborate in the message.
+     * @return The field that caused the error, if applicable.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("fieldList")
@@ -64,13 +61,11 @@ public class ValidationException extends com.amazonaws.services.prometheus.model
 
     /**
      * <p>
-     * The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate
-     * in the message.
+     * The field that caused the error, if applicable.
      * </p>
      * 
      * @param fieldList
-     *        The field that caused the error, if applicable. If more than one field caused the error, pick one and
-     *        elaborate in the message.
+     *        The field that caused the error, if applicable.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("fieldList")
@@ -85,8 +80,7 @@ public class ValidationException extends com.amazonaws.services.prometheus.model
 
     /**
      * <p>
-     * The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate
-     * in the message.
+     * The field that caused the error, if applicable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,8 +89,7 @@ public class ValidationException extends com.amazonaws.services.prometheus.model
      * </p>
      * 
      * @param fieldList
-     *        The field that caused the error, if applicable. If more than one field caused the error, pick one and
-     *        elaborate in the message.
+     *        The field that caused the error, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +105,11 @@ public class ValidationException extends com.amazonaws.services.prometheus.model
 
     /**
      * <p>
-     * The field that caused the error, if applicable. If more than one field caused the error, pick one and elaborate
-     * in the message.
+     * The field that caused the error, if applicable.
      * </p>
      * 
      * @param fieldList
-     *        The field that caused the error, if applicable. If more than one field caused the error, pick one and
-     *        elaborate in the message.
+     *        The field that caused the error, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

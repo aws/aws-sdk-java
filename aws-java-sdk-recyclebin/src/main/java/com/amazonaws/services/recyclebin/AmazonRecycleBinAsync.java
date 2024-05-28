@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,9 +39,8 @@ import com.amazonaws.services.recyclebin.model.*;
  * resource from the Recycle Bin, the resource is removed from the Recycle Bin, and you can then use it in the same way
  * you use any other resource of that type in your account. If the retention period expires and the resource is not
  * restored, the resource is permanently deleted from the Recycle Bin and is no longer available for recovery. For more
- * information about Recycle Bin, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html"> Recycle Bin</a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * information about Recycle Bin, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">
+ * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -212,6 +211,37 @@ public interface AmazonRecycleBinAsync extends AmazonRecycleBin {
 
     /**
      * <p>
+     * Locks a retention rule. A locked retention rule can't be modified or deleted.
+     * </p>
+     * 
+     * @param lockRuleRequest
+     * @return A Java Future containing the result of the LockRule operation returned by the service.
+     * @sample AmazonRecycleBinAsync.LockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<LockRuleResult> lockRuleAsync(LockRuleRequest lockRuleRequest);
+
+    /**
+     * <p>
+     * Locks a retention rule. A locked retention rule can't be modified or deleted.
+     * </p>
+     * 
+     * @param lockRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the LockRule operation returned by the service.
+     * @sample AmazonRecycleBinAsyncHandler.LockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<LockRuleResult> lockRuleAsync(LockRuleRequest lockRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<LockRuleRequest, LockRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns tags to the specified retention rule.
      * </p>
      * 
@@ -240,6 +270,39 @@ public interface AmazonRecycleBinAsync extends AmazonRecycleBin {
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock
+     * delay period expires.
+     * </p>
+     * 
+     * @param unlockRuleRequest
+     * @return A Java Future containing the result of the UnlockRule operation returned by the service.
+     * @sample AmazonRecycleBinAsync.UnlockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnlockRuleResult> unlockRuleAsync(UnlockRuleRequest unlockRuleRequest);
+
+    /**
+     * <p>
+     * Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock
+     * delay period expires.
+     * </p>
+     * 
+     * @param unlockRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnlockRule operation returned by the service.
+     * @sample AmazonRecycleBinAsyncHandler.UnlockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnlockRuleResult> unlockRuleAsync(UnlockRuleRequest unlockRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UnlockRuleRequest, UnlockRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -274,7 +337,9 @@ public interface AmazonRecycleBinAsync extends AmazonRecycleBin {
 
     /**
      * <p>
-     * Updates an existing Recycle Bin retention rule. For more information, see <a href=
+     * Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and
+     * retention period at any time after creation. You can't update a retention rule's resource type after creation.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"
      * > Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -289,7 +354,9 @@ public interface AmazonRecycleBinAsync extends AmazonRecycleBin {
 
     /**
      * <p>
-     * Updates an existing Recycle Bin retention rule. For more information, see <a href=
+     * Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and
+     * retention period at any time after creation. You can't update a retention rule's resource type after creation.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"
      * > Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the state of scheduled or in-process failover operations on an Aurora global database
- * (<a>GlobalCluster</a>). This Data type is empty unless a failover operation is scheduled or is currently underway on
- * the Aurora global database.
+ * Contains the state of scheduled or in-process operations on a global cluster (Aurora global database). This data type
+ * is empty unless a switchover or failover operation is scheduled or is in progress on the Aurora global database.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverState" target="_top">AWS API
@@ -30,28 +29,33 @@ public class FailoverState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as follows:
+     * The current status of the global cluster. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received by the
-     * service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being
-     * verified before the failover process can start.
+     * pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     * cluster's primary DB cluster and the specified secondary DB cluster are being verified before the operation
+     * starts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     * failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     * synchronizing replicas.
+     * failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary DB
+     * cluster to fail over the global cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled and
-     * the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous
-     * states.
+     * cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary Aurora
+     * DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * switching-over &#x96; This status covers the range of Aurora internal operations that take place during the
+     * switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB cluster,
+     * and synchronizing replicas.
      * </p>
      * </li>
      * </ul>
@@ -71,58 +75,74 @@ public class FailoverState implements Serializable, Cloneable {
      * </p>
      */
     private String toDbClusterArn;
+    /**
+     * <p>
+     * Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the
+     * operation is a global failover. Otherwise, it's a switchover.
+     * </p>
+     */
+    private Boolean isDataLossAllowed;
 
     /**
      * <p>
-     * The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as follows:
+     * The current status of the global cluster. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received by the
-     * service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being
-     * verified before the failover process can start.
+     * pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     * cluster's primary DB cluster and the specified secondary DB cluster are being verified before the operation
+     * starts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     * failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     * synchronizing replicas.
+     * failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary DB
+     * cluster to fail over the global cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled and
-     * the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous
-     * states.
+     * cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary Aurora
+     * DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * switching-over &#x96; This status covers the range of Aurora internal operations that take place during the
+     * switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB cluster,
+     * and synchronizing replicas.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as
-     *        follows:</p>
+     *        The current status of the global cluster. Possible values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received
-     *        by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster
-     *        are being verified before the failover process can start.
+     *        pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     *        cluster's primary DB cluster and the specified secondary DB cluster are being verified before the
+     *        operation starts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     *        failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     *        synchronizing replicas.
+     *        failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary
+     *        DB cluster to fail over the global cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled
-     *        and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their
-     *        previous states.
+     *        cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary
+     *        Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        switching-over &#x96; This status covers the range of Aurora internal operations that take place during
+     *        the switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB
+     *        cluster, and synchronizing replicas.
      *        </p>
      *        </li>
      * @see FailoverStatus
@@ -134,54 +154,64 @@ public class FailoverState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as follows:
+     * The current status of the global cluster. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received by the
-     * service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being
-     * verified before the failover process can start.
+     * pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     * cluster's primary DB cluster and the specified secondary DB cluster are being verified before the operation
+     * starts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     * failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     * synchronizing replicas.
+     * failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary DB
+     * cluster to fail over the global cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled and
-     * the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous
-     * states.
+     * cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary Aurora
+     * DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * switching-over &#x96; This status covers the range of Aurora internal operations that take place during the
+     * switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB cluster,
+     * and synchronizing replicas.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as
-     *         follows:</p>
+     * @return The current status of the global cluster. Possible values are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received
-     *         by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB
-     *         cluster are being verified before the failover process can start.
+     *         pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     *         cluster's primary DB cluster and the specified secondary DB cluster are being verified before the
+     *         operation starts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     *         failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     *         synchronizing replicas.
+     *         failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary
+     *         DB cluster to fail over the global cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was
-     *         cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to
-     *         their previous states.
+     *         cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the
+     *         primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous
+     *         states.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         switching-over &#x96; This status covers the range of Aurora internal operations that take place during
+     *         the switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB
+     *         cluster, and synchronizing replicas.
      *         </p>
      *         </li>
      * @see FailoverStatus
@@ -193,55 +223,64 @@ public class FailoverState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as follows:
+     * The current status of the global cluster. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received by the
-     * service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being
-     * verified before the failover process can start.
+     * pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     * cluster's primary DB cluster and the specified secondary DB cluster are being verified before the operation
+     * starts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     * failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     * synchronizing replicas.
+     * failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary DB
+     * cluster to fail over the global cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled and
-     * the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous
-     * states.
+     * cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary Aurora
+     * DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * switching-over &#x96; This status covers the range of Aurora internal operations that take place during the
+     * switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB cluster,
+     * and synchronizing replicas.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as
-     *        follows:</p>
+     *        The current status of the global cluster. Possible values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received
-     *        by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster
-     *        are being verified before the failover process can start.
+     *        pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     *        cluster's primary DB cluster and the specified secondary DB cluster are being verified before the
+     *        operation starts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     *        failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     *        synchronizing replicas.
+     *        failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary
+     *        DB cluster to fail over the global cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled
-     *        and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their
-     *        previous states.
+     *        cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary
+     *        Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        switching-over &#x96; This status covers the range of Aurora internal operations that take place during
+     *        the switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB
+     *        cluster, and synchronizing replicas.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -255,55 +294,64 @@ public class FailoverState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as follows:
+     * The current status of the global cluster. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received by the
-     * service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being
-     * verified before the failover process can start.
+     * pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     * cluster's primary DB cluster and the specified secondary DB cluster are being verified before the operation
+     * starts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     * failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     * synchronizing replicas.
+     * failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary DB
+     * cluster to fail over the global cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled and
-     * the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous
-     * states.
+     * cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary Aurora
+     * DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * switching-over &#x96; This status covers the range of Aurora internal operations that take place during the
+     * switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB cluster,
+     * and synchronizing replicas.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the Aurora global database (<a>GlobalCluster</a>). Possible values are as
-     *        follows:</p>
+     *        The current status of the global cluster. Possible values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        pending &#x96; A request to fail over the Aurora global database (<a>GlobalCluster</a>) has been received
-     *        by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster
-     *        are being verified before the failover process can start.
+     *        pending &#x96; The service received a request to switch over or fail over the global cluster. The global
+     *        cluster's primary DB cluster and the specified secondary DB cluster are being verified before the
+     *        operation starts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        failing-over &#x96; This status covers the range of Aurora internal operations that take place during the
-     *        failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and
-     *        synchronizing replicas.
+     *        failing-over &#x96; Aurora is promoting the chosen secondary Aurora DB cluster to become the new primary
+     *        DB cluster to fail over the global cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        cancelling &#x96; The request to fail over the Aurora global database (<a>GlobalCluster</a>) was cancelled
-     *        and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their
-     *        previous states.
+     *        cancelling &#x96; The request to switch over or fail over the global cluster was cancelled and the primary
+     *        Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        switching-over &#x96; This status covers the range of Aurora internal operations that take place during
+     *        the switchover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB
+     *        cluster, and synchronizing replicas.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -408,6 +456,66 @@ public class FailoverState implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the
+     * operation is a global failover. Otherwise, it's a switchover.
+     * </p>
+     * 
+     * @param isDataLossAllowed
+     *        Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then
+     *        the operation is a global failover. Otherwise, it's a switchover.
+     */
+
+    public void setIsDataLossAllowed(Boolean isDataLossAllowed) {
+        this.isDataLossAllowed = isDataLossAllowed;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the
+     * operation is a global failover. Otherwise, it's a switchover.
+     * </p>
+     * 
+     * @return Indicates whether the operation is a global switchover or a global failover. If data loss is allowed,
+     *         then the operation is a global failover. Otherwise, it's a switchover.
+     */
+
+    public Boolean getIsDataLossAllowed() {
+        return this.isDataLossAllowed;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the
+     * operation is a global failover. Otherwise, it's a switchover.
+     * </p>
+     * 
+     * @param isDataLossAllowed
+     *        Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then
+     *        the operation is a global failover. Otherwise, it's a switchover.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FailoverState withIsDataLossAllowed(Boolean isDataLossAllowed) {
+        setIsDataLossAllowed(isDataLossAllowed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the operation is a global switchover or a global failover. If data loss is allowed, then the
+     * operation is a global failover. Otherwise, it's a switchover.
+     * </p>
+     * 
+     * @return Indicates whether the operation is a global switchover or a global failover. If data loss is allowed,
+     *         then the operation is a global failover. Otherwise, it's a switchover.
+     */
+
+    public Boolean isDataLossAllowed() {
+        return this.isDataLossAllowed;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -424,7 +532,9 @@ public class FailoverState implements Serializable, Cloneable {
         if (getFromDbClusterArn() != null)
             sb.append("FromDbClusterArn: ").append(getFromDbClusterArn()).append(",");
         if (getToDbClusterArn() != null)
-            sb.append("ToDbClusterArn: ").append(getToDbClusterArn());
+            sb.append("ToDbClusterArn: ").append(getToDbClusterArn()).append(",");
+        if (getIsDataLossAllowed() != null)
+            sb.append("IsDataLossAllowed: ").append(getIsDataLossAllowed());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +561,10 @@ public class FailoverState implements Serializable, Cloneable {
             return false;
         if (other.getToDbClusterArn() != null && other.getToDbClusterArn().equals(this.getToDbClusterArn()) == false)
             return false;
+        if (other.getIsDataLossAllowed() == null ^ this.getIsDataLossAllowed() == null)
+            return false;
+        if (other.getIsDataLossAllowed() != null && other.getIsDataLossAllowed().equals(this.getIsDataLossAllowed()) == false)
+            return false;
         return true;
     }
 
@@ -462,6 +576,7 @@ public class FailoverState implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFromDbClusterArn() == null) ? 0 : getFromDbClusterArn().hashCode());
         hashCode = prime * hashCode + ((getToDbClusterArn() == null) ? 0 : getToDbClusterArn().hashCode());
+        hashCode = prime * hashCode + ((getIsDataLossAllowed() == null) ? 0 : getIsDataLossAllowed().hashCode());
         return hashCode;
     }
 

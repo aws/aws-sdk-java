@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic
- * scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value
- * of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+ * scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the
+ * value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicy" target="_top">AWS
@@ -32,8 +32,8 @@ public class AutoScalingPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not
-     * cause an instance group to grow above or below these limits.
+     * The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
+     * not cause an instance group to grow above or below these limits.
      * </p>
      */
     private ScalingConstraints constraints;
@@ -46,13 +46,13 @@ public class AutoScalingPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not
-     * cause an instance group to grow above or below these limits.
+     * The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
+     * not cause an instance group to grow above or below these limits.
      * </p>
      * 
      * @param constraints
-     *        The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
-     *        not cause an instance group to grow above or below these limits.
+     *        The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity
+     *        will not cause an instance group to grow above or below these limits.
      */
 
     public void setConstraints(ScalingConstraints constraints) {
@@ -61,12 +61,12 @@ public class AutoScalingPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not
-     * cause an instance group to grow above or below these limits.
+     * The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
+     * not cause an instance group to grow above or below these limits.
      * </p>
      * 
-     * @return The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
-     *         not cause an instance group to grow above or below these limits.
+     * @return The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling
+     *         activity will not cause an instance group to grow above or below these limits.
      */
 
     public ScalingConstraints getConstraints() {
@@ -75,13 +75,13 @@ public class AutoScalingPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not
-     * cause an instance group to grow above or below these limits.
+     * The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
+     * not cause an instance group to grow above or below these limits.
      * </p>
      * 
      * @param constraints
-     *        The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will
-     *        not cause an instance group to grow above or below these limits.
+     *        The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity
+     *        will not cause an instance group to grow above or below these limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

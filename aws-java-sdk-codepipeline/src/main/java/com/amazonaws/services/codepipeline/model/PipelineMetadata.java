@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,17 @@ public class PipelineMetadata implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date updated;
+    /**
+     * <p>
+     * The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp
+     * format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling
+     * pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     * </p>
+     */
+    private java.util.Date pollingDisabledAt;
 
     /**
      * <p>
@@ -168,6 +179,76 @@ public class PipelineMetadata implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp
+     * format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling
+     * pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     * </p>
+     * 
+     * @param pollingDisabledAt
+     *        The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in
+     *        timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For
+     *        example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use
+     *        CloudWatch Events. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     *        polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     */
+
+    public void setPollingDisabledAt(java.util.Date pollingDisabledAt) {
+        this.pollingDisabledAt = pollingDisabledAt;
+    }
+
+    /**
+     * <p>
+     * The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp
+     * format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling
+     * pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     * </p>
+     * 
+     * @return The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in
+     *         timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For
+     *         example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use
+     *         CloudWatch Events. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     *         polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     */
+
+    public java.util.Date getPollingDisabledAt() {
+        return this.pollingDisabledAt;
+    }
+
+    /**
+     * <p>
+     * The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp
+     * format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a
+     * pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To
+     * learn more, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling
+     * pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     * </p>
+     * 
+     * @param pollingDisabledAt
+     *        The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in
+     *        timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For
+     *        example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use
+     *        CloudWatch Events. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+     *        polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineMetadata withPollingDisabledAt(java.util.Date pollingDisabledAt) {
+        setPollingDisabledAt(pollingDisabledAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +265,9 @@ public class PipelineMetadata implements Serializable, Cloneable, StructuredPojo
         if (getCreated() != null)
             sb.append("Created: ").append(getCreated()).append(",");
         if (getUpdated() != null)
-            sb.append("Updated: ").append(getUpdated());
+            sb.append("Updated: ").append(getUpdated()).append(",");
+        if (getPollingDisabledAt() != null)
+            sb.append("PollingDisabledAt: ").append(getPollingDisabledAt());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +294,10 @@ public class PipelineMetadata implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getUpdated() != null && other.getUpdated().equals(this.getUpdated()) == false)
             return false;
+        if (other.getPollingDisabledAt() == null ^ this.getPollingDisabledAt() == null)
+            return false;
+        if (other.getPollingDisabledAt() != null && other.getPollingDisabledAt().equals(this.getPollingDisabledAt()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +309,7 @@ public class PipelineMetadata implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getPipelineArn() == null) ? 0 : getPipelineArn().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getUpdated() == null) ? 0 : getUpdated().hashCode());
+        hashCode = prime * hashCode + ((getPollingDisabledAt() == null) ? 0 : getPollingDisabledAt().hashCode());
         return hashCode;
     }
 

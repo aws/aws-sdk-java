@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,33 +18,31 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeNetworkInterfaces.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkInterface> networkInterfaces;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * 
-     * @return Information about one or more network interfaces.
+     * @return Information about the network interfaces.
      */
 
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
@@ -56,11 +54,11 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * 
      * @param networkInterfaces
-     *        Information about one or more network interfaces.
+     *        Information about the network interfaces.
      */
 
     public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
@@ -74,7 +72,7 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +81,7 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param networkInterfaces
-     *        Information about one or more network interfaces.
+     *        Information about the network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +97,11 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * 
      * @param networkInterfaces
-     *        Information about one or more network interfaces.
+     *        Information about the network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +112,13 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -129,12 +127,12 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -143,13 +141,13 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * accessing the API using Amazon Web Services credentials.
      * </p>
      */
     private String authenticationToken;
@@ -42,12 +42,12 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * accessing the API using Amazon Web Services credentials.
      * </p>
      * 
      * @param authenticationToken
      *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *        accessing the API using AWS credentials.
+     *        accessing the API using Amazon Web Services credentials.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -57,11 +57,11 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * accessing the API using Amazon Web Services credentials.
      * </p>
      * 
      * @return Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *         accessing the API using AWS credentials.
+     *         accessing the API using Amazon Web Services credentials.
      */
 
     public String getAuthenticationToken() {
@@ -71,12 +71,12 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * accessing the API using Amazon Web Services credentials.
      * </p>
      * 
      * @param authenticationToken
      *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *        accessing the API using AWS credentials.
+     *        accessing the API using Amazon Web Services credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

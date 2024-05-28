@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
                     context.nextToken();
                     place.setAddressNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Categories", targetDepth)) {
+                    context.nextToken();
+                    place.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("Country", targetDepth)) {
                     context.nextToken();
                     place.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
@@ -88,9 +94,19 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
                     context.nextToken();
                     place.setStreet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SubMunicipality", targetDepth)) {
+                    context.nextToken();
+                    place.setSubMunicipality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SubRegion", targetDepth)) {
                     context.nextToken();
                     place.setSubRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SupplementalCategories", targetDepth)) {
+                    context.nextToken();
+                    place.setSupplementalCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TimeZone", targetDepth)) {
                     context.nextToken();

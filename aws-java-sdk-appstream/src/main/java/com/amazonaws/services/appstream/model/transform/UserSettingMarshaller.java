@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class UserSettingMarshaller {
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<String> PERMISSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Permission").build();
+    private static final MarshallingInfo<Integer> MAXIMUMLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumLength").build();
 
     private static final UserSettingMarshaller instance = new UserSettingMarshaller();
 
@@ -50,6 +52,7 @@ public class UserSettingMarshaller {
         try {
             protocolMarshaller.marshall(userSetting.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(userSetting.getPermission(), PERMISSION_BINDING);
+            protocolMarshaller.marshall(userSetting.getMaximumLength(), MAXIMUMLENGTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

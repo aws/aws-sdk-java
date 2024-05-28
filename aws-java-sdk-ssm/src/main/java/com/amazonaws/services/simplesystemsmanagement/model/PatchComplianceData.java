@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,12 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
      * </p>
+     * <note>
+     * <p>
+     * Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.
+     * </p>
+     * </note>
      */
     private String cVEIds;
 
@@ -416,9 +422,20 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
      * </p>
+     * <note>
+     * <p>
+     * Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.
+     * </p>
+     * </note>
      * 
      * @param cVEIds
-     *        The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     *        The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the
+     *        patch.</p> <note>
+     *        <p>
+     *        Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     *        <code>Failed</code>.
+     *        </p>
      */
 
     public void setCVEIds(String cVEIds) {
@@ -429,8 +446,19 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
      * </p>
+     * <note>
+     * <p>
+     * Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.
+     * </p>
+     * </note>
      * 
-     * @return The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     * @return The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the
+     *         patch.</p> <note>
+     *         <p>
+     *         Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     *         <code>Failed</code>.
+     *         </p>
      */
 
     public String getCVEIds() {
@@ -441,9 +469,20 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * <p>
      * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
      * </p>
+     * <note>
+     * <p>
+     * Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.
+     * </p>
+     * </note>
      * 
      * @param cVEIds
-     *        The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     *        The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the
+     *        patch.</p> <note>
+     *        <p>
+     *        Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or
+     *        <code>Failed</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

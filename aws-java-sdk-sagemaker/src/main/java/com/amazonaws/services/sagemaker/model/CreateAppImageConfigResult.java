@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateAppImageConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      */
     private String appImageConfigArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
      * @param appImageConfigArn
-     *        The Amazon Resource Name (ARN) of the AppImageConfig.
+     *        The ARN of the AppImageConfig.
      */
 
     public void setAppImageConfigArn(String appImageConfigArn) {
@@ -45,10 +45,10 @@ public class CreateAppImageConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AppImageConfig.
+     * @return The ARN of the AppImageConfig.
      */
 
     public String getAppImageConfigArn() {
@@ -57,11 +57,11 @@ public class CreateAppImageConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
      * @param appImageConfigArn
-     *        The Amazon Resource Name (ARN) of the AppImageConfig.
+     *        The ARN of the AppImageConfig.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

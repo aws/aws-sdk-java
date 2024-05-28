@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,9 @@ public class TransitGatewayRouteTableAttachment implements Serializable, Cloneab
     private String peeringId;
     /**
      * <p>
-     * The ARN of the transit gateway attachment route table.
+     * The ARN of the transit gateway attachment route table. For example,
+     * <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     * .
      * </p>
      */
     private String transitGatewayRouteTableArn;
@@ -110,11 +112,15 @@ public class TransitGatewayRouteTableAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ARN of the transit gateway attachment route table.
+     * The ARN of the transit gateway attachment route table. For example,
+     * <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     * .
      * </p>
      * 
      * @param transitGatewayRouteTableArn
-     *        The ARN of the transit gateway attachment route table.
+     *        The ARN of the transit gateway attachment route table. For example,
+     *        <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     *        .
      */
 
     public void setTransitGatewayRouteTableArn(String transitGatewayRouteTableArn) {
@@ -123,10 +129,14 @@ public class TransitGatewayRouteTableAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ARN of the transit gateway attachment route table.
+     * The ARN of the transit gateway attachment route table. For example,
+     * <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     * .
      * </p>
      * 
-     * @return The ARN of the transit gateway attachment route table.
+     * @return The ARN of the transit gateway attachment route table. For example,
+     *         <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     *         .
      */
 
     public String getTransitGatewayRouteTableArn() {
@@ -135,11 +145,15 @@ public class TransitGatewayRouteTableAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ARN of the transit gateway attachment route table.
+     * The ARN of the transit gateway attachment route table. For example,
+     * <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     * .
      * </p>
      * 
      * @param transitGatewayRouteTableArn
-     *        The ARN of the transit gateway attachment route table.
+     *        The ARN of the transit gateway attachment route table. For example,
+     *        <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

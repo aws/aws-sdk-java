@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,6 +115,12 @@ public interface AmazonSNS {
      * Adds a statement to a topic's access control policy, granting access for the specified Amazon Web Services
      * accounts to the specified actions.
      * </p>
+     * <note>
+     * <p>
+     * To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>,
+     * <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.
+     * </p>
+     * </note>
      * 
      * @param addPermissionRequest
      * @return Result of the AddPermission operation returned by the service.
@@ -190,6 +196,8 @@ public interface AmazonSNS {
      * @throws FilterPolicyLimitExceededException
      *         Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add
      *         more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.
+     * @throws ReplayLimitExceededException
+     *         Indicates that the request parameter has exceeded the maximum number of concurrent message replays.
      * @sample AmazonSNS.ConfirmSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription" target="_top">AWS API
      *      Documentation</a>
@@ -247,8 +255,16 @@ public interface AmazonSNS {
      * </li>
      * <li>
      * <p>
-     * For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code> and the
+     * For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The
      * <code>PlatformCredential</code> is <code>API key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the
+     * file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS
+     * recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.
      * </p>
      * </li>
      * <li>
@@ -414,7 +430,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param deleteEndpointRequest
-     *        Input for DeleteEndpoint action.
+     *        Input for <code>DeleteEndpoint</code> action.
      * @return Result of the DeleteEndpoint operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -437,7 +453,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param deletePlatformApplicationRequest
-     *        Input for DeletePlatformApplication action.
+     *        Input for <code>DeletePlatformApplication</code> action.
      * @return Result of the DeletePlatformApplication operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -497,6 +513,8 @@ public interface AmazonSNS {
      * @return Result of the DeleteTopic operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws InvalidStateException
+     *         Indicates that the specified state is not a valid state for an event source.
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @throws AuthorizationErrorException
@@ -557,7 +575,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param getEndpointAttributesRequest
-     *        Input for GetEndpointAttributes action.
+     *        Input for <code>GetEndpointAttributes</code> action.
      * @return Result of the GetEndpointAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -582,7 +600,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param getPlatformApplicationAttributesRequest
-     *        Input for GetPlatformApplicationAttributes action.
+     *        Input for <code>GetPlatformApplicationAttributes</code> action.
      * @return Result of the GetPlatformApplicationAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -732,7 +750,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
-     *        Input for ListEndpointsByPlatformApplication action.
+     *        Input for <code>ListEndpointsByPlatformApplication</code> action.
      * @return Result of the ListEndpointsByPlatformApplication operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -822,7 +840,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param listPlatformApplicationsRequest
-     *        Input for ListPlatformApplications action.
+     *        Input for <code>ListPlatformApplications</code> action.
      * @return Result of the ListPlatformApplications operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -1094,11 +1112,11 @@ public interface AmazonSNS {
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
      * @throws KMSDisabledException
-     *         The request was rejected because the specified customer master key (CMK) isn't enabled.
+     *         The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource isn't valid for this request. For
-     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     *         Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.
+     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     *         states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
      * @throws KMSNotFoundException
      *         The request was rejected because the specified entity or resource can't be found.
      * @throws KMSOptInRequiredException
@@ -1196,11 +1214,11 @@ public interface AmazonSNS {
      * @throws TooManyEntriesInBatchRequestException
      *         The batch request contains more entries than permissible.
      * @throws KMSDisabledException
-     *         The request was rejected because the specified customer master key (CMK) isn't enabled.
+     *         The request was rejected because the specified Amazon Web Services KMS key isn't enabled.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource isn't valid for this request. For
-     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     *         Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.
+     *         more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+     *         states of Amazon Web Services KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
      * @throws KMSNotFoundException
      *         The request was rejected because the specified entity or resource can't be found.
      * @throws KMSOptInRequiredException
@@ -1250,6 +1268,12 @@ public interface AmazonSNS {
      * <p>
      * Removes a statement from a topic's access control policy.
      * </p>
+     * <note>
+     * <p>
+     * To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>,
+     * <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.
+     * </p>
+     * </note>
      * 
      * @param removePermissionRequest
      *        Input for RemovePermission action.
@@ -1284,7 +1308,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param setEndpointAttributesRequest
-     *        Input for SetEndpointAttributes action.
+     *        Input for <code>SetEndpointAttributes</code> action.
      * @return Result of the SetEndpointAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -1311,7 +1335,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
-     *        Input for SetPlatformApplicationAttributes action.
+     *        Input for <code>SetPlatformApplicationAttributes</code> action.
      * @return Result of the SetPlatformApplicationAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -1375,6 +1399,8 @@ public interface AmazonSNS {
      * @throws FilterPolicyLimitExceededException
      *         Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add
      *         more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.
+     * @throws ReplayLimitExceededException
+     *         Indicates that the request parameter has exceeded the maximum number of concurrent message replays.
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @throws NotFoundException
@@ -1398,6 +1424,12 @@ public interface AmazonSNS {
      * <p>
      * Allows a topic owner to set an attribute of the topic to a new value.
      * </p>
+     * <note>
+     * <p>
+     * To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>,
+     * <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.
+     * </p>
+     * </note>
      * 
      * @param setTopicAttributesRequest
      *        Input for SetTopicAttributes action.
@@ -1434,7 +1466,7 @@ public interface AmazonSNS {
      * </p>
      * <p>
      * You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation
-     * tokens are valid for three days.
+     * tokens are valid for two days.
      * </p>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).
@@ -1448,6 +1480,8 @@ public interface AmazonSNS {
      * @throws FilterPolicyLimitExceededException
      *         Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add
      *         more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.
+     * @throws ReplayLimitExceededException
+     *         Indicates that the request parameter has exceeded the maximum number of concurrent message replays.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @throws InternalErrorException
@@ -1543,6 +1577,12 @@ public interface AmazonSNS {
      * final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the
      * topic if the <code>Unsubscribe</code> request was unintended.
      * </p>
+     * <note>
+     * <p>
+     * Amazon SQS queue subscriptions require authentication for deletion. Only the owner of the subscription, or the
+     * owner of the topic can unsubscribe using the required Amazon Web Services signature.
+     * </p>
+     * </note>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).
      * </p>

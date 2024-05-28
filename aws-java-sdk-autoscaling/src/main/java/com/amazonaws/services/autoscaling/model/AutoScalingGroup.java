@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,9 +106,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> targetGroupARNs;
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
      * </p>
      */
     private String healthCheckType;
@@ -232,6 +230,18 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private Integer defaultInstanceWarmup;
+    /**
+     * <p>
+     * The traffic sources associated with this Auto Scaling group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier> trafficSources;
+    /**
+     * <p>
+     * An instance maintenance policy.
+     * </p>
+     */
+    private InstanceMaintenancePolicy instanceMaintenancePolicy;
 
     /**
      * <p>
@@ -854,15 +864,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *        you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
-     *        unhealthy if it fails either the EC2 status checks or the load balancer health checks.
+     *        A comma-separated value string of one or more health check types.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -871,14 +877,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
      * </p>
      * 
-     * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *         you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
-     *         unhealthy if it fails either the EC2 status checks or the load balancer health checks.
+     * @return A comma-separated value string of one or more health check types.
      */
 
     public String getHealthCheckType() {
@@ -887,15 +889,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *        you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
-     *        unhealthy if it fails either the EC2 status checks or the load balancer health checks.
+     *        A comma-separated value string of one or more health check types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1889,6 +1887,119 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The traffic sources associated with this Auto Scaling group.
+     * </p>
+     * 
+     * @return The traffic sources associated with this Auto Scaling group.
+     */
+
+    public java.util.List<TrafficSourceIdentifier> getTrafficSources() {
+        if (trafficSources == null) {
+            trafficSources = new com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>();
+        }
+        return trafficSources;
+    }
+
+    /**
+     * <p>
+     * The traffic sources associated with this Auto Scaling group.
+     * </p>
+     * 
+     * @param trafficSources
+     *        The traffic sources associated with this Auto Scaling group.
+     */
+
+    public void setTrafficSources(java.util.Collection<TrafficSourceIdentifier> trafficSources) {
+        if (trafficSources == null) {
+            this.trafficSources = null;
+            return;
+        }
+
+        this.trafficSources = new com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>(trafficSources);
+    }
+
+    /**
+     * <p>
+     * The traffic sources associated with this Auto Scaling group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTrafficSources(java.util.Collection)} or {@link #withTrafficSources(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param trafficSources
+     *        The traffic sources associated with this Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withTrafficSources(TrafficSourceIdentifier... trafficSources) {
+        if (this.trafficSources == null) {
+            setTrafficSources(new com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>(trafficSources.length));
+        }
+        for (TrafficSourceIdentifier ele : trafficSources) {
+            this.trafficSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The traffic sources associated with this Auto Scaling group.
+     * </p>
+     * 
+     * @param trafficSources
+     *        The traffic sources associated with this Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withTrafficSources(java.util.Collection<TrafficSourceIdentifier> trafficSources) {
+        setTrafficSources(trafficSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An instance maintenance policy.
+     * </p>
+     * 
+     * @param instanceMaintenancePolicy
+     *        An instance maintenance policy.
+     */
+
+    public void setInstanceMaintenancePolicy(InstanceMaintenancePolicy instanceMaintenancePolicy) {
+        this.instanceMaintenancePolicy = instanceMaintenancePolicy;
+    }
+
+    /**
+     * <p>
+     * An instance maintenance policy.
+     * </p>
+     * 
+     * @return An instance maintenance policy.
+     */
+
+    public InstanceMaintenancePolicy getInstanceMaintenancePolicy() {
+        return this.instanceMaintenancePolicy;
+    }
+
+    /**
+     * <p>
+     * An instance maintenance policy.
+     * </p>
+     * 
+     * @param instanceMaintenancePolicy
+     *        An instance maintenance policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withInstanceMaintenancePolicy(InstanceMaintenancePolicy instanceMaintenancePolicy) {
+        setInstanceMaintenancePolicy(instanceMaintenancePolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1965,7 +2076,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getDesiredCapacityType() != null)
             sb.append("DesiredCapacityType: ").append(getDesiredCapacityType()).append(",");
         if (getDefaultInstanceWarmup() != null)
-            sb.append("DefaultInstanceWarmup: ").append(getDefaultInstanceWarmup());
+            sb.append("DefaultInstanceWarmup: ").append(getDefaultInstanceWarmup()).append(",");
+        if (getTrafficSources() != null)
+            sb.append("TrafficSources: ").append(getTrafficSources()).append(",");
+        if (getInstanceMaintenancePolicy() != null)
+            sb.append("InstanceMaintenancePolicy: ").append(getInstanceMaintenancePolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -2113,6 +2228,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return false;
         if (other.getDefaultInstanceWarmup() != null && other.getDefaultInstanceWarmup().equals(this.getDefaultInstanceWarmup()) == false)
             return false;
+        if (other.getTrafficSources() == null ^ this.getTrafficSources() == null)
+            return false;
+        if (other.getTrafficSources() != null && other.getTrafficSources().equals(this.getTrafficSources()) == false)
+            return false;
+        if (other.getInstanceMaintenancePolicy() == null ^ this.getInstanceMaintenancePolicy() == null)
+            return false;
+        if (other.getInstanceMaintenancePolicy() != null && other.getInstanceMaintenancePolicy().equals(this.getInstanceMaintenancePolicy()) == false)
+            return false;
         return true;
     }
 
@@ -2154,6 +2277,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacityType() == null) ? 0 : getDesiredCapacityType().hashCode());
         hashCode = prime * hashCode + ((getDefaultInstanceWarmup() == null) ? 0 : getDefaultInstanceWarmup().hashCode());
+        hashCode = prime * hashCode + ((getTrafficSources() == null) ? 0 : getTrafficSources().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMaintenancePolicy() == null) ? 0 : getInstanceMaintenancePolicy().hashCode());
         return hashCode;
     }
 

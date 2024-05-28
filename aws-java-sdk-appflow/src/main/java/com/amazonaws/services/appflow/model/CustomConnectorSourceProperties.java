@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class CustomConnectorSourceProperties implements Serializable, Cloneable,
      * </p>
      */
     private java.util.Map<String, String> customProperties;
+    /**
+     * <p>
+     * The API of the connector application that Amazon AppFlow uses to transfer your data.
+     * </p>
+     */
+    private DataTransferApi dataTransferApi;
 
     /**
      * <p>
@@ -150,6 +156,46 @@ public class CustomConnectorSourceProperties implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The API of the connector application that Amazon AppFlow uses to transfer your data.
+     * </p>
+     * 
+     * @param dataTransferApi
+     *        The API of the connector application that Amazon AppFlow uses to transfer your data.
+     */
+
+    public void setDataTransferApi(DataTransferApi dataTransferApi) {
+        this.dataTransferApi = dataTransferApi;
+    }
+
+    /**
+     * <p>
+     * The API of the connector application that Amazon AppFlow uses to transfer your data.
+     * </p>
+     * 
+     * @return The API of the connector application that Amazon AppFlow uses to transfer your data.
+     */
+
+    public DataTransferApi getDataTransferApi() {
+        return this.dataTransferApi;
+    }
+
+    /**
+     * <p>
+     * The API of the connector application that Amazon AppFlow uses to transfer your data.
+     * </p>
+     * 
+     * @param dataTransferApi
+     *        The API of the connector application that Amazon AppFlow uses to transfer your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomConnectorSourceProperties withDataTransferApi(DataTransferApi dataTransferApi) {
+        setDataTransferApi(dataTransferApi);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -164,7 +210,9 @@ public class CustomConnectorSourceProperties implements Serializable, Cloneable,
         if (getEntityName() != null)
             sb.append("EntityName: ").append(getEntityName()).append(",");
         if (getCustomProperties() != null)
-            sb.append("CustomProperties: ").append(getCustomProperties());
+            sb.append("CustomProperties: ").append(getCustomProperties()).append(",");
+        if (getDataTransferApi() != null)
+            sb.append("DataTransferApi: ").append(getDataTransferApi());
         sb.append("}");
         return sb.toString();
     }
@@ -187,6 +235,10 @@ public class CustomConnectorSourceProperties implements Serializable, Cloneable,
             return false;
         if (other.getCustomProperties() != null && other.getCustomProperties().equals(this.getCustomProperties()) == false)
             return false;
+        if (other.getDataTransferApi() == null ^ this.getDataTransferApi() == null)
+            return false;
+        if (other.getDataTransferApi() != null && other.getDataTransferApi().equals(this.getDataTransferApi()) == false)
+            return false;
         return true;
     }
 
@@ -197,6 +249,7 @@ public class CustomConnectorSourceProperties implements Serializable, Cloneable,
 
         hashCode = prime * hashCode + ((getEntityName() == null) ? 0 : getEntityName().hashCode());
         hashCode = prime * hashCode + ((getCustomProperties() == null) ? 0 : getCustomProperties().hashCode());
+        hashCode = prime * hashCode + ((getDataTransferApi() == null) ? 0 : getDataTransferApi().hashCode());
         return hashCode;
     }
 

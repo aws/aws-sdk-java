@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,16 @@ public class DetectModerationLabelsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("HumanLoopActivationOutput", targetDepth)) {
                     context.nextToken();
                     detectModerationLabelsResult.setHumanLoopActivationOutput(HumanLoopActivationOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ProjectVersion", targetDepth)) {
+                    context.nextToken();
+                    detectModerationLabelsResult.setProjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ContentTypes", targetDepth)) {
+                    context.nextToken();
+                    detectModerationLabelsResult.setContentTypes(new ListUnmarshaller<ContentType>(ContentTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

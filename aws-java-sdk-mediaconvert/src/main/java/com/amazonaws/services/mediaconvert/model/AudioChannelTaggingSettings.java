@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,11 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
- * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L), Right
- * (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center (C) by
- * default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec must be
- * AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+ * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. When you don't specify a
+ * value, MediaConvert labels your track as Center (C) by default. To use Audio layout tagging, your output must be in a
+ * QuickTime (MOV) container and your audio codec must be AAC, WAV, or AIFF.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioChannelTaggingSettings"
  *      target="_top">AWS API Documentation</a>
@@ -31,18 +29,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AudioChannelTaggingSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     * example, if this track is the left surround channel, choose Left surround (LS).
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
      */
     private String channelTag;
+    /**
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     */
+    private java.util.List<String> channelTags;
 
     /**
-     * You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     * example, if this track is the left surround channel, choose Left surround (LS).
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * 
      * @param channelTag
-     *        You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     *        example, if this track is the left surround channel, choose Left surround (LS).
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * @see AudioChannelTag
      */
 
@@ -51,11 +62,16 @@ public class AudioChannelTaggingSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     * example, if this track is the left surround channel, choose Left surround (LS).
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * 
-     * @return You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     *         example, if this track is the left surround channel, choose Left surround (LS).
+     * @return Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *         layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *         track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *         If your output has multiple single-channel audio tracks, enter a single channel layout tag for each
+     *         track.
      * @see AudioChannelTag
      */
 
@@ -64,12 +80,16 @@ public class AudioChannelTaggingSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     * example, if this track is the left surround channel, choose Left surround (LS).
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * 
      * @param channelTag
-     *        You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     *        example, if this track is the left surround channel, choose Left surround (LS).
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioChannelTag
      */
@@ -80,18 +100,141 @@ public class AudioChannelTaggingSettings implements Serializable, Cloneable, Str
     }
 
     /**
-     * You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     * example, if this track is the left surround channel, choose Left surround (LS).
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * 
      * @param channelTag
-     *        You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For
-     *        example, if this track is the left surround channel, choose Left surround (LS).
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioChannelTag
      */
 
     public AudioChannelTaggingSettings withChannelTag(AudioChannelTag channelTag) {
         this.channelTag = channelTag.toString();
+        return this;
+    }
+
+    /**
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * 
+     * @return Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *         layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *         track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *         If your output has multiple single-channel audio tracks, enter a single channel layout tag for each
+     *         track.
+     * @see AudioChannelTag
+     */
+
+    public java.util.List<String> getChannelTags() {
+        return channelTags;
+    }
+
+    /**
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * 
+     * @param channelTags
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * @see AudioChannelTag
+     */
+
+    public void setChannelTags(java.util.Collection<String> channelTags) {
+        if (channelTags == null) {
+            this.channelTags = null;
+            return;
+        }
+
+        this.channelTags = new java.util.ArrayList<String>(channelTags);
+    }
+
+    /**
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChannelTags(java.util.Collection)} or {@link #withChannelTags(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param channelTags
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AudioChannelTag
+     */
+
+    public AudioChannelTaggingSettings withChannelTags(String... channelTags) {
+        if (this.channelTags == null) {
+            setChannelTags(new java.util.ArrayList<String>(channelTags.length));
+        }
+        for (String ele : channelTags) {
+            this.channelTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * 
+     * @param channelTags
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AudioChannelTag
+     */
+
+    public AudioChannelTaggingSettings withChannelTags(java.util.Collection<String> channelTags) {
+        setChannelTags(channelTags);
+        return this;
+    }
+
+    /**
+     * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout
+     * tags in the same order as your output's audio channel order. For example, if your output audio track has a left
+     * and a right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has
+     * multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * 
+     * @param channelTags
+     *        Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel
+     *        layout tags in the same order as your output's audio channel order. For example, if your output audio
+     *        track has a left and a right channel, enter Left (L) for the first channel and Right (R) for the second.
+     *        If your output has multiple single-channel audio tracks, enter a single channel layout tag for each track.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AudioChannelTag
+     */
+
+    public AudioChannelTaggingSettings withChannelTags(AudioChannelTag... channelTags) {
+        java.util.ArrayList<String> channelTagsCopy = new java.util.ArrayList<String>(channelTags.length);
+        for (AudioChannelTag value : channelTags) {
+            channelTagsCopy.add(value.toString());
+        }
+        if (getChannelTags() == null) {
+            setChannelTags(channelTagsCopy);
+        } else {
+            getChannelTags().addAll(channelTagsCopy);
+        }
         return this;
     }
 
@@ -108,7 +251,9 @@ public class AudioChannelTaggingSettings implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChannelTag() != null)
-            sb.append("ChannelTag: ").append(getChannelTag());
+            sb.append("ChannelTag: ").append(getChannelTag()).append(",");
+        if (getChannelTags() != null)
+            sb.append("ChannelTags: ").append(getChannelTags());
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +272,10 @@ public class AudioChannelTaggingSettings implements Serializable, Cloneable, Str
             return false;
         if (other.getChannelTag() != null && other.getChannelTag().equals(this.getChannelTag()) == false)
             return false;
+        if (other.getChannelTags() == null ^ this.getChannelTags() == null)
+            return false;
+        if (other.getChannelTags() != null && other.getChannelTags().equals(this.getChannelTags()) == false)
+            return false;
         return true;
     }
 
@@ -136,6 +285,7 @@ public class AudioChannelTaggingSettings implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getChannelTag() == null) ? 0 : getChannelTag().hashCode());
+        hashCode = prime * hashCode + ((getChannelTags() == null) ? 0 : getChannelTags().hashCode());
         return hashCode;
     }
 

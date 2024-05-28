@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     * </p>
      */
     private String externalUserId;
     /**
@@ -56,6 +62,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API requests
+     * that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     * requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
      * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
      * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
@@ -74,7 +94,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
-     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * or content streams, remote attendees can receive those streams, but only after media renegotiation between the
      * client and the Amazon Chime back-end server.
      * </p>
      * </li>
@@ -127,10 +147,21 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application.
+     *        a builder application.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
      */
 
     public void setExternalUserId(String externalUserId) {
@@ -142,9 +173,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     * </p>
      * 
      * @return The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *         a builder application.
+     *         a builder application.</p>
+     *         <p>
+     *         Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *         </p>
+     *         <p>
+     *         Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
      */
 
     public String getExternalUserId() {
@@ -156,10 +198,21 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application.
+     *        a builder application.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,6 +239,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API requests
+     * that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     * requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
      * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
      * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
@@ -204,7 +271,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
-     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * or content streams, remote attendees can receive those streams, but only after media renegotiation between the
      * client and the Amazon Chime back-end server.
      * </p>
      * </li>
@@ -225,6 +292,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
+     *        If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API
+     *        requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     *        <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     *        requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     *        <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless
      *        you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you
      *        don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request
@@ -243,7 +324,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      *        <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on
-     *        their video or content streams, remote attendess can receive those streams, but only after media
+     *        their video or content streams, remote attendees can receive those streams, but only after media
      *        renegotiation between the client and the Amazon Chime back-end server.
      *        </p>
      *        </li>
@@ -271,6 +352,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API requests
+     * that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     * requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
      * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
      * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
@@ -289,7 +384,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
-     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * or content streams, remote attendees can receive those streams, but only after media renegotiation between the
      * client and the Amazon Chime back-end server.
      * </p>
      * </li>
@@ -307,6 +402,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      *         When using capabilities, be aware of these corner cases:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API
+     *         requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     *         <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     *         requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     *         <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
@@ -327,7 +436,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      *         <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on
-     *         their video or content streams, remote attendess can receive those streams, but only after media
+     *         their video or content streams, remote attendees can receive those streams, but only after media
      *         renegotiation between the client and the Amazon Chime back-end server.
      *         </p>
      *         </li>
@@ -355,6 +464,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
+     * If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API requests
+     * that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     * requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you
      * also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set
      * the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code.
@@ -373,7 +496,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video
-     * or content streams, remote attendess can receive those streams, but only after media renegotiation between the
+     * or content streams, remote attendees can receive those streams, but only after media renegotiation between the
      * client and the Amazon Chime back-end server.
      * </p>
      * </li>
@@ -394,6 +517,20 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
+     *        If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting, all API
+     *        requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     *        <code>AttendeeCapabilities:Video</code> will be rejected with <code>ValidationError 400</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a meeting, all API
+     *        requests that include <code>SendReceive</code>, <code>Send</code>, or <code>Receive</code> for
+     *        <code>AttendeeCapabilities:Content</code> will be rejected with <code>ValidationError 400</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless
      *        you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you
      *        don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request
@@ -412,7 +549,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or
      *        <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on
-     *        their video or content streams, remote attendess can receive those streams, but only after media
+     *        their video or content streams, remote attendees can receive those streams, but only after media
      *        renegotiation between the client and the Amazon Chime back-end server.
      *        </p>
      *        </li>

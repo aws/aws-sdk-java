@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,10 +35,14 @@ public class ServicePipelineMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStatus").build();
     private static final MarshallingInfo<String> DEPLOYMENTSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStatusMessage").build();
+    private static final MarshallingInfo<String> LASTATTEMPTEDDEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAttemptedDeploymentId").build();
     private static final MarshallingInfo<java.util.Date> LASTDEPLOYMENTATTEMPTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastDeploymentAttemptedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTDEPLOYMENTSUCCEEDEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastDeploymentSucceededAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTSUCCEEDEDDEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastSucceededDeploymentId").build();
     private static final MarshallingInfo<String> SPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("spec").build();
     private static final MarshallingInfo<String> TEMPLATEMAJORVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,8 +72,10 @@ public class ServicePipelineMarshaller {
             protocolMarshaller.marshall(servicePipeline.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(servicePipeline.getDeploymentStatus(), DEPLOYMENTSTATUS_BINDING);
             protocolMarshaller.marshall(servicePipeline.getDeploymentStatusMessage(), DEPLOYMENTSTATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(servicePipeline.getLastAttemptedDeploymentId(), LASTATTEMPTEDDEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(servicePipeline.getLastDeploymentAttemptedAt(), LASTDEPLOYMENTATTEMPTEDAT_BINDING);
             protocolMarshaller.marshall(servicePipeline.getLastDeploymentSucceededAt(), LASTDEPLOYMENTSUCCEEDEDAT_BINDING);
+            protocolMarshaller.marshall(servicePipeline.getLastSucceededDeploymentId(), LASTSUCCEEDEDDEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(servicePipeline.getSpec(), SPEC_BINDING);
             protocolMarshaller.marshall(servicePipeline.getTemplateMajorVersion(), TEMPLATEMAJORVERSION_BINDING);
             protocolMarshaller.marshall(servicePipeline.getTemplateMinorVersion(), TEMPLATEMINORVERSION_BINDING);

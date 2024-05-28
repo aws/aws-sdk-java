@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * </p>
+     */
+    private java.util.List<String> folderArns;
 
     /**
      * <p>
@@ -607,6 +613,76 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * </p>
+     * 
+     * @return When you create the data source, Amazon QuickSight adds the data source to these folders.
+     */
+
+    public java.util.List<String> getFolderArns() {
+        return folderArns;
+    }
+
+    /**
+     * <p>
+     * When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the data source, Amazon QuickSight adds the data source to these folders.
+     */
+
+    public void setFolderArns(java.util.Collection<String> folderArns) {
+        if (folderArns == null) {
+            this.folderArns = null;
+            return;
+        }
+
+        this.folderArns = new java.util.ArrayList<String>(folderArns);
+    }
+
+    /**
+     * <p>
+     * When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFolderArns(java.util.Collection)} or {@link #withFolderArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withFolderArns(String... folderArns) {
+        if (this.folderArns == null) {
+            setFolderArns(new java.util.ArrayList<String>(folderArns.length));
+        }
+        for (String ele : folderArns) {
+            this.folderArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the data source, Amazon QuickSight adds the data source to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withFolderArns(java.util.Collection<String> folderArns) {
+        setFolderArns(folderArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -637,7 +713,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getSslProperties() != null)
             sb.append("SslProperties: ").append(getSslProperties()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFolderArns() != null)
+            sb.append("FolderArns: ").append(getFolderArns());
         sb.append("}");
         return sb.toString();
     }
@@ -692,6 +770,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFolderArns() == null ^ this.getFolderArns() == null)
+            return false;
+        if (other.getFolderArns() != null && other.getFolderArns().equals(this.getFolderArns()) == false)
+            return false;
         return true;
     }
 
@@ -710,6 +792,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getVpcConnectionProperties() == null) ? 0 : getVpcConnectionProperties().hashCode());
         hashCode = prime * hashCode + ((getSslProperties() == null) ? 0 : getSslProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFolderArns() == null) ? 0 : getFolderArns().hashCode());
         return hashCode;
     }
 

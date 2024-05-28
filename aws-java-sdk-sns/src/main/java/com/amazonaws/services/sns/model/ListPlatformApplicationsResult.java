@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for ListPlatformApplications action.
+ * Response for <code>ListPlatformApplications</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications" target="_top">AWS API
@@ -28,24 +28,24 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications action.
+     * Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlatformApplication> platformApplications;
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
-     * after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if additional
+     * records are available after the first page results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications action.
+     * Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * </p>
      * 
-     * @return Platform applications returned when calling ListPlatformApplications action.
+     * @return Platform applications returned when calling <code>ListPlatformApplications</code> action.
      */
 
     public java.util.List<PlatformApplication> getPlatformApplications() {
@@ -57,11 +57,11 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications action.
+     * Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * </p>
      * 
      * @param platformApplications
-     *        Platform applications returned when calling ListPlatformApplications action.
+     *        Platform applications returned when calling <code>ListPlatformApplications</code> action.
      */
 
     public void setPlatformApplications(java.util.Collection<PlatformApplication> platformApplications) {
@@ -75,7 +75,7 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications action.
+     * Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param platformApplications
-     *        Platform applications returned when calling ListPlatformApplications action.
+     *        Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Platform applications returned when calling ListPlatformApplications action.
+     * Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * </p>
      * 
      * @param platformApplications
-     *        Platform applications returned when calling ListPlatformApplications action.
+     *        Platform applications returned when calling <code>ListPlatformApplications</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,13 +115,13 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
-     * after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if additional
+     * records are available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is returned when calling ListPlatformApplications action if additional records are
-     *        available after the first page results.
+     *        <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if
+     *        additional records are available after the first page results.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,12 +130,12 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
-     * after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if additional
+     * records are available after the first page results.
      * </p>
      * 
-     * @return NextToken string is returned when calling ListPlatformApplications action if additional records are
-     *         available after the first page results.
+     * @return <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if
+     *         additional records are available after the first page results.
      */
 
     public String getNextToken() {
@@ -144,13 +144,13 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * NextToken string is returned when calling ListPlatformApplications action if additional records are available
-     * after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if additional
+     * records are available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is returned when calling ListPlatformApplications action if additional records are
-     *        available after the first page results.
+     *        <code>NextToken</code> string is returned when calling <code>ListPlatformApplications</code> action if
+     *        additional records are available after the first page results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,11 +33,19 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
     private String phoneNumberId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      */
     private String targetArn;
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     */
+    private String instanceId;
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
@@ -90,13 +98,14 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      * 
      * @param targetArn
      *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
-     *        numbers are claimed to.
+     *        number inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>
+     *        .
      */
 
     public void setTargetArn(String targetArn) {
@@ -105,12 +114,13 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
-     *         numbers are claimed to.
+     *         number inbound traffic is routed through. You must enter <code>InstanceId</code> or
+     *         <code>TargetArn</code>.
      */
 
     public String getTargetArn() {
@@ -119,18 +129,74 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      * 
      * @param targetArn
      *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
-     *        numbers are claimed to.
+     *        number inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdatePhoneNumberRequest withTargetArn(String targetArn) {
         setTargetArn(targetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or
+     *        <code>TargetArn</code>.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or
+     *         <code>TargetArn</code>.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or
+     *        <code>TargetArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
         return this;
     }
 
@@ -208,6 +274,8 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("PhoneNumberId: ").append(getPhoneNumberId()).append(",");
         if (getTargetArn() != null)
             sb.append("TargetArn: ").append(getTargetArn()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -232,6 +300,10 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTargetArn() != null && other.getTargetArn().equals(this.getTargetArn()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -246,6 +318,7 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

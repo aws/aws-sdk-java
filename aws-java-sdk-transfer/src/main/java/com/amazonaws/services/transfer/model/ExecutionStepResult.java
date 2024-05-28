@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,22 +35,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: Copy the file to another location.
+     * <b> <code>COPY</code> </b> - Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     * <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: Delete the file.
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: Add a tag to the file.
+     * <b> <code>DELETE</code> </b> - Delete the file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>TAG</code> </b> - Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -77,22 +82,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: Copy the file to another location.
+     * <b> <code>COPY</code> </b> - Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     * <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: Delete the file.
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: Add a tag to the file.
+     * <b> <code>DELETE</code> </b> - Delete the file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>TAG</code> </b> - Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -102,22 +112,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>COPY</i>: Copy the file to another location.
+     *        <b> <code>COPY</code> </b> - Copy the file to another location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     *        <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>DELETE</i>: Delete the file.
+     *        <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TAG</i>: Add a tag to the file.
+     *        <b> <code>DELETE</code> </b> - Delete the file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>TAG</code> </b> - Add a tag to the file.
      *        </p>
      *        </li>
      * @see WorkflowStepType
@@ -134,22 +149,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: Copy the file to another location.
+     * <b> <code>COPY</code> </b> - Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     * <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: Delete the file.
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: Add a tag to the file.
+     * <b> <code>DELETE</code> </b> - Delete the file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>TAG</code> </b> - Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -158,22 +178,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>COPY</i>: Copy the file to another location.
+     *         <b> <code>COPY</code> </b> - Copy the file to another location.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     *         <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>DELETE</i>: Delete the file.
+     *         <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>TAG</i>: Add a tag to the file.
+     *         <b> <code>DELETE</code> </b> - Delete the file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>TAG</code> </b> - Add a tag to the file.
      *         </p>
      *         </li>
      * @see WorkflowStepType
@@ -190,22 +215,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: Copy the file to another location.
+     * <b> <code>COPY</code> </b> - Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     * <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: Delete the file.
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: Add a tag to the file.
+     * <b> <code>DELETE</code> </b> - Delete the file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>TAG</code> </b> - Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -215,22 +245,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>COPY</i>: Copy the file to another location.
+     *        <b> <code>COPY</code> </b> - Copy the file to another location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     *        <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>DELETE</i>: Delete the file.
+     *        <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TAG</i>: Add a tag to the file.
+     *        <b> <code>DELETE</code> </b> - Delete the file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>TAG</code> </b> - Add a tag to the file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -249,22 +284,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <i>COPY</i>: Copy the file to another location.
+     * <b> <code>COPY</code> </b> - Copy the file to another location.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     * <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>DELETE</i>: Delete the file.
+     * <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TAG</i>: Add a tag to the file.
+     * <b> <code>DELETE</code> </b> - Delete the file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>TAG</code> </b> - Add a tag to the file.
      * </p>
      * </li>
      * </ul>
@@ -274,22 +314,27 @@ public class ExecutionStepResult implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>COPY</i>: Copy the file to another location.
+     *        <b> <code>COPY</code> </b> - Copy the file to another location.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+     *        <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>DELETE</i>: Delete the file.
+     *        <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TAG</i>: Add a tag to the file.
+     *        <b> <code>DELETE</code> </b> - Delete the file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>TAG</code> </b> - Add a tag to the file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

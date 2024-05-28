@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,11 @@ import com.amazonaws.*;
 public class AbstractAWSMediaTailor implements AWSMediaTailor {
 
     protected AbstractAWSMediaTailor() {
+    }
+
+    @Override
+    public ConfigureLogsForChannelResult configureLogsForChannel(ConfigureLogsForChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -224,6 +229,11 @@ public class AbstractAWSMediaTailor implements AWSMediaTailor {
 
     @Override
     public UpdateLiveSourceResult updateLiveSource(UpdateLiveSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProgramResult updateProgram(UpdateProgramRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

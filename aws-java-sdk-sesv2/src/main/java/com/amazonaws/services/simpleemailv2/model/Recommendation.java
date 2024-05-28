@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
     private String resourceArn;
     /**
      * <p>
-     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     * <code>BIMI</code>.
      * </p>
      */
     private String type;
@@ -121,11 +122,13 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     * <code>BIMI</code>.
      * </p>
      * 
      * @param type
-     *        The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     *        The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     *        <code>BIMI</code>.
      * @see RecommendationType
      */
 
@@ -135,10 +138,12 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     * <code>BIMI</code>.
      * </p>
      * 
-     * @return The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     * @return The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     *         <code>BIMI</code>.
      * @see RecommendationType
      */
 
@@ -148,11 +153,13 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     * <code>BIMI</code>.
      * </p>
      * 
      * @param type
-     *        The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     *        The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     *        <code>BIMI</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationType
      */
@@ -164,11 +171,13 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     * The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     * <code>BIMI</code>.
      * </p>
      * 
      * @param type
-     *        The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+     *        The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or
+     *        <code>BIMI</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationType
      */

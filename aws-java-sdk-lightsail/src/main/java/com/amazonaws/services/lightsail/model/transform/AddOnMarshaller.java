@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class AddOnMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snapshotTimeOfDay").build();
     private static final MarshallingInfo<String> NEXTSNAPSHOTTIMEOFDAY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextSnapshotTimeOfDay").build();
+    private static final MarshallingInfo<String> THRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("threshold").build();
+    private static final MarshallingInfo<String> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("duration").build();
 
     private static final AddOnMarshaller instance = new AddOnMarshaller();
 
@@ -56,6 +60,8 @@ public class AddOnMarshaller {
             protocolMarshaller.marshall(addOn.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(addOn.getSnapshotTimeOfDay(), SNAPSHOTTIMEOFDAY_BINDING);
             protocolMarshaller.marshall(addOn.getNextSnapshotTimeOfDay(), NEXTSNAPSHOTTIMEOFDAY_BINDING);
+            protocolMarshaller.marshall(addOn.getThreshold(), THRESHOLD_BINDING);
+            protocolMarshaller.marshall(addOn.getDuration(), DURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

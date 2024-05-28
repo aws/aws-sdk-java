@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,6 +132,19 @@ public class AbstractAmazonTranscribeAsync extends AbstractAmazonTranscribe impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMedicalScribeJobResult> deleteMedicalScribeJobAsync(DeleteMedicalScribeJobRequest request) {
+
+        return deleteMedicalScribeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMedicalScribeJobResult> deleteMedicalScribeJobAsync(DeleteMedicalScribeJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMedicalScribeJobRequest, DeleteMedicalScribeJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMedicalTranscriptionJobResult> deleteMedicalTranscriptionJobAsync(DeleteMedicalTranscriptionJobRequest request) {
 
         return deleteMedicalTranscriptionJobAsync(request, null);
@@ -231,6 +244,19 @@ public class AbstractAmazonTranscribeAsync extends AbstractAmazonTranscribe impl
     @Override
     public java.util.concurrent.Future<GetCallAnalyticsJobResult> getCallAnalyticsJobAsync(GetCallAnalyticsJobRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCallAnalyticsJobRequest, GetCallAnalyticsJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMedicalScribeJobResult> getMedicalScribeJobAsync(GetMedicalScribeJobRequest request) {
+
+        return getMedicalScribeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMedicalScribeJobResult> getMedicalScribeJobAsync(GetMedicalScribeJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMedicalScribeJobRequest, GetMedicalScribeJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -340,6 +366,19 @@ public class AbstractAmazonTranscribeAsync extends AbstractAmazonTranscribe impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListMedicalScribeJobsResult> listMedicalScribeJobsAsync(ListMedicalScribeJobsRequest request) {
+
+        return listMedicalScribeJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMedicalScribeJobsResult> listMedicalScribeJobsAsync(ListMedicalScribeJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMedicalScribeJobsRequest, ListMedicalScribeJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMedicalTranscriptionJobsResult> listMedicalTranscriptionJobsAsync(ListMedicalTranscriptionJobsRequest request) {
 
         return listMedicalTranscriptionJobsAsync(request, null);
@@ -426,6 +465,19 @@ public class AbstractAmazonTranscribeAsync extends AbstractAmazonTranscribe impl
     @Override
     public java.util.concurrent.Future<StartCallAnalyticsJobResult> startCallAnalyticsJobAsync(StartCallAnalyticsJobRequest request,
             com.amazonaws.handlers.AsyncHandler<StartCallAnalyticsJobRequest, StartCallAnalyticsJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMedicalScribeJobResult> startMedicalScribeJobAsync(StartMedicalScribeJobRequest request) {
+
+        return startMedicalScribeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMedicalScribeJobResult> startMedicalScribeJobAsync(StartMedicalScribeJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMedicalScribeJobRequest, StartMedicalScribeJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

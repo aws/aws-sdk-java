@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class EngineTranscribeMedicalSettings implements Serializable, Cloneable,
     private String vocabularyName;
     /**
      * <p>
-     * The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     * meeting's Region.
+     * The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime
+     * uses the meeting's Region.
      * </p>
      */
     private String region;
@@ -285,13 +285,13 @@ public class EngineTranscribeMedicalSettings implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     * meeting's Region.
+     * The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime
+     * uses the meeting's Region.
      * </p>
      * 
      * @param region
-     *        The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     *        meeting's Region.
+     *        The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon
+     *        Chime uses the meeting's Region.
      * @see TranscribeMedicalRegion
      */
 
@@ -301,12 +301,12 @@ public class EngineTranscribeMedicalSettings implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     * meeting's Region.
+     * The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime
+     * uses the meeting's Region.
      * </p>
      * 
-     * @return The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     *         meeting's Region.
+     * @return The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon
+     *         Chime uses the meeting's Region.
      * @see TranscribeMedicalRegion
      */
 
@@ -316,13 +316,13 @@ public class EngineTranscribeMedicalSettings implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     * meeting's Region.
+     * The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime
+     * uses the meeting's Region.
      * </p>
      * 
      * @param region
-     *        The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     *        meeting's Region.
+     *        The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon
+     *        Chime uses the meeting's Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscribeMedicalRegion
      */
@@ -334,13 +334,13 @@ public class EngineTranscribeMedicalSettings implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     * meeting's Region.
+     * The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime
+     * uses the meeting's Region.
      * </p>
      * 
      * @param region
-     *        The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the
-     *        meeting's Region.
+     *        The Amazon Web Services Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon
+     *        Chime uses the meeting's Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscribeMedicalRegion
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,10 @@ public enum Tier {
     SAP_HANA_HIGH_AVAILABILITY("SAP_HANA_HIGH_AVAILABILITY"),
     SQL_SERVER_FAILOVER_CLUSTER_INSTANCE("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"),
     SHAREPOINT("SHAREPOINT"),
-    ACTIVE_DIRECTORY("ACTIVE_DIRECTORY");
+    ACTIVE_DIRECTORY("ACTIVE_DIRECTORY"),
+    SAP_NETWEAVER_STANDARD("SAP_NETWEAVER_STANDARD"),
+    SAP_NETWEAVER_DISTRIBUTED("SAP_NETWEAVER_DISTRIBUTED"),
+    SAP_NETWEAVER_HIGH_AVAILABILITY("SAP_NETWEAVER_HIGH_AVAILABILITY");
 
     private String value;
 

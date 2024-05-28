@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provides the configuration information to connect to an Amazon S3 bucket.
  * </p>
+ * <note>
+ * <p>
+ * Amazon Kendra now supports an upgraded Amazon S3 connector.
+ * </p>
+ * <p>
+ * You must now use the <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration
+ * </a> object instead of the <code>S3DataSourceConfiguration</code> object to configure your connector.
+ * </p>
+ * <p>
+ * Connectors configured using the older console and API architecture will continue to function as configured. However,
+ * you won't be able to edit or update them. If you want to edit or update your connector configuration, you must create
+ * a new connector.
+ * </p>
+ * <p>
+ * We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the
+ * older architecture is scheduled to end by June 2024.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/S3DataSourceConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -42,61 +61,116 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     private java.util.List<String> inclusionPrefixes;
     /**
      * <p>
-     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
-     * also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to include in your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
-     * 'income_tax'.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      */
     private java.util.List<String> inclusionPatterns;
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to exclude from your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
-     * .jpg).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     * 'internal', 'internal_only', 'company_internal'.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      */
     private java.util.List<String> exclusionPatterns;
 
@@ -222,56 +296,112 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
-     * also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to include in your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
-     * 'income_tax'.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * 
-     * @return A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
-     *         pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *         <p>
-     *         Some <a
-     *         href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *         </a> are:
-     *         </p>
+     * @return A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *         the given pattern) for certain file names and file types to include in your index. If a document matches
+     *         both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the
+     *         document is not indexed. Examples of glob patterns include:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *         <i>/myapp/config/*</i>—All files inside config directory.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *         <i>**&#47;*.png</i>—All .png files in all directories.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
-     *         'taxes', 'income_tax'.
+     *         <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *         .jpg).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *         'internal_only', 'company_internal'.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more examples, see <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *         Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      */
 
     public java.util.List<String> getInclusionPatterns() {
@@ -280,57 +410,113 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
-     * also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to include in your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
-     * 'income_tax'.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * 
      * @param inclusionPatterns
-     *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
-     *        pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *        <p>
-     *        Some <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *        </a> are:
-     *        </p>
+     *        A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *        the given pattern) for certain file names and file types to include in your index. If a document matches
+     *        both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document
+     *        is not indexed. Examples of glob patterns include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *        <i>/myapp/config/*</i>—All files inside config directory.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *        <i>**&#47;*.png</i>—All .png files in all directories.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
-     *        'taxes', 'income_tax'.
+     *        <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *        .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *        'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more examples, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *        Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      */
 
     public void setInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
@@ -344,31 +530,59 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
-     * also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to include in your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
-     * 'income_tax'.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInclusionPatterns(java.util.Collection)} or {@link #withInclusionPatterns(java.util.Collection)} if
@@ -376,30 +590,58 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param inclusionPatterns
-     *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
-     *        pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *        <p>
-     *        Some <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *        </a> are:
-     *        </p>
+     *        A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *        the given pattern) for certain file names and file types to include in your index. If a document matches
+     *        both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document
+     *        is not indexed. Examples of glob patterns include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *        <i>/myapp/config/*</i>—All files inside config directory.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *        <i>**&#47;*.png</i>—All .png files in all directories.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
-     *        'taxes', 'income_tax'.
+     *        <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *        .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *        'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more examples, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *        Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,57 +657,113 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern
-     * also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to include in your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
-     * 'income_tax'.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * 
      * @param inclusionPatterns
-     *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
-     *        pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *        <p>
-     *        Some <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *        </a> are:
-     *        </p>
+     *        A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *        the given pattern) for certain file names and file types to include in your index. If a document matches
+     *        both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document
+     *        is not indexed. Examples of glob patterns include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *        <i>/myapp/config/*</i>—All files inside config directory.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *        <i>**&#47;*.png</i>—All .png files in all directories.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
-     *        'taxes', 'income_tax'.
+     *        <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *        .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *        'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more examples, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *        Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,58 +774,112 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to exclude from your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
-     * .jpg).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     * 'internal', 'internal_only', 'company_internal'.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * 
-     * @return A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *         prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *         <p>
-     *         Some <a
-     *         href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *         </a> are:
-     *         </p>
+     * @return A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *         the given pattern) for certain file names and file types to exclude from your index. If a document
+     *         matches both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the
+     *         document is not indexed. Examples of glob patterns include:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
-     *         .png and .jpg).
+     *         <i>/myapp/config/*</i>—All files inside config directory.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     *         'internal', 'internal_only', 'company_internal'.
+     *         <i>**&#47;*.png</i>—All .png files in all directories.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *         <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *         .jpg).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *         'internal_only', 'company_internal'.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more examples, see <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *         Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      */
 
     public java.util.List<String> getExclusionPatterns() {
@@ -536,59 +888,113 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to exclude from your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
-     * .jpg).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     * 'internal', 'internal_only', 'company_internal'.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * 
      * @param exclusionPatterns
-     *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *        <p>
-     *        Some <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *        </a> are:
-     *        </p>
+     *        A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *        the given pattern) for certain file names and file types to exclude from your index. If a document matches
+     *        both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document
+     *        is not indexed. Examples of glob patterns include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
-     *        .png and .jpg).
+     *        <i>/myapp/config/*</i>—All files inside config directory.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     *        'internal', 'internal_only', 'company_internal'.
+     *        <i>**&#47;*.png</i>—All .png files in all directories.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *        <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *        .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *        'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more examples, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *        Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      */
 
     public void setExclusionPatterns(java.util.Collection<String> exclusionPatterns) {
@@ -602,32 +1008,59 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to exclude from your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
-     * .jpg).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     * 'internal', 'internal_only', 'company_internal'.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExclusionPatterns(java.util.Collection)} or {@link #withExclusionPatterns(java.util.Collection)} if
@@ -635,31 +1068,58 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *        <p>
-     *        Some <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *        </a> are:
-     *        </p>
+     *        A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *        the given pattern) for certain file names and file types to exclude from your index. If a document matches
+     *        both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document
+     *        is not indexed. Examples of glob patterns include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
-     *        .png and .jpg).
+     *        <i>/myapp/config/*</i>—All files inside config directory.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     *        'internal', 'internal_only', 'company_internal'.
+     *        <i>**&#47;*.png</i>—All .png files in all directories.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *        <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *        .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *        'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more examples, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *        Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,59 +1135,113 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix
-     * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
-     * </p>
-     * <p>
-     * Some <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
+     * A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match the
+     * given pattern) for certain file names and file types to exclude from your index. If a document matches both an
+     * inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document is not
+     * indexed. Examples of glob patterns include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
-     * .jpg).
+     * <i>/myapp/config/*</i>—All files inside config directory.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     * 'internal', 'internal_only', 'company_internal'.
+     * <i>**&#47;*.png</i>—All .png files in all directories.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     * 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more examples, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of Exclude and
+     * Include Filters</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
      * 
      * @param exclusionPatterns
-     *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
-     *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
-     *        <p>
-     *        Some <a
-     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
-     *        </a> are:
-     *        </p>
+     *        A list of glob patterns (patterns that can expand a wildcard pattern into a list of path names that match
+     *        the given pattern) for certain file names and file types to exclude from your index. If a document matches
+     *        both an inclusion and exclusion prefix or pattern, the exclusion prefix takes precendence and the document
+     *        is not indexed. Examples of glob patterns include:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
-     *        .png and .jpg).
+     *        <i>/myapp/config/*</i>—All files inside config directory.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
-     *        'internal', 'internal_only', 'company_internal'.
+     *        <i>**&#47;*.png</i>—All .png files in all directories.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *        <i>**&#47;*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <i>/myapp/src/**&#47;*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;!(*.module).ts</i>—All .ts files but not .module.ts
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the extensions .png and
+     *        .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i>—All files in a directory that contain 'internal' in the file name, such as 'internal',
+     *        'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i>—All internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more examples, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use of
+     *        Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

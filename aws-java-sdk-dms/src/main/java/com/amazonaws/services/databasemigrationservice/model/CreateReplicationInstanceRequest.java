@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,9 +67,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -84,7 +86,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      */
     private String availabilityZone;
@@ -189,6 +191,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String resourceIdentifier;
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     */
+    private String networkType;
 
     /**
      * <p>
@@ -411,9 +420,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -422,9 +433,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        <code>"dms.c4.large"</code>.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right DMS replication instance for your migration</a>.
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the
+     *        right DMS replication instance</a>; and, <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     *        >Selecting the best size for a replication instance</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -437,9 +449,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
@@ -447,9 +461,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         <code>"dms.c4.large"</code>.</p>
      *         <p>
      *         For more information on the settings and capacities for the available replication instance classes, see
-     *         <a href=
-     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *         > Selecting the right DMS replication instance for your migration</a>.
+     *         <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing
+     *         the right DMS replication instance</a>; and, <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     *         >Selecting the best size for a replication instance</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -462,9 +477,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -473,9 +490,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        <code>"dms.c4.large"</code>.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right DMS replication instance for your migration</a>.
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the
+     *        right DMS replication instance</a>; and, <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     *        >Selecting the best size for a replication instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,13 +584,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where the replication instance will be created. The default value is a random,
      *        system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     *        <code>us-east-1d</code>
+     *        <code>us-east-1d</code>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -583,12 +601,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      * 
      * @return The Availability Zone where the replication instance will be created. The default value is a random,
      *         system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     *         <code>us-east-1d</code>
+     *         <code>us-east-1d</code>.
      */
 
     public String getAvailabilityZone() {
@@ -599,13 +617,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where the replication instance will be created. The default value is a random,
      *        system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     *        <code>us-east-1d</code>
+     *        <code>us-east-1d</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1331,6 +1349,52 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param networkType
+     *        The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *        supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @return The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *         supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param networkType
+     *        The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *        supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationInstanceRequest withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1371,7 +1435,9 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
         if (getDnsNameServers() != null)
             sb.append("DnsNameServers: ").append(getDnsNameServers()).append(",");
         if (getResourceIdentifier() != null)
-            sb.append("ResourceIdentifier: ").append(getResourceIdentifier());
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType());
         sb.append("}");
         return sb.toString();
     }
@@ -1448,6 +1514,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getResourceIdentifier() != null && other.getResourceIdentifier().equals(this.getResourceIdentifier()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
         return true;
     }
 
@@ -1471,6 +1541,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getDnsNameServers() == null) ? 0 : getDnsNameServers().hashCode());
         hashCode = prime * hashCode + ((getResourceIdentifier() == null) ? 0 : getResourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,13 @@ public class TFIModelPerformance implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Float auc;
+    /**
+     * <p>
+     * Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates
+     * higher model uncertainity.
+     * </p>
+     */
+    private UncertaintyRange uncertaintyRange;
 
     /**
      * <p>
@@ -83,6 +90,52 @@ public class TFIModelPerformance implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates
+     * higher model uncertainity.
+     * </p>
+     * 
+     * @param uncertaintyRange
+     *        Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1
+     *        indicates higher model uncertainity.
+     */
+
+    public void setUncertaintyRange(UncertaintyRange uncertaintyRange) {
+        this.uncertaintyRange = uncertaintyRange;
+    }
+
+    /**
+     * <p>
+     * Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates
+     * higher model uncertainity.
+     * </p>
+     * 
+     * @return Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1
+     *         indicates higher model uncertainity.
+     */
+
+    public UncertaintyRange getUncertaintyRange() {
+        return this.uncertaintyRange;
+    }
+
+    /**
+     * <p>
+     * Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates
+     * higher model uncertainity.
+     * </p>
+     * 
+     * @param uncertaintyRange
+     *        Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1
+     *        indicates higher model uncertainity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TFIModelPerformance withUncertaintyRange(UncertaintyRange uncertaintyRange) {
+        setUncertaintyRange(uncertaintyRange);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +148,9 @@ public class TFIModelPerformance implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuc() != null)
-            sb.append("Auc: ").append(getAuc());
+            sb.append("Auc: ").append(getAuc()).append(",");
+        if (getUncertaintyRange() != null)
+            sb.append("UncertaintyRange: ").append(getUncertaintyRange());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +169,10 @@ public class TFIModelPerformance implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAuc() != null && other.getAuc().equals(this.getAuc()) == false)
             return false;
+        if (other.getUncertaintyRange() == null ^ this.getUncertaintyRange() == null)
+            return false;
+        if (other.getUncertaintyRange() != null && other.getUncertaintyRange().equals(this.getUncertaintyRange()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +182,7 @@ public class TFIModelPerformance implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAuc() == null) ? 0 : getAuc().hashCode());
+        hashCode = prime * hashCode + ((getUncertaintyRange() == null) ? 0 : getUncertaintyRange().hashCode());
         return hashCode;
     }
 

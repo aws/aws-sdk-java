@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class AwsS3BucketDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketNotificationConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> BUCKETVERSIONINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketVersioningConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> OBJECTLOCKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectLockConfiguration").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
     private static final AwsS3BucketDetailsMarshaller instance = new AwsS3BucketDetailsMarshaller();
 
@@ -80,6 +84,8 @@ public class AwsS3BucketDetailsMarshaller {
             protocolMarshaller.marshall(awsS3BucketDetails.getBucketWebsiteConfiguration(), BUCKETWEBSITECONFIGURATION_BINDING);
             protocolMarshaller.marshall(awsS3BucketDetails.getBucketNotificationConfiguration(), BUCKETNOTIFICATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(awsS3BucketDetails.getBucketVersioningConfiguration(), BUCKETVERSIONINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(awsS3BucketDetails.getObjectLockConfiguration(), OBJECTLOCKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(awsS3BucketDetails.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

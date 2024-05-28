@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ExchangeCodeForTokenRequestBody implements Serializable, Cloneable,
      * </p>
      */
     private String redirectUri;
+    /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     */
+    private String clientId;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class ExchangeCodeForTokenRequestBody implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     * 
+     * @param clientId
+     *        The ID of the client to request the token from.
+     */
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     * 
+     * @return The ID of the client to request the token from.
+     */
+
+    public String getClientId() {
+        return this.clientId;
+    }
+
+    /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     * 
+     * @param clientId
+     *        The ID of the client to request the token from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExchangeCodeForTokenRequestBody withClientId(String clientId) {
+        setClientId(clientId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class ExchangeCodeForTokenRequestBody implements Serializable, Cloneable,
         if (getCode() != null)
             sb.append("Code: ").append("***Sensitive Data Redacted***").append(",");
         if (getRedirectUri() != null)
-            sb.append("RedirectUri: ").append(getRedirectUri());
+            sb.append("RedirectUri: ").append(getRedirectUri()).append(",");
+        if (getClientId() != null)
+            sb.append("ClientId: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class ExchangeCodeForTokenRequestBody implements Serializable, Cloneable,
             return false;
         if (other.getRedirectUri() != null && other.getRedirectUri().equals(this.getRedirectUri()) == false)
             return false;
+        if (other.getClientId() == null ^ this.getClientId() == null)
+            return false;
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class ExchangeCodeForTokenRequestBody implements Serializable, Cloneable,
 
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getRedirectUri() == null) ? 0 : getRedirectUri().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         return hashCode;
     }
 

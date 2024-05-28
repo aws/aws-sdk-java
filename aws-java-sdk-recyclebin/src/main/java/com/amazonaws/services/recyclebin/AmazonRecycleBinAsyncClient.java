@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,9 +39,8 @@ import java.util.concurrent.ExecutorService;
  * resource from the Recycle Bin, the resource is removed from the Recycle Bin, and you can then use it in the same way
  * you use any other resource of that type in your account. If the retention period expires and the resource is not
  * restored, the resource is permanently deleted from the Recycle Bin and is no longer available for recovery. For more
- * information about Recycle Bin, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html"> Recycle Bin</a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * information about Recycle Bin, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">
+ * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -256,6 +255,39 @@ public class AmazonRecycleBinAsyncClient extends AmazonRecycleBinClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<LockRuleResult> lockRuleAsync(LockRuleRequest request) {
+
+        return lockRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LockRuleResult> lockRuleAsync(final LockRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<LockRuleRequest, LockRuleResult> asyncHandler) {
+        final LockRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<LockRuleResult>() {
+            @Override
+            public LockRuleResult call() throws Exception {
+                LockRuleResult result = null;
+
+                try {
+                    result = executeLockRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -273,6 +305,39 @@ public class AmazonRecycleBinAsyncClient extends AmazonRecycleBinClient implemen
 
                 try {
                     result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnlockRuleResult> unlockRuleAsync(UnlockRuleRequest request) {
+
+        return unlockRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnlockRuleResult> unlockRuleAsync(final UnlockRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnlockRuleRequest, UnlockRuleResult> asyncHandler) {
+        final UnlockRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UnlockRuleResult>() {
+            @Override
+            public UnlockRuleResult call() throws Exception {
+                UnlockRuleResult result = null;
+
+                try {
+                    result = executeUnlockRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

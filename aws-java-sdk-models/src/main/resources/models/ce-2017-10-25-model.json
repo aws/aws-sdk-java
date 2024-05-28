@@ -39,7 +39,7 @@
         {"shape":"UnknownMonitorException"},
         {"shape":"LimitExceededException"}
       ],
-      "documentation":"<p>Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving notifications. </p>"
+      "documentation":"<p>Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a time frequency for receiving notifications. </p>"
     },
     "CreateCostCategoryDefinition":{
       "name":"CreateCostCategoryDefinition",
@@ -123,7 +123,7 @@
         {"shape":"LimitExceededException"},
         {"shape":"InvalidNextTokenException"}
       ],
-      "documentation":"<p>Retrieves all of the cost anomalies detected on your account during the time period that's specified by the <code>DateInterval</code> object. </p>"
+      "documentation":"<p>Retrieves all of the cost anomalies detected on your account during the time period that's specified by the <code>DateInterval</code> object. Anomalies are available for up to 90 days.</p>"
     },
     "GetAnomalyMonitors":{
       "name":"GetAnomalyMonitors",
@@ -154,6 +154,20 @@
         {"shape":"InvalidNextTokenException"}
       ],
       "documentation":"<p>Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>"
+    },
+    "GetApproximateUsageRecords":{
+      "name":"GetApproximateUsageRecords",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetApproximateUsageRecordsRequest"},
+      "output":{"shape":"GetApproximateUsageRecordsResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"DataUnavailableException"}
+      ],
+      "documentation":"<p>Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.</p>"
     },
     "GetCostAndUsage":{
       "name":"GetCostAndUsage",
@@ -187,7 +201,7 @@
         {"shape":"InvalidNextTokenException"},
         {"shape":"RequestChangedException"}
       ],
-      "documentation":"<p>Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html\">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information about how to access the Settings page, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html\">Controlling Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.</p> </note>"
+      "documentation":"<p>Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html\">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts.</p> <p>Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level data. All other resource-level data is available at daily granularity.</p> <note> <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information about how to access the Settings page, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html\">Controlling Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.</p> </note>"
     },
     "GetCostCategories":{
       "name":"GetCostCategories",
@@ -296,6 +310,20 @@
       ],
       "documentation":"<p>Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to either downsize or terminate instances, along with providing savings detail and metrics. For more information about calculation and function, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html\">Optimizing Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management User Guide</i>.</p>"
     },
+    "GetSavingsPlanPurchaseRecommendationDetails":{
+      "name":"GetSavingsPlanPurchaseRecommendationDetails",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSavingsPlanPurchaseRecommendationDetailsRequest"},
+      "output":{"shape":"GetSavingsPlanPurchaseRecommendationDetailsResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"DataUnavailableException"}
+      ],
+      "documentation":"<p>Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that construct the cost, coverage, and utilization charts.</p>"
+    },
     "GetSavingsPlansCoverage":{
       "name":"GetSavingsPlansCoverage",
       "http":{
@@ -323,7 +351,7 @@
         {"shape":"LimitExceededException"},
         {"shape":"InvalidNextTokenException"}
       ],
-      "documentation":"<p>Retrieves your request parameters, Savings Plan Recommendations Summary and Details. </p>"
+      "documentation":"<p>Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.</p>"
     },
     "GetSavingsPlansUtilization":{
       "name":"GetSavingsPlansUtilization",
@@ -386,6 +414,20 @@
       ],
       "documentation":"<p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage. </p>"
     },
+    "ListCostAllocationTagBackfillHistory":{
+      "name":"ListCostAllocationTagBackfillHistory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListCostAllocationTagBackfillHistoryRequest"},
+      "output":{"shape":"ListCostAllocationTagBackfillHistoryResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidNextTokenException"}
+      ],
+      "documentation":"<p> Retrieves a list of your historical cost allocation tag backfill requests. </p>"
+    },
     "ListCostAllocationTags":{
       "name":"ListCostAllocationTags",
       "http":{
@@ -413,6 +455,21 @@
       ],
       "documentation":"<p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>"
     },
+    "ListSavingsPlansPurchaseRecommendationGeneration":{
+      "name":"ListSavingsPlansPurchaseRecommendationGeneration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListSavingsPlansPurchaseRecommendationGenerationRequest"},
+      "output":{"shape":"ListSavingsPlansPurchaseRecommendationGenerationResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"DataUnavailableException"}
+      ],
+      "documentation":"<p>Retrieves a list of your historical recommendation generations within the past 30 days.</p>"
+    },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
       "http":{
@@ -439,6 +496,36 @@
         {"shape":"LimitExceededException"}
       ],
       "documentation":"<p>Modifies the feedback property of a given cost anomaly. </p>"
+    },
+    "StartCostAllocationTagBackfill":{
+      "name":"StartCostAllocationTagBackfill",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartCostAllocationTagBackfillRequest"},
+      "output":{"shape":"StartCostAllocationTagBackfillResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"BackfillLimitExceededException"}
+      ],
+      "documentation":"<p> Request a cost allocation tag backfill. This will backfill the activation status (either <code>active</code> or <code>inactive</code>) for all tag keys from <code>para:BackfillFrom</code> up to the when this request is made.</p> <p>You can request a backfill once every 24 hours. </p>"
+    },
+    "StartSavingsPlansPurchaseRecommendationGeneration":{
+      "name":"StartSavingsPlansPurchaseRecommendationGeneration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartSavingsPlansPurchaseRecommendationGenerationRequest"},
+      "output":{"shape":"StartSavingsPlansPurchaseRecommendationGenerationResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"GenerationExistsException"},
+        {"shape":"DataUnavailableException"}
+      ],
+      "documentation":"<p>Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans recommendations that takes your latest usage data and current Savings Plans inventory into account. You can refresh Savings Plans recommendations up to three times daily for a consolidated billing family.</p> <note> <p> <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters are needed to support this operation.</p> </note>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -496,7 +583,7 @@
         {"shape":"UnknownMonitorException"},
         {"shape":"UnknownSubscriptionException"}
       ],
-      "documentation":"<p>Updates an existing cost anomaly monitor subscription. </p>"
+      "documentation":"<p>Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are unchanged.</p> <note> <p>The JSON below describes the generic construct for each type. See <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters\">Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.</p> </note>"
     },
     "UpdateCostAllocationTagsStatus":{
       "name":"UpdateCostAllocationTagsStatus",
@@ -682,7 +769,6 @@
       "required":[
         "MonitorArnList",
         "Subscribers",
-        "Threshold",
         "Frequency",
         "SubscriptionName"
       ],
@@ -705,18 +791,24 @@
         },
         "Threshold":{
           "shape":"NullableNonNegativeDouble",
-          "documentation":"<p>The dollar value that triggers a notification if the threshold is exceeded. </p>"
+          "documentation":"<p>(deprecated)</p> <p>An absolute dollar value that must be exceeded by the anomaly's total impact (see <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html\">Impact</a> for more details) for an anomaly notification to be generated.</p> <p>This field has been deprecated. To specify a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p> <p>One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"Threshold has been deprecated in favor of ThresholdExpression"
         },
         "Frequency":{
           "shape":"AnomalySubscriptionFrequency",
-          "documentation":"<p>The frequency that anomaly reports are sent over email. </p>"
+          "documentation":"<p>The frequency that anomaly notifications are sent. Notifications are sent either over email (for DAILY and WEEKLY frequencies) or SNS (for IMMEDIATE frequency). For more information, see <a href=\"https://docs.aws.amazon.com/cost-management/latest/userguide/ad-SNS.html\">Creating an Amazon SNS topic for anomaly notifications</a>.</p>"
         },
         "SubscriptionName":{
           "shape":"GenericString",
           "documentation":"<p>The name for the subscription. </p>"
+        },
+        "ThresholdExpression":{
+          "shape":"Expression",
+          "documentation":"<p>An <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html\">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p> <p>One of Threshold or ThresholdExpression is required for this resource. You cannot specify both.</p> <p>The following are examples of valid ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_ABSOLUTE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }</code> </p> </li> <li> <p>Percentage threshold: <code>{ \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_PERCENTAGE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }</code> </p> </li> <li> <p> <code>AND</code> two thresholds together: <code>{ \"And\": [ { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_ABSOLUTE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }, { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_PERCENTAGE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } } ] }</code> </p> </li> <li> <p> <code>OR</code> two thresholds together: <code>{ \"Or\": [ { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_ABSOLUTE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }, { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_PERCENTAGE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } } ] }</code> </p> </li> </ul>"
         }
       },
-      "documentation":"<p>The association between a monitor, threshold, and list of subscribers used to deliver notifications about anomalies detected by a monitor that exceeds a threshold. The content consists of the detailed metadata and the current status of the <code>AnomalySubscription</code> object. </p>"
+      "documentation":"<p>An <code>AnomalySubscription</code> resource (also referred to as an alert subscription) sends notifications about specific anomalies that meet an alerting criteria defined by you.</p> <p>You can specify the frequency of the alerts and the subscribers to notify.</p> <p>Anomaly subscriptions can be associated with one or more <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html\"> <code>AnomalyMonitor</code> </a> resources, and they only send notifications about anomalies detected by those associated monitors. You can also configure a threshold to further control which anomalies are included in the notifications.</p> <p>Anomalies that don’t exceed the chosen threshold and therefore don’t trigger notifications from an anomaly subscription will still be available on the console and from the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html\"> <code>GetAnomalies</code> </a> API.</p>"
     },
     "AnomalySubscriptionFrequency":{
       "type":"string",
@@ -730,6 +822,18 @@
       "type":"list",
       "member":{"shape":"AnomalySubscription"}
     },
+    "ApproximateUsageRecordsPerService":{
+      "type":"map",
+      "key":{"shape":"GenericString"},
+      "value":{"shape":"NonNegativeLong"}
+    },
+    "ApproximationDimension":{
+      "type":"string",
+      "enum":[
+        "SERVICE",
+        "RESOURCE"
+      ]
+    },
     "Arn":{
       "type":"string",
       "max":2048,
@@ -742,6 +846,14 @@
       "type":"map",
       "key":{"shape":"AttributeType"},
       "value":{"shape":"AttributeValue"}
+    },
+    "BackfillLimitExceededException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p> A request to backfill is already in progress. Once the previous request is complete, you can create another request. </p>",
+      "exception":true
     },
     "BillExpirationException":{
       "type":"structure",
@@ -778,9 +890,57 @@
         "Status":{
           "shape":"CostAllocationTagStatus",
           "documentation":"<p>The status of a cost allocation tag. </p>"
+        },
+        "LastUpdatedDate":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>The last date that the tag was either activated or deactivated.</p>"
+        },
+        "LastUsedDate":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>The last month that the tag was used on an Amazon Web Services resource.</p>"
         }
       },
       "documentation":"<p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object. </p>"
+    },
+    "CostAllocationTagBackfillRequest":{
+      "type":"structure",
+      "members":{
+        "BackfillFrom":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p> The date the backfill starts from. </p>"
+        },
+        "RequestedAt":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p> The time when the backfill was requested. </p>"
+        },
+        "CompletedAt":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p> The backfill completion time. </p>"
+        },
+        "BackfillStatus":{
+          "shape":"CostAllocationTagBackfillStatus",
+          "documentation":"<p> The status of the cost allocation tag backfill request. </p>"
+        },
+        "LastUpdatedAt":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p> The time when the backfill status was last updated. </p>"
+        }
+      },
+      "documentation":"<p> The cost allocation tag backfill request structure that contains metadata and details of a certain backfill.</p>"
+    },
+    "CostAllocationTagBackfillRequestList":{
+      "type":"list",
+      "member":{"shape":"CostAllocationTagBackfillRequest"},
+      "max":1000,
+      "min":0
+    },
+    "CostAllocationTagBackfillStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCEEDED",
+        "PROCESSING",
+        "FAILED"
+      ]
     },
     "CostAllocationTagKeyList":{
       "type":"list",
@@ -974,7 +1134,7 @@
         "Value":{"shape":"CostCategoryValue"},
         "Rule":{
           "shape":"Expression",
-          "documentation":"<p>An <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p> <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms\">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>"
+          "documentation":"<p>An <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.</p> <p> <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category expressions. This dimension uses different terms, depending on whether you're using the console or API/JSON editor. For a detailed comparison, see <a href=\"https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms\">Term Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>"
         },
         "InheritedValue":{
           "shape":"CostCategoryInheritedValueDimension",
@@ -1492,7 +1652,9 @@
         "PAYMENT_OPTION",
         "AGREEMENT_END_DATE_TIME_AFTER",
         "AGREEMENT_END_DATE_TIME_BEFORE",
-        "INVOICING_ENTITY"
+        "INVOICING_ENTITY",
+        "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+        "ANOMALY_TOTAL_IMPACT_PERCENTAGE"
       ]
     },
     "DimensionValues":{
@@ -1500,7 +1662,7 @@
       "members":{
         "Key":{
           "shape":"Dimension",
-          "documentation":"<p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html\">CostCategoryRule</a>.</p>"
+          "documentation":"<p>The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code> returns a list of Availability Zones.</p> <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p> <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html\">CostCategoryRule</a>.</p> <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html\">AnomalySubscriptions</a>.</p>"
         },
         "Values":{
           "shape":"Values",
@@ -1508,7 +1670,7 @@
         },
         "MatchOptions":{
           "shape":"MatchOptions",
-          "documentation":"<p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>"
+          "documentation":"<p>The match options that you can use to filter your results.</p> <p> <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions. Refer to the documentation for each specific API to see what is supported.</p> <p>The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>"
         }
       },
       "documentation":"<p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>"
@@ -1611,7 +1773,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "EC2ResourceDetails":{
       "type":"structure",
@@ -1719,7 +1881,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "ElastiCacheInstanceDetails":{
       "type":"structure",
@@ -1749,7 +1911,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon ElastiCache instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "Entity":{"type":"string"},
     "ErrorMessage":{"type":"string"},
@@ -1782,7 +1944,7 @@
           "documentation":"<p>The filter that's based on <code>CostCategory</code> values.</p>"
         }
       },
-      "documentation":"<p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows:</p> <p> <code>{ \"Dimensions\": { \"Key\": \"REGION\", \"Values\": [ \"us-east-1\", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows:</p> <p> <code>{ \"And\": [ {\"Or\": [ {\"Dimensions\": { \"Key\": \"REGION\", \"Values\": [ \"us-east-1\", \"us-west-1\" ] }}, {\"Tags\": { \"Key\": \"TagName\", \"Values\": [\"Value1\"] } } ]}, {\"Not\": {\"Dimensions\": { \"Key\": \"USAGE_TYPE\", \"Values\": [\"DataTransfer\"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { \"And\": [ ... ], \"DimensionValues\": { \"Dimension\": \"USAGE_TYPE\", \"Values\": [ \"DataTransfer\" ] } } </code> </p> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>"
+      "documentation":"<p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p> <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p> <p>There are two patterns:</p> <ul> <li> <p>Simple dimension values.</p> <ul> <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p> <ul> <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li> <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li> <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html\"> <code>DimensionValues</code> </a>.</p> </li> </ul> </li> <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p> <ul> <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ \"Dimensions\": { \"Key\": \"REGION\", \"Values\": [ \"us-east-1\", \"us-west-1\" ] } }</code> </p> </li> <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p> <ul> <li> <p>For example, you can filter for linked account names that start with \"a\".</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ \"Dimensions\": { \"Key\": \"LINKED_ACCOUNT_NAME\", \"MatchOptions\": [ \"STARTS_WITH\" ], \"Values\": [ \"a\" ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound <code>Expression</code> types with logical operations.</p> <ul> <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li> <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ \"And\": [ {\"Or\": [ {\"Dimensions\": { \"Key\": \"REGION\", \"Values\": [ \"us-east-1\", \"us-west-1\" ] }}, {\"Tags\": { \"Key\": \"TagName\", \"Values\": [\"Value1\"] } } ]}, {\"Not\": {\"Dimensions\": { \"Key\": \"USAGE_TYPE\", \"Values\": [\"DataTransfer\"] }}} ] } </code> </p> </li> </ul> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { \"And\": [ ... ], \"Dimensions\": { \"Key\": \"USAGE_TYPE\", \"Values\": [ \"DataTransfer\" ] } } </code> </p> <p>The following is an example of the corresponding error message: <code>\"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories\"</code> </p> </note> </li> </ul> <note> <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p> </note>"
     },
     "Expressions":{
       "type":"list",
@@ -1838,6 +2000,52 @@
     "ForecastResultsByTime":{
       "type":"list",
       "member":{"shape":"ForecastResult"}
+    },
+    "GenerationExistsException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>A request to generate a recommendation is already in progress.</p>",
+      "exception":true
+    },
+    "GenerationStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCEEDED",
+        "PROCESSING",
+        "FAILED"
+      ]
+    },
+    "GenerationSummary":{
+      "type":"structure",
+      "members":{
+        "RecommendationId":{
+          "shape":"RecommendationId",
+          "documentation":"<p>Indicates the ID for this specific recommendation.</p>"
+        },
+        "GenerationStatus":{
+          "shape":"GenerationStatus",
+          "documentation":"<p>Indicates whether the recommendation generation succeeded, is processing, or failed.</p>"
+        },
+        "GenerationStartedTime":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>Indicates the start time of the recommendation generation.</p>"
+        },
+        "GenerationCompletionTime":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>Indicates the completion time of the recommendation generation.</p>"
+        },
+        "EstimatedCompletionTime":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>Indicates the estimated time for when the recommendation generation will complete.</p>"
+        }
+      },
+      "documentation":"<p>The summary of the Savings Plans recommendation generation.</p>"
+    },
+    "GenerationSummaryList":{
+      "type":"list",
+      "member":{"shape":"GenerationSummary"}
     },
     "GenericBoolean":{"type":"boolean"},
     "GenericDouble":{"type":"double"},
@@ -1954,6 +2162,44 @@
         "NextPageToken":{
           "shape":"NextPageToken",
           "documentation":"<p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>"
+        }
+      }
+    },
+    "GetApproximateUsageRecordsRequest":{
+      "type":"structure",
+      "required":[
+        "Granularity",
+        "ApproximationDimension"
+      ],
+      "members":{
+        "Granularity":{
+          "shape":"Granularity",
+          "documentation":"<p>How granular you want the data to be. You can enable data at hourly or daily granularity.</p>"
+        },
+        "Services":{
+          "shape":"UsageServices",
+          "documentation":"<p>The service metadata for the service or services you want to query. If not specified, all elements are returned.</p>"
+        },
+        "ApproximationDimension":{
+          "shape":"ApproximationDimension",
+          "documentation":"<p>The service to evaluate for the usage records. You can choose resource-level data at daily granularity, or hourly granularity with or without resource-level data.</p>"
+        }
+      }
+    },
+    "GetApproximateUsageRecordsResponse":{
+      "type":"structure",
+      "members":{
+        "Services":{
+          "shape":"ApproximateUsageRecordsPerService",
+          "documentation":"<p>The service metadata for the service or services in the response.</p>"
+        },
+        "TotalRecords":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The total number of usage records for all services in the services list.</p>"
+        },
+        "LookbackPeriod":{
+          "shape":"DateInterval",
+          "documentation":"<p>The lookback period that's used for the estimation.</p>"
         }
       }
     },
@@ -2447,6 +2693,29 @@
         }
       }
     },
+    "GetSavingsPlanPurchaseRecommendationDetailsRequest":{
+      "type":"structure",
+      "required":["RecommendationDetailId"],
+      "members":{
+        "RecommendationDetailId":{
+          "shape":"RecommendationDetailId",
+          "documentation":"<p>The ID that is associated with the Savings Plan recommendation.</p>"
+        }
+      }
+    },
+    "GetSavingsPlanPurchaseRecommendationDetailsResponse":{
+      "type":"structure",
+      "members":{
+        "RecommendationDetailId":{
+          "shape":"RecommendationDetailId",
+          "documentation":"<p>The ID that is associated with the Savings Plan recommendation.</p>"
+        },
+        "RecommendationDetailData":{
+          "shape":"RecommendationDetailData",
+          "documentation":"<p>Contains detailed information about a specific Savings Plan recommendation.</p>"
+        }
+      }
+    },
     "GetSavingsPlansCoverageRequest":{
       "type":"structure",
       "required":["TimePeriod"],
@@ -2813,11 +3082,23 @@
       "members":{
         "MaxImpact":{
           "shape":"GenericDouble",
-          "documentation":"<p>The maximum dollar value that's observed for an anomaly. </p>"
+          "documentation":"<p>The maximum dollar value that's observed for an anomaly.</p>"
         },
         "TotalImpact":{
           "shape":"GenericDouble",
-          "documentation":"<p>The cumulative dollar value that's observed for an anomaly. </p>"
+          "documentation":"<p>The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.</p>"
+        },
+        "TotalActualSpend":{
+          "shape":"NullableNonNegativeDouble",
+          "documentation":"<p>The cumulative dollar amount that was actually spent during the anomaly.</p>"
+        },
+        "TotalExpectedSpend":{
+          "shape":"NullableNonNegativeDouble",
+          "documentation":"<p>The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced machine learning models to determine the typical spending pattern based on historical data for a customer.</p>"
+        },
+        "TotalImpactPercentage":{
+          "shape":"NullableNonNegativeDouble",
+          "documentation":"<p>The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.</p>"
         }
       },
       "documentation":"<p>The dollar value of the anomaly. </p>"
@@ -2827,26 +3108,30 @@
       "members":{
         "EC2InstanceDetails":{
           "shape":"EC2InstanceDetails",
-          "documentation":"<p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "RDSInstanceDetails":{
           "shape":"RDSInstanceDetails",
-          "documentation":"<p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "RedshiftInstanceDetails":{
           "shape":"RedshiftInstanceDetails",
-          "documentation":"<p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "ElastiCacheInstanceDetails":{
           "shape":"ElastiCacheInstanceDetails",
-          "documentation":"<p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "ESInstanceDetails":{
           "shape":"ESInstanceDetails",
-          "documentation":"<p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>"
+        },
+        "MemoryDBInstanceDetails":{
+          "shape":"MemoryDBInstanceDetails",
+          "documentation":"<p>The MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>"
         }
       },
-      "documentation":"<p>Details about the instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "InvalidNextTokenException":{
       "type":"structure",
@@ -2868,6 +3153,33 @@
       },
       "documentation":"<p>You made too many calls in a short period of time. Try again later.</p>",
       "exception":true
+    },
+    "ListCostAllocationTagBackfillHistoryRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextPageToken",
+          "documentation":"<p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>"
+        },
+        "MaxResults":{
+          "shape":"CostAllocationTagsMaxResults",
+          "documentation":"<p> The maximum number of objects that are returned for this request. </p>",
+          "box":true
+        }
+      }
+    },
+    "ListCostAllocationTagBackfillHistoryResponse":{
+      "type":"structure",
+      "members":{
+        "BackfillRequests":{
+          "shape":"CostAllocationTagBackfillRequestList",
+          "documentation":"<p> The list of historical cost allocation tag backfill requests. </p>"
+        },
+        "NextToken":{
+          "shape":"NextPageToken",
+          "documentation":"<p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>"
+        }
+      }
     },
     "ListCostAllocationTagsRequest":{
       "type":"structure",
@@ -2939,6 +3251,40 @@
         }
       }
     },
+    "ListSavingsPlansPurchaseRecommendationGenerationRequest":{
+      "type":"structure",
+      "members":{
+        "GenerationStatus":{
+          "shape":"GenerationStatus",
+          "documentation":"<p>The status of the recommendation generation.</p>"
+        },
+        "RecommendationIds":{
+          "shape":"RecommendationIdList",
+          "documentation":"<p>The IDs for each specific recommendation.</p>"
+        },
+        "PageSize":{
+          "shape":"NonNegativeInteger",
+          "documentation":"<p>The number of recommendations that you want returned in a single response object.</p>"
+        },
+        "NextPageToken":{
+          "shape":"NextPageToken",
+          "documentation":"<p>The token to retrieve the next set of results.</p>"
+        }
+      }
+    },
+    "ListSavingsPlansPurchaseRecommendationGenerationResponse":{
+      "type":"structure",
+      "members":{
+        "GenerationSummaryList":{
+          "shape":"GenerationSummaryList",
+          "documentation":"<p>The list of historical recommendation generations.</p>"
+        },
+        "NextPageToken":{
+          "shape":"NextPageToken",
+          "documentation":"<p>The token to retrieve the next set of results.</p>"
+        }
+      }
+    },
     "ListTagsForResourceRequest":{
       "type":"structure",
       "required":["ResourceArn"],
@@ -2975,7 +3321,8 @@
         "ENDS_WITH",
         "CONTAINS",
         "CASE_SENSITIVE",
-        "CASE_INSENSITIVE"
+        "CASE_INSENSITIVE",
+        "GREATER_THAN_OR_EQUAL"
       ]
     },
     "MatchOptions":{
@@ -2985,6 +3332,32 @@
     "MaxResults":{
       "type":"integer",
       "min":1
+    },
+    "MemoryDBInstanceDetails":{
+      "type":"structure",
+      "members":{
+        "Family":{
+          "shape":"GenericString",
+          "documentation":"<p>The instance family of the recommended reservation.</p>"
+        },
+        "NodeType":{
+          "shape":"GenericString",
+          "documentation":"<p>The node type of the recommended reservation.</p>"
+        },
+        "Region":{
+          "shape":"GenericString",
+          "documentation":"<p>The Amazon Web Services Region of the recommended reservation.</p>"
+        },
+        "CurrentGeneration":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Determines whether the recommendation is for a current generation instance.</p>"
+        },
+        "SizeFlexEligible":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
+        }
+      },
+      "documentation":"<p>Details about the MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "Metric":{
       "type":"string",
@@ -3028,6 +3401,10 @@
       "type":"map",
       "key":{"shape":"MetricName"},
       "value":{"shape":"MetricValue"}
+    },
+    "MetricsOverLookbackPeriod":{
+      "type":"list",
+      "member":{"shape":"RecommendationDetailHourlyMetrics"}
     },
     "ModifyRecommendationDetail":{
       "type":"structure",
@@ -3085,6 +3462,10 @@
     },
     "NonNegativeInteger":{
       "type":"integer",
+      "min":0
+    },
+    "NonNegativeLong":{
+      "type":"long",
       "min":0
     },
     "NullableNonNegativeDouble":{
@@ -3213,10 +3594,165 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "RICostForUnusedHours":{"type":"string"},
     "RealizedSavings":{"type":"string"},
+    "RecommendationDetailData":{
+      "type":"structure",
+      "members":{
+        "AccountScope":{
+          "shape":"AccountScope",
+          "documentation":"<p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to PAYER. If the value is LINKED, recommendations are calculated for individual member accounts only.</p>"
+        },
+        "LookbackPeriodInDays":{
+          "shape":"LookbackPeriodInDays",
+          "documentation":"<p>How many days of previous usage that Amazon Web Services considers when making this recommendation.</p>"
+        },
+        "SavingsPlansType":{
+          "shape":"SupportedSavingsPlansType",
+          "documentation":"<p>The requested Savings Plan recommendation type.</p>"
+        },
+        "TermInYears":{
+          "shape":"TermInYears",
+          "documentation":"<p>The term of the commitment in years.</p>"
+        },
+        "PaymentOption":{
+          "shape":"PaymentOption",
+          "documentation":"<p>The payment option for the commitment (for example, All Upfront or No Upfront).</p>"
+        },
+        "AccountId":{
+          "shape":"GenericString",
+          "documentation":"<p>The AccountID that the recommendation is generated for.</p>"
+        },
+        "CurrencyCode":{
+          "shape":"GenericString",
+          "documentation":"<p>The currency code that Amazon Web Services used to generate the recommendation and present potential savings.</p>"
+        },
+        "InstanceFamily":{
+          "shape":"GenericString",
+          "documentation":"<p>The instance family of the recommended Savings Plan.</p>"
+        },
+        "Region":{
+          "shape":"GenericString",
+          "documentation":"<p>The region the recommendation is generated for.</p>"
+        },
+        "OfferingId":{
+          "shape":"GenericString",
+          "documentation":"<p>The unique ID that's used to distinguish Savings Plans from one another.</p>"
+        },
+        "GenerationTimestamp":{"shape":"ZonedDateTime"},
+        "LatestUsageTimestamp":{"shape":"ZonedDateTime"},
+        "CurrentAverageHourlyOnDemandSpend":{
+          "shape":"GenericString",
+          "documentation":"<p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>"
+        },
+        "CurrentMaximumHourlyOnDemandSpend":{
+          "shape":"GenericString",
+          "documentation":"<p>The highest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>"
+        },
+        "CurrentMinimumHourlyOnDemandSpend":{
+          "shape":"GenericString",
+          "documentation":"<p>The lowest value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>"
+        },
+        "EstimatedAverageUtilization":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated utilization of the recommended Savings Plan.</p>"
+        },
+        "EstimatedMonthlySavingsAmount":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated monthly savings amount based on the recommended Savings Plan.</p>"
+        },
+        "EstimatedOnDemandCost":{
+          "shape":"GenericString",
+          "documentation":"<p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>"
+        },
+        "EstimatedOnDemandCostWithCurrentCommitment":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated On-Demand costs you expect with no additional commitment, based on your usage of the selected time period and the Savings Plan you own.</p>"
+        },
+        "EstimatedROI":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated return on investment that's based on the recommended Savings Plan that you purchased. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.</p>"
+        },
+        "EstimatedSPCost":{
+          "shape":"GenericString",
+          "documentation":"<p>The cost of the recommended Savings Plan over the length of the lookback period.</p>"
+        },
+        "EstimatedSavingsAmount":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated savings amount that's based on the recommended Savings Plan over the length of the lookback period.</p>"
+        },
+        "EstimatedSavingsPercentage":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated savings percentage relative to the total cost of applicable On-Demand usage over the lookback period.</p>"
+        },
+        "ExistingHourlyCommitment":{
+          "shape":"GenericString",
+          "documentation":"<p>The existing hourly commitment for the Savings Plan type.</p>"
+        },
+        "HourlyCommitmentToPurchase":{
+          "shape":"GenericString",
+          "documentation":"<p>The recommended hourly commitment level for the Savings Plan type and the configuration that's based on the usage during the lookback period.</p>"
+        },
+        "UpfrontCost":{
+          "shape":"GenericString",
+          "documentation":"<p>The upfront cost of the recommended Savings Plan, based on the selected payment option.</p>"
+        },
+        "CurrentAverageCoverage":{
+          "shape":"GenericString",
+          "documentation":"<p>The average value of hourly coverage over the lookback period.</p>"
+        },
+        "EstimatedAverageCoverage":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated coverage of the recommended Savings Plan.</p>"
+        },
+        "MetricsOverLookbackPeriod":{
+          "shape":"MetricsOverLookbackPeriod",
+          "documentation":"<p>The related hourly cost, coverage, and utilization metrics over the lookback period.</p>"
+        }
+      },
+      "documentation":"<p>The details and metrics for the given recommendation.</p>"
+    },
+    "RecommendationDetailHourlyMetrics":{
+      "type":"structure",
+      "members":{
+        "StartTime":{"shape":"ZonedDateTime"},
+        "EstimatedOnDemandCost":{
+          "shape":"GenericString",
+          "documentation":"<p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>"
+        },
+        "CurrentCoverage":{
+          "shape":"GenericString",
+          "documentation":"<p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>"
+        },
+        "EstimatedCoverage":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated coverage amount based on the recommended Savings Plan.</p>"
+        },
+        "EstimatedNewCommitmentUtilization":{
+          "shape":"GenericString",
+          "documentation":"<p>The estimated utilization for the recommended Savings Plan.</p>"
+        }
+      },
+      "documentation":"<p>Contains the hourly metrics for the given recommendation over the lookback period. </p>"
+    },
+    "RecommendationDetailId":{
+      "type":"string",
+      "max":36,
+      "min":36,
+      "pattern":"^[\\S\\s]{8}-[\\S\\s]{4}-[\\S\\s]{4}-[\\S\\s]{4}-[\\S\\s]{12}$"
+    },
+    "RecommendationId":{
+      "type":"string",
+      "max":36,
+      "min":36,
+      "pattern":"^[\\S\\s]{8}-[\\S\\s]{4}-[\\S\\s]{4}-[\\S\\s]{4}-[\\S\\s]{12}$"
+    },
+    "RecommendationIdList":{
+      "type":"list",
+      "member":{"shape":"RecommendationId"}
+    },
     "RecommendationTarget":{
       "type":"string",
       "enum":[
@@ -3248,7 +3784,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "RequestChangedException":{
       "type":"structure",
@@ -3395,7 +3931,7 @@
         },
         "InstanceDetails":{
           "shape":"InstanceDetails",
-          "documentation":"<p>Details about the instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "RecommendedNumberOfInstancesToPurchase":{
           "shape":"GenericString",
@@ -3477,14 +4013,18 @@
       "members":{
         "RecommendationId":{
           "shape":"GenericString",
-          "documentation":"<p>The ID for this specific recommendation.</p>"
+          "documentation":"<p>The ID for the recommendation.</p>"
         },
         "GenerationTimestamp":{
           "shape":"GenericString",
-          "documentation":"<p>The timestamp for when Amazon Web Services made this recommendation.</p>"
+          "documentation":"<p>The timestamp for when Amazon Web Services made the recommendation.</p>"
+        },
+        "AdditionalMetadata":{
+          "shape":"GenericString",
+          "documentation":"<p>Additional metadata that might be applicable to the recommendation.</p>"
         }
       },
-      "documentation":"<p>Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.</p>"
+      "documentation":"<p>Information about a recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.</p>"
     },
     "ReservationPurchaseRecommendationSummary":{
       "type":"structure",
@@ -3690,22 +4230,22 @@
       "members":{
         "RecommendationId":{
           "shape":"GenericString",
-          "documentation":"<p>The ID for this specific recommendation.</p>"
+          "documentation":"<p>The ID for the recommendation.</p>"
         },
         "GenerationTimestamp":{
           "shape":"GenericString",
-          "documentation":"<p>The timestamp for when Amazon Web Services made this recommendation.</p>"
+          "documentation":"<p>The timestamp for when Amazon Web Services made the recommendation.</p>"
         },
         "LookbackPeriodInDays":{
           "shape":"LookbackPeriodInDays",
-          "documentation":"<p>The number of days of previous usage that Amazon Web Services considers when making this recommendation.</p>"
+          "documentation":"<p>The number of days of previous usage that Amazon Web Services considers when making the recommendation.</p>"
         },
         "AdditionalMetadata":{
           "shape":"GenericString",
           "documentation":"<p>Additional metadata that might be applicable to the recommendation.</p>"
         }
       },
-      "documentation":"<p>Metadata for this recommendation set.</p>"
+      "documentation":"<p>Metadata for a recommendation set.</p>"
     },
     "RightsizingRecommendationSummary":{
       "type":"structure",
@@ -3754,9 +4294,13 @@
         "UsageType":{
           "shape":"GenericString",
           "documentation":"<p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>"
+        },
+        "LinkedAccountName":{
+          "shape":"GenericString",
+          "documentation":"<p>The member account name value that's associated with the cost anomaly.</p>"
         }
       },
-      "documentation":"<p>The combination of Amazon Web Service, linked account, Region, and usage type where a cost anomaly is observed. </p>"
+      "documentation":"<p>The combination of Amazon Web Service, linked account, linked account name, Region, and usage type where a cost anomaly is observed. The linked account name will only be available when the account name can be identified.</p>"
     },
     "RootCauses":{
       "type":"list",
@@ -3953,6 +4497,10 @@
         "CurrentAverageHourlyOnDemandSpend":{
           "shape":"GenericString",
           "documentation":"<p>The average value of hourly On-Demand spend over the lookback period of the applicable usage type.</p>"
+        },
+        "RecommendationDetailId":{
+          "shape":"RecommendationDetailId",
+          "documentation":"<p>Contains detailed information about a specific Savings Plan recommendation.</p>"
         }
       },
       "documentation":"<p>Details for your recommended Savings Plans.</p>"
@@ -4196,6 +4744,47 @@
         "ASCENDING",
         "DESCENDING"
       ]
+    },
+    "StartCostAllocationTagBackfillRequest":{
+      "type":"structure",
+      "required":["BackfillFrom"],
+      "members":{
+        "BackfillFrom":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p> The date you want the backfill to start from. The date can only be a first day of the month (a billing start date). Dates can't precede the previous twelve months, or in the future.</p>"
+        }
+      }
+    },
+    "StartCostAllocationTagBackfillResponse":{
+      "type":"structure",
+      "members":{
+        "BackfillRequest":{
+          "shape":"CostAllocationTagBackfillRequest",
+          "documentation":"<p> An object containing detailed metadata of your new backfill request. </p>"
+        }
+      }
+    },
+    "StartSavingsPlansPurchaseRecommendationGenerationRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "StartSavingsPlansPurchaseRecommendationGenerationResponse":{
+      "type":"structure",
+      "members":{
+        "RecommendationId":{
+          "shape":"RecommendationId",
+          "documentation":"<p>The ID for this specific recommendation.</p>"
+        },
+        "GenerationStartedTime":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>The start time of the recommendation generation.</p>"
+        },
+        "EstimatedCompletionTime":{
+          "shape":"ZonedDateTime",
+          "documentation":"<p>The estimated time for when the recommendation generation will complete.</p>"
+        }
+      }
     },
     "Subscriber":{
       "type":"structure",
@@ -4480,7 +5069,9 @@
         },
         "Threshold":{
           "shape":"NullableNonNegativeDouble",
-          "documentation":"<p>The update to the threshold value for receiving notifications. </p>"
+          "documentation":"<p>(deprecated)</p> <p>The update to the threshold value for receiving notifications. </p> <p>This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will be treated as shorthand syntax for a ThresholdExpression.</p> <p>You can specify either Threshold or ThresholdExpression, but not both.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"Threshold has been deprecated in favor of ThresholdExpression"
         },
         "Frequency":{
           "shape":"AnomalySubscriptionFrequency",
@@ -4497,6 +5088,10 @@
         "SubscriptionName":{
           "shape":"GenericString",
           "documentation":"<p>The new name of the subscription. </p>"
+        },
+        "ThresholdExpression":{
+          "shape":"Expression",
+          "documentation":"<p>The update to the <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact and TotalImpactPercentage, respectively (see <a href=\"https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html\">Impact</a> for more details). The supported nested expression types are <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000 in string format.</p> <p>You can specify either Threshold or ThresholdExpression, but not both.</p> <p>The following are examples of valid ThresholdExpressions:</p> <ul> <li> <p>Absolute threshold: <code>{ \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_ABSOLUTE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }</code> </p> </li> <li> <p>Percentage threshold: <code>{ \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_PERCENTAGE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }</code> </p> </li> <li> <p> <code>AND</code> two thresholds together: <code>{ \"And\": [ { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_ABSOLUTE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }, { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_PERCENTAGE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } } ] }</code> </p> </li> <li> <p> <code>OR</code> two thresholds together: <code>{ \"Or\": [ { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_ABSOLUTE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } }, { \"Dimensions\": { \"Key\": \"ANOMALY_TOTAL_IMPACT_PERCENTAGE\", \"MatchOptions\": [ \"GREATER_THAN_OR_EQUAL\" ], \"Values\": [ \"100\" ] } } ] }</code> </p> </li> </ul>"
         }
       }
     },
@@ -4593,6 +5188,10 @@
           "documentation":"<p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>"
         }
       }
+    },
+    "UsageServices":{
+      "type":"list",
+      "member":{"shape":"GenericString"}
     },
     "UtilizationByTime":{
       "type":"structure",

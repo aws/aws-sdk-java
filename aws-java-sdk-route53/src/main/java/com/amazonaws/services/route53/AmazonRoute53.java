@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,43 @@ import com.amazonaws.services.route53.waiters.AmazonRoute53Waiters;
  * </p>
  * <p>
  * <p>
- * Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+ * Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
  * </p>
+ * <p>
+ * You can use Route 53 to:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Register domain names.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html">How domain
+ * registration works</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Route internet traffic to the resources for your domain
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">How internet traffic is
+ * routed to your website or web application</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Check the health of your resources.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How Route 53 checks the
+ * health of your resources</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonRoute53 {
@@ -351,7 +386,8 @@ public interface AmazonRoute53 {
      * </li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource set exists Route 53 updates it with the values in the request.
+     * <code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource set exists Route 53
+     * updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -375,10 +411,10 @@ public interface AmazonRoute53 {
      * </p>
      * <p>
      * When you submit a <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes to all of the
-     * Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code> returns a status
-     * of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status of
-     * <code>INSYNC</code>. Changes generally propagate to all Route 53 name servers within 60 seconds. For more
-     * information, see <a
+     * Route 53 authoritative DNS servers managing the hosted zone. While your changes are propagating,
+     * <code>GetChange</code> returns a status of <code>PENDING</code>. When propagation is complete,
+     * <code>GetChange</code> returns a status of <code>INSYNC</code>. Changes generally propagate to all Route 53 name
+     * servers managing the hosted zone within 60 seconds. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
      * </p>
      * <p>
@@ -999,6 +1035,12 @@ public interface AmazonRoute53 {
      *         associated with query log. Update or provide a resource policy to grant permissions for the KMS key.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The Key management service (KMS) key you specified is marked as disabled for the log group associated
+     *         with query log. Update or provide a resource policy to grant permissions for the KMS key.
+     *         </p>
+     *         </li>
      * @sample AmazonRoute53.CreateQueryLoggingConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1160,6 +1202,15 @@ public interface AmazonRoute53 {
      * to DNS queries for the domain or subdomain name by using the resource record sets that
      * <code>CreateTrafficPolicyInstance</code> created.
      * </p>
+     * <note>
+     * <p>
+     * After you submit an <code>CreateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53
+     * creates the resource record sets that are specified in the traffic policy definition. Use
+     * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic policy instance to confirm that the
+     * <code>CreateTrafficPolicyInstance</code> request completed successfully. For more information, see the
+     * <code>State</code> response element.
+     * </p>
+     * </note>
      * 
      * @param createTrafficPolicyInstanceRequest
      *        A complex type that contains information about the resource record sets that you want to create based on a
@@ -1853,12 +1904,13 @@ public interface AmazonRoute53 {
      * <li>
      * <p>
      * <code>PENDING</code> indicates that the changes in this request have not propagated to all Amazon Route 53 DNS
-     * servers. This is the initial status of all change batch requests.
+     * servers managing the hosted zone. This is the initial status of all change batch requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS servers.
+     * <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS servers managing the hosted
+     * zone.
      * </p>
      * </li>
      * </ul>
@@ -2231,9 +2283,9 @@ public interface AmazonRoute53 {
      * </p>
      * <note>
      * <p>
-     * After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
-     * request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the
-     * traffic policy definition. For more information, see the <code>State</code> response element.
+     * Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic policy instance to confirm that
+     * the <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request completed
+     * successfully. For more information, see the <code>State</code> response element.
      * </p>
      * </note> <note>
      * <p>
@@ -2990,6 +3042,13 @@ public interface AmazonRoute53 {
      * <p>
      * This call only supports querying public hosted zones.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TestDnsAnswer </code> returns information similar to what you would expect from the answer section of
+     * the <code>dig</code> command. Therefore, if you query for the name servers of a subdomain that point to the
+     * parent name servers, those will not be returned.
+     * </p>
+     * </note>
      * 
      * @param testDNSAnswerRequest
      *        Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and
@@ -3077,6 +3136,15 @@ public interface AmazonRoute53 {
     UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest);
 
     /**
+     * <note>
+     * <p>
+     * After you submit a <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Route 53 creates
+     * the resource record sets that are specified in the traffic policy definition. Use
+     * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of updated traffic policy instance confirm that
+     * the <code>UpdateTrafficPolicyInstance</code> request completed successfully. For more information, see the
+     * <code>State</code> response element.
+     * </p>
+     * </note>
      * <p>
      * Updates the resource record sets in a specified hosted zone that were created based on the settings in a
      * specified traffic policy version.

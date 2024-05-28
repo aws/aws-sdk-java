@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -179,13 +179,13 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
     private String customerRouterConfig;
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500
      * </p>
      */
     private Integer mtu;
     /**
      * <p>
-     * Indicates whether jumbo frames (9001 MTU) are supported.
+     * Indicates whether jumbo frames are supported.
      * </p>
      */
     private Boolean jumboFrameCapable;
@@ -1486,12 +1486,12 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500
      * </p>
      * 
      * @param mtu
-     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value
-     *        is 1500.
+     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value
+     *        is 1500
      */
 
     public void setMtu(Integer mtu) {
@@ -1500,11 +1500,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500
      * </p>
      * 
-     * @return The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value
-     *         is 1500.
+     * @return The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value
+     *         is 1500
      */
 
     public Integer getMtu() {
@@ -1513,12 +1513,12 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.
+     * The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500
      * </p>
      * 
      * @param mtu
-     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value
-     *        is 1500.
+     *        The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value
+     *        is 1500
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1529,11 +1529,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Indicates whether jumbo frames (9001 MTU) are supported.
+     * Indicates whether jumbo frames are supported.
      * </p>
      * 
      * @param jumboFrameCapable
-     *        Indicates whether jumbo frames (9001 MTU) are supported.
+     *        Indicates whether jumbo frames are supported.
      */
 
     public void setJumboFrameCapable(Boolean jumboFrameCapable) {
@@ -1542,10 +1542,10 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Indicates whether jumbo frames (9001 MTU) are supported.
+     * Indicates whether jumbo frames are supported.
      * </p>
      * 
-     * @return Indicates whether jumbo frames (9001 MTU) are supported.
+     * @return Indicates whether jumbo frames are supported.
      */
 
     public Boolean getJumboFrameCapable() {
@@ -1554,11 +1554,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Indicates whether jumbo frames (9001 MTU) are supported.
+     * Indicates whether jumbo frames are supported.
      * </p>
      * 
      * @param jumboFrameCapable
-     *        Indicates whether jumbo frames (9001 MTU) are supported.
+     *        Indicates whether jumbo frames are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1569,10 +1569,10 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Indicates whether jumbo frames (9001 MTU) are supported.
+     * Indicates whether jumbo frames are supported.
      * </p>
      * 
-     * @return Indicates whether jumbo frames (9001 MTU) are supported.
+     * @return Indicates whether jumbo frames are supported.
      */
 
     public Boolean isJumboFrameCapable() {

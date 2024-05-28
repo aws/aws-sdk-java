@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head
      * commit is used.
      * </p>
      */
@@ -90,13 +90,13 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head
      * commit is used.
      * </p>
      * 
      * @param commitSpecifier
      *        The fully quaified reference that identifies the commit that contains the file. For example, you can
-     *        specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is
+     *        specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is
      *        provided, the head commit is used.
      */
 
@@ -107,12 +107,12 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head
      * commit is used.
      * </p>
      * 
      * @return The fully quaified reference that identifies the commit that contains the file. For example, you can
-     *         specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is
+     *         specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is
      *         provided, the head commit is used.
      */
 
@@ -123,13 +123,13 @@ public class GetFileRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The fully quaified reference that identifies the commit that contains the file. For example, you can specify a
-     * full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head
+     * full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is provided, the head
      * commit is used.
      * </p>
      * 
      * @param commitSpecifier
      *        The fully quaified reference that identifies the commit that contains the file. For example, you can
-     *        specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is
+     *        specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/main. If none is
      *        provided, the head commit is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

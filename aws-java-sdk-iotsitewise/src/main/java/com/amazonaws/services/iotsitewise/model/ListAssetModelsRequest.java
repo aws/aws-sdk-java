@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,26 @@ public class ListAssetModelsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<String> assetModelTypes;
 
     /**
      * <p>
@@ -137,6 +157,239 @@ public class ListAssetModelsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of asset model.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *         component in another asset model.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *         models. You can't create assets directly from this type of asset model.
+     *         </p>
+     *         </li>
+     * @see AssetModelType
+     */
+
+    public java.util.List<String> getAssetModelTypes() {
+        return assetModelTypes;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelTypes
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @see AssetModelType
+     */
+
+    public void setAssetModelTypes(java.util.Collection<String> assetModelTypes) {
+        if (assetModelTypes == null) {
+            this.assetModelTypes = null;
+            return;
+        }
+
+        this.assetModelTypes = new java.util.ArrayList<String>(assetModelTypes);
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetModelTypes(java.util.Collection)} or {@link #withAssetModelTypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param assetModelTypes
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public ListAssetModelsRequest withAssetModelTypes(String... assetModelTypes) {
+        if (this.assetModelTypes == null) {
+            setAssetModelTypes(new java.util.ArrayList<String>(assetModelTypes.length));
+        }
+        for (String ele : assetModelTypes) {
+            this.assetModelTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelTypes
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public ListAssetModelsRequest withAssetModelTypes(java.util.Collection<String> assetModelTypes) {
+        setAssetModelTypes(assetModelTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelTypes
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public ListAssetModelsRequest withAssetModelTypes(AssetModelType... assetModelTypes) {
+        java.util.ArrayList<String> assetModelTypesCopy = new java.util.ArrayList<String>(assetModelTypes.length);
+        for (AssetModelType value : assetModelTypes) {
+            assetModelTypesCopy.add(value.toString());
+        }
+        if (getAssetModelTypes() == null) {
+            setAssetModelTypes(assetModelTypesCopy);
+        } else {
+            getAssetModelTypes().addAll(assetModelTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -151,7 +404,9 @@ public class ListAssetModelsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getAssetModelTypes() != null)
+            sb.append("AssetModelTypes: ").append(getAssetModelTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -174,6 +429,10 @@ public class ListAssetModelsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getAssetModelTypes() == null ^ this.getAssetModelTypes() == null)
+            return false;
+        if (other.getAssetModelTypes() != null && other.getAssetModelTypes().equals(this.getAssetModelTypes()) == false)
+            return false;
         return true;
     }
 
@@ -184,6 +443,7 @@ public class ListAssetModelsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelTypes() == null) ? 0 : getAssetModelTypes().hashCode());
         return hashCode;
     }
 

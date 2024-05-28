@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,9 @@ public class BatchCreateRumMetricDefinitionsRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If
-     * you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will
-     * receive the metrics and an IAM role that has permission to write to the experiment.
+     * you specify <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of the
+     * CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the
+     * experiment.
      * </p>
      */
     private String destination;
@@ -102,15 +103,16 @@ public class BatchCreateRumMetricDefinitionsRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If
-     * you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will
-     * receive the metrics and an IAM role that has permission to write to the experiment.
+     * you specify <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of the
+     * CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the
+     * experiment.
      * </p>
      * 
      * @param destination
      *        The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
-     *        <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the
-     *        CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write
-     *        to the experiment.
+     *        <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the Amazon Resource
+     *        Name (ARN) of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has
+     *        permission to write to the experiment.
      * @see MetricDestination
      */
 
@@ -121,14 +123,15 @@ public class BatchCreateRumMetricDefinitionsRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If
-     * you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will
-     * receive the metrics and an IAM role that has permission to write to the experiment.
+     * you specify <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of the
+     * CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the
+     * experiment.
      * </p>
      * 
      * @return The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
-     *         <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the
-     *         CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write
-     *         to the experiment.
+     *         <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the Amazon Resource
+     *         Name (ARN) of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has
+     *         permission to write to the experiment.
      * @see MetricDestination
      */
 
@@ -139,15 +142,16 @@ public class BatchCreateRumMetricDefinitionsRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If
-     * you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will
-     * receive the metrics and an IAM role that has permission to write to the experiment.
+     * you specify <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of the
+     * CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the
+     * experiment.
      * </p>
      * 
      * @param destination
      *        The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
-     *        <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the
-     *        CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write
-     *        to the experiment.
+     *        <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the Amazon Resource
+     *        Name (ARN) of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has
+     *        permission to write to the experiment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricDestination
      */
@@ -160,15 +164,16 @@ public class BatchCreateRumMetricDefinitionsRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If
-     * you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will
-     * receive the metrics and an IAM role that has permission to write to the experiment.
+     * you specify <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of the
+     * CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the
+     * experiment.
      * </p>
      * 
      * @param destination
      *        The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
-     *        <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the
-     *        CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write
-     *        to the experiment.
+     *        <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the Amazon Resource
+     *        Name (ARN) of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has
+     *        permission to write to the experiment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricDestination
      */

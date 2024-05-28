@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,8 @@ public enum OperationType {
     CREATE_SERVICE("CREATE_SERVICE"),
     PAUSE_SERVICE("PAUSE_SERVICE"),
     RESUME_SERVICE("RESUME_SERVICE"),
-    DELETE_SERVICE("DELETE_SERVICE");
+    DELETE_SERVICE("DELETE_SERVICE"),
+    UPDATE_SERVICE("UPDATE_SERVICE");
 
     private String value;
 

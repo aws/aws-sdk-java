@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     private String format;
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -42,13 +42,18 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -148,8 +153,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -159,20 +164,25 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
      *        The namespace of the package version that contains the requested package version assets. The package
-     *        version component that specifies its namespace depends on its type. For example:</p>
+     *        component that specifies its namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -181,13 +191,18 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
-     *        formats do not have a namespace.
+     *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *        those formats do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -198,8 +213,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -209,19 +224,24 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The namespace of the package version that contains the requested package version assets. The package
-     *         version component that specifies its namespace depends on its type. For example:</p>
+     *         component that specifies its namespace depends on its type. For example:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -230,13 +250,18 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package version is its <code>scope</code>.
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Python and NuGet package versions do not contain a corresponding component, package versions of those
-     *         formats do not have a namespace.
+     *         The namespace of a generic package is its <code>namespace</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *         those formats do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -247,8 +272,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -258,20 +283,25 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
      *        The namespace of the package version that contains the requested package version assets. The package
-     *        version component that specifies its namespace depends on its type. For example:</p>
+     *        component that specifies its namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -280,13 +310,18 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
-     *        formats do not have a namespace.
+     *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *        those formats do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

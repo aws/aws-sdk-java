@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class KafkaSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaslPassword").build();
     private static final MarshallingInfo<Boolean> NOHEXPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NoHexPrefix").build();
+    private static final MarshallingInfo<String> SASLMECHANISM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaslMechanism").build();
+    private static final MarshallingInfo<String> SSLENDPOINTIDENTIFICATIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslEndpointIdentificationAlgorithm").build();
 
     private static final KafkaSettingsMarshaller instance = new KafkaSettingsMarshaller();
 
@@ -98,6 +102,8 @@ public class KafkaSettingsMarshaller {
             protocolMarshaller.marshall(kafkaSettings.getSaslUsername(), SASLUSERNAME_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getSaslPassword(), SASLPASSWORD_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getNoHexPrefix(), NOHEXPREFIX_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSaslMechanism(), SASLMECHANISM_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSslEndpointIdentificationAlgorithm(), SSLENDPOINTIDENTIFICATIONALGORITHM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

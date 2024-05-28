@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Information about a trigger for a repository.
  * </p>
+ * <note>
+ * <p>
+ * If you want to receive notifications about repository events, consider using notifications instead of triggers. For
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-repository-email.html">Configuring notifications
+ * for repository events</a>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryTrigger" target="_top">AWS API
  *      Documentation</a>

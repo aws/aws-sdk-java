@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,23 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private Boolean autoEnableControls;
+    /**
+     * <p>
+     * Specifies whether the calling account has consolidated control findings turned on. If the value for this field is
+     * set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the
+     * check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for
+     * a control check when the check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * The value for this field in a member account matches the value in the administrator account. For accounts that
+     * aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled
+     * Security Hub on or after February 23, 2023.
+     * </p>
+     */
+    private String controlFindingGenerator;
 
     /**
      * <p>
@@ -207,6 +224,149 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Specifies whether the calling account has consolidated control findings turned on. If the value for this field is
+     * set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the
+     * check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for
+     * a control check when the check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * The value for this field in a member account matches the value in the administrator account. For accounts that
+     * aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled
+     * Security Hub on or after February 23, 2023.
+     * </p>
+     * 
+     * @param controlFindingGenerator
+     *        Specifies whether the calling account has consolidated control findings turned on. If the value for this
+     *        field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check
+     *        even when the check applies to multiple enabled standards.</p>
+     *        <p>
+     *        If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate
+     *        findings for a control check when the check applies to multiple enabled standards.
+     *        </p>
+     *        <p>
+     *        The value for this field in a member account matches the value in the administrator account. For accounts
+     *        that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if
+     *        you enabled Security Hub on or after February 23, 2023.
+     * @see ControlFindingGenerator
+     */
+
+    public void setControlFindingGenerator(String controlFindingGenerator) {
+        this.controlFindingGenerator = controlFindingGenerator;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the calling account has consolidated control findings turned on. If the value for this field is
+     * set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the
+     * check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for
+     * a control check when the check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * The value for this field in a member account matches the value in the administrator account. For accounts that
+     * aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled
+     * Security Hub on or after February 23, 2023.
+     * </p>
+     * 
+     * @return Specifies whether the calling account has consolidated control findings turned on. If the value for this
+     *         field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control
+     *         check even when the check applies to multiple enabled standards.</p>
+     *         <p>
+     *         If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate
+     *         findings for a control check when the check applies to multiple enabled standards.
+     *         </p>
+     *         <p>
+     *         The value for this field in a member account matches the value in the administrator account. For accounts
+     *         that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if
+     *         you enabled Security Hub on or after February 23, 2023.
+     * @see ControlFindingGenerator
+     */
+
+    public String getControlFindingGenerator() {
+        return this.controlFindingGenerator;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the calling account has consolidated control findings turned on. If the value for this field is
+     * set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the
+     * check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for
+     * a control check when the check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * The value for this field in a member account matches the value in the administrator account. For accounts that
+     * aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled
+     * Security Hub on or after February 23, 2023.
+     * </p>
+     * 
+     * @param controlFindingGenerator
+     *        Specifies whether the calling account has consolidated control findings turned on. If the value for this
+     *        field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check
+     *        even when the check applies to multiple enabled standards.</p>
+     *        <p>
+     *        If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate
+     *        findings for a control check when the check applies to multiple enabled standards.
+     *        </p>
+     *        <p>
+     *        The value for this field in a member account matches the value in the administrator account. For accounts
+     *        that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if
+     *        you enabled Security Hub on or after February 23, 2023.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ControlFindingGenerator
+     */
+
+    public DescribeHubResult withControlFindingGenerator(String controlFindingGenerator) {
+        setControlFindingGenerator(controlFindingGenerator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the calling account has consolidated control findings turned on. If the value for this field is
+     * set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the
+     * check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for
+     * a control check when the check applies to multiple enabled standards.
+     * </p>
+     * <p>
+     * The value for this field in a member account matches the value in the administrator account. For accounts that
+     * aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled
+     * Security Hub on or after February 23, 2023.
+     * </p>
+     * 
+     * @param controlFindingGenerator
+     *        Specifies whether the calling account has consolidated control findings turned on. If the value for this
+     *        field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check
+     *        even when the check applies to multiple enabled standards.</p>
+     *        <p>
+     *        If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate
+     *        findings for a control check when the check applies to multiple enabled standards.
+     *        </p>
+     *        <p>
+     *        The value for this field in a member account matches the value in the administrator account. For accounts
+     *        that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if
+     *        you enabled Security Hub on or after February 23, 2023.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ControlFindingGenerator
+     */
+
+    public DescribeHubResult withControlFindingGenerator(ControlFindingGenerator controlFindingGenerator) {
+        this.controlFindingGenerator = controlFindingGenerator.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -223,7 +383,9 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getSubscribedAt() != null)
             sb.append("SubscribedAt: ").append(getSubscribedAt()).append(",");
         if (getAutoEnableControls() != null)
-            sb.append("AutoEnableControls: ").append(getAutoEnableControls());
+            sb.append("AutoEnableControls: ").append(getAutoEnableControls()).append(",");
+        if (getControlFindingGenerator() != null)
+            sb.append("ControlFindingGenerator: ").append(getControlFindingGenerator());
         sb.append("}");
         return sb.toString();
     }
@@ -250,6 +412,10 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getAutoEnableControls() != null && other.getAutoEnableControls().equals(this.getAutoEnableControls()) == false)
             return false;
+        if (other.getControlFindingGenerator() == null ^ this.getControlFindingGenerator() == null)
+            return false;
+        if (other.getControlFindingGenerator() != null && other.getControlFindingGenerator().equals(this.getControlFindingGenerator()) == false)
+            return false;
         return true;
     }
 
@@ -261,6 +427,7 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getHubArn() == null) ? 0 : getHubArn().hashCode());
         hashCode = prime * hashCode + ((getSubscribedAt() == null) ? 0 : getSubscribedAt().hashCode());
         hashCode = prime * hashCode + ((getAutoEnableControls() == null) ? 0 : getAutoEnableControls().hashCode());
+        hashCode = prime * hashCode + ((getControlFindingGenerator() == null) ? 0 : getControlFindingGenerator().hashCode());
         return hashCode;
     }
 

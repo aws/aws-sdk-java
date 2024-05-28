@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active
      * Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS
-     * client accessing the file system.
+     * clients accessing the file system.
      * </p>
      */
     private CreateSvmActiveDirectoryConfiguration activeDirectoryConfiguration;
@@ -65,17 +65,19 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     * clients, and an application accessing the data uses a Windows user as the service account.
+     * <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are
+     * SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of
-     * both NFS and SMB clients.
+     * <code>MIXED</code> This is an advanced setting. For more information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp
+     * ONTAP User Guide.
      * </p>
      * </li>
      * </ul>
+     * <p/>
      */
     private String rootVolumeSecurityStyle;
 
@@ -83,13 +85,13 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active
      * Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS
-     * client accessing the file system.
+     * clients accessing the file system.
      * </p>
      * 
      * @param activeDirectoryConfiguration
      *        Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active
      *        Directory provides user authentication and access control for SMB clients, including Microsoft Windows and
-     *        macOS client accessing the file system.
+     *        macOS clients accessing the file system.
      */
 
     public void setActiveDirectoryConfiguration(CreateSvmActiveDirectoryConfiguration activeDirectoryConfiguration) {
@@ -100,12 +102,12 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active
      * Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS
-     * client accessing the file system.
+     * clients accessing the file system.
      * </p>
      * 
      * @return Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an
      *         Active Directory provides user authentication and access control for SMB clients, including Microsoft
-     *         Windows and macOS client accessing the file system.
+     *         Windows and macOS clients accessing the file system.
      */
 
     public CreateSvmActiveDirectoryConfiguration getActiveDirectoryConfiguration() {
@@ -116,13 +118,13 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active
      * Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS
-     * client accessing the file system.
+     * clients accessing the file system.
      * </p>
      * 
      * @param activeDirectoryConfiguration
      *        Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active
      *        Directory provides user authentication and access control for SMB clients, including Microsoft Windows and
-     *        macOS client accessing the file system.
+     *        macOS clients accessing the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,20 +336,23 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     * clients, and an application accessing the data uses a Windows user as the service account.
+     * <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are
+     * SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of
-     * both NFS and SMB clients.
+     * <code>MIXED</code> This is an advanced setting. For more information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp
+     * ONTAP User Guide.
      * </p>
      * </li>
      * </ul>
+     * <p/>
      * 
      * @param rootVolumeSecurityStyle
-     *        The security style of the root volume of the SVM. Specify one of the following values:</p>
+     *        The security style of the root volume of the SVM. Specify one of the following values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -357,16 +362,19 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     *        clients, and an application accessing the data uses a Windows user as the service account.
+     *        <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of
+     *        users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service
+     *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist
-     *        of both NFS and SMB clients.
+     *        <code>MIXED</code> This is an advanced setting. For more information, see <a
+     *        href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for
+     *        NetApp ONTAP User Guide.
      *        </p>
      *        </li>
+     *        </ul>
      * @see StorageVirtualMachineRootVolumeSecurityStyle
      */
 
@@ -387,19 +395,22 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     * clients, and an application accessing the data uses a Windows user as the service account.
+     * <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are
+     * SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of
-     * both NFS and SMB clients.
+     * <code>MIXED</code> This is an advanced setting. For more information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp
+     * ONTAP User Guide.
      * </p>
      * </li>
      * </ul>
+     * <p/>
      * 
-     * @return The security style of the root volume of the SVM. Specify one of the following values:</p>
+     * @return The security style of the root volume of the SVM. Specify one of the following values:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -409,16 +420,19 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     *         clients, and an application accessing the data uses a Windows user as the service account.
+     *         <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of
+     *         users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service
+     *         account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users
-     *         consist of both NFS and SMB clients.
+     *         <code>MIXED</code> This is an advanced setting. For more information, see <a
+     *         href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for
+     *         NetApp ONTAP User Guide.
      *         </p>
      *         </li>
+     *         </ul>
      * @see StorageVirtualMachineRootVolumeSecurityStyle
      */
 
@@ -439,20 +453,23 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     * clients, and an application accessing the data uses a Windows user as the service account.
+     * <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are
+     * SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of
-     * both NFS and SMB clients.
+     * <code>MIXED</code> This is an advanced setting. For more information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp
+     * ONTAP User Guide.
      * </p>
      * </li>
      * </ul>
+     * <p/>
      * 
      * @param rootVolumeSecurityStyle
-     *        The security style of the root volume of the SVM. Specify one of the following values:</p>
+     *        The security style of the root volume of the SVM. Specify one of the following values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -462,16 +479,19 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     *        clients, and an application accessing the data uses a Windows user as the service account.
+     *        <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of
+     *        users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service
+     *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist
-     *        of both NFS and SMB clients.
+     *        <code>MIXED</code> This is an advanced setting. For more information, see <a
+     *        href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for
+     *        NetApp ONTAP User Guide.
      *        </p>
      *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageVirtualMachineRootVolumeSecurityStyle
      */
@@ -494,20 +514,23 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     * clients, and an application accessing the data uses a Windows user as the service account.
+     * <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are
+     * SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of
-     * both NFS and SMB clients.
+     * <code>MIXED</code> This is an advanced setting. For more information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp
+     * ONTAP User Guide.
      * </p>
      * </li>
      * </ul>
+     * <p/>
      * 
      * @param rootVolumeSecurityStyle
-     *        The security style of the root volume of the SVM. Specify one of the following values:</p>
+     *        The security style of the root volume of the SVM. Specify one of the following values:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -517,16 +540,19 @@ public class CreateStorageVirtualMachineRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB
-     *        clients, and an application accessing the data uses a Windows user as the service account.
+     *        <code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of
+     *        users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service
+     *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist
-     *        of both NFS and SMB clients.
+     *        <code>MIXED</code> This is an advanced setting. For more information, see <a
+     *        href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for
+     *        NetApp ONTAP User Guide.
      *        </p>
      *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageVirtualMachineRootVolumeSecurityStyle
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SimpleEmailPart textPart;
+    /**
+     * <p>
+     * The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * </p>
+     */
+    private java.util.List<MessageHeader> headers;
 
     /**
      * <p>
@@ -185,6 +191,76 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * </p>
+     * 
+     * @return The list of MessageHeaders for the email. You can have up to 15 Headers.
+     */
+
+    public java.util.List<MessageHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * </p>
+     * 
+     * @param headers
+     *        The list of MessageHeaders for the email. You can have up to 15 Headers.
+     */
+
+    public void setHeaders(java.util.Collection<MessageHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<MessageHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimpleEmail withHeaders(MessageHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<MessageHeader>(headers.length));
+        }
+        for (MessageHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * </p>
+     * 
+     * @param headers
+     *        The list of MessageHeaders for the email. You can have up to 15 Headers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimpleEmail withHeaders(java.util.Collection<MessageHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -201,7 +277,9 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
         if (getSubject() != null)
             sb.append("Subject: ").append(getSubject()).append(",");
         if (getTextPart() != null)
-            sb.append("TextPart: ").append(getTextPart());
+            sb.append("TextPart: ").append(getTextPart()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders());
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +306,10 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTextPart() != null && other.getTextPart().equals(this.getTextPart()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         return true;
     }
 
@@ -239,6 +321,7 @@ public class SimpleEmail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHtmlPart() == null) ? 0 : getHtmlPart().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
         hashCode = prime * hashCode + ((getTextPart() == null) ? 0 : getTextPart().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         return hashCode;
     }
 

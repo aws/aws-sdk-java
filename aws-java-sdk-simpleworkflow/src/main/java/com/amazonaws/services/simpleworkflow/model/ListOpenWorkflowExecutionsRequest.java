@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,8 +66,8 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -332,8 +332,8 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -344,7 +344,7 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      *        If <code>NextPageToken</code> is returned there are more results available. The value of
      *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
      *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
-     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "
      *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -358,8 +358,8 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -369,7 +369,7 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * @return If <code>NextPageToken</code> is returned there are more results available. The value of
      *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
      *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
-     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "
      *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -383,8 +383,8 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -395,7 +395,7 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      *        If <code>NextPageToken</code> is returned there are more results available. The value of
      *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
      *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
-     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "
      *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class QueryRuntimeStatisticsTimelineMarshaller {
 
     private static final MarshallingInfo<Long> QUERYQUEUETIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryQueueTimeInMillis").build();
+    private static final MarshallingInfo<Long> SERVICEPREPROCESSINGTIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServicePreProcessingTimeInMillis").build();
     private static final MarshallingInfo<Long> QUERYPLANNINGTIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryPlanningTimeInMillis").build();
     private static final MarshallingInfo<Long> ENGINEEXECUTIONTIMEINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -55,6 +57,7 @@ public class QueryRuntimeStatisticsTimelineMarshaller {
 
         try {
             protocolMarshaller.marshall(queryRuntimeStatisticsTimeline.getQueryQueueTimeInMillis(), QUERYQUEUETIMEINMILLIS_BINDING);
+            protocolMarshaller.marshall(queryRuntimeStatisticsTimeline.getServicePreProcessingTimeInMillis(), SERVICEPREPROCESSINGTIMEINMILLIS_BINDING);
             protocolMarshaller.marshall(queryRuntimeStatisticsTimeline.getQueryPlanningTimeInMillis(), QUERYPLANNINGTIMEINMILLIS_BINDING);
             protocolMarshaller.marshall(queryRuntimeStatisticsTimeline.getEngineExecutionTimeInMillis(), ENGINEEXECUTIONTIMEINMILLIS_BINDING);
             protocolMarshaller.marshall(queryRuntimeStatisticsTimeline.getServiceProcessingTimeInMillis(), SERVICEPROCESSINGTIMEINMILLIS_BINDING);

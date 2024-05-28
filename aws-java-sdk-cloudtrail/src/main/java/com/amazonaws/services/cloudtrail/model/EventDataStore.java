@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A storage lake of event data against which you can run complex SQL-based queries. An event data store can include
- * events that you have logged on your account from the last 90 to 2557 days (about three months to up to seven years).
- * To select events for an event data store, use <a href=
+ * events that you have logged on your account. To select events for an event data store, use <a href=
  * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced"
  * >advanced event selectors</a>.
  * </p>
@@ -46,61 +45,58 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * Indicates whether the event data store is protected from termination.
      * </p>
      */
     @Deprecated
     private Boolean terminationProtectionEnabled;
     /**
      * <p>
-     * This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      */
     @Deprecated
     private String status;
     /**
      * <p>
-     * This field is being deprecated. The advanced event selectors that were used to select events for the data store.
+     * The advanced event selectors that were used to select events for the data store.
      * </p>
      */
     @Deprecated
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store includes events from all regions, or only
-     * from the region in which it was created.
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
+     * created.
      * </p>
      */
     @Deprecated
     private Boolean multiRegionEnabled;
     /**
      * <p>
-     * This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     * organization.
+     * Indicates that an event data store is collecting logged events for an organization.
      * </p>
      */
     @Deprecated
     private Boolean organizationEnabled;
     /**
      * <p>
-     * This field is being deprecated. The retention period, in days.
+     * The retention period, in days.
      * </p>
      */
     @Deprecated
     private Integer retentionPeriod;
     /**
      * <p>
-     * This field is being deprecated. The timestamp of the event data store's creation.
+     * The timestamp of the event data store's creation.
      * </p>
      */
     @Deprecated
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * This field is being deprecated. The timestamp showing when an event data store was updated, if applicable.
-     * <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     * <code>CreatedTimestamp</code>.
+     * The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is
+     * always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      * </p>
      */
     @Deprecated
@@ -188,11 +184,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * Indicates whether the event data store is protected from termination.
      * </p>
      * 
      * @param terminationProtectionEnabled
-     *        This field is being deprecated. Indicates whether the event data store is protected from termination.
+     *        Indicates whether the event data store is protected from termination.
      */
     @Deprecated
     public void setTerminationProtectionEnabled(Boolean terminationProtectionEnabled) {
@@ -201,10 +197,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * Indicates whether the event data store is protected from termination.
      * </p>
      * 
-     * @return This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * @return Indicates whether the event data store is protected from termination.
      */
     @Deprecated
     public Boolean getTerminationProtectionEnabled() {
@@ -213,11 +209,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * Indicates whether the event data store is protected from termination.
      * </p>
      * 
      * @param terminationProtectionEnabled
-     *        This field is being deprecated. Indicates whether the event data store is protected from termination.
+     *        Indicates whether the event data store is protected from termination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -228,10 +224,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * Indicates whether the event data store is protected from termination.
      * </p>
      * 
-     * @return This field is being deprecated. Indicates whether the event data store is protected from termination.
+     * @return Indicates whether the event data store is protected from termination.
      */
     @Deprecated
     public Boolean isTerminationProtectionEnabled() {
@@ -240,13 +236,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     *        <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @see EventDataStoreStatus
      */
     @Deprecated
@@ -256,12 +250,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
-     * @return This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     *         <code>PENDING_DELETION</code>.
+     * @return The status of an event data store.
      * @see EventDataStoreStatus
      */
     @Deprecated
@@ -271,13 +263,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     *        <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventDataStoreStatus
      */
@@ -289,13 +279,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        This field is being deprecated. The status of an event data store. Values are <code>ENABLED</code> and
-     *        <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventDataStoreStatus
      */
@@ -307,11 +295,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The advanced event selectors that were used to select events for the data store.
+     * The advanced event selectors that were used to select events for the data store.
      * </p>
      * 
-     * @return This field is being deprecated. The advanced event selectors that were used to select events for the data
-     *         store.
+     * @return The advanced event selectors that were used to select events for the data store.
      */
     @Deprecated
     public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
@@ -323,12 +310,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The advanced event selectors that were used to select events for the data store.
+     * The advanced event selectors that were used to select events for the data store.
      * </p>
      * 
      * @param advancedEventSelectors
-     *        This field is being deprecated. The advanced event selectors that were used to select events for the data
-     *        store.
+     *        The advanced event selectors that were used to select events for the data store.
      */
     @Deprecated
     public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
@@ -342,7 +328,7 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The advanced event selectors that were used to select events for the data store.
+     * The advanced event selectors that were used to select events for the data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -351,8 +337,7 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param advancedEventSelectors
-     *        This field is being deprecated. The advanced event selectors that were used to select events for the data
-     *        store.
+     *        The advanced event selectors that were used to select events for the data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -368,12 +353,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The advanced event selectors that were used to select events for the data store.
+     * The advanced event selectors that were used to select events for the data store.
      * </p>
      * 
      * @param advancedEventSelectors
-     *        This field is being deprecated. The advanced event selectors that were used to select events for the data
-     *        store.
+     *        The advanced event selectors that were used to select events for the data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -384,13 +368,13 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store includes events from all regions, or only
-     * from the region in which it was created.
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
+     * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        This field is being deprecated. Indicates whether the event data store includes events from all regions,
-     *        or only from the region in which it was created.
+     *        Indicates whether the event data store includes events from all Regions, or only from the Region in which
+     *        it was created.
      */
     @Deprecated
     public void setMultiRegionEnabled(Boolean multiRegionEnabled) {
@@ -399,12 +383,12 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store includes events from all regions, or only
-     * from the region in which it was created.
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
+     * created.
      * </p>
      * 
-     * @return This field is being deprecated. Indicates whether the event data store includes events from all regions,
-     *         or only from the region in which it was created.
+     * @return Indicates whether the event data store includes events from all Regions, or only from the Region in which
+     *         it was created.
      */
     @Deprecated
     public Boolean getMultiRegionEnabled() {
@@ -413,13 +397,13 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store includes events from all regions, or only
-     * from the region in which it was created.
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
+     * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        This field is being deprecated. Indicates whether the event data store includes events from all regions,
-     *        or only from the region in which it was created.
+     *        Indicates whether the event data store includes events from all Regions, or only from the Region in which
+     *        it was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -430,12 +414,12 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates whether the event data store includes events from all regions, or only
-     * from the region in which it was created.
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
+     * created.
      * </p>
      * 
-     * @return This field is being deprecated. Indicates whether the event data store includes events from all regions,
-     *         or only from the region in which it was created.
+     * @return Indicates whether the event data store includes events from all Regions, or only from the Region in which
+     *         it was created.
      */
     @Deprecated
     public Boolean isMultiRegionEnabled() {
@@ -444,13 +428,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     * organization.
+     * Indicates that an event data store is collecting logged events for an organization.
      * </p>
      * 
      * @param organizationEnabled
-     *        This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     *        organization.
+     *        Indicates that an event data store is collecting logged events for an organization.
      */
     @Deprecated
     public void setOrganizationEnabled(Boolean organizationEnabled) {
@@ -459,12 +441,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     * organization.
+     * Indicates that an event data store is collecting logged events for an organization.
      * </p>
      * 
-     * @return This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     *         organization.
+     * @return Indicates that an event data store is collecting logged events for an organization.
      */
     @Deprecated
     public Boolean getOrganizationEnabled() {
@@ -473,13 +453,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     * organization.
+     * Indicates that an event data store is collecting logged events for an organization.
      * </p>
      * 
      * @param organizationEnabled
-     *        This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     *        organization.
+     *        Indicates that an event data store is collecting logged events for an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -490,12 +468,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     * organization.
+     * Indicates that an event data store is collecting logged events for an organization.
      * </p>
      * 
-     * @return This field is being deprecated. Indicates that an event data store is collecting logged events for an
-     *         organization.
+     * @return Indicates that an event data store is collecting logged events for an organization.
      */
     @Deprecated
     public Boolean isOrganizationEnabled() {
@@ -504,11 +480,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The retention period, in days.
+     * The retention period, in days.
      * </p>
      * 
      * @param retentionPeriod
-     *        This field is being deprecated. The retention period, in days.
+     *        The retention period, in days.
      */
     @Deprecated
     public void setRetentionPeriod(Integer retentionPeriod) {
@@ -517,10 +493,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The retention period, in days.
+     * The retention period, in days.
      * </p>
      * 
-     * @return This field is being deprecated. The retention period, in days.
+     * @return The retention period, in days.
      */
     @Deprecated
     public Integer getRetentionPeriod() {
@@ -529,11 +505,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The retention period, in days.
+     * The retention period, in days.
      * </p>
      * 
      * @param retentionPeriod
-     *        This field is being deprecated. The retention period, in days.
+     *        The retention period, in days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -544,11 +520,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The timestamp of the event data store's creation.
+     * The timestamp of the event data store's creation.
      * </p>
      * 
      * @param createdTimestamp
-     *        This field is being deprecated. The timestamp of the event data store's creation.
+     *        The timestamp of the event data store's creation.
      */
     @Deprecated
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -557,10 +533,10 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The timestamp of the event data store's creation.
+     * The timestamp of the event data store's creation.
      * </p>
      * 
-     * @return This field is being deprecated. The timestamp of the event data store's creation.
+     * @return The timestamp of the event data store's creation.
      */
     @Deprecated
     public java.util.Date getCreatedTimestamp() {
@@ -569,11 +545,11 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The timestamp of the event data store's creation.
+     * The timestamp of the event data store's creation.
      * </p>
      * 
      * @param createdTimestamp
-     *        This field is being deprecated. The timestamp of the event data store's creation.
+     *        The timestamp of the event data store's creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -584,15 +560,13 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The timestamp showing when an event data store was updated, if applicable.
-     * <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     * <code>CreatedTimestamp</code>.
+     * The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is
+     * always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      * </p>
      * 
      * @param updatedTimestamp
-     *        This field is being deprecated. The timestamp showing when an event data store was updated, if applicable.
-     *        <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     *        <code>CreatedTimestamp</code>.
+     *        The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
+     *        is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      */
     @Deprecated
     public void setUpdatedTimestamp(java.util.Date updatedTimestamp) {
@@ -601,14 +575,12 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The timestamp showing when an event data store was updated, if applicable.
-     * <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     * <code>CreatedTimestamp</code>.
+     * The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is
+     * always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      * </p>
      * 
-     * @return This field is being deprecated. The timestamp showing when an event data store was updated, if
-     *         applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     *         <code>CreatedTimestamp</code>.
+     * @return The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
+     *         is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      */
     @Deprecated
     public java.util.Date getUpdatedTimestamp() {
@@ -617,15 +589,13 @@ public class EventDataStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is being deprecated. The timestamp showing when an event data store was updated, if applicable.
-     * <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     * <code>CreatedTimestamp</code>.
+     * The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is
+     * always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      * </p>
      * 
      * @param updatedTimestamp
-     *        This field is being deprecated. The timestamp showing when an event data store was updated, if applicable.
-     *        <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in
-     *        <code>CreatedTimestamp</code>.
+     *        The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
+     *        is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

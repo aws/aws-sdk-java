@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name of the SSM document to run. This can be a public document or a custom document. To run a shared document
      * belonging to another account, specify the document ARN. For more information about how to use shared documents,
-     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
@@ -151,7 +151,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name of the SSM document to run. This can be a public document or a custom document. To run a shared document
      * belonging to another account, specify the document ARN. For more information about how to use shared documents,
-     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -159,7 +159,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      *        The name of the SSM document to run. This can be a public document or a custom document. To run a shared
      *        document belonging to another account, specify the document ARN. For more information about how to use
      *        shared documents, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM
      *        documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -171,14 +171,14 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name of the SSM document to run. This can be a public document or a custom document. To run a shared document
      * belonging to another account, specify the document ARN. For more information about how to use shared documents,
-     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The name of the SSM document to run. This can be a public document or a custom document. To run a shared
      *         document belonging to another account, specify the document ARN. For more information about how to use
      *         shared documents, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
      *         SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -190,7 +190,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name of the SSM document to run. This can be a public document or a custom document. To run a shared document
      * belonging to another account, specify the document ARN. For more information about how to use shared documents,
-     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -198,7 +198,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      *        The name of the SSM document to run. This can be a public document or a custom document. To run a shared
      *        document belonging to another account, specify the document ARN. For more information about how to use
      *        shared documents, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM
      *        documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

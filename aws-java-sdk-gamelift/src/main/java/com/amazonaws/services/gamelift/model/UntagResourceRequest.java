@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-     * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe operation for the resource type.
+     * that uniquely identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     * resource ARNs in the data object for the resource. You can retrieve the ARN by calling a <code>List</code> or
+     * <code>Describe</code> operation for the resource type.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource
-     * can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
+     * A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
@@ -45,17 +44,17 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-     * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe operation for the resource type.
+     * that uniquely identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     * resource ARNs in the data object for the resource. You can retrieve the ARN by calling a <code>List</code> or
+     * <code>Describe</code> operation for the resource type.
      * </p>
      * 
      * @param resourceARN
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-     *        uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are
-     *        included in the data object for the resource, which can be retrieved by calling a List or Describe
-     *        operation for the resource type.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that uniquely
+     *        identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     *        resource ARNs in the data object for the resource. You can retrieve the ARN by calling a <code>List</code>
+     *        or <code>Describe</code> operation for the resource type.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -65,16 +64,16 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-     * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe operation for the resource type.
+     * that uniquely identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     * resource ARNs in the data object for the resource. You can retrieve the ARN by calling a <code>List</code> or
+     * <code>Describe</code> operation for the resource type.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to
-     *         and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs
-     *         are included in the data object for the resource, which can be retrieved by calling a List or Describe
-     *         operation for the resource type.
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that uniquely
+     *         identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     *         resource ARNs in the data object for the resource. You can retrieve the ARN by calling a
+     *         <code>List</code> or <code>Describe</code> operation for the resource type.
      */
 
     public String getResourceARN() {
@@ -84,17 +83,17 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
-     * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe operation for the resource type.
+     * that uniquely identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     * resource ARNs in the data object for the resource. You can retrieve the ARN by calling a <code>List</code> or
+     * <code>Describe</code> operation for the resource type.
      * </p>
      * 
      * @param resourceARN
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
-     *        uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are
-     *        included in the data object for the resource, which can be retrieved by calling a List or Describe
-     *        operation for the resource type.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that uniquely
+     *        identifies the Amazon GameLift resource that you want to remove tags from. Amazon GameLift includes
+     *        resource ARNs in the data object for the resource. You can retrieve the ARN by calling a <code>List</code>
+     *        or <code>Describe</code> operation for the resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,13 +104,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource
-     * can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
+     * A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * </p>
      * 
-     * @return A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services
-     *         resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to
-     *         remove.
+     * @return A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -120,14 +116,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource
-     * can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
+     * A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * </p>
      * 
      * @param tagKeys
-     *        A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services
-     *        resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to
-     *        remove.
+     *        A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -141,8 +134,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource
-     * can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
+     * A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -151,9 +143,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services
-     *        resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to
-     *        remove.
+     *        A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,14 +159,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services resource
-     * can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
+     * A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * </p>
      * 
      * @param tagKeys
-     *        A list of one or more tag keys to remove from the specified GameLift resource. An Amazon Web Services
-     *        resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to
-     *        remove.
+     *        A list of one or more tag keys to remove from the specified Amazon GameLift resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

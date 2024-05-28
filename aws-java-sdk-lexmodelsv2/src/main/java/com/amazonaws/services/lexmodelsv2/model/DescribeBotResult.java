@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,25 @@ public class DescribeBotResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * The type of the bot that was described.
+     * </p>
+     */
+    private String botType;
+    /**
+     * <p>
+     * The list of bots in the network that was described.
+     * </p>
+     */
+    private java.util.List<BotMember> botMembers;
+    /**
+     * <p>
+     * If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be
+     * built.
+     * </p>
+     */
+    private java.util.List<String> failureReasons;
 
     /**
      * <p>
@@ -467,6 +486,213 @@ public class DescribeBotResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The type of the bot that was described.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot that was described.
+     * @see BotType
+     */
+
+    public void setBotType(String botType) {
+        this.botType = botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot that was described.
+     * </p>
+     * 
+     * @return The type of the bot that was described.
+     * @see BotType
+     */
+
+    public String getBotType() {
+        return this.botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot that was described.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public DescribeBotResult withBotType(String botType) {
+        setBotType(botType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the bot that was described.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public DescribeBotResult withBotType(BotType botType) {
+        this.botType = botType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bots in the network that was described.
+     * </p>
+     * 
+     * @return The list of bots in the network that was described.
+     */
+
+    public java.util.List<BotMember> getBotMembers() {
+        return botMembers;
+    }
+
+    /**
+     * <p>
+     * The list of bots in the network that was described.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bots in the network that was described.
+     */
+
+    public void setBotMembers(java.util.Collection<BotMember> botMembers) {
+        if (botMembers == null) {
+            this.botMembers = null;
+            return;
+        }
+
+        this.botMembers = new java.util.ArrayList<BotMember>(botMembers);
+    }
+
+    /**
+     * <p>
+     * The list of bots in the network that was described.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBotMembers(java.util.Collection)} or {@link #withBotMembers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bots in the network that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotResult withBotMembers(BotMember... botMembers) {
+        if (this.botMembers == null) {
+            setBotMembers(new java.util.ArrayList<BotMember>(botMembers.length));
+        }
+        for (BotMember ele : botMembers) {
+            this.botMembers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bots in the network that was described.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bots in the network that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotResult withBotMembers(java.util.Collection<BotMember> botMembers) {
+        setBotMembers(botMembers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be
+     * built.
+     * </p>
+     * 
+     * @return If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot
+     *         couldn't be built.
+     */
+
+    public java.util.List<String> getFailureReasons() {
+        return failureReasons;
+    }
+
+    /**
+     * <p>
+     * If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be
+     * built.
+     * </p>
+     * 
+     * @param failureReasons
+     *        If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot
+     *        couldn't be built.
+     */
+
+    public void setFailureReasons(java.util.Collection<String> failureReasons) {
+        if (failureReasons == null) {
+            this.failureReasons = null;
+            return;
+        }
+
+        this.failureReasons = new java.util.ArrayList<String>(failureReasons);
+    }
+
+    /**
+     * <p>
+     * If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be
+     * built.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailureReasons(java.util.Collection)} or {@link #withFailureReasons(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param failureReasons
+     *        If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot
+     *        couldn't be built.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotResult withFailureReasons(String... failureReasons) {
+        if (this.failureReasons == null) {
+            setFailureReasons(new java.util.ArrayList<String>(failureReasons.length));
+        }
+        for (String ele : failureReasons) {
+            this.failureReasons.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be
+     * built.
+     * </p>
+     * 
+     * @param failureReasons
+     *        If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot
+     *        couldn't be built.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotResult withFailureReasons(java.util.Collection<String> failureReasons) {
+        setFailureReasons(failureReasons);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -495,7 +721,13 @@ public class DescribeBotResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getBotType() != null)
+            sb.append("BotType: ").append(getBotType()).append(",");
+        if (getBotMembers() != null)
+            sb.append("BotMembers: ").append(getBotMembers()).append(",");
+        if (getFailureReasons() != null)
+            sb.append("FailureReasons: ").append(getFailureReasons());
         sb.append("}");
         return sb.toString();
     }
@@ -546,6 +778,18 @@ public class DescribeBotResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getBotType() == null ^ this.getBotType() == null)
+            return false;
+        if (other.getBotType() != null && other.getBotType().equals(this.getBotType()) == false)
+            return false;
+        if (other.getBotMembers() == null ^ this.getBotMembers() == null)
+            return false;
+        if (other.getBotMembers() != null && other.getBotMembers().equals(this.getBotMembers()) == false)
+            return false;
+        if (other.getFailureReasons() == null ^ this.getFailureReasons() == null)
+            return false;
+        if (other.getFailureReasons() != null && other.getFailureReasons().equals(this.getFailureReasons()) == false)
+            return false;
         return true;
     }
 
@@ -563,6 +807,9 @@ public class DescribeBotResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getBotStatus() == null) ? 0 : getBotStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getBotType() == null) ? 0 : getBotType().hashCode());
+        hashCode = prime * hashCode + ((getBotMembers() == null) ? 0 : getBotMembers().hashCode());
+        hashCode = prime * hashCode + ((getFailureReasons() == null) ? 0 : getFailureReasons().hashCode());
         return hashCode;
     }
 

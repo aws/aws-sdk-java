@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class CreateDomainRequestMarshaller {
             .marshallLocationName("AuthMode").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTUSERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultUserSettings").build();
+    private static final MarshallingInfo<StructuredPojo> DOMAINSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSettings").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,8 +50,8 @@ public class CreateDomainRequestMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<String> APPSECURITYGROUPMANAGEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppSecurityGroupManagement").build();
-    private static final MarshallingInfo<StructuredPojo> DOMAINSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSettings").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSpaceSettings").build();
 
     private static final CreateDomainRequestMarshaller instance = new CreateDomainRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAuthMode(), AUTHMODE_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getDefaultUserSettings(), DEFAULTUSERSETTINGS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getDomainSettings(), DOMAINSETTINGS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getVpcId(), VPCID_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getTags(), TAGS_BINDING);
@@ -77,7 +80,7 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getHomeEfsFileSystemKmsKeyId(), HOMEEFSFILESYSTEMKMSKEYID_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAppSecurityGroupManagement(), APPSECURITYGROUPMANAGEMENT_BINDING);
-            protocolMarshaller.marshall(createDomainRequest.getDomainSettings(), DOMAINSETTINGS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getDefaultSpaceSettings(), DEFAULTSPACESETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

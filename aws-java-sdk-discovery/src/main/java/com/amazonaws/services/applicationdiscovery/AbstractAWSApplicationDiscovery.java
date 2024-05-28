@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    public BatchDeleteAgentsResult batchDeleteAgents(BatchDeleteAgentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeleteImportDataResult batchDeleteImportData(BatchDeleteImportDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public DescribeAgentsResult describeAgents(DescribeAgentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBatchDeleteConfigurationTaskResult describeBatchDeleteConfigurationTask(DescribeBatchDeleteConfigurationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -127,6 +137,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartBatchDeleteConfigurationTaskResult startBatchDeleteConfigurationTask(StartBatchDeleteConfigurationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

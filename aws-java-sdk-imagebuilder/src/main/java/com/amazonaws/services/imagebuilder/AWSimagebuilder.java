@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -76,6 +76,39 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     CancelImageCreationResult cancelImageCreation(CancelImageCreationRequest cancelImageCreationRequest);
+
+    /**
+     * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @return Result of the CancelLifecycleExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelLifecycleExecutionResult cancelLifecycleExecution(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest);
 
     /**
      * <p>
@@ -107,7 +140,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -148,7 +181,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -190,7 +223,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -233,7 +266,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -270,7 +303,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -309,7 +342,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -351,7 +384,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -376,6 +409,86 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return Result of the CreateLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws ResourceAlreadyExistsException
+     *         The resource that you are trying to create already exists.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
+     * @sample AWSimagebuilder.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest createLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Create a new workflow or a new version of an existing workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @return Result of the CreateWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws InvalidVersionNumberException
+     *         Your version number is out of bounds or does not follow the required syntax.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws InvalidParameterCombinationException
+     *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
+     * @sample AWSimagebuilder.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateWorkflowResult createWorkflow(CreateWorkflowRequest createWorkflowRequest);
+
+    /**
+     * <p>
      * Deletes a component build version.
      * </p>
      * 
@@ -390,7 +503,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -420,7 +533,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -448,7 +561,7 @@ public interface AWSimagebuilder {
      *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
      *         identifier.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws ForbiddenException
@@ -503,7 +616,7 @@ public interface AWSimagebuilder {
      *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
      *         identifier.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws ForbiddenException
@@ -535,7 +648,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -565,7 +678,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -595,7 +708,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -608,6 +721,66 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteInfrastructureConfigurationResult deleteInfrastructureConfiguration(DeleteInfrastructureConfigurationRequest deleteInfrastructureConfigurationRequest);
+
+    /**
+     * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceDependencyException
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
+     * @sample AWSimagebuilder.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a specific workflow resource.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @return Result of the DeleteWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceDependencyException
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
+     * @sample AWSimagebuilder.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteWorkflowResult deleteWorkflow(DeleteWorkflowRequest deleteWorkflowRequest);
 
     /**
      * <p>
@@ -625,7 +798,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -650,7 +823,7 @@ public interface AWSimagebuilder {
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -677,7 +850,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -700,7 +873,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws ForbiddenException
@@ -729,7 +902,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -756,7 +929,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -783,7 +956,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -808,7 +981,7 @@ public interface AWSimagebuilder {
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -835,7 +1008,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -858,7 +1031,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws ForbiddenException
@@ -888,7 +1061,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -898,6 +1071,141 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     GetInfrastructureConfigurationResult getInfrastructureConfiguration(GetInfrastructureConfigurationRequest getInfrastructureConfigurationRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @return Result of the GetLifecycleExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLifecycleExecutionResult getLifecycleExecution(GetLifecycleExecutionRequest getLifecycleExecutionRequest);
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Get a workflow resource object.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @return Result of the GetWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetWorkflowResult getWorkflow(GetWorkflowRequest getWorkflowRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow.
+     * </p>
+     * 
+     * @param getWorkflowExecutionRequest
+     * @return Result of the GetWorkflowExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetWorkflowExecutionResult getWorkflowExecution(GetWorkflowExecutionRequest getWorkflowExecutionRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow step.
+     * </p>
+     * 
+     * @param getWorkflowStepExecutionRequest
+     * @return Result of the GetWorkflowStepExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflowStepExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetWorkflowStepExecutionResult getWorkflowStepExecution(GetWorkflowStepExecutionRequest getWorkflowStepExecutionRequest);
 
     /**
      * <p>
@@ -915,7 +1223,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -992,7 +1300,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1007,7 +1315,9 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified semantic version.
+     * Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to
+     * streamline results. Newly created components can take up to two minutes to appear in the ListComponents API
+     * Results.
      * </p>
      * <note>
      * <p>
@@ -1032,7 +1342,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1061,7 +1371,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1090,7 +1400,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1119,7 +1429,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1149,7 +1459,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ResourceNotFoundException
@@ -1180,7 +1490,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ResourceNotFoundException
@@ -1211,7 +1521,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1240,7 +1550,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1255,7 +1565,94 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of images that you have access to.
+     * Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder
+     * uses to group results. For example, if you want to get a list of findings by severity level for one of your
+     * pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a
+     * filter, Image Builder returns an aggregation for your account.
+     * </p>
+     * <p>
+     * To streamline results, you can use the following filters in your request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>accountId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imageBuildVersionArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imagePipelineArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vulnerabilityId</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listImageScanFindingAggregationsRequest
+     * @return Result of the ListImageScanFindingAggregations operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListImageScanFindingAggregations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListImageScanFindingAggregationsResult listImageScanFindingAggregations(ListImageScanFindingAggregationsRequest listImageScanFindingAggregationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of image scan findings for your account.
+     * </p>
+     * 
+     * @param listImageScanFindingsRequest
+     * @return Result of the ListImageScanFindings operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListImageScanFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListImageScanFindingsResult listImageScanFindings(ListImageScanFindingsRequest listImageScanFindingsRequest);
+
+    /**
+     * <p>
+     * Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in
+     * the ListImages API Results.
      * </p>
      * 
      * @param listImagesRequest
@@ -1269,7 +1666,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1298,7 +1695,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -1310,6 +1707,93 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     ListInfrastructureConfigurationsResult listInfrastructureConfigurations(ListInfrastructureConfigurationsRequest listInfrastructureConfigurationsRequest);
+
+    /**
+     * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @return Result of the ListLifecycleExecutionResources operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecycleExecutionResourcesResult listLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest);
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @return Result of the ListLifecycleExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecycleExecutionsResult listLifecycleExecutions(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest);
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return Result of the ListLifecyclePolicies operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest);
 
     /**
      * <p>
@@ -1332,6 +1816,151 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * Get a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listWaitingWorkflowStepsRequest
+     * @return Result of the ListWaitingWorkflowSteps operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWaitingWorkflowSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWaitingWorkflowStepsResult listWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest listWaitingWorkflowStepsRequest);
+
+    /**
+     * <p>
+     * Returns a list of build versions for a specific workflow resource.
+     * </p>
+     * 
+     * @param listWorkflowBuildVersionsRequest
+     * @return Result of the ListWorkflowBuildVersions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowBuildVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWorkflowBuildVersionsResult listWorkflowBuildVersions(ListWorkflowBuildVersionsRequest listWorkflowBuildVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of workflow runtime instance metadata objects for a specific image build version.
+     * </p>
+     * 
+     * @param listWorkflowExecutionsRequest
+     * @return Result of the ListWorkflowExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWorkflowExecutionsResult listWorkflowExecutions(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest);
+
+    /**
+     * <p>
+     * Returns runtime data for each step in a runtime instance of the workflow that you specify in the request.
+     * </p>
+     * 
+     * @param listWorkflowStepExecutionsRequest
+     * @return Result of the ListWorkflowStepExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWorkflowStepExecutionsResult listWorkflowStepExecutions(ListWorkflowStepExecutionsRequest listWorkflowStepExecutionsRequest);
+
+    /**
+     * <p>
+     * Lists workflow build versions based on filtering parameters.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @return Result of the ListWorkflows operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListWorkflowsResult listWorkflows(ListWorkflowsRequest listWorkflowsRequest);
+
+    /**
+     * <p>
      * Applies a policy to a component. We recommend that you call the RAM API <a
      * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
      * to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM
@@ -1351,7 +1980,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -1387,7 +2016,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -1423,7 +2052,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -1460,7 +2089,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -1474,6 +2103,43 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     PutImageRecipePolicyResult putImageRecipePolicy(PutImageRecipePolicyRequest putImageRecipePolicyRequest);
+
+    /**
+     * <p>
+     * Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code> step.
+     * </p>
+     * 
+     * @param sendWorkflowStepActionRequest
+     * @return Result of the SendWorkflowStepAction operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidParameterValueException
+     *         The value that you provided for the specified parameter is invalid.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.SendWorkflowStepAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendWorkflowStepActionResult sendWorkflowStepAction(SendWorkflowStepActionRequest sendWorkflowStepActionRequest);
 
     /**
      * <p>
@@ -1491,7 +2157,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws IdempotentParameterMismatchException
@@ -1509,6 +2175,41 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     StartImagePipelineExecutionResult startImagePipelineExecution(StartImagePipelineExecutionRequest startImagePipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @return Result of the StartResourceStateUpdate operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartResourceStateUpdateResult startResourceStateUpdate(StartResourceStateUpdateRequest startResourceStateUpdateRequest);
 
     /**
      * <p>
@@ -1565,7 +2266,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -1586,7 +2287,9 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.
+     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You
+     * must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an
+     * <code>imageRecipeArn</code>.
      * </p>
      * <note>
      * <p>
@@ -1606,7 +2309,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -1640,7 +2343,7 @@ public interface AWSimagebuilder {
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -1656,6 +2359,41 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateInfrastructureConfigurationResult updateInfrastructureConfiguration(UpdateInfrastructureConfigurationRequest updateInfrastructureConfigurationRequest);
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return Result of the UpdateLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws InvalidParameterCombinationException
+     *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @sample AWSimagebuilder.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

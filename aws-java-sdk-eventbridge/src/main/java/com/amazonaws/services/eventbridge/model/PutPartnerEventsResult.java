@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,12 @@ public class PutPartnerEventsResult extends com.amazonaws.AmazonWebServiceResult
     private Integer failedEntryCount;
     /**
      * <p>
-     * The list of events from this operation that were successfully written to the partner event bus.
+     * The results for each event entry the partner submitted in this request. If the event was successfully submitted,
+     * the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.
+     * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
      * </p>
      */
     private java.util.List<PutPartnerEventsResultEntry> entries;
@@ -78,10 +83,19 @@ public class PutPartnerEventsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of events from this operation that were successfully written to the partner event bus.
+     * The results for each event entry the partner submitted in this request. If the event was successfully submitted,
+     * the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.
+     * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
      * </p>
      * 
-     * @return The list of events from this operation that were successfully written to the partner event bus.
+     * @return The results for each event entry the partner submitted in this request. If the event was successfully
+     *         submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to
+     *         identify the problem with the entry.</p>
+     *         <p>
+     *         For each record, the index of the response element is the same as the index in the request array.
      */
 
     public java.util.List<PutPartnerEventsResultEntry> getEntries() {
@@ -90,11 +104,20 @@ public class PutPartnerEventsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of events from this operation that were successfully written to the partner event bus.
+     * The results for each event entry the partner submitted in this request. If the event was successfully submitted,
+     * the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.
+     * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
      * </p>
      * 
      * @param entries
-     *        The list of events from this operation that were successfully written to the partner event bus.
+     *        The results for each event entry the partner submitted in this request. If the event was successfully
+     *        submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to
+     *        identify the problem with the entry.</p>
+     *        <p>
+     *        For each record, the index of the response element is the same as the index in the request array.
      */
 
     public void setEntries(java.util.Collection<PutPartnerEventsResultEntry> entries) {
@@ -108,7 +131,12 @@ public class PutPartnerEventsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of events from this operation that were successfully written to the partner event bus.
+     * The results for each event entry the partner submitted in this request. If the event was successfully submitted,
+     * the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.
+     * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +145,11 @@ public class PutPartnerEventsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param entries
-     *        The list of events from this operation that were successfully written to the partner event bus.
+     *        The results for each event entry the partner submitted in this request. If the event was successfully
+     *        submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to
+     *        identify the problem with the entry.</p>
+     *        <p>
+     *        For each record, the index of the response element is the same as the index in the request array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +165,20 @@ public class PutPartnerEventsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of events from this operation that were successfully written to the partner event bus.
+     * The results for each event entry the partner submitted in this request. If the event was successfully submitted,
+     * the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.
+     * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
      * </p>
      * 
      * @param entries
-     *        The list of events from this operation that were successfully written to the partner event bus.
+     *        The results for each event entry the partner submitted in this request. If the event was successfully
+     *        submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to
+     *        identify the problem with the entry.</p>
+     *        <p>
+     *        For each record, the index of the response element is the same as the index in the request array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

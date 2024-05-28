@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,22 @@ public class DashboardPublishOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportToCSVOption").build();
     private static final MarshallingInfo<StructuredPojo> SHEETCONTROLSOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SheetControlsOption").build();
+    private static final MarshallingInfo<StructuredPojo> VISUALPUBLISHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisualPublishOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SHEETLAYOUTELEMENTMAXIMIZATIONOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SheetLayoutElementMaximizationOption").build();
+    private static final MarshallingInfo<StructuredPojo> VISUALMENUOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisualMenuOption").build();
+    private static final MarshallingInfo<StructuredPojo> VISUALAXISSORTOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisualAxisSortOption").build();
+    private static final MarshallingInfo<StructuredPojo> EXPORTWITHHIDDENFIELDSOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportWithHiddenFieldsOption").build();
+    private static final MarshallingInfo<StructuredPojo> DATAPOINTDRILLUPDOWNOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataPointDrillUpDownOption").build();
+    private static final MarshallingInfo<StructuredPojo> DATAPOINTMENULABELOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataPointMenuLabelOption").build();
+    private static final MarshallingInfo<StructuredPojo> DATAPOINTTOOLTIPOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataPointTooltipOption").build();
 
     private static final DashboardPublishOptionsMarshaller instance = new DashboardPublishOptionsMarshaller();
 
@@ -53,6 +69,14 @@ public class DashboardPublishOptionsMarshaller {
             protocolMarshaller.marshall(dashboardPublishOptions.getAdHocFilteringOption(), ADHOCFILTERINGOPTION_BINDING);
             protocolMarshaller.marshall(dashboardPublishOptions.getExportToCSVOption(), EXPORTTOCSVOPTION_BINDING);
             protocolMarshaller.marshall(dashboardPublishOptions.getSheetControlsOption(), SHEETCONTROLSOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getVisualPublishOptions(), VISUALPUBLISHOPTIONS_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getSheetLayoutElementMaximizationOption(), SHEETLAYOUTELEMENTMAXIMIZATIONOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getVisualMenuOption(), VISUALMENUOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getVisualAxisSortOption(), VISUALAXISSORTOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getExportWithHiddenFieldsOption(), EXPORTWITHHIDDENFIELDSOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getDataPointDrillUpDownOption(), DATAPOINTDRILLUPDOWNOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getDataPointMenuLabelOption(), DATAPOINTMENULABELOPTION_BINDING);
+            protocolMarshaller.marshall(dashboardPublishOptions.getDataPointTooltipOption(), DATAPOINTTOOLTIPOPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

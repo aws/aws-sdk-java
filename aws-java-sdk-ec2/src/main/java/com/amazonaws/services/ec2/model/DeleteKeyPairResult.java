@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,111 @@ import com.amazonaws.AmazonWebServiceResult;
 public class DeleteKeyPairResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
+     * </p>
+     */
+    private Boolean returnValue;
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     */
+    private String keyPairId;
+
+    /**
+     * <p>
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
+     * </p>
+     * 
+     * @param returnValue
+     *        Is <code>true</code> if the request succeeds, and an error otherwise.
+     */
+
+    public void setReturn(Boolean returnValue) {
+        this.returnValue = returnValue;
+    }
+
+    /**
+     * <p>
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
+     * </p>
+     * 
+     * @return Is <code>true</code> if the request succeeds, and an error otherwise.
+     */
+
+    public Boolean getReturn() {
+        return this.returnValue;
+    }
+
+    /**
+     * <p>
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
+     * </p>
+     * 
+     * @param returnValue
+     *        Is <code>true</code> if the request succeeds, and an error otherwise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteKeyPairResult withReturn(Boolean returnValue) {
+        setReturn(returnValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Is <code>true</code> if the request succeeds, and an error otherwise.
+     * </p>
+     * 
+     * @return Is <code>true</code> if the request succeeds, and an error otherwise.
+     */
+
+    public Boolean isReturn() {
+        return this.returnValue;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     */
+
+    public void setKeyPairId(String keyPairId) {
+        this.keyPairId = keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @return The ID of the key pair.
+     */
+
+    public String getKeyPairId() {
+        return this.keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteKeyPairResult withKeyPairId(String keyPairId) {
+        setKeyPairId(keyPairId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -35,6 +140,10 @@ public class DeleteKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getReturn() != null)
+            sb.append("Return: ").append(getReturn()).append(",");
+        if (getKeyPairId() != null)
+            sb.append("KeyPairId: ").append(getKeyPairId());
         sb.append("}");
         return sb.toString();
     }
@@ -49,6 +158,14 @@ public class DeleteKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         if (obj instanceof DeleteKeyPairResult == false)
             return false;
         DeleteKeyPairResult other = (DeleteKeyPairResult) obj;
+        if (other.getReturn() == null ^ this.getReturn() == null)
+            return false;
+        if (other.getReturn() != null && other.getReturn().equals(this.getReturn()) == false)
+            return false;
+        if (other.getKeyPairId() == null ^ this.getKeyPairId() == null)
+            return false;
+        if (other.getKeyPairId() != null && other.getKeyPairId().equals(this.getKeyPairId()) == false)
+            return false;
         return true;
     }
 
@@ -57,6 +174,8 @@ public class DeleteKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getReturn() == null) ? 0 : getReturn().hashCode());
+        hashCode = prime * hashCode + ((getKeyPairId() == null) ? 0 : getKeyPairId().hashCode());
         return hashCode;
     }
 

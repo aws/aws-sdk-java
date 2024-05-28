@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,10 +67,23 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
     private ScheduleConfiguration scheduleConfiguration;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     */
+    private FileConfiguration fileConfiguration;
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, java.util.List<String>>> objectConfiguration;
 
     /**
      * <p>
@@ -354,10 +367,12 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -366,11 +381,13 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -379,11 +396,13 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,6 +440,114 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     * 
+     * @param fileConfiguration
+     *        The configuration for what files should be pulled from the source.
+     */
+
+    public void setFileConfiguration(FileConfiguration fileConfiguration) {
+        this.fileConfiguration = fileConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     * 
+     * @return The configuration for what files should be pulled from the source.
+     */
+
+    public FileConfiguration getFileConfiguration() {
+        return this.fileConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     * 
+     * @param fileConfiguration
+     *        The configuration for what files should be pulled from the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataIntegrationResult withFileConfiguration(FileConfiguration fileConfiguration) {
+        setFileConfiguration(fileConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     * 
+     * @return The configuration for what data should be pulled from the source.
+     */
+
+    public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getObjectConfiguration() {
+        return objectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     * 
+     * @param objectConfiguration
+     *        The configuration for what data should be pulled from the source.
+     */
+
+    public void setObjectConfiguration(java.util.Map<String, java.util.Map<String, java.util.List<String>>> objectConfiguration) {
+        this.objectConfiguration = objectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     * 
+     * @param objectConfiguration
+     *        The configuration for what data should be pulled from the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataIntegrationResult withObjectConfiguration(java.util.Map<String, java.util.Map<String, java.util.List<String>>> objectConfiguration) {
+        setObjectConfiguration(objectConfiguration);
+        return this;
+    }
+
+    /**
+     * Add a single ObjectConfiguration entry
+     *
+     * @see GetDataIntegrationResult#withObjectConfiguration
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataIntegrationResult addObjectConfigurationEntry(String key, java.util.Map<String, java.util.List<String>> value) {
+        if (null == this.objectConfiguration) {
+            this.objectConfiguration = new java.util.HashMap<String, java.util.Map<String, java.util.List<String>>>();
+        }
+        if (this.objectConfiguration.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.objectConfiguration.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ObjectConfiguration.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataIntegrationResult clearObjectConfigurationEntries() {
+        this.objectConfiguration = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -447,7 +574,11 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
         if (getScheduleConfiguration() != null)
             sb.append("ScheduleConfiguration: ").append(getScheduleConfiguration()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFileConfiguration() != null)
+            sb.append("FileConfiguration: ").append(getFileConfiguration()).append(",");
+        if (getObjectConfiguration() != null)
+            sb.append("ObjectConfiguration: ").append(getObjectConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -494,6 +625,14 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFileConfiguration() == null ^ this.getFileConfiguration() == null)
+            return false;
+        if (other.getFileConfiguration() != null && other.getFileConfiguration().equals(this.getFileConfiguration()) == false)
+            return false;
+        if (other.getObjectConfiguration() == null ^ this.getObjectConfiguration() == null)
+            return false;
+        if (other.getObjectConfiguration() != null && other.getObjectConfiguration().equals(this.getObjectConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -510,6 +649,8 @@ public class GetDataIntegrationResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getSourceURI() == null) ? 0 : getSourceURI().hashCode());
         hashCode = prime * hashCode + ((getScheduleConfiguration() == null) ? 0 : getScheduleConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFileConfiguration() == null) ? 0 : getFileConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getObjectConfiguration() == null) ? 0 : getObjectConfiguration().hashCode());
         return hashCode;
     }
 

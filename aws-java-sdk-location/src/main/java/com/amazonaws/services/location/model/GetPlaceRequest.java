@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,13 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String indexName;
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
+    /**
+     * <p>
      * The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.
      * </p>
@@ -59,6 +66,48 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <p>
      * The identifier of the place to find.
      * </p>
+     * <p>
+     * While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID
+     * can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March,
+     * June, September, and December. Place IDs might also change between the typical quarterly change but that will be
+     * much less frequent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume
+     * that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Grab: Place IDs can expire or become invalid in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as
+     * being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will
+     * synchronize data to the Waypoint environment on weekly basis.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will
+     * be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated
+     * POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details
+     * by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire
+     * and inaccessible from the Places Details API.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String placeId;
 
@@ -99,6 +148,52 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     public GetPlaceRequest withIndexName(String indexName) {
         setIndexName(indexName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlaceRequest withKey(String key) {
+        setKey(key);
         return this;
     }
 
@@ -257,9 +352,93 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <p>
      * The identifier of the place to find.
      * </p>
+     * <p>
+     * While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID
+     * can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March,
+     * June, September, and December. Place IDs might also change between the typical quarterly change but that will be
+     * much less frequent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume
+     * that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Grab: Place IDs can expire or become invalid in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as
+     * being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will
+     * synchronize data to the Waypoint environment on weekly basis.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will
+     * be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated
+     * POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details
+     * by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire
+     * and inaccessible from the Places Details API.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param placeId
-     *        The identifier of the place to find.
+     *        The identifier of the place to find.</p>
+     *        <p>
+     *        While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and
+     *        the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data
+     *        provider:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be
+     *        March, June, September, and December. Place IDs might also change between the typical quarterly change but
+     *        that will be much less frequent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can
+     *        assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Grab: Place IDs can expire or become invalid in the following situations.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth,
+     *        such as being closed in the real world, being detected as a duplicate POI, or having incorrect
+     *        information. Grab will synchronize data to the Waypoint environment on weekly basis.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and
+     *        it will be marked as derived in the <code>place.result_type</code> field in the response. The information
+     *        of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able
+     *        to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place
+     *        ID and details) may expire and inaccessible from the Places Details API.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setPlaceId(String placeId) {
@@ -270,8 +449,92 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <p>
      * The identifier of the place to find.
      * </p>
+     * <p>
+     * While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID
+     * can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March,
+     * June, September, and December. Place IDs might also change between the typical quarterly change but that will be
+     * much less frequent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume
+     * that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Grab: Place IDs can expire or become invalid in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as
+     * being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will
+     * synchronize data to the Waypoint environment on weekly basis.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will
+     * be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated
+     * POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details
+     * by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire
+     * and inaccessible from the Places Details API.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier of the place to find.
+     * @return The identifier of the place to find.</p>
+     *         <p>
+     *         While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier
+     *         and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each
+     *         data provider:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would
+     *         be March, June, September, and December. Place IDs might also change between the typical quarterly change
+     *         but that will be much less frequent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can
+     *         assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Grab: Place IDs can expire or become invalid in the following situations.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth,
+     *         such as being closed in the real world, being detected as a duplicate POI, or having incorrect
+     *         information. Grab will synchronize data to the Waypoint environment on weekly basis.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and
+     *         it will be marked as derived in the <code>place.result_type</code> field in the response. The information
+     *         of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able
+     *         to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place
+     *         ID and details) may expire and inaccessible from the Places Details API.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public String getPlaceId() {
@@ -282,9 +545,93 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <p>
      * The identifier of the place to find.
      * </p>
+     * <p>
+     * While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID
+     * can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March,
+     * June, September, and December. Place IDs might also change between the typical quarterly change but that will be
+     * much less frequent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume
+     * that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Grab: Place IDs can expire or become invalid in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as
+     * being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will
+     * synchronize data to the Waypoint environment on weekly basis.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will
+     * be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated
+     * POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details
+     * by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire
+     * and inaccessible from the Places Details API.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param placeId
-     *        The identifier of the place to find.
+     *        The identifier of the place to find.</p>
+     *        <p>
+     *        While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and
+     *        the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data
+     *        provider:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be
+     *        March, June, September, and December. Place IDs might also change between the typical quarterly change but
+     *        that will be much less frequent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can
+     *        assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Grab: Place IDs can expire or become invalid in the following situations.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth,
+     *        such as being closed in the real world, being detected as a duplicate POI, or having incorrect
+     *        information. Grab will synchronize data to the Waypoint environment on weekly basis.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and
+     *        it will be marked as derived in the <code>place.result_type</code> field in the response. The information
+     *        of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able
+     *        to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place
+     *        ID and details) may expire and inaccessible from the Places Details API.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,6 +654,8 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
         sb.append("{");
         if (getIndexName() != null)
             sb.append("IndexName: ").append(getIndexName()).append(",");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getLanguage() != null)
             sb.append("Language: ").append(getLanguage()).append(",");
         if (getPlaceId() != null)
@@ -329,6 +678,10 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getLanguage() == null ^ this.getLanguage() == null)
             return false;
         if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
@@ -346,6 +699,7 @@ public class GetPlaceRequest extends com.amazonaws.AmazonWebServiceRequest imple
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         hashCode = prime * hashCode + ((getPlaceId() == null) ? 0 : getPlaceId().hashCode());
         return hashCode;

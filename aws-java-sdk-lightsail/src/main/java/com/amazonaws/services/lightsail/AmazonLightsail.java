@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ import com.amazonaws.services.lightsail.model.*;
  * domains, and resource snapshots (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
- * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
- * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, Command Line Interface (CLI), or
+ * SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Amazon Lightsail Developer Guide</a>.
  * </p>
@@ -783,8 +783,8 @@ public interface AmazonLightsail {
 
     /**
      * <p>
-     * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone
-     * (e.g., <code>us-east-2a</code>).
+     * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (
+     * <code>us-east-2a</code>).
      * </p>
      * <p>
      * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
@@ -825,7 +825,7 @@ public interface AmazonLightsail {
     /**
      * <p>
      * Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting disk can be attached to
-     * an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).
+     * an Amazon Lightsail instance in the same Availability Zone (<code>us-east-2a</code>).
      * </p>
      * <p>
      * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
@@ -962,7 +962,7 @@ public interface AmazonLightsail {
 
     /**
      * <p>
-     * Creates a domain resource for the specified domain (e.g., example.com).
+     * Creates a domain resource for the specified domain (example.com).
      * </p>
      * <p>
      * The <code>create domain</code> operation supports tag-based access control via request tags. For more
@@ -1040,6 +1040,41 @@ public interface AmazonLightsail {
      *      API Documentation</a>
      */
     CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest createDomainEntryRequest);
+
+    /**
+     * <p>
+     * Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary
+     * URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a
+     * web-based NICE DCV session to the virtual computer's operating session.
+     * </p>
+     * <p>
+     * Use <code>StartGUISession</code> to open the session.
+     * </p>
+     * 
+     * @param createGUISessionAccessDetailsRequest
+     * @return Result of the CreateGUISessionAccessDetails operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateGUISessionAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateGUISessionAccessDetailsResult createGUISessionAccessDetails(CreateGUISessionAccessDetailsRequest createGUISessionAccessDetailsRequest);
 
     /**
      * <p>
@@ -2906,7 +2941,7 @@ public interface AmazonLightsail {
      * </p>
      * <note>
      * <p>
-     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * To get a summary of a certificate, omit <code>includeCertificateDetails</code> from your request. The response
      * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
      * </p>
      * </note>
@@ -3085,7 +3120,7 @@ public interface AmazonLightsail {
      * <p>
      * Container logs are retained for a certain amount of time. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
-     * the <i>AWS General Reference</i>.
+     * the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -3130,7 +3165,7 @@ public interface AmazonLightsail {
      * <p>
      * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
      * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
-     * quotas</a> in the <i>AWS General Reference</i>.
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -3255,6 +3290,37 @@ public interface AmazonLightsail {
      *      API Documentation</a>
      */
     GetContainerServicesResult getContainerServices(GetContainerServicesRequest getContainerServicesRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a
+     * resource that has been deleted.
+     * </p>
+     * 
+     * @param getCostEstimateRequest
+     * @return Result of the GetCostEstimate operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetCostEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCostEstimateResult getCostEstimate(GetCostEstimateRequest getCostEstimateRequest);
 
     /**
      * <p>
@@ -4245,7 +4311,7 @@ public interface AmazonLightsail {
 
     /**
      * <p>
-     * Gets operations for a specific resource (e.g., an instance or a static IP).
+     * Gets operations for a specific resource (an instance or a static IP).
      * </p>
      * 
      * @param getOperationsForResourceRequest
@@ -4743,6 +4809,37 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     GetRelationalDatabasesResult getRelationalDatabases(GetRelationalDatabasesRequest getRelationalDatabasesRequest);
+
+    /**
+     * <p>
+     * Returns detailed information for five of the most recent <code>SetupInstanceHttps</code> requests that were ran
+     * on the target instance.
+     * </p>
+     * 
+     * @param getSetupHistoryRequest
+     * @return Result of the GetSetupHistory operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetSetupHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSetupHistory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSetupHistoryResult getSetupHistory(GetSetupHistoryRequest getSetupHistoryRequest);
 
     /**
      * <p>
@@ -5359,6 +5456,72 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Creates an SSL/TLS certificate that secures traffic for your website. After the certificate is created, it is
+     * installed on the specified Lightsail instance.
+     * </p>
+     * <p>
+     * If you provide more than one domain name in the request, at least one name must be less than or equal to 63
+     * characters in length.
+     * </p>
+     * 
+     * @param setupInstanceHttpsRequest
+     * @return Result of the SetupInstanceHttps operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.SetupInstanceHttps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetupInstanceHttps" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SetupInstanceHttpsResult setupInstanceHttps(SetupInstanceHttpsRequest setupInstanceHttpsRequest);
+
+    /**
+     * <p>
+     * Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system
+     * and application. The session will be active for 1 hour. Use this action to resume the session after it expires.
+     * </p>
+     * 
+     * @param startGUISessionRequest
+     * @return Result of the StartGUISession operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.StartGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartGUISessionResult startGUISession(StartGUISessionRequest startGUISessionRequest);
+
+    /**
+     * <p>
      * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
      * <code>reboot instance</code> operation.
      * </p>
@@ -5447,6 +5610,37 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     StartRelationalDatabaseResult startRelationalDatabase(StartRelationalDatabaseRequest startRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or
+     * application. The session will close and any unsaved data will be lost.
+     * </p>
+     * 
+     * @param stopGUISessionRequest
+     * @return Result of the StopGUISession operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.StopGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopGUISessionResult stopGUISession(StopGUISessionRequest stopGUISessionRequest);
 
     /**
      * <p>
@@ -5735,8 +5929,8 @@ public interface AmazonLightsail {
      * </p>
      * <p>
      * A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a
-     * bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's
-     * bundle, use the <a
+     * bucket's bundle only one time within a monthly Amazon Web Services billing cycle. To determine if you can update
+     * a bucket's bundle, use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action.
      * The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a
      * bucket's bundle.
@@ -5852,8 +6046,8 @@ public interface AmazonLightsail {
      * incurring an overage fee.
      * </p>
      * <p>
-     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
-     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * You can update your distribution's bundle only one time within your monthly Amazon Web Services billing cycle. To
+     * determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
      * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
      * distribution's bundle.
      * </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,20 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * This parameter will sort the list of vaults by vault type.
+     * </p>
+     */
+    private String byVaultType;
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by shared vaults.
+     * </p>
+     */
+    private Boolean byShared;
+    /**
+     * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      */
@@ -42,14 +54,125 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * This parameter will sort the list of vaults by vault type.
+     * </p>
+     * 
+     * @param byVaultType
+     *        This parameter will sort the list of vaults by vault type.
+     * @see VaultType
+     */
+
+    public void setByVaultType(String byVaultType) {
+        this.byVaultType = byVaultType;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by vault type.
+     * </p>
+     * 
+     * @return This parameter will sort the list of vaults by vault type.
+     * @see VaultType
+     */
+
+    public String getByVaultType() {
+        return this.byVaultType;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by vault type.
+     * </p>
+     * 
+     * @param byVaultType
+     *        This parameter will sort the list of vaults by vault type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public ListBackupVaultsRequest withByVaultType(String byVaultType) {
+        setByVaultType(byVaultType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by vault type.
+     * </p>
+     * 
+     * @param byVaultType
+     *        This parameter will sort the list of vaults by vault type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public ListBackupVaultsRequest withByVaultType(VaultType byVaultType) {
+        this.byVaultType = byVaultType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by shared vaults.
+     * </p>
+     * 
+     * @param byShared
+     *        This parameter will sort the list of vaults by shared vaults.
+     */
+
+    public void setByShared(Boolean byShared) {
+        this.byShared = byShared;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by shared vaults.
+     * </p>
+     * 
+     * @return This parameter will sort the list of vaults by shared vaults.
+     */
+
+    public Boolean getByShared() {
+        return this.byShared;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by shared vaults.
+     * </p>
+     * 
+     * @param byShared
+     *        This parameter will sort the list of vaults by shared vaults.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListBackupVaultsRequest withByShared(Boolean byShared) {
+        setByShared(byShared);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of vaults by shared vaults.
+     * </p>
+     * 
+     * @return This parameter will sort the list of vaults by shared vaults.
+     */
+
+    public Boolean isByShared() {
+        return this.byShared;
+    }
+
+    /**
+     * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *        <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *        list starting at the location pointed to by the next token.
      */
 
@@ -60,12 +183,12 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @return The next item following a partial list of returned items. For example, if a request is made to return
-     *         <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *         <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *         list starting at the location pointed to by the next token.
      */
 
@@ -76,13 +199,13 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *        <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *        list starting at the location pointed to by the next token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -144,6 +267,10 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getByVaultType() != null)
+            sb.append("ByVaultType: ").append(getByVaultType()).append(",");
+        if (getByShared() != null)
+            sb.append("ByShared: ").append(getByShared()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -162,6 +289,14 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof ListBackupVaultsRequest == false)
             return false;
         ListBackupVaultsRequest other = (ListBackupVaultsRequest) obj;
+        if (other.getByVaultType() == null ^ this.getByVaultType() == null)
+            return false;
+        if (other.getByVaultType() != null && other.getByVaultType().equals(this.getByVaultType()) == false)
+            return false;
+        if (other.getByShared() == null ^ this.getByShared() == null)
+            return false;
+        if (other.getByShared() != null && other.getByShared().equals(this.getByShared()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -178,6 +313,8 @@ public class ListBackupVaultsRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getByVaultType() == null) ? 0 : getByVaultType().hashCode());
+        hashCode = prime * hashCode + ((getByShared() == null) ? 0 : getByShared().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

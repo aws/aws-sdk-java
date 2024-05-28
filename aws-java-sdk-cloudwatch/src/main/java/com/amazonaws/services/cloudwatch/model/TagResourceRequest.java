@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -61,7 +61,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -77,7 +77,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        The ARN format of a Contributor Insights rule is
-     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      *        </p>
      *        <p>
      *        For more information about ARN format, see <a href=
@@ -99,7 +99,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -114,7 +114,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         The ARN format of a Contributor Insights rule is
-     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      *         </p>
      *         <p>
      *         For more information about ARN format, see <a href=
@@ -136,7 +136,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The ARN format of a Contributor Insights rule is
-     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      * </p>
      * <p>
      * For more information about ARN format, see <a href=
@@ -152,7 +152,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        The ARN format of a Contributor Insights rule is
-     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i> </code>
      *        </p>
      *        <p>
      *        For more information about ARN format, see <a href=

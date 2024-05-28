@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,20 @@ public class UserSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RSessionAppSettings").build();
     private static final MarshallingInfo<StructuredPojo> CANVASAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CanvasAppSettings").build();
+    private static final MarshallingInfo<StructuredPojo> CODEEDITORAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeEditorAppSettings").build();
+    private static final MarshallingInfo<StructuredPojo> JUPYTERLABAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JupyterLabAppSettings").build();
+    private static final MarshallingInfo<StructuredPojo> SPACESTORAGESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceStorageSettings").build();
+    private static final MarshallingInfo<String> DEFAULTLANDINGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultLandingUri").build();
+    private static final MarshallingInfo<String> STUDIOWEBPORTAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StudioWebPortal").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMPOSIXUSERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPosixUserConfig").build();
+    private static final MarshallingInfo<List> CUSTOMFILESYSTEMCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomFileSystemConfigs").build();
 
     private static final UserSettingsMarshaller instance = new UserSettingsMarshaller();
 
@@ -72,6 +86,13 @@ public class UserSettingsMarshaller {
             protocolMarshaller.marshall(userSettings.getRStudioServerProAppSettings(), RSTUDIOSERVERPROAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getRSessionAppSettings(), RSESSIONAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getCanvasAppSettings(), CANVASAPPSETTINGS_BINDING);
+            protocolMarshaller.marshall(userSettings.getCodeEditorAppSettings(), CODEEDITORAPPSETTINGS_BINDING);
+            protocolMarshaller.marshall(userSettings.getJupyterLabAppSettings(), JUPYTERLABAPPSETTINGS_BINDING);
+            protocolMarshaller.marshall(userSettings.getSpaceStorageSettings(), SPACESTORAGESETTINGS_BINDING);
+            protocolMarshaller.marshall(userSettings.getDefaultLandingUri(), DEFAULTLANDINGURI_BINDING);
+            protocolMarshaller.marshall(userSettings.getStudioWebPortal(), STUDIOWEBPORTAL_BINDING);
+            protocolMarshaller.marshall(userSettings.getCustomPosixUserConfig(), CUSTOMPOSIXUSERCONFIG_BINDING);
+            protocolMarshaller.marshall(userSettings.getCustomFileSystemConfigs(), CUSTOMFILESYSTEMCONFIGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

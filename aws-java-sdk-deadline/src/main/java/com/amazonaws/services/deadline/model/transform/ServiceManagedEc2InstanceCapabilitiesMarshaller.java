@@ -1,0 +1,80 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.deadline.model.transform;
+
+import java.util.List;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.deadline.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * ServiceManagedEc2InstanceCapabilitiesMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class ServiceManagedEc2InstanceCapabilitiesMarshaller {
+
+    private static final MarshallingInfo<List> ALLOWEDINSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowedInstanceTypes").build();
+    private static final MarshallingInfo<String> CPUARCHITECTURETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cpuArchitectureType").build();
+    private static final MarshallingInfo<List> CUSTOMAMOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("customAmounts").build();
+    private static final MarshallingInfo<List> CUSTOMATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customAttributes").build();
+    private static final MarshallingInfo<List> EXCLUDEDINSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excludedInstanceTypes").build();
+    private static final MarshallingInfo<StructuredPojo> MEMORYMIB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("memoryMiB").build();
+    private static final MarshallingInfo<String> OSFAMILY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("osFamily").build();
+    private static final MarshallingInfo<StructuredPojo> ROOTEBSVOLUME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rootEbsVolume").build();
+    private static final MarshallingInfo<StructuredPojo> VCPUCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vCpuCount").build();
+
+    private static final ServiceManagedEc2InstanceCapabilitiesMarshaller instance = new ServiceManagedEc2InstanceCapabilitiesMarshaller();
+
+    public static ServiceManagedEc2InstanceCapabilitiesMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ServiceManagedEc2InstanceCapabilities serviceManagedEc2InstanceCapabilities, ProtocolMarshaller protocolMarshaller) {
+
+        if (serviceManagedEc2InstanceCapabilities == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getAllowedInstanceTypes(), ALLOWEDINSTANCETYPES_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getCpuArchitectureType(), CPUARCHITECTURETYPE_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getCustomAmounts(), CUSTOMAMOUNTS_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getCustomAttributes(), CUSTOMATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getExcludedInstanceTypes(), EXCLUDEDINSTANCETYPES_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getMemoryMiB(), MEMORYMIB_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getOsFamily(), OSFAMILY_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getRootEbsVolume(), ROOTEBSVOLUME_BINDING);
+            protocolMarshaller.marshall(serviceManagedEc2InstanceCapabilities.getVCpuCount(), VCPUCOUNT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

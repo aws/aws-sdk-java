@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date connectedToAgentTimestamp;
+    /**
+     * <p>
+     * Agent pause duration for a contact in seconds.
+     * </p>
+     */
+    private Integer agentPauseDurationInSeconds;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Agent pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @param agentPauseDurationInSeconds
+     *        Agent pause duration for a contact in seconds.
+     */
+
+    public void setAgentPauseDurationInSeconds(Integer agentPauseDurationInSeconds) {
+        this.agentPauseDurationInSeconds = agentPauseDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Agent pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @return Agent pause duration for a contact in seconds.
+     */
+
+    public Integer getAgentPauseDurationInSeconds() {
+        return this.agentPauseDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Agent pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @param agentPauseDurationInSeconds
+     *        Agent pause duration for a contact in seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AgentInfo withAgentPauseDurationInSeconds(Integer agentPauseDurationInSeconds) {
+        setAgentPauseDurationInSeconds(agentPauseDurationInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getConnectedToAgentTimestamp() != null)
-            sb.append("ConnectedToAgentTimestamp: ").append(getConnectedToAgentTimestamp());
+            sb.append("ConnectedToAgentTimestamp: ").append(getConnectedToAgentTimestamp()).append(",");
+        if (getAgentPauseDurationInSeconds() != null)
+            sb.append("AgentPauseDurationInSeconds: ").append(getAgentPauseDurationInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectedToAgentTimestamp() != null && other.getConnectedToAgentTimestamp().equals(this.getConnectedToAgentTimestamp()) == false)
             return false;
+        if (other.getAgentPauseDurationInSeconds() == null ^ this.getAgentPauseDurationInSeconds() == null)
+            return false;
+        if (other.getAgentPauseDurationInSeconds() != null && other.getAgentPauseDurationInSeconds().equals(this.getAgentPauseDurationInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getConnectedToAgentTimestamp() == null) ? 0 : getConnectedToAgentTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getAgentPauseDurationInSeconds() == null) ? 0 : getAgentPauseDurationInSeconds().hashCode());
         return hashCode;
     }
 

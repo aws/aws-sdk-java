@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setSingleSignOnManagedApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SingleSignOnApplicationArn", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setSingleSignOnApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -84,6 +88,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityGroupIdForDomainBoundary", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setSecurityGroupIdForDomainBoundary(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AuthMode", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setAuthMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +99,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("DefaultUserSettings", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setDefaultUserSettings(UserSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DomainSettings", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setDomainSettings(DomainSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppNetworkAccessType", targetDepth)) {
                     context.nextToken();
@@ -118,17 +130,13 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("DomainSettings", targetDepth)) {
-                    context.nextToken();
-                    describeDomainResult.setDomainSettings(DomainSettingsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("AppSecurityGroupManagement", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setAppSecurityGroupManagement(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("SecurityGroupIdForDomainBoundary", targetDepth)) {
+                if (context.testExpression("DefaultSpaceSettings", targetDepth)) {
                     context.nextToken();
-                    describeDomainResult.setSecurityGroupIdForDomainBoundary(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeDomainResult.setDefaultSpaceSettings(DefaultSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

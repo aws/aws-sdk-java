@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,14 @@ public class ResolverEndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
     private static final MarshallingInfo<String> MODIFICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationTime").build();
+    private static final MarshallingInfo<String> OUTPOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutpostArn").build();
+    private static final MarshallingInfo<String> PREFERREDINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredInstanceType").build();
+    private static final MarshallingInfo<String> RESOLVERENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolverEndpointType").build();
+    private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Protocols").build();
 
     private static final ResolverEndpointMarshaller instance = new ResolverEndpointMarshaller();
 
@@ -81,6 +89,10 @@ public class ResolverEndpointMarshaller {
             protocolMarshaller.marshall(resolverEndpoint.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(resolverEndpoint.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(resolverEndpoint.getModificationTime(), MODIFICATIONTIME_BINDING);
+            protocolMarshaller.marshall(resolverEndpoint.getOutpostArn(), OUTPOSTARN_BINDING);
+            protocolMarshaller.marshall(resolverEndpoint.getPreferredInstanceType(), PREFERREDINSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(resolverEndpoint.getResolverEndpointType(), RESOLVERENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(resolverEndpoint.getProtocols(), PROTOCOLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,10 +58,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -70,6 +69,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -126,25 +131,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -153,13 +139,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -168,6 +150,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -385,10 +373,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -397,6 +384,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -453,25 +446,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -480,13 +454,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -495,6 +465,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -565,10 +541,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     *        <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     *        <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -577,6 +552,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -636,25 +617,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Memory optimized:
      *        </p>
      *        <ul>
@@ -663,13 +625,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     *        <code>cache.r6g.16xlarge</code>
+     *        <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     *        <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     *        <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -678,6 +636,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     *        <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     *        <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -757,10 +721,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -769,6 +732,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -825,25 +794,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -852,13 +802,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -867,6 +813,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -936,10 +888,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         Current generation:
      *         </p>
      *         <p>
-     *         <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *         version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-     *         <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-     *         <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *         <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     *         <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     *         <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      *         </p>
      *         <note>
      *         <p>
@@ -948,6 +899,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         >Supported Node Types</a>
      *         </p>
      *         </note>
+     *         <p>
+     *         <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     *         <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+     *         <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *         </p>
      *         <p>
      *         <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *         <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -1007,25 +964,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Memory optimized with data tiering:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Current generation:
-     *         </p>
-     *         <p>
-     *         <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *         </p>
-     *         <p>
-     *         <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *         <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
      *         Memory optimized:
      *         </p>
      *         <ul>
@@ -1034,13 +972,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         Current generation:
      *         </p>
      *         <p>
-     *         <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *         version 1.5.16 onward).
-     *         </p>
-     *         <p>
-     *         <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     *         <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     *         <code>cache.r6g.16xlarge</code>
+     *         <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     *         <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     *         <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      *         </p>
      *         <note>
      *         <p>
@@ -1049,6 +983,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         >Supported Node Types</a>
      *         </p>
      *         </note>
+     *         <p>
+     *         <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     *         <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     *         <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+     *         </p>
      *         <p>
      *         <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *         <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -1128,10 +1068,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -1140,6 +1079,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -1196,25 +1141,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -1223,13 +1149,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -1238,6 +1160,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -1308,10 +1236,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     *        <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     *        <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1320,6 +1247,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -1379,25 +1312,6 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Memory optimized:
      *        </p>
      *        <ul>
@@ -1406,13 +1320,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     *        <code>cache.r6g.16xlarge</code>
+     *        <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     *        <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     *        <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1421,6 +1331,12 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     *        <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     *        <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ public class FormCTA implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Displays a cancel button.
+     * The position of the button.
      * </p>
      */
-    private FormButton cancel;
+    private String position;
     /**
      * <p>
      * Displays a clear button.
@@ -42,96 +42,16 @@ public class FormCTA implements Serializable, Cloneable, StructuredPojo {
     private FormButton clear;
     /**
      * <p>
-     * The position of the button.
+     * Displays a cancel button.
      * </p>
      */
-    private String position;
+    private FormButton cancel;
     /**
      * <p>
      * Displays a submit button.
      * </p>
      */
     private FormButton submit;
-
-    /**
-     * <p>
-     * Displays a cancel button.
-     * </p>
-     * 
-     * @param cancel
-     *        Displays a cancel button.
-     */
-
-    public void setCancel(FormButton cancel) {
-        this.cancel = cancel;
-    }
-
-    /**
-     * <p>
-     * Displays a cancel button.
-     * </p>
-     * 
-     * @return Displays a cancel button.
-     */
-
-    public FormButton getCancel() {
-        return this.cancel;
-    }
-
-    /**
-     * <p>
-     * Displays a cancel button.
-     * </p>
-     * 
-     * @param cancel
-     *        Displays a cancel button.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FormCTA withCancel(FormButton cancel) {
-        setCancel(cancel);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Displays a clear button.
-     * </p>
-     * 
-     * @param clear
-     *        Displays a clear button.
-     */
-
-    public void setClear(FormButton clear) {
-        this.clear = clear;
-    }
-
-    /**
-     * <p>
-     * Displays a clear button.
-     * </p>
-     * 
-     * @return Displays a clear button.
-     */
-
-    public FormButton getClear() {
-        return this.clear;
-    }
-
-    /**
-     * <p>
-     * Displays a clear button.
-     * </p>
-     * 
-     * @param clear
-     *        Displays a clear button.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FormCTA withClear(FormButton clear) {
-        setClear(clear);
-        return this;
-    }
 
     /**
      * <p>
@@ -194,6 +114,86 @@ public class FormCTA implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Displays a clear button.
+     * </p>
+     * 
+     * @param clear
+     *        Displays a clear button.
+     */
+
+    public void setClear(FormButton clear) {
+        this.clear = clear;
+    }
+
+    /**
+     * <p>
+     * Displays a clear button.
+     * </p>
+     * 
+     * @return Displays a clear button.
+     */
+
+    public FormButton getClear() {
+        return this.clear;
+    }
+
+    /**
+     * <p>
+     * Displays a clear button.
+     * </p>
+     * 
+     * @param clear
+     *        Displays a clear button.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormCTA withClear(FormButton clear) {
+        setClear(clear);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays a cancel button.
+     * </p>
+     * 
+     * @param cancel
+     *        Displays a cancel button.
+     */
+
+    public void setCancel(FormButton cancel) {
+        this.cancel = cancel;
+    }
+
+    /**
+     * <p>
+     * Displays a cancel button.
+     * </p>
+     * 
+     * @return Displays a cancel button.
+     */
+
+    public FormButton getCancel() {
+        return this.cancel;
+    }
+
+    /**
+     * <p>
+     * Displays a cancel button.
+     * </p>
+     * 
+     * @param cancel
+     *        Displays a cancel button.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormCTA withCancel(FormButton cancel) {
+        setCancel(cancel);
+        return this;
+    }
+
+    /**
+     * <p>
      * Displays a submit button.
      * </p>
      * 
@@ -244,12 +244,12 @@ public class FormCTA implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCancel() != null)
-            sb.append("Cancel: ").append(getCancel()).append(",");
-        if (getClear() != null)
-            sb.append("Clear: ").append(getClear()).append(",");
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
+        if (getClear() != null)
+            sb.append("Clear: ").append(getClear()).append(",");
+        if (getCancel() != null)
+            sb.append("Cancel: ").append(getCancel()).append(",");
         if (getSubmit() != null)
             sb.append("Submit: ").append(getSubmit());
         sb.append("}");
@@ -266,17 +266,17 @@ public class FormCTA implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FormCTA == false)
             return false;
         FormCTA other = (FormCTA) obj;
-        if (other.getCancel() == null ^ this.getCancel() == null)
+        if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
-        if (other.getCancel() != null && other.getCancel().equals(this.getCancel()) == false)
+        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
         if (other.getClear() == null ^ this.getClear() == null)
             return false;
         if (other.getClear() != null && other.getClear().equals(this.getClear()) == false)
             return false;
-        if (other.getPosition() == null ^ this.getPosition() == null)
+        if (other.getCancel() == null ^ this.getCancel() == null)
             return false;
-        if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
+        if (other.getCancel() != null && other.getCancel().equals(this.getCancel()) == false)
             return false;
         if (other.getSubmit() == null ^ this.getSubmit() == null)
             return false;
@@ -290,9 +290,9 @@ public class FormCTA implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCancel() == null) ? 0 : getCancel().hashCode());
-        hashCode = prime * hashCode + ((getClear() == null) ? 0 : getClear().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getClear() == null) ? 0 : getClear().hashCode());
+        hashCode = prime * hashCode + ((getCancel() == null) ? 0 : getCancel().hashCode());
         hashCode = prime * hashCode + ((getSubmit() == null) ? 0 : getSubmit().hashCode());
         return hashCode;
     }

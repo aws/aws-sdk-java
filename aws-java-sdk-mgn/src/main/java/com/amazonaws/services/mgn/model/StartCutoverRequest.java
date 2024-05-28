@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class StartCutoverRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Start Cutover by Account IDs
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Start Cutover by Source Server IDs.
      * </p>
      */
@@ -37,6 +43,46 @@ public class StartCutoverRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * Start Cutover by Account IDs
+     * </p>
+     * 
+     * @param accountID
+     *        Start Cutover by Account IDs
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Start Cutover by Account IDs
+     * </p>
+     * 
+     * @return Start Cutover by Account IDs
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Start Cutover by Account IDs
+     * </p>
+     * 
+     * @param accountID
+     *        Start Cutover by Account IDs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartCutoverRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -188,6 +234,8 @@ public class StartCutoverRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getSourceServerIDs() != null)
             sb.append("SourceServerIDs: ").append(getSourceServerIDs()).append(",");
         if (getTags() != null)
@@ -206,6 +254,10 @@ public class StartCutoverRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof StartCutoverRequest == false)
             return false;
         StartCutoverRequest other = (StartCutoverRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getSourceServerIDs() == null ^ this.getSourceServerIDs() == null)
             return false;
         if (other.getSourceServerIDs() != null && other.getSourceServerIDs().equals(this.getSourceServerIDs()) == false)
@@ -222,6 +274,7 @@ public class StartCutoverRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getSourceServerIDs() == null) ? 0 : getSourceServerIDs().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

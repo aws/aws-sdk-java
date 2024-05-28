@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,11 +23,18 @@ public class SSEAwsKeyManagementParams implements Serializable {
      */
     private String awsKmsKeyId;
 
-    /*
+    /**
      * Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
-     * The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+     * The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
+     * pairs. This value is stored as object metadata and automatically gets passed on to Amazon Web Services KMS for
+     * future <code>GetObject</code> or <code>CopyObject</code> operations on this object.
      */
     private String awsKmsEncryptionContext;
+
+    /**
+     * Used to specify the encryption algorithm. use aws:kms by default
+     */
+    private String sseAlgorithm = SSEAlgorithm.KMS.getAlgorithm();
 
     /**
      * Constructs a new instance of SSEAwsKeyManagementParams. The default Amazon Web Services
@@ -52,6 +59,36 @@ public class SSEAwsKeyManagementParams implements Serializable {
     }
 
     /**
+     * Constructs a new instance of SSEAwsKeyManagementParams with the user
+     * specified Amazon Web Services Key Management System Key Id and SSEAlgorithm
+     */
+    public SSEAwsKeyManagementParams(String awsKmsKeyId, SSEAlgorithm sseAlgorithm) {
+        this(awsKmsKeyId);
+        setSseAlgorith(sseAlgorithm);
+    }
+
+    /**
+     * Constructs a new instance of SSEAwsKeyManagementParams with the user
+     * specified Amazon Web Services Key Management System Key Id and SSEAlgorithm as String
+     */
+    public SSEAwsKeyManagementParams(String awsKmsKeyId, String sseAlgorithm) {
+        if (awsKmsKeyId == null || awsKmsKeyId.trim().isEmpty()) {
+            throw new IllegalArgumentException(
+                    "AWS Key Management System Key id cannot be null");
+        }
+        setAwsKmsKeyId(awsKmsKeyId);
+        setSseAlgorith(sseAlgorithm);
+    }
+
+    /**
+     * Use Default KMS key with SSE-KMS or SSE-DSSE
+     */
+    public SSEAwsKeyManagementParams(SSEAlgorithm sseAlgorithm) {
+        this();
+        setSseAlgorith(sseAlgorithm);
+    }
+
+    /**
      * Returns the Amazon Web Services Key Management System Key Id used for encryption. Returns
      * null if default Key Id is used.
      */
@@ -70,16 +107,43 @@ public class SSEAwsKeyManagementParams implements Serializable {
         return this;
     }
 
+    /**
+     * Sets the sseAlgorithm
+     *
+     * @param sseAlgorithm The new sseAlgorithm value.
+     * @return This object for method chaining.
+     */
+    public SSEAwsKeyManagementParams withSseAlgorithm(String sseAlgorithm) {
+        setSseAlgorith(sseAlgorithm);
+        return this;
+    }
+
+    private void setSseAlgorith(String sseAlgorithm) {
+        if (sseAlgorithm == null) {
+            throw new IllegalArgumentException(
+                    "AWS Key Management System SSEAlgorithm cannot be null");
+        }
+        this.sseAlgorithm = sseAlgorithm;
+    }
+
+    private void setSseAlgorith(SSEAlgorithm sseAlgorithm) {
+        if (sseAlgorithm == null) {
+            throw new IllegalArgumentException(
+                    "AWS Key Management System SSEAlgorithm cannot be null");
+        }
+        this.sseAlgorithm = sseAlgorithm.getAlgorithm();
+    }
+
     private void setAwsKmsKeyId(String awsKmsKeyId) {
         this.awsKmsKeyId = awsKmsKeyId;
     }
 
     /**
-     * Returns the scheme used for encrypting the Amazon S3 object. Currently
-     * the encryption is always "aws:kms".
+     * Returns the scheme used for encrypting the Amazon S3 object.
+     * the encryption is either the default value "aws:kms" or "aws:kms:dsse".
      */
     public String getEncryption() {
-        return SSEAlgorithm.KMS.getAlgorithm();
+        return sseAlgorithm;
     }
 
 

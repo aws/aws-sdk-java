@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,15 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     private java.util.List<DataLakePrincipal> dataLakeAdmins;
     /**
      * <p>
+     * A list of Lake Formation principals with only view access to the resources, without the ability to make changes.
+     * Supported principals are IAM users or IAM roles.
+     * </p>
+     */
+    private java.util.List<DataLakePrincipal> readOnlyAdmins;
+    /**
+     * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -81,6 +88,13 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     private java.util.List<PrincipalPermissions> createTableDefaultPermissions;
     /**
      * <p>
+     * A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.
+     * </p>
+     */
+    private java.util.Map<String, String> parameters;
+    /**
+     * <p>
      * A list of the resource-owning account IDs that the caller's account can use to share their user access details
      * (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.
      * </p>
@@ -103,11 +117,18 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.
      * </p>
      */
     private Boolean allowExternalDataFiltering;
+    /**
+     * <p>
+     * Whether to allow a third-party query engine to get data access credentials without session tags when a caller has
+     * full data access permissions.
+     * </p>
+     */
+    private Boolean allowFullTableExternalDataAccess;
     /**
      * <p>
      * A list of the account IDs of Amazon Web Services accounts with Amazon EMR clusters that are to perform data
@@ -197,8 +218,86 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * A list of Lake Formation principals with only view access to the resources, without the ability to make changes.
+     * Supported principals are IAM users or IAM roles.
+     * </p>
+     * 
+     * @return A list of Lake Formation principals with only view access to the resources, without the ability to make
+     *         changes. Supported principals are IAM users or IAM roles.
+     */
+
+    public java.util.List<DataLakePrincipal> getReadOnlyAdmins() {
+        return readOnlyAdmins;
+    }
+
+    /**
+     * <p>
+     * A list of Lake Formation principals with only view access to the resources, without the ability to make changes.
+     * Supported principals are IAM users or IAM roles.
+     * </p>
+     * 
+     * @param readOnlyAdmins
+     *        A list of Lake Formation principals with only view access to the resources, without the ability to make
+     *        changes. Supported principals are IAM users or IAM roles.
+     */
+
+    public void setReadOnlyAdmins(java.util.Collection<DataLakePrincipal> readOnlyAdmins) {
+        if (readOnlyAdmins == null) {
+            this.readOnlyAdmins = null;
+            return;
+        }
+
+        this.readOnlyAdmins = new java.util.ArrayList<DataLakePrincipal>(readOnlyAdmins);
+    }
+
+    /**
+     * <p>
+     * A list of Lake Formation principals with only view access to the resources, without the ability to make changes.
+     * Supported principals are IAM users or IAM roles.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReadOnlyAdmins(java.util.Collection)} or {@link #withReadOnlyAdmins(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param readOnlyAdmins
+     *        A list of Lake Formation principals with only view access to the resources, without the ability to make
+     *        changes. Supported principals are IAM users or IAM roles.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withReadOnlyAdmins(DataLakePrincipal... readOnlyAdmins) {
+        if (this.readOnlyAdmins == null) {
+            setReadOnlyAdmins(new java.util.ArrayList<DataLakePrincipal>(readOnlyAdmins.length));
+        }
+        for (DataLakePrincipal ele : readOnlyAdmins) {
+            this.readOnlyAdmins.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of Lake Formation principals with only view access to the resources, without the ability to make changes.
+     * Supported principals are IAM users or IAM roles.
+     * </p>
+     * 
+     * @param readOnlyAdmins
+     *        A list of Lake Formation principals with only view access to the resources, without the ability to make
+     *        changes. Supported principals are IAM users or IAM roles.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withReadOnlyAdmins(java.util.Collection<DataLakePrincipal> readOnlyAdmins) {
+        setReadOnlyAdmins(readOnlyAdmins);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -217,7 +316,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @return Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *         exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *         exclusively by IAM permissions.</p>
      *         <p>
      *         A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *         IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -241,7 +340,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -261,7 +360,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * 
      * @param createDatabaseDefaultPermissions
      *        Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *        exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *        exclusively by IAM permissions.</p>
      *        <p>
      *        A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *        IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -290,7 +389,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -315,7 +414,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * 
      * @param createDatabaseDefaultPermissions
      *        Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *        exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *        exclusively by IAM permissions.</p>
      *        <p>
      *        A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *        IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -346,7 +445,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -366,7 +465,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * 
      * @param createDatabaseDefaultPermissions
      *        Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *        exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *        exclusively by IAM permissions.</p>
      *        <p>
      *        A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *        IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -585,6 +684,83 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.
+     * </p>
+     * 
+     * @return A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the
+     *         key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2,
+     *         3, and 4.
+     */
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.
+     * </p>
+     * 
+     * @param parameters
+     *        A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the
+     *        key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2,
+     *        3, and 4.
+     */
+
+    public void setParameters(java.util.Map<String, String> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.
+     * </p>
+     * 
+     * @param parameters
+     *        A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the
+     *        key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2,
+     *        3, and 4.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withParameters(java.util.Map<String, String> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
+     * Add a single Parameters entry
+     *
+     * @see DataLakeSettings#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings addParametersEntry(String key, String value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, String>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings clearParametersEntries() {
+        this.parameters = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of the resource-owning account IDs that the caller's account can use to share their user access details
      * (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.
      * </p>
@@ -699,8 +875,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.
      * </p>
      * 
      * @param allowExternalDataFiltering
@@ -715,8 +891,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch"
-     *        >(Optional) Allow Data Filtering on Amazon EMR</a>.
+     *        href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter"
+     *        >(Optional) Allow external data filtering</a>.
      */
 
     public void setAllowExternalDataFiltering(Boolean allowExternalDataFiltering) {
@@ -737,8 +913,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.
      * </p>
      * 
      * @return Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
@@ -752,8 +928,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch"
-     *         >(Optional) Allow Data Filtering on Amazon EMR</a>.
+     *         href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter"
+     *         >(Optional) Allow external data filtering</a>.
      */
 
     public Boolean getAllowExternalDataFiltering() {
@@ -774,8 +950,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.
      * </p>
      * 
      * @param allowExternalDataFiltering
@@ -790,8 +966,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch"
-     *        >(Optional) Allow Data Filtering on Amazon EMR</a>.
+     *        href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter"
+     *        >(Optional) Allow external data filtering</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -814,8 +990,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch">(Optional)
-     * Allow Data Filtering on Amazon EMR</a>.
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter">(Optional)
+     * Allow external data filtering</a>.
      * </p>
      * 
      * @return Whether to allow Amazon EMR clusters to access data managed by Lake Formation. </p>
@@ -829,12 +1005,72 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs-aws.amazon.com/lake-formation/latest/dg/getting-started-setup.html#emr-switch"
-     *         >(Optional) Allow Data Filtering on Amazon EMR</a>.
+     *         href="https://docs.aws.amazon.com/lake-formation/latest/dg/initial-LF-setup.html#external-data-filter"
+     *         >(Optional) Allow external data filtering</a>.
      */
 
     public Boolean isAllowExternalDataFiltering() {
         return this.allowExternalDataFiltering;
+    }
+
+    /**
+     * <p>
+     * Whether to allow a third-party query engine to get data access credentials without session tags when a caller has
+     * full data access permissions.
+     * </p>
+     * 
+     * @param allowFullTableExternalDataAccess
+     *        Whether to allow a third-party query engine to get data access credentials without session tags when a
+     *        caller has full data access permissions.
+     */
+
+    public void setAllowFullTableExternalDataAccess(Boolean allowFullTableExternalDataAccess) {
+        this.allowFullTableExternalDataAccess = allowFullTableExternalDataAccess;
+    }
+
+    /**
+     * <p>
+     * Whether to allow a third-party query engine to get data access credentials without session tags when a caller has
+     * full data access permissions.
+     * </p>
+     * 
+     * @return Whether to allow a third-party query engine to get data access credentials without session tags when a
+     *         caller has full data access permissions.
+     */
+
+    public Boolean getAllowFullTableExternalDataAccess() {
+        return this.allowFullTableExternalDataAccess;
+    }
+
+    /**
+     * <p>
+     * Whether to allow a third-party query engine to get data access credentials without session tags when a caller has
+     * full data access permissions.
+     * </p>
+     * 
+     * @param allowFullTableExternalDataAccess
+     *        Whether to allow a third-party query engine to get data access credentials without session tags when a
+     *        caller has full data access permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withAllowFullTableExternalDataAccess(Boolean allowFullTableExternalDataAccess) {
+        setAllowFullTableExternalDataAccess(allowFullTableExternalDataAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to allow a third-party query engine to get data access credentials without session tags when a caller has
+     * full data access permissions.
+     * </p>
+     * 
+     * @return Whether to allow a third-party query engine to get data access credentials without session tags when a
+     *         caller has full data access permissions.
+     */
+
+    public Boolean isAllowFullTableExternalDataAccess() {
+        return this.allowFullTableExternalDataAccess;
     }
 
     /**
@@ -1023,14 +1259,20 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getDataLakeAdmins() != null)
             sb.append("DataLakeAdmins: ").append(getDataLakeAdmins()).append(",");
+        if (getReadOnlyAdmins() != null)
+            sb.append("ReadOnlyAdmins: ").append(getReadOnlyAdmins()).append(",");
         if (getCreateDatabaseDefaultPermissions() != null)
             sb.append("CreateDatabaseDefaultPermissions: ").append(getCreateDatabaseDefaultPermissions()).append(",");
         if (getCreateTableDefaultPermissions() != null)
             sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getTrustedResourceOwners() != null)
             sb.append("TrustedResourceOwners: ").append(getTrustedResourceOwners()).append(",");
         if (getAllowExternalDataFiltering() != null)
             sb.append("AllowExternalDataFiltering: ").append(getAllowExternalDataFiltering()).append(",");
+        if (getAllowFullTableExternalDataAccess() != null)
+            sb.append("AllowFullTableExternalDataAccess: ").append(getAllowFullTableExternalDataAccess()).append(",");
         if (getExternalDataFilteringAllowList() != null)
             sb.append("ExternalDataFilteringAllowList: ").append(getExternalDataFilteringAllowList()).append(",");
         if (getAuthorizedSessionTagValueList() != null)
@@ -1053,6 +1295,10 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDataLakeAdmins() != null && other.getDataLakeAdmins().equals(this.getDataLakeAdmins()) == false)
             return false;
+        if (other.getReadOnlyAdmins() == null ^ this.getReadOnlyAdmins() == null)
+            return false;
+        if (other.getReadOnlyAdmins() != null && other.getReadOnlyAdmins().equals(this.getReadOnlyAdmins()) == false)
+            return false;
         if (other.getCreateDatabaseDefaultPermissions() == null ^ this.getCreateDatabaseDefaultPermissions() == null)
             return false;
         if (other.getCreateDatabaseDefaultPermissions() != null
@@ -1063,6 +1309,10 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getCreateTableDefaultPermissions() != null
                 && other.getCreateTableDefaultPermissions().equals(this.getCreateTableDefaultPermissions()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         if (other.getTrustedResourceOwners() == null ^ this.getTrustedResourceOwners() == null)
             return false;
         if (other.getTrustedResourceOwners() != null && other.getTrustedResourceOwners().equals(this.getTrustedResourceOwners()) == false)
@@ -1070,6 +1320,11 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getAllowExternalDataFiltering() == null ^ this.getAllowExternalDataFiltering() == null)
             return false;
         if (other.getAllowExternalDataFiltering() != null && other.getAllowExternalDataFiltering().equals(this.getAllowExternalDataFiltering()) == false)
+            return false;
+        if (other.getAllowFullTableExternalDataAccess() == null ^ this.getAllowFullTableExternalDataAccess() == null)
+            return false;
+        if (other.getAllowFullTableExternalDataAccess() != null
+                && other.getAllowFullTableExternalDataAccess().equals(this.getAllowFullTableExternalDataAccess()) == false)
             return false;
         if (other.getExternalDataFilteringAllowList() == null ^ this.getExternalDataFilteringAllowList() == null)
             return false;
@@ -1090,10 +1345,13 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDataLakeAdmins() == null) ? 0 : getDataLakeAdmins().hashCode());
+        hashCode = prime * hashCode + ((getReadOnlyAdmins() == null) ? 0 : getReadOnlyAdmins().hashCode());
         hashCode = prime * hashCode + ((getCreateDatabaseDefaultPermissions() == null) ? 0 : getCreateDatabaseDefaultPermissions().hashCode());
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getTrustedResourceOwners() == null) ? 0 : getTrustedResourceOwners().hashCode());
         hashCode = prime * hashCode + ((getAllowExternalDataFiltering() == null) ? 0 : getAllowExternalDataFiltering().hashCode());
+        hashCode = prime * hashCode + ((getAllowFullTableExternalDataAccess() == null) ? 0 : getAllowFullTableExternalDataAccess().hashCode());
         hashCode = prime * hashCode + ((getExternalDataFilteringAllowList() == null) ? 0 : getExternalDataFilteringAllowList().hashCode());
         hashCode = prime * hashCode + ((getAuthorizedSessionTagValueList() == null) ? 0 : getAuthorizedSessionTagValueList().hashCode());
         return hashCode;

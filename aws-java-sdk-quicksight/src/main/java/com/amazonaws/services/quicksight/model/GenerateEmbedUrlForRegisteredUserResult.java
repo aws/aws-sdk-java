@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,8 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or
+     * console.
      * </p>
      */
     private String embedUrl;
@@ -45,11 +46,13 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or
+     * console.
      * </p>
      * 
      * @param embedUrl
-     *        The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     *        The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or
+     *        console.
      */
 
     public void setEmbedUrl(String embedUrl) {
@@ -58,10 +61,12 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or
+     * console.
      * </p>
      * 
-     * @return The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     * @return The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience,
+     *         or console.
      */
 
     public String getEmbedUrl() {
@@ -70,11 +75,13 @@ public class GenerateEmbedUrlForRegisteredUserResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     * The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or
+     * console.
      * </p>
      * 
      * @param embedUrl
-     *        The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+     *        The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative Q&amp;A experience, or
+     *        console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

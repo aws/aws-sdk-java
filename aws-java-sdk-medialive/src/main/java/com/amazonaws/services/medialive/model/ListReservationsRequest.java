@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,17 +26,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-     */
+    /** Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE' */
     private String channelClass;
     /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK' */
     private String codec;
 
     private Integer maxResults;
-    /**
-     * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-     */
+    /** Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS' */
     private String maximumBitrate;
     /** Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS' */
     private String maximumFramerate;
@@ -46,13 +42,9 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     private String resolution;
     /** Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
     private String resourceType;
-    /**
-     * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-     */
+    /** Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION' */
     private String specialFeature;
-    /**
-     * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-     */
+    /** Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM' */
     private String videoQuality;
 
     /**

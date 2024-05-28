@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public enum ConflictType {
     SPEAKER_NOT_SET("SPEAKER_NOT_SET"),
     SPEAKER_OPTED_OUT("SPEAKER_OPTED_OUT"),
     CONCURRENT_CHANGES("CONCURRENT_CHANGES"),
-    DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES");
+    DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"),
+    CANNOT_DELETE_NON_EMPTY_WATCHLIST("CANNOT_DELETE_NON_EMPTY_WATCHLIST"),
+    FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST("FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST");
 
     private String value;
 

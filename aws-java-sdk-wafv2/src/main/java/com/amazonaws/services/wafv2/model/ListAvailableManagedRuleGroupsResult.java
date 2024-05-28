@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,12 @@ public class ListAvailableManagedRuleGroupsResult extends com.amazonaws.AmazonWe
      * </p>
      */
     private String nextMarker;
-    /** <p/> */
+    /**
+     * <p>
+     * Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might
+     * not be the full list.
+     * </p>
+     */
     private java.util.List<ManagedRuleGroupSummary> managedRuleGroups;
 
     /**
@@ -91,9 +96,13 @@ public class ListAvailableManagedRuleGroupsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might
+     * not be the full list.
+     * </p>
      * 
-     * @return
+     * @return Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request,
+     *         this might not be the full list.
      */
 
     public java.util.List<ManagedRuleGroupSummary> getManagedRuleGroups() {
@@ -101,9 +110,14 @@ public class ListAvailableManagedRuleGroupsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might
+     * not be the full list.
+     * </p>
      * 
      * @param managedRuleGroups
+     *        Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this
+     *        might not be the full list.
      */
 
     public void setManagedRuleGroups(java.util.Collection<ManagedRuleGroupSummary> managedRuleGroups) {
@@ -116,7 +130,10 @@ public class ListAvailableManagedRuleGroupsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might
+     * not be the full list.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setManagedRuleGroups(java.util.Collection)} or {@link #withManagedRuleGroups(java.util.Collection)} if
@@ -124,6 +141,8 @@ public class ListAvailableManagedRuleGroupsResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param managedRuleGroups
+     *        Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this
+     *        might not be the full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,9 +157,14 @@ public class ListAvailableManagedRuleGroupsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this might
+     * not be the full list.
+     * </p>
      * 
      * @param managedRuleGroups
+     *        Array of managed rule groups that you can use. If you specified a <code>Limit</code> in your request, this
+     *        might not be the full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

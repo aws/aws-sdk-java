@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class AnswerMarshaller {
             .marshallLocationName("Notes").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Reason").build();
+    private static final MarshallingInfo<StructuredPojo> JIRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JiraConfiguration").build();
 
     private static final AnswerMarshaller instance = new AnswerMarshaller();
 
@@ -87,6 +89,7 @@ public class AnswerMarshaller {
             protocolMarshaller.marshall(answer.getRisk(), RISK_BINDING);
             protocolMarshaller.marshall(answer.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(answer.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(answer.getJiraConfiguration(), JIRACONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

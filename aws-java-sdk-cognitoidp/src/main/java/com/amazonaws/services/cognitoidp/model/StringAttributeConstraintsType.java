@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable, 
     private String minLength;
     /**
      * <p>
-     * The maximum length.
+     * The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      */
     private String maxLength;
@@ -83,11 +84,13 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The maximum length.
+     * The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      * 
      * @param maxLength
-     *        The maximum length.
+     *        The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>
+     *        , represented as a string with a length of 131072 characters or fewer.
      */
 
     public void setMaxLength(String maxLength) {
@@ -96,10 +99,12 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The maximum length.
+     * The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      * 
-     * @return The maximum length.
+     * @return The maximum length of a string attribute value. Must be a number less than or equal to
+     *         <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.
      */
 
     public String getMaxLength() {
@@ -108,11 +113,13 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The maximum length.
+     * The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      * 
      * @param maxLength
-     *        The maximum length.
+     *        The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>
+     *        , represented as a string with a length of 131072 characters or fewer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

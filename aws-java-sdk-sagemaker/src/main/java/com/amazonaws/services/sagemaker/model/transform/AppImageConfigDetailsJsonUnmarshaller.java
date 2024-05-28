@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,14 @@ public class AppImageConfigDetailsJsonUnmarshaller implements Unmarshaller<AppIm
                 if (context.testExpression("KernelGatewayImageConfig", targetDepth)) {
                     context.nextToken();
                     appImageConfigDetails.setKernelGatewayImageConfig(KernelGatewayImageConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JupyterLabAppImageConfig", targetDepth)) {
+                    context.nextToken();
+                    appImageConfigDetails.setJupyterLabAppImageConfig(JupyterLabAppImageConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CodeEditorAppImageConfig", targetDepth)) {
+                    context.nextToken();
+                    appImageConfigDetails.setCodeEditorAppImageConfig(CodeEditorAppImageConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

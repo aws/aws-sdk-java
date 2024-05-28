@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a domain association that associates a custom domain with an Amplify app.
+ * Describes the association between a custom domain and an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DomainAssociation" target="_top">AWS API
@@ -67,7 +67,64 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
     private String domainStatus;
     /**
      * <p>
-     * The reason for the current status of the domain association.
+     * The status of the domain update operation that is currently in progress. The following list describes the valid
+     * update states.
+     * </p>
+     * <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * The certificate is in the process of being updated.
+     * </p>
+     * </dd>
+     * <dt>PENDING_VERIFICATION</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     * creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     * </p>
+     * </dd>
+     * <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the creation
+     * of a custom domain or when a custom domain is updated to use a custom certificate.
+     * </p>
+     * </dd>
+     * <dt>PENDING_DEPLOYMENT</dt>
+     * <dd>
+     * <p>
+     * Indicates that the subdomain or certificate changes are being propagated.
+     * </p>
+     * </dd>
+     * <dt>AWAITING_APP_CNAME</dt>
+     * <dd>
+     * <p>
+     * Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on
+     * Route 53, Amplify handles this for you automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in
+     * the <i>Amplify Hosting User Guide</i>.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The certificate has been associated with a domain.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The certificate has failed to be provisioned or associated, and there is no existing active certificate to roll
+     * back to.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String updateStatus;
+    /**
+     * <p>
+     * Additional information that describes why the domain association is in the current state.
      * </p>
      */
     private String statusReason;
@@ -83,6 +140,18 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<SubDomain> subDomains;
+    /**
+     * <p>
+     * Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the
+     * default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * If you are updating your domain to use a different certificate, <code>certificate</code> points to the new
+     * certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.
+     * </p>
+     */
+    private Certificate certificate;
 
     /**
      * <p>
@@ -393,11 +462,474 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The reason for the current status of the domain association.
+     * The status of the domain update operation that is currently in progress. The following list describes the valid
+     * update states.
+     * </p>
+     * <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * The certificate is in the process of being updated.
+     * </p>
+     * </dd>
+     * <dt>PENDING_VERIFICATION</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     * creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     * </p>
+     * </dd>
+     * <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the creation
+     * of a custom domain or when a custom domain is updated to use a custom certificate.
+     * </p>
+     * </dd>
+     * <dt>PENDING_DEPLOYMENT</dt>
+     * <dd>
+     * <p>
+     * Indicates that the subdomain or certificate changes are being propagated.
+     * </p>
+     * </dd>
+     * <dt>AWAITING_APP_CNAME</dt>
+     * <dd>
+     * <p>
+     * Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on
+     * Route 53, Amplify handles this for you automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in
+     * the <i>Amplify Hosting User Guide</i>.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The certificate has been associated with a domain.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The certificate has failed to be provisioned or associated, and there is no existing active certificate to roll
+     * back to.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateStatus
+     *        The status of the domain update operation that is currently in progress. The following list describes the
+     *        valid update states.</p>
+     *        <dl>
+     *        <dt>REQUESTING_CERTIFICATE</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate is in the process of being updated.
+     *        </p>
+     *        </dd>
+     *        <dt>PENDING_VERIFICATION</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     *        creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     *        </p>
+     *        </dd>
+     *        <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the
+     *        creation of a custom domain or when a custom domain is updated to use a custom certificate.
+     *        </p>
+     *        </dd>
+     *        <dt>PENDING_DEPLOYMENT</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that the subdomain or certificate changes are being propagated.
+     *        </p>
+     *        </dd>
+     *        <dt>AWAITING_APP_CNAME</dt>
+     *        <dd>
+     *        <p>
+     *        Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain
+     *        is on Route 53, Amplify handles this for you automatically. For more information about custom domains, see
+     *        <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom
+     *        domains</a> in the <i>Amplify Hosting User Guide</i>.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate has been associated with a domain.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate has failed to be provisioned or associated, and there is no existing active certificate to
+     *        roll back to.
+     *        </p>
+     *        </dd>
+     * @see UpdateStatus
+     */
+
+    public void setUpdateStatus(String updateStatus) {
+        this.updateStatus = updateStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the domain update operation that is currently in progress. The following list describes the valid
+     * update states.
+     * </p>
+     * <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * The certificate is in the process of being updated.
+     * </p>
+     * </dd>
+     * <dt>PENDING_VERIFICATION</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     * creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     * </p>
+     * </dd>
+     * <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the creation
+     * of a custom domain or when a custom domain is updated to use a custom certificate.
+     * </p>
+     * </dd>
+     * <dt>PENDING_DEPLOYMENT</dt>
+     * <dd>
+     * <p>
+     * Indicates that the subdomain or certificate changes are being propagated.
+     * </p>
+     * </dd>
+     * <dt>AWAITING_APP_CNAME</dt>
+     * <dd>
+     * <p>
+     * Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on
+     * Route 53, Amplify handles this for you automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in
+     * the <i>Amplify Hosting User Guide</i>.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The certificate has been associated with a domain.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The certificate has failed to be provisioned or associated, and there is no existing active certificate to roll
+     * back to.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The status of the domain update operation that is currently in progress. The following list describes the
+     *         valid update states.</p>
+     *         <dl>
+     *         <dt>REQUESTING_CERTIFICATE</dt>
+     *         <dd>
+     *         <p>
+     *         The certificate is in the process of being updated.
+     *         </p>
+     *         </dd>
+     *         <dt>PENDING_VERIFICATION</dt>
+     *         <dd>
+     *         <p>
+     *         Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     *         creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     *         </p>
+     *         </dd>
+     *         <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     *         <dd>
+     *         <p>
+     *         Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the
+     *         creation of a custom domain or when a custom domain is updated to use a custom certificate.
+     *         </p>
+     *         </dd>
+     *         <dt>PENDING_DEPLOYMENT</dt>
+     *         <dd>
+     *         <p>
+     *         Indicates that the subdomain or certificate changes are being propagated.
+     *         </p>
+     *         </dd>
+     *         <dt>AWAITING_APP_CNAME</dt>
+     *         <dd>
+     *         <p>
+     *         Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain
+     *         is on Route 53, Amplify handles this for you automatically. For more information about custom domains,
+     *         see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom
+     *         domains</a> in the <i>Amplify Hosting User Guide</i>.
+     *         </p>
+     *         </dd>
+     *         <dt>UPDATE_COMPLETE</dt>
+     *         <dd>
+     *         <p>
+     *         The certificate has been associated with a domain.
+     *         </p>
+     *         </dd>
+     *         <dt>UPDATE_FAILED</dt>
+     *         <dd>
+     *         <p>
+     *         The certificate has failed to be provisioned or associated, and there is no existing active certificate
+     *         to roll back to.
+     *         </p>
+     *         </dd>
+     * @see UpdateStatus
+     */
+
+    public String getUpdateStatus() {
+        return this.updateStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the domain update operation that is currently in progress. The following list describes the valid
+     * update states.
+     * </p>
+     * <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * The certificate is in the process of being updated.
+     * </p>
+     * </dd>
+     * <dt>PENDING_VERIFICATION</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     * creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     * </p>
+     * </dd>
+     * <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the creation
+     * of a custom domain or when a custom domain is updated to use a custom certificate.
+     * </p>
+     * </dd>
+     * <dt>PENDING_DEPLOYMENT</dt>
+     * <dd>
+     * <p>
+     * Indicates that the subdomain or certificate changes are being propagated.
+     * </p>
+     * </dd>
+     * <dt>AWAITING_APP_CNAME</dt>
+     * <dd>
+     * <p>
+     * Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on
+     * Route 53, Amplify handles this for you automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in
+     * the <i>Amplify Hosting User Guide</i>.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The certificate has been associated with a domain.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The certificate has failed to be provisioned or associated, and there is no existing active certificate to roll
+     * back to.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateStatus
+     *        The status of the domain update operation that is currently in progress. The following list describes the
+     *        valid update states.</p>
+     *        <dl>
+     *        <dt>REQUESTING_CERTIFICATE</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate is in the process of being updated.
+     *        </p>
+     *        </dd>
+     *        <dt>PENDING_VERIFICATION</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     *        creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     *        </p>
+     *        </dd>
+     *        <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the
+     *        creation of a custom domain or when a custom domain is updated to use a custom certificate.
+     *        </p>
+     *        </dd>
+     *        <dt>PENDING_DEPLOYMENT</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that the subdomain or certificate changes are being propagated.
+     *        </p>
+     *        </dd>
+     *        <dt>AWAITING_APP_CNAME</dt>
+     *        <dd>
+     *        <p>
+     *        Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain
+     *        is on Route 53, Amplify handles this for you automatically. For more information about custom domains, see
+     *        <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom
+     *        domains</a> in the <i>Amplify Hosting User Guide</i>.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate has been associated with a domain.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate has failed to be provisioned or associated, and there is no existing active certificate to
+     *        roll back to.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UpdateStatus
+     */
+
+    public DomainAssociation withUpdateStatus(String updateStatus) {
+        setUpdateStatus(updateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the domain update operation that is currently in progress. The following list describes the valid
+     * update states.
+     * </p>
+     * <dl>
+     * <dt>REQUESTING_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * The certificate is in the process of being updated.
+     * </p>
+     * </dd>
+     * <dt>PENDING_VERIFICATION</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     * creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     * </p>
+     * </dd>
+     * <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     * <dd>
+     * <p>
+     * Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the creation
+     * of a custom domain or when a custom domain is updated to use a custom certificate.
+     * </p>
+     * </dd>
+     * <dt>PENDING_DEPLOYMENT</dt>
+     * <dd>
+     * <p>
+     * Indicates that the subdomain or certificate changes are being propagated.
+     * </p>
+     * </dd>
+     * <dt>AWAITING_APP_CNAME</dt>
+     * <dd>
+     * <p>
+     * Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on
+     * Route 53, Amplify handles this for you automatically. For more information about custom domains, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in
+     * the <i>Amplify Hosting User Guide</i>.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The certificate has been associated with a domain.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The certificate has failed to be provisioned or associated, and there is no existing active certificate to roll
+     * back to.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateStatus
+     *        The status of the domain update operation that is currently in progress. The following list describes the
+     *        valid update states.</p>
+     *        <dl>
+     *        <dt>REQUESTING_CERTIFICATE</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate is in the process of being updated.
+     *        </p>
+     *        </dd>
+     *        <dt>PENDING_VERIFICATION</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that an Amplify managed certificate is in the process of being verified. This occurs during the
+     *        creation of a custom domain or when a custom domain is updated to use a managed certificate.
+     *        </p>
+     *        </dd>
+     *        <dt>IMPORTING_CUSTOM_CERTIFICATE</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that an Amplify custom certificate is in the process of being imported. This occurs during the
+     *        creation of a custom domain or when a custom domain is updated to use a custom certificate.
+     *        </p>
+     *        </dd>
+     *        <dt>PENDING_DEPLOYMENT</dt>
+     *        <dd>
+     *        <p>
+     *        Indicates that the subdomain or certificate changes are being propagated.
+     *        </p>
+     *        </dd>
+     *        <dt>AWAITING_APP_CNAME</dt>
+     *        <dd>
+     *        <p>
+     *        Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain
+     *        is on Route 53, Amplify handles this for you automatically. For more information about custom domains, see
+     *        <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom
+     *        domains</a> in the <i>Amplify Hosting User Guide</i>.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate has been associated with a domain.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The certificate has failed to be provisioned or associated, and there is no existing active certificate to
+     *        roll back to.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UpdateStatus
+     */
+
+    public DomainAssociation withUpdateStatus(UpdateStatus updateStatus) {
+        this.updateStatus = updateStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional information that describes why the domain association is in the current state.
      * </p>
      * 
      * @param statusReason
-     *        The reason for the current status of the domain association.
+     *        Additional information that describes why the domain association is in the current state.
      */
 
     public void setStatusReason(String statusReason) {
@@ -406,10 +938,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The reason for the current status of the domain association.
+     * Additional information that describes why the domain association is in the current state.
      * </p>
      * 
-     * @return The reason for the current status of the domain association.
+     * @return Additional information that describes why the domain association is in the current state.
      */
 
     public String getStatusReason() {
@@ -418,11 +950,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The reason for the current status of the domain association.
+     * Additional information that describes why the domain association is in the current state.
      * </p>
      * 
      * @param statusReason
-     *        The reason for the current status of the domain association.
+     *        Additional information that describes why the domain association is in the current state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -542,6 +1074,79 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the
+     * default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * If you are updating your domain to use a different certificate, <code>certificate</code> points to the new
+     * certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.
+     * </p>
+     * 
+     * @param certificate
+     *        Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or
+     *        the default certificate that Amplify provisions for you.</p>
+     *        <p>
+     *        If you are updating your domain to use a different certificate, <code>certificate</code> points to the new
+     *        certificate that is being created instead of the current active certificate. Otherwise,
+     *        <code>certificate</code> points to the current active certificate.
+     */
+
+    public void setCertificate(Certificate certificate) {
+        this.certificate = certificate;
+    }
+
+    /**
+     * <p>
+     * Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the
+     * default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * If you are updating your domain to use a different certificate, <code>certificate</code> points to the new
+     * certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.
+     * </p>
+     * 
+     * @return Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or
+     *         the default certificate that Amplify provisions for you.</p>
+     *         <p>
+     *         If you are updating your domain to use a different certificate, <code>certificate</code> points to the
+     *         new certificate that is being created instead of the current active certificate. Otherwise,
+     *         <code>certificate</code> points to the current active certificate.
+     */
+
+    public Certificate getCertificate() {
+        return this.certificate;
+    }
+
+    /**
+     * <p>
+     * Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or the
+     * default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * If you are updating your domain to use a different certificate, <code>certificate</code> points to the new
+     * certificate that is being created instead of the current active certificate. Otherwise, <code>certificate</code>
+     * points to the current active certificate.
+     * </p>
+     * 
+     * @param certificate
+     *        Describes the SSL/TLS certificate for the domain association. This can be your own custom certificate or
+     *        the default certificate that Amplify provisions for you.</p>
+     *        <p>
+     *        If you are updating your domain to use a different certificate, <code>certificate</code> points to the new
+     *        certificate that is being created instead of the current active certificate. Otherwise,
+     *        <code>certificate</code> points to the current active certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainAssociation withCertificate(Certificate certificate) {
+        setCertificate(certificate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -565,12 +1170,16 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
             sb.append("AutoSubDomainIAMRole: ").append(getAutoSubDomainIAMRole()).append(",");
         if (getDomainStatus() != null)
             sb.append("DomainStatus: ").append(getDomainStatus()).append(",");
+        if (getUpdateStatus() != null)
+            sb.append("UpdateStatus: ").append(getUpdateStatus()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getCertificateVerificationDNSRecord() != null)
             sb.append("CertificateVerificationDNSRecord: ").append(getCertificateVerificationDNSRecord()).append(",");
         if (getSubDomains() != null)
-            sb.append("SubDomains: ").append(getSubDomains());
+            sb.append("SubDomains: ").append(getSubDomains()).append(",");
+        if (getCertificate() != null)
+            sb.append("Certificate: ").append(getCertificate());
         sb.append("}");
         return sb.toString();
     }
@@ -610,6 +1219,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDomainStatus() != null && other.getDomainStatus().equals(this.getDomainStatus()) == false)
             return false;
+        if (other.getUpdateStatus() == null ^ this.getUpdateStatus() == null)
+            return false;
+        if (other.getUpdateStatus() != null && other.getUpdateStatus().equals(this.getUpdateStatus()) == false)
+            return false;
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
@@ -622,6 +1235,10 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
         if (other.getSubDomains() == null ^ this.getSubDomains() == null)
             return false;
         if (other.getSubDomains() != null && other.getSubDomains().equals(this.getSubDomains()) == false)
+            return false;
+        if (other.getCertificate() == null ^ this.getCertificate() == null)
+            return false;
+        if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
             return false;
         return true;
     }
@@ -637,9 +1254,11 @@ public class DomainAssociation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getAutoSubDomainCreationPatterns() == null) ? 0 : getAutoSubDomainCreationPatterns().hashCode());
         hashCode = prime * hashCode + ((getAutoSubDomainIAMRole() == null) ? 0 : getAutoSubDomainIAMRole().hashCode());
         hashCode = prime * hashCode + ((getDomainStatus() == null) ? 0 : getDomainStatus().hashCode());
+        hashCode = prime * hashCode + ((getUpdateStatus() == null) ? 0 : getUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getCertificateVerificationDNSRecord() == null) ? 0 : getCertificateVerificationDNSRecord().hashCode());
         hashCode = prime * hashCode + ((getSubDomains() == null) ? 0 : getSubDomains().hashCode());
+        hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         return hashCode;
     }
 

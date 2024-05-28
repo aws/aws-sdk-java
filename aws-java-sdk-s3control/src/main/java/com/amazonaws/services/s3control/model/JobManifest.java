@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,10 @@ public class JobManifest implements Serializable, Cloneable {
     private JobManifestSpec spec;
     /**
      * <p>
-     * Contains the information required to locate the specified job's manifest.
+     * Contains the information required to locate the specified job's manifest. Manifests can't be imported from
+     * directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      */
     private JobManifestLocation location;
@@ -88,11 +91,17 @@ public class JobManifest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the information required to locate the specified job's manifest.
+     * Contains the information required to locate the specified job's manifest. Manifests can't be imported from
+     * directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      * 
      * @param location
-     *        Contains the information required to locate the specified job's manifest.
+     *        Contains the information required to locate the specified job's manifest. Manifests can't be imported from
+     *        directory buckets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     *        buckets</a>.
      */
 
     public void setLocation(JobManifestLocation location) {
@@ -101,10 +110,16 @@ public class JobManifest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the information required to locate the specified job's manifest.
+     * Contains the information required to locate the specified job's manifest. Manifests can't be imported from
+     * directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      * 
-     * @return Contains the information required to locate the specified job's manifest.
+     * @return Contains the information required to locate the specified job's manifest. Manifests can't be imported
+     *         from directory buckets. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     *         buckets</a>.
      */
 
     public JobManifestLocation getLocation() {
@@ -113,11 +128,17 @@ public class JobManifest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the information required to locate the specified job's manifest.
+     * Contains the information required to locate the specified job's manifest. Manifests can't be imported from
+     * directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      * 
      * @param location
-     *        Contains the information required to locate the specified job's manifest.
+     *        Contains the information required to locate the specified job's manifest. Manifests can't be imported from
+     *        directory buckets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     *        buckets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

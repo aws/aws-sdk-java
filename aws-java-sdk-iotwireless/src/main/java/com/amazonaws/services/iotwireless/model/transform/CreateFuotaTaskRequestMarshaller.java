@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,12 @@ public class CreateFuotaTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirmwareUpdateRole").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Integer> REDUNDANCYPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedundancyPercent").build();
+    private static final MarshallingInfo<Integer> FRAGMENTSIZEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FragmentSizeBytes").build();
+    private static final MarshallingInfo<Integer> FRAGMENTINTERVALMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FragmentIntervalMS").build();
 
     private static final CreateFuotaTaskRequestMarshaller instance = new CreateFuotaTaskRequestMarshaller();
 
@@ -69,6 +75,9 @@ public class CreateFuotaTaskRequestMarshaller {
             protocolMarshaller.marshall(createFuotaTaskRequest.getFirmwareUpdateImage(), FIRMWAREUPDATEIMAGE_BINDING);
             protocolMarshaller.marshall(createFuotaTaskRequest.getFirmwareUpdateRole(), FIRMWAREUPDATEROLE_BINDING);
             protocolMarshaller.marshall(createFuotaTaskRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFuotaTaskRequest.getRedundancyPercent(), REDUNDANCYPERCENT_BINDING);
+            protocolMarshaller.marshall(createFuotaTaskRequest.getFragmentSizeBytes(), FRAGMENTSIZEBYTES_BINDING);
+            protocolMarshaller.marshall(createFuotaTaskRequest.getFragmentIntervalMS(), FRAGMENTINTERVALMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

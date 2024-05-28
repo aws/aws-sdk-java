@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,15 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
     private String verifyAuthChallengeResponse;
     /**
      * <p>
-     * A Lambda trigger that is invoked before token generation.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
+     * </p>
+     * <p>
+     * Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>, its
+     * value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation triggers,
+     * set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * <p>
+     * You can set <code/>
      * </p>
      */
     private String preTokenGeneration;
@@ -88,6 +96,13 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String userMigration;
+    /**
+     * <p>
+     * The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     * <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     * </p>
+     */
+    private PreTokenGenerationVersionConfigType preTokenGenerationConfig;
     /**
      * <p>
      * A custom SMS sender Lambda trigger.
@@ -431,11 +446,26 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Lambda trigger that is invoked before token generation.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
+     * </p>
+     * <p>
+     * Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>, its
+     * value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation triggers,
+     * set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * <p>
+     * You can set <code/>
      * </p>
      * 
      * @param preTokenGeneration
-     *        A Lambda trigger that is invoked before token generation.
+     *        The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
+     *        <p>
+     *        Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>,
+     *        its value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     *        triggers, set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     *        </p>
+     *        <p>
+     *        You can set <code/>
      */
 
     public void setPreTokenGeneration(String preTokenGeneration) {
@@ -444,10 +474,25 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Lambda trigger that is invoked before token generation.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
+     * </p>
+     * <p>
+     * Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>, its
+     * value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation triggers,
+     * set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * <p>
+     * You can set <code/>
      * </p>
      * 
-     * @return A Lambda trigger that is invoked before token generation.
+     * @return The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
+     *         <p>
+     *         Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>,
+     *         its value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     *         triggers, set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     *         </p>
+     *         <p>
+     *         You can set <code/>
      */
 
     public String getPreTokenGeneration() {
@@ -456,11 +501,26 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A Lambda trigger that is invoked before token generation.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
+     * </p>
+     * <p>
+     * Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>, its
+     * value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation triggers,
+     * set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * <p>
+     * You can set <code/>
      * </p>
      * 
      * @param preTokenGeneration
-     *        A Lambda trigger that is invoked before token generation.
+     *        The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.</p>
+     *        <p>
+     *        Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>,
+     *        its value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     *        triggers, set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+     *        </p>
+     *        <p>
+     *        You can set <code/>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,6 +566,52 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
 
     public LambdaConfigType withUserMigration(String userMigration) {
         setUserMigration(userMigration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     * <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * 
+     * @param preTokenGenerationConfig
+     *        The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     *        <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     */
+
+    public void setPreTokenGenerationConfig(PreTokenGenerationVersionConfigType preTokenGenerationConfig) {
+        this.preTokenGenerationConfig = preTokenGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     * <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * 
+     * @return The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     *         <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     */
+
+    public PreTokenGenerationVersionConfigType getPreTokenGenerationConfig() {
+        return this.preTokenGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     * <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     * </p>
+     * 
+     * @param preTokenGenerationConfig
+     *        The detailed configuration of a pre token generation trigger. If you also set an ARN in
+     *        <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaConfigType withPreTokenGenerationConfig(PreTokenGenerationVersionConfigType preTokenGenerationConfig) {
+        setPreTokenGenerationConfig(preTokenGenerationConfig);
         return this;
     }
 
@@ -673,6 +779,8 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
             sb.append("PreTokenGeneration: ").append(getPreTokenGeneration()).append(",");
         if (getUserMigration() != null)
             sb.append("UserMigration: ").append(getUserMigration()).append(",");
+        if (getPreTokenGenerationConfig() != null)
+            sb.append("PreTokenGenerationConfig: ").append(getPreTokenGenerationConfig()).append(",");
         if (getCustomSMSSender() != null)
             sb.append("CustomSMSSender: ").append(getCustomSMSSender()).append(",");
         if (getCustomEmailSender() != null)
@@ -733,6 +841,10 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getUserMigration() != null && other.getUserMigration().equals(this.getUserMigration()) == false)
             return false;
+        if (other.getPreTokenGenerationConfig() == null ^ this.getPreTokenGenerationConfig() == null)
+            return false;
+        if (other.getPreTokenGenerationConfig() != null && other.getPreTokenGenerationConfig().equals(this.getPreTokenGenerationConfig()) == false)
+            return false;
         if (other.getCustomSMSSender() == null ^ this.getCustomSMSSender() == null)
             return false;
         if (other.getCustomSMSSender() != null && other.getCustomSMSSender().equals(this.getCustomSMSSender()) == false)
@@ -763,6 +875,7 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getVerifyAuthChallengeResponse() == null) ? 0 : getVerifyAuthChallengeResponse().hashCode());
         hashCode = prime * hashCode + ((getPreTokenGeneration() == null) ? 0 : getPreTokenGeneration().hashCode());
         hashCode = prime * hashCode + ((getUserMigration() == null) ? 0 : getUserMigration().hashCode());
+        hashCode = prime * hashCode + ((getPreTokenGenerationConfig() == null) ? 0 : getPreTokenGenerationConfig().hashCode());
         hashCode = prime * hashCode + ((getCustomSMSSender() == null) ? 0 : getCustomSMSSender().hashCode());
         hashCode = prime * hashCode + ((getCustomEmailSender() == null) ? 0 : getCustomEmailSender().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyID() == null) ? 0 : getKMSKeyID().hashCode());

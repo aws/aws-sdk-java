@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,18 @@ public class DataShareAssociation implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date statusChangeDate;
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share authorization.
+     * </p>
+     */
+    private Boolean producerAllowedWrites;
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share association.
+     * </p>
+     */
+    private Boolean consumerAcceptedWrites;
 
     /**
      * <p>
@@ -280,6 +292,110 @@ public class DataShareAssociation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether write operations were allowed during data share authorization.
+     * </p>
+     * 
+     * @param producerAllowedWrites
+     *        Specifies whether write operations were allowed during data share authorization.
+     */
+
+    public void setProducerAllowedWrites(Boolean producerAllowedWrites) {
+        this.producerAllowedWrites = producerAllowedWrites;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share authorization.
+     * </p>
+     * 
+     * @return Specifies whether write operations were allowed during data share authorization.
+     */
+
+    public Boolean getProducerAllowedWrites() {
+        return this.producerAllowedWrites;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share authorization.
+     * </p>
+     * 
+     * @param producerAllowedWrites
+     *        Specifies whether write operations were allowed during data share authorization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataShareAssociation withProducerAllowedWrites(Boolean producerAllowedWrites) {
+        setProducerAllowedWrites(producerAllowedWrites);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share authorization.
+     * </p>
+     * 
+     * @return Specifies whether write operations were allowed during data share authorization.
+     */
+
+    public Boolean isProducerAllowedWrites() {
+        return this.producerAllowedWrites;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share association.
+     * </p>
+     * 
+     * @param consumerAcceptedWrites
+     *        Specifies whether write operations were allowed during data share association.
+     */
+
+    public void setConsumerAcceptedWrites(Boolean consumerAcceptedWrites) {
+        this.consumerAcceptedWrites = consumerAcceptedWrites;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share association.
+     * </p>
+     * 
+     * @return Specifies whether write operations were allowed during data share association.
+     */
+
+    public Boolean getConsumerAcceptedWrites() {
+        return this.consumerAcceptedWrites;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share association.
+     * </p>
+     * 
+     * @param consumerAcceptedWrites
+     *        Specifies whether write operations were allowed during data share association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataShareAssociation withConsumerAcceptedWrites(Boolean consumerAcceptedWrites) {
+        setConsumerAcceptedWrites(consumerAcceptedWrites);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether write operations were allowed during data share association.
+     * </p>
+     * 
+     * @return Specifies whether write operations were allowed during data share association.
+     */
+
+    public Boolean isConsumerAcceptedWrites() {
+        return this.consumerAcceptedWrites;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -300,7 +416,11 @@ public class DataShareAssociation implements Serializable, Cloneable {
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getStatusChangeDate() != null)
-            sb.append("StatusChangeDate: ").append(getStatusChangeDate());
+            sb.append("StatusChangeDate: ").append(getStatusChangeDate()).append(",");
+        if (getProducerAllowedWrites() != null)
+            sb.append("ProducerAllowedWrites: ").append(getProducerAllowedWrites()).append(",");
+        if (getConsumerAcceptedWrites() != null)
+            sb.append("ConsumerAcceptedWrites: ").append(getConsumerAcceptedWrites());
         sb.append("}");
         return sb.toString();
     }
@@ -335,6 +455,14 @@ public class DataShareAssociation implements Serializable, Cloneable {
             return false;
         if (other.getStatusChangeDate() != null && other.getStatusChangeDate().equals(this.getStatusChangeDate()) == false)
             return false;
+        if (other.getProducerAllowedWrites() == null ^ this.getProducerAllowedWrites() == null)
+            return false;
+        if (other.getProducerAllowedWrites() != null && other.getProducerAllowedWrites().equals(this.getProducerAllowedWrites()) == false)
+            return false;
+        if (other.getConsumerAcceptedWrites() == null ^ this.getConsumerAcceptedWrites() == null)
+            return false;
+        if (other.getConsumerAcceptedWrites() != null && other.getConsumerAcceptedWrites().equals(this.getConsumerAcceptedWrites()) == false)
+            return false;
         return true;
     }
 
@@ -348,6 +476,8 @@ public class DataShareAssociation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getConsumerRegion() == null) ? 0 : getConsumerRegion().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getStatusChangeDate() == null) ? 0 : getStatusChangeDate().hashCode());
+        hashCode = prime * hashCode + ((getProducerAllowedWrites() == null) ? 0 : getProducerAllowedWrites().hashCode());
+        hashCode = prime * hashCode + ((getConsumerAcceptedWrites() == null) ? 0 : getConsumerAcceptedWrites().hashCode());
         return hashCode;
     }
 

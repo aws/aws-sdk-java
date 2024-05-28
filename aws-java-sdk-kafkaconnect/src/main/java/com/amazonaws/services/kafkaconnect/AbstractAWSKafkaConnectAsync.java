@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,19 @@ public class AbstractAWSKafkaConnectAsync extends AbstractAWSKafkaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWorkerConfigurationResult> deleteWorkerConfigurationAsync(DeleteWorkerConfigurationRequest request) {
+
+        return deleteWorkerConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkerConfigurationResult> deleteWorkerConfigurationAsync(DeleteWorkerConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkerConfigurationRequest, DeleteWorkerConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeConnectorResult> describeConnectorAsync(DescribeConnectorRequest request) {
 
         return describeConnectorAsync(request, null);
@@ -158,6 +171,19 @@ public class AbstractAWSKafkaConnectAsync extends AbstractAWSKafkaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkerConfigurationsResult> listWorkerConfigurationsAsync(ListWorkerConfigurationsRequest request) {
 
         return listWorkerConfigurationsAsync(request, null);
@@ -166,6 +192,32 @@ public class AbstractAWSKafkaConnectAsync extends AbstractAWSKafkaConnect implem
     @Override
     public java.util.concurrent.Future<ListWorkerConfigurationsResult> listWorkerConfigurationsAsync(ListWorkerConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWorkerConfigurationsRequest, ListWorkerConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

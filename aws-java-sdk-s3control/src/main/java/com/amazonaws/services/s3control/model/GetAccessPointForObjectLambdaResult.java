@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class GetAccessPointForObjectLambdaResult extends com.amazonaws.AmazonWeb
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * The alias of the Object Lambda Access Point.
+     * </p>
+     */
+    private ObjectLambdaAccessPointAlias alias;
 
     /**
      * <p>
@@ -164,6 +170,46 @@ public class GetAccessPointForObjectLambdaResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The alias of the Object Lambda Access Point.
+     * </p>
+     * 
+     * @param alias
+     *        The alias of the Object Lambda Access Point.
+     */
+
+    public void setAlias(ObjectLambdaAccessPointAlias alias) {
+        this.alias = alias;
+    }
+
+    /**
+     * <p>
+     * The alias of the Object Lambda Access Point.
+     * </p>
+     * 
+     * @return The alias of the Object Lambda Access Point.
+     */
+
+    public ObjectLambdaAccessPointAlias getAlias() {
+        return this.alias;
+    }
+
+    /**
+     * <p>
+     * The alias of the Object Lambda Access Point.
+     * </p>
+     * 
+     * @param alias
+     *        The alias of the Object Lambda Access Point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointForObjectLambdaResult withAlias(ObjectLambdaAccessPointAlias alias) {
+        setAlias(alias);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -180,7 +226,9 @@ public class GetAccessPointForObjectLambdaResult extends com.amazonaws.AmazonWeb
         if (getPublicAccessBlockConfiguration() != null)
             sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: ").append(getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getAlias() != null)
+            sb.append("Alias: ").append(getAlias());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class GetAccessPointForObjectLambdaResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getAlias() == null ^ this.getAlias() == null)
+            return false;
+        if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class GetAccessPointForObjectLambdaResult extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPublicAccessBlockConfiguration() == null) ? 0 : getPublicAccessBlockConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         return hashCode;
     }
 

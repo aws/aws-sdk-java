@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a CreateWorkspace operation.
+ * Represents the output of a <code>CreateWorkspace</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateWorkspace" target="_top">AWS API
@@ -28,36 +28,43 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the workspace that was just created.
+     * The ARN for the new workspace.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The status of the workspace that was just created (usually CREATING).
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     */
+    private String kmsKeyArn;
+    /**
+     * <p>
+     * The current status of the new workspace. Immediately after you create the workspace, the status is usually
+     * <code>CREATING</code>.
      * </p>
      */
     private WorkspaceStatus status;
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The generated ID of the workspace that was just created.
+     * The unique ID for the new workspace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The ARN of the workspace that was just created.
+     * The ARN for the new workspace.
      * </p>
      * 
      * @param arn
-     *        The ARN of the workspace that was just created.
+     *        The ARN for the new workspace.
      */
 
     public void setArn(String arn) {
@@ -66,10 +73,10 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the workspace that was just created.
+     * The ARN for the new workspace.
      * </p>
      * 
-     * @return The ARN of the workspace that was just created.
+     * @return The ARN for the new workspace.
      */
 
     public String getArn() {
@@ -78,11 +85,11 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the workspace that was just created.
+     * The ARN for the new workspace.
      * </p>
      * 
      * @param arn
-     *        The ARN of the workspace that was just created.
+     *        The ARN for the new workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,53 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the workspace that was just created (usually CREATING).
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     * 
+     * @return (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkspaceResult withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the new workspace. Immediately after you create the workspace, the status is usually
+     * <code>CREATING</code>.
      * </p>
      * 
      * @param status
-     *        The status of the workspace that was just created (usually CREATING).
+     *        The current status of the new workspace. Immediately after you create the workspace, the status is usually
+     *        <code>CREATING</code>.
      */
 
     public void setStatus(WorkspaceStatus status) {
@@ -106,10 +155,12 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the workspace that was just created (usually CREATING).
+     * The current status of the new workspace. Immediately after you create the workspace, the status is usually
+     * <code>CREATING</code>.
      * </p>
      * 
-     * @return The status of the workspace that was just created (usually CREATING).
+     * @return The current status of the new workspace. Immediately after you create the workspace, the status is
+     *         usually <code>CREATING</code>.
      */
 
     public WorkspaceStatus getStatus() {
@@ -118,11 +169,13 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the workspace that was just created (usually CREATING).
+     * The current status of the new workspace. Immediately after you create the workspace, the status is usually
+     * <code>CREATING</code>.
      * </p>
      * 
      * @param status
-     *        The status of the workspace that was just created (usually CREATING).
+     *        The current status of the new workspace. Immediately after you create the workspace, the status is usually
+     *        <code>CREATING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +186,10 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      * 
-     * @return The tags of this workspace.
+     * @return The list of tag keys and values that are associated with the workspace.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -145,11 +198,11 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      * 
      * @param tags
-     *        The tags of this workspace.
+     *        The list of tag keys and values that are associated with the workspace.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -158,11 +211,11 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      * 
      * @param tags
-     *        The tags of this workspace.
+     *        The list of tag keys and values that are associated with the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +254,11 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The generated ID of the workspace that was just created.
+     * The unique ID for the new workspace.
      * </p>
      * 
      * @param workspaceId
-     *        The generated ID of the workspace that was just created.
+     *        The unique ID for the new workspace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -214,10 +267,10 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The generated ID of the workspace that was just created.
+     * The unique ID for the new workspace.
      * </p>
      * 
-     * @return The generated ID of the workspace that was just created.
+     * @return The unique ID for the new workspace.
      */
 
     public String getWorkspaceId() {
@@ -226,11 +279,11 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The generated ID of the workspace that was just created.
+     * The unique ID for the new workspace.
      * </p>
      * 
      * @param workspaceId
-     *        The generated ID of the workspace that was just created.
+     *        The unique ID for the new workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,6 +306,8 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
@@ -277,6 +332,10 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -298,6 +357,7 @@ public class CreateWorkspaceResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());

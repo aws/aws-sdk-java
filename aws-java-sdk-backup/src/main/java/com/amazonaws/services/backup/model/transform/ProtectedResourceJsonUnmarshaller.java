@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,18 @@ public class ProtectedResourceJsonUnmarshaller implements Unmarshaller<Protected
                 if (context.testExpression("LastBackupTime", targetDepth)) {
                     context.nextToken();
                     protectedResource.setLastBackupTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ResourceName", targetDepth)) {
+                    context.nextToken();
+                    protectedResource.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastBackupVaultArn", targetDepth)) {
+                    context.nextToken();
+                    protectedResource.setLastBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastRecoveryPointArn", targetDepth)) {
+                    context.nextToken();
+                    protectedResource.setLastRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

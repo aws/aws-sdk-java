@@ -13,6 +13,17 @@
     "uid":"mediatailor-2018-04-23"
   },
   "operations":{
+    "ConfigureLogsForChannel":{
+      "name":"ConfigureLogsForChannel",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/configureLogs/channel",
+        "responseCode":200
+      },
+      "input":{"shape":"ConfigureLogsForChannelRequest"},
+      "output":{"shape":"ConfigureLogsForChannelResponse"},
+      "documentation":"<p>Configures Amazon CloudWatch log settings for a channel.</p>"
+    },
     "ConfigureLogsForPlaybackConfiguration":{
       "name":"ConfigureLogsForPlaybackConfiguration",
       "http":{
@@ -482,6 +493,18 @@
       "documentation":"<p>Updates a live source's configuration.</p>",
       "idempotent":true
     },
+    "UpdateProgram":{
+      "name":"UpdateProgram",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/channel/{ChannelName}/program/{ProgramName}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateProgramRequest"},
+      "output":{"shape":"UpdateProgramResponse"},
+      "documentation":"<p>Updates a program within a channel.</p>",
+      "idempotent":true
+    },
     "UpdateSourceLocation":{
       "name":"UpdateSourceLocation",
       "http":{
@@ -513,7 +536,7 @@
       "members":{
         "AccessType":{
           "shape":"AccessType",
-          "documentation":"<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>"
+          "documentation":"<p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location.</p> <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p> <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p> <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p> <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p> <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p> <p> <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services: MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the resource where your source content is stored.</p> <p>Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet these requirements:</p> <p>• You must grant MediaTailor access to your MediaPackage endpoint by granting <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.</p> <p>• Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.</p> <p>• The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top level manifests referenced by the MediaTailor source packaging configurations.</p> <p>Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these requirements:</p> <p>• You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code> principal access in IAM. For more information about configuring access in IAM, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html\">Access management</a> in the <i>IAM User Guide.</i>.</p> <p>• The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level manifests referenced by the <code>VodSource</code> packaging configurations.</p> <p>• The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.</p>"
         },
         "SecretsManagerAccessTokenConfiguration":{
           "shape":"SecretsManagerAccessTokenConfiguration",
@@ -526,12 +549,18 @@
       "type":"string",
       "enum":[
         "S3_SIGV4",
-        "SECRETS_MANAGER_ACCESS_TOKEN"
+        "SECRETS_MANAGER_ACCESS_TOKEN",
+        "AUTODETECT_SIGV4"
       ]
     },
     "AdBreak":{
       "type":"structure",
+      "required":["OffsetMillis"],
       "members":{
+        "AdBreakMetadata":{
+          "shape":"AdBreakMetadataList",
+          "documentation":"<p>Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for <code>SCTE35_ENHANCED</code> output.</p>"
+        },
         "MessageType":{
           "shape":"MessageType",
           "documentation":"<p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.</p>"
@@ -555,6 +584,26 @@
       },
       "documentation":"<p>Ad break configuration parameters.</p>"
     },
+    "AdBreakMetadataList":{
+      "type":"list",
+      "member":{"shape":"KeyValuePair"}
+    },
+    "AdBreakOpportunities":{
+      "type":"list",
+      "member":{"shape":"AdBreakOpportunity"},
+      "documentation":"<p>The list of ad break opportunities detected within the VOD source.</p>"
+    },
+    "AdBreakOpportunity":{
+      "type":"structure",
+      "required":["OffsetMillis"],
+      "members":{
+        "OffsetMillis":{
+          "shape":"__long",
+          "documentation":"<p>The offset in milliseconds from the start of the VOD source at which an ad marker was detected.</p>"
+        }
+      },
+      "documentation":"<p>A location at which a zero-duration ad marker was detected in a VOD source manifest.</p>"
+    },
     "AdMarkerPassthrough":{
       "type":"structure",
       "members":{
@@ -564,6 +613,13 @@
         }
       },
       "documentation":"<p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p> <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>"
+    },
+    "AdMarkupType":{
+      "type":"string",
+      "enum":[
+        "DATERANGE",
+        "SCTE35_ENHANCED"
+      ]
     },
     "Alert":{
       "type":"structure",
@@ -583,6 +639,10 @@
           "shape":"__string",
           "documentation":"<p>If an alert is generated for a resource, an explanation of the reason for the alert.</p>"
         },
+        "Category":{
+          "shape":"AlertCategory",
+          "documentation":"<p>The category that MediaTailor assigns to the alert.</p>"
+        },
         "LastModifiedTime":{
           "shape":"__timestampUnix",
           "documentation":"<p>The timestamp when the alert was last modified.</p>"
@@ -597,6 +657,63 @@
         }
       },
       "documentation":"<p>Alert configuration parameters.</p>"
+    },
+    "AlertCategory":{
+      "type":"string",
+      "enum":[
+        "SCHEDULING_ERROR",
+        "PLAYBACK_WARNING",
+        "INFO"
+      ]
+    },
+    "AlternateMedia":{
+      "type":"structure",
+      "members":{
+        "AdBreaks":{
+          "shape":"__listOfAdBreak",
+          "documentation":"<p>Ad break configuration parameters defined in AlternateMedia.</p>"
+        },
+        "ClipRange":{"shape":"ClipRange"},
+        "DurationMillis":{
+          "shape":"__long",
+          "documentation":"<p>The duration of the alternateMedia in milliseconds.</p>"
+        },
+        "LiveSourceName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the live source for alternateMedia.</p>"
+        },
+        "ScheduledStartTimeMillis":{
+          "shape":"__long",
+          "documentation":"<p>The date and time that the alternateMedia is scheduled to start, in epoch milliseconds.</p>"
+        },
+        "SourceLocationName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the source location for alternateMedia.</p>"
+        },
+        "VodSourceName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the VOD source for alternateMedia.</p>"
+        }
+      },
+      "documentation":"<p>A playlist of media (VOD and/or live) to be played instead of the default media on a particular program.</p>"
+    },
+    "AudienceMedia":{
+      "type":"structure",
+      "members":{
+        "AlternateMedia":{
+          "shape":"__listOfAlternateMedia",
+          "documentation":"<p>The list of AlternateMedia defined in AudienceMedia.</p>"
+        },
+        "Audience":{
+          "shape":"__string",
+          "documentation":"<p>The Audience defined in AudienceMedia.</p>"
+        }
+      },
+      "documentation":"<p>An AudienceMedia object contains an Audience and a list of AlternateMedia.</p>"
+    },
+    "Audiences":{
+      "type":"list",
+      "member":{"shape":"String"}
     },
     "AvailMatchingCriteria":{
       "type":"structure",
@@ -619,9 +736,13 @@
     "AvailSuppression":{
       "type":"structure",
       "members":{
+        "FillPolicy":{
+          "shape":"FillPolicy",
+          "documentation":"<p>Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a session starts mid-break.</p>"
+        },
         "Mode":{
           "shape":"Mode",
-          "documentation":"<p>Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.</p>"
+          "documentation":"<p>Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value time in the manifest lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that are within the live edge plus the avail suppression value.</p>"
         },
         "Value":{
           "shape":"__string",
@@ -676,6 +797,7 @@
         "Arn",
         "ChannelName",
         "ChannelState",
+        "LogConfiguration",
         "Outputs",
         "PlaybackMode",
         "Tier"
@@ -684,6 +806,10 @@
         "Arn":{
           "shape":"__string",
           "documentation":"<p>The ARN of the channel.</p>"
+        },
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in channel.</p>"
         },
         "ChannelName":{
           "shape":"__string",
@@ -704,6 +830,10 @@
         "LastModifiedTime":{
           "shape":"__timestampUnix",
           "documentation":"<p>The timestamp of when the channel was last modified.</p>"
+        },
+        "LogConfiguration":{
+          "shape":"LogConfigurationForChannel",
+          "documentation":"<p>The log configuration.</p>"
         },
         "Outputs":{
           "shape":"ResponseOutputs",
@@ -732,6 +862,21 @@
         "STOPPED"
       ]
     },
+    "ClipRange":{
+      "type":"structure",
+      "members":{
+        "EndOffsetMillis":{
+          "shape":"__long",
+          "documentation":"<p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>",
+          "box":true
+        },
+        "StartOffsetMillis":{
+          "shape":"__long",
+          "documentation":"<p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>"
+        }
+      },
+      "documentation":"<p>Clip range configuration for the VOD source associated with the program.</p>"
+    },
     "ConfigurationAliasesRequest":{
       "type":"map",
       "key":{
@@ -755,6 +900,36 @@
         "documentation":"<p>Map of aliases to the value to be used at request time.</p>"
       },
       "documentation":"<p>The predefined aliases for dynamic variables.</p>"
+    },
+    "ConfigureLogsForChannelRequest":{
+      "type":"structure",
+      "required":[
+        "ChannelName",
+        "LogTypes"
+      ],
+      "members":{
+        "ChannelName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the channel.</p>"
+        },
+        "LogTypes":{
+          "shape":"LogTypes",
+          "documentation":"<p>The types of logs to collect.</p>"
+        }
+      }
+    },
+    "ConfigureLogsForChannelResponse":{
+      "type":"structure",
+      "members":{
+        "ChannelName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the channel.</p>"
+        },
+        "LogTypes":{
+          "shape":"LogTypes",
+          "documentation":"<p>The types of logs collected.</p>"
+        }
+      }
     },
     "ConfigureLogsForPlaybackConfigurationRequest":{
       "type":"structure",
@@ -796,6 +971,10 @@
         "PlaybackMode"
       ],
       "members":{
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in channel.</p>"
+        },
         "ChannelName":{
           "shape":"__string",
           "documentation":"<p>The name of the channel.</p>",
@@ -822,6 +1001,10 @@
         "Tier":{
           "shape":"Tier",
           "documentation":"<p>The tier of the channel.</p>"
+        },
+        "TimeShiftConfiguration":{
+          "shape":"TimeShiftConfiguration",
+          "documentation":"<p> The time-shifted viewing configuration you want to associate to the channel. </p>"
         }
       }
     },
@@ -831,6 +1014,10 @@
         "Arn":{
           "shape":"__string",
           "documentation":"<p>The Amazon Resource Name (ARN) to assign to the channel.</p>"
+        },
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in channel.</p>"
         },
         "ChannelName":{
           "shape":"__string",
@@ -868,6 +1055,10 @@
         "Tier":{
           "shape":"__string",
           "documentation":"<p>The tier of the channel.</p>"
+        },
+        "TimeShiftConfiguration":{
+          "shape":"TimeShiftConfiguration",
+          "documentation":"<p> The time-shifted viewing configuration assigned to the channel. </p>"
         }
       }
     },
@@ -1013,6 +1204,10 @@
           "shape":"__listOfAdBreak",
           "documentation":"<p>The ad break configuration settings.</p>"
         },
+        "AudienceMedia":{
+          "shape":"__listOfAudienceMedia",
+          "documentation":"<p>The list of AudienceMedia defined in program.</p>"
+        },
         "ChannelName":{
           "shape":"__string",
           "documentation":"<p>The name of the channel for this Program.</p>",
@@ -1054,13 +1249,25 @@
           "shape":"__string",
           "documentation":"<p>The ARN to assign to the program.</p>"
         },
+        "AudienceMedia":{
+          "shape":"__listOfAudienceMedia",
+          "documentation":"<p>The list of AudienceMedia defined in program.</p>"
+        },
         "ChannelName":{
           "shape":"__string",
           "documentation":"<p>The name to assign to the channel for this program.</p>"
         },
+        "ClipRange":{
+          "shape":"ClipRange",
+          "documentation":"<p>The clip range configuration settings.</p>"
+        },
         "CreationTime":{
           "shape":"__timestampUnix",
           "documentation":"<p>The time the program was created.</p>"
+        },
+        "DurationMillis":{
+          "shape":"__long",
+          "documentation":"<p>The duration of the live program in milliseconds.</p>"
         },
         "LiveSourceName":{
           "shape":"__string",
@@ -1477,10 +1684,15 @@
     },
     "DescribeChannelResponse":{
       "type":"structure",
+      "required":["LogConfiguration"],
       "members":{
         "Arn":{
           "shape":"__string",
           "documentation":"<p>The ARN of the channel.</p>"
+        },
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in channel.</p>"
         },
         "ChannelName":{
           "shape":"__string",
@@ -1502,6 +1714,10 @@
           "shape":"__timestampUnix",
           "documentation":"<p>The timestamp of when the channel was last modified.</p>"
         },
+        "LogConfiguration":{
+          "shape":"LogConfigurationForChannel",
+          "documentation":"<p>The log configuration for the channel.</p>"
+        },
         "Outputs":{
           "shape":"ResponseOutputs",
           "documentation":"<p>The channel's output properties.</p>"
@@ -1518,6 +1734,10 @@
         "Tier":{
           "shape":"__string",
           "documentation":"<p>The channel's tier.</p>"
+        },
+        "TimeShiftConfiguration":{
+          "shape":"TimeShiftConfiguration",
+          "documentation":"<p> The time-shifted viewing configuration for the channel. </p>"
         }
       }
     },
@@ -1608,13 +1828,25 @@
           "shape":"__string",
           "documentation":"<p>The ARN of the program.</p>"
         },
+        "AudienceMedia":{
+          "shape":"__listOfAudienceMedia",
+          "documentation":"<p>The list of AudienceMedia defined in program.</p>"
+        },
         "ChannelName":{
           "shape":"__string",
           "documentation":"<p>The name of the channel that the program belongs to.</p>"
         },
+        "ClipRange":{
+          "shape":"ClipRange",
+          "documentation":"<p>The clip range configuration settings.</p>"
+        },
         "CreationTime":{
           "shape":"__timestampUnix",
           "documentation":"<p>The timestamp of when the program was created.</p>"
+        },
+        "DurationMillis":{
+          "shape":"Long",
+          "documentation":"<p>The duration of the live program in milliseconds.</p>"
         },
         "LiveSourceName":{
           "shape":"__string",
@@ -1716,6 +1948,10 @@
     "DescribeVodSourceResponse":{
       "type":"structure",
       "members":{
+        "AdBreakOpportunities":{
+          "shape":"AdBreakOpportunities",
+          "documentation":"<p>The ad break opportunities within the VOD source.</p>"
+        },
         "Arn":{
           "shape":"__string",
           "documentation":"<p>The ARN of the VOD source.</p>"
@@ -1747,6 +1983,13 @@
         }
       }
     },
+    "FillPolicy":{
+      "type":"string",
+      "enum":[
+        "FULL_AVAIL_ONLY",
+        "PARTIAL_AVAIL"
+      ]
+    },
     "GetChannelPolicyRequest":{
       "type":"structure",
       "required":["ChannelName"],
@@ -1772,6 +2015,12 @@
       "type":"structure",
       "required":["ChannelName"],
       "members":{
+        "Audience":{
+          "shape":"__string",
+          "documentation":"<p>The single audience for GetChannelScheduleRequest.</p>",
+          "location":"querystring",
+          "locationName":"audience"
+        },
         "ChannelName":{
           "shape":"__string",
           "documentation":"<p>The name of the channel associated with this Channel Schedule.</p>",
@@ -1853,6 +2102,10 @@
         "HlsConfiguration":{
           "shape":"HlsConfiguration",
           "documentation":"<p>The configuration for HLS content.</p>"
+        },
+        "InsertionMode":{
+          "shape":"InsertionMode",
+          "documentation":"<p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>"
         },
         "LivePreRollConfiguration":{
           "shape":"LivePreRollConfiguration",
@@ -1968,6 +2221,10 @@
     "HlsPlaylistSettings":{
       "type":"structure",
       "members":{
+        "AdMarkupType":{
+          "shape":"adMarkupTypes",
+          "documentation":"<p>Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).</p>"
+        },
         "ManifestWindowSeconds":{
           "shape":"__integer",
           "documentation":"<p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>"
@@ -2014,9 +2271,35 @@
       "member":{"shape":"HttpPackageConfiguration"},
       "documentation":"<p>The VOD source's HTTP package configuration settings.</p>"
     },
+    "InsertionMode":{
+      "type":"string",
+      "documentation":"<p>Insertion Mode controls whether players can use stitched or guided ad insertion.</p>",
+      "enum":[
+        "STITCHED_ONLY",
+        "PLAYER_SELECT"
+      ]
+    },
     "Integer":{
       "type":"integer",
       "box":true
+    },
+    "KeyValuePair":{
+      "type":"structure",
+      "required":[
+        "Key",
+        "Value"
+      ],
+      "members":{
+        "Key":{
+          "shape":"String",
+          "documentation":"<p>For <code>SCTE35_ENHANCED</code> output, defines a key. MediaTailor takes this key, and its associated value, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a key, you must also specify a corresponding value.</p>"
+        },
+        "Value":{
+          "shape":"String",
+          "documentation":"<p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes this value, and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a corresponding key.</p>"
+        }
+      },
+      "documentation":"<p>For <code>SCTE35_ENHANCED</code> output, defines a key and corresponding value. MediaTailor generates these pairs within the <code>EXT-X-ASSET</code>tag.</p>"
     },
     "ListAlertsRequest":{
       "type":"structure",
@@ -2344,6 +2627,28 @@
       },
       "documentation":"<p>Returns Amazon CloudWatch log settings for a playback configuration.</p>"
     },
+    "LogConfigurationForChannel":{
+      "type":"structure",
+      "members":{
+        "LogTypes":{
+          "shape":"LogTypes",
+          "documentation":"<p>The log types.</p>"
+        }
+      },
+      "documentation":"<p>The log configuration for the channel.</p>"
+    },
+    "LogType":{
+      "type":"string",
+      "enum":["AS_RUN"]
+    },
+    "LogTypes":{
+      "type":"list",
+      "member":{"shape":"LogType"}
+    },
+    "Long":{
+      "type":"long",
+      "box":true
+    },
     "ManifestProcessingRules":{
       "type":"structure",
       "members":{
@@ -2356,6 +2661,7 @@
     },
     "MaxResults":{
       "type":"integer",
+      "box":true,
       "max":100,
       "min":1
     },
@@ -2370,7 +2676,8 @@
       "type":"string",
       "enum":[
         "OFF",
-        "BEHIND_LIVE_EDGE"
+        "BEHIND_LIVE_EDGE",
+        "AFTER_LIVE_EDGE"
       ]
     },
     "Operator":{
@@ -2414,6 +2721,10 @@
         "HlsConfiguration":{
           "shape":"HlsConfiguration",
           "documentation":"<p>The configuration for HLS content.</p>"
+        },
+        "InsertionMode":{
+          "shape":"InsertionMode",
+          "documentation":"<p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>"
         },
         "LivePreRollConfiguration":{
           "shape":"LivePreRollConfiguration",
@@ -2601,6 +2912,10 @@
           "shape":"DashConfigurationForPut",
           "documentation":"<p>The configuration for DASH content.</p>"
         },
+        "InsertionMode":{
+          "shape":"InsertionMode",
+          "documentation":"<p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>"
+        },
         "LivePreRollConfiguration":{
           "shape":"LivePreRollConfiguration",
           "documentation":"<p>The configuration for pre-roll ad insertion.</p>"
@@ -2666,6 +2981,10 @@
         "HlsConfiguration":{
           "shape":"HlsConfiguration",
           "documentation":"<p>The configuration for HLS content.</p>"
+        },
+        "InsertionMode":{
+          "shape":"InsertionMode",
+          "documentation":"<p>The setting that controls whether players can use stitched or guided ad insertion. The default, <code>STITCHED_ONLY</code>, forces all player sessions to use stitched (server-side) ad insertion. Choosing <code>PLAYER_SELECT</code> allows players to select either stitched or guided ad insertion at session-initialization time. The default for players that do not specify an insertion mode is stitched.</p>"
         },
         "LivePreRollConfiguration":{
           "shape":"LivePreRollConfiguration",
@@ -2817,6 +3136,10 @@
       "type":"structure",
       "required":["Transition"],
       "members":{
+        "ClipRange":{
+          "shape":"ClipRange",
+          "documentation":"<p>Program clip range configuration.</p>"
+        },
         "Transition":{
           "shape":"Transition",
           "documentation":"<p>Program transition configurations.</p>"
@@ -2844,6 +3167,10 @@
         "Arn":{
           "shape":"__string",
           "documentation":"<p>The ARN of the program.</p>"
+        },
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in ScheduleEntry.</p>"
         },
         "ChannelName":{
           "shape":"__string",
@@ -2880,7 +3207,8 @@
       "type":"string",
       "enum":[
         "PROGRAM",
-        "FILLER_SLATE"
+        "FILLER_SLATE",
+        "ALTERNATE_MEDIA"
       ]
     },
     "SecretsManagerAccessTokenConfiguration":{
@@ -3103,6 +3431,17 @@
         "STANDARD"
       ]
     },
+    "TimeShiftConfiguration":{
+      "type":"structure",
+      "required":["MaxTimeDelaySeconds"],
+      "members":{
+        "MaxTimeDelaySeconds":{
+          "shape":"__integer",
+          "documentation":"<p> The maximum time delay for time-shifted viewing. The minimum allowed maximum time delay is 0 seconds, and the maximum allowed maximum time delay is 21600 seconds (6 hours). </p>"
+        }
+      },
+      "documentation":"<p> The configuration for time-shifted viewing. </p>"
+    },
     "TimeSignalMessage":{
       "type":"structure",
       "members":{
@@ -3178,6 +3517,10 @@
         "Outputs"
       ],
       "members":{
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in channel.</p>"
+        },
         "ChannelName":{
           "shape":"__string",
           "documentation":"<p>The name of the channel.</p>",
@@ -3191,6 +3534,10 @@
         "Outputs":{
           "shape":"RequestOutputs",
           "documentation":"<p>The channel's output properties.</p>"
+        },
+        "TimeShiftConfiguration":{
+          "shape":"TimeShiftConfiguration",
+          "documentation":"<p> The time-shifted viewing configuration you want to associate to the channel. </p>"
         }
       }
     },
@@ -3200,6 +3547,10 @@
         "Arn":{
           "shape":"__string",
           "documentation":"<p>The Amazon Resource Name (ARN) associated with the channel.</p>"
+        },
+        "Audiences":{
+          "shape":"Audiences",
+          "documentation":"<p>The list of audiences defined in channel.</p>"
         },
         "ChannelName":{
           "shape":"__string",
@@ -3237,6 +3588,10 @@
         "Tier":{
           "shape":"__string",
           "documentation":"<p>The tier associated with this Channel.</p>"
+        },
+        "TimeShiftConfiguration":{
+          "shape":"TimeShiftConfiguration",
+          "documentation":"<p> The time-shifted viewing configuration for the channel. </p>"
         }
       }
     },
@@ -3299,6 +3654,121 @@
           "locationName":"tags"
         }
       }
+    },
+    "UpdateProgramRequest":{
+      "type":"structure",
+      "required":[
+        "ChannelName",
+        "ProgramName",
+        "ScheduleConfiguration"
+      ],
+      "members":{
+        "AdBreaks":{
+          "shape":"__listOfAdBreak",
+          "documentation":"<p>The ad break configuration settings.</p>"
+        },
+        "AudienceMedia":{
+          "shape":"__listOfAudienceMedia",
+          "documentation":"<p>The list of AudienceMedia defined in program.</p>"
+        },
+        "ChannelName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the channel for this Program.</p>",
+          "location":"uri",
+          "locationName":"ChannelName"
+        },
+        "ProgramName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the Program.</p>",
+          "location":"uri",
+          "locationName":"ProgramName"
+        },
+        "ScheduleConfiguration":{
+          "shape":"UpdateProgramScheduleConfiguration",
+          "documentation":"<p>The schedule configuration settings.</p>"
+        }
+      }
+    },
+    "UpdateProgramResponse":{
+      "type":"structure",
+      "members":{
+        "AdBreaks":{
+          "shape":"__listOfAdBreak",
+          "documentation":"<p>The ad break configuration settings.</p>"
+        },
+        "Arn":{
+          "shape":"__string",
+          "documentation":"<p>The ARN to assign to the program.</p>"
+        },
+        "AudienceMedia":{
+          "shape":"__listOfAudienceMedia",
+          "documentation":"<p>The list of AudienceMedia defined in program.</p>"
+        },
+        "ChannelName":{
+          "shape":"__string",
+          "documentation":"<p>The name to assign to the channel for this program.</p>"
+        },
+        "ClipRange":{
+          "shape":"ClipRange",
+          "documentation":"<p>The clip range configuration settings.</p>"
+        },
+        "CreationTime":{
+          "shape":"__timestampUnix",
+          "documentation":"<p>The time the program was created.</p>"
+        },
+        "DurationMillis":{
+          "shape":"__long",
+          "documentation":"<p>The duration of the live program in milliseconds.</p>"
+        },
+        "LiveSourceName":{
+          "shape":"__string",
+          "documentation":"<p>The name of the LiveSource for this Program.</p>"
+        },
+        "ProgramName":{
+          "shape":"__string",
+          "documentation":"<p>The name to assign to this program.</p>"
+        },
+        "ScheduledStartTime":{
+          "shape":"__timestampUnix",
+          "documentation":"<p>The scheduled start time for this Program.</p>"
+        },
+        "SourceLocationName":{
+          "shape":"__string",
+          "documentation":"<p>The name to assign to the source location for this program.</p>"
+        },
+        "VodSourceName":{
+          "shape":"__string",
+          "documentation":"<p>The name that's used to refer to a VOD source.</p>"
+        }
+      }
+    },
+    "UpdateProgramScheduleConfiguration":{
+      "type":"structure",
+      "members":{
+        "ClipRange":{
+          "shape":"ClipRange",
+          "documentation":"<p>Program clip range configuration.</p>"
+        },
+        "Transition":{
+          "shape":"UpdateProgramTransition",
+          "documentation":"<p>Program transition configuration.</p>"
+        }
+      },
+      "documentation":"<p>Schedule configuration parameters.</p>"
+    },
+    "UpdateProgramTransition":{
+      "type":"structure",
+      "members":{
+        "DurationMillis":{
+          "shape":"__long",
+          "documentation":"<p>The duration of the live program in seconds.</p>"
+        },
+        "ScheduledStartTimeMillis":{
+          "shape":"__long",
+          "documentation":"<p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>"
+        }
+      },
+      "documentation":"<p>Program transition configuration.</p>"
     },
     "UpdateSourceLocationRequest":{
       "type":"structure",
@@ -3474,14 +3944,22 @@
       },
       "documentation":"<p>VOD source configuration parameters.</p>"
     },
-    "__boolean":{"type":"boolean"},
-    "__integer":{"type":"integer"},
+    "__boolean":{
+      "type":"boolean",
+      "box":true
+    },
+    "__integer":{
+      "type":"integer",
+      "box":true
+    },
     "__integerMin1":{
       "type":"integer",
+      "box":true,
       "min":1
     },
     "__integerMin1Max100":{
       "type":"integer",
+      "box":true,
       "max":100,
       "min":1
     },
@@ -3492,6 +3970,14 @@
     "__listOfAlert":{
       "type":"list",
       "member":{"shape":"Alert"}
+    },
+    "__listOfAlternateMedia":{
+      "type":"list",
+      "member":{"shape":"AlternateMedia"}
+    },
+    "__listOfAudienceMedia":{
+      "type":"list",
+      "member":{"shape":"AudienceMedia"}
     },
     "__listOfAvailMatchingCriteria":{
       "type":"list",
@@ -3537,7 +4023,10 @@
       "type":"list",
       "member":{"shape":"__string"}
     },
-    "__long":{"type":"long"},
+    "__long":{
+      "type":"long",
+      "box":true
+    },
     "__mapOf__string":{
       "type":"map",
       "key":{"shape":"__string"},
@@ -3547,6 +4036,10 @@
     "__timestampUnix":{
       "type":"timestamp",
       "timestampFormat":"unixTimestamp"
+    },
+    "adMarkupTypes":{
+      "type":"list",
+      "member":{"shape":"AdMarkupType"}
     }
   },
   "documentation":"<p>Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service, including detailed information about the settings covered in this guide, see the <a href=\"https://docs.aws.amazon.com/mediatailor/latest/ug/\">AWS Elemental MediaTailor User Guide</a>.</p> <p>Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do through the console. For example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server (ADS).</p>"

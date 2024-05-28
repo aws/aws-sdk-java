@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class PullThroughCacheRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> CREDENTIALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("credentialArn").build();
+    private static final MarshallingInfo<String> UPSTREAMREGISTRY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("upstreamRegistry").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
 
     private static final PullThroughCacheRuleMarshaller instance = new PullThroughCacheRuleMarshaller();
 
@@ -56,6 +62,9 @@ public class PullThroughCacheRuleMarshaller {
             protocolMarshaller.marshall(pullThroughCacheRule.getUpstreamRegistryUrl(), UPSTREAMREGISTRYURL_BINDING);
             protocolMarshaller.marshall(pullThroughCacheRule.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(pullThroughCacheRule.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(pullThroughCacheRule.getCredentialArn(), CREDENTIALARN_BINDING);
+            protocolMarshaller.marshall(pullThroughCacheRule.getUpstreamRegistry(), UPSTREAMREGISTRY_BINDING);
+            protocolMarshaller.marshall(pullThroughCacheRule.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

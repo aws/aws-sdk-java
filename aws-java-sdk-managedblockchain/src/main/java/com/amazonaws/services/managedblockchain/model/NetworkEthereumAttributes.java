@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,16 +38,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      * mainnet = <code>1</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * rinkeby = <code>4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ropsten = <code>3</code>
-     * </p>
-     * </li>
      * </ul>
      */
     private String chainId;
@@ -62,16 +52,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      * mainnet = <code>1</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * rinkeby = <code>4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ropsten = <code>3</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param chainId
@@ -80,16 +60,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        mainnet = <code>1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        rinkeby = <code>4</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ropsten = <code>3</code>
      *        </p>
      *        </li>
      */
@@ -108,16 +78,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      * mainnet = <code>1</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * rinkeby = <code>4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ropsten = <code>3</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
@@ -125,16 +85,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         mainnet = <code>1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         rinkeby = <code>4</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ropsten = <code>3</code>
      *         </p>
      *         </li>
      */
@@ -153,16 +103,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      * mainnet = <code>1</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * rinkeby = <code>4</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ropsten = <code>3</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param chainId
@@ -171,16 +111,6 @@ public class NetworkEthereumAttributes implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        mainnet = <code>1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        rinkeby = <code>4</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ropsten = <code>3</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

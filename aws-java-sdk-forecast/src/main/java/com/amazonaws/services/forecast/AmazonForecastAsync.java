@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -375,10 +375,10 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * </p>
      * <p>
      * You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
-     * object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-     * the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more
-     * information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up
-     * permissions</a>.
+     * object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
+     * data, as Amazon Forecast makes a copy of your data and processes it in an internal Amazon Web Services system.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up permissions</a>.
      * </p>
      * <p>
      * The training data must be in CSV or Parquet format. The delimiter must be a comma (,).
@@ -414,10 +414,10 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * </p>
      * <p>
      * You must specify a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html">DataSource</a>
-     * object that includes an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-     * the data, as Amazon Forecast makes a copy of your data and processes it in an internal AWS system. For more
-     * information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up
-     * permissions</a>.
+     * object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
+     * data, as Amazon Forecast makes a copy of your data and processes it in an internal Amazon Web Services system.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html">Set up permissions</a>.
      * </p>
      * <p>
      * The training data must be in CSV or Parquet format. The delimiter must be a comma (,).
@@ -771,7 +771,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * exported to an Amazon Simple Storage Service (Amazon S3) bucket.
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an AWS Identity and Access
+     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
@@ -797,7 +797,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * exported to an Amazon Simple Storage Service (Amazon S3) bucket.
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an AWS Identity and Access
+     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
@@ -929,8 +929,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an AWS Identity and Access Management (IAM) role
-     * that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * You must specify a <a>DataDestination</a> object that includes an Identity and Access Management (IAM) role that
+     * Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
@@ -966,8 +966,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an AWS Identity and Access Management (IAM) role
-     * that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * You must specify a <a>DataDestination</a> object that includes an Identity and Access Management (IAM) role that
+     * Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
@@ -1234,7 +1234,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * The &lt;ExportTimestamp&gt; component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an AWS Identity and Access
+     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
@@ -1271,7 +1271,7 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * The &lt;ExportTimestamp&gt; component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an AWS Identity and Access
+     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
@@ -1307,10 +1307,12 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * <p>
      * For example, imagine you are a clothing retailer who is considering an end of season sale to clear space for new
      * styles. After creating a baseline forecast, you can use a what-if analysis to investigate how different sales
-     * tactics might affect your goals. You could create a scenario where everything is given a 25% markdown and another
-     * where everything is given a fixed dollar markdown. You can create a scenario where the sale lasts for 1 week and
-     * another where the sale lasts for 1 month. Your what-if analysis enables you to compare many different scenarios
-     * against each other.
+     * tactics might affect your goals.
+     * </p>
+     * <p>
+     * You could create a scenario where everything is given a 25% markdown, and another where everything is given a
+     * fixed dollar markdown. You could create a scenario where the sale lasts for one week and another where the sale
+     * lasts for one month. With a what-if analysis, you can compare many different scenarios against each other.
      * </p>
      * <p>
      * Note that a what-if analysis is meant to display what the forecasting model has learned and how it will behave in
@@ -1340,10 +1342,12 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * <p>
      * For example, imagine you are a clothing retailer who is considering an end of season sale to clear space for new
      * styles. After creating a baseline forecast, you can use a what-if analysis to investigate how different sales
-     * tactics might affect your goals. You could create a scenario where everything is given a 25% markdown and another
-     * where everything is given a fixed dollar markdown. You can create a scenario where the sale lasts for 1 week and
-     * another where the sale lasts for 1 month. Your what-if analysis enables you to compare many different scenarios
-     * against each other.
+     * tactics might affect your goals.
+     * </p>
+     * <p>
+     * You could create a scenario where everything is given a 25% markdown, and another where everything is given a
+     * fixed dollar markdown. You could create a scenario where the sale lasts for one week and another where the sale
+     * lasts for one month. With a what-if analysis, you can compare many different scenarios against each other.
      * </p>
      * <p>
      * Note that a what-if analysis is meant to display what the forecasting model has learned and how it will behave in
@@ -1413,8 +1417,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an AWS Identity and Access Management (IAM) role
-     * that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * You must specify a <a>DataDestination</a> object that includes an Identity and Access Management (IAM) role that
+     * Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
@@ -1451,8 +1455,8 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * The &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
      * </p>
      * <p>
-     * You must specify a <a>DataDestination</a> object that includes an AWS Identity and Access Management (IAM) role
-     * that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * You must specify a <a>DataDestination</a> object that includes an Identity and Access Management (IAM) role that
+     * Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
      * <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>

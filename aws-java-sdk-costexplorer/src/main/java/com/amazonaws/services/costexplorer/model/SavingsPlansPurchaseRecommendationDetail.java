@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,12 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
      * </p>
      */
     private String currentAverageHourlyOnDemandSpend;
+    /**
+     * <p>
+     * Contains detailed information about a specific Savings Plan recommendation.
+     * </p>
+     */
+    private String recommendationDetailId;
 
     /**
      * <p>
@@ -811,6 +817,46 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     }
 
     /**
+     * <p>
+     * Contains detailed information about a specific Savings Plan recommendation.
+     * </p>
+     * 
+     * @param recommendationDetailId
+     *        Contains detailed information about a specific Savings Plan recommendation.
+     */
+
+    public void setRecommendationDetailId(String recommendationDetailId) {
+        this.recommendationDetailId = recommendationDetailId;
+    }
+
+    /**
+     * <p>
+     * Contains detailed information about a specific Savings Plan recommendation.
+     * </p>
+     * 
+     * @return Contains detailed information about a specific Savings Plan recommendation.
+     */
+
+    public String getRecommendationDetailId() {
+        return this.recommendationDetailId;
+    }
+
+    /**
+     * <p>
+     * Contains detailed information about a specific Savings Plan recommendation.
+     * </p>
+     * 
+     * @param recommendationDetailId
+     *        Contains detailed information about a specific Savings Plan recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SavingsPlansPurchaseRecommendationDetail withRecommendationDetailId(String recommendationDetailId) {
+        setRecommendationDetailId(recommendationDetailId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -853,7 +899,9 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
         if (getCurrentMaximumHourlyOnDemandSpend() != null)
             sb.append("CurrentMaximumHourlyOnDemandSpend: ").append(getCurrentMaximumHourlyOnDemandSpend()).append(",");
         if (getCurrentAverageHourlyOnDemandSpend() != null)
-            sb.append("CurrentAverageHourlyOnDemandSpend: ").append(getCurrentAverageHourlyOnDemandSpend());
+            sb.append("CurrentAverageHourlyOnDemandSpend: ").append(getCurrentAverageHourlyOnDemandSpend()).append(",");
+        if (getRecommendationDetailId() != null)
+            sb.append("RecommendationDetailId: ").append(getRecommendationDetailId());
         sb.append("}");
         return sb.toString();
     }
@@ -937,6 +985,10 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
         if (other.getCurrentAverageHourlyOnDemandSpend() != null
                 && other.getCurrentAverageHourlyOnDemandSpend().equals(this.getCurrentAverageHourlyOnDemandSpend()) == false)
             return false;
+        if (other.getRecommendationDetailId() == null ^ this.getRecommendationDetailId() == null)
+            return false;
+        if (other.getRecommendationDetailId() != null && other.getRecommendationDetailId().equals(this.getRecommendationDetailId()) == false)
+            return false;
         return true;
     }
 
@@ -962,6 +1014,7 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
         hashCode = prime * hashCode + ((getCurrentMinimumHourlyOnDemandSpend() == null) ? 0 : getCurrentMinimumHourlyOnDemandSpend().hashCode());
         hashCode = prime * hashCode + ((getCurrentMaximumHourlyOnDemandSpend() == null) ? 0 : getCurrentMaximumHourlyOnDemandSpend().hashCode());
         hashCode = prime * hashCode + ((getCurrentAverageHourlyOnDemandSpend() == null) ? 0 : getCurrentAverageHourlyOnDemandSpend().hashCode());
+        hashCode = prime * hashCode + ((getRecommendationDetailId() == null) ? 0 : getRecommendationDetailId().hashCode());
         return hashCode;
     }
 

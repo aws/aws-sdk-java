@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,24 +34,24 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
-     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
-     * Once you set the edition for an index, it can't be changed.
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the
+     * edition for an index, it can't be changed.
      * </p>
      * <p>
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
      * <p>
-     * For more information on quota limits for enterprise and developer editions, see <a
+     * For more information on quota limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      */
     private String edition;
     /**
      * <p>
-     * An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to
-     * index documents from an Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra</a>.
      * </p>
      */
     private String roleArn;
@@ -77,8 +77,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientToken;
     /**
      * <p>
-     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
-     * and to control access to resources.
+     * A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to
+     * the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following
+     * symbols: _ . : / = + - @.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -113,10 +114,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String userContextPolicy;
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     * >UserGroupResolutionConfiguration</a>.
+     * >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.
      * </p>
      */
     private UserGroupResolutionConfiguration userGroupResolutionConfiguration;
@@ -164,28 +165,28 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
-     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
-     * Once you set the edition for an index, it can't be changed.
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the
+     * edition for an index, it can't be changed.
      * </p>
      * <p>
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
      * <p>
-     * For more information on quota limits for enterprise and developer editions, see <a
+     * For more information on quota limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
-     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.</p>
+     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once
+     *        you set the edition for an index, it can't be changed.</p>
      *        <p>
      *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *        <code>ENTERPRISE_EDITION</code>.
      *        </p>
      *        <p>
-     *        For more information on quota limits for enterprise and developer editions, see <a
+     *        For more information on quota limits for Enterprise and Developer editions, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @see IndexEdition
      */
@@ -197,27 +198,27 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
-     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
-     * Once you set the edition for an index, it can't be changed.
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the
+     * edition for an index, it can't be changed.
      * </p>
      * <p>
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
      * <p>
-     * For more information on quota limits for enterprise and developer editions, see <a
+     * For more information on quota limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @return The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes
-     *         intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-     *         production databases. Once you set the edition for an index, it can't be changed.</p>
+     *         intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for
+     *         production. Once you set the edition for an index, it can't be changed.</p>
      *         <p>
      *         The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *         <code>ENTERPRISE_EDITION</code>.
      *         </p>
      *         <p>
-     *         For more information on quota limits for enterprise and developer editions, see <a
+     *         For more information on quota limits for Enterprise and Developer editions, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @see IndexEdition
      */
@@ -229,28 +230,28 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
-     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
-     * Once you set the edition for an index, it can't be changed.
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the
+     * edition for an index, it can't be changed.
      * </p>
      * <p>
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
      * <p>
-     * For more information on quota limits for enterprise and developer editions, see <a
+     * For more information on quota limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
-     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.</p>
+     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once
+     *        you set the edition for an index, it can't be changed.</p>
      *        <p>
      *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *        <code>ENTERPRISE_EDITION</code>.
      *        </p>
      *        <p>
-     *        For more information on quota limits for enterprise and developer editions, see <a
+     *        For more information on quota limits for Enterprise and Developer editions, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
@@ -264,28 +265,28 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
-     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
-     * Once you set the edition for an index, it can't be changed.
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the
+     * edition for an index, it can't be changed.
      * </p>
      * <p>
      * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      * <code>ENTERPRISE_EDITION</code>.
      * </p>
      * <p>
-     * For more information on quota limits for enterprise and developer editions, see <a
+     * For more information on quota limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
-     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.</p>
+     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once
+     *        you set the edition for an index, it can't be changed.</p>
      *        <p>
      *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
      *        <code>ENTERPRISE_EDITION</code>.
      *        </p>
      *        <p>
-     *        For more information on quota limits for enterprise and developer editions, see <a
+     *        For more information on quota limits for Enterprise and Developer editions, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
@@ -298,15 +299,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to
-     * index documents from an Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     *        CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code>
-     *        API to index documents from an Amazon S3 bucket.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and
+     *        metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -315,14 +316,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to
-     * index documents from an Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra</a>.
      * </p>
      * 
-     * @return An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     *         CloudWatch logs and metrics. This is also the role you use when you call the
-     *         <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.
+     * @return The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and
+     *         metrics. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *         Kendra</a>.
      */
 
     public String getRoleArn() {
@@ -331,15 +333,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     * CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to
-     * index documents from an Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
-     *        CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code>
-     *        API to index documents from an Amazon S3 bucket.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and
+     *        metrics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,12 +484,14 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
-     * and to control access to resources.
+     * A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to
+     * the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following
+     * symbols: _ . : / = + - @.
      * </p>
      * 
-     * @return A list of key-value pairs that identify the index. You can use the tags to identify and organize your
-     *         resources and to control access to resources.
+     * @return A list of key-value pairs that identify or categorize the index. You can also use tags to help control
+     *         access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of
+     *         the following symbols: _ . : / = + - @.
      */
 
     public java.util.List<Tag> getTags() {
@@ -496,13 +500,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
-     * and to control access to resources.
+     * A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to
+     * the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following
+     * symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the index. You can use the tags to identify and organize your
-     *        resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the index. You can also use tags to help control
+     *        access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of
+     *        the following symbols: _ . : / = + - @.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -516,8 +522,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
-     * and to control access to resources.
+     * A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to
+     * the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following
+     * symbols: _ . : / = + - @.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -526,8 +533,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the index. You can use the tags to identify and organize your
-     *        resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the index. You can also use tags to help control
+     *        access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of
+     *        the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,13 +551,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
-     * and to control access to resources.
+     * A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to
+     * the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following
+     * symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the index. You can use the tags to identify and organize your
-     *        resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the index. You can also use tags to help control
+     *        access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of
+     *        the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,17 +831,17 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     * >UserGroupResolutionConfiguration</a>.
+     * >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single
-     *        Sign-On) identity source. To configure this, see <a
+     *        Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     *        >UserGroupResolutionConfiguration</a>.
+     *        >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are
+     *        filtered based on the user or their group access to documents.
      */
 
     public void setUserGroupResolutionConfiguration(UserGroupResolutionConfiguration userGroupResolutionConfiguration) {
@@ -840,16 +850,16 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     * >UserGroupResolutionConfiguration</a>.
+     * >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.
      * </p>
      * 
-     * @return Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single
-     *         Sign-On) identity source. To configure this, see <a
+     * @return Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     *         >UserGroupResolutionConfiguration</a>.
+     *         >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results
+     *         are filtered based on the user or their group access to documents.
      */
 
     public UserGroupResolutionConfiguration getUserGroupResolutionConfiguration() {
@@ -858,17 +868,17 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On)
-     * identity source. To configure this, see <a
+     * Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     * >UserGroupResolutionConfiguration</a>.
+     * >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.
      * </p>
      * 
      * @param userGroupResolutionConfiguration
-     *        Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single
-     *        Sign-On) identity source. To configure this, see <a
+     *        Gets users and groups from IAM Identity Center identity source. To configure this, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html"
-     *        >UserGroupResolutionConfiguration</a>.
+     *        >UserGroupResolutionConfiguration</a>. This is useful for user context filtering, where search results are
+     *        filtered based on the user or their group access to documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

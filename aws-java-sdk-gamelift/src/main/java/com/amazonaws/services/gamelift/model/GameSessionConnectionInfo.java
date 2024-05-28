@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Connection information for a new game session that is created in response to a <a>StartMatchmaking</a> request. Once
- * a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session
- * endpoint and player sessions for each player in the original matchmaking request, is added to the
- * <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
+ * Connection information for a new game session that is created in response to a start matchmaking request. Once a
+ * match is made, the FlexMatch engine creates a new game session for it. This information, including the game session
+ * endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionConnectionInfo" target="_top">AWS
@@ -39,8 +38,8 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
     private String gameSessionArn;
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      */
     private String ipAddress;
@@ -70,8 +69,8 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
     private String dnsName;
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      */
     private Integer port;
@@ -124,13 +123,13 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
-     *        and port number.
+     *        The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        address and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -139,11 +138,11 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      * 
-     * @return The IP address of the game session. To connect to a GameLift game server, an app needs both the IP
+     * @return The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
      *         address and port number.
      */
 
@@ -153,13 +152,13 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
-     *        and port number.
+     *        The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,13 +317,13 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      * 
      * @param port
-     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the
+     *        IP address and port number.
      */
 
     public void setPort(Integer port) {
@@ -333,12 +332,12 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      * 
-     * @return The port number for the game session. To connect to a GameLift game server, an app needs both the IP
-     *         address and port number.
+     * @return The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the
+     *         IP address and port number.
      */
 
     public Integer getPort() {
@@ -347,13 +346,13 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      * 
      * @param port
-     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the
+     *        IP address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,7 +450,7 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
         if (getGameSessionArn() != null)
             sb.append("GameSessionArn: ").append(getGameSessionArn()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: ").append(getIpAddress()).append(",");
+            sb.append("IpAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getDnsName() != null)
             sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)

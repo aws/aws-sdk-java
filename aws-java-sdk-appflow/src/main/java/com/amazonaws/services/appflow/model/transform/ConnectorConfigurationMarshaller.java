@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,10 @@ public class ConnectorConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> REGISTEREDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredBy").build();
+    private static final MarshallingInfo<List> SUPPORTEDDATATRANSFERTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedDataTransferTypes").build();
+    private static final MarshallingInfo<List> SUPPORTEDDATATRANSFERAPIS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedDataTransferApis").build();
 
     private static final ConnectorConfigurationMarshaller instance = new ConnectorConfigurationMarshaller();
 
@@ -123,6 +127,8 @@ public class ConnectorConfigurationMarshaller {
             protocolMarshaller.marshall(connectorConfiguration.getLogoURL(), LOGOURL_BINDING);
             protocolMarshaller.marshall(connectorConfiguration.getRegisteredAt(), REGISTEREDAT_BINDING);
             protocolMarshaller.marshall(connectorConfiguration.getRegisteredBy(), REGISTEREDBY_BINDING);
+            protocolMarshaller.marshall(connectorConfiguration.getSupportedDataTransferTypes(), SUPPORTEDDATATRANSFERTYPES_BINDING);
+            protocolMarshaller.marshall(connectorConfiguration.getSupportedDataTransferApis(), SUPPORTEDDATATRANSFERAPIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

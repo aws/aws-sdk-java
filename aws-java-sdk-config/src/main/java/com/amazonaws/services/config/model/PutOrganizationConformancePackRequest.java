@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,10 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * You must have access to read Amazon S3 bucket.
+     * You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a>
+     * if this parameter is passed.
      * </p>
      * </note>
      */
@@ -133,7 +136,10 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * You must have access to read Amazon S3 bucket.
+     * You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a>
+     * if this parameter is passed.
      * </p>
      * </note>
      * 
@@ -141,7 +147,10 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      *        Location of file containing the template body. The uri must point to the conformance pack template (max
      *        size: 300 KB).</p> <note>
      *        <p>
-     *        You must have access to read Amazon S3 bucket.
+     *        You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment,
+     *        the template object must not be in an <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage
+     *        class</a> if this parameter is passed.
      *        </p>
      */
 
@@ -156,14 +165,20 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * You must have access to read Amazon S3 bucket.
+     * You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a>
+     * if this parameter is passed.
      * </p>
      * </note>
      * 
      * @return Location of file containing the template body. The uri must point to the conformance pack template (max
      *         size: 300 KB).</p> <note>
      *         <p>
-     *         You must have access to read Amazon S3 bucket.
+     *         You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment,
+     *         the template object must not be in an <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage
+     *         class</a> if this parameter is passed.
      *         </p>
      */
 
@@ -178,7 +193,10 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * You must have access to read Amazon S3 bucket.
+     * You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the
+     * template object must not be in an <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage class</a>
+     * if this parameter is passed.
      * </p>
      * </note>
      * 
@@ -186,7 +204,10 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      *        Location of file containing the template body. The uri must point to the conformance pack template (max
      *        size: 300 KB).</p> <note>
      *        <p>
-     *        You must have access to read Amazon S3 bucket.
+     *        You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment,
+     *        the template object must not be in an <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">archived storage
+     *        class</a> if this parameter is passed.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

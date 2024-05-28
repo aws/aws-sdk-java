@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkAccessConfiguration networkAccessConfiguration;
+    /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * <p>
@@ -638,6 +644,46 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier for the instance hosting the session.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     * 
+     * @return The identifier for the instance hosting the session.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier for the instance hosting the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -668,7 +714,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
         if (getAuthenticationType() != null)
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getNetworkAccessConfiguration() != null)
-            sb.append("NetworkAccessConfiguration: ").append(getNetworkAccessConfiguration());
+            sb.append("NetworkAccessConfiguration: ").append(getNetworkAccessConfiguration()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -723,6 +771,10 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkAccessConfiguration() != null && other.getNetworkAccessConfiguration().equals(this.getNetworkAccessConfiguration()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -741,6 +793,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaxExpirationTime() == null) ? 0 : getMaxExpirationTime().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getNetworkAccessConfiguration() == null) ? 0 : getNetworkAccessConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

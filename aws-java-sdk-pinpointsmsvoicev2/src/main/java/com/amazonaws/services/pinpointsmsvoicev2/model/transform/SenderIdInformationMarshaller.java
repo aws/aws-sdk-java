@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class SenderIdInformationMarshaller {
             .marshallLocationName("MessageTypes").build();
     private static final MarshallingInfo<String> MONTHLYLEASINGPRICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonthlyLeasingPrice").build();
+    private static final MarshallingInfo<Boolean> DELETIONPROTECTIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionProtectionEnabled").build();
+    private static final MarshallingInfo<Boolean> REGISTERED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Registered").build();
+    private static final MarshallingInfo<String> REGISTRATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationId").build();
 
     private static final SenderIdInformationMarshaller instance = new SenderIdInformationMarshaller();
 
@@ -60,6 +66,9 @@ public class SenderIdInformationMarshaller {
             protocolMarshaller.marshall(senderIdInformation.getIsoCountryCode(), ISOCOUNTRYCODE_BINDING);
             protocolMarshaller.marshall(senderIdInformation.getMessageTypes(), MESSAGETYPES_BINDING);
             protocolMarshaller.marshall(senderIdInformation.getMonthlyLeasingPrice(), MONTHLYLEASINGPRICE_BINDING);
+            protocolMarshaller.marshall(senderIdInformation.getDeletionProtectionEnabled(), DELETIONPROTECTIONENABLED_BINDING);
+            protocolMarshaller.marshall(senderIdInformation.getRegistered(), REGISTERED_BINDING);
+            protocolMarshaller.marshall(senderIdInformation.getRegistrationId(), REGISTRATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>owning-service</b>: Prefix match, case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not
      * case-sensitive.
      * </p>
@@ -111,6 +116,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>owning-service</b>: Prefix match, case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not
      * case-sensitive.
      * </p>
@@ -143,6 +153,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>primary-region</b>: Prefix match, case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>owning-service</b>: Prefix match, case-sensitive.
      *        </p>
      *        </li>
      *        <li>
@@ -190,6 +205,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>owning-service</b>: Prefix match, case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not
      * case-sensitive.
      * </p>
@@ -221,6 +241,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <b>primary-region</b>: Prefix match, case-sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>owning-service</b>: Prefix match, case-sensitive.
      *         </p>
      *         </li>
      *         <li>
@@ -268,6 +293,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>owning-service</b>: Prefix match, case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not
      * case-sensitive.
      * </p>
@@ -300,6 +330,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>primary-region</b>: Prefix match, case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>owning-service</b>: Prefix match, case-sensitive.
      *        </p>
      *        </li>
      *        <li>
@@ -349,6 +384,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>owning-service</b>: Prefix match, case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not
      * case-sensitive.
      * </p>
@@ -381,6 +421,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>primary-region</b>: Prefix match, case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>owning-service</b>: Prefix match, case-sensitive.
      *        </p>
      *        </li>
      *        <li>

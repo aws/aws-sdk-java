@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,8 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     private String certificateName;
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
-     * AWS Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this
+     * domain name. Certificate Manager is the only supported source.
      * </p>
      */
     private String certificateArn;
@@ -73,8 +73,8 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     private String regionalCertificateName;
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
-     * Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain
+     * name. Certificate Manager is the only supported source.
      * </p>
      */
     private String regionalCertificateArn;
@@ -225,13 +225,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
-     * AWS Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this
+     * domain name. Certificate Manager is the only supported source.
      * </p>
      * 
      * @param certificateArn
-     *        The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
-     *        name. AWS Certificate Manager is the only supported source.
+     *        The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint
+     *        for this domain name. Certificate Manager is the only supported source.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -240,12 +240,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
-     * AWS Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this
+     * domain name. Certificate Manager is the only supported source.
      * </p>
      * 
-     * @return The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
-     *         name. AWS Certificate Manager is the only supported source.
+     * @return The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint
+     *         for this domain name. Certificate Manager is the only supported source.
      */
 
     public String getCertificateArn() {
@@ -254,13 +254,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
-     * AWS Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint for this
+     * domain name. Certificate Manager is the only supported source.
      * </p>
      * 
      * @param certificateArn
-     *        The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
-     *        name. AWS Certificate Manager is the only supported source.
+     *        The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint
+     *        for this domain name. Certificate Manager is the only supported source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,13 +452,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
-     * Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain
+     * name. Certificate Manager is the only supported source.
      * </p>
      * 
      * @param regionalCertificateArn
-     *        The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
-     *        Certificate Manager is the only supported source.
+     *        The reference to an Amazon Web Services-managed certificate that will be used for validating the regional
+     *        domain name. Certificate Manager is the only supported source.
      */
 
     public void setRegionalCertificateArn(String regionalCertificateArn) {
@@ -467,12 +467,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
-     * Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain
+     * name. Certificate Manager is the only supported source.
      * </p>
      * 
-     * @return The reference to an AWS-managed certificate that will be used for validating the regional domain name.
-     *         AWS Certificate Manager is the only supported source.
+     * @return The reference to an Amazon Web Services-managed certificate that will be used for validating the regional
+     *         domain name. Certificate Manager is the only supported source.
      */
 
     public String getRegionalCertificateArn() {
@@ -481,13 +481,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
-     * Certificate Manager is the only supported source.
+     * The reference to an Amazon Web Services-managed certificate that will be used for validating the regional domain
+     * name. Certificate Manager is the only supported source.
      * </p>
      * 
      * @param regionalCertificateArn
-     *        The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
-     *        Certificate Manager is the only supported source.
+     *        The reference to an Amazon Web Services-managed certificate that will be used for validating the regional
+     *        domain name. Certificate Manager is the only supported source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

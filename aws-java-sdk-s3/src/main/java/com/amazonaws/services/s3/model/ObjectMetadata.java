@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -289,12 +289,12 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      * <p>
      * For more information on the Content-Length HTTP header, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#section-8.6">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#section-8.6</a>
      * </p>
      *
      * @return The Content-Length HTTP header indicating the size of the
-     *         associated object in bytes. Returns <code>null</code>
+     *         associated object in bytes. Returns <code>0</code>
      *         if it hasn't been set yet.
      *
      * @see ObjectMetadata#setContentLength(long)
@@ -312,7 +312,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      */
     public long getInstanceLength() {
         // See Content-Range in
-        // http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+        // https://www.rfc-editor.org/rfc/rfc9110.html#name-content-range
         String contentRange = (String)metadata.get(Headers.CONTENT_RANGE);
         if (contentRange != null) {
             int pos = contentRange.lastIndexOf("/");
@@ -337,8 +337,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      * <p>
      * For more information on the Content-Length HTTP header, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>
      * </p>
      *
      * @param contentLength
@@ -367,8 +367,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      * <p>
      * For more information on the Content-Type header, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>
      * </p>
      *
      * @return The HTTP Content-Type header, indicating the type of content
@@ -398,8 +398,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      * <p>
      * For more information on the Content-Type header, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>
      * </p>
      *
      * @param contentType
@@ -419,8 +419,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      * <p>
      * For more information on the Content-Type header, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>
      * </p>
      *
      * @return The HTTP Content-Language header, which describes the natural language(s) of the
@@ -440,8 +440,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * </p>
      * <p>
      * For more information on the Content-Type header, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>
      * </p>
      *
      * @param contentLanguage
@@ -464,8 +464,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * For more information on how the Content-Encoding HTTP header works, see
      * <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-encoding">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-encoding</a>
      * </p>
      *
      * @return The HTTP Content-Encoding header.
@@ -487,16 +487,16 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * For more information on how the Content-Encoding HTTP header works, see
      * <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-encoding">
+     * https://www.rfc-editor.org/rfc/rfc9110.html#name-content-encoding</a>
      * </p>
      *
      * @param encoding
      *            The HTTP Content-Encoding header, as defined in RFC 2616.
      *
      * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     *      href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-encoding"
+     *      >https://www.rfc-editor.org/rfc/rfc9110.html#name-content-encoding</a>
      *
      * @see ObjectMetadata#getContentEncoding()
      */
@@ -512,8 +512,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * For more information on how the Cache-Control HTTP header affects HTTP
      * requests and responses, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9111#name-cache-control">
+     * https://www.rfc-editor.org/rfc/rfc9111#name-cache-control</a>
      * </p>
      *
      * @return The HTTP Cache-Control header as defined in RFC 2616.
@@ -534,8 +534,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * For more information on how the Cache-Control HTTP header affects HTTP
      * requests and responses see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>
+     * href="https://www.rfc-editor.org/rfc/rfc9111#name-cache-control">
+     * https://www.rfc-editor.org/rfc/rfc9111#name-cache-control</a>
      * </p>
      *
      * @param cacheControl
@@ -618,8 +618,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * For more information on how the Content-Disposition header affects HTTP
      * client behavior, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     * href="https://www.rfc-editor.org/rfc/rfc2616.html#section-19.5.1">
+     * https://www.rfc-editor.org/rfc/rfc2616.html#section-19.5.1</a>
      * </p>
      *
      * @param disposition
@@ -640,8 +640,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * For more information on how the Content-Disposition header affects HTTP
      * client behavior, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     * href="https://www.rfc-editor.org/rfc/rfc2616.html#section-19.5.1">
+     * https://www.rfc-editor.org/rfc/rfc2616.html#section-19.5.1</a>
      * </p>
      *
      * @return The value of the Content-Disposition header.
@@ -649,8 +649,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      *         hasn't been set.
      *
      * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     *      href="https://www.rfc-editor.org/rfc/rfc2616.html#section-19.5.1"
+     *      >https://www.rfc-editor.org/rfc/rfc2616.html#section-19.5.1</a>
      *
      * @see ObjectMetadata#setCacheControl(String)
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,10 +54,18 @@ public class WorkspaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserVolumeEncryptionEnabled").build();
     private static final MarshallingInfo<Boolean> ROOTVOLUMEENCRYPTIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootVolumeEncryptionEnabled").build();
+    private static final MarshallingInfo<String> WORKSPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceName").build();
     private static final MarshallingInfo<StructuredPojo> WORKSPACEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkspaceProperties").build();
     private static final MarshallingInfo<List> MODIFICATIONSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationStates").build();
+    private static final MarshallingInfo<List> RELATEDWORKSPACES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedWorkspaces").build();
+    private static final MarshallingInfo<StructuredPojo> DATAREPLICATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataReplicationSettings").build();
+    private static final MarshallingInfo<List> STANDBYWORKSPACESPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StandbyWorkspacesProperties").build();
 
     private static final WorkspaceMarshaller instance = new WorkspaceMarshaller();
 
@@ -88,8 +96,12 @@ public class WorkspaceMarshaller {
             protocolMarshaller.marshall(workspace.getVolumeEncryptionKey(), VOLUMEENCRYPTIONKEY_BINDING);
             protocolMarshaller.marshall(workspace.getUserVolumeEncryptionEnabled(), USERVOLUMEENCRYPTIONENABLED_BINDING);
             protocolMarshaller.marshall(workspace.getRootVolumeEncryptionEnabled(), ROOTVOLUMEENCRYPTIONENABLED_BINDING);
+            protocolMarshaller.marshall(workspace.getWorkspaceName(), WORKSPACENAME_BINDING);
             protocolMarshaller.marshall(workspace.getWorkspaceProperties(), WORKSPACEPROPERTIES_BINDING);
             protocolMarshaller.marshall(workspace.getModificationStates(), MODIFICATIONSTATES_BINDING);
+            protocolMarshaller.marshall(workspace.getRelatedWorkspaces(), RELATEDWORKSPACES_BINDING);
+            protocolMarshaller.marshall(workspace.getDataReplicationSettings(), DATAREPLICATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(workspace.getStandbyWorkspacesProperties(), STANDBYWORKSPACESPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

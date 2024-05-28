@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class DescribeFraudsterRegistrationJobRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      */
     private String domainId;
     /**
      * <p>
-     * The identifier for the fraudster registration job you are describing.
+     * The identifier of the fraudster registration job you are describing.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
      * @param domainId
-     *        The identifier for the domain containing the fraudster registration job.
+     *        The identifier of the domain that contains the fraudster registration job.
      */
 
     public void setDomainId(String domainId) {
@@ -53,10 +53,10 @@ public class DescribeFraudsterRegistrationJobRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
-     * @return The identifier for the domain containing the fraudster registration job.
+     * @return The identifier of the domain that contains the fraudster registration job.
      */
 
     public String getDomainId() {
@@ -65,11 +65,11 @@ public class DescribeFraudsterRegistrationJobRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
      * @param domainId
-     *        The identifier for the domain containing the fraudster registration job.
+     *        The identifier of the domain that contains the fraudster registration job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DescribeFraudsterRegistrationJobRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifier for the fraudster registration job you are describing.
+     * The identifier of the fraudster registration job you are describing.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the fraudster registration job you are describing.
+     *        The identifier of the fraudster registration job you are describing.
      */
 
     public void setJobId(String jobId) {
@@ -93,10 +93,10 @@ public class DescribeFraudsterRegistrationJobRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifier for the fraudster registration job you are describing.
+     * The identifier of the fraudster registration job you are describing.
      * </p>
      * 
-     * @return The identifier for the fraudster registration job you are describing.
+     * @return The identifier of the fraudster registration job you are describing.
      */
 
     public String getJobId() {
@@ -105,11 +105,11 @@ public class DescribeFraudsterRegistrationJobRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The identifier for the fraudster registration job you are describing.
+     * The identifier of the fraudster registration job you are describing.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the fraudster registration job you are describing.
+     *        The identifier of the fraudster registration job you are describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

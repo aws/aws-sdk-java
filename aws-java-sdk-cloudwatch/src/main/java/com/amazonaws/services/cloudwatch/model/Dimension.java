@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,14 +35,15 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     * non-whitespace character, and cannot start with a colon (<code>:</code>).
+     * non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not
+     * supported as part of dimension names.
      * </p>
      */
     private String name;
     /**
      * <p>
      * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
-     * non-whitespace character.
+     * non-whitespace character. ASCII control characters are not supported as part of dimension values.
      * </p>
      */
     private String value;
@@ -50,12 +51,14 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     * non-whitespace character, and cannot start with a colon (<code>:</code>).
+     * non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not
+     * supported as part of dimension names.
      * </p>
      * 
      * @param name
      *        The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     *        non-whitespace character, and cannot start with a colon (<code>:</code>).
+     *        non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not
+     *        supported as part of dimension names.
      */
 
     public void setName(String name) {
@@ -65,11 +68,13 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     * non-whitespace character, and cannot start with a colon (<code>:</code>).
+     * non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not
+     * supported as part of dimension names.
      * </p>
      * 
      * @return The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     *         non-whitespace character, and cannot start with a colon (<code>:</code>).
+     *         non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are
+     *         not supported as part of dimension names.
      */
 
     public String getName() {
@@ -79,12 +84,14 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     * non-whitespace character, and cannot start with a colon (<code>:</code>).
+     * non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not
+     * supported as part of dimension names.
      * </p>
      * 
      * @param name
      *        The name of the dimension. Dimension names must contain only ASCII characters, must include at least one
-     *        non-whitespace character, and cannot start with a colon (<code>:</code>).
+     *        non-whitespace character, and cannot start with a colon (<code>:</code>). ASCII control characters are not
+     *        supported as part of dimension names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,12 +103,12 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
-     * non-whitespace character.
+     * non-whitespace character. ASCII control characters are not supported as part of dimension values.
      * </p>
      * 
      * @param value
      *        The value of the dimension. Dimension values must contain only ASCII characters and must include at least
-     *        one non-whitespace character.
+     *        one non-whitespace character. ASCII control characters are not supported as part of dimension values.
      */
 
     public void setValue(String value) {
@@ -111,11 +118,11 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
-     * non-whitespace character.
+     * non-whitespace character. ASCII control characters are not supported as part of dimension values.
      * </p>
      * 
      * @return The value of the dimension. Dimension values must contain only ASCII characters and must include at least
-     *         one non-whitespace character.
+     *         one non-whitespace character. ASCII control characters are not supported as part of dimension values.
      */
 
     public String getValue() {
@@ -125,12 +132,12 @@ public class Dimension implements Serializable, Cloneable {
     /**
      * <p>
      * The value of the dimension. Dimension values must contain only ASCII characters and must include at least one
-     * non-whitespace character.
+     * non-whitespace character. ASCII control characters are not supported as part of dimension values.
      * </p>
      * 
      * @param value
      *        The value of the dimension. Dimension values must contain only ASCII characters and must include at least
-     *        one non-whitespace character.
+     *        one non-whitespace character. ASCII control characters are not supported as part of dimension values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

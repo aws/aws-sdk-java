@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
 
     private RecommendationMetrics metrics;
 
+    private InferenceMetrics endpointMetrics;
+
     private EndpointOutputConfiguration endpointConfiguration;
 
     private ModelConfiguration modelConfiguration;
@@ -39,6 +41,18 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     */
+    private java.util.Date invocationEndTime;
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     */
+    private java.util.Date invocationStartTime;
 
     /**
      * @param metrics
@@ -63,6 +77,32 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
 
     public RecommendationJobInferenceBenchmark withMetrics(RecommendationMetrics metrics) {
         setMetrics(metrics);
+        return this;
+    }
+
+    /**
+     * @param endpointMetrics
+     */
+
+    public void setEndpointMetrics(InferenceMetrics endpointMetrics) {
+        this.endpointMetrics = endpointMetrics;
+    }
+
+    /**
+     * @return
+     */
+
+    public InferenceMetrics getEndpointMetrics() {
+        return this.endpointMetrics;
+    }
+
+    /**
+     * @param endpointMetrics
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInferenceBenchmark withEndpointMetrics(InferenceMetrics endpointMetrics) {
+        setEndpointMetrics(endpointMetrics);
         return this;
     }
 
@@ -159,6 +199,86 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     * 
+     * @param invocationEndTime
+     *        A timestamp that shows when the benchmark completed.
+     */
+
+    public void setInvocationEndTime(java.util.Date invocationEndTime) {
+        this.invocationEndTime = invocationEndTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     * 
+     * @return A timestamp that shows when the benchmark completed.
+     */
+
+    public java.util.Date getInvocationEndTime() {
+        return this.invocationEndTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     * 
+     * @param invocationEndTime
+     *        A timestamp that shows when the benchmark completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInferenceBenchmark withInvocationEndTime(java.util.Date invocationEndTime) {
+        setInvocationEndTime(invocationEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     * 
+     * @param invocationStartTime
+     *        A timestamp that shows when the benchmark started.
+     */
+
+    public void setInvocationStartTime(java.util.Date invocationStartTime) {
+        this.invocationStartTime = invocationStartTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     * 
+     * @return A timestamp that shows when the benchmark started.
+     */
+
+    public java.util.Date getInvocationStartTime() {
+        return this.invocationStartTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     * 
+     * @param invocationStartTime
+     *        A timestamp that shows when the benchmark started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInferenceBenchmark withInvocationStartTime(java.util.Date invocationStartTime) {
+        setInvocationStartTime(invocationStartTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -172,12 +292,18 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
         sb.append("{");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getEndpointMetrics() != null)
+            sb.append("EndpointMetrics: ").append(getEndpointMetrics()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
         if (getModelConfiguration() != null)
             sb.append("ModelConfiguration: ").append(getModelConfiguration()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getInvocationEndTime() != null)
+            sb.append("InvocationEndTime: ").append(getInvocationEndTime()).append(",");
+        if (getInvocationStartTime() != null)
+            sb.append("InvocationStartTime: ").append(getInvocationStartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +322,10 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
+        if (other.getEndpointMetrics() == null ^ this.getEndpointMetrics() == null)
+            return false;
+        if (other.getEndpointMetrics() != null && other.getEndpointMetrics().equals(this.getEndpointMetrics()) == false)
+            return false;
         if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
             return false;
         if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
@@ -208,6 +338,14 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getInvocationEndTime() == null ^ this.getInvocationEndTime() == null)
+            return false;
+        if (other.getInvocationEndTime() != null && other.getInvocationEndTime().equals(this.getInvocationEndTime()) == false)
+            return false;
+        if (other.getInvocationStartTime() == null ^ this.getInvocationStartTime() == null)
+            return false;
+        if (other.getInvocationStartTime() != null && other.getInvocationStartTime().equals(this.getInvocationStartTime()) == false)
+            return false;
         return true;
     }
 
@@ -217,9 +355,12 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getEndpointMetrics() == null) ? 0 : getEndpointMetrics().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelConfiguration() == null) ? 0 : getModelConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getInvocationEndTime() == null) ? 0 : getInvocationEndTime().hashCode());
+        hashCode = prime * hashCode + ((getInvocationStartTime() == null) ? 0 : getInvocationStartTime().hashCode());
         return hashCode;
     }
 

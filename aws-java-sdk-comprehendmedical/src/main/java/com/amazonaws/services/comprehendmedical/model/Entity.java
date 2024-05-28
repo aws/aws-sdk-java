@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
     private Integer endOffset;
     /**
      * <p>
-     * The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      */
     private Float score;
@@ -226,11 +226,11 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      */
 
     public void setScore(Float score) {
@@ -239,10 +239,10 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      * 
-     * @return The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     * @return The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      */
 
     public Float getScore() {
@@ -251,11 +251,11 @@ public class Entity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical; has in the accuracy of the detection.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

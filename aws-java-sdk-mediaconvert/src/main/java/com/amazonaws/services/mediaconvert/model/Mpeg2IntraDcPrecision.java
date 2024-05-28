@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you
- * choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
+ * Use Intra DC precision to set quantization precision for intra-block DC coefficients. If you choose the value auto,
+ * the service will automatically select the precision based on the per-frame compression ratio.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2IntraDcPrecision {

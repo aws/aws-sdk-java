@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,10 @@ public class CreateEventSourceMappingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmazonManagedKafkaEventSourceConfig").build();
     private static final MarshallingInfo<StructuredPojo> SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedKafkaEventSourceConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SCALINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingConfig").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTDBEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentDBEventSourceConfig").build();
 
     private static final CreateEventSourceMappingRequestMarshaller instance = new CreateEventSourceMappingRequestMarshaller();
 
@@ -108,6 +112,8 @@ public class CreateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(createEventSourceMappingRequest.getFunctionResponseTypes(), FUNCTIONRESPONSETYPES_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getAmazonManagedKafkaEventSourceConfig(), AMAZONMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getSelfManagedKafkaEventSourceConfig(), SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getScalingConfig(), SCALINGCONFIG_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getDocumentDBEventSourceConfig(), DOCUMENTDBEVENTSOURCECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

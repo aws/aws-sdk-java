@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class ListInferenceEventsRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date intervalStartTime;
     /**
      * <p>
-     * Returns all the inference events with an end start time equal to or greater than less than the end time given
+     * Returns all the inference events with an end start time equal to or greater than less than the end time given.
      * </p>
      */
     private java.util.Date intervalEndTime;
@@ -225,12 +225,12 @@ public class ListInferenceEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Returns all the inference events with an end start time equal to or greater than less than the end time given
+     * Returns all the inference events with an end start time equal to or greater than less than the end time given.
      * </p>
      * 
      * @param intervalEndTime
      *        Returns all the inference events with an end start time equal to or greater than less than the end time
-     *        given
+     *        given.
      */
 
     public void setIntervalEndTime(java.util.Date intervalEndTime) {
@@ -239,11 +239,11 @@ public class ListInferenceEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Returns all the inference events with an end start time equal to or greater than less than the end time given
+     * Returns all the inference events with an end start time equal to or greater than less than the end time given.
      * </p>
      * 
      * @return Returns all the inference events with an end start time equal to or greater than less than the end time
-     *         given
+     *         given.
      */
 
     public java.util.Date getIntervalEndTime() {
@@ -252,12 +252,12 @@ public class ListInferenceEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Returns all the inference events with an end start time equal to or greater than less than the end time given
+     * Returns all the inference events with an end start time equal to or greater than less than the end time given.
      * </p>
      * 
      * @param intervalEndTime
      *        Returns all the inference events with an end start time equal to or greater than less than the end time
-     *        given
+     *        given.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

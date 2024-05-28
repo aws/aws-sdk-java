@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific
+ * Information about a recommendation, such as the timestamp for when Amazon Web Services made a specific
  * recommendation.
  * </p>
  * 
@@ -31,24 +31,30 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The ID for this specific recommendation.
+     * The ID for the recommendation.
      * </p>
      */
     private String recommendationId;
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made the recommendation.
      * </p>
      */
     private String generationTimestamp;
+    /**
+     * <p>
+     * Additional metadata that might be applicable to the recommendation.
+     * </p>
+     */
+    private String additionalMetadata;
 
     /**
      * <p>
-     * The ID for this specific recommendation.
+     * The ID for the recommendation.
      * </p>
      * 
      * @param recommendationId
-     *        The ID for this specific recommendation.
+     *        The ID for the recommendation.
      */
 
     public void setRecommendationId(String recommendationId) {
@@ -57,10 +63,10 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The ID for this specific recommendation.
+     * The ID for the recommendation.
      * </p>
      * 
-     * @return The ID for this specific recommendation.
+     * @return The ID for the recommendation.
      */
 
     public String getRecommendationId() {
@@ -69,11 +75,11 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The ID for this specific recommendation.
+     * The ID for the recommendation.
      * </p>
      * 
      * @param recommendationId
-     *        The ID for this specific recommendation.
+     *        The ID for the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +90,11 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made the recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The timestamp for when Amazon Web Services made this recommendation.
+     *        The timestamp for when Amazon Web Services made the recommendation.
      */
 
     public void setGenerationTimestamp(String generationTimestamp) {
@@ -97,10 +103,10 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made the recommendation.
      * </p>
      * 
-     * @return The timestamp for when Amazon Web Services made this recommendation.
+     * @return The timestamp for when Amazon Web Services made the recommendation.
      */
 
     public String getGenerationTimestamp() {
@@ -109,16 +115,56 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when Amazon Web Services made the recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The timestamp for when Amazon Web Services made this recommendation.
+     *        The timestamp for when Amazon Web Services made the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReservationPurchaseRecommendationMetadata withGenerationTimestamp(String generationTimestamp) {
         setGenerationTimestamp(generationTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that might be applicable to the recommendation.
+     * </p>
+     * 
+     * @param additionalMetadata
+     *        Additional metadata that might be applicable to the recommendation.
+     */
+
+    public void setAdditionalMetadata(String additionalMetadata) {
+        this.additionalMetadata = additionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that might be applicable to the recommendation.
+     * </p>
+     * 
+     * @return Additional metadata that might be applicable to the recommendation.
+     */
+
+    public String getAdditionalMetadata() {
+        return this.additionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Additional metadata that might be applicable to the recommendation.
+     * </p>
+     * 
+     * @param additionalMetadata
+     *        Additional metadata that might be applicable to the recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservationPurchaseRecommendationMetadata withAdditionalMetadata(String additionalMetadata) {
+        setAdditionalMetadata(additionalMetadata);
         return this;
     }
 
@@ -137,7 +183,9 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
         if (getRecommendationId() != null)
             sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
         if (getGenerationTimestamp() != null)
-            sb.append("GenerationTimestamp: ").append(getGenerationTimestamp());
+            sb.append("GenerationTimestamp: ").append(getGenerationTimestamp()).append(",");
+        if (getAdditionalMetadata() != null)
+            sb.append("AdditionalMetadata: ").append(getAdditionalMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +208,10 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
             return false;
         if (other.getGenerationTimestamp() != null && other.getGenerationTimestamp().equals(this.getGenerationTimestamp()) == false)
             return false;
+        if (other.getAdditionalMetadata() == null ^ this.getAdditionalMetadata() == null)
+            return false;
+        if (other.getAdditionalMetadata() != null && other.getAdditionalMetadata().equals(this.getAdditionalMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +222,7 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
         hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getGenerationTimestamp() == null) ? 0 : getGenerationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalMetadata() == null) ? 0 : getAdditionalMetadata().hashCode());
         return hashCode;
     }
 

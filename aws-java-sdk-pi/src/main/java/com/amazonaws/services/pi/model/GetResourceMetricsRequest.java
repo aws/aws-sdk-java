@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,8 +57,11 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
     private String identifier;
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      */
     private java.util.List<MetricQuery> metricQueries;
@@ -137,6 +140,13 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The returned timestamp which is the start or end time of the time periods. The default value is
+     * <code>END_TIME</code>.
+     * </p>
+     */
+    private String periodAlignment;
 
     /**
      * <p>
@@ -371,12 +381,18 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * 
-     * @return An array of one or more queries to perform. Each query must specify a Performance Insights metric, and
-     *         can optionally specify aggregation and filtering criteria.
+     * @return An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *         specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *         function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *         <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *         <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      */
 
     public java.util.List<MetricQuery> getMetricQueries() {
@@ -385,13 +401,19 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * 
      * @param metricQueries
-     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     *        optionally specify aggregation and filtering criteria.
+     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *        specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *        function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *        <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *        <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      */
 
     public void setMetricQueries(java.util.Collection<MetricQuery> metricQueries) {
@@ -405,8 +427,11 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -415,8 +440,11 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param metricQueries
-     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     *        optionally specify aggregation and filtering criteria.
+     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *        specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *        function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *        <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *        <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,13 +460,19 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * 
      * @param metricQueries
-     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     *        optionally specify aggregation and filtering criteria.
+     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *        specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *        function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *        <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *        <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -912,6 +946,73 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The returned timestamp which is the start or end time of the time periods. The default value is
+     * <code>END_TIME</code>.
+     * </p>
+     * 
+     * @param periodAlignment
+     *        The returned timestamp which is the start or end time of the time periods. The default value is
+     *        <code>END_TIME</code>.
+     * @see PeriodAlignment
+     */
+
+    public void setPeriodAlignment(String periodAlignment) {
+        this.periodAlignment = periodAlignment;
+    }
+
+    /**
+     * <p>
+     * The returned timestamp which is the start or end time of the time periods. The default value is
+     * <code>END_TIME</code>.
+     * </p>
+     * 
+     * @return The returned timestamp which is the start or end time of the time periods. The default value is
+     *         <code>END_TIME</code>.
+     * @see PeriodAlignment
+     */
+
+    public String getPeriodAlignment() {
+        return this.periodAlignment;
+    }
+
+    /**
+     * <p>
+     * The returned timestamp which is the start or end time of the time periods. The default value is
+     * <code>END_TIME</code>.
+     * </p>
+     * 
+     * @param periodAlignment
+     *        The returned timestamp which is the start or end time of the time periods. The default value is
+     *        <code>END_TIME</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PeriodAlignment
+     */
+
+    public GetResourceMetricsRequest withPeriodAlignment(String periodAlignment) {
+        setPeriodAlignment(periodAlignment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The returned timestamp which is the start or end time of the time periods. The default value is
+     * <code>END_TIME</code>.
+     * </p>
+     * 
+     * @param periodAlignment
+     *        The returned timestamp which is the start or end time of the time periods. The default value is
+     *        <code>END_TIME</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PeriodAlignment
+     */
+
+    public GetResourceMetricsRequest withPeriodAlignment(PeriodAlignment periodAlignment) {
+        this.periodAlignment = periodAlignment.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -938,7 +1039,9 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPeriodAlignment() != null)
+            sb.append("PeriodAlignment: ").append(getPeriodAlignment());
         sb.append("}");
         return sb.toString();
     }
@@ -985,6 +1088,10 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getPeriodAlignment() == null ^ this.getPeriodAlignment() == null)
+            return false;
+        if (other.getPeriodAlignment() != null && other.getPeriodAlignment().equals(this.getPeriodAlignment()) == false)
+            return false;
         return true;
     }
 
@@ -1001,6 +1108,7 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getPeriodInSeconds() == null) ? 0 : getPeriodInSeconds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPeriodAlignment() == null) ? 0 : getPeriodAlignment().hashCode());
         return hashCode;
     }
 

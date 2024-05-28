@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.iotfleetwise.AWSIoTFleetWiseClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotfleetwise.model.*;
+
 import com.amazonaws.services.iotfleetwise.model.transform.*;
 
 /**
@@ -84,12 +85,6 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotfleetwise.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DecoderManifestValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotfleetwise.model.transform.DecoderManifestValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotfleetwise.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -99,12 +94,6 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotfleetwise.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotfleetwise.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotfleetwise.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotfleetwise.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -113,6 +102,18 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNodeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotfleetwise.model.transform.InvalidNodeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotfleetwise.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DecoderManifestValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotfleetwise.model.transform.DecoderManifestValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotfleetwise.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotfleetwise.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotfleetwise.model.AWSIoTFleetWiseException.class));
 
     public static AWSIoTFleetWiseClientBuilder builder() {
@@ -172,6 +173,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         The request couldn't be completed because the server temporarily failed.
      * @throws ResourceNotFoundException
      *         The resource wasn't found.
+     * @throws LimitExceededException
+     *         A service quota was exceeded.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
      * @throws ValidationException
@@ -786,7 +789,7 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <note>
      * <p>
-     * If you have an existing Amazon Web Services IoT Thing, you can use Amazon Web Services IoT FleetWise to create a
+     * If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create a
      * vehicle and collect data from your thing.
      * </p>
      * </note>
@@ -1491,6 +1494,73 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @return Result of the GetEncryptionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws InternalServerException
+     *         The request couldn't be completed because the server temporarily failed.
+     * @throws ThrottlingException
+     *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @sample AWSIoTFleetWise.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEncryptionConfigurationResult getEncryptionConfiguration(GetEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetEncryptionConfigurationResult executeGetEncryptionConfiguration(GetEncryptionConfigurationRequest getEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEncryptionConfigurationRequest> request = null;
+        Response<GetEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTFleetWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEncryptionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEncryptionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a fleet.
      * </p>
      * 
@@ -1628,6 +1698,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         The request couldn't be completed because the server temporarily failed.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @sample AWSIoTFleetWise.GetModelManifest
@@ -3021,6 +3093,80 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @return Result of the PutEncryptionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws InternalServerException
+     *         The request couldn't be completed because the server temporarily failed.
+     * @throws ConflictException
+     *         The request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws ThrottlingException
+     *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @sample AWSIoTFleetWise.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutEncryptionConfigurationResult putEncryptionConfiguration(PutEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutEncryptionConfigurationResult executePutEncryptionConfiguration(PutEncryptionConfigurationRequest putEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutEncryptionConfigurationRequest> request = null;
+        Response<PutEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTFleetWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutEncryptionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutEncryptionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates the logging option.
      * </p>
      * 
@@ -3088,6 +3234,28 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
+     * <important>
+     * <p>
+     * This API operation contains deprecated parameters. Register your account again without the Timestream resources
+     * parameter so that Amazon Web Services IoT FleetWise can remove the Timestream metadata stored. You should then
+     * pass the data destination into the <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateCampaign.html">CreateCampaign</a>
+     * API operation.
+     * </p>
+     * <p>
+     * You must delete any existing campaigns that include an empty data destination before you register your account
+     * again. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteCampaign.html">DeleteCampaign</a>
+     * API operation.
+     * </p>
+     * <p>
+     * If you want to delete the Timestream inline policy from the service-linked role, such as to mitigate an overly
+     * permissive policy, you must first delete any existing campaigns. Then delete the service-linked role and register
+     * your account again to enable CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html"
+     * >DeleteServiceLinkedRole</a> in the <i>Identity and Access Management API Reference</i>.
+     * </p>
+     * </important>
      * <p>
      * Registers your Amazon Web Services account, IAM, and Amazon Timestream resources so Amazon Web Services IoT
      * FleetWise can transfer your vehicle data to the Amazon Web Services Cloud. For more information, including
@@ -3097,7 +3265,7 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services account is <b>not</b> the same thing as a "user account". An <a href=
+     * An Amazon Web Services account is <b>not</b> the same thing as a "user." An <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users"
      * >Amazon Web Services user</a> is an identity that you create using Identity and Access Management (IAM) and takes
      * the form of either an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html">IAM user</a> or an
@@ -3610,6 +3778,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         branch, sensor, actuator, or attribute.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InvalidSignalsException
      *         The request couldn't be completed because it contains signals that aren't valid.
      * @throws AccessDeniedException

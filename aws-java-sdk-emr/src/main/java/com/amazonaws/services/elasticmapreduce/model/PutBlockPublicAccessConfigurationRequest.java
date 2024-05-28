@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * <p>
      * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
      * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
-     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that
+     * Region.
      * </p>
      * </note>
      */
@@ -59,7 +60,8 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * <p>
      * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
      * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
-     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that
+     * Region.
      * </p>
      * </note>
      * 
@@ -74,8 +76,8 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      *        <p>
      *        For accounts that created clusters in a Region before November 25, 2019, block public access is disabled
      *        by default in that Region. To use this feature, you must manually enable and configure it. For accounts
-     *        that did not create an EMR cluster in a Region before this date, block public access is enabled by default
-     *        in that Region.
+     *        that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by
+     *        default in that Region.
      *        </p>
      */
 
@@ -97,7 +99,8 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * <p>
      * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
      * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
-     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that
+     * Region.
      * </p>
      * </note>
      * 
@@ -112,7 +115,7 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      *         <p>
      *         For accounts that created clusters in a Region before November 25, 2019, block public access is disabled
      *         by default in that Region. To use this feature, you must manually enable and configure it. For accounts
-     *         that did not create an EMR cluster in a Region before this date, block public access is enabled by
+     *         that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by
      *         default in that Region.
      *         </p>
      */
@@ -135,7 +138,8 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * <p>
      * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
      * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
-     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that
+     * Region.
      * </p>
      * </note>
      * 
@@ -150,8 +154,8 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      *        <p>
      *        For accounts that created clusters in a Region before November 25, 2019, block public access is disabled
      *        by default in that Region. To use this feature, you must manually enable and configure it. For accounts
-     *        that did not create an EMR cluster in a Region before this date, block public access is enabled by default
-     *        in that Region.
+     *        that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by
+     *        default in that Region.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

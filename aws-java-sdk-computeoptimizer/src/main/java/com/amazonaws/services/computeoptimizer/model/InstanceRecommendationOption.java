@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -197,6 +197,20 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
      * </p>
      */
     private String migrationEffort;
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     */
+    private GpuInfo instanceGpuInfo;
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the instance recommendation option that includes Savings
+     * Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage.
+     * </p>
+     */
+    private InstanceSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts;
 
     /**
      * <p>
@@ -1758,6 +1772,98 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     * 
+     * @param instanceGpuInfo
+     *        Describes the GPU accelerator settings for the recommended instance type.
+     */
+
+    public void setInstanceGpuInfo(GpuInfo instanceGpuInfo) {
+        this.instanceGpuInfo = instanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     * 
+     * @return Describes the GPU accelerator settings for the recommended instance type.
+     */
+
+    public GpuInfo getInstanceGpuInfo() {
+        return this.instanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the recommended instance type.
+     * </p>
+     * 
+     * @param instanceGpuInfo
+     *        Describes the GPU accelerator settings for the recommended instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRecommendationOption withInstanceGpuInfo(GpuInfo instanceGpuInfo) {
+        setInstanceGpuInfo(instanceGpuInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the instance recommendation option that includes Savings
+     * Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage.
+     * </p>
+     * 
+     * @param savingsOpportunityAfterDiscounts
+     *        An object that describes the savings opportunity for the instance recommendation option that includes
+     *        Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings
+     *        and percentage.
+     */
+
+    public void setSavingsOpportunityAfterDiscounts(InstanceSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts) {
+        this.savingsOpportunityAfterDiscounts = savingsOpportunityAfterDiscounts;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the instance recommendation option that includes Savings
+     * Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage.
+     * </p>
+     * 
+     * @return An object that describes the savings opportunity for the instance recommendation option that includes
+     *         Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly
+     *         savings and percentage.
+     */
+
+    public InstanceSavingsOpportunityAfterDiscounts getSavingsOpportunityAfterDiscounts() {
+        return this.savingsOpportunityAfterDiscounts;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the instance recommendation option that includes Savings
+     * Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and
+     * percentage.
+     * </p>
+     * 
+     * @param savingsOpportunityAfterDiscounts
+     *        An object that describes the savings opportunity for the instance recommendation option that includes
+     *        Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings
+     *        and percentage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRecommendationOption withSavingsOpportunityAfterDiscounts(InstanceSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts) {
+        setSavingsOpportunityAfterDiscounts(savingsOpportunityAfterDiscounts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1782,7 +1888,11 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
         if (getSavingsOpportunity() != null)
             sb.append("SavingsOpportunity: ").append(getSavingsOpportunity()).append(",");
         if (getMigrationEffort() != null)
-            sb.append("MigrationEffort: ").append(getMigrationEffort());
+            sb.append("MigrationEffort: ").append(getMigrationEffort()).append(",");
+        if (getInstanceGpuInfo() != null)
+            sb.append("InstanceGpuInfo: ").append(getInstanceGpuInfo()).append(",");
+        if (getSavingsOpportunityAfterDiscounts() != null)
+            sb.append("SavingsOpportunityAfterDiscounts: ").append(getSavingsOpportunityAfterDiscounts());
         sb.append("}");
         return sb.toString();
     }
@@ -1825,6 +1935,15 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
             return false;
         if (other.getMigrationEffort() != null && other.getMigrationEffort().equals(this.getMigrationEffort()) == false)
             return false;
+        if (other.getInstanceGpuInfo() == null ^ this.getInstanceGpuInfo() == null)
+            return false;
+        if (other.getInstanceGpuInfo() != null && other.getInstanceGpuInfo().equals(this.getInstanceGpuInfo()) == false)
+            return false;
+        if (other.getSavingsOpportunityAfterDiscounts() == null ^ this.getSavingsOpportunityAfterDiscounts() == null)
+            return false;
+        if (other.getSavingsOpportunityAfterDiscounts() != null
+                && other.getSavingsOpportunityAfterDiscounts().equals(this.getSavingsOpportunityAfterDiscounts()) == false)
+            return false;
         return true;
     }
 
@@ -1840,6 +1959,8 @@ public class InstanceRecommendationOption implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
         hashCode = prime * hashCode + ((getSavingsOpportunity() == null) ? 0 : getSavingsOpportunity().hashCode());
         hashCode = prime * hashCode + ((getMigrationEffort() == null) ? 0 : getMigrationEffort().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGpuInfo() == null) ? 0 : getInstanceGpuInfo().hashCode());
+        hashCode = prime * hashCode + ((getSavingsOpportunityAfterDiscounts() == null) ? 0 : getSavingsOpportunityAfterDiscounts().hashCode());
         return hashCode;
     }
 

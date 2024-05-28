@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,26 +54,27 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      */
     private String changeDescription;
     /**
      * <p>
-     * The type of the component denotes whether the component is used to build the image or only to test it.
+     * The component type specifies whether Image Builder uses the component to build the image or only to test it.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      */
     private String platform;
     /**
      * <p>
-     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
-     * is performed against the base image OS version during image recipe creation.
+     * The operating system (OS) version supported by the component. If the OS information is available, Image Builder
+     * performs a prefix match against the base image OS version during image recipe creation.
      * </p>
      */
     private java.util.List<String> supportedOsVersions;
@@ -85,7 +86,7 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     private ComponentState state;
     /**
      * <p>
-     * Contains parameter details for each of the parameters that are defined for the component.
+     * Contains parameter details for each of the parameters that the component document defined for the component.
      * </p>
      */
     private java.util.List<ComponentParameterDetail> parameters;
@@ -115,16 +116,29 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     private Boolean encrypted;
     /**
      * <p>
-     * The date that the component was created.
+     * The date that Image Builder created the component.
      * </p>
      */
     private String dateCreated;
     /**
      * <p>
-     * The tags associated with the component.
+     * The tags that apply to the component.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     * </p>
+     */
+    private String publisher;
+    /**
+     * <p>
+     * Indicates whether component source is hidden from view in the console, and from component detail results for API,
+     * CLI, or SDK operations.
+     * </p>
+     */
+    private Boolean obfuscate;
 
     /**
      * <p>
@@ -288,11 +302,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component.
+     *        Describes what change has been made in this version of the component, or what makes this version different
+     *        from other versions of the component.
      */
 
     public void setChangeDescription(String changeDescription) {
@@ -301,10 +317,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      * 
-     * @return The change description of the component.
+     * @return Describes what change has been made in this version of the component, or what makes this version
+     *         different from other versions of the component.
      */
 
     public String getChangeDescription() {
@@ -313,11 +331,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component.
+     *        Describes what change has been made in this version of the component, or what makes this version different
+     *        from other versions of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,11 +348,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the component denotes whether the component is used to build the image or only to test it.
+     * The component type specifies whether Image Builder uses the component to build the image or only to test it.
      * </p>
      * 
      * @param type
-     *        The type of the component denotes whether the component is used to build the image or only to test it.
+     *        The component type specifies whether Image Builder uses the component to build the image or only to test
+     *        it.
      * @see ComponentType
      */
 
@@ -342,10 +363,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the component denotes whether the component is used to build the image or only to test it.
+     * The component type specifies whether Image Builder uses the component to build the image or only to test it.
      * </p>
      * 
-     * @return The type of the component denotes whether the component is used to build the image or only to test it.
+     * @return The component type specifies whether Image Builder uses the component to build the image or only to test
+     *         it.
      * @see ComponentType
      */
 
@@ -355,11 +377,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the component denotes whether the component is used to build the image or only to test it.
+     * The component type specifies whether Image Builder uses the component to build the image or only to test it.
      * </p>
      * 
      * @param type
-     *        The type of the component denotes whether the component is used to build the image or only to test it.
+     *        The component type specifies whether Image Builder uses the component to build the image or only to test
+     *        it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComponentType
      */
@@ -371,11 +394,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the component denotes whether the component is used to build the image or only to test it.
+     * The component type specifies whether Image Builder uses the component to build the image or only to test it.
      * </p>
      * 
      * @param type
-     *        The type of the component denotes whether the component is used to build the image or only to test it.
+     *        The component type specifies whether Image Builder uses the component to build the image or only to test
+     *        it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComponentType
      */
@@ -387,11 +411,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
      * @param platform
-     *        The platform of the component.
+     *        The operating system platform of the component.
      * @see Platform
      */
 
@@ -401,10 +425,10 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
-     * @return The platform of the component.
+     * @return The operating system platform of the component.
      * @see Platform
      */
 
@@ -414,11 +438,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
      * @param platform
-     *        The platform of the component.
+     *        The operating system platform of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -430,11 +454,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
      * @param platform
-     *        The platform of the component.
+     *        The operating system platform of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -446,12 +470,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
-     * is performed against the base image OS version during image recipe creation.
+     * The operating system (OS) version supported by the component. If the OS information is available, Image Builder
+     * performs a prefix match against the base image OS version during image recipe creation.
      * </p>
      * 
-     * @return The operating system (OS) version supported by the component. If the OS information is available, a
-     *         prefix match is performed against the base image OS version during image recipe creation.
+     * @return The operating system (OS) version supported by the component. If the OS information is available, Image
+     *         Builder performs a prefix match against the base image OS version during image recipe creation.
      */
 
     public java.util.List<String> getSupportedOsVersions() {
@@ -460,13 +484,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
-     * is performed against the base image OS version during image recipe creation.
+     * The operating system (OS) version supported by the component. If the OS information is available, Image Builder
+     * performs a prefix match against the base image OS version during image recipe creation.
      * </p>
      * 
      * @param supportedOsVersions
-     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
-     *        match is performed against the base image OS version during image recipe creation.
+     *        The operating system (OS) version supported by the component. If the OS information is available, Image
+     *        Builder performs a prefix match against the base image OS version during image recipe creation.
      */
 
     public void setSupportedOsVersions(java.util.Collection<String> supportedOsVersions) {
@@ -480,8 +504,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
-     * is performed against the base image OS version during image recipe creation.
+     * The operating system (OS) version supported by the component. If the OS information is available, Image Builder
+     * performs a prefix match against the base image OS version during image recipe creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -490,8 +514,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param supportedOsVersions
-     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
-     *        match is performed against the base image OS version during image recipe creation.
+     *        The operating system (OS) version supported by the component. If the OS information is available, Image
+     *        Builder performs a prefix match against the base image OS version during image recipe creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,13 +531,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
-     * is performed against the base image OS version during image recipe creation.
+     * The operating system (OS) version supported by the component. If the OS information is available, Image Builder
+     * performs a prefix match against the base image OS version during image recipe creation.
      * </p>
      * 
      * @param supportedOsVersions
-     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
-     *        match is performed against the base image OS version during image recipe creation.
+     *        The operating system (OS) version supported by the component. If the OS information is available, Image
+     *        Builder performs a prefix match against the base image OS version during image recipe creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,10 +588,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains parameter details for each of the parameters that are defined for the component.
+     * Contains parameter details for each of the parameters that the component document defined for the component.
      * </p>
      * 
-     * @return Contains parameter details for each of the parameters that are defined for the component.
+     * @return Contains parameter details for each of the parameters that the component document defined for the
+     *         component.
      */
 
     public java.util.List<ComponentParameterDetail> getParameters() {
@@ -576,11 +601,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains parameter details for each of the parameters that are defined for the component.
+     * Contains parameter details for each of the parameters that the component document defined for the component.
      * </p>
      * 
      * @param parameters
-     *        Contains parameter details for each of the parameters that are defined for the component.
+     *        Contains parameter details for each of the parameters that the component document defined for the
+     *        component.
      */
 
     public void setParameters(java.util.Collection<ComponentParameterDetail> parameters) {
@@ -594,7 +620,7 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains parameter details for each of the parameters that are defined for the component.
+     * Contains parameter details for each of the parameters that the component document defined for the component.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -603,7 +629,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param parameters
-     *        Contains parameter details for each of the parameters that are defined for the component.
+     *        Contains parameter details for each of the parameters that the component document defined for the
+     *        component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,11 +646,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains parameter details for each of the parameters that are defined for the component.
+     * Contains parameter details for each of the parameters that the component document defined for the component.
      * </p>
      * 
      * @param parameters
-     *        Contains parameter details for each of the parameters that are defined for the component.
+     *        Contains parameter details for each of the parameters that the component document defined for the
+     *        component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -806,11 +834,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date that the component was created.
+     * The date that Image Builder created the component.
      * </p>
      * 
      * @param dateCreated
-     *        The date that the component was created.
+     *        The date that Image Builder created the component.
      */
 
     public void setDateCreated(String dateCreated) {
@@ -819,10 +847,10 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date that the component was created.
+     * The date that Image Builder created the component.
      * </p>
      * 
-     * @return The date that the component was created.
+     * @return The date that Image Builder created the component.
      */
 
     public String getDateCreated() {
@@ -831,11 +859,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date that the component was created.
+     * The date that Image Builder created the component.
      * </p>
      * 
      * @param dateCreated
-     *        The date that the component was created.
+     *        The date that Image Builder created the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -846,10 +874,10 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the component.
+     * The tags that apply to the component.
      * </p>
      * 
-     * @return The tags associated with the component.
+     * @return The tags that apply to the component.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -858,11 +886,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the component.
+     * The tags that apply to the component.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the component.
+     *        The tags that apply to the component.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -871,11 +899,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with the component.
+     * The tags that apply to the component.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the component.
+     *        The tags that apply to the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -910,6 +938,106 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     public Component clearTagsEntries() {
         this.tags = null;
         return this;
+    }
+
+    /**
+     * <p>
+     * Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     * </p>
+     * 
+     * @param publisher
+     *        Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     */
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    /**
+     * <p>
+     * Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     * </p>
+     * 
+     * @return Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     */
+
+    public String getPublisher() {
+        return this.publisher;
+    }
+
+    /**
+     * <p>
+     * Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     * </p>
+     * 
+     * @param publisher
+     *        Contains the name of the publisher if this is a third-party component. Otherwise, this property is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Component withPublisher(String publisher) {
+        setPublisher(publisher);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether component source is hidden from view in the console, and from component detail results for API,
+     * CLI, or SDK operations.
+     * </p>
+     * 
+     * @param obfuscate
+     *        Indicates whether component source is hidden from view in the console, and from component detail results
+     *        for API, CLI, or SDK operations.
+     */
+
+    public void setObfuscate(Boolean obfuscate) {
+        this.obfuscate = obfuscate;
+    }
+
+    /**
+     * <p>
+     * Indicates whether component source is hidden from view in the console, and from component detail results for API,
+     * CLI, or SDK operations.
+     * </p>
+     * 
+     * @return Indicates whether component source is hidden from view in the console, and from component detail results
+     *         for API, CLI, or SDK operations.
+     */
+
+    public Boolean getObfuscate() {
+        return this.obfuscate;
+    }
+
+    /**
+     * <p>
+     * Indicates whether component source is hidden from view in the console, and from component detail results for API,
+     * CLI, or SDK operations.
+     * </p>
+     * 
+     * @param obfuscate
+     *        Indicates whether component source is hidden from view in the console, and from component detail results
+     *        for API, CLI, or SDK operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Component withObfuscate(Boolean obfuscate) {
+        setObfuscate(obfuscate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether component source is hidden from view in the console, and from component detail results for API,
+     * CLI, or SDK operations.
+     * </p>
+     * 
+     * @return Indicates whether component source is hidden from view in the console, and from component detail results
+     *         for API, CLI, or SDK operations.
+     */
+
+    public Boolean isObfuscate() {
+        return this.obfuscate;
     }
 
     /**
@@ -955,7 +1083,11 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
         if (getDateCreated() != null)
             sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPublisher() != null)
+            sb.append("Publisher: ").append(getPublisher()).append(",");
+        if (getObfuscate() != null)
+            sb.append("Obfuscate: ").append(getObfuscate());
         sb.append("}");
         return sb.toString();
     }
@@ -1034,6 +1166,14 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPublisher() == null ^ this.getPublisher() == null)
+            return false;
+        if (other.getPublisher() != null && other.getPublisher().equals(this.getPublisher()) == false)
+            return false;
+        if (other.getObfuscate() == null ^ this.getObfuscate() == null)
+            return false;
+        if (other.getObfuscate() != null && other.getObfuscate().equals(this.getObfuscate()) == false)
+            return false;
         return true;
     }
 
@@ -1058,6 +1198,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPublisher() == null) ? 0 : getPublisher().hashCode());
+        hashCode = prime * hashCode + ((getObfuscate() == null) ? 0 : getObfuscate().hashCode());
         return hashCode;
     }
 

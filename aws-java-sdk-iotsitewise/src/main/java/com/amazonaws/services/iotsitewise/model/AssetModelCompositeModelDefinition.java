@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,23 @@ public class AssetModelCompositeModelDefinition implements Serializable, Cloneab
      * </p>
      */
     private java.util.List<AssetModelPropertyDefinition> properties;
+    /**
+     * <p>
+     * The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * An external ID to assign to the composite model. The external ID must be unique among composite models within
+     * this asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
@@ -245,6 +262,116 @@ public class AssetModelCompositeModelDefinition implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @param id
+     *        The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for
+     *        you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can
+     *        specify it here in UUID format. If you specify your own ID, it must be globally unique.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @return The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for
+     *         you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can
+     *         specify it here in UUID format. If you specify your own ID, it must be globally unique.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @param id
+     *        The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for
+     *        you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can
+     *        specify it here in UUID format. If you specify your own ID, it must be globally unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelCompositeModelDefinition withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the composite model. The external ID must be unique among composite models within
+     * this asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        An external ID to assign to the composite model. The external ID must be unique among composite models
+     *        within this asset model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the composite model. The external ID must be unique among composite models within
+     * this asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return An external ID to assign to the composite model. The external ID must be unique among composite models
+     *         within this asset model. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the composite model. The external ID must be unique among composite models within
+     * this asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        An external ID to assign to the composite model. The external ID must be unique among composite models
+     *        within this asset model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelCompositeModelDefinition withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -263,7 +390,11 @@ public class AssetModelCompositeModelDefinition implements Serializable, Cloneab
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: ").append(getProperties());
+            sb.append("Properties: ").append(getProperties()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -294,6 +425,14 @@ public class AssetModelCompositeModelDefinition implements Serializable, Cloneab
             return false;
         if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
             return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -306,6 +445,8 @@ public class AssetModelCompositeModelDefinition implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public class CreateInferenceRecommendationsJobRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your
-     * Amazon Web Services account.
+     * Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The
+     * names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with
+     * the job name are truncated at 40 characters.
      * </p>
      */
     private String jobName;
@@ -85,12 +87,16 @@ public class CreateInferenceRecommendationsJobRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your
-     * Amazon Web Services account.
+     * Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The
+     * names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with
+     * the job name are truncated at 40 characters.
      * </p>
      * 
      * @param jobName
      *        A name for the recommendation job. The name must be unique within the Amazon Web Services Region and
-     *        within your Amazon Web Services account.
+     *        within your Amazon Web Services account. The job name is passed down to the resources created by the
+     *        recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and
+     *        compilation) that are prefixed with the job name are truncated at 40 characters.
      */
 
     public void setJobName(String jobName) {
@@ -100,11 +106,15 @@ public class CreateInferenceRecommendationsJobRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your
-     * Amazon Web Services account.
+     * Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The
+     * names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with
+     * the job name are truncated at 40 characters.
      * </p>
      * 
      * @return A name for the recommendation job. The name must be unique within the Amazon Web Services Region and
-     *         within your Amazon Web Services account.
+     *         within your Amazon Web Services account. The job name is passed down to the resources created by the
+     *         recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and
+     *         compilation) that are prefixed with the job name are truncated at 40 characters.
      */
 
     public String getJobName() {
@@ -114,12 +124,16 @@ public class CreateInferenceRecommendationsJobRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your
-     * Amazon Web Services account.
+     * Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The
+     * names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with
+     * the job name are truncated at 40 characters.
      * </p>
      * 
      * @param jobName
      *        A name for the recommendation job. The name must be unique within the Amazon Web Services Region and
-     *        within your Amazon Web Services account.
+     *        within your Amazon Web Services account. The job name is passed down to the resources created by the
+     *        recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and
+     *        compilation) that are prefixed with the job name are truncated at 40 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

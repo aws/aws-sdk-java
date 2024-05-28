@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,9 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      */
     private String text;
     /**
@@ -45,9 +48,14 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      * 
      * @param text
-     *        Describes the recommended steps to take to remediate an issue identified in a finding.
+     *        Describes the recommended steps to take to remediate an issue identified in a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 512 length.
      */
 
     public void setText(String text) {
@@ -58,8 +66,13 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      * 
-     * @return Describes the recommended steps to take to remediate an issue identified in a finding.
+     * @return Describes the recommended steps to take to remediate an issue identified in a finding.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 512 length.
      */
 
     public String getText() {
@@ -70,9 +83,14 @@ public class Recommendation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Describes the recommended steps to take to remediate an issue identified in a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      * 
      * @param text
-     *        Describes the recommended steps to take to remediate an issue identified in a finding.
+     *        Describes the recommended steps to take to remediate an issue identified in a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 512 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

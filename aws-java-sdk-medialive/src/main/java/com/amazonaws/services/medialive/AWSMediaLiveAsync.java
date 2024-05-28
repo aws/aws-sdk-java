@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -269,6 +269,142 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler);
 
     /**
+     * Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms on targeted resource types.
+     * 
+     * @param createCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateRequest
+     * @return A Java Future containing the result of the CreateCloudWatchAlarmTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.CreateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCloudWatchAlarmTemplateResult> createCloudWatchAlarmTemplateAsync(
+            CreateCloudWatchAlarmTemplateRequest createCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms on targeted resource types.
+     * 
+     * @param createCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCloudWatchAlarmTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.CreateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCloudWatchAlarmTemplateResult> createCloudWatchAlarmTemplateAsync(
+            CreateCloudWatchAlarmTemplateRequest createCloudWatchAlarmTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCloudWatchAlarmTemplateRequest, CreateCloudWatchAlarmTemplateResult> asyncHandler);
+
+    /**
+     * Creates a cloudwatch alarm template group to group your cloudwatch alarm templates and to attach to signal maps
+     * for dynamically creating alarms.
+     * 
+     * @param createCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateGroupRequest
+     * @return A Java Future containing the result of the CreateCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.CreateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCloudWatchAlarmTemplateGroupResult> createCloudWatchAlarmTemplateGroupAsync(
+            CreateCloudWatchAlarmTemplateGroupRequest createCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Creates a cloudwatch alarm template group to group your cloudwatch alarm templates and to attach to signal maps
+     * for dynamically creating alarms.
+     * 
+     * @param createCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.CreateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCloudWatchAlarmTemplateGroupResult> createCloudWatchAlarmTemplateGroupAsync(
+            CreateCloudWatchAlarmTemplateGroupRequest createCloudWatchAlarmTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCloudWatchAlarmTemplateGroupRequest, CreateCloudWatchAlarmTemplateGroupResult> asyncHandler);
+
+    /**
+     * Creates an eventbridge rule template to monitor events and send notifications to your targeted resources.
+     * 
+     * @param createEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateRequest
+     * @return A Java Future containing the result of the CreateEventBridgeRuleTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.CreateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventBridgeRuleTemplateResult> createEventBridgeRuleTemplateAsync(
+            CreateEventBridgeRuleTemplateRequest createEventBridgeRuleTemplateRequest);
+
+    /**
+     * Creates an eventbridge rule template to monitor events and send notifications to your targeted resources.
+     * 
+     * @param createEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEventBridgeRuleTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.CreateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventBridgeRuleTemplateResult> createEventBridgeRuleTemplateAsync(
+            CreateEventBridgeRuleTemplateRequest createEventBridgeRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEventBridgeRuleTemplateRequest, CreateEventBridgeRuleTemplateResult> asyncHandler);
+
+    /**
+     * Creates an eventbridge rule template group to group your eventbridge rule templates and to attach to signal maps
+     * for dynamically creating notification rules.
+     * 
+     * @param createEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateGroupRequest
+     * @return A Java Future containing the result of the CreateEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.CreateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventBridgeRuleTemplateGroupResult> createEventBridgeRuleTemplateGroupAsync(
+            CreateEventBridgeRuleTemplateGroupRequest createEventBridgeRuleTemplateGroupRequest);
+
+    /**
+     * Creates an eventbridge rule template group to group your eventbridge rule templates and to attach to signal maps
+     * for dynamically creating notification rules.
+     * 
+     * @param createEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.CreateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventBridgeRuleTemplateGroupResult> createEventBridgeRuleTemplateGroupAsync(
+            CreateEventBridgeRuleTemplateGroupRequest createEventBridgeRuleTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEventBridgeRuleTemplateGroupRequest, CreateEventBridgeRuleTemplateGroupResult> asyncHandler);
+
+    /**
      * Create an input
      * 
      * @param createInputRequest
@@ -414,6 +550,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<CreatePartnerInputRequest, CreatePartnerInputResult> asyncHandler);
 
     /**
+     * Initiates the creation of a new signal map. Will discover a new mediaResourceMap based on the provided
+     * discoveryEntryPointArn.
+     * 
+     * @param createSignalMapRequest
+     *        Placeholder documentation for CreateSignalMapRequest
+     * @return A Java Future containing the result of the CreateSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsync.CreateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSignalMapResult> createSignalMapAsync(CreateSignalMapRequest createSignalMapRequest);
+
+    /**
+     * Initiates the creation of a new signal map. Will discover a new mediaResourceMap based on the provided
+     * discoveryEntryPointArn.
+     * 
+     * @param createSignalMapRequest
+     *        Placeholder documentation for CreateSignalMapRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.CreateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSignalMapResult> createSignalMapAsync(CreateSignalMapRequest createSignalMapRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSignalMapRequest, CreateSignalMapResult> asyncHandler);
+
+    /**
      * Create tags for a resource
      * 
      * @param createTagsRequest
@@ -470,6 +637,142 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest deleteChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteChannelRequest, DeleteChannelResult> asyncHandler);
+
+    /**
+     * Deletes a cloudwatch alarm template.
+     * 
+     * @param deleteCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateRequest
+     * @return A Java Future containing the result of the DeleteCloudWatchAlarmTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DeleteCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateResult> deleteCloudWatchAlarmTemplateAsync(
+            DeleteCloudWatchAlarmTemplateRequest deleteCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Deletes a cloudwatch alarm template.
+     * 
+     * @param deleteCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCloudWatchAlarmTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateResult> deleteCloudWatchAlarmTemplateAsync(
+            DeleteCloudWatchAlarmTemplateRequest deleteCloudWatchAlarmTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCloudWatchAlarmTemplateRequest, DeleteCloudWatchAlarmTemplateResult> asyncHandler);
+
+    /**
+     * Deletes a cloudwatch alarm template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateGroupRequest
+     * @return A Java Future containing the result of the DeleteCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DeleteCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateGroupResult> deleteCloudWatchAlarmTemplateGroupAsync(
+            DeleteCloudWatchAlarmTemplateGroupRequest deleteCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Deletes a cloudwatch alarm template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateGroupResult> deleteCloudWatchAlarmTemplateGroupAsync(
+            DeleteCloudWatchAlarmTemplateGroupRequest deleteCloudWatchAlarmTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCloudWatchAlarmTemplateGroupRequest, DeleteCloudWatchAlarmTemplateGroupResult> asyncHandler);
+
+    /**
+     * Deletes an eventbridge rule template.
+     * 
+     * @param deleteEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateRequest
+     * @return A Java Future containing the result of the DeleteEventBridgeRuleTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DeleteEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventBridgeRuleTemplateResult> deleteEventBridgeRuleTemplateAsync(
+            DeleteEventBridgeRuleTemplateRequest deleteEventBridgeRuleTemplateRequest);
+
+    /**
+     * Deletes an eventbridge rule template.
+     * 
+     * @param deleteEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventBridgeRuleTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventBridgeRuleTemplateResult> deleteEventBridgeRuleTemplateAsync(
+            DeleteEventBridgeRuleTemplateRequest deleteEventBridgeRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventBridgeRuleTemplateRequest, DeleteEventBridgeRuleTemplateResult> asyncHandler);
+
+    /**
+     * Deletes an eventbridge rule template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateGroupRequest
+     * @return A Java Future containing the result of the DeleteEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DeleteEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventBridgeRuleTemplateGroupResult> deleteEventBridgeRuleTemplateGroupAsync(
+            DeleteEventBridgeRuleTemplateGroupRequest deleteEventBridgeRuleTemplateGroupRequest);
+
+    /**
+     * Deletes an eventbridge rule template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventBridgeRuleTemplateGroupResult> deleteEventBridgeRuleTemplateGroupAsync(
+            DeleteEventBridgeRuleTemplateGroupRequest deleteEventBridgeRuleTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventBridgeRuleTemplateGroupRequest, DeleteEventBridgeRuleTemplateGroupResult> asyncHandler);
 
     /**
      * Deletes the input end point
@@ -646,6 +949,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResult> asyncHandler);
 
     /**
+     * Deletes the specified signal map.
+     * 
+     * @param deleteSignalMapRequest
+     *        Placeholder documentation for DeleteSignalMapRequest
+     * @return A Java Future containing the result of the DeleteSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsync.DeleteSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSignalMapResult> deleteSignalMapAsync(DeleteSignalMapRequest deleteSignalMapRequest);
+
+    /**
+     * Deletes the specified signal map.
+     * 
+     * @param deleteSignalMapRequest
+     *        Placeholder documentation for DeleteSignalMapRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSignalMapResult> deleteSignalMapAsync(DeleteSignalMapRequest deleteSignalMapRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSignalMapRequest, DeleteSignalMapResult> asyncHandler);
+
+    /**
      * Removes tags for a resource
      * 
      * @param deleteTagsRequest
@@ -673,6 +1005,39 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * Describe account configuration
+     * 
+     * @param describeAccountConfigurationRequest
+     *        Placeholder documentation for DescribeAccountConfigurationRequest
+     * @return A Java Future containing the result of the DescribeAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DescribeAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(
+            DescribeAccountConfigurationRequest describeAccountConfigurationRequest);
+
+    /**
+     * Describe account configuration
+     * 
+     * @param describeAccountConfigurationRequest
+     *        Placeholder documentation for DescribeAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(
+            DescribeAccountConfigurationRequest describeAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountConfigurationRequest, DescribeAccountConfigurationResult> asyncHandler);
 
     /**
      * Gets details about a channel
@@ -971,6 +1336,192 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DescribeScheduleRequest, DescribeScheduleResult> asyncHandler);
 
     /**
+     * Describe the latest thumbnails data.
+     * 
+     * @param describeThumbnailsRequest
+     *        Placeholder documentation for DescribeThumbnailsRequest
+     * @return A Java Future containing the result of the DescribeThumbnails operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeThumbnails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(DescribeThumbnailsRequest describeThumbnailsRequest);
+
+    /**
+     * Describe the latest thumbnails data.
+     * 
+     * @param describeThumbnailsRequest
+     *        Placeholder documentation for DescribeThumbnailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThumbnails operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeThumbnails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(DescribeThumbnailsRequest describeThumbnailsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThumbnailsRequest, DescribeThumbnailsResult> asyncHandler);
+
+    /**
+     * Retrieves the specified cloudwatch alarm template.
+     * 
+     * @param getCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateRequest
+     * @return A Java Future containing the result of the GetCloudWatchAlarmTemplate operation returned by the service.
+     * @sample AWSMediaLiveAsync.GetCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCloudWatchAlarmTemplateResult> getCloudWatchAlarmTemplateAsync(
+            GetCloudWatchAlarmTemplateRequest getCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Retrieves the specified cloudwatch alarm template.
+     * 
+     * @param getCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCloudWatchAlarmTemplate operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.GetCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCloudWatchAlarmTemplateResult> getCloudWatchAlarmTemplateAsync(
+            GetCloudWatchAlarmTemplateRequest getCloudWatchAlarmTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCloudWatchAlarmTemplateRequest, GetCloudWatchAlarmTemplateResult> asyncHandler);
+
+    /**
+     * Retrieves the specified cloudwatch alarm template group.
+     * 
+     * @param getCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateGroupRequest
+     * @return A Java Future containing the result of the GetCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.GetCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCloudWatchAlarmTemplateGroupResult> getCloudWatchAlarmTemplateGroupAsync(
+            GetCloudWatchAlarmTemplateGroupRequest getCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Retrieves the specified cloudwatch alarm template group.
+     * 
+     * @param getCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.GetCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCloudWatchAlarmTemplateGroupResult> getCloudWatchAlarmTemplateGroupAsync(
+            GetCloudWatchAlarmTemplateGroupRequest getCloudWatchAlarmTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCloudWatchAlarmTemplateGroupRequest, GetCloudWatchAlarmTemplateGroupResult> asyncHandler);
+
+    /**
+     * Retrieves the specified eventbridge rule template.
+     * 
+     * @param getEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateRequest
+     * @return A Java Future containing the result of the GetEventBridgeRuleTemplate operation returned by the service.
+     * @sample AWSMediaLiveAsync.GetEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventBridgeRuleTemplateResult> getEventBridgeRuleTemplateAsync(
+            GetEventBridgeRuleTemplateRequest getEventBridgeRuleTemplateRequest);
+
+    /**
+     * Retrieves the specified eventbridge rule template.
+     * 
+     * @param getEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventBridgeRuleTemplate operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.GetEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventBridgeRuleTemplateResult> getEventBridgeRuleTemplateAsync(
+            GetEventBridgeRuleTemplateRequest getEventBridgeRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventBridgeRuleTemplateRequest, GetEventBridgeRuleTemplateResult> asyncHandler);
+
+    /**
+     * Retrieves the specified eventbridge rule template group.
+     * 
+     * @param getEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateGroupRequest
+     * @return A Java Future containing the result of the GetEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.GetEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventBridgeRuleTemplateGroupResult> getEventBridgeRuleTemplateGroupAsync(
+            GetEventBridgeRuleTemplateGroupRequest getEventBridgeRuleTemplateGroupRequest);
+
+    /**
+     * Retrieves the specified eventbridge rule template group.
+     * 
+     * @param getEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.GetEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventBridgeRuleTemplateGroupResult> getEventBridgeRuleTemplateGroupAsync(
+            GetEventBridgeRuleTemplateGroupRequest getEventBridgeRuleTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventBridgeRuleTemplateGroupRequest, GetEventBridgeRuleTemplateGroupResult> asyncHandler);
+
+    /**
+     * Retrieves the specified signal map.
+     * 
+     * @param getSignalMapRequest
+     *        Placeholder documentation for GetSignalMapRequest
+     * @return A Java Future containing the result of the GetSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsync.GetSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSignalMapResult> getSignalMapAsync(GetSignalMapRequest getSignalMapRequest);
+
+    /**
+     * Retrieves the specified signal map.
+     * 
+     * @param getSignalMapRequest
+     *        Placeholder documentation for GetSignalMapRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.GetSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSignalMapResult> getSignalMapAsync(GetSignalMapRequest getSignalMapRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSignalMapRequest, GetSignalMapResult> asyncHandler);
+
+    /**
      * Produces list of channels that have been created
      * 
      * @param listChannelsRequest
@@ -998,6 +1549,138 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * Lists cloudwatch alarm template groups.
+     * 
+     * @param listCloudWatchAlarmTemplateGroupsRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplateGroupsRequest
+     * @return A Java Future containing the result of the ListCloudWatchAlarmTemplateGroups operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.ListCloudWatchAlarmTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCloudWatchAlarmTemplateGroupsResult> listCloudWatchAlarmTemplateGroupsAsync(
+            ListCloudWatchAlarmTemplateGroupsRequest listCloudWatchAlarmTemplateGroupsRequest);
+
+    /**
+     * Lists cloudwatch alarm template groups.
+     * 
+     * @param listCloudWatchAlarmTemplateGroupsRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplateGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCloudWatchAlarmTemplateGroups operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.ListCloudWatchAlarmTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCloudWatchAlarmTemplateGroupsResult> listCloudWatchAlarmTemplateGroupsAsync(
+            ListCloudWatchAlarmTemplateGroupsRequest listCloudWatchAlarmTemplateGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCloudWatchAlarmTemplateGroupsRequest, ListCloudWatchAlarmTemplateGroupsResult> asyncHandler);
+
+    /**
+     * Lists cloudwatch alarm templates.
+     * 
+     * @param listCloudWatchAlarmTemplatesRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplatesRequest
+     * @return A Java Future containing the result of the ListCloudWatchAlarmTemplates operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.ListCloudWatchAlarmTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCloudWatchAlarmTemplatesResult> listCloudWatchAlarmTemplatesAsync(
+            ListCloudWatchAlarmTemplatesRequest listCloudWatchAlarmTemplatesRequest);
+
+    /**
+     * Lists cloudwatch alarm templates.
+     * 
+     * @param listCloudWatchAlarmTemplatesRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCloudWatchAlarmTemplates operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.ListCloudWatchAlarmTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCloudWatchAlarmTemplatesResult> listCloudWatchAlarmTemplatesAsync(
+            ListCloudWatchAlarmTemplatesRequest listCloudWatchAlarmTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCloudWatchAlarmTemplatesRequest, ListCloudWatchAlarmTemplatesResult> asyncHandler);
+
+    /**
+     * Lists eventbridge rule template groups.
+     * 
+     * @param listEventBridgeRuleTemplateGroupsRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplateGroupsRequest
+     * @return A Java Future containing the result of the ListEventBridgeRuleTemplateGroups operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.ListEventBridgeRuleTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventBridgeRuleTemplateGroupsResult> listEventBridgeRuleTemplateGroupsAsync(
+            ListEventBridgeRuleTemplateGroupsRequest listEventBridgeRuleTemplateGroupsRequest);
+
+    /**
+     * Lists eventbridge rule template groups.
+     * 
+     * @param listEventBridgeRuleTemplateGroupsRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplateGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEventBridgeRuleTemplateGroups operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.ListEventBridgeRuleTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventBridgeRuleTemplateGroupsResult> listEventBridgeRuleTemplateGroupsAsync(
+            ListEventBridgeRuleTemplateGroupsRequest listEventBridgeRuleTemplateGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEventBridgeRuleTemplateGroupsRequest, ListEventBridgeRuleTemplateGroupsResult> asyncHandler);
+
+    /**
+     * Lists eventbridge rule templates.
+     * 
+     * @param listEventBridgeRuleTemplatesRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplatesRequest
+     * @return A Java Future containing the result of the ListEventBridgeRuleTemplates operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.ListEventBridgeRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventBridgeRuleTemplatesResult> listEventBridgeRuleTemplatesAsync(
+            ListEventBridgeRuleTemplatesRequest listEventBridgeRuleTemplatesRequest);
+
+    /**
+     * Lists eventbridge rule templates.
+     * 
+     * @param listEventBridgeRuleTemplatesRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEventBridgeRuleTemplates operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.ListEventBridgeRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventBridgeRuleTemplatesResult> listEventBridgeRuleTemplatesAsync(
+            ListEventBridgeRuleTemplatesRequest listEventBridgeRuleTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEventBridgeRuleTemplatesRequest, ListEventBridgeRuleTemplatesResult> asyncHandler);
 
     /**
      * List input devices that are currently being transferred. List input devices that you are transferring from your
@@ -1234,6 +1917,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<ListReservationsRequest, ListReservationsResult> asyncHandler);
 
     /**
+     * Lists signal maps.
+     * 
+     * @param listSignalMapsRequest
+     *        Placeholder documentation for ListSignalMapsRequest
+     * @return A Java Future containing the result of the ListSignalMaps operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListSignalMaps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSignalMapsResult> listSignalMapsAsync(ListSignalMapsRequest listSignalMapsRequest);
+
+    /**
+     * Lists signal maps.
+     * 
+     * @param listSignalMapsRequest
+     *        Placeholder documentation for ListSignalMapsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSignalMaps operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListSignalMaps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSignalMapsResult> listSignalMapsAsync(ListSignalMapsRequest listSignalMapsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSignalMapsRequest, ListSignalMapsResult> asyncHandler);
+
+    /**
      * Produces list of tags that have been created for a resource
      * 
      * @param listTagsForResourceRequest
@@ -1354,6 +2066,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<RejectInputDeviceTransferRequest, RejectInputDeviceTransferResult> asyncHandler);
 
     /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @return A Java Future containing the result of the RestartChannelPipelines operation returned by the service.
+     * @sample AWSMediaLiveAsync.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest restartChannelPipelinesRequest);
+
+    /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestartChannelPipelines operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest restartChannelPipelinesRequest,
+            com.amazonaws.handlers.AsyncHandler<RestartChannelPipelinesRequest, RestartChannelPipelinesResult> asyncHandler);
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest
@@ -1381,6 +2122,70 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest startChannelRequest,
             com.amazonaws.handlers.AsyncHandler<StartChannelRequest, StartChannelResult> asyncHandler);
+
+    /**
+     * Initiates a deployment to delete the monitor of the specified signal map.
+     * 
+     * @param startDeleteMonitorDeploymentRequest
+     *        Placeholder documentation for StartDeleteMonitorDeploymentRequest
+     * @return A Java Future containing the result of the StartDeleteMonitorDeployment operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.StartDeleteMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDeleteMonitorDeploymentResult> startDeleteMonitorDeploymentAsync(
+            StartDeleteMonitorDeploymentRequest startDeleteMonitorDeploymentRequest);
+
+    /**
+     * Initiates a deployment to delete the monitor of the specified signal map.
+     * 
+     * @param startDeleteMonitorDeploymentRequest
+     *        Placeholder documentation for StartDeleteMonitorDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDeleteMonitorDeployment operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.StartDeleteMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDeleteMonitorDeploymentResult> startDeleteMonitorDeploymentAsync(
+            StartDeleteMonitorDeploymentRequest startDeleteMonitorDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDeleteMonitorDeploymentRequest, StartDeleteMonitorDeploymentResult> asyncHandler);
+
+    /**
+     * Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is
+     * attached to a MediaLive input; MediaLive starts the device when the channel starts.)
+     * 
+     * @param startInputDeviceRequest
+     *        Placeholder documentation for StartInputDeviceRequest
+     * @return A Java Future containing the result of the StartInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.StartInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(StartInputDeviceRequest startInputDeviceRequest);
+
+    /**
+     * Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is
+     * attached to a MediaLive input; MediaLive starts the device when the channel starts.)
+     * 
+     * @param startInputDeviceRequest
+     *        Placeholder documentation for StartInputDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StartInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(StartInputDeviceRequest startInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<StartInputDeviceRequest, StartInputDeviceResult> asyncHandler);
 
     /**
      * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
@@ -1426,6 +2231,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<StartInputDeviceMaintenanceWindowRequest, StartInputDeviceMaintenanceWindowResult> asyncHandler);
 
     /**
+     * Initiates a deployment to deploy the latest monitor of the specified signal map.
+     * 
+     * @param startMonitorDeploymentRequest
+     *        Placeholder documentation for StartMonitorDeploymentRequest
+     * @return A Java Future containing the result of the StartMonitorDeployment operation returned by the service.
+     * @sample AWSMediaLiveAsync.StartMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMonitorDeploymentResult> startMonitorDeploymentAsync(StartMonitorDeploymentRequest startMonitorDeploymentRequest);
+
+    /**
+     * Initiates a deployment to deploy the latest monitor of the specified signal map.
+     * 
+     * @param startMonitorDeploymentRequest
+     *        Placeholder documentation for StartMonitorDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMonitorDeployment operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StartMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMonitorDeploymentResult> startMonitorDeploymentAsync(StartMonitorDeploymentRequest startMonitorDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMonitorDeploymentRequest, StartMonitorDeploymentResult> asyncHandler);
+
+    /**
      * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
      * channel.
      * 
@@ -1457,6 +2291,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<StartMultiplexRequest, StartMultiplexResult> asyncHandler);
 
     /**
+     * Initiates an update for the specified signal map. Will discover a new signal map if a changed
+     * discoveryEntryPointArn is provided.
+     * 
+     * @param startUpdateSignalMapRequest
+     *        Placeholder documentation for StartUpdateSignalMapRequest
+     * @return A Java Future containing the result of the StartUpdateSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsync.StartUpdateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartUpdateSignalMapResult> startUpdateSignalMapAsync(StartUpdateSignalMapRequest startUpdateSignalMapRequest);
+
+    /**
+     * Initiates an update for the specified signal map. Will discover a new signal map if a changed
+     * discoveryEntryPointArn is provided.
+     * 
+     * @param startUpdateSignalMapRequest
+     *        Placeholder documentation for StartUpdateSignalMapRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartUpdateSignalMap operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StartUpdateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartUpdateSignalMapResult> startUpdateSignalMapAsync(StartUpdateSignalMapRequest startUpdateSignalMapRequest,
+            com.amazonaws.handlers.AsyncHandler<StartUpdateSignalMapRequest, StartUpdateSignalMapResult> asyncHandler);
+
+    /**
      * Stops a running channel
      * 
      * @param stopChannelRequest
@@ -1484,6 +2349,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest stopChannelRequest,
             com.amazonaws.handlers.AsyncHandler<StopChannelRequest, StopChannelResult> asyncHandler);
+
+    /**
+     * Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached
+     * to a MediaLive input; MediaLive automatically stops the device when the channel stops.)
+     * 
+     * @param stopInputDeviceRequest
+     *        Placeholder documentation for StopInputDeviceRequest
+     * @return A Java Future containing the result of the StopInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.StopInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(StopInputDeviceRequest stopInputDeviceRequest);
+
+    /**
+     * Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached
+     * to a MediaLive input; MediaLive automatically stops the device when the channel stops.)
+     * 
+     * @param stopInputDeviceRequest
+     *        Placeholder documentation for StopInputDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StopInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(StopInputDeviceRequest stopInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<StopInputDeviceRequest, StopInputDeviceResult> asyncHandler);
 
     /**
      * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
@@ -1546,6 +2442,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<TransferInputDeviceRequest, TransferInputDeviceResult> asyncHandler);
 
     /**
+     * Update account configuration
+     * 
+     * @param updateAccountConfigurationRequest
+     *        List of account configuration parameters to update.
+     * @return A Java Future containing the result of the UpdateAccountConfiguration operation returned by the service.
+     * @sample AWSMediaLiveAsync.UpdateAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(
+            UpdateAccountConfigurationRequest updateAccountConfigurationRequest);
+
+    /**
+     * Update account configuration
+     * 
+     * @param updateAccountConfigurationRequest
+     *        List of account configuration parameters to update.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccountConfiguration operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(
+            UpdateAccountConfigurationRequest updateAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountConfigurationRequest, UpdateAccountConfigurationResult> asyncHandler);
+
+    /**
      * Updates a channel.
      * 
      * @param updateChannelRequest
@@ -1602,6 +2529,138 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<UpdateChannelClassResult> updateChannelClassAsync(UpdateChannelClassRequest updateChannelClassRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateChannelClassRequest, UpdateChannelClassResult> asyncHandler);
+
+    /**
+     * Updates the specified cloudwatch alarm template.
+     * 
+     * @param updateCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateRequest
+     * @return A Java Future containing the result of the UpdateCloudWatchAlarmTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.UpdateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateResult> updateCloudWatchAlarmTemplateAsync(
+            UpdateCloudWatchAlarmTemplateRequest updateCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Updates the specified cloudwatch alarm template.
+     * 
+     * @param updateCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCloudWatchAlarmTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateResult> updateCloudWatchAlarmTemplateAsync(
+            UpdateCloudWatchAlarmTemplateRequest updateCloudWatchAlarmTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCloudWatchAlarmTemplateRequest, UpdateCloudWatchAlarmTemplateResult> asyncHandler);
+
+    /**
+     * Updates the specified cloudwatch alarm template group.
+     * 
+     * @param updateCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateGroupRequest
+     * @return A Java Future containing the result of the UpdateCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.UpdateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateGroupResult> updateCloudWatchAlarmTemplateGroupAsync(
+            UpdateCloudWatchAlarmTemplateGroupRequest updateCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Updates the specified cloudwatch alarm template group.
+     * 
+     * @param updateCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCloudWatchAlarmTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateGroupResult> updateCloudWatchAlarmTemplateGroupAsync(
+            UpdateCloudWatchAlarmTemplateGroupRequest updateCloudWatchAlarmTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCloudWatchAlarmTemplateGroupRequest, UpdateCloudWatchAlarmTemplateGroupResult> asyncHandler);
+
+    /**
+     * Updates the specified eventbridge rule template.
+     * 
+     * @param updateEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateRequest
+     * @return A Java Future containing the result of the UpdateEventBridgeRuleTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.UpdateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEventBridgeRuleTemplateResult> updateEventBridgeRuleTemplateAsync(
+            UpdateEventBridgeRuleTemplateRequest updateEventBridgeRuleTemplateRequest);
+
+    /**
+     * Updates the specified eventbridge rule template.
+     * 
+     * @param updateEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEventBridgeRuleTemplate operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEventBridgeRuleTemplateResult> updateEventBridgeRuleTemplateAsync(
+            UpdateEventBridgeRuleTemplateRequest updateEventBridgeRuleTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEventBridgeRuleTemplateRequest, UpdateEventBridgeRuleTemplateResult> asyncHandler);
+
+    /**
+     * Updates the specified eventbridge rule template group.
+     * 
+     * @param updateEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateGroupRequest
+     * @return A Java Future containing the result of the UpdateEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.UpdateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEventBridgeRuleTemplateGroupResult> updateEventBridgeRuleTemplateGroupAsync(
+            UpdateEventBridgeRuleTemplateGroupRequest updateEventBridgeRuleTemplateGroupRequest);
+
+    /**
+     * Updates the specified eventbridge rule template group.
+     * 
+     * @param updateEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEventBridgeRuleTemplateGroup operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEventBridgeRuleTemplateGroupResult> updateEventBridgeRuleTemplateGroupAsync(
+            UpdateEventBridgeRuleTemplateGroupRequest updateEventBridgeRuleTemplateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEventBridgeRuleTemplateGroupRequest, UpdateEventBridgeRuleTemplateGroupResult> asyncHandler);
 
     /**
      * Updates an input.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,21 @@ public class DescribeAssetModelResultJsonUnmarshaller implements Unmarshaller<De
                 if (context.testExpression("assetModelStatus", targetDepth)) {
                     context.nextToken();
                     describeAssetModelResult.setAssetModelStatus(AssetModelStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("assetModelType", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelResult.setAssetModelType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelSummaries", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelResult.setAssetModelCompositeModelSummaries(new ListUnmarshaller<AssetModelCompositeModelSummary>(
+                            AssetModelCompositeModelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("assetModelExternalId", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelResult.setAssetModelExternalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

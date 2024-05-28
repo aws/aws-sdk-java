@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,12 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to
- * Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls.
- * When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text
- * in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white
- * text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies
- * to all of your output captions text.
+ * Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green, Blue,
+ * or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave blank,
+ * your font color setting only applies to white text in your input captions. For example, if your font color setting is
+ * Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you
+ * choose ALL_TEXT, your font color setting applies to all of your output captions text.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BurninSubtitleApplyFontColor {

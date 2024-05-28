@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class CreateTokenRequestMarshaller {
             .marshallLocationName("scope").build();
     private static final MarshallingInfo<String> REDIRECTURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("redirectUri").build();
+    private static final MarshallingInfo<String> CODEVERIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeVerifier").build();
 
     private static final CreateTokenRequestMarshaller instance = new CreateTokenRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateTokenRequestMarshaller {
             protocolMarshaller.marshall(createTokenRequest.getRefreshToken(), REFRESHTOKEN_BINDING);
             protocolMarshaller.marshall(createTokenRequest.getScope(), SCOPE_BINDING);
             protocolMarshaller.marshall(createTokenRequest.getRedirectUri(), REDIRECTURI_BINDING);
+            protocolMarshaller.marshall(createTokenRequest.getCodeVerifier(), CODEVERIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

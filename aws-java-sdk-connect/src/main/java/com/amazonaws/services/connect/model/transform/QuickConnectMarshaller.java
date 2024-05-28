@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,10 @@ public class QuickConnectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuickConnectConfig").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTMODIFIEDREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedRegion").build();
 
     private static final QuickConnectMarshaller instance = new QuickConnectMarshaller();
 
@@ -64,6 +68,8 @@ public class QuickConnectMarshaller {
             protocolMarshaller.marshall(quickConnect.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(quickConnect.getQuickConnectConfig(), QUICKCONNECTCONFIG_BINDING);
             protocolMarshaller.marshall(quickConnect.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(quickConnect.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(quickConnect.getLastModifiedRegion(), LASTMODIFIEDREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

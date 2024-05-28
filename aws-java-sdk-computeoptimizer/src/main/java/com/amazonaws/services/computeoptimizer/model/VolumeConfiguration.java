@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Integer volumeBurstThroughput;
+    /**
+     * <p>
+     * Contains the image used to boot the instance during launch.
+     * </p>
+     */
+    private Boolean rootVolume;
 
     /**
      * <p>
@@ -338,6 +344,58 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Contains the image used to boot the instance during launch.
+     * </p>
+     * 
+     * @param rootVolume
+     *        Contains the image used to boot the instance during launch.
+     */
+
+    public void setRootVolume(Boolean rootVolume) {
+        this.rootVolume = rootVolume;
+    }
+
+    /**
+     * <p>
+     * Contains the image used to boot the instance during launch.
+     * </p>
+     * 
+     * @return Contains the image used to boot the instance during launch.
+     */
+
+    public Boolean getRootVolume() {
+        return this.rootVolume;
+    }
+
+    /**
+     * <p>
+     * Contains the image used to boot the instance during launch.
+     * </p>
+     * 
+     * @param rootVolume
+     *        Contains the image used to boot the instance during launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeConfiguration withRootVolume(Boolean rootVolume) {
+        setRootVolume(rootVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the image used to boot the instance during launch.
+     * </p>
+     * 
+     * @return Contains the image used to boot the instance during launch.
+     */
+
+    public Boolean isRootVolume() {
+        return this.rootVolume;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -360,7 +418,9 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
         if (getVolumeBaselineThroughput() != null)
             sb.append("VolumeBaselineThroughput: ").append(getVolumeBaselineThroughput()).append(",");
         if (getVolumeBurstThroughput() != null)
-            sb.append("VolumeBurstThroughput: ").append(getVolumeBurstThroughput());
+            sb.append("VolumeBurstThroughput: ").append(getVolumeBurstThroughput()).append(",");
+        if (getRootVolume() != null)
+            sb.append("RootVolume: ").append(getRootVolume());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +459,10 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getVolumeBurstThroughput() != null && other.getVolumeBurstThroughput().equals(this.getVolumeBurstThroughput()) == false)
             return false;
+        if (other.getRootVolume() == null ^ this.getRootVolume() == null)
+            return false;
+        if (other.getRootVolume() != null && other.getRootVolume().equals(this.getRootVolume()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +477,7 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getVolumeBurstIOPS() == null) ? 0 : getVolumeBurstIOPS().hashCode());
         hashCode = prime * hashCode + ((getVolumeBaselineThroughput() == null) ? 0 : getVolumeBaselineThroughput().hashCode());
         hashCode = prime * hashCode + ((getVolumeBurstThroughput() == null) ? 0 : getVolumeBurstThroughput().hashCode());
+        hashCode = prime * hashCode + ((getRootVolume() == null) ? 0 : getRootVolume().hashCode());
         return hashCode;
     }
 

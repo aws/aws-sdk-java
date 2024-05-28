@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String action;
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     */
+    private java.util.List<Association> associations;
     /**
      * <p>
      * The client token associated with the request.
@@ -137,6 +143,76 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateQuantumTaskRequest withAction(String action) {
         setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * 
+     * @return The list of Amazon Braket resources associated with the quantum task.
+     */
+
+    public java.util.List<Association> getAssociations() {
+        return associations;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the quantum task.
+     */
+
+    public void setAssociations(java.util.Collection<Association> associations) {
+        if (associations == null) {
+            this.associations = null;
+            return;
+        }
+
+        this.associations = new java.util.ArrayList<Association>(associations);
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociations(java.util.Collection)} or {@link #withAssociations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the quantum task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQuantumTaskRequest withAssociations(Association... associations) {
+        if (this.associations == null) {
+            setAssociations(new java.util.ArrayList<Association>(associations.length));
+        }
+        for (Association ele : associations) {
+            this.associations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the quantum task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQuantumTaskRequest withAssociations(java.util.Collection<Association> associations) {
+        setAssociations(associations);
         return this;
     }
 
@@ -522,6 +598,8 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
+        if (getAssociations() != null)
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDeviceArn() != null)
@@ -555,6 +633,10 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
+        if (other.getAssociations() == null ^ this.getAssociations() == null)
+            return false;
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
@@ -597,6 +679,7 @@ public class CreateQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceParameters() == null) ? 0 : getDeviceParameters().hashCode());

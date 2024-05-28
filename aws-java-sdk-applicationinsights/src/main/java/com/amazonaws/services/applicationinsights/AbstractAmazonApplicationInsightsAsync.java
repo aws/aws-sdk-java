@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.applicationinsights.model.*;
 public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplicationInsights implements AmazonApplicationInsightsAsync {
 
     protected AbstractAmazonApplicationInsightsAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddWorkloadResult> addWorkloadAsync(AddWorkloadRequest request) {
+
+        return addWorkloadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddWorkloadResult> addWorkloadAsync(AddWorkloadRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddWorkloadRequest, AddWorkloadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -212,6 +225,19 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWorkloadResult> describeWorkloadAsync(DescribeWorkloadRequest request) {
+
+        return describeWorkloadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorkloadResult> describeWorkloadAsync(DescribeWorkloadRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkloadRequest, DescribeWorkloadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request) {
 
         return listApplicationsAsync(request, null);
@@ -303,6 +329,32 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkloadsResult> listWorkloadsAsync(ListWorkloadsRequest request) {
+
+        return listWorkloadsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkloadsResult> listWorkloadsAsync(ListWorkloadsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkloadsRequest, ListWorkloadsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveWorkloadResult> removeWorkloadAsync(RemoveWorkloadRequest request) {
+
+        return removeWorkloadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveWorkloadResult> removeWorkloadAsync(RemoveWorkloadRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveWorkloadRequest, RemoveWorkloadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -376,6 +428,32 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     @Override
     public java.util.concurrent.Future<UpdateLogPatternResult> updateLogPatternAsync(UpdateLogPatternRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLogPatternRequest, UpdateLogPatternResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProblemResult> updateProblemAsync(UpdateProblemRequest request) {
+
+        return updateProblemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProblemResult> updateProblemAsync(UpdateProblemRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProblemRequest, UpdateProblemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkloadResult> updateWorkloadAsync(UpdateWorkloadRequest request) {
+
+        return updateWorkloadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkloadResult> updateWorkloadAsync(UpdateWorkloadRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkloadRequest, UpdateWorkloadResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

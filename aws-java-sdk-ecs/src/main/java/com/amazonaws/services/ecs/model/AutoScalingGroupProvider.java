@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      */
     private String autoScalingGroupArn;
@@ -43,7 +43,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines
-     * whether the Auto Scaling group has managed termination protection. The default is disabled.
+     * whether the Auto Scaling group has managed termination protection. The default is off.
      * </p>
      * <important>
      * <p>
@@ -52,27 +52,33 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * </p>
      * </important>
      * <p>
-     * When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
-     * group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance
-     * in the Auto Scaling group must have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
+     * When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group
+     * that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in
+     * the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see
+     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">
+     * Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
-     * the Auto Scaling group scales in.
+     * When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the
+     * Auto Scaling group scales in.
      * </p>
      */
     private String managedTerminationProtection;
+    /**
+     * <p>
+     * The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     * manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.
+     * </p>
+     */
+    private String managedDraining;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      * 
      * @param autoScalingGroupArn
-     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      */
 
     public void setAutoScalingGroupArn(String autoScalingGroupArn) {
@@ -81,10 +87,10 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * @return The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      */
 
     public String getAutoScalingGroupArn() {
@@ -93,11 +99,11 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     * The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * </p>
      * 
      * @param autoScalingGroupArn
-     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group.
+     *        The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the Auto Scaling group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,7 +155,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines
-     * whether the Auto Scaling group has managed termination protection. The default is disabled.
+     * whether the Auto Scaling group has managed termination protection. The default is off.
      * </p>
      * <important>
      * <p>
@@ -158,21 +164,20 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * </p>
      * </important>
      * <p>
-     * When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
-     * group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance
-     * in the Auto Scaling group must have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
+     * When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group
+     * that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in
+     * the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see
+     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">
+     * Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
-     * the Auto Scaling group scales in.
+     * When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the
+     * Auto Scaling group scales in.
      * </p>
      * 
      * @param managedTerminationProtection
      *        The managed termination protection setting to use for the Auto Scaling group capacity provider. This
-     *        determines whether the Auto Scaling group has managed termination protection. The default is disabled.</p>
+     *        determines whether the Auto Scaling group has managed termination protection. The default is off.</p>
      *        <important>
      *        <p>
      *        When using managed termination protection, managed scaling must also be used otherwise managed termination
@@ -180,16 +185,16 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        </p>
      *        </important>
      *        <p>
-     *        When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto
-     *        Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group
-     *        and each instance in the Auto Scaling group must have instance protection from scale-in actions enabled as
-     *        well. For more information, see <a href=
+     *        When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
+     *        group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each
+     *        instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For
+     *        more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      *        >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
-     *        termination when the Auto Scaling group scales in.
+     *        When managed termination protection is off, your Amazon EC2 instances aren't protected from termination
+     *        when the Auto Scaling group scales in.
      * @see ManagedTerminationProtection
      */
 
@@ -200,7 +205,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines
-     * whether the Auto Scaling group has managed termination protection. The default is disabled.
+     * whether the Auto Scaling group has managed termination protection. The default is off.
      * </p>
      * <important>
      * <p>
@@ -209,37 +214,36 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * </p>
      * </important>
      * <p>
-     * When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
-     * group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance
-     * in the Auto Scaling group must have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
+     * When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group
+     * that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in
+     * the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see
+     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">
+     * Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
-     * the Auto Scaling group scales in.
+     * When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the
+     * Auto Scaling group scales in.
      * </p>
      * 
      * @return The managed termination protection setting to use for the Auto Scaling group capacity provider. This
-     *         determines whether the Auto Scaling group has managed termination protection. The default is
-     *         disabled.</p> <important>
+     *         determines whether the Auto Scaling group has managed termination protection. The default is off.</p>
+     *         <important>
      *         <p>
      *         When using managed termination protection, managed scaling must also be used otherwise managed
      *         termination protection doesn't work.
      *         </p>
      *         </important>
      *         <p>
-     *         When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto
+     *         When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto
      *         Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group
-     *         and each instance in the Auto Scaling group must have instance protection from scale-in actions enabled
-     *         as well. For more information, see <a href=
+     *         and each instance in the Auto Scaling group must have instance protection from scale-in actions on as
+     *         well. For more information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      *         >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *         </p>
      *         <p>
-     *         When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
-     *         termination when the Auto Scaling group scales in.
+     *         When managed termination protection is off, your Amazon EC2 instances aren't protected from termination
+     *         when the Auto Scaling group scales in.
      * @see ManagedTerminationProtection
      */
 
@@ -250,7 +254,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines
-     * whether the Auto Scaling group has managed termination protection. The default is disabled.
+     * whether the Auto Scaling group has managed termination protection. The default is off.
      * </p>
      * <important>
      * <p>
@@ -259,21 +263,20 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * </p>
      * </important>
      * <p>
-     * When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
-     * group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance
-     * in the Auto Scaling group must have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
+     * When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group
+     * that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in
+     * the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see
+     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">
+     * Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
-     * the Auto Scaling group scales in.
+     * When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the
+     * Auto Scaling group scales in.
      * </p>
      * 
      * @param managedTerminationProtection
      *        The managed termination protection setting to use for the Auto Scaling group capacity provider. This
-     *        determines whether the Auto Scaling group has managed termination protection. The default is disabled.</p>
+     *        determines whether the Auto Scaling group has managed termination protection. The default is off.</p>
      *        <important>
      *        <p>
      *        When using managed termination protection, managed scaling must also be used otherwise managed termination
@@ -281,16 +284,16 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        </p>
      *        </important>
      *        <p>
-     *        When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto
-     *        Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group
-     *        and each instance in the Auto Scaling group must have instance protection from scale-in actions enabled as
-     *        well. For more information, see <a href=
+     *        When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
+     *        group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each
+     *        instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For
+     *        more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      *        >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
-     *        termination when the Auto Scaling group scales in.
+     *        When managed termination protection is off, your Amazon EC2 instances aren't protected from termination
+     *        when the Auto Scaling group scales in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedTerminationProtection
      */
@@ -303,7 +306,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines
-     * whether the Auto Scaling group has managed termination protection. The default is disabled.
+     * whether the Auto Scaling group has managed termination protection. The default is off.
      * </p>
      * <important>
      * <p>
@@ -312,21 +315,20 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      * </p>
      * </important>
      * <p>
-     * When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
-     * group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance
-     * in the Auto Scaling group must have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
-     * >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
+     * When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling group
+     * that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each instance in
+     * the Auto Scaling group must have instance protection from scale-in actions on as well. For more information, see
+     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">
+     * Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * When managed termination protection is disabled, your Amazon EC2 instances aren't protected from termination when
-     * the Auto Scaling group scales in.
+     * When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the
+     * Auto Scaling group scales in.
      * </p>
      * 
      * @param managedTerminationProtection
      *        The managed termination protection setting to use for the Auto Scaling group capacity provider. This
-     *        determines whether the Auto Scaling group has managed termination protection. The default is disabled.</p>
+     *        determines whether the Auto Scaling group has managed termination protection. The default is off.</p>
      *        <important>
      *        <p>
      *        When using managed termination protection, managed scaling must also be used otherwise managed termination
@@ -334,22 +336,93 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
      *        </p>
      *        </important>
      *        <p>
-     *        When managed termination protection is enabled, Amazon ECS prevents the Amazon EC2 instances in an Auto
-     *        Scaling group that contain tasks from being terminated during a scale-in action. The Auto Scaling group
-     *        and each instance in the Auto Scaling group must have instance protection from scale-in actions enabled as
-     *        well. For more information, see <a href=
+     *        When managed termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an Auto Scaling
+     *        group that contain tasks from being terminated during a scale-in action. The Auto Scaling group and each
+     *        instance in the Auto Scaling group must have instance protection from scale-in actions on as well. For
+     *        more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
      *        >Instance Protection</a> in the <i>Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        When managed termination protection is disabled, your Amazon EC2 instances aren't protected from
-     *        termination when the Auto Scaling group scales in.
+     *        When managed termination protection is off, your Amazon EC2 instances aren't protected from termination
+     *        when the Auto Scaling group scales in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedTerminationProtection
      */
 
     public AutoScalingGroupProvider withManagedTerminationProtection(ManagedTerminationProtection managedTerminationProtection) {
         this.managedTerminationProtection = managedTerminationProtection.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     * manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.
+     * </p>
+     * 
+     * @param managedDraining
+     *        The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     *        manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity
+     *        provider.
+     * @see ManagedDraining
+     */
+
+    public void setManagedDraining(String managedDraining) {
+        this.managedDraining = managedDraining;
+    }
+
+    /**
+     * <p>
+     * The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     * manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.
+     * </p>
+     * 
+     * @return The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon
+     *         ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity
+     *         provider.
+     * @see ManagedDraining
+     */
+
+    public String getManagedDraining() {
+        return this.managedDraining;
+    }
+
+    /**
+     * <p>
+     * The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     * manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.
+     * </p>
+     * 
+     * @param managedDraining
+     *        The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     *        manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity
+     *        provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedDraining
+     */
+
+    public AutoScalingGroupProvider withManagedDraining(String managedDraining) {
+        setManagedDraining(managedDraining);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     * manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.
+     * </p>
+     * 
+     * @param managedDraining
+     *        The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS
+     *        manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity
+     *        provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedDraining
+     */
+
+    public AutoScalingGroupProvider withManagedDraining(ManagedDraining managedDraining) {
+        this.managedDraining = managedDraining.toString();
         return this;
     }
 
@@ -370,7 +443,9 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
         if (getManagedScaling() != null)
             sb.append("ManagedScaling: ").append(getManagedScaling()).append(",");
         if (getManagedTerminationProtection() != null)
-            sb.append("ManagedTerminationProtection: ").append(getManagedTerminationProtection());
+            sb.append("ManagedTerminationProtection: ").append(getManagedTerminationProtection()).append(",");
+        if (getManagedDraining() != null)
+            sb.append("ManagedDraining: ").append(getManagedDraining());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +472,10 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
             return false;
         if (other.getManagedTerminationProtection() != null && other.getManagedTerminationProtection().equals(this.getManagedTerminationProtection()) == false)
             return false;
+        if (other.getManagedDraining() == null ^ this.getManagedDraining() == null)
+            return false;
+        if (other.getManagedDraining() != null && other.getManagedDraining().equals(this.getManagedDraining()) == false)
+            return false;
         return true;
     }
 
@@ -408,6 +487,7 @@ public class AutoScalingGroupProvider implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getAutoScalingGroupArn() == null) ? 0 : getAutoScalingGroupArn().hashCode());
         hashCode = prime * hashCode + ((getManagedScaling() == null) ? 0 : getManagedScaling().hashCode());
         hashCode = prime * hashCode + ((getManagedTerminationProtection() == null) ? 0 : getManagedTerminationProtection().hashCode());
+        hashCode = prime * hashCode + ((getManagedDraining() == null) ? 0 : getManagedDraining().hashCode());
         return hashCode;
     }
 

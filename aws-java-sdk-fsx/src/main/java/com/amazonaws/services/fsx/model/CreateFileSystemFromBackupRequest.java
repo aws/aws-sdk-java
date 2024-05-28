@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     private String backupId;
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      */
@@ -110,7 +110,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -134,7 +134,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <p>
      * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status
+     * code 400 Bad Request.
      * </p>
      */
     private Integer storageCapacity;
@@ -167,12 +168,12 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.
      */
@@ -183,11 +184,11 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
-     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * @return A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *         automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *         Services SDK.
      */
@@ -198,12 +199,12 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -866,7 +867,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -876,7 +877,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param fileSystemTypeVersion
      *        Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid
-     *        values are <code>2.10</code> and <code>2.12</code>.</p>
+     *        values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
      *        <p>
      *        You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      *        <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code>
@@ -890,7 +891,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -899,7 +900,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid
-     *         values are <code>2.10</code> and <code>2.12</code>.</p>
+     *         values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
      *         <p>
      *         You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the
      *         backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify
@@ -914,7 +915,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are
-     * <code>2.10</code> and <code>2.12</code>.
+     * <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.
      * </p>
      * <p>
      * You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
@@ -924,7 +925,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param fileSystemTypeVersion
      *        Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid
-     *        values are <code>2.10</code> and <code>2.12</code>.</p>
+     *        values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>.</p>
      *        <p>
      *        You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's
      *        <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code>
@@ -986,7 +987,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <p>
      * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status
+     * code 400 Bad Request.
      * </p>
      * 
      * @param storageCapacity
@@ -997,8 +999,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      *        value.</p>
      *        <p>
      *        If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     *        <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad
-     *        Request.
+     *        <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP
+     *        status code 400 Bad Request.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -1014,7 +1016,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <p>
      * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status
+     * code 400 Bad Request.
      * </p>
      * 
      * @return Sets the storage capacity of the OpenZFS file system that you're creating from a backup, in gibibytes
@@ -1024,8 +1027,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      *         value.</p>
      *         <p>
      *         If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     *         <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad
-     *         Request.
+     *         <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP
+     *         status code 400 Bad Request.
      */
 
     public Integer getStorageCapacity() {
@@ -1041,7 +1044,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * <p>
      * If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad Request.
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP status
+     * code 400 Bad Request.
      * </p>
      * 
      * @param storageCapacity
@@ -1052,8 +1056,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      *        value.</p>
      *        <p>
      *        If used to create a file system other than OpenZFS, you must provide a value that matches the backup's
-     *        <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with a 400 Bad
-     *        Request.
+     *        <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx responds with with an HTTP
+     *        status code 400 Bad Request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

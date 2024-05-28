@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     private String s3KeyPrefix;
     /**
      * <p>
-     * This field is no longer in use. Use SnsTopicARN.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      */
     @Deprecated
@@ -77,13 +77,13 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail exists only in one region or exists in all regions.
+     * Specifies whether the trail exists only in one Region or exists in all Regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
     /**
      * <p>
-     * The region in which the trail was created.
+     * The Region in which the trail was created.
      * </p>
      */
     private String homeRegion;
@@ -296,11 +296,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is no longer in use. Use SnsTopicARN.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is no longer in use. Use SnsTopicARN.
+     *        This field is no longer in use. Use <code>SnsTopicARN</code>.
      */
     @Deprecated
     public void setSnsTopicName(String snsTopicName) {
@@ -309,10 +309,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is no longer in use. Use SnsTopicARN.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      * 
-     * @return This field is no longer in use. Use SnsTopicARN.
+     * @return This field is no longer in use. Use <code>SnsTopicARN</code>.
      */
     @Deprecated
     public String getSnsTopicName() {
@@ -321,11 +321,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field is no longer in use. Use SnsTopicARN.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is no longer in use. Use SnsTopicARN.
+     *        This field is no longer in use. Use <code>SnsTopicARN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -457,11 +457,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail exists only in one region or exists in all regions.
+     * Specifies whether the trail exists only in one Region or exists in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail exists only in one region or exists in all regions.
+     *        Specifies whether the trail exists only in one Region or exists in all Regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -470,10 +470,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail exists only in one region or exists in all regions.
+     * Specifies whether the trail exists only in one Region or exists in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail exists only in one region or exists in all regions.
+     * @return Specifies whether the trail exists only in one Region or exists in all Regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -482,11 +482,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail exists only in one region or exists in all regions.
+     * Specifies whether the trail exists only in one Region or exists in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail exists only in one region or exists in all regions.
+     *        Specifies whether the trail exists only in one Region or exists in all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,10 +497,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the trail exists only in one region or exists in all regions.
+     * Specifies whether the trail exists only in one Region or exists in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail exists only in one region or exists in all regions.
+     * @return Specifies whether the trail exists only in one Region or exists in all Regions.
      */
 
     public Boolean isMultiRegionTrail() {
@@ -509,11 +509,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region in which the trail was created.
+     * The Region in which the trail was created.
      * </p>
      * 
      * @param homeRegion
-     *        The region in which the trail was created.
+     *        The Region in which the trail was created.
      */
 
     public void setHomeRegion(String homeRegion) {
@@ -522,10 +522,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region in which the trail was created.
+     * The Region in which the trail was created.
      * </p>
      * 
-     * @return The region in which the trail was created.
+     * @return The Region in which the trail was created.
      */
 
     public String getHomeRegion() {
@@ -534,11 +534,11 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region in which the trail was created.
+     * The Region in which the trail was created.
      * </p>
      * 
      * @param homeRegion
-     *        The region in which the trail was created.
+     *        The Region in which the trail was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

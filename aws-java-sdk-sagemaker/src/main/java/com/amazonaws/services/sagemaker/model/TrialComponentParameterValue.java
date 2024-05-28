@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.
  * </p>
  * <p>
- * This object is specified in the <a>CreateTrialComponent</a> request.
+ * This object is specified in the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html"
+ * >CreateTrialComponent</a> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentParameterValue"

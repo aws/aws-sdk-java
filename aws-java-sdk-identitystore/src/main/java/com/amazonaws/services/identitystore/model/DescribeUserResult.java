@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private Name name;
     /**
      * <p>
-     * The user's name value for display.
+     * The display name of the user.
      * </p>
      */
     private String displayName;
@@ -70,13 +70,13 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String profileUrl;
     /**
      * <p>
-     * The user's email value.
+     * The email address of the user.
      * </p>
      */
     private java.util.List<Email> emails;
     /**
      * <p>
-     * The user's physical address.
+     * The physical address of the user.
      * </p>
      */
     private java.util.List<Address> addresses;
@@ -88,13 +88,13 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.List<PhoneNumber> phoneNumbers;
     /**
      * <p>
-     * A string indicating the user's type.
+     * A string indicating the type of user.
      * </p>
      */
     private String userType;
     /**
      * <p>
-     * A string containing the user's title.
+     * A string containing the title of the user.
      * </p>
      */
     private String title;
@@ -106,7 +106,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String preferredLanguage;
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      */
     private String locale;
@@ -335,11 +335,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's name value for display.
+     * The display name of the user.
      * </p>
      * 
      * @param displayName
-     *        The user's name value for display.
+     *        The display name of the user.
      */
 
     public void setDisplayName(String displayName) {
@@ -348,10 +348,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's name value for display.
+     * The display name of the user.
      * </p>
      * 
-     * @return The user's name value for display.
+     * @return The display name of the user.
      */
 
     public String getDisplayName() {
@@ -360,11 +360,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's name value for display.
+     * The display name of the user.
      * </p>
      * 
      * @param displayName
-     *        The user's name value for display.
+     *        The display name of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,10 +455,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's email value.
+     * The email address of the user.
      * </p>
      * 
-     * @return The user's email value.
+     * @return The email address of the user.
      */
 
     public java.util.List<Email> getEmails() {
@@ -467,11 +467,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's email value.
+     * The email address of the user.
      * </p>
      * 
      * @param emails
-     *        The user's email value.
+     *        The email address of the user.
      */
 
     public void setEmails(java.util.Collection<Email> emails) {
@@ -485,7 +485,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's email value.
+     * The email address of the user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -494,7 +494,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param emails
-     *        The user's email value.
+     *        The email address of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,11 +510,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's email value.
+     * The email address of the user.
      * </p>
      * 
      * @param emails
-     *        The user's email value.
+     *        The email address of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,10 +525,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's physical address.
+     * The physical address of the user.
      * </p>
      * 
-     * @return The user's physical address.
+     * @return The physical address of the user.
      */
 
     public java.util.List<Address> getAddresses() {
@@ -537,11 +537,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's physical address.
+     * The physical address of the user.
      * </p>
      * 
      * @param addresses
-     *        The user's physical address.
+     *        The physical address of the user.
      */
 
     public void setAddresses(java.util.Collection<Address> addresses) {
@@ -555,7 +555,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's physical address.
+     * The physical address of the user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -564,7 +564,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param addresses
-     *        The user's physical address.
+     *        The physical address of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,11 +580,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user's physical address.
+     * The physical address of the user.
      * </p>
      * 
      * @param addresses
-     *        The user's physical address.
+     *        The physical address of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,11 +665,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string indicating the user's type.
+     * A string indicating the type of user.
      * </p>
      * 
      * @param userType
-     *        A string indicating the user's type.
+     *        A string indicating the type of user.
      */
 
     public void setUserType(String userType) {
@@ -678,10 +678,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string indicating the user's type.
+     * A string indicating the type of user.
      * </p>
      * 
-     * @return A string indicating the user's type.
+     * @return A string indicating the type of user.
      */
 
     public String getUserType() {
@@ -690,11 +690,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string indicating the user's type.
+     * A string indicating the type of user.
      * </p>
      * 
      * @param userType
-     *        A string indicating the user's type.
+     *        A string indicating the type of user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -705,11 +705,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string containing the user's title.
+     * A string containing the title of the user.
      * </p>
      * 
      * @param title
-     *        A string containing the user's title.
+     *        A string containing the title of the user.
      */
 
     public void setTitle(String title) {
@@ -718,10 +718,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string containing the user's title.
+     * A string containing the title of the user.
      * </p>
      * 
-     * @return A string containing the user's title.
+     * @return A string containing the title of the user.
      */
 
     public String getTitle() {
@@ -730,11 +730,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string containing the user's title.
+     * A string containing the title of the user.
      * </p>
      * 
      * @param title
-     *        A string containing the user's title.
+     *        A string containing the title of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -785,11 +785,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      * 
      * @param locale
-     *        A string containing the user's geographical region or location.
+     *        A string containing the geographical region or location of the user.
      */
 
     public void setLocale(String locale) {
@@ -798,10 +798,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      * 
-     * @return A string containing the user's geographical region or location.
+     * @return A string containing the geographical region or location of the user.
      */
 
     public String getLocale() {
@@ -810,11 +810,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      * 
      * @param locale
-     *        A string containing the user's geographical region or location.
+     *        A string containing the geographical region or location of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

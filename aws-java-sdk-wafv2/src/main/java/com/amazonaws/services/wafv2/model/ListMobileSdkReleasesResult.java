@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class ListMobileSdkReleasesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * High level information for the available SDK releases.
+     * The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list.
      * </p>
      */
     private java.util.List<ReleaseSummary> releaseSummaries;
@@ -40,10 +41,12 @@ public class ListMobileSdkReleasesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * High level information for the available SDK releases.
+     * The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list.
      * </p>
      * 
-     * @return High level information for the available SDK releases.
+     * @return The high level information for the available SDK releases. If you specified a <code>Limit</code> in your
+     *         request, this might not be the full list.
      */
 
     public java.util.List<ReleaseSummary> getReleaseSummaries() {
@@ -52,11 +55,13 @@ public class ListMobileSdkReleasesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * High level information for the available SDK releases.
+     * The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list.
      * </p>
      * 
      * @param releaseSummaries
-     *        High level information for the available SDK releases.
+     *        The high level information for the available SDK releases. If you specified a <code>Limit</code> in your
+     *        request, this might not be the full list.
      */
 
     public void setReleaseSummaries(java.util.Collection<ReleaseSummary> releaseSummaries) {
@@ -70,7 +75,8 @@ public class ListMobileSdkReleasesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * High level information for the available SDK releases.
+     * The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +85,8 @@ public class ListMobileSdkReleasesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param releaseSummaries
-     *        High level information for the available SDK releases.
+     *        The high level information for the available SDK releases. If you specified a <code>Limit</code> in your
+     *        request, this might not be the full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +102,13 @@ public class ListMobileSdkReleasesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * High level information for the available SDK releases.
+     * The high level information for the available SDK releases. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list.
      * </p>
      * 
      * @param releaseSummaries
-     *        High level information for the available SDK releases.
+     *        The high level information for the available SDK releases. If you specified a <code>Limit</code> in your
+     *        request, this might not be the full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

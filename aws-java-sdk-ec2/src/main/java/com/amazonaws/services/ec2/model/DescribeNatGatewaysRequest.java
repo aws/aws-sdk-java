@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -70,27 +70,29 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> natGatewayIds;
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -130,7 +132,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -178,7 +180,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -219,7 +221,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -269,7 +271,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -315,7 +317,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -367,7 +369,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -408,7 +410,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -455,13 +457,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -470,12 +475,15 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *         another call with the returned <code>nextToken</code> value.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -484,13 +492,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,10 +512,10 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * 
-     * @return One or more NAT gateway IDs.
+     * @return The IDs of the NAT gateways.
      */
 
     public java.util.List<String> getNatGatewayIds() {
@@ -516,11 +527,11 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * 
      * @param natGatewayIds
-     *        One or more NAT gateway IDs.
+     *        The IDs of the NAT gateways.
      */
 
     public void setNatGatewayIds(java.util.Collection<String> natGatewayIds) {
@@ -534,7 +545,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -543,7 +554,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param natGatewayIds
-     *        One or more NAT gateway IDs.
+     *        The IDs of the NAT gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,11 +570,11 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
+     * The IDs of the NAT gateways.
      * </p>
      * 
      * @param natGatewayIds
-     *        One or more NAT gateway IDs.
+     *        The IDs of the NAT gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,11 +585,13 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -587,10 +600,12 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -599,11 +614,13 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

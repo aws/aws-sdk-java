@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ import com.amazonaws.services.emrcontainers.model.*;
  * It is the prefix used in Amazon EMR on EKS service endpoints. For example,
  * <code>emr-containers.us-east-2.amazonaws.com</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints"
- * >Amazon EMR on EKS Service Endpoints</a>.
+ * >Amazon EMR on EKSService Endpoints</a>.
  * </p>
  * </li>
  * </ul>
@@ -93,8 +93,29 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
-     * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest createJobTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param createManagedEndpointRequest
@@ -113,6 +134,25 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
+     * Creates a security configuration. Security configurations in Amazon EMR on EKS are templates for different
+     * security setups. You can use security configurations to configure the Lake Formation integration setup. You can
+     * also create a security configuration to re-use a security setup each time you create a virtual cluster.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return Result of the CreateSecurityConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest);
+
+    /**
+     * <p>
      * Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe,
      * list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual
      * cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same
@@ -127,6 +167,8 @@ public interface AmazonEMRContainers {
      *         The specified resource was not found.
      * @throws InternalServerException
      *         This is an internal server exception.
+     * @throws EKSRequestThrottledException
+     *         The request exceeded the Amazon EKS API operation limits.
      * @sample AmazonEMRContainers.CreateVirtualCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster"
      *      target="_top">AWS API Documentation</a>
@@ -135,8 +177,27 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
-     * Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param deleteManagedEndpointRequest
@@ -193,8 +254,29 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
-     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-     * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest);
+
+    /**
+     * <p>
+     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param describeManagedEndpointRequest
@@ -210,6 +292,28 @@ public interface AmazonEMRContainers {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeManagedEndpointResult describeManagedEndpoint(DescribeManagedEndpointRequest describeManagedEndpointRequest);
+
+    /**
+     * <p>
+     * Displays detailed information about a specified security configuration. Security configurations in Amazon EMR on
+     * EKS are templates for different security setups. You can use security configurations to configure the Lake
+     * Formation integration setup. You can also create a security configuration to re-use a security setup each time
+     * you create a virtual cluster.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @return Result of the DescribeSecurityConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DescribeSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSecurityConfigurationResult describeSecurityConfiguration(DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest);
 
     /**
      * <p>
@@ -235,6 +339,29 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
+     * Generate a session token to connect to a managed endpoint.
+     * </p>
+     * 
+     * @param getManagedEndpointSessionCredentialsRequest
+     * @return Result of the GetManagedEndpointSessionCredentials operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws RequestThrottledException
+     *         The request throttled.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.GetManagedEndpointSessionCredentials
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetManagedEndpointSessionCredentialsResult getManagedEndpointSessionCredentials(
+            GetManagedEndpointSessionCredentialsRequest getManagedEndpointSessionCredentialsRequest);
+
+    /**
+     * <p>
      * Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or
      * SparkSQL query, that you submit to Amazon EMR on EKS.
      * </p>
@@ -253,8 +380,27 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
-     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to
-     * Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param listManagedEndpointsRequest
@@ -268,6 +414,26 @@ public interface AmazonEMRContainers {
      *      target="_top">AWS API Documentation</a>
      */
     ListManagedEndpointsResult listManagedEndpoints(ListManagedEndpointsRequest listManagedEndpointsRequest);
+
+    /**
+     * <p>
+     * Lists security configurations based on a set of parameters. Security configurations in Amazon EMR on EKS are
+     * templates for different security setups. You can use security configurations to configure the Lake Formation
+     * integration setup. You can also create a security configuration to re-use a security setup each time you create a
+     * virtual cluster.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @return Result of the ListSecurityConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.ListSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSecurityConfigurationsResult listSecurityConfigurations(ListSecurityConfigurationsRequest listSecurityConfigurationsRequest);
 
     /**
      * <p>
@@ -330,13 +496,13 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
-     * Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an
-     * optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as
-     * purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a
-     * specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your
-     * Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a
-     * consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags
-     * that you add.
+     * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
+     * of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services
+     * resources by attributes such as purpose, owner, or environment. When you have many resources of the same type,
+     * you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define
+     * a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We
+     * recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the
+     * resources based on the tags that you add.
      * </p>
      * 
      * @param tagResourceRequest

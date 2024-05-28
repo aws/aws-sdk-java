@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class GetGeofenceResultJsonUnmarshaller implements Unmarshaller<GetGeofen
                 if (context.testExpression("GeofenceId", targetDepth)) {
                     context.nextToken();
                     getGeofenceResult.setGeofenceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("GeofenceProperties", targetDepth)) {
+                    context.nextToken();
+                    getGeofenceResult.setGeofenceProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Geometry", targetDepth)) {
                     context.nextToken();

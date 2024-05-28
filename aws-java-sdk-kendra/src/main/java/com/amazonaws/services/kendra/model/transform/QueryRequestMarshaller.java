@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,16 @@ public class QueryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageSize").build();
     private static final MarshallingInfo<StructuredPojo> SORTINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortingConfiguration").build();
+    private static final MarshallingInfo<List> SORTINGCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortingConfigurations").build();
     private static final MarshallingInfo<StructuredPojo> USERCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContext").build();
     private static final MarshallingInfo<String> VISITORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VisitorId").build();
     private static final MarshallingInfo<StructuredPojo> SPELLCORRECTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpellCorrectionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> COLLAPSECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollapseConfiguration").build();
 
     private static final QueryRequestMarshaller instance = new QueryRequestMarshaller();
 
@@ -81,9 +85,11 @@ public class QueryRequestMarshaller {
             protocolMarshaller.marshall(queryRequest.getPageNumber(), PAGENUMBER_BINDING);
             protocolMarshaller.marshall(queryRequest.getPageSize(), PAGESIZE_BINDING);
             protocolMarshaller.marshall(queryRequest.getSortingConfiguration(), SORTINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(queryRequest.getSortingConfigurations(), SORTINGCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(queryRequest.getUserContext(), USERCONTEXT_BINDING);
             protocolMarshaller.marshall(queryRequest.getVisitorId(), VISITORID_BINDING);
             protocolMarshaller.marshall(queryRequest.getSpellCorrectionConfiguration(), SPELLCORRECTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(queryRequest.getCollapseConfiguration(), COLLAPSECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

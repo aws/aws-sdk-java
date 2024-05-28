@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,18 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                 if (context.testExpression("sqsQueue", targetDepth)) {
                     context.nextToken();
                     configuration.setSqsQueue(SqsQueueConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("s3ExpressDirectoryBucket", targetDepth)) {
+                    context.nextToken();
+                    configuration.setS3ExpressDirectoryBucket(S3ExpressDirectoryBucketConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dynamodbStream", targetDepth)) {
+                    context.nextToken();
+                    configuration.setDynamodbStream(DynamodbStreamConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dynamodbTable", targetDepth)) {
+                    context.nextToken();
+                    configuration.setDynamodbTable(DynamodbTableConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

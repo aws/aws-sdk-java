@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class IpAddressResponseMarshaller {
             .marshallLocationName("SubnetId").build();
     private static final MarshallingInfo<String> IP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Ip").build();
+    private static final MarshallingInfo<String> IPV6_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Ipv6").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class IpAddressResponseMarshaller {
             protocolMarshaller.marshall(ipAddressResponse.getIpId(), IPID_BINDING);
             protocolMarshaller.marshall(ipAddressResponse.getSubnetId(), SUBNETID_BINDING);
             protocolMarshaller.marshall(ipAddressResponse.getIp(), IP_BINDING);
+            protocolMarshaller.marshall(ipAddressResponse.getIpv6(), IPV6_BINDING);
             protocolMarshaller.marshall(ipAddressResponse.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(ipAddressResponse.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(ipAddressResponse.getCreationTime(), CREATIONTIME_BINDING);

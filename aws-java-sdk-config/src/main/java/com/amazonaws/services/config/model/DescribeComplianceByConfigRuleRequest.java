@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,9 +35,6 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * Filters the results by compliance.
-     * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
@@ -126,13 +123,8 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
      * <p>
      * Filters the results by compliance.
      * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * </p>
      * 
-     * @return Filters the results by compliance.</p>
-     *         <p>
-     *         The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * @return Filters the results by compliance.
      * @see ComplianceType
      */
 
@@ -147,14 +139,9 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
      * <p>
      * Filters the results by compliance.
      * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        Filters the results by compliance.
      * @see ComplianceType
      */
 
@@ -172,18 +159,13 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setComplianceTypes(java.util.Collection)} or {@link #withComplianceTypes(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        Filters the results by compliance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -202,14 +184,9 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
      * <p>
      * Filters the results by compliance.
      * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        Filters the results by compliance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -223,14 +200,9 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
      * <p>
      * Filters the results by compliance.
      * </p>
-     * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-     * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance.</p>
-     *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        Filters the results by compliance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */

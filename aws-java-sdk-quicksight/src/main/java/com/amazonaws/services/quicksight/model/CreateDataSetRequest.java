@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,6 +110,18 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<Tag> tags;
 
     private DataSetUsageConfiguration dataSetUsageConfiguration;
+    /**
+     * <p>
+     * The parameter declarations of the dataset.
+     * </p>
+     */
+    private java.util.List<DatasetParameter> datasetParameters;
+    /**
+     * <p>
+     * When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * </p>
+     */
+    private java.util.List<String> folderArns;
 
     /**
      * <p>
@@ -917,6 +929,146 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The parameter declarations of the dataset.
+     * </p>
+     * 
+     * @return The parameter declarations of the dataset.
+     */
+
+    public java.util.List<DatasetParameter> getDatasetParameters() {
+        return datasetParameters;
+    }
+
+    /**
+     * <p>
+     * The parameter declarations of the dataset.
+     * </p>
+     * 
+     * @param datasetParameters
+     *        The parameter declarations of the dataset.
+     */
+
+    public void setDatasetParameters(java.util.Collection<DatasetParameter> datasetParameters) {
+        if (datasetParameters == null) {
+            this.datasetParameters = null;
+            return;
+        }
+
+        this.datasetParameters = new java.util.ArrayList<DatasetParameter>(datasetParameters);
+    }
+
+    /**
+     * <p>
+     * The parameter declarations of the dataset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDatasetParameters(java.util.Collection)} or {@link #withDatasetParameters(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param datasetParameters
+     *        The parameter declarations of the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withDatasetParameters(DatasetParameter... datasetParameters) {
+        if (this.datasetParameters == null) {
+            setDatasetParameters(new java.util.ArrayList<DatasetParameter>(datasetParameters.length));
+        }
+        for (DatasetParameter ele : datasetParameters) {
+            this.datasetParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter declarations of the dataset.
+     * </p>
+     * 
+     * @param datasetParameters
+     *        The parameter declarations of the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withDatasetParameters(java.util.Collection<DatasetParameter> datasetParameters) {
+        setDatasetParameters(datasetParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * </p>
+     * 
+     * @return When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     */
+
+    public java.util.List<String> getFolderArns() {
+        return folderArns;
+    }
+
+    /**
+     * <p>
+     * When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     */
+
+    public void setFolderArns(java.util.Collection<String> folderArns) {
+        if (folderArns == null) {
+            this.folderArns = null;
+            return;
+        }
+
+        this.folderArns = new java.util.ArrayList<String>(folderArns);
+    }
+
+    /**
+     * <p>
+     * When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFolderArns(java.util.Collection)} or {@link #withFolderArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withFolderArns(String... folderArns) {
+        if (this.folderArns == null) {
+            setFolderArns(new java.util.ArrayList<String>(folderArns.length));
+        }
+        for (String ele : folderArns) {
+            this.folderArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dataset, Amazon QuickSight adds the dataset to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSetRequest withFolderArns(java.util.Collection<String> folderArns) {
+        setFolderArns(folderArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -955,7 +1107,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDataSetUsageConfiguration() != null)
-            sb.append("DataSetUsageConfiguration: ").append(getDataSetUsageConfiguration());
+            sb.append("DataSetUsageConfiguration: ").append(getDataSetUsageConfiguration()).append(",");
+        if (getDatasetParameters() != null)
+            sb.append("DatasetParameters: ").append(getDatasetParameters()).append(",");
+        if (getFolderArns() != null)
+            sb.append("FolderArns: ").append(getFolderArns());
         sb.append("}");
         return sb.toString();
     }
@@ -1027,6 +1183,14 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDataSetUsageConfiguration() != null && other.getDataSetUsageConfiguration().equals(this.getDataSetUsageConfiguration()) == false)
             return false;
+        if (other.getDatasetParameters() == null ^ this.getDatasetParameters() == null)
+            return false;
+        if (other.getDatasetParameters() != null && other.getDatasetParameters().equals(this.getDatasetParameters()) == false)
+            return false;
+        if (other.getFolderArns() == null ^ this.getFolderArns() == null)
+            return false;
+        if (other.getFolderArns() != null && other.getFolderArns().equals(this.getFolderArns()) == false)
+            return false;
         return true;
     }
 
@@ -1049,6 +1213,8 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getColumnLevelPermissionRules() == null) ? 0 : getColumnLevelPermissionRules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDataSetUsageConfiguration() == null) ? 0 : getDataSetUsageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDatasetParameters() == null) ? 0 : getDatasetParameters().hashCode());
+        hashCode = prime * hashCode + ((getFolderArns() == null) ? 0 : getFolderArns().hashCode());
         return hashCode;
     }
 

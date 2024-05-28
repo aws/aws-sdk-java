@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,22 +32,34 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> – The ARN of the broker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      * </p>
      * </li>
      * </ul>
@@ -55,7 +67,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
     private String eventSourceArn;
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -63,22 +75,22 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -109,22 +121,34 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> – The ARN of the broker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      * </p>
      * </li>
      * </ul>
@@ -134,22 +158,34 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *        <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *        <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection
+     *        (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     *        event source mappings</a>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon MQ</b> – The ARN of the broker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      *        </p>
      *        </li>
      */
@@ -165,22 +201,34 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> – The ARN of the broker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      * </p>
      * </li>
      * </ul>
@@ -189,22 +237,35 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *         <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *         <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *         <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *         <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC
+     *         connection (for <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event
+     *         source mappings</a>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon MQ</b> – The ARN of the broker.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      *         </p>
      *         </li>
      */
@@ -220,22 +281,34 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     * <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     * <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     * <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> – The ARN of the broker.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      * </p>
      * </li>
      * </ul>
@@ -245,22 +318,34 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+     *        <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+     *        <b>Amazon DynamoDB Streams</b> – The ARN of the stream.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        <b>Amazon Simple Queue Service</b> – The ARN of the queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection
+     *        (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     *        event source mappings</a>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon MQ</b> – The ARN of the broker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -273,7 +358,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -281,22 +366,22 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -306,29 +391,29 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name or ARN of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> – <code>MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     *        <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -343,7 +428,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -351,22 +436,22 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -375,30 +460,30 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function.</p>
+     * @return The name or ARN of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         <b>Function name</b> – <code>MyFunction</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>
+     *         <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>
      *         .
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -413,7 +498,7 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -421,22 +506,22 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -446,29 +531,29 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name or ARN of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> – <code>MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     *        <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        </ul>

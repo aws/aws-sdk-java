@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,12 @@ public class DescribeWorkerConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String workerConfigurationArn;
+    /**
+     * <p>
+     * The state of the worker configuration.
+     * </p>
+     */
+    private String workerConfigurationState;
 
     /**
      * <p>
@@ -255,6 +261,65 @@ public class DescribeWorkerConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The state of the worker configuration.
+     * </p>
+     * 
+     * @param workerConfigurationState
+     *        The state of the worker configuration.
+     * @see WorkerConfigurationState
+     */
+
+    public void setWorkerConfigurationState(String workerConfigurationState) {
+        this.workerConfigurationState = workerConfigurationState;
+    }
+
+    /**
+     * <p>
+     * The state of the worker configuration.
+     * </p>
+     * 
+     * @return The state of the worker configuration.
+     * @see WorkerConfigurationState
+     */
+
+    public String getWorkerConfigurationState() {
+        return this.workerConfigurationState;
+    }
+
+    /**
+     * <p>
+     * The state of the worker configuration.
+     * </p>
+     * 
+     * @param workerConfigurationState
+     *        The state of the worker configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerConfigurationState
+     */
+
+    public DescribeWorkerConfigurationResult withWorkerConfigurationState(String workerConfigurationState) {
+        setWorkerConfigurationState(workerConfigurationState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the worker configuration.
+     * </p>
+     * 
+     * @param workerConfigurationState
+     *        The state of the worker configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerConfigurationState
+     */
+
+    public DescribeWorkerConfigurationResult withWorkerConfigurationState(WorkerConfigurationState workerConfigurationState) {
+        this.workerConfigurationState = workerConfigurationState.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,7 +340,9 @@ public class DescribeWorkerConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getWorkerConfigurationArn() != null)
-            sb.append("WorkerConfigurationArn: ").append(getWorkerConfigurationArn());
+            sb.append("WorkerConfigurationArn: ").append(getWorkerConfigurationArn()).append(",");
+        if (getWorkerConfigurationState() != null)
+            sb.append("WorkerConfigurationState: ").append(getWorkerConfigurationState());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +377,10 @@ public class DescribeWorkerConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getWorkerConfigurationArn() != null && other.getWorkerConfigurationArn().equals(this.getWorkerConfigurationArn()) == false)
             return false;
+        if (other.getWorkerConfigurationState() == null ^ this.getWorkerConfigurationState() == null)
+            return false;
+        if (other.getWorkerConfigurationState() != null && other.getWorkerConfigurationState().equals(this.getWorkerConfigurationState()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +394,7 @@ public class DescribeWorkerConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getLatestRevision() == null) ? 0 : getLatestRevision().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getWorkerConfigurationArn() == null) ? 0 : getWorkerConfigurationArn().hashCode());
+        hashCode = prime * hashCode + ((getWorkerConfigurationState() == null) ? 0 : getWorkerConfigurationState().hashCode());
         return hashCode;
     }
 

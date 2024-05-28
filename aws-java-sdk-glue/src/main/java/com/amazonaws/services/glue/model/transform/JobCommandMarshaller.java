@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class JobCommandMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScriptLocation").build();
     private static final MarshallingInfo<String> PYTHONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PythonVersion").build();
+    private static final MarshallingInfo<String> RUNTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Runtime").build();
 
     private static final JobCommandMarshaller instance = new JobCommandMarshaller();
 
@@ -53,6 +55,7 @@ public class JobCommandMarshaller {
             protocolMarshaller.marshall(jobCommand.getName(), NAME_BINDING);
             protocolMarshaller.marshall(jobCommand.getScriptLocation(), SCRIPTLOCATION_BINDING);
             protocolMarshaller.marshall(jobCommand.getPythonVersion(), PYTHONVERSION_BINDING);
+            protocolMarshaller.marshall(jobCommand.getRuntime(), RUNTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

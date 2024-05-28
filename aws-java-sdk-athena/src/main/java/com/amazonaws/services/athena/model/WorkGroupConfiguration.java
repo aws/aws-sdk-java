@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
- * encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the
- * workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data
- * scanned per query or per workgroup. The workgroup settings override is specified in
+ * The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are
+ * stored, the encryption option, if any, used for query and calculation results, whether the Amazon CloudWatch Metrics
+ * are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for
+ * the amount of data scanned per query or per workgroup. The workgroup settings override is specified in
  * <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
  * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
  * </p>
@@ -35,12 +35,13 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results. To run the query, you must specify the query results
-     * location using one of the ways: either in the workgroup using this setting, or for individual queries
-     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
-     * that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     * The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results
+     * are stored and the encryption option, if any, used for query and calculation results. To run the query, you must
+     * specify the query results location using one of the ways: either in the workgroup using this setting, or for
+     * individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena
+     * issues an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>.
      * </p>
      */
     private ResultConfiguration resultConfiguration;
@@ -83,24 +84,73 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private EngineVersion engineVersion;
+    /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     */
+    private String additionalConfiguration;
+    /**
+     * <p>
+     * The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center enabled
+     * workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled workgroups.
+     * The property is required for IAM Identity Center enabled workgroups.
+     * </p>
+     */
+    private String executionRole;
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
+     * </p>
+     */
+    private CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration;
+    /**
+     * <p>
+     * Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to
+     * Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or
+     * higher when they submit queries.
+     * </p>
+     * <p>
+     * The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is
+     * ignored, and the workgroup configuration for encryption is used.
+     * </p>
+     */
+    private Boolean enableMinimumEncryptionConfiguration;
+    /**
+     * <p>
+     * Specifies whether the workgroup is IAM Identity Center supported.
+     * </p>
+     */
+    private IdentityCenterConfiguration identityCenterConfiguration;
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     */
+    private QueryResultsS3AccessGrantsConfiguration queryResultsS3AccessGrantsConfiguration;
 
     /**
      * <p>
-     * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results. To run the query, you must specify the query results
-     * location using one of the ways: either in the workgroup using this setting, or for individual queries
-     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
-     * that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     * The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results
+     * are stored and the encryption option, if any, used for query and calculation results. To run the query, you must
+     * specify the query results location using one of the ways: either in the workgroup using this setting, or for
+     * individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena
+     * issues an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>.
      * </p>
      * 
      * @param resultConfiguration
-     *        The configuration for the workgroup, which includes the location in Amazon S3 where query results are
-     *        stored and the encryption option, if any, used for query results. To run the query, you must specify the
-     *        query results location using one of the ways: either in the workgroup using this setting, or for
-     *        individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set,
-     *        Athena issues an error that no output location is provided. For more information, see <a
-     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     *        The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation
+     *        results are stored and the encryption option, if any, used for query and calculation results. To run the
+     *        query, you must specify the query results location using one of the ways: either in the workgroup using
+     *        this setting, or for individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If
+     *        none of them is set, Athena issues an error that no output location is provided. For more information, see
+     *        <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent
+     *        queries, and output files</a>.
      */
 
     public void setResultConfiguration(ResultConfiguration resultConfiguration) {
@@ -109,20 +159,22 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results. To run the query, you must specify the query results
-     * location using one of the ways: either in the workgroup using this setting, or for individual queries
-     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
-     * that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     * The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results
+     * are stored and the encryption option, if any, used for query and calculation results. To run the query, you must
+     * specify the query results location using one of the ways: either in the workgroup using this setting, or for
+     * individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena
+     * issues an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>.
      * </p>
      * 
-     * @return The configuration for the workgroup, which includes the location in Amazon S3 where query results are
-     *         stored and the encryption option, if any, used for query results. To run the query, you must specify the
-     *         query results location using one of the ways: either in the workgroup using this setting, or for
-     *         individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is
-     *         set, Athena issues an error that no output location is provided. For more information, see <a
-     *         href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     * @return The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation
+     *         results are stored and the encryption option, if any, used for query and calculation results. To run the
+     *         query, you must specify the query results location using one of the ways: either in the workgroup using
+     *         this setting, or for individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>.
+     *         If none of them is set, Athena issues an error that no output location is provided. For more information,
+     *         see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results,
+     *         recent queries, and output files</a>.
      */
 
     public ResultConfiguration getResultConfiguration() {
@@ -131,21 +183,23 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results. To run the query, you must specify the query results
-     * location using one of the ways: either in the workgroup using this setting, or for individual queries
-     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
-     * that no output location is provided. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     * The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results
+     * are stored and the encryption option, if any, used for query and calculation results. To run the query, you must
+     * specify the query results location using one of the ways: either in the workgroup using this setting, or for
+     * individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena
+     * issues an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>.
      * </p>
      * 
      * @param resultConfiguration
-     *        The configuration for the workgroup, which includes the location in Amazon S3 where query results are
-     *        stored and the encryption option, if any, used for query results. To run the query, you must specify the
-     *        query results location using one of the ways: either in the workgroup using this setting, or for
-     *        individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set,
-     *        Athena issues an error that no output location is provided. For more information, see <a
-     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
+     *        The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation
+     *        results are stored and the encryption option, if any, used for query and calculation results. To run the
+     *        query, you must specify the query results location using one of the ways: either in the workgroup using
+     *        this setting, or for individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If
+     *        none of them is set, Athena issues an error that no output location is provided. For more information, see
+     *        <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent
+     *        queries, and output files</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,6 +521,336 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     * 
+     * @param additionalConfiguration
+     *        Specifies a user defined JSON string that is passed to the notebook engine.
+     */
+
+    public void setAdditionalConfiguration(String additionalConfiguration) {
+        this.additionalConfiguration = additionalConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     * 
+     * @return Specifies a user defined JSON string that is passed to the notebook engine.
+     */
+
+    public String getAdditionalConfiguration() {
+        return this.additionalConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     * 
+     * @param additionalConfiguration
+     *        Specifies a user defined JSON string that is passed to the notebook engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withAdditionalConfiguration(String additionalConfiguration) {
+        setAdditionalConfiguration(additionalConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center enabled
+     * workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled workgroups.
+     * The property is required for IAM Identity Center enabled workgroups.
+     * </p>
+     * 
+     * @param executionRole
+     *        The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center
+     *        enabled workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled
+     *        workgroups. The property is required for IAM Identity Center enabled workgroups.
+     */
+
+    public void setExecutionRole(String executionRole) {
+        this.executionRole = executionRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center enabled
+     * workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled workgroups.
+     * The property is required for IAM Identity Center enabled workgroups.
+     * </p>
+     * 
+     * @return The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center
+     *         enabled workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center
+     *         enabled workgroups. The property is required for IAM Identity Center enabled workgroups.
+     */
+
+    public String getExecutionRole() {
+        return this.executionRole;
+    }
+
+    /**
+     * <p>
+     * The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center enabled
+     * workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled workgroups.
+     * The property is required for IAM Identity Center enabled workgroups.
+     * </p>
+     * 
+     * @param executionRole
+     *        The ARN of the execution role used to access user resources for Spark sessions and IAM Identity Center
+     *        enabled workgroups. This property applies only to Spark enabled workgroups and IAM Identity Center enabled
+     *        workgroups. The property is required for IAM Identity Center enabled workgroups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withExecutionRole(String executionRole) {
+        setExecutionRole(executionRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
+     * </p>
+     * 
+     * @param customerContentEncryptionConfiguration
+     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not
+     *        apply to Athena SQL workgroups.
+     */
+
+    public void setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration) {
+        this.customerContentEncryptionConfiguration = customerContentEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
+     * </p>
+     * 
+     * @return Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not
+     *         apply to Athena SQL workgroups.
+     */
+
+    public CustomerContentEncryptionConfiguration getCustomerContentEncryptionConfiguration() {
+        return this.customerContentEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to
+     * Athena SQL workgroups.
+     * </p>
+     * 
+     * @param customerContentEncryptionConfiguration
+     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not
+     *        apply to Athena SQL workgroups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration) {
+        setCustomerContentEncryptionConfiguration(customerContentEncryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to
+     * Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or
+     * higher when they submit queries.
+     * </p>
+     * <p>
+     * The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is
+     * ignored, and the workgroup configuration for encryption is used.
+     * </p>
+     * 
+     * @param enableMinimumEncryptionConfiguration
+     *        Enforces a minimal level of encryption for the workgroup for query and calculation results that are
+     *        written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by
+     *        the administrator or higher when they submit queries.</p>
+     *        <p>
+     *        The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     *        <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     *        <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+     *        flag is ignored, and the workgroup configuration for encryption is used.
+     */
+
+    public void setEnableMinimumEncryptionConfiguration(Boolean enableMinimumEncryptionConfiguration) {
+        this.enableMinimumEncryptionConfiguration = enableMinimumEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to
+     * Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or
+     * higher when they submit queries.
+     * </p>
+     * <p>
+     * The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is
+     * ignored, and the workgroup configuration for encryption is used.
+     * </p>
+     * 
+     * @return Enforces a minimal level of encryption for the workgroup for query and calculation results that are
+     *         written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by
+     *         the administrator or higher when they submit queries.</p>
+     *         <p>
+     *         The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     *         <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     *         <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+     *         flag is ignored, and the workgroup configuration for encryption is used.
+     */
+
+    public Boolean getEnableMinimumEncryptionConfiguration() {
+        return this.enableMinimumEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to
+     * Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or
+     * higher when they submit queries.
+     * </p>
+     * <p>
+     * The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is
+     * ignored, and the workgroup configuration for encryption is used.
+     * </p>
+     * 
+     * @param enableMinimumEncryptionConfiguration
+     *        Enforces a minimal level of encryption for the workgroup for query and calculation results that are
+     *        written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by
+     *        the administrator or higher when they submit queries.</p>
+     *        <p>
+     *        The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     *        <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     *        <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+     *        flag is ignored, and the workgroup configuration for encryption is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withEnableMinimumEncryptionConfiguration(Boolean enableMinimumEncryptionConfiguration) {
+        setEnableMinimumEncryptionConfiguration(enableMinimumEncryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to
+     * Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or
+     * higher when they submit queries.
+     * </p>
+     * <p>
+     * The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is
+     * ignored, and the workgroup configuration for encryption is used.
+     * </p>
+     * 
+     * @return Enforces a minimal level of encryption for the workgroup for query and calculation results that are
+     *         written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by
+     *         the administrator or higher when they submit queries.</p>
+     *         <p>
+     *         The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the
+     *         <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     *         <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+     *         flag is ignored, and the workgroup configuration for encryption is used.
+     */
+
+    public Boolean isEnableMinimumEncryptionConfiguration() {
+        return this.enableMinimumEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the workgroup is IAM Identity Center supported.
+     * </p>
+     * 
+     * @param identityCenterConfiguration
+     *        Specifies whether the workgroup is IAM Identity Center supported.
+     */
+
+    public void setIdentityCenterConfiguration(IdentityCenterConfiguration identityCenterConfiguration) {
+        this.identityCenterConfiguration = identityCenterConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the workgroup is IAM Identity Center supported.
+     * </p>
+     * 
+     * @return Specifies whether the workgroup is IAM Identity Center supported.
+     */
+
+    public IdentityCenterConfiguration getIdentityCenterConfiguration() {
+        return this.identityCenterConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the workgroup is IAM Identity Center supported.
+     * </p>
+     * 
+     * @param identityCenterConfiguration
+     *        Specifies whether the workgroup is IAM Identity Center supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withIdentityCenterConfiguration(IdentityCenterConfiguration identityCenterConfiguration) {
+        setIdentityCenterConfiguration(identityCenterConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     * 
+     * @param queryResultsS3AccessGrantsConfiguration
+     *        Specifies whether Amazon S3 access grants are enabled for query results.
+     */
+
+    public void setQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration queryResultsS3AccessGrantsConfiguration) {
+        this.queryResultsS3AccessGrantsConfiguration = queryResultsS3AccessGrantsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     * 
+     * @return Specifies whether Amazon S3 access grants are enabled for query results.
+     */
+
+    public QueryResultsS3AccessGrantsConfiguration getQueryResultsS3AccessGrantsConfiguration() {
+        return this.queryResultsS3AccessGrantsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     * 
+     * @param queryResultsS3AccessGrantsConfiguration
+     *        Specifies whether Amazon S3 access grants are enabled for query results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration queryResultsS3AccessGrantsConfiguration) {
+        setQueryResultsS3AccessGrantsConfiguration(queryResultsS3AccessGrantsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -489,7 +873,19 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
         if (getRequesterPaysEnabled() != null)
             sb.append("RequesterPaysEnabled: ").append(getRequesterPaysEnabled()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getAdditionalConfiguration() != null)
+            sb.append("AdditionalConfiguration: ").append(getAdditionalConfiguration()).append(",");
+        if (getExecutionRole() != null)
+            sb.append("ExecutionRole: ").append(getExecutionRole()).append(",");
+        if (getCustomerContentEncryptionConfiguration() != null)
+            sb.append("CustomerContentEncryptionConfiguration: ").append(getCustomerContentEncryptionConfiguration()).append(",");
+        if (getEnableMinimumEncryptionConfiguration() != null)
+            sb.append("EnableMinimumEncryptionConfiguration: ").append(getEnableMinimumEncryptionConfiguration()).append(",");
+        if (getIdentityCenterConfiguration() != null)
+            sb.append("IdentityCenterConfiguration: ").append(getIdentityCenterConfiguration()).append(",");
+        if (getQueryResultsS3AccessGrantsConfiguration() != null)
+            sb.append("QueryResultsS3AccessGrantsConfiguration: ").append(getQueryResultsS3AccessGrantsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +926,33 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getAdditionalConfiguration() == null ^ this.getAdditionalConfiguration() == null)
+            return false;
+        if (other.getAdditionalConfiguration() != null && other.getAdditionalConfiguration().equals(this.getAdditionalConfiguration()) == false)
+            return false;
+        if (other.getExecutionRole() == null ^ this.getExecutionRole() == null)
+            return false;
+        if (other.getExecutionRole() != null && other.getExecutionRole().equals(this.getExecutionRole()) == false)
+            return false;
+        if (other.getCustomerContentEncryptionConfiguration() == null ^ this.getCustomerContentEncryptionConfiguration() == null)
+            return false;
+        if (other.getCustomerContentEncryptionConfiguration() != null
+                && other.getCustomerContentEncryptionConfiguration().equals(this.getCustomerContentEncryptionConfiguration()) == false)
+            return false;
+        if (other.getEnableMinimumEncryptionConfiguration() == null ^ this.getEnableMinimumEncryptionConfiguration() == null)
+            return false;
+        if (other.getEnableMinimumEncryptionConfiguration() != null
+                && other.getEnableMinimumEncryptionConfiguration().equals(this.getEnableMinimumEncryptionConfiguration()) == false)
+            return false;
+        if (other.getIdentityCenterConfiguration() == null ^ this.getIdentityCenterConfiguration() == null)
+            return false;
+        if (other.getIdentityCenterConfiguration() != null && other.getIdentityCenterConfiguration().equals(this.getIdentityCenterConfiguration()) == false)
+            return false;
+        if (other.getQueryResultsS3AccessGrantsConfiguration() == null ^ this.getQueryResultsS3AccessGrantsConfiguration() == null)
+            return false;
+        if (other.getQueryResultsS3AccessGrantsConfiguration() != null
+                && other.getQueryResultsS3AccessGrantsConfiguration().equals(this.getQueryResultsS3AccessGrantsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -544,6 +967,12 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getBytesScannedCutoffPerQuery() == null) ? 0 : getBytesScannedCutoffPerQuery().hashCode());
         hashCode = prime * hashCode + ((getRequesterPaysEnabled() == null) ? 0 : getRequesterPaysEnabled().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalConfiguration() == null) ? 0 : getAdditionalConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRole() == null) ? 0 : getExecutionRole().hashCode());
+        hashCode = prime * hashCode + ((getCustomerContentEncryptionConfiguration() == null) ? 0 : getCustomerContentEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEnableMinimumEncryptionConfiguration() == null) ? 0 : getEnableMinimumEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getIdentityCenterConfiguration() == null) ? 0 : getIdentityCenterConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getQueryResultsS3AccessGrantsConfiguration() == null) ? 0 : getQueryResultsS3AccessGrantsConfiguration().hashCode());
         return hashCode;
     }
 

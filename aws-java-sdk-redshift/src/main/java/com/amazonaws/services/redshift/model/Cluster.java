@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -524,6 +524,54 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private ReservedNodeExchangeStatus reservedNodeExchangeStatus;
+    /**
+     * <p>
+     * The custom domain name associated with the cluster.
+     * </p>
+     */
+    private String customDomainName;
+    /**
+     * <p>
+     * The certificate Amazon Resource Name (ARN) for the custom domain name.
+     * </p>
+     */
+    private String customDomainCertificateArn;
+    /**
+     * <p>
+     * The expiration date for the certificate associated with the custom domain name.
+     * </p>
+     */
+    private java.util.Date customDomainCertificateExpiryDate;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     */
+    private String masterPasswordSecretArn;
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     */
+    private String masterPasswordSecretKmsKeyId;
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     * </p>
+     */
+    private String multiAZ;
+    /**
+     * <p>
+     * The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     * </p>
+     */
+    private SecondaryClusterInfo multiAZSecondary;
 
     /**
      * <p>
@@ -4090,6 +4138,329 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The custom domain name associated with the cluster.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name associated with the cluster.
+     */
+
+    public void setCustomDomainName(String customDomainName) {
+        this.customDomainName = customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the cluster.
+     * </p>
+     * 
+     * @return The custom domain name associated with the cluster.
+     */
+
+    public String getCustomDomainName() {
+        return this.customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the cluster.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name associated with the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCustomDomainName(String customDomainName) {
+        setCustomDomainName(customDomainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The certificate Amazon Resource Name (ARN) for the custom domain name.
+     * </p>
+     * 
+     * @param customDomainCertificateArn
+     *        The certificate Amazon Resource Name (ARN) for the custom domain name.
+     */
+
+    public void setCustomDomainCertificateArn(String customDomainCertificateArn) {
+        this.customDomainCertificateArn = customDomainCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The certificate Amazon Resource Name (ARN) for the custom domain name.
+     * </p>
+     * 
+     * @return The certificate Amazon Resource Name (ARN) for the custom domain name.
+     */
+
+    public String getCustomDomainCertificateArn() {
+        return this.customDomainCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The certificate Amazon Resource Name (ARN) for the custom domain name.
+     * </p>
+     * 
+     * @param customDomainCertificateArn
+     *        The certificate Amazon Resource Name (ARN) for the custom domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCustomDomainCertificateArn(String customDomainCertificateArn) {
+        setCustomDomainCertificateArn(customDomainCertificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expiration date for the certificate associated with the custom domain name.
+     * </p>
+     * 
+     * @param customDomainCertificateExpiryDate
+     *        The expiration date for the certificate associated with the custom domain name.
+     */
+
+    public void setCustomDomainCertificateExpiryDate(java.util.Date customDomainCertificateExpiryDate) {
+        this.customDomainCertificateExpiryDate = customDomainCertificateExpiryDate;
+    }
+
+    /**
+     * <p>
+     * The expiration date for the certificate associated with the custom domain name.
+     * </p>
+     * 
+     * @return The expiration date for the certificate associated with the custom domain name.
+     */
+
+    public java.util.Date getCustomDomainCertificateExpiryDate() {
+        return this.customDomainCertificateExpiryDate;
+    }
+
+    /**
+     * <p>
+     * The expiration date for the certificate associated with the custom domain name.
+     * </p>
+     * 
+     * @param customDomainCertificateExpiryDate
+     *        The expiration date for the certificate associated with the custom domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCustomDomainCertificateExpiryDate(java.util.Date customDomainCertificateExpiryDate) {
+        setCustomDomainCertificateExpiryDate(customDomainCertificateExpiryDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     */
+
+    public void setMasterPasswordSecretArn(String masterPasswordSecretArn) {
+        this.masterPasswordSecretArn = masterPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     */
+
+    public String getMasterPasswordSecretArn() {
+        return this.masterPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withMasterPasswordSecretArn(String masterPasswordSecretArn) {
+        setMasterPasswordSecretArn(masterPasswordSecretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret.
+     */
+
+    public void setMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        this.masterPasswordSecretKmsKeyId = masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *         secret.
+     */
+
+    public String getMasterPasswordSecretKmsKeyId() {
+        return this.masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        setMasterPasswordSecretKmsKeyId(masterPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @return The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     */
+
+    public void setMultiAZ(String multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     * </p>
+     * 
+     * @return A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     */
+
+    public String getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withMultiAZ(String multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     * </p>
+     * 
+     * @param multiAZSecondary
+     *        The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     */
+
+    public void setMultiAZSecondary(SecondaryClusterInfo multiAZSecondary) {
+        this.multiAZSecondary = multiAZSecondary;
+    }
+
+    /**
+     * <p>
+     * The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     * </p>
+     * 
+     * @return The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     */
+
+    public SecondaryClusterInfo getMultiAZSecondary() {
+        return this.multiAZSecondary;
+    }
+
+    /**
+     * <p>
+     * The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     * </p>
+     * 
+     * @param multiAZSecondary
+     *        The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withMultiAZSecondary(SecondaryClusterInfo multiAZSecondary) {
+        setMultiAZSecondary(multiAZSecondary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4204,7 +4575,23 @@ public class Cluster implements Serializable, Cloneable {
         if (getDefaultIamRoleArn() != null)
             sb.append("DefaultIamRoleArn: ").append(getDefaultIamRoleArn()).append(",");
         if (getReservedNodeExchangeStatus() != null)
-            sb.append("ReservedNodeExchangeStatus: ").append(getReservedNodeExchangeStatus());
+            sb.append("ReservedNodeExchangeStatus: ").append(getReservedNodeExchangeStatus()).append(",");
+        if (getCustomDomainName() != null)
+            sb.append("CustomDomainName: ").append(getCustomDomainName()).append(",");
+        if (getCustomDomainCertificateArn() != null)
+            sb.append("CustomDomainCertificateArn: ").append(getCustomDomainCertificateArn()).append(",");
+        if (getCustomDomainCertificateExpiryDate() != null)
+            sb.append("CustomDomainCertificateExpiryDate: ").append(getCustomDomainCertificateExpiryDate()).append(",");
+        if (getMasterPasswordSecretArn() != null)
+            sb.append("MasterPasswordSecretArn: ").append(getMasterPasswordSecretArn()).append(",");
+        if (getMasterPasswordSecretKmsKeyId() != null)
+            sb.append("MasterPasswordSecretKmsKeyId: ").append(getMasterPasswordSecretKmsKeyId()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
+        if (getMultiAZSecondary() != null)
+            sb.append("MultiAZSecondary: ").append(getMultiAZSecondary());
         sb.append("}");
         return sb.toString();
     }
@@ -4435,6 +4822,39 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getReservedNodeExchangeStatus() != null && other.getReservedNodeExchangeStatus().equals(this.getReservedNodeExchangeStatus()) == false)
             return false;
+        if (other.getCustomDomainName() == null ^ this.getCustomDomainName() == null)
+            return false;
+        if (other.getCustomDomainName() != null && other.getCustomDomainName().equals(this.getCustomDomainName()) == false)
+            return false;
+        if (other.getCustomDomainCertificateArn() == null ^ this.getCustomDomainCertificateArn() == null)
+            return false;
+        if (other.getCustomDomainCertificateArn() != null && other.getCustomDomainCertificateArn().equals(this.getCustomDomainCertificateArn()) == false)
+            return false;
+        if (other.getCustomDomainCertificateExpiryDate() == null ^ this.getCustomDomainCertificateExpiryDate() == null)
+            return false;
+        if (other.getCustomDomainCertificateExpiryDate() != null
+                && other.getCustomDomainCertificateExpiryDate().equals(this.getCustomDomainCertificateExpiryDate()) == false)
+            return false;
+        if (other.getMasterPasswordSecretArn() == null ^ this.getMasterPasswordSecretArn() == null)
+            return false;
+        if (other.getMasterPasswordSecretArn() != null && other.getMasterPasswordSecretArn().equals(this.getMasterPasswordSecretArn()) == false)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() == null ^ this.getMasterPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() != null && other.getMasterPasswordSecretKmsKeyId().equals(this.getMasterPasswordSecretKmsKeyId()) == false)
+            return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
+        if (other.getMultiAZSecondary() == null ^ this.getMultiAZSecondary() == null)
+            return false;
+        if (other.getMultiAZSecondary() != null && other.getMultiAZSecondary().equals(this.getMultiAZSecondary()) == false)
+            return false;
         return true;
     }
 
@@ -4495,6 +4915,14 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAquaConfiguration() == null) ? 0 : getAquaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getReservedNodeExchangeStatus() == null) ? 0 : getReservedNodeExchangeStatus().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainName() == null) ? 0 : getCustomDomainName().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainCertificateArn() == null) ? 0 : getCustomDomainCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainCertificateExpiryDate() == null) ? 0 : getCustomDomainCertificateExpiryDate().hashCode());
+        hashCode = prime * hashCode + ((getMasterPasswordSecretArn() == null) ? 0 : getMasterPasswordSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getMasterPasswordSecretKmsKeyId() == null) ? 0 : getMasterPasswordSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZSecondary() == null) ? 0 : getMultiAZSecondary().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String executionRoleIdentityConfig;
+    /**
+     * <p>
+     * A collection of settings that configure the domain's Docker interaction.
+     * </p>
+     */
+    private DockerSettings dockerSettings;
 
     /**
      * <p>
@@ -245,6 +251,46 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A collection of settings that configure the domain's Docker interaction.
+     * </p>
+     * 
+     * @param dockerSettings
+     *        A collection of settings that configure the domain's Docker interaction.
+     */
+
+    public void setDockerSettings(DockerSettings dockerSettings) {
+        this.dockerSettings = dockerSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of settings that configure the domain's Docker interaction.
+     * </p>
+     * 
+     * @return A collection of settings that configure the domain's Docker interaction.
+     */
+
+    public DockerSettings getDockerSettings() {
+        return this.dockerSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of settings that configure the domain's Docker interaction.
+     * </p>
+     * 
+     * @param dockerSettings
+     *        A collection of settings that configure the domain's Docker interaction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainSettings withDockerSettings(DockerSettings dockerSettings) {
+        setDockerSettings(dockerSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -261,7 +307,9 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
         if (getRStudioServerProDomainSettings() != null)
             sb.append("RStudioServerProDomainSettings: ").append(getRStudioServerProDomainSettings()).append(",");
         if (getExecutionRoleIdentityConfig() != null)
-            sb.append("ExecutionRoleIdentityConfig: ").append(getExecutionRoleIdentityConfig());
+            sb.append("ExecutionRoleIdentityConfig: ").append(getExecutionRoleIdentityConfig()).append(",");
+        if (getDockerSettings() != null)
+            sb.append("DockerSettings: ").append(getDockerSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -289,6 +337,10 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExecutionRoleIdentityConfig() != null && other.getExecutionRoleIdentityConfig().equals(this.getExecutionRoleIdentityConfig()) == false)
             return false;
+        if (other.getDockerSettings() == null ^ this.getDockerSettings() == null)
+            return false;
+        if (other.getDockerSettings() != null && other.getDockerSettings().equals(this.getDockerSettings()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +352,7 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getRStudioServerProDomainSettings() == null) ? 0 : getRStudioServerProDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleIdentityConfig() == null) ? 0 : getExecutionRoleIdentityConfig().hashCode());
+        hashCode = prime * hashCode + ((getDockerSettings() == null) ? 0 : getDockerSettings().hashCode());
         return hashCode;
     }
 

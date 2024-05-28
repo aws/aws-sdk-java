@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,18 +20,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Configures one or more IP set references for a Suricata-compatible rule group. This is used in <a>CreateRuleGroup</a>
- * or <a>UpdateRuleGroup</a>. An IP set reference is a rule variable that references a resource that you create and
+ * or <a>UpdateRuleGroup</a>. An IP set reference is a rule variable that references resources that you create and
  * manage in another Amazon Web Services service, such as an Amazon VPC prefix list. Network Firewall IP set references
- * enable you to dynamically update the contents of your rules. When you create, update, or delete the IP set you are
+ * enable you to dynamically update the contents of your rules. When you create, update, or delete the resource you are
  * referencing in your rule, Network Firewall automatically updates the rule's content with the changes. For more
  * information about IP set references in Network Firewall, see <a
  * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references">Using IP set
  * references</a> in the <i>Network Firewall Developer Guide</i>.
  * </p>
  * <p>
- * Network Firewall currently supports only <a
- * href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> as IP
- * set references.
+ * Network Firewall currently supports <a
+ * href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> and <a
+ * href=
+ * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references.html#rule-groups-referencing-resource-groups"
+ * >resource groups</a> in IP set references.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/IPSetReference" target="_top">AWS

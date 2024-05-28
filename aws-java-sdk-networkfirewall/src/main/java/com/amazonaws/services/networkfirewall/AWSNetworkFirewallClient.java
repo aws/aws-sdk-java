@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.networkfirewall.AWSNetworkFirewallClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.networkfirewall.model.*;
+
 import com.amazonaws.services.networkfirewall.model.transform.*;
 
 /**
@@ -86,7 +87,7 @@ import com.amazonaws.services.networkfirewall.model.transform.*;
  * Virtual Private Cloud (Amazon VPC). With Network Firewall, you can filter traffic at the perimeter of your VPC. This
  * includes filtering traffic going to and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
  * Network Firewall uses rules that are compatible with Suricata, a free, open source network analysis and threat
- * detection engine. Network Firewall supports Suricata version 5.0.2. For information about Suricata, see the <a
+ * detection engine. Network Firewall supports Suricata version 6.0.9. For information about Suricata, see the <a
  * href="https://suricata.io/">Suricata website</a>.
  * </p>
  * <p>
@@ -299,7 +300,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -393,7 +394,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -503,7 +504,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws LimitExceededException
      *         Unable to perform the operation because doing so would violate a limit setting.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
@@ -596,7 +597,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InsufficientCapacityException
      *         Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your
@@ -685,7 +686,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InsufficientCapacityException
      *         Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your
@@ -740,6 +741,115 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Creates an Network Firewall TLS inspection configuration. A TLS inspection configuration contains Certificate
+     * Manager certificate associations between and the scope configurations that Network Firewall uses to decrypt and
+     * re-encrypt traffic traveling through your firewall.
+     * </p>
+     * <p>
+     * After you create a TLS inspection configuration, you can associate it with a new firewall policy.
+     * </p>
+     * <p>
+     * To update the settings for a TLS inspection configuration, use <a>UpdateTLSInspectionConfiguration</a>.
+     * </p>
+     * <p>
+     * To manage a TLS inspection configuration's tags, use the standard Amazon Web Services resource tagging
+     * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+     * </p>
+     * <p>
+     * To retrieve information about TLS inspection configurations, use <a>ListTLSInspectionConfigurations</a> and
+     * <a>DescribeTLSInspectionConfiguration</a>.
+     * </p>
+     * <p>
+     * For more information about TLS inspection configurations, see <a
+     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Inspecting SSL/TLS
+     * traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.
+     * </p>
+     * 
+     * @param createTLSInspectionConfigurationRequest
+     * @return Result of the CreateTLSInspectionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
+     *         Retry your request.
+     * @throws LimitExceededException
+     *         Unable to perform the operation because doing so would violate a limit setting.
+     * @throws InsufficientCapacityException
+     *         Amazon Web Services doesn't currently have enough available capacity to fulfill your request. Try your
+     *         request later.
+     * @sample AWSNetworkFirewall.CreateTLSInspectionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTLSInspectionConfigurationResult createTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTLSInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateTLSInspectionConfigurationResult executeCreateTLSInspectionConfiguration(
+            CreateTLSInspectionConfigurationRequest createTLSInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTLSInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTLSInspectionConfigurationRequest> request = null;
+        Response<CreateTLSInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTLSInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTLSInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Network Firewall");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTLSInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTLSInspectionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTLSInspectionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This operation requires the firewall's
      * <code>DeleteProtection</code> flag to be <code>FALSE</code>. You can't revert this operation.
      * </p>
@@ -777,7 +887,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -867,7 +977,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws UnsupportedOperationException
      *         The operation you requested isn't supported by Network Firewall.
@@ -949,7 +1059,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1036,7 +1146,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws UnsupportedOperationException
      *         The operation you requested isn't supported by Network Firewall.
@@ -1093,6 +1203,94 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Deletes the specified <a>TLSInspectionConfiguration</a>.
+     * </p>
+     * 
+     * @param deleteTLSInspectionConfigurationRequest
+     * @return Result of the DeleteTLSInspectionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
+     *         Retry your request.
+     * @throws ResourceNotFoundException
+     *         Unable to locate a resource using the parameters that you provided.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InvalidOperationException
+     *         The operation failed because it's not valid. For example, you might have tried to delete a rule group or
+     *         firewall policy that's in use.
+     * @sample AWSNetworkFirewall.DeleteTLSInspectionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTLSInspectionConfigurationResult deleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTLSInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTLSInspectionConfigurationResult executeDeleteTLSInspectionConfiguration(
+            DeleteTLSInspectionConfigurationRequest deleteTLSInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTLSInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTLSInspectionConfigurationRequest> request = null;
+        Response<DeleteTLSInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTLSInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTLSInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Network Firewall");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTLSInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTLSInspectionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTLSInspectionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the data objects for the specified firewall.
      * </p>
      * 
@@ -1118,7 +1316,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1203,7 +1401,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.DescribeFirewallPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicy"
@@ -1281,7 +1479,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1364,7 +1562,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1450,7 +1648,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.DescribeRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroup"
@@ -1533,7 +1731,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.DescribeRuleGroupMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata"
@@ -1587,6 +1785,91 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Returns the data objects for the specified TLS inspection configuration.
+     * </p>
+     * 
+     * @param describeTLSInspectionConfigurationRequest
+     * @return Result of the DescribeTLSInspectionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
+     *         Retry your request.
+     * @throws ResourceNotFoundException
+     *         Unable to locate a resource using the parameters that you provided.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @sample AWSNetworkFirewall.DescribeTLSInspectionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTLSInspectionConfigurationResult describeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTLSInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTLSInspectionConfigurationResult executeDescribeTLSInspectionConfiguration(
+            DescribeTLSInspectionConfigurationRequest describeTLSInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTLSInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTLSInspectionConfigurationRequest> request = null;
+        Response<DescribeTLSInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTLSInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTLSInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Network Firewall");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTLSInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTLSInspectionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTLSInspectionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the specified subnet associations from the firewall. This removes the firewall endpoints from the subnets
      * and removes any network filtering protections that the endpoints were providing.
      * </p>
@@ -1613,7 +1896,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -1702,7 +1985,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.ListFirewallPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPolicies"
@@ -1784,7 +2067,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
@@ -1866,7 +2149,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @sample AWSNetworkFirewall.ListRuleGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListRuleGroups"
@@ -1918,6 +2201,89 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Retrieves the metadata for the TLS inspection configurations that you have defined. Depending on your setting for
+     * max results and the number of TLS inspection configurations, a single call might not return the full list.
+     * </p>
+     * 
+     * @param listTLSInspectionConfigurationsRequest
+     * @return Result of the ListTLSInspectionConfigurations operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
+     *         Retry your request.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @sample AWSNetworkFirewall.ListTLSInspectionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTLSInspectionConfigurationsResult listTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTLSInspectionConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListTLSInspectionConfigurationsResult executeListTLSInspectionConfigurations(
+            ListTLSInspectionConfigurationsRequest listTLSInspectionConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTLSInspectionConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTLSInspectionConfigurationsRequest> request = null;
+        Response<ListTLSInspectionConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTLSInspectionConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTLSInspectionConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Network Firewall");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTLSInspectionConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTLSInspectionConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTLSInspectionConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the tags associated with the specified resource. Tags are key:value pairs that you can use to
      * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
      * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web
@@ -1933,7 +2299,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2060,7 +2426,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2133,7 +2499,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2221,7 +2587,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2321,7 +2687,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2409,7 +2775,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2494,7 +2860,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2587,7 +2953,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InvalidTokenException
      *         The token you provided is stale or isn't valid for the operation.
@@ -2668,7 +3034,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2790,7 +3156,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -2886,7 +3252,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      * @throws ThrottlingException
      *         Unable to process the request due to throttling limitations.
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws InvalidTokenException
      *         The token you provided is stale or isn't valid for the operation.
@@ -2964,7 +3330,7 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
      *         </p>
      *         </li>
      * @throws InternalServerErrorException
-     *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
      *         Retry your request.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
@@ -3014,6 +3380,100 @@ public class AWSNetworkFirewallClient extends AmazonWebServiceClient implements 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSubnetChangeProtectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateSubnetChangeProtectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS
+     * inspection configuration by referencing it in one or more firewall policies. When you modify a TLS inspection
+     * configuration, you modify all firewall policies that use the TLS inspection configuration.
+     * </p>
+     * <p>
+     * To update a TLS inspection configuration, first call <a>DescribeTLSInspectionConfiguration</a> to retrieve the
+     * current <a>TLSInspectionConfiguration</a> object, update the object as needed, and then provide the updated
+     * object to this call.
+     * </p>
+     * 
+     * @param updateTLSInspectionConfigurationRequest
+     * @return Result of the UpdateTLSInspectionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
+     * @throws ResourceNotFoundException
+     *         Unable to locate a resource using the parameters that you provided.
+     * @throws ThrottlingException
+     *         Unable to process the request due to throttling limitations.
+     * @throws InternalServerErrorException
+     *         Your request is valid, but Network Firewall couldn't perform the operation because of a system problem.
+     *         Retry your request.
+     * @throws InvalidTokenException
+     *         The token you provided is stale or isn't valid for the operation.
+     * @sample AWSNetworkFirewall.UpdateTLSInspectionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTLSInspectionConfigurationResult updateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTLSInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTLSInspectionConfigurationResult executeUpdateTLSInspectionConfiguration(
+            UpdateTLSInspectionConfigurationRequest updateTLSInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTLSInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTLSInspectionConfigurationRequest> request = null;
+        Response<UpdateTLSInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTLSInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTLSInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Network Firewall");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTLSInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTLSInspectionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTLSInspectionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

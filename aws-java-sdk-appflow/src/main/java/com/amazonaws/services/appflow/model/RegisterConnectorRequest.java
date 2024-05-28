@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,25 @@ public class RegisterConnectorRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private ConnectorProvisioningConfig connectorProvisioningConfig;
+    /**
+     * <p>
+     * The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     * <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you
+     * don't receive a response from your request, you can safely retry the request with the same
+     * <code>clientToken</code> parameter value.
+     * </p>
+     * <p>
+     * If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for
+     * you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own
+     * value for other use cases.
+     * </p>
+     * <p>
+     * If you specify input parameters that differ from your first request, an error occurs. If you use a different
+     * value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The
+     * token is active for 8 hours.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -237,6 +256,121 @@ public class RegisterConnectorRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     * <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you
+     * don't receive a response from your request, you can safely retry the request with the same
+     * <code>clientToken</code> parameter value.
+     * </p>
+     * <p>
+     * If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for
+     * you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own
+     * value for other use cases.
+     * </p>
+     * <p>
+     * If you specify input parameters that differ from your first request, an error occurs. If you use a different
+     * value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The
+     * token is active for 8 hours.
+     * </p>
+     * 
+     * @param clientToken
+     *        The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     *        <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if
+     *        you don't receive a response from your request, you can safely retry the request with the same
+     *        <code>clientToken</code> parameter value.</p>
+     *        <p>
+     *        If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a
+     *        value for you. This way, the SDK can safely retry requests multiple times after a network error. You must
+     *        provide your own value for other use cases.
+     *        </p>
+     *        <p>
+     *        If you specify input parameters that differ from your first request, an error occurs. If you use a
+     *        different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to
+     *        <code>RegisterConnector</code>. The token is active for 8 hours.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     * <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you
+     * don't receive a response from your request, you can safely retry the request with the same
+     * <code>clientToken</code> parameter value.
+     * </p>
+     * <p>
+     * If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for
+     * you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own
+     * value for other use cases.
+     * </p>
+     * <p>
+     * If you specify input parameters that differ from your first request, an error occurs. If you use a different
+     * value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The
+     * token is active for 8 hours.
+     * </p>
+     * 
+     * @return The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     *         <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if
+     *         you don't receive a response from your request, you can safely retry the request with the same
+     *         <code>clientToken</code> parameter value.</p>
+     *         <p>
+     *         If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a
+     *         value for you. This way, the SDK can safely retry requests multiple times after a network error. You must
+     *         provide your own value for other use cases.
+     *         </p>
+     *         <p>
+     *         If you specify input parameters that differ from your first request, an error occurs. If you use a
+     *         different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to
+     *         <code>RegisterConnector</code>. The token is active for 8 hours.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     * <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you
+     * don't receive a response from your request, you can safely retry the request with the same
+     * <code>clientToken</code> parameter value.
+     * </p>
+     * <p>
+     * If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for
+     * you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own
+     * value for other use cases.
+     * </p>
+     * <p>
+     * If you specify input parameters that differ from your first request, an error occurs. If you use a different
+     * value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The
+     * token is active for 8 hours.
+     * </p>
+     * 
+     * @param clientToken
+     *        The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+     *        <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if
+     *        you don't receive a response from your request, you can safely retry the request with the same
+     *        <code>clientToken</code> parameter value.</p>
+     *        <p>
+     *        If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a
+     *        value for you. This way, the SDK can safely retry requests multiple times after a network error. You must
+     *        provide your own value for other use cases.
+     *        </p>
+     *        <p>
+     *        If you specify input parameters that differ from your first request, an error occurs. If you use a
+     *        different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to
+     *        <code>RegisterConnector</code>. The token is active for 8 hours.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterConnectorRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +389,9 @@ public class RegisterConnectorRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getConnectorProvisioningType() != null)
             sb.append("ConnectorProvisioningType: ").append(getConnectorProvisioningType()).append(",");
         if (getConnectorProvisioningConfig() != null)
-            sb.append("ConnectorProvisioningConfig: ").append(getConnectorProvisioningConfig());
+            sb.append("ConnectorProvisioningConfig: ").append(getConnectorProvisioningConfig()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +422,10 @@ public class RegisterConnectorRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getConnectorProvisioningConfig() != null && other.getConnectorProvisioningConfig().equals(this.getConnectorProvisioningConfig()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +438,7 @@ public class RegisterConnectorRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getConnectorProvisioningType() == null) ? 0 : getConnectorProvisioningType().hashCode());
         hashCode = prime * hashCode + ((getConnectorProvisioningConfig() == null) ? 0 : getConnectorProvisioningConfig().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

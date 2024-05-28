@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.services.iottwinmaker.model.*;
  * </p>
  * <p>
  * <p>
- * IoT TwinMaker is a service that enables you to build operational digital twins of physical systems. IoT TwinMaker
+ * IoT TwinMaker is a service with which you can build operational digital twins of physical systems. IoT TwinMaker
  * overlays measurements and analysis from real-world sensors, cameras, and enterprise applications so you can create
  * data visualizations to monitor your physical factory, building, or industrial plant. You can use this real-world data
  * to monitor operations and diagnose and repair errors.
@@ -65,6 +65,39 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
      */
     java.util.concurrent.Future<BatchPutPropertyValuesResult> batchPutPropertyValuesAsync(BatchPutPropertyValuesRequest batchPutPropertyValuesRequest,
             com.amazonaws.handlers.AsyncHandler<BatchPutPropertyValuesRequest, BatchPutPropertyValuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels the metadata transfer job.
+     * </p>
+     * 
+     * @param cancelMetadataTransferJobRequest
+     * @return A Java Future containing the result of the CancelMetadataTransferJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.CancelMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMetadataTransferJobResult> cancelMetadataTransferJobAsync(
+            CancelMetadataTransferJobRequest cancelMetadataTransferJobRequest);
+
+    /**
+     * <p>
+     * Cancels the metadata transfer job.
+     * </p>
+     * 
+     * @param cancelMetadataTransferJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelMetadataTransferJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.CancelMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMetadataTransferJobResult> cancelMetadataTransferJobAsync(
+            CancelMetadataTransferJobRequest cancelMetadataTransferJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelMetadataTransferJobRequest, CancelMetadataTransferJobResult> asyncHandler);
 
     /**
      * <p>
@@ -130,6 +163,39 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
 
     /**
      * <p>
+     * Creates a new metadata transfer job.
+     * </p>
+     * 
+     * @param createMetadataTransferJobRequest
+     * @return A Java Future containing the result of the CreateMetadataTransferJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.CreateMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMetadataTransferJobResult> createMetadataTransferJobAsync(
+            CreateMetadataTransferJobRequest createMetadataTransferJobRequest);
+
+    /**
+     * <p>
+     * Creates a new metadata transfer job.
+     * </p>
+     * 
+     * @param createMetadataTransferJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMetadataTransferJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.CreateMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMetadataTransferJobResult> createMetadataTransferJobAsync(
+            CreateMetadataTransferJobRequest createMetadataTransferJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMetadataTransferJobRequest, CreateMetadataTransferJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a scene.
      * </p>
      * 
@@ -158,6 +224,37 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
      */
     java.util.concurrent.Future<CreateSceneResult> createSceneAsync(CreateSceneRequest createSceneRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSceneRequest, CreateSceneResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action creates a SyncJob.
+     * </p>
+     * 
+     * @param createSyncJobRequest
+     * @return A Java Future containing the result of the CreateSyncJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.CreateSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSyncJobResult> createSyncJobAsync(CreateSyncJobRequest createSyncJobRequest);
+
+    /**
+     * <p>
+     * This action creates a SyncJob.
+     * </p>
+     * 
+     * @param createSyncJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSyncJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.CreateSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSyncJobResult> createSyncJobAsync(CreateSyncJobRequest createSyncJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSyncJobRequest, CreateSyncJobResult> asyncHandler);
 
     /**
      * <p>
@@ -285,6 +382,37 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
 
     /**
      * <p>
+     * Delete the SyncJob.
+     * </p>
+     * 
+     * @param deleteSyncJobRequest
+     * @return A Java Future containing the result of the DeleteSyncJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.DeleteSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSyncJobResult> deleteSyncJobAsync(DeleteSyncJobRequest deleteSyncJobRequest);
+
+    /**
+     * <p>
+     * Delete the SyncJob.
+     * </p>
+     * 
+     * @param deleteSyncJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSyncJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.DeleteSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSyncJobResult> deleteSyncJobAsync(DeleteSyncJobRequest deleteSyncJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSyncJobRequest, DeleteSyncJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a workspace.
      * </p>
      * 
@@ -313,6 +441,51 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
      */
     java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest deleteWorkspaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceRequest, DeleteWorkspaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Run queries to access information from your knowledge graph of entities within individual workspaces.
+     * </p>
+     * <note>
+     * <p>
+     * The ExecuteQuery action only works with <a
+     * href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon Web Services Java
+     * SDK2</a>. ExecuteQuery will not work with any Amazon Web Services Java SDK version &lt; 2.x.
+     * </p>
+     * </note>
+     * 
+     * @param executeQueryRequest
+     * @return A Java Future containing the result of the ExecuteQuery operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.ExecuteQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest executeQueryRequest);
+
+    /**
+     * <p>
+     * Run queries to access information from your knowledge graph of entities within individual workspaces.
+     * </p>
+     * <note>
+     * <p>
+     * The ExecuteQuery action only works with <a
+     * href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon Web Services Java
+     * SDK2</a>. ExecuteQuery will not work with any Amazon Web Services Java SDK version &lt; 2.x.
+     * </p>
+     * </note>
+     * 
+     * @param executeQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteQuery operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.ExecuteQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest executeQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteQueryRequest, ExecuteQueryResult> asyncHandler);
 
     /**
      * <p>
@@ -375,6 +548,68 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
      */
     java.util.concurrent.Future<GetEntityResult> getEntityAsync(GetEntityRequest getEntityRequest,
             com.amazonaws.handlers.AsyncHandler<GetEntityRequest, GetEntityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a nmetadata transfer job.
+     * </p>
+     * 
+     * @param getMetadataTransferJobRequest
+     * @return A Java Future containing the result of the GetMetadataTransferJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.GetMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetadataTransferJobResult> getMetadataTransferJobAsync(GetMetadataTransferJobRequest getMetadataTransferJobRequest);
+
+    /**
+     * <p>
+     * Gets a nmetadata transfer job.
+     * </p>
+     * 
+     * @param getMetadataTransferJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetadataTransferJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.GetMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetadataTransferJobResult> getMetadataTransferJobAsync(GetMetadataTransferJobRequest getMetadataTransferJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetadataTransferJobRequest, GetMetadataTransferJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the pricing plan.
+     * </p>
+     * 
+     * @param getPricingPlanRequest
+     * @return A Java Future containing the result of the GetPricingPlan operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.GetPricingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPricingPlanResult> getPricingPlanAsync(GetPricingPlanRequest getPricingPlanRequest);
+
+    /**
+     * <p>
+     * Gets the pricing plan.
+     * </p>
+     * 
+     * @param getPricingPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPricingPlan operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.GetPricingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPricingPlanResult> getPricingPlanAsync(GetPricingPlanRequest getPricingPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPricingPlanRequest, GetPricingPlanResult> asyncHandler);
 
     /**
      * <p>
@@ -491,6 +726,37 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
 
     /**
      * <p>
+     * Gets the SyncJob.
+     * </p>
+     * 
+     * @param getSyncJobRequest
+     * @return A Java Future containing the result of the GetSyncJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.GetSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSyncJobResult> getSyncJobAsync(GetSyncJobRequest getSyncJobRequest);
+
+    /**
+     * <p>
+     * Gets the SyncJob.
+     * </p>
+     * 
+     * @param getSyncJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSyncJob operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.GetSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSyncJobResult> getSyncJobAsync(GetSyncJobRequest getSyncJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSyncJobRequest, GetSyncJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about a workspace.
      * </p>
      * 
@@ -553,6 +819,37 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
 
     /**
      * <p>
+     * This API lists the components of an entity.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @return A Java Future containing the result of the ListComponents operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest listComponentsRequest);
+
+    /**
+     * <p>
+     * This API lists the components of an entity.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListComponents operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest listComponentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all entities in a workspace.
      * </p>
      * 
@@ -584,6 +881,68 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
 
     /**
      * <p>
+     * Lists the metadata transfer jobs.
+     * </p>
+     * 
+     * @param listMetadataTransferJobsRequest
+     * @return A Java Future containing the result of the ListMetadataTransferJobs operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.ListMetadataTransferJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetadataTransferJobsResult> listMetadataTransferJobsAsync(ListMetadataTransferJobsRequest listMetadataTransferJobsRequest);
+
+    /**
+     * <p>
+     * Lists the metadata transfer jobs.
+     * </p>
+     * 
+     * @param listMetadataTransferJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMetadataTransferJobs operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.ListMetadataTransferJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetadataTransferJobsResult> listMetadataTransferJobsAsync(ListMetadataTransferJobsRequest listMetadataTransferJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMetadataTransferJobsRequest, ListMetadataTransferJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API lists the properties of a component.
+     * </p>
+     * 
+     * @param listPropertiesRequest
+     * @return A Java Future containing the result of the ListProperties operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.ListProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPropertiesResult> listPropertiesAsync(ListPropertiesRequest listPropertiesRequest);
+
+    /**
+     * <p>
+     * This API lists the properties of a component.
+     * </p>
+     * 
+     * @param listPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProperties operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.ListProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPropertiesResult> listPropertiesAsync(ListPropertiesRequest listPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPropertiesRequest, ListPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all scenes in a workspace.
      * </p>
      * 
@@ -612,6 +971,68 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
      */
     java.util.concurrent.Future<ListScenesResult> listScenesAsync(ListScenesRequest listScenesRequest,
             com.amazonaws.handlers.AsyncHandler<ListScenesRequest, ListScenesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all SyncJobs.
+     * </p>
+     * 
+     * @param listSyncJobsRequest
+     * @return A Java Future containing the result of the ListSyncJobs operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.ListSyncJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSyncJobsResult> listSyncJobsAsync(ListSyncJobsRequest listSyncJobsRequest);
+
+    /**
+     * <p>
+     * List all SyncJobs.
+     * </p>
+     * 
+     * @param listSyncJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSyncJobs operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.ListSyncJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSyncJobsResult> listSyncJobsAsync(ListSyncJobsRequest listSyncJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSyncJobsRequest, ListSyncJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the sync resources.
+     * </p>
+     * 
+     * @param listSyncResourcesRequest
+     * @return A Java Future containing the result of the ListSyncResources operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.ListSyncResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSyncResourcesResult> listSyncResourcesAsync(ListSyncResourcesRequest listSyncResourcesRequest);
+
+    /**
+     * <p>
+     * Lists the sync resources.
+     * </p>
+     * 
+     * @param listSyncResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSyncResources operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.ListSyncResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSyncResourcesResult> listSyncResourcesAsync(ListSyncResourcesRequest listSyncResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSyncResourcesRequest, ListSyncResourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -798,6 +1219,37 @@ public interface AWSIoTTwinMakerAsync extends AWSIoTTwinMaker {
      */
     java.util.concurrent.Future<UpdateEntityResult> updateEntityAsync(UpdateEntityRequest updateEntityRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEntityRequest, UpdateEntityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the pricing plan.
+     * </p>
+     * 
+     * @param updatePricingPlanRequest
+     * @return A Java Future containing the result of the UpdatePricingPlan operation returned by the service.
+     * @sample AWSIoTTwinMakerAsync.UpdatePricingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePricingPlanResult> updatePricingPlanAsync(UpdatePricingPlanRequest updatePricingPlanRequest);
+
+    /**
+     * <p>
+     * Update the pricing plan.
+     * </p>
+     * 
+     * @param updatePricingPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePricingPlan operation returned by the service.
+     * @sample AWSIoTTwinMakerAsyncHandler.UpdatePricingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePricingPlanResult> updatePricingPlanAsync(UpdatePricingPlanRequest updatePricingPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePricingPlanRequest, UpdatePricingPlanResult> asyncHandler);
 
     /**
      * <p>

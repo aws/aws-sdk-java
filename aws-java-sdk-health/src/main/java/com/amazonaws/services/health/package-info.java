@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,21 +14,23 @@
 /**
  * <fullname>Health</fullname>
  * <p>
- * The Health API provides programmatic access to the Health information that appears in the <a
- * href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You can use the API operations to get
- * information about events that might affect your Amazon Web Services services and resources.
+ * The Health API provides access to the Health information that appears in the <a
+ * href="https://health.aws.amazon.com/health/home">Health Dashboard</a>. You can use the API operations to get
+ * information about events that might affect your Amazon Web Services and resources.
  * </p>
- * <note>
- * <ul>
- * <li>
  * <p>
  * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a
  * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the
  * Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
  * Support plan, you receive a <code>SubscriptionRequiredException</code> error.
  * </p>
- * </li>
- * <li>
+ * <p>
+ * For API access, you need an access key ID and a secret access key. Use temporary credentials instead of long-term
+ * access keys when possible. Temporary credentials include an access key ID, a secret access key, and a security token
+ * that indicates when the credentials expire. For more information, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best practices for managing
+ * Amazon Web Services access keys</a> in the <i>Amazon Web Services General Reference</i>.
+ * </p>
  * <p>
  * You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS) to call the Health API operations. Health
  * supports a multi-Region application architecture and has two regional endpoints in an active-passive configuration.
@@ -37,9 +39,6 @@
  * href="https://docs.aws.amazon.com/health/latest/ug/health-api.html">Accessing the Health API</a> in the <i>Health
  * User Guide</i>.
  * </p>
- * </li>
- * </ul>
- * </note>
  * <p>
  * For authentication of requests, Health uses the <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing

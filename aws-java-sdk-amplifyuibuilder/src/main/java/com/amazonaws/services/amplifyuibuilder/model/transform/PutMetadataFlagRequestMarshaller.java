@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,12 +29,12 @@ public class PutMetadataFlagRequestMarshaller {
 
     private static final MarshallingInfo<String> APPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("appId").build();
-    private static final MarshallingInfo<StructuredPojo> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("environmentName").build();
     private static final MarshallingInfo<String> FEATURENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("featureName").build();
+    private static final MarshallingInfo<StructuredPojo> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
     private static final PutMetadataFlagRequestMarshaller instance = new PutMetadataFlagRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class PutMetadataFlagRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putMetadataFlagRequest.getAppId(), APPID_BINDING);
-            protocolMarshaller.marshall(putMetadataFlagRequest.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(putMetadataFlagRequest.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(putMetadataFlagRequest.getFeatureName(), FEATURENAME_BINDING);
+            protocolMarshaller.marshall(putMetadataFlagRequest.getBody(), BODY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

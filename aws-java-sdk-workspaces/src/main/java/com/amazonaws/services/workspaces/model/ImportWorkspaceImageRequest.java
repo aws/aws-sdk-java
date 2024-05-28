@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,15 +71,24 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
-     * information about subscribing to Office for BYOL images, see <a
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For
+     * more information about subscribing to Office for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * Although this parameter is an array, only one item is allowed at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> applications;
@@ -451,24 +460,42 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
-     * information about subscribing to Office for BYOL images, see <a
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For
+     * more information about subscribing to Office for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * Although this parameter is an array, only one item is allowed at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
-     * @return If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
-     *         more information about subscribing to Office for BYOL images, see <a
+     * @return If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL
+     *         images. For more information about subscribing to Office for BYOL images, see <a
      *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *         Windows Desktop Licenses</a>.</p> <note>
+     *         <ul>
+     *         <li>
      *         <p>
      *         Although this parameter is an array, only one item is allowed at this time.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
      * @see Application
      */
 
@@ -481,25 +508,43 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
-     * information about subscribing to Office for BYOL images, see <a
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For
+     * more information about subscribing to Office for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * Although this parameter is an array, only one item is allowed at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param applications
-     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
-     *        more information about subscribing to Office for BYOL images, see <a
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL
+     *        images. For more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @see Application
      */
 
@@ -514,15 +559,24 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
-     * information about subscribing to Office for BYOL images, see <a
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For
+     * more information about subscribing to Office for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * Although this parameter is an array, only one item is allowed at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -531,13 +585,22 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param applications
-     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
-     *        more information about subscribing to Office for BYOL images, see <a
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL
+     *        images. For more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Application
      */
@@ -554,25 +617,43 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
-     * information about subscribing to Office for BYOL images, see <a
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For
+     * more information about subscribing to Office for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * Although this parameter is an array, only one item is allowed at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param applications
-     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
-     *        more information about subscribing to Office for BYOL images, see <a
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL
+     *        images. For more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Application
      */
@@ -584,25 +665,43 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
-     * information about subscribing to Office for BYOL images, see <a
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For
+     * more information about subscribing to Office for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * Although this parameter is an array, only one item is allowed at this time.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param applications
-     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
-     *        more information about subscribing to Office for BYOL images, see <a
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL
+     *        images. For more information about subscribing to Office for BYOL images, see <a
      *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
      *        Windows Desktop Licenses</a>.</p> <note>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Although this parameter is an array, only one item is allowed at this time.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows 11 only supports <code>Microsoft_Office_2019</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Application
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * specified tags to be included or excluded. For more information, see <a
  * href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>.
  * </p>
+ * <p>
+ * Every resource tag must have a string value, either a non-empty string or an empty string. If you don't provide a
+ * value for a resource tag, Firewall Manager saves the value as an empty string: "". When Firewall Manager compares
+ * tags, it only matches two tags if they have the same key and the same value. A tag with an empty string value only
+ * matches with tags that also have an empty string value.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ResourceTag" target="_top">AWS API
  *      Documentation</a>
@@ -41,7 +47,7 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The resource tag value.
+     * The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      * </p>
      */
     private String value;
@@ -88,11 +94,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource tag value.
+     * The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      * </p>
      * 
      * @param value
-     *        The resource tag value.
+     *        The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      */
 
     public void setValue(String value) {
@@ -101,10 +107,10 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource tag value.
+     * The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      * </p>
      * 
-     * @return The resource tag value.
+     * @return The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      */
 
     public String getValue() {
@@ -113,11 +119,11 @@ public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource tag value.
+     * The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      * </p>
      * 
      * @param value
-     *        The resource tag value.
+     *        The resource tag value. To specify an empty string value, either don't provide this or specify it as "".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

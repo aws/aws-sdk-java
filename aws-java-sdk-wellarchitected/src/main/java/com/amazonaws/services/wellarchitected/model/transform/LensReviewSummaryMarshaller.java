@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.wellarchitected.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +43,10 @@ public class LensReviewSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> RISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RiskCounts").build();
+    private static final MarshallingInfo<List> PROFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Profiles").build();
+    private static final MarshallingInfo<Map> PRIORITIZEDRISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrioritizedRiskCounts").build();
 
     private static final LensReviewSummaryMarshaller instance = new LensReviewSummaryMarshaller();
 
@@ -67,6 +71,8 @@ public class LensReviewSummaryMarshaller {
             protocolMarshaller.marshall(lensReviewSummary.getLensStatus(), LENSSTATUS_BINDING);
             protocolMarshaller.marshall(lensReviewSummary.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(lensReviewSummary.getRiskCounts(), RISKCOUNTS_BINDING);
+            protocolMarshaller.marshall(lensReviewSummary.getProfiles(), PROFILES_BINDING);
+            protocolMarshaller.marshall(lensReviewSummary.getPrioritizedRiskCounts(), PRIORITIZEDRISKCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

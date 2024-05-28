@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,11 @@ public class FeatureActivations implements Serializable, Cloneable, StructuredPo
      * actions from the schedule.
      */
     private String inputPrepareScheduleActions;
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     * updates to display/clear/modify image overlays on an output-by-output bases.
+     */
+    private String outputStaticImageOverlayScheduleActions;
 
     /**
      * Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is
@@ -101,6 +106,66 @@ public class FeatureActivations implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     * updates to display/clear/modify image overlays on an output-by-output bases.
+     * 
+     * @param outputStaticImageOverlayScheduleActions
+     *        Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     *        updates to display/clear/modify image overlays on an output-by-output bases.
+     * @see FeatureActivationsOutputStaticImageOverlayScheduleActions
+     */
+
+    public void setOutputStaticImageOverlayScheduleActions(String outputStaticImageOverlayScheduleActions) {
+        this.outputStaticImageOverlayScheduleActions = outputStaticImageOverlayScheduleActions;
+    }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     * updates to display/clear/modify image overlays on an output-by-output bases.
+     * 
+     * @return Enables the output static image overlay feature. Enabling this feature allows you to send channel
+     *         schedule updates to display/clear/modify image overlays on an output-by-output bases.
+     * @see FeatureActivationsOutputStaticImageOverlayScheduleActions
+     */
+
+    public String getOutputStaticImageOverlayScheduleActions() {
+        return this.outputStaticImageOverlayScheduleActions;
+    }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     * updates to display/clear/modify image overlays on an output-by-output bases.
+     * 
+     * @param outputStaticImageOverlayScheduleActions
+     *        Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     *        updates to display/clear/modify image overlays on an output-by-output bases.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FeatureActivationsOutputStaticImageOverlayScheduleActions
+     */
+
+    public FeatureActivations withOutputStaticImageOverlayScheduleActions(String outputStaticImageOverlayScheduleActions) {
+        setOutputStaticImageOverlayScheduleActions(outputStaticImageOverlayScheduleActions);
+        return this;
+    }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     * updates to display/clear/modify image overlays on an output-by-output bases.
+     * 
+     * @param outputStaticImageOverlayScheduleActions
+     *        Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule
+     *        updates to display/clear/modify image overlays on an output-by-output bases.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FeatureActivationsOutputStaticImageOverlayScheduleActions
+     */
+
+    public FeatureActivations withOutputStaticImageOverlayScheduleActions(
+            FeatureActivationsOutputStaticImageOverlayScheduleActions outputStaticImageOverlayScheduleActions) {
+        this.outputStaticImageOverlayScheduleActions = outputStaticImageOverlayScheduleActions.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +178,9 @@ public class FeatureActivations implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputPrepareScheduleActions() != null)
-            sb.append("InputPrepareScheduleActions: ").append(getInputPrepareScheduleActions());
+            sb.append("InputPrepareScheduleActions: ").append(getInputPrepareScheduleActions()).append(",");
+        if (getOutputStaticImageOverlayScheduleActions() != null)
+            sb.append("OutputStaticImageOverlayScheduleActions: ").append(getOutputStaticImageOverlayScheduleActions());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +199,11 @@ public class FeatureActivations implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getInputPrepareScheduleActions() != null && other.getInputPrepareScheduleActions().equals(this.getInputPrepareScheduleActions()) == false)
             return false;
+        if (other.getOutputStaticImageOverlayScheduleActions() == null ^ this.getOutputStaticImageOverlayScheduleActions() == null)
+            return false;
+        if (other.getOutputStaticImageOverlayScheduleActions() != null
+                && other.getOutputStaticImageOverlayScheduleActions().equals(this.getOutputStaticImageOverlayScheduleActions()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +213,7 @@ public class FeatureActivations implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInputPrepareScheduleActions() == null) ? 0 : getInputPrepareScheduleActions().hashCode());
+        hashCode = prime * hashCode + ((getOutputStaticImageOverlayScheduleActions() == null) ? 0 : getOutputStaticImageOverlayScheduleActions().hashCode());
         return hashCode;
     }
 

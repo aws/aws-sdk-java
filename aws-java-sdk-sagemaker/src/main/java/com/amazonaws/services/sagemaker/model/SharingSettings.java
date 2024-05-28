@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies options for sharing SageMaker Studio notebooks. These settings are specified as part of
+ * Specifies options for sharing Amazon SageMaker Studio notebooks. These settings are specified as part of
  * <code>DefaultUserSettings</code> when the <code>CreateDomain</code> API is called, and as part of
  * <code>UserSettings</code> when the <code>CreateUserProfile</code> API is called. When <code>SharingSettings</code> is
  * not specified, notebook sharing isn't allowed.

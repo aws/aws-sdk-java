@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,16 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public AddBridgeOutputsResult addBridgeOutputs(AddBridgeOutputsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AddBridgeSourcesResult addBridgeSources(AddBridgeSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddFlowMediaStreamsResult addFlowMediaStreams(AddFlowMediaStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,7 +59,22 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public CreateBridgeResult createBridge(CreateBridgeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateFlowResult createFlow(CreateFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGatewayResult createGateway(CreateGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBridgeResult deleteBridge(DeleteBridgeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,7 +84,37 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public DeleteGatewayResult deleteGateway(DeleteGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeregisterGatewayInstanceResult deregisterGatewayInstance(DeregisterGatewayInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeBridgeResult describeBridge(DescribeBridgeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFlowResult describeFlow(DescribeFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFlowSourceMetadataResult describeFlowSourceMetadata(DescribeFlowSourceMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGatewayResult describeGateway(DescribeGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGatewayInstanceResult describeGatewayInstance(DescribeGatewayInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,12 +134,27 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public ListBridgesResult listBridges(ListBridgesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEntitlementsResult listEntitlements(ListEntitlementsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListFlowsResult listFlows(ListFlowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGatewayInstancesResult listGatewayInstances(ListGatewayInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGatewaysResult listGateways(ListGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,6 +175,16 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveBridgeOutputResult removeBridgeOutput(RemoveBridgeOutputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveBridgeSourceResult removeBridgeSource(RemoveBridgeSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +234,26 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public UpdateBridgeResult updateBridge(UpdateBridgeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBridgeOutputResult updateBridgeOutput(UpdateBridgeOutputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBridgeSourceResult updateBridgeSource(UpdateBridgeSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBridgeStateResult updateBridgeState(UpdateBridgeStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateFlowResult updateFlow(UpdateFlowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,6 +275,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public UpdateFlowSourceResult updateFlowSource(UpdateFlowSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGatewayInstanceResult updateGatewayInstance(UpdateGatewayInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

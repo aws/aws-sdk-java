@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class GetMultiRegionAccessPointPolicyRequest extends com.amazonaws.Amazon
      * For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a
      * href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     * >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private String name;
@@ -88,7 +88,7 @@ public class GetMultiRegionAccessPointPolicyRequest extends com.amazonaws.Amazon
      * For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a
      * href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     * >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param name
@@ -96,7 +96,7 @@ public class GetMultiRegionAccessPointPolicyRequest extends com.amazonaws.Amazon
      *        alias. For more information about the distinction between the name and the alias of an Multi-Region Access
      *        Point, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     *        >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     *        >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setName(String name) {
@@ -109,14 +109,14 @@ public class GetMultiRegionAccessPointPolicyRequest extends com.amazonaws.Amazon
      * For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a
      * href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     * >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @return Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the
      *         alias. For more information about the distinction between the name and the alias of an Multi-Region
      *         Access Point, see <a href=
      *         "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     *         >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     *         >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public String getName() {
@@ -129,7 +129,7 @@ public class GetMultiRegionAccessPointPolicyRequest extends com.amazonaws.Amazon
      * For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a
      * href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     * >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param name
@@ -137,7 +137,7 @@ public class GetMultiRegionAccessPointPolicyRequest extends com.amazonaws.Amazon
      *        alias. For more information about the distinction between the name and the alias of an Multi-Region Access
      *        Point, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming"
-     *        >Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     *        >Rules for naming Amazon S3 Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

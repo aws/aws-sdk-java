@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class PredictiveDialerConfigMarshaller {
 
     private static final MarshallingInfo<Double> BANDWIDTHALLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bandwidthAllocation").build();
+    private static final MarshallingInfo<Double> DIALINGCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialingCapacity").build();
 
     private static final PredictiveDialerConfigMarshaller instance = new PredictiveDialerConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class PredictiveDialerConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(predictiveDialerConfig.getBandwidthAllocation(), BANDWIDTHALLOCATION_BINDING);
+            protocolMarshaller.marshall(predictiveDialerConfig.getDialingCapacity(), DIALINGCAPACITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

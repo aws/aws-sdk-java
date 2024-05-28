@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,13 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private ObdInterface obdInterface;
+    /**
+     * <p>
+     * The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     * <code>ROS2</code> and <code>SOME/IP</code>.
+     * </p>
+     */
+    private VehicleMiddleware vehicleMiddleware;
 
     /**
      * <p>
@@ -255,6 +262,52 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     * <code>ROS2</code> and <code>SOME/IP</code>.
+     * </p>
+     * 
+     * @param vehicleMiddleware
+     *        The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     *        <code>ROS2</code> and <code>SOME/IP</code>.
+     */
+
+    public void setVehicleMiddleware(VehicleMiddleware vehicleMiddleware) {
+        this.vehicleMiddleware = vehicleMiddleware;
+    }
+
+    /**
+     * <p>
+     * The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     * <code>ROS2</code> and <code>SOME/IP</code>.
+     * </p>
+     * 
+     * @return The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     *         <code>ROS2</code> and <code>SOME/IP</code>.
+     */
+
+    public VehicleMiddleware getVehicleMiddleware() {
+        return this.vehicleMiddleware;
+    }
+
+    /**
+     * <p>
+     * The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     * <code>ROS2</code> and <code>SOME/IP</code>.
+     * </p>
+     * 
+     * @param vehicleMiddleware
+     *        The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include
+     *        <code>ROS2</code> and <code>SOME/IP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withVehicleMiddleware(VehicleMiddleware vehicleMiddleware) {
+        setVehicleMiddleware(vehicleMiddleware);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -273,7 +326,9 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
         if (getCanInterface() != null)
             sb.append("CanInterface: ").append(getCanInterface()).append(",");
         if (getObdInterface() != null)
-            sb.append("ObdInterface: ").append(getObdInterface());
+            sb.append("ObdInterface: ").append(getObdInterface()).append(",");
+        if (getVehicleMiddleware() != null)
+            sb.append("VehicleMiddleware: ").append(getVehicleMiddleware());
         sb.append("}");
         return sb.toString();
     }
@@ -304,6 +359,10 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getObdInterface() != null && other.getObdInterface().equals(this.getObdInterface()) == false)
             return false;
+        if (other.getVehicleMiddleware() == null ^ this.getVehicleMiddleware() == null)
+            return false;
+        if (other.getVehicleMiddleware() != null && other.getVehicleMiddleware().equals(this.getVehicleMiddleware()) == false)
+            return false;
         return true;
     }
 
@@ -316,6 +375,7 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCanInterface() == null) ? 0 : getCanInterface().hashCode());
         hashCode = prime * hashCode + ((getObdInterface() == null) ? 0 : getObdInterface().hashCode());
+        hashCode = prime * hashCode + ((getVehicleMiddleware() == null) ? 0 : getVehicleMiddleware().hashCode());
         return hashCode;
     }
 

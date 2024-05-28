@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class DescribeLogPatternRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatternSetName").build();
     private static final MarshallingInfo<String> PATTERNNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatternName").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
     private static final DescribeLogPatternRequestMarshaller instance = new DescribeLogPatternRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DescribeLogPatternRequestMarshaller {
             protocolMarshaller.marshall(describeLogPatternRequest.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
             protocolMarshaller.marshall(describeLogPatternRequest.getPatternSetName(), PATTERNSETNAME_BINDING);
             protocolMarshaller.marshall(describeLogPatternRequest.getPatternName(), PATTERNNAME_BINDING);
+            protocolMarshaller.marshall(describeLogPatternRequest.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

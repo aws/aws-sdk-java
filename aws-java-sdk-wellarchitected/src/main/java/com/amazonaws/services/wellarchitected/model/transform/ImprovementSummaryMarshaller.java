@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class ImprovementSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImprovementPlanUrl").build();
     private static final MarshallingInfo<List> IMPROVEMENTPLANS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImprovementPlans").build();
+    private static final MarshallingInfo<StructuredPojo> JIRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JiraConfiguration").build();
 
     private static final ImprovementSummaryMarshaller instance = new ImprovementSummaryMarshaller();
 
@@ -63,6 +65,7 @@ public class ImprovementSummaryMarshaller {
             protocolMarshaller.marshall(improvementSummary.getRisk(), RISK_BINDING);
             protocolMarshaller.marshall(improvementSummary.getImprovementPlanUrl(), IMPROVEMENTPLANURL_BINDING);
             protocolMarshaller.marshall(improvementSummary.getImprovementPlans(), IMPROVEMENTPLANS_BINDING);
+            protocolMarshaller.marshall(improvementSummary.getJiraConfiguration(), JIRACONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

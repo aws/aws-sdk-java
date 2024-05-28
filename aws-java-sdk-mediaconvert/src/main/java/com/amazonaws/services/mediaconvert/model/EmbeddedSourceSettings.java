@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
-     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
-     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+     * Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      */
     private String convert608To708;
     /**
@@ -50,14 +50,13 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
-     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
-     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+     * Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
      *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
-     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
-     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
-     *        into 708.
+     *        choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through
+     *        using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * @see EmbeddedConvert608To708
      */
 
@@ -67,13 +66,13 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
-     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
-     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+     * Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @return Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
-     *         choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
-     *         through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
-     *         into 708.
+     *         choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through
+     *         using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into
+     *         708.
      * @see EmbeddedConvert608To708
      */
 
@@ -83,14 +82,13 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
-     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
-     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+     * Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
      *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
-     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
-     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
-     *        into 708.
+     *        choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through
+     *        using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EmbeddedConvert608To708
      */
@@ -102,14 +100,13 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
-     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
-     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
+     * Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608
+     * compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
      *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
-     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
-     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
-     *        into 708.
+     *        choose Upconvert, MediaConvert includes the captions data in two ways: it passes the 608 data through
+     *        using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EmbeddedConvert608To708
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,24 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
      * </p>
      */
     private String folderId;
+    /**
+     * <p>
+     * The namespace of the folder whose permissions you want described.
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
+     * The maximum number of results to be returned per request.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * A pagination token for the next set of results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -119,6 +137,126 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The namespace of the folder whose permissions you want described.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace of the folder whose permissions you want described.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace of the folder whose permissions you want described.
+     * </p>
+     * 
+     * @return The namespace of the folder whose permissions you want described.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace of the folder whose permissions you want described.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace of the folder whose permissions you want described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFolderResolvedPermissionsRequest withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to be returned per request.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to be returned per request.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to be returned per request.
+     * </p>
+     * 
+     * @return The maximum number of results to be returned per request.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to be returned per request.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to be returned per request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFolderResolvedPermissionsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A pagination token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token for the next set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token for the next set of results.
+     * </p>
+     * 
+     * @return A pagination token for the next set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A pagination token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        A pagination token for the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFolderResolvedPermissionsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +271,13 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
         if (getAwsAccountId() != null)
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
         if (getFolderId() != null)
-            sb.append("FolderId: ").append(getFolderId());
+            sb.append("FolderId: ").append(getFolderId()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +300,18 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
             return false;
         if (other.getFolderId() != null && other.getFolderId().equals(this.getFolderId()) == false)
             return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +322,9 @@ public class DescribeFolderResolvedPermissionsRequest extends com.amazonaws.Amaz
 
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getFolderId() == null) ? 0 : getFolderId().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

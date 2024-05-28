@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,21 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
     private String scanType;
     /** The width of the video source, in pixels. */
     private Integer width;
+    /** The Link device's buffer size (latency) in milliseconds (ms). You can specify this value. */
+    private Integer latencyMs;
+    /** The codec for the video that the device produces. */
+    private String codec;
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     */
+    private InputDeviceMediaConnectSettings mediaconnectSettings;
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies
+     * either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when
+     * the device is configured as the source for a MediaConnect flow.
+     */
+    private java.util.List<InputDeviceUhdAudioChannelPairConfig> audioChannelPairs;
 
     /**
      * If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -388,6 +403,209 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * 
+     * @param latencyMs
+     *        The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     */
+
+    public void setLatencyMs(Integer latencyMs) {
+        this.latencyMs = latencyMs;
+    }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * 
+     * @return The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     */
+
+    public Integer getLatencyMs() {
+        return this.latencyMs;
+    }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * 
+     * @param latencyMs
+     *        The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceUhdSettings withLatencyMs(Integer latencyMs) {
+        setLatencyMs(latencyMs);
+        return this;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @param codec
+     *        The codec for the video that the device produces.
+     * @see InputDeviceCodec
+     */
+
+    public void setCodec(String codec) {
+        this.codec = codec;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @return The codec for the video that the device produces.
+     * @see InputDeviceCodec
+     */
+
+    public String getCodec() {
+        return this.codec;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @param codec
+     *        The codec for the video that the device produces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceCodec
+     */
+
+    public InputDeviceUhdSettings withCodec(String codec) {
+        setCodec(codec);
+        return this;
+    }
+
+    /**
+     * The codec for the video that the device produces.
+     * 
+     * @param codec
+     *        The codec for the video that the device produces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceCodec
+     */
+
+    public InputDeviceUhdSettings withCodec(InputDeviceCodec codec) {
+        this.codec = codec.toString();
+        return this;
+    }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     * 
+     * @param mediaconnectSettings
+     *        Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     *        MEDIACONNECT_FLOW.
+     */
+
+    public void setMediaconnectSettings(InputDeviceMediaConnectSettings mediaconnectSettings) {
+        this.mediaconnectSettings = mediaconnectSettings;
+    }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     * 
+     * @return Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     *         MEDIACONNECT_FLOW.
+     */
+
+    public InputDeviceMediaConnectSettings getMediaconnectSettings() {
+        return this.mediaconnectSettings;
+    }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     * MEDIACONNECT_FLOW.
+     * 
+     * @param mediaconnectSettings
+     *        Information about the MediaConnect flow attached to the device. Returned only if the outputType is
+     *        MEDIACONNECT_FLOW.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceUhdSettings withMediaconnectSettings(InputDeviceMediaConnectSettings mediaconnectSettings) {
+        setMediaconnectSettings(mediaconnectSettings);
+        return this;
+    }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies
+     * either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when
+     * the device is configured as the source for a MediaConnect flow.
+     * 
+     * @return An array of eight audio configurations, one for each audio pair in the source. Each audio configuration
+     *         specifies either to exclude the pair, or to format it and include it in the output from the UHD device.
+     *         Applies only when the device is configured as the source for a MediaConnect flow.
+     */
+
+    public java.util.List<InputDeviceUhdAudioChannelPairConfig> getAudioChannelPairs() {
+        return audioChannelPairs;
+    }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies
+     * either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when
+     * the device is configured as the source for a MediaConnect flow.
+     * 
+     * @param audioChannelPairs
+     *        An array of eight audio configurations, one for each audio pair in the source. Each audio configuration
+     *        specifies either to exclude the pair, or to format it and include it in the output from the UHD device.
+     *        Applies only when the device is configured as the source for a MediaConnect flow.
+     */
+
+    public void setAudioChannelPairs(java.util.Collection<InputDeviceUhdAudioChannelPairConfig> audioChannelPairs) {
+        if (audioChannelPairs == null) {
+            this.audioChannelPairs = null;
+            return;
+        }
+
+        this.audioChannelPairs = new java.util.ArrayList<InputDeviceUhdAudioChannelPairConfig>(audioChannelPairs);
+    }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies
+     * either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when
+     * the device is configured as the source for a MediaConnect flow.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudioChannelPairs(java.util.Collection)} or {@link #withAudioChannelPairs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param audioChannelPairs
+     *        An array of eight audio configurations, one for each audio pair in the source. Each audio configuration
+     *        specifies either to exclude the pair, or to format it and include it in the output from the UHD device.
+     *        Applies only when the device is configured as the source for a MediaConnect flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceUhdSettings withAudioChannelPairs(InputDeviceUhdAudioChannelPairConfig... audioChannelPairs) {
+        if (this.audioChannelPairs == null) {
+            setAudioChannelPairs(new java.util.ArrayList<InputDeviceUhdAudioChannelPairConfig>(audioChannelPairs.length));
+        }
+        for (InputDeviceUhdAudioChannelPairConfig ele : audioChannelPairs) {
+            this.audioChannelPairs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies
+     * either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when
+     * the device is configured as the source for a MediaConnect flow.
+     * 
+     * @param audioChannelPairs
+     *        An array of eight audio configurations, one for each audio pair in the source. Each audio configuration
+     *        specifies either to exclude the pair, or to format it and include it in the output from the UHD device.
+     *        Applies only when the device is configured as the source for a MediaConnect flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceUhdSettings withAudioChannelPairs(java.util.Collection<InputDeviceUhdAudioChannelPairConfig> audioChannelPairs) {
+        setAudioChannelPairs(audioChannelPairs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +632,15 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
         if (getScanType() != null)
             sb.append("ScanType: ").append(getScanType()).append(",");
         if (getWidth() != null)
-            sb.append("Width: ").append(getWidth());
+            sb.append("Width: ").append(getWidth()).append(",");
+        if (getLatencyMs() != null)
+            sb.append("LatencyMs: ").append(getLatencyMs()).append(",");
+        if (getCodec() != null)
+            sb.append("Codec: ").append(getCodec()).append(",");
+        if (getMediaconnectSettings() != null)
+            sb.append("MediaconnectSettings: ").append(getMediaconnectSettings()).append(",");
+        if (getAudioChannelPairs() != null)
+            sb.append("AudioChannelPairs: ").append(getAudioChannelPairs());
         sb.append("}");
         return sb.toString();
     }
@@ -461,6 +687,22 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
             return false;
         if (other.getWidth() != null && other.getWidth().equals(this.getWidth()) == false)
             return false;
+        if (other.getLatencyMs() == null ^ this.getLatencyMs() == null)
+            return false;
+        if (other.getLatencyMs() != null && other.getLatencyMs().equals(this.getLatencyMs()) == false)
+            return false;
+        if (other.getCodec() == null ^ this.getCodec() == null)
+            return false;
+        if (other.getCodec() != null && other.getCodec().equals(this.getCodec()) == false)
+            return false;
+        if (other.getMediaconnectSettings() == null ^ this.getMediaconnectSettings() == null)
+            return false;
+        if (other.getMediaconnectSettings() != null && other.getMediaconnectSettings().equals(this.getMediaconnectSettings()) == false)
+            return false;
+        if (other.getAudioChannelPairs() == null ^ this.getAudioChannelPairs() == null)
+            return false;
+        if (other.getAudioChannelPairs() != null && other.getAudioChannelPairs().equals(this.getAudioChannelPairs()) == false)
+            return false;
         return true;
     }
 
@@ -477,6 +719,10 @@ public class InputDeviceUhdSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());
         hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode());
+        hashCode = prime * hashCode + ((getLatencyMs() == null) ? 0 : getLatencyMs().hashCode());
+        hashCode = prime * hashCode + ((getCodec() == null) ? 0 : getCodec().hashCode());
+        hashCode = prime * hashCode + ((getMediaconnectSettings() == null) ? 0 : getMediaconnectSettings().hashCode());
+        hashCode = prime * hashCode + ((getAudioChannelPairs() == null) ? 0 : getAudioChannelPairs().hashCode());
         return hashCode;
     }
 

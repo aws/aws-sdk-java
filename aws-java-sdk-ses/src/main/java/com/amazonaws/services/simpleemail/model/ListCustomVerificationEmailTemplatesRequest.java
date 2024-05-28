@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * For more information about custom verification email templates, see <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
- * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+ * Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates"
@@ -43,7 +43,7 @@ public class ListCustomVerificationEmailTemplatesRequest extends com.amazonaws.A
      * <p>
      * The maximum number of custom verification email templates to return. This value must be at least 1 and less than
      * or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the
-     * operation will return up to 50 results.
+     * operation returns up to 50 results.
      * </p>
      */
     private Integer maxResults;
@@ -92,13 +92,13 @@ public class ListCustomVerificationEmailTemplatesRequest extends com.amazonaws.A
      * <p>
      * The maximum number of custom verification email templates to return. This value must be at least 1 and less than
      * or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the
-     * operation will return up to 50 results.
+     * operation returns up to 50 results.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of custom verification email templates to return. This value must be at least 1 and
      *        less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater
-     *        than 50, the operation will return up to 50 results.
+     *        than 50, the operation returns up to 50 results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -109,12 +109,12 @@ public class ListCustomVerificationEmailTemplatesRequest extends com.amazonaws.A
      * <p>
      * The maximum number of custom verification email templates to return. This value must be at least 1 and less than
      * or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the
-     * operation will return up to 50 results.
+     * operation returns up to 50 results.
      * </p>
      * 
      * @return The maximum number of custom verification email templates to return. This value must be at least 1 and
      *         less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater
-     *         than 50, the operation will return up to 50 results.
+     *         than 50, the operation returns up to 50 results.
      */
 
     public Integer getMaxResults() {
@@ -125,13 +125,13 @@ public class ListCustomVerificationEmailTemplatesRequest extends com.amazonaws.A
      * <p>
      * The maximum number of custom verification email templates to return. This value must be at least 1 and less than
      * or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the
-     * operation will return up to 50 results.
+     * operation returns up to 50 results.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of custom verification email templates to return. This value must be at least 1 and
      *        less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater
-     *        than 50, the operation will return up to 50 results.
+     *        than 50, the operation returns up to 50 results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

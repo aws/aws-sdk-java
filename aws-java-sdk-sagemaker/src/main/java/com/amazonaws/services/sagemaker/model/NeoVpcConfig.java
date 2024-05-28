@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The <a>VpcConfig</a> configuration object that specifies the VPC that you want the compilation jobs to connect to.
- * For more information on controlling access to your Amazon S3 buckets used for compilation job, see <a
+ * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+ * configuration object that specifies the VPC that you want the compilation jobs to connect to. For more information on
+ * controlling access to your Amazon S3 buckets used for compilation job, see <a
  * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Give Amazon SageMaker Compilation Jobs Access to
  * Resources in Your Amazon VPC</a>.
  * </p>

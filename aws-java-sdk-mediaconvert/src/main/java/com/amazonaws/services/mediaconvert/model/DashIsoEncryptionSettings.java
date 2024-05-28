@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
 
     /**
      * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
-     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
-     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
-     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older
+     * devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service
+     * will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
      */
     private String playbackDeviceCompatibility;
     /**
@@ -41,16 +41,16 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
 
     /**
      * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
-     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
-     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
-     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older
+     * devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service
+     * will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
      * 
      * @param playbackDeviceCompatibility
      *        This setting can improve the compatibility of your output with video players on obsolete devices. It
-     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
-     *        correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If
-     *        you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will
-     *        leave the SEI NAL units unencrypted.
+     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems
+     *        with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted
+     *        SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units
+     *        unencrypted.
      * @see DashIsoPlaybackDeviceCompatibility
      */
 
@@ -60,15 +60,15 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
 
     /**
      * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
-     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
-     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
-     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older
+     * devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service
+     * will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
      * 
      * @return This setting can improve the compatibility of your output with video players on obsolete devices. It
-     *         applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
-     *         correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1).
-     *         If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and
-     *         will leave the SEI NAL units unencrypted.
+     *         applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems
+     *         with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted
+     *         SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units
+     *         unencrypted.
      * @see DashIsoPlaybackDeviceCompatibility
      */
 
@@ -78,16 +78,16 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
 
     /**
      * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
-     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
-     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
-     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older
+     * devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service
+     * will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
      * 
      * @param playbackDeviceCompatibility
      *        This setting can improve the compatibility of your output with video players on obsolete devices. It
-     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
-     *        correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If
-     *        you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will
-     *        leave the SEI NAL units unencrypted.
+     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems
+     *        with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted
+     *        SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units
+     *        unencrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoPlaybackDeviceCompatibility
      */
@@ -99,16 +99,16 @@ public class DashIsoEncryptionSettings implements Serializable, Cloneable, Struc
 
     /**
      * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only
-     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
-     * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI,
-     * for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+     * to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older
+     * devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service
+     * will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
      * 
      * @param playbackDeviceCompatibility
      *        This setting can improve the compatibility of your output with video players on obsolete devices. It
-     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to
-     *        correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If
-     *        you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will
-     *        leave the SEI NAL units unencrypted.
+     *        applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems
+     *        with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted
+     *        SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units
+     *        unencrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoPlaybackDeviceCompatibility
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class ListTrustAnchorsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      */
     private String nextToken;
@@ -41,13 +41,13 @@ public class ListTrustAnchorsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where the output should continue from, if a previous operation did not show all
-     *        results. To get the next results, call the operation again with this value.
+     *        A token that indicates where the output should continue from, if a previous request did not show all
+     *        results. To get the next results, make the request again with this value.
      */
 
     public void setNextToken(String nextToken) {
@@ -56,12 +56,12 @@ public class ListTrustAnchorsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      * 
-     * @return A token that indicates where the output should continue from, if a previous operation did not show all
-     *         results. To get the next results, call the operation again with this value.
+     * @return A token that indicates where the output should continue from, if a previous request did not show all
+     *         results. To get the next results, make the request again with this value.
      */
 
     public String getNextToken() {
@@ -70,13 +70,13 @@ public class ListTrustAnchorsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token that indicates where the output should continue from, if a previous operation did not show all results.
-     * To get the next results, call the operation again with this value.
+     * A token that indicates where the output should continue from, if a previous request did not show all results. To
+     * get the next results, make the request again with this value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where the output should continue from, if a previous operation did not show all
-     *        results. To get the next results, call the operation again with this value.
+     *        A token that indicates where the output should continue from, if a previous request did not show all
+     *        results. To get the next results, make the request again with this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

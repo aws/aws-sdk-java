@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,16 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>AWS CodeStar Connections</fullname>
  * <p>
- * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
- * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
+ * This Amazon Web Services CodeStar Connections API Reference provides descriptions and usage examples of the
+ * operations and data types for the Amazon Web Services CodeStar Connections API. You can use the connections API to
+ * work with connections and installations.
  * </p>
  * <p>
- * <i>Connections</i> are configurations that you use to connect AWS resources to external code repositories. Each
- * connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository
- * such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a
- * code change is made to your third-party code repository. Each connection is named and associated with a unique ARN
- * that is used to reference the connection.
+ * <i>Connections</i> are configurations that you use to connect Amazon Web Services resources to external code
+ * repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a
+ * third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers
+ * your pipeline when a code change is made to your third-party code repository. Each connection is named and associated
+ * with a unique ARN that is used to reference the connection.
  * </p>
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
@@ -98,28 +99,28 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * You can work with tags in AWS CodeStar Connections by calling the following:
+ * You can work with tags in Amazon Web Services CodeStar Connections by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
- * CodeStar Connections.
+ * <a>ListTagsForResource</a>, which gets information about Amazon Web Services tags for a specified Amazon Resource
+ * Name (ARN) in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+ * <a>TagResource</a>, which adds or updates tags for a resource in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+ * <a>UntagResource</a>, which removes tags for a resource in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeStar Connections, see the <a
+ * For information about how to use Amazon Web Services CodeStar Connections, see the <a
  * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer Tools User
  * Guide</a>.
  * </p>
@@ -237,6 +238,72 @@ public class AWSCodeStarconnectionsAsyncClient extends AWSCodeStarconnectionsCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRepositoryLinkResult> createRepositoryLinkAsync(CreateRepositoryLinkRequest request) {
+
+        return createRepositoryLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRepositoryLinkResult> createRepositoryLinkAsync(final CreateRepositoryLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRepositoryLinkRequest, CreateRepositoryLinkResult> asyncHandler) {
+        final CreateRepositoryLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRepositoryLinkResult>() {
+            @Override
+            public CreateRepositoryLinkResult call() throws Exception {
+                CreateRepositoryLinkResult result = null;
+
+                try {
+                    result = executeCreateRepositoryLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSyncConfigurationResult> createSyncConfigurationAsync(CreateSyncConfigurationRequest request) {
+
+        return createSyncConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSyncConfigurationResult> createSyncConfigurationAsync(final CreateSyncConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSyncConfigurationRequest, CreateSyncConfigurationResult> asyncHandler) {
+        final CreateSyncConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSyncConfigurationResult>() {
+            @Override
+            public CreateSyncConfigurationResult call() throws Exception {
+                CreateSyncConfigurationResult result = null;
+
+                try {
+                    result = executeCreateSyncConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
@@ -287,6 +354,72 @@ public class AWSCodeStarconnectionsAsyncClient extends AWSCodeStarconnectionsCli
 
                 try {
                     result = executeDeleteHost(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRepositoryLinkResult> deleteRepositoryLinkAsync(DeleteRepositoryLinkRequest request) {
+
+        return deleteRepositoryLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRepositoryLinkResult> deleteRepositoryLinkAsync(final DeleteRepositoryLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRepositoryLinkRequest, DeleteRepositoryLinkResult> asyncHandler) {
+        final DeleteRepositoryLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRepositoryLinkResult>() {
+            @Override
+            public DeleteRepositoryLinkResult call() throws Exception {
+                DeleteRepositoryLinkResult result = null;
+
+                try {
+                    result = executeDeleteRepositoryLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSyncConfigurationResult> deleteSyncConfigurationAsync(DeleteSyncConfigurationRequest request) {
+
+        return deleteSyncConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSyncConfigurationResult> deleteSyncConfigurationAsync(final DeleteSyncConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSyncConfigurationRequest, DeleteSyncConfigurationResult> asyncHandler) {
+        final DeleteSyncConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSyncConfigurationResult>() {
+            @Override
+            public DeleteSyncConfigurationResult call() throws Exception {
+                DeleteSyncConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteSyncConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -369,6 +502,171 @@ public class AWSCodeStarconnectionsAsyncClient extends AWSCodeStarconnectionsCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetRepositoryLinkResult> getRepositoryLinkAsync(GetRepositoryLinkRequest request) {
+
+        return getRepositoryLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRepositoryLinkResult> getRepositoryLinkAsync(final GetRepositoryLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRepositoryLinkRequest, GetRepositoryLinkResult> asyncHandler) {
+        final GetRepositoryLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRepositoryLinkResult>() {
+            @Override
+            public GetRepositoryLinkResult call() throws Exception {
+                GetRepositoryLinkResult result = null;
+
+                try {
+                    result = executeGetRepositoryLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRepositorySyncStatusResult> getRepositorySyncStatusAsync(GetRepositorySyncStatusRequest request) {
+
+        return getRepositorySyncStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRepositorySyncStatusResult> getRepositorySyncStatusAsync(final GetRepositorySyncStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRepositorySyncStatusRequest, GetRepositorySyncStatusResult> asyncHandler) {
+        final GetRepositorySyncStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRepositorySyncStatusResult>() {
+            @Override
+            public GetRepositorySyncStatusResult call() throws Exception {
+                GetRepositorySyncStatusResult result = null;
+
+                try {
+                    result = executeGetRepositorySyncStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceSyncStatusResult> getResourceSyncStatusAsync(GetResourceSyncStatusRequest request) {
+
+        return getResourceSyncStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceSyncStatusResult> getResourceSyncStatusAsync(final GetResourceSyncStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourceSyncStatusRequest, GetResourceSyncStatusResult> asyncHandler) {
+        final GetResourceSyncStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourceSyncStatusResult>() {
+            @Override
+            public GetResourceSyncStatusResult call() throws Exception {
+                GetResourceSyncStatusResult result = null;
+
+                try {
+                    result = executeGetResourceSyncStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncBlockerSummaryResult> getSyncBlockerSummaryAsync(GetSyncBlockerSummaryRequest request) {
+
+        return getSyncBlockerSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncBlockerSummaryResult> getSyncBlockerSummaryAsync(final GetSyncBlockerSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSyncBlockerSummaryRequest, GetSyncBlockerSummaryResult> asyncHandler) {
+        final GetSyncBlockerSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSyncBlockerSummaryResult>() {
+            @Override
+            public GetSyncBlockerSummaryResult call() throws Exception {
+                GetSyncBlockerSummaryResult result = null;
+
+                try {
+                    result = executeGetSyncBlockerSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncConfigurationResult> getSyncConfigurationAsync(GetSyncConfigurationRequest request) {
+
+        return getSyncConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncConfigurationResult> getSyncConfigurationAsync(final GetSyncConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSyncConfigurationRequest, GetSyncConfigurationResult> asyncHandler) {
+        final GetSyncConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSyncConfigurationResult>() {
+            @Override
+            public GetSyncConfigurationResult call() throws Exception {
+                GetSyncConfigurationResult result = null;
+
+                try {
+                    result = executeGetSyncConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest request) {
 
         return listConnectionsAsync(request, null);
@@ -419,6 +717,106 @@ public class AWSCodeStarconnectionsAsyncClient extends AWSCodeStarconnectionsCli
 
                 try {
                     result = executeListHosts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRepositoryLinksResult> listRepositoryLinksAsync(ListRepositoryLinksRequest request) {
+
+        return listRepositoryLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRepositoryLinksResult> listRepositoryLinksAsync(final ListRepositoryLinksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRepositoryLinksRequest, ListRepositoryLinksResult> asyncHandler) {
+        final ListRepositoryLinksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRepositoryLinksResult>() {
+            @Override
+            public ListRepositoryLinksResult call() throws Exception {
+                ListRepositoryLinksResult result = null;
+
+                try {
+                    result = executeListRepositoryLinks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRepositorySyncDefinitionsResult> listRepositorySyncDefinitionsAsync(ListRepositorySyncDefinitionsRequest request) {
+
+        return listRepositorySyncDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRepositorySyncDefinitionsResult> listRepositorySyncDefinitionsAsync(
+            final ListRepositorySyncDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRepositorySyncDefinitionsRequest, ListRepositorySyncDefinitionsResult> asyncHandler) {
+        final ListRepositorySyncDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRepositorySyncDefinitionsResult>() {
+            @Override
+            public ListRepositorySyncDefinitionsResult call() throws Exception {
+                ListRepositorySyncDefinitionsResult result = null;
+
+                try {
+                    result = executeListRepositorySyncDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncConfigurationsResult> listSyncConfigurationsAsync(ListSyncConfigurationsRequest request) {
+
+        return listSyncConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncConfigurationsResult> listSyncConfigurationsAsync(final ListSyncConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSyncConfigurationsRequest, ListSyncConfigurationsResult> asyncHandler) {
+        final ListSyncConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSyncConfigurationsResult>() {
+            @Override
+            public ListSyncConfigurationsResult call() throws Exception {
+                ListSyncConfigurationsResult result = null;
+
+                try {
+                    result = executeListSyncConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -551,6 +949,105 @@ public class AWSCodeStarconnectionsAsyncClient extends AWSCodeStarconnectionsCli
 
                 try {
                     result = executeUpdateHost(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRepositoryLinkResult> updateRepositoryLinkAsync(UpdateRepositoryLinkRequest request) {
+
+        return updateRepositoryLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRepositoryLinkResult> updateRepositoryLinkAsync(final UpdateRepositoryLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryLinkRequest, UpdateRepositoryLinkResult> asyncHandler) {
+        final UpdateRepositoryLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRepositoryLinkResult>() {
+            @Override
+            public UpdateRepositoryLinkResult call() throws Exception {
+                UpdateRepositoryLinkResult result = null;
+
+                try {
+                    result = executeUpdateRepositoryLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSyncBlockerResult> updateSyncBlockerAsync(UpdateSyncBlockerRequest request) {
+
+        return updateSyncBlockerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSyncBlockerResult> updateSyncBlockerAsync(final UpdateSyncBlockerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSyncBlockerRequest, UpdateSyncBlockerResult> asyncHandler) {
+        final UpdateSyncBlockerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSyncBlockerResult>() {
+            @Override
+            public UpdateSyncBlockerResult call() throws Exception {
+                UpdateSyncBlockerResult result = null;
+
+                try {
+                    result = executeUpdateSyncBlocker(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSyncConfigurationResult> updateSyncConfigurationAsync(UpdateSyncConfigurationRequest request) {
+
+        return updateSyncConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSyncConfigurationResult> updateSyncConfigurationAsync(final UpdateSyncConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSyncConfigurationRequest, UpdateSyncConfigurationResult> asyncHandler) {
+        final UpdateSyncConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSyncConfigurationResult>() {
+            @Override
+            public UpdateSyncConfigurationResult call() throws Exception {
+                UpdateSyncConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateSyncConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

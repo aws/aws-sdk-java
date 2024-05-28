@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -68,9 +68,9 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String iPAddressVersion;
     /**
      * <p>
-     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses
-     * must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR
-     * ranges except for <code>/0</code>.
+     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF
+     * to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR)
+     * notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
      * </p>
      * <p>
      * Example address strings:
@@ -78,27 +78,24 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.
+     * For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     * For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses
-     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -183,8 +180,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -205,7 +202,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, or an Amazon Cognito user pool. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -231,8 +229,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -252,7 +250,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *         API, or an Amazon Cognito user pool. </p>
+     *         API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *         instance. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -278,8 +277,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -300,7 +299,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, or an Amazon Cognito user pool. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -328,8 +328,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -350,7 +350,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, or an Amazon Cognito user pool. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -476,9 +477,9 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses
-     * must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR
-     * ranges except for <code>/0</code>.
+     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF
+     * to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR)
+     * notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
      * </p>
      * <p>
      * Example address strings:
@@ -486,27 +487,24 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.
+     * For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     * For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses
-     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -540,37 +538,35 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All
-     *         addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
-     *         and IPv6 CIDR ranges except for <code>/0</code>. </p>
+     * @return Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you
+     *         want WAF to inspect for in incoming requests. All addresses must be specified using Classless
+     *         Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for
+     *         <code>/0</code>. </p>
      *         <p>
      *         Example address strings:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
-     *         specify <code>192.0.2.44/32</code>.
+     *         For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     *         192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *         For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+     *         <code>192.0.2.0/24</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure WAF to allow, block, or count requests that originated from the IP address
-     *         1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>
-     *         .
+     *         For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     *         <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         To configure WAF to allow, block, or count requests that originated from IP addresses
-     *         1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     *         <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *         For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *         1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -610,9 +606,9 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses
-     * must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR
-     * ranges except for <code>/0</code>.
+     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF
+     * to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR)
+     * notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
      * </p>
      * <p>
      * Example address strings:
@@ -620,27 +616,24 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.
+     * For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     * For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses
-     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -675,36 +668,34 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param addresses
-     *        Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All
-     *        addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
-     *        and IPv6 CIDR ranges except for <code>/0</code>. </p>
+     *        Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you
+     *        want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain
+     *        Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
      *        <p>
      *        Example address strings:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
-     *        specify <code>192.0.2.44/32</code>.
+     *        For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+     *        <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from the IP address
-     *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     *        <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from IP addresses
-     *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *        For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -749,9 +740,9 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses
-     * must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR
-     * ranges except for <code>/0</code>.
+     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF
+     * to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR)
+     * notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
      * </p>
      * <p>
      * Example address strings:
@@ -759,27 +750,24 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.
+     * For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     * For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses
-     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -819,36 +807,34 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param addresses
-     *        Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All
-     *        addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
-     *        and IPv6 CIDR ranges except for <code>/0</code>. </p>
+     *        Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you
+     *        want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain
+     *        Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
      *        <p>
      *        Example address strings:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
-     *        specify <code>192.0.2.44/32</code>.
+     *        For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+     *        <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from the IP address
-     *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     *        <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from IP addresses
-     *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *        For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -895,9 +881,9 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses
-     * must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR
-     * ranges except for <code>/0</code>.
+     * Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you want WAF
+     * to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain Routing (CIDR)
+     * notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>.
      * </p>
      * <p>
      * Example address strings:
@@ -905,27 +891,24 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.
+     * For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.
+     * For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To configure WAF to allow, block, or count requests that originated from IP addresses
-     * 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -960,36 +943,34 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param addresses
-     *        Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All
-     *        addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4
-     *        and IPv6 CIDR ranges except for <code>/0</code>. </p>
+     *        Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses that you
+     *        want WAF to inspect for in incoming requests. All addresses must be specified using Classless Inter-Domain
+     *        Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
      *        <p>
      *        Example address strings:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44,
-     *        specify <code>192.0.2.44/32</code>.
+     *        For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to
-     *        192.0.2.255, specify <code>192.0.2.0/24</code>.
+     *        For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
+     *        <code>192.0.2.0/24</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from the IP address
-     *        1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     *        <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        To configure WAF to allow, block, or count requests that originated from IP addresses
-     *        1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
-     *        <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     *        For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>

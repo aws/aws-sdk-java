@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of an inbound connection.
+ * Describes an inbound cross-cluster connection for Amazon OpenSearch Service. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+ * search for Amazon OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,36 +29,42 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      */
     private DomainInformationContainer localDomainInfo;
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      */
     private DomainInformationContainer remoteDomainInfo;
     /**
      * <p>
-     * The connection ID for the inbound cross-cluster connection.
+     * The unique identifier of the connection.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     * The current status of the connection.
      * </p>
      */
     private InboundConnectionStatus connectionStatus;
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     */
+    private String connectionMode;
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Information about the source (local) domain.
      */
 
     public void setLocalDomainInfo(DomainInformationContainer localDomainInfo) {
@@ -65,10 +73,10 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * @return Information about the source (local) domain.
      */
 
     public DomainInformationContainer getLocalDomainInfo() {
@@ -77,11 +85,11 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Information about the source (local) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +100,11 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Information about the destination (remote) domain.
      */
 
     public void setRemoteDomainInfo(DomainInformationContainer remoteDomainInfo) {
@@ -105,10 +113,10 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * @return Information about the destination (remote) domain.
      */
 
     public DomainInformationContainer getRemoteDomainInfo() {
@@ -117,11 +125,11 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Information about the destination (remote) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +140,11 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The connection ID for the inbound cross-cluster connection.
+     * The unique identifier of the connection.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID for the inbound cross-cluster connection.
+     *        The unique identifier of the connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -145,10 +153,10 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The connection ID for the inbound cross-cluster connection.
+     * The unique identifier of the connection.
      * </p>
      * 
-     * @return The connection ID for the inbound cross-cluster connection.
+     * @return The unique identifier of the connection.
      */
 
     public String getConnectionId() {
@@ -157,11 +165,11 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The connection ID for the inbound cross-cluster connection.
+     * The unique identifier of the connection.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID for the inbound cross-cluster connection.
+     *        The unique identifier of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +180,11 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     * The current status of the connection.
      * </p>
      * 
      * @param connectionStatus
-     *        The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     *        The current status of the connection.
      */
 
     public void setConnectionStatus(InboundConnectionStatus connectionStatus) {
@@ -185,10 +193,10 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     * The current status of the connection.
      * </p>
      * 
-     * @return The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     * @return The current status of the connection.
      */
 
     public InboundConnectionStatus getConnectionStatus() {
@@ -197,16 +205,75 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     * The current status of the connection.
      * </p>
      * 
      * @param connectionStatus
-     *        The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection.
+     *        The current status of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InboundConnection withConnectionStatus(InboundConnectionStatus connectionStatus) {
         setConnectionStatus(connectionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @see ConnectionMode
+     */
+
+    public void setConnectionMode(String connectionMode) {
+        this.connectionMode = connectionMode;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @return The connection mode.
+     * @see ConnectionMode
+     */
+
+    public String getConnectionMode() {
+        return this.connectionMode;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionMode
+     */
+
+    public InboundConnection withConnectionMode(String connectionMode) {
+        setConnectionMode(connectionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionMode
+     */
+
+    public InboundConnection withConnectionMode(ConnectionMode connectionMode) {
+        this.connectionMode = connectionMode.toString();
         return this;
     }
 
@@ -229,7 +296,9 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
         if (getConnectionId() != null)
             sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getConnectionStatus() != null)
-            sb.append("ConnectionStatus: ").append(getConnectionStatus());
+            sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
+        if (getConnectionMode() != null)
+            sb.append("ConnectionMode: ").append(getConnectionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +329,10 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
             return false;
+        if (other.getConnectionMode() == null ^ this.getConnectionMode() == null)
+            return false;
+        if (other.getConnectionMode() != null && other.getConnectionMode().equals(this.getConnectionMode()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +345,7 @@ public class InboundConnection implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRemoteDomainInfo() == null) ? 0 : getRemoteDomainInfo().hashCode());
         hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getConnectionMode() == null) ? 0 : getConnectionMode().hashCode());
         return hashCode;
     }
 

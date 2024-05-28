@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class ListFHIRImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     * The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress
+     * report of the job.
      * </p>
      */
     private java.util.List<ImportJobProperties> importJobPropertiesList;
@@ -38,10 +39,12 @@ public class ListFHIRImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     * The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress
+     * report of the job.
      * </p>
      * 
-     * @return The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     * @return The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the
+     *         progress report of the job.
      */
 
     public java.util.List<ImportJobProperties> getImportJobPropertiesList() {
@@ -50,11 +53,13 @@ public class ListFHIRImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     * The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress
+     * report of the job.
      * </p>
      * 
      * @param importJobPropertiesList
-     *        The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     *        The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the
+     *        progress report of the job.
      */
 
     public void setImportJobPropertiesList(java.util.Collection<ImportJobProperties> importJobPropertiesList) {
@@ -68,7 +73,8 @@ public class ListFHIRImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     * The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress
+     * report of the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +83,8 @@ public class ListFHIRImportJobsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param importJobPropertiesList
-     *        The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     *        The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the
+     *        progress report of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,13 @@ public class ListFHIRImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     * The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress
+     * report of the job.
      * </p>
      * 
      * @param importJobPropertiesList
-     *        The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.
+     *        The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the
+     *        progress report of the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

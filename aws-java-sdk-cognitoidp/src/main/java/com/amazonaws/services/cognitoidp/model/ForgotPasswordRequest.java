@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,10 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     private UserContextDataType userContextData;
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to reset a forgotten password.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      */
     private String username;
@@ -246,11 +249,17 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to reset a forgotten password.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to enter a code to reset a forgotten password.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *        user from a third-party IdP.
      */
 
     public void setUsername(String username) {
@@ -259,10 +268,16 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to reset a forgotten password.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
-     * @return The user name of the user for whom you want to enter a code to reset a forgotten password.
+     * @return The username of the user that you want to query or modify. The value of this parameter is typically your
+     *         user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *         attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *         user from a third-party IdP.
      */
 
     public String getUsername() {
@@ -271,11 +286,17 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The user name of the user for whom you want to enter a code to reset a forgotten password.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
      * @param username
-     *        The user name of the user for whom you want to enter a code to reset a forgotten password.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *        user from a third-party IdP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,7 +661,7 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSecretHash() != null)
             sb.append("SecretHash: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserContextData() != null)
-            sb.append("UserContextData: ").append(getUserContextData()).append(",");
+            sb.append("UserContextData: ").append("***Sensitive Data Redacted***").append(",");
         if (getUsername() != null)
             sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getAnalyticsMetadata() != null)

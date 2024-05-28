@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      * </p>
      */
     private Integer requiredMinimumPollIntervalInSeconds;
@@ -174,12 +174,12 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      * </p>
      * 
      * @param requiredMinimumPollIntervalInSeconds
      *        Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     *        established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     *        established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      */
 
     public void setRequiredMinimumPollIntervalInSeconds(Integer requiredMinimumPollIntervalInSeconds) {
@@ -189,11 +189,11 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      * </p>
      * 
      * @return Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     *         established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     *         established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      */
 
     public Integer getRequiredMinimumPollIntervalInSeconds() {
@@ -203,12 +203,12 @@ public class StartConfigurationSessionRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     * established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     * established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      * </p>
      * 
      * @param requiredMinimumPollIntervalInSeconds
      *        Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that
-     *        established the session can't call <a>GetLatestConfiguration</a> more frequently then every 60 seconds.
+     *        established the session can't call <a>GetLatestConfiguration</a> more frequently than every 60 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

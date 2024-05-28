@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,6 +62,11 @@ public class S3VersionSummary implements Serializable {
     /** True if this object represents a delete marker */
     private boolean isDeleteMarker;
 
+    /**
+     * The restore status of this object - can be null if the requester doesn't provide
+     * OptionalObjectAttribute header in the request
+     */
+    private RestoreStatus restoreStatus;
     
     /**
      * Gets the name of the Amazon S3 bucket in which this version is stored.
@@ -333,6 +338,28 @@ public class S3VersionSummary implements Serializable {
      */
     public void setSize(long size) {
         this.size = size;
+    }
+
+    /**
+     * Gets restore status used of an object.
+     *
+     * @return restoreStatus of an object.
+     *
+     * @see S3VersionSummary#setRestoreStatus(RestoreStatus)
+     */
+    public RestoreStatus getRestoreStatus() {
+        return restoreStatus;
+    }
+
+    /**
+     * Sets restore status of an object.
+     *
+     * @param restoreStatus of an object.
+     *
+     * @see S3VersionSummary#getRestoreStatus() ()
+     */
+    public void setRestoreStatus(RestoreStatus restoreStatus) {
+        this.restoreStatus = restoreStatus;
     }
 
 }

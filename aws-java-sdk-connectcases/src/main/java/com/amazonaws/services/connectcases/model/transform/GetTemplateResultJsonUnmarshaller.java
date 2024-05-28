@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,21 @@ public class GetTemplateResultJsonUnmarshaller implements Unmarshaller<GetTempla
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("createdTime", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("deleted", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     getTemplateResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("layoutConfiguration", targetDepth)) {
                     context.nextToken();
@@ -65,6 +77,10 @@ public class GetTemplateResultJsonUnmarshaller implements Unmarshaller<GetTempla
                     getTemplateResult.setRequiredFields(new ListUnmarshaller<RequiredField>(RequiredFieldJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

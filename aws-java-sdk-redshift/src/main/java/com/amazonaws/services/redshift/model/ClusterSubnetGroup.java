@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,13 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     * <code>dualstack</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedClusterIpAddressTypes;
 
     /**
      * <p>
@@ -377,6 +384,87 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     * <code>dualstack</code>.
+     * </p>
+     * 
+     * @return The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     *         <code>dualstack</code>.
+     */
+
+    public java.util.List<String> getSupportedClusterIpAddressTypes() {
+        if (supportedClusterIpAddressTypes == null) {
+            supportedClusterIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedClusterIpAddressTypes;
+    }
+
+    /**
+     * <p>
+     * The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     * <code>dualstack</code>.
+     * </p>
+     * 
+     * @param supportedClusterIpAddressTypes
+     *        The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     *        <code>dualstack</code>.
+     */
+
+    public void setSupportedClusterIpAddressTypes(java.util.Collection<String> supportedClusterIpAddressTypes) {
+        if (supportedClusterIpAddressTypes == null) {
+            this.supportedClusterIpAddressTypes = null;
+            return;
+        }
+
+        this.supportedClusterIpAddressTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedClusterIpAddressTypes);
+    }
+
+    /**
+     * <p>
+     * The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     * <code>dualstack</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedClusterIpAddressTypes(java.util.Collection)} or
+     * {@link #withSupportedClusterIpAddressTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedClusterIpAddressTypes
+     *        The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     *        <code>dualstack</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterSubnetGroup withSupportedClusterIpAddressTypes(String... supportedClusterIpAddressTypes) {
+        if (this.supportedClusterIpAddressTypes == null) {
+            setSupportedClusterIpAddressTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedClusterIpAddressTypes.length));
+        }
+        for (String ele : supportedClusterIpAddressTypes) {
+            this.supportedClusterIpAddressTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     * <code>dualstack</code>.
+     * </p>
+     * 
+     * @param supportedClusterIpAddressTypes
+     *        The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and
+     *        <code>dualstack</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterSubnetGroup withSupportedClusterIpAddressTypes(java.util.Collection<String> supportedClusterIpAddressTypes) {
+        setSupportedClusterIpAddressTypes(supportedClusterIpAddressTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -399,7 +487,9 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSupportedClusterIpAddressTypes() != null)
+            sb.append("SupportedClusterIpAddressTypes: ").append(getSupportedClusterIpAddressTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +528,11 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSupportedClusterIpAddressTypes() == null ^ this.getSupportedClusterIpAddressTypes() == null)
+            return false;
+        if (other.getSupportedClusterIpAddressTypes() != null
+                && other.getSupportedClusterIpAddressTypes().equals(this.getSupportedClusterIpAddressTypes()) == false)
+            return false;
         return true;
     }
 
@@ -452,6 +547,7 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetGroupStatus() == null) ? 0 : getSubnetGroupStatus().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSupportedClusterIpAddressTypes() == null) ? 0 : getSupportedClusterIpAddressTypes().hashCode());
         return hashCode;
     }
 

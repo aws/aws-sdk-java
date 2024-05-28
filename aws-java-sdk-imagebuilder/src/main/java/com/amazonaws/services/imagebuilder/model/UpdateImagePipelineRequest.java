@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,15 +52,15 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
     private String containerRecipeArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by
-     * this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that
+     * this image pipeline has updated.
      * </p>
      */
     private String infrastructureConfigurationArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute
-     * images updated by this image pipeline.
+     * The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     * distribute images that this image pipeline has updated.
      * </p>
      */
     private String distributionConfigurationArn;
@@ -92,10 +92,31 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
     private String status;
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     */
+    private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * Contains the workflows to run for the pipeline.
+     * </p>
+     */
+    private java.util.List<WorkflowConfiguration> workflows;
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     */
+    private String executionRole;
 
     /**
      * <p>
@@ -265,13 +286,13 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by
-     * this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that
+     * this image pipeline has updated.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images
-     *        updated by this image pipeline.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images
+     *        that this image pipeline has updated.
      */
 
     public void setInfrastructureConfigurationArn(String infrastructureConfigurationArn) {
@@ -280,12 +301,12 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by
-     * this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that
+     * this image pipeline has updated.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images
-     *         updated by this image pipeline.
+     * @return The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build
+     *         images that this image pipeline has updated.
      */
 
     public String getInfrastructureConfigurationArn() {
@@ -294,13 +315,13 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by
-     * this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that
+     * this image pipeline has updated.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images
-     *        updated by this image pipeline.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images
+     *        that this image pipeline has updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,13 +332,13 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute
-     * images updated by this image pipeline.
+     * The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     * distribute images that this image pipeline has updated.
      * </p>
      * 
      * @param distributionConfigurationArn
-     *        The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and
-     *        distribute images updated by this image pipeline.
+     *        The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     *        distribute images that this image pipeline has updated.
      */
 
     public void setDistributionConfigurationArn(String distributionConfigurationArn) {
@@ -326,12 +347,12 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute
-     * images updated by this image pipeline.
+     * The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     * distribute images that this image pipeline has updated.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and
-     *         distribute images updated by this image pipeline.
+     * @return The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     *         distribute images that this image pipeline has updated.
      */
 
     public String getDistributionConfigurationArn() {
@@ -340,13 +361,13 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute
-     * images updated by this image pipeline.
+     * The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     * distribute images that this image pipeline has updated.
      * </p>
      * 
      * @param distributionConfigurationArn
-     *        The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and
-     *        distribute images updated by this image pipeline.
+     *        The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and
+     *        distribute images that this image pipeline has updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,11 +585,16 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -577,10 +603,15 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
-     * @return The idempotency token used to make this request idempotent.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public String getClientToken() {
@@ -589,16 +620,177 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateImagePipelineRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        Contains settings for vulnerability scans.
+     */
+
+    public void setImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        this.imageScanningConfiguration = imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @return Contains settings for vulnerability scans.
+     */
+
+    public ImageScanningConfiguration getImageScanningConfiguration() {
+        return this.imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        Contains settings for vulnerability scans.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateImagePipelineRequest withImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        setImageScanningConfiguration(imageScanningConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the workflows to run for the pipeline.
+     * </p>
+     * 
+     * @return Contains the workflows to run for the pipeline.
+     */
+
+    public java.util.List<WorkflowConfiguration> getWorkflows() {
+        return workflows;
+    }
+
+    /**
+     * <p>
+     * Contains the workflows to run for the pipeline.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains the workflows to run for the pipeline.
+     */
+
+    public void setWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        if (workflows == null) {
+            this.workflows = null;
+            return;
+        }
+
+        this.workflows = new java.util.ArrayList<WorkflowConfiguration>(workflows);
+    }
+
+    /**
+     * <p>
+     * Contains the workflows to run for the pipeline.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkflows(java.util.Collection)} or {@link #withWorkflows(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains the workflows to run for the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateImagePipelineRequest withWorkflows(WorkflowConfiguration... workflows) {
+        if (this.workflows == null) {
+            setWorkflows(new java.util.ArrayList<WorkflowConfiguration>(workflows.length));
+        }
+        for (WorkflowConfiguration ele : workflows) {
+            this.workflows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the workflows to run for the pipeline.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains the workflows to run for the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateImagePipelineRequest withWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        setWorkflows(workflows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     */
+
+    public void setExecutionRole(String executionRole) {
+        this.executionRole = executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @return The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *         perform workflow actions.
+     */
+
+    public String getExecutionRole() {
+        return this.executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateImagePipelineRequest withExecutionRole(String executionRole) {
+        setExecutionRole(executionRole);
         return this;
     }
 
@@ -635,7 +827,13 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getImageScanningConfiguration() != null)
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getWorkflows() != null)
+            sb.append("Workflows: ").append(getWorkflows()).append(",");
+        if (getExecutionRole() != null)
+            sb.append("ExecutionRole: ").append(getExecutionRole());
         sb.append("}");
         return sb.toString();
     }
@@ -695,6 +893,18 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getImageScanningConfiguration() == null ^ this.getImageScanningConfiguration() == null)
+            return false;
+        if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
+            return false;
+        if (other.getWorkflows() == null ^ this.getWorkflows() == null)
+            return false;
+        if (other.getWorkflows() != null && other.getWorkflows().equals(this.getWorkflows()) == false)
+            return false;
+        if (other.getExecutionRole() == null ^ this.getExecutionRole() == null)
+            return false;
+        if (other.getExecutionRole() != null && other.getExecutionRole().equals(this.getExecutionRole()) == false)
+            return false;
         return true;
     }
 
@@ -714,6 +924,9 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkflows() == null) ? 0 : getWorkflows().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRole() == null) ? 0 : getExecutionRole().hashCode());
         return hashCode;
     }
 

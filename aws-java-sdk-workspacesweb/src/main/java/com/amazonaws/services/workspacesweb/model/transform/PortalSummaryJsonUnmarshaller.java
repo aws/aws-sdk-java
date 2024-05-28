@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class PortalSummaryJsonUnmarshaller implements Unmarshaller<PortalSummary
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("authenticationType", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("browserSettingsArn", targetDepth)) {
                     context.nextToken();
                     portalSummary.setBrowserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,18 @@ public class PortalSummaryJsonUnmarshaller implements Unmarshaller<PortalSummary
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     portalSummary.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ipAccessSettingsArn", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setIpAccessSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("maxConcurrentSessions", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setMaxConcurrentSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSettingsArn", targetDepth)) {
                     context.nextToken();

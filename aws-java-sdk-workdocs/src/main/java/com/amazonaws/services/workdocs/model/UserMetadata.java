@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -274,13 +274,13 @@ public class UserMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getGivenName() != null)
-            sb.append("GivenName: ").append(getGivenName()).append(",");
+            sb.append("GivenName: ").append("***Sensitive Data Redacted***").append(",");
         if (getSurname() != null)
-            sb.append("Surname: ").append(getSurname()).append(",");
+            sb.append("Surname: ").append("***Sensitive Data Redacted***").append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress());
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

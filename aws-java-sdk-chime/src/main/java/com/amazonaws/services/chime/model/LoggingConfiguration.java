@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,24 +31,24 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * Boolean that enables SIP message logs to Amazon CloudWatch logs.
      * </p>
      */
     private Boolean enableSIPLogs;
     /**
      * <p>
-     * Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      * </p>
      */
     private Boolean enableMediaMetricLogs;
 
     /**
      * <p>
-     * When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * Boolean that enables SIP message logs to Amazon CloudWatch logs.
      * </p>
      * 
      * @param enableSIPLogs
-     *        When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     *        Boolean that enables SIP message logs to Amazon CloudWatch logs.
      */
 
     public void setEnableSIPLogs(Boolean enableSIPLogs) {
@@ -57,10 +57,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * Boolean that enables SIP message logs to Amazon CloudWatch logs.
      * </p>
      * 
-     * @return When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * @return Boolean that enables SIP message logs to Amazon CloudWatch logs.
      */
 
     public Boolean getEnableSIPLogs() {
@@ -69,11 +69,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * Boolean that enables SIP message logs to Amazon CloudWatch logs.
      * </p>
      * 
      * @param enableSIPLogs
-     *        When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     *        Boolean that enables SIP message logs to Amazon CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * Boolean that enables SIP message logs to Amazon CloudWatch logs.
      * </p>
      * 
-     * @return When true, enables SIP message logs for sending to Amazon CloudWatch Logs.
+     * @return Boolean that enables SIP message logs to Amazon CloudWatch logs.
      */
 
     public Boolean isEnableSIPLogs() {
@@ -96,11 +96,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      * </p>
      * 
      * @param enableMediaMetricLogs
-     *        Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     *        Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      */
 
     public void setEnableMediaMetricLogs(Boolean enableMediaMetricLogs) {
@@ -109,10 +109,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      * </p>
      * 
-     * @return Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * @return Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      */
 
     public Boolean getEnableMediaMetricLogs() {
@@ -121,11 +121,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      * </p>
      * 
      * @param enableMediaMetricLogs
-     *        Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     *        Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +136,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      * </p>
      * 
-     * @return Boolean that enables the logging of Voice Connector metrics to Cloudwatch.
+     * @return Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.
      */
 
     public Boolean isEnableMediaMetricLogs() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,37 +28,37 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateCampaignOutboundCallConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    private AnswerMachineDetectionConfig answerMachineDetectionConfig;
+    private String id;
 
     private String connectContactFlowId;
 
     private String connectSourcePhoneNumber;
 
-    private String id;
+    private AnswerMachineDetectionConfig answerMachineDetectionConfig;
 
     /**
-     * @param answerMachineDetectionConfig
+     * @param id
      */
 
-    public void setAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
-        this.answerMachineDetectionConfig = answerMachineDetectionConfig;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * @return
      */
 
-    public AnswerMachineDetectionConfig getAnswerMachineDetectionConfig() {
-        return this.answerMachineDetectionConfig;
+    public String getId() {
+        return this.id;
     }
 
     /**
-     * @param answerMachineDetectionConfig
+     * @param id
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateCampaignOutboundCallConfigRequest withAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
-        setAnswerMachineDetectionConfig(answerMachineDetectionConfig);
+    public UpdateCampaignOutboundCallConfigRequest withId(String id) {
+        setId(id);
         return this;
     }
 
@@ -115,28 +115,28 @@ public class UpdateCampaignOutboundCallConfigRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * @param id
+     * @param answerMachineDetectionConfig
      */
 
-    public void setId(String id) {
-        this.id = id;
+    public void setAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
+        this.answerMachineDetectionConfig = answerMachineDetectionConfig;
     }
 
     /**
      * @return
      */
 
-    public String getId() {
-        return this.id;
+    public AnswerMachineDetectionConfig getAnswerMachineDetectionConfig() {
+        return this.answerMachineDetectionConfig;
     }
 
     /**
-     * @param id
+     * @param answerMachineDetectionConfig
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateCampaignOutboundCallConfigRequest withId(String id) {
-        setId(id);
+    public UpdateCampaignOutboundCallConfigRequest withAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
+        setAnswerMachineDetectionConfig(answerMachineDetectionConfig);
         return this;
     }
 
@@ -152,14 +152,14 @@ public class UpdateCampaignOutboundCallConfigRequest extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAnswerMachineDetectionConfig() != null)
-            sb.append("AnswerMachineDetectionConfig: ").append(getAnswerMachineDetectionConfig()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getConnectContactFlowId() != null)
             sb.append("ConnectContactFlowId: ").append(getConnectContactFlowId()).append(",");
         if (getConnectSourcePhoneNumber() != null)
             sb.append("ConnectSourcePhoneNumber: ").append(getConnectSourcePhoneNumber()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId());
+        if (getAnswerMachineDetectionConfig() != null)
+            sb.append("AnswerMachineDetectionConfig: ").append(getAnswerMachineDetectionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -174,9 +174,9 @@ public class UpdateCampaignOutboundCallConfigRequest extends com.amazonaws.Amazo
         if (obj instanceof UpdateCampaignOutboundCallConfigRequest == false)
             return false;
         UpdateCampaignOutboundCallConfigRequest other = (UpdateCampaignOutboundCallConfigRequest) obj;
-        if (other.getAnswerMachineDetectionConfig() == null ^ this.getAnswerMachineDetectionConfig() == null)
+        if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getAnswerMachineDetectionConfig() != null && other.getAnswerMachineDetectionConfig().equals(this.getAnswerMachineDetectionConfig()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getConnectContactFlowId() == null ^ this.getConnectContactFlowId() == null)
             return false;
@@ -186,9 +186,9 @@ public class UpdateCampaignOutboundCallConfigRequest extends com.amazonaws.Amazo
             return false;
         if (other.getConnectSourcePhoneNumber() != null && other.getConnectSourcePhoneNumber().equals(this.getConnectSourcePhoneNumber()) == false)
             return false;
-        if (other.getId() == null ^ this.getId() == null)
+        if (other.getAnswerMachineDetectionConfig() == null ^ this.getAnswerMachineDetectionConfig() == null)
             return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+        if (other.getAnswerMachineDetectionConfig() != null && other.getAnswerMachineDetectionConfig().equals(this.getAnswerMachineDetectionConfig()) == false)
             return false;
         return true;
     }
@@ -198,10 +198,10 @@ public class UpdateCampaignOutboundCallConfigRequest extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAnswerMachineDetectionConfig() == null) ? 0 : getAnswerMachineDetectionConfig().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getConnectContactFlowId() == null) ? 0 : getConnectContactFlowId().hashCode());
         hashCode = prime * hashCode + ((getConnectSourcePhoneNumber() == null) ? 0 : getConnectSourcePhoneNumber().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getAnswerMachineDetectionConfig() == null) ? 0 : getAnswerMachineDetectionConfig().hashCode());
         return hashCode;
     }
 

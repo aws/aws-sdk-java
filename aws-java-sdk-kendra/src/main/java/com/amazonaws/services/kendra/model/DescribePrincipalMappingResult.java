@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,28 +52,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     * Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      * <code>DELETED</code>, or <code>FAILED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Last updated – the last date-time an action was updated.
+     * Last updated—the last date-time an action was updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Received – the last date-time an action was received or submitted.
+     * Received—the last date-time an action was received or submitted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Ordering ID – the latest action that should process and apply after other actions.
+     * Ordering ID—the latest action that should process and apply after other actions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failure reason – the reason an action could not be processed.
+     * Failure reason—the reason an action could not be processed.
      * </p>
      * </li>
      * </ul>
@@ -226,28 +226,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     * Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      * <code>DELETED</code>, or <code>FAILED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Last updated – the last date-time an action was updated.
+     * Last updated—the last date-time an action was updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Received – the last date-time an action was received or submitted.
+     * Received—the last date-time an action was received or submitted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Ordering ID – the latest action that should process and apply after other actions.
+     * Ordering ID—the latest action that should process and apply after other actions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failure reason – the reason an action could not be processed.
+     * Failure reason—the reason an action could not be processed.
      * </p>
      * </li>
      * </ul>
@@ -257,28 +257,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     *         Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      *         <code>DELETED</code>, or <code>FAILED</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Last updated – the last date-time an action was updated.
+     *         Last updated—the last date-time an action was updated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Received – the last date-time an action was received or submitted.
+     *         Received—the last date-time an action was received or submitted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Ordering ID – the latest action that should process and apply after other actions.
+     *         Ordering ID—the latest action that should process and apply after other actions.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failure reason – the reason an action could not be processed.
+     *         Failure reason—the reason an action could not be processed.
      *         </p>
      *         </li>
      */
@@ -295,28 +295,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     * Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      * <code>DELETED</code>, or <code>FAILED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Last updated – the last date-time an action was updated.
+     * Last updated—the last date-time an action was updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Received – the last date-time an action was received or submitted.
+     * Received—the last date-time an action was received or submitted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Ordering ID – the latest action that should process and apply after other actions.
+     * Ordering ID—the latest action that should process and apply after other actions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failure reason – the reason an action could not be processed.
+     * Failure reason—the reason an action could not be processed.
      * </p>
      * </li>
      * </ul>
@@ -327,28 +327,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     *        Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      *        <code>DELETED</code>, or <code>FAILED</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Last updated – the last date-time an action was updated.
+     *        Last updated—the last date-time an action was updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Received – the last date-time an action was received or submitted.
+     *        Received—the last date-time an action was received or submitted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Ordering ID – the latest action that should process and apply after other actions.
+     *        Ordering ID—the latest action that should process and apply after other actions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failure reason – the reason an action could not be processed.
+     *        Failure reason—the reason an action could not be processed.
      *        </p>
      *        </li>
      */
@@ -370,28 +370,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     * Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      * <code>DELETED</code>, or <code>FAILED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Last updated – the last date-time an action was updated.
+     * Last updated—the last date-time an action was updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Received – the last date-time an action was received or submitted.
+     * Received—the last date-time an action was received or submitted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Ordering ID – the latest action that should process and apply after other actions.
+     * Ordering ID—the latest action that should process and apply after other actions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failure reason – the reason an action could not be processed.
+     * Failure reason—the reason an action could not be processed.
      * </p>
      * </li>
      * </ul>
@@ -407,28 +407,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     *        Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      *        <code>DELETED</code>, or <code>FAILED</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Last updated – the last date-time an action was updated.
+     *        Last updated—the last date-time an action was updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Received – the last date-time an action was received or submitted.
+     *        Received—the last date-time an action was received or submitted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Ordering ID – the latest action that should process and apply after other actions.
+     *        Ordering ID—the latest action that should process and apply after other actions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failure reason – the reason an action could not be processed.
+     *        Failure reason—the reason an action could not be processed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -452,28 +452,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     * Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      * <code>DELETED</code>, or <code>FAILED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Last updated – the last date-time an action was updated.
+     * Last updated—the last date-time an action was updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Received – the last date-time an action was received or submitted.
+     * Received—the last date-time an action was received or submitted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Ordering ID – the latest action that should process and apply after other actions.
+     * Ordering ID—the latest action that should process and apply after other actions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failure reason – the reason an action could not be processed.
+     * Failure reason—the reason an action could not be processed.
      * </p>
      * </li>
      * </ul>
@@ -484,28 +484,28 @@ public class DescribePrincipalMappingResult extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+     *        Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
      *        <code>DELETED</code>, or <code>FAILED</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Last updated – the last date-time an action was updated.
+     *        Last updated—the last date-time an action was updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Received – the last date-time an action was received or submitted.
+     *        Received—the last date-time an action was received or submitted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Ordering ID – the latest action that should process and apply after other actions.
+     *        Ordering ID—the latest action that should process and apply after other actions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failure reason – the reason an action could not be processed.
+     *        Failure reason—the reason an action could not be processed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

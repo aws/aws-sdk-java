@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,7 +131,7 @@ public class GetProgrammaticAccessCredentialsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: ").append(getCredentials()).append(",");
+            sb.append("Credentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getDurationInMinutes() != null)
             sb.append("DurationInMinutes: ").append(getDurationInMinutes());
         sb.append("}");

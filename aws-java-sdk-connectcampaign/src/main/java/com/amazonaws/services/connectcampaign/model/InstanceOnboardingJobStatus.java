@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class InstanceOnboardingJobStatus implements Serializable, Cloneable, Str
 
     private String connectInstanceId;
 
-    private String failureCode;
-
     private String status;
+
+    private String failureCode;
 
     /**
      * @param connectInstanceId
@@ -57,46 +57,6 @@ public class InstanceOnboardingJobStatus implements Serializable, Cloneable, Str
 
     public InstanceOnboardingJobStatus withConnectInstanceId(String connectInstanceId) {
         setConnectInstanceId(connectInstanceId);
-        return this;
-    }
-
-    /**
-     * @param failureCode
-     * @see InstanceOnboardingJobFailureCode
-     */
-
-    public void setFailureCode(String failureCode) {
-        this.failureCode = failureCode;
-    }
-
-    /**
-     * @return
-     * @see InstanceOnboardingJobFailureCode
-     */
-
-    public String getFailureCode() {
-        return this.failureCode;
-    }
-
-    /**
-     * @param failureCode
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceOnboardingJobFailureCode
-     */
-
-    public InstanceOnboardingJobStatus withFailureCode(String failureCode) {
-        setFailureCode(failureCode);
-        return this;
-    }
-
-    /**
-     * @param failureCode
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceOnboardingJobFailureCode
-     */
-
-    public InstanceOnboardingJobStatus withFailureCode(InstanceOnboardingJobFailureCode failureCode) {
-        this.failureCode = failureCode.toString();
         return this;
     }
 
@@ -141,6 +101,46 @@ public class InstanceOnboardingJobStatus implements Serializable, Cloneable, Str
     }
 
     /**
+     * @param failureCode
+     * @see InstanceOnboardingJobFailureCode
+     */
+
+    public void setFailureCode(String failureCode) {
+        this.failureCode = failureCode;
+    }
+
+    /**
+     * @return
+     * @see InstanceOnboardingJobFailureCode
+     */
+
+    public String getFailureCode() {
+        return this.failureCode;
+    }
+
+    /**
+     * @param failureCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceOnboardingJobFailureCode
+     */
+
+    public InstanceOnboardingJobStatus withFailureCode(String failureCode) {
+        setFailureCode(failureCode);
+        return this;
+    }
+
+    /**
+     * @param failureCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceOnboardingJobFailureCode
+     */
+
+    public InstanceOnboardingJobStatus withFailureCode(InstanceOnboardingJobFailureCode failureCode) {
+        this.failureCode = failureCode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -154,10 +154,10 @@ public class InstanceOnboardingJobStatus implements Serializable, Cloneable, Str
         sb.append("{");
         if (getConnectInstanceId() != null)
             sb.append("ConnectInstanceId: ").append(getConnectInstanceId()).append(",");
-        if (getFailureCode() != null)
-            sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getFailureCode() != null)
+            sb.append("FailureCode: ").append(getFailureCode());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class InstanceOnboardingJobStatus implements Serializable, Cloneable, Str
             return false;
         if (other.getConnectInstanceId() != null && other.getConnectInstanceId().equals(this.getConnectInstanceId()) == false)
             return false;
-        if (other.getFailureCode() == null ^ this.getFailureCode() == null)
-            return false;
-        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getFailureCode() == null ^ this.getFailureCode() == null)
+            return false;
+        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
             return false;
         return true;
     }
@@ -193,8 +193,8 @@ public class InstanceOnboardingJobStatus implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConnectInstanceId() == null) ? 0 : getConnectInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         return hashCode;
     }
 

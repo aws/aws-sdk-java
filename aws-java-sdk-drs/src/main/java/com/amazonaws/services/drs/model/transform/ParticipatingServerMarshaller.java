@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ParticipatingServerMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> LAUNCHACTIONSSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchActionsStatus").build();
     private static final MarshallingInfo<String> LAUNCHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchStatus").build();
     private static final MarshallingInfo<String> RECOVERYINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,7 @@ public class ParticipatingServerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(participatingServer.getLaunchActionsStatus(), LAUNCHACTIONSSTATUS_BINDING);
             protocolMarshaller.marshall(participatingServer.getLaunchStatus(), LAUNCHSTATUS_BINDING);
             protocolMarshaller.marshall(participatingServer.getRecoveryInstanceID(), RECOVERYINSTANCEID_BINDING);
             protocolMarshaller.marshall(participatingServer.getSourceServerID(), SOURCESERVERID_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class PlanMarshaller {
 
     private static final MarshallingInfo<List> STAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Stages").build();
+    private static final MarshallingInfo<List> ROTATIONIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RotationIds").build();
 
     private static final PlanMarshaller instance = new PlanMarshaller();
 
@@ -48,6 +50,7 @@ public class PlanMarshaller {
 
         try {
             protocolMarshaller.marshall(plan.getStages(), STAGES_BINDING);
+            protocolMarshaller.marshall(plan.getRotationIds(), ROTATIONIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

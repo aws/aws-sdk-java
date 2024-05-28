@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateCampaignOutboundCallConfigRequestMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANSWERMACHINEDETECTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("answerMachineDetectionConfig").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> CONNECTCONTACTFLOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectContactFlowId").build();
     private static final MarshallingInfo<String> CONNECTSOURCEPHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectSourcePhoneNumber").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("id").build();
+    private static final MarshallingInfo<StructuredPojo> ANSWERMACHINEDETECTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("answerMachineDetectionConfig").build();
 
     private static final UpdateCampaignOutboundCallConfigRequestMarshaller instance = new UpdateCampaignOutboundCallConfigRequestMarshaller();
 
@@ -52,10 +52,10 @@ public class UpdateCampaignOutboundCallConfigRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateCampaignOutboundCallConfigRequest.getAnswerMachineDetectionConfig(), ANSWERMACHINEDETECTIONCONFIG_BINDING);
+            protocolMarshaller.marshall(updateCampaignOutboundCallConfigRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateCampaignOutboundCallConfigRequest.getConnectContactFlowId(), CONNECTCONTACTFLOWID_BINDING);
             protocolMarshaller.marshall(updateCampaignOutboundCallConfigRequest.getConnectSourcePhoneNumber(), CONNECTSOURCEPHONENUMBER_BINDING);
-            protocolMarshaller.marshall(updateCampaignOutboundCallConfigRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(updateCampaignOutboundCallConfigRequest.getAnswerMachineDetectionConfig(), ANSWERMACHINEDETECTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,13 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String networkInterfaceId;
+    /**
+     * <p>
+     * The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use
+     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     * </p>
+     */
+    private String destinationPrefixListId;
 
     /**
      * <p>
@@ -212,6 +219,52 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use
+     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use
+     *        <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     */
+
+    public void setDestinationPrefixListId(String destinationPrefixListId) {
+        this.destinationPrefixListId = destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use
+     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     * </p>
+     * 
+     * @return The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
+     *         use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     */
+
+    public String getDestinationPrefixListId() {
+        return this.destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use
+     * <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use
+     *        <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLocalGatewayRouteRequest withDestinationPrefixListId(String destinationPrefixListId) {
+        setDestinationPrefixListId(destinationPrefixListId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -241,7 +294,9 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
         if (getLocalGatewayVirtualInterfaceGroupId() != null)
             sb.append("LocalGatewayVirtualInterfaceGroupId: ").append(getLocalGatewayVirtualInterfaceGroupId()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getDestinationPrefixListId() != null)
+            sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId());
         sb.append("}");
         return sb.toString();
     }
@@ -273,6 +328,10 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
+            return false;
+        if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
+            return false;
         return true;
     }
 
@@ -285,6 +344,7 @@ public class CreateLocalGatewayRouteRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceGroupId() == null) ? 0 : getLocalGatewayVirtualInterfaceGroupId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
         return hashCode;
     }
 

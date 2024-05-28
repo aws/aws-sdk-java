@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an
- * optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag
- * values can have a maximum length of 256 characters.
+ * optional value. You define both. Tag keys can have a maximum character length of 128 characters, and tag values can
+ * have a maximum length of 256 characters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/Tag" target="_top">AWS API

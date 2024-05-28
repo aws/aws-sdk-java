@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -325,7 +325,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      */
     private String cdcStopPosition;
@@ -2184,7 +2184,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      * 
      * @param cdcStopPosition
@@ -2194,7 +2194,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      */
 
     public void setCdcStopPosition(String cdcStopPosition) {
@@ -2210,7 +2210,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
@@ -2219,7 +2219,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *         Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *         </p>
      *         <p>
-     *         Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     *         Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      */
 
     public String getCdcStopPosition() {
@@ -2235,7 +2235,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      * 
      * @param cdcStopPosition
@@ -2245,7 +2245,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

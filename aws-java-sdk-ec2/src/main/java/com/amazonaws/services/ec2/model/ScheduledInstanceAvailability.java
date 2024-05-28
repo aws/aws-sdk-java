@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
     private Integer minTermDurationInDays;
     /**
      * <p>
-     * The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * The network platform.
      * </p>
      */
     private String networkPlatform;
@@ -387,11 +387,11 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * The network platform.
      * </p>
      * 
      * @param networkPlatform
-     *        The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        The network platform.
      */
 
     public void setNetworkPlatform(String networkPlatform) {
@@ -400,10 +400,10 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * The network platform.
      * </p>
      * 
-     * @return The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * @return The network platform.
      */
 
     public String getNetworkPlatform() {
@@ -412,11 +412,11 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * The network platform.
      * </p>
      * 
      * @param networkPlatform
-     *        The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        The network platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

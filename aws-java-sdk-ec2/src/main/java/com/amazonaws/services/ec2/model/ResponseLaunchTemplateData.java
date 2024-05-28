@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,35 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateInstanceNetworkInterfaceSpecification> networkInterfaces;
     /**
      * <p>
-     * The ID of the AMI that was used to launch the instance.
+     * The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI
+     * at instance launch.
+     * </p>
+     * <p>
+     * The value depends on what you specified in the request. The possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If an AMI ID was specified in the request, then this is the AMI ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>false</code>, then this is the parameter value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String imageId;
@@ -120,14 +148,33 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateTagSpecification> tagSpecifications;
     /**
      * <p>
-     * The elastic GPU specification.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecificationResponse> elasticGpuSpecifications;
     /**
      * <p>
-     * The elastic inference accelerator for the instance.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
+     * <note>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAcceleratorResponse> elasticInferenceAccelerators;
     /**
@@ -222,7 +269,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is enabled for stop protection. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private Boolean disableApiStop;
@@ -507,11 +554,67 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI that was used to launch the instance.
+     * The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI
+     * at instance launch.
+     * </p>
+     * <p>
+     * The value depends on what you specified in the request. The possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If an AMI ID was specified in the request, then this is the AMI ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>false</code>, then this is the parameter value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI that was used to launch the instance.
+     *        The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of
+     *        the AMI at instance launch.</p>
+     *        <p>
+     *        The value depends on what you specified in the request. The possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If an AMI ID was specified in the request, then this is the AMI ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured
+     *        as <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured
+     *        as <code>false</code>, then this is the parameter value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *        >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *        Guide</i>.
      */
 
     public void setImageId(String imageId) {
@@ -520,10 +623,66 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI that was used to launch the instance.
+     * The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI
+     * at instance launch.
+     * </p>
+     * <p>
+     * The value depends on what you specified in the request. The possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If an AMI ID was specified in the request, then this is the AMI ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>false</code>, then this is the parameter value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The ID of the AMI that was used to launch the instance.
+     * @return The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of
+     *         the AMI at instance launch.</p>
+     *         <p>
+     *         The value depends on what you specified in the request. The possible values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If an AMI ID was specified in the request, then this is the AMI ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured
+     *         as <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured
+     *         as <code>false</code>, then this is the parameter value.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *         >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
      */
 
     public String getImageId() {
@@ -532,11 +691,67 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI that was used to launch the instance.
+     * The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of the AMI
+     * at instance launch.
+     * </p>
+     * <p>
+     * The value depends on what you specified in the request. The possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If an AMI ID was specified in the request, then this is the AMI ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as
+     * <code>false</code>, then this is the parameter value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI that was used to launch the instance.
+     *        The ID of the AMI or a Systems Manager parameter. The Systems Manager parameter will resolve to the ID of
+     *        the AMI at instance launch.</p>
+     *        <p>
+     *        The value depends on what you specified in the request. The possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If an AMI ID was specified in the request, then this is the AMI ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured
+     *        as <code>true</code>, then this is the AMI ID that the parameter is mapped to in the Parameter Store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured
+     *        as <code>false</code>, then this is the parameter value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *        >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1006,10 +1221,20 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic GPU specification.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
-     * @return The elastic GPU specification.
+     * @return Deprecated.</p> <note>
+     *         <p>
+     *         Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *         acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *         </p>
      */
 
     public java.util.List<ElasticGpuSpecificationResponse> getElasticGpuSpecifications() {
@@ -1021,11 +1246,21 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic GPU specification.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecifications
-     *        The elastic GPU specification.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      */
 
     public void setElasticGpuSpecifications(java.util.Collection<ElasticGpuSpecificationResponse> elasticGpuSpecifications) {
@@ -1039,8 +1274,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic GPU specification.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticGpuSpecifications(java.util.Collection)} or
@@ -1048,7 +1289,11 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      * 
      * @param elasticGpuSpecifications
-     *        The elastic GPU specification.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1064,11 +1309,21 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic GPU specification.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecifications
-     *        The elastic GPU specification.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1079,10 +1334,37 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic inference accelerator for the instance.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
+     * <note>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
+     * </note>
      * 
-     * @return The elastic inference accelerator for the instance.
+     * @return An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *         resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *         workloads.</p>
+     *         <p>
+     *         You cannot specify accelerators from different generations in the same request.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference
+     *         (EI), and will help current customers migrate their workloads to options that offer better price and
+     *         performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI
+     *         accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI
+     *         at least once during the past 30-day period are considered current customers and will be able to continue
+     *         using the service.
+     *         </p>
      */
 
     public java.util.List<LaunchTemplateElasticInferenceAcceleratorResponse> getElasticInferenceAccelerators() {
@@ -1094,11 +1376,38 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic inference accelerator for the instance.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
+     * <note>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
+     * </note>
      * 
      * @param elasticInferenceAccelerators
-     *        The elastic inference accelerator for the instance.
+     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *        workloads.</p>
+     *        <p>
+     *        You cannot specify accelerators from different generations in the same request.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference
+     *        (EI), and will help current customers migrate their workloads to options that offer better price and
+     *        performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI
+     *        accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at
+     *        least once during the past 30-day period are considered current customers and will be able to continue
+     *        using the service.
+     *        </p>
      */
 
     public void setElasticInferenceAccelerators(java.util.Collection<LaunchTemplateElasticInferenceAcceleratorResponse> elasticInferenceAccelerators) {
@@ -1113,8 +1422,21 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic inference accelerator for the instance.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
+     * <note>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticInferenceAccelerators(java.util.Collection)} or
@@ -1122,7 +1444,21 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      * 
      * @param elasticInferenceAccelerators
-     *        The elastic inference accelerator for the instance.
+     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *        workloads.</p>
+     *        <p>
+     *        You cannot specify accelerators from different generations in the same request.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference
+     *        (EI), and will help current customers migrate their workloads to options that offer better price and
+     *        performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI
+     *        accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at
+     *        least once during the past 30-day period are considered current customers and will be able to continue
+     *        using the service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1139,11 +1475,38 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The elastic inference accelerator for the instance.
+     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
+     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
      * </p>
+     * <p>
+     * You cannot specify accelerators from different generations in the same request.
+     * </p>
+     * <note>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
+     * </note>
      * 
      * @param elasticInferenceAccelerators
-     *        The elastic inference accelerator for the instance.
+     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
+     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
+     *        workloads.</p>
+     *        <p>
+     *        You cannot specify accelerators from different generations in the same request.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference
+     *        (EI), and will help current customers migrate their workloads to options that offer better price and
+     *        performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI
+     *        accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at
+     *        least once during the past 30-day period are considered current customers and will be able to continue
+     *        using the service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1834,13 +2197,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is enabled for stop protection. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param disableApiStop
      *        Indicates whether the instance is enabled for stop protection. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     *        Protection</a>.
+     *        protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setDisableApiStop(Boolean disableApiStop) {
@@ -1851,12 +2214,12 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is enabled for stop protection. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Indicates whether the instance is enabled for stop protection. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     *         Protection</a>.
+     *         protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getDisableApiStop() {
@@ -1867,13 +2230,13 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is enabled for stop protection. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param disableApiStop
      *        Indicates whether the instance is enabled for stop protection. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     *        Protection</a>.
+     *        protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1886,12 +2249,12 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * Indicates whether the instance is enabled for stop protection. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>.
+     * protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Indicates whether the instance is enabled for stop protection. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     *         Protection</a>.
+     *         protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isDisableApiStop() {
@@ -1937,7 +2300,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (getInstanceInitiatedShutdownBehavior() != null)
             sb.append("InstanceInitiatedShutdownBehavior: ").append(getInstanceInitiatedShutdownBehavior()).append(",");
         if (getUserData() != null)
-            sb.append("UserData: ").append(getUserData()).append(",");
+            sb.append("UserData: ").append("***Sensitive Data Redacted***").append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getElasticGpuSpecifications() != null)

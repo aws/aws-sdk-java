@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class BatchJobExecutionSummaryJsonUnmarshaller implements Unmarshaller<Ba
                     context.nextToken();
                     batchJobExecutionSummary.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("batchJobIdentifier", targetDepth)) {
+                    context.nextToken();
+                    batchJobExecutionSummary.setBatchJobIdentifier(BatchJobIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
                     batchJobExecutionSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -71,6 +75,10 @@ public class BatchJobExecutionSummaryJsonUnmarshaller implements Unmarshaller<Ba
                 if (context.testExpression("jobType", targetDepth)) {
                     context.nextToken();
                     batchJobExecutionSummary.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("returnCode", targetDepth)) {
+                    context.nextToken();
+                    batchJobExecutionSummary.setReturnCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,10 +58,11 @@ public class EnvironmentVariableCredentialsProviderTest {
         helper.set(ALTERNATE_SECRET_KEY_ENV_VAR, ALT_SECRET_ACCESS_KEY);
 
         AWSCredentials credentials = new EnvironmentVariableCredentialsProvider().getCredentials();
-        assertFalse(credentials instanceof AWSSessionCredentials);
+        assertTrue(credentials instanceof BasicAWSCredentials);
         Assert.assertEquals(ACCESS_KEY_ID, credentials.getAWSAccessKeyId());
         Assert.assertEquals(SECRET_ACCESS_KEY, credentials.getAWSSecretKey());
-
+        Assert.assertEquals("EnvironmentVariableCredentialsProvider",
+                ((BasicAWSCredentials) credentials).getProviderName());
     }
 
     @Test

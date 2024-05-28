@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,14 @@ public class IBMDb2SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
+    private static final MarshallingInfo<Integer> LOADTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoadTimeout").build();
+    private static final MarshallingInfo<Integer> WRITEBUFFERSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WriteBufferSize").build();
+    private static final MarshallingInfo<Integer> MAXFILESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxFileSize").build();
+    private static final MarshallingInfo<Boolean> KEEPCSVFILES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeepCsvFiles").build();
 
     private static final IBMDb2SettingsMarshaller instance = new IBMDb2SettingsMarshaller();
 
@@ -74,6 +82,10 @@ public class IBMDb2SettingsMarshaller {
             protocolMarshaller.marshall(iBMDb2Settings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(iBMDb2Settings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getLoadTimeout(), LOADTIMEOUT_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getWriteBufferSize(), WRITEBUFFERSIZE_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getMaxFileSize(), MAXFILESIZE_BINDING);
+            protocolMarshaller.marshall(iBMDb2Settings.getKeepCsvFiles(), KEEPCSVFILES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

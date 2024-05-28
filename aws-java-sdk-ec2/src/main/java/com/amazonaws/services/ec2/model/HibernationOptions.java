@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the
- * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+ * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
  * prerequisites</a>. For more information, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
  * <i>Amazon EC2 User Guide</i>.
@@ -32,21 +32,19 @@ public class HibernationOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is not
-     * enabled for hibernation.
+     * If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.
      * </p>
      */
     private Boolean configured;
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is not
-     * enabled for hibernation.
+     * If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.
      * </p>
      * 
      * @param configured
-     *        If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is
-     *        not enabled for hibernation.
+     *        If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for
+     *        hibernation.
      */
 
     public void setConfigured(Boolean configured) {
@@ -55,12 +53,11 @@ public class HibernationOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is not
-     * enabled for hibernation.
+     * If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.
      * </p>
      * 
-     * @return If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is
-     *         not enabled for hibernation.
+     * @return If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for
+     *         hibernation.
      */
 
     public Boolean getConfigured() {
@@ -69,13 +66,12 @@ public class HibernationOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is not
-     * enabled for hibernation.
+     * If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.
      * </p>
      * 
      * @param configured
-     *        If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is
-     *        not enabled for hibernation.
+     *        If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for
+     *        hibernation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +82,11 @@ public class HibernationOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is not
-     * enabled for hibernation.
+     * If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.
      * </p>
      * 
-     * @return If this parameter is set to <code>true</code>, your instance is enabled for hibernation; otherwise, it is
-     *         not enabled for hibernation.
+     * @return If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for
+     *         hibernation.
      */
 
     public Boolean isConfigured() {

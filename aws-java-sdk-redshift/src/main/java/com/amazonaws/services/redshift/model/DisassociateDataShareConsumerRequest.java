@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class DisassociateDataShareConsumerRequest extends com.amazonaws.AmazonWe
     private Boolean disassociateEntireAccount;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     * The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.
      * </p>
      */
     private String consumerArn;
@@ -145,11 +145,12 @@ public class DisassociateDataShareConsumerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     * The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.
      * </p>
      * 
      * @param consumerArn
-     *        The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     *        The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed
+     *        from.
      */
 
     public void setConsumerArn(String consumerArn) {
@@ -158,10 +159,11 @@ public class DisassociateDataShareConsumerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     * The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     * @return The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed
+     *         from.
      */
 
     public String getConsumerArn() {
@@ -170,11 +172,12 @@ public class DisassociateDataShareConsumerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     * The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.
      * </p>
      * 
      * @param consumerArn
-     *        The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.
+     *        The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed
+     *        from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

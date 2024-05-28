@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
     private String executionArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      */
     private String stateMachineArn;
@@ -97,6 +97,59 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date stopDate;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     */
+    private String mapRunArn;
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     */
+    private Integer itemCount;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     */
+    private String stateMachineVersionArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     */
+    private String stateMachineAliasArn;
+    /**
+     * <p>
+     * The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     * <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     * </p>
+     */
+    private Integer redriveCount;
+    /**
+     * <p>
+     * The date the execution was last redriven.
+     * </p>
+     */
+    private java.util.Date redriveDate;
 
     /**
      * <p>
@@ -140,11 +193,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the executed state machine.
+     *        The Amazon Resource Name (ARN) of the state machine that ran the execution.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -153,10 +206,10 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the executed state machine.
+     * @return The Amazon Resource Name (ARN) of the state machine that ran the execution.
      */
 
     public String getStateMachineArn() {
@@ -165,11 +218,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the executed state machine.
+     * The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the executed state machine.
+     *        The Amazon Resource Name (ARN) of the state machine that ran the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -567,6 +620,342 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was
+     *        specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     *        <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     */
+
+    public void setMapRunArn(String mapRunArn) {
+        this.mapRunArn = mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was
+     *         specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     *         <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     */
+
+    public String getMapRunArn() {
+        return this.mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was
+     *        specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     *        <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withMapRunArn(String mapRunArn) {
+        setMapRunArn(mapRunArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     * 
+     * @param itemCount
+     *        The total number of items processed in a child workflow execution. This field is returned only if
+     *        <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     *        <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code>
+     *        field isn't returned.
+     */
+
+    public void setItemCount(Integer itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     * 
+     * @return The total number of items processed in a child workflow execution. This field is returned only if
+     *         <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     *         <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code>
+     *         field isn't returned.
+     */
+
+    public Integer getItemCount() {
+        return this.itemCount;
+    }
+
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     * 
+     * @param itemCount
+     *        The total number of items processed in a child workflow execution. This field is returned only if
+     *        <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     *        <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code>
+     *        field isn't returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withItemCount(Integer itemCount) {
+        setItemCount(itemCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN, it returns null.
+     *        </p>
+     *        <p>
+     *        If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     *        <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the
+     *        respective values.
+     */
+
+    public void setStateMachineVersionArn(String stateMachineVersionArn) {
+        this.stateMachineVersionArn = stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+     *         <p>
+     *         If the state machine execution was started with an unqualified ARN, it returns null.
+     *         </p>
+     *         <p>
+     *         If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     *         <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the
+     *         respective values.
+     */
+
+    public String getStateMachineVersionArn() {
+        return this.stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine version associated with the execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN, it returns null.
+     * </p>
+     * <p>
+     * If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     * <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the respective
+     * values.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the state machine version associated with the execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN, it returns null.
+     *        </p>
+     *        <p>
+     *        If the execution was started using a <code>stateMachineAliasArn</code>, both the
+     *        <code>stateMachineAliasArn</code> and <code>stateMachineVersionArn</code> parameters contain the
+     *        respective values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withStateMachineVersionArn(String stateMachineVersionArn) {
+        setStateMachineVersionArn(stateMachineVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     */
+
+    public void setStateMachineAliasArn(String stateMachineAliasArn) {
+        this.stateMachineAliasArn = stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+     *         <p>
+     *         If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     */
+
+    public String getStateMachineAliasArn() {
+        return this.stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the state machine alias used to start an execution.
+     * </p>
+     * <p>
+     * If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
+     *        <p>
+     *        If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withStateMachineAliasArn(String stateMachineAliasArn) {
+        setStateMachineAliasArn(stateMachineAliasArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     * <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     * </p>
+     * 
+     * @param redriveCount
+     *        The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     *        <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     */
+
+    public void setRedriveCount(Integer redriveCount) {
+        this.redriveCount = redriveCount;
+    }
+
+    /**
+     * <p>
+     * The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     * <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     * </p>
+     * 
+     * @return The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     *         <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     */
+
+    public Integer getRedriveCount() {
+        return this.redriveCount;
+    }
+
+    /**
+     * <p>
+     * The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     * <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     * </p>
+     * 
+     * @param redriveCount
+     *        The number of times you've redriven an execution. If you have not yet redriven an execution, the
+     *        <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withRedriveCount(Integer redriveCount) {
+        setRedriveCount(redriveCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the execution was last redriven.
+     * </p>
+     * 
+     * @param redriveDate
+     *        The date the execution was last redriven.
+     */
+
+    public void setRedriveDate(java.util.Date redriveDate) {
+        this.redriveDate = redriveDate;
+    }
+
+    /**
+     * <p>
+     * The date the execution was last redriven.
+     * </p>
+     * 
+     * @return The date the execution was last redriven.
+     */
+
+    public java.util.Date getRedriveDate() {
+        return this.redriveDate;
+    }
+
+    /**
+     * <p>
+     * The date the execution was last redriven.
+     * </p>
+     * 
+     * @param redriveDate
+     *        The date the execution was last redriven.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withRedriveDate(java.util.Date redriveDate) {
+        setRedriveDate(redriveDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -589,7 +978,19 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
         if (getStartDate() != null)
             sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getStopDate() != null)
-            sb.append("StopDate: ").append(getStopDate());
+            sb.append("StopDate: ").append(getStopDate()).append(",");
+        if (getMapRunArn() != null)
+            sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
+        if (getItemCount() != null)
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
+        if (getStateMachineVersionArn() != null)
+            sb.append("StateMachineVersionArn: ").append(getStateMachineVersionArn()).append(",");
+        if (getStateMachineAliasArn() != null)
+            sb.append("StateMachineAliasArn: ").append(getStateMachineAliasArn()).append(",");
+        if (getRedriveCount() != null)
+            sb.append("RedriveCount: ").append(getRedriveCount()).append(",");
+        if (getRedriveDate() != null)
+            sb.append("RedriveDate: ").append(getRedriveDate());
         sb.append("}");
         return sb.toString();
     }
@@ -628,6 +1029,30 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStopDate() != null && other.getStopDate().equals(this.getStopDate()) == false)
             return false;
+        if (other.getMapRunArn() == null ^ this.getMapRunArn() == null)
+            return false;
+        if (other.getMapRunArn() != null && other.getMapRunArn().equals(this.getMapRunArn()) == false)
+            return false;
+        if (other.getItemCount() == null ^ this.getItemCount() == null)
+            return false;
+        if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
+            return false;
+        if (other.getStateMachineVersionArn() == null ^ this.getStateMachineVersionArn() == null)
+            return false;
+        if (other.getStateMachineVersionArn() != null && other.getStateMachineVersionArn().equals(this.getStateMachineVersionArn()) == false)
+            return false;
+        if (other.getStateMachineAliasArn() == null ^ this.getStateMachineAliasArn() == null)
+            return false;
+        if (other.getStateMachineAliasArn() != null && other.getStateMachineAliasArn().equals(this.getStateMachineAliasArn()) == false)
+            return false;
+        if (other.getRedriveCount() == null ^ this.getRedriveCount() == null)
+            return false;
+        if (other.getRedriveCount() != null && other.getRedriveCount().equals(this.getRedriveCount()) == false)
+            return false;
+        if (other.getRedriveDate() == null ^ this.getRedriveDate() == null)
+            return false;
+        if (other.getRedriveDate() != null && other.getRedriveDate().equals(this.getRedriveDate()) == false)
+            return false;
         return true;
     }
 
@@ -642,6 +1067,12 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getStopDate() == null) ? 0 : getStopDate().hashCode());
+        hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
+        hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineVersionArn() == null) ? 0 : getStateMachineVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineAliasArn() == null) ? 0 : getStateMachineAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getRedriveCount() == null) ? 0 : getRedriveCount().hashCode());
+        hashCode = prime * hashCode + ((getRedriveDate() == null) ? 0 : getRedriveDate().hashCode());
         return hashCode;
     }
 

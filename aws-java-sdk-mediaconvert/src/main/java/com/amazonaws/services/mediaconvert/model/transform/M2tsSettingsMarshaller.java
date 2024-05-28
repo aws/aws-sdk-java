@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,10 +82,16 @@ public class M2tsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pmtInterval").build();
     private static final MarshallingInfo<Integer> PMTPID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("pmtPid").build();
+    private static final MarshallingInfo<String> PREVENTBUFFERUNDERFLOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preventBufferUnderflow").build();
     private static final MarshallingInfo<Integer> PRIVATEMETADATAPID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privateMetadataPid").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programNumber").build();
+    private static final MarshallingInfo<Integer> PTSOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ptsOffset").build();
+    private static final MarshallingInfo<String> PTSOFFSETMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ptsOffsetMode").build();
     private static final MarshallingInfo<String> RATEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rateMode").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -150,8 +156,11 @@ public class M2tsSettingsMarshaller {
             protocolMarshaller.marshall(m2tsSettings.getPcrPid(), PCRPID_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPmtInterval(), PMTINTERVAL_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPmtPid(), PMTPID_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getPreventBufferUnderflow(), PREVENTBUFFERUNDERFLOW_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPrivateMetadataPid(), PRIVATEMETADATAPID_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getProgramNumber(), PROGRAMNUMBER_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getPtsOffset(), PTSOFFSET_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getPtsOffsetMode(), PTSOFFSETMODE_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getRateMode(), RATEMODE_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getScte35Esam(), SCTE35ESAM_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getScte35Pid(), SCTE35PID_BINDING);

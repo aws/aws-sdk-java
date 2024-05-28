@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class S3ImportSource implements Serializable, Cloneable, StructuredPojo {
     private String s3LocationUri;
     /**
      * <p>
-     * The region associated with the source S3 bucket.
+     * The Region associated with the source S3 bucket.
      * </p>
      */
     private String s3BucketRegion;
@@ -89,11 +89,11 @@ public class S3ImportSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region associated with the source S3 bucket.
+     * The Region associated with the source S3 bucket.
      * </p>
      * 
      * @param s3BucketRegion
-     *        The region associated with the source S3 bucket.
+     *        The Region associated with the source S3 bucket.
      */
 
     public void setS3BucketRegion(String s3BucketRegion) {
@@ -102,10 +102,10 @@ public class S3ImportSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region associated with the source S3 bucket.
+     * The Region associated with the source S3 bucket.
      * </p>
      * 
-     * @return The region associated with the source S3 bucket.
+     * @return The Region associated with the source S3 bucket.
      */
 
     public String getS3BucketRegion() {
@@ -114,11 +114,11 @@ public class S3ImportSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region associated with the source S3 bucket.
+     * The Region associated with the source S3 bucket.
      * </p>
      * 
      * @param s3BucketRegion
-     *        The region associated with the source S3 bucket.
+     *        The Region associated with the source S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class InstanceAggregatedAssociationOverview implements Serializable, Clon
     private String detailedStatus;
     /**
      * <p>
-     * The number of associations for the managed node(s).
+     * The number of associations for the managed nodes.
      * </p>
      */
     private java.util.Map<String, Integer> instanceAssociationStatusAggregatedCount;
@@ -83,10 +83,10 @@ public class InstanceAggregatedAssociationOverview implements Serializable, Clon
 
     /**
      * <p>
-     * The number of associations for the managed node(s).
+     * The number of associations for the managed nodes.
      * </p>
      * 
-     * @return The number of associations for the managed node(s).
+     * @return The number of associations for the managed nodes.
      */
 
     public java.util.Map<String, Integer> getInstanceAssociationStatusAggregatedCount() {
@@ -95,11 +95,11 @@ public class InstanceAggregatedAssociationOverview implements Serializable, Clon
 
     /**
      * <p>
-     * The number of associations for the managed node(s).
+     * The number of associations for the managed nodes.
      * </p>
      * 
      * @param instanceAssociationStatusAggregatedCount
-     *        The number of associations for the managed node(s).
+     *        The number of associations for the managed nodes.
      */
 
     public void setInstanceAssociationStatusAggregatedCount(java.util.Map<String, Integer> instanceAssociationStatusAggregatedCount) {
@@ -108,11 +108,11 @@ public class InstanceAggregatedAssociationOverview implements Serializable, Clon
 
     /**
      * <p>
-     * The number of associations for the managed node(s).
+     * The number of associations for the managed nodes.
      * </p>
      * 
      * @param instanceAssociationStatusAggregatedCount
-     *        The number of associations for the managed node(s).
+     *        The number of associations for the managed nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,19 +122,18 @@ public interface AmazonSageMakerRuntimeAsync extends AmazonSageMakerRuntime {
      * </p>
      * <p>
      * Inference requests sent to this API are enqueued for asynchronous processing. The processing of the inference
-     * request may or may not complete before the you receive a response from this API. The response from this API will
-     * not contain the result of the inference request but contain information about where you can locate it.
+     * request may or may not complete before you receive a response from this API. The response from this API will not
+     * contain the result of the inference request but contain information about where you can locate it.
      * </p>
      * <p>
-     * Amazon SageMaker strips all <code>POST</code> headers except those supported by the API. Amazon SageMaker might
-     * add additional headers. You should not rely on the behavior of headers outside those enumerated in the request
-     * syntax.
+     * Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional
+     * headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
      * </p>
      * <p>
      * Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html"
-     * >Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+     * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
      * </p>
      * 
      * @param invokeEndpointAsyncRequest
@@ -152,19 +151,18 @@ public interface AmazonSageMakerRuntimeAsync extends AmazonSageMakerRuntime {
      * </p>
      * <p>
      * Inference requests sent to this API are enqueued for asynchronous processing. The processing of the inference
-     * request may or may not complete before the you receive a response from this API. The response from this API will
-     * not contain the result of the inference request but contain information about where you can locate it.
+     * request may or may not complete before you receive a response from this API. The response from this API will not
+     * contain the result of the inference request but contain information about where you can locate it.
      * </p>
      * <p>
-     * Amazon SageMaker strips all <code>POST</code> headers except those supported by the API. Amazon SageMaker might
-     * add additional headers. You should not rely on the behavior of headers outside those enumerated in the request
-     * syntax.
+     * Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional
+     * headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
      * </p>
      * <p>
      * Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html"
-     * >Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+     * Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
      * </p>
      * 
      * @param invokeEndpointAsyncRequest

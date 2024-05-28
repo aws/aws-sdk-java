@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,18 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
     private String environmentName;
     /**
      * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     */
+    private String lastAttemptedDeploymentId;
+    /**
+     * <p>
+     * The last client request token received.
+     * </p>
+     */
+    private String lastClientRequestToken;
+    /**
+     * <p>
      * The time when a deployment of the service instance was last attempted.
      * </p>
      */
@@ -70,6 +82,12 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastDeploymentSucceededAt;
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     */
+    private String lastSucceededDeploymentId;
     /**
      * <p>
      * The name of the service instance.
@@ -328,6 +346,86 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this service instance.
+     */
+
+    public void setLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        this.lastAttemptedDeploymentId = lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     * 
+     * @return The ID of the last attempted deployment of this service instance.
+     */
+
+    public String getLastAttemptedDeploymentId() {
+        return this.lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this service instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceInstance withLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        setLastAttemptedDeploymentId(lastAttemptedDeploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last client request token received.
+     * </p>
+     * 
+     * @param lastClientRequestToken
+     *        The last client request token received.
+     */
+
+    public void setLastClientRequestToken(String lastClientRequestToken) {
+        this.lastClientRequestToken = lastClientRequestToken;
+    }
+
+    /**
+     * <p>
+     * The last client request token received.
+     * </p>
+     * 
+     * @return The last client request token received.
+     */
+
+    public String getLastClientRequestToken() {
+        return this.lastClientRequestToken;
+    }
+
+    /**
+     * <p>
+     * The last client request token received.
+     * </p>
+     * 
+     * @param lastClientRequestToken
+     *        The last client request token received.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceInstance withLastClientRequestToken(String lastClientRequestToken) {
+        setLastClientRequestToken(lastClientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when a deployment of the service instance was last attempted.
      * </p>
      * 
@@ -403,6 +501,46 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
 
     public ServiceInstance withLastDeploymentSucceededAt(java.util.Date lastDeploymentSucceededAt) {
         setLastDeploymentSucceededAt(lastDeploymentSucceededAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this service instance.
+     */
+
+    public void setLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        this.lastSucceededDeploymentId = lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     * 
+     * @return The ID of the last successful deployment of this service instance.
+     */
+
+    public String getLastSucceededDeploymentId() {
+        return this.lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this service instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceInstance withLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        setLastSucceededDeploymentId(lastSucceededDeploymentId);
         return this;
     }
 
@@ -668,10 +806,16 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
             sb.append("DeploymentStatusMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
+        if (getLastAttemptedDeploymentId() != null)
+            sb.append("LastAttemptedDeploymentId: ").append(getLastAttemptedDeploymentId()).append(",");
+        if (getLastClientRequestToken() != null)
+            sb.append("LastClientRequestToken: ").append(getLastClientRequestToken()).append(",");
         if (getLastDeploymentAttemptedAt() != null)
             sb.append("LastDeploymentAttemptedAt: ").append(getLastDeploymentAttemptedAt()).append(",");
         if (getLastDeploymentSucceededAt() != null)
             sb.append("LastDeploymentSucceededAt: ").append(getLastDeploymentSucceededAt()).append(",");
+        if (getLastSucceededDeploymentId() != null)
+            sb.append("LastSucceededDeploymentId: ").append(getLastSucceededDeploymentId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getServiceName() != null)
@@ -718,6 +862,14 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
+        if (other.getLastAttemptedDeploymentId() == null ^ this.getLastAttemptedDeploymentId() == null)
+            return false;
+        if (other.getLastAttemptedDeploymentId() != null && other.getLastAttemptedDeploymentId().equals(this.getLastAttemptedDeploymentId()) == false)
+            return false;
+        if (other.getLastClientRequestToken() == null ^ this.getLastClientRequestToken() == null)
+            return false;
+        if (other.getLastClientRequestToken() != null && other.getLastClientRequestToken().equals(this.getLastClientRequestToken()) == false)
+            return false;
         if (other.getLastDeploymentAttemptedAt() == null ^ this.getLastDeploymentAttemptedAt() == null)
             return false;
         if (other.getLastDeploymentAttemptedAt() != null && other.getLastDeploymentAttemptedAt().equals(this.getLastDeploymentAttemptedAt()) == false)
@@ -725,6 +877,10 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
         if (other.getLastDeploymentSucceededAt() == null ^ this.getLastDeploymentSucceededAt() == null)
             return false;
         if (other.getLastDeploymentSucceededAt() != null && other.getLastDeploymentSucceededAt().equals(this.getLastDeploymentSucceededAt()) == false)
+            return false;
+        if (other.getLastSucceededDeploymentId() == null ^ this.getLastSucceededDeploymentId() == null)
+            return false;
+        if (other.getLastSucceededDeploymentId() != null && other.getLastSucceededDeploymentId().equals(this.getLastSucceededDeploymentId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -763,8 +919,11 @@ public class ServiceInstance implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatusMessage() == null) ? 0 : getDeploymentStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeploymentId() == null) ? 0 : getLastAttemptedDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getLastClientRequestToken() == null) ? 0 : getLastClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentAttemptedAt() == null) ? 0 : getLastDeploymentAttemptedAt().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentSucceededAt() == null) ? 0 : getLastDeploymentSucceededAt().hashCode());
+        hashCode = prime * hashCode + ((getLastSucceededDeploymentId() == null) ? 0 : getLastSucceededDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());

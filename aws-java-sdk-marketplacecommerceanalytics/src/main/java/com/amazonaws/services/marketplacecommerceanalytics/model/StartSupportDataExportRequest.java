@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the StartSupportDataExport operation.
+ * <i>This target has been deprecated.</i> Container for the parameters to the StartSupportDataExport operation.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"
  *      target="_top">AWS API Documentation</a>
@@ -28,10 +28,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The data set types
-     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
-     * following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date,
-     * Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     * <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The
+     * data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     * containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start
+     * Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
      * Operation Type, and Operation Time.
      * </p>
      * <p>
@@ -46,42 +46,42 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      */
     private String dataSetType;
     /**
-     * The start date from which to retrieve the data set in UTC. This parameter only affects the
-     * customer_support_contacts_data data set type.
+     * <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter
+     * only affects the customer_support_contacts_data data set type.
      */
     private java.util.Date fromDate;
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
-     * services.
+     * <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions
+     * policy to interact with the provided AWS services.
      */
     private String roleNameArn;
-    /** The name (friendly name, not ARN) of the destination S3 bucket. */
+    /** <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket. */
     private String destinationS3BucketName;
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
-     * bucket root.
+     * <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a
+     * directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix
+     * "myprefix/mydatasets", the output file "outputfile" would be published to
+     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be
+     * created. If no prefix is provided, the data set will be published to the S3 bucket root.
      */
     private String destinationS3Prefix;
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-     * error has occurred.
+     * <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when
+     * the data set has been published or if an error has occurred.
      */
     private String snsTopicArn;
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
-     * data set metadata file.
+     * <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the
+     * Amazon SNS notification message and the data set metadata file.
      */
     private java.util.Map<String, String> customerDefinedValues;
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The data set types
-     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
-     * following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date,
-     * Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     * <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The
+     * data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     * containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start
+     * Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
      * Operation Type, and Operation Time.
      * </p>
      * <p>
@@ -95,11 +95,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file. The data set types
-     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription
-     *        Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
-     *        Code, ZIP Code, Operation Type, and Operation Time. </p>
+     *        <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file.
+     *        The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a
+     *        csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid,
+     *        Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email,
+     *        Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
      *        <p>
      *        <ul>
      *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
@@ -117,10 +117,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The data set types
-     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
-     * following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date,
-     * Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     * <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The
+     * data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     * containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start
+     * Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
      * Operation Type, and Operation Time.
      * </p>
      * <p>
@@ -133,11 +133,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * </p>
      * 
-     * @return Specifies the data set type to be written to the output csv file. The data set types
-     *         customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
-     *         containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription
-     *         Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
-     *         Code, ZIP Code, Operation Type, and Operation Time. </p>
+     * @return <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file.
+     *         The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in
+     *         a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid,
+     *         Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email,
+     *         Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
      *         <p>
      *         <ul>
      *         <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
@@ -155,10 +155,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The data set types
-     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
-     * following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date,
-     * Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     * <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The
+     * data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     * containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start
+     * Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
      * Operation Type, and Operation Time.
      * </p>
      * <p>
@@ -172,11 +172,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file. The data set types
-     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription
-     *        Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
-     *        Code, ZIP Code, Operation Type, and Operation Time. </p>
+     *        <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file.
+     *        The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a
+     *        csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid,
+     *        Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email,
+     *        Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
      *        <p>
      *        <ul>
      *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
@@ -196,10 +196,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The data set types
-     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
-     * following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date,
-     * Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     * <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The
+     * data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     * containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start
+     * Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
      * Operation Type, and Operation Time.
      * </p>
      * <p>
@@ -213,11 +213,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file. The data set types
-     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription
-     *        Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
-     *        Code, ZIP Code, Operation Type, and Operation Time. </p>
+     *        <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file.
+     *        The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a
+     *        csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid,
+     *        Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email,
+     *        Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
      *        <p>
      *        <ul>
      *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
@@ -235,10 +235,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the data set type to be written to the output csv file. The data set types
-     * customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the
-     * following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date,
-     * Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
+     * <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The
+     * data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
+     * containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start
+     * Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code,
      * Operation Type, and Operation Time.
      * </p>
      * <p>
@@ -252,11 +252,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dataSetType
-     *        Specifies the data set type to be written to the output csv file. The data set types
-     *        customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file
-     *        containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription
-     *        Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country
-     *        Code, ZIP Code, Operation Type, and Operation Time. </p>
+     *        <i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file.
+     *        The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a
+     *        csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid,
+     *        Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email,
+     *        Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
      *        <p>
      *        <ul>
      *        <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all
@@ -275,12 +275,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The start date from which to retrieve the data set in UTC. This parameter only affects the
-     * customer_support_contacts_data data set type.
+     * <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter
+     * only affects the customer_support_contacts_data data set type.
      * 
      * @param fromDate
-     *        The start date from which to retrieve the data set in UTC. This parameter only affects the
-     *        customer_support_contacts_data data set type.
+     *        This target has been deprecated.
      */
 
     public void setFromDate(java.util.Date fromDate) {
@@ -288,11 +287,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The start date from which to retrieve the data set in UTC. This parameter only affects the
-     * customer_support_contacts_data data set type.
+     * <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter
+     * only affects the customer_support_contacts_data data set type.
      * 
-     * @return The start date from which to retrieve the data set in UTC. This parameter only affects the
-     *         customer_support_contacts_data data set type.
+     * @return This target has been deprecated.
      */
 
     public java.util.Date getFromDate() {
@@ -300,12 +298,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The start date from which to retrieve the data set in UTC. This parameter only affects the
-     * customer_support_contacts_data data set type.
+     * <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter
+     * only affects the customer_support_contacts_data data set type.
      * 
      * @param fromDate
-     *        The start date from which to retrieve the data set in UTC. This parameter only affects the
-     *        customer_support_contacts_data data set type.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,12 +312,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
-     * services.
+     * <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions
+     * policy to interact with the provided AWS services.
      * 
      * @param roleNameArn
-     *        The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the
-     *        provided AWS services.
+     *        This target has been deprecated.
      */
 
     public void setRoleNameArn(String roleNameArn) {
@@ -328,11 +324,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
-     * services.
+     * <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions
+     * policy to interact with the provided AWS services.
      * 
-     * @return The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the
-     *         provided AWS services.
+     * @return This target has been deprecated.
      */
 
     public String getRoleNameArn() {
@@ -340,12 +335,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS
-     * services.
+     * <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions
+     * policy to interact with the provided AWS services.
      * 
      * @param roleNameArn
-     *        The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the
-     *        provided AWS services.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,10 +349,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The name (friendly name, not ARN) of the destination S3 bucket.
+     * <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
      * 
      * @param destinationS3BucketName
-     *        The name (friendly name, not ARN) of the destination S3 bucket.
+     *        This target has been deprecated.
      */
 
     public void setDestinationS3BucketName(String destinationS3BucketName) {
@@ -366,9 +360,9 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The name (friendly name, not ARN) of the destination S3 bucket.
+     * <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
      * 
-     * @return The name (friendly name, not ARN) of the destination S3 bucket.
+     * @return This target has been deprecated.
      */
 
     public String getDestinationS3BucketName() {
@@ -376,10 +370,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The name (friendly name, not ARN) of the destination S3 bucket.
+     * <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
      * 
      * @param destinationS3BucketName
-     *        The name (friendly name, not ARN) of the destination S3 bucket.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,18 +383,14 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
-     * bucket root.
+     * <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a
+     * directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix
+     * "myprefix/mydatasets", the output file "outputfile" would be published to
+     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be
+     * created. If no prefix is provided, the data set will be published to the S3 bucket root.
      * 
      * @param destinationS3Prefix
-     *        (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     *        systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output
-     *        file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix
-     *        directory structure does not exist, it will be created. If no prefix is provided, the data set will be
-     *        published to the S3 bucket root.
+     *        This target has been deprecated.
      */
 
     public void setDestinationS3Prefix(String destinationS3Prefix) {
@@ -408,17 +398,13 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
-     * bucket root.
+     * <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a
+     * directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix
+     * "myprefix/mydatasets", the output file "outputfile" would be published to
+     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be
+     * created. If no prefix is provided, the data set will be published to the S3 bucket root.
      * 
-     * @return (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     *         systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the
-     *         output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the
-     *         prefix directory structure does not exist, it will be created. If no prefix is provided, the data set
-     *         will be published to the S3 bucket root.
+     * @return This target has been deprecated.
      */
 
     public String getDestinationS3Prefix() {
@@ -426,18 +412,14 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     * systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file
-     * "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory
-     * structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3
-     * bucket root.
+     * <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a
+     * directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix
+     * "myprefix/mydatasets", the output file "outputfile" would be published to
+     * "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be
+     * created. If no prefix is provided, the data set will be published to the S3 bucket root.
      * 
      * @param destinationS3Prefix
-     *        (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file
-     *        systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output
-     *        file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix
-     *        directory structure does not exist, it will be created. If no prefix is provided, the data set will be
-     *        published to the S3 bucket root.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,12 +429,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-     * error has occurred.
+     * <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when
+     * the data set has been published or if an error has occurred.
      * 
      * @param snsTopicArn
-     *        Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or
-     *        if an error has occurred.
+     *        This target has been deprecated.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -460,11 +441,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-     * error has occurred.
+     * <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when
+     * the data set has been published or if an error has occurred.
      * 
-     * @return Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published
-     *         or if an error has occurred.
+     * @return This target has been deprecated.
      */
 
     public String getSnsTopicArn() {
@@ -472,12 +452,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an
-     * error has occurred.
+     * <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when
+     * the data set has been published or if an error has occurred.
      * 
      * @param snsTopicArn
-     *        Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or
-     *        if an error has occurred.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,11 +466,10 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
-     * data set metadata file.
+     * <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the
+     * Amazon SNS notification message and the data set metadata file.
      * 
-     * @return (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and
-     *         the data set metadata file.
+     * @return This target has been deprecated.
      */
 
     public java.util.Map<String, String> getCustomerDefinedValues() {
@@ -499,12 +477,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
-     * data set metadata file.
+     * <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the
+     * Amazon SNS notification message and the data set metadata file.
      * 
      * @param customerDefinedValues
-     *        (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and
-     *        the data set metadata file.
+     *        This target has been deprecated.
      */
 
     public void setCustomerDefinedValues(java.util.Map<String, String> customerDefinedValues) {
@@ -512,12 +489,11 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the
-     * data set metadata file.
+     * <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the
+     * Amazon SNS notification message and the data set metadata file.
      * 
      * @param customerDefinedValues
-     *        (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and
-     *        the data set metadata file.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

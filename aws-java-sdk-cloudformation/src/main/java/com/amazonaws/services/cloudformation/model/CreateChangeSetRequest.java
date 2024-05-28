@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
      * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change
-     * set by comparing this template with the stack that you specified.
+     * set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start
+     * with <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -159,7 +160,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM resources in CloudFormation templates</a>.
      * </p>
      * </li>
@@ -174,9 +175,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <note>
@@ -191,11 +192,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * <p>
      * For more information about macros, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
     /**
@@ -208,8 +214,13 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this
      * parameter for condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access
-     * with Identity and Access Management</a> in the CloudFormation User Guide.
+     * with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
     /**
@@ -281,8 +292,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      * template or resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
+     * >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      * </p>
      * <p>
      * By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
@@ -303,6 +314,61 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean includeNestedStacks;
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change
+     * set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all
+     * stacks to be deleted.
+     * </p>
+     */
+    private String onStackFailure;
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter can only import resources that have custom names in templates. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in
+     * the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances,
+     * use the resource import feature instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing
+     * resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * </note>
+     */
+    private Boolean importExistingResources;
 
     /**
      * <p>
@@ -427,7 +493,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
      * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change
-     * set by comparing this template with the stack that you specified.
+     * set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start
+     * with <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -436,7 +503,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @param templateURL
      *        The location of the file that contains the revised template. The URL must point to a template (max size:
      *        460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation
-     *        generates the change set by comparing this template with the stack that you specified.</p>
+     *        generates the change set by comparing this template with the stack that you specified. The location for an
+     *        Amazon S3 bucket must start with <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      */
@@ -449,7 +517,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
      * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change
-     * set by comparing this template with the stack that you specified.
+     * set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start
+     * with <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -457,7 +526,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return The location of the file that contains the revised template. The URL must point to a template (max size:
      *         460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation
-     *         generates the change set by comparing this template with the stack that you specified.</p>
+     *         generates the change set by comparing this template with the stack that you specified. The location for
+     *         an Amazon S3 bucket must start with <code>https://</code>.</p>
      *         <p>
      *         Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      */
@@ -470,7 +540,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
      * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change
-     * set by comparing this template with the stack that you specified.
+     * set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start
+     * with <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -479,7 +550,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @param templateURL
      *        The location of the file that contains the revised template. The URL must point to a template (max size:
      *        460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation
-     *        generates the change set by comparing this template with the stack that you specified.</p>
+     *        generates the change set by comparing this template with the stack that you specified. The location for an
+     *        Amazon S3 bucket must start with <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -711,7 +783,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM resources in CloudFormation templates</a>.
      * </p>
      * </li>
@@ -726,9 +798,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <note>
@@ -743,11 +815,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * <p>
      * For more information about macros, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @return In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *         order for CloudFormation to create the stack.</p>
@@ -836,7 +913,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM resources in CloudFormation templates</a>.
      *         </p>
      *         </li>
@@ -852,9 +929,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         one or more macros, and you choose to create a stack directly from the processed template, without first
      *         reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *         <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *         >AWS::Include</a> and <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *         </p>
      *         <note>
@@ -870,10 +947,15 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         </note>
      *         <p>
      *         For more information about macros, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *         CloudFormation macros to perform custom processing on templates</a>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *         </p>
      * @see Capability
      */
 
@@ -972,7 +1054,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM resources in CloudFormation templates</a>.
      * </p>
      * </li>
@@ -987,9 +1069,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <note>
@@ -1004,11 +1086,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * <p>
      * For more information about macros, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
@@ -1098,7 +1185,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM resources in CloudFormation templates</a>.
      *        </p>
      *        </li>
@@ -1114,9 +1201,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <note>
@@ -1132,10 +1219,15 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </note>
      *        <p>
      *        For more information about macros, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @see Capability
      */
 
@@ -1236,7 +1328,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM resources in CloudFormation templates</a>.
      * </p>
      * </li>
@@ -1251,9 +1343,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <note>
@@ -1268,11 +1360,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * <p>
      * For more information about macros, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
@@ -1367,7 +1464,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM resources in CloudFormation templates</a>.
      *        </p>
      *        </li>
@@ -1383,9 +1480,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <note>
@@ -1401,10 +1498,15 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </note>
      *        <p>
      *        For more information about macros, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1507,7 +1609,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM resources in CloudFormation templates</a>.
      * </p>
      * </li>
@@ -1522,9 +1624,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <note>
@@ -1539,11 +1641,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * <p>
      * For more information about macros, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
@@ -1633,7 +1740,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM resources in CloudFormation templates</a>.
      *        </p>
      *        </li>
@@ -1649,9 +1756,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <note>
@@ -1667,10 +1774,15 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </note>
      *        <p>
      *        For more information about macros, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1768,7 +1880,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM resources in CloudFormation templates</a>.
      * </p>
      * </li>
@@ -1783,9 +1895,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <note>
@@ -1800,11 +1912,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * <p>
      * For more information about macros, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
@@ -1894,7 +2011,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM resources in CloudFormation templates</a>.
      *        </p>
      *        </li>
@@ -1910,9 +2027,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <note>
@@ -1928,10 +2045,15 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        </note>
      *        <p>
      *        For more information about macros, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1959,8 +2081,13 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this
      * parameter for condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access
-     * with Identity and Access Management</a> in the CloudFormation User Guide.
+     * with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @return The template resource types that you have permissions to work with if you execute this change set, such
      *         as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>
@@ -1971,7 +2098,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     *         access with Identity and Access Management</a> in the CloudFormation User Guide.
+     *         access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *         </p>
      */
 
     public java.util.List<String> getResourceTypes() {
@@ -1991,8 +2123,13 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this
      * parameter for condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access
-     * with Identity and Access Management</a> in the CloudFormation User Guide.
+     * with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
      *        The template resource types that you have permissions to work with if you execute this change set, such as
@@ -2002,7 +2139,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management
      *        (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
-     *        Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.
+     *        Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      */
 
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
@@ -2024,8 +2166,13 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this
      * parameter for condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access
-     * with Identity and Access Management</a> in the CloudFormation User Guide.
+     * with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want
@@ -2040,7 +2187,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management
      *        (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
-     *        Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.
+     *        Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2064,8 +2216,13 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this
      * parameter for condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access
-     * with Identity and Access Management</a> in the CloudFormation User Guide.
+     * with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
      *        The template resource types that you have permissions to work with if you execute this change set, such as
@@ -2075,7 +2232,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management
      *        (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
-     *        Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.
+     *        Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2555,8 +2717,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      * template or resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
+     * >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      * </p>
      * <p>
      * By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
@@ -2571,7 +2733,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      *        template or resources. The stack will be in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
-     *        > <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     *        >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      *        </p>
      *        <p>
      *        By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
@@ -2593,8 +2755,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      * template or resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
+     * >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      * </p>
      * <p>
      * By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
@@ -2608,7 +2770,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      *         template or resources. The stack will be in the <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
-     *         > <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     *         >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      *         </p>
      *         <p>
      *         By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
@@ -2630,8 +2792,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      * template or resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
+     * >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      * </p>
      * <p>
      * By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
@@ -2646,7 +2808,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      *        template or resources. The stack will be in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
-     *        > <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     *        >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      *        </p>
      *        <p>
      *        By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
@@ -2670,8 +2832,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      * template or resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
+     * >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      * </p>
      * <p>
      * By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
@@ -2686,7 +2848,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      *        template or resources. The stack will be in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
-     *        > <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     *        >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      *        </p>
      *        <p>
      *        By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
@@ -2708,8 +2870,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      * template or resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
+     * >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      * </p>
      * <p>
      * By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
@@ -2724,7 +2886,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no
      *        template or resources. The stack will be in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995"
-     *        > <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.
+     *        >REVIEW_IN_PROGRESS</a> state until you execute the change set.
      *        </p>
      *        <p>
      *        By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
@@ -2873,6 +3035,528 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change
+     * set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all
+     * stacks to be deleted.
+     * </p>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
+     *        change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail
+     *        and all stacks to be deleted.
+     * @see OnStackFailure
+     */
+
+    public void setOnStackFailure(String onStackFailure) {
+        this.onStackFailure = onStackFailure;
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change
+     * set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all
+     * stacks to be deleted.
+     * </p>
+     * 
+     * @return Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     *         <code>DisableRollback</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *         >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *         <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *         the status of the stack is <code>DELETE_FAILED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *         <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *         >ExecuteChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to
+     *         specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *         >ExecuteChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
+     *         change set for the parent stack, any failure in a child stack will cause the parent stack creation to
+     *         fail and all stacks to be deleted.
+     * @see OnStackFailure
+     */
+
+    public String getOnStackFailure() {
+        return this.onStackFailure;
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change
+     * set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all
+     * stacks to be deleted.
+     * </p>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
+     *        change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail
+     *        and all stacks to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OnStackFailure
+     */
+
+    public CreateChangeSetRequest withOnStackFailure(String onStackFailure) {
+        setOnStackFailure(onStackFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change
+     * set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all
+     * stacks to be deleted.
+     * </p>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
+     *        change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail
+     *        and all stacks to be deleted.
+     * @see OnStackFailure
+     */
+
+    public void setOnStackFailure(OnStackFailure onStackFailure) {
+        withOnStackFailure(onStackFailure);
+    }
+
+    /**
+     * <p>
+     * Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the
+     * status of the stack is <code>DELETE_FAILED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     * >ExecuteChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change
+     * set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all
+     * stacks to be deleted.
+     * </p>
+     * 
+     * @param onStackFailure
+     *        Determines what action will be taken if stack creation fails. If this parameter is specified, the
+     *        <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the
+     *        <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails,
+     *        the status of the stack is <code>DELETE_FAILED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>true</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>false</code> for the <code>DisableRollback</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html"
+     *        >ExecuteChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
+     *        change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail
+     *        and all stacks to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OnStackFailure
+     */
+
+    public CreateChangeSetRequest withOnStackFailure(OnStackFailure onStackFailure) {
+        this.onStackFailure = onStackFailure.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter can only import resources that have custom names in templates. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in
+     * the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances,
+     * use the resource import feature instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing
+     * resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param importExistingResources
+     *        Indicates if the change set imports resources that already exist.</p> <note>
+     *        <p>
+     *        This parameter can only import resources that have custom names in templates. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     *        type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names,
+     *        such as EC2 instances, use the resource import feature instead. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     *        existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     *        </p>
+     */
+
+    public void setImportExistingResources(Boolean importExistingResources) {
+        this.importExistingResources = importExistingResources;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter can only import resources that have custom names in templates. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in
+     * the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances,
+     * use the resource import feature instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing
+     * resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Indicates if the change set imports resources that already exist.</p> <note>
+     *         <p>
+     *         This parameter can only import resources that have custom names in templates. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     *         type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names,
+     *         such as EC2 instances, use the resource import feature instead. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     *         existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     *         </p>
+     */
+
+    public Boolean getImportExistingResources() {
+        return this.importExistingResources;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter can only import resources that have custom names in templates. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in
+     * the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances,
+     * use the resource import feature instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing
+     * resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param importExistingResources
+     *        Indicates if the change set imports resources that already exist.</p> <note>
+     *        <p>
+     *        This parameter can only import resources that have custom names in templates. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     *        type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names,
+     *        such as EC2 instances, use the resource import feature instead. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     *        existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangeSetRequest withImportExistingResources(Boolean importExistingResources) {
+        setImportExistingResources(importExistingResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter can only import resources that have custom names in templates. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in
+     * the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances,
+     * use the resource import feature instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing
+     * resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Indicates if the change set imports resources that already exist.</p> <note>
+     *         <p>
+     *         This parameter can only import resources that have custom names in templates. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     *         type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names,
+     *         such as EC2 instances, use the resource import feature instead. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     *         existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.
+     *         </p>
+     */
+
+    public Boolean isImportExistingResources() {
+        return this.importExistingResources;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2917,7 +3601,11 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         if (getResourcesToImport() != null)
             sb.append("ResourcesToImport: ").append(getResourcesToImport()).append(",");
         if (getIncludeNestedStacks() != null)
-            sb.append("IncludeNestedStacks: ").append(getIncludeNestedStacks());
+            sb.append("IncludeNestedStacks: ").append(getIncludeNestedStacks()).append(",");
+        if (getOnStackFailure() != null)
+            sb.append("OnStackFailure: ").append(getOnStackFailure()).append(",");
+        if (getImportExistingResources() != null)
+            sb.append("ImportExistingResources: ").append(getImportExistingResources());
         sb.append("}");
         return sb.toString();
     }
@@ -3000,6 +3688,14 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getIncludeNestedStacks() != null && other.getIncludeNestedStacks().equals(this.getIncludeNestedStacks()) == false)
             return false;
+        if (other.getOnStackFailure() == null ^ this.getOnStackFailure() == null)
+            return false;
+        if (other.getOnStackFailure() != null && other.getOnStackFailure().equals(this.getOnStackFailure()) == false)
+            return false;
+        if (other.getImportExistingResources() == null ^ this.getImportExistingResources() == null)
+            return false;
+        if (other.getImportExistingResources() != null && other.getImportExistingResources().equals(this.getImportExistingResources()) == false)
+            return false;
         return true;
     }
 
@@ -3025,6 +3721,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getChangeSetType() == null) ? 0 : getChangeSetType().hashCode());
         hashCode = prime * hashCode + ((getResourcesToImport() == null) ? 0 : getResourcesToImport().hashCode());
         hashCode = prime * hashCode + ((getIncludeNestedStacks() == null) ? 0 : getIncludeNestedStacks().hashCode());
+        hashCode = prime * hashCode + ((getOnStackFailure() == null) ? 0 : getOnStackFailure().hashCode());
+        hashCode = prime * hashCode + ((getImportExistingResources() == null) ? 0 : getImportExistingResources().hashCode());
         return hashCode;
     }
 

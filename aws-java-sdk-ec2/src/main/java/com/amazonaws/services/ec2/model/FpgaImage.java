@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,6 +117,12 @@ public class FpgaImage implements Serializable, Cloneable {
      * </p>
      */
     private Boolean dataRetentionSupport;
+    /**
+     * <p>
+     * The instance types supported by the AFI.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> instanceTypes;
 
     /**
      * <p>
@@ -815,6 +821,79 @@ public class FpgaImage implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The instance types supported by the AFI.
+     * </p>
+     * 
+     * @return The instance types supported by the AFI.
+     */
+
+    public java.util.List<String> getInstanceTypes() {
+        if (instanceTypes == null) {
+            instanceTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return instanceTypes;
+    }
+
+    /**
+     * <p>
+     * The instance types supported by the AFI.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        The instance types supported by the AFI.
+     */
+
+    public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
+        if (instanceTypes == null) {
+            this.instanceTypes = null;
+            return;
+        }
+
+        this.instanceTypes = new com.amazonaws.internal.SdkInternalList<String>(instanceTypes);
+    }
+
+    /**
+     * <p>
+     * The instance types supported by the AFI.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceTypes(java.util.Collection)} or {@link #withInstanceTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        The instance types supported by the AFI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FpgaImage withInstanceTypes(String... instanceTypes) {
+        if (this.instanceTypes == null) {
+            setInstanceTypes(new com.amazonaws.internal.SdkInternalList<String>(instanceTypes.length));
+        }
+        for (String ele : instanceTypes) {
+            this.instanceTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance types supported by the AFI.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        The instance types supported by the AFI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FpgaImage withInstanceTypes(java.util.Collection<String> instanceTypes) {
+        setInstanceTypes(instanceTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -855,7 +934,9 @@ public class FpgaImage implements Serializable, Cloneable {
         if (getPublic() != null)
             sb.append("Public: ").append(getPublic()).append(",");
         if (getDataRetentionSupport() != null)
-            sb.append("DataRetentionSupport: ").append(getDataRetentionSupport());
+            sb.append("DataRetentionSupport: ").append(getDataRetentionSupport()).append(",");
+        if (getInstanceTypes() != null)
+            sb.append("InstanceTypes: ").append(getInstanceTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -930,6 +1011,10 @@ public class FpgaImage implements Serializable, Cloneable {
             return false;
         if (other.getDataRetentionSupport() != null && other.getDataRetentionSupport().equals(this.getDataRetentionSupport()) == false)
             return false;
+        if (other.getInstanceTypes() == null ^ this.getInstanceTypes() == null)
+            return false;
+        if (other.getInstanceTypes() != null && other.getInstanceTypes().equals(this.getInstanceTypes()) == false)
+            return false;
         return true;
     }
 
@@ -953,6 +1038,7 @@ public class FpgaImage implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPublic() == null) ? 0 : getPublic().hashCode());
         hashCode = prime * hashCode + ((getDataRetentionSupport() == null) ? 0 : getDataRetentionSupport().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
         return hashCode;
     }
 

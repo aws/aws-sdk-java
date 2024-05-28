@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,11 @@ import com.amazonaws.services.iotwireless.model.*;
  * downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can
  * create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices
  * in a multicast group.
+ * </p>
+ * <p>
+ * To connect to the AWS IoT Wireless Service, use the Service endpoints as described in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT Wireless Service
+ * endpoints</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -554,6 +559,27 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Provisions a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param createWirelessGatewayRequest
      * @return A Java Future containing the result of the CreateWirelessGateway operation returned by the service.
@@ -567,6 +593,27 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Provisions a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param createWirelessGatewayRequest
      * @param asyncHandler
@@ -903,8 +950,64 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Delete an import task.
+     * </p>
+     * 
+     * @param deleteWirelessDeviceImportTaskRequest
+     * @return A Java Future containing the result of the DeleteWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.DeleteWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWirelessDeviceImportTaskResult> deleteWirelessDeviceImportTaskAsync(
+            DeleteWirelessDeviceImportTaskRequest deleteWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * Delete an import task.
+     * </p>
+     * 
+     * @param deleteWirelessDeviceImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.DeleteWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWirelessDeviceImportTaskResult> deleteWirelessDeviceImportTaskAsync(
+            DeleteWirelessDeviceImportTaskRequest deleteWirelessDeviceImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWirelessDeviceImportTaskRequest, DeleteWirelessDeviceImportTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When deleting a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param deleteWirelessGatewayRequest
      * @return A Java Future containing the result of the DeleteWirelessGateway operation returned by the service.
@@ -918,6 +1021,27 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Deletes a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When deleting a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param deleteWirelessGatewayRequest
      * @param asyncHandler
@@ -1001,6 +1125,37 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
     java.util.concurrent.Future<DeleteWirelessGatewayTaskDefinitionResult> deleteWirelessGatewayTaskDefinitionAsync(
             DeleteWirelessGatewayTaskDefinitionRequest deleteWirelessGatewayTaskDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWirelessGatewayTaskDefinitionRequest, DeleteWirelessGatewayTaskDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deregister a wireless device from AWS IoT Wireless.
+     * </p>
+     * 
+     * @param deregisterWirelessDeviceRequest
+     * @return A Java Future containing the result of the DeregisterWirelessDevice operation returned by the service.
+     * @sample AWSIoTWirelessAsync.DeregisterWirelessDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterWirelessDeviceResult> deregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest deregisterWirelessDeviceRequest);
+
+    /**
+     * <p>
+     * Deregister a wireless device from AWS IoT Wireless.
+     * </p>
+     * 
+     * @param deregisterWirelessDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterWirelessDevice operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.DeregisterWirelessDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterWirelessDeviceResult> deregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest deregisterWirelessDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterWirelessDeviceRequest, DeregisterWirelessDeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -1424,6 +1579,68 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Get the metric configuration status for this AWS account.
+     * </p>
+     * 
+     * @param getMetricConfigurationRequest
+     * @return A Java Future containing the result of the GetMetricConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricConfigurationResult> getMetricConfigurationAsync(GetMetricConfigurationRequest getMetricConfigurationRequest);
+
+    /**
+     * <p>
+     * Get the metric configuration status for this AWS account.
+     * </p>
+     * 
+     * @param getMetricConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetricConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricConfigurationResult> getMetricConfigurationAsync(GetMetricConfigurationRequest getMetricConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetricConfigurationRequest, GetMetricConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the summary metrics for this AWS account.
+     * </p>
+     * 
+     * @param getMetricsRequest
+     * @return A Java Future containing the result of the GetMetrics operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricsResult> getMetricsAsync(GetMetricsRequest getMetricsRequest);
+
+    /**
+     * <p>
+     * Get the summary metrics for this AWS account.
+     * </p>
+     * 
+     * @param getMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetrics operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricsResult> getMetricsAsync(GetMetricsRequest getMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetricsRequest, GetMetricsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a multicast group.
      * </p>
      * 
@@ -1556,6 +1773,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @return A Java Future containing the result of the GetPosition operation returned by the service.
@@ -1563,12 +1787,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest getPositionRequest);
 
     /**
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @param asyncHandler
@@ -1580,6 +1812,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest getPositionRequest,
             com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler);
 
@@ -1587,6 +1820,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @return A Java Future containing the result of the GetPositionConfiguration operation returned by the service.
@@ -1594,12 +1834,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest getPositionConfigurationRequest);
 
     /**
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @param asyncHandler
@@ -1611,8 +1859,42 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest getPositionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @return A Java Future containing the result of the GetPositionEstimate operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest getPositionEstimateRequest);
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPositionEstimate operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest getPositionEstimateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPositionEstimateRequest, GetPositionEstimateResult> asyncHandler);
 
     /**
      * <p>
@@ -1681,6 +1963,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest getResourceLogLevelRequest,
             com.amazonaws.handlers.AsyncHandler<GetResourceLogLevelRequest, GetResourceLogLevelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The position information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @return A Java Future containing the result of the GetResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest getResourcePositionRequest);
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The position information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest getResourcePositionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePositionRequest, GetResourcePositionResult> asyncHandler);
 
     /**
      * <p>
@@ -1776,6 +2091,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<GetWirelessDeviceResult> getWirelessDeviceAsync(GetWirelessDeviceRequest getWirelessDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<GetWirelessDeviceRequest, GetWirelessDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get information about an import task and count of device onboarding summary information for the import task.
+     * </p>
+     * 
+     * @param getWirelessDeviceImportTaskRequest
+     * @return A Java Future containing the result of the GetWirelessDeviceImportTask operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWirelessDeviceImportTaskResult> getWirelessDeviceImportTaskAsync(
+            GetWirelessDeviceImportTaskRequest getWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * Get information about an import task and count of device onboarding summary information for the import task.
+     * </p>
+     * 
+     * @param getWirelessDeviceImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWirelessDeviceImportTask operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWirelessDeviceImportTaskResult> getWirelessDeviceImportTaskAsync(
+            GetWirelessDeviceImportTaskRequest getWirelessDeviceImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWirelessDeviceImportTaskRequest, GetWirelessDeviceImportTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -2078,6 +2426,43 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * List the Sidewalk devices in an import task and their onboarding status.
+     * </p>
+     * 
+     * @param listDevicesForWirelessDeviceImportTaskRequest
+     * @return A Java Future containing the result of the ListDevicesForWirelessDeviceImportTask operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsync.ListDevicesForWirelessDeviceImportTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDevicesForWirelessDeviceImportTaskResult> listDevicesForWirelessDeviceImportTaskAsync(
+            ListDevicesForWirelessDeviceImportTaskRequest listDevicesForWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * List the Sidewalk devices in an import task and their onboarding status.
+     * </p>
+     * 
+     * @param listDevicesForWirelessDeviceImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDevicesForWirelessDeviceImportTask operation returned by
+     *         the service.
+     * @sample AWSIoTWirelessAsyncHandler.ListDevicesForWirelessDeviceImportTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDevicesForWirelessDeviceImportTaskResult> listDevicesForWirelessDeviceImportTaskAsync(
+            ListDevicesForWirelessDeviceImportTaskRequest listDevicesForWirelessDeviceImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDevicesForWirelessDeviceImportTaskRequest, ListDevicesForWirelessDeviceImportTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * List event configurations where at least one event topic has been enabled.
      * </p>
      * 
@@ -2274,6 +2659,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @return A Java Future containing the result of the ListPositionConfigurations operation returned by the service.
@@ -2281,6 +2673,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(
             ListPositionConfigurationsRequest listPositionConfigurationsRequest);
 
@@ -2288,6 +2681,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @param asyncHandler
@@ -2299,6 +2699,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(
             ListPositionConfigurationsRequest listPositionConfigurationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler);
@@ -2395,6 +2796,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * List wireless devices that have been added to an import task.
+     * </p>
+     * 
+     * @param listWirelessDeviceImportTasksRequest
+     * @return A Java Future containing the result of the ListWirelessDeviceImportTasks operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.ListWirelessDeviceImportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWirelessDeviceImportTasksResult> listWirelessDeviceImportTasksAsync(
+            ListWirelessDeviceImportTasksRequest listWirelessDeviceImportTasksRequest);
+
+    /**
+     * <p>
+     * List wireless devices that have been added to an import task.
+     * </p>
+     * 
+     * @param listWirelessDeviceImportTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWirelessDeviceImportTasks operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.ListWirelessDeviceImportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWirelessDeviceImportTasksResult> listWirelessDeviceImportTasksAsync(
+            ListWirelessDeviceImportTasksRequest listWirelessDeviceImportTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWirelessDeviceImportTasksRequest, ListWirelessDeviceImportTasksResult> asyncHandler);
 
     /**
      * <p>
@@ -2497,6 +2933,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @return A Java Future containing the result of the PutPositionConfiguration operation returned by the service.
@@ -2504,12 +2947,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest putPositionConfigurationRequest);
 
     /**
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @param asyncHandler
@@ -2521,6 +2972,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest putPositionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler);
 
@@ -2825,6 +3277,76 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Start import task for a single wireless device.
+     * </p>
+     * 
+     * @param startSingleWirelessDeviceImportTaskRequest
+     * @return A Java Future containing the result of the StartSingleWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.StartSingleWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSingleWirelessDeviceImportTaskResult> startSingleWirelessDeviceImportTaskAsync(
+            StartSingleWirelessDeviceImportTaskRequest startSingleWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * Start import task for a single wireless device.
+     * </p>
+     * 
+     * @param startSingleWirelessDeviceImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSingleWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.StartSingleWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSingleWirelessDeviceImportTaskResult> startSingleWirelessDeviceImportTaskAsync(
+            StartSingleWirelessDeviceImportTaskRequest startSingleWirelessDeviceImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSingleWirelessDeviceImportTaskRequest, StartSingleWirelessDeviceImportTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.
+     * </p>
+     * 
+     * @param startWirelessDeviceImportTaskRequest
+     * @return A Java Future containing the result of the StartWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.StartWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartWirelessDeviceImportTaskResult> startWirelessDeviceImportTaskAsync(
+            StartWirelessDeviceImportTaskRequest startWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.
+     * </p>
+     * 
+     * @param startWirelessDeviceImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.StartWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartWirelessDeviceImportTaskResult> startWirelessDeviceImportTaskAsync(
+            StartWirelessDeviceImportTaskRequest startWirelessDeviceImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartWirelessDeviceImportTaskRequest, StartWirelessDeviceImportTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a tag to a resource.
      * </p>
      * 
@@ -3054,6 +3576,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Update the summary metric configuration.
+     * </p>
+     * 
+     * @param updateMetricConfigurationRequest
+     * @return A Java Future containing the result of the UpdateMetricConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsync.UpdateMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMetricConfigurationResult> updateMetricConfigurationAsync(
+            UpdateMetricConfigurationRequest updateMetricConfigurationRequest);
+
+    /**
+     * <p>
+     * Update the summary metric configuration.
+     * </p>
+     * 
+     * @param updateMetricConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMetricConfiguration operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMetricConfigurationResult> updateMetricConfigurationAsync(
+            UpdateMetricConfigurationRequest updateMetricConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMetricConfigurationRequest, UpdateMetricConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates properties of a multicast group session.
      * </p>
      * 
@@ -3153,6 +3708,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @return A Java Future containing the result of the UpdatePosition operation returned by the service.
@@ -3160,12 +3722,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest updatePositionRequest);
 
     /**
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @param asyncHandler
@@ -3177,6 +3747,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest updatePositionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler);
 
@@ -3217,6 +3788,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The position
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @return A Java Future containing the result of the UpdateResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsync.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest updateResourcePositionRequest);
+
+    /**
+     * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The position
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest updateResourcePositionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourcePositionRequest, UpdateResourcePositionResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates properties of a wireless device.
      * </p>
      * 
@@ -3245,6 +3851,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<UpdateWirelessDeviceResult> updateWirelessDeviceAsync(UpdateWirelessDeviceRequest updateWirelessDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateWirelessDeviceRequest, UpdateWirelessDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update an import task to add more devices to the task.
+     * </p>
+     * 
+     * @param updateWirelessDeviceImportTaskRequest
+     * @return A Java Future containing the result of the UpdateWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.UpdateWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWirelessDeviceImportTaskResult> updateWirelessDeviceImportTaskAsync(
+            UpdateWirelessDeviceImportTaskRequest updateWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * Update an import task to add more devices to the task.
+     * </p>
+     * 
+     * @param updateWirelessDeviceImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWirelessDeviceImportTask operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWirelessDeviceImportTaskResult> updateWirelessDeviceImportTaskAsync(
+            UpdateWirelessDeviceImportTaskRequest updateWirelessDeviceImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWirelessDeviceImportTaskRequest, UpdateWirelessDeviceImportTaskResult> asyncHandler);
 
     /**
      * <p>

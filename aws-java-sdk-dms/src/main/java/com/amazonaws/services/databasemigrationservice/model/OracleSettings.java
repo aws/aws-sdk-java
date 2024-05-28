@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -170,7 +170,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      */
     private Boolean archivedLogsOnly;
@@ -308,6 +308,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Fully qualified domain name of the endpoint.
      * </p>
+     * <p>
+     * For an Amazon RDS Oracle instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
      */
     private String serverName;
     /**
@@ -395,7 +402,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String secretsManagerSecretId;
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -403,7 +410,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
-     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>,
+     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUser</code>,
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
@@ -416,9 +423,9 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String secretsManagerOracleAsmAccessRoleArn;
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      */
     private String secretsManagerOracleAsmSecretId;
@@ -429,6 +436,27 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean trimSpaceInChar;
+    /**
+     * <p>
+     * When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     * </p>
+     */
+    private Boolean convertTimestampWithZoneToUTC;
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     */
+    private Integer openTransactionWindow;
 
     /**
      * <p>
@@ -1516,12 +1544,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @param archivedLogsOnly
      *        When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *        logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *        logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *        privileges.
      */
 
     public void setArchivedLogsOnly(Boolean archivedLogsOnly) {
@@ -1531,11 +1560,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @return When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *         logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *         logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *         privileges.
      */
 
     public Boolean getArchivedLogsOnly() {
@@ -1545,12 +1575,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @param archivedLogsOnly
      *        When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *        logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *        logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *        privileges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1562,11 +1593,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @return When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *         logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *         logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *         privileges.
      */
 
     public Boolean isArchivedLogsOnly() {
@@ -2478,9 +2510,22 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Fully qualified domain name of the endpoint.
      * </p>
+     * <p>
+     * For an Amazon RDS Oracle instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        Fully qualified domain name of the endpoint.</p>
+     *        <p>
+     *        For an Amazon RDS Oracle instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *        >DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
      */
 
     public void setServerName(String serverName) {
@@ -2491,8 +2536,21 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Fully qualified domain name of the endpoint.
      * </p>
+     * <p>
+     * For an Amazon RDS Oracle instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
      * 
-     * @return Fully qualified domain name of the endpoint.
+     * @return Fully qualified domain name of the endpoint.</p>
+     *         <p>
+     *         For an Amazon RDS Oracle instance, this is the output of <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *         >DescribeDBInstances</a>, in the
+     *         <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *         field.
      */
 
     public String getServerName() {
@@ -2503,9 +2561,22 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Fully qualified domain name of the endpoint.
      * </p>
+     * <p>
+     * For an Amazon RDS Oracle instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        Fully qualified domain name of the endpoint.</p>
+     *        <p>
+     *        For an Amazon RDS Oracle instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *        >DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3108,7 +3179,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -3116,7 +3187,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
-     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>,
+     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUser</code>,
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
@@ -3127,15 +3198,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param secretsManagerOracleAsmAccessRoleArn
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *        that specifies DMS as the trusted entity and grants the required permissions to access the
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM
+     *        role that specifies DMS as the trusted entity and grants the required permissions to access the
      *        <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret
      *        value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for
-     *        <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify
-     *        both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     *        <code>AsmUser</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both.
+     *        For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
      *        <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code>
      *        required to access it, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
@@ -3150,7 +3221,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -3158,7 +3229,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
-     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>,
+     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUser</code>,
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
@@ -3168,15 +3239,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *         that specifies DMS as the trusted entity and grants the required permissions to access the
+     * @return Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM
+     *         role that specifies DMS as the trusted entity and grants the required permissions to access the
      *         <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the
      *         secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *         <p>
      *         You can specify one of two sets of values for these permissions. You can specify the values for this
      *         setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for
-     *         <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify
-     *         both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     *         <code>AsmUser</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both.
+     *         For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
      *         <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code>
      *         required to access it, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
@@ -3191,7 +3262,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -3199,7 +3270,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * <note>
      * <p>
      * You can specify one of two sets of values for these permissions. You can specify the values for this setting and
-     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUserName</code>,
+     * <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for <code>AsmUser</code>,
      * <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both. For more information on
      * creating this <code>SecretsManagerOracleAsmSecret</code> and the
      * <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code> required to
@@ -3210,15 +3281,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param secretsManagerOracleAsmAccessRoleArn
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *        that specifies DMS as the trusted entity and grants the required permissions to access the
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM
+     *        role that specifies DMS as the trusted entity and grants the required permissions to access the
      *        <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret
      *        value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *        <p>
      *        You can specify one of two sets of values for these permissions. You can specify the values for this
      *        setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can specify clear-text values for
-     *        <code>AsmUserName</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify
-     *        both. For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
+     *        <code>AsmUser</code>, <code>AsmPassword</code>, and <code>AsmServerName</code>. You can't specify both.
+     *        For more information on creating this <code>SecretsManagerOracleAsmSecret</code> and the
      *        <code>SecretsManagerOracleAsmAccessRoleArn</code> and <code>SecretsManagerOracleAsmSecretId</code>
      *        required to access it, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager"
@@ -3235,14 +3306,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      * 
      * @param secretsManagerOracleAsmSecretId
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or
-     *        friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN,
+     *        or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
      *        details for the Oracle endpoint.
      */
 
@@ -3252,14 +3323,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      * 
-     * @return Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or
-     *         friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
-     *         details for the Oracle endpoint.
+     * @return Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN,
+     *         or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     *         connection details for the Oracle endpoint.
      */
 
     public String getSecretsManagerOracleAsmSecretId() {
@@ -3268,14 +3339,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      * 
      * @param secretsManagerOracleAsmSecretId
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or
-     *        friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN,
+     *        or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
      *        details for the Oracle endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3343,6 +3414,149 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     public Boolean isTrimSpaceInChar() {
         return this.trimSpaceInChar;
+    }
+
+    /**
+     * <p>
+     * When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     * </p>
+     * 
+     * @param convertTimestampWithZoneToUTC
+     *        When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     */
+
+    public void setConvertTimestampWithZoneToUTC(Boolean convertTimestampWithZoneToUTC) {
+        this.convertTimestampWithZoneToUTC = convertTimestampWithZoneToUTC;
+    }
+
+    /**
+     * <p>
+     * When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     * </p>
+     * 
+     * @return When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     */
+
+    public Boolean getConvertTimestampWithZoneToUTC() {
+        return this.convertTimestampWithZoneToUTC;
+    }
+
+    /**
+     * <p>
+     * When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     * </p>
+     * 
+     * @param convertTimestampWithZoneToUTC
+     *        When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withConvertTimestampWithZoneToUTC(Boolean convertTimestampWithZoneToUTC) {
+        setConvertTimestampWithZoneToUTC(convertTimestampWithZoneToUTC);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     * </p>
+     * 
+     * @return When true, converts timestamps with the <code>timezone</code> datatype to their UTC value.
+     */
+
+    public Boolean isConvertTimestampWithZoneToUTC() {
+        return this.convertTimestampWithZoneToUTC;
+    }
+
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     * 
+     * @param openTransactionWindow
+     *        The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+     *        <p>
+     *        You can specify an integer value between 0 (the default) and 240 (the maximum).
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours
+     *        including the value for <code>OpenTransactionWindow</code>.
+     *        </p>
+     */
+
+    public void setOpenTransactionWindow(Integer openTransactionWindow) {
+        this.openTransactionWindow = openTransactionWindow;
+    }
+
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     * 
+     * @return The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+     *         <p>
+     *         You can specify an integer value between 0 (the default) and 240 (the maximum).
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours
+     *         including the value for <code>OpenTransactionWindow</code>.
+     *         </p>
+     */
+
+    public Integer getOpenTransactionWindow() {
+        return this.openTransactionWindow;
+    }
+
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     * 
+     * @param openTransactionWindow
+     *        The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+     *        <p>
+     *        You can specify an integer value between 0 (the default) and 240 (the maximum).
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours
+     *        including the value for <code>OpenTransactionWindow</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withOpenTransactionWindow(Integer openTransactionWindow) {
+        setOpenTransactionWindow(openTransactionWindow);
+        return this;
     }
 
     /**
@@ -3438,7 +3652,11 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSecretsManagerOracleAsmSecretId() != null)
             sb.append("SecretsManagerOracleAsmSecretId: ").append(getSecretsManagerOracleAsmSecretId()).append(",");
         if (getTrimSpaceInChar() != null)
-            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar());
+            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar()).append(",");
+        if (getConvertTimestampWithZoneToUTC() != null)
+            sb.append("ConvertTimestampWithZoneToUTC: ").append(getConvertTimestampWithZoneToUTC()).append(",");
+        if (getOpenTransactionWindow() != null)
+            sb.append("OpenTransactionWindow: ").append(getOpenTransactionWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -3620,6 +3838,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTrimSpaceInChar() != null && other.getTrimSpaceInChar().equals(this.getTrimSpaceInChar()) == false)
             return false;
+        if (other.getConvertTimestampWithZoneToUTC() == null ^ this.getConvertTimestampWithZoneToUTC() == null)
+            return false;
+        if (other.getConvertTimestampWithZoneToUTC() != null
+                && other.getConvertTimestampWithZoneToUTC().equals(this.getConvertTimestampWithZoneToUTC()) == false)
+            return false;
+        if (other.getOpenTransactionWindow() == null ^ this.getOpenTransactionWindow() == null)
+            return false;
+        if (other.getOpenTransactionWindow() != null && other.getOpenTransactionWindow().equals(this.getOpenTransactionWindow()) == false)
+            return false;
         return true;
     }
 
@@ -3669,6 +3896,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecretsManagerOracleAsmAccessRoleArn() == null) ? 0 : getSecretsManagerOracleAsmAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerOracleAsmSecretId() == null) ? 0 : getSecretsManagerOracleAsmSecretId().hashCode());
         hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
+        hashCode = prime * hashCode + ((getConvertTimestampWithZoneToUTC() == null) ? 0 : getConvertTimestampWithZoneToUTC().hashCode());
+        hashCode = prime * hashCode + ((getOpenTransactionWindow() == null) ? 0 : getOpenTransactionWindow().hashCode());
         return hashCode;
     }
 

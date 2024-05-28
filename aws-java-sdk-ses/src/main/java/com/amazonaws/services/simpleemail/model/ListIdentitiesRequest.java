@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Represents a request to return a list of all identities (email addresses and domains) that you have attempted to
- * verify under your AWS account, regardless of verification status.
+ * verify under your Amazon Web Services account, regardless of verification status.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities" target="_top">AWS API
@@ -32,7 +32,7 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     * omitted, then all identities will be listed.
+     * omitted, then all identities are listed.
      * </p>
      */
     private String identityType;
@@ -52,12 +52,12 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     * omitted, then all identities will be listed.
+     * omitted, then all identities are listed.
      * </p>
      * 
      * @param identityType
      *        The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     *        omitted, then all identities will be listed.
+     *        omitted, then all identities are listed.
      * @see IdentityType
      */
 
@@ -68,11 +68,11 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     * omitted, then all identities will be listed.
+     * omitted, then all identities are listed.
      * </p>
      * 
      * @return The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     *         omitted, then all identities will be listed.
+     *         omitted, then all identities are listed.
      * @see IdentityType
      */
 
@@ -83,12 +83,12 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     * omitted, then all identities will be listed.
+     * omitted, then all identities are listed.
      * </p>
      * 
      * @param identityType
      *        The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     *        omitted, then all identities will be listed.
+     *        omitted, then all identities are listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -101,12 +101,12 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     * omitted, then all identities will be listed.
+     * omitted, then all identities are listed.
      * </p>
      * 
      * @param identityType
      *        The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     *        omitted, then all identities will be listed.
+     *        omitted, then all identities are listed.
      * @see IdentityType
      */
 
@@ -117,12 +117,12 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     * omitted, then all identities will be listed.
+     * omitted, then all identities are listed.
      * </p>
      * 
      * @param identityType
      *        The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is
-     *        omitted, then all identities will be listed.
+     *        omitted, then all identities are listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */

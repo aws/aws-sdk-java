@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,13 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert
- * automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low
- * (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the
- * quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization
- * (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker
- * Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive
- * Quantization to Off (OFF) to apply no quantization to your output.
+ * When you set Adaptive Quantization to Auto, or leave blank, MediaConvert automatically applies quantization to
+ * improve the video quality of your output. Set Adaptive Quantization to Low, Medium, High, Higher, or Max to manually
+ * control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive
+ * Quantization, Temporal Adaptive Quantization, and Flicker Adaptive Quantization, to further control the quantization
+ * filter. Set Adaptive Quantization to Off to apply no quantization to your output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265AdaptiveQuantization {

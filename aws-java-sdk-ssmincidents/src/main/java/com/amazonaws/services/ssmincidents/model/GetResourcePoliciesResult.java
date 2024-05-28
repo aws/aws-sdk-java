@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class GetResourcePoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token to use when requesting the next set of items. If there are no additional items to return,
+     * the string is null.
      * </p>
      */
     private String nextToken;
@@ -38,11 +39,13 @@ public class GetResourcePoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token to use when requesting the next set of items. If there are no additional items to return,
+     * the string is null.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to continue to the next page of results.
+     *        The pagination token to use when requesting the next set of items. If there are no additional items to
+     *        return, the string is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +54,12 @@ public class GetResourcePoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token to use when requesting the next set of items. If there are no additional items to return,
+     * the string is null.
      * </p>
      * 
-     * @return The pagination token to continue to the next page of results.
+     * @return The pagination token to use when requesting the next set of items. If there are no additional items to
+     *         return, the string is null.
      */
 
     public String getNextToken() {
@@ -63,11 +68,13 @@ public class GetResourcePoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token to use when requesting the next set of items. If there are no additional items to return,
+     * the string is null.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to continue to the next page of results.
+     *        The pagination token to use when requesting the next set of items. If there are no additional items to
+     *        return, the string is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

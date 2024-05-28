@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
     private String description;
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      */
     private String scope;
@@ -78,6 +78,42 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private Long lastModifiedTime;
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     */
+    private String billingEntity;
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     */
+    private UpdateTieringInput tiering;
+    /**
+     * <p>
+     * Usage type is the unit that each service uses to measure the usage of a specific type of resource.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an
+     * <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     * </p>
+     */
+    private String usageType;
+    /**
+     * <p>
+     * Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage
+     * of the line item.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the
+     * <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the
+     * operation of running an Amazon EC2 instance.
+     * </p>
+     */
+    private String operation;
 
     /**
      * <p>
@@ -201,11 +237,11 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
      * @param scope
-     *        The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     *        The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @see PricingRuleScope
      */
 
@@ -215,10 +251,10 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
-     * @return The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * @return The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @see PricingRuleScope
      */
 
@@ -228,11 +264,11 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
      * @param scope
-     *        The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     *        The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingRuleScope
      */
@@ -244,11 +280,11 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
      * @param scope
-     *        The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     *        The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingRuleScope
      */
@@ -484,6 +520,232 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param billingEntity
+     *        The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     *        services via Amazon Web Services Marketplace.
+     */
+
+    public void setBillingEntity(String billingEntity) {
+        this.billingEntity = billingEntity;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @return The seller of services provided by Amazon Web Services, their affiliates, or third-party providers
+     *         selling services via Amazon Web Services Marketplace.
+     */
+
+    public String getBillingEntity() {
+        return this.billingEntity;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param billingEntity
+     *        The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     *        services via Amazon Web Services Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePricingRuleResult withBillingEntity(String billingEntity) {
+        setBillingEntity(billingEntity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     */
+
+    public void setTiering(UpdateTieringInput tiering) {
+        this.tiering = tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @return The set of tiering configurations for the pricing rule.
+     */
+
+    public UpdateTieringInput getTiering() {
+        return this.tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePricingRuleResult withTiering(UpdateTieringInput tiering) {
+        setTiering(tiering);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Usage type is the unit that each service uses to measure the usage of a specific type of resource.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an
+     * <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     * </p>
+     * 
+     * @param usageType
+     *        Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+     *        <p>
+     *        If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type
+     *        the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an
+     *        <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     */
+
+    public void setUsageType(String usageType) {
+        this.usageType = usageType;
+    }
+
+    /**
+     * <p>
+     * Usage type is the unit that each service uses to measure the usage of a specific type of resource.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an
+     * <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     * </p>
+     * 
+     * @return Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+     *         <p>
+     *         If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type
+     *         the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes
+     *         an <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     */
+
+    public String getUsageType() {
+        return this.usageType;
+    }
+
+    /**
+     * <p>
+     * Usage type is the unit that each service uses to measure the usage of a specific type of resource.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the
+     * <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an
+     * <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     * </p>
+     * 
+     * @param usageType
+     *        Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+     *        <p>
+     *        If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type
+     *        the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an
+     *        <code>M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePricingRuleResult withUsageType(String usageType) {
+        setUsageType(usageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage
+     * of the line item.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the
+     * <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the
+     * operation of running an Amazon EC2 instance.
+     * </p>
+     * 
+     * @param operation
+     *        Operation refers to the specific Amazon Web Services covered by this line item. This describes the
+     *        specific usage of the line item.</p>
+     *        <p>
+     *        If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation
+     *        the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code>
+     *        indicates the operation of running an Amazon EC2 instance.
+     */
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    /**
+     * <p>
+     * Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage
+     * of the line item.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the
+     * <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the
+     * operation of running an Amazon EC2 instance.
+     * </p>
+     * 
+     * @return Operation refers to the specific Amazon Web Services covered by this line item. This describes the
+     *         specific usage of the line item.</p>
+     *         <p>
+     *         If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation
+     *         the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code>
+     *         indicates the operation of running an Amazon EC2 instance.
+     */
+
+    public String getOperation() {
+        return this.operation;
+    }
+
+    /**
+     * <p>
+     * Operation refers to the specific Amazon Web Services covered by this line item. This describes the specific usage
+     * of the line item.
+     * </p>
+     * <p>
+     * If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the
+     * <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the
+     * operation of running an Amazon EC2 instance.
+     * </p>
+     * 
+     * @param operation
+     *        Operation refers to the specific Amazon Web Services covered by this line item. This describes the
+     *        specific usage of the line item.</p>
+     *        <p>
+     *        If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation
+     *        the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code>
+     *        indicates the operation of running an Amazon EC2 instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePricingRuleResult withOperation(String operation) {
+        setOperation(operation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -512,7 +774,15 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
         if (getAssociatedPricingPlanCount() != null)
             sb.append("AssociatedPricingPlanCount: ").append(getAssociatedPricingPlanCount()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getBillingEntity() != null)
+            sb.append("BillingEntity: ").append(getBillingEntity()).append(",");
+        if (getTiering() != null)
+            sb.append("Tiering: ").append(getTiering()).append(",");
+        if (getUsageType() != null)
+            sb.append("UsageType: ").append(getUsageType()).append(",");
+        if (getOperation() != null)
+            sb.append("Operation: ").append(getOperation());
         sb.append("}");
         return sb.toString();
     }
@@ -563,6 +833,22 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getBillingEntity() == null ^ this.getBillingEntity() == null)
+            return false;
+        if (other.getBillingEntity() != null && other.getBillingEntity().equals(this.getBillingEntity()) == false)
+            return false;
+        if (other.getTiering() == null ^ this.getTiering() == null)
+            return false;
+        if (other.getTiering() != null && other.getTiering().equals(this.getTiering()) == false)
+            return false;
+        if (other.getUsageType() == null ^ this.getUsageType() == null)
+            return false;
+        if (other.getUsageType() != null && other.getUsageType().equals(this.getUsageType()) == false)
+            return false;
+        if (other.getOperation() == null ^ this.getOperation() == null)
+            return false;
+        if (other.getOperation() != null && other.getOperation().equals(this.getOperation()) == false)
+            return false;
         return true;
     }
 
@@ -580,6 +866,10 @@ public class UpdatePricingRuleResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime * hashCode + ((getAssociatedPricingPlanCount() == null) ? 0 : getAssociatedPricingPlanCount().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getBillingEntity() == null) ? 0 : getBillingEntity().hashCode());
+        hashCode = prime * hashCode + ((getTiering() == null) ? 0 : getTiering().hashCode());
+        hashCode = prime * hashCode + ((getUsageType() == null) ? 0 : getUsageType().hashCode());
+        hashCode = prime * hashCode + ((getOperation() == null) ? 0 : getOperation().hashCode());
         return hashCode;
     }
 

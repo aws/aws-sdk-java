@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class InferenceOutputConfiguration implements Serializable, Cloneable, St
     private InferenceS3OutputConfiguration s3OutputConfiguration;
     /**
      * <p>
-     * The ID number for the AWS KMS key used to encrypt the inference output.
+     * The ID number for the KMS key key used to encrypt the inference output.
      * </p>
      */
     private String kmsKeyId;
@@ -84,11 +84,11 @@ public class InferenceOutputConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The ID number for the AWS KMS key used to encrypt the inference output.
+     * The ID number for the KMS key key used to encrypt the inference output.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID number for the AWS KMS key used to encrypt the inference output.
+     *        The ID number for the KMS key key used to encrypt the inference output.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -97,10 +97,10 @@ public class InferenceOutputConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The ID number for the AWS KMS key used to encrypt the inference output.
+     * The ID number for the KMS key key used to encrypt the inference output.
      * </p>
      * 
-     * @return The ID number for the AWS KMS key used to encrypt the inference output.
+     * @return The ID number for the KMS key key used to encrypt the inference output.
      */
 
     public String getKmsKeyId() {
@@ -109,11 +109,11 @@ public class InferenceOutputConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The ID number for the AWS KMS key used to encrypt the inference output.
+     * The ID number for the KMS key key used to encrypt the inference output.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID number for the AWS KMS key used to encrypt the inference output.
+     *        The ID number for the KMS key key used to encrypt the inference output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

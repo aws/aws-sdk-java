@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output
- * individually. These features are disabled by default.
+ * Find additional transcoding features under Preprocessors. Enable the features at each output individually. These
+ * features are disabled by default.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoPreprocessor" target="_top">AWS API
  *      Documentation</a>
@@ -39,16 +39,18 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     private Deinterlacer deinterlacer;
     /** Enable Dolby Vision feature to produce Dolby Vision compatible video output. */
     private DolbyVision dolbyVision;
-    /** Enable HDR10+ analyis and metadata injection. Compatible with HEVC only. */
+    /** Enable HDR10+ analysis and metadata injection. Compatible with HEVC only. */
     private Hdr10Plus hdr10Plus;
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each output individually. This setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each output individually. This setting is disabled by default.
      */
     private ImageInserter imageInserter;
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      */
     private NoiseReducer noiseReducer;
     /**
@@ -177,10 +179,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      * 
      * @param hdr10Plus
-     *        Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     *        Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
 
     public void setHdr10Plus(Hdr10Plus hdr10Plus) {
@@ -188,9 +190,9 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      * 
-     * @return Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * @return Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
 
     public Hdr10Plus getHdr10Plus() {
@@ -198,10 +200,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      * 
      * @param hdr10Plus
-     *        Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     *        Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,12 +213,12 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each output individually. This setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each output individually. This setting is disabled by default.
      * 
      * @param imageInserter
-     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *        disable this feature for each output individually. This setting is disabled by default.
+     *        Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each output individually. This setting is disabled by default.
      */
 
     public void setImageInserter(ImageInserter imageInserter) {
@@ -224,11 +226,11 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each output individually. This setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each output individually. This setting is disabled by default.
      * 
-     * @return Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *         disable this feature for each output individually. This setting is disabled by default.
+     * @return Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *         feature for each output individually. This setting is disabled by default.
      */
 
     public ImageInserter getImageInserter() {
@@ -236,12 +238,12 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each output individually. This setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each output individually. This setting is disabled by default.
      * 
      * @param imageInserter
-     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *        disable this feature for each output individually. This setting is disabled by default.
+     *        Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each output individually. This setting is disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,12 +253,16 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      * 
      * @param noiseReducer
-     *        Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary.
-     *        Enable or disable this feature for each output individually. This setting is disabled by default.
+     *        Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable
+     *        this feature for each output individually. This setting is disabled by default. When you enable Noise
+     *        reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     *        reducer, you cannot include the Bandwidth reduction filter.
      */
 
     public void setNoiseReducer(NoiseReducer noiseReducer) {
@@ -264,11 +270,15 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      * 
-     * @return Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary.
-     *         Enable or disable this feature for each output individually. This setting is disabled by default.
+     * @return Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable
+     *         this feature for each output individually. This setting is disabled by default. When you enable Noise
+     *         reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     *         reducer, you cannot include the Bandwidth reduction filter.
      */
 
     public NoiseReducer getNoiseReducer() {
@@ -276,12 +286,16 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      * 
      * @param noiseReducer
-     *        Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary.
-     *        Enable or disable this feature for each output individually. This setting is disabled by default.
+     *        Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable
+     *        this feature for each output individually. This setting is disabled by default. When you enable Noise
+     *        reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     *        reducer, you cannot include the Bandwidth reduction filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

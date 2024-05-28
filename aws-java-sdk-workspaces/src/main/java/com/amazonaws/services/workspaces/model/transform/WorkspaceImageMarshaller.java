@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -49,6 +50,8 @@ public class WorkspaceImageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerAccountId").build();
     private static final MarshallingInfo<StructuredPojo> UPDATES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Updates").build();
+    private static final MarshallingInfo<List> ERRORDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ErrorDetails").build();
 
     private static final WorkspaceImageMarshaller instance = new WorkspaceImageMarshaller();
 
@@ -77,6 +80,7 @@ public class WorkspaceImageMarshaller {
             protocolMarshaller.marshall(workspaceImage.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(workspaceImage.getOwnerAccountId(), OWNERACCOUNTID_BINDING);
             protocolMarshaller.marshall(workspaceImage.getUpdates(), UPDATES_BINDING);
+            protocolMarshaller.marshall(workspaceImage.getErrorDetails(), ERRORDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

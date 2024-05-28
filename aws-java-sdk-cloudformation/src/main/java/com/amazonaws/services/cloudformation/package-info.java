@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@
  * <p>
  * CloudFormation makes use of other Amazon Web Services products. If you need additional technical information about a
  * specific Amazon Web Services product, you can find the product's technical documentation at <a
- * href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code> </a>.
+ * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 package com.amazonaws.services.cloudformation;

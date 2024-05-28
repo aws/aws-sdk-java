@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
+     * <code>public:nuget-org</code> - for the NuGet Gallery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>public:pypi</code> - for the Python Package Index.
      * </p>
      * </li>
@@ -77,6 +82,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>public:maven-clojars</code> - for the Clojars repository.
      * </p>
      * </li>
      * </ul>
@@ -221,6 +231,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
+     * <code>public:nuget-org</code> - for the NuGet Gallery.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>public:pypi</code> - for the Python Package Index.
      * </p>
      * </li>
@@ -244,6 +259,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>public:maven-clojars</code> - for the Clojars repository.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param externalConnection
@@ -252,6 +272,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>public:npmjs</code> - for the npm public repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>public:nuget-org</code> - for the NuGet Gallery.
      *        </p>
      *        </li>
      *        <li>
@@ -279,6 +304,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *        <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>public:maven-clojars</code> - for the Clojars repository.
+     *        </p>
+     *        </li>
      */
 
     public void setExternalConnection(String externalConnection) {
@@ -293,6 +323,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * <code>public:npmjs</code> - for the npm public repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>public:nuget-org</code> - for the NuGet Gallery.
      * </p>
      * </li>
      * <li>
@@ -320,6 +355,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>public:maven-clojars</code> - for the Clojars repository.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the external connection to add to the repository. The following values are supported: </p>
@@ -327,6 +367,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         <code>public:npmjs</code> - for the npm public repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>public:nuget-org</code> - for the NuGet Gallery.
      *         </p>
      *         </li>
      *         <li>
@@ -354,6 +399,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *         <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>public:maven-clojars</code> - for the Clojars repository.
+     *         </p>
+     *         </li>
      */
 
     public String getExternalConnection() {
@@ -368,6 +418,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * <code>public:npmjs</code> - for the npm public repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>public:nuget-org</code> - for the NuGet Gallery.
      * </p>
      * </li>
      * <li>
@@ -395,6 +450,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>public:maven-clojars</code> - for the Clojars repository.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param externalConnection
@@ -403,6 +463,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>public:npmjs</code> - for the npm public repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>public:nuget-org</code> - for the NuGet Gallery.
      *        </p>
      *        </li>
      *        <li>
@@ -428,6 +493,11 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>public:maven-clojars</code> - for the Clojars repository.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

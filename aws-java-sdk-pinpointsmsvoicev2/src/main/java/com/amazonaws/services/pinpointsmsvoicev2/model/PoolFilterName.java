@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,8 @@ public enum PoolFilterName {
     SelfManagedOptOutsEnabled("self-managed-opt-outs-enabled"),
     OptOutListName("opt-out-list-name"),
     SharedRoutesEnabled("shared-routes-enabled"),
-    DeletionProtectionEnabled("deletion-protection-enabled");
+    DeletionProtectionEnabled("deletion-protection-enabled"),
+    TwoWayChannelArn("two-way-channel-arn");
 
     private String value;
 

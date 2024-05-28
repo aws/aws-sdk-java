@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -79,6 +87,30 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is 60-604800
+     * seconds. The default is 3600 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute is
+     * required if connection logs are enabled. The bucket must exist in the same region as the load balancer and have a
+     * bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.
      * </p>
      * </li>
      * <li>
@@ -164,13 +196,15 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     * The following attributes are supported by only Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
      * </p>
      * </li>
      * </ul>
@@ -188,13 +222,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -236,6 +278,30 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is 60-604800
+     * seconds. The default is 3600 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute is
+     * required if connection logs are enabled. The bucket must exist in the same region as the load balancer and have a
+     * bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.
      * </p>
      * </li>
      * <li>
@@ -321,13 +387,15 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     * The following attributes are supported by only Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
      * </p>
      * </li>
      * </ul>
@@ -335,13 +403,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by all load balancers:
+     *        The following attributes are supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *        The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers
+     *        and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is
+     *        <code>true</code>, and cannot be changed.
      *        </p>
      *        </li>
      *        </ul>
@@ -383,6 +459,31 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is
+     *        60-604800 seconds. The default is 3600 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute
+     *        is required if connection logs are enabled. The bucket must exist in the same region as the load balancer
+     *        and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection
+     *        logs.
      *        </p>
      *        </li>
      *        <li>
@@ -469,13 +570,15 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     *        The following attributes are supported by only Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
-     *        The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     *        <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load
+     *        balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100
+     *        percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity,
+     *        and <code>any_availability_zone</code> with 0 percent zonal affinity.
      *        </p>
      *        </li>
      */
@@ -489,13 +592,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -537,6 +648,30 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is 60-604800
+     * seconds. The default is 3600 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute is
+     * required if connection logs are enabled. The bucket must exist in the same region as the load balancer and have a
+     * bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.
      * </p>
      * </li>
      * <li>
@@ -622,26 +757,36 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     * The following attributes are supported by only Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attribute is supported by all load balancers:
+     *         The following attributes are supported by all load balancers:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *         The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers
+     *         and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is
+     *         <code>true</code>, and cannot be changed.
      *         </p>
      *         </li>
      *         </ul>
@@ -683,6 +828,32 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *         seconds. The default is 60 seconds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is
+     *         60-604800 seconds. The default is 3600 seconds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This
+     *         attribute is required if connection logs are enabled. The bucket must exist in the same region as the
+     *         load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the
+     *         bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection
+     *         logs.
      *         </p>
      *         </li>
      *         <li>
@@ -769,13 +940,15 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     *         The following attributes are supported by only Network Load Balancers:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
-     *         The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     *         <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load
+     *         balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100
+     *         percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity,
+     *         and <code>any_availability_zone</code> with 0 percent zonal affinity.
      *         </p>
      *         </li>
      */
@@ -789,13 +962,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -837,6 +1018,30 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is 60-604800
+     * seconds. The default is 3600 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute is
+     * required if connection logs are enabled. The bucket must exist in the same region as the load balancer and have a
+     * bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection logs.
      * </p>
      * </li>
      * <li>
@@ -922,13 +1127,15 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     * The following attributes are supported by only Network Load Balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     * <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer
+     * Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal
+     * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and
+     * <code>any_availability_zone</code> with 0 percent zonal affinity.
      * </p>
      * </li>
      * </ul>
@@ -936,13 +1143,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by all load balancers:
+     *        The following attributes are supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *        The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers
+     *        and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is
+     *        <code>true</code>, and cannot be changed.
      *        </p>
      *        </li>
      *        </ul>
@@ -984,6 +1199,31 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The valid range is
+     *        60-604800 seconds. The default is 3600 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs. This attribute
+     *        is required if connection logs are enabled. The bucket must exist in the same region as the load balancer
+     *        and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the connection
+     *        logs.
      *        </p>
      *        </li>
      *        <li>
@@ -1070,13 +1310,15 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
+     *        The following attributes are supported by only Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
-     *        The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
+     *        <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load
+     *        balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100
+     *        percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity,
+     *        and <code>any_availability_zone</code> with 0 percent zonal affinity.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,18 @@ public class ListAccessorsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The blockchain network that the <code>Accessor</code> token is created for.
+     * </p>
+     * <note>
+     * <p>
+     * Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were
+     * created before the <code>networkType</code> property was introduced.
+     * </p>
+     * </note>
+     */
+    private String networkType;
 
     /**
      * <p>
@@ -119,6 +131,105 @@ public class ListAccessorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The blockchain network that the <code>Accessor</code> token is created for.
+     * </p>
+     * <note>
+     * <p>
+     * Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were
+     * created before the <code>networkType</code> property was introduced.
+     * </p>
+     * </note>
+     * 
+     * @param networkType
+     *        The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+     *        <p>
+     *        Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that
+     *        were created before the <code>networkType</code> property was introduced.
+     *        </p>
+     * @see AccessorNetworkType
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the <code>Accessor</code> token is created for.
+     * </p>
+     * <note>
+     * <p>
+     * Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were
+     * created before the <code>networkType</code> property was introduced.
+     * </p>
+     * </note>
+     * 
+     * @return The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+     *         <p>
+     *         Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens
+     *         that were created before the <code>networkType</code> property was introduced.
+     *         </p>
+     * @see AccessorNetworkType
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the <code>Accessor</code> token is created for.
+     * </p>
+     * <note>
+     * <p>
+     * Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were
+     * created before the <code>networkType</code> property was introduced.
+     * </p>
+     * </note>
+     * 
+     * @param networkType
+     *        The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+     *        <p>
+     *        Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that
+     *        were created before the <code>networkType</code> property was introduced.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessorNetworkType
+     */
+
+    public ListAccessorsRequest withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the <code>Accessor</code> token is created for.
+     * </p>
+     * <note>
+     * <p>
+     * Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were
+     * created before the <code>networkType</code> property was introduced.
+     * </p>
+     * </note>
+     * 
+     * @param networkType
+     *        The blockchain network that the <code>Accessor</code> token is created for.</p> <note>
+     *        <p>
+     *        Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that
+     *        were created before the <code>networkType</code> property was introduced.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessorNetworkType
+     */
+
+    public ListAccessorsRequest withNetworkType(AccessorNetworkType networkType) {
+        this.networkType = networkType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +244,9 @@ public class ListAccessorsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +269,10 @@ public class ListAccessorsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +283,7 @@ public class ListAccessorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         return hashCode;
     }
 

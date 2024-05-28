@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.resiliencehub.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,10 @@ public class UpdateAppRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clearResiliencyPolicyArn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> EVENTSUBSCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventSubscriptions").build();
+    private static final MarshallingInfo<StructuredPojo> PERMISSIONMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionModel").build();
     private static final MarshallingInfo<String> POLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("policyArn").build();
 
@@ -58,6 +63,8 @@ public class UpdateAppRequestMarshaller {
             protocolMarshaller.marshall(updateAppRequest.getAssessmentSchedule(), ASSESSMENTSCHEDULE_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getClearResiliencyPolicyArn(), CLEARRESILIENCYPOLICYARN_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateAppRequest.getEventSubscriptions(), EVENTSUBSCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(updateAppRequest.getPermissionModel(), PERMISSIONMODEL_BINDING);
             protocolMarshaller.marshall(updateAppRequest.getPolicyArn(), POLICYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

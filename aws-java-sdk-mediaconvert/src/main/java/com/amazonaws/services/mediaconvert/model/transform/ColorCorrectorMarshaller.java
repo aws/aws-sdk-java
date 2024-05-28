@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,18 +29,26 @@ public class ColorCorrectorMarshaller {
 
     private static final MarshallingInfo<Integer> BRIGHTNESS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("brightness").build();
+    private static final MarshallingInfo<StructuredPojo> CLIPLIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clipLimits").build();
     private static final MarshallingInfo<String> COLORSPACECONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpaceConversion").build();
     private static final MarshallingInfo<Integer> CONTRAST_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contrast").build();
     private static final MarshallingInfo<StructuredPojo> HDR10METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdr10Metadata").build();
+    private static final MarshallingInfo<String> HDRTOSDRTONEMAPPER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdrToSdrToneMapper").build();
     private static final MarshallingInfo<Integer> HUE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hue").build();
+    private static final MarshallingInfo<Integer> MAXLUMINANCE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLuminance").build();
     private static final MarshallingInfo<String> SAMPLERANGECONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sampleRangeConversion").build();
     private static final MarshallingInfo<Integer> SATURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("saturation").build();
+    private static final MarshallingInfo<Integer> SDRREFERENCEWHITELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sdrReferenceWhiteLevel").build();
 
     private static final ColorCorrectorMarshaller instance = new ColorCorrectorMarshaller();
 
@@ -59,12 +67,16 @@ public class ColorCorrectorMarshaller {
 
         try {
             protocolMarshaller.marshall(colorCorrector.getBrightness(), BRIGHTNESS_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getClipLimits(), CLIPLIMITS_BINDING);
             protocolMarshaller.marshall(colorCorrector.getColorSpaceConversion(), COLORSPACECONVERSION_BINDING);
             protocolMarshaller.marshall(colorCorrector.getContrast(), CONTRAST_BINDING);
             protocolMarshaller.marshall(colorCorrector.getHdr10Metadata(), HDR10METADATA_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getHdrToSdrToneMapper(), HDRTOSDRTONEMAPPER_BINDING);
             protocolMarshaller.marshall(colorCorrector.getHue(), HUE_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getMaxLuminance(), MAXLUMINANCE_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSampleRangeConversion(), SAMPLERANGECONVERSION_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSaturation(), SATURATION_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getSdrReferenceWhiteLevel(), SDRREFERENCEWHITELEVEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

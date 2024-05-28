@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,15 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.
+ * Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables companies of any size to
+ * deliver superior customer service at a lower cost. Amazon Connect communications capabilities make it easy for
+ * companies to deliver personalized interactions across communication channels, including chat.
  * </p>
  * <p>
- * Amazon Connect enables customer contacts through voice or chat.
- * </p>
- * <p>
- * The APIs described here are used by chat participants, such as agents and customers.
+ * Use the Amazon Connect Participant Service to manage participants (for example, agents, customers, and managers
+ * listening in), and to send messages and events within a chat contact. The APIs in the service enable the following:
+ * sending chat messages, attachment sharing, managing a participant's connection state and message events, and
+ * retrieving chat transcripts.
  * </p>
  */
 @ThreadSafe
@@ -133,6 +134,39 @@ public class AmazonConnectParticipantAsyncClient extends AmazonConnectParticipan
 
                 try {
                     result = executeCreateParticipantConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeViewResult> describeViewAsync(DescribeViewRequest request) {
+
+        return describeViewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeViewResult> describeViewAsync(final DescribeViewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeViewRequest, DescribeViewResult> asyncHandler) {
+        final DescribeViewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeViewResult>() {
+            @Override
+            public DescribeViewResult call() throws Exception {
+                DescribeViewResult result = null;
+
+                try {
+                    result = executeDescribeView(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class RecognizeUtteranceResultJsonUnmarshaller implements Unmarshaller<Re
             if (context.getHeader("x-amz-lex-input-transcript") != null) {
                 context.setCurrentHeader("x-amz-lex-input-transcript");
                 recognizeUtteranceResult.setInputTranscript(context.getUnmarshaller(String.class).unmarshall(context));
+            }
+            if (context.getHeader("x-amz-lex-recognized-bot-member") != null) {
+                context.setCurrentHeader("x-amz-lex-recognized-bot-member");
+                recognizeUtteranceResult.setRecognizedBotMember(context.getUnmarshaller(String.class).unmarshall(context));
             }
         }
 

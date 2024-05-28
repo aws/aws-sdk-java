@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.emrcontainers.AmazonEMRContainersClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.emrcontainers.model.*;
+
 import com.amazonaws.services.emrcontainers.model.transform.*;
 
 /**
@@ -81,7 +82,7 @@ import com.amazonaws.services.emrcontainers.model.transform.*;
  * It is the prefix used in Amazon EMR on EKS service endpoints. For example,
  * <code>emr-containers.us-east-2.amazonaws.com</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints"
- * >Amazon EMR on EKS Service Endpoints</a>.
+ * >Amazon EMR on EKSService Endpoints</a>.
  * </p>
  * </li>
  * </ul>
@@ -110,8 +111,14 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestThrottledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.emrcontainers.model.transform.RequestThrottledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.emrcontainers.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EKSRequestThrottledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.emrcontainers.model.transform.EKSRequestThrottledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.emrcontainers.model.transform.ValidationExceptionUnmarshaller.getInstance()))
@@ -228,8 +235,71 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobTemplateResult executeCreateJobTemplate(CreateJobTemplateRequest createJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateJobTemplateRequest> request = null;
+        Response<CreateJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param createManagedEndpointRequest
@@ -291,6 +361,69 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Creates a security configuration. Security configurations in Amazon EMR on EKS are templates for different
+     * security setups. You can use security configurations to configure the Lake Formation integration setup. You can
+     * also create a security configuration to re-use a security setup each time you create a virtual cluster.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return Result of the CreateSecurityConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSecurityConfigurationResult createSecurityConfiguration(CreateSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateSecurityConfigurationResult executeCreateSecurityConfiguration(CreateSecurityConfigurationRequest createSecurityConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSecurityConfigurationRequest> request = null;
+        Response<CreateSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSecurityConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecurityConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSecurityConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe,
      * list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual
      * cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same
@@ -305,6 +438,8 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
      *         The specified resource was not found.
      * @throws InternalServerException
      *         This is an internal server exception.
+     * @throws EKSRequestThrottledException
+     *         The request exceeded the Amazon EKS API operation limits.
      * @sample AmazonEMRContainers.CreateVirtualCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster"
      *      target="_top">AWS API Documentation</a>
@@ -355,8 +490,69 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobTemplateResult executeDeleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteJobTemplateRequest> request = null;
+        Response<DeleteJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param deleteManagedEndpointRequest
@@ -540,8 +736,71 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-     * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobTemplateResult executeDescribeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeJobTemplateRequest> request = null;
+        Response<DescribeJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param describeManagedEndpointRequest
@@ -592,6 +851,72 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<DescribeManagedEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeManagedEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Displays detailed information about a specified security configuration. Security configurations in Amazon EMR on
+     * EKS are templates for different security setups. You can use security configurations to configure the Lake
+     * Formation integration setup. You can also create a security configuration to re-use a security setup each time
+     * you create a virtual cluster.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @return Result of the DescribeSecurityConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DescribeSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSecurityConfigurationResult describeSecurityConfiguration(DescribeSecurityConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSecurityConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSecurityConfigurationResult executeDescribeSecurityConfiguration(DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSecurityConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSecurityConfigurationRequest> request = null;
+        Response<DescribeSecurityConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSecurityConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSecurityConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSecurityConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSecurityConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -669,6 +994,73 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Generate a session token to connect to a managed endpoint.
+     * </p>
+     * 
+     * @param getManagedEndpointSessionCredentialsRequest
+     * @return Result of the GetManagedEndpointSessionCredentials operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws RequestThrottledException
+     *         The request throttled.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.GetManagedEndpointSessionCredentials
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetManagedEndpointSessionCredentialsResult getManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetManagedEndpointSessionCredentials(request);
+    }
+
+    @SdkInternalApi
+    final GetManagedEndpointSessionCredentialsResult executeGetManagedEndpointSessionCredentials(
+            GetManagedEndpointSessionCredentialsRequest getManagedEndpointSessionCredentialsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getManagedEndpointSessionCredentialsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetManagedEndpointSessionCredentialsRequest> request = null;
+        Response<GetManagedEndpointSessionCredentialsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetManagedEndpointSessionCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getManagedEndpointSessionCredentialsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetManagedEndpointSessionCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetManagedEndpointSessionCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetManagedEndpointSessionCredentialsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or
      * SparkSQL query, that you submit to Amazon EMR on EKS.
      * </p>
@@ -729,8 +1121,69 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to
-     * Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListJobTemplatesResult executeListJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listJobTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobTemplatesRequest> request = null;
+        Response<ListJobTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListJobTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param listManagedEndpointsRequest
@@ -777,6 +1230,70 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<ListManagedEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListManagedEndpointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists security configurations based on a set of parameters. Security configurations in Amazon EMR on EKS are
+     * templates for different security setups. You can use security configurations to configure the Lake Formation
+     * integration setup. You can also create a security configuration to re-use a security setup each time you create a
+     * virtual cluster.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @return Result of the ListSecurityConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.ListSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSecurityConfigurationsResult listSecurityConfigurations(ListSecurityConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSecurityConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListSecurityConfigurationsResult executeListSecurityConfigurations(ListSecurityConfigurationsRequest listSecurityConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSecurityConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSecurityConfigurationsRequest> request = null;
+        Response<ListSecurityConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSecurityConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSecurityConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSecurityConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSecurityConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -974,13 +1491,13 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an
-     * optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as
-     * purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a
-     * specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your
-     * Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a
-     * consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags
-     * that you add.
+     * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
+     * of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services
+     * resources by attributes such as purpose, owner, or environment. When you have many resources of the same type,
+     * you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define
+     * a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We
+     * recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the
+     * resources based on the tags that you add.
      * </p>
      * 
      * @param tagResourceRequest

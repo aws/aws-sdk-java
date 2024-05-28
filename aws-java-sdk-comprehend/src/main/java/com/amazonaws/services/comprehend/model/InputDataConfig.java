@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The input properties for an inference job.
+ * The input properties for an inference job. The document reader config field applies only to non-text inputs for
+ * custom analysis.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/InputDataConfig" target="_top">AWS API
@@ -30,7 +31,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are calling.
+     * The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling.
      * The URI can point to a single input file or it can provide the prefix for a collection of data files.
      * </p>
      * <p>
@@ -62,18 +63,15 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
     private String inputFormat;
     /**
      * <p>
-     * The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
-     * </p>
-     * <p>
-     * Use DocumentReaderConfig to provide specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     * Provides configuration parameters to override the default actions for extracting text from PDF documents and
+     * image files.
      * </p>
      */
     private DocumentReaderConfig documentReaderConfig;
 
     /**
      * <p>
-     * The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are calling.
+     * The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling.
      * The URI can point to a single input file or it can provide the prefix for a collection of data files.
      * </p>
      * <p>
@@ -83,7 +81,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param s3Uri
-     *        The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are
+     *        The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are
      *        calling. The URI can point to a single input file or it can provide the prefix for a collection of data
      *        files. </p>
      *        <p>
@@ -98,7 +96,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are calling.
+     * The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling.
      * The URI can point to a single input file or it can provide the prefix for a collection of data files.
      * </p>
      * <p>
@@ -107,7 +105,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * them as input.
      * </p>
      * 
-     * @return The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are
+     * @return The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are
      *         calling. The URI can point to a single input file or it can provide the prefix for a collection of data
      *         files. </p>
      *         <p>
@@ -122,7 +120,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are calling.
+     * The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are calling.
      * The URI can point to a single input file or it can provide the prefix for a collection of data files.
      * </p>
      * <p>
@@ -132,7 +130,7 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param s3Uri
-     *        The Amazon S3 URI for the input data. The URI must be in same region as the API endpoint that you are
+     *        The Amazon S3 URI for the input data. The URI must be in same Region as the API endpoint that you are
      *        calling. The URI can point to a single input file or it can provide the prefix for a collection of data
      *        files. </p>
      *        <p>
@@ -316,18 +314,13 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
-     * </p>
-     * <p>
-     * Use DocumentReaderConfig to provide specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     * Provides configuration parameters to override the default actions for extracting text from PDF documents and
+     * image files.
      * </p>
      * 
      * @param documentReaderConfig
-     *        The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
-     *        <p>
-     *        Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
-     *        Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     *        Provides configuration parameters to override the default actions for extracting text from PDF documents
+     *        and image files.
      */
 
     public void setDocumentReaderConfig(DocumentReaderConfig documentReaderConfig) {
@@ -336,17 +329,12 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
-     * </p>
-     * <p>
-     * Use DocumentReaderConfig to provide specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     * Provides configuration parameters to override the default actions for extracting text from PDF documents and
+     * image files.
      * </p>
      * 
-     * @return The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
-     *         <p>
-     *         Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
-     *         Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     * @return Provides configuration parameters to override the default actions for extracting text from PDF documents
+     *         and image files.
      */
 
     public DocumentReaderConfig getDocumentReaderConfig() {
@@ -355,18 +343,13 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
-     * </p>
-     * <p>
-     * Use DocumentReaderConfig to provide specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     * Provides configuration parameters to override the default actions for extracting text from PDF documents and
+     * image files.
      * </p>
      * 
      * @param documentReaderConfig
-     *        The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
-     *        <p>
-     *        Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
-     *        Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.
+     *        Provides configuration parameters to override the default actions for extracting text from PDF documents
+     *        and image files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

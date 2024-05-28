@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.migrationhuborchestrator.model.*;
 public class AbstractAWSMigrationHubOrchestratorAsync extends AbstractAWSMigrationHubOrchestrator implements AWSMigrationHubOrchestratorAsync {
 
     protected AbstractAWSMigrationHubOrchestratorAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request) {
+
+        return createTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTemplateRequest, CreateTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -62,6 +75,19 @@ public class AbstractAWSMigrationHubOrchestratorAsync extends AbstractAWSMigrati
     @Override
     public java.util.concurrent.Future<CreateWorkflowStepGroupResult> createWorkflowStepGroupAsync(CreateWorkflowStepGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWorkflowStepGroupRequest, CreateWorkflowStepGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request) {
+
+        return deleteTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -348,6 +374,19 @@ public class AbstractAWSMigrationHubOrchestratorAsync extends AbstractAWSMigrati
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest request) {
+
+        return updateTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTemplateRequest, UpdateTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

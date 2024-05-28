@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,19 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDeliveryResult> createDeliveryAsync(CreateDeliveryRequest request) {
+
+        return createDeliveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDeliveryResult> createDeliveryAsync(CreateDeliveryRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDeliveryRequest, CreateDeliveryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(CreateExportTaskRequest request) {
 
         return createExportTaskAsync(request, null);
@@ -61,6 +74,19 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Override
     public java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(CreateExportTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLogAnomalyDetectorResult> createLogAnomalyDetectorAsync(CreateLogAnomalyDetectorRequest request) {
+
+        return createLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLogAnomalyDetectorResult> createLogAnomalyDetectorAsync(CreateLogAnomalyDetectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLogAnomalyDetectorRequest, CreateLogAnomalyDetectorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -92,6 +118,86 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccountPolicyResult> deleteAccountPolicyAsync(DeleteAccountPolicyRequest request) {
+
+        return deleteAccountPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountPolicyResult> deleteAccountPolicyAsync(DeleteAccountPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountPolicyRequest, DeleteAccountPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataProtectionPolicyResult> deleteDataProtectionPolicyAsync(DeleteDataProtectionPolicyRequest request) {
+
+        return deleteDataProtectionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataProtectionPolicyResult> deleteDataProtectionPolicyAsync(DeleteDataProtectionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataProtectionPolicyRequest, DeleteDataProtectionPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryResult> deleteDeliveryAsync(DeleteDeliveryRequest request) {
+
+        return deleteDeliveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryResult> deleteDeliveryAsync(DeleteDeliveryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryRequest, DeleteDeliveryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationResult> deleteDeliveryDestinationAsync(DeleteDeliveryDestinationRequest request) {
+
+        return deleteDeliveryDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationResult> deleteDeliveryDestinationAsync(DeleteDeliveryDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryDestinationRequest, DeleteDeliveryDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationPolicyResult> deleteDeliveryDestinationPolicyAsync(
+            DeleteDeliveryDestinationPolicyRequest request) {
+
+        return deleteDeliveryDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationPolicyResult> deleteDeliveryDestinationPolicyAsync(
+            DeleteDeliveryDestinationPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryDestinationPolicyRequest, DeleteDeliveryDestinationPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliverySourceResult> deleteDeliverySourceAsync(DeleteDeliverySourceRequest request) {
+
+        return deleteDeliverySourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliverySourceResult> deleteDeliverySourceAsync(DeleteDeliverySourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeliverySourceRequest, DeleteDeliverySourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(DeleteDestinationRequest request) {
 
         return deleteDestinationAsync(request, null);
@@ -100,6 +206,19 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Override
     public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(DeleteDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLogAnomalyDetectorResult> deleteLogAnomalyDetectorAsync(DeleteLogAnomalyDetectorRequest request) {
+
+        return deleteLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLogAnomalyDetectorResult> deleteLogAnomalyDetectorAsync(DeleteLogAnomalyDetectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLogAnomalyDetectorRequest, DeleteLogAnomalyDetectorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -191,6 +310,58 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Override
     public java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPoliciesResult> describeAccountPoliciesAsync(DescribeAccountPoliciesRequest request) {
+
+        return describeAccountPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPoliciesResult> describeAccountPoliciesAsync(DescribeAccountPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountPoliciesRequest, DescribeAccountPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveriesResult> describeDeliveriesAsync(DescribeDeliveriesRequest request) {
+
+        return describeDeliveriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveriesResult> describeDeliveriesAsync(DescribeDeliveriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDeliveriesRequest, DescribeDeliveriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveryDestinationsResult> describeDeliveryDestinationsAsync(DescribeDeliveryDestinationsRequest request) {
+
+        return describeDeliveryDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveryDestinationsResult> describeDeliveryDestinationsAsync(DescribeDeliveryDestinationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDeliveryDestinationsRequest, DescribeDeliveryDestinationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliverySourcesResult> describeDeliverySourcesAsync(DescribeDeliverySourcesRequest request) {
+
+        return describeDeliverySourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliverySourcesResult> describeDeliverySourcesAsync(DescribeDeliverySourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDeliverySourcesRequest, DescribeDeliverySourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -385,6 +556,84 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest request) {
+
+        return getDataProtectionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataProtectionPolicyRequest, GetDataProtectionPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryResult> getDeliveryAsync(GetDeliveryRequest request) {
+
+        return getDeliveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryResult> getDeliveryAsync(GetDeliveryRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeliveryRequest, GetDeliveryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationResult> getDeliveryDestinationAsync(GetDeliveryDestinationRequest request) {
+
+        return getDeliveryDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationResult> getDeliveryDestinationAsync(GetDeliveryDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeliveryDestinationRequest, GetDeliveryDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationPolicyResult> getDeliveryDestinationPolicyAsync(GetDeliveryDestinationPolicyRequest request) {
+
+        return getDeliveryDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationPolicyResult> getDeliveryDestinationPolicyAsync(GetDeliveryDestinationPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeliveryDestinationPolicyRequest, GetDeliveryDestinationPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverySourceResult> getDeliverySourceAsync(GetDeliverySourceRequest request) {
+
+        return getDeliverySourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverySourceResult> getDeliverySourceAsync(GetDeliverySourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeliverySourceRequest, GetDeliverySourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogAnomalyDetectorResult> getLogAnomalyDetectorAsync(GetLogAnomalyDetectorRequest request) {
+
+        return getLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogAnomalyDetectorResult> getLogAnomalyDetectorAsync(GetLogAnomalyDetectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLogAnomalyDetectorRequest, GetLogAnomalyDetectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(GetLogEventsRequest request) {
 
         return getLogEventsAsync(request, null);
@@ -437,6 +686,32 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnomaliesResult> listAnomaliesAsync(ListAnomaliesRequest request) {
+
+        return listAnomaliesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnomaliesResult> listAnomaliesAsync(ListAnomaliesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAnomaliesRequest, ListAnomaliesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLogAnomalyDetectorsResult> listLogAnomalyDetectorsAsync(ListLogAnomalyDetectorsRequest request) {
+
+        return listLogAnomalyDetectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLogAnomalyDetectorsResult> listLogAnomalyDetectorsAsync(ListLogAnomalyDetectorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLogAnomalyDetectorsRequest, ListLogAnomalyDetectorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -460,6 +735,71 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Deprecated
     public java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPolicyResult> putAccountPolicyAsync(PutAccountPolicyRequest request) {
+
+        return putAccountPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPolicyResult> putAccountPolicyAsync(PutAccountPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccountPolicyRequest, PutAccountPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest request) {
+
+        return putDataProtectionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDataProtectionPolicyRequest, PutDataProtectionPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationResult> putDeliveryDestinationAsync(PutDeliveryDestinationRequest request) {
+
+        return putDeliveryDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationResult> putDeliveryDestinationAsync(PutDeliveryDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDeliveryDestinationRequest, PutDeliveryDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationPolicyResult> putDeliveryDestinationPolicyAsync(PutDeliveryDestinationPolicyRequest request) {
+
+        return putDeliveryDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationPolicyResult> putDeliveryDestinationPolicyAsync(PutDeliveryDestinationPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDeliveryDestinationPolicyRequest, PutDeliveryDestinationPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverySourceResult> putDeliverySourceAsync(PutDeliverySourceRequest request) {
+
+        return putDeliverySourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverySourceResult> putDeliverySourceAsync(PutDeliverySourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDeliverySourceRequest, PutDeliverySourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -659,6 +999,32 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnomalyResult> updateAnomalyAsync(UpdateAnomalyRequest request) {
+
+        return updateAnomalyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnomalyResult> updateAnomalyAsync(UpdateAnomalyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnomalyRequest, UpdateAnomalyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogAnomalyDetectorResult> updateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request) {
+
+        return updateLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogAnomalyDetectorResult> updateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLogAnomalyDetectorRequest, UpdateLogAnomalyDetectorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

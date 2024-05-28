@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,10 +42,24 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
     private String entry;
     /**
      * <p>
-     * Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     * Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      * </p>
      */
     private String target;
+    /**
+     * <p>
+     * Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or
+     * <code>DIRECTORY</code> for the directory to point to a directory.
+     * </p>
+     * <note>
+     * <p>
+     * By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer
+     * Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to
+     * have a file target.
+     * </p>
+     * </note>
+     */
+    private String type;
 
     /**
      * <p>
@@ -89,11 +103,11 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     * Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      * </p>
      * 
      * @param target
-     *        Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     *        Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      */
 
     public void setTarget(String target) {
@@ -102,10 +116,10 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     * Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      * </p>
      * 
-     * @return Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     * @return Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      */
 
     public String getTarget() {
@@ -114,16 +128,131 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     * Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      * </p>
      * 
      * @param target
-     *        Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.
+     *        Represents the map target that is used in a <code>HomeDirectoryMapEntry</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public HomeDirectoryMapEntry withTarget(String target) {
         setTarget(target);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or
+     * <code>DIRECTORY</code> for the directory to point to a directory.
+     * </p>
+     * <note>
+     * <p>
+     * By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer
+     * Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to
+     * have a file target.
+     * </p>
+     * </note>
+     * 
+     * @param type
+     *        Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a
+     *        file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
+     *        <p>
+     *        By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a
+     *        Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you
+     *        want a mapping to have a file target.
+     *        </p>
+     * @see MapType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or
+     * <code>DIRECTORY</code> for the directory to point to a directory.
+     * </p>
+     * <note>
+     * <p>
+     * By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer
+     * Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to
+     * have a file target.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a
+     *         file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
+     *         <p>
+     *         By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a
+     *         Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you
+     *         want a mapping to have a file target.
+     *         </p>
+     * @see MapType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or
+     * <code>DIRECTORY</code> for the directory to point to a directory.
+     * </p>
+     * <note>
+     * <p>
+     * By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer
+     * Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to
+     * have a file target.
+     * </p>
+     * </note>
+     * 
+     * @param type
+     *        Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a
+     *        file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
+     *        <p>
+     *        By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a
+     *        Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you
+     *        want a mapping to have a file target.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MapType
+     */
+
+    public HomeDirectoryMapEntry withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a file, or
+     * <code>DIRECTORY</code> for the directory to point to a directory.
+     * </p>
+     * <note>
+     * <p>
+     * By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a Transfer
+     * Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you want a mapping to
+     * have a file target.
+     * </p>
+     * </note>
+     * 
+     * @param type
+     *        Specifies the type of mapping. Set the type to <code>FILE</code> if you want the mapping to point to a
+     *        file, or <code>DIRECTORY</code> for the directory to point to a directory.</p> <note>
+     *        <p>
+     *        By default, home directory mappings have a <code>Type</code> of <code>DIRECTORY</code> when you create a
+     *        Transfer Family server. You would need to explicitly set <code>Type</code> to <code>FILE</code> if you
+     *        want a mapping to have a file target.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MapType
+     */
+
+    public HomeDirectoryMapEntry withType(MapType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -142,7 +271,9 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
         if (getEntry() != null)
             sb.append("Entry: ").append(getEntry()).append(",");
         if (getTarget() != null)
-            sb.append("Target: ").append(getTarget());
+            sb.append("Target: ").append(getTarget()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +296,10 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +310,7 @@ public class HomeDirectoryMapEntry implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getEntry() == null) ? 0 : getEntry().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,11 +43,16 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every
      * event type.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      */
     private java.util.List<String> matchingEventTypes;
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      */
     private CloudWatchLogsDestination cloudWatchLogsDestination;
@@ -163,9 +168,17 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every
      * event type.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @return An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs
-     *         every event type.
+     *         every event type.</p> <note>
+     *         <p>
+     *         The <code>TEXT_SENT</code> event type is not supported.
+     *         </p>
      * @see EventType
      */
 
@@ -178,10 +191,18 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every
      * event type.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @param matchingEventTypes
      *        An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs
-     *        every event type.
+     *        every event type.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @see EventType
      */
 
@@ -199,6 +220,11 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every
      * event type.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if
@@ -207,7 +233,10 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param matchingEventTypes
      *        An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs
-     *        every event type.
+     *        every event type.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -227,10 +256,18 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every
      * event type.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @param matchingEventTypes
      *        An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs
-     *        every event type.
+     *        every event type.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -245,10 +282,18 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
      * An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every
      * event type.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @param matchingEventTypes
      *        An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs
-     *        every event type.
+     *        every event type.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -268,11 +313,11 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param cloudWatchLogsDestination
-     *        An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     *        An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      */
 
     public void setCloudWatchLogsDestination(CloudWatchLogsDestination cloudWatchLogsDestination) {
@@ -281,10 +326,10 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      * 
-     * @return An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * @return An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      */
 
     public CloudWatchLogsDestination getCloudWatchLogsDestination() {
@@ -293,11 +338,11 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param cloudWatchLogsDestination
-     *        An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     *        An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

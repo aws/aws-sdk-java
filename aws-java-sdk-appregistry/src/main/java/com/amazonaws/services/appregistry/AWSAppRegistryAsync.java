@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,9 +71,59 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Associates a resource with an application. Both the resource and the application can be specified either by ID or
-     * name.
+     * Associates a resource with an application. The resource can be specified by its ARN or name. The application can
+     * be specified by ARN, ID, or name.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * You must have the following permissions to associate a resource using the <code>OPTIONS</code> parameter set to
+     * <code>APPLY_APPLICATION_TAG</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:TagResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must also have these additional permissions if you don't use the
+     * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html"
+     * >AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:AssociateResource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:UpdateStack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the
+     * resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"
+     * >TagResources</a> in the <i>Resource Groups Tagging API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param associateResourceRequest
      * @return A Java Future containing the result of the AssociateResource operation returned by the service.
@@ -85,9 +135,59 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Associates a resource with an application. Both the resource and the application can be specified either by ID or
-     * name.
+     * Associates a resource with an application. The resource can be specified by its ARN or name. The application can
+     * be specified by ARN, ID, or name.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * You must have the following permissions to associate a resource using the <code>OPTIONS</code> parameter set to
+     * <code>APPLY_APPLICATION_TAG</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:TagResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must also have these additional permissions if you don't use the
+     * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html"
+     * >AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:AssociateResource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:UpdateStack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the
+     * resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"
+     * >TagResources</a> in the <i>Resource Groups Tagging API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param associateResourceRequest
      * @param asyncHandler
@@ -170,8 +270,8 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Deletes an application that is specified either by its application ID or name. All associated attribute groups
-     * and resources must be disassociated from it before deleting an application.
+     * Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute
+     * groups and resources must be disassociated from it before deleting an application.
      * </p>
      * 
      * @param deleteApplicationRequest
@@ -184,8 +284,8 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Deletes an application that is specified either by its application ID or name. All associated attribute groups
-     * and resources must be disassociated from it before deleting an application.
+     * Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute
+     * groups and resources must be disassociated from it before deleting an application.
      * </p>
      * 
      * @param deleteApplicationRequest
@@ -203,7 +303,7 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Deletes an attribute group, specified either by its attribute group ID or name.
+     * Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
      * </p>
      * 
      * @param deleteAttributeGroupRequest
@@ -216,7 +316,7 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Deletes an attribute group, specified either by its attribute group ID or name.
+     * Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
      * </p>
      * 
      * @param deleteAttributeGroupRequest
@@ -272,6 +372,58 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      * Disassociates a resource from application. Both the resource and the application can be specified either by ID or
      * name.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * You must have the following permissions to remove a resource that's been associated with an application using the
+     * <code>APPLY_APPLICATION_TAG</code> option for <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html"
+     * >AssociateResource</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:UntagResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must also have the following permissions if you don't use the
+     * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html"
+     * >AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:DisassociateResource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:UpdateStack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the
+     * resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntTagResources.html"
+     * >UntagResources</a> in the <i>Resource Groups Tagging API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param disassociateResourceRequest
      * @return A Java Future containing the result of the DisassociateResource operation returned by the service.
@@ -286,6 +438,58 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      * Disassociates a resource from application. Both the resource and the application can be specified either by ID or
      * name.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * You must have the following permissions to remove a resource that's been associated with an application using the
+     * <code>APPLY_APPLICATION_TAG</code> option for <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html"
+     * >AssociateResource</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:UntagResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must also have the following permissions if you don't use the
+     * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html"
+     * >AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:DisassociateResource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:UpdateStack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the
+     * resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntTagResources.html"
+     * >UntagResources</a> in the <i>Resource Groups Tagging API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param disassociateResourceRequest
      * @param asyncHandler
@@ -302,9 +506,9 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Retrieves metadata information about one of your applications. The application can be specified either by its
-     * unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by
-     * ID in automated workflows if you want to make sure that the exact same application is returned or a
+     * Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID,
+     * or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in
+     * automated workflows if you want to make sure that the exact same application is returned or a
      * <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.
      * </p>
      * 
@@ -318,9 +522,9 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Retrieves metadata information about one of your applications. The application can be specified either by its
-     * unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by
-     * ID in automated workflows if you want to make sure that the exact same application is returned or a
+     * Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID,
+     * or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in
+     * automated workflows if you want to make sure that the exact same application is returned or a
      * <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.
      * </p>
      * 
@@ -370,8 +574,8 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its
-     * unique ID or by its name.
+     * Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or
+     * name.
      * </p>
      * 
      * @param getAttributeGroupRequest
@@ -384,8 +588,8 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its
-     * unique ID or by its name.
+     * Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or
+     * name.
      * </p>
      * 
      * @param getAttributeGroupRequest
@@ -400,6 +604,37 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      */
     java.util.concurrent.Future<GetAttributeGroupResult> getAttributeGroupAsync(GetAttributeGroupRequest getAttributeGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetAttributeGroupRequest, GetAttributeGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a <code>TagKey</code> configuration from an account.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @return A Java Future containing the result of the GetConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsync.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest getConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves a <code>TagKey</code> configuration from an account.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsyncHandler.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest getConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConfigurationRequest, GetConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -469,8 +704,15 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Lists all resources that are associated with specified application. Results are paginated.
+     * Lists all of the resources that are associated with the specified application. Results are paginated.
      * </p>
+     * <note>
+     * <p>
+     * If you share an application, and a consumer account associates a tag query to the application, all of the users
+     * who can access the application can also view the tag values in all accounts that are associated with it using
+     * this API.
+     * </p>
+     * </note>
      * 
      * @param listAssociatedResourcesRequest
      * @return A Java Future containing the result of the ListAssociatedResources operation returned by the service.
@@ -482,8 +724,15 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Lists all resources that are associated with specified application. Results are paginated.
+     * Lists all of the resources that are associated with the specified application. Results are paginated.
      * </p>
+     * <note>
+     * <p>
+     * If you share an application, and a consumer account associates a tag query to the application, all of the users
+     * who can access the application can also view the tag values in all accounts that are associated with it using
+     * this API.
+     * </p>
+     * </note>
      * 
      * @param listAssociatedResourcesRequest
      * @param asyncHandler
@@ -596,6 +845,37 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a <code>TagKey</code> configuration to an account.
+     * </p>
+     * 
+     * @param putConfigurationRequest
+     * @return A Java Future containing the result of the PutConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsync.PutConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationResult> putConfigurationAsync(PutConfigurationRequest putConfigurationRequest);
+
+    /**
+     * <p>
+     * Associates a <code>TagKey</code> configuration to an account.
+     * </p>
+     * 
+     * @param putConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsyncHandler.PutConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationResult> putConfigurationAsync(PutConfigurationRequest putConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationRequest, PutConfigurationResult> asyncHandler);
 
     /**
      * <p>

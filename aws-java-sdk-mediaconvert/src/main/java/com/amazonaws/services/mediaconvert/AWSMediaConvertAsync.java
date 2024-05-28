@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -312,19 +312,18 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
      * Send an request with an empty body to the regional API endpoint to get your account API endpoint.
      * 
      * @param describeEndpointsRequest
-     *        DescribeEndpointsRequest
      * @return A Java Future containing the result of the DescribeEndpoints operation returned by the service.
      * @sample AWSMediaConvertAsync.DescribeEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest);
 
     /**
      * Send an request with an empty body to the regional API endpoint to get your account API endpoint.
      * 
      * @param describeEndpointsRequest
-     *        DescribeEndpointsRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -334,6 +333,7 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler);
 
@@ -367,7 +367,7 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
             com.amazonaws.handlers.AsyncHandler<DisassociateCertificateRequest, DisassociateCertificateResult> asyncHandler);
 
     /**
-     * Retrieve the JSON for a specific completed transcoding job.
+     * Retrieve the JSON for a specific transcoding job.
      * 
      * @param getJobRequest
      * @return A Java Future containing the result of the GetJob operation returned by the service.
@@ -378,7 +378,7 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest getJobRequest);
 
     /**
-     * Retrieve the JSON for a specific completed transcoding job.
+     * Retrieve the JSON for a specific transcoding job.
      * 
      * @param getJobRequest
      * @param asyncHandler

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,54 @@ public interface AmazonAppflow {
 
     /**
      * <p>
+     * Cancels active runs for a flow.
+     * </p>
+     * <p>
+     * You can cancel all of the active runs for a flow, or you can cancel specific runs by providing their IDs.
+     * </p>
+     * <p>
+     * You can cancel a flow run only when the run is in progress. You can't cancel a run that has already completed or
+     * failed. You also can't cancel a run that's scheduled to occur but hasn't started yet. To prevent a scheduled run,
+     * you can deactivate the flow with the <code>StopFlow</code> action.
+     * </p>
+     * <p>
+     * You cannot resume a run after you cancel it.
+     * </p>
+     * <p>
+     * When you send your request, the status for each run becomes <code>CancelStarted</code>. When the cancellation
+     * completes, the status becomes <code>Canceled</code>.
+     * </p>
+     * <note>
+     * <p>
+     * When you cancel a run, you still incur charges for any data that the run already processed before the
+     * cancellation. If the run had already written some data to the flow destination, then that data remains in the
+     * destination. If you configured the flow to use a batch API (such as the Salesforce Bulk API 2.0), then the run
+     * will finish reading or writing its entire batch of data after the cancellation. For these operations, the data
+     * processing charges for Amazon AppFlow apply. For the pricing information, see <a
+     * href="http://aws.amazon.com/appflow/pricing/">Amazon AppFlow pricing</a>.
+     * </p>
+     * </note>
+     * 
+     * @param cancelFlowExecutionsRequest
+     * @return Result of the CancelFlowExecutions operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request (such as the source or destination connector profile) is not found.
+     * @throws ThrottlingException
+     *         API calls have exceeded the maximum allowed API request rate per account and per Region.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @sample AmazonAppflow.CancelFlowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CancelFlowExecutionsResult cancelFlowExecutions(CancelFlowExecutionsRequest cancelFlowExecutionsRequest);
+
+    /**
+     * <p>
      * Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100
      * connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows,
      * you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector
@@ -140,6 +188,8 @@ public interface AmazonAppflow {
      *         An error occurred when authenticating with the connector endpoint.
      * @throws ConnectorServerException
      *         An error occurred when retrieving data from the connector endpoint.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
      * @sample AmazonAppflow.CreateFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateFlow" target="_top">AWS API
      *      Documentation</a>
@@ -390,8 +440,8 @@ public interface AmazonAppflow {
 
     /**
      * <p>
-     * Registers a new connector with your Amazon Web Services account. Before you can register the connector, you must
-     * deploy lambda in your account.
+     * Registers a new custom connector with your Amazon Web Services account. Before you can register the connector,
+     * you must deploy the associated AWS lambda function in your account.
      * </p>
      * 
      * @param registerConnectorRequest
@@ -420,6 +470,35 @@ public interface AmazonAppflow {
      *      Documentation</a>
      */
     RegisterConnectorResult registerConnector(RegisterConnectorRequest registerConnectorRequest);
+
+    /**
+     * <p>
+     * Resets metadata about your connector entities that Amazon AppFlow stored in its cache. Use this action when you
+     * want Amazon AppFlow to return the latest information about the data that you have in a source application.
+     * </p>
+     * <p>
+     * Amazon AppFlow returns metadata about your entities when you use the ListConnectorEntities or
+     * DescribeConnectorEntities actions. Following these actions, Amazon AppFlow caches the metadata to reduce the
+     * number of API requests that it must send to the source application. Amazon AppFlow automatically resets the cache
+     * once every hour, but you can use this action when you want to get the latest metadata right away.
+     * </p>
+     * 
+     * @param resetConnectorMetadataCacheRequest
+     * @return Result of the ResetConnectorMetadataCache operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request (such as the source or destination connector profile) is not found.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a flow with the given name already exists
+     *         within the account. Check for conflicting resource names and try again.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @sample AmazonAppflow.ResetConnectorMetadataCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ResetConnectorMetadataCacheResult resetConnectorMetadataCache(ResetConnectorMetadataCacheRequest resetConnectorMetadataCacheRequest);
 
     /**
      * <p>
@@ -489,7 +568,7 @@ public interface AmazonAppflow {
 
     /**
      * <p>
-     * Unregisters the custom connector registered in your account that matches the connectorLabel provided in the
+     * Unregisters the custom connector registered in your account that matches the connector label provided in the
      * request.
      * </p>
      * 
@@ -553,6 +632,51 @@ public interface AmazonAppflow {
 
     /**
      * <p>
+     * Updates a custom connector that you've previously registered. This operation updates the connector with one of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The latest version of the AWS Lambda function that's assigned to the connector
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new AWS Lambda function that you specify
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateConnectorRegistrationRequest
+     * @return Result of the UpdateConnectorRegistration operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a flow with the given name already exists
+     *         within the account. Check for conflicting resource names and try again.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request (such as the source or destination connector profile) is not found.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota (such as the number of flows) to be exceeded.
+     * @throws ThrottlingException
+     *         API calls have exceeded the maximum allowed API request rate per account and per Region.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ConnectorServerException
+     *         An error occurred when retrieving data from the connector endpoint.
+     * @throws ConnectorAuthenticationException
+     *         An error occurred when authenticating with the connector endpoint.
+     * @sample AmazonAppflow.UpdateConnectorRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConnectorRegistrationResult updateConnectorRegistration(UpdateConnectorRegistrationRequest updateConnectorRegistrationRequest);
+
+    /**
+     * <p>
      * Updates an existing flow.
      * </p>
      * 
@@ -573,6 +697,8 @@ public interface AmazonAppflow {
      *         An error occurred when retrieving data from the connector endpoint.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
      * @sample AmazonAppflow.UpdateFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateFlow" target="_top">AWS API
      *      Documentation</a>

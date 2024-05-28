@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /** The settings that you want to apply to the UHD input device. */
     private InputDeviceConfigurableSettings uhdDeviceSettings;
+    /** The Availability Zone you want associated with this input device. */
+    private String availabilityZone;
 
     /**
      * The settings that you want to apply to the HD input device.
@@ -172,6 +174,40 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The Availability Zone you want associated with this input device.
+     * 
+     * @param availabilityZone
+     *        The Availability Zone you want associated with this input device.
+     */
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    /**
+     * The Availability Zone you want associated with this input device.
+     * 
+     * @return The Availability Zone you want associated with this input device.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * The Availability Zone you want associated with this input device.
+     * 
+     * @param availabilityZone
+     *        The Availability Zone you want associated with this input device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInputDeviceRequest withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -190,7 +226,9 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getUhdDeviceSettings() != null)
-            sb.append("UhdDeviceSettings: ").append(getUhdDeviceSettings());
+            sb.append("UhdDeviceSettings: ").append(getUhdDeviceSettings()).append(",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +259,10 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getUhdDeviceSettings() != null && other.getUhdDeviceSettings().equals(this.getUhdDeviceSettings()) == false)
             return false;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +275,7 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getInputDeviceId() == null) ? 0 : getInputDeviceId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getUhdDeviceSettings() == null) ? 0 : getUhdDeviceSettings().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 

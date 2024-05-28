@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,27 +29,28 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share this resource is associated with.
      * </p>
      */
     private String resourceShareArn;
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.
      * </p>
      */
@@ -74,7 +75,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationTime;
     /**
      * <p>
-     * The date an time when the association was last updated.
+     * The date an time when the association between the resource and the resource share was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -100,12 +101,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource.
      * </p>
      * 
      * @param arn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource.
      */
 
@@ -115,11 +116,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of the resource.
      */
 
@@ -129,12 +130,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource.
      * </p>
      * 
      * @param arn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -146,11 +147,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      * 
      * @param type
-     *        The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     *        The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     *        case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string
+     *        <code>ec2:subnet</code>.
      */
 
     public void setType(String type) {
@@ -159,10 +163,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      * 
-     * @return The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     * @return The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     *         case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string
+     *         <code>ec2:subnet</code>.
      */
 
     public String getType() {
@@ -171,11 +178,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     * The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      * 
      * @param type
-     *        The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
+     *        The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     *        case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string
+     *        <code>ec2:subnet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,12 +196,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share this resource is associated with.
      * </p>
      * 
      * @param resourceShareArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource share this resource is associated with.
      */
 
@@ -201,11 +211,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share this resource is associated with.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of the resource share this resource is associated with.
      */
 
@@ -215,12 +225,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share this resource is associated with.
      * </p>
      * 
      * @param resourceShareArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource share this resource is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -232,12 +242,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource
      *        group.
      */
@@ -248,11 +258,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource
      *         group.
      */
@@ -263,12 +273,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.
      * </p>
      * 
      * @param resourceGroupArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource
      *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -420,11 +430,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date an time when the association was last updated.
+     * The date an time when the association between the resource and the resource share was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The date an time when the association was last updated.
+     *        The date an time when the association between the resource and the resource share was last updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -433,10 +443,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date an time when the association was last updated.
+     * The date an time when the association between the resource and the resource share was last updated.
      * </p>
      * 
-     * @return The date an time when the association was last updated.
+     * @return The date an time when the association between the resource and the resource share was last updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -445,11 +455,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date an time when the association was last updated.
+     * The date an time when the association between the resource and the resource share was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The date an time when the association was last updated.
+     *        The date an time when the association between the resource and the resource share was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

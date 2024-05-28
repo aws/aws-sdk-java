@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -235,7 +235,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private LogsLocation logs;
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does
+     * not get marked as completed.
      * </p>
      */
     private Integer timeoutInMinutes;
@@ -263,7 +264,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -1985,12 +1986,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does
+     * not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as
-     *        completed.
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it
+     *        does not get marked as completed.
      */
 
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
@@ -1999,11 +2001,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does
+     * not get marked as completed.
      * </p>
      * 
-     * @return How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as
-     *         completed.
+     * @return How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it
+     *         does not get marked as completed.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -2012,12 +2015,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it does
+     * not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as
-     *        completed.
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out this build if it
+     *        does not get marked as completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2130,7 +2134,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2151,7 +2155,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     *        If a user started the build, the user's name (for example, <code>MyUserName</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2177,7 +2181,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2197,7 +2201,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     *         If a user started the build, the user's name (for example, <code>MyUserName</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -2223,7 +2227,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     * If a user started the build, the user's name (for example, <code>MyUserName</code>).
      * </p>
      * </li>
      * <li>
@@ -2244,7 +2248,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        If an IAM user started the build, the user's name (for example, <code>MyUserName</code>).
+     *        If a user started the build, the user's name (for example, <code>MyUserName</code>).
      *        </p>
      *        </li>
      *        <li>

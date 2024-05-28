@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class ResetDistributionCacheResult extends com.amazonaws.AmazonWebService
     private String status;
     /**
      * <p>
-     * The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     * The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      * </p>
      */
     private java.util.Date createTime;
@@ -85,11 +85,11 @@ public class ResetDistributionCacheResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     * The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      * </p>
      * 
      * @param createTime
-     *        The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     *        The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -98,10 +98,10 @@ public class ResetDistributionCacheResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     * The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      * </p>
      * 
-     * @return The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     * @return The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      */
 
     public java.util.Date getCreateTime() {
@@ -110,11 +110,11 @@ public class ResetDistributionCacheResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     * The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      * </p>
      * 
      * @param createTime
-     *        The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.
+     *        The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

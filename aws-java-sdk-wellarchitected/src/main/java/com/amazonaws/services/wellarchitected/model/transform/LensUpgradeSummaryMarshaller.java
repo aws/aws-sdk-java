@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class LensUpgradeSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentLensVersion").build();
     private static final MarshallingInfo<String> LATESTLENSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestLensVersion").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+    private static final MarshallingInfo<String> RESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceName").build();
 
     private static final LensUpgradeSummaryMarshaller instance = new LensUpgradeSummaryMarshaller();
 
@@ -62,6 +66,8 @@ public class LensUpgradeSummaryMarshaller {
             protocolMarshaller.marshall(lensUpgradeSummary.getLensArn(), LENSARN_BINDING);
             protocolMarshaller.marshall(lensUpgradeSummary.getCurrentLensVersion(), CURRENTLENSVERSION_BINDING);
             protocolMarshaller.marshall(lensUpgradeSummary.getLatestLensVersion(), LATESTLENSVERSION_BINDING);
+            protocolMarshaller.marshall(lensUpgradeSummary.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(lensUpgradeSummary.getResourceName(), RESOURCENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

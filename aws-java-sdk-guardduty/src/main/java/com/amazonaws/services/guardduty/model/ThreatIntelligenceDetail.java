@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ThreatIntelligenceDetail implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.List<String> threatNames;
+    /**
+     * <p>
+     * SHA256 of the file that generated the finding.
+     * </p>
+     */
+    private String threatFileSha256;
 
     /**
      * <p>
@@ -152,6 +158,46 @@ public class ThreatIntelligenceDetail implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * SHA256 of the file that generated the finding.
+     * </p>
+     * 
+     * @param threatFileSha256
+     *        SHA256 of the file that generated the finding.
+     */
+
+    public void setThreatFileSha256(String threatFileSha256) {
+        this.threatFileSha256 = threatFileSha256;
+    }
+
+    /**
+     * <p>
+     * SHA256 of the file that generated the finding.
+     * </p>
+     * 
+     * @return SHA256 of the file that generated the finding.
+     */
+
+    public String getThreatFileSha256() {
+        return this.threatFileSha256;
+    }
+
+    /**
+     * <p>
+     * SHA256 of the file that generated the finding.
+     * </p>
+     * 
+     * @param threatFileSha256
+     *        SHA256 of the file that generated the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThreatIntelligenceDetail withThreatFileSha256(String threatFileSha256) {
+        setThreatFileSha256(threatFileSha256);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +212,9 @@ public class ThreatIntelligenceDetail implements Serializable, Cloneable, Struct
         if (getThreatListName() != null)
             sb.append("ThreatListName: ").append(getThreatListName()).append(",");
         if (getThreatNames() != null)
-            sb.append("ThreatNames: ").append(getThreatNames());
+            sb.append("ThreatNames: ").append(getThreatNames()).append(",");
+        if (getThreatFileSha256() != null)
+            sb.append("ThreatFileSha256: ").append(getThreatFileSha256());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +237,10 @@ public class ThreatIntelligenceDetail implements Serializable, Cloneable, Struct
             return false;
         if (other.getThreatNames() != null && other.getThreatNames().equals(this.getThreatNames()) == false)
             return false;
+        if (other.getThreatFileSha256() == null ^ this.getThreatFileSha256() == null)
+            return false;
+        if (other.getThreatFileSha256() != null && other.getThreatFileSha256().equals(this.getThreatFileSha256()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +251,7 @@ public class ThreatIntelligenceDetail implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getThreatListName() == null) ? 0 : getThreatListName().hashCode());
         hashCode = prime * hashCode + ((getThreatNames() == null) ? 0 : getThreatNames().hashCode());
+        hashCode = prime * hashCode + ((getThreatFileSha256() == null) ? 0 : getThreatFileSha256().hashCode());
         return hashCode;
     }
 

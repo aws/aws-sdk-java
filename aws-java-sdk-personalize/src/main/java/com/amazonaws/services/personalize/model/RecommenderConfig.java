@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,32 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      */
     private Integer minRecommendationRequestsPerSecond;
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     */
+    private TrainingDataConfig trainingDataConfig;
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns
+     * from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item
+     * in the recommendation response. For information about enabling metadata for a recommender, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     */
+    private Boolean enableMetadataWithRecommendations;
 
     /**
      * <p>
@@ -134,12 +156,16 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      * 
      * @param minRecommendationRequestsPerSecond
      *        Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize
-     *        will support.
+     *        will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using
+     *        Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      */
 
     public void setMinRecommendationRequestsPerSecond(Integer minRecommendationRequestsPerSecond) {
@@ -149,11 +175,16 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      * 
      * @return Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize
-     *         will support.
+     *         will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+     *         recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your
+     *         usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+     *         as necessary.
      */
 
     public Integer getMinRecommendationRequestsPerSecond() {
@@ -163,18 +194,178 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will
-     * support.
+     * support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting
+     * with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon
+     * CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * </p>
      * 
      * @param minRecommendationRequestsPerSecond
      *        Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize
-     *        will support.
+     *        will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using
+     *        Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RecommenderConfig withMinRecommendationRequestsPerSecond(Integer minRecommendationRequestsPerSecond) {
         setMinRecommendationRequestsPerSecond(minRecommendationRequestsPerSecond);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     * 
+     * @param trainingDataConfig
+     *        Specifies the training data configuration to use when creating a domain recommender.
+     */
+
+    public void setTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
+        this.trainingDataConfig = trainingDataConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     * 
+     * @return Specifies the training data configuration to use when creating a domain recommender.
+     */
+
+    public TrainingDataConfig getTrainingDataConfig() {
+        return this.trainingDataConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the training data configuration to use when creating a domain recommender.
+     * </p>
+     * 
+     * @param trainingDataConfig
+     *        Specifies the training data configuration to use when creating a domain recommender.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommenderConfig withTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
+        setTrainingDataConfig(trainingDataConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns
+     * from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item
+     * in the recommendation response. For information about enabling metadata for a recommender, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param enableMetadataWithRecommendations
+     *        Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the
+     *        columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data
+     *        for each item in the recommendation response. For information about enabling metadata for a recommender,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *        >Enabling metadata in recommendations for a recommender</a>.</p>
+     *        <p>
+     *        If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *        href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     */
+
+    public void setEnableMetadataWithRecommendations(Boolean enableMetadataWithRecommendations) {
+        this.enableMetadataWithRecommendations = enableMetadataWithRecommendations;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns
+     * from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item
+     * in the recommendation response. For information about enabling metadata for a recommender, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @return Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the
+     *         columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data
+     *         for each item in the recommendation response. For information about enabling metadata for a recommender,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *         >Enabling metadata in recommendations for a recommender</a>.</p>
+     *         <p>
+     *         If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *         href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     */
+
+    public Boolean getEnableMetadataWithRecommendations() {
+        return this.enableMetadataWithRecommendations;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns
+     * from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item
+     * in the recommendation response. For information about enabling metadata for a recommender, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param enableMetadataWithRecommendations
+     *        Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the
+     *        columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data
+     *        for each item in the recommendation response. For information about enabling metadata for a recommender,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *        >Enabling metadata in recommendations for a recommender</a>.</p>
+     *        <p>
+     *        If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *        href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommenderConfig withEnableMetadataWithRecommendations(Boolean enableMetadataWithRecommendations) {
+        setEnableMetadataWithRecommendations(enableMetadataWithRecommendations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns
+     * from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item
+     * in the recommendation response. For information about enabling metadata for a recommender, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @return Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the
+     *         columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data
+     *         for each item in the recommendation response. For information about enabling metadata for a recommender,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *         >Enabling metadata in recommendations for a recommender</a>.</p>
+     *         <p>
+     *         If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *         href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     */
+
+    public Boolean isEnableMetadataWithRecommendations() {
+        return this.enableMetadataWithRecommendations;
     }
 
     /**
@@ -192,7 +383,11 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
         if (getItemExplorationConfig() != null)
             sb.append("ItemExplorationConfig: ").append(getItemExplorationConfig()).append(",");
         if (getMinRecommendationRequestsPerSecond() != null)
-            sb.append("MinRecommendationRequestsPerSecond: ").append(getMinRecommendationRequestsPerSecond());
+            sb.append("MinRecommendationRequestsPerSecond: ").append(getMinRecommendationRequestsPerSecond()).append(",");
+        if (getTrainingDataConfig() != null)
+            sb.append("TrainingDataConfig: ").append(getTrainingDataConfig()).append(",");
+        if (getEnableMetadataWithRecommendations() != null)
+            sb.append("EnableMetadataWithRecommendations: ").append(getEnableMetadataWithRecommendations());
         sb.append("}");
         return sb.toString();
     }
@@ -216,6 +411,15 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
         if (other.getMinRecommendationRequestsPerSecond() != null
                 && other.getMinRecommendationRequestsPerSecond().equals(this.getMinRecommendationRequestsPerSecond()) == false)
             return false;
+        if (other.getTrainingDataConfig() == null ^ this.getTrainingDataConfig() == null)
+            return false;
+        if (other.getTrainingDataConfig() != null && other.getTrainingDataConfig().equals(this.getTrainingDataConfig()) == false)
+            return false;
+        if (other.getEnableMetadataWithRecommendations() == null ^ this.getEnableMetadataWithRecommendations() == null)
+            return false;
+        if (other.getEnableMetadataWithRecommendations() != null
+                && other.getEnableMetadataWithRecommendations().equals(this.getEnableMetadataWithRecommendations()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +430,8 @@ public class RecommenderConfig implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getItemExplorationConfig() == null) ? 0 : getItemExplorationConfig().hashCode());
         hashCode = prime * hashCode + ((getMinRecommendationRequestsPerSecond() == null) ? 0 : getMinRecommendationRequestsPerSecond().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataConfig() == null) ? 0 : getTrainingDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnableMetadataWithRecommendations() == null) ? 0 : getEnableMetadataWithRecommendations().hashCode());
         return hashCode;
     }
 

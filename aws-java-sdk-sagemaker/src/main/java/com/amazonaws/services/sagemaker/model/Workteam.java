@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NotificationConfiguration notificationConfiguration;
+    /**
+     * <p>
+     * Describes any access constraints that have been defined for Amazon S3 resources.
+     * </p>
+     */
+    private WorkerAccessConfiguration workerAccessConfiguration;
 
     /**
      * <p>
@@ -600,6 +606,46 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes any access constraints that have been defined for Amazon S3 resources.
+     * </p>
+     * 
+     * @param workerAccessConfiguration
+     *        Describes any access constraints that have been defined for Amazon S3 resources.
+     */
+
+    public void setWorkerAccessConfiguration(WorkerAccessConfiguration workerAccessConfiguration) {
+        this.workerAccessConfiguration = workerAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes any access constraints that have been defined for Amazon S3 resources.
+     * </p>
+     * 
+     * @return Describes any access constraints that have been defined for Amazon S3 resources.
+     */
+
+    public WorkerAccessConfiguration getWorkerAccessConfiguration() {
+        return this.workerAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Describes any access constraints that have been defined for Amazon S3 resources.
+     * </p>
+     * 
+     * @param workerAccessConfiguration
+     *        Describes any access constraints that have been defined for Amazon S3 resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workteam withWorkerAccessConfiguration(WorkerAccessConfiguration workerAccessConfiguration) {
+        setWorkerAccessConfiguration(workerAccessConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -630,7 +676,9 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedDate() != null)
             sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
         if (getNotificationConfiguration() != null)
-            sb.append("NotificationConfiguration: ").append(getNotificationConfiguration());
+            sb.append("NotificationConfiguration: ").append(getNotificationConfiguration()).append(",");
+        if (getWorkerAccessConfiguration() != null)
+            sb.append("WorkerAccessConfiguration: ").append(getWorkerAccessConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -685,6 +733,10 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNotificationConfiguration() != null && other.getNotificationConfiguration().equals(this.getNotificationConfiguration()) == false)
             return false;
+        if (other.getWorkerAccessConfiguration() == null ^ this.getWorkerAccessConfiguration() == null)
+            return false;
+        if (other.getWorkerAccessConfiguration() != null && other.getWorkerAccessConfiguration().equals(this.getWorkerAccessConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -703,6 +755,7 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkerAccessConfiguration() == null) ? 0 : getWorkerAccessConfiguration().hashCode());
         return hashCode;
     }
 

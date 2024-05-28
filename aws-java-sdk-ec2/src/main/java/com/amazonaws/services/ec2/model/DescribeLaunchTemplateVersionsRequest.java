@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -44,8 +44,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -176,14 +176,33 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
+    /**
+     * <p>
+     * If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean resolveAlias;
 
     /**
      * <p>
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -192,8 +211,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template ID or the launch template name, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -209,8 +228,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -218,8 +237,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * 
      * @return The ID of the launch template.</p>
      *         <p>
-     *         To describe one or more versions of a specified launch template, you must specify either the
-     *         <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     *         To describe one or more versions of a specified launch template, you must specify either the launch
+     *         template ID or the launch template name, but not both.
      *         </p>
      *         <p>
      *         To describe all the latest or default launch template versions in your account, you must omit this
@@ -235,8 +254,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -245,8 +264,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template ID or the launch template name, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -264,8 +283,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -274,8 +293,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template name or the launch template ID, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -291,8 +310,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -300,8 +319,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * 
      * @return The name of the launch template.</p>
      *         <p>
-     *         To describe one or more versions of a specified launch template, you must specify either the
-     *         <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *         To describe one or more versions of a specified launch template, you must specify either the launch
+     *         template name or the launch template ID, but not both.
      *         </p>
      *         <p>
      *         To describe all the latest or default launch template versions in your account, you must omit this
@@ -317,8 +336,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -327,8 +346,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template name or the launch template ID, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -1350,6 +1369,162 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param resolveAlias
+     *        If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID
+     *        is displayed in the response for <code>imageId</code>.</p>
+     *        <p>
+     *        If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the
+     *        parameter is displayed in the response for <code>imageId</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *        >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setResolveAlias(Boolean resolveAlias) {
+        this.resolveAlias = resolveAlias;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI
+     *         ID is displayed in the response for <code>imageId</code>.</p>
+     *         <p>
+     *         If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the
+     *         parameter is displayed in the response for <code>imageId</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *         >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getResolveAlias() {
+        return this.resolveAlias;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param resolveAlias
+     *        If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID
+     *        is displayed in the response for <code>imageId</code>.</p>
+     *        <p>
+     *        If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the
+     *        parameter is displayed in the response for <code>imageId</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *        >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLaunchTemplateVersionsRequest withResolveAlias(Boolean resolveAlias) {
+        setResolveAlias(resolveAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is
+     * displayed in the response for <code>imageId</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     * >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI
+     *         ID is displayed in the response for <code>imageId</code>.</p>
+     *         <p>
+     *         If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the
+     *         parameter is displayed in the response for <code>imageId</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id"
+     *         >Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isResolveAlias() {
+        return this.resolveAlias;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1387,7 +1562,9 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getResolveAlias() != null)
+            sb.append("ResolveAlias: ").append(getResolveAlias());
         sb.append("}");
         return sb.toString();
     }
@@ -1434,6 +1611,10 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
+        if (other.getResolveAlias() == null ^ this.getResolveAlias() == null)
+            return false;
+        if (other.getResolveAlias() != null && other.getResolveAlias().equals(this.getResolveAlias()) == false)
+            return false;
         return true;
     }
 
@@ -1450,6 +1631,7 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getResolveAlias() == null) ? 0 : getResolveAlias().hashCode());
         return hashCode;
     }
 

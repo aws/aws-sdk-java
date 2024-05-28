@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,6 +97,24 @@ public class ResolverEndpointJsonUnmarshaller implements Unmarshaller<ResolverEn
                 if (context.testExpression("ModificationTime", targetDepth)) {
                     context.nextToken();
                     resolverEndpoint.setModificationTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OutpostArn", targetDepth)) {
+                    context.nextToken();
+                    resolverEndpoint.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredInstanceType", targetDepth)) {
+                    context.nextToken();
+                    resolverEndpoint.setPreferredInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResolverEndpointType", targetDepth)) {
+                    context.nextToken();
+                    resolverEndpoint.setResolverEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Protocols", targetDepth)) {
+                    context.nextToken();
+                    resolverEndpoint.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

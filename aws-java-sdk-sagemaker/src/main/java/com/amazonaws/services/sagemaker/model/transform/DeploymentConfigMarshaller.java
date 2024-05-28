@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DeploymentConfigMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> BLUEGREENUPDATEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlueGreenUpdatePolicy").build();
+    private static final MarshallingInfo<StructuredPojo> ROLLINGUPDATEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RollingUpdatePolicy").build();
     private static final MarshallingInfo<StructuredPojo> AUTOROLLBACKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoRollbackConfiguration").build();
 
@@ -49,6 +51,7 @@ public class DeploymentConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(deploymentConfig.getBlueGreenUpdatePolicy(), BLUEGREENUPDATEPOLICY_BINDING);
+            protocolMarshaller.marshall(deploymentConfig.getRollingUpdatePolicy(), ROLLINGUPDATEPOLICY_BINDING);
             protocolMarshaller.marshall(deploymentConfig.getAutoRollbackConfiguration(), AUTOROLLBACKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,19 @@ public class AbstractAWSIAMRolesAnywhereAsync extends AbstractAWSIAMRolesAnywher
     @Override
     public java.util.concurrent.Future<CreateTrustAnchorResult> createTrustAnchorAsync(CreateTrustAnchorRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTrustAnchorRequest, CreateTrustAnchorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttributeMappingResult> deleteAttributeMappingAsync(DeleteAttributeMappingRequest request) {
+
+        return deleteAttributeMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAttributeMappingResult> deleteAttributeMappingAsync(DeleteAttributeMappingRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAttributeMappingRequest, DeleteAttributeMappingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -296,6 +309,45 @@ public class AbstractAWSIAMRolesAnywhereAsync extends AbstractAWSIAMRolesAnywher
     @Override
     public java.util.concurrent.Future<ListTrustAnchorsResult> listTrustAnchorsAsync(ListTrustAnchorsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrustAnchorsRequest, ListTrustAnchorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAttributeMappingResult> putAttributeMappingAsync(PutAttributeMappingRequest request) {
+
+        return putAttributeMappingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAttributeMappingResult> putAttributeMappingAsync(PutAttributeMappingRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAttributeMappingRequest, PutAttributeMappingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutNotificationSettingsResult> putNotificationSettingsAsync(PutNotificationSettingsRequest request) {
+
+        return putNotificationSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutNotificationSettingsResult> putNotificationSettingsAsync(PutNotificationSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutNotificationSettingsRequest, PutNotificationSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetNotificationSettingsResult> resetNotificationSettingsAsync(ResetNotificationSettingsRequest request) {
+
+        return resetNotificationSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetNotificationSettingsResult> resetNotificationSettingsAsync(ResetNotificationSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetNotificationSettingsRequest, ResetNotificationSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

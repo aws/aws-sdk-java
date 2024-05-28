@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,10 @@ public class AccountAssignmentMarshaller {
             .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
-    private static final MarshallingInfo<String> PRINCIPALTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalType").build();
     private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
+    private static final MarshallingInfo<String> PRINCIPALTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalType").build();
 
     private static final AccountAssignmentMarshaller instance = new AccountAssignmentMarshaller();
 
@@ -54,8 +54,8 @@ public class AccountAssignmentMarshaller {
         try {
             protocolMarshaller.marshall(accountAssignment.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(accountAssignment.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
-            protocolMarshaller.marshall(accountAssignment.getPrincipalType(), PRINCIPALTYPE_BINDING);
             protocolMarshaller.marshall(accountAssignment.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(accountAssignment.getPrincipalType(), PRINCIPALTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

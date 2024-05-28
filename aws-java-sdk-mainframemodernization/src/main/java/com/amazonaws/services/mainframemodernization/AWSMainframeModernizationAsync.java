@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,8 +68,8 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Creates a new application with given parameters. Requires an existing environment and application definition
-     * file.
+     * Creates a new application with given parameters. Requires an existing runtime environment and application
+     * definition file.
      * </p>
      * 
      * @param createApplicationRequest
@@ -82,8 +82,8 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Creates a new application with given parameters. Requires an existing environment and application definition
-     * file.
+     * Creates a new application with given parameters. Requires an existing runtime environment and application
+     * definition file.
      * </p>
      * 
      * @param createApplicationRequest
@@ -132,7 +132,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Creates and starts a deployment to deploy an application into an environment.
+     * Creates and starts a deployment to deploy an application into a runtime environment.
      * </p>
      * 
      * @param createDeploymentRequest
@@ -145,7 +145,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Creates and starts a deployment to deploy an application into an environment.
+     * Creates and starts a deployment to deploy an application into a runtime environment.
      * </p>
      * 
      * @param createDeploymentRequest
@@ -225,9 +225,10 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Deletes a specific application from a specified environment where it has been previously deployed. You cannot
-     * delete an environment using DeleteEnvironment, if any application has ever been deployed to it. This API removes
-     * the association of the application with the environment so you can delete the environment smoothly.
+     * Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot
+     * delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API
+     * removes the association of the application with the runtime environment so you can delete the environment
+     * smoothly.
      * </p>
      * 
      * @param deleteApplicationFromEnvironmentRequest
@@ -242,9 +243,10 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Deletes a specific application from a specified environment where it has been previously deployed. You cannot
-     * delete an environment using DeleteEnvironment, if any application has ever been deployed to it. This API removes
-     * the association of the application with the environment so you can delete the environment smoothly.
+     * Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot
+     * delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API
+     * removes the association of the application with the runtime environment so you can delete the environment
+     * smoothly.
      * </p>
      * 
      * @param deleteApplicationFromEnvironmentRequest
@@ -264,8 +266,8 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Deletes a specific environment. The environment cannot contain deployed applications. If it does, you must delete
-     * those applications before you delete the environment.
+     * Deletes a specific runtime environment. The environment cannot contain deployed applications. If it does, you
+     * must delete those applications before you delete the environment.
      * </p>
      * 
      * @param deleteEnvironmentRequest
@@ -278,8 +280,8 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Deletes a specific environment. The environment cannot contain deployed applications. If it does, you must delete
-     * those applications before you delete the environment.
+     * Deletes a specific runtime environment. The environment cannot contain deployed applications. If it does, you
+     * must delete those applications before you delete the environment.
      * </p>
      * 
      * @param deleteEnvironmentRequest
@@ -514,6 +516,37 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
+     * Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+     * </p>
+     * 
+     * @param getSignedBluinsightsUrlRequest
+     * @return A Java Future containing the result of the GetSignedBluinsightsUrl operation returned by the service.
+     * @sample AWSMainframeModernizationAsync.GetSignedBluinsightsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest getSignedBluinsightsUrlRequest);
+
+    /**
+     * <p>
+     * Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+     * </p>
+     * 
+     * @param getSignedBluinsightsUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSignedBluinsightsUrl operation returned by the service.
+     * @sample AWSMainframeModernizationAsyncHandler.GetSignedBluinsightsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest getSignedBluinsightsUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSignedBluinsightsUrlRequest, GetSignedBluinsightsUrlResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the application versions for a specific application.
      * </p>
      * 
@@ -546,7 +579,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
     /**
      * <p>
      * Lists the applications associated with a specific Amazon Web Services account. You can provide the unique
-     * identifier of a specific environment in a query parameter to see all applications associated with that
+     * identifier of a specific runtime environment in a query parameter to see all applications associated with that
      * environment.
      * </p>
      * 
@@ -561,7 +594,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
     /**
      * <p>
      * Lists the applications associated with a specific Amazon Web Services account. You can provide the unique
-     * identifier of a specific environment in a query parameter to see all applications associated with that
+     * identifier of a specific runtime environment in a query parameter to see all applications associated with that
      * environment.
      * </p>
      * 
@@ -581,7 +614,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
     /**
      * <p>
      * Lists all the available batch job definitions based on the batch job resources uploaded during the application
-     * creation. The listed batch job definitions can then be used to start a batch job.
+     * creation. You can use the batch job definitions in the list to start a batch job.
      * </p>
      * 
      * @param listBatchJobDefinitionsRequest
@@ -595,7 +628,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
     /**
      * <p>
      * Lists all the available batch job definitions based on the batch job resources uploaded during the application
-     * creation. The listed batch job definitions can then be used to start a batch job.
+     * creation. You can use the batch job definitions in the list to start a batch job.
      * </p>
      * 
      * @param listBatchJobDefinitionsRequest
@@ -644,6 +677,41 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
+     * Lists all the job steps for JCL files to restart a batch job. This is only applicable for Micro Focus engine with
+     * versions 8.0.6 and above.
+     * </p>
+     * 
+     * @param listBatchJobRestartPointsRequest
+     * @return A Java Future containing the result of the ListBatchJobRestartPoints operation returned by the service.
+     * @sample AWSMainframeModernizationAsync.ListBatchJobRestartPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBatchJobRestartPointsResult> listBatchJobRestartPointsAsync(
+            ListBatchJobRestartPointsRequest listBatchJobRestartPointsRequest);
+
+    /**
+     * <p>
+     * Lists all the job steps for JCL files to restart a batch job. This is only applicable for Micro Focus engine with
+     * versions 8.0.6 and above.
+     * </p>
+     * 
+     * @param listBatchJobRestartPointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBatchJobRestartPoints operation returned by the service.
+     * @sample AWSMainframeModernizationAsyncHandler.ListBatchJobRestartPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBatchJobRestartPointsResult> listBatchJobRestartPointsAsync(
+            ListBatchJobRestartPointsRequest listBatchJobRestartPointsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBatchJobRestartPointsRequest, ListBatchJobRestartPointsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the data set imports for the specified application.
      * </p>
      * 
@@ -676,8 +744,8 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
     /**
      * <p>
      * Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data
-     * sets are associated with applications deployed on environments. This is known as importing data sets. Currently,
-     * Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a
+     * sets are associated with applications deployed on runtime environments. This is known as importing data sets.
+     * Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a
      * href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html"
      * >CreateDataSetImportTask</a>.
      * </p>
@@ -693,8 +761,8 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
     /**
      * <p>
      * Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data
-     * sets are associated with applications deployed on environments. This is known as importing data sets. Currently,
-     * Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a
+     * sets are associated with applications deployed on runtime environments. This is known as importing data sets.
+     * Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a
      * href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html"
      * >CreateDataSetImportTask</a>.
      * </p>
@@ -1030,7 +1098,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Updates the configuration details for a specific environment.
+     * Updates the configuration details for a specific runtime environment.
      * </p>
      * 
      * @param updateEnvironmentRequest
@@ -1043,7 +1111,7 @@ public interface AWSMainframeModernizationAsync extends AWSMainframeModernizatio
 
     /**
      * <p>
-     * Updates the configuration details for a specific environment.
+     * Updates the configuration details for a specific runtime environment.
      * </p>
      * 
      * @param updateEnvironmentRequest

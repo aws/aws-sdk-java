@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,91 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DialRequest implements Serializable, Cloneable, StructuredPojo {
 
-    private java.util.Map<String, String> attributes;
-
     private String clientToken;
+
+    private String phoneNumber;
 
     private java.util.Date expirationTime;
 
-    private String phoneNumber;
+    private java.util.Map<String, String> attributes;
+
+    /**
+     * @param clientToken
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * @param clientToken
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DialRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * @param phoneNumber
+     */
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    /**
+     * @param phoneNumber
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DialRequest withPhoneNumber(String phoneNumber) {
+        setPhoneNumber(phoneNumber);
+        return this;
+    }
+
+    /**
+     * @param expirationTime
+     */
+
+    public void setExpirationTime(java.util.Date expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getExpirationTime() {
+        return this.expirationTime;
+    }
+
+    /**
+     * @param expirationTime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DialRequest withExpirationTime(java.util.Date expirationTime) {
+        setExpirationTime(expirationTime);
+        return this;
+    }
 
     /**
      * @return
@@ -91,84 +169,6 @@ public class DialRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @param clientToken
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * @param clientToken
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DialRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
-     * @param expirationTime
-     */
-
-    public void setExpirationTime(java.util.Date expirationTime) {
-        this.expirationTime = expirationTime;
-    }
-
-    /**
-     * @return
-     */
-
-    public java.util.Date getExpirationTime() {
-        return this.expirationTime;
-    }
-
-    /**
-     * @param expirationTime
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DialRequest withExpirationTime(java.util.Date expirationTime) {
-        setExpirationTime(expirationTime);
-        return this;
-    }
-
-    /**
-     * @param phoneNumber
-     */
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getPhoneNumber() {
-        return this.phoneNumber;
-    }
-
-    /**
-     * @param phoneNumber
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DialRequest withPhoneNumber(String phoneNumber) {
-        setPhoneNumber(phoneNumber);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -180,14 +180,14 @@ public class DialRequest implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAttributes() != null)
-            sb.append("Attributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getPhoneNumber() != null)
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getExpirationTime() != null)
             sb.append("ExpirationTime: ").append(getExpirationTime()).append(",");
-        if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***");
+        if (getAttributes() != null)
+            sb.append("Attributes: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -202,21 +202,21 @@ public class DialRequest implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof DialRequest == false)
             return false;
         DialRequest other = (DialRequest) obj;
-        if (other.getAttributes() == null ^ this.getAttributes() == null)
-            return false;
-        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
+            return false;
+        if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
             return false;
         if (other.getExpirationTime() == null ^ this.getExpirationTime() == null)
             return false;
         if (other.getExpirationTime() != null && other.getExpirationTime().equals(this.getExpirationTime()) == false)
             return false;
-        if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
-        if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
         return true;
     }
@@ -226,10 +226,10 @@ public class DialRequest implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getExpirationTime() == null) ? 0 : getExpirationTime().hashCode());
         hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getExpirationTime() == null) ? 0 : getExpirationTime().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 

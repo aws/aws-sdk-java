@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,16 @@ import com.amazonaws.services.codestarconnections.model.*;
  * <p>
  * <fullname>AWS CodeStar Connections</fullname>
  * <p>
- * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
- * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
+ * This Amazon Web Services CodeStar Connections API Reference provides descriptions and usage examples of the
+ * operations and data types for the Amazon Web Services CodeStar Connections API. You can use the connections API to
+ * work with connections and installations.
  * </p>
  * <p>
- * <i>Connections</i> are configurations that you use to connect AWS resources to external code repositories. Each
- * connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository
- * such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a
- * code change is made to your third-party code repository. Each connection is named and associated with a unique ARN
- * that is used to reference the connection.
+ * <i>Connections</i> are configurations that you use to connect Amazon Web Services resources to external code
+ * repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a
+ * third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers
+ * your pipeline when a code change is made to your third-party code repository. Each connection is named and associated
+ * with a unique ARN that is used to reference the connection.
  * </p>
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
@@ -99,28 +100,28 @@ import com.amazonaws.services.codestarconnections.model.*;
  * </li>
  * </ul>
  * <p>
- * You can work with tags in AWS CodeStar Connections by calling the following:
+ * You can work with tags in Amazon Web Services CodeStar Connections by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
- * CodeStar Connections.
+ * <a>ListTagsForResource</a>, which gets information about Amazon Web Services tags for a specified Amazon Resource
+ * Name (ARN) in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+ * <a>TagResource</a>, which adds or updates tags for a resource in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+ * <a>UntagResource</a>, which removes tags for a resource in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeStar Connections, see the <a
+ * For information about how to use Amazon Web Services CodeStar Connections, see the <a
  * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer Tools User
  * Guide</a>.
  * </p>
@@ -138,9 +139,9 @@ public interface AWSCodeStarconnections {
 
     /**
      * <p>
-     * Creates a connection that can then be given to other AWS services like CodePipeline so that it can access
-     * third-party code repositories. The connection is in pending status until the third-party connection handshake is
-     * completed from the console.
+     * Creates a connection that can then be given to other Amazon Web Services services like CodePipeline so that it
+     * can access third-party code repositories. The connection is in pending status until the third-party connection
+     * handshake is completed from the console.
      * </p>
      * 
      * @param createConnectionRequest
@@ -182,6 +183,64 @@ public interface AWSCodeStarconnections {
 
     /**
      * <p>
+     * Creates a link to a specified external Git repository. A repository link allows Git sync to monitor and sync
+     * changes to files in a specified Git repository.
+     * </p>
+     * 
+     * @param createRepositoryLinkRequest
+     * @return Result of the CreateRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @throws ResourceAlreadyExistsException
+     *         Unable to create resource. Resource already exists.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.CreateRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRepositoryLinkResult createRepositoryLink(CreateRepositoryLinkRequest createRepositoryLinkRequest);
+
+    /**
+     * <p>
+     * Creates a sync configuration which allows Amazon Web Services to sync content from a Git repository to update a
+     * specified Amazon Web Services resource. Parameters for the sync configuration are determined by the sync type.
+     * </p>
+     * 
+     * @param createSyncConfigurationRequest
+     * @return Result of the CreateSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @throws ResourceAlreadyExistsException
+     *         Unable to create resource. Resource already exists.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.CreateSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSyncConfigurationResult createSyncConfiguration(CreateSyncConfigurationRequest createSyncConfigurationRequest);
+
+    /**
+     * <p>
      * The connection to be deleted.
      * </p>
      * 
@@ -216,6 +275,62 @@ public interface AWSCodeStarconnections {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteHostResult deleteHost(DeleteHostRequest deleteHostRequest);
+
+    /**
+     * <p>
+     * Deletes the association between your connection and a specified external Git repository.
+     * </p>
+     * 
+     * @param deleteRepositoryLinkRequest
+     * @return Result of the DeleteRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws SyncConfigurationStillExistsException
+     *         Unable to continue. The sync blocker still exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UnsupportedProviderTypeException
+     *         The specified provider type is not supported for connections.
+     * @sample AWSCodeStarconnections.DeleteRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRepositoryLinkResult deleteRepositoryLink(DeleteRepositoryLinkRequest deleteRepositoryLinkRequest);
+
+    /**
+     * <p>
+     * Deletes the sync configuration for a specified repository and connection.
+     * </p>
+     * 
+     * @param deleteSyncConfigurationRequest
+     * @return Result of the DeleteSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.DeleteSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSyncConfigurationResult deleteSyncConfiguration(DeleteSyncConfigurationRequest deleteSyncConfigurationRequest);
 
     /**
      * <p>
@@ -254,11 +369,135 @@ public interface AWSCodeStarconnections {
 
     /**
      * <p>
+     * Returns details about a repository link. A repository link allows Git sync to monitor and sync changes from files
+     * in a specified Git repository.
+     * </p>
+     * 
+     * @param getRepositoryLinkRequest
+     * @return Result of the GetRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRepositoryLinkResult getRepositoryLink(GetRepositoryLinkRequest getRepositoryLinkRequest);
+
+    /**
+     * <p>
+     * Returns details about the sync status for a repository. A repository sync uses Git sync to push and pull changes
+     * from your remote repository.
+     * </p>
+     * 
+     * @param getRepositorySyncStatusRequest
+     * @return Result of the GetRepositorySyncStatus operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetRepositorySyncStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRepositorySyncStatusResult getRepositorySyncStatus(GetRepositorySyncStatusRequest getRepositorySyncStatusRequest);
+
+    /**
+     * <p>
+     * Returns the status of the sync with the Git repository for a specific Amazon Web Services resource.
+     * </p>
+     * 
+     * @param getResourceSyncStatusRequest
+     * @return Result of the GetResourceSyncStatus operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetResourceSyncStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourceSyncStatusResult getResourceSyncStatus(GetResourceSyncStatusRequest getResourceSyncStatusRequest);
+
+    /**
+     * <p>
+     * Returns a list of the most recent sync blockers.
+     * </p>
+     * 
+     * @param getSyncBlockerSummaryRequest
+     * @return Result of the GetSyncBlockerSummary operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetSyncBlockerSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSyncBlockerSummaryResult getSyncBlockerSummary(GetSyncBlockerSummaryRequest getSyncBlockerSummaryRequest);
+
+    /**
+     * <p>
+     * Returns details about a sync configuration, including the sync type and resource name. A sync configuration
+     * allows the configuration to sync (push and pull) changes from the remote repository for a specified branch in a
+     * Git repository.
+     * </p>
+     * 
+     * @param getSyncConfigurationRequest
+     * @return Result of the GetSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSyncConfigurationResult getSyncConfiguration(GetSyncConfigurationRequest getSyncConfigurationRequest);
+
+    /**
+     * <p>
      * Lists the connections associated with your account.
      * </p>
      * 
      * @param listConnectionsRequest
      * @return Result of the ListConnections operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
      * @sample AWSCodeStarconnections.ListConnections
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections"
      *      target="_top">AWS API Documentation</a>
@@ -277,6 +516,79 @@ public interface AWSCodeStarconnections {
      *      API Documentation</a>
      */
     ListHostsResult listHosts(ListHostsRequest listHostsRequest);
+
+    /**
+     * <p>
+     * Lists the repository links created for connections in your account.
+     * </p>
+     * 
+     * @param listRepositoryLinksRequest
+     * @return Result of the ListRepositoryLinks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.ListRepositoryLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRepositoryLinksResult listRepositoryLinks(ListRepositoryLinksRequest listRepositoryLinksRequest);
+
+    /**
+     * <p>
+     * Lists the repository sync definitions for repository links in your account.
+     * </p>
+     * 
+     * @param listRepositorySyncDefinitionsRequest
+     * @return Result of the ListRepositorySyncDefinitions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.ListRepositorySyncDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRepositorySyncDefinitionsResult listRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest listRepositorySyncDefinitionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of sync configurations for a specified repository.
+     * </p>
+     * 
+     * @param listSyncConfigurationsRequest
+     * @return Result of the ListSyncConfigurations operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.ListSyncConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSyncConfigurationsResult listSyncConfigurations(ListSyncConfigurationsRequest listSyncConfigurationsRequest);
 
     /**
      * <p>
@@ -312,7 +624,7 @@ public interface AWSCodeStarconnections {
 
     /**
      * <p>
-     * Removes tags from an AWS resource.
+     * Removes tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -345,6 +657,89 @@ public interface AWSCodeStarconnections {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateHostResult updateHost(UpdateHostRequest updateHostRequest);
+
+    /**
+     * <p>
+     * Updates the association between your connection and a specified external Git repository. A repository link allows
+     * Git sync to monitor and sync changes to files in a specified Git repository.
+     * </p>
+     * 
+     * @param updateRepositoryLinkRequest
+     * @return Result of the UpdateRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConditionalCheckFailedException
+     *         The conditional check failed. Try again later.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UpdateOutOfSyncException
+     *         The update is out of sync. Try syncing again.
+     * @sample AWSCodeStarconnections.UpdateRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRepositoryLinkResult updateRepositoryLink(UpdateRepositoryLinkRequest updateRepositoryLinkRequest);
+
+    /**
+     * <p>
+     * Allows you to update the status of a sync blocker, resolving the blocker and allowing syncing to continue.
+     * </p>
+     * 
+     * @param updateSyncBlockerRequest
+     * @return Result of the UpdateSyncBlocker operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws RetryLatestCommitFailedException
+     *         Retrying the latest commit failed. Try again later.
+     * @throws SyncBlockerDoesNotExistException
+     *         Unable to continue. The sync blocker does not exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.UpdateSyncBlocker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSyncBlockerResult updateSyncBlocker(UpdateSyncBlockerRequest updateSyncBlockerRequest);
+
+    /**
+     * <p>
+     * Updates the sync configuration for your connection and a specified external Git repository.
+     * </p>
+     * 
+     * @param updateSyncConfigurationRequest
+     * @return Result of the UpdateSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UpdateOutOfSyncException
+     *         The update is out of sync. Try syncing again.
+     * @sample AWSCodeStarconnections.UpdateSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSyncConfigurationResult updateSyncConfiguration(UpdateSyncConfigurationRequest updateSyncConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration defining the action to take when a speaker is flagged by the fraud detection system during a batch
- * speaker enrollment job, and the risk threshold to use for identification.
+ * The fraud detection configuration to be used during the batch speaker enrollment job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/EnrollmentJobFraudDetectionConfig"
@@ -44,6 +43,12 @@ public class EnrollmentJobFraudDetectionConfig implements Serializable, Cloneabl
      * </p>
      */
     private Integer riskThreshold;
+    /**
+     * <p>
+     * The identifier of watchlists against which fraud detection is performed.
+     * </p>
+     */
+    private java.util.List<String> watchlistIds;
 
     /**
      * <p>
@@ -170,6 +175,76 @@ public class EnrollmentJobFraudDetectionConfig implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The identifier of watchlists against which fraud detection is performed.
+     * </p>
+     * 
+     * @return The identifier of watchlists against which fraud detection is performed.
+     */
+
+    public java.util.List<String> getWatchlistIds() {
+        return watchlistIds;
+    }
+
+    /**
+     * <p>
+     * The identifier of watchlists against which fraud detection is performed.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifier of watchlists against which fraud detection is performed.
+     */
+
+    public void setWatchlistIds(java.util.Collection<String> watchlistIds) {
+        if (watchlistIds == null) {
+            this.watchlistIds = null;
+            return;
+        }
+
+        this.watchlistIds = new java.util.ArrayList<String>(watchlistIds);
+    }
+
+    /**
+     * <p>
+     * The identifier of watchlists against which fraud detection is performed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWatchlistIds(java.util.Collection)} or {@link #withWatchlistIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifier of watchlists against which fraud detection is performed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnrollmentJobFraudDetectionConfig withWatchlistIds(String... watchlistIds) {
+        if (this.watchlistIds == null) {
+            setWatchlistIds(new java.util.ArrayList<String>(watchlistIds.length));
+        }
+        for (String ele : watchlistIds) {
+            this.watchlistIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of watchlists against which fraud detection is performed.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifier of watchlists against which fraud detection is performed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnrollmentJobFraudDetectionConfig withWatchlistIds(java.util.Collection<String> watchlistIds) {
+        setWatchlistIds(watchlistIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +259,9 @@ public class EnrollmentJobFraudDetectionConfig implements Serializable, Cloneabl
         if (getFraudDetectionAction() != null)
             sb.append("FraudDetectionAction: ").append(getFraudDetectionAction()).append(",");
         if (getRiskThreshold() != null)
-            sb.append("RiskThreshold: ").append(getRiskThreshold());
+            sb.append("RiskThreshold: ").append(getRiskThreshold()).append(",");
+        if (getWatchlistIds() != null)
+            sb.append("WatchlistIds: ").append(getWatchlistIds());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +284,10 @@ public class EnrollmentJobFraudDetectionConfig implements Serializable, Cloneabl
             return false;
         if (other.getRiskThreshold() != null && other.getRiskThreshold().equals(this.getRiskThreshold()) == false)
             return false;
+        if (other.getWatchlistIds() == null ^ this.getWatchlistIds() == null)
+            return false;
+        if (other.getWatchlistIds() != null && other.getWatchlistIds().equals(this.getWatchlistIds()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +298,7 @@ public class EnrollmentJobFraudDetectionConfig implements Serializable, Cloneabl
 
         hashCode = prime * hashCode + ((getFraudDetectionAction() == null) ? 0 : getFraudDetectionAction().hashCode());
         hashCode = prime * hashCode + ((getRiskThreshold() == null) ? 0 : getRiskThreshold().hashCode());
+        hashCode = prime * hashCode + ((getWatchlistIds() == null) ? 0 : getWatchlistIds().hashCode());
         return hashCode;
     }
 

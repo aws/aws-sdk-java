@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * The name of the resource group used for the application.
@@ -92,6 +98,52 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String discoveryType;
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     */
+    private Boolean attachMissingPermission;
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the owner of the application.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application.
+     * </p>
+     * 
+     * @return The AWS account ID for the owner of the application.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the owner of the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInfo withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -566,6 +618,62 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @param attachMissingPermission
+     *        If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *        missing.
+     */
+
+    public void setAttachMissingPermission(Boolean attachMissingPermission) {
+        this.attachMissingPermission = attachMissingPermission;
+    }
+
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @return If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *         missing.
+     */
+
+    public Boolean getAttachMissingPermission() {
+        return this.attachMissingPermission;
+    }
+
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @param attachMissingPermission
+     *        If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *        missing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInfo withAttachMissingPermission(Boolean attachMissingPermission) {
+        setAttachMissingPermission(attachMissingPermission);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @return If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *         missing.
+     */
+
+    public Boolean isAttachMissingPermission() {
+        return this.attachMissingPermission;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -577,6 +685,8 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getResourceGroupName() != null)
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getLifeCycle() != null)
@@ -592,7 +702,9 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         if (getAutoConfigEnabled() != null)
             sb.append("AutoConfigEnabled: ").append(getAutoConfigEnabled()).append(",");
         if (getDiscoveryType() != null)
-            sb.append("DiscoveryType: ").append(getDiscoveryType());
+            sb.append("DiscoveryType: ").append(getDiscoveryType()).append(",");
+        if (getAttachMissingPermission() != null)
+            sb.append("AttachMissingPermission: ").append(getAttachMissingPermission());
         sb.append("}");
         return sb.toString();
     }
@@ -607,6 +719,10 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ApplicationInfo == false)
             return false;
         ApplicationInfo other = (ApplicationInfo) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getResourceGroupName() == null ^ this.getResourceGroupName() == null)
             return false;
         if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
@@ -639,6 +755,10 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDiscoveryType() != null && other.getDiscoveryType().equals(this.getDiscoveryType()) == false)
             return false;
+        if (other.getAttachMissingPermission() == null ^ this.getAttachMissingPermission() == null)
+            return false;
+        if (other.getAttachMissingPermission() != null && other.getAttachMissingPermission().equals(this.getAttachMissingPermission()) == false)
+            return false;
         return true;
     }
 
@@ -647,6 +767,7 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getLifeCycle() == null) ? 0 : getLifeCycle().hashCode());
         hashCode = prime * hashCode + ((getOpsItemSNSTopicArn() == null) ? 0 : getOpsItemSNSTopicArn().hashCode());
@@ -655,6 +776,7 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getRemarks() == null) ? 0 : getRemarks().hashCode());
         hashCode = prime * hashCode + ((getAutoConfigEnabled() == null) ? 0 : getAutoConfigEnabled().hashCode());
         hashCode = prime * hashCode + ((getDiscoveryType() == null) ? 0 : getDiscoveryType().hashCode());
+        hashCode = prime * hashCode + ((getAttachMissingPermission() == null) ? 0 : getAttachMissingPermission().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationDescription;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      */
     private String runtimeEnvironment;
@@ -74,8 +73,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
-     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      */
     private String applicationMode;
@@ -162,13 +161,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -178,12 +175,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     * @return The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -193,13 +188,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -211,13 +204,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -483,13 +474,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
-     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
      * @param applicationMode
-     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
-     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     *        Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *        Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @see ApplicationMode
      */
 
@@ -499,12 +490,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
-     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
-     * @return Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
-     *         Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * @return Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *         Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @see ApplicationMode
      */
 
@@ -514,13 +505,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
-     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
      * @param applicationMode
-     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
-     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     *        Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *        Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */
@@ -532,13 +523,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
-     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
      * @param applicationMode
-     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
-     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     *        Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *        Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */

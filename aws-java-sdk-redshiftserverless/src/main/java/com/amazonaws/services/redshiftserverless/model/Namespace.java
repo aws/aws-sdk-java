@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     */
+    private String adminPasswordSecretArn;
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     */
+    private String adminPasswordSecretKmsKeyId;
     /**
      * <p>
      * The username of the administrator for the first database created in the namespace.
@@ -98,6 +111,92 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     */
+
+    public void setAdminPasswordSecretArn(String adminPasswordSecretArn) {
+        this.adminPasswordSecretArn = adminPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     */
+
+    public String getAdminPasswordSecretArn() {
+        return this.adminPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Namespace withAdminPasswordSecretArn(String adminPasswordSecretArn) {
+        setAdminPasswordSecretArn(adminPasswordSecretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret.
+     */
+
+    public void setAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        this.adminPasswordSecretKmsKeyId = adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin
+     *         credentials secret.
+     */
+
+    public String getAdminPasswordSecretKmsKeyId() {
+        return this.adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Namespace withAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        setAdminPasswordSecretKmsKeyId(adminPasswordSecretKmsKeyId);
+        return this;
+    }
 
     /**
      * <p>
@@ -686,6 +785,10 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdminPasswordSecretArn() != null)
+            sb.append("AdminPasswordSecretArn: ").append(getAdminPasswordSecretArn()).append(",");
+        if (getAdminPasswordSecretKmsKeyId() != null)
+            sb.append("AdminPasswordSecretKmsKeyId: ").append(getAdminPasswordSecretKmsKeyId()).append(",");
         if (getAdminUsername() != null)
             sb.append("AdminUsername: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreationDate() != null)
@@ -722,6 +825,14 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Namespace == false)
             return false;
         Namespace other = (Namespace) obj;
+        if (other.getAdminPasswordSecretArn() == null ^ this.getAdminPasswordSecretArn() == null)
+            return false;
+        if (other.getAdminPasswordSecretArn() != null && other.getAdminPasswordSecretArn().equals(this.getAdminPasswordSecretArn()) == false)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() == null ^ this.getAdminPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() != null && other.getAdminPasswordSecretKmsKeyId().equals(this.getAdminPasswordSecretKmsKeyId()) == false)
+            return false;
         if (other.getAdminUsername() == null ^ this.getAdminUsername() == null)
             return false;
         if (other.getAdminUsername() != null && other.getAdminUsername().equals(this.getAdminUsername()) == false)
@@ -774,6 +885,8 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdminPasswordSecretArn() == null) ? 0 : getAdminPasswordSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getAdminPasswordSecretKmsKeyId() == null) ? 0 : getAdminPasswordSecretKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAdminUsername() == null) ? 0 : getAdminUsername().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getDbName() == null) ? 0 : getDbName().hashCode());

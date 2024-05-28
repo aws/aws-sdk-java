@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,18 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<LineItemAssetInformation> assetInformationList;
+    /**
+     * <p>
+     * The ID of the previous line item.
+     * </p>
+     */
+    private String previousLineItemId;
+    /**
+     * <p>
+     * The ID of the previous order.
+     * </p>
+     */
+    private String previousOrderId;
 
     /**
      * <p>
@@ -355,6 +367,86 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the previous line item.
+     * </p>
+     * 
+     * @param previousLineItemId
+     *        The ID of the previous line item.
+     */
+
+    public void setPreviousLineItemId(String previousLineItemId) {
+        this.previousLineItemId = previousLineItemId;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous line item.
+     * </p>
+     * 
+     * @return The ID of the previous line item.
+     */
+
+    public String getPreviousLineItemId() {
+        return this.previousLineItemId;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous line item.
+     * </p>
+     * 
+     * @param previousLineItemId
+     *        The ID of the previous line item.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LineItem withPreviousLineItemId(String previousLineItemId) {
+        setPreviousLineItemId(previousLineItemId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous order.
+     * </p>
+     * 
+     * @param previousOrderId
+     *        The ID of the previous order.
+     */
+
+    public void setPreviousOrderId(String previousOrderId) {
+        this.previousOrderId = previousOrderId;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous order.
+     * </p>
+     * 
+     * @return The ID of the previous order.
+     */
+
+    public String getPreviousOrderId() {
+        return this.previousOrderId;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous order.
+     * </p>
+     * 
+     * @param previousOrderId
+     *        The ID of the previous order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LineItem withPreviousOrderId(String previousOrderId) {
+        setPreviousOrderId(previousOrderId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -377,7 +469,11 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
         if (getShipmentInformation() != null)
             sb.append("ShipmentInformation: ").append(getShipmentInformation()).append(",");
         if (getAssetInformationList() != null)
-            sb.append("AssetInformationList: ").append(getAssetInformationList());
+            sb.append("AssetInformationList: ").append(getAssetInformationList()).append(",");
+        if (getPreviousLineItemId() != null)
+            sb.append("PreviousLineItemId: ").append(getPreviousLineItemId()).append(",");
+        if (getPreviousOrderId() != null)
+            sb.append("PreviousOrderId: ").append(getPreviousOrderId());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +512,14 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAssetInformationList() != null && other.getAssetInformationList().equals(this.getAssetInformationList()) == false)
             return false;
+        if (other.getPreviousLineItemId() == null ^ this.getPreviousLineItemId() == null)
+            return false;
+        if (other.getPreviousLineItemId() != null && other.getPreviousLineItemId().equals(this.getPreviousLineItemId()) == false)
+            return false;
+        if (other.getPreviousOrderId() == null ^ this.getPreviousOrderId() == null)
+            return false;
+        if (other.getPreviousOrderId() != null && other.getPreviousOrderId().equals(this.getPreviousOrderId()) == false)
+            return false;
         return true;
     }
 
@@ -430,6 +534,8 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getShipmentInformation() == null) ? 0 : getShipmentInformation().hashCode());
         hashCode = prime * hashCode + ((getAssetInformationList() == null) ? 0 : getAssetInformationList().hashCode());
+        hashCode = prime * hashCode + ((getPreviousLineItemId() == null) ? 0 : getPreviousLineItemId().hashCode());
+        hashCode = prime * hashCode + ((getPreviousOrderId() == null) ? 0 : getPreviousOrderId().hashCode());
         return hashCode;
     }
 

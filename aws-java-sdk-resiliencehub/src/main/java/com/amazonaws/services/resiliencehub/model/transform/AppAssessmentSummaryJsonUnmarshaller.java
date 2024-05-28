@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,10 @@ public class AppAssessmentSummaryJsonUnmarshaller implements Unmarshaller<AppAss
                     context.nextToken();
                     appAssessmentSummary.setCost(CostJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("driftStatus", targetDepth)) {
+                    context.nextToken();
+                    appAssessmentSummary.setDriftStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
                     appAssessmentSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -95,6 +99,10 @@ public class AppAssessmentSummaryJsonUnmarshaller implements Unmarshaller<AppAss
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     appAssessmentSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("versionName", targetDepth)) {
+                    context.nextToken();
+                    appAssessmentSummary.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

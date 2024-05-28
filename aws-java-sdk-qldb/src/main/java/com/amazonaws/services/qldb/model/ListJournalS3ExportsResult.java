@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ public class ListJournalS3ExportsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web
-     * Services account and Region.
+     * The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and
+     * Region.
      * </p>
      */
     private java.util.List<JournalS3ExportDescription> journalS3Exports;
@@ -50,12 +50,12 @@ public class ListJournalS3ExportsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web
-     * Services account and Region.
+     * The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and
+     * Region.
      * </p>
      * 
-     * @return The array of journal export job descriptions for all ledgers that are associated with the current Amazon
-     *         Web Services account and Region.
+     * @return The journal export jobs for all ledgers that are associated with the current Amazon Web Services account
+     *         and Region.
      */
 
     public java.util.List<JournalS3ExportDescription> getJournalS3Exports() {
@@ -64,13 +64,13 @@ public class ListJournalS3ExportsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web
-     * Services account and Region.
+     * The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and
+     * Region.
      * </p>
      * 
      * @param journalS3Exports
-     *        The array of journal export job descriptions for all ledgers that are associated with the current Amazon
-     *        Web Services account and Region.
+     *        The journal export jobs for all ledgers that are associated with the current Amazon Web Services account
+     *        and Region.
      */
 
     public void setJournalS3Exports(java.util.Collection<JournalS3ExportDescription> journalS3Exports) {
@@ -84,8 +84,8 @@ public class ListJournalS3ExportsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web
-     * Services account and Region.
+     * The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and
+     * Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -94,8 +94,8 @@ public class ListJournalS3ExportsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param journalS3Exports
-     *        The array of journal export job descriptions for all ledgers that are associated with the current Amazon
-     *        Web Services account and Region.
+     *        The journal export jobs for all ledgers that are associated with the current Amazon Web Services account
+     *        and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,13 +111,13 @@ public class ListJournalS3ExportsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web
-     * Services account and Region.
+     * The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and
+     * Region.
      * </p>
      * 
      * @param journalS3Exports
-     *        The array of journal export job descriptions for all ledgers that are associated with the current Amazon
-     *        Web Services account and Region.
+     *        The journal export jobs for all ledgers that are associated with the current Amazon Web Services account
+     *        and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,14 +38,14 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this value is not present.
+     * If <code>nextToken</code> indicates that there are more items, this value is not present.
      * </p>
      */
     private java.util.Date lastEvaluatedTime;
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      */
     private String nextToken;
@@ -142,7 +142,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this value is not present.
+     * If <code>nextToken</code> indicates that there are more items, this value is not present.
      * </p>
      * 
      * @param lastEvaluatedTime
@@ -150,7 +150,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were
      *        retrieved.</p>
      *        <p>
-     *        If <code>nextToken</code> indicates that there are more results, this value is not present.
+     *        If <code>nextToken</code> indicates that there are more items, this value is not present.
      */
 
     public void setLastEvaluatedTime(java.util.Date lastEvaluatedTime) {
@@ -163,14 +163,14 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this value is not present.
+     * If <code>nextToken</code> indicates that there are more items, this value is not present.
      * </p>
      * 
      * @return The last date and time for the events, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were
      *         retrieved.</p>
      *         <p>
-     *         If <code>nextToken</code> indicates that there are more results, this value is not present.
+     *         If <code>nextToken</code> indicates that there are more items, this value is not present.
      */
 
     public java.util.Date getLastEvaluatedTime() {
@@ -183,7 +183,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.
      * </p>
      * <p>
-     * If <code>nextToken</code> indicates that there are more results, this value is not present.
+     * If <code>nextToken</code> indicates that there are more items, this value is not present.
      * </p>
      * 
      * @param lastEvaluatedTime
@@ -191,7 +191,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were
      *        retrieved.</p>
      *        <p>
-     *        If <code>nextToken</code> indicates that there are more results, this value is not present.
+     *        If <code>nextToken</code> indicates that there are more items, this value is not present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,13 +202,13 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -217,12 +217,12 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
-     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -231,13 +231,13 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

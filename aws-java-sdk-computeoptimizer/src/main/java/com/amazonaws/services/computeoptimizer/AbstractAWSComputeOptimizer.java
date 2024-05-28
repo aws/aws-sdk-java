@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,17 @@ public class AbstractAWSComputeOptimizer implements AWSComputeOptimizer {
     }
 
     @Override
+    public ExportECSServiceRecommendationsResult exportECSServiceRecommendations(ExportECSServiceRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportLambdaFunctionRecommendationsResult exportLambdaFunctionRecommendations(ExportLambdaFunctionRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExportLicenseRecommendationsResult exportLicenseRecommendations(ExportLicenseRecommendationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,6 +88,17 @@ public class AbstractAWSComputeOptimizer implements AWSComputeOptimizer {
     }
 
     @Override
+    public GetECSServiceRecommendationProjectedMetricsResult getECSServiceRecommendationProjectedMetrics(
+            GetECSServiceRecommendationProjectedMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetECSServiceRecommendationsResult getECSServiceRecommendations(GetECSServiceRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEffectiveRecommendationPreferencesResult getEffectiveRecommendationPreferences(GetEffectiveRecommendationPreferencesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +115,11 @@ public class AbstractAWSComputeOptimizer implements AWSComputeOptimizer {
 
     @Override
     public GetLambdaFunctionRecommendationsResult getLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLicenseRecommendationsResult getLicenseRecommendations(GetLicenseRecommendationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

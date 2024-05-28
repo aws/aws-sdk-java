@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The next item following a partial list of returned items. For example, if a request is made to return maxResults
+     * The next item following a partial list of returned items. For example, if a request is made to return MaxResults
      * number of items, NextToken allows you to return more items in your list starting at the location pointed to by
      * the next token.
      * </p>
@@ -75,6 +75,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
      * </p>
      * </li>
@@ -110,7 +115,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      * </p>
      * </li>
      * <li>
@@ -121,6 +136,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
      * </p>
      * </li>
      * <li>
@@ -156,17 +176,44 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Date byCompleteAfter;
+    /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     */
+    private String byParentJobId;
+    /**
+     * <p>
+     * This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value
+     * you input.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>.
+     * </p>
+     * <p>
+     * View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list
+     * of accepted strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     */
+    private String byMessageCategory;
 
     /**
      * <p>
-     * The next item following a partial list of returned items. For example, if a request is made to return maxResults
+     * The next item following a partial list of returned items. For example, if a request is made to return MaxResults
      * number of items, NextToken allows you to return more items in your list starting at the location pointed to by
      * the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        maxResults number of items, NextToken allows you to return more items in your list starting at the
+     *        MaxResults number of items, NextToken allows you to return more items in your list starting at the
      *        location pointed to by the next token.
      */
 
@@ -176,13 +223,13 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The next item following a partial list of returned items. For example, if a request is made to return maxResults
+     * The next item following a partial list of returned items. For example, if a request is made to return MaxResults
      * number of items, NextToken allows you to return more items in your list starting at the location pointed to by
      * the next token.
      * </p>
      * 
      * @return The next item following a partial list of returned items. For example, if a request is made to return
-     *         maxResults number of items, NextToken allows you to return more items in your list starting at the
+     *         MaxResults number of items, NextToken allows you to return more items in your list starting at the
      *         location pointed to by the next token.
      */
 
@@ -192,14 +239,14 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The next item following a partial list of returned items. For example, if a request is made to return maxResults
+     * The next item following a partial list of returned items. For example, if a request is made to return MaxResults
      * number of items, NextToken allows you to return more items in your list starting at the location pointed to by
      * the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        maxResults number of items, NextToken allows you to return more items in your list starting at the
+     *        MaxResults number of items, NextToken allows you to return more items in your list starting at the
      *        location pointed to by the next token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -440,6 +487,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
      * </p>
      * </li>
@@ -475,7 +527,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      * </p>
      * </li>
      * <li>
@@ -486,6 +548,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
      * </p>
      * </li>
      * <li>
@@ -501,6 +568,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
      *        </p>
      *        </li>
      *        <li>
@@ -540,7 +612,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      *        </p>
      *        </li>
      *        <li>
@@ -551,6 +633,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
      *        </p>
      *        </li>
      *        <li>
@@ -572,6 +659,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
      * </p>
      * </li>
      * <li>
@@ -611,7 +703,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      * </p>
      * </li>
      * <li>
@@ -626,6 +728,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>VirtualMachine</code> for virtual machines
      * </p>
      * </li>
@@ -636,6 +743,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>Aurora</code> for Amazon Aurora
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CloudFormation</code> for CloudFormation
      *         </p>
      *         </li>
      *         <li>
@@ -675,7 +787,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
+     *         <code>Redshift</code> for Amazon Redshift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      *         </p>
      *         </li>
      *         <li>
@@ -686,6 +808,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>S3</code> for Amazon S3
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Timestream</code> for Amazon Timestream
      *         </p>
      *         </li>
      *         <li>
@@ -707,6 +834,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
      * </p>
      * </li>
      * <li>
@@ -746,7 +878,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      * </p>
      * </li>
      * <li>
@@ -757,6 +899,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
      * </p>
      * </li>
      * <li>
@@ -772,6 +919,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
      *        </p>
      *        </li>
      *        <li>
@@ -811,7 +963,17 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
      *        </p>
      *        </li>
      *        <li>
@@ -822,6 +984,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
      *        </p>
      *        </li>
      *        <li>
@@ -1010,6 +1177,173 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     * 
+     * @param byParentJobId
+     *        This is a filter to list child (nested) jobs based on parent job ID.
+     */
+
+    public void setByParentJobId(String byParentJobId) {
+        this.byParentJobId = byParentJobId;
+    }
+
+    /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     * 
+     * @return This is a filter to list child (nested) jobs based on parent job ID.
+     */
+
+    public String getByParentJobId() {
+        return this.byParentJobId;
+    }
+
+    /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     * 
+     * @param byParentJobId
+     *        This is a filter to list child (nested) jobs based on parent job ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCopyJobsRequest withByParentJobId(String byParentJobId) {
+        setByParentJobId(byParentJobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value
+     * you input.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>.
+     * </p>
+     * <p>
+     * View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list
+     * of accepted strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     * 
+     * @param byMessageCategory
+     *        This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the
+     *        value you input.</p>
+     *        <p>
+     *        Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+     *        and <code>INVALIDPARAMETERS</code>.
+     *        </p>
+     *        <p>
+     *        View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a
+     *        list of accepted strings.
+     *        </p>
+     *        <p>
+     *        The the value ANY returns count of all message categories.
+     *        </p>
+     *        <p>
+     *        <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     */
+
+    public void setByMessageCategory(String byMessageCategory) {
+        this.byMessageCategory = byMessageCategory;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value
+     * you input.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>.
+     * </p>
+     * <p>
+     * View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list
+     * of accepted strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     * 
+     * @return This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches
+     *         the value you input.</p>
+     *         <p>
+     *         Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+     *         and <code>INVALIDPARAMETERS</code>.
+     *         </p>
+     *         <p>
+     *         View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for
+     *         a list of accepted strings.
+     *         </p>
+     *         <p>
+     *         The the value ANY returns count of all message categories.
+     *         </p>
+     *         <p>
+     *         <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     */
+
+    public String getByMessageCategory() {
+        return this.byMessageCategory;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value
+     * you input.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>.
+     * </p>
+     * <p>
+     * View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list
+     * of accepted strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     * 
+     * @param byMessageCategory
+     *        This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the
+     *        value you input.</p>
+     *        <p>
+     *        Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+     *        and <code>INVALIDPARAMETERS</code>.
+     *        </p>
+     *        <p>
+     *        View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a
+     *        list of accepted strings.
+     *        </p>
+     *        <p>
+     *        The the value ANY returns count of all message categories.
+     *        </p>
+     *        <p>
+     *        <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCopyJobsRequest withByMessageCategory(String byMessageCategory) {
+        setByMessageCategory(byMessageCategory);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1042,7 +1376,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getByCompleteBefore() != null)
             sb.append("ByCompleteBefore: ").append(getByCompleteBefore()).append(",");
         if (getByCompleteAfter() != null)
-            sb.append("ByCompleteAfter: ").append(getByCompleteAfter());
+            sb.append("ByCompleteAfter: ").append(getByCompleteAfter()).append(",");
+        if (getByParentJobId() != null)
+            sb.append("ByParentJobId: ").append(getByParentJobId()).append(",");
+        if (getByMessageCategory() != null)
+            sb.append("ByMessageCategory: ").append(getByMessageCategory());
         sb.append("}");
         return sb.toString();
     }
@@ -1101,6 +1439,14 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getByCompleteAfter() != null && other.getByCompleteAfter().equals(this.getByCompleteAfter()) == false)
             return false;
+        if (other.getByParentJobId() == null ^ this.getByParentJobId() == null)
+            return false;
+        if (other.getByParentJobId() != null && other.getByParentJobId().equals(this.getByParentJobId()) == false)
+            return false;
+        if (other.getByMessageCategory() == null ^ this.getByMessageCategory() == null)
+            return false;
+        if (other.getByMessageCategory() != null && other.getByMessageCategory().equals(this.getByMessageCategory()) == false)
+            return false;
         return true;
     }
 
@@ -1120,6 +1466,8 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
         hashCode = prime * hashCode + ((getByCompleteBefore() == null) ? 0 : getByCompleteBefore().hashCode());
         hashCode = prime * hashCode + ((getByCompleteAfter() == null) ? 0 : getByCompleteAfter().hashCode());
+        hashCode = prime * hashCode + ((getByParentJobId() == null) ? 0 : getByParentJobId().hashCode());
+        hashCode = prime * hashCode + ((getByMessageCategory() == null) ? 0 : getByMessageCategory().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For information about customizing web requests and responses, see <a
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
- * requests and responses in WAF</a> in the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+ * requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CustomResponse" target="_top">AWS API
@@ -42,8 +41,7 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For a list of status codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private Integer responseCode;
@@ -59,12 +57,13 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
     private String customResponseBodyKey;
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      */
     private java.util.List<CustomHTTPHeader> responseHeaders;
@@ -76,8 +75,7 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For a list of status codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param responseCode
@@ -85,8 +83,7 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For a list of status codes that you can use in your custom responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html"
-     *        >Supported status codes for custom response</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        >Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      */
 
     public void setResponseCode(Integer responseCode) {
@@ -100,16 +97,14 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For a list of status codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @return The HTTP status code to return to the client. </p>
      *         <p>
      *         For a list of status codes that you can use in your custom responses, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html"
-     *         >Supported status codes for custom response</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *         >Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      */
 
     public Integer getResponseCode() {
@@ -123,8 +118,7 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For a list of status codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param responseCode
@@ -132,8 +126,7 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For a list of status codes that you can use in your custom responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html"
-     *        >Supported status codes for custom response</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        >Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,19 +201,21 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * 
-     * @return The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     * @return The HTTP headers to use in the response. You can specify any header name except for
+     *         <code>content-type</code>. Duplicate header names are not allowed.</p>
      *         <p>
      *         For information about the limits on count and size for custom request and response settings, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *         Developer Guide</i>.
      */
 
     public java.util.List<CustomHTTPHeader> getResponseHeaders() {
@@ -229,20 +224,22 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * 
      * @param responseHeaders
-     *        The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     *        The HTTP headers to use in the response. You can specify any header name except for
+     *        <code>content-type</code>. Duplicate header names are not allowed.</p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *        Developer Guide</i>.
      */
 
     public void setResponseHeaders(java.util.Collection<CustomHTTPHeader> responseHeaders) {
@@ -256,12 +253,13 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -270,11 +268,12 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param responseHeaders
-     *        The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     *        The HTTP headers to use in the response. You can specify any header name except for
+     *        <code>content-type</code>. Duplicate header names are not allowed.</p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,20 +289,22 @@ public class CustomResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The HTTP headers to use in the response. Duplicate header names are not allowed.
+     * The HTTP headers to use in the response. You can specify any header name except for <code>content-type</code>.
+     * Duplicate header names are not allowed.
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * 
      * @param responseHeaders
-     *        The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+     *        The HTTP headers to use in the response. You can specify any header name except for
+     *        <code>content-type</code>. Duplicate header names are not allowed.</p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

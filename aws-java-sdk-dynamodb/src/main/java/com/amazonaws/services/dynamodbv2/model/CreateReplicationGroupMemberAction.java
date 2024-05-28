@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,14 @@ public class CreateReplicationGroupMemberAction implements Serializable, Cloneab
      * </p>
      */
     private ProvisionedThroughputOverride provisionedThroughputOverride;
+    /**
+     * <p>
+     * The maximum on-demand throughput settings for the specified replica table being created. You can only modify
+     * <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for individual
+     * replica tables.
+     * </p>
+     */
+    private OnDemandThroughputOverride onDemandThroughputOverride;
     /**
      * <p>
      * Replica-specific global secondary index settings.
@@ -202,6 +210,58 @@ public class CreateReplicationGroupMemberAction implements Serializable, Cloneab
 
     /**
      * <p>
+     * The maximum on-demand throughput settings for the specified replica table being created. You can only modify
+     * <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for individual
+     * replica tables.
+     * </p>
+     * 
+     * @param onDemandThroughputOverride
+     *        The maximum on-demand throughput settings for the specified replica table being created. You can only
+     *        modify <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for
+     *        individual replica tables.
+     */
+
+    public void setOnDemandThroughputOverride(OnDemandThroughputOverride onDemandThroughputOverride) {
+        this.onDemandThroughputOverride = onDemandThroughputOverride;
+    }
+
+    /**
+     * <p>
+     * The maximum on-demand throughput settings for the specified replica table being created. You can only modify
+     * <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for individual
+     * replica tables.
+     * </p>
+     * 
+     * @return The maximum on-demand throughput settings for the specified replica table being created. You can only
+     *         modify <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for
+     *         individual replica tables.
+     */
+
+    public OnDemandThroughputOverride getOnDemandThroughputOverride() {
+        return this.onDemandThroughputOverride;
+    }
+
+    /**
+     * <p>
+     * The maximum on-demand throughput settings for the specified replica table being created. You can only modify
+     * <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for individual
+     * replica tables.
+     * </p>
+     * 
+     * @param onDemandThroughputOverride
+     *        The maximum on-demand throughput settings for the specified replica table being created. You can only
+     *        modify <code>MaxReadRequestUnits</code>, because you can't modify <code>MaxWriteRequestUnits</code> for
+     *        individual replica tables.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupMemberAction withOnDemandThroughputOverride(OnDemandThroughputOverride onDemandThroughputOverride) {
+        setOnDemandThroughputOverride(onDemandThroughputOverride);
+        return this;
+    }
+
+    /**
+     * <p>
      * Replica-specific global secondary index settings.
      * </p>
      * 
@@ -347,6 +407,8 @@ public class CreateReplicationGroupMemberAction implements Serializable, Cloneab
             sb.append("KMSMasterKeyId: ").append(getKMSMasterKeyId()).append(",");
         if (getProvisionedThroughputOverride() != null)
             sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride()).append(",");
+        if (getOnDemandThroughputOverride() != null)
+            sb.append("OnDemandThroughputOverride: ").append(getOnDemandThroughputOverride()).append(",");
         if (getGlobalSecondaryIndexes() != null)
             sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
         if (getTableClassOverride() != null)
@@ -378,6 +440,10 @@ public class CreateReplicationGroupMemberAction implements Serializable, Cloneab
         if (other.getProvisionedThroughputOverride() != null
                 && other.getProvisionedThroughputOverride().equals(this.getProvisionedThroughputOverride()) == false)
             return false;
+        if (other.getOnDemandThroughputOverride() == null ^ this.getOnDemandThroughputOverride() == null)
+            return false;
+        if (other.getOnDemandThroughputOverride() != null && other.getOnDemandThroughputOverride().equals(this.getOnDemandThroughputOverride()) == false)
+            return false;
         if (other.getGlobalSecondaryIndexes() == null ^ this.getGlobalSecondaryIndexes() == null)
             return false;
         if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false)
@@ -397,6 +463,7 @@ public class CreateReplicationGroupMemberAction implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getKMSMasterKeyId() == null) ? 0 : getKMSMasterKeyId().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputOverride() == null) ? 0 : getProvisionedThroughputOverride().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughputOverride() == null) ? 0 : getOnDemandThroughputOverride().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getTableClassOverride() == null) ? 0 : getTableClassOverride().hashCode());
         return hashCode;

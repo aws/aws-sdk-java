@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,12 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
- * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each
- * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
- * object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264,
- * H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8,
- * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+ * Video codec settings contains the group of settings related to video encoding. The settings in this group vary
+ * depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding
+ * settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
+ * AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2,
+ * Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings *
+ * VP9, Vp9Settings * XAVC, XavcSettings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -40,25 +40,32 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
      * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     private AvcIntraSettings avcIntraSettings;
-    /** Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. */
+    /**
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
+     */
     private String codec;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE. */
+    /** Required when you set Codec to the value FRAME_CAPTURE. */
     private FrameCaptureSettings frameCaptureSettings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264. */
+    /** Required when you set Codec to the value H_264. */
     private H264Settings h264Settings;
     /** Settings for H265 codec */
     private H265Settings h265Settings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2. */
+    /** Required when you set Codec to the value MPEG2. */
     private Mpeg2Settings mpeg2Settings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES. */
+    /** Required when you set Codec to the value PRORES. */
     private ProresSettings proresSettings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3 */
+    /** Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED. */
+    private UncompressedSettings uncompressedSettings;
+    /** Required when you set Codec to the value VC3 */
     private Vc3Settings vc3Settings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8. */
+    /** Required when you set Codec to the value VP8. */
     private Vp8Settings vp8Settings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9. */
+    /** Required when you set Codec to the value VP9. */
     private Vp9Settings vp9Settings;
-    /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC. */
+    /** Required when you set Codec to the value XAVC. */
     private XavcSettings xavcSettings;
 
     /**
@@ -148,10 +155,16 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @param codec
      *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *        To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *        video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *        encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @see VideoCodec
      */
 
@@ -160,9 +173,15 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @return Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *         To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *         video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *         encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @see VideoCodec
      */
 
@@ -171,10 +190,16 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @param codec
      *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *        To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *        video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *        encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VideoCodec
      */
@@ -185,10 +210,16 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @param codec
      *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *        To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *        video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *        encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VideoCodec
      */
@@ -199,10 +230,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      * 
      * @param frameCaptureSettings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     *        Required when you set Codec to the value FRAME_CAPTURE.
      */
 
     public void setFrameCaptureSettings(FrameCaptureSettings frameCaptureSettings) {
@@ -210,9 +241,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * @return Required when you set Codec to the value FRAME_CAPTURE.
      */
 
     public FrameCaptureSettings getFrameCaptureSettings() {
@@ -220,10 +251,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      * 
      * @param frameCaptureSettings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
+     *        Required when you set Codec to the value FRAME_CAPTURE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,10 +264,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * Required when you set Codec to the value H_264.
      * 
      * @param h264Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     *        Required when you set Codec to the value H_264.
      */
 
     public void setH264Settings(H264Settings h264Settings) {
@@ -244,9 +275,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * Required when you set Codec to the value H_264.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * @return Required when you set Codec to the value H_264.
      */
 
     public H264Settings getH264Settings() {
@@ -254,10 +285,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     * Required when you set Codec to the value H_264.
      * 
      * @param h264Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264.
+     *        Required when you set Codec to the value H_264.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,10 +332,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      * 
      * @param mpeg2Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     *        Required when you set Codec to the value MPEG2.
      */
 
     public void setMpeg2Settings(Mpeg2Settings mpeg2Settings) {
@@ -312,9 +343,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * @return Required when you set Codec to the value MPEG2.
      */
 
     public Mpeg2Settings getMpeg2Settings() {
@@ -322,10 +353,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      * 
      * @param mpeg2Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2.
+     *        Required when you set Codec to the value MPEG2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,10 +366,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * Required when you set Codec to the value PRORES.
      * 
      * @param proresSettings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     *        Required when you set Codec to the value PRORES.
      */
 
     public void setProresSettings(ProresSettings proresSettings) {
@@ -346,9 +377,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * Required when you set Codec to the value PRORES.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * @return Required when you set Codec to the value PRORES.
      */
 
     public ProresSettings getProresSettings() {
@@ -356,10 +387,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     * Required when you set Codec to the value PRORES.
      * 
      * @param proresSettings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES.
+     *        Required when you set Codec to the value PRORES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,10 +400,44 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED.
+     * 
+     * @param uncompressedSettings
+     *        Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED.
+     */
+
+    public void setUncompressedSettings(UncompressedSettings uncompressedSettings) {
+        this.uncompressedSettings = uncompressedSettings;
+    }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED.
+     * 
+     * @return Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED.
+     */
+
+    public UncompressedSettings getUncompressedSettings() {
+        return this.uncompressedSettings;
+    }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED.
+     * 
+     * @param uncompressedSettings
+     *        Required when you set Codec, under VideoDescription>CodecSettings to the value UNCOMPRESSED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withUncompressedSettings(UncompressedSettings uncompressedSettings) {
+        setUncompressedSettings(uncompressedSettings);
+        return this;
+    }
+
+    /**
+     * Required when you set Codec to the value VC3
      * 
      * @param vc3Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     *        Required when you set Codec to the value VC3
      */
 
     public void setVc3Settings(Vc3Settings vc3Settings) {
@@ -380,9 +445,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * Required when you set Codec to the value VC3
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * @return Required when you set Codec to the value VC3
      */
 
     public Vc3Settings getVc3Settings() {
@@ -390,10 +455,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     * Required when you set Codec to the value VC3
      * 
      * @param vc3Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+     *        Required when you set Codec to the value VC3
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,10 +468,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * Required when you set Codec to the value VP8.
      * 
      * @param vp8Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     *        Required when you set Codec to the value VP8.
      */
 
     public void setVp8Settings(Vp8Settings vp8Settings) {
@@ -414,9 +479,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * Required when you set Codec to the value VP8.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * @return Required when you set Codec to the value VP8.
      */
 
     public Vp8Settings getVp8Settings() {
@@ -424,10 +489,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     * Required when you set Codec to the value VP8.
      * 
      * @param vp8Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8.
+     *        Required when you set Codec to the value VP8.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,10 +502,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * Required when you set Codec to the value VP9.
      * 
      * @param vp9Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     *        Required when you set Codec to the value VP9.
      */
 
     public void setVp9Settings(Vp9Settings vp9Settings) {
@@ -448,9 +513,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * Required when you set Codec to the value VP9.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * @return Required when you set Codec to the value VP9.
      */
 
     public Vp9Settings getVp9Settings() {
@@ -458,10 +523,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     * Required when you set Codec to the value VP9.
      * 
      * @param vp9Settings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+     *        Required when you set Codec to the value VP9.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,10 +536,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * Required when you set Codec to the value XAVC.
      * 
      * @param xavcSettings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     *        Required when you set Codec to the value XAVC.
      */
 
     public void setXavcSettings(XavcSettings xavcSettings) {
@@ -482,9 +547,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * Required when you set Codec to the value XAVC.
      * 
-     * @return Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * @return Required when you set Codec to the value XAVC.
      */
 
     public XavcSettings getXavcSettings() {
@@ -492,10 +557,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     * Required when you set Codec to the value XAVC.
      * 
      * @param xavcSettings
-     *        Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value XAVC.
+     *        Required when you set Codec to the value XAVC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -532,6 +597,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             sb.append("Mpeg2Settings: ").append(getMpeg2Settings()).append(",");
         if (getProresSettings() != null)
             sb.append("ProresSettings: ").append(getProresSettings()).append(",");
+        if (getUncompressedSettings() != null)
+            sb.append("UncompressedSettings: ").append(getUncompressedSettings()).append(",");
         if (getVc3Settings() != null)
             sb.append("Vc3Settings: ").append(getVc3Settings()).append(",");
         if (getVp8Settings() != null)
@@ -586,6 +653,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getProresSettings() != null && other.getProresSettings().equals(this.getProresSettings()) == false)
             return false;
+        if (other.getUncompressedSettings() == null ^ this.getUncompressedSettings() == null)
+            return false;
+        if (other.getUncompressedSettings() != null && other.getUncompressedSettings().equals(this.getUncompressedSettings()) == false)
+            return false;
         if (other.getVc3Settings() == null ^ this.getVc3Settings() == null)
             return false;
         if (other.getVc3Settings() != null && other.getVc3Settings().equals(this.getVc3Settings()) == false)
@@ -618,6 +689,7 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getH265Settings() == null) ? 0 : getH265Settings().hashCode());
         hashCode = prime * hashCode + ((getMpeg2Settings() == null) ? 0 : getMpeg2Settings().hashCode());
         hashCode = prime * hashCode + ((getProresSettings() == null) ? 0 : getProresSettings().hashCode());
+        hashCode = prime * hashCode + ((getUncompressedSettings() == null) ? 0 : getUncompressedSettings().hashCode());
         hashCode = prime * hashCode + ((getVc3Settings() == null) ? 0 : getVc3Settings().hashCode());
         hashCode = prime * hashCode + ((getVp8Settings() == null) ? 0 : getVp8Settings().hashCode());
         hashCode = prime * hashCode + ((getVp9Settings() == null) ? 0 : getVp9Settings().hashCode());

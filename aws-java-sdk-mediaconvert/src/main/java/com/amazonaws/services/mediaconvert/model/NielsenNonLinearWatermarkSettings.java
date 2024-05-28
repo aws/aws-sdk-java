@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,17 +31,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     * (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must
-     * provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET),
-     * you must provide values for both of these settings.
+     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must
+     * provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When
+     * you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      */
     private String activeWatermarkProcess;
     /**
      * Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To
      * provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following
      * format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata
-     * destination (metadataDestination).
+     * destination.
      */
     private String adiFilename;
     /**
@@ -54,7 +53,7 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but
      * common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting
-     * Watermark types (ActiveWatermarkProcess) that includes CBET.
+     * Watermark types that includes CBET.
      */
     private String cbetSourceId;
     /** Optional. If this asset uses an episode ID with Nielsen, provide it here. */
@@ -62,9 +61,9 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file.
      * This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you
-     * want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert
-     * delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver
-     * the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+     * want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the
+     * Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files
+     * to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
      */
     private String metadataDestination;
     /**
@@ -75,8 +74,8 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     private Integer sourceId;
     /**
      * Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this
-     * value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear
-     * watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     * value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only
+     * clean content that doesn't already have non-linear Nielsen watermarks.
      */
     private String sourceWatermarkStatus;
     /**
@@ -88,23 +87,20 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
      */
     private String ticServerUrl;
     /**
-     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     * (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs
-     * (RESERVE_UNIQUE_TICS_PER_TRACK).
+     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create
+     * assets that have unique TIC values for each audio track, choose Use unique TICs.
      */
     private String uniqueTicPerAudioTrack;
 
     /**
-     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     * (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must
-     * provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET),
-     * you must provide values for both of these settings.
+     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must
+     * provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When
+     * you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * 
      * @param activeWatermarkProcess
-     *        Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     *        (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you
-     *        must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET
-     *        (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+     *        Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you
+     *        must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting
+     *        CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * @see NielsenActiveWatermarkProcessType
      */
 
@@ -113,15 +109,13 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     * (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must
-     * provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET),
-     * you must provide values for both of these settings.
+     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must
+     * provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When
+     * you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * 
-     * @return Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     *         (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you
-     *         must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET
-     *         (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+     * @return Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you
+     *         must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting
+     *         CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * @see NielsenActiveWatermarkProcessType
      */
 
@@ -130,16 +124,14 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     * (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must
-     * provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET),
-     * you must provide values for both of these settings.
+     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must
+     * provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When
+     * you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * 
      * @param activeWatermarkProcess
-     *        Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     *        (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you
-     *        must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET
-     *        (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+     *        Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you
+     *        must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting
+     *        CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NielsenActiveWatermarkProcessType
      */
@@ -150,16 +142,14 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     * (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must
-     * provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET),
-     * you must provide values for both of these settings.
+     * Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you must
+     * provide a value for the setting SID. When you choose CBET, you must provide a value for the setting CSID. When
+     * you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * 
      * @param activeWatermarkProcess
-     *        Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW
-     *        (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you
-     *        must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET
-     *        (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
+     *        Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW, you
+     *        must provide a value for the setting SID. When you choose CBET, you must provide a value for the setting
+     *        CSID. When you choose NAES 2, NW, and CBET, you must provide values for both of these settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NielsenActiveWatermarkProcessType
      */
@@ -173,13 +163,13 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
      * Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To
      * provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following
      * format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata
-     * destination (metadataDestination).
+     * destination.
      * 
      * @param adiFilename
      *        Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip
      *        file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the
      *        following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the
-     *        setting Metadata destination (metadataDestination).
+     *        setting Metadata destination.
      */
 
     public void setAdiFilename(String adiFilename) {
@@ -190,12 +180,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
      * Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To
      * provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following
      * format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata
-     * destination (metadataDestination).
+     * destination.
      * 
      * @return Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip
      *         file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in
      *         the following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see
-     *         the setting Metadata destination (metadataDestination).
+     *         the setting Metadata destination.
      */
 
     public String getAdiFilename() {
@@ -206,13 +196,13 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
      * Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip file. To
      * provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the following
      * format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the setting Metadata
-     * destination (metadataDestination).
+     * destination.
      * 
      * @param adiFilename
      *        Optional. Use this setting when you want the service to include an ADI file in the Nielsen metadata .zip
      *        file. To provide an ADI file, store it in Amazon S3 and provide a URL to it here. The URL should be in the
      *        following format: S3://bucket/path/ADI-file. For more information about the metadata .zip file, see the
-     *        setting Metadata destination (metadataDestination).
+     *        setting Metadata destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,12 +291,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but
      * common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting
-     * Watermark types (ActiveWatermarkProcess) that includes CBET.
+     * Watermark types that includes CBET.
      * 
      * @param cbetSourceId
      *        Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account
      *        but common to all of your output assets that have CBET watermarking. Required when you choose a value for
-     *        the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+     *        the setting Watermark types that includes CBET.
      */
 
     public void setCbetSourceId(String cbetSourceId) {
@@ -316,11 +306,11 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but
      * common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting
-     * Watermark types (ActiveWatermarkProcess) that includes CBET.
+     * Watermark types that includes CBET.
      * 
      * @return Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account
      *         but common to all of your output assets that have CBET watermarking. Required when you choose a value for
-     *         the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+     *         the setting Watermark types that includes CBET.
      */
 
     public String getCbetSourceId() {
@@ -330,12 +320,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account but
      * common to all of your output assets that have CBET watermarking. Required when you choose a value for the setting
-     * Watermark types (ActiveWatermarkProcess) that includes CBET.
+     * Watermark types that includes CBET.
      * 
      * @param cbetSourceId
      *        Use the CSID that Nielsen provides to you. This CBET source ID should be unique to your Nielsen account
      *        but common to all of your output assets that have CBET watermarking. Required when you choose a value for
-     *        the setting Watermark types (ActiveWatermarkProcess) that includes CBET.
+     *        the setting Watermark types that includes CBET.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,17 +371,17 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file.
      * This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you
-     * want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert
-     * delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver
-     * the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+     * want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the
+     * Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files
+     * to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
      * 
      * @param metadataDestination
      *        Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip
      *        file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert
-     *        transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename)
-     *        to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination
-     *        Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the
-     *        metadata .zip files to Nielsen.
+     *        transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it.
+     *        MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket.
+     *        It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files
+     *        to Nielsen.
      */
 
     public void setMetadataDestination(String metadataDestination) {
@@ -401,16 +391,16 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file.
      * This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you
-     * want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert
-     * delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver
-     * the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+     * want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the
+     * Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files
+     * to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
      * 
      * @return Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip
      *         file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert
-     *         transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename)
-     *         to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination
-     *         Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the
-     *         metadata .zip files to Nielsen.
+     *         transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify
+     *         it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3
+     *         bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata
+     *         .zip files to Nielsen.
      */
 
     public String getMetadataDestination() {
@@ -420,17 +410,17 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     /**
      * Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip file.
      * This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert transcoding. If you
-     * want to include an ADI file in this .zip file, use the setting ADI file (adiFilename) to specify it. MediaConvert
-     * delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver
-     * the .zip files to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
+     * want to include an ADI file in this .zip file, use the setting ADI file to specify it. MediaConvert delivers the
+     * Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket. It doesn't deliver the .zip files
+     * to Nielsen. You are responsible for delivering the metadata .zip files to Nielsen.
      * 
      * @param metadataDestination
      *        Specify the Amazon S3 location where you want MediaConvert to save your Nielsen non-linear metadata .zip
      *        file. This Amazon S3 bucket must be in the same Region as the one where you do your MediaConvert
-     *        transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file (adiFilename)
-     *        to specify it. MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination
-     *        Amazon S3 bucket. It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the
-     *        metadata .zip files to Nielsen.
+     *        transcoding. If you want to include an ADI file in this .zip file, use the setting ADI file to specify it.
+     *        MediaConvert delivers the Nielsen metadata .zip files only to your metadata destination Amazon S3 bucket.
+     *        It doesn't deliver the .zip files to Nielsen. You are responsible for delivering the metadata .zip files
+     *        to Nielsen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,13 +480,13 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
 
     /**
      * Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this
-     * value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear
-     * watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     * value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only
+     * clean content that doesn't already have non-linear Nielsen watermarks.
      * 
      * @param sourceWatermarkStatus
      *        Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set
-     *        this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add
-     *        non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     *        this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear
+     *        watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
      * @see NielsenSourceWatermarkStatusType
      */
 
@@ -506,12 +496,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
 
     /**
      * Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this
-     * value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear
-     * watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     * value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only
+     * clean content that doesn't already have non-linear Nielsen watermarks.
      * 
      * @return Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you
-     *         set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add
-     *         non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     *         set this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear
+     *         watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
      * @see NielsenSourceWatermarkStatusType
      */
 
@@ -521,13 +511,13 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
 
     /**
      * Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this
-     * value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear
-     * watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     * value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only
+     * clean content that doesn't already have non-linear Nielsen watermarks.
      * 
      * @param sourceWatermarkStatus
      *        Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set
-     *        this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add
-     *        non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     *        this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear
+     *        watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NielsenSourceWatermarkStatusType
      */
@@ -539,13 +529,13 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
 
     /**
      * Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this
-     * value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear
-     * watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     * value to Watermarked, the service fails the job. Nielsen requires that you add non-linear watermarking to only
+     * clean content that doesn't already have non-linear Nielsen watermarks.
      * 
      * @param sourceWatermarkStatus
      *        Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set
-     *        this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add
-     *        non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+     *        this value to Watermarked, the service fails the job. Nielsen requires that you add non-linear
+     *        watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NielsenSourceWatermarkStatusType
      */
@@ -614,14 +604,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     * (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs
-     * (RESERVE_UNIQUE_TICS_PER_TRACK).
+     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create
+     * assets that have unique TIC values for each audio track, choose Use unique TICs.
      * 
      * @param uniqueTicPerAudioTrack
-     *        To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     *        (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use
-     *        unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+     *        To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To
+     *        create assets that have unique TIC values for each audio track, choose Use unique TICs.
      * @see NielsenUniqueTicPerAudioTrackType
      */
 
@@ -630,13 +618,11 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     * (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs
-     * (RESERVE_UNIQUE_TICS_PER_TRACK).
+     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create
+     * assets that have unique TIC values for each audio track, choose Use unique TICs.
      * 
-     * @return To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     *         (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use
-     *         unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+     * @return To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To
+     *         create assets that have unique TIC values for each audio track, choose Use unique TICs.
      * @see NielsenUniqueTicPerAudioTrackType
      */
 
@@ -645,14 +631,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     * (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs
-     * (RESERVE_UNIQUE_TICS_PER_TRACK).
+     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create
+     * assets that have unique TIC values for each audio track, choose Use unique TICs.
      * 
      * @param uniqueTicPerAudioTrack
-     *        To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     *        (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use
-     *        unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+     *        To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To
+     *        create assets that have unique TIC values for each audio track, choose Use unique TICs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NielsenUniqueTicPerAudioTrackType
      */
@@ -663,14 +647,12 @@ public class NielsenNonLinearWatermarkSettings implements Serializable, Cloneabl
     }
 
     /**
-     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     * (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs
-     * (RESERVE_UNIQUE_TICS_PER_TRACK).
+     * To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To create
+     * assets that have unique TIC values for each audio track, choose Use unique TICs.
      * 
      * @param uniqueTicPerAudioTrack
-     *        To create assets that have the same TIC values in each audio track, keep the default value Share TICs
-     *        (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use
-     *        unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
+     *        To create assets that have the same TIC values in each audio track, keep the default value Share TICs. To
+     *        create assets that have unique TIC values for each audio track, choose Use unique TICs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NielsenUniqueTicPerAudioTrackType
      */

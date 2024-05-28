@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,6 +104,47 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                 if (context.testExpression("lambdaAuthorizerConfig", targetDepth)) {
                     context.nextToken();
                     graphqlApi.setLambdaAuthorizerConfig(LambdaAuthorizerConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dns", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setDns(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
+                if (context.testExpression("visibility", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("apiType", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setApiType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mergedApiExecutionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setMergedApiExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("owner", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ownerContact", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setOwnerContact(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("introspectionConfig", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setIntrospectionConfig(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queryDepthLimit", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setQueryDepthLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("resolverCountLimit", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setResolverCountLimit(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("enhancedMetricsConfig", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setEnhancedMetricsConfig(EnhancedMetricsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

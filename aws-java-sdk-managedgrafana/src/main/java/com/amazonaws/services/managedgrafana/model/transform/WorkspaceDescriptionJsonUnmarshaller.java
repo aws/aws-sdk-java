@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,10 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                     context.nextToken();
                     workspaceDescription.setFreeTrialExpiration(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("grafanaToken", targetDepth)) {
+                    context.nextToken();
+                    workspaceDescription.setGrafanaToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("grafanaVersion", targetDepth)) {
                     context.nextToken();
                     workspaceDescription.setGrafanaVersion(context.getUnmarshaller(String.class).unmarshall(context));
@@ -105,6 +109,10 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     workspaceDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("networkAccessControl", targetDepth)) {
+                    context.nextToken();
+                    workspaceDescription.setNetworkAccessControl(NetworkAccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("notificationDestinations", targetDepth)) {
                     context.nextToken();
@@ -138,6 +146,10 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                     context.nextToken();
                     workspaceDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("vpcConfiguration", targetDepth)) {
+                    context.nextToken();
+                    workspaceDescription.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workspaceRoleArn", targetDepth)) {
                     context.nextToken();

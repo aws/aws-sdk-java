@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      */
     private String releaseLabel;
@@ -87,6 +87,50 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     */
+    private String architecture;
+    /**
+     * <p>
+     * The image configuration for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     * </p>
+     */
+    private ImageConfigurationInput imageConfiguration;
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     */
+    private java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications;
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     */
+    private java.util.List<Configuration> runtimeConfiguration;
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     */
+    private MonitoringConfiguration monitoringConfiguration;
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases to use when running an application.
+     * </p>
+     */
+    private InteractiveConfiguration interactiveConfiguration;
 
     /**
      * <p>
@@ -130,11 +174,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application.
+     *        The Amazon EMR release associated with the application.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -143,10 +187,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
-     * @return The EMR release version associated with the application.
+     * @return The Amazon EMR release associated with the application.
      */
 
     public String getReleaseLabel() {
@@ -155,11 +199,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application.
+     *        The Amazon EMR release associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -557,6 +601,380 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @return The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public CreateApplicationRequest withArchitecture(String architecture) {
+        setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public CreateApplicationRequest withArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The image configuration for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     * </p>
+     * 
+     * @param imageConfiguration
+     *        The image configuration for all worker types. You can either set this parameter or
+     *        <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     */
+
+    public void setImageConfiguration(ImageConfigurationInput imageConfiguration) {
+        this.imageConfiguration = imageConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image configuration for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     * </p>
+     * 
+     * @return The image configuration for all worker types. You can either set this parameter or
+     *         <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     */
+
+    public ImageConfigurationInput getImageConfiguration() {
+        return this.imageConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image configuration for all worker types. You can either set this parameter or
+     * <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     * </p>
+     * 
+     * @param imageConfiguration
+     *        The image configuration for all worker types. You can either set this parameter or
+     *        <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withImageConfiguration(ImageConfigurationInput imageConfiguration) {
+        setImageConfiguration(imageConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     * 
+     * @return The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter
+     *         must contain all valid worker types for a Spark or Hive application. Valid worker types include
+     *         <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and
+     *         <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each
+     *         worker type, or in <code>imageConfiguration</code> for all worker types.
+     */
+
+    public java.util.Map<String, WorkerTypeSpecificationInput> getWorkerTypeSpecifications() {
+        return workerTypeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     * 
+     * @param workerTypeSpecifications
+     *        The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter
+     *        must contain all valid worker types for a Spark or Hive application. Valid worker types include
+     *        <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and
+     *        <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each
+     *        worker type, or in <code>imageConfiguration</code> for all worker types.
+     */
+
+    public void setWorkerTypeSpecifications(java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications) {
+        this.workerTypeSpecifications = workerTypeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must
+     * contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code>
+     * and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive
+     * applications. You can either set image details in this parameter for each worker type, or in
+     * <code>imageConfiguration</code> for all worker types.
+     * </p>
+     * 
+     * @param workerTypeSpecifications
+     *        The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter
+     *        must contain all valid worker types for a Spark or Hive application. Valid worker types include
+     *        <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and
+     *        <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each
+     *        worker type, or in <code>imageConfiguration</code> for all worker types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withWorkerTypeSpecifications(java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications) {
+        setWorkerTypeSpecifications(workerTypeSpecifications);
+        return this;
+    }
+
+    /**
+     * Add a single WorkerTypeSpecifications entry
+     *
+     * @see CreateApplicationRequest#withWorkerTypeSpecifications
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest addWorkerTypeSpecificationsEntry(String key, WorkerTypeSpecificationInput value) {
+        if (null == this.workerTypeSpecifications) {
+            this.workerTypeSpecifications = new java.util.HashMap<String, WorkerTypeSpecificationInput>();
+        }
+        if (this.workerTypeSpecifications.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.workerTypeSpecifications.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into WorkerTypeSpecifications.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest clearWorkerTypeSpecificationsEntries() {
+        this.workerTypeSpecifications = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * 
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration
+     *         </a> specifications to use when creating an application. Each configuration consists of a classification
+     *         and properties. This configuration is applied to all the job runs submitted under the application.
+     */
+
+    public java.util.List<Configuration> getRuntimeConfiguration() {
+        return runtimeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications to use when creating an application. Each configuration consists of a
+     *        classification and properties. This configuration is applied to all the job runs submitted under the
+     *        application.
+     */
+
+    public void setRuntimeConfiguration(java.util.Collection<Configuration> runtimeConfiguration) {
+        if (runtimeConfiguration == null) {
+            this.runtimeConfiguration = null;
+            return;
+        }
+
+        this.runtimeConfiguration = new java.util.ArrayList<Configuration>(runtimeConfiguration);
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuntimeConfiguration(java.util.Collection)} or {@link #withRuntimeConfiguration(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications to use when creating an application. Each configuration consists of a
+     *        classification and properties. This configuration is applied to all the job runs submitted under the
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withRuntimeConfiguration(Configuration... runtimeConfiguration) {
+        if (this.runtimeConfiguration == null) {
+            setRuntimeConfiguration(new java.util.ArrayList<Configuration>(runtimeConfiguration.length));
+        }
+        for (Configuration ele : runtimeConfiguration) {
+            this.runtimeConfiguration.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications to use when creating an application. Each configuration consists of a classification and
+     * properties. This configuration is applied to all the job runs submitted under the application.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications to use when creating an application. Each configuration consists of a
+     *        classification and properties. This configuration is applied to all the job runs submitted under the
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withRuntimeConfiguration(java.util.Collection<Configuration> runtimeConfiguration) {
+        setRuntimeConfiguration(runtimeConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     * 
+     * @param monitoringConfiguration
+     *        The configuration setting for monitoring.
+     */
+
+    public void setMonitoringConfiguration(MonitoringConfiguration monitoringConfiguration) {
+        this.monitoringConfiguration = monitoringConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     * 
+     * @return The configuration setting for monitoring.
+     */
+
+    public MonitoringConfiguration getMonitoringConfiguration() {
+        return this.monitoringConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for monitoring.
+     * </p>
+     * 
+     * @param monitoringConfiguration
+     *        The configuration setting for monitoring.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withMonitoringConfiguration(MonitoringConfiguration monitoringConfiguration) {
+        setMonitoringConfiguration(monitoringConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases to use when running an application.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that enables the interactive use cases to use when running an
+     *        application.
+     */
+
+    public void setInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        this.interactiveConfiguration = interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases to use when running an application.
+     * </p>
+     * 
+     * @return The interactive configuration object that enables the interactive use cases to use when running an
+     *         application.
+     */
+
+    public InteractiveConfiguration getInteractiveConfiguration() {
+        return this.interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases to use when running an application.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that enables the interactive use cases to use when running an
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        setInteractiveConfiguration(interactiveConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -587,7 +1005,19 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAutoStopConfiguration() != null)
             sb.append("AutoStopConfiguration: ").append(getAutoStopConfiguration()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getArchitecture() != null)
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getImageConfiguration() != null)
+            sb.append("ImageConfiguration: ").append(getImageConfiguration()).append(",");
+        if (getWorkerTypeSpecifications() != null)
+            sb.append("WorkerTypeSpecifications: ").append(getWorkerTypeSpecifications()).append(",");
+        if (getRuntimeConfiguration() != null)
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration()).append(",");
+        if (getMonitoringConfiguration() != null)
+            sb.append("MonitoringConfiguration: ").append(getMonitoringConfiguration()).append(",");
+        if (getInteractiveConfiguration() != null)
+            sb.append("InteractiveConfiguration: ").append(getInteractiveConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -642,6 +1072,30 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
+            return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
+        if (other.getImageConfiguration() == null ^ this.getImageConfiguration() == null)
+            return false;
+        if (other.getImageConfiguration() != null && other.getImageConfiguration().equals(this.getImageConfiguration()) == false)
+            return false;
+        if (other.getWorkerTypeSpecifications() == null ^ this.getWorkerTypeSpecifications() == null)
+            return false;
+        if (other.getWorkerTypeSpecifications() != null && other.getWorkerTypeSpecifications().equals(this.getWorkerTypeSpecifications()) == false)
+            return false;
+        if (other.getRuntimeConfiguration() == null ^ this.getRuntimeConfiguration() == null)
+            return false;
+        if (other.getRuntimeConfiguration() != null && other.getRuntimeConfiguration().equals(this.getRuntimeConfiguration()) == false)
+            return false;
+        if (other.getMonitoringConfiguration() == null ^ this.getMonitoringConfiguration() == null)
+            return false;
+        if (other.getMonitoringConfiguration() != null && other.getMonitoringConfiguration().equals(this.getMonitoringConfiguration()) == false)
+            return false;
+        if (other.getInteractiveConfiguration() == null ^ this.getInteractiveConfiguration() == null)
+            return false;
+        if (other.getInteractiveConfiguration() != null && other.getInteractiveConfiguration().equals(this.getInteractiveConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -660,6 +1114,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getAutoStartConfiguration() == null) ? 0 : getAutoStartConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoStopConfiguration() == null) ? 0 : getAutoStopConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getImageConfiguration() == null) ? 0 : getImageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkerTypeSpecifications() == null) ? 0 : getWorkerTypeSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringConfiguration() == null) ? 0 : getMonitoringConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInteractiveConfiguration() == null) ? 0 : getInteractiveConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ReservationPurchaseRecommendationMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationId").build();
     private static final MarshallingInfo<String> GENERATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerationTimestamp").build();
+    private static final MarshallingInfo<String> ADDITIONALMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalMetadata").build();
 
     private static final ReservationPurchaseRecommendationMetadataMarshaller instance = new ReservationPurchaseRecommendationMetadataMarshaller();
 
@@ -50,6 +52,7 @@ public class ReservationPurchaseRecommendationMetadataMarshaller {
         try {
             protocolMarshaller.marshall(reservationPurchaseRecommendationMetadata.getRecommendationId(), RECOMMENDATIONID_BINDING);
             protocolMarshaller.marshall(reservationPurchaseRecommendationMetadata.getGenerationTimestamp(), GENERATIONTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(reservationPurchaseRecommendationMetadata.getAdditionalMetadata(), ADDITIONALMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

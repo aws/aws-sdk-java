@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class UpdateStudioRequestMarshaller {
             .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<String> DEFAULTS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultS3Location").build();
+    private static final MarshallingInfo<String> ENCRYPTIONKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionKeyArn").build();
 
     private static final UpdateStudioRequestMarshaller instance = new UpdateStudioRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class UpdateStudioRequestMarshaller {
             protocolMarshaller.marshall(updateStudioRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateStudioRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(updateStudioRequest.getDefaultS3Location(), DEFAULTS3LOCATION_BINDING);
+            protocolMarshaller.marshall(updateStudioRequest.getEncryptionKeyArn(), ENCRYPTIONKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

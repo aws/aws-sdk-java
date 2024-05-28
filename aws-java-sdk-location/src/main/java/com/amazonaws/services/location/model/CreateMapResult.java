@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private java.util.Date createTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -105,7 +105,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -116,7 +116,8 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </ul>
      * 
      * @param mapArn
-     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web
+     *        Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -131,7 +132,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -141,7 +142,8 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+     * @return The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web
+     *         Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -156,7 +158,7 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -167,7 +169,8 @@ public class CreateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </ul>
      * 
      * @param mapArn
-     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web
+     *        Services.</p>
      *        <ul>
      *        <li>
      *        <p>

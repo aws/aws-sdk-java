@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class RegisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebSe
     private String iamSessionArn;
     /**
      * <p>
-     * The ARN of the IAM user to associate with the on-premises instance.
+     * The ARN of the user to associate with the on-premises instance.
      * </p>
      */
     private String iamUserArn;
@@ -129,11 +129,11 @@ public class RegisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the IAM user to associate with the on-premises instance.
+     * The ARN of the user to associate with the on-premises instance.
      * </p>
      * 
      * @param iamUserArn
-     *        The ARN of the IAM user to associate with the on-premises instance.
+     *        The ARN of the user to associate with the on-premises instance.
      */
 
     public void setIamUserArn(String iamUserArn) {
@@ -142,10 +142,10 @@ public class RegisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the IAM user to associate with the on-premises instance.
+     * The ARN of the user to associate with the on-premises instance.
      * </p>
      * 
-     * @return The ARN of the IAM user to associate with the on-premises instance.
+     * @return The ARN of the user to associate with the on-premises instance.
      */
 
     public String getIamUserArn() {
@@ -154,11 +154,11 @@ public class RegisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the IAM user to associate with the on-premises instance.
+     * The ARN of the user to associate with the on-premises instance.
      * </p>
      * 
      * @param iamUserArn
-     *        The ARN of the IAM user to associate with the on-premises instance.
+     *        The ARN of the user to associate with the on-premises instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

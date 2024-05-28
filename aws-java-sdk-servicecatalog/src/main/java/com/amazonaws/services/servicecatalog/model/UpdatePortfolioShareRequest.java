@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,6 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -65,22 +60,24 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     private OrganizationNode organizationNode;
     /**
      * <p>
-     * A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
+     * Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the
      * current state of TagOptions sharing on the portfolio share will not be modified.
      * </p>
      */
     private Boolean shareTagOptions;
+    /**
+     * <p>
+     * A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided,
+     * the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     */
+    private Boolean sharePrincipals;
 
     /**
      * <p>
      * The language code.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>jp</code> - Japanese
@@ -96,11 +93,6 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -124,11 +116,6 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -141,11 +128,6 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -169,11 +151,6 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -187,11 +164,6 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -324,13 +296,13 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
+     * Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the
      * current state of TagOptions sharing on the portfolio share will not be modified.
      * </p>
      * 
      * @param shareTagOptions
-     *        A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
-     *        current state of TagOptions sharing on the portfolio share will not be modified.
+     *        Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not
+     *        provided, the current state of TagOptions sharing on the portfolio share will not be modified.
      */
 
     public void setShareTagOptions(Boolean shareTagOptions) {
@@ -339,12 +311,12 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
+     * Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the
      * current state of TagOptions sharing on the portfolio share will not be modified.
      * </p>
      * 
-     * @return A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided,
-     *         the current state of TagOptions sharing on the portfolio share will not be modified.
+     * @return Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not
+     *         provided, the current state of TagOptions sharing on the portfolio share will not be modified.
      */
 
     public Boolean getShareTagOptions() {
@@ -353,13 +325,13 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
+     * Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the
      * current state of TagOptions sharing on the portfolio share will not be modified.
      * </p>
      * 
      * @param shareTagOptions
-     *        A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
-     *        current state of TagOptions sharing on the portfolio share will not be modified.
+     *        Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not
+     *        provided, the current state of TagOptions sharing on the portfolio share will not be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,16 +342,80 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided, the
+     * Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the
      * current state of TagOptions sharing on the portfolio share will not be modified.
      * </p>
      * 
-     * @return A flag to enable or disable TagOptions sharing for the portfolio share. If this field is not provided,
-     *         the current state of TagOptions sharing on the portfolio share will not be modified.
+     * @return Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not
+     *         provided, the current state of TagOptions sharing on the portfolio share will not be modified.
      */
 
     public Boolean isShareTagOptions() {
         return this.shareTagOptions;
+    }
+
+    /**
+     * <p>
+     * A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided,
+     * the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     * 
+     * @param sharePrincipals
+     *        A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not
+     *        provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be
+     *        modified.
+     */
+
+    public void setSharePrincipals(Boolean sharePrincipals) {
+        this.sharePrincipals = sharePrincipals;
+    }
+
+    /**
+     * <p>
+     * A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided,
+     * the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     * 
+     * @return A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not
+     *         provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be
+     *         modified.
+     */
+
+    public Boolean getSharePrincipals() {
+        return this.sharePrincipals;
+    }
+
+    /**
+     * <p>
+     * A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided,
+     * the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     * 
+     * @param sharePrincipals
+     *        A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not
+     *        provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be
+     *        modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePortfolioShareRequest withSharePrincipals(Boolean sharePrincipals) {
+        setSharePrincipals(sharePrincipals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided,
+     * the current state of the <code>Principals</code> sharing on the portfolio share will not be modified.
+     * </p>
+     * 
+     * @return A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not
+     *         provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be
+     *         modified.
+     */
+
+    public Boolean isSharePrincipals() {
+        return this.sharePrincipals;
     }
 
     /**
@@ -403,7 +439,9 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         if (getOrganizationNode() != null)
             sb.append("OrganizationNode: ").append(getOrganizationNode()).append(",");
         if (getShareTagOptions() != null)
-            sb.append("ShareTagOptions: ").append(getShareTagOptions());
+            sb.append("ShareTagOptions: ").append(getShareTagOptions()).append(",");
+        if (getSharePrincipals() != null)
+            sb.append("SharePrincipals: ").append(getSharePrincipals());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +476,10 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getShareTagOptions() != null && other.getShareTagOptions().equals(this.getShareTagOptions()) == false)
             return false;
+        if (other.getSharePrincipals() == null ^ this.getSharePrincipals() == null)
+            return false;
+        if (other.getSharePrincipals() != null && other.getSharePrincipals().equals(this.getSharePrincipals()) == false)
+            return false;
         return true;
     }
 
@@ -451,6 +493,7 @@ public class UpdatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getOrganizationNode() == null) ? 0 : getOrganizationNode().hashCode());
         hashCode = prime * hashCode + ((getShareTagOptions() == null) ? 0 : getShareTagOptions().hashCode());
+        hashCode = prime * hashCode + ((getSharePrincipals() == null) ? 0 : getSharePrincipals().hashCode());
         return hashCode;
     }
 

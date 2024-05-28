@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,9 +49,11 @@ public class AWSACMPCAWaiters {
      */
     public Waiter<GetCertificateRequest> certificateIssued() {
 
-        return new WaiterBuilder<GetCertificateRequest, GetCertificateResult>().withSdkFunction(new GetCertificateFunction(client))
-                .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new CertificateIssued.IsRequestInProgressExceptionMatcher())
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(3)))
+        return new WaiterBuilder<GetCertificateRequest, GetCertificateResult>()
+                .withSdkFunction(new GetCertificateFunction(client))
+                .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new CertificateIssued.IsRequestInProgressExceptionMatcher(),
+                        new CertificateIssued.IsAccessDeniedExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(1)))
                 .withExecutorService(executorService).build();
     }
 
@@ -64,7 +66,8 @@ public class AWSACMPCAWaiters {
 
         return new WaiterBuilder<DescribeCertificateAuthorityAuditReportRequest, DescribeCertificateAuthorityAuditReportResult>()
                 .withSdkFunction(new DescribeCertificateAuthorityAuditReportFunction(client))
-                .withAcceptors(new AuditReportCreated.IsSUCCESSMatcher(), new AuditReportCreated.IsFAILEDMatcher())
+                .withAcceptors(new AuditReportCreated.IsSUCCESSMatcher(), new AuditReportCreated.IsFAILEDMatcher(),
+                        new AuditReportCreated.IsAccessDeniedExceptionMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(3)))
                 .withExecutorService(executorService).build();
     }
@@ -78,7 +81,8 @@ public class AWSACMPCAWaiters {
 
         return new WaiterBuilder<GetCertificateAuthorityCsrRequest, GetCertificateAuthorityCsrResult>()
                 .withSdkFunction(new GetCertificateAuthorityCsrFunction(client))
-                .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new CertificateAuthorityCSRCreated.IsRequestInProgressExceptionMatcher())
+                .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new CertificateAuthorityCSRCreated.IsRequestInProgressExceptionMatcher(),
+                        new CertificateAuthorityCSRCreated.IsAccessDeniedExceptionMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(3)))
                 .withExecutorService(executorService).build();
     }

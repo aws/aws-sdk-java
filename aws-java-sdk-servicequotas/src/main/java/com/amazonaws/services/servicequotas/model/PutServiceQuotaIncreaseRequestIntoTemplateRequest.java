@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,36 +28,41 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The AWS Region.
+     * Specifies the Amazon Web Services Region to which the template applies.
      * </p>
      */
     private String awsRegion;
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      */
     private Double desiredValue;
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -66,10 +71,13 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
-     * @return The quota identifier.
+     * @return Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *         <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for
+     *         the quota you want.
      */
 
     public String getQuotaCode() {
@@ -78,11 +86,14 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +104,13 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -106,10 +119,12 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
-     * @return The service identifier.
+     * @return Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *         the <a>ListServices</a> operation.
      */
 
     public String getServiceCode() {
@@ -118,11 +133,13 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +150,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The AWS Region.
+     * Specifies the Amazon Web Services Region to which the template applies.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS Region.
+     *        Specifies the Amazon Web Services Region to which the template applies.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -146,10 +163,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The AWS Region.
+     * Specifies the Amazon Web Services Region to which the template applies.
      * </p>
      * 
-     * @return The AWS Region.
+     * @return Specifies the Amazon Web Services Region to which the template applies.
      */
 
     public String getAwsRegion() {
@@ -158,11 +175,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The AWS Region.
+     * Specifies the Amazon Web Services Region to which the template applies.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS Region.
+     *        Specifies the Amazon Web Services Region to which the template applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +190,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        The new, increased value for the quota.
+     *        Specifies the new, increased value for the quota.
      */
 
     public void setDesiredValue(Double desiredValue) {
@@ -186,10 +203,10 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      * 
-     * @return The new, increased value for the quota.
+     * @return Specifies the new, increased value for the quota.
      */
 
     public Double getDesiredValue() {
@@ -198,11 +215,11 @@ public class PutServiceQuotaIncreaseRequestIntoTemplateRequest extends com.amazo
 
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        The new, increased value for the quota.
+     *        Specifies the new, increased value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

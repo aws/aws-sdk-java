@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateMemberDetectorsRequestMarshaller {
             .marshallLocationName("accountIds").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSources").build();
+    private static final MarshallingInfo<List> FEATURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("features").build();
 
     private static final UpdateMemberDetectorsRequestMarshaller instance = new UpdateMemberDetectorsRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class UpdateMemberDetectorsRequestMarshaller {
             protocolMarshaller.marshall(updateMemberDetectorsRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(updateMemberDetectorsRequest.getAccountIds(), ACCOUNTIDS_BINDING);
             protocolMarshaller.marshall(updateMemberDetectorsRequest.getDataSources(), DATASOURCES_BINDING);
+            protocolMarshaller.marshall(updateMemberDetectorsRequest.getFeatures(), FEATURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

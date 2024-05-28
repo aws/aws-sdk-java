@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
  * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
  * resource limit sets a restriction on the number of open files that a container can use. The default
- * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+ * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>65535</code>.
+ * </p>
+ * <p>
+ * You can specify the <code>ulimit</code> settings for a container in a task definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Ulimit" target="_top">AWS API Documentation</a>
@@ -41,13 +44,13 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The soft limit for the ulimit type.
+     * The soft limit for the <code>ulimit</code> type.
      * </p>
      */
     private Integer softLimit;
     /**
      * <p>
-     * The hard limit for the ulimit type.
+     * The hard limit for the <code>ulimit</code> type.
      * </p>
      */
     private Integer hardLimit;
@@ -127,11 +130,11 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The soft limit for the ulimit type.
+     * The soft limit for the <code>ulimit</code> type.
      * </p>
      * 
      * @param softLimit
-     *        The soft limit for the ulimit type.
+     *        The soft limit for the <code>ulimit</code> type.
      */
 
     public void setSoftLimit(Integer softLimit) {
@@ -140,10 +143,10 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The soft limit for the ulimit type.
+     * The soft limit for the <code>ulimit</code> type.
      * </p>
      * 
-     * @return The soft limit for the ulimit type.
+     * @return The soft limit for the <code>ulimit</code> type.
      */
 
     public Integer getSoftLimit() {
@@ -152,11 +155,11 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The soft limit for the ulimit type.
+     * The soft limit for the <code>ulimit</code> type.
      * </p>
      * 
      * @param softLimit
-     *        The soft limit for the ulimit type.
+     *        The soft limit for the <code>ulimit</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +170,11 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hard limit for the ulimit type.
+     * The hard limit for the <code>ulimit</code> type.
      * </p>
      * 
      * @param hardLimit
-     *        The hard limit for the ulimit type.
+     *        The hard limit for the <code>ulimit</code> type.
      */
 
     public void setHardLimit(Integer hardLimit) {
@@ -180,10 +183,10 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hard limit for the ulimit type.
+     * The hard limit for the <code>ulimit</code> type.
      * </p>
      * 
-     * @return The hard limit for the ulimit type.
+     * @return The hard limit for the <code>ulimit</code> type.
      */
 
     public Integer getHardLimit() {
@@ -192,11 +195,11 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hard limit for the ulimit type.
+     * The hard limit for the <code>ulimit</code> type.
      * </p>
      * 
      * @param hardLimit
-     *        The hard limit for the ulimit type.
+     *        The hard limit for the <code>ulimit</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

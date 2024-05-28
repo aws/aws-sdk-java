@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class DescribeVpcEndpointServiceConfigurationsResult extends com.amazonaw
 
     /**
      * <p>
-     * Information about one or more services.
+     * Information about the services.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceConfiguration> serviceConfigurations;
@@ -40,10 +40,10 @@ public class DescribeVpcEndpointServiceConfigurationsResult extends com.amazonaw
 
     /**
      * <p>
-     * Information about one or more services.
+     * Information about the services.
      * </p>
      * 
-     * @return Information about one or more services.
+     * @return Information about the services.
      */
 
     public java.util.List<ServiceConfiguration> getServiceConfigurations() {
@@ -55,11 +55,11 @@ public class DescribeVpcEndpointServiceConfigurationsResult extends com.amazonaw
 
     /**
      * <p>
-     * Information about one or more services.
+     * Information about the services.
      * </p>
      * 
      * @param serviceConfigurations
-     *        Information about one or more services.
+     *        Information about the services.
      */
 
     public void setServiceConfigurations(java.util.Collection<ServiceConfiguration> serviceConfigurations) {
@@ -73,7 +73,7 @@ public class DescribeVpcEndpointServiceConfigurationsResult extends com.amazonaw
 
     /**
      * <p>
-     * Information about one or more services.
+     * Information about the services.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVpcEndpointServiceConfigurationsResult extends com.amazonaw
      * </p>
      * 
      * @param serviceConfigurations
-     *        Information about one or more services.
+     *        Information about the services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeVpcEndpointServiceConfigurationsResult extends com.amazonaw
 
     /**
      * <p>
-     * Information about one or more services.
+     * Information about the services.
      * </p>
      * 
      * @param serviceConfigurations
-     *        Information about one or more services.
+     *        Information about the services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

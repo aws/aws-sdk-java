@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,46 +33,46 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
     private String fargateProfileName;
     /**
      * <p>
-     * The name of the Amazon EKS cluster to apply the Fargate profile to.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it
-     * provides read access to Amazon ECR image repositories. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-     * <i>Amazon EKS User Guide</i>.
+     * The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches
+     * the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to
+     * register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
+     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      */
     private String podExecutionRoleArn;
     /**
      * <p>
-     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
-     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a
+     * public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     * parameter.
      * </p>
      */
     private java.util.List<String> subnets;
     /**
      * <p>
-     * The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace.
-     * Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate
-     * profile.
+     * The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated
+     * Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     * <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * </p>
      */
     private java.util.List<FargateProfileSelector> selectors;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with it.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -119,11 +119,11 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to apply the Fargate profile to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster to apply the Fargate profile to.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -132,10 +132,10 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to apply the Fargate profile to.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster to apply the Fargate profile to.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -144,11 +144,11 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster to apply the Fargate profile to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster to apply the Fargate profile to.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,19 +159,20 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it
-     * provides read access to Amazon ECR image repositories. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-     * <i>Amazon EKS User Guide</i>.
+     * The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches
+     * the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to
+     * register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
+     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param podExecutionRoleArn
-     *        The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the
-     *        Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a
-     *        node, and it provides read access to Amazon ECR image repositories. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     *        the <i>Amazon EKS User Guide</i>.
+     *        The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that
+     *        matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate
+     *        infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image
+     *        repositories. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code>
+     *        execution role</a> in the <i>Amazon EKS User Guide</i>.
      */
 
     public void setPodExecutionRoleArn(String podExecutionRoleArn) {
@@ -180,18 +181,19 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it
-     * provides read access to Amazon ECR image repositories. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-     * <i>Amazon EKS User Guide</i>.
+     * The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches
+     * the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to
+     * register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
+     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the
-     *         Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a
-     *         node, and it provides read access to Amazon ECR image repositories. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     *         the <i>Amazon EKS User Guide</i>.
+     * @return The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that
+     *         matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate
+     *         infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image
+     *         repositories. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code>
+     *         execution role</a> in the <i>Amazon EKS User Guide</i>.
      */
 
     public String getPodExecutionRoleArn() {
@@ -200,19 +202,20 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it
-     * provides read access to Amazon ECR image repositories. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
-     * <i>Amazon EKS User Guide</i>.
+     * The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches
+     * the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to
+     * register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more
+     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
+     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param podExecutionRoleArn
-     *        The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the
-     *        Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a
-     *        node, and it provides read access to Amazon ECR image repositories. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     *        the <i>Amazon EKS User Guide</i>.
+     *        The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that
+     *        matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate
+     *        infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image
+     *        repositories. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code>
+     *        execution role</a> in the <i>Amazon EKS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,13 +226,14 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
-     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a
+     * public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     * parameter.
      * </p>
      * 
-     * @return The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned
-     *         public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted
-     *         for this parameter.
+     * @return The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't
+     *         assigned a public IP address, so only private subnets (with no direct route to an Internet Gateway) are
+     *         accepted for this parameter.
      */
 
     public java.util.List<String> getSubnets() {
@@ -238,14 +242,15 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
-     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a
+     * public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     * parameter.
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public
-     *        IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
-     *        parameter.
+     *        The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned
+     *        a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted
+     *        for this parameter.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -259,8 +264,9 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
-     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a
+     * public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     * parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -269,9 +275,9 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public
-     *        IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
-     *        parameter.
+     *        The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned
+     *        a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted
+     *        for this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,14 +293,15 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
-     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a
+     * public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     * parameter.
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public
-     *        IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
-     *        parameter.
+     *        The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned
+     *        a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted
+     *        for this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,14 +312,14 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace.
-     * Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate
-     * profile.
+     * The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated
+     * Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     * <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * </p>
      * 
-     * @return The selectors to match for pods to use this Fargate profile. Each selector must have an associated
-     *         namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors
-     *         in a Fargate profile.
+     * @return The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an
+     *         associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     *         <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      */
 
     public java.util.List<FargateProfileSelector> getSelectors() {
@@ -321,15 +328,15 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace.
-     * Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate
-     * profile.
+     * The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated
+     * Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     * <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * </p>
      * 
      * @param selectors
-     *        The selectors to match for pods to use this Fargate profile. Each selector must have an associated
-     *        namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors
-     *        in a Fargate profile.
+     *        The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an
+     *        associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     *        <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      */
 
     public void setSelectors(java.util.Collection<FargateProfileSelector> selectors) {
@@ -343,9 +350,9 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace.
-     * Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate
-     * profile.
+     * The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated
+     * Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     * <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -354,9 +361,9 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param selectors
-     *        The selectors to match for pods to use this Fargate profile. Each selector must have an associated
-     *        namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors
-     *        in a Fargate profile.
+     *        The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an
+     *        associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     *        <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,15 +379,15 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace.
-     * Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate
-     * profile.
+     * The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated
+     * Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     * <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * </p>
      * 
      * @param selectors
-     *        The selectors to match for pods to use this Fargate profile. Each selector must have an associated
-     *        namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors
-     *        in a Fargate profile.
+     *        The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an
+     *        associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a
+     *        <code>namespace</code>. You may specify up to five selectors in a Fargate profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +398,11 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -404,10 +411,10 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -416,11 +423,11 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,14 +438,12 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with it.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any
-     *         other resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -447,15 +452,13 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with it.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any
-     *        other resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -464,15 +467,13 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of
-     * a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources
-     * associated with the Fargate profile, such as the pods that are scheduled with it.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any
-     *        other resources associated with the Fargate profile, such as the pods that are scheduled with it.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

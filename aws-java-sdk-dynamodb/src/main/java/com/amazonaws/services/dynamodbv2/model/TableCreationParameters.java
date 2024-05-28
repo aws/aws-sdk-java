@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,8 @@ public class TableCreationParameters implements Serializable, Cloneable, Structu
     private String billingMode;
 
     private ProvisionedThroughput provisionedThroughput;
+
+    private OnDemandThroughput onDemandThroughput;
 
     private SSESpecification sSESpecification;
     /**
@@ -329,6 +331,32 @@ public class TableCreationParameters implements Serializable, Cloneable, Structu
     }
 
     /**
+     * @param onDemandThroughput
+     */
+
+    public void setOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        this.onDemandThroughput = onDemandThroughput;
+    }
+
+    /**
+     * @return
+     */
+
+    public OnDemandThroughput getOnDemandThroughput() {
+        return this.onDemandThroughput;
+    }
+
+    /**
+     * @param onDemandThroughput
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableCreationParameters withOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        setOnDemandThroughput(onDemandThroughput);
+        return this;
+    }
+
+    /**
      * @param sSESpecification
      */
 
@@ -446,6 +474,8 @@ public class TableCreationParameters implements Serializable, Cloneable, Structu
             sb.append("BillingMode: ").append(getBillingMode()).append(",");
         if (getProvisionedThroughput() != null)
             sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
+        if (getOnDemandThroughput() != null)
+            sb.append("OnDemandThroughput: ").append(getOnDemandThroughput()).append(",");
         if (getSSESpecification() != null)
             sb.append("SSESpecification: ").append(getSSESpecification()).append(",");
         if (getGlobalSecondaryIndexes() != null)
@@ -484,6 +514,10 @@ public class TableCreationParameters implements Serializable, Cloneable, Structu
             return false;
         if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
             return false;
+        if (other.getOnDemandThroughput() == null ^ this.getOnDemandThroughput() == null)
+            return false;
+        if (other.getOnDemandThroughput() != null && other.getOnDemandThroughput().equals(this.getOnDemandThroughput()) == false)
+            return false;
         if (other.getSSESpecification() == null ^ this.getSSESpecification() == null)
             return false;
         if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
@@ -505,6 +539,7 @@ public class TableCreationParameters implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
         hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughput() == null) ? 0 : getOnDemandThroughput().hashCode());
         hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
         return hashCode;

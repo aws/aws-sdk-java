@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class SubnetMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * </p>
+     */
+    private String iPAddressType;
 
     /**
      * <p>
@@ -78,6 +84,65 @@ public class SubnetMapping implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * @see IPAddressType
+     */
+
+    public void setIPAddressType(String iPAddressType) {
+        this.iPAddressType = iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * </p>
+     * 
+     * @return The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * @see IPAddressType
+     */
+
+    public String getIPAddressType() {
+        return this.iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public SubnetMapping withIPAddressType(String iPAddressType) {
+        setIPAddressType(iPAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The subnet's IP address type. You can't change the IP address type after you create the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public SubnetMapping withIPAddressType(IPAddressType iPAddressType) {
+        this.iPAddressType = iPAddressType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -90,7 +155,9 @@ public class SubnetMapping implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getIPAddressType() != null)
+            sb.append("IPAddressType: ").append(getIPAddressType());
         sb.append("}");
         return sb.toString();
     }
@@ -109,6 +176,10 @@ public class SubnetMapping implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getIPAddressType() == null ^ this.getIPAddressType() == null)
+            return false;
+        if (other.getIPAddressType() != null && other.getIPAddressType().equals(this.getIPAddressType()) == false)
+            return false;
         return true;
     }
 
@@ -118,6 +189,7 @@ public class SubnetMapping implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getIPAddressType() == null) ? 0 : getIPAddressType().hashCode());
         return hashCode;
     }
 

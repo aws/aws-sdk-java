@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,13 +44,16 @@ import com.amazonaws.services.lexruntimev2.AmazonLexRuntimeV2ClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lexruntimev2.model.*;
+
 import com.amazonaws.services.lexruntimev2.model.transform.*;
 
 /**
  * Client for accessing Lex Runtime V2. All service calls made using this client are blocking, and will not return until
  * the service call completes.
  * <p>
- * <p/>
+ * <p>
+ * This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

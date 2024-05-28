@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,9 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The setup script details of the app block.
      * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>CUSTOM</code>.
+     * </p>
      */
     private ScriptDetails setupScriptDetails;
     /**
@@ -79,6 +82,41 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * The post setup script details of the app block.
+     * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     * </p>
+     */
+    private ScriptDetails postSetupScriptDetails;
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     */
+    private String packagingType;
+    /**
+     * <p>
+     * The state of the app block.
+     * </p>
+     * <p>
+     * An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package
+     * (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block,
+     * it becomes <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
+     * The errors of the app block.
+     * </p>
+     */
+    private java.util.List<ErrorDetails> appBlockErrors;
 
     /**
      * <p>
@@ -284,9 +322,14 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The setup script details of the app block.
      * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>CUSTOM</code>.
+     * </p>
      * 
      * @param setupScriptDetails
-     *        The setup script details of the app block.
+     *        The setup script details of the app block.</p>
+     *        <p>
+     *        This only applies to app blocks with PackagingType <code>CUSTOM</code>.
      */
 
     public void setSetupScriptDetails(ScriptDetails setupScriptDetails) {
@@ -297,8 +340,13 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The setup script details of the app block.
      * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>CUSTOM</code>.
+     * </p>
      * 
-     * @return The setup script details of the app block.
+     * @return The setup script details of the app block.</p>
+     *         <p>
+     *         This only applies to app blocks with PackagingType <code>CUSTOM</code>.
      */
 
     public ScriptDetails getSetupScriptDetails() {
@@ -309,9 +357,14 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The setup script details of the app block.
      * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>CUSTOM</code>.
+     * </p>
      * 
      * @param setupScriptDetails
-     *        The setup script details of the app block.
+     *        The setup script details of the app block.</p>
+     *        <p>
+     *        This only applies to app blocks with PackagingType <code>CUSTOM</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,6 +414,309 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The post setup script details of the app block.
+     * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     * </p>
+     * 
+     * @param postSetupScriptDetails
+     *        The post setup script details of the app block.</p>
+     *        <p>
+     *        This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     */
+
+    public void setPostSetupScriptDetails(ScriptDetails postSetupScriptDetails) {
+        this.postSetupScriptDetails = postSetupScriptDetails;
+    }
+
+    /**
+     * <p>
+     * The post setup script details of the app block.
+     * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     * </p>
+     * 
+     * @return The post setup script details of the app block.</p>
+     *         <p>
+     *         This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     */
+
+    public ScriptDetails getPostSetupScriptDetails() {
+        return this.postSetupScriptDetails;
+    }
+
+    /**
+     * <p>
+     * The post setup script details of the app block.
+     * </p>
+     * <p>
+     * This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     * </p>
+     * 
+     * @param postSetupScriptDetails
+     *        The post setup script details of the app block.</p>
+     *        <p>
+     *        This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppBlock withPostSetupScriptDetails(ScriptDetails postSetupScriptDetails) {
+        setPostSetupScriptDetails(postSetupScriptDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @param packagingType
+     *        The packaging type of the app block.
+     * @see PackagingType
+     */
+
+    public void setPackagingType(String packagingType) {
+        this.packagingType = packagingType;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @return The packaging type of the app block.
+     * @see PackagingType
+     */
+
+    public String getPackagingType() {
+        return this.packagingType;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @param packagingType
+     *        The packaging type of the app block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackagingType
+     */
+
+    public AppBlock withPackagingType(String packagingType) {
+        setPackagingType(packagingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @param packagingType
+     *        The packaging type of the app block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackagingType
+     */
+
+    public AppBlock withPackagingType(PackagingType packagingType) {
+        this.packagingType = packagingType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the app block.
+     * </p>
+     * <p>
+     * An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package
+     * (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block,
+     * it becomes <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * </p>
+     * 
+     * @param state
+     *        The state of the app block.</p>
+     *        <p>
+     *        An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application
+     *        package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for
+     *        an app block, it becomes <code>ACTIVE</code>.
+     *        </p>
+     *        <p>
+     *        Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * @see AppBlockState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state of the app block.
+     * </p>
+     * <p>
+     * An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package
+     * (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block,
+     * it becomes <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * </p>
+     * 
+     * @return The state of the app block.</p>
+     *         <p>
+     *         An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application
+     *         package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder
+     *         for an app block, it becomes <code>ACTIVE</code>.
+     *         </p>
+     *         <p>
+     *         Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * @see AppBlockState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state of the app block.
+     * </p>
+     * <p>
+     * An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package
+     * (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block,
+     * it becomes <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * </p>
+     * 
+     * @param state
+     *        The state of the app block.</p>
+     *        <p>
+     *        An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application
+     *        package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for
+     *        an app block, it becomes <code>ACTIVE</code>.
+     *        </p>
+     *        <p>
+     *        Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppBlockState
+     */
+
+    public AppBlock withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the app block.
+     * </p>
+     * <p>
+     * An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application package
+     * (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for an app block,
+     * it becomes <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * </p>
+     * 
+     * @param state
+     *        The state of the app block.</p>
+     *        <p>
+     *        An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state if no application
+     *        package (VHD) is assigned to it. After an application package (VHD) is created by an app block builder for
+     *        an app block, it becomes <code>ACTIVE</code>.
+     *        </p>
+     *        <p>
+     *        Custom app blocks are always in the <code>ACTIVE</code> state and no action is required to use them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppBlockState
+     */
+
+    public AppBlock withState(AppBlockState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The errors of the app block.
+     * </p>
+     * 
+     * @return The errors of the app block.
+     */
+
+    public java.util.List<ErrorDetails> getAppBlockErrors() {
+        return appBlockErrors;
+    }
+
+    /**
+     * <p>
+     * The errors of the app block.
+     * </p>
+     * 
+     * @param appBlockErrors
+     *        The errors of the app block.
+     */
+
+    public void setAppBlockErrors(java.util.Collection<ErrorDetails> appBlockErrors) {
+        if (appBlockErrors == null) {
+            this.appBlockErrors = null;
+            return;
+        }
+
+        this.appBlockErrors = new java.util.ArrayList<ErrorDetails>(appBlockErrors);
+    }
+
+    /**
+     * <p>
+     * The errors of the app block.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAppBlockErrors(java.util.Collection)} or {@link #withAppBlockErrors(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param appBlockErrors
+     *        The errors of the app block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppBlock withAppBlockErrors(ErrorDetails... appBlockErrors) {
+        if (this.appBlockErrors == null) {
+            setAppBlockErrors(new java.util.ArrayList<ErrorDetails>(appBlockErrors.length));
+        }
+        for (ErrorDetails ele : appBlockErrors) {
+            this.appBlockErrors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The errors of the app block.
+     * </p>
+     * 
+     * @param appBlockErrors
+     *        The errors of the app block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppBlock withAppBlockErrors(java.util.Collection<ErrorDetails> appBlockErrors) {
+        setAppBlockErrors(appBlockErrors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -385,7 +741,15 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
         if (getSetupScriptDetails() != null)
             sb.append("SetupScriptDetails: ").append(getSetupScriptDetails()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getPostSetupScriptDetails() != null)
+            sb.append("PostSetupScriptDetails: ").append(getPostSetupScriptDetails()).append(",");
+        if (getPackagingType() != null)
+            sb.append("PackagingType: ").append(getPackagingType()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getAppBlockErrors() != null)
+            sb.append("AppBlockErrors: ").append(getAppBlockErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -428,6 +792,22 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getPostSetupScriptDetails() == null ^ this.getPostSetupScriptDetails() == null)
+            return false;
+        if (other.getPostSetupScriptDetails() != null && other.getPostSetupScriptDetails().equals(this.getPostSetupScriptDetails()) == false)
+            return false;
+        if (other.getPackagingType() == null ^ this.getPackagingType() == null)
+            return false;
+        if (other.getPackagingType() != null && other.getPackagingType().equals(this.getPackagingType()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getAppBlockErrors() == null ^ this.getAppBlockErrors() == null)
+            return false;
+        if (other.getAppBlockErrors() != null && other.getAppBlockErrors().equals(this.getAppBlockErrors()) == false)
+            return false;
         return true;
     }
 
@@ -443,6 +823,10 @@ public class AppBlock implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSourceS3Location() == null) ? 0 : getSourceS3Location().hashCode());
         hashCode = prime * hashCode + ((getSetupScriptDetails() == null) ? 0 : getSetupScriptDetails().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getPostSetupScriptDetails() == null) ? 0 : getPostSetupScriptDetails().hashCode());
+        hashCode = prime * hashCode + ((getPackagingType() == null) ? 0 : getPackagingType().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getAppBlockErrors() == null) ? 0 : getAppBlockErrors().hashCode());
         return hashCode;
     }
 

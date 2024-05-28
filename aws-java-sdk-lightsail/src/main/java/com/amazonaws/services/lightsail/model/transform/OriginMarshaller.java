@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class OriginMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionName").build();
     private static final MarshallingInfo<String> PROTOCOLPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("protocolPolicy").build();
+    private static final MarshallingInfo<Integer> RESPONSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseTimeout").build();
 
     private static final OriginMarshaller instance = new OriginMarshaller();
 
@@ -56,6 +58,7 @@ public class OriginMarshaller {
             protocolMarshaller.marshall(origin.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(origin.getRegionName(), REGIONNAME_BINDING);
             protocolMarshaller.marshall(origin.getProtocolPolicy(), PROTOCOLPOLICY_BINDING);
+            protocolMarshaller.marshall(origin.getResponseTimeout(), RESPONSETIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

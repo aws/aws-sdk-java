@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class LensReviewMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LensStatus").build();
     private static final MarshallingInfo<List> PILLARREVIEWSUMMARIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PillarReviewSummaries").build();
+    private static final MarshallingInfo<StructuredPojo> JIRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JiraConfiguration").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,10 @@ public class LensReviewMarshaller {
             .marshallLocationName("RiskCounts").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<List> PROFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Profiles").build();
+    private static final MarshallingInfo<Map> PRIORITIZEDRISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrioritizedRiskCounts").build();
 
     private static final LensReviewMarshaller instance = new LensReviewMarshaller();
 
@@ -72,10 +78,13 @@ public class LensReviewMarshaller {
             protocolMarshaller.marshall(lensReview.getLensName(), LENSNAME_BINDING);
             protocolMarshaller.marshall(lensReview.getLensStatus(), LENSSTATUS_BINDING);
             protocolMarshaller.marshall(lensReview.getPillarReviewSummaries(), PILLARREVIEWSUMMARIES_BINDING);
+            protocolMarshaller.marshall(lensReview.getJiraConfiguration(), JIRACONFIGURATION_BINDING);
             protocolMarshaller.marshall(lensReview.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(lensReview.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(lensReview.getRiskCounts(), RISKCOUNTS_BINDING);
             protocolMarshaller.marshall(lensReview.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(lensReview.getProfiles(), PROFILES_BINDING);
+            protocolMarshaller.marshall(lensReview.getPrioritizedRiskCounts(), PRIORITIZEDRISKCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

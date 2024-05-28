@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,36 +15,41 @@ package com.amazonaws.services.sqs.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListQueueTagsRequest Marshaller
+ * ListQueueTagsRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListQueueTagsRequestMarshaller implements Marshaller<Request<ListQueueTagsRequest>, ListQueueTagsRequest> {
+@SdkInternalApi
+public class ListQueueTagsRequestMarshaller {
 
-    public Request<ListQueueTagsRequest> marshall(ListQueueTagsRequest listQueueTagsRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+
+    private static final ListQueueTagsRequestMarshaller instance = new ListQueueTagsRequestMarshaller();
+
+    public static ListQueueTagsRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListQueueTagsRequest listQueueTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listQueueTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListQueueTagsRequest> request = new DefaultRequest<ListQueueTagsRequest>(listQueueTagsRequest, "AmazonSQS");
-        request.addParameter("Action", "ListQueueTags");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (listQueueTagsRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(listQueueTagsRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(listQueueTagsRequest.getQueueUrl(), QUEUEURL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

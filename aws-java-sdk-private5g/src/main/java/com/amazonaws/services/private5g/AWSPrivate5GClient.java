@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.private5g.AWSPrivate5GClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.private5g.model.*;
+
 import com.amazonaws.services.private5g.model.transform.*;
 
 /**
@@ -595,6 +596,8 @@ public class AWSPrivate5GClient extends AmazonWebServiceClient implements AWSPri
      * @return Result of the DeleteNetwork operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
      * @throws ValidationException
      *         The request failed validation.
      * @throws InternalServerException
@@ -659,6 +662,8 @@ public class AWSPrivate5GClient extends AmazonWebServiceClient implements AWSPri
      * @return Result of the DeleteNetworkSite operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
      * @throws ValidationException
      *         The request failed validation.
      * @throws InternalServerException
@@ -1022,13 +1027,9 @@ public class AWSPrivate5GClient extends AmazonWebServiceClient implements AWSPri
      * match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic
      * group.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify multiple filters, filters are joined with an OR, and the request </code>
-     * </pre>
      * <p>
-     * returns results that match all of the specified filters.
-     * </p>
+     * If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of
+     * the specified filters.
      * </p>
      * 
      * @param listDeviceIdentifiersRequest
@@ -1456,6 +1457,95 @@ public class AWSPrivate5GClient extends AmazonWebServiceClient implements AWSPri
 
             HttpResponseHandler<AmazonWebServiceResponse<PingResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this action to do the following tasks:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Update the duration and renewal status of the commitment period for a radio unit. The update goes into effect
+     * immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Request a replacement for a network resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Request that you return a network resource.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * After you submit a request to replace or return a network resource, the status of the network resource changes to
+     * <code>CREATING_SHIPPING_LABEL</code>. The shipping label is available when the status of the network resource is
+     * <code>PENDING_RETURN</code>. After the network resource is successfully returned, its status changes to
+     * <code>DELETED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a
+     * radio unit</a>.
+     * </p>
+     * 
+     * @param startNetworkResourceUpdateRequest
+     * @return Result of the StartNetworkResourceUpdate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ValidationException
+     *         The request failed validation.
+     * @throws InternalServerException
+     *         Information about an internal error.
+     * @sample AWSPrivate5G.StartNetworkResourceUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartNetworkResourceUpdateResult startNetworkResourceUpdate(StartNetworkResourceUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartNetworkResourceUpdate(request);
+    }
+
+    @SdkInternalApi
+    final StartNetworkResourceUpdateResult executeStartNetworkResourceUpdate(StartNetworkResourceUpdateRequest startNetworkResourceUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startNetworkResourceUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartNetworkResourceUpdateRequest> request = null;
+        Response<StartNetworkResourceUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartNetworkResourceUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startNetworkResourceUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PrivateNetworks");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNetworkResourceUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartNetworkResourceUpdateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartNetworkResourceUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

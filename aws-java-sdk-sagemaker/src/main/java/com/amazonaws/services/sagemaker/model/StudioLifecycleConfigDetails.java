@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of the Studio Lifecycle Configuration.
+ * Details of the Amazon SageMaker Studio Lifecycle Configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StudioLifecycleConfigDetails"
@@ -36,19 +36,19 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
     private String studioLifecycleConfigArn;
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      */
     private String studioLifecycleConfigName;
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      */
     private java.util.Date lastModifiedTime;
@@ -101,11 +101,11 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration.
      */
 
     public void setStudioLifecycleConfigName(String studioLifecycleConfigName) {
@@ -114,10 +114,10 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
-     * @return The name of the Studio Lifecycle Configuration.
+     * @return The name of the Amazon SageMaker Studio Lifecycle Configuration.
      */
 
     public String getStudioLifecycleConfigName() {
@@ -126,11 +126,11 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the Studio Lifecycle Configuration.
+     *        The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -154,10 +154,10 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
-     * @return The creation time of the Studio Lifecycle Configuration.
+     * @return The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      */
 
     public java.util.Date getCreationTime() {
@@ -166,11 +166,11 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the Studio Lifecycle Configuration.
+     *        The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,12 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      * 
      * @param lastModifiedTime
-     *        This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     *        This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are
+     *        immutable.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -194,10 +195,11 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      * 
-     * @return This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * @return This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are
+     *         immutable.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -206,11 +208,12 @@ public class StudioLifecycleConfigDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      * 
      * @param lastModifiedTime
-     *        This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     *        This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are
+     *        immutable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

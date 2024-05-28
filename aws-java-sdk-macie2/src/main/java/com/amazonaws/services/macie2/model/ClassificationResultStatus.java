@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,8 +66,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
-     * none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the
-     * corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -101,21 +101,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key.
-     * Macie can’t decrypt and analyze the object.
+     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use the key.
+     * Macie can't decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t
+     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can't
      * decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in
-     * the <i>Amazon Macie User Guide</i>.
+     * INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      * </p>
      * </li>
      * <li>
@@ -127,18 +125,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect
-     * the file’s type or extract data from the file.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
-     * analyze the object.
+     * the file's type or extract data from the file.
      * </p>
      * </li>
      * <li>
@@ -150,8 +137,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
-     * this type of file.
+     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
+     * analyze the object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      * </p>
      * </li>
      * <li>
@@ -162,7 +154,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie
+     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
+     * this type of file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent Macie
      * from analyzing the object.
      * </p>
      * </li>
@@ -173,23 +171,27 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
+     * TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time quota for
+     * analyzing an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie
      * attempted to parse the data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage
-     * formats</a> in the <i>Amazon Macie User Guide</i>.
+     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For information about sensitive data discovery quotas for files, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon
-     * Macie User Guide</i>.
+     * For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes
+     * and formats</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      */
     private String reason;
@@ -367,8 +369,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
-     * none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the
-     * corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -402,21 +404,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key.
-     * Macie can’t decrypt and analyze the object.
+     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use the key.
+     * Macie can't decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t
+     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can't
      * decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in
-     * the <i>Amazon Macie User Guide</i>.
+     * INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      * </p>
      * </li>
      * <li>
@@ -428,18 +428,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect
-     * the file’s type or extract data from the file.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
-     * analyze the object.
+     * the file's type or extract data from the file.
      * </p>
      * </li>
      * <li>
@@ -451,8 +440,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
-     * this type of file.
+     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
+     * analyze the object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      * </p>
      * </li>
      * <li>
@@ -463,7 +457,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie
+     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
+     * this type of file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent Macie
      * from analyzing the object.
      * </p>
      * </li>
@@ -474,23 +474,27 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
+     * TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time quota for
+     * analyzing an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie
      * attempted to parse the data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage
-     * formats</a> in the <i>Amazon Macie User Guide</i>.
+     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For information about sensitive data discovery quotas for files, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon
-     * Macie User Guide</i>.
+     * For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes
+     * and formats</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param reason
@@ -504,9 +508,9 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only
-     *        some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer
-     *        to the corresponding sensitive data discovery result for the finding
-     *        (ClassificationDetails.detailedResultsLocation).
+     *        some or none of the files in the archive. To determine which files Macie analyzed, if any, refer to the
+     *        corresponding sensitive data discovery result for the finding
+     *        (classificationDetails.detailedResultsLocation).
      *        </p>
      *        </li>
      *        <li>
@@ -540,21 +544,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use
-     *        the key. Macie can’t decrypt and analyze the object.
+     *        INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use
+     *        the key. Macie can't decrypt and analyze the object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie
-     *        can’t decrypt and analyze the object.
+     *        can't decrypt and analyze the object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information,
-     *        see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive
-     *        data</a> in the <i>Amazon Macie User Guide</i>.
+     *        INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      *        </p>
      *        </li>
      *        <li>
@@ -566,18 +568,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to
-     *        detect the file’s type or extract data from the file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie
-     *        attempted to analyze the object.
+     *        detect the file's type or extract data from the file.
      *        </p>
      *        </li>
      *        <li>
@@ -589,8 +580,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota
-     *        for this type of file.
+     *        NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie
+     *        attempted to analyze the object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      *        </p>
      *        </li>
      *        <li>
@@ -601,7 +597,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent
+     *        OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota
+     *        for this type of file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent
      *        Macie from analyzing the object.
      *        </p>
      *        </li>
@@ -613,6 +615,12 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
+     *        TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time
+     *        quota for analyzing an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie
      *        attempted to parse the data.
      *        </p>
@@ -620,16 +628,14 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and
-     *        storage formats</a> in the <i>Amazon Macie User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For information about sensitive data discovery quotas for files, see <a
-     *        href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the
-     *        <i>Amazon Macie User Guide</i>.
+     *        For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage
+     *        classes and formats</a> in the <i>Amazon Macie User Guide</i>.
      */
 
     public void setReason(String reason) {
@@ -649,8 +655,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
-     * none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the
-     * corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -684,21 +690,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key.
-     * Macie can’t decrypt and analyze the object.
+     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use the key.
+     * Macie can't decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t
+     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can't
      * decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in
-     * the <i>Amazon Macie User Guide</i>.
+     * INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      * </p>
      * </li>
      * <li>
@@ -710,18 +714,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect
-     * the file’s type or extract data from the file.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
-     * analyze the object.
+     * the file's type or extract data from the file.
      * </p>
      * </li>
      * <li>
@@ -733,8 +726,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
-     * this type of file.
+     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
+     * analyze the object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      * </p>
      * </li>
      * <li>
@@ -745,7 +743,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie
+     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
+     * this type of file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent Macie
      * from analyzing the object.
      * </p>
      * </li>
@@ -756,23 +760,27 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
+     * TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time quota for
+     * analyzing an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie
      * attempted to parse the data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage
-     * formats</a> in the <i>Amazon Macie User Guide</i>.
+     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For information about sensitive data discovery quotas for files, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon
-     * Macie User Guide</i>.
+     * For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes
+     * and formats</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @return A brief description of the status of the finding. This value is null if the status (code) of the finding
@@ -785,9 +793,9 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         <li>
      *         <p>
      *         ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only
-     *         some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer
-     *         to the corresponding sensitive data discovery result for the finding
-     *         (ClassificationDetails.detailedResultsLocation).
+     *         some or none of the files in the archive. To determine which files Macie analyzed, if any, refer to the
+     *         corresponding sensitive data discovery result for the finding
+     *         (classificationDetails.detailedResultsLocation).
      *         </p>
      *         </li>
      *         <li>
@@ -821,21 +829,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use
-     *         the key. Macie can’t decrypt and analyze the object.
+     *         INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use
+     *         the key. Macie can't decrypt and analyze the object.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie
-     *         can’t decrypt and analyze the object.
+     *         can't decrypt and analyze the object.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information,
-     *         see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering
-     *         sensitive data</a> in the <i>Amazon Macie User Guide</i>.
+     *         INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      *         </p>
      *         </li>
      *         <li>
@@ -847,18 +853,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         <li>
      *         <p>
      *         MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to
-     *         detect the file’s type or extract data from the file.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie
-     *         attempted to analyze the object.
+     *         detect the file's type or extract data from the file.
      *         </p>
      *         </li>
      *         <li>
@@ -870,8 +865,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota
-     *         for this type of file.
+     *         NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie
+     *         attempted to analyze the object.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      *         </p>
      *         </li>
      *         <li>
@@ -882,7 +882,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent
+     *         OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota
+     *         for this type of file.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent
      *         Macie from analyzing the object.
      *         </p>
      *         </li>
@@ -894,6 +900,12 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
+     *         TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time
+     *         quota for analyzing an object.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when
      *         Macie attempted to parse the data.
      *         </p>
@@ -901,16 +913,14 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *         <li>
      *         <p>
      *         UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and
-     *         storage formats</a> in the <i>Amazon Macie User Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For information about sensitive data discovery quotas for files, see <a
-     *         href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the
-     *         <i>Amazon Macie User Guide</i>.
+     *         For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     *         href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     *         href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage
+     *         classes and formats</a> in the <i>Amazon Macie User Guide</i>.
      */
 
     public String getReason() {
@@ -930,8 +940,8 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only some or
-     * none of the files in the archive. To determine which files Macie analyzed, if any, you can refer to the
-     * corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+     * none of the files in the archive. To determine which files Macie analyzed, if any, refer to the corresponding
+     * sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).
      * </p>
      * </li>
      * <li>
@@ -965,21 +975,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use the key.
-     * Macie can’t decrypt and analyze the object.
+     * INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use the key.
+     * Macie can't decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can’t
+     * INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie can't
      * decrypt and analyze the object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive data</a> in
-     * the <i>Amazon Macie User Guide</i>.
+     * INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      * </p>
      * </li>
      * <li>
@@ -991,18 +999,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * <li>
      * <p>
      * MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to detect
-     * the file’s type or extract data from the file.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
-     * analyze the object.
+     * the file's type or extract data from the file.
      * </p>
      * </li>
      * <li>
@@ -1014,8 +1011,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
-     * this type of file.
+     * NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie attempted to
+     * analyze the object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      * </p>
      * </li>
      * <li>
@@ -1026,7 +1028,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent Macie
+     * OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota for
+     * this type of file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent Macie
      * from analyzing the object.
      * </p>
      * </li>
@@ -1037,23 +1045,27 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
+     * TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time quota for
+     * analyzing an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie
      * attempted to parse the data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and storage
-     * formats</a> in the <i>Amazon Macie User Guide</i>.
+     * UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For information about sensitive data discovery quotas for files, see <a
-     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the <i>Amazon
-     * Macie User Guide</i>.
+     * For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage classes
+     * and formats</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param reason
@@ -1067,9 +1079,9 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        ARCHIVE_CONTAINS_UNPROCESSED_FILES - The object is an archive file and Macie extracted and analyzed only
-     *        some or none of the files in the archive. To determine which files Macie analyzed, if any, you can refer
-     *        to the corresponding sensitive data discovery result for the finding
-     *        (ClassificationDetails.detailedResultsLocation).
+     *        some or none of the files in the archive. To determine which files Macie analyzed, if any, refer to the
+     *        corresponding sensitive data discovery result for the finding
+     *        (classificationDetails.detailedResultsLocation).
      *        </p>
      *        </li>
      *        <li>
@@ -1103,21 +1115,19 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn’t allowed to use
-     *        the key. Macie can’t decrypt and analyze the object.
+     *        INVALID_ENCRYPTION - The object is encrypted using server-side encryption but Macie isn't allowed to use
+     *        the key. Macie can't decrypt and analyze the object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        INVALID_KMS_KEY - The object is encrypted with an KMS key that was disabled or is being deleted. Macie
-     *        can’t decrypt and analyze the object.
+     *        can't decrypt and analyze the object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INVALID_OBJECT_STATE - The object doesn’t use a supported Amazon S3 storage class. For more information,
-     *        see <a href="https://docs.aws.amazon.com/macie/latest/user/data-classification.html">Discovering sensitive
-     *        data</a> in the <i>Amazon Macie User Guide</i>.
+     *        INVALID_OBJECT_STATE - The object doesn't use a supported Amazon S3 storage class.
      *        </p>
      *        </li>
      *        <li>
@@ -1129,18 +1139,7 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        MALFORMED_FILE - The object is a malformed or corrupted file. An error occurred when Macie attempted to
-     *        detect the file’s type or extract data from the file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie
-     *        attempted to analyze the object.
+     *        detect the file's type or extract data from the file.
      *        </p>
      *        </li>
      *        <li>
@@ -1152,8 +1151,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota
-     *        for this type of file.
+     *        NO_SUCH_BUCKET_AVAILABLE - The object was in a bucket that was deleted shortly before or when Macie
+     *        attempted to analyze the object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_VERSION_MISMATCH - The object was changed while Macie was analyzing it.
      *        </p>
      *        </li>
      *        <li>
@@ -1164,7 +1168,13 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        PERMISSION_DENIED - Macie isn’t allowed to access the object. The object’s permissions settings prevent
+     *        OOXML_UNCOMPRESSED_SIZE_EXCEEDS_LIMIT - The object is an Office Open XML file that exceeds the size quota
+     *        for this type of file.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PERMISSION_DENIED - Macie isn't allowed to access the object. The object's permissions settings prevent
      *        Macie from analyzing the object.
      *        </p>
      *        </li>
@@ -1176,6 +1186,12 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
+     *        TIME_CUT_OFF_REACHED - Macie started analyzing the object but additional analysis would exceed the time
+     *        quota for analyzing an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        UNABLE_TO_PARSE_FILE - The object is a file that contains structured data and an error occurred when Macie
      *        attempted to parse the data.
      *        </p>
@@ -1183,16 +1199,14 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
      *        <li>
      *        <p>
      *        UNSUPPORTED_FILE_TYPE_EXCEPTION - The object is a file that uses an unsupported file or storage format.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-formats.html">Supported file and
-     *        storage formats</a> in the <i>Amazon Macie User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For information about sensitive data discovery quotas for files, see <a
-     *        href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Amazon Macie quotas</a> in the
-     *        <i>Amazon Macie User Guide</i>.
+     *        For information about quotas, supported storage classes, and supported file and storage formats, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/macie-quotas.html">Quotas</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported storage
+     *        classes and formats</a> in the <i>Amazon Macie User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

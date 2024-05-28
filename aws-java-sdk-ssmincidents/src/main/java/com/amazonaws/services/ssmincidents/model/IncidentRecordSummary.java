@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
     private String arn;
     /**
      * <p>
-     * The time the incident was created.
+     * The timestamp for when the incident was created.
      * </p>
      */
     private java.util.Date creationTime;
@@ -54,7 +54,7 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
     private IncidentRecordSource incidentRecordSource;
     /**
      * <p>
-     * The time the incident was resolved.
+     * The timestamp for when the incident was resolved.
      * </p>
      */
     private java.util.Date resolvedTime;
@@ -113,11 +113,11 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the incident was created.
+     * The timestamp for when the incident was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the incident was created.
+     *        The timestamp for when the incident was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -126,10 +126,10 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the incident was created.
+     * The timestamp for when the incident was created.
      * </p>
      * 
-     * @return The time the incident was created.
+     * @return The timestamp for when the incident was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -138,11 +138,11 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the incident was created.
+     * The timestamp for when the incident was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the incident was created.
+     *        The timestamp for when the incident was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the incident was resolved.
+     * The timestamp for when the incident was resolved.
      * </p>
      * 
      * @param resolvedTime
-     *        The time the incident was resolved.
+     *        The timestamp for when the incident was resolved.
      */
 
     public void setResolvedTime(java.util.Date resolvedTime) {
@@ -246,10 +246,10 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the incident was resolved.
+     * The timestamp for when the incident was resolved.
      * </p>
      * 
-     * @return The time the incident was resolved.
+     * @return The timestamp for when the incident was resolved.
      */
 
     public java.util.Date getResolvedTime() {
@@ -258,11 +258,11 @@ public class IncidentRecordSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time the incident was resolved.
+     * The timestamp for when the incident was resolved.
      * </p>
      * 
      * @param resolvedTime
-     *        The time the incident was resolved.
+     *        The timestamp for when the incident was resolved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

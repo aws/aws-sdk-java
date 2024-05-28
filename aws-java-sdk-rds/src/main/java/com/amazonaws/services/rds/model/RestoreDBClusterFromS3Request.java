@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -133,8 +133,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      */
     private String engine;
@@ -143,15 +142,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
-     * following command:
-     * </p>
-     * <p>
-     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     * </p>
-     * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -160,8 +152,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      */
     private String engineVersion;
@@ -206,8 +197,20 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain from 8 to 41 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String masterUserPassword;
     /**
@@ -283,7 +286,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
@@ -304,8 +307,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -319,7 +322,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      */
     private String sourceEngine;
@@ -328,10 +331,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      */
     private String sourceEngineVersion;
@@ -392,12 +395,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
      * </p>
      * <p>
-     * <b>Aurora PostgreSQL</b>
-     * </p>
-     * <p>
-     * Possible value is <code>postgresql</code>.
-     * </p>
-     * <p>
      * For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
@@ -406,15 +403,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -444,7 +441,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -470,6 +467,113 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String networkType;
+    /**
+     * <p>
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management
+     * with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code>
+     * is specified.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean manageMasterUserPassword;
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in
+     * Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager
+     * for the DB cluster.
+     * </p>
+     * <p>
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is
+     * used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the
+     * <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.
+     * </p>
+     * <p>
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+     * default KMS key for each Amazon Web Services Region.
+     * </p>
+     */
+    private String masterUserSecretKmsKeyId;
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private String storageType;
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     */
+    private String engineLifecycleSupport;
 
     /**
      * <p>
@@ -929,7 +1033,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -944,7 +1048,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *        omitted, <code>default.aurora5.6</code> is used.</p>
+     *        omitted, the default parameter group for the engine version is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -963,7 +1067,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -977,7 +1081,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *         omitted, <code>default.aurora5.6</code> is used.</p>
+     *         omitted, the default parameter group for the engine version is used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -996,7 +1100,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -1011,7 +1115,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *        omitted, <code>default.aurora5.6</code> is used.</p>
+     *        omitted, the default parameter group for the engine version is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1180,15 +1284,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for
-     *        MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      */
 
     public void setEngine(String engine) {
@@ -1200,14 +1302,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      * 
      * @return The name of the database engine to be used for this DB cluster.</p>
      *         <p>
-     *         Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for
-     *         MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *         Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      */
 
     public String getEngine() {
@@ -1219,15 +1319,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL
-     * 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for
-     *        MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1241,15 +1339,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
-     * following command:
-     * </p>
-     * <p>
-     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     * </p>
-     * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1258,22 +1349,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     *        use the following command:
-     *        </p>
-     *        <p>
-     *        <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     *        </p>
-     *        <p>
-     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
-     *        MySQL 8.0-compatible Aurora), use the following command:
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     *        following command:
      *        </p>
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1282,8 +1365,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-     *        <code>8.0.mysql_aurora.3.02.0</code>
+     *        Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1295,15 +1377,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
-     * following command:
-     * </p>
-     * <p>
-     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     * </p>
-     * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1312,21 +1387,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
      *         <p>
-     *         To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     *         use the following command:
-     *         </p>
-     *         <p>
-     *         <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     *         </p>
-     *         <p>
-     *         To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
-     *         MySQL 8.0-compatible Aurora), use the following command:
+     *         To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     *         following command:
      *         </p>
      *         <p>
      *         <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1335,7 +1402,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code>
+     *         Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      */
 
     public String getEngineVersion() {
@@ -1347,15 +1414,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
-     * following command:
-     * </p>
-     * <p>
-     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     * </p>
-     * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1364,22 +1424,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code>
+     * Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
-     *        use the following command:
-     *        </p>
-     *        <p>
-     *        <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-     *        </p>
-     *        <p>
-     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and
-     *        MySQL 8.0-compatible Aurora), use the following command:
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     *        following command:
      *        </p>
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1388,8 +1440,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-     *        <code>8.0.mysql_aurora.3.02.0</code>
+     *        Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1616,14 +1667,38 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain from 8 to 41 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param masterUserPassword
      *        The password for the master database user. This password can contain any printable ASCII character except
      *        "/", """, or "@".</p>
      *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 8 to 41 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     *        </p>
+     *        </li>
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -1636,13 +1711,37 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain from 8 to 41 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The password for the master database user. This password can contain any printable ASCII character except
      *         "/", """, or "@".</p>
      *         <p>
-     *         Constraints: Must contain from 8 to 41 characters.
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must contain from 8 to 41 characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     *         </p>
+     *         </li>
      */
 
     public String getMasterUserPassword() {
@@ -1655,14 +1754,38 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain from 8 to 41 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param masterUserPassword
      *        The password for the master database user. This password can contain any printable ASCII character except
      *        "/", """, or "@".</p>
      *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must contain from 8 to 41 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2148,11 +2271,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the restored DB cluster is encrypted.
+     *        Specifies whether the restored DB cluster is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -2161,10 +2284,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
-     * @return A value that indicates whether the restored DB cluster is encrypted.
+     * @return Specifies whether the restored DB cluster is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -2173,11 +2296,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        A value that indicates whether the restored DB cluster is encrypted.
+     *        Specifies whether the restored DB cluster is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2188,10 +2311,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the restored DB cluster is encrypted.
+     * Specifies whether the restored DB cluster is encrypted.
      * </p>
      * 
-     * @return A value that indicates whether the restored DB cluster is encrypted.
+     * @return Specifies whether the restored DB cluster is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -2294,8 +2417,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2304,8 +2427,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2318,8 +2441,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2327,8 +2450,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2341,8 +2464,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2351,8 +2474,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2367,8 +2490,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2376,8 +2499,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2393,14 +2516,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      * 
      * @param sourceEngine
      *        The identifier for the database engine that was backed up to create the files stored in the Amazon S3
      *        bucket.</p>
      *        <p>
-     *        Valid values: <code>mysql</code>
+     *        Valid Values: <code>mysql</code>
      */
 
     public void setSourceEngine(String sourceEngine) {
@@ -2412,13 +2535,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      * 
      * @return The identifier for the database engine that was backed up to create the files stored in the Amazon S3
      *         bucket.</p>
      *         <p>
-     *         Valid values: <code>mysql</code>
+     *         Valid Values: <code>mysql</code>
      */
 
     public String getSourceEngine() {
@@ -2430,14 +2553,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The identifier for the database engine that was backed up to create the files stored in the Amazon S3 bucket.
      * </p>
      * <p>
-     * Valid values: <code>mysql</code>
+     * Valid Values: <code>mysql</code>
      * </p>
      * 
      * @param sourceEngine
      *        The identifier for the database engine that was backed up to create the files stored in the Amazon S3
      *        bucket.</p>
      *        <p>
-     *        Valid values: <code>mysql</code>
+     *        Valid Values: <code>mysql</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2451,19 +2574,19 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      * 
      * @param sourceEngineVersion
      *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        MySQL versions 5.5, 5.6, and 5.7 are supported.
+     *        MySQL versions 5.7 and 8.0 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.40</code>, <code>5.7.28</code>
+     *        Example: <code>5.7.40</code>, <code>8.0.28</code>
      */
 
     public void setSourceEngineVersion(String sourceEngineVersion) {
@@ -2475,18 +2598,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      * 
      * @return The version of the database that the backup files were created from.</p>
      *         <p>
-     *         MySQL versions 5.5, 5.6, and 5.7 are supported.
+     *         MySQL versions 5.7 and 8.0 are supported.
      *         </p>
      *         <p>
-     *         Example: <code>5.6.40</code>, <code>5.7.28</code>
+     *         Example: <code>5.7.40</code>, <code>8.0.28</code>
      */
 
     public String getSourceEngineVersion() {
@@ -2498,19 +2621,19 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version of the database that the backup files were created from.
      * </p>
      * <p>
-     * MySQL versions 5.5, 5.6, and 5.7 are supported.
+     * MySQL versions 5.7 and 8.0 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>, <code>5.7.28</code>
+     * Example: <code>5.7.40</code>, <code>8.0.28</code>
      * </p>
      * 
      * @param sourceEngineVersion
      *        The version of the database that the backup files were created from.</p>
      *        <p>
-     *        MySQL versions 5.5, 5.6, and 5.7 are supported.
+     *        MySQL versions 5.7 and 8.0 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.40</code>, <code>5.7.28</code>
+     *        Example: <code>5.7.40</code>, <code>8.0.28</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2811,12 +2934,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
      * </p>
      * <p>
-     * <b>Aurora PostgreSQL</b>
-     * </p>
-     * <p>
-     * Possible value is <code>postgresql</code>.
-     * </p>
-     * <p>
      * For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
@@ -2830,12 +2947,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
      *         <code>slowquery</code>.
-     *         </p>
-     *         <p>
-     *         <b>Aurora PostgreSQL</b>
-     *         </p>
-     *         <p>
-     *         Possible value is <code>postgresql</code>.
      *         </p>
      *         <p>
      *         For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
@@ -2862,12 +2973,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
      * </p>
      * <p>
-     * <b>Aurora PostgreSQL</b>
-     * </p>
-     * <p>
-     * Possible value is <code>postgresql</code>.
-     * </p>
-     * <p>
      * For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
@@ -2882,12 +2987,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
      *        <code>slowquery</code>.
-     *        </p>
-     *        <p>
-     *        <b>Aurora PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Possible value is <code>postgresql</code>.
      *        </p>
      *        <p>
      *        For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
@@ -2916,12 +3015,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
      * </p>
      * <p>
-     * <b>Aurora PostgreSQL</b>
-     * </p>
-     * <p>
-     * Possible value is <code>postgresql</code>.
-     * </p>
-     * <p>
      * For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
@@ -2941,12 +3034,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
      *        <code>slowquery</code>.
-     *        </p>
-     *        <p>
-     *        <b>Aurora PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Possible value is <code>postgresql</code>.
      *        </p>
      *        <p>
      *        For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
@@ -2977,12 +3064,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
      * </p>
      * <p>
-     * <b>Aurora PostgreSQL</b>
-     * </p>
-     * <p>
-     * Possible value is <code>postgresql</code>.
-     * </p>
-     * <p>
      * For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
@@ -2999,12 +3080,6 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <code>slowquery</code>.
      *        </p>
      *        <p>
-     *        <b>Aurora PostgreSQL</b>
-     *        </p>
-     *        <p>
-     *        Possible value is <code>postgresql</code>.
-     *        </p>
-     *        <p>
      *        For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
@@ -3018,13 +3093,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     *        Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -3033,12 +3108,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     * @return Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -3047,13 +3122,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     *        Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3064,12 +3139,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
+     * @return Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled.
      */
 
     public Boolean isDeletionProtection() {
@@ -3078,13 +3153,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *        The default is not to copy them.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -3093,12 +3168,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *         The default is not to copy them.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -3107,13 +3182,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.
+     *        Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *        The default is not to copy them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3124,12 +3199,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.
+     * @return Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *         The default is not to copy them.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -3286,7 +3361,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -3314,7 +3389,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param networkType
      *        The network type of the DB cluster.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -3348,7 +3423,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -3375,7 +3450,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @return The network type of the DB cluster.</p>
      *         <p>
-     *         Valid values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -3409,7 +3484,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -3437,7 +3512,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param networkType
      *        The network type of the DB cluster.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -3465,6 +3540,699 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     public RestoreDBClusterFromS3Request withNetworkType(String networkType) {
         setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management
+     * with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code>
+     * is specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param manageMasterUserPassword
+     *        Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
+     *        with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password
+     *        management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't manage the master user password with Amazon Web Services Secrets Manager if
+     *        <code>MasterUserPassword</code> is specified.
+     *        </p>
+     *        </li>
+     */
+
+    public void setManageMasterUserPassword(Boolean manageMasterUserPassword) {
+        this.manageMasterUserPassword = manageMasterUserPassword;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management
+     * with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code>
+     * is specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     *         management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password
+     *         management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't manage the master user password with Amazon Web Services Secrets Manager if
+     *         <code>MasterUserPassword</code> is specified.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getManageMasterUserPassword() {
+        return this.manageMasterUserPassword;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management
+     * with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code>
+     * is specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param manageMasterUserPassword
+     *        Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
+     *        with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password
+     *        management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Can't manage the master user password with Amazon Web Services Secrets Manager if
+     *        <code>MasterUserPassword</code> is specified.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromS3Request withManageMasterUserPassword(Boolean manageMasterUserPassword) {
+        setManageMasterUserPassword(manageMasterUserPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management
+     * with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code>
+     * is specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     *         management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password
+     *         management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i>
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Can't manage the master user password with Amazon Web Services Secrets Manager if
+     *         <code>MasterUserPassword</code> is specified.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isManageMasterUserPassword() {
+        return this.manageMasterUserPassword;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in
+     * Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager
+     * for the DB cluster.
+     * </p>
+     * <p>
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is
+     * used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the
+     * <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.
+     * </p>
+     * <p>
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+     * default KMS key for each Amazon Web Services Region.
+     * </p>
+     * 
+     * @param masterUserSecretKmsKeyId
+     *        The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed
+     *        in Amazon Web Services Secrets Manager.</p>
+     *        <p>
+     *        This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets
+     *        Manager for the DB cluster.
+     *        </p>
+     *        <p>
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     *        key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     *        </p>
+     *        <p>
+     *        If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS
+     *        key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you
+     *        can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer
+     *        managed KMS key.
+     *        </p>
+     *        <p>
+     *        There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a
+     *        different default KMS key for each Amazon Web Services Region.
+     */
+
+    public void setMasterUserSecretKmsKeyId(String masterUserSecretKmsKeyId) {
+        this.masterUserSecretKmsKeyId = masterUserSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in
+     * Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager
+     * for the DB cluster.
+     * </p>
+     * <p>
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is
+     * used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the
+     * <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.
+     * </p>
+     * <p>
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+     * default KMS key for each Amazon Web Services Region.
+     * </p>
+     * 
+     * @return The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and
+     *         managed in Amazon Web Services Secrets Manager.</p>
+     *         <p>
+     *         This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets
+     *         Manager for the DB cluster.
+     *         </p>
+     *         <p>
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     *         key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     *         </p>
+     *         <p>
+     *         If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS
+     *         key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you
+     *         can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer
+     *         managed KMS key.
+     *         </p>
+     *         <p>
+     *         There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a
+     *         different default KMS key for each Amazon Web Services Region.
+     */
+
+    public String getMasterUserSecretKmsKeyId() {
+        return this.masterUserSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in
+     * Amazon Web Services Secrets Manager.
+     * </p>
+     * <p>
+     * This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager
+     * for the DB cluster.
+     * </p>
+     * <p>
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To
+     * use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is
+     * used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the
+     * <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.
+     * </p>
+     * <p>
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
+     * default KMS key for each Amazon Web Services Region.
+     * </p>
+     * 
+     * @param masterUserSecretKmsKeyId
+     *        The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed
+     *        in Amazon Web Services Secrets Manager.</p>
+     *        <p>
+     *        This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets
+     *        Manager for the DB cluster.
+     *        </p>
+     *        <p>
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS
+     *        key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
+     *        </p>
+     *        <p>
+     *        If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS
+     *        key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you
+     *        can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer
+     *        managed KMS key.
+     *        </p>
+     *        <p>
+     *        There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a
+     *        different default KMS key for each Amazon Web Services Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromS3Request withMasterUserSecretKmsKeyId(String masterUserSecretKmsKeyId) {
+        setMasterUserSecretKmsKeyId(masterUserSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param storageType
+     *        Specifies the storage type to be associated with the DB cluster.</p>
+     *        <p>
+     *        Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>aurora</code>
+     *        </p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Specifies the storage type to be associated with the DB cluster.</p>
+     *         <p>
+     *         Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>aurora</code>
+     *         </p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>aurora</code>
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param storageType
+     *        Specifies the storage type to be associated with the DB cluster.</p>
+     *        <p>
+     *        Valid Values: <code>aurora</code>, <code>aurora-iopt1</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>aurora</code>
+     *        </p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromS3Request withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     * 
+     * @param engineLifecycleSupport
+     *        The life cycle type for this DB cluster.</p> <note>
+     *        <p>
+     *        By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     *        cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for
+     *        Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this
+     *        case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine
+     *        version is past its end of standard support date.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended
+     *        Support, you can run the selected major engine version on your DB cluster past the end of standard support
+     *        for that engine version. For more information, see the following sections:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Aurora (PostgreSQL only) - <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     *        Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     *        Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>open-source-rds-extended-support</code>
+     */
+
+    public void setEngineLifecycleSupport(String engineLifecycleSupport) {
+        this.engineLifecycleSupport = engineLifecycleSupport;
+    }
+
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     * 
+     * @return The life cycle type for this DB cluster.</p> <note>
+     *         <p>
+     *         By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     *         cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for
+     *         Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this
+     *         case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine
+     *         version is past its end of standard support date.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended
+     *         Support, you can run the selected major engine version on your DB cluster past the end of standard
+     *         support for that engine version. For more information, see the following sections:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Amazon Aurora (PostgreSQL only) - <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon
+     *         RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     *         Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     *         </p>
+     *         <p>
+     *         Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>open-source-rds-extended-support</code>
+     */
+
+    public String getEngineLifecycleSupport() {
+        return this.engineLifecycleSupport;
+    }
+
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     * 
+     * @param engineLifecycleSupport
+     *        The life cycle type for this DB cluster.</p> <note>
+     *        <p>
+     *        By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     *        cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for
+     *        Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this
+     *        case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine
+     *        version is past its end of standard support date.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended
+     *        Support, you can run the selected major engine version on your DB cluster past the end of standard support
+     *        for that engine version. For more information, see the following sections:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Aurora (PostgreSQL only) - <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     *        Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     *        Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>open-source-rds-extended-support</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromS3Request withEngineLifecycleSupport(String engineLifecycleSupport) {
+        setEngineLifecycleSupport(engineLifecycleSupport);
         return this;
     }
 
@@ -3545,7 +4313,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
         if (getServerlessV2ScalingConfiguration() != null)
             sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration()).append(",");
         if (getNetworkType() != null)
-            sb.append("NetworkType: ").append(getNetworkType());
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getManageMasterUserPassword() != null)
+            sb.append("ManageMasterUserPassword: ").append(getManageMasterUserPassword()).append(",");
+        if (getMasterUserSecretKmsKeyId() != null)
+            sb.append("MasterUserSecretKmsKeyId: ").append(getMasterUserSecretKmsKeyId()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getEngineLifecycleSupport() != null)
+            sb.append("EngineLifecycleSupport: ").append(getEngineLifecycleSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -3694,6 +4470,22 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
+        if (other.getManageMasterUserPassword() == null ^ this.getManageMasterUserPassword() == null)
+            return false;
+        if (other.getManageMasterUserPassword() != null && other.getManageMasterUserPassword().equals(this.getManageMasterUserPassword()) == false)
+            return false;
+        if (other.getMasterUserSecretKmsKeyId() == null ^ this.getMasterUserSecretKmsKeyId() == null)
+            return false;
+        if (other.getMasterUserSecretKmsKeyId() != null && other.getMasterUserSecretKmsKeyId().equals(this.getMasterUserSecretKmsKeyId()) == false)
+            return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
+        if (other.getEngineLifecycleSupport() == null ^ this.getEngineLifecycleSupport() == null)
+            return false;
+        if (other.getEngineLifecycleSupport() != null && other.getEngineLifecycleSupport().equals(this.getEngineLifecycleSupport()) == false)
+            return false;
         return true;
     }
 
@@ -3735,6 +4527,10 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
         hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getManageMasterUserPassword() == null) ? 0 : getManageMasterUserPassword().hashCode());
+        hashCode = prime * hashCode + ((getMasterUserSecretKmsKeyId() == null) ? 0 : getMasterUserSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getEngineLifecycleSupport() == null) ? 0 : getEngineLifecycleSupport().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class ListAppImageConfigsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      */
     private Integer maxResults;
@@ -83,11 +85,15 @@ public class ListAppImageConfigsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     *        The total number of items to return in the response. If the total number of items available is more than
+     *        the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide
+     *        the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -96,10 +102,14 @@ public class ListAppImageConfigsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      * 
-     * @return The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     * @return The total number of items to return in the response. If the total number of items available is more than
+     *         the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide
+     *         the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      */
 
     public Integer getMaxResults() {
@@ -108,11 +118,15 @@ public class ListAppImageConfigsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     * The total number of items to return in the response. If the total number of items available is more than the
+     * value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of AppImageConfigs to return in the response. The default value is 10.
+     *        The total number of items to return in the response. If the total number of items available is more than
+     *        the value specified, a <code>NextToken</code> is provided in the response. To resume pagination, provide
+     *        the <code>NextToken</code> value in the as part of a subsequent call. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

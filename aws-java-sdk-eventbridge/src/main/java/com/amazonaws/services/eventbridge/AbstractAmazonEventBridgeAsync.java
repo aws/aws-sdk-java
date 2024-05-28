@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -751,6 +751,19 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     @Override
     public java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBusResult> updateEventBusAsync(UpdateEventBusRequest request) {
+
+        return updateEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBusResult> updateEventBusAsync(UpdateEventBusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateEventBusRequest, UpdateEventBusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

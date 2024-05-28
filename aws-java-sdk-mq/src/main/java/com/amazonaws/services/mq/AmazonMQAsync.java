@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,8 +114,8 @@ public interface AmazonMQAsync extends AmazonMQ {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user"
-     * >Create an IAM User and Get Your AWS Credentials</a> and <a href=
-     * "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
+     * >Create an IAM User and Get Your Amazon Web Services Credentials</a> and <a href=
+     * "https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
      * >Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.
      * </p>
      * 
@@ -208,8 +208,8 @@ public interface AmazonMQAsync extends AmazonMQ {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user"
-     * >Create an IAM User and Get Your AWS Credentials</a> and <a href=
-     * "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
+     * >Create an IAM User and Get Your Amazon Web Services Credentials</a> and <a href=
+     * "https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
      * >Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.
      * </p>
      * 
@@ -301,6 +301,13 @@ public interface AmazonMQAsync extends AmazonMQ {
      * <p>
      * Creates an ActiveMQ user.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param createUserRequest
      *        Creates a new ActiveMQ user.
@@ -315,6 +322,13 @@ public interface AmazonMQAsync extends AmazonMQ {
      * <p>
      * Creates an ActiveMQ user.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param createUserRequest
      *        Creates a new ActiveMQ user.
@@ -775,6 +789,39 @@ public interface AmazonMQAsync extends AmazonMQ {
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Promotes a data replication replica broker to the primary broker role.
+     * </p>
+     * 
+     * @param promoteRequest
+     *        Promotes a data replication replica broker to the primary broker role.
+     * @return A Java Future containing the result of the Promote operation returned by the service.
+     * @sample AmazonMQAsync.Promote
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PromoteResult> promoteAsync(PromoteRequest promoteRequest);
+
+    /**
+     * <p>
+     * Promotes a data replication replica broker to the primary broker role.
+     * </p>
+     * 
+     * @param promoteRequest
+     *        Promotes a data replication replica broker to the primary broker role.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the Promote operation returned by the service.
+     * @sample AmazonMQAsyncHandler.Promote
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PromoteResult> promoteAsync(PromoteRequest promoteRequest,
+            com.amazonaws.handlers.AsyncHandler<PromoteRequest, PromoteResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,12 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
      * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
-     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request
      * Parameters section.
      * </p>
      * <p>
-     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
-     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     * Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a list of
+     * operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
@@ -133,12 +133,12 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
      * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
-     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request
      * Parameters section.
      * </p>
      * <p>
-     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
-     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     * Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a list of
+     * operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
@@ -182,11 +182,11 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @return A map of tables and requests against those tables that were not processed. The
      *         <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-     *         this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+     *         this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see
      *         <code>RequestItems</code> in the Request Parameters section.</p>
      *         <p>
-     *         Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-     *         operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     *         Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a
+     *         list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      *         </p>
      *         <ul>
      *         <li>
@@ -237,12 +237,12 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
      * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
-     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request
      * Parameters section.
      * </p>
      * <p>
-     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
-     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     * Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a list of
+     * operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
@@ -287,11 +287,11 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * @param unprocessedItems
      *        A map of tables and requests against those tables that were not processed. The
      *        <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-     *        this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+     *        this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see
      *        <code>RequestItems</code> in the Request Parameters section.</p>
      *        <p>
-     *        Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-     *        operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     *        Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a list
+     *        of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      *        </p>
      *        <ul>
      *        <li>
@@ -342,12 +342,12 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
      * value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent
-     * <code>BatchGetItem</code> operation. For more information, see <code>RequestItems</code> in the Request
+     * <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request
      * Parameters section.
      * </p>
      * <p>
-     * Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to
-     * perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     * Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a list of
+     * operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      * </p>
      * <ul>
      * <li>
@@ -392,11 +392,11 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
      * @param unprocessedItems
      *        A map of tables and requests against those tables that were not processed. The
      *        <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide
-     *        this value directly to a subsequent <code>BatchGetItem</code> operation. For more information, see
+     *        this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see
      *        <code>RequestItems</code> in the Request Parameters section.</p>
      *        <p>
-     *        Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of
-     *        operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
+     *        Each <code>UnprocessedItems</code> entry consists of a table name or table ARN and, for that table, a list
+     *        of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
      *        </p>
      *        <ul>
      *        <li>

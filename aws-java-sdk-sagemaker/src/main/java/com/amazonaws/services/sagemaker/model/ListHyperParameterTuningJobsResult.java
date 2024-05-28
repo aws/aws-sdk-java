@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,9 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     * >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      */
@@ -40,11 +42,15 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     * >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * 
-     * @return A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * @return A list of <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     *         >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      *         <code>ListHyperParameterTuningJobs</code> request returned.
      */
 
@@ -54,12 +60,16 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     * >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * 
      * @param hyperParameterTuningJobSummaries
-     *        A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *        A list of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     *        >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      *        <code>ListHyperParameterTuningJobs</code> request returned.
      */
 
@@ -74,7 +84,9 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     * >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * <p>
@@ -84,7 +96,9 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param hyperParameterTuningJobSummaries
-     *        A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *        A list of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     *        >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      *        <code>ListHyperParameterTuningJobs</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -101,12 +115,16 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     * >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * 
      * @param hyperParameterTuningJobSummaries
-     *        A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *        A list of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html"
+     *        >HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
      *        <code>ListHyperParameterTuningJobs</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

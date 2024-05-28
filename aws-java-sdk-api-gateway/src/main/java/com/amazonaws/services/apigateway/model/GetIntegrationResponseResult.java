@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,9 +35,9 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * Specifies the regular expression (regex) pattern used to choose an integration response based on the response
      * from the back end. For example, if the success response returns nothing and the error response returns some
      * string, you could use the <code>.+</code> regex to match error response. However, make sure that the error
-     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda
-     * function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status
-     * code is matched.
+     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda
+     * function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the
+     * HTTP status code is matched.
      * </p>
      */
     private String selectionPattern;
@@ -118,9 +118,9 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * Specifies the regular expression (regex) pattern used to choose an integration response based on the response
      * from the back end. For example, if the success response returns nothing and the error response returns some
      * string, you could use the <code>.+</code> regex to match error response. However, make sure that the error
-     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda
-     * function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status
-     * code is matched.
+     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda
+     * function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the
+     * HTTP status code is matched.
      * </p>
      * 
      * @param selectionPattern
@@ -128,8 +128,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      *        response from the back end. For example, if the success response returns nothing and the error response
      *        returns some string, you could use the <code>.+</code> regex to match error response. However, make sure
      *        that the error response does not contain any newline (<code>\n</code>) character in such cases. If the
-     *        back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP
-     *        and AWS back ends, the HTTP status code is matched.
+     *        back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and Amazon
+     *        Web Services back ends, the HTTP status code is matched.
      */
 
     public void setSelectionPattern(String selectionPattern) {
@@ -141,17 +141,17 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * Specifies the regular expression (regex) pattern used to choose an integration response based on the response
      * from the back end. For example, if the success response returns nothing and the error response returns some
      * string, you could use the <code>.+</code> regex to match error response. However, make sure that the error
-     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda
-     * function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status
-     * code is matched.
+     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda
+     * function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the
+     * HTTP status code is matched.
      * </p>
      * 
      * @return Specifies the regular expression (regex) pattern used to choose an integration response based on the
      *         response from the back end. For example, if the success response returns nothing and the error response
      *         returns some string, you could use the <code>.+</code> regex to match error response. However, make sure
      *         that the error response does not contain any newline (<code>\n</code>) character in such cases. If the
-     *         back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP
-     *         and AWS back ends, the HTTP status code is matched.
+     *         back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and
+     *         Amazon Web Services back ends, the HTTP status code is matched.
      */
 
     public String getSelectionPattern() {
@@ -163,9 +163,9 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * Specifies the regular expression (regex) pattern used to choose an integration response based on the response
      * from the back end. For example, if the success response returns nothing and the error response returns some
      * string, you could use the <code>.+</code> regex to match error response. However, make sure that the error
-     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda
-     * function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status
-     * code is matched.
+     * response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an Lambda
+     * function, the Lambda function error header is matched. For all other HTTP and Amazon Web Services back ends, the
+     * HTTP status code is matched.
      * </p>
      * 
      * @param selectionPattern
@@ -173,8 +173,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      *        response from the back end. For example, if the success response returns nothing and the error response
      *        returns some string, you could use the <code>.+</code> regex to match error response. However, make sure
      *        that the error response does not contain any newline (<code>\n</code>) character in such cases. If the
-     *        back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP
-     *        and AWS back ends, the HTTP status code is matched.
+     *        back end is an Lambda function, the Lambda function error header is matched. For all other HTTP and Amazon
+     *        Web Services back ends, the HTTP status code is matched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

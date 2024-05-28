@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,10 @@ public class ListBillingGroupsFilterMarshaller {
             .marshallLocationName("Arns").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
+    private static final MarshallingInfo<List> STATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Statuses").build();
+    private static final MarshallingInfo<Boolean> AUTOASSOCIATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoAssociate").build();
 
     private static final ListBillingGroupsFilterMarshaller instance = new ListBillingGroupsFilterMarshaller();
 
@@ -51,6 +55,8 @@ public class ListBillingGroupsFilterMarshaller {
         try {
             protocolMarshaller.marshall(listBillingGroupsFilter.getArns(), ARNS_BINDING);
             protocolMarshaller.marshall(listBillingGroupsFilter.getPricingPlan(), PRICINGPLAN_BINDING);
+            protocolMarshaller.marshall(listBillingGroupsFilter.getStatuses(), STATUSES_BINDING);
+            protocolMarshaller.marshall(listBillingGroupsFilter.getAutoAssociate(), AUTOASSOCIATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

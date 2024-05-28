@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about the number of S3 buckets that are or aren't shared with other Amazon Web Services
- * accounts.
+ * accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs). In this
+ * data, an <i>Amazon Macie organization</i> is defined as a set of Macie accounts that are centrally managed as a group
+ * of related accounts through Organizations or by Macie invitation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountBySharedAccessType"
@@ -31,40 +33,45 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same
+     * The total number of buckets that are shared with one or more of the following or any combination of the
+     * following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the same
      * Amazon Macie organization.
      * </p>
      */
     private Long external;
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon
-     * Macie organization.
+     * The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon
+     * Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      * </p>
      */
     private Long internal;
     /**
      * <p>
-     * The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     * The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs,
+     * or CloudFront OACs.
      * </p>
      */
     private Long notShared;
     /**
      * <p>
      * The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't
-     * determine whether these buckets are shared with other Amazon Web Services accounts.
+     * determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or
+     * CloudFront OACs.
      * </p>
      */
     private Long unknown;
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same
+     * The total number of buckets that are shared with one or more of the following or any combination of the
+     * following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the same
      * Amazon Macie organization.
      * </p>
      * 
      * @param external
-     *        The total number of buckets that are shared with an Amazon Web Services account that isn't part of the
+     *        The total number of buckets that are shared with one or more of the following or any combination of the
+     *        following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the
      *        same Amazon Macie organization.
      */
 
@@ -74,12 +81,14 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same
+     * The total number of buckets that are shared with one or more of the following or any combination of the
+     * following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the same
      * Amazon Macie organization.
      * </p>
      * 
-     * @return The total number of buckets that are shared with an Amazon Web Services account that isn't part of the
-     *         same Amazon Macie organization.
+     * @return The total number of buckets that are shared with one or more of the following or any combination of the
+     *         following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in
+     *         the same Amazon Macie organization.
      */
 
     public Long getExternal() {
@@ -88,12 +97,14 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same
+     * The total number of buckets that are shared with one or more of the following or any combination of the
+     * following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the same
      * Amazon Macie organization.
      * </p>
      * 
      * @param external
-     *        The total number of buckets that are shared with an Amazon Web Services account that isn't part of the
+     *        The total number of buckets that are shared with one or more of the following or any combination of the
+     *        following: an Amazon CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't in the
      *        same Amazon Macie organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -105,13 +116,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon
-     * Macie organization.
+     * The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon
+     * Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      * </p>
      * 
      * @param internal
-     *        The total number of buckets that are shared with an Amazon Web Services account that's part of the same
-     *        Amazon Macie organization.
+     *        The total number of buckets that are shared with one or more Amazon Web Services accounts in the same
+     *        Amazon Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      */
 
     public void setInternal(Long internal) {
@@ -120,12 +131,12 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon
-     * Macie organization.
+     * The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon
+     * Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      * </p>
      * 
-     * @return The total number of buckets that are shared with an Amazon Web Services account that's part of the same
-     *         Amazon Macie organization.
+     * @return The total number of buckets that are shared with one or more Amazon Web Services accounts in the same
+     *         Amazon Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      */
 
     public Long getInternal() {
@@ -134,13 +145,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon
-     * Macie organization.
+     * The total number of buckets that are shared with one or more Amazon Web Services accounts in the same Amazon
+     * Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      * </p>
      * 
      * @param internal
-     *        The total number of buckets that are shared with an Amazon Web Services account that's part of the same
-     *        Amazon Macie organization.
+     *        The total number of buckets that are shared with one or more Amazon Web Services accounts in the same
+     *        Amazon Macie organization. These buckets aren't shared with Amazon CloudFront OAIs or OACs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +162,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     * The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs,
+     * or CloudFront OACs.
      * </p>
      * 
      * @param notShared
-     *        The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     *        The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     *        OAIs, or CloudFront OACs.
      */
 
     public void setNotShared(Long notShared) {
@@ -164,10 +177,12 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     * The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs,
+     * or CloudFront OACs.
      * </p>
      * 
-     * @return The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     * @return The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     *         OAIs, or CloudFront OACs.
      */
 
     public Long getNotShared() {
@@ -176,11 +191,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     * The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront OAIs,
+     * or CloudFront OACs.
      * </p>
      * 
      * @param notShared
-     *        The total number of buckets that aren't shared with other Amazon Web Services accounts.
+     *        The total number of buckets that aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     *        OAIs, or CloudFront OACs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,12 +209,14 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
     /**
      * <p>
      * The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't
-     * determine whether these buckets are shared with other Amazon Web Services accounts.
+     * determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or
+     * CloudFront OACs.
      * </p>
      * 
      * @param unknown
      *        The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie
-     *        can't determine whether these buckets are shared with other Amazon Web Services accounts.
+     *        can't determine whether these buckets are shared with other Amazon Web Services accounts, Amazon
+     *        CloudFront OAIs, or CloudFront OACs.
      */
 
     public void setUnknown(Long unknown) {
@@ -207,11 +226,13 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
     /**
      * <p>
      * The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't
-     * determine whether these buckets are shared with other Amazon Web Services accounts.
+     * determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or
+     * CloudFront OACs.
      * </p>
      * 
      * @return The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie
-     *         can't determine whether these buckets are shared with other Amazon Web Services accounts.
+     *         can't determine whether these buckets are shared with other Amazon Web Services accounts, Amazon
+     *         CloudFront OAIs, or CloudFront OACs.
      */
 
     public Long getUnknown() {
@@ -221,12 +242,14 @@ public class BucketCountBySharedAccessType implements Serializable, Cloneable, S
     /**
      * <p>
      * The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't
-     * determine whether these buckets are shared with other Amazon Web Services accounts.
+     * determine whether these buckets are shared with other Amazon Web Services accounts, Amazon CloudFront OAIs, or
+     * CloudFront OACs.
      * </p>
      * 
      * @param unknown
      *        The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie
-     *        can't determine whether these buckets are shared with other Amazon Web Services accounts.
+     *        can't determine whether these buckets are shared with other Amazon Web Services accounts, Amazon
+     *        CloudFront OAIs, or CloudFront OACs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

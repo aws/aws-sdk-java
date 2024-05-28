@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String requestId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     * The ARN of the Image Builder image resource that this request deleted.
      * </p>
      */
     private String imageBuildVersionArn;
@@ -78,11 +78,11 @@ public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     * The ARN of the Image Builder image resource that this request deleted.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     *        The ARN of the Image Builder image resource that this request deleted.
      */
 
     public void setImageBuildVersionArn(String imageBuildVersionArn) {
@@ -91,10 +91,10 @@ public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     * The ARN of the Image Builder image resource that this request deleted.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     * @return The ARN of the Image Builder image resource that this request deleted.
      */
 
     public String getImageBuildVersionArn() {
@@ -103,11 +103,11 @@ public class DeleteImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     * The ARN of the Image Builder image resource that this request deleted.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.
+     *        The ARN of the Image Builder image resource that this request deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

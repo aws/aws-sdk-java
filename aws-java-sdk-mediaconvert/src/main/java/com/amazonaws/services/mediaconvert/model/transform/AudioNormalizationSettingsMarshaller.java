@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class AudioNormalizationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("peakCalculation").build();
     private static final MarshallingInfo<Double> TARGETLKFS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetLkfs").build();
+    private static final MarshallingInfo<Double> TRUEPEAKLIMITERTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("truePeakLimiterThreshold").build();
 
     private static final AudioNormalizationSettingsMarshaller instance = new AudioNormalizationSettingsMarshaller();
 
@@ -62,6 +64,7 @@ public class AudioNormalizationSettingsMarshaller {
             protocolMarshaller.marshall(audioNormalizationSettings.getLoudnessLogging(), LOUDNESSLOGGING_BINDING);
             protocolMarshaller.marshall(audioNormalizationSettings.getPeakCalculation(), PEAKCALCULATION_BINDING);
             protocolMarshaller.marshall(audioNormalizationSettings.getTargetLkfs(), TARGETLKFS_BINDING);
+            protocolMarshaller.marshall(audioNormalizationSettings.getTruePeakLimiterThreshold(), TRUEPEAKLIMITERTHRESHOLD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

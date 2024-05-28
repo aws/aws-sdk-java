@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk, or if it doesn't
- * receive an acknowledgment from Splunk.
+ * Configures retry behavior in case Firehose is unable to deliver documents to Splunk, or if it doesn't receive an
+ * acknowledgment from Splunk.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SplunkRetryOptions" target="_top">AWS API
@@ -31,24 +31,24 @@ public class SplunkRetryOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial
-     * attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for
-     * acknowledgment from Splunk after each attempt.
+     * The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send
+     * data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk
+     * after each attempt.
      * </p>
      */
     private Integer durationInSeconds;
 
     /**
      * <p>
-     * The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial
-     * attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for
-     * acknowledgment from Splunk after each attempt.
+     * The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send
+     * data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk
+     * after each attempt.
      * </p>
      * 
      * @param durationInSeconds
-     *        The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the
-     *        initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data
-     *        Firehose waits for acknowledgment from Splunk after each attempt.
+     *        The total amount of time that Firehose spends on retries. This duration starts after the initial attempt
+     *        to send data to Splunk fails. It doesn't include the periods during which Firehose waits for
+     *        acknowledgment from Splunk after each attempt.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -57,14 +57,14 @@ public class SplunkRetryOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial
-     * attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for
-     * acknowledgment from Splunk after each attempt.
+     * The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send
+     * data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk
+     * after each attempt.
      * </p>
      * 
-     * @return The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the
-     *         initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data
-     *         Firehose waits for acknowledgment from Splunk after each attempt.
+     * @return The total amount of time that Firehose spends on retries. This duration starts after the initial attempt
+     *         to send data to Splunk fails. It doesn't include the periods during which Firehose waits for
+     *         acknowledgment from Splunk after each attempt.
      */
 
     public Integer getDurationInSeconds() {
@@ -73,15 +73,15 @@ public class SplunkRetryOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial
-     * attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for
-     * acknowledgment from Splunk after each attempt.
+     * The total amount of time that Firehose spends on retries. This duration starts after the initial attempt to send
+     * data to Splunk fails. It doesn't include the periods during which Firehose waits for acknowledgment from Splunk
+     * after each attempt.
      * </p>
      * 
      * @param durationInSeconds
-     *        The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the
-     *        initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data
-     *        Firehose waits for acknowledgment from Splunk after each attempt.
+     *        The total amount of time that Firehose spends on retries. This duration starts after the initial attempt
+     *        to send data to Splunk fails. It doesn't include the periods during which Firehose waits for
+     *        acknowledgment from Splunk after each attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

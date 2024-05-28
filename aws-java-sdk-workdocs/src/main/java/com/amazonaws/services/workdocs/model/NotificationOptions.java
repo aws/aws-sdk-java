@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean value to indicate an email notification should be sent to the receipients.
+     * Boolean value to indicate an email notification should be sent to the recipients.
      * </p>
      */
     private Boolean sendEmail;
@@ -43,11 +43,11 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean value to indicate an email notification should be sent to the receipients.
+     * Boolean value to indicate an email notification should be sent to the recipients.
      * </p>
      * 
      * @param sendEmail
-     *        Boolean value to indicate an email notification should be sent to the receipients.
+     *        Boolean value to indicate an email notification should be sent to the recipients.
      */
 
     public void setSendEmail(Boolean sendEmail) {
@@ -56,10 +56,10 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean value to indicate an email notification should be sent to the receipients.
+     * Boolean value to indicate an email notification should be sent to the recipients.
      * </p>
      * 
-     * @return Boolean value to indicate an email notification should be sent to the receipients.
+     * @return Boolean value to indicate an email notification should be sent to the recipients.
      */
 
     public Boolean getSendEmail() {
@@ -68,11 +68,11 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean value to indicate an email notification should be sent to the receipients.
+     * Boolean value to indicate an email notification should be sent to the recipients.
      * </p>
      * 
      * @param sendEmail
-     *        Boolean value to indicate an email notification should be sent to the receipients.
+     *        Boolean value to indicate an email notification should be sent to the recipients.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class NotificationOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean value to indicate an email notification should be sent to the receipients.
+     * Boolean value to indicate an email notification should be sent to the recipients.
      * </p>
      * 
-     * @return Boolean value to indicate an email notification should be sent to the receipients.
+     * @return Boolean value to indicate an email notification should be sent to the recipients.
      */
 
     public Boolean isSendEmail() {

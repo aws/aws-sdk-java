@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private S3MonitoringConfiguration s3MonitoringConfiguration;
+    /**
+     * <p>
+     * Enable or disable container log rotation.
+     * </p>
+     */
+    private ContainerLogRotationConfiguration containerLogRotationConfiguration;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Enable or disable container log rotation.
+     * </p>
+     * 
+     * @param containerLogRotationConfiguration
+     *        Enable or disable container log rotation.
+     */
+
+    public void setContainerLogRotationConfiguration(ContainerLogRotationConfiguration containerLogRotationConfiguration) {
+        this.containerLogRotationConfiguration = containerLogRotationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Enable or disable container log rotation.
+     * </p>
+     * 
+     * @return Enable or disable container log rotation.
+     */
+
+    public ContainerLogRotationConfiguration getContainerLogRotationConfiguration() {
+        return this.containerLogRotationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Enable or disable container log rotation.
+     * </p>
+     * 
+     * @param containerLogRotationConfiguration
+     *        Enable or disable container log rotation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringConfiguration withContainerLogRotationConfiguration(ContainerLogRotationConfiguration containerLogRotationConfiguration) {
+        setContainerLogRotationConfiguration(containerLogRotationConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +249,9 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
         if (getCloudWatchMonitoringConfiguration() != null)
             sb.append("CloudWatchMonitoringConfiguration: ").append(getCloudWatchMonitoringConfiguration()).append(",");
         if (getS3MonitoringConfiguration() != null)
-            sb.append("S3MonitoringConfiguration: ").append(getS3MonitoringConfiguration());
+            sb.append("S3MonitoringConfiguration: ").append(getS3MonitoringConfiguration()).append(",");
+        if (getContainerLogRotationConfiguration() != null)
+            sb.append("ContainerLogRotationConfiguration: ").append(getContainerLogRotationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +279,11 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getS3MonitoringConfiguration() != null && other.getS3MonitoringConfiguration().equals(this.getS3MonitoringConfiguration()) == false)
             return false;
+        if (other.getContainerLogRotationConfiguration() == null ^ this.getContainerLogRotationConfiguration() == null)
+            return false;
+        if (other.getContainerLogRotationConfiguration() != null
+                && other.getContainerLogRotationConfiguration().equals(this.getContainerLogRotationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -242,6 +295,7 @@ public class MonitoringConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getPersistentAppUI() == null) ? 0 : getPersistentAppUI().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchMonitoringConfiguration() == null) ? 0 : getCloudWatchMonitoringConfiguration().hashCode());
         hashCode = prime * hashCode + ((getS3MonitoringConfiguration() == null) ? 0 : getS3MonitoringConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getContainerLogRotationConfiguration() == null) ? 0 : getContainerLogRotationConfiguration().hashCode());
         return hashCode;
     }
 

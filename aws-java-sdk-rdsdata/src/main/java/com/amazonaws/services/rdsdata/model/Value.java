@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,10 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains the value of a column.
  * </p>
- * 
- * <pre>
- * <code> &lt;note&gt; &lt;p&gt;This data structure is only used with the deprecated &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt; &lt;/note&gt; </code>
- * </pre>
+ * <note>
+ * <p>
+ * This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the
+ * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value" target="_top">AWS API
  *      Documentation</a>

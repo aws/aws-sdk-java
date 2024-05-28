@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary representation of Subject resources returned in read operations; primarily ListSubjects.
+ * A summary representation of subjects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/SubjectSummary" target="_top">AWS API
@@ -30,23 +30,19 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was first used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The enabled status of the Subject.
+     * The enabled status of the subject.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      */
     private java.util.Date lastSeenAt;
@@ -77,15 +73,11 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was first used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      * </p>
      * 
      * @param createdAt
-     *        The ISO-8601 time stamp of when the certificate was first used in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -94,14 +86,10 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was first used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      * </p>
      * 
-     * @return The ISO-8601 time stamp of when the certificate was first used in a <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation.
+     * @return The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      */
 
     public java.util.Date getCreatedAt() {
@@ -110,15 +98,11 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was first used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      * </p>
      * 
      * @param createdAt
-     *        The ISO-8601 time stamp of when the certificate was first used in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        The ISO-8601 time stamp of when the certificate was first used in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +113,11 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The enabled status of the Subject.
+     * The enabled status of the subject.
      * </p>
      * 
      * @param enabled
-     *        The enabled status of the Subject.
+     *        The enabled status of the subject.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -142,10 +126,10 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The enabled status of the Subject.
+     * The enabled status of the subject.
      * </p>
      * 
-     * @return The enabled status of the Subject.
+     * @return The enabled status of the subject.
      */
 
     public Boolean getEnabled() {
@@ -154,11 +138,11 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The enabled status of the Subject.
+     * The enabled status of the subject.
      * </p>
      * 
      * @param enabled
-     *        The enabled status of the Subject.
+     *        The enabled status of the subject.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,10 +153,10 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The enabled status of the Subject.
+     * The enabled status of the subject.
      * </p>
      * 
-     * @return The enabled status of the Subject.
+     * @return The enabled status of the subject.
      */
 
     public Boolean isEnabled() {
@@ -181,15 +165,11 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      * 
      * @param lastSeenAt
-     *        The ISO-8601 time stamp of when the certificate was last used in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      */
 
     public void setLastSeenAt(java.util.Date lastSeenAt) {
@@ -198,14 +178,10 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      * 
-     * @return The ISO-8601 time stamp of when the certificate was last used in a <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation.
+     * @return The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      */
 
     public java.util.Date getLastSeenAt() {
@@ -214,15 +190,11 @@ public class SubjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      * 
      * @param lastSeenAt
-     *        The ISO-8601 time stamp of when the certificate was last used in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

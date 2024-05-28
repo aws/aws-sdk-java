@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,29 +52,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
-     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
      * </p>
      */
     private Integer iops;
@@ -98,22 +96,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -122,8 +125,8 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private String volumeType;
@@ -266,29 +269,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
-     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
      * </p>
      * 
      * @param iops
@@ -302,29 +303,28 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        <code>gp3</code>: 3,000 - 16,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code>: 100-64,000 IOPS
+     *        <code>io1</code>: 100 - 64,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io2</code>: 100-64,000 IOPS
+     *        <code>io2</code>: 100 - 256,000 IOPS
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     *        For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *        IOPS.
      *        </p>
      *        <p>
      *        This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
-     *        This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code> volumes.
      */
 
     public void setIops(Integer iops) {
@@ -344,29 +344,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
-     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and
@@ -379,30 +377,28 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>gp3</code>: 3,000-16,000 IOPS
+     *         <code>gp3</code>: 3,000 - 16,000 IOPS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code>: 100-64,000 IOPS
+     *         <code>io1</code>: 100 - 64,000 IOPS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io2</code>: 100-64,000 IOPS
+     *         <code>io2</code>: 100 - 256,000 IOPS
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     *         For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000
+     *         >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
      *         IOPS.
      *         </p>
      *         <p>
      *         This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
-     *         This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     *         <code>standard</code> volumes.
      */
 
     public Integer getIops() {
@@ -422,29 +418,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
-     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This
-     * parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * volumes.
+     * This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
      * </p>
      * 
      * @param iops
@@ -458,29 +452,28 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        <code>gp3</code>: 3,000 - 16,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code>: 100-64,000 IOPS
+     *        <code>io1</code>: 100 - 64,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io2</code>: 100-64,000 IOPS
+     *        <code>io2</code>: 100 - 256,000 IOPS
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a
+     *        For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *        IOPS.
      *        </p>
      *        <p>
      *        This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.
-     *        This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code> volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,22 +570,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -603,22 +601,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      */
@@ -635,22 +638,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -660,22 +668,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *         <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code> and <code>io2</code>: 4-16,384
+     *         <code>io1</code>: 4 - 16,384 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>st1</code> and <code>sc1</code>: 125-16,384
+     *         <code>io2</code>: 4 - 65,536 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>standard</code>: 1-1,024
+     *         <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>: 1 - 1024 GiB
      *         </p>
      *         </li>
      */
@@ -692,22 +705,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -718,22 +736,27 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -747,14 +770,14 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      * @see VolumeType
      */
 
@@ -765,13 +788,13 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return The volume type. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
-     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *         in the <i>Amazon EBS User Guide</i>.
      * @see VolumeType
      */
 
@@ -782,14 +805,14 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -802,14 +825,14 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     /**
      * <p>
      * The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param volumeType
      *        The volume type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */

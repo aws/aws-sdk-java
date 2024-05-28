@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,22 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public AddStorageSystemResult addStorageSystem(AddStorageSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelTaskExecutionResult cancelTaskExecution(CancelTaskExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateAgentResult createAgent(CreateAgentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLocationAzureBlobResult createLocationAzureBlob(CreateLocationAzureBlobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,6 +123,16 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public DescribeDiscoveryJobResult describeDiscoveryJob(DescribeDiscoveryJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLocationAzureBlobResult describeLocationAzureBlob(DescribeLocationAzureBlobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLocationEfsResult describeLocationEfs(DescribeLocationEfsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -163,6 +183,21 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public DescribeStorageSystemResult describeStorageSystem(DescribeStorageSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStorageSystemResourceMetricsResult describeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStorageSystemResourcesResult describeStorageSystemResources(DescribeStorageSystemResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTaskResult describeTask(DescribeTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,12 +208,27 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public GenerateRecommendationsResult generateRecommendations(GenerateRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAgentsResult listAgents(ListAgentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListDiscoveryJobsResult listDiscoveryJobs(ListDiscoveryJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLocationsResult listLocations(ListLocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStorageSystemsResult listStorageSystems(ListStorageSystemsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -198,7 +248,22 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public RemoveStorageSystemResult removeStorageSystem(RemoveStorageSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDiscoveryJobResult startDiscoveryJob(StartDiscoveryJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartTaskExecutionResult startTaskExecution(StartTaskExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopDiscoveryJobResult stopDiscoveryJob(StopDiscoveryJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,6 +279,16 @@ public class AbstractAWSDataSync implements AWSDataSync {
 
     @Override
     public UpdateAgentResult updateAgent(UpdateAgentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDiscoveryJobResult updateDiscoveryJob(UpdateDiscoveryJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLocationAzureBlobResult updateLocationAzureBlob(UpdateLocationAzureBlobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,6 +309,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
 
     @Override
     public UpdateLocationSmbResult updateLocationSmb(UpdateLocationSmbRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStorageSystemResult updateStorageSystem(UpdateStorageSystemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

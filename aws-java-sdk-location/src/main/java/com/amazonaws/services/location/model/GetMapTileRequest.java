@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,13 @@ public class GetMapTileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
+    /**
+     * <p>
      * The map resource to retrieve the map tiles from.
      * </p>
      */
@@ -49,6 +56,52 @@ public class GetMapTileRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String z;
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMapTileRequest withKey(String key) {
+        setKey(key);
+        return this;
+    }
 
     /**
      * <p>
@@ -222,6 +275,8 @@ public class GetMapTileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getMapName() != null)
             sb.append("MapName: ").append(getMapName()).append(",");
         if (getX() != null)
@@ -244,6 +299,10 @@ public class GetMapTileRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (obj instanceof GetMapTileRequest == false)
             return false;
         GetMapTileRequest other = (GetMapTileRequest) obj;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getMapName() == null ^ this.getMapName() == null)
             return false;
         if (other.getMapName() != null && other.getMapName().equals(this.getMapName()) == false)
@@ -268,6 +327,7 @@ public class GetMapTileRequest extends com.amazonaws.AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
         hashCode = prime * hashCode + ((getX() == null) ? 0 : getX().hashCode());
         hashCode = prime * hashCode + ((getY() == null) ? 0 : getY().hashCode());

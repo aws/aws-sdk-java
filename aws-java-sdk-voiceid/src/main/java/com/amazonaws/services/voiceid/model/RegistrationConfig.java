@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration defining the action to take when a duplicate fraudster is detected, and the similarity threshold to
- * use for detecting a duplicate fraudster during a batch fraudster registration job.
+ * The registration configuration to be used during the batch fraudster registration job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/RegistrationConfig" target="_top">AWS API
@@ -44,6 +43,13 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Integer fraudsterSimilarityThreshold;
+    /**
+     * <p>
+     * The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters
+     * are registered to the default watchlist.
+     * </p>
+     */
+    private java.util.List<String> watchlistIds;
 
     /**
      * <p>
@@ -167,6 +173,84 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters
+     * are registered to the default watchlist.
+     * </p>
+     * 
+     * @return The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the
+     *         fraudsters are registered to the default watchlist.
+     */
+
+    public java.util.List<String> getWatchlistIds() {
+        return watchlistIds;
+    }
+
+    /**
+     * <p>
+     * The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters
+     * are registered to the default watchlist.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the
+     *        fraudsters are registered to the default watchlist.
+     */
+
+    public void setWatchlistIds(java.util.Collection<String> watchlistIds) {
+        if (watchlistIds == null) {
+            this.watchlistIds = null;
+            return;
+        }
+
+        this.watchlistIds = new java.util.ArrayList<String>(watchlistIds);
+    }
+
+    /**
+     * <p>
+     * The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters
+     * are registered to the default watchlist.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWatchlistIds(java.util.Collection)} or {@link #withWatchlistIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the
+     *        fraudsters are registered to the default watchlist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegistrationConfig withWatchlistIds(String... watchlistIds) {
+        if (this.watchlistIds == null) {
+            setWatchlistIds(new java.util.ArrayList<String>(watchlistIds.length));
+        }
+        for (String ele : watchlistIds) {
+            this.watchlistIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters
+     * are registered to the default watchlist.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the
+     *        fraudsters are registered to the default watchlist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegistrationConfig withWatchlistIds(java.util.Collection<String> watchlistIds) {
+        setWatchlistIds(watchlistIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +265,9 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
         if (getDuplicateRegistrationAction() != null)
             sb.append("DuplicateRegistrationAction: ").append(getDuplicateRegistrationAction()).append(",");
         if (getFraudsterSimilarityThreshold() != null)
-            sb.append("FraudsterSimilarityThreshold: ").append(getFraudsterSimilarityThreshold());
+            sb.append("FraudsterSimilarityThreshold: ").append(getFraudsterSimilarityThreshold()).append(",");
+        if (getWatchlistIds() != null)
+            sb.append("WatchlistIds: ").append(getWatchlistIds());
         sb.append("}");
         return sb.toString();
     }
@@ -204,6 +290,10 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getFraudsterSimilarityThreshold() != null && other.getFraudsterSimilarityThreshold().equals(this.getFraudsterSimilarityThreshold()) == false)
             return false;
+        if (other.getWatchlistIds() == null ^ this.getWatchlistIds() == null)
+            return false;
+        if (other.getWatchlistIds() != null && other.getWatchlistIds().equals(this.getWatchlistIds()) == false)
+            return false;
         return true;
     }
 
@@ -214,6 +304,7 @@ public class RegistrationConfig implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getDuplicateRegistrationAction() == null) ? 0 : getDuplicateRegistrationAction().hashCode());
         hashCode = prime * hashCode + ((getFraudsterSimilarityThreshold() == null) ? 0 : getFraudsterSimilarityThreshold().hashCode());
+        hashCode = prime * hashCode + ((getWatchlistIds() == null) ? 0 : getWatchlistIds().hashCode());
         return hashCode;
     }
 

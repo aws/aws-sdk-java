@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,26 @@ public class Sensor implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double max;
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     */
+    private String deprecationMessage;
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     */
+    private String comment;
+    /**
+     * <p>
+     * The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code>
+     * or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.
+     * </p>
+     */
+    private String structFullyQualifiedName;
 
     /**
      * <p>
@@ -413,6 +433,138 @@ public class Sensor implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public void setDeprecationMessage(String deprecationMessage) {
+        this.deprecationMessage = deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @return The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public String getDeprecationMessage() {
+        return this.deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Sensor withDeprecationMessage(String deprecationMessage) {
+        setDeprecationMessage(deprecationMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     */
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @return A comment in addition to the description.
+     */
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Sensor withComment(String comment) {
+        setComment(comment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code>
+     * or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.
+     * </p>
+     * 
+     * @param structFullyQualifiedName
+     *        The fully qualified name of the struct node for a sensor if the data type of the actuator is
+     *        <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor
+     *        might be <code>Vehicle.ADAS.CameraStruct</code>.
+     */
+
+    public void setStructFullyQualifiedName(String structFullyQualifiedName) {
+        this.structFullyQualifiedName = structFullyQualifiedName;
+    }
+
+    /**
+     * <p>
+     * The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code>
+     * or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.
+     * </p>
+     * 
+     * @return The fully qualified name of the struct node for a sensor if the data type of the actuator is
+     *         <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor
+     *         might be <code>Vehicle.ADAS.CameraStruct</code>.
+     */
+
+    public String getStructFullyQualifiedName() {
+        return this.structFullyQualifiedName;
+    }
+
+    /**
+     * <p>
+     * The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code>
+     * or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.
+     * </p>
+     * 
+     * @param structFullyQualifiedName
+     *        The fully qualified name of the struct node for a sensor if the data type of the actuator is
+     *        <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor
+     *        might be <code>Vehicle.ADAS.CameraStruct</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Sensor withStructFullyQualifiedName(String structFullyQualifiedName) {
+        setStructFullyQualifiedName(structFullyQualifiedName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,7 +589,13 @@ public class Sensor implements Serializable, Cloneable, StructuredPojo {
         if (getMin() != null)
             sb.append("Min: ").append(getMin()).append(",");
         if (getMax() != null)
-            sb.append("Max: ").append(getMax());
+            sb.append("Max: ").append(getMax()).append(",");
+        if (getDeprecationMessage() != null)
+            sb.append("DeprecationMessage: ").append(getDeprecationMessage()).append(",");
+        if (getComment() != null)
+            sb.append("Comment: ").append(getComment()).append(",");
+        if (getStructFullyQualifiedName() != null)
+            sb.append("StructFullyQualifiedName: ").append(getStructFullyQualifiedName());
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +638,18 @@ public class Sensor implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMax() != null && other.getMax().equals(this.getMax()) == false)
             return false;
+        if (other.getDeprecationMessage() == null ^ this.getDeprecationMessage() == null)
+            return false;
+        if (other.getDeprecationMessage() != null && other.getDeprecationMessage().equals(this.getDeprecationMessage()) == false)
+            return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
+        if (other.getStructFullyQualifiedName() == null ^ this.getStructFullyQualifiedName() == null)
+            return false;
+        if (other.getStructFullyQualifiedName() != null && other.getStructFullyQualifiedName().equals(this.getStructFullyQualifiedName()) == false)
+            return false;
         return true;
     }
 
@@ -495,6 +665,9 @@ public class Sensor implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
         hashCode = prime * hashCode + ((getMin() == null) ? 0 : getMin().hashCode());
         hashCode = prime * hashCode + ((getMax() == null) ? 0 : getMax().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationMessage() == null) ? 0 : getDeprecationMessage().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getStructFullyQualifiedName() == null) ? 0 : getStructFullyQualifiedName().hashCode());
         return hashCode;
     }
 

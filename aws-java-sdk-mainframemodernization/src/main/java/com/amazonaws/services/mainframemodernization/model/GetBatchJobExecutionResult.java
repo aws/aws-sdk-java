@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     private String applicationId;
     /**
      * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     */
+    private BatchJobIdentifier batchJobIdentifier;
+    /**
+     * <p>
      * The timestamp when the batch job execution ended.
      * </p>
      */
@@ -55,6 +61,12 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
     private String jobName;
     /**
      * <p>
+     * The restart steps information for the most recent restart operation.
+     * </p>
+     */
+    private JobStepRestartMarker jobStepRestartMarker;
+    /**
+     * <p>
      * The type of job.
      * </p>
      */
@@ -65,6 +77,14 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String jobUser;
+    /**
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
+     */
+    private String returnCode;
     /**
      * <p>
      * The timestamp when the batch job execution started.
@@ -121,6 +141,46 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
 
     public GetBatchJobExecutionResult withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     * 
+     * @param batchJobIdentifier
+     *        The unique identifier of this batch job.
+     */
+
+    public void setBatchJobIdentifier(BatchJobIdentifier batchJobIdentifier) {
+        this.batchJobIdentifier = batchJobIdentifier;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     * 
+     * @return The unique identifier of this batch job.
+     */
+
+    public BatchJobIdentifier getBatchJobIdentifier() {
+        return this.batchJobIdentifier;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of this batch job.
+     * </p>
+     * 
+     * @param batchJobIdentifier
+     *        The unique identifier of this batch job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBatchJobExecutionResult withBatchJobIdentifier(BatchJobIdentifier batchJobIdentifier) {
+        setBatchJobIdentifier(batchJobIdentifier);
         return this;
     }
 
@@ -286,6 +346,46 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The restart steps information for the most recent restart operation.
+     * </p>
+     * 
+     * @param jobStepRestartMarker
+     *        The restart steps information for the most recent restart operation.
+     */
+
+    public void setJobStepRestartMarker(JobStepRestartMarker jobStepRestartMarker) {
+        this.jobStepRestartMarker = jobStepRestartMarker;
+    }
+
+    /**
+     * <p>
+     * The restart steps information for the most recent restart operation.
+     * </p>
+     * 
+     * @return The restart steps information for the most recent restart operation.
+     */
+
+    public JobStepRestartMarker getJobStepRestartMarker() {
+        return this.jobStepRestartMarker;
+    }
+
+    /**
+     * <p>
+     * The restart steps information for the most recent restart operation.
+     * </p>
+     * 
+     * @param jobStepRestartMarker
+     *        The restart steps information for the most recent restart operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBatchJobExecutionResult withJobStepRestartMarker(JobStepRestartMarker jobStepRestartMarker) {
+        setJobStepRestartMarker(jobStepRestartMarker);
+        return this;
+    }
+
+    /**
+     * <p>
      * The type of job.
      * </p>
      * 
@@ -380,6 +480,58 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
 
     public GetBatchJobExecutionResult withJobUser(String jobUser) {
         setJobUser(jobUser);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
+     * 
+     * @param returnCode
+     *        The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information,
+     *        see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a>
+     *        in the <i>IBM WebSphere Application Server</i> documentation.
+     */
+
+    public void setReturnCode(String returnCode) {
+        this.returnCode = returnCode;
+    }
+
+    /**
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
+     * 
+     * @return The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information,
+     *         see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a>
+     *         in the <i>IBM WebSphere Application Server</i> documentation.
+     */
+
+    public String getReturnCode() {
+        return this.returnCode;
+    }
+
+    /**
+     * <p>
+     * The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information, see <a
+     * href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a> in the <i>IBM
+     * WebSphere Application Server</i> documentation.
+     * </p>
+     * 
+     * @param returnCode
+     *        The batch job return code from either the Blu Age or Micro Focus runtime engines. For more information,
+     *        see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch return codes</a>
+     *        in the <i>IBM WebSphere Application Server</i> documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBatchJobExecutionResult withReturnCode(String returnCode) {
+        setReturnCode(returnCode);
         return this;
     }
 
@@ -536,6 +688,8 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getBatchJobIdentifier() != null)
+            sb.append("BatchJobIdentifier: ").append(getBatchJobIdentifier()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getExecutionId() != null)
@@ -544,10 +698,14 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobName() != null)
             sb.append("JobName: ").append(getJobName()).append(",");
+        if (getJobStepRestartMarker() != null)
+            sb.append("JobStepRestartMarker: ").append(getJobStepRestartMarker()).append(",");
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
         if (getJobUser() != null)
             sb.append("JobUser: ").append(getJobUser()).append(",");
+        if (getReturnCode() != null)
+            sb.append("ReturnCode: ").append(getReturnCode()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getStatus() != null)
@@ -572,6 +730,10 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
+        if (other.getBatchJobIdentifier() == null ^ this.getBatchJobIdentifier() == null)
+            return false;
+        if (other.getBatchJobIdentifier() != null && other.getBatchJobIdentifier().equals(this.getBatchJobIdentifier()) == false)
+            return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
@@ -588,6 +750,10 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
             return false;
+        if (other.getJobStepRestartMarker() == null ^ this.getJobStepRestartMarker() == null)
+            return false;
+        if (other.getJobStepRestartMarker() != null && other.getJobStepRestartMarker().equals(this.getJobStepRestartMarker()) == false)
+            return false;
         if (other.getJobType() == null ^ this.getJobType() == null)
             return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
@@ -595,6 +761,10 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getJobUser() == null ^ this.getJobUser() == null)
             return false;
         if (other.getJobUser() != null && other.getJobUser().equals(this.getJobUser()) == false)
+            return false;
+        if (other.getReturnCode() == null ^ this.getReturnCode() == null)
+            return false;
+        if (other.getReturnCode() != null && other.getReturnCode().equals(this.getReturnCode()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
@@ -617,12 +787,15 @@ public class GetBatchJobExecutionResult extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getBatchJobIdentifier() == null) ? 0 : getBatchJobIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getExecutionId() == null) ? 0 : getExecutionId().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
+        hashCode = prime * hashCode + ((getJobStepRestartMarker() == null) ? 0 : getJobStepRestartMarker().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getJobUser() == null) ? 0 : getJobUser().hashCode());
+        hashCode = prime * hashCode + ((getReturnCode() == null) ? 0 : getReturnCode().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());

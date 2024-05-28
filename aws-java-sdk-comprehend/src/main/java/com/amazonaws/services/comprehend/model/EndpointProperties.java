@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,8 +88,8 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      */
     private String dataAccessRoleArn;
@@ -99,6 +99,12 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String desiredDataAccessRoleArn;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     */
+    private String flywheelArn;
 
     /**
      * <p>
@@ -505,13 +511,13 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom
+     *        models encrypted with a customer managed key (ModelKmsKeyId).
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -520,12 +526,12 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained
+     *         custom models encrypted with a customer managed key (ModelKmsKeyId).
      */
 
     public String getDataAccessRoleArn() {
@@ -534,13 +540,13 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom
+     *        models encrypted with a customer managed key (ModelKmsKeyId).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,6 +596,46 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointProperties withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -622,7 +668,9 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
         if (getDataAccessRoleArn() != null)
             sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
         if (getDesiredDataAccessRoleArn() != null)
-            sb.append("DesiredDataAccessRoleArn: ").append(getDesiredDataAccessRoleArn());
+            sb.append("DesiredDataAccessRoleArn: ").append(getDesiredDataAccessRoleArn()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -681,6 +729,10 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getDesiredDataAccessRoleArn() != null && other.getDesiredDataAccessRoleArn().equals(this.getDesiredDataAccessRoleArn()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
         return true;
     }
 
@@ -700,6 +752,7 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDesiredDataAccessRoleArn() == null) ? 0 : getDesiredDataAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
         return hashCode;
     }
 

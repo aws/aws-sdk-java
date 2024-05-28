@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class AudioLogSetting implements Serializable, Cloneable, StructuredPojo 
     private Boolean enabled;
 
     private AudioLogDestination destination;
+    /**
+     * <p>
+     * The option to enable selective conversation log capture for audio.
+     * </p>
+     */
+    private Boolean selectiveLoggingEnabled;
 
     /**
      * <p>
@@ -117,6 +123,58 @@ public class AudioLogSetting implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The option to enable selective conversation log capture for audio.
+     * </p>
+     * 
+     * @param selectiveLoggingEnabled
+     *        The option to enable selective conversation log capture for audio.
+     */
+
+    public void setSelectiveLoggingEnabled(Boolean selectiveLoggingEnabled) {
+        this.selectiveLoggingEnabled = selectiveLoggingEnabled;
+    }
+
+    /**
+     * <p>
+     * The option to enable selective conversation log capture for audio.
+     * </p>
+     * 
+     * @return The option to enable selective conversation log capture for audio.
+     */
+
+    public Boolean getSelectiveLoggingEnabled() {
+        return this.selectiveLoggingEnabled;
+    }
+
+    /**
+     * <p>
+     * The option to enable selective conversation log capture for audio.
+     * </p>
+     * 
+     * @param selectiveLoggingEnabled
+     *        The option to enable selective conversation log capture for audio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioLogSetting withSelectiveLoggingEnabled(Boolean selectiveLoggingEnabled) {
+        setSelectiveLoggingEnabled(selectiveLoggingEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable selective conversation log capture for audio.
+     * </p>
+     * 
+     * @return The option to enable selective conversation log capture for audio.
+     */
+
+    public Boolean isSelectiveLoggingEnabled() {
+        return this.selectiveLoggingEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +189,9 @@ public class AudioLogSetting implements Serializable, Cloneable, StructuredPojo 
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getDestination() != null)
-            sb.append("Destination: ").append(getDestination());
+            sb.append("Destination: ").append(getDestination()).append(",");
+        if (getSelectiveLoggingEnabled() != null)
+            sb.append("SelectiveLoggingEnabled: ").append(getSelectiveLoggingEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +214,10 @@ public class AudioLogSetting implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getSelectiveLoggingEnabled() == null ^ this.getSelectiveLoggingEnabled() == null)
+            return false;
+        if (other.getSelectiveLoggingEnabled() != null && other.getSelectiveLoggingEnabled().equals(this.getSelectiveLoggingEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +228,7 @@ public class AudioLogSetting implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveLoggingEnabled() == null) ? 0 : getSelectiveLoggingEnabled().hashCode());
         return hashCode;
     }
 

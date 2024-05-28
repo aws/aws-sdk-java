@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class GetTemporaryGlueTableCredentialsResult extends com.amazonaws.Amazon
      * </p>
      */
     private java.util.Date expiration;
+    /**
+     * <p>
+     * The Amazon S3 path for the temporary credentials.
+     * </p>
+     */
+    private java.util.List<String> vendedS3Path;
 
     /**
      * <p>
@@ -210,6 +216,76 @@ public class GetTemporaryGlueTableCredentialsResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The Amazon S3 path for the temporary credentials.
+     * </p>
+     * 
+     * @return The Amazon S3 path for the temporary credentials.
+     */
+
+    public java.util.List<String> getVendedS3Path() {
+        return vendedS3Path;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 path for the temporary credentials.
+     * </p>
+     * 
+     * @param vendedS3Path
+     *        The Amazon S3 path for the temporary credentials.
+     */
+
+    public void setVendedS3Path(java.util.Collection<String> vendedS3Path) {
+        if (vendedS3Path == null) {
+            this.vendedS3Path = null;
+            return;
+        }
+
+        this.vendedS3Path = new java.util.ArrayList<String>(vendedS3Path);
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 path for the temporary credentials.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVendedS3Path(java.util.Collection)} or {@link #withVendedS3Path(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param vendedS3Path
+     *        The Amazon S3 path for the temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemporaryGlueTableCredentialsResult withVendedS3Path(String... vendedS3Path) {
+        if (this.vendedS3Path == null) {
+            setVendedS3Path(new java.util.ArrayList<String>(vendedS3Path.length));
+        }
+        for (String ele : vendedS3Path) {
+            this.vendedS3Path.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 path for the temporary credentials.
+     * </p>
+     * 
+     * @param vendedS3Path
+     *        The Amazon S3 path for the temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemporaryGlueTableCredentialsResult withVendedS3Path(java.util.Collection<String> vendedS3Path) {
+        setVendedS3Path(vendedS3Path);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -228,7 +304,9 @@ public class GetTemporaryGlueTableCredentialsResult extends com.amazonaws.Amazon
         if (getSessionToken() != null)
             sb.append("SessionToken: ").append(getSessionToken()).append(",");
         if (getExpiration() != null)
-            sb.append("Expiration: ").append(getExpiration());
+            sb.append("Expiration: ").append(getExpiration()).append(",");
+        if (getVendedS3Path() != null)
+            sb.append("VendedS3Path: ").append(getVendedS3Path());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +337,10 @@ public class GetTemporaryGlueTableCredentialsResult extends com.amazonaws.Amazon
             return false;
         if (other.getExpiration() != null && other.getExpiration().equals(this.getExpiration()) == false)
             return false;
+        if (other.getVendedS3Path() == null ^ this.getVendedS3Path() == null)
+            return false;
+        if (other.getVendedS3Path() != null && other.getVendedS3Path().equals(this.getVendedS3Path()) == false)
+            return false;
         return true;
     }
 
@@ -271,6 +353,7 @@ public class GetTemporaryGlueTableCredentialsResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getSecretAccessKey() == null) ? 0 : getSecretAccessKey().hashCode());
         hashCode = prime * hashCode + ((getSessionToken() == null) ? 0 : getSessionToken().hashCode());
         hashCode = prime * hashCode + ((getExpiration() == null) ? 0 : getExpiration().hashCode());
+        hashCode = prime * hashCode + ((getVendedS3Path() == null) ? 0 : getVendedS3Path().hashCode());
         return hashCode;
     }
 

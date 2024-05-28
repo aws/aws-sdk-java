@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -126,15 +126,19 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
@@ -989,15 +993,21 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot
-     *        specify this parameter and the instance IDs parameter in the same call.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
+     *        <p>
+     *        You cannot specify this parameter and the instance IDs parameter in the same request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -1006,14 +1016,20 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot
-     *         specify this parameter and the instance IDs parameter in the same call.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.</p>
+     *         <p>
+     *         You cannot specify this parameter and the instance IDs parameter in the same request.
      */
 
     public Integer getMaxResults() {
@@ -1022,15 +1038,21 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot
-     *        specify this parameter and the instance IDs parameter in the same call.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
+     *        <p>
+     *        You cannot specify this parameter and the instance IDs parameter in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1041,11 +1063,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -1054,10 +1078,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -1066,11 +1092,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

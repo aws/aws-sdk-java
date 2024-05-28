@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ParameterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Boolean> REQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Required").build();
+    private static final MarshallingInfo<Boolean> DYNAMIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Dynamic").build();
 
     private static final ParameterMarshaller instance = new ParameterMarshaller();
 
@@ -50,6 +52,7 @@ public class ParameterMarshaller {
         try {
             protocolMarshaller.marshall(parameter.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(parameter.getRequired(), REQUIRED_BINDING);
+            protocolMarshaller.marshall(parameter.getDynamic(), DYNAMIC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

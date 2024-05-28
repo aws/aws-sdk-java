@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Settings related to your Microsoft Smooth Streaming output package. For more information, see
- * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
- * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
- * MS_SMOOTH_GROUP_SETTINGS.
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MsSmoothGroupSettings" target="_top">AWS
  *      API Documentation</a>
@@ -41,32 +39,30 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
      */
     private String audioDeduplication;
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
     /** Settings associated with the destination. Will vary based on the type of destination */
     private DestinationSettings destinationSettings;
-    /** If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider. */
+    /** If you are using DRM, set DRM System to specify the value SpekeKeyProvider. */
     private MsSmoothEncryptionSettings encryption;
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      */
     private Integer fragmentLength;
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      */
     private String fragmentLengthControl;
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     * manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8
+     * and utf16.
      */
     private String manifestEncoding;
 
@@ -212,15 +208,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
      * @param destination
-     *        Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *        accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *        filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *        input file.
+     *        Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     *        identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
+     *        input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
 
     public void setDestination(String destination) {
@@ -228,14 +223,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
-     * @return Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *         accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *         filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *         input file.
+     * @return Use Destination to specify the S3 output location and the output filename base. Destination accepts
+     *         format identifiers. If you do not specify the base filename in the URI, the service will use the filename
+     *         of the input file. If your job has multiple inputs, the service uses the filename of the first input
+     *         file.
      */
 
     public String getDestination() {
@@ -243,15 +238,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
      * @param destination
-     *        Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *        accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *        filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *        input file.
+     *        Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     *        identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
+     *        input file. If your job has multiple inputs, the service uses the filename of the first input file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,10 +289,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      * 
      * @param encryption
-     *        If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     *        If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
 
     public void setEncryption(MsSmoothEncryptionSettings encryption) {
@@ -306,9 +300,9 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      * 
-     * @return If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * @return If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
 
     public MsSmoothEncryptionSettings getEncryption() {
@@ -316,10 +310,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      * 
      * @param encryption
-     *        If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     *        If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,16 +323,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param fragmentLength
-     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *        might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *        segment lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      */
 
     public void setFragmentLength(Integer fragmentLength) {
@@ -346,15 +338,13 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
-     * @return Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *         encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *         might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *         segment lengths to match the next GOP boundary.
+     * @return Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *         the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *         Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      */
 
     public Integer getFragmentLength() {
@@ -362,16 +352,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param fragmentLength
-     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *        might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *        segment lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,16 +369,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param fragmentLengthControl
-     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *        might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *        segment lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @see MsSmoothFragmentLengthControl
      */
 
@@ -399,15 +385,13 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
-     * @return Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *         encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *         might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *         segment lengths to match the next GOP boundary.
+     * @return Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *         the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *         Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @see MsSmoothFragmentLengthControl
      */
 
@@ -416,16 +400,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param fragmentLengthControl
-     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *        might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *        segment lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothFragmentLengthControl
      */
@@ -436,16 +418,14 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use the
+     * exact length that you specify with the setting Fragment length. This might result in extra I-frames. Choose
+     * Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param fragmentLengthControl
-     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This
-     *        might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the
-     *        segment lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the fragment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Fragment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothFragmentLengthControl
      */
@@ -456,12 +436,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     * manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8
+     * and utf16.
      * 
      * @param manifestEncoding
-     *        Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     *        manifest. Valid options are utf8 and utf16.
+     *        Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are
+     *        utf8 and utf16.
      * @see MsSmoothManifestEncoding
      */
 
@@ -470,11 +450,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     * manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8
+     * and utf16.
      * 
-     * @return Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     *         manifest. Valid options are utf8 and utf16.
+     * @return Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options
+     *         are utf8 and utf16.
      * @see MsSmoothManifestEncoding
      */
 
@@ -483,12 +463,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     * manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8
+     * and utf16.
      * 
      * @param manifestEncoding
-     *        Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     *        manifest. Valid options are utf8 and utf16.
+     *        Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are
+     *        utf8 and utf16.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothManifestEncoding
      */
@@ -499,12 +479,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     * manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are utf8
+     * and utf16.
      * 
      * @param manifestEncoding
-     *        Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
-     *        manifest. Valid options are utf8 and utf16.
+     *        Use Manifest encoding to specify the encoding format for the server and client manifest. Valid options are
+     *        utf8 and utf16.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothManifestEncoding
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
-     * <code>Properties</code> member of the namespace.
+     * <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code>
+     * match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to
+     * <code>HttpName</code> to distinguish the two.
      * </p>
      */
     private String namespaceName;
@@ -100,12 +102,16 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
-     * <code>Properties</code> member of the namespace.
+     * <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code>
+     * match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to
+     * <code>HttpName</code> to distinguish the two.
      * </p>
      * 
      * @param namespaceName
      *        The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of
-     *        the <code>Properties</code> member of the namespace.
+     *        the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and
+     *        <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated
+     *        hash is added to <code>HttpName</code> to distinguish the two.
      */
 
     public void setNamespaceName(String namespaceName) {
@@ -115,11 +121,15 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
-     * <code>Properties</code> member of the namespace.
+     * <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code>
+     * match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to
+     * <code>HttpName</code> to distinguish the two.
      * </p>
      * 
      * @return The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of
-     *         the <code>Properties</code> member of the namespace.
+     *         the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and
+     *         <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated
+     *         hash is added to <code>HttpName</code> to distinguish the two.
      */
 
     public String getNamespaceName() {
@@ -129,12 +139,16 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
-     * <code>Properties</code> member of the namespace.
+     * <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and <code>HttpName</code>
+     * match. However, if you reuse <code>Name</code> for namespace creation, a generated hash is added to
+     * <code>HttpName</code> to distinguish the two.
      * </p>
      * 
      * @param namespaceName
      *        The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of
-     *        the <code>Properties</code> member of the namespace.
+     *        the <code>Properties</code> member of the namespace. In most cases, <code>Name</code> and
+     *        <code>HttpName</code> match. However, if you reuse <code>Name</code> for namespace creation, a generated
+     *        hash is added to <code>HttpName</code> to distinguish the two.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

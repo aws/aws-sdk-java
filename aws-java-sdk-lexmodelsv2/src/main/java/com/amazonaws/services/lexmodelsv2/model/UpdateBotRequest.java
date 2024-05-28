@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The unique identifier of the bot to update. This identifier is returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      * </p>
      */
     private String botId;
@@ -69,16 +69,28 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Integer idleSessionTTLInSeconds;
+    /**
+     * <p>
+     * The type of the bot to be updated.
+     * </p>
+     */
+    private String botType;
+    /**
+     * <p>
+     * The list of bot members in the network associated with the update action.
+     * </p>
+     */
+    private java.util.List<BotMember> botMembers;
 
     /**
      * <p>
      * The unique identifier of the bot to update. This identifier is returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      * </p>
      * 
      * @param botId
      *        The unique identifier of the bot to update. This identifier is returned by the <a
-     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      */
 
     public void setBotId(String botId) {
@@ -88,11 +100,11 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The unique identifier of the bot to update. This identifier is returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      * </p>
      * 
      * @return The unique identifier of the bot to update. This identifier is returned by the <a
-     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     *         href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      */
 
     public String getBotId() {
@@ -102,12 +114,12 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The unique identifier of the bot to update. This identifier is returned by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      * </p>
      * 
      * @param botId
      *        The unique identifier of the bot to update. This identifier is returned by the <a
-     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,6 +371,135 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The type of the bot to be updated.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot to be updated.
+     * @see BotType
+     */
+
+    public void setBotType(String botType) {
+        this.botType = botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot to be updated.
+     * </p>
+     * 
+     * @return The type of the bot to be updated.
+     * @see BotType
+     */
+
+    public String getBotType() {
+        return this.botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot to be updated.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot to be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public UpdateBotRequest withBotType(String botType) {
+        setBotType(botType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the bot to be updated.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot to be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public UpdateBotRequest withBotType(BotType botType) {
+        this.botType = botType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network associated with the update action.
+     * </p>
+     * 
+     * @return The list of bot members in the network associated with the update action.
+     */
+
+    public java.util.List<BotMember> getBotMembers() {
+        return botMembers;
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network associated with the update action.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bot members in the network associated with the update action.
+     */
+
+    public void setBotMembers(java.util.Collection<BotMember> botMembers) {
+        if (botMembers == null) {
+            this.botMembers = null;
+            return;
+        }
+
+        this.botMembers = new java.util.ArrayList<BotMember>(botMembers);
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network associated with the update action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBotMembers(java.util.Collection)} or {@link #withBotMembers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bot members in the network associated with the update action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotRequest withBotMembers(BotMember... botMembers) {
+        if (this.botMembers == null) {
+            setBotMembers(new java.util.ArrayList<BotMember>(botMembers.length));
+        }
+        for (BotMember ele : botMembers) {
+            this.botMembers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network associated with the update action.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bot members in the network associated with the update action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotRequest withBotMembers(java.util.Collection<BotMember> botMembers) {
+        setBotMembers(botMembers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -381,7 +522,11 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getDataPrivacy() != null)
             sb.append("DataPrivacy: ").append(getDataPrivacy()).append(",");
         if (getIdleSessionTTLInSeconds() != null)
-            sb.append("IdleSessionTTLInSeconds: ").append(getIdleSessionTTLInSeconds());
+            sb.append("IdleSessionTTLInSeconds: ").append(getIdleSessionTTLInSeconds()).append(",");
+        if (getBotType() != null)
+            sb.append("BotType: ").append(getBotType()).append(",");
+        if (getBotMembers() != null)
+            sb.append("BotMembers: ").append(getBotMembers());
         sb.append("}");
         return sb.toString();
     }
@@ -420,6 +565,14 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getIdleSessionTTLInSeconds() != null && other.getIdleSessionTTLInSeconds().equals(this.getIdleSessionTTLInSeconds()) == false)
             return false;
+        if (other.getBotType() == null ^ this.getBotType() == null)
+            return false;
+        if (other.getBotType() != null && other.getBotType().equals(this.getBotType()) == false)
+            return false;
+        if (other.getBotMembers() == null ^ this.getBotMembers() == null)
+            return false;
+        if (other.getBotMembers() != null && other.getBotMembers().equals(this.getBotMembers()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +587,8 @@ public class UpdateBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDataPrivacy() == null) ? 0 : getDataPrivacy().hashCode());
         hashCode = prime * hashCode + ((getIdleSessionTTLInSeconds() == null) ? 0 : getIdleSessionTTLInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getBotType() == null) ? 0 : getBotType().hashCode());
+        hashCode = prime * hashCode + ((getBotMembers() == null) ? 0 : getBotMembers().hashCode());
         return hashCode;
     }
 

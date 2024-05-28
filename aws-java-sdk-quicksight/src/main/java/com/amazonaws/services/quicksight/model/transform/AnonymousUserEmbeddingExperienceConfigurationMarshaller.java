@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class AnonymousUserEmbeddingExperienceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Dashboard").build();
     private static final MarshallingInfo<StructuredPojo> DASHBOARDVISUAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardVisual").build();
+    private static final MarshallingInfo<StructuredPojo> QSEARCHBAR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QSearchBar").build();
+    private static final MarshallingInfo<StructuredPojo> GENERATIVEQNA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerativeQnA").build();
 
     private static final AnonymousUserEmbeddingExperienceConfigurationMarshaller instance = new AnonymousUserEmbeddingExperienceConfigurationMarshaller();
 
@@ -50,6 +54,8 @@ public class AnonymousUserEmbeddingExperienceConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getDashboard(), DASHBOARD_BINDING);
             protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getDashboardVisual(), DASHBOARDVISUAL_BINDING);
+            protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getQSearchBar(), QSEARCHBAR_BINDING);
+            protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getGenerativeQnA(), GENERATIVEQNA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

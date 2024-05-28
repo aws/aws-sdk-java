@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the table to describe.
+     * The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      */
     private String tableName;
@@ -47,7 +48,8 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
      * initialize any additional object members.
      * 
      * @param tableName
-     *        The name of the table to describe.
+     *        The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in
+     *        this parameter.
      */
     public DescribeTableRequest(String tableName) {
         setTableName(tableName);
@@ -55,11 +57,13 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the table to describe.
+     * The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table to describe.
+     *        The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in
+     *        this parameter.
      */
 
     public void setTableName(String tableName) {
@@ -68,10 +72,12 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the table to describe.
+     * The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
-     * @return The name of the table to describe.
+     * @return The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in
+     *         this parameter.
      */
 
     public String getTableName() {
@@ -80,11 +86,13 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the table to describe.
+     * The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table to describe.
+     *        The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in
+     *        this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,16 +31,16 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The value to assign to the component property.
+     * </p>
+     */
+    private String value;
+    /**
+     * <p>
      * The information to bind the component property to data at runtime.
      * </p>
      */
     private ComponentPropertyBindingProperties bindingProperties;
-    /**
-     * <p>
-     * The information to bind the component property to form data.
-     * </p>
-     */
-    private java.util.Map<String, FormBindingElement> bindings;
     /**
      * <p>
      * The information to bind the component property to data at runtime. Use this for collection components.
@@ -49,10 +49,34 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
     private ComponentPropertyBindingProperties collectionBindingProperties;
     /**
      * <p>
-     * The name of the component that is affected by an event.
+     * The default value to assign to the component property.
      * </p>
      */
-    private String componentName;
+    private String defaultValue;
+    /**
+     * <p>
+     * The data model to use to assign a value to the component property.
+     * </p>
+     */
+    private String model;
+    /**
+     * <p>
+     * The information to bind the component property to form data.
+     * </p>
+     */
+    private java.util.Map<String, FormBindingElement> bindings;
+    /**
+     * <p>
+     * An event that occurs in your app. Use this for workflow data binding.
+     * </p>
+     */
+    private String event;
+    /**
+     * <p>
+     * An authenticated user attribute to use to assign a value to the component property.
+     * </p>
+     */
+    private String userAttribute;
     /**
      * <p>
      * A list of component properties to concatenate to create the value to assign to this component property.
@@ -73,16 +97,10 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
     private Boolean configured;
     /**
      * <p>
-     * The default value to assign to the component property.
+     * The component type.
      * </p>
      */
-    private String defaultValue;
-    /**
-     * <p>
-     * An event that occurs in your app. Use this for workflow data binding.
-     * </p>
-     */
-    private String event;
+    private String type;
     /**
      * <p>
      * The default value assigned to the property when the component is imported into an app.
@@ -91,34 +109,56 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
     private String importedValue;
     /**
      * <p>
-     * The data model to use to assign a value to the component property.
+     * The name of the component that is affected by an event.
      * </p>
      */
-    private String model;
+    private String componentName;
     /**
      * <p>
      * The name of the component's property that is affected by an event.
      * </p>
      */
     private String property;
-    /**
-     * <p>
-     * The component type.
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
-     * An authenticated user attribute to use to assign a value to the component property.
-     * </p>
-     */
-    private String userAttribute;
+
     /**
      * <p>
      * The value to assign to the component property.
      * </p>
+     * 
+     * @param value
+     *        The value to assign to the component property.
      */
-    private String value;
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * The value to assign to the component property.
+     * </p>
+     * 
+     * @return The value to assign to the component property.
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The value to assign to the component property.
+     * </p>
+     * 
+     * @param value
+     *        The value to assign to the component property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentProperty withValue(String value) {
+        setValue(value);
+        return this;
+    }
 
     /**
      * <p>
@@ -157,6 +197,126 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
 
     public ComponentProperty withBindingProperties(ComponentPropertyBindingProperties bindingProperties) {
         setBindingProperties(bindingProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The information to bind the component property to data at runtime. Use this for collection components.
+     * </p>
+     * 
+     * @param collectionBindingProperties
+     *        The information to bind the component property to data at runtime. Use this for collection components.
+     */
+
+    public void setCollectionBindingProperties(ComponentPropertyBindingProperties collectionBindingProperties) {
+        this.collectionBindingProperties = collectionBindingProperties;
+    }
+
+    /**
+     * <p>
+     * The information to bind the component property to data at runtime. Use this for collection components.
+     * </p>
+     * 
+     * @return The information to bind the component property to data at runtime. Use this for collection components.
+     */
+
+    public ComponentPropertyBindingProperties getCollectionBindingProperties() {
+        return this.collectionBindingProperties;
+    }
+
+    /**
+     * <p>
+     * The information to bind the component property to data at runtime. Use this for collection components.
+     * </p>
+     * 
+     * @param collectionBindingProperties
+     *        The information to bind the component property to data at runtime. Use this for collection components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentProperty withCollectionBindingProperties(ComponentPropertyBindingProperties collectionBindingProperties) {
+        setCollectionBindingProperties(collectionBindingProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default value to assign to the component property.
+     * </p>
+     * 
+     * @param defaultValue
+     *        The default value to assign to the component property.
+     */
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    /**
+     * <p>
+     * The default value to assign to the component property.
+     * </p>
+     * 
+     * @return The default value to assign to the component property.
+     */
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * <p>
+     * The default value to assign to the component property.
+     * </p>
+     * 
+     * @param defaultValue
+     *        The default value to assign to the component property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentProperty withDefaultValue(String defaultValue) {
+        setDefaultValue(defaultValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data model to use to assign a value to the component property.
+     * </p>
+     * 
+     * @param model
+     *        The data model to use to assign a value to the component property.
+     */
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * <p>
+     * The data model to use to assign a value to the component property.
+     * </p>
+     * 
+     * @return The data model to use to assign a value to the component property.
+     */
+
+    public String getModel() {
+        return this.model;
+    }
+
+    /**
+     * <p>
+     * The data model to use to assign a value to the component property.
+     * </p>
+     * 
+     * @param model
+     *        The data model to use to assign a value to the component property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentProperty withModel(String model) {
+        setModel(model);
         return this;
     }
 
@@ -230,81 +390,81 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The information to bind the component property to data at runtime. Use this for collection components.
+     * An event that occurs in your app. Use this for workflow data binding.
      * </p>
      * 
-     * @param collectionBindingProperties
-     *        The information to bind the component property to data at runtime. Use this for collection components.
+     * @param event
+     *        An event that occurs in your app. Use this for workflow data binding.
      */
 
-    public void setCollectionBindingProperties(ComponentPropertyBindingProperties collectionBindingProperties) {
-        this.collectionBindingProperties = collectionBindingProperties;
+    public void setEvent(String event) {
+        this.event = event;
     }
 
     /**
      * <p>
-     * The information to bind the component property to data at runtime. Use this for collection components.
+     * An event that occurs in your app. Use this for workflow data binding.
      * </p>
      * 
-     * @return The information to bind the component property to data at runtime. Use this for collection components.
+     * @return An event that occurs in your app. Use this for workflow data binding.
      */
 
-    public ComponentPropertyBindingProperties getCollectionBindingProperties() {
-        return this.collectionBindingProperties;
+    public String getEvent() {
+        return this.event;
     }
 
     /**
      * <p>
-     * The information to bind the component property to data at runtime. Use this for collection components.
+     * An event that occurs in your app. Use this for workflow data binding.
      * </p>
      * 
-     * @param collectionBindingProperties
-     *        The information to bind the component property to data at runtime. Use this for collection components.
+     * @param event
+     *        An event that occurs in your app. Use this for workflow data binding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentProperty withCollectionBindingProperties(ComponentPropertyBindingProperties collectionBindingProperties) {
-        setCollectionBindingProperties(collectionBindingProperties);
+    public ComponentProperty withEvent(String event) {
+        setEvent(event);
         return this;
     }
 
     /**
      * <p>
-     * The name of the component that is affected by an event.
+     * An authenticated user attribute to use to assign a value to the component property.
      * </p>
      * 
-     * @param componentName
-     *        The name of the component that is affected by an event.
+     * @param userAttribute
+     *        An authenticated user attribute to use to assign a value to the component property.
      */
 
-    public void setComponentName(String componentName) {
-        this.componentName = componentName;
+    public void setUserAttribute(String userAttribute) {
+        this.userAttribute = userAttribute;
     }
 
     /**
      * <p>
-     * The name of the component that is affected by an event.
+     * An authenticated user attribute to use to assign a value to the component property.
      * </p>
      * 
-     * @return The name of the component that is affected by an event.
+     * @return An authenticated user attribute to use to assign a value to the component property.
      */
 
-    public String getComponentName() {
-        return this.componentName;
+    public String getUserAttribute() {
+        return this.userAttribute;
     }
 
     /**
      * <p>
-     * The name of the component that is affected by an event.
+     * An authenticated user attribute to use to assign a value to the component property.
      * </p>
      * 
-     * @param componentName
-     *        The name of the component that is affected by an event.
+     * @param userAttribute
+     *        An authenticated user attribute to use to assign a value to the component property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentProperty withComponentName(String componentName) {
-        setComponentName(componentName);
+    public ComponentProperty withUserAttribute(String userAttribute) {
+        setUserAttribute(userAttribute);
         return this;
     }
 
@@ -472,81 +632,41 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The default value to assign to the component property.
+     * The component type.
      * </p>
      * 
-     * @param defaultValue
-     *        The default value to assign to the component property.
+     * @param type
+     *        The component type.
      */
 
-    public void setDefaultValue(String defaultValue) {
-        this.defaultValue = defaultValue;
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
      * <p>
-     * The default value to assign to the component property.
+     * The component type.
      * </p>
      * 
-     * @return The default value to assign to the component property.
+     * @return The component type.
      */
 
-    public String getDefaultValue() {
-        return this.defaultValue;
+    public String getType() {
+        return this.type;
     }
 
     /**
      * <p>
-     * The default value to assign to the component property.
+     * The component type.
      * </p>
      * 
-     * @param defaultValue
-     *        The default value to assign to the component property.
+     * @param type
+     *        The component type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentProperty withDefaultValue(String defaultValue) {
-        setDefaultValue(defaultValue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An event that occurs in your app. Use this for workflow data binding.
-     * </p>
-     * 
-     * @param event
-     *        An event that occurs in your app. Use this for workflow data binding.
-     */
-
-    public void setEvent(String event) {
-        this.event = event;
-    }
-
-    /**
-     * <p>
-     * An event that occurs in your app. Use this for workflow data binding.
-     * </p>
-     * 
-     * @return An event that occurs in your app. Use this for workflow data binding.
-     */
-
-    public String getEvent() {
-        return this.event;
-    }
-
-    /**
-     * <p>
-     * An event that occurs in your app. Use this for workflow data binding.
-     * </p>
-     * 
-     * @param event
-     *        An event that occurs in your app. Use this for workflow data binding.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentProperty withEvent(String event) {
-        setEvent(event);
+    public ComponentProperty withType(String type) {
+        setType(type);
         return this;
     }
 
@@ -592,41 +712,41 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The data model to use to assign a value to the component property.
+     * The name of the component that is affected by an event.
      * </p>
      * 
-     * @param model
-     *        The data model to use to assign a value to the component property.
+     * @param componentName
+     *        The name of the component that is affected by an event.
      */
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setComponentName(String componentName) {
+        this.componentName = componentName;
     }
 
     /**
      * <p>
-     * The data model to use to assign a value to the component property.
+     * The name of the component that is affected by an event.
      * </p>
      * 
-     * @return The data model to use to assign a value to the component property.
+     * @return The name of the component that is affected by an event.
      */
 
-    public String getModel() {
-        return this.model;
+    public String getComponentName() {
+        return this.componentName;
     }
 
     /**
      * <p>
-     * The data model to use to assign a value to the component property.
+     * The name of the component that is affected by an event.
      * </p>
      * 
-     * @param model
-     *        The data model to use to assign a value to the component property.
+     * @param componentName
+     *        The name of the component that is affected by an event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentProperty withModel(String model) {
-        setModel(model);
+    public ComponentProperty withComponentName(String componentName) {
+        setComponentName(componentName);
         return this;
     }
 
@@ -671,126 +791,6 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p>
-     * The component type.
-     * </p>
-     * 
-     * @param type
-     *        The component type.
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The component type.
-     * </p>
-     * 
-     * @return The component type.
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The component type.
-     * </p>
-     * 
-     * @param type
-     *        The component type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentProperty withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An authenticated user attribute to use to assign a value to the component property.
-     * </p>
-     * 
-     * @param userAttribute
-     *        An authenticated user attribute to use to assign a value to the component property.
-     */
-
-    public void setUserAttribute(String userAttribute) {
-        this.userAttribute = userAttribute;
-    }
-
-    /**
-     * <p>
-     * An authenticated user attribute to use to assign a value to the component property.
-     * </p>
-     * 
-     * @return An authenticated user attribute to use to assign a value to the component property.
-     */
-
-    public String getUserAttribute() {
-        return this.userAttribute;
-    }
-
-    /**
-     * <p>
-     * An authenticated user attribute to use to assign a value to the component property.
-     * </p>
-     * 
-     * @param userAttribute
-     *        An authenticated user attribute to use to assign a value to the component property.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentProperty withUserAttribute(String userAttribute) {
-        setUserAttribute(userAttribute);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The value to assign to the component property.
-     * </p>
-     * 
-     * @param value
-     *        The value to assign to the component property.
-     */
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    /**
-     * <p>
-     * The value to assign to the component property.
-     * </p>
-     * 
-     * @return The value to assign to the component property.
-     */
-
-    public String getValue() {
-        return this.value;
-    }
-
-    /**
-     * <p>
-     * The value to assign to the component property.
-     * </p>
-     * 
-     * @param value
-     *        The value to assign to the component property.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentProperty withValue(String value) {
-        setValue(value);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -802,36 +802,36 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getValue() != null)
+            sb.append("Value: ").append(getValue()).append(",");
         if (getBindingProperties() != null)
             sb.append("BindingProperties: ").append(getBindingProperties()).append(",");
-        if (getBindings() != null)
-            sb.append("Bindings: ").append(getBindings()).append(",");
         if (getCollectionBindingProperties() != null)
             sb.append("CollectionBindingProperties: ").append(getCollectionBindingProperties()).append(",");
-        if (getComponentName() != null)
-            sb.append("ComponentName: ").append(getComponentName()).append(",");
+        if (getDefaultValue() != null)
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
+        if (getModel() != null)
+            sb.append("Model: ").append(getModel()).append(",");
+        if (getBindings() != null)
+            sb.append("Bindings: ").append(getBindings()).append(",");
+        if (getEvent() != null)
+            sb.append("Event: ").append(getEvent()).append(",");
+        if (getUserAttribute() != null)
+            sb.append("UserAttribute: ").append(getUserAttribute()).append(",");
         if (getConcat() != null)
             sb.append("Concat: ").append(getConcat()).append(",");
         if (getCondition() != null)
             sb.append("Condition: ").append(getCondition()).append(",");
         if (getConfigured() != null)
             sb.append("Configured: ").append(getConfigured()).append(",");
-        if (getDefaultValue() != null)
-            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
-        if (getEvent() != null)
-            sb.append("Event: ").append(getEvent()).append(",");
-        if (getImportedValue() != null)
-            sb.append("ImportedValue: ").append(getImportedValue()).append(",");
-        if (getModel() != null)
-            sb.append("Model: ").append(getModel()).append(",");
-        if (getProperty() != null)
-            sb.append("Property: ").append(getProperty()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
-        if (getUserAttribute() != null)
-            sb.append("UserAttribute: ").append(getUserAttribute()).append(",");
-        if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+        if (getImportedValue() != null)
+            sb.append("ImportedValue: ").append(getImportedValue()).append(",");
+        if (getComponentName() != null)
+            sb.append("ComponentName: ").append(getComponentName()).append(",");
+        if (getProperty() != null)
+            sb.append("Property: ").append(getProperty());
         sb.append("}");
         return sb.toString();
     }
@@ -846,21 +846,37 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof ComponentProperty == false)
             return false;
         ComponentProperty other = (ComponentProperty) obj;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
         if (other.getBindingProperties() == null ^ this.getBindingProperties() == null)
             return false;
         if (other.getBindingProperties() != null && other.getBindingProperties().equals(this.getBindingProperties()) == false)
-            return false;
-        if (other.getBindings() == null ^ this.getBindings() == null)
-            return false;
-        if (other.getBindings() != null && other.getBindings().equals(this.getBindings()) == false)
             return false;
         if (other.getCollectionBindingProperties() == null ^ this.getCollectionBindingProperties() == null)
             return false;
         if (other.getCollectionBindingProperties() != null && other.getCollectionBindingProperties().equals(this.getCollectionBindingProperties()) == false)
             return false;
-        if (other.getComponentName() == null ^ this.getComponentName() == null)
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
-        if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+            return false;
+        if (other.getModel() == null ^ this.getModel() == null)
+            return false;
+        if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
+            return false;
+        if (other.getBindings() == null ^ this.getBindings() == null)
+            return false;
+        if (other.getBindings() != null && other.getBindings().equals(this.getBindings()) == false)
+            return false;
+        if (other.getEvent() == null ^ this.getEvent() == null)
+            return false;
+        if (other.getEvent() != null && other.getEvent().equals(this.getEvent()) == false)
+            return false;
+        if (other.getUserAttribute() == null ^ this.getUserAttribute() == null)
+            return false;
+        if (other.getUserAttribute() != null && other.getUserAttribute().equals(this.getUserAttribute()) == false)
             return false;
         if (other.getConcat() == null ^ this.getConcat() == null)
             return false;
@@ -874,37 +890,21 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getConfigured() != null && other.getConfigured().equals(this.getConfigured()) == false)
             return false;
-        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
-            return false;
-        if (other.getEvent() == null ^ this.getEvent() == null)
-            return false;
-        if (other.getEvent() != null && other.getEvent().equals(this.getEvent()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getImportedValue() == null ^ this.getImportedValue() == null)
             return false;
         if (other.getImportedValue() != null && other.getImportedValue().equals(this.getImportedValue()) == false)
             return false;
-        if (other.getModel() == null ^ this.getModel() == null)
+        if (other.getComponentName() == null ^ this.getComponentName() == null)
             return false;
-        if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
+        if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
             return false;
         if (other.getProperty() == null ^ this.getProperty() == null)
             return false;
         if (other.getProperty() != null && other.getProperty().equals(this.getProperty()) == false)
-            return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
-        if (other.getUserAttribute() == null ^ this.getUserAttribute() == null)
-            return false;
-        if (other.getUserAttribute() != null && other.getUserAttribute().equals(this.getUserAttribute()) == false)
-            return false;
-        if (other.getValue() == null ^ this.getValue() == null)
-            return false;
-        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -914,21 +914,21 @@ public class ComponentProperty implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getBindingProperties() == null) ? 0 : getBindingProperties().hashCode());
-        hashCode = prime * hashCode + ((getBindings() == null) ? 0 : getBindings().hashCode());
         hashCode = prime * hashCode + ((getCollectionBindingProperties() == null) ? 0 : getCollectionBindingProperties().hashCode());
-        hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
+        hashCode = prime * hashCode + ((getBindings() == null) ? 0 : getBindings().hashCode());
+        hashCode = prime * hashCode + ((getEvent() == null) ? 0 : getEvent().hashCode());
+        hashCode = prime * hashCode + ((getUserAttribute() == null) ? 0 : getUserAttribute().hashCode());
         hashCode = prime * hashCode + ((getConcat() == null) ? 0 : getConcat().hashCode());
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
         hashCode = prime * hashCode + ((getConfigured() == null) ? 0 : getConfigured().hashCode());
-        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
-        hashCode = prime * hashCode + ((getEvent() == null) ? 0 : getEvent().hashCode());
-        hashCode = prime * hashCode + ((getImportedValue() == null) ? 0 : getImportedValue().hashCode());
-        hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
-        hashCode = prime * hashCode + ((getProperty() == null) ? 0 : getProperty().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode + ((getUserAttribute() == null) ? 0 : getUserAttribute().hashCode());
-        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getImportedValue() == null) ? 0 : getImportedValue().hashCode());
+        hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
+        hashCode = prime * hashCode + ((getProperty() == null) ? 0 : getProperty().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,12 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date completedAt;
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     */
+    private String versionLabel;
 
     /**
      * <p>
@@ -581,6 +587,46 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @return A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentSummary withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -613,7 +659,9 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: ").append(getCompletedAt());
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -672,6 +720,10 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCompletedAt() != null && other.getCompletedAt().equals(this.getCompletedAt()) == false)
             return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
         return true;
     }
 
@@ -691,6 +743,7 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getPercentageComplete() == null) ? 0 : getPercentageComplete().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class ScanMarshaller {
             .marshallLocationName("fileCount").build();
     private static final MarshallingInfo<List> ATTACHEDVOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachedVolumes").build();
+    private static final MarshallingInfo<String> SCANTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("scanType").build();
 
     private static final ScanMarshaller instance = new ScanMarshaller();
 
@@ -87,6 +89,7 @@ public class ScanMarshaller {
             protocolMarshaller.marshall(scan.getTotalBytes(), TOTALBYTES_BINDING);
             protocolMarshaller.marshall(scan.getFileCount(), FILECOUNT_BINDING);
             protocolMarshaller.marshall(scan.getAttachedVolumes(), ATTACHEDVOLUMES_BINDING);
+            protocolMarshaller.marshall(scan.getScanType(), SCANTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

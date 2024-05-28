@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -36,20 +37,22 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (Amazon Web Services API)</a>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">
+     * Create an SSM document (console)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
-     * document (Amazon Web Services CLI)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     * >Create an SSM document (command line)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (API)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     * >Create an SSM document (API)</a>
      * </p>
      * </li>
      * </ul>
@@ -95,6 +98,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>amzn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSEC2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSConfigRemediation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSSupport</code>
      * </p>
      * </li>
      * </ul>
@@ -172,8 +190,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -181,47 +200,54 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (Amazon Web Services API)</a>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">
+     * Create an SSM document (console)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
-     * document (Amazon Web Services CLI)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     * >Create an SSM document (command line)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (API)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     * >Create an SSM document (API)</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param content
-     *        The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
-     *        new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *        The content for the new SSM document in JSON or YAML format. The content of the document must not exceed
+     *        64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing
+     *        the contents for your new document in an external JSON or YAML file and referencing the file in a
+     *        command.</p>
      *        <p>
      *        For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     *        an SSM document (Amazon Web Services API)</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console"
+     *        >Create an SSM document (console)</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     *        an SSM document (Amazon Web Services CLI)</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     *        >Create an SSM document (command line)</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     *        an SSM document (API)</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     *        >Create an SSM document (API)</a>
      *        </p>
      *        </li>
      */
@@ -232,8 +258,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -241,49 +268,53 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (Amazon Web Services API)</a>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">
+     * Create an SSM document (console)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
-     * document (Amazon Web Services CLI)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     * >Create an SSM document (command line)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (API)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     * >Create an SSM document (API)</a>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
-     *         new document in an external JSON or YAML file and referencing the file in a command.</p>
+     * @return The content for the new SSM document in JSON or YAML format. The content of the document must not exceed
+     *         64KB. This quota also includes the content specified for input parameters at runtime. We recommend
+     *         storing the contents for your new document in an external JSON or YAML file and referencing the file in a
+     *         command.</p>
      *         <p>
      *         For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     *         an SSM document (Amazon Web Services API)</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console"
+     *         >Create an SSM document (console)</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     *         an SSM document (Amazon Web Services CLI)</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     *         >Create an SSM document (command line)</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     *         an SSM document (API)</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     *         >Create an SSM document (API)</a>
      *         </p>
      *         </li>
      */
@@ -294,8 +325,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -303,47 +335,54 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (Amazon Web Services API)</a>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">
+     * Create an SSM document (console)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
-     * document (Amazon Web Services CLI)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     * >Create an SSM document (command line)</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
-     * document (API)</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     * >Create an SSM document (API)</a>
      * </p>
      * </li>
      * </ul>
      * 
      * @param content
-     *        The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
-     *        new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *        The content for the new SSM document in JSON or YAML format. The content of the document must not exceed
+     *        64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing
+     *        the contents for your new document in an external JSON or YAML file and referencing the file in a
+     *        command.</p>
      *        <p>
      *        For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     *        an SSM document (Amazon Web Services API)</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console"
+     *        >Create an SSM document (console)</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     *        an SSM document (Amazon Web Services CLI)</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli"
+     *        >Create an SSM document (command line)</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     *        an SSM document (API)</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api"
+     *        >Create an SSM document (API)</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -566,6 +605,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>amzn</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AWSEC2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSConfigRemediation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSSupport</code>
+     * </p>
+     * </li>
      * </ul>
      * </important>
      * 
@@ -589,6 +643,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>amzn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSEC2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSConfigRemediation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSSupport</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -623,6 +692,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>amzn</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AWSEC2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSConfigRemediation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSSupport</code>
+     * </p>
+     * </li>
      * </ul>
      * </important>
      * 
@@ -645,6 +729,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>amzn</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWSEC2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWSConfigRemediation</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWSSupport</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -679,6 +778,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>amzn</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>AWSEC2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSConfigRemediation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWSSupport</code>
+     * </p>
+     * </li>
      * </ul>
      * </important>
      * 
@@ -702,6 +816,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>amzn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSEC2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSConfigRemediation</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSSupport</code>
      *        </p>
      *        </li>
      *        </ul>

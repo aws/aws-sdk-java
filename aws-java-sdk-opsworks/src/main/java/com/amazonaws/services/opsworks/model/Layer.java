@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The layer name.
+     * The layer name. Layer names can be a maximum of 32 characters.
      * </p>
      */
     private String name;
@@ -70,11 +70,10 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     * ARN.
+     * For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -148,11 +147,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
     private Boolean autoAssignPublicIps;
     /**
      * <p>
-     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
-     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
-     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
-     * particular layer to be run in response to each of the five events.
+     * OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.
      * </p>
      * <p>
      * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
@@ -397,11 +396,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer name.
+     * The layer name. Layer names can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The layer name.
+     *        The layer name. Layer names can be a maximum of 32 characters.
      */
 
     public void setName(String name) {
@@ -410,10 +409,10 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer name.
+     * The layer name. Layer names can be a maximum of 32 characters.
      * </p>
      * 
-     * @return The layer name.
+     * @return The layer name. Layer names can be a maximum of 32 characters.
      */
 
     public String getName() {
@@ -422,11 +421,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The layer name.
+     * The layer name. Layer names can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The layer name.
+     *        The layer name. Layer names can be a maximum of 32 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,21 +480,20 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     * ARN.
+     * For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
      * </p>
      * 
      * @return The layer attributes.</p>
      *         <p>
      *         For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *         <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     *         instead of the actual value
+     *         <code>GangliaPassword</code> attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     *         of the actual value
      *         </p>
      *         <p>
-     *         For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *         For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
      *         cluster's ARN.
      */
 
@@ -512,23 +510,22 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     * ARN.
+     * For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
      * </p>
      * 
      * @param attributes
      *        The layer attributes.</p>
      *        <p>
      *        For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *        <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     *        instead of the actual value
+     *        <code>GangliaPassword</code> attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     *        of the actual value
      *        </p>
      *        <p>
-     *        For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
-     *        cluster's ARN.
+     *        For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     *        ARN.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -541,23 +538,22 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     * ARN.
+     * For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
      * </p>
      * 
      * @param attributes
      *        The layer attributes.</p>
      *        <p>
      *        For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *        <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
-     *        instead of the actual value
+     *        <code>GangliaPassword</code> attributes, OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+     *        of the actual value
      *        </p>
      *        <p>
-     *        For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
-     *        cluster's ARN.
+     *        For an ECS Cluster layer, OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     *        ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1229,11 +1225,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
-     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
-     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
-     * particular layer to be run in response to each of the five events.
+     * OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.
      * </p>
      * <p>
      * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
@@ -1243,10 +1239,10 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param defaultRecipes
-     *        AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     *        <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes
-     *        for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks
-     *        runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
+     *        OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     *        <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for
+     *        each event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs
+     *        custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
      *        recipes for a particular layer to be run in response to each of the five events.</p>
      *        <p>
      *        To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the
@@ -1261,11 +1257,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
-     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
-     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
-     * particular layer to be run in response to each of the five events.
+     * OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.
      * </p>
      * <p>
      * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
@@ -1274,11 +1270,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * <code>phpapp2</code> folder.
      * </p>
      * 
-     * @return AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     *         <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes
-     *         for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks
-     *         runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the
-     *         custom recipes for a particular layer to be run in response to each of the five events.</p>
+     * @return OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     *         <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for
+     *         each event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs
+     *         custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
+     *         recipes for a particular layer to be run in response to each of the five events.</p>
      *         <p>
      *         To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the
      *         recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example:
@@ -1292,11 +1288,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
-     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
-     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
-     * particular layer to be run in response to each of the five events.
+     * OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs custom event
+     * recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular
+     * layer to be run in response to each of the five events.
      * </p>
      * <p>
      * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
@@ -1306,10 +1302,10 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param defaultRecipes
-     *        AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
-     *        <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes
-     *        for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks
-     *        runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
+     *        OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     *        <b>undeploy</b>, and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for
+     *        each event. You can also provide custom recipes for any or all layers and events. OpsWorks Stacks runs
+     *        custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
      *        recipes for a particular layer to be run in response to each of the five events.</p>
      *        <p>
      *        To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,14 @@ public class AttributeJsonUnmarshaller implements Unmarshaller<Attribute, JsonUn
                 if (context.testExpression("defaultValue", targetDepth)) {
                     context.nextToken();
                     attribute.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("deprecationMessage", targetDepth)) {
+                    context.nextToken();
+                    attribute.setDeprecationMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("comment", targetDepth)) {
+                    context.nextToken();
+                    attribute.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

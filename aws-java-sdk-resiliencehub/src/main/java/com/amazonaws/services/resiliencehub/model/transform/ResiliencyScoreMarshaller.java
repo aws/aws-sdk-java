@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ResiliencyScoreMarshaller {
 
+    private static final MarshallingInfo<Map> COMPONENTSCORE_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("componentScore").build();
     private static final MarshallingInfo<Map> DISRUPTIONSCORE_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("disruptionScore").build();
     private static final MarshallingInfo<Double> SCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +52,7 @@ public class ResiliencyScoreMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(resiliencyScore.getComponentScore(), COMPONENTSCORE_BINDING);
             protocolMarshaller.marshall(resiliencyScore.getDisruptionScore(), DISRUPTIONSCORE_BINDING);
             protocolMarshaller.marshall(resiliencyScore.getScore(), SCORE_BINDING);
         } catch (Exception e) {

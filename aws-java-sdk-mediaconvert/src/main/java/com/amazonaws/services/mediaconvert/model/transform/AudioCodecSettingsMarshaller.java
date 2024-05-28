@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class AudioCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eac3AtmosSettings").build();
     private static final MarshallingInfo<StructuredPojo> EAC3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eac3Settings").build();
+    private static final MarshallingInfo<StructuredPojo> FLACSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("flacSettings").build();
     private static final MarshallingInfo<StructuredPojo> MP2SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mp2Settings").build();
     private static final MarshallingInfo<StructuredPojo> MP3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -72,6 +74,7 @@ public class AudioCodecSettingsMarshaller {
             protocolMarshaller.marshall(audioCodecSettings.getCodec(), CODEC_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getEac3AtmosSettings(), EAC3ATMOSSETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getEac3Settings(), EAC3SETTINGS_BINDING);
+            protocolMarshaller.marshall(audioCodecSettings.getFlacSettings(), FLACSETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getMp2Settings(), MP2SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getMp3Settings(), MP3SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getOpusSettings(), OPUSSETTINGS_BINDING);

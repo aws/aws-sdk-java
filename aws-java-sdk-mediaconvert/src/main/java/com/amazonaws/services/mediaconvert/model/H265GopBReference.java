@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If enable, use reference B frames for GOP structures that have B frames > 1.
+ * Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP
+ * structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled
+ * to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose
+ * Disabled.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265GopBReference {

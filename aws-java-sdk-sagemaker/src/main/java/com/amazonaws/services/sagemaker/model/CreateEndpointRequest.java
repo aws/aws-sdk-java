@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,13 +29,17 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
      * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
-     * matched in .
+     * matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint
+     * </a>.
      * </p>
      */
     private String endpointName;
     /**
      * <p>
-     * The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     * The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     * >CreateEndpointConfig</a>.
      * </p>
      */
     private String endpointConfigName;
@@ -54,13 +58,17 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
      * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
-     * matched in .
+     * matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint
+     * </a>.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web
      *        Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved
-     *        and must be matched in .
+     *        and must be matched in <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"
+     *        >InvokeEndpoint</a>.
      */
 
     public void setEndpointName(String endpointName) {
@@ -71,12 +79,16 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
      * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
-     * matched in .
+     * matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint
+     * </a>.
      * </p>
      * 
      * @return The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web
      *         Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved
-     *         and must be matched in .
+     *         and must be matched in <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"
+     *         >InvokeEndpoint</a>.
      */
 
     public String getEndpointName() {
@@ -87,13 +99,17 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
      * account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be
-     * matched in .
+     * matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint
+     * </a>.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web
      *        Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved
-     *        and must be matched in .
+     *        and must be matched in <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"
+     *        >InvokeEndpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +120,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     * The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     * >CreateEndpointConfig</a>.
      * </p>
      * 
      * @param endpointConfigName
-     *        The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     *        The name of an endpoint configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     *        >CreateEndpointConfig</a>.
      */
 
     public void setEndpointConfigName(String endpointConfigName) {
@@ -117,10 +137,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     * The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     * >CreateEndpointConfig</a>.
      * </p>
      * 
-     * @return The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     * @return The name of an endpoint configuration. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     *         >CreateEndpointConfig</a>.
      */
 
     public String getEndpointConfigName() {
@@ -129,11 +153,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     * The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     * >CreateEndpointConfig</a>.
      * </p>
      * 
      * @param endpointConfigName
-     *        The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>.
+     *        The name of an endpoint configuration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"
+     *        >CreateEndpointConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

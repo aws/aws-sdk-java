@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,7 +86,7 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date completionDate;
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      */
     private String state;
@@ -175,6 +175,49 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String backupType;
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     */
+    private String parentJobId;
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     */
+    private Boolean isParent;
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     */
+    private String resourceName;
+    /**
+     * <p>
+     * This is the date on which the backup job was initiated.
+     * </p>
+     */
+    private java.util.Date initiationDate;
+    /**
+     * <p>
+     * This parameter is the job count for the specified message category.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of
+     * MessageCategory strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     */
+    private String messageCategory;
 
     /**
      * <p>
@@ -546,11 +589,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a backup job.
      * @see BackupJobState
      */
 
@@ -560,10 +603,10 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
-     * @return The current state of a resource recovery point.
+     * @return The current state of a backup job.
      * @see BackupJobState
      */
 
@@ -573,11 +616,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a backup job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupJobState
      */
@@ -589,11 +632,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a backup job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a backup job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupJobState
      */
@@ -1186,6 +1229,293 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @param parentJobId
+     *        This uniquely identifies a request to Backup to back up a resource. The return will be the parent
+     *        (composite) job ID.
+     */
+
+    public void setParentJobId(String parentJobId) {
+        this.parentJobId = parentJobId;
+    }
+
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @return This uniquely identifies a request to Backup to back up a resource. The return will be the parent
+     *         (composite) job ID.
+     */
+
+    public String getParentJobId() {
+        return this.parentJobId;
+    }
+
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @param parentJobId
+     *        This uniquely identifies a request to Backup to back up a resource. The return will be the parent
+     *        (composite) job ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withParentJobId(String parentJobId) {
+        setParentJobId(parentJobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     * 
+     * @param resourceName
+     *        This is the non-unique name of the resource that belongs to the specified backup.
+     */
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     * 
+     * @return This is the non-unique name of the resource that belongs to the specified backup.
+     */
+
+    public String getResourceName() {
+        return this.resourceName;
+    }
+
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     * 
+     * @param resourceName
+     *        This is the non-unique name of the resource that belongs to the specified backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withResourceName(String resourceName) {
+        setResourceName(resourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the date on which the backup job was initiated.
+     * </p>
+     * 
+     * @param initiationDate
+     *        This is the date on which the backup job was initiated.
+     */
+
+    public void setInitiationDate(java.util.Date initiationDate) {
+        this.initiationDate = initiationDate;
+    }
+
+    /**
+     * <p>
+     * This is the date on which the backup job was initiated.
+     * </p>
+     * 
+     * @return This is the date on which the backup job was initiated.
+     */
+
+    public java.util.Date getInitiationDate() {
+        return this.initiationDate;
+    }
+
+    /**
+     * <p>
+     * This is the date on which the backup job was initiated.
+     * </p>
+     * 
+     * @param initiationDate
+     *        This is the date on which the backup job was initiated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withInitiationDate(java.util.Date initiationDate) {
+        setInitiationDate(initiationDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter is the job count for the specified message category.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of
+     * MessageCategory strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     * 
+     * @param messageCategory
+     *        This parameter is the job count for the specified message category.</p>
+     *        <p>
+     *        Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+     *        and <code>INVALIDPARAMETERS</code>. See <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of
+     *        MessageCategory strings.
+     *        </p>
+     *        <p>
+     *        The the value ANY returns count of all message categories.
+     *        </p>
+     *        <p>
+     *        <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     */
+
+    public void setMessageCategory(String messageCategory) {
+        this.messageCategory = messageCategory;
+    }
+
+    /**
+     * <p>
+     * This parameter is the job count for the specified message category.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of
+     * MessageCategory strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     * 
+     * @return This parameter is the job count for the specified message category.</p>
+     *         <p>
+     *         Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+     *         and <code>INVALIDPARAMETERS</code>. See <a
+     *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list
+     *         of MessageCategory strings.
+     *         </p>
+     *         <p>
+     *         The the value ANY returns count of all message categories.
+     *         </p>
+     *         <p>
+     *         <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     */
+
+    public String getMessageCategory() {
+        return this.messageCategory;
+    }
+
+    /**
+     * <p>
+     * This parameter is the job count for the specified message category.
+     * </p>
+     * <p>
+     * Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and
+     * <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of
+     * MessageCategory strings.
+     * </p>
+     * <p>
+     * The the value ANY returns count of all message categories.
+     * </p>
+     * <p>
+     * <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * </p>
+     * 
+     * @param messageCategory
+     *        This parameter is the job count for the specified message category.</p>
+     *        <p>
+     *        Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
+     *        and <code>INVALIDPARAMETERS</code>. See <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of
+     *        MessageCategory strings.
+     *        </p>
+     *        <p>
+     *        The the value ANY returns count of all message categories.
+     *        </p>
+     *        <p>
+     *        <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withMessageCategory(String messageCategory) {
+        setMessageCategory(messageCategory);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1236,7 +1566,17 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         if (getBackupOptions() != null)
             sb.append("BackupOptions: ").append(getBackupOptions()).append(",");
         if (getBackupType() != null)
-            sb.append("BackupType: ").append(getBackupType());
+            sb.append("BackupType: ").append(getBackupType()).append(",");
+        if (getParentJobId() != null)
+            sb.append("ParentJobId: ").append(getParentJobId()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent()).append(",");
+        if (getResourceName() != null)
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
+        if (getInitiationDate() != null)
+            sb.append("InitiationDate: ").append(getInitiationDate()).append(",");
+        if (getMessageCategory() != null)
+            sb.append("MessageCategory: ").append(getMessageCategory());
         sb.append("}");
         return sb.toString();
     }
@@ -1331,6 +1671,26 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
             return false;
+        if (other.getParentJobId() == null ^ this.getParentJobId() == null)
+            return false;
+        if (other.getParentJobId() != null && other.getParentJobId().equals(this.getParentJobId()) == false)
+            return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
+        if (other.getResourceName() == null ^ this.getResourceName() == null)
+            return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
+            return false;
+        if (other.getInitiationDate() == null ^ this.getInitiationDate() == null)
+            return false;
+        if (other.getInitiationDate() != null && other.getInitiationDate().equals(this.getInitiationDate()) == false)
+            return false;
+        if (other.getMessageCategory() == null ^ this.getMessageCategory() == null)
+            return false;
+        if (other.getMessageCategory() != null && other.getMessageCategory().equals(this.getMessageCategory()) == false)
+            return false;
         return true;
     }
 
@@ -1359,6 +1719,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
         hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
         hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
+        hashCode = prime * hashCode + ((getParentJobId() == null) ? 0 : getParentJobId().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getInitiationDate() == null) ? 0 : getInitiationDate().hashCode());
+        hashCode = prime * hashCode + ((getMessageCategory() == null) ? 0 : getMessageCategory().hashCode());
         return hashCode;
     }
 

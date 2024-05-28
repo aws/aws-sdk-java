@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,56 +31,16 @@ public class ComponentPropertyBindingProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The data field to bind the property to.
-     * </p>
-     */
-    private String field;
-    /**
-     * <p>
      * The component property to bind to the data field.
      * </p>
      */
     private String property;
-
     /**
      * <p>
      * The data field to bind the property to.
      * </p>
-     * 
-     * @param field
-     *        The data field to bind the property to.
      */
-
-    public void setField(String field) {
-        this.field = field;
-    }
-
-    /**
-     * <p>
-     * The data field to bind the property to.
-     * </p>
-     * 
-     * @return The data field to bind the property to.
-     */
-
-    public String getField() {
-        return this.field;
-    }
-
-    /**
-     * <p>
-     * The data field to bind the property to.
-     * </p>
-     * 
-     * @param field
-     *        The data field to bind the property to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentPropertyBindingProperties withField(String field) {
-        setField(field);
-        return this;
-    }
+    private String field;
 
     /**
      * <p>
@@ -123,6 +83,46 @@ public class ComponentPropertyBindingProperties implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The data field to bind the property to.
+     * </p>
+     * 
+     * @param field
+     *        The data field to bind the property to.
+     */
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    /**
+     * <p>
+     * The data field to bind the property to.
+     * </p>
+     * 
+     * @return The data field to bind the property to.
+     */
+
+    public String getField() {
+        return this.field;
+    }
+
+    /**
+     * <p>
+     * The data field to bind the property to.
+     * </p>
+     * 
+     * @param field
+     *        The data field to bind the property to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentPropertyBindingProperties withField(String field) {
+        setField(field);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,10 +134,10 @@ public class ComponentPropertyBindingProperties implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getField() != null)
-            sb.append("Field: ").append(getField()).append(",");
         if (getProperty() != null)
-            sb.append("Property: ").append(getProperty());
+            sb.append("Property: ").append(getProperty()).append(",");
+        if (getField() != null)
+            sb.append("Field: ").append(getField());
         sb.append("}");
         return sb.toString();
     }
@@ -152,13 +152,13 @@ public class ComponentPropertyBindingProperties implements Serializable, Cloneab
         if (obj instanceof ComponentPropertyBindingProperties == false)
             return false;
         ComponentPropertyBindingProperties other = (ComponentPropertyBindingProperties) obj;
-        if (other.getField() == null ^ this.getField() == null)
-            return false;
-        if (other.getField() != null && other.getField().equals(this.getField()) == false)
-            return false;
         if (other.getProperty() == null ^ this.getProperty() == null)
             return false;
         if (other.getProperty() != null && other.getProperty().equals(this.getProperty()) == false)
+            return false;
+        if (other.getField() == null ^ this.getField() == null)
+            return false;
+        if (other.getField() != null && other.getField().equals(this.getField()) == false)
             return false;
         return true;
     }
@@ -168,8 +168,8 @@ public class ComponentPropertyBindingProperties implements Serializable, Cloneab
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
         hashCode = prime * hashCode + ((getProperty() == null) ? 0 : getProperty().hashCode());
+        hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
         return hashCode;
     }
 

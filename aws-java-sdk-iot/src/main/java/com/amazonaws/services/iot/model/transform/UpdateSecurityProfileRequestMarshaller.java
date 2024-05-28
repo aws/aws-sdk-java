@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,10 @@ public class UpdateSecurityProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteAdditionalMetricsToRetain").build();
     private static final MarshallingInfo<Long> EXPECTEDVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("expectedVersion").build();
+    private static final MarshallingInfo<StructuredPojo> METRICSEXPORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricsExportConfig").build();
+    private static final MarshallingInfo<Boolean> DELETEMETRICSEXPORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteMetricsExportConfig").build();
 
     private static final UpdateSecurityProfileRequestMarshaller instance = new UpdateSecurityProfileRequestMarshaller();
 
@@ -76,6 +80,8 @@ public class UpdateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(updateSecurityProfileRequest.getDeleteAlertTargets(), DELETEALERTTARGETS_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getDeleteAdditionalMetricsToRetain(), DELETEADDITIONALMETRICSTORETAIN_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getExpectedVersion(), EXPECTEDVERSION_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getMetricsExportConfig(), METRICSEXPORTCONFIG_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getDeleteMetricsExportConfig(), DELETEMETRICSEXPORTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,68 @@ public class OTAJobConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Whether to apply the update if it is a major version change.
+     * </p>
+     */
+    private Boolean allowMajorVersionUpdate;
+    /**
+     * <p>
      * The target version of the device software.
      * </p>
      */
     private String imageVersion;
+
+    /**
+     * <p>
+     * Whether to apply the update if it is a major version change.
+     * </p>
+     * 
+     * @param allowMajorVersionUpdate
+     *        Whether to apply the update if it is a major version change.
+     */
+
+    public void setAllowMajorVersionUpdate(Boolean allowMajorVersionUpdate) {
+        this.allowMajorVersionUpdate = allowMajorVersionUpdate;
+    }
+
+    /**
+     * <p>
+     * Whether to apply the update if it is a major version change.
+     * </p>
+     * 
+     * @return Whether to apply the update if it is a major version change.
+     */
+
+    public Boolean getAllowMajorVersionUpdate() {
+        return this.allowMajorVersionUpdate;
+    }
+
+    /**
+     * <p>
+     * Whether to apply the update if it is a major version change.
+     * </p>
+     * 
+     * @param allowMajorVersionUpdate
+     *        Whether to apply the update if it is a major version change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OTAJobConfig withAllowMajorVersionUpdate(Boolean allowMajorVersionUpdate) {
+        setAllowMajorVersionUpdate(allowMajorVersionUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to apply the update if it is a major version change.
+     * </p>
+     * 
+     * @return Whether to apply the update if it is a major version change.
+     */
+
+    public Boolean isAllowMajorVersionUpdate() {
+        return this.allowMajorVersionUpdate;
+    }
 
     /**
      * <p>
@@ -87,6 +145,8 @@ public class OTAJobConfig implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllowMajorVersionUpdate() != null)
+            sb.append("AllowMajorVersionUpdate: ").append(getAllowMajorVersionUpdate()).append(",");
         if (getImageVersion() != null)
             sb.append("ImageVersion: ").append(getImageVersion());
         sb.append("}");
@@ -103,6 +163,10 @@ public class OTAJobConfig implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof OTAJobConfig == false)
             return false;
         OTAJobConfig other = (OTAJobConfig) obj;
+        if (other.getAllowMajorVersionUpdate() == null ^ this.getAllowMajorVersionUpdate() == null)
+            return false;
+        if (other.getAllowMajorVersionUpdate() != null && other.getAllowMajorVersionUpdate().equals(this.getAllowMajorVersionUpdate()) == false)
+            return false;
         if (other.getImageVersion() == null ^ this.getImageVersion() == null)
             return false;
         if (other.getImageVersion() != null && other.getImageVersion().equals(this.getImageVersion()) == false)
@@ -115,6 +179,7 @@ public class OTAJobConfig implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllowMajorVersionUpdate() == null) ? 0 : getAllowMajorVersionUpdate().hashCode());
         hashCode = prime * hashCode + ((getImageVersion() == null) ? 0 : getImageVersion().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,15 +53,14 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
     private String dailyAutomaticBackupStartTime;
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>,
+     * <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * </p>
      */
     private String deploymentType;
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      */
     private Integer throughputCapacity;
@@ -75,6 +74,34 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private String rootVolumeId;
+    /**
+     * <p>
+     * Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which
+     * you want the preferred file server to be located.
+     * </p>
+     */
+    private String preferredSubnetId;
+    /**
+     * <p>
+     * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
+     * By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
+     * in the same VPC/route tables.
+     * </p>
+     */
+    private String endpointIpAddressRange;
+    /**
+     * <p>
+     * (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * </p>
+     */
+    private java.util.List<String> routeTableIds;
+    /**
+     * <p>
+     * The IP address of the endpoint that is used to access data or to manage the file system.
+     * </p>
+     */
+    private String endpointIpAddress;
 
     /**
      * @param automaticBackupRetentionDays
@@ -298,13 +325,13 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>,
+     * <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>
+     *        , <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * @see OpenZFSDeploymentType
      */
 
@@ -314,12 +341,12 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>,
+     * <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * </p>
      * 
-     * @return Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *         <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * @return Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
+     *         <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * @see OpenZFSDeploymentType
      */
 
@@ -329,13 +356,13 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>,
+     * <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>
+     *        , <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSDeploymentType
      */
@@ -347,13 +374,13 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>,
+     * <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>MULTI_AZ_1</code>
+     *        , <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSDeploymentType
      */
@@ -365,13 +392,11 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64,
-     *        128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -380,12 +405,10 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      * 
-     * @return The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are
-     *         64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * @return The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      */
 
     public Integer getThroughputCapacity() {
@@ -394,13 +417,11 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64,
-     *        128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,6 +523,220 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which
+     * you want the preferred file server to be located.
+     * </p>
+     * 
+     * @param preferredSubnetId
+     *        Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in
+     *        which you want the preferred file server to be located.
+     */
+
+    public void setPreferredSubnetId(String preferredSubnetId) {
+        this.preferredSubnetId = preferredSubnetId;
+    }
+
+    /**
+     * <p>
+     * Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which
+     * you want the preferred file server to be located.
+     * </p>
+     * 
+     * @return Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in
+     *         which you want the preferred file server to be located.
+     */
+
+    public String getPreferredSubnetId() {
+        return this.preferredSubnetId;
+    }
+
+    /**
+     * <p>
+     * Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in which
+     * you want the preferred file server to be located.
+     * </p>
+     * 
+     * @param preferredSubnetId
+     *        Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This specifies the subnet in
+     *        which you want the preferred file server to be located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSFileSystemConfiguration withPreferredSubnetId(String preferredSubnetId) {
+        setPreferredSubnetId(preferredSubnetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
+     * By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
+     * in the same VPC/route tables.
+     * </p>
+     * 
+     * @param endpointIpAddressRange
+     *        (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
+     *        created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP
+     *        address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses
+     *        for file systems deployed in the same VPC/route tables.
+     */
+
+    public void setEndpointIpAddressRange(String endpointIpAddressRange) {
+        this.endpointIpAddressRange = endpointIpAddressRange;
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
+     * By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
+     * in the same VPC/route tables.
+     * </p>
+     * 
+     * @return (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
+     *         created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP
+     *         address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses
+     *         for file systems deployed in the same VPC/route tables.
+     */
+
+    public String getEndpointIpAddressRange() {
+        return this.endpointIpAddressRange;
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
+     * By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP address range for
+     * you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses for file systems deployed
+     * in the same VPC/route tables.
+     * </p>
+     * 
+     * @param endpointIpAddressRange
+     *        (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
+     *        created. By default in the Amazon FSx API and Amazon FSx console, Amazon FSx selects an available /28 IP
+     *        address range for you from one of the VPC's CIDR ranges. You can have overlapping endpoint IP addresses
+     *        for file systems deployed in the same VPC/route tables.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSFileSystemConfiguration withEndpointIpAddressRange(String endpointIpAddressRange) {
+        setEndpointIpAddressRange(endpointIpAddressRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * </p>
+     * 
+     * @return (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     */
+
+    public java.util.List<String> getRouteTableIds() {
+        return routeTableIds;
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * </p>
+     * 
+     * @param routeTableIds
+     *        (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     */
+
+    public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
+        if (routeTableIds == null) {
+            this.routeTableIds = null;
+            return;
+        }
+
+        this.routeTableIds = new java.util.ArrayList<String>(routeTableIds);
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRouteTableIds(java.util.Collection)} or {@link #withRouteTableIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param routeTableIds
+     *        (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSFileSystemConfiguration withRouteTableIds(String... routeTableIds) {
+        if (this.routeTableIds == null) {
+            setRouteTableIds(new java.util.ArrayList<String>(routeTableIds.length));
+        }
+        for (String ele : routeTableIds) {
+            this.routeTableIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * </p>
+     * 
+     * @param routeTableIds
+     *        (Multi-AZ only) The VPC route tables in which your file system's endpoints are created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSFileSystemConfiguration withRouteTableIds(java.util.Collection<String> routeTableIds) {
+        setRouteTableIds(routeTableIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address of the endpoint that is used to access data or to manage the file system.
+     * </p>
+     * 
+     * @param endpointIpAddress
+     *        The IP address of the endpoint that is used to access data or to manage the file system.
+     */
+
+    public void setEndpointIpAddress(String endpointIpAddress) {
+        this.endpointIpAddress = endpointIpAddress;
+    }
+
+    /**
+     * <p>
+     * The IP address of the endpoint that is used to access data or to manage the file system.
+     * </p>
+     * 
+     * @return The IP address of the endpoint that is used to access data or to manage the file system.
+     */
+
+    public String getEndpointIpAddress() {
+        return this.endpointIpAddress;
+    }
+
+    /**
+     * <p>
+     * The IP address of the endpoint that is used to access data or to manage the file system.
+     * </p>
+     * 
+     * @param endpointIpAddress
+     *        The IP address of the endpoint that is used to access data or to manage the file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSFileSystemConfiguration withEndpointIpAddress(String endpointIpAddress) {
+        setEndpointIpAddress(endpointIpAddress);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -530,7 +765,15 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
         if (getDiskIopsConfiguration() != null)
             sb.append("DiskIopsConfiguration: ").append(getDiskIopsConfiguration()).append(",");
         if (getRootVolumeId() != null)
-            sb.append("RootVolumeId: ").append(getRootVolumeId());
+            sb.append("RootVolumeId: ").append(getRootVolumeId()).append(",");
+        if (getPreferredSubnetId() != null)
+            sb.append("PreferredSubnetId: ").append(getPreferredSubnetId()).append(",");
+        if (getEndpointIpAddressRange() != null)
+            sb.append("EndpointIpAddressRange: ").append(getEndpointIpAddressRange()).append(",");
+        if (getRouteTableIds() != null)
+            sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
+        if (getEndpointIpAddress() != null)
+            sb.append("EndpointIpAddress: ").append(getEndpointIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -582,6 +825,22 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getRootVolumeId() != null && other.getRootVolumeId().equals(this.getRootVolumeId()) == false)
             return false;
+        if (other.getPreferredSubnetId() == null ^ this.getPreferredSubnetId() == null)
+            return false;
+        if (other.getPreferredSubnetId() != null && other.getPreferredSubnetId().equals(this.getPreferredSubnetId()) == false)
+            return false;
+        if (other.getEndpointIpAddressRange() == null ^ this.getEndpointIpAddressRange() == null)
+            return false;
+        if (other.getEndpointIpAddressRange() != null && other.getEndpointIpAddressRange().equals(this.getEndpointIpAddressRange()) == false)
+            return false;
+        if (other.getRouteTableIds() == null ^ this.getRouteTableIds() == null)
+            return false;
+        if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
+            return false;
+        if (other.getEndpointIpAddress() == null ^ this.getEndpointIpAddress() == null)
+            return false;
+        if (other.getEndpointIpAddress() != null && other.getEndpointIpAddress().equals(this.getEndpointIpAddress()) == false)
+            return false;
         return true;
     }
 
@@ -599,6 +858,10 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
         hashCode = prime * hashCode + ((getDiskIopsConfiguration() == null) ? 0 : getDiskIopsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRootVolumeId() == null) ? 0 : getRootVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getPreferredSubnetId() == null) ? 0 : getPreferredSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getEndpointIpAddressRange() == null) ? 0 : getEndpointIpAddressRange().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
+        hashCode = prime * hashCode + ((getEndpointIpAddress() == null) ? 0 : getEndpointIpAddress().hashCode());
         return hashCode;
     }
 

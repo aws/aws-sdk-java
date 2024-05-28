@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,8 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String nameQuery;
     /**
      * <p>
-     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer
+     * portal.
      * </p>
      */
     private String customerId;
@@ -178,11 +179,13 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer
+     * portal.
      * </p>
      * 
      * @param customerId
-     *        The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     *        The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer
+     *        portal.
      */
 
     public void setCustomerId(String customerId) {
@@ -191,10 +194,12 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer
+     * portal.
      * </p>
      * 
-     * @return The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * @return The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a
+     *         developer portal.
      */
 
     public String getCustomerId() {
@@ -203,11 +208,13 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     * The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer
+     * portal.
      * </p>
      * 
      * @param customerId
-     *        The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
+     *        The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer
+     *        portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
     private java.util.List<ModerationLabel> moderationLabels;
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      */
     private String moderationModelVersion;
@@ -37,6 +37,20 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private HumanLoopActivationOutput humanLoopActivationOutput;
+    /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     */
+    private String projectVersion;
+    /**
+     * <p>
+     * A list of predicted results for the type of content an image contains. For example, the image content might be
+     * from animation, sports, or a video game.
+     * </p>
+     */
+    private java.util.List<ContentType> contentTypes;
 
     /**
      * <p>
@@ -118,11 +132,11 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      * 
      * @param moderationModelVersion
-     *        Version number of the moderation detection model that was used to detect unsafe content.
+     *        Version number of the base moderation detection model that was used to detect unsafe content.
      */
 
     public void setModerationModelVersion(String moderationModelVersion) {
@@ -131,10 +145,10 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      * 
-     * @return Version number of the moderation detection model that was used to detect unsafe content.
+     * @return Version number of the base moderation detection model that was used to detect unsafe content.
      */
 
     public String getModerationModelVersion() {
@@ -143,11 +157,11 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Version number of the moderation detection model that was used to detect unsafe content.
+     * Version number of the base moderation detection model that was used to detect unsafe content.
      * </p>
      * 
      * @param moderationModelVersion
-     *        Version number of the moderation detection model that was used to detect unsafe content.
+     *        Version number of the base moderation detection model that was used to detect unsafe content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,6 +211,133 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     * 
+     * @param projectVersion
+     *        Identifier of the custom adapter that was used during inference. If during inference the adapter was
+     *        EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project
+     *        version was used.
+     */
+
+    public void setProjectVersion(String projectVersion) {
+        this.projectVersion = projectVersion;
+    }
+
+    /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     * 
+     * @return Identifier of the custom adapter that was used during inference. If during inference the adapter was
+     *         EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project
+     *         version was used.
+     */
+
+    public String getProjectVersion() {
+        return this.projectVersion;
+    }
+
+    /**
+     * <p>
+     * Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED,
+     * then the parameter will not be returned, indicating that a base moderation detection project version was used.
+     * </p>
+     * 
+     * @param projectVersion
+     *        Identifier of the custom adapter that was used during inference. If during inference the adapter was
+     *        EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project
+     *        version was used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectModerationLabelsResult withProjectVersion(String projectVersion) {
+        setProjectVersion(projectVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of predicted results for the type of content an image contains. For example, the image content might be
+     * from animation, sports, or a video game.
+     * </p>
+     * 
+     * @return A list of predicted results for the type of content an image contains. For example, the image content
+     *         might be from animation, sports, or a video game.
+     */
+
+    public java.util.List<ContentType> getContentTypes() {
+        return contentTypes;
+    }
+
+    /**
+     * <p>
+     * A list of predicted results for the type of content an image contains. For example, the image content might be
+     * from animation, sports, or a video game.
+     * </p>
+     * 
+     * @param contentTypes
+     *        A list of predicted results for the type of content an image contains. For example, the image content
+     *        might be from animation, sports, or a video game.
+     */
+
+    public void setContentTypes(java.util.Collection<ContentType> contentTypes) {
+        if (contentTypes == null) {
+            this.contentTypes = null;
+            return;
+        }
+
+        this.contentTypes = new java.util.ArrayList<ContentType>(contentTypes);
+    }
+
+    /**
+     * <p>
+     * A list of predicted results for the type of content an image contains. For example, the image content might be
+     * from animation, sports, or a video game.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContentTypes(java.util.Collection)} or {@link #withContentTypes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param contentTypes
+     *        A list of predicted results for the type of content an image contains. For example, the image content
+     *        might be from animation, sports, or a video game.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectModerationLabelsResult withContentTypes(ContentType... contentTypes) {
+        if (this.contentTypes == null) {
+            setContentTypes(new java.util.ArrayList<ContentType>(contentTypes.length));
+        }
+        for (ContentType ele : contentTypes) {
+            this.contentTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of predicted results for the type of content an image contains. For example, the image content might be
+     * from animation, sports, or a video game.
+     * </p>
+     * 
+     * @param contentTypes
+     *        A list of predicted results for the type of content an image contains. For example, the image content
+     *        might be from animation, sports, or a video game.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectModerationLabelsResult withContentTypes(java.util.Collection<ContentType> contentTypes) {
+        setContentTypes(contentTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +354,11 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
         if (getModerationModelVersion() != null)
             sb.append("ModerationModelVersion: ").append(getModerationModelVersion()).append(",");
         if (getHumanLoopActivationOutput() != null)
-            sb.append("HumanLoopActivationOutput: ").append(getHumanLoopActivationOutput());
+            sb.append("HumanLoopActivationOutput: ").append(getHumanLoopActivationOutput()).append(",");
+        if (getProjectVersion() != null)
+            sb.append("ProjectVersion: ").append(getProjectVersion()).append(",");
+        if (getContentTypes() != null)
+            sb.append("ContentTypes: ").append(getContentTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +385,14 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getHumanLoopActivationOutput() != null && other.getHumanLoopActivationOutput().equals(this.getHumanLoopActivationOutput()) == false)
             return false;
+        if (other.getProjectVersion() == null ^ this.getProjectVersion() == null)
+            return false;
+        if (other.getProjectVersion() != null && other.getProjectVersion().equals(this.getProjectVersion()) == false)
+            return false;
+        if (other.getContentTypes() == null ^ this.getContentTypes() == null)
+            return false;
+        if (other.getContentTypes() != null && other.getContentTypes().equals(this.getContentTypes()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +404,8 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getModerationLabels() == null) ? 0 : getModerationLabels().hashCode());
         hashCode = prime * hashCode + ((getModerationModelVersion() == null) ? 0 : getModerationModelVersion().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopActivationOutput() == null) ? 0 : getHumanLoopActivationOutput().hashCode());
+        hashCode = prime * hashCode + ((getProjectVersion() == null) ? 0 : getProjectVersion().hashCode());
+        hashCode = prime * hashCode + ((getContentTypes() == null) ? 0 : getContentTypes().hashCode());
         return hashCode;
     }
 

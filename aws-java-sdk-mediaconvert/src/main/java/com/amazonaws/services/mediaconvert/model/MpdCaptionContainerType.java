@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions
- * in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw
- * container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4
- * files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+ * in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container.
+ * Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4
+ * files is separate from your video and audio fragmented MP4 files.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MpdCaptionContainerType {

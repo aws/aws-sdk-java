@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,25 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      */
     private String logGroupName;
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     */
+    private String logGroupIdentifier;
     /**
      * <p>
      * The prefix to match.
@@ -51,7 +68,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch
-     * Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.
      * </p>
@@ -89,7 +106,10 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * methods to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      */
     public DescribeLogStreamsRequest(String logGroupName) {
         setLogGroupName(logGroupName);
@@ -99,9 +119,17 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -112,8 +140,16 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
-     * @return The name of the log group.
+     * @return The name of the log group.</p> <note>
+     *         <p>
+     *         You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *         </p>
      */
 
     public String getLogGroupName() {
@@ -124,14 +160,92 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name of the log group.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        The name of the log group.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeLogStreamsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view. If the log group is in a source account and you
+     *        are using a monitoring account, you must use the log group ARN.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
+     */
+
+    public void setLogGroupIdentifier(String logGroupIdentifier) {
+        this.logGroupIdentifier = logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @return Specify either the name or ARN of the log group to view. If the log group is in a source account and you
+     *         are using a monitoring account, you must use the log group ARN.</p> <note>
+     *         <p>
+     *         You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *         </p>
+     */
+
+    public String getLogGroupIdentifier() {
+        return this.logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view. If the log group is in a source account and you
+     *        are using a monitoring account, you must use the log group ARN.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLogStreamsRequest withLogGroupIdentifier(String logGroupIdentifier) {
+        setLogGroupIdentifier(logGroupIdentifier);
         return this;
     }
 
@@ -201,7 +315,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch
-     * Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.
      * </p>
@@ -215,9 +329,9 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in
-     *        CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less
-     *        than an hour from ingestion, but in rare situations might take longer.
+     *        CloudWatch Logs. This number is expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency
+     *        basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.
      * @see OrderBy
      */
 
@@ -236,7 +350,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch
-     * Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.
      * </p>
@@ -250,9 +364,10 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in
-     *         CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *         <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less
-     *         than an hour from ingestion, but in rare situations might take longer.
+     *         CloudWatch Logs. This number is expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency
+     *         basis. It typically updates in less than an hour from ingestion, but in rare situations might take
+     *         longer.
      * @see OrderBy
      */
 
@@ -271,7 +386,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch
-     * Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.
      * </p>
@@ -285,9 +400,9 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in
-     *        CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less
-     *        than an hour from ingestion, but in rare situations might take longer.
+     *        CloudWatch Logs. This number is expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency
+     *        basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
@@ -308,7 +423,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch
-     * Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.
      * </p>
@@ -322,9 +437,9 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in
-     *        CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less
-     *        than an hour from ingestion, but in rare situations might take longer.
+     *        CloudWatch Logs. This number is expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency
+     *        basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.
      * @see OrderBy
      */
 
@@ -343,7 +458,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch
-     * Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.
      * </p>
@@ -357,9 +472,9 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in
-     *        CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less
-     *        than an hour from ingestion, but in rare situations might take longer.
+     *        CloudWatch Logs. This number is expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates on an eventual consistency
+     *        basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
@@ -523,6 +638,8 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getLogGroupName() != null)
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
+        if (getLogGroupIdentifier() != null)
+            sb.append("LogGroupIdentifier: ").append(getLogGroupIdentifier()).append(",");
         if (getLogStreamNamePrefix() != null)
             sb.append("LogStreamNamePrefix: ").append(getLogStreamNamePrefix()).append(",");
         if (getOrderBy() != null)
@@ -550,6 +667,10 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
         if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
+        if (other.getLogGroupIdentifier() == null ^ this.getLogGroupIdentifier() == null)
+            return false;
+        if (other.getLogGroupIdentifier() != null && other.getLogGroupIdentifier().equals(this.getLogGroupIdentifier()) == false)
             return false;
         if (other.getLogStreamNamePrefix() == null ^ this.getLogStreamNamePrefix() == null)
             return false;
@@ -580,6 +701,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupIdentifier() == null) ? 0 : getLogGroupIdentifier().hashCode());
         hashCode = prime * hashCode + ((getLogStreamNamePrefix() == null) ? 0 : getLogStreamNamePrefix().hashCode());
         hashCode = prime * hashCode + ((getOrderBy() == null) ? 0 : getOrderBy().hashCode());
         hashCode = prime * hashCode + ((getDescending() == null) ? 0 : getDescending().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,12 @@ public class ConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snsTopic").build();
     private static final MarshallingInfo<StructuredPojo> SQSQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sqsQueue").build();
+    private static final MarshallingInfo<StructuredPojo> S3EXPRESSDIRECTORYBUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3ExpressDirectoryBucket").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMODBSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamodbStream").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMODBTABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamodbTable").build();
 
     private static final ConfigurationMarshaller instance = new ConfigurationMarshaller();
 
@@ -77,6 +83,9 @@ public class ConfigurationMarshaller {
             protocolMarshaller.marshall(configuration.getS3Bucket(), S3BUCKET_BINDING);
             protocolMarshaller.marshall(configuration.getSnsTopic(), SNSTOPIC_BINDING);
             protocolMarshaller.marshall(configuration.getSqsQueue(), SQSQUEUE_BINDING);
+            protocolMarshaller.marshall(configuration.getS3ExpressDirectoryBucket(), S3EXPRESSDIRECTORYBUCKET_BINDING);
+            protocolMarshaller.marshall(configuration.getDynamodbStream(), DYNAMODBSTREAM_BINDING);
+            protocolMarshaller.marshall(configuration.getDynamodbTable(), DYNAMODBTABLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

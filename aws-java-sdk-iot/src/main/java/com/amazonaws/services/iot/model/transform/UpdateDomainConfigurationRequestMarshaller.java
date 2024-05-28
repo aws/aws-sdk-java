@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class UpdateDomainConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainConfigurationStatus").build();
     private static final MarshallingInfo<Boolean> REMOVEAUTHORIZERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeAuthorizerConfig").build();
+    private static final MarshallingInfo<StructuredPojo> TLSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERCERTIFICATECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverCertificateConfig").build();
 
     private static final UpdateDomainConfigurationRequestMarshaller instance = new UpdateDomainConfigurationRequestMarshaller();
 
@@ -56,6 +60,8 @@ public class UpdateDomainConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateDomainConfigurationRequest.getAuthorizerConfig(), AUTHORIZERCONFIG_BINDING);
             protocolMarshaller.marshall(updateDomainConfigurationRequest.getDomainConfigurationStatus(), DOMAINCONFIGURATIONSTATUS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigurationRequest.getRemoveAuthorizerConfig(), REMOVEAUTHORIZERCONFIG_BINDING);
+            protocolMarshaller.marshall(updateDomainConfigurationRequest.getTlsConfig(), TLSCONFIG_BINDING);
+            protocolMarshaller.marshall(updateDomainConfigurationRequest.getServerCertificateConfig(), SERVERCERTIFICATECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

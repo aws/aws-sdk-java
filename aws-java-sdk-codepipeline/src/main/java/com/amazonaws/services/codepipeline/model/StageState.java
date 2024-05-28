@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
     private String stageName;
 
     private StageExecution inboundExecution;
+    /**
+     * <p>
+     * The inbound executions for a stage.
+     * </p>
+     */
+    private java.util.List<StageExecution> inboundExecutions;
     /**
      * <p>
      * The state of the inbound transition, which is either enabled or disabled.
@@ -118,6 +124,76 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
 
     public StageState withInboundExecution(StageExecution inboundExecution) {
         setInboundExecution(inboundExecution);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The inbound executions for a stage.
+     * </p>
+     * 
+     * @return The inbound executions for a stage.
+     */
+
+    public java.util.List<StageExecution> getInboundExecutions() {
+        return inboundExecutions;
+    }
+
+    /**
+     * <p>
+     * The inbound executions for a stage.
+     * </p>
+     * 
+     * @param inboundExecutions
+     *        The inbound executions for a stage.
+     */
+
+    public void setInboundExecutions(java.util.Collection<StageExecution> inboundExecutions) {
+        if (inboundExecutions == null) {
+            this.inboundExecutions = null;
+            return;
+        }
+
+        this.inboundExecutions = new java.util.ArrayList<StageExecution>(inboundExecutions);
+    }
+
+    /**
+     * <p>
+     * The inbound executions for a stage.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInboundExecutions(java.util.Collection)} or {@link #withInboundExecutions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param inboundExecutions
+     *        The inbound executions for a stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StageState withInboundExecutions(StageExecution... inboundExecutions) {
+        if (this.inboundExecutions == null) {
+            setInboundExecutions(new java.util.ArrayList<StageExecution>(inboundExecutions.length));
+        }
+        for (StageExecution ele : inboundExecutions) {
+            this.inboundExecutions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The inbound executions for a stage.
+     * </p>
+     * 
+     * @param inboundExecutions
+     *        The inbound executions for a stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StageState withInboundExecutions(java.util.Collection<StageExecution> inboundExecutions) {
+        setInboundExecutions(inboundExecutions);
         return this;
     }
 
@@ -287,6 +363,8 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
             sb.append("StageName: ").append(getStageName()).append(",");
         if (getInboundExecution() != null)
             sb.append("InboundExecution: ").append(getInboundExecution()).append(",");
+        if (getInboundExecutions() != null)
+            sb.append("InboundExecutions: ").append(getInboundExecutions()).append(",");
         if (getInboundTransitionState() != null)
             sb.append("InboundTransitionState: ").append(getInboundTransitionState()).append(",");
         if (getActionStates() != null)
@@ -315,6 +393,10 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInboundExecution() != null && other.getInboundExecution().equals(this.getInboundExecution()) == false)
             return false;
+        if (other.getInboundExecutions() == null ^ this.getInboundExecutions() == null)
+            return false;
+        if (other.getInboundExecutions() != null && other.getInboundExecutions().equals(this.getInboundExecutions()) == false)
+            return false;
         if (other.getInboundTransitionState() == null ^ this.getInboundTransitionState() == null)
             return false;
         if (other.getInboundTransitionState() != null && other.getInboundTransitionState().equals(this.getInboundTransitionState()) == false)
@@ -337,6 +419,7 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
         hashCode = prime * hashCode + ((getInboundExecution() == null) ? 0 : getInboundExecution().hashCode());
+        hashCode = prime * hashCode + ((getInboundExecutions() == null) ? 0 : getInboundExecutions().hashCode());
         hashCode = prime * hashCode + ((getInboundTransitionState() == null) ? 0 : getInboundTransitionState().hashCode());
         hashCode = prime * hashCode + ((getActionStates() == null) ? 0 : getActionStates().hashCode());
         hashCode = prime * hashCode + ((getLatestExecution() == null) ? 0 : getLatestExecution().hashCode());

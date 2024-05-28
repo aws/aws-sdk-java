@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      */
     private String defaultVersionId;
@@ -306,13 +306,13 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.Date timeCreated;
     /**
      * <p>
-     * A JSON string that represent the current configuration data for the extension in this account and region.
+     * A JSON string that represent the current configuration data for the extension in this account and Region.
      * </p>
      * <p>
      * To set the configuration data for an extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      * >SetTypeConfiguration</a>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
@@ -329,12 +329,12 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String publisherId;
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -343,7 +343,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String originalTypeName;
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the
+     * For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the
      * public extension.
      * </p>
      */
@@ -370,7 +370,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String latestPublicVersion;
     /**
      * <p>
-     * Whether the extension is activated in the account and region.
+     * Whether the extension is activated in the account and Region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
@@ -380,11 +380,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private Boolean isActivated;
     /**
      * <p>
-     * Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i>
+     * Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i>
      * version is published by the extension publisher. Major versions released by the publisher must be manually
-     * updated. For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     * extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     * updated. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     * >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private Boolean autoUpdate;
@@ -570,7 +570,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      * 
      * @param defaultVersionId
@@ -584,7 +584,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        >RegisterType</a>.
      *        </p>
      *        <p>
-     *        To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *        To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      */
 
     public void setDefaultVersionId(String defaultVersionId) {
@@ -603,7 +603,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      * 
      * @return The ID of the default version of the extension. The default version is used when the extension version
@@ -616,7 +616,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *         >RegisterType</a>.
      *         </p>
      *         <p>
-     *         To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *         To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      */
 
     public String getDefaultVersionId() {
@@ -635,7 +635,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      * 
      * @param defaultVersionId
@@ -649,7 +649,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      *        >RegisterType</a>.
      *        </p>
      *        <p>
-     *        To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *        To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2513,24 +2513,24 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A JSON string that represent the current configuration data for the extension in this account and region.
+     * A JSON string that represent the current configuration data for the extension in this account and Region.
      * </p>
      * <p>
      * To set the configuration data for an extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      * >SetTypeConfiguration</a>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param configurationSchema
      *        A JSON string that represent the current configuration data for the extension in this account and
-     *        region.</p>
+     *        Region.</p>
      *        <p>
      *        To set the configuration data for an extension, use <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      *        >SetTypeConfiguration</a>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      *        >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      */
 
@@ -2540,23 +2540,23 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A JSON string that represent the current configuration data for the extension in this account and region.
+     * A JSON string that represent the current configuration data for the extension in this account and Region.
      * </p>
      * <p>
      * To set the configuration data for an extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      * >SetTypeConfiguration</a>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return A JSON string that represent the current configuration data for the extension in this account and
-     *         region.</p>
+     *         Region.</p>
      *         <p>
      *         To set the configuration data for an extension, use <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      *         >SetTypeConfiguration</a>. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      *         >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      */
 
@@ -2566,24 +2566,24 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A JSON string that represent the current configuration data for the extension in this account and region.
+     * A JSON string that represent the current configuration data for the extension in this account and Region.
      * </p>
      * <p>
      * To set the configuration data for an extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      * >SetTypeConfiguration</a>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param configurationSchema
      *        A JSON string that represent the current configuration data for the extension in this account and
-     *        region.</p>
+     *        Region.</p>
      *        <p>
      *        To set the configuration data for an extension, use <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
      *        >SetTypeConfiguration</a>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      *        >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2656,23 +2656,23 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param originalTypeName
-     *        For public extensions that have been activated for this account and region, the type name of the public
+     *        For public extensions that have been activated for this account and Region, the type name of the public
      *        extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *        CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *        CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *        name of the public extension. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *        >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -2684,22 +2684,22 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return For public extensions that have been activated for this account and region, the type name of the public
+     * @return For public extensions that have been activated for this account and Region, the type name of the public
      *         extension.</p>
      *         <p>
-     *         If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *         CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *         If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *         CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *         name of the public extension. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *         >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -2711,23 +2711,23 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param originalTypeName
-     *        For public extensions that have been activated for this account and region, the type name of the public
+     *        For public extensions that have been activated for this account and Region, the type name of the public
      *        extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *        CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *        CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *        name of the public extension. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *        >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -2741,12 +2741,12 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the
+     * For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the
      * public extension.
      * </p>
      * 
      * @param originalTypeArn
-     *        For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN)
+     *        For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN)
      *        of the public extension.
      */
 
@@ -2756,11 +2756,11 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the
+     * For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the
      * public extension.
      * </p>
      * 
-     * @return For public extensions that have been activated for this account and region, the Amazon Resource Name
+     * @return For public extensions that have been activated for this account and Region, the Amazon Resource Name
      *         (ARN) of the public extension.
      */
 
@@ -2770,12 +2770,12 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN) of the
+     * For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN) of the
      * public extension.
      * </p>
      * 
      * @param originalTypeArn
-     *        For public extensions that have been activated for this account and region, the Amazon Resource Name (ARN)
+     *        For public extensions that have been activated for this account and Region, the Amazon Resource Name (ARN)
      *        of the public extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2912,7 +2912,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the extension is activated in the account and region.
+     * Whether the extension is activated in the account and Region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
@@ -2920,7 +2920,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param isActivated
-     *        Whether the extension is activated in the account and region.</p>
+     *        Whether the extension is activated in the account and Region.</p>
      *        <p>
      *        This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *        <code>null</code>.
@@ -2932,14 +2932,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the extension is activated in the account and region.
+     * Whether the extension is activated in the account and Region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      * <code>null</code>.
      * </p>
      * 
-     * @return Whether the extension is activated in the account and region.</p>
+     * @return Whether the extension is activated in the account and Region.</p>
      *         <p>
      *         This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *         <code>null</code>.
@@ -2951,7 +2951,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the extension is activated in the account and region.
+     * Whether the extension is activated in the account and Region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
@@ -2959,7 +2959,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param isActivated
-     *        Whether the extension is activated in the account and region.</p>
+     *        Whether the extension is activated in the account and Region.</p>
      *        <p>
      *        This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *        <code>null</code>.
@@ -2973,14 +2973,14 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether the extension is activated in the account and region.
+     * Whether the extension is activated in the account and Region.
      * </p>
      * <p>
      * This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      * <code>null</code>.
      * </p>
      * 
-     * @return Whether the extension is activated in the account and region.</p>
+     * @return Whether the extension is activated in the account and Region.</p>
      *         <p>
      *         This only applies to public third-party extensions. For all other extensions, CloudFormation returns
      *         <code>null</code>.
@@ -2992,19 +2992,19 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i>
+     * Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i>
      * version is published by the extension publisher. Major versions released by the publisher must be manually
-     * updated. For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     * extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     * updated. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     * >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param autoUpdate
-     *        Whether CloudFormation automatically updates the extension in this account and region when a new
+     *        Whether CloudFormation automatically updates the extension in this account and Region when a new
      *        <i>minor</i> version is published by the extension publisher. Major versions released by the publisher
-     *        must be manually updated. For more information, see <a
-     *        href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     *        extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     *        must be manually updated. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     *        >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setAutoUpdate(Boolean autoUpdate) {
@@ -3013,18 +3013,18 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i>
+     * Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i>
      * version is published by the extension publisher. Major versions released by the publisher must be manually
-     * updated. For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     * extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     * updated. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     * >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return Whether CloudFormation automatically updates the extension in this account and region when a new
+     * @return Whether CloudFormation automatically updates the extension in this account and Region when a new
      *         <i>minor</i> version is published by the extension publisher. Major versions released by the publisher
-     *         must be manually updated. For more information, see <a
-     *         href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     *         extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     *         must be manually updated. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     *         >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public Boolean getAutoUpdate() {
@@ -3033,19 +3033,19 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i>
+     * Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i>
      * version is published by the extension publisher. Major versions released by the publisher must be manually
-     * updated. For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     * extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     * updated. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     * >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param autoUpdate
-     *        Whether CloudFormation automatically updates the extension in this account and region when a new
+     *        Whether CloudFormation automatically updates the extension in this account and Region when a new
      *        <i>minor</i> version is published by the extension publisher. Major versions released by the publisher
-     *        must be manually updated. For more information, see <a
-     *        href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     *        extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     *        must be manually updated. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     *        >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3056,18 +3056,18 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Whether CloudFormation automatically updates the extension in this account and region when a new <i>minor</i>
+     * Whether CloudFormation automatically updates the extension in this account and Region when a new <i>minor</i>
      * version is published by the extension publisher. Major versions released by the publisher must be manually
-     * updated. For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     * extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     * updated. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     * >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return Whether CloudFormation automatically updates the extension in this account and region when a new
+     * @return Whether CloudFormation automatically updates the extension in this account and Region when a new
      *         <i>minor</i> version is published by the extension publisher. Major versions released by the publisher
-     *         must be manually updated. For more information, see <a
-     *         href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating public
-     *         extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
+     *         must be manually updated. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable"
+     *         >Activating public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public Boolean isAutoUpdate() {

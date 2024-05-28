@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
     private String applicationName;
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You must provide the
+     * The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application
      * version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
@@ -99,14 +99,14 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You must provide the
+     * The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application
      * version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Kinesis Data Analytics application. You must provide the
+     *        The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      *        <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the
      *        application version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      *        <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
@@ -118,13 +118,13 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You must provide the
+     * The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application
      * version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
-     * @return The version ID of the Kinesis Data Analytics application. You must provide the
+     * @return The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      *         <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the
      *         application version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      *         <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
@@ -136,14 +136,14 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You must provide the
+     * The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the application
      * version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Kinesis Data Analytics application. You must provide the
+     *        The version ID of the SQL-based Kinesis Data Analytics application. You must provide the
      *        <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.You can retrieve the
      *        application version ID using <a>DescribeApplication</a>. For better concurrency support, use the
      *        <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.

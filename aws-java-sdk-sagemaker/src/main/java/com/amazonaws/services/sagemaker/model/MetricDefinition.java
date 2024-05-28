@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>.
- * SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job
- * uses as its objective metric to choose the best training job.
+ * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. You can view
+ * these logs to understand how your training job performs and check for any errors encountered during training.
+ * SageMaker hyperparameter tuning captures all defined metrics. Specify one of the defined metrics to use as an
+ * objective metric using the <a href=
+ * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-TuningObjective"
+ * >TuningObjective</a> parameter in the <code>HyperParameterTrainingJobDefinition</code> API to evaluate job
+ * performance during hyperparameter tuning.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MetricDefinition" target="_top">AWS API
@@ -40,8 +44,8 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     * Objective Metrics</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     * >Defining metrics and environment variables</a>.
      * </p>
      */
     private String regex;
@@ -90,15 +94,15 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     * Objective Metrics</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     * >Defining metrics and environment variables</a>.
      * </p>
      * 
      * @param regex
      *        A regular expression that searches the output of a training job and gets the value of the metric. For more
-     *        information about using regular expressions to define metrics, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     *        Objective Metrics</a>.
+     *        information about using regular expressions to define metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     *        >Defining metrics and environment variables</a>.
      */
 
     public void setRegex(String regex) {
@@ -109,14 +113,14 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     * Objective Metrics</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     * >Defining metrics and environment variables</a>.
      * </p>
      * 
      * @return A regular expression that searches the output of a training job and gets the value of the metric. For
-     *         more information about using regular expressions to define metrics, see <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html"
-     *         >Defining Objective Metrics</a>.
+     *         more information about using regular expressions to define metrics, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     *         >Defining metrics and environment variables</a>.
      */
 
     public String getRegex() {
@@ -127,15 +131,15 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
      * information about using regular expressions to define metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     * Objective Metrics</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     * >Defining metrics and environment variables</a>.
      * </p>
      * 
      * @param regex
      *        A regular expression that searches the output of a training job and gets the value of the metric. For more
-     *        information about using regular expressions to define metrics, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
-     *        Objective Metrics</a>.
+     *        information about using regular expressions to define metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     *        >Defining metrics and environment variables</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

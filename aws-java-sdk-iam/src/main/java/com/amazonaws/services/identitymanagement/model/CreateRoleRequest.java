@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
      * For example, you cannot create resources named both "MyResource" and "myresource".
+     * </p>
+     * <p>
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
      * </p>
      */
     private String roleName;
@@ -115,7 +120,19 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maxSessionDuration;
     /**
      * <p>
-     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * The ARN of the managed policy that is used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an
+     * entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a
+     * resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types
+     * </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String permissionsBoundary;
@@ -249,12 +266,22 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
      * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
+     * <p>
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
+     * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
      *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
      *        case. For example, you cannot create resources named both "MyResource" and "myresource".
+     *        </p>
+     *        <p>
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setRoleName(String roleName) {
@@ -269,11 +296,21 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
      * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
+     * <p>
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
+     * </p>
      * 
      * @return The name of the role to create.</p>
      *         <p>
      *         IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
      *         case. For example, you cannot create resources named both "MyResource" and "myresource".
+     *         </p>
+     *         <p>
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getRoleName() {
@@ -288,12 +325,22 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case.
      * For example, you cannot create resources named both "MyResource" and "myresource".
      * </p>
+     * <p>
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: _+=,.@-
+     * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
      *        IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by
      *        case. For example, you cannot create resources named both "MyResource" and "myresource".
+     *        </p>
+     *        <p>
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -682,11 +729,34 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * The ARN of the managed policy that is used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an
+     * entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a
+     * resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types
+     * </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
-     *        The ARN of the policy that is used to set the permissions boundary for the role.
+     *        The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+     *        <p>
+     *        A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an
+     *        entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that
+     *        a resource-based policy can grant to an entity. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about policy types, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     *        types </a> in the <i>IAM User Guide</i>.
      */
 
     public void setPermissionsBoundary(String permissionsBoundary) {
@@ -695,10 +765,33 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * The ARN of the managed policy that is used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an
+     * entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a
+     * resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types
+     * </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return The ARN of the policy that is used to set the permissions boundary for the role.
+     * @return The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+     *         <p>
+     *         A permissions boundary policy defines the maximum permissions that identity-based policies can grant to
+     *         an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions
+     *         that a resource-based policy can grant to an entity. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *         boundaries for IAM entities</a> in the <i>IAM User Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about policy types, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     *         types </a> in the <i>IAM User Guide</i>.
      */
 
     public String getPermissionsBoundary() {
@@ -707,11 +800,34 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * The ARN of the managed policy that is used to set the permissions boundary for the role.
+     * </p>
+     * <p>
+     * A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an
+     * entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a
+     * resource-based policy can grant to an entity. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types
+     * </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
-     *        The ARN of the policy that is used to set the permissions boundary for the role.
+     *        The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
+     *        <p>
+     *        A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an
+     *        entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that
+     *        a resource-based policy can grant to an entity. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about policy types, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+     *        types </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

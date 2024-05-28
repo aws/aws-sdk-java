@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby
- * stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting:
- * To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting
- * Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression line
- * (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the Dynamic
+ * stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the value you
+ * specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise, MediaConvert ignores
+ * Dynamic range compression line. For information about the Dolby DRC operating modes and profiles, see the Dynamic
  * Range Control chapter of the Dolby Metadata Guide at
  * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
  */

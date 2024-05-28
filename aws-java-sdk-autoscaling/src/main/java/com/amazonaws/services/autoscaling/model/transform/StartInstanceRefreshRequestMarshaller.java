@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -274,6 +274,13 @@ public class StartInstanceRefreshRequestMarshaller implements Marshaller<Request
                                                                 StringUtils.fromInteger(instanceRequirements.getSpotMaxPricePercentageOverLowestPrice()));
                                                     }
 
+                                                    if (instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() != null) {
+                                                        request.addParameter("DesiredConfiguration.MixedInstancesPolicy.LaunchTemplate.Overrides.member."
+                                                                + overridesListIndex + ".InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice",
+                                                                StringUtils.fromInteger(instanceRequirements
+                                                                        .getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice()));
+                                                    }
+
                                                     if (instanceRequirements.getOnDemandMaxPricePercentageOverLowestPrice() != null) {
                                                         request.addParameter("DesiredConfiguration.MixedInstancesPolicy.LaunchTemplate.Overrides.member."
                                                                 + overridesListIndex + ".InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice",
@@ -479,6 +486,45 @@ public class StartInstanceRefreshRequestMarshaller implements Marshaller<Request
                                                             }
                                                         }
                                                     }
+
+                                                    {
+                                                        NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                                                        if (networkBandwidthGbps != null) {
+
+                                                            if (networkBandwidthGbps.getMin() != null) {
+                                                                request.addParameter(
+                                                                        "DesiredConfiguration.MixedInstancesPolicy.LaunchTemplate.Overrides.member."
+                                                                                + overridesListIndex + ".InstanceRequirements.NetworkBandwidthGbps.Min",
+                                                                        StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                                                            }
+
+                                                            if (networkBandwidthGbps.getMax() != null) {
+                                                                request.addParameter(
+                                                                        "DesiredConfiguration.MixedInstancesPolicy.LaunchTemplate.Overrides.member."
+                                                                                + overridesListIndex + ".InstanceRequirements.NetworkBandwidthGbps.Max",
+                                                                        StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                                                            }
+                                                        }
+                                                    }
+
+                                                    if (!instanceRequirements.getAllowedInstanceTypes().isEmpty()
+                                                            || !((com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                                                    .getAllowedInstanceTypes()).isAutoConstruct()) {
+                                                        com.amazonaws.internal.SdkInternalList<String> allowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                                                .getAllowedInstanceTypes();
+                                                        int allowedInstanceTypesListIndex = 1;
+
+                                                        for (String allowedInstanceTypesListValue : allowedInstanceTypesList) {
+                                                            if (allowedInstanceTypesListValue != null) {
+                                                                request.addParameter(
+                                                                        "DesiredConfiguration.MixedInstancesPolicy.LaunchTemplate.Overrides.member."
+                                                                                + overridesListIndex + ".InstanceRequirements.AllowedInstanceTypes.member."
+                                                                                + allowedInstanceTypesListIndex,
+                                                                        StringUtils.fromString(allowedInstanceTypesListValue));
+                                                            }
+                                                            allowedInstanceTypesListIndex++;
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -561,6 +607,43 @@ public class StartInstanceRefreshRequestMarshaller implements Marshaller<Request
 
                 if (preferences.getSkipMatching() != null) {
                     request.addParameter("Preferences.SkipMatching", StringUtils.fromBoolean(preferences.getSkipMatching()));
+                }
+
+                if (preferences.getAutoRollback() != null) {
+                    request.addParameter("Preferences.AutoRollback", StringUtils.fromBoolean(preferences.getAutoRollback()));
+                }
+
+                if (preferences.getScaleInProtectedInstances() != null) {
+                    request.addParameter("Preferences.ScaleInProtectedInstances", StringUtils.fromString(preferences.getScaleInProtectedInstances()));
+                }
+
+                if (preferences.getStandbyInstances() != null) {
+                    request.addParameter("Preferences.StandbyInstances", StringUtils.fromString(preferences.getStandbyInstances()));
+                }
+
+                {
+                    AlarmSpecification alarmSpecification = preferences.getAlarmSpecification();
+                    if (alarmSpecification != null) {
+
+                        if (!alarmSpecification.getAlarms().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<String>) alarmSpecification.getAlarms()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<String> alarmsList = (com.amazonaws.internal.SdkInternalList<String>) alarmSpecification
+                                    .getAlarms();
+                            int alarmsListIndex = 1;
+
+                            for (String alarmsListValue : alarmsList) {
+                                if (alarmsListValue != null) {
+                                    request.addParameter("Preferences.AlarmSpecification.Alarms.member." + alarmsListIndex,
+                                            StringUtils.fromString(alarmsListValue));
+                                }
+                                alarmsListIndex++;
+                            }
+                        }
+                    }
+                }
+
+                if (preferences.getMaxHealthyPercentage() != null) {
+                    request.addParameter("Preferences.MaxHealthyPercentage", StringUtils.fromInteger(preferences.getMaxHealthyPercentage()));
                 }
             }
         }

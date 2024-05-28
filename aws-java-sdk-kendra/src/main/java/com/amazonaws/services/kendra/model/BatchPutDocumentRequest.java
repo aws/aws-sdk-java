@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,8 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     private String indexId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      */
     private String roleArn;
@@ -50,12 +49,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * 5 MB total size for inline documents
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 50 MB total size for files from an S3 bucket
+     * 50 MB total size for any file
      * </p>
      * </li>
      * <li>
@@ -65,8 +59,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * For more information about file size and transaction per second quotas, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      */
     private java.util.List<Document> documents;
@@ -132,15 +125,14 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For
-     *        more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     *        Amazon Kendra</a>.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     *        for Amazon Kendra</a>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -149,13 +141,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API.
-     *         For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles
+     * @return The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more
+     *         information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
      *         for Amazon Kendra</a>.
      */
 
@@ -165,15 +156,14 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more
-     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more information, see
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For
-     *        more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for
-     *        Amazon Kendra</a>.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket. For more
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     *        for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,12 +182,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * 5 MB total size for inline documents
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 50 MB total size for files from an S3 bucket
+     * 50 MB total size for any file
      * </p>
      * </li>
      * <li>
@@ -207,8 +192,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * For more information about file size and transaction per second quotas, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @return One or more documents to add to the index.</p>
@@ -218,12 +202,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         5 MB total size for inline documents
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         50 MB total size for files from an S3 bucket
+     *         50 MB total size for any file
      *         </p>
      *         </li>
      *         <li>
@@ -233,8 +212,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about file size and transaction per second quotas, see <a
-     *         href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     *         For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      */
 
     public java.util.List<Document> getDocuments() {
@@ -251,12 +229,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * 5 MB total size for inline documents
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 50 MB total size for files from an S3 bucket
+     * 50 MB total size for any file
      * </p>
      * </li>
      * <li>
@@ -266,8 +239,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * For more information about file size and transaction per second quotas, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param documents
@@ -278,12 +250,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        5 MB total size for inline documents
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        50 MB total size for files from an S3 bucket
+     *        50 MB total size for any file
      *        </p>
      *        </li>
      *        <li>
@@ -293,8 +260,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about file size and transaction per second quotas, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      */
 
     public void setDocuments(java.util.Collection<Document> documents) {
@@ -316,12 +282,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * 5 MB total size for inline documents
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 50 MB total size for files from an S3 bucket
+     * 50 MB total size for any file
      * </p>
      * </li>
      * <li>
@@ -331,8 +292,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * For more information about file size and transaction per second quotas, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -348,12 +308,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        5 MB total size for inline documents
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        50 MB total size for files from an S3 bucket
+     *        50 MB total size for any file
      *        </p>
      *        </li>
      *        <li>
@@ -363,8 +318,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about file size and transaction per second quotas, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,12 +342,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * 5 MB total size for inline documents
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 50 MB total size for files from an S3 bucket
+     * 50 MB total size for any file
      * </p>
      * </li>
      * <li>
@@ -403,8 +352,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * For more information about file size and transaction per second quotas, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param documents
@@ -415,12 +363,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        5 MB total size for inline documents
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        50 MB total size for files from an S3 bucket
+     *        50 MB total size for any file
      *        </p>
      *        </li>
      *        <li>
@@ -430,8 +373,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about file size and transaction per second quotas, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
+     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

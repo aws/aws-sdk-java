@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 public class ThrottlingException extends com.amazonaws.services.lexmodelsv2.model.AmazonLexModelsV2Exception {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * The number of seconds after which the user can invoke the API again.
+     * </p>
+     */
     private Integer retryAfterSeconds;
 
     /**
@@ -36,7 +41,12 @@ public class ThrottlingException extends com.amazonaws.services.lexmodelsv2.mode
     }
 
     /**
+     * <p>
+     * The number of seconds after which the user can invoke the API again.
+     * </p>
+     * 
      * @param retryAfterSeconds
+     *        The number of seconds after which the user can invoke the API again.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
@@ -45,7 +55,11 @@ public class ThrottlingException extends com.amazonaws.services.lexmodelsv2.mode
     }
 
     /**
-     * @return
+     * <p>
+     * The number of seconds after which the user can invoke the API again.
+     * </p>
+     * 
+     * @return The number of seconds after which the user can invoke the API again.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
@@ -54,7 +68,12 @@ public class ThrottlingException extends com.amazonaws.services.lexmodelsv2.mode
     }
 
     /**
+     * <p>
+     * The number of seconds after which the user can invoke the API again.
+     * </p>
+     * 
      * @param retryAfterSeconds
+     *        The number of seconds after which the user can invoke the API again.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

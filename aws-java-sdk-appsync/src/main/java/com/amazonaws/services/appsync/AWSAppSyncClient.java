@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.appsync.AWSAppSyncClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appsync.model.*;
+
 import com.amazonaws.services.appsync.model.transform.*;
 
 /**
@@ -87,26 +88,26 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                             new JsonErrorShapeMetadata().withErrorCode("GraphQLSchemaException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.GraphQLSchemaExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appsync.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appsync.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ApiKeyLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.ApiKeyLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ApiLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.ApiLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.ApiKeyValidityOutOfBoundsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApiLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appsync.model.transform.ApiLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
@@ -212,6 +213,146 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateApiResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an association between a Merged API and source API using the source API's identifier.
+     * </p>
+     * 
+     * @param associateMergedGraphqlApiRequest
+     * @return Result of the AssociateMergedGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.AssociateMergedGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateMergedGraphqlApiResult associateMergedGraphqlApi(AssociateMergedGraphqlApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateMergedGraphqlApi(request);
+    }
+
+    @SdkInternalApi
+    final AssociateMergedGraphqlApiResult executeAssociateMergedGraphqlApi(AssociateMergedGraphqlApiRequest associateMergedGraphqlApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateMergedGraphqlApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateMergedGraphqlApiRequest> request = null;
+        Response<AssociateMergedGraphqlApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateMergedGraphqlApiRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateMergedGraphqlApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMergedGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateMergedGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateMergedGraphqlApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an association between a Merged API and source API using the Merged API's identifier.
+     * </p>
+     * 
+     * @param associateSourceGraphqlApiRequest
+     * @return Result of the AssociateSourceGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.AssociateSourceGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateSourceGraphqlApiResult associateSourceGraphqlApi(AssociateSourceGraphqlApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSourceGraphqlApi(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSourceGraphqlApiResult executeAssociateSourceGraphqlApi(AssociateSourceGraphqlApiRequest associateSourceGraphqlApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSourceGraphqlApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSourceGraphqlApiRequest> request = null;
+        Response<AssociateSourceGraphqlApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSourceGraphqlApiRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateSourceGraphqlApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSourceGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSourceGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateSourceGraphqlApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -508,6 +649,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.CreateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -643,6 +787,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.CreateResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver" target="_top">AWS API
      *      Documentation</a>
@@ -1035,6 +1182,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.DeleteFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1166,6 +1316,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.DeleteResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver" target="_top">AWS API
      *      Documentation</a>
@@ -1336,6 +1489,210 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateApiResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an association between a Merged API and source API using the source API's identifier and the association
+     * ID.
+     * </p>
+     * 
+     * @param disassociateMergedGraphqlApiRequest
+     * @return Result of the DisassociateMergedGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.DisassociateMergedGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateMergedGraphqlApiResult disassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateMergedGraphqlApi(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateMergedGraphqlApiResult executeDisassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest disassociateMergedGraphqlApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateMergedGraphqlApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateMergedGraphqlApiRequest> request = null;
+        Response<DisassociateMergedGraphqlApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateMergedGraphqlApiRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateMergedGraphqlApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMergedGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateMergedGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateMergedGraphqlApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an association between a Merged API and source API using the Merged API's identifier and the association
+     * ID.
+     * </p>
+     * 
+     * @param disassociateSourceGraphqlApiRequest
+     * @return Result of the DisassociateSourceGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.DisassociateSourceGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateSourceGraphqlApiResult disassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateSourceGraphqlApi(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateSourceGraphqlApiResult executeDisassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest disassociateSourceGraphqlApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateSourceGraphqlApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateSourceGraphqlApiRequest> request = null;
+        Response<DisassociateSourceGraphqlApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateSourceGraphqlApiRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateSourceGraphqlApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSourceGraphqlApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateSourceGraphqlApiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateSourceGraphqlApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Evaluates the given code and returns the response. The code definition requirements depend on the specified
+     * runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request
+     * function takes the incoming request after a GraphQL operation is parsed and converts it into a request
+     * configuration for the selected data source operation. The response function interprets responses from the data
+     * source and maps it to the shape of the GraphQL field output type.
+     * </p>
+     * 
+     * @param evaluateCodeRequest
+     * @return Result of the EvaluateCode operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @sample AWSAppSync.EvaluateCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public EvaluateCodeResult evaluateCode(EvaluateCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeEvaluateCode(request);
+    }
+
+    @SdkInternalApi
+    final EvaluateCodeResult executeEvaluateCode(EvaluateCodeRequest evaluateCodeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(evaluateCodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EvaluateCodeRequest> request = null;
+        Response<EvaluateCodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EvaluateCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(evaluateCodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EvaluateCode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EvaluateCodeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EvaluateCodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1684,6 +2041,72 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Retrieves the record of an existing introspection. If the retrieval is successful, the result of the
+     * instrospection will also be returned. If the retrieval fails the operation, an error message will be returned
+     * instead.
+     * </p>
+     * 
+     * @param getDataSourceIntrospectionRequest
+     * @return Result of the GetDataSourceIntrospection operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.GetDataSourceIntrospection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSourceIntrospection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataSourceIntrospectionResult getDataSourceIntrospection(GetDataSourceIntrospectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataSourceIntrospection(request);
+    }
+
+    @SdkInternalApi
+    final GetDataSourceIntrospectionResult executeGetDataSourceIntrospection(GetDataSourceIntrospectionRequest getDataSourceIntrospectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataSourceIntrospectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataSourceIntrospectionRequest> request = null;
+        Response<GetDataSourceIntrospectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataSourceIntrospectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDataSourceIntrospectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataSourceIntrospection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataSourceIntrospectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDataSourceIntrospectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a custom <code>DomainName</code> object.
      * </p>
      * 
@@ -1875,6 +2298,75 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Retrieves the list of environmental variable key-value pairs associated with an API by its ID value.
+     * </p>
+     * 
+     * @param getGraphqlApiEnvironmentVariablesRequest
+     * @return Result of the GetGraphqlApiEnvironmentVariables operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @sample AWSAppSync.GetGraphqlApiEnvironmentVariables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApiEnvironmentVariables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGraphqlApiEnvironmentVariablesResult getGraphqlApiEnvironmentVariables(GetGraphqlApiEnvironmentVariablesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGraphqlApiEnvironmentVariables(request);
+    }
+
+    @SdkInternalApi
+    final GetGraphqlApiEnvironmentVariablesResult executeGetGraphqlApiEnvironmentVariables(
+            GetGraphqlApiEnvironmentVariablesRequest getGraphqlApiEnvironmentVariablesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGraphqlApiEnvironmentVariablesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGraphqlApiEnvironmentVariablesRequest> request = null;
+        Response<GetGraphqlApiEnvironmentVariablesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGraphqlApiEnvironmentVariablesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getGraphqlApiEnvironmentVariablesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGraphqlApiEnvironmentVariables");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGraphqlApiEnvironmentVariablesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetGraphqlApiEnvironmentVariablesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the introspection schema for a GraphQL API.
      * </p>
      * 
@@ -2054,6 +2546,72 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
             HttpResponseHandler<AmazonWebServiceResponse<GetSchemaCreationStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetSchemaCreationStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a <code>SourceApiAssociation</code> object.
+     * </p>
+     * 
+     * @param getSourceApiAssociationRequest
+     * @return Result of the GetSourceApiAssociation operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @sample AWSAppSync.GetSourceApiAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSourceApiAssociationResult getSourceApiAssociation(GetSourceApiAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSourceApiAssociation(request);
+    }
+
+    @SdkInternalApi
+    final GetSourceApiAssociationResult executeGetSourceApiAssociation(GetSourceApiAssociationRequest getSourceApiAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSourceApiAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSourceApiAssociationRequest> request = null;
+        Response<GetSourceApiAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSourceApiAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSourceApiAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSourceApiAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSourceApiAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSourceApiAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2585,6 +3143,72 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Lists the <code>SourceApiAssociationSummary</code> data.
+     * </p>
+     * 
+     * @param listSourceApiAssociationsRequest
+     * @return Result of the ListSourceApiAssociations operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @sample AWSAppSync.ListSourceApiAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSourceApiAssociationsResult listSourceApiAssociations(ListSourceApiAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSourceApiAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListSourceApiAssociationsResult executeListSourceApiAssociations(ListSourceApiAssociationsRequest listSourceApiAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSourceApiAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSourceApiAssociationsRequest> request = null;
+        Response<ListSourceApiAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSourceApiAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSourceApiAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSourceApiAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSourceApiAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSourceApiAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the tags for a resource.
      * </p>
      * 
@@ -2719,6 +3343,278 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
     /**
      * <p>
+     * Lists <code>Type</code> objects by the source API association ID.
+     * </p>
+     * 
+     * @param listTypesByAssociationRequest
+     * @return Result of the ListTypesByAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.ListTypesByAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTypesByAssociationResult listTypesByAssociation(ListTypesByAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTypesByAssociation(request);
+    }
+
+    @SdkInternalApi
+    final ListTypesByAssociationResult executeListTypesByAssociation(ListTypesByAssociationRequest listTypesByAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTypesByAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTypesByAssociationRequest> request = null;
+        Response<ListTypesByAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTypesByAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTypesByAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypesByAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTypesByAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTypesByAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a list of environmental variables in an API by its ID value.
+     * </p>
+     * <p>
+     * When creating an environmental variable, it must follow the constraints below:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Both JavaScript and VTL templates support environmental variables.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Environmental variables are not evaluated before function invocation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Environmental variables only support string values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Any defined value in an environmental variable is considered a string literal and not expanded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Variable evaluations should ideally be performed in the function code.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating an environmental variable key-value pair, it must follow the additional constraints below:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Keys must begin with a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys must be at least two characters long.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys can only contain letters, numbers, and the underscore character (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values can be up to 512 characters long.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can configure up to 50 key-value pairs in a GraphQL API.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as
+     * a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the
+     * <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing
+     * environmental variable list of that API. This means the existing environmental variables will be lost. To avoid
+     * this, you must include all existing and new environmental variables in the list each time you call this action.
+     * </p>
+     * 
+     * @param putGraphqlApiEnvironmentVariablesRequest
+     * @return Result of the PutGraphqlApiEnvironmentVariables operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @sample AWSAppSync.PutGraphqlApiEnvironmentVariables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/PutGraphqlApiEnvironmentVariables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutGraphqlApiEnvironmentVariablesResult putGraphqlApiEnvironmentVariables(PutGraphqlApiEnvironmentVariablesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutGraphqlApiEnvironmentVariables(request);
+    }
+
+    @SdkInternalApi
+    final PutGraphqlApiEnvironmentVariablesResult executePutGraphqlApiEnvironmentVariables(
+            PutGraphqlApiEnvironmentVariablesRequest putGraphqlApiEnvironmentVariablesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putGraphqlApiEnvironmentVariablesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutGraphqlApiEnvironmentVariablesRequest> request = null;
+        Response<PutGraphqlApiEnvironmentVariablesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutGraphqlApiEnvironmentVariablesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putGraphqlApiEnvironmentVariablesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutGraphqlApiEnvironmentVariables");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutGraphqlApiEnvironmentVariablesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutGraphqlApiEnvironmentVariablesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection after its
+     * creation.
+     * </p>
+     * 
+     * @param startDataSourceIntrospectionRequest
+     * @return Result of the StartDataSourceIntrospection operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @sample AWSAppSync.StartDataSourceIntrospection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartDataSourceIntrospection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDataSourceIntrospectionResult startDataSourceIntrospection(StartDataSourceIntrospectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDataSourceIntrospection(request);
+    }
+
+    @SdkInternalApi
+    final StartDataSourceIntrospectionResult executeStartDataSourceIntrospection(StartDataSourceIntrospectionRequest startDataSourceIntrospectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDataSourceIntrospectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDataSourceIntrospectionRequest> request = null;
+        Response<StartDataSourceIntrospectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDataSourceIntrospectionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDataSourceIntrospectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDataSourceIntrospection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDataSourceIntrospectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDataSourceIntrospectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a new schema to your GraphQL API.
      * </p>
      * <p>
@@ -2776,6 +3672,72 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSchemaCreationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaCreationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Initiates a merge operation. Returns a status that shows the result of the merge operation.
+     * </p>
+     * 
+     * @param startSchemaMergeRequest
+     * @return Result of the StartSchemaMerge operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.StartSchemaMerge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartSchemaMergeResult startSchemaMerge(StartSchemaMergeRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSchemaMerge(request);
+    }
+
+    @SdkInternalApi
+    final StartSchemaMergeResult executeStartSchemaMerge(StartSchemaMergeRequest startSchemaMergeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSchemaMergeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSchemaMergeRequest> request = null;
+        Response<StartSchemaMergeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSchemaMergeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSchemaMergeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSchemaMerge");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSchemaMergeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaMergeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3205,6 +4167,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.UpdateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -3336,6 +4301,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.UpdateResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver" target="_top">AWS API
      *      Documentation</a>
@@ -3374,6 +4342,74 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateResolverResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateResolverResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates some of the configuration choices of a particular source API association.
+     * </p>
+     * 
+     * @param updateSourceApiAssociationRequest
+     * @return Result of the UpdateSourceApiAssociation operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.UpdateSourceApiAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSourceApiAssociationResult updateSourceApiAssociation(UpdateSourceApiAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSourceApiAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSourceApiAssociationResult executeUpdateSourceApiAssociation(UpdateSourceApiAssociationRequest updateSourceApiAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSourceApiAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSourceApiAssociationRequest> request = null;
+        Response<UpdateSourceApiAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSourceApiAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSourceApiAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSourceApiAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSourceApiAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSourceApiAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

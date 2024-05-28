@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,20 +43,25 @@ public class LaunchTemplateInstanceMetadataOptions implements Serializable, Clon
     private String state;
     /**
      * <p>
-     * The state of token usage for your instance metadata requests. If the parameter is not specified in the request,
-     * the default state is <code>optional</code>.
+     * Indicates whether IMDSv2 is required.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance
+     * metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1
+     * role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role
+     * credentials.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
-     * version 1.0 credentials are not available.
+     * <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval
+     * requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1
+     * credentials are not available.
      * </p>
+     * </li>
+     * </ul>
      */
     private String httpTokens;
     /**
@@ -219,34 +224,44 @@ public class LaunchTemplateInstanceMetadataOptions implements Serializable, Clon
 
     /**
      * <p>
-     * The state of token usage for your instance metadata requests. If the parameter is not specified in the request,
-     * the default state is <code>optional</code>.
+     * Indicates whether IMDSv2 is required.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance
+     * metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1
+     * role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role
+     * credentials.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
-     * version 1.0 credentials are not available.
+     * <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval
+     * requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1
+     * credentials are not available.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param httpTokens
-     *        The state of token usage for your instance metadata requests. If the parameter is not specified in the
-     *        request, the default state is <code>optional</code>.</p>
+     *        Indicates whether IMDSv2 is required.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your
+     *        instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you
+     *        receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you
+     *        receive the IMDSv2 role credentials.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata
+     *        retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2
+     *        credentials; IMDSv1 credentials are not available.
+     *        </p>
+     *        </li>
      * @see LaunchTemplateHttpTokensState
      */
 
@@ -256,33 +271,43 @@ public class LaunchTemplateInstanceMetadataOptions implements Serializable, Clon
 
     /**
      * <p>
-     * The state of token usage for your instance metadata requests. If the parameter is not specified in the request,
-     * the default state is <code>optional</code>.
+     * Indicates whether IMDSv2 is required.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance
+     * metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1
+     * role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role
+     * credentials.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
-     * version 1.0 credentials are not available.
+     * <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval
+     * requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1
+     * credentials are not available.
      * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The state of token usage for your instance metadata requests. If the parameter is not specified in the
-     *         request, the default state is <code>optional</code>.</p>
+     * @return Indicates whether IMDSv2 is required.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *         signed token header on your request. If you retrieve the IAM role credentials without a token, the
-     *         version 1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed
-     *         token, the version 2.0 role credentials are returned.
+     *         <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your
+     *         instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you
+     *         receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token,
+     *         you receive the IMDSv2 role credentials.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *         retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0
-     *         credentials; the version 1.0 credentials are not available.
+     *         <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata
+     *         retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2
+     *         credentials; IMDSv1 credentials are not available.
+     *         </p>
+     *         </li>
      * @see LaunchTemplateHttpTokensState
      */
 
@@ -292,34 +317,44 @@ public class LaunchTemplateInstanceMetadataOptions implements Serializable, Clon
 
     /**
      * <p>
-     * The state of token usage for your instance metadata requests. If the parameter is not specified in the request,
-     * the default state is <code>optional</code>.
+     * Indicates whether IMDSv2 is required.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance
+     * metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1
+     * role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role
+     * credentials.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
-     * version 1.0 credentials are not available.
+     * <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval
+     * requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1
+     * credentials are not available.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param httpTokens
-     *        The state of token usage for your instance metadata requests. If the parameter is not specified in the
-     *        request, the default state is <code>optional</code>.</p>
+     *        Indicates whether IMDSv2 is required.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your
+     *        instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you
+     *        receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you
+     *        receive the IMDSv2 role credentials.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata
+     *        retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2
+     *        credentials; IMDSv1 credentials are not available.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchTemplateHttpTokensState
      */
@@ -331,34 +366,44 @@ public class LaunchTemplateInstanceMetadataOptions implements Serializable, Clon
 
     /**
      * <p>
-     * The state of token usage for your instance metadata requests. If the parameter is not specified in the request,
-     * the default state is <code>optional</code>.
+     * Indicates whether IMDSv2 is required.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a signed
-     * token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role
-     * credentials are returned. If you retrieve the IAM role credentials using a valid signed token, the version 2.0
-     * role credentials are returned.
+     * <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your instance
+     * metadata retrieval requests. If you retrieve IAM role credentials without a session token, you receive the IMDSv1
+     * role credentials. If you retrieve IAM role credentials using a valid session token, you receive the IMDSv2 role
+     * credentials.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * If the state is <code>required</code>, you must send a signed token header with any instance metadata retrieval
-     * requests. In this state, retrieving the IAM role credentials always returns the version 2.0 credentials; the
-     * version 1.0 credentials are not available.
+     * <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval
+     * requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1
+     * credentials are not available.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param httpTokens
-     *        The state of token usage for your instance metadata requests. If the parameter is not specified in the
-     *        request, the default state is <code>optional</code>.</p>
+     *        Indicates whether IMDSv2 is required.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If the state is <code>optional</code>, you can choose to retrieve instance metadata with or without a
-     *        signed token header on your request. If you retrieve the IAM role credentials without a token, the version
-     *        1.0 role credentials are returned. If you retrieve the IAM role credentials using a valid signed token,
-     *        the version 2.0 role credentials are returned.
+     *        <code>optional</code> - IMDSv2 is optional. You can choose whether to send a session token in your
+     *        instance metadata retrieval requests. If you retrieve IAM role credentials without a session token, you
+     *        receive the IMDSv1 role credentials. If you retrieve IAM role credentials using a valid session token, you
+     *        receive the IMDSv2 role credentials.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        If the state is <code>required</code>, you must send a signed token header with any instance metadata
-     *        retrieval requests. In this state, retrieving the IAM role credentials always returns the version 2.0
-     *        credentials; the version 1.0 credentials are not available.
+     *        <code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata
+     *        retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2
+     *        credentials; IMDSv1 credentials are not available.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchTemplateHttpTokensState
      */

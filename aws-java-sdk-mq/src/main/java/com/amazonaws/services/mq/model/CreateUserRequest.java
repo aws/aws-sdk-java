@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String username;
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     */
+    private Boolean replicationUser;
 
     /**
      * <p>
@@ -329,6 +335,58 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @param replicationUser
+     *        Defines if this user is intended for CRDR replication purposes.
+     */
+
+    public void setReplicationUser(Boolean replicationUser) {
+        this.replicationUser = replicationUser;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @return Defines if this user is intended for CRDR replication purposes.
+     */
+
+    public Boolean getReplicationUser() {
+        return this.replicationUser;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @param replicationUser
+     *        Defines if this user is intended for CRDR replication purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withReplicationUser(Boolean replicationUser) {
+        setReplicationUser(replicationUser);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @return Defines if this user is intended for CRDR replication purposes.
+     */
+
+    public Boolean isReplicationUser() {
+        return this.replicationUser;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -349,7 +407,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getPassword() != null)
             sb.append("Password: ").append(getPassword()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append(getUsername()).append(",");
+        if (getReplicationUser() != null)
+            sb.append("ReplicationUser: ").append(getReplicationUser());
         sb.append("}");
         return sb.toString();
     }
@@ -384,6 +444,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getReplicationUser() == null ^ this.getReplicationUser() == null)
+            return false;
+        if (other.getReplicationUser() != null && other.getReplicationUser().equals(this.getReplicationUser()) == false)
+            return false;
         return true;
     }
 
@@ -397,6 +461,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getReplicationUser() == null) ? 0 : getReplicationUser().hashCode());
         return hashCode;
     }
 

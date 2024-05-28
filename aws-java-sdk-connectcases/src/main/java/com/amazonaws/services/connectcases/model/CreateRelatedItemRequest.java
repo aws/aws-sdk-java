@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class CreateRelatedItemRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String domainId;
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     */
+    private UserUnion performedBy;
     /**
      * <p>
      * The type of a related item.
@@ -172,6 +178,46 @@ public class CreateRelatedItemRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Represents the creator of the related item.
+     * </p>
+     * 
+     * @param performedBy
+     *        Represents the creator of the related item.
+     */
+
+    public void setPerformedBy(UserUnion performedBy) {
+        this.performedBy = performedBy;
+    }
+
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     * 
+     * @return Represents the creator of the related item.
+     */
+
+    public UserUnion getPerformedBy() {
+        return this.performedBy;
+    }
+
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     * 
+     * @param performedBy
+     *        Represents the creator of the related item.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRelatedItemRequest withPerformedBy(UserUnion performedBy) {
+        setPerformedBy(performedBy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The type of a related item.
      * </p>
      * 
@@ -247,6 +293,8 @@ public class CreateRelatedItemRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Content: ").append(getContent()).append(",");
         if (getDomainId() != null)
             sb.append("DomainId: ").append(getDomainId()).append(",");
+        if (getPerformedBy() != null)
+            sb.append("PerformedBy: ").append(getPerformedBy()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -275,6 +323,10 @@ public class CreateRelatedItemRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getDomainId() != null && other.getDomainId().equals(this.getDomainId()) == false)
             return false;
+        if (other.getPerformedBy() == null ^ this.getPerformedBy() == null)
+            return false;
+        if (other.getPerformedBy() != null && other.getPerformedBy().equals(this.getPerformedBy()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -290,6 +342,7 @@ public class CreateRelatedItemRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
+        hashCode = prime * hashCode + ((getPerformedBy() == null) ? 0 : getPerformedBy().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

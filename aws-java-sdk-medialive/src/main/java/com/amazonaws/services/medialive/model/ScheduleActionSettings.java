@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private StaticImageActivateScheduleActionSettings staticImageActivateSettings;
     /** Action to deactivate a static image overlay */
     private StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings;
+    /** Action to activate a static image overlay in one or more specified outputs */
+    private StaticImageOutputActivateScheduleActionSettings staticImageOutputActivateSettings;
+    /** Action to deactivate a static image overlay in one or more specified outputs */
+    private StaticImageOutputDeactivateScheduleActionSettings staticImageOutputDeactivateSettings;
 
     /**
      * Action to insert HLS ID3 segment tagging
@@ -496,6 +500,74 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Action to activate a static image overlay in one or more specified outputs
+     * 
+     * @param staticImageOutputActivateSettings
+     *        Action to activate a static image overlay in one or more specified outputs
+     */
+
+    public void setStaticImageOutputActivateSettings(StaticImageOutputActivateScheduleActionSettings staticImageOutputActivateSettings) {
+        this.staticImageOutputActivateSettings = staticImageOutputActivateSettings;
+    }
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     * 
+     * @return Action to activate a static image overlay in one or more specified outputs
+     */
+
+    public StaticImageOutputActivateScheduleActionSettings getStaticImageOutputActivateSettings() {
+        return this.staticImageOutputActivateSettings;
+    }
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     * 
+     * @param staticImageOutputActivateSettings
+     *        Action to activate a static image overlay in one or more specified outputs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withStaticImageOutputActivateSettings(StaticImageOutputActivateScheduleActionSettings staticImageOutputActivateSettings) {
+        setStaticImageOutputActivateSettings(staticImageOutputActivateSettings);
+        return this;
+    }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     * 
+     * @param staticImageOutputDeactivateSettings
+     *        Action to deactivate a static image overlay in one or more specified outputs
+     */
+
+    public void setStaticImageOutputDeactivateSettings(StaticImageOutputDeactivateScheduleActionSettings staticImageOutputDeactivateSettings) {
+        this.staticImageOutputDeactivateSettings = staticImageOutputDeactivateSettings;
+    }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     * 
+     * @return Action to deactivate a static image overlay in one or more specified outputs
+     */
+
+    public StaticImageOutputDeactivateScheduleActionSettings getStaticImageOutputDeactivateSettings() {
+        return this.staticImageOutputDeactivateSettings;
+    }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     * 
+     * @param staticImageOutputDeactivateSettings
+     *        Action to deactivate a static image overlay in one or more specified outputs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withStaticImageOutputDeactivateSettings(StaticImageOutputDeactivateScheduleActionSettings staticImageOutputDeactivateSettings) {
+        setStaticImageOutputDeactivateSettings(staticImageOutputDeactivateSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -532,7 +604,11 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (getStaticImageActivateSettings() != null)
             sb.append("StaticImageActivateSettings: ").append(getStaticImageActivateSettings()).append(",");
         if (getStaticImageDeactivateSettings() != null)
-            sb.append("StaticImageDeactivateSettings: ").append(getStaticImageDeactivateSettings());
+            sb.append("StaticImageDeactivateSettings: ").append(getStaticImageDeactivateSettings()).append(",");
+        if (getStaticImageOutputActivateSettings() != null)
+            sb.append("StaticImageOutputActivateSettings: ").append(getStaticImageOutputActivateSettings()).append(",");
+        if (getStaticImageOutputDeactivateSettings() != null)
+            sb.append("StaticImageOutputDeactivateSettings: ").append(getStaticImageOutputDeactivateSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -603,6 +679,16 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (other.getStaticImageDeactivateSettings() != null
                 && other.getStaticImageDeactivateSettings().equals(this.getStaticImageDeactivateSettings()) == false)
             return false;
+        if (other.getStaticImageOutputActivateSettings() == null ^ this.getStaticImageOutputActivateSettings() == null)
+            return false;
+        if (other.getStaticImageOutputActivateSettings() != null
+                && other.getStaticImageOutputActivateSettings().equals(this.getStaticImageOutputActivateSettings()) == false)
+            return false;
+        if (other.getStaticImageOutputDeactivateSettings() == null ^ this.getStaticImageOutputDeactivateSettings() == null)
+            return false;
+        if (other.getStaticImageOutputDeactivateSettings() != null
+                && other.getStaticImageOutputDeactivateSettings().equals(this.getStaticImageOutputDeactivateSettings()) == false)
+            return false;
         return true;
     }
 
@@ -624,6 +710,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getScte35TimeSignalSettings() == null) ? 0 : getScte35TimeSignalSettings().hashCode());
         hashCode = prime * hashCode + ((getStaticImageActivateSettings() == null) ? 0 : getStaticImageActivateSettings().hashCode());
         hashCode = prime * hashCode + ((getStaticImageDeactivateSettings() == null) ? 0 : getStaticImageDeactivateSettings().hashCode());
+        hashCode = prime * hashCode + ((getStaticImageOutputActivateSettings() == null) ? 0 : getStaticImageOutputActivateSettings().hashCode());
+        hashCode = prime * hashCode + ((getStaticImageOutputDeactivateSettings() == null) ? 0 : getStaticImageOutputDeactivateSettings().hashCode());
         return hashCode;
     }
 

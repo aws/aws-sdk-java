@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -170,6 +170,68 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
 
     /**
      * <p>
+     * Creates a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationRequest
+     * @return A Java Future containing the result of the CreateRotation operation returned by the service.
+     * @sample AWSSSMContactsAsync.CreateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRotationResult> createRotationAsync(CreateRotationRequest createRotationRequest);
+
+    /**
+     * <p>
+     * Creates a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRotation operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.CreateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRotationResult> createRotationAsync(CreateRotationRequest createRotationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRotationRequest, CreateRotationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an override for a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationOverrideRequest
+     * @return A Java Future containing the result of the CreateRotationOverride operation returned by the service.
+     * @sample AWSSSMContactsAsync.CreateRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRotationOverrideResult> createRotationOverrideAsync(CreateRotationOverrideRequest createRotationOverrideRequest);
+
+    /**
+     * <p>
+     * Creates an override for a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationOverrideRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRotationOverride operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.CreateRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRotationOverrideResult> createRotationOverrideAsync(CreateRotationOverrideRequest createRotationOverrideRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRotationOverrideRequest, CreateRotationOverrideResult> asyncHandler);
+
+    /**
+     * <p>
      * To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.
      * </p>
      * 
@@ -268,6 +330,70 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
      */
     java.util.concurrent.Future<DeleteContactChannelResult> deleteContactChannelAsync(DeleteContactChannelRequest deleteContactChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteContactChannelRequest, DeleteContactChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation
+     * deletes it from all of them.
+     * </p>
+     * 
+     * @param deleteRotationRequest
+     * @return A Java Future containing the result of the DeleteRotation operation returned by the service.
+     * @sample AWSSSMContactsAsync.DeleteRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRotationResult> deleteRotationAsync(DeleteRotationRequest deleteRotationRequest);
+
+    /**
+     * <p>
+     * Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation
+     * deletes it from all of them.
+     * </p>
+     * 
+     * @param deleteRotationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRotation operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.DeleteRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRotationResult> deleteRotationAsync(DeleteRotationRequest deleteRotationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRotationRequest, DeleteRotationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing override for an on-call rotation.
+     * </p>
+     * 
+     * @param deleteRotationOverrideRequest
+     * @return A Java Future containing the result of the DeleteRotationOverride operation returned by the service.
+     * @sample AWSSSMContactsAsync.DeleteRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRotationOverrideResult> deleteRotationOverrideAsync(DeleteRotationOverrideRequest deleteRotationOverrideRequest);
+
+    /**
+     * <p>
+     * Deletes an existing override for an on-call rotation.
+     * </p>
+     * 
+     * @param deleteRotationOverrideRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRotationOverride operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.DeleteRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRotationOverrideResult> deleteRotationOverrideAsync(DeleteRotationOverrideRequest deleteRotationOverrideRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRotationOverrideRequest, DeleteRotationOverrideResult> asyncHandler);
 
     /**
      * <p>
@@ -428,6 +554,68 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
 
     /**
      * <p>
+     * Retrieves information about an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationRequest
+     * @return A Java Future containing the result of the GetRotation operation returned by the service.
+     * @sample AWSSSMContactsAsync.GetRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRotationResult> getRotationAsync(GetRotationRequest getRotationRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRotation operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.GetRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRotationResult> getRotationAsync(GetRotationRequest getRotationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRotationRequest, GetRotationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about an override to an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationOverrideRequest
+     * @return A Java Future containing the result of the GetRotationOverride operation returned by the service.
+     * @sample AWSSSMContactsAsync.GetRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRotationOverrideResult> getRotationOverrideAsync(GetRotationOverrideRequest getRotationOverrideRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an override to an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationOverrideRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRotationOverride operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.GetRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRotationOverrideResult> getRotationOverrideAsync(GetRotationOverrideRequest getRotationOverrideRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRotationOverrideRequest, GetRotationOverrideResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all contact channels for the specified contact.
      * </p>
      * 
@@ -552,6 +740,43 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
 
     /**
      * <p>
+     * Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might
+     * target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the
+     * incident starts. The resolution path indicates the hierarchy of <i>escalation plan &gt; on-call schedule &gt;
+     * contact</i>.
+     * </p>
+     * 
+     * @param listPageResolutionsRequest
+     * @return A Java Future containing the result of the ListPageResolutions operation returned by the service.
+     * @sample AWSSSMContactsAsync.ListPageResolutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPageResolutionsResult> listPageResolutionsAsync(ListPageResolutionsRequest listPageResolutionsRequest);
+
+    /**
+     * <p>
+     * Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might
+     * target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the
+     * incident starts. The resolution path indicates the hierarchy of <i>escalation plan &gt; on-call schedule &gt;
+     * contact</i>.
+     * </p>
+     * 
+     * @param listPageResolutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPageResolutions operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.ListPageResolutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPageResolutionsResult> listPageResolutionsAsync(ListPageResolutionsRequest listPageResolutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPageResolutionsRequest, ListPageResolutionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the engagements to a contact's contact channels.
      * </p>
      * 
@@ -611,6 +836,144 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
      */
     java.util.concurrent.Future<ListPagesByEngagementResult> listPagesByEngagementAsync(ListPagesByEngagementRequest listPagesByEngagementRequest,
             com.amazonaws.handlers.AsyncHandler<ListPagesByEngagementRequest, ListPagesByEngagementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of shifts based on rotation configuration parameters.
+     * </p>
+     * <note>
+     * <p>
+     * The Incident Manager primarily uses this operation to populate the <b>Preview</b> calendar. It is not typically
+     * run by end users.
+     * </p>
+     * </note>
+     * 
+     * @param listPreviewRotationShiftsRequest
+     * @return A Java Future containing the result of the ListPreviewRotationShifts operation returned by the service.
+     * @sample AWSSSMContactsAsync.ListPreviewRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPreviewRotationShiftsResult> listPreviewRotationShiftsAsync(
+            ListPreviewRotationShiftsRequest listPreviewRotationShiftsRequest);
+
+    /**
+     * <p>
+     * Returns a list of shifts based on rotation configuration parameters.
+     * </p>
+     * <note>
+     * <p>
+     * The Incident Manager primarily uses this operation to populate the <b>Preview</b> calendar. It is not typically
+     * run by end users.
+     * </p>
+     * </note>
+     * 
+     * @param listPreviewRotationShiftsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPreviewRotationShifts operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.ListPreviewRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPreviewRotationShiftsResult> listPreviewRotationShiftsAsync(
+            ListPreviewRotationShiftsRequest listPreviewRotationShiftsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPreviewRotationShiftsRequest, ListPreviewRotationShiftsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of overrides currently specified for an on-call rotation.
+     * </p>
+     * 
+     * @param listRotationOverridesRequest
+     * @return A Java Future containing the result of the ListRotationOverrides operation returned by the service.
+     * @sample AWSSSMContactsAsync.ListRotationOverrides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRotationOverridesResult> listRotationOverridesAsync(ListRotationOverridesRequest listRotationOverridesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of overrides currently specified for an on-call rotation.
+     * </p>
+     * 
+     * @param listRotationOverridesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRotationOverrides operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.ListRotationOverrides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRotationOverridesResult> listRotationOverridesAsync(ListRotationOverridesRequest listRotationOverridesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRotationOverridesRequest, ListRotationOverridesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of shifts generated by an existing rotation in the system.
+     * </p>
+     * 
+     * @param listRotationShiftsRequest
+     * @return A Java Future containing the result of the ListRotationShifts operation returned by the service.
+     * @sample AWSSSMContactsAsync.ListRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRotationShiftsResult> listRotationShiftsAsync(ListRotationShiftsRequest listRotationShiftsRequest);
+
+    /**
+     * <p>
+     * Returns a list of shifts generated by an existing rotation in the system.
+     * </p>
+     * 
+     * @param listRotationShiftsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRotationShifts operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.ListRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRotationShiftsResult> listRotationShiftsAsync(ListRotationShiftsRequest listRotationShiftsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRotationShiftsRequest, ListRotationShiftsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of on-call rotations.
+     * </p>
+     * 
+     * @param listRotationsRequest
+     * @return A Java Future containing the result of the ListRotations operation returned by the service.
+     * @sample AWSSSMContactsAsync.ListRotations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRotationsResult> listRotationsAsync(ListRotationsRequest listRotationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of on-call rotations.
+     * </p>
+     * 
+     * @param listRotationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRotations operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.ListRotations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRotationsResult> listRotationsAsync(ListRotationsRequest listRotationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRotationsRequest, ListRotationsResult> asyncHandler);
 
     /**
      * <p>
@@ -906,5 +1269,36 @@ public interface AWSSSMContactsAsync extends AWSSSMContacts {
      */
     java.util.concurrent.Future<UpdateContactChannelResult> updateContactChannelAsync(UpdateContactChannelRequest updateContactChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateContactChannelRequest, UpdateContactChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the information specified for an on-call rotation.
+     * </p>
+     * 
+     * @param updateRotationRequest
+     * @return A Java Future containing the result of the UpdateRotation operation returned by the service.
+     * @sample AWSSSMContactsAsync.UpdateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRotationResult> updateRotationAsync(UpdateRotationRequest updateRotationRequest);
+
+    /**
+     * <p>
+     * Updates the information specified for an on-call rotation.
+     * </p>
+     * 
+     * @param updateRotationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRotation operation returned by the service.
+     * @sample AWSSSMContactsAsyncHandler.UpdateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRotationResult> updateRotationAsync(UpdateRotationRequest updateRotationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRotationRequest, UpdateRotationResult> asyncHandler);
 
 }

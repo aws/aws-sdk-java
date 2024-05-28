@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,8 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
     private String knowledgeBaseArn;
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      */
     private String knowledgeBaseId;
@@ -66,7 +67,16 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
     private RenderingConfiguration renderingConfiguration;
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
@@ -171,11 +181,13 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it.
      */
 
     public void setKnowledgeBaseId(String knowledgeBaseId) {
@@ -184,10 +196,12 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      * 
-     * @return The identifier of the knowledge base.
+     * @return The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *         storing Wisdom Content resource to it.
      */
 
     public String getKnowledgeBaseId() {
@@ -196,11 +210,13 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,11 +366,29 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *        <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke
+     *        Wisdom.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -363,10 +397,28 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
-     * @return The KMS key used for encryption.
+     * @return The configuration information for the customer managed key used for encryption. </p>
+     *         <p>
+     *         This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *         <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke
+     *         Wisdom.
+     *         </p>
+     *         <p>
+     *         For more information about setting up a customer managed key for Wisdom, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *         Wisdom for your instance</a>.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -375,11 +427,29 @@ public class KnowledgeBaseSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *        <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke
+     *        Wisdom.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

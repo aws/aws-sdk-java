@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class HlsId3SegmentTaggingScheduleActionSettings implements Serializable,
      * https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
      */
     private String tag;
+    /** Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure */
+    private String id3;
 
     /**
      * ID3 tag to insert into each segment. Supports special keyword identifiers to substitute in segment-related
@@ -80,6 +82,40 @@ public class HlsId3SegmentTaggingScheduleActionSettings implements Serializable,
     }
 
     /**
+     * Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+     * 
+     * @param id3
+     *        Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+     */
+
+    public void setId3(String id3) {
+        this.id3 = id3;
+    }
+
+    /**
+     * Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+     * 
+     * @return Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+     */
+
+    public String getId3() {
+        return this.id3;
+    }
+
+    /**
+     * Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+     * 
+     * @param id3
+     *        Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsId3SegmentTaggingScheduleActionSettings withId3(String id3) {
+        setId3(id3);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -92,7 +128,9 @@ public class HlsId3SegmentTaggingScheduleActionSettings implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTag() != null)
-            sb.append("Tag: ").append(getTag());
+            sb.append("Tag: ").append(getTag()).append(",");
+        if (getId3() != null)
+            sb.append("Id3: ").append(getId3());
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +149,10 @@ public class HlsId3SegmentTaggingScheduleActionSettings implements Serializable,
             return false;
         if (other.getTag() != null && other.getTag().equals(this.getTag()) == false)
             return false;
+        if (other.getId3() == null ^ this.getId3() == null)
+            return false;
+        if (other.getId3() != null && other.getId3().equals(this.getId3()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +162,7 @@ public class HlsId3SegmentTaggingScheduleActionSettings implements Serializable,
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTag() == null) ? 0 : getTag().hashCode());
+        hashCode = prime * hashCode + ((getId3() == null) ? 0 : getId3().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and
- * automatically included in requests that CloudFront sends to the origin.
+ * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in
+ * requests that CloudFront sends to the origin.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyHeadersConfig"
@@ -29,21 +29,21 @@ public class CachePolicyHeadersConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any HTTP headers are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin. Valid values are:
+     * Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the
+     * origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in requests
-     * that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are
-     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in the
-     * cache key and are automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
+     * the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
@@ -54,40 +54,40 @@ public class CachePolicyHeadersConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any HTTP headers are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin. Valid values are:
+     * Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the
+     * origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in requests
-     * that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are
-     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in the
-     * cache key and are automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
+     * the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param headerBehavior
-     *        Determines whether any HTTP headers are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to
+     *        the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in
-     *        requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     *        headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     *        <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to
+     *        the origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     *        <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
-     *        the cache key and are automatically included in requests that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *        included in the cache key and in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @see CachePolicyHeaderBehavior
@@ -99,39 +99,39 @@ public class CachePolicyHeadersConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any HTTP headers are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin. Valid values are:
+     * Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the
+     * origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in requests
-     * that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are
-     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in the
-     * cache key and are automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
+     * the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Determines whether any HTTP headers are included in the cache key and automatically included in requests
-     *         that CloudFront sends to the origin. Valid values are:</p>
+     * @return Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends
+     *         to the origin. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in
-     *         requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     *         headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     *         <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to
+     *         the origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     *         <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included
-     *         in the cache key and are automatically included in requests that CloudFront sends to the origin.
+     *         <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *         included in the cache key and in requests that CloudFront sends to the origin.
      *         </p>
      *         </li>
      * @see CachePolicyHeaderBehavior
@@ -143,40 +143,40 @@ public class CachePolicyHeadersConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any HTTP headers are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin. Valid values are:
+     * Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the
+     * origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in requests
-     * that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are
-     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in the
-     * cache key and are automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
+     * the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param headerBehavior
-     *        Determines whether any HTTP headers are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to
+     *        the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in
-     *        requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     *        headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     *        <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to
+     *        the origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     *        <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
-     *        the cache key and are automatically included in requests that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *        included in the cache key and in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -190,40 +190,40 @@ public class CachePolicyHeadersConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any HTTP headers are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin. Valid values are:
+     * Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the
+     * origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in requests
-     * that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are
-     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in the
-     * cache key and are automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
+     * the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param headerBehavior
-     *        Determines whether any HTTP headers are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to
+     *        the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – HTTP headers are not included in the cache key and are not automatically included in
-     *        requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     *        headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     *        <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to
+     *        the origin. Even when this field is set to <code>none</code>, any headers that are listed in an
+     *        <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
-     *        the cache key and are automatically included in requests that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *        included in the cache key and in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class ChannelMessageCallbackMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageAttributes").build();
     private static final MarshallingInfo<String> SUBCHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubChannelId").build();
+    private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentType").build();
 
     private static final ChannelMessageCallbackMarshaller instance = new ChannelMessageCallbackMarshaller();
 
@@ -64,6 +66,7 @@ public class ChannelMessageCallbackMarshaller {
             protocolMarshaller.marshall(channelMessageCallback.getPushNotification(), PUSHNOTIFICATION_BINDING);
             protocolMarshaller.marshall(channelMessageCallback.getMessageAttributes(), MESSAGEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(channelMessageCallback.getSubChannelId(), SUBCHANNELID_BINDING);
+            protocolMarshaller.marshall(channelMessageCallback.getContentType(), CONTENTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

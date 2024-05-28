@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,33 +28,38 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcIds;
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -63,12 +68,15 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *         another call with the returned <code>nextToken</code> value.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -77,13 +85,16 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +105,13 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -107,10 +120,12 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -119,11 +134,13 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,10 +151,10 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * 
-     * @return One or more VPC IDs.
+     * @return The IDs of the VPCs.
      */
 
     public java.util.List<String> getVpcIds() {
@@ -149,11 +166,11 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.
+     *        The IDs of the VPCs.
      */
 
     public void setVpcIds(java.util.Collection<String> vpcIds) {
@@ -167,7 +184,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +193,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.
+     *        The IDs of the VPCs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +209,11 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
+     * The IDs of the VPCs.
      * </p>
      * 
      * @param vpcIds
-     *        One or more VPC IDs.
+     *        The IDs of the VPCs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

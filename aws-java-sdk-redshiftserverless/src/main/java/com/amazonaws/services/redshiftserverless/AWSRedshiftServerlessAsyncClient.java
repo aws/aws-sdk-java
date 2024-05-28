@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,40 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request) {
+
+        return createCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(
+            final CreateCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomDomainAssociationRequest, CreateCustomDomainAssociationResult> asyncHandler) {
+        final CreateCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCustomDomainAssociationResult>() {
+            @Override
+            public CreateCustomDomainAssociationResult call() throws Exception {
+                CreateCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeCreateCustomDomainAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request) {
 
         return createEndpointAccessAsync(request, null);
@@ -188,6 +222,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest request) {
+
+        return createScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(final CreateScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateScheduledActionRequest, CreateScheduledActionResult> asyncHandler) {
+        final CreateScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateScheduledActionResult>() {
+            @Override
+            public CreateScheduledActionResult call() throws Exception {
+                CreateScheduledActionResult result = null;
+
+                try {
+                    result = executeCreateScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request) {
 
         return createSnapshotAsync(request, null);
@@ -205,6 +272,41 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeCreateSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotCopyConfigurationResult> createSnapshotCopyConfigurationAsync(
+            CreateSnapshotCopyConfigurationRequest request) {
+
+        return createSnapshotCopyConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotCopyConfigurationResult> createSnapshotCopyConfigurationAsync(
+            final CreateSnapshotCopyConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSnapshotCopyConfigurationRequest, CreateSnapshotCopyConfigurationResult> asyncHandler) {
+        final CreateSnapshotCopyConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSnapshotCopyConfigurationResult>() {
+            @Override
+            public CreateSnapshotCopyConfigurationResult call() throws Exception {
+                CreateSnapshotCopyConfigurationResult result = null;
+
+                try {
+                    result = executeCreateSnapshotCopyConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -271,6 +373,40 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeCreateWorkgroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request) {
+
+        return deleteCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(
+            final DeleteCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomDomainAssociationRequest, DeleteCustomDomainAssociationResult> asyncHandler) {
+        final DeleteCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCustomDomainAssociationResult>() {
+            @Override
+            public DeleteCustomDomainAssociationResult call() throws Exception {
+                DeleteCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeDeleteCustomDomainAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -386,6 +522,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest request) {
+
+        return deleteScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(final DeleteScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
+        final DeleteScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteScheduledActionResult>() {
+            @Override
+            public DeleteScheduledActionResult call() throws Exception {
+                DeleteScheduledActionResult result = null;
+
+                try {
+                    result = executeDeleteScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(DeleteSnapshotRequest request) {
 
         return deleteSnapshotAsync(request, null);
@@ -403,6 +572,41 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeDeleteSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotCopyConfigurationResult> deleteSnapshotCopyConfigurationAsync(
+            DeleteSnapshotCopyConfigurationRequest request) {
+
+        return deleteSnapshotCopyConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotCopyConfigurationResult> deleteSnapshotCopyConfigurationAsync(
+            final DeleteSnapshotCopyConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSnapshotCopyConfigurationRequest, DeleteSnapshotCopyConfigurationResult> asyncHandler) {
+        final DeleteSnapshotCopyConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSnapshotCopyConfigurationResult>() {
+            @Override
+            public DeleteSnapshotCopyConfigurationResult call() throws Exception {
+                DeleteSnapshotCopyConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteSnapshotCopyConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -502,6 +706,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeGetCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request) {
+
+        return getCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(final GetCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCustomDomainAssociationRequest, GetCustomDomainAssociationResult> asyncHandler) {
+        final GetCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCustomDomainAssociationResult>() {
+            @Override
+            public GetCustomDomainAssociationResult call() throws Exception {
+                GetCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeGetCustomDomainAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -650,6 +887,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<GetScheduledActionResult> getScheduledActionAsync(GetScheduledActionRequest request) {
+
+        return getScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetScheduledActionResult> getScheduledActionAsync(final GetScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetScheduledActionRequest, GetScheduledActionResult> asyncHandler) {
+        final GetScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetScheduledActionResult>() {
+            @Override
+            public GetScheduledActionResult call() throws Exception {
+                GetScheduledActionResult result = null;
+
+                try {
+                    result = executeGetScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSnapshotResult> getSnapshotAsync(GetSnapshotRequest request) {
 
         return getSnapshotAsync(request, null);
@@ -667,6 +937,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeGetSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest request) {
+
+        return getTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(final GetTableRestoreStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTableRestoreStatusRequest, GetTableRestoreStatusResult> asyncHandler) {
+        final GetTableRestoreStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTableRestoreStatusResult>() {
+            @Override
+            public GetTableRestoreStatusResult call() throws Exception {
+                GetTableRestoreStatusResult result = null;
+
+                try {
+                    result = executeGetTableRestoreStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -733,6 +1036,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeGetWorkgroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request) {
+
+        return listCustomDomainAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(final ListCustomDomainAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCustomDomainAssociationsRequest, ListCustomDomainAssociationsResult> asyncHandler) {
+        final ListCustomDomainAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCustomDomainAssociationsResult>() {
+            @Override
+            public ListCustomDomainAssociationsResult call() throws Exception {
+                ListCustomDomainAssociationsResult result = null;
+
+                try {
+                    result = executeListCustomDomainAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -848,6 +1184,73 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request) {
+
+        return listScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(final ListScheduledActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler) {
+        final ListScheduledActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListScheduledActionsResult>() {
+            @Override
+            public ListScheduledActionsResult call() throws Exception {
+                ListScheduledActionsResult result = null;
+
+                try {
+                    result = executeListScheduledActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSnapshotCopyConfigurationsResult> listSnapshotCopyConfigurationsAsync(ListSnapshotCopyConfigurationsRequest request) {
+
+        return listSnapshotCopyConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSnapshotCopyConfigurationsResult> listSnapshotCopyConfigurationsAsync(
+            final ListSnapshotCopyConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSnapshotCopyConfigurationsRequest, ListSnapshotCopyConfigurationsResult> asyncHandler) {
+        final ListSnapshotCopyConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSnapshotCopyConfigurationsResult>() {
+            @Override
+            public ListSnapshotCopyConfigurationsResult call() throws Exception {
+                ListSnapshotCopyConfigurationsResult result = null;
+
+                try {
+                    result = executeListSnapshotCopyConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSnapshotsResult> listSnapshotsAsync(ListSnapshotsRequest request) {
 
         return listSnapshotsAsync(request, null);
@@ -865,6 +1268,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeListSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest request) {
+
+        return listTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(final ListTableRestoreStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTableRestoreStatusRequest, ListTableRestoreStatusResult> asyncHandler) {
+        final ListTableRestoreStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTableRestoreStatusResult>() {
+            @Override
+            public ListTableRestoreStatusResult call() throws Exception {
+                ListTableRestoreStatusResult result = null;
+
+                try {
+                    result = executeListTableRestoreStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1079,6 +1515,73 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreTableFromRecoveryPointResult> restoreTableFromRecoveryPointAsync(RestoreTableFromRecoveryPointRequest request) {
+
+        return restoreTableFromRecoveryPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromRecoveryPointResult> restoreTableFromRecoveryPointAsync(
+            final RestoreTableFromRecoveryPointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreTableFromRecoveryPointRequest, RestoreTableFromRecoveryPointResult> asyncHandler) {
+        final RestoreTableFromRecoveryPointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreTableFromRecoveryPointResult>() {
+            @Override
+            public RestoreTableFromRecoveryPointResult call() throws Exception {
+                RestoreTableFromRecoveryPointResult result = null;
+
+                try {
+                    result = executeRestoreTableFromRecoveryPoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request) {
+
+        return restoreTableFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(final RestoreTableFromSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreTableFromSnapshotRequest, RestoreTableFromSnapshotResult> asyncHandler) {
+        final RestoreTableFromSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreTableFromSnapshotResult>() {
+            @Override
+            public RestoreTableFromSnapshotResult call() throws Exception {
+                RestoreTableFromSnapshotResult result = null;
+
+                try {
+                    result = executeRestoreTableFromSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1129,6 +1632,40 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request) {
+
+        return updateCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(
+            final UpdateCustomDomainAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCustomDomainAssociationRequest, UpdateCustomDomainAssociationResult> asyncHandler) {
+        final UpdateCustomDomainAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCustomDomainAssociationResult>() {
+            @Override
+            public UpdateCustomDomainAssociationResult call() throws Exception {
+                UpdateCustomDomainAssociationResult result = null;
+
+                try {
+                    result = executeUpdateCustomDomainAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1211,6 +1748,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request) {
+
+        return updateScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(final UpdateScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler) {
+        final UpdateScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateScheduledActionResult>() {
+            @Override
+            public UpdateScheduledActionResult call() throws Exception {
+                UpdateScheduledActionResult result = null;
+
+                try {
+                    result = executeUpdateScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSnapshotResult> updateSnapshotAsync(UpdateSnapshotRequest request) {
 
         return updateSnapshotAsync(request, null);
@@ -1228,6 +1798,41 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeUpdateSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSnapshotCopyConfigurationResult> updateSnapshotCopyConfigurationAsync(
+            UpdateSnapshotCopyConfigurationRequest request) {
+
+        return updateSnapshotCopyConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSnapshotCopyConfigurationResult> updateSnapshotCopyConfigurationAsync(
+            final UpdateSnapshotCopyConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSnapshotCopyConfigurationRequest, UpdateSnapshotCopyConfigurationResult> asyncHandler) {
+        final UpdateSnapshotCopyConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSnapshotCopyConfigurationResult>() {
+            @Override
+            public UpdateSnapshotCopyConfigurationResult call() throws Exception {
+                UpdateSnapshotCopyConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateSnapshotCopyConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

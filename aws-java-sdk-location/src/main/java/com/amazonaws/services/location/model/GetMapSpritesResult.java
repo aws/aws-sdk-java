@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class GetMapSpritesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.nio.ByteBuffer blob;
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     */
+    private String cacheControl;
     /**
      * <p>
      * The content type of the sprite sheet and offsets. For example, the sprite sheet content type is
@@ -106,6 +112,46 @@ public class GetMapSpritesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     * 
+     * @param cacheControl
+     *        The HTTP Cache-Control directive for the value.
+     */
+
+    public void setCacheControl(String cacheControl) {
+        this.cacheControl = cacheControl;
+    }
+
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     * 
+     * @return The HTTP Cache-Control directive for the value.
+     */
+
+    public String getCacheControl() {
+        return this.cacheControl;
+    }
+
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     * 
+     * @param cacheControl
+     *        The HTTP Cache-Control directive for the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMapSpritesResult withCacheControl(String cacheControl) {
+        setCacheControl(cacheControl);
+        return this;
+    }
+
+    /**
+     * <p>
      * The content type of the sprite sheet and offsets. For example, the sprite sheet content type is
      * <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.
      * </p>
@@ -164,6 +210,8 @@ public class GetMapSpritesResult extends com.amazonaws.AmazonWebServiceResult<co
         sb.append("{");
         if (getBlob() != null)
             sb.append("Blob: ").append(getBlob()).append(",");
+        if (getCacheControl() != null)
+            sb.append("CacheControl: ").append(getCacheControl()).append(",");
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType());
         sb.append("}");
@@ -184,6 +232,10 @@ public class GetMapSpritesResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getBlob() != null && other.getBlob().equals(this.getBlob()) == false)
             return false;
+        if (other.getCacheControl() == null ^ this.getCacheControl() == null)
+            return false;
+        if (other.getCacheControl() != null && other.getCacheControl().equals(this.getCacheControl()) == false)
+            return false;
         if (other.getContentType() == null ^ this.getContentType() == null)
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
@@ -197,6 +249,7 @@ public class GetMapSpritesResult extends com.amazonaws.AmazonWebServiceResult<co
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBlob() == null) ? 0 : getBlob().hashCode());
+        hashCode = prime * hashCode + ((getCacheControl() == null) ? 0 : getCacheControl().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         return hashCode;
     }

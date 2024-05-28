@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Input for DeletePlatformApplication action.
+ * Input for <code>DeletePlatformApplication</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication" target="_top">AWS API
@@ -30,18 +30,18 @@ public class DeletePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * PlatformApplicationArn of platform application object to delete.
+     * <code>PlatformApplicationArn</code> of platform application object to delete.
      * </p>
      */
     private String platformApplicationArn;
 
     /**
      * <p>
-     * PlatformApplicationArn of platform application object to delete.
+     * <code>PlatformApplicationArn</code> of platform application object to delete.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn of platform application object to delete.
+     *        <code>PlatformApplicationArn</code> of platform application object to delete.
      */
 
     public void setPlatformApplicationArn(String platformApplicationArn) {
@@ -50,10 +50,10 @@ public class DeletePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * PlatformApplicationArn of platform application object to delete.
+     * <code>PlatformApplicationArn</code> of platform application object to delete.
      * </p>
      * 
-     * @return PlatformApplicationArn of platform application object to delete.
+     * @return <code>PlatformApplicationArn</code> of platform application object to delete.
      */
 
     public String getPlatformApplicationArn() {
@@ -62,11 +62,11 @@ public class DeletePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * PlatformApplicationArn of platform application object to delete.
+     * <code>PlatformApplicationArn</code> of platform application object to delete.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn of platform application object to delete.
+     *        <code>PlatformApplicationArn</code> of platform application object to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

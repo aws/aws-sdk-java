@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      */
     private String executionRoleArn;
@@ -213,7 +213,7 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      * 
      * @param executionRoleArn
@@ -221,7 +221,7 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
      *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
      *        <p>
-     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     *        For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -235,14 +235,14 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a
      *         cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
      *         using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
      *         <p>
-     *         For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role
+     *         For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role
      *         ARN.
      */
 
@@ -257,7 +257,7 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      * following format: <code>arn:partition:service:region:account:resource</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     * For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * </p>
      * 
      * @param executionRoleArn
@@ -265,7 +265,7 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
      *        cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type
      *        using the following format: <code>arn:partition:service:region:account:resource</code>. </p>
      *        <p>
-     *        For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
+     *        For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

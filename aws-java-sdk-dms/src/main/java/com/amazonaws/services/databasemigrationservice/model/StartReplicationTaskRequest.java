@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,13 +38,20 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the
-     * first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task
-     * and <code>resume-processing</code> to resume the task.
+     * first run of the task is <code>start-replication</code>. This option will start the migration.
      * </p>
      * <p>
-     * When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task,
-     * and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task
-     * with migration type of <code>cdc</code>.
+     * You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of restarting
+     * the task.
+     * </p>
+     * <p>
+     * The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     * partially loaded tables during the full load phase.
+     * </p>
+     * <p>
+     * For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on
+     * the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>.
+     * Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.
      * </p>
      */
     private String startReplicationTaskType;
@@ -96,7 +103,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      */
     private String cdcStopPosition;
@@ -147,26 +154,41 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the
-     * first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task
-     * and <code>resume-processing</code> to resume the task.
+     * first run of the task is <code>start-replication</code>. This option will start the migration.
      * </p>
      * <p>
-     * When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task,
-     * and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task
-     * with migration type of <code>cdc</code>.
+     * You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of restarting
+     * the task.
+     * </p>
+     * <p>
+     * The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     * partially loaded tables during the full load phase.
+     * </p>
+     * <p>
+     * For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on
+     * the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>.
+     * Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.
      * </p>
      * 
      * @param startReplicationTaskType
      *        The type of replication task to start.</p>
      *        <p>
      *        When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     *        for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to
-     *        restart the task and <code>resume-processing</code> to resume the task.
+     *        for the first run of the task is <code>start-replication</code>. This option will start the migration.
      *        </p>
      *        <p>
-     *        When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-     *        the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid
-     *        value for a task with migration type of <code>cdc</code>.
+     *        You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of
+     *        restarting the task.
+     *        </p>
+     *        <p>
+     *        The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     *        partially loaded tables during the full load phase.
+     *        </p>
+     *        <p>
+     *        For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that
+     *        occur on the source. To load all the tables again, and start capturing source changes, use
+     *        <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from
+     *        the last stop position.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -180,25 +202,40 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the
-     * first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task
-     * and <code>resume-processing</code> to resume the task.
+     * first run of the task is <code>start-replication</code>. This option will start the migration.
      * </p>
      * <p>
-     * When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task,
-     * and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task
-     * with migration type of <code>cdc</code>.
+     * You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of restarting
+     * the task.
+     * </p>
+     * <p>
+     * The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     * partially loaded tables during the full load phase.
+     * </p>
+     * <p>
+     * For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on
+     * the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>.
+     * Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.
      * </p>
      * 
      * @return The type of replication task to start.</p>
      *         <p>
      *         When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     *         for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to
-     *         restart the task and <code>resume-processing</code> to resume the task.
+     *         for the first run of the task is <code>start-replication</code>. This option will start the migration.
      *         </p>
      *         <p>
-     *         When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-     *         the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a
-     *         valid value for a task with migration type of <code>cdc</code>.
+     *         You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of
+     *         restarting the task.
+     *         </p>
+     *         <p>
+     *         The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     *         partially loaded tables during the full load phase.
+     *         </p>
+     *         <p>
+     *         For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that
+     *         occur on the source. To load all the tables again, and start capturing source changes, use
+     *         <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from
+     *         the last stop position.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -212,26 +249,41 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the
-     * first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task
-     * and <code>resume-processing</code> to resume the task.
+     * first run of the task is <code>start-replication</code>. This option will start the migration.
      * </p>
      * <p>
-     * When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task,
-     * and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task
-     * with migration type of <code>cdc</code>.
+     * You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of restarting
+     * the task.
+     * </p>
+     * <p>
+     * The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     * partially loaded tables during the full load phase.
+     * </p>
+     * <p>
+     * For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on
+     * the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>.
+     * Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.
      * </p>
      * 
      * @param startReplicationTaskType
      *        The type of replication task to start.</p>
      *        <p>
      *        When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     *        for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to
-     *        restart the task and <code>resume-processing</code> to resume the task.
+     *        for the first run of the task is <code>start-replication</code>. This option will start the migration.
      *        </p>
      *        <p>
-     *        When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-     *        the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid
-     *        value for a task with migration type of <code>cdc</code>.
+     *        You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of
+     *        restarting the task.
+     *        </p>
+     *        <p>
+     *        The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     *        partially loaded tables during the full load phase.
+     *        </p>
+     *        <p>
+     *        For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that
+     *        occur on the source. To load all the tables again, and start capturing source changes, use
+     *        <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from
+     *        the last stop position.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartReplicationTaskTypeValue
      */
@@ -247,26 +299,41 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the
-     * first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task
-     * and <code>resume-processing</code> to resume the task.
+     * first run of the task is <code>start-replication</code>. This option will start the migration.
      * </p>
      * <p>
-     * When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task,
-     * and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task
-     * with migration type of <code>cdc</code>.
+     * You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of restarting
+     * the task.
+     * </p>
+     * <p>
+     * The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     * partially loaded tables during the full load phase.
+     * </p>
+     * <p>
+     * For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on
+     * the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>.
+     * Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.
      * </p>
      * 
      * @param startReplicationTaskType
      *        The type of replication task to start.</p>
      *        <p>
      *        When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     *        for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to
-     *        restart the task and <code>resume-processing</code> to resume the task.
+     *        for the first run of the task is <code>start-replication</code>. This option will start the migration.
      *        </p>
      *        <p>
-     *        When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-     *        the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid
-     *        value for a task with migration type of <code>cdc</code>.
+     *        You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of
+     *        restarting the task.
+     *        </p>
+     *        <p>
+     *        The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     *        partially loaded tables during the full load phase.
+     *        </p>
+     *        <p>
+     *        For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that
+     *        occur on the source. To load all the tables again, and start capturing source changes, use
+     *        <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from
+     *        the last stop position.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -280,26 +347,41 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the
-     * first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task
-     * and <code>resume-processing</code> to resume the task.
+     * first run of the task is <code>start-replication</code>. This option will start the migration.
      * </p>
      * <p>
-     * When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task,
-     * and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task
-     * with migration type of <code>cdc</code>.
+     * You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of restarting
+     * the task.
+     * </p>
+     * <p>
+     * The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     * partially loaded tables during the full load phase.
+     * </p>
+     * <p>
+     * For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that occur on
+     * the source. To load all the tables again, and start capturing source changes, use <code>reload-target</code>.
+     * Otherwise use <code>resume-processing</code>, to replicate the changes from the last stop position.
      * </p>
      * 
      * @param startReplicationTaskType
      *        The type of replication task to start.</p>
      *        <p>
      *        When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-     *        for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to
-     *        restart the task and <code>resume-processing</code> to resume the task.
+     *        for the first run of the task is <code>start-replication</code>. This option will start the migration.
      *        </p>
      *        <p>
-     *        When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-     *        the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid
-     *        value for a task with migration type of <code>cdc</code>.
+     *        You can also use <a>ReloadTables</a> to reload specific tables that failed during migration instead of
+     *        restarting the task.
+     *        </p>
+     *        <p>
+     *        The <code>resume-processing</code> option isn't applicable for a full-load task, because you can't resume
+     *        partially loaded tables during the full load phase.
+     *        </p>
+     *        <p>
+     *        For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies data changes that
+     *        occur on the source. To load all the tables again, and start capturing source changes, use
+     *        <code>reload-target</code>. Otherwise use <code>resume-processing</code>, to replicate the changes from
+     *        the last stop position.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartReplicationTaskTypeValue
      */
@@ -563,7 +645,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      * 
      * @param cdcStopPosition
@@ -573,7 +655,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      */
 
     public void setCdcStopPosition(String cdcStopPosition) {
@@ -589,7 +671,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
@@ -598,7 +680,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *         Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *         </p>
      *         <p>
-     *         Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     *         Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      */
 
     public String getCdcStopPosition() {
@@ -614,7 +696,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * </p>
      * 
      * @param cdcStopPosition
@@ -624,7 +706,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

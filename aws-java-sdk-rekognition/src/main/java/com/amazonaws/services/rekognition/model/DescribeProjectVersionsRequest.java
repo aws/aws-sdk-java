@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,16 +22,16 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     * The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      * </p>
      */
     private String projectArn;
     /**
      * <p>
-     * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned. A version name is part of a model
-     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
-     * ARN.
+     * A list of model or project version names that you want to describe. You can add up to 10 model or project version
+     * names to the list. If you don't specify a value, all project version descriptions are returned. A version name is
+     * part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     * following ARN.
      * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      * .
      * </p>
@@ -39,9 +39,8 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> versionNames;
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -55,11 +54,11 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     * The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      * </p>
      * 
      * @param projectArn
-     *        The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     *        The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      */
 
     public void setProjectArn(String projectArn) {
@@ -68,10 +67,10 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     * The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     * @return The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      */
 
     public String getProjectArn() {
@@ -80,11 +79,11 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     * The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      * </p>
      * 
      * @param projectArn
-     *        The Amazon Resource Name (ARN) of the project that contains the models you want to describe.
+     *        The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,18 +94,18 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned. A version name is part of a model
-     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
-     * ARN.
+     * A list of model or project version names that you want to describe. You can add up to 10 model or project version
+     * names to the list. If you don't specify a value, all project version descriptions are returned. A version name is
+     * part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     * following ARN.
      * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      * .
      * </p>
      * 
-     * @return A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *         list. If you don't specify a value, all model descriptions are returned. A version name is part of a
-     *         model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in
-     *         the following ARN.
+     * @return A list of model or project version names that you want to describe. You can add up to 10 model or project
+     *         version names to the list. If you don't specify a value, all project version descriptions are returned. A
+     *         version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is
+     *         the version name in the following ARN.
      *         <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      *         .
      */
@@ -117,19 +116,19 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned. A version name is part of a model
-     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
-     * ARN.
+     * A list of model or project version names that you want to describe. You can add up to 10 model or project version
+     * names to the list. If you don't specify a value, all project version descriptions are returned. A version name is
+     * part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     * following ARN.
      * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      * .
      * </p>
      * 
      * @param versionNames
-     *        A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *        list. If you don't specify a value, all model descriptions are returned. A version name is part of a model
-     *        (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
-     *        following ARN.
+     *        A list of model or project version names that you want to describe. You can add up to 10 model or project
+     *        version names to the list. If you don't specify a value, all project version descriptions are returned. A
+     *        version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is
+     *        the version name in the following ARN.
      *        <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      *        .
      */
@@ -145,10 +144,10 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned. A version name is part of a model
-     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
-     * ARN.
+     * A list of model or project version names that you want to describe. You can add up to 10 model or project version
+     * names to the list. If you don't specify a value, all project version descriptions are returned. A version name is
+     * part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     * following ARN.
      * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      * .
      * </p>
@@ -159,10 +158,10 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param versionNames
-     *        A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *        list. If you don't specify a value, all model descriptions are returned. A version name is part of a model
-     *        (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
-     *        following ARN.
+     *        A list of model or project version names that you want to describe. You can add up to 10 model or project
+     *        version names to the list. If you don't specify a value, all project version descriptions are returned. A
+     *        version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is
+     *        the version name in the following ARN.
      *        <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -180,19 +179,19 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of model version names that you want to describe. You can add up to 10 model version names to the list. If
-     * you don't specify a value, all model descriptions are returned. A version name is part of a model
-     * (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following
-     * ARN.
+     * A list of model or project version names that you want to describe. You can add up to 10 model or project version
+     * names to the list. If you don't specify a value, all project version descriptions are returned. A version name is
+     * part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
+     * following ARN.
      * <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      * .
      * </p>
      * 
      * @param versionNames
-     *        A list of model version names that you want to describe. You can add up to 10 model version names to the
-     *        list. If you don't specify a value, all model descriptions are returned. A version name is part of a model
-     *        (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the
-     *        following ARN.
+     *        A list of model or project version names that you want to describe. You can add up to 10 model or project
+     *        version names to the list. If you don't specify a value, all project version descriptions are returned. A
+     *        version name is part of a project version ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is
+     *        the version name in the following ARN.
      *        <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -205,15 +204,14 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition
-     *        Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve
-     *        the next set of results.
+     *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     *        results.
      */
 
     public void setNextToken(String nextToken) {
@@ -222,14 +220,13 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      * 
      * @return If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition
-     *         Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve
-     *         the next set of results.
+     *         returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     *         results.
      */
 
     public String getNextToken() {
@@ -238,15 +235,14 @@ public class DescribeProjectVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition
-     *        Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve
-     *        the next set of results.
+     *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     *        results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

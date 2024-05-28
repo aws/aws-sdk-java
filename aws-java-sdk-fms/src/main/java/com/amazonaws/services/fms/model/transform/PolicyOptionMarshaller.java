@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class PolicyOptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallPolicy").build();
     private static final MarshallingInfo<StructuredPojo> THIRDPARTYFIREWALLPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThirdPartyFirewallPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACLCOMMONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkAclCommonPolicy").build();
 
     private static final PolicyOptionMarshaller instance = new PolicyOptionMarshaller();
 
@@ -50,6 +52,7 @@ public class PolicyOptionMarshaller {
         try {
             protocolMarshaller.marshall(policyOption.getNetworkFirewallPolicy(), NETWORKFIREWALLPOLICY_BINDING);
             protocolMarshaller.marshall(policyOption.getThirdPartyFirewallPolicy(), THIRDPARTYFIREWALLPOLICY_BINDING);
+            protocolMarshaller.marshall(policyOption.getNetworkAclCommonPolicy(), NETWORKACLCOMMONPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

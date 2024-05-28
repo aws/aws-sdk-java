@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     * The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the static IP (e.g.,
+     * The Amazon Resource Name (ARN) of the static IP (
      * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      */
@@ -50,7 +50,7 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
     private String supportCode;
     /**
      * <p>
-     * The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     * The timestamp when the static IP was created (<code>1479735304.222</code>).
      * </p>
      */
     private java.util.Date createdAt;
@@ -74,7 +74,7 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
     private String ipAddress;
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     * The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      */
     private String attachedTo;
@@ -87,11 +87,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     * The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      * 
      * @param name
-     *        The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     *        The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      */
 
     public void setName(String name) {
@@ -100,10 +100,10 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     * The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      * 
-     * @return The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     * @return The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      */
 
     public String getName() {
@@ -112,11 +112,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     * The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      * 
      * @param name
-     *        The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
+     *        The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,12 +127,12 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the static IP (e.g.,
+     * The Amazon Resource Name (ARN) of the static IP (
      * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the static IP (e.g.,
+     *        The Amazon Resource Name (ARN) of the static IP (
      *        <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      */
 
@@ -142,11 +142,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the static IP (e.g.,
+     * The Amazon Resource Name (ARN) of the static IP (
      * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the static IP (e.g.,
+     * @return The Amazon Resource Name (ARN) of the static IP (
      *         <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      */
 
@@ -156,12 +156,12 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the static IP (e.g.,
+     * The Amazon Resource Name (ARN) of the static IP (
      * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the static IP (e.g.,
+     *        The Amazon Resource Name (ARN) of the static IP (
      *        <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -222,11 +222,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     * The timestamp when the static IP was created (<code>1479735304.222</code>).
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     *        The timestamp when the static IP was created (<code>1479735304.222</code>).
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -235,10 +235,10 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     * The timestamp when the static IP was created (<code>1479735304.222</code>).
      * </p>
      * 
-     * @return The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     * @return The timestamp when the static IP was created (<code>1479735304.222</code>).
      */
 
     public java.util.Date getCreatedAt() {
@@ -247,11 +247,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     * The timestamp when the static IP was created (<code>1479735304.222</code>).
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).
+     *        The timestamp when the static IP was created (<code>1479735304.222</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +415,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     * The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param attachedTo
-     *        The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     *        The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public void setAttachedTo(String attachedTo) {
@@ -428,10 +428,10 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     * The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
-     * @return The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     * @return The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public String getAttachedTo() {
@@ -440,11 +440,11 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     * The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param attachedTo
-     *        The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
+     *        The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,13 +53,16 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Specifies whether a cache cluster is enabled for the stage.
+     * Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     * <code>CachingEnabled</code> to <code>true</code> for a method.
      * </p>
      */
     private Boolean cacheClusterEnabled;
     /**
      * <p>
-     * The size of the cache cluster for the stage, if enabled.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      */
     private String cacheClusterSize;
@@ -307,11 +310,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a cache cluster is enabled for the stage.
+     * Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     * <code>CachingEnabled</code> to <code>true</code> for a method.
      * </p>
      * 
      * @param cacheClusterEnabled
-     *        Specifies whether a cache cluster is enabled for the stage.
+     *        Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     *        <code>CachingEnabled</code> to <code>true</code> for a method.
      */
 
     public void setCacheClusterEnabled(Boolean cacheClusterEnabled) {
@@ -320,10 +325,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a cache cluster is enabled for the stage.
+     * Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     * <code>CachingEnabled</code> to <code>true</code> for a method.
      * </p>
      * 
-     * @return Specifies whether a cache cluster is enabled for the stage.
+     * @return Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     *         <code>CachingEnabled</code> to <code>true</code> for a method.
      */
 
     public Boolean getCacheClusterEnabled() {
@@ -332,11 +339,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a cache cluster is enabled for the stage.
+     * Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     * <code>CachingEnabled</code> to <code>true</code> for a method.
      * </p>
      * 
      * @param cacheClusterEnabled
-     *        Specifies whether a cache cluster is enabled for the stage.
+     *        Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     *        <code>CachingEnabled</code> to <code>true</code> for a method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,10 +356,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether a cache cluster is enabled for the stage.
+     * Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     * <code>CachingEnabled</code> to <code>true</code> for a method.
      * </p>
      * 
-     * @return Specifies whether a cache cluster is enabled for the stage.
+     * @return Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set
+     *         <code>CachingEnabled</code> to <code>true</code> for a method.
      */
 
     public Boolean isCacheClusterEnabled() {
@@ -359,11 +370,15 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size of the cache cluster for the stage, if enabled.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      * 
      * @param cacheClusterSize
-     *        The size of the cache cluster for the stage, if enabled.
+     *        The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API
+     *        caching to enhance responsiveness</a>.
      */
 
     public void setCacheClusterSize(String cacheClusterSize) {
@@ -372,10 +387,14 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size of the cache cluster for the stage, if enabled.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      * 
-     * @return The size of the cache cluster for the stage, if enabled.
+     * @return The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API
+     *         caching to enhance responsiveness</a>.
      */
 
     public String getCacheClusterSize() {
@@ -384,11 +403,15 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size of the cache cluster for the stage, if enabled.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      * 
      * @param cacheClusterSize
-     *        The size of the cache cluster for the stage, if enabled.
+     *        The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API
+     *        caching to enhance responsiveness</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,15 +25,13 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer
-     * cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     * The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      * </p>
      */
     private String dataShareArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer.
+     * The Amazon Resource Name (ARN) of the producer namespace.
      * </p>
      */
     private String producerArn;
@@ -58,15 +56,11 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer
-     * cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     * The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      * </p>
      * 
      * @param dataShareArn
-     *        An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the
-     *        producer cluster. A datashare ARN is in the
-     *        <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     *        The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      */
 
     public void setDataShareArn(String dataShareArn) {
@@ -75,14 +69,10 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer
-     * cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     * The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      * </p>
      * 
-     * @return An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the
-     *         producer cluster. A datashare ARN is in the
-     *         <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     * @return The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      */
 
     public String getDataShareArn() {
@@ -91,15 +81,11 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer
-     * cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     * The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      * </p>
      * 
      * @param dataShareArn
-     *        An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the
-     *        producer cluster. A datashare ARN is in the
-     *        <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+     *        The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +96,11 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer.
+     * The Amazon Resource Name (ARN) of the producer namespace.
      * </p>
      * 
      * @param producerArn
-     *        The Amazon Resource Name (ARN) of the producer.
+     *        The Amazon Resource Name (ARN) of the producer namespace.
      */
 
     public void setProducerArn(String producerArn) {
@@ -123,10 +109,10 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer.
+     * The Amazon Resource Name (ARN) of the producer namespace.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the producer.
+     * @return The Amazon Resource Name (ARN) of the producer namespace.
      */
 
     public String getProducerArn() {
@@ -135,11 +121,11 @@ public class DataShare implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer.
+     * The Amazon Resource Name (ARN) of the producer namespace.
      * </p>
      * 
      * @param producerArn
-     *        The Amazon Resource Name (ARN) of the producer.
+     *        The Amazon Resource Name (ARN) of the producer namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

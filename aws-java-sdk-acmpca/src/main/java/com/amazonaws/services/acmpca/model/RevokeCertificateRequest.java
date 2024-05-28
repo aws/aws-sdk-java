@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial
      * number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
      * the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
      * <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL
      * command to list the certificate in text format and copy the hexadecimal serial number.
@@ -122,7 +122,7 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial
      * number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
      * the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
      * <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL
      * command to list the certificate in text format and copy the hexadecimal serial number.
@@ -139,10 +139,11 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param certificateSerial
      *        Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the
      *        serial number by calling <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
-     *        with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-     *        <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following
-     *        OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+     *        href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html"
+     *        >GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your
+     *        private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the
+     *        following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number.
+     *        </p>
      *        <p>
      *        <code>openssl x509 -in <i>file_path</i> -text -noout</code>
      *        </p>
@@ -160,7 +161,7 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial
      * number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
      * the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
      * <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL
      * command to list the certificate in text format and copy the hexadecimal serial number.
@@ -176,10 +177,11 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the
      *         serial number by calling <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
-     *         with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-     *         <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following
-     *         OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+     *         href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html"
+     *         >GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your
+     *         private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the
+     *         following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number.
+     *         </p>
      *         <p>
      *         <code>openssl x509 -in <i>file_path</i> -text -noout</code>
      *         </p>
@@ -197,7 +199,7 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial
      * number by calling <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with
      * the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
      * <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL
      * command to list the certificate in text format and copy the hexadecimal serial number.
@@ -214,10 +216,11 @@ public class RevokeCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param certificateSerial
      *        Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the
      *        serial number by calling <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a>
-     *        with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The
-     *        <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following
-     *        OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>
+     *        href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html"
+     *        >GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your
+     *        private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the
+     *        following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number.
+     *        </p>
      *        <p>
      *        <code>openssl x509 -in <i>file_path</i> -text -noout</code>
      *        </p>

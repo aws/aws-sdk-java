@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,16 +22,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and
  * fleet ID.
  * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a> |
- * <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> | <a>StopFleetActions</a> |
- * <a>StartFleetActions</a> | <a href=
- * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
- * >All APIs by task</a>
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy" target="_top">AWS API
  *      Documentation</a>
@@ -48,8 +38,9 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      */
     private String fleetArn;
@@ -62,8 +53,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
-     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
-     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+     * status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the
+     * policy status does not change.
      * </p>
      * <ul>
      * <li>
@@ -112,7 +103,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private Integer scalingAdjustment;
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count.
      * </p>
      * <ul>
      * <li>
@@ -299,14 +290,15 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -317,13 +309,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -334,14 +327,15 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -397,8 +391,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
-     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
-     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+     * status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the
+     * policy status does not change.
      * </p>
      * <ul>
      * <li>
@@ -440,9 +434,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy can be in force only when in an
-     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
-     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
-     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is
+     *        suspended for a fleet, the policy status does not change.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -489,8 +482,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
-     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
-     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+     * status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the
+     * policy status does not change.
      * </p>
      * <ul>
      * <li>
@@ -531,9 +524,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return Current status of the scaling policy. The scaling policy can be in force only when in an
-     *         <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
-     *         <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
-     *         stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
+     *         <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is
+     *         suspended for a fleet, the policy status does not change.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -580,8 +572,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
-     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
-     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+     * status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the
+     * policy status does not change.
      * </p>
      * <ul>
      * <li>
@@ -623,9 +615,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy can be in force only when in an
-     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
-     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
-     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is
+     *        suspended for a fleet, the policy status does not change.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -674,8 +665,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
-     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
-     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+     * status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the
+     * policy status does not change.
      * </p>
      * <ul>
      * <li>
@@ -717,9 +708,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy can be in force only when in an
-     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
-     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
-     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is
+     *        suspended for a fleet, the policy status does not change.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -766,8 +756,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
-     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
-     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
+     * status. Scaling policies can be suspended for individual fleets. If the policy is suspended for a fleet, the
+     * policy status does not change.
      * </p>
      * <ul>
      * <li>
@@ -809,9 +799,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param status
      *        Current status of the scaling policy. The scaling policy can be in force only when in an
-     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
-     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
-     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets. If the policy is
+     *        suspended for a fleet, the policy status does not change.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -899,7 +888,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count.
      * </p>
      * <ul>
      * <li>
@@ -922,7 +911,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -950,7 +939,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count.
      * </p>
      * <ul>
      * <li>
@@ -972,7 +961,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     * @return The type of adjustment to make to a fleet's instance count.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1000,7 +989,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count.
      * </p>
      * <ul>
      * <li>
@@ -1023,7 +1012,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1053,7 +1042,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count.
      * </p>
      * <ul>
      * <li>
@@ -1076,7 +1065,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1104,7 +1093,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count.
      * </p>
      * <ul>
      * <li>
@@ -1127,7 +1116,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count.</p>
      *        <ul>
      *        <li>
      *        <p>

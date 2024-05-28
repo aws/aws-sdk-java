@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output
- * video quality. The default behavior is faster, lower quality, multi-pass encoding.
+ * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The
+ * default behavior is faster, lower quality, multi-pass encoding.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Vp8QualityTuningLevel {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,15 @@ import com.amazonaws.services.connectparticipant.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.
+ * Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables companies of any size to
+ * deliver superior customer service at a lower cost. Amazon Connect communications capabilities make it easy for
+ * companies to deliver personalized interactions across communication channels, including chat.
  * </p>
  * <p>
- * Amazon Connect enables customer contacts through voice or chat.
- * </p>
- * <p>
- * The APIs described here are used by chat participants, such as agents and customers.
+ * Use the Amazon Connect Participant Service to manage participants (for example, agents, customers, and managers
+ * listening in), and to send messages and events within a chat contact. The APIs in the service enable the following:
+ * sending chat messages, attachment sharing, managing a participant's connection state and message events, and
+ * retrieving chat transcripts.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -51,8 +52,14 @@ public interface AmazonConnectParticipant {
     /**
      * <p>
      * Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in
-     * StartAttachmentUpload API.
+     * StartAttachmentUpload API. A conflict exception is thrown when an attachment with that identifier is already
+     * being uploaded.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -72,7 +79,8 @@ public interface AmazonConnectParticipant {
      * @throws ServiceQuotaExceededException
      *         The number of attachments per contact exceeds the quota.
      * @throws ConflictException
-     *         An attachment with that identifier is already being uploaded.
+     *         The requested operation conflicts with the current state of a service resource associated with the
+     *         request.
      * @sample AmazonConnectParticipant.CompleteAttachmentUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload"
      *      target="_top">AWS API Documentation</a>
@@ -81,9 +89,13 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
-     * Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of
-     * ConnectionToken.
+     * Creates the participant's connection.
      * </p>
+     * <note>
+     * <p>
+     * <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The participant token is valid for the lifetime of the participant – until they are part of a contact.
      * </p>
@@ -141,8 +153,36 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
-     * Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Retrieves the view for the specified view token.
      * </p>
+     * 
+     * @param describeViewRequest
+     * @return Result of the DescribeView operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon Connect service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @sample AmazonConnectParticipant.DescribeView
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeViewResult describeView(DescribeViewRequest describeViewRequest);
+
+    /**
+     * <p>
+     * Disconnects a participant.
+     * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -170,6 +210,11 @@ public interface AmazonConnectParticipant {
      * Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active
      * contacts.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -194,9 +239,46 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
-     * Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used
-     * for invoking this API instead of ParticipantToken.
+     * Retrieves a transcript of the session, including details about any attachments. For information about accessing
+     * past chat contact transcripts for a persistent chat, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.
      * </p>
+     * <p>
+     * If you have a process that consumes events in the transcript of an chat that has ended, note that chat
+     * transcripts contain the following event content types if the event has occurred during the chat session:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>application/vnd.amazonaws.connect.event.participant.left</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application/vnd.amazonaws.connect.event.participant.joined</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application/vnd.amazonaws.connect.event.chat.ended</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application/vnd.amazonaws.connect.event.transfer.succeeded</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application/vnd.amazonaws.connect.event.transfer.failed</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -220,9 +302,23 @@ public interface AmazonConnectParticipant {
     GetTranscriptResult getTranscript(GetTranscriptRequest getTranscriptRequest);
 
     /**
+     * <note>
      * <p>
-     * Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * The <code>application/vnd.amazonaws.connect.event.connection.acknowledged</code> ContentType will no longer be
+     * supported starting December 31, 2024. This event has been migrated to the <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html"
+     * >CreateParticipantConnection</a> API using the <code>ConnectParticipant</code> field.
      * </p>
+     * </note>
+     * <p>
+     * Sends an event. Message receipts are not supported when there are more than two active participants in the chat.
+     * Using the SendEvent API for message receipts when a supervisor is barged-in will result in a conflict exception.
+     * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -239,6 +335,9 @@ public interface AmazonConnectParticipant {
      *         The request was denied due to request throttling.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @throws ConflictException
+     *         The requested operation conflicts with the current state of a service resource associated with the
+     *         request.
      * @sample AmazonConnectParticipant.SendEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent" target="_top">AWS
      *      API Documentation</a>
@@ -247,8 +346,13 @@ public interface AmazonConnectParticipant {
 
     /**
      * <p>
-     * Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Sends a message.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -275,6 +379,11 @@ public interface AmazonConnectParticipant {
      * <p>
      * Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4

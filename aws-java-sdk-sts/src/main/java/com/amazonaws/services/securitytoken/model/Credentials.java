@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -253,7 +253,7 @@ public class Credentials implements Serializable, Cloneable {
         if (getAccessKeyId() != null)
             sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
         if (getSecretAccessKey() != null)
-            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
+            sb.append("SecretAccessKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getSessionToken() != null)
             sb.append("SessionToken: ").append(getSessionToken()).append(",");
         if (getExpiration() != null)

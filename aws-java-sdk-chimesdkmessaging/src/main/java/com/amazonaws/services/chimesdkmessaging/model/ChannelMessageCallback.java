@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,10 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
     private String messageId;
     /**
      * <p>
-     * The message content.
+     * The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the
+     * bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      */
     private String content;
@@ -54,8 +57,10 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
     private PushNotificationConfiguration pushNotification;
     /**
      * <p>
-     * The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the
-     * <code>PushNotificationPreferences</code>.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, MessageAttributeValue> messageAttributes;
@@ -65,6 +70,16 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
      * </p>
      */
     private String subChannelId;
+    /**
+     * <p>
+     * The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     * <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     */
+    private String contentType;
 
     /**
      * <p>
@@ -108,11 +123,17 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The message content.
+     * The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the
+     * bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param content
-     *        The message content.
+     *        The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from
+     *        the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public void setContent(String content) {
@@ -121,10 +142,16 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The message content.
+     * The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the
+     * bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
-     * @return The message content.
+     * @return The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating
+     *         from the bot. For more information, refer to <a
+     *         href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *         responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public String getContent() {
@@ -133,11 +160,17 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The message content.
+     * The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from the
+     * bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param content
-     *        The message content.
+     *        The message content. For Amazon Lex V2 bot responses, this field holds a list of messages originating from
+     *        the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,12 +261,16 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the
-     * <code>PushNotificationPreferences</code>.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
-     * @return The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined
-     *         in the <code>PushNotificationPreferences</code>.
+     * @return The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to
+     *         specific fields from the bot. For more information, refer to <a
+     *         href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *         responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -242,13 +279,17 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the
-     * <code>PushNotificationPreferences</code>.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in
-     *        the <code>PushNotificationPreferences</code>.
+     *        The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to
+     *        specific fields from the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -257,13 +298,17 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the
-     * <code>PushNotificationPreferences</code>.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in
-     *        the <code>PushNotificationPreferences</code>.
+     *        The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to
+     *        specific fields from the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,6 +386,70 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     * <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     *        <code>application/amz-chime-lex-msgs</code> for success responses and
+     *        <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     */
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     * <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     * 
+     * @return The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     *         <code>application/amz-chime-lex-msgs</code> for success responses and
+     *         <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     *         href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *         responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     */
+
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     * <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the call-back message. For Amazon Lex V2 bot responses, the content type is
+     *        <code>application/amz-chime-lex-msgs</code> for success responses and
+     *        <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelMessageCallback withContentType(String contentType) {
+        setContentType(contentType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -363,7 +472,9 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
         if (getMessageAttributes() != null)
             sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getSubChannelId() != null)
-            sb.append("SubChannelId: ").append(getSubChannelId());
+            sb.append("SubChannelId: ").append(getSubChannelId()).append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -402,6 +513,10 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
             return false;
         if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
             return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +531,7 @@ public class ChannelMessageCallback implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getPushNotification() == null) ? 0 : getPushNotification().hashCode());
         hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode());
         hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         return hashCode;
     }
 

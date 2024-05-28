@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,44 +15,47 @@ package com.amazonaws.services.sqs.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ChangeMessageVisibilityRequest Marshaller
+ * ChangeMessageVisibilityRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ChangeMessageVisibilityRequestMarshaller implements Marshaller<Request<ChangeMessageVisibilityRequest>, ChangeMessageVisibilityRequest> {
+@SdkInternalApi
+public class ChangeMessageVisibilityRequestMarshaller {
 
-    public Request<ChangeMessageVisibilityRequest> marshall(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<String> RECEIPTHANDLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReceiptHandle").build();
+    private static final MarshallingInfo<Integer> VISIBILITYTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityTimeout").build();
+
+    private static final ChangeMessageVisibilityRequestMarshaller instance = new ChangeMessageVisibilityRequestMarshaller();
+
+    public static ChangeMessageVisibilityRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ChangeMessageVisibilityRequest changeMessageVisibilityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (changeMessageVisibilityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ChangeMessageVisibilityRequest> request = new DefaultRequest<ChangeMessageVisibilityRequest>(changeMessageVisibilityRequest, "AmazonSQS");
-        request.addParameter("Action", "ChangeMessageVisibility");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (changeMessageVisibilityRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(changeMessageVisibilityRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(changeMessageVisibilityRequest.getReceiptHandle(), RECEIPTHANDLE_BINDING);
+            protocolMarshaller.marshall(changeMessageVisibilityRequest.getVisibilityTimeout(), VISIBILITYTIMEOUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (changeMessageVisibilityRequest.getReceiptHandle() != null) {
-            request.addParameter("ReceiptHandle", StringUtils.fromString(changeMessageVisibilityRequest.getReceiptHandle()));
-        }
-
-        if (changeMessageVisibilityRequest.getVisibilityTimeout() != null) {
-            request.addParameter("VisibilityTimeout", StringUtils.fromInteger(changeMessageVisibilityRequest.getVisibilityTimeout()));
-        }
-
-        return request;
     }
 
 }

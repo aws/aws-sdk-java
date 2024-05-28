@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,8 +47,8 @@ public class SourceRegion implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
-     * Services Region.
+     * Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current
+     * Amazon Web Services Region.
      * </p>
      */
     private Boolean supportsDBInstanceAutomatedBackupsReplication;
@@ -175,13 +175,13 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
-     * Services Region.
+     * Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current
+     * Amazon Web Services Region.
      * </p>
      * 
      * @param supportsDBInstanceAutomatedBackupsReplication
-     *        Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon
-     *        Web Services Region.
+     *        Indicates whether the source Amazon Web Services Region supports replicating automated backups to the
+     *        current Amazon Web Services Region.
      */
 
     public void setSupportsDBInstanceAutomatedBackupsReplication(Boolean supportsDBInstanceAutomatedBackupsReplication) {
@@ -190,12 +190,12 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
-     * Services Region.
+     * Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current
+     * Amazon Web Services Region.
      * </p>
      * 
-     * @return Whether the source Amazon Web Services Region supports replicating automated backups to the current
-     *         Amazon Web Services Region.
+     * @return Indicates whether the source Amazon Web Services Region supports replicating automated backups to the
+     *         current Amazon Web Services Region.
      */
 
     public Boolean getSupportsDBInstanceAutomatedBackupsReplication() {
@@ -204,13 +204,13 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
-     * Services Region.
+     * Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current
+     * Amazon Web Services Region.
      * </p>
      * 
      * @param supportsDBInstanceAutomatedBackupsReplication
-     *        Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon
-     *        Web Services Region.
+     *        Indicates whether the source Amazon Web Services Region supports replicating automated backups to the
+     *        current Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,12 +221,12 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
-     * Services Region.
+     * Indicates whether the source Amazon Web Services Region supports replicating automated backups to the current
+     * Amazon Web Services Region.
      * </p>
      * 
-     * @return Whether the source Amazon Web Services Region supports replicating automated backups to the current
-     *         Amazon Web Services Region.
+     * @return Indicates whether the source Amazon Web Services Region supports replicating automated backups to the
+     *         current Amazon Web Services Region.
      */
 
     public Boolean isSupportsDBInstanceAutomatedBackupsReplication() {

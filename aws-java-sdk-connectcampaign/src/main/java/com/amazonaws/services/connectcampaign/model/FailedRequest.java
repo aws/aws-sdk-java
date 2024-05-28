@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class FailedRequest implements Serializable, Cloneable, StructuredPojo {
 
     private String clientToken;
 
-    private String failureCode;
-
     private String id;
+
+    private String failureCode;
 
     /**
      * @param clientToken
@@ -57,6 +57,32 @@ public class FailedRequest implements Serializable, Cloneable, StructuredPojo {
 
     public FailedRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * @param id
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * @param id
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FailedRequest withId(String id) {
+        setId(id);
         return this;
     }
 
@@ -101,32 +127,6 @@ public class FailedRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FailedRequest withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,10 +140,10 @@ public class FailedRequest implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getFailureCode() != null)
-            sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getFailureCode() != null)
+            sb.append("FailureCode: ").append(getFailureCode());
         sb.append("}");
         return sb.toString();
     }
@@ -162,13 +162,13 @@ public class FailedRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getFailureCode() == null ^ this.getFailureCode() == null)
-            return false;
-        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getFailureCode() == null ^ this.getFailureCode() == null)
+            return false;
+        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
             return false;
         return true;
     }
@@ -179,8 +179,8 @@ public class FailedRequest implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         return hashCode;
     }
 

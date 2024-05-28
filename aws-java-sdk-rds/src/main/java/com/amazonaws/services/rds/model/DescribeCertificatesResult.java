@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,14 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The default root CA for new databases created by your Amazon Web Services account. This is either the root CA
+     * override set on your Amazon Web Services account or the system default CA for the Region if no override exists.
+     * To override the default CA, use the <code>ModifyCertificates</code> operation.
+     * </p>
+     */
+    private String defaultCertificateForNewLaunches;
+    /**
+     * <p>
      * The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * </p>
      */
@@ -40,6 +48,58 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String marker;
+
+    /**
+     * <p>
+     * The default root CA for new databases created by your Amazon Web Services account. This is either the root CA
+     * override set on your Amazon Web Services account or the system default CA for the Region if no override exists.
+     * To override the default CA, use the <code>ModifyCertificates</code> operation.
+     * </p>
+     * 
+     * @param defaultCertificateForNewLaunches
+     *        The default root CA for new databases created by your Amazon Web Services account. This is either the root
+     *        CA override set on your Amazon Web Services account or the system default CA for the Region if no override
+     *        exists. To override the default CA, use the <code>ModifyCertificates</code> operation.
+     */
+
+    public void setDefaultCertificateForNewLaunches(String defaultCertificateForNewLaunches) {
+        this.defaultCertificateForNewLaunches = defaultCertificateForNewLaunches;
+    }
+
+    /**
+     * <p>
+     * The default root CA for new databases created by your Amazon Web Services account. This is either the root CA
+     * override set on your Amazon Web Services account or the system default CA for the Region if no override exists.
+     * To override the default CA, use the <code>ModifyCertificates</code> operation.
+     * </p>
+     * 
+     * @return The default root CA for new databases created by your Amazon Web Services account. This is either the
+     *         root CA override set on your Amazon Web Services account or the system default CA for the Region if no
+     *         override exists. To override the default CA, use the <code>ModifyCertificates</code> operation.
+     */
+
+    public String getDefaultCertificateForNewLaunches() {
+        return this.defaultCertificateForNewLaunches;
+    }
+
+    /**
+     * <p>
+     * The default root CA for new databases created by your Amazon Web Services account. This is either the root CA
+     * override set on your Amazon Web Services account or the system default CA for the Region if no override exists.
+     * To override the default CA, use the <code>ModifyCertificates</code> operation.
+     * </p>
+     * 
+     * @param defaultCertificateForNewLaunches
+     *        The default root CA for new databases created by your Amazon Web Services account. This is either the root
+     *        CA override set on your Amazon Web Services account or the system default CA for the Region if no override
+     *        exists. To override the default CA, use the <code>ModifyCertificates</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCertificatesResult withDefaultCertificateForNewLaunches(String defaultCertificateForNewLaunches) {
+        setDefaultCertificateForNewLaunches(defaultCertificateForNewLaunches);
+        return this;
+    }
 
     /**
      * <p>
@@ -178,6 +238,8 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDefaultCertificateForNewLaunches() != null)
+            sb.append("DefaultCertificateForNewLaunches: ").append(getDefaultCertificateForNewLaunches()).append(",");
         if (getCertificates() != null)
             sb.append("Certificates: ").append(getCertificates()).append(",");
         if (getMarker() != null)
@@ -196,6 +258,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DescribeCertificatesResult == false)
             return false;
         DescribeCertificatesResult other = (DescribeCertificatesResult) obj;
+        if (other.getDefaultCertificateForNewLaunches() == null ^ this.getDefaultCertificateForNewLaunches() == null)
+            return false;
+        if (other.getDefaultCertificateForNewLaunches() != null
+                && other.getDefaultCertificateForNewLaunches().equals(this.getDefaultCertificateForNewLaunches()) == false)
+            return false;
         if (other.getCertificates() == null ^ this.getCertificates() == null)
             return false;
         if (other.getCertificates() != null && other.getCertificates().equals(this.getCertificates()) == false)
@@ -212,6 +279,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDefaultCertificateForNewLaunches() == null) ? 0 : getDefaultCertificateForNewLaunches().hashCode());
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;

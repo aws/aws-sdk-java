@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,8 @@ public class NodeEthereumAttributes implements Serializable, Cloneable, Structur
     private String httpEndpoint;
     /**
      * <p>
-     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets connections from
-     * a client. Use this endpoint in client code for smart contracts when using a WebSockets connection. Connections to
+     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from
+     * a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to
      * this endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
@@ -107,15 +107,15 @@ public class NodeEthereumAttributes implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets connections from
-     * a client. Use this endpoint in client code for smart contracts when using a WebSockets connection. Connections to
+     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from
+     * a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to
      * this endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * 
      * @param webSocketEndpoint
-     *        The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets
-     *        connections from a client. Use this endpoint in client code for smart contracts when using a WebSockets
+     *        The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket
+     *        connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket
      *        connection. Connections to this endpoint are authenticated using <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      */
@@ -126,14 +126,14 @@ public class NodeEthereumAttributes implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets connections from
-     * a client. Use this endpoint in client code for smart contracts when using a WebSockets connection. Connections to
+     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from
+     * a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to
      * this endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * 
-     * @return The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets
-     *         connections from a client. Use this endpoint in client code for smart contracts when using a WebSockets
+     * @return The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket
+     *         connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket
      *         connection. Connections to this endpoint are authenticated using <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      */
@@ -144,15 +144,15 @@ public class NodeEthereumAttributes implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets connections from
-     * a client. Use this endpoint in client code for smart contracts when using a WebSockets connection. Connections to
+     * The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from
+     * a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to
      * this endpoint are authenticated using <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * 
      * @param webSocketEndpoint
-     *        The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSockets
-     *        connections from a client. Use this endpoint in client code for smart contracts when using a WebSockets
+     *        The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket
+     *        connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket
      *        connection. Connections to this endpoint are authenticated using <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

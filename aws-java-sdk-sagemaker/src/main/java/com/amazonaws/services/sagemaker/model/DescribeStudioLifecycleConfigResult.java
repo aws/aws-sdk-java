@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,25 +32,25 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
     private String studioLifecycleConfigArn;
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration that is described.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      * </p>
      */
     private String studioLifecycleConfigName;
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      * </p>
      */
     private String studioLifecycleConfigContent;
@@ -103,11 +103,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration that is described.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration that is described.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      */
 
     public void setStudioLifecycleConfigName(String studioLifecycleConfigName) {
@@ -116,10 +116,10 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration that is described.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      * </p>
      * 
-     * @return The name of the Studio Lifecycle Configuration that is described.
+     * @return The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      */
 
     public String getStudioLifecycleConfigName() {
@@ -128,11 +128,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration that is described.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration that is described.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration that is described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the Studio Lifecycle Configuration.
+     *        The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -156,10 +156,10 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
-     * @return The creation time of the Studio Lifecycle Configuration.
+     * @return The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      */
 
     public java.util.Date getCreationTime() {
@@ -168,11 +168,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The creation time of the Studio Lifecycle Configuration.
+     * The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the Studio Lifecycle Configuration.
+     *        The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,12 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      * 
      * @param lastModifiedTime
-     *        This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     *        This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are
+     *        immutable.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -196,10 +197,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      * 
-     * @return This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * @return This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are
+     *         immutable.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -208,11 +210,12 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     * This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are immutable.
      * </p>
      * 
      * @param lastModifiedTime
-     *        This value is equivalent to CreationTime because Studio Lifecycle Configurations are immutable.
+     *        This value is equivalent to CreationTime because Amazon SageMaker Studio Lifecycle Configurations are
+     *        immutable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +226,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      * </p>
      * 
      * @param studioLifecycleConfigContent
-     *        The content of your Studio Lifecycle Configuration script.
+     *        The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      */
 
     public void setStudioLifecycleConfigContent(String studioLifecycleConfigContent) {
@@ -236,10 +239,10 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      * </p>
      * 
-     * @return The content of your Studio Lifecycle Configuration script.
+     * @return The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      */
 
     public String getStudioLifecycleConfigContent() {
@@ -248,11 +251,11 @@ public class DescribeStudioLifecycleConfigResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      * </p>
      * 
      * @param studioLifecycleConfigContent
-     *        The content of your Studio Lifecycle Configuration script.
+     *        The content of your Amazon SageMaker Studio Lifecycle Configuration script.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,14 @@ public class LensReviewSummary implements Serializable, Cloneable, StructuredPoj
     private java.util.Date updatedAt;
 
     private java.util.Map<String, Integer> riskCounts;
+    /**
+     * <p>
+     * The profiles associated with the workload.
+     * </p>
+     */
+    private java.util.List<WorkloadProfile> profiles;
+
+    private java.util.Map<String, Integer> prioritizedRiskCounts;
 
     /**
      * @param lensAlias
@@ -326,6 +334,130 @@ public class LensReviewSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The profiles associated with the workload.
+     * </p>
+     * 
+     * @return The profiles associated with the workload.
+     */
+
+    public java.util.List<WorkloadProfile> getProfiles() {
+        return profiles;
+    }
+
+    /**
+     * <p>
+     * The profiles associated with the workload.
+     * </p>
+     * 
+     * @param profiles
+     *        The profiles associated with the workload.
+     */
+
+    public void setProfiles(java.util.Collection<WorkloadProfile> profiles) {
+        if (profiles == null) {
+            this.profiles = null;
+            return;
+        }
+
+        this.profiles = new java.util.ArrayList<WorkloadProfile>(profiles);
+    }
+
+    /**
+     * <p>
+     * The profiles associated with the workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfiles(java.util.Collection)} or {@link #withProfiles(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param profiles
+     *        The profiles associated with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensReviewSummary withProfiles(WorkloadProfile... profiles) {
+        if (this.profiles == null) {
+            setProfiles(new java.util.ArrayList<WorkloadProfile>(profiles.length));
+        }
+        for (WorkloadProfile ele : profiles) {
+            this.profiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The profiles associated with the workload.
+     * </p>
+     * 
+     * @param profiles
+     *        The profiles associated with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensReviewSummary withProfiles(java.util.Collection<WorkloadProfile> profiles) {
+        setProfiles(profiles);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Map<String, Integer> getPrioritizedRiskCounts() {
+        return prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     */
+
+    public void setPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        this.prioritizedRiskCounts = prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensReviewSummary withPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        setPrioritizedRiskCounts(prioritizedRiskCounts);
+        return this;
+    }
+
+    /**
+     * Add a single PrioritizedRiskCounts entry
+     *
+     * @see LensReviewSummary#withPrioritizedRiskCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensReviewSummary addPrioritizedRiskCountsEntry(String key, Integer value) {
+        if (null == this.prioritizedRiskCounts) {
+            this.prioritizedRiskCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.prioritizedRiskCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.prioritizedRiskCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PrioritizedRiskCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensReviewSummary clearPrioritizedRiskCountsEntries() {
+        this.prioritizedRiskCounts = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -350,7 +482,11 @@ public class LensReviewSummary implements Serializable, Cloneable, StructuredPoj
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
         if (getRiskCounts() != null)
-            sb.append("RiskCounts: ").append(getRiskCounts());
+            sb.append("RiskCounts: ").append(getRiskCounts()).append(",");
+        if (getProfiles() != null)
+            sb.append("Profiles: ").append(getProfiles()).append(",");
+        if (getPrioritizedRiskCounts() != null)
+            sb.append("PrioritizedRiskCounts: ").append(getPrioritizedRiskCounts());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +529,14 @@ public class LensReviewSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRiskCounts() != null && other.getRiskCounts().equals(this.getRiskCounts()) == false)
             return false;
+        if (other.getProfiles() == null ^ this.getProfiles() == null)
+            return false;
+        if (other.getProfiles() != null && other.getProfiles().equals(this.getProfiles()) == false)
+            return false;
+        if (other.getPrioritizedRiskCounts() == null ^ this.getPrioritizedRiskCounts() == null)
+            return false;
+        if (other.getPrioritizedRiskCounts() != null && other.getPrioritizedRiskCounts().equals(this.getPrioritizedRiskCounts()) == false)
+            return false;
         return true;
     }
 
@@ -408,6 +552,8 @@ public class LensReviewSummary implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLensStatus() == null) ? 0 : getLensStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getRiskCounts() == null) ? 0 : getRiskCounts().hashCode());
+        hashCode = prime * hashCode + ((getProfiles() == null) ? 0 : getProfiles().hashCode());
+        hashCode = prime * hashCode + ((getPrioritizedRiskCounts() == null) ? 0 : getPrioritizedRiskCounts().hashCode());
         return hashCode;
     }
 

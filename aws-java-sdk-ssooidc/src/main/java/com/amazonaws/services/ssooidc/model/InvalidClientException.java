@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,18 @@ import javax.annotation.Generated;
 public class InvalidClientException extends com.amazonaws.services.ssooidc.model.AWSSSOOIDCException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Single error code. For this exception the value will be <code>invalid_client</code>.
+     * </p>
+     */
     private String error;
-
+    /**
+     * <p>
+     * Human-readable text providing additional information, used to assist the client developer in understanding the
+     * error that occurred.
+     * </p>
+     */
     private String error_description;
 
     /**
@@ -39,7 +49,12 @@ public class InvalidClientException extends com.amazonaws.services.ssooidc.model
     }
 
     /**
+     * <p>
+     * Single error code. For this exception the value will be <code>invalid_client</code>.
+     * </p>
+     * 
      * @param error
+     *        Single error code. For this exception the value will be <code>invalid_client</code>.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("error")
@@ -48,7 +63,11 @@ public class InvalidClientException extends com.amazonaws.services.ssooidc.model
     }
 
     /**
-     * @return
+     * <p>
+     * Single error code. For this exception the value will be <code>invalid_client</code>.
+     * </p>
+     * 
+     * @return Single error code. For this exception the value will be <code>invalid_client</code>.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("error")
@@ -57,7 +76,12 @@ public class InvalidClientException extends com.amazonaws.services.ssooidc.model
     }
 
     /**
+     * <p>
+     * Single error code. For this exception the value will be <code>invalid_client</code>.
+     * </p>
+     * 
      * @param error
+     *        Single error code. For this exception the value will be <code>invalid_client</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,7 +91,14 @@ public class InvalidClientException extends com.amazonaws.services.ssooidc.model
     }
 
     /**
+     * <p>
+     * Human-readable text providing additional information, used to assist the client developer in understanding the
+     * error that occurred.
+     * </p>
+     * 
      * @param error_description
+     *        Human-readable text providing additional information, used to assist the client developer in understanding
+     *        the error that occurred.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("error_description")
@@ -76,7 +107,13 @@ public class InvalidClientException extends com.amazonaws.services.ssooidc.model
     }
 
     /**
-     * @return
+     * <p>
+     * Human-readable text providing additional information, used to assist the client developer in understanding the
+     * error that occurred.
+     * </p>
+     * 
+     * @return Human-readable text providing additional information, used to assist the client developer in
+     *         understanding the error that occurred.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("error_description")
@@ -85,7 +122,14 @@ public class InvalidClientException extends com.amazonaws.services.ssooidc.model
     }
 
     /**
+     * <p>
+     * Human-readable text providing additional information, used to assist the client developer in understanding the
+     * error that occurred.
+     * </p>
+     * 
      * @param error_description
+     *        Human-readable text providing additional information, used to assist the client developer in understanding
+     *        the error that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

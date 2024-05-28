@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.location.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class PlaceMarshaller {
 
     private static final MarshallingInfo<String> ADDRESSNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddressNumber").build();
+    private static final MarshallingInfo<List> CATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Categories").build();
     private static final MarshallingInfo<String> COUNTRY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Country").build();
     private static final MarshallingInfo<StructuredPojo> GEOMETRY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -47,8 +50,12 @@ public class PlaceMarshaller {
             .marshallLocationName("Region").build();
     private static final MarshallingInfo<String> STREET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Street").build();
+    private static final MarshallingInfo<String> SUBMUNICIPALITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubMunicipality").build();
     private static final MarshallingInfo<String> SUBREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubRegion").build();
+    private static final MarshallingInfo<List> SUPPLEMENTALCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupplementalCategories").build();
     private static final MarshallingInfo<StructuredPojo> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeZone").build();
     private static final MarshallingInfo<String> UNITNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -73,6 +80,7 @@ public class PlaceMarshaller {
 
         try {
             protocolMarshaller.marshall(place.getAddressNumber(), ADDRESSNUMBER_BINDING);
+            protocolMarshaller.marshall(place.getCategories(), CATEGORIES_BINDING);
             protocolMarshaller.marshall(place.getCountry(), COUNTRY_BINDING);
             protocolMarshaller.marshall(place.getGeometry(), GEOMETRY_BINDING);
             protocolMarshaller.marshall(place.getInterpolated(), INTERPOLATED_BINDING);
@@ -82,7 +90,9 @@ public class PlaceMarshaller {
             protocolMarshaller.marshall(place.getPostalCode(), POSTALCODE_BINDING);
             protocolMarshaller.marshall(place.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(place.getStreet(), STREET_BINDING);
+            protocolMarshaller.marshall(place.getSubMunicipality(), SUBMUNICIPALITY_BINDING);
             protocolMarshaller.marshall(place.getSubRegion(), SUBREGION_BINDING);
+            protocolMarshaller.marshall(place.getSupplementalCategories(), SUPPLEMENTALCATEGORIES_BINDING);
             protocolMarshaller.marshall(place.getTimeZone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(place.getUnitNumber(), UNITNUMBER_BINDING);
             protocolMarshaller.marshall(place.getUnitType(), UNITTYPE_BINDING);

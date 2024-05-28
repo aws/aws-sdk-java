@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.dataexchange.AWSDataExchangeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.dataexchange.model.*;
+
 import com.amazonaws.services.dataexchange.model.transform.*;
 
 /**
@@ -56,20 +57,21 @@ import com.amazonaws.services.dataexchange.model.transform.*;
  * </p>
  * <p>
  * As a subscriber, you can view and access the data sets that you have an entitlement to through a subscription. You
- * can use the APIS to download or copy your entitled data sets to Amazon S3 for use across a variety of AWS analytics
- * and machine learning services.
+ * can use the APIs to download or copy your entitled data sets to Amazon Simple Storage Service (Amazon S3) for use
+ * across a variety of AWS analytics and machine learning services.
  * </p>
  * <p>
  * As a provider, you can create and manage your data sets that you would like to publish to a product. Being able to
  * package and provide your data sets into products requires a few steps to determine eligibility. For more information,
- * visit the AWS Data Exchange User Guide.
+ * visit the <i>AWS Data Exchange User Guide</i>.
  * </p>
  * <p>
  * A data set is a collection of data that can be changed or updated over time. Data sets can be updated using
  * revisions, which represent a new version or incremental change to a data set. A revision contains one or more assets.
- * An asset in AWS Data Exchange is a piece of data that can be stored as an Amazon S3 object. The asset can be a
- * structured data file, an image file, or some other data file. Jobs are asynchronous import or export operations used
- * to create or copy assets.
+ * An asset in AWS Data Exchange is a piece of data that can be stored as an Amazon S3 object, Redshift datashare, API
+ * Gateway API, AWS Lake Formation data permission, or Amazon S3 data access. The asset can be a structured data file,
+ * an image file, or some other data file. Jobs are asynchronous import or export operations used to create or copy
+ * assets.
  * </p>
  */
 @ThreadSafe
@@ -1498,6 +1500,75 @@ public class AWSDataExchangeClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<RevokeRevisionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RevokeRevisionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @return Result of the SendDataSetNotification operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource couldn't be found.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws AccessDeniedException
+     *         Access to the resource is denied.
+     * @throws ConflictException
+     *         The request couldn't be completed because it conflicted with the current state of the resource.
+     * @throws ValidationException
+     *         The request was invalid.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
+     * @sample AWSDataExchange.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendDataSetNotificationResult sendDataSetNotification(SendDataSetNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendDataSetNotification(request);
+    }
+
+    @SdkInternalApi
+    final SendDataSetNotificationResult executeSendDataSetNotification(SendDataSetNotificationRequest sendDataSetNotificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendDataSetNotificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendDataSetNotificationRequest> request = null;
+        Response<SendDataSetNotificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendDataSetNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendDataSetNotificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataExchange");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendDataSetNotification");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendDataSetNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendDataSetNotificationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

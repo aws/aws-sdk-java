@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,12 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * The ARN of the user who changed the pipeline execution details.
+     * </p>
+     */
+    private String updatedBy;
     /**
      * <p>
      * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
@@ -373,6 +379,46 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The ARN of the user who changed the pipeline execution details.
+     * </p>
+     * 
+     * @param updatedBy
+     *        The ARN of the user who changed the pipeline execution details.
+     */
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user who changed the pipeline execution details.
+     * </p>
+     * 
+     * @return The ARN of the user who changed the pipeline execution details.
+     */
+
+    public String getUpdatedBy() {
+        return this.updatedBy;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user who changed the pipeline execution details.
+     * </p>
+     * 
+     * @param updatedBy
+     *        The ARN of the user who changed the pipeline execution details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionDetail withUpdatedBy(String updatedBy) {
+        setUpdatedBy(updatedBy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and
      * <code>Failed</code>.
      * </p>
@@ -544,6 +590,8 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getUpdatedBy() != null)
+            sb.append("UpdatedBy: ").append(getUpdatedBy()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getInput() != null)
@@ -592,6 +640,10 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
+        if (other.getUpdatedBy() == null ^ this.getUpdatedBy() == null)
+            return false;
+        if (other.getUpdatedBy() != null && other.getUpdatedBy().equals(this.getUpdatedBy()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -619,6 +671,7 @@ public class ActionExecutionDetail implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getActionName() == null) ? 0 : getActionName().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedBy() == null) ? 0 : getUpdatedBy().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());

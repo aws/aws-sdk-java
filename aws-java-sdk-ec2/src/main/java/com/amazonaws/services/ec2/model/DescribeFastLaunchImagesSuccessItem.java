@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describe details about a fast-launch enabled Windows image that meets the requested criteria. Criteria are defined by
- * the <code>DescribeFastLaunchImages</code> action filters.
+ * Describe details about a Windows image with Windows fast launch enabled that meets the requested criteria. Criteria
+ * are defined by the <code>DescribeFastLaunchImages</code> action filters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImagesSuccessItem"
@@ -29,13 +29,13 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The image ID that identifies the fast-launch enabled Windows image.
+     * The image ID that identifies the Windows fast launch enabled image.
      * </p>
      */
     private String imageId;
     /**
      * <p>
-     * The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     * The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      * <code>snapshot</code>.
      * </p>
      */
@@ -48,49 +48,50 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
     private FastLaunchSnapshotConfigurationResponse snapshotConfiguration;
     /**
      * <p>
-     * The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     * The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      * pre-provisioned snapshots.
      * </p>
      */
     private FastLaunchLaunchTemplateSpecificationResponse launchTemplate;
     /**
      * <p>
-     * The maximum number of parallel instances that are launched for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      */
     private Integer maxParallelLaunches;
     /**
      * <p>
-     * The owner ID for the fast-launch enabled Windows AMI.
+     * The owner ID for the Windows fast launch enabled AMI.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The reason that faster launching for the Windows AMI changed to the current state.
+     * The reason that Windows fast launch for the AMI changed to the current state.
      * </p>
      */
     private String stateTransitionReason;
     /**
      * <p>
-     * The time that faster launching for the Windows AMI changed to the current state.
+     * The time that Windows fast launch for the AMI changed to the current state.
      * </p>
      */
     private java.util.Date stateTransitionTime;
 
     /**
      * <p>
-     * The image ID that identifies the fast-launch enabled Windows image.
+     * The image ID that identifies the Windows fast launch enabled image.
      * </p>
      * 
      * @param imageId
-     *        The image ID that identifies the fast-launch enabled Windows image.
+     *        The image ID that identifies the Windows fast launch enabled image.
      */
 
     public void setImageId(String imageId) {
@@ -99,10 +100,10 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The image ID that identifies the fast-launch enabled Windows image.
+     * The image ID that identifies the Windows fast launch enabled image.
      * </p>
      * 
-     * @return The image ID that identifies the fast-launch enabled Windows image.
+     * @return The image ID that identifies the Windows fast launch enabled image.
      */
 
     public String getImageId() {
@@ -111,11 +112,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The image ID that identifies the fast-launch enabled Windows image.
+     * The image ID that identifies the Windows fast launch enabled image.
      * </p>
      * 
      * @param imageId
-     *        The image ID that identifies the fast-launch enabled Windows image.
+     *        The image ID that identifies the Windows fast launch enabled image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,12 +127,12 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     * The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      * <code>snapshot</code>.
      * </p>
      * 
      * @param resourceType
-     *        The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     *        The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      *        <code>snapshot</code>.
      * @see FastLaunchResourceType
      */
@@ -142,11 +143,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     * The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      * <code>snapshot</code>.
      * </p>
      * 
-     * @return The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     * @return The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      *         <code>snapshot</code>.
      * @see FastLaunchResourceType
      */
@@ -157,12 +158,12 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     * The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      * <code>snapshot</code>.
      * </p>
      * 
      * @param resourceType
-     *        The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     *        The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      *        <code>snapshot</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchResourceType
@@ -175,12 +176,12 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     * The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      * <code>snapshot</code>.
      * </p>
      * 
      * @param resourceType
-     *        The resource type that is used for pre-provisioning the Windows AMI. Supported values include:
+     *        The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported values include:
      *        <code>snapshot</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchResourceType
@@ -233,12 +234,12 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     * The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      * pre-provisioned snapshots.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     *        The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      *        pre-provisioned snapshots.
      */
 
@@ -248,11 +249,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     * The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      * pre-provisioned snapshots.
      * </p>
      * 
-     * @return The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     * @return The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      *         pre-provisioned snapshots.
      */
 
@@ -262,12 +263,12 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     * The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      * pre-provisioned snapshots.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from
+     *        The launch template that the Windows fast launch enabled AMI uses when it launches Windows instances from
      *        pre-provisioned snapshots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -279,11 +280,13 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The maximum number of parallel instances that are launched for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances that are launched for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows fast launch.
      */
 
     public void setMaxParallelLaunches(Integer maxParallelLaunches) {
@@ -292,10 +295,12 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The maximum number of parallel instances that are launched for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      * 
-     * @return The maximum number of parallel instances that are launched for creating resources.
+     * @return The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *         snapshots for Windows fast launch.
      */
 
     public Integer getMaxParallelLaunches() {
@@ -304,11 +309,13 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The maximum number of parallel instances that are launched for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances that are launched for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows fast launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +326,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The owner ID for the fast-launch enabled Windows AMI.
+     * The owner ID for the Windows fast launch enabled AMI.
      * </p>
      * 
      * @param ownerId
-     *        The owner ID for the fast-launch enabled Windows AMI.
+     *        The owner ID for the Windows fast launch enabled AMI.
      */
 
     public void setOwnerId(String ownerId) {
@@ -332,10 +339,10 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The owner ID for the fast-launch enabled Windows AMI.
+     * The owner ID for the Windows fast launch enabled AMI.
      * </p>
      * 
-     * @return The owner ID for the fast-launch enabled Windows AMI.
+     * @return The owner ID for the Windows fast launch enabled AMI.
      */
 
     public String getOwnerId() {
@@ -344,11 +351,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The owner ID for the fast-launch enabled Windows AMI.
+     * The owner ID for the Windows fast launch enabled AMI.
      * </p>
      * 
      * @param ownerId
-     *        The owner ID for the fast-launch enabled Windows AMI.
+     *        The owner ID for the Windows fast launch enabled AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +366,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
      * @param state
-     *        The current state of faster launching for the specified Windows AMI.
+     *        The current state of Windows fast launch for the specified Windows AMI.
      * @see FastLaunchStateCode
      */
 
@@ -373,10 +380,10 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
-     * @return The current state of faster launching for the specified Windows AMI.
+     * @return The current state of Windows fast launch for the specified Windows AMI.
      * @see FastLaunchStateCode
      */
 
@@ -386,11 +393,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
      * @param state
-     *        The current state of faster launching for the specified Windows AMI.
+     *        The current state of Windows fast launch for the specified Windows AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchStateCode
      */
@@ -402,11 +409,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
      * @param state
-     *        The current state of faster launching for the specified Windows AMI.
+     *        The current state of Windows fast launch for the specified Windows AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchStateCode
      */
@@ -418,11 +425,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The reason that faster launching for the Windows AMI changed to the current state.
+     * The reason that Windows fast launch for the AMI changed to the current state.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The reason that faster launching for the Windows AMI changed to the current state.
+     *        The reason that Windows fast launch for the AMI changed to the current state.
      */
 
     public void setStateTransitionReason(String stateTransitionReason) {
@@ -431,10 +438,10 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The reason that faster launching for the Windows AMI changed to the current state.
+     * The reason that Windows fast launch for the AMI changed to the current state.
      * </p>
      * 
-     * @return The reason that faster launching for the Windows AMI changed to the current state.
+     * @return The reason that Windows fast launch for the AMI changed to the current state.
      */
 
     public String getStateTransitionReason() {
@@ -443,11 +450,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The reason that faster launching for the Windows AMI changed to the current state.
+     * The reason that Windows fast launch for the AMI changed to the current state.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The reason that faster launching for the Windows AMI changed to the current state.
+     *        The reason that Windows fast launch for the AMI changed to the current state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +465,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The time that faster launching for the Windows AMI changed to the current state.
+     * The time that Windows fast launch for the AMI changed to the current state.
      * </p>
      * 
      * @param stateTransitionTime
-     *        The time that faster launching for the Windows AMI changed to the current state.
+     *        The time that Windows fast launch for the AMI changed to the current state.
      */
 
     public void setStateTransitionTime(java.util.Date stateTransitionTime) {
@@ -471,10 +478,10 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The time that faster launching for the Windows AMI changed to the current state.
+     * The time that Windows fast launch for the AMI changed to the current state.
      * </p>
      * 
-     * @return The time that faster launching for the Windows AMI changed to the current state.
+     * @return The time that Windows fast launch for the AMI changed to the current state.
      */
 
     public java.util.Date getStateTransitionTime() {
@@ -483,11 +490,11 @@ public class DescribeFastLaunchImagesSuccessItem implements Serializable, Clonea
 
     /**
      * <p>
-     * The time that faster launching for the Windows AMI changed to the current state.
+     * The time that Windows fast launch for the AMI changed to the current state.
      * </p>
      * 
      * @param stateTransitionTime
-     *        The time that faster launching for the Windows AMI changed to the current state.
+     *        The time that Windows fast launch for the AMI changed to the current state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

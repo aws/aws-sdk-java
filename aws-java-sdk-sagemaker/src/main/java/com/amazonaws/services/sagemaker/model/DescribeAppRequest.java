@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,16 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String domainId;
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      */
     private String userProfileName;
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     */
+    private String spaceName;
     /**
      * <p>
      * The type of app.
@@ -92,11 +98,11 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public void setUserProfileName(String userProfileName) {
@@ -105,10 +111,10 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
-     * @return The user profile name.
+     * @return The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public String getUserProfileName() {
@@ -117,16 +123,56 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAppRequest withUserProfileName(String userProfileName) {
         setUserProfileName(userProfileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @return The name of the space.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAppRequest withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
         return this;
     }
 
@@ -245,6 +291,8 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getUserProfileName() != null)
             sb.append("UserProfileName: ").append(getUserProfileName()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName()).append(",");
         if (getAppType() != null)
             sb.append("AppType: ").append(getAppType()).append(",");
         if (getAppName() != null)
@@ -271,6 +319,10 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getUserProfileName() != null && other.getUserProfileName().equals(this.getUserProfileName()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         if (other.getAppType() == null ^ this.getAppType() == null)
             return false;
         if (other.getAppType() != null && other.getAppType().equals(this.getAppType()) == false)
@@ -289,6 +341,7 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getUserProfileName() == null) ? 0 : getUserProfileName().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         hashCode = prime * hashCode + ((getAppType() == null) ? 0 : getAppType().hashCode());
         hashCode = prime * hashCode + ((getAppName() == null) ? 0 : getAppName().hashCode());
         return hashCode;

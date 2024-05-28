@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,7 +98,12 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private String safeguardPolicy;
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
      * </p>
      */
     private String serverName;
@@ -151,11 +156,24 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private String secretsManagerSecretId;
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      */
     private Boolean trimSpaceInChar;
+    /**
+     * <p>
+     * Indicates the mode used to fetch CDC data.
+     * </p>
+     */
+    private String tlogAccessMode;
+    /**
+     * <p>
+     * Forces LOB lookup on inline LOB.
+     * </p>
+     */
+    private Boolean forceLobLookup;
 
     /**
      * <p>
@@ -679,11 +697,20 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
      * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of
+     *        <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">
+     *        DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
      */
 
     public void setServerName(String serverName) {
@@ -692,10 +719,19 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
      * </p>
      * 
-     * @return Fully qualified domain name of the endpoint.
+     * @return Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of
+     *         <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">
+     *         DescribeDBInstances</a>, in the
+     *         <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *         field.
      */
 
     public String getServerName() {
@@ -704,11 +740,20 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+     * in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
      * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of
+     *        <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">
+     *        DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1053,13 +1098,15 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
      * @param trimSpaceInChar
-     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *        during migration. The default value is <code>true</code>.
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *        types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     *        <code>true</code>.
      */
 
     public void setTrimSpaceInChar(Boolean trimSpaceInChar) {
@@ -1068,12 +1115,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
-     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *         during migration. The default value is <code>true</code>.
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *         types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value
+     *         is <code>true</code>.
      */
 
     public Boolean getTrimSpaceInChar() {
@@ -1082,13 +1131,15 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
      * @param trimSpaceInChar
-     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *        during migration. The default value is <code>true</code>.
+     *        Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *        types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1099,16 +1150,129 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during
-     * migration. The default value is <code>true</code>.
+     * Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data types
+     * during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value is
+     * <code>true</code>.
      * </p>
      * 
-     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types
-     *         during migration. The default value is <code>true</code>.
+     * @return Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on CHAR and NCHAR data
+     *         types during migration. Setting <code>TrimSpaceInChar</code> does not left-trim data. The default value
+     *         is <code>true</code>.
      */
 
     public Boolean isTrimSpaceInChar() {
         return this.trimSpaceInChar;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode used to fetch CDC data.
+     * </p>
+     * 
+     * @param tlogAccessMode
+     *        Indicates the mode used to fetch CDC data.
+     * @see TlogAccessMode
+     */
+
+    public void setTlogAccessMode(String tlogAccessMode) {
+        this.tlogAccessMode = tlogAccessMode;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode used to fetch CDC data.
+     * </p>
+     * 
+     * @return Indicates the mode used to fetch CDC data.
+     * @see TlogAccessMode
+     */
+
+    public String getTlogAccessMode() {
+        return this.tlogAccessMode;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode used to fetch CDC data.
+     * </p>
+     * 
+     * @param tlogAccessMode
+     *        Indicates the mode used to fetch CDC data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TlogAccessMode
+     */
+
+    public MicrosoftSQLServerSettings withTlogAccessMode(String tlogAccessMode) {
+        setTlogAccessMode(tlogAccessMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode used to fetch CDC data.
+     * </p>
+     * 
+     * @param tlogAccessMode
+     *        Indicates the mode used to fetch CDC data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TlogAccessMode
+     */
+
+    public MicrosoftSQLServerSettings withTlogAccessMode(TlogAccessMode tlogAccessMode) {
+        this.tlogAccessMode = tlogAccessMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Forces LOB lookup on inline LOB.
+     * </p>
+     * 
+     * @param forceLobLookup
+     *        Forces LOB lookup on inline LOB.
+     */
+
+    public void setForceLobLookup(Boolean forceLobLookup) {
+        this.forceLobLookup = forceLobLookup;
+    }
+
+    /**
+     * <p>
+     * Forces LOB lookup on inline LOB.
+     * </p>
+     * 
+     * @return Forces LOB lookup on inline LOB.
+     */
+
+    public Boolean getForceLobLookup() {
+        return this.forceLobLookup;
+    }
+
+    /**
+     * <p>
+     * Forces LOB lookup on inline LOB.
+     * </p>
+     * 
+     * @param forceLobLookup
+     *        Forces LOB lookup on inline LOB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MicrosoftSQLServerSettings withForceLobLookup(Boolean forceLobLookup) {
+        setForceLobLookup(forceLobLookup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Forces LOB lookup on inline LOB.
+     * </p>
+     * 
+     * @return Forces LOB lookup on inline LOB.
+     */
+
+    public Boolean isForceLobLookup() {
+        return this.forceLobLookup;
     }
 
     /**
@@ -1152,7 +1316,11 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
         if (getSecretsManagerSecretId() != null)
             sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
         if (getTrimSpaceInChar() != null)
-            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar());
+            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar()).append(",");
+        if (getTlogAccessMode() != null)
+            sb.append("TlogAccessMode: ").append(getTlogAccessMode()).append(",");
+        if (getForceLobLookup() != null)
+            sb.append("ForceLobLookup: ").append(getForceLobLookup());
         sb.append("}");
         return sb.toString();
     }
@@ -1227,6 +1395,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
             return false;
         if (other.getTrimSpaceInChar() != null && other.getTrimSpaceInChar().equals(this.getTrimSpaceInChar()) == false)
             return false;
+        if (other.getTlogAccessMode() == null ^ this.getTlogAccessMode() == null)
+            return false;
+        if (other.getTlogAccessMode() != null && other.getTlogAccessMode().equals(this.getTlogAccessMode()) == false)
+            return false;
+        if (other.getForceLobLookup() == null ^ this.getForceLobLookup() == null)
+            return false;
+        if (other.getForceLobLookup() != null && other.getForceLobLookup().equals(this.getForceLobLookup()) == false)
+            return false;
         return true;
     }
 
@@ -1250,6 +1426,8 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
+        hashCode = prime * hashCode + ((getTlogAccessMode() == null) ? 0 : getTlogAccessMode().hashCode());
+        hashCode = prime * hashCode + ((getForceLobLookup() == null) ? 0 : getForceLobLookup().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class FinalAutoMLJobObjectiveMetricMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
     private static final MarshallingInfo<Float> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Value").build();
+    private static final MarshallingInfo<String> STANDARDMETRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StandardMetricName").build();
 
     private static final FinalAutoMLJobObjectiveMetricMarshaller instance = new FinalAutoMLJobObjectiveMetricMarshaller();
 
@@ -53,6 +55,7 @@ public class FinalAutoMLJobObjectiveMetricMarshaller {
             protocolMarshaller.marshall(finalAutoMLJobObjectiveMetric.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(finalAutoMLJobObjectiveMetric.getMetricName(), METRICNAME_BINDING);
             protocolMarshaller.marshall(finalAutoMLJobObjectiveMetric.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(finalAutoMLJobObjectiveMetric.getStandardMetricName(), STANDARDMETRICNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

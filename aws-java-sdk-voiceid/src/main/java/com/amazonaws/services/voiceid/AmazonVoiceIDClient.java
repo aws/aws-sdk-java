@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.voiceid.AmazonVoiceIDClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.voiceid.model.*;
+
 import com.amazonaws.services.voiceid.model.transform.*;
 
 /**
@@ -51,8 +52,8 @@ import com.amazonaws.services.voiceid.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide describes the APIs
- * used for this service.
+ * Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice
+ * interactions in contact centers more secure and efficient.
  * </p>
  */
 @ThreadSafe
@@ -78,6 +79,15 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.voiceid.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.voiceid.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.voiceid.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.voiceid.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -87,17 +97,8 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.voiceid.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.voiceid.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.voiceid.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.voiceid.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.voiceid.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.voiceid.model.AmazonVoiceIDException.class));
 
     public static AmazonVoiceIDClientBuilder builder() {
@@ -148,8 +149,83 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Associates the fraudsters with the watchlist specified in the same domain.
+     * </p>
+     * 
+     * @param associateFraudsterRequest
+     * @return Result of the AssociateFraudster operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded the service quota. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas"
+     *         >Voice ID Service Quotas</a> and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.AssociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateFraudsterResult associateFraudster(AssociateFraudsterRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFraudster(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFraudsterResult executeAssociateFraudster(AssociateFraudsterRequest associateFraudsterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateFraudsterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateFraudsterRequest> request = null;
+        Response<AssociateFraudsterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateFraudsterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFraudsterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateFraudster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateFraudsterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateFraudsterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio,
-     * and voiceprints.
+     * and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of.
      * </p>
      * 
      * @param createDomainRequest
@@ -212,6 +288,81 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a watchlist that fraudsters can be a part of.
+     * </p>
+     * 
+     * @param createWatchlistRequest
+     * @return Result of the CreateWatchlist operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded the service quota. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas"
+     *         >Voice ID Service Quotas</a> and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.CreateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateWatchlistResult createWatchlist(CreateWatchlistRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWatchlist(request);
+    }
+
+    @SdkInternalApi
+    final CreateWatchlistResult executeCreateWatchlist(CreateWatchlistRequest createWatchlistRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWatchlistRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWatchlistRequest> request = null;
+        Response<CreateWatchlistResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWatchlistRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWatchlistRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWatchlist");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWatchlistResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWatchlistResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -295,7 +446,8 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Deletes the specified fraudster from Voice ID.
+     * Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is
+     * a part of.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -425,6 +577,79 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteSpeakerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSpeakerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the
+     * watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every
+     * domain has a default watchlist which cannot be deleted.
+     * </p>
+     * 
+     * @param deleteWatchlistRequest
+     * @return Result of the DeleteWatchlist operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.DeleteWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteWatchlistResult deleteWatchlist(DeleteWatchlistRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWatchlist(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWatchlistResult executeDeleteWatchlist(DeleteWatchlistRequest deleteWatchlistRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWatchlistRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWatchlistRequest> request = null;
+        Response<DeleteWatchlistResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWatchlistRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWatchlistRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWatchlist");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWatchlistResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWatchlistResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -782,6 +1007,148 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Describes the specified watchlist.
+     * </p>
+     * 
+     * @param describeWatchlistRequest
+     * @return Result of the DescribeWatchlist operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.DescribeWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeWatchlistResult describeWatchlist(DescribeWatchlistRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWatchlist(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWatchlistResult executeDescribeWatchlist(DescribeWatchlistRequest describeWatchlistRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWatchlistRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWatchlistRequest> request = null;
+        Response<DescribeWatchlistResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWatchlistRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWatchlistRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWatchlist");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWatchlistResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeWatchlistResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at
+     * least one watchlist. If you try to disassociate a fraudster from its only watchlist, a
+     * <code>ValidationException</code> is thrown.
+     * </p>
+     * 
+     * @param disassociateFraudsterRequest
+     * @return Result of the DisassociateFraudster operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.DisassociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisassociateFraudsterResult disassociateFraudster(DisassociateFraudsterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFraudster(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFraudsterResult executeDisassociateFraudster(DisassociateFraudsterRequest disassociateFraudsterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFraudsterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFraudsterRequest> request = null;
+        Response<DisassociateFraudsterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFraudsterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFraudsterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFraudster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFraudsterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateFraudsterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call.
      * </p>
      * 
@@ -989,6 +1356,74 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Lists all fraudsters in a specified watchlist or domain.
+     * </p>
+     * 
+     * @param listFraudstersRequest
+     * @return Result of the ListFraudsters operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.ListFraudsters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListFraudstersResult listFraudsters(ListFraudstersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFraudsters(request);
+    }
+
+    @SdkInternalApi
+    final ListFraudstersResult executeListFraudsters(ListFraudstersRequest listFraudstersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFraudstersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFraudstersRequest> request = null;
+        Response<ListFraudstersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFraudstersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFraudstersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFraudsters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFraudstersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFraudstersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If
      * <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job statuses.
      * </p>
@@ -1184,6 +1619,74 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all watchlists in a specified domain.
+     * </p>
+     * 
+     * @param listWatchlistsRequest
+     * @return Result of the ListWatchlists operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.ListWatchlists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWatchlistsResult listWatchlists(ListWatchlistsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWatchlists(request);
+    }
+
+    @SdkInternalApi
+    final ListWatchlistsResult executeListWatchlists(ListWatchlistsRequest listWatchlistsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWatchlistsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWatchlistsRequest> request = null;
+        Response<ListWatchlistsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWatchlistsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWatchlistsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWatchlists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWatchlistsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWatchlistsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1630,6 +2133,77 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.
+     * </p>
+     * 
+     * @param updateWatchlistRequest
+     * @return Result of the UpdateWatchlist operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.UpdateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateWatchlistResult updateWatchlist(UpdateWatchlistRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWatchlist(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWatchlistResult executeUpdateWatchlist(UpdateWatchlistRequest updateWatchlistRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWatchlistRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWatchlistRequest> request = null;
+        Response<UpdateWatchlistResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWatchlistRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWatchlistRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Voice ID");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWatchlist");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWatchlistResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateWatchlistResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

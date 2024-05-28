@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     * The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.
      * </p>
      */
     private String assetModelId;
@@ -49,11 +49,12 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     * The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     *        The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API
+     *        operations.
      */
 
     public void setAssetModelId(String assetModelId) {
@@ -62,10 +63,11 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     * The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.
      * </p>
      * 
-     * @return The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     * @return The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API
+     *         operations.
      */
 
     public String getAssetModelId() {
@@ -74,11 +76,12 @@ public class CreateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     * The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.
+     *        The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API
+     *        operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

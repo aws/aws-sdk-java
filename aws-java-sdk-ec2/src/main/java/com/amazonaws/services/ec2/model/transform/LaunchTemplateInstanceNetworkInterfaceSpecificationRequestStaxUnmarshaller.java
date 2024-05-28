@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -171,6 +171,23 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequestStaxUnmar
 
                 if (context.testExpression("Ipv6PrefixCount", targetDepth)) {
                     launchTemplateInstanceNetworkInterfaceSpecificationRequest.setIpv6PrefixCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PrimaryIpv6", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecificationRequest.setPrimaryIpv6(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EnaSrdSpecification", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecificationRequest.setEnaSrdSpecification(EnaSrdSpecificationRequestStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ConnectionTrackingSpecification", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecificationRequest
+                            .setConnectionTrackingSpecification(ConnectionTrackingSpecificationRequestStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class PillarReviewSummary implements Serializable, Cloneable, StructuredP
     private String notes;
 
     private java.util.Map<String, Integer> riskCounts;
+
+    private java.util.Map<String, Integer> prioritizedRiskCounts;
 
     /**
      * @param pillarId
@@ -169,6 +171,60 @@ public class PillarReviewSummary implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, Integer> getPrioritizedRiskCounts() {
+        return prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     */
+
+    public void setPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        this.prioritizedRiskCounts = prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PillarReviewSummary withPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        setPrioritizedRiskCounts(prioritizedRiskCounts);
+        return this;
+    }
+
+    /**
+     * Add a single PrioritizedRiskCounts entry
+     *
+     * @see PillarReviewSummary#withPrioritizedRiskCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PillarReviewSummary addPrioritizedRiskCountsEntry(String key, Integer value) {
+        if (null == this.prioritizedRiskCounts) {
+            this.prioritizedRiskCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.prioritizedRiskCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.prioritizedRiskCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PrioritizedRiskCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PillarReviewSummary clearPrioritizedRiskCountsEntries() {
+        this.prioritizedRiskCounts = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -187,7 +243,9 @@ public class PillarReviewSummary implements Serializable, Cloneable, StructuredP
         if (getNotes() != null)
             sb.append("Notes: ").append(getNotes()).append(",");
         if (getRiskCounts() != null)
-            sb.append("RiskCounts: ").append(getRiskCounts());
+            sb.append("RiskCounts: ").append(getRiskCounts()).append(",");
+        if (getPrioritizedRiskCounts() != null)
+            sb.append("PrioritizedRiskCounts: ").append(getPrioritizedRiskCounts());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +276,10 @@ public class PillarReviewSummary implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getRiskCounts() != null && other.getRiskCounts().equals(this.getRiskCounts()) == false)
             return false;
+        if (other.getPrioritizedRiskCounts() == null ^ this.getPrioritizedRiskCounts() == null)
+            return false;
+        if (other.getPrioritizedRiskCounts() != null && other.getPrioritizedRiskCounts().equals(this.getPrioritizedRiskCounts()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +292,7 @@ public class PillarReviewSummary implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getPillarName() == null) ? 0 : getPillarName().hashCode());
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
         hashCode = prime * hashCode + ((getRiskCounts() == null) ? 0 : getRiskCounts().hashCode());
+        hashCode = prime * hashCode + ((getPrioritizedRiskCounts() == null) ? 0 : getPrioritizedRiskCounts().hashCode());
         return hashCode;
     }
 

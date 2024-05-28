@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,19 +33,20 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String layerId;
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User
+     * Guide.
      * </p>
      */
     private String shortname;
@@ -193,11 +194,11 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The layer name, which is used by the console.
+     *        The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      */
 
     public void setName(String name) {
@@ -206,10 +207,10 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      * 
-     * @return The layer name, which is used by the console.
+     * @return The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      */
 
     public String getName() {
@@ -218,11 +219,11 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The layer name, which is used by the console.
+     *        The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,23 +234,25 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User
+     * Guide.
      * </p>
      * 
      * @param shortname
      *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *        AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
-     *        files are installed. It can have a maximum of 200 characters and must be in the following format:
+     *        OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
+     *        files are installed. It can have a maximum of 32 characters and must be in the following format:
      *        /\A[a-z0-9\-\_\.]+\Z/.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     *        Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the
+     *        OpsWorks User Guide.
      */
 
     public void setShortname(String shortname) {
@@ -258,22 +261,24 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User
+     * Guide.
      * </p>
      * 
      * @return For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *         AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
-     *         files are installed. It can have a maximum of 200 characters and must be in the following format:
+     *         OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
+     *         files are installed. It can have a maximum of 32 characters and must be in the following format:
      *         /\A[a-z0-9\-\_\.]+\Z/.</p>
      *         <p>
-     *         The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     *         Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the
+     *         OpsWorks User Guide.
      */
 
     public String getShortname() {
@@ -282,23 +287,25 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are
-     * installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
+     * installed. It can have a maximum of 32 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the OpsWorks User
+     * Guide.
      * </p>
      * 
      * @param shortname
      *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *        AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
-     *        files are installed. It can have a maximum of 200 characters and must be in the following format:
+     *        OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app
+     *        files are installed. It can have a maximum of 32 characters and must be in the following format:
      *        /\A[a-z0-9\-\_\.]+\Z/.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
-     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
+     *        Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer reference</a> in the
+     *        OpsWorks User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

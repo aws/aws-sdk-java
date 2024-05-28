@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,14 @@ public class DiscoverInstancesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<HttpInstanceSummary> instances;
+    /**
+     * <p>
+     * The increasing revision associated to the response Instances list. If a new instance is registered or
+     * deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     * <code>InstancesRevision</code>.
+     * </p>
+     */
+    private Long instancesRevision;
 
     /**
      * <p>
@@ -101,6 +109,58 @@ public class DiscoverInstancesResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The increasing revision associated to the response Instances list. If a new instance is registered or
+     * deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     * <code>InstancesRevision</code>.
+     * </p>
+     * 
+     * @param instancesRevision
+     *        The increasing revision associated to the response Instances list. If a new instance is registered or
+     *        deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     *        <code>InstancesRevision</code>.
+     */
+
+    public void setInstancesRevision(Long instancesRevision) {
+        this.instancesRevision = instancesRevision;
+    }
+
+    /**
+     * <p>
+     * The increasing revision associated to the response Instances list. If a new instance is registered or
+     * deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     * <code>InstancesRevision</code>.
+     * </p>
+     * 
+     * @return The increasing revision associated to the response Instances list. If a new instance is registered or
+     *         deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     *         <code>InstancesRevision</code>.
+     */
+
+    public Long getInstancesRevision() {
+        return this.instancesRevision;
+    }
+
+    /**
+     * <p>
+     * The increasing revision associated to the response Instances list. If a new instance is registered or
+     * deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     * <code>InstancesRevision</code>.
+     * </p>
+     * 
+     * @param instancesRevision
+     *        The increasing revision associated to the response Instances list. If a new instance is registered or
+     *        deregistered, the <code>InstancesRevision</code> updates. The health status updates don't update
+     *        <code>InstancesRevision</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInstancesResult withInstancesRevision(Long instancesRevision) {
+        setInstancesRevision(instancesRevision);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +173,9 @@ public class DiscoverInstancesResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstances() != null)
-            sb.append("Instances: ").append(getInstances());
+            sb.append("Instances: ").append(getInstances()).append(",");
+        if (getInstancesRevision() != null)
+            sb.append("InstancesRevision: ").append(getInstancesRevision());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +194,10 @@ public class DiscoverInstancesResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
+        if (other.getInstancesRevision() == null ^ this.getInstancesRevision() == null)
+            return false;
+        if (other.getInstancesRevision() != null && other.getInstancesRevision().equals(this.getInstancesRevision()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +207,7 @@ public class DiscoverInstancesResult extends com.amazonaws.AmazonWebServiceResul
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getInstancesRevision() == null) ? 0 : getInstancesRevision().hashCode());
         return hashCode;
     }
 

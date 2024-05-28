@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,10 @@ public class FaceDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Quality").build();
     private static final MarshallingInfo<Float> CONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Confidence").build();
+    private static final MarshallingInfo<StructuredPojo> FACEOCCLUDED_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FaceOccluded").build();
+    private static final MarshallingInfo<StructuredPojo> EYEDIRECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EyeDirection").build();
 
     private static final FaceDetailMarshaller instance = new FaceDetailMarshaller();
 
@@ -90,6 +94,8 @@ public class FaceDetailMarshaller {
             protocolMarshaller.marshall(faceDetail.getPose(), POSE_BINDING);
             protocolMarshaller.marshall(faceDetail.getQuality(), QUALITY_BINDING);
             protocolMarshaller.marshall(faceDetail.getConfidence(), CONFIDENCE_BINDING);
+            protocolMarshaller.marshall(faceDetail.getFaceOccluded(), FACEOCCLUDED_BINDING);
+            protocolMarshaller.marshall(faceDetail.getEyeDirection(), EYEDIRECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

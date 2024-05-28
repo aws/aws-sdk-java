@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,12 +58,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -87,6 +92,20 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private String guidance;
+    /**
+     * <p>
+     * Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product
+     * and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to
+     * the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs.
+     * </p>
+     * <p>
+     * This field only exists for Repo-Synced products.
+     * </p>
+     */
+    private String sourceRevision;
 
     /**
      * <p>
@@ -220,12 +239,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -240,12 +264,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -267,12 +296,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -286,12 +320,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *         <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXTERNAL</code> - External configuration file
      *         </p>
      *         </li>
      * @see ProvisioningArtifactType
@@ -313,12 +352,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -333,12 +377,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -362,12 +411,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -382,12 +436,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -409,12 +468,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -429,12 +493,17 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -617,6 +686,91 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product
+     * and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to
+     * the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs.
+     * </p>
+     * <p>
+     * This field only exists for Repo-Synced products.
+     * </p>
+     * 
+     * @param sourceRevision
+     *        Specifies the revision of the external artifact that was used to automatically sync the Service Catalog
+     *        product and create the provisioning artifact. Service Catalog includes this response parameter as a high
+     *        level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the
+     *        response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     *        <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and
+     *        <code>UpdateProvisioningArticat</code> APIs. </p>
+     *        <p>
+     *        This field only exists for Repo-Synced products.
+     */
+
+    public void setSourceRevision(String sourceRevision) {
+        this.sourceRevision = sourceRevision;
+    }
+
+    /**
+     * <p>
+     * Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product
+     * and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to
+     * the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs.
+     * </p>
+     * <p>
+     * This field only exists for Repo-Synced products.
+     * </p>
+     * 
+     * @return Specifies the revision of the external artifact that was used to automatically sync the Service Catalog
+     *         product and create the provisioning artifact. Service Catalog includes this response parameter as a high
+     *         level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of
+     *         the response for <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     *         <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>,
+     *         <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
+     *         <p>
+     *         This field only exists for Repo-Synced products.
+     */
+
+    public String getSourceRevision() {
+        return this.sourceRevision;
+    }
+
+    /**
+     * <p>
+     * Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product
+     * and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to
+     * the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for
+     * <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     * <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and
+     * <code>UpdateProvisioningArticat</code> APIs.
+     * </p>
+     * <p>
+     * This field only exists for Repo-Synced products.
+     * </p>
+     * 
+     * @param sourceRevision
+     *        Specifies the revision of the external artifact that was used to automatically sync the Service Catalog
+     *        product and create the provisioning artifact. Service Catalog includes this response parameter as a high
+     *        level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the
+     *        response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>,
+     *        <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and
+     *        <code>UpdateProvisioningArticat</code> APIs. </p>
+     *        <p>
+     *        This field only exists for Repo-Synced products.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisioningArtifactDetail withSourceRevision(String sourceRevision) {
+        setSourceRevision(sourceRevision);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -641,7 +795,9 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
         if (getActive() != null)
             sb.append("Active: ").append(getActive()).append(",");
         if (getGuidance() != null)
-            sb.append("Guidance: ").append(getGuidance());
+            sb.append("Guidance: ").append(getGuidance()).append(",");
+        if (getSourceRevision() != null)
+            sb.append("SourceRevision: ").append(getSourceRevision());
         sb.append("}");
         return sb.toString();
     }
@@ -684,6 +840,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getGuidance() != null && other.getGuidance().equals(this.getGuidance()) == false)
             return false;
+        if (other.getSourceRevision() == null ^ this.getSourceRevision() == null)
+            return false;
+        if (other.getSourceRevision() != null && other.getSourceRevision().equals(this.getSourceRevision()) == false)
+            return false;
         return true;
     }
 
@@ -699,6 +859,7 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         hashCode = prime * hashCode + ((getGuidance() == null) ? 0 : getGuidance().hashCode());
+        hashCode = prime * hashCode + ((getSourceRevision() == null) ? 0 : getSourceRevision().hashCode());
         return hashCode;
     }
 

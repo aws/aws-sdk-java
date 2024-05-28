@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values
  * greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS
- * values). Keep the default value (AUTO) to allow all PTS values.
+ * values). Keep the default value to allow all PTS values.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsDataPtsControl {

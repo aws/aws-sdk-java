@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Defines a resiliency policy.
  * </p>
+ * <note>
+ * <p>
+ * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of your
+ * resiliency policy. But, while assessing your application, the lowest possible assessment result is near zero. Hence,
+ * if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO and
+ * estimated workload RPO result will be near zero and the <b>Compliance status</b> for your application will be set to
+ * <b>Policy breached</b>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResiliencyPolicy" target="_top">AWS API
  *      Documentation</a>
@@ -30,7 +39,7 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp for when the resiliency policy was created.
+     * Date and time when the resiliency policy was created.
      * </p>
      */
     private java.util.Date creationTime;
@@ -54,10 +63,10 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
     private java.util.Map<String, FailurePolicy> policy;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String policyArn;
@@ -75,7 +84,7 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
     private String policyName;
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      */
@@ -90,11 +99,11 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp for when the resiliency policy was created.
+     * Date and time when the resiliency policy was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp for when the resiliency policy was created.
+     *        Date and time when the resiliency policy was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -103,10 +112,10 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp for when the resiliency policy was created.
+     * Date and time when the resiliency policy was created.
      * </p>
      * 
-     * @return The timestamp for when the resiliency policy was created.
+     * @return Date and time when the resiliency policy was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -115,11 +124,11 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp for when the resiliency policy was created.
+     * Date and time when the resiliency policy was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp for when the resiliency policy was created.
+     *        Date and time when the resiliency policy was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,18 +329,18 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -340,17 +349,17 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     * @return Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *         <code>policy-id</code>. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getPolicyArn() {
@@ -359,18 +368,18 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,12 +470,12 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
-     * @return The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *         Each tag consists of a key/value pair.
+     * @return Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *         tag consists of a key/value pair.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -475,13 +484,13 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -490,13 +499,13 @@ public class ResiliencyPolicy implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

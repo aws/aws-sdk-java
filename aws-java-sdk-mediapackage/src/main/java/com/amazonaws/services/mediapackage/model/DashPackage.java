@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     /**
      * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
      * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
-     * elements are combined and presented at the AdaptationSet level.
+     * elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content
+     * protection elements are placed the MPD level and referenced at the AdaptationSet level.
      */
     private String manifestLayout;
     /** Time window (in seconds) contained in each manifest. */
@@ -269,12 +270,15 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     /**
      * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
      * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
-     * elements are combined and presented at the AdaptationSet level.
+     * elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content
+     * protection elements are placed the MPD level and referenced at the AdaptationSet level.
      * 
      * @param manifestLayout
      *        Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
      *        elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
-     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to
+     *        DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the
+     *        AdaptationSet level.
      * @see ManifestLayout
      */
 
@@ -285,11 +289,14 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     /**
      * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
      * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
-     * elements are combined and presented at the AdaptationSet level.
+     * elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content
+     * protection elements are placed the MPD level and referenced at the AdaptationSet level.
      * 
      * @return Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
      *         elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
-     *         COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     *         COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to
+     *         DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the
+     *         AdaptationSet level.
      * @see ManifestLayout
      */
 
@@ -300,12 +307,15 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     /**
      * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
      * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
-     * elements are combined and presented at the AdaptationSet level.
+     * elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content
+     * protection elements are placed the MPD level and referenced at the AdaptationSet level.
      * 
      * @param manifestLayout
      *        Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
      *        elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
-     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to
+     *        DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the
+     *        AdaptationSet level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManifestLayout
      */
@@ -318,12 +328,15 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     /**
      * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
      * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
-     * elements are combined and presented at the AdaptationSet level.
+     * elements are combined and presented at the AdaptationSet level. When set to DRM_TOP_LEVEL_COMPACT, content
+     * protection elements are placed the MPD level and referenced at the AdaptationSet level.
      * 
      * @param manifestLayout
      *        Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
      *        elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
-     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level. When set to
+     *        DRM_TOP_LEVEL_COMPACT, content protection elements are placed the MPD level and referenced at the
+     *        AdaptationSet level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManifestLayout
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
+ * Specifies the training algorithm to use in a <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+ * request.
  * </p>
  * <p>
  * For more information about algorithms provided by SageMaker, see <a
@@ -124,7 +126,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You specify at least one <a>MetricDefinition</a>
+     * You specify at least one <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * </p>
      * </li>
      * </ul>
@@ -147,6 +150,12 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.List<String> containerArguments;
+    /**
+     * <p>
+     * The configuration to use an image from a private Docker registry for a training job.
+     * </p>
+     */
+    private TrainingImageConfig trainingImageConfig;
 
     /**
      * <p>
@@ -563,7 +572,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You specify at least one <a>MetricDefinition</a>
+     * You specify at least one <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * </p>
      * </li>
      * </ul>
@@ -603,7 +613,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        </li>
      *        <li>
      *        <p>
-     *        You specify at least one <a>MetricDefinition</a>
+     *        You specify at least one <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html"
+     *        >MetricDefinition</a>
      *        </p>
      *        </li>
      */
@@ -649,7 +661,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You specify at least one <a>MetricDefinition</a>
+     * You specify at least one <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * </p>
      * </li>
      * </ul>
@@ -688,7 +701,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *         </li>
      *         <li>
      *         <p>
-     *         You specify at least one <a>MetricDefinition</a>
+     *         You specify at least one <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html"
+     *         >MetricDefinition</a>
      *         </p>
      *         </li>
      */
@@ -734,7 +749,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You specify at least one <a>MetricDefinition</a>
+     * You specify at least one <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * </p>
      * </li>
      * </ul>
@@ -774,7 +790,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        </li>
      *        <li>
      *        <p>
-     *        You specify at least one <a>MetricDefinition</a>
+     *        You specify at least one <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html"
+     *        >MetricDefinition</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -822,7 +840,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You specify at least one <a>MetricDefinition</a>
+     * You specify at least one <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * </p>
      * </li>
      * </ul>
@@ -861,7 +880,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *         </li>
      *         <li>
      *         <p>
-     *         You specify at least one <a>MetricDefinition</a>
+     *         You specify at least one <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html"
+     *         >MetricDefinition</a>
      *         </p>
      *         </li>
      */
@@ -1055,6 +1076,46 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The configuration to use an image from a private Docker registry for a training job.
+     * </p>
+     * 
+     * @param trainingImageConfig
+     *        The configuration to use an image from a private Docker registry for a training job.
+     */
+
+    public void setTrainingImageConfig(TrainingImageConfig trainingImageConfig) {
+        this.trainingImageConfig = trainingImageConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration to use an image from a private Docker registry for a training job.
+     * </p>
+     * 
+     * @return The configuration to use an image from a private Docker registry for a training job.
+     */
+
+    public TrainingImageConfig getTrainingImageConfig() {
+        return this.trainingImageConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration to use an image from a private Docker registry for a training job.
+     * </p>
+     * 
+     * @param trainingImageConfig
+     *        The configuration to use an image from a private Docker registry for a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withTrainingImageConfig(TrainingImageConfig trainingImageConfig) {
+        setTrainingImageConfig(trainingImageConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1079,7 +1140,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         if (getContainerEntrypoint() != null)
             sb.append("ContainerEntrypoint: ").append(getContainerEntrypoint()).append(",");
         if (getContainerArguments() != null)
-            sb.append("ContainerArguments: ").append(getContainerArguments());
+            sb.append("ContainerArguments: ").append(getContainerArguments()).append(",");
+        if (getTrainingImageConfig() != null)
+            sb.append("TrainingImageConfig: ").append(getTrainingImageConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1123,6 +1186,10 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
             return false;
         if (other.getContainerArguments() != null && other.getContainerArguments().equals(this.getContainerArguments()) == false)
             return false;
+        if (other.getTrainingImageConfig() == null ^ this.getTrainingImageConfig() == null)
+            return false;
+        if (other.getTrainingImageConfig() != null && other.getTrainingImageConfig().equals(this.getTrainingImageConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1138,6 +1205,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getEnableSageMakerMetricsTimeSeries() == null) ? 0 : getEnableSageMakerMetricsTimeSeries().hashCode());
         hashCode = prime * hashCode + ((getContainerEntrypoint() == null) ? 0 : getContainerEntrypoint().hashCode());
         hashCode = prime * hashCode + ((getContainerArguments() == null) ? 0 : getContainerArguments().hashCode());
+        hashCode = prime * hashCode + ((getTrainingImageConfig() == null) ? 0 : getTrainingImageConfig().hashCode());
         return hashCode;
     }
 

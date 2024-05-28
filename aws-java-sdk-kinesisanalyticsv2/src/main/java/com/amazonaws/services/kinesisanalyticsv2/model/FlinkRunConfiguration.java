@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+ * Describes the starting parameters for a Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkRunConfiguration"
@@ -33,9 +33,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      * When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to
      * the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and
      * state data in the snapshot no longer corresponds to valid application data. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      * > Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.
      * </p>
      * <note>
      * <p>
@@ -52,9 +52,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      * When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to
      * the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and
      * state data in the snapshot no longer corresponds to valid application data. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      * > Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.
      * </p>
      * <note>
      * <p>
@@ -69,9 +69,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      *        mapped to the new program. This will happen if the program is updated between snapshots to remove stateful
      *        parameters, and state data in the snapshot no longer corresponds to valid application data. For more
      *        information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     *        "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      *        > Allowing Non-Restored State</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p>
+     *        href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p>
      *        <note>
      *        <p>
      *        This value defaults to <code>false</code>. If you update your application without specifying this
@@ -89,9 +89,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      * When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to
      * the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and
      * state data in the snapshot no longer corresponds to valid application data. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      * > Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.
      * </p>
      * <note>
      * <p>
@@ -105,9 +105,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      *         mapped to the new program. This will happen if the program is updated between snapshots to remove
      *         stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For
      *         more information, see <a href=
-     *         "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     *         "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      *         > Allowing Non-Restored State</a> in the <a
-     *         href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p>
+     *         href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p>
      *         <note>
      *         <p>
      *         This value defaults to <code>false</code>. If you update your application without specifying this
@@ -125,9 +125,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      * When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to
      * the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and
      * state data in the snapshot no longer corresponds to valid application data. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      * > Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.
      * </p>
      * <note>
      * <p>
@@ -142,9 +142,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      *        mapped to the new program. This will happen if the program is updated between snapshots to remove stateful
      *        parameters, and state data in the snapshot no longer corresponds to valid application data. For more
      *        information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     *        "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      *        > Allowing Non-Restored State</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p>
+     *        href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p>
      *        <note>
      *        <p>
      *        This value defaults to <code>false</code>. If you update your application without specifying this
@@ -164,9 +164,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      * When restoring from a snapshot, specifies whether the runtime is allowed to skip a state that cannot be mapped to
      * the new program. This will happen if the program is updated between snapshots to remove stateful parameters, and
      * state data in the snapshot no longer corresponds to valid application data. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      * > Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.
      * </p>
      * <note>
      * <p>
@@ -180,9 +180,9 @@ public class FlinkRunConfiguration implements Serializable, Cloneable, Structure
      *         mapped to the new program. This will happen if the program is updated between snapshots to remove
      *         stateful parameters, and state data in the snapshot no longer corresponds to valid application data. For
      *         more information, see <a href=
-     *         "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state"
+     *         "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state"
      *         > Allowing Non-Restored State</a> in the <a
-     *         href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink documentation</a>.</p>
+     *         href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink documentation</a>.</p>
      *         <note>
      *         <p>
      *         This value defaults to <code>false</code>. If you update your application without specifying this

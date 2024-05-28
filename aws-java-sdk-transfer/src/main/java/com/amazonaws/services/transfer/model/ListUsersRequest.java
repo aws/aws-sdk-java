@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer maxResults;
     /**
      * <p>
-     * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
-     * continue listing additional users.
+     * If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
+     * returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code>
+     * command, to continue listing additional users.
      * </p>
      */
     private String nextToken;
@@ -88,15 +88,15 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
-     * continue listing additional users.
+     * If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
+     * returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code>
+     * command, to continue listing additional users.
      * </p>
      * 
      * @param nextToken
-     *        When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-     *        parameter is returned in the output. You can then pass in a subsequent command to the
-     *        <code>NextToken</code> parameter to continue listing additional users.
+     *        If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter
+     *        is returned in the output. You can then pass the <code>NextToken</code> to a subsequent
+     *        <code>ListUsers</code> command, to continue listing additional users.
      */
 
     public void setNextToken(String nextToken) {
@@ -105,14 +105,14 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
-     * continue listing additional users.
+     * If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
+     * returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code>
+     * command, to continue listing additional users.
      * </p>
      * 
-     * @return When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-     *         parameter is returned in the output. You can then pass in a subsequent command to the
-     *         <code>NextToken</code> parameter to continue listing additional users.
+     * @return If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter
+     *         is returned in the output. You can then pass the <code>NextToken</code> to a subsequent
+     *         <code>ListUsers</code> command, to continue listing additional users.
      */
 
     public String getNextToken() {
@@ -121,15 +121,15 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
-     * continue listing additional users.
+     * If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
+     * returned in the output. You can then pass the <code>NextToken</code> to a subsequent <code>ListUsers</code>
+     * command, to continue listing additional users.
      * </p>
      * 
      * @param nextToken
-     *        When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-     *        parameter is returned in the output. You can then pass in a subsequent command to the
-     *        <code>NextToken</code> parameter to continue listing additional users.
+     *        If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter
+     *        is returned in the output. You can then pass the <code>NextToken</code> to a subsequent
+     *        <code>ListUsers</code> command, to continue listing additional users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

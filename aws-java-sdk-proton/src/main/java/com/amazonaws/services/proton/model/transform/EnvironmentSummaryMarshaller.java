@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,10 +43,14 @@ public class EnvironmentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentAccountConnectionId").build();
     private static final MarshallingInfo<String> ENVIRONMENTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentAccountId").build();
+    private static final MarshallingInfo<String> LASTATTEMPTEDDEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAttemptedDeploymentId").build();
     private static final MarshallingInfo<java.util.Date> LASTDEPLOYMENTATTEMPTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastDeploymentAttemptedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTDEPLOYMENTSUCCEEDEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastDeploymentSucceededAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LASTSUCCEEDEDDEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastSucceededDeploymentId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> PROTONSERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -84,8 +88,10 @@ public class EnvironmentSummaryMarshaller {
             protocolMarshaller.marshall(environmentSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(environmentSummary.getEnvironmentAccountConnectionId(), ENVIRONMENTACCOUNTCONNECTIONID_BINDING);
             protocolMarshaller.marshall(environmentSummary.getEnvironmentAccountId(), ENVIRONMENTACCOUNTID_BINDING);
+            protocolMarshaller.marshall(environmentSummary.getLastAttemptedDeploymentId(), LASTATTEMPTEDDEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(environmentSummary.getLastDeploymentAttemptedAt(), LASTDEPLOYMENTATTEMPTEDAT_BINDING);
             protocolMarshaller.marshall(environmentSummary.getLastDeploymentSucceededAt(), LASTDEPLOYMENTSUCCEEDEDAT_BINDING);
+            protocolMarshaller.marshall(environmentSummary.getLastSucceededDeploymentId(), LASTSUCCEEDEDDEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(environmentSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(environmentSummary.getProtonServiceRoleArn(), PROTONSERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(environmentSummary.getProvisioning(), PROVISIONING_BINDING);

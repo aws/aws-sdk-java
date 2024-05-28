@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,16 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </li>
  * <li>
  * <p>
+ * Amazon SageMaker Serverless endpoint provisioned concurrency
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon SageMaker inference components
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Spot Fleets (Amazon EC2)
  * </p>
  * </li>
@@ -100,6 +110,11 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * To learn more about Application Auto Scaling, see the <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+ * >Application Auto Scaling User Guide</a>.
+ * </p>
  * <p>
  * <b>API Summary</b>
  * </p>
@@ -130,12 +145,6 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </p>
  * </li>
  * </ul>
- * <p>
- * To learn more about Application Auto Scaling, including information about granting IAM users required permissions for
- * Application Auto Scaling actions, see the <a
- * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
- * >Application Auto Scaling User Guide</a>.
- * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScaling {
@@ -150,9 +159,9 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy"
      * >Delete a step scaling policy</a> and <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy"
      * >Delete a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -174,9 +183,9 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy"
      * >Delete a step scaling policy</a> and <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy"
      * >Delete a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
@@ -328,6 +337,11 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * <p>
      * You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
      * </p>
+     * <p>
+     * For information about viewing scaling activities using the Amazon Web Services CLI, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
      * 
      * @param describeScalingActivitiesRequest
      * @return A Java Future containing the result of the DescribeScalingActivities operation returned by the service.
@@ -346,6 +360,11 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <p>
      * You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
+     * </p>
+     * <p>
+     * For information about viewing scaling activities using the Amazon Web Services CLI, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
      * </p>
      * 
      * @param describeScalingActivitiesRequest
@@ -471,6 +490,47 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
+     * Returns all the tags on the specified Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * For general information about tags, including the format and syntax, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns all the tags on the specified Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * For general information about tags, including the format and syntax, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates or updates a scaling policy for an Application Auto Scaling scalable target.
      * </p>
      * <p>
@@ -503,7 +563,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <note>
      * <p>
-     * If a scalable target is deregistered, the scalable target is no longer available to execute scaling policies. Any
+     * If a scalable target is deregistered, the scalable target is no longer available to use scaling policies. Any
      * scaling policies that were specified for the scalable target are deleted.
      * </p>
      * </note>
@@ -550,7 +610,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <note>
      * <p>
-     * If a scalable target is deregistered, the scalable target is no longer available to execute scaling policies. Any
+     * If a scalable target is deregistered, the scalable target is no longer available to use scaling policies. Any
      * scaling policies that were specified for the scalable target are deleted.
      * </p>
      * </note>
@@ -578,7 +638,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * until you have registered the resource as a scalable target.
      * </p>
      * <p>
-     * When start and end times are specified with a recurring schedule using a cron expression or rates, they form the
+     * When you specify start and end times with a recurring schedule using a cron expression or rates, they form the
      * boundaries for when the recurring action starts and stops.
      * </p>
      * <p>
@@ -615,7 +675,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * until you have registered the resource as a scalable target.
      * </p>
      * <p>
-     * When start and end times are specified with a recurring schedule using a cron expression or rates, they form the
+     * When you specify start and end times with a recurring schedule using a cron expression or rates, they form the
      * boundaries for when the recurring action starts and stops.
      * </p>
      * <p>
@@ -649,16 +709,21 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
-     * Registers or updates a scalable target.
+     * Registers or updates a scalable target, which is the resource that you want to scale.
      * </p>
      * <p>
-     * A scalable target is a resource that Application Auto Scaling can scale out and scale in. Scalable targets are
-     * uniquely identified by the combination of resource ID, scalable dimension, and namespace.
+     * Scalable targets are uniquely identified by the combination of resource ID, scalable dimension, and namespace,
+     * which represents some capacity dimension of the underlying service.
      * </p>
      * <p>
-     * When you register a new scalable target, you must specify values for minimum and maximum capacity. Current
-     * capacity will be adjusted within the specified range when scaling starts. Application Auto Scaling scaling
-     * policies will not scale capacity to values that are outside of this range.
+     * When you register a new scalable target, you must specify values for the minimum and maximum capacity. If the
+     * specified resource is not active in the target service, this operation does not change the resource's current
+     * capacity. Otherwise, it changes the resource's current capacity to a value that is inside of this range.
+     * </p>
+     * <p>
+     * If you add a scaling policy, current capacity is adjustable within the specified range when scaling starts.
+     * Application Auto Scaling scaling policies will not scale capacity to values that are outside of the minimum and
+     * maximum range.
      * </p>
      * <p>
      * After you register a scalable target, you do not need to register it again to use other Application Auto Scaling
@@ -677,10 +742,18 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <note>
      * <p>
-     * If you call the <code>RegisterScalableTarget</code> API to update an existing scalable target, Application Auto
-     * Scaling retrieves the current capacity of the resource. If it is below the minimum capacity or above the maximum
-     * capacity, Application Auto Scaling adjusts the capacity of the scalable target to place it within these bounds,
-     * even if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request parameters.
+     * If you call the <code>RegisterScalableTarget</code> API operation to create a scalable target, there might be a
+     * brief delay until the operation achieves <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+     * consistency</a>. You might become aware of this brief delay if you get unexpected errors when performing
+     * sequential operations. The typical strategy is to retry the request, and some Amazon Web Services SDKs include
+     * automatic backoff and retry logic.
+     * </p>
+     * <p>
+     * If you call the <code>RegisterScalableTarget</code> API operation to update an existing scalable target,
+     * Application Auto Scaling retrieves the current capacity of the resource. If it's below the minimum capacity or
+     * above the maximum capacity, Application Auto Scaling adjusts the capacity of the scalable target to place it
+     * within these bounds, even if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request
+     * parameters.
      * </p>
      * </note>
      * 
@@ -694,16 +767,21 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
-     * Registers or updates a scalable target.
+     * Registers or updates a scalable target, which is the resource that you want to scale.
      * </p>
      * <p>
-     * A scalable target is a resource that Application Auto Scaling can scale out and scale in. Scalable targets are
-     * uniquely identified by the combination of resource ID, scalable dimension, and namespace.
+     * Scalable targets are uniquely identified by the combination of resource ID, scalable dimension, and namespace,
+     * which represents some capacity dimension of the underlying service.
      * </p>
      * <p>
-     * When you register a new scalable target, you must specify values for minimum and maximum capacity. Current
-     * capacity will be adjusted within the specified range when scaling starts. Application Auto Scaling scaling
-     * policies will not scale capacity to values that are outside of this range.
+     * When you register a new scalable target, you must specify values for the minimum and maximum capacity. If the
+     * specified resource is not active in the target service, this operation does not change the resource's current
+     * capacity. Otherwise, it changes the resource's current capacity to a value that is inside of this range.
+     * </p>
+     * <p>
+     * If you add a scaling policy, current capacity is adjustable within the specified range when scaling starts.
+     * Application Auto Scaling scaling policies will not scale capacity to values that are outside of the minimum and
+     * maximum range.
      * </p>
      * <p>
      * After you register a scalable target, you do not need to register it again to use other Application Auto Scaling
@@ -722,10 +800,18 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      * </p>
      * <note>
      * <p>
-     * If you call the <code>RegisterScalableTarget</code> API to update an existing scalable target, Application Auto
-     * Scaling retrieves the current capacity of the resource. If it is below the minimum capacity or above the maximum
-     * capacity, Application Auto Scaling adjusts the capacity of the scalable target to place it within these bounds,
-     * even if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request parameters.
+     * If you call the <code>RegisterScalableTarget</code> API operation to create a scalable target, there might be a
+     * brief delay until the operation achieves <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+     * consistency</a>. You might become aware of this brief delay if you get unexpected errors when performing
+     * sequential operations. The typical strategy is to retry the request, and some Amazon Web Services SDKs include
+     * automatic backoff and retry logic.
+     * </p>
+     * <p>
+     * If you call the <code>RegisterScalableTarget</code> API operation to update an existing scalable target,
+     * Application Auto Scaling retrieves the current capacity of the resource. If it's below the minimum capacity or
+     * above the maximum capacity, Application Auto Scaling adjusts the capacity of the scalable target to place it
+     * within these bounds, even if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request
+     * parameters.
      * </p>
      * </note>
      * 
@@ -741,5 +827,113 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      */
     java.util.concurrent.Future<RegisterScalableTargetResult> registerScalableTargetAsync(RegisterScalableTargetRequest registerScalableTargetRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterScalableTargetRequest, RegisterScalableTargetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or edits tags on an Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value, which are both case-sensitive strings. To add a tag, specify a
+     * new tag key and a tag value. To edit a tag, specify an existing tag key and a new tag value.
+     * </p>
+     * <p>
+     * You can use this operation to tag an Application Auto Scaling scalable target, but you cannot tag a scaling
+     * policy or scheduled action.
+     * </p>
+     * <p>
+     * You can also add tags to an Application Auto Scaling scalable target while creating it (
+     * <code>RegisterScalableTarget</code>).
+     * </p>
+     * <p>
+     * For general information about tags, including the format and syntax, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * <p>
+     * Use tags to control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or edits tags on an Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value, which are both case-sensitive strings. To add a tag, specify a
+     * new tag key and a tag value. To edit a tag, specify an existing tag key and a new tag value.
+     * </p>
+     * <p>
+     * You can use this operation to tag an Application Auto Scaling scalable target, but you cannot tag a scaling
+     * policy or scheduled action.
+     * </p>
+     * <p>
+     * You can also add tags to an Application Auto Scaling scalable target while creating it (
+     * <code>RegisterScalableTarget</code>).
+     * </p>
+     * <p>
+     * For general information about tags, including the format and syntax, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * <p>
+     * Use tags to control access to a scalable target. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+     * support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes tags from an Application Auto Scaling scalable target. To delete a tag, specify the tag key and the
+     * Application Auto Scaling scalable target.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes tags from an Application Auto Scaling scalable target. To delete a tag, specify the tag key and the
+     * Application Auto Scaling scalable target.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

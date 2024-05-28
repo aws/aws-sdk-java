@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -147,6 +147,100 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain list.
+     * </p>
+     */
+    private String firewallDomainRedirectionAction;
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String qtype;
 
     /**
      * <p>
@@ -1055,6 +1149,610 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain list.
+     * </p>
+     * 
+     * @param firewallDomainRedirectionAction
+     *        How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or
+     *        DNAME. </p>
+     *        <p>
+     *        <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *        individual domains in the redirection chain must be added to the domain list.
+     *        </p>
+     *        <p>
+     *        <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *        need to add the subsequent domains in the domain in the redirection list to the domain list.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public void setFirewallDomainRedirectionAction(String firewallDomainRedirectionAction) {
+        this.firewallDomainRedirectionAction = firewallDomainRedirectionAction;
+    }
+
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain list.
+     * </p>
+     * 
+     * @return How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or
+     *         DNAME. </p>
+     *         <p>
+     *         <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *         individual domains in the redirection chain must be added to the domain list.
+     *         </p>
+     *         <p>
+     *         <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *         need to add the subsequent domains in the domain in the redirection list to the domain list.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public String getFirewallDomainRedirectionAction() {
+        return this.firewallDomainRedirectionAction;
+    }
+
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain list.
+     * </p>
+     * 
+     * @param firewallDomainRedirectionAction
+     *        How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or
+     *        DNAME. </p>
+     *        <p>
+     *        <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *        individual domains in the redirection chain must be added to the domain list.
+     *        </p>
+     *        <p>
+     *        <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *        need to add the subsequent domains in the domain in the redirection list to the domain list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public CreateFirewallRuleRequest withFirewallDomainRedirectionAction(String firewallDomainRedirectionAction) {
+        setFirewallDomainRedirectionAction(firewallDomainRedirectionAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain list.
+     * </p>
+     * 
+     * @param firewallDomainRedirectionAction
+     *        How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or
+     *        DNAME. </p>
+     *        <p>
+     *        <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *        individual domains in the redirection chain must be added to the domain list.
+     *        </p>
+     *        <p>
+     *        <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *        need to add the subsequent domains in the domain in the redirection list to the domain list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public CreateFirewallRuleRequest withFirewallDomainRedirectionAction(FirewallDomainRedirectionAction firewallDomainRedirectionAction) {
+        this.firewallDomainRedirectionAction = firewallDomainRedirectionAction.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param qtype
+     *        The DNS query type you want the rule to evaluate. Allowed values are; </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A: Returns an IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AAAA: Returns an Ipv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNAME: Returns another domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MX: Specifies mail servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NAPTR: Regular-expression-based rewriting of domain names.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NS: Authoritative name servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PTR: Maps an IP address to a domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SOA: Start of authority record for the zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SPF: Lists the servers authorized to send emails from a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SRV: Application specific values that identify servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *        TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     *        </p>
+     *        </li>
+     */
+
+    public void setQtype(String qtype) {
+        this.qtype = qtype;
+    }
+
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The DNS query type you want the rule to evaluate. Allowed values are; </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A: Returns an IPv4 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AAAA: Returns an Ipv6 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CNAME: Returns another domain name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MX: Specifies mail servers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NAPTR: Regular-expression-based rewriting of domain names.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NS: Authoritative name servers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PTR: Maps an IP address to a domain name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SOA: Start of authority record for the zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SPF: Lists the servers authorized to send emails from a domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SRV: Application specific values that identify servers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TXT: Verifies email senders and application-specific values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *         TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *         href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     *         </p>
+     *         </li>
+     */
+
+    public String getQtype() {
+        return this.qtype;
+    }
+
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param qtype
+     *        The DNS query type you want the rule to evaluate. Allowed values are; </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A: Returns an IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AAAA: Returns an Ipv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNAME: Returns another domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MX: Specifies mail servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NAPTR: Regular-expression-based rewriting of domain names.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NS: Authoritative name servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PTR: Maps an IP address to a domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SOA: Start of authority record for the zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SPF: Lists the servers authorized to send emails from a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SRV: Application specific values that identify servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *        TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFirewallRuleRequest withQtype(String qtype) {
+        setQtype(qtype);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1085,7 +1783,11 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
         if (getBlockOverrideTtl() != null)
             sb.append("BlockOverrideTtl: ").append(getBlockOverrideTtl()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getFirewallDomainRedirectionAction() != null)
+            sb.append("FirewallDomainRedirectionAction: ").append(getFirewallDomainRedirectionAction()).append(",");
+        if (getQtype() != null)
+            sb.append("Qtype: ").append(getQtype());
         sb.append("}");
         return sb.toString();
     }
@@ -1140,6 +1842,15 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getFirewallDomainRedirectionAction() == null ^ this.getFirewallDomainRedirectionAction() == null)
+            return false;
+        if (other.getFirewallDomainRedirectionAction() != null
+                && other.getFirewallDomainRedirectionAction().equals(this.getFirewallDomainRedirectionAction()) == false)
+            return false;
+        if (other.getQtype() == null ^ this.getQtype() == null)
+            return false;
+        if (other.getQtype() != null && other.getQtype().equals(this.getQtype()) == false)
+            return false;
         return true;
     }
 
@@ -1158,6 +1869,8 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getBlockOverrideDnsType() == null) ? 0 : getBlockOverrideDnsType().hashCode());
         hashCode = prime * hashCode + ((getBlockOverrideTtl() == null) ? 0 : getBlockOverrideTtl().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFirewallDomainRedirectionAction() == null) ? 0 : getFirewallDomainRedirectionAction().hashCode());
+        hashCode = prime * hashCode + ((getQtype() == null) ? 0 : getQtype().hashCode());
         return hashCode;
     }
 

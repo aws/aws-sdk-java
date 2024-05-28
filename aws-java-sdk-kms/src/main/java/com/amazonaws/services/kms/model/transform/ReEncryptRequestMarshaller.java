@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class ReEncryptRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationEncryptionAlgorithm").build();
     private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantTokens").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final ReEncryptRequestMarshaller instance = new ReEncryptRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class ReEncryptRequestMarshaller {
             protocolMarshaller.marshall(reEncryptRequest.getSourceEncryptionAlgorithm(), SOURCEENCRYPTIONALGORITHM_BINDING);
             protocolMarshaller.marshall(reEncryptRequest.getDestinationEncryptionAlgorithm(), DESTINATIONENCRYPTIONALGORITHM_BINDING);
             protocolMarshaller.marshall(reEncryptRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+            protocolMarshaller.marshall(reEncryptRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

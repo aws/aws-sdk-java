@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.
      * </p>
      */
@@ -395,7 +395,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.
      * </p>
      * 
@@ -407,7 +407,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *        >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems
+     *        >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems
      *        Manager User Guide</i>.
      */
 
@@ -424,7 +424,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.
      * </p>
      * 
@@ -435,7 +435,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *         >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems
+     *         >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems
      *         Manager User Guide</i>.
      */
 
@@ -452,7 +452,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     * >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User
+     * >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.
      * </p>
      * 
@@ -464,7 +464,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *        >About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems
+     *        >About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems
      *        Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

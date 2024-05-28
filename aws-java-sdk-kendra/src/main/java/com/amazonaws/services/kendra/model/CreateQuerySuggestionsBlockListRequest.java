@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,17 +33,17 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
     private String indexId;
     /**
      * <p>
-     * A user friendly name for the block list.
+     * A name for the block list.
      * </p>
      * <p>
-     * For example, the block list named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.
+     * For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and
+     * need to be blocked from suggestions.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A user-friendly description for the block list.
+     * A description for the block list.
      * </p>
      * <p>
      * For example, the description
@@ -72,18 +72,16 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
     private String clientToken;
     /**
      * <p>
-     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3
-     * bucket.
-     * </p>
-     * <p>
-     * You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to
-     * your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block
+     * list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * A tag that you can assign to a block list that categorizes the block list.
+     * A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode
+     * letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -130,17 +128,17 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A user friendly name for the block list.
+     * A name for the block list.
      * </p>
      * <p>
-     * For example, the block list named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.
+     * For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and
+     * need to be blocked from suggestions.
      * </p>
      * 
      * @param name
-     *        A user friendly name for the block list.</p>
+     *        A name for the block list.</p>
      *        <p>
-     *        For example, the block list named 'offensive-words' includes all offensive words that could appear in user
+     *        For example, the name 'offensive-words', which includes all offensive words that could appear in user
      *        queries and need to be blocked from suggestions.
      */
 
@@ -150,17 +148,17 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A user friendly name for the block list.
+     * A name for the block list.
      * </p>
      * <p>
-     * For example, the block list named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.
+     * For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and
+     * need to be blocked from suggestions.
      * </p>
      * 
-     * @return A user friendly name for the block list.</p>
+     * @return A name for the block list.</p>
      *         <p>
-     *         For example, the block list named 'offensive-words' includes all offensive words that could appear in
-     *         user queries and need to be blocked from suggestions.
+     *         For example, the name 'offensive-words', which includes all offensive words that could appear in user
+     *         queries and need to be blocked from suggestions.
      */
 
     public String getName() {
@@ -169,17 +167,17 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A user friendly name for the block list.
+     * A name for the block list.
      * </p>
      * <p>
-     * For example, the block list named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.
+     * For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and
+     * need to be blocked from suggestions.
      * </p>
      * 
      * @param name
-     *        A user friendly name for the block list.</p>
+     *        A name for the block list.</p>
      *        <p>
-     *        For example, the block list named 'offensive-words' includes all offensive words that could appear in user
+     *        For example, the name 'offensive-words', which includes all offensive words that could appear in user
      *        queries and need to be blocked from suggestions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -191,7 +189,7 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A user-friendly description for the block list.
+     * A description for the block list.
      * </p>
      * <p>
      * For example, the description
@@ -199,7 +197,7 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param description
-     *        A user-friendly description for the block list.</p>
+     *        A description for the block list.</p>
      *        <p>
      *        For example, the description
      *        "List of all offensive words that can appear in user queries and need to be blocked from suggestions."
@@ -211,14 +209,14 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A user-friendly description for the block list.
+     * A description for the block list.
      * </p>
      * <p>
      * For example, the description
      * "List of all offensive words that can appear in user queries and need to be blocked from suggestions."
      * </p>
      * 
-     * @return A user-friendly description for the block list.</p>
+     * @return A description for the block list.</p>
      *         <p>
      *         For example, the description
      *         "List of all offensive words that can appear in user queries and need to be blocked from suggestions."
@@ -230,7 +228,7 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A user-friendly description for the block list.
+     * A description for the block list.
      * </p>
      * <p>
      * For example, the description
@@ -238,7 +236,7 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param description
-     *        A user-friendly description for the block list.</p>
+     *        A description for the block list.</p>
      *        <p>
      *        For example, the description
      *        "List of all offensive words that can appear in user queries and need to be blocked from suggestions."
@@ -371,21 +369,15 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3
-     * bucket.
-     * </p>
-     * <p>
-     * You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to
-     * your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block
+     * list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in
-     *        your S3 bucket.</p>
-     *        <p>
-     *        You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read
-     *        permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to
-     *        Amazon Kendra.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     *        block list text file. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -394,20 +386,15 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3
-     * bucket.
-     * </p>
-     * <p>
-     * You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to
-     * your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block
+     * list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
-     * @return The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in
-     *         your S3 bucket.</p>
-     *         <p>
-     *         You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read
-     *         permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to
-     *         Amazon Kendra.
+     * @return The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     *         block list text file. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *         Kendra</a>.
      */
 
     public String getRoleArn() {
@@ -416,21 +403,15 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3
-     * bucket.
-     * </p>
-     * <p>
-     * You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to
-     * your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block
+     * list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in
-     *        your S3 bucket.</p>
-     *        <p>
-     *        You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read
-     *        permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to
-     *        Amazon Kendra.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     *        block list text file. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,10 +422,12 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A tag that you can assign to a block list that categorizes the block list.
+     * A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode
+     * letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * 
-     * @return A tag that you can assign to a block list that categorizes the block list.
+     * @return A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of
+     *         Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      */
 
     public java.util.List<Tag> getTags() {
@@ -453,11 +436,13 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A tag that you can assign to a block list that categorizes the block list.
+     * A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode
+     * letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A tag that you can assign to a block list that categorizes the block list.
+     *        A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of
+     *        Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -471,7 +456,8 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A tag that you can assign to a block list that categorizes the block list.
+     * A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode
+     * letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -480,7 +466,8 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param tags
-     *        A tag that you can assign to a block list that categorizes the block list.
+     *        A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of
+     *        Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,11 +483,13 @@ public class CreateQuerySuggestionsBlockListRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A tag that you can assign to a block list that categorizes the block list.
+     * A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode
+     * letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A tag that you can assign to a block list that categorizes the block list.
+     *        A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of
+     *        Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

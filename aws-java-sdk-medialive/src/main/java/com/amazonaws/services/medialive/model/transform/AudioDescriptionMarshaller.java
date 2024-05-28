@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -49,6 +50,10 @@ public class AudioDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remixSettings").build();
     private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamName").build();
+    private static final MarshallingInfo<List> AUDIODASHROLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDashRoles").build();
+    private static final MarshallingInfo<String> DVBDASHACCESSIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dvbDashAccessibility").build();
 
     private static final AudioDescriptionMarshaller instance = new AudioDescriptionMarshaller();
 
@@ -77,6 +82,8 @@ public class AudioDescriptionMarshaller {
             protocolMarshaller.marshall(audioDescription.getName(), NAME_BINDING);
             protocolMarshaller.marshall(audioDescription.getRemixSettings(), REMIXSETTINGS_BINDING);
             protocolMarshaller.marshall(audioDescription.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(audioDescription.getAudioDashRoles(), AUDIODASHROLES_BINDING);
+            protocolMarshaller.marshall(audioDescription.getDvbDashAccessibility(), DVBDASHACCESSIBILITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

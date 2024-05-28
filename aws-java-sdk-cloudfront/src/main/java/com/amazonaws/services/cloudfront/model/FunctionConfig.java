@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,16 @@ public class FunctionConfig implements Serializable, Cloneable {
     private String comment;
     /**
      * <p>
-     * The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment version.
      * </p>
      */
     private String runtime;
+    /**
+     * <p>
+     * The configuration for the key value store associations.
+     * </p>
+     */
+    private KeyValueStoreAssociations keyValueStoreAssociations;
 
     /**
      * <p>
@@ -81,11 +87,11 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment version.
      * </p>
      * 
      * @param runtime
-     *        The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     *        The function's runtime environment version.
      * @see FunctionRuntime
      */
 
@@ -95,10 +101,10 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment version.
      * </p>
      * 
-     * @return The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * @return The function's runtime environment version.
      * @see FunctionRuntime
      */
 
@@ -108,11 +114,11 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment version.
      * </p>
      * 
      * @param runtime
-     *        The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     *        The function's runtime environment version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionRuntime
      */
@@ -124,17 +130,57 @@ public class FunctionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     * The function's runtime environment version.
      * </p>
      * 
      * @param runtime
-     *        The function’s runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.
+     *        The function's runtime environment version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionRuntime
      */
 
     public FunctionConfig withRuntime(FunctionRuntime runtime) {
         this.runtime = runtime.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for the key value store associations.
+     * </p>
+     * 
+     * @param keyValueStoreAssociations
+     *        The configuration for the key value store associations.
+     */
+
+    public void setKeyValueStoreAssociations(KeyValueStoreAssociations keyValueStoreAssociations) {
+        this.keyValueStoreAssociations = keyValueStoreAssociations;
+    }
+
+    /**
+     * <p>
+     * The configuration for the key value store associations.
+     * </p>
+     * 
+     * @return The configuration for the key value store associations.
+     */
+
+    public KeyValueStoreAssociations getKeyValueStoreAssociations() {
+        return this.keyValueStoreAssociations;
+    }
+
+    /**
+     * <p>
+     * The configuration for the key value store associations.
+     * </p>
+     * 
+     * @param keyValueStoreAssociations
+     *        The configuration for the key value store associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfig withKeyValueStoreAssociations(KeyValueStoreAssociations keyValueStoreAssociations) {
+        setKeyValueStoreAssociations(keyValueStoreAssociations);
         return this;
     }
 
@@ -153,7 +199,9 @@ public class FunctionConfig implements Serializable, Cloneable {
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getRuntime() != null)
-            sb.append("Runtime: ").append(getRuntime());
+            sb.append("Runtime: ").append(getRuntime()).append(",");
+        if (getKeyValueStoreAssociations() != null)
+            sb.append("KeyValueStoreAssociations: ").append(getKeyValueStoreAssociations());
         sb.append("}");
         return sb.toString();
     }
@@ -176,6 +224,10 @@ public class FunctionConfig implements Serializable, Cloneable {
             return false;
         if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
             return false;
+        if (other.getKeyValueStoreAssociations() == null ^ this.getKeyValueStoreAssociations() == null)
+            return false;
+        if (other.getKeyValueStoreAssociations() != null && other.getKeyValueStoreAssociations().equals(this.getKeyValueStoreAssociations()) == false)
+            return false;
         return true;
     }
 
@@ -186,6 +238,7 @@ public class FunctionConfig implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
+        hashCode = prime * hashCode + ((getKeyValueStoreAssociations() == null) ? 0 : getKeyValueStoreAssociations().hashCode());
         return hashCode;
     }
 

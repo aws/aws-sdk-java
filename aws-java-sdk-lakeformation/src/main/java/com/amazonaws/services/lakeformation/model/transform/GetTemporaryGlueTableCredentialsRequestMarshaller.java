@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,10 @@ public class GetTemporaryGlueTableCredentialsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditContext").build();
     private static final MarshallingInfo<List> SUPPORTEDPERMISSIONTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedPermissionTypes").build();
+    private static final MarshallingInfo<String> S3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("S3Path").build();
+    private static final MarshallingInfo<StructuredPojo> QUERYSESSIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuerySessionContext").build();
 
     private static final GetTemporaryGlueTableCredentialsRequestMarshaller instance = new GetTemporaryGlueTableCredentialsRequestMarshaller();
 
@@ -60,6 +64,8 @@ public class GetTemporaryGlueTableCredentialsRequestMarshaller {
             protocolMarshaller.marshall(getTemporaryGlueTableCredentialsRequest.getDurationSeconds(), DURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(getTemporaryGlueTableCredentialsRequest.getAuditContext(), AUDITCONTEXT_BINDING);
             protocolMarshaller.marshall(getTemporaryGlueTableCredentialsRequest.getSupportedPermissionTypes(), SUPPORTEDPERMISSIONTYPES_BINDING);
+            protocolMarshaller.marshall(getTemporaryGlueTableCredentialsRequest.getS3Path(), S3PATH_BINDING);
+            protocolMarshaller.marshall(getTemporaryGlueTableCredentialsRequest.getQuerySessionContext(), QUERYSESSIONCONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

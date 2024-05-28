@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,30 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
      * </p>
      */
     private String backupVaultName;
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     */
+    private Boolean isParent;
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     */
+    private String parentRecoveryPointArn;
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     */
+    private String resourceName;
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     */
+    private String vaultType;
 
     /**
      * <p>
@@ -413,6 +437,197 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) recovery point.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) recovery point.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByResource withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) recovery point.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     * 
+     * @param parentRecoveryPointArn
+     *        This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     */
+
+    public void setParentRecoveryPointArn(String parentRecoveryPointArn) {
+        this.parentRecoveryPointArn = parentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     * 
+     * @return This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     */
+
+    public String getParentRecoveryPointArn() {
+        return this.parentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     * 
+     * @param parentRecoveryPointArn
+     *        This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByResource withParentRecoveryPointArn(String parentRecoveryPointArn) {
+        setParentRecoveryPointArn(parentRecoveryPointArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     * 
+     * @param resourceName
+     *        This is the non-unique name of the resource that belongs to the specified backup.
+     */
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     * 
+     * @return This is the non-unique name of the resource that belongs to the specified backup.
+     */
+
+    public String getResourceName() {
+        return this.resourceName;
+    }
+
+    /**
+     * <p>
+     * This is the non-unique name of the resource that belongs to the specified backup.
+     * </p>
+     * 
+     * @param resourceName
+     *        This is the non-unique name of the resource that belongs to the specified backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByResource withResourceName(String resourceName) {
+        setResourceName(resourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault in which the described recovery point is stored.
+     * @see VaultType
+     */
+
+    public void setVaultType(String vaultType) {
+        this.vaultType = vaultType;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @return This is the type of vault in which the described recovery point is stored.
+     * @see VaultType
+     */
+
+    public String getVaultType() {
+        return this.vaultType;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault in which the described recovery point is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public RecoveryPointByResource withVaultType(String vaultType) {
+        setVaultType(vaultType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault in which the described recovery point is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public RecoveryPointByResource withVaultType(VaultType vaultType) {
+        this.vaultType = vaultType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,7 +652,15 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
         if (getBackupSizeBytes() != null)
             sb.append("BackupSizeBytes: ").append(getBackupSizeBytes()).append(",");
         if (getBackupVaultName() != null)
-            sb.append("BackupVaultName: ").append(getBackupVaultName());
+            sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent()).append(",");
+        if (getParentRecoveryPointArn() != null)
+            sb.append("ParentRecoveryPointArn: ").append(getParentRecoveryPointArn()).append(",");
+        if (getResourceName() != null)
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
+        if (getVaultType() != null)
+            sb.append("VaultType: ").append(getVaultType());
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +703,22 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
             return false;
         if (other.getBackupVaultName() != null && other.getBackupVaultName().equals(this.getBackupVaultName()) == false)
             return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
+        if (other.getParentRecoveryPointArn() == null ^ this.getParentRecoveryPointArn() == null)
+            return false;
+        if (other.getParentRecoveryPointArn() != null && other.getParentRecoveryPointArn().equals(this.getParentRecoveryPointArn()) == false)
+            return false;
+        if (other.getResourceName() == null ^ this.getResourceName() == null)
+            return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
+            return false;
+        if (other.getVaultType() == null ^ this.getVaultType() == null)
+            return false;
+        if (other.getVaultType() != null && other.getVaultType().equals(this.getVaultType()) == false)
+            return false;
         return true;
     }
 
@@ -495,6 +734,10 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getEncryptionKeyArn() == null) ? 0 : getEncryptionKeyArn().hashCode());
         hashCode = prime * hashCode + ((getBackupSizeBytes() == null) ? 0 : getBackupSizeBytes().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
+        hashCode = prime * hashCode + ((getParentRecoveryPointArn() == null) ? 0 : getParentRecoveryPointArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getVaultType() == null) ? 0 : getVaultType().hashCode());
         return hashCode;
     }
 

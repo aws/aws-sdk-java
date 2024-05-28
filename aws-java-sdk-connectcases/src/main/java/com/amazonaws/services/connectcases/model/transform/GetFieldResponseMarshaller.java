@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,12 +29,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetFieldResponseMarshaller {
 
+    private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Boolean> DELETED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("deleted").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> FIELDARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fieldArn").build();
     private static final MarshallingInfo<String> FIELDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fieldId").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,9 +66,12 @@ public class GetFieldResponseMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getFieldResponse.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(getFieldResponse.getDeleted(), DELETED_BINDING);
             protocolMarshaller.marshall(getFieldResponse.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(getFieldResponse.getFieldArn(), FIELDARN_BINDING);
             protocolMarshaller.marshall(getFieldResponse.getFieldId(), FIELDID_BINDING);
+            protocolMarshaller.marshall(getFieldResponse.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(getFieldResponse.getName(), NAME_BINDING);
             protocolMarshaller.marshall(getFieldResponse.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(getFieldResponse.getTags(), TAGS_BINDING);

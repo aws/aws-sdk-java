@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,9 @@ public enum TranscribeLanguageCode {
     PtBR("pt-BR"),
     JaJP("ja-JP"),
     KoKR("ko-KR"),
-    ZhCN("zh-CN");
+    ZhCN("zh-CN"),
+    ThTH("th-TH"),
+    HiIN("hi-IN");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class ListCustomEntityTypesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * A list of key-value pair tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -119,6 +125,74 @@ public class ListCustomEntityTypesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A list of key-value pair tags.
+     * </p>
+     * 
+     * @return A list of key-value pair tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pair tags.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pair tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pair tags.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pair tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomEntityTypesRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see ListCustomEntityTypesRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomEntityTypesRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomEntityTypesRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +207,9 @@ public class ListCustomEntityTypesRequest extends com.amazonaws.AmazonWebService
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +232,10 @@ public class ListCustomEntityTypesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +246,7 @@ public class ListCustomEntityTypesRequest extends com.amazonaws.AmazonWebService
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

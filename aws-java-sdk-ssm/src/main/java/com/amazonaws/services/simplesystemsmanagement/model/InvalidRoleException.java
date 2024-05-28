@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,9 @@ import javax.annotation.Generated;
  * <p>
  * The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that
  * includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see
- * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon
- * SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+ * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+ * Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User
+ * Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

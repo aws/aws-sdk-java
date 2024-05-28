@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class ListEmailTemplatesRequest extends com.amazonaws.AmazonWebServiceReq
      * element, which you can use to obtain additional results.
      * </p>
      * <p>
-     * The value you specify has to be at least 1, and can be no more than 10.
+     * The value you specify has to be at least 1, and can be no more than 100.
      * </p>
      */
     private Integer pageSize;
@@ -103,7 +103,7 @@ public class ListEmailTemplatesRequest extends com.amazonaws.AmazonWebServiceReq
      * element, which you can use to obtain additional results.
      * </p>
      * <p>
-     * The value you specify has to be at least 1, and can be no more than 10.
+     * The value you specify has to be at least 1, and can be no more than 100.
      * </p>
      * 
      * @param pageSize
@@ -111,7 +111,7 @@ public class ListEmailTemplatesRequest extends com.amazonaws.AmazonWebServiceReq
      *        results is larger than the number you specified in this parameter, then the response includes a
      *        <code>NextToken</code> element, which you can use to obtain additional results.</p>
      *        <p>
-     *        The value you specify has to be at least 1, and can be no more than 10.
+     *        The value you specify has to be at least 1, and can be no more than 100.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -125,14 +125,14 @@ public class ListEmailTemplatesRequest extends com.amazonaws.AmazonWebServiceReq
      * element, which you can use to obtain additional results.
      * </p>
      * <p>
-     * The value you specify has to be at least 1, and can be no more than 10.
+     * The value you specify has to be at least 1, and can be no more than 100.
      * </p>
      * 
      * @return The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
      *         results is larger than the number you specified in this parameter, then the response includes a
      *         <code>NextToken</code> element, which you can use to obtain additional results.</p>
      *         <p>
-     *         The value you specify has to be at least 1, and can be no more than 10.
+     *         The value you specify has to be at least 1, and can be no more than 100.
      */
 
     public Integer getPageSize() {
@@ -146,7 +146,7 @@ public class ListEmailTemplatesRequest extends com.amazonaws.AmazonWebServiceReq
      * element, which you can use to obtain additional results.
      * </p>
      * <p>
-     * The value you specify has to be at least 1, and can be no more than 10.
+     * The value you specify has to be at least 1, and can be no more than 100.
      * </p>
      * 
      * @param pageSize
@@ -154,7 +154,7 @@ public class ListEmailTemplatesRequest extends com.amazonaws.AmazonWebServiceReq
      *        results is larger than the number you specified in this parameter, then the response includes a
      *        <code>NextToken</code> element, which you can use to obtain additional results.</p>
      *        <p>
-     *        The value you specify has to be at least 1, and can be no more than 10.
+     *        The value you specify has to be at least 1, and can be no more than 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

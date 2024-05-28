@@ -1,0 +1,262 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.connect.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SearchHoursOfOperationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * Information about the hours of operations.
+     * </p>
+     */
+    private java.util.List<HoursOfOperation> hoursOfOperations;
+    /**
+     * <p>
+     * If there are additional results, this is the token for the next set of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The total number of hours of operations which matched your search query.
+     * </p>
+     */
+    private Long approximateTotalCount;
+
+    /**
+     * <p>
+     * Information about the hours of operations.
+     * </p>
+     * 
+     * @return Information about the hours of operations.
+     */
+
+    public java.util.List<HoursOfOperation> getHoursOfOperations() {
+        return hoursOfOperations;
+    }
+
+    /**
+     * <p>
+     * Information about the hours of operations.
+     * </p>
+     * 
+     * @param hoursOfOperations
+     *        Information about the hours of operations.
+     */
+
+    public void setHoursOfOperations(java.util.Collection<HoursOfOperation> hoursOfOperations) {
+        if (hoursOfOperations == null) {
+            this.hoursOfOperations = null;
+            return;
+        }
+
+        this.hoursOfOperations = new java.util.ArrayList<HoursOfOperation>(hoursOfOperations);
+    }
+
+    /**
+     * <p>
+     * Information about the hours of operations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHoursOfOperations(java.util.Collection)} or {@link #withHoursOfOperations(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param hoursOfOperations
+     *        Information about the hours of operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchHoursOfOperationsResult withHoursOfOperations(HoursOfOperation... hoursOfOperations) {
+        if (this.hoursOfOperations == null) {
+            setHoursOfOperations(new java.util.ArrayList<HoursOfOperation>(hoursOfOperations.length));
+        }
+        for (HoursOfOperation ele : hoursOfOperations) {
+            this.hoursOfOperations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the hours of operations.
+     * </p>
+     * 
+     * @param hoursOfOperations
+     *        Information about the hours of operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchHoursOfOperationsResult withHoursOfOperations(java.util.Collection<HoursOfOperation> hoursOfOperations) {
+        setHoursOfOperations(hoursOfOperations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If there are additional results, this is the token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        If there are additional results, this is the token for the next set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If there are additional results, this is the token for the next set of results.
+     * </p>
+     * 
+     * @return If there are additional results, this is the token for the next set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If there are additional results, this is the token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        If there are additional results, this is the token for the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchHoursOfOperationsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of hours of operations which matched your search query.
+     * </p>
+     * 
+     * @param approximateTotalCount
+     *        The total number of hours of operations which matched your search query.
+     */
+
+    public void setApproximateTotalCount(Long approximateTotalCount) {
+        this.approximateTotalCount = approximateTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total number of hours of operations which matched your search query.
+     * </p>
+     * 
+     * @return The total number of hours of operations which matched your search query.
+     */
+
+    public Long getApproximateTotalCount() {
+        return this.approximateTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total number of hours of operations which matched your search query.
+     * </p>
+     * 
+     * @param approximateTotalCount
+     *        The total number of hours of operations which matched your search query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchHoursOfOperationsResult withApproximateTotalCount(Long approximateTotalCount) {
+        setApproximateTotalCount(approximateTotalCount);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getHoursOfOperations() != null)
+            sb.append("HoursOfOperations: ").append(getHoursOfOperations()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getApproximateTotalCount() != null)
+            sb.append("ApproximateTotalCount: ").append(getApproximateTotalCount());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SearchHoursOfOperationsResult == false)
+            return false;
+        SearchHoursOfOperationsResult other = (SearchHoursOfOperationsResult) obj;
+        if (other.getHoursOfOperations() == null ^ this.getHoursOfOperations() == null)
+            return false;
+        if (other.getHoursOfOperations() != null && other.getHoursOfOperations().equals(this.getHoursOfOperations()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getApproximateTotalCount() == null ^ this.getApproximateTotalCount() == null)
+            return false;
+        if (other.getApproximateTotalCount() != null && other.getApproximateTotalCount().equals(this.getApproximateTotalCount()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getHoursOfOperations() == null) ? 0 : getHoursOfOperations().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getApproximateTotalCount() == null) ? 0 : getApproximateTotalCount().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public SearchHoursOfOperationsResult clone() {
+        try {
+            return (SearchHoursOfOperationsResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

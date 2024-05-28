@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,10 @@ public class LambdaAuthorizerConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     * function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables
-     * caching of responses.
+     * The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you
+     * don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value
+     * is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in
+     * its response.
      * </p>
      */
     private Integer authorizerResultTtlInSeconds;
@@ -62,15 +63,17 @@ public class LambdaAuthorizerConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     * function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables
-     * caching of responses.
+     * The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you
+     * don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value
+     * is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in
+     * its response.
      * </p>
      * 
      * @param authorizerResultTtlInSeconds
-     *        The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     *        function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0
-     *        disables caching of responses.
+     *        The number of seconds a response should be cached for. The default is 0 seconds, which disables caching.
+     *        If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The
+     *        maximum value is one hour (3600 seconds). The Lambda function can override this by returning a
+     *        <code>ttlOverride</code> key in its response.
      */
 
     public void setAuthorizerResultTtlInSeconds(Integer authorizerResultTtlInSeconds) {
@@ -79,14 +82,16 @@ public class LambdaAuthorizerConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     * function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables
-     * caching of responses.
+     * The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you
+     * don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value
+     * is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in
+     * its response.
      * </p>
      * 
-     * @return The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     *         function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0
-     *         disables caching of responses.
+     * @return The number of seconds a response should be cached for. The default is 0 seconds, which disables caching.
+     *         If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used.
+     *         The maximum value is one hour (3600 seconds). The Lambda function can override this by returning a
+     *         <code>ttlOverride</code> key in its response.
      */
 
     public Integer getAuthorizerResultTtlInSeconds() {
@@ -95,15 +100,17 @@ public class LambdaAuthorizerConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     * function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0 disables
-     * caching of responses.
+     * The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you
+     * don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value
+     * is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in
+     * its response.
      * </p>
      * 
      * @param authorizerResultTtlInSeconds
-     *        The number of seconds a response should be cached for. The default is 5 minutes (300 seconds). The Lambda
-     *        function can override this by returning a <code>ttlOverride</code> key in its response. A value of 0
-     *        disables caching of responses.
+     *        The number of seconds a response should be cached for. The default is 0 seconds, which disables caching.
+     *        If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The
+     *        maximum value is one hour (3600 seconds). The Lambda function can override this by returning a
+     *        <code>ttlOverride</code> key in its response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

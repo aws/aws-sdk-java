@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is
-     * specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.
+     * specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -37,7 +37,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBClusterIdentifier.
+     * If supplied, must match an existing DB cluster identifier.
      * </p>
      * </li>
      * </ul>
@@ -48,7 +48,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter that specifies one or more DB clusters to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -61,6 +61,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
      * results list only includes information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include
+     * information about the DB clusters identified by these DB cluster resource identifiers.
      * </p>
      * </li>
      * <li>
@@ -88,7 +94,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 100
      * </p>
      */
     private Integer maxRecords;
@@ -102,8 +108,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     private String marker;
     /**
      * <p>
-     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other Amazon Web Services accounts.
+     * Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.
      * </p>
      */
     private Boolean includeShared;
@@ -111,7 +116,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is
-     * specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.
+     * specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -119,14 +124,14 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBClusterIdentifier.
+     * If supplied, must match an existing DB cluster identifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this
-     *        parameter is specified, information from only the specific DB cluster is returned. This parameter isn't
+     *        parameter is specified, information for only the specific DB cluster is returned. This parameter isn't
      *        case-sensitive.</p>
      *        <p>
      *        Constraints:
@@ -134,7 +139,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match an existing DBClusterIdentifier.
+     *        If supplied, must match an existing DB cluster identifier.
      *        </p>
      *        </li>
      */
@@ -146,7 +151,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is
-     * specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.
+     * specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -154,13 +159,13 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBClusterIdentifier.
+     * If supplied, must match an existing DB cluster identifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this
-     *         parameter is specified, information from only the specific DB cluster is returned. This parameter isn't
+     *         parameter is specified, information for only the specific DB cluster is returned. This parameter isn't
      *         case-sensitive.</p>
      *         <p>
      *         Constraints:
@@ -168,7 +173,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         If supplied, must match an existing DBClusterIdentifier.
+     *         If supplied, must match an existing DB cluster identifier.
      *         </p>
      *         </li>
      */
@@ -180,7 +185,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is
-     * specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.
+     * specified, information for only the specific DB cluster is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -188,14 +193,14 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match an existing DBClusterIdentifier.
+     * If supplied, must match an existing DB cluster identifier.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
      *        The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this
-     *        parameter is specified, information from only the specific DB cluster is returned. This parameter isn't
+     *        parameter is specified, information for only the specific DB cluster is returned. This parameter isn't
      *        case-sensitive.</p>
      *        <p>
      *        Constraints:
@@ -203,7 +208,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match an existing DBClusterIdentifier.
+     *        If supplied, must match an existing DB cluster identifier.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -219,7 +224,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter that specifies one or more DB clusters to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -232,6 +237,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
      * results list only includes information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include
+     * information about the DB clusters identified by these DB cluster resource identifiers.
      * </p>
      * </li>
      * <li>
@@ -250,7 +261,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return A filter that specifies one or more DB clusters to describe.</p>
      *         <p>
-     *         Supported filters:
+     *         Supported Filters:
      *         </p>
      *         <ul>
      *         <li>
@@ -263,6 +274,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
      *         The results list only includes information about the DB clusters identified by these ARNs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only
+     *         include information about the DB clusters identified by these DB cluster resource identifiers.
      *         </p>
      *         </li>
      *         <li>
@@ -291,7 +308,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter that specifies one or more DB clusters to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -304,6 +321,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
      * results list only includes information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include
+     * information about the DB clusters identified by these DB cluster resource identifiers.
      * </p>
      * </li>
      * <li>
@@ -323,7 +346,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * @param filters
      *        A filter that specifies one or more DB clusters to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Supported Filters:
      *        </p>
      *        <ul>
      *        <li>
@@ -336,6 +359,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
      *        The results list only includes information about the DB clusters identified by these ARNs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only
+     *        include information about the DB clusters identified by these DB cluster resource identifiers.
      *        </p>
      *        </li>
      *        <li>
@@ -366,7 +395,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter that specifies one or more DB clusters to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -379,6 +408,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
      * results list only includes information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include
+     * information about the DB clusters identified by these DB cluster resource identifiers.
      * </p>
      * </li>
      * <li>
@@ -403,7 +438,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * @param filters
      *        A filter that specifies one or more DB clusters to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Supported Filters:
      *        </p>
      *        <ul>
      *        <li>
@@ -416,6 +451,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
      *        The results list only includes information about the DB clusters identified by these ARNs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only
+     *        include information about the DB clusters identified by these DB cluster resource identifiers.
      *        </p>
      *        </li>
      *        <li>
@@ -448,7 +489,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * A filter that specifies one or more DB clusters to describe.
      * </p>
      * <p>
-     * Supported filters:
+     * Supported Filters:
      * </p>
      * <ul>
      * <li>
@@ -461,6 +502,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
      * results list only includes information about the DB clusters identified by these ARNs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include
+     * information about the DB clusters identified by these DB cluster resource identifiers.
      * </p>
      * </li>
      * <li>
@@ -480,7 +527,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * @param filters
      *        A filter that specifies one or more DB clusters to describe.</p>
      *        <p>
-     *        Supported filters:
+     *        Supported Filters:
      *        </p>
      *        <ul>
      *        <li>
@@ -493,6 +540,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
      *        The results list only includes information about the DB clusters identified by these ARNs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only
+     *        include information about the DB clusters identified by these DB cluster resource identifiers.
      *        </p>
      *        </li>
      *        <li>
@@ -525,7 +578,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 100
      * </p>
      * 
      * @param maxRecords
@@ -536,7 +589,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        Default: 100
      *        </p>
      *        <p>
-     *        Constraints: Minimum 20, maximum 100.
+     *        Constraints: Minimum 20, maximum 100
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -553,7 +606,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 100
      * </p>
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
@@ -563,7 +616,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *         Default: 100
      *         </p>
      *         <p>
-     *         Constraints: Minimum 20, maximum 100.
+     *         Constraints: Minimum 20, maximum 100
      */
 
     public Integer getMaxRecords() {
@@ -580,7 +633,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 100
      * </p>
      * 
      * @param maxRecords
@@ -591,7 +644,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        Default: 100
      *        </p>
      *        <p>
-     *        Constraints: Minimum 20, maximum 100.
+     *        Constraints: Minimum 20, maximum 100
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -654,13 +707,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other Amazon Web Services accounts.
+     * Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.
      * </p>
      * 
      * @param includeShared
-     *        Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *        from other Amazon Web Services accounts.
+     *        Specifies whether the output includes information about clusters shared from other Amazon Web Services
+     *        accounts.
      */
 
     public void setIncludeShared(Boolean includeShared) {
@@ -669,12 +721,11 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other Amazon Web Services accounts.
+     * Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.
      * </p>
      * 
-     * @return Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *         from other Amazon Web Services accounts.
+     * @return Specifies whether the output includes information about clusters shared from other Amazon Web Services
+     *         accounts.
      */
 
     public Boolean getIncludeShared() {
@@ -683,13 +734,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other Amazon Web Services accounts.
+     * Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.
      * </p>
      * 
      * @param includeShared
-     *        Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *        from other Amazon Web Services accounts.
+     *        Specifies whether the output includes information about clusters shared from other Amazon Web Services
+     *        accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -700,12 +750,11 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other Amazon Web Services accounts.
+     * Specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.
      * </p>
      * 
-     * @return Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *         from other Amazon Web Services accounts.
+     * @return Specifies whether the output includes information about clusters shared from other Amazon Web Services
+     *         accounts.
      */
 
     public Boolean isIncludeShared() {

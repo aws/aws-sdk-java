@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,12 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String deviceName;
+    /**
+     * <p>
+     * List of information about tasks and jobs queued on a device.
+     * </p>
+     */
+    private java.util.List<DeviceQueueInfo> deviceQueueInfo;
     /**
      * <p>
      * The status of the device.
@@ -197,6 +203,76 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public GetDeviceResult withDeviceName(String deviceName) {
         setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of information about tasks and jobs queued on a device.
+     * </p>
+     * 
+     * @return List of information about tasks and jobs queued on a device.
+     */
+
+    public java.util.List<DeviceQueueInfo> getDeviceQueueInfo() {
+        return deviceQueueInfo;
+    }
+
+    /**
+     * <p>
+     * List of information about tasks and jobs queued on a device.
+     * </p>
+     * 
+     * @param deviceQueueInfo
+     *        List of information about tasks and jobs queued on a device.
+     */
+
+    public void setDeviceQueueInfo(java.util.Collection<DeviceQueueInfo> deviceQueueInfo) {
+        if (deviceQueueInfo == null) {
+            this.deviceQueueInfo = null;
+            return;
+        }
+
+        this.deviceQueueInfo = new java.util.ArrayList<DeviceQueueInfo>(deviceQueueInfo);
+    }
+
+    /**
+     * <p>
+     * List of information about tasks and jobs queued on a device.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeviceQueueInfo(java.util.Collection)} or {@link #withDeviceQueueInfo(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param deviceQueueInfo
+     *        List of information about tasks and jobs queued on a device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeviceResult withDeviceQueueInfo(DeviceQueueInfo... deviceQueueInfo) {
+        if (this.deviceQueueInfo == null) {
+            setDeviceQueueInfo(new java.util.ArrayList<DeviceQueueInfo>(deviceQueueInfo.length));
+        }
+        for (DeviceQueueInfo ele : deviceQueueInfo) {
+            this.deviceQueueInfo.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of information about tasks and jobs queued on a device.
+     * </p>
+     * 
+     * @param deviceQueueInfo
+     *        List of information about tasks and jobs queued on a device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeviceResult withDeviceQueueInfo(java.util.Collection<DeviceQueueInfo> deviceQueueInfo) {
+        setDeviceQueueInfo(deviceQueueInfo);
         return this;
     }
 
@@ -376,6 +452,8 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
             sb.append("DeviceCapabilities: ").append(getDeviceCapabilities()).append(",");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getDeviceQueueInfo() != null)
+            sb.append("DeviceQueueInfo: ").append(getDeviceQueueInfo()).append(",");
         if (getDeviceStatus() != null)
             sb.append("DeviceStatus: ").append(getDeviceStatus()).append(",");
         if (getDeviceType() != null)
@@ -408,6 +486,10 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
+        if (other.getDeviceQueueInfo() == null ^ this.getDeviceQueueInfo() == null)
+            return false;
+        if (other.getDeviceQueueInfo() != null && other.getDeviceQueueInfo().equals(this.getDeviceQueueInfo()) == false)
+            return false;
         if (other.getDeviceStatus() == null ^ this.getDeviceStatus() == null)
             return false;
         if (other.getDeviceStatus() != null && other.getDeviceStatus().equals(this.getDeviceStatus()) == false)
@@ -431,6 +513,7 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceCapabilities() == null) ? 0 : getDeviceCapabilities().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getDeviceQueueInfo() == null) ? 0 : getDeviceQueueInfo().hashCode());
         hashCode = prime * hashCode + ((getDeviceStatus() == null) ? 0 : getDeviceStatus().hashCode());
         hashCode = prime * hashCode + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
         hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());

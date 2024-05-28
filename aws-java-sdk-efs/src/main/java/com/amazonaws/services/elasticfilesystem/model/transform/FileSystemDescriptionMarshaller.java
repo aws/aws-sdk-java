@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,8 @@ public class FileSystemDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZoneId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> FILESYSTEMPROTECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemProtection").build();
 
     private static final FileSystemDescriptionMarshaller instance = new FileSystemDescriptionMarshaller();
 
@@ -96,6 +98,7 @@ public class FileSystemDescriptionMarshaller {
             protocolMarshaller.marshall(fileSystemDescription.getAvailabilityZoneName(), AVAILABILITYZONENAME_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getAvailabilityZoneId(), AVAILABILITYZONEID_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(fileSystemDescription.getFileSystemProtection(), FILESYSTEMPROTECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

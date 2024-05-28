@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of a cluster security group for which you are requesting details. You can specify either the
+     * The name of a cluster security group for which you are requesting details. You must specify either the
      * <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both.
      * </p>
      * <p>
@@ -59,8 +59,8 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      * request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter,
-     * but not both.
+     * Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     * parameter, but not both.
      * </p>
      */
     private String marker;
@@ -87,7 +87,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of a cluster security group for which you are requesting details. You can specify either the
+     * The name of a cluster security group for which you are requesting details. You must specify either the
      * <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both.
      * </p>
      * <p>
@@ -95,7 +95,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param clusterSecurityGroupName
-     *        The name of a cluster security group for which you are requesting details. You can specify either the
+     *        The name of a cluster security group for which you are requesting details. You must specify either the
      *        <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
      *        <p>
      *        Example: <code>securitygroup1</code>
@@ -107,14 +107,14 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of a cluster security group for which you are requesting details. You can specify either the
+     * The name of a cluster security group for which you are requesting details. You must specify either the
      * <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both.
      * </p>
      * <p>
      * Example: <code>securitygroup1</code>
      * </p>
      * 
-     * @return The name of a cluster security group for which you are requesting details. You can specify either the
+     * @return The name of a cluster security group for which you are requesting details. You must specify either the
      *         <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
      *         <p>
      *         Example: <code>securitygroup1</code>
@@ -126,7 +126,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of a cluster security group for which you are requesting details. You can specify either the
+     * The name of a cluster security group for which you are requesting details. You must specify either the
      * <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both.
      * </p>
      * <p>
@@ -134,7 +134,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param clusterSecurityGroupName
-     *        The name of a cluster security group for which you are requesting details. You can specify either the
+     *        The name of a cluster security group for which you are requesting details. You must specify either the
      *        <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>
      *        <p>
      *        Example: <code>securitygroup1</code>
@@ -243,8 +243,8 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      * request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter,
-     * but not both.
+     * Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     * parameter, but not both.
      * </p>
      * 
      * @param marker
@@ -254,7 +254,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
-     *        Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     *        Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
      *        parameter, but not both.
      */
 
@@ -271,8 +271,8 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      * request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter,
-     * but not both.
+     * Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     * parameter, but not both.
      * </p>
      * 
      * @return An optional parameter that specifies the starting point to return a set of response records. When the
@@ -281,7 +281,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      *         response. You can retrieve the next set of response records by providing the returned marker value in the
      *         <code>Marker</code> parameter and retrying the request. </p>
      *         <p>
-     *         Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     *         Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
      *         parameter, but not both.
      */
 
@@ -298,8 +298,8 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      * request.
      * </p>
      * <p>
-     * Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter,
-     * but not both.
+     * Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     * parameter, but not both.
      * </p>
      * 
      * @param marker
@@ -309,7 +309,7 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
      *        response. You can retrieve the next set of response records by providing the returned marker value in the
      *        <code>Marker</code> parameter and retrying the request. </p>
      *        <p>
-     *        Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
+     *        Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b>
      *        parameter, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

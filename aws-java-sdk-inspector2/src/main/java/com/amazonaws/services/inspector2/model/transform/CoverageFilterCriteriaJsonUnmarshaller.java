@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,37 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("imagePulledAt", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setImagePulledAt(new ListUnmarshaller<CoverageDateFilter>(CoverageDateFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionName", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLambdaFunctionName(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionRuntime", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLambdaFunctionRuntime(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionTags", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLambdaFunctionTags(new ListUnmarshaller<CoverageMapFilter>(CoverageMapFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lastScannedAt", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLastScannedAt(new ListUnmarshaller<CoverageDateFilter>(CoverageDateFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     coverageFilterCriteria.setResourceId(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
@@ -81,6 +112,12 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     coverageFilterCriteria.setResourceType(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("scanMode", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setScanMode(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

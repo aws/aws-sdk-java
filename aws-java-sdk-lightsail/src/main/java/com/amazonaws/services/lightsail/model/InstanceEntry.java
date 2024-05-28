@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
     private String sourceName;
     /**
      * <p>
-     * The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     * The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      * </p>
      */
     private String instanceType;
@@ -180,11 +180,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     * The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     *        The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      */
 
     public void setInstanceType(String instanceType) {
@@ -193,10 +193,10 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     * The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      * </p>
      * 
-     * @return The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     * @return The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      */
 
     public String getInstanceType() {
@@ -205,11 +205,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     * The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      * </p>
      * 
      * @param instanceType
-     *        The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.
+     *        The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

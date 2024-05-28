@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,13 @@ public class CreateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
     private java.util.List<Tag> tags;
 
     private String clientRequestToken;
+    /**
+     * <p>
+     * Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     */
+    private java.util.List<String> multicastGroups;
 
     /**
      * @param name
@@ -362,6 +369,84 @@ public class CreateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * 
+     * @return Multicast Group resources to add to the network analyzer configruation. Provide the
+     *         <code>MulticastGroupId</code> of the resource to add in the input array.
+     */
+
+    public java.util.List<String> getMulticastGroups() {
+        return multicastGroups;
+    }
+
+    /**
+     * <p>
+     * Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * 
+     * @param multicastGroups
+     *        Multicast Group resources to add to the network analyzer configruation. Provide the
+     *        <code>MulticastGroupId</code> of the resource to add in the input array.
+     */
+
+    public void setMulticastGroups(java.util.Collection<String> multicastGroups) {
+        if (multicastGroups == null) {
+            this.multicastGroups = null;
+            return;
+        }
+
+        this.multicastGroups = new java.util.ArrayList<String>(multicastGroups);
+    }
+
+    /**
+     * <p>
+     * Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMulticastGroups(java.util.Collection)} or {@link #withMulticastGroups(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param multicastGroups
+     *        Multicast Group resources to add to the network analyzer configruation. Provide the
+     *        <code>MulticastGroupId</code> of the resource to add in the input array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkAnalyzerConfigurationRequest withMulticastGroups(String... multicastGroups) {
+        if (this.multicastGroups == null) {
+            setMulticastGroups(new java.util.ArrayList<String>(multicastGroups.length));
+        }
+        for (String ele : multicastGroups) {
+            this.multicastGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * 
+     * @param multicastGroups
+     *        Multicast Group resources to add to the network analyzer configruation. Provide the
+     *        <code>MulticastGroupId</code> of the resource to add in the input array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkAnalyzerConfigurationRequest withMulticastGroups(java.util.Collection<String> multicastGroups) {
+        setMulticastGroups(multicastGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -386,7 +471,9 @@ public class CreateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getMulticastGroups() != null)
+            sb.append("MulticastGroups: ").append(getMulticastGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -429,6 +516,10 @@ public class CreateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getMulticastGroups() == null ^ this.getMulticastGroups() == null)
+            return false;
+        if (other.getMulticastGroups() != null && other.getMulticastGroups().equals(this.getMulticastGroups()) == false)
+            return false;
         return true;
     }
 
@@ -444,6 +535,7 @@ public class CreateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getMulticastGroups() == null) ? 0 : getMulticastGroups().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -220,6 +220,26 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
 
         if (createClusterRequest.getLoadSampleData() != null) {
             request.addParameter("LoadSampleData", StringUtils.fromString(createClusterRequest.getLoadSampleData()));
+        }
+
+        if (createClusterRequest.getManageMasterPassword() != null) {
+            request.addParameter("ManageMasterPassword", StringUtils.fromBoolean(createClusterRequest.getManageMasterPassword()));
+        }
+
+        if (createClusterRequest.getMasterPasswordSecretKmsKeyId() != null) {
+            request.addParameter("MasterPasswordSecretKmsKeyId", StringUtils.fromString(createClusterRequest.getMasterPasswordSecretKmsKeyId()));
+        }
+
+        if (createClusterRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(createClusterRequest.getIpAddressType()));
+        }
+
+        if (createClusterRequest.getMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(createClusterRequest.getMultiAZ()));
+        }
+
+        if (createClusterRequest.getRedshiftIdcApplicationArn() != null) {
+            request.addParameter("RedshiftIdcApplicationArn", StringUtils.fromString(createClusterRequest.getRedshiftIdcApplicationArn()));
         }
 
         return request;

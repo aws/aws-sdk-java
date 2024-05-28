@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,12 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
     private String environmentName;
     /**
      * <p>
+     * The ID of the last attempted deployment of this component.
+     * </p>
+     */
+    private String lastAttemptedDeploymentId;
+    /**
+     * <p>
      * The time when a deployment of the component was last attempted.
      * </p>
      */
@@ -81,6 +87,12 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date lastModifiedAt;
+    /**
+     * <p>
+     * The ID of the last successful deployment of this component.
+     * </p>
+     */
+    private String lastSucceededDeploymentId;
     /**
      * <p>
      * The name of the component.
@@ -323,6 +335,46 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The ID of the last attempted deployment of this component.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this component.
+     */
+
+    public void setLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        this.lastAttemptedDeploymentId = lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this component.
+     * </p>
+     * 
+     * @return The ID of the last attempted deployment of this component.
+     */
+
+    public String getLastAttemptedDeploymentId() {
+        return this.lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this component.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentSummary withLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        setLastAttemptedDeploymentId(lastAttemptedDeploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when a deployment of the component was last attempted.
      * </p>
      * 
@@ -438,6 +490,46 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
 
     public ComponentSummary withLastModifiedAt(java.util.Date lastModifiedAt) {
         setLastModifiedAt(lastModifiedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this component.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this component.
+     */
+
+    public void setLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        this.lastSucceededDeploymentId = lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this component.
+     * </p>
+     * 
+     * @return The ID of the last successful deployment of this component.
+     */
+
+    public String getLastSucceededDeploymentId() {
+        return this.lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this component.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentSummary withLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        setLastSucceededDeploymentId(lastSucceededDeploymentId);
         return this;
     }
 
@@ -595,12 +687,16 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
             sb.append("DeploymentStatusMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
+        if (getLastAttemptedDeploymentId() != null)
+            sb.append("LastAttemptedDeploymentId: ").append(getLastAttemptedDeploymentId()).append(",");
         if (getLastDeploymentAttemptedAt() != null)
             sb.append("LastDeploymentAttemptedAt: ").append(getLastDeploymentAttemptedAt()).append(",");
         if (getLastDeploymentSucceededAt() != null)
             sb.append("LastDeploymentSucceededAt: ").append(getLastDeploymentSucceededAt()).append(",");
         if (getLastModifiedAt() != null)
             sb.append("LastModifiedAt: ").append(getLastModifiedAt()).append(",");
+        if (getLastSucceededDeploymentId() != null)
+            sb.append("LastSucceededDeploymentId: ").append(getLastSucceededDeploymentId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getServiceInstanceName() != null)
@@ -641,6 +737,10 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
+        if (other.getLastAttemptedDeploymentId() == null ^ this.getLastAttemptedDeploymentId() == null)
+            return false;
+        if (other.getLastAttemptedDeploymentId() != null && other.getLastAttemptedDeploymentId().equals(this.getLastAttemptedDeploymentId()) == false)
+            return false;
         if (other.getLastDeploymentAttemptedAt() == null ^ this.getLastDeploymentAttemptedAt() == null)
             return false;
         if (other.getLastDeploymentAttemptedAt() != null && other.getLastDeploymentAttemptedAt().equals(this.getLastDeploymentAttemptedAt()) == false)
@@ -652,6 +752,10 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
         if (other.getLastModifiedAt() == null ^ this.getLastModifiedAt() == null)
             return false;
         if (other.getLastModifiedAt() != null && other.getLastModifiedAt().equals(this.getLastModifiedAt()) == false)
+            return false;
+        if (other.getLastSucceededDeploymentId() == null ^ this.getLastSucceededDeploymentId() == null)
+            return false;
+        if (other.getLastSucceededDeploymentId() != null && other.getLastSucceededDeploymentId().equals(this.getLastSucceededDeploymentId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -678,9 +782,11 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatusMessage() == null) ? 0 : getDeploymentStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeploymentId() == null) ? 0 : getLastAttemptedDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentAttemptedAt() == null) ? 0 : getLastDeploymentAttemptedAt().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentSucceededAt() == null) ? 0 : getLastDeploymentSucceededAt().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedAt() == null) ? 0 : getLastModifiedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastSucceededDeploymentId() == null) ? 0 : getLastSucceededDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServiceInstanceName() == null) ? 0 : getServiceInstanceName().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());

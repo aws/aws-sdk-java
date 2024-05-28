@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,18 @@ public class Host implements Serializable, Cloneable {
      * </p>
      */
     private String outpostArn;
+    /**
+     * <p>
+     * Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * </p>
+     */
+    private String hostMaintenance;
+    /**
+     * <p>
+     * The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     * </p>
+     */
+    private String assetId;
 
     /**
      * <p>
@@ -1131,6 +1143,119 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * @see HostMaintenance
+     */
+
+    public void setHostMaintenance(String hostMaintenance) {
+        this.hostMaintenance = hostMaintenance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @return Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * @see HostMaintenance
+     */
+
+    public String getHostMaintenance() {
+        return this.hostMaintenance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostMaintenance
+     */
+
+    public Host withHostMaintenance(String hostMaintenance) {
+        setHostMaintenance(hostMaintenance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * @see HostMaintenance
+     */
+
+    public void setHostMaintenance(HostMaintenance hostMaintenance) {
+        withHostMaintenance(hostMaintenance);
+    }
+
+    /**
+     * <p>
+     * Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostMaintenance
+     */
+
+    public Host withHostMaintenance(HostMaintenance hostMaintenance) {
+        this.hostMaintenance = hostMaintenance.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     * </p>
+     * 
+     * @param assetId
+     *        The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     */
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     * </p>
+     * 
+     * @return The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     */
+
+    public String getAssetId() {
+        return this.assetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     * </p>
+     * 
+     * @param assetId
+     *        The ID of the Outpost hardware asset on which the Dedicated Host is allocated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Host withAssetId(String assetId) {
+        setAssetId(assetId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1177,7 +1302,11 @@ public class Host implements Serializable, Cloneable {
         if (getMemberOfServiceLinkedResourceGroup() != null)
             sb.append("MemberOfServiceLinkedResourceGroup: ").append(getMemberOfServiceLinkedResourceGroup()).append(",");
         if (getOutpostArn() != null)
-            sb.append("OutpostArn: ").append(getOutpostArn());
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getHostMaintenance() != null)
+            sb.append("HostMaintenance: ").append(getHostMaintenance()).append(",");
+        if (getAssetId() != null)
+            sb.append("AssetId: ").append(getAssetId());
         sb.append("}");
         return sb.toString();
     }
@@ -1265,6 +1394,14 @@ public class Host implements Serializable, Cloneable {
             return false;
         if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
             return false;
+        if (other.getHostMaintenance() == null ^ this.getHostMaintenance() == null)
+            return false;
+        if (other.getHostMaintenance() != null && other.getHostMaintenance().equals(this.getHostMaintenance()) == false)
+            return false;
+        if (other.getAssetId() == null ^ this.getAssetId() == null)
+            return false;
+        if (other.getAssetId() != null && other.getAssetId().equals(this.getAssetId()) == false)
+            return false;
         return true;
     }
 
@@ -1291,6 +1428,8 @@ public class Host implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getMemberOfServiceLinkedResourceGroup() == null) ? 0 : getMemberOfServiceLinkedResourceGroup().hashCode());
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getHostMaintenance() == null) ? 0 : getHostMaintenance().hashCode());
+        hashCode = prime * hashCode + ((getAssetId() == null) ? 0 : getAssetId().hashCode());
         return hashCode;
     }
 

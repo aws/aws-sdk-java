@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * IDs of target devices.
+     * ID of target device.
      * </p>
      */
     private java.util.List<String> deviceIds;
@@ -46,10 +46,10 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * IDs of target devices.
+     * ID of target device.
      * </p>
      * 
-     * @return IDs of target devices.
+     * @return ID of target device.
      */
 
     public java.util.List<String> getDeviceIds() {
@@ -58,11 +58,11 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * IDs of target devices.
+     * ID of target device.
      * </p>
      * 
      * @param deviceIds
-     *        IDs of target devices.
+     *        ID of target device.
      */
 
     public void setDeviceIds(java.util.Collection<String> deviceIds) {
@@ -76,7 +76,7 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * IDs of target devices.
+     * ID of target device.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param deviceIds
-     *        IDs of target devices.
+     *        ID of target device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * IDs of target devices.
+     * ID of target device.
      * </p>
      * 
      * @param deviceIds
-     *        IDs of target devices.
+     *        ID of target device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

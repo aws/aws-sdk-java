@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group.
      * </p>
      */
     private String groupId;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
-     * security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     * [Default VPC] The name of the security group. You can specify either the security group name or the security
+     * group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      */
     private String groupName;
@@ -51,8 +51,8 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * methods to initialize any additional object members.
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
-     *        or the security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     *        [Default VPC] The name of the security group. You can specify either the security group name or the
+     *        security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      */
     public DeleteSecurityGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -60,11 +60,11 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
+     *        The ID of the security group.
      */
 
     public void setGroupId(String groupId) {
@@ -73,10 +73,10 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group.
      * </p>
      * 
-     * @return The ID of the security group. Required for a nondefault VPC.
+     * @return The ID of the security group.
      */
 
     public String getGroupId() {
@@ -85,11 +85,11 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
+     *        The ID of the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
-     * security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     * [Default VPC] The name of the security group. You can specify either the security group name or the security
+     * group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
-     *        or the security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     *        [Default VPC] The name of the security group. You can specify either the security group name or the
+     *        security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      */
 
     public void setGroupName(String groupName) {
@@ -115,13 +115,12 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
-     * security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     * [Default VPC] The name of the security group. You can specify either the security group name or the security
+     * group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
-     *         or the security group ID. For security groups in a nondefault VPC, you must specify the security group
-     *         ID.
+     * @return [Default VPC] The name of the security group. You can specify either the security group name or the
+     *         security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      */
 
     public String getGroupName() {
@@ -130,13 +129,13 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
-     * security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     * [Default VPC] The name of the security group. You can specify either the security group name or the security
+     * group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name
-     *        or the security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
+     *        [Default VPC] The name of the security group. You can specify either the security group name or the
+     *        security group ID. For security groups in a nondefault VPC, you must specify the security group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,0 +1,209 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.marketplacecatalog.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * Required. The ARN associated with the resource you want to list tags on.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
+     * Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+
+    /**
+     * <p>
+     * Required. The ARN associated with the resource you want to list tags on.
+     * </p>
+     * 
+     * @param resourceArn
+     *        Required. The ARN associated with the resource you want to list tags on.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * Required. The ARN associated with the resource you want to list tags on.
+     * </p>
+     * 
+     * @return Required. The ARN associated with the resource you want to list tags on.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * Required. The ARN associated with the resource you want to list tags on.
+     * </p>
+     * 
+     * @param resourceArn
+     *        Required. The ARN associated with the resource you want to list tags on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTagsForResourceResult withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * </p>
+     * 
+     * @return Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * </p>
+     * 
+     * @param tags
+     *        Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTagsForResourceResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * </p>
+     * 
+     * @param tags
+     *        Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTagsForResourceResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListTagsForResourceResult == false)
+            return false;
+        ListTagsForResourceResult other = (ListTagsForResourceResult) obj;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListTagsForResourceResult clone() {
+        try {
+            return (ListTagsForResourceResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      */
     private LogicalResourceId logicalResourceId;
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      */
     private PhysicalResourceId physicalResourceId;
@@ -46,14 +46,20 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The status of the unsupported resource.
+     * </p>
+     */
+    private String unsupportedResourceStatus;
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical resource identifier for the unsupported resource.
+     *        Logical resource identifier for the unsupported resource.
      */
 
     public void setLogicalResourceId(LogicalResourceId logicalResourceId) {
@@ -62,10 +68,10 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      * 
-     * @return The logical resource identifier for the unsupported resource.
+     * @return Logical resource identifier for the unsupported resource.
      */
 
     public LogicalResourceId getLogicalResourceId() {
@@ -74,11 +80,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The logical resource identifier for the unsupported resource.
+     * Logical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical resource identifier for the unsupported resource.
+     *        Logical resource identifier for the unsupported resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +95,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical resource identifier for the unsupported resource.
+     *        Physical resource identifier for the unsupported resource.
      */
 
     public void setPhysicalResourceId(PhysicalResourceId physicalResourceId) {
@@ -102,10 +108,10 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      * 
-     * @return The physical resource identifier for the unsupported resource.
+     * @return Physical resource identifier for the unsupported resource.
      */
 
     public PhysicalResourceId getPhysicalResourceId() {
@@ -114,11 +120,11 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The physical resource identifier for the unsupported resource.
+     * Physical resource identifier for the unsupported resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical resource identifier for the unsupported resource.
+     *        Physical resource identifier for the unsupported resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,6 +174,46 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The status of the unsupported resource.
+     * </p>
+     * 
+     * @param unsupportedResourceStatus
+     *        The status of the unsupported resource.
+     */
+
+    public void setUnsupportedResourceStatus(String unsupportedResourceStatus) {
+        this.unsupportedResourceStatus = unsupportedResourceStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the unsupported resource.
+     * </p>
+     * 
+     * @return The status of the unsupported resource.
+     */
+
+    public String getUnsupportedResourceStatus() {
+        return this.unsupportedResourceStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the unsupported resource.
+     * </p>
+     * 
+     * @param unsupportedResourceStatus
+     *        The status of the unsupported resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UnsupportedResource withUnsupportedResourceStatus(String unsupportedResourceStatus) {
+        setUnsupportedResourceStatus(unsupportedResourceStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
         if (getPhysicalResourceId() != null)
             sb.append("PhysicalResourceId: ").append(getPhysicalResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType());
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getUnsupportedResourceStatus() != null)
+            sb.append("UnsupportedResourceStatus: ").append(getUnsupportedResourceStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getUnsupportedResourceStatus() == null ^ this.getUnsupportedResourceStatus() == null)
+            return false;
+        if (other.getUnsupportedResourceStatus() != null && other.getUnsupportedResourceStatus().equals(this.getUnsupportedResourceStatus()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class UnsupportedResource implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getLogicalResourceId() == null) ? 0 : getLogicalResourceId().hashCode());
         hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getUnsupportedResourceStatus() == null) ? 0 : getUnsupportedResourceStatus().hashCode());
         return hashCode;
     }
 

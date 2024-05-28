@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,39 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<AssociateBrowserSettingsResult> associateBrowserSettingsAsync(AssociateBrowserSettingsRequest associateBrowserSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateBrowserSettingsRequest, AssociateBrowserSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates an IP access settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateIpAccessSettingsRequest
+     * @return A Java Future containing the result of the AssociateIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsync.AssociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpAccessSettingsResult> associateIpAccessSettingsAsync(
+            AssociateIpAccessSettingsRequest associateIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Associates an IP access settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.AssociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpAccessSettingsResult> associateIpAccessSettingsAsync(
+            AssociateIpAccessSettingsRequest associateIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIpAccessSettingsRequest, AssociateIpAccessSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -260,6 +293,37 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<CreateIdentityProviderResult> createIdentityProviderAsync(CreateIdentityProviderRequest createIdentityProviderRequest,
             com.amazonaws.handlers.AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an IP access settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createIpAccessSettingsRequest
+     * @return A Java Future containing the result of the CreateIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsync.CreateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpAccessSettingsResult> createIpAccessSettingsAsync(CreateIpAccessSettingsRequest createIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Creates an IP access settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.CreateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpAccessSettingsResult> createIpAccessSettingsAsync(CreateIpAccessSettingsRequest createIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIpAccessSettingsRequest, CreateIpAccessSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -494,6 +558,37 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Deletes IP access settings.
+     * </p>
+     * 
+     * @param deleteIpAccessSettingsRequest
+     * @return A Java Future containing the result of the DeleteIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsync.DeleteIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpAccessSettingsResult> deleteIpAccessSettingsAsync(DeleteIpAccessSettingsRequest deleteIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Deletes IP access settings.
+     * </p>
+     * 
+     * @param deleteIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.DeleteIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpAccessSettingsResult> deleteIpAccessSettingsAsync(DeleteIpAccessSettingsRequest deleteIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIpAccessSettingsRequest, DeleteIpAccessSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes network settings.
      * </p>
      * 
@@ -683,6 +778,41 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
     java.util.concurrent.Future<DisassociateBrowserSettingsResult> disassociateBrowserSettingsAsync(
             DisassociateBrowserSettingsRequest disassociateBrowserSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateBrowserSettingsRequest, DisassociateBrowserSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates IP access settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateIpAccessSettingsRequest
+     * @return A Java Future containing the result of the DisassociateIpAccessSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsync.DisassociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpAccessSettingsResult> disassociateIpAccessSettingsAsync(
+            DisassociateIpAccessSettingsRequest disassociateIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Disassociates IP access settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIpAccessSettings operation returned by the
+     *         service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.DisassociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpAccessSettingsResult> disassociateIpAccessSettingsAsync(
+            DisassociateIpAccessSettingsRequest disassociateIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIpAccessSettingsRequest, DisassociateIpAccessSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -877,6 +1007,37 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<GetIdentityProviderResult> getIdentityProviderAsync(GetIdentityProviderRequest getIdentityProviderRequest,
             com.amazonaws.handlers.AsyncHandler<GetIdentityProviderRequest, GetIdentityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the IP access settings.
+     * </p>
+     * 
+     * @param getIpAccessSettingsRequest
+     * @return A Java Future containing the result of the GetIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsync.GetIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpAccessSettingsResult> getIpAccessSettingsAsync(GetIpAccessSettingsRequest getIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Gets the IP access settings.
+     * </p>
+     * 
+     * @param getIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.GetIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpAccessSettingsResult> getIpAccessSettingsAsync(GetIpAccessSettingsRequest getIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIpAccessSettingsRequest, GetIpAccessSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -1164,6 +1325,37 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(ListIdentityProvidersRequest listIdentityProvidersRequest,
             com.amazonaws.handlers.AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of IP access settings.
+     * </p>
+     * 
+     * @param listIpAccessSettingsRequest
+     * @return A Java Future containing the result of the ListIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsync.ListIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIpAccessSettingsResult> listIpAccessSettingsAsync(ListIpAccessSettingsRequest listIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of IP access settings.
+     * </p>
+     * 
+     * @param listIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.ListIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIpAccessSettingsResult> listIpAccessSettingsAsync(ListIpAccessSettingsRequest listIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIpAccessSettingsRequest, ListIpAccessSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -1511,6 +1703,37 @@ public interface AmazonWorkSpacesWebAsync extends AmazonWorkSpacesWeb {
      */
     java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(UpdateIdentityProviderRequest updateIdentityProviderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates IP access settings.
+     * </p>
+     * 
+     * @param updateIpAccessSettingsRequest
+     * @return A Java Future containing the result of the UpdateIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsync.UpdateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIpAccessSettingsResult> updateIpAccessSettingsAsync(UpdateIpAccessSettingsRequest updateIpAccessSettingsRequest);
+
+    /**
+     * <p>
+     * Updates IP access settings.
+     * </p>
+     * 
+     * @param updateIpAccessSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateIpAccessSettings operation returned by the service.
+     * @sample AmazonWorkSpacesWebAsyncHandler.UpdateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIpAccessSettingsResult> updateIpAccessSettingsAsync(UpdateIpAccessSettingsRequest updateIpAccessSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateIpAccessSettingsRequest, UpdateIpAccessSettingsResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This request would exceed the limit for resource shares for your account.
+ * The operation failed because it would exceed the limit for resource shares for your account. To view the limits for
+ * your Amazon Web Services account, see the <a
+ * href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas
+ * console</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

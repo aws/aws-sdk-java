@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class CampaignConfigMarshaller {
 
     private static final MarshallingInfo<Map> ITEMEXPLORATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("itemExplorationConfig").build();
+    private static final MarshallingInfo<Boolean> ENABLEMETADATAWITHRECOMMENDATIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableMetadataWithRecommendations").build();
+    private static final MarshallingInfo<Boolean> SYNCWITHLATESTSOLUTIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("syncWithLatestSolutionVersion").build();
 
     private static final CampaignConfigMarshaller instance = new CampaignConfigMarshaller();
 
@@ -49,6 +53,8 @@ public class CampaignConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(campaignConfig.getItemExplorationConfig(), ITEMEXPLORATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(campaignConfig.getEnableMetadataWithRecommendations(), ENABLEMETADATAWITHRECOMMENDATIONS_BINDING);
+            protocolMarshaller.marshall(campaignConfig.getSyncWithLatestSolutionVersion(), SYNCWITHLATESTSOLUTIONVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

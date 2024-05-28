@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,8 +50,8 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
     private Integer volumeSizeInGB;
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
+     * The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to
+     * the ML compute instance(s) that run the model monitoring job.
      * </p>
      */
     private String volumeKmsKeyId;
@@ -209,14 +209,13 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
+     * The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to
+     * the ML compute instance(s) that run the model monitoring job.
      * </p>
      * 
      * @param volumeKmsKeyId
-     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     *        encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring
-     *        job.
+     *        The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     *        attached to the ML compute instance(s) that run the model monitoring job.
      */
 
     public void setVolumeKmsKeyId(String volumeKmsKeyId) {
@@ -225,13 +224,12 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
+     * The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to
+     * the ML compute instance(s) that run the model monitoring job.
      * </p>
      * 
-     * @return The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses
-     *         to encrypt data on the storage volume attached to the ML compute instance(s) that run the model
-     *         monitoring job.
+     * @return The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     *         attached to the ML compute instance(s) that run the model monitoring job.
      */
 
     public String getVolumeKmsKeyId() {
@@ -240,14 +238,13 @@ public class MonitoringClusterConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.
+     * The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to
+     * the ML compute instance(s) that run the model monitoring job.
      * </p>
      * 
      * @param volumeKmsKeyId
-     *        The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to
-     *        encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring
-     *        job.
+     *        The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     *        attached to the ML compute instance(s) that run the model monitoring job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,12 @@ import javax.annotation.Generated;
 public enum PhoneNumberType {
 
     TOLL_FREE("TOLL_FREE"),
-    DID("DID");
+    DID("DID"),
+    UIFN("UIFN"),
+    SHARED("SHARED"),
+    THIRD_PARTY_TF("THIRD_PARTY_TF"),
+    THIRD_PARTY_DID("THIRD_PARTY_DID"),
+    SHORT_CODE("SHORT_CODE");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified
- * using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.
+ * using an Amazon Resource Name (ARN) or an Resilience Hub-native identifier.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PhysicalResource" target="_top">AWS API
@@ -31,19 +31,52 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Additional configuration parameters for an Resilience Hub application. If you want to implement
+     * <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     * application configuration parameters</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one
+     * associated account.
+     * </p>
+     * <p>
+     * Key: <code>"failover-regions"</code>
+     * </p>
+     * <p>
+     * Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     * </p>
+     * </note>
+     */
+    private java.util.Map<String, java.util.List<String>> additionalInfo;
+    /**
+     * <p>
      * The application components that belong to this resource.
      * </p>
      */
     private java.util.List<AppComponent> appComponents;
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Indicates if a resource is included or excluded from the assessment.
+     * </p>
+     */
+    private Boolean excluded;
+    /**
+     * <p>
+     * Logical identifier of the resource.
      * </p>
      */
     private LogicalResourceId logicalResourceId;
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Name of the parent resource.
+     * </p>
+     */
+    private String parentResourceName;
+    /**
+     * <p>
+     * Identifier of the physical resource.
      * </p>
      */
     private PhysicalResourceId physicalResourceId;
@@ -55,10 +88,168 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
     private String resourceName;
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * Type of input source.
+     * </p>
+     */
+    private String sourceType;
+
+    /**
+     * <p>
+     * Additional configuration parameters for an Resilience Hub application. If you want to implement
+     * <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     * application configuration parameters</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one
+     * associated account.
+     * </p>
+     * <p>
+     * Key: <code>"failover-regions"</code>
+     * </p>
+     * <p>
+     * Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     * </p>
+     * </note>
+     * 
+     * @return Additional configuration parameters for an Resilience Hub application. If you want to implement
+     *         <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     *         href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     *         application configuration parameters</a>.</p> <note>
+     *         <p>
+     *         Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region
+     *         and one associated account.
+     *         </p>
+     *         <p>
+     *         Key: <code>"failover-regions"</code>
+     *         </p>
+     *         <p>
+     *         Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     *         </p>
+     */
+
+    public java.util.Map<String, java.util.List<String>> getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    /**
+     * <p>
+     * Additional configuration parameters for an Resilience Hub application. If you want to implement
+     * <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     * application configuration parameters</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one
+     * associated account.
+     * </p>
+     * <p>
+     * Key: <code>"failover-regions"</code>
+     * </p>
+     * <p>
+     * Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     * </p>
+     * </note>
+     * 
+     * @param additionalInfo
+     *        Additional configuration parameters for an Resilience Hub application. If you want to implement
+     *        <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     *        href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     *        application configuration parameters</a>.</p> <note>
+     *        <p>
+     *        Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and
+     *        one associated account.
+     *        </p>
+     *        <p>
+     *        Key: <code>"failover-regions"</code>
+     *        </p>
+     *        <p>
+     *        Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     *        </p>
+     */
+
+    public void setAdditionalInfo(java.util.Map<String, java.util.List<String>> additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+
+    /**
+     * <p>
+     * Additional configuration parameters for an Resilience Hub application. If you want to implement
+     * <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     * application configuration parameters</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one
+     * associated account.
+     * </p>
+     * <p>
+     * Key: <code>"failover-regions"</code>
+     * </p>
+     * <p>
+     * Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     * </p>
+     * </note>
+     * 
+     * @param additionalInfo
+     *        Additional configuration parameters for an Resilience Hub application. If you want to implement
+     *        <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a
+     *        href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the
+     *        application configuration parameters</a>.</p> <note>
+     *        <p>
+     *        Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and
+     *        one associated account.
+     *        </p>
+     *        <p>
+     *        Key: <code>"failover-regions"</code>
+     *        </p>
+     *        <p>
+     *        Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhysicalResource withAdditionalInfo(java.util.Map<String, java.util.List<String>> additionalInfo) {
+        setAdditionalInfo(additionalInfo);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalInfo entry
+     *
+     * @see PhysicalResource#withAdditionalInfo
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhysicalResource addAdditionalInfoEntry(String key, java.util.List<String> value) {
+        if (null == this.additionalInfo) {
+            this.additionalInfo = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.additionalInfo.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalInfo.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalInfo.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhysicalResource clearAdditionalInfoEntries() {
+        this.additionalInfo = null;
+        return this;
+    }
 
     /**
      * <p>
@@ -132,11 +323,63 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Indicates if a resource is included or excluded from the assessment.
+     * </p>
+     * 
+     * @param excluded
+     *        Indicates if a resource is included or excluded from the assessment.
+     */
+
+    public void setExcluded(Boolean excluded) {
+        this.excluded = excluded;
+    }
+
+    /**
+     * <p>
+     * Indicates if a resource is included or excluded from the assessment.
+     * </p>
+     * 
+     * @return Indicates if a resource is included or excluded from the assessment.
+     */
+
+    public Boolean getExcluded() {
+        return this.excluded;
+    }
+
+    /**
+     * <p>
+     * Indicates if a resource is included or excluded from the assessment.
+     * </p>
+     * 
+     * @param excluded
+     *        Indicates if a resource is included or excluded from the assessment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhysicalResource withExcluded(Boolean excluded) {
+        setExcluded(excluded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if a resource is included or excluded from the assessment.
+     * </p>
+     * 
+     * @return Indicates if a resource is included or excluded from the assessment.
+     */
+
+    public Boolean isExcluded() {
+        return this.excluded;
+    }
+
+    /**
+     * <p>
+     * Logical identifier of the resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      */
 
     public void setLogicalResourceId(LogicalResourceId logicalResourceId) {
@@ -145,10 +388,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
-     * @return The logical identifier of the resource.
+     * @return Logical identifier of the resource.
      */
 
     public LogicalResourceId getLogicalResourceId() {
@@ -157,11 +400,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The logical identifier of the resource.
+     * Logical identifier of the resource.
      * </p>
      * 
      * @param logicalResourceId
-     *        The logical identifier of the resource.
+     *        Logical identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +415,51 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Name of the parent resource.
+     * </p>
+     * 
+     * @param parentResourceName
+     *        Name of the parent resource.
+     */
+
+    public void setParentResourceName(String parentResourceName) {
+        this.parentResourceName = parentResourceName;
+    }
+
+    /**
+     * <p>
+     * Name of the parent resource.
+     * </p>
+     * 
+     * @return Name of the parent resource.
+     */
+
+    public String getParentResourceName() {
+        return this.parentResourceName;
+    }
+
+    /**
+     * <p>
+     * Name of the parent resource.
+     * </p>
+     * 
+     * @param parentResourceName
+     *        Name of the parent resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhysicalResource withParentResourceName(String parentResourceName) {
+        setParentResourceName(parentResourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical identifier of the resource.
+     *        Identifier of the physical resource.
      */
 
     public void setPhysicalResourceId(PhysicalResourceId physicalResourceId) {
@@ -185,10 +468,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Identifier of the physical resource.
      * </p>
      * 
-     * @return The physical identifier of the resource.
+     * @return Identifier of the physical resource.
      */
 
     public PhysicalResourceId getPhysicalResourceId() {
@@ -197,11 +480,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The physical identifier of the resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param physicalResourceId
-     *        The physical identifier of the resource.
+     *        Identifier of the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +535,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      */
 
     public void setResourceType(String resourceType) {
@@ -265,10 +548,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
-     * @return The type of resource.
+     * @return Type of resource.
      */
 
     public String getResourceType() {
@@ -277,16 +560,75 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PhysicalResource withResourceType(String resourceType) {
         setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Type of input source.
+     * </p>
+     * 
+     * @param sourceType
+     *        Type of input source.
+     * @see ResourceSourceType
+     */
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    /**
+     * <p>
+     * Type of input source.
+     * </p>
+     * 
+     * @return Type of input source.
+     * @see ResourceSourceType
+     */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * Type of input source.
+     * </p>
+     * 
+     * @param sourceType
+     *        Type of input source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceSourceType
+     */
+
+    public PhysicalResource withSourceType(String sourceType) {
+        setSourceType(sourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Type of input source.
+     * </p>
+     * 
+     * @param sourceType
+     *        Type of input source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceSourceType
+     */
+
+    public PhysicalResource withSourceType(ResourceSourceType sourceType) {
+        this.sourceType = sourceType.toString();
         return this;
     }
 
@@ -302,16 +644,24 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalInfo() != null)
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo()).append(",");
         if (getAppComponents() != null)
             sb.append("AppComponents: ").append(getAppComponents()).append(",");
+        if (getExcluded() != null)
+            sb.append("Excluded: ").append(getExcluded()).append(",");
         if (getLogicalResourceId() != null)
             sb.append("LogicalResourceId: ").append(getLogicalResourceId()).append(",");
+        if (getParentResourceName() != null)
+            sb.append("ParentResourceName: ").append(getParentResourceName()).append(",");
         if (getPhysicalResourceId() != null)
             sb.append("PhysicalResourceId: ").append(getPhysicalResourceId()).append(",");
         if (getResourceName() != null)
             sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType());
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getSourceType() != null)
+            sb.append("SourceType: ").append(getSourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -326,13 +676,25 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof PhysicalResource == false)
             return false;
         PhysicalResource other = (PhysicalResource) obj;
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null)
+            return false;
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false)
+            return false;
         if (other.getAppComponents() == null ^ this.getAppComponents() == null)
             return false;
         if (other.getAppComponents() != null && other.getAppComponents().equals(this.getAppComponents()) == false)
             return false;
+        if (other.getExcluded() == null ^ this.getExcluded() == null)
+            return false;
+        if (other.getExcluded() != null && other.getExcluded().equals(this.getExcluded()) == false)
+            return false;
         if (other.getLogicalResourceId() == null ^ this.getLogicalResourceId() == null)
             return false;
         if (other.getLogicalResourceId() != null && other.getLogicalResourceId().equals(this.getLogicalResourceId()) == false)
+            return false;
+        if (other.getParentResourceName() == null ^ this.getParentResourceName() == null)
+            return false;
+        if (other.getParentResourceName() != null && other.getParentResourceName().equals(this.getParentResourceName()) == false)
             return false;
         if (other.getPhysicalResourceId() == null ^ this.getPhysicalResourceId() == null)
             return false;
@@ -346,6 +708,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
         return true;
     }
 
@@ -354,11 +720,15 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getAppComponents() == null) ? 0 : getAppComponents().hashCode());
+        hashCode = prime * hashCode + ((getExcluded() == null) ? 0 : getExcluded().hashCode());
         hashCode = prime * hashCode + ((getLogicalResourceId() == null) ? 0 : getLogicalResourceId().hashCode());
+        hashCode = prime * hashCode + ((getParentResourceName() == null) ? 0 : getParentResourceName().hashCode());
         hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
         return hashCode;
     }
 

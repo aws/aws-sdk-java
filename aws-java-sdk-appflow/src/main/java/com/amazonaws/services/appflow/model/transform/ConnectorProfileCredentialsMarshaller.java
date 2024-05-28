@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,8 @@ public class ConnectorProfileCredentialsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SAPOData").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMCONNECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomConnector").build();
+    private static final MarshallingInfo<StructuredPojo> PARDOT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Pardot").build();
 
     private static final ConnectorProfileCredentialsMarshaller instance = new ConnectorProfileCredentialsMarshaller();
 
@@ -98,6 +100,7 @@ public class ConnectorProfileCredentialsMarshaller {
             protocolMarshaller.marshall(connectorProfileCredentials.getZendesk(), ZENDESK_BINDING);
             protocolMarshaller.marshall(connectorProfileCredentials.getSAPOData(), SAPODATA_BINDING);
             protocolMarshaller.marshall(connectorProfileCredentials.getCustomConnector(), CUSTOMCONNECTOR_BINDING);
+            protocolMarshaller.marshall(connectorProfileCredentials.getPardot(), PARDOT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a DeleteAlertManagerDefinition operation.
+ * Represents the input of a <code>DeleteAlertManagerDefinition</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteAlertManagerDefinition" target="_top">AWS
@@ -30,24 +30,24 @@ public class DeleteAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The ID of the workspace in which to delete the alert manager definition.
+     * The ID of the workspace to delete the alert manager definition from.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public void setClientToken(String clientToken) {
@@ -56,10 +56,10 @@ public class DeleteAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public String getClientToken() {
@@ -68,11 +68,11 @@ public class DeleteAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class DeleteAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to delete the alert manager definition.
+     * The ID of the workspace to delete the alert manager definition from.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to delete the alert manager definition.
+     *        The ID of the workspace to delete the alert manager definition from.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -96,10 +96,10 @@ public class DeleteAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to delete the alert manager definition.
+     * The ID of the workspace to delete the alert manager definition from.
      * </p>
      * 
-     * @return The ID of the workspace in which to delete the alert manager definition.
+     * @return The ID of the workspace to delete the alert manager definition from.
      */
 
     public String getWorkspaceId() {
@@ -108,11 +108,11 @@ public class DeleteAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to delete the alert manager definition.
+     * The ID of the workspace to delete the alert manager definition from.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to delete the alert manager definition.
+     *        The ID of the workspace to delete the alert manager definition from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

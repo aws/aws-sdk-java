@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
     private String componentArn;
     /**
      * <p>
-     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * </p>
      */
     private java.util.List<ComponentParameter> parameters;
@@ -83,10 +83,10 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * </p>
      * 
-     * @return A group of parameter settings that are used to configure the component for a specific recipe.
+     * @return A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      */
 
     public java.util.List<ComponentParameter> getParameters() {
@@ -95,11 +95,11 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * </p>
      * 
      * @param parameters
-     *        A group of parameter settings that are used to configure the component for a specific recipe.
+     *        A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      */
 
     public void setParameters(java.util.Collection<ComponentParameter> parameters) {
@@ -113,7 +113,7 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param parameters
-     *        A group of parameter settings that are used to configure the component for a specific recipe.
+     *        A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ComponentConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A group of parameter settings that are used to configure the component for a specific recipe.
+     * A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * </p>
      * 
      * @param parameters
-     *        A group of parameter settings that are used to configure the component for a specific recipe.
+     *        A group of parameter settings that Image Builder uses to configure the component for a specific recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

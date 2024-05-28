@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,24 @@ public class GetLayoutResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private LayoutContent content;
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     */
+    private Boolean deleted;
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the newly created layout.
@@ -99,6 +117,138 @@ public class GetLayoutResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public GetLayoutResult withContent(LayoutContent content) {
         setContent(content);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        Timestamp at which the resource was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @return Timestamp at which the resource was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        Timestamp at which the resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLayoutResult withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @param deleted
+     *        Denotes whether or not the resource has been deleted.
+     */
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @return Denotes whether or not the resource has been deleted.
+     */
+
+    public Boolean getDeleted() {
+        return this.deleted;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @param deleted
+     *        Denotes whether or not the resource has been deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLayoutResult withDeleted(Boolean deleted) {
+        setDeleted(deleted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @return Denotes whether or not the resource has been deleted.
+     */
+
+    public Boolean isDeleted() {
+        return this.deleted;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        Timestamp at which the resource was created or last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @return Timestamp at which the resource was created or last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        Timestamp at which the resource was created or last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLayoutResult withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
         return this;
     }
 
@@ -310,6 +460,12 @@ public class GetLayoutResult extends com.amazonaws.AmazonWebServiceResult<com.am
         sb.append("{");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getDeleted() != null)
+            sb.append("Deleted: ").append(getDeleted()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getLayoutArn() != null)
             sb.append("LayoutArn: ").append(getLayoutArn()).append(",");
         if (getLayoutId() != null)
@@ -336,6 +492,18 @@ public class GetLayoutResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getDeleted() == null ^ this.getDeleted() == null)
+            return false;
+        if (other.getDeleted() != null && other.getDeleted().equals(this.getDeleted()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
         if (other.getLayoutArn() == null ^ this.getLayoutArn() == null)
             return false;
         if (other.getLayoutArn() != null && other.getLayoutArn().equals(this.getLayoutArn()) == false)
@@ -361,6 +529,9 @@ public class GetLayoutResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLayoutArn() == null) ? 0 : getLayoutArn().hashCode());
         hashCode = prime * hashCode + ((getLayoutId() == null) ? 0 : getLayoutId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

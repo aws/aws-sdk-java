@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,10 @@ public class HlsWebdavSettings implements Serializable, Cloneable, StructuredPoj
     private Integer filecacheDuration;
     /** Specify whether or not to use chunked transfer encoding to WebDAV. */
     private String httpTransferMode;
-    /** Number of retry attempts that will be made before the Live Event is put into an error state. */
+    /**
+     * Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the
+     * CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
+     */
     private Integer numRetries;
     /**
      * If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never
@@ -160,10 +163,12 @@ public class HlsWebdavSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Number of retry attempts that will be made before the Live Event is put into an error state.
+     * Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the
+     * CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
      * 
      * @param numRetries
-     *        Number of retry attempts that will be made before the Live Event is put into an error state.
+     *        Number of retry attempts that will be made before the Live Event is put into an error state. Applies only
+     *        if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
      */
 
     public void setNumRetries(Integer numRetries) {
@@ -171,9 +176,11 @@ public class HlsWebdavSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Number of retry attempts that will be made before the Live Event is put into an error state.
+     * Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the
+     * CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
      * 
-     * @return Number of retry attempts that will be made before the Live Event is put into an error state.
+     * @return Number of retry attempts that will be made before the Live Event is put into an error state. Applies only
+     *         if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
      */
 
     public Integer getNumRetries() {
@@ -181,10 +188,12 @@ public class HlsWebdavSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Number of retry attempts that will be made before the Live Event is put into an error state.
+     * Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the
+     * CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
      * 
      * @param numRetries
-     *        Number of retry attempts that will be made before the Live Event is put into an error state.
+     *        Number of retry attempts that will be made before the Live Event is put into an error state. Applies only
+     *        if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

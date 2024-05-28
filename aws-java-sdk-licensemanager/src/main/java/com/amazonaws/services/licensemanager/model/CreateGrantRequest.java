@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,8 +45,29 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String licenseArn;
     /**
      * <p>
-     * The grant principals.
+     * The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account, which includes only the account specified.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organizational unit (OU), which includes all accounts in the OU.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organization, which will include all accounts across your organization.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> principals;
     /**
@@ -184,10 +205,51 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The grant principals.
+     * The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account, which includes only the account specified.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organizational unit (OU), which includes all accounts in the OU.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organization, which will include all accounts across your organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The grant principals.
+     * @return The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         An Amazon Web Services account, which includes only the account specified.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         An organizational unit (OU), which includes all accounts in the OU.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         An organization, which will include all accounts across your organization.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getPrincipals() {
@@ -196,11 +258,52 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The grant principals.
+     * The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account, which includes only the account specified.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organizational unit (OU), which includes all accounts in the OU.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organization, which will include all accounts across your organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param principals
-     *        The grant principals.
+     *        The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account, which includes only the account specified.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An organizational unit (OU), which includes all accounts in the OU.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An organization, which will include all accounts across your organization.
+     *        </p>
+     *        </li>
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -214,8 +317,29 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The grant principals.
+     * The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account, which includes only the account specified.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organizational unit (OU), which includes all accounts in the OU.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organization, which will include all accounts across your organization.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPrincipals(java.util.Collection)} or {@link #withPrincipals(java.util.Collection)} if you want to
@@ -223,7 +347,27 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param principals
-     *        The grant principals.
+     *        The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account, which includes only the account specified.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An organizational unit (OU), which includes all accounts in the OU.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An organization, which will include all accounts across your organization.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +383,52 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The grant principals.
+     * The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An Amazon Web Services account, which includes only the account specified.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organizational unit (OU), which includes all accounts in the OU.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * An organization, which will include all accounts across your organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param principals
-     *        The grant principals.
+     *        The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An Amazon Web Services account, which includes only the account specified.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An organizational unit (OU), which includes all accounts in the OU.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        An organization, which will include all accounts across your organization.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

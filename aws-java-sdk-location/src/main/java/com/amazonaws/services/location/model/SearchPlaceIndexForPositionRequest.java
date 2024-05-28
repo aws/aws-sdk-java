@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,13 @@ public class SearchPlaceIndexForPositionRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String indexName;
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
     /**
      * <p>
      * The preferred language used to return results. The value must be a valid <a
@@ -116,6 +123,52 @@ public class SearchPlaceIndexForPositionRequest extends com.amazonaws.AmazonWebS
 
     public SearchPlaceIndexForPositionRequest withIndexName(String indexName) {
         setIndexName(indexName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchPlaceIndexForPositionRequest withKey(String key) {
+        setKey(key);
         return this;
     }
 
@@ -469,6 +522,8 @@ public class SearchPlaceIndexForPositionRequest extends com.amazonaws.AmazonWebS
         sb.append("{");
         if (getIndexName() != null)
             sb.append("IndexName: ").append(getIndexName()).append(",");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getLanguage() != null)
             sb.append("Language: ").append(getLanguage()).append(",");
         if (getMaxResults() != null)
@@ -493,6 +548,10 @@ public class SearchPlaceIndexForPositionRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getLanguage() == null ^ this.getLanguage() == null)
             return false;
         if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
@@ -514,6 +573,7 @@ public class SearchPlaceIndexForPositionRequest extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());

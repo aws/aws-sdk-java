@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,14 @@ public class ListHostedConfigurationVersionsRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * An optional filter that can be used to specify the version label of an AppConfig hosted configuration version.
+     * This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk
+     * at the end of the value, only an exact match is returned.
+     * </p>
+     */
+    private String versionLabel;
 
     /**
      * <p>
@@ -218,6 +226,58 @@ public class ListHostedConfigurationVersionsRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * An optional filter that can be used to specify the version label of an AppConfig hosted configuration version.
+     * This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk
+     * at the end of the value, only an exact match is returned.
+     * </p>
+     * 
+     * @param versionLabel
+     *        An optional filter that can be used to specify the version label of an AppConfig hosted configuration
+     *        version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't
+     *        specify an asterisk at the end of the value, only an exact match is returned.
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * An optional filter that can be used to specify the version label of an AppConfig hosted configuration version.
+     * This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk
+     * at the end of the value, only an exact match is returned.
+     * </p>
+     * 
+     * @return An optional filter that can be used to specify the version label of an AppConfig hosted configuration
+     *         version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't
+     *         specify an asterisk at the end of the value, only an exact match is returned.
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * An optional filter that can be used to specify the version label of an AppConfig hosted configuration version.
+     * This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't specify an asterisk
+     * at the end of the value, only an exact match is returned.
+     * </p>
+     * 
+     * @param versionLabel
+     *        An optional filter that can be used to specify the version label of an AppConfig hosted configuration
+     *        version. This parameter supports filtering by prefix using a wildcard, for example "v2*". If you don't
+     *        specify an asterisk at the end of the value, only an exact match is returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListHostedConfigurationVersionsRequest withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +296,9 @@ public class ListHostedConfigurationVersionsRequest extends com.amazonaws.Amazon
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +329,10 @@ public class ListHostedConfigurationVersionsRequest extends com.amazonaws.Amazon
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +345,7 @@ public class ListHostedConfigurationVersionsRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getConfigurationProfileId() == null) ? 0 : getConfigurationProfileId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         return hashCode;
     }
 

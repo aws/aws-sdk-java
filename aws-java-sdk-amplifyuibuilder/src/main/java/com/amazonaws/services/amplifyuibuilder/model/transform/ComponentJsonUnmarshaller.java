@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,10 +53,30 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                     context.nextToken();
                     component.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("bindingProperties", targetDepth)) {
+                if (context.testExpression("environmentName", targetDepth)) {
                     context.nextToken();
-                    component.setBindingProperties(new MapUnmarshaller<String, ComponentBindingPropertiesValue>(context.getUnmarshaller(String.class),
-                            ComponentBindingPropertiesValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    component.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sourceId", targetDepth)) {
+                    context.nextToken();
+                    component.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    component.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    component.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("componentType", targetDepth)) {
+                    context.nextToken();
+                    component.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("properties", targetDepth)) {
+                    context.nextToken();
+                    component.setProperties(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
+                            ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("children", targetDepth)) {
                     context.nextToken();
@@ -64,39 +84,11 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("collectionProperties", targetDepth)) {
+                if (context.testExpression("variants", targetDepth)) {
                     context.nextToken();
-                    component.setCollectionProperties(new MapUnmarshaller<String, ComponentDataConfiguration>(context.getUnmarshaller(String.class),
-                            ComponentDataConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
-                if (context.testExpression("componentType", targetDepth)) {
-                    context.nextToken();
-                    component.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    component.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("environmentName", targetDepth)) {
-                    context.nextToken();
-                    component.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("events", targetDepth)) {
-                    context.nextToken();
-                    component.setEvents(new MapUnmarshaller<String, ComponentEvent>(context.getUnmarshaller(String.class), ComponentEventJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    component.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("modifiedAt", targetDepth)) {
-                    context.nextToken();
-                    component.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    component.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    component.setVariants(new ListUnmarshaller<ComponentVariant>(ComponentVariantJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("overrides", targetDepth)) {
                     context.nextToken();
@@ -104,29 +96,37 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                             new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class)))
                             .unmarshall(context));
                 }
-                if (context.testExpression("properties", targetDepth)) {
+                if (context.testExpression("bindingProperties", targetDepth)) {
                     context.nextToken();
-                    component.setProperties(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
-                            ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    component.setBindingProperties(new MapUnmarshaller<String, ComponentBindingPropertiesValue>(context.getUnmarshaller(String.class),
+                            ComponentBindingPropertiesValueJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("schemaVersion", targetDepth)) {
+                if (context.testExpression("collectionProperties", targetDepth)) {
                     context.nextToken();
-                    component.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                    component.setCollectionProperties(new MapUnmarshaller<String, ComponentDataConfiguration>(context.getUnmarshaller(String.class),
+                            ComponentDataConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("sourceId", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    component.setSourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    component.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("modifiedAt", targetDepth)) {
+                    context.nextToken();
+                    component.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     component.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
-                if (context.testExpression("variants", targetDepth)) {
+                if (context.testExpression("events", targetDepth)) {
                     context.nextToken();
-                    component.setVariants(new ListUnmarshaller<ComponentVariant>(ComponentVariantJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
+                    component.setEvents(new MapUnmarshaller<String, ComponentEvent>(context.getUnmarshaller(String.class), ComponentEventJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("schemaVersion", targetDepth)) {
+                    context.nextToken();
+                    component.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

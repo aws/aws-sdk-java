@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,19 @@ public class AllocateIpamPoolCidrRequestMarshaller implements Marshaller<Request
 
         if (allocateIpamPoolCidrRequest.getPreviewNextCidr() != null) {
             request.addParameter("PreviewNextCidr", StringUtils.fromBoolean(allocateIpamPoolCidrRequest.getPreviewNextCidr()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> allocateIpamPoolCidrRequestAllowedCidrsList = (com.amazonaws.internal.SdkInternalList<String>) allocateIpamPoolCidrRequest
+                .getAllowedCidrs();
+        if (!allocateIpamPoolCidrRequestAllowedCidrsList.isEmpty() || !allocateIpamPoolCidrRequestAllowedCidrsList.isAutoConstruct()) {
+            int allowedCidrsListIndex = 1;
+
+            for (String allocateIpamPoolCidrRequestAllowedCidrsListValue : allocateIpamPoolCidrRequestAllowedCidrsList) {
+                if (allocateIpamPoolCidrRequestAllowedCidrsListValue != null) {
+                    request.addParameter("AllowedCidr." + allowedCidrsListIndex, StringUtils.fromString(allocateIpamPoolCidrRequestAllowedCidrsListValue));
+                }
+                allowedCidrsListIndex++;
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<String> allocateIpamPoolCidrRequestDisallowedCidrsList = (com.amazonaws.internal.SdkInternalList<String>) allocateIpamPoolCidrRequest

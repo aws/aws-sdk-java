@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,21 @@ public class AnalysisRouteTableRouteStaxUnmarshaller implements Unmarshaller<Ana
 
                 if (context.testExpression("state", targetDepth)) {
                     analysisRouteTableRoute.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("carrierGatewayId", targetDepth)) {
+                    analysisRouteTableRoute.setCarrierGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("coreNetworkArn", targetDepth)) {
+                    analysisRouteTableRoute.setCoreNetworkArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("localGatewayId", targetDepth)) {
+                    analysisRouteTableRoute.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

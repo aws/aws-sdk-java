@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -753,6 +753,39 @@ public class AWSPrivate5GAsyncClient extends AWSPrivate5GClient implements AWSPr
 
                 try {
                     result = executePing(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNetworkResourceUpdateResult> startNetworkResourceUpdateAsync(StartNetworkResourceUpdateRequest request) {
+
+        return startNetworkResourceUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNetworkResourceUpdateResult> startNetworkResourceUpdateAsync(final StartNetworkResourceUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartNetworkResourceUpdateRequest, StartNetworkResourceUpdateResult> asyncHandler) {
+        final StartNetworkResourceUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartNetworkResourceUpdateResult>() {
+            @Override
+            public StartNetworkResourceUpdateResult call() throws Exception {
+                StartNetworkResourceUpdateResult result = null;
+
+                try {
+                    result = executeStartNetworkResourceUpdate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

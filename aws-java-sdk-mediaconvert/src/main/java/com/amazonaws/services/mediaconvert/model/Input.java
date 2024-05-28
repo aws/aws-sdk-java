@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,42 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this
+     * feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still
+     * apply basic filtering with Deblock and Denoise.
+     */
+    private String advancedInputFilter;
+    /** Optional settings for Advanced input filter when you set Advanced input filter to Enabled. */
+    private AdvancedInputFilterSettings advancedInputFilterSettings;
+    /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
-     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
-     * input tracks into a single audio selector rather than use an audio selector group.
+     * audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a
+     * single audio selector rather than use an audio selector group.
      */
     private java.util.Map<String, AudioSelectorGroup> audioSelectorGroups;
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use multiple Audio selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can
+     * use multiple Audio selectors per input.
      */
     private java.util.Map<String, AudioSelector> audioSelectors;
     /**
      * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
-     * to 20 captions selectors per input.
+     * to 100 captions selectors per input.
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
-     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
-     * (crop).
+     * Use Cropping selection to specify the video area that the service will include in the output video frame. If you
+     * specify a value here, it will override any value that you specify in the output setting Cropping selection.
      */
     private Rectangle crop;
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
-     * controllable for MPEG2 and uncompressed video inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for
+     * MPEG2 and uncompressed video inputs.
      */
     private String deblockFilter;
     /**
@@ -63,8 +75,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private InputDecryptionSettings decryptionSettings;
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
-     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and
+     * uncompressed video inputs.
      */
     private String denoiseFilter;
     /**
@@ -81,21 +93,22 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
      * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
      * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
-     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
-     * IMPs that contain assets referenced by the CPL.
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to specify any supplemental IMPs that contain
+     * assets referenced by the CPL.
      */
     private String fileInput;
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      */
     private String filterEnable;
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is -5 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      */
     private Integer filterStrength;
     /**
@@ -104,38 +117,37 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private ImageInserter imageInserter;
     /**
-     * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
-     * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
-     * you provide only an end time, it will be the entire input up to that point. When you specify more than one input
-     * clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify
-     * them.
+     * Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If
+     * you provide only a start time, the clip will be the entire input from that point to the end. If you provide only
+     * an end time, it will be the entire input up to that point. When you specify more than one input clip, the
+     * transcoding service creates the job outputs by stringing the clips together in the order you specify them.
      */
     private java.util.List<InputClipping> inputClippings;
     /**
      * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
      * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
-     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
-     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
-     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto
+     * is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced.
+     * Doing so creates horizontal interlacing artifacts.
      */
     private String inputScanType;
     /**
-     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
-     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
-     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
-     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you
+     * specify here is black. If you specify a value here, it will override any value that you specify in the output
+     * setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if
+     * you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the
+     * setting Scaling Behavior.
      */
     private Rectangle position;
     /**
-     * Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that
-     * Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not
+     * currently supported. Default is the first program within the transport stream. If the program you specify doesn't
+     * exist, the transcoding service will use this default.
      */
     private Integer programNumber;
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
-     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI - Scan
+     * all PIDs for audio and video. Use PSI - Scan only PSI data.
      */
     private String psiControl;
     /**
@@ -146,20 +158,19 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<String> supplementalImps;
     /**
-     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
-     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
-     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
-     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
-     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
-     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify how the service counts input video
+     * frames. This input frame count affects only the behavior of features that apply to a single input at a time, such
+     * as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input
+     * video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at
+     * the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the
+     * service will use Embedded by default. For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     private String timecodeSource;
     /**
      * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
-     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * must set the Timecode source setting, located under the input settings, to Specified start. For more information
+     * about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     private String timecodeStart;
     /**
@@ -169,6 +180,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     private InputVideoGenerator videoGenerator;
+    /** Contains an array of video overlays. */
+    private java.util.List<VideoOverlay> videoOverlays;
     /**
      * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
      * selector.
@@ -176,14 +189,155 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private VideoSelector videoSelector;
 
     /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this
+     * feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still
+     * apply basic filtering with Deblock and Denoise.
+     * 
+     * @param advancedInputFilter
+     *        Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *        encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when
+     *        compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and
+     *        improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality
+     *        of your output relative to its bitrate, since noisy inputs are more complex and require more bits to
+     *        encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *        sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *        input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @see AdvancedInputFilter
+     */
+
+    public void setAdvancedInputFilter(String advancedInputFilter) {
+        this.advancedInputFilter = advancedInputFilter;
+    }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this
+     * feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still
+     * apply basic filtering with Deblock and Denoise.
+     * 
+     * @return Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *         encoding. The Advanced input filter removes more types of compression artifacts and is an improvement
+     *         when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input
+     *         and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video
+     *         quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits
+     *         to encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *         sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply
+     *         advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and
+     *         Denoise.
+     * @see AdvancedInputFilter
+     */
+
+    public String getAdvancedInputFilter() {
+        return this.advancedInputFilter;
+    }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this
+     * feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still
+     * apply basic filtering with Deblock and Denoise.
+     * 
+     * @param advancedInputFilter
+     *        Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *        encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when
+     *        compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and
+     *        improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality
+     *        of your output relative to its bitrate, since noisy inputs are more complex and require more bits to
+     *        encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *        sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *        input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdvancedInputFilter
+     */
+
+    public Input withAdvancedInputFilter(String advancedInputFilter) {
+        setAdvancedInputFilter(advancedInputFilter);
+        return this;
+    }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this
+     * feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still
+     * apply basic filtering with Deblock and Denoise.
+     * 
+     * @param advancedInputFilter
+     *        Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *        encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when
+     *        compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and
+     *        improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality
+     *        of your output relative to its bitrate, since noisy inputs are more complex and require more bits to
+     *        encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *        sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *        input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdvancedInputFilter
+     */
+
+    public Input withAdvancedInputFilter(AdvancedInputFilter advancedInputFilter) {
+        this.advancedInputFilter = advancedInputFilter.toString();
+        return this;
+    }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * 
+     * @param advancedInputFilterSettings
+     *        Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     */
+
+    public void setAdvancedInputFilterSettings(AdvancedInputFilterSettings advancedInputFilterSettings) {
+        this.advancedInputFilterSettings = advancedInputFilterSettings;
+    }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * 
+     * @return Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     */
+
+    public AdvancedInputFilterSettings getAdvancedInputFilterSettings() {
+        return this.advancedInputFilterSettings;
+    }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * 
+     * @param advancedInputFilterSettings
+     *        Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withAdvancedInputFilterSettings(AdvancedInputFilterSettings advancedInputFilterSettings) {
+        setAdvancedInputFilterSettings(advancedInputFilterSettings);
+        return this;
+    }
+
+    /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
-     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
-     * input tracks into a single audio selector rather than use an audio selector group.
+     * audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a
+     * single audio selector rather than use an audio selector group.
      * 
      * @return Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a
-     *         single output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's
-     *         simpler to assign multiple input tracks into a single audio selector rather than use an audio selector
-     *         group.
+     *         single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign
+     *         multiple input tracks into a single audio selector rather than use an audio selector group.
      */
 
     public java.util.Map<String, AudioSelectorGroup> getAudioSelectorGroups() {
@@ -192,13 +346,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
-     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
-     * input tracks into a single audio selector rather than use an audio selector group.
+     * audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a
+     * single audio selector rather than use an audio selector group.
      * 
      * @param audioSelectorGroups
      *        Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single
-     *        output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to
-     *        assign multiple input tracks into a single audio selector rather than use an audio selector group.
+     *        output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input
+     *        tracks into a single audio selector rather than use an audio selector group.
      */
 
     public void setAudioSelectorGroups(java.util.Map<String, AudioSelectorGroup> audioSelectorGroups) {
@@ -207,13 +361,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
-     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
-     * input tracks into a single audio selector rather than use an audio selector group.
+     * audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a
+     * single audio selector rather than use an audio selector group.
      * 
      * @param audioSelectorGroups
      *        Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single
-     *        output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to
-     *        assign multiple input tracks into a single audio selector rather than use an audio selector group.
+     *        output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input
+     *        tracks into a single audio selector rather than use an audio selector group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +405,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use multiple Audio selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can
+     * use multiple Audio selectors per input.
      * 
-     * @return Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *         in your outputs. You can use multiple Audio selectors per input.
+     * @return Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs.
+     *         You can use multiple Audio selectors per input.
      */
 
     public java.util.Map<String, AudioSelector> getAudioSelectors() {
@@ -263,12 +417,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use multiple Audio selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can
+     * use multiple Audio selectors per input.
      * 
      * @param audioSelectors
-     *        Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *        in your outputs. You can use multiple Audio selectors per input.
+     *        Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs.
+     *        You can use multiple Audio selectors per input.
      */
 
     public void setAudioSelectors(java.util.Map<String, AudioSelector> audioSelectors) {
@@ -276,12 +430,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use multiple Audio selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can
+     * use multiple Audio selectors per input.
      * 
      * @param audioSelectors
-     *        Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *        in your outputs. You can use multiple Audio selectors per input.
+     *        Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs.
+     *        You can use multiple Audio selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,10 +474,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
-     * to 20 captions selectors per input.
+     * to 100 captions selectors per input.
      * 
      * @return Use captions selectors to specify the captions data from your input that you use in your outputs. You can
-     *         use up to 20 captions selectors per input.
+     *         use up to 100 captions selectors per input.
      */
 
     public java.util.Map<String, CaptionSelector> getCaptionSelectors() {
@@ -332,11 +486,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
-     * to 20 captions selectors per input.
+     * to 100 captions selectors per input.
      * 
      * @param captionSelectors
      *        Use captions selectors to specify the captions data from your input that you use in your outputs. You can
-     *        use up to 20 captions selectors per input.
+     *        use up to 100 captions selectors per input.
      */
 
     public void setCaptionSelectors(java.util.Map<String, CaptionSelector> captionSelectors) {
@@ -345,11 +499,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
-     * to 20 captions selectors per input.
+     * to 100 captions selectors per input.
      * 
      * @param captionSelectors
      *        Use captions selectors to specify the captions data from your input that you use in your outputs. You can
-     *        use up to 20 captions selectors per input.
+     *        use up to 100 captions selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,14 +541,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
-     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
-     * (crop).
+     * Use Cropping selection to specify the video area that the service will include in the output video frame. If you
+     * specify a value here, it will override any value that you specify in the output setting Cropping selection.
      * 
      * @param crop
-     *        Use Cropping selection (crop) to specify the video area that the service will include in the output video
-     *        frame. If you specify a value here, it will override any value that you specify in the output setting
-     *        Cropping selection (crop).
+     *        Use Cropping selection to specify the video area that the service will include in the output video frame.
+     *        If you specify a value here, it will override any value that you specify in the output setting Cropping
+     *        selection.
      */
 
     public void setCrop(Rectangle crop) {
@@ -402,13 +555,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
-     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
-     * (crop).
+     * Use Cropping selection to specify the video area that the service will include in the output video frame. If you
+     * specify a value here, it will override any value that you specify in the output setting Cropping selection.
      * 
-     * @return Use Cropping selection (crop) to specify the video area that the service will include in the output video
-     *         frame. If you specify a value here, it will override any value that you specify in the output setting
-     *         Cropping selection (crop).
+     * @return Use Cropping selection to specify the video area that the service will include in the output video frame.
+     *         If you specify a value here, it will override any value that you specify in the output setting Cropping
+     *         selection.
      */
 
     public Rectangle getCrop() {
@@ -416,14 +568,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will include in the output video frame.
-     * If you specify a value here, it will override any value that you specify in the output setting Cropping selection
-     * (crop).
+     * Use Cropping selection to specify the video area that the service will include in the output video frame. If you
+     * specify a value here, it will override any value that you specify in the output setting Cropping selection.
      * 
      * @param crop
-     *        Use Cropping selection (crop) to specify the video area that the service will include in the output video
-     *        frame. If you specify a value here, it will override any value that you specify in the output setting
-     *        Cropping selection (crop).
+     *        Use Cropping selection to specify the video area that the service will include in the output video frame.
+     *        If you specify a value here, it will override any value that you specify in the output setting Cropping
+     *        selection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,12 +584,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
-     * controllable for MPEG2 and uncompressed video inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for
+     * MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
-     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manually controllable for MPEG2 and uncompressed video inputs.
+     *        Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable
+     *        for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -447,11 +598,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
-     * controllable for MPEG2 and uncompressed video inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for
+     * MPEG2 and uncompressed video inputs.
      * 
-     * @return Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *         manually controllable for MPEG2 and uncompressed video inputs.
+     * @return Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable
+     *         for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -460,12 +611,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
-     * controllable for MPEG2 and uncompressed video inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for
+     * MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
-     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manually controllable for MPEG2 and uncompressed video inputs.
+     *        Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable
+     *        for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -476,12 +627,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
-     * controllable for MPEG2 and uncompressed video inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for
+     * MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
-     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manually controllable for MPEG2 and uncompressed video inputs.
+     *        Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable
+     *        for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -538,12 +689,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
-     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and
+     * uncompressed video inputs.
      * 
      * @param denoiseFilter
-     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
-     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
+     *        Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264,
+     *        H.265, and uncompressed video inputs.
      * @see InputDenoiseFilter
      */
 
@@ -552,11 +703,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
-     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and
+     * uncompressed video inputs.
      * 
-     * @return Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
-     *         to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * @return Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264,
+     *         H.265, and uncompressed video inputs.
      * @see InputDenoiseFilter
      */
 
@@ -565,12 +716,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
-     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and
+     * uncompressed video inputs.
      * 
      * @param denoiseFilter
-     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
-     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
+     *        Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264,
+     *        H.265, and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDenoiseFilter
      */
@@ -581,12 +732,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
-     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and
+     * uncompressed video inputs.
      * 
      * @param denoiseFilter
-     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
-     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
+     *        Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264,
+     *        H.265, and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDenoiseFilter
      */
@@ -670,15 +821,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
      * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
      * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
-     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
-     * IMPs that contain assets referenced by the CPL.
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to specify any supplemental IMPs that contain
+     * assets referenced by the CPL.
      * 
      * @param fileInput
      *        Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
      *        concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your
      *        input format is IMF, specify your input by providing the path to your CPL. For example,
-     *        "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs*
-     *        (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
+     *        "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to
+     *        specify any supplemental IMPs that contain assets referenced by the CPL.
      */
 
     public void setFileInput(String fileInput) {
@@ -689,14 +840,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
      * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
      * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
-     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
-     * IMPs that contain assets referenced by the CPL.
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to specify any supplemental IMPs that contain
+     * assets referenced by the CPL.
      * 
      * @return Specify the source file for your transcoding job. You can use multiple inputs in a single job. The
      *         service concatenates these inputs, in the order that you specify them in the job, to create the outputs.
      *         If your input format is IMF, specify your input by providing the path to your CPL. For example,
-     *         "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs*
-     *         (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
+     *         "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to
+     *         specify any supplemental IMPs that contain assets referenced by the CPL.
      */
 
     public String getFileInput() {
@@ -707,15 +858,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
      * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
      * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
-     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
-     * IMPs that contain assets referenced by the CPL.
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to specify any supplemental IMPs that contain
+     * assets referenced by the CPL.
      * 
      * @param fileInput
      *        Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
      *        concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your
      *        input format is IMF, specify your input by providing the path to your CPL. For example,
-     *        "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs*
-     *        (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
+     *        "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to
+     *        specify any supplemental IMPs that contain assets referenced by the CPL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,18 +876,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
      * @param filterEnable
-     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     *        Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *        depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *        filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *        value for Filter strength.
      * @see InputFilterEnable
      */
 
@@ -745,17 +893,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
-     * @return Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *         filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *         transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *         - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *         and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     * @return Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *         depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *         filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *         value for Filter strength.
      * @see InputFilterEnable
      */
 
@@ -764,18 +909,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
      * @param filterEnable
-     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     *        Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *        depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *        filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *        value for Filter strength.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -786,18 +928,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
      * @param filterEnable
-     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     *        Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *        depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *        filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *        value for Filter strength.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -808,12 +947,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is -5 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      * 
      * @param filterStrength
-     *        Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and
-     *        Denoise). The range is -5 to 5. Default is 0.
+     *        Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     *        artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable
+     *        to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering
+     *        and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or
+     *        to the strength of the Advanced input filter.
      */
 
     public void setFilterStrength(Integer filterStrength) {
@@ -821,11 +966,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is -5 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      * 
-     * @return Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and
-     *         Denoise). The range is -5 to 5. Default is 0.
+     * @return Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     *         artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable
+     *         to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering
+     *         and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or
+     *         to the strength of the Advanced input filter.
      */
 
     public Integer getFilterStrength() {
@@ -833,12 +984,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is -5 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      * 
      * @param filterStrength
-     *        Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and
-     *        Denoise). The range is -5 to 5. Default is 0.
+     *        Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     *        artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable
+     *        to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering
+     *        and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or
+     *        to the strength of the Advanced input filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -888,17 +1045,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
-     * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
-     * you provide only an end time, it will be the entire input up to that point. When you specify more than one input
-     * clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify
-     * them.
+     * Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If
+     * you provide only a start time, the clip will be the entire input from that point to the end. If you provide only
+     * an end time, it will be the entire input up to that point. When you specify more than one input clip, the
+     * transcoding service creates the job outputs by stringing the clips together in the order you specify them.
      * 
-     * @return (InputClippings) contains sets of start and end times that together specify a portion of the input to be
-     *         used in the outputs. If you provide only a start time, the clip will be the entire input from that point
-     *         to the end. If you provide only an end time, it will be the entire input up to that point. When you
-     *         specify more than one input clip, the transcoding service creates the job outputs by stringing the clips
-     *         together in the order you specify them.
+     * @return Contains sets of start and end times that together specify a portion of the input to be used in the
+     *         outputs. If you provide only a start time, the clip will be the entire input from that point to the end.
+     *         If you provide only an end time, it will be the entire input up to that point. When you specify more than
+     *         one input clip, the transcoding service creates the job outputs by stringing the clips together in the
+     *         order you specify them.
      */
 
     public java.util.List<InputClipping> getInputClippings() {
@@ -906,18 +1062,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
-     * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
-     * you provide only an end time, it will be the entire input up to that point. When you specify more than one input
-     * clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify
-     * them.
+     * Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If
+     * you provide only a start time, the clip will be the entire input from that point to the end. If you provide only
+     * an end time, it will be the entire input up to that point. When you specify more than one input clip, the
+     * transcoding service creates the job outputs by stringing the clips together in the order you specify them.
      * 
      * @param inputClippings
-     *        (InputClippings) contains sets of start and end times that together specify a portion of the input to be
-     *        used in the outputs. If you provide only a start time, the clip will be the entire input from that point
-     *        to the end. If you provide only an end time, it will be the entire input up to that point. When you
-     *        specify more than one input clip, the transcoding service creates the job outputs by stringing the clips
-     *        together in the order you specify them.
+     *        Contains sets of start and end times that together specify a portion of the input to be used in the
+     *        outputs. If you provide only a start time, the clip will be the entire input from that point to the end.
+     *        If you provide only an end time, it will be the entire input up to that point. When you specify more than
+     *        one input clip, the transcoding service creates the job outputs by stringing the clips together in the
+     *        order you specify them.
      */
 
     public void setInputClippings(java.util.Collection<InputClipping> inputClippings) {
@@ -930,11 +1085,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
-     * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
-     * you provide only an end time, it will be the entire input up to that point. When you specify more than one input
-     * clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify
-     * them.
+     * Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If
+     * you provide only a start time, the clip will be the entire input from that point to the end. If you provide only
+     * an end time, it will be the entire input up to that point. When you specify more than one input clip, the
+     * transcoding service creates the job outputs by stringing the clips together in the order you specify them.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInputClippings(java.util.Collection)} or {@link #withInputClippings(java.util.Collection)} if you want
@@ -942,11 +1096,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param inputClippings
-     *        (InputClippings) contains sets of start and end times that together specify a portion of the input to be
-     *        used in the outputs. If you provide only a start time, the clip will be the entire input from that point
-     *        to the end. If you provide only an end time, it will be the entire input up to that point. When you
-     *        specify more than one input clip, the transcoding service creates the job outputs by stringing the clips
-     *        together in the order you specify them.
+     *        Contains sets of start and end times that together specify a portion of the input to be used in the
+     *        outputs. If you provide only a start time, the clip will be the entire input from that point to the end.
+     *        If you provide only an end time, it will be the entire input up to that point. When you specify more than
+     *        one input clip, the transcoding service creates the job outputs by stringing the clips together in the
+     *        order you specify them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -961,18 +1115,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
-     * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
-     * you provide only an end time, it will be the entire input up to that point. When you specify more than one input
-     * clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify
-     * them.
+     * Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If
+     * you provide only a start time, the clip will be the entire input from that point to the end. If you provide only
+     * an end time, it will be the entire input up to that point. When you specify more than one input clip, the
+     * transcoding service creates the job outputs by stringing the clips together in the order you specify them.
      * 
      * @param inputClippings
-     *        (InputClippings) contains sets of start and end times that together specify a portion of the input to be
-     *        used in the outputs. If you provide only a start time, the clip will be the entire input from that point
-     *        to the end. If you provide only an end time, it will be the entire input up to that point. When you
-     *        specify more than one input clip, the transcoding service creates the job outputs by stringing the clips
-     *        together in the order you specify them.
+     *        Contains sets of start and end times that together specify a portion of the input to be used in the
+     *        outputs. If you provide only a start time, the clip will be the entire input from that point to the end.
+     *        If you provide only an end time, it will be the entire input up to that point. When you specify more than
+     *        one input clip, the transcoding service creates the job outputs by stringing the clips together in the
+     *        order you specify them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -984,16 +1137,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
      * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
-     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
-     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
-     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto
+     * is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced.
+     * Doing so creates horizontal interlacing artifacts.
      * 
      * @param inputScanType
      *        When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
      *        MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
      *        preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
-     *        the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
-     *        this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     *        the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this
+     *        value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
      * @see InputScanType
      */
 
@@ -1004,15 +1157,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
      * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
-     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
-     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
-     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto
+     * is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced.
+     * Doing so creates horizontal interlacing artifacts.
      * 
      * @return When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
      *         MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
      *         preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
-     *         the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
-     *         this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     *         the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this
+     *         value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
      * @see InputScanType
      */
 
@@ -1023,16 +1176,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
      * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
-     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
-     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
-     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto
+     * is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced.
+     * Doing so creates horizontal interlacing artifacts.
      * 
      * @param inputScanType
      *        When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
      *        MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
      *        preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
-     *        the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
-     *        this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     *        the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this
+     *        value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputScanType
      */
@@ -1045,16 +1198,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
      * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
-     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
-     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
-     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto
+     * is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced.
+     * Doing so creates horizontal interlacing artifacts.
      * 
      * @param inputScanType
      *        When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
      *        MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
      *        preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
-     *        the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
-     *        this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     *        the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this
+     *        value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputScanType
      */
@@ -1065,19 +1218,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
-     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
-     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
-     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you
+     * specify here is black. If you specify a value here, it will override any value that you specify in the output
+     * setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if
+     * you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the
+     * setting Scaling Behavior.
      * 
      * @param position
-     *        Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     *        rectangle that you specify here is black. If you specify a value here, it will override any value that you
-     *        specify in the output setting Selection placement (position). If you specify a value here, this will
-     *        override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND).
-     *        If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior
-     *        (scalingBehavior).
+     *        Use Selection placement to define the video area in your output frame. The area outside of the rectangle
+     *        that you specify here is black. If you specify a value here, it will override any value that you specify
+     *        in the output setting Selection placement. If you specify a value here, this will override any AFD values
+     *        in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore
+     *        anything that you specify for the setting Scaling Behavior.
      */
 
     public void setPosition(Rectangle position) {
@@ -1085,18 +1237,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
-     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
-     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
-     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you
+     * specify here is black. If you specify a value here, it will override any value that you specify in the output
+     * setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if
+     * you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the
+     * setting Scaling Behavior.
      * 
-     * @return Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     *         rectangle that you specify here is black. If you specify a value here, it will override any value that
-     *         you specify in the output setting Selection placement (position). If you specify a value here, this will
-     *         override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond
-     *         (RESPOND). If you specify a value here, this will ignore anything that you specify for the setting
-     *         Scaling Behavior (scalingBehavior).
+     * @return Use Selection placement to define the video area in your output frame. The area outside of the rectangle
+     *         that you specify here is black. If you specify a value here, it will override any value that you specify
+     *         in the output setting Selection placement. If you specify a value here, this will override any AFD values
+     *         in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore
+     *         anything that you specify for the setting Scaling Behavior.
      */
 
     public Rectangle getPosition() {
@@ -1104,19 +1255,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     * rectangle that you specify here is black. If you specify a value here, it will override any value that you
-     * specify in the output setting Selection placement (position). If you specify a value here, this will override any
-     * AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND). If you specify a
-     * value here, this will ignore anything that you specify for the setting Scaling Behavior (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you
+     * specify here is black. If you specify a value here, it will override any value that you specify in the output
+     * setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if
+     * you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the
+     * setting Scaling Behavior.
      * 
      * @param position
-     *        Use Selection placement (position) to define the video area in your output frame. The area outside of the
-     *        rectangle that you specify here is black. If you specify a value here, it will override any value that you
-     *        specify in the output setting Selection placement (position). If you specify a value here, this will
-     *        override any AFD values in your input, even if you set Respond to AFD (RespondToAfd) to Respond (RESPOND).
-     *        If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior
-     *        (scalingBehavior).
+     *        Use Selection placement to define the video area in your output frame. The area outside of the rectangle
+     *        that you specify here is black. If you specify a value here, it will override any value that you specify
+     *        in the output setting Selection placement. If you specify a value here, this will override any AFD values
+     *        in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore
+     *        anything that you specify for the setting Scaling Behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1126,14 +1276,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that
-     * Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not
+     * currently supported. Default is the first program within the transport stream. If the program you specify doesn't
+     * exist, the transcoding service will use this default.
      * 
      * @param programNumber
-     *        Use Program (programNumber) to select a specific program from within a multi-program transport stream.
-     *        Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If
-     *        the program you specify doesn't exist, the transcoding service will use this default.
+     *        Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K
+     *        is not currently supported. Default is the first program within the transport stream. If the program you
+     *        specify doesn't exist, the transcoding service will use this default.
      */
 
     public void setProgramNumber(Integer programNumber) {
@@ -1141,13 +1291,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that
-     * Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not
+     * currently supported. Default is the first program within the transport stream. If the program you specify doesn't
+     * exist, the transcoding service will use this default.
      * 
-     * @return Use Program (programNumber) to select a specific program from within a multi-program transport stream.
-     *         Note that Quad 4K is not currently supported. Default is the first program within the transport stream.
-     *         If the program you specify doesn't exist, the transcoding service will use this default.
+     * @return Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K
+     *         is not currently supported. Default is the first program within the transport stream. If the program you
+     *         specify doesn't exist, the transcoding service will use this default.
      */
 
     public Integer getProgramNumber() {
@@ -1155,14 +1305,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that
-     * Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not
+     * currently supported. Default is the first program within the transport stream. If the program you specify doesn't
+     * exist, the transcoding service will use this default.
      * 
      * @param programNumber
-     *        Use Program (programNumber) to select a specific program from within a multi-program transport stream.
-     *        Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If
-     *        the program you specify doesn't exist, the transcoding service will use this default.
+     *        Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K
+     *        is not currently supported. Default is the first program within the transport stream. If the program you
+     *        specify doesn't exist, the transcoding service will use this default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1172,12 +1322,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
-     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI - Scan
+     * all PIDs for audio and video. Use PSI - Scan only PSI data.
      * 
      * @param psiControl
-     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
-     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     *        Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI -
+     *        Scan all PIDs for audio and video. Use PSI - Scan only PSI data.
      * @see InputPsiControl
      */
 
@@ -1186,11 +1336,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
-     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI - Scan
+     * all PIDs for audio and video. Use PSI - Scan only PSI data.
      * 
-     * @return Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
-     *         scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * @return Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI
+     *         - Scan all PIDs for audio and video. Use PSI - Scan only PSI data.
      * @see InputPsiControl
      */
 
@@ -1199,12 +1349,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
-     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI - Scan
+     * all PIDs for audio and video. Use PSI - Scan only PSI data.
      * 
      * @param psiControl
-     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
-     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     *        Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI -
+     *        Scan all PIDs for audio and video. Use PSI - Scan only PSI data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputPsiControl
      */
@@ -1215,12 +1365,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
-     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI - Scan
+     * all PIDs for audio and video. Use PSI - Scan only PSI data.
      * 
      * @param psiControl
-     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
-     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     *        Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI -
+     *        Scan all PIDs for audio and video. Use PSI - Scan only PSI data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputPsiControl
      */
@@ -1318,23 +1468,22 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
-     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
-     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
-     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
-     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
-     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify how the service counts input video
+     * frames. This input frame count affects only the behavior of features that apply to a single input at a time, such
+     * as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input
+     * video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at
+     * the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the
+     * service will use Embedded by default. For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeSource
-     *        Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
-     *        the service counts input video frames. This input frame count affects only the behavior of features that
-     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
-     *        Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
-     *        the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
-     *        that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
-     *        source, the service will use Embedded by default. For more information about timecodes, see
-     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     *        Use this Timecode source setting, located under the input settings, to specify how the service counts
+     *        input video frames. This input frame count affects only the behavior of features that apply to a single
+     *        input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use
+     *        the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified
+     *        start to start the first frame at the timecode that you specify in the setting Start timecode. If you
+     *        don't specify a value for Timecode source, the service will use Embedded by default. For more information
+     *        about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @see InputTimecodeSource
      */
 
@@ -1343,22 +1492,21 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
-     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
-     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
-     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
-     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
-     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify how the service counts input video
+     * frames. This input frame count affects only the behavior of features that apply to a single input at a time, such
+     * as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input
+     * video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at
+     * the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the
+     * service will use Embedded by default. For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
-     * @return Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
-     *         the service counts input video frames. This input frame count affects only the behavior of features that
-     *         apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
-     *         Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
-     *         the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
-     *         that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
-     *         source, the service will use Embedded by default. For more information about timecodes, see
-     *         https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * @return Use this Timecode source setting, located under the input settings, to specify how the service counts
+     *         input video frames. This input frame count affects only the behavior of features that apply to a single
+     *         input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use
+     *         the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose
+     *         Specified start to start the first frame at the timecode that you specify in the setting Start timecode.
+     *         If you don't specify a value for Timecode source, the service will use Embedded by default. For more
+     *         information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @see InputTimecodeSource
      */
 
@@ -1367,23 +1515,22 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
-     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
-     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
-     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
-     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
-     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify how the service counts input video
+     * frames. This input frame count affects only the behavior of features that apply to a single input at a time, such
+     * as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input
+     * video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at
+     * the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the
+     * service will use Embedded by default. For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeSource
-     *        Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
-     *        the service counts input video frames. This input frame count affects only the behavior of features that
-     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
-     *        Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
-     *        the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
-     *        that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
-     *        source, the service will use Embedded by default. For more information about timecodes, see
-     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     *        Use this Timecode source setting, located under the input settings, to specify how the service counts
+     *        input video frames. This input frame count affects only the behavior of features that apply to a single
+     *        input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use
+     *        the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified
+     *        start to start the first frame at the timecode that you specify in the setting Start timecode. If you
+     *        don't specify a value for Timecode source, the service will use Embedded by default. For more information
+     *        about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -1394,23 +1541,22 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
-     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
-     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
-     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
-     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
-     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify how the service counts input video
+     * frames. This input frame count affects only the behavior of features that apply to a single input at a time, such
+     * as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input
+     * video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at
+     * the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the
+     * service will use Embedded by default. For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeSource
-     *        Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
-     *        the service counts input video frames. This input frame count affects only the behavior of features that
-     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
-     *        Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
-     *        the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
-     *        that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
-     *        source, the service will use Embedded by default. For more information about timecodes, see
-     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     *        Use this Timecode source setting, located under the input settings, to specify how the service counts
+     *        input video frames. This input frame count affects only the behavior of features that apply to a single
+     *        input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use
+     *        the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified
+     *        start to start the first frame at the timecode that you specify in the setting Start timecode. If you
+     *        don't specify a value for Timecode source, the service will use Embedded by default. For more information
+     *        about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -1422,15 +1568,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
-     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * must set the Timecode source setting, located under the input settings, to Specified start. For more information
+     * about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeStart
      *        Specify the timecode that you want the service to use for this input's initial frame. To use this setting,
-     *        you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to
-     *        Specified start (SPECIFIEDSTART). For more information about timecodes, see
-     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     *        you must set the Timecode source setting, located under the input settings, to Specified start. For more
+     *        information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
 
     public void setTimecodeStart(String timecodeStart) {
@@ -1439,14 +1583,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
-     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * must set the Timecode source setting, located under the input settings, to Specified start. For more information
+     * about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @return Specify the timecode that you want the service to use for this input's initial frame. To use this
-     *         setting, you must set the Timecode source setting, located under the input settings
-     *         (InputTimecodeSource), to Specified start (SPECIFIEDSTART). For more information about timecodes, see
-     *         https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     *         setting, you must set the Timecode source setting, located under the input settings, to Specified start.
+     *         For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
 
     public String getTimecodeStart() {
@@ -1455,15 +1597,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
-     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * must set the Timecode source setting, located under the input settings, to Specified start. For more information
+     * about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeStart
      *        Specify the timecode that you want the service to use for this input's initial frame. To use this setting,
-     *        you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to
-     *        Specified start (SPECIFIEDSTART). For more information about timecodes, see
-     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     *        you must set the Timecode source setting, located under the input settings, to Specified start. For more
+     *        information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1525,6 +1665,68 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Contains an array of video overlays.
+     * 
+     * @return Contains an array of video overlays.
+     */
+
+    public java.util.List<VideoOverlay> getVideoOverlays() {
+        return videoOverlays;
+    }
+
+    /**
+     * Contains an array of video overlays.
+     * 
+     * @param videoOverlays
+     *        Contains an array of video overlays.
+     */
+
+    public void setVideoOverlays(java.util.Collection<VideoOverlay> videoOverlays) {
+        if (videoOverlays == null) {
+            this.videoOverlays = null;
+            return;
+        }
+
+        this.videoOverlays = new java.util.ArrayList<VideoOverlay>(videoOverlays);
+    }
+
+    /**
+     * Contains an array of video overlays.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVideoOverlays(java.util.Collection)} or {@link #withVideoOverlays(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param videoOverlays
+     *        Contains an array of video overlays.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withVideoOverlays(VideoOverlay... videoOverlays) {
+        if (this.videoOverlays == null) {
+            setVideoOverlays(new java.util.ArrayList<VideoOverlay>(videoOverlays.length));
+        }
+        for (VideoOverlay ele : videoOverlays) {
+            this.videoOverlays.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Contains an array of video overlays.
+     * 
+     * @param videoOverlays
+     *        Contains an array of video overlays.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withVideoOverlays(java.util.Collection<VideoOverlay> videoOverlays) {
+        setVideoOverlays(videoOverlays);
+        return this;
+    }
+
+    /**
      * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
      * selector.
      * 
@@ -1576,6 +1778,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdvancedInputFilter() != null)
+            sb.append("AdvancedInputFilter: ").append(getAdvancedInputFilter()).append(",");
+        if (getAdvancedInputFilterSettings() != null)
+            sb.append("AdvancedInputFilterSettings: ").append(getAdvancedInputFilterSettings()).append(",");
         if (getAudioSelectorGroups() != null)
             sb.append("AudioSelectorGroups: ").append(getAudioSelectorGroups()).append(",");
         if (getAudioSelectors() != null)
@@ -1618,6 +1824,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("TimecodeStart: ").append(getTimecodeStart()).append(",");
         if (getVideoGenerator() != null)
             sb.append("VideoGenerator: ").append(getVideoGenerator()).append(",");
+        if (getVideoOverlays() != null)
+            sb.append("VideoOverlays: ").append(getVideoOverlays()).append(",");
         if (getVideoSelector() != null)
             sb.append("VideoSelector: ").append(getVideoSelector());
         sb.append("}");
@@ -1634,6 +1842,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Input == false)
             return false;
         Input other = (Input) obj;
+        if (other.getAdvancedInputFilter() == null ^ this.getAdvancedInputFilter() == null)
+            return false;
+        if (other.getAdvancedInputFilter() != null && other.getAdvancedInputFilter().equals(this.getAdvancedInputFilter()) == false)
+            return false;
+        if (other.getAdvancedInputFilterSettings() == null ^ this.getAdvancedInputFilterSettings() == null)
+            return false;
+        if (other.getAdvancedInputFilterSettings() != null && other.getAdvancedInputFilterSettings().equals(this.getAdvancedInputFilterSettings()) == false)
+            return false;
         if (other.getAudioSelectorGroups() == null ^ this.getAudioSelectorGroups() == null)
             return false;
         if (other.getAudioSelectorGroups() != null && other.getAudioSelectorGroups().equals(this.getAudioSelectorGroups()) == false)
@@ -1718,6 +1934,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVideoGenerator() != null && other.getVideoGenerator().equals(this.getVideoGenerator()) == false)
             return false;
+        if (other.getVideoOverlays() == null ^ this.getVideoOverlays() == null)
+            return false;
+        if (other.getVideoOverlays() != null && other.getVideoOverlays().equals(this.getVideoOverlays()) == false)
+            return false;
         if (other.getVideoSelector() == null ^ this.getVideoSelector() == null)
             return false;
         if (other.getVideoSelector() != null && other.getVideoSelector().equals(this.getVideoSelector()) == false)
@@ -1730,6 +1950,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdvancedInputFilter() == null) ? 0 : getAdvancedInputFilter().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedInputFilterSettings() == null) ? 0 : getAdvancedInputFilterSettings().hashCode());
         hashCode = prime * hashCode + ((getAudioSelectorGroups() == null) ? 0 : getAudioSelectorGroups().hashCode());
         hashCode = prime * hashCode + ((getAudioSelectors() == null) ? 0 : getAudioSelectors().hashCode());
         hashCode = prime * hashCode + ((getCaptionSelectors() == null) ? 0 : getCaptionSelectors().hashCode());
@@ -1751,6 +1973,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimecodeSource() == null) ? 0 : getTimecodeSource().hashCode());
         hashCode = prime * hashCode + ((getTimecodeStart() == null) ? 0 : getTimecodeStart().hashCode());
         hashCode = prime * hashCode + ((getVideoGenerator() == null) ? 0 : getVideoGenerator().hashCode());
+        hashCode = prime * hashCode + ((getVideoOverlays() == null) ? 0 : getVideoOverlays().hashCode());
         hashCode = prime * hashCode + ((getVideoSelector() == null) ? 0 : getVideoSelector().hashCode());
         return hashCode;
     }

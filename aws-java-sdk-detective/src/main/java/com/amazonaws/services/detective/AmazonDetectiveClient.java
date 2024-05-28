@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.detective.AmazonDetectiveClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.detective.model.*;
+
 import com.amazonaws.services.detective.model.transform.*;
 
 /**
@@ -160,7 +161,7 @@ import com.amazonaws.services.detective.model.transform.*;
  * </p>
  * <note>
  * <p>
- * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * We replaced the term "master account" with the term "administrator account". An administrator account is used to
  * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
  * behavior graph.
  * </p>
@@ -190,6 +191,15 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.detective.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.detective.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.detective.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.detective.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -198,12 +208,6 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.detective.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.detective.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.detective.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.detective.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
@@ -269,6 +273,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param acceptInvitationRequest
      * @return Result of the AcceptInvitation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -332,6 +338,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param batchGetGraphMemberDatasourcesRequest
      * @return Result of the BatchGetGraphMemberDatasources operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -395,6 +403,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param batchGetMembershipDatasourcesRequest
      * @return Result of the BatchGetMembershipDatasources operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -457,12 +467,6 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * operation is called by the account that is enabling Detective.
      * </p>
      * <p>
-     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
-     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
-     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
-     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
-     * </p>
-     * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
      * of the new behavior graph.
      * </p>
@@ -477,6 +481,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param createGraphRequest
      * @return Result of the CreateGraph operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -486,19 +492,14 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @sample AmazonDetective.CreateGraph
@@ -594,6 +595,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param createMembersRequest
      * @return Result of the CreateMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -605,19 +608,14 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @sample AmazonDetective.CreateMembers
@@ -679,6 +677,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteGraphRequest
      * @return Result of the DeleteGraph operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -754,6 +754,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteMembersRequest
      * @return Result of the DeleteMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -821,6 +823,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param describeOrganizationConfigurationRequest
      * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -897,6 +901,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param disableOrganizationAdminAccountRequest
      * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -967,6 +973,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param disassociateMembershipRequest
      * @return Result of the DisassociateMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -1048,6 +1056,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param enableOrganizationAdminAccountRequest
      * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1106,11 +1116,81 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>GetInvestigation</code>
+     * returns the investigation results of an investigation for a behavior graph.
+     * </p>
+     * 
+     * @param getInvestigationRequest
+     * @return Result of the GetInvestigation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.GetInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetInvestigationResult getInvestigation(GetInvestigationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInvestigation(request);
+    }
+
+    @SdkInternalApi
+    final GetInvestigationResult executeGetInvestigation(GetInvestigationRequest getInvestigationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInvestigationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInvestigationRequest> request = null;
+        Response<GetInvestigationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInvestigationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInvestigationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvestigation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInvestigationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetInvestigationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the membership details for specified member accounts for a behavior graph.
      * </p>
      * 
      * @param getMembersRequest
      * @return Result of the GetMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1172,6 +1252,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listDatasourcePackagesRequest
      * @return Result of the ListDatasourcePackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1239,6 +1321,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listGraphsRequest
      * @return Result of the ListGraphs operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1293,6 +1377,140 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Gets the indicators from an investigation. You can use the information from the indicators to determine if an IAM
+     * user and/or IAM role is involved in an unusual activity that could indicate malicious behavior and its impact.
+     * </p>
+     * 
+     * @param listIndicatorsRequest
+     * @return Result of the ListIndicators operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.ListIndicators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListIndicatorsResult listIndicators(ListIndicatorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIndicators(request);
+    }
+
+    @SdkInternalApi
+    final ListIndicatorsResult executeListIndicators(ListIndicatorsRequest listIndicatorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIndicatorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIndicatorsRequest> request = null;
+        Response<ListIndicatorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIndicatorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIndicatorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIndicators");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIndicatorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIndicatorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>ListInvestigations</code>
+     * lists all active Detective investigations.
+     * </p>
+     * 
+     * @param listInvestigationsRequest
+     * @return Result of the ListInvestigations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.ListInvestigations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListInvestigationsResult listInvestigations(ListInvestigationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInvestigations(request);
+    }
+
+    @SdkInternalApi
+    final ListInvestigationsResult executeListInvestigations(ListInvestigationsRequest listInvestigationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInvestigationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInvestigationsRequest> request = null;
+        Response<ListInvestigationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInvestigationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvestigationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvestigations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInvestigationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInvestigationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can
      * only be called by an invited member account.
      * </p>
@@ -1306,6 +1524,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1372,6 +1592,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1434,6 +1656,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listOrganizationAdminAccountsRequest
      * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1497,6 +1721,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1563,6 +1789,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param rejectInvitationRequest
      * @return Result of the RejectInvitation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -1621,6 +1849,74 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>StartInvestigation</code>
+     * initiates an investigation on an entity in a behavior graph.
+     * </p>
+     * 
+     * @param startInvestigationRequest
+     * @return Result of the StartInvestigation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.StartInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartInvestigationResult startInvestigation(StartInvestigationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartInvestigation(request);
+    }
+
+    @SdkInternalApi
+    final StartInvestigationResult executeStartInvestigation(StartInvestigationRequest startInvestigationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startInvestigationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartInvestigationRequest> request = null;
+        Response<StartInvestigationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartInvestigationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInvestigationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInvestigation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartInvestigationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartInvestigationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends a request to enable data ingest for a member account that has a status of
      * <code>ACCEPTED_BUT_DISABLED</code>.
      * </p>
@@ -1642,6 +1938,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param startMonitoringMemberRequest
      * @return Result of the StartMonitoringMember operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -1653,19 +1951,14 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @throws ValidationException
@@ -1726,6 +2019,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1787,6 +2082,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1848,6 +2145,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param updateDatasourcePackagesRequest
      * @return Result of the UpdateDatasourcePackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1857,19 +2156,14 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @throws ValidationException
@@ -1926,12 +2220,81 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Updates the state of an investigation.
+     * </p>
+     * 
+     * @param updateInvestigationStateRequest
+     * @return Result of the UpdateInvestigationState operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.UpdateInvestigationState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInvestigationStateResult updateInvestigationState(UpdateInvestigationStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInvestigationState(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInvestigationStateResult executeUpdateInvestigationState(UpdateInvestigationStateRequest updateInvestigationStateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInvestigationStateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInvestigationStateRequest> request = null;
+        Response<UpdateInvestigationStateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInvestigationStateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInvestigationStateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInvestigationState");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInvestigationStateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInvestigationStateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the configuration for the Organizations integration in the current Region. Can only be called by the
      * Detective administrator account for the organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest
      * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException

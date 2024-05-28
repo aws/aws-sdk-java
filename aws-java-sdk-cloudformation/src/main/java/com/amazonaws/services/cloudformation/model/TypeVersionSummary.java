@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,13 +75,13 @@ public class TypeVersionSummary implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
-     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * For public extensions that have been activated for this account and Region, the version of the public extension
+     * to be used for CloudFormation operations in this account and Region. For any extensions other than activated
      * third-arty extensions, CloudFormation returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -437,13 +437,13 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
-     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * For public extensions that have been activated for this account and Region, the version of the public extension
+     * to be used for CloudFormation operations in this account and Region. For any extensions other than activated
      * third-arty extensions, CloudFormation returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -451,12 +451,12 @@ public class TypeVersionSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicVersionNumber
-     *        For public extensions that have been activated for this account and region, the version of the public
-     *        extension to be used for CloudFormation operations in this account and region. For any extensions other
+     *        For public extensions that have been activated for this account and Region, the version of the public
+     *        extension to be used for CloudFormation operations in this account and Region. For any extensions other
      *        than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
      *        <p>
      *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *        automatically updates the extension in this account and region when a new version is released. For more
+     *        automatically updates the extension in this account and Region when a new version is released. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -469,25 +469,25 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
-     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * For public extensions that have been activated for this account and Region, the version of the public extension
+     * to be used for CloudFormation operations in this account and Region. For any extensions other than activated
      * third-arty extensions, CloudFormation returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
      * Guide</i>.
      * </p>
      * 
-     * @return For public extensions that have been activated for this account and region, the version of the public
-     *         extension to be used for CloudFormation operations in this account and region. For any extensions other
+     * @return For public extensions that have been activated for this account and Region, the version of the public
+     *         extension to be used for CloudFormation operations in this account and Region. For any extensions other
      *         than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
      *         <p>
      *         How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *         automatically updates the extension in this account and region when a new version is released. For more
+     *         automatically updates the extension in this account and Region when a new version is released. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *         >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -500,13 +500,13 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
-     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * For public extensions that have been activated for this account and Region, the version of the public extension
+     * to be used for CloudFormation operations in this account and Region. For any extensions other than activated
      * third-arty extensions, CloudFormation returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -514,12 +514,12 @@ public class TypeVersionSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicVersionNumber
-     *        For public extensions that have been activated for this account and region, the version of the public
-     *        extension to be used for CloudFormation operations in this account and region. For any extensions other
+     *        For public extensions that have been activated for this account and Region, the version of the public
+     *        extension to be used for CloudFormation operations in this account and Region. For any extensions other
      *        than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
      *        <p>
      *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *        automatically updates the extension in this account and region when a new version is released. For more
+     *        automatically updates the extension in this account and Region when a new version is released. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User

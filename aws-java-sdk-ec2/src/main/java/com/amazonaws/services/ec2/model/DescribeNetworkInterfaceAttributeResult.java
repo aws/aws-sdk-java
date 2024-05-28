@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,13 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
      * </p>
      */
     private Boolean sourceDestCheck;
+    /**
+     * <p>
+     * Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any
+     * network interface but will only apply to the primary network interface (eth0).
+     * </p>
+     */
+    private Boolean associatePublicIpAddress;
 
     /**
      * <p>
@@ -303,6 +310,66 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any
+     * network interface but will only apply to the primary network interface (eth0).
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for
+     *        any network interface but will only apply to the primary network interface (eth0).
+     */
+
+    public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        this.associatePublicIpAddress = associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any
+     * network interface but will only apply to the primary network interface (eth0).
+     * </p>
+     * 
+     * @return Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for
+     *         any network interface but will only apply to the primary network interface (eth0).
+     */
+
+    public Boolean getAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any
+     * network interface but will only apply to the primary network interface (eth0).
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for
+     *        any network interface but will only apply to the primary network interface (eth0).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfaceAttributeResult withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        setAssociatePublicIpAddress(associatePublicIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any
+     * network interface but will only apply to the primary network interface (eth0).
+     * </p>
+     * 
+     * @return Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for
+     *         any network interface but will only apply to the primary network interface (eth0).
+     */
+
+    public Boolean isAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -323,7 +390,9 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: ").append(getSourceDestCheck());
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
+        if (getAssociatePublicIpAddress() != null)
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +427,10 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
             return false;
         if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
+        if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
+            return false;
+        if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +444,7 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
+        hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
         return hashCode;
     }
 

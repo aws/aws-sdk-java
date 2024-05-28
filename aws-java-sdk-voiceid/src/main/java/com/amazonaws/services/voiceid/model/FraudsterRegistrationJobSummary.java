@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,19 +30,19 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job is created.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      */
     private String domainId;
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      */
     private java.util.Date endedAt;
@@ -82,11 +82,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job is created.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing when the fraudster registration job is created.
+     *        A timestamp of when the fraudster registration job was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -95,10 +95,10 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job is created.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      * 
-     * @return A timestamp showing when the fraudster registration job is created.
+     * @return A timestamp of when the fraudster registration job was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -107,11 +107,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job is created.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing when the fraudster registration job is created.
+     *        A timestamp of when the fraudster registration job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +122,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the fraudster registration job.
+     *        The identifier of the domain that contains the fraudster registration job.
      */
 
     public void setDomainId(String domainId) {
@@ -135,10 +135,10 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
-     * @return The identifier of the domain containing the fraudster registration job.
+     * @return The identifier of the domain that contains the fraudster registration job.
      */
 
     public String getDomainId() {
@@ -147,11 +147,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the fraudster registration job.
+     *        The identifier of the domain that contains the fraudster registration job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +162,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      * 
      * @param endedAt
-     *        A timestamp showing when the fraudster registration job ended.
+     *        A timestamp of when the fraudster registration job ended.
      */
 
     public void setEndedAt(java.util.Date endedAt) {
@@ -175,10 +175,10 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      * 
-     * @return A timestamp showing when the fraudster registration job ended.
+     * @return A timestamp of when the fraudster registration job ended.
      */
 
     public java.util.Date getEndedAt() {
@@ -187,11 +187,11 @@ public class FraudsterRegistrationJobSummary implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      * 
      * @param endedAt
-     *        A timestamp showing when the fraudster registration job ended.
+     *        A timestamp of when the fraudster registration job ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

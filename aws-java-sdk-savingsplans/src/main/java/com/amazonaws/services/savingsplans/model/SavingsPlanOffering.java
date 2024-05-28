@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,7 +84,7 @@ public class SavingsPlanOffering implements Serializable, Cloneable, StructuredP
     private String usageType;
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      */
     private String operation;
@@ -572,11 +572,11 @@ public class SavingsPlanOffering implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * 
      * @param operation
-     *        The specific AWS operation for the line item in the billing report.
+     *        The specific Amazon Web Services operation for the line item in the billing report.
      */
 
     public void setOperation(String operation) {
@@ -585,10 +585,10 @@ public class SavingsPlanOffering implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * 
-     * @return The specific AWS operation for the line item in the billing report.
+     * @return The specific Amazon Web Services operation for the line item in the billing report.
      */
 
     public String getOperation() {
@@ -597,11 +597,11 @@ public class SavingsPlanOffering implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * 
      * @param operation
-     *        The specific AWS operation for the line item in the billing report.
+     *        The specific Amazon Web Services operation for the line item in the billing report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

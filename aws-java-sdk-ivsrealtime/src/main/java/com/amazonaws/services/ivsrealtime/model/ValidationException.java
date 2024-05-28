@@ -1,0 +1,83 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ivsrealtime.model;
+
+import javax.annotation.Generated;
+
+/**
+ * <p/>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ValidationException extends com.amazonaws.services.ivsrealtime.model.AmazonIVSRealTimeException {
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * <p>
+     * The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * </p>
+     */
+    private String exceptionMessage;
+
+    /**
+     * Constructs a new ValidationException with the specified error message.
+     *
+     * @param message
+     *        Describes the error encountered.
+     */
+    public ValidationException(String message) {
+        super(message);
+    }
+
+    /**
+     * <p>
+     * The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * </p>
+     * 
+     * @param exceptionMessage
+     *        The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exceptionMessage")
+    public void setExceptionMessage(String exceptionMessage) {
+        this.exceptionMessage = exceptionMessage;
+    }
+
+    /**
+     * <p>
+     * The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * </p>
+     * 
+     * @return The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exceptionMessage")
+    public String getExceptionMessage() {
+        return this.exceptionMessage;
+    }
+
+    /**
+     * <p>
+     * The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * </p>
+     * 
+     * @param exceptionMessage
+     *        The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidationException withExceptionMessage(String exceptionMessage) {
+        setExceptionMessage(exceptionMessage);
+        return this;
+    }
+
+}

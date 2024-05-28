@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.comprehendmedical.AWSComprehendMedicalClientBuilde
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.comprehendmedical.model.*;
+
 import com.amazonaws.services.comprehendmedical.model.transform.*;
 
 /**
@@ -51,8 +52,11 @@ import com.amazonaws.services.comprehendmedical.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Comprehend Medical; extracts structured information from unstructured clinical text. Use these actions to gain
- * insight in your documents.
+ * Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain
+ * insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon
+ * Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see <a
+ * href="https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html">Guidelines and
+ * quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -500,7 +504,7 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * Inspects the clinical text for a variety of medical entities and returns specific information about them such as
-     * entity category, location, and confidence score on that information .
+     * entity category, location, and confidence score on that information.
      * </p>
      * 
      * @param detectEntitiesRequest
@@ -508,7 +512,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -590,7 +595,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -662,7 +668,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -734,7 +741,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -806,7 +814,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -877,7 +886,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request.
+     *         The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your
+     *         request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again. Contact customer support for more information about a service limit increase.
@@ -1075,7 +1085,7 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Gets a list of protected health information (PHI) detection jobs that you have submitted.
+     * Gets a list of protected health information (PHI) detection jobs you have submitted.
      * </p>
      * 
      * @param listPHIDetectionJobsRequest

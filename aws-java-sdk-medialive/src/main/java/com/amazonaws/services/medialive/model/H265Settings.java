@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -142,6 +142,39 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
      */
     private String timecodeInsertion;
+    /** Timecode burn-in settings */
+    private TimecodeBurninSettings timecodeBurninSettings;
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you
+     * typically enter "enabled".
+     */
+    private String mvOverPictureBoundaries;
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     * typically enter "enabled".
+     */
+    private String mvTemporalPredictor;
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or
+     * fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product
+     * of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will
+     * override the video codec slices field with a value that MediaLive calculates
+     */
+    private Integer tileHeight;
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the
+     * tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you
+     * typically enter "none".
+     */
+    private String tilePadding;
+    /** Set this field to set up the picture as a tile. See tileHeight for more information. */
+    private Integer tileWidth;
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you
+     * are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically
+     * enter "auto".
+     */
+    private String treeblockSize;
 
     /**
      * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
@@ -1621,6 +1654,379 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode burn-in settings
+     * 
+     * @param timecodeBurninSettings
+     *        Timecode burn-in settings
+     */
+
+    public void setTimecodeBurninSettings(TimecodeBurninSettings timecodeBurninSettings) {
+        this.timecodeBurninSettings = timecodeBurninSettings;
+    }
+
+    /**
+     * Timecode burn-in settings
+     * 
+     * @return Timecode burn-in settings
+     */
+
+    public TimecodeBurninSettings getTimecodeBurninSettings() {
+        return this.timecodeBurninSettings;
+    }
+
+    /**
+     * Timecode burn-in settings
+     * 
+     * @param timecodeBurninSettings
+     *        Timecode burn-in settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H265Settings withTimecodeBurninSettings(TimecodeBurninSettings timecodeBurninSettings) {
+        setTimecodeBurninSettings(timecodeBurninSettings);
+        return this;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you
+     * typically enter "enabled".
+     * 
+     * @param mvOverPictureBoundaries
+     *        If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations,
+     *        you typically enter "enabled".
+     * @see H265MvOverPictureBoundaries
+     */
+
+    public void setMvOverPictureBoundaries(String mvOverPictureBoundaries) {
+        this.mvOverPictureBoundaries = mvOverPictureBoundaries;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you
+     * typically enter "enabled".
+     * 
+     * @return If you are setting up the picture as a tile, you must set this to "disabled". In all other
+     *         configurations, you typically enter "enabled".
+     * @see H265MvOverPictureBoundaries
+     */
+
+    public String getMvOverPictureBoundaries() {
+        return this.mvOverPictureBoundaries;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you
+     * typically enter "enabled".
+     * 
+     * @param mvOverPictureBoundaries
+     *        If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations,
+     *        you typically enter "enabled".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265MvOverPictureBoundaries
+     */
+
+    public H265Settings withMvOverPictureBoundaries(String mvOverPictureBoundaries) {
+        setMvOverPictureBoundaries(mvOverPictureBoundaries);
+        return this;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations, you
+     * typically enter "enabled".
+     * 
+     * @param mvOverPictureBoundaries
+     *        If you are setting up the picture as a tile, you must set this to "disabled". In all other configurations,
+     *        you typically enter "enabled".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265MvOverPictureBoundaries
+     */
+
+    public H265Settings withMvOverPictureBoundaries(H265MvOverPictureBoundaries mvOverPictureBoundaries) {
+        this.mvOverPictureBoundaries = mvOverPictureBoundaries.toString();
+        return this;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     * typically enter "enabled".
+     * 
+     * @param mvTemporalPredictor
+     *        If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     *        typically enter "enabled".
+     * @see H265MvTemporalPredictor
+     */
+
+    public void setMvTemporalPredictor(String mvTemporalPredictor) {
+        this.mvTemporalPredictor = mvTemporalPredictor;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     * typically enter "enabled".
+     * 
+     * @return If you are setting up the picture as a tile, you must set this to "disabled". In other configurations,
+     *         you typically enter "enabled".
+     * @see H265MvTemporalPredictor
+     */
+
+    public String getMvTemporalPredictor() {
+        return this.mvTemporalPredictor;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     * typically enter "enabled".
+     * 
+     * @param mvTemporalPredictor
+     *        If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     *        typically enter "enabled".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265MvTemporalPredictor
+     */
+
+    public H265Settings withMvTemporalPredictor(String mvTemporalPredictor) {
+        setMvTemporalPredictor(mvTemporalPredictor);
+        return this;
+    }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     * typically enter "enabled".
+     * 
+     * @param mvTemporalPredictor
+     *        If you are setting up the picture as a tile, you must set this to "disabled". In other configurations, you
+     *        typically enter "enabled".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265MvTemporalPredictor
+     */
+
+    public H265Settings withMvTemporalPredictor(H265MvTemporalPredictor mvTemporalPredictor) {
+        this.mvTemporalPredictor = mvTemporalPredictor.toString();
+        return this;
+    }
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or
+     * fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product
+     * of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will
+     * override the video codec slices field with a value that MediaLive calculates
+     * 
+     * @param tileHeight
+     *        Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result
+     *        in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And
+     *        finally, the product of the column count and row count must be 64 of less. If the tile width and height
+     *        are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+     */
+
+    public void setTileHeight(Integer tileHeight) {
+        this.tileHeight = tileHeight;
+    }
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or
+     * fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product
+     * of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will
+     * override the video codec slices field with a value that MediaLive calculates
+     * 
+     * @return Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result
+     *         in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And
+     *         finally, the product of the column count and row count must be 64 of less. If the tile width and height
+     *         are specified, MediaLive will override the video codec slices field with a value that MediaLive
+     *         calculates
+     */
+
+    public Integer getTileHeight() {
+        return this.tileHeight;
+    }
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result in 22 or
+     * fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And finally, the product
+     * of the column count and row count must be 64 of less. If the tile width and height are specified, MediaLive will
+     * override the video codec slices field with a value that MediaLive calculates
+     * 
+     * @param tileHeight
+     *        Set this field to set up the picture as a tile. You must also set tileWidth. The tile height must result
+     *        in 22 or fewer rows in the frame. The tile width must result in 20 or fewer columns in the frame. And
+     *        finally, the product of the column count and row count must be 64 of less. If the tile width and height
+     *        are specified, MediaLive will override the video codec slices field with a value that MediaLive calculates
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H265Settings withTileHeight(Integer tileHeight) {
+        setTileHeight(tileHeight);
+        return this;
+    }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the
+     * tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you
+     * typically enter "none".
+     * 
+     * @param tilePadding
+     *        Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple
+     *        of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other
+     *        configurations, you typically enter "none".
+     * @see H265TilePadding
+     */
+
+    public void setTilePadding(String tilePadding) {
+        this.tilePadding = tilePadding;
+    }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the
+     * tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you
+     * typically enter "none".
+     * 
+     * @return Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole
+     *         multiple of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all
+     *         other configurations, you typically enter "none".
+     * @see H265TilePadding
+     */
+
+    public String getTilePadding() {
+        return this.tilePadding;
+    }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the
+     * tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you
+     * typically enter "none".
+     * 
+     * @param tilePadding
+     *        Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple
+     *        of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other
+     *        configurations, you typically enter "none".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265TilePadding
+     */
+
+    public H265Settings withTilePadding(String tilePadding) {
+        setTilePadding(tilePadding);
+        return this;
+    }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple of the
+     * tile size. If you are setting up the picture as a tile, you must enter "padded". In all other configurations, you
+     * typically enter "none".
+     * 
+     * @param tilePadding
+     *        Set to "padded" to force MediaLive to add padding to the frame, to obtain a frame that is a whole multiple
+     *        of the tile size. If you are setting up the picture as a tile, you must enter "padded". In all other
+     *        configurations, you typically enter "none".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265TilePadding
+     */
+
+    public H265Settings withTilePadding(H265TilePadding tilePadding) {
+        this.tilePadding = tilePadding.toString();
+        return this;
+    }
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more information.
+     * 
+     * @param tileWidth
+     *        Set this field to set up the picture as a tile. See tileHeight for more information.
+     */
+
+    public void setTileWidth(Integer tileWidth) {
+        this.tileWidth = tileWidth;
+    }
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more information.
+     * 
+     * @return Set this field to set up the picture as a tile. See tileHeight for more information.
+     */
+
+    public Integer getTileWidth() {
+        return this.tileWidth;
+    }
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more information.
+     * 
+     * @param tileWidth
+     *        Set this field to set up the picture as a tile. See tileHeight for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H265Settings withTileWidth(Integer tileWidth) {
+        setTileWidth(tileWidth);
+        return this;
+    }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you
+     * are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically
+     * enter "auto".
+     * 
+     * @param treeblockSize
+     *        Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If
+     *        you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you
+     *        typically enter "auto".
+     * @see H265TreeblockSize
+     */
+
+    public void setTreeblockSize(String treeblockSize) {
+        this.treeblockSize = treeblockSize;
+    }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you
+     * are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically
+     * enter "auto".
+     * 
+     * @return Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size.
+     *         If you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you
+     *         typically enter "auto".
+     * @see H265TreeblockSize
+     */
+
+    public String getTreeblockSize() {
+        return this.treeblockSize;
+    }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you
+     * are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically
+     * enter "auto".
+     * 
+     * @param treeblockSize
+     *        Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If
+     *        you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you
+     *        typically enter "auto".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265TreeblockSize
+     */
+
+    public H265Settings withTreeblockSize(String treeblockSize) {
+        setTreeblockSize(treeblockSize);
+        return this;
+    }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If you
+     * are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you typically
+     * enter "auto".
+     * 
+     * @param treeblockSize
+     *        Select the tree block size used for encoding. If you enter "auto", the encoder will pick the best size. If
+     *        you are setting up the picture as a tile, you must set this to 32x32. In all other configurations, you
+     *        typically enter "auto".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265TreeblockSize
+     */
+
+    public H265Settings withTreeblockSize(H265TreeblockSize treeblockSize) {
+        this.treeblockSize = treeblockSize.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1689,7 +2095,21 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getTimecodeInsertion() != null)
-            sb.append("TimecodeInsertion: ").append(getTimecodeInsertion());
+            sb.append("TimecodeInsertion: ").append(getTimecodeInsertion()).append(",");
+        if (getTimecodeBurninSettings() != null)
+            sb.append("TimecodeBurninSettings: ").append(getTimecodeBurninSettings()).append(",");
+        if (getMvOverPictureBoundaries() != null)
+            sb.append("MvOverPictureBoundaries: ").append(getMvOverPictureBoundaries()).append(",");
+        if (getMvTemporalPredictor() != null)
+            sb.append("MvTemporalPredictor: ").append(getMvTemporalPredictor()).append(",");
+        if (getTileHeight() != null)
+            sb.append("TileHeight: ").append(getTileHeight()).append(",");
+        if (getTilePadding() != null)
+            sb.append("TilePadding: ").append(getTilePadding()).append(",");
+        if (getTileWidth() != null)
+            sb.append("TileWidth: ").append(getTileWidth()).append(",");
+        if (getTreeblockSize() != null)
+            sb.append("TreeblockSize: ").append(getTreeblockSize());
         sb.append("}");
         return sb.toString();
     }
@@ -1820,6 +2240,34 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimecodeInsertion() != null && other.getTimecodeInsertion().equals(this.getTimecodeInsertion()) == false)
             return false;
+        if (other.getTimecodeBurninSettings() == null ^ this.getTimecodeBurninSettings() == null)
+            return false;
+        if (other.getTimecodeBurninSettings() != null && other.getTimecodeBurninSettings().equals(this.getTimecodeBurninSettings()) == false)
+            return false;
+        if (other.getMvOverPictureBoundaries() == null ^ this.getMvOverPictureBoundaries() == null)
+            return false;
+        if (other.getMvOverPictureBoundaries() != null && other.getMvOverPictureBoundaries().equals(this.getMvOverPictureBoundaries()) == false)
+            return false;
+        if (other.getMvTemporalPredictor() == null ^ this.getMvTemporalPredictor() == null)
+            return false;
+        if (other.getMvTemporalPredictor() != null && other.getMvTemporalPredictor().equals(this.getMvTemporalPredictor()) == false)
+            return false;
+        if (other.getTileHeight() == null ^ this.getTileHeight() == null)
+            return false;
+        if (other.getTileHeight() != null && other.getTileHeight().equals(this.getTileHeight()) == false)
+            return false;
+        if (other.getTilePadding() == null ^ this.getTilePadding() == null)
+            return false;
+        if (other.getTilePadding() != null && other.getTilePadding().equals(this.getTilePadding()) == false)
+            return false;
+        if (other.getTileWidth() == null ^ this.getTileWidth() == null)
+            return false;
+        if (other.getTileWidth() != null && other.getTileWidth().equals(this.getTileWidth()) == false)
+            return false;
+        if (other.getTreeblockSize() == null ^ this.getTreeblockSize() == null)
+            return false;
+        if (other.getTreeblockSize() != null && other.getTreeblockSize().equals(this.getTreeblockSize()) == false)
+            return false;
         return true;
     }
 
@@ -1857,6 +2305,13 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSlices() == null) ? 0 : getSlices().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getTimecodeInsertion() == null) ? 0 : getTimecodeInsertion().hashCode());
+        hashCode = prime * hashCode + ((getTimecodeBurninSettings() == null) ? 0 : getTimecodeBurninSettings().hashCode());
+        hashCode = prime * hashCode + ((getMvOverPictureBoundaries() == null) ? 0 : getMvOverPictureBoundaries().hashCode());
+        hashCode = prime * hashCode + ((getMvTemporalPredictor() == null) ? 0 : getMvTemporalPredictor().hashCode());
+        hashCode = prime * hashCode + ((getTileHeight() == null) ? 0 : getTileHeight().hashCode());
+        hashCode = prime * hashCode + ((getTilePadding() == null) ? 0 : getTilePadding().hashCode());
+        hashCode = prime * hashCode + ((getTileWidth() == null) ? 0 : getTileWidth().hashCode());
+        hashCode = prime * hashCode + ((getTreeblockSize() == null) ? 0 : getTreeblockSize().hashCode());
         return hashCode;
     }
 

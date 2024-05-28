@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1935,6 +1935,39 @@ public class AmazonEventBridgeAsyncClient extends AmazonEventBridgeClient implem
 
                 try {
                     result = executeUpdateEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBusResult> updateEventBusAsync(UpdateEventBusRequest request) {
+
+        return updateEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBusResult> updateEventBusAsync(final UpdateEventBusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEventBusRequest, UpdateEventBusResult> asyncHandler) {
+        final UpdateEventBusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEventBusResult>() {
+            @Override
+            public UpdateEventBusResult call() throws Exception {
+                UpdateEventBusResult result = null;
+
+                try {
+                    result = executeUpdateEventBus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

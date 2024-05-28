@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,12 +42,6 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     private ModuleLoggingConfiguration schedulerLogs;
     /**
      * <p>
-     * The Airflow task logs published to CloudWatch Logs and the log level.
-     * </p>
-     */
-    private ModuleLoggingConfiguration taskLogs;
-    /**
-     * <p>
      * The Airflow web server logs published to CloudWatch Logs and the log level.
      * </p>
      */
@@ -58,6 +52,12 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      */
     private ModuleLoggingConfiguration workerLogs;
+    /**
+     * <p>
+     * The Airflow task logs published to CloudWatch Logs and the log level.
+     * </p>
+     */
+    private ModuleLoggingConfiguration taskLogs;
 
     /**
      * <p>
@@ -136,46 +136,6 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     public LoggingConfiguration withSchedulerLogs(ModuleLoggingConfiguration schedulerLogs) {
         setSchedulerLogs(schedulerLogs);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Airflow task logs published to CloudWatch Logs and the log level.
-     * </p>
-     * 
-     * @param taskLogs
-     *        The Airflow task logs published to CloudWatch Logs and the log level.
-     */
-
-    public void setTaskLogs(ModuleLoggingConfiguration taskLogs) {
-        this.taskLogs = taskLogs;
-    }
-
-    /**
-     * <p>
-     * The Airflow task logs published to CloudWatch Logs and the log level.
-     * </p>
-     * 
-     * @return The Airflow task logs published to CloudWatch Logs and the log level.
-     */
-
-    public ModuleLoggingConfiguration getTaskLogs() {
-        return this.taskLogs;
-    }
-
-    /**
-     * <p>
-     * The Airflow task logs published to CloudWatch Logs and the log level.
-     * </p>
-     * 
-     * @param taskLogs
-     *        The Airflow task logs published to CloudWatch Logs and the log level.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LoggingConfiguration withTaskLogs(ModuleLoggingConfiguration taskLogs) {
-        setTaskLogs(taskLogs);
         return this;
     }
 
@@ -260,6 +220,46 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The Airflow task logs published to CloudWatch Logs and the log level.
+     * </p>
+     * 
+     * @param taskLogs
+     *        The Airflow task logs published to CloudWatch Logs and the log level.
+     */
+
+    public void setTaskLogs(ModuleLoggingConfiguration taskLogs) {
+        this.taskLogs = taskLogs;
+    }
+
+    /**
+     * <p>
+     * The Airflow task logs published to CloudWatch Logs and the log level.
+     * </p>
+     * 
+     * @return The Airflow task logs published to CloudWatch Logs and the log level.
+     */
+
+    public ModuleLoggingConfiguration getTaskLogs() {
+        return this.taskLogs;
+    }
+
+    /**
+     * <p>
+     * The Airflow task logs published to CloudWatch Logs and the log level.
+     * </p>
+     * 
+     * @param taskLogs
+     *        The Airflow task logs published to CloudWatch Logs and the log level.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfiguration withTaskLogs(ModuleLoggingConfiguration taskLogs) {
+        setTaskLogs(taskLogs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,12 +275,12 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
             sb.append("DagProcessingLogs: ").append(getDagProcessingLogs()).append(",");
         if (getSchedulerLogs() != null)
             sb.append("SchedulerLogs: ").append(getSchedulerLogs()).append(",");
-        if (getTaskLogs() != null)
-            sb.append("TaskLogs: ").append(getTaskLogs()).append(",");
         if (getWebserverLogs() != null)
             sb.append("WebserverLogs: ").append(getWebserverLogs()).append(",");
         if (getWorkerLogs() != null)
-            sb.append("WorkerLogs: ").append(getWorkerLogs());
+            sb.append("WorkerLogs: ").append(getWorkerLogs()).append(",");
+        if (getTaskLogs() != null)
+            sb.append("TaskLogs: ").append(getTaskLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -303,10 +303,6 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getSchedulerLogs() != null && other.getSchedulerLogs().equals(this.getSchedulerLogs()) == false)
             return false;
-        if (other.getTaskLogs() == null ^ this.getTaskLogs() == null)
-            return false;
-        if (other.getTaskLogs() != null && other.getTaskLogs().equals(this.getTaskLogs()) == false)
-            return false;
         if (other.getWebserverLogs() == null ^ this.getWebserverLogs() == null)
             return false;
         if (other.getWebserverLogs() != null && other.getWebserverLogs().equals(this.getWebserverLogs()) == false)
@@ -314,6 +310,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         if (other.getWorkerLogs() == null ^ this.getWorkerLogs() == null)
             return false;
         if (other.getWorkerLogs() != null && other.getWorkerLogs().equals(this.getWorkerLogs()) == false)
+            return false;
+        if (other.getTaskLogs() == null ^ this.getTaskLogs() == null)
+            return false;
+        if (other.getTaskLogs() != null && other.getTaskLogs().equals(this.getTaskLogs()) == false)
             return false;
         return true;
     }
@@ -325,9 +325,9 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getDagProcessingLogs() == null) ? 0 : getDagProcessingLogs().hashCode());
         hashCode = prime * hashCode + ((getSchedulerLogs() == null) ? 0 : getSchedulerLogs().hashCode());
-        hashCode = prime * hashCode + ((getTaskLogs() == null) ? 0 : getTaskLogs().hashCode());
         hashCode = prime * hashCode + ((getWebserverLogs() == null) ? 0 : getWebserverLogs().hashCode());
         hashCode = prime * hashCode + ((getWorkerLogs() == null) ? 0 : getWorkerLogs().hashCode());
+        hashCode = prime * hashCode + ((getTaskLogs() == null) ? 0 : getTaskLogs().hashCode());
         return hashCode;
     }
 

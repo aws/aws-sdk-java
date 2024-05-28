@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,10 @@ public class UpdateDashboardRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardPublishOptions").build();
     private static final MarshallingInfo<String> THEMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ThemeArn").build();
+    private static final MarshallingInfo<StructuredPojo> DEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
 
     private static final UpdateDashboardRequestMarshaller instance = new UpdateDashboardRequestMarshaller();
 
@@ -68,6 +72,8 @@ public class UpdateDashboardRequestMarshaller {
             protocolMarshaller.marshall(updateDashboardRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateDashboardRequest.getDashboardPublishOptions(), DASHBOARDPUBLISHOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDashboardRequest.getThemeArn(), THEMEARN_BINDING);
+            protocolMarshaller.marshall(updateDashboardRequest.getDefinition(), DEFINITION_BINDING);
+            protocolMarshaller.marshall(updateDashboardRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

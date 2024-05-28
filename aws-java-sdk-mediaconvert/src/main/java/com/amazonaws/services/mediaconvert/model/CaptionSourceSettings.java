@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,10 +39,7 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
      * FileSoureSettings.
      */
     private FileSourceSettings fileSourceSettings;
-    /**
-     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
-     * format.
-     */
+    /** Use Source to identify the format of your input captions. The service cannot auto-detect caption format. */
     private String sourceType;
     /** Settings specific to Teletext caption sources, including Page number. */
     private TeletextSourceSettings teletextSourceSettings;
@@ -211,12 +208,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
-     * format.
+     * Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * 
      * @param sourceType
-     *        Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
-     *        caption format.
+     *        Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * @see CaptionSourceType
      */
 
@@ -225,11 +220,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
-     * format.
+     * Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * 
-     * @return Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
-     *         caption format.
+     * @return Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * @see CaptionSourceType
      */
 
@@ -238,12 +231,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
-     * format.
+     * Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * 
      * @param sourceType
-     *        Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
-     *        caption format.
+     *        Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionSourceType
      */
@@ -254,12 +245,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption
-     * format.
+     * Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * 
      * @param sourceType
-     *        Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect
-     *        caption format.
+     *        Use Source to identify the format of your input captions. The service cannot auto-detect caption format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionSourceType
      */

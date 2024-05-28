@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,8 @@ public class DataRepositoryTaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityToRelease").build();
     private static final MarshallingInfo<String> FILECACHEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileCacheId").build();
+    private static final MarshallingInfo<StructuredPojo> RELEASECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReleaseConfiguration").build();
 
     private static final DataRepositoryTaskMarshaller instance = new DataRepositoryTaskMarshaller();
 
@@ -90,6 +92,7 @@ public class DataRepositoryTaskMarshaller {
             protocolMarshaller.marshall(dataRepositoryTask.getReport(), REPORT_BINDING);
             protocolMarshaller.marshall(dataRepositoryTask.getCapacityToRelease(), CAPACITYTORELEASE_BINDING);
             protocolMarshaller.marshall(dataRepositoryTask.getFileCacheId(), FILECACHEID_BINDING);
+            protocolMarshaller.marshall(dataRepositoryTask.getReleaseConfiguration(), RELEASECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,37 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListCampaignsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    private CampaignFilters filters;
-
     private Integer maxResults;
 
     private String nextToken;
 
-    /**
-     * @param filters
-     */
-
-    public void setFilters(CampaignFilters filters) {
-        this.filters = filters;
-    }
-
-    /**
-     * @return
-     */
-
-    public CampaignFilters getFilters() {
-        return this.filters;
-    }
-
-    /**
-     * @param filters
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListCampaignsRequest withFilters(CampaignFilters filters) {
-        setFilters(filters);
-        return this;
-    }
+    private CampaignFilters filters;
 
     /**
      * @param maxResults
@@ -113,6 +87,32 @@ public class ListCampaignsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @param filters
+     */
+
+    public void setFilters(CampaignFilters filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * @return
+     */
+
+    public CampaignFilters getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * @param filters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCampaignsRequest withFilters(CampaignFilters filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -124,12 +124,12 @@ public class ListCampaignsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -144,10 +144,6 @@ public class ListCampaignsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof ListCampaignsRequest == false)
             return false;
         ListCampaignsRequest other = (ListCampaignsRequest) obj;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -155,6 +151,10 @@ public class ListCampaignsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -164,9 +164,9 @@ public class ListCampaignsRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

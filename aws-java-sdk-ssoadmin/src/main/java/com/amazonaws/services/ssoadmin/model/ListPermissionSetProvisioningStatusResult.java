@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,17 +26,63 @@ public class ListPermissionSetProvisioningStatusResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The status object for the permission set provisioning operation.
-     * </p>
-     */
-    private java.util.List<PermissionSetProvisioningStatusMetadata> permissionSetsProvisioningStatus;
-    /**
-     * <p>
      * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
      * subsequent calls.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The status object for the permission set provisioning operation.
+     * </p>
+     */
+    private java.util.List<PermissionSetProvisioningStatusMetadata> permissionSetsProvisioningStatus;
+
+    /**
+     * <p>
+     * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
+     * subsequent calls.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token for the list API. Initially the value is null. Use the output of previous API calls
+     *        to make subsequent calls.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
+     * subsequent calls.
+     * </p>
+     * 
+     * @return The pagination token for the list API. Initially the value is null. Use the output of previous API calls
+     *         to make subsequent calls.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
+     * subsequent calls.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token for the list API. Initially the value is null. Use the output of previous API calls
+     *        to make subsequent calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPermissionSetProvisioningStatusResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -111,52 +157,6 @@ public class ListPermissionSetProvisioningStatusResult extends com.amazonaws.Ama
     }
 
     /**
-     * <p>
-     * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
-     * subsequent calls.
-     * </p>
-     * 
-     * @param nextToken
-     *        The pagination token for the list API. Initially the value is null. Use the output of previous API calls
-     *        to make subsequent calls.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
-     * subsequent calls.
-     * </p>
-     * 
-     * @return The pagination token for the list API. Initially the value is null. Use the output of previous API calls
-     *         to make subsequent calls.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
-     * subsequent calls.
-     * </p>
-     * 
-     * @param nextToken
-     *        The pagination token for the list API. Initially the value is null. Use the output of previous API calls
-     *        to make subsequent calls.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPermissionSetProvisioningStatusResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -168,10 +168,10 @@ public class ListPermissionSetProvisioningStatusResult extends com.amazonaws.Ama
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPermissionSetsProvisioningStatus() != null)
-            sb.append("PermissionSetsProvisioningStatus: ").append(getPermissionSetsProvisioningStatus()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPermissionSetsProvisioningStatus() != null)
+            sb.append("PermissionSetsProvisioningStatus: ").append(getPermissionSetsProvisioningStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -186,14 +186,14 @@ public class ListPermissionSetProvisioningStatusResult extends com.amazonaws.Ama
         if (obj instanceof ListPermissionSetProvisioningStatusResult == false)
             return false;
         ListPermissionSetProvisioningStatusResult other = (ListPermissionSetProvisioningStatusResult) obj;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         if (other.getPermissionSetsProvisioningStatus() == null ^ this.getPermissionSetsProvisioningStatus() == null)
             return false;
         if (other.getPermissionSetsProvisioningStatus() != null
                 && other.getPermissionSetsProvisioningStatus().equals(this.getPermissionSetsProvisioningStatus()) == false)
-            return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class ListPermissionSetProvisioningStatusResult extends com.amazonaws.Ama
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPermissionSetsProvisioningStatus() == null) ? 0 : getPermissionSetsProvisioningStatus().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPermissionSetsProvisioningStatus() == null) ? 0 : getPermissionSetsProvisioningStatus().hashCode());
         return hashCode;
     }
 

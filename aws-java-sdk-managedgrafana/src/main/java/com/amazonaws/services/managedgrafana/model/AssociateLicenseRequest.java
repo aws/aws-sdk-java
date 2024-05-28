@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,22 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     */
+    private String grafanaToken;
+    /**
+     * <p>
      * The type of license to associate with the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      */
     private String licenseType;
     /**
@@ -40,11 +54,77 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of license to associate with the workspace.
+     * A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
      * </p>
      * 
+     * @param grafanaToken
+     *        A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *        >Link your account with Grafana Labs</a>.
+     */
+
+    public void setGrafanaToken(String grafanaToken) {
+        this.grafanaToken = grafanaToken;
+    }
+
+    /**
+     * <p>
+     * A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @return A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *         >Link your account with Grafana Labs</a>.
+     */
+
+    public String getGrafanaToken() {
+        return this.grafanaToken;
+    }
+
+    /**
+     * <p>
+     * A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @param grafanaToken
+     *        A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *        >Link your account with Grafana Labs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateLicenseRequest withGrafanaToken(String grafanaToken) {
+        setGrafanaToken(grafanaToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of license to associate with the workspace.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
+     * 
      * @param licenseType
-     *        The type of license to associate with the workspace.
+     *        The type of license to associate with the workspace.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @see LicenseType
      */
 
@@ -56,8 +136,16 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of license to associate with the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
-     * @return The type of license to associate with the workspace.
+     * @return The type of license to associate with the workspace.</p> <note>
+     *         <p>
+     *         Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *         </p>
      * @see LicenseType
      */
 
@@ -69,9 +157,17 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of license to associate with the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param licenseType
-     *        The type of license to associate with the workspace.
+     *        The type of license to associate with the workspace.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -85,9 +181,17 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of license to associate with the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param licenseType
-     *        The type of license to associate with the workspace.
+     *        The type of license to associate with the workspace.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -149,6 +253,8 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getGrafanaToken() != null)
+            sb.append("GrafanaToken: ").append(getGrafanaToken()).append(",");
         if (getLicenseType() != null)
             sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getWorkspaceId() != null)
@@ -167,6 +273,10 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof AssociateLicenseRequest == false)
             return false;
         AssociateLicenseRequest other = (AssociateLicenseRequest) obj;
+        if (other.getGrafanaToken() == null ^ this.getGrafanaToken() == null)
+            return false;
+        if (other.getGrafanaToken() != null && other.getGrafanaToken().equals(this.getGrafanaToken()) == false)
+            return false;
         if (other.getLicenseType() == null ^ this.getLicenseType() == null)
             return false;
         if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
@@ -183,6 +293,7 @@ public class AssociateLicenseRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getGrafanaToken() == null) ? 0 : getGrafanaToken().hashCode());
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;

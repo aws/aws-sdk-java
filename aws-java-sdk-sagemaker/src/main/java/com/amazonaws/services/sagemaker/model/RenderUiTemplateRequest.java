@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,8 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
      * <p>
-     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      * </p>
      */
     private String humanTaskUiArn;
@@ -180,14 +181,16 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
      * <p>
-     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      * </p>
      * 
      * @param humanTaskUiArn
      *        The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
      *        <p>
-     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      */
 
     public void setHumanTaskUiArn(String humanTaskUiArn) {
@@ -200,13 +203,15 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
      * <p>
-     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      * </p>
      * 
      * @return The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      *         <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
      *         <p>
-     *         See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     *         See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      */
 
     public String getHumanTaskUiArn() {
@@ -219,14 +224,16 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
      * </p>
      * <p>
-     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      * </p>
      * 
      * @param humanTaskUiArn
      *        The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
      *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
      *        <p>
-     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

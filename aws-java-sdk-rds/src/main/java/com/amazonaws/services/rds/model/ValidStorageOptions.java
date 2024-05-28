@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      * </p>
      */
     private String storageType;
@@ -54,7 +54,8 @@ public class ValidStorageOptions implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DoubleRange> iopsToStorageRatio;
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      */
     private Boolean supportsStorageAutoscaling;
@@ -73,11 +74,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      * </p>
      * 
      * @param storageType
-     *        The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     *        The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      */
 
     public void setStorageType(String storageType) {
@@ -86,10 +87,10 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      * </p>
      * 
-     * @return The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     * @return The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      */
 
     public String getStorageType() {
@@ -98,11 +99,11 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     * The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      * </p>
      * 
      * @param storageType
-     *        The valid storage types for your DB instance. For example: gp2, gp3, io1.
+     *        The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,12 +341,13 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
      * @param supportsStorageAutoscaling
-     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *        class.
+     *        Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *        instance class.
      */
 
     public void setSupportsStorageAutoscaling(Boolean supportsStorageAutoscaling) {
@@ -354,11 +356,12 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
-     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *         class.
+     * @return Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *         instance class.
      */
 
     public Boolean getSupportsStorageAutoscaling() {
@@ -367,12 +370,13 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
      * @param supportsStorageAutoscaling
-     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *        class.
+     *        Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *        instance class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +387,12 @@ public class ValidStorageOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.
+     * Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
+     * class.
      * </p>
      * 
-     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance
-     *         class.
+     * @return Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new
+     *         instance class.
      */
 
     public Boolean isSupportsStorageAutoscaling() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class StartJobRunResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String jobRunId;
     /**
      * <p>
-     * The output lists the execution role ARN of the job run.
+     * This output displays the ARN of the job run..
      * </p>
      */
     private String arn;
@@ -124,11 +124,11 @@ public class StartJobRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The output lists the execution role ARN of the job run.
+     * This output displays the ARN of the job run..
      * </p>
      * 
      * @param arn
-     *        The output lists the execution role ARN of the job run.
+     *        This output displays the ARN of the job run..
      */
 
     public void setArn(String arn) {
@@ -137,10 +137,10 @@ public class StartJobRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The output lists the execution role ARN of the job run.
+     * This output displays the ARN of the job run..
      * </p>
      * 
-     * @return The output lists the execution role ARN of the job run.
+     * @return This output displays the ARN of the job run..
      */
 
     public String getArn() {
@@ -149,11 +149,11 @@ public class StartJobRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The output lists the execution role ARN of the job run.
+     * This output displays the ARN of the job run..
      * </p>
      * 
      * @param arn
-     *        The output lists the execution role ARN of the job run.
+     *        This output displays the ARN of the job run..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

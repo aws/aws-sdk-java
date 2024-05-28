@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <dt>301</dt>
      * <dd>
      * <p>
-     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target
      * URL.
      * </p>
      * </dd>
@@ -180,7 +180,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <dt>301</dt>
      * <dd>
      * <p>
-     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target
      * URL.
      * </p>
      * </dd>
@@ -216,7 +216,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      *        <dt>301</dt>
      *        <dd>
      *        <p>
-     *        Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *        Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the
      *        target URL.
      *        </p>
      *        </dd>
@@ -258,7 +258,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <dt>301</dt>
      * <dd>
      * <p>
-     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target
      * URL.
      * </p>
      * </dd>
@@ -293,8 +293,8 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      *         <dt>301</dt>
      *         <dd>
      *         <p>
-     *         Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
-     *         target URL.
+     *         Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to
+     *         the target URL.
      *         </p>
      *         </dd>
      *         <dt>302</dt>
@@ -335,7 +335,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <dt>301</dt>
      * <dd>
      * <p>
-     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target
      * URL.
      * </p>
      * </dd>
@@ -371,7 +371,7 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      *        <dt>301</dt>
      *        <dd>
      *        <p>
-     *        Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *        Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the
      *        target URL.
      *        </p>
      *        </dd>

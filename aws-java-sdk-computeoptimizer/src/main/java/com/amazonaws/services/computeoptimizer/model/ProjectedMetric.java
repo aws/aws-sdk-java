@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,11 +28,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run
- * the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the <code>Memory</code> metric is returned only
- * for resources that have the unified CloudWatch agent installed on them. For more information, see <a
+ * The <code>Cpu</code>, <code>Memory</code>, <code>GPU</code>, and <code>GPU_MEMORY</code> metrics are the only
+ * projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action.
+ * Additionally, these metrics are only returned for resources with the unified CloudWatch agent installed on them. For
+ * more information, see <a
  * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with
- * the CloudWatch Agent</a>.
+ * the CloudWatch Agent</a> and <a
+ * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+ * utilization with the CloudWatch Agent</a>.
  * </p>
  * </note>
  * 
@@ -60,9 +63,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
      * the instance is not allocated a full processor core.
      * </p>
-     * <p>
-     * Units: Percent
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -75,10 +75,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on
      * them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     * Optimizer's recommendation option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to
+     * Compute Optimizer's recommendation option.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
      * </p>
      * </note></li>
      * </ul>
@@ -115,9 +134,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
      * the instance is not allocated a full processor core.
      * </p>
-     * <p>
-     * Units: Percent
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -130,10 +146,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on
      * them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     * Optimizer's recommendation option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to
+     * Compute Optimizer's recommendation option.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
      * </p>
      * </note></li>
      * </ul>
@@ -154,9 +189,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *        Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch
      *        when the instance is not allocated a full processor core.
      *        </p>
-     *        <p>
-     *        Units: Percent
-     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -169,10 +201,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
-     *        installed on them. For more information, see <a
+     *        The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed
+     *        on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     *        Optimizer's recommendation option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations
+     *        to Compute Optimizer's recommendation option.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *        CloudWatch Agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *        NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *        </p>
      *        </note></li>
      * @see MetricName
@@ -200,9 +251,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
      * the instance is not allocated a full processor core.
      * </p>
-     * <p>
-     * Units: Percent
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -215,10 +263,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on
      * them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     * Optimizer's recommendation option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to
+     * Compute Optimizer's recommendation option.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
      * </p>
      * </note></li>
      * </ul>
@@ -238,9 +305,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *         Depending on the instance type, tools in your operating system can show a lower percentage than
      *         CloudWatch when the instance is not allocated a full processor core.
      *         </p>
-     *         <p>
-     *         Units: Percent
-     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -253,10 +317,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
-     *         installed on them. For more information, see <a
+     *         The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed
+     *         on them. For more information, see <a
      *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *         Utilization with the CloudWatch Agent</a>.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to
+     *         Compute Optimizer's recommendation option.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations
+     *         to Compute Optimizer's recommendation option.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *         CloudWatch Agent installed on them. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *         NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *         </p>
      *         </note></li>
      * @see MetricName
@@ -284,9 +367,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
      * the instance is not allocated a full processor core.
      * </p>
-     * <p>
-     * Units: Percent
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -299,10 +379,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on
      * them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     * Optimizer's recommendation option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to
+     * Compute Optimizer's recommendation option.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
      * </p>
      * </note></li>
      * </ul>
@@ -323,9 +422,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *        Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch
      *        when the instance is not allocated a full processor core.
      *        </p>
-     *        <p>
-     *        Units: Percent
-     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -338,10 +434,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
-     *        installed on them. For more information, see <a
+     *        The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed
+     *        on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     *        Optimizer's recommendation option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations
+     *        to Compute Optimizer's recommendation option.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *        CloudWatch Agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *        NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -371,9 +486,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch when
      * the instance is not allocated a full processor core.
      * </p>
-     * <p>
-     * Units: Percent
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -386,10 +498,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on
+     * The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed on
      * them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     * Optimizer's recommendation option.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations to
+     * Compute Optimizer's recommendation option.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
      * </p>
      * </note></li>
      * </ul>
@@ -410,9 +541,6 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *        Depending on the instance type, tools in your operating system can show a lower percentage than CloudWatch
      *        when the instance is not allocated a full processor core.
      *        </p>
-     *        <p>
-     *        Units: Percent
-     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -425,10 +553,29 @@ public class ProjectedMetric implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent
-     *        installed on them. For more information, see <a
+     *        The <code>Memory</code> metric is only returned for resources with the unified CloudWatch agent installed
+     *        on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your configurations to Compute
+     *        Optimizer's recommendation option.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust your configurations
+     *        to Compute Optimizer's recommendation option.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *        CloudWatch Agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *        NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *        </p>
      *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.

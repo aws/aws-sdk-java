@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -59,23 +59,21 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * Constraint: If the value is greater than 1000, we return only 1000 items.
@@ -84,14 +82,15 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -122,13 +121,10 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -158,9 +154,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      *         </p>
-     *         <p>
-     *         <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     *         </p>
      *         </li>
      */
 
@@ -173,7 +166,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -204,14 +197,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -240,9 +230,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
-     *        </p>
-     *        <p>
-     *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
      *        </li>
      */
@@ -258,7 +245,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -289,9 +276,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * <p>
@@ -301,7 +285,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -330,9 +314,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
-     *        </p>
-     *        <p>
-     *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -350,7 +331,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -381,14 +362,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * <p>
      * <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      * </p>
-     * <p>
-     * <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -418,9 +396,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        <code>vpc-id</code> - The ID of the VPC to which the instance is linked.
      *        </p>
-     *        <p>
-     *        <code>vpc-id</code> - The ID of the VPC that the instance is linked to.
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -432,10 +407,10 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
-     * @return One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * @return The instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -447,11 +422,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     *        The instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -465,7 +440,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -474,7 +449,7 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     *        The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,11 +465,11 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     *        The instance IDs. Must be instances linked to a VPC through ClassicLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,16 +480,19 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * Constraint: If the value is greater than 1000, we return only 1000 items.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.</p>
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
      *        <p>
      *        Constraint: If the value is greater than 1000, we return only 1000 items.
      */
@@ -525,15 +503,18 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * Constraint: If the value is greater than 1000, we return only 1000 items.
      * </p>
      * 
-     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *         another call with the returned <code>nextToken</code> value.</p>
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.</p>
      *         <p>
      *         Constraint: If the value is greater than 1000, we return only 1000 items.
      */
@@ -544,16 +525,19 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
-     * with the returned <code>nextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * Constraint: If the value is greater than 1000, we return only 1000 items.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
-     *        another call with the returned <code>nextToken</code> value.</p>
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
      *        <p>
      *        Constraint: If the value is greater than 1000, we return only 1000 items.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -566,11 +550,13 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -579,10 +565,12 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -591,11 +579,13 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class RecommendationJobContainerConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NearestModelName").build();
     private static final MarshallingInfo<List> SUPPORTEDINSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedInstanceTypes").build();
+    private static final MarshallingInfo<String> SUPPORTEDENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedEndpointType").build();
+    private static final MarshallingInfo<String> DATAINPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataInputConfig").build();
+    private static final MarshallingInfo<List> SUPPORTEDRESPONSEMIMETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedResponseMIMETypes").build();
 
     private static final RecommendationJobContainerConfigMarshaller instance = new RecommendationJobContainerConfigMarshaller();
 
@@ -66,6 +72,9 @@ public class RecommendationJobContainerConfigMarshaller {
             protocolMarshaller.marshall(recommendationJobContainerConfig.getPayloadConfig(), PAYLOADCONFIG_BINDING);
             protocolMarshaller.marshall(recommendationJobContainerConfig.getNearestModelName(), NEARESTMODELNAME_BINDING);
             protocolMarshaller.marshall(recommendationJobContainerConfig.getSupportedInstanceTypes(), SUPPORTEDINSTANCETYPES_BINDING);
+            protocolMarshaller.marshall(recommendationJobContainerConfig.getSupportedEndpointType(), SUPPORTEDENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(recommendationJobContainerConfig.getDataInputConfig(), DATAINPUTCONFIG_BINDING);
+            protocolMarshaller.marshall(recommendationJobContainerConfig.getSupportedResponseMIMETypes(), SUPPORTEDRESPONSEMIMETYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

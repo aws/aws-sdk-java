@@ -29,12 +29,12 @@ public class Example {
 	private final ExampleComments comments;
 
     public Example(
-            @JsonProperty(value = "description", required = true) String description,
+            @JsonProperty(value = "description") String description,
             @JsonProperty(value = "id", required = true) String id,
             @JsonProperty(value = "title", required = true) String title,
             @JsonProperty(value = "input") JsonNode input,
             @JsonProperty(value = "output") JsonNode output,
-            @JsonProperty(value = "comments", required = true) ExampleComments comments) {
+            @JsonProperty(value = "comments") ExampleComments comments) {
         this.description = description;
         this.title = title;
         this.id = id;

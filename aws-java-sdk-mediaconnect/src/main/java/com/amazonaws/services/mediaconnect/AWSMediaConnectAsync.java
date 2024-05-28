@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,64 @@ import com.amazonaws.services.mediaconnect.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSMediaConnectAsync extends AWSMediaConnect {
+
+    /**
+     * Adds outputs to an existing bridge.
+     * 
+     * @param addBridgeOutputsRequest
+     *        A request to add outputs to the specified bridge.
+     * @return A Java Future containing the result of the AddBridgeOutputs operation returned by the service.
+     * @sample AWSMediaConnectAsync.AddBridgeOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddBridgeOutputsResult> addBridgeOutputsAsync(AddBridgeOutputsRequest addBridgeOutputsRequest);
+
+    /**
+     * Adds outputs to an existing bridge.
+     * 
+     * @param addBridgeOutputsRequest
+     *        A request to add outputs to the specified bridge.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddBridgeOutputs operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.AddBridgeOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddBridgeOutputsResult> addBridgeOutputsAsync(AddBridgeOutputsRequest addBridgeOutputsRequest,
+            com.amazonaws.handlers.AsyncHandler<AddBridgeOutputsRequest, AddBridgeOutputsResult> asyncHandler);
+
+    /**
+     * Adds sources to an existing bridge.
+     * 
+     * @param addBridgeSourcesRequest
+     *        A request to add sources to the specified bridge.
+     * @return A Java Future containing the result of the AddBridgeSources operation returned by the service.
+     * @sample AWSMediaConnectAsync.AddBridgeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddBridgeSourcesResult> addBridgeSourcesAsync(AddBridgeSourcesRequest addBridgeSourcesRequest);
+
+    /**
+     * Adds sources to an existing bridge.
+     * 
+     * @param addBridgeSourcesRequest
+     *        A request to add sources to the specified bridge.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddBridgeSources operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.AddBridgeSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddBridgeSourcesResult> addBridgeSourcesAsync(AddBridgeSourcesRequest addBridgeSourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<AddBridgeSourcesRequest, AddBridgeSourcesResult> asyncHandler);
 
     /**
      * Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a
@@ -149,6 +207,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<AddFlowVpcInterfacesRequest, AddFlowVpcInterfacesResult> asyncHandler);
 
     /**
+     * Creates a new bridge. The request must include one source.
+     * 
+     * @param createBridgeRequest
+     *        Creates a new bridge. The request must include one source.
+     * @return A Java Future containing the result of the CreateBridge operation returned by the service.
+     * @sample AWSMediaConnectAsync.CreateBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBridgeResult> createBridgeAsync(CreateBridgeRequest createBridgeRequest);
+
+    /**
+     * Creates a new bridge. The request must include one source.
+     * 
+     * @param createBridgeRequest
+     *        Creates a new bridge. The request must include one source.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBridge operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.CreateBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBridgeResult> createBridgeAsync(CreateBridgeRequest createBridgeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBridgeRequest, CreateBridgeResult> asyncHandler);
+
+    /**
      * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
@@ -182,6 +269,62 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<CreateFlowRequest, CreateFlowResult> asyncHandler);
 
     /**
+     * Creates a new gateway. The request must include at least one network (up to 4).
+     * 
+     * @param createGatewayRequest
+     *        Creates a new gateway. The request must include at least one network (up to 4).
+     * @return A Java Future containing the result of the CreateGateway operation returned by the service.
+     * @sample AWSMediaConnectAsync.CreateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(CreateGatewayRequest createGatewayRequest);
+
+    /**
+     * Creates a new gateway. The request must include at least one network (up to 4).
+     * 
+     * @param createGatewayRequest
+     *        Creates a new gateway. The request must include at least one network (up to 4).
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGateway operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.CreateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(CreateGatewayRequest createGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGatewayRequest, CreateGatewayResult> asyncHandler);
+
+    /**
+     * Deletes a bridge. Before you can delete a bridge, you must stop the bridge.
+     * 
+     * @param deleteBridgeRequest
+     * @return A Java Future containing the result of the DeleteBridge operation returned by the service.
+     * @sample AWSMediaConnectAsync.DeleteBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBridgeResult> deleteBridgeAsync(DeleteBridgeRequest deleteBridgeRequest);
+
+    /**
+     * Deletes a bridge. Before you can delete a bridge, you must stop the bridge.
+     * 
+     * @param deleteBridgeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBridge operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DeleteBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBridgeResult> deleteBridgeAsync(DeleteBridgeRequest deleteBridgeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBridgeRequest, DeleteBridgeResult> asyncHandler);
+
+    /**
      * Deletes a flow. Before you can delete a flow, you must stop the flow.
      * 
      * @param deleteFlowRequest
@@ -207,6 +350,91 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<DeleteFlowResult> deleteFlowAsync(DeleteFlowRequest deleteFlowRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFlowRequest, DeleteFlowResult> asyncHandler);
+
+    /**
+     * Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.
+     * 
+     * @param deleteGatewayRequest
+     * @return A Java Future containing the result of the DeleteGateway operation returned by the service.
+     * @sample AWSMediaConnectAsync.DeleteGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(DeleteGatewayRequest deleteGatewayRequest);
+
+    /**
+     * Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.
+     * 
+     * @param deleteGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGateway operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DeleteGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(DeleteGatewayRequest deleteGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult> asyncHandler);
+
+    /**
+     * Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped.
+     * If you want to deregister an instance without stopping the bridges, you must use the --force option.
+     * 
+     * @param deregisterGatewayInstanceRequest
+     * @return A Java Future containing the result of the DeregisterGatewayInstance operation returned by the service.
+     * @sample AWSMediaConnectAsync.DeregisterGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterGatewayInstanceResult> deregisterGatewayInstanceAsync(
+            DeregisterGatewayInstanceRequest deregisterGatewayInstanceRequest);
+
+    /**
+     * Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped.
+     * If you want to deregister an instance without stopping the bridges, you must use the --force option.
+     * 
+     * @param deregisterGatewayInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterGatewayInstance operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DeregisterGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterGatewayInstanceResult> deregisterGatewayInstanceAsync(
+            DeregisterGatewayInstanceRequest deregisterGatewayInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterGatewayInstanceRequest, DeregisterGatewayInstanceResult> asyncHandler);
+
+    /**
+     * Displays the details of a bridge.
+     * 
+     * @param describeBridgeRequest
+     * @return A Java Future containing the result of the DescribeBridge operation returned by the service.
+     * @sample AWSMediaConnectAsync.DescribeBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBridgeResult> describeBridgeAsync(DescribeBridgeRequest describeBridgeRequest);
+
+    /**
+     * Displays the details of a bridge.
+     * 
+     * @param describeBridgeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBridge operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DescribeBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBridgeResult> describeBridgeAsync(DescribeBridgeRequest describeBridgeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBridgeRequest, DescribeBridgeResult> asyncHandler);
 
     /**
      * Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as
@@ -236,6 +464,93 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<DescribeFlowResult> describeFlowAsync(DescribeFlowRequest describeFlowRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFlowRequest, DescribeFlowResult> asyncHandler);
+
+    /**
+     * Displays details of the flow's source stream. The response contains information about the contents of the stream
+     * and its programs.
+     * 
+     * @param describeFlowSourceMetadataRequest
+     * @return A Java Future containing the result of the DescribeFlowSourceMetadata operation returned by the service.
+     * @sample AWSMediaConnectAsync.DescribeFlowSourceMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFlowSourceMetadataResult> describeFlowSourceMetadataAsync(
+            DescribeFlowSourceMetadataRequest describeFlowSourceMetadataRequest);
+
+    /**
+     * Displays details of the flow's source stream. The response contains information about the contents of the stream
+     * and its programs.
+     * 
+     * @param describeFlowSourceMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFlowSourceMetadata operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DescribeFlowSourceMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFlowSourceMetadataResult> describeFlowSourceMetadataAsync(
+            DescribeFlowSourceMetadataRequest describeFlowSourceMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFlowSourceMetadataRequest, DescribeFlowSourceMetadataResult> asyncHandler);
+
+    /**
+     * Displays the details of a gateway. The response includes the gateway ARN, name, and CIDR blocks, as well as
+     * details about the networks.
+     * 
+     * @param describeGatewayRequest
+     * @return A Java Future containing the result of the DescribeGateway operation returned by the service.
+     * @sample AWSMediaConnectAsync.DescribeGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest describeGatewayRequest);
+
+    /**
+     * Displays the details of a gateway. The response includes the gateway ARN, name, and CIDR blocks, as well as
+     * details about the networks.
+     * 
+     * @param describeGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGateway operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DescribeGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest describeGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGatewayRequest, DescribeGatewayResult> asyncHandler);
+
+    /**
+     * Displays the details of an instance.
+     * 
+     * @param describeGatewayInstanceRequest
+     * @return A Java Future containing the result of the DescribeGatewayInstance operation returned by the service.
+     * @sample AWSMediaConnectAsync.DescribeGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGatewayInstanceResult> describeGatewayInstanceAsync(DescribeGatewayInstanceRequest describeGatewayInstanceRequest);
+
+    /**
+     * Displays the details of an instance.
+     * 
+     * @param describeGatewayInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGatewayInstance operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DescribeGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGatewayInstanceResult> describeGatewayInstanceAsync(DescribeGatewayInstanceRequest describeGatewayInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGatewayInstanceRequest, DescribeGatewayInstanceResult> asyncHandler);
 
     /**
      * Displays the details of an offering. The response includes the offering description, duration, outbound
@@ -327,6 +642,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<GrantFlowEntitlementsRequest, GrantFlowEntitlementsResult> asyncHandler);
 
     /**
+     * Displays a list of bridges that are associated with this account and an optionally specified Arn. This request
+     * returns a paginated result.
+     * 
+     * @param listBridgesRequest
+     * @return A Java Future containing the result of the ListBridges operation returned by the service.
+     * @sample AWSMediaConnectAsync.ListBridges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBridgesResult> listBridgesAsync(ListBridgesRequest listBridgesRequest);
+
+    /**
+     * Displays a list of bridges that are associated with this account and an optionally specified Arn. This request
+     * returns a paginated result.
+     * 
+     * @param listBridgesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBridges operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.ListBridges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBridgesResult> listBridgesAsync(ListBridgesRequest listBridgesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBridgesRequest, ListBridgesResult> asyncHandler);
+
+    /**
      * Displays a list of all entitlements that have been granted to this account. This request returns 20 results per
      * page.
      * 
@@ -381,6 +725,64 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<ListFlowsResult> listFlowsAsync(ListFlowsRequest listFlowsRequest,
             com.amazonaws.handlers.AsyncHandler<ListFlowsRequest, ListFlowsResult> asyncHandler);
+
+    /**
+     * Displays a list of instances associated with the AWS account. This request returns a paginated result. You can
+     * use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource
+     * Name (ARN).
+     * 
+     * @param listGatewayInstancesRequest
+     * @return A Java Future containing the result of the ListGatewayInstances operation returned by the service.
+     * @sample AWSMediaConnectAsync.ListGatewayInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewayInstancesResult> listGatewayInstancesAsync(ListGatewayInstancesRequest listGatewayInstancesRequest);
+
+    /**
+     * Displays a list of instances associated with the AWS account. This request returns a paginated result. You can
+     * use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource
+     * Name (ARN).
+     * 
+     * @param listGatewayInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGatewayInstances operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.ListGatewayInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewayInstancesResult> listGatewayInstancesAsync(ListGatewayInstancesRequest listGatewayInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGatewayInstancesRequest, ListGatewayInstancesResult> asyncHandler);
+
+    /**
+     * Displays a list of gateways that are associated with this account. This request returns a paginated result.
+     * 
+     * @param listGatewaysRequest
+     * @return A Java Future containing the result of the ListGateways operation returned by the service.
+     * @sample AWSMediaConnectAsync.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest listGatewaysRequest);
+
+    /**
+     * Displays a list of gateways that are associated with this account. This request returns a paginated result.
+     * 
+     * @param listGatewaysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGateways operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest listGatewaysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler);
 
     /**
      * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an
@@ -499,6 +901,60 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest purchaseOfferingRequest,
             com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
+
+    /**
+     * Removes an output from a bridge.
+     * 
+     * @param removeBridgeOutputRequest
+     * @return A Java Future containing the result of the RemoveBridgeOutput operation returned by the service.
+     * @sample AWSMediaConnectAsync.RemoveBridgeOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveBridgeOutputResult> removeBridgeOutputAsync(RemoveBridgeOutputRequest removeBridgeOutputRequest);
+
+    /**
+     * Removes an output from a bridge.
+     * 
+     * @param removeBridgeOutputRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveBridgeOutput operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.RemoveBridgeOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveBridgeOutputResult> removeBridgeOutputAsync(RemoveBridgeOutputRequest removeBridgeOutputRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveBridgeOutputRequest, RemoveBridgeOutputResult> asyncHandler);
+
+    /**
+     * Removes a source from a bridge.
+     * 
+     * @param removeBridgeSourceRequest
+     * @return A Java Future containing the result of the RemoveBridgeSource operation returned by the service.
+     * @sample AWSMediaConnectAsync.RemoveBridgeSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveBridgeSourceResult> removeBridgeSourceAsync(RemoveBridgeSourceRequest removeBridgeSourceRequest);
+
+    /**
+     * Removes a source from a bridge.
+     * 
+     * @param removeBridgeSourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveBridgeSource operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.RemoveBridgeSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveBridgeSourceResult> removeBridgeSourceAsync(RemoveBridgeSourceRequest removeBridgeSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveBridgeSourceRequest, RemoveBridgeSourceResult> asyncHandler);
 
     /**
      * Removes a media stream from a flow. This action is only available if the media stream is not associated with a
@@ -766,6 +1222,122 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
+     * Updates the bridge
+     * 
+     * @param updateBridgeRequest
+     *        A request to update the bridge.
+     * @return A Java Future containing the result of the UpdateBridge operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeResult> updateBridgeAsync(UpdateBridgeRequest updateBridgeRequest);
+
+    /**
+     * Updates the bridge
+     * 
+     * @param updateBridgeRequest
+     *        A request to update the bridge.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBridge operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateBridge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeResult> updateBridgeAsync(UpdateBridgeRequest updateBridgeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeRequest, UpdateBridgeResult> asyncHandler);
+
+    /**
+     * Updates an existing bridge output.
+     * 
+     * @param updateBridgeOutputRequest
+     *        The fields that you want to update in the bridge output.
+     * @return A Java Future containing the result of the UpdateBridgeOutput operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateBridgeOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeOutputResult> updateBridgeOutputAsync(UpdateBridgeOutputRequest updateBridgeOutputRequest);
+
+    /**
+     * Updates an existing bridge output.
+     * 
+     * @param updateBridgeOutputRequest
+     *        The fields that you want to update in the bridge output.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBridgeOutput operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateBridgeOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeOutputResult> updateBridgeOutputAsync(UpdateBridgeOutputRequest updateBridgeOutputRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeOutputRequest, UpdateBridgeOutputResult> asyncHandler);
+
+    /**
+     * Updates an existing bridge source.
+     * 
+     * @param updateBridgeSourceRequest
+     *        The fields that you want to update in the bridge source.
+     * @return A Java Future containing the result of the UpdateBridgeSource operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateBridgeSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeSourceResult> updateBridgeSourceAsync(UpdateBridgeSourceRequest updateBridgeSourceRequest);
+
+    /**
+     * Updates an existing bridge source.
+     * 
+     * @param updateBridgeSourceRequest
+     *        The fields that you want to update in the bridge source.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBridgeSource operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateBridgeSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeSourceResult> updateBridgeSourceAsync(UpdateBridgeSourceRequest updateBridgeSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeSourceRequest, UpdateBridgeSourceResult> asyncHandler);
+
+    /**
+     * Updates the bridge state
+     * 
+     * @param updateBridgeStateRequest
+     *        A request to update the bridge state.
+     * @return A Java Future containing the result of the UpdateBridgeState operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateBridgeState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeStateResult> updateBridgeStateAsync(UpdateBridgeStateRequest updateBridgeStateRequest);
+
+    /**
+     * Updates the bridge state
+     * 
+     * @param updateBridgeStateRequest
+     *        A request to update the bridge state.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBridgeState operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateBridgeState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBridgeStateResult> updateBridgeStateAsync(UpdateBridgeStateRequest updateBridgeStateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBridgeStateRequest, UpdateBridgeStateResult> asyncHandler);
+
+    /**
      * Updates flow
      * 
      * @param updateFlowRequest
@@ -911,5 +1483,34 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<UpdateFlowSourceResult> updateFlowSourceAsync(UpdateFlowSourceRequest updateFlowSourceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFlowSourceRequest, UpdateFlowSourceResult> asyncHandler);
+
+    /**
+     * Updates the configuration of an existing Gateway Instance.
+     * 
+     * @param updateGatewayInstanceRequest
+     *        A request to update gateway instance state.
+     * @return A Java Future containing the result of the UpdateGatewayInstance operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewayInstanceResult> updateGatewayInstanceAsync(UpdateGatewayInstanceRequest updateGatewayInstanceRequest);
+
+    /**
+     * Updates the configuration of an existing Gateway Instance.
+     * 
+     * @param updateGatewayInstanceRequest
+     *        A request to update gateway instance state.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGatewayInstance operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateGatewayInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewayInstanceResult> updateGatewayInstanceAsync(UpdateGatewayInstanceRequest updateGatewayInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayInstanceRequest, UpdateGatewayInstanceResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,10 @@ public class ClusterOperationInfoJsonUnmarshaller implements Unmarshaller<Cluste
                 if (context.testExpression("targetClusterInfo", targetDepth)) {
                     context.nextToken();
                     clusterOperationInfo.setTargetClusterInfo(MutableClusterInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vpcConnectionInfo", targetDepth)) {
+                    context.nextToken();
+                    clusterOperationInfo.setVpcConnectionInfo(VpcConnectionInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

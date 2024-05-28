@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,28 +27,31 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * <p>
  * <fullname>Amazon Web Services Application Discovery Service</fullname>
  * <p>
- * Amazon Web Services Application Discovery Service helps you plan application migration projects. It automatically
- * identifies servers, virtual machines (VMs), and network dependencies in your on-premises data centers. For more
- * information, see the <a href="http://aws.amazon.com/application-discovery/faqs/">Amazon Web Services Application
- * Discovery Service FAQ</a>. Application Discovery Service offers three ways of performing discovery and collecting
- * data about your on-premises servers:
+ * Amazon Web Services Application Discovery Service (Application Discovery Service) helps you plan application
+ * migration projects. It automatically identifies servers, virtual machines (VMs), and network dependencies in your
+ * on-premises data centers. For more information, see the <a
+ * href="http://aws.amazon.com/application-discovery/faqs/">Amazon Web Services Application Discovery Service FAQ</a>.
+ * </p>
+ * <p>
+ * Application Discovery Service offers three ways of performing discovery and collecting data about your on-premises
+ * servers:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <b>Agentless discovery</b> is recommended for environments that use VMware vCenter Server. This mode doesn't require
- * you to install an agent on each host. It does not work in non-VMware environments.
+ * <b>Agentless discovery</b> using Amazon Web Services Application Discovery Service Agentless Collector (Agentless
+ * Collector), which doesn't require you to install an agent on each host.
  * </p>
  * <ul>
  * <li>
  * <p>
- * Agentless discovery gathers server information regardless of the operating systems, which minimizes the time required
+ * Agentless Collector gathers server information regardless of the operating systems, which minimizes the time required
  * for initial on-premises infrastructure assessment.
  * </p>
  * </li>
  * <li>
  * <p>
- * Agentless discovery doesn't collect information about network dependencies, only agent-based discovery collects that
+ * Agentless Collector doesn't collect information about network dependencies, only agent-based discovery collects that
  * information.
  * </p>
  * </li>
@@ -58,8 +61,8 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * <ul>
  * <li>
  * <p>
- * <b>Agent-based discovery</b> collects a richer set of data than agentless discovery by using the Amazon Web Services
- * Application Discovery Agent, which you install on one or more hosts in your data center.
+ * <b>Agent-based discovery</b> using the Amazon Web Services Application Discovery Agent (Application Discovery Agent)
+ * collects a richer set of data than agentless discovery, which you install on one or more hosts in your data center.
  * </p>
  * <ul>
  * <li>
@@ -71,7 +74,9 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * <li>
  * <p>
  * The information collected by agents is secured at rest and in transit to the Application Discovery Service database
- * in the cloud.
+ * in the Amazon Web Services cloud. For more information, see <a
+ * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-agent.html">Amazon Web Services
+ * Application Discovery Agent</a>.
  * </p>
  * </li>
  * </ul>
@@ -81,8 +86,8 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * <li>
  * <p>
  * <b>Amazon Web Services Partner Network (APN) solutions</b> integrate with Application Discovery Service, enabling you
- * to import details of your on-premises environment directly into Migration Hub without using the discovery connector
- * or discovery agent.
+ * to import details of your on-premises environment directly into Amazon Web Services Migration Hub (Migration Hub)
+ * without using Agentless Collector or Application Discovery Agent.
  * </p>
  * <ul>
  * <li>
@@ -101,15 +106,6 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * </li>
  * </ul>
  * <p>
- * <b>Recommendations</b>
- * </p>
- * <p>
- * We recommend that you use agent-based discovery for non-VMware environments, and whenever you want to collect
- * information about network dependencies. You can run agent-based and agentless discovery simultaneously. Use agentless
- * discovery to complete the initial infrastructure assessment quickly, and then install agents on select hosts to
- * collect additional information.
- * </p>
- * <p>
  * <b>Working With This Guide</b>
  * </p>
  * <p>
@@ -123,42 +119,43 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * <ul>
  * <li>
  * <p>
- * Remember that you must set your Migration Hub home region before you call any of these APIs.
+ * Remember that you must set your Migration Hub home Region before you call any of these APIs.
  * </p>
  * </li>
  * <li>
  * <p>
  * You must make API calls for write actions (create, notify, associate, disassociate, import, or put) while in your
- * home region, or a <code>HomeRegionNotSetException</code> error is returned.
+ * home Region, or a <code>HomeRegionNotSetException</code> error is returned.
  * </p>
  * </li>
  * <li>
  * <p>
- * API calls for read actions (list, describe, stop, and delete) are permitted outside of your home region.
+ * API calls for read actions (list, describe, stop, and delete) are permitted outside of your home Region.
  * </p>
  * </li>
  * <li>
  * <p>
- * Although it is unlikely, the Migration Hub home region could change. If you call APIs outside the home region, an
+ * Although it is unlikely, the Migration Hub home Region could change. If you call APIs outside the home Region, an
  * <code>InvalidInputException</code> is returned.
  * </p>
  * </li>
  * <li>
  * <p>
- * You must call <code>GetHomeRegion</code> to obtain the latest Migration Hub home region.
+ * You must call <code>GetHomeRegion</code> to obtain the latest Migration Hub home Region.
  * </p>
  * </li>
  * </ul>
  * </note>
  * <p>
  * This guide is intended for use with the <a
- * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">Amazon Web Services Application Discovery
+ * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/">Amazon Web Services Application Discovery
  * Service User Guide</a>.
  * </p>
  * <important>
  * <p>
- * All data is handled according to the <a href="http://aws.amazon.com/privacy/">Amazon Web Services Privacy Policy</a>.
- * You can operate Application Discovery Service offline to inspect collected data before it is shared with the service.
+ * All data is handled according to the <a href="https://aws.amazon.com/privacy/">Amazon Web Services Privacy
+ * Policy</a>. You can operate Application Discovery Service offline to inspect collected data before it is shared with
+ * the service.
  * </p>
  * </important>
  */
@@ -195,6 +192,35 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
     java.util.concurrent.Future<AssociateConfigurationItemsToApplicationResult> associateConfigurationItemsToApplicationAsync(
             AssociateConfigurationItemsToApplicationRequest associateConfigurationItemsToApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateConfigurationItemsToApplicationRequest, AssociateConfigurationItemsToApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one or more agents or collectors as specified by ID. Deleting an agent or collector does not delete the
+     * previously discovered data. To delete the data collected, use <code>StartBatchDeleteConfigurationTask</code>.
+     * </p>
+     * 
+     * @param batchDeleteAgentsRequest
+     * @return A Java Future containing the result of the BatchDeleteAgents operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsync.BatchDeleteAgents
+     */
+    java.util.concurrent.Future<BatchDeleteAgentsResult> batchDeleteAgentsAsync(BatchDeleteAgentsRequest batchDeleteAgentsRequest);
+
+    /**
+     * <p>
+     * Deletes one or more agents or collectors as specified by ID. Deleting an agent or collector does not delete the
+     * previously discovered data. To delete the data collected, use <code>StartBatchDeleteConfigurationTask</code>.
+     * </p>
+     * 
+     * @param batchDeleteAgentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteAgents operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.BatchDeleteAgents
+     */
+    java.util.concurrent.Future<BatchDeleteAgentsResult> batchDeleteAgentsAsync(BatchDeleteAgentsRequest batchDeleteAgentsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteAgentsRequest, BatchDeleteAgentsResult> asyncHandler);
 
     /**
      * <p>
@@ -361,8 +387,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user
-     * account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
+     * Lists agents or collectors as specified by ID or other filters. All agents/collectors associated with your user
+     * can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
      * </p>
      * 
      * @param describeAgentsRequest
@@ -373,8 +399,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user
-     * account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
+     * Lists agents or collectors as specified by ID or other filters. All agents/collectors associated with your user
+     * can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.
      * </p>
      * 
      * @param describeAgentsRequest
@@ -387,6 +413,37 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      */
     java.util.concurrent.Future<DescribeAgentsResult> describeAgentsAsync(DescribeAgentsRequest describeAgentsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAgentsRequest, DescribeAgentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Takes a unique deletion task identifier as input and returns metadata about a configuration deletion task.
+     * </p>
+     * 
+     * @param describeBatchDeleteConfigurationTaskRequest
+     * @return A Java Future containing the result of the DescribeBatchDeleteConfigurationTask operation returned by the
+     *         service.
+     * @sample AWSApplicationDiscoveryAsync.DescribeBatchDeleteConfigurationTask
+     */
+    java.util.concurrent.Future<DescribeBatchDeleteConfigurationTaskResult> describeBatchDeleteConfigurationTaskAsync(
+            DescribeBatchDeleteConfigurationTaskRequest describeBatchDeleteConfigurationTaskRequest);
+
+    /**
+     * <p>
+     * Takes a unique deletion task identifier as input and returns metadata about a configuration deletion task.
+     * </p>
+     * 
+     * @param describeBatchDeleteConfigurationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBatchDeleteConfigurationTask operation returned by the
+     *         service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.DescribeBatchDeleteConfigurationTask
+     */
+    java.util.concurrent.Future<DescribeBatchDeleteConfigurationTaskResult> describeBatchDeleteConfigurationTaskAsync(
+            DescribeBatchDeleteConfigurationTaskRequest describeBatchDeleteConfigurationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBatchDeleteConfigurationTaskRequest, DescribeBatchDeleteConfigurationTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -493,8 +550,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you
-     * call <code>DescribeContinuousExports</code> as is without passing any parameters.
+     * Lists exports as specified by ID. All continuous exports associated with your user can be listed if you call
+     * <code>DescribeContinuousExports</code> as is without passing any parameters.
      * </p>
      * 
      * @param describeContinuousExportsRequest
@@ -506,8 +563,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Lists exports as specified by ID. All continuous exports associated with your user account can be listed if you
-     * call <code>DescribeContinuousExports</code> as is without passing any parameters.
+     * Lists exports as specified by ID. All continuous exports associated with your user can be listed if you call
+     * <code>DescribeContinuousExports</code> as is without passing any parameters.
      * </p>
      * 
      * @param describeContinuousExportsRequest
@@ -641,7 +698,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </li>
      * </ul>
      * <p>
-     * Also, all configuration items associated with your user account that have tags can be listed if you call
+     * Also, all configuration items associated with your user that have tags can be listed if you call
      * <code>DescribeTags</code> as is without passing any parameters.
      * </p>
      * 
@@ -677,7 +734,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </li>
      * </ul>
      * <p>
-     * Also, all configuration items associated with your user account that have tags can be listed if you call
+     * Also, all configuration items associated with your user that have tags can be listed if you call
      * <code>DescribeTags</code> as is without passing any parameters.
      * </p>
      * 
@@ -855,6 +912,39 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
+     * Takes a list of configurationId as input and starts an asynchronous deletion task to remove the
+     * configurationItems. Returns a unique deletion task identifier.
+     * </p>
+     * 
+     * @param startBatchDeleteConfigurationTaskRequest
+     * @return A Java Future containing the result of the StartBatchDeleteConfigurationTask operation returned by the
+     *         service.
+     * @sample AWSApplicationDiscoveryAsync.StartBatchDeleteConfigurationTask
+     */
+    java.util.concurrent.Future<StartBatchDeleteConfigurationTaskResult> startBatchDeleteConfigurationTaskAsync(
+            StartBatchDeleteConfigurationTaskRequest startBatchDeleteConfigurationTaskRequest);
+
+    /**
+     * <p>
+     * Takes a list of configurationId as input and starts an asynchronous deletion task to remove the
+     * configurationItems. Returns a unique deletion task identifier.
+     * </p>
+     * 
+     * @param startBatchDeleteConfigurationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartBatchDeleteConfigurationTask operation returned by the
+     *         service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.StartBatchDeleteConfigurationTask
+     */
+    java.util.concurrent.Future<StartBatchDeleteConfigurationTaskResult> startBatchDeleteConfigurationTaskAsync(
+            StartBatchDeleteConfigurationTaskRequest startBatchDeleteConfigurationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartBatchDeleteConfigurationTaskRequest, StartBatchDeleteConfigurationTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Start the continuous flow of agent's discovered data into Amazon Athena.
      * </p>
      * 
@@ -882,7 +972,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or connectors to start collecting data.
+     * Instructs the specified agents to start collecting data.
      * </p>
      * 
      * @param startDataCollectionByAgentIdsRequest
@@ -895,7 +985,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or connectors to start collecting data.
+     * Instructs the specified agents to start collecting data.
      * </p>
      * 
      * @param startDataCollectionByAgentIdsRequest
@@ -913,18 +1003,32 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Begins the export of discovered data to an S3 bucket.
+     * Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.
+     * </p>
+     * <note>
+     * <p>
+     * Exports might provide an estimate of fees and savings based on certain information that you provide. Fee
+     * estimates do not include any taxes that might apply. Your actual fees and savings depend on a variety of factors,
+     * including your actual usage of Amazon Web Services services, which might vary from the estimates provided in this
+     * report.
+     * </p>
+     * </note>
+     * <p>
+     * If you do not specify <code>preferences</code> or <code>agentIds</code> in the filter, a summary of all servers,
+     * applications, tags, and performance is generated. This data is an aggregation of all server data collected
+     * through on-premises tooling, file import, application grouping and applying tags.
      * </p>
      * <p>
      * If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by
      * the identified Application Discovery Agent, including network, process, and performance details. A time range for
      * exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent
-     * data is limited to five concurrently running exports.
+     * data is limited to five concurrently running exports. Export of detailed agent data is limited to two exports per
+     * day.
      * </p>
      * <p>
-     * If you do not include an <code>agentIds</code> filter, summary data is exported that includes both Amazon Web
-     * Services Agentless Discovery Connector data and summary data from Amazon Web Services Discovery Agents. Export of
-     * summary data is limited to two exports per day.
+     * If you enable <code>ec2RecommendationsPreferences</code> in <code>preferences</code> , an Amazon EC2 instance
+     * matching the characteristics of each server in Application Discovery Service is generated. Changing the
+     * attributes of the <code>ec2RecommendationsPreferences</code> changes the criteria of the recommendation.
      * </p>
      * 
      * @param startExportTaskRequest
@@ -935,18 +1039,32 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Begins the export of discovered data to an S3 bucket.
+     * Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.
+     * </p>
+     * <note>
+     * <p>
+     * Exports might provide an estimate of fees and savings based on certain information that you provide. Fee
+     * estimates do not include any taxes that might apply. Your actual fees and savings depend on a variety of factors,
+     * including your actual usage of Amazon Web Services services, which might vary from the estimates provided in this
+     * report.
+     * </p>
+     * </note>
+     * <p>
+     * If you do not specify <code>preferences</code> or <code>agentIds</code> in the filter, a summary of all servers,
+     * applications, tags, and performance is generated. This data is an aggregation of all server data collected
+     * through on-premises tooling, file import, application grouping and applying tags.
      * </p>
      * <p>
      * If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by
      * the identified Application Discovery Agent, including network, process, and performance details. A time range for
      * exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent
-     * data is limited to five concurrently running exports.
+     * data is limited to five concurrently running exports. Export of detailed agent data is limited to two exports per
+     * day.
      * </p>
      * <p>
-     * If you do not include an <code>agentIds</code> filter, summary data is exported that includes both Amazon Web
-     * Services Agentless Discovery Connector data and summary data from Amazon Web Services Discovery Agents. Export of
-     * summary data is limited to two exports per day.
+     * If you enable <code>ec2RecommendationsPreferences</code> in <code>preferences</code> , an Amazon EC2 instance
+     * matching the characteristics of each server in Application Discovery Service is generated. Changing the
+     * attributes of the <code>ec2RecommendationsPreferences</code> changes the criteria of the recommendation.
      * </p>
      * 
      * @param startExportTaskRequest
@@ -963,8 +1081,9 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
     /**
      * <p>
      * Starts an import task, which allows you to import details of your on-premises environment directly into Amazon
-     * Web Services Migration Hub without having to use the Application Discovery Service (ADS) tools such as the
-     * Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning
+     * Web Services Migration Hub without having to use the Amazon Web Services Application Discovery Service
+     * (Application Discovery Service) tools such as the Amazon Web Services Application Discovery Service Agentless
+     * Collector or Application Discovery Agent. This gives you the option to perform migration assessment and planning
      * directly from your imported data, including the ability to group your devices as applications and track their
      * migration status.
      * </p>
@@ -1021,8 +1140,9 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
     /**
      * <p>
      * Starts an import task, which allows you to import details of your on-premises environment directly into Amazon
-     * Web Services Migration Hub without having to use the Application Discovery Service (ADS) tools such as the
-     * Discovery Connector or Discovery Agent. This gives you the option to perform migration assessment and planning
+     * Web Services Migration Hub without having to use the Amazon Web Services Application Discovery Service
+     * (Application Discovery Service) tools such as the Amazon Web Services Application Discovery Service Agentless
+     * Collector or Application Discovery Agent. This gives you the option to perform migration assessment and planning
      * directly from your imported data, including the ability to group your devices as applications and track their
      * migration status.
      * </p>
@@ -1110,7 +1230,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or connectors to stop collecting data.
+     * Instructs the specified agents to stop collecting data.
      * </p>
      * 
      * @param stopDataCollectionByAgentIdsRequest
@@ -1123,7 +1243,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or connectors to stop collecting data.
+     * Instructs the specified agents to stop collecting data.
      * </p>
      * 
      * @param stopDataCollectionByAgentIdsRequest

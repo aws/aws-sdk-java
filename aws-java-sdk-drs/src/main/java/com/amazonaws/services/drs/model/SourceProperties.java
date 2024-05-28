@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,12 @@ public class SourceProperties implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String recommendedInstanceType;
+    /**
+     * <p>
+     * Are EC2 nitro instance types supported when recovering the Source Server.
+     * </p>
+     */
+    private Boolean supportsNitroInstances;
 
     /**
      * <p>
@@ -488,6 +494,58 @@ public class SourceProperties implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Are EC2 nitro instance types supported when recovering the Source Server.
+     * </p>
+     * 
+     * @param supportsNitroInstances
+     *        Are EC2 nitro instance types supported when recovering the Source Server.
+     */
+
+    public void setSupportsNitroInstances(Boolean supportsNitroInstances) {
+        this.supportsNitroInstances = supportsNitroInstances;
+    }
+
+    /**
+     * <p>
+     * Are EC2 nitro instance types supported when recovering the Source Server.
+     * </p>
+     * 
+     * @return Are EC2 nitro instance types supported when recovering the Source Server.
+     */
+
+    public Boolean getSupportsNitroInstances() {
+        return this.supportsNitroInstances;
+    }
+
+    /**
+     * <p>
+     * Are EC2 nitro instance types supported when recovering the Source Server.
+     * </p>
+     * 
+     * @param supportsNitroInstances
+     *        Are EC2 nitro instance types supported when recovering the Source Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceProperties withSupportsNitroInstances(Boolean supportsNitroInstances) {
+        setSupportsNitroInstances(supportsNitroInstances);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Are EC2 nitro instance types supported when recovering the Source Server.
+     * </p>
+     * 
+     * @return Are EC2 nitro instance types supported when recovering the Source Server.
+     */
+
+    public Boolean isSupportsNitroInstances() {
+        return this.supportsNitroInstances;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -514,7 +572,9 @@ public class SourceProperties implements Serializable, Cloneable, StructuredPojo
         if (getRamBytes() != null)
             sb.append("RamBytes: ").append(getRamBytes()).append(",");
         if (getRecommendedInstanceType() != null)
-            sb.append("RecommendedInstanceType: ").append(getRecommendedInstanceType());
+            sb.append("RecommendedInstanceType: ").append(getRecommendedInstanceType()).append(",");
+        if (getSupportsNitroInstances() != null)
+            sb.append("SupportsNitroInstances: ").append(getSupportsNitroInstances());
         sb.append("}");
         return sb.toString();
     }
@@ -561,6 +621,10 @@ public class SourceProperties implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRecommendedInstanceType() != null && other.getRecommendedInstanceType().equals(this.getRecommendedInstanceType()) == false)
             return false;
+        if (other.getSupportsNitroInstances() == null ^ this.getSupportsNitroInstances() == null)
+            return false;
+        if (other.getSupportsNitroInstances() != null && other.getSupportsNitroInstances().equals(this.getSupportsNitroInstances()) == false)
+            return false;
         return true;
     }
 
@@ -577,6 +641,7 @@ public class SourceProperties implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode());
         hashCode = prime * hashCode + ((getRamBytes() == null) ? 0 : getRamBytes().hashCode());
         hashCode = prime * hashCode + ((getRecommendedInstanceType() == null) ? 0 : getRecommendedInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getSupportsNitroInstances() == null) ? 0 : getSupportsNitroInstances().hashCode());
         return hashCode;
     }
 

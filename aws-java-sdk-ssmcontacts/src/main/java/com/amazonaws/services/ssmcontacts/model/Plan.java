@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The stages that an escalation plan or engagement plan engages contacts and contact methods in.
+ * Information about the stages and on-call rotation teams associated with an escalation plan or engagement plan.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Plan" target="_top">AWS API
@@ -34,6 +34,12 @@ public class Plan implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Stage> stages;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * </p>
+     */
+    private java.util.List<String> rotationIds;
 
     /**
      * <p>
@@ -106,6 +112,76 @@ public class Plan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     */
+
+    public java.util.List<String> getRotationIds() {
+        return rotationIds;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * </p>
+     * 
+     * @param rotationIds
+     *        The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     */
+
+    public void setRotationIds(java.util.Collection<String> rotationIds) {
+        if (rotationIds == null) {
+            this.rotationIds = null;
+            return;
+        }
+
+        this.rotationIds = new java.util.ArrayList<String>(rotationIds);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRotationIds(java.util.Collection)} or {@link #withRotationIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param rotationIds
+     *        The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Plan withRotationIds(String... rotationIds) {
+        if (this.rotationIds == null) {
+            setRotationIds(new java.util.ArrayList<String>(rotationIds.length));
+        }
+        for (String ele : rotationIds) {
+            this.rotationIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * </p>
+     * 
+     * @param rotationIds
+     *        The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Plan withRotationIds(java.util.Collection<String> rotationIds) {
+        setRotationIds(rotationIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +194,9 @@ public class Plan implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStages() != null)
-            sb.append("Stages: ").append(getStages());
+            sb.append("Stages: ").append(getStages()).append(",");
+        if (getRotationIds() != null)
+            sb.append("RotationIds: ").append(getRotationIds());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +215,10 @@ public class Plan implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStages() != null && other.getStages().equals(this.getStages()) == false)
             return false;
+        if (other.getRotationIds() == null ^ this.getRotationIds() == null)
+            return false;
+        if (other.getRotationIds() != null && other.getRotationIds().equals(this.getRotationIds()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +228,7 @@ public class Plan implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStages() == null) ? 0 : getStages().hashCode());
+        hashCode = prime * hashCode + ((getRotationIds() == null) ? 0 : getRotationIds().hashCode());
         return hashCode;
     }
 

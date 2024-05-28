@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,18 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.Date disabledDate;
+    /**
+     * <p>
+     * Description of the resource.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     */
+    private Boolean hiddenFromGlobalAddressList;
 
     /**
      * <p>
@@ -440,6 +452,98 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Description of the resource.
+     * </p>
+     * 
+     * @param description
+     *        Description of the resource.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * Description of the resource.
+     * </p>
+     * 
+     * @return Description of the resource.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Description of the resource.
+     * </p>
+     * 
+     * @param description
+     *        Description of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResourceResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If enabled, the resource is hidden from the global address list.
+     */
+
+    public void setHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        this.hiddenFromGlobalAddressList = hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @return If enabled, the resource is hidden from the global address list.
+     */
+
+    public Boolean getHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If enabled, the resource is hidden from the global address list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResourceResult withHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        setHiddenFromGlobalAddressList(hiddenFromGlobalAddressList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @return If enabled, the resource is hidden from the global address list.
+     */
+
+    public Boolean isHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -466,7 +570,11 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
         if (getEnabledDate() != null)
             sb.append("EnabledDate: ").append(getEnabledDate()).append(",");
         if (getDisabledDate() != null)
-            sb.append("DisabledDate: ").append(getDisabledDate());
+            sb.append("DisabledDate: ").append(getDisabledDate()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getHiddenFromGlobalAddressList() != null)
+            sb.append("HiddenFromGlobalAddressList: ").append(getHiddenFromGlobalAddressList());
         sb.append("}");
         return sb.toString();
     }
@@ -513,6 +621,14 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getDisabledDate() != null && other.getDisabledDate().equals(this.getDisabledDate()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() == null ^ this.getHiddenFromGlobalAddressList() == null)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() != null && other.getHiddenFromGlobalAddressList().equals(this.getHiddenFromGlobalAddressList()) == false)
+            return false;
         return true;
     }
 
@@ -529,6 +645,8 @@ public class DescribeResourceResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getEnabledDate() == null) ? 0 : getEnabledDate().hashCode());
         hashCode = prime * hashCode + ((getDisabledDate() == null) ? 0 : getDisabledDate().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHiddenFromGlobalAddressList() == null) ? 0 : getHiddenFromGlobalAddressList().hashCode());
         return hashCode;
     }
 

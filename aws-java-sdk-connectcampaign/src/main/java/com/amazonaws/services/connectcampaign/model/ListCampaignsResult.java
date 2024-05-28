@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,35 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListCampaignsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    private String nextToken;
+
     private java.util.List<CampaignSummary> campaignSummaryList;
 
-    private String nextToken;
+    /**
+     * @param nextToken
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * @param nextToken
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCampaignsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * @return
@@ -83,32 +109,6 @@ public class ListCampaignsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @param nextToken
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * @param nextToken
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListCampaignsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -120,10 +120,10 @@ public class ListCampaignsResult extends com.amazonaws.AmazonWebServiceResult<co
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCampaignSummaryList() != null)
-            sb.append("CampaignSummaryList: ").append(getCampaignSummaryList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getCampaignSummaryList() != null)
+            sb.append("CampaignSummaryList: ").append(getCampaignSummaryList());
         sb.append("}");
         return sb.toString();
     }
@@ -138,13 +138,13 @@ public class ListCampaignsResult extends com.amazonaws.AmazonWebServiceResult<co
         if (obj instanceof ListCampaignsResult == false)
             return false;
         ListCampaignsResult other = (ListCampaignsResult) obj;
-        if (other.getCampaignSummaryList() == null ^ this.getCampaignSummaryList() == null)
-            return false;
-        if (other.getCampaignSummaryList() != null && other.getCampaignSummaryList().equals(this.getCampaignSummaryList()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getCampaignSummaryList() == null ^ this.getCampaignSummaryList() == null)
+            return false;
+        if (other.getCampaignSummaryList() != null && other.getCampaignSummaryList().equals(this.getCampaignSummaryList()) == false)
             return false;
         return true;
     }
@@ -154,8 +154,8 @@ public class ListCampaignsResult extends com.amazonaws.AmazonWebServiceResult<co
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCampaignSummaryList() == null) ? 0 : getCampaignSummaryList().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getCampaignSummaryList() == null) ? 0 : getCampaignSummaryList().hashCode());
         return hashCode;
     }
 

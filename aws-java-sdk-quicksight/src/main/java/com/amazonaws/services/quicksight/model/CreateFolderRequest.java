@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,13 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An optional parameter that determines the sharing scope of the folder. The default value for this parameter is
+     * <code>ACCOUNT</code>.
+     * </p>
+     */
+    private String sharingModel;
 
     /**
      * <p>
@@ -472,6 +479,73 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * An optional parameter that determines the sharing scope of the folder. The default value for this parameter is
+     * <code>ACCOUNT</code>.
+     * </p>
+     * 
+     * @param sharingModel
+     *        An optional parameter that determines the sharing scope of the folder. The default value for this
+     *        parameter is <code>ACCOUNT</code>.
+     * @see SharingModel
+     */
+
+    public void setSharingModel(String sharingModel) {
+        this.sharingModel = sharingModel;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that determines the sharing scope of the folder. The default value for this parameter is
+     * <code>ACCOUNT</code>.
+     * </p>
+     * 
+     * @return An optional parameter that determines the sharing scope of the folder. The default value for this
+     *         parameter is <code>ACCOUNT</code>.
+     * @see SharingModel
+     */
+
+    public String getSharingModel() {
+        return this.sharingModel;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that determines the sharing scope of the folder. The default value for this parameter is
+     * <code>ACCOUNT</code>.
+     * </p>
+     * 
+     * @param sharingModel
+     *        An optional parameter that determines the sharing scope of the folder. The default value for this
+     *        parameter is <code>ACCOUNT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SharingModel
+     */
+
+    public CreateFolderRequest withSharingModel(String sharingModel) {
+        setSharingModel(sharingModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that determines the sharing scope of the folder. The default value for this parameter is
+     * <code>ACCOUNT</code>.
+     * </p>
+     * 
+     * @param sharingModel
+     *        An optional parameter that determines the sharing scope of the folder. The default value for this
+     *        parameter is <code>ACCOUNT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SharingModel
+     */
+
+    public CreateFolderRequest withSharingModel(SharingModel sharingModel) {
+        this.sharingModel = sharingModel.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -496,7 +570,9 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getPermissions() != null)
             sb.append("Permissions: ").append(getPermissions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSharingModel() != null)
+            sb.append("SharingModel: ").append(getSharingModel());
         sb.append("}");
         return sb.toString();
     }
@@ -539,6 +615,10 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSharingModel() == null ^ this.getSharingModel() == null)
+            return false;
+        if (other.getSharingModel() != null && other.getSharingModel().equals(this.getSharingModel()) == false)
+            return false;
         return true;
     }
 
@@ -554,6 +634,7 @@ public class CreateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getParentFolderArn() == null) ? 0 : getParentFolderArn().hashCode());
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSharingModel() == null) ? 0 : getSharingModel().hashCode());
         return hashCode;
     }
 

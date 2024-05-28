@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,61 +26,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCampaignStateBatchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    private java.util.List<FailedCampaignStateResponse> failedRequests;
-
     private java.util.List<SuccessfulCampaignStateResponse> successfulRequests;
 
-    /**
-     * @return
-     */
-
-    public java.util.List<FailedCampaignStateResponse> getFailedRequests() {
-        return failedRequests;
-    }
-
-    /**
-     * @param failedRequests
-     */
-
-    public void setFailedRequests(java.util.Collection<FailedCampaignStateResponse> failedRequests) {
-        if (failedRequests == null) {
-            this.failedRequests = null;
-            return;
-        }
-
-        this.failedRequests = new java.util.ArrayList<FailedCampaignStateResponse>(failedRequests);
-    }
-
-    /**
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param failedRequests
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetCampaignStateBatchResult withFailedRequests(FailedCampaignStateResponse... failedRequests) {
-        if (this.failedRequests == null) {
-            setFailedRequests(new java.util.ArrayList<FailedCampaignStateResponse>(failedRequests.length));
-        }
-        for (FailedCampaignStateResponse ele : failedRequests) {
-            this.failedRequests.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * @param failedRequests
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetCampaignStateBatchResult withFailedRequests(java.util.Collection<FailedCampaignStateResponse> failedRequests) {
-        setFailedRequests(failedRequests);
-        return this;
-    }
+    private java.util.List<FailedCampaignStateResponse> failedRequests;
 
     /**
      * @return
@@ -135,6 +83,58 @@ public class GetCampaignStateBatchResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<FailedCampaignStateResponse> getFailedRequests() {
+        return failedRequests;
+    }
+
+    /**
+     * @param failedRequests
+     */
+
+    public void setFailedRequests(java.util.Collection<FailedCampaignStateResponse> failedRequests) {
+        if (failedRequests == null) {
+            this.failedRequests = null;
+            return;
+        }
+
+        this.failedRequests = new java.util.ArrayList<FailedCampaignStateResponse>(failedRequests);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param failedRequests
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCampaignStateBatchResult withFailedRequests(FailedCampaignStateResponse... failedRequests) {
+        if (this.failedRequests == null) {
+            setFailedRequests(new java.util.ArrayList<FailedCampaignStateResponse>(failedRequests.length));
+        }
+        for (FailedCampaignStateResponse ele : failedRequests) {
+            this.failedRequests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param failedRequests
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCampaignStateBatchResult withFailedRequests(java.util.Collection<FailedCampaignStateResponse> failedRequests) {
+        setFailedRequests(failedRequests);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -146,10 +146,10 @@ public class GetCampaignStateBatchResult extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFailedRequests() != null)
-            sb.append("FailedRequests: ").append(getFailedRequests()).append(",");
         if (getSuccessfulRequests() != null)
-            sb.append("SuccessfulRequests: ").append(getSuccessfulRequests());
+            sb.append("SuccessfulRequests: ").append(getSuccessfulRequests()).append(",");
+        if (getFailedRequests() != null)
+            sb.append("FailedRequests: ").append(getFailedRequests());
         sb.append("}");
         return sb.toString();
     }
@@ -164,13 +164,13 @@ public class GetCampaignStateBatchResult extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof GetCampaignStateBatchResult == false)
             return false;
         GetCampaignStateBatchResult other = (GetCampaignStateBatchResult) obj;
-        if (other.getFailedRequests() == null ^ this.getFailedRequests() == null)
-            return false;
-        if (other.getFailedRequests() != null && other.getFailedRequests().equals(this.getFailedRequests()) == false)
-            return false;
         if (other.getSuccessfulRequests() == null ^ this.getSuccessfulRequests() == null)
             return false;
         if (other.getSuccessfulRequests() != null && other.getSuccessfulRequests().equals(this.getSuccessfulRequests()) == false)
+            return false;
+        if (other.getFailedRequests() == null ^ this.getFailedRequests() == null)
+            return false;
+        if (other.getFailedRequests() != null && other.getFailedRequests().equals(this.getFailedRequests()) == false)
             return false;
         return true;
     }
@@ -180,8 +180,8 @@ public class GetCampaignStateBatchResult extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFailedRequests() == null) ? 0 : getFailedRequests().hashCode());
         hashCode = prime * hashCode + ((getSuccessfulRequests() == null) ? 0 : getSuccessfulRequests().hashCode());
+        hashCode = prime * hashCode + ((getFailedRequests() == null) ? 0 : getFailedRequests().hashCode());
         return hashCode;
     }
 

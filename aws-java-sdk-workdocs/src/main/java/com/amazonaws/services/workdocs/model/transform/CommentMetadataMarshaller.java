@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class CommentMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CommentStatus").build();
     private static final MarshallingInfo<String> RECIPIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecipientId").build();
+    private static final MarshallingInfo<String> CONTRIBUTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContributorId").build();
 
     private static final CommentMetadataMarshaller instance = new CommentMetadataMarshaller();
 
@@ -59,6 +61,7 @@ public class CommentMetadataMarshaller {
             protocolMarshaller.marshall(commentMetadata.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(commentMetadata.getCommentStatus(), COMMENTSTATUS_BINDING);
             protocolMarshaller.marshall(commentMetadata.getRecipientId(), RECIPIENTID_BINDING);
+            protocolMarshaller.marshall(commentMetadata.getContributorId(), CONTRIBUTORID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * error.
      * </p>
      * </note>
      * <p>
@@ -71,6 +71,17 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of
      * interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on
      * street networks and traffic coverage</a>.
+     * </p>
+     * <p>
+     * Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
      * </p>
      * </li>
      * <li>
@@ -322,7 +333,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * error.
      * </p>
      * </note>
      * <p>
@@ -335,6 +346,17 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of
      * interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on
      * street networks and traffic coverage</a>.
+     * </p>
+     * <p>
+     * Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
      * </p>
      * </li>
      * <li>
@@ -359,8 +381,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        Specifies the data provider of traffic and road network data.</p> <note>
      *        <p>
      *        This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
-     *        returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter
-     *        than 400 km.
+     *        returns an error.
      *        </p>
      *        </note>
      *        <p>
@@ -374,6 +395,18 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        region of interest, see <a
      *        href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street
      *        networks and traffic coverage</a>.
+     *        </p>
+     *        <p>
+     *        Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information
+     *        about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     *        coverage, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     *        countries and areas covered</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -405,7 +438,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * error.
      * </p>
      * </note>
      * <p>
@@ -418,6 +451,17 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of
      * interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on
      * street networks and traffic coverage</a>.
+     * </p>
+     * <p>
+     * Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
      * </p>
      * </li>
      * <li>
@@ -441,8 +485,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * @return Specifies the data provider of traffic and road network data.</p> <note>
      *         <p>
      *         This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
-     *         returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter
-     *         than 400 km.
+     *         returns an error.
      *         </p>
      *         </note>
      *         <p>
@@ -456,6 +499,18 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *         region of interest, see <a
      *         href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street
      *         networks and traffic coverage</a>.
+     *         </p>
+     *         <p>
+     *         Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information
+     *         about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     *         coverage, see <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     *         countries and areas covered</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -487,7 +542,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * <note>
      * <p>
      * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an
-     * error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * error.
      * </p>
      * </note>
      * <p>
@@ -500,6 +555,17 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of
      * interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on
      * street networks and traffic coverage</a>.
+     * </p>
+     * <p>
+     * Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
      * </p>
      * </li>
      * <li>
@@ -524,8 +590,7 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        Specifies the data provider of traffic and road network data.</p> <note>
      *        <p>
      *        This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
-     *        returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter
-     *        than 400 km.
+     *        returns an error.
      *        </p>
      *        </note>
      *        <p>
@@ -539,6 +604,18 @@ public class CreateRouteCalculatorRequest extends com.amazonaws.AmazonWebService
      *        region of interest, see <a
      *        href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street
      *        networks and traffic coverage</a>.
+     *        </p>
+     *        <p>
+     *        Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information
+     *        about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     *        coverage, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     *        countries and areas covered</a>.
      *        </p>
      *        </li>
      *        <li>

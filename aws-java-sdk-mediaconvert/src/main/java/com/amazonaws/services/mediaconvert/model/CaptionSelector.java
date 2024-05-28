@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to
- * 20 captions selectors per input.
+ * 100 captions selectors per input.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSelector" target="_top">AWS API
  *      Documentation</a>
@@ -30,16 +30,16 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     /**
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
      * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
-     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
-     * specific language with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is
+     * DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific
+     * language with pass-through captions.
      */
     private String customLanguageCode;
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or
-     * PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field
-     * (and PID field); there is no way to extract a specific language with pass-through captions.
+     * caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select
+     * the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID
+     * field); there is no way to extract a specific language with pass-through captions.
      */
     private String languageCode;
     /**
@@ -52,16 +52,16 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     /**
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
      * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
-     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
-     * specific language with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is
+     * DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific
+     * language with pass-through captions.
      * 
      * @param customLanguageCode
      *        The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code.
      *        If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is
-     *        DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language
-     *        to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no
-     *        way to extract a specific language with pass-through captions.
+     *        DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption language to extract.
+     *        If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to
+     *        extract a specific language with pass-through captions.
      */
 
     public void setCustomLanguageCode(String customLanguageCode) {
@@ -71,15 +71,15 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     /**
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
      * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
-     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
-     * specific language with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is
+     * DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific
+     * language with pass-through captions.
      * 
      * @return The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language
      *         code. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If
-     *         input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     *         language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field);
-     *         there is no way to extract a specific language with pass-through captions.
+     *         input is DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption language to
+     *         extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no
+     *         way to extract a specific language with pass-through captions.
      */
 
     public String getCustomLanguageCode() {
@@ -89,16 +89,16 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     /**
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
      * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
-     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
-     * specific language with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption language to extract. If input is
+     * DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a specific
+     * language with pass-through captions.
      * 
      * @param customLanguageCode
      *        The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code.
      *        If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is
-     *        DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language
-     *        to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no
-     *        way to extract a specific language with pass-through captions.
+     *        DVB-Sub and output is Burn-in, complete this field and/or PID to select the caption language to extract.
+     *        If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to
+     *        extract a specific language with pass-through captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,15 +109,15 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or
-     * PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field
-     * (and PID field); there is no way to extract a specific language with pass-through captions.
+     * caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select
+     * the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID
+     * field); there is no way to extract a specific language with pass-through captions.
      * 
      * @param languageCode
      *        The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to
-     *        select the caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete
-     *        this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed
-     *        through, omit this field (and PID field); there is no way to extract a specific language with pass-through
+     *        select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field
+     *        and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through,
+     *        omit this field (and PID field); there is no way to extract a specific language with pass-through
      *        captions.
      * @see LanguageCode
      */
@@ -128,15 +128,15 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or
-     * PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field
-     * (and PID field); there is no way to extract a specific language with pass-through captions.
+     * caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select
+     * the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID
+     * field); there is no way to extract a specific language with pass-through captions.
      * 
      * @return The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to
-     *         select the caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete
-     *         this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed
-     *         through, omit this field (and PID field); there is no way to extract a specific language with
-     *         pass-through captions.
+     *         select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field
+     *         and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through,
+     *         omit this field (and PID field); there is no way to extract a specific language with pass-through
+     *         captions.
      * @see LanguageCode
      */
 
@@ -146,15 +146,15 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or
-     * PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field
-     * (and PID field); there is no way to extract a specific language with pass-through captions.
+     * caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select
+     * the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID
+     * field); there is no way to extract a specific language with pass-through captions.
      * 
      * @param languageCode
      *        The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to
-     *        select the caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete
-     *        this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed
-     *        through, omit this field (and PID field); there is no way to extract a specific language with pass-through
+     *        select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field
+     *        and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through,
+     *        omit this field (and PID field); there is no way to extract a specific language with pass-through
      *        captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
@@ -167,15 +167,15 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or
-     * PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field
-     * (and PID field); there is no way to extract a specific language with pass-through captions.
+     * caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field and/or PID to select
+     * the caption language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID
+     * field); there is no way to extract a specific language with pass-through captions.
      * 
      * @param languageCode
      *        The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to
-     *        select the caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete
-     *        this field and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed
-     *        through, omit this field (and PID field); there is no way to extract a specific language with pass-through
+     *        select the caption language to extract. If input is DVB-Sub and output is Burn-in, complete this field
+     *        and/or PID to select the caption language to extract. If input is DVB-Sub that is being passed through,
+     *        omit this field (and PID field); there is no way to extract a specific language with pass-through
      *        captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode

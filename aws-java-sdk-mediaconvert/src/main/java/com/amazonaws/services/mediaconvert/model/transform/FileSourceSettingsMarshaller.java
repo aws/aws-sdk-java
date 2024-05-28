@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class FileSourceSettingsMarshaller {
 
     private static final MarshallingInfo<String> CONVERT608TO708_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("convert608To708").build();
+    private static final MarshallingInfo<String> CONVERTPAINTTOPOP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("convertPaintToPop").build();
     private static final MarshallingInfo<StructuredPojo> FRAMERATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerate").build();
     private static final MarshallingInfo<String> SOURCEFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -55,6 +57,7 @@ public class FileSourceSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(fileSourceSettings.getConvert608To708(), CONVERT608TO708_BINDING);
+            protocolMarshaller.marshall(fileSourceSettings.getConvertPaintToPop(), CONVERTPAINTTOPOP_BINDING);
             protocolMarshaller.marshall(fileSourceSettings.getFramerate(), FRAMERATE_BINDING);
             protocolMarshaller.marshall(fileSourceSettings.getSourceFile(), SOURCEFILE_BINDING);
             protocolMarshaller.marshall(fileSourceSettings.getTimeDelta(), TIMEDELTA_BINDING);

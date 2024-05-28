@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,72 @@ public class AWSAccountAsyncClient extends AWSAccountClient implements AWSAccoun
     }
 
     @Override
+    public java.util.concurrent.Future<DisableRegionResult> disableRegionAsync(DisableRegionRequest request) {
+
+        return disableRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableRegionResult> disableRegionAsync(final DisableRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableRegionRequest, DisableRegionResult> asyncHandler) {
+        final DisableRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableRegionResult>() {
+            @Override
+            public DisableRegionResult call() throws Exception {
+                DisableRegionResult result = null;
+
+                try {
+                    result = executeDisableRegion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableRegionResult> enableRegionAsync(EnableRegionRequest request) {
+
+        return enableRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableRegionResult> enableRegionAsync(final EnableRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableRegionRequest, EnableRegionResult> asyncHandler) {
+        final EnableRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableRegionResult>() {
+            @Override
+            public EnableRegionResult call() throws Exception {
+                EnableRegionResult result = null;
+
+                try {
+                    result = executeEnableRegion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAlternateContactResult> getAlternateContactAsync(GetAlternateContactRequest request) {
 
         return getAlternateContactAsync(request, null);
@@ -157,6 +223,72 @@ public class AWSAccountAsyncClient extends AWSAccountClient implements AWSAccoun
 
                 try {
                     result = executeGetContactInformation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegionOptStatusResult> getRegionOptStatusAsync(GetRegionOptStatusRequest request) {
+
+        return getRegionOptStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegionOptStatusResult> getRegionOptStatusAsync(final GetRegionOptStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRegionOptStatusRequest, GetRegionOptStatusResult> asyncHandler) {
+        final GetRegionOptStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRegionOptStatusResult>() {
+            @Override
+            public GetRegionOptStatusResult call() throws Exception {
+                GetRegionOptStatusResult result = null;
+
+                try {
+                    result = executeGetRegionOptStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegionsResult> listRegionsAsync(ListRegionsRequest request) {
+
+        return listRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegionsResult> listRegionsAsync(final ListRegionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRegionsRequest, ListRegionsResult> asyncHandler) {
+        final ListRegionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRegionsResult>() {
+            @Override
+            public ListRegionsResult call() throws Exception {
+                ListRegionsResult result = null;
+
+                try {
+                    result = executeListRegions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

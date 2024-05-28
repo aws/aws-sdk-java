@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,10 @@ public class BundleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferPerMonthInGb").build();
     private static final MarshallingInfo<List> SUPPORTEDPLATFORMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedPlatforms").build();
+    private static final MarshallingInfo<List> SUPPORTEDAPPCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedAppCategories").build();
+    private static final MarshallingInfo<Integer> PUBLICIPV4ADDRESSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicIpv4AddressCount").build();
 
     private static final BundleMarshaller instance = new BundleMarshaller();
 
@@ -78,6 +82,8 @@ public class BundleMarshaller {
             protocolMarshaller.marshall(bundle.getRamSizeInGb(), RAMSIZEINGB_BINDING);
             protocolMarshaller.marshall(bundle.getTransferPerMonthInGb(), TRANSFERPERMONTHINGB_BINDING);
             protocolMarshaller.marshall(bundle.getSupportedPlatforms(), SUPPORTEDPLATFORMS_BINDING);
+            protocolMarshaller.marshall(bundle.getSupportedAppCategories(), SUPPORTEDAPPCATEGORIES_BINDING);
+            protocolMarshaller.marshall(bundle.getPublicIpv4AddressCount(), PUBLICIPV4ADDRESSCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     traceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartTime", targetDepth)) {
+                    context.nextToken();
+                    traceSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,13 @@ public class DecoderManifestSummary implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date lastModificationTime;
+    /**
+     * <p>
+     * The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the
+     * message contains detailed reason and help information.
+     * </p>
+     */
+    private String message;
 
     /**
      * <p>
@@ -384,6 +391,52 @@ public class DecoderManifestSummary implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the
+     * message contains detailed reason and help information.
+     * </p>
+     * 
+     * @param message
+     *        The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code>
+     *        status, the message contains detailed reason and help information.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the
+     * message contains detailed reason and help information.
+     * </p>
+     * 
+     * @return The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code>
+     *         status, the message contains detailed reason and help information.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the
+     * message contains detailed reason and help information.
+     * </p>
+     * 
+     * @param message
+     *        The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code>
+     *        status, the message contains detailed reason and help information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DecoderManifestSummary withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -408,7 +461,9 @@ public class DecoderManifestSummary implements Serializable, Cloneable, Structur
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModificationTime() != null)
-            sb.append("LastModificationTime: ").append(getLastModificationTime());
+            sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
+        if (getMessage() != null)
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +506,10 @@ public class DecoderManifestSummary implements Serializable, Cloneable, Structur
             return false;
         if (other.getLastModificationTime() != null && other.getLastModificationTime().equals(this.getLastModificationTime()) == false)
             return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +525,7 @@ public class DecoderManifestSummary implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 

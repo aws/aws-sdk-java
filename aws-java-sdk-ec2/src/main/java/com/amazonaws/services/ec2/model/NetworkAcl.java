@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class NetworkAcl implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<NetworkAclAssociation> associations;
     /**
      * <p>
-     * One or more entries (rules) in the network ACL.
+     * The entries (rules) in the network ACL.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkAclEntry> entries;
@@ -144,10 +144,10 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more entries (rules) in the network ACL.
+     * The entries (rules) in the network ACL.
      * </p>
      * 
-     * @return One or more entries (rules) in the network ACL.
+     * @return The entries (rules) in the network ACL.
      */
 
     public java.util.List<NetworkAclEntry> getEntries() {
@@ -159,11 +159,11 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more entries (rules) in the network ACL.
+     * The entries (rules) in the network ACL.
      * </p>
      * 
      * @param entries
-     *        One or more entries (rules) in the network ACL.
+     *        The entries (rules) in the network ACL.
      */
 
     public void setEntries(java.util.Collection<NetworkAclEntry> entries) {
@@ -177,7 +177,7 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more entries (rules) in the network ACL.
+     * The entries (rules) in the network ACL.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,7 +186,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * </p>
      * 
      * @param entries
-     *        One or more entries (rules) in the network ACL.
+     *        The entries (rules) in the network ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +202,11 @@ public class NetworkAcl implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more entries (rules) in the network ACL.
+     * The entries (rules) in the network ACL.
      * </p>
      * 
      * @param entries
-     *        One or more entries (rules) in the network ACL.
+     *        The entries (rules) in the network ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

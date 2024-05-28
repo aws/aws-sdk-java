@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this
-     * metadata to user accounts for any purpose.
+     * metadata to resources (servers, users, workflows, and so on) for any purpose.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -85,11 +85,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this
-     * metadata to user accounts for any purpose.
+     * metadata to resources (servers, users, workflows, and so on) for any purpose.
      * </p>
      * 
      * @return Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can
-     *         attach this metadata to user accounts for any purpose.
+     *         attach this metadata to resources (servers, users, workflows, and so on) for any purpose.
      */
 
     public java.util.List<Tag> getTags() {
@@ -99,12 +99,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this
-     * metadata to user accounts for any purpose.
+     * metadata to resources (servers, users, workflows, and so on) for any purpose.
      * </p>
      * 
      * @param tags
      *        Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can
-     *        attach this metadata to user accounts for any purpose.
+     *        attach this metadata to resources (servers, users, workflows, and so on) for any purpose.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -119,7 +119,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this
-     * metadata to user accounts for any purpose.
+     * metadata to resources (servers, users, workflows, and so on) for any purpose.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param tags
      *        Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can
-     *        attach this metadata to user accounts for any purpose.
+     *        attach this metadata to resources (servers, users, workflows, and so on) for any purpose.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,12 +146,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this
-     * metadata to user accounts for any purpose.
+     * metadata to resources (servers, users, workflows, and so on) for any purpose.
      * </p>
      * 
      * @param tags
      *        Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can
-     *        attach this metadata to user accounts for any purpose.
+     *        attach this metadata to resources (servers, users, workflows, and so on) for any purpose.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

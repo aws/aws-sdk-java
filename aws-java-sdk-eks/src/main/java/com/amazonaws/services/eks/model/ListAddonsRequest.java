@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,26 +27,26 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
     /**
      * <p>
-     * The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use
-     * this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-     * sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -59,11 +59,11 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -72,10 +72,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -84,11 +84,11 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,22 +99,19 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use
-     * this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-     * sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When
-     *        you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a
-     *        single page along with a <code>nextToken</code> response element. You can see the remaining results of the
-     *        initial request by sending another <code>ListAddonsRequest</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter,
-     *        <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if
-     *        applicable.
+     *        The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a
+     *        single page, along with a <code>nextToken</code> response element. You can see the remaining results of
+     *        the initial request by sending another request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value,
+     *        if applicable, are returned.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -123,21 +120,18 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use
-     * this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-     * sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      * 
-     * @return The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When
-     *         you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a
-     *         single page along with a <code>nextToken</code> response element. You can see the remaining results of
-     *         the initial request by sending another <code>ListAddonsRequest</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter,
-     *         <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if
-     *         applicable.
+     * @return The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a
+     *         single page, along with a <code>nextToken</code> response element. You can see the remaining results of
+     *         the initial request by sending another request with the returned <code>nextToken</code> value. This value
+     *         can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code>
+     *         value, if applicable, are returned.
      */
 
     public Integer getMaxResults() {
@@ -146,22 +140,19 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use
-     * this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page
-     * along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-     * sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100
-     * results and a <code>nextToken</code> value, if applicable.
+     * The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a single
+     * page, along with a <code>nextToken</code> response element. You can see the remaining results of the initial
+     * request by sending another request with the returned <code>nextToken</code> value. This value can be between 1
+     * and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value, if applicable, are
+     * returned.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When
-     *        you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a
-     *        single page along with a <code>nextToken</code> response element. You can see the remaining results of the
-     *        initial request by sending another <code>ListAddonsRequest</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter,
-     *        <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if
-     *        applicable.
+     *        The maximum number of results, returned in paginated output. You receive <code>maxResults</code> in a
+     *        single page, along with a <code>nextToken</code> response element. You can see the remaining results of
+     *        the initial request by sending another request with the returned <code>nextToken</code> value. This value
+     *        can be between 1 and 100. If you don't use this parameter, 100 results and a <code>nextToken</code> value,
+     *        if applicable, are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,9 +163,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -184,9 +176,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
-     *        <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -199,9 +192,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -210,9 +204,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
+     * @return The <code>nextToken</code> value returned from a previous paginated request, where
      *         <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *         continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *         is null when there are no more results to return.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -225,9 +220,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
-     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
      * <note>
      * <p>
@@ -237,9 +233,10 @@ public class ListAddonsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where
-     *        <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
      *        list and not for other programmatic purposes.

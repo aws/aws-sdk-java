@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -396,6 +396,39 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
 
         return addPermissionAsync(new AddPermissionRequest().withQueueUrl(queueUrl).withLabel(label).withAWSAccountIds(aWSAccountIds).withActions(actions),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMessageMoveTaskResult> cancelMessageMoveTaskAsync(CancelMessageMoveTaskRequest request) {
+
+        return cancelMessageMoveTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMessageMoveTaskResult> cancelMessageMoveTaskAsync(final CancelMessageMoveTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelMessageMoveTaskRequest, CancelMessageMoveTaskResult> asyncHandler) {
+        final CancelMessageMoveTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelMessageMoveTaskResult>() {
+            @Override
+            public CancelMessageMoveTaskResult call() throws Exception {
+                CancelMessageMoveTaskResult result = null;
+
+                try {
+                    result = executeCancelMessageMoveTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -887,6 +920,39 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListMessageMoveTasksResult> listMessageMoveTasksAsync(ListMessageMoveTasksRequest request) {
+
+        return listMessageMoveTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMessageMoveTasksResult> listMessageMoveTasksAsync(final ListMessageMoveTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMessageMoveTasksRequest, ListMessageMoveTasksResult> asyncHandler) {
+        final ListMessageMoveTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMessageMoveTasksResult>() {
+            @Override
+            public ListMessageMoveTasksResult call() throws Exception {
+                ListMessageMoveTasksResult result = null;
+
+                try {
+                    result = executeListMessageMoveTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest request) {
 
         return listQueueTagsAsync(request, null);
@@ -1331,6 +1397,39 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
             com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler) {
 
         return setQueueAttributesAsync(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMessageMoveTaskResult> startMessageMoveTaskAsync(StartMessageMoveTaskRequest request) {
+
+        return startMessageMoveTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMessageMoveTaskResult> startMessageMoveTaskAsync(final StartMessageMoveTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMessageMoveTaskRequest, StartMessageMoveTaskResult> asyncHandler) {
+        final StartMessageMoveTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMessageMoveTaskResult>() {
+            @Override
+            public StartMessageMoveTaskResult call() throws Exception {
+                StartMessageMoveTaskResult result = null;
+
+                try {
+                    result = executeStartMessageMoveTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -66,7 +61,7 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
      * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
@@ -98,11 +93,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -116,11 +106,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -144,11 +129,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -161,11 +141,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -189,11 +164,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -207,11 +177,6 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -282,7 +247,7 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
      * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
@@ -308,8 +273,8 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *         <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      *         </p>
      *         <p>
-     *         The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is
-     *         the user that has permission to see, update, terminate, and execute service actions in the provisioned
+     *         The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the
+     *         user that has permission to see, update, terminate, and execute service actions in the provisioned
      *         product.
      *         </p>
      *         <p>
@@ -343,7 +308,7 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
      * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
@@ -370,8 +335,8 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *        <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      *        </p>
      *        <p>
-     *        The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is
-     *        the user that has permission to see, update, terminate, and execute service actions in the provisioned
+     *        The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the
+     *        user that has permission to see, update, terminate, and execute service actions in the provisioned
      *        product.
      *        </p>
      *        <p>
@@ -405,7 +370,7 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      * <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      * </p>
      * <p>
-     * The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
+     * The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user
      * that has permission to see, update, terminate, and execute service actions in the provisioned product.
      * </p>
      * <p>
@@ -432,8 +397,8 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
      *        <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid.
      *        </p>
      *        <p>
-     *        The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is
-     *        the user that has permission to see, update, terminate, and execute service actions in the provisioned
+     *        The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the
+     *        user that has permission to see, update, terminate, and execute service actions in the provisioned
      *        product.
      *        </p>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,13 +62,13 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
     private String errorMessage;
     /**
      * <p>
-     * The date-time a block list for query suggestions was created.
+     * The Unix timestamp when a block list for query suggestions was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The date-time a block list for query suggestions was last updated.
+     * The Unix timestamp when a block list for query suggestions was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -373,11 +373,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date-time a block list for query suggestions was created.
+     * The Unix timestamp when a block list for query suggestions was created.
      * </p>
      * 
      * @param createdAt
-     *        The date-time a block list for query suggestions was created.
+     *        The Unix timestamp when a block list for query suggestions was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -386,10 +386,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date-time a block list for query suggestions was created.
+     * The Unix timestamp when a block list for query suggestions was created.
      * </p>
      * 
-     * @return The date-time a block list for query suggestions was created.
+     * @return The Unix timestamp when a block list for query suggestions was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -398,11 +398,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date-time a block list for query suggestions was created.
+     * The Unix timestamp when a block list for query suggestions was created.
      * </p>
      * 
      * @param createdAt
-     *        The date-time a block list for query suggestions was created.
+     *        The Unix timestamp when a block list for query suggestions was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,11 +413,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date-time a block list for query suggestions was last updated.
+     * The Unix timestamp when a block list for query suggestions was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The date-time a block list for query suggestions was last updated.
+     *        The Unix timestamp when a block list for query suggestions was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -426,10 +426,10 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date-time a block list for query suggestions was last updated.
+     * The Unix timestamp when a block list for query suggestions was last updated.
      * </p>
      * 
-     * @return The date-time a block list for query suggestions was last updated.
+     * @return The Unix timestamp when a block list for query suggestions was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -438,11 +438,11 @@ public class DescribeQuerySuggestionsBlockListResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The date-time a block list for query suggestions was last updated.
+     * The Unix timestamp when a block list for query suggestions was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The date-time a block list for query suggestions was last updated.
+     *        The Unix timestamp when a block list for query suggestions was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DeleteConfigurationSetTrackingOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set from which you want to delete the tracking options.
+     * The name of the configuration set.
      * </p>
      */
     private String configurationSetName;
 
     /**
      * <p>
-     * The name of the configuration set from which you want to delete the tracking options.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set from which you want to delete the tracking options.
+     *        The name of the configuration set.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -50,10 +50,10 @@ public class DeleteConfigurationSetTrackingOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set from which you want to delete the tracking options.
+     * The name of the configuration set.
      * </p>
      * 
-     * @return The name of the configuration set from which you want to delete the tracking options.
+     * @return The name of the configuration set.
      */
 
     public String getConfigurationSetName() {
@@ -62,11 +62,11 @@ public class DeleteConfigurationSetTrackingOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set from which you want to delete the tracking options.
+     * The name of the configuration set.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set from which you want to delete the tracking options.
+     *        The name of the configuration set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

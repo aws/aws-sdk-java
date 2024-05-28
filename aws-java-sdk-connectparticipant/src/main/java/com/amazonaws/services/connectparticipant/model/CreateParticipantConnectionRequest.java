@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      */
     private java.util.List<String> type;
@@ -44,17 +45,20 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
     private String participantToken;
     /**
      * <p>
-     * Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * Amazon Connect Participant is used to mark the participant as connected for customer participant in message
+     * streaming, as well as for agent or manager participant in non-streaming chats.
      * </p>
      */
     private Boolean connectParticipant;
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
-     * @return Type of connection information required.
+     * @return Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *         marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @see ConnectionType
      */
 
@@ -64,11 +68,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @see ConnectionType
      */
 
@@ -83,7 +89,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,7 +99,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -109,11 +117,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -125,11 +135,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking
+     * participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with
+     *        marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -216,11 +228,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * Amazon Connect Participant is used to mark the participant as connected for customer participant in message
+     * streaming, as well as for agent or manager participant in non-streaming chats.
      * </p>
      * 
      * @param connectParticipant
-     *        Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     *        Amazon Connect Participant is used to mark the participant as connected for customer participant in
+     *        message streaming, as well as for agent or manager participant in non-streaming chats.
      */
 
     public void setConnectParticipant(Boolean connectParticipant) {
@@ -229,10 +243,12 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * Amazon Connect Participant is used to mark the participant as connected for customer participant in message
+     * streaming, as well as for agent or manager participant in non-streaming chats.
      * </p>
      * 
-     * @return Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * @return Amazon Connect Participant is used to mark the participant as connected for customer participant in
+     *         message streaming, as well as for agent or manager participant in non-streaming chats.
      */
 
     public Boolean getConnectParticipant() {
@@ -241,11 +257,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * Amazon Connect Participant is used to mark the participant as connected for customer participant in message
+     * streaming, as well as for agent or manager participant in non-streaming chats.
      * </p>
      * 
      * @param connectParticipant
-     *        Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     *        Amazon Connect Participant is used to mark the participant as connected for customer participant in
+     *        message streaming, as well as for agent or manager participant in non-streaming chats.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,10 +274,12 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * Amazon Connect Participant is used to mark the participant as connected for customer participant in message
+     * streaming, as well as for agent or manager participant in non-streaming chats.
      * </p>
      * 
-     * @return Amazon Connect Participant is used to mark the participant as connected for message streaming.
+     * @return Amazon Connect Participant is used to mark the participant as connected for customer participant in
+     *         message streaming, as well as for agent or manager participant in non-streaming chats.
      */
 
     public Boolean isConnectParticipant() {

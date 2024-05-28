@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,16 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
-     * also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper.
-     * Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to
-     * the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
-     * settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the
-     * console, find AFD signaling under the output's video encoding settings.
+     * also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy
+     * from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of
+     * which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to
+     * include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under
+     * the output's video encoding settings.
      */
     private String afdSignaling;
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
-     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your
+     * output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
      * information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -48,20 +48,19 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
-     * also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper.
-     * Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to
-     * the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
-     * settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the
-     * console, find AFD signaling under the output's video encoding settings.
+     * also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy
+     * from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of
+     * which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to
+     * include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under
+     * the output's video encoding settings.
      * 
      * @param afdSignaling
      *        Optional. When you have AFD signaling set up in your output video stream, use this setting to choose
-     *        whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from
-     *        the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video
-     *        stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in
-     *        the video stream. Related settings: To set up your output to include or exclude AFD values, see
-     *        AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding
-     *        settings.
+     *        whether to also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF
+     *        wrapper. Choose Copy from video stream to copy the AFD values from the video stream for this output to the
+     *        MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
+     *        settings: To set up your output to include or exclude AFD values, see AfdSignaling, under
+     *        VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
      * @see MxfAfdSignaling
      */
 
@@ -71,19 +70,18 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
-     * also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper.
-     * Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to
-     * the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
-     * settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the
-     * console, find AFD signaling under the output's video encoding settings.
+     * also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy
+     * from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of
+     * which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to
+     * include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under
+     * the output's video encoding settings.
      * 
      * @return Optional. When you have AFD signaling set up in your output video stream, use this setting to choose
-     *         whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from
-     *         the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video
-     *         stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain
-     *         in the video stream. Related settings: To set up your output to include or exclude AFD values, see
-     *         AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video
-     *         encoding settings.
+     *         whether to also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF
+     *         wrapper. Choose Copy from video stream to copy the AFD values from the video stream for this output to
+     *         the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream.
+     *         Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under
+     *         VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
      * @see MxfAfdSignaling
      */
 
@@ -93,20 +91,19 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
-     * also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper.
-     * Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to
-     * the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
-     * settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the
-     * console, find AFD signaling under the output's video encoding settings.
+     * also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy
+     * from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of
+     * which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to
+     * include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under
+     * the output's video encoding settings.
      * 
      * @param afdSignaling
      *        Optional. When you have AFD signaling set up in your output video stream, use this setting to choose
-     *        whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from
-     *        the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video
-     *        stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in
-     *        the video stream. Related settings: To set up your output to include or exclude AFD values, see
-     *        AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding
-     *        settings.
+     *        whether to also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF
+     *        wrapper. Choose Copy from video stream to copy the AFD values from the video stream for this output to the
+     *        MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
+     *        settings: To set up your output to include or exclude AFD values, see AfdSignaling, under
+     *        VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MxfAfdSignaling
      */
@@ -118,20 +115,19 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
-     * also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper.
-     * Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to
-     * the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
-     * settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the
-     * console, find AFD signaling under the output's video encoding settings.
+     * also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy
+     * from video stream to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of
+     * which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to
+     * include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under
+     * the output's video encoding settings.
      * 
      * @param afdSignaling
      *        Optional. When you have AFD signaling set up in your output video stream, use this setting to choose
-     *        whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from
-     *        the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video
-     *        stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in
-     *        the video stream. Related settings: To set up your output to include or exclude AFD values, see
-     *        AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding
-     *        settings.
+     *        whether to also include it in the MXF wrapper. Choose Don't copy to exclude AFD signaling from the MXF
+     *        wrapper. Choose Copy from video stream to copy the AFD values from the video stream for this output to the
+     *        MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related
+     *        settings: To set up your output to include or exclude AFD values, see AfdSignaling, under
+     *        VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MxfAfdSignaling
      */
@@ -142,17 +138,17 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
-     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your
+     * output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
      * information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * 
      * @param profile
-     *        Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
-     *        profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
-     *        information about the automatic selection behavior, see
+     *        Specify the MXF profile, also called shim, for this output. To automatically select a profile according to
+     *        your output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile,
+     *        see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For
+     *        more information about the automatic selection behavior, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * @see MxfProfile
      */
@@ -162,16 +158,17 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
-     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your
+     * output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
      * information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * 
-     * @return Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
-     *         profile based on the video codec and resolution. For a list of codecs supported with each MXF profile,
-     *         see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For
-     *         more information about the automatic selection behavior, see
+     * @return Specify the MXF profile, also called shim, for this output. To automatically select a profile according
+     *         to your output video codec and resolution, leave blank. For a list of codecs supported with each MXF
+     *         profile, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     *         information about the automatic selection behavior, see
      *         https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * @see MxfProfile
      */
@@ -181,17 +178,17 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
-     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your
+     * output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
      * information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * 
      * @param profile
-     *        Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
-     *        profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
-     *        information about the automatic selection behavior, see
+     *        Specify the MXF profile, also called shim, for this output. To automatically select a profile according to
+     *        your output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile,
+     *        see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For
+     *        more information about the automatic selection behavior, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MxfProfile
@@ -203,17 +200,17 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
-     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically select a profile according to your
+     * output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
      * information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * 
      * @param profile
-     *        Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
-     *        profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
-     *        information about the automatic selection behavior, see
+     *        Specify the MXF profile, also called shim, for this output. To automatically select a profile according to
+     *        your output video codec and resolution, leave blank. For a list of codecs supported with each MXF profile,
+     *        see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For
+     *        more information about the automatic selection behavior, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MxfProfile

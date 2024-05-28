@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private String resourceType;
     /**
      * <p>
-     * The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     * The timestamp when the operation was initialized (<code>1479816991.349</code>).
      * </p>
      */
     private java.util.Date createdAt;
@@ -66,7 +66,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private Boolean isTerminal;
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     * Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      * </p>
      */
     private String operationDetails;
@@ -84,7 +84,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     * The timestamp when the status was changed (<code>1479816991.349</code>).
      * </p>
      */
     private java.util.Date statusChangedAt;
@@ -256,11 +256,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     * The timestamp when the operation was initialized (<code>1479816991.349</code>).
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     *        The timestamp when the operation was initialized (<code>1479816991.349</code>).
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -269,10 +269,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     * The timestamp when the operation was initialized (<code>1479816991.349</code>).
      * </p>
      * 
-     * @return The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     * @return The timestamp when the operation was initialized (<code>1479816991.349</code>).
      */
 
     public java.util.Date getCreatedAt() {
@@ -281,11 +281,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     * The timestamp when the operation was initialized (<code>1479816991.349</code>).
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).
+     *        The timestamp when the operation was initialized (<code>1479816991.349</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +388,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     * Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param operationDetails
-     *        Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     *        Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      */
 
     public void setOperationDetails(String operationDetails) {
@@ -401,10 +401,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     * Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      * </p>
      * 
-     * @return Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     * @return Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      */
 
     public String getOperationDetails() {
@@ -413,11 +413,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     * Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param operationDetails
-     *        Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
+     *        Details about the operation (<code>Debian-1GB-Ohio-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,11 +574,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     * The timestamp when the status was changed (<code>1479816991.349</code>).
      * </p>
      * 
      * @param statusChangedAt
-     *        The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     *        The timestamp when the status was changed (<code>1479816991.349</code>).
      */
 
     public void setStatusChangedAt(java.util.Date statusChangedAt) {
@@ -587,10 +587,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     * The timestamp when the status was changed (<code>1479816991.349</code>).
      * </p>
      * 
-     * @return The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     * @return The timestamp when the status was changed (<code>1479816991.349</code>).
      */
 
     public java.util.Date getStatusChangedAt() {
@@ -599,11 +599,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     * The timestamp when the status was changed (<code>1479816991.349</code>).
      * </p>
      * 
      * @param statusChangedAt
-     *        The timestamp when the status was changed (e.g., <code>1479816991.349</code>).
+     *        The timestamp when the status was changed (<code>1479816991.349</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

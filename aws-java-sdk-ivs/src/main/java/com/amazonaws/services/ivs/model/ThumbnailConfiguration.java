@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,14 +36,34 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
     private String recordingMode;
     /**
      * <p>
+     * Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if
+     * the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution.
+     * For more information about resolution values and their corresponding height and width dimensions, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default:
+     * Null (source resolution is returned).
+     * </p>
+     */
+    private String resolution;
+    /**
+     * <p>
+     * Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails
+     * in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in
+     * media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     * <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
+     * <code>SEQUENTIAL</code>.
+     * </p>
+     */
+    private java.util.List<String> storage;
+    /**
+     * <p>
      * The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if
      * <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.
      * </p>
      * <p>
-     * <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are
-     * generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code>
-     * interval, the <code>IDR/Keyframe</code> value for the input video must be less than the
-     * <code>targetIntervalSeconds</code> value. See <a
+     * <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code>
+     * does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the
+     * <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less
+     * than the <code>targetIntervalSeconds</code> value. See <a
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      * Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder
      * settings.
@@ -112,14 +132,243 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if
+     * the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution.
+     * For more information about resolution values and their corresponding height and width dimensions, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default:
+     * Null (source resolution is returned).
+     * </p>
+     * 
+     * @param resolution
+     *        Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected
+     *        resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at
+     *        source resolution. For more information about resolution values and their corresponding height and width
+     *        dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
+     *        to Amazon S3</a>. Default: Null (source resolution is returned).
+     * @see ThumbnailConfigurationResolution
+     */
+
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    /**
+     * <p>
+     * Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if
+     * the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution.
+     * For more information about resolution values and their corresponding height and width dimensions, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default:
+     * Null (source resolution is returned).
+     * </p>
+     * 
+     * @return Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected
+     *         resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at
+     *         source resolution. For more information about resolution values and their corresponding height and width
+     *         dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
+     *         to Amazon S3</a>. Default: Null (source resolution is returned).
+     * @see ThumbnailConfigurationResolution
+     */
+
+    public String getResolution() {
+        return this.resolution;
+    }
+
+    /**
+     * <p>
+     * Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if
+     * the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution.
+     * For more information about resolution values and their corresponding height and width dimensions, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default:
+     * Null (source resolution is returned).
+     * </p>
+     * 
+     * @param resolution
+     *        Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected
+     *        resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at
+     *        source resolution. For more information about resolution values and their corresponding height and width
+     *        dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
+     *        to Amazon S3</a>. Default: Null (source resolution is returned).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThumbnailConfigurationResolution
+     */
+
+    public ThumbnailConfiguration withResolution(String resolution) {
+        setResolution(resolution);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if
+     * the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution.
+     * For more information about resolution values and their corresponding height and width dimensions, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default:
+     * Null (source resolution is returned).
+     * </p>
+     * 
+     * @param resolution
+     *        Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected
+     *        resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at
+     *        source resolution. For more information about resolution values and their corresponding height and width
+     *        dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
+     *        to Amazon S3</a>. Default: Null (source resolution is returned).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThumbnailConfigurationResolution
+     */
+
+    public ThumbnailConfiguration withResolution(ThumbnailConfigurationResolution resolution) {
+        this.resolution = resolution.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails
+     * in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in
+     * media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     * <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
+     * <code>SEQUENTIAL</code>.
+     * </p>
+     * 
+     * @return Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated
+     *         thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest
+     *         thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     *         <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>.
+     *         Default: <code>SEQUENTIAL</code>.
+     * @see ThumbnailConfigurationStorage
+     */
+
+    public java.util.List<String> getStorage() {
+        return storage;
+    }
+
+    /**
+     * <p>
+     * Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails
+     * in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in
+     * media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     * <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
+     * <code>SEQUENTIAL</code>.
+     * </p>
+     * 
+     * @param storage
+     *        Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated
+     *        thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest
+     *        thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     *        <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>.
+     *        Default: <code>SEQUENTIAL</code>.
+     * @see ThumbnailConfigurationStorage
+     */
+
+    public void setStorage(java.util.Collection<String> storage) {
+        if (storage == null) {
+            this.storage = null;
+            return;
+        }
+
+        this.storage = new java.util.ArrayList<String>(storage);
+    }
+
+    /**
+     * <p>
+     * Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails
+     * in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in
+     * media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     * <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
+     * <code>SEQUENTIAL</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStorage(java.util.Collection)} or {@link #withStorage(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param storage
+     *        Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated
+     *        thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest
+     *        thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     *        <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>.
+     *        Default: <code>SEQUENTIAL</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThumbnailConfigurationStorage
+     */
+
+    public ThumbnailConfiguration withStorage(String... storage) {
+        if (this.storage == null) {
+            setStorage(new java.util.ArrayList<String>(storage.length));
+        }
+        for (String ele : storage) {
+            this.storage.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails
+     * in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in
+     * media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     * <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
+     * <code>SEQUENTIAL</code>.
+     * </p>
+     * 
+     * @param storage
+     *        Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated
+     *        thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest
+     *        thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     *        <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>.
+     *        Default: <code>SEQUENTIAL</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThumbnailConfigurationStorage
+     */
+
+    public ThumbnailConfiguration withStorage(java.util.Collection<String> storage) {
+        setStorage(storage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails
+     * in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in
+     * media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     * <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default:
+     * <code>SEQUENTIAL</code>.
+     * </p>
+     * 
+     * @param storage
+     *        Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated
+     *        thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest
+     *        thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by
+     *        <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>.
+     *        Default: <code>SEQUENTIAL</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThumbnailConfigurationStorage
+     */
+
+    public ThumbnailConfiguration withStorage(ThumbnailConfigurationStorage... storage) {
+        java.util.ArrayList<String> storageCopy = new java.util.ArrayList<String>(storage.length);
+        for (ThumbnailConfigurationStorage value : storage) {
+            storageCopy.add(value.toString());
+        }
+        if (getStorage() == null) {
+            setStorage(storageCopy);
+        } else {
+            getStorage().addAll(storageCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if
      * <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.
      * </p>
      * <p>
-     * <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are
-     * generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code>
-     * interval, the <code>IDR/Keyframe</code> value for the input video must be less than the
-     * <code>targetIntervalSeconds</code> value. See <a
+     * <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code>
+     * does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the
+     * <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less
+     * than the <code>targetIntervalSeconds</code> value. See <a
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      * Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder
      * settings.
@@ -129,10 +378,11 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
      *        The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if
      *        <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
      *        <p>
-     *        <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that
-     *        thumbnails are generated at the specified interval. For thumbnails to be generated at the
-     *        <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must
-     *        be less than the <code>targetIntervalSeconds</code> value. See <a
+     *        <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for
+     *        <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified
+     *        interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the
+     *        <code>IDR/Keyframe</code> value for the input video must be less than the
+     *        <code>targetIntervalSeconds</code> value. See <a
      *        href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      *        Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in
      *        video-encoder settings.
@@ -148,10 +398,10 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
      * <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.
      * </p>
      * <p>
-     * <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are
-     * generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code>
-     * interval, the <code>IDR/Keyframe</code> value for the input video must be less than the
-     * <code>targetIntervalSeconds</code> value. See <a
+     * <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code>
+     * does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the
+     * <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less
+     * than the <code>targetIntervalSeconds</code> value. See <a
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      * Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder
      * settings.
@@ -160,10 +410,11 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
      * @return The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if
      *         <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
      *         <p>
-     *         <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that
-     *         thumbnails are generated at the specified interval. For thumbnails to be generated at the
-     *         <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must
-     *         be less than the <code>targetIntervalSeconds</code> value. See <a
+     *         <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for
+     *         <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified
+     *         interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the
+     *         <code>IDR/Keyframe</code> value for the input video must be less than the
+     *         <code>targetIntervalSeconds</code> value. See <a
      *         href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      *         Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in
      *         video-encoder settings.
@@ -179,10 +430,10 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
      * <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.
      * </p>
      * <p>
-     * <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are
-     * generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code>
-     * interval, the <code>IDR/Keyframe</code> value for the input video must be less than the
-     * <code>targetIntervalSeconds</code> value. See <a
+     * <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code>
+     * does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the
+     * <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less
+     * than the <code>targetIntervalSeconds</code> value. See <a
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      * Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder
      * settings.
@@ -192,10 +443,11 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
      *        The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if
      *        <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
      *        <p>
-     *        <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that
-     *        thumbnails are generated at the specified interval. For thumbnails to be generated at the
-     *        <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must
-     *        be less than the <code>targetIntervalSeconds</code> value. See <a
+     *        <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for
+     *        <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified
+     *        interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the
+     *        <code>IDR/Keyframe</code> value for the input video must be less than the
+     *        <code>targetIntervalSeconds</code> value. See <a
      *        href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming
      *        Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in
      *        video-encoder settings.
@@ -221,6 +473,10 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
         sb.append("{");
         if (getRecordingMode() != null)
             sb.append("RecordingMode: ").append(getRecordingMode()).append(",");
+        if (getResolution() != null)
+            sb.append("Resolution: ").append(getResolution()).append(",");
+        if (getStorage() != null)
+            sb.append("Storage: ").append(getStorage()).append(",");
         if (getTargetIntervalSeconds() != null)
             sb.append("TargetIntervalSeconds: ").append(getTargetIntervalSeconds());
         sb.append("}");
@@ -241,6 +497,14 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getRecordingMode() != null && other.getRecordingMode().equals(this.getRecordingMode()) == false)
             return false;
+        if (other.getResolution() == null ^ this.getResolution() == null)
+            return false;
+        if (other.getResolution() != null && other.getResolution().equals(this.getResolution()) == false)
+            return false;
+        if (other.getStorage() == null ^ this.getStorage() == null)
+            return false;
+        if (other.getStorage() != null && other.getStorage().equals(this.getStorage()) == false)
+            return false;
         if (other.getTargetIntervalSeconds() == null ^ this.getTargetIntervalSeconds() == null)
             return false;
         if (other.getTargetIntervalSeconds() != null && other.getTargetIntervalSeconds().equals(this.getTargetIntervalSeconds()) == false)
@@ -254,6 +518,8 @@ public class ThumbnailConfiguration implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRecordingMode() == null) ? 0 : getRecordingMode().hashCode());
+        hashCode = prime * hashCode + ((getResolution() == null) ? 0 : getResolution().hashCode());
+        hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode());
         hashCode = prime * hashCode + ((getTargetIntervalSeconds() == null) ? 0 : getTargetIntervalSeconds().hashCode());
         return hashCode;
     }

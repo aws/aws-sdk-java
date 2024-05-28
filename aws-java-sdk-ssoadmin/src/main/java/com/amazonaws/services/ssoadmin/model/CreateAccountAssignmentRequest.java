@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,35 +28,17 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String instanceArn;
-    /**
-     * <p>
-     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
-     * </p>
-     */
-    private String targetId;
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     */
-    private String targetType;
     /**
      * <p>
      * The ARN of the permission set that the admin wants to grant the principal access to.
      * </p>
      */
     private String permissionSetArn;
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     */
-    private String principalType;
     /**
      * <p>
      * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
@@ -66,18 +48,37 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String principalId;
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     */
+    private String principalType;
+    /**
+     * <p>
+     * TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
+     * </p>
+     */
+    private String targetId;
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     */
+    private String targetType;
 
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -87,13 +88,14 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -103,14 +105,15 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +124,168 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+     * The ARN of the permission set that the admin wants to grant the principal access to.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the permission set that the admin wants to grant the principal access to.
+     */
+
+    public void setPermissionSetArn(String permissionSetArn) {
+        this.permissionSetArn = permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the permission set that the admin wants to grant the principal access to.
+     * </p>
+     * 
+     * @return The ARN of the permission set that the admin wants to grant the principal access to.
+     */
+
+    public String getPermissionSetArn() {
+        return this.permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the permission set that the admin wants to grant the principal access to.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the permission set that the admin wants to grant the principal access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccountAssignmentRequest withPermissionSetArn(String permissionSetArn) {
+        setPermissionSetArn(permissionSetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
+     * </p>
+     * 
+     * @param principalId
+     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *        Identity Store API Reference</a>.
+     */
+
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
+    }
+
+    /**
+     * <p>
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
+     * </p>
+     * 
+     * @return An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *         example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *         Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *         Identity Store API Reference</a>.
+     */
+
+    public String getPrincipalId() {
+        return this.principalId;
+    }
+
+    /**
+     * <p>
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
+     * </p>
+     * 
+     * @param principalId
+     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *        Identity Store API Reference</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccountAssignmentRequest withPrincipalId(String principalId) {
+        setPrincipalId(principalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     * 
+     * @param principalType
+     *        The entity type for which the assignment will be created.
+     * @see PrincipalType
+     */
+
+    public void setPrincipalType(String principalType) {
+        this.principalType = principalType;
+    }
+
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     * 
+     * @return The entity type for which the assignment will be created.
+     * @see PrincipalType
+     */
+
+    public String getPrincipalType() {
+        return this.principalType;
+    }
+
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     * 
+     * @param principalType
+     *        The entity type for which the assignment will be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PrincipalType
+     */
+
+    public CreateAccountAssignmentRequest withPrincipalType(String principalType) {
+        setPrincipalType(principalType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     * 
+     * @param principalType
+     *        The entity type for which the assignment will be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PrincipalType
+     */
+
+    public CreateAccountAssignmentRequest withPrincipalType(PrincipalType principalType) {
+        this.principalType = principalType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+     *        TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
      */
 
     public void setTargetId(String targetId) {
@@ -134,10 +294,10 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+     * TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
      * </p>
      * 
-     * @return TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+     * @return TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
      */
 
     public String getTargetId() {
@@ -146,11 +306,11 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+     * TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
+     *        TargetID is an Amazon Web Services account identifier, (For example, 123456789012).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,163 +379,6 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * <p>
-     * The ARN of the permission set that the admin wants to grant the principal access to.
-     * </p>
-     * 
-     * @param permissionSetArn
-     *        The ARN of the permission set that the admin wants to grant the principal access to.
-     */
-
-    public void setPermissionSetArn(String permissionSetArn) {
-        this.permissionSetArn = permissionSetArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the permission set that the admin wants to grant the principal access to.
-     * </p>
-     * 
-     * @return The ARN of the permission set that the admin wants to grant the principal access to.
-     */
-
-    public String getPermissionSetArn() {
-        return this.permissionSetArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the permission set that the admin wants to grant the principal access to.
-     * </p>
-     * 
-     * @param permissionSetArn
-     *        The ARN of the permission set that the admin wants to grant the principal access to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAccountAssignmentRequest withPermissionSetArn(String permissionSetArn) {
-        setPermissionSetArn(permissionSetArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     * 
-     * @param principalType
-     *        The entity type for which the assignment will be created.
-     * @see PrincipalType
-     */
-
-    public void setPrincipalType(String principalType) {
-        this.principalType = principalType;
-    }
-
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     * 
-     * @return The entity type for which the assignment will be created.
-     * @see PrincipalType
-     */
-
-    public String getPrincipalType() {
-        return this.principalType;
-    }
-
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     * 
-     * @param principalType
-     *        The entity type for which the assignment will be created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PrincipalType
-     */
-
-    public CreateAccountAssignmentRequest withPrincipalType(String principalType) {
-        setPrincipalType(principalType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     * 
-     * @param principalType
-     *        The entity type for which the assignment will be created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PrincipalType
-     */
-
-    public CreateAccountAssignmentRequest withPrincipalType(PrincipalType principalType) {
-        this.principalType = principalType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
-     * Reference</a>.
-     * </p>
-     * 
-     * @param principalId
-     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
-     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
-     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
-     *        Identity Store API Reference</a>.
-     */
-
-    public void setPrincipalId(String principalId) {
-        this.principalId = principalId;
-    }
-
-    /**
-     * <p>
-     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
-     * Reference</a>.
-     * </p>
-     * 
-     * @return An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
-     *         example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
-     *         Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
-     *         Identity Store API Reference</a>.
-     */
-
-    public String getPrincipalId() {
-        return this.principalId;
-    }
-
-    /**
-     * <p>
-     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
-     * Reference</a>.
-     * </p>
-     * 
-     * @param principalId
-     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
-     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
-     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
-     *        Identity Store API Reference</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAccountAssignmentRequest withPrincipalId(String principalId) {
-        setPrincipalId(principalId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -389,16 +392,16 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
+        if (getPermissionSetArn() != null)
+            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
+        if (getPrincipalId() != null)
+            sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getPrincipalType() != null)
+            sb.append("PrincipalType: ").append(getPrincipalType()).append(",");
         if (getTargetId() != null)
             sb.append("TargetId: ").append(getTargetId()).append(",");
         if (getTargetType() != null)
-            sb.append("TargetType: ").append(getTargetType()).append(",");
-        if (getPermissionSetArn() != null)
-            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
-        if (getPrincipalType() != null)
-            sb.append("PrincipalType: ").append(getPrincipalType()).append(",");
-        if (getPrincipalId() != null)
-            sb.append("PrincipalId: ").append(getPrincipalId());
+            sb.append("TargetType: ").append(getTargetType());
         sb.append("}");
         return sb.toString();
     }
@@ -417,6 +420,18 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
+        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
+            return false;
+        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
+            return false;
+        if (other.getPrincipalId() == null ^ this.getPrincipalId() == null)
+            return false;
+        if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
+            return false;
+        if (other.getPrincipalType() == null ^ this.getPrincipalType() == null)
+            return false;
+        if (other.getPrincipalType() != null && other.getPrincipalType().equals(this.getPrincipalType()) == false)
+            return false;
         if (other.getTargetId() == null ^ this.getTargetId() == null)
             return false;
         if (other.getTargetId() != null && other.getTargetId().equals(this.getTargetId()) == false)
@@ -424,18 +439,6 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
         if (other.getTargetType() == null ^ this.getTargetType() == null)
             return false;
         if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
-            return false;
-        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
-            return false;
-        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
-            return false;
-        if (other.getPrincipalType() == null ^ this.getPrincipalType() == null)
-            return false;
-        if (other.getPrincipalType() != null && other.getPrincipalType().equals(this.getPrincipalType()) == false)
-            return false;
-        if (other.getPrincipalId() == null ^ this.getPrincipalId() == null)
-            return false;
-        if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
             return false;
         return true;
     }
@@ -446,11 +449,11 @@ public class CreateAccountAssignmentRequest extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
         hashCode = prime * hashCode + ((getTargetId() == null) ? 0 : getTargetId().hashCode());
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
-        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
-        hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
-        hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
         return hashCode;
     }
 

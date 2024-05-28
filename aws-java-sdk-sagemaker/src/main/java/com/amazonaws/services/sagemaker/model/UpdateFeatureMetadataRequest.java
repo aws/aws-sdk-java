@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateFeatureMetadataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the feature group containing the feature that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      * </p>
      */
     private String featureGroupName;
@@ -58,11 +58,11 @@ public class UpdateFeatureMetadataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the feature group containing the feature that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group containing the feature that you're updating.
+     *        The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -71,10 +71,10 @@ public class UpdateFeatureMetadataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the feature group containing the feature that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      * </p>
      * 
-     * @return The name of the feature group containing the feature that you're updating.
+     * @return The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      */
 
     public String getFeatureGroupName() {
@@ -83,11 +83,11 @@ public class UpdateFeatureMetadataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the feature group containing the feature that you're updating.
+     * The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group containing the feature that you're updating.
+     *        The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

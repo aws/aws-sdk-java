@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,8 +58,12 @@ public class OrganizationAffectedEntitiesErrorItem implements Serializable, Clon
     private String errorName;
     /**
      * <p>
-     * The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example,
-     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     * A message that describes the error. Follow the error message and retry your request.
+     * </p>
+     * <p>
+     * For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     * <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value
+     * for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.
      * </p>
      */
     private String errorMessage;
@@ -231,13 +235,21 @@ public class OrganizationAffectedEntitiesErrorItem implements Serializable, Clon
 
     /**
      * <p>
-     * The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example,
-     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     * A message that describes the error. Follow the error message and retry your request.
+     * </p>
+     * <p>
+     * For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     * <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value
+     * for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.
      * </p>
      * 
      * @param errorMessage
-     *        The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example,
-     *        <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     *        A message that describes the error. Follow the error message and retry your request.</p>
+     *        <p>
+     *        For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     *        <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the
+     *        <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an
+     *        Amazon Web Services account.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -246,12 +258,20 @@ public class OrganizationAffectedEntitiesErrorItem implements Serializable, Clon
 
     /**
      * <p>
-     * The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example,
-     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     * A message that describes the error. Follow the error message and retry your request.
+     * </p>
+     * <p>
+     * For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     * <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value
+     * for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.
      * </p>
      * 
-     * @return The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For
-     *         example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     * @return A message that describes the error. Follow the error message and retry your request.</p>
+     *         <p>
+     *         For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     *         <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the
+     *         <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an
+     *         Amazon Web Services account.
      */
 
     public String getErrorMessage() {
@@ -260,13 +280,21 @@ public class OrganizationAffectedEntitiesErrorItem implements Serializable, Clon
 
     /**
      * <p>
-     * The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example,
-     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     * A message that describes the error. Follow the error message and retry your request.
+     * </p>
+     * <p>
+     * For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     * <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value
+     * for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.
      * </p>
      * 
      * @param errorMessage
-     *        The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example,
-     *        <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+     *        A message that describes the error. Follow the error message and retry your request.</p>
+     *        <p>
+     *        For example, the <code>InvalidAccountInputError</code> error message appears if you call the
+     *        <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the
+     *        <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an
+     *        Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

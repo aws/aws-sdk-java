@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the ML model to be deleted.
+     * The name of the machine learning model to be deleted.
      * </p>
      */
     private String modelName;
 
     /**
      * <p>
-     * The name of the ML model to be deleted.
+     * The name of the machine learning model to be deleted.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model to be deleted.
+     *        The name of the machine learning model to be deleted.
      */
 
     public void setModelName(String modelName) {
@@ -47,10 +47,10 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the ML model to be deleted.
+     * The name of the machine learning model to be deleted.
      * </p>
      * 
-     * @return The name of the ML model to be deleted.
+     * @return The name of the machine learning model to be deleted.
      */
 
     public String getModelName() {
@@ -59,11 +59,11 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the ML model to be deleted.
+     * The name of the machine learning model to be deleted.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model to be deleted.
+     *        The name of the machine learning model to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

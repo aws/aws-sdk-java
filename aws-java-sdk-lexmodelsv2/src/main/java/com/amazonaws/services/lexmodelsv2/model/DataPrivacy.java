@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      * directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      * under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other
      * applications that are directed or targeted, in whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      * </p>
      */
     private Boolean childDirected;
@@ -68,7 +68,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      * directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      * under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other
      * applications that are directed or targeted, in whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      * </p>
      * 
      * @param childDirected
@@ -88,7 +88,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      *        in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      *        under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or
      *        other applications that are directed or targeted, in whole or in part, to children under age 13, see the
-     *        <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     *        <a href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      */
 
     public void setChildDirected(Boolean childDirected) {
@@ -112,7 +112,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      * directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      * under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other
      * applications that are directed or targeted, in whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      * </p>
      * 
      * @return For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your
@@ -131,7 +131,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      *         directed in whole or in part, to children under age 13, you must obtain any required verifiable parental
      *         consent under COPPA. For information regarding the use of Amazon Lex in connection with websites,
      *         programs, or other applications that are directed or targeted, in whole or in part, to children under age
-     *         13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     *         13, see the <a href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      */
 
     public Boolean getChildDirected() {
@@ -155,7 +155,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      * directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      * under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other
      * applications that are directed or targeted, in whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      * </p>
      * 
      * @param childDirected
@@ -175,7 +175,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      *        in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      *        under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or
      *        other applications that are directed or targeted, in whole or in part, to children under age 13, see the
-     *        <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     *        <a href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,7 +201,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      * directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent
      * under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other
      * applications that are directed or targeted, in whole or in part, to children under age 13, see the <a
-     * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      * </p>
      * 
      * @return For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your
@@ -220,7 +220,7 @@ public class DataPrivacy implements Serializable, Cloneable, StructuredPojo {
      *         directed in whole or in part, to children under age 13, you must obtain any required verifiable parental
      *         consent under COPPA. For information regarding the use of Amazon Lex in connection with websites,
      *         programs, or other applications that are directed or targeted, in whole or in part, to children under age
-     *         13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
+     *         13, see the <a href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.
      */
 
     public Boolean isChildDirected() {

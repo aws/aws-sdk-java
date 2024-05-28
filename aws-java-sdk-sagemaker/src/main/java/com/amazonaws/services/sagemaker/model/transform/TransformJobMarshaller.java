@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,8 @@ public class TransformJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformInput").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFORMOUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformOutput").build();
+    private static final MarshallingInfo<StructuredPojo> DATACAPTURECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCaptureConfig").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFORMRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformResources").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -100,6 +102,7 @@ public class TransformJobMarshaller {
             protocolMarshaller.marshall(transformJob.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(transformJob.getTransformInput(), TRANSFORMINPUT_BINDING);
             protocolMarshaller.marshall(transformJob.getTransformOutput(), TRANSFORMOUTPUT_BINDING);
+            protocolMarshaller.marshall(transformJob.getDataCaptureConfig(), DATACAPTURECONFIG_BINDING);
             protocolMarshaller.marshall(transformJob.getTransformResources(), TRANSFORMRESOURCES_BINDING);
             protocolMarshaller.marshall(transformJob.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(transformJob.getTransformStartTime(), TRANSFORMSTARTTIME_BINDING);

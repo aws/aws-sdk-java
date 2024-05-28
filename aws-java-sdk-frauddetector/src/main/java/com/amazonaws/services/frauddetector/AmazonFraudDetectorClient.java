@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.frauddetector.AmazonFraudDetectorClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.frauddetector.model.*;
+
 import com.amazonaws.services.frauddetector.model.transform.*;
 
 /**
@@ -65,8 +66,8 @@ import com.amazonaws.services.frauddetector.model.transform.*;
  * who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS.
  * These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your
  * requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more
- * information about the AWS SDKs, see <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
- * on AWS</a>.
+ * information about the AWS SDKs, go to <a href="https://aws.amazon.com/developer/tools/">Tools to build on AWS</a>
+ * page, scroll down to the <b>SDK</b> section, and choose plus (+) sign to expand the section.
  * </p>
  */
 @ThreadSafe
@@ -620,6 +621,76 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<CreateDetectorVersionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new CreateDetectorVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a list.
+     * </p>
+     * <p>
+     * List is a set of input data for a variable in your event dataset. You use the input data in a rule that's
+     * associated with your detector. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.
+     * </p>
+     * 
+     * @param createListRequest
+     * @return Result of the CreateList operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.CreateList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateListResult createList(CreateListRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateList(request);
+    }
+
+    @SdkInternalApi
+    final CreateListResult executeCreateList(CreateListRequest createListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateListRequest> request = null;
+        Response<CreateListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateListResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateListResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1250,7 +1321,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer
-     * stored in Amazon Fraud Detector.
+     * stored in Amazon Fraud Detector. If <code>deleteAuditHistory</code> is <code>True</code>, event data is available
+     * through search for up to 30 seconds after the delete operation is completed.
      * </p>
      * 
      * @param deleteEventRequest
@@ -1592,6 +1664,76 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLabelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLabelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the list, provided it is not used in a rule.
+     * </p>
+     * <p>
+     * When you delete a list, Amazon Fraud Detector permanently deletes that list and the elements in the list.
+     * </p>
+     * 
+     * @param deleteListRequest
+     * @return Result of the DeleteList operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation.
+     * @sample AmazonFraudDetector.DeleteList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteListResult deleteList(DeleteListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteListResult executeDeleteList(DeleteListRequest deleteListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteListRequest> request = null;
+        Response<DeleteListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteListResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteListResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3012,6 +3154,140 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<GetLabelsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLabelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets all the elements in the specified list.
+     * </p>
+     * 
+     * @param getListElementsRequest
+     * @return Result of the GetListElements operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetListElements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetListElementsResult getListElements(GetListElementsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetListElements(request);
+    }
+
+    @SdkInternalApi
+    final GetListElementsResult executeGetListElements(GetListElementsRequest getListElementsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getListElementsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetListElementsRequest> request = null;
+        Response<GetListElementsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetListElementsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getListElementsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetListElements");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetListElementsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetListElementsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the metadata of either all the lists under the account or the specified list.
+     * </p>
+     * 
+     * @param getListsMetadataRequest
+     * @return Result of the GetListsMetadata operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetListsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetListsMetadataResult getListsMetadata(GetListsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetListsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetListsMetadataResult executeGetListsMetadata(GetListsMetadataRequest getListsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getListsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetListsMetadataRequest> request = null;
+        Response<GetListsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetListsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getListsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetListsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetListsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetListsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4475,6 +4751,75 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateEventLabelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEventLabelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a list.
+     * </p>
+     * 
+     * @param updateListRequest
+     * @return Result of the UpdateList operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation.
+     * @sample AmazonFraudDetector.UpdateList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateListResult updateList(UpdateListRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateList(request);
+    }
+
+    @SdkInternalApi
+    final UpdateListResult executeUpdateList(UpdateListRequest updateListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateListRequest> request = null;
+        Response<UpdateListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateListResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateListResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

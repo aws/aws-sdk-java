@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -67,6 +67,20 @@ public class ImageMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> BUILDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildType").build();
+    private static final MarshallingInfo<String> IMAGESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageSource").build();
+    private static final MarshallingInfo<StructuredPojo> SCANSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanState").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGESCANNINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanningConfiguration").build();
+    private static final MarshallingInfo<java.util.Date> DEPRECATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LIFECYCLEEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleExecutionId").build();
+    private static final MarshallingInfo<String> EXECUTIONROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRole").build();
+    private static final MarshallingInfo<List> WORKFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("workflows").build();
 
     private static final ImageMarshaller instance = new ImageMarshaller();
 
@@ -103,6 +117,13 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getOutputResources(), OUTPUTRESOURCES_BINDING);
             protocolMarshaller.marshall(image.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(image.getBuildType(), BUILDTYPE_BINDING);
+            protocolMarshaller.marshall(image.getImageSource(), IMAGESOURCE_BINDING);
+            protocolMarshaller.marshall(image.getScanState(), SCANSTATE_BINDING);
+            protocolMarshaller.marshall(image.getImageScanningConfiguration(), IMAGESCANNINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(image.getDeprecationTime(), DEPRECATIONTIME_BINDING);
+            protocolMarshaller.marshall(image.getLifecycleExecutionId(), LIFECYCLEEXECUTIONID_BINDING);
+            protocolMarshaller.marshall(image.getExecutionRole(), EXECUTIONROLE_BINDING);
+            protocolMarshaller.marshall(image.getWorkflows(), WORKFLOWS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

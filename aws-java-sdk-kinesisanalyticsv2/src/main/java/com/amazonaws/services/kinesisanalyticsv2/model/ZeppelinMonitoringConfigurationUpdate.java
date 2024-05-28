@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+ * Updates to the monitoring configuration for Apache Zeppelin within a Managed Service for Apache Flink Studio
+ * notebook.
  * </p>
  * 
  * @see <a
@@ -31,18 +32,19 @@ public class ZeppelinMonitoringConfigurationUpdate implements Serializable, Clon
 
     /**
      * <p>
-     * Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     * Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private String logLevelUpdate;
 
     /**
      * <p>
-     * Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     * Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param logLevelUpdate
-     *        Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     *        Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio
+     *        notebook.
      * @see LogLevel
      */
 
@@ -52,10 +54,11 @@ public class ZeppelinMonitoringConfigurationUpdate implements Serializable, Clon
 
     /**
      * <p>
-     * Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     * Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     * @return Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio
+     *         notebook.
      * @see LogLevel
      */
 
@@ -65,11 +68,12 @@ public class ZeppelinMonitoringConfigurationUpdate implements Serializable, Clon
 
     /**
      * <p>
-     * Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     * Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param logLevelUpdate
-     *        Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     *        Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio
+     *        notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */
@@ -81,11 +85,12 @@ public class ZeppelinMonitoringConfigurationUpdate implements Serializable, Clon
 
     /**
      * <p>
-     * Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     * Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param logLevelUpdate
-     *        Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+     *        Updates to the logging level for Apache Zeppelin within a Managed Service for Apache Flink Studio
+     *        notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */

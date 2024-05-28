@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,14 @@ public class NumberFilterJsonUnmarshaller implements Unmarshaller<NumberFilter, 
                 if (context.testExpression("Lte", targetDepth)) {
                     context.nextToken();
                     numberFilter.setLte(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("Gt", targetDepth)) {
+                    context.nextToken();
+                    numberFilter.setGt(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("Lt", targetDepth)) {
+                    context.nextToken();
+                    numberFilter.setLt(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Eq", targetDepth)) {
                     context.nextToken();

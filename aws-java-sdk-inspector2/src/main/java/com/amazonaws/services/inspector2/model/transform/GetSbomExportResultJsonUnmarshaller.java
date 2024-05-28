@@ -1,0 +1,98 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.inspector2.model.transform;
+
+import java.math.*;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.services.inspector2.model.*;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
+import com.amazonaws.transform.*;
+
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
+
+/**
+ * GetSbomExportResult JSON Unmarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetSbomExportResultJsonUnmarshaller implements Unmarshaller<GetSbomExportResult, JsonUnmarshallerContext> {
+
+    public GetSbomExportResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        GetSbomExportResult getSbomExportResult = new GetSbomExportResult();
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
+            return getSbomExportResult;
+        }
+
+        while (true) {
+            if (token == null)
+                break;
+
+            if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("errorCode", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("errorMessage", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("filterCriteria", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setFilterCriteria(ResourceFilterCriteriaJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("format", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("reportId", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setReportId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("s3Destination", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setS3Destination(DestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    getSbomExportResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
+
+        return getSbomExportResult;
+    }
+
+    private static GetSbomExportResultJsonUnmarshaller instance;
+
+    public static GetSbomExportResultJsonUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new GetSbomExportResultJsonUnmarshaller();
+        return instance;
+    }
+}

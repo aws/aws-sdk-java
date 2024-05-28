@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the properties of a logging configuration metadata.
+ * Contains information about the logging configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/LoggingConfigurationMetadata" target="_top">AWS
@@ -30,42 +30,42 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was created.
+     * The date and time that the logging configuration was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      */
     private String logGroupArn;
     /**
      * <p>
-     * The time when the logging configuration was modified.
+     * The date and time that the logging configuration was most recently changed.
      * </p>
      */
     private java.util.Date modifiedAt;
     /**
      * <p>
-     * The status of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      */
     private LoggingConfigurationStatus status;
     /**
      * <p>
-     * The workspace where the logging configuration exists.
+     * The ID of the workspace the logging configuration is for.
      * </p>
      */
     private String workspace;
 
     /**
      * <p>
-     * The time when the logging configuration was created.
+     * The date and time that the logging configuration was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the logging configuration was created.
+     *        The date and time that the logging configuration was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -74,10 +74,10 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was created.
+     * The date and time that the logging configuration was created.
      * </p>
      * 
-     * @return The time when the logging configuration was created.
+     * @return The date and time that the logging configuration was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -86,11 +86,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was created.
+     * The date and time that the logging configuration was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the logging configuration was created.
+     *        The date and time that the logging configuration was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      * 
      * @param logGroupArn
-     *        The ARN of the CW log group to which the vended log data will be published.
+     *        The ARN of the CloudWatch log group to which the vended log data will be published.
      */
 
     public void setLogGroupArn(String logGroupArn) {
@@ -114,10 +114,10 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      * 
-     * @return The ARN of the CW log group to which the vended log data will be published.
+     * @return The ARN of the CloudWatch log group to which the vended log data will be published.
      */
 
     public String getLogGroupArn() {
@@ -126,11 +126,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      * 
      * @param logGroupArn
-     *        The ARN of the CW log group to which the vended log data will be published.
+     *        The ARN of the CloudWatch log group to which the vended log data will be published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was modified.
+     * The date and time that the logging configuration was most recently changed.
      * </p>
      * 
      * @param modifiedAt
-     *        The time when the logging configuration was modified.
+     *        The date and time that the logging configuration was most recently changed.
      */
 
     public void setModifiedAt(java.util.Date modifiedAt) {
@@ -154,10 +154,10 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was modified.
+     * The date and time that the logging configuration was most recently changed.
      * </p>
      * 
-     * @return The time when the logging configuration was modified.
+     * @return The date and time that the logging configuration was most recently changed.
      */
 
     public java.util.Date getModifiedAt() {
@@ -166,11 +166,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The time when the logging configuration was modified.
+     * The date and time that the logging configuration was most recently changed.
      * </p>
      * 
      * @param modifiedAt
-     *        The time when the logging configuration was modified.
+     *        The date and time that the logging configuration was most recently changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
      * @param status
-     *        The status of the logging configuration.
+     *        The current status of the logging configuration.
      */
 
     public void setStatus(LoggingConfigurationStatus status) {
@@ -194,10 +194,10 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
-     * @return The status of the logging configuration.
+     * @return The current status of the logging configuration.
      */
 
     public LoggingConfigurationStatus getStatus() {
@@ -206,11 +206,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The status of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
      * @param status
-     *        The status of the logging configuration.
+     *        The current status of the logging configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The workspace where the logging configuration exists.
+     * The ID of the workspace the logging configuration is for.
      * </p>
      * 
      * @param workspace
-     *        The workspace where the logging configuration exists.
+     *        The ID of the workspace the logging configuration is for.
      */
 
     public void setWorkspace(String workspace) {
@@ -234,10 +234,10 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The workspace where the logging configuration exists.
+     * The ID of the workspace the logging configuration is for.
      * </p>
      * 
-     * @return The workspace where the logging configuration exists.
+     * @return The ID of the workspace the logging configuration is for.
      */
 
     public String getWorkspace() {
@@ -246,11 +246,11 @@ public class LoggingConfigurationMetadata implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The workspace where the logging configuration exists.
+     * The ID of the workspace the logging configuration is for.
      * </p>
      * 
      * @param workspace
-     *        The workspace where the logging configuration exists.
+     *        The ID of the workspace the logging configuration is for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

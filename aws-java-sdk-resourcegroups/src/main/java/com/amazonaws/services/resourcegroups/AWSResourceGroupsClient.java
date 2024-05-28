@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,22 +44,23 @@ import com.amazonaws.services.resourcegroups.AWSResourceGroupsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.resourcegroups.model.*;
+
 import com.amazonaws.services.resourcegroups.model.transform.*;
 
 /**
  * Client for accessing Resource Groups. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * <fullname>AWS Resource Groups</fullname>
  * <p>
- * AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances, Amazon Relational Database Service
- * databases, and Amazon S3 buckets into groups using criteria that you define as tags. A resource group is a collection
- * of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You
- * can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions,
- * application layers, or virtually any criteria. Resource Groups enable you to automate management tasks, such as those
- * in AWS Systems Manager Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
- * resources also let you quickly view a custom console in AWS Systems Manager that shows AWS Config compliance and
- * other monitoring data about member resources.
+ * Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic Compute Cloud instances,
+ * Amazon Relational Database Service databases, and Amazon Simple Storage Service buckets into groups using criteria
+ * that you define as tags. A resource group is a collection of resources that match the resource types specified in a
+ * query, and share one or more tags or portions of tags. You can create a group of resources based on their roles in
+ * your cloud infrastructure, lifecycle stages, regions, application layers, or virtually any criteria. Resource Groups
+ * enable you to automate management tasks, such as those in Amazon Web Services Systems Manager Automation documents,
+ * on tag-related resources in Amazon Web Services Systems Manager. Groups of tagged resources also let you quickly view
+ * a custom console in Amazon Web Services Systems Manager that shows Config compliance and other monitoring data about
+ * member resources.
  * </p>
  * <p>
  * To create a resource group, build a resource query, and specify tags that identify the criteria that members of the
@@ -67,10 +68,10 @@ import com.amazonaws.services.resourcegroups.model.transform.*;
  * </p>
  * <p>
  * For more information about Resource Groups, see the <a
- * href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">AWS Resource Groups User Guide</a>.
+ * href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">Resource Groups User Guide</a>.
  * </p>
  * <p>
- * AWS Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.
+ * Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.
  * </p>
  * <ul>
  * <li>
@@ -95,7 +96,7 @@ import com.amazonaws.services.resourcegroups.model.transform.*;
  * </li>
  * <li>
  * <p>
- * Searching AWS resources based on a resource query
+ * Searching Amazon Web Services resources based on a resource query
  * </p>
  * </li>
  * </ul>
@@ -194,12 +195,13 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a resource group with the specified name and description. You can optionally include a resource query, or
-     * a service configuration. For more information about constructing a resource query, see <a
-     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
-     * >Create a tag-based group in Resource Groups</a>. For more information about service configurations, see <a
-     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-     * groups</a>.
+     * Creates a resource group with the specified name and description. You can optionally include either a resource
+     * query or a service configuration. For more information about constructing a resource query, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/getting_started-query.html">Build queries and groups in
+     * Resource Groups</a> in the <i>Resource Groups User Guide</i>. For more information about service-linked groups
+     * and service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource
+     * Groups</a>.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -358,6 +360,71 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves the current status of optional features in Resource Groups.
+     * </p>
+     * 
+     * @param getAccountSettingsRequest
+     * @return Result of the GetAccountSettings operation returned by the service.
+     * @throws BadRequestException
+     *         The request includes one or more parameters that violate validation rules.
+     * @throws ForbiddenException
+     *         The caller isn't authorized to make the request. Check permissions.
+     * @throws MethodNotAllowedException
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
+     * @throws TooManyRequestsException
+     *         You've exceeded throttling limits by making too many requests in a period of time.
+     * @throws InternalServerErrorException
+     *         An internal error occurred while processing the request. Try again later.
+     * @sample AWSResourceGroups.GetAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountSettingsResult executeGetAccountSettings(GetAccountSettingsRequest getAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccountSettingsRequest> request = null;
+        Response<GetAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAccountSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a specified resource group.
      * </p>
      * <p>
@@ -438,9 +505,9 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns the service configuration associated with the specified resource group. For details about the service
+     * Retrieves the service configuration associated with the specified resource group. For details about the service
      * configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.
+     * configurations for Resource Groups</a>.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -686,6 +753,26 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <p>
      * Adds the specified resources to the specified group.
      * </p>
+     * <important>
+     * <p>
+     * You can use this operation with only resource groups that are configured with the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::HostManagement</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Other resource group type and resource types aren't currently supported by this operation.
+     * </p>
+     * </important>
      * <p>
      * <b>Minimum permissions</b>
      * </p>
@@ -861,7 +948,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a list of existing resource groups in your account.
+     * Returns a list of existing Resource Groups in your account.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -1021,8 +1108,8 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a
-     * resource query in a CreateGroup or UpdateGroupQuery operation.
+     * Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the
+     * same format as a resource query in a <a>CreateGroup</a> or <a>UpdateGroupQuery</a> operation.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -1205,7 +1292,9 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Removes the specified resources from the specified group.
+     * Removes the specified resources from the specified group. This operation works only with static groups that you
+     * populated using the <a>GroupResources</a> operation. It doesn't work with any resource groups that are
+     * automatically populated by tag-based or CloudFormation stack-based queries.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -1353,6 +1442,77 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Turns on or turns off optional features in Resource Groups.
+     * </p>
+     * <p>
+     * The preceding example shows that the request to turn on group lifecycle events is <code>IN_PROGRESS</code>. You
+     * can call the <a>GetAccountSettings</a> operation to check for completion by looking for
+     * <code>GroupLifecycleEventsStatus</code> to change to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return Result of the UpdateAccountSettings operation returned by the service.
+     * @throws BadRequestException
+     *         The request includes one or more parameters that violate validation rules.
+     * @throws ForbiddenException
+     *         The caller isn't authorized to make the request. Check permissions.
+     * @throws MethodNotAllowedException
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
+     * @throws TooManyRequestsException
+     *         You've exceeded throttling limits by making too many requests in a period of time.
+     * @throws InternalServerErrorException
+     *         An internal error occurred while processing the request. Try again later.
+     * @sample AWSResourceGroups.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountSettingsResult executeUpdateAccountSettings(UpdateAccountSettingsRequest updateAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountSettingsRequest> request = null;
+        Response<UpdateAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccountSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateAccountSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

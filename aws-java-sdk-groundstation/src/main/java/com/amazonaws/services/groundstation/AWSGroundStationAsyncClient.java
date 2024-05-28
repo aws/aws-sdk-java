@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -177,6 +177,39 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEphemerisResult> createEphemerisAsync(CreateEphemerisRequest request) {
+
+        return createEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEphemerisResult> createEphemerisAsync(final CreateEphemerisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEphemerisRequest, CreateEphemerisResult> asyncHandler) {
+        final CreateEphemerisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEphemerisResult>() {
+            @Override
+            public CreateEphemerisResult call() throws Exception {
+                CreateEphemerisResult result = null;
+
+                try {
+                    result = executeCreateEphemeris(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMissionProfileResult> createMissionProfileAsync(CreateMissionProfileRequest request) {
 
         return createMissionProfileAsync(request, null);
@@ -276,6 +309,39 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEphemerisResult> deleteEphemerisAsync(DeleteEphemerisRequest request) {
+
+        return deleteEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEphemerisResult> deleteEphemerisAsync(final DeleteEphemerisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEphemerisRequest, DeleteEphemerisResult> asyncHandler) {
+        final DeleteEphemerisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEphemerisResult>() {
+            @Override
+            public DeleteEphemerisResult call() throws Exception {
+                DeleteEphemerisResult result = null;
+
+                try {
+                    result = executeDeleteEphemeris(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMissionProfileResult> deleteMissionProfileAsync(DeleteMissionProfileRequest request) {
 
         return deleteMissionProfileAsync(request, null);
@@ -326,6 +392,72 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
 
                 try {
                     result = executeDescribeContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEphemerisResult> describeEphemerisAsync(DescribeEphemerisRequest request) {
+
+        return describeEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEphemerisResult> describeEphemerisAsync(final DescribeEphemerisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEphemerisRequest, DescribeEphemerisResult> asyncHandler) {
+        final DescribeEphemerisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEphemerisResult>() {
+            @Override
+            public DescribeEphemerisResult call() throws Exception {
+                DescribeEphemerisResult result = null;
+
+                try {
+                    result = executeDescribeEphemeris(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAgentConfigurationResult> getAgentConfigurationAsync(GetAgentConfigurationRequest request) {
+
+        return getAgentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAgentConfigurationResult> getAgentConfigurationAsync(final GetAgentConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAgentConfigurationRequest, GetAgentConfigurationResult> asyncHandler) {
+        final GetAgentConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAgentConfigurationResult>() {
+            @Override
+            public GetAgentConfigurationResult call() throws Exception {
+                GetAgentConfigurationResult result = null;
+
+                try {
+                    result = executeGetAgentConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -606,6 +738,39 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListEphemeridesResult> listEphemeridesAsync(ListEphemeridesRequest request) {
+
+        return listEphemeridesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEphemeridesResult> listEphemeridesAsync(final ListEphemeridesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEphemeridesRequest, ListEphemeridesResult> asyncHandler) {
+        final ListEphemeridesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEphemeridesResult>() {
+            @Override
+            public ListEphemeridesResult call() throws Exception {
+                ListEphemeridesResult result = null;
+
+                try {
+                    result = executeListEphemerides(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGroundStationsResult> listGroundStationsAsync(ListGroundStationsRequest request) {
 
         return listGroundStationsAsync(request, null);
@@ -738,6 +903,39 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterAgentResult> registerAgentAsync(RegisterAgentRequest request) {
+
+        return registerAgentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterAgentResult> registerAgentAsync(final RegisterAgentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterAgentRequest, RegisterAgentResult> asyncHandler) {
+        final RegisterAgentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterAgentResult>() {
+            @Override
+            public RegisterAgentResult call() throws Exception {
+                RegisterAgentResult result = null;
+
+                try {
+                    result = executeRegisterAgent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReserveContactResult> reserveContactAsync(ReserveContactRequest request) {
 
         return reserveContactAsync(request, null);
@@ -837,6 +1035,39 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAgentStatusResult> updateAgentStatusAsync(UpdateAgentStatusRequest request) {
+
+        return updateAgentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAgentStatusResult> updateAgentStatusAsync(final UpdateAgentStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAgentStatusRequest, UpdateAgentStatusResult> asyncHandler) {
+        final UpdateAgentStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAgentStatusResult>() {
+            @Override
+            public UpdateAgentStatusResult call() throws Exception {
+                UpdateAgentStatusResult result = null;
+
+                try {
+                    result = executeUpdateAgentStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConfigResult> updateConfigAsync(UpdateConfigRequest request) {
 
         return updateConfigAsync(request, null);
@@ -854,6 +1085,39 @@ public class AWSGroundStationAsyncClient extends AWSGroundStationClient implemen
 
                 try {
                     result = executeUpdateConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEphemerisResult> updateEphemerisAsync(UpdateEphemerisRequest request) {
+
+        return updateEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEphemerisResult> updateEphemerisAsync(final UpdateEphemerisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEphemerisRequest, UpdateEphemerisResult> asyncHandler) {
+        final UpdateEphemerisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEphemerisResult>() {
+            @Override
+            public UpdateEphemerisResult call() throws Exception {
+                UpdateEphemerisResult result = null;
+
+                try {
+                    result = executeUpdateEphemeris(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

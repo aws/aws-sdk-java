@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Records that were not successfully inserted into Timestream due to data validation issues that must be resolved prior
- * to reinserting time series data into the system.
+ * Represents records that were not successfully inserted into Timestream due to data validation issues that must be
+ * resolved before reinserting time-series data into the system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/RejectedRecord" target="_top">AWS
@@ -53,7 +53,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Version is not present in the request <i>or</i> the value of version in the new record is equal to or lower than
+     * Version is not present in the request, <i>or</i> the value of version in the new record is equal to or lower than
      * the existing value
      * </p>
      * </li>
@@ -66,7 +66,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Records with timestamps that lie outside the retention duration of the memory store
+     * Records with timestamps that lie outside the retention duration of the memory store.
      * </p>
      * <note>
      * <p>
@@ -158,7 +158,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Version is not present in the request <i>or</i> the value of version in the new record is equal to or lower than
+     * Version is not present in the request, <i>or</i> the value of version in the new record is equal to or lower than
      * the existing value
      * </p>
      * </li>
@@ -171,7 +171,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Records with timestamps that lie outside the retention duration of the memory store
+     * Records with timestamps that lie outside the retention duration of the memory store.
      * </p>
      * <note>
      * <p>
@@ -213,7 +213,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Version is not present in the request <i>or</i> the value of version in the new record is equal to or
+     *        Version is not present in the request, <i>or</i> the value of version in the new record is equal to or
      *        lower than the existing value
      *        </p>
      *        </li>
@@ -227,7 +227,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Records with timestamps that lie outside the retention duration of the memory store
+     *        Records with timestamps that lie outside the retention duration of the memory store.
      *        </p>
      *        <note>
      *        <p>
@@ -274,7 +274,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Version is not present in the request <i>or</i> the value of version in the new record is equal to or lower than
+     * Version is not present in the request, <i>or</i> the value of version in the new record is equal to or lower than
      * the existing value
      * </p>
      * </li>
@@ -287,7 +287,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Records with timestamps that lie outside the retention duration of the memory store
+     * Records with timestamps that lie outside the retention duration of the memory store.
      * </p>
      * <note>
      * <p>
@@ -328,7 +328,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Version is not present in the request <i>or</i> the value of version in the new record is equal to or
+     *         Version is not present in the request, <i>or</i> the value of version in the new record is equal to or
      *         lower than the existing value
      *         </p>
      *         </li>
@@ -342,7 +342,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Records with timestamps that lie outside the retention duration of the memory store
+     *         Records with timestamps that lie outside the retention duration of the memory store.
      *         </p>
      *         <note>
      *         <p>
@@ -389,7 +389,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Version is not present in the request <i>or</i> the value of version in the new record is equal to or lower than
+     * Version is not present in the request, <i>or</i> the value of version in the new record is equal to or lower than
      * the existing value
      * </p>
      * </li>
@@ -402,7 +402,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Records with timestamps that lie outside the retention duration of the memory store
+     * Records with timestamps that lie outside the retention duration of the memory store.
      * </p>
      * <note>
      * <p>
@@ -444,7 +444,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Version is not present in the request <i>or</i> the value of version in the new record is equal to or
+     *        Version is not present in the request, <i>or</i> the value of version in the new record is equal to or
      *        lower than the existing value
      *        </p>
      *        </li>
@@ -458,7 +458,7 @@ public class RejectedRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Records with timestamps that lie outside the retention duration of the memory store
+     *        Records with timestamps that lie outside the retention duration of the memory store.
      *        </p>
      *        <note>
      *        <p>

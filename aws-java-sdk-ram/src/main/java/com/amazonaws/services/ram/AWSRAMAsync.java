@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,9 @@ import com.amazonaws.services.ram.model.*;
  * <p>
  * This is the <i>Resource Access Manager API Reference</i>. This documentation provides descriptions and syntax for
  * each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services
- * resources across Amazon Web Services accounts. If you have multiple Amazon Web Services accounts, you can use RAM to
- * share those resources with other accounts. If you use Organizations to manage your accounts, then you share your
- * resources with your organization or organizational units (OUs). For supported resource types, you can also share
- * resources with individual Identity and Access Management (IAM) roles an users.
+ * resources to other Amazon Web Services accounts. If you use Organizations to manage your accounts, then you can share
+ * your resources with your entire organization or to organizational units (OUs). For supported resource types, you can
+ * also share resources with individual Identity and Access Management (IAM) roles and users.
  * </p>
  * <p>
  * To learn more about RAM, see the following resources:
@@ -167,6 +166,84 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
+     * Creates a customer managed permission for a specified resource type that you can attach to resource shares. It is
+     * created in the Amazon Web Services Region in which you call the operation.
+     * </p>
+     * 
+     * @param createPermissionRequest
+     * @return A Java Future containing the result of the CreatePermission operation returned by the service.
+     * @sample AWSRAMAsync.CreatePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest createPermissionRequest);
+
+    /**
+     * <p>
+     * Creates a customer managed permission for a specified resource type that you can attach to resource shares. It is
+     * created in the Amazon Web Services Region in which you call the operation.
+     * </p>
+     * 
+     * @param createPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePermission operation returned by the service.
+     * @sample AWSRAMAsyncHandler.CreatePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest createPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new version of the specified customer managed permission. The new version is automatically set as the
+     * default version of the customer managed permission. New resource shares automatically use the default permission.
+     * Existing resource shares continue to use their original permission versions, but you can use
+     * <a>ReplacePermissionAssociations</a> to update them.
+     * </p>
+     * <p>
+     * If the specified customer managed permission already has the maximum of 5 versions, then you must delete one of
+     * the existing versions before you can create a new one.
+     * </p>
+     * 
+     * @param createPermissionVersionRequest
+     * @return A Java Future containing the result of the CreatePermissionVersion operation returned by the service.
+     * @sample AWSRAMAsync.CreatePermissionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermissionVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePermissionVersionResult> createPermissionVersionAsync(CreatePermissionVersionRequest createPermissionVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version of the specified customer managed permission. The new version is automatically set as the
+     * default version of the customer managed permission. New resource shares automatically use the default permission.
+     * Existing resource shares continue to use their original permission versions, but you can use
+     * <a>ReplacePermissionAssociations</a> to update them.
+     * </p>
+     * <p>
+     * If the specified customer managed permission already has the maximum of 5 versions, then you must delete one of
+     * the existing versions before you can create a new one.
+     * </p>
+     * 
+     * @param createPermissionVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePermissionVersion operation returned by the service.
+     * @sample AWSRAMAsyncHandler.CreatePermissionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermissionVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePermissionVersionResult> createPermissionVersionAsync(CreatePermissionVersionRequest createPermissionVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionVersionRequest, CreatePermissionVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a resource share. You can provide a list of the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      * (ARNs)</a> for the resources that you want to share, a list of principals you want to share the resources with,
@@ -218,10 +295,90 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Deletes the specified resource share. This doesn't delete any of the resources that were associated with the
-     * resource share; it only stops the sharing of those resources outside of the Amazon Web Services account that
-     * created them.
+     * Deletes the specified customer managed permission in the Amazon Web Services Region in which you call this
+     * operation. You can delete a customer managed permission only if it isn't attached to any resource share. The
+     * operation deletes all versions associated with the customer managed permission.
      * </p>
+     * 
+     * @param deletePermissionRequest
+     * @return A Java Future containing the result of the DeletePermission operation returned by the service.
+     * @sample AWSRAMAsync.DeletePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest deletePermissionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified customer managed permission in the Amazon Web Services Region in which you call this
+     * operation. You can delete a customer managed permission only if it isn't attached to any resource share. The
+     * operation deletes all versions associated with the customer managed permission.
+     * </p>
+     * 
+     * @param deletePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePermission operation returned by the service.
+     * @sample AWSRAMAsyncHandler.DeletePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest deletePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one version of a customer managed permission. The version you specify must not be attached to any
+     * resource share and must not be the default version for the permission.
+     * </p>
+     * <p>
+     * If a customer managed permission has the maximum of 5 versions, then you must delete at least one version before
+     * you can create another.
+     * </p>
+     * 
+     * @param deletePermissionVersionRequest
+     * @return A Java Future containing the result of the DeletePermissionVersion operation returned by the service.
+     * @sample AWSRAMAsync.DeletePermissionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermissionVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionVersionResult> deletePermissionVersionAsync(DeletePermissionVersionRequest deletePermissionVersionRequest);
+
+    /**
+     * <p>
+     * Deletes one version of a customer managed permission. The version you specify must not be attached to any
+     * resource share and must not be the default version for the permission.
+     * </p>
+     * <p>
+     * If a customer managed permission has the maximum of 5 versions, then you must delete at least one version before
+     * you can create another.
+     * </p>
+     * 
+     * @param deletePermissionVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePermissionVersion operation returned by the service.
+     * @sample AWSRAMAsyncHandler.DeletePermissionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermissionVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionVersionResult> deletePermissionVersionAsync(DeletePermissionVersionRequest deletePermissionVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionVersionRequest, DeletePermissionVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified resource share.
+     * </p>
+     * <important>
+     * <p>
+     * This doesn't delete any of the resources that were associated with the resource share; it only stops the sharing
+     * of those resources through this resource share.
+     * </p>
+     * </important>
      * 
      * @param deleteResourceShareRequest
      * @return A Java Future containing the result of the DeleteResourceShare operation returned by the service.
@@ -233,10 +390,14 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Deletes the specified resource share. This doesn't delete any of the resources that were associated with the
-     * resource share; it only stops the sharing of those resources outside of the Amazon Web Services account that
-     * created them.
+     * Deletes the specified resource share.
      * </p>
+     * <important>
+     * <p>
+     * This doesn't delete any of the resources that were associated with the resource share; it only stops the sharing
+     * of those resources through this resource share.
+     * </p>
+     * </important>
      * 
      * @param deleteResourceShareRequest
      * @param asyncHandler
@@ -253,7 +414,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Disassociates the specified principals or resources from the specified resource share.
+     * Removes the specified principals or resources from participating in the specified resource share.
      * </p>
      * 
      * @param disassociateResourceShareRequest
@@ -267,7 +428,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Disassociates the specified principals or resources from the specified resource share.
+     * Removes the specified principals or resources from participating in the specified resource share.
      * </p>
      * 
      * @param disassociateResourceShareRequest
@@ -286,8 +447,8 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Disassociates an RAM permission from a resource share. Permission changes take effect immediately. You can remove
-     * a RAM permission from a resource share only if there are currently no resources of the relevant resource type
+     * Removes a managed permission from a resource share. Permission changes take effect immediately. You can remove a
+     * managed permission from a resource share only if there are currently no resources of the relevant resource type
      * currently attached to the resource share.
      * </p>
      * 
@@ -303,8 +464,8 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Disassociates an RAM permission from a resource share. Permission changes take effect immediately. You can remove
-     * a RAM permission from a resource share only if there are currently no resources of the relevant resource type
+     * Removes a managed permission from a resource share. Permission changes take effect immediately. You can remove a
+     * managed permission from a resource share only if there are currently no resources of the relevant resource type
      * currently attached to the resource share.
      * </p>
      * 
@@ -325,15 +486,18 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Enables resource sharing within your organization in Organizations. Calling this operation enables RAM to
-     * retrieve information about the organization and its structure. This lets you share resources with all of the
-     * accounts in an organization by specifying the organization's ID, or all of the accounts in an organizational unit
-     * (OU) by specifying the OU's ID. Until you enable sharing within the organization, you can specify only individual
-     * Amazon Web Services accounts, or for supported resource types, IAM users and roles.
+     * Enables resource sharing within your organization in Organizations. This operation creates a service-linked role
+     * called <code>AWSServiceRoleForResourceAccessManager</code> that has the IAM managed policy named
+     * AWSResourceAccessManagerServiceRolePolicy attached. This role permits RAM to retrieve information about the
+     * organization and its structure. This lets you share resources with all of the accounts in the calling account's
+     * organization by specifying the organization ID, or all of the accounts in an organizational unit (OU) by
+     * specifying the OU ID. Until you enable sharing within the organization, you can specify only individual Amazon
+     * Web Services accounts, or for supported resource types, IAM roles and users.
      * </p>
      * <p>
-     * You must call this operation from an IAM user or role in the organization's management account.
+     * You must call this operation from an IAM role or user in the organization's management account.
      * </p>
+     * <p/>
      * 
      * @param enableSharingWithAwsOrganizationRequest
      * @return A Java Future containing the result of the EnableSharingWithAwsOrganization operation returned by the
@@ -347,15 +511,18 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Enables resource sharing within your organization in Organizations. Calling this operation enables RAM to
-     * retrieve information about the organization and its structure. This lets you share resources with all of the
-     * accounts in an organization by specifying the organization's ID, or all of the accounts in an organizational unit
-     * (OU) by specifying the OU's ID. Until you enable sharing within the organization, you can specify only individual
-     * Amazon Web Services accounts, or for supported resource types, IAM users and roles.
+     * Enables resource sharing within your organization in Organizations. This operation creates a service-linked role
+     * called <code>AWSServiceRoleForResourceAccessManager</code> that has the IAM managed policy named
+     * AWSResourceAccessManagerServiceRolePolicy attached. This role permits RAM to retrieve information about the
+     * organization and its structure. This lets you share resources with all of the accounts in the calling account's
+     * organization by specifying the organization ID, or all of the accounts in an organizational unit (OU) by
+     * specifying the OU ID. Until you enable sharing within the organization, you can specify only individual Amazon
+     * Web Services accounts, or for supported resource types, IAM roles and users.
      * </p>
      * <p>
-     * You must call this operation from an IAM user or role in the organization's management account.
+     * You must call this operation from an IAM role or user in the organization's management account.
      * </p>
+     * <p/>
      * 
      * @param enableSharingWithAwsOrganizationRequest
      * @param asyncHandler
@@ -374,7 +541,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the contents of an RAM permission in JSON format.
+     * Retrieves the contents of a managed permission in JSON format.
      * </p>
      * 
      * @param getPermissionRequest
@@ -387,7 +554,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the contents of an RAM permission in JSON format.
+     * Retrieves the contents of a managed permission in JSON format.
      * </p>
      * 
      * @param getPermissionRequest
@@ -436,7 +603,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Retrieves the resource and principal associations for resource shares that you own.
+     * Retrieves the lists of resources and principals that associated for resource shares that you own.
      * </p>
      * 
      * @param getResourceShareAssociationsRequest
@@ -451,7 +618,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Retrieves the resource and principal associations for resource shares that you own.
+     * Retrieves the lists of resources and principals that associated for resource shares that you own.
      * </p>
      * 
      * @param getResourceShareAssociationsRequest
@@ -574,6 +741,41 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
+     * Lists information about the managed permission and its associations to any resource shares that use this managed
+     * permission. This lets you see which resource shares use which versions of the specified managed permission.
+     * </p>
+     * 
+     * @param listPermissionAssociationsRequest
+     * @return A Java Future containing the result of the ListPermissionAssociations operation returned by the service.
+     * @sample AWSRAMAsync.ListPermissionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionAssociationsResult> listPermissionAssociationsAsync(
+            ListPermissionAssociationsRequest listPermissionAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists information about the managed permission and its associations to any resource shares that use this managed
+     * permission. This lets you see which resource shares use which versions of the specified managed permission.
+     * </p>
+     * 
+     * @param listPermissionAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPermissionAssociations operation returned by the service.
+     * @sample AWSRAMAsyncHandler.ListPermissionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPermissionAssociationsResult> listPermissionAssociationsAsync(
+            ListPermissionAssociationsRequest listPermissionAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionAssociationsRequest, ListPermissionAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the available versions of the specified RAM permission.
      * </p>
      * 
@@ -664,6 +866,43 @@ public interface AWSRAMAsync extends AWSRAM {
      */
     java.util.concurrent.Future<ListPrincipalsResult> listPrincipalsAsync(ListPrincipalsRequest listPrincipalsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalsRequest, ListPrincipalsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the current status of the asynchronous tasks performed by RAM when you perform the
+     * <a>ReplacePermissionAssociationsWork</a> operation.
+     * </p>
+     * 
+     * @param listReplacePermissionAssociationsWorkRequest
+     * @return A Java Future containing the result of the ListReplacePermissionAssociationsWork operation returned by
+     *         the service.
+     * @sample AWSRAMAsync.ListReplacePermissionAssociationsWork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReplacePermissionAssociationsWorkResult> listReplacePermissionAssociationsWorkAsync(
+            ListReplacePermissionAssociationsWorkRequest listReplacePermissionAssociationsWorkRequest);
+
+    /**
+     * <p>
+     * Retrieves the current status of the asynchronous tasks performed by RAM when you perform the
+     * <a>ReplacePermissionAssociationsWork</a> operation.
+     * </p>
+     * 
+     * @param listReplacePermissionAssociationsWorkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReplacePermissionAssociationsWork operation returned by
+     *         the service.
+     * @sample AWSRAMAsyncHandler.ListReplacePermissionAssociationsWork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReplacePermissionAssociationsWorkResult> listReplacePermissionAssociationsWorkAsync(
+            ListReplacePermissionAssociationsWorkRequest listReplacePermissionAssociationsWorkRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReplacePermissionAssociationsWorkRequest, ListReplacePermissionAssociationsWorkResult> asyncHandler);
 
     /**
      * <p>
@@ -764,15 +1003,129 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * When you attach a resource-based permission policy to a resource, it automatically creates a resource share.
-     * However, resource shares created this way are visible only to the resource share owner, and the resource share
-     * can't be modified in RAM.
+     * When you attach a resource-based policy to a resource, RAM automatically creates a resource share of
+     * <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed permission that has the same IAM
+     * permissions as the original resource-based policy. However, this type of managed permission is visible to only
+     * the resource share owner, and the associated resource share can't be modified by using RAM.
      * </p>
      * <p>
-     * You can use this operation to promote the resource share to a full RAM resource share. When you promote a
-     * resource share, you can then manage the resource share in RAM and it becomes visible to all of the principals you
-     * shared it with.
+     * This operation creates a separate, fully manageable customer managed permission that has the same IAM permissions
+     * as the original resource-based policy. You can associate this customer managed permission to any resource shares.
      * </p>
+     * <p>
+     * Before you use <a>PromoteResourceShareCreatedFromPolicy</a>, you should first run this operation to ensure that
+     * you have an appropriate customer managed permission that can be associated with the promoted resource share.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The original <code>CREATED_FROM_POLICY</code> policy isn't deleted, and resource shares using that original
+     * policy aren't automatically updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't modify a <code>CREATED_FROM_POLICY</code> resource share so you can't associate the new customer
+     * managed permission by using <code>ReplacePermsissionAssociations</code>. However, if you use
+     * <a>PromoteResourceShareCreatedFromPolicy</a>, that operation automatically associates the fully manageable
+     * customer managed permission to the newly promoted <code>STANDARD</code> resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you promote a resource share, if the original <code>CREATED_FROM_POLICY</code> managed permission has no
+     * other associations to A resource share, then RAM automatically deletes it.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param promotePermissionCreatedFromPolicyRequest
+     * @return A Java Future containing the result of the PromotePermissionCreatedFromPolicy operation returned by the
+     *         service.
+     * @sample AWSRAMAsync.PromotePermissionCreatedFromPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromotePermissionCreatedFromPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PromotePermissionCreatedFromPolicyResult> promotePermissionCreatedFromPolicyAsync(
+            PromotePermissionCreatedFromPolicyRequest promotePermissionCreatedFromPolicyRequest);
+
+    /**
+     * <p>
+     * When you attach a resource-based policy to a resource, RAM automatically creates a resource share of
+     * <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed permission that has the same IAM
+     * permissions as the original resource-based policy. However, this type of managed permission is visible to only
+     * the resource share owner, and the associated resource share can't be modified by using RAM.
+     * </p>
+     * <p>
+     * This operation creates a separate, fully manageable customer managed permission that has the same IAM permissions
+     * as the original resource-based policy. You can associate this customer managed permission to any resource shares.
+     * </p>
+     * <p>
+     * Before you use <a>PromoteResourceShareCreatedFromPolicy</a>, you should first run this operation to ensure that
+     * you have an appropriate customer managed permission that can be associated with the promoted resource share.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The original <code>CREATED_FROM_POLICY</code> policy isn't deleted, and resource shares using that original
+     * policy aren't automatically updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't modify a <code>CREATED_FROM_POLICY</code> resource share so you can't associate the new customer
+     * managed permission by using <code>ReplacePermsissionAssociations</code>. However, if you use
+     * <a>PromoteResourceShareCreatedFromPolicy</a>, that operation automatically associates the fully manageable
+     * customer managed permission to the newly promoted <code>STANDARD</code> resource share.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After you promote a resource share, if the original <code>CREATED_FROM_POLICY</code> managed permission has no
+     * other associations to A resource share, then RAM automatically deletes it.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param promotePermissionCreatedFromPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PromotePermissionCreatedFromPolicy operation returned by the
+     *         service.
+     * @sample AWSRAMAsyncHandler.PromotePermissionCreatedFromPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromotePermissionCreatedFromPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PromotePermissionCreatedFromPolicyResult> promotePermissionCreatedFromPolicyAsync(
+            PromotePermissionCreatedFromPolicyRequest promotePermissionCreatedFromPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PromotePermissionCreatedFromPolicyRequest, PromotePermissionCreatedFromPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * When you attach a resource-based policy to a resource, RAM automatically creates a resource share of
+     * <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed permission that has the same IAM
+     * permissions as the original resource-based policy. However, this type of managed permission is visible to only
+     * the resource share owner, and the associated resource share can't be modified by using RAM.
+     * </p>
+     * <p>
+     * This operation promotes the resource share to a <code>STANDARD</code> resource share that is fully manageable in
+     * RAM. When you promote a resource share, you can then manage the resource share in RAM and it becomes visible to
+     * all of the principals you shared it with.
+     * </p>
+     * <important>
+     * <p>
+     * Before you perform this operation, you should first run <a>PromotePermissionCreatedFromPolicy</a>to ensure that
+     * you have an appropriate customer managed permission that can be associated with this resource share after its is
+     * promoted. If this operation can't find a managed permission that exactly matches the existing
+     * <code>CREATED_FROM_POLICY</code> permission, then this operation fails.
+     * </p>
+     * </important>
      * 
      * @param promoteResourceShareCreatedFromPolicyRequest
      * @return A Java Future containing the result of the PromoteResourceShareCreatedFromPolicy operation returned by
@@ -786,15 +1139,24 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * When you attach a resource-based permission policy to a resource, it automatically creates a resource share.
-     * However, resource shares created this way are visible only to the resource share owner, and the resource share
-     * can't be modified in RAM.
+     * When you attach a resource-based policy to a resource, RAM automatically creates a resource share of
+     * <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed permission that has the same IAM
+     * permissions as the original resource-based policy. However, this type of managed permission is visible to only
+     * the resource share owner, and the associated resource share can't be modified by using RAM.
      * </p>
      * <p>
-     * You can use this operation to promote the resource share to a full RAM resource share. When you promote a
-     * resource share, you can then manage the resource share in RAM and it becomes visible to all of the principals you
-     * shared it with.
+     * This operation promotes the resource share to a <code>STANDARD</code> resource share that is fully manageable in
+     * RAM. When you promote a resource share, you can then manage the resource share in RAM and it becomes visible to
+     * all of the principals you shared it with.
      * </p>
+     * <important>
+     * <p>
+     * Before you perform this operation, you should first run <a>PromotePermissionCreatedFromPolicy</a>to ensure that
+     * you have an appropriate customer managed permission that can be associated with this resource share after its is
+     * promoted. If this operation can't find a managed permission that exactly matches the existing
+     * <code>CREATED_FROM_POLICY</code> permission, then this operation fails.
+     * </p>
+     * </important>
      * 
      * @param promoteResourceShareCreatedFromPolicyRequest
      * @param asyncHandler
@@ -848,8 +1210,119 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Adds the specified tag keys and values to the specified resource share. The tags are attached only to the
-     * resource share, not to the resources that are in the resource share.
+     * Updates all resource shares that use a managed permission to a different managed permission. This operation
+     * always applies the default version of the target managed permission. You can optionally specify that the update
+     * applies to only resource shares that currently use a specified version. This enables you to update to the latest
+     * version, without changing the which managed permission is used.
+     * </p>
+     * <p>
+     * You can use this operation to update all of your resource shares to use the current default version of the
+     * permission by specifying the same value for the <code>fromPermissionArn</code> and <code>toPermissionArn</code>
+     * parameters.
+     * </p>
+     * <p>
+     * You can use the optional <code>fromPermissionVersion</code> parameter to update only those resources that use a
+     * specified version of the managed permission to the new managed permission.
+     * </p>
+     * <important>
+     * <p>
+     * To successfully perform this operation, you must have permission to update the resource-based policy on all
+     * affected resource types.
+     * </p>
+     * </important>
+     * 
+     * @param replacePermissionAssociationsRequest
+     * @return A Java Future containing the result of the ReplacePermissionAssociations operation returned by the
+     *         service.
+     * @sample AWSRAMAsync.ReplacePermissionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ReplacePermissionAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReplacePermissionAssociationsResult> replacePermissionAssociationsAsync(
+            ReplacePermissionAssociationsRequest replacePermissionAssociationsRequest);
+
+    /**
+     * <p>
+     * Updates all resource shares that use a managed permission to a different managed permission. This operation
+     * always applies the default version of the target managed permission. You can optionally specify that the update
+     * applies to only resource shares that currently use a specified version. This enables you to update to the latest
+     * version, without changing the which managed permission is used.
+     * </p>
+     * <p>
+     * You can use this operation to update all of your resource shares to use the current default version of the
+     * permission by specifying the same value for the <code>fromPermissionArn</code> and <code>toPermissionArn</code>
+     * parameters.
+     * </p>
+     * <p>
+     * You can use the optional <code>fromPermissionVersion</code> parameter to update only those resources that use a
+     * specified version of the managed permission to the new managed permission.
+     * </p>
+     * <important>
+     * <p>
+     * To successfully perform this operation, you must have permission to update the resource-based policy on all
+     * affected resource types.
+     * </p>
+     * </important>
+     * 
+     * @param replacePermissionAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplacePermissionAssociations operation returned by the
+     *         service.
+     * @sample AWSRAMAsyncHandler.ReplacePermissionAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ReplacePermissionAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReplacePermissionAssociationsResult> replacePermissionAssociationsAsync(
+            ReplacePermissionAssociationsRequest replacePermissionAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ReplacePermissionAssociationsRequest, ReplacePermissionAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Designates the specified version number as the default version for the specified customer managed permission. New
+     * resource shares automatically use this new default permission. Existing resource shares continue to use their
+     * original permission version, but you can use <a>ReplacePermissionAssociations</a> to update them.
+     * </p>
+     * 
+     * @param setDefaultPermissionVersionRequest
+     * @return A Java Future containing the result of the SetDefaultPermissionVersion operation returned by the service.
+     * @sample AWSRAMAsync.SetDefaultPermissionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/SetDefaultPermissionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetDefaultPermissionVersionResult> setDefaultPermissionVersionAsync(
+            SetDefaultPermissionVersionRequest setDefaultPermissionVersionRequest);
+
+    /**
+     * <p>
+     * Designates the specified version number as the default version for the specified customer managed permission. New
+     * resource shares automatically use this new default permission. Existing resource shares continue to use their
+     * original permission version, but you can use <a>ReplacePermissionAssociations</a> to update them.
+     * </p>
+     * 
+     * @param setDefaultPermissionVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetDefaultPermissionVersion operation returned by the service.
+     * @sample AWSRAMAsyncHandler.SetDefaultPermissionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/SetDefaultPermissionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetDefaultPermissionVersionResult> setDefaultPermissionVersionAsync(
+            SetDefaultPermissionVersionRequest setDefaultPermissionVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPermissionVersionRequest, SetDefaultPermissionVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds the specified tag keys and values to a resource share or managed permission. If you choose a resource share,
+     * the tags are attached to only the resource share, not to the resources that are in the resource share.
+     * </p>
+     * <p>
+     * The tags on a managed permission are the same for all versions of the managed permission.
      * </p>
      * 
      * @param tagResourceRequest
@@ -862,8 +1335,11 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Adds the specified tag keys and values to the specified resource share. The tags are attached only to the
-     * resource share, not to the resources that are in the resource share.
+     * Adds the specified tag keys and values to a resource share or managed permission. If you choose a resource share,
+     * the tags are attached to only the resource share, not to the resources that are in the resource share.
+     * </p>
+     * <p>
+     * The tags on a managed permission are the same for all versions of the managed permission.
      * </p>
      * 
      * @param tagResourceRequest
@@ -881,7 +1357,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Removes the specified tag key and value pairs from the specified resource share.
+     * Removes the specified tag key and value pairs from the specified resource share or managed permission.
      * </p>
      * 
      * @param untagResourceRequest
@@ -894,7 +1370,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Removes the specified tag key and value pairs from the specified resource share.
+     * Removes the specified tag key and value pairs from the specified resource share or managed permission.
      * </p>
      * 
      * @param untagResourceRequest

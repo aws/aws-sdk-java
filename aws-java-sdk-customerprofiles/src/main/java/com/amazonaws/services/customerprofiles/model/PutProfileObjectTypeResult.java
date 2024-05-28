@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -742,7 +742,7 @@ public class PutProfileObjectTypeResult extends com.amazonaws.AmazonWebServiceRe
         if (getObjectTypeName() != null)
             sb.append("ObjectTypeName: ").append(getObjectTypeName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getTemplateId() != null)
             sb.append("TemplateId: ").append(getTemplateId()).append(",");
         if (getExpirationDays() != null)
@@ -754,9 +754,9 @@ public class PutProfileObjectTypeResult extends com.amazonaws.AmazonWebServiceRe
         if (getSourceLastUpdatedTimestampFormat() != null)
             sb.append("SourceLastUpdatedTimestampFormat: ").append(getSourceLastUpdatedTimestampFormat()).append(",");
         if (getFields() != null)
-            sb.append("Fields: ").append(getFields()).append(",");
+            sb.append("Fields: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeys() != null)
-            sb.append("Keys: ").append(getKeys()).append(",");
+            sb.append("Keys: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastUpdatedAt() != null)

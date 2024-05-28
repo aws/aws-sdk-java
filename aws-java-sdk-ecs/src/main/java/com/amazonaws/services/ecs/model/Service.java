@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details on a service within a cluster
+ * Details on a service within a cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Service" target="_top">AWS API Documentation</a>
@@ -309,8 +309,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String propagateTags;
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     * execute command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the
+     * execute command functionality is turned on for all containers in tasks as part of the service.
      * </p>
      */
     private Boolean enableExecuteCommand;
@@ -2640,13 +2640,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     * execute command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the
+     * execute command functionality is turned on for all containers in tasks as part of the service.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     *        execute command functionality is enabled for all containers in tasks as part of the service.
+     *        Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
+     *        the execute command functionality is turned on for all containers in tasks as part of the service.
      */
 
     public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
@@ -2655,12 +2655,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     * execute command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the
+     * execute command functionality is turned on for all containers in tasks as part of the service.
      * </p>
      * 
-     * @return Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
-     *         the execute command functionality is enabled for all containers in tasks as part of the service.
+     * @return Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
+     *         the execute command functionality is turned on for all containers in tasks as part of the service.
      */
 
     public Boolean getEnableExecuteCommand() {
@@ -2669,13 +2669,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     * execute command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the
+     * execute command functionality is turned on for all containers in tasks as part of the service.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     *        execute command functionality is enabled for all containers in tasks as part of the service.
+     *        Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
+     *        the execute command functionality is turned on for all containers in tasks as part of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2686,12 +2686,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, the
-     * execute command functionality is enabled for all containers in tasks as part of the service.
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the
+     * execute command functionality is turned on for all containers in tasks as part of the service.
      * </p>
      * 
-     * @return Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
-     *         the execute command functionality is enabled for all containers in tasks as part of the service.
+     * @return Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
+     *         the execute command functionality is turned on for all containers in tasks as part of the service.
      */
 
     public Boolean isEnableExecuteCommand() {

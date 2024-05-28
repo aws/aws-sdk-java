@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListServicePipelineOutputsRequestMarshaller {
 
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class ListServicePipelineOutputsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listServicePipelineOutputsRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(listServicePipelineOutputsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listServicePipelineOutputsRequest.getServiceName(), SERVICENAME_BINDING);
         } catch (Exception e) {

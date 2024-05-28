@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.connect.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -53,8 +55,26 @@ public class ContactMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisconnectTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTPAUSEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastPausedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTRESUMEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastResumedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Integer> TOTALPAUSECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalPauseCount").build();
+    private static final MarshallingInfo<Integer> TOTALPAUSEDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalPauseDurationInSeconds").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduledTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RELATEDCONTACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedContactId").build();
+    private static final MarshallingInfo<StructuredPojo> WISDOMINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WisdomInfo").build();
+    private static final MarshallingInfo<Integer> QUEUETIMEADJUSTMENTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueueTimeAdjustmentSeconds").build();
+    private static final MarshallingInfo<Long> QUEUEPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueuePriority").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ContactMarshaller instance = new ContactMarshaller();
 
@@ -85,7 +105,16 @@ public class ContactMarshaller {
             protocolMarshaller.marshall(contact.getInitiationTimestamp(), INITIATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(contact.getDisconnectTimestamp(), DISCONNECTTIMESTAMP_BINDING);
             protocolMarshaller.marshall(contact.getLastUpdateTimestamp(), LASTUPDATETIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getLastPausedTimestamp(), LASTPAUSEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getLastResumedTimestamp(), LASTRESUMEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getTotalPauseCount(), TOTALPAUSECOUNT_BINDING);
+            protocolMarshaller.marshall(contact.getTotalPauseDurationInSeconds(), TOTALPAUSEDURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(contact.getScheduledTimestamp(), SCHEDULEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getRelatedContactId(), RELATEDCONTACTID_BINDING);
+            protocolMarshaller.marshall(contact.getWisdomInfo(), WISDOMINFO_BINDING);
+            protocolMarshaller.marshall(contact.getQueueTimeAdjustmentSeconds(), QUEUETIMEADJUSTMENTSECONDS_BINDING);
+            protocolMarshaller.marshall(contact.getQueuePriority(), QUEUEPRIORITY_BINDING);
+            protocolMarshaller.marshall(contact.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

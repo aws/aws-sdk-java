@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the specified
+     * maximum session duration.
+     * </p>
+     * </note>
      */
     private Integer maxSessionDuration;
 
@@ -152,6 +158,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the specified
+     * maximum session duration.
+     * </p>
+     * </note>
      * 
      * @param maxSessionDuration
      *        The maximum session duration (in seconds) that you want to set for the specified role. If you do not
@@ -167,6 +179,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        operations but does not apply when you use those operations to create a console URL. For more information,
      *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in
      *        the <i>IAM User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the
+     *        specified maximum session duration.
+     *        </p>
      */
 
     public void setMaxSessionDuration(Integer maxSessionDuration) {
@@ -189,6 +207,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the specified
+     * maximum session duration.
+     * </p>
+     * </note>
      * 
      * @return The maximum session duration (in seconds) that you want to set for the specified role. If you do not
      *         specify a value for this setting, the default value of one hour is applied. This setting can have a value
@@ -203,6 +227,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
      *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
      *         roles</a> in the <i>IAM User Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the
+     *         specified maximum session duration.
+     *         </p>
      */
 
     public Integer getMaxSessionDuration() {
@@ -225,6 +255,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM roles</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the specified
+     * maximum session duration.
+     * </p>
+     * </note>
      * 
      * @param maxSessionDuration
      *        The maximum session duration (in seconds) that you want to set for the specified role. If you do not
@@ -240,6 +276,12 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        operations but does not apply when you use those operations to create a console URL. For more information,
      *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in
      *        the <i>IAM User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the
+     *        specified maximum session duration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

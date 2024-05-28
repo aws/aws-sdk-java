@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,14 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
                 if (context.testExpression("attribute", targetDepth)) {
                     context.nextToken();
                     node.setAttribute(AttributeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("struct", targetDepth)) {
+                    context.nextToken();
+                    node.setStruct(CustomStructJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("property", targetDepth)) {
+                    context.nextToken();
+                    node.setProperty(CustomPropertyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

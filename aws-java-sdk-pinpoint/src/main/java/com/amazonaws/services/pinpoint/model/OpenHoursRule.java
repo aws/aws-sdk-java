@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * List of OpenHours Rules.
+ * Specifies the start and end time for OpenHours.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/OpenHoursRule" target="_top">AWS API
@@ -30,24 +30,24 @@ public class OpenHoursRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      * </p>
      */
     private String startTime;
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      * </p>
      */
     private String endTime;
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      * </p>
      * 
      * @param startTime
-     *        Local start time in ISO 8601 format.
+     *        The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      */
 
     public void setStartTime(String startTime) {
@@ -56,10 +56,10 @@ public class OpenHoursRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      * </p>
      * 
-     * @return Local start time in ISO 8601 format.
+     * @return The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      */
 
     public String getStartTime() {
@@ -68,11 +68,11 @@ public class OpenHoursRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      * </p>
      * 
      * @param startTime
-     *        Local start time in ISO 8601 format.
+     *        The start of the scheduled time, in ISO 8601 format, when the channel can send messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class OpenHoursRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      * </p>
      * 
      * @param endTime
-     *        Local start time in ISO 8601 format.
+     *        The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      */
 
     public void setEndTime(String endTime) {
@@ -96,10 +96,10 @@ public class OpenHoursRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      * </p>
      * 
-     * @return Local start time in ISO 8601 format.
+     * @return The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      */
 
     public String getEndTime() {
@@ -108,11 +108,11 @@ public class OpenHoursRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Local start time in ISO 8601 format.
+     * The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      * </p>
      * 
      * @param endTime
-     *        Local start time in ISO 8601 format.
+     *        The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

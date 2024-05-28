@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,17 +37,17 @@ public class ComponentEvent implements Serializable, Cloneable, StructuredPojo {
     private String action;
     /**
      * <p>
+     * Describes information about the action.
+     * </p>
+     */
+    private ActionParameters parameters;
+    /**
+     * <p>
      * Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called
      * when the action is performed.
      * </p>
      */
     private String bindingEvent;
-    /**
-     * <p>
-     * Describes information about the action.
-     * </p>
-     */
-    private ActionParameters parameters;
 
     /**
      * <p>
@@ -86,6 +86,46 @@ public class ComponentEvent implements Serializable, Cloneable, StructuredPojo {
 
     public ComponentEvent withAction(String action) {
         setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes information about the action.
+     * </p>
+     * 
+     * @param parameters
+     *        Describes information about the action.
+     */
+
+    public void setParameters(ActionParameters parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * Describes information about the action.
+     * </p>
+     * 
+     * @return Describes information about the action.
+     */
+
+    public ActionParameters getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * <p>
+     * Describes information about the action.
+     * </p>
+     * 
+     * @param parameters
+     *        Describes information about the action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentEvent withParameters(ActionParameters parameters) {
+        setParameters(parameters);
         return this;
     }
 
@@ -136,46 +176,6 @@ public class ComponentEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * Describes information about the action.
-     * </p>
-     * 
-     * @param parameters
-     *        Describes information about the action.
-     */
-
-    public void setParameters(ActionParameters parameters) {
-        this.parameters = parameters;
-    }
-
-    /**
-     * <p>
-     * Describes information about the action.
-     * </p>
-     * 
-     * @return Describes information about the action.
-     */
-
-    public ActionParameters getParameters() {
-        return this.parameters;
-    }
-
-    /**
-     * <p>
-     * Describes information about the action.
-     * </p>
-     * 
-     * @param parameters
-     *        Describes information about the action.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentEvent withParameters(ActionParameters parameters) {
-        setParameters(parameters);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -189,10 +189,10 @@ public class ComponentEvent implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
-        if (getBindingEvent() != null)
-            sb.append("BindingEvent: ").append(getBindingEvent()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters());
+            sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getBindingEvent() != null)
+            sb.append("BindingEvent: ").append(getBindingEvent());
         sb.append("}");
         return sb.toString();
     }
@@ -211,13 +211,13 @@ public class ComponentEvent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
-        if (other.getBindingEvent() == null ^ this.getBindingEvent() == null)
-            return false;
-        if (other.getBindingEvent() != null && other.getBindingEvent().equals(this.getBindingEvent()) == false)
-            return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
+        if (other.getBindingEvent() == null ^ this.getBindingEvent() == null)
+            return false;
+        if (other.getBindingEvent() != null && other.getBindingEvent().equals(this.getBindingEvent()) == false)
             return false;
         return true;
     }
@@ -228,8 +228,8 @@ public class ComponentEvent implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
-        hashCode = prime * hashCode + ((getBindingEvent() == null) ? 0 : getBindingEvent().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getBindingEvent() == null) ? 0 : getBindingEvent().hashCode());
         return hashCode;
     }
 

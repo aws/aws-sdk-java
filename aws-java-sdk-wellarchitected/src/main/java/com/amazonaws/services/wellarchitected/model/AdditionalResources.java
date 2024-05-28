@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The choice level additional resources.
+ * The choice level additional resources for a custom lens.
+ * </p>
+ * <p>
+ * This field does not apply to Amazon Web Services official lenses.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AdditionalResources"
@@ -30,25 +33,25 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Type of additional resource.
+     * Type of additional resource for a custom lens.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can
-     * be specified.
+     * The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five
+     * additional URLs can be specified.
      * </p>
      */
     private java.util.List<ChoiceContent> content;
 
     /**
      * <p>
-     * Type of additional resource.
+     * Type of additional resource for a custom lens.
      * </p>
      * 
      * @param type
-     *        Type of additional resource.
+     *        Type of additional resource for a custom lens.
      * @see AdditionalResourceType
      */
 
@@ -58,10 +61,10 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Type of additional resource.
+     * Type of additional resource for a custom lens.
      * </p>
      * 
-     * @return Type of additional resource.
+     * @return Type of additional resource for a custom lens.
      * @see AdditionalResourceType
      */
 
@@ -71,11 +74,11 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Type of additional resource.
+     * Type of additional resource for a custom lens.
      * </p>
      * 
      * @param type
-     *        Type of additional resource.
+     *        Type of additional resource for a custom lens.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalResourceType
      */
@@ -87,11 +90,11 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Type of additional resource.
+     * Type of additional resource for a custom lens.
      * </p>
      * 
      * @param type
-     *        Type of additional resource.
+     *        Type of additional resource for a custom lens.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalResourceType
      */
@@ -103,12 +106,12 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can
-     * be specified.
+     * The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five
+     * additional URLs can be specified.
      * </p>
      * 
-     * @return The URLs for additional resources, either helpful resources or improvement plans. Up to five additional
-     *         URLs can be specified.
+     * @return The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up
+     *         to five additional URLs can be specified.
      */
 
     public java.util.List<ChoiceContent> getContent() {
@@ -117,13 +120,13 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can
-     * be specified.
+     * The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five
+     * additional URLs can be specified.
      * </p>
      * 
      * @param content
-     *        The URLs for additional resources, either helpful resources or improvement plans. Up to five additional
-     *        URLs can be specified.
+     *        The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to
+     *        five additional URLs can be specified.
      */
 
     public void setContent(java.util.Collection<ChoiceContent> content) {
@@ -137,8 +140,8 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can
-     * be specified.
+     * The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five
+     * additional URLs can be specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,8 +150,8 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param content
-     *        The URLs for additional resources, either helpful resources or improvement plans. Up to five additional
-     *        URLs can be specified.
+     *        The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to
+     *        five additional URLs can be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,13 +167,13 @@ public class AdditionalResources implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The URLs for additional resources, either helpful resources or improvement plans. Up to five additional URLs can
-     * be specified.
+     * The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five
+     * additional URLs can be specified.
      * </p>
      * 
      * @param content
-     *        The URLs for additional resources, either helpful resources or improvement plans. Up to five additional
-     *        URLs can be specified.
+     *        The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to
+     *        five additional URLs can be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

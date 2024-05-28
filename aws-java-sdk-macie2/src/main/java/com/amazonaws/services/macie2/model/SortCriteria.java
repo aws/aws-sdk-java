@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,9 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines for a finding.
+     * The name of the property to sort the results by. Valid values are: count, createdAt,
+     * policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen, resourcesAffected,
+     * severity.score, type, and updatedAt.
      * </p>
      */
     private String attributeName;
@@ -46,13 +47,15 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines for a finding.
+     * The name of the property to sort the results by. Valid values are: count, createdAt,
+     * policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen, resourcesAffected,
+     * severity.score, type, and updatedAt.
      * </p>
      * 
      * @param attributeName
-     *        The name of the property to sort the results by. This value can be the name of any property that Amazon
-     *        Macie defines for a finding.
+     *        The name of the property to sort the results by. Valid values are: count, createdAt,
+     *        policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen,
+     *        resourcesAffected, severity.score, type, and updatedAt.
      */
 
     public void setAttributeName(String attributeName) {
@@ -61,12 +64,14 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines for a finding.
+     * The name of the property to sort the results by. Valid values are: count, createdAt,
+     * policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen, resourcesAffected,
+     * severity.score, type, and updatedAt.
      * </p>
      * 
-     * @return The name of the property to sort the results by. This value can be the name of any property that Amazon
-     *         Macie defines for a finding.
+     * @return The name of the property to sort the results by. Valid values are: count, createdAt,
+     *         policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen,
+     *         resourcesAffected, severity.score, type, and updatedAt.
      */
 
     public String getAttributeName() {
@@ -75,13 +80,15 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the property to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines for a finding.
+     * The name of the property to sort the results by. Valid values are: count, createdAt,
+     * policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen, resourcesAffected,
+     * severity.score, type, and updatedAt.
      * </p>
      * 
      * @param attributeName
-     *        The name of the property to sort the results by. This value can be the name of any property that Amazon
-     *        Macie defines for a finding.
+     *        The name of the property to sort the results by. Valid values are: count, createdAt,
+     *        policyDetails.action.apiCallDetails.firstSeen, policyDetails.action.apiCallDetails.lastSeen,
+     *        resourcesAffected, severity.score, type, and updatedAt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

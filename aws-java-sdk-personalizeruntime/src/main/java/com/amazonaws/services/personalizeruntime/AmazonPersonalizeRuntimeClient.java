@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.personalizeruntime.AmazonPersonalizeRuntimeClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.personalizeruntime.model.*;
+
 import com.amazonaws.services.personalizeruntime.model.transform.*;
 
 /**
@@ -127,6 +128,76 @@ public class AmazonPersonalizeRuntimeClient extends AmazonWebServiceClient imple
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/personalizeruntime/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/personalizeruntime/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Returns a list of recommended actions in sorted in descending order by prediction score. Use the
+     * <code>GetActionRecommendations</code> API if you have a custom campaign that deploys a solution version trained
+     * with a PERSONALIZED_ACTIONS recipe.
+     * </p>
+     * <p>
+     * For more information about PERSONALIZED_ACTIONS recipes, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/nexts-best-action-recipes.html">PERSONALIZED_ACTIONS
+     * recipes</a>. For more information about getting action recommendations, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/get-action-recommendations.html">Getting action
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param getActionRecommendationsRequest
+     * @return Result of the GetActionRecommendations operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonPersonalizeRuntime.GetActionRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/GetActionRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetActionRecommendationsResult getActionRecommendations(GetActionRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetActionRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final GetActionRecommendationsResult executeGetActionRecommendations(GetActionRecommendationsRequest getActionRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getActionRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetActionRecommendationsRequest> request = null;
+        Response<GetActionRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetActionRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getActionRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize Runtime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetActionRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetActionRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetActionRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

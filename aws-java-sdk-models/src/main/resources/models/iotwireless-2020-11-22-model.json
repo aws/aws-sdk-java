@@ -308,7 +308,7 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Provisions a wireless gateway.</p>"
+      "documentation":"<p>Provisions a wireless gateway.</p> <note> <p>When provisioning a wireless gateway, you might run into duplication errors for the following reasons.</p> <ul> <li> <p>If you specify a <code>GatewayEui</code> value that already exists.</p> </li> <li> <p>If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.</p> </li> </ul> <p>To avoid this error, make sure that you use unique identifiers and parameters for each request within the specified time period.</p> </note>"
     },
     "CreateWirelessGatewayTask":{
       "name":"CreateWirelessGatewayTask",
@@ -497,6 +497,25 @@
       ],
       "documentation":"<p>Deletes a wireless device.</p>"
     },
+    "DeleteWirelessDeviceImportTask":{
+      "name":"DeleteWirelessDeviceImportTask",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/wireless_device_import_task/{Id}",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteWirelessDeviceImportTaskRequest"},
+      "output":{"shape":"DeleteWirelessDeviceImportTaskResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Delete an import task.</p>"
+    },
     "DeleteWirelessGateway":{
       "name":"DeleteWirelessGateway",
       "http":{
@@ -513,7 +532,7 @@
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Deletes a wireless gateway.</p>"
+      "documentation":"<p>Deletes a wireless gateway.</p> <note> <p>When deleting a wireless gateway, you might run into duplication errors for the following reasons.</p> <ul> <li> <p>If you specify a <code>GatewayEui</code> value that already exists.</p> </li> <li> <p>If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.</p> </li> </ul> <p>To avoid this error, make sure that you use unique identifiers and parameters for each request within the specified time period.</p> </note>"
     },
     "DeleteWirelessGatewayTask":{
       "name":"DeleteWirelessGatewayTask",
@@ -550,6 +569,22 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.</p>"
+    },
+    "DeregisterWirelessDevice":{
+      "name":"DeregisterWirelessDevice",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/wireless-devices/{Identifier}/deregister"
+      },
+      "input":{"shape":"DeregisterWirelessDeviceRequest"},
+      "output":{"shape":"DeregisterWirelessDeviceResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Deregister a wireless device from AWS IoT Wireless.</p>"
     },
     "DisassociateAwsAccountFromPartnerAccount":{
       "name":"DisassociateAwsAccountFromPartnerAccount",
@@ -763,6 +798,43 @@
       ],
       "documentation":"<p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options.</p>"
     },
+    "GetMetricConfiguration":{
+      "name":"GetMetricConfiguration",
+      "http":{
+        "method":"GET",
+        "requestUri":"/metric-configuration",
+        "responseCode":200
+      },
+      "input":{"shape":"GetMetricConfigurationRequest"},
+      "output":{"shape":"GetMetricConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Get the metric configuration status for this AWS account.</p>"
+    },
+    "GetMetrics":{
+      "name":"GetMetrics",
+      "http":{
+        "method":"POST",
+        "requestUri":"/metrics"
+      },
+      "input":{"shape":"GetMetricsRequest"},
+      "output":{"shape":"GetMetricsResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Get the summary metrics for this AWS account.</p>"
+    },
     "GetMulticastGroup":{
       "name":"GetMulticastGroup",
       "http":{
@@ -846,7 +918,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Get the position information for a given resource.</p>"
+      "documentation":"<p>Get the position information for a given resource.</p> <important> <p>This action is no longer supported. Calls to retrieve the position information should use the <a href=\"https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html\">GetResourcePosition</a> API operation instead.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "GetPositionConfiguration":{
       "name":"GetPositionConfiguration",
@@ -864,7 +938,26 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Get position configuration for a given resource.</p>"
+      "documentation":"<p>Get position configuration for a given resource.</p> <important> <p>This action is no longer supported. Calls to retrieve the position configuration should use the <a href=\"https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html\">GetResourcePosition</a> API operation instead.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
+    },
+    "GetPositionEstimate":{
+      "name":"GetPositionEstimate",
+      "http":{
+        "method":"POST",
+        "requestUri":"/position-estimate"
+      },
+      "input":{"shape":"GetPositionEstimateRequest"},
+      "output":{"shape":"GetPositionEstimateResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using solvers that are provided by third-party vendors.</p>"
     },
     "GetResourceEventConfiguration":{
       "name":"GetResourceEventConfiguration",
@@ -900,6 +993,23 @@
         {"shape":"ValidationException"}
       ],
       "documentation":"<p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>"
+    },
+    "GetResourcePosition":{
+      "name":"GetResourcePosition",
+      "http":{
+        "method":"GET",
+        "requestUri":"/resource-positions/{ResourceIdentifier}"
+      },
+      "input":{"shape":"GetResourcePositionRequest"},
+      "output":{"shape":"GetResourcePositionResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Get the position information for a given wireless device or a wireless gateway resource. The position information uses the <a href=\"https://gisgeography.com/wgs84-world-geodetic-system/\"> World Geodetic System (WGS84)</a>.</p>"
     },
     "GetServiceEndpoint":{
       "name":"GetServiceEndpoint",
@@ -950,6 +1060,24 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Gets information about a wireless device.</p>"
+    },
+    "GetWirelessDeviceImportTask":{
+      "name":"GetWirelessDeviceImportTask",
+      "http":{
+        "method":"GET",
+        "requestUri":"/wireless_device_import_task/{Id}"
+      },
+      "input":{"shape":"GetWirelessDeviceImportTaskRequest"},
+      "output":{"shape":"GetWirelessDeviceImportTaskResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Get information about an import task and count of device onboarding summary information for the import task.</p>"
     },
     "GetWirelessDeviceStatistics":{
       "name":"GetWirelessDeviceStatistics",
@@ -1104,6 +1232,24 @@
       ],
       "documentation":"<p>Lists the device profiles registered to your AWS account.</p>"
     },
+    "ListDevicesForWirelessDeviceImportTask":{
+      "name":"ListDevicesForWirelessDeviceImportTask",
+      "http":{
+        "method":"GET",
+        "requestUri":"/wireless_device_import_task"
+      },
+      "input":{"shape":"ListDevicesForWirelessDeviceImportTaskRequest"},
+      "output":{"shape":"ListDevicesForWirelessDeviceImportTaskResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>List the Sidewalk devices in an import task and their onboarding status.</p>"
+    },
     "ListEventConfigurations":{
       "name":"ListEventConfigurations",
       "http":{
@@ -1216,7 +1362,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>List position configurations for a given resource, such as positioning solvers.</p>"
+      "documentation":"<p>List position configurations for a given resource, such as positioning solvers.</p> <important> <p>This action is no longer supported. Calls to retrieve position information should use the <a href=\"https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html\">GetResourcePosition</a> API operation instead.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "ListQueuedMessages":{
       "name":"ListQueuedMessages",
@@ -1267,6 +1415,24 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists the tags (metadata) you have assigned to the resource.</p>"
+    },
+    "ListWirelessDeviceImportTasks":{
+      "name":"ListWirelessDeviceImportTasks",
+      "http":{
+        "method":"GET",
+        "requestUri":"/wireless_device_import_tasks"
+      },
+      "input":{"shape":"ListWirelessDeviceImportTasksRequest"},
+      "output":{"shape":"ListWirelessDeviceImportTasksResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>List wireless devices that have been added to an import task.</p>"
     },
     "ListWirelessDevices":{
       "name":"ListWirelessDevices",
@@ -1332,7 +1498,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Put position configuration for a given resource.</p>"
+      "documentation":"<p>Put position configuration for a given resource.</p> <important> <p>This action is no longer supported. Calls to update the position configuration should use the <a href=\"https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html\">UpdateResourcePosition</a> API operation instead.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "PutResourceLogLevel":{
       "name":"PutResourceLogLevel",
@@ -1498,6 +1666,44 @@
       ],
       "documentation":"<p>Starts a multicast group session.</p>"
     },
+    "StartSingleWirelessDeviceImportTask":{
+      "name":"StartSingleWirelessDeviceImportTask",
+      "http":{
+        "method":"POST",
+        "requestUri":"/wireless_single_device_import_task",
+        "responseCode":201
+      },
+      "input":{"shape":"StartSingleWirelessDeviceImportTaskRequest"},
+      "output":{"shape":"StartSingleWirelessDeviceImportTaskResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Start import task for a single wireless device.</p>"
+    },
+    "StartWirelessDeviceImportTask":{
+      "name":"StartWirelessDeviceImportTask",
+      "http":{
+        "method":"POST",
+        "requestUri":"/wireless_device_import_task",
+        "responseCode":201
+      },
+      "input":{"shape":"StartWirelessDeviceImportTaskRequest"},
+      "output":{"shape":"StartWirelessDeviceImportTaskResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.</p>"
+    },
     "TagResource":{
       "name":"TagResource",
       "http":{
@@ -1625,6 +1831,26 @@
       ],
       "documentation":"<p>Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>"
     },
+    "UpdateMetricConfiguration":{
+      "name":"UpdateMetricConfiguration",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/metric-configuration",
+        "responseCode":204
+      },
+      "input":{"shape":"UpdateMetricConfigurationRequest"},
+      "output":{"shape":"UpdateMetricConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Update the summary metric configuration.</p>",
+      "idempotent":true
+    },
     "UpdateMulticastGroup":{
       "name":"UpdateMulticastGroup",
       "http":{
@@ -1695,7 +1921,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Update the position information of a resource.</p>"
+      "documentation":"<p>Update the position information of a resource.</p> <important> <p>This action is no longer supported. Calls to update the position information should use the <a href=\"https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html\">UpdateResourcePosition</a> API operation instead.</p> </important>",
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "UpdateResourceEventConfiguration":{
       "name":"UpdateResourceEventConfiguration",
@@ -1716,6 +1944,24 @@
       ],
       "documentation":"<p>Update the event configuration for a particular resource identifier.</p>"
     },
+    "UpdateResourcePosition":{
+      "name":"UpdateResourcePosition",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/resource-positions/{ResourceIdentifier}",
+        "responseCode":204
+      },
+      "input":{"shape":"UpdateResourcePositionRequest"},
+      "output":{"shape":"UpdateResourcePositionResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Update the position information of a given wireless device or a wireless gateway resource. The position coordinates are based on the <a href=\"https://gisgeography.com/wgs84-world-geodetic-system/\"> World Geodetic System (WGS84)</a>.</p>"
+    },
     "UpdateWirelessDevice":{
       "name":"UpdateWirelessDevice",
       "http":{
@@ -1733,6 +1979,25 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates properties of a wireless device.</p>"
+    },
+    "UpdateWirelessDeviceImportTask":{
+      "name":"UpdateWirelessDeviceImportTask",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/wireless_device_import_task/{Id}",
+        "responseCode":204
+      },
+      "input":{"shape":"UpdateWirelessDeviceImportTaskRequest"},
+      "output":{"shape":"UpdateWirelessDeviceImportTaskResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"}
+      ],
+      "documentation":"<p>Update an import task to add more devices to the task.</p>"
     },
     "UpdateWirelessGateway":{
       "name":"UpdateWirelessGateway",
@@ -1805,11 +2070,11 @@
       "members":{
         "HorizontalAccuracy":{
           "shape":"HorizontalAccuracy",
-          "documentation":"<p>The horizontal accuracy of the estimated position in meters.</p>"
+          "documentation":"<p>The horizontal accuracy of the estimated position, which is the difference between the estimated location and the actual device location.</p>"
         },
         "VerticalAccuracy":{
           "shape":"VerticalAccuracy",
-          "documentation":"<p>The vertical accuracy of the estimated position in meters.</p>"
+          "documentation":"<p>The vertical accuracy of the estimated position, which is the difference between the estimated altitude and actual device latitude in meters.</p>"
         }
       },
       "documentation":"<p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>"
@@ -1820,6 +2085,14 @@
       "min":0
     },
     "AddGwMetadata":{"type":"boolean"},
+    "AggregationPeriod":{
+      "type":"string",
+      "enum":[
+        "OneHour",
+        "OneDay",
+        "OneWeek"
+      ]
+    },
     "AmazonId":{
       "type":"string",
       "documentation":"<p>The Sidewalk Amazon ID.</p>",
@@ -1829,6 +2102,10 @@
       "type":"string",
       "max":1011,
       "min":1
+    },
+    "ApId":{
+      "type":"string",
+      "max":256
     },
     "AppEui":{
       "type":"string",
@@ -1849,6 +2126,42 @@
       "pattern":"[a-fA-F0-9]{64}",
       "sensitive":true
     },
+    "ApplicationConfig":{
+      "type":"structure",
+      "members":{
+        "FPort":{"shape":"FPort"},
+        "Type":{
+          "shape":"ApplicationConfigType",
+          "documentation":"<p>Application type, which can be specified to obtain real-time position information of your LoRaWAN device.</p>"
+        },
+        "DestinationName":{
+          "shape":"DestinationName",
+          "documentation":"<p>The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>"
+        }
+      },
+      "documentation":"<p>LoRaWAN application configuration, which can be used to perform geolocation.</p>"
+    },
+    "ApplicationConfigType":{
+      "type":"string",
+      "enum":["SemtechGeolocation"]
+    },
+    "ApplicationServerPublicKey":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "pattern":"[a-fA-F0-9]{64}",
+      "sensitive":true
+    },
+    "Applications":{
+      "type":"list",
+      "member":{"shape":"ApplicationConfig"}
+    },
+    "AssistPosition":{
+      "type":"list",
+      "member":{"shape":"Coordinate"},
+      "max":2,
+      "min":2
+    },
     "AssociateAwsAccountWithPartnerAccountRequest":{
       "type":"structure",
       "required":["Sidewalk"],
@@ -1859,7 +2172,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         },
         "Tags":{
@@ -2018,6 +2331,32 @@
       }
     },
     "AutoCreateTasks":{"type":"boolean"},
+    "Avg":{"type":"double"},
+    "BCCH":{
+      "type":"integer",
+      "max":1023,
+      "min":0
+    },
+    "BSIC":{
+      "type":"integer",
+      "max":63,
+      "min":0
+    },
+    "BaseLat":{
+      "type":"float",
+      "max":90,
+      "min":-90
+    },
+    "BaseLng":{
+      "type":"float",
+      "max":180,
+      "min":-180
+    },
+    "BaseStationId":{
+      "type":"integer",
+      "max":65535,
+      "min":0
+    },
     "BatteryLevel":{
       "type":"string",
       "documentation":"<p>Sidewalk device battery level.</p>",
@@ -2073,6 +2412,146 @@
       "members":{
       }
     },
+    "CaptureTimeAccuracy":{"type":"float"},
+    "CdmaChannel":{
+      "type":"integer",
+      "max":4095,
+      "min":0
+    },
+    "CdmaList":{
+      "type":"list",
+      "member":{"shape":"CdmaObj"},
+      "max":16,
+      "min":1
+    },
+    "CdmaLocalId":{
+      "type":"structure",
+      "required":[
+        "PnOffset",
+        "CdmaChannel"
+      ],
+      "members":{
+        "PnOffset":{
+          "shape":"PnOffset",
+          "documentation":"<p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>"
+        },
+        "CdmaChannel":{
+          "shape":"CdmaChannel",
+          "documentation":"<p>CDMA channel information.</p>"
+        }
+      },
+      "documentation":"<p>CDMA local ID information, which corresponds to the local identification parameters of a CDMA cell.</p>"
+    },
+    "CdmaNmrList":{
+      "type":"list",
+      "member":{"shape":"CdmaNmrObj"},
+      "max":32,
+      "min":1
+    },
+    "CdmaNmrObj":{
+      "type":"structure",
+      "required":[
+        "PnOffset",
+        "CdmaChannel"
+      ],
+      "members":{
+        "PnOffset":{
+          "shape":"PnOffset",
+          "documentation":"<p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>"
+        },
+        "CdmaChannel":{
+          "shape":"CdmaChannel",
+          "documentation":"<p>CDMA channel information.</p>"
+        },
+        "PilotPower":{
+          "shape":"PilotPower",
+          "documentation":"<p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>"
+        },
+        "BaseStationId":{
+          "shape":"BaseStationId",
+          "documentation":"<p>CDMA base station ID (BSID).</p>"
+        }
+      },
+      "documentation":"<p>CDMA object for network measurement reports.</p>"
+    },
+    "CdmaObj":{
+      "type":"structure",
+      "required":[
+        "SystemId",
+        "NetworkId",
+        "BaseStationId"
+      ],
+      "members":{
+        "SystemId":{
+          "shape":"SystemId",
+          "documentation":"<p>CDMA system ID (SID).</p>"
+        },
+        "NetworkId":{
+          "shape":"NetworkId",
+          "documentation":"<p>CDMA network ID (NID).</p>"
+        },
+        "BaseStationId":{
+          "shape":"BaseStationId",
+          "documentation":"<p>CDMA base station ID (BSID).</p>"
+        },
+        "RegistrationZone":{
+          "shape":"RegistrationZone",
+          "documentation":"<p>CDMA registration zone (RZ).</p>"
+        },
+        "CdmaLocalId":{
+          "shape":"CdmaLocalId",
+          "documentation":"<p>CDMA local identification (local ID) parameters.</p>"
+        },
+        "PilotPower":{
+          "shape":"PilotPower",
+          "documentation":"<p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>"
+        },
+        "BaseLat":{
+          "shape":"BaseLat",
+          "documentation":"<p>CDMA base station latitude in degrees.</p>"
+        },
+        "BaseLng":{
+          "shape":"BaseLng",
+          "documentation":"<p>CDMA base station longitude in degrees.</p>"
+        },
+        "CdmaNmr":{
+          "shape":"CdmaNmrList",
+          "documentation":"<p>CDMA network measurement reports.</p>"
+        }
+      },
+      "documentation":"<p>CDMA (Code-division multiple access) object.</p>"
+    },
+    "CellParams":{
+      "type":"integer",
+      "max":127,
+      "min":0
+    },
+    "CellTowers":{
+      "type":"structure",
+      "members":{
+        "Gsm":{
+          "shape":"GsmList",
+          "documentation":"<p>GSM object information.</p>"
+        },
+        "Wcdma":{
+          "shape":"WcdmaList",
+          "documentation":"<p>WCDMA object information.</p>"
+        },
+        "Tdscdma":{
+          "shape":"TdscdmaList",
+          "documentation":"<p>TD-SCDMA object information.</p>"
+        },
+        "Lte":{
+          "shape":"LteList",
+          "documentation":"<p>LTE object information.</p>"
+        },
+        "Cdma":{
+          "shape":"CdmaList",
+          "documentation":"<p>CDMA object information.</p>"
+        }
+      },
+      "documentation":"<p>The cell towers that were used to perform the measurements.</p>"
+    },
     "CertificateList":{
       "type":"structure",
       "required":[
@@ -2119,7 +2598,7 @@
     },
     "ClientRequestToken":{
       "type":"string",
-      "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>",
+      "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
       "max":64,
       "min":1,
       "pattern":"^[a-zA-Z0-9-_]+$"
@@ -2172,6 +2651,7 @@
       },
       "documentation":"<p>Connection status resource type event configuration object for enabling or disabling topic.</p>"
     },
+    "Coordinate":{"type":"float"},
     "Crc":{
       "type":"long",
       "max":4294967295,
@@ -2212,7 +2692,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         }
       }
@@ -2247,8 +2727,12 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
+        },
+        "Sidewalk":{
+          "shape":"SidewalkCreateDeviceProfile",
+          "documentation":"<p>The Sidewalk-related information for creating the Sidewalk device profile.</p>"
         }
       }
     },
@@ -2281,7 +2765,10 @@
         "LoRaWAN":{"shape":"LoRaWANFuotaTask"},
         "FirmwareUpdateImage":{"shape":"FirmwareUpdateImage"},
         "FirmwareUpdateRole":{"shape":"FirmwareUpdateRole"},
-        "Tags":{"shape":"TagList"}
+        "Tags":{"shape":"TagList"},
+        "RedundancyPercent":{"shape":"RedundancyPercent"},
+        "FragmentSizeBytes":{"shape":"FragmentSizeBytes"},
+        "FragmentIntervalMS":{"shape":"FragmentIntervalMS"}
       }
     },
     "CreateFuotaTaskResponse":{
@@ -2302,7 +2789,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         },
         "LoRaWAN":{"shape":"LoRaWANMulticast"},
@@ -2335,6 +2822,10 @@
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
           "idempotencyToken":true
+        },
+        "MulticastGroups":{
+          "shape":"NetworkAnalyzerMulticastGroupList",
+          "documentation":"<p>Multicast Group resources to add to the network analyzer configruation. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>"
         }
       }
     },
@@ -2365,7 +2856,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         }
       }
@@ -2408,7 +2899,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         },
         "LoRaWAN":{
@@ -2418,6 +2909,14 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>"
+        },
+        "Positioning":{
+          "shape":"PositioningConfigStatus",
+          "documentation":"<p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>"
+        },
+        "Sidewalk":{
+          "shape":"SidewalkCreateWirelessDevice",
+          "documentation":"<p>The device configuration information to use to create the Sidewalk device.</p>"
         }
       }
     },
@@ -2456,7 +2955,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         }
       }
@@ -2492,7 +2991,7 @@
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
-          "documentation":"<p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>",
+          "documentation":"<p>Each resource must have a unique client request token. The client token is used to implement idempotency. It ensures that the request completes no more than one time. If you retry a request with the same token and the same parameters, the request will complete successfully. However, if you try to create a new resource using the same token but different parameters, an HTTP 409 conflict occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. For more information about idempotency, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency in Amazon EC2 API requests</a>.</p>",
           "idempotencyToken":true
         },
         "Tags":{
@@ -2549,6 +3048,46 @@
     "CreatedAt":{
       "type":"timestamp",
       "documentation":"<p>Created at timestamp for the resource.</p>"
+    },
+    "CreationDate":{"type":"timestamp"},
+    "CreationTime":{
+      "type":"timestamp",
+      "timestampFormat":"iso8601"
+    },
+    "DakCertificateId":{
+      "type":"string",
+      "max":256
+    },
+    "DakCertificateMetadata":{
+      "type":"structure",
+      "required":["CertificateId"],
+      "members":{
+        "CertificateId":{
+          "shape":"DakCertificateId",
+          "documentation":"<p>The certificate ID for the DAK.</p>"
+        },
+        "MaxAllowedSignature":{
+          "shape":"MaxAllowedSignature",
+          "documentation":"<p>The maximum number of signatures that the DAK can sign. A value of <code>-1</code> indicates that there's no device limit.</p>"
+        },
+        "FactorySupport":{
+          "shape":"FactorySupport",
+          "documentation":"<p>Whether factory support has been enabled.</p>"
+        },
+        "ApId":{
+          "shape":"ApId",
+          "documentation":"<p>The advertised product ID (APID) that's used for pre-production and production applications.</p>"
+        },
+        "DeviceTypeId":{
+          "shape":"DeviceTypeId",
+          "documentation":"<p>The device type ID that's used for prototyping applications.</p>"
+        }
+      },
+      "documentation":"<p>The device attestation key (DAK) information.</p>"
+    },
+    "DakCertificateMetadataList":{
+      "type":"list",
+      "member":{"shape":"DakCertificateMetadata"}
     },
     "DeleteDestinationRequest":{
       "type":"structure",
@@ -2681,6 +3220,23 @@
       "members":{
       }
     },
+    "DeleteWirelessDeviceImportTaskRequest":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The unique identifier of the import task to be deleted.</p>",
+          "location":"uri",
+          "locationName":"Id"
+        }
+      }
+    },
+    "DeleteWirelessDeviceImportTaskResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteWirelessDeviceRequest":{
       "type":"structure",
       "required":["Id"],
@@ -2749,6 +3305,29 @@
       "members":{
       }
     },
+    "DeregisterWirelessDeviceRequest":{
+      "type":"structure",
+      "required":["Identifier"],
+      "members":{
+        "Identifier":{
+          "shape":"Identifier",
+          "documentation":"<p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>",
+          "location":"uri",
+          "locationName":"Identifier"
+        },
+        "WirelessDeviceType":{
+          "shape":"WirelessDeviceType",
+          "documentation":"<p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>",
+          "location":"querystring",
+          "locationName":"WirelessDeviceType"
+        }
+      }
+    },
+    "DeregisterWirelessDeviceResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "Description":{
       "type":"string",
       "documentation":"<p>The description of the new resource.</p>",
@@ -2812,6 +3391,15 @@
       "member":{"shape":"CertificateList"},
       "documentation":"<p>List of device certificate chain.</p>"
     },
+    "DeviceCreationFile":{
+      "type":"string",
+      "max":1024
+    },
+    "DeviceCreationFileList":{
+      "type":"list",
+      "member":{"shape":"DeviceCreationFile"}
+    },
+    "DeviceName":{"type":"string"},
     "DeviceProfile":{
       "type":"structure",
       "members":{
@@ -2842,6 +3430,13 @@
     "DeviceProfileName":{
       "type":"string",
       "max":256
+    },
+    "DeviceProfileType":{
+      "type":"string",
+      "enum":[
+        "Sidewalk",
+        "LoRaWAN"
+      ]
     },
     "DeviceRegistrationStateEventConfiguration":{
       "type":"structure",
@@ -2876,6 +3471,40 @@
         "RegisteredReachable",
         "RegisteredUnreachable"
       ]
+    },
+    "DeviceTypeId":{
+      "type":"string",
+      "max":2048
+    },
+    "Dimension":{
+      "type":"structure",
+      "members":{
+        "name":{
+          "shape":"DimensionName",
+          "documentation":"<p>The name of the dimension.</p>"
+        },
+        "value":{
+          "shape":"DimensionValue",
+          "documentation":"<p>The dimension's value.</p>"
+        }
+      },
+      "documentation":"<p>The required list of dimensions for the metric.</p>"
+    },
+    "DimensionName":{
+      "type":"string",
+      "enum":[
+        "DeviceId",
+        "GatewayId"
+      ],
+      "max":256
+    },
+    "DimensionValue":{
+      "type":"string",
+      "max":256
+    },
+    "Dimensions":{
+      "type":"list",
+      "member":{"shape":"Dimension"}
     },
     "DisassociateAwsAccountFromPartnerAccountRequest":{
       "type":"structure",
@@ -3026,6 +3655,7 @@
       "members":{
       }
     },
+    "DlAllowed":{"type":"boolean"},
     "DlBucketSize":{
       "type":"integer",
       "max":2147483647,
@@ -3118,10 +3748,20 @@
       "max":15,
       "min":0
     },
+    "EARFCN":{
+      "type":"integer",
+      "max":262143,
+      "min":0
+    },
     "EndPoint":{
       "type":"string",
       "max":256,
       "min":1
+    },
+    "EutranCid":{
+      "type":"integer",
+      "max":268435455,
+      "min":0
     },
     "Event":{
       "type":"string",
@@ -3238,6 +3878,10 @@
         "Positioning":{
           "shape":"Positioning",
           "documentation":"<p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>"
+        },
+        "Applications":{
+          "shape":"Applications",
+          "documentation":"<p>Optional LoRaWAN application information, which can be used for geolocation.</p>"
         }
       },
       "documentation":"<p>List of FPort assigned for different LoRaWAN application packages to use</p>"
@@ -3248,6 +3892,7 @@
       "max":20,
       "min":0
     },
+    "FactorySupport":{"type":"boolean"},
     "Fingerprint":{
       "type":"string",
       "max":64,
@@ -3265,6 +3910,16 @@
       "type":"string",
       "documentation":"<p>The firmware update role that is to be used with a FUOTA task.</p>",
       "max":2048,
+      "min":1
+    },
+    "FragmentIntervalMS":{
+      "type":"integer",
+      "documentation":"<p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p> <note> <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p> </note>",
+      "min":1
+    },
+    "FragmentSizeBytes":{
+      "type":"integer",
+      "documentation":"<p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>",
       "min":1
     },
     "FuotaDeviceStatus":{
@@ -3324,6 +3979,7 @@
         "Delete_Waiting"
       ]
     },
+    "GPST":{"type":"float"},
     "GatewayEui":{
       "type":"string",
       "pattern":"^(([0-9A-Fa-f]{2}-){7}|([0-9A-Fa-f]{2}:){7}|([0-9A-Fa-f]{2}\\s){7}|([0-9A-Fa-f]{2}){7})([0-9A-Fa-f]{2})$"
@@ -3350,9 +4006,20 @@
       },
       "documentation":"<p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>"
     },
+    "GatewayMaxEirp":{
+      "type":"float",
+      "max":30,
+      "min":0
+    },
     "GenAppKey":{
       "type":"string",
       "pattern":"[a-fA-F0-9]{32}"
+    },
+    "GeoJsonPayload":{"type":"blob"},
+    "GeranCid":{
+      "type":"integer",
+      "max":65535,
+      "min":0
     },
     "GetDestinationRequest":{
       "type":"structure",
@@ -3425,6 +4092,10 @@
         "LoRaWAN":{
           "shape":"LoRaWANDeviceProfile",
           "documentation":"<p>Information about the device profile.</p>"
+        },
+        "Sidewalk":{
+          "shape":"SidewalkGetDeviceProfile",
+          "documentation":"<p>Information about the Sidewalk parameters in the device profile.</p>"
         }
       }
     },
@@ -3480,7 +4151,10 @@
         "LoRaWAN":{"shape":"LoRaWANFuotaTaskGetInfo"},
         "FirmwareUpdateImage":{"shape":"FirmwareUpdateImage"},
         "FirmwareUpdateRole":{"shape":"FirmwareUpdateRole"},
-        "CreatedAt":{"shape":"CreatedAt"}
+        "CreatedAt":{"shape":"CreatedAt"},
+        "RedundancyPercent":{"shape":"RedundancyPercent"},
+        "FragmentSizeBytes":{"shape":"FragmentSizeBytes"},
+        "FragmentIntervalMS":{"shape":"FragmentIntervalMS"}
       }
     },
     "GetLogLevelsByResourceTypesRequest":{
@@ -3494,6 +4168,38 @@
         "DefaultLogLevel":{"shape":"LogLevel"},
         "WirelessGatewayLogOptions":{"shape":"WirelessGatewayLogOptionList"},
         "WirelessDeviceLogOptions":{"shape":"WirelessDeviceLogOptionList"}
+      }
+    },
+    "GetMetricConfigurationRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "GetMetricConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "SummaryMetric":{
+          "shape":"SummaryMetricConfiguration",
+          "documentation":"<p>The configuration status of the AWS account for summary metric aggregation.</p>"
+        }
+      }
+    },
+    "GetMetricsRequest":{
+      "type":"structure",
+      "members":{
+        "SummaryMetricQueries":{
+          "shape":"SummaryMetricQueries",
+          "documentation":"<p>The list of queries to retrieve the summary metrics.</p>"
+        }
+      }
+    },
+    "GetMetricsResponse":{
+      "type":"structure",
+      "members":{
+        "SummaryMetricQueryResults":{
+          "shape":"SummaryMetricQueryResults",
+          "documentation":"<p>The list of summary metrics that were retrieved.</p>"
+        }
       }
     },
     "GetMulticastGroupRequest":{
@@ -3553,7 +4259,7 @@
         "TraceContent":{"shape":"TraceContent"},
         "WirelessDevices":{
           "shape":"WirelessDeviceList",
-          "documentation":"<p>List of wireless gateway resources that have been added to the network analyzer configuration.</p>"
+          "documentation":"<p>List of wireless device resources that have been added to the network analyzer configuration.</p>"
         },
         "WirelessGateways":{
           "shape":"WirelessGatewayList",
@@ -3564,7 +4270,11 @@
           "shape":"NetworkAnalyzerConfigurationArn",
           "documentation":"<p>The Amazon Resource Name of the new resource.</p>"
         },
-        "Name":{"shape":"NetworkAnalyzerConfigurationName"}
+        "Name":{"shape":"NetworkAnalyzerConfigurationName"},
+        "MulticastGroups":{
+          "shape":"NetworkAnalyzerMulticastGroupList",
+          "documentation":"<p>List of multicast group resources that have been added to the network analyzer configuration.</p>"
+        }
       }
     },
     "GetPartnerAccountRequest":{
@@ -3620,7 +4330,9 @@
           "location":"querystring",
           "locationName":"resourceType"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "GetPositionConfigurationResponse":{
       "type":"structure",
@@ -3633,7 +4345,44 @@
           "shape":"DestinationName",
           "documentation":"<p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>"
         }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
+    },
+    "GetPositionEstimateRequest":{
+      "type":"structure",
+      "members":{
+        "WiFiAccessPoints":{
+          "shape":"WiFiAccessPoints",
+          "documentation":"<p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>"
+        },
+        "CellTowers":{
+          "shape":"CellTowers",
+          "documentation":"<p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>"
+        },
+        "Ip":{
+          "shape":"Ip",
+          "documentation":"<p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>"
+        },
+        "Gnss":{
+          "shape":"Gnss",
+          "documentation":"<p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>"
+        },
+        "Timestamp":{
+          "shape":"CreationDate",
+          "documentation":"<p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>"
+        }
       }
+    },
+    "GetPositionEstimateResponse":{
+      "type":"structure",
+      "members":{
+        "GeoJsonPayload":{
+          "shape":"GeoJsonPayload",
+          "documentation":"<p>The position information of the resource, displayed as a JSON payload. The payload is of type blob and uses the <a href=\"https://geojson.org/\">GeoJSON</a> format, which a format that's used to encode geographic data structures. A sample payload contains the timestamp information, the WGS84 coordinates of the location, and the accuracy and confidence level. For more information and examples, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html\">Resolve device location (console)</a>.</p>"
+        }
+      },
+      "payload":"GeoJsonPayload"
     },
     "GetPositionRequest":{
       "type":"structure",
@@ -3654,7 +4403,9 @@
           "location":"querystring",
           "locationName":"resourceType"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "GetPositionResponse":{
       "type":"structure",
@@ -3683,7 +4434,9 @@
           "shape":"ISODateTimeString",
           "documentation":"<p>The timestamp at which the device's position was determined.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "GetResourceEventConfigurationRequest":{
       "type":"structure",
@@ -3763,6 +4516,37 @@
         "LogLevel":{"shape":"LogLevel"}
       }
     },
+    "GetResourcePositionRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceIdentifier",
+        "ResourceType"
+      ],
+      "members":{
+        "ResourceIdentifier":{
+          "shape":"PositionResourceIdentifier",
+          "documentation":"<p>The identifier of the resource for which position information is retrieved. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>",
+          "location":"uri",
+          "locationName":"ResourceIdentifier"
+        },
+        "ResourceType":{
+          "shape":"PositionResourceType",
+          "documentation":"<p>The type of resource for which position information is retrieved, which can be a wireless device or a wireless gateway.</p>",
+          "location":"querystring",
+          "locationName":"resourceType"
+        }
+      }
+    },
+    "GetResourcePositionResponse":{
+      "type":"structure",
+      "members":{
+        "GeoJsonPayload":{
+          "shape":"GeoJsonPayload",
+          "documentation":"<p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href=\"https://geojson.org/\">GeoJSON</a>.</p>"
+        }
+      },
+      "payload":"GeoJsonPayload"
+    },
     "GetServiceEndpointRequest":{
       "type":"structure",
       "members":{
@@ -3821,6 +4605,67 @@
         "LoRaWAN":{
           "shape":"LoRaWANGetServiceProfileInfo",
           "documentation":"<p>Information about the service profile.</p>"
+        }
+      }
+    },
+    "GetWirelessDeviceImportTaskRequest":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The identifier of the import task for which information is requested.</p>",
+          "location":"uri",
+          "locationName":"Id"
+        }
+      }
+    },
+    "GetWirelessDeviceImportTaskResponse":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The identifier of the import task for which information is retrieved.</p>"
+        },
+        "Arn":{
+          "shape":"ImportTaskArn",
+          "documentation":"<p>The ARN (Amazon Resource Name) of the import task.</p>"
+        },
+        "DestinationName":{
+          "shape":"DestinationName",
+          "documentation":"<p>The name of the destination that's assigned to the wireless devices in the import task.</p>"
+        },
+        "Sidewalk":{
+          "shape":"SidewalkGetStartImportInfo",
+          "documentation":"<p>The Sidewalk-related information about an import task.</p>"
+        },
+        "CreationTime":{
+          "shape":"CreationTime",
+          "documentation":"<p>The time at which the import task was created.</p>"
+        },
+        "Status":{
+          "shape":"ImportTaskStatus",
+          "documentation":"<p>The import task status.</p>"
+        },
+        "StatusReason":{
+          "shape":"StatusReason",
+          "documentation":"<p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>"
+        },
+        "InitializedImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The number of devices in the import task that are waiting for the control log to start processing.</p>"
+        },
+        "PendingImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The number of devices in the import task that are waiting in the import task queue to be onboarded.</p>"
+        },
+        "OnboardedImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The number of devices in the import task that have been onboarded to the import task.</p>"
+        },
+        "FailedImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The number of devices in the import task that failed to onboard to the import task.</p>"
         }
       }
     },
@@ -3887,6 +4732,10 @@
         "Sidewalk":{
           "shape":"SidewalkDevice",
           "documentation":"<p>Sidewalk device object.</p>"
+        },
+        "Positioning":{
+          "shape":"PositioningConfigStatus",
+          "documentation":"<p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>"
         }
       }
     },
@@ -3911,7 +4760,7 @@
         },
         "LastUplinkReceivedAt":{
           "shape":"ISODateTimeString",
-          "documentation":"<p>The date and time when the most recent uplink was received.</p>"
+          "documentation":"<p>The date and time when the most recent uplink was received.</p> <note> <p>This value is only valid for 3 months.</p> </note>"
         },
         "LoRaWAN":{
           "shape":"LoRaWANDeviceMetadata",
@@ -4044,7 +4893,7 @@
         },
         "LastUplinkReceivedAt":{
           "shape":"ISODateTimeString",
-          "documentation":"<p>The date and time when the most recent uplink was received.</p>"
+          "documentation":"<p>The date and time when the most recent uplink was received.</p> <note> <p>This value is only valid for 3 months.</p> </note>"
         },
         "ConnectionStatus":{
           "shape":"ConnectionStatus",
@@ -4110,7 +4959,7 @@
         },
         "LastUplinkReceivedAt":{
           "shape":"ISODateTimeString",
-          "documentation":"<p>The date and time when the most recent uplink was received.</p>"
+          "documentation":"<p>The date and time when the most recent uplink was received.</p> <note> <p>This value is only valid for 3 months.</p> </note>"
         },
         "TaskCreatedAt":{
           "shape":"ISODateTimeString",
@@ -4122,14 +4971,177 @@
         }
       }
     },
+    "GlobalIdentity":{
+      "type":"structure",
+      "required":[
+        "Lac",
+        "GeranCid"
+      ],
+      "members":{
+        "Lac":{
+          "shape":"LAC",
+          "documentation":"<p>Location area code of the global identity.</p>"
+        },
+        "GeranCid":{
+          "shape":"GeranCid",
+          "documentation":"<p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>"
+        }
+      },
+      "documentation":"<p>Global identity information.</p>"
+    },
+    "Gnss":{
+      "type":"structure",
+      "required":["Payload"],
+      "members":{
+        "Payload":{
+          "shape":"GnssNav",
+          "documentation":"<p>Payload that contains the GNSS scan result, or NAV message, in hexadecimal notation.</p>"
+        },
+        "CaptureTime":{
+          "shape":"GPST",
+          "documentation":"<p>Optional parameter that gives an estimate of the time when the GNSS scan information is taken, in seconds GPS time (GPST). If capture time is not specified, the local server time is used.</p>"
+        },
+        "CaptureTimeAccuracy":{
+          "shape":"CaptureTimeAccuracy",
+          "documentation":"<p>Optional value that gives the capture time estimate accuracy, in seconds. If capture time accuracy is not specified, default value of 300 is used.</p>"
+        },
+        "AssistPosition":{
+          "shape":"AssistPosition",
+          "documentation":"<p>Optional assistance position information, specified using latitude and longitude values in degrees. The coordinates are inside the WGS84 reference frame.</p>"
+        },
+        "AssistAltitude":{
+          "shape":"Coordinate",
+          "documentation":"<p>Optional assistance altitude, which is the altitude of the device at capture time, specified in meters above the WGS84 reference ellipsoid.</p>"
+        },
+        "Use2DSolver":{
+          "shape":"Use2DSolver",
+          "documentation":"<p>Optional parameter that forces 2D solve, which modifies the positioning algorithm to a 2D solution problem. When this parameter is specified, the assistance altitude should have an accuracy of at least 10 meters.</p>"
+        }
+      },
+      "documentation":"<p>Global navigation satellite system (GNSS) object used for positioning.</p>"
+    },
+    "GnssNav":{
+      "type":"string",
+      "max":2048
+    },
+    "GsmList":{
+      "type":"list",
+      "member":{"shape":"GsmObj"},
+      "max":16,
+      "min":1
+    },
+    "GsmLocalId":{
+      "type":"structure",
+      "required":[
+        "Bsic",
+        "Bcch"
+      ],
+      "members":{
+        "Bsic":{
+          "shape":"BSIC",
+          "documentation":"<p>GSM base station identity code (BSIC).</p>"
+        },
+        "Bcch":{
+          "shape":"BCCH",
+          "documentation":"<p>GSM broadcast control channel.</p>"
+        }
+      },
+      "documentation":"<p>GSM local ID information, which corresponds to the local identification parameters of a GSM cell.</p>"
+    },
+    "GsmNmrList":{
+      "type":"list",
+      "member":{"shape":"GsmNmrObj"},
+      "max":32,
+      "min":1
+    },
+    "GsmNmrObj":{
+      "type":"structure",
+      "required":[
+        "Bsic",
+        "Bcch"
+      ],
+      "members":{
+        "Bsic":{
+          "shape":"BSIC",
+          "documentation":"<p>GSM base station identity code (BSIC).</p>"
+        },
+        "Bcch":{
+          "shape":"BCCH",
+          "documentation":"<p>GSM broadcast control channel.</p>"
+        },
+        "RxLevel":{
+          "shape":"RxLevel",
+          "documentation":"<p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>"
+        },
+        "GlobalIdentity":{
+          "shape":"GlobalIdentity",
+          "documentation":"<p>Global identity information of the GSM object.</p>"
+        }
+      },
+      "documentation":"<p>GSM object for network measurement reports.</p>"
+    },
+    "GsmObj":{
+      "type":"structure",
+      "required":[
+        "Mcc",
+        "Mnc",
+        "Lac",
+        "GeranCid"
+      ],
+      "members":{
+        "Mcc":{
+          "shape":"MCC",
+          "documentation":"<p>Mobile Country Code.</p>"
+        },
+        "Mnc":{
+          "shape":"MNC",
+          "documentation":"<p>Mobile Network Code.</p>"
+        },
+        "Lac":{
+          "shape":"LAC",
+          "documentation":"<p>Location area code.</p>"
+        },
+        "GeranCid":{
+          "shape":"GeranCid",
+          "documentation":"<p>GERAN (GSM EDGE Radio Access Network) Cell Global Identifier.</p>"
+        },
+        "GsmLocalId":{
+          "shape":"GsmLocalId",
+          "documentation":"<p>GSM local identification (local ID) information.</p>"
+        },
+        "GsmTimingAdvance":{
+          "shape":"GsmTimingAdvance",
+          "documentation":"<p>Timing advance value, which corresponds to the length of time a signal takes to reach the base station from a mobile phone.</p>"
+        },
+        "RxLevel":{
+          "shape":"RxLevel",
+          "documentation":"<p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>"
+        },
+        "GsmNmr":{
+          "shape":"GsmNmrList",
+          "documentation":"<p>GSM object for network measurement reports.</p>"
+        }
+      },
+      "documentation":"<p>GSM object.</p>"
+    },
+    "GsmTimingAdvance":{
+      "type":"integer",
+      "max":63,
+      "min":0
+    },
     "HorizontalAccuracy":{
       "type":"float",
       "min":0
     },
     "HrAllowed":{"type":"boolean"},
+    "IPAddress":{"type":"string"},
     "ISODateTimeString":{
       "type":"string",
       "pattern":"^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+    },
+    "Id":{
+      "type":"string",
+      "max":256
     },
     "Identifier":{
       "type":"string",
@@ -4145,6 +5157,62 @@
         "WirelessGatewayId"
       ]
     },
+    "ImportTaskArn":{
+      "type":"string",
+      "max":128
+    },
+    "ImportTaskId":{
+      "type":"string",
+      "max":256
+    },
+    "ImportTaskStatus":{
+      "type":"string",
+      "enum":[
+        "INITIALIZING",
+        "INITIALIZED",
+        "PENDING",
+        "COMPLETE",
+        "FAILED",
+        "DELETING"
+      ]
+    },
+    "ImportedSidewalkDevice":{
+      "type":"structure",
+      "members":{
+        "SidewalkManufacturingSn":{
+          "shape":"SidewalkManufacturingSn",
+          "documentation":"<p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>"
+        },
+        "OnboardingStatus":{
+          "shape":"OnboardStatus",
+          "documentation":"<p>The onboarding status of the Sidewalk device in the import task.</p>"
+        },
+        "OnboardingStatusReason":{
+          "shape":"OnboardStatusReason",
+          "documentation":"<p>The reason for the onboarding status information for the Sidewalk device.</p>"
+        },
+        "LastUpdateTime":{
+          "shape":"LastUpdateTime",
+          "documentation":"<p>The time at which the status information was last updated.</p>"
+        }
+      },
+      "documentation":"<p>Information about a Sidewalk device that has been added to an import task.</p>"
+    },
+    "ImportedWirelessDevice":{
+      "type":"structure",
+      "members":{
+        "Sidewalk":{
+          "shape":"ImportedSidewalkDevice",
+          "documentation":"<p>The Sidewalk-related information about a device that has been added to an import task.</p>"
+        }
+      },
+      "documentation":"<p>Information about a wireless device that has been added to an import task.</p>"
+    },
+    "ImportedWirelessDeviceCount":{"type":"long"},
+    "ImportedWirelessDeviceList":{
+      "type":"list",
+      "member":{"shape":"ImportedWirelessDevice"}
+    },
     "Integer":{"type":"integer"},
     "InternalServerException":{
       "type":"structure",
@@ -4159,6 +5227,17 @@
       "type":"string",
       "max":4096,
       "min":1
+    },
+    "Ip":{
+      "type":"structure",
+      "required":["IpAddress"],
+      "members":{
+        "IpAddress":{
+          "shape":"IPAddress",
+          "documentation":"<p>IP address information.</p>"
+        }
+      },
+      "documentation":"<p>IP address used for resolving device location.</p>"
     },
     "JoinEui":{
       "type":"string",
@@ -4201,6 +5280,15 @@
         }
       },
       "documentation":"<p>Join resource type event configuration object for enabling or disabling topic.</p>"
+    },
+    "LAC":{
+      "type":"integer",
+      "max":65535,
+      "min":1
+    },
+    "LastUpdateTime":{
+      "type":"timestamp",
+      "timestampFormat":"iso8601"
     },
     "ListDestinationsRequest":{
       "type":"structure",
@@ -4246,6 +5334,12 @@
           "documentation":"<p>The maximum number of results to return in this operation.</p>",
           "location":"querystring",
           "locationName":"maxResults"
+        },
+        "DeviceProfileType":{
+          "shape":"DeviceProfileType",
+          "documentation":"<p>A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>",
+          "location":"querystring",
+          "locationName":"deviceProfileType"
         }
       }
     },
@@ -4259,6 +5353,52 @@
         "DeviceProfileList":{
           "shape":"DeviceProfileList",
           "documentation":"<p>The list of device profiles.</p>"
+        }
+      }
+    },
+    "ListDevicesForWirelessDeviceImportTaskRequest":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The identifier of the import task for which wireless devices are listed.</p>",
+          "location":"querystring",
+          "locationName":"id"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "Status":{
+          "shape":"OnboardStatus",
+          "documentation":"<p>The status of the devices in the import task.</p>",
+          "location":"querystring",
+          "locationName":"status"
+        }
+      }
+    },
+    "ListDevicesForWirelessDeviceImportTaskResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>"
+        },
+        "DestinationName":{
+          "shape":"DestinationName",
+          "documentation":"<p>The name of the Sidewalk destination that describes the IoT rule to route messages received from devices in an import task that are onboarded to AWS IoT Wireless.</p>"
+        },
+        "ImportedWirelessDeviceList":{
+          "shape":"ImportedWirelessDeviceList",
+          "documentation":"<p>List of wireless devices in an import task and their onboarding status.</p>"
         }
       }
     },
@@ -4461,7 +5601,9 @@
           "location":"querystring",
           "locationName":"nextToken"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "ListPositionConfigurationsResponse":{
       "type":"structure",
@@ -4474,7 +5616,9 @@
           "shape":"NextToken",
           "documentation":"<p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "ListQueuedMessagesRequest":{
       "type":"structure",
@@ -4567,6 +5711,35 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>"
+        }
+      }
+    },
+    "ListWirelessDeviceImportTasksRequest":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListWirelessDeviceImportTasksResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>"
+        },
+        "WirelessDeviceImportTaskList":{
+          "shape":"WirelessDeviceImportTaskList",
+          "documentation":"<p>List of import tasks and summary information of onboarding status of devices in each import task.</p>"
         }
       }
     },
@@ -4781,6 +5954,10 @@
         "Gateways":{
           "shape":"LoRaWANGatewayMetadataList",
           "documentation":"<p>Information about the gateways accessed by the device.</p>"
+        },
+        "PublicGateways":{
+          "shape":"LoRaWANPublicGatewayMetadataList",
+          "documentation":"<p>Information about the LoRaWAN public network accessed by the device.</p>"
         }
       },
       "documentation":"<p>LoRaWAN device metatdata.</p>"
@@ -4850,7 +6027,7 @@
         },
         "MaxDutyCycle":{
           "shape":"MaxDutyCycle",
-          "documentation":"<p>The MaxDutyCycle value.</p>"
+          "documentation":"<p>The MaxDutyCycle value. It ranges from 0 to 15.</p>"
         },
         "RfRegion":{
           "shape":"RfRegion",
@@ -4899,6 +6076,10 @@
         "Beaconing":{
           "shape":"Beaconing",
           "documentation":"<p>Beaconing object information, which consists of the data rate and frequency parameters.</p>"
+        },
+        "MaxEirp":{
+          "shape":"GatewayMaxEirp",
+          "documentation":"<p>The MaxEIRP value.</p>"
         }
       },
       "documentation":"<p>LoRaWANGateway object.</p>"
@@ -5096,9 +6277,44 @@
         "DlDr":{"shape":"DlDr"},
         "DlFreq":{"shape":"DlFreq"},
         "SessionStartTime":{"shape":"SessionStartTimeTimestamp"},
-        "SessionTimeout":{"shape":"SessionTimeout"}
+        "SessionTimeout":{"shape":"SessionTimeout"},
+        "PingSlotPeriod":{
+          "shape":"PingSlotPeriod",
+          "documentation":"<p>The PingSlotPeriod value.</p>"
+        }
       },
       "documentation":"<p>The LoRaWAN information used with the multicast session.</p>"
+    },
+    "LoRaWANPublicGatewayMetadata":{
+      "type":"structure",
+      "members":{
+        "ProviderNetId":{
+          "shape":"ProviderNetId",
+          "documentation":"<p>The ID of the LoRaWAN public network provider.</p>"
+        },
+        "Id":{
+          "shape":"Id",
+          "documentation":"<p>The ID of the gateways that are operated by the network provider.</p>"
+        },
+        "Rssi":{
+          "shape":"Double",
+          "documentation":"<p>The RSSI (received signal strength indicator) value.</p>"
+        },
+        "Snr":{
+          "shape":"Double",
+          "documentation":"<p>The SNR (signal to noise ratio) value.</p>"
+        },
+        "RfRegion":{"shape":"RfRegion"},
+        "DlAllowed":{
+          "shape":"DlAllowed",
+          "documentation":"<p>Boolean that indicates whether downlink is allowed using the network.</p>"
+        }
+      },
+      "documentation":"<p>LoRaWAN public gateway metadata.</p>"
+    },
+    "LoRaWANPublicGatewayMetadataList":{
+      "type":"list",
+      "member":{"shape":"LoRaWANPublicGatewayMetadata"}
     },
     "LoRaWANSendDataToDevice":{
       "type":"structure",
@@ -5125,6 +6341,14 @@
         "DrMax":{
           "shape":"DrMaxBox",
           "documentation":"<p>The DrMax value.</p>"
+        },
+        "PrAllowed":{
+          "shape":"PrAllowed",
+          "documentation":"<p>The PRAllowed value that describes whether passive roaming is allowed.</p>"
+        },
+        "RaAllowed":{
+          "shape":"RaAllowed",
+          "documentation":"<p>The RAAllowed value that describes whether roaming activation is allowed.</p>"
         }
       },
       "documentation":"<p>LoRaWANServiceProfile object.</p>"
@@ -5207,10 +6431,145 @@
         "DISABLED"
       ]
     },
+    "LteList":{
+      "type":"list",
+      "member":{"shape":"LteObj"},
+      "max":16,
+      "min":1
+    },
+    "LteLocalId":{
+      "type":"structure",
+      "required":[
+        "Pci",
+        "Earfcn"
+      ],
+      "members":{
+        "Pci":{
+          "shape":"PCI",
+          "documentation":"<p>Physical cell ID.</p>"
+        },
+        "Earfcn":{
+          "shape":"EARFCN",
+          "documentation":"<p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>"
+        }
+      },
+      "documentation":"<p>LTE local identification (local ID) information.</p>"
+    },
+    "LteNmrList":{
+      "type":"list",
+      "member":{"shape":"LteNmrObj"},
+      "max":32,
+      "min":1
+    },
+    "LteNmrObj":{
+      "type":"structure",
+      "required":[
+        "Pci",
+        "Earfcn",
+        "EutranCid"
+      ],
+      "members":{
+        "Pci":{
+          "shape":"PCI",
+          "documentation":"<p>Physical cell ID.</p>"
+        },
+        "Earfcn":{
+          "shape":"EARFCN",
+          "documentation":"<p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>"
+        },
+        "EutranCid":{
+          "shape":"EutranCid",
+          "documentation":"<p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>"
+        },
+        "Rsrp":{
+          "shape":"RSRP",
+          "documentation":"<p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>"
+        },
+        "Rsrq":{
+          "shape":"RSRQ",
+          "documentation":"<p>Signal quality of the reference Signal received, measured in decibels (dB).</p>"
+        }
+      },
+      "documentation":"<p>LTE object for network measurement reports.</p>"
+    },
+    "LteObj":{
+      "type":"structure",
+      "required":[
+        "Mcc",
+        "Mnc",
+        "EutranCid"
+      ],
+      "members":{
+        "Mcc":{
+          "shape":"MCC",
+          "documentation":"<p>Mobile Country Code.</p>"
+        },
+        "Mnc":{
+          "shape":"MNC",
+          "documentation":"<p>Mobile Network Code.</p>"
+        },
+        "EutranCid":{
+          "shape":"EutranCid",
+          "documentation":"<p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>"
+        },
+        "Tac":{
+          "shape":"TAC",
+          "documentation":"<p>LTE tracking area code.</p>"
+        },
+        "LteLocalId":{
+          "shape":"LteLocalId",
+          "documentation":"<p>LTE local identification (local ID) information.</p>"
+        },
+        "LteTimingAdvance":{
+          "shape":"LteTimingAdvance",
+          "documentation":"<p>LTE timing advance.</p>"
+        },
+        "Rsrp":{
+          "shape":"RSRP",
+          "documentation":"<p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>"
+        },
+        "Rsrq":{
+          "shape":"RSRQ",
+          "documentation":"<p>Signal quality of the reference Signal received, measured in decibels (dB).</p>"
+        },
+        "NrCapable":{
+          "shape":"NRCapable",
+          "documentation":"<p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>"
+        },
+        "LteNmr":{
+          "shape":"LteNmrList",
+          "documentation":"<p>LTE object for network measurement reports.</p>"
+        }
+      },
+      "documentation":"<p>LTE object.</p>"
+    },
+    "LteTimingAdvance":{
+      "type":"integer",
+      "max":1282,
+      "min":0
+    },
+    "MCC":{
+      "type":"integer",
+      "max":999,
+      "min":200
+    },
+    "MNC":{
+      "type":"integer",
+      "max":999,
+      "min":0
+    },
+    "MacAddress":{
+      "type":"string",
+      "max":17,
+      "min":12,
+      "pattern":"^([0-9A-Fa-f]{2}[:-]?){5}([0-9A-Fa-f]{2})$"
+    },
     "MacVersion":{
       "type":"string",
       "max":64
     },
+    "Max":{"type":"double"},
+    "MaxAllowedSignature":{"type":"integer"},
     "MaxDutyCycle":{
       "type":"integer",
       "max":100,
@@ -5243,7 +6602,7 @@
         "Sidewalk":{"shape":"SidewalkEventNotificationConfigurations"},
         "WirelessDeviceIdEventTopic":{
           "shape":"EventNotificationTopicStatus",
-          "documentation":"<p>Denotes whether the wireless device ID device registration state event topic is enabled or disabled.</p>"
+          "documentation":"<p>Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.</p>"
         }
       },
       "documentation":"<p>Message delivery status event configuration object for enabling and disabling relevant topics.</p>"
@@ -5266,6 +6625,103 @@
         "CUSTOM_COMMAND_ID_RESP"
       ]
     },
+    "MetricName":{
+      "type":"string",
+      "enum":[
+        "DeviceRSSI",
+        "DeviceSNR",
+        "DeviceUplinkCount",
+        "DeviceDownlinkCount",
+        "DeviceUplinkLostCount",
+        "DeviceUplinkLostRate",
+        "DeviceJoinRequestCount",
+        "DeviceJoinAcceptCount",
+        "DeviceRoamingUplinkCount",
+        "DeviceRoamingDownlinkCount",
+        "GatewayUpTime",
+        "GatewayDownTime",
+        "GatewayRSSI",
+        "GatewaySNR",
+        "GatewayUplinkCount",
+        "GatewayDownlinkCount",
+        "GatewayJoinRequestCount",
+        "GatewayJoinAcceptCount",
+        "AwsAccountUplinkCount",
+        "AwsAccountDownlinkCount",
+        "AwsAccountUplinkLostCount",
+        "AwsAccountUplinkLostRate",
+        "AwsAccountJoinRequestCount",
+        "AwsAccountJoinAcceptCount",
+        "AwsAccountRoamingUplinkCount",
+        "AwsAccountRoamingDownlinkCount",
+        "AwsAccountDeviceCount",
+        "AwsAccountGatewayCount",
+        "AwsAccountActiveDeviceCount",
+        "AwsAccountActiveGatewayCount"
+      ],
+      "max":256
+    },
+    "MetricQueryEndTimestamp":{"type":"timestamp"},
+    "MetricQueryError":{
+      "type":"string",
+      "max":256
+    },
+    "MetricQueryId":{
+      "type":"string",
+      "max":256
+    },
+    "MetricQueryStartTimestamp":{"type":"timestamp"},
+    "MetricQueryStatus":{
+      "type":"string",
+      "enum":[
+        "Succeeded",
+        "Failed"
+      ]
+    },
+    "MetricQueryTimestamp":{"type":"timestamp"},
+    "MetricQueryTimestamps":{
+      "type":"list",
+      "member":{"shape":"MetricQueryTimestamp"}
+    },
+    "MetricQueryValue":{
+      "type":"structure",
+      "members":{
+        "Min":{
+          "shape":"Min",
+          "documentation":"<p>The minimum of the values of all data points collected during the aggregation period.</p>"
+        },
+        "Max":{
+          "shape":"Max",
+          "documentation":"<p>The maximum of the values of all the data points collected during the aggregation period.</p>"
+        },
+        "Sum":{
+          "shape":"Sum",
+          "documentation":"<p>The sum of the values of all data points collected during the aggregation period.</p>"
+        },
+        "Avg":{
+          "shape":"Avg",
+          "documentation":"<p>The average of the values of all data points collected during the aggregation period.</p>"
+        },
+        "Std":{
+          "shape":"Std",
+          "documentation":"<p>The standard deviation of the values of all data points collected during the aggregation period.</p>"
+        },
+        "P90":{
+          "shape":"P90",
+          "documentation":"<p>The 90th percentile of the values of all data points collected during the aggregation period.</p>"
+        }
+      },
+      "documentation":"<p>The aggregated values of the metric.</p>"
+    },
+    "MetricQueryValues":{
+      "type":"list",
+      "member":{"shape":"MetricQueryValue"}
+    },
+    "MetricUnit":{
+      "type":"string",
+      "max":256
+    },
+    "Min":{"type":"double"},
     "MinGwDiversity":{
       "type":"integer",
       "max":100,
@@ -5279,6 +6735,14 @@
     "MulticastDeviceStatus":{
       "type":"string",
       "max":256
+    },
+    "MulticastFrameInfo":{
+      "type":"string",
+      "documentation":"<p> <code>FrameInfo</code> of your multicast group resources for the trace content. Use FrameInfo to debug the multicast communication between your multicast groups and the network server.</p>",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
     },
     "MulticastGroup":{
       "type":"structure",
@@ -5338,6 +6802,7 @@
       },
       "documentation":"<p>Wireless metadata that is to be sent to multicast group.</p>"
     },
+    "NRCapable":{"type":"boolean"},
     "NetId":{
       "type":"string",
       "documentation":"<p>LoRaWAN network ID.</p>",
@@ -5376,6 +6841,17 @@
       },
       "documentation":"<p>Network analyzer configurations.</p>"
     },
+    "NetworkAnalyzerMulticastGroupList":{
+      "type":"list",
+      "member":{"shape":"MulticastGroupId"},
+      "max":10,
+      "min":0
+    },
+    "NetworkId":{
+      "type":"integer",
+      "max":65535,
+      "min":0
+    },
     "NextToken":{
       "type":"string",
       "max":4096
@@ -5401,6 +6877,16 @@
       "type":"string",
       "pattern":"[a-fA-F0-9]{32}"
     },
+    "OnboardStatus":{
+      "type":"string",
+      "enum":[
+        "INITIALIZED",
+        "PENDING",
+        "ONBOARDED",
+        "FAILED"
+      ]
+    },
+    "OnboardStatusReason":{"type":"string"},
     "OtaaV1_0_x":{
       "type":"structure",
       "members":{
@@ -5410,7 +6896,11 @@
         },
         "AppEui":{
           "shape":"AppEui",
-          "documentation":"<p>The AppEUI value.</p>"
+          "documentation":"<p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.</p>"
+        },
+        "JoinEui":{
+          "shape":"JoinEui",
+          "documentation":"<p>The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.</p>"
         },
         "GenAppKey":{
           "shape":"GenAppKey",
@@ -5436,6 +6926,17 @@
         }
       },
       "documentation":"<p>OTAA device object for v1.1</p>"
+    },
+    "P90":{"type":"double"},
+    "PCI":{
+      "type":"integer",
+      "max":503,
+      "min":0
+    },
+    "PSC":{
+      "type":"integer",
+      "max":511,
+      "min":0
     },
     "PackageVersion":{
       "type":"string",
@@ -5474,11 +6975,21 @@
       "type":"string",
       "enum":["Sidewalk"]
     },
+    "PathLoss":{
+      "type":"integer",
+      "max":158,
+      "min":46
+    },
     "PayloadData":{
       "type":"string",
       "documentation":"<p>The binary to be sent to the end device, encoded in base64.</p>",
       "max":2048,
       "pattern":"^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
+    },
+    "PilotPower":{
+      "type":"integer",
+      "max":-49,
+      "min":-142
     },
     "PingSlotDr":{
       "type":"integer",
@@ -5493,7 +7004,12 @@
     "PingSlotPeriod":{
       "type":"integer",
       "max":4096,
-      "min":128
+      "min":32
+    },
+    "PnOffset":{
+      "type":"integer",
+      "max":511,
+      "min":0
     },
     "PositionConfigurationFec":{
       "type":"string",
@@ -5593,11 +7109,26 @@
       },
       "documentation":"<p>The FPorts for the position information.</p>"
     },
+    "PositioningConfigStatus":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Disabled"
+      ]
+    },
     "PrAllowed":{"type":"boolean"},
     "PresetFreq":{
       "type":"integer",
       "max":16700000,
       "min":1000000
+    },
+    "PrivateKeysList":{
+      "type":"list",
+      "member":{"shape":"CertificateList"}
+    },
+    "ProviderNetId":{
+      "type":"string",
+      "max":256
     },
     "ProximityEventConfiguration":{
       "type":"structure",
@@ -5650,12 +7181,16 @@
           "shape":"DestinationName",
           "documentation":"<p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "PutPositionConfigurationResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "PutResourceLogLevelRequest":{
       "type":"structure",
@@ -5684,15 +7219,47 @@
       "members":{
       }
     },
+    "QualificationStatus":{"type":"boolean"},
     "QueryString":{
       "type":"string",
       "documentation":"<p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>",
       "max":4096
     },
+    "RSCP":{
+      "type":"integer",
+      "max":-25,
+      "min":-120
+    },
+    "RSRP":{
+      "type":"integer",
+      "max":-44,
+      "min":-140
+    },
+    "RSRQ":{
+      "type":"float",
+      "max":-3,
+      "min":-19.5
+    },
+    "RSS":{
+      "type":"integer",
+      "max":0,
+      "min":-128
+    },
     "RaAllowed":{"type":"boolean"},
+    "RedundancyPercent":{
+      "type":"integer",
+      "documentation":"<p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>",
+      "max":100,
+      "min":0
+    },
     "RegParamsRevision":{
       "type":"string",
       "max":64
+    },
+    "RegistrationZone":{
+      "type":"integer",
+      "max":4095,
+      "min":0
     },
     "ReportDevStatusBattery":{"type":"boolean"},
     "ReportDevStatusMargin":{"type":"boolean"},
@@ -5764,6 +7331,10 @@
       "documentation":"<p>The frequency band (RFRegion) value.</p>",
       "max":64
     },
+    "Role":{
+      "type":"string",
+      "max":2048
+    },
     "RoleArn":{
       "type":"string",
       "max":2048,
@@ -5788,6 +7359,11 @@
       "type":"integer",
       "max":16700000,
       "min":1000000
+    },
+    "RxLevel":{
+      "type":"integer",
+      "max":-25,
+      "min":-110
     },
     "SNwkSIntKey":{
       "type":"string",
@@ -6009,6 +7585,22 @@
       "type":"list",
       "member":{"shape":"SidewalkAccountInfoWithFingerprint"}
     },
+    "SidewalkCreateDeviceProfile":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>Sidewalk object for creating a device profile.</p>"
+    },
+    "SidewalkCreateWirelessDevice":{
+      "type":"structure",
+      "members":{
+        "DeviceProfileId":{
+          "shape":"DeviceProfileId",
+          "documentation":"<p>The ID of the Sidewalk device profile.</p>"
+        }
+      },
+      "documentation":"<p>Sidewalk object for creating a wireless device.</p>"
+    },
     "SidewalkDevice":{
       "type":"structure",
       "members":{
@@ -6024,6 +7616,22 @@
         "DeviceCertificates":{
           "shape":"DeviceCertificateList",
           "documentation":"<p>The sidewalk device certificates for Ed25519 and P256r1.</p>"
+        },
+        "PrivateKeys":{
+          "shape":"PrivateKeysList",
+          "documentation":"<p>The Sidewalk device private keys that will be used for onboarding the device.</p>"
+        },
+        "DeviceProfileId":{
+          "shape":"DeviceProfileId",
+          "documentation":"<p>The ID of the Sidewalk device profile.</p>"
+        },
+        "CertificateId":{
+          "shape":"DakCertificateId",
+          "documentation":"<p>The ID of the Sidewalk device profile.</p>"
+        },
+        "Status":{
+          "shape":"WirelessDeviceSidewalkStatus",
+          "documentation":"<p>The Sidewalk device status, such as provisioned or registered.</p>"
         }
       },
       "documentation":"<p>Sidewalk device object.</p>"
@@ -6060,6 +7668,38 @@
       },
       "documentation":"<p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>"
     },
+    "SidewalkGetDeviceProfile":{
+      "type":"structure",
+      "members":{
+        "ApplicationServerPublicKey":{
+          "shape":"ApplicationServerPublicKey",
+          "documentation":"<p>The Sidewalk application server public key.</p>"
+        },
+        "QualificationStatus":{
+          "shape":"QualificationStatus",
+          "documentation":"<p>Gets information about the certification status of a Sidewalk device profile.</p>"
+        },
+        "DakCertificateMetadata":{
+          "shape":"DakCertificateMetadataList",
+          "documentation":"<p>The DAK certificate information of the Sidewalk device profile.</p>"
+        }
+      },
+      "documentation":"<p>Gets information about a Sidewalk device profile.</p>"
+    },
+    "SidewalkGetStartImportInfo":{
+      "type":"structure",
+      "members":{
+        "DeviceCreationFileList":{
+          "shape":"DeviceCreationFileList",
+          "documentation":"<p>List of Sidewalk devices that are added to the import task.</p>"
+        },
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>"
+        }
+      },
+      "documentation":"<p>Sidewalk-related information for devices in an import task that are being onboarded.</p>"
+    },
     "SidewalkId":{
       "type":"string",
       "documentation":"<p>The sidewalk device identification.</p>",
@@ -6083,6 +7723,14 @@
         "DeviceCertificates":{
           "shape":"DeviceCertificateList",
           "documentation":"<p>The sidewalk device certificates for Ed25519 and P256r1.</p>"
+        },
+        "DeviceProfileId":{
+          "shape":"DeviceProfileId",
+          "documentation":"<p>Sidewalk object used by list functions.</p>"
+        },
+        "Status":{
+          "shape":"WirelessDeviceSidewalkStatus",
+          "documentation":"<p>The status of the Sidewalk devices, such as provisioned or registered.</p>"
         }
       },
       "documentation":"<p>Sidewalk object used by list functions.</p>"
@@ -6111,10 +7759,34 @@
         "MessageType":{"shape":"MessageType"},
         "AckModeRetryDurationSecs":{
           "shape":"AckModeRetryDurationSecs",
-          "documentation":"<p>The duration of time in seconds for which you want to retry sending the ACK.</p>"
+          "documentation":"<p>The duration of time in seconds to retry sending the ACK.</p>"
         }
       },
       "documentation":"<p>Information about a Sidewalk router.</p>"
+    },
+    "SidewalkSingleStartImportInfo":{
+      "type":"structure",
+      "members":{
+        "SidewalkManufacturingSn":{
+          "shape":"SidewalkManufacturingSn",
+          "documentation":"<p>The Sidewalk manufacturing serial number (SMSN) of the device added to the import task.</p>"
+        }
+      },
+      "documentation":"<p>Information about an import task created for an individual Sidewalk device.</p>"
+    },
+    "SidewalkStartImportInfo":{
+      "type":"structure",
+      "members":{
+        "DeviceCreationFile":{
+          "shape":"DeviceCreationFile",
+          "documentation":"<p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>"
+        },
+        "Role":{
+          "shape":"Role",
+          "documentation":"<p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>"
+        }
+      },
+      "documentation":"<p>Information about an import task created for bulk provisioning.</p>"
     },
     "SidewalkUpdateAccount":{
       "type":"structure",
@@ -6125,6 +7797,16 @@
         }
       },
       "documentation":"<p>Sidewalk update.</p>"
+    },
+    "SidewalkUpdateImportInfo":{
+      "type":"structure",
+      "members":{
+        "DeviceCreationFile":{
+          "shape":"DeviceCreationFile",
+          "documentation":"<p>The CSV file contained in an S3 bucket that's used for appending devices to an existing import task.</p>"
+        }
+      },
+      "documentation":"<p>Sidewalk object information for updating an import task.</p>"
     },
     "SigningAlg":{
       "type":"string",
@@ -6207,16 +7889,92 @@
       "members":{
       }
     },
+    "StartSingleWirelessDeviceImportTaskRequest":{
+      "type":"structure",
+      "required":[
+        "DestinationName",
+        "Sidewalk"
+      ],
+      "members":{
+        "DestinationName":{
+          "shape":"DestinationName",
+          "documentation":"<p>The name of the Sidewalk destination that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless.</p>"
+        },
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "idempotencyToken":true
+        },
+        "DeviceName":{
+          "shape":"DeviceName",
+          "documentation":"<p>The name of the wireless device for which an import task is being started.</p>"
+        },
+        "Tags":{"shape":"TagList"},
+        "Sidewalk":{
+          "shape":"SidewalkSingleStartImportInfo",
+          "documentation":"<p>The Sidewalk-related parameters for importing a single wireless device.</p>"
+        }
+      }
+    },
+    "StartSingleWirelessDeviceImportTaskResponse":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The import task ID.</p>"
+        },
+        "Arn":{
+          "shape":"ImportTaskArn",
+          "documentation":"<p>The ARN (Amazon Resource Name) of the import task.</p>"
+        }
+      }
+    },
     "StartTime":{
       "type":"timestamp",
       "documentation":"<p>Start time of a FUOTA task.</p>",
       "timestampFormat":"iso8601"
+    },
+    "StartWirelessDeviceImportTaskRequest":{
+      "type":"structure",
+      "required":[
+        "DestinationName",
+        "Sidewalk"
+      ],
+      "members":{
+        "DestinationName":{
+          "shape":"DestinationName",
+          "documentation":"<p>The name of the Sidewalk destination that describes the IoT rule to route messages from the devices in the import task that are onboarded to AWS IoT Wireless.</p>"
+        },
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "idempotencyToken":true
+        },
+        "Tags":{"shape":"TagList"},
+        "Sidewalk":{
+          "shape":"SidewalkStartImportInfo",
+          "documentation":"<p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>"
+        }
+      }
+    },
+    "StartWirelessDeviceImportTaskResponse":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The import task ID.</p>"
+        },
+        "Arn":{
+          "shape":"ImportTaskArn",
+          "documentation":"<p>The ARN (Amazon Resource Name) of the import task.</p>"
+        }
+      }
     },
     "Station":{
       "type":"string",
       "max":4096,
       "min":1
     },
+    "StatusReason":{"type":"string"},
+    "Std":{"type":"double"},
     "SubBand":{
       "type":"integer",
       "documentation":"<p>A subset of supported frequency channels in a certain RFRegion.</p>",
@@ -6230,6 +7988,112 @@
       "max":8,
       "min":0
     },
+    "Sum":{"type":"double"},
+    "SummaryMetricConfiguration":{
+      "type":"structure",
+      "members":{
+        "Status":{
+          "shape":"SummaryMetricConfigurationStatus",
+          "documentation":"<p>The status of the configuration of summary metrics.</p>"
+        }
+      },
+      "documentation":"<p>The configuration of summary metrics.</p>"
+    },
+    "SummaryMetricConfigurationStatus":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Disabled"
+      ]
+    },
+    "SummaryMetricQueries":{
+      "type":"list",
+      "member":{"shape":"SummaryMetricQuery"}
+    },
+    "SummaryMetricQuery":{
+      "type":"structure",
+      "members":{
+        "QueryId":{
+          "shape":"MetricQueryId",
+          "documentation":"<p>The id of the summary metric query.</p>"
+        },
+        "MetricName":{
+          "shape":"MetricName",
+          "documentation":"<p>The name of the metric.</p>"
+        },
+        "Dimensions":{
+          "shape":"Dimensions",
+          "documentation":"<p>The dimensions of the summary metric.</p>"
+        },
+        "AggregationPeriod":{
+          "shape":"AggregationPeriod",
+          "documentation":"<p>The aggregation period of the summary metric.</p>"
+        },
+        "StartTimestamp":{
+          "shape":"MetricQueryStartTimestamp",
+          "documentation":"<p>The start timestamp for the summary metric query.</p>"
+        },
+        "EndTimestamp":{
+          "shape":"MetricQueryEndTimestamp",
+          "documentation":"<p>The end timestamp for the summary metric query.</p>"
+        }
+      },
+      "documentation":"<p>The summary metric query object.</p>"
+    },
+    "SummaryMetricQueryResult":{
+      "type":"structure",
+      "members":{
+        "QueryId":{
+          "shape":"MetricQueryId",
+          "documentation":"<p>The ID of the summary metric results query operation.</p>"
+        },
+        "QueryStatus":{
+          "shape":"MetricQueryStatus",
+          "documentation":"<p>The status of the summary metric query result.</p>"
+        },
+        "Error":{
+          "shape":"MetricQueryError",
+          "documentation":"<p>The error message for the summary metric query result.</p>"
+        },
+        "MetricName":{
+          "shape":"MetricName",
+          "documentation":"<p>The name of the summary metric query result.</p>"
+        },
+        "Dimensions":{
+          "shape":"Dimensions",
+          "documentation":"<p>The dimensions of the metric.</p>"
+        },
+        "AggregationPeriod":{
+          "shape":"AggregationPeriod",
+          "documentation":"<p>The aggregation period of the metric.</p>"
+        },
+        "StartTimestamp":{
+          "shape":"MetricQueryStartTimestamp",
+          "documentation":"<p>The start timestamp for the summary metric query.</p>"
+        },
+        "EndTimestamp":{
+          "shape":"MetricQueryEndTimestamp",
+          "documentation":"<p>The end timestamp for the summary metric query.</p>"
+        },
+        "Timestamps":{
+          "shape":"MetricQueryTimestamps",
+          "documentation":"<p>The timestamp of each aggregation result.</p>"
+        },
+        "Values":{
+          "shape":"MetricQueryValues",
+          "documentation":"<p>The list of aggregated summary metric query results.</p>"
+        },
+        "Unit":{
+          "shape":"MetricUnit",
+          "documentation":"<p>The units of measurement to be used for interpreting the aggregation result.</p>"
+        }
+      },
+      "documentation":"<p>The result of the summary metrics aggregation operation.</p>"
+    },
+    "SummaryMetricQueryResults":{
+      "type":"list",
+      "member":{"shape":"SummaryMetricQueryResult"}
+    },
     "SupportedRfRegion":{
       "type":"string",
       "documentation":"<p>Supported RfRegions</p>",
@@ -6237,13 +8101,32 @@
         "EU868",
         "US915",
         "AU915",
-        "AS923-1"
+        "AS923-1",
+        "AS923-2",
+        "AS923-3",
+        "AS923-4",
+        "EU433",
+        "CN470",
+        "CN779",
+        "RU864",
+        "KR920",
+        "IN865"
       ]
     },
     "Supports32BitFCnt":{"type":"boolean"},
     "SupportsClassB":{"type":"boolean"},
     "SupportsClassC":{"type":"boolean"},
     "SupportsJoin":{"type":"boolean"},
+    "SystemId":{
+      "type":"integer",
+      "max":32767,
+      "min":1
+    },
+    "TAC":{
+      "type":"integer",
+      "max":65535,
+      "min":0
+    },
     "Tag":{
       "type":"structure",
       "required":[
@@ -6314,6 +8197,118 @@
       "max":100,
       "min":0
     },
+    "TdscdmaList":{
+      "type":"list",
+      "member":{"shape":"TdscdmaObj"},
+      "max":16,
+      "min":1
+    },
+    "TdscdmaLocalId":{
+      "type":"structure",
+      "required":[
+        "Uarfcn",
+        "CellParams"
+      ],
+      "members":{
+        "Uarfcn":{
+          "shape":"UARFCN",
+          "documentation":"<p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>"
+        },
+        "CellParams":{
+          "shape":"CellParams",
+          "documentation":"<p>Cell parameters for TD-SCDMA.</p>"
+        }
+      },
+      "documentation":"<p>TD-SCDMA local identification (local Id) information.</p>"
+    },
+    "TdscdmaNmrList":{
+      "type":"list",
+      "member":{"shape":"TdscdmaNmrObj"},
+      "max":32,
+      "min":1
+    },
+    "TdscdmaNmrObj":{
+      "type":"structure",
+      "required":[
+        "Uarfcn",
+        "CellParams"
+      ],
+      "members":{
+        "Uarfcn":{
+          "shape":"UARFCN",
+          "documentation":"<p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>"
+        },
+        "CellParams":{
+          "shape":"CellParams",
+          "documentation":"<p>Cell parameters for TD-SCDMA network measurement reports object.</p>"
+        },
+        "UtranCid":{
+          "shape":"UtranCid",
+          "documentation":"<p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>"
+        },
+        "Rscp":{
+          "shape":"RSCP",
+          "documentation":"<p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>"
+        },
+        "PathLoss":{
+          "shape":"PathLoss",
+          "documentation":"<p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>"
+        }
+      },
+      "documentation":"<p>TD-SCDMA object for network measurement reports.</p>"
+    },
+    "TdscdmaObj":{
+      "type":"structure",
+      "required":[
+        "Mcc",
+        "Mnc",
+        "UtranCid"
+      ],
+      "members":{
+        "Mcc":{
+          "shape":"MCC",
+          "documentation":"<p>Mobile Country Code.</p>"
+        },
+        "Mnc":{
+          "shape":"MNC",
+          "documentation":"<p>Mobile Network Code.</p>"
+        },
+        "Lac":{
+          "shape":"LAC",
+          "documentation":"<p>Location Area Code.</p>"
+        },
+        "UtranCid":{
+          "shape":"UtranCid",
+          "documentation":"<p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>"
+        },
+        "TdscdmaLocalId":{
+          "shape":"TdscdmaLocalId",
+          "documentation":"<p>TD-SCDMA local identification (local ID) information.</p>"
+        },
+        "TdscdmaTimingAdvance":{
+          "shape":"TdscdmaTimingAdvance",
+          "documentation":"<p>TD-SCDMA Timing advance.</p>"
+        },
+        "Rscp":{
+          "shape":"RSCP",
+          "documentation":"<p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>"
+        },
+        "PathLoss":{
+          "shape":"PathLoss",
+          "documentation":"<p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>"
+        },
+        "TdscdmaNmr":{
+          "shape":"TdscdmaNmrList",
+          "documentation":"<p>TD-SCDMA object for network measurement reports.</p>"
+        }
+      },
+      "documentation":"<p>TD-SCDMA object.</p>"
+    },
+    "TdscdmaTimingAdvance":{
+      "type":"integer",
+      "max":1530,
+      "min":0
+    },
     "TestWirelessDeviceRequest":{
       "type":"structure",
       "required":["Id"],
@@ -6363,9 +8358,10 @@
       "type":"structure",
       "members":{
         "WirelessDeviceFrameInfo":{"shape":"WirelessDeviceFrameInfo"},
-        "LogLevel":{"shape":"LogLevel"}
+        "LogLevel":{"shape":"LogLevel"},
+        "MulticastFrameInfo":{"shape":"MulticastFrameInfo"}
       },
-      "documentation":"<p>Trace content for your wireless gateway and wireless device resources.</p>"
+      "documentation":"<p>Trace content for your wireless devices, gateways, and multicast groups.</p>"
     },
     "TransmissionInterval":{
       "type":"integer",
@@ -6375,6 +8371,16 @@
     "TransmitMode":{
       "type":"integer",
       "max":1,
+      "min":0
+    },
+    "UARFCN":{
+      "type":"integer",
+      "max":16383,
+      "min":0
+    },
+    "UARFCNDL":{
+      "type":"integer",
+      "max":16383,
       "min":0
     },
     "UlBucketSize":{
@@ -6511,6 +8517,10 @@
         "Positioning":{
           "shape":"Positioning",
           "documentation":"<p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>"
+        },
+        "Applications":{
+          "shape":"Applications",
+          "documentation":"<p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>"
         }
       },
       "documentation":"<p>Object for updating the FPorts information.</p>"
@@ -6528,7 +8538,10 @@
         "Description":{"shape":"Description"},
         "LoRaWAN":{"shape":"LoRaWANFuotaTask"},
         "FirmwareUpdateImage":{"shape":"FirmwareUpdateImage"},
-        "FirmwareUpdateRole":{"shape":"FirmwareUpdateRole"}
+        "FirmwareUpdateRole":{"shape":"FirmwareUpdateRole"},
+        "RedundancyPercent":{"shape":"RedundancyPercent"},
+        "FragmentSizeBytes":{"shape":"FragmentSizeBytes"},
+        "FragmentIntervalMS":{"shape":"FragmentIntervalMS"}
       }
     },
     "UpdateFuotaTaskResponse":{
@@ -6545,6 +8558,20 @@
       }
     },
     "UpdateLogLevelsByResourceTypesResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "UpdateMetricConfigurationRequest":{
+      "type":"structure",
+      "members":{
+        "SummaryMetric":{
+          "shape":"SummaryMetricConfiguration",
+          "documentation":"<p>The value to be used to set summary metric configuration.</p>"
+        }
+      }
+    },
+    "UpdateMetricConfigurationResponse":{
       "type":"structure",
       "members":{
       }
@@ -6594,7 +8621,15 @@
           "shape":"WirelessGatewayList",
           "documentation":"<p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>"
         },
-        "Description":{"shape":"Description"}
+        "Description":{"shape":"Description"},
+        "MulticastGroupsToAdd":{
+          "shape":"NetworkAnalyzerMulticastGroupList",
+          "documentation":"<p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>"
+        },
+        "MulticastGroupsToRemove":{
+          "shape":"NetworkAnalyzerMulticastGroupList",
+          "documentation":"<p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resources to remove in the input array.</p>"
+        }
       }
     },
     "UpdateNetworkAnalyzerConfigurationResponse":{
@@ -6657,12 +8692,16 @@
           "shape":"PositionCoordinate",
           "documentation":"<p>The position information of the resource.</p>"
         }
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "UpdatePositionResponse":{
       "type":"structure",
       "members":{
-      }
+      },
+      "deprecated":true,
+      "deprecatedMessage":"This operation is no longer supported."
     },
     "UpdateResourceEventConfigurationRequest":{
       "type":"structure",
@@ -6716,10 +8755,65 @@
       "members":{
       }
     },
+    "UpdateResourcePositionRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceIdentifier",
+        "ResourceType"
+      ],
+      "members":{
+        "ResourceIdentifier":{
+          "shape":"PositionResourceIdentifier",
+          "documentation":"<p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>",
+          "location":"uri",
+          "locationName":"ResourceIdentifier"
+        },
+        "ResourceType":{
+          "shape":"PositionResourceType",
+          "documentation":"<p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>",
+          "location":"querystring",
+          "locationName":"resourceType"
+        },
+        "GeoJsonPayload":{
+          "shape":"GeoJsonPayload",
+          "documentation":"<p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href=\"https://geojson.org/\">GeoJSON</a>.</p>"
+        }
+      },
+      "payload":"GeoJsonPayload"
+    },
+    "UpdateResourcePositionResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateSignature":{
       "type":"string",
       "max":4096,
       "min":1
+    },
+    "UpdateWirelessDeviceImportTaskRequest":{
+      "type":"structure",
+      "required":[
+        "Id",
+        "Sidewalk"
+      ],
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The identifier of the import task to be updated.</p>",
+          "location":"uri",
+          "locationName":"Id"
+        },
+        "Sidewalk":{
+          "shape":"SidewalkUpdateImportInfo",
+          "documentation":"<p>The Sidewalk-related parameters of the import task to be updated.</p>"
+        }
+      }
+    },
+    "UpdateWirelessDeviceImportTaskResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "UpdateWirelessDeviceRequest":{
       "type":"structure",
@@ -6746,6 +8840,10 @@
         "LoRaWAN":{
           "shape":"LoRaWANUpdateDevice",
           "documentation":"<p>The updated wireless device's configuration.</p>"
+        },
+        "Positioning":{
+          "shape":"PositioningConfigStatus",
+          "documentation":"<p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>"
         }
       }
     },
@@ -6773,7 +8871,11 @@
           "documentation":"<p>A new description of the resource.</p>"
         },
         "JoinEuiFilters":{"shape":"JoinEuiFilters"},
-        "NetIdFilters":{"shape":"NetIdFilters"}
+        "NetIdFilters":{"shape":"NetIdFilters"},
+        "MaxEirp":{
+          "shape":"GatewayMaxEirp",
+          "documentation":"<p>The MaxEIRP value.</p>"
+        }
       }
     },
     "UpdateWirelessGatewayResponse":{
@@ -6817,6 +8919,12 @@
       },
       "documentation":"<p>UpdateWirelessGatewayTaskEntry object.</p>"
     },
+    "Use2DSolver":{"type":"boolean"},
+    "UtranCid":{
+      "type":"integer",
+      "max":268435455,
+      "min":0
+    },
     "ValidationException":{
       "type":"structure",
       "members":{
@@ -6829,6 +8937,132 @@
     "VerticalAccuracy":{
       "type":"float",
       "min":0
+    },
+    "WcdmaList":{
+      "type":"list",
+      "member":{"shape":"WcdmaObj"},
+      "max":16,
+      "min":1
+    },
+    "WcdmaLocalId":{
+      "type":"structure",
+      "required":[
+        "Uarfcndl",
+        "Psc"
+      ],
+      "members":{
+        "Uarfcndl":{
+          "shape":"UARFCNDL",
+          "documentation":"<p>WCDMA UTRA Absolute RF Channel Number downlink.</p>"
+        },
+        "Psc":{
+          "shape":"PSC",
+          "documentation":"<p>Primary Scrambling Code.</p>"
+        }
+      },
+      "documentation":"<p>WCDMA local identification (local ID) information.</p>"
+    },
+    "WcdmaNmrList":{
+      "type":"list",
+      "member":{"shape":"WcdmaNmrObj"},
+      "max":32,
+      "min":1
+    },
+    "WcdmaNmrObj":{
+      "type":"structure",
+      "required":[
+        "Uarfcndl",
+        "Psc",
+        "UtranCid"
+      ],
+      "members":{
+        "Uarfcndl":{
+          "shape":"UARFCNDL",
+          "documentation":"<p>WCDMA UTRA Absolute RF Channel Number downlink.</p>"
+        },
+        "Psc":{
+          "shape":"PSC",
+          "documentation":"<p>Primary Scrambling Code.</p>"
+        },
+        "UtranCid":{
+          "shape":"UtranCid",
+          "documentation":"<p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>"
+        },
+        "Rscp":{
+          "shape":"RSCP",
+          "documentation":"<p>Received Signal Code Power (signal power) (dBm)</p>"
+        },
+        "PathLoss":{
+          "shape":"PathLoss",
+          "documentation":"<p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>"
+        }
+      },
+      "documentation":"<p>Network Measurement Reports.</p>"
+    },
+    "WcdmaObj":{
+      "type":"structure",
+      "required":[
+        "Mcc",
+        "Mnc",
+        "UtranCid"
+      ],
+      "members":{
+        "Mcc":{
+          "shape":"MCC",
+          "documentation":"<p>Mobile Country Code.</p>"
+        },
+        "Mnc":{
+          "shape":"MNC",
+          "documentation":"<p>Mobile Network Code.</p>"
+        },
+        "Lac":{
+          "shape":"LAC",
+          "documentation":"<p>Location Area Code.</p>"
+        },
+        "UtranCid":{
+          "shape":"UtranCid",
+          "documentation":"<p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>"
+        },
+        "WcdmaLocalId":{
+          "shape":"WcdmaLocalId",
+          "documentation":"<p>WCDMA local ID information.</p>"
+        },
+        "Rscp":{
+          "shape":"RSCP",
+          "documentation":"<p>Received Signal Code Power (signal power) (dBm).</p>"
+        },
+        "PathLoss":{
+          "shape":"PathLoss",
+          "documentation":"<p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>"
+        },
+        "WcdmaNmr":{
+          "shape":"WcdmaNmrList",
+          "documentation":"<p>WCDMA object for network measurement reports.</p>"
+        }
+      },
+      "documentation":"<p>WCDMA.</p>"
+    },
+    "WiFiAccessPoint":{
+      "type":"structure",
+      "required":[
+        "MacAddress",
+        "Rss"
+      ],
+      "members":{
+        "MacAddress":{
+          "shape":"MacAddress",
+          "documentation":"<p>Wi-Fi MAC Address.</p>"
+        },
+        "Rss":{
+          "shape":"RSS",
+          "documentation":"<p>Received signal strength (dBm) of the WLAN measurement data.</p>"
+        }
+      },
+      "documentation":"<p>Wi-Fi access point.</p>"
+    },
+    "WiFiAccessPoints":{
+      "type":"list",
+      "member":{"shape":"WiFiAccessPoint"}
     },
     "WirelessDeviceArn":{"type":"string"},
     "WirelessDeviceEvent":{
@@ -6881,6 +9115,60 @@
         "SidewalkManufacturingSn"
       ]
     },
+    "WirelessDeviceImportTask":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"ImportTaskId",
+          "documentation":"<p>The ID of the wireless device import task.</p>"
+        },
+        "Arn":{
+          "shape":"ImportTaskArn",
+          "documentation":"<p>The ARN (Amazon Resource Name) of the wireless device import task.</p>"
+        },
+        "DestinationName":{
+          "shape":"DestinationName",
+          "documentation":"<p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>"
+        },
+        "Sidewalk":{
+          "shape":"SidewalkGetStartImportInfo",
+          "documentation":"<p>The Sidewalk-related information of the wireless device import task.</p>"
+        },
+        "CreationTime":{
+          "shape":"CreationTime",
+          "documentation":"<p>The time at which the import task was created.</p>"
+        },
+        "Status":{
+          "shape":"ImportTaskStatus",
+          "documentation":"<p>The status information of the wireless device import task.</p>"
+        },
+        "StatusReason":{
+          "shape":"StatusReason",
+          "documentation":"<p>The reason that provides additional information about the import task status.</p>"
+        },
+        "InitializedImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The summary information of count of wireless devices that are waiting for the control log to be added to an import task.</p>"
+        },
+        "PendingImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The summary information of count of wireless devices in an import task that are waiting in the queue to be onboarded.</p>"
+        },
+        "OnboardedImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The summary information of count of wireless devices in an import task that have been onboarded to the import task.</p>"
+        },
+        "FailedImportedDeviceCount":{
+          "shape":"ImportedWirelessDeviceCount",
+          "documentation":"<p>The summary information of count of wireless devices in an import task that failed to onboarded to the import task.</p>"
+        }
+      },
+      "documentation":"<p>Information about an import task for wireless devices.</p>"
+    },
+    "WirelessDeviceImportTaskList":{
+      "type":"list",
+      "member":{"shape":"WirelessDeviceImportTask"}
+    },
     "WirelessDeviceList":{
       "type":"list",
       "member":{"shape":"WirelessDeviceId"},
@@ -6912,6 +9200,15 @@
       "type":"string",
       "max":256
     },
+    "WirelessDeviceSidewalkStatus":{
+      "type":"string",
+      "enum":[
+        "PROVISIONED",
+        "REGISTERED",
+        "ACTIVATED",
+        "UNKNOWN"
+      ]
+    },
     "WirelessDeviceStatistics":{
       "type":"structure",
       "members":{
@@ -6937,7 +9234,7 @@
         },
         "LastUplinkReceivedAt":{
           "shape":"ISODateTimeString",
-          "documentation":"<p>The date and time when the most recent uplink was received.</p>"
+          "documentation":"<p>The date and time when the most recent uplink was received.</p> <note> <p>Theis value is only valid for 3 months.</p> </note>"
         },
         "LoRaWAN":{
           "shape":"LoRaWANListDevice",
@@ -7063,7 +9360,7 @@
         },
         "LastUplinkReceivedAt":{
           "shape":"ISODateTimeString",
-          "documentation":"<p>The date and time when the most recent uplink was received.</p>"
+          "documentation":"<p>The date and time when the most recent uplink was received.</p> <note> <p>This value is only valid for 3 months.</p> </note>"
         }
       },
       "documentation":"<p>Information about a wireless gateway's operation.</p>"
@@ -7122,5 +9419,5 @@
       "documentation":"<p>WirelessMetadata object.</p>"
     }
   },
-  "documentation":"<p>AWS IoT Wireless provides bi-directional communication between internet-connected wireless devices and the AWS Cloud. To onboard both LoRaWAN and Sidewalk devices to AWS IoT, use the IoT Wireless API. These wireless devices use the Low Power Wide Area Networking (LPWAN) communication protocol to communicate with AWS IoT.</p> <p>Using the API, you can perform create, read, update, and delete operations for your wireless devices, gateways, destinations, and profiles. After onboarding your devices, you can use the API operations to set log levels and monitor your devices with CloudWatch.</p> <p>You can also use the API operations to create multicast groups and schedule a multicast session for sending a downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices in a multicast group.</p>"
+  "documentation":"<p>AWS IoT Wireless provides bi-directional communication between internet-connected wireless devices and the AWS Cloud. To onboard both LoRaWAN and Sidewalk devices to AWS IoT, use the IoT Wireless API. These wireless devices use the Low Power Wide Area Networking (LPWAN) communication protocol to communicate with AWS IoT.</p> <p>Using the API, you can perform create, read, update, and delete operations for your wireless devices, gateways, destinations, and profiles. After onboarding your devices, you can use the API operations to set log levels and monitor your devices with CloudWatch.</p> <p>You can also use the API operations to create multicast groups and schedule a multicast session for sending a downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices in a multicast group.</p> <p>To connect to the AWS IoT Wireless Service, use the Service endpoints as described in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region\">IoT Wireless Service endpoints</a> in the <i>AWS General Reference</i>.</p>"
 }

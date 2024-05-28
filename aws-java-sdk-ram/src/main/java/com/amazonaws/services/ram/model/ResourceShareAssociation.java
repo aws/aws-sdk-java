@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an association with a resource share and either a principal or a resource.
+ * Describes an association between a resource share and either a principal or a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareAssociation" target="_top">AWS API
@@ -30,7 +30,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share.
      * </p>
      */
@@ -49,7 +49,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * For a resource association, this is the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
      * of the resource.
      * </p>
      * </li>
@@ -65,7 +65,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
@@ -129,12 +129,12 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share.
      * </p>
      * 
      * @param resourceShareArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource share.
      */
 
@@ -144,11 +144,11 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of the resource share.
      */
 
@@ -158,12 +158,12 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the resource share.
      * </p>
      * 
      * @param resourceShareArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -221,7 +221,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * For a resource association, this is the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
      * of the resource.
      * </p>
      * </li>
@@ -237,7 +237,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
@@ -266,7 +266,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        For a resource association, this is the <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      *        (ARN)</a> of the resource.
      *        </p>
      *        </li>
@@ -282,7 +282,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations
      *        </p>
      *        </li>
@@ -317,7 +317,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * For a resource association, this is the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
      * of the resource.
      * </p>
      * </li>
@@ -333,7 +333,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
@@ -361,7 +361,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      *         <li>
      *         <p>
      *         For a resource association, this is the <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      *         (ARN)</a> of the resource.
      *         </p>
      *         </li>
@@ -377,7 +377,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      *         </li>
      *         <li>
      *         <p>
-     *         The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of an organization in Organizations
      *         </p>
      *         </li>
@@ -412,7 +412,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * <li>
      * <p>
      * For a resource association, this is the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
      * of the resource.
      * </p>
      * </li>
@@ -428,7 +428,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations
      * </p>
      * </li>
@@ -457,7 +457,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      *        <li>
      *        <p>
      *        For a resource association, this is the <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      *        (ARN)</a> of the resource.
      *        </p>
      *        </li>
@@ -473,7 +473,7 @@ public class ResourceShareAssociation implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations
      *        </p>
      *        </li>

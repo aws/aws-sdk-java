@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,9 @@ public enum IpAddressStatus {
     DETACHING("DETACHING"),
     FAILED_RESOURCE_GONE("FAILED_RESOURCE_GONE"),
     DELETING("DELETING"),
-    DELETE_FAILED_FAS_EXPIRED("DELETE_FAILED_FAS_EXPIRED");
+    DELETE_FAILED_FAS_EXPIRED("DELETE_FAILED_FAS_EXPIRED"),
+    UPDATING("UPDATING"),
+    UPDATE_FAILED("UPDATE_FAILED");
 
     private String value;
 

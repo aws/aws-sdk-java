@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,6 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to hide a field.
-     * </p>
-     */
-    private Boolean excluded;
-    /**
-     * <p>
-     * Describes the configuration for the default input value to display for a field.
-     * </p>
-     */
-    private FieldInputConfig inputType;
-    /**
-     * <p>
      * The label for the field.
      * </p>
      */
@@ -54,10 +42,102 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
     private FieldPosition position;
     /**
      * <p>
+     * Specifies whether to hide a field.
+     * </p>
+     */
+    private Boolean excluded;
+    /**
+     * <p>
+     * Describes the configuration for the default input value to display for a field.
+     * </p>
+     */
+    private FieldInputConfig inputType;
+    /**
+     * <p>
      * The validations to perform on the value in the field.
      * </p>
      */
     private java.util.List<FieldValidationConfiguration> validations;
+
+    /**
+     * <p>
+     * The label for the field.
+     * </p>
+     * 
+     * @param label
+     *        The label for the field.
+     */
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * <p>
+     * The label for the field.
+     * </p>
+     * 
+     * @return The label for the field.
+     */
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
+     * <p>
+     * The label for the field.
+     * </p>
+     * 
+     * @param label
+     *        The label for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldConfig withLabel(String label) {
+        setLabel(label);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the field position.
+     * </p>
+     * 
+     * @param position
+     *        Specifies the field position.
+     */
+
+    public void setPosition(FieldPosition position) {
+        this.position = position;
+    }
+
+    /**
+     * <p>
+     * Specifies the field position.
+     * </p>
+     * 
+     * @return Specifies the field position.
+     */
+
+    public FieldPosition getPosition() {
+        return this.position;
+    }
+
+    /**
+     * <p>
+     * Specifies the field position.
+     * </p>
+     * 
+     * @param position
+     *        Specifies the field position.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldConfig withPosition(FieldPosition position) {
+        setPosition(position);
+        return this;
+    }
 
     /**
      * <p>
@@ -153,86 +233,6 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The label for the field.
-     * </p>
-     * 
-     * @param label
-     *        The label for the field.
-     */
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    /**
-     * <p>
-     * The label for the field.
-     * </p>
-     * 
-     * @return The label for the field.
-     */
-
-    public String getLabel() {
-        return this.label;
-    }
-
-    /**
-     * <p>
-     * The label for the field.
-     * </p>
-     * 
-     * @param label
-     *        The label for the field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldConfig withLabel(String label) {
-        setLabel(label);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies the field position.
-     * </p>
-     * 
-     * @param position
-     *        Specifies the field position.
-     */
-
-    public void setPosition(FieldPosition position) {
-        this.position = position;
-    }
-
-    /**
-     * <p>
-     * Specifies the field position.
-     * </p>
-     * 
-     * @return Specifies the field position.
-     */
-
-    public FieldPosition getPosition() {
-        return this.position;
-    }
-
-    /**
-     * <p>
-     * Specifies the field position.
-     * </p>
-     * 
-     * @param position
-     *        Specifies the field position.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldConfig withPosition(FieldPosition position) {
-        setPosition(position);
-        return this;
-    }
-
-    /**
-     * <p>
      * The validations to perform on the value in the field.
      * </p>
      * 
@@ -313,14 +313,14 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getExcluded() != null)
-            sb.append("Excluded: ").append(getExcluded()).append(",");
-        if (getInputType() != null)
-            sb.append("InputType: ").append(getInputType()).append(",");
         if (getLabel() != null)
             sb.append("Label: ").append(getLabel()).append(",");
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
+        if (getExcluded() != null)
+            sb.append("Excluded: ").append(getExcluded()).append(",");
+        if (getInputType() != null)
+            sb.append("InputType: ").append(getInputType()).append(",");
         if (getValidations() != null)
             sb.append("Validations: ").append(getValidations());
         sb.append("}");
@@ -337,14 +337,6 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FieldConfig == false)
             return false;
         FieldConfig other = (FieldConfig) obj;
-        if (other.getExcluded() == null ^ this.getExcluded() == null)
-            return false;
-        if (other.getExcluded() != null && other.getExcluded().equals(this.getExcluded()) == false)
-            return false;
-        if (other.getInputType() == null ^ this.getInputType() == null)
-            return false;
-        if (other.getInputType() != null && other.getInputType().equals(this.getInputType()) == false)
-            return false;
         if (other.getLabel() == null ^ this.getLabel() == null)
             return false;
         if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
@@ -352,6 +344,14 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
         if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
+            return false;
+        if (other.getExcluded() == null ^ this.getExcluded() == null)
+            return false;
+        if (other.getExcluded() != null && other.getExcluded().equals(this.getExcluded()) == false)
+            return false;
+        if (other.getInputType() == null ^ this.getInputType() == null)
+            return false;
+        if (other.getInputType() != null && other.getInputType().equals(this.getInputType()) == false)
             return false;
         if (other.getValidations() == null ^ this.getValidations() == null)
             return false;
@@ -365,10 +365,10 @@ public class FieldConfig implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getExcluded() == null) ? 0 : getExcluded().hashCode());
-        hashCode = prime * hashCode + ((getInputType() == null) ? 0 : getInputType().hashCode());
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
+        hashCode = prime * hashCode + ((getExcluded() == null) ? 0 : getExcluded().hashCode());
+        hashCode = prime * hashCode + ((getInputType() == null) ? 0 : getInputType().hashCode());
         hashCode = prime * hashCode + ((getValidations() == null) ? 0 : getValidations().hashCode());
         return hashCode;
     }

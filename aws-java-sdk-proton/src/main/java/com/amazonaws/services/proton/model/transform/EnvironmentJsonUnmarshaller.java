@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("codebuildRoleArn", targetDepth)) {
+                    context.nextToken();
+                    environment.setCodebuildRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("componentRoleArn", targetDepth)) {
                     context.nextToken();
                     environment.setComponentRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -80,6 +84,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setEnvironmentAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    environment.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastDeploymentAttemptedAt", targetDepth)) {
                     context.nextToken();
                     environment.setLastDeploymentAttemptedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -87,6 +95,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
                     context.nextToken();
                     environment.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    environment.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,12 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
     private String environmentName;
     /**
      * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     */
+    private String lastAttemptedDeploymentId;
+    /**
+     * <p>
      * The time when a deployment of the service was last attempted.
      * </p>
      */
@@ -70,6 +76,12 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date lastDeploymentSucceededAt;
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     */
+    private String lastSucceededDeploymentId;
     /**
      * <p>
      * The name of the service instance.
@@ -322,6 +334,46 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this service instance.
+     */
+
+    public void setLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        this.lastAttemptedDeploymentId = lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     * 
+     * @return The ID of the last attempted deployment of this service instance.
+     */
+
+    public String getLastAttemptedDeploymentId() {
+        return this.lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this service instance.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this service instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceInstanceSummary withLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        setLastAttemptedDeploymentId(lastAttemptedDeploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when a deployment of the service was last attempted.
      * </p>
      * 
@@ -397,6 +449,46 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
 
     public ServiceInstanceSummary withLastDeploymentSucceededAt(java.util.Date lastDeploymentSucceededAt) {
         setLastDeploymentSucceededAt(lastDeploymentSucceededAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this service instance.
+     */
+
+    public void setLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        this.lastSucceededDeploymentId = lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     * 
+     * @return The ID of the last successful deployment of this service instance.
+     */
+
+    public String getLastSucceededDeploymentId() {
+        return this.lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service instance.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this service instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceInstanceSummary withLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        setLastSucceededDeploymentId(lastSucceededDeploymentId);
         return this;
     }
 
@@ -622,10 +714,14 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
             sb.append("DeploymentStatusMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
+        if (getLastAttemptedDeploymentId() != null)
+            sb.append("LastAttemptedDeploymentId: ").append(getLastAttemptedDeploymentId()).append(",");
         if (getLastDeploymentAttemptedAt() != null)
             sb.append("LastDeploymentAttemptedAt: ").append(getLastDeploymentAttemptedAt()).append(",");
         if (getLastDeploymentSucceededAt() != null)
             sb.append("LastDeploymentSucceededAt: ").append(getLastDeploymentSucceededAt()).append(",");
+        if (getLastSucceededDeploymentId() != null)
+            sb.append("LastSucceededDeploymentId: ").append(getLastSucceededDeploymentId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getServiceName() != null)
@@ -670,6 +766,10 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
+        if (other.getLastAttemptedDeploymentId() == null ^ this.getLastAttemptedDeploymentId() == null)
+            return false;
+        if (other.getLastAttemptedDeploymentId() != null && other.getLastAttemptedDeploymentId().equals(this.getLastAttemptedDeploymentId()) == false)
+            return false;
         if (other.getLastDeploymentAttemptedAt() == null ^ this.getLastDeploymentAttemptedAt() == null)
             return false;
         if (other.getLastDeploymentAttemptedAt() != null && other.getLastDeploymentAttemptedAt().equals(this.getLastDeploymentAttemptedAt()) == false)
@@ -677,6 +777,10 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
         if (other.getLastDeploymentSucceededAt() == null ^ this.getLastDeploymentSucceededAt() == null)
             return false;
         if (other.getLastDeploymentSucceededAt() != null && other.getLastDeploymentSucceededAt().equals(this.getLastDeploymentSucceededAt()) == false)
+            return false;
+        if (other.getLastSucceededDeploymentId() == null ^ this.getLastSucceededDeploymentId() == null)
+            return false;
+        if (other.getLastSucceededDeploymentId() != null && other.getLastSucceededDeploymentId().equals(this.getLastSucceededDeploymentId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -711,8 +815,10 @@ public class ServiceInstanceSummary implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatusMessage() == null) ? 0 : getDeploymentStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeploymentId() == null) ? 0 : getLastAttemptedDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentAttemptedAt() == null) ? 0 : getLastDeploymentAttemptedAt().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentSucceededAt() == null) ? 0 : getLastDeploymentSucceededAt().hashCode());
+        hashCode = prime * hashCode + ((getLastSucceededDeploymentId() == null) ? 0 : getLastSucceededDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getTemplateMajorVersion() == null) ? 0 : getTemplateMajorVersion().hashCode());

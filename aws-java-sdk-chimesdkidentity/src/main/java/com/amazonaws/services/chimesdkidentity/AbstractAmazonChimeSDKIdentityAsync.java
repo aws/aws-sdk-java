@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,19 @@ public class AbstractAmazonChimeSDKIdentityAsync extends AbstractAmazonChimeSDKI
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAppInstanceBotResult> createAppInstanceBotAsync(CreateAppInstanceBotRequest request) {
+
+        return createAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceBotResult> createAppInstanceBotAsync(CreateAppInstanceBotRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAppInstanceBotRequest, CreateAppInstanceBotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAppInstanceUserResult> createAppInstanceUserAsync(CreateAppInstanceUserRequest request) {
 
         return createAppInstanceUserAsync(request, null);
@@ -88,6 +101,19 @@ public class AbstractAmazonChimeSDKIdentityAsync extends AbstractAmazonChimeSDKI
     @Override
     public java.util.concurrent.Future<DeleteAppInstanceAdminResult> deleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceAdminRequest, DeleteAppInstanceAdminResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceBotResult> deleteAppInstanceBotAsync(DeleteAppInstanceBotRequest request) {
+
+        return deleteAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceBotResult> deleteAppInstanceBotAsync(DeleteAppInstanceBotRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceBotRequest, DeleteAppInstanceBotResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -147,6 +173,19 @@ public class AbstractAmazonChimeSDKIdentityAsync extends AbstractAmazonChimeSDKI
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAppInstanceBotResult> describeAppInstanceBotAsync(DescribeAppInstanceBotRequest request) {
+
+        return describeAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceBotResult> describeAppInstanceBotAsync(DescribeAppInstanceBotRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceBotRequest, DescribeAppInstanceBotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAppInstanceUserResult> describeAppInstanceUserAsync(DescribeAppInstanceUserRequest request) {
 
         return describeAppInstanceUserAsync(request, null);
@@ -198,6 +237,19 @@ public class AbstractAmazonChimeSDKIdentityAsync extends AbstractAmazonChimeSDKI
     @Override
     public java.util.concurrent.Future<ListAppInstanceAdminsResult> listAppInstanceAdminsAsync(ListAppInstanceAdminsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAppInstanceAdminsRequest, ListAppInstanceAdminsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceBotsResult> listAppInstanceBotsAsync(ListAppInstanceBotsRequest request) {
+
+        return listAppInstanceBotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceBotsResult> listAppInstanceBotsAsync(ListAppInstanceBotsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAppInstanceBotsRequest, ListAppInstanceBotsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -270,6 +322,21 @@ public class AbstractAmazonChimeSDKIdentityAsync extends AbstractAmazonChimeSDKI
     }
 
     @Override
+    public java.util.concurrent.Future<PutAppInstanceUserExpirationSettingsResult> putAppInstanceUserExpirationSettingsAsync(
+            PutAppInstanceUserExpirationSettingsRequest request) {
+
+        return putAppInstanceUserExpirationSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppInstanceUserExpirationSettingsResult> putAppInstanceUserExpirationSettingsAsync(
+            PutAppInstanceUserExpirationSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAppInstanceUserExpirationSettingsRequest, PutAppInstanceUserExpirationSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterAppInstanceUserEndpointResult> registerAppInstanceUserEndpointAsync(
             RegisterAppInstanceUserEndpointRequest request) {
 
@@ -319,6 +386,19 @@ public class AbstractAmazonChimeSDKIdentityAsync extends AbstractAmazonChimeSDKI
     @Override
     public java.util.concurrent.Future<UpdateAppInstanceResult> updateAppInstanceAsync(UpdateAppInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceRequest, UpdateAppInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceBotResult> updateAppInstanceBotAsync(UpdateAppInstanceBotRequest request) {
+
+        return updateAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceBotResult> updateAppInstanceBotAsync(UpdateAppInstanceBotRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceBotRequest, UpdateAppInstanceBotResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

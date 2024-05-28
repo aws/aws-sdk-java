@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,7 +75,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     * Write objects into your Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
@@ -93,8 +93,17 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
     private String roleArn;
     /**
      * <p>
-     * The output format of your exported journal data. If this parameter is not specified, the exported data defaults
-     * to <code>ION_TEXT</code> format.
+     * The output format of your exported journal data. A journal export job can write the data objects in either the
+     * text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.
+     * </p>
+     * <p>
+     * Default: <code>ION_TEXT</code>
+     * </p>
+     * <p>
+     * In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a
+     * newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena
+     * and Glue because these services can parse newline-delimited JSON automatically.
      * </p>
      */
     private String outputFormat;
@@ -369,7 +378,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     * Write objects into your Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
@@ -390,7 +399,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     *        Write objects into your Amazon S3 bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -418,7 +427,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     * Write objects into your Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
@@ -438,7 +447,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     *         Write objects into your Amazon S3 bucket.
      *         </p>
      *         </li>
      *         <li>
@@ -466,7 +475,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     * Write objects into your Amazon S3 bucket.
      * </p>
      * </li>
      * <li>
@@ -487,7 +496,7 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+     *        Write objects into your Amazon S3 bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -511,13 +520,31 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The output format of your exported journal data. If this parameter is not specified, the exported data defaults
-     * to <code>ION_TEXT</code> format.
+     * The output format of your exported journal data. A journal export job can write the data objects in either the
+     * text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.
+     * </p>
+     * <p>
+     * Default: <code>ION_TEXT</code>
+     * </p>
+     * <p>
+     * In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a
+     * newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena
+     * and Glue because these services can parse newline-delimited JSON automatically.
      * </p>
      * 
      * @param outputFormat
-     *        The output format of your exported journal data. If this parameter is not specified, the exported data
-     *        defaults to <code>ION_TEXT</code> format.
+     *        The output format of your exported journal data. A journal export job can write the data objects in either
+     *        the text or binary representation of <a
+     *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a
+     *        href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+     *        <p>
+     *        Default: <code>ION_TEXT</code>
+     *        </p>
+     *        <p>
+     *        In JSON Lines format, each journal block in an exported data object is a valid JSON object that is
+     *        delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools
+     *        such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.
      * @see OutputFormat
      */
 
@@ -527,12 +554,30 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The output format of your exported journal data. If this parameter is not specified, the exported data defaults
-     * to <code>ION_TEXT</code> format.
+     * The output format of your exported journal data. A journal export job can write the data objects in either the
+     * text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.
+     * </p>
+     * <p>
+     * Default: <code>ION_TEXT</code>
+     * </p>
+     * <p>
+     * In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a
+     * newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena
+     * and Glue because these services can parse newline-delimited JSON automatically.
      * </p>
      * 
-     * @return The output format of your exported journal data. If this parameter is not specified, the exported data
-     *         defaults to <code>ION_TEXT</code> format.
+     * @return The output format of your exported journal data. A journal export job can write the data objects in
+     *         either the text or binary representation of <a
+     *         href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a
+     *         href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+     *         <p>
+     *         Default: <code>ION_TEXT</code>
+     *         </p>
+     *         <p>
+     *         In JSON Lines format, each journal block in an exported data object is a valid JSON object that is
+     *         delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools
+     *         such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.
      * @see OutputFormat
      */
 
@@ -542,13 +587,31 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The output format of your exported journal data. If this parameter is not specified, the exported data defaults
-     * to <code>ION_TEXT</code> format.
+     * The output format of your exported journal data. A journal export job can write the data objects in either the
+     * text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.
+     * </p>
+     * <p>
+     * Default: <code>ION_TEXT</code>
+     * </p>
+     * <p>
+     * In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a
+     * newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena
+     * and Glue because these services can parse newline-delimited JSON automatically.
      * </p>
      * 
      * @param outputFormat
-     *        The output format of your exported journal data. If this parameter is not specified, the exported data
-     *        defaults to <code>ION_TEXT</code> format.
+     *        The output format of your exported journal data. A journal export job can write the data objects in either
+     *        the text or binary representation of <a
+     *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a
+     *        href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+     *        <p>
+     *        Default: <code>ION_TEXT</code>
+     *        </p>
+     *        <p>
+     *        In JSON Lines format, each journal block in an exported data object is a valid JSON object that is
+     *        delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools
+     *        such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */
@@ -560,13 +623,31 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The output format of your exported journal data. If this parameter is not specified, the exported data defaults
-     * to <code>ION_TEXT</code> format.
+     * The output format of your exported journal data. A journal export job can write the data objects in either the
+     * text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.
+     * </p>
+     * <p>
+     * Default: <code>ION_TEXT</code>
+     * </p>
+     * <p>
+     * In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a
+     * newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena
+     * and Glue because these services can parse newline-delimited JSON automatically.
      * </p>
      * 
      * @param outputFormat
-     *        The output format of your exported journal data. If this parameter is not specified, the exported data
-     *        defaults to <code>ION_TEXT</code> format.
+     *        The output format of your exported journal data. A journal export job can write the data objects in either
+     *        the text or binary representation of <a
+     *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a
+     *        href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+     *        <p>
+     *        Default: <code>ION_TEXT</code>
+     *        </p>
+     *        <p>
+     *        In JSON Lines format, each journal block in an exported data object is a valid JSON object that is
+     *        delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools
+     *        such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */

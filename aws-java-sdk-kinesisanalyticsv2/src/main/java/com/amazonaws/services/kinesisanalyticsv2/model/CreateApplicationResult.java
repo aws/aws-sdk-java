@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,21 +25,21 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with
-     * details of the application it created.
+     * In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response
+     * with details of the application it created.
      * </p>
      */
     private ApplicationDetail applicationDetail;
 
     /**
      * <p>
-     * In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with
-     * details of the application it created.
+     * In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response
+     * with details of the application it created.
      * </p>
      * 
      * @param applicationDetail
-     *        In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with
-     *        details of the application it created.
+     *        In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a
+     *        response with details of the application it created.
      */
 
     public void setApplicationDetail(ApplicationDetail applicationDetail) {
@@ -48,12 +48,12 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with
-     * details of the application it created.
+     * In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response
+     * with details of the application it created.
      * </p>
      * 
-     * @return In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response
-     *         with details of the application it created.
+     * @return In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a
+     *         response with details of the application it created.
      */
 
     public ApplicationDetail getApplicationDetail() {
@@ -62,13 +62,13 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with
-     * details of the application it created.
+     * In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response
+     * with details of the application it created.
      * </p>
      * 
      * @param applicationDetail
-     *        In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with
-     *        details of the application it created.
+     *        In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a
+     *        response with details of the application it created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

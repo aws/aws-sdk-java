@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific
- * file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the
- * date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public
- * key associated with their user name on a specific server.
+ * Provides information about the public Secure Shell (SSH) key that is associated with a Transfer Family user for the
+ * specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned
+ * includes the date the key was imported, the public key contents, and the public key ID. A user can store more than
+ * one SSH public key associated with their user name on a specific server.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SshPublicKey" target="_top">AWS API
@@ -33,7 +33,7 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the Transfer Family user.
      * </p>
      */
     private java.util.Date dateImported;
@@ -55,11 +55,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the Transfer Family user.
      * </p>
      * 
      * @param dateImported
-     *        Specifies the date that the public key was added to the user account.
+     *        Specifies the date that the public key was added to the Transfer Family user.
      */
 
     public void setDateImported(java.util.Date dateImported) {
@@ -68,10 +68,10 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the Transfer Family user.
      * </p>
      * 
-     * @return Specifies the date that the public key was added to the user account.
+     * @return Specifies the date that the public key was added to the Transfer Family user.
      */
 
     public java.util.Date getDateImported() {
@@ -80,11 +80,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the Transfer Family user.
      * </p>
      * 
      * @param dateImported
-     *        Specifies the date that the public key was added to the user account.
+     *        Specifies the date that the public key was added to the Transfer Family user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

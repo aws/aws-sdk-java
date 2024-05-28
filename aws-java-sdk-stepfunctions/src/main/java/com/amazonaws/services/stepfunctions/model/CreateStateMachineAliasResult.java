@@ -1,0 +1,179 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.stepfunctions.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachineAlias" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateStateMachineAliasResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     * </p>
+     */
+    private String stateMachineAliasArn;
+    /**
+     * <p>
+     * The date the state machine alias was created.
+     * </p>
+     */
+    private java.util.Date creationDate;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     */
+
+    public void setStateMachineAliasArn(String stateMachineAliasArn) {
+        this.stateMachineAliasArn = stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     */
+
+    public String getStateMachineAliasArn() {
+        return this.stateMachineAliasArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     * </p>
+     * 
+     * @param stateMachineAliasArn
+     *        The Amazon Resource Name (ARN) that identifies the created state machine alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineAliasResult withStateMachineAliasArn(String stateMachineAliasArn) {
+        setStateMachineAliasArn(stateMachineAliasArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the state machine alias was created.
+     * </p>
+     * 
+     * @param creationDate
+     *        The date the state machine alias was created.
+     */
+
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    /**
+     * <p>
+     * The date the state machine alias was created.
+     * </p>
+     * 
+     * @return The date the state machine alias was created.
+     */
+
+    public java.util.Date getCreationDate() {
+        return this.creationDate;
+    }
+
+    /**
+     * <p>
+     * The date the state machine alias was created.
+     * </p>
+     * 
+     * @param creationDate
+     *        The date the state machine alias was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineAliasResult withCreationDate(java.util.Date creationDate) {
+        setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getStateMachineAliasArn() != null)
+            sb.append("StateMachineAliasArn: ").append(getStateMachineAliasArn()).append(",");
+        if (getCreationDate() != null)
+            sb.append("CreationDate: ").append(getCreationDate());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateStateMachineAliasResult == false)
+            return false;
+        CreateStateMachineAliasResult other = (CreateStateMachineAliasResult) obj;
+        if (other.getStateMachineAliasArn() == null ^ this.getStateMachineAliasArn() == null)
+            return false;
+        if (other.getStateMachineAliasArn() != null && other.getStateMachineAliasArn().equals(this.getStateMachineAliasArn()) == false)
+            return false;
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null)
+            return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getStateMachineAliasArn() == null) ? 0 : getStateMachineAliasArn().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public CreateStateMachineAliasResult clone() {
+        try {
+            return (CreateStateMachineAliasResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

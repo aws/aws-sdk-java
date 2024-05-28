@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,19 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private CharacterSet defaultCharacterSet;
     /**
      * <p>
+     * The EC2 image
+     * </p>
+     */
+    private CustomDBEngineVersionAMI image;
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     */
+    private String dBEngineMediaType;
+    /**
+     * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
      * <code>CreateDBInstance</code> operation.
      * </p>
@@ -98,8 +111,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> exportableLogTypes;
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      */
     private Boolean supportsLogExportsToCloudwatchLogs;
@@ -149,13 +162,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      */
     private Boolean supportsParallelQuery;
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      */
     private Boolean supportsGlobalDatabases;
@@ -201,10 +214,62 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      */
     private Boolean supportsBabelfish;
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String customDBEngineVersionManifest;
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora Limitless Database.
+     * </p>
+     */
+    private Boolean supportsLimitlessDatabase;
+    /**
+     * <p>
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
+     * </p>
+     */
+    private Boolean supportsCertificateRotationWithoutRestart;
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedCACertificateIdentifiers;
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean supportsLocalWriteForwarding;
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     * </p>
+     */
+    private Boolean supportsIntegrations;
 
     /**
      * <p>
@@ -449,6 +514,92 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     public DBEngineVersion withDefaultCharacterSet(CharacterSet defaultCharacterSet) {
         setDefaultCharacterSet(defaultCharacterSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     * 
+     * @param image
+     *        The EC2 image
+     */
+
+    public void setImage(CustomDBEngineVersionAMI image) {
+        this.image = image;
+    }
+
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     * 
+     * @return The EC2 image
+     */
+
+    public CustomDBEngineVersionAMI getImage() {
+        return this.image;
+    }
+
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     * 
+     * @param image
+     *        The EC2 image
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withImage(CustomDBEngineVersionAMI image) {
+        setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     * 
+     * @param dBEngineMediaType
+     *        A value that indicates the source media provider of the AMI based on the usage operation. Applicable for
+     *        RDS Custom for SQL Server.
+     */
+
+    public void setDBEngineMediaType(String dBEngineMediaType) {
+        this.dBEngineMediaType = dBEngineMediaType;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     * 
+     * @return A value that indicates the source media provider of the AMI based on the usage operation. Applicable for
+     *         RDS Custom for SQL Server.
+     */
+
+    public String getDBEngineMediaType() {
+        return this.dBEngineMediaType;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     * 
+     * @param dBEngineMediaType
+     *        A value that indicates the source media provider of the AMI based on the usage operation. Applicable for
+     *        RDS Custom for SQL Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withDBEngineMediaType(String dBEngineMediaType) {
+        setDBEngineMediaType(dBEngineMediaType);
         return this;
     }
 
@@ -843,13 +994,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
      * @param supportsLogExportsToCloudwatchLogs
-     *        A value that indicates whether the engine version supports exporting the log types specified by
-     *        ExportableLogTypes to CloudWatch Logs.
+     *        Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *        CloudWatch Logs.
      */
 
     public void setSupportsLogExportsToCloudwatchLogs(Boolean supportsLogExportsToCloudwatchLogs) {
@@ -858,12 +1009,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports exporting the log types specified by
-     *         ExportableLogTypes to CloudWatch Logs.
+     * @return Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *         CloudWatch Logs.
      */
 
     public Boolean getSupportsLogExportsToCloudwatchLogs() {
@@ -872,13 +1023,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
      * @param supportsLogExportsToCloudwatchLogs
-     *        A value that indicates whether the engine version supports exporting the log types specified by
-     *        ExportableLogTypes to CloudWatch Logs.
+     *        Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *        CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -889,12 +1040,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports exporting the log types specified by
-     * ExportableLogTypes to CloudWatch Logs.
+     * Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     * CloudWatch Logs.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports exporting the log types specified by
-     *         ExportableLogTypes to CloudWatch Logs.
+     * @return Indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to
+     *         CloudWatch Logs.
      */
 
     public Boolean isSupportsLogExportsToCloudwatchLogs() {
@@ -1297,11 +1448,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
      * @param supportsParallelQuery
-     *        A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     *        Indicates whether you can use Aurora parallel query with a specific DB engine version.
      */
 
     public void setSupportsParallelQuery(Boolean supportsParallelQuery) {
@@ -1310,10 +1461,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * @return Indicates whether you can use Aurora parallel query with a specific DB engine version.
      */
 
     public Boolean getSupportsParallelQuery() {
@@ -1322,11 +1473,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
      * @param supportsParallelQuery
-     *        A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     *        Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1337,10 +1488,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * Indicates whether you can use Aurora parallel query with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * @return Indicates whether you can use Aurora parallel query with a specific DB engine version.
      */
 
     public Boolean isSupportsParallelQuery() {
@@ -1349,11 +1500,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
      * @param supportsGlobalDatabases
-     *        A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     *        Indicates whether you can use Aurora global databases with a specific DB engine version.
      */
 
     public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
@@ -1362,10 +1513,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * @return Indicates whether you can use Aurora global databases with a specific DB engine version.
      */
 
     public Boolean getSupportsGlobalDatabases() {
@@ -1374,11 +1525,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
      * @param supportsGlobalDatabases
-     *        A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     *        Indicates whether you can use Aurora global databases with a specific DB engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1389,10 +1540,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * Indicates whether you can use Aurora global databases with a specific DB engine version.
      * </p>
      * 
-     * @return A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * @return Indicates whether you can use Aurora global databases with a specific DB engine version.
      */
 
     public Boolean isSupportsGlobalDatabases() {
@@ -1708,11 +1859,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
      * @param supportsBabelfish
-     *        A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     *        Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      */
 
     public void setSupportsBabelfish(Boolean supportsBabelfish) {
@@ -1721,10 +1872,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * @return Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      */
 
     public Boolean getSupportsBabelfish() {
@@ -1733,11 +1884,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
      * @param supportsBabelfish
-     *        A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     *        Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1748,14 +1899,453 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      * </p>
      * 
-     * @return A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
+     * @return Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
      */
 
     public Boolean isSupportsBabelfish() {
         return this.supportsBabelfish;
+    }
+
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param customDBEngineVersionManifest
+     *        JSON string that lists the installation files and parameters that RDS Custom uses to create a custom
+     *        engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest.
+     *        You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     *        >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public void setCustomDBEngineVersionManifest(String customDBEngineVersionManifest) {
+        this.customDBEngineVersionManifest = customDBEngineVersionManifest;
+    }
+
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return JSON string that lists the installation files and parameters that RDS Custom uses to create a custom
+     *         engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the
+     *         manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation
+     *         parameters. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     *         >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public String getCustomDBEngineVersionManifest() {
+        return this.customDBEngineVersionManifest;
+    }
+
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param customDBEngineVersionManifest
+     *        JSON string that lists the installation files and parameters that RDS Custom uses to create a custom
+     *        engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest.
+     *        You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     *        >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withCustomDBEngineVersionManifest(String customDBEngineVersionManifest) {
+        setCustomDBEngineVersionManifest(customDBEngineVersionManifest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora Limitless Database.
+     * </p>
+     * 
+     * @param supportsLimitlessDatabase
+     *        Indicates whether the DB engine version supports Aurora Limitless Database.
+     */
+
+    public void setSupportsLimitlessDatabase(Boolean supportsLimitlessDatabase) {
+        this.supportsLimitlessDatabase = supportsLimitlessDatabase;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora Limitless Database.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports Aurora Limitless Database.
+     */
+
+    public Boolean getSupportsLimitlessDatabase() {
+        return this.supportsLimitlessDatabase;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora Limitless Database.
+     * </p>
+     * 
+     * @param supportsLimitlessDatabase
+     *        Indicates whether the DB engine version supports Aurora Limitless Database.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsLimitlessDatabase(Boolean supportsLimitlessDatabase) {
+        setSupportsLimitlessDatabase(supportsLimitlessDatabase);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports Aurora Limitless Database.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports Aurora Limitless Database.
+     */
+
+    public Boolean isSupportsLimitlessDatabase() {
+        return this.supportsLimitlessDatabase;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
+     * </p>
+     * 
+     * @param supportsCertificateRotationWithoutRestart
+     *        Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *        instance.
+     */
+
+    public void setSupportsCertificateRotationWithoutRestart(Boolean supportsCertificateRotationWithoutRestart) {
+        this.supportsCertificateRotationWithoutRestart = supportsCertificateRotationWithoutRestart;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
+     * </p>
+     * 
+     * @return Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *         instance.
+     */
+
+    public Boolean getSupportsCertificateRotationWithoutRestart() {
+        return this.supportsCertificateRotationWithoutRestart;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
+     * </p>
+     * 
+     * @param supportsCertificateRotationWithoutRestart
+     *        Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsCertificateRotationWithoutRestart(Boolean supportsCertificateRotationWithoutRestart) {
+        setSupportsCertificateRotationWithoutRestart(supportsCertificateRotationWithoutRestart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.
+     * </p>
+     * 
+     * @return Indicates whether the engine version supports rotating the server certificate without rebooting the DB
+     *         instance.
+     */
+
+    public Boolean isSupportsCertificateRotationWithoutRestart() {
+        return this.supportsCertificateRotationWithoutRestart;
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return A list of the supported CA certificate identifiers.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *         encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *         to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public java.util.List<String> getSupportedCACertificateIdentifiers() {
+        if (supportedCACertificateIdentifiers == null) {
+            supportedCACertificateIdentifiers = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedCACertificateIdentifiers;
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param supportedCACertificateIdentifiers
+     *        A list of the supported CA certificate identifiers.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public void setSupportedCACertificateIdentifiers(java.util.Collection<String> supportedCACertificateIdentifiers) {
+        if (supportedCACertificateIdentifiers == null) {
+            this.supportedCACertificateIdentifiers = null;
+            return;
+        }
+
+        this.supportedCACertificateIdentifiers = new com.amazonaws.internal.SdkInternalList<String>(supportedCACertificateIdentifiers);
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedCACertificateIdentifiers(java.util.Collection)} or
+     * {@link #withSupportedCACertificateIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedCACertificateIdentifiers
+     *        A list of the supported CA certificate identifiers.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedCACertificateIdentifiers(String... supportedCACertificateIdentifiers) {
+        if (this.supportedCACertificateIdentifiers == null) {
+            setSupportedCACertificateIdentifiers(new com.amazonaws.internal.SdkInternalList<String>(supportedCACertificateIdentifiers.length));
+        }
+        for (String ele : supportedCACertificateIdentifiers) {
+            this.supportedCACertificateIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the supported CA certificate identifiers.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param supportedCACertificateIdentifiers
+     *        A list of the supported CA certificate identifiers.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedCACertificateIdentifiers(java.util.Collection<String> supportedCACertificateIdentifiers) {
+        setSupportedCACertificateIdentifiers(supportedCACertificateIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *        the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *        instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        this.supportsLocalWriteForwarding = supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *         the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *         instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *        the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *        instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        setSupportsLocalWriteForwarding(supportsLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports forwarding write operations from reader DB instances to the
+     * writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports forwarding write operations from reader DB instances to
+     *         the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     *         instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @param supportsIntegrations
+     *        Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     */
+
+    public void setSupportsIntegrations(Boolean supportsIntegrations) {
+        this.supportsIntegrations = supportsIntegrations;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     */
+
+    public Boolean getSupportsIntegrations() {
+        return this.supportsIntegrations;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @param supportsIntegrations
+     *        Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsIntegrations(Boolean supportsIntegrations) {
+        setSupportsIntegrations(supportsIntegrations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     * </p>
+     * 
+     * @return Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
+     */
+
+    public Boolean isSupportsIntegrations() {
+        return this.supportsIntegrations;
     }
 
     /**
@@ -1782,6 +2372,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
             sb.append("DBEngineVersionDescription: ").append(getDBEngineVersionDescription()).append(",");
         if (getDefaultCharacterSet() != null)
             sb.append("DefaultCharacterSet: ").append(getDefaultCharacterSet()).append(",");
+        if (getImage() != null)
+            sb.append("Image: ").append(getImage()).append(",");
+        if (getDBEngineMediaType() != null)
+            sb.append("DBEngineMediaType: ").append(getDBEngineMediaType()).append(",");
         if (getSupportedCharacterSets() != null)
             sb.append("SupportedCharacterSets: ").append(getSupportedCharacterSets()).append(",");
         if (getSupportedNcharCharacterSets() != null)
@@ -1821,7 +2415,19 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getTagList() != null)
             sb.append("TagList: ").append(getTagList()).append(",");
         if (getSupportsBabelfish() != null)
-            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish());
+            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish()).append(",");
+        if (getCustomDBEngineVersionManifest() != null)
+            sb.append("CustomDBEngineVersionManifest: ").append(getCustomDBEngineVersionManifest()).append(",");
+        if (getSupportsLimitlessDatabase() != null)
+            sb.append("SupportsLimitlessDatabase: ").append(getSupportsLimitlessDatabase()).append(",");
+        if (getSupportsCertificateRotationWithoutRestart() != null)
+            sb.append("SupportsCertificateRotationWithoutRestart: ").append(getSupportsCertificateRotationWithoutRestart()).append(",");
+        if (getSupportedCACertificateIdentifiers() != null)
+            sb.append("SupportedCACertificateIdentifiers: ").append(getSupportedCACertificateIdentifiers()).append(",");
+        if (getSupportsLocalWriteForwarding() != null)
+            sb.append("SupportsLocalWriteForwarding: ").append(getSupportsLocalWriteForwarding()).append(",");
+        if (getSupportsIntegrations() != null)
+            sb.append("SupportsIntegrations: ").append(getSupportsIntegrations());
         sb.append("}");
         return sb.toString();
     }
@@ -1859,6 +2465,14 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (other.getDefaultCharacterSet() == null ^ this.getDefaultCharacterSet() == null)
             return false;
         if (other.getDefaultCharacterSet() != null && other.getDefaultCharacterSet().equals(this.getDefaultCharacterSet()) == false)
+            return false;
+        if (other.getImage() == null ^ this.getImage() == null)
+            return false;
+        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
+            return false;
+        if (other.getDBEngineMediaType() == null ^ this.getDBEngineMediaType() == null)
+            return false;
+        if (other.getDBEngineMediaType() != null && other.getDBEngineMediaType().equals(this.getDBEngineMediaType()) == false)
             return false;
         if (other.getSupportedCharacterSets() == null ^ this.getSupportedCharacterSets() == null)
             return false;
@@ -1943,6 +2557,33 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getSupportsBabelfish() != null && other.getSupportsBabelfish().equals(this.getSupportsBabelfish()) == false)
             return false;
+        if (other.getCustomDBEngineVersionManifest() == null ^ this.getCustomDBEngineVersionManifest() == null)
+            return false;
+        if (other.getCustomDBEngineVersionManifest() != null
+                && other.getCustomDBEngineVersionManifest().equals(this.getCustomDBEngineVersionManifest()) == false)
+            return false;
+        if (other.getSupportsLimitlessDatabase() == null ^ this.getSupportsLimitlessDatabase() == null)
+            return false;
+        if (other.getSupportsLimitlessDatabase() != null && other.getSupportsLimitlessDatabase().equals(this.getSupportsLimitlessDatabase()) == false)
+            return false;
+        if (other.getSupportsCertificateRotationWithoutRestart() == null ^ this.getSupportsCertificateRotationWithoutRestart() == null)
+            return false;
+        if (other.getSupportsCertificateRotationWithoutRestart() != null
+                && other.getSupportsCertificateRotationWithoutRestart().equals(this.getSupportsCertificateRotationWithoutRestart()) == false)
+            return false;
+        if (other.getSupportedCACertificateIdentifiers() == null ^ this.getSupportedCACertificateIdentifiers() == null)
+            return false;
+        if (other.getSupportedCACertificateIdentifiers() != null
+                && other.getSupportedCACertificateIdentifiers().equals(this.getSupportedCACertificateIdentifiers()) == false)
+            return false;
+        if (other.getSupportsLocalWriteForwarding() == null ^ this.getSupportsLocalWriteForwarding() == null)
+            return false;
+        if (other.getSupportsLocalWriteForwarding() != null && other.getSupportsLocalWriteForwarding().equals(this.getSupportsLocalWriteForwarding()) == false)
+            return false;
+        if (other.getSupportsIntegrations() == null ^ this.getSupportsIntegrations() == null)
+            return false;
+        if (other.getSupportsIntegrations() != null && other.getSupportsIntegrations().equals(this.getSupportsIntegrations()) == false)
+            return false;
         return true;
     }
 
@@ -1957,6 +2598,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBEngineDescription() == null) ? 0 : getDBEngineDescription().hashCode());
         hashCode = prime * hashCode + ((getDBEngineVersionDescription() == null) ? 0 : getDBEngineVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultCharacterSet() == null) ? 0 : getDefaultCharacterSet().hashCode());
+        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getDBEngineMediaType() == null) ? 0 : getDBEngineMediaType().hashCode());
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getSupportedNcharCharacterSets() == null) ? 0 : getSupportedNcharCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getValidUpgradeTarget() == null) ? 0 : getValidUpgradeTarget().hashCode());
@@ -1977,6 +2620,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
+        hashCode = prime * hashCode + ((getCustomDBEngineVersionManifest() == null) ? 0 : getCustomDBEngineVersionManifest().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLimitlessDatabase() == null) ? 0 : getSupportsLimitlessDatabase().hashCode());
+        hashCode = prime * hashCode
+                + ((getSupportsCertificateRotationWithoutRestart() == null) ? 0 : getSupportsCertificateRotationWithoutRestart().hashCode());
+        hashCode = prime * hashCode + ((getSupportedCACertificateIdentifiers() == null) ? 0 : getSupportedCACertificateIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLocalWriteForwarding() == null) ? 0 : getSupportsLocalWriteForwarding().hashCode());
+        hashCode = prime * hashCode + ((getSupportsIntegrations() == null) ? 0 : getSupportsIntegrations().hashCode());
         return hashCode;
     }
 

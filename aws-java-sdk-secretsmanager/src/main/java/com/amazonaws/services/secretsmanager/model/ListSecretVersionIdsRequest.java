@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,8 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions
-     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default,
+     * versions without staging labels aren't included.
      * </p>
      */
     private Boolean includeDeprecated;
@@ -241,12 +242,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions
-     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default,
+     * versions without staging labels aren't included.
      * </p>
      * 
      * @param includeDeprecated
      *        Specifies whether to include versions of secrets that don't have any staging labels attached to them.
      *        Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     *        By default, versions without staging labels aren't included.
      */
 
     public void setIncludeDeprecated(Boolean includeDeprecated) {
@@ -256,11 +259,13 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions
-     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default,
+     * versions without staging labels aren't included.
      * </p>
      * 
      * @return Specifies whether to include versions of secrets that don't have any staging labels attached to them.
      *         Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     *         By default, versions without staging labels aren't included.
      */
 
     public Boolean getIncludeDeprecated() {
@@ -270,12 +275,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions
-     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default,
+     * versions without staging labels aren't included.
      * </p>
      * 
      * @param includeDeprecated
      *        Specifies whether to include versions of secrets that don't have any staging labels attached to them.
      *        Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     *        By default, versions without staging labels aren't included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +294,13 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions
-     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     * without staging labels are considered deprecated and are subject to deletion by Secrets Manager. By default,
+     * versions without staging labels aren't included.
      * </p>
      * 
      * @return Specifies whether to include versions of secrets that don't have any staging labels attached to them.
      *         Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager.
+     *         By default, versions without staging labels aren't included.
      */
 
     public Boolean isIncludeDeprecated() {

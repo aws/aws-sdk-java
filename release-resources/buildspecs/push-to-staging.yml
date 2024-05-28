@@ -21,7 +21,10 @@ phases:
      - git clone -n $STAGING_REPOSITORY_URL $tmpdir
      - cp -r $tmpdir/.git $CODEBUILD_SRC_DIR
      - git add -A
-     - git commit -am "Staged sources"
+     - |
+       if [ $(git status --porcelain | wc -c) -ne 0 ]; then
+         git commit -am "Staged sources";
+       fi;
      - git push
      -
      - SUBJECT="Build SUCCESS:PushStagedSdk"

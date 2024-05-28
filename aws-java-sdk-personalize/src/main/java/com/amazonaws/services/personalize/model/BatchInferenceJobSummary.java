@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,12 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private String solutionVersionArn;
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     */
+    private String batchInferenceJobMode;
 
     /**
      * <p>
@@ -506,6 +512,65 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The job's mode.
+     * @see BatchInferenceJobMode
+     */
+
+    public void setBatchInferenceJobMode(String batchInferenceJobMode) {
+        this.batchInferenceJobMode = batchInferenceJobMode;
+    }
+
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @return The job's mode.
+     * @see BatchInferenceJobMode
+     */
+
+    public String getBatchInferenceJobMode() {
+        return this.batchInferenceJobMode;
+    }
+
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The job's mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BatchInferenceJobMode
+     */
+
+    public BatchInferenceJobSummary withBatchInferenceJobMode(String batchInferenceJobMode) {
+        setBatchInferenceJobMode(batchInferenceJobMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The job's mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BatchInferenceJobMode
+     */
+
+    public BatchInferenceJobSummary withBatchInferenceJobMode(BatchInferenceJobMode batchInferenceJobMode) {
+        this.batchInferenceJobMode = batchInferenceJobMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -530,7 +595,9 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSolutionVersionArn() != null)
-            sb.append("SolutionVersionArn: ").append(getSolutionVersionArn());
+            sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
+        if (getBatchInferenceJobMode() != null)
+            sb.append("BatchInferenceJobMode: ").append(getBatchInferenceJobMode());
         sb.append("}");
         return sb.toString();
     }
@@ -573,6 +640,10 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getSolutionVersionArn() != null && other.getSolutionVersionArn().equals(this.getSolutionVersionArn()) == false)
             return false;
+        if (other.getBatchInferenceJobMode() == null ^ this.getBatchInferenceJobMode() == null)
+            return false;
+        if (other.getBatchInferenceJobMode() != null && other.getBatchInferenceJobMode().equals(this.getBatchInferenceJobMode()) == false)
+            return false;
         return true;
     }
 
@@ -588,6 +659,7 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobMode() == null) ? 0 : getBatchInferenceJobMode().hashCode());
         return hashCode;
     }
 

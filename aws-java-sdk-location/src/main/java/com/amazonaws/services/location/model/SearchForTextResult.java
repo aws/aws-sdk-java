@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes
-     * that use HERE as a data provider.
+     * that use HERE or Grab as a data provider.
      * </p>
      * </note>
      */
@@ -67,7 +67,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * closer to 1.
      * </p>
      * <p>
-     * Returned only when the partner selected is Esri.
+     * Returned only when the partner selected is Esri or Grab.
      * </p>
      */
     private Double relevance;
@@ -196,7 +196,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes
-     * that use HERE as a data provider.
+     * that use HERE or Grab as a data provider.
      * </p>
      * </note>
      * 
@@ -205,7 +205,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      *        place again later.</p> <note>
      *        <p>
      *        For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place
-     *        indexes that use HERE as a data provider.
+     *        indexes that use HERE or Grab as a data provider.
      *        </p>
      */
 
@@ -221,7 +221,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes
-     * that use HERE as a data provider.
+     * that use HERE or Grab as a data provider.
      * </p>
      * </note>
      * 
@@ -229,7 +229,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      *         place again later.</p> <note>
      *         <p>
      *         For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place
-     *         indexes that use HERE as a data provider.
+     *         indexes that use HERE or Grab as a data provider.
      *         </p>
      */
 
@@ -245,7 +245,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes
-     * that use HERE as a data provider.
+     * that use HERE or Grab as a data provider.
      * </p>
      * </note>
      * 
@@ -254,7 +254,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      *        place again later.</p> <note>
      *        <p>
      *        For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place
-     *        indexes that use HERE as a data provider.
+     *        indexes that use HERE or Grab as a data provider.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -271,7 +271,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * closer to 1.
      * </p>
      * <p>
-     * Returned only when the partner selected is Esri.
+     * Returned only when the partner selected is Esri or Grab.
      * </p>
      * 
      * @param relevance
@@ -279,7 +279,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      *        for an address match (including house number, street, city, country/region, and postal code), the
      *        relevance score is closer to 1.</p>
      *        <p>
-     *        Returned only when the partner selected is Esri.
+     *        Returned only when the partner selected is Esri or Grab.
      */
 
     public void setRelevance(Double relevance) {
@@ -293,14 +293,14 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * closer to 1.
      * </p>
      * <p>
-     * Returned only when the partner selected is Esri.
+     * Returned only when the partner selected is Esri or Grab.
      * </p>
      * 
      * @return The relative confidence in the match for a result among the results returned. For example, if more fields
      *         for an address match (including house number, street, city, country/region, and postal code), the
      *         relevance score is closer to 1.</p>
      *         <p>
-     *         Returned only when the partner selected is Esri.
+     *         Returned only when the partner selected is Esri or Grab.
      */
 
     public Double getRelevance() {
@@ -314,7 +314,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      * closer to 1.
      * </p>
      * <p>
-     * Returned only when the partner selected is Esri.
+     * Returned only when the partner selected is Esri or Grab.
      * </p>
      * 
      * @param relevance
@@ -322,7 +322,7 @@ public class SearchForTextResult implements Serializable, Cloneable, StructuredP
      *        for an address match (including house number, street, city, country/region, and postal code), the
      *        relevance score is closer to 1.</p>
      *        <p>
-     *        Returned only when the partner selected is Esri.
+     *        Returned only when the partner selected is Esri or Grab.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

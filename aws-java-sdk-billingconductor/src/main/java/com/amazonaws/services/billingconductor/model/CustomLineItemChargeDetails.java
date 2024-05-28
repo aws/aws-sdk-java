@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class CustomLineItemChargeDetails implements Serializable, Cloneable, Str
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * A representation of the line item filter.
+     * </p>
+     */
+    private java.util.List<LineItemFilter> lineItemFilters;
 
     /**
      * <p>
@@ -197,6 +203,76 @@ public class CustomLineItemChargeDetails implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A representation of the line item filter.
+     * </p>
+     * 
+     * @return A representation of the line item filter.
+     */
+
+    public java.util.List<LineItemFilter> getLineItemFilters() {
+        return lineItemFilters;
+    }
+
+    /**
+     * <p>
+     * A representation of the line item filter.
+     * </p>
+     * 
+     * @param lineItemFilters
+     *        A representation of the line item filter.
+     */
+
+    public void setLineItemFilters(java.util.Collection<LineItemFilter> lineItemFilters) {
+        if (lineItemFilters == null) {
+            this.lineItemFilters = null;
+            return;
+        }
+
+        this.lineItemFilters = new java.util.ArrayList<LineItemFilter>(lineItemFilters);
+    }
+
+    /**
+     * <p>
+     * A representation of the line item filter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLineItemFilters(java.util.Collection)} or {@link #withLineItemFilters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param lineItemFilters
+     *        A representation of the line item filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomLineItemChargeDetails withLineItemFilters(LineItemFilter... lineItemFilters) {
+        if (this.lineItemFilters == null) {
+            setLineItemFilters(new java.util.ArrayList<LineItemFilter>(lineItemFilters.length));
+        }
+        for (LineItemFilter ele : lineItemFilters) {
+            this.lineItemFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A representation of the line item filter.
+     * </p>
+     * 
+     * @param lineItemFilters
+     *        A representation of the line item filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomLineItemChargeDetails withLineItemFilters(java.util.Collection<LineItemFilter> lineItemFilters) {
+        setLineItemFilters(lineItemFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +289,9 @@ public class CustomLineItemChargeDetails implements Serializable, Cloneable, Str
         if (getPercentage() != null)
             sb.append("Percentage: ").append(getPercentage()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getLineItemFilters() != null)
+            sb.append("LineItemFilters: ").append(getLineItemFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +318,10 @@ public class CustomLineItemChargeDetails implements Serializable, Cloneable, Str
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getLineItemFilters() == null ^ this.getLineItemFilters() == null)
+            return false;
+        if (other.getLineItemFilters() != null && other.getLineItemFilters().equals(this.getLineItemFilters()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +333,7 @@ public class CustomLineItemChargeDetails implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getFlat() == null) ? 0 : getFlat().hashCode());
         hashCode = prime * hashCode + ((getPercentage() == null) ? 0 : getPercentage().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getLineItemFilters() == null) ? 0 : getLineItemFilters().hashCode());
         return hashCode;
     }
 

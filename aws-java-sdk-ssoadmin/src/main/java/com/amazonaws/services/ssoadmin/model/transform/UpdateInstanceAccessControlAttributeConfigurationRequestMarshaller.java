@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,11 +27,11 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller {
 
-    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<StructuredPojo> INSTANCEACCESSCONTROLATTRIBUTECONFIGURATION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceAccessControlAttributeConfiguration")
             .build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
 
     private static final UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller instance = new UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller 
         }
 
         try {
-            protocolMarshaller.marshall(updateInstanceAccessControlAttributeConfigurationRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(updateInstanceAccessControlAttributeConfigurationRequest.getInstanceAccessControlAttributeConfiguration(),
                     INSTANCEACCESSCONTROLATTRIBUTECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateInstanceAccessControlAttributeConfigurationRequest.getInstanceArn(), INSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

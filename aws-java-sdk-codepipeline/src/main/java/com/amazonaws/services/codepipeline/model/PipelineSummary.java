@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,47 @@ public class PipelineSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer version;
+    /**
+     * <p>
+     * CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can
+     * tailor your pipeline features and cost to the needs of your applications.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and
+     * trigger configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated costs.
+     * </p>
+     * </important>
+     * <p>
+     * For information about pricing for CodePipeline, see <a
+     * href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     * </p>
+     * <p>
+     * For information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     * pipeline is right for me?</a>.
+     * </p>
+     */
+    private String pipelineType;
+    /**
+     * <p>
+     * The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * </p>
+     */
+    private String executionMode;
     /**
      * <p>
      * The date and time the pipeline was created, in timestamp format.
@@ -130,6 +171,356 @@ public class PipelineSummary implements Serializable, Cloneable, StructuredPojo 
 
     public PipelineSummary withVersion(Integer version) {
         setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
+     * CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can
+     * tailor your pipeline features and cost to the needs of your applications.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and
+     * trigger configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated costs.
+     * </p>
+     * </important>
+     * <p>
+     * For information about pricing for CodePipeline, see <a
+     * href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     * </p>
+     * <p>
+     * For information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     * pipeline is right for me?</a>.
+     * </p>
+     * 
+     * @param pipelineType
+     *        CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you
+     *        can tailor your pipeline features and cost to the needs of your applications.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level
+     *        parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        V2 type pipelines have the same structure as a V1 type, along with additional parameters for release
+     *        safety and trigger configuration.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a
+     *        pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For information about pricing for CodePipeline, see <a
+     *        href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     *        </p>
+     *        <p>
+     *        For information about which type of pipeline to choose, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     *        pipeline is right for me?</a>.
+     * @see PipelineType
+     */
+
+    public void setPipelineType(String pipelineType) {
+        this.pipelineType = pipelineType;
+    }
+
+    /**
+     * <p>
+     * CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can
+     * tailor your pipeline features and cost to the needs of your applications.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and
+     * trigger configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated costs.
+     * </p>
+     * </important>
+     * <p>
+     * For information about pricing for CodePipeline, see <a
+     * href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     * </p>
+     * <p>
+     * For information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     * pipeline is right for me?</a>.
+     * </p>
+     * 
+     * @return CodePipeline provides the following pipeline types, which differ in characteristics and price, so that
+     *         you can tailor your pipeline features and cost to the needs of your applications.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level
+     *         parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         V2 type pipelines have the same structure as a V1 type, along with additional parameters for release
+     *         safety and trigger configuration.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a
+     *         pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         For information about pricing for CodePipeline, see <a
+     *         href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     *         </p>
+     *         <p>
+     *         For information about which type of pipeline to choose, see <a
+     *         href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type
+     *         of pipeline is right for me?</a>.
+     * @see PipelineType
+     */
+
+    public String getPipelineType() {
+        return this.pipelineType;
+    }
+
+    /**
+     * <p>
+     * CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can
+     * tailor your pipeline features and cost to the needs of your applications.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and
+     * trigger configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated costs.
+     * </p>
+     * </important>
+     * <p>
+     * For information about pricing for CodePipeline, see <a
+     * href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     * </p>
+     * <p>
+     * For information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     * pipeline is right for me?</a>.
+     * </p>
+     * 
+     * @param pipelineType
+     *        CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you
+     *        can tailor your pipeline features and cost to the needs of your applications.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level
+     *        parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        V2 type pipelines have the same structure as a V1 type, along with additional parameters for release
+     *        safety and trigger configuration.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a
+     *        pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For information about pricing for CodePipeline, see <a
+     *        href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     *        </p>
+     *        <p>
+     *        For information about which type of pipeline to choose, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     *        pipeline is right for me?</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PipelineType
+     */
+
+    public PipelineSummary withPipelineType(String pipelineType) {
+        setPipelineType(pipelineType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can
+     * tailor your pipeline features and cost to the needs of your applications.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * V2 type pipelines have the same structure as a V1 type, along with additional parameters for release safety and
+     * trigger configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated costs.
+     * </p>
+     * </important>
+     * <p>
+     * For information about pricing for CodePipeline, see <a
+     * href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     * </p>
+     * <p>
+     * For information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     * pipeline is right for me?</a>.
+     * </p>
+     * 
+     * @param pipelineType
+     *        CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you
+     *        can tailor your pipeline features and cost to the needs of your applications.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        V1 type pipelines have a JSON structure that contains standard pipeline, stage, and action-level
+     *        parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        V2 type pipelines have the same structure as a V1 type, along with additional parameters for release
+     *        safety and trigger configuration.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a
+     *        pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For information about pricing for CodePipeline, see <a
+     *        href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+     *        </p>
+     *        <p>
+     *        For information about which type of pipeline to choose, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of
+     *        pipeline is right for me?</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PipelineType
+     */
+
+    public PipelineSummary withPipelineType(PipelineType pipelineType) {
+        this.pipelineType = pipelineType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * </p>
+     * 
+     * @param executionMode
+     *        The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * @see ExecutionMode
+     */
+
+    public void setExecutionMode(String executionMode) {
+        this.executionMode = executionMode;
+    }
+
+    /**
+     * <p>
+     * The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * </p>
+     * 
+     * @return The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * @see ExecutionMode
+     */
+
+    public String getExecutionMode() {
+        return this.executionMode;
+    }
+
+    /**
+     * <p>
+     * The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * </p>
+     * 
+     * @param executionMode
+     *        The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionMode
+     */
+
+    public PipelineSummary withExecutionMode(String executionMode) {
+        setExecutionMode(executionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * </p>
+     * 
+     * @param executionMode
+     *        The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionMode
+     */
+
+    public PipelineSummary withExecutionMode(ExecutionMode executionMode) {
+        this.executionMode = executionMode.toString();
         return this;
     }
 
@@ -229,6 +620,10 @@ public class PipelineSummary implements Serializable, Cloneable, StructuredPojo 
             sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
+        if (getPipelineType() != null)
+            sb.append("PipelineType: ").append(getPipelineType()).append(",");
+        if (getExecutionMode() != null)
+            sb.append("ExecutionMode: ").append(getExecutionMode()).append(",");
         if (getCreated() != null)
             sb.append("Created: ").append(getCreated()).append(",");
         if (getUpdated() != null)
@@ -255,6 +650,14 @@ public class PipelineSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getPipelineType() == null ^ this.getPipelineType() == null)
+            return false;
+        if (other.getPipelineType() != null && other.getPipelineType().equals(this.getPipelineType()) == false)
+            return false;
+        if (other.getExecutionMode() == null ^ this.getExecutionMode() == null)
+            return false;
+        if (other.getExecutionMode() != null && other.getExecutionMode().equals(this.getExecutionMode()) == false)
+            return false;
         if (other.getCreated() == null ^ this.getCreated() == null)
             return false;
         if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
@@ -273,6 +676,8 @@ public class PipelineSummary implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getPipelineType() == null) ? 0 : getPipelineType().hashCode());
+        hashCode = prime * hashCode + ((getExecutionMode() == null) ? 0 : getExecutionMode().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getUpdated() == null) ? 0 : getUpdated().hashCode());
         return hashCode;

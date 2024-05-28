@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class RequestPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReq
     private String numberType;
     /**
      * <p>
-     * The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.
+     * The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.
      * </p>
      */
     private String optOutListName;
@@ -354,12 +354,12 @@ public class RequestPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.
+     * The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.
      * </p>
      * 
      * @param optOutListName
-     *        The name of the OptOutList to associate with the phone number. You can use the OutOutListName or
-     *        OptPutListArn.
+     *        The name of the OptOutList to associate with the phone number. You can use the OptOutListName or
+     *        OptOutListArn.
      */
 
     public void setOptOutListName(String optOutListName) {
@@ -368,11 +368,11 @@ public class RequestPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.
+     * The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.
      * </p>
      * 
-     * @return The name of the OptOutList to associate with the phone number. You can use the OutOutListName or
-     *         OptPutListArn.
+     * @return The name of the OptOutList to associate with the phone number. You can use the OptOutListName or
+     *         OptOutListArn.
      */
 
     public String getOptOutListName() {
@@ -381,12 +381,12 @@ public class RequestPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.
+     * The name of the OptOutList to associate with the phone number. You can use the OptOutListName or OptOutListArn.
      * </p>
      * 
      * @param optOutListName
-     *        The name of the OptOutList to associate with the phone number. You can use the OutOutListName or
-     *        OptPutListArn.
+     *        The name of the OptOutList to associate with the phone number. You can use the OptOutListName or
+     *        OptOutListArn.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

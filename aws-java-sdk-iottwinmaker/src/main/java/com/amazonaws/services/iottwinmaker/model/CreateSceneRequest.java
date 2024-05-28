@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,16 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render itself.
+     * The ID of the workspace that contains the scene.
      * </p>
      */
-    private java.util.List<String> capabilities;
+    private String workspaceId;
+    /**
+     * <p>
+     * The ID of the scene.
+     * </p>
+     */
+    private String sceneId;
     /**
      * <p>
      * The relative path that specifies the location of the content definition file.
@@ -45,10 +51,10 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render itself.
      * </p>
      */
-    private String sceneId;
+    private java.util.List<String> capabilities;
     /**
      * <p>
      * Metadata that you can use to manage the scene.
@@ -57,78 +63,88 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * The request metadata.
+     * </p>
+     */
+    private java.util.Map<String, String> sceneMetadata;
+
+    /**
+     * <p>
      * The ID of the workspace that contains the scene.
      * </p>
-     */
-    private String workspaceId;
-
-    /**
-     * <p>
-     * A list of capabilities that the scene uses to render itself.
-     * </p>
      * 
-     * @return A list of capabilities that the scene uses to render itself.
+     * @param workspaceId
+     *        The ID of the workspace that contains the scene.
      */
 
-    public java.util.List<String> getCapabilities() {
-        return capabilities;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render itself.
+     * The ID of the workspace that contains the scene.
      * </p>
      * 
-     * @param capabilities
-     *        A list of capabilities that the scene uses to render itself.
+     * @return The ID of the workspace that contains the scene.
      */
 
-    public void setCapabilities(java.util.Collection<String> capabilities) {
-        if (capabilities == null) {
-            this.capabilities = null;
-            return;
-        }
-
-        this.capabilities = new java.util.ArrayList<String>(capabilities);
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render itself.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
-     * override the existing values.
+     * The ID of the workspace that contains the scene.
      * </p>
      * 
-     * @param capabilities
-     *        A list of capabilities that the scene uses to render itself.
+     * @param workspaceId
+     *        The ID of the workspace that contains the scene.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSceneRequest withCapabilities(String... capabilities) {
-        if (this.capabilities == null) {
-            setCapabilities(new java.util.ArrayList<String>(capabilities.length));
-        }
-        for (String ele : capabilities) {
-            this.capabilities.add(ele);
-        }
+    public CreateSceneRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
         return this;
     }
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render itself.
+     * The ID of the scene.
      * </p>
      * 
-     * @param capabilities
-     *        A list of capabilities that the scene uses to render itself.
+     * @param sceneId
+     *        The ID of the scene.
+     */
+
+    public void setSceneId(String sceneId) {
+        this.sceneId = sceneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the scene.
+     * </p>
+     * 
+     * @return The ID of the scene.
+     */
+
+    public String getSceneId() {
+        return this.sceneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the scene.
+     * </p>
+     * 
+     * @param sceneId
+     *        The ID of the scene.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSceneRequest withCapabilities(java.util.Collection<String> capabilities) {
-        setCapabilities(capabilities);
+    public CreateSceneRequest withSceneId(String sceneId) {
+        setSceneId(sceneId);
         return this;
     }
 
@@ -214,41 +230,71 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render itself.
      * </p>
      * 
-     * @param sceneId
-     *        The ID of the scene.
+     * @return A list of capabilities that the scene uses to render itself.
      */
 
-    public void setSceneId(String sceneId) {
-        this.sceneId = sceneId;
+    public java.util.List<String> getCapabilities() {
+        return capabilities;
     }
 
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render itself.
      * </p>
      * 
-     * @return The ID of the scene.
+     * @param capabilities
+     *        A list of capabilities that the scene uses to render itself.
      */
 
-    public String getSceneId() {
-        return this.sceneId;
+    public void setCapabilities(java.util.Collection<String> capabilities) {
+        if (capabilities == null) {
+            this.capabilities = null;
+            return;
+        }
+
+        this.capabilities = new java.util.ArrayList<String>(capabilities);
     }
 
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render itself.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param sceneId
-     *        The ID of the scene.
+     * @param capabilities
+     *        A list of capabilities that the scene uses to render itself.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSceneRequest withSceneId(String sceneId) {
-        setSceneId(sceneId);
+    public CreateSceneRequest withCapabilities(String... capabilities) {
+        if (this.capabilities == null) {
+            setCapabilities(new java.util.ArrayList<String>(capabilities.length));
+        }
+        for (String ele : capabilities) {
+            this.capabilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of capabilities that the scene uses to render itself.
+     * </p>
+     * 
+     * @param capabilities
+     *        A list of capabilities that the scene uses to render itself.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSceneRequest withCapabilities(java.util.Collection<String> capabilities) {
+        setCapabilities(capabilities);
         return this;
     }
 
@@ -322,41 +368,69 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the workspace that contains the scene.
+     * The request metadata.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the scene.
+     * @return The request metadata.
      */
 
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public java.util.Map<String, String> getSceneMetadata() {
+        return sceneMetadata;
     }
 
     /**
      * <p>
-     * The ID of the workspace that contains the scene.
+     * The request metadata.
      * </p>
      * 
-     * @return The ID of the workspace that contains the scene.
+     * @param sceneMetadata
+     *        The request metadata.
      */
 
-    public String getWorkspaceId() {
-        return this.workspaceId;
+    public void setSceneMetadata(java.util.Map<String, String> sceneMetadata) {
+        this.sceneMetadata = sceneMetadata;
     }
 
     /**
      * <p>
-     * The ID of the workspace that contains the scene.
+     * The request metadata.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the scene.
+     * @param sceneMetadata
+     *        The request metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateSceneRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
+    public CreateSceneRequest withSceneMetadata(java.util.Map<String, String> sceneMetadata) {
+        setSceneMetadata(sceneMetadata);
+        return this;
+    }
+
+    /**
+     * Add a single SceneMetadata entry
+     *
+     * @see CreateSceneRequest#withSceneMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSceneRequest addSceneMetadataEntry(String key, String value) {
+        if (null == this.sceneMetadata) {
+            this.sceneMetadata = new java.util.HashMap<String, String>();
+        }
+        if (this.sceneMetadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.sceneMetadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into SceneMetadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSceneRequest clearSceneMetadataEntries() {
+        this.sceneMetadata = null;
         return this;
     }
 
@@ -372,18 +446,20 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCapabilities() != null)
-            sb.append("Capabilities: ").append(getCapabilities()).append(",");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getSceneId() != null)
+            sb.append("SceneId: ").append(getSceneId()).append(",");
         if (getContentLocation() != null)
             sb.append("ContentLocation: ").append(getContentLocation()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getSceneId() != null)
-            sb.append("SceneId: ").append(getSceneId()).append(",");
+        if (getCapabilities() != null)
+            sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+        if (getSceneMetadata() != null)
+            sb.append("SceneMetadata: ").append(getSceneMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -398,9 +474,13 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof CreateSceneRequest == false)
             return false;
         CreateSceneRequest other = (CreateSceneRequest) obj;
-        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getSceneId() == null ^ this.getSceneId() == null)
+            return false;
+        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
             return false;
         if (other.getContentLocation() == null ^ this.getContentLocation() == null)
             return false;
@@ -410,17 +490,17 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSceneId() == null ^ this.getSceneId() == null)
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
             return false;
-        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
+        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+        if (other.getSceneMetadata() == null ^ this.getSceneMetadata() == null)
             return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getSceneMetadata() != null && other.getSceneMetadata().equals(this.getSceneMetadata()) == false)
             return false;
         return true;
     }
@@ -430,12 +510,13 @@ public class CreateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
         hashCode = prime * hashCode + ((getContentLocation() == null) ? 0 : getContentLocation().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
+        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getSceneMetadata() == null) ? 0 : getSceneMetadata().hashCode());
         return hashCode;
     }
 

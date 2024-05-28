@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,22 @@ public class ComputeCapacityStatusJsonUnmarshaller implements Unmarshaller<Compu
                 if (context.testExpression("Available", targetDepth)) {
                     context.nextToken();
                     computeCapacityStatus.setAvailable(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("DesiredUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setDesiredUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailableUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setAvailableUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setActiveUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ActualUserSessions", targetDepth)) {
+                    context.nextToken();
+                    computeCapacityStatus.setActualUserSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

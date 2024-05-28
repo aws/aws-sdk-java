@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
     private java.util.List<java.util.List<String>> joinEuiFilters;
 
     private java.util.List<String> netIdFilters;
+    /**
+     * <p>
+     * The MaxEIRP value.
+     * </p>
+     */
+    private Float maxEirp;
 
     /**
      * <p>
@@ -273,6 +279,46 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The MaxEIRP value.
+     * </p>
+     * 
+     * @param maxEirp
+     *        The MaxEIRP value.
+     */
+
+    public void setMaxEirp(Float maxEirp) {
+        this.maxEirp = maxEirp;
+    }
+
+    /**
+     * <p>
+     * The MaxEIRP value.
+     * </p>
+     * 
+     * @return The MaxEIRP value.
+     */
+
+    public Float getMaxEirp() {
+        return this.maxEirp;
+    }
+
+    /**
+     * <p>
+     * The MaxEIRP value.
+     * </p>
+     * 
+     * @param maxEirp
+     *        The MaxEIRP value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWirelessGatewayRequest withMaxEirp(Float maxEirp) {
+        setMaxEirp(maxEirp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -293,7 +339,9 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
         if (getJoinEuiFilters() != null)
             sb.append("JoinEuiFilters: ").append(getJoinEuiFilters()).append(",");
         if (getNetIdFilters() != null)
-            sb.append("NetIdFilters: ").append(getNetIdFilters());
+            sb.append("NetIdFilters: ").append(getNetIdFilters()).append(",");
+        if (getMaxEirp() != null)
+            sb.append("MaxEirp: ").append(getMaxEirp());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +376,10 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getNetIdFilters() != null && other.getNetIdFilters().equals(this.getNetIdFilters()) == false)
             return false;
+        if (other.getMaxEirp() == null ^ this.getMaxEirp() == null)
+            return false;
+        if (other.getMaxEirp() != null && other.getMaxEirp().equals(this.getMaxEirp()) == false)
+            return false;
         return true;
     }
 
@@ -341,6 +393,7 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getJoinEuiFilters() == null) ? 0 : getJoinEuiFilters().hashCode());
         hashCode = prime * hashCode + ((getNetIdFilters() == null) ? 0 : getNetIdFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxEirp() == null) ? 0 : getMaxEirp().hashCode());
         return hashCode;
     }
 

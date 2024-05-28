@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,8 +56,20 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private String autoScalingType;
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      */
     private String hostname;
     /**
@@ -68,15 +80,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     * <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     * <code>Ubuntu 12.04 LTS</code>.
+     * A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
      * <li>
@@ -99,16 +112,14 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information about supported operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     * Operating Systems</a>.
+     * Not all operating systems are supported with all versions of Chef. For more information about supported operating
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
+     * Stacks Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
-     * operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information about how to use custom AMIs with OpsWorks, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about how to
+     * use custom AMIs with OpsWorks, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -165,7 +176,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The default AWS OpsWorks Stacks agent version. You have the following options:
+     * The default OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -176,8 +187,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
-     * then automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. OpsWorks Stacks
+     * installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -450,11 +461,34 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param hostname
-     *        The instance host name.
+     *        The instance host name. The following are character limits for instance host names.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux-based instances: 63 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows-based instances: 15 characters
+     *        </p>
+     *        </li>
      */
 
     public void setHostname(String hostname) {
@@ -463,10 +497,33 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The instance host name.
+     * @return The instance host name. The following are character limits for instance host names.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Linux-based instances: 63 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Windows-based instances: 15 characters
+     *         </p>
+     *         </li>
      */
 
     public String getHostname() {
@@ -475,11 +532,34 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param hostname
-     *        The instance host name.
+     *        The instance host name. The following are character limits for instance host names.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux-based instances: 63 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows-based instances: 15 characters
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,15 +576,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     * <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     * <code>Ubuntu 12.04 LTS</code>.
+     * A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
      * <li>
@@ -527,16 +608,14 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information about supported operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     * Operating Systems</a>.
+     * Not all operating systems are supported with all versions of Chef. For more information about supported operating
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
+     * Stacks Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
-     * operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information about how to use custom AMIs with OpsWorks, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about how to
+     * use custom AMIs with OpsWorks, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -553,16 +632,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     *        <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
-     *        .
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     *        <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     *        <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
+     *        or <code>Amazon Linux 2015.03</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>,
-     *        or <code>Ubuntu 12.04 LTS</code>.
+     *        A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>,
+     *        <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -585,16 +664,15 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about supported operating systems, see <a
-     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     *        Not all operating systems are supported with all versions of Chef. For more information about supported
+     *        operating systems, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information
-     *        about supported operating systems, see <a
-     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a
+     *        about how to use custom AMIs with OpsWorks, see <a
      *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
@@ -617,15 +695,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     * <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     * <code>Ubuntu 12.04 LTS</code>.
+     * A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
      * <li>
@@ -648,16 +727,14 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information about supported operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     * Operating Systems</a>.
+     * Not all operating systems are supported with all versions of Chef. For more information about supported operating
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
+     * Stacks Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
-     * operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information about how to use custom AMIs with OpsWorks, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about how to
+     * use custom AMIs with OpsWorks, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -673,16 +750,15 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     *         <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     *         <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     *         <code>Amazon Linux 2015.03</code>.
+     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     *         <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     *         <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
+     *         or <code>Amazon Linux 2015.03</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>
-     *         , or <code>Ubuntu 12.04 LTS</code>.
+     *         A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -705,16 +781,15 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about supported operating systems, see <a
-     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     *         Not all operating systems are supported with all versions of Chef. For more information about supported
+     *         operating systems, see <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks
      *         Operating Systems</a>.
      *         </p>
      *         <p>
      *         The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *         you must use the AmiId parameter to specify the custom AMI that you want to use. For more information
-     *         about supported operating systems, see <a
-     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a
+     *         about how to use custom AMIs with OpsWorks, see <a
      *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      *         Custom AMIs</a>.
      *         </p>
@@ -737,15 +812,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     * <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     * <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or
-     * <code>Ubuntu 12.04 LTS</code>.
+     * A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      * </p>
      * </li>
      * <li>
@@ -768,16 +844,14 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information about supported operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     * Operating Systems</a>.
+     * Not all operating systems are supported with all versions of Chef. For more information about supported operating
+     * systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks
+     * Stacks Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
-     * operating systems, see <a
-     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information about how to use custom AMIs with OpsWorks, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about how to
+     * use custom AMIs with OpsWorks, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -794,16 +868,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
-     *        <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
-     *        .
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2</code>,
+     *        <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     *        <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
+     *        or <code>Amazon Linux 2015.03</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>,
-     *        or <code>Ubuntu 12.04 LTS</code>.
+     *        A supported Ubuntu operating system, such as <code>Ubuntu 18.04 LTS</code>, <code>Ubuntu 16.04 LTS</code>,
+     *        <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -826,16 +900,15 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about supported operating systems, see <a
-     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     *        Not all operating systems are supported with all versions of Chef. For more information about supported
+     *        operating systems, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information
-     *        about supported operating systems, see <a
-     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a
+     *        about how to use custom AMIs with OpsWorks, see <a
      *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
@@ -1216,7 +1289,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks Stacks agent version. You have the following options:
+     * The default OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1227,8 +1300,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
-     * then automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. OpsWorks Stacks
+     * installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -1242,7 +1315,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+     *        The default OpsWorks Stacks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1252,8 +1325,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
-     *        To update the agent version, you must edit the instance configuration and specify a new version. AWS
-     *        OpsWorks Stacks then automatically installs that version on the instance.
+     *        To update the agent version, you must edit the instance configuration and specify a new version. OpsWorks
+     *        Stacks installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
@@ -1272,7 +1345,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks Stacks agent version. You have the following options:
+     * The default OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1283,8 +1356,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
-     * then automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. OpsWorks Stacks
+     * installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -1297,7 +1370,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * AgentVersion cannot be set to Chef 12.2.
      * </p>
      * 
-     * @return The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+     * @return The default OpsWorks Stacks agent version. You have the following options:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1308,7 +1381,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         <i>version_number</i> - Use the specified agent version. This value overrides the stack's default
      *         setting. To update the agent version, you must edit the instance configuration and specify a new version.
-     *         AWS OpsWorks Stacks then automatically installs that version on the instance.
+     *         OpsWorks Stacks installs that version on the instance.
      *         </p>
      *         </li>
      *         </ul>
@@ -1327,7 +1400,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks Stacks agent version. You have the following options:
+     * The default OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1338,8 +1411,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
-     * then automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. OpsWorks Stacks
+     * installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -1353,7 +1426,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks Stacks agent version. You have the following options:</p>
+     *        The default OpsWorks Stacks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1363,8 +1436,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
-     *        To update the agent version, you must edit the instance configuration and specify a new version. AWS
-     *        OpsWorks Stacks then automatically installs that version on the instance.
+     *        To update the agent version, you must edit the instance configuration and specify a new version. OpsWorks
+     *        Stacks installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>

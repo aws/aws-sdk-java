@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,8 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     private String executionRoleArn;
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this model has access to. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
      * Private Cloud</a>
      * </p>
@@ -80,6 +81,12 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private Boolean enableNetworkIsolation;
+    /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     */
+    private DeploymentRecommendation deploymentRecommendation;
 
     /**
      * <p>
@@ -319,15 +326,17 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this model has access to. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
      * Private Cloud</a>
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an
-     *        Amazon Virtual Private Cloud</a>
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that this model has access to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon
+     *        Virtual Private Cloud</a>
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -336,14 +345,16 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this model has access to. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
      * Private Cloud</a>
      * </p>
      * 
-     * @return A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     *         <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an
-     *         Amazon Virtual Private Cloud</a>
+     * @return A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *         object that specifies the VPC that this model has access to. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon
+     *         Virtual Private Cloud</a>
      */
 
     public VpcConfig getVpcConfig() {
@@ -352,15 +363,17 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this model has access to. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual
      * Private Cloud</a>
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
-     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an
-     *        Amazon Virtual Private Cloud</a>
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that this model has access to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon
+     *        Virtual Private Cloud</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,6 +515,46 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     * 
+     * @param deploymentRecommendation
+     *        A set of recommended deployment configurations for the model.
+     */
+
+    public void setDeploymentRecommendation(DeploymentRecommendation deploymentRecommendation) {
+        this.deploymentRecommendation = deploymentRecommendation;
+    }
+
+    /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     * 
+     * @return A set of recommended deployment configurations for the model.
+     */
+
+    public DeploymentRecommendation getDeploymentRecommendation() {
+        return this.deploymentRecommendation;
+    }
+
+    /**
+     * <p>
+     * A set of recommended deployment configurations for the model.
+     * </p>
+     * 
+     * @param deploymentRecommendation
+     *        A set of recommended deployment configurations for the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withDeploymentRecommendation(DeploymentRecommendation deploymentRecommendation) {
+        setDeploymentRecommendation(deploymentRecommendation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -530,7 +583,9 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getModelArn() != null)
             sb.append("ModelArn: ").append(getModelArn()).append(",");
         if (getEnableNetworkIsolation() != null)
-            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
+        if (getDeploymentRecommendation() != null)
+            sb.append("DeploymentRecommendation: ").append(getDeploymentRecommendation());
         sb.append("}");
         return sb.toString();
     }
@@ -581,6 +636,10 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
             return false;
+        if (other.getDeploymentRecommendation() == null ^ this.getDeploymentRecommendation() == null)
+            return false;
+        if (other.getDeploymentRecommendation() != null && other.getDeploymentRecommendation().equals(this.getDeploymentRecommendation()) == false)
+            return false;
         return true;
     }
 
@@ -598,6 +657,7 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getModelArn() == null) ? 0 : getModelArn().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentRecommendation() == null) ? 0 : getDeploymentRecommendation().hashCode());
         return hashCode;
     }
 

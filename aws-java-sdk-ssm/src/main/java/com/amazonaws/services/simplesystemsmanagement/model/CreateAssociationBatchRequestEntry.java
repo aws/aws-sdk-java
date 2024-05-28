@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -198,6 +198,33 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      */
     private Integer scheduleOffset;
+    /**
+     * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Integer duration;
     /**
      * <p>
      * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
@@ -1505,6 +1532,169 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param duration
+     *        The number of hours the association can run before it is canceled. Duration applies to associations that
+     *        are currently running, and any pending and in progress commands on all targets. If a target was taken
+     *        offline for the association to run, it is made available again immediately, without a reboot. </p>
+     *        <p>
+     *        The <code>Duration</code> parameter applies only when both these conditions are true:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The association for which you specify a duration is cancelable according to the parameters of the SSM
+     *        command document or Automation runbook associated with this execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The command specifies the
+     *        <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     *        parameter, which means that the association doesn't run immediately after it is created, but only
+     *        according to the specified schedule.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The number of hours the association can run before it is canceled. Duration applies to associations that
+     *         are currently running, and any pending and in progress commands on all targets. If a target was taken
+     *         offline for the association to run, it is made available again immediately, without a reboot. </p>
+     *         <p>
+     *         The <code>Duration</code> parameter applies only when both these conditions are true:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The association for which you specify a duration is cancelable according to the parameters of the SSM
+     *         command document or Automation runbook associated with this execution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The command specifies the
+     *         <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     *         parameter, which means that the association doesn't run immediately after it is created, but only
+     *         according to the specified schedule.
+     *         </p>
+     *         </li>
+     */
+
+    public Integer getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param duration
+     *        The number of hours the association can run before it is canceled. Duration applies to associations that
+     *        are currently running, and any pending and in progress commands on all targets. If a target was taken
+     *        offline for the association to run, it is made available again immediately, without a reboot. </p>
+     *        <p>
+     *        The <code>Duration</code> parameter applies only when both these conditions are true:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The association for which you specify a duration is cancelable according to the parameters of the SSM
+     *        command document or Automation runbook associated with this execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The command specifies the
+     *        <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     *        parameter, which means that the association doesn't run immediately after it is created, but only
+     *        according to the specified schedule.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withDuration(Integer duration) {
+        setDuration(duration);
+        return this;
+    }
+
+    /**
+     * <p>
      * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
      * together.
      * </p>
@@ -1656,6 +1846,8 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
             sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
         if (getScheduleOffset() != null)
             sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
+        if (getDuration() != null)
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getTargetMaps() != null)
             sb.append("TargetMaps: ").append(getTargetMaps()).append(",");
         if (getAlarmConfiguration() != null)
@@ -1743,6 +1935,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
             return false;
         if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
             return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
+            return false;
         if (other.getTargetMaps() == null ^ this.getTargetMaps() == null)
             return false;
         if (other.getTargetMaps() != null && other.getTargetMaps().equals(this.getTargetMaps()) == false)
@@ -1776,6 +1972,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getCalendarNames() == null) ? 0 : getCalendarNames().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getTargetMaps() == null) ? 0 : getTargetMaps().hashCode());
         hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());
         return hashCode;

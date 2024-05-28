@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,9 +39,10 @@ public class DeleteBotVersionRequest extends com.amazonaws.AmazonWebServiceReque
     private String botVersion;
     /**
      * <p>
-     * By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception
-     * if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code>
-     * parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is
+     * being used by another resource.
      * </p>
      */
     private Boolean skipResourceInUseCheck;
@@ -128,16 +129,17 @@ public class DeleteBotVersionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception
-     * if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code>
-     * parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is
+     * being used by another resource.
      * </p>
      * 
      * @param skipResourceInUseCheck
-     *        By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code>
-     *        exception if you try to delete a bot version that has an alias pointing at it. Set the
-     *        <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the
-     *        version even if an alias points to it.
+     *        By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *        version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is
+     *        being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *        version even if it is being used by another resource.
      */
 
     public void setSkipResourceInUseCheck(Boolean skipResourceInUseCheck) {
@@ -146,15 +148,16 @@ public class DeleteBotVersionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception
-     * if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code>
-     * parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is
+     * being used by another resource.
      * </p>
      * 
-     * @return By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code>
-     *         exception if you try to delete a bot version that has an alias pointing at it. Set the
-     *         <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the
-     *         version even if an alias points to it.
+     * @return By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *         version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is
+     *         being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *         version even if it is being used by another resource.
      */
 
     public Boolean getSkipResourceInUseCheck() {
@@ -163,16 +166,17 @@ public class DeleteBotVersionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception
-     * if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code>
-     * parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is
+     * being used by another resource.
      * </p>
      * 
      * @param skipResourceInUseCheck
-     *        By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code>
-     *        exception if you try to delete a bot version that has an alias pointing at it. Set the
-     *        <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the
-     *        version even if an alias points to it.
+     *        By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *        version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is
+     *        being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *        version even if it is being used by another resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,15 +187,16 @@ public class DeleteBotVersionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code> exception
-     * if you try to delete a bot version that has an alias pointing at it. Set the <code>skipResourceInUseCheck</code>
-     * parameter to <code>true</code> to skip this check and remove the version even if an alias points to it.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is
+     * being used by another resource.
      * </p>
      * 
-     * @return By default, the <code>DeleteBotVersion</code> operations throws a <code>ResourceInUseException</code>
-     *         exception if you try to delete a bot version that has an alias pointing at it. Set the
-     *         <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the
-     *         version even if an alias points to it.
+     * @return By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *         version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is
+     *         being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *         version even if it is being used by another resource.
      */
 
     public Boolean isSkipResourceInUseCheck() {

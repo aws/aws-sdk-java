@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,6 +102,8 @@ public class AwsRdsDbClusterDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DbClusterMembers").build();
     private static final MarshallingInfo<Boolean> IAMDATABASEAUTHENTICATIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamDatabaseAuthenticationEnabled").build();
+    private static final MarshallingInfo<Boolean> AUTOMINORVERSIONUPGRADE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoMinorVersionUpgrade").build();
 
     private static final AwsRdsDbClusterDetailsMarshaller instance = new AwsRdsDbClusterDetailsMarshaller();
 
@@ -156,6 +158,7 @@ public class AwsRdsDbClusterDetailsMarshaller {
             protocolMarshaller.marshall(awsRdsDbClusterDetails.getDbClusterIdentifier(), DBCLUSTERIDENTIFIER_BINDING);
             protocolMarshaller.marshall(awsRdsDbClusterDetails.getDbClusterMembers(), DBCLUSTERMEMBERS_BINDING);
             protocolMarshaller.marshall(awsRdsDbClusterDetails.getIamDatabaseAuthenticationEnabled(), IAMDATABASEAUTHENTICATIONENABLED_BINDING);
+            protocolMarshaller.marshall(awsRdsDbClusterDetails.getAutoMinorVersionUpgrade(), AUTOMINORVERSIONUPGRADE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

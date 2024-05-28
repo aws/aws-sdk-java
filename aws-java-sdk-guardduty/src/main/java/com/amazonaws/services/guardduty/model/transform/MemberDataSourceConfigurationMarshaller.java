@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.guardduty.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class MemberDataSourceConfigurationMarshaller {
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSources").build();
+    private static final MarshallingInfo<List> FEATURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("features").build();
 
     private static final MemberDataSourceConfigurationMarshaller instance = new MemberDataSourceConfigurationMarshaller();
 
@@ -50,6 +53,7 @@ public class MemberDataSourceConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(memberDataSourceConfiguration.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(memberDataSourceConfiguration.getDataSources(), DATASOURCES_BINDING);
+            protocolMarshaller.marshall(memberDataSourceConfiguration.getFeatures(), FEATURES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

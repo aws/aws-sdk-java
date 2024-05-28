@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,10 @@ public class AutoMLJobConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletionCriteria").build();
     private static final MarshallingInfo<StructuredPojo> SECURITYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfig").build();
-    private static final MarshallingInfo<StructuredPojo> DATASPLITCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSplitConfig").build();
     private static final MarshallingInfo<StructuredPojo> CANDIDATEGENERATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CandidateGenerationConfig").build();
+    private static final MarshallingInfo<StructuredPojo> DATASPLITCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSplitConfig").build();
     private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Mode").build();
 
@@ -56,8 +56,8 @@ public class AutoMLJobConfigMarshaller {
         try {
             protocolMarshaller.marshall(autoMLJobConfig.getCompletionCriteria(), COMPLETIONCRITERIA_BINDING);
             protocolMarshaller.marshall(autoMLJobConfig.getSecurityConfig(), SECURITYCONFIG_BINDING);
-            protocolMarshaller.marshall(autoMLJobConfig.getDataSplitConfig(), DATASPLITCONFIG_BINDING);
             protocolMarshaller.marshall(autoMLJobConfig.getCandidateGenerationConfig(), CANDIDATEGENERATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(autoMLJobConfig.getDataSplitConfig(), DATASPLITCONFIG_BINDING);
             protocolMarshaller.marshall(autoMLJobConfig.getMode(), MODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

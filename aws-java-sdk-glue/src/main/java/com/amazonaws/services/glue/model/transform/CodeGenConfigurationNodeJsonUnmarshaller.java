@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -249,6 +249,90 @@ public class CodeGenConfigurationNodeJsonUnmarshaller implements Unmarshaller<Co
                 if (context.testExpression("PostgreSQLCatalogTarget", targetDepth)) {
                     context.nextToken();
                     codeGenConfigurationNode.setPostgreSQLCatalogTarget(PostgreSQLCatalogTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DynamicTransform", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setDynamicTransform(DynamicTransformJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EvaluateDataQuality", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setEvaluateDataQuality(EvaluateDataQualityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3CatalogHudiSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3CatalogHudiSource(S3CatalogHudiSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CatalogHudiSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setCatalogHudiSource(CatalogHudiSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3HudiSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3HudiSource(S3HudiSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3HudiCatalogTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3HudiCatalogTarget(S3HudiCatalogTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3HudiDirectTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3HudiDirectTarget(S3HudiDirectTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DirectJDBCSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setDirectJDBCSource(DirectJDBCSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3CatalogDeltaSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3CatalogDeltaSource(S3CatalogDeltaSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CatalogDeltaSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setCatalogDeltaSource(CatalogDeltaSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3DeltaSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3DeltaSource(S3DeltaSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3DeltaCatalogTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3DeltaCatalogTarget(S3DeltaCatalogTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3DeltaDirectTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setS3DeltaDirectTarget(S3DeltaDirectTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AmazonRedshiftSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setAmazonRedshiftSource(AmazonRedshiftSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AmazonRedshiftTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setAmazonRedshiftTarget(AmazonRedshiftTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EvaluateDataQualityMultiFrame", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrameJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Recipe", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setRecipe(RecipeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnowflakeSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setSnowflakeSource(SnowflakeSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnowflakeTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setSnowflakeTarget(SnowflakeTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConnectorDataSource", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setConnectorDataSource(ConnectorDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ConnectorDataTarget", targetDepth)) {
+                    context.nextToken();
+                    codeGenConfigurationNode.setConnectorDataTarget(ConnectorDataTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

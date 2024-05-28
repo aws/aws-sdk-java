@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -108,6 +108,15 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String treatmentId;
+    /**
+     * <p>
+     * A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     * information about the structure and contents of the results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> executionMetrics;
 
     /**
      * <p>
@@ -642,6 +651,92 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     * information about the structure and contents of the results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     * </p>
+     * 
+     * @return A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     *         information about the structure and contents of the results, see <a
+     *         href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html"
+     *         >Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getExecutionMetrics() {
+        return executionMetrics;
+    }
+
+    /**
+     * <p>
+     * A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     * information about the structure and contents of the results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     * </p>
+     * 
+     * @param executionMetrics
+     *        A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     *        information about the structure and contents of the results, see <a
+     *        href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html"
+     *        >Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     */
+
+    public void setExecutionMetrics(java.util.Map<String, String> executionMetrics) {
+        this.executionMetrics = executionMetrics;
+    }
+
+    /**
+     * <p>
+     * A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     * information about the structure and contents of the results, see <a
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+     * Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     * </p>
+     * 
+     * @param executionMetrics
+     *        A JSON object that contains metrics relating to the campaign execution for this campaign activity. For
+     *        information about the structure and contents of the results, see <a
+     *        href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html"
+     *        >Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse withExecutionMetrics(java.util.Map<String, String> executionMetrics) {
+        setExecutionMetrics(executionMetrics);
+        return this;
+    }
+
+    /**
+     * Add a single ExecutionMetrics entry
+     *
+     * @see ActivityResponse#withExecutionMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse addExecutionMetricsEntry(String key, String value) {
+        if (null == this.executionMetrics) {
+            this.executionMetrics = new java.util.HashMap<String, String>();
+        }
+        if (this.executionMetrics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.executionMetrics.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ExecutionMetrics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse clearExecutionMetricsEntries() {
+        this.executionMetrics = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -678,7 +773,9 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
         if (getTotalEndpointCount() != null)
             sb.append("TotalEndpointCount: ").append(getTotalEndpointCount()).append(",");
         if (getTreatmentId() != null)
-            sb.append("TreatmentId: ").append(getTreatmentId());
+            sb.append("TreatmentId: ").append(getTreatmentId()).append(",");
+        if (getExecutionMetrics() != null)
+            sb.append("ExecutionMetrics: ").append(getExecutionMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -745,6 +842,10 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTreatmentId() != null && other.getTreatmentId().equals(this.getTreatmentId()) == false)
             return false;
+        if (other.getExecutionMetrics() == null ^ this.getExecutionMetrics() == null)
+            return false;
+        if (other.getExecutionMetrics() != null && other.getExecutionMetrics().equals(this.getExecutionMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -766,6 +867,7 @@ public class ActivityResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTimezonesTotalCount() == null) ? 0 : getTimezonesTotalCount().hashCode());
         hashCode = prime * hashCode + ((getTotalEndpointCount() == null) ? 0 : getTotalEndpointCount().hashCode());
         hashCode = prime * hashCode + ((getTreatmentId() == null) ? 0 : getTreatmentId().hashCode());
+        hashCode = prime * hashCode + ((getExecutionMetrics() == null) ? 0 : getExecutionMetrics().hashCode());
         return hashCode;
     }
 

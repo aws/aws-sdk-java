@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.pi.AWSPIClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.pi.model.*;
+
 import com.amazonaws.services.pi.model.transform.*;
 
 /**
@@ -113,11 +114,11 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.pi.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pi.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pi.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withExceptionUnmarshaller(
                                     com.amazonaws.services.pi.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
@@ -167,6 +168,134 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/pi/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/pi/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates a new performance analysis report for a specific time period for the DB instance.
+     * </p>
+     * 
+     * @param createPerformanceAnalysisReportRequest
+     * @return Result of the CreatePerformanceAnalysisReport operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.CreatePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePerformanceAnalysisReportResult createPerformanceAnalysisReport(CreatePerformanceAnalysisReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePerformanceAnalysisReport(request);
+    }
+
+    @SdkInternalApi
+    final CreatePerformanceAnalysisReportResult executeCreatePerformanceAnalysisReport(
+            CreatePerformanceAnalysisReportRequest createPerformanceAnalysisReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPerformanceAnalysisReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePerformanceAnalysisReportRequest> request = null;
+        Response<CreatePerformanceAnalysisReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePerformanceAnalysisReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createPerformanceAnalysisReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePerformanceAnalysisReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePerformanceAnalysisReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreatePerformanceAnalysisReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a performance analysis report.
+     * </p>
+     * 
+     * @param deletePerformanceAnalysisReportRequest
+     * @return Result of the DeletePerformanceAnalysisReport operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.DeletePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePerformanceAnalysisReportResult deletePerformanceAnalysisReport(DeletePerformanceAnalysisReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePerformanceAnalysisReport(request);
+    }
+
+    @SdkInternalApi
+    final DeletePerformanceAnalysisReportResult executeDeletePerformanceAnalysisReport(
+            DeletePerformanceAnalysisReportRequest deletePerformanceAnalysisReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePerformanceAnalysisReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePerformanceAnalysisReportRequest> request = null;
+        Response<DeletePerformanceAnalysisReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePerformanceAnalysisReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deletePerformanceAnalysisReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePerformanceAnalysisReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePerformanceAnalysisReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePerformanceAnalysisReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -305,6 +434,71 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
 
     /**
      * <p>
+     * Retrieves the report including the report ID, status, time details, and the insights with recommendations. The
+     * report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include
+     * the <code>description</code> and <code>recommendation</code> fields.
+     * </p>
+     * 
+     * @param getPerformanceAnalysisReportRequest
+     * @return Result of the GetPerformanceAnalysisReport operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.GetPerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetPerformanceAnalysisReportResult getPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPerformanceAnalysisReport(request);
+    }
+
+    @SdkInternalApi
+    final GetPerformanceAnalysisReportResult executeGetPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest getPerformanceAnalysisReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPerformanceAnalysisReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPerformanceAnalysisReportRequest> request = null;
+        Response<GetPerformanceAnalysisReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPerformanceAnalysisReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getPerformanceAnalysisReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPerformanceAnalysisReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPerformanceAnalysisReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetPerformanceAnalysisReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned
      * on or off on a specific DB instance.
      * </p>
@@ -368,7 +562,8 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
     /**
      * <p>
      * Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific
-     * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
+     * dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate
+     * function for each metric.
      * </p>
      * <note>
      * <p>
@@ -550,6 +745,253 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
             HttpResponseHandler<AmazonWebServiceResponse<ListAvailableResourceMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListAvailableResourceMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the analysis reports created for the DB instance. The reports are sorted based on the start time of
+     * each report.
+     * </p>
+     * 
+     * @param listPerformanceAnalysisReportsRequest
+     * @return Result of the ListPerformanceAnalysisReports operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.ListPerformanceAnalysisReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPerformanceAnalysisReportsResult listPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPerformanceAnalysisReports(request);
+    }
+
+    @SdkInternalApi
+    final ListPerformanceAnalysisReportsResult executeListPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest listPerformanceAnalysisReportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPerformanceAnalysisReportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPerformanceAnalysisReportsRequest> request = null;
+        Response<ListPerformanceAnalysisReportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPerformanceAnalysisReportsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPerformanceAnalysisReportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPerformanceAnalysisReports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPerformanceAnalysisReportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPerformanceAnalysisReportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds metadata tags to the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

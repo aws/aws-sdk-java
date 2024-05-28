@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a PutRuleGroupsNamespace operation.
+ * Represents the output of a <code>PutRuleGroupsNamespace</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespace" target="_top">AWS API
@@ -28,36 +28,36 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace that was updated.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The status of rule groups namespace.
+     * A structure that includes the current status of the rule groups namespace.
      * </p>
      */
     private RuleGroupsNamespaceStatus status;
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the namespace.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of this rule groups namespace.
+     *        The ARN of the rule groups namespace.
      */
 
     public void setArn(String arn) {
@@ -66,10 +66,10 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of this rule groups namespace.
+     * @return The ARN of the rule groups namespace.
      */
 
     public String getArn() {
@@ -78,11 +78,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of this rule groups namespace.
+     *        The ARN of the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace that was updated.
      * </p>
      * 
      * @param name
-     *        The rule groups namespace name.
+     *        The name of the rule groups namespace that was updated.
      */
 
     public void setName(String name) {
@@ -106,10 +106,10 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace that was updated.
      * </p>
      * 
-     * @return The rule groups namespace name.
+     * @return The name of the rule groups namespace that was updated.
      */
 
     public String getName() {
@@ -118,11 +118,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace that was updated.
      * </p>
      * 
      * @param name
-     *        The rule groups namespace name.
+     *        The name of the rule groups namespace that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The status of rule groups namespace.
+     * A structure that includes the current status of the rule groups namespace.
      * </p>
      * 
      * @param status
-     *        The status of rule groups namespace.
+     *        A structure that includes the current status of the rule groups namespace.
      */
 
     public void setStatus(RuleGroupsNamespaceStatus status) {
@@ -146,10 +146,10 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The status of rule groups namespace.
+     * A structure that includes the current status of the rule groups namespace.
      * </p>
      * 
-     * @return The status of rule groups namespace.
+     * @return A structure that includes the current status of the rule groups namespace.
      */
 
     public RuleGroupsNamespaceStatus getStatus() {
@@ -158,11 +158,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The status of rule groups namespace.
+     * A structure that includes the current status of the rule groups namespace.
      * </p>
      * 
      * @param status
-     *        The status of rule groups namespace.
+     *        A structure that includes the current status of the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +173,10 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the namespace.
      * </p>
      * 
-     * @return The tags of this rule groups namespace.
+     * @return The list of tag keys and values that are associated with the namespace.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -185,11 +185,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the namespace.
      * </p>
      * 
      * @param tags
-     *        The tags of this rule groups namespace.
+     *        The list of tag keys and values that are associated with the namespace.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -198,11 +198,11 @@ public class PutRuleGroupsNamespaceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the namespace.
      * </p>
      * 
      * @param tags
-     *        The tags of this rule groups namespace.
+     *        The list of tag keys and values that are associated with the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

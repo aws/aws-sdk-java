@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class ListComponentOutputsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String componentName;
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     */
+    private String deploymentId;
     /**
      * <p>
      * A token that indicates the location of the next output in the array of outputs, after the list of outputs that
@@ -76,6 +82,46 @@ public class ListComponentOutputsRequest extends com.amazonaws.AmazonWebServiceR
 
     public ListComponentOutputsRequest withComponentName(String componentName) {
         setComponentName(componentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     * 
+     * @param deploymentId
+     *        The ID of the deployment whose outputs you want.
+     */
+
+    public void setDeploymentId(String deploymentId) {
+        this.deploymentId = deploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     * 
+     * @return The ID of the deployment whose outputs you want.
+     */
+
+    public String getDeploymentId() {
+        return this.deploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the deployment whose outputs you want.
+     * </p>
+     * 
+     * @param deploymentId
+     *        The ID of the deployment whose outputs you want.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListComponentOutputsRequest withDeploymentId(String deploymentId) {
+        setDeploymentId(deploymentId);
         return this;
     }
 
@@ -139,6 +185,8 @@ public class ListComponentOutputsRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getComponentName() != null)
             sb.append("ComponentName: ").append(getComponentName()).append(",");
+        if (getDeploymentId() != null)
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -159,6 +207,10 @@ public class ListComponentOutputsRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
             return false;
+        if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
+            return false;
+        if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -172,6 +224,7 @@ public class ListComponentOutputsRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,23 +34,21 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     private String cidrIp;
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
-     * <code>-1</code> to specify all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP
+     * type or -1 (all ICMP types).
      * </p>
      */
     private Integer fromPort;
     /**
      * <p>
-     * The ID of the security group. You must specify either the security group ID or the security group name in the
-     * request. For security groups in a nondefault VPC, you must specify the security group ID.
+     * The ID of the security group.
      * </p>
      */
     private String groupId;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name in the request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      */
     private String groupName;
@@ -71,26 +69,23 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     private String ipProtocol;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination
-     * with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the
-     * end of the port range. For EC2-VPC, the source security group must be in the same VPC. To revoke a specific rule
-     * for an IP protocol and port range, use a set of IP permissions instead.
+     * [Default VPC] The name of the source security group. You can't specify this parameter in combination with the
+     * following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the
+     * port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and
+     * port range, use a set of IP permissions instead.
      * </p>
      */
     private String sourceSecurityGroupName;
     /**
      * <p>
-     * [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in
-     * a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.
+     * Not supported.
      * </p>
      */
     private String sourceSecurityGroupOwnerId;
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
-     * <code>-1</code> to specify all ICMP codes for the ICMP type.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code
+     * or -1 (all ICMP codes).
      * </p>
      */
     private Integer toPort;
@@ -113,9 +108,9 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
      * (with...) methods to initialize any additional object members.
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
-     *        security group ID.
+     *        [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *        security group name in the request. For security groups in a nondefault VPC, you must specify the security
+     *        group ID.
      * @param ipPermissions
      *        The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
      *        same set of permissions.
@@ -167,13 +162,13 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
-     * <code>-1</code> to specify all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP
+     * type or -1 (all ICMP types).
      * </p>
      * 
      * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number,
-     *        use <code>-1</code> to specify all ICMP types.
+     *        If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the
+     *        ICMP type or -1 (all ICMP types).
      */
 
     public void setFromPort(Integer fromPort) {
@@ -182,12 +177,12 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
-     * <code>-1</code> to specify all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP
+     * type or -1 (all ICMP types).
      * </p>
      * 
-     * @return The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number,
-     *         use <code>-1</code> to specify all ICMP types.
+     * @return If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the
+     *         ICMP type or -1 (all ICMP types).
      */
 
     public Integer getFromPort() {
@@ -196,13 +191,13 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number, use
-     * <code>-1</code> to specify all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP
+     * type or -1 (all ICMP types).
      * </p>
      * 
      * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP type number. For the ICMP type number,
-     *        use <code>-1</code> to specify all ICMP types.
+     *        If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the
+     *        ICMP type or -1 (all ICMP types).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,13 +208,11 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the security group. You must specify either the security group ID or the security group name in the
-     * request. For security groups in a nondefault VPC, you must specify the security group ID.
+     * The ID of the security group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the security group. You must specify either the security group ID or the security group name in
-     *        the request. For security groups in a nondefault VPC, you must specify the security group ID.
+     *        The ID of the security group.
      */
 
     public void setGroupId(String groupId) {
@@ -228,12 +221,10 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the security group. You must specify either the security group ID or the security group name in the
-     * request. For security groups in a nondefault VPC, you must specify the security group ID.
+     * The ID of the security group.
      * </p>
      * 
-     * @return The ID of the security group. You must specify either the security group ID or the security group name in
-     *         the request. For security groups in a nondefault VPC, you must specify the security group ID.
+     * @return The ID of the security group.
      */
 
     public String getGroupId() {
@@ -242,13 +233,11 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the security group. You must specify either the security group ID or the security group name in the
-     * request. For security groups in a nondefault VPC, you must specify the security group ID.
+     * The ID of the security group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the security group. You must specify either the security group ID or the security group name in
-     *        the request. For security groups in a nondefault VPC, you must specify the security group ID.
+     *        The ID of the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,15 +248,14 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name in the request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
-     *        security group ID.
+     *        [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *        security group name in the request. For security groups in a nondefault VPC, you must specify the security
+     *        group ID.
      */
 
     public void setGroupName(String groupName) {
@@ -276,13 +264,12 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name in the request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *         or the security group name in the request. For security groups in a nondefault VPC, you must specify the
+     * @return [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *         security group name in the request. For security groups in a nondefault VPC, you must specify the
      *         security group ID.
      */
 
@@ -292,15 +279,14 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name in the request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
-     *        security group ID.
+     *        [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *        security group name in the request. For security groups in a nondefault VPC, you must specify the security
+     *        group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,17 +430,17 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination
-     * with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the
-     * end of the port range. For EC2-VPC, the source security group must be in the same VPC. To revoke a specific rule
-     * for an IP protocol and port range, use a set of IP permissions instead.
+     * [Default VPC] The name of the source security group. You can't specify this parameter in combination with the
+     * following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the
+     * port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and
+     * port range, use a set of IP permissions instead.
      * </p>
      * 
      * @param sourceSecurityGroupName
-     *        [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in
-     *        combination with the following parameters: the CIDR IP address range, the start of the port range, the IP
-     *        protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC.
-     *        To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.
+     *        [Default VPC] The name of the source security group. You can't specify this parameter in combination with
+     *        the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the
+     *        end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an
+     *        IP protocol and port range, use a set of IP permissions instead.
      */
 
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
@@ -463,16 +449,16 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination
-     * with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the
-     * end of the port range. For EC2-VPC, the source security group must be in the same VPC. To revoke a specific rule
-     * for an IP protocol and port range, use a set of IP permissions instead.
+     * [Default VPC] The name of the source security group. You can't specify this parameter in combination with the
+     * following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the
+     * port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and
+     * port range, use a set of IP permissions instead.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in
-     *         combination with the following parameters: the CIDR IP address range, the start of the port range, the IP
-     *         protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC.
-     *         To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.
+     * @return [Default VPC] The name of the source security group. You can't specify this parameter in combination with
+     *         the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and
+     *         the end of the port range. The source security group must be in the same VPC. To revoke a specific rule
+     *         for an IP protocol and port range, use a set of IP permissions instead.
      */
 
     public String getSourceSecurityGroupName() {
@@ -481,17 +467,17 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination
-     * with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the
-     * end of the port range. For EC2-VPC, the source security group must be in the same VPC. To revoke a specific rule
-     * for an IP protocol and port range, use a set of IP permissions instead.
+     * [Default VPC] The name of the source security group. You can't specify this parameter in combination with the
+     * following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the
+     * port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and
+     * port range, use a set of IP permissions instead.
      * </p>
      * 
      * @param sourceSecurityGroupName
-     *        [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in
-     *        combination with the following parameters: the CIDR IP address range, the start of the port range, the IP
-     *        protocol, and the end of the port range. For EC2-VPC, the source security group must be in the same VPC.
-     *        To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.
+     *        [Default VPC] The name of the source security group. You can't specify this parameter in combination with
+     *        the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the
+     *        end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an
+     *        IP protocol and port range, use a set of IP permissions instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,18 +488,11 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in
-     * a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.
+     * Not supported.
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security
-     *        group is in a different account. You can't specify this parameter in combination with the following
-     *        parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the
-     *        port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions
-     *        instead.
+     *        Not supported.
      */
 
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
@@ -522,17 +501,10 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in
-     * a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.
+     * Not supported.
      * </p>
      * 
-     * @return [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security
-     *         group is in a different account. You can't specify this parameter in combination with the following
-     *         parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the
-     *         port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions
-     *         instead.
+     * @return Not supported.
      */
 
     public String getSourceSecurityGroupOwnerId() {
@@ -541,18 +513,11 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security group is in
-     * a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the IP protocol, the start of the port range, and the end of the port range. To revoke a specific
-     * rule for an IP protocol and port range, use a set of IP permissions instead.
+     * Not supported.
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic] The Amazon Web Services account ID of the source security group, if the source security
-     *        group is in a different account. You can't specify this parameter in combination with the following
-     *        parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the
-     *        port range. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions
-     *        instead.
+     *        Not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,13 +528,13 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
-     * <code>-1</code> to specify all ICMP codes for the ICMP type.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code
+     * or -1 (all ICMP codes).
      * </p>
      * 
      * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
-     *        <code>-1</code> to specify all ICMP codes for the ICMP type.
+     *        If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the
+     *        ICMP code or -1 (all ICMP codes).
      */
 
     public void setToPort(Integer toPort) {
@@ -578,12 +543,12 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
-     * <code>-1</code> to specify all ICMP codes for the ICMP type.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code
+     * or -1 (all ICMP codes).
      * </p>
      * 
-     * @return The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number,
-     *         use <code>-1</code> to specify all ICMP codes for the ICMP type.
+     * @return If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the
+     *         ICMP code or -1 (all ICMP codes).
      */
 
     public Integer getToPort() {
@@ -592,13 +557,13 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
-     * <code>-1</code> to specify all ICMP codes for the ICMP type.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code
+     * or -1 (all ICMP codes).
      * </p>
      * 
      * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP code number. For the ICMP code number, use
-     *        <code>-1</code> to specify all ICMP codes for the ICMP type.
+     *        If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the
+     *        ICMP code or -1 (all ICMP codes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

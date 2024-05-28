@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      */
     private String diskName;
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     * The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
      * <p>
      * Constraint:
@@ -50,8 +50,8 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
     private String diskSnapshotName;
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability
+     * Zone as the Lightsail instance where you want to create the disk.
      * </p>
      * <p>
      * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
@@ -60,7 +60,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
     private String availabilityZone;
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      */
     private Integer sizeInGb;
@@ -161,11 +161,11 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     *        The unique Lightsail disk name (<code>my-disk</code>).
      */
 
     public void setDiskName(String diskName) {
@@ -174,10 +174,10 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
-     * @return The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * @return The unique Lightsail disk name (<code>my-disk</code>).
      */
 
     public String getDiskName() {
@@ -186,11 +186,11 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     *        The unique Lightsail disk name (<code>my-disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,7 +201,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     * The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
      * <p>
      * Constraint:
@@ -216,8 +216,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param diskSnapshotName
-     *        The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage
-     *        disk.</p>
+     *        The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
      *        <p>
      *        Constraint:
      *        </p>
@@ -236,7 +235,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     * The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
      * <p>
      * Constraint:
@@ -250,8 +249,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage
-     *         disk.</p>
+     * @return The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
      *         <p>
      *         Constraint:
      *         </p>
@@ -270,7 +268,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.
+     * The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.
      * </p>
      * <p>
      * Constraint:
@@ -285,8 +283,7 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param diskSnapshotName
-     *        The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage
-     *        disk.</p>
+     *        The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
      *        <p>
      *        Constraint:
      *        </p>
@@ -307,15 +304,15 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability
+     * Zone as the Lightsail instance where you want to create the disk.
      * </p>
      * <p>
      * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
+     *        The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same
      *        Availability Zone as the Lightsail instance where you want to create the disk.</p>
      *        <p>
      *        Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
@@ -327,14 +324,14 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability
+     * Zone as the Lightsail instance where you want to create the disk.
      * </p>
      * <p>
      * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
-     * @return The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
+     * @return The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same
      *         Availability Zone as the Lightsail instance where you want to create the disk.</p>
      *         <p>
      *         Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
@@ -346,15 +343,15 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
-     * Availability Zone as the Lightsail instance where you want to create the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability
+     * Zone as the Lightsail instance where you want to create the disk.
      * </p>
      * <p>
      * Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same
+     *        The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same
      *        Availability Zone as the Lightsail instance where you want to create the disk.</p>
      *        <p>
      *        Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.
@@ -368,11 +365,11 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      * 
      * @param sizeInGb
-     *        The size of the disk in GB (e.g., <code>32</code>).
+     *        The size of the disk in GB (<code>32</code>).
      */
 
     public void setSizeInGb(Integer sizeInGb) {
@@ -381,10 +378,10 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      * 
-     * @return The size of the disk in GB (e.g., <code>32</code>).
+     * @return The size of the disk in GB (<code>32</code>).
      */
 
     public Integer getSizeInGb() {
@@ -393,11 +390,11 @@ public class CreateDiskFromSnapshotRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      * 
      * @param sizeInGb
-     *        The size of the disk in GB (e.g., <code>32</code>).
+     *        The size of the disk in GB (<code>32</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

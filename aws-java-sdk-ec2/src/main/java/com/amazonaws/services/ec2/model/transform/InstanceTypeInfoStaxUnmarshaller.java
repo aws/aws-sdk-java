@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -185,6 +185,35 @@ public class InstanceTypeInfoStaxUnmarshaller implements Unmarshaller<InstanceTy
                     continue;
                 }
 
+                if (context.testExpression("nitroEnclavesSupport", targetDepth)) {
+                    instanceTypeInfo.setNitroEnclavesSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("nitroTpmSupport", targetDepth)) {
+                    instanceTypeInfo.setNitroTpmSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("nitroTpmInfo", targetDepth)) {
+                    instanceTypeInfo.setNitroTpmInfo(NitroTpmInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("mediaAcceleratorInfo", targetDepth)) {
+                    instanceTypeInfo.setMediaAcceleratorInfo(MediaAcceleratorInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("neuronInfo", targetDepth)) {
+                    instanceTypeInfo.setNeuronInfo(NeuronInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("phcSupport", targetDepth)) {
+                    instanceTypeInfo.setPhcSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceTypeInfo;

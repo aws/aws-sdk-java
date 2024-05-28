@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Details for one or more Windows AMI image IDs.
+     * Specify one or more Windows AMI image IDs for the request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> imageIds;
@@ -40,11 +40,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>resource-type</code> - The resource type for pre-provisioning.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.
      * </p>
      * </li>
      * <li>
@@ -62,24 +57,26 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Details for one or more Windows AMI image IDs.
+     * Specify one or more Windows AMI image IDs for the request.
      * </p>
      * 
-     * @return Details for one or more Windows AMI image IDs.
+     * @return Specify one or more Windows AMI image IDs for the request.
      */
 
     public java.util.List<String> getImageIds() {
@@ -91,11 +88,11 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Details for one or more Windows AMI image IDs.
+     * Specify one or more Windows AMI image IDs for the request.
      * </p>
      * 
      * @param imageIds
-     *        Details for one or more Windows AMI image IDs.
+     *        Specify one or more Windows AMI image IDs for the request.
      */
 
     public void setImageIds(java.util.Collection<String> imageIds) {
@@ -109,7 +106,7 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Details for one or more Windows AMI image IDs.
+     * Specify one or more Windows AMI image IDs for the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -118,7 +115,7 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param imageIds
-     *        Details for one or more Windows AMI image IDs.
+     *        Specify one or more Windows AMI image IDs for the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +131,11 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Details for one or more Windows AMI image IDs.
+     * Specify one or more Windows AMI image IDs for the request.
      * </p>
      * 
      * @param imageIds
-     *        Details for one or more Windows AMI image IDs.
+     *        Specify one or more Windows AMI image IDs for the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +156,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>owner-id</code> - The owner ID for the pre-provisioning resource.
      * </p>
      * </li>
@@ -179,12 +171,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         <code>resource-type</code> - The resource type for pre-provisioning.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows
-     *         AMI.
      *         </p>
      *         </li>
      *         <li>
@@ -218,11 +204,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>owner-id</code> - The owner ID for the pre-provisioning resource.
      * </p>
      * </li>
@@ -239,12 +220,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>resource-type</code> - The resource type for pre-provisioning.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows
-     *        AMI.
      *        </p>
      *        </li>
      *        <li>
@@ -280,11 +255,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>owner-id</code> - The owner ID for the pre-provisioning resource.
      * </p>
      * </li>
@@ -306,12 +276,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>resource-type</code> - The resource type for pre-provisioning.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows
-     *        AMI.
      *        </p>
      *        </li>
      *        <li>
@@ -349,11 +313,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows AMI.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>owner-id</code> - The owner ID for the pre-provisioning resource.
      * </p>
      * </li>
@@ -370,12 +329,6 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>resource-type</code> - The resource type for pre-provisioning.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launch-template</code> - The launch template that is associated with the pre-provisioned Windows
-     *        AMI.
      *        </p>
      *        </li>
      *        <li>
@@ -398,14 +351,16 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned NextToken value. If this parameter is not specified, then all results are
-     *        returned.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -414,13 +369,15 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         request with the returned NextToken value. If this parameter is not specified, then all results are
-     *         returned.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -429,14 +386,16 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned NextToken value. If this parameter is not specified, then all results are
-     *        returned.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,11 +406,13 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -460,10 +421,12 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next set of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -472,11 +435,13 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

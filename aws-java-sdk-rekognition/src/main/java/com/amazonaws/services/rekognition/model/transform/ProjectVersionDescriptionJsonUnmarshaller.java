@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,22 @@ public class ProjectVersionDescriptionJsonUnmarshaller implements Unmarshaller<P
                 if (context.testExpression("SourceProjectVersionArn", targetDepth)) {
                     context.nextToken();
                     projectVersionDescription.setSourceProjectVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VersionDescription", targetDepth)) {
+                    context.nextToken();
+                    projectVersionDescription.setVersionDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Feature", targetDepth)) {
+                    context.nextToken();
+                    projectVersionDescription.setFeature(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BaseModelVersion", targetDepth)) {
+                    context.nextToken();
+                    projectVersionDescription.setBaseModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FeatureConfig", targetDepth)) {
+                    context.nextToken();
+                    projectVersionDescription.setFeatureConfig(CustomizationFeatureConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

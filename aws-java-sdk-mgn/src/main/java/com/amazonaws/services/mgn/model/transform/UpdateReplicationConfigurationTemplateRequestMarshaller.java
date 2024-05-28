@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,8 @@ public class UpdateReplicationConfigurationTemplateRequestMarshaller {
             .marshallLocationName("stagingAreaTags").build();
     private static final MarshallingInfo<Boolean> USEDEDICATEDREPLICATIONSERVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDedicatedReplicationServer").build();
+    private static final MarshallingInfo<Boolean> USEFIPSENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useFipsEndpoint").build();
 
     private static final UpdateReplicationConfigurationTemplateRequestMarshaller instance = new UpdateReplicationConfigurationTemplateRequestMarshaller();
 
@@ -93,6 +95,7 @@ public class UpdateReplicationConfigurationTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateReplicationConfigurationTemplateRequest.getStagingAreaTags(), STAGINGAREATAGS_BINDING);
             protocolMarshaller
                     .marshall(updateReplicationConfigurationTemplateRequest.getUseDedicatedReplicationServer(), USEDEDICATEDREPLICATIONSERVER_BINDING);
+            protocolMarshaller.marshall(updateReplicationConfigurationTemplateRequest.getUseFipsEndpoint(), USEFIPSENDPOINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

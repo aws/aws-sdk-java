@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InputMarshaller {
 
+    private static final MarshallingInfo<String> ADVANCEDINPUTFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("advancedInputFilter").build();
+    private static final MarshallingInfo<StructuredPojo> ADVANCEDINPUTFILTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("advancedInputFilterSettings").build();
     private static final MarshallingInfo<Map> AUDIOSELECTORGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioSelectorGroups").build();
     private static final MarshallingInfo<Map> AUDIOSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +75,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timecodeStart").build();
     private static final MarshallingInfo<StructuredPojo> VIDEOGENERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoGenerator").build();
+    private static final MarshallingInfo<List> VIDEOOVERLAYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("videoOverlays").build();
     private static final MarshallingInfo<StructuredPojo> VIDEOSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoSelector").build();
 
@@ -90,6 +96,8 @@ public class InputMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(input.getAdvancedInputFilter(), ADVANCEDINPUTFILTER_BINDING);
+            protocolMarshaller.marshall(input.getAdvancedInputFilterSettings(), ADVANCEDINPUTFILTERSETTINGS_BINDING);
             protocolMarshaller.marshall(input.getAudioSelectorGroups(), AUDIOSELECTORGROUPS_BINDING);
             protocolMarshaller.marshall(input.getAudioSelectors(), AUDIOSELECTORS_BINDING);
             protocolMarshaller.marshall(input.getCaptionSelectors(), CAPTIONSELECTORS_BINDING);
@@ -111,6 +119,7 @@ public class InputMarshaller {
             protocolMarshaller.marshall(input.getTimecodeSource(), TIMECODESOURCE_BINDING);
             protocolMarshaller.marshall(input.getTimecodeStart(), TIMECODESTART_BINDING);
             protocolMarshaller.marshall(input.getVideoGenerator(), VIDEOGENERATOR_BINDING);
+            protocolMarshaller.marshall(input.getVideoOverlays(), VIDEOOVERLAYS_BINDING);
             protocolMarshaller.marshall(input.getVideoSelector(), VIDEOSELECTOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

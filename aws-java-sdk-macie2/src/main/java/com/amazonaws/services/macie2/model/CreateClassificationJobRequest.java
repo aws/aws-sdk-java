@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,14 +101,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
-     * any values for the managedDataIdentifierIds property.
+     * ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     * managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -118,16 +117,32 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
-     * property.
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the
+     * customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't
+     * specify any values for the managedDataIdentifierIds property.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
-     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
-     * identifiers as they are released.
+     * If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      */
     private String managedDataIdentifierSelector;
@@ -774,14 +789,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
-     * any values for the managedDataIdentifierIds property.
+     * ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     * managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -791,16 +805,32 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
-     * property.
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the
+     * customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't
+     * specify any values for the managedDataIdentifierIds property.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
-     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
-     * identifiers as they are released.
+     * If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param managedDataIdentifierSelector
@@ -809,14 +839,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
-     *        specify any values for the managedDataIdentifierIds property.
+     *        ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     *        managedDataIdentifierIds property.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *        specified by the managedDataIdentifierIds property.
+     *        EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *        property.
      *        </p>
      *        </li>
      *        <li>
@@ -826,16 +856,35 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     *        identifier for the job (customDataIdentifierIds) and don't specify any values for the
-     *        managedDataIdentifierIds property.
+     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for
+     *        the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds
+     *        property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value,
+     *        don't specify any values for the managedDataIdentifierIds property.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
-     *        specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new
-     *        managed data identifiers as they are released.
+     *        If you don't specify a value for this property, the job uses the recommended set of managed data
+     *        identifiers.
+     *        </p>
+     *        <p>
+     *        If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
+     *        data identifiers that are released. If you don't specify a value for this property or you specify
+     *        RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are
+     *        in the recommended set when the run starts.
+     *        </p>
+     *        <p>
+     *        For information about individual managed data identifiers or to determine which ones are in the
+     *        recommended set, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *        identifiers</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *        managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @see ManagedDataIdentifierSelector
      */
 
@@ -851,14 +900,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
-     * any values for the managedDataIdentifierIds property.
+     * ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     * managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -868,16 +916,32 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
-     * property.
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the
+     * customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't
+     * specify any values for the managedDataIdentifierIds property.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
-     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
-     * identifiers as they are released.
+     * If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @return The selection type to apply when determining which managed data identifiers the job uses to analyze data.
@@ -885,14 +949,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
-     *         specify any values for the managedDataIdentifierIds property.
+     *         ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     *         managedDataIdentifierIds property.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *         specified by the managedDataIdentifierIds property.
+     *         EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *         property.
      *         </p>
      *         </li>
      *         <li>
@@ -902,16 +966,35 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom
-     *         data identifier for the job (customDataIdentifierIds) and don't specify any values for the
-     *         managedDataIdentifierIds property.
+     *         NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for
+     *         the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds
+     *         property.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value,
+     *         don't specify any values for the managedDataIdentifierIds property.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
-     *         specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses
-     *         new managed data identifiers as they are released.
+     *         If you don't specify a value for this property, the job uses the recommended set of managed data
+     *         identifiers.
+     *         </p>
+     *         <p>
+     *         If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
+     *         data identifiers that are released. If you don't specify a value for this property or you specify
+     *         RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that
+     *         are in the recommended set when the run starts.
+     *         </p>
+     *         <p>
+     *         For information about individual managed data identifiers or to determine which ones are in the
+     *         recommended set, see <a
+     *         href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *         identifiers</a> and <a
+     *         href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *         managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @see ManagedDataIdentifierSelector
      */
 
@@ -927,14 +1010,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
-     * any values for the managedDataIdentifierIds property.
+     * ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     * managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -944,16 +1026,32 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
-     * property.
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the
+     * customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't
+     * specify any values for the managedDataIdentifierIds property.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
-     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
-     * identifiers as they are released.
+     * If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param managedDataIdentifierSelector
@@ -962,14 +1060,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
-     *        specify any values for the managedDataIdentifierIds property.
+     *        ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     *        managedDataIdentifierIds property.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *        specified by the managedDataIdentifierIds property.
+     *        EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *        property.
      *        </p>
      *        </li>
      *        <li>
@@ -979,16 +1077,35 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     *        identifier for the job (customDataIdentifierIds) and don't specify any values for the
-     *        managedDataIdentifierIds property.
+     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for
+     *        the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds
+     *        property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value,
+     *        don't specify any values for the managedDataIdentifierIds property.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
-     *        specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new
-     *        managed data identifiers as they are released.
+     *        If you don't specify a value for this property, the job uses the recommended set of managed data
+     *        identifiers.
+     *        </p>
+     *        <p>
+     *        If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
+     *        data identifiers that are released. If you don't specify a value for this property or you specify
+     *        RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are
+     *        in the recommended set when the run starts.
+     *        </p>
+     *        <p>
+     *        For information about individual managed data identifiers or to determine which ones are in the
+     *        recommended set, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *        identifiers</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *        managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedDataIdentifierSelector
      */
@@ -1006,14 +1123,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify
-     * any values for the managedDataIdentifierIds property.
+     * ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     * managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -1023,16 +1139,32 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     * identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds
-     * property.
+     * NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for the
+     * customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value, don't
+     * specify any values for the managedDataIdentifierIds property.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a
-     * value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data
-     * identifiers as they are released.
+     * If you don't specify a value for this property, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param managedDataIdentifierSelector
@@ -1041,14 +1173,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't
-     *        specify any values for the managedDataIdentifierIds property.
+     *        ALL - Use all managed data identifiers. If you specify this value, don't specify any values for the
+     *        managedDataIdentifierIds property.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *        specified by the managedDataIdentifierIds property.
+     *        EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *        property.
      *        </p>
      *        </li>
      *        <li>
@@ -1058,16 +1190,35 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data
-     *        identifier for the job (customDataIdentifierIds) and don't specify any values for the
-     *        managedDataIdentifierIds property.
+     *        NONE - Don't use any managed data identifiers. If you specify this value, specify at least one value for
+     *        the customDataIdentifierIds property and don't specify any values for the managedDataIdentifierIds
+     *        property.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RECOMMENDED (default) - Use the recommended set of managed data identifiers. If you specify this value,
+     *        don't specify any values for the managedDataIdentifierIds property.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify a value for this property, the job uses all managed data identifiers. If you don't
-     *        specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new
-     *        managed data identifiers as they are released.
+     *        If you don't specify a value for this property, the job uses the recommended set of managed data
+     *        identifiers.
+     *        </p>
+     *        <p>
+     *        If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
+     *        data identifiers that are released. If you don't specify a value for this property or you specify
+     *        RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are
+     *        in the recommended set when the run starts.
+     *        </p>
+     *        <p>
+     *        For information about individual managed data identifiers or to determine which ones are in the
+     *        recommended set, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *        identifiers</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *        managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedDataIdentifierSelector
      */

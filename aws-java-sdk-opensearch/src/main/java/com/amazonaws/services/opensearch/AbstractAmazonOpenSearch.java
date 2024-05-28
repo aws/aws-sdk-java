@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,27 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public AddDataSourceResult addDataSource(AddDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsResult addTags(AddTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public AssociatePackageResult associatePackage(AssociatePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AuthorizeVpcEndpointAccessResult authorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelDomainConfigChangeResult cancelDomainConfigChange(CancelDomainConfigChangeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,6 +78,16 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +104,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public DeletePackageResult deletePackage(DeletePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcEndpointResult deleteVpcEndpoint(DeleteVpcEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,7 +133,22 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public DescribeDomainHealthResult describeDomainHealth(DescribeDomainHealthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDomainNodesResult describeDomainNodes(DescribeDomainNodesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDomainsResult describeDomains(DescribeDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDryRunProgressResult describeDryRunProgress(DescribeDryRunProgressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,12 +183,27 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public DescribeVpcEndpointsResult describeVpcEndpoints(DescribeVpcEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DissociatePackageResult dissociatePackage(DissociatePackageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetCompatibleVersionsResult getCompatibleVersions(GetCompatibleVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataSourceResult getDataSource(GetDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDomainMaintenanceStatusResult getDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,6 +219,16 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataSourcesResult listDataSources(ListDataSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDomainMaintenancesResult listDomainMaintenances(ListDomainMaintenancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,12 +253,32 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public ListScheduledActionsResult listScheduledActions(ListScheduledActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsResult listTags(ListTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListVersionsResult listVersions(ListVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVpcEndpointAccessResult listVpcEndpointAccess(ListVpcEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVpcEndpointsResult listVpcEndpoints(ListVpcEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVpcEndpointsForDomainResult listVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,7 +298,22 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public RevokeVpcEndpointAccessResult revokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDomainMaintenanceResult startDomainMaintenance(StartDomainMaintenanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartServiceSoftwareUpdateResult startServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,6 +324,16 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public UpdatePackageResult updatePackage(UpdatePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateScheduledActionResult updateScheduledAction(UpdateScheduledActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVpcEndpointResult updateVpcEndpoint(UpdateVpcEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.medialive.waiters.AWSMediaLiveWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.medialive.model.*;
+
 import com.amazonaws.services.medialive.model.transform.*;
 
 /**
@@ -172,7 +173,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -448,7 +449,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The update schedule request failed validation.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to update the channel schedule.
      * @throws BadGatewayException
@@ -456,7 +457,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The specified channel id does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on update schedule calls.
      * @sample AWSMediaLive.BatchUpdateSchedule
@@ -526,7 +527,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -602,7 +603,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Device not found or you called an unsupported region.
      * @throws GatewayTimeoutException
-     *         Bad gateway error. Try again.
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded. Your have sent this request too many times. There might be a bug in your API
      *         client.
@@ -665,13 +666,13 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The Channel failed validation and could not be created.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to create the channel.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on create channel calls to channel service.
      * @throws ConflictException
@@ -725,6 +726,282 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms on targeted resource types.
+     * 
+     * @param createCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateRequest
+     * @return Result of the CreateCloudWatchAlarmTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCloudWatchAlarmTemplateResult createCloudWatchAlarmTemplate(CreateCloudWatchAlarmTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCloudWatchAlarmTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateCloudWatchAlarmTemplateResult executeCreateCloudWatchAlarmTemplate(CreateCloudWatchAlarmTemplateRequest createCloudWatchAlarmTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCloudWatchAlarmTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCloudWatchAlarmTemplateRequest> request = null;
+        Response<CreateCloudWatchAlarmTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCloudWatchAlarmTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCloudWatchAlarmTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudWatchAlarmTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCloudWatchAlarmTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCloudWatchAlarmTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Creates a cloudwatch alarm template group to group your cloudwatch alarm templates and to attach to signal maps
+     * for dynamically creating alarms.
+     * 
+     * @param createCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the CreateCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCloudWatchAlarmTemplateGroupResult createCloudWatchAlarmTemplateGroup(CreateCloudWatchAlarmTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCloudWatchAlarmTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateCloudWatchAlarmTemplateGroupResult executeCreateCloudWatchAlarmTemplateGroup(
+            CreateCloudWatchAlarmTemplateGroupRequest createCloudWatchAlarmTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCloudWatchAlarmTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCloudWatchAlarmTemplateGroupRequest> request = null;
+        Response<CreateCloudWatchAlarmTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCloudWatchAlarmTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCloudWatchAlarmTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudWatchAlarmTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCloudWatchAlarmTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCloudWatchAlarmTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Creates an eventbridge rule template to monitor events and send notifications to your targeted resources.
+     * 
+     * @param createEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateRequest
+     * @return Result of the CreateEventBridgeRuleTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateEventBridgeRuleTemplateResult createEventBridgeRuleTemplate(CreateEventBridgeRuleTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEventBridgeRuleTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateEventBridgeRuleTemplateResult executeCreateEventBridgeRuleTemplate(CreateEventBridgeRuleTemplateRequest createEventBridgeRuleTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEventBridgeRuleTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEventBridgeRuleTemplateRequest> request = null;
+        Response<CreateEventBridgeRuleTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEventBridgeRuleTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createEventBridgeRuleTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventBridgeRuleTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEventBridgeRuleTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateEventBridgeRuleTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Creates an eventbridge rule template group to group your eventbridge rule templates and to attach to signal maps
+     * for dynamically creating notification rules.
+     * 
+     * @param createEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateGroupRequest
+     * @return Result of the CreateEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateEventBridgeRuleTemplateGroupResult createEventBridgeRuleTemplateGroup(CreateEventBridgeRuleTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEventBridgeRuleTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateEventBridgeRuleTemplateGroupResult executeCreateEventBridgeRuleTemplateGroup(
+            CreateEventBridgeRuleTemplateGroupRequest createEventBridgeRuleTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEventBridgeRuleTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEventBridgeRuleTemplateGroupRequest> request = null;
+        Response<CreateEventBridgeRuleTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEventBridgeRuleTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createEventBridgeRuleTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventBridgeRuleTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEventBridgeRuleTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateEventBridgeRuleTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Create an input
      * 
      * @param createInputRequest
@@ -739,7 +1016,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.CreateInput
@@ -805,7 +1082,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.CreateInputSecurityGroup
@@ -870,13 +1147,13 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The Multiplex failed validation and could not be created.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to create the multiplex.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex calls to multiplex service.
      * @throws ConflictException
@@ -941,13 +1218,13 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The Multiplex program failed validation and could not be created.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to create a program.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -1016,7 +1293,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.CreatePartnerInput
@@ -1057,6 +1334,73 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePartnerInputResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePartnerInputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Initiates the creation of a new signal map. Will discover a new mediaResourceMap based on the provided
+     * discoveryEntryPointArn.
+     * 
+     * @param createSignalMapRequest
+     *        Placeholder documentation for CreateSignalMapRequest
+     * @return Result of the CreateSignalMap operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSignalMapResult createSignalMap(CreateSignalMapRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSignalMap(request);
+    }
+
+    @SdkInternalApi
+    final CreateSignalMapResult executeCreateSignalMap(CreateSignalMapRequest createSignalMapRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSignalMapRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSignalMapRequest> request = null;
+        Response<CreateSignalMapResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSignalMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSignalMapRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSignalMap");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSignalMapResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSignalMapResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1138,7 +1482,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to delete the channel.
      * @throws BadGatewayException
@@ -1146,7 +1490,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The channel you're requesting to delete does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete channel calls to channel service.
      * @throws ConflictException
@@ -1200,6 +1544,282 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Deletes a cloudwatch alarm template.
+     * 
+     * @param deleteCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateRequest
+     * @return Result of the DeleteCloudWatchAlarmTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCloudWatchAlarmTemplateResult deleteCloudWatchAlarmTemplate(DeleteCloudWatchAlarmTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCloudWatchAlarmTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCloudWatchAlarmTemplateResult executeDeleteCloudWatchAlarmTemplate(DeleteCloudWatchAlarmTemplateRequest deleteCloudWatchAlarmTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCloudWatchAlarmTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCloudWatchAlarmTemplateRequest> request = null;
+        Response<DeleteCloudWatchAlarmTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCloudWatchAlarmTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCloudWatchAlarmTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCloudWatchAlarmTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCloudWatchAlarmTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCloudWatchAlarmTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes a cloudwatch alarm template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the DeleteCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCloudWatchAlarmTemplateGroupResult deleteCloudWatchAlarmTemplateGroup(DeleteCloudWatchAlarmTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCloudWatchAlarmTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCloudWatchAlarmTemplateGroupResult executeDeleteCloudWatchAlarmTemplateGroup(
+            DeleteCloudWatchAlarmTemplateGroupRequest deleteCloudWatchAlarmTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCloudWatchAlarmTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCloudWatchAlarmTemplateGroupRequest> request = null;
+        Response<DeleteCloudWatchAlarmTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCloudWatchAlarmTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCloudWatchAlarmTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCloudWatchAlarmTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCloudWatchAlarmTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCloudWatchAlarmTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes an eventbridge rule template.
+     * 
+     * @param deleteEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateRequest
+     * @return Result of the DeleteEventBridgeRuleTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteEventBridgeRuleTemplateResult deleteEventBridgeRuleTemplate(DeleteEventBridgeRuleTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventBridgeRuleTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventBridgeRuleTemplateResult executeDeleteEventBridgeRuleTemplate(DeleteEventBridgeRuleTemplateRequest deleteEventBridgeRuleTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventBridgeRuleTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventBridgeRuleTemplateRequest> request = null;
+        Response<DeleteEventBridgeRuleTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventBridgeRuleTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEventBridgeRuleTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventBridgeRuleTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventBridgeRuleTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteEventBridgeRuleTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes an eventbridge rule template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateGroupRequest
+     * @return Result of the DeleteEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteEventBridgeRuleTemplateGroupResult deleteEventBridgeRuleTemplateGroup(DeleteEventBridgeRuleTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventBridgeRuleTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventBridgeRuleTemplateGroupResult executeDeleteEventBridgeRuleTemplateGroup(
+            DeleteEventBridgeRuleTemplateGroupRequest deleteEventBridgeRuleTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventBridgeRuleTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventBridgeRuleTemplateGroupRequest> request = null;
+        Response<DeleteEventBridgeRuleTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventBridgeRuleTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEventBridgeRuleTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventBridgeRuleTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventBridgeRuleTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteEventBridgeRuleTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Deletes the input end point
      * 
      * @param deleteInputRequest
@@ -1216,7 +1836,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @throws ConflictException
@@ -1286,7 +1906,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input Security Group not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.DeleteInputSecurityGroup
@@ -1348,7 +1968,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex.
      * @throws BadGatewayException
@@ -1356,7 +1976,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1418,7 +2038,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex program.
      * @throws BadGatewayException
@@ -1426,7 +2046,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -1497,7 +2117,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Reservation you're attempting to delete does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete reservation request
      * @throws ConflictException
@@ -1559,7 +2179,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request to delete the schedule on this channel was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to delete the channel schedule.
      * @throws BadGatewayException
@@ -1567,7 +2187,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The specified channel does not exist to have its schedule deleted.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete schedule calls.
      * @sample AWSMediaLive.DeleteSchedule
@@ -1608,6 +2228,72 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes the specified signal map.
+     * 
+     * @param deleteSignalMapRequest
+     *        Placeholder documentation for DeleteSignalMapRequest
+     * @return Result of the DeleteSignalMap operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSignalMapResult deleteSignalMap(DeleteSignalMapRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSignalMap(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSignalMapResult executeDeleteSignalMap(DeleteSignalMapRequest deleteSignalMapRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSignalMapRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSignalMapRequest> request = null;
+        Response<DeleteSignalMapResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSignalMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSignalMapRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSignalMap");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSignalMapResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSignalMapResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1681,6 +2367,74 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Describe account configuration
+     * 
+     * @param describeAccountConfigurationRequest
+     *        Placeholder documentation for DescribeAccountConfigurationRequest
+     * @return Result of the DescribeAccountConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You do not have permission to describe the account configuration.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe account configuration calls.
+     * @sample AWSMediaLive.DescribeAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountConfigurationResult describeAccountConfiguration(DescribeAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountConfigurationResult executeDescribeAccountConfiguration(DescribeAccountConfigurationRequest describeAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountConfigurationRequest> request = null;
+        Response<DescribeAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAccountConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -1689,7 +2443,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to describe the channel.
      * @throws BadGatewayException
@@ -1697,7 +2451,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The channel you're requesting to describe does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe channel calls to channel service.
      * @sample AWSMediaLive.DescribeChannel
@@ -1833,7 +2587,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The input device you're requesting to describe does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDevice
@@ -1901,7 +2655,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on get thumbnail calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDeviceThumbnail
@@ -1973,7 +2727,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input Security Group not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.DescribeInputSecurityGroup
@@ -2035,7 +2789,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex.
      * @throws BadGatewayException
@@ -2043,7 +2797,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplex
@@ -2103,7 +2857,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex program.
      * @throws BadGatewayException
@@ -2112,7 +2866,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
      *         Check the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex program calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplexProgram
@@ -2182,7 +2936,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Offering you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe offering request
      * @sample AWSMediaLive.DescribeOffering
@@ -2250,7 +3004,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Reservation you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe reservation request
      * @sample AWSMediaLive.DescribeReservation
@@ -2310,7 +3064,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to describe the channel schedule.
      * @throws BadGatewayException
@@ -2318,7 +3072,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The channel you're requesting a schedule describe for does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe schedule calls.
      * @sample AWSMediaLive.DescribeSchedule
@@ -2370,6 +3124,406 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Describe the latest thumbnails data.
+     * 
+     * @param describeThumbnailsRequest
+     *        Placeholder documentation for DescribeThumbnailsRequest
+     * @return Result of the DescribeThumbnails operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe thumbnails.
+     * @throws BadGatewayException
+     *         Bad Gateway error.
+     * @throws NotFoundException
+     *         There are no thumbnails for this channel.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe thumbnails calls to channel service.
+     * @throws ConflictException
+     *         Service do not have permission to customer's KMS key.
+     * @sample AWSMediaLive.DescribeThumbnails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeThumbnailsResult describeThumbnails(DescribeThumbnailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThumbnails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThumbnailsResult executeDescribeThumbnails(DescribeThumbnailsRequest describeThumbnailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThumbnailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThumbnailsRequest> request = null;
+        Response<DescribeThumbnailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThumbnailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThumbnailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThumbnails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThumbnailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThumbnailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves the specified cloudwatch alarm template.
+     * 
+     * @param getCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateRequest
+     * @return Result of the GetCloudWatchAlarmTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCloudWatchAlarmTemplateResult getCloudWatchAlarmTemplate(GetCloudWatchAlarmTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCloudWatchAlarmTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetCloudWatchAlarmTemplateResult executeGetCloudWatchAlarmTemplate(GetCloudWatchAlarmTemplateRequest getCloudWatchAlarmTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCloudWatchAlarmTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCloudWatchAlarmTemplateRequest> request = null;
+        Response<GetCloudWatchAlarmTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCloudWatchAlarmTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCloudWatchAlarmTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudWatchAlarmTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCloudWatchAlarmTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCloudWatchAlarmTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves the specified cloudwatch alarm template group.
+     * 
+     * @param getCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the GetCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCloudWatchAlarmTemplateGroupResult getCloudWatchAlarmTemplateGroup(GetCloudWatchAlarmTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCloudWatchAlarmTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetCloudWatchAlarmTemplateGroupResult executeGetCloudWatchAlarmTemplateGroup(
+            GetCloudWatchAlarmTemplateGroupRequest getCloudWatchAlarmTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCloudWatchAlarmTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCloudWatchAlarmTemplateGroupRequest> request = null;
+        Response<GetCloudWatchAlarmTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCloudWatchAlarmTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCloudWatchAlarmTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudWatchAlarmTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCloudWatchAlarmTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCloudWatchAlarmTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves the specified eventbridge rule template.
+     * 
+     * @param getEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateRequest
+     * @return Result of the GetEventBridgeRuleTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEventBridgeRuleTemplateResult getEventBridgeRuleTemplate(GetEventBridgeRuleTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventBridgeRuleTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetEventBridgeRuleTemplateResult executeGetEventBridgeRuleTemplate(GetEventBridgeRuleTemplateRequest getEventBridgeRuleTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEventBridgeRuleTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEventBridgeRuleTemplateRequest> request = null;
+        Response<GetEventBridgeRuleTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEventBridgeRuleTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEventBridgeRuleTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventBridgeRuleTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventBridgeRuleTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEventBridgeRuleTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves the specified eventbridge rule template group.
+     * 
+     * @param getEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateGroupRequest
+     * @return Result of the GetEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEventBridgeRuleTemplateGroupResult getEventBridgeRuleTemplateGroup(GetEventBridgeRuleTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventBridgeRuleTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetEventBridgeRuleTemplateGroupResult executeGetEventBridgeRuleTemplateGroup(
+            GetEventBridgeRuleTemplateGroupRequest getEventBridgeRuleTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEventBridgeRuleTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEventBridgeRuleTemplateGroupRequest> request = null;
+        Response<GetEventBridgeRuleTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEventBridgeRuleTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEventBridgeRuleTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventBridgeRuleTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventBridgeRuleTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEventBridgeRuleTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves the specified signal map.
+     * 
+     * @param getSignalMapRequest
+     *        Placeholder documentation for GetSignalMapRequest
+     * @return Result of the GetSignalMap operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSignalMapResult getSignalMap(GetSignalMapRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSignalMap(request);
+    }
+
+    @SdkInternalApi
+    final GetSignalMapResult executeGetSignalMap(GetSignalMapRequest getSignalMapRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSignalMapRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSignalMapRequest> request = null;
+        Response<GetSignalMapResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSignalMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSignalMapRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSignalMap");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSignalMapResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSignalMapResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Produces list of channels that have been created
      * 
      * @param listChannelsRequest
@@ -2378,13 +3532,13 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to list channels.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list channel calls to channel service.
      * @sample AWSMediaLive.ListChannels
@@ -2436,6 +3590,272 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Lists cloudwatch alarm template groups.
+     * 
+     * @param listCloudWatchAlarmTemplateGroupsRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplateGroupsRequest
+     * @return Result of the ListCloudWatchAlarmTemplateGroups operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListCloudWatchAlarmTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCloudWatchAlarmTemplateGroupsResult listCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCloudWatchAlarmTemplateGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListCloudWatchAlarmTemplateGroupsResult executeListCloudWatchAlarmTemplateGroups(
+            ListCloudWatchAlarmTemplateGroupsRequest listCloudWatchAlarmTemplateGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCloudWatchAlarmTemplateGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCloudWatchAlarmTemplateGroupsRequest> request = null;
+        Response<ListCloudWatchAlarmTemplateGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCloudWatchAlarmTemplateGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCloudWatchAlarmTemplateGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCloudWatchAlarmTemplateGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCloudWatchAlarmTemplateGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCloudWatchAlarmTemplateGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Lists cloudwatch alarm templates.
+     * 
+     * @param listCloudWatchAlarmTemplatesRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplatesRequest
+     * @return Result of the ListCloudWatchAlarmTemplates operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListCloudWatchAlarmTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCloudWatchAlarmTemplatesResult listCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCloudWatchAlarmTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListCloudWatchAlarmTemplatesResult executeListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest listCloudWatchAlarmTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCloudWatchAlarmTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCloudWatchAlarmTemplatesRequest> request = null;
+        Response<ListCloudWatchAlarmTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCloudWatchAlarmTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCloudWatchAlarmTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCloudWatchAlarmTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCloudWatchAlarmTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCloudWatchAlarmTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Lists eventbridge rule template groups.
+     * 
+     * @param listEventBridgeRuleTemplateGroupsRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplateGroupsRequest
+     * @return Result of the ListEventBridgeRuleTemplateGroups operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListEventBridgeRuleTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEventBridgeRuleTemplateGroupsResult listEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEventBridgeRuleTemplateGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListEventBridgeRuleTemplateGroupsResult executeListEventBridgeRuleTemplateGroups(
+            ListEventBridgeRuleTemplateGroupsRequest listEventBridgeRuleTemplateGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEventBridgeRuleTemplateGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEventBridgeRuleTemplateGroupsRequest> request = null;
+        Response<ListEventBridgeRuleTemplateGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEventBridgeRuleTemplateGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEventBridgeRuleTemplateGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventBridgeRuleTemplateGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventBridgeRuleTemplateGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListEventBridgeRuleTemplateGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Lists eventbridge rule templates.
+     * 
+     * @param listEventBridgeRuleTemplatesRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplatesRequest
+     * @return Result of the ListEventBridgeRuleTemplates operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListEventBridgeRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEventBridgeRuleTemplatesResult listEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEventBridgeRuleTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListEventBridgeRuleTemplatesResult executeListEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest listEventBridgeRuleTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEventBridgeRuleTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEventBridgeRuleTemplatesRequest> request = null;
+        Response<ListEventBridgeRuleTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEventBridgeRuleTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEventBridgeRuleTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventBridgeRuleTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventBridgeRuleTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListEventBridgeRuleTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * List input devices that are currently being transferred. List input devices that you are transferring from your
      * AWS account or input devices that another AWS account is transferring to you.
      * 
@@ -2453,7 +3873,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDeviceTransfers
@@ -2521,7 +3941,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDevices
@@ -2587,7 +4007,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.ListInputSecurityGroups
@@ -2716,7 +4136,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to list multiplex programs.
      * @throws BadGatewayException
@@ -2725,7 +4145,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
      *         ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexPrograms
@@ -2787,13 +4207,13 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to list multiplexes.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexes
@@ -2859,7 +4279,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list offerings request
      * @sample AWSMediaLive.ListOfferings
@@ -2925,7 +4345,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list reservations request
      * @sample AWSMediaLive.ListReservations
@@ -2966,6 +4386,70 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<ListReservationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReservationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Lists signal maps.
+     * 
+     * @param listSignalMapsRequest
+     *        Placeholder documentation for ListSignalMapsRequest
+     * @return Result of the ListSignalMaps operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListSignalMaps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSignalMapsResult listSignalMaps(ListSignalMapsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSignalMaps(request);
+    }
+
+    @SdkInternalApi
+    final ListSignalMapsResult executeListSignalMaps(ListSignalMapsRequest listSignalMapsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSignalMapsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSignalMapsRequest> request = null;
+        Response<ListSignalMapsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSignalMapsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSignalMapsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSignalMaps");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSignalMapsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSignalMapsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3055,7 +4539,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Offering you're attempting to purchase does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on purchase offering request
      * @throws ConflictException
@@ -3128,7 +4612,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on reboot device calls to the input device service.
      * @sample AWSMediaLive.RebootInputDevice
@@ -3198,7 +4682,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -3254,6 +4738,81 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @return Result of the RestartChannelPipelines operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Verify that the syntax is
+     *         correct.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials that you sent.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel or pipeline you specified doesn't exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaLive.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestartChannelPipelinesResult restartChannelPipelines(RestartChannelPipelinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestartChannelPipelines(request);
+    }
+
+    @SdkInternalApi
+    final RestartChannelPipelinesResult executeRestartChannelPipelines(RestartChannelPipelinesRequest restartChannelPipelinesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restartChannelPipelinesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestartChannelPipelinesRequest> request = null;
+        Response<RestartChannelPipelinesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestartChannelPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(restartChannelPipelinesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestartChannelPipelines");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestartChannelPipelinesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RestartChannelPipelinesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest
@@ -3262,7 +4821,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to start the channel.
      * @throws BadGatewayException
@@ -3270,7 +4829,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The channel you're requesting to start does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on start channel calls to channel service.
      * @throws ConflictException
@@ -3324,6 +4883,145 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Initiates a deployment to delete the monitor of the specified signal map.
+     * 
+     * @param startDeleteMonitorDeploymentRequest
+     *        Placeholder documentation for StartDeleteMonitorDeploymentRequest
+     * @return Result of the StartDeleteMonitorDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.StartDeleteMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDeleteMonitorDeploymentResult startDeleteMonitorDeployment(StartDeleteMonitorDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDeleteMonitorDeployment(request);
+    }
+
+    @SdkInternalApi
+    final StartDeleteMonitorDeploymentResult executeStartDeleteMonitorDeployment(StartDeleteMonitorDeploymentRequest startDeleteMonitorDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDeleteMonitorDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDeleteMonitorDeploymentRequest> request = null;
+        Response<StartDeleteMonitorDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDeleteMonitorDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDeleteMonitorDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeleteMonitorDeployment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDeleteMonitorDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDeleteMonitorDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is
+     * attached to a MediaLive input; MediaLive starts the device when the channel starts.)
+     * 
+     * @param startInputDeviceRequest
+     *        Placeholder documentation for StartInputDeviceRequest
+     * @return Result of the StartInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Start operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start device calls to the input device service.
+     * @sample AWSMediaLive.StartInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartInputDeviceResult startInputDevice(StartInputDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartInputDevice(request);
+    }
+
+    @SdkInternalApi
+    final StartInputDeviceResult executeStartInputDevice(StartInputDeviceRequest startInputDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startInputDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartInputDeviceRequest> request = null;
+        Response<StartInputDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInputDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInputDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartInputDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
      * to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming
      * when the software is fully installed. Devices automatically install updates while they are powered on and their
@@ -3347,7 +5045,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on start maintenance window calls to the input device service.
      * @sample AWSMediaLive.StartInputDeviceMaintenanceWindow
@@ -3402,6 +5100,73 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Initiates a deployment to deploy the latest monitor of the specified signal map.
+     * 
+     * @param startMonitorDeploymentRequest
+     *        Placeholder documentation for StartMonitorDeploymentRequest
+     * @return Result of the StartMonitorDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.StartMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartMonitorDeploymentResult startMonitorDeployment(StartMonitorDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMonitorDeployment(request);
+    }
+
+    @SdkInternalApi
+    final StartMonitorDeploymentResult executeStartMonitorDeployment(StartMonitorDeploymentRequest startMonitorDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMonitorDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMonitorDeploymentRequest> request = null;
+        Response<StartMonitorDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMonitorDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMonitorDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMonitorDeployment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMonitorDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartMonitorDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
      * channel.
      * 
@@ -3412,7 +5177,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to start the multiplex.
      * @throws BadGatewayException
@@ -3420,7 +5185,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on start multiplex calls to multiplex service.
      * @throws ConflictException
@@ -3474,6 +5239,73 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Initiates an update for the specified signal map. Will discover a new signal map if a changed
+     * discoveryEntryPointArn is provided.
+     * 
+     * @param startUpdateSignalMapRequest
+     *        Placeholder documentation for StartUpdateSignalMapRequest
+     * @return Result of the StartUpdateSignalMap operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.StartUpdateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartUpdateSignalMapResult startUpdateSignalMap(StartUpdateSignalMapRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartUpdateSignalMap(request);
+    }
+
+    @SdkInternalApi
+    final StartUpdateSignalMapResult executeStartUpdateSignalMap(StartUpdateSignalMapRequest startUpdateSignalMapRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startUpdateSignalMapRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartUpdateSignalMapRequest> request = null;
+        Response<StartUpdateSignalMapResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartUpdateSignalMapRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startUpdateSignalMapRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartUpdateSignalMap");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartUpdateSignalMapResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartUpdateSignalMapResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Stops a running channel
      * 
      * @param stopChannelRequest
@@ -3482,7 +5314,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to stop the channel.
      * @throws BadGatewayException
@@ -3490,7 +5322,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The channel you're requesting to stop does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop channel calls to channel service.
      * @throws ConflictException
@@ -3544,6 +5376,77 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached
+     * to a MediaLive input; MediaLive automatically stops the device when the channel stops.)
+     * 
+     * @param stopInputDeviceRequest
+     *        Placeholder documentation for StopInputDeviceRequest
+     * @return Result of the StopInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Start operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to stop the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop device calls to the input device service.
+     * @sample AWSMediaLive.StopInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopInputDeviceResult stopInputDevice(StopInputDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopInputDevice(request);
+    }
+
+    @SdkInternalApi
+    final StopInputDeviceResult executeStopInputDevice(StopInputDeviceRequest stopInputDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopInputDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopInputDeviceRequest> request = null;
+        Response<StopInputDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopInputDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopInputDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopInputDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
      * 
      * @param stopMultiplexRequest
@@ -3553,7 +5456,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to stop the multiplex.
      * @throws BadGatewayException
@@ -3561,7 +5464,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop multiplex calls to multiplex service.
      * @throws ConflictException
@@ -3634,7 +5537,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -3688,6 +5591,76 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Update account configuration
+     * 
+     * @param updateAccountConfigurationRequest
+     *        List of account configuration parameters to update.
+     * @return Result of the UpdateAccountConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The update account configuration request failed validation.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You do not have permission to update the account's configuration.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update account configuration calls.
+     * @sample AWSMediaLive.UpdateAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountConfigurationResult updateAccountConfiguration(UpdateAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountConfigurationResult executeUpdateAccountConfiguration(UpdateAccountConfigurationRequest updateAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountConfigurationRequest> request = null;
+        Response<UpdateAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccountConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAccountConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Updates a channel.
      * 
      * @param updateChannelRequest
@@ -3698,13 +5671,13 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The channel configuration failed validation and could not be updated.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to update the channel.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The channel is unable to update due to an issue with channel resources.
      * @sample AWSMediaLive.UpdateChannel
@@ -3766,7 +5739,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The channel configuration failed validation when attempting to update the channel class.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to update the class of this channel.
      * @throws BadGatewayException
@@ -3774,7 +5747,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The channel you're trying to update the class on does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on update channel class calls.
      * @throws ConflictException
@@ -3828,6 +5801,280 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Updates the specified cloudwatch alarm template.
+     * 
+     * @param updateCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateRequest
+     * @return Result of the UpdateCloudWatchAlarmTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCloudWatchAlarmTemplateResult updateCloudWatchAlarmTemplate(UpdateCloudWatchAlarmTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCloudWatchAlarmTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCloudWatchAlarmTemplateResult executeUpdateCloudWatchAlarmTemplate(UpdateCloudWatchAlarmTemplateRequest updateCloudWatchAlarmTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCloudWatchAlarmTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCloudWatchAlarmTemplateRequest> request = null;
+        Response<UpdateCloudWatchAlarmTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCloudWatchAlarmTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCloudWatchAlarmTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCloudWatchAlarmTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCloudWatchAlarmTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCloudWatchAlarmTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates the specified cloudwatch alarm template group.
+     * 
+     * @param updateCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the UpdateCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCloudWatchAlarmTemplateGroupResult updateCloudWatchAlarmTemplateGroup(UpdateCloudWatchAlarmTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCloudWatchAlarmTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCloudWatchAlarmTemplateGroupResult executeUpdateCloudWatchAlarmTemplateGroup(
+            UpdateCloudWatchAlarmTemplateGroupRequest updateCloudWatchAlarmTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCloudWatchAlarmTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCloudWatchAlarmTemplateGroupRequest> request = null;
+        Response<UpdateCloudWatchAlarmTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCloudWatchAlarmTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCloudWatchAlarmTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCloudWatchAlarmTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCloudWatchAlarmTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCloudWatchAlarmTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates the specified eventbridge rule template.
+     * 
+     * @param updateEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateRequest
+     * @return Result of the UpdateEventBridgeRuleTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateEventBridgeRuleTemplateResult updateEventBridgeRuleTemplate(UpdateEventBridgeRuleTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEventBridgeRuleTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEventBridgeRuleTemplateResult executeUpdateEventBridgeRuleTemplate(UpdateEventBridgeRuleTemplateRequest updateEventBridgeRuleTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEventBridgeRuleTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEventBridgeRuleTemplateRequest> request = null;
+        Response<UpdateEventBridgeRuleTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEventBridgeRuleTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventBridgeRuleTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventBridgeRuleTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEventBridgeRuleTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateEventBridgeRuleTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates the specified eventbridge rule template group.
+     * 
+     * @param updateEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateGroupRequest
+     * @return Result of the UpdateEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateEventBridgeRuleTemplateGroupResult updateEventBridgeRuleTemplateGroup(UpdateEventBridgeRuleTemplateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEventBridgeRuleTemplateGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEventBridgeRuleTemplateGroupResult executeUpdateEventBridgeRuleTemplateGroup(
+            UpdateEventBridgeRuleTemplateGroupRequest updateEventBridgeRuleTemplateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEventBridgeRuleTemplateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEventBridgeRuleTemplateGroupRequest> request = null;
+        Response<UpdateEventBridgeRuleTemplateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEventBridgeRuleTemplateGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventBridgeRuleTemplateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventBridgeRuleTemplateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEventBridgeRuleTemplateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateEventBridgeRuleTemplateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Updates an input.
      * 
      * @param updateInputRequest
@@ -3844,7 +6091,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The input was not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The input was unable to be updated at this time due to an issue with input resources.
      * @sample AWSMediaLive.UpdateInput
@@ -3914,7 +6161,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The input device you're requesting to does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on update calls to the input device service.
      * @sample AWSMediaLive.UpdateInputDevice
@@ -3983,7 +6230,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The Input Security Group was not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The Input Security Group was unable to be updated due to an issue with input security group resources.
      * @sample AWSMediaLive.UpdateInputSecurityGroup
@@ -4048,7 +6295,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The multiplex configuration failed validation and could not be updated.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex.
      * @throws BadGatewayException
@@ -4056,7 +6303,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The multiplex is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplex
@@ -4119,7 +6366,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws UnprocessableEntityException
      *         The multiplex program failed validation and could not be updated.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex program.
      * @throws BadGatewayException
@@ -4128,7 +6375,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
      *         the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The multiplex program is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplexProgram
@@ -4197,7 +6444,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Reservation not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded
      * @throws ConflictException

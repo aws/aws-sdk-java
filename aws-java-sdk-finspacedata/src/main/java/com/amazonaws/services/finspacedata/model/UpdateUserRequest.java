@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account to update.
+     * The unique identifier for the user that you want to update.
      * </p>
      */
     private String userId;
@@ -98,11 +98,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account to update.
+     * The unique identifier for the user that you want to update.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account to update.
+     *        The unique identifier for the user that you want to update.
      */
 
     public void setUserId(String userId) {
@@ -111,10 +111,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account to update.
+     * The unique identifier for the user that you want to update.
      * </p>
      * 
-     * @return The unique identifier for the user account to update.
+     * @return The unique identifier for the user that you want to update.
      */
 
     public String getUserId() {
@@ -123,11 +123,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account to update.
+     * The unique identifier for the user that you want to update.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account to update.
+     *        The unique identifier for the user that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

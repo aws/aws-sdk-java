@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,16 +20,56 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
+     * </p>
+     */
     private String engineVersion;
-
+    /**
+     * <p>
+     * The name of the domain.
+     * </p>
+     */
     private String domainName;
-
+    /**
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns
+     * results in the next page.
+     * </p>
+     */
     private String nextToken;
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     */
+    private Boolean retrieveAZs;
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     */
+    private String instanceType;
 
     /**
+     * <p>
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
+     * </p>
+     * 
      * @param engineVersion
+     *        The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to
+     *        the latest version of OpenSearch.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -37,7 +77,13 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
+     * </p>
+     * 
+     * @return The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults
+     *         to the latest version of OpenSearch.
      */
 
     public String getEngineVersion() {
@@ -45,7 +91,14 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     * latest version of OpenSearch.
+     * </p>
+     * 
      * @param engineVersion
+     *        The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to
+     *        the latest version of OpenSearch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +108,12 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name of the domain.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -63,7 +121,11 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the domain.
+     * </p>
+     * 
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -71,7 +133,12 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name of the domain.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +148,14 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     * 
      * @param maxResults
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -89,7 +163,13 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -97,7 +177,14 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     * 
      * @param maxResults
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +194,16 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns
+     * results in the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can
+     *        include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations,
+     *        which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -115,7 +211,15 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns
+     * results in the next page.
+     * </p>
+     * 
+     * @return If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can
+     *         include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code>
+     *         operations, which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -123,12 +227,113 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns
+     * results in the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can
+     *        include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations,
+     *        which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInstanceTypeDetailsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @param retrieveAZs
+     *        An optional parameter that specifies the Availability Zones for the domain.
+     */
+
+    public void setRetrieveAZs(Boolean retrieveAZs) {
+        this.retrieveAZs = retrieveAZs;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the Availability Zones for the domain.
+     */
+
+    public Boolean getRetrieveAZs() {
+        return this.retrieveAZs;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @param retrieveAZs
+     *        An optional parameter that specifies the Availability Zones for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInstanceTypeDetailsRequest withRetrieveAZs(Boolean retrieveAZs) {
+        setRetrieveAZs(retrieveAZs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that specifies the Availability Zones for the domain.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the Availability Zones for the domain.
+     */
+
+    public Boolean isRetrieveAZs() {
+        return this.retrieveAZs;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        An optional parameter that lists information for a given instance type.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     * 
+     * @return An optional parameter that lists information for a given instance type.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lists information for a given instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        An optional parameter that lists information for a given instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInstanceTypeDetailsRequest withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -151,7 +356,11 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getRetrieveAZs() != null)
+            sb.append("RetrieveAZs: ").append(getRetrieveAZs()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }
@@ -182,6 +391,14 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getRetrieveAZs() == null ^ this.getRetrieveAZs() == null)
+            return false;
+        if (other.getRetrieveAZs() != null && other.getRetrieveAZs().equals(this.getRetrieveAZs()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +411,8 @@ public class ListInstanceTypeDetailsRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRetrieveAZs() == null) ? 0 : getRetrieveAZs().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,21 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     */
+    private String adminPasswordSecretKmsKeyId;
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials.
+     * If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the
+     * namespace or cluster had at the time the snapshot was taken.
+     * </p>
+     */
+    private Boolean manageAdminPassword;
+    /**
+     * <p>
      * The name of the namespace to restore the snapshot to.
      * </p>
      */
@@ -39,13 +54,19 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
     private String ownerAccount;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      */
     private String snapshotArn;
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      */
     private String snapshotName;
@@ -55,6 +76,120 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String workgroupName;
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret.
+     */
+
+    public void setAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        this.adminPasswordSecretKmsKeyId = adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin
+     *         credentials secret.
+     */
+
+    public String getAdminPasswordSecretKmsKeyId() {
+        return this.adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromSnapshotRequest withAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        setAdminPasswordSecretKmsKeyId(adminPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials.
+     * If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the
+     * namespace or cluster had at the time the snapshot was taken.
+     * </p>
+     * 
+     * @param manageAdminPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin
+     *        credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin
+     *        credentials that the namespace or cluster had at the time the snapshot was taken.
+     */
+
+    public void setManageAdminPassword(Boolean manageAdminPassword) {
+        this.manageAdminPassword = manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials.
+     * If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the
+     * namespace or cluster had at the time the snapshot was taken.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin
+     *         credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin
+     *         credentials that the namespace or cluster had at the time the snapshot was taken.
+     */
+
+    public Boolean getManageAdminPassword() {
+        return this.manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials.
+     * If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the
+     * namespace or cluster had at the time the snapshot was taken.
+     * </p>
+     * 
+     * @param manageAdminPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin
+     *        credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin
+     *        credentials that the namespace or cluster had at the time the snapshot was taken.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromSnapshotRequest withManageAdminPassword(Boolean manageAdminPassword) {
+        setManageAdminPassword(manageAdminPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials.
+     * If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin credentials that the
+     * namespace or cluster had at the time the snapshot was taken.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin
+     *         credentials. If <code>MmanageAdminPassword</code> is false or not set, Amazon Redshift uses the admin
+     *         credentials that the namespace or cluster had at the time the snapshot was taken.
+     */
+
+    public Boolean isManageAdminPassword() {
+        return this.manageAdminPassword;
+    }
 
     /**
      * <p>
@@ -138,11 +273,23 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      * 
      * @param snapshotArn
-     *        The Amazon Resource Name (ARN) of the snapshot to restore from.
+     *        The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     *        Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>
+     *        .</p>
+     *        <p>
+     *        The format of the ARN is
+     *        arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier
+     *        &gt;/&lt;snapshot_identifier&gt;.
      */
 
     public void setSnapshotArn(String snapshotArn) {
@@ -151,10 +298,22 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * @return The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon
+     *         Redshift Serverless to a provisioned cluster. Must not be specified at the same time as
+     *         <code>snapshotName</code>.</p>
+     *         <p>
+     *         The format of the ARN is
+     *         arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier
+     *         &gt;/&lt;snapshot_identifier&gt;.
      */
 
     public String getSnapshotArn() {
@@ -163,11 +322,23 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      * 
      * @param snapshotArn
-     *        The Amazon Resource Name (ARN) of the snapshot to restore from.
+     *        The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     *        Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>
+     *        .</p>
+     *        <p>
+     *        The format of the ARN is
+     *        arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier
+     *        &gt;/&lt;snapshot_identifier&gt;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +349,12 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      * 
      * @param snapshotName
-     *        The name of the snapshot to restore from.
+     *        The name of the snapshot to restore from. Must not be specified at the same time as
+     *        <code>snapshotArn</code>.
      */
 
     public void setSnapshotName(String snapshotName) {
@@ -191,10 +363,11 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      * 
-     * @return The name of the snapshot to restore from.
+     * @return The name of the snapshot to restore from. Must not be specified at the same time as
+     *         <code>snapshotArn</code>.
      */
 
     public String getSnapshotName() {
@@ -203,11 +376,12 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      * 
      * @param snapshotName
-     *        The name of the snapshot to restore from.
+     *        The name of the snapshot to restore from. Must not be specified at the same time as
+     *        <code>snapshotArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,6 +442,10 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdminPasswordSecretKmsKeyId() != null)
+            sb.append("AdminPasswordSecretKmsKeyId: ").append(getAdminPasswordSecretKmsKeyId()).append(",");
+        if (getManageAdminPassword() != null)
+            sb.append("ManageAdminPassword: ").append(getManageAdminPassword()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
         if (getOwnerAccount() != null)
@@ -292,6 +470,14 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof RestoreFromSnapshotRequest == false)
             return false;
         RestoreFromSnapshotRequest other = (RestoreFromSnapshotRequest) obj;
+        if (other.getAdminPasswordSecretKmsKeyId() == null ^ this.getAdminPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() != null && other.getAdminPasswordSecretKmsKeyId().equals(this.getAdminPasswordSecretKmsKeyId()) == false)
+            return false;
+        if (other.getManageAdminPassword() == null ^ this.getManageAdminPassword() == null)
+            return false;
+        if (other.getManageAdminPassword() != null && other.getManageAdminPassword().equals(this.getManageAdminPassword()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
@@ -320,6 +506,8 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdminPasswordSecretKmsKeyId() == null) ? 0 : getAdminPasswordSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getManageAdminPassword() == null) ? 0 : getManageAdminPassword().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getSnapshotArn() == null) ? 0 : getSnapshotArn().hashCode());

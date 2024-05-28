@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,29 +36,79 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String accountAccessType;
     /**
      * <p>
-     * The name of an IAM role that already exists to use to access resources through Organizations.
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     */
+    private NetworkAccessConfiguration networkAccessControl;
+    /**
+     * <p>
+     * The name of an IAM role that already exists to use to access resources through Organizations. This can only be
+     * used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
      * </p>
      */
     private String organizationRoleName;
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     * <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     * datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     * organization, and that account is not a delegated administrator account, and you want the workspace to access
+     * data sources in other Amazon Web Services accounts in the organization, you must choose
+     * <code>CUSTOMER_MANAGED</code>.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization and that account is not a delegated administrator
-     * account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     * If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that
+     * the workspace will use for accessing Amazon Web Services resources.
      * </p>
      * <p>
-     * For more information, see <a
+     * For more information on the role and permissions needed, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
+     * <note>
+     * <p>
+     * Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not
+     * include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <p>
+     * You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     * Managed Grafana console. For more information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>.
+     * </p>
+     * </note>
      */
     private String permissionType;
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     */
+    private Boolean removeNetworkAccessConfiguration;
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     */
+    private Boolean removeVpcConfiguration;
     /**
      * <p>
      * The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.
@@ -67,13 +117,13 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String stackSetName;
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
      * </p>
+     */
+    private VpcConfiguration vpcConfiguration;
+    /**
      * <p>
-     * If you don't specify a data source here, you can still add it as a data source later in the workspace console.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      */
     private java.util.List<String> workspaceDataSources;
@@ -112,11 +162,9 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> workspaceOrganizationalUnits;
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. If you omit this field and
-     * you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
-     * <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically
-     * created.
+     * Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such
+     * as data sources and notification channels. If this workspace has <code>permissionType</code>
+     * <code>CUSTOMER_MANAGED</code>, then this role is required.
      * </p>
      */
     private String workspaceRoleArn;
@@ -206,11 +254,99 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an IAM role that already exists to use to access resources through Organizations.
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.</p>
+     *        <p>
+     *        When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     *        Standard Grafana authentication and authorization will still be required.
+     *        </p>
+     *        <p>
+     *        If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *        Standard Grafana authentication and authorization will still be required.
+     */
+
+    public void setNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        this.networkAccessControl = networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return The configuration settings for network access to your workspace.</p>
+     *         <p>
+     *         When this is configured, only listed IP addresses and VPC endpoints will be able to access your
+     *         workspace. Standard Grafana authentication and authorization will still be required.
+     *         </p>
+     *         <p>
+     *         If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *         Standard Grafana authentication and authorization will still be required.
+     */
+
+    public NetworkAccessConfiguration getNetworkAccessControl() {
+        return this.networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.</p>
+     *        <p>
+     *        When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     *        Standard Grafana authentication and authorization will still be required.
+     *        </p>
+     *        <p>
+     *        If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *        Standard Grafana authentication and authorization will still be required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        setNetworkAccessControl(networkAccessControl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of an IAM role that already exists to use to access resources through Organizations. This can only be
+     * used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
      * </p>
      * 
      * @param organizationRoleName
-     *        The name of an IAM role that already exists to use to access resources through Organizations.
+     *        The name of an IAM role that already exists to use to access resources through Organizations. This can
+     *        only be used with a workspace that has the <code>permissionType</code> set to
+     *        <code>CUSTOMER_MANAGED</code>.
      */
 
     public void setOrganizationRoleName(String organizationRoleName) {
@@ -219,10 +355,13 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an IAM role that already exists to use to access resources through Organizations.
+     * The name of an IAM role that already exists to use to access resources through Organizations. This can only be
+     * used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
      * </p>
      * 
-     * @return The name of an IAM role that already exists to use to access resources through Organizations.
+     * @return The name of an IAM role that already exists to use to access resources through Organizations. This can
+     *         only be used with a workspace that has the <code>permissionType</code> set to
+     *         <code>CUSTOMER_MANAGED</code>.
      */
 
     public String getOrganizationRoleName() {
@@ -231,11 +370,14 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an IAM role that already exists to use to access resources through Organizations.
+     * The name of an IAM role that already exists to use to access resources through Organizations. This can only be
+     * used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
      * </p>
      * 
      * @param organizationRoleName
-     *        The name of an IAM role that already exists to use to access resources through Organizations.
+     *        The name of an IAM role that already exists to use to access resources through Organizations. This can
+     *        only be used with a workspace that has the <code>permissionType</code> set to
+     *        <code>CUSTOMER_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,36 +388,62 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     * <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     * datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     * organization, and that account is not a delegated administrator account, and you want the workspace to access
+     * data sources in other Amazon Web Services accounts in the organization, you must choose
+     * <code>CUSTOMER_MANAGED</code>.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization and that account is not a delegated administrator
-     * account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     * If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that
+     * the workspace will use for accessing Amazon Web Services resources.
      * </p>
      * <p>
-     * For more information, see <a
+     * For more information on the role and permissions needed, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
+     * <note>
+     * <p>
+     * Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not
+     * include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <p>
+     * You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     * Managed Grafana console. For more information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>.
+     * </p>
+     * </note>
      * 
      * @param permissionType
-     *        If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
-     *        and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *        notification channels.</p>
+     *        Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     *        <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     *        datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     *        organization, and that account is not a delegated administrator account, and you want the workspace to
+     *        access data sources in other Amazon Web Services accounts in the organization, you must choose
+     *        <code>CUSTOMER_MANAGED</code>.</p>
      *        <p>
-     *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
-     *        are creating this workspace in a member account of an organization and that account is not a delegated
-     *        administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *        accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a
+     *        <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.
      *        </p>
      *        <p>
-     *        For more information, see <a
+     *        For more information on the role and permissions needed, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *        Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do
+     *        not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        <p>
+     *        You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     *        Managed Grafana console. For more information, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *        permissions for data sources and notification channels</a>.
+     *        </p>
      * @see PermissionType
      */
 
@@ -285,35 +453,61 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     * <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     * datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     * organization, and that account is not a delegated administrator account, and you want the workspace to access
+     * data sources in other Amazon Web Services accounts in the organization, you must choose
+     * <code>CUSTOMER_MANAGED</code>.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization and that account is not a delegated administrator
-     * account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     * If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that
+     * the workspace will use for accessing Amazon Web Services resources.
      * </p>
      * <p>
-     * For more information, see <a
+     * For more information on the role and permissions needed, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
+     * <note>
+     * <p>
+     * Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not
+     * include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <p>
+     * You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     * Managed Grafana console. For more information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>.
+     * </p>
+     * </note>
      * 
-     * @return If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
-     *         and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *         notification channels.</p>
+     * @return Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     *         <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to
+     *         access datasources and notification channels. If the workspace is in a member Amazon Web Services account
+     *         of an organization, and that account is not a delegated administrator account, and you want the workspace
+     *         to access data sources in other Amazon Web Services accounts in the organization, you must choose
+     *         <code>CUSTOMER_MANAGED</code>.</p>
      *         <p>
-     *         If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If
-     *         you are creating this workspace in a member account of an organization and that account is not a
-     *         delegated administrator account, and you want the workspace to access data sources in other Amazon Web
-     *         Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *         If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a
+     *         <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.
      *         </p>
      *         <p>
-     *         For more information, see <a
+     *         For more information on the role and permissions needed, see <a
      *         href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *         Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do
+     *         not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     *         </p>
+     *         <p>
+     *         You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the
+     *         Amazon Managed Grafana console. For more information, see <a
+     *         href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *         permissions for data sources and notification channels</a>.
+     *         </p>
      * @see PermissionType
      */
 
@@ -323,36 +517,62 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     * <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     * datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     * organization, and that account is not a delegated administrator account, and you want the workspace to access
+     * data sources in other Amazon Web Services accounts in the organization, you must choose
+     * <code>CUSTOMER_MANAGED</code>.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization and that account is not a delegated administrator
-     * account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     * If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that
+     * the workspace will use for accessing Amazon Web Services resources.
      * </p>
      * <p>
-     * For more information, see <a
+     * For more information on the role and permissions needed, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
+     * <note>
+     * <p>
+     * Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not
+     * include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <p>
+     * You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     * Managed Grafana console. For more information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>.
+     * </p>
+     * </note>
      * 
      * @param permissionType
-     *        If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
-     *        and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *        notification channels.</p>
+     *        Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     *        <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     *        datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     *        organization, and that account is not a delegated administrator account, and you want the workspace to
+     *        access data sources in other Amazon Web Services accounts in the organization, you must choose
+     *        <code>CUSTOMER_MANAGED</code>.</p>
      *        <p>
-     *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
-     *        are creating this workspace in a member account of an organization and that account is not a delegated
-     *        administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *        accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a
+     *        <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.
      *        </p>
      *        <p>
-     *        For more information, see <a
+     *        For more information on the role and permissions needed, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *        Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do
+     *        not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        <p>
+     *        You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     *        Managed Grafana console. For more information, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *        permissions for data sources and notification channels</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionType
      */
@@ -364,36 +584,62 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     * <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     * datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     * organization, and that account is not a delegated administrator account, and you want the workspace to access
+     * data sources in other Amazon Web Services accounts in the organization, you must choose
+     * <code>CUSTOMER_MANAGED</code>.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization and that account is not a delegated administrator
-     * account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     * organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     * If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a <code>workspaceRoleArn</code> that
+     * the workspace will use for accessing Amazon Web Services resources.
      * </p>
      * <p>
-     * For more information, see <a
+     * For more information on the role and permissions needed, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
+     * <note>
+     * <p>
+     * Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not
+     * include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <p>
+     * You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     * Managed Grafana console. For more information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>.
+     * </p>
+     * </note>
      * 
      * @param permissionType
-     *        If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
-     *        and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *        notification channels.</p>
+     *        Use this parameter if you want to change a workspace from <code>SERVICE_MANAGED</code> to
+     *        <code>CUSTOMER_MANAGED</code>. This allows you to manage the permissions that the workspace uses to access
+     *        datasources and notification channels. If the workspace is in a member Amazon Web Services account of an
+     *        organization, and that account is not a delegated administrator account, and you want the workspace to
+     *        access data sources in other Amazon Web Services accounts in the organization, you must choose
+     *        <code>CUSTOMER_MANAGED</code>.</p>
      *        <p>
-     *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
-     *        are creating this workspace in a member account of an organization and that account is not a delegated
-     *        administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *        accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        If you specify this as <code>CUSTOMER_MANAGED</code>, you must also specify a
+     *        <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon Web Services resources.
      *        </p>
      *        <p>
-     *        For more information, see <a
+     *        For more information on the role and permissions needed, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *        Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Do not use this to convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do
+     *        not include this parameter if you want to leave the workspace as <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        <p>
+     *        You can convert a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using the Amazon
+     *        Managed Grafana console. For more information, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *        permissions for data sources and notification channels</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionType
      */
@@ -401,6 +647,190 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     public UpdateWorkspaceRequest withPermissionType(PermissionType permissionType) {
         this.permissionType = permissionType.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param removeNetworkAccessConfiguration
+     *        Whether to remove the network access configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *        error.
+     *        </p>
+     *        <p>
+     *        If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *        endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     */
+
+    public void setRemoveNetworkAccessConfiguration(Boolean removeNetworkAccessConfiguration) {
+        this.removeNetworkAccessConfiguration = removeNetworkAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return Whether to remove the network access configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *         error.
+     *         </p>
+     *         <p>
+     *         If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *         endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     */
+
+    public Boolean getRemoveNetworkAccessConfiguration() {
+        return this.removeNetworkAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param removeNetworkAccessConfiguration
+     *        Whether to remove the network access configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *        error.
+     *        </p>
+     *        <p>
+     *        If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *        endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withRemoveNetworkAccessConfiguration(Boolean removeNetworkAccessConfiguration) {
+        setRemoveNetworkAccessConfiguration(removeNetworkAccessConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return Whether to remove the network access configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *         error.
+     *         </p>
+     *         <p>
+     *         If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *         endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     */
+
+    public Boolean isRemoveNetworkAccessConfiguration() {
+        return this.removeNetworkAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @param removeVpcConfiguration
+     *        Whether to remove the VPC configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *        error.
+     */
+
+    public void setRemoveVpcConfiguration(Boolean removeVpcConfiguration) {
+        this.removeVpcConfiguration = removeVpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @return Whether to remove the VPC configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *         error.
+     */
+
+    public Boolean getRemoveVpcConfiguration() {
+        return this.removeVpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @param removeVpcConfiguration
+     *        Whether to remove the VPC configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *        error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withRemoveVpcConfiguration(Boolean removeVpcConfiguration) {
+        setRemoveVpcConfiguration(removeVpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @return Whether to remove the VPC configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *         error.
+     */
+
+    public Boolean isRemoveVpcConfiguration() {
+        return this.removeVpcConfiguration;
     }
 
     /**
@@ -445,22 +875,53 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source later in the workspace console.
-     * However, you will then have to manually configure permissions for it.
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
      * </p>
      * 
-     * @return Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *         these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *         Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *         Grafana console in the workspace.</p>
-     *         <p>
-     *         If you don't specify a data source here, you can still add it as a data source later in the workspace
-     *         console. However, you will then have to manually configure permissions for it.
+     * @param vpcConfiguration
+     *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *        connect to.
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @return The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *         connect to.
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *        connect to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter is for internal use only, and should not be used.
+     * </p>
+     * 
+     * @return This parameter is for internal use only, and should not be used.
      * @see DataSourceType
      */
 
@@ -470,23 +931,11 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source later in the workspace console.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source later in the workspace
-     *        console. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @see DataSourceType
      */
 
@@ -501,13 +950,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source later in the workspace console.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -516,13 +959,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source later in the workspace
-     *        console. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -539,23 +976,11 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source later in the workspace console.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source later in the workspace
-     *        console. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -567,23 +992,11 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source later in the workspace console.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source later in the workspace
-     *        console. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -919,19 +1332,15 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. If you omit this field and
-     * you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
-     * <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically
-     * created.
+     * Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such
+     * as data sources and notification channels. If this workspace has <code>permissionType</code>
+     * <code>CUSTOMER_MANAGED</code>, then this role is required.
      * </p>
      * 
      * @param workspaceRoleArn
-     *        The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
-     *        workspace will view data from. If you already have a role that you want to use, specify it here. If you
-     *        omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
-     *        <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
-     *        automatically created.
+     *        Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace
+     *        accesses, such as data sources and notification channels. If this workspace has
+     *        <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.
      */
 
     public void setWorkspaceRoleArn(String workspaceRoleArn) {
@@ -940,18 +1349,14 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. If you omit this field and
-     * you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
-     * <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically
-     * created.
+     * Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such
+     * as data sources and notification channels. If this workspace has <code>permissionType</code>
+     * <code>CUSTOMER_MANAGED</code>, then this role is required.
      * </p>
      * 
-     * @return The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
-     *         workspace will view data from. If you already have a role that you want to use, specify it here. If you
-     *         omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code>
-     *         or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
-     *         automatically created.
+     * @return Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace
+     *         accesses, such as data sources and notification channels. If this workspace has
+     *         <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.
      */
 
     public String getWorkspaceRoleArn() {
@@ -960,19 +1365,15 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. If you omit this field and
-     * you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
-     * <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically
-     * created.
+     * Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such
+     * as data sources and notification channels. If this workspace has <code>permissionType</code>
+     * <code>CUSTOMER_MANAGED</code>, then this role is required.
      * </p>
      * 
      * @param workspaceRoleArn
-     *        The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
-     *        workspace will view data from. If you already have a role that you want to use, specify it here. If you
-     *        omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
-     *        <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
-     *        automatically created.
+     *        Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace
+     *        accesses, such as data sources and notification channels. If this workspace has
+     *        <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -995,12 +1396,20 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getAccountAccessType() != null)
             sb.append("AccountAccessType: ").append(getAccountAccessType()).append(",");
+        if (getNetworkAccessControl() != null)
+            sb.append("NetworkAccessControl: ").append(getNetworkAccessControl()).append(",");
         if (getOrganizationRoleName() != null)
             sb.append("OrganizationRoleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPermissionType() != null)
             sb.append("PermissionType: ").append(getPermissionType()).append(",");
+        if (getRemoveNetworkAccessConfiguration() != null)
+            sb.append("RemoveNetworkAccessConfiguration: ").append(getRemoveNetworkAccessConfiguration()).append(",");
+        if (getRemoveVpcConfiguration() != null)
+            sb.append("RemoveVpcConfiguration: ").append(getRemoveVpcConfiguration()).append(",");
         if (getStackSetName() != null)
             sb.append("StackSetName: ").append(getStackSetName()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getWorkspaceDataSources() != null)
             sb.append("WorkspaceDataSources: ").append(getWorkspaceDataSources()).append(",");
         if (getWorkspaceDescription() != null)
@@ -1033,6 +1442,10 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAccountAccessType() != null && other.getAccountAccessType().equals(this.getAccountAccessType()) == false)
             return false;
+        if (other.getNetworkAccessControl() == null ^ this.getNetworkAccessControl() == null)
+            return false;
+        if (other.getNetworkAccessControl() != null && other.getNetworkAccessControl().equals(this.getNetworkAccessControl()) == false)
+            return false;
         if (other.getOrganizationRoleName() == null ^ this.getOrganizationRoleName() == null)
             return false;
         if (other.getOrganizationRoleName() != null && other.getOrganizationRoleName().equals(this.getOrganizationRoleName()) == false)
@@ -1041,9 +1454,22 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
             return false;
+        if (other.getRemoveNetworkAccessConfiguration() == null ^ this.getRemoveNetworkAccessConfiguration() == null)
+            return false;
+        if (other.getRemoveNetworkAccessConfiguration() != null
+                && other.getRemoveNetworkAccessConfiguration().equals(this.getRemoveNetworkAccessConfiguration()) == false)
+            return false;
+        if (other.getRemoveVpcConfiguration() == null ^ this.getRemoveVpcConfiguration() == null)
+            return false;
+        if (other.getRemoveVpcConfiguration() != null && other.getRemoveVpcConfiguration().equals(this.getRemoveVpcConfiguration()) == false)
+            return false;
         if (other.getStackSetName() == null ^ this.getStackSetName() == null)
             return false;
         if (other.getStackSetName() != null && other.getStackSetName().equals(this.getStackSetName()) == false)
+            return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
             return false;
         if (other.getWorkspaceDataSources() == null ^ this.getWorkspaceDataSources() == null)
             return false;
@@ -1083,9 +1509,13 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountAccessType() == null) ? 0 : getAccountAccessType().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAccessControl() == null) ? 0 : getNetworkAccessControl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
+        hashCode = prime * hashCode + ((getRemoveNetworkAccessConfiguration() == null) ? 0 : getRemoveNetworkAccessConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRemoveVpcConfiguration() == null) ? 0 : getRemoveVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceDataSources() == null) ? 0 : getWorkspaceDataSources().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceDescription() == null) ? 0 : getWorkspaceDescription().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());

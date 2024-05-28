@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,13 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
+     * <p>
+     * If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is
+     * explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the
+     * backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are
+     * specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.
+     * </p>
      */
     private java.util.Map<String, Boolean> resourceTypeOptInPreference;
     /**
@@ -46,8 +53,21 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
+     * <p>
+     * If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is
+     * explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the
+     * backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are
+     * specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.
+     * </p>
      * 
-     * @return Updates the list of services along with the opt-in preferences for the Region.
+     * @return Updates the list of services along with the opt-in preferences for the Region.</p>
+     *         <p>
+     *         If resource assignments are only based on tags, then service opt-in settings are applied. If a resource
+     *         type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be
+     *         included in the backup even if the opt-in is not enabled for that particular service. If both a resource
+     *         type and tags are specified in a resource assignment, the resource type specified in the backup plan
+     *         takes priority over the tag condition. Service opt-in settings are disregarded in this situation.
      */
 
     public java.util.Map<String, Boolean> getResourceTypeOptInPreference() {
@@ -58,9 +78,22 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
+     * <p>
+     * If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is
+     * explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the
+     * backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are
+     * specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.
+     * </p>
      * 
      * @param resourceTypeOptInPreference
-     *        Updates the list of services along with the opt-in preferences for the Region.
+     *        Updates the list of services along with the opt-in preferences for the Region.</p>
+     *        <p>
+     *        If resource assignments are only based on tags, then service opt-in settings are applied. If a resource
+     *        type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be
+     *        included in the backup even if the opt-in is not enabled for that particular service. If both a resource
+     *        type and tags are specified in a resource assignment, the resource type specified in the backup plan takes
+     *        priority over the tag condition. Service opt-in settings are disregarded in this situation.
      */
 
     public void setResourceTypeOptInPreference(java.util.Map<String, Boolean> resourceTypeOptInPreference) {
@@ -71,9 +104,22 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
+     * <p>
+     * If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is
+     * explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the
+     * backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are
+     * specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag
+     * condition. Service opt-in settings are disregarded in this situation.
+     * </p>
      * 
      * @param resourceTypeOptInPreference
-     *        Updates the list of services along with the opt-in preferences for the Region.
+     *        Updates the list of services along with the opt-in preferences for the Region.</p>
+     *        <p>
+     *        If resource assignments are only based on tags, then service opt-in settings are applied. If a resource
+     *        type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be
+     *        included in the backup even if the opt-in is not enabled for that particular service. If both a resource
+     *        type and tags are specified in a resource assignment, the resource type specified in the backup plan takes
+     *        priority over the tag condition. Service opt-in settings are disregarded in this situation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

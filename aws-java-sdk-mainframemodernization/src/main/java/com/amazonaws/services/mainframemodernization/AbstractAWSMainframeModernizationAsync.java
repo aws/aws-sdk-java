@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -225,6 +225,19 @@ public class AbstractAWSMainframeModernizationAsync extends AbstractAWSMainframe
     }
 
     @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request) {
+
+        return getSignedBluinsightsUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSignedBluinsightsUrlRequest, GetSignedBluinsightsUrlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
 
         return listApplicationVersionsAsync(request, null);
@@ -272,6 +285,19 @@ public class AbstractAWSMainframeModernizationAsync extends AbstractAWSMainframe
     @Override
     public java.util.concurrent.Future<ListBatchJobExecutionsResult> listBatchJobExecutionsAsync(ListBatchJobExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBatchJobExecutionsRequest, ListBatchJobExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchJobRestartPointsResult> listBatchJobRestartPointsAsync(ListBatchJobRestartPointsRequest request) {
+
+        return listBatchJobRestartPointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchJobRestartPointsResult> listBatchJobRestartPointsAsync(ListBatchJobRestartPointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBatchJobRestartPointsRequest, ListBatchJobRestartPointsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

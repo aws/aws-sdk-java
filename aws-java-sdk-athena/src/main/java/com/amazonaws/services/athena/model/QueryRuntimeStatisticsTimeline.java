@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class QueryRuntimeStatisticsTimeline implements Serializable, Cloneable, 
      * </p>
      */
     private Long queryQueueTimeInMillis;
+    /**
+     * <p>
+     * The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     * </p>
+     */
+    private Long servicePreProcessingTimeInMillis;
     /**
      * <p>
      * The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent
@@ -107,6 +113,46 @@ public class QueryRuntimeStatisticsTimeline implements Serializable, Cloneable, 
 
     public QueryRuntimeStatisticsTimeline withQueryQueueTimeInMillis(Long queryQueueTimeInMillis) {
         setQueryQueueTimeInMillis(queryQueueTimeInMillis);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     * </p>
+     * 
+     * @param servicePreProcessingTimeInMillis
+     *        The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     */
+
+    public void setServicePreProcessingTimeInMillis(Long servicePreProcessingTimeInMillis) {
+        this.servicePreProcessingTimeInMillis = servicePreProcessingTimeInMillis;
+    }
+
+    /**
+     * <p>
+     * The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     * </p>
+     * 
+     * @return The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     */
+
+    public Long getServicePreProcessingTimeInMillis() {
+        return this.servicePreProcessingTimeInMillis;
+    }
+
+    /**
+     * <p>
+     * The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     * </p>
+     * 
+     * @param servicePreProcessingTimeInMillis
+     *        The number of milliseconds that Athena spends on preprocessing before it submits the query to the engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRuntimeStatisticsTimeline withServicePreProcessingTimeInMillis(Long servicePreProcessingTimeInMillis) {
+        setServicePreProcessingTimeInMillis(servicePreProcessingTimeInMillis);
         return this;
     }
 
@@ -302,6 +348,8 @@ public class QueryRuntimeStatisticsTimeline implements Serializable, Cloneable, 
         sb.append("{");
         if (getQueryQueueTimeInMillis() != null)
             sb.append("QueryQueueTimeInMillis: ").append(getQueryQueueTimeInMillis()).append(",");
+        if (getServicePreProcessingTimeInMillis() != null)
+            sb.append("ServicePreProcessingTimeInMillis: ").append(getServicePreProcessingTimeInMillis()).append(",");
         if (getQueryPlanningTimeInMillis() != null)
             sb.append("QueryPlanningTimeInMillis: ").append(getQueryPlanningTimeInMillis()).append(",");
         if (getEngineExecutionTimeInMillis() != null)
@@ -327,6 +375,11 @@ public class QueryRuntimeStatisticsTimeline implements Serializable, Cloneable, 
         if (other.getQueryQueueTimeInMillis() == null ^ this.getQueryQueueTimeInMillis() == null)
             return false;
         if (other.getQueryQueueTimeInMillis() != null && other.getQueryQueueTimeInMillis().equals(this.getQueryQueueTimeInMillis()) == false)
+            return false;
+        if (other.getServicePreProcessingTimeInMillis() == null ^ this.getServicePreProcessingTimeInMillis() == null)
+            return false;
+        if (other.getServicePreProcessingTimeInMillis() != null
+                && other.getServicePreProcessingTimeInMillis().equals(this.getServicePreProcessingTimeInMillis()) == false)
             return false;
         if (other.getQueryPlanningTimeInMillis() == null ^ this.getQueryPlanningTimeInMillis() == null)
             return false;
@@ -354,6 +407,7 @@ public class QueryRuntimeStatisticsTimeline implements Serializable, Cloneable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getQueryQueueTimeInMillis() == null) ? 0 : getQueryQueueTimeInMillis().hashCode());
+        hashCode = prime * hashCode + ((getServicePreProcessingTimeInMillis() == null) ? 0 : getServicePreProcessingTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getQueryPlanningTimeInMillis() == null) ? 0 : getQueryPlanningTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getEngineExecutionTimeInMillis() == null) ? 0 : getEngineExecutionTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getServiceProcessingTimeInMillis() == null) ? 0 : getServiceProcessingTimeInMillis().hashCode());

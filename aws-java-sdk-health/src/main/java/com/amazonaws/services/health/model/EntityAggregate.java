@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer count;
+    /**
+     * <p>
+     * The number of affected entities aggregated by the entity status codes.
+     * </p>
+     */
+    private java.util.Map<String, Integer> statuses;
 
     /**
      * <p>
@@ -177,6 +183,74 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The number of affected entities aggregated by the entity status codes.
+     * </p>
+     * 
+     * @return The number of affected entities aggregated by the entity status codes.
+     */
+
+    public java.util.Map<String, Integer> getStatuses() {
+        return statuses;
+    }
+
+    /**
+     * <p>
+     * The number of affected entities aggregated by the entity status codes.
+     * </p>
+     * 
+     * @param statuses
+     *        The number of affected entities aggregated by the entity status codes.
+     */
+
+    public void setStatuses(java.util.Map<String, Integer> statuses) {
+        this.statuses = statuses;
+    }
+
+    /**
+     * <p>
+     * The number of affected entities aggregated by the entity status codes.
+     * </p>
+     * 
+     * @param statuses
+     *        The number of affected entities aggregated by the entity status codes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityAggregate withStatuses(java.util.Map<String, Integer> statuses) {
+        setStatuses(statuses);
+        return this;
+    }
+
+    /**
+     * Add a single Statuses entry
+     *
+     * @see EntityAggregate#withStatuses
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityAggregate addStatusesEntry(String key, Integer value) {
+        if (null == this.statuses) {
+            this.statuses = new java.util.HashMap<String, Integer>();
+        }
+        if (this.statuses.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.statuses.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Statuses.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityAggregate clearStatusesEntries() {
+        this.statuses = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +265,9 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
         if (getEventArn() != null)
             sb.append("EventArn: ").append(getEventArn()).append(",");
         if (getCount() != null)
-            sb.append("Count: ").append(getCount());
+            sb.append("Count: ").append(getCount()).append(",");
+        if (getStatuses() != null)
+            sb.append("Statuses: ").append(getStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +290,10 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
+        if (other.getStatuses() == null ^ this.getStatuses() == null)
+            return false;
+        if (other.getStatuses() != null && other.getStatuses().equals(this.getStatuses()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +304,7 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getEventArn() == null) ? 0 : getEventArn().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getStatuses() == null) ? 0 : getStatuses().hashCode());
         return hashCode;
     }
 

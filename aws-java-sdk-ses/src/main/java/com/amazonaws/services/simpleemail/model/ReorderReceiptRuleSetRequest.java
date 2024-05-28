@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive
  * email with Amazon SES. For more information, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet" target="_top">AWS API
@@ -39,7 +38,7 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
     private String ruleSetName;
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * The specified receipt rule set's receipt rules, in order.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ruleNames;
@@ -86,10 +85,10 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * The specified receipt rule set's receipt rules, in order.
      * </p>
      * 
-     * @return A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * @return The specified receipt rule set's receipt rules, in order.
      */
 
     public java.util.List<String> getRuleNames() {
@@ -101,11 +100,11 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * The specified receipt rule set's receipt rules, in order.
      * </p>
      * 
      * @param ruleNames
-     *        A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     *        The specified receipt rule set's receipt rules, in order.
      */
 
     public void setRuleNames(java.util.Collection<String> ruleNames) {
@@ -119,7 +118,7 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * The specified receipt rule set's receipt rules, in order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +127,7 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param ruleNames
-     *        A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     *        The specified receipt rule set's receipt rules, in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +143,11 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     * The specified receipt rule set's receipt rules, in order.
      * </p>
      * 
      * @param ruleNames
-     *        A list of the specified receipt rule set's receipt rules in the order that you want to put them.
+     *        The specified receipt rule set's receipt rules, in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

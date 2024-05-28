@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64
- * encode when capturing the data.
+ * Configuration specifying how to treat different headers. If no headers are specified Amazon SageMaker will by default
+ * base64 encode when capturing the data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureContentTypeHeader" target="_top">AWS
@@ -31,7 +31,7 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * </p>
      */
     private java.util.List<String> csvContentTypes;
@@ -44,10 +44,10 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * </p>
      * 
-     * @return The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * @return The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      */
 
     public java.util.List<String> getCsvContentTypes() {
@@ -56,11 +56,11 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * </p>
      * 
      * @param csvContentTypes
-     *        The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     *        The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      */
 
     public void setCsvContentTypes(java.util.Collection<String> csvContentTypes) {
@@ -74,7 +74,7 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param csvContentTypes
-     *        The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     *        The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class CaptureContentTypeHeader implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     * The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * </p>
      * 
      * @param csvContentTypes
-     *        The list of all content type headers that SageMaker will treat as CSV and capture accordingly.
+     *        The list of all content type headers that Amazon SageMaker will treat as CSV and capture accordingly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

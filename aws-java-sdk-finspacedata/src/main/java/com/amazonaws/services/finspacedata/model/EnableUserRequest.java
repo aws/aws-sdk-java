@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to enable.
+     * The unique identifier for the user that you want to activate.
      * </p>
      */
     private String userId;
@@ -40,11 +40,11 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to enable.
+     * The unique identifier for the user that you want to activate.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account that you want to enable.
+     *        The unique identifier for the user that you want to activate.
      */
 
     public void setUserId(String userId) {
@@ -53,10 +53,10 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to enable.
+     * The unique identifier for the user that you want to activate.
      * </p>
      * 
-     * @return The unique identifier for the user account that you want to enable.
+     * @return The unique identifier for the user that you want to activate.
      */
 
     public String getUserId() {
@@ -65,11 +65,11 @@ public class EnableUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to enable.
+     * The unique identifier for the user that you want to activate.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account that you want to enable.
+     *        The unique identifier for the user that you want to activate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

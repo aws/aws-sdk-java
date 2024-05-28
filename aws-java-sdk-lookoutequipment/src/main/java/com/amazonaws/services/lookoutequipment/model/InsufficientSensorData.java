@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class InsufficientSensorData implements Serializable, Cloneable, Structur
     private MissingCompleteSensorData missingCompleteSensorData;
     /**
      * <p>
-     * Parameter that describes the total number of sensors that have a short date range of less than 90 days of data
+     * Parameter that describes the total number of sensors that have a short date range of less than 14 days of data
      * overall.
      * </p>
      */
@@ -84,12 +84,12 @@ public class InsufficientSensorData implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Parameter that describes the total number of sensors that have a short date range of less than 90 days of data
+     * Parameter that describes the total number of sensors that have a short date range of less than 14 days of data
      * overall.
      * </p>
      * 
      * @param sensorsWithShortDateRange
-     *        Parameter that describes the total number of sensors that have a short date range of less than 90 days of
+     *        Parameter that describes the total number of sensors that have a short date range of less than 14 days of
      *        data overall.
      */
 
@@ -99,11 +99,11 @@ public class InsufficientSensorData implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Parameter that describes the total number of sensors that have a short date range of less than 90 days of data
+     * Parameter that describes the total number of sensors that have a short date range of less than 14 days of data
      * overall.
      * </p>
      * 
-     * @return Parameter that describes the total number of sensors that have a short date range of less than 90 days of
+     * @return Parameter that describes the total number of sensors that have a short date range of less than 14 days of
      *         data overall.
      */
 
@@ -113,12 +113,12 @@ public class InsufficientSensorData implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Parameter that describes the total number of sensors that have a short date range of less than 90 days of data
+     * Parameter that describes the total number of sensors that have a short date range of less than 14 days of data
      * overall.
      * </p>
      * 
      * @param sensorsWithShortDateRange
-     *        Parameter that describes the total number of sensors that have a short date range of less than 90 days of
+     *        Parameter that describes the total number of sensors that have a short date range of less than 14 days of
      *        data overall.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

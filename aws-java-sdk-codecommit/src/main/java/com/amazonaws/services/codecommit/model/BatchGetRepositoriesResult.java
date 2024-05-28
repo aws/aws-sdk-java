@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<String> repositoriesNotFound;
+    /**
+     * <p>
+     * Returns information about any errors returned when attempting to retrieve information about the repositories.
+     * </p>
+     */
+    private java.util.List<BatchGetRepositoriesError> errors;
 
     /**
      * <p>
@@ -180,6 +186,80 @@ public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Returns information about any errors returned when attempting to retrieve information about the repositories.
+     * </p>
+     * 
+     * @return Returns information about any errors returned when attempting to retrieve information about the
+     *         repositories.
+     */
+
+    public java.util.List<BatchGetRepositoriesError> getErrors() {
+        return errors;
+    }
+
+    /**
+     * <p>
+     * Returns information about any errors returned when attempting to retrieve information about the repositories.
+     * </p>
+     * 
+     * @param errors
+     *        Returns information about any errors returned when attempting to retrieve information about the
+     *        repositories.
+     */
+
+    public void setErrors(java.util.Collection<BatchGetRepositoriesError> errors) {
+        if (errors == null) {
+            this.errors = null;
+            return;
+        }
+
+        this.errors = new java.util.ArrayList<BatchGetRepositoriesError>(errors);
+    }
+
+    /**
+     * <p>
+     * Returns information about any errors returned when attempting to retrieve information about the repositories.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrors(java.util.Collection)} or {@link #withErrors(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param errors
+     *        Returns information about any errors returned when attempting to retrieve information about the
+     *        repositories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetRepositoriesResult withErrors(BatchGetRepositoriesError... errors) {
+        if (this.errors == null) {
+            setErrors(new java.util.ArrayList<BatchGetRepositoriesError>(errors.length));
+        }
+        for (BatchGetRepositoriesError ele : errors) {
+            this.errors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns information about any errors returned when attempting to retrieve information about the repositories.
+     * </p>
+     * 
+     * @param errors
+     *        Returns information about any errors returned when attempting to retrieve information about the
+     *        repositories.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetRepositoriesResult withErrors(java.util.Collection<BatchGetRepositoriesError> errors) {
+        setErrors(errors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -194,7 +274,9 @@ public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
         if (getRepositories() != null)
             sb.append("Repositories: ").append(getRepositories()).append(",");
         if (getRepositoriesNotFound() != null)
-            sb.append("RepositoriesNotFound: ").append(getRepositoriesNotFound());
+            sb.append("RepositoriesNotFound: ").append(getRepositoriesNotFound()).append(",");
+        if (getErrors() != null)
+            sb.append("Errors: ").append(getErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -217,6 +299,10 @@ public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getRepositoriesNotFound() != null && other.getRepositoriesNotFound().equals(this.getRepositoriesNotFound()) == false)
             return false;
+        if (other.getErrors() == null ^ this.getErrors() == null)
+            return false;
+        if (other.getErrors() != null && other.getErrors().equals(this.getErrors()) == false)
+            return false;
         return true;
     }
 
@@ -227,6 +313,7 @@ public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getRepositories() == null) ? 0 : getRepositories().hashCode());
         hashCode = prime * hashCode + ((getRepositoriesNotFound() == null) ? 0 : getRepositoriesNotFound().hashCode());
+        hashCode = prime * hashCode + ((getErrors() == null) ? 0 : getErrors().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Provides language translation for input text in the source language to the specified target language.
+ * Provides translation of the input content from the source language to the target language.
  * </p>
  */
 @ThreadSafe
@@ -555,6 +555,39 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
 
                 try {
                     result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest request) {
+
+        return translateDocumentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(final TranslateDocumentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TranslateDocumentRequest, TranslateDocumentResult> asyncHandler) {
+        final TranslateDocumentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TranslateDocumentResult>() {
+            @Override
+            public TranslateDocumentResult call() throws Exception {
+                TranslateDocumentResult result = null;
+
+                try {
+                    result = executeTranslateDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

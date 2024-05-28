@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,19 +50,29 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     * filters, you must remove the <code>ImageIds</code> parameter.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot specify this
-     * parameter and the <code>ImageIDs</code> parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      * </p>
      */
     private Integer maxResults;
@@ -158,6 +168,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     * filters, you must remove the <code>ImageIds</code> parameter.
+     * </p>
+     * </note>
      * 
      * @return The filters.</p>
      *         <ul>
@@ -173,6 +189,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      *         value, specify the bucket name.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use
+     *         the filters, you must remove the <code>ImageIds</code> parameter.
+     *         </p>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -200,6 +222,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     * filters, you must remove the <code>ImageIds</code> parameter.
+     * </p>
+     * </note>
      * 
      * @param filters
      *        The filters.</p>
@@ -216,6 +244,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      *        value, specify the bucket name.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     *        filters, you must remove the <code>ImageIds</code> parameter.
+     *        </p>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -245,6 +279,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     * filters, you must remove the <code>ImageIds</code> parameter.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -266,6 +306,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      *        value, specify the bucket name.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     *        filters, you must remove the <code>ImageIds</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,6 +343,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     * filters, you must remove the <code>ImageIds</code> parameter.
+     * </p>
+     * </note>
      * 
      * @param filters
      *        The filters.</p>
@@ -313,6 +365,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
      *        value, specify the bucket name.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the
+     *        filters, you must remove the <code>ImageIds</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,11 +381,13 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -336,10 +396,12 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -348,11 +410,13 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token for the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,15 +427,21 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot specify this
-     * parameter and the <code>ImageIDs</code> parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot
-     *        specify this parameter and the <code>ImageIDs</code> parameter in the same call.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
+     *        <p>
+     *        You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -380,14 +450,20 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot specify this
-     * parameter and the <code>ImageIDs</code> parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot
-     *         specify this parameter and the <code>ImageIDs</code> parameter in the same call.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.</p>
+     *         <p>
+     *         You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      */
 
     public Integer getMaxResults() {
@@ -396,15 +472,21 @@ public class DescribeStoreImageTasksRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot specify this
-     * parameter and the <code>ImageIDs</code> parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 1 and 200. You cannot
-     *        specify this parameter and the <code>ImageIDs</code> parameter in the same call.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
+     *        <p>
+     *        You cannot specify this parameter and the <code>ImageIds</code> parameter in the same call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

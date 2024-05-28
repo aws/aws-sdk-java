@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,34 @@ public class RecommendationMetrics implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer modelLatency;
+    /**
+     * <p>
+     * The expected CPU utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     */
+    private Float cpuUtilization;
+    /**
+     * <p>
+     * The expected memory utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     */
+    private Float memoryUtilization;
+    /**
+     * <p>
+     * The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the
+     * model size, how long it takes to download the model, and the start-up time of the container.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     */
+    private Integer modelSetupTime;
 
     /**
      * <p>
@@ -214,6 +242,177 @@ public class RecommendationMetrics implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The expected CPU utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @param cpuUtilization
+     *        The expected CPU utilization at maximum invocations per minute for the instance.</p>
+     *        <p>
+     *        <code>NaN</code> indicates that the value is not available.
+     */
+
+    public void setCpuUtilization(Float cpuUtilization) {
+        this.cpuUtilization = cpuUtilization;
+    }
+
+    /**
+     * <p>
+     * The expected CPU utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @return The expected CPU utilization at maximum invocations per minute for the instance.</p>
+     *         <p>
+     *         <code>NaN</code> indicates that the value is not available.
+     */
+
+    public Float getCpuUtilization() {
+        return this.cpuUtilization;
+    }
+
+    /**
+     * <p>
+     * The expected CPU utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @param cpuUtilization
+     *        The expected CPU utilization at maximum invocations per minute for the instance.</p>
+     *        <p>
+     *        <code>NaN</code> indicates that the value is not available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationMetrics withCpuUtilization(Float cpuUtilization) {
+        setCpuUtilization(cpuUtilization);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expected memory utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @param memoryUtilization
+     *        The expected memory utilization at maximum invocations per minute for the instance.</p>
+     *        <p>
+     *        <code>NaN</code> indicates that the value is not available.
+     */
+
+    public void setMemoryUtilization(Float memoryUtilization) {
+        this.memoryUtilization = memoryUtilization;
+    }
+
+    /**
+     * <p>
+     * The expected memory utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @return The expected memory utilization at maximum invocations per minute for the instance.</p>
+     *         <p>
+     *         <code>NaN</code> indicates that the value is not available.
+     */
+
+    public Float getMemoryUtilization() {
+        return this.memoryUtilization;
+    }
+
+    /**
+     * <p>
+     * The expected memory utilization at maximum invocations per minute for the instance.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @param memoryUtilization
+     *        The expected memory utilization at maximum invocations per minute for the instance.</p>
+     *        <p>
+     *        <code>NaN</code> indicates that the value is not available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationMetrics withMemoryUtilization(Float memoryUtilization) {
+        setMemoryUtilization(memoryUtilization);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the
+     * model size, how long it takes to download the model, and the start-up time of the container.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @param modelSetupTime
+     *        The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending
+     *        on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+     *        <p>
+     *        <code>NaN</code> indicates that the value is not available.
+     */
+
+    public void setModelSetupTime(Integer modelSetupTime) {
+        this.modelSetupTime = modelSetupTime;
+    }
+
+    /**
+     * <p>
+     * The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the
+     * model size, how long it takes to download the model, and the start-up time of the container.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @return The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending
+     *         on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+     *         <p>
+     *         <code>NaN</code> indicates that the value is not available.
+     */
+
+    public Integer getModelSetupTime() {
+        return this.modelSetupTime;
+    }
+
+    /**
+     * <p>
+     * The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending on the
+     * model size, how long it takes to download the model, and the start-up time of the container.
+     * </p>
+     * <p>
+     * <code>NaN</code> indicates that the value is not available.
+     * </p>
+     * 
+     * @param modelSetupTime
+     *        The time it takes to launch new compute resources for a serverless endpoint. The time can vary depending
+     *        on the model size, how long it takes to download the model, and the start-up time of the container.</p>
+     *        <p>
+     *        <code>NaN</code> indicates that the value is not available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationMetrics withModelSetupTime(Integer modelSetupTime) {
+        setModelSetupTime(modelSetupTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +431,13 @@ public class RecommendationMetrics implements Serializable, Cloneable, Structure
         if (getMaxInvocations() != null)
             sb.append("MaxInvocations: ").append(getMaxInvocations()).append(",");
         if (getModelLatency() != null)
-            sb.append("ModelLatency: ").append(getModelLatency());
+            sb.append("ModelLatency: ").append(getModelLatency()).append(",");
+        if (getCpuUtilization() != null)
+            sb.append("CpuUtilization: ").append(getCpuUtilization()).append(",");
+        if (getMemoryUtilization() != null)
+            sb.append("MemoryUtilization: ").append(getMemoryUtilization()).append(",");
+        if (getModelSetupTime() != null)
+            sb.append("ModelSetupTime: ").append(getModelSetupTime());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +468,18 @@ public class RecommendationMetrics implements Serializable, Cloneable, Structure
             return false;
         if (other.getModelLatency() != null && other.getModelLatency().equals(this.getModelLatency()) == false)
             return false;
+        if (other.getCpuUtilization() == null ^ this.getCpuUtilization() == null)
+            return false;
+        if (other.getCpuUtilization() != null && other.getCpuUtilization().equals(this.getCpuUtilization()) == false)
+            return false;
+        if (other.getMemoryUtilization() == null ^ this.getMemoryUtilization() == null)
+            return false;
+        if (other.getMemoryUtilization() != null && other.getMemoryUtilization().equals(this.getMemoryUtilization()) == false)
+            return false;
+        if (other.getModelSetupTime() == null ^ this.getModelSetupTime() == null)
+            return false;
+        if (other.getModelSetupTime() != null && other.getModelSetupTime().equals(this.getModelSetupTime()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +492,9 @@ public class RecommendationMetrics implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCostPerInference() == null) ? 0 : getCostPerInference().hashCode());
         hashCode = prime * hashCode + ((getMaxInvocations() == null) ? 0 : getMaxInvocations().hashCode());
         hashCode = prime * hashCode + ((getModelLatency() == null) ? 0 : getModelLatency().hashCode());
+        hashCode = prime * hashCode + ((getCpuUtilization() == null) ? 0 : getCpuUtilization().hashCode());
+        hashCode = prime * hashCode + ((getMemoryUtilization() == null) ? 0 : getMemoryUtilization().hashCode());
+        hashCode = prime * hashCode + ((getModelSetupTime() == null) ? 0 : getModelSetupTime().hashCode());
         return hashCode;
     }
 

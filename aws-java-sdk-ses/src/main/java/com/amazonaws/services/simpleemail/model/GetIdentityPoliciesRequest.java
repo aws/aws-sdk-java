@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to return the requested sending authorization policies for an identity. Sending authorization is
  * an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies" target="_top">AWS API
@@ -33,12 +32,12 @@ public class GetIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity for which the policies will be retrieved. You can specify an identity by using its name or by using
-     * its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity for which the policies are retrieved. You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * <p>
-     * To successfully call this API, you must own the identity.
+     * To successfully call this operation, you must own the identity.
      * </p>
      */
     private String identity;
@@ -53,20 +52,20 @@ public class GetIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity for which the policies will be retrieved. You can specify an identity by using its name or by using
-     * its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity for which the policies are retrieved. You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * <p>
-     * To successfully call this API, you must own the identity.
+     * To successfully call this operation, you must own the identity.
      * </p>
      * 
      * @param identity
-     *        The identity for which the policies will be retrieved. You can specify an identity by using its name or by
+     *        The identity for which the policies are retrieved. You can specify an identity by using its name or by
      *        using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      *        <p>
-     *        To successfully call this API, you must own the identity.
+     *        To successfully call this operation, you must own the identity.
      */
 
     public void setIdentity(String identity) {
@@ -75,19 +74,19 @@ public class GetIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity for which the policies will be retrieved. You can specify an identity by using its name or by using
-     * its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity for which the policies are retrieved. You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * <p>
-     * To successfully call this API, you must own the identity.
+     * To successfully call this operation, you must own the identity.
      * </p>
      * 
-     * @return The identity for which the policies will be retrieved. You can specify an identity by using its name or
-     *         by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-     *         <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+     * @return The identity for which the policies are retrieved. You can specify an identity by using its name or by
+     *         using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      *         <p>
-     *         To successfully call this API, you must own the identity.
+     *         To successfully call this operation, you must own the identity.
      */
 
     public String getIdentity() {
@@ -96,20 +95,20 @@ public class GetIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identity for which the policies will be retrieved. You can specify an identity by using its name or by using
-     * its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity for which the policies are retrieved. You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * <p>
-     * To successfully call this API, you must own the identity.
+     * To successfully call this operation, you must own the identity.
      * </p>
      * 
      * @param identity
-     *        The identity for which the policies will be retrieved. You can specify an identity by using its name or by
+     *        The identity for which the policies are retrieved. You can specify an identity by using its name or by
      *        using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      *        <p>
-     *        To successfully call this API, you must own the identity.
+     *        To successfully call this operation, you must own the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

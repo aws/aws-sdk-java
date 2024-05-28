@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private String policyDocument;
     /**
      * <p>
-     * (Gateway endpoint) One or more route tables associated with the endpoint.
+     * (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
@@ -106,7 +106,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private Boolean requesterManaged;
     /**
      * <p>
-     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * (Interface endpoint) The network interfaces for the endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkInterfaceIds;
@@ -124,7 +124,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private java.util.Date creationTimestamp;
     /**
      * <p>
-     * Any tags assigned to the endpoint.
+     * The tags assigned to the endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -449,10 +449,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Gateway endpoint) One or more route tables associated with the endpoint.
+     * (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * </p>
      * 
-     * @return (Gateway endpoint) One or more route tables associated with the endpoint.
+     * @return (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      */
 
     public java.util.List<String> getRouteTableIds() {
@@ -464,11 +464,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Gateway endpoint) One or more route tables associated with the endpoint.
+     * (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * </p>
      * 
      * @param routeTableIds
-     *        (Gateway endpoint) One or more route tables associated with the endpoint.
+     *        (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      */
 
     public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
@@ -482,7 +482,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Gateway endpoint) One or more route tables associated with the endpoint.
+     * (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -491,7 +491,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param routeTableIds
-     *        (Gateway endpoint) One or more route tables associated with the endpoint.
+     *        (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +507,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Gateway endpoint) One or more route tables associated with the endpoint.
+     * (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * </p>
      * 
      * @param routeTableIds
-     *        (Gateway endpoint) One or more route tables associated with the endpoint.
+     *        (Gateway endpoint) The IDs of the route tables associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -886,10 +886,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * (Interface endpoint) The network interfaces for the endpoint.
      * </p>
      * 
-     * @return (Interface endpoint) One or more network interfaces for the endpoint.
+     * @return (Interface endpoint) The network interfaces for the endpoint.
      */
 
     public java.util.List<String> getNetworkInterfaceIds() {
@@ -901,11 +901,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * (Interface endpoint) The network interfaces for the endpoint.
      * </p>
      * 
      * @param networkInterfaceIds
-     *        (Interface endpoint) One or more network interfaces for the endpoint.
+     *        (Interface endpoint) The network interfaces for the endpoint.
      */
 
     public void setNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
@@ -919,7 +919,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * (Interface endpoint) The network interfaces for the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -928,7 +928,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param networkInterfaceIds
-     *        (Interface endpoint) One or more network interfaces for the endpoint.
+     *        (Interface endpoint) The network interfaces for the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -944,11 +944,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * (Interface endpoint) The network interfaces for the endpoint.
      * </p>
      * 
      * @param networkInterfaceIds
-     *        (Interface endpoint) One or more network interfaces for the endpoint.
+     *        (Interface endpoint) The network interfaces for the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1072,10 +1072,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the endpoint.
+     * The tags assigned to the endpoint.
      * </p>
      * 
-     * @return Any tags assigned to the endpoint.
+     * @return The tags assigned to the endpoint.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1087,11 +1087,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the endpoint.
+     * The tags assigned to the endpoint.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the endpoint.
+     *        The tags assigned to the endpoint.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1105,7 +1105,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the endpoint.
+     * The tags assigned to the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1114,7 +1114,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the endpoint.
+     *        The tags assigned to the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1130,11 +1130,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the endpoint.
+     * The tags assigned to the endpoint.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the endpoint.
+     *        The tags assigned to the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

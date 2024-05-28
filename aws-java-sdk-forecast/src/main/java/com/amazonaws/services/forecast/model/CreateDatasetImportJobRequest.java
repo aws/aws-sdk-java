@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,13 +41,13 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     private String datasetArn;
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM
-     * role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified
-     * in the <code>EncryptionConfig</code> parameter of the <a
+     * If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role
+     * must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in
+     * the <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      * </p>
      */
@@ -161,10 +161,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -176,6 +176,14 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String format;
+    /**
+     * <p>
+     * Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     * <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     * <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * </p>
+     */
+    private String importMode;
 
     /**
      * <p>
@@ -271,23 +279,22 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM
-     * role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified
-     * in the <code>EncryptionConfig</code> parameter of the <a
+     * If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role
+     * must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in
+     * the <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      * </p>
      * 
      * @param dataSource
-     *        The location of the training data to import and an AWS Identity and Access Management (IAM) role that
-     *        Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3
-     *        bucket.</p>
+     *        The location of the training data to import and an Identity and Access Management (IAM) role that Amazon
+     *        Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
      *        <p>
-     *        If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and
-     *        the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match
+     *        If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the
+     *        IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match
      *        those specified in the <code>EncryptionConfig</code> parameter of the <a
      *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      */
@@ -298,22 +305,21 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM
-     * role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified
-     * in the <code>EncryptionConfig</code> parameter of the <a
+     * If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role
+     * must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in
+     * the <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      * </p>
      * 
-     * @return The location of the training data to import and an AWS Identity and Access Management (IAM) role that
-     *         Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3
-     *         bucket.</p>
+     * @return The location of the training data to import and an Identity and Access Management (IAM) role that Amazon
+     *         Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
      *         <p>
-     *         If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and
-     *         the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match
+     *         If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the
+     *         IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match
      *         those specified in the <code>EncryptionConfig</code> parameter of the <a
      *         href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      */
@@ -324,23 +330,22 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM
-     * role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified
-     * in the <code>EncryptionConfig</code> parameter of the <a
+     * If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role
+     * must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in
+     * the <code>EncryptionConfig</code> parameter of the <a
      * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      * </p>
      * 
      * @param dataSource
-     *        The location of the training data to import and an AWS Identity and Access Management (IAM) role that
-     *        Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3
-     *        bucket.</p>
+     *        The location of the training data to import and an Identity and Access Management (IAM) role that Amazon
+     *        Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
      *        <p>
-     *        If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and
-     *        the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match
+     *        If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the
+     *        IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match
      *        those specified in the <code>EncryptionConfig</code> parameter of the <a
      *        href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -810,10 +815,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -859,10 +864,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      *         <li>
      *         <p>
      *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
-     *         prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
-     *         Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then
-     *         Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the
-     *         key prefix of <code>aws</code> do not count against your tags per resource limit.
+     *         prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with
+     *         this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key
+     *         does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags
+     *         with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *         </p>
      *         </li>
      */
@@ -915,10 +920,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -965,10 +970,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      */
@@ -1026,10 +1031,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -1081,10 +1086,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1144,10 +1149,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -1194,10 +1199,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1249,6 +1254,81 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     * <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     * <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * </p>
+     * 
+     * @param importMode
+     *        Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     *        <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     *        <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * @see ImportMode
+     */
+
+    public void setImportMode(String importMode) {
+        this.importMode = importMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     * <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     * <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * </p>
+     * 
+     * @return Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     *         <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     *         <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * @see ImportMode
+     */
+
+    public String getImportMode() {
+        return this.importMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     * <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     * <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * </p>
+     * 
+     * @param importMode
+     *        Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     *        <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     *        <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public CreateDatasetImportJobRequest withImportMode(String importMode) {
+        setImportMode(importMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     * <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     * <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * </p>
+     * 
+     * @param importMode
+     *        Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A
+     *        <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An
+     *        <code>INCREMENTAL</code> import appends the imported data to the existing data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public CreateDatasetImportJobRequest withImportMode(ImportMode importMode) {
+        this.importMode = importMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1277,7 +1357,9 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getFormat() != null)
-            sb.append("Format: ").append(getFormat());
+            sb.append("Format: ").append(getFormat()).append(",");
+        if (getImportMode() != null)
+            sb.append("ImportMode: ").append(getImportMode());
         sb.append("}");
         return sb.toString();
     }
@@ -1328,6 +1410,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
+        if (other.getImportMode() == null ^ this.getImportMode() == null)
+            return false;
+        if (other.getImportMode() != null && other.getImportMode().equals(this.getImportMode()) == false)
+            return false;
         return true;
     }
 
@@ -1345,6 +1431,7 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getGeolocationFormat() == null) ? 0 : getGeolocationFormat().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         return hashCode;
     }
 

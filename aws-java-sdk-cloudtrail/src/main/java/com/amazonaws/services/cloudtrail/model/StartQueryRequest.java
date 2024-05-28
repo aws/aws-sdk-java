@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,18 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String deliveryS3Uri;
+    /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     */
+    private String queryAlias;
+    /**
+     * <p>
+     * The query parameters for the specified <code>QueryAlias</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> queryParameters;
 
     /**
      * <p>
@@ -119,6 +131,119 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     * 
+     * @param queryAlias
+     *        The alias that identifies a query template.
+     */
+
+    public void setQueryAlias(String queryAlias) {
+        this.queryAlias = queryAlias;
+    }
+
+    /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     * 
+     * @return The alias that identifies a query template.
+     */
+
+    public String getQueryAlias() {
+        return this.queryAlias;
+    }
+
+    /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     * 
+     * @param queryAlias
+     *        The alias that identifies a query template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryRequest withQueryAlias(String queryAlias) {
+        setQueryAlias(queryAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The query parameters for the specified <code>QueryAlias</code>.
+     * </p>
+     * 
+     * @return The query parameters for the specified <code>QueryAlias</code>.
+     */
+
+    public java.util.List<String> getQueryParameters() {
+        if (queryParameters == null) {
+            queryParameters = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return queryParameters;
+    }
+
+    /**
+     * <p>
+     * The query parameters for the specified <code>QueryAlias</code>.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The query parameters for the specified <code>QueryAlias</code>.
+     */
+
+    public void setQueryParameters(java.util.Collection<String> queryParameters) {
+        if (queryParameters == null) {
+            this.queryParameters = null;
+            return;
+        }
+
+        this.queryParameters = new com.amazonaws.internal.SdkInternalList<String>(queryParameters);
+    }
+
+    /**
+     * <p>
+     * The query parameters for the specified <code>QueryAlias</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueryParameters(java.util.Collection)} or {@link #withQueryParameters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The query parameters for the specified <code>QueryAlias</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryRequest withQueryParameters(String... queryParameters) {
+        if (this.queryParameters == null) {
+            setQueryParameters(new com.amazonaws.internal.SdkInternalList<String>(queryParameters.length));
+        }
+        for (String ele : queryParameters) {
+            this.queryParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The query parameters for the specified <code>QueryAlias</code>.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The query parameters for the specified <code>QueryAlias</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryRequest withQueryParameters(java.util.Collection<String> queryParameters) {
+        setQueryParameters(queryParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +258,11 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getQueryStatement() != null)
             sb.append("QueryStatement: ").append(getQueryStatement()).append(",");
         if (getDeliveryS3Uri() != null)
-            sb.append("DeliveryS3Uri: ").append(getDeliveryS3Uri());
+            sb.append("DeliveryS3Uri: ").append(getDeliveryS3Uri()).append(",");
+        if (getQueryAlias() != null)
+            sb.append("QueryAlias: ").append(getQueryAlias()).append(",");
+        if (getQueryParameters() != null)
+            sb.append("QueryParameters: ").append(getQueryParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +285,14 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDeliveryS3Uri() != null && other.getDeliveryS3Uri().equals(this.getDeliveryS3Uri()) == false)
             return false;
+        if (other.getQueryAlias() == null ^ this.getQueryAlias() == null)
+            return false;
+        if (other.getQueryAlias() != null && other.getQueryAlias().equals(this.getQueryAlias()) == false)
+            return false;
+        if (other.getQueryParameters() == null ^ this.getQueryParameters() == null)
+            return false;
+        if (other.getQueryParameters() != null && other.getQueryParameters().equals(this.getQueryParameters()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +303,8 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getQueryStatement() == null) ? 0 : getQueryStatement().hashCode());
         hashCode = prime * hashCode + ((getDeliveryS3Uri() == null) ? 0 : getDeliveryS3Uri().hashCode());
+        hashCode = prime * hashCode + ((getQueryAlias() == null) ? 0 : getQueryAlias().hashCode());
+        hashCode = prime * hashCode + ((getQueryParameters() == null) ? 0 : getQueryParameters().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -153,7 +153,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      */
@@ -190,6 +192,35 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean isConcurrent;
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     */
+    private SchedulingConfig schedulingConfig;
+    /**
+     * <p>
+     * Displays the next seven maintenance window occurrences and their start times.
+     * </p>
+     */
+    private java.util.List<ScheduledJobRollout> scheduledJobRollouts;
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state when the
+     * job deploys. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     */
+    private java.util.List<String> destinationPackageVersions;
 
     /**
      * <p>
@@ -1064,7 +1095,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -1079,7 +1112,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>namespaceId</code> feature is in public preview.
+     *        The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *        core devices.</a>
      *        </p>
      */
 
@@ -1100,7 +1136,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -1114,7 +1152,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>namespaceId</code> feature is in public preview.
+     *         The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *         core devices.</a>
      *         </p>
      */
 
@@ -1135,7 +1176,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -1150,7 +1193,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>namespaceId</code> feature is in public preview.
+     *        The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *        core devices.</a>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1408,6 +1454,272 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     */
+
+    public void setSchedulingConfig(SchedulingConfig schedulingConfig) {
+        this.schedulingConfig = schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @return The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *         the end behavior for each job execution.
+     */
+
+    public SchedulingConfig getSchedulingConfig() {
+        return this.schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withSchedulingConfig(SchedulingConfig schedulingConfig) {
+        setSchedulingConfig(schedulingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays the next seven maintenance window occurrences and their start times.
+     * </p>
+     * 
+     * @return Displays the next seven maintenance window occurrences and their start times.
+     */
+
+    public java.util.List<ScheduledJobRollout> getScheduledJobRollouts() {
+        return scheduledJobRollouts;
+    }
+
+    /**
+     * <p>
+     * Displays the next seven maintenance window occurrences and their start times.
+     * </p>
+     * 
+     * @param scheduledJobRollouts
+     *        Displays the next seven maintenance window occurrences and their start times.
+     */
+
+    public void setScheduledJobRollouts(java.util.Collection<ScheduledJobRollout> scheduledJobRollouts) {
+        if (scheduledJobRollouts == null) {
+            this.scheduledJobRollouts = null;
+            return;
+        }
+
+        this.scheduledJobRollouts = new java.util.ArrayList<ScheduledJobRollout>(scheduledJobRollouts);
+    }
+
+    /**
+     * <p>
+     * Displays the next seven maintenance window occurrences and their start times.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScheduledJobRollouts(java.util.Collection)} or {@link #withScheduledJobRollouts(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param scheduledJobRollouts
+     *        Displays the next seven maintenance window occurrences and their start times.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withScheduledJobRollouts(ScheduledJobRollout... scheduledJobRollouts) {
+        if (this.scheduledJobRollouts == null) {
+            setScheduledJobRollouts(new java.util.ArrayList<ScheduledJobRollout>(scheduledJobRollouts.length));
+        }
+        for (ScheduledJobRollout ele : scheduledJobRollouts) {
+            this.scheduledJobRollouts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays the next seven maintenance window occurrences and their start times.
+     * </p>
+     * 
+     * @param scheduledJobRollouts
+     *        Displays the next seven maintenance window occurrences and their start times.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withScheduledJobRollouts(java.util.Collection<ScheduledJobRollout> scheduledJobRollouts) {
+        setScheduledJobRollouts(scheduledJobRollouts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state when the
+     * job deploys. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @return The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *         successfully completes. The package version must be in either the Published or Deprecated state when the
+     *         job deploys. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *         >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state
+     *         when the job deploys. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *         >Package version lifecycle</a>.</p>
+     *         <p>
+     *         <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *         allowed.
+     */
+
+    public java.util.List<String> getDestinationPackageVersions() {
+        return destinationPackageVersions;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state when the
+     * job deploys. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state
+     *        when the job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.</p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     */
+
+    public void setDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        if (destinationPackageVersions == null) {
+            this.destinationPackageVersions = null;
+            return;
+        }
+
+        this.destinationPackageVersions = new java.util.ArrayList<String>(destinationPackageVersions);
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state when the
+     * job deploys. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDestinationPackageVersions(java.util.Collection)} or
+     * {@link #withDestinationPackageVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state
+     *        when the job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.</p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withDestinationPackageVersions(String... destinationPackageVersions) {
+        if (this.destinationPackageVersions == null) {
+            setDestinationPackageVersions(new java.util.ArrayList<String>(destinationPackageVersions.length));
+        }
+        for (String ele : destinationPackageVersions) {
+            this.destinationPackageVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state when the
+     * job deploys. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.The package version must be in either the Published or Deprecated state
+     *        when the job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.</p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        setDestinationPackageVersions(destinationPackageVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1462,7 +1774,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getDocumentParameters() != null)
             sb.append("DocumentParameters: ").append(getDocumentParameters()).append(",");
         if (getIsConcurrent() != null)
-            sb.append("IsConcurrent: ").append(getIsConcurrent());
+            sb.append("IsConcurrent: ").append(getIsConcurrent()).append(",");
+        if (getSchedulingConfig() != null)
+            sb.append("SchedulingConfig: ").append(getSchedulingConfig()).append(",");
+        if (getScheduledJobRollouts() != null)
+            sb.append("ScheduledJobRollouts: ").append(getScheduledJobRollouts()).append(",");
+        if (getDestinationPackageVersions() != null)
+            sb.append("DestinationPackageVersions: ").append(getDestinationPackageVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -1565,6 +1883,18 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIsConcurrent() != null && other.getIsConcurrent().equals(this.getIsConcurrent()) == false)
             return false;
+        if (other.getSchedulingConfig() == null ^ this.getSchedulingConfig() == null)
+            return false;
+        if (other.getSchedulingConfig() != null && other.getSchedulingConfig().equals(this.getSchedulingConfig()) == false)
+            return false;
+        if (other.getScheduledJobRollouts() == null ^ this.getScheduledJobRollouts() == null)
+            return false;
+        if (other.getScheduledJobRollouts() != null && other.getScheduledJobRollouts().equals(this.getScheduledJobRollouts()) == false)
+            return false;
+        if (other.getDestinationPackageVersions() == null ^ this.getDestinationPackageVersions() == null)
+            return false;
+        if (other.getDestinationPackageVersions() != null && other.getDestinationPackageVersions().equals(this.getDestinationPackageVersions()) == false)
+            return false;
         return true;
     }
 
@@ -1595,6 +1925,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
         hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
         hashCode = prime * hashCode + ((getIsConcurrent() == null) ? 0 : getIsConcurrent().hashCode());
+        hashCode = prime * hashCode + ((getSchedulingConfig() == null) ? 0 : getSchedulingConfig().hashCode());
+        hashCode = prime * hashCode + ((getScheduledJobRollouts() == null) ? 0 : getScheduledJobRollouts().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPackageVersions() == null) ? 0 : getDestinationPackageVersions().hashCode());
         return hashCode;
     }
 

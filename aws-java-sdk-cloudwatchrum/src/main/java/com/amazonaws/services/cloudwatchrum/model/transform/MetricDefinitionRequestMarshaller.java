@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class MetricDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventPattern").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Namespace").build();
     private static final MarshallingInfo<String> UNITLABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UnitLabel").build();
     private static final MarshallingInfo<String> VALUEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class MetricDefinitionRequestMarshaller {
             protocolMarshaller.marshall(metricDefinitionRequest.getDimensionKeys(), DIMENSIONKEYS_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getEventPattern(), EVENTPATTERN_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(metricDefinitionRequest.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getUnitLabel(), UNITLABEL_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getValueKey(), VALUEKEY_BINDING);
         } catch (Exception e) {

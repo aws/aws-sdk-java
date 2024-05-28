@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class KafkaAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> clientProperties;
+    /**
+     * <p>
+     * The list of Kafka headers that you specify.
+     * </p>
+     */
+    private java.util.List<KafkaActionHeader> headers;
 
     /**
      * <p>
@@ -285,6 +291,76 @@ public class KafkaAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of Kafka headers that you specify.
+     * </p>
+     * 
+     * @return The list of Kafka headers that you specify.
+     */
+
+    public java.util.List<KafkaActionHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The list of Kafka headers that you specify.
+     * </p>
+     * 
+     * @param headers
+     *        The list of Kafka headers that you specify.
+     */
+
+    public void setHeaders(java.util.Collection<KafkaActionHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<KafkaActionHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The list of Kafka headers that you specify.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The list of Kafka headers that you specify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaAction withHeaders(KafkaActionHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<KafkaActionHeader>(headers.length));
+        }
+        for (KafkaActionHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Kafka headers that you specify.
+     * </p>
+     * 
+     * @param headers
+     *        The list of Kafka headers that you specify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaAction withHeaders(java.util.Collection<KafkaActionHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -305,7 +381,9 @@ public class KafkaAction implements Serializable, Cloneable, StructuredPojo {
         if (getPartition() != null)
             sb.append("Partition: ").append(getPartition()).append(",");
         if (getClientProperties() != null)
-            sb.append("ClientProperties: ").append(getClientProperties());
+            sb.append("ClientProperties: ").append(getClientProperties()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders());
         sb.append("}");
         return sb.toString();
     }
@@ -340,6 +418,10 @@ public class KafkaAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClientProperties() != null && other.getClientProperties().equals(this.getClientProperties()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +435,7 @@ public class KafkaAction implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getPartition() == null) ? 0 : getPartition().hashCode());
         hashCode = prime * hashCode + ((getClientProperties() == null) ? 0 : getClientProperties().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         return hashCode;
     }
 

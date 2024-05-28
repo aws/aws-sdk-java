@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,29 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String moderationModelVersion;
+    /**
+     * <p>
+     * Job identifier for the content moderation operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartContentModeration.
+     * </p>
+     */
+    private String jobId;
+
+    private Video video;
+    /**
+     * <p>
+     * A job identifier specified in the call to StartContentModeration and returned in the job completion notification
+     * sent to your Amazon Simple Notification Service topic.
+     * </p>
+     */
+    private String jobTag;
+    /**
+     * <p>
+     * Information about the paramters used when getting a response. Includes information on aggregation and sorting
+     * methods.
+     * </p>
+     */
+    private GetContentModerationRequestMetadata getRequestMetadata;
 
     /**
      * <p>
@@ -370,6 +393,170 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Job identifier for the content moderation operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartContentModeration.
+     * </p>
+     * 
+     * @param jobId
+     *        Job identifier for the content moderation operation for which you want to obtain results. The job
+     *        identifer is returned by an initial call to StartContentModeration.
+     */
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * Job identifier for the content moderation operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartContentModeration.
+     * </p>
+     * 
+     * @return Job identifier for the content moderation operation for which you want to obtain results. The job
+     *         identifer is returned by an initial call to StartContentModeration.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * Job identifier for the content moderation operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartContentModeration.
+     * </p>
+     * 
+     * @param jobId
+     *        Job identifier for the content moderation operation for which you want to obtain results. The job
+     *        identifer is returned by an initial call to StartContentModeration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetContentModerationResult withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * @param video
+     */
+
+    public void setVideo(Video video) {
+        this.video = video;
+    }
+
+    /**
+     * @return
+     */
+
+    public Video getVideo() {
+        return this.video;
+    }
+
+    /**
+     * @param video
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetContentModerationResult withVideo(Video video) {
+        setVideo(video);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A job identifier specified in the call to StartContentModeration and returned in the job completion notification
+     * sent to your Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @param jobTag
+     *        A job identifier specified in the call to StartContentModeration and returned in the job completion
+     *        notification sent to your Amazon Simple Notification Service topic.
+     */
+
+    public void setJobTag(String jobTag) {
+        this.jobTag = jobTag;
+    }
+
+    /**
+     * <p>
+     * A job identifier specified in the call to StartContentModeration and returned in the job completion notification
+     * sent to your Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @return A job identifier specified in the call to StartContentModeration and returned in the job completion
+     *         notification sent to your Amazon Simple Notification Service topic.
+     */
+
+    public String getJobTag() {
+        return this.jobTag;
+    }
+
+    /**
+     * <p>
+     * A job identifier specified in the call to StartContentModeration and returned in the job completion notification
+     * sent to your Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @param jobTag
+     *        A job identifier specified in the call to StartContentModeration and returned in the job completion
+     *        notification sent to your Amazon Simple Notification Service topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetContentModerationResult withJobTag(String jobTag) {
+        setJobTag(jobTag);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the paramters used when getting a response. Includes information on aggregation and sorting
+     * methods.
+     * </p>
+     * 
+     * @param getRequestMetadata
+     *        Information about the paramters used when getting a response. Includes information on aggregation and
+     *        sorting methods.
+     */
+
+    public void setGetRequestMetadata(GetContentModerationRequestMetadata getRequestMetadata) {
+        this.getRequestMetadata = getRequestMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about the paramters used when getting a response. Includes information on aggregation and sorting
+     * methods.
+     * </p>
+     * 
+     * @return Information about the paramters used when getting a response. Includes information on aggregation and
+     *         sorting methods.
+     */
+
+    public GetContentModerationRequestMetadata getGetRequestMetadata() {
+        return this.getRequestMetadata;
+    }
+
+    /**
+     * <p>
+     * Information about the paramters used when getting a response. Includes information on aggregation and sorting
+     * methods.
+     * </p>
+     * 
+     * @param getRequestMetadata
+     *        Information about the paramters used when getting a response. Includes information on aggregation and
+     *        sorting methods.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetContentModerationResult withGetRequestMetadata(GetContentModerationRequestMetadata getRequestMetadata) {
+        setGetRequestMetadata(getRequestMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +579,15 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getModerationModelVersion() != null)
-            sb.append("ModerationModelVersion: ").append(getModerationModelVersion());
+            sb.append("ModerationModelVersion: ").append(getModerationModelVersion()).append(",");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getVideo() != null)
+            sb.append("Video: ").append(getVideo()).append(",");
+        if (getJobTag() != null)
+            sb.append("JobTag: ").append(getJobTag()).append(",");
+        if (getGetRequestMetadata() != null)
+            sb.append("GetRequestMetadata: ").append(getGetRequestMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -431,6 +626,22 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getModerationModelVersion() != null && other.getModerationModelVersion().equals(this.getModerationModelVersion()) == false)
             return false;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
+        if (other.getVideo() == null ^ this.getVideo() == null)
+            return false;
+        if (other.getVideo() != null && other.getVideo().equals(this.getVideo()) == false)
+            return false;
+        if (other.getJobTag() == null ^ this.getJobTag() == null)
+            return false;
+        if (other.getJobTag() != null && other.getJobTag().equals(this.getJobTag()) == false)
+            return false;
+        if (other.getGetRequestMetadata() == null ^ this.getGetRequestMetadata() == null)
+            return false;
+        if (other.getGetRequestMetadata() != null && other.getGetRequestMetadata().equals(this.getGetRequestMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +656,10 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getModerationLabels() == null) ? 0 : getModerationLabels().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getModerationModelVersion() == null) ? 0 : getModerationModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getVideo() == null) ? 0 : getVideo().hashCode());
+        hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
+        hashCode = prime * hashCode + ((getGetRequestMetadata() == null) ? 0 : getGetRequestMetadata().hashCode());
         return hashCode;
     }
 

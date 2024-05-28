@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -938,6 +938,41 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<ListServicesForAutoScalingConfigurationResult> listServicesForAutoScalingConfigurationAsync(
+            ListServicesForAutoScalingConfigurationRequest request) {
+
+        return listServicesForAutoScalingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServicesForAutoScalingConfigurationResult> listServicesForAutoScalingConfigurationAsync(
+            final ListServicesForAutoScalingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListServicesForAutoScalingConfigurationRequest, ListServicesForAutoScalingConfigurationResult> asyncHandler) {
+        final ListServicesForAutoScalingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListServicesForAutoScalingConfigurationResult>() {
+            @Override
+            public ListServicesForAutoScalingConfigurationResult call() throws Exception {
+                ListServicesForAutoScalingConfigurationResult result = null;
+
+                try {
+                    result = executeListServicesForAutoScalingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1186,6 +1221,41 @@ public class AWSAppRunnerAsyncClient extends AWSAppRunnerClient implements AWSAp
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDefaultAutoScalingConfigurationResult> updateDefaultAutoScalingConfigurationAsync(
+            UpdateDefaultAutoScalingConfigurationRequest request) {
+
+        return updateDefaultAutoScalingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDefaultAutoScalingConfigurationResult> updateDefaultAutoScalingConfigurationAsync(
+            final UpdateDefaultAutoScalingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDefaultAutoScalingConfigurationRequest, UpdateDefaultAutoScalingConfigurationResult> asyncHandler) {
+        final UpdateDefaultAutoScalingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDefaultAutoScalingConfigurationResult>() {
+            @Override
+            public UpdateDefaultAutoScalingConfigurationResult call() throws Exception {
+                UpdateDefaultAutoScalingConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateDefaultAutoScalingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

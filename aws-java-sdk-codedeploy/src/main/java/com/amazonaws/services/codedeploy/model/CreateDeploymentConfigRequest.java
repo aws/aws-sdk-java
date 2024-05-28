@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,19 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String computePlatform;
+    /**
+     * <p>
+     * Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     * >Availability Zone</a> at a time, within an Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about the zonal configuration feature, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     * >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     */
+    private ZonalConfig zonalConfig;
 
     /**
      * <p>
@@ -405,6 +418,88 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     * >Availability Zone</a> at a time, within an Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about the zonal configuration feature, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     * >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * 
+     * @param zonalConfig
+     *        Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     *        >Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+     *        <p>
+     *        For more information about the zonal configuration feature, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     *        >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     */
+
+    public void setZonalConfig(ZonalConfig zonalConfig) {
+        this.zonalConfig = zonalConfig;
+    }
+
+    /**
+     * <p>
+     * Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     * >Availability Zone</a> at a time, within an Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about the zonal configuration feature, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     * >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * 
+     * @return Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     *         >Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+     *         <p>
+     *         For more information about the zonal configuration feature, see <a href=
+     *         "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     *         >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     */
+
+    public ZonalConfig getZonalConfig() {
+        return this.zonalConfig;
+    }
+
+    /**
+     * <p>
+     * Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     * >Availability Zone</a> at a time, within an Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about the zonal configuration feature, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     * >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * 
+     * @param zonalConfig
+     *        Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones"
+     *        >Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+     *        <p>
+     *        For more information about the zonal configuration feature, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config"
+     *        >zonal configuration</a> in the <i>CodeDeploy User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentConfigRequest withZonalConfig(ZonalConfig zonalConfig) {
+        setZonalConfig(zonalConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -423,7 +518,9 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
         if (getTrafficRoutingConfig() != null)
             sb.append("TrafficRoutingConfig: ").append(getTrafficRoutingConfig()).append(",");
         if (getComputePlatform() != null)
-            sb.append("ComputePlatform: ").append(getComputePlatform());
+            sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
+        if (getZonalConfig() != null)
+            sb.append("ZonalConfig: ").append(getZonalConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +551,10 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
             return false;
+        if (other.getZonalConfig() == null ^ this.getZonalConfig() == null)
+            return false;
+        if (other.getZonalConfig() != null && other.getZonalConfig().equals(this.getZonalConfig()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +567,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getMinimumHealthyHosts() == null) ? 0 : getMinimumHealthyHosts().hashCode());
         hashCode = prime * hashCode + ((getTrafficRoutingConfig() == null) ? 0 : getTrafficRoutingConfig().hashCode());
         hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
+        hashCode = prime * hashCode + ((getZonalConfig() == null) ? 0 : getZonalConfig().hashCode());
         return hashCode;
     }
 

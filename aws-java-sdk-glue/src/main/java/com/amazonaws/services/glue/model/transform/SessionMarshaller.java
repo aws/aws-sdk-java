@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,18 @@ public class SessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
     private static final MarshallingInfo<String> GLUEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlueVersion").build();
+    private static final MarshallingInfo<Integer> NUMBEROFWORKERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfWorkers").build();
+    private static final MarshallingInfo<String> WORKERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkerType").build();
+    private static final MarshallingInfo<java.util.Date> COMPLETEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedOn").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Double> EXECUTIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionTime").build();
+    private static final MarshallingInfo<Double> DPUSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DPUSeconds").build();
+    private static final MarshallingInfo<Integer> IDLETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdleTimeout").build();
 
     private static final SessionMarshaller instance = new SessionMarshaller();
 
@@ -85,6 +97,12 @@ public class SessionMarshaller {
             protocolMarshaller.marshall(session.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(session.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(session.getGlueVersion(), GLUEVERSION_BINDING);
+            protocolMarshaller.marshall(session.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
+            protocolMarshaller.marshall(session.getWorkerType(), WORKERTYPE_BINDING);
+            protocolMarshaller.marshall(session.getCompletedOn(), COMPLETEDON_BINDING);
+            protocolMarshaller.marshall(session.getExecutionTime(), EXECUTIONTIME_BINDING);
+            protocolMarshaller.marshall(session.getDPUSeconds(), DPUSECONDS_BINDING);
+            protocolMarshaller.marshall(session.getIdleTimeout(), IDLETIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

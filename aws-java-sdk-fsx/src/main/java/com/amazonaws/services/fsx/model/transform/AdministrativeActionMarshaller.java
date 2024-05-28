@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,10 @@ public class AdministrativeActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetVolumeValues").build();
     private static final MarshallingInfo<StructuredPojo> TARGETSNAPSHOTVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetSnapshotValues").build();
+    private static final MarshallingInfo<Long> TOTALTRANSFERBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalTransferBytes").build();
+    private static final MarshallingInfo<Long> REMAININGTRANSFERBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemainingTransferBytes").build();
 
     private static final AdministrativeActionMarshaller instance = new AdministrativeActionMarshaller();
 
@@ -68,6 +72,8 @@ public class AdministrativeActionMarshaller {
             protocolMarshaller.marshall(administrativeAction.getFailureDetails(), FAILUREDETAILS_BINDING);
             protocolMarshaller.marshall(administrativeAction.getTargetVolumeValues(), TARGETVOLUMEVALUES_BINDING);
             protocolMarshaller.marshall(administrativeAction.getTargetSnapshotValues(), TARGETSNAPSHOTVALUES_BINDING);
+            protocolMarshaller.marshall(administrativeAction.getTotalTransferBytes(), TOTALTRANSFERBYTES_BINDING);
+            protocolMarshaller.marshall(administrativeAction.getRemainingTransferBytes(), REMAININGTRANSFERBYTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

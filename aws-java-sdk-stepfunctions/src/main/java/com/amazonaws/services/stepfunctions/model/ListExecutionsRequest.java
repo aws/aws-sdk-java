@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,15 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      */
     private String stateMachineArn;
     /**
@@ -57,14 +66,62 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     */
+    private String mapRunArn;
+    /**
+     * <p>
+     * Sets a filter to list executions based on whether or not they have been redriven.
+     * </p>
+     * <p>
+     * For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     * whether or not they have been redriven.
+     * </p>
+     * <p>
+     * If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     * non-redriven executions.
+     * </p>
+     * <p>
+     * If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * </p>
+     */
+    private String redriveFilter;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.
+     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     *        </p>
+     *        <p>
+     *        You can also return a list of executions associated with a specific <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or
+     *        <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version<
+     *        /a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -75,8 +132,26 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the state machine whose executions is listed.
+     * @return The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+     *         <p>
+     *         You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     *         </p>
+     *         <p>
+     *         You can also return a list of executions associated with a specific <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     *         or <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version
+     *         </a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
      */
 
     public String getStateMachineArn() {
@@ -87,9 +162,27 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * <p>
+     * You can also return a list of executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by
+     * specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.
+     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     *        </p>
+     *        <p>
+     *        You can also return a list of executions associated with a specific <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or
+     *        <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version<
+     *        /a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,6 +393,263 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     *        <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map
+     *        Run is returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map
+     *        Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     */
+
+    public void setMapRunArn(String mapRunArn) {
+        this.mapRunArn = mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     *         <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a
+     *         Map Run is returned. For more information, see <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map
+     *         Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+     *         <p>
+     *         You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     */
+
+    public String getMapRunArn() {
+        return this.mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     *        <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map
+     *        Run is returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map
+     *        Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListExecutionsRequest withMapRunArn(String mapRunArn) {
+        setMapRunArn(mapRunArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets a filter to list executions based on whether or not they have been redriven.
+     * </p>
+     * <p>
+     * For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     * whether or not they have been redriven.
+     * </p>
+     * <p>
+     * If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     * non-redriven executions.
+     * </p>
+     * <p>
+     * If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * </p>
+     * 
+     * @param redriveFilter
+     *        Sets a filter to list executions based on whether or not they have been redriven.</p>
+     *        <p>
+     *        For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     *        whether or not they have been redriven.
+     *        </p>
+     *        <p>
+     *        If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     *        non-redriven executions.
+     *        </p>
+     *        <p>
+     *        If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * @see ExecutionRedriveFilter
+     */
+
+    public void setRedriveFilter(String redriveFilter) {
+        this.redriveFilter = redriveFilter;
+    }
+
+    /**
+     * <p>
+     * Sets a filter to list executions based on whether or not they have been redriven.
+     * </p>
+     * <p>
+     * For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     * whether or not they have been redriven.
+     * </p>
+     * <p>
+     * If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     * non-redriven executions.
+     * </p>
+     * <p>
+     * If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * </p>
+     * 
+     * @return Sets a filter to list executions based on whether or not they have been redriven.</p>
+     *         <p>
+     *         For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based
+     *         on whether or not they have been redriven.
+     *         </p>
+     *         <p>
+     *         If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     *         non-redriven executions.
+     *         </p>
+     *         <p>
+     *         If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * @see ExecutionRedriveFilter
+     */
+
+    public String getRedriveFilter() {
+        return this.redriveFilter;
+    }
+
+    /**
+     * <p>
+     * Sets a filter to list executions based on whether or not they have been redriven.
+     * </p>
+     * <p>
+     * For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     * whether or not they have been redriven.
+     * </p>
+     * <p>
+     * If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     * non-redriven executions.
+     * </p>
+     * <p>
+     * If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * </p>
+     * 
+     * @param redriveFilter
+     *        Sets a filter to list executions based on whether or not they have been redriven.</p>
+     *        <p>
+     *        For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     *        whether or not they have been redriven.
+     *        </p>
+     *        <p>
+     *        If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     *        non-redriven executions.
+     *        </p>
+     *        <p>
+     *        If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionRedriveFilter
+     */
+
+    public ListExecutionsRequest withRedriveFilter(String redriveFilter) {
+        setRedriveFilter(redriveFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets a filter to list executions based on whether or not they have been redriven.
+     * </p>
+     * <p>
+     * For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     * whether or not they have been redriven.
+     * </p>
+     * <p>
+     * If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     * non-redriven executions.
+     * </p>
+     * <p>
+     * If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * </p>
+     * 
+     * @param redriveFilter
+     *        Sets a filter to list executions based on whether or not they have been redriven.</p>
+     *        <p>
+     *        For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     *        whether or not they have been redriven.
+     *        </p>
+     *        <p>
+     *        If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     *        non-redriven executions.
+     *        </p>
+     *        <p>
+     *        If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * @see ExecutionRedriveFilter
+     */
+
+    public void setRedriveFilter(ExecutionRedriveFilter redriveFilter) {
+        withRedriveFilter(redriveFilter);
+    }
+
+    /**
+     * <p>
+     * Sets a filter to list executions based on whether or not they have been redriven.
+     * </p>
+     * <p>
+     * For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     * whether or not they have been redriven.
+     * </p>
+     * <p>
+     * If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     * non-redriven executions.
+     * </p>
+     * <p>
+     * If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * </p>
+     * 
+     * @param redriveFilter
+     *        Sets a filter to list executions based on whether or not they have been redriven.</p>
+     *        <p>
+     *        For a Distributed Map, <code>redriveFilter</code> sets a filter to list child workflow executions based on
+     *        whether or not they have been redriven.
+     *        </p>
+     *        <p>
+     *        If you do not provide a <code>redriveFilter</code>, Step Functions returns a list of both redriven and
+     *        non-redriven executions.
+     *        </p>
+     *        <p>
+     *        If you provide a state machine ARN in <code>redriveFilter</code>, the API returns a validation exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionRedriveFilter
+     */
+
+    public ListExecutionsRequest withRedriveFilter(ExecutionRedriveFilter redriveFilter) {
+        this.redriveFilter = redriveFilter.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -318,7 +668,11 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMapRunArn() != null)
+            sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
+        if (getRedriveFilter() != null)
+            sb.append("RedriveFilter: ").append(getRedriveFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +703,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getMapRunArn() == null ^ this.getMapRunArn() == null)
+            return false;
+        if (other.getMapRunArn() != null && other.getMapRunArn().equals(this.getMapRunArn()) == false)
+            return false;
+        if (other.getRedriveFilter() == null ^ this.getRedriveFilter() == null)
+            return false;
+        if (other.getRedriveFilter() != null && other.getRedriveFilter().equals(this.getRedriveFilter()) == false)
+            return false;
         return true;
     }
 
@@ -361,6 +723,8 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
+        hashCode = prime * hashCode + ((getRedriveFilter() == null) ? 0 : getRedriveFilter().hashCode());
         return hashCode;
     }
 

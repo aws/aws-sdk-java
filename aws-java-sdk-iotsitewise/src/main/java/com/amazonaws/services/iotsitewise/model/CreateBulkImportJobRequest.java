@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,19 @@ public class CreateBulkImportJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private JobConfiguration jobConfiguration;
+    /**
+     * <p>
+     * If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     * transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     * </p>
+     */
+    private Boolean adaptiveIngestion;
+    /**
+     * <p>
+     * If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     * </p>
+     */
+    private Boolean deleteFilesAfterImport;
 
     /**
      * <p>
@@ -294,6 +307,118 @@ public class CreateBulkImportJobRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     * transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     * </p>
+     * 
+     * @param adaptiveIngestion
+     *        If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     *        transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     */
+
+    public void setAdaptiveIngestion(Boolean adaptiveIngestion) {
+        this.adaptiveIngestion = adaptiveIngestion;
+    }
+
+    /**
+     * <p>
+     * If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     * transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     * </p>
+     * 
+     * @return If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     *         transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     */
+
+    public Boolean getAdaptiveIngestion() {
+        return this.adaptiveIngestion;
+    }
+
+    /**
+     * <p>
+     * If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     * transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     * </p>
+     * 
+     * @param adaptiveIngestion
+     *        If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     *        transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBulkImportJobRequest withAdaptiveIngestion(Boolean adaptiveIngestion) {
+        setAdaptiveIngestion(adaptiveIngestion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     * transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     * </p>
+     * 
+     * @return If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and
+     *         transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.
+     */
+
+    public Boolean isAdaptiveIngestion() {
+        return this.adaptiveIngestion;
+    }
+
+    /**
+     * <p>
+     * If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     * </p>
+     * 
+     * @param deleteFilesAfterImport
+     *        If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     */
+
+    public void setDeleteFilesAfterImport(Boolean deleteFilesAfterImport) {
+        this.deleteFilesAfterImport = deleteFilesAfterImport;
+    }
+
+    /**
+     * <p>
+     * If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     * </p>
+     * 
+     * @return If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     */
+
+    public Boolean getDeleteFilesAfterImport() {
+        return this.deleteFilesAfterImport;
+    }
+
+    /**
+     * <p>
+     * If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     * </p>
+     * 
+     * @param deleteFilesAfterImport
+     *        If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBulkImportJobRequest withDeleteFilesAfterImport(Boolean deleteFilesAfterImport) {
+        setDeleteFilesAfterImport(deleteFilesAfterImport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     * </p>
+     * 
+     * @return If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.
+     */
+
+    public Boolean isDeleteFilesAfterImport() {
+        return this.deleteFilesAfterImport;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -314,7 +439,11 @@ public class CreateBulkImportJobRequest extends com.amazonaws.AmazonWebServiceRe
         if (getErrorReportLocation() != null)
             sb.append("ErrorReportLocation: ").append(getErrorReportLocation()).append(",");
         if (getJobConfiguration() != null)
-            sb.append("JobConfiguration: ").append(getJobConfiguration());
+            sb.append("JobConfiguration: ").append(getJobConfiguration()).append(",");
+        if (getAdaptiveIngestion() != null)
+            sb.append("AdaptiveIngestion: ").append(getAdaptiveIngestion()).append(",");
+        if (getDeleteFilesAfterImport() != null)
+            sb.append("DeleteFilesAfterImport: ").append(getDeleteFilesAfterImport());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +478,14 @@ public class CreateBulkImportJobRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getJobConfiguration() != null && other.getJobConfiguration().equals(this.getJobConfiguration()) == false)
             return false;
+        if (other.getAdaptiveIngestion() == null ^ this.getAdaptiveIngestion() == null)
+            return false;
+        if (other.getAdaptiveIngestion() != null && other.getAdaptiveIngestion().equals(this.getAdaptiveIngestion()) == false)
+            return false;
+        if (other.getDeleteFilesAfterImport() == null ^ this.getDeleteFilesAfterImport() == null)
+            return false;
+        if (other.getDeleteFilesAfterImport() != null && other.getDeleteFilesAfterImport().equals(this.getDeleteFilesAfterImport()) == false)
+            return false;
         return true;
     }
 
@@ -362,6 +499,8 @@ public class CreateBulkImportJobRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
         hashCode = prime * hashCode + ((getErrorReportLocation() == null) ? 0 : getErrorReportLocation().hashCode());
         hashCode = prime * hashCode + ((getJobConfiguration() == null) ? 0 : getJobConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAdaptiveIngestion() == null) ? 0 : getAdaptiveIngestion().hashCode());
+        hashCode = prime * hashCode + ((getDeleteFilesAfterImport() == null) ? 0 : getDeleteFilesAfterImport().hashCode());
         return hashCode;
     }
 

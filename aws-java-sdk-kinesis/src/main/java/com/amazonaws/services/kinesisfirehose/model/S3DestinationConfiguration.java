@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
@@ -40,7 +40,7 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      */
     private String bucketARN;
@@ -55,8 +55,8 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
     private String prefix;
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
@@ -94,15 +94,15 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -111,14 +111,14 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -127,15 +127,15 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,13 +148,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
      *        The ARN of the S3 bucket. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public void setBucketARN(String bucketARN) {
@@ -165,12 +165,12 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @return The ARN of the S3 bucket. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public String getBucketARN() {
@@ -181,13 +181,13 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
      *        The ARN of the S3 bucket. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,17 +256,17 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      */
 
     public void setErrorOutputPrefix(String errorOutputPrefix) {
@@ -275,16 +275,16 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
-     * @return A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *         prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *         see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *         S3 Objects</a>.
+     * @return A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     *         appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *         Objects</a>.
      */
 
     public String getErrorOutputPrefix() {
@@ -293,17 +293,17 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -296,6 +296,13 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String secretsManagerSecretId;
+    /**
+     * <p>
+     * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     */
+    private Boolean mapBooleanAsBoolean;
 
     /**
      * <p>
@@ -2197,6 +2204,70 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @param mapBooleanAsBoolean
+     *        When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     *        <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *        effect.
+     */
+
+    public void setMapBooleanAsBoolean(Boolean mapBooleanAsBoolean) {
+        this.mapBooleanAsBoolean = mapBooleanAsBoolean;
+    }
+
+    /**
+     * <p>
+     * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @return When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     *         <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *         effect.
+     */
+
+    public Boolean getMapBooleanAsBoolean() {
+        return this.mapBooleanAsBoolean;
+    }
+
+    /**
+     * <p>
+     * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @param mapBooleanAsBoolean
+     *        When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     *        <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *        effect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftSettings withMapBooleanAsBoolean(Boolean mapBooleanAsBoolean) {
+        setMapBooleanAsBoolean(mapBooleanAsBoolean);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     * <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @return When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as
+     *         <code>varchar(1)</code>. You must set this setting on both the source and target endpoints for it to take
+     *         effect.
+     */
+
+    public Boolean isMapBooleanAsBoolean() {
+        return this.mapBooleanAsBoolean;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2267,7 +2338,9 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
-            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
+        if (getMapBooleanAsBoolean() != null)
+            sb.append("MapBooleanAsBoolean: ").append(getMapBooleanAsBoolean());
         sb.append("}");
         return sb.toString();
     }
@@ -2402,6 +2475,10 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
             return false;
+        if (other.getMapBooleanAsBoolean() == null ^ this.getMapBooleanAsBoolean() == null)
+            return false;
+        if (other.getMapBooleanAsBoolean() != null && other.getMapBooleanAsBoolean().equals(this.getMapBooleanAsBoolean()) == false)
+            return false;
         return true;
     }
 
@@ -2440,6 +2517,7 @@ public class RedshiftSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getWriteBufferSize() == null) ? 0 : getWriteBufferSize().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
+        hashCode = prime * hashCode + ((getMapBooleanAsBoolean() == null) ? 0 : getMapBooleanAsBoolean().hashCode());
         return hashCode;
     }
 

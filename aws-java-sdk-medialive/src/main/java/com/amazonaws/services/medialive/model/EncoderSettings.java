@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,10 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     private TimecodeConfig timecodeConfig;
 
     private java.util.List<VideoDescription> videoDescriptions;
+    /** Thumbnail configuration settings. */
+    private ThumbnailConfiguration thumbnailConfiguration;
+    /** Color Correction Settings */
+    private ColorCorrectionSettings colorCorrectionSettings;
 
     /**
      * @return
@@ -541,6 +545,74 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Thumbnail configuration settings.
+     * 
+     * @param thumbnailConfiguration
+     *        Thumbnail configuration settings.
+     */
+
+    public void setThumbnailConfiguration(ThumbnailConfiguration thumbnailConfiguration) {
+        this.thumbnailConfiguration = thumbnailConfiguration;
+    }
+
+    /**
+     * Thumbnail configuration settings.
+     * 
+     * @return Thumbnail configuration settings.
+     */
+
+    public ThumbnailConfiguration getThumbnailConfiguration() {
+        return this.thumbnailConfiguration;
+    }
+
+    /**
+     * Thumbnail configuration settings.
+     * 
+     * @param thumbnailConfiguration
+     *        Thumbnail configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withThumbnailConfiguration(ThumbnailConfiguration thumbnailConfiguration) {
+        setThumbnailConfiguration(thumbnailConfiguration);
+        return this;
+    }
+
+    /**
+     * Color Correction Settings
+     * 
+     * @param colorCorrectionSettings
+     *        Color Correction Settings
+     */
+
+    public void setColorCorrectionSettings(ColorCorrectionSettings colorCorrectionSettings) {
+        this.colorCorrectionSettings = colorCorrectionSettings;
+    }
+
+    /**
+     * Color Correction Settings
+     * 
+     * @return Color Correction Settings
+     */
+
+    public ColorCorrectionSettings getColorCorrectionSettings() {
+        return this.colorCorrectionSettings;
+    }
+
+    /**
+     * Color Correction Settings
+     * 
+     * @param colorCorrectionSettings
+     *        Color Correction Settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withColorCorrectionSettings(ColorCorrectionSettings colorCorrectionSettings) {
+        setColorCorrectionSettings(colorCorrectionSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -575,7 +647,11 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         if (getTimecodeConfig() != null)
             sb.append("TimecodeConfig: ").append(getTimecodeConfig()).append(",");
         if (getVideoDescriptions() != null)
-            sb.append("VideoDescriptions: ").append(getVideoDescriptions());
+            sb.append("VideoDescriptions: ").append(getVideoDescriptions()).append(",");
+        if (getThumbnailConfiguration() != null)
+            sb.append("ThumbnailConfiguration: ").append(getThumbnailConfiguration()).append(",");
+        if (getColorCorrectionSettings() != null)
+            sb.append("ColorCorrectionSettings: ").append(getColorCorrectionSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -638,6 +714,14 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getVideoDescriptions() != null && other.getVideoDescriptions().equals(this.getVideoDescriptions()) == false)
             return false;
+        if (other.getThumbnailConfiguration() == null ^ this.getThumbnailConfiguration() == null)
+            return false;
+        if (other.getThumbnailConfiguration() != null && other.getThumbnailConfiguration().equals(this.getThumbnailConfiguration()) == false)
+            return false;
+        if (other.getColorCorrectionSettings() == null ^ this.getColorCorrectionSettings() == null)
+            return false;
+        if (other.getColorCorrectionSettings() != null && other.getColorCorrectionSettings().equals(this.getColorCorrectionSettings()) == false)
+            return false;
         return true;
     }
 
@@ -658,6 +742,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());
         hashCode = prime * hashCode + ((getVideoDescriptions() == null) ? 0 : getVideoDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getThumbnailConfiguration() == null) ? 0 : getThumbnailConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getColorCorrectionSettings() == null) ? 0 : getColorCorrectionSettings().hashCode());
         return hashCode;
     }
 

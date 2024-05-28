@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,17 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public AssociateSourceNetworkStackResult associateSourceNetworkStack(AssociateSourceNetworkStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateExtendedSourceServerResult createExtendedSourceServer(CreateExtendedSourceServerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLaunchConfigurationTemplateResult createLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,7 +48,22 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public CreateSourceNetworkResult createSourceNetwork(CreateSourceNetworkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteJobResult deleteJob(DeleteJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLaunchActionResult deleteLaunchAction(DeleteLaunchActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLaunchConfigurationTemplateResult deleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +74,11 @@ public class AbstractAWSdrs implements AWSdrs {
 
     @Override
     public DeleteReplicationConfigurationTemplateResult deleteReplicationConfigurationTemplate(DeleteReplicationConfigurationTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSourceNetworkResult deleteSourceNetwork(DeleteSourceNetworkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +98,11 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public DescribeLaunchConfigurationTemplatesResult describeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRecoveryInstancesResult describeRecoveryInstances(DescribeRecoveryInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,6 +118,11 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public DescribeSourceNetworksResult describeSourceNetworks(DescribeSourceNetworksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSourceServersResult describeSourceServers(DescribeSourceServersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +134,11 @@ public class AbstractAWSdrs implements AWSdrs {
 
     @Override
     public DisconnectSourceServerResult disconnectSourceServer(DisconnectSourceServerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExportSourceNetworkCfnTemplateResult exportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,6 +168,11 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public ListLaunchActionsResult listLaunchActions(ListLaunchActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListStagingAccountsResult listStagingAccounts(ListStagingAccountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,7 +183,18 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public PutLaunchActionResult putLaunchAction(PutLaunchActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public RetryDataReplicationResult retryDataReplication(RetryDataReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReverseReplicationResult reverseReplication(ReverseReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,7 +209,32 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public StartReplicationResult startReplication(StartReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSourceNetworkRecoveryResult startSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSourceNetworkReplicationResult startSourceNetworkReplication(StartSourceNetworkReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopFailbackResult stopFailback(StopFailbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopReplicationResult stopReplication(StopReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopSourceNetworkReplicationResult stopSourceNetworkReplication(StopSourceNetworkReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +260,11 @@ public class AbstractAWSdrs implements AWSdrs {
 
     @Override
     public UpdateLaunchConfigurationResult updateLaunchConfiguration(UpdateLaunchConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLaunchConfigurationTemplateResult updateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

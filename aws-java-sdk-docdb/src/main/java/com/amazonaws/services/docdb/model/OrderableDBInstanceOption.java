@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Boolean vpc;
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster
+     * </p>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -346,6 +352,46 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The storage type to associate with the DB cluster
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type to associate with the DB cluster
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster
+     * </p>
+     * 
+     * @return The storage type to associate with the DB cluster
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type to associate with the DB cluster
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -368,7 +414,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getAvailabilityZones() != null)
             sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getVpc() != null)
-            sb.append("Vpc: ").append(getVpc());
+            sb.append("Vpc: ").append(getVpc()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -407,6 +455,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -421,6 +473,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

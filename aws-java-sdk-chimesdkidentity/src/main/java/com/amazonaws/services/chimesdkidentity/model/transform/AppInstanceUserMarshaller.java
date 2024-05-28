@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class AppInstanceUserMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> EXPIRATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationSettings").build();
 
     private static final AppInstanceUserMarshaller instance = new AppInstanceUserMarshaller();
 
@@ -59,6 +61,7 @@ public class AppInstanceUserMarshaller {
             protocolMarshaller.marshall(appInstanceUser.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(appInstanceUser.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(appInstanceUser.getLastUpdatedTimestamp(), LASTUPDATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(appInstanceUser.getExpirationSettings(), EXPIRATIONSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

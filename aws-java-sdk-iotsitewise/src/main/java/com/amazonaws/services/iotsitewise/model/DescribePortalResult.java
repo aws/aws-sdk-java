@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,8 +53,9 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     private String portalDescription;
     /**
      * <p>
-     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
-     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT
+     * SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate
+     * users.
      * </p>
      */
     private String portalClientId;
@@ -307,13 +308,15 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
-     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT
+     * SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate
+     * users.
      * </p>
      * 
      * @param portalClientId
-     *        The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
-     *        includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+     *        The IAM Identity Center application generated client ID (used with IAM Identity Center API operations).
+     *        IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to
+     *        authenticate users.
      */
 
     public void setPortalClientId(String portalClientId) {
@@ -322,12 +325,13 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
-     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT
+     * SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate
+     * users.
      * </p>
      * 
-     * @return The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT
-     *         SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * @return The IAM Identity Center application generated client ID (used with IAM Identity Center API operations).
+     *         IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to
      *         authenticate users.
      */
 
@@ -337,13 +341,15 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
-     * includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+     * The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT
+     * SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate
+     * users.
      * </p>
      * 
      * @param portalClientId
-     *        The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise
-     *        includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.
+     *        The IAM Identity Center application generated client ID (used with IAM Identity Center API operations).
+     *        IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to
+     *        authenticate users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

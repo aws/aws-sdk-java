@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,33 +48,33 @@ public class ComponentConditionPropertyJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("else", targetDepth)) {
+                if (context.testExpression("property", targetDepth)) {
                     context.nextToken();
-                    componentConditionProperty.setElse(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                    componentConditionProperty.setProperty(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("field", targetDepth)) {
                     context.nextToken();
                     componentConditionProperty.setField(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("operand", targetDepth)) {
-                    context.nextToken();
-                    componentConditionProperty.setOperand(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("operandType", targetDepth)) {
-                    context.nextToken();
-                    componentConditionProperty.setOperandType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("operator", targetDepth)) {
                     context.nextToken();
                     componentConditionProperty.setOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("property", targetDepth)) {
+                if (context.testExpression("operand", targetDepth)) {
                     context.nextToken();
-                    componentConditionProperty.setProperty(context.getUnmarshaller(String.class).unmarshall(context));
+                    componentConditionProperty.setOperand(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("then", targetDepth)) {
                     context.nextToken();
                     componentConditionProperty.setThen(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("else", targetDepth)) {
+                    context.nextToken();
+                    componentConditionProperty.setElse(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("operandType", targetDepth)) {
+                    context.nextToken();
+                    componentConditionProperty.setOperandType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

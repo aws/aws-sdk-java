@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,18 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EbsVolumeScanDetails ebsVolumeScanDetails;
+    /**
+     * <p>
+     * Information about the process and any required context values for a specific finding
+     * </p>
+     */
+    private RuntimeDetails runtimeDetails;
+    /**
+     * <p>
+     * Contains information about the detected unusual behavior.
+     * </p>
+     */
+    private Detection detection;
 
     /**
      * <p>
@@ -640,6 +652,86 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the process and any required context values for a specific finding
+     * </p>
+     * 
+     * @param runtimeDetails
+     *        Information about the process and any required context values for a specific finding
+     */
+
+    public void setRuntimeDetails(RuntimeDetails runtimeDetails) {
+        this.runtimeDetails = runtimeDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the process and any required context values for a specific finding
+     * </p>
+     * 
+     * @return Information about the process and any required context values for a specific finding
+     */
+
+    public RuntimeDetails getRuntimeDetails() {
+        return this.runtimeDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the process and any required context values for a specific finding
+     * </p>
+     * 
+     * @param runtimeDetails
+     *        Information about the process and any required context values for a specific finding
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withRuntimeDetails(RuntimeDetails runtimeDetails) {
+        setRuntimeDetails(runtimeDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the detected unusual behavior.
+     * </p>
+     * 
+     * @param detection
+     *        Contains information about the detected unusual behavior.
+     */
+
+    public void setDetection(Detection detection) {
+        this.detection = detection;
+    }
+
+    /**
+     * <p>
+     * Contains information about the detected unusual behavior.
+     * </p>
+     * 
+     * @return Contains information about the detected unusual behavior.
+     */
+
+    public Detection getDetection() {
+        return this.detection;
+    }
+
+    /**
+     * <p>
+     * Contains information about the detected unusual behavior.
+     * </p>
+     * 
+     * @param detection
+     *        Contains information about the detected unusual behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withDetection(Detection detection) {
+        setDetection(detection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -676,7 +768,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getFeatureName() != null)
             sb.append("FeatureName: ").append(getFeatureName()).append(",");
         if (getEbsVolumeScanDetails() != null)
-            sb.append("EbsVolumeScanDetails: ").append(getEbsVolumeScanDetails());
+            sb.append("EbsVolumeScanDetails: ").append(getEbsVolumeScanDetails()).append(",");
+        if (getRuntimeDetails() != null)
+            sb.append("RuntimeDetails: ").append(getRuntimeDetails()).append(",");
+        if (getDetection() != null)
+            sb.append("Detection: ").append(getDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -743,6 +839,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEbsVolumeScanDetails() != null && other.getEbsVolumeScanDetails().equals(this.getEbsVolumeScanDetails()) == false)
             return false;
+        if (other.getRuntimeDetails() == null ^ this.getRuntimeDetails() == null)
+            return false;
+        if (other.getRuntimeDetails() != null && other.getRuntimeDetails().equals(this.getRuntimeDetails()) == false)
+            return false;
+        if (other.getDetection() == null ^ this.getDetection() == null)
+            return false;
+        if (other.getDetection() != null && other.getDetection().equals(this.getDetection()) == false)
+            return false;
         return true;
     }
 
@@ -764,6 +868,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getFeatureName() == null) ? 0 : getFeatureName().hashCode());
         hashCode = prime * hashCode + ((getEbsVolumeScanDetails() == null) ? 0 : getEbsVolumeScanDetails().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeDetails() == null) ? 0 : getRuntimeDetails().hashCode());
+        hashCode = prime * hashCode + ((getDetection() == null) ? 0 : getDetection().hashCode());
         return hashCode;
     }
 

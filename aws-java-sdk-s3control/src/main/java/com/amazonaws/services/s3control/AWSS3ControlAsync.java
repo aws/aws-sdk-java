@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,345 @@ import com.amazonaws.services.s3control.model.*;
 public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
+     * <p>
+     * Associate your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance. Use this
+     * action if you want to create access grants for users or groups from your corporate identity directory. First, you
+     * must add your corporate identity directory to Amazon Web Services IAM Identity Center. Then, you can associate
+     * this IAM Identity Center instance with your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:AssociateAccessGrantsIdentityCenter</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must also have the following permissions: <code>sso:CreateApplication</code>,
+     * <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param associateAccessGrantsIdentityCenterRequest
+     * @return A Java Future containing the result of the AssociateAccessGrantsIdentityCenter operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.AssociateAccessGrantsIdentityCenter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateAccessGrantsIdentityCenterResult> associateAccessGrantsIdentityCenterAsync(
+            AssociateAccessGrantsIdentityCenterRequest associateAccessGrantsIdentityCenterRequest);
+
+    /**
+     * <p>
+     * Associate your S3 Access Grants instance with an Amazon Web Services IAM Identity Center instance. Use this
+     * action if you want to create access grants for users or groups from your corporate identity directory. First, you
+     * must add your corporate identity directory to Amazon Web Services IAM Identity Center. Then, you can associate
+     * this IAM Identity Center instance with your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:AssociateAccessGrantsIdentityCenter</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must also have the following permissions: <code>sso:CreateApplication</code>,
+     * <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param associateAccessGrantsIdentityCenterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateAccessGrantsIdentityCenter operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.AssociateAccessGrantsIdentityCenter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateAccessGrantsIdentityCenterResult> associateAccessGrantsIdentityCenterAsync(
+            AssociateAccessGrantsIdentityCenterRequest associateAccessGrantsIdentityCenterRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateAccessGrantsIdentityCenterRequest, AssociateAccessGrantsIdentityCenterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an access grant that gives a grantee access to your S3 data. The grantee can be an IAM user or role or a
+     * directory user, or group. Before you can create a grant, you must have an S3 Access Grants instance in the same
+     * Region as the S3 data. You can create an S3 Access Grants instance using the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsInstance.html"
+     * >CreateAccessGrantsInstance</a>. You must also have registered at least one S3 data location in your S3 Access
+     * Grants instance using <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsLocation.html"
+     * >CreateAccessGrantsLocation</a>.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:CreateAccessGrant</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * For any directory identity - <code>sso:DescribeInstance</code> and <code>sso:DescribeApplication</code>
+     * </p>
+     * <p>
+     * For directory users - <code>identitystore:DescribeUser</code>
+     * </p>
+     * <p>
+     * For directory groups - <code>identitystore:DescribeGroup</code>
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param createAccessGrantRequest
+     * @return A Java Future containing the result of the CreateAccessGrant operation returned by the service.
+     * @sample AWSS3ControlAsync.CreateAccessGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessGrantResult> createAccessGrantAsync(CreateAccessGrantRequest createAccessGrantRequest);
+
+    /**
+     * <p>
+     * Creates an access grant that gives a grantee access to your S3 data. The grantee can be an IAM user or role or a
+     * directory user, or group. Before you can create a grant, you must have an S3 Access Grants instance in the same
+     * Region as the S3 data. You can create an S3 Access Grants instance using the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsInstance.html"
+     * >CreateAccessGrantsInstance</a>. You must also have registered at least one S3 data location in your S3 Access
+     * Grants instance using <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessGrantsLocation.html"
+     * >CreateAccessGrantsLocation</a>.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:CreateAccessGrant</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * For any directory identity - <code>sso:DescribeInstance</code> and <code>sso:DescribeApplication</code>
+     * </p>
+     * <p>
+     * For directory users - <code>identitystore:DescribeUser</code>
+     * </p>
+     * <p>
+     * For directory groups - <code>identitystore:DescribeGroup</code>
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param createAccessGrantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessGrant operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.CreateAccessGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessGrantResult> createAccessGrantAsync(CreateAccessGrantRequest createAccessGrantRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessGrantRequest, CreateAccessGrantResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an S3 Access Grants instance, which serves as a logical grouping for access grants. You can create one S3
+     * Access Grants instance per Region per account.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:CreateAccessGrantsInstance</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * To associate an IAM Identity Center instance with your S3 Access Grants instance, you must also have the
+     * <code>sso:DescribeInstance</code>, <code>sso:CreateApplication</code>, <code>sso:PutApplicationGrant</code>, and
+     * <code>sso:PutApplicationAuthenticationMethod</code> permissions.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param createAccessGrantsInstanceRequest
+     * @return A Java Future containing the result of the CreateAccessGrantsInstance operation returned by the service.
+     * @sample AWSS3ControlAsync.CreateAccessGrantsInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessGrantsInstanceResult> createAccessGrantsInstanceAsync(
+            CreateAccessGrantsInstanceRequest createAccessGrantsInstanceRequest);
+
+    /**
+     * <p>
+     * Creates an S3 Access Grants instance, which serves as a logical grouping for access grants. You can create one S3
+     * Access Grants instance per Region per account.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:CreateAccessGrantsInstance</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * To associate an IAM Identity Center instance with your S3 Access Grants instance, you must also have the
+     * <code>sso:DescribeInstance</code>, <code>sso:CreateApplication</code>, <code>sso:PutApplicationGrant</code>, and
+     * <code>sso:PutApplicationAuthenticationMethod</code> permissions.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param createAccessGrantsInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessGrantsInstance operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.CreateAccessGrantsInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessGrantsInstanceResult> createAccessGrantsInstanceAsync(
+            CreateAccessGrantsInstanceRequest createAccessGrantsInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessGrantsInstanceRequest, CreateAccessGrantsInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * The S3 data location that you would like to register in your S3 Access Grants instance. Your S3 data must be in
+     * the same Region as your S3 Access Grants instance. The location can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The default S3 location <code>s3://</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A bucket - <code>S3://&lt;bucket-name&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A bucket and prefix - <code>S3://&lt;bucket-name&gt;/&lt;prefix&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you register a location, you must include the IAM role that has permission to manage the S3 location that
+     * you are registering. Give S3 Access Grants permission to assume this role <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html">using a policy</a>. S3
+     * Access Grants assumes this role to manage access to the location and to vend temporary credentials to grantees or
+     * client applications.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:CreateAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must also have the following permission for the specified IAM role: <code>iam:PassRole</code>
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param createAccessGrantsLocationRequest
+     * @return A Java Future containing the result of the CreateAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsync.CreateAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessGrantsLocationResult> createAccessGrantsLocationAsync(
+            CreateAccessGrantsLocationRequest createAccessGrantsLocationRequest);
+
+    /**
+     * <p>
+     * The S3 data location that you would like to register in your S3 Access Grants instance. Your S3 data must be in
+     * the same Region as your S3 Access Grants instance. The location can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The default S3 location <code>s3://</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A bucket - <code>S3://&lt;bucket-name&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A bucket and prefix - <code>S3://&lt;bucket-name&gt;/&lt;prefix&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you register a location, you must include the IAM role that has permission to manage the S3 location that
+     * you are registering. Give S3 Access Grants permission to assume this role <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-location.html">using a policy</a>. S3
+     * Access Grants assumes this role to manage access to the location and to vend temporary credentials to grantees or
+     * client applications.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:CreateAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must also have the following permission for the specified IAM role: <code>iam:PassRole</code>
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param createAccessGrantsLocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.CreateAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessGrantsLocationResult> createAccessGrantsLocationAsync(
+            CreateAccessGrantsLocationRequest createAccessGrantsLocationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessGrantsLocationRequest, CreateAccessGrantsLocationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
@@ -90,6 +429,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(CreateAccessPointRequest createAccessPointRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
@@ -152,6 +496,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<CreateAccessPointRequest, CreateAccessPointResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates an Object Lambda Access Point. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
@@ -192,6 +541,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             CreateAccessPointForObjectLambdaRequest createAccessPointForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates an Object Lambda Access Point. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
@@ -415,14 +769,24 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * This operation creates an S3 Batch Operations job.
+     * </p>
+     * <p>
      * You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can
      * run a single action on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
      * <p>
-     * This action creates a S3 Batch Operations job.
+     * For information about permissions required to use the Batch Operations, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting
+     * permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
+     * </dd>
+     * </dl>
      * <p/>
      * <p>
      * Related actions include:
@@ -466,14 +830,24 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * This operation creates an S3 Batch Operations job.
+     * </p>
+     * <p>
      * You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can
      * run a single action on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
      * <p>
-     * This action creates a S3 Batch Operations job.
+     * For information about permissions required to use the Batch Operations, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-iam-role-policies.html">Granting
+     * permissions for S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
+     * </dd>
+     * </dl>
      * <p/>
      * <p>
      * Related actions include:
@@ -521,6 +895,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates a Multi-Region Access Point and associates it with the specified buckets. For more information about
      * creating Multi-Region Access Points, see <a
@@ -529,9 +908,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * This request is asynchronous, meaning that you might receive a response before the command has completed. When
@@ -580,6 +959,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             CreateMultiRegionAccessPointRequest createMultiRegionAccessPointRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates a Multi-Region Access Point and associates it with the specified buckets. For more information about
      * creating Multi-Region Access Points, see <a
@@ -588,9 +972,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * This request is asynchronous, meaning that you might receive a response before the command has completed. When
@@ -645,6 +1029,310 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Creates a new S3 Storage Lens group and associates it with the specified Amazon Web Services account ID. An S3
+     * Storage Lens group is a custom grouping of objects based on prefix, suffix, object tags, object size, object age,
+     * or a combination of these filters. For each Storage Lens group that you’ve created, you can also optionally add
+     * Amazon Web Services resource tags. For more information about S3 Storage Lens groups, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working with S3
+     * Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:CreateStorageLensGroup</code> action.
+     * If you’re trying to create a Storage Lens group with Amazon Web Services resource tags, you must also have
+     * permission to perform the <code>s3:TagResource</code> action. For more information about the required Storage
+     * Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param createStorageLensGroupRequest
+     * @return A Java Future containing the result of the CreateStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsync.CreateStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStorageLensGroupResult> createStorageLensGroupAsync(CreateStorageLensGroupRequest createStorageLensGroupRequest);
+
+    /**
+     * <p>
+     * Creates a new S3 Storage Lens group and associates it with the specified Amazon Web Services account ID. An S3
+     * Storage Lens group is a custom grouping of objects based on prefix, suffix, object tags, object size, object age,
+     * or a combination of these filters. For each Storage Lens group that you’ve created, you can also optionally add
+     * Amazon Web Services resource tags. For more information about S3 Storage Lens groups, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups-overview.html">Working with S3
+     * Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:CreateStorageLensGroup</code> action.
+     * If you’re trying to create a Storage Lens group with Amazon Web Services resource tags, you must also have
+     * permission to perform the <code>s3:TagResource</code> action. For more information about the required Storage
+     * Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param createStorageLensGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.CreateStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStorageLensGroupResult> createStorageLensGroupAsync(CreateStorageLensGroupRequest createStorageLensGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStorageLensGroupRequest, CreateStorageLensGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the access grant from the S3 Access Grants instance. You cannot undo an access grant deletion and the
+     * grantee will no longer have access to the S3 data.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrant</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantRequest
+     * @return A Java Future containing the result of the DeleteAccessGrant operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteAccessGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantResult> deleteAccessGrantAsync(DeleteAccessGrantRequest deleteAccessGrantRequest);
+
+    /**
+     * <p>
+     * Deletes the access grant from the S3 Access Grants instance. You cannot undo an access grant deletion and the
+     * grantee will no longer have access to the S3 data.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrant</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessGrant operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantResult> deleteAccessGrantAsync(DeleteAccessGrantRequest deleteAccessGrantRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessGrantRequest, DeleteAccessGrantResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes your S3 Access Grants instance. You must first delete the access grants and locations before S3 Access
+     * Grants can delete the instance. See <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">DeleteAccessGrant</a>
+     * and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsLocation.html">
+     * DeleteAccessGrantsLocation</a>. If you have associated an IAM Identity Center instance with your S3 Access Grants
+     * instance, you must first dissassociate the Identity Center instance from the S3 Access Grants instance before you
+     * can delete the S3 Access Grants instance. See <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_AssociateAccessGrantsIdentityCenter.html"
+     * >AssociateAccessGrantsIdentityCenter</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DissociateAccessGrantsIdentityCenter.html"
+     * >DissociateAccessGrantsIdentityCenter</a>.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrantsInstance</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantsInstanceRequest
+     * @return A Java Future containing the result of the DeleteAccessGrantsInstance operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteAccessGrantsInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantsInstanceResult> deleteAccessGrantsInstanceAsync(
+            DeleteAccessGrantsInstanceRequest deleteAccessGrantsInstanceRequest);
+
+    /**
+     * <p>
+     * Deletes your S3 Access Grants instance. You must first delete the access grants and locations before S3 Access
+     * Grants can delete the instance. See <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">DeleteAccessGrant</a>
+     * and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrantsLocation.html">
+     * DeleteAccessGrantsLocation</a>. If you have associated an IAM Identity Center instance with your S3 Access Grants
+     * instance, you must first dissassociate the Identity Center instance from the S3 Access Grants instance before you
+     * can delete the S3 Access Grants instance. See <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_AssociateAccessGrantsIdentityCenter.html"
+     * >AssociateAccessGrantsIdentityCenter</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DissociateAccessGrantsIdentityCenter.html"
+     * >DissociateAccessGrantsIdentityCenter</a>.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrantsInstance</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantsInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessGrantsInstance operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessGrantsInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantsInstanceResult> deleteAccessGrantsInstanceAsync(
+            DeleteAccessGrantsInstanceRequest deleteAccessGrantsInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessGrantsInstanceRequest, DeleteAccessGrantsInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the resource policy of the S3 Access Grants instance. The resource policy is used to manage cross-account
+     * access to your S3 Access Grants instance. By deleting the resource policy, you delete any cross-account
+     * permissions to your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrantsInstanceResourcePolicy</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantsInstanceResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteAccessGrantsInstanceResourcePolicy operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsync.DeleteAccessGrantsInstanceResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantsInstanceResourcePolicyResult> deleteAccessGrantsInstanceResourcePolicyAsync(
+            DeleteAccessGrantsInstanceResourcePolicyRequest deleteAccessGrantsInstanceResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the resource policy of the S3 Access Grants instance. The resource policy is used to manage cross-account
+     * access to your S3 Access Grants instance. By deleting the resource policy, you delete any cross-account
+     * permissions to your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrantsInstanceResourcePolicy</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantsInstanceResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessGrantsInstanceResourcePolicy operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessGrantsInstanceResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantsInstanceResourcePolicyResult> deleteAccessGrantsInstanceResourcePolicyAsync(
+            DeleteAccessGrantsInstanceResourcePolicyRequest deleteAccessGrantsInstanceResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessGrantsInstanceResourcePolicyRequest, DeleteAccessGrantsInstanceResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deregisters a location from your S3 Access Grants instance. You can only delete a location registration from an
+     * S3 Access Grants instance if there are no grants associated with this location. See <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">Delete a grant</a> for
+     * information on how to delete grants. You need to have at least one registered location in your S3 Access Grants
+     * instance in order to create access grants.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantsLocationRequest
+     * @return A Java Future containing the result of the DeleteAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantsLocationResult> deleteAccessGrantsLocationAsync(
+            DeleteAccessGrantsLocationRequest deleteAccessGrantsLocationRequest);
+
+    /**
+     * <p>
+     * Deregisters a location from your S3 Access Grants instance. You can only delete a location registration from an
+     * S3 Access Grants instance if there are no grants associated with this location. See <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessGrant.html">Delete a grant</a> for
+     * information on how to delete grants. You need to have at least one registered location in your S3 Access Grants
+     * instance in order to create access grants.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DeleteAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param deleteAccessGrantsLocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessGrantsLocationResult> deleteAccessGrantsLocationAsync(
+            DeleteAccessGrantsLocationRequest deleteAccessGrantsLocationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessGrantsLocationRequest, DeleteAccessGrantsLocationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
      * Deletes the specified access point.
      * </p>
      * <p>
@@ -687,6 +1375,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(DeleteAccessPointRequest deleteAccessPointRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the specified access point.
      * </p>
@@ -735,6 +1428,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteAccessPointRequest, DeleteAccessPointResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the specified Object Lambda Access Point.
      * </p>
@@ -773,6 +1471,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             DeleteAccessPointForObjectLambdaRequest deleteAccessPointForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the specified Object Lambda Access Point.
      * </p>
@@ -816,6 +1519,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteAccessPointForObjectLambdaRequest, DeleteAccessPointForObjectLambdaResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the access point policy for the specified access point.
      * </p>
@@ -856,6 +1564,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest deleteAccessPointPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the access point policy for the specified access point.
      * </p>
@@ -901,6 +1614,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyRequest, DeleteAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Removes the resource policy for an Object Lambda Access Point.
      * </p>
@@ -933,6 +1651,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             DeleteAccessPointPolicyForObjectLambdaRequest deleteAccessPointPolicyForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Removes the resource policy for an Object Lambda Access Point.
      * </p>
@@ -1096,7 +1819,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+     * To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
      * action. By default, the bucket owner has this permission and the Outposts bucket owner can grant this permission
      * to others.
      * </p>
@@ -1160,7 +1883,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
+     * To use this operation, you must have permission to perform the <code>s3-outposts:PutLifecycleConfiguration</code>
      * action. By default, the bucket owner has this permission and the Outposts bucket owner can grant this permission
      * to others.
      * </p>
@@ -1349,6 +2072,151 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
+     * This operation deletes an Amazon S3 on Outposts bucket's replication configuration. To delete an S3 bucket's
+     * replication configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html"
+     * >DeleteBucketReplication</a> in the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes the replication configuration from the specified S3 on Outposts bucket.
+     * </p>
+     * <p>
+     * To use this operation, you must have permissions to perform the
+     * <code>s3-outposts:PutReplicationConfiguration</code> action. The Outposts bucket owner has this permission by
+     * default and can grant it to others. For more information about permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting up IAM with S3 on
+     * Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing access to S3 on
+     * Outposts buckets</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * It can take a while to propagate <code>PUT</code> or <code>DELETE</code> requests for a replication configuration
+     * to all S3 on Outposts systems. Therefore, the replication configuration that's returned by a <code>GET</code>
+     * request soon after a <code>PUT</code> or <code>DELETE</code> request might return a more recent result than
+     * what's on the Outpost. If an Outpost is offline, the delay in updating the replication configuration on that
+     * Outpost can be significant.
+     * </p>
+     * </note>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint
+     * hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
+     * Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+     * using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketReplication.html#API_control_DeleteBucketReplication_Examples"
+     * >Examples</a> section.
+     * </p>
+     * <p>
+     * For information about S3 replication on Outposts configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating objects for
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>DeleteBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html">
+     * PutBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">
+     * GetBucketReplication</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteBucketReplicationRequest
+     * @return A Java Future containing the result of the DeleteBucketReplication operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteBucketReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBucketReplicationResult> deleteBucketReplicationAsync(DeleteBucketReplicationRequest deleteBucketReplicationRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This operation deletes an Amazon S3 on Outposts bucket's replication configuration. To delete an S3 bucket's
+     * replication configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html"
+     * >DeleteBucketReplication</a> in the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes the replication configuration from the specified S3 on Outposts bucket.
+     * </p>
+     * <p>
+     * To use this operation, you must have permissions to perform the
+     * <code>s3-outposts:PutReplicationConfiguration</code> action. The Outposts bucket owner has this permission by
+     * default and can grant it to others. For more information about permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting up IAM with S3 on
+     * Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing access to S3 on
+     * Outposts buckets</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * It can take a while to propagate <code>PUT</code> or <code>DELETE</code> requests for a replication configuration
+     * to all S3 on Outposts systems. Therefore, the replication configuration that's returned by a <code>GET</code>
+     * request soon after a <code>PUT</code> or <code>DELETE</code> request might return a more recent result than
+     * what's on the Outpost. If an Outpost is offline, the delay in updating the replication configuration on that
+     * Outpost can be significant.
+     * </p>
+     * </note>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint
+     * hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
+     * Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+     * using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketReplication.html#API_control_DeleteBucketReplication_Examples"
+     * >Examples</a> section.
+     * </p>
+     * <p>
+     * For information about S3 replication on Outposts configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating objects for
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>DeleteBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html">
+     * PutBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">
+     * GetBucketReplication</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteBucketReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBucketReplication operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteBucketReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBucketReplicationResult> deleteBucketReplicationAsync(DeleteBucketReplicationRequest deleteBucketReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBucketReplicationRequest, DeleteBucketReplicationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
      * This action deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in
      * the <i>Amazon S3 API Reference</i>.
@@ -1453,12 +2321,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Removes the entire tag set from the specified S3 Batch Operations job. To use this operation, you must have
-     * permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a
+     * Removes the entire tag set from the specified S3 Batch Operations job.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>DeleteJobTagging</code> operation, you must have permission to perform the
+     * <code>s3:DeleteJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
      * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -1490,12 +2365,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Removes the entire tag set from the specified S3 Batch Operations job. To use this operation, you must have
-     * permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a
+     * Removes the entire tag set from the specified S3 Batch Operations job.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>DeleteJobTagging</code> operation, you must have permission to perform the
+     * <code>s3:DeleteJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
      * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -1531,15 +2413,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteJobTaggingRequest, DeleteJobTaggingResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes a Multi-Region Access Point. This action does not delete the buckets associated with the Multi-Region
      * Access Point, only the Multi-Region Access Point itself.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * This request is asynchronous, meaning that you might receive a response before the command has completed. When
@@ -1588,15 +2475,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             DeleteMultiRegionAccessPointRequest deleteMultiRegionAccessPointRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes a Multi-Region Access Point. This action does not delete the buckets associated with the Multi-Region
      * Access Point, only the Multi-Region Access Point itself.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * This request is asynchronous, meaning that you might receive a response before the command has completed. When
@@ -1650,6 +2542,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteMultiRegionAccessPointRequest, DeleteMultiRegionAccessPointResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
      * information, see <a
@@ -1683,6 +2580,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<DeletePublicAccessBlockResult> deletePublicAccessBlockAsync(DeletePublicAccessBlockRequest deletePublicAccessBlockRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
      * information, see <a
@@ -1721,6 +2623,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeletePublicAccessBlockRequest, DeletePublicAccessBlockResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -1746,6 +2653,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             DeleteStorageLensConfigurationRequest deleteStorageLensConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -1776,6 +2688,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteStorageLensConfigurationRequest, DeleteStorageLensConfigurationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -1801,6 +2718,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             DeleteStorageLensConfigurationTaggingRequest deleteStorageLensConfigurationTaggingRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -1832,11 +2754,72 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Deletes an existing S3 Storage Lens group.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:DeleteStorageLensGroup</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param deleteStorageLensGroupRequest
+     * @return A Java Future containing the result of the DeleteStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStorageLensGroupResult> deleteStorageLensGroupAsync(DeleteStorageLensGroupRequest deleteStorageLensGroupRequest);
+
+    /**
+     * <p>
+     * Deletes an existing S3 Storage Lens group.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:DeleteStorageLensGroup</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param deleteStorageLensGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStorageLensGroupResult> deleteStorageLensGroupAsync(DeleteStorageLensGroupRequest deleteStorageLensGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStorageLensGroupRequest, DeleteStorageLensGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>DescribeJob</code> operation, you must have permission to perform the
+     * <code>s3:DescribeJob</code> action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -1878,7 +2861,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>DescribeJob</code> operation, you must have permission to perform the
+     * <code>s3:DescribeJob</code> action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -1920,11 +2911,16 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Retrieves the status of an asynchronous request to manage a Multi-Region Access Point. For more information about
      * managing Multi-Region Access Points and how asynchronous requests work, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MrapOperations.html">Using Multi-Region Access
+     * Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPoint</code>:
@@ -1968,11 +2964,16 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             DescribeMultiRegionAccessPointOperationRequest describeMultiRegionAccessPointOperationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Retrieves the status of an asynchronous request to manage a Multi-Region Access Point. For more information about
      * managing Multi-Region Access Points and how asynchronous requests work, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MrapOperations.html">Using Multi-Region Access
+     * Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPoint</code>:
@@ -2022,6 +3023,333 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Dissociates the Amazon Web Services IAM Identity Center instance from the S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DissociateAccessGrantsIdentityCenter</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>sso:DeleteApplication</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param dissociateAccessGrantsIdentityCenterRequest
+     * @return A Java Future containing the result of the DissociateAccessGrantsIdentityCenter operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.DissociateAccessGrantsIdentityCenter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DissociateAccessGrantsIdentityCenterResult> dissociateAccessGrantsIdentityCenterAsync(
+            DissociateAccessGrantsIdentityCenterRequest dissociateAccessGrantsIdentityCenterRequest);
+
+    /**
+     * <p>
+     * Dissociates the Amazon Web Services IAM Identity Center instance from the S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:DissociateAccessGrantsIdentityCenter</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>sso:DeleteApplication</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param dissociateAccessGrantsIdentityCenterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DissociateAccessGrantsIdentityCenter operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.DissociateAccessGrantsIdentityCenter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DissociateAccessGrantsIdentityCenterResult> dissociateAccessGrantsIdentityCenterAsync(
+            DissociateAccessGrantsIdentityCenterRequest dissociateAccessGrantsIdentityCenterRequest,
+            com.amazonaws.handlers.AsyncHandler<DissociateAccessGrantsIdentityCenterRequest, DissociateAccessGrantsIdentityCenterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the details of an access grant from your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrant</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantRequest
+     * @return A Java Future containing the result of the GetAccessGrant operation returned by the service.
+     * @sample AWSS3ControlAsync.GetAccessGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantResult> getAccessGrantAsync(GetAccessGrantRequest getAccessGrantRequest);
+
+    /**
+     * <p>
+     * Get the details of an access grant from your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrant</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessGrant operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantResult> getAccessGrantAsync(GetAccessGrantRequest getAccessGrantRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessGrantRequest, GetAccessGrantResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the S3 Access Grants instance for a Region in your account.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsInstanceRequest
+     * @return A Java Future containing the result of the GetAccessGrantsInstance operation returned by the service.
+     * @sample AWSS3ControlAsync.GetAccessGrantsInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsInstanceResult> getAccessGrantsInstanceAsync(GetAccessGrantsInstanceRequest getAccessGrantsInstanceRequest);
+
+    /**
+     * <p>
+     * Retrieves the S3 Access Grants instance for a Region in your account.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessGrantsInstance operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessGrantsInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsInstanceResult> getAccessGrantsInstanceAsync(GetAccessGrantsInstanceRequest getAccessGrantsInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessGrantsInstanceRequest, GetAccessGrantsInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve the S3 Access Grants instance that contains a particular prefix.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsInstanceForPrefix</code> permission for the caller account to use this
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * The prefix owner account must grant you the following permissions to their S3 Access Grants instance:
+     * <code>s3:GetAccessGrantsInstanceForPrefix</code>.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsInstanceForPrefixRequest
+     * @return A Java Future containing the result of the GetAccessGrantsInstanceForPrefix operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.GetAccessGrantsInstanceForPrefix
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsInstanceForPrefixResult> getAccessGrantsInstanceForPrefixAsync(
+            GetAccessGrantsInstanceForPrefixRequest getAccessGrantsInstanceForPrefixRequest);
+
+    /**
+     * <p>
+     * Retrieve the S3 Access Grants instance that contains a particular prefix.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsInstanceForPrefix</code> permission for the caller account to use this
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * The prefix owner account must grant you the following permissions to their S3 Access Grants instance:
+     * <code>s3:GetAccessGrantsInstanceForPrefix</code>.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsInstanceForPrefixRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessGrantsInstanceForPrefix operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessGrantsInstanceForPrefix
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsInstanceForPrefixResult> getAccessGrantsInstanceForPrefixAsync(
+            GetAccessGrantsInstanceForPrefixRequest getAccessGrantsInstanceForPrefixRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessGrantsInstanceForPrefixRequest, GetAccessGrantsInstanceForPrefixResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the resource policy of the S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsInstanceResourcePolicy</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsInstanceResourcePolicyRequest
+     * @return A Java Future containing the result of the GetAccessGrantsInstanceResourcePolicy operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsync.GetAccessGrantsInstanceResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsInstanceResourcePolicyResult> getAccessGrantsInstanceResourcePolicyAsync(
+            GetAccessGrantsInstanceResourcePolicyRequest getAccessGrantsInstanceResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Returns the resource policy of the S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsInstanceResourcePolicy</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsInstanceResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessGrantsInstanceResourcePolicy operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessGrantsInstanceResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsInstanceResourcePolicyResult> getAccessGrantsInstanceResourcePolicyAsync(
+            GetAccessGrantsInstanceResourcePolicyRequest getAccessGrantsInstanceResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessGrantsInstanceResourcePolicyRequest, GetAccessGrantsInstanceResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details of a particular location registered in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsLocationRequest
+     * @return A Java Future containing the result of the GetAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsync.GetAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsLocationResult> getAccessGrantsLocationAsync(GetAccessGrantsLocationRequest getAccessGrantsLocationRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a particular location registered in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getAccessGrantsLocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessGrantsLocationResult> getAccessGrantsLocationAsync(GetAccessGrantsLocationRequest getAccessGrantsLocationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessGrantsLocationRequest, GetAccessGrantsLocationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
      * Returns configuration information about the specified access point.
      * </p>
      * <p/>
@@ -2066,6 +3394,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<GetAccessPointResult> getAccessPointAsync(GetAccessPointRequest getAccessPointRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration information about the specified access point.
      * </p>
@@ -2116,6 +3449,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetAccessPointRequest, GetAccessPointResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration for an Object Lambda Access Point.
      * </p>
@@ -2144,6 +3482,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetAccessPointConfigurationForObjectLambdaRequest getAccessPointConfigurationForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration for an Object Lambda Access Point.
      * </p>
@@ -2177,6 +3520,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetAccessPointConfigurationForObjectLambdaRequest, GetAccessPointConfigurationForObjectLambdaResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration information about the specified Object Lambda Access Point
      * </p>
@@ -2215,6 +3563,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetAccessPointForObjectLambdaRequest getAccessPointForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration information about the specified Object Lambda Access Point
      * </p>
@@ -2258,6 +3611,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetAccessPointForObjectLambdaRequest, GetAccessPointForObjectLambdaResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the access point policy associated with the specified access point.
      * </p>
@@ -2288,6 +3646,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<GetAccessPointPolicyResult> getAccessPointPolicyAsync(GetAccessPointPolicyRequest getAccessPointPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the access point policy associated with the specified access point.
      * </p>
@@ -2323,6 +3686,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyRequest, GetAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the resource policy for an Object Lambda Access Point.
      * </p>
@@ -2356,6 +3724,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetAccessPointPolicyForObjectLambdaRequest getAccessPointPolicyForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the resource policy for an Object Lambda Access Point.
      * </p>
@@ -2394,6 +3767,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyForObjectLambdaRequest, GetAccessPointPolicyForObjectLambdaResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
@@ -2411,6 +3789,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetAccessPointPolicyStatusRequest getAccessPointPolicyStatusRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
@@ -2433,6 +3816,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyStatusRequest, GetAccessPointPolicyStatusResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the status of the resource policy associated with an Object Lambda Access Point.
      * </p>
@@ -2449,6 +3837,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetAccessPointPolicyStatusForObjectLambdaRequest getAccessPointPolicyStatusForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the status of the resource policy associated with an Object Lambda Access Point.
      * </p>
@@ -2919,6 +4312,167 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
+     * This operation gets an Amazon S3 on Outposts bucket's replication configuration. To get an S3 bucket's
+     * replication configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a> in
+     * the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the replication configuration of an S3 on Outposts bucket. For more information about S3 on Outposts, see
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * in the <i>Amazon S3 User Guide</i>. For information about S3 replication on Outposts configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating objects for
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * It can take a while to propagate <code>PUT</code> or <code>DELETE</code> requests for a replication configuration
+     * to all S3 on Outposts systems. Therefore, the replication configuration that's returned by a <code>GET</code>
+     * request soon after a <code>PUT</code> or <code>DELETE</code> request might return a more recent result than
+     * what's on the Outpost. If an Outpost is offline, the delay in updating the replication configuration on that
+     * Outpost can be significant.
+     * </p>
+     * </note>
+     * <p>
+     * This action requires permissions for the <code>s3-outposts:GetReplicationConfiguration</code> action. The
+     * Outposts bucket owner has this permission by default and can grant it to others. For more information about
+     * permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting up
+     * IAM with S3 on Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing access to S3 on
+     * Outposts bucket</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint
+     * hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
+     * Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+     * using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html#API_control_GetBucketReplication_Examples"
+     * >Examples</a> section.
+     * </p>
+     * <p>
+     * If you include the <code>Filter</code> element in a replication configuration, you must also include the
+     * <code>DeleteMarkerReplication</code>, <code>Status</code>, and <code>Priority</code> elements. The response also
+     * returns those elements.
+     * </p>
+     * <p>
+     * For information about S3 on Outposts replication failure reasons, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-eventbridge.html#outposts-replication-failure-codes"
+     * >Replication failure reasons</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html">
+     * PutBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketReplication.html">
+     * DeleteBucketReplication</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getBucketReplicationRequest
+     * @return A Java Future containing the result of the GetBucketReplication operation returned by the service.
+     * @sample AWSS3ControlAsync.GetBucketReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketReplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketReplicationResult> getBucketReplicationAsync(GetBucketReplicationRequest getBucketReplicationRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This operation gets an Amazon S3 on Outposts bucket's replication configuration. To get an S3 bucket's
+     * replication configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a> in
+     * the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the replication configuration of an S3 on Outposts bucket. For more information about S3 on Outposts, see
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * in the <i>Amazon S3 User Guide</i>. For information about S3 replication on Outposts configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating objects for
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * It can take a while to propagate <code>PUT</code> or <code>DELETE</code> requests for a replication configuration
+     * to all S3 on Outposts systems. Therefore, the replication configuration that's returned by a <code>GET</code>
+     * request soon after a <code>PUT</code> or <code>DELETE</code> request might return a more recent result than
+     * what's on the Outpost. If an Outpost is offline, the delay in updating the replication configuration on that
+     * Outpost can be significant.
+     * </p>
+     * </note>
+     * <p>
+     * This action requires permissions for the <code>s3-outposts:GetReplicationConfiguration</code> action. The
+     * Outposts bucket owner has this permission by default and can grant it to others. For more information about
+     * permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting up
+     * IAM with S3 on Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing access to S3 on
+     * Outposts bucket</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint
+     * hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
+     * Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+     * using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html#API_control_GetBucketReplication_Examples"
+     * >Examples</a> section.
+     * </p>
+     * <p>
+     * If you include the <code>Filter</code> element in a replication configuration, you must also include the
+     * <code>DeleteMarkerReplication</code>, <code>Status</code>, and <code>Priority</code> elements. The response also
+     * returns those elements.
+     * </p>
+     * <p>
+     * For information about S3 on Outposts replication failure reasons, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-eventbridge.html#outposts-replication-failure-codes"
+     * >Replication failure reasons</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html">
+     * PutBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketReplication.html">
+     * DeleteBucketReplication</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getBucketReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBucketReplication operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetBucketReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketReplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBucketReplicationResult> getBucketReplicationAsync(GetBucketReplicationRequest getBucketReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBucketReplicationRequest, GetBucketReplicationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
      * This action gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the
      * <i>Amazon S3 API Reference</i>.
@@ -3062,15 +4616,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This operation returns the versioning state only for S3 on Outposts buckets. To return the versioning state for
+     * This operation returns the versioning state for S3 on Outposts buckets only. To return the versioning state for
      * an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a> in
      * the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
-     * Returns the versioning state for an S3 on Outposts bucket. With versioning, you can save multiple distinct copies
-     * of your data and recover from unintended user actions and application failures.
+     * Returns the versioning state for an S3 on Outposts bucket. With S3 Versioning, you can save multiple distinct
+     * copies of your objects and recover from unintended user actions and application failures.
      * </p>
      * <p>
      * If you've never set versioning on your bucket, it has no versioning state. In that case, the
@@ -3126,15 +4680,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This operation returns the versioning state only for S3 on Outposts buckets. To return the versioning state for
+     * This operation returns the versioning state for S3 on Outposts buckets only. To return the versioning state for
      * an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a> in
      * the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
-     * Returns the versioning state for an S3 on Outposts bucket. With versioning, you can save multiple distinct copies
-     * of your data and recover from unintended user actions and application failures.
+     * Returns the versioning state for an S3 on Outposts bucket. With S3 Versioning, you can save multiple distinct
+     * copies of your objects and recover from unintended user actions and application failures.
      * </p>
      * <p>
      * If you've never set versioning on your bucket, it has no versioning state. In that case, the
@@ -3194,12 +4748,86 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Returns the tags on an S3 Batch Operations job. To use this operation, you must have permission to perform the
+     * Returns a temporary access credential from S3 Access Grants to the grantee or client application. The <a
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary credential</a> is an
+     * Amazon Web Services STS token that grants them access to the S3 data.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetDataAccess</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * The IAM role that S3 Access Grants assumes must have the following permissions specified in the trust policy when
+     * registering the location: <code>sts:AssumeRole</code>, for directory users or groups <code>sts:SetContext</code>,
+     * and for IAM users or roles <code>sts:SetSourceIdentity</code>.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getDataAccessRequest
+     * @return A Java Future containing the result of the GetDataAccess operation returned by the service.
+     * @sample AWSS3ControlAsync.GetDataAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataAccessResult> getDataAccessAsync(GetDataAccessRequest getDataAccessRequest);
+
+    /**
+     * <p>
+     * Returns a temporary access credential from S3 Access Grants to the grantee or client application. The <a
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html">temporary credential</a> is an
+     * Amazon Web Services STS token that grants them access to the S3 data.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:GetDataAccess</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * The IAM role that S3 Access Grants assumes must have the following permissions specified in the trust policy when
+     * registering the location: <code>sts:AssumeRole</code>, for directory users or groups <code>sts:SetContext</code>,
+     * and for IAM users or roles <code>sts:SetSourceIdentity</code>.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param getDataAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataAccess operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetDataAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataAccessResult> getDataAccessAsync(GetDataAccessRequest getDataAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataAccessRequest, GetDataAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the tags on an S3 Batch Operations job.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>GetJobTagging</code> operation, you must have permission to perform the
      * <code>s3:GetJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
      * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -3231,12 +4859,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Returns the tags on an S3 Batch Operations job. To use this operation, you must have permission to perform the
+     * Returns the tags on an S3 Batch Operations job.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>GetJobTagging</code> operation, you must have permission to perform the
      * <code>s3:GetJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
      * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -3272,14 +4907,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetJobTaggingRequest, GetJobTaggingResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration information about the specified Multi-Region Access Point.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPoint</code>:
@@ -3322,14 +4962,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetMultiRegionAccessPointRequest getMultiRegionAccessPointRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns configuration information about the specified Multi-Region Access Point.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPoint</code>:
@@ -3377,14 +5022,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetMultiRegionAccessPointRequest, GetMultiRegionAccessPointResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the access control policy of the specified Multi-Region Access Point.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:
@@ -3415,14 +5065,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetMultiRegionAccessPointPolicyRequest getMultiRegionAccessPointPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns the access control policy of the specified Multi-Region Access Point.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:
@@ -3458,14 +5113,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetMultiRegionAccessPointPolicyRequest, GetMultiRegionAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the specified Multi-Region Access Point has an access control policy that allows public access.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPointPolicyStatus</code>:
@@ -3496,14 +5156,19 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetMultiRegionAccessPointPolicyStatusRequest getMultiRegionAccessPointPolicyStatusRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the specified Multi-Region Access Point has an access control policy that allows public access.
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>GetMultiRegionAccessPointPolicyStatus</code>:
@@ -3539,6 +5204,120 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetMultiRegionAccessPointPolicyStatusRequest, GetMultiRegionAccessPointPolicyStatusResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or
+     * passive.
+     * </p>
+     * <p>
+     * To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure
+     * endpoints in these five Amazon Web Services Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>us-east-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>us-west-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-southeast-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-northeast-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>eu-west-1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getMultiRegionAccessPointRoutesRequest
+     * @return A Java Future containing the result of the GetMultiRegionAccessPointRoutes operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.GetMultiRegionAccessPointRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMultiRegionAccessPointRoutesResult> getMultiRegionAccessPointRoutesAsync(
+            GetMultiRegionAccessPointRoutesRequest getMultiRegionAccessPointRoutesRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or
+     * passive.
+     * </p>
+     * <p>
+     * To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure
+     * endpoints in these five Amazon Web Services Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>us-east-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>us-west-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-southeast-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-northeast-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>eu-west-1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getMultiRegionAccessPointRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMultiRegionAccessPointRoutes operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.GetMultiRegionAccessPointRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMultiRegionAccessPointRoutesResult> getMultiRegionAccessPointRoutesAsync(
+            GetMultiRegionAccessPointRoutesRequest getMultiRegionAccessPointRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMultiRegionAccessPointRoutesRequest, GetMultiRegionAccessPointRoutesResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
      * information, see <a
@@ -3572,6 +5351,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest getPublicAccessBlockRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
      * information, see <a
@@ -3610,10 +5394,18 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetPublicAccessBlockRequest, GetPublicAccessBlockResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens
+     * metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -3634,10 +5426,18 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetStorageLensConfigurationRequest getStorageLensConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens
+     * metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -3663,6 +5463,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<GetStorageLensConfigurationRequest, GetStorageLensConfigurationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -3688,6 +5493,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             GetStorageLensConfigurationTaggingRequest getStorageLensConfigurationTaggingRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -3719,10 +5529,215 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
-     * access points per call. If the specified bucket has more than 1,000 access points (or the number specified in
-     * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
-     * list the additional access points.
+     * Retrieves the Storage Lens group configuration details.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param getStorageLensGroupRequest
+     * @return A Java Future containing the result of the GetStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsync.GetStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStorageLensGroupResult> getStorageLensGroupAsync(GetStorageLensGroupRequest getStorageLensGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the Storage Lens group configuration details.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param getStorageLensGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStorageLensGroupResult> getStorageLensGroupAsync(GetStorageLensGroupRequest getStorageLensGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStorageLensGroupRequest, GetStorageLensGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of access grants in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListAccessGrants</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param listAccessGrantsRequest
+     * @return A Java Future containing the result of the ListAccessGrants operation returned by the service.
+     * @sample AWSS3ControlAsync.ListAccessGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessGrantsResult> listAccessGrantsAsync(ListAccessGrantsRequest listAccessGrantsRequest);
+
+    /**
+     * <p>
+     * Returns the list of access grants in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListAccessGrants</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param listAccessGrantsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessGrants operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.ListAccessGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessGrantsResult> listAccessGrantsAsync(ListAccessGrantsRequest listAccessGrantsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessGrantsRequest, ListAccessGrantsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of S3 Access Grants instances. An S3 Access Grants instance serves as a logical grouping for your
+     * individual access grants. You can only have one S3 Access Grants instance per Region per account.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListAccessGrantsInstances</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param listAccessGrantsInstancesRequest
+     * @return A Java Future containing the result of the ListAccessGrantsInstances operation returned by the service.
+     * @sample AWSS3ControlAsync.ListAccessGrantsInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessGrantsInstancesResult> listAccessGrantsInstancesAsync(
+            ListAccessGrantsInstancesRequest listAccessGrantsInstancesRequest);
+
+    /**
+     * <p>
+     * Returns a list of S3 Access Grants instances. An S3 Access Grants instance serves as a logical grouping for your
+     * individual access grants. You can only have one S3 Access Grants instance per Region per account.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListAccessGrantsInstances</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param listAccessGrantsInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessGrantsInstances operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.ListAccessGrantsInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessGrantsInstancesResult> listAccessGrantsInstancesAsync(
+            ListAccessGrantsInstancesRequest listAccessGrantsInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessGrantsInstancesRequest, ListAccessGrantsInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the locations registered in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListAccessGrantsLocations</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param listAccessGrantsLocationsRequest
+     * @return A Java Future containing the result of the ListAccessGrantsLocations operation returned by the service.
+     * @sample AWSS3ControlAsync.ListAccessGrantsLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessGrantsLocationsResult> listAccessGrantsLocationsAsync(
+            ListAccessGrantsLocationsRequest listAccessGrantsLocationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the locations registered in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListAccessGrantsLocations</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param listAccessGrantsLocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessGrantsLocations operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.ListAccessGrantsLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessGrantsLocationsResult> listAccessGrantsLocationsAsync(
+            ListAccessGrantsLocationsRequest listAccessGrantsLocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessGrantsLocationsRequest, ListAccessGrantsLocationsResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of the access points that are owned by the current account that's associated with the specified
+     * bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access
+     * points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a
+     * continuation token that you can use to list the additional access points.
      * </p>
      * <p/>
      * <p>
@@ -3766,11 +5781,16 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<ListAccessPointsResult> listAccessPointsAsync(ListAccessPointsRequest listAccessPointsRequest);
 
     /**
+     * <note>
      * <p>
-     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
-     * access points per call. If the specified bucket has more than 1,000 access points (or the number specified in
-     * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
-     * list the additional access points.
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
+     * Returns a list of the access points that are owned by the current account that's associated with the specified
+     * bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access
+     * points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a
+     * continuation token that you can use to list the additional access points.
      * </p>
      * <p/>
      * <p>
@@ -3819,6 +5839,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<ListAccessPointsRequest, ListAccessPointsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns some or all (up to 1,000) access points associated with the Object Lambda Access Point per call. If there
      * are more access points than what can be returned in one call, the response will include a continuation token that
@@ -3859,6 +5884,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             ListAccessPointsForObjectLambdaRequest listAccessPointsForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns some or all (up to 1,000) access points associated with the Object Lambda Access Point per call. If there
      * are more access points than what can be returned in one call, the response will include a continuation token that
@@ -3905,11 +5935,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the Amazon Web
-     * Services account making the request. For more information, see <a
+     * Lists current S3 Batch Operations jobs as well as the jobs that have ended within the last 90 days for the Amazon
+     * Web Services account making the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>ListJobs</code> operation, you must have permission to perform the <code>s3:ListJobs</code>
+     * action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -3948,11 +5987,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the Amazon Web
-     * Services account making the request. For more information, see <a
+     * Lists current S3 Batch Operations jobs as well as the jobs that have ended within the last 90 days for the Amazon
+     * Web Services account making the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>ListJobs</code> operation, you must have permission to perform the <code>s3:ListJobs</code>
+     * action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -3995,6 +6043,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns a list of the Multi-Region Access Points currently associated with the specified Amazon Web Services
      * account. Each call can return up to 100 Multi-Region Access Points, the maximum number of Multi-Region Access
@@ -4002,9 +6055,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>ListMultiRegionAccessPoint</code>:
@@ -4047,6 +6100,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             ListMultiRegionAccessPointsRequest listMultiRegionAccessPointsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns a list of the Multi-Region Access Points currently associated with the specified Amazon Web Services
      * account. Each call can return up to 100 Multi-Region Access Points, the maximum number of Multi-Region Access
@@ -4054,9 +6112,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>ListMultiRegionAccessPoint</code>:
@@ -4104,6 +6162,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<ListMultiRegionAccessPointsRequest, ListMultiRegionAccessPointsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
@@ -4125,6 +6188,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<ListRegionalBucketsResult> listRegionalBucketsAsync(ListRegionalBucketsRequest listRegionalBucketsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
@@ -4151,6 +6219,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<ListRegionalBucketsRequest, ListRegionalBucketsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -4176,6 +6249,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             ListStorageLensConfigurationsRequest listStorageLensConfigurationsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
@@ -4207,6 +6285,204 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Lists all the Storage Lens groups in the specified home Region.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param listStorageLensGroupsRequest
+     * @return A Java Future containing the result of the ListStorageLensGroups operation returned by the service.
+     * @sample AWSS3ControlAsync.ListStorageLensGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStorageLensGroupsResult> listStorageLensGroupsAsync(ListStorageLensGroupsRequest listStorageLensGroupsRequest);
+
+    /**
+     * <p>
+     * Lists all the Storage Lens groups in the specified home Region.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param listStorageLensGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStorageLensGroups operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.ListStorageLensGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStorageLensGroupsResult> listStorageLensGroupsAsync(ListStorageLensGroupsRequest listStorageLensGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStorageLensGroupsRequest, ListStorageLensGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows you to list all the Amazon Web Services resource tags for a specified resource. Each tag is
+     * a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and
+     * filter resources.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListTagsForResource</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * <note>
+     * <p>
+     * This operation is only supported for <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a>
+     * and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access
+     * Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered
+     * location, or grant.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about S3 Tagging errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon
+     * S3 Tagging error codes</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSS3ControlAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * This operation allows you to list all the Amazon Web Services resource tags for a specified resource. Each tag is
+     * a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and
+     * filter resources.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:ListTagsForResource</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * <note>
+     * <p>
+     * This operation is only supported for <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a>
+     * and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access
+     * Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered
+     * location, or grant.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about S3 Tagging errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon
+     * S3 Tagging error codes</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the resource policy of the S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:PutAccessGrantsInstanceResourcePolicy</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param putAccessGrantsInstanceResourcePolicyRequest
+     * @return A Java Future containing the result of the PutAccessGrantsInstanceResourcePolicy operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsync.PutAccessGrantsInstanceResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessGrantsInstanceResourcePolicyResult> putAccessGrantsInstanceResourcePolicyAsync(
+            PutAccessGrantsInstanceResourcePolicyRequest putAccessGrantsInstanceResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Updates the resource policy of the S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:PutAccessGrantsInstanceResourcePolicy</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param putAccessGrantsInstanceResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccessGrantsInstanceResourcePolicy operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsyncHandler.PutAccessGrantsInstanceResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessGrantsInstanceResourcePolicyResult> putAccessGrantsInstanceResourcePolicyAsync(
+            PutAccessGrantsInstanceResourcePolicyRequest putAccessGrantsInstanceResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccessGrantsInstanceResourcePolicyRequest, PutAccessGrantsInstanceResourcePolicyResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
      * Replaces configuration for an Object Lambda Access Point.
      * </p>
      * <p>
@@ -4234,6 +6510,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             PutAccessPointConfigurationForObjectLambdaRequest putAccessPointConfigurationForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Replaces configuration for an Object Lambda Access Point.
      * </p>
@@ -4267,6 +6548,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutAccessPointConfigurationForObjectLambdaRequest, PutAccessPointConfigurationForObjectLambdaResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Associates an access policy with the specified access point. Each access point can have only one policy, so a
      * request made to this API replaces any existing policy associated with the specified access point.
@@ -4308,6 +6594,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest putAccessPointPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Associates an access policy with the specified access point. Each access point can have only one policy, so a
      * request made to this API replaces any existing policy associated with the specified access point.
@@ -4354,6 +6645,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyRequest, PutAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
@@ -4389,6 +6685,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             PutAccessPointPolicyForObjectLambdaRequest putAccessPointPolicyForObjectLambdaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
@@ -4681,6 +6982,273 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
+     * This action creates an Amazon S3 on Outposts bucket's replication configuration. To create an S3 bucket's
+     * replication configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a> in
+     * the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a replication configuration or replaces an existing one. For information about S3 replication on Outposts
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating objects for
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * It can take a while to propagate <code>PUT</code> or <code>DELETE</code> requests for a replication configuration
+     * to all S3 on Outposts systems. Therefore, the replication configuration that's returned by a <code>GET</code>
+     * request soon after a <code>PUT</code> or <code>DELETE</code> request might return a more recent result than
+     * what's on the Outpost. If an Outpost is offline, the delay in updating the replication configuration on that
+     * Outpost can be significant.
+     * </p>
+     * </note>
+     * <p>
+     * Specify the replication configuration in the request body. In the replication configuration, you provide the
+     * following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name of the destination bucket or buckets where you want S3 on Outposts to replicate objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Identity and Access Management (IAM) role that S3 on Outposts can assume to replicate objects on your behalf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Other relevant information, such as replication rules
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A replication configuration must include at least one rule and can contain a maximum of 100. Each rule identifies
+     * a subset of objects to replicate by filtering the objects in the source Outposts bucket. To choose additional
+     * subsets of objects to replicate, add a rule for each subset.
+     * </p>
+     * <p>
+     * To specify a subset of the objects in the source Outposts bucket to apply a replication rule to, add the
+     * <code>Filter</code> element as a child of the <code>Rule</code> element. You can filter objects based on an
+     * object key prefix, one or more object tags, or both. When you add the <code>Filter</code> element in the
+     * configuration, you must also add the following elements: <code>DeleteMarkerReplication</code>,
+     * <code>Status</code>, and <code>Priority</code>.
+     * </p>
+     * <p>
+     * Using <code>PutBucketReplication</code> on Outposts requires that both the source and destination buckets must
+     * have versioning enabled. For information about enabling versioning on a bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsManagingVersioning.html">Managing S3
+     * Versioning for your S3 on Outposts bucket</a>.
+     * </p>
+     * <p>
+     * For information about S3 on Outposts replication failure reasons, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-eventbridge.html#outposts-replication-failure-codes"
+     * >Replication failure reasons</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Handling Replication of Encrypted Objects</b>
+     * </p>
+     * <p>
+     * Outposts buckets are encrypted at all times. All the objects in the source Outposts bucket are encrypted and can
+     * be replicated. Also, all the replicas in the destination Outposts bucket are encrypted with the same encryption
+     * key as the objects in the source Outposts bucket.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * To create a <code>PutBucketReplication</code> request, you must have
+     * <code>s3-outposts:PutReplicationConfiguration</code> permissions for the bucket. The Outposts bucket owner has
+     * this permission by default and can grant it to others. For more information about permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting up IAM with S3 on
+     * Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing access to S3 on
+     * Outposts buckets</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To perform this operation, the user or role must also have the <code>iam:CreateRole</code> and
+     * <code>iam:PassRole</code> permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a user permissions to
+     * pass a role to an Amazon Web Services service</a>.
+     * </p>
+     * </note>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint
+     * hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
+     * Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+     * using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html#API_control_PutBucketReplication_Examples"
+     * >Examples</a> section.
+     * </p>
+     * <p>
+     * The following operations are related to <code>PutBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">
+     * GetBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketReplication.html">
+     * DeleteBucketReplication</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putBucketReplicationRequest
+     * @return A Java Future containing the result of the PutBucketReplication operation returned by the service.
+     * @sample AWSS3ControlAsync.PutBucketReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketReplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutBucketReplicationResult> putBucketReplicationAsync(PutBucketReplicationRequest putBucketReplicationRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This action creates an Amazon S3 on Outposts bucket's replication configuration. To create an S3 bucket's
+     * replication configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a> in
+     * the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a replication configuration or replaces an existing one. For information about S3 replication on Outposts
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html">Replicating objects for
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * It can take a while to propagate <code>PUT</code> or <code>DELETE</code> requests for a replication configuration
+     * to all S3 on Outposts systems. Therefore, the replication configuration that's returned by a <code>GET</code>
+     * request soon after a <code>PUT</code> or <code>DELETE</code> request might return a more recent result than
+     * what's on the Outpost. If an Outpost is offline, the delay in updating the replication configuration on that
+     * Outpost can be significant.
+     * </p>
+     * </note>
+     * <p>
+     * Specify the replication configuration in the request body. In the replication configuration, you provide the
+     * following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name of the destination bucket or buckets where you want S3 on Outposts to replicate objects
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Identity and Access Management (IAM) role that S3 on Outposts can assume to replicate objects on your behalf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Other relevant information, such as replication rules
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A replication configuration must include at least one rule and can contain a maximum of 100. Each rule identifies
+     * a subset of objects to replicate by filtering the objects in the source Outposts bucket. To choose additional
+     * subsets of objects to replicate, add a rule for each subset.
+     * </p>
+     * <p>
+     * To specify a subset of the objects in the source Outposts bucket to apply a replication rule to, add the
+     * <code>Filter</code> element as a child of the <code>Rule</code> element. You can filter objects based on an
+     * object key prefix, one or more object tags, or both. When you add the <code>Filter</code> element in the
+     * configuration, you must also add the following elements: <code>DeleteMarkerReplication</code>,
+     * <code>Status</code>, and <code>Priority</code>.
+     * </p>
+     * <p>
+     * Using <code>PutBucketReplication</code> on Outposts requires that both the source and destination buckets must
+     * have versioning enabled. For information about enabling versioning on a bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsManagingVersioning.html">Managing S3
+     * Versioning for your S3 on Outposts bucket</a>.
+     * </p>
+     * <p>
+     * For information about S3 on Outposts replication failure reasons, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/outposts-replication-eventbridge.html#outposts-replication-failure-codes"
+     * >Replication failure reasons</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Handling Replication of Encrypted Objects</b>
+     * </p>
+     * <p>
+     * Outposts buckets are encrypted at all times. All the objects in the source Outposts bucket are encrypted and can
+     * be replicated. Also, all the replicas in the destination Outposts bucket are encrypted with the same encryption
+     * key as the objects in the source Outposts bucket.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * To create a <code>PutBucketReplication</code> request, you must have
+     * <code>s3-outposts:PutReplicationConfiguration</code> permissions for the bucket. The Outposts bucket owner has
+     * this permission by default and can grant it to others. For more information about permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsIAM.html">Setting up IAM with S3 on
+     * Outposts</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsBucketPolicy.html">Managing access to S3 on
+     * Outposts buckets</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To perform this operation, the user or role must also have the <code>iam:CreateRole</code> and
+     * <code>iam:PassRole</code> permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a user permissions to
+     * pass a role to an Amazon Web Services service</a>.
+     * </p>
+     * </note>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
+     * <code>x-amz-outpost-id</code> to be passed with the request. In addition, you must use an S3 on Outposts endpoint
+     * hostname prefix instead of <code>s3-control</code>. For an example of the request syntax for Amazon S3 on
+     * Outposts that uses the S3 on Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
+     * using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketReplication.html#API_control_PutBucketReplication_Examples"
+     * >Examples</a> section.
+     * </p>
+     * <p>
+     * The following operations are related to <code>PutBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">
+     * GetBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketReplication.html">
+     * DeleteBucketReplication</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putBucketReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutBucketReplication operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.PutBucketReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketReplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutBucketReplicationResult> putBucketReplicationAsync(PutBucketReplicationRequest putBucketReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutBucketReplicationRequest, PutBucketReplicationResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
      * This action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the
      * <i>Amazon S3 API Reference</i>.
@@ -4950,15 +7518,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This operation sets the versioning state only for S3 on Outposts buckets. To set the versioning state for an S3
+     * This operation sets the versioning state for S3 on Outposts buckets only. To set the versioning state for an S3
      * bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a> in
      * the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
-     * Sets the versioning state for an S3 on Outposts bucket. With versioning, you can save multiple distinct copies of
-     * your data and recover from unintended user actions and application failures.
+     * Sets the versioning state for an S3 on Outposts bucket. With S3 Versioning, you can save multiple distinct copies
+     * of your objects and recover from unintended user actions and application failures.
      * </p>
      * <p>
      * You can set the versioning state to one of the following:
@@ -4990,10 +7558,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * managing a lifecycle configuration for your S3 on Outposts bucket</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * If you have an object expiration lifecycle policy in your non-versioned bucket and you want to maintain the same
-     * permanent delete behavior when you enable versioning, you must add a noncurrent expiration policy. The noncurrent
-     * expiration lifecycle policy will manage the deletes of the noncurrent object versions in the version-enabled
-     * bucket. For more information, see <a
+     * If you have an object expiration lifecycle configuration in your non-versioned bucket and you want to maintain
+     * the same permanent delete behavior when you enable versioning, you must add a noncurrent expiration policy. The
+     * noncurrent expiration lifecycle configuration will manage the deletes of the noncurrent object versions in the
+     * version-enabled bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a> in the <i>Amazon S3
      * User Guide</i>.
      * </p>
@@ -5042,15 +7610,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <note>
      * <p>
-     * This operation sets the versioning state only for S3 on Outposts buckets. To set the versioning state for an S3
+     * This operation sets the versioning state for S3 on Outposts buckets only. To set the versioning state for an S3
      * bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a> in
      * the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
-     * Sets the versioning state for an S3 on Outposts bucket. With versioning, you can save multiple distinct copies of
-     * your data and recover from unintended user actions and application failures.
+     * Sets the versioning state for an S3 on Outposts bucket. With S3 Versioning, you can save multiple distinct copies
+     * of your objects and recover from unintended user actions and application failures.
      * </p>
      * <p>
      * You can set the versioning state to one of the following:
@@ -5082,10 +7650,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * managing a lifecycle configuration for your S3 on Outposts bucket</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * If you have an object expiration lifecycle policy in your non-versioned bucket and you want to maintain the same
-     * permanent delete behavior when you enable versioning, you must add a noncurrent expiration policy. The noncurrent
-     * expiration lifecycle policy will manage the deletes of the noncurrent object versions in the version-enabled
-     * bucket. For more information, see <a
+     * If you have an object expiration lifecycle configuration in your non-versioned bucket and you want to maintain
+     * the same permanent delete behavior when you enable versioning, you must add a noncurrent expiration policy. The
+     * noncurrent expiration lifecycle configuration will manage the deletes of the noncurrent object versions in the
+     * version-enabled bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a> in the <i>Amazon S3
      * User Guide</i>.
      * </p>
@@ -5146,12 +7714,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * replace the existing tag set entirely, or make changes within the existing tag set by retrieving the existing tag
      * set using <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify
-     * that tag set, and use this action to replace the tag set with the one you modified. For more information, see <a
-     * href
-     * ="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-     * access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+     * that tag set, and use this operation to replace the tag set with the one you modified. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">
+     * Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
      * <note>
      * <ul>
      * <li>
@@ -5205,10 +7771,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * </note>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
      * <p>
-     * To use this action, you must have permission to perform the <code>s3:PutJobTagging</code> action.
+     * To use the <code>PutJobTagging</code> operation, you must have permission to perform the
+     * <code>s3:PutJobTagging</code> action.
      * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -5248,12 +7819,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * replace the existing tag set entirely, or make changes within the existing tag set by retrieving the existing tag
      * set using <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify
-     * that tag set, and use this action to replace the tag set with the one you modified. For more information, see <a
-     * href
-     * ="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-     * access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
+     * that tag set, and use this operation to replace the tag set with the one you modified. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">
+     * Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
      * <note>
      * <ul>
      * <li>
@@ -5307,10 +7876,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * </note>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
      * <p>
-     * To use this action, you must have permission to perform the <code>s3:PutJobTagging</code> action.
+     * To use the <code>PutJobTagging</code> operation, you must have permission to perform the
+     * <code>s3:PutJobTagging</code> action.
      * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -5346,6 +7920,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutJobTaggingRequest, PutJobTaggingResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Associates an access control policy with the specified Multi-Region Access Point. Each Multi-Region Access Point
      * can have only one policy, so a request made to this action replaces any existing policy that is associated with
@@ -5353,9 +7932,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:
@@ -5386,6 +7965,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             PutMultiRegionAccessPointPolicyRequest putMultiRegionAccessPointPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Associates an access control policy with the specified Multi-Region Access Point. Each Multi-Region Access Point
      * can have only one policy, so a request made to this action replaces any existing policy that is associated with
@@ -5393,9 +7977,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * <p>
      * This action will always be routed to the US West (Oregon) Region. For more information about the restrictions
-     * around managing Multi-Region Access Points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
-     * Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * around working with Multi-Region Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointRestrictions.html">Multi-Region
+     * Access Point restrictions and limitations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>PutMultiRegionAccessPointPolicy</code>:
@@ -5431,6 +8015,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutMultiRegionAccessPointPolicyRequest, PutMultiRegionAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this
      * operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see
@@ -5464,6 +8053,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<PutPublicAccessBlockResult> putPublicAccessBlockAsync(PutPublicAccessBlockRequest putPublicAccessBlockRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this
      * operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see
@@ -5502,10 +8096,17 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutPublicAccessBlockRequest, PutPublicAccessBlockResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon S3 User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens
+     * metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -5526,10 +8127,17 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             PutStorageLensConfigurationRequest putStorageLensConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon S3 User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens
+     * metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -5555,6 +8163,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationRequest, PutStorageLensConfigurationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
      * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
@@ -5580,6 +8193,11 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             PutStorageLensConfigurationTaggingRequest putStorageLensConfigurationTaggingRequest);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
      * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
@@ -5610,12 +8228,396 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationTaggingRequest, PutStorageLensConfigurationTaggingResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
+     * Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing
+     * status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code>
+     * indicates a passive status, which means that traffic won't be routed to the specified Region. A value of
+     * <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At
+     * least one Region must be active at all times.
+     * </p>
+     * <p>
+     * When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to
+     * formerly active Regions will continue to run to their final completion state (success or failure). The routing
+     * configurations of any Regions that aren’t specified remain unchanged.
+     * </p>
+     * <note>
+     * <p>
+     * Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to
+     * take effect.
+     * </p>
+     * </note>
+     * <p>
+     * To submit routing control changes and failover requests, use the Amazon S3 failover control infrastructure
+     * endpoints in these five Amazon Web Services Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>us-east-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>us-west-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-southeast-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-northeast-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>eu-west-1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param submitMultiRegionAccessPointRoutesRequest
+     * @return A Java Future containing the result of the SubmitMultiRegionAccessPointRoutes operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.SubmitMultiRegionAccessPointRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SubmitMultiRegionAccessPointRoutesResult> submitMultiRegionAccessPointRoutesAsync(
+            SubmitMultiRegionAccessPointRoutesRequest submitMultiRegionAccessPointRoutesRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This operation is not supported by directory buckets.
+     * </p>
+     * </note>
+     * <p>
+     * Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing
+     * status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code>
+     * indicates a passive status, which means that traffic won't be routed to the specified Region. A value of
+     * <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At
+     * least one Region must be active at all times.
+     * </p>
+     * <p>
+     * When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to
+     * formerly active Regions will continue to run to their final completion state (success or failure). The routing
+     * configurations of any Regions that aren’t specified remain unchanged.
+     * </p>
+     * <note>
+     * <p>
+     * Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to
+     * take effect.
+     * </p>
+     * </note>
+     * <p>
+     * To submit routing control changes and failover requests, use the Amazon S3 failover control infrastructure
+     * endpoints in these five Amazon Web Services Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>us-east-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>us-west-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-southeast-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-northeast-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>eu-west-1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param submitMultiRegionAccessPointRoutesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SubmitMultiRegionAccessPointRoutes operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.SubmitMultiRegionAccessPointRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SubmitMultiRegionAccessPointRoutesResult> submitMultiRegionAccessPointRoutesAsync(
+            SubmitMultiRegionAccessPointRoutesRequest submitMultiRegionAccessPointRoutesRequest,
+            com.amazonaws.handlers.AsyncHandler<SubmitMultiRegionAccessPointRoutesRequest, SubmitMultiRegionAccessPointRoutesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Amazon Web Services resource tag or updates an existing resource tag. Each tag is a label
+     * consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter
+     * resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a>
+     * and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access
+     * Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered
+     * location, or grant.
+     * </p>
+     * </note>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:TagResource</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about S3 Tagging errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon
+     * S3 Tagging error codes</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSS3ControlAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Web Services resource tag or updates an existing resource tag. Each tag is a label
+     * consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter
+     * resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a>
+     * and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access
+     * Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered
+     * location, or grant.
+     * </p>
+     * </note>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:TagResource</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about S3 Tagging errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon
+     * S3 Tagging error codes</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation removes the specified Amazon Web Services resource tags from an S3 resource. Each tag is a label
+     * consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter
+     * resources.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a>
+     * and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access
+     * Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered
+     * location, or grant.
+     * </p>
+     * </note>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:UntagResource</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about S3 Tagging errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon
+     * S3 Tagging error codes</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSS3ControlAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * This operation removes the specified Amazon Web Services resource tags from an S3 resource. Each tag is a label
+     * consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter
+     * resources.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3 Storage Lens groups</a>
+     * and for <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3 Access
+     * Grants</a>. The tagged resource can be an S3 Storage Lens group or S3 Access Grants instance, registered
+     * location, or grant.
+     * </p>
+     * </note>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:UntagResource</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about S3 Tagging errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List of Amazon
+     * S3 Tagging error codes</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the IAM role of a registered location in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:UpdateAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must also have the following permission: <code>iam:PassRole</code>
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateAccessGrantsLocationRequest
+     * @return A Java Future containing the result of the UpdateAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsync.UpdateAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccessGrantsLocationResult> updateAccessGrantsLocationAsync(
+            UpdateAccessGrantsLocationRequest updateAccessGrantsLocationRequest);
+
+    /**
+     * <p>
+     * Updates the IAM role of a registered location in your S3 Access Grants instance.
+     * </p>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * You must have the <code>s3:UpdateAccessGrantsLocation</code> permission to use this operation.
+     * </p>
+     * </dd>
+     * <dt>Additional Permissions</dt>
+     * <dd>
+     * <p>
+     * You must also have the following permission: <code>iam:PassRole</code>
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateAccessGrantsLocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccessGrantsLocation operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.UpdateAccessGrantsLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccessGrantsLocationResult> updateAccessGrantsLocationAsync(
+            UpdateAccessGrantsLocationRequest updateAccessGrantsLocationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessGrantsLocationRequest, UpdateAccessGrantsLocationResult> asyncHandler);
+
+    /**
      * <p>
      * Updates an existing S3 Batch Operations job's priority. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>UpdateJobPriority</code> operation, you must have permission to perform the
+     * <code>s3:UpdateJobPriority</code> action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -5656,7 +8658,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>UpdateJobPriority</code> operation, you must have permission to perform the
+     * <code>s3:UpdateJobPriority</code> action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -5698,12 +8708,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an
-     * existing job. For more information, see <a
+     * Updates the status for the specified job. Use this operation to confirm that you want to run a job or to cancel
+     * an existing job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>UpdateJobStatus</code> operation, you must have permission to perform the
+     * <code>s3:UpdateJobStatus</code> action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -5740,12 +8758,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an
-     * existing job. For more information, see <a
+     * Updates the status for the specified job. Use this operation to confirm that you want to run a job or to cancel
+     * an existing job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p/>
+     * <dl>
+     * <dt>Permissions</dt>
+     * <dd>
+     * <p>
+     * To use the <code>UpdateJobStatus</code> operation, you must have permission to perform the
+     * <code>s3:UpdateJobStatus</code> action.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Related actions include:
      * </p>
@@ -5784,5 +8810,58 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      */
     java.util.concurrent.Future<UpdateJobStatusResult> updateJobStatusAsync(UpdateJobStatusRequest updateJobStatusRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateJobStatusRequest, UpdateJobStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the existing Storage Lens group.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:UpdateStorageLensGroup</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param updateStorageLensGroupRequest
+     * @return A Java Future containing the result of the UpdateStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsync.UpdateStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStorageLensGroupResult> updateStorageLensGroupAsync(UpdateStorageLensGroupRequest updateStorageLensGroupRequest);
+
+    /**
+     * <p>
+     * Updates the existing Storage Lens group.
+     * </p>
+     * <p>
+     * To use this operation, you must have the permission to perform the <code>s3:UpdateStorageLensGroup</code> action.
+     * For more information about the required Storage Lens Groups permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions"
+     * >Setting account permissions to use S3 Storage Lens groups</a>.
+     * </p>
+     * <p>
+     * For information about Storage Lens groups errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List of Amazon S3
+     * Storage Lens error codes</a>.
+     * </p>
+     * 
+     * @param updateStorageLensGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStorageLensGroup operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.UpdateStorageLensGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStorageLensGroupResult> updateStorageLensGroupAsync(UpdateStorageLensGroupRequest updateStorageLensGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStorageLensGroupRequest, UpdateStorageLensGroupResult> asyncHandler);
 
 }

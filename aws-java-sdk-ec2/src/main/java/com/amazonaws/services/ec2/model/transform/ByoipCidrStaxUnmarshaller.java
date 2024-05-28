@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -53,6 +55,16 @@ public class ByoipCidrStaxUnmarshaller implements Unmarshaller<ByoipCidr, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("asnAssociationSet", targetDepth)) {
+                    byoipCidr.withAsnAssociations(new ArrayList<AsnAssociation>());
+                    continue;
+                }
+
+                if (context.testExpression("asnAssociationSet/item", targetDepth)) {
+                    byoipCidr.withAsnAssociations(AsnAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("statusMessage", targetDepth)) {
                     byoipCidr.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -60,6 +72,11 @@ public class ByoipCidrStaxUnmarshaller implements Unmarshaller<ByoipCidr, StaxUn
 
                 if (context.testExpression("state", targetDepth)) {
                     byoipCidr.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkBorderGroup", targetDepth)) {
+                    byoipCidr.setNetworkBorderGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

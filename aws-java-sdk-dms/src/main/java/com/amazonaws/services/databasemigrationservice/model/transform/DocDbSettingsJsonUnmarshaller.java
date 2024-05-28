@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,14 @@ public class DocDbSettingsJsonUnmarshaller implements Unmarshaller<DocDbSettings
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
                     context.nextToken();
                     docDbSettings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UseUpdateLookUp", targetDepth)) {
+                    context.nextToken();
+                    docDbSettings.setUseUpdateLookUp(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicateShardCollections", targetDepth)) {
+                    context.nextToken();
+                    docDbSettings.setReplicateShardCollections(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

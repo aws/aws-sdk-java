@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ExecutionEngineConfigMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> MASTERINSTANCESECURITYGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MasterInstanceSecurityGroupId").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
 
     private static final ExecutionEngineConfigMarshaller instance = new ExecutionEngineConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class ExecutionEngineConfigMarshaller {
             protocolMarshaller.marshall(executionEngineConfig.getId(), ID_BINDING);
             protocolMarshaller.marshall(executionEngineConfig.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(executionEngineConfig.getMasterInstanceSecurityGroupId(), MASTERINSTANCESECURITYGROUPID_BINDING);
+            protocolMarshaller.marshall(executionEngineConfig.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

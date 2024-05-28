@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,12 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String twoWayChannelArn;
+    /**
+     * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     */
+    private String twoWayChannelRole;
     /**
      * <p>
      * By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of
@@ -211,6 +217,46 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdatePhoneNumberRequest withTwoWayChannelArn(String twoWayChannelArn) {
         setTwoWayChannelArn(twoWayChannelArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     * 
+     * @param twoWayChannelRole
+     *        An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     */
+
+    public void setTwoWayChannelRole(String twoWayChannelRole) {
+        this.twoWayChannelRole = twoWayChannelRole;
+    }
+
+    /**
+     * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     * 
+     * @return An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     */
+
+    public String getTwoWayChannelRole() {
+        return this.twoWayChannelRole;
+    }
+
+    /**
+     * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     * 
+     * @param twoWayChannelRole
+     *        An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequest withTwoWayChannelRole(String twoWayChannelRole) {
+        setTwoWayChannelRole(twoWayChannelRole);
         return this;
     }
 
@@ -406,6 +452,8 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("TwoWayEnabled: ").append(getTwoWayEnabled()).append(",");
         if (getTwoWayChannelArn() != null)
             sb.append("TwoWayChannelArn: ").append(getTwoWayChannelArn()).append(",");
+        if (getTwoWayChannelRole() != null)
+            sb.append("TwoWayChannelRole: ").append(getTwoWayChannelRole()).append(",");
         if (getSelfManagedOptOutsEnabled() != null)
             sb.append("SelfManagedOptOutsEnabled: ").append(getSelfManagedOptOutsEnabled()).append(",");
         if (getOptOutListName() != null)
@@ -438,6 +486,10 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTwoWayChannelArn() != null && other.getTwoWayChannelArn().equals(this.getTwoWayChannelArn()) == false)
             return false;
+        if (other.getTwoWayChannelRole() == null ^ this.getTwoWayChannelRole() == null)
+            return false;
+        if (other.getTwoWayChannelRole() != null && other.getTwoWayChannelRole().equals(this.getTwoWayChannelRole()) == false)
+            return false;
         if (other.getSelfManagedOptOutsEnabled() == null ^ this.getSelfManagedOptOutsEnabled() == null)
             return false;
         if (other.getSelfManagedOptOutsEnabled() != null && other.getSelfManagedOptOutsEnabled().equals(this.getSelfManagedOptOutsEnabled()) == false)
@@ -461,6 +513,7 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getTwoWayEnabled() == null) ? 0 : getTwoWayEnabled().hashCode());
         hashCode = prime * hashCode + ((getTwoWayChannelArn() == null) ? 0 : getTwoWayChannelArn().hashCode());
+        hashCode = prime * hashCode + ((getTwoWayChannelRole() == null) ? 0 : getTwoWayChannelRole().hashCode());
         hashCode = prime * hashCode + ((getSelfManagedOptOutsEnabled() == null) ? 0 : getSelfManagedOptOutsEnabled().hashCode());
         hashCode = prime * hashCode + ((getOptOutListName() == null) ? 0 : getOptOutListName().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtectionEnabled() == null) ? 0 : getDeletionProtectionEnabled().hashCode());

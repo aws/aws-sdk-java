@@ -1,0 +1,88 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotwireless.model;
+
+import javax.annotation.Generated;
+
+/**
+ * 
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public enum MetricName {
+
+    DeviceRSSI("DeviceRSSI"),
+    DeviceSNR("DeviceSNR"),
+    DeviceUplinkCount("DeviceUplinkCount"),
+    DeviceDownlinkCount("DeviceDownlinkCount"),
+    DeviceUplinkLostCount("DeviceUplinkLostCount"),
+    DeviceUplinkLostRate("DeviceUplinkLostRate"),
+    DeviceJoinRequestCount("DeviceJoinRequestCount"),
+    DeviceJoinAcceptCount("DeviceJoinAcceptCount"),
+    DeviceRoamingUplinkCount("DeviceRoamingUplinkCount"),
+    DeviceRoamingDownlinkCount("DeviceRoamingDownlinkCount"),
+    GatewayUpTime("GatewayUpTime"),
+    GatewayDownTime("GatewayDownTime"),
+    GatewayRSSI("GatewayRSSI"),
+    GatewaySNR("GatewaySNR"),
+    GatewayUplinkCount("GatewayUplinkCount"),
+    GatewayDownlinkCount("GatewayDownlinkCount"),
+    GatewayJoinRequestCount("GatewayJoinRequestCount"),
+    GatewayJoinAcceptCount("GatewayJoinAcceptCount"),
+    AwsAccountUplinkCount("AwsAccountUplinkCount"),
+    AwsAccountDownlinkCount("AwsAccountDownlinkCount"),
+    AwsAccountUplinkLostCount("AwsAccountUplinkLostCount"),
+    AwsAccountUplinkLostRate("AwsAccountUplinkLostRate"),
+    AwsAccountJoinRequestCount("AwsAccountJoinRequestCount"),
+    AwsAccountJoinAcceptCount("AwsAccountJoinAcceptCount"),
+    AwsAccountRoamingUplinkCount("AwsAccountRoamingUplinkCount"),
+    AwsAccountRoamingDownlinkCount("AwsAccountRoamingDownlinkCount"),
+    AwsAccountDeviceCount("AwsAccountDeviceCount"),
+    AwsAccountGatewayCount("AwsAccountGatewayCount"),
+    AwsAccountActiveDeviceCount("AwsAccountActiveDeviceCount"),
+    AwsAccountActiveGatewayCount("AwsAccountActiveGatewayCount");
+
+    private String value;
+
+    private MetricName(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
+    }
+
+    /**
+     * Use this in place of valueOf.
+     *
+     * @param value
+     *        real value
+     * @return MetricName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
+     */
+    public static MetricName fromValue(String value) {
+        if (value == null || "".equals(value)) {
+            throw new IllegalArgumentException("Value cannot be null or empty!");
+        }
+
+        for (MetricName enumEntry : MetricName.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+    }
+}

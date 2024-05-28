@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class DescribeComponentConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String componentName;
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     */
+    private String accountId;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class DescribeComponentConfigurationRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @return The AWS account ID for the resource group owner.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeComponentConfigurationRequest withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class DescribeComponentConfigurationRequest extends com.amazonaws.AmazonW
         if (getResourceGroupName() != null)
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getComponentName() != null)
-            sb.append("ComponentName: ").append(getComponentName());
+            sb.append("ComponentName: ").append(getComponentName()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class DescribeComponentConfigurationRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class DescribeComponentConfigurationRequest extends com.amazonaws.AmazonW
 
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         return hashCode;
     }
 

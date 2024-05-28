@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      */
     private String domain;
@@ -58,7 +59,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      */
@@ -146,11 +147,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @see Domain
      */
 
@@ -160,10 +164,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
-     * @return Specifies the domain of the storage system that is used for file transfers.
+     * @return Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *         available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *         default value is S3.
      * @see Domain
      */
 
@@ -173,11 +180,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -189,11 +199,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -221,7 +234,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -242,7 +255,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -268,7 +281,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -288,7 +301,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If
      *         you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code>
-     *         parameter or the <code>IdentityProviderDetails</code> data type.
+     *         parameter for the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -314,7 +327,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -335,7 +348,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -363,7 +376,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -384,7 +397,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,10 @@ public class ListComponentsRequestMarshaller {
             .marshallLocationName("appId").build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("environmentName").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListComponentsRequestMarshaller instance = new ListComponentsRequestMarshaller();
 
@@ -54,8 +54,8 @@ public class ListComponentsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listComponentsRequest.getAppId(), APPID_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
-            protocolMarshaller.marshall(listComponentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listComponentsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

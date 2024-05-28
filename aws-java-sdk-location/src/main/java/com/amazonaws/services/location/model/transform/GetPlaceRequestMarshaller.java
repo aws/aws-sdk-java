@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class GetPlaceRequestMarshaller {
 
     private static final MarshallingInfo<String> INDEXNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("IndexName").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("language").build();
     private static final MarshallingInfo<String> PLACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -51,6 +53,7 @@ public class GetPlaceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getPlaceRequest.getIndexName(), INDEXNAME_BINDING);
+            protocolMarshaller.marshall(getPlaceRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(getPlaceRequest.getLanguage(), LANGUAGE_BINDING);
             protocolMarshaller.marshall(getPlaceRequest.getPlaceId(), PLACEID_BINDING);
         } catch (Exception e) {

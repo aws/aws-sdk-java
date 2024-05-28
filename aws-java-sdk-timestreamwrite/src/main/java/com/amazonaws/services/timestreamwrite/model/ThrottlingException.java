@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Too many requests were made by a user exceeding service quotas. The request was throttled.
+ * Too many requests were made by a user and they exceeded the service quotas. The request was throttled.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

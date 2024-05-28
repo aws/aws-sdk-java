@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the schedule you want your task to use for repeated executions. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for
- * Rules</a>.
+ * Configures your DataSync task to run on a <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">schedule</a> (at a minimum interval
+ * of 1 hour).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskSchedule" target="_top">AWS API
@@ -32,21 +32,39 @@ public class TaskSchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination
-     * location.
+     * Specifies your task schedule by using a cron expression in UTC time. For information about cron expression
+     * syntax, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+     * <i>Amazon EventBridge User Guide</i> </a>.
      * </p>
      */
     private String scheduleExpression;
+    /**
+     * <p>
+     * Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be
+     * situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an
+     * issue with your task or perform maintenance on your storage system.
+     * </p>
+     * <p>
+     * DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails
+     * </a>.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
-     * A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination
-     * location.
+     * Specifies your task schedule by using a cron expression in UTC time. For information about cron expression
+     * syntax, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+     * <i>Amazon EventBridge User Guide</i> </a>.
      * </p>
      * 
      * @param scheduleExpression
-     *        A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a
-     *        destination location.
+     *        Specifies your task schedule by using a cron expression in UTC time. For information about cron expression
+     *        syntax, see the <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html"> <i>Amazon
+     *        EventBridge User Guide</i> </a>.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -55,12 +73,15 @@ public class TaskSchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination
-     * location.
+     * Specifies your task schedule by using a cron expression in UTC time. For information about cron expression
+     * syntax, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+     * <i>Amazon EventBridge User Guide</i> </a>.
      * </p>
      * 
-     * @return A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a
-     *         destination location.
+     * @return Specifies your task schedule by using a cron expression in UTC time. For information about cron
+     *         expression syntax, see the <a
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html"> <i>Amazon
+     *         EventBridge User Guide</i> </a>.
      */
 
     public String getScheduleExpression() {
@@ -69,18 +90,140 @@ public class TaskSchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination
-     * location.
+     * Specifies your task schedule by using a cron expression in UTC time. For information about cron expression
+     * syntax, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+     * <i>Amazon EventBridge User Guide</i> </a>.
      * </p>
      * 
      * @param scheduleExpression
-     *        A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a
-     *        destination location.
+     *        Specifies your task schedule by using a cron expression in UTC time. For information about cron expression
+     *        syntax, see the <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html"> <i>Amazon
+     *        EventBridge User Guide</i> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TaskSchedule withScheduleExpression(String scheduleExpression) {
         setScheduleExpression(scheduleExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be
+     * situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an
+     * issue with your task or perform maintenance on your storage system.
+     * </p>
+     * <p>
+     * DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails
+     * </a>.
+     * </p>
+     * 
+     * @param status
+     *        Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there
+     *        can be situations where you need to disable it. For example, you might need to pause a recurring transfer
+     *        to fix an issue with your task or perform maintenance on your storage system.</p>
+     *        <p>
+     *        DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html"
+     *        >TaskScheduleDetails</a>.
+     * @see ScheduleStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be
+     * situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an
+     * issue with your task or perform maintenance on your storage system.
+     * </p>
+     * <p>
+     * DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails
+     * </a>.
+     * </p>
+     * 
+     * @return Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there
+     *         can be situations where you need to disable it. For example, you might need to pause a recurring transfer
+     *         to fix an issue with your task or perform maintenance on your storage system.</p>
+     *         <p>
+     *         DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html"
+     *         >TaskScheduleDetails</a>.
+     * @see ScheduleStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be
+     * situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an
+     * issue with your task or perform maintenance on your storage system.
+     * </p>
+     * <p>
+     * DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails
+     * </a>.
+     * </p>
+     * 
+     * @param status
+     *        Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there
+     *        can be situations where you need to disable it. For example, you might need to pause a recurring transfer
+     *        to fix an issue with your task or perform maintenance on your storage system.</p>
+     *        <p>
+     *        DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html"
+     *        >TaskScheduleDetails</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScheduleStatus
+     */
+
+    public TaskSchedule withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there can be
+     * situations where you need to disable it. For example, you might need to pause a recurring transfer to fix an
+     * issue with your task or perform maintenance on your storage system.
+     * </p>
+     * <p>
+     * DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails
+     * </a>.
+     * </p>
+     * 
+     * @param status
+     *        Specifies whether to enable or disable your task schedule. Your schedule is enabled by default, but there
+     *        can be situations where you need to disable it. For example, you might need to pause a recurring transfer
+     *        to fix an issue with your task or perform maintenance on your storage system.</p>
+     *        <p>
+     *        DataSync might disable your schedule automatically if your task fails repeatedly with the same error. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html"
+     *        >TaskScheduleDetails</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScheduleStatus
+     */
+
+    public TaskSchedule withStatus(ScheduleStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -97,7 +240,9 @@ public class TaskSchedule implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: ").append(getScheduleExpression());
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -116,6 +261,10 @@ public class TaskSchedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScheduleExpression() != null && other.getScheduleExpression().equals(this.getScheduleExpression()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -125,6 +274,7 @@ public class TaskSchedule implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

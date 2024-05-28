@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,6 +92,32 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplicatorResult> createReplicatorAsync(CreateReplicatorRequest request) {
+
+        return createReplicatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplicatorResult> createReplicatorAsync(CreateReplicatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateReplicatorRequest, CreateReplicatorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcConnectionResult> createVpcConnectionAsync(CreateVpcConnectionRequest request) {
+
+        return createVpcConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcConnectionResult> createVpcConnectionAsync(CreateVpcConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcConnectionRequest, CreateVpcConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);
@@ -105,6 +131,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteClusterPolicyResult> deleteClusterPolicyAsync(DeleteClusterPolicyRequest request) {
+
+        return deleteClusterPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteClusterPolicyResult> deleteClusterPolicyAsync(DeleteClusterPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteClusterPolicyRequest, DeleteClusterPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigurationResult> deleteConfigurationAsync(DeleteConfigurationRequest request) {
 
         return deleteConfigurationAsync(request, null);
@@ -113,6 +152,32 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<DeleteConfigurationResult> deleteConfigurationAsync(DeleteConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRequest, DeleteConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicatorResult> deleteReplicatorAsync(DeleteReplicatorRequest request) {
+
+        return deleteReplicatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicatorResult> deleteReplicatorAsync(DeleteReplicatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteReplicatorRequest, DeleteReplicatorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcConnectionResult> deleteVpcConnectionAsync(DeleteVpcConnectionRequest request) {
+
+        return deleteVpcConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcConnectionResult> deleteVpcConnectionAsync(DeleteVpcConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcConnectionRequest, DeleteVpcConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +204,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<DescribeClusterOperationResult> describeClusterOperationAsync(DescribeClusterOperationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterOperationRequest, DescribeClusterOperationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterOperationV2Result> describeClusterOperationV2Async(DescribeClusterOperationV2Request request) {
+
+        return describeClusterOperationV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterOperationV2Result> describeClusterOperationV2Async(DescribeClusterOperationV2Request request,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterOperationV2Request, DescribeClusterOperationV2Result> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -183,6 +261,32 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplicatorResult> describeReplicatorAsync(DescribeReplicatorRequest request) {
+
+        return describeReplicatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicatorResult> describeReplicatorAsync(DescribeReplicatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicatorRequest, DescribeReplicatorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcConnectionResult> describeVpcConnectionAsync(DescribeVpcConnectionRequest request) {
+
+        return describeVpcConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcConnectionResult> describeVpcConnectionAsync(DescribeVpcConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcConnectionRequest, DescribeVpcConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBootstrapBrokersResult> getBootstrapBrokersAsync(GetBootstrapBrokersRequest request) {
 
         return getBootstrapBrokersAsync(request, null);
@@ -191,6 +295,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<GetBootstrapBrokersResult> getBootstrapBrokersAsync(GetBootstrapBrokersRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBootstrapBrokersRequest, GetBootstrapBrokersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterPolicyResult> getClusterPolicyAsync(GetClusterPolicyRequest request) {
+
+        return getClusterPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterPolicyResult> getClusterPolicyAsync(GetClusterPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetClusterPolicyRequest, GetClusterPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +326,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<ListClientVpcConnectionsResult> listClientVpcConnectionsAsync(ListClientVpcConnectionsRequest request) {
+
+        return listClientVpcConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClientVpcConnectionsResult> listClientVpcConnectionsAsync(ListClientVpcConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListClientVpcConnectionsRequest, ListClientVpcConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClusterOperationsResult> listClusterOperationsAsync(ListClusterOperationsRequest request) {
 
         return listClusterOperationsAsync(request, null);
@@ -217,6 +347,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<ListClusterOperationsResult> listClusterOperationsAsync(ListClusterOperationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListClusterOperationsRequest, ListClusterOperationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClusterOperationsV2Result> listClusterOperationsV2Async(ListClusterOperationsV2Request request) {
+
+        return listClusterOperationsV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClusterOperationsV2Result> listClusterOperationsV2Async(ListClusterOperationsV2Request request,
+            com.amazonaws.handlers.AsyncHandler<ListClusterOperationsV2Request, ListClusterOperationsV2Result> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -300,6 +443,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<ListReplicatorsResult> listReplicatorsAsync(ListReplicatorsRequest request) {
+
+        return listReplicatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplicatorsResult> listReplicatorsAsync(ListReplicatorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReplicatorsRequest, ListReplicatorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(ListScramSecretsRequest request) {
 
         return listScramSecretsAsync(request, null);
@@ -326,6 +482,32 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<ListVpcConnectionsResult> listVpcConnectionsAsync(ListVpcConnectionsRequest request) {
+
+        return listVpcConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcConnectionsResult> listVpcConnectionsAsync(ListVpcConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVpcConnectionsRequest, ListVpcConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutClusterPolicyResult> putClusterPolicyAsync(PutClusterPolicyRequest request) {
+
+        return putClusterPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutClusterPolicyResult> putClusterPolicyAsync(PutClusterPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutClusterPolicyRequest, PutClusterPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootBrokerResult> rebootBrokerAsync(RebootBrokerRequest request) {
 
         return rebootBrokerAsync(request, null);
@@ -334,6 +516,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<RebootBrokerResult> rebootBrokerAsync(RebootBrokerRequest request,
             com.amazonaws.handlers.AsyncHandler<RebootBrokerRequest, RebootBrokerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectClientVpcConnectionResult> rejectClientVpcConnectionAsync(RejectClientVpcConnectionRequest request) {
+
+        return rejectClientVpcConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectClientVpcConnectionResult> rejectClientVpcConnectionAsync(RejectClientVpcConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectClientVpcConnectionRequest, RejectClientVpcConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -464,6 +659,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<UpdateMonitoringResult> updateMonitoringAsync(UpdateMonitoringRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMonitoringRequest, UpdateMonitoringResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReplicationInfoResult> updateReplicationInfoAsync(UpdateReplicationInfoRequest request) {
+
+        return updateReplicationInfoAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReplicationInfoResult> updateReplicationInfoAsync(UpdateReplicationInfoRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateReplicationInfoRequest, UpdateReplicationInfoResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing the creation of the speaker enrollment job.
+     * A timestamp of when the speaker enrollment job was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -49,7 +49,7 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
     private String domainId;
     /**
      * <p>
-     * A timestamp showing when the speaker enrollment job ended.
+     * A timestamp of when the speaker enrollment job ended.
      * </p>
      */
     private java.util.Date endedAt;
@@ -111,11 +111,11 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing the creation of the speaker enrollment job.
+     * A timestamp of when the speaker enrollment job was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing the creation of the speaker enrollment job.
+     *        A timestamp of when the speaker enrollment job was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -124,10 +124,10 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing the creation of the speaker enrollment job.
+     * A timestamp of when the speaker enrollment job was created.
      * </p>
      * 
-     * @return A timestamp showing the creation of the speaker enrollment job.
+     * @return A timestamp of when the speaker enrollment job was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -136,11 +136,11 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing the creation of the speaker enrollment job.
+     * A timestamp of when the speaker enrollment job was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing the creation of the speaker enrollment job.
+     *        A timestamp of when the speaker enrollment job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +237,11 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing when the speaker enrollment job ended.
+     * A timestamp of when the speaker enrollment job ended.
      * </p>
      * 
      * @param endedAt
-     *        A timestamp showing when the speaker enrollment job ended.
+     *        A timestamp of when the speaker enrollment job ended.
      */
 
     public void setEndedAt(java.util.Date endedAt) {
@@ -250,10 +250,10 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing when the speaker enrollment job ended.
+     * A timestamp of when the speaker enrollment job ended.
      * </p>
      * 
-     * @return A timestamp showing when the speaker enrollment job ended.
+     * @return A timestamp of when the speaker enrollment job ended.
      */
 
     public java.util.Date getEndedAt() {
@@ -262,11 +262,11 @@ public class SpeakerEnrollmentJob implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp showing when the speaker enrollment job ended.
+     * A timestamp of when the speaker enrollment job ended.
      * </p>
      * 
      * @param endedAt
-     *        A timestamp showing when the speaker enrollment job ended.
+     *        A timestamp of when the speaker enrollment job ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

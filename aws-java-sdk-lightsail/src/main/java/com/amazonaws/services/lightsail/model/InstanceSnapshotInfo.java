@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      * </p>
      */
     private String fromBundleId;
     /**
      * <p>
-     * The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     * The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      * </p>
      */
     private String fromBlueprintId;
@@ -49,11 +49,11 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      * </p>
      * 
      * @param fromBundleId
-     *        The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     *        The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      */
 
     public void setFromBundleId(String fromBundleId) {
@@ -62,10 +62,10 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      * </p>
      * 
-     * @return The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     * @return The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      */
 
     public String getFromBundleId() {
@@ -74,11 +74,11 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      * </p>
      * 
      * @param fromBundleId
-     *        The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).
+     *        The bundle ID from which the source instance was created (<code>micro_x_x</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     * The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      * </p>
      * 
      * @param fromBlueprintId
-     *        The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     *        The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      */
 
     public void setFromBlueprintId(String fromBlueprintId) {
@@ -102,10 +102,10 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     * The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      * </p>
      * 
-     * @return The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     * @return The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      */
 
     public String getFromBlueprintId() {
@@ -114,11 +114,11 @@ public class InstanceSnapshotInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     * The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      * </p>
      * 
      * @param fromBlueprintId
-     *        The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).
+     *        The blueprint ID from which the source instance (<code>amazon_linux_2023</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

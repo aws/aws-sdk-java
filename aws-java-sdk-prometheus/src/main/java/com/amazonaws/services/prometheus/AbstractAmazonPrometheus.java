@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
     }
 
     @Override
+    public CreateScraperResult createScraper(CreateScraperRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkspaceResult createWorkspace(CreateWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -60,6 +65,11 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
 
     @Override
     public DeleteRuleGroupsNamespaceResult deleteRuleGroupsNamespace(DeleteRuleGroupsNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteScraperResult deleteScraper(DeleteScraperRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,12 +94,27 @@ public class AbstractAmazonPrometheus implements AmazonPrometheus {
     }
 
     @Override
+    public DescribeScraperResult describeScraper(DescribeScraperRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeWorkspaceResult describeWorkspace(DescribeWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetDefaultScraperConfigurationResult getDefaultScraperConfiguration(GetDefaultScraperConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRuleGroupsNamespacesResult listRuleGroupsNamespaces(ListRuleGroupsNamespacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListScrapersResult listScrapers(ListScrapersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ActivateNetworkSiteRequestMarshaller {
 
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
+    private static final MarshallingInfo<StructuredPojo> COMMITMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("commitmentConfiguration").build();
     private static final MarshallingInfo<String> NETWORKSITEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSiteArn").build();
     private static final MarshallingInfo<StructuredPojo> SHIPPINGADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,7 @@ public class ActivateNetworkSiteRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(activateNetworkSiteRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(activateNetworkSiteRequest.getCommitmentConfiguration(), COMMITMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(activateNetworkSiteRequest.getNetworkSiteArn(), NETWORKSITEARN_BINDING);
             protocolMarshaller.marshall(activateNetworkSiteRequest.getShippingAddress(), SHIPPINGADDRESS_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -185,6 +185,32 @@ public class ConnectorConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private String registeredBy;
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private java.util.List<String> supportedDataTransferTypes;
+    /**
+     * <p>
+     * The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * </p>
+     */
+    private java.util.List<DataTransferApi> supportedDataTransferApis;
 
     /**
      * <p>
@@ -1699,6 +1725,309 @@ public class ConnectorConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The data transfer types that the connector supports.</p>
+     *         <dl>
+     *         <dt>RECORD</dt>
+     *         <dd>
+     *         <p>
+     *         Structured records.
+     *         </p>
+     *         </dd>
+     *         <dt>FILE</dt>
+     *         <dd>
+     *         <p>
+     *         Files or binary data.
+     *         </p>
+     *         </dd>
+     * @see SupportedDataTransferType
+     */
+
+    public java.util.List<String> getSupportedDataTransferTypes() {
+        return supportedDataTransferTypes;
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @see SupportedDataTransferType
+     */
+
+    public void setSupportedDataTransferTypes(java.util.Collection<String> supportedDataTransferTypes) {
+        if (supportedDataTransferTypes == null) {
+            this.supportedDataTransferTypes = null;
+            return;
+        }
+
+        this.supportedDataTransferTypes = new java.util.ArrayList<String>(supportedDataTransferTypes);
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedDataTransferTypes(java.util.Collection)} or
+     * {@link #withSupportedDataTransferTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SupportedDataTransferType
+     */
+
+    public ConnectorConfiguration withSupportedDataTransferTypes(String... supportedDataTransferTypes) {
+        if (this.supportedDataTransferTypes == null) {
+            setSupportedDataTransferTypes(new java.util.ArrayList<String>(supportedDataTransferTypes.length));
+        }
+        for (String ele : supportedDataTransferTypes) {
+            this.supportedDataTransferTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SupportedDataTransferType
+     */
+
+    public ConnectorConfiguration withSupportedDataTransferTypes(java.util.Collection<String> supportedDataTransferTypes) {
+        setSupportedDataTransferTypes(supportedDataTransferTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SupportedDataTransferType
+     */
+
+    public ConnectorConfiguration withSupportedDataTransferTypes(SupportedDataTransferType... supportedDataTransferTypes) {
+        java.util.ArrayList<String> supportedDataTransferTypesCopy = new java.util.ArrayList<String>(supportedDataTransferTypes.length);
+        for (SupportedDataTransferType value : supportedDataTransferTypes) {
+            supportedDataTransferTypesCopy.add(value.toString());
+        }
+        if (getSupportedDataTransferTypes() == null) {
+            setSupportedDataTransferTypes(supportedDataTransferTypesCopy);
+        } else {
+            getSupportedDataTransferTypes().addAll(supportedDataTransferTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * </p>
+     * 
+     * @return The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     */
+
+    public java.util.List<DataTransferApi> getSupportedDataTransferApis() {
+        return supportedDataTransferApis;
+    }
+
+    /**
+     * <p>
+     * The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * </p>
+     * 
+     * @param supportedDataTransferApis
+     *        The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     */
+
+    public void setSupportedDataTransferApis(java.util.Collection<DataTransferApi> supportedDataTransferApis) {
+        if (supportedDataTransferApis == null) {
+            this.supportedDataTransferApis = null;
+            return;
+        }
+
+        this.supportedDataTransferApis = new java.util.ArrayList<DataTransferApi>(supportedDataTransferApis);
+    }
+
+    /**
+     * <p>
+     * The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedDataTransferApis(java.util.Collection)} or
+     * {@link #withSupportedDataTransferApis(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedDataTransferApis
+     *        The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorConfiguration withSupportedDataTransferApis(DataTransferApi... supportedDataTransferApis) {
+        if (this.supportedDataTransferApis == null) {
+            setSupportedDataTransferApis(new java.util.ArrayList<DataTransferApi>(supportedDataTransferApis.length));
+        }
+        for (DataTransferApi ele : supportedDataTransferApis) {
+            this.supportedDataTransferApis.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * </p>
+     * 
+     * @param supportedDataTransferApis
+     *        The APIs of the connector application that Amazon AppFlow can use to transfer your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorConfiguration withSupportedDataTransferApis(java.util.Collection<DataTransferApi> supportedDataTransferApis) {
+        setSupportedDataTransferApis(supportedDataTransferApis);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1761,7 +2090,11 @@ public class ConnectorConfiguration implements Serializable, Cloneable, Structur
         if (getRegisteredAt() != null)
             sb.append("RegisteredAt: ").append(getRegisteredAt()).append(",");
         if (getRegisteredBy() != null)
-            sb.append("RegisteredBy: ").append(getRegisteredBy());
+            sb.append("RegisteredBy: ").append(getRegisteredBy()).append(",");
+        if (getSupportedDataTransferTypes() != null)
+            sb.append("SupportedDataTransferTypes: ").append(getSupportedDataTransferTypes()).append(",");
+        if (getSupportedDataTransferApis() != null)
+            sb.append("SupportedDataTransferApis: ").append(getSupportedDataTransferApis());
         sb.append("}");
         return sb.toString();
     }
@@ -1883,6 +2216,14 @@ public class ConnectorConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getRegisteredBy() != null && other.getRegisteredBy().equals(this.getRegisteredBy()) == false)
             return false;
+        if (other.getSupportedDataTransferTypes() == null ^ this.getSupportedDataTransferTypes() == null)
+            return false;
+        if (other.getSupportedDataTransferTypes() != null && other.getSupportedDataTransferTypes().equals(this.getSupportedDataTransferTypes()) == false)
+            return false;
+        if (other.getSupportedDataTransferApis() == null ^ this.getSupportedDataTransferApis() == null)
+            return false;
+        if (other.getSupportedDataTransferApis() != null && other.getSupportedDataTransferApis().equals(this.getSupportedDataTransferApis()) == false)
+            return false;
         return true;
     }
 
@@ -1917,6 +2258,8 @@ public class ConnectorConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getLogoURL() == null) ? 0 : getLogoURL().hashCode());
         hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
         hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode());
+        hashCode = prime * hashCode + ((getSupportedDataTransferTypes() == null) ? 0 : getSupportedDataTransferTypes().hashCode());
+        hashCode = prime * hashCode + ((getSupportedDataTransferApis() == null) ? 0 : getSupportedDataTransferApis().hashCode());
         return hashCode;
     }
 

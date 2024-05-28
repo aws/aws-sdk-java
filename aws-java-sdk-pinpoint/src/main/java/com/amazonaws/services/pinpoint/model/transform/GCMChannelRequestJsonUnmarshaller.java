@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,9 +52,17 @@ public class GCMChannelRequestJsonUnmarshaller implements Unmarshaller<GCMChanne
                     context.nextToken();
                     gCMChannelRequest.setApiKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelRequest.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     gCMChannelRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ServiceJson", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelRequest.setServiceJson(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

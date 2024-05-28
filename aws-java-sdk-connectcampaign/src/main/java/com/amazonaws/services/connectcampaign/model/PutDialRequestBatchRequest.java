@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutDialRequestBatchRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    private String id;
+
     private java.util.List<DialRequest> dialRequests;
 
-    private String id;
+    /**
+     * @param id
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * @param id
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDialRequestBatchRequest withId(String id) {
+        setId(id);
+        return this;
+    }
 
     /**
      * @return
@@ -85,32 +111,6 @@ public class PutDialRequestBatchRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutDialRequestBatchRequest withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -122,10 +122,10 @@ public class PutDialRequestBatchRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDialRequests() != null)
-            sb.append("DialRequests: ").append(getDialRequests()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getDialRequests() != null)
+            sb.append("DialRequests: ").append(getDialRequests());
         sb.append("}");
         return sb.toString();
     }
@@ -140,13 +140,13 @@ public class PutDialRequestBatchRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof PutDialRequestBatchRequest == false)
             return false;
         PutDialRequestBatchRequest other = (PutDialRequestBatchRequest) obj;
-        if (other.getDialRequests() == null ^ this.getDialRequests() == null)
-            return false;
-        if (other.getDialRequests() != null && other.getDialRequests().equals(this.getDialRequests()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getDialRequests() == null ^ this.getDialRequests() == null)
+            return false;
+        if (other.getDialRequests() != null && other.getDialRequests().equals(this.getDialRequests()) == false)
             return false;
         return true;
     }
@@ -156,8 +156,8 @@ public class PutDialRequestBatchRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDialRequests() == null) ? 0 : getDialRequests().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDialRequests() == null) ? 0 : getDialRequests().hashCode());
         return hashCode;
     }
 

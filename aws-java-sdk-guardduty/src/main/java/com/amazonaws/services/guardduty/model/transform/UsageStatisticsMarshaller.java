@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,16 @@ public class UsageStatisticsMarshaller {
 
     private static final MarshallingInfo<List> SUMBYACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sumByAccount").build();
+    private static final MarshallingInfo<List> TOPACCOUNTSBYFEATURE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("topAccountsByFeature").build();
     private static final MarshallingInfo<List> SUMBYDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sumByDataSource").build();
     private static final MarshallingInfo<List> SUMBYRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sumByResource").build();
     private static final MarshallingInfo<List> TOPRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("topResources").build();
+    private static final MarshallingInfo<List> SUMBYFEATURE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sumByFeature").build();
 
     private static final UsageStatisticsMarshaller instance = new UsageStatisticsMarshaller();
 
@@ -54,9 +58,11 @@ public class UsageStatisticsMarshaller {
 
         try {
             protocolMarshaller.marshall(usageStatistics.getSumByAccount(), SUMBYACCOUNT_BINDING);
+            protocolMarshaller.marshall(usageStatistics.getTopAccountsByFeature(), TOPACCOUNTSBYFEATURE_BINDING);
             protocolMarshaller.marshall(usageStatistics.getSumByDataSource(), SUMBYDATASOURCE_BINDING);
             protocolMarshaller.marshall(usageStatistics.getSumByResource(), SUMBYRESOURCE_BINDING);
             protocolMarshaller.marshall(usageStatistics.getTopResources(), TOPRESOURCES_BINDING);
+            protocolMarshaller.marshall(usageStatistics.getSumByFeature(), SUMBYFEATURE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

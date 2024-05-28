@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier of the updated user account.
+     *        The unique identifier of the updated user.
      */
 
     public void setUserId(String userId) {
@@ -45,10 +45,10 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      * 
-     * @return The unique identifier of the updated user account.
+     * @return The unique identifier of the updated user.
      */
 
     public String getUserId() {
@@ -57,11 +57,11 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier of the updated user account.
+     * The unique identifier of the updated user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier of the updated user account.
+     *        The unique identifier of the updated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

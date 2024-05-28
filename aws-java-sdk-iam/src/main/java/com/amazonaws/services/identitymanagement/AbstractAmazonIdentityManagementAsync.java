@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1016,6 +1016,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<GetLoginProfileResult> getLoginProfileAsync(GetLoginProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLoginProfileRequest, GetLoginProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMFADeviceResult> getMFADeviceAsync(GetMFADeviceRequest request) {
+
+        return getMFADeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMFADeviceResult> getMFADeviceAsync(GetMFADeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMFADeviceRequest, GetMFADeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

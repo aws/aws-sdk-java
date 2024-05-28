@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,14 @@ public class DescribeGlobalClustersRequest extends com.amazonaws.AmazonWebServic
     private String globalClusterIdentifier;
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.
+     * </p>
+     * <p>
+     * Currently, the only supported filter is <code>region</code>.
+     * </p>
+     * <p>
+     * If used, the request returns information about any global cluster with at least one member (primary or secondary)
+     * in the specified Amazon Web Services Regions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -176,10 +183,24 @@ public class DescribeGlobalClustersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.
+     * </p>
+     * <p>
+     * Currently, the only supported filter is <code>region</code>.
+     * </p>
+     * <p>
+     * If used, the request returns information about any global cluster with at least one member (primary or secondary)
+     * in the specified Amazon Web Services Regions.
      * </p>
      * 
-     * @return This parameter isn't currently supported.
+     * @return A filter that specifies one or more global database clusters to describe. This parameter is
+     *         case-sensitive.</p>
+     *         <p>
+     *         Currently, the only supported filter is <code>region</code>.
+     *         </p>
+     *         <p>
+     *         If used, the request returns information about any global cluster with at least one member (primary or
+     *         secondary) in the specified Amazon Web Services Regions.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -191,11 +212,25 @@ public class DescribeGlobalClustersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.
+     * </p>
+     * <p>
+     * Currently, the only supported filter is <code>region</code>.
+     * </p>
+     * <p>
+     * If used, the request returns information about any global cluster with at least one member (primary or secondary)
+     * in the specified Amazon Web Services Regions.
      * </p>
      * 
      * @param filters
-     *        This parameter isn't currently supported.
+     *        A filter that specifies one or more global database clusters to describe. This parameter is
+     *        case-sensitive.</p>
+     *        <p>
+     *        Currently, the only supported filter is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        If used, the request returns information about any global cluster with at least one member (primary or
+     *        secondary) in the specified Amazon Web Services Regions.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -209,7 +244,14 @@ public class DescribeGlobalClustersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.
+     * </p>
+     * <p>
+     * Currently, the only supported filter is <code>region</code>.
+     * </p>
+     * <p>
+     * If used, the request returns information about any global cluster with at least one member (primary or secondary)
+     * in the specified Amazon Web Services Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -218,7 +260,14 @@ public class DescribeGlobalClustersRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param filters
-     *        This parameter isn't currently supported.
+     *        A filter that specifies one or more global database clusters to describe. This parameter is
+     *        case-sensitive.</p>
+     *        <p>
+     *        Currently, the only supported filter is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        If used, the request returns information about any global cluster with at least one member (primary or
+     *        secondary) in the specified Amazon Web Services Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +283,25 @@ public class DescribeGlobalClustersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * This parameter isn't currently supported.
+     * A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.
+     * </p>
+     * <p>
+     * Currently, the only supported filter is <code>region</code>.
+     * </p>
+     * <p>
+     * If used, the request returns information about any global cluster with at least one member (primary or secondary)
+     * in the specified Amazon Web Services Regions.
      * </p>
      * 
      * @param filters
-     *        This parameter isn't currently supported.
+     *        A filter that specifies one or more global database clusters to describe. This parameter is
+     *        case-sensitive.</p>
+     *        <p>
+     *        Currently, the only supported filter is <code>region</code>.
+     *        </p>
+     *        <p>
+     *        If used, the request returns information about any global cluster with at least one member (primary or
+     *        secondary) in the specified Amazon Web Services Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     private String egressIp;
     /** The entitlements in this flow. */
     private java.util.List<Entitlement> entitlements;
-    /** The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow. */
+    /** The Amazon Resource Name (ARN) of the flow. */
     private String flowArn;
     /**
      * The media streams that are associated with the flow. After you associate a media stream with a source, you can
@@ -241,10 +241,10 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * 
      * @param flowArn
-     *        The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      */
 
     public void setFlowArn(String flowArn) {
@@ -252,9 +252,9 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * 
-     * @return The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+     * @return The Amazon Resource Name (ARN) of the flow.
      */
 
     public String getFlowArn() {
@@ -262,10 +262,10 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+     * The Amazon Resource Name (ARN) of the flow.
      * 
      * @param flowArn
-     *        The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
+     *        The Amazon Resource Name (ARN) of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

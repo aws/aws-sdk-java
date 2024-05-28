@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class ListJournalS3ExportsForLedgerResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The array of journal export job descriptions that are associated with the specified ledger.
+     * The journal export jobs that are currently associated with the specified ledger.
      * </p>
      */
     private java.util.List<JournalS3ExportDescription> journalS3Exports;
@@ -51,10 +51,10 @@ public class ListJournalS3ExportsForLedgerResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The array of journal export job descriptions that are associated with the specified ledger.
+     * The journal export jobs that are currently associated with the specified ledger.
      * </p>
      * 
-     * @return The array of journal export job descriptions that are associated with the specified ledger.
+     * @return The journal export jobs that are currently associated with the specified ledger.
      */
 
     public java.util.List<JournalS3ExportDescription> getJournalS3Exports() {
@@ -63,11 +63,11 @@ public class ListJournalS3ExportsForLedgerResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The array of journal export job descriptions that are associated with the specified ledger.
+     * The journal export jobs that are currently associated with the specified ledger.
      * </p>
      * 
      * @param journalS3Exports
-     *        The array of journal export job descriptions that are associated with the specified ledger.
+     *        The journal export jobs that are currently associated with the specified ledger.
      */
 
     public void setJournalS3Exports(java.util.Collection<JournalS3ExportDescription> journalS3Exports) {
@@ -81,7 +81,7 @@ public class ListJournalS3ExportsForLedgerResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The array of journal export job descriptions that are associated with the specified ledger.
+     * The journal export jobs that are currently associated with the specified ledger.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +90,7 @@ public class ListJournalS3ExportsForLedgerResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param journalS3Exports
-     *        The array of journal export job descriptions that are associated with the specified ledger.
+     *        The journal export jobs that are currently associated with the specified ledger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +106,11 @@ public class ListJournalS3ExportsForLedgerResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The array of journal export job descriptions that are associated with the specified ledger.
+     * The journal export jobs that are currently associated with the specified ledger.
      * </p>
      * 
      * @param journalS3Exports
-     *        The array of journal export job descriptions that are associated with the specified ledger.
+     *        The journal export jobs that are currently associated with the specified ledger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

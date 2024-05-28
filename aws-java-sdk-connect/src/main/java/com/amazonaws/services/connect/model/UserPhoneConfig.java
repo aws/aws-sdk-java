@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
     private Boolean autoAccept;
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds.
+     * The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum
+     * value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It
+     * essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose
+     * Close contact to end ACW.
      * </p>
      * <note>
      * <p>
@@ -172,7 +175,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds.
+     * The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum
+     * value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It
+     * essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose
+     * Close contact to end ACW.
      * </p>
      * <note>
      * <p>
@@ -182,7 +188,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param afterContactWorkTimeLimit
-     *        The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+     *        The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a
+     *        maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of
+     *        ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the
+     *        agent must choose Close contact to end ACW. </p> <note>
      *        <p>
      *        When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
      *        milliseconds.
@@ -195,7 +204,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds.
+     * The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum
+     * value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It
+     * essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose
+     * Close contact to end ACW.
      * </p>
      * <note>
      * <p>
@@ -204,7 +216,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+     * @return The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a
+     *         maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of
+     *         ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the
+     *         agent must choose Close contact to end ACW. </p> <note>
      *         <p>
      *         When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
      *         milliseconds.
@@ -217,7 +232,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The After Call Work (ACW) timeout setting, in seconds.
+     * The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum
+     * value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It
+     * essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose
+     * Close contact to end ACW.
      * </p>
      * <note>
      * <p>
@@ -227,7 +245,10 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param afterContactWorkTimeLimit
-     *        The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+     *        The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a
+     *        maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of
+     *        ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the
+     *        agent must choose Close contact to end ACW. </p> <note>
      *        <p>
      *        When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
      *        milliseconds.

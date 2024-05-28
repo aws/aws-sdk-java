@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,27 +16,29 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * Container for the result of the StartSupportDataExport operation.
+ * <i>This target has been deprecated.</i> Container for the result of the StartSupportDataExport operation.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"
  *      target="_top">AWS API Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartSupportDataExportResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
-     * A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can
-     * be used to correlate a request with notifications from the SNS topic.
+     * <i>This target has been deprecated.</i> A unique identifier representing a specific request to the
+     * StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the
+     * SNS topic.
      */
     private String dataSetRequestId;
 
     /**
-     * A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can
-     * be used to correlate a request with notifications from the SNS topic.
+     * <i>This target has been deprecated.</i> A unique identifier representing a specific request to the
+     * StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the
+     * SNS topic.
      * 
      * @param dataSetRequestId
-     *        A unique identifier representing a specific request to the StartSupportDataExport operation. This
-     *        identifier can be used to correlate a request with notifications from the SNS topic.
+     *        This target has been deprecated.
      */
 
     public void setDataSetRequestId(String dataSetRequestId) {
@@ -44,11 +46,11 @@ public class StartSupportDataExportResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can
-     * be used to correlate a request with notifications from the SNS topic.
+     * <i>This target has been deprecated.</i> A unique identifier representing a specific request to the
+     * StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the
+     * SNS topic.
      * 
-     * @return A unique identifier representing a specific request to the StartSupportDataExport operation. This
-     *         identifier can be used to correlate a request with notifications from the SNS topic.
+     * @return This target has been deprecated.
      */
 
     public String getDataSetRequestId() {
@@ -56,12 +58,12 @@ public class StartSupportDataExportResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can
-     * be used to correlate a request with notifications from the SNS topic.
+     * <i>This target has been deprecated.</i> A unique identifier representing a specific request to the
+     * StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the
+     * SNS topic.
      * 
      * @param dataSetRequestId
-     *        A unique identifier representing a specific request to the StartSupportDataExport operation. This
-     *        identifier can be used to correlate a request with notifications from the SNS topic.
+     *        This target has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

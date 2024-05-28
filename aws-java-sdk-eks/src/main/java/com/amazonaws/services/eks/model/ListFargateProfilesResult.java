@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,17 @@ public class ListFargateProfilesResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.List<String> fargateProfileNames;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the
-     * results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      */
     private String nextToken;
 
@@ -110,16 +117,27 @@ public class ListFargateProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the
-     * results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the
-     *        results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this
-     *        value to retrieve the next page of results. This value is <code>null</code> when there are no more results
-     *        to return.
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -128,15 +146,26 @@ public class ListFargateProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the
-     * results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      * 
-     * @return The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When
-     *         the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use
-     *         this value to retrieve the next page of results. This value is <code>null</code> when there are no more
-     *         results to return.
+     * @return The <code>nextToken</code> value returned from a previous paginated request, where
+     *         <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *         is null when there are no more results to return.</p> <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is used only to retrieve the next items in a
+     *         list and not for other programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -145,16 +174,27 @@ public class ListFargateProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the
-     * results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to
-     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the
-     *        results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this
-     *        value to retrieve the next page of results. This value is <code>null</code> when there are no more results
-     *        to return.
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

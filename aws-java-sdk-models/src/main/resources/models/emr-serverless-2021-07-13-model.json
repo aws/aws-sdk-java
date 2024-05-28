@@ -3,8 +3,8 @@
   "metadata":{
     "apiVersion":"2021-07-13",
     "endpointPrefix":"emr-serverless",
-    "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"EMR Serverless",
     "serviceId":"EMR Serverless",
     "signatureVersion":"v4",
@@ -40,6 +40,7 @@
       "output":{"shape":"CreateApplicationResponse"},
       "errors":[
         {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
         {"shape":"ConflictException"}
       ],
@@ -93,7 +94,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Returns a URL to access the job run dashboard.</p>"
+      "documentation":"<p>Creates and returns a URL that you can use to access the application UIs for a job run.</p> <p>For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.</p> <note> <p>The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL.</p> </note>"
     },
     "GetJobRun":{
       "name":"GetJobRun",
@@ -224,7 +225,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. </p>"
+      "documentation":"<p>Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. </p>"
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -287,7 +288,7 @@
         },
         "releaseLabel":{
           "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application.</p>"
+          "documentation":"<p>The Amazon EMR release associated with the application.</p>"
         },
         "type":{
           "shape":"EngineType",
@@ -332,9 +333,30 @@
         "networkConfiguration":{
           "shape":"NetworkConfiguration",
           "documentation":"<p>The network configuration for customer VPC connectivity for the application.</p>"
+        },
+        "architecture":{
+          "shape":"Architecture",
+          "documentation":"<p>The CPU architecture of an application.</p>"
+        },
+        "imageConfiguration":{
+          "shape":"ImageConfiguration",
+          "documentation":"<p>The image configuration applied to all worker types.</p>"
+        },
+        "workerTypeSpecifications":{
+          "shape":"WorkerTypeSpecificationMap",
+          "documentation":"<p>The specification applied to each worker type.</p>"
+        },
+        "runtimeConfiguration":{
+          "shape":"ConfigurationList",
+          "documentation":"<p>The <a href=\"https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html\">Configuration</a> specifications of an application. Each configuration consists of a classification and properties. You use this parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run the <a href=\"https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html\">GetApplication</a> API operation.</p>"
+        },
+        "monitoringConfiguration":{"shape":"MonitoringConfiguration"},
+        "interactiveConfiguration":{
+          "shape":"InteractiveConfiguration",
+          "documentation":"<p>The interactive configuration object that enables the interactive use cases for an application.</p>"
         }
       },
-      "documentation":"<p>Information about an application. EMR Serverless uses applications to run jobs.</p>"
+      "documentation":"<p>Information about an application. Amazon EMR Serverless uses applications to run jobs.</p>"
     },
     "ApplicationArn":{
       "type":"string",
@@ -402,7 +424,7 @@
         },
         "releaseLabel":{
           "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application.</p>"
+          "documentation":"<p>The Amazon EMR release associated with the application.</p>"
         },
         "type":{
           "shape":"EngineType",
@@ -423,9 +445,20 @@
         "updatedAt":{
           "shape":"Date",
           "documentation":"<p>The date and time when the application was last updated.</p>"
+        },
+        "architecture":{
+          "shape":"Architecture",
+          "documentation":"<p>The CPU architecture of an application.</p>"
         }
       },
       "documentation":"<p>The summary of attributes associated with an application.</p>"
+    },
+    "Architecture":{
+      "type":"string",
+      "enum":[
+        "ARM64",
+        "X86_64"
+      ]
     },
     "AutoStartConfig":{
       "type":"structure",
@@ -505,6 +538,33 @@
       "min":1,
       "pattern":"[A-Za-z0-9._-]+"
     },
+    "CloudWatchLoggingConfiguration":{
+      "type":"structure",
+      "required":["enabled"],
+      "members":{
+        "enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables CloudWatch logging.</p>"
+        },
+        "logGroupName":{
+          "shape":"LogGroupName",
+          "documentation":"<p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>"
+        },
+        "logStreamNamePrefix":{
+          "shape":"LogStreamNamePrefix",
+          "documentation":"<p>Prefix for the CloudWatch log stream name.</p>"
+        },
+        "encryptionKeyArn":{
+          "shape":"EncryptionKeyArn",
+          "documentation":"<p>The Key Management Service (KMS) key ARN to encrypt the logs that you store in CloudWatch Logs.</p>"
+        },
+        "logTypes":{
+          "shape":"LogTypeMap",
+          "documentation":"<p>The types of logs that you want to publish to CloudWatch. If you don't specify any log types, driver STDOUT and STDERR logs will be published to CloudWatch Logs by default. For more information including the supported worker types for Hive and Spark, see <a href=\"https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging.html#jobs-log-storage-cw\">Logging for EMR Serverless with CloudWatch</a>.</p> <ul> <li> <p> <b>Key Valid Values</b>: <code>SPARK_DRIVER</code>, <code>SPARK_EXECUTOR</code>, <code>HIVE_DRIVER</code>, <code>TEZ_TASK</code> </p> </li> <li> <p> <b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code> </p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>"
+    },
     "Configuration":{
       "type":"structure",
       "required":["classification"],
@@ -544,6 +604,18 @@
       },
       "documentation":"<p>A configuration specification to be used to override existing configurations.</p>"
     },
+    "ConfigurationPropertyKey":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "ConfigurationPropertyValue":{
+      "type":"string",
+      "max":1024,
+      "min":0,
+      "pattern":".*\\S.*"
+    },
     "ConflictException":{
       "type":"structure",
       "required":["message"],
@@ -577,7 +649,7 @@
         },
         "releaseLabel":{
           "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application.</p>"
+          "documentation":"<p>The Amazon EMR release associated with the application.</p>"
         },
         "type":{
           "shape":"EngineType",
@@ -611,6 +683,30 @@
         "networkConfiguration":{
           "shape":"NetworkConfiguration",
           "documentation":"<p>The network configuration for customer VPC connectivity.</p>"
+        },
+        "architecture":{
+          "shape":"Architecture",
+          "documentation":"<p>The CPU architecture of an application.</p>"
+        },
+        "imageConfiguration":{
+          "shape":"ImageConfigurationInput",
+          "documentation":"<p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>"
+        },
+        "workerTypeSpecifications":{
+          "shape":"WorkerTypeSpecificationInputMap",
+          "documentation":"<p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>"
+        },
+        "runtimeConfiguration":{
+          "shape":"ConfigurationList",
+          "documentation":"<p>The <a href=\"https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html\">Configuration</a> specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.</p>"
+        },
+        "monitoringConfiguration":{
+          "shape":"MonitoringConfiguration",
+          "documentation":"<p>The configuration setting for monitoring.</p>"
+        },
+        "interactiveConfiguration":{
+          "shape":"InteractiveConfiguration",
+          "documentation":"<p>The interactive configuration object that enables the interactive use cases to use when running an application.</p>"
         }
       }
     },
@@ -658,6 +754,10 @@
       "max":15,
       "min":1,
       "pattern":"[1-9][0-9]*(\\s)?(GB|gb|gB|Gb)"
+    },
+    "DiskType":{
+      "type":"string",
+      "pattern":"(SHUFFLE_OPTIMIZED|[Ss]huffle_[Oo]ptimized|STANDARD|[Ss]tandard)"
     },
     "Double":{
       "type":"double",
@@ -812,6 +912,41 @@
       "min":20,
       "pattern":"arn:(aws[a-zA-Z0-9-]*):iam::(\\d{12})?:(role((\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F))[\\w+=,.@-]+)"
     },
+    "ImageConfiguration":{
+      "type":"structure",
+      "required":["imageUri"],
+      "members":{
+        "imageUri":{
+          "shape":"ImageUri",
+          "documentation":"<p>The image URI.</p>"
+        },
+        "resolvedImageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>"
+        }
+      },
+      "documentation":"<p>The applied image configuration.</p>"
+    },
+    "ImageConfigurationInput":{
+      "type":"structure",
+      "members":{
+        "imageUri":{
+          "shape":"ImageUri",
+          "documentation":"<p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>"
+        }
+      },
+      "documentation":"<p>The image configuration.</p>"
+    },
+    "ImageDigest":{
+      "type":"string",
+      "pattern":"sha256:[0-9a-f]{64}"
+    },
+    "ImageUri":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"([a-z0-9]+[a-z0-9-.]*)\\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?:\\:([a-zA-Z0-9_][a-zA-Z0-9-._]{0,299})|@(sha256:[0-9a-f]{64}))"
+    },
     "InitScriptPath":{
       "type":"string",
       "max":256,
@@ -844,6 +979,20 @@
     "Integer":{
       "type":"integer",
       "box":true
+    },
+    "InteractiveConfiguration":{
+      "type":"structure",
+      "members":{
+        "studioEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables you to connect an application to Amazon EMR Studio to run interactive workloads in a notebook.</p>"
+        },
+        "livyEndpointEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables an Apache Livy endpoint that you can connect to and run interactive jobs.</p>"
+        }
+      },
+      "documentation":"<p>The configuration to use to enable the different types of interactive use cases in an application.</p>"
     },
     "InternalServerException":{
       "type":"structure",
@@ -935,7 +1084,7 @@
         },
         "releaseLabel":{
           "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application your job is running on.</p>"
+          "documentation":"<p>The Amazon EMR release associated with the application your job is running on.</p>"
         },
         "configurationOverrides":{
           "shape":"ConfigurationOverrides",
@@ -951,15 +1100,24 @@
         },
         "totalResourceUtilization":{
           "shape":"TotalResourceUtilization",
-          "documentation":"<p>The aggregate vCPU, memory, and storage resources used from the time job start executing till the time job is terminated, rounded up to the nearest second.</p>"
+          "documentation":"<p>The aggregate vCPU, memory, and storage resources used from the time the job starts to execute, until the time the job terminates, rounded up to the nearest second.</p>"
         },
         "networkConfiguration":{"shape":"NetworkConfiguration"},
         "totalExecutionDurationSeconds":{
           "shape":"Integer",
           "documentation":"<p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>"
+        },
+        "executionTimeoutMinutes":{
+          "shape":"Duration",
+          "documentation":"<p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>",
+          "box":true
+        },
+        "billedResourceUtilization":{
+          "shape":"ResourceUtilization",
+          "documentation":"<p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>"
         }
       },
-      "documentation":"<p>Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that you submit to an EMR Serverless application.</p>"
+      "documentation":"<p>Information about a job run. A job run is a unit of work, such as a Spark JAR, Hive query, or SparkSQL query, that you submit to an Amazon EMR Serverless application.</p>"
     },
     "JobRunId":{
       "type":"string",
@@ -1043,7 +1201,7 @@
         },
         "releaseLabel":{
           "shape":"ReleaseLabel",
-          "documentation":"<p>The EMR release version associated with the application your job is running on.</p>"
+          "documentation":"<p>The Amazon EMR release associated with the application your job is running on.</p>"
         },
         "type":{
           "shape":"JobRunType",
@@ -1183,6 +1341,38 @@
         }
       }
     },
+    "LogGroupName":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[\\.\\-_/#A-Za-z0-9]+"
+    },
+    "LogStreamNamePrefix":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[^:*]*"
+    },
+    "LogTypeList":{
+      "type":"list",
+      "member":{"shape":"LogTypeString"},
+      "max":5,
+      "min":1
+    },
+    "LogTypeMap":{
+      "type":"map",
+      "key":{"shape":"WorkerTypeString"},
+      "value":{"shape":"LogTypeList"},
+      "max":4,
+      "min":1
+    },
+    "LogTypeString":{
+      "type":"string",
+      "documentation":"<p>Log type for a Spark/Hive job-run.</p>",
+      "max":50,
+      "min":1,
+      "pattern":"[a-zA-Z]+[-_]*[a-zA-Z]+"
+    },
     "ManagedPersistenceMonitoringConfiguration":{
       "type":"structure",
       "members":{
@@ -1235,6 +1425,14 @@
         "managedPersistenceMonitoringConfiguration":{
           "shape":"ManagedPersistenceMonitoringConfiguration",
           "documentation":"<p>The managed log persistence configuration for a job run.</p>"
+        },
+        "cloudWatchLoggingConfiguration":{
+          "shape":"CloudWatchLoggingConfiguration",
+          "documentation":"<p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>"
+        },
+        "prometheusMonitoringConfiguration":{
+          "shape":"PrometheusMonitoringConfiguration",
+          "documentation":"<p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>"
         }
       },
       "documentation":"<p>The configuration setting for monitoring.</p>"
@@ -1258,6 +1456,22 @@
       "max":1024,
       "min":1,
       "pattern":"[A-Za-z0-9_=-]+"
+    },
+    "PrometheusMonitoringConfiguration":{
+      "type":"structure",
+      "members":{
+        "remoteWriteUrl":{
+          "shape":"PrometheusUrlString",
+          "documentation":"<p>The remote write URL in the Amazon Managed Service for Prometheus workspace to send metrics to.</p>"
+        }
+      },
+      "documentation":"<p>The monitoring configuration object you can configure to send metrics to Amazon Managed Service for Prometheus for a job run.</p>"
+    },
+    "PrometheusUrlString":{
+      "type":"string",
+      "max":10280,
+      "min":1,
+      "pattern":"https://aps-workspaces.([a-z]{2}-[a-z-]{1,20}-[1-9]).amazonaws(.[0-9A-Za-z]{2,4})+/workspaces/[-_.0-9A-Za-z]{1,100}/api/v1/remote_write"
     },
     "Query":{
       "type":"string",
@@ -1297,6 +1511,24 @@
       },
       "exception":true
     },
+    "ResourceUtilization":{
+      "type":"structure",
+      "members":{
+        "vCPUHour":{
+          "shape":"Double",
+          "documentation":"<p>The aggregated vCPU used per hour from the time the job starts executing until the job is terminated.</p>"
+        },
+        "memoryGBHour":{
+          "shape":"Double",
+          "documentation":"<p>The aggregated memory used per hour from the time the job starts executing until the job is terminated.</p>"
+        },
+        "storageGBHour":{
+          "shape":"Double",
+          "documentation":"<p>The aggregated storage used per hour from the time the job starts executing until the job is terminated.</p>"
+        }
+      },
+      "documentation":"<p>The resource utilization for memory, storage, and vCPU for jobs.</p>"
+    },
     "S3MonitoringConfiguration":{
       "type":"structure",
       "members":{
@@ -1325,8 +1557,8 @@
     },
     "SensitivePropertiesMap":{
       "type":"map",
-      "key":{"shape":"String1024"},
-      "value":{"shape":"String1024"},
+      "key":{"shape":"ConfigurationPropertyKey"},
+      "value":{"shape":"ConfigurationPropertyValue"},
       "max":100,
       "min":0,
       "sensitive":true
@@ -1451,7 +1683,7 @@
         },
         "arn":{
           "shape":"JobArn",
-          "documentation":"<p>The output lists the execution role ARN of the job run.</p>"
+          "documentation":"<p>This output displays the ARN of the job run..</p>"
         }
       }
     },
@@ -1623,7 +1855,35 @@
           "shape":"AutoStopConfig",
           "documentation":"<p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>"
         },
-        "networkConfiguration":{"shape":"NetworkConfiguration"}
+        "networkConfiguration":{"shape":"NetworkConfiguration"},
+        "architecture":{
+          "shape":"Architecture",
+          "documentation":"<p>The CPU architecture of an application.</p>"
+        },
+        "imageConfiguration":{
+          "shape":"ImageConfigurationInput",
+          "documentation":"<p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>"
+        },
+        "workerTypeSpecifications":{
+          "shape":"WorkerTypeSpecificationInputMap",
+          "documentation":"<p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>"
+        },
+        "interactiveConfiguration":{
+          "shape":"InteractiveConfiguration",
+          "documentation":"<p>The interactive configuration object that contains new interactive use cases when the application is updated.</p>"
+        },
+        "releaseLabel":{
+          "shape":"ReleaseLabel",
+          "documentation":"<p>The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.</p>"
+        },
+        "runtimeConfiguration":{
+          "shape":"ConfigurationList",
+          "documentation":"<p>The <a href=\"https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html\">Configuration</a> specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.</p>"
+        },
+        "monitoringConfiguration":{
+          "shape":"MonitoringConfiguration",
+          "documentation":"<p>The configuration setting for monitoring.</p>"
+        }
       }
     },
     "UpdateApplicationResponse":{
@@ -1653,7 +1913,7 @@
       "members":{
         "message":{"shape":"String1024"}
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
+      "documentation":"<p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>",
       "error":{
         "httpStatusCode":400,
         "senderFault":true
@@ -1683,16 +1943,51 @@
         "disk":{
           "shape":"DiskSize",
           "documentation":"<p>The disk requirements for every worker instance of the worker type.</p>"
+        },
+        "diskType":{
+          "shape":"DiskType",
+          "documentation":"<p>The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.</p>"
         }
       },
       "documentation":"<p>The cumulative configuration requirements for every worker instance of the worker type.</p>"
     },
+    "WorkerTypeSpecification":{
+      "type":"structure",
+      "members":{
+        "imageConfiguration":{
+          "shape":"ImageConfiguration",
+          "documentation":"<p>The image configuration for a worker type.</p>"
+        }
+      },
+      "documentation":"<p>The specifications for a worker type.</p>"
+    },
+    "WorkerTypeSpecificationInput":{
+      "type":"structure",
+      "members":{
+        "imageConfiguration":{
+          "shape":"ImageConfigurationInput",
+          "documentation":"<p>The image configuration for a worker type.</p>"
+        }
+      },
+      "documentation":"<p>The specifications for a worker type.</p>"
+    },
+    "WorkerTypeSpecificationInputMap":{
+      "type":"map",
+      "key":{"shape":"WorkerTypeString"},
+      "value":{"shape":"WorkerTypeSpecificationInput"}
+    },
+    "WorkerTypeSpecificationMap":{
+      "type":"map",
+      "key":{"shape":"WorkerTypeString"},
+      "value":{"shape":"WorkerTypeSpecification"}
+    },
     "WorkerTypeString":{
       "type":"string",
+      "documentation":"<p>Worker type for an analytics framework.</p>",
       "max":50,
       "min":1,
       "pattern":"[a-zA-Z]+[-_]*[a-zA-Z]+"
     }
   },
-  "documentation":"<p>Amazon EMR Serverless is a new deployment option for Amazon EMR. EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run applications with these frameworks.</p> <p>The API reference to Amazon EMR Serverless is <code>emr-serverless</code>. The <code>emr-serverless</code> prefix is used in the following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands for Amazon EMR Serverless. For example, <code>aws emr-serverless start-job-run</code>.</p> </li> <li> <p>It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, <code>\"Action\": [\"emr-serverless:StartJobRun\"]</code>. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions\">Policy actions for Amazon EMR Serverless</a>.</p> </li> <li> <p>It is the prefix used in Amazon EMR Serverless service endpoints. For example, <code>emr-serverless.us-east-2.amazonaws.com</code>.</p> </li> </ul>"
+  "documentation":"<p>Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With Amazon EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run applications with these frameworks.</p> <p>The API reference to Amazon EMR Serverless is <code>emr-serverless</code>. The <code>emr-serverless</code> prefix is used in the following scenarios: </p> <ul> <li> <p>It is the prefix in the CLI commands for Amazon EMR Serverless. For example, <code>aws emr-serverless start-job-run</code>.</p> </li> <li> <p>It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, <code>\"Action\": [\"emr-serverless:StartJobRun\"]</code>. For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions\">Policy actions for Amazon EMR Serverless</a>.</p> </li> <li> <p>It is the prefix used in Amazon EMR Serverless service endpoints. For example, <code>emr-serverless.us-east-2.amazonaws.com</code>.</p> </li> </ul>"
 }

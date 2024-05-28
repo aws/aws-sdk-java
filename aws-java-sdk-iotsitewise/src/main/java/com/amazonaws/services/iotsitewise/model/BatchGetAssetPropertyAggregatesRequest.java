@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,12 +46,12 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 1 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
      * of <code>maxResults</code> is 4000.
      * </p>
      * </li>
@@ -185,12 +185,12 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 1 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
      * of <code>maxResults</code> is 4000.
      * </p>
      * </li>
@@ -202,12 +202,12 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        The size of the result set is less than 1 MB.
+     *        The size of the result set is equal to 1 MB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum
+     *        The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
      *        value of <code>maxResults</code> is 4000.
      *        </p>
      *        </li>
@@ -225,12 +225,12 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 1 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
      * of <code>maxResults</code> is 4000.
      * </p>
      * </li>
@@ -241,13 +241,13 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         The size of the result set is less than 1 MB.
+     *         The size of the result set is equal to 1 MB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The number of data points in the result set is less than the value of <code>maxResults</code>. The
-     *         maximum value of <code>maxResults</code> is 4000.
+     *         The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
+     *         value of <code>maxResults</code> is 4000.
      *         </p>
      *         </li>
      */
@@ -264,12 +264,12 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * The size of the result set is less than 1 MB.
+     * The size of the result set is equal to 1 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value
+     * The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value
      * of <code>maxResults</code> is 4000.
      * </p>
      * </li>
@@ -281,12 +281,12 @@ public class BatchGetAssetPropertyAggregatesRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        The size of the result set is less than 1 MB.
+     *        The size of the result set is equal to 1 MB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum
+     *        The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum
      *        value of <code>maxResults</code> is 4000.
      *        </p>
      *        </li>

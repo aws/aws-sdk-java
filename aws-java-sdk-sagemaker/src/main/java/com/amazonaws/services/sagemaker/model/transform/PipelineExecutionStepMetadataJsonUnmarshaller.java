@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,10 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     pipelineExecutionStepMetadata.setLambda(LambdaStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EMR", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStepMetadata.setEMR(EMRStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("QualityCheck", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStepMetadata.setQualityCheck(QualityCheckStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
@@ -92,13 +96,13 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     pipelineExecutionStepMetadata.setClarifyCheck(ClarifyCheckStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("EMR", targetDepth)) {
-                    context.nextToken();
-                    pipelineExecutionStepMetadata.setEMR(EMRStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Fail", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStepMetadata.setFail(FailStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AutoMLJob", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStepMetadata.setAutoMLJob(AutoMLJobStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

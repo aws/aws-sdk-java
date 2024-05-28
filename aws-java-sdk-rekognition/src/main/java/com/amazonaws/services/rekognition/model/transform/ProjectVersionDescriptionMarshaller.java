@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,14 @@ public class ProjectVersionDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxInferenceUnits").build();
     private static final MarshallingInfo<String> SOURCEPROJECTVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceProjectVersionArn").build();
+    private static final MarshallingInfo<String> VERSIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionDescription").build();
+    private static final MarshallingInfo<String> FEATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Feature").build();
+    private static final MarshallingInfo<String> BASEMODELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaseModelVersion").build();
+    private static final MarshallingInfo<StructuredPojo> FEATURECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureConfig").build();
 
     private static final ProjectVersionDescriptionMarshaller instance = new ProjectVersionDescriptionMarshaller();
 
@@ -89,6 +97,10 @@ public class ProjectVersionDescriptionMarshaller {
             protocolMarshaller.marshall(projectVersionDescription.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getMaxInferenceUnits(), MAXINFERENCEUNITS_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getSourceProjectVersionArn(), SOURCEPROJECTVERSIONARN_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getFeature(), FEATURE_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getBaseModelVersion(), BASEMODELVERSION_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getFeatureConfig(), FEATURECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,6 +125,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
+     * </p>
+     * <p>
+     * You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
      * </p>
      * <note>
      * <p>
@@ -399,8 +402,53 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The option to change the port of an Amazon Redshift cluster.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>.
+     * (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer port;
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't
+     * use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password.
+     * </p>
+     */
+    private Boolean manageMasterPassword;
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     */
+    private String masterPasswordSecretKmsKeyId;
+    /**
+     * <p>
+     * The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
+     * If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to
+     * be deployed in two Availability Zones.
+     * </p>
+     */
+    private Boolean multiAZ;
 
     /**
      * <p>
@@ -1098,6 +1146,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
+     * <p>
+     * You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
+     * </p>
      * <note>
      * <p>
      * Operations never return the password, so this operation provides a way to regain access to the admin user account
@@ -1142,7 +1193,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param masterUserPassword
      *        The new password for the cluster admin user. This change is asynchronously applied as soon as possible.
      *        Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
-     *        element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+     *        element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+     *        <p>
+     *        You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        Operations never return the password, so this operation provides a way to regain access to the admin user
      *        account for a cluster if the password is lost.
@@ -1193,6 +1248,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
+     * <p>
+     * You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
+     * </p>
      * <note>
      * <p>
      * Operations never return the password, so this operation provides a way to regain access to the admin user account
@@ -1236,7 +1294,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return The new password for the cluster admin user. This change is asynchronously applied as soon as possible.
      *         Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
-     *         element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+     *         element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+     *         <p>
+     *         You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
+     *         </p>
+     *         <note>
      *         <p>
      *         Operations never return the password, so this operation provides a way to regain access to the admin user
      *         account for a cluster if the password is lost.
@@ -1287,6 +1349,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in
      * the <code>PendingModifiedValues</code> element of the operation response.
      * </p>
+     * <p>
+     * You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
+     * </p>
      * <note>
      * <p>
      * Operations never return the password, so this operation provides a way to regain access to the admin user account
@@ -1331,7 +1396,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param masterUserPassword
      *        The new password for the cluster admin user. This change is asynchronously applied as soon as possible.
      *        Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
-     *        element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>
+     *        element exists in the <code>PendingModifiedValues</code> element of the operation response. </p>
+     *        <p>
+     *        You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        Operations never return the password, so this operation provides a way to regain access to the admin user
      *        account for a cluster if the password is lost.
@@ -2883,9 +2952,41 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The option to change the port of an Amazon Redshift cluster.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>.
+     * (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param port
-     *        The option to change the port of an Amazon Redshift cluster.
+     *        The option to change the port of an Amazon Redshift cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or
+     *        <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change
+     *        the port to these ranges.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setPort(Integer port) {
@@ -2896,8 +2997,40 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The option to change the port of an Amazon Redshift cluster.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>.
+     * (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The option to change the port of an Amazon Redshift cluster.
+     * @return The option to change the port of an Amazon Redshift cluster.</p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or
+     *         <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you
+     *         change the port to these ranges.)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     *         </p>
+     *         </li>
      */
 
     public Integer getPort() {
@@ -2908,15 +3041,272 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The option to change the port of an Amazon Redshift cluster.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>.
+     * (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param port
-     *        The option to change the port of an Amazon Redshift cluster.
+     *        The option to change the port of an Amazon Redshift cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or
+     *        <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change
+     *        the port to these ranges.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyClusterRequest withPort(Integer port) {
         setPort(port);
         return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't
+     * use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password.
+     * </p>
+     * 
+     * @param manageMasterPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You
+     *        can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     *        <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses
+     *        <code>MasterUserPassword</code> for the admin user account's password.
+     */
+
+    public void setManageMasterPassword(Boolean manageMasterPassword) {
+        this.manageMasterPassword = manageMasterPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't
+     * use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials.
+     *         You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     *         <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses
+     *         <code>MasterUserPassword</code> for the admin user account's password.
+     */
+
+    public Boolean getManageMasterPassword() {
+        return this.manageMasterPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't
+     * use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password.
+     * </p>
+     * 
+     * @param manageMasterPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You
+     *        can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     *        <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses
+     *        <code>MasterUserPassword</code> for the admin user account's password.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withManageMasterPassword(Boolean manageMasterPassword) {
+        setManageMasterPassword(manageMasterPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't
+     * use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for
+     * the admin user account's password.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials.
+     *         You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If
+     *         <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses
+     *         <code>MasterUserPassword</code> for the admin user account's password.
+     */
+
+    public Boolean isManageMasterPassword() {
+        return this.manageMasterPassword;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     */
+
+    public void setMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        this.masterPasswordSecretKmsKeyId = masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *         secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     */
+
+    public String getMasterPasswordSecretKmsKeyId() {
+        return this.masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        setMasterPasswordSecretKmsKeyId(masterPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address types that the cluster supports. Possible values are <code>ipv4</code> and
+     *        <code>dualstack</code>.
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @return The IP address types that the cluster supports. Possible values are <code>ipv4</code> and
+     *         <code>dualstack</code>.
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address types that the cluster supports. Possible values are <code>ipv4</code> and
+     *        <code>dualstack</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to
+     * be deployed in two Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be
+     *        modified to be deployed in two Availability Zones.
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to
+     * be deployed in two Availability Zones.
+     * </p>
+     * 
+     * @return If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be
+     *         modified to be deployed in two Availability Zones.
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to
+     * be deployed in two Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be
+     *        modified to be deployed in two Availability Zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to
+     * be deployed in two Availability Zones.
+     * </p>
+     * 
+     * @return If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be
+     *         modified to be deployed in two Availability Zones.
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
     }
 
     /**
@@ -2944,7 +3334,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getVpcSecurityGroupIds() != null)
             sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
+            sb.append("MasterUserPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getClusterParameterGroupName() != null)
             sb.append("ClusterParameterGroupName: ").append(getClusterParameterGroupName()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
@@ -2980,7 +3370,15 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort());
+            sb.append("Port: ").append(getPort()).append(",");
+        if (getManageMasterPassword() != null)
+            sb.append("ManageMasterPassword: ").append(getManageMasterPassword()).append(",");
+        if (getMasterPasswordSecretKmsKeyId() != null)
+            sb.append("MasterPasswordSecretKmsKeyId: ").append(getMasterPasswordSecretKmsKeyId()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ());
         sb.append("}");
         return sb.toString();
     }
@@ -3098,6 +3496,22 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
+        if (other.getManageMasterPassword() == null ^ this.getManageMasterPassword() == null)
+            return false;
+        if (other.getManageMasterPassword() != null && other.getManageMasterPassword().equals(this.getManageMasterPassword()) == false)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() == null ^ this.getMasterPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() != null && other.getMasterPasswordSecretKmsKeyId().equals(this.getMasterPasswordSecretKmsKeyId()) == false)
+            return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
         return true;
     }
 
@@ -3131,6 +3545,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getManageMasterPassword() == null) ? 0 : getManageMasterPassword().hashCode());
+        hashCode = prime * hashCode + ((getMasterPasswordSecretKmsKeyId() == null) ? 0 : getMasterPasswordSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         return hashCode;
     }
 

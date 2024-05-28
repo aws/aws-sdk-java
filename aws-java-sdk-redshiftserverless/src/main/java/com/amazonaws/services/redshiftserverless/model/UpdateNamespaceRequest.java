@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,39 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The password of the administrator for the first database created in the namespace.
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     */
+    private String adminPasswordSecretKmsKeyId;
+    /**
+     * <p>
+     * The password of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUsername</code>.
+     * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * </p>
      */
     private String adminUserPassword;
     /**
      * <p>
-     * The username of the administrator for the first database created in the namespace.
+     * The username of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUserPassword</code>.
      * </p>
      */
     private String adminUsername;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be
+     * updated together with <code>iamRoles</code>.
      * </p>
      */
     private String defaultIamRoleArn;
     /**
      * <p>
-     * A list of IAM roles to associate with the namespace.
+     * A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     * <code>defaultIamRoleArn</code>.
      * </p>
      */
     private java.util.List<String> iamRoles;
@@ -64,18 +78,80 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> logExports;
     /**
      * <p>
-     * The name of the namespace.
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     */
+    private Boolean manageAdminPassword;
+    /**
+     * <p>
+     * The name of the namespace to update. You can't update the name of a namespace once it is created.
      * </p>
      */
     private String namespaceName;
 
     /**
      * <p>
-     * The password of the administrator for the first database created in the namespace.
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     */
+
+    public void setAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        this.adminPasswordSecretKmsKeyId = adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin
+     *         credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     */
+
+    public String getAdminPasswordSecretKmsKeyId() {
+        return this.adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNamespaceRequest withAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        setAdminPasswordSecretKmsKeyId(adminPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The password of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUsername</code>.
+     * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * </p>
      * 
      * @param adminUserPassword
-     *        The password of the administrator for the first database created in the namespace.
+     *        The password of the administrator for the first database created in the namespace. This parameter must be
+     *        updated together with <code>adminUsername</code>.</p>
+     *        <p>
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      */
 
     public void setAdminUserPassword(String adminUserPassword) {
@@ -84,10 +160,17 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The password of the administrator for the first database created in the namespace.
+     * The password of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUsername</code>.
+     * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * </p>
      * 
-     * @return The password of the administrator for the first database created in the namespace.
+     * @return The password of the administrator for the first database created in the namespace. This parameter must be
+     *         updated together with <code>adminUsername</code>.</p>
+     *         <p>
+     *         You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      */
 
     public String getAdminUserPassword() {
@@ -96,11 +179,18 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The password of the administrator for the first database created in the namespace.
+     * The password of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUsername</code>.
+     * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * </p>
      * 
      * @param adminUserPassword
-     *        The password of the administrator for the first database created in the namespace.
+     *        The password of the administrator for the first database created in the namespace. This parameter must be
+     *        updated together with <code>adminUsername</code>.</p>
+     *        <p>
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +201,13 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The username of the administrator for the first database created in the namespace.
+     * The username of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUserPassword</code>.
      * </p>
      * 
      * @param adminUsername
-     *        The username of the administrator for the first database created in the namespace.
+     *        The username of the administrator for the first database created in the namespace. This parameter must be
+     *        updated together with <code>adminUserPassword</code>.
      */
 
     public void setAdminUsername(String adminUsername) {
@@ -124,10 +216,12 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The username of the administrator for the first database created in the namespace.
+     * The username of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUserPassword</code>.
      * </p>
      * 
-     * @return The username of the administrator for the first database created in the namespace.
+     * @return The username of the administrator for the first database created in the namespace. This parameter must be
+     *         updated together with <code>adminUserPassword</code>.
      */
 
     public String getAdminUsername() {
@@ -136,11 +230,13 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The username of the administrator for the first database created in the namespace.
+     * The username of the administrator for the first database created in the namespace. This parameter must be updated
+     * together with <code>adminUserPassword</code>.
      * </p>
      * 
      * @param adminUsername
-     *        The username of the administrator for the first database created in the namespace.
+     *        The username of the administrator for the first database created in the namespace. This parameter must be
+     *        updated together with <code>adminUserPassword</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +247,13 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be
+     * updated together with <code>iamRoles</code>.
      * </p>
      * 
      * @param defaultIamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     *        The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must
+     *        be updated together with <code>iamRoles</code>.
      */
 
     public void setDefaultIamRoleArn(String defaultIamRoleArn) {
@@ -164,10 +262,12 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be
+     * updated together with <code>iamRoles</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     * @return The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must
+     *         be updated together with <code>iamRoles</code>.
      */
 
     public String getDefaultIamRoleArn() {
@@ -176,11 +276,13 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     * The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be
+     * updated together with <code>iamRoles</code>.
      * </p>
      * 
      * @param defaultIamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
+     *        The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must
+     *        be updated together with <code>iamRoles</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,10 +293,12 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of IAM roles to associate with the namespace.
+     * A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     * <code>defaultIamRoleArn</code>.
      * </p>
      * 
-     * @return A list of IAM roles to associate with the namespace.
+     * @return A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     *         <code>defaultIamRoleArn</code>.
      */
 
     public java.util.List<String> getIamRoles() {
@@ -203,11 +307,13 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of IAM roles to associate with the namespace.
+     * A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     * <code>defaultIamRoleArn</code>.
      * </p>
      * 
      * @param iamRoles
-     *        A list of IAM roles to associate with the namespace.
+     *        A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     *        <code>defaultIamRoleArn</code>.
      */
 
     public void setIamRoles(java.util.Collection<String> iamRoles) {
@@ -221,7 +327,8 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of IAM roles to associate with the namespace.
+     * A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     * <code>defaultIamRoleArn</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -230,7 +337,8 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param iamRoles
-     *        A list of IAM roles to associate with the namespace.
+     *        A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     *        <code>defaultIamRoleArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,11 +354,13 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of IAM roles to associate with the namespace.
+     * A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     * <code>defaultIamRoleArn</code>.
      * </p>
      * 
      * @param iamRoles
-     *        A list of IAM roles to associate with the namespace.
+     *        A list of IAM roles to associate with the namespace. This parameter must be updated together with
+     *        <code>defaultIamRoleArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,11 +519,87 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the namespace.
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @param manageAdminPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *        <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *        for the admin user account's password.
+     */
+
+    public void setManageAdminPassword(Boolean manageAdminPassword) {
+        this.manageAdminPassword = manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *         You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *         <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *         for the admin user account's password.
+     */
+
+    public Boolean getManageAdminPassword() {
+        return this.manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @param manageAdminPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *        <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *        for the admin user account's password.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNamespaceRequest withManageAdminPassword(Boolean manageAdminPassword) {
+        setManageAdminPassword(manageAdminPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *         You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *         <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *         for the admin user account's password.
+     */
+
+    public Boolean isManageAdminPassword() {
+        return this.manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * The name of the namespace to update. You can't update the name of a namespace once it is created.
      * </p>
      * 
      * @param namespaceName
-     *        The name of the namespace.
+     *        The name of the namespace to update. You can't update the name of a namespace once it is created.
      */
 
     public void setNamespaceName(String namespaceName) {
@@ -422,10 +608,10 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the namespace.
+     * The name of the namespace to update. You can't update the name of a namespace once it is created.
      * </p>
      * 
-     * @return The name of the namespace.
+     * @return The name of the namespace to update. You can't update the name of a namespace once it is created.
      */
 
     public String getNamespaceName() {
@@ -434,11 +620,11 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the namespace.
+     * The name of the namespace to update. You can't update the name of a namespace once it is created.
      * </p>
      * 
      * @param namespaceName
-     *        The name of the namespace.
+     *        The name of the namespace to update. You can't update the name of a namespace once it is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,6 +645,8 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdminPasswordSecretKmsKeyId() != null)
+            sb.append("AdminPasswordSecretKmsKeyId: ").append(getAdminPasswordSecretKmsKeyId()).append(",");
         if (getAdminUserPassword() != null)
             sb.append("AdminUserPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getAdminUsername() != null)
@@ -471,6 +659,8 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLogExports() != null)
             sb.append("LogExports: ").append(getLogExports()).append(",");
+        if (getManageAdminPassword() != null)
+            sb.append("ManageAdminPassword: ").append(getManageAdminPassword()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName());
         sb.append("}");
@@ -487,6 +677,10 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof UpdateNamespaceRequest == false)
             return false;
         UpdateNamespaceRequest other = (UpdateNamespaceRequest) obj;
+        if (other.getAdminPasswordSecretKmsKeyId() == null ^ this.getAdminPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() != null && other.getAdminPasswordSecretKmsKeyId().equals(this.getAdminPasswordSecretKmsKeyId()) == false)
+            return false;
         if (other.getAdminUserPassword() == null ^ this.getAdminUserPassword() == null)
             return false;
         if (other.getAdminUserPassword() != null && other.getAdminUserPassword().equals(this.getAdminUserPassword()) == false)
@@ -511,6 +705,10 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getLogExports() != null && other.getLogExports().equals(this.getLogExports()) == false)
             return false;
+        if (other.getManageAdminPassword() == null ^ this.getManageAdminPassword() == null)
+            return false;
+        if (other.getManageAdminPassword() != null && other.getManageAdminPassword().equals(this.getManageAdminPassword()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
@@ -523,12 +721,14 @@ public class UpdateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdminPasswordSecretKmsKeyId() == null) ? 0 : getAdminPasswordSecretKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAdminUserPassword() == null) ? 0 : getAdminUserPassword().hashCode());
         hashCode = prime * hashCode + ((getAdminUsername() == null) ? 0 : getAdminUsername().hashCode());
         hashCode = prime * hashCode + ((getDefaultIamRoleArn() == null) ? 0 : getDefaultIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLogExports() == null) ? 0 : getLogExports().hashCode());
+        hashCode = prime * hashCode + ((getManageAdminPassword() == null) ? 0 : getManageAdminPassword().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
         return hashCode;
     }

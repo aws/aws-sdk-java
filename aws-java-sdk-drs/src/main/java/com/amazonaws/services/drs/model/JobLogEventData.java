@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String conversionServerID;
+    /**
+     * <p>
+     * Properties of resource related to a job event.
+     * </p>
+     */
+    private EventResourceData eventResourceData;
     /**
      * <p>
      * A string representing a job error.
@@ -136,6 +142,46 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
 
     public JobLogEventData withConversionServerID(String conversionServerID) {
         setConversionServerID(conversionServerID);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Properties of resource related to a job event.
+     * </p>
+     * 
+     * @param eventResourceData
+     *        Properties of resource related to a job event.
+     */
+
+    public void setEventResourceData(EventResourceData eventResourceData) {
+        this.eventResourceData = eventResourceData;
+    }
+
+    /**
+     * <p>
+     * Properties of resource related to a job event.
+     * </p>
+     * 
+     * @return Properties of resource related to a job event.
+     */
+
+    public EventResourceData getEventResourceData() {
+        return this.eventResourceData;
+    }
+
+    /**
+     * <p>
+     * Properties of resource related to a job event.
+     * </p>
+     * 
+     * @param eventResourceData
+     *        Properties of resource related to a job event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobLogEventData withEventResourceData(EventResourceData eventResourceData) {
+        setEventResourceData(eventResourceData);
         return this;
     }
 
@@ -275,6 +321,8 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
             sb.append("ConversionProperties: ").append(getConversionProperties()).append(",");
         if (getConversionServerID() != null)
             sb.append("ConversionServerID: ").append(getConversionServerID()).append(",");
+        if (getEventResourceData() != null)
+            sb.append("EventResourceData: ").append(getEventResourceData()).append(",");
         if (getRawError() != null)
             sb.append("RawError: ").append(getRawError()).append(",");
         if (getSourceServerID() != null)
@@ -303,6 +351,10 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getConversionServerID() != null && other.getConversionServerID().equals(this.getConversionServerID()) == false)
             return false;
+        if (other.getEventResourceData() == null ^ this.getEventResourceData() == null)
+            return false;
+        if (other.getEventResourceData() != null && other.getEventResourceData().equals(this.getEventResourceData()) == false)
+            return false;
         if (other.getRawError() == null ^ this.getRawError() == null)
             return false;
         if (other.getRawError() != null && other.getRawError().equals(this.getRawError()) == false)
@@ -325,6 +377,7 @@ public class JobLogEventData implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getConversionProperties() == null) ? 0 : getConversionProperties().hashCode());
         hashCode = prime * hashCode + ((getConversionServerID() == null) ? 0 : getConversionServerID().hashCode());
+        hashCode = prime * hashCode + ((getEventResourceData() == null) ? 0 : getEventResourceData().hashCode());
         hashCode = prime * hashCode + ((getRawError() == null) ? 0 : getRawError().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getTargetInstanceID() == null) ? 0 : getTargetInstanceID().hashCode());

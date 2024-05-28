@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,13 @@ import com.amazonaws.services.ssooidc.model.*;
  * </p>
  * <p>
  * <p>
- * AWS IAM Identity Center (successor to AWS Single Sign-On) OpenID Connect (OIDC) is a web service that enables a
- * client (such as AWS CLI or a native application) to register with IAM Identity Center. The service also enables the
- * client to fetch the user’s access token upon successful authentication and authorization with IAM Identity Center.
+ * IAM Identity Center OpenID Connect (OIDC) is a web service that enables a client (such as CLI or a native
+ * application) to register with IAM Identity Center. The service also enables the client to fetch the user’s access
+ * token upon successful authentication and authorization with IAM Identity Center.
  * </p>
  * <note>
  * <p>
- * Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces will
- * continue to retain their original name for backward compatibility purposes. For more information, see <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM Identity Center rename</a>.
+ * IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
  * </p>
  * </note>
  * <p>
@@ -50,28 +48,31 @@ import com.amazonaws.services.ssooidc.model.*;
  * <p>
  * The IAM Identity Center OIDC service currently implements only the portions of the OAuth 2.0 Device Authorization
  * Grant standard (<a href="https://tools.ietf.org/html/rfc8628">https://tools.ietf.org/html/rfc8628</a>) that are
- * necessary to enable single sign-on authentication with the AWS CLI. Support for other OIDC flows frequently needed
- * for native applications, such as Authorization Code Flow (+ PKCE), will be addressed in future releases.
+ * necessary to enable single sign-on authentication with the CLI.
  * </p>
  * </li>
  * <li>
  * <p>
- * The service emits only OIDC access tokens, such that obtaining a new token (For example, token refresh) requires
- * explicit user re-authentication.
+ * With older versions of the CLI, the service only emits OIDC access tokens, so to obtain a new token, users must
+ * explicitly re-authenticate. To access the OIDC flow that supports token refresh and doesn’t require
+ * re-authentication, update to the latest CLI version (1.27.10 for CLI V1 and 2.9.0 for CLI V2) with support for OIDC
+ * token refresh and configurable IAM Identity Center session durations. For more information, see <a
+ * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/configure-user-session.html">Configure Amazon Web
+ * Services access portal session duration </a>.
  * </p>
  * </li>
  * <li>
  * <p>
- * The access tokens provided by this service grant access to all AWS account entitlements assigned to an IAM Identity
- * Center user, not just a particular application.
+ * The access tokens provided by this service grant access to all Amazon Web Services account entitlements assigned to
+ * an IAM Identity Center user, not just a particular application.
  * </p>
  * </li>
  * <li>
  * <p>
- * The documentation in this guide does not describe the mechanism to convert the access token into AWS Auth (“sigv4”)
- * credentials for use with IAM-protected AWS service endpoints. For more information, see <a
- * href="https://docs.aws.amazon.com/singlesignon/latest/PortalAPIReference/API_GetRoleCredentials.html"
- * >GetRoleCredentials</a> in the <i>IAM Identity Center Portal API Reference Guide</i>.
+ * The documentation in this guide does not describe the mechanism to convert the access token into Amazon Web Services
+ * Auth (“sigv4”) credentials for use with IAM-protected Amazon Web Services service endpoints. For more information,
+ * see <a href="https://docs.aws.amazon.com/singlesignon/latest/PortalAPIReference/API_GetRoleCredentials.html">
+ * GetRoleCredentials</a> in the <i>IAM Identity Center Portal API Reference Guide</i>.
  * </p>
  * </li>
  * </ul>
@@ -94,8 +95,9 @@ public interface AWSSSOOIDC {
 
     /**
      * <p>
-     * Creates and returns an access token for the authorized client. The access token issued will be used to fetch
-     * short-term credentials for the assigned roles in the AWS account.
+     * Creates and returns access and refresh tokens for clients that are authenticated using client secrets. The access
+     * token can be used to fetch short-term credentials for the assigned AWS accounts or to access application APIs
+     * using <code>bearer</code> authentication.
      * </p>
      * 
      * @param createTokenRequest
@@ -135,6 +137,51 @@ public interface AWSSSOOIDC {
 
     /**
      * <p>
+     * Creates and returns access and refresh tokens for clients and applications that are authenticated using IAM
+     * entities. The access token can be used to fetch short-term credentials for the assigned Amazon Web Services
+     * accounts or to access application APIs using <code>bearer</code> authentication.
+     * </p>
+     * 
+     * @param createTokenWithIAMRequest
+     * @return Result of the CreateTokenWithIAM operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter might
+     *         be missing or out of range.
+     * @throws InvalidClientException
+     *         Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request is invalid. For
+     *         example, this can occur when a client sends an incorrect <code>clientId</code> or an expired
+     *         <code>clientSecret</code>.
+     * @throws InvalidGrantException
+     *         Indicates that a request contains an invalid grant. This can occur if a client makes a <a>CreateToken</a>
+     *         request with an invalid grant type.
+     * @throws UnauthorizedClientException
+     *         Indicates that the client is not currently authorized to make the request. This can happen when a
+     *         <code>clientId</code> is not issued for a public client.
+     * @throws UnsupportedGrantTypeException
+     *         Indicates that the grant type in the request is not supported by the service.
+     * @throws InvalidScopeException
+     *         Indicates that the scope provided in the request is invalid.
+     * @throws AuthorizationPendingException
+     *         Indicates that a request to authorize a client with an access user session token is pending.
+     * @throws SlowDownException
+     *         Indicates that the client is making the request too frequently and is more than the service can handle.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ExpiredTokenException
+     *         Indicates that the token issued by the service is expired and is no longer valid.
+     * @throws InternalServerException
+     *         Indicates that an error from the service occurred while trying to process a request.
+     * @throws InvalidRequestRegionException
+     *         Indicates that a token provided as input to the request was issued by and is only usable by calling IAM
+     *         Identity Center endpoints in another region.
+     * @sample AWSSSOOIDC.CreateTokenWithIAM
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateTokenWithIAMResult createTokenWithIAM(CreateTokenWithIAMRequest createTokenWithIAMRequest);
+
+    /**
+     * <p>
      * Registers a client with IAM Identity Center. This allows clients to initiate device authorization. The output
      * should be persisted for reuse through many authentication requests.
      * </p>
@@ -150,6 +197,10 @@ public interface AWSSSOOIDC {
      *         Indicates that the client information sent in the request during registration is invalid.
      * @throws InternalServerException
      *         Indicates that an error from the service occurred while trying to process a request.
+     * @throws InvalidRedirectUriException
+     *         Indicates that one or more redirect URI in the request is not supported for this operation.
+     * @throws UnsupportedGrantTypeException
+     *         Indicates that the grant type in the request is not supported by the service.
      * @sample AWSSSOOIDC.RegisterClient
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient" target="_top">AWS API
      *      Documentation</a>

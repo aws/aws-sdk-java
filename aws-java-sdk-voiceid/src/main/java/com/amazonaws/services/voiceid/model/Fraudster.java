@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when Voice ID identified the fraudster.
+     * The timestamp of when Voice ID identified the fraudster.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The identifier for the domain containing the fraudster.
+     * The identifier of the domain that contains the fraudster.
      * </p>
      */
     private String domainId;
@@ -46,14 +46,20 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String generatedFraudsterId;
+    /**
+     * <p>
+     * The identifier of the watchlists the fraudster is a part of.
+     * </p>
+     */
+    private java.util.List<String> watchlistIds;
 
     /**
      * <p>
-     * The timestamp when Voice ID identified the fraudster.
+     * The timestamp of when Voice ID identified the fraudster.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when Voice ID identified the fraudster.
+     *        The timestamp of when Voice ID identified the fraudster.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -62,10 +68,10 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when Voice ID identified the fraudster.
+     * The timestamp of when Voice ID identified the fraudster.
      * </p>
      * 
-     * @return The timestamp when Voice ID identified the fraudster.
+     * @return The timestamp of when Voice ID identified the fraudster.
      */
 
     public java.util.Date getCreatedAt() {
@@ -74,11 +80,11 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when Voice ID identified the fraudster.
+     * The timestamp of when Voice ID identified the fraudster.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when Voice ID identified the fraudster.
+     *        The timestamp of when Voice ID identified the fraudster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +95,11 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster.
+     * The identifier of the domain that contains the fraudster.
      * </p>
      * 
      * @param domainId
-     *        The identifier for the domain containing the fraudster.
+     *        The identifier of the domain that contains the fraudster.
      */
 
     public void setDomainId(String domainId) {
@@ -102,10 +108,10 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster.
+     * The identifier of the domain that contains the fraudster.
      * </p>
      * 
-     * @return The identifier for the domain containing the fraudster.
+     * @return The identifier of the domain that contains the fraudster.
      */
 
     public String getDomainId() {
@@ -114,11 +120,11 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the domain containing the fraudster.
+     * The identifier of the domain that contains the fraudster.
      * </p>
      * 
      * @param domainId
-     *        The identifier for the domain containing the fraudster.
+     *        The identifier of the domain that contains the fraudster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,6 +174,76 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the watchlists the fraudster is a part of.
+     * </p>
+     * 
+     * @return The identifier of the watchlists the fraudster is a part of.
+     */
+
+    public java.util.List<String> getWatchlistIds() {
+        return watchlistIds;
+    }
+
+    /**
+     * <p>
+     * The identifier of the watchlists the fraudster is a part of.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifier of the watchlists the fraudster is a part of.
+     */
+
+    public void setWatchlistIds(java.util.Collection<String> watchlistIds) {
+        if (watchlistIds == null) {
+            this.watchlistIds = null;
+            return;
+        }
+
+        this.watchlistIds = new java.util.ArrayList<String>(watchlistIds);
+    }
+
+    /**
+     * <p>
+     * The identifier of the watchlists the fraudster is a part of.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWatchlistIds(java.util.Collection)} or {@link #withWatchlistIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifier of the watchlists the fraudster is a part of.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fraudster withWatchlistIds(String... watchlistIds) {
+        if (this.watchlistIds == null) {
+            setWatchlistIds(new java.util.ArrayList<String>(watchlistIds.length));
+        }
+        for (String ele : watchlistIds) {
+            this.watchlistIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the watchlists the fraudster is a part of.
+     * </p>
+     * 
+     * @param watchlistIds
+     *        The identifier of the watchlists the fraudster is a part of.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fraudster withWatchlistIds(java.util.Collection<String> watchlistIds) {
+        setWatchlistIds(watchlistIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +260,9 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
         if (getDomainId() != null)
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getGeneratedFraudsterId() != null)
-            sb.append("GeneratedFraudsterId: ").append(getGeneratedFraudsterId());
+            sb.append("GeneratedFraudsterId: ").append(getGeneratedFraudsterId()).append(",");
+        if (getWatchlistIds() != null)
+            sb.append("WatchlistIds: ").append(getWatchlistIds());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +289,10 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGeneratedFraudsterId() != null && other.getGeneratedFraudsterId().equals(this.getGeneratedFraudsterId()) == false)
             return false;
+        if (other.getWatchlistIds() == null ^ this.getWatchlistIds() == null)
+            return false;
+        if (other.getWatchlistIds() != null && other.getWatchlistIds().equals(this.getWatchlistIds()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +304,7 @@ public class Fraudster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getGeneratedFraudsterId() == null) ? 0 : getGeneratedFraudsterId().hashCode());
+        hashCode = prime * hashCode + ((getWatchlistIds() == null) ? 0 : getWatchlistIds().hashCode());
         return hashCode;
     }
 

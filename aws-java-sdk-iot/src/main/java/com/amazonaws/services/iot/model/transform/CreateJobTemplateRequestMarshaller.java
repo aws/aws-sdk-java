@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,10 @@ public class CreateJobTemplateRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> JOBEXECUTIONSRETRYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobExecutionsRetryConfig").build();
+    private static final MarshallingInfo<List> MAINTENANCEWINDOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maintenanceWindows").build();
+    private static final MarshallingInfo<List> DESTINATIONPACKAGEVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationPackageVersions").build();
 
     private static final CreateJobTemplateRequestMarshaller instance = new CreateJobTemplateRequestMarshaller();
 
@@ -78,6 +82,8 @@ public class CreateJobTemplateRequestMarshaller {
             protocolMarshaller.marshall(createJobTemplateRequest.getTimeoutConfig(), TIMEOUTCONFIG_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getJobExecutionsRetryConfig(), JOBEXECUTIONSRETRYCONFIG_BINDING);
+            protocolMarshaller.marshall(createJobTemplateRequest.getMaintenanceWindows(), MAINTENANCEWINDOWS_BINDING);
+            protocolMarshaller.marshall(createJobTemplateRequest.getDestinationPackageVersions(), DESTINATIONPACKAGEVERSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

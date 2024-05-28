@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,41 +66,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited
      * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * <code>Invited</code> - Indicates that the administrator account invited the member account. The member account
      * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     * <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     * <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web Services at
+     * <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at
      * the same time that the administrator account tried to enable the organization account as a member account.
      * </p>
      * </li>
@@ -311,41 +311,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited
      * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * <code>Invited</code> - Indicates that the administrator account invited the member account. The member account
      * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     * <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     * <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web Services at
+     * <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at
      * the same time that the administrator account tried to enable the organization account as a member account.
      * </p>
      * </li>
@@ -359,41 +359,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet
+     *        <code>Created</code> - Indicates that the administrator account added the member account, but has not yet
      *        invited the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INVITED</code> - Indicates that the administrator account invited the member account. The member
+     *        <code>Invited</code> - Indicates that the administrator account invited the member account. The member
      *        account has not yet responded to the invitation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     *        <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      *        accounts, indicates that the member account accepted the invitation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     *        <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     *        <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     *        <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web
+     *        <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web
      *        Services at the same time that the administrator account tried to enable the organization account as a
      *        member account.
      *        </p>
@@ -414,41 +414,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited
      * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * <code>Invited</code> - Indicates that the administrator account invited the member account. The member account
      * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     * <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     * <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web Services at
+     * <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at
      * the same time that the administrator account tried to enable the organization account as a member account.
      * </p>
      * </li>
@@ -461,41 +461,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet
+     *         <code>Created</code> - Indicates that the administrator account added the member account, but has not yet
      *         invited the member account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INVITED</code> - Indicates that the administrator account invited the member account. The member
+     *         <code>Invited</code> - Indicates that the administrator account invited the member account. The member
      *         account has not yet responded to the invitation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     *         <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      *         accounts, indicates that the member account accepted the invitation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     *         <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     *         <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      *         account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     *         <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web
+     *         <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web
      *         Services at the same time that the administrator account tried to enable the organization account as a
      *         member account.
      *         </p>
@@ -516,41 +516,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited
      * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * <code>Invited</code> - Indicates that the administrator account invited the member account. The member account
      * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     * <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      * accounts, indicates that the member account accepted the invitation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     * <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     * <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web Services at
+     * <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at
      * the same time that the administrator account tried to enable the organization account as a member account.
      * </p>
      * </li>
@@ -564,41 +564,41 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet
+     *        <code>Created</code> - Indicates that the administrator account added the member account, but has not yet
      *        invited the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INVITED</code> - Indicates that the administrator account invited the member account. The member
+     *        <code>Invited</code> - Indicates that the administrator account invited the member account. The member
      *        account has not yet responded to the invitation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code> - Indicates that the member account is currently active. For manually invited member
+     *        <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member
      *        accounts, indicates that the member account accepted the invitation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
+     *        <code>Removed</code> - Indicates that the administrator account disassociated the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     *        <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator
      *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - Indicates that the administrator account deleted the member account.
+     *        <code>Deleted</code> - Indicates that the administrator account deleted the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web
+     *        <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web
      *        Services at the same time that the administrator account tried to enable the organization account as a
      *        member account.
      *        </p>

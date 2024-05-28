@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -108,6 +108,12 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private ProvisionedThroughputOverride provisionedThroughputOverride;
+    /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified replica table.
+     * </p>
+     */
+    private OnDemandThroughputOverride onDemandThroughputOverride;
     /**
      * <p>
      * Replica-specific global secondary index settings.
@@ -736,6 +742,46 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * Overrides the maximum on-demand throughput settings for the specified replica table.
+     * </p>
+     * 
+     * @param onDemandThroughputOverride
+     *        Overrides the maximum on-demand throughput settings for the specified replica table.
+     */
+
+    public void setOnDemandThroughputOverride(OnDemandThroughputOverride onDemandThroughputOverride) {
+        this.onDemandThroughputOverride = onDemandThroughputOverride;
+    }
+
+    /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified replica table.
+     * </p>
+     * 
+     * @return Overrides the maximum on-demand throughput settings for the specified replica table.
+     */
+
+    public OnDemandThroughputOverride getOnDemandThroughputOverride() {
+        return this.onDemandThroughputOverride;
+    }
+
+    /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified replica table.
+     * </p>
+     * 
+     * @param onDemandThroughputOverride
+     *        Overrides the maximum on-demand throughput settings for the specified replica table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicaDescription withOnDemandThroughputOverride(OnDemandThroughputOverride onDemandThroughputOverride) {
+        setOnDemandThroughputOverride(onDemandThroughputOverride);
+        return this;
+    }
+
+    /**
+     * <p>
      * Replica-specific global secondary index settings.
      * </p>
      * 
@@ -900,6 +946,8 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
             sb.append("KMSMasterKeyId: ").append(getKMSMasterKeyId()).append(",");
         if (getProvisionedThroughputOverride() != null)
             sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride()).append(",");
+        if (getOnDemandThroughputOverride() != null)
+            sb.append("OnDemandThroughputOverride: ").append(getOnDemandThroughputOverride()).append(",");
         if (getGlobalSecondaryIndexes() != null)
             sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
         if (getReplicaInaccessibleDateTime() != null)
@@ -945,6 +993,10 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
         if (other.getProvisionedThroughputOverride() != null
                 && other.getProvisionedThroughputOverride().equals(this.getProvisionedThroughputOverride()) == false)
             return false;
+        if (other.getOnDemandThroughputOverride() == null ^ this.getOnDemandThroughputOverride() == null)
+            return false;
+        if (other.getOnDemandThroughputOverride() != null && other.getOnDemandThroughputOverride().equals(this.getOnDemandThroughputOverride()) == false)
+            return false;
         if (other.getGlobalSecondaryIndexes() == null ^ this.getGlobalSecondaryIndexes() == null)
             return false;
         if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false)
@@ -971,6 +1023,7 @@ public class ReplicaDescription implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getReplicaStatusPercentProgress() == null) ? 0 : getReplicaStatusPercentProgress().hashCode());
         hashCode = prime * hashCode + ((getKMSMasterKeyId() == null) ? 0 : getKMSMasterKeyId().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputOverride() == null) ? 0 : getProvisionedThroughputOverride().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughputOverride() == null) ? 0 : getOnDemandThroughputOverride().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getReplicaInaccessibleDateTime() == null) ? 0 : getReplicaInaccessibleDateTime().hashCode());
         hashCode = prime * hashCode + ((getReplicaTableClassSummary() == null) ? 0 : getReplicaTableClassSummary().hashCode());

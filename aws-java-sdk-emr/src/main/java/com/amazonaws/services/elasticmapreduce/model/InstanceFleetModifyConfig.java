@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.
  * </p>
  * </note>
  * 
@@ -53,6 +53,12 @@ public class InstanceFleetModifyConfig implements Serializable, Cloneable, Struc
      * </p>
      */
     private Integer targetSpotCapacity;
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     */
+    private InstanceFleetResizingSpecifications resizeSpecifications;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class InstanceFleetModifyConfig implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @param resizeSpecifications
+     *        The resize specification for the instance fleet.
+     */
+
+    public void setResizeSpecifications(InstanceFleetResizingSpecifications resizeSpecifications) {
+        this.resizeSpecifications = resizeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @return The resize specification for the instance fleet.
+     */
+
+    public InstanceFleetResizingSpecifications getResizeSpecifications() {
+        return this.resizeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @param resizeSpecifications
+     *        The resize specification for the instance fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceFleetModifyConfig withResizeSpecifications(InstanceFleetResizingSpecifications resizeSpecifications) {
+        setResizeSpecifications(resizeSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +249,9 @@ public class InstanceFleetModifyConfig implements Serializable, Cloneable, Struc
         if (getTargetOnDemandCapacity() != null)
             sb.append("TargetOnDemandCapacity: ").append(getTargetOnDemandCapacity()).append(",");
         if (getTargetSpotCapacity() != null)
-            sb.append("TargetSpotCapacity: ").append(getTargetSpotCapacity());
+            sb.append("TargetSpotCapacity: ").append(getTargetSpotCapacity()).append(",");
+        if (getResizeSpecifications() != null)
+            sb.append("ResizeSpecifications: ").append(getResizeSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +278,10 @@ public class InstanceFleetModifyConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getTargetSpotCapacity() != null && other.getTargetSpotCapacity().equals(this.getTargetSpotCapacity()) == false)
             return false;
+        if (other.getResizeSpecifications() == null ^ this.getResizeSpecifications() == null)
+            return false;
+        if (other.getResizeSpecifications() != null && other.getResizeSpecifications().equals(this.getResizeSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +293,7 @@ public class InstanceFleetModifyConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getInstanceFleetId() == null) ? 0 : getInstanceFleetId().hashCode());
         hashCode = prime * hashCode + ((getTargetOnDemandCapacity() == null) ? 0 : getTargetOnDemandCapacity().hashCode());
         hashCode = prime * hashCode + ((getTargetSpotCapacity() == null) ? 0 : getTargetSpotCapacity().hashCode());
+        hashCode = prime * hashCode + ((getResizeSpecifications() == null) ? 0 : getResizeSpecifications().hashCode());
         return hashCode;
     }
 

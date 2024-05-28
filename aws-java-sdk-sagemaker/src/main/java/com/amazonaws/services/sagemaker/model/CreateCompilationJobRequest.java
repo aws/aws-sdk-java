@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,8 +91,9 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
     private OutputConfig outputConfig;
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
@@ -523,15 +524,17 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
-     *        access to your models by configuring the VPC. For more information, see <a
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that you want your compilation job to connect to. Control access to your
+     *        models by configuring the VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      */
@@ -542,14 +545,16 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
-     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to.
-     *         Control access to your models by configuring the VPC. For more information, see <a
+     * @return A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *         object that specifies the VPC that you want your compilation job to connect to. Control access to your
+     *         models by configuring the VPC. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
      *         Amazon Virtual Private Cloud</a>.
      */
@@ -560,15 +565,17 @@ public class CreateCompilationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
-     *        access to your models by configuring the VPC. For more information, see <a
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that you want your compilation job to connect to. Control access to your
+     *        models by configuring the VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

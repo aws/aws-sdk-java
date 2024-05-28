@@ -33,7 +33,11 @@ public class Matchers {
      * <pre>assertThat(Arrays.asList("foo", "bar"), containsOnlyInOrder(startsWith("f"), endsWith("ar")))</pre>
      */
     public static <T> Matcher<Collection<T>> containsOnlyInOrder(Matcher<? super T>...matchers) {
-        return CollectionContainsOnlyInOrder.containsOnlyInOrder(Arrays.asList(matchers));
+        List<Matcher<? super T>> matcherList = new ArrayList<>();
+        for (Matcher<? super T> matcher : matchers) {
+            matcherList.add(matcher);
+        }
+        return CollectionContainsOnlyInOrder.containsOnlyInOrder(matcherList);
     }
 
     /***
@@ -55,7 +59,12 @@ public class Matchers {
      * <pre>assertThat(Arrays.asList("bar", "foo"), containsOnly(startsWith("f"), endsWith("ar")))</pre>
      */
     public static <T> Matcher<Collection<T>> containsOnly(Matcher<? super T>...matchers) {
-        return CollectionContainsOnly.containsOnly(Arrays.asList(matchers));
+        List<Matcher<? super T>> matcherList = new ArrayList<>();
+        for (Matcher<? super T> matcher : matchers) {
+            matcherList.add(matcher);
+        }
+
+        return CollectionContainsOnly.containsOnly(matcherList);
     }
 
     /***

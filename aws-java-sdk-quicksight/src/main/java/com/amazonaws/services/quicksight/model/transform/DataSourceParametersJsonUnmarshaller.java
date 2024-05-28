@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,6 +135,22 @@ public class DataSourceParametersJsonUnmarshaller implements Unmarshaller<DataSo
                 if (context.testExpression("ExasolParameters", targetDepth)) {
                     context.nextToken();
                     dataSourceParameters.setExasolParameters(ExasolParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DatabricksParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setDatabricksParameters(DatabricksParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StarburstParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setStarburstParameters(StarburstParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TrinoParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setTrinoParameters(TrinoParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("BigQueryParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setBigQueryParameters(BigQueryParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In addition to your infrastruction configuration, these settings provide an extra layer of control over your build
- * instances. For instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it
- * for the AMI that you create. You can also specify commands to run on launch for all of your build instances.
+ * In addition to your infrastructure configuration, these settings provide an extra layer of control over your build
+ * instances. You can also specify commands to run on launch for all of your build instances.
+ * </p>
+ * <p>
+ * Image Builder does not automatically install the Systems Manager agent on Windows instances. If your base image
+ * includes the Systems Manager agent, then the AMI that you create will also include the agent. For Linux instances, if
+ * the base image does not already include the Systems Manager agent, Image Builder installs it. For Linux instances
+ * where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you
+ * create.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AdditionalInstanceConfiguration"

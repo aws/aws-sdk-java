@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     * The number of units to request, filled the default target capacity type.
      * </p>
      */
     private Integer totalTargetCapacity;
@@ -59,7 +59,7 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
     private Integer spotTargetCapacity;
     /**
      * <p>
-     * The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     * The default target capacity type.
      * </p>
      */
     private String defaultTargetCapacityType;
@@ -67,19 +67,16 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
      * <p>
      * The unit for the target capacity.
      * </p>
-     * <p>
-     * Default: <code>units</code> (translates to number of instances)
-     * </p>
      */
     private String targetCapacityUnitType;
 
     /**
      * <p>
-     * The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     * The number of units to request, filled the default target capacity type.
      * </p>
      * 
      * @param totalTargetCapacity
-     *        The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     *        The number of units to request, filled the default target capacity type.
      */
 
     public void setTotalTargetCapacity(Integer totalTargetCapacity) {
@@ -88,10 +85,10 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     * The number of units to request, filled the default target capacity type.
      * </p>
      * 
-     * @return The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     * @return The number of units to request, filled the default target capacity type.
      */
 
     public Integer getTotalTargetCapacity() {
@@ -100,11 +97,11 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     * The number of units to request, filled the default target capacity type.
      * </p>
      * 
      * @param totalTargetCapacity
-     *        The number of units to request, filled using <code>DefaultTargetCapacityType</code>.
+     *        The number of units to request, filled the default target capacity type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +204,11 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     * The default target capacity type.
      * </p>
      * 
      * @param defaultTargetCapacityType
-     *        The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     *        The default target capacity type.
      * @see DefaultTargetCapacityType
      */
 
@@ -221,11 +218,10 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     * The default target capacity type.
      * </p>
      * 
-     * @return The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>
-     *         .
+     * @return The default target capacity type.
      * @see DefaultTargetCapacityType
      */
 
@@ -235,11 +231,11 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     * The default target capacity type.
      * </p>
      * 
      * @param defaultTargetCapacityType
-     *        The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     *        The default target capacity type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultTargetCapacityType
      */
@@ -251,11 +247,11 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     * The default target capacity type.
      * </p>
      * 
      * @param defaultTargetCapacityType
-     *        The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.
+     *        The default target capacity type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultTargetCapacityType
      */
@@ -269,14 +265,9 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
      * <p>
      * The unit for the target capacity.
      * </p>
-     * <p>
-     * Default: <code>units</code> (translates to number of instances)
-     * </p>
      * 
      * @param targetCapacityUnitType
-     *        The unit for the target capacity.</p>
-     *        <p>
-     *        Default: <code>units</code> (translates to number of instances)
+     *        The unit for the target capacity.
      * @see TargetCapacityUnitType
      */
 
@@ -288,13 +279,8 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
      * <p>
      * The unit for the target capacity.
      * </p>
-     * <p>
-     * Default: <code>units</code> (translates to number of instances)
-     * </p>
      * 
-     * @return The unit for the target capacity.</p>
-     *         <p>
-     *         Default: <code>units</code> (translates to number of instances)
+     * @return The unit for the target capacity.
      * @see TargetCapacityUnitType
      */
 
@@ -306,14 +292,9 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
      * <p>
      * The unit for the target capacity.
      * </p>
-     * <p>
-     * Default: <code>units</code> (translates to number of instances)
-     * </p>
      * 
      * @param targetCapacityUnitType
-     *        The unit for the target capacity.</p>
-     *        <p>
-     *        Default: <code>units</code> (translates to number of instances)
+     *        The unit for the target capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetCapacityUnitType
      */
@@ -327,14 +308,9 @@ public class TargetCapacitySpecification implements Serializable, Cloneable {
      * <p>
      * The unit for the target capacity.
      * </p>
-     * <p>
-     * Default: <code>units</code> (translates to number of instances)
-     * </p>
      * 
      * @param targetCapacityUnitType
-     *        The unit for the target capacity.</p>
-     *        <p>
-     *        Default: <code>units</code> (translates to number of instances)
+     *        The unit for the target capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetCapacityUnitType
      */

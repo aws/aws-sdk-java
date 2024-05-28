@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,9 @@ import com.amazonaws.services.amplify.model.*;
  * </p>
  * <p>
  * <p>
- * Amplify enables developers to develop and deploy cloud-powered mobile and web apps. The Amplify Console provides a
+ * Amplify enables developers to develop and deploy cloud-powered mobile and web apps. Amplify Hosting provides a
  * continuous delivery and hosting service for web applications. For more information, see the <a
- * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify Console User Guide</a>. The Amplify
+ * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify Hosting User Guide</a>. The Amplify
  * Framework is a comprehensive set of SDKs, libraries, tools, and documentation for client app development. For more
  * information, see the <a href="https://docs.amplify.aws/">Amplify Framework.</a>
  * </p>
@@ -73,6 +73,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * <p>
      * Creates a new backend environment for an Amplify app.
      * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend is created using Amplify Studio or the
+     * Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen 2
+     * public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure
+     * using Typescript code.
+     * </p>
      * 
      * @param createBackendEnvironmentRequest
      *        The request structure for the backend environment create request.
@@ -86,6 +92,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
     /**
      * <p>
      * Creates a new backend environment for an Amplify app.
+     * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend is created using Amplify Studio or the
+     * Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen 2
+     * public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure
+     * using Typescript code.
      * </p>
      * 
      * @param createBackendEnvironmentRequest
@@ -140,6 +152,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a
      * repository.
      * </p>
+     * <p>
+     * The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code> call
+     * cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code> call and the associated
+     * <code>Job</code> will fail.
+     * </p>
      * 
      * @param createDeploymentRequest
      *        The request structure for the create a new deployment request.
@@ -154,6 +171,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * <p>
      * Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a
      * repository.
+     * </p>
+     * <p>
+     * The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code> call
+     * cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code> call and the associated
+     * <code>Job</code> will fail.
      * </p>
      * 
      * @param createDeploymentRequest
@@ -273,6 +295,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * <p>
      * Deletes a backend environment for an Amplify app.
      * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or
+     * the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen
+     * 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.
+     * </p>
      * 
      * @param deleteBackendEnvironmentRequest
      *        The request structure for the delete backend environment request.
@@ -286,6 +314,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
     /**
      * <p>
      * Deletes a backend environment for an Amplify app.
+     * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or
+     * the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen
+     * 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.
      * </p>
      * 
      * @param deleteBackendEnvironmentRequest
@@ -469,7 +503,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Returns an existing Amplify app by appID.
+     * Returns an existing Amplify app specified by an app ID.
      * </p>
      * 
      * @param getAppRequest
@@ -483,7 +517,7 @@ public interface AWSAmplifyAsync extends AWSAmplify {
 
     /**
      * <p>
-     * Returns an existing Amplify app by appID.
+     * Returns an existing Amplify app specified by an app ID.
      * </p>
      * 
      * @param getAppRequest
@@ -537,6 +571,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * <p>
      * Returns a backend environment for an Amplify app.
      * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or
+     * the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen
+     * 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.
+     * </p>
      * 
      * @param getBackendEnvironmentRequest
      *        The request structure for the get backend environment request.
@@ -550,6 +590,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
     /**
      * <p>
      * Returns a backend environment for an Amplify app.
+     * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or
+     * the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen
+     * 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.
      * </p>
      * 
      * @param getBackendEnvironmentRequest
@@ -768,6 +814,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * <p>
      * Lists the backend environments for an Amplify app.
      * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or
+     * the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen
+     * 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.
+     * </p>
      * 
      * @param listBackendEnvironmentsRequest
      *        The request structure for the list backend environments request.
@@ -781,6 +833,12 @@ public interface AWSAmplifyAsync extends AWSAmplify {
     /**
      * <p>
      * Lists the backend environments for an Amplify app.
+     * </p>
+     * <p>
+     * This API is available only to Amplify Gen 1 applications where the backend was created using Amplify Studio or
+     * the Amplify command line interface (CLI). This API isn’t available to applications created using the Amplify Gen
+     * 2 public preview. When you deploy an application with Amplify Gen 2, you provision the app's backend
+     * infrastructure using Typescript code.
      * </p>
      * 
      * @param listBackendEnvironmentsRequest
@@ -966,6 +1024,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
      * <p>
      * Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
      * </p>
+     * <p>
+     * The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code> call
+     * cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code> call and the associated
+     * <code>Job</code> will fail.
+     * </p>
      * 
      * @param startDeploymentRequest
      *        The request structure for the start a deployment request.
@@ -979,6 +1042,11 @@ public interface AWSAmplifyAsync extends AWSAmplify {
     /**
      * <p>
      * Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
+     * </p>
+     * <p>
+     * The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code> call
+     * cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code> call and the associated
+     * <code>Job</code> will fail.
      * </p>
      * 
      * @param startDeploymentRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class SecurityContext implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Boolean privileged;
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     * </p>
+     */
+    private Boolean allowPrivilegeEscalation;
 
     /**
      * <p>
@@ -88,6 +94,60 @@ public class SecurityContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     * </p>
+     * 
+     * @param allowPrivilegeEscalation
+     *        Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     */
+
+    public void setAllowPrivilegeEscalation(Boolean allowPrivilegeEscalation) {
+        this.allowPrivilegeEscalation = allowPrivilegeEscalation;
+    }
+
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     * </p>
+     * 
+     * @return Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent
+     *         process.
+     */
+
+    public Boolean getAllowPrivilegeEscalation() {
+        return this.allowPrivilegeEscalation;
+    }
+
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     * </p>
+     * 
+     * @param allowPrivilegeEscalation
+     *        Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityContext withAllowPrivilegeEscalation(Boolean allowPrivilegeEscalation) {
+        setAllowPrivilegeEscalation(allowPrivilegeEscalation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     * </p>
+     * 
+     * @return Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent
+     *         process.
+     */
+
+    public Boolean isAllowPrivilegeEscalation() {
+        return this.allowPrivilegeEscalation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +160,9 @@ public class SecurityContext implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrivileged() != null)
-            sb.append("Privileged: ").append(getPrivileged());
+            sb.append("Privileged: ").append(getPrivileged()).append(",");
+        if (getAllowPrivilegeEscalation() != null)
+            sb.append("AllowPrivilegeEscalation: ").append(getAllowPrivilegeEscalation());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +181,10 @@ public class SecurityContext implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPrivileged() != null && other.getPrivileged().equals(this.getPrivileged()) == false)
             return false;
+        if (other.getAllowPrivilegeEscalation() == null ^ this.getAllowPrivilegeEscalation() == null)
+            return false;
+        if (other.getAllowPrivilegeEscalation() != null && other.getAllowPrivilegeEscalation().equals(this.getAllowPrivilegeEscalation()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +194,7 @@ public class SecurityContext implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPrivileged() == null) ? 0 : getPrivileged().hashCode());
+        hashCode = prime * hashCode + ((getAllowPrivilegeEscalation() == null) ? 0 : getAllowPrivilegeEscalation().hashCode());
         return hashCode;
     }
 

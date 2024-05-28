@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,6 +146,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -204,7 +216,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -264,6 +276,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
@@ -309,6 +333,14 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String details;
+    /**
+     * <p>
+     * Machine-readable data that describes the reason for a not scaled activity. Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     * >DescribeScalingActivities</a> includes not scaled activities.
+     * </p>
+     */
+    private java.util.List<NotScaledReason> notScaledReasons;
 
     /**
      * <p>
@@ -534,6 +566,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -640,6 +684,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      */
@@ -754,6 +810,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling activity. This string consists of the resource
@@ -860,6 +928,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
+     *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *         identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *         </p>
      *         </li>
      */
@@ -974,6 +1054,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1082,6 +1174,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        Example: <code>cluster:mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1145,7 +1249,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1205,6 +1309,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1261,7 +1377,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1322,6 +1438,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1386,7 +1514,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1446,6 +1574,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1501,7 +1641,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1562,6 +1702,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
+     *         SageMaker Serverless endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *         a SageMaker inference component.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1626,7 +1778,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1686,6 +1838,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1742,7 +1906,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1803,6 +1967,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1869,7 +2045,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1929,6 +2105,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1985,7 +2173,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2046,6 +2234,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -2110,7 +2310,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2170,6 +2370,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2226,7 +2438,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2287,6 +2499,18 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2612,6 +2836,92 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Machine-readable data that describes the reason for a not scaled activity. Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     * >DescribeScalingActivities</a> includes not scaled activities.
+     * </p>
+     * 
+     * @return Machine-readable data that describes the reason for a not scaled activity. Only available when <a
+     *         href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     *         >DescribeScalingActivities</a> includes not scaled activities.
+     */
+
+    public java.util.List<NotScaledReason> getNotScaledReasons() {
+        return notScaledReasons;
+    }
+
+    /**
+     * <p>
+     * Machine-readable data that describes the reason for a not scaled activity. Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     * >DescribeScalingActivities</a> includes not scaled activities.
+     * </p>
+     * 
+     * @param notScaledReasons
+     *        Machine-readable data that describes the reason for a not scaled activity. Only available when <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     *        >DescribeScalingActivities</a> includes not scaled activities.
+     */
+
+    public void setNotScaledReasons(java.util.Collection<NotScaledReason> notScaledReasons) {
+        if (notScaledReasons == null) {
+            this.notScaledReasons = null;
+            return;
+        }
+
+        this.notScaledReasons = new java.util.ArrayList<NotScaledReason>(notScaledReasons);
+    }
+
+    /**
+     * <p>
+     * Machine-readable data that describes the reason for a not scaled activity. Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     * >DescribeScalingActivities</a> includes not scaled activities.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotScaledReasons(java.util.Collection)} or {@link #withNotScaledReasons(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param notScaledReasons
+     *        Machine-readable data that describes the reason for a not scaled activity. Only available when <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     *        >DescribeScalingActivities</a> includes not scaled activities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingActivity withNotScaledReasons(NotScaledReason... notScaledReasons) {
+        if (this.notScaledReasons == null) {
+            setNotScaledReasons(new java.util.ArrayList<NotScaledReason>(notScaledReasons.length));
+        }
+        for (NotScaledReason ele : notScaledReasons) {
+            this.notScaledReasons.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Machine-readable data that describes the reason for a not scaled activity. Only available when <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     * >DescribeScalingActivities</a> includes not scaled activities.
+     * </p>
+     * 
+     * @param notScaledReasons
+     *        Machine-readable data that describes the reason for a not scaled activity. Only available when <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html"
+     *        >DescribeScalingActivities</a> includes not scaled activities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingActivity withNotScaledReasons(java.util.Collection<NotScaledReason> notScaledReasons) {
+        setNotScaledReasons(notScaledReasons);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2644,7 +2954,9 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getNotScaledReasons() != null)
+            sb.append("NotScaledReasons: ").append(getNotScaledReasons());
         sb.append("}");
         return sb.toString();
     }
@@ -2703,6 +3015,10 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
+        if (other.getNotScaledReasons() == null ^ this.getNotScaledReasons() == null)
+            return false;
+        if (other.getNotScaledReasons() != null && other.getNotScaledReasons().equals(this.getNotScaledReasons()) == false)
+            return false;
         return true;
     }
 
@@ -2722,6 +3038,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getNotScaledReasons() == null) ? 0 : getNotScaledReasons().hashCode());
         return hashCode;
     }
 

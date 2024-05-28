@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,30 +29,30 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateComponentDataMarshaller {
 
-    private static final MarshallingInfo<Map> BINDINGPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bindingProperties").build();
-    private static final MarshallingInfo<List> CHILDREN_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("children").build();
-    private static final MarshallingInfo<Map> COLLECTIONPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("collectionProperties").build();
-    private static final MarshallingInfo<String> COMPONENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentType").build();
-    private static final MarshallingInfo<Map> EVENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("events").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<Map> OVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("overrides").build();
-    private static final MarshallingInfo<Map> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("properties").build();
-    private static final MarshallingInfo<String> SCHEMAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schemaVersion").build();
     private static final MarshallingInfo<String> SOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sourceId").build();
+    private static final MarshallingInfo<String> COMPONENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentType").build();
+    private static final MarshallingInfo<Map> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("properties").build();
+    private static final MarshallingInfo<List> CHILDREN_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("children").build();
     private static final MarshallingInfo<List> VARIANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("variants").build();
+    private static final MarshallingInfo<Map> OVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("overrides").build();
+    private static final MarshallingInfo<Map> BINDINGPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bindingProperties").build();
+    private static final MarshallingInfo<Map> COLLECTIONPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("collectionProperties").build();
+    private static final MarshallingInfo<Map> EVENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("events").build();
+    private static final MarshallingInfo<String> SCHEMAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schemaVersion").build();
 
     private static final UpdateComponentDataMarshaller instance = new UpdateComponentDataMarshaller();
 
@@ -70,18 +70,18 @@ public class UpdateComponentDataMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateComponentData.getBindingProperties(), BINDINGPROPERTIES_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getChildren(), CHILDREN_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getCollectionProperties(), COLLECTIONPROPERTIES_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getComponentType(), COMPONENTTYPE_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getEvents(), EVENTS_BINDING);
             protocolMarshaller.marshall(updateComponentData.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateComponentData.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getOverrides(), OVERRIDES_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getProperties(), PROPERTIES_BINDING);
-            protocolMarshaller.marshall(updateComponentData.getSchemaVersion(), SCHEMAVERSION_BINDING);
             protocolMarshaller.marshall(updateComponentData.getSourceId(), SOURCEID_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getComponentType(), COMPONENTTYPE_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getProperties(), PROPERTIES_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getChildren(), CHILDREN_BINDING);
             protocolMarshaller.marshall(updateComponentData.getVariants(), VARIANTS_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getOverrides(), OVERRIDES_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getBindingProperties(), BINDINGPROPERTIES_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getCollectionProperties(), COLLECTIONPROPERTIES_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getEvents(), EVENTS_BINDING);
+            protocolMarshaller.marshall(updateComponentData.getSchemaVersion(), SCHEMAVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

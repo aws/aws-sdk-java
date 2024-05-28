@@ -1,0 +1,310 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Determines the row alternate color options.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowAlternateColorOptions"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RowAlternateColorOptions implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Determines the widget status.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * Determines the list of row alternate colors.
+     * </p>
+     */
+    private java.util.List<String> rowAlternateColors;
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     */
+    private String usePrimaryBackgroundColor;
+
+    /**
+     * <p>
+     * Determines the widget status.
+     * </p>
+     * 
+     * @param status
+     *        Determines the widget status.
+     * @see WidgetStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Determines the widget status.
+     * </p>
+     * 
+     * @return Determines the widget status.
+     * @see WidgetStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Determines the widget status.
+     * </p>
+     * 
+     * @param status
+     *        Determines the widget status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WidgetStatus
+     */
+
+    public RowAlternateColorOptions withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the widget status.
+     * </p>
+     * 
+     * @param status
+     *        Determines the widget status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WidgetStatus
+     */
+
+    public RowAlternateColorOptions withStatus(WidgetStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the list of row alternate colors.
+     * </p>
+     * 
+     * @return Determines the list of row alternate colors.
+     */
+
+    public java.util.List<String> getRowAlternateColors() {
+        return rowAlternateColors;
+    }
+
+    /**
+     * <p>
+     * Determines the list of row alternate colors.
+     * </p>
+     * 
+     * @param rowAlternateColors
+     *        Determines the list of row alternate colors.
+     */
+
+    public void setRowAlternateColors(java.util.Collection<String> rowAlternateColors) {
+        if (rowAlternateColors == null) {
+            this.rowAlternateColors = null;
+            return;
+        }
+
+        this.rowAlternateColors = new java.util.ArrayList<String>(rowAlternateColors);
+    }
+
+    /**
+     * <p>
+     * Determines the list of row alternate colors.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRowAlternateColors(java.util.Collection)} or {@link #withRowAlternateColors(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param rowAlternateColors
+     *        Determines the list of row alternate colors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RowAlternateColorOptions withRowAlternateColors(String... rowAlternateColors) {
+        if (this.rowAlternateColors == null) {
+            setRowAlternateColors(new java.util.ArrayList<String>(rowAlternateColors.length));
+        }
+        for (String ele : rowAlternateColors) {
+            this.rowAlternateColors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the list of row alternate colors.
+     * </p>
+     * 
+     * @param rowAlternateColors
+     *        Determines the list of row alternate colors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RowAlternateColorOptions withRowAlternateColors(java.util.Collection<String> rowAlternateColors) {
+        setRowAlternateColors(rowAlternateColors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @param usePrimaryBackgroundColor
+     *        The primary background color options for alternate rows.
+     * @see WidgetStatus
+     */
+
+    public void setUsePrimaryBackgroundColor(String usePrimaryBackgroundColor) {
+        this.usePrimaryBackgroundColor = usePrimaryBackgroundColor;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @return The primary background color options for alternate rows.
+     * @see WidgetStatus
+     */
+
+    public String getUsePrimaryBackgroundColor() {
+        return this.usePrimaryBackgroundColor;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @param usePrimaryBackgroundColor
+     *        The primary background color options for alternate rows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WidgetStatus
+     */
+
+    public RowAlternateColorOptions withUsePrimaryBackgroundColor(String usePrimaryBackgroundColor) {
+        setUsePrimaryBackgroundColor(usePrimaryBackgroundColor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary background color options for alternate rows.
+     * </p>
+     * 
+     * @param usePrimaryBackgroundColor
+     *        The primary background color options for alternate rows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WidgetStatus
+     */
+
+    public RowAlternateColorOptions withUsePrimaryBackgroundColor(WidgetStatus usePrimaryBackgroundColor) {
+        this.usePrimaryBackgroundColor = usePrimaryBackgroundColor.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getRowAlternateColors() != null)
+            sb.append("RowAlternateColors: ").append(getRowAlternateColors()).append(",");
+        if (getUsePrimaryBackgroundColor() != null)
+            sb.append("UsePrimaryBackgroundColor: ").append(getUsePrimaryBackgroundColor());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RowAlternateColorOptions == false)
+            return false;
+        RowAlternateColorOptions other = (RowAlternateColorOptions) obj;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getRowAlternateColors() == null ^ this.getRowAlternateColors() == null)
+            return false;
+        if (other.getRowAlternateColors() != null && other.getRowAlternateColors().equals(this.getRowAlternateColors()) == false)
+            return false;
+        if (other.getUsePrimaryBackgroundColor() == null ^ this.getUsePrimaryBackgroundColor() == null)
+            return false;
+        if (other.getUsePrimaryBackgroundColor() != null && other.getUsePrimaryBackgroundColor().equals(this.getUsePrimaryBackgroundColor()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getRowAlternateColors() == null) ? 0 : getRowAlternateColors().hashCode());
+        hashCode = prime * hashCode + ((getUsePrimaryBackgroundColor() == null) ? 0 : getUsePrimaryBackgroundColor().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RowAlternateColorOptions clone() {
+        try {
+            return (RowAlternateColorOptions) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.quicksight.model.transform.RowAlternateColorOptionsMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

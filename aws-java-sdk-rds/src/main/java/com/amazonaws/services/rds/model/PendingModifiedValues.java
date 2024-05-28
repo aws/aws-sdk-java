@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      */
     private Boolean multiAZ;
@@ -101,6 +101,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for the DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      */
     private String cACertificateIdentifier;
     /**
@@ -119,8 +126,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -145,6 +152,25 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private Integer storageThroughput;
+    /**
+     * <p>
+     * The database engine of the DB instance.
+     * </p>
+     */
+    private String engine;
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     * </p>
+     */
+    private Boolean dedicatedLogVolume;
+    /**
+     * <p>
+     * Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant
+     * configuration (FALSE).
+     * </p>
+     */
+    private Boolean multiTenant;
 
     /**
      * <p>
@@ -348,11 +374,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     *        Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -361,10 +387,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
-     * @return A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * @return Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      */
 
     public Boolean getMultiAZ() {
@@ -373,11 +399,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     *        Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,10 +414,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      * </p>
      * 
-     * @return A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+     * @return Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
      */
 
     public Boolean isMultiAZ() {
@@ -623,9 +649,22 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for the DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param cACertificateIdentifier
-     *        The identifier of the CA certificate for the DB instance.
+     *        The identifier of the CA certificate for the DB instance.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setCACertificateIdentifier(String cACertificateIdentifier) {
@@ -636,8 +675,21 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for the DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
-     * @return The identifier of the CA certificate for the DB instance.
+     * @return The identifier of the CA certificate for the DB instance.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *         encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *         to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public String getCACertificateIdentifier() {
@@ -648,9 +700,22 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * <p>
      * The identifier of the CA certificate for the DB instance.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+     * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to
+     * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param cACertificateIdentifier
-     *        The identifier of the CA certificate for the DB instance.
+     *        The identifier of the CA certificate for the DB instance.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to
+     *        encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS
+     *        to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -800,13 +865,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *        is enabled.
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -815,12 +880,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *         is enabled.
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -829,13 +894,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *        is enabled.
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -846,12 +911,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *         is enabled.
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -1021,6 +1086,158 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The database engine of the DB instance.
+     * </p>
+     * 
+     * @param engine
+     *        The database engine of the DB instance.
+     */
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * <p>
+     * The database engine of the DB instance.
+     * </p>
+     * 
+     * @return The database engine of the DB instance.
+     */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * The database engine of the DB instance.
+     * </p>
+     * 
+     * @param engine
+     *        The database engine of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withEngine(String engine) {
+        setEngine(engine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     */
+
+    public void setDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        this.dedicatedLogVolume = dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     */
+
+    public Boolean getDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        setDedicatedLogVolume(dedicatedLogVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
+     */
+
+    public Boolean isDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant
+     * configuration (FALSE).
+     * </p>
+     * 
+     * @param multiTenant
+     *        Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the
+     *        single-tenant configuration (FALSE).
+     */
+
+    public void setMultiTenant(Boolean multiTenant) {
+        this.multiTenant = multiTenant;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant
+     * configuration (FALSE).
+     * </p>
+     * 
+     * @return Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the
+     *         single-tenant configuration (FALSE).
+     */
+
+    public Boolean getMultiTenant() {
+        return this.multiTenant;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant
+     * configuration (FALSE).
+     * </p>
+     * 
+     * @param multiTenant
+     *        Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the
+     *        single-tenant configuration (FALSE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withMultiTenant(Boolean multiTenant) {
+        setMultiTenant(multiTenant);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the single-tenant
+     * configuration (FALSE).
+     * </p>
+     * 
+     * @return Indicates whether the DB instance will change to the multi-tenant configuration (TRUE) or the
+     *         single-tenant configuration (FALSE).
+     */
+
+    public Boolean isMultiTenant() {
+        return this.multiTenant;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1069,7 +1286,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getResumeFullAutomationModeTime() != null)
             sb.append("ResumeFullAutomationModeTime: ").append(getResumeFullAutomationModeTime()).append(",");
         if (getStorageThroughput() != null)
-            sb.append("StorageThroughput: ").append(getStorageThroughput());
+            sb.append("StorageThroughput: ").append(getStorageThroughput()).append(",");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine()).append(",");
+        if (getDedicatedLogVolume() != null)
+            sb.append("DedicatedLogVolume: ").append(getDedicatedLogVolume()).append(",");
+        if (getMultiTenant() != null)
+            sb.append("MultiTenant: ").append(getMultiTenant());
         sb.append("}");
         return sb.toString();
     }
@@ -1161,6 +1384,18 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
             return false;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
+        if (other.getDedicatedLogVolume() == null ^ this.getDedicatedLogVolume() == null)
+            return false;
+        if (other.getDedicatedLogVolume() != null && other.getDedicatedLogVolume().equals(this.getDedicatedLogVolume()) == false)
+            return false;
+        if (other.getMultiTenant() == null ^ this.getMultiTenant() == null)
+            return false;
+        if (other.getMultiTenant() != null && other.getMultiTenant().equals(this.getMultiTenant()) == false)
+            return false;
         return true;
     }
 
@@ -1188,6 +1423,9 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutomationMode() == null) ? 0 : getAutomationMode().hashCode());
         hashCode = prime * hashCode + ((getResumeFullAutomationModeTime() == null) ? 0 : getResumeFullAutomationModeTime().hashCode());
         hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedLogVolume() == null) ? 0 : getDedicatedLogVolume().hashCode());
+        hashCode = prime * hashCode + ((getMultiTenant() == null) ? 0 : getMultiTenant().hashCode());
         return hashCode;
     }
 

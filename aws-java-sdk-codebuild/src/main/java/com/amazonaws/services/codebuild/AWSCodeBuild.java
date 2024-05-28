@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -147,6 +147,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Gets information about one or more compute fleets.
+     * </p>
+     * 
+     * @param batchGetFleetsRequest
+     * @return Result of the BatchGetFleets operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchGetFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchGetFleetsResult batchGetFleets(BatchGetFleetsRequest batchGetFleetsRequest);
+
+    /**
+     * <p>
      * Gets information about one or more build projects.
      * </p>
      * 
@@ -189,6 +204,26 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     BatchGetReportsResult batchGetReports(BatchGetReportsRequest batchGetReportsRequest);
+
+    /**
+     * <p>
+     * Creates a compute fleet.
+     * </p>
+     * 
+     * @param createFleetRequest
+     * @return Result of the CreateFleet operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource
+     *         with the same settings already exists.
+     * @throws AccountLimitExceededException
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
+     * @sample AWSCodeBuild.CreateFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFleetResult createFleet(CreateFleetRequest createFleetRequest);
 
     /**
      * <p>
@@ -278,6 +313,21 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     DeleteBuildBatchResult deleteBuildBatch(DeleteBuildBatchRequest deleteBuildBatchRequest);
+
+    /**
+     * <p>
+     * Deletes a compute fleet. When you delete a compute fleet, its builds are not deleted.
+     * </p>
+     * 
+     * @param deleteFleetRequest
+     * @return Result of the DeleteFleet operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest);
 
     /**
      * <p>
@@ -560,6 +610,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Gets a list of compute fleet names with each compute fleet name representing a single compute fleet.
+     * </p>
+     * 
+     * @param listFleetsRequest
+     * @return Result of the ListFleets operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFleetsResult listFleets(ListFleetsRequest listFleetsRequest);
+
+    /**
+     * <p>
      * Gets a list of build project names, with each build project name representing a single build project.
      * </p>
      * 
@@ -720,7 +785,13 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
-     * Starts running a build.
+     * Starts running a build with the settings defined in the project. These setting include: how to run a build, where
+     * to get the source code, which build environment to use, which build commands to run, and where to store the build
+     * output.
+     * </p>
+     * <p>
+     * You can also start a build run by overriding some of the build settings in the project. The overrides only apply
+     * for that specific start build request. The settings in the project are unaltered.
      * </p>
      * 
      * @param startBuildRequest
@@ -790,6 +861,25 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Updates a compute fleet.
+     * </p>
+     * 
+     * @param updateFleetRequest
+     * @return Result of the UpdateFleet operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified Amazon Web Services resource cannot be found.
+     * @throws AccountLimitExceededException
+     *         An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.
+     * @sample AWSCodeBuild.UpdateFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFleetResult updateFleet(UpdateFleetRequest updateFleetRequest);
+
+    /**
+     * <p>
      * Changes the settings of a build project.
      * </p>
      * 
@@ -832,9 +922,8 @@ public interface AWSCodeBuild {
      * <ul>
      * <li>
      * <p>
-     * Do not store sensitive values, especially Amazon Web Services access key IDs and secret access keys, in
-     * environment variables. We recommend that you use an Amazon EC2 Systems Manager Parameter Store or Secrets Manager
-     * to store sensitive values.
+     * Do not store sensitive values in environment variables. We recommend that you use an Amazon EC2 Systems Manager
+     * Parameter Store or Secrets Manager to store sensitive values.
      * </p>
      * </li>
      * <li>

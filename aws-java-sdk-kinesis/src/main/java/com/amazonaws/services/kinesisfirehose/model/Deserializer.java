@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose
- * then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of
- * deserializers: the <a
+ * The deserializer you want Firehose to use for converting the input data from JSON. Firehose then serializes the data
+ * to its final format using the <a>Serializer</a>. Firehose supports two types of deserializers: the <a
  * href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON
  * SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.
  * </p>
@@ -34,36 +33,35 @@ public class Deserializer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON
-     * format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
-     * choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
+     * The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format in
+     * preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose,
+     * depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
      * JsonSerDe.
      * </p>
      */
     private OpenXJsonSerDe openXJsonSerDe;
     /**
      * <p>
-     * The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of
-     * two deserializers you can choose, depending on which one offers the functionality you need. The other option is
-     * the OpenX SerDe.
+     * The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it from the
+     * JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you
+     * can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
      * </p>
      */
     private HiveJsonSerDe hiveJsonSerDe;
 
     /**
      * <p>
-     * The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON
-     * format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
-     * choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
+     * The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format in
+     * preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose,
+     * depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
      * JsonSerDe.
      * </p>
      * 
      * @param openXJsonSerDe
-     *        The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the
-     *        JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two
-     *        deserializers you can choose, depending on which one offers the functionality you need. The other option
-     *        is the native Hive / HCatalog JsonSerDe.
+     *        The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format
+     *        in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
+     *        choose, depending on which one offers the functionality you need. The other option is the native Hive /
+     *        HCatalog JsonSerDe.
      */
 
     public void setOpenXJsonSerDe(OpenXJsonSerDe openXJsonSerDe) {
@@ -72,16 +70,16 @@ public class Deserializer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON
-     * format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
-     * choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
+     * The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format in
+     * preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose,
+     * depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
      * JsonSerDe.
      * </p>
      * 
-     * @return The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the
-     *         JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two
-     *         deserializers you can choose, depending on which one offers the functionality you need. The other option
-     *         is the native Hive / HCatalog JsonSerDe.
+     * @return The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format
+     *         in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
+     *         choose, depending on which one offers the functionality you need. The other option is the native Hive /
+     *         HCatalog JsonSerDe.
      */
 
     public OpenXJsonSerDe getOpenXJsonSerDe() {
@@ -90,17 +88,17 @@ public class Deserializer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON
-     * format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
-     * choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
+     * The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format in
+     * preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose,
+     * depending on which one offers the functionality you need. The other option is the native Hive / HCatalog
      * JsonSerDe.
      * </p>
      * 
      * @param openXJsonSerDe
-     *        The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the
-     *        JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two
-     *        deserializers you can choose, depending on which one offers the functionality you need. The other option
-     *        is the native Hive / HCatalog JsonSerDe.
+     *        The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format
+     *        in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
+     *        choose, depending on which one offers the functionality you need. The other option is the native Hive /
+     *        HCatalog JsonSerDe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,17 +109,16 @@ public class Deserializer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of
-     * two deserializers you can choose, depending on which one offers the functionality you need. The other option is
-     * the OpenX SerDe.
+     * The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it from the
+     * JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you
+     * can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
      * </p>
      * 
      * @param hiveJsonSerDe
-     *        The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     *        converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is
-     *        one of two deserializers you can choose, depending on which one offers the functionality you need. The
-     *        other option is the OpenX SerDe.
+     *        The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it
+     *        from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two
+     *        deserializers you can choose, depending on which one offers the functionality you need. The other option
+     *        is the OpenX SerDe.
      */
 
     public void setHiveJsonSerDe(HiveJsonSerDe hiveJsonSerDe) {
@@ -130,16 +127,15 @@ public class Deserializer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of
-     * two deserializers you can choose, depending on which one offers the functionality you need. The other option is
-     * the OpenX SerDe.
+     * The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it from the
+     * JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you
+     * can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
      * </p>
      * 
-     * @return The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     *         converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This
-     *         is one of two deserializers you can choose, depending on which one offers the functionality you need. The
-     *         other option is the OpenX SerDe.
+     * @return The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it
+     *         from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two
+     *         deserializers you can choose, depending on which one offers the functionality you need. The other option
+     *         is the OpenX SerDe.
      */
 
     public HiveJsonSerDe getHiveJsonSerDe() {
@@ -148,17 +144,16 @@ public class Deserializer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     * converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of
-     * two deserializers you can choose, depending on which one offers the functionality you need. The other option is
-     * the OpenX SerDe.
+     * The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it from the
+     * JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you
+     * can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
      * </p>
      * 
      * @param hiveJsonSerDe
-     *        The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means
-     *        converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is
-     *        one of two deserializers you can choose, depending on which one offers the functionality you need. The
-     *        other option is the OpenX SerDe.
+     *        The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it
+     *        from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two
+     *        deserializers you can choose, depending on which one offers the functionality you need. The other option
+     *        is the OpenX SerDe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
- * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+ * Set PSI control for transport stream inputs to specify which data the demux process to scans. Ignore PSI - Scan all
+ * PIDs for audio and video. Use PSI - Scan only PSI data.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputPsiControl {

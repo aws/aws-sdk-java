@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastUpdatedTimestamp;
+    /**
+     * <p>
+     * The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     */
+    private ExpirationSettings expirationSettings;
 
     /**
      * <p>
@@ -260,6 +266,46 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * 
+     * @param expirationSettings
+     *        The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     */
+
+    public void setExpirationSettings(ExpirationSettings expirationSettings) {
+        this.expirationSettings = expirationSettings;
+    }
+
+    /**
+     * <p>
+     * The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * 
+     * @return The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     */
+
+    public ExpirationSettings getExpirationSettings() {
+        return this.expirationSettings;
+    }
+
+    /**
+     * <p>
+     * The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * 
+     * @param expirationSettings
+     *        The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppInstanceUser withExpirationSettings(ExpirationSettings expirationSettings) {
+        setExpirationSettings(expirationSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +326,9 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
         if (getCreatedTimestamp() != null)
             sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
         if (getLastUpdatedTimestamp() != null)
-            sb.append("LastUpdatedTimestamp: ").append(getLastUpdatedTimestamp());
+            sb.append("LastUpdatedTimestamp: ").append(getLastUpdatedTimestamp()).append(",");
+        if (getExpirationSettings() != null)
+            sb.append("ExpirationSettings: ").append(getExpirationSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +363,10 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastUpdatedTimestamp() != null && other.getLastUpdatedTimestamp().equals(this.getLastUpdatedTimestamp()) == false)
             return false;
+        if (other.getExpirationSettings() == null ^ this.getExpirationSettings() == null)
+            return false;
+        if (other.getExpirationSettings() != null && other.getExpirationSettings().equals(this.getExpirationSettings()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class AppInstanceUser implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTimestamp() == null) ? 0 : getLastUpdatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getExpirationSettings() == null) ? 0 : getExpirationSettings().hashCode());
         return hashCode;
     }
 

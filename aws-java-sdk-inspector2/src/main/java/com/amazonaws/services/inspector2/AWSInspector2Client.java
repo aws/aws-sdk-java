@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.inspector2.AWSInspector2ClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.inspector2.model.*;
+
 import com.amazonaws.services.inspector2.model.transform.*;
 
 /**
@@ -52,7 +53,7 @@ import com.amazonaws.services.inspector2.model.transform.*;
  * <p>
  * <p>
  * Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities
- * within your Amazon EC2 and Amazon ECR environments.
+ * within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.
  * </p>
  */
 @ThreadSafe
@@ -152,7 +153,12 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
-     * Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
+     * Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response
+     * indicates the association was successfully started, but doesn’t indicate whether it was completed. You can check
+     * if the association completed by using <a
+     * href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a> for multiple
+     * accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a> for
+     * a single account.
      * </p>
      * 
      * @param associateMemberRequest
@@ -281,6 +287,133 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities in.
+     * </p>
+     * 
+     * @param batchGetCodeSnippetRequest
+     * @return Result of the BatchGetCodeSnippet operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetCodeSnippet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchGetCodeSnippetResult batchGetCodeSnippet(BatchGetCodeSnippetRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetCodeSnippet(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetCodeSnippetResult executeBatchGetCodeSnippet(BatchGetCodeSnippetRequest batchGetCodeSnippetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetCodeSnippetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetCodeSnippetRequest> request = null;
+        Response<BatchGetCodeSnippetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetCodeSnippetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetCodeSnippetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetCodeSnippet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetCodeSnippetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetCodeSnippetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets vulnerability details for findings.
+     * </p>
+     * 
+     * @param batchGetFindingDetailsRequest
+     * @return Result of the BatchGetFindingDetails operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetFindingDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetFindingDetailsResult batchGetFindingDetails(BatchGetFindingDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetFindingDetails(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetFindingDetailsResult executeBatchGetFindingDetails(BatchGetFindingDetailsRequest batchGetFindingDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetFindingDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetFindingDetailsRequest> request = null;
+        Response<BatchGetFindingDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetFindingDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetFindingDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetFindingDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetFindingDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetFindingDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets free trial status for multiple Amazon Web Services accounts.
      * </p>
      * 
@@ -333,6 +466,141 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetFreeTrialInfoResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new BatchGetFreeTrialInfoResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your
+     * organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.
+     * </p>
+     * 
+     * @param batchGetMemberEc2DeepInspectionStatusRequest
+     * @return Result of the BatchGetMemberEc2DeepInspectionStatus operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetMemberEc2DeepInspectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetMemberEc2DeepInspectionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetMemberEc2DeepInspectionStatusResult batchGetMemberEc2DeepInspectionStatus(BatchGetMemberEc2DeepInspectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetMemberEc2DeepInspectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetMemberEc2DeepInspectionStatusResult executeBatchGetMemberEc2DeepInspectionStatus(
+            BatchGetMemberEc2DeepInspectionStatusRequest batchGetMemberEc2DeepInspectionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetMemberEc2DeepInspectionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetMemberEc2DeepInspectionStatusRequest> request = null;
+        Response<BatchGetMemberEc2DeepInspectionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetMemberEc2DeepInspectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetMemberEc2DeepInspectionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetMemberEc2DeepInspectionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetMemberEc2DeepInspectionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetMemberEc2DeepInspectionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization.
+     * You must be the delegated administrator of an organization in Amazon Inspector to use this API.
+     * </p>
+     * 
+     * @param batchUpdateMemberEc2DeepInspectionStatusRequest
+     * @return Result of the BatchUpdateMemberEc2DeepInspectionStatus operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchUpdateMemberEc2DeepInspectionStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchUpdateMemberEc2DeepInspectionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchUpdateMemberEc2DeepInspectionStatusResult batchUpdateMemberEc2DeepInspectionStatus(BatchUpdateMemberEc2DeepInspectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchUpdateMemberEc2DeepInspectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final BatchUpdateMemberEc2DeepInspectionStatusResult executeBatchUpdateMemberEc2DeepInspectionStatus(
+            BatchUpdateMemberEc2DeepInspectionStatusRequest batchUpdateMemberEc2DeepInspectionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchUpdateMemberEc2DeepInspectionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchUpdateMemberEc2DeepInspectionStatusRequest> request = null;
+        Response<BatchUpdateMemberEc2DeepInspectionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchUpdateMemberEc2DeepInspectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchUpdateMemberEc2DeepInspectionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateMemberEc2DeepInspectionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateMemberEc2DeepInspectionStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchUpdateMemberEc2DeepInspectionStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -410,7 +678,138 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
-     * Creates a filter resource using specified filter criteria.
+     * Cancels a software bill of materials (SBOM) report.
+     * </p>
+     * 
+     * @param cancelSbomExportRequest
+     * @return Result of the CancelSbomExport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.CancelSbomExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CancelSbomExportResult cancelSbomExport(CancelSbomExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelSbomExport(request);
+    }
+
+    @SdkInternalApi
+    final CancelSbomExportResult executeCancelSbomExport(CancelSbomExportRequest cancelSbomExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelSbomExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelSbomExportRequest> request = null;
+        Response<CancelSbomExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelSbomExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSbomExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSbomExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelSbomExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelSbomExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a CIS scan configuration.
+     * </p>
+     * 
+     * @param createCisScanConfigurationRequest
+     * @return Result of the CreateCisScanConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.CreateCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCisScanConfigurationResult createCisScanConfiguration(CreateCisScanConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCisScanConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateCisScanConfigurationResult executeCreateCisScanConfiguration(CreateCisScanConfigurationRequest createCisScanConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCisScanConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCisScanConfigurationRequest> request = null;
+        Response<CreateCisScanConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCisScanConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCisScanConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCisScanConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCisScanConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCisScanConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a filter resource using specified filter criteria. When the filter action is set to <code>SUPPRESS</code>
+     * this action creates a suppression rule.
      * </p>
      * 
      * @param createFilterRequest
@@ -478,7 +877,9 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
-     * Creates a finding report.
+     * Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see
+     * <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the
+     * <code>findingStatus</code> filter criteria.
      * </p>
      * 
      * @param createFindingsReportRequest
@@ -531,6 +932,138 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateFindingsReportResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFindingsReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a software bill of materials (SBOM) report.
+     * </p>
+     * 
+     * @param createSbomExportRequest
+     * @return Result of the CreateSbomExport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.CreateSbomExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateSbomExportResult createSbomExport(CreateSbomExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSbomExport(request);
+    }
+
+    @SdkInternalApi
+    final CreateSbomExportResult executeCreateSbomExport(CreateSbomExportRequest createSbomExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSbomExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSbomExportRequest> request = null;
+        Response<CreateSbomExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSbomExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSbomExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSbomExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSbomExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSbomExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a CIS scan configuration.
+     * </p>
+     * 
+     * @param deleteCisScanConfigurationRequest
+     * @return Result of the DeleteCisScanConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.DeleteCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCisScanConfigurationResult deleteCisScanConfiguration(DeleteCisScanConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCisScanConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCisScanConfigurationResult executeDeleteCisScanConfiguration(DeleteCisScanConfigurationRequest deleteCisScanConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCisScanConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCisScanConfigurationRequest> request = null;
+        Response<DeleteCisScanConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCisScanConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCisScanConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCisScanConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCisScanConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCisScanConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -608,7 +1141,7 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
-     * Describe Amazon Inspector configuration settings for an Amazon Web Services organization
+     * Describe Amazon Inspector configuration settings for an Amazon Web Services organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -1006,6 +1539,136 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Retrieves a CIS scan report.
+     * </p>
+     * 
+     * @param getCisScanReportRequest
+     * @return Result of the GetCisScanReport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetCisScanReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCisScanReportResult getCisScanReport(GetCisScanReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCisScanReport(request);
+    }
+
+    @SdkInternalApi
+    final GetCisScanReportResult executeGetCisScanReport(GetCisScanReportRequest getCisScanReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCisScanReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCisScanReportRequest> request = null;
+        Response<GetCisScanReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCisScanReportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCisScanReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCisScanReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCisScanReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCisScanReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves CIS scan result details.
+     * </p>
+     * 
+     * @param getCisScanResultDetailsRequest
+     * @return Result of the GetCisScanResultDetails operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetCisScanResultDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCisScanResultDetailsResult getCisScanResultDetails(GetCisScanResultDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCisScanResultDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetCisScanResultDetailsResult executeGetCisScanResultDetails(GetCisScanResultDetailsRequest getCisScanResultDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCisScanResultDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCisScanResultDetailsRequest> request = null;
+        Response<GetCisScanResultDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCisScanResultDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCisScanResultDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCisScanResultDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCisScanResultDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCisScanResultDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves setting configurations for Inspector scans.
      * </p>
      * 
@@ -1122,6 +1785,138 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
             HttpResponseHandler<AmazonWebServiceResponse<GetDelegatedAdminAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDelegatedAdminAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the activation status of Amazon Inspector deep inspection and custom paths associated with your
+     * account.
+     * </p>
+     * 
+     * @param getEc2DeepInspectionConfigurationRequest
+     * @return Result of the GetEc2DeepInspectionConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetEc2DeepInspectionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEc2DeepInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEc2DeepInspectionConfigurationResult getEc2DeepInspectionConfiguration(GetEc2DeepInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEc2DeepInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetEc2DeepInspectionConfigurationResult executeGetEc2DeepInspectionConfiguration(
+            GetEc2DeepInspectionConfigurationRequest getEc2DeepInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEc2DeepInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEc2DeepInspectionConfigurationRequest> request = null;
+        Response<GetEc2DeepInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEc2DeepInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEc2DeepInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEc2DeepInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEc2DeepInspectionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEc2DeepInspectionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets an encryption key.
+     * </p>
+     * 
+     * @param getEncryptionKeyRequest
+     * @return Result of the GetEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetEncryptionKeyResult getEncryptionKey(GetEncryptionKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEncryptionKey(request);
+    }
+
+    @SdkInternalApi
+    final GetEncryptionKeyResult executeGetEncryptionKey(GetEncryptionKeyRequest getEncryptionKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEncryptionKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEncryptionKeyRequest> request = null;
+        Response<GetEncryptionKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEncryptionKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEncryptionKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEncryptionKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEncryptionKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEncryptionKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1266,6 +2061,71 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Gets details of a software bill of materials (SBOM) report.
+     * </p>
+     * 
+     * @param getSbomExportRequest
+     * @return Result of the GetSbomExport operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.GetSbomExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSbomExportResult getSbomExport(GetSbomExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSbomExport(request);
+    }
+
+    @SdkInternalApi
+    final GetSbomExportResult executeGetSbomExport(GetSbomExportRequest getSbomExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSbomExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSbomExportRequest> request = null;
+        Response<GetSbomExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSbomExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSbomExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSbomExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSbomExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSbomExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the permissions an account has to configure Amazon Inspector.
      * </p>
      * 
@@ -1318,6 +2178,268 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
             HttpResponseHandler<AmazonWebServiceResponse<ListAccountPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListAccountPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists CIS scan configurations.
+     * </p>
+     * 
+     * @param listCisScanConfigurationsRequest
+     * @return Result of the ListCisScanConfigurations operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.ListCisScanConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCisScanConfigurationsResult listCisScanConfigurations(ListCisScanConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCisScanConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListCisScanConfigurationsResult executeListCisScanConfigurations(ListCisScanConfigurationsRequest listCisScanConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCisScanConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCisScanConfigurationsRequest> request = null;
+        Response<ListCisScanConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCisScanConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCisScanConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCisScanConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCisScanConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCisScanConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists scan results aggregated by checks.
+     * </p>
+     * 
+     * @param listCisScanResultsAggregatedByChecksRequest
+     * @return Result of the ListCisScanResultsAggregatedByChecks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.ListCisScanResultsAggregatedByChecks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCisScanResultsAggregatedByChecksResult listCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCisScanResultsAggregatedByChecks(request);
+    }
+
+    @SdkInternalApi
+    final ListCisScanResultsAggregatedByChecksResult executeListCisScanResultsAggregatedByChecks(
+            ListCisScanResultsAggregatedByChecksRequest listCisScanResultsAggregatedByChecksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCisScanResultsAggregatedByChecksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCisScanResultsAggregatedByChecksRequest> request = null;
+        Response<ListCisScanResultsAggregatedByChecksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCisScanResultsAggregatedByChecksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCisScanResultsAggregatedByChecksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCisScanResultsAggregatedByChecks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCisScanResultsAggregatedByChecksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCisScanResultsAggregatedByChecksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists scan results aggregated by a target resource.
+     * </p>
+     * 
+     * @param listCisScanResultsAggregatedByTargetResourceRequest
+     * @return Result of the ListCisScanResultsAggregatedByTargetResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.ListCisScanResultsAggregatedByTargetResource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCisScanResultsAggregatedByTargetResourceResult listCisScanResultsAggregatedByTargetResource(
+            ListCisScanResultsAggregatedByTargetResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCisScanResultsAggregatedByTargetResource(request);
+    }
+
+    @SdkInternalApi
+    final ListCisScanResultsAggregatedByTargetResourceResult executeListCisScanResultsAggregatedByTargetResource(
+            ListCisScanResultsAggregatedByTargetResourceRequest listCisScanResultsAggregatedByTargetResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCisScanResultsAggregatedByTargetResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCisScanResultsAggregatedByTargetResourceRequest> request = null;
+        Response<ListCisScanResultsAggregatedByTargetResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCisScanResultsAggregatedByTargetResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCisScanResultsAggregatedByTargetResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCisScanResultsAggregatedByTargetResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCisScanResultsAggregatedByTargetResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListCisScanResultsAggregatedByTargetResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a CIS scan list.
+     * </p>
+     * 
+     * @param listCisScansRequest
+     * @return Result of the ListCisScans operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.ListCisScans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCisScansResult listCisScans(ListCisScansRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCisScans(request);
+    }
+
+    @SdkInternalApi
+    final ListCisScansResult executeListCisScans(ListCisScansRequest listCisScansRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCisScansRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCisScansRequest> request = null;
+        Response<ListCisScansResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCisScansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCisScansRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCisScans");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCisScansResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCisScansResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1894,6 +3016,406 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned
+     * key.
+     * </p>
+     * 
+     * @param resetEncryptionKeyRequest
+     * @return Result of the ResetEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.ResetEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ResetEncryptionKeyResult resetEncryptionKey(ResetEncryptionKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetEncryptionKey(request);
+    }
+
+    @SdkInternalApi
+    final ResetEncryptionKeyResult executeResetEncryptionKey(ResetEncryptionKeyRequest resetEncryptionKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetEncryptionKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetEncryptionKeyRequest> request = null;
+        Response<ResetEncryptionKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetEncryptionKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetEncryptionKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetEncryptionKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetEncryptionKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetEncryptionKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists Amazon Inspector coverage details for a specific vulnerability.
+     * </p>
+     * 
+     * @param searchVulnerabilitiesRequest
+     * @return Result of the SearchVulnerabilities operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.SearchVulnerabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchVulnerabilitiesResult searchVulnerabilities(SearchVulnerabilitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchVulnerabilities(request);
+    }
+
+    @SdkInternalApi
+    final SearchVulnerabilitiesResult executeSearchVulnerabilities(SearchVulnerabilitiesRequest searchVulnerabilitiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchVulnerabilitiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchVulnerabilitiesRequest> request = null;
+        Response<SearchVulnerabilitiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchVulnerabilitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchVulnerabilitiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchVulnerabilities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchVulnerabilitiesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new SearchVulnerabilitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param sendCisSessionHealthRequest
+     * @return Result of the SendCisSessionHealth operation returned by the service.
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.SendCisSessionHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendCisSessionHealthResult sendCisSessionHealth(SendCisSessionHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendCisSessionHealth(request);
+    }
+
+    @SdkInternalApi
+    final SendCisSessionHealthResult executeSendCisSessionHealth(SendCisSessionHealthRequest sendCisSessionHealthRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendCisSessionHealthRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendCisSessionHealthRequest> request = null;
+        Response<SendCisSessionHealthResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendCisSessionHealthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendCisSessionHealthRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCisSessionHealth");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendCisSessionHealthResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendCisSessionHealthResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param sendCisSessionTelemetryRequest
+     * @return Result of the SendCisSessionTelemetry operation returned by the service.
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.SendCisSessionTelemetry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendCisSessionTelemetryResult sendCisSessionTelemetry(SendCisSessionTelemetryRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendCisSessionTelemetry(request);
+    }
+
+    @SdkInternalApi
+    final SendCisSessionTelemetryResult executeSendCisSessionTelemetry(SendCisSessionTelemetryRequest sendCisSessionTelemetryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendCisSessionTelemetryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendCisSessionTelemetryRequest> request = null;
+        Response<SendCisSessionTelemetryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendCisSessionTelemetryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendCisSessionTelemetryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCisSessionTelemetry");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendCisSessionTelemetryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendCisSessionTelemetryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param startCisSessionRequest
+     * @return Result of the StartCisSession operation returned by the service.
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.StartCisSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartCisSessionResult startCisSession(StartCisSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCisSession(request);
+    }
+
+    @SdkInternalApi
+    final StartCisSessionResult executeStartCisSession(StartCisSessionRequest startCisSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCisSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCisSessionRequest> request = null;
+        Response<StartCisSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCisSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCisSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCisSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCisSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCisSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector
+     * service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by
+     * the service.
+     * </p>
+     * 
+     * @param stopCisSessionRequest
+     * @return Result of the StopCisSession operation returned by the service.
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.StopCisSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopCisSessionResult stopCisSession(StopCisSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopCisSession(request);
+    }
+
+    @SdkInternalApi
+    final StopCisSessionResult executeStopCisSession(StopCisSessionRequest stopCisSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopCisSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopCisSessionRequest> request = null;
+        Response<StopCisSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopCisSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopCisSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCisSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopCisSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopCisSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds tags to a resource.
      * </p>
      * 
@@ -2022,6 +3544,73 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Updates a CIS scan configuration.
+     * </p>
+     * 
+     * @param updateCisScanConfigurationRequest
+     * @return Result of the UpdateCisScanConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCisScanConfigurationResult updateCisScanConfiguration(UpdateCisScanConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCisScanConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCisScanConfigurationResult executeUpdateCisScanConfiguration(UpdateCisScanConfigurationRequest updateCisScanConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCisScanConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCisScanConfigurationRequest> request = null;
+        Response<UpdateCisScanConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCisScanConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCisScanConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCisScanConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCisScanConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCisScanConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector
      * delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization
      * cannot update this setting.
@@ -2087,6 +3676,138 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for your account.
+     * </p>
+     * 
+     * @param updateEc2DeepInspectionConfigurationRequest
+     * @return Result of the UpdateEc2DeepInspectionConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateEc2DeepInspectionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateEc2DeepInspectionConfigurationResult updateEc2DeepInspectionConfiguration(UpdateEc2DeepInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEc2DeepInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEc2DeepInspectionConfigurationResult executeUpdateEc2DeepInspectionConfiguration(
+            UpdateEc2DeepInspectionConfigurationRequest updateEc2DeepInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEc2DeepInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEc2DeepInspectionConfigurationRequest> request = null;
+        Response<UpdateEc2DeepInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEc2DeepInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEc2DeepInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEc2DeepInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEc2DeepInspectionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateEc2DeepInspectionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an encryption key. A <code>ResourceNotFoundException</code> means that an Amazon Web Services owned key
+     * is being used for encryption.
+     * </p>
+     * 
+     * @param updateEncryptionKeyRequest
+     * @return Result of the UpdateEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access an invalid resource. Make sure the resource is specified correctly.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateEncryptionKeyResult updateEncryptionKey(UpdateEncryptionKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEncryptionKey(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEncryptionKeyResult executeUpdateEncryptionKey(UpdateEncryptionKeyRequest updateEncryptionKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEncryptionKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEncryptionKeyRequest> request = null;
+        Response<UpdateEncryptionKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEncryptionKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEncryptionKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEncryptionKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEncryptionKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEncryptionKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Specifies the action that is to be applied to the findings that match the filter.
      * </p>
      * 
@@ -2140,6 +3861,74 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the Amazon Inspector deep inspection custom paths for your organization. You must be an Amazon Inspector
+     * delegated administrator to use this API.
+     * </p>
+     * 
+     * @param updateOrgEc2DeepInspectionConfigurationRequest
+     * @return Result of the UpdateOrgEc2DeepInspectionConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.UpdateOrgEc2DeepInspectionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateOrgEc2DeepInspectionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateOrgEc2DeepInspectionConfigurationResult updateOrgEc2DeepInspectionConfiguration(UpdateOrgEc2DeepInspectionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOrgEc2DeepInspectionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOrgEc2DeepInspectionConfigurationResult executeUpdateOrgEc2DeepInspectionConfiguration(
+            UpdateOrgEc2DeepInspectionConfigurationRequest updateOrgEc2DeepInspectionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOrgEc2DeepInspectionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOrgEc2DeepInspectionConfigurationRequest> request = null;
+        Response<UpdateOrgEc2DeepInspectionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOrgEc2DeepInspectionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateOrgEc2DeepInspectionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOrgEc2DeepInspectionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateOrgEc2DeepInspectionConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateOrgEc2DeepInspectionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,9 +36,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String image;
     /**
      * <p>
-     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
-     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
-     * both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
+     * The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the
+     * vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
@@ -55,9 +55,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private Integer vcpus;
     /**
      * <p>
-     * For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>
-     * , the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.
+     * For jobs running on Amazon EC2 resources that didn't specify memory requirements using
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including
+     * all run on Fargate resources, see <code>resourceRequirements</code>.
      * </p>
      */
     private Integer memory;
@@ -153,7 +153,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String user;
     /**
      * <p>
-     * The exit code to return upon completion.
+     * The exit code returned upon completion.
      * </p>
      */
     private Integer exitCode;
@@ -234,9 +234,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
-     * ECS container agent.
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -265,18 +266,37 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<Secret> secrets;
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      */
     private FargatePlatformConfiguration fargatePlatformConfiguration;
+    /**
+     * <p>
+     * The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     * </p>
+     */
+    private EphemeralStorage ephemeralStorage;
+    /**
+     * <p>
+     * An object that represents the compute environment architecture for Batch jobs on Fargate.
+     * </p>
+     */
+    private RuntimePlatform runtimePlatform;
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     */
+    private RepositoryCredentials repositoryCredentials;
 
     /**
      * <p>
@@ -320,9 +340,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
-     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
-     * both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
+     * The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the
+     * vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
@@ -337,8 +357,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the
-     *        vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
+     *        The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify
+     *        the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
      *        requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter
      *        maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -358,9 +378,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
-     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
-     * both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
+     * The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the
+     * vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
@@ -374,10 +394,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the
-     *         vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
-     *         requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter
-     *         maps to <code>CpuShares</code> in the <a
+     * @return The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can
+     *         specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify
+     *         the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This
+     *         parameter maps to <code>CpuShares</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -396,9 +416,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
-     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
-     * both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
+     * The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the
+     * vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements
+     * in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to
      * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
@@ -413,8 +433,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the
-     *        vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
+     *        The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify
+     *        the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
      *        requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter
      *        maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -436,13 +456,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>
-     * , the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.
+     * For jobs running on Amazon EC2 resources that didn't specify memory requirements using
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including
+     * all run on Fargate resources, see <code>resourceRequirements</code>.
      * </p>
      * 
      * @param memory
-     *        For jobs running on EC2 resources that didn't specify memory requirements using
+     *        For jobs running on Amazon EC2 resources that didn't specify memory requirements using
      *        <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs,
      *        including all run on Fargate resources, see <code>resourceRequirements</code>.
      */
@@ -453,12 +473,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>
-     * , the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.
+     * For jobs running on Amazon EC2 resources that didn't specify memory requirements using
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including
+     * all run on Fargate resources, see <code>resourceRequirements</code>.
      * </p>
      * 
-     * @return For jobs running on EC2 resources that didn't specify memory requirements using
+     * @return For jobs running on Amazon EC2 resources that didn't specify memory requirements using
      *         <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs,
      *         including all run on Fargate resources, see <code>resourceRequirements</code>.
      */
@@ -469,13 +489,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>
-     * , the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.
+     * For jobs running on Amazon EC2 resources that didn't specify memory requirements using
+     * <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including
+     * all run on Fargate resources, see <code>resourceRequirements</code>.
      * </p>
      * 
      * @param memory
-     *        For jobs running on EC2 resources that didn't specify memory requirements using
+     *        For jobs running on Amazon EC2 resources that didn't specify memory requirements using
      *        <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs,
      *        including all run on Fargate resources, see <code>resourceRequirements</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1276,11 +1296,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The exit code to return upon completion.
+     * The exit code returned upon completion.
      * </p>
      * 
      * @param exitCode
-     *        The exit code to return upon completion.
+     *        The exit code returned upon completion.
      */
 
     public void setExitCode(Integer exitCode) {
@@ -1289,10 +1309,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The exit code to return upon completion.
+     * The exit code returned upon completion.
      * </p>
      * 
-     * @return The exit code to return upon completion.
+     * @return The exit code returned upon completion.
      */
 
     public Integer getExitCode() {
@@ -1301,11 +1321,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The exit code to return upon completion.
+     * The exit code returned upon completion.
      * </p>
      * 
      * @param exitCode
-     *        The exit code to return upon completion.
+     *        The exit code returned upon completion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1769,9 +1789,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
-     * ECS container agent.
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -1806,8 +1827,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     *        >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *        Amazon ECS container agent.
      *        </p>
      *        </note>
@@ -1849,9 +1872,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
-     * ECS container agent.
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -1885,8 +1909,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <note>
      *         <p>
-     *         Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *         <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
+     *         Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     *         >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *         Amazon ECS container agent.
      *         </p>
      *         </note>
@@ -1928,9 +1954,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon
-     * ECS container agent.
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS
+     * container agent.
      * </p>
      * </note>
      * <p>
@@ -1965,8 +1992,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     *        >LogConfiguration</a> data type). Additional log drivers might be available in future releases of the
      *        Amazon ECS container agent.
      *        </p>
      *        </note>
@@ -2079,13 +2108,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -2094,12 +2123,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
-     * @return The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *         resources must not specify this parameter.
+     * @return The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *         EC2 resources must not specify this parameter.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -2108,13 +2137,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2125,13 +2154,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      */
 
     public void setFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
@@ -2140,12 +2169,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
-     * @return The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *         resources must not specify this parameter.
+     * @return The platform configuration for jobs that are running on Fargate resources. Jobs that are running on
+     *         Amazon EC2 resources must not specify this parameter.
      */
 
     public FargatePlatformConfiguration getFargatePlatformConfiguration() {
@@ -2154,18 +2183,144 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContainerDetail withFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
         setFargatePlatformConfiguration(fargatePlatformConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount
+     *        of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     * </p>
+     * 
+     * @return The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount
+     *         of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount
+     *        of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that represents the compute environment architecture for Batch jobs on Fargate.
+     * </p>
+     * 
+     * @param runtimePlatform
+     *        An object that represents the compute environment architecture for Batch jobs on Fargate.
+     */
+
+    public void setRuntimePlatform(RuntimePlatform runtimePlatform) {
+        this.runtimePlatform = runtimePlatform;
+    }
+
+    /**
+     * <p>
+     * An object that represents the compute environment architecture for Batch jobs on Fargate.
+     * </p>
+     * 
+     * @return An object that represents the compute environment architecture for Batch jobs on Fargate.
+     */
+
+    public RuntimePlatform getRuntimePlatform() {
+        return this.runtimePlatform;
+    }
+
+    /**
+     * <p>
+     * An object that represents the compute environment architecture for Batch jobs on Fargate.
+     * </p>
+     * 
+     * @param runtimePlatform
+     *        An object that represents the compute environment architecture for Batch jobs on Fargate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withRuntimePlatform(RuntimePlatform runtimePlatform) {
+        setRuntimePlatform(runtimePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     * 
+     * @param repositoryCredentials
+     *        The private repository authentication credentials to use.
+     */
+
+    public void setRepositoryCredentials(RepositoryCredentials repositoryCredentials) {
+        this.repositoryCredentials = repositoryCredentials;
+    }
+
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     * 
+     * @return The private repository authentication credentials to use.
+     */
+
+    public RepositoryCredentials getRepositoryCredentials() {
+        return this.repositoryCredentials;
+    }
+
+    /**
+     * <p>
+     * The private repository authentication credentials to use.
+     * </p>
+     * 
+     * @param repositoryCredentials
+     *        The private repository authentication credentials to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withRepositoryCredentials(RepositoryCredentials repositoryCredentials) {
+        setRepositoryCredentials(repositoryCredentials);
         return this;
     }
 
@@ -2232,7 +2387,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
         if (getFargatePlatformConfiguration() != null)
-            sb.append("FargatePlatformConfiguration: ").append(getFargatePlatformConfiguration());
+            sb.append("FargatePlatformConfiguration: ").append(getFargatePlatformConfiguration()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage()).append(",");
+        if (getRuntimePlatform() != null)
+            sb.append("RuntimePlatform: ").append(getRuntimePlatform()).append(",");
+        if (getRepositoryCredentials() != null)
+            sb.append("RepositoryCredentials: ").append(getRepositoryCredentials());
         sb.append("}");
         return sb.toString();
     }
@@ -2351,6 +2512,18 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFargatePlatformConfiguration() != null && other.getFargatePlatformConfiguration().equals(this.getFargatePlatformConfiguration()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
+        if (other.getRuntimePlatform() == null ^ this.getRuntimePlatform() == null)
+            return false;
+        if (other.getRuntimePlatform() != null && other.getRuntimePlatform().equals(this.getRuntimePlatform()) == false)
+            return false;
+        if (other.getRepositoryCredentials() == null ^ this.getRepositoryCredentials() == null)
+            return false;
+        if (other.getRepositoryCredentials() != null && other.getRepositoryCredentials().equals(this.getRepositoryCredentials()) == false)
+            return false;
         return true;
     }
 
@@ -2385,6 +2558,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSecrets() == null) ? 0 : getSecrets().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFargatePlatformConfiguration() == null) ? 0 : getFargatePlatformConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
+        hashCode = prime * hashCode + ((getRuntimePlatform() == null) ? 0 : getRuntimePlatform().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryCredentials() == null) ? 0 : getRepositoryCredentials().hashCode());
         return hashCode;
     }
 

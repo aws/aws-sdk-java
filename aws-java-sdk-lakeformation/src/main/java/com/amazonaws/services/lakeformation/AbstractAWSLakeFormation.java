@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,17 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public CreateLakeFormationIdentityCenterConfigurationResult createLakeFormationIdentityCenterConfiguration(
+            CreateLakeFormationIdentityCenterConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLakeFormationOptInResult createLakeFormationOptIn(CreateLakeFormationOptInRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDataCellsFilterResult deleteDataCellsFilter(DeleteDataCellsFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,12 +89,29 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public DeleteLakeFormationIdentityCenterConfigurationResult deleteLakeFormationIdentityCenterConfiguration(
+            DeleteLakeFormationIdentityCenterConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLakeFormationOptInResult deleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteObjectsOnCancelResult deleteObjectsOnCancel(DeleteObjectsOnCancelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeregisterResourceResult deregisterResource(DeregisterResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLakeFormationIdentityCenterConfigurationResult describeLakeFormationIdentityCenterConfiguration(
+            DescribeLakeFormationIdentityCenterConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +127,16 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
 
     @Override
     public ExtendTransactionResult extendTransaction(ExtendTransactionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataCellsFilterResult getDataCellsFilter(GetDataCellsFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataLakePrincipalResult getDataLakePrincipal(GetDataLakePrincipalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,6 +211,11 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public ListLakeFormationOptInsResult listLakeFormationOptIns(ListLakeFormationOptInsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPermissionsResult listPermissions(ListPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -233,7 +276,18 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public UpdateDataCellsFilterResult updateDataCellsFilter(UpdateDataCellsFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateLFTagResult updateLFTag(UpdateLFTagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLakeFormationIdentityCenterConfigurationResult updateLakeFormationIdentityCenterConfiguration(
+            UpdateLakeFormationIdentityCenterConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

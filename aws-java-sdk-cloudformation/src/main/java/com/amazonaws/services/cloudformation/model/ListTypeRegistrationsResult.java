@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * A list of extension registration tokens.
      * </p>
      * <p>
-     * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
-     * request.
+     * Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> registrationTokenList;
@@ -48,14 +47,12 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * A list of extension registration tokens.
      * </p>
      * <p>
-     * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
-     * request.
+     * Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * </p>
      * 
      * @return A list of extension registration tokens.</p>
      *         <p>
-     *         Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
-     *         registration request.
+     *         Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      */
 
     public java.util.List<String> getRegistrationTokenList() {
@@ -70,15 +67,13 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * A list of extension registration tokens.
      * </p>
      * <p>
-     * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
-     * request.
+     * Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * </p>
      * 
      * @param registrationTokenList
      *        A list of extension registration tokens.</p>
      *        <p>
-     *        Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
-     *        registration request.
+     *        Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      */
 
     public void setRegistrationTokenList(java.util.Collection<String> registrationTokenList) {
@@ -95,8 +90,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * A list of extension registration tokens.
      * </p>
      * <p>
-     * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
-     * request.
+     * Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,8 +101,7 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * @param registrationTokenList
      *        A list of extension registration tokens.</p>
      *        <p>
-     *        Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
-     *        registration request.
+     *        Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,15 +120,13 @@ public class ListTypeRegistrationsResult extends com.amazonaws.AmazonWebServiceR
      * A list of extension registration tokens.
      * </p>
      * <p>
-     * Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type registration
-     * request.
+     * Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * </p>
      * 
      * @param registrationTokenList
      *        A list of extension registration tokens.</p>
      *        <p>
-     *        Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information about a type
-     *        registration request.
+     *        Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

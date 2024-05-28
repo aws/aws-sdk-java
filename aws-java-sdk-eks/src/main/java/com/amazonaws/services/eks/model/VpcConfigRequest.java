@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,23 +40,9 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
      * use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any
      * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
-     * with Kubernetes:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
-     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     * considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -88,8 +74,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
-     * cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you specify the necessary CIDR
+     * blocks for every node and Fargate <code>Pod</code> in the cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
      * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -179,43 +165,15 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
      * use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any
      * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
-     * with Kubernetes:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
-     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     * considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *         creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't
      *         specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults
-     *         for clusters deployed with Kubernetes:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         1.14 Amazon EKS platform version <code>eks.3</code> and later
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For more information, see <a
+     *         for clusters deployed with Kubernetes. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
      *         considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -229,44 +187,16 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
      * use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any
      * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
-     * with Kubernetes:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
-     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     * considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't
      *        specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for
-     *        clusters deployed with Kubernetes:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        1.14 Amazon EKS platform version <code>eks.3</code> and later
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a
+     *        clusters deployed with Kubernetes. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
      *        considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -285,23 +215,9 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
      * use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any
      * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
-     * with Kubernetes:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
-     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     * considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -313,21 +229,7 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't
      *        specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for
-     *        clusters deployed with Kubernetes:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        1.14 Amazon EKS platform version <code>eks.3</code> and later
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a
+     *        clusters deployed with Kubernetes. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
      *        considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -348,44 +250,16 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS creates to
      * use that allow communication between your nodes and the Kubernetes control plane. If you don't specify any
      * security groups, then familiarize yourself with the difference between Amazon EKS defaults for clusters deployed
-     * with Kubernetes:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 1.14 Amazon EKS platform version <code>eks.3</code> and later
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
-     * EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * with Kubernetes. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+     * considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param securityGroupIds
      *        Specify one or more security groups for the cross-account elastic network interfaces that Amazon EKS
      *        creates to use that allow communication between your nodes and the Kubernetes control plane. If you don't
      *        specify any security groups, then familiarize yourself with the difference between Amazon EKS defaults for
-     *        clusters deployed with Kubernetes:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        1.14 Amazon EKS platform version <code>eks.2</code> and earlier
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        1.14 Amazon EKS platform version <code>eks.3</code> and later
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For more information, see <a
+     *        clusters deployed with Kubernetes. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
      *        considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -600,16 +474,16 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
-     * cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you specify the necessary CIDR
+     * blocks for every node and Fargate <code>Pod</code> in the cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
      * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @return The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *         Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The
-     *         default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or
-     *         Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks. For more
+     *         default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you
+     *         specify the necessary CIDR blocks for every node and Fargate <code>Pod</code> in the cluster. For more
      *         information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
      *         EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -622,8 +496,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
-     * cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you specify the necessary CIDR
+     * blocks for every node and Fargate <code>Pod</code> in the cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
      * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -631,10 +505,10 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * @param publicAccessCidrs
      *        The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *        Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The
-     *        default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or
-     *        Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks. For more information,
-     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
-     *        endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you
+     *        specify the necessary CIDR blocks for every node and Fargate <code>Pod</code> in the cluster. For more
+     *        information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     *        EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setPublicAccessCidrs(java.util.Collection<String> publicAccessCidrs) {
@@ -650,8 +524,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
-     * cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you specify the necessary CIDR
+     * blocks for every node and Fargate <code>Pod</code> in the cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
      * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -664,10 +538,10 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * @param publicAccessCidrs
      *        The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *        Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The
-     *        default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or
-     *        Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks. For more information,
-     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
-     *        endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you
+     *        specify the necessary CIDR blocks for every node and Fargate <code>Pod</code> in the cluster. For more
+     *        information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     *        EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,8 +559,8 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to
      * the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is
-     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the
-     * cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a
+     * <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you specify the necessary CIDR
+     * blocks for every node and Fargate <code>Pod</code> in the cluster. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access
      * control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -694,10 +568,10 @@ public class VpcConfigRequest implements Serializable, Cloneable, StructuredPojo
      * @param publicAccessCidrs
      *        The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint.
      *        Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The
-     *        default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or
-     *        Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks. For more information,
-     *        see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
-     *        endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access, make sure that you
+     *        specify the necessary CIDR blocks for every node and Fargate <code>Pod</code> in the cluster. For more
+     *        information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     *        EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,14 +29,14 @@ public class ComponentSummaryMarshaller {
 
     private static final MarshallingInfo<String> APPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appId").build();
-    private static final MarshallingInfo<String> COMPONENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentType").build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentName").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> COMPONENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentType").build();
 
     private static final ComponentSummaryMarshaller instance = new ComponentSummaryMarshaller();
 
@@ -55,10 +55,10 @@ public class ComponentSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(componentSummary.getAppId(), APPID_BINDING);
-            protocolMarshaller.marshall(componentSummary.getComponentType(), COMPONENTTYPE_BINDING);
             protocolMarshaller.marshall(componentSummary.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(componentSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(componentSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(componentSummary.getComponentType(), COMPONENTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

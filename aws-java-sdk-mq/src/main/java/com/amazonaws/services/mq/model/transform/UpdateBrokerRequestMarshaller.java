@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class UpdateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maintenanceWindowStartTime").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroups").build();
+    private static final MarshallingInfo<String> DATAREPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataReplicationMode").build();
 
     private static final UpdateBrokerRequestMarshaller instance = new UpdateBrokerRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class UpdateBrokerRequestMarshaller {
             protocolMarshaller.marshall(updateBrokerRequest.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getMaintenanceWindowStartTime(), MAINTENANCEWINDOWSTARTTIME_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(updateBrokerRequest.getDataReplicationMode(), DATAREPLICATIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,10 @@ public class FirewallPolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatefulDefaultActions").build();
     private static final MarshallingInfo<StructuredPojo> STATEFULENGINEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatefulEngineOptions").build();
+    private static final MarshallingInfo<String> TLSINSPECTIONCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TLSInspectionConfigurationArn").build();
+    private static final MarshallingInfo<StructuredPojo> POLICYVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyVariables").build();
 
     private static final FirewallPolicyMarshaller instance = new FirewallPolicyMarshaller();
 
@@ -66,6 +70,8 @@ public class FirewallPolicyMarshaller {
             protocolMarshaller.marshall(firewallPolicy.getStatefulRuleGroupReferences(), STATEFULRULEGROUPREFERENCES_BINDING);
             protocolMarshaller.marshall(firewallPolicy.getStatefulDefaultActions(), STATEFULDEFAULTACTIONS_BINDING);
             protocolMarshaller.marshall(firewallPolicy.getStatefulEngineOptions(), STATEFULENGINEOPTIONS_BINDING);
+            protocolMarshaller.marshall(firewallPolicy.getTLSInspectionConfigurationArn(), TLSINSPECTIONCONFIGURATIONARN_BINDING);
+            protocolMarshaller.marshall(firewallPolicy.getPolicyVariables(), POLICYVARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

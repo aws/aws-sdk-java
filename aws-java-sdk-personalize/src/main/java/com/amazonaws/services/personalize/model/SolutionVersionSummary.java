@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,20 @@ public class SolutionVersionSummary implements Serializable, Cloneable, Structur
      * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers
+     * all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the
+     * latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.
+     * </p>
+     */
+    private String trainingMode;
+    /**
+     * <p>
+     * Whether the solution version was created automatically or manually.
+     * </p>
+     */
+    private String trainingType;
     /**
      * <p>
      * The date and time (in Unix time) that this version of a solution was created.
@@ -210,6 +224,144 @@ public class SolutionVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers
+     * all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the
+     * latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.
+     * </p>
+     * 
+     * @param trainingMode
+     *        The scope of training to be performed when creating the solution version. A <code>FULL</code> training
+     *        considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has
+     *        changed since the latest training. Only solution versions created with the User-Personalization recipe can
+     *        use <code>UPDATE</code>.
+     * @see TrainingMode
+     */
+
+    public void setTrainingMode(String trainingMode) {
+        this.trainingMode = trainingMode;
+    }
+
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers
+     * all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the
+     * latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.
+     * </p>
+     * 
+     * @return The scope of training to be performed when creating the solution version. A <code>FULL</code> training
+     *         considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has
+     *         changed since the latest training. Only solution versions created with the User-Personalization recipe
+     *         can use <code>UPDATE</code>.
+     * @see TrainingMode
+     */
+
+    public String getTrainingMode() {
+        return this.trainingMode;
+    }
+
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers
+     * all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the
+     * latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.
+     * </p>
+     * 
+     * @param trainingMode
+     *        The scope of training to be performed when creating the solution version. A <code>FULL</code> training
+     *        considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has
+     *        changed since the latest training. Only solution versions created with the User-Personalization recipe can
+     *        use <code>UPDATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingMode
+     */
+
+    public SolutionVersionSummary withTrainingMode(String trainingMode) {
+        setTrainingMode(trainingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scope of training to be performed when creating the solution version. A <code>FULL</code> training considers
+     * all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has changed since the
+     * latest training. Only solution versions created with the User-Personalization recipe can use <code>UPDATE</code>.
+     * </p>
+     * 
+     * @param trainingMode
+     *        The scope of training to be performed when creating the solution version. A <code>FULL</code> training
+     *        considers all of the data in your dataset group. An <code>UPDATE</code> processes only the data that has
+     *        changed since the latest training. Only solution versions created with the User-Personalization recipe can
+     *        use <code>UPDATE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingMode
+     */
+
+    public SolutionVersionSummary withTrainingMode(TrainingMode trainingMode) {
+        this.trainingMode = trainingMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the solution version was created automatically or manually.
+     * </p>
+     * 
+     * @param trainingType
+     *        Whether the solution version was created automatically or manually.
+     * @see TrainingType
+     */
+
+    public void setTrainingType(String trainingType) {
+        this.trainingType = trainingType;
+    }
+
+    /**
+     * <p>
+     * Whether the solution version was created automatically or manually.
+     * </p>
+     * 
+     * @return Whether the solution version was created automatically or manually.
+     * @see TrainingType
+     */
+
+    public String getTrainingType() {
+        return this.trainingType;
+    }
+
+    /**
+     * <p>
+     * Whether the solution version was created automatically or manually.
+     * </p>
+     * 
+     * @param trainingType
+     *        Whether the solution version was created automatically or manually.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingType
+     */
+
+    public SolutionVersionSummary withTrainingType(String trainingType) {
+        setTrainingType(trainingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the solution version was created automatically or manually.
+     * </p>
+     * 
+     * @param trainingType
+     *        Whether the solution version was created automatically or manually.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingType
+     */
+
+    public SolutionVersionSummary withTrainingType(TrainingType trainingType) {
+        this.trainingType = trainingType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time (in Unix time) that this version of a solution was created.
      * </p>
      * 
@@ -344,6 +496,10 @@ public class SolutionVersionSummary implements Serializable, Cloneable, Structur
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getTrainingMode() != null)
+            sb.append("TrainingMode: ").append(getTrainingMode()).append(",");
+        if (getTrainingType() != null)
+            sb.append("TrainingType: ").append(getTrainingType()).append(",");
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
@@ -372,6 +528,14 @@ public class SolutionVersionSummary implements Serializable, Cloneable, Structur
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getTrainingMode() == null ^ this.getTrainingMode() == null)
+            return false;
+        if (other.getTrainingMode() != null && other.getTrainingMode().equals(this.getTrainingMode()) == false)
+            return false;
+        if (other.getTrainingType() == null ^ this.getTrainingType() == null)
+            return false;
+        if (other.getTrainingType() != null && other.getTrainingType().equals(this.getTrainingType()) == false)
+            return false;
         if (other.getCreationDateTime() == null ^ this.getCreationDateTime() == null)
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
@@ -394,6 +558,8 @@ public class SolutionVersionSummary implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTrainingMode() == null) ? 0 : getTrainingMode().hashCode());
+        hashCode = prime * hashCode + ((getTrainingType() == null) ? 0 : getTrainingType().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,9 +13,9 @@
 
 /**
  * <p>
- * Amazon Comprehend is an AWS service for gaining insight into the content of documents. Use these actions to determine
- * the topics contained in your documents, the topics they discuss, the predominant sentiment expressed in them, the
- * predominant language used, and more.
+ * Amazon Comprehend is an Amazon Web Services service for gaining insight into the content of documents. Use these
+ * actions to determine the topics contained in your documents, the topics they discuss, the predominant sentiment
+ * expressed in them, the predominant language used, and more.
  * </p>
  */
 package com.amazonaws.services.comprehend;

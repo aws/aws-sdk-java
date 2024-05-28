@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,12 +32,28 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * <p>
      * The maximum number of times a training job is allowed to run.
      * </p>
+     * <p>
+     * For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem
+     * types, the supported value is 1. For tabular problem types, the maximum value is 750.
+     * </p>
      */
     private Integer maxCandidates;
     /**
      * <p>
      * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the action.
+     * part of a hyperparameter tuning job. For more information, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
+     * used by the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     * >CreateHyperParameterTuningJob</a> action.
+     * </p>
+     * <p>
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * candidate.
+     * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      * </p>
      */
     private Integer maxRuntimePerTrainingJobInSeconds;
@@ -49,7 +65,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended
      * gracefully. The AutoML job identifies the best model whose training was completed and marks it as the
      * best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment,
-     * will not be completed.
+     * are not completed.
      * </p>
      */
     private Integer maxAutoMLJobRuntimeInSeconds;
@@ -58,9 +74,16 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * <p>
      * The maximum number of times a training job is allowed to run.
      * </p>
+     * <p>
+     * For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem
+     * types, the supported value is 1. For tabular problem types, the maximum value is 750.
+     * </p>
      * 
      * @param maxCandidates
-     *        The maximum number of times a training job is allowed to run.
+     *        The maximum number of times a training job is allowed to run.</p>
+     *        <p>
+     *        For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning)
+     *        problem types, the supported value is 1. For tabular problem types, the maximum value is 750.
      */
 
     public void setMaxCandidates(Integer maxCandidates) {
@@ -71,8 +94,15 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * <p>
      * The maximum number of times a training job is allowed to run.
      * </p>
+     * <p>
+     * For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem
+     * types, the supported value is 1. For tabular problem types, the maximum value is 750.
+     * </p>
      * 
-     * @return The maximum number of times a training job is allowed to run.
+     * @return The maximum number of times a training job is allowed to run.</p>
+     *         <p>
+     *         For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning)
+     *         problem types, the supported value is 1. For tabular problem types, the maximum value is 750.
      */
 
     public Integer getMaxCandidates() {
@@ -83,9 +113,16 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * <p>
      * The maximum number of times a training job is allowed to run.
      * </p>
+     * <p>
+     * For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning) problem
+     * types, the supported value is 1. For tabular problem types, the maximum value is 750.
+     * </p>
      * 
      * @param maxCandidates
-     *        The maximum number of times a training job is allowed to run.
+     *        The maximum number of times a training job is allowed to run.</p>
+     *        <p>
+     *        For text and image classification, time-series forecasting, as well as text generation (LLMs fine-tuning)
+     *        problem types, the supported value is 1. For tabular problem types, the maximum value is 750.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,12 +134,36 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the action.
+     * part of a hyperparameter tuning job. For more information, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
+     * used by the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     * >CreateHyperParameterTuningJob</a> action.
+     * </p>
+     * <p>
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * candidate.
+     * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      * </p>
      * 
      * @param maxRuntimePerTrainingJobInSeconds
      *        The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
-     *        run as part of a hyperparameter tuning job. For more information, see the used by the action.
+     *        run as part of a hyperparameter tuning job. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html"
+     *        >StoppingCondition</a> used by the <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     *        >CreateHyperParameterTuningJob</a> action.</p>
+     *        <p>
+     *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
+     *        the job candidate.
+     *        </p>
+     *        <p>
+     *        For <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html"
+     *        >TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      */
 
     public void setMaxRuntimePerTrainingJobInSeconds(Integer maxRuntimePerTrainingJobInSeconds) {
@@ -112,11 +173,35 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the action.
+     * part of a hyperparameter tuning job. For more information, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
+     * used by the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     * >CreateHyperParameterTuningJob</a> action.
+     * </p>
+     * <p>
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * candidate.
+     * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      * </p>
      * 
      * @return The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
-     *         run as part of a hyperparameter tuning job. For more information, see the used by the action.
+     *         run as part of a hyperparameter tuning job. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html"
+     *         >StoppingCondition</a> used by the <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     *         >CreateHyperParameterTuningJob</a> action.</p>
+     *         <p>
+     *         For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
+     *         the job candidate.
+     *         </p>
+     *         <p>
+     *         For <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html"
+     *         >TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      */
 
     public Integer getMaxRuntimePerTrainingJobInSeconds() {
@@ -126,12 +211,36 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as
-     * part of a hyperparameter tuning job. For more information, see the used by the action.
+     * part of a hyperparameter tuning job. For more information, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
+     * used by the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     * >CreateHyperParameterTuningJob</a> action.
+     * </p>
+     * <p>
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * candidate.
+     * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      * </p>
      * 
      * @param maxRuntimePerTrainingJobInSeconds
      *        The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
-     *        run as part of a hyperparameter tuning job. For more information, see the used by the action.
+     *        run as part of a hyperparameter tuning job. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html"
+     *        >StoppingCondition</a> used by the <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
+     *        >CreateHyperParameterTuningJob</a> action.</p>
+     *        <p>
+     *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
+     *        the job candidate.
+     *        </p>
+     *        <p>
+     *        For <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html"
+     *        >TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,7 +257,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended
      * gracefully. The AutoML job identifies the best model whose training was completed and marks it as the
      * best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment,
-     * will not be completed.
+     * are not completed.
      * </p>
      * 
      * @param maxAutoMLJobRuntimeInSeconds
@@ -157,7 +266,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *        If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended
      *        gracefully. The AutoML job identifies the best model whose training was completed and marks it as the
      *        best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model
-     *        deployment, will not be completed.
+     *        deployment, are not completed.
      */
 
     public void setMaxAutoMLJobRuntimeInSeconds(Integer maxAutoMLJobRuntimeInSeconds) {
@@ -172,7 +281,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended
      * gracefully. The AutoML job identifies the best model whose training was completed and marks it as the
      * best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment,
-     * will not be completed.
+     * are not completed.
      * </p>
      * 
      * @return The maximum runtime, in seconds, an AutoML job has to complete.</p>
@@ -180,7 +289,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *         If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is
      *         ended gracefully. The AutoML job identifies the best model whose training was completed and marks it as
      *         the best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model
-     *         deployment, will not be completed.
+     *         deployment, are not completed.
      */
 
     public Integer getMaxAutoMLJobRuntimeInSeconds() {
@@ -195,7 +304,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended
      * gracefully. The AutoML job identifies the best model whose training was completed and marks it as the
      * best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment,
-     * will not be completed.
+     * are not completed.
      * </p>
      * 
      * @param maxAutoMLJobRuntimeInSeconds
@@ -204,7 +313,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *        If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended
      *        gracefully. The AutoML job identifies the best model whose training was completed and marks it as the
      *        best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model
-     *        deployment, will not be completed.
+     *        deployment, are not completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

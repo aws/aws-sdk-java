@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains information about the identity of a user.
  * </p>
+ * <note>
+ * <p>
+ * For Amazon Connect instances that are created with the <code>EXISTING_DIRECTORY</code> identity management type,
+ * <code>FirstName</code>, <code>LastName</code>, and <code>Email</code> cannot be updated from within Amazon Connect
+ * because they are managed by the directory.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserIdentityInfo" target="_top">AWS API
  *      Documentation</a>
@@ -307,13 +314,13 @@ public class UserIdentityInfo implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFirstName() != null)
-            sb.append("FirstName: ").append(getFirstName()).append(",");
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastName() != null)
-            sb.append("LastName: ").append(getLastName()).append(",");
+            sb.append("LastName: ").append("***Sensitive Data Redacted***").append(",");
         if (getEmail() != null)
-            sb.append("Email: ").append(getEmail()).append(",");
+            sb.append("Email: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecondaryEmail() != null)
-            sb.append("SecondaryEmail: ").append(getSecondaryEmail()).append(",");
+            sb.append("SecondaryEmail: ").append("***Sensitive Data Redacted***").append(",");
         if (getMobile() != null)
             sb.append("Mobile: ").append(getMobile());
         sb.append("}");

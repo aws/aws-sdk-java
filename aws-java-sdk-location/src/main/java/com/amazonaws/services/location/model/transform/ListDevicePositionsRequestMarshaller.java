@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListDevicePositionsRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FILTERGEOMETRY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterGeometry").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +52,7 @@ public class ListDevicePositionsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listDevicePositionsRequest.getFilterGeometry(), FILTERGEOMETRY_BINDING);
             protocolMarshaller.marshall(listDevicePositionsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listDevicePositionsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listDevicePositionsRequest.getTrackerName(), TRACKERNAME_BINDING);

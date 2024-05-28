@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the parameter for which you want to review history.
+     * The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters
+     * shared with you from another account, you must use the full ARN.
      * </p>
      */
     private String name;
@@ -54,11 +55,13 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the parameter for which you want to review history.
+     * The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters
+     * shared with you from another account, you must use the full ARN.
      * </p>
      * 
      * @param name
-     *        The name of the parameter for which you want to review history.
+     *        The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For
+     *        parameters shared with you from another account, you must use the full ARN.
      */
 
     public void setName(String name) {
@@ -67,10 +70,12 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the parameter for which you want to review history.
+     * The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters
+     * shared with you from another account, you must use the full ARN.
      * </p>
      * 
-     * @return The name of the parameter for which you want to review history.
+     * @return The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For
+     *         parameters shared with you from another account, you must use the full ARN.
      */
 
     public String getName() {
@@ -79,11 +84,13 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the parameter for which you want to review history.
+     * The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters
+     * shared with you from another account, you must use the full ARN.
      * </p>
      * 
      * @param name
-     *        The name of the parameter for which you want to review history.
+     *        The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For
+     *        parameters shared with you from another account, you must use the full ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -58,6 +58,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      * <code>192.0.2.0/24</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -89,7 +101,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -104,6 +116,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      * <code>192.0.2.0/24</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      * </p>
      * </li>
      * </ul>
@@ -195,7 +219,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -212,6 +236,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <code>192.0.2.0/24</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
@@ -223,7 +259,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        specify <code>ANY</code>. </p>
      *        <p>
      *        Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation.
-     *        Network Firewall supports all address ranges for IPv4.
+     *        Network Firewall supports all address ranges for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        Examples:
@@ -239,6 +275,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      *        <code>192.0.2.0/24</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+     *        specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -258,7 +306,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -275,6 +323,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <code>192.0.2.0/24</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
@@ -285,7 +345,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *         specify <code>ANY</code>. </p>
      *         <p>
      *         Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation.
-     *         Network Firewall supports all address ranges for IPv4.
+     *         Network Firewall supports all address ranges for IPv4 and IPv6.
      *         </p>
      *         <p>
      *         Examples:
@@ -301,6 +361,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      *         <code>192.0.2.0/24</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+     *         specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *         1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -320,7 +392,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -337,6 +409,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <code>192.0.2.0/24</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
@@ -348,7 +432,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        specify <code>ANY</code>. </p>
      *        <p>
      *        Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation.
-     *        Network Firewall supports all address ranges for IPv4.
+     *        Network Firewall supports all address ranges for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        Examples:
@@ -364,6 +448,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      *        <code>192.0.2.0/24</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+     *        specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -510,7 +606,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -527,6 +623,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <code>192.0.2.0/24</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
@@ -538,7 +646,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        specify <code>ANY</code>. </p>
      *        <p>
      *        Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation.
-     *        Network Firewall supports all address ranges for IPv4.
+     *        Network Firewall supports all address ranges for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        Examples:
@@ -554,6 +662,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      *        <code>192.0.2.0/24</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+     *        specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -573,7 +693,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -590,6 +710,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <code>192.0.2.0/24</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
@@ -600,7 +732,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *         specify <code>ANY</code>. </p>
      *         <p>
      *         Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation.
-     *         Network Firewall supports all address ranges for IPv4.
+     *         Network Firewall supports all address ranges for IPv4 and IPv6.
      *         </p>
      *         <p>
      *         Examples:
@@ -616,6 +748,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      *         <code>192.0.2.0/24</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+     *         specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *         1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -635,7 +779,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network
-     * Firewall supports all address ranges for IPv4.
+     * Firewall supports all address ranges for IPv4 and IPv6.
      * </p>
      * <p>
      * Examples:
@@ -652,6 +796,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      * <code>192.0.2.0/24</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about CIDR notation, see the Wikipedia entry <a
@@ -663,7 +819,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        specify <code>ANY</code>. </p>
      *        <p>
      *        Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation.
-     *        Network Firewall supports all address ranges for IPv4.
+     *        Network Firewall supports all address ranges for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        Examples:
@@ -679,6 +835,18 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify
      *        <code>192.0.2.0/24</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
+     *        specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000 to
+     *        1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
      *        </p>
      *        </li>
      *        </ul>

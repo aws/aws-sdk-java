@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,13 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
                     context.nextToken();
                     jobTemplateSettings.setAvailBlanking(AvailBlankingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("colorConversion3DLUTSettings", targetDepth)) {
+                    context.nextToken();
+                    jobTemplateSettings.setColorConversion3DLUTSettings(new ListUnmarshaller<ColorConversion3DLUTSetting>(
+                            ColorConversion3DLUTSettingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("esam", targetDepth)) {
                     context.nextToken();
                     jobTemplateSettings.setEsam(EsamSettingsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,6 +70,10 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
                 if (context.testExpression("extendedDataServices", targetDepth)) {
                     context.nextToken();
                     jobTemplateSettings.setExtendedDataServices(ExtendedDataServicesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("followSource", targetDepth)) {
+                    context.nextToken();
+                    jobTemplateSettings.setFollowSource(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();

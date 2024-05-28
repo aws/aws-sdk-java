@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,21 +54,30 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
     private String delimiter;
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      */
     private String startingPosition;
     /**
      * <p>
-     * The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in
-     * milliseconds (ms). The default value is <code>1000</code>.
+     * The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream,
+     * specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The
+     * default value is <code>1000</code>.
      * </p>
      */
     private Long maxFetchTimeInMs;
     /**
      * <p>
-     * The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     * <code>100000</code>.
+     * The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can
+     * exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records
+     * call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of
+     * <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      * </p>
      */
     private Long maxFetchRecordsPerShard;
@@ -148,6 +157,31 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
      * </p>
      */
     private String roleSessionName;
+    /**
+     * <p>
+     * When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that
+     * indicates the time when the corresponding record received by the stream. The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.
+     * </p>
+     */
+    private String addRecordTimestamp;
+    /**
+     * <p>
+     * When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest
+     * record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue
+     * version 4.0 or later.
+     * </p>
+     */
+    private String emitConsumerLagMetrics;
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     */
+    private java.util.Date startingTimestamp;
 
     /**
      * <p>
@@ -311,13 +345,24 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @param startingPosition
      *        The starting position in the Kinesis data stream to read data from. The possible values are
-     *        <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *        <code>"latest"</code>.
+     *        <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *        format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *        offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *        .</p>
+     *        <p>
+     *        Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *        Glue version 4.0 or later.
      * @see StartingPosition
      */
 
@@ -327,12 +372,23 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @return The starting position in the Kinesis data stream to read data from. The possible values are
-     *         <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *         <code>"latest"</code>.
+     *         <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *         format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *         offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *         .</p>
+     *         <p>
+     *         Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *         Glue version 4.0 or later.
      * @see StartingPosition
      */
 
@@ -342,13 +398,24 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @param startingPosition
      *        The starting position in the Kinesis data stream to read data from. The possible values are
-     *        <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *        <code>"latest"</code>.
+     *        <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *        format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *        offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *        .</p>
+     *        <p>
+     *        Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *        Glue version 4.0 or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartingPosition
      */
@@ -360,13 +427,24 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+     * The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone offset with a +/-. For example:
+     * "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>.
+     * </p>
+     * <p>
+     * Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.
      * </p>
      * 
      * @param startingPosition
      *        The starting position in the Kinesis data stream to read data from. The possible values are
-     *        <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is
-     *        <code>"latest"</code>.
+     *        <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or a timestamp string in UTC
+     *        format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC timezone
+     *        offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default value is <code>"latest"</code>
+     *        .</p>
+     *        <p>
+     *        Note: Using a value that is a timestamp string in UTC format for "startingPosition" is supported only for
+     *        Glue version 4.0 or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartingPosition
      */
@@ -378,13 +456,15 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in
-     * milliseconds (ms). The default value is <code>1000</code>.
+     * The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream,
+     * specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The
+     * default value is <code>1000</code>.
      * </p>
      * 
      * @param maxFetchTimeInMs
-     *        The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard,
-     *        specified in milliseconds (ms). The default value is <code>1000</code>.
+     *        The maximum time spent for the job executor to read records for the current batch from the Kinesis data
+     *        stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this
+     *        time. The default value is <code>1000</code>.
      */
 
     public void setMaxFetchTimeInMs(Long maxFetchTimeInMs) {
@@ -393,12 +473,14 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in
-     * milliseconds (ms). The default value is <code>1000</code>.
+     * The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream,
+     * specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The
+     * default value is <code>1000</code>.
      * </p>
      * 
-     * @return The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard,
-     *         specified in milliseconds (ms). The default value is <code>1000</code>.
+     * @return The maximum time spent for the job executor to read records for the current batch from the Kinesis data
+     *         stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within
+     *         this time. The default value is <code>1000</code>.
      */
 
     public Long getMaxFetchTimeInMs() {
@@ -407,13 +489,15 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in
-     * milliseconds (ms). The default value is <code>1000</code>.
+     * The maximum time spent for the job executor to read records for the current batch from the Kinesis data stream,
+     * specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this time. The
+     * default value is <code>1000</code>.
      * </p>
      * 
      * @param maxFetchTimeInMs
-     *        The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard,
-     *        specified in milliseconds (ms). The default value is <code>1000</code>.
+     *        The maximum time spent for the job executor to read records for the current batch from the Kinesis data
+     *        stream, specified in milliseconds (ms). Multiple <code>GetRecords</code> API calls may be made within this
+     *        time. The default value is <code>1000</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,13 +508,17 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     * <code>100000</code>.
+     * The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can
+     * exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records
+     * call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of
+     * <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      * </p>
      * 
      * @param maxFetchRecordsPerShard
-     *        The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     *        <code>100000</code>.
+     *        The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The
+     *        client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same
+     *        get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     *        multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      */
 
     public void setMaxFetchRecordsPerShard(Long maxFetchRecordsPerShard) {
@@ -439,12 +527,16 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     * <code>100000</code>.
+     * The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can
+     * exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records
+     * call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of
+     * <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      * </p>
      * 
-     * @return The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     *         <code>100000</code>.
+     * @return The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The
+     *         client can exceed this limit if the streaming job has already read extra records from Kinesis (in the
+     *         same get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     *         multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      */
 
     public Long getMaxFetchRecordsPerShard() {
@@ -453,13 +545,17 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     * <code>100000</code>.
+     * The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The client can
+     * exceed this limit if the streaming job has already read extra records from Kinesis (in the same get-records
+     * call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a multiple of
+     * <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      * </p>
      * 
      * @param maxFetchRecordsPerShard
-     *        The maximum number of records to fetch per shard in the Kinesis data stream. The default value is
-     *        <code>100000</code>.
+     *        The maximum number of records to fetch per shard in the Kinesis data stream per microbatch. Note: The
+     *        client can exceed this limit if the streaming job has already read extra records from Kinesis (in the same
+     *        get-records call). If <code>MaxFetchRecordsPerShard</code> needs to be strict then it needs to be a
+     *        multiple of <code>MaxRecordPerRead</code>. The default value is <code>100000</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1000,6 +1096,168 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that
+     * indicates the time when the corresponding record received by the stream. The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.
+     * </p>
+     * 
+     * @param addRecordTimestamp
+     *        When this option is set to 'true', the data output will contain an additional column named
+     *        "__src_timestamp" that indicates the time when the corresponding record received by the stream. The
+     *        default value is 'false'. This option is supported in Glue version 4.0 or later.
+     */
+
+    public void setAddRecordTimestamp(String addRecordTimestamp) {
+        this.addRecordTimestamp = addRecordTimestamp;
+    }
+
+    /**
+     * <p>
+     * When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that
+     * indicates the time when the corresponding record received by the stream. The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.
+     * </p>
+     * 
+     * @return When this option is set to 'true', the data output will contain an additional column named
+     *         "__src_timestamp" that indicates the time when the corresponding record received by the stream. The
+     *         default value is 'false'. This option is supported in Glue version 4.0 or later.
+     */
+
+    public String getAddRecordTimestamp() {
+        return this.addRecordTimestamp;
+    }
+
+    /**
+     * <p>
+     * When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that
+     * indicates the time when the corresponding record received by the stream. The default value is 'false'. This
+     * option is supported in Glue version 4.0 or later.
+     * </p>
+     * 
+     * @param addRecordTimestamp
+     *        When this option is set to 'true', the data output will contain an additional column named
+     *        "__src_timestamp" that indicates the time when the corresponding record received by the stream. The
+     *        default value is 'false'. This option is supported in Glue version 4.0 or later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KinesisStreamingSourceOptions withAddRecordTimestamp(String addRecordTimestamp) {
+        setAddRecordTimestamp(addRecordTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest
+     * record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue
+     * version 4.0 or later.
+     * </p>
+     * 
+     * @param emitConsumerLagMetrics
+     *        When this option is set to 'true', for each batch, it will emit the metrics for the duration between the
+     *        oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     *        "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue
+     *        version 4.0 or later.
+     */
+
+    public void setEmitConsumerLagMetrics(String emitConsumerLagMetrics) {
+        this.emitConsumerLagMetrics = emitConsumerLagMetrics;
+    }
+
+    /**
+     * <p>
+     * When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest
+     * record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue
+     * version 4.0 or later.
+     * </p>
+     * 
+     * @return When this option is set to 'true', for each batch, it will emit the metrics for the duration between the
+     *         oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     *         "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in
+     *         Glue version 4.0 or later.
+     */
+
+    public String getEmitConsumerLagMetrics() {
+        return this.emitConsumerLagMetrics;
+    }
+
+    /**
+     * <p>
+     * When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest
+     * record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     * "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue
+     * version 4.0 or later.
+     * </p>
+     * 
+     * @param emitConsumerLagMetrics
+     *        When this option is set to 'true', for each batch, it will emit the metrics for the duration between the
+     *        oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is
+     *        "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue
+     *        version 4.0 or later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KinesisStreamingSourceOptions withEmitConsumerLagMetrics(String emitConsumerLagMetrics) {
+        setEmitConsumerLagMetrics(emitConsumerLagMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * 
+     * @param startingTimestamp
+     *        The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are
+     *        a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a
+     *        UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     */
+
+    public void setStartingTimestamp(java.util.Date startingTimestamp) {
+        this.startingTimestamp = startingTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * 
+     * @return The timestamp of the record in the Kinesis data stream to start reading data from. The possible values
+     *         are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents
+     *         a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     */
+
+    public java.util.Date getStartingTimestamp() {
+        return this.startingTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are a
+     * timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * </p>
+     * 
+     * @param startingTimestamp
+     *        The timestamp of the record in the Kinesis data stream to start reading data from. The possible values are
+     *        a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a
+     *        UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KinesisStreamingSourceOptions withStartingTimestamp(java.util.Date startingTimestamp) {
+        setStartingTimestamp(startingTimestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1046,7 +1304,13 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getRoleSessionName() != null)
-            sb.append("RoleSessionName: ").append(getRoleSessionName());
+            sb.append("RoleSessionName: ").append(getRoleSessionName()).append(",");
+        if (getAddRecordTimestamp() != null)
+            sb.append("AddRecordTimestamp: ").append(getAddRecordTimestamp()).append(",");
+        if (getEmitConsumerLagMetrics() != null)
+            sb.append("EmitConsumerLagMetrics: ").append(getEmitConsumerLagMetrics()).append(",");
+        if (getStartingTimestamp() != null)
+            sb.append("StartingTimestamp: ").append(getStartingTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -1133,6 +1397,18 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
             return false;
         if (other.getRoleSessionName() != null && other.getRoleSessionName().equals(this.getRoleSessionName()) == false)
             return false;
+        if (other.getAddRecordTimestamp() == null ^ this.getAddRecordTimestamp() == null)
+            return false;
+        if (other.getAddRecordTimestamp() != null && other.getAddRecordTimestamp().equals(this.getAddRecordTimestamp()) == false)
+            return false;
+        if (other.getEmitConsumerLagMetrics() == null ^ this.getEmitConsumerLagMetrics() == null)
+            return false;
+        if (other.getEmitConsumerLagMetrics() != null && other.getEmitConsumerLagMetrics().equals(this.getEmitConsumerLagMetrics()) == false)
+            return false;
+        if (other.getStartingTimestamp() == null ^ this.getStartingTimestamp() == null)
+            return false;
+        if (other.getStartingTimestamp() != null && other.getStartingTimestamp().equals(this.getStartingTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -1159,6 +1435,9 @@ public class KinesisStreamingSourceOptions implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getStreamArn() == null) ? 0 : getStreamArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getRoleSessionName() == null) ? 0 : getRoleSessionName().hashCode());
+        hashCode = prime * hashCode + ((getAddRecordTimestamp() == null) ? 0 : getAddRecordTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getEmitConsumerLagMetrics() == null) ? 0 : getEmitConsumerLagMetrics().hashCode());
+        hashCode = prime * hashCode + ((getStartingTimestamp() == null) ? 0 : getStartingTimestamp().hashCode());
         return hashCode;
     }
 

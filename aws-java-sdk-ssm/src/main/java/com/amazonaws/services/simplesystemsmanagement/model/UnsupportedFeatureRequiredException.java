@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more
  * information, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
- * >Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+ * >Turning on the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

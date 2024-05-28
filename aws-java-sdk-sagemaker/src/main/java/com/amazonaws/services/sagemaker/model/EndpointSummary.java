@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,12 +64,17 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     * <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">
+     * UpdateEndpointWeightsAndCapacities</a> is executing.
      * </p>
      * </li>
      * <li>
@@ -84,8 +89,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process
      * of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled
-     * and is undergoing variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call
-     * or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+     * and is undergoing variant weight or capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      * </p>
      * </li>
      * <li>
@@ -95,19 +103,23 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is the only
-     * operation that can be performed on a failed endpoint.
+     * <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * the only operation that can be performed on a failed endpoint.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     * To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * </p>
      */
     private String endpointStatus;
@@ -284,12 +296,17 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     * <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">
+     * UpdateEndpointWeightsAndCapacities</a> is executing.
      * </p>
      * </li>
      * <li>
@@ -304,8 +321,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process
      * of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled
-     * and is undergoing variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call
-     * or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+     * and is undergoing variant weight or capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      * </p>
      * </li>
      * <li>
@@ -315,19 +335,23 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is the only
-     * operation that can be performed on a failed endpoint.
+     * <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * the only operation that can be performed on a failed endpoint.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     * To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * </p>
      * 
      * @param endpointStatus
@@ -340,12 +364,18 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     *        <code>Creating</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html"
+     *        >CreateEndpoint</a> is executing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     *        <code>Updating</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html"
+     *        >UpdateEndpoint</a> or <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> is executing.
      *        </p>
      *        </li>
      *        <li>
@@ -360,9 +390,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the
      *        process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      *        <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling
-     *        enabled and is undergoing variant weight or capacity changes as part of an
-     *        <a>UpdateEndpointWeightsAndCapacities</a> call or when the <a>UpdateEndpointWeightsAndCapacities</a>
-     *        operation is called explicitly.
+     *        enabled and is undergoing variant weight or capacity changes as part of an <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> call or when the <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      *        </p>
      *        </li>
      *        <li>
@@ -372,19 +404,24 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     *        <code>Deleting</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *        >DeleteEndpoint</a> is executing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     *        <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is
-     *        the only operation that can be performed on a failed endpoint.
+     *        <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *        >DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     *        To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call
+     *        to <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * @see EndpointStatus
      */
 
@@ -404,12 +441,17 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     * <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">
+     * UpdateEndpointWeightsAndCapacities</a> is executing.
      * </p>
      * </li>
      * <li>
@@ -424,8 +466,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process
      * of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled
-     * and is undergoing variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call
-     * or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+     * and is undergoing variant weight or capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      * </p>
      * </li>
      * <li>
@@ -435,19 +480,23 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is the only
-     * operation that can be performed on a failed endpoint.
+     * <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * the only operation that can be performed on a failed endpoint.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     * To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * </p>
      * 
      * @return The status of the endpoint.</p>
@@ -459,12 +508,18 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     *         <code>Creating</code>: <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html"
+     *         >CreateEndpoint</a> is executing.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     *         <code>Updating</code>: <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html"
+     *         >UpdateEndpoint</a> or <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *         >UpdateEndpointWeightsAndCapacities</a> is executing.
      *         </p>
      *         </li>
      *         <li>
@@ -479,9 +534,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *         <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the
      *         process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to
      *         an <code>InService</code> status. This transitional status only applies to an endpoint that has
-     *         autoscaling enabled and is undergoing variant weight or capacity changes as part of an
-     *         <a>UpdateEndpointWeightsAndCapacities</a> call or when the <a>UpdateEndpointWeightsAndCapacities</a>
-     *         operation is called explicitly.
+     *         autoscaling enabled and is undergoing variant weight or capacity changes as part of an <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *         >UpdateEndpointWeightsAndCapacities</a> call or when the <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *         >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      *         </p>
      *         </li>
      *         <li>
@@ -491,20 +548,25 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     *         <code>Deleting</code>: <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *         >DeleteEndpoint</a> is executing.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     *         <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is
-     *         the only operation that can be performed on a failed endpoint.
+     *         <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *         >DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a>
-     *         filter.
+     *         To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call
+     *         to <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints
+     *         </a>.
      * @see EndpointStatus
      */
 
@@ -524,12 +586,17 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     * <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">
+     * UpdateEndpointWeightsAndCapacities</a> is executing.
      * </p>
      * </li>
      * <li>
@@ -544,8 +611,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process
      * of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled
-     * and is undergoing variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call
-     * or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+     * and is undergoing variant weight or capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      * </p>
      * </li>
      * <li>
@@ -555,19 +625,23 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is the only
-     * operation that can be performed on a failed endpoint.
+     * <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * the only operation that can be performed on a failed endpoint.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     * To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * </p>
      * 
      * @param endpointStatus
@@ -580,12 +654,18 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     *        <code>Creating</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html"
+     *        >CreateEndpoint</a> is executing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     *        <code>Updating</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html"
+     *        >UpdateEndpoint</a> or <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> is executing.
      *        </p>
      *        </li>
      *        <li>
@@ -600,9 +680,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the
      *        process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      *        <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling
-     *        enabled and is undergoing variant weight or capacity changes as part of an
-     *        <a>UpdateEndpointWeightsAndCapacities</a> call or when the <a>UpdateEndpointWeightsAndCapacities</a>
-     *        operation is called explicitly.
+     *        enabled and is undergoing variant weight or capacity changes as part of an <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> call or when the <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      *        </p>
      *        </li>
      *        <li>
@@ -612,19 +694,24 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     *        <code>Deleting</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *        >DeleteEndpoint</a> is executing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     *        <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is
-     *        the only operation that can be performed on a failed endpoint.
+     *        <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *        >DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     *        To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call
+     *        to <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointStatus
      */
@@ -646,12 +733,17 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     * <code>Creating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     * <code>Updating</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">
+     * UpdateEndpointWeightsAndCapacities</a> is executing.
      * </p>
      * </li>
      * <li>
@@ -666,8 +758,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process
      * of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      * <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled
-     * and is undergoing variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a> call
-     * or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+     * and is undergoing variant weight or capacity changes as part of an <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> call or when the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     * >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      * </p>
      * </li>
      * <li>
@@ -677,19 +772,23 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     * <code>Deleting</code>: <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * executing.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     * <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is the only
-     * operation that can be performed on a failed endpoint.
+     * <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is
+     * the only operation that can be performed on a failed endpoint.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     * To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call to <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * </p>
      * 
      * @param endpointStatus
@@ -702,12 +801,18 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+     *        <code>Creating</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html"
+     *        >CreateEndpoint</a> is executing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a> is executing.
+     *        <code>Updating</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html"
+     *        >UpdateEndpoint</a> or <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> is executing.
      *        </p>
      *        </li>
      *        <li>
@@ -722,9 +827,11 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the
      *        process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an
      *        <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling
-     *        enabled and is undergoing variant weight or capacity changes as part of an
-     *        <a>UpdateEndpointWeightsAndCapacities</a> call or when the <a>UpdateEndpointWeightsAndCapacities</a>
-     *        operation is called explicitly.
+     *        enabled and is undergoing variant weight or capacity changes as part of an <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> call or when the <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html"
+     *        >UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
      *        </p>
      *        </li>
      *        <li>
@@ -734,19 +841,24 @@ public class EndpointSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+     *        <code>Deleting</code>: <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *        >DeleteEndpoint</a> is executing.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use
-     *        <a>DescribeEndpointOutput$FailureReason</a> for information about the failure. <a>DeleteEndpoint</a> is
-     *        the only operation that can be performed on a failed endpoint.
+     *        <code>DescribeEndpointOutput$FailureReason</code> for information about the failure. <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html"
+     *        >DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a> filter.
+     *        To get a list of endpoints with a specified status, use the <code>StatusEquals</code> filter with a call
+     *        to <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointStatus
      */

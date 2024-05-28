@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,16 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
     private String appKey;
     /**
      * <p>
-     * The AppEUI value.
+     * The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      * </p>
      */
     private String appEui;
+    /**
+     * <p>
+     * The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     * </p>
+     */
+    private String joinEui;
     /**
      * <p>
      * The GenAppKey value.
@@ -89,11 +95,11 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AppEUI value.
+     * The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      * </p>
      * 
      * @param appEui
-     *        The AppEUI value.
+     *        The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      */
 
     public void setAppEui(String appEui) {
@@ -102,10 +108,10 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AppEUI value.
+     * The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      * </p>
      * 
-     * @return The AppEUI value.
+     * @return The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      */
 
     public String getAppEui() {
@@ -114,16 +120,56 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AppEUI value.
+     * The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      * </p>
      * 
      * @param appEui
-     *        The AppEUI value.
+     *        The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2 or v1.0.3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OtaaV10X withAppEui(String appEui) {
         setAppEui(appEui);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     * </p>
+     * 
+     * @param joinEui
+     *        The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     */
+
+    public void setJoinEui(String joinEui) {
+        this.joinEui = joinEui;
+    }
+
+    /**
+     * <p>
+     * The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     * </p>
+     * 
+     * @return The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     */
+
+    public String getJoinEui() {
+        return this.joinEui;
+    }
+
+    /**
+     * <p>
+     * The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     * </p>
+     * 
+     * @param joinEui
+     *        The JoinEUI value. You specify this value instead of the AppEUI when using LoRaWAN version v1.0.4.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OtaaV10X withJoinEui(String joinEui) {
+        setJoinEui(joinEui);
         return this;
     }
 
@@ -183,6 +229,8 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
             sb.append("AppKey: ").append(getAppKey()).append(",");
         if (getAppEui() != null)
             sb.append("AppEui: ").append(getAppEui()).append(",");
+        if (getJoinEui() != null)
+            sb.append("JoinEui: ").append(getJoinEui()).append(",");
         if (getGenAppKey() != null)
             sb.append("GenAppKey: ").append(getGenAppKey());
         sb.append("}");
@@ -207,6 +255,10 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAppEui() != null && other.getAppEui().equals(this.getAppEui()) == false)
             return false;
+        if (other.getJoinEui() == null ^ this.getJoinEui() == null)
+            return false;
+        if (other.getJoinEui() != null && other.getJoinEui().equals(this.getJoinEui()) == false)
+            return false;
         if (other.getGenAppKey() == null ^ this.getGenAppKey() == null)
             return false;
         if (other.getGenAppKey() != null && other.getGenAppKey().equals(this.getGenAppKey()) == false)
@@ -221,6 +273,7 @@ public class OtaaV10X implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAppKey() == null) ? 0 : getAppKey().hashCode());
         hashCode = prime * hashCode + ((getAppEui() == null) ? 0 : getAppEui().hashCode());
+        hashCode = prime * hashCode + ((getJoinEui() == null) ? 0 : getJoinEui().hashCode());
         hashCode = prime * hashCode + ((getGenAppKey() == null) ? 0 : getGenAppKey().hashCode());
         return hashCode;
     }

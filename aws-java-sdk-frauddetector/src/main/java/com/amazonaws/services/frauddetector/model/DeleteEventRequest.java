@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String eventTypeName;
     /**
      * <p>
-     * Specifies whether or not to delete any predictions associated with the event.
+     * Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      * </p>
      */
     private Boolean deleteAuditHistory;
@@ -126,11 +126,11 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether or not to delete any predictions associated with the event.
+     * Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      * </p>
      * 
      * @param deleteAuditHistory
-     *        Specifies whether or not to delete any predictions associated with the event.
+     *        Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      */
 
     public void setDeleteAuditHistory(Boolean deleteAuditHistory) {
@@ -139,10 +139,11 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether or not to delete any predictions associated with the event.
+     * Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      * </p>
      * 
-     * @return Specifies whether or not to delete any predictions associated with the event.
+     * @return Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>
+     *         ,
      */
 
     public Boolean getDeleteAuditHistory() {
@@ -151,11 +152,11 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether or not to delete any predictions associated with the event.
+     * Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      * </p>
      * 
      * @param deleteAuditHistory
-     *        Specifies whether or not to delete any predictions associated with the event.
+     *        Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +167,11 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether or not to delete any predictions associated with the event.
+     * Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>,
      * </p>
      * 
-     * @return Specifies whether or not to delete any predictions associated with the event.
+     * @return Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>
+     *         ,
      */
 
     public Boolean isDeleteAuditHistory() {

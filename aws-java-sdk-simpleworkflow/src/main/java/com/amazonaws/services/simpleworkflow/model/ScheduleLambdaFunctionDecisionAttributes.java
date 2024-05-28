@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,10 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
     /**
      * <p>
      * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
-     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
+     * This can be any integer from 1-900 (1s-15m).
+     * </p>
+     * <p>
+     * If no value is supplied, then a default value of 900s is assumed.
      * </p>
      */
     private String startToCloseTimeout;
@@ -231,13 +234,17 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
     /**
      * <p>
      * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
-     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
+     * This can be any integer from 1-900 (1s-15m).
+     * </p>
+     * <p>
+     * If no value is supplied, then a default value of 900s is assumed.
      * </p>
      * 
      * @param startToCloseTimeout
      *        The timeout value, in seconds, after which the Lambda function is considered to be failed once it has
-     *        started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s
-     *        is assumed.
+     *        started. This can be any integer from 1-900 (1s-15m).</p>
+     *        <p>
+     *        If no value is supplied, then a default value of 900s is assumed.
      */
 
     public void setStartToCloseTimeout(String startToCloseTimeout) {
@@ -247,12 +254,16 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
     /**
      * <p>
      * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
-     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
+     * This can be any integer from 1-900 (1s-15m).
+     * </p>
+     * <p>
+     * If no value is supplied, then a default value of 900s is assumed.
      * </p>
      * 
      * @return The timeout value, in seconds, after which the Lambda function is considered to be failed once it has
-     *         started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of
-     *         300s is assumed.
+     *         started. This can be any integer from 1-900 (1s-15m).</p>
+     *         <p>
+     *         If no value is supplied, then a default value of 900s is assumed.
      */
 
     public String getStartToCloseTimeout() {
@@ -262,13 +273,17 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
     /**
      * <p>
      * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
-     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
+     * This can be any integer from 1-900 (1s-15m).
+     * </p>
+     * <p>
+     * If no value is supplied, then a default value of 900s is assumed.
      * </p>
      * 
      * @param startToCloseTimeout
      *        The timeout value, in seconds, after which the Lambda function is considered to be failed once it has
-     *        started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s
-     *        is assumed.
+     *        started. This can be any integer from 1-900 (1s-15m).</p>
+     *        <p>
+     *        If no value is supplied, then a default value of 900s is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

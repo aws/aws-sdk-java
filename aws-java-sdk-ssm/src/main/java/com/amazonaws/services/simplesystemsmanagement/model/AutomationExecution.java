@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -236,6 +236,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String changeRequestName;
+    /**
+     * <p>
+     * Variables defined for the automation.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> variables;
 
     /**
      * <p>
@@ -2001,6 +2007,74 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Variables defined for the automation.
+     * </p>
+     * 
+     * @return Variables defined for the automation.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getVariables() {
+        return variables;
+    }
+
+    /**
+     * <p>
+     * Variables defined for the automation.
+     * </p>
+     * 
+     * @param variables
+     *        Variables defined for the automation.
+     */
+
+    public void setVariables(java.util.Map<String, java.util.List<String>> variables) {
+        this.variables = variables;
+    }
+
+    /**
+     * <p>
+     * Variables defined for the automation.
+     * </p>
+     * 
+     * @param variables
+     *        Variables defined for the automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withVariables(java.util.Map<String, java.util.List<String>> variables) {
+        setVariables(variables);
+        return this;
+    }
+
+    /**
+     * Add a single Variables entry
+     *
+     * @see AutomationExecution#withVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution addVariablesEntry(String key, java.util.List<String> value) {
+        if (null == this.variables) {
+            this.variables = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.variables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.variables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Variables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution clearVariablesEntries() {
+        this.variables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2077,7 +2151,9 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         if (getAssociationId() != null)
             sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getChangeRequestName() != null)
-            sb.append("ChangeRequestName: ").append(getChangeRequestName());
+            sb.append("ChangeRequestName: ").append(getChangeRequestName()).append(",");
+        if (getVariables() != null)
+            sb.append("Variables: ").append(getVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -2224,6 +2300,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getChangeRequestName() != null && other.getChangeRequestName().equals(this.getChangeRequestName()) == false)
             return false;
+        if (other.getVariables() == null ^ this.getVariables() == null)
+            return false;
+        if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
+            return false;
         return true;
     }
 
@@ -2265,6 +2345,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getOpsItemId() == null) ? 0 : getOpsItemId().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getChangeRequestName() == null) ? 0 : getChangeRequestName().hashCode());
+        hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         return hashCode;
     }
 

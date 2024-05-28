@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ
+     * redundancy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
@@ -58,14 +64,11 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
-     * By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
+     * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
-     * <important>
-     * <p>
-     * The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be
-     * at least /30 or larger.
-     * </p>
-     * </important>
      */
     private String endpointIpAddressRange;
     /**
@@ -90,21 +93,122 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     private String preferredSubnetId;
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
+     * <note>
+     * <p>
+     * Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These route
+     * tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for ONTAP
+     * Multi-AZ file systems using CloudFormation we recommend that you add the
+     * <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     * </p>
+     * </note>
      */
     private java.util.List<String> routeTableIds;
     /**
      * <p>
-     * Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and
-     * 2048 MBps.
+     * Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the
+     * valid range for <code>ThroughputCapacity</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer throughputCapacity;
 
     private String weeklyMaintenanceStartTime;
+    /**
+     * <p>
+     * Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file
+     * systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up
+     * to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>,
+     * and <code>ThroughputCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the
+     * FSx for ONTAP user guide.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     * <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Integer hAPairs;
+    /**
+     * <p>
+     * Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     * </p>
+     * <p>
+     * You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code> when
+     * creating a file system, but not both.
+     * </p>
+     * <p>
+     * This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA pair.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024,
+     * 2048, or 4096 MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value
+     * for file systems with one HA pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Integer throughputCapacityPerHAPair;
 
     /**
      * @param automaticBackupRetentionDays
@@ -174,6 +278,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ
+     * redundancy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
@@ -193,6 +303,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for
+     *        Single-AZ redundancy.
      *        </p>
      *        </li>
      *        </ul>
@@ -223,6 +339,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ
+     * redundancy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
@@ -241,6 +363,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *         <li>
      *         <p>
      *         <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for
+     *         Single-AZ redundancy.
      *         </p>
      *         </li>
      *         </ul>
@@ -271,6 +399,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ
+     * redundancy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
@@ -290,6 +424,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for
+     *        Single-AZ redundancy.
      *        </p>
      *        </li>
      *        </ul>
@@ -322,6 +462,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ
+     * redundancy.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
@@ -343,6 +489,12 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for
+     *        Single-AZ redundancy.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a
@@ -360,23 +512,19 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
-     * By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
+     * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
-     * <important>
-     * <p>
-     * The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be
-     * at least /30 or larger.
-     * </p>
-     * </important>
      * 
      * @param endpointIpAddressRange
      *        (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
-     *        created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
-     *        <important>
-     *        <p>
-     *        The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and
-     *        must be at least /30 or larger.
-     *        </p>
+     *        created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the
+     *        198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the
+     *        VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have
+     *        overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they
+     *        don't overlap with any subnet.
      */
 
     public void setEndpointIpAddressRange(String endpointIpAddressRange) {
@@ -386,22 +534,18 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
-     * By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
+     * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
-     * <important>
-     * <p>
-     * The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be
-     * at least /30 or larger.
-     * </p>
-     * </important>
      * 
      * @return (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
-     *         created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
-     *         <important>
-     *         <p>
-     *         The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and
-     *         must be at least /30 or larger.
-     *         </p>
+     *         created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the
+     *         198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from
+     *         the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have
+     *         overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they
+     *         don't overlap with any subnet.
      */
 
     public String getEndpointIpAddressRange() {
@@ -411,23 +555,19 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created.
-     * By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
+     * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
+     * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
-     * <important>
-     * <p>
-     * The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and must be
-     * at least /30 or larger.
-     * </p>
-     * </important>
      * 
      * @param endpointIpAddressRange
      *        (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
-     *        created. By default, Amazon FSx selects an unused IP address range for you from the 198.19.* range.</p>
-     *        <important>
-     *        <p>
-     *        The Endpoint IP address range you select for your file system must exist outside the VPC's CIDR range and
-     *        must be at least /30 or larger.
-     *        </p>
+     *        created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the
+     *        198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the
+     *        VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have
+     *        overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they
+     *        don't overlap with any subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,14 +710,29 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
+     * <note>
+     * <p>
+     * Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These route
+     * tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for ONTAP
+     * Multi-AZ file systems using CloudFormation we recommend that you add the
+     * <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     * </p>
+     * </note>
      * 
-     * @return (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *         endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *         your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     * @return (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *         the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *         the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *         table.</p> <note>
+     *         <p>
+     *         Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These
+     *         route tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx
+     *         for ONTAP Multi-AZ file systems using CloudFormation we recommend that you add the
+     *         <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     *         </p>
      */
 
     public java.util.List<String> getRouteTableIds() {
@@ -586,15 +741,30 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
+     * <note>
+     * <p>
+     * Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These route
+     * tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for ONTAP
+     * Multi-AZ file systems using CloudFormation we recommend that you add the
+     * <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     * </p>
+     * </note>
      * 
      * @param routeTableIds
-     *        (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *        endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *        your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     *        (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *        the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *        the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *        table.</p> <note>
+     *        <p>
+     *        Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These
+     *        route tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for
+     *        ONTAP Multi-AZ file systems using CloudFormation we recommend that you add the
+     *        <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     *        </p>
      */
 
     public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
@@ -608,10 +778,18 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
+     * <note>
+     * <p>
+     * Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These route
+     * tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for ONTAP
+     * Multi-AZ file systems using CloudFormation we recommend that you add the
+     * <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRouteTableIds(java.util.Collection)} or {@link #withRouteTableIds(java.util.Collection)} if you want
@@ -619,9 +797,16 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * </p>
      * 
      * @param routeTableIds
-     *        (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *        endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *        your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     *        (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *        the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *        the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *        table.</p> <note>
+     *        <p>
+     *        Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These
+     *        route tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for
+     *        ONTAP Multi-AZ file systems using CloudFormation we recommend that you add the
+     *        <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -637,15 +822,30 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will
-     * be created. You should specify all VPC route tables associated with the subnets in which your clients are
-     * located. By default, Amazon FSx selects your VPC's default route table.
+     * (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the
+     * correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets
+     * in which your clients are located. By default, Amazon FSx selects your VPC's default route table.
      * </p>
+     * <note>
+     * <p>
+     * Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These route
+     * tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for ONTAP
+     * Multi-AZ file systems using CloudFormation we recommend that you add the
+     * <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     * </p>
+     * </note>
      * 
      * @param routeTableIds
-     *        (Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in which your file system's
-     *        endpoints will be created. You should specify all VPC route tables associated with the subnets in which
-     *        your clients are located. By default, Amazon FSx selects your VPC's default route table.
+     *        (Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to
+     *        the correct file server. You should specify all virtual private cloud (VPC) route tables associated with
+     *        the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route
+     *        table.</p> <note>
+     *        <p>
+     *        Amazon FSx manages these route tables for Multi-AZ file systems using tag-based authentication. These
+     *        route tables are tagged with <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code>. When creating FSx for
+     *        ONTAP Multi-AZ file systems using CloudFormation we recommend that you add the
+     *        <code>Key: AmazonFSx; Value: ManagedByAmazonFSx</code> tag manually.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,13 +856,49 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and
-     * 2048 MBps.
+     * Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the
+     * valid range for <code>ThroughputCapacity</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param throughputCapacity
-     *        Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512,
-     *        1024, and 2048 MBps.
+     *        Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     *        throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside
+     *        of the valid range for <code>ThroughputCapacity</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -671,12 +907,48 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and
-     * 2048 MBps.
+     * Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the
+     * valid range for <code>ThroughputCapacity</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512,
-     *         1024, and 2048 MBps.
+     * @return Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     *         throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+     *         <p>
+     *         Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the
+     *         same value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside
+     *         of the valid range for <code>ThroughputCapacity</code>.
+     *         </p>
+     *         </li>
      */
 
     public Integer getThroughputCapacity() {
@@ -685,13 +957,49 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and
-     * 2048 MBps.
+     * Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput
+     * capacity</a> in the FSx for ONTAP User Guide.
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the
+     * valid range for <code>ThroughputCapacity</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param throughputCapacity
-     *        Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512,
-     *        1024, and 2048 MBps.
+     *        Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing
+     *        throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same
+     *        value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside
+     *        of the valid range for <code>ThroughputCapacity</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -727,6 +1035,465 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file
+     * systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up
+     * to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>,
+     * and <code>ThroughputCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the
+     * FSx for ONTAP user guide.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     * <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param hAPairs
+     *        Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file
+     *        systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered
+     *        by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>,
+     *        <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in
+     *        the FSx for ONTAP user guide.</p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     *        <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     *        </p>
+     *        </li>
+     */
+
+    public void setHAPairs(Integer hAPairs) {
+        this.hAPairs = hAPairs;
+    }
+
+    /**
+     * <p>
+     * Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file
+     * systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up
+     * to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>,
+     * and <code>ThroughputCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the
+     * FSx for ONTAP user guide.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     * <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up
+     *         file systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are
+     *         powered by up to 12 HA pairs. The value of this property affects the values of
+     *         <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a>
+     *         in the FSx for ONTAP user guide.</p>
+     *         <p>
+     *         Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     *         <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     *         </p>
+     *         </li>
+     */
+
+    public Integer getHAPairs() {
+        return this.hAPairs;
+    }
+
+    /**
+     * <p>
+     * Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file
+     * systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered by up
+     * to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>,
+     * and <code>ThroughputCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the
+     * FSx for ONTAP user guide.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     * <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param hAPairs
+     *        Specifies how many high-availability (HA) pairs of file servers will power your file system. Scale-up file
+     *        systems are powered by 1 HA pair. The default value is 1. FSx for ONTAP scale-out file systems are powered
+     *        by up to 12 HA pairs. The value of this property affects the values of <code>StorageCapacity</code>,
+     *        <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in
+     *        the FSx for ONTAP user guide.</p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <code>HAPairs</code> is less than 1 or greater than 12.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is
+     *        <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemOntapConfiguration withHAPairs(Integer hAPairs) {
+        setHAPairs(hAPairs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     * </p>
+     * <p>
+     * You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code> when
+     * creating a file system, but not both.
+     * </p>
+     * <p>
+     * This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA pair.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024,
+     * 2048, or 4096 MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value
+     * for file systems with one HA pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param throughputCapacityPerHAPair
+     *        Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     *        </p>
+     *        <p>
+     *        You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code>
+     *        when creating a file system, but not both.
+     *        </p>
+     *        <p>
+     *        This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA
+     *        pair.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512,
+     *        1024, 2048, or 4096 MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same
+     *        value for file systems with one HA pair.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     *        <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     *        </p>
+     *        </li>
+     */
+
+    public void setThroughputCapacityPerHAPair(Integer throughputCapacityPerHAPair) {
+        this.throughputCapacityPerHAPair = throughputCapacityPerHAPair;
+    }
+
+    /**
+     * <p>
+     * Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     * </p>
+     * <p>
+     * You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code> when
+     * creating a file system, but not both.
+     * </p>
+     * <p>
+     * This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA pair.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024,
+     * 2048, or 4096 MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value
+     * for file systems with one HA pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     *         </p>
+     *         <p>
+     *         You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code>
+     *         when creating a file system, but not both.
+     *         </p>
+     *         <p>
+     *         This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA
+     *         pair.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512,
+     *         1024, 2048, or 4096 MBps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the
+     *         same value for file systems with one HA pair.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     *         <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     *         </p>
+     *         </li>
+     */
+
+    public Integer getThroughputCapacityPerHAPair() {
+        return this.throughputCapacityPerHAPair;
+    }
+
+    /**
+     * <p>
+     * Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     * </p>
+     * <p>
+     * You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code> when
+     * creating a file system, but not both.
+     * </p>
+     * <p>
+     * This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA pair.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512, 1024,
+     * 2048, or 4096 MBps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value
+     * for file systems with one HA pair.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     * <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param throughputCapacityPerHAPair
+     *        Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system.
+     *        </p>
+     *        <p>
+     *        You can define either the <code>ThroughputCapacityPerHAPair</code> or the <code>ThroughputCapacity</code>
+     *        when creating a file system, but not both.
+     *        </p>
+     *        <p>
+     *        This field and <code>ThroughputCapacity</code> are the same for scale-up file systems powered by one HA
+     *        pair.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code> file systems, valid values are 128, 256, 512,
+     *        1024, 2048, or 4096 MBps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_2</code> file systems, valid values are 3072 or 6144 MBps.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same
+     *        value for file systems with one HA pair.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> /
+     *        <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemOntapConfiguration withThroughputCapacityPerHAPair(Integer throughputCapacityPerHAPair) {
+        setThroughputCapacityPerHAPair(throughputCapacityPerHAPair);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -757,7 +1524,11 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
         if (getThroughputCapacity() != null)
             sb.append("ThroughputCapacity: ").append(getThroughputCapacity()).append(",");
         if (getWeeklyMaintenanceStartTime() != null)
-            sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime());
+            sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime()).append(",");
+        if (getHAPairs() != null)
+            sb.append("HAPairs: ").append(getHAPairs()).append(",");
+        if (getThroughputCapacityPerHAPair() != null)
+            sb.append("ThroughputCapacityPerHAPair: ").append(getThroughputCapacityPerHAPair());
         sb.append("}");
         return sb.toString();
     }
@@ -813,6 +1584,14 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
             return false;
         if (other.getWeeklyMaintenanceStartTime() != null && other.getWeeklyMaintenanceStartTime().equals(this.getWeeklyMaintenanceStartTime()) == false)
             return false;
+        if (other.getHAPairs() == null ^ this.getHAPairs() == null)
+            return false;
+        if (other.getHAPairs() != null && other.getHAPairs().equals(this.getHAPairs()) == false)
+            return false;
+        if (other.getThroughputCapacityPerHAPair() == null ^ this.getThroughputCapacityPerHAPair() == null)
+            return false;
+        if (other.getThroughputCapacityPerHAPair() != null && other.getThroughputCapacityPerHAPair().equals(this.getThroughputCapacityPerHAPair()) == false)
+            return false;
         return true;
     }
 
@@ -831,6 +1610,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
         hashCode = prime * hashCode + ((getThroughputCapacity() == null) ? 0 : getThroughputCapacity().hashCode());
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
+        hashCode = prime * hashCode + ((getHAPairs() == null) ? 0 : getHAPairs().hashCode());
+        hashCode = prime * hashCode + ((getThroughputCapacityPerHAPair() == null) ? 0 : getThroughputCapacityPerHAPair().hashCode());
         return hashCode;
     }
 

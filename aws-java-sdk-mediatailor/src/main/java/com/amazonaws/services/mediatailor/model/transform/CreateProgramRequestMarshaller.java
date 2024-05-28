@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class CreateProgramRequestMarshaller {
 
     private static final MarshallingInfo<List> ADBREAKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdBreaks").build();
+    private static final MarshallingInfo<List> AUDIENCEMEDIA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AudienceMedia").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> LIVESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class CreateProgramRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createProgramRequest.getAdBreaks(), ADBREAKS_BINDING);
+            protocolMarshaller.marshall(createProgramRequest.getAudienceMedia(), AUDIENCEMEDIA_BINDING);
             protocolMarshaller.marshall(createProgramRequest.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(createProgramRequest.getLiveSourceName(), LIVESOURCENAME_BINDING);
             protocolMarshaller.marshall(createProgramRequest.getProgramName(), PROGRAMNAME_BINDING);

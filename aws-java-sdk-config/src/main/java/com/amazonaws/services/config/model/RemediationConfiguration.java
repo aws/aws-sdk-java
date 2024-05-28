@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
     private String targetType;
     /**
      * <p>
-     * Target ID is the name of the public document.
+     * Target ID is the name of the SSM document.
      * </p>
      */
     private String targetId;
@@ -95,12 +95,15 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
     private Integer maximumAutomaticAttempts;
     /**
      * <p>
-     * Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60
-     * seconds.
+     * Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts.
+     * If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     * <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a
+     * number, the default is 60 seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run
-     * auto-remediations 5 times within 50 seconds before throwing an exception.
+     * For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     * <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before
+     * adding a remediation exception to the resource.
      * </p>
      */
     private Long retryAttemptSeconds;
@@ -218,11 +221,11 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Target ID is the name of the public document.
+     * Target ID is the name of the SSM document.
      * </p>
      * 
      * @param targetId
-     *        Target ID is the name of the public document.
+     *        Target ID is the name of the SSM document.
      */
 
     public void setTargetId(String targetId) {
@@ -231,10 +234,10 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Target ID is the name of the public document.
+     * Target ID is the name of the SSM document.
      * </p>
      * 
-     * @return Target ID is the name of the public document.
+     * @return Target ID is the name of the SSM document.
      */
 
     public String getTargetId() {
@@ -243,11 +246,11 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Target ID is the name of the public document.
+     * Target ID is the name of the SSM document.
      * </p>
      * 
      * @param targetId
-     *        Target ID is the name of the public document.
+     *        Target ID is the name of the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,20 +598,26 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60
-     * seconds.
+     * Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts.
+     * If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     * <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a
+     * number, the default is 60 seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run
-     * auto-remediations 5 times within 50 seconds before throwing an exception.
+     * For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     * <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before
+     * adding a remediation exception to the resource.
      * </p>
      * 
      * @param retryAttemptSeconds
-     *        Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is
-     *        60 seconds. </p>
+     *        Time window to determine whether or not to add a remediation exception to prevent infinite remediation
+     *        attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     *        <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not
+     *        select a number, the default is 60 seconds. </p>
      *        <p>
-     *        For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config
-     *        will run auto-remediations 5 times within 50 seconds before throwing an exception.
+     *        For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     *        <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds
+     *        before adding a remediation exception to the resource.
      */
 
     public void setRetryAttemptSeconds(Long retryAttemptSeconds) {
@@ -617,19 +626,25 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60
-     * seconds.
+     * Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts.
+     * If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     * <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a
+     * number, the default is 60 seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run
-     * auto-remediations 5 times within 50 seconds before throwing an exception.
+     * For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     * <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before
+     * adding a remediation exception to the resource.
      * </p>
      * 
-     * @return Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is
-     *         60 seconds. </p>
+     * @return Time window to determine whether or not to add a remediation exception to prevent infinite remediation
+     *         attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     *         <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not
+     *         select a number, the default is 60 seconds. </p>
      *         <p>
-     *         For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config
-     *         will run auto-remediations 5 times within 50 seconds before throwing an exception.
+     *         For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     *         <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds
+     *         before adding a remediation exception to the resource.
      */
 
     public Long getRetryAttemptSeconds() {
@@ -638,20 +653,26 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60
-     * seconds.
+     * Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts.
+     * If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     * <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a
+     * number, the default is 60 seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run
-     * auto-remediations 5 times within 50 seconds before throwing an exception.
+     * For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     * <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before
+     * adding a remediation exception to the resource.
      * </p>
      * 
      * @param retryAttemptSeconds
-     *        Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is
-     *        60 seconds. </p>
+     *        Time window to determine whether or not to add a remediation exception to prevent infinite remediation
+     *        attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under
+     *        <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not
+     *        select a number, the default is 60 seconds. </p>
      *        <p>
-     *        For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config
-     *        will run auto-remediations 5 times within 50 seconds before throwing an exception.
+     *        For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and
+     *        <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds
+     *        before adding a remediation exception to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

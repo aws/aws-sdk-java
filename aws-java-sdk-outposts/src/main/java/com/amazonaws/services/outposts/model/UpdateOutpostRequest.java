@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID or the Amazon Resource Name (ARN) of the Outpost.
+     * The ID or ARN of the Outpost.
      * </p>
      */
     private String outpostId;
@@ -44,11 +44,11 @@ public class UpdateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID or the Amazon Resource Name (ARN) of the Outpost.
+     * The ID or ARN of the Outpost.
      * </p>
      * 
      * @param outpostId
-     *        The ID or the Amazon Resource Name (ARN) of the Outpost.
+     *        The ID or ARN of the Outpost.
      */
 
     public void setOutpostId(String outpostId) {
@@ -57,10 +57,10 @@ public class UpdateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID or the Amazon Resource Name (ARN) of the Outpost.
+     * The ID or ARN of the Outpost.
      * </p>
      * 
-     * @return The ID or the Amazon Resource Name (ARN) of the Outpost.
+     * @return The ID or ARN of the Outpost.
      */
 
     public String getOutpostId() {
@@ -69,11 +69,11 @@ public class UpdateOutpostRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID or the Amazon Resource Name (ARN) of the Outpost.
+     * The ID or ARN of the Outpost.
      * </p>
      * 
      * @param outpostId
-     *        The ID or the Amazon Resource Name (ARN) of the Outpost.
+     *        The ID or ARN of the Outpost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

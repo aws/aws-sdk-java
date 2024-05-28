@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class RegisteredUserDashboardEmbeddingConfiguration implements Serializab
      * </p>
      */
     private String initialDashboardId;
+    /**
+     * <p>
+     * The feature configurations of an embbedded Amazon QuickSight dashboard.
+     * </p>
+     */
+    private RegisteredUserDashboardFeatureConfigurations featureConfigurations;
 
     /**
      * <p>
@@ -109,6 +115,46 @@ public class RegisteredUserDashboardEmbeddingConfiguration implements Serializab
     }
 
     /**
+     * <p>
+     * The feature configurations of an embbedded Amazon QuickSight dashboard.
+     * </p>
+     * 
+     * @param featureConfigurations
+     *        The feature configurations of an embbedded Amazon QuickSight dashboard.
+     */
+
+    public void setFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations featureConfigurations) {
+        this.featureConfigurations = featureConfigurations;
+    }
+
+    /**
+     * <p>
+     * The feature configurations of an embbedded Amazon QuickSight dashboard.
+     * </p>
+     * 
+     * @return The feature configurations of an embbedded Amazon QuickSight dashboard.
+     */
+
+    public RegisteredUserDashboardFeatureConfigurations getFeatureConfigurations() {
+        return this.featureConfigurations;
+    }
+
+    /**
+     * <p>
+     * The feature configurations of an embbedded Amazon QuickSight dashboard.
+     * </p>
+     * 
+     * @param featureConfigurations
+     *        The feature configurations of an embbedded Amazon QuickSight dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisteredUserDashboardEmbeddingConfiguration withFeatureConfigurations(RegisteredUserDashboardFeatureConfigurations featureConfigurations) {
+        setFeatureConfigurations(featureConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -121,7 +167,9 @@ public class RegisteredUserDashboardEmbeddingConfiguration implements Serializab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInitialDashboardId() != null)
-            sb.append("InitialDashboardId: ").append(getInitialDashboardId());
+            sb.append("InitialDashboardId: ").append(getInitialDashboardId()).append(",");
+        if (getFeatureConfigurations() != null)
+            sb.append("FeatureConfigurations: ").append(getFeatureConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -140,6 +188,10 @@ public class RegisteredUserDashboardEmbeddingConfiguration implements Serializab
             return false;
         if (other.getInitialDashboardId() != null && other.getInitialDashboardId().equals(this.getInitialDashboardId()) == false)
             return false;
+        if (other.getFeatureConfigurations() == null ^ this.getFeatureConfigurations() == null)
+            return false;
+        if (other.getFeatureConfigurations() != null && other.getFeatureConfigurations().equals(this.getFeatureConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -149,6 +201,7 @@ public class RegisteredUserDashboardEmbeddingConfiguration implements Serializab
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInitialDashboardId() == null) ? 0 : getInitialDashboardId().hashCode());
+        hashCode = prime * hashCode + ((getFeatureConfigurations() == null) ? 0 : getFeatureConfigurations().hashCode());
         return hashCode;
     }
 

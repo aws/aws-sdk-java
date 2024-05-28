@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,11 @@ public class GetLayerVersionByArnResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The layer's compatible runtimes.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> compatibleRuntimes;
@@ -330,8 +335,17 @@ public class GetLayerVersionByArnResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The layer's compatible runtimes.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
-     * @return The layer's compatible runtimes.
+     * @return The layer's compatible runtimes.</p>
+     *         <p>
+     *         The following list includes deprecated runtimes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *         deprecation policy</a>.
      * @see Runtime
      */
 
@@ -346,9 +360,18 @@ public class GetLayerVersionByArnResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The layer's compatible runtimes.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes.
+     *        The layer's compatible runtimes.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -366,13 +389,22 @@ public class GetLayerVersionByArnResult extends com.amazonaws.AmazonWebServiceRe
      * The layer's compatible runtimes.
      * </p>
      * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCompatibleRuntimes(java.util.Collection)} or {@link #withCompatibleRuntimes(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes.
+     *        The layer's compatible runtimes.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -391,9 +423,18 @@ public class GetLayerVersionByArnResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The layer's compatible runtimes.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes.
+     *        The layer's compatible runtimes.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -407,9 +448,18 @@ public class GetLayerVersionByArnResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The layer's compatible runtimes.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes.
+     *        The layer's compatible runtimes.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */

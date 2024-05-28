@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,34 @@ public class CreateOntapVolumeConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("TieringPolicy", targetDepth)) {
                     context.nextToken();
                     createOntapVolumeConfiguration.setTieringPolicy(TieringPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OntapVolumeType", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setOntapVolumeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SnapshotPolicy", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setSnapshotPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SnaplockConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setSnaplockConfiguration(CreateSnaplockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VolumeStyle", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setVolumeStyle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AggregateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setAggregateConfiguration(CreateAggregateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    createOntapVolumeConfiguration.setSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

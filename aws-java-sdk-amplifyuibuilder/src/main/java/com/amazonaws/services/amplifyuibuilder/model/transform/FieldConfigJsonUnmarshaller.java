@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,14 +48,6 @@ public class FieldConfigJsonUnmarshaller implements Unmarshaller<FieldConfig, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("excluded", targetDepth)) {
-                    context.nextToken();
-                    fieldConfig.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("inputType", targetDepth)) {
-                    context.nextToken();
-                    fieldConfig.setInputType(FieldInputConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("label", targetDepth)) {
                     context.nextToken();
                     fieldConfig.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +55,14 @@ public class FieldConfigJsonUnmarshaller implements Unmarshaller<FieldConfig, Js
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
                     fieldConfig.setPosition(FieldPositionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("excluded", targetDepth)) {
+                    context.nextToken();
+                    fieldConfig.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("inputType", targetDepth)) {
+                    context.nextToken();
+                    fieldConfig.setInputType(FieldInputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("validations", targetDepth)) {
                     context.nextToken();

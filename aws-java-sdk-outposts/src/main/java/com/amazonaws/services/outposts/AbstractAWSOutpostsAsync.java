@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.outposts.model.*;
 public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWSOutpostsAsync {
 
     protected AbstractAWSOutpostsAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCapacityTaskResult> cancelCapacityTaskAsync(CancelCapacityTaskRequest request) {
+
+        return cancelCapacityTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCapacityTaskResult> cancelCapacityTaskAsync(CancelCapacityTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelCapacityTaskRequest, CancelCapacityTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -106,6 +119,19 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetCapacityTaskResult> getCapacityTaskAsync(GetCapacityTaskRequest request) {
+
+        return getCapacityTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityTaskResult> getCapacityTaskAsync(GetCapacityTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityTaskRequest, GetCapacityTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCatalogItemResult> getCatalogItemAsync(GetCatalogItemRequest request) {
 
         return getCatalogItemAsync(request, null);
@@ -171,6 +197,21 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetOutpostSupportedInstanceTypesResult> getOutpostSupportedInstanceTypesAsync(
+            GetOutpostSupportedInstanceTypesRequest request) {
+
+        return getOutpostSupportedInstanceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOutpostSupportedInstanceTypesResult> getOutpostSupportedInstanceTypesAsync(
+            GetOutpostSupportedInstanceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOutpostSupportedInstanceTypesRequest, GetOutpostSupportedInstanceTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSiteResult> getSiteAsync(GetSiteRequest request) {
 
         return getSiteAsync(request, null);
@@ -205,6 +246,19 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     @Override
     public java.util.concurrent.Future<ListAssetsResult> listAssetsAsync(ListAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetsRequest, ListAssetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCapacityTasksResult> listCapacityTasksAsync(ListCapacityTasksRequest request) {
+
+        return listCapacityTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCapacityTasksResult> listCapacityTasksAsync(ListCapacityTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCapacityTasksRequest, ListCapacityTasksResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -270,6 +324,19 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCapacityTaskResult> startCapacityTaskAsync(StartCapacityTaskRequest request) {
+
+        return startCapacityTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCapacityTaskResult> startCapacityTaskAsync(StartCapacityTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartCapacityTaskRequest, StartCapacityTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

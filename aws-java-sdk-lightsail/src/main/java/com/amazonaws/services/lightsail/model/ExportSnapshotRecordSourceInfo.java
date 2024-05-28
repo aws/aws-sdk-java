@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ExportSnapshotRecordSourceInfo implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * </p>
      */
     private String resourceType;
@@ -79,11 +79,11 @@ public class ExportSnapshotRecordSourceInfo implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     *        The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * @see ExportSnapshotRecordSourceType
      */
 
@@ -93,10 +93,10 @@ public class ExportSnapshotRecordSourceInfo implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * </p>
      * 
-     * @return The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     * @return The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * @see ExportSnapshotRecordSourceType
      */
 
@@ -106,11 +106,11 @@ public class ExportSnapshotRecordSourceInfo implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     *        The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportSnapshotRecordSourceType
      */
@@ -122,11 +122,11 @@ public class ExportSnapshotRecordSourceInfo implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+     *        The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExportSnapshotRecordSourceType
      */

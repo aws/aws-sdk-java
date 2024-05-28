@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+
 import java.io.Serializable;
 
 import java.util.ArrayList;
@@ -22,7 +24,7 @@ import java.util.List;
  * The ListMultipartUploadsResponse contains all the information about the
  * ListMultipartUploads method.
  */
-public class MultipartUploadListing implements Serializable {
+public class MultipartUploadListing implements Serializable, S3RequesterChargedResult {
 
     /**
      * The name of the bucket to which the multipart upload was initiated.
@@ -94,6 +96,12 @@ public class MultipartUploadListing implements Serializable {
      * in this listing.
      */
     private List<String> commonPrefixes = new ArrayList<String>();
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
 
     /**
@@ -411,5 +419,15 @@ public class MultipartUploadListing implements Serializable {
 	 */
     public void setPrefix(String prefix) {
         this.prefix = prefix;
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 }

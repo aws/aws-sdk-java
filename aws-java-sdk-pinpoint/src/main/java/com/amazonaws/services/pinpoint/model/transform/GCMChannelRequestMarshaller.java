@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,12 @@ public class GCMChannelRequestMarshaller {
 
     private static final MarshallingInfo<String> APIKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ApiKey").build();
+    private static final MarshallingInfo<String> DEFAULTAUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultAuthenticationMethod").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<String> SERVICEJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceJson").build();
 
     private static final GCMChannelRequestMarshaller instance = new GCMChannelRequestMarshaller();
 
@@ -49,7 +53,9 @@ public class GCMChannelRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(gCMChannelRequest.getApiKey(), APIKEY_BINDING);
+            protocolMarshaller.marshall(gCMChannelRequest.getDefaultAuthenticationMethod(), DEFAULTAUTHENTICATIONMETHOD_BINDING);
             protocolMarshaller.marshall(gCMChannelRequest.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(gCMChannelRequest.getServiceJson(), SERVICEJSON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

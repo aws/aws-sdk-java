@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data for the instance.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      */
     private String userData;
@@ -40,7 +40,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private String addressingType;
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -87,8 +87,8 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private String keyName;
     /**
      * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
+     * The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs
+     * using the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
@@ -112,8 +112,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private String subnetId;
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
-     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
+     * The IDs of the security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> allSecurityGroups;
@@ -128,11 +127,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data for the instance.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data for the instance.
+     *        The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      */
 
     public void setUserData(String userData) {
@@ -141,10 +140,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data for the instance.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      * 
-     * @return The Base64-encoded user data for the instance.
+     * @return The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      */
 
     public String getUserData() {
@@ -153,11 +152,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data for the instance.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data for the instance.
+     *        The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,10 +207,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
-     * @return One or more block device mapping entries.
+     * @return The block device mapping entries.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -223,11 +222,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -241,7 +240,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -250,7 +249,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +265,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -606,12 +605,12 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
+     * The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs
+     * using the network interface.
      * </p>
      * 
-     * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *         security group IDs using the network interface.
+     * @return The network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     *         group IDs using the network interface.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -623,13 +622,13 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
+     * The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs
+     * using the network interface.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
+     *        The network interfaces. If you specify a network interface, you must specify subnet IDs and security group
+     *        IDs using the network interface.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -643,8 +642,8 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
+     * The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs
+     * using the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -653,8 +652,8 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
+     *        The network interfaces. If you specify a network interface, you must specify subnet IDs and security group
+     *        IDs using the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,13 +669,13 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
+     * The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs
+     * using the network interface.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
+     *        The network interfaces. If you specify a network interface, you must specify subnet IDs and security group
+     *        IDs using the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -807,13 +806,10 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
-     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
+     * The IDs of the security groups.
      * </p>
      * 
-     * @return One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
-     *         groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
-     *         groups.
+     * @return The IDs of the security groups.
      */
 
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
@@ -825,14 +821,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
-     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
+     * The IDs of the security groups.
      * </p>
      * 
      * @param allSecurityGroups
-     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
-     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
-     *        groups.
+     *        The IDs of the security groups.
      */
 
     public void setAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
@@ -846,8 +839,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
-     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
+     * The IDs of the security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -856,9 +848,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param allSecurityGroups
-     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
-     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
-     *        groups.
+     *        The IDs of the security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -874,14 +864,11 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
-     * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
+     * The IDs of the security groups.
      * </p>
      * 
      * @param allSecurityGroups
-     *        One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security
-     *        groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security
-     *        groups.
+     *        The IDs of the security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1010,7 +997,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserData() != null)
-            sb.append("UserData: ").append(getUserData()).append(",");
+            sb.append("UserData: ").append("***Sensitive Data Redacted***").append(",");
         if (getAddressingType() != null)
             sb.append("AddressingType: ").append(getAddressingType()).append(",");
         if (getBlockDeviceMappings() != null)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,21 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
      * </p>
      */
     private String dnsSupport;
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify
+     * security group management and control of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the only option that supported
+     * security group referencing) to transit gateways (which now also support security group referencing). This option
+     * is disabled by default and there are no additional costs to use this feature.
+     * </p>
+     */
+    private String securityGroupReferencingSupport;
     /**
      * <p>
      * Indicates whether multicast is enabled on the transit gateway
@@ -423,6 +438,141 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify
+     * security group management and control of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the only option that supported
+     * security group referencing) to transit gateways (which now also support security group referencing). This option
+     * is disabled by default and there are no additional costs to use this feature.
+     * </p>
+     * 
+     * @param securityGroupReferencingSupport
+     *        <p>
+     *        This parameter is in preview and may not be available for your account.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to
+     *        simplify security group management and control of instance-to-instance traffic across VPCs that are
+     *        connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only
+     *        option that supported security group referencing) to transit gateways (which now also support security
+     *        group referencing). This option is disabled by default and there are no additional costs to use this
+     *        feature.
+     * @see SecurityGroupReferencingSupportValue
+     */
+
+    public void setSecurityGroupReferencingSupport(String securityGroupReferencingSupport) {
+        this.securityGroupReferencingSupport = securityGroupReferencingSupport;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify
+     * security group management and control of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the only option that supported
+     * security group referencing) to transit gateways (which now also support security group referencing). This option
+     * is disabled by default and there are no additional costs to use this feature.
+     * </p>
+     * 
+     * @return <p>
+     *         This parameter is in preview and may not be available for your account.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to
+     *         simplify security group management and control of instance-to-instance traffic across VPCs that are
+     *         connected by transit gateway. You can also use this option to migrate from VPC peering (which was the
+     *         only option that supported security group referencing) to transit gateways (which now also support
+     *         security group referencing). This option is disabled by default and there are no additional costs to use
+     *         this feature.
+     * @see SecurityGroupReferencingSupportValue
+     */
+
+    public String getSecurityGroupReferencingSupport() {
+        return this.securityGroupReferencingSupport;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify
+     * security group management and control of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the only option that supported
+     * security group referencing) to transit gateways (which now also support security group referencing). This option
+     * is disabled by default and there are no additional costs to use this feature.
+     * </p>
+     * 
+     * @param securityGroupReferencingSupport
+     *        <p>
+     *        This parameter is in preview and may not be available for your account.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to
+     *        simplify security group management and control of instance-to-instance traffic across VPCs that are
+     *        connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only
+     *        option that supported security group referencing) to transit gateways (which now also support security
+     *        group referencing). This option is disabled by default and there are no additional costs to use this
+     *        feature.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityGroupReferencingSupportValue
+     */
+
+    public TransitGatewayRequestOptions withSecurityGroupReferencingSupport(String securityGroupReferencingSupport) {
+        setSecurityGroupReferencingSupport(securityGroupReferencingSupport);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to simplify
+     * security group management and control of instance-to-instance traffic across VPCs that are connected by transit
+     * gateway. You can also use this option to migrate from VPC peering (which was the only option that supported
+     * security group referencing) to transit gateways (which now also support security group referencing). This option
+     * is disabled by default and there are no additional costs to use this feature.
+     * </p>
+     * 
+     * @param securityGroupReferencingSupport
+     *        <p>
+     *        This parameter is in preview and may not be available for your account.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Enables you to reference a security group across VPCs attached to a transit gateway. Use this option to
+     *        simplify security group management and control of instance-to-instance traffic across VPCs that are
+     *        connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only
+     *        option that supported security group referencing) to transit gateways (which now also support security
+     *        group referencing). This option is disabled by default and there are no additional costs to use this
+     *        feature.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityGroupReferencingSupportValue
+     */
+
+    public TransitGatewayRequestOptions withSecurityGroupReferencingSupport(SecurityGroupReferencingSupportValue securityGroupReferencingSupport) {
+        this.securityGroupReferencingSupport = securityGroupReferencingSupport.toString();
+        return this;
+    }
+
+    /**
      * <p>
      * Indicates whether multicast is enabled on the transit gateway
      * </p>
@@ -586,6 +736,8 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
             sb.append("VpnEcmpSupport: ").append(getVpnEcmpSupport()).append(",");
         if (getDnsSupport() != null)
             sb.append("DnsSupport: ").append(getDnsSupport()).append(",");
+        if (getSecurityGroupReferencingSupport() != null)
+            sb.append("SecurityGroupReferencingSupport: ").append(getSecurityGroupReferencingSupport()).append(",");
         if (getMulticastSupport() != null)
             sb.append("MulticastSupport: ").append(getMulticastSupport()).append(",");
         if (getTransitGatewayCidrBlocks() != null)
@@ -628,6 +780,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
             return false;
         if (other.getDnsSupport() != null && other.getDnsSupport().equals(this.getDnsSupport()) == false)
             return false;
+        if (other.getSecurityGroupReferencingSupport() == null ^ this.getSecurityGroupReferencingSupport() == null)
+            return false;
+        if (other.getSecurityGroupReferencingSupport() != null
+                && other.getSecurityGroupReferencingSupport().equals(this.getSecurityGroupReferencingSupport()) == false)
+            return false;
         if (other.getMulticastSupport() == null ^ this.getMulticastSupport() == null)
             return false;
         if (other.getMulticastSupport() != null && other.getMulticastSupport().equals(this.getMulticastSupport()) == false)
@@ -650,6 +807,7 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDefaultRouteTablePropagation() == null) ? 0 : getDefaultRouteTablePropagation().hashCode());
         hashCode = prime * hashCode + ((getVpnEcmpSupport() == null) ? 0 : getVpnEcmpSupport().hashCode());
         hashCode = prime * hashCode + ((getDnsSupport() == null) ? 0 : getDnsSupport().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupReferencingSupport() == null) ? 0 : getSecurityGroupReferencingSupport().hashCode());
         hashCode = prime * hashCode + ((getMulticastSupport() == null) ? 0 : getMulticastSupport().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayCidrBlocks() == null) ? 0 : getTransitGatewayCidrBlocks().hashCode());
         return hashCode;

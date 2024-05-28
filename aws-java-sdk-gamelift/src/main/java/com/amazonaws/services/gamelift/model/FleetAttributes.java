@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a GameLift fleet of game hosting resources.
+ * <b>This operation has been expanded to use with the Amazon GameLift containers feature, which is currently in public
+ * preview.</b>
  * </p>
  * <p>
- * <b>Related actions</b>
+ * Describes an Amazon GameLift fleet of game hosting resources. Attributes differ based on the fleet's compute type, as
+ * follows:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * <a>CreateFleet</a> | <a>DescribeFleetAttributes</a>
+ * EC2 fleet attributes identify a <code>Build</code> resource (for fleets with customer game server builds) or a
+ * <code>Script</code> resource (for Realtime Servers fleets).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Container fleets have <code>ContainerGroupsAttributes</code>, which identify the fleet's
+ * <code>ContainerGroupDefinition</code> resources.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon GameLift Anywhere fleets have an abbreviated set of attributes, because most fleet configurations are set
+ * directly on the fleet's computes. Attributes include fleet identifiers and descriptive properties,
+ * creation/termination time, and fleet status.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Returned by:</b> <a>DescribeFleetAttributes</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes" target="_top">AWS API
@@ -43,24 +66,26 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
-     * GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * . In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      * </p>
      */
     private String fleetArn;
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      */
     private String fleetType;
     /**
      * <p>
-     * The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type
-     * defines the CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
-     * descriptions.
+     * descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      */
     private String instanceType;
@@ -97,33 +122,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     * NEW -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new instances
+     * DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances
      * with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     * ACTIVE -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     * ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     * DELETING -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> -- The fleet no longer exists.
+     * TERMINATED -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -131,21 +156,24 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * A unique identifier for the build resource that is deployed on instances in this fleet.
+     * A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is used
+     * with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      */
     private String buildId;
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN,
-     * the resource ID matches the <code>BuildId</code> value.
+     * associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift
+     * build ARN, the resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2".
      * </p>
      */
     private String buildArn;
     /**
      * <p>
-     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This attribute
+     * is used with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      */
     private String scriptId;
@@ -159,22 +187,23 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private String scriptArn;
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      * </p>
      */
     private String serverLaunchPath;
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter continue to be valid.
      * </p>
      */
     private String serverLaunchParameters;
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server API
-     * <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server
+     * API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
@@ -182,7 +211,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> logPaths;
     /**
      * <p>
-     * The type of game session protection to set on all new instances that are started in the fleet.
+     * The type of game session protection to set on all new instances that are started in the fleet. This attribute is
+     * used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <ul>
      * <li>
@@ -202,47 +232,84 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of
-     * the build or script that is deployed on this fleet.
+     * the build or script that is deployed on this fleet. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      */
     private String operatingSystem;
-    /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     */
+
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
      * Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated
-     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.
+     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time. This
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      */
     private java.util.List<String> metricGroups;
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
+     * This includes fleet auto-scaling. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     * "Container".
      * </p>
      */
     private java.util.List<String> stoppedActions;
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      */
     private String instanceRoleArn;
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the
+     * fleet. All instances in a fleet share the same certificate.
      * </p>
      */
     private CertificateConfiguration certificateConfiguration;
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with Amazon
+     * GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * </p>
+     */
+    private String computeType;
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b> A
+     * set of attributes that describe the container groups that are deployed on the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code> only. This attribute is used with fleets where
+     * <code>ComputeType</code> is "Container".
+     * </p>
+     */
+    private AnywhereConfiguration anywhereConfiguration;
+    /**
+     * <p>
+     * Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     * executable to communicate with other Amazon Web Services resources. This property is used only when the game
+     * server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
+     * </p>
+     */
+    private String instanceRoleCredentialsProvider;
+    /**
+     * <p>
+     * A set of properties that describe the container groups that are deployed to the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code>.
+     * </p>
+     */
+    private ContainerGroupsAttributes containerGroupsAttributes;
 
     /**
      * <p>
@@ -287,15 +354,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
-     * GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * . In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
      *        GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      */
@@ -307,14 +374,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
-     * GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * . In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
      *         GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      */
@@ -326,15 +393,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
-     * GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * . In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. In a
      *        GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -347,11 +414,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -361,10 +432,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
-     * @return The kind of instances, On-Demand or Spot, that this fleet uses.
+     * @return Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *         > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -374,11 +449,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -390,11 +469,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -404,11 +487,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether the fleet uses On-Demand or Spot instances. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This fleet property can't be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -420,17 +507,18 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type
-     * defines the CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
-     * descriptions.
+     * descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that determines the computing resources of each instance in the fleet.
-     *        Instance type defines the CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
-     *        detailed descriptions.
+     *        detailed descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     *        "Container".
      * @see EC2InstanceType
      */
 
@@ -440,16 +528,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type
-     * defines the CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
-     * descriptions.
+     * descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
-     * @return The Amazon EC2 instance type that determines the computing resources of each instance in the fleet.
-     *         Instance type defines the CPU, memory, storage, and networking capacity. See <a
+     * @return The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of
+     *         each instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      *         href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
-     *         detailed descriptions.
+     *         detailed descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     *         "Container".
      * @see EC2InstanceType
      */
 
@@ -459,17 +548,18 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type
-     * defines the CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
-     * descriptions.
+     * descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that determines the computing resources of each instance in the fleet.
-     *        Instance type defines the CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
-     *        detailed descriptions.
+     *        detailed descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     *        "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -481,17 +571,18 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type
-     * defines the CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
-     * descriptions.
+     * descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that determines the computing resources of each instance in the fleet.
-     *        Instance type defines the CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
-     *        detailed descriptions.
+     *        detailed descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     *        "Container".
      * @see EC2InstanceType
      */
 
@@ -501,17 +592,18 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instance type that determines the computing resources of each instance in the fleet. Instance type
-     * defines the CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     * instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
-     * descriptions.
+     * descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that determines the computing resources of each instance in the fleet.
-     *        Instance type defines the CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that the fleet uses. Instance type determines the computing resources of each
+     *        instance in the fleet, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
-     *        detailed descriptions.
+     *        detailed descriptions. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     *        "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -700,33 +792,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     * NEW -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new instances
+     * DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances
      * with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     * ACTIVE -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     * ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     * DELETING -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> -- The fleet no longer exists.
+     * TERMINATED -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -736,33 +828,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     *        NEW -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new
+     *        DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new
      *        instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     *        ACTIVE -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     *        ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     *        DELETING -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> -- The fleet no longer exists.
+     *        TERMINATED -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @see FleetStatus
@@ -779,33 +871,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     * NEW -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new instances
+     * DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances
      * with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     * ACTIVE -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     * ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     * DELETING -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> -- The fleet no longer exists.
+     * TERMINATED -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -814,33 +906,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     *         NEW -- A new fleet has been defined and desired instances is set to 1.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new
+     *         DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new
      *         instances with the game build or Realtime script and starting server processes.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     *         ACTIVE -- Hosts can now accept game sessions.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     *         ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     *         DELETING -- Hosts are responding to a delete fleet request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TERMINATED</b> -- The fleet no longer exists.
+     *         TERMINATED -- The fleet no longer exists.
      *         </p>
      *         </li>
      * @see FleetStatus
@@ -857,33 +949,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     * NEW -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new instances
+     * DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances
      * with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     * ACTIVE -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     * ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     * DELETING -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> -- The fleet no longer exists.
+     * TERMINATED -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -893,33 +985,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     *        NEW -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new
+     *        DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new
      *        instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     *        ACTIVE -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     *        ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     *        DELETING -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> -- The fleet no longer exists.
+     *        TERMINATED -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -938,33 +1030,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     * NEW -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new instances
+     * DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances
      * with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     * ACTIVE -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     * ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     * DELETING -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> -- The fleet no longer exists.
+     * TERMINATED -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -974,33 +1066,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     *        NEW -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new
+     *        DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new
      *        instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     *        ACTIVE -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     *        ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     *        DELETING -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> -- The fleet no longer exists.
+     *        TERMINATED -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @see FleetStatus
@@ -1017,33 +1109,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     * NEW -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new instances
+     * DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new instances
      * with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     * ACTIVE -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     * ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     * DELETING -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> -- The fleet no longer exists.
+     * TERMINATED -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -1053,33 +1145,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
+     *        NEW -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet, creating new
+     *        DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new fleet, creating new
      *        instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
+     *        ACTIVE -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
+     *        ERROR -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
+     *        DELETING -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> -- The fleet no longer exists.
+     *        TERMINATED -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1093,11 +1185,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for the build resource that is deployed on instances in this fleet.
+     * A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is used
+     * with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @param buildId
-     *        A unique identifier for the build resource that is deployed on instances in this fleet.
+     *        A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is
+     *        used with fleets where <code>ComputeType</code> is "EC2".
      */
 
     public void setBuildId(String buildId) {
@@ -1106,10 +1200,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for the build resource that is deployed on instances in this fleet.
+     * A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is used
+     * with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      * 
-     * @return A unique identifier for the build resource that is deployed on instances in this fleet.
+     * @return A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is
+     *         used with fleets where <code>ComputeType</code> is "EC2".
      */
 
     public String getBuildId() {
@@ -1118,11 +1214,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for the build resource that is deployed on instances in this fleet.
+     * A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is used
+     * with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @param buildId
-     *        A unique identifier for the build resource that is deployed on instances in this fleet.
+     *        A unique identifier for the build resource that is deployed on instances in this fleet. This attribute is
+     *        used with fleets where <code>ComputeType</code> is "EC2".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1134,15 +1232,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN,
-     * the resource ID matches the <code>BuildId</code> value.
+     * associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift
+     * build ARN, the resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @param buildArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
-     *        GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource
-     *        ID matches the <code>BuildId</code> value.
+     *        Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the
+     *        resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2".
      */
 
     public void setBuildArn(String buildArn) {
@@ -1152,14 +1252,16 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN,
-     * the resource ID matches the <code>BuildId</code> value.
+     * associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift
+     * build ARN, the resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
-     *         GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the
-     *         resource ID matches the <code>BuildId</code> value.
+     *         Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the
+     *         resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     *         <code>ComputeType</code> is "EC2".
      */
 
     public String getBuildArn() {
@@ -1169,15 +1271,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * associated with the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN,
-     * the resource ID matches the <code>BuildId</code> value.
+     * associated with the Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift
+     * build ARN, the resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @param buildArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
-     *        GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource
-     *        ID matches the <code>BuildId</code> value.
+     *        Amazon GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the
+     *        resource ID matches the <code>BuildId</code> value. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1188,11 +1292,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This attribute
+     * is used with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @param scriptId
-     *        A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     *        A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This
+     *        attribute is used with fleets where <code>ComputeType</code> is "EC2".
      */
 
     public void setScriptId(String scriptId) {
@@ -1201,10 +1307,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This attribute
+     * is used with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      * 
-     * @return A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     * @return A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This
+     *         attribute is used with fleets where <code>ComputeType</code> is "EC2".
      */
 
     public String getScriptId() {
@@ -1213,11 +1321,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     * A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This attribute
+     * is used with fleets where <code>ComputeType</code> is "EC2".
      * </p>
      * 
      * @param scriptId
-     *        A unique identifier for the Realtime script resource that is deployed on instances in this fleet.
+     *        A unique identifier for the Realtime script resource that is deployed on instances in this fleet. This
+     *        attribute is used with fleets where <code>ComputeType</code> is "EC2".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1283,13 +1393,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      * </p>
      * 
      * @param serverLaunchPath
-     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     *        >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -1298,12 +1410,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      * </p>
      * 
-     * @return <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     *         <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * @return <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     *         >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      */
 
     public String getServerLaunchPath() {
@@ -1312,13 +1426,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      * </p>
      * 
      * @param serverLaunchPath
-     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     *        >RuntimeConfiguration</a> . Requests that use this parameter continue to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1329,13 +1445,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter continue to be valid.
      * </p>
      * 
      * @param serverLaunchParameters
      *        <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        runtime configuration . Requests that use this parameter continue to be valid.
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -1344,12 +1460,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter continue to be valid.
      * </p>
      * 
      * @return <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     *         <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *         runtime configuration . Requests that use this parameter continue to be valid.
      */
 
     public String getServerLaunchParameters() {
@@ -1358,13 +1474,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter continue to be valid.
      * </p>
      * 
      * @param serverLaunchParameters
      *        <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        runtime configuration . Requests that use this parameter continue to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1375,14 +1491,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server API
-     * <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server
+     * API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * 
-     * @return <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server
-     *         API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     * @return <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift
+     *         server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *         >Server API Reference</a>.
      */
@@ -1393,15 +1509,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server API
-     * <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server
+     * API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * 
      * @param logPaths
-     *        <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server
-     *        API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     *        <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift
+     *        server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *        >Server API Reference</a>.
      */
@@ -1417,8 +1533,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server API
-     * <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server
+     * API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
@@ -1429,8 +1545,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param logPaths
-     *        <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server
-     *        API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     *        <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift
+     *        server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *        >Server API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1448,15 +1564,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server API
-     * <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     * <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift server
+     * API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * 
      * @param logPaths
-     *        <b>This parameter is no longer used.</b> Game session log paths are now defined using the GameLift server
-     *        API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
+     *        <b>This parameter is no longer used.</b> Game session log paths are now defined using the Amazon GameLift
+     *        server API <code>ProcessReady()</code> <code>logParameters</code>. See more information in the <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *        >Server API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1469,7 +1585,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of game session protection to set on all new instances that are started in the fleet.
+     * The type of game session protection to set on all new instances that are started in the fleet. This attribute is
+     * used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <ul>
      * <li>
@@ -1486,7 +1603,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The type of game session protection to set on all new instances that are started in the fleet.</p>
+     *        The type of game session protection to set on all new instances that are started in the fleet. This
+     *        attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1508,7 +1626,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of game session protection to set on all new instances that are started in the fleet.
+     * The type of game session protection to set on all new instances that are started in the fleet. This attribute is
+     * used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <ul>
      * <li>
@@ -1524,7 +1643,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return The type of game session protection to set on all new instances that are started in the fleet.</p>
+     * @return The type of game session protection to set on all new instances that are started in the fleet. This
+     *         attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1546,7 +1666,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of game session protection to set on all new instances that are started in the fleet.
+     * The type of game session protection to set on all new instances that are started in the fleet. This attribute is
+     * used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <ul>
      * <li>
@@ -1563,7 +1684,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The type of game session protection to set on all new instances that are started in the fleet.</p>
+     *        The type of game session protection to set on all new instances that are started in the fleet. This
+     *        attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1587,7 +1709,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of game session protection to set on all new instances that are started in the fleet.
+     * The type of game session protection to set on all new instances that are started in the fleet. This attribute is
+     * used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <ul>
      * <li>
@@ -1604,7 +1727,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The type of game session protection to set on all new instances that are started in the fleet.</p>
+     *        The type of game session protection to set on all new instances that are started in the fleet. This
+     *        attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1626,7 +1750,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of game session protection to set on all new instances that are started in the fleet.
+     * The type of game session protection to set on all new instances that are started in the fleet. This attribute is
+     * used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <ul>
      * <li>
@@ -1643,7 +1768,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        The type of game session protection to set on all new instances that are started in the fleet.</p>
+     *        The type of game session protection to set on all new instances that are started in the fleet. This
+     *        attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1668,12 +1794,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of
-     * the build or script that is deployed on this fleet.
+     * the build or script that is deployed on this fleet. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param operatingSystem
      *        The operating system of the fleet's computing resources. A fleet's operating system is determined by the
-     *        OS of the build or script that is deployed on this fleet.
+     *        OS of the build or script that is deployed on this fleet. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @see OperatingSystem
      */
 
@@ -1684,11 +1812,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of
-     * the build or script that is deployed on this fleet.
+     * the build or script that is deployed on this fleet. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @return The operating system of the fleet's computing resources. A fleet's operating system is determined by the
-     *         OS of the build or script that is deployed on this fleet.
+     *         OS of the build or script that is deployed on this fleet. This attribute is used with fleets where
+     *         <code>ComputeType</code> is "EC2" or "Container".
      * @see OperatingSystem
      */
 
@@ -1699,12 +1829,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of
-     * the build or script that is deployed on this fleet.
+     * the build or script that is deployed on this fleet. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param operatingSystem
      *        The operating system of the fleet's computing resources. A fleet's operating system is determined by the
-     *        OS of the build or script that is deployed on this fleet.
+     *        OS of the build or script that is deployed on this fleet. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -1717,12 +1849,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of
-     * the build or script that is deployed on this fleet.
+     * the build or script that is deployed on this fleet. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param operatingSystem
      *        The operating system of the fleet's computing resources. A fleet's operating system is determined by the
-     *        OS of the build or script that is deployed on this fleet.
+     *        OS of the build or script that is deployed on this fleet. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @see OperatingSystem
      */
 
@@ -1733,12 +1867,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of
-     * the build or script that is deployed on this fleet.
+     * the build or script that is deployed on this fleet. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param operatingSystem
      *        The operating system of the fleet's computing resources. A fleet's operating system is determined by the
-     *        OS of the build or script that is deployed on this fleet.
+     *        OS of the build or script that is deployed on this fleet. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -1749,13 +1885,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     * 
      * @param resourceCreationLimitPolicy
-     *        The fleet policy that limits the number of game sessions an individual player can create over a span of
-     *        time.
      */
 
     public void setResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
@@ -1763,12 +1893,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     * 
-     * @return The fleet policy that limits the number of game sessions an individual player can create over a span of
-     *         time.
+     * @return
      */
 
     public ResourceCreationLimitPolicy getResourceCreationLimitPolicy() {
@@ -1776,13 +1901,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     * 
      * @param resourceCreationLimitPolicy
-     *        The fleet policy that limits the number of game sessions an individual player can create over a span of
-     *        time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1794,12 +1913,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated
-     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.
+     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time. This
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @return Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view
      *         aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric
-     *         group at a time.
+     *         group at a time. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     *         "Container".
      */
 
     public java.util.List<String> getMetricGroups() {
@@ -1809,13 +1930,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated
-     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.
+     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time. This
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param metricGroups
      *        Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view
      *        aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group
-     *        at a time.
+     *        at a time. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      */
 
     public void setMetricGroups(java.util.Collection<String> metricGroups) {
@@ -1830,7 +1952,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated
-     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.
+     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time. This
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1841,7 +1964,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @param metricGroups
      *        Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view
      *        aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group
-     *        at a time.
+     *        at a time. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1858,13 +1981,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view aggregated
-     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time.
+     * metrics for fleets that are in a metric group. A fleet can be included in only one metric group at a time. This
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param metricGroups
      *        Name of a metric group that metrics for this fleet are added to. In Amazon CloudWatch, you can view
      *        aggregated metrics for fleets that are in a metric group. A fleet can be included in only one metric group
-     *        at a time.
+     *        at a time. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1875,11 +1999,16 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
+     * This includes fleet auto-scaling. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     * "Container".
      * </p>
      * 
-     * @return A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *         auto-scaling.
+     * @return A list of fleet activity that has been suspended using <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *         >StopFleetActions</a>. This includes fleet auto-scaling. This attribute is used with fleets where
+     *         <code>ComputeType</code> is "EC2" or "Container".
      * @see FleetAction
      */
 
@@ -1889,12 +2018,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
+     * This includes fleet auto-scaling. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     * "Container".
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a>. This includes fleet auto-scaling. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @see FleetAction
      */
 
@@ -1909,7 +2043,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
+     * This includes fleet auto-scaling. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     * "Container".
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1918,8 +2055,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a>. This includes fleet auto-scaling. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -1936,12 +2075,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
+     * This includes fleet auto-scaling. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     * "Container".
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a>. This includes fleet auto-scaling. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -1953,12 +2097,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
+     * This includes fleet auto-scaling. This attribute is used with fleets where <code>ComputeType</code> is "EC2" or
+     * "Container".
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a>. This includes fleet auto-scaling. This attribute is used with fleets where
+     *        <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -1978,23 +2127,23 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param instanceRoleArn
-     *        A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an
-     *        instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-     *        including install scripts, server processes, and daemons (background processes). Create a role or look up
-     *        a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon
-     *        Web Services Management Console. Learn more about using on-box credentials for your game servers at <a
+     *        A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     *        application that runs on an instance in the fleet--including install scripts, server processes, and other
+     *        processes--can use these permissions to interact with Amazon Web Services resources that you own or have
+     *        access to. For more information about using the role with your game server builds, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *        Access external resources from a game server</a>.
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *        fleets where <code>ComputeType</code> is "EC2" or "Container".
      */
 
     public void setInstanceRoleArn(String instanceRoleArn) {
@@ -2003,22 +2152,22 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
-     * @return A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an
-     *         instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-     *         including install scripts, server processes, and daemons (background processes). Create a role or look up
-     *         a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon
-     *         Web Services Management Console. Learn more about using on-box credentials for your game servers at <a
+     * @return A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     *         application that runs on an instance in the fleet--including install scripts, server processes, and other
+     *         processes--can use these permissions to interact with Amazon Web Services resources that you own or have
+     *         access to. For more information about using the role with your game server builds, see <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *         Access external resources from a game server</a>.
+     *         Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *         fleets where <code>ComputeType</code> is "EC2" or "Container".
      */
 
     public String getInstanceRoleArn() {
@@ -2027,23 +2176,23 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance
-     * role ARN set, any application that runs on an instance in this fleet can assume the role, including install
-     * scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the
-     * <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console.
-     * Learn more about using on-box credentials for your game servers at <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
-     * external resources from a game server</a>.
+     * A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     * application that runs on an instance in the fleet--including install scripts, server processes, and other
+     * processes--can use these permissions to interact with Amazon Web Services resources that you own or have access
+     * to. For more information about using the role with your game server builds, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
      * </p>
      * 
      * @param instanceRoleArn
-     *        A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an
-     *        instance role ARN set, any application that runs on an instance in this fleet can assume the role,
-     *        including install scripts, server processes, and daemons (background processes). Create a role or look up
-     *        a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon
-     *        Web Services Management Console. Learn more about using on-box credentials for your game servers at <a
+     *        A unique identifier for an IAM role with access permissions to other Amazon Web Services services. Any
+     *        application that runs on an instance in the fleet--including install scripts, server processes, and other
+     *        processes--can use these permissions to interact with Amazon Web Services resources that you own or have
+     *        access to. For more information about using the role with your game server builds, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     *        Access external resources from a game server</a>.
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *        fleets where <code>ComputeType</code> is "EC2" or "Container".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2054,11 +2203,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the
+     * fleet. All instances in a fleet share the same certificate.
      * </p>
      * 
      * @param certificateConfiguration
-     *        Indicates whether a TLS/SSL certificate was generated for the fleet.
+     *        Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when
+     *        creating the fleet. All instances in a fleet share the same certificate.
      */
 
     public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
@@ -2067,10 +2218,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the
+     * fleet. All instances in a fleet share the same certificate.
      * </p>
      * 
-     * @return Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * @return Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when
+     *         creating the fleet. All instances in a fleet share the same certificate.
      */
 
     public CertificateConfiguration getCertificateConfiguration() {
@@ -2079,16 +2232,343 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the
+     * fleet. All instances in a fleet share the same certificate.
      * </p>
      * 
      * @param certificateConfiguration
-     *        Indicates whether a TLS/SSL certificate was generated for the fleet.
+     *        Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when
+     *        creating the fleet. All instances in a fleet share the same certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
         setCertificateConfiguration(certificateConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with Amazon
+     * GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * @see ComputeType
+     */
+
+    public void setComputeType(String computeType) {
+        this.computeType = computeType;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with Amazon
+     * GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * </p>
+     * 
+     * @return The type of compute resource used to host your game servers. You can use your own compute resources with
+     *         Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * @see ComputeType
+     */
+
+    public String getComputeType() {
+        return this.computeType;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with Amazon
+     * GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeType
+     */
+
+    public FleetAttributes withComputeType(String computeType) {
+        setComputeType(computeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with Amazon
+     * GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * @see ComputeType
+     */
+
+    public void setComputeType(ComputeType computeType) {
+        withComputeType(computeType);
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with Amazon
+     * GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeType
+     */
+
+    public FleetAttributes withComputeType(ComputeType computeType) {
+        this.computeType = computeType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b> A
+     * set of attributes that describe the container groups that are deployed on the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code> only. This attribute is used with fleets where
+     * <code>ComputeType</code> is "Container".
+     * </p>
+     * 
+     * @param anywhereConfiguration
+     *        <b>This property is used with the Amazon GameLift containers feature, which is currently in public
+     *        preview.</b> A set of attributes that describe the container groups that are deployed on the fleet. These
+     *        attributes are included for fleets with compute type <code>CONTAINER</code> only. This attribute is used
+     *        with fleets where <code>ComputeType</code> is "Container".
+     */
+
+    public void setAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        this.anywhereConfiguration = anywhereConfiguration;
+    }
+
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b> A
+     * set of attributes that describe the container groups that are deployed on the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code> only. This attribute is used with fleets where
+     * <code>ComputeType</code> is "Container".
+     * </p>
+     * 
+     * @return <b>This property is used with the Amazon GameLift containers feature, which is currently in public
+     *         preview.</b> A set of attributes that describe the container groups that are deployed on the fleet. These
+     *         attributes are included for fleets with compute type <code>CONTAINER</code> only. This attribute is used
+     *         with fleets where <code>ComputeType</code> is "Container".
+     */
+
+    public AnywhereConfiguration getAnywhereConfiguration() {
+        return this.anywhereConfiguration;
+    }
+
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b> A
+     * set of attributes that describe the container groups that are deployed on the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code> only. This attribute is used with fleets where
+     * <code>ComputeType</code> is "Container".
+     * </p>
+     * 
+     * @param anywhereConfiguration
+     *        <b>This property is used with the Amazon GameLift containers feature, which is currently in public
+     *        preview.</b> A set of attributes that describe the container groups that are deployed on the fleet. These
+     *        attributes are included for fleets with compute type <code>CONTAINER</code> only. This attribute is used
+     *        with fleets where <code>ComputeType</code> is "Container".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        setAnywhereConfiguration(anywhereConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     * executable to communicate with other Amazon Web Services resources. This property is used only when the game
+     * server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     *        executable to communicate with other Amazon Web Services resources. This property is used only when the
+     *        game server is integrated with the server SDK version 5.x. For more information about using shared
+     *        credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *        fleets where <code>ComputeType</code> is "EC2" or "Container".
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public void setInstanceRoleCredentialsProvider(String instanceRoleCredentialsProvider) {
+        this.instanceRoleCredentialsProvider = instanceRoleCredentialsProvider;
+    }
+
+    /**
+     * <p>
+     * Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     * executable to communicate with other Amazon Web Services resources. This property is used only when the game
+     * server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
+     * </p>
+     * 
+     * @return Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     *         <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game
+     *         server executable to communicate with other Amazon Web Services resources. This property is used only
+     *         when the game server is integrated with the server SDK version 5.x. For more information about using
+     *         shared credentials, see <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *         Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *         fleets where <code>ComputeType</code> is "EC2" or "Container".
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public String getInstanceRoleCredentialsProvider() {
+        return this.instanceRoleCredentialsProvider;
+    }
+
+    /**
+     * <p>
+     * Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     * executable to communicate with other Amazon Web Services resources. This property is used only when the game
+     * server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     *        executable to communicate with other Amazon Web Services resources. This property is used only when the
+     *        game server is integrated with the server SDK version 5.x. For more information about using shared
+     *        credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *        fleets where <code>ComputeType</code> is "EC2" or "Container".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public FleetAttributes withInstanceRoleCredentialsProvider(String instanceRoleCredentialsProvider) {
+        setInstanceRoleCredentialsProvider(instanceRoleCredentialsProvider);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     * executable to communicate with other Amazon Web Services resources. This property is used only when the game
+     * server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     *        executable to communicate with other Amazon Web Services resources. This property is used only when the
+     *        game server is integrated with the server SDK version 5.x. For more information about using shared
+     *        credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *        fleets where <code>ComputeType</code> is "EC2" or "Container".
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public void setInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider instanceRoleCredentialsProvider) {
+        withInstanceRoleCredentialsProvider(instanceRoleCredentialsProvider);
+    }
+
+    /**
+     * <p>
+     * Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     * <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     * executable to communicate with other Amazon Web Services resources. This property is used only when the game
+     * server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate
+     * with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where
+     * <code>ComputeType</code> is "EC2" or "Container".
+     * </p>
+     * 
+     * @param instanceRoleCredentialsProvider
+     *        Indicates that fleet instances maintain a shared credentials file for the IAM role defined in
+     *        <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server
+     *        executable to communicate with other Amazon Web Services resources. This property is used only when the
+     *        game server is integrated with the server SDK version 5.x. For more information about using shared
+     *        credentials, see <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with
+     *        fleets where <code>ComputeType</code> is "EC2" or "Container".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceRoleCredentialsProvider
+     */
+
+    public FleetAttributes withInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider instanceRoleCredentialsProvider) {
+        this.instanceRoleCredentialsProvider = instanceRoleCredentialsProvider.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of properties that describe the container groups that are deployed to the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code>.
+     * </p>
+     * 
+     * @param containerGroupsAttributes
+     *        A set of properties that describe the container groups that are deployed to the fleet. These attributes
+     *        are included for fleets with compute type <code>CONTAINER</code>.
+     */
+
+    public void setContainerGroupsAttributes(ContainerGroupsAttributes containerGroupsAttributes) {
+        this.containerGroupsAttributes = containerGroupsAttributes;
+    }
+
+    /**
+     * <p>
+     * A set of properties that describe the container groups that are deployed to the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code>.
+     * </p>
+     * 
+     * @return A set of properties that describe the container groups that are deployed to the fleet. These attributes
+     *         are included for fleets with compute type <code>CONTAINER</code>.
+     */
+
+    public ContainerGroupsAttributes getContainerGroupsAttributes() {
+        return this.containerGroupsAttributes;
+    }
+
+    /**
+     * <p>
+     * A set of properties that describe the container groups that are deployed to the fleet. These attributes are
+     * included for fleets with compute type <code>CONTAINER</code>.
+     * </p>
+     * 
+     * @param containerGroupsAttributes
+     *        A set of properties that describe the container groups that are deployed to the fleet. These attributes
+     *        are included for fleets with compute type <code>CONTAINER</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withContainerGroupsAttributes(ContainerGroupsAttributes containerGroupsAttributes) {
+        setContainerGroupsAttributes(containerGroupsAttributes);
         return this;
     }
 
@@ -2149,7 +2629,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         if (getInstanceRoleArn() != null)
             sb.append("InstanceRoleArn: ").append(getInstanceRoleArn()).append(",");
         if (getCertificateConfiguration() != null)
-            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration());
+            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration()).append(",");
+        if (getComputeType() != null)
+            sb.append("ComputeType: ").append(getComputeType()).append(",");
+        if (getAnywhereConfiguration() != null)
+            sb.append("AnywhereConfiguration: ").append(getAnywhereConfiguration()).append(",");
+        if (getInstanceRoleCredentialsProvider() != null)
+            sb.append("InstanceRoleCredentialsProvider: ").append(getInstanceRoleCredentialsProvider()).append(",");
+        if (getContainerGroupsAttributes() != null)
+            sb.append("ContainerGroupsAttributes: ").append(getContainerGroupsAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -2257,6 +2745,23 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCertificateConfiguration() != null && other.getCertificateConfiguration().equals(this.getCertificateConfiguration()) == false)
             return false;
+        if (other.getComputeType() == null ^ this.getComputeType() == null)
+            return false;
+        if (other.getComputeType() != null && other.getComputeType().equals(this.getComputeType()) == false)
+            return false;
+        if (other.getAnywhereConfiguration() == null ^ this.getAnywhereConfiguration() == null)
+            return false;
+        if (other.getAnywhereConfiguration() != null && other.getAnywhereConfiguration().equals(this.getAnywhereConfiguration()) == false)
+            return false;
+        if (other.getInstanceRoleCredentialsProvider() == null ^ this.getInstanceRoleCredentialsProvider() == null)
+            return false;
+        if (other.getInstanceRoleCredentialsProvider() != null
+                && other.getInstanceRoleCredentialsProvider().equals(this.getInstanceRoleCredentialsProvider()) == false)
+            return false;
+        if (other.getContainerGroupsAttributes() == null ^ this.getContainerGroupsAttributes() == null)
+            return false;
+        if (other.getContainerGroupsAttributes() != null && other.getContainerGroupsAttributes().equals(this.getContainerGroupsAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -2288,6 +2793,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStoppedActions() == null) ? 0 : getStoppedActions().hashCode());
         hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateConfiguration() == null) ? 0 : getCertificateConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
+        hashCode = prime * hashCode + ((getAnywhereConfiguration() == null) ? 0 : getAnywhereConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInstanceRoleCredentialsProvider() == null) ? 0 : getInstanceRoleCredentialsProvider().hashCode());
+        hashCode = prime * hashCode + ((getContainerGroupsAttributes() == null) ? 0 : getContainerGroupsAttributes().hashCode());
         return hashCode;
     }
 

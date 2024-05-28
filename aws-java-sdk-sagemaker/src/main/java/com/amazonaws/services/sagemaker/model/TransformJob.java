@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,6 +131,8 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
     private TransformInput transformInput;
 
     private TransformOutput transformOutput;
+
+    private BatchDataCaptureConfig dataCaptureConfig;
 
     private TransformResources transformResources;
     /**
@@ -1000,6 +1002,32 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param dataCaptureConfig
+     */
+
+    public void setDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public BatchDataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransformJob withDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
+        return this;
+    }
+
+    /**
      * @param transformResources
      */
 
@@ -1395,6 +1423,8 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("TransformInput: ").append(getTransformInput()).append(",");
         if (getTransformOutput() != null)
             sb.append("TransformOutput: ").append(getTransformOutput()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getTransformResources() != null)
             sb.append("TransformResources: ").append(getTransformResources()).append(",");
         if (getCreationTime() != null)
@@ -1475,6 +1505,10 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTransformOutput() != null && other.getTransformOutput().equals(this.getTransformOutput()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getTransformResources() == null ^ this.getTransformResources() == null)
             return false;
         if (other.getTransformResources() != null && other.getTransformResources().equals(this.getTransformResources()) == false)
@@ -1531,6 +1565,7 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getTransformInput() == null) ? 0 : getTransformInput().hashCode());
         hashCode = prime * hashCode + ((getTransformOutput() == null) ? 0 : getTransformOutput().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getTransformResources() == null) ? 0 : getTransformResources().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTransformStartTime() == null) ? 0 : getTransformStartTime().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ListChannelsRequestMarshaller {
 
     private static final MarshallingInfo<String> FILTERBYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterByName").build();
+    private static final MarshallingInfo<String> FILTERBYPLAYBACKRESTRICTIONPOLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterByPlaybackRestrictionPolicyArn").build();
     private static final MarshallingInfo<String> FILTERBYRECORDINGCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterByRecordingConfigurationArn").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -53,6 +55,7 @@ public class ListChannelsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listChannelsRequest.getFilterByName(), FILTERBYNAME_BINDING);
+            protocolMarshaller.marshall(listChannelsRequest.getFilterByPlaybackRestrictionPolicyArn(), FILTERBYPLAYBACKRESTRICTIONPOLICYARN_BINDING);
             protocolMarshaller.marshall(listChannelsRequest.getFilterByRecordingConfigurationArn(), FILTERBYRECORDINGCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(listChannelsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listChannelsRequest.getNextToken(), NEXTTOKEN_BINDING);

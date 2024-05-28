@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class GetBatchJobExecutionResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getBatchJobExecutionResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("batchJobIdentifier", targetDepth)) {
+                    context.nextToken();
+                    getBatchJobExecutionResult.setBatchJobIdentifier(BatchJobIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
                     getBatchJobExecutionResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -68,6 +72,10 @@ public class GetBatchJobExecutionResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getBatchJobExecutionResult.setJobName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jobStepRestartMarker", targetDepth)) {
+                    context.nextToken();
+                    getBatchJobExecutionResult.setJobStepRestartMarker(JobStepRestartMarkerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("jobType", targetDepth)) {
                     context.nextToken();
                     getBatchJobExecutionResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +83,10 @@ public class GetBatchJobExecutionResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("jobUser", targetDepth)) {
                     context.nextToken();
                     getBatchJobExecutionResult.setJobUser(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("returnCode", targetDepth)) {
+                    context.nextToken();
+                    getBatchJobExecutionResult.setReturnCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();

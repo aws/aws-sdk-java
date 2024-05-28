@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,11 +36,20 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
     private String featureName;
     /**
      * <p>
-     * The value associated with a feature, in string format. Note that features types can be String, Integral, or
-     * Fractional. This value represents all three types as a string.
+     * The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     * <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>. This value represents all three types as a string.
      * </p>
      */
     private String valueAsString;
+    /**
+     * <p>
+     * The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a
+     * <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>,
+     * <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.
+     * </p>
+     */
+    private java.util.List<String> valueAsStringList;
 
     /**
      * <p>
@@ -84,13 +93,15 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value associated with a feature, in string format. Note that features types can be String, Integral, or
-     * Fractional. This value represents all three types as a string.
+     * The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     * <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>. This value represents all three types as a string.
      * </p>
      * 
      * @param valueAsString
-     *        The value associated with a feature, in string format. Note that features types can be String, Integral,
-     *        or Fractional. This value represents all three types as a string.
+     *        The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     *        <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     *        <code>Fractional</code>. This value represents all three types as a string.
      */
 
     public void setValueAsString(String valueAsString) {
@@ -99,12 +110,14 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value associated with a feature, in string format. Note that features types can be String, Integral, or
-     * Fractional. This value represents all three types as a string.
+     * The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     * <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>. This value represents all three types as a string.
      * </p>
      * 
-     * @return The value associated with a feature, in string format. Note that features types can be String, Integral,
-     *         or Fractional. This value represents all three types as a string.
+     * @return The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     *         <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     *         <code>Fractional</code>. This value represents all three types as a string.
      */
 
     public String getValueAsString() {
@@ -113,18 +126,110 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value associated with a feature, in string format. Note that features types can be String, Integral, or
-     * Fractional. This value represents all three types as a string.
+     * The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     * <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>. This value represents all three types as a string.
      * </p>
      * 
      * @param valueAsString
-     *        The value associated with a feature, in string format. Note that features types can be String, Integral,
-     *        or Fractional. This value represents all three types as a string.
+     *        The value in string format associated with a feature. Used when your <code>CollectionType</code> is
+     *        <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>, or
+     *        <code>Fractional</code>. This value represents all three types as a string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FeatureValue withValueAsString(String valueAsString) {
         setValueAsString(valueAsString);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a
+     * <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>,
+     * <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.
+     * </p>
+     * 
+     * @return The list of values in string format associated with a feature. Used when your <code>CollectionType</code>
+     *         is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be
+     *         <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three
+     *         types as a string.
+     */
+
+    public java.util.List<String> getValueAsStringList() {
+        return valueAsStringList;
+    }
+
+    /**
+     * <p>
+     * The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a
+     * <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>,
+     * <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.
+     * </p>
+     * 
+     * @param valueAsStringList
+     *        The list of values in string format associated with a feature. Used when your <code>CollectionType</code>
+     *        is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be
+     *        <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three
+     *        types as a string.
+     */
+
+    public void setValueAsStringList(java.util.Collection<String> valueAsStringList) {
+        if (valueAsStringList == null) {
+            this.valueAsStringList = null;
+            return;
+        }
+
+        this.valueAsStringList = new java.util.ArrayList<String>(valueAsStringList);
+    }
+
+    /**
+     * <p>
+     * The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a
+     * <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>,
+     * <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValueAsStringList(java.util.Collection)} or {@link #withValueAsStringList(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param valueAsStringList
+     *        The list of values in string format associated with a feature. Used when your <code>CollectionType</code>
+     *        is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be
+     *        <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three
+     *        types as a string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FeatureValue withValueAsStringList(String... valueAsStringList) {
+        if (this.valueAsStringList == null) {
+            setValueAsStringList(new java.util.ArrayList<String>(valueAsStringList.length));
+        }
+        for (String ele : valueAsStringList) {
+            this.valueAsStringList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of values in string format associated with a feature. Used when your <code>CollectionType</code> is a
+     * <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be <code>String</code>,
+     * <code>Integral</code>, or <code>Fractional</code>. These values represents all three types as a string.
+     * </p>
+     * 
+     * @param valueAsStringList
+     *        The list of values in string format associated with a feature. Used when your <code>CollectionType</code>
+     *        is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features types can be
+     *        <code>String</code>, <code>Integral</code>, or <code>Fractional</code>. These values represents all three
+     *        types as a string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FeatureValue withValueAsStringList(java.util.Collection<String> valueAsStringList) {
+        setValueAsStringList(valueAsStringList);
         return this;
     }
 
@@ -143,7 +248,9 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
         if (getFeatureName() != null)
             sb.append("FeatureName: ").append(getFeatureName()).append(",");
         if (getValueAsString() != null)
-            sb.append("ValueAsString: ").append(getValueAsString());
+            sb.append("ValueAsString: ").append(getValueAsString()).append(",");
+        if (getValueAsStringList() != null)
+            sb.append("ValueAsStringList: ").append(getValueAsStringList());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +273,10 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValueAsString() != null && other.getValueAsString().equals(this.getValueAsString()) == false)
             return false;
+        if (other.getValueAsStringList() == null ^ this.getValueAsStringList() == null)
+            return false;
+        if (other.getValueAsStringList() != null && other.getValueAsStringList().equals(this.getValueAsStringList()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +287,7 @@ public class FeatureValue implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getFeatureName() == null) ? 0 : getFeatureName().hashCode());
         hashCode = prime * hashCode + ((getValueAsString() == null) ? 0 : getValueAsString().hashCode());
+        hashCode = prime * hashCode + ((getValueAsStringList() == null) ? 0 : getValueAsStringList().hashCode());
         return hashCode;
     }
 

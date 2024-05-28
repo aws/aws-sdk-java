@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,36 +25,36 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      */
     private String datastoreId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      */
     private String datastoreArn;
     /**
      * <p>
-     * The status of the Data Store that the user has requested to be deleted.
+     * The status of the data store that the user has requested to be deleted.
      * </p>
      */
     private String datastoreStatus;
     /**
      * <p>
-     * The AWS endpoint for the Data Store the user has requested to be deleted.
+     * The AWS endpoint for the data store the user has requested to be deleted.
      * </p>
      */
     private String datastoreEndpoint;
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID for the Data Store to be deleted.
+     *        The AWS-generated ID for the data store to be deleted.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -63,10 +63,10 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      * 
-     * @return The AWS-generated ID for the Data Store to be deleted.
+     * @return The AWS-generated ID for the data store to be deleted.
      */
 
     public String getDatastoreId() {
@@ -75,11 +75,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS-generated ID for the Data Store to be deleted.
+     * The AWS-generated ID for the data store to be deleted.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated ID for the Data Store to be deleted.
+     *        The AWS-generated ID for the data store to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      * 
      * @param datastoreArn
-     *        The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     *        The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      */
 
     public void setDatastoreArn(String datastoreArn) {
@@ -103,10 +103,10 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * @return The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      */
 
     public String getDatastoreArn() {
@@ -115,11 +115,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      * 
      * @param datastoreArn
-     *        The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     *        The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the Data Store that the user has requested to be deleted.
+     * The status of the data store that the user has requested to be deleted.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the Data Store that the user has requested to be deleted.
+     *        The status of the data store that the user has requested to be deleted.
      * @see DatastoreStatus
      */
 
@@ -144,10 +144,10 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the Data Store that the user has requested to be deleted.
+     * The status of the data store that the user has requested to be deleted.
      * </p>
      * 
-     * @return The status of the Data Store that the user has requested to be deleted.
+     * @return The status of the data store that the user has requested to be deleted.
      * @see DatastoreStatus
      */
 
@@ -157,11 +157,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the Data Store that the user has requested to be deleted.
+     * The status of the data store that the user has requested to be deleted.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the Data Store that the user has requested to be deleted.
+     *        The status of the data store that the user has requested to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -173,11 +173,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the Data Store that the user has requested to be deleted.
+     * The status of the data store that the user has requested to be deleted.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the Data Store that the user has requested to be deleted.
+     *        The status of the data store that the user has requested to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -189,11 +189,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS endpoint for the Data Store the user has requested to be deleted.
+     * The AWS endpoint for the data store the user has requested to be deleted.
      * </p>
      * 
      * @param datastoreEndpoint
-     *        The AWS endpoint for the Data Store the user has requested to be deleted.
+     *        The AWS endpoint for the data store the user has requested to be deleted.
      */
 
     public void setDatastoreEndpoint(String datastoreEndpoint) {
@@ -202,10 +202,10 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS endpoint for the Data Store the user has requested to be deleted.
+     * The AWS endpoint for the data store the user has requested to be deleted.
      * </p>
      * 
-     * @return The AWS endpoint for the Data Store the user has requested to be deleted.
+     * @return The AWS endpoint for the data store the user has requested to be deleted.
      */
 
     public String getDatastoreEndpoint() {
@@ -214,11 +214,11 @@ public class DeleteFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS endpoint for the Data Store the user has requested to be deleted.
+     * The AWS endpoint for the data store the user has requested to be deleted.
      * </p>
      * 
      * @param datastoreEndpoint
-     *        The AWS endpoint for the Data Store the user has requested to be deleted.
+     *        The AWS endpoint for the data store the user has requested to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

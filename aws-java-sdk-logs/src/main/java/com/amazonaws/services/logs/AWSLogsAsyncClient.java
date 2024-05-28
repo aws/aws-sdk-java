@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and
- * other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console,
- * CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
+ * other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console.
+ * Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or
+ * CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -41,13 +42,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs to monitor applications and systems
- * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and
- * send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your
- * log data for monitoring so no code changes are required. For example, you can monitor application logs for specific
- * literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a particular
- * position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is
- * found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
+ * <b>Monitor logs from EC2 instances in real time</b>: You can use CloudWatch Logs to monitor applications and systems
+ * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs.
+ * Then, it can send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch
+ * Logs uses your log data for monitoring so no code changes are required. For example, you can monitor application logs
+ * for specific literal terms (such as "NullReferenceException"). You can also count the number of occurrences of a
+ * literal term at a particular position in log data (such as "404" status codes in an Apache access log). When the term
+ * you are searching for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
  * </p>
  * </li>
  * <li>
@@ -59,9 +60,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
- * the log retention setting so that any log events older than this setting are automatically deleted. The CloudWatch
- * Logs agent makes it easy to quickly send both rotated and non-rotated log data off of a host and into the log
- * service. You can then access the raw log data when you need it.
+ * the log retention setting so that any log events earlier than this setting are automatically deleted. The CloudWatch
+ * Logs agent helps to quickly send both rotated and non-rotated log data off of a host and into the log service. You
+ * can then access the raw log data when you need it.
  * </p>
  * </li>
  * </ul>
@@ -356,6 +357,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDeliveryResult> createDeliveryAsync(CreateDeliveryRequest request) {
+
+        return createDeliveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDeliveryResult> createDeliveryAsync(final CreateDeliveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDeliveryRequest, CreateDeliveryResult> asyncHandler) {
+        final CreateDeliveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDeliveryResult>() {
+            @Override
+            public CreateDeliveryResult call() throws Exception {
+                CreateDeliveryResult result = null;
+
+                try {
+                    result = executeCreateDelivery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(CreateExportTaskRequest request) {
 
         return createExportTaskAsync(request, null);
@@ -373,6 +407,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeCreateExportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLogAnomalyDetectorResult> createLogAnomalyDetectorAsync(CreateLogAnomalyDetectorRequest request) {
+
+        return createLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLogAnomalyDetectorResult> createLogAnomalyDetectorAsync(final CreateLogAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLogAnomalyDetectorRequest, CreateLogAnomalyDetectorResult> asyncHandler) {
+        final CreateLogAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLogAnomalyDetectorResult>() {
+            @Override
+            public CreateLogAnomalyDetectorResult call() throws Exception {
+                CreateLogAnomalyDetectorResult result = null;
+
+                try {
+                    result = executeCreateLogAnomalyDetector(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -455,6 +522,206 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccountPolicyResult> deleteAccountPolicyAsync(DeleteAccountPolicyRequest request) {
+
+        return deleteAccountPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountPolicyResult> deleteAccountPolicyAsync(final DeleteAccountPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccountPolicyRequest, DeleteAccountPolicyResult> asyncHandler) {
+        final DeleteAccountPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccountPolicyResult>() {
+            @Override
+            public DeleteAccountPolicyResult call() throws Exception {
+                DeleteAccountPolicyResult result = null;
+
+                try {
+                    result = executeDeleteAccountPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataProtectionPolicyResult> deleteDataProtectionPolicyAsync(DeleteDataProtectionPolicyRequest request) {
+
+        return deleteDataProtectionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataProtectionPolicyResult> deleteDataProtectionPolicyAsync(final DeleteDataProtectionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataProtectionPolicyRequest, DeleteDataProtectionPolicyResult> asyncHandler) {
+        final DeleteDataProtectionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataProtectionPolicyResult>() {
+            @Override
+            public DeleteDataProtectionPolicyResult call() throws Exception {
+                DeleteDataProtectionPolicyResult result = null;
+
+                try {
+                    result = executeDeleteDataProtectionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryResult> deleteDeliveryAsync(DeleteDeliveryRequest request) {
+
+        return deleteDeliveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryResult> deleteDeliveryAsync(final DeleteDeliveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryRequest, DeleteDeliveryResult> asyncHandler) {
+        final DeleteDeliveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeliveryResult>() {
+            @Override
+            public DeleteDeliveryResult call() throws Exception {
+                DeleteDeliveryResult result = null;
+
+                try {
+                    result = executeDeleteDelivery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationResult> deleteDeliveryDestinationAsync(DeleteDeliveryDestinationRequest request) {
+
+        return deleteDeliveryDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationResult> deleteDeliveryDestinationAsync(final DeleteDeliveryDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryDestinationRequest, DeleteDeliveryDestinationResult> asyncHandler) {
+        final DeleteDeliveryDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeliveryDestinationResult>() {
+            @Override
+            public DeleteDeliveryDestinationResult call() throws Exception {
+                DeleteDeliveryDestinationResult result = null;
+
+                try {
+                    result = executeDeleteDeliveryDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationPolicyResult> deleteDeliveryDestinationPolicyAsync(
+            DeleteDeliveryDestinationPolicyRequest request) {
+
+        return deleteDeliveryDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliveryDestinationPolicyResult> deleteDeliveryDestinationPolicyAsync(
+            final DeleteDeliveryDestinationPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryDestinationPolicyRequest, DeleteDeliveryDestinationPolicyResult> asyncHandler) {
+        final DeleteDeliveryDestinationPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeliveryDestinationPolicyResult>() {
+            @Override
+            public DeleteDeliveryDestinationPolicyResult call() throws Exception {
+                DeleteDeliveryDestinationPolicyResult result = null;
+
+                try {
+                    result = executeDeleteDeliveryDestinationPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliverySourceResult> deleteDeliverySourceAsync(DeleteDeliverySourceRequest request) {
+
+        return deleteDeliverySourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeliverySourceResult> deleteDeliverySourceAsync(final DeleteDeliverySourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeliverySourceRequest, DeleteDeliverySourceResult> asyncHandler) {
+        final DeleteDeliverySourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeliverySourceResult>() {
+            @Override
+            public DeleteDeliverySourceResult call() throws Exception {
+                DeleteDeliverySourceResult result = null;
+
+                try {
+                    result = executeDeleteDeliverySource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(DeleteDestinationRequest request) {
 
         return deleteDestinationAsync(request, null);
@@ -472,6 +739,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeDeleteDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLogAnomalyDetectorResult> deleteLogAnomalyDetectorAsync(DeleteLogAnomalyDetectorRequest request) {
+
+        return deleteLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLogAnomalyDetectorResult> deleteLogAnomalyDetectorAsync(final DeleteLogAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLogAnomalyDetectorRequest, DeleteLogAnomalyDetectorResult> asyncHandler) {
+        final DeleteLogAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLogAnomalyDetectorResult>() {
+            @Override
+            public DeleteLogAnomalyDetectorResult call() throws Exception {
+                DeleteLogAnomalyDetectorResult result = null;
+
+                try {
+                    result = executeDeleteLogAnomalyDetector(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -703,6 +1003,138 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeDeleteSubscriptionFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPoliciesResult> describeAccountPoliciesAsync(DescribeAccountPoliciesRequest request) {
+
+        return describeAccountPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPoliciesResult> describeAccountPoliciesAsync(final DescribeAccountPoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountPoliciesRequest, DescribeAccountPoliciesResult> asyncHandler) {
+        final DescribeAccountPoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountPoliciesResult>() {
+            @Override
+            public DescribeAccountPoliciesResult call() throws Exception {
+                DescribeAccountPoliciesResult result = null;
+
+                try {
+                    result = executeDescribeAccountPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveriesResult> describeDeliveriesAsync(DescribeDeliveriesRequest request) {
+
+        return describeDeliveriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveriesResult> describeDeliveriesAsync(final DescribeDeliveriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDeliveriesRequest, DescribeDeliveriesResult> asyncHandler) {
+        final DescribeDeliveriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDeliveriesResult>() {
+            @Override
+            public DescribeDeliveriesResult call() throws Exception {
+                DescribeDeliveriesResult result = null;
+
+                try {
+                    result = executeDescribeDeliveries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveryDestinationsResult> describeDeliveryDestinationsAsync(DescribeDeliveryDestinationsRequest request) {
+
+        return describeDeliveryDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliveryDestinationsResult> describeDeliveryDestinationsAsync(final DescribeDeliveryDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDeliveryDestinationsRequest, DescribeDeliveryDestinationsResult> asyncHandler) {
+        final DescribeDeliveryDestinationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDeliveryDestinationsResult>() {
+            @Override
+            public DescribeDeliveryDestinationsResult call() throws Exception {
+                DescribeDeliveryDestinationsResult result = null;
+
+                try {
+                    result = executeDescribeDeliveryDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliverySourcesResult> describeDeliverySourcesAsync(DescribeDeliverySourcesRequest request) {
+
+        return describeDeliverySourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDeliverySourcesResult> describeDeliverySourcesAsync(final DescribeDeliverySourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDeliverySourcesRequest, DescribeDeliverySourcesResult> asyncHandler) {
+        final DescribeDeliverySourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDeliverySourcesResult>() {
+            @Override
+            public DescribeDeliverySourcesResult call() throws Exception {
+                DescribeDeliverySourcesResult result = null;
+
+                try {
+                    result = executeDescribeDeliverySources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1128,6 +1560,204 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest request) {
+
+        return getDataProtectionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(final GetDataProtectionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataProtectionPolicyRequest, GetDataProtectionPolicyResult> asyncHandler) {
+        final GetDataProtectionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataProtectionPolicyResult>() {
+            @Override
+            public GetDataProtectionPolicyResult call() throws Exception {
+                GetDataProtectionPolicyResult result = null;
+
+                try {
+                    result = executeGetDataProtectionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryResult> getDeliveryAsync(GetDeliveryRequest request) {
+
+        return getDeliveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryResult> getDeliveryAsync(final GetDeliveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeliveryRequest, GetDeliveryResult> asyncHandler) {
+        final GetDeliveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeliveryResult>() {
+            @Override
+            public GetDeliveryResult call() throws Exception {
+                GetDeliveryResult result = null;
+
+                try {
+                    result = executeGetDelivery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationResult> getDeliveryDestinationAsync(GetDeliveryDestinationRequest request) {
+
+        return getDeliveryDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationResult> getDeliveryDestinationAsync(final GetDeliveryDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeliveryDestinationRequest, GetDeliveryDestinationResult> asyncHandler) {
+        final GetDeliveryDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeliveryDestinationResult>() {
+            @Override
+            public GetDeliveryDestinationResult call() throws Exception {
+                GetDeliveryDestinationResult result = null;
+
+                try {
+                    result = executeGetDeliveryDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationPolicyResult> getDeliveryDestinationPolicyAsync(GetDeliveryDestinationPolicyRequest request) {
+
+        return getDeliveryDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliveryDestinationPolicyResult> getDeliveryDestinationPolicyAsync(final GetDeliveryDestinationPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeliveryDestinationPolicyRequest, GetDeliveryDestinationPolicyResult> asyncHandler) {
+        final GetDeliveryDestinationPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeliveryDestinationPolicyResult>() {
+            @Override
+            public GetDeliveryDestinationPolicyResult call() throws Exception {
+                GetDeliveryDestinationPolicyResult result = null;
+
+                try {
+                    result = executeGetDeliveryDestinationPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverySourceResult> getDeliverySourceAsync(GetDeliverySourceRequest request) {
+
+        return getDeliverySourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverySourceResult> getDeliverySourceAsync(final GetDeliverySourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeliverySourceRequest, GetDeliverySourceResult> asyncHandler) {
+        final GetDeliverySourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeliverySourceResult>() {
+            @Override
+            public GetDeliverySourceResult call() throws Exception {
+                GetDeliverySourceResult result = null;
+
+                try {
+                    result = executeGetDeliverySource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogAnomalyDetectorResult> getLogAnomalyDetectorAsync(GetLogAnomalyDetectorRequest request) {
+
+        return getLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogAnomalyDetectorResult> getLogAnomalyDetectorAsync(final GetLogAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogAnomalyDetectorRequest, GetLogAnomalyDetectorResult> asyncHandler) {
+        final GetLogAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLogAnomalyDetectorResult>() {
+            @Override
+            public GetLogAnomalyDetectorResult call() throws Exception {
+                GetLogAnomalyDetectorResult result = null;
+
+                try {
+                    result = executeGetLogAnomalyDetector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(GetLogEventsRequest request) {
 
         return getLogEventsAsync(request, null);
@@ -1260,6 +1890,72 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAnomaliesResult> listAnomaliesAsync(ListAnomaliesRequest request) {
+
+        return listAnomaliesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnomaliesResult> listAnomaliesAsync(final ListAnomaliesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAnomaliesRequest, ListAnomaliesResult> asyncHandler) {
+        final ListAnomaliesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAnomaliesResult>() {
+            @Override
+            public ListAnomaliesResult call() throws Exception {
+                ListAnomaliesResult result = null;
+
+                try {
+                    result = executeListAnomalies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLogAnomalyDetectorsResult> listLogAnomalyDetectorsAsync(ListLogAnomalyDetectorsRequest request) {
+
+        return listLogAnomalyDetectorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLogAnomalyDetectorsResult> listLogAnomalyDetectorsAsync(final ListLogAnomalyDetectorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLogAnomalyDetectorsRequest, ListLogAnomalyDetectorsResult> asyncHandler) {
+        final ListLogAnomalyDetectorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLogAnomalyDetectorsResult>() {
+            @Override
+            public ListLogAnomalyDetectorsResult call() throws Exception {
+                ListLogAnomalyDetectorsResult result = null;
+
+                try {
+                    result = executeListLogAnomalyDetectors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1312,6 +2008,171 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeListTagsLogGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPolicyResult> putAccountPolicyAsync(PutAccountPolicyRequest request) {
+
+        return putAccountPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPolicyResult> putAccountPolicyAsync(final PutAccountPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountPolicyRequest, PutAccountPolicyResult> asyncHandler) {
+        final PutAccountPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountPolicyResult>() {
+            @Override
+            public PutAccountPolicyResult call() throws Exception {
+                PutAccountPolicyResult result = null;
+
+                try {
+                    result = executePutAccountPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest request) {
+
+        return putDataProtectionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(final PutDataProtectionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDataProtectionPolicyRequest, PutDataProtectionPolicyResult> asyncHandler) {
+        final PutDataProtectionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDataProtectionPolicyResult>() {
+            @Override
+            public PutDataProtectionPolicyResult call() throws Exception {
+                PutDataProtectionPolicyResult result = null;
+
+                try {
+                    result = executePutDataProtectionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationResult> putDeliveryDestinationAsync(PutDeliveryDestinationRequest request) {
+
+        return putDeliveryDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationResult> putDeliveryDestinationAsync(final PutDeliveryDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDeliveryDestinationRequest, PutDeliveryDestinationResult> asyncHandler) {
+        final PutDeliveryDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDeliveryDestinationResult>() {
+            @Override
+            public PutDeliveryDestinationResult call() throws Exception {
+                PutDeliveryDestinationResult result = null;
+
+                try {
+                    result = executePutDeliveryDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationPolicyResult> putDeliveryDestinationPolicyAsync(PutDeliveryDestinationPolicyRequest request) {
+
+        return putDeliveryDestinationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliveryDestinationPolicyResult> putDeliveryDestinationPolicyAsync(final PutDeliveryDestinationPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDeliveryDestinationPolicyRequest, PutDeliveryDestinationPolicyResult> asyncHandler) {
+        final PutDeliveryDestinationPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDeliveryDestinationPolicyResult>() {
+            @Override
+            public PutDeliveryDestinationPolicyResult call() throws Exception {
+                PutDeliveryDestinationPolicyResult result = null;
+
+                try {
+                    result = executePutDeliveryDestinationPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverySourceResult> putDeliverySourceAsync(PutDeliverySourceRequest request) {
+
+        return putDeliverySourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverySourceResult> putDeliverySourceAsync(final PutDeliverySourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDeliverySourceRequest, PutDeliverySourceResult> asyncHandler) {
+        final PutDeliverySourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDeliverySourceResult>() {
+            @Override
+            public PutDeliverySourceResult call() throws Exception {
+                PutDeliverySourceResult result = null;
+
+                try {
+                    result = executePutDeliverySource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1811,6 +2672,72 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnomalyResult> updateAnomalyAsync(UpdateAnomalyRequest request) {
+
+        return updateAnomalyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnomalyResult> updateAnomalyAsync(final UpdateAnomalyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAnomalyRequest, UpdateAnomalyResult> asyncHandler) {
+        final UpdateAnomalyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAnomalyResult>() {
+            @Override
+            public UpdateAnomalyResult call() throws Exception {
+                UpdateAnomalyResult result = null;
+
+                try {
+                    result = executeUpdateAnomaly(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogAnomalyDetectorResult> updateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request) {
+
+        return updateLogAnomalyDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogAnomalyDetectorResult> updateLogAnomalyDetectorAsync(final UpdateLogAnomalyDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLogAnomalyDetectorRequest, UpdateLogAnomalyDetectorResult> asyncHandler) {
+        final UpdateLogAnomalyDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLogAnomalyDetectorResult>() {
+            @Override
+            public UpdateLogAnomalyDetectorResult call() throws Exception {
+                UpdateLogAnomalyDetectorResult result = null;
+
+                try {
+                    result = executeUpdateLogAnomalyDetector(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

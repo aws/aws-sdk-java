@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,14 @@ public class AssociateSubnetCidrBlockRequestMarshaller implements Marshaller<Req
 
         if (associateSubnetCidrBlockRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(associateSubnetCidrBlockRequest.getSubnetId()));
+        }
+
+        if (associateSubnetCidrBlockRequest.getIpv6IpamPoolId() != null) {
+            request.addParameter("Ipv6IpamPoolId", StringUtils.fromString(associateSubnetCidrBlockRequest.getIpv6IpamPoolId()));
+        }
+
+        if (associateSubnetCidrBlockRequest.getIpv6NetmaskLength() != null) {
+            request.addParameter("Ipv6NetmaskLength", StringUtils.fromInteger(associateSubnetCidrBlockRequest.getIpv6NetmaskLength()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,19 +36,19 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String clientToken;
     /**
      * <p>
-     * The description of the environment.
+     * The description of the runtime environment.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      */
     private String engineType;
     /**
      * <p>
-     * The version of the engine type for the environment.
+     * The version of the engine type for the runtime environment.
      * </p>
      */
     private String engineVersion;
@@ -60,50 +60,60 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private HighAvailabilityConfig highAvailabilityConfig;
     /**
      * <p>
-     * The type of instance for the environment.
+     * The type of instance for the runtime environment.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The identifier of a customer managed key.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      */
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies whether the environment is publicly accessible.
+     * Specifies whether the runtime environment is publicly accessible.
      * </p>
      */
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The list of security groups for the VPC associated with this environment.
+     * The list of security groups for the VPC associated with this runtime environment.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * Optional. The storage configurations for this environment.
+     * Optional. The storage configurations for this runtime environment.
      * </p>
      */
     private java.util.List<StorageConfiguration> storageConfigurations;
     /**
      * <p>
-     * The list of subnets associated with the VPC for this environment.
+     * The list of subnets associated with the VPC for this runtime environment.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The tags for the environment.
+     * The tags for the runtime environment.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -168,11 +178,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the environment.
+     * The description of the runtime environment.
      * </p>
      * 
      * @param description
-     *        The description of the environment.
+     *        The description of the runtime environment.
      */
 
     public void setDescription(String description) {
@@ -181,10 +191,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the environment.
+     * The description of the runtime environment.
      * </p>
      * 
-     * @return The description of the environment.
+     * @return The description of the runtime environment.
      */
 
     public String getDescription() {
@@ -193,11 +203,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The description of the environment.
+     * The description of the runtime environment.
      * </p>
      * 
      * @param description
-     *        The description of the environment.
+     *        The description of the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +218,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The engine type for the environment.
+     *        The engine type for the runtime environment.
      * @see EngineType
      */
 
@@ -222,10 +232,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
-     * @return The engine type for the environment.
+     * @return The engine type for the runtime environment.
      * @see EngineType
      */
 
@@ -235,11 +245,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The engine type for the environment.
+     *        The engine type for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -251,11 +261,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The engine type for the environment.
+     *        The engine type for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -267,11 +277,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the engine type for the environment.
+     * The version of the engine type for the runtime environment.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the engine type for the environment.
+     *        The version of the engine type for the runtime environment.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -280,10 +290,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the engine type for the environment.
+     * The version of the engine type for the runtime environment.
      * </p>
      * 
-     * @return The version of the engine type for the environment.
+     * @return The version of the engine type for the runtime environment.
      */
 
     public String getEngineVersion() {
@@ -292,11 +302,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the engine type for the environment.
+     * The version of the engine type for the runtime environment.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the engine type for the environment.
+     *        The version of the engine type for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,11 +357,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of instance for the environment.
+     * The type of instance for the runtime environment.
      * </p>
      * 
      * @param instanceType
-     *        The type of instance for the environment.
+     *        The type of instance for the runtime environment.
      */
 
     public void setInstanceType(String instanceType) {
@@ -360,10 +370,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of instance for the environment.
+     * The type of instance for the runtime environment.
      * </p>
      * 
-     * @return The type of instance for the environment.
+     * @return The type of instance for the runtime environment.
      */
 
     public String getInstanceType() {
@@ -372,11 +382,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of instance for the environment.
+     * The type of instance for the runtime environment.
      * </p>
      * 
      * @param instanceType
-     *        The type of instance for the environment.
+     *        The type of instance for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,11 +397,51 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @return The identifier of a customer managed key.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      * 
      * @param name
-     *        The unique identifier of the environment.
+     *        The name of the runtime environment. Must be unique within the account.
      */
 
     public void setName(String name) {
@@ -400,10 +450,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      * 
-     * @return The unique identifier of the environment.
+     * @return The name of the runtime environment. Must be unique within the account.
      */
 
     public String getName() {
@@ -412,11 +462,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      * 
      * @param name
-     *        The unique identifier of the environment.
+     *        The name of the runtime environment. Must be unique within the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,13 +477,21 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *        system-generated value will be assigned.
+     *        Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *        have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *        examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *        <code>sat:01:00-sat:03:00</code>. </p>
+     *        <p>
+     *        If you do not provide a value, a random system-generated value will be assigned.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -442,12 +500,20 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
-     * @return Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *         system-generated value will be assigned.
+     * @return Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *         have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *         examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *         <code>sat:01:00-sat:03:00</code>. </p>
+     *         <p>
+     *         If you do not provide a value, a random system-generated value will be assigned.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -456,13 +522,21 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * Configures the maintenance window that you want for the runtime environment. The maintenance window must have the
+     * format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid
+     * maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p>
+     * <p>
+     * If you do not provide a value, a random system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *        system-generated value will be assigned.
+     *        Configures the maintenance window that you want for the runtime environment. The maintenance window must
+     *        have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two
+     *        examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or
+     *        <code>sat:01:00-sat:03:00</code>. </p>
+     *        <p>
+     *        If you do not provide a value, a random system-generated value will be assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,11 +547,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the environment is publicly accessible.
+     * Specifies whether the runtime environment is publicly accessible.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies whether the environment is publicly accessible.
+     *        Specifies whether the runtime environment is publicly accessible.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -486,10 +560,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the environment is publicly accessible.
+     * Specifies whether the runtime environment is publicly accessible.
      * </p>
      * 
-     * @return Specifies whether the environment is publicly accessible.
+     * @return Specifies whether the runtime environment is publicly accessible.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -498,11 +572,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the environment is publicly accessible.
+     * Specifies whether the runtime environment is publicly accessible.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies whether the environment is publicly accessible.
+     *        Specifies whether the runtime environment is publicly accessible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,10 +587,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the environment is publicly accessible.
+     * Specifies whether the runtime environment is publicly accessible.
      * </p>
      * 
-     * @return Specifies whether the environment is publicly accessible.
+     * @return Specifies whether the runtime environment is publicly accessible.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -525,10 +599,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of security groups for the VPC associated with this environment.
+     * The list of security groups for the VPC associated with this runtime environment.
      * </p>
      * 
-     * @return The list of security groups for the VPC associated with this environment.
+     * @return The list of security groups for the VPC associated with this runtime environment.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -537,11 +611,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of security groups for the VPC associated with this environment.
+     * The list of security groups for the VPC associated with this runtime environment.
      * </p>
      * 
      * @param securityGroupIds
-     *        The list of security groups for the VPC associated with this environment.
+     *        The list of security groups for the VPC associated with this runtime environment.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -555,7 +629,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of security groups for the VPC associated with this environment.
+     * The list of security groups for the VPC associated with this runtime environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -564,7 +638,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param securityGroupIds
-     *        The list of security groups for the VPC associated with this environment.
+     *        The list of security groups for the VPC associated with this runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,11 +654,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of security groups for the VPC associated with this environment.
+     * The list of security groups for the VPC associated with this runtime environment.
      * </p>
      * 
      * @param securityGroupIds
-     *        The list of security groups for the VPC associated with this environment.
+     *        The list of security groups for the VPC associated with this runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,10 +669,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional. The storage configurations for this environment.
+     * Optional. The storage configurations for this runtime environment.
      * </p>
      * 
-     * @return Optional. The storage configurations for this environment.
+     * @return Optional. The storage configurations for this runtime environment.
      */
 
     public java.util.List<StorageConfiguration> getStorageConfigurations() {
@@ -607,11 +681,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional. The storage configurations for this environment.
+     * Optional. The storage configurations for this runtime environment.
      * </p>
      * 
      * @param storageConfigurations
-     *        Optional. The storage configurations for this environment.
+     *        Optional. The storage configurations for this runtime environment.
      */
 
     public void setStorageConfigurations(java.util.Collection<StorageConfiguration> storageConfigurations) {
@@ -625,7 +699,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional. The storage configurations for this environment.
+     * Optional. The storage configurations for this runtime environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -634,7 +708,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param storageConfigurations
-     *        Optional. The storage configurations for this environment.
+     *        Optional. The storage configurations for this runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,11 +724,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional. The storage configurations for this environment.
+     * Optional. The storage configurations for this runtime environment.
      * </p>
      * 
      * @param storageConfigurations
-     *        Optional. The storage configurations for this environment.
+     *        Optional. The storage configurations for this runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,10 +739,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of subnets associated with the VPC for this environment.
+     * The list of subnets associated with the VPC for this runtime environment.
      * </p>
      * 
-     * @return The list of subnets associated with the VPC for this environment.
+     * @return The list of subnets associated with the VPC for this runtime environment.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -677,11 +751,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of subnets associated with the VPC for this environment.
+     * The list of subnets associated with the VPC for this runtime environment.
      * </p>
      * 
      * @param subnetIds
-     *        The list of subnets associated with the VPC for this environment.
+     *        The list of subnets associated with the VPC for this runtime environment.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -695,7 +769,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of subnets associated with the VPC for this environment.
+     * The list of subnets associated with the VPC for this runtime environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -704,7 +778,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param subnetIds
-     *        The list of subnets associated with the VPC for this environment.
+     *        The list of subnets associated with the VPC for this runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,11 +794,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of subnets associated with the VPC for this environment.
+     * The list of subnets associated with the VPC for this runtime environment.
      * </p>
      * 
      * @param subnetIds
-     *        The list of subnets associated with the VPC for this environment.
+     *        The list of subnets associated with the VPC for this runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,10 +809,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags for the environment.
+     * The tags for the runtime environment.
      * </p>
      * 
-     * @return The tags for the environment.
+     * @return The tags for the runtime environment.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -747,11 +821,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags for the environment.
+     * The tags for the runtime environment.
      * </p>
      * 
      * @param tags
-     *        The tags for the environment.
+     *        The tags for the runtime environment.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -760,11 +834,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags for the environment.
+     * The tags for the runtime environment.
      * </p>
      * 
      * @param tags
-     *        The tags for the environment.
+     *        The tags for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -825,6 +899,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("HighAvailabilityConfig: ").append(getHighAvailabilityConfig()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPreferredMaintenanceWindow() != null)
@@ -877,6 +953,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -919,6 +999,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getHighAvailabilityConfig() == null) ? 0 : getHighAvailabilityConfig().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());

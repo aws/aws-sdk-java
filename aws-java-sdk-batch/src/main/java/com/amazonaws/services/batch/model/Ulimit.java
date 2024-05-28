@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The <code>ulimit</code> settings to pass to the container.
+ * The <code>ulimit</code> settings to pass to the container. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Ulimit.html">Ulimit</a>.
  * </p>
  * <note>
  * <p>
@@ -40,7 +41,10 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
     private Integer hardLimit;
     /**
      * <p>
-     * The <code>type</code> of the <code>ulimit</code>.
+     * The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> |
+     * <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> |
+     * <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      * </p>
      */
     private String name;
@@ -93,11 +97,17 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>type</code> of the <code>ulimit</code>.
+     * The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> |
+     * <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> |
+     * <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      * </p>
      * 
      * @param name
-     *        The <code>type</code> of the <code>ulimit</code>.
+     *        The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> |
+     *        <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code>
+     *        | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> |
+     *        <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      */
 
     public void setName(String name) {
@@ -106,10 +116,16 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>type</code> of the <code>ulimit</code>.
+     * The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> |
+     * <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> |
+     * <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      * </p>
      * 
-     * @return The <code>type</code> of the <code>ulimit</code>.
+     * @return The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code>
+     *         | <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> |
+     *         <code>msgqueue</code> | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> |
+     *         <code>rtprio</code> | <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      */
 
     public String getName() {
@@ -118,11 +134,17 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>type</code> of the <code>ulimit</code>.
+     * The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> |
+     * <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code> |
+     * <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> |
+     * <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      * </p>
      * 
      * @param name
-     *        The <code>type</code> of the <code>ulimit</code>.
+     *        The <code>type</code> of the <code>ulimit</code>. Valid values are: <code>core</code> | <code>cpu</code> |
+     *        <code>data</code> | <code>fsize</code> | <code>locks</code> | <code>memlock</code> | <code>msgqueue</code>
+     *        | <code>nice</code> | <code>nofile</code> | <code>nproc</code> | <code>rss</code> | <code>rtprio</code> |
+     *        <code>rttime</code> | <code>sigpending</code> | <code>stack</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

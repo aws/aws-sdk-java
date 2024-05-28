@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,9 +66,16 @@ public interface AmazonTranscribe {
      * Creates a new Call Analytics category.
      * </p>
      * <p>
-     * All categories are automatically applied to your Call Analytics jobs. Note that in order to apply your categories
-     * to your jobs, you must create them before submitting your job request, as categories cannot be applied
-     * retroactively.
+     * All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply
+     * categories to your transcriptions, you must create them before submitting your transcription request, as
+     * categories cannot be applied retroactively.
+     * </p>
+     * <p>
+     * When creating a new category, you can use the <code>InputType</code> parameter to label the category as a
+     * <code>POST_CALL</code> or a <code>REAL_TIME</code> category. <code>POST_CALL</code> categories can only be
+     * applied to post-call transcriptions and <code>REAL_TIME</code> categories can only be applied to real-time
+     * transcriptions. If you do not include <code>InputType</code>, your category is created as a
+     * <code>POST_CALL</code> category by default.
      * </p>
      * <p>
      * Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules
@@ -78,30 +85,12 @@ public interface AmazonTranscribe {
      * To update an existing category, see .
      * </p>
      * <p>
-     * To learn more about:
+     * To learn more about Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for
+     * post-call transcriptions</a> and <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for
+     * real-time transcriptions</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Call Analytics categories, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-     * categories</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Using rules, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
-     * >Rule criteria</a> and refer to the data type
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call
-     * center audio with Call Analytics</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createCallAnalyticsCategoryRequest
      * @return Result of the CreateCallAnalyticsCategory operation returned by the service.
@@ -128,7 +117,7 @@ public interface AmazonTranscribe {
      * Creates a new custom language model.
      * </p>
      * <p>
-     * When creating a new language model, you must specify:
+     * When creating a new custom language model, you must specify:
      * </p>
      * <ul>
      * <li>
@@ -153,10 +142,6 @@ public interface AmazonTranscribe {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.
-     * </p>
      * 
      * @param createLanguageModelRequest
      * @return Result of the CreateLanguageModel operation returned by the service.
@@ -183,21 +168,20 @@ public interface AmazonTranscribe {
      * Creates a new custom medical vocabulary.
      * </p>
      * <p>
-     * Prior to creating a new medical vocabulary, you must first upload a text file that contains your new entries,
-     * phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms
-     * within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
-     * the <code>Phrases</code> flag.
+     * Before creating a new custom medical vocabulary, you must first upload a text file that contains your vocabulary
+     * table into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms within your
+     * request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support the
+     * <code>Phrases</code> flag and only accepts vocabularies in table format.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary request fails. Refer to <a
+     * unsupported characters, your custom vocabulary request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
-     * vocabulary</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.
      * </p>
      * 
      * @param createMedicalVocabularyRequest
@@ -225,20 +209,19 @@ public interface AmazonTranscribe {
      * Creates a new custom vocabulary.
      * </p>
      * <p>
-     * When creating a new vocabulary, you can either upload a text file that contains your new entries, phrases, and
-     * terms into an Amazon S3 bucket and include the URI in your request, or you can include a list of terms directly
-     * in your request using the <code>Phrases</code> flag.
+     * When creating a new custom vocabulary, you can either upload a text file that contains your new entries, phrases,
+     * and terms into an Amazon S3 bucket and include the URI in your request. Or you can include a list of terms
+     * directly in your request using the <code>Phrases</code> flag.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary request fails. Refer to <a
+     * unsupported characters, your custom vocabulary request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
-     * vocabulary</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.
      * </p>
      * 
      * @param createVocabularyRequest
@@ -266,19 +249,18 @@ public interface AmazonTranscribe {
      * Creates a new custom vocabulary filter.
      * </p>
      * <p>
-     * You can use vocabulary filters to mask, delete, or flag specific words from your transcript. Vocabulary filters
-     * are commonly used to mask profanity in transcripts.
+     * You can use custom vocabulary filters to mask, delete, or flag specific words from your transcript. Custom
+     * vocabulary filters are commonly used to mask profanity in transcripts.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * unsupported characters, your custom vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with
-     * unwanted words</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Vocabulary filtering</a>.
      * </p>
      * 
      * @param createVocabularyFilterRequest
@@ -353,7 +335,7 @@ public interface AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom language model. To use this operation, specify the name of the language model you want to delete
-     * using <code>ModelName</code>. Language model names are case sensitive.
+     * using <code>ModelName</code>. custom language model names are case sensitive.
      * </p>
      * 
      * @param deleteLanguageModelRequest
@@ -372,6 +354,29 @@ public interface AmazonTranscribe {
      *      API Documentation</a>
      */
     DeleteLanguageModelResult deleteLanguageModel(DeleteLanguageModelRequest deleteLanguageModelRequest);
+
+    /**
+     * <p>
+     * Deletes a Medical Scribe job. To use this operation, specify the name of the job you want to delete using
+     * <code>MedicalScribeJobName</code>. Job names are case sensitive.
+     * </p>
+     * 
+     * @param deleteMedicalScribeJobRequest
+     * @return Result of the DeleteMedicalScribeJob operation returned by the service.
+     * @throws LimitExceededException
+     *         You've either sent too many requests or your input file is too long. Wait before retrying your request,
+     *         or use a smaller file and try your request again.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. This can occur when the entity you're trying to
+     *         delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the
+     *         exception message field for more information.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message, correct the issue, and try your request again.
+     * @sample AmazonTranscribe.DeleteMedicalScribeJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMedicalScribeJobResult deleteMedicalScribeJob(DeleteMedicalScribeJobRequest deleteMedicalScribeJobRequest);
 
     /**
      * <p>
@@ -398,8 +403,8 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a custom medical vocabulary. To use this operation, specify the name of the vocabulary you want to delete
-     * using <code>VocabularyName</code>. Vocabulary names are case sensitive.
+     * Deletes a custom medical vocabulary. To use this operation, specify the name of the custom vocabulary you want to
+     * delete using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalVocabularyRequest
@@ -447,8 +452,8 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary you want to delete using
-     * <code>VocabularyName</code>. Vocabulary names are case sensitive.
+     * Deletes a custom vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete
+     * using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyRequest
@@ -473,8 +478,8 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary filter you want to delete
-     * using <code>VocabularyFilterName</code>. Vocabulary filter names are case sensitive.
+     * Deletes a custom vocabulary filter. To use this operation, specify the name of the custom vocabulary filter you
+     * want to delete using <code>VocabularyFilterName</code>. Custom vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyFilterRequest
@@ -502,16 +507,13 @@ public interface AmazonTranscribe {
      * Provides information about the specified custom language model.
      * </p>
      * <p>
-     * This operation also shows if the base language model you used to create your custom language model has been
+     * This operation also shows if the base language model that you used to create your custom language model has been
      * updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the
      * updated base model.
      * </p>
      * <p>
      * If you tried to create a new custom language model and the request wasn't successful, you can use
      * <code>DescribeLanguageModel</code> to help identify the reason for this failure.
-     * </p>
-     * <p>
-     * To get a list of your custom language models, use the operation.
      * </p>
      * 
      * @param describeLanguageModelRequest
@@ -606,11 +608,45 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
+     * Provides information about the specified Medical Scribe job.
+     * </p>
+     * <p>
+     * To view the status of the specified medical transcription job, check the <code>MedicalScribeJobStatus</code>
+     * field. If the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location
+     * specified in <code>MedicalScribeOutput</code>. If the status is <code>FAILED</code>, <code>FailureReason</code>
+     * provides details on why your Medical Scribe job failed.
+     * </p>
+     * <p>
+     * To get a list of your Medical Scribe jobs, use the operation.
+     * </p>
+     * 
+     * @param getMedicalScribeJobRequest
+     * @return Result of the GetMedicalScribeJob operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. This can occur when the entity you're trying to
+     *         delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the
+     *         exception message field for more information.
+     * @throws LimitExceededException
+     *         You've either sent too many requests or your input file is too long. Wait before retrying your request,
+     *         or use a smaller file and try your request again.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message, correct the issue, and try your request again.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check that the specified name is correct and try your request
+     *         again.
+     * @sample AmazonTranscribe.GetMedicalScribeJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetMedicalScribeJobResult getMedicalScribeJob(GetMedicalScribeJobRequest getMedicalScribeJobRequest);
+
+    /**
+     * <p>
      * Provides information about the specified medical transcription job.
      * </p>
      * <p>
      * To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
-     * field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * field. If the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location
      * specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code>
      * provides details on why your transcription job failed.
      * </p>
@@ -643,9 +679,9 @@ public interface AmazonTranscribe {
      * Provides information about the specified custom medical vocabulary.
      * </p>
      * <p>
-     * To view the status of the specified medical vocabulary, check the <code>VocabularyState</code> field. If the
-     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code> field. If
+     * the status is <code>READY</code>, your custom vocabulary is available to use. If the status is
+     * <code>FAILED</code>, <code>FailureReason</code> provides details on why your vocabulary failed.
      * </p>
      * <p>
      * To get a list of your custom medical vocabularies, use the operation.
@@ -677,9 +713,9 @@ public interface AmazonTranscribe {
      * </p>
      * <p>
      * To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If
-     * the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified
-     * in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides
-     * details on why your transcription job failed.
+     * the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location specified in
+     * <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     * on why your transcription job failed.
      * </p>
      * <p>
      * If you enabled content redaction, the redacted transcript can be found at the location specified in
@@ -714,9 +750,9 @@ public interface AmazonTranscribe {
      * Provides information about the specified custom vocabulary.
      * </p>
      * <p>
-     * To view the status of the specified vocabulary, check the <code>VocabularyState</code> field. If the status is
-     * <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * To view the status of the specified custom vocabulary, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your custom vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your custom vocabulary failed.
      * </p>
      * <p>
      * To get a list of your custom vocabularies, use the operation.
@@ -745,11 +781,6 @@ public interface AmazonTranscribe {
     /**
      * <p>
      * Provides information about the specified custom vocabulary filter.
-     * </p>
-     * <p>
-     * To view the status of the specified vocabulary filter, check the <code>VocabularyState</code> field. If the
-     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary filter failed.
      * </p>
      * <p>
      * To get a list of your custom vocabulary filters, use the operation.
@@ -829,7 +860,7 @@ public interface AmazonTranscribe {
     /**
      * <p>
      * Provides a list of custom language models that match the specified criteria. If no criteria are specified, all
-     * language models are returned.
+     * custom language models are returned.
      * </p>
      * <p>
      * To get detailed information about a specific custom language model, use the operation.
@@ -851,6 +882,32 @@ public interface AmazonTranscribe {
      *      API Documentation</a>
      */
     ListLanguageModelsResult listLanguageModels(ListLanguageModelsRequest listLanguageModelsRequest);
+
+    /**
+     * <p>
+     * Provides a list of Medical Scribe jobs that match the specified criteria. If no criteria are specified, all
+     * Medical Scribe jobs are returned.
+     * </p>
+     * <p>
+     * To get detailed information about a specific Medical Scribe job, use the operation.
+     * </p>
+     * 
+     * @param listMedicalScribeJobsRequest
+     * @return Result of the ListMedicalScribeJobs operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. This can occur when the entity you're trying to
+     *         delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the
+     *         exception message field for more information.
+     * @throws LimitExceededException
+     *         You've either sent too many requests or your input file is too long. Wait before retrying your request,
+     *         or use a smaller file and try your request again.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message, correct the issue, and try your request again.
+     * @sample AmazonTranscribe.ListMedicalScribeJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMedicalScribeJobsResult listMedicalScribeJobs(ListMedicalScribeJobsRequest listMedicalScribeJobsRequest);
 
     /**
      * <p>
@@ -1017,22 +1074,27 @@ public interface AmazonTranscribe {
      * include in your request.
      * </p>
      * <p>
-     * In addition to many of the standard transcription features, Call Analytics provides you with call
-     * characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your
-     * audio file. You can also apply custom categories to flag specified conditions. To learn more about these features
-     * and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
-     * call center audio with Call Analytics</a>.
+     * In addition to many standard transcription features, Call Analytics provides you with call characteristics, call
+     * summarization, speaker sentiment, and optional redaction of your text transcript and your audio file. You can
+     * also apply custom categories to flag specified conditions. To learn more about these features and insights, refer
+     * to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio
+     * with Call Analytics</a>.
      * </p>
      * <p>
      * If you want to apply categories to your Call Analytics job, you must create them before submitting your job
      * request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To
      * learn more about Call Analytics categories, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-     * categories</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for
+     * post-call transcriptions</a> and <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for
+     * real-time transcriptions</a>.
      * </p>
      * <p>
      * To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3
      * bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
      * You must include the following parameters in your <code>StartCallAnalyticsJob</code> request:
@@ -1047,8 +1109,8 @@ public interface AmazonTranscribe {
      * </li>
      * <li>
      * <p>
-     * <code>CallAnalyticsJobName</code>: A custom name you create for your transcription job that is unique within your
-     * Amazon Web Services account.
+     * <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription job that's unique within
+     * your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
@@ -1095,19 +1157,97 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
+     * Transcribes patient-clinician conversations and generates clinical notes.
+     * </p>
+     * <p>
+     * Amazon Web Services HealthScribe automatically provides rich conversation transcripts, identifies speaker roles,
+     * classifies dialogues, extracts medical terms, and generates preliminary clinical notes. To learn more about these
+     * features, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/health-scribe.html">Amazon Web
+     * Services HealthScribe</a>.
+     * </p>
+     * <p>
+     * To make a <code>StartMedicalScribeJob</code> request, you must first upload your media file into an Amazon S3
+     * bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
+     * </p>
+     * <p>
+     * You must include the following parameters in your <code>StartMedicalTranscriptionJob</code> request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DataAccessRoleArn</code>: The ARN of an IAM role with the these minimum permissions: read permission on
+     * input file Amazon S3 bucket specified in <code>Media</code>, write permission on the Amazon S3 bucket specified
+     * in <code>OutputBucketName</code>, and full permissions on the KMS key specified in
+     * <code>OutputEncryptionKMSKeyId</code> (if set). The role should also allow <code>transcribe.amazonaws.com</code>
+     * to assume it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media file.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MedicalScribeJobName</code>: A custom name you create for your MedicalScribe job that is unique within your
+     * Amazon Web Services account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OutputBucketName</code>: The Amazon S3 bucket where you want your output files stored.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Settings</code>: A <code>MedicalScribeSettings</code> obect that must set exactly one of
+     * <code>ShowSpeakerLabels</code> or <code>ChannelIdentification</code> to true. If <code>ShowSpeakerLabels</code>
+     * is true, <code>MaxSpeakerLabels</code> must also be set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ChannelDefinitions</code>: A <code>MedicalScribeChannelDefinitions</code> array should be set if and only
+     * if the <code>ChannelIdentification</code> value of <code>Settings</code> is set to true.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startMedicalScribeJobRequest
+     * @return Result of the StartMedicalScribeJob operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. This can occur when the entity you're trying to
+     *         delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the
+     *         exception message field for more information.
+     * @throws LimitExceededException
+     *         You've either sent too many requests or your input file is too long. Wait before retrying your request,
+     *         or use a smaller file and try your request again.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message, correct the issue, and try your request again.
+     * @throws ConflictException
+     *         A resource already exists with this name. Resource names must be unique within an Amazon Web Services
+     *         account.
+     * @sample AmazonTranscribe.StartMedicalScribeJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMedicalScribeJobResult startMedicalScribeJob(StartMedicalScribeJobRequest startMedicalScribeJobRequest);
+
+    /**
+     * <p>
      * Transcribes the audio from a medical dictation or conversation and applies any additional Request Parameters you
      * choose to include in your request.
      * </p>
      * <p>
-     * In addition to many of the standard transcription features, Amazon Transcribe Medical provides you with a robust
-     * medical vocabulary and, optionally, content identification, which adds flags to personal health information
-     * (PHI). To learn more about these features, refer to <a
+     * In addition to many standard transcription features, Amazon Transcribe Medical provides you with a robust medical
+     * vocabulary and, optionally, content identification, which adds flags to personal health information (PHI). To
+     * learn more about these features, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How Amazon Transcribe Medical
      * works</a>.
      * </p>
      * <p>
      * To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload your media file into an Amazon
-     * S3 bucket; you can then specify the S3 location of the file using the <code>Media</code> parameter.
+     * S3 bucket; you can then specify the Amazon S3 location of the file using the <code>Media</code> parameter.
      * </p>
      * <p>
      * You must include the following parameters in your <code>StartMedicalTranscriptionJob</code> request:
@@ -1211,7 +1351,7 @@ public interface AmazonTranscribe {
      * you know the language of your media file, specify it using the <code>LanguageCode</code> parameter; you can find
      * all valid language codes in the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * If you don't know the languages spoken in your media, use either <code>IdentifyLanguage</code> or
+     * If you do not know the languages spoken in your media, use either <code>IdentifyLanguage</code> or
      * <code>IdentifyMultipleLanguages</code> and let Amazon Transcribe identify the languages for you.
      * </p>
      * </li>
@@ -1337,7 +1477,7 @@ public interface AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information
-     * with your new values; you cannot append new terms onto an existing vocabulary.
+     * with your new values; you cannot append new terms onto an existing custom vocabulary.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
@@ -1366,7 +1506,7 @@ public interface AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom vocabulary with new values. This operation overwrites all existing information with
-     * your new values; you cannot append new terms onto an existing vocabulary.
+     * your new values; you cannot append new terms onto an existing custom vocabulary.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -1395,7 +1535,7 @@ public interface AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all
-     * previous entries; you cannot append new terms onto an existing vocabulary filter.
+     * previous entries; you cannot append new terms onto an existing custom vocabulary filter.
      * </p>
      * 
      * @param updateVocabularyFilterRequest

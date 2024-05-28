@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class CodeRepositoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCodeVersion").build();
     private static final MarshallingInfo<StructuredPojo> CODECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeConfiguration").build();
+    private static final MarshallingInfo<String> SOURCEDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDirectory").build();
 
     private static final CodeRepositoryMarshaller instance = new CodeRepositoryMarshaller();
 
@@ -53,6 +55,7 @@ public class CodeRepositoryMarshaller {
             protocolMarshaller.marshall(codeRepository.getRepositoryUrl(), REPOSITORYURL_BINDING);
             protocolMarshaller.marshall(codeRepository.getSourceCodeVersion(), SOURCECODEVERSION_BINDING);
             protocolMarshaller.marshall(codeRepository.getCodeConfiguration(), CODECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(codeRepository.getSourceDirectory(), SOURCEDIRECTORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,10 @@ public class DescribeTaskExecutionResultJsonUnmarshaller implements Unmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ManifestConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setManifestConfig(ManifestConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
                     describeTaskExecutionResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -96,13 +100,37 @@ public class DescribeTaskExecutionResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeTaskExecutionResult.setBytesTransferred(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("BytesCompressed", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("Result", targetDepth)) {
                     context.nextToken();
                     describeTaskExecutionResult.setResult(TaskExecutionResultDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("BytesCompressed", targetDepth)) {
+                if (context.testExpression("TaskReportConfig", targetDepth)) {
                     context.nextToken();
-                    describeTaskExecutionResult.setBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
+                    describeTaskExecutionResult.setTaskReportConfig(TaskReportConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FilesDeleted", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setFilesDeleted(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FilesSkipped", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setFilesSkipped(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FilesVerified", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setFilesVerified(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ReportResult", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setReportResult(ReportResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EstimatedFilesToDelete", targetDepth)) {
+                    context.nextToken();
+                    describeTaskExecutionResult.setEstimatedFilesToDelete(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

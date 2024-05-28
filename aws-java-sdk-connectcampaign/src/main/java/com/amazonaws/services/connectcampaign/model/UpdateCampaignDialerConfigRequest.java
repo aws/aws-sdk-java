@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,35 +28,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateCampaignDialerConfigRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    private DialerConfig dialerConfig;
-
     private String id;
 
-    /**
-     * @param dialerConfig
-     */
-
-    public void setDialerConfig(DialerConfig dialerConfig) {
-        this.dialerConfig = dialerConfig;
-    }
-
-    /**
-     * @return
-     */
-
-    public DialerConfig getDialerConfig() {
-        return this.dialerConfig;
-    }
-
-    /**
-     * @param dialerConfig
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateCampaignDialerConfigRequest withDialerConfig(DialerConfig dialerConfig) {
-        setDialerConfig(dialerConfig);
-        return this;
-    }
+    private DialerConfig dialerConfig;
 
     /**
      * @param id
@@ -85,6 +59,32 @@ public class UpdateCampaignDialerConfigRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * @param dialerConfig
+     */
+
+    public void setDialerConfig(DialerConfig dialerConfig) {
+        this.dialerConfig = dialerConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DialerConfig getDialerConfig() {
+        return this.dialerConfig;
+    }
+
+    /**
+     * @param dialerConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCampaignDialerConfigRequest withDialerConfig(DialerConfig dialerConfig) {
+        setDialerConfig(dialerConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -96,10 +96,10 @@ public class UpdateCampaignDialerConfigRequest extends com.amazonaws.AmazonWebSe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDialerConfig() != null)
-            sb.append("DialerConfig: ").append(getDialerConfig()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getDialerConfig() != null)
+            sb.append("DialerConfig: ").append(getDialerConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -114,13 +114,13 @@ public class UpdateCampaignDialerConfigRequest extends com.amazonaws.AmazonWebSe
         if (obj instanceof UpdateCampaignDialerConfigRequest == false)
             return false;
         UpdateCampaignDialerConfigRequest other = (UpdateCampaignDialerConfigRequest) obj;
-        if (other.getDialerConfig() == null ^ this.getDialerConfig() == null)
-            return false;
-        if (other.getDialerConfig() != null && other.getDialerConfig().equals(this.getDialerConfig()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getDialerConfig() == null ^ this.getDialerConfig() == null)
+            return false;
+        if (other.getDialerConfig() != null && other.getDialerConfig().equals(this.getDialerConfig()) == false)
             return false;
         return true;
     }
@@ -130,8 +130,8 @@ public class UpdateCampaignDialerConfigRequest extends com.amazonaws.AmazonWebSe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDialerConfig() == null) ? 0 : getDialerConfig().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getDialerConfig() == null) ? 0 : getDialerConfig().hashCode());
         return hashCode;
     }
 

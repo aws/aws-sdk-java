@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ import java.util.concurrent.ExecutorService;
  * Virtual Private Cloud (Amazon VPC). With Network Firewall, you can filter traffic at the perimeter of your VPC. This
  * includes filtering traffic going to and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
  * Network Firewall uses rules that are compatible with Suricata, a free, open source network analysis and threat
- * detection engine. Network Firewall supports Suricata version 5.0.2. For information about Suricata, see the <a
+ * detection engine. Network Firewall supports Suricata version 6.0.9. For information about Suricata, see the <a
  * href="https://suricata.io/">Suricata website</a>.
  * </p>
  * <p>
@@ -348,6 +348,41 @@ public class AWSNetworkFirewallAsyncClient extends AWSNetworkFirewallClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTLSInspectionConfigurationResult> createTLSInspectionConfigurationAsync(
+            CreateTLSInspectionConfigurationRequest request) {
+
+        return createTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTLSInspectionConfigurationResult> createTLSInspectionConfigurationAsync(
+            final CreateTLSInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTLSInspectionConfigurationRequest, CreateTLSInspectionConfigurationResult> asyncHandler) {
+        final CreateTLSInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTLSInspectionConfigurationResult>() {
+            @Override
+            public CreateTLSInspectionConfigurationResult call() throws Exception {
+                CreateTLSInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeCreateTLSInspectionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFirewallResult> deleteFirewallAsync(DeleteFirewallRequest request) {
 
         return deleteFirewallAsync(request, null);
@@ -464,6 +499,41 @@ public class AWSNetworkFirewallAsyncClient extends AWSNetworkFirewallClient impl
 
                 try {
                     result = executeDeleteRuleGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTLSInspectionConfigurationResult> deleteTLSInspectionConfigurationAsync(
+            DeleteTLSInspectionConfigurationRequest request) {
+
+        return deleteTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTLSInspectionConfigurationResult> deleteTLSInspectionConfigurationAsync(
+            final DeleteTLSInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTLSInspectionConfigurationRequest, DeleteTLSInspectionConfigurationResult> asyncHandler) {
+        final DeleteTLSInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTLSInspectionConfigurationResult>() {
+            @Override
+            public DeleteTLSInspectionConfigurationResult call() throws Exception {
+                DeleteTLSInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteTLSInspectionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -678,6 +748,41 @@ public class AWSNetworkFirewallAsyncClient extends AWSNetworkFirewallClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTLSInspectionConfigurationResult> describeTLSInspectionConfigurationAsync(
+            DescribeTLSInspectionConfigurationRequest request) {
+
+        return describeTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTLSInspectionConfigurationResult> describeTLSInspectionConfigurationAsync(
+            final DescribeTLSInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTLSInspectionConfigurationRequest, DescribeTLSInspectionConfigurationResult> asyncHandler) {
+        final DescribeTLSInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTLSInspectionConfigurationResult>() {
+            @Override
+            public DescribeTLSInspectionConfigurationResult call() throws Exception {
+                DescribeTLSInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeTLSInspectionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateSubnetsResult> disassociateSubnetsAsync(DisassociateSubnetsRequest request) {
 
         return disassociateSubnetsAsync(request, null);
@@ -794,6 +899,41 @@ public class AWSNetworkFirewallAsyncClient extends AWSNetworkFirewallClient impl
 
                 try {
                     result = executeListRuleGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTLSInspectionConfigurationsResult> listTLSInspectionConfigurationsAsync(
+            ListTLSInspectionConfigurationsRequest request) {
+
+        return listTLSInspectionConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTLSInspectionConfigurationsResult> listTLSInspectionConfigurationsAsync(
+            final ListTLSInspectionConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTLSInspectionConfigurationsRequest, ListTLSInspectionConfigurationsResult> asyncHandler) {
+        final ListTLSInspectionConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTLSInspectionConfigurationsResult>() {
+            @Override
+            public ListTLSInspectionConfigurationsResult call() throws Exception {
+                ListTLSInspectionConfigurationsResult result = null;
+
+                try {
+                    result = executeListTLSInspectionConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1195,6 +1335,41 @@ public class AWSNetworkFirewallAsyncClient extends AWSNetworkFirewallClient impl
 
                 try {
                     result = executeUpdateSubnetChangeProtection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTLSInspectionConfigurationResult> updateTLSInspectionConfigurationAsync(
+            UpdateTLSInspectionConfigurationRequest request) {
+
+        return updateTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTLSInspectionConfigurationResult> updateTLSInspectionConfigurationAsync(
+            final UpdateTLSInspectionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTLSInspectionConfigurationRequest, UpdateTLSInspectionConfigurationResult> asyncHandler) {
+        final UpdateTLSInspectionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTLSInspectionConfigurationResult>() {
+            @Override
+            public UpdateTLSInspectionConfigurationResult call() throws Exception {
+                UpdateTLSInspectionConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateTLSInspectionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

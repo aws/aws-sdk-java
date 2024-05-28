@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,9 +38,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      */
     private DeploymentCircuitBreaker deploymentCircuitBreaker;
@@ -102,7 +104,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * For services are that <i>do</i> use a load balancer, the following should be noted:
+     * For services that <i>do</i> use a load balancer, the following should be noted:
      * </p>
      * <ul>
      * <li>
@@ -121,6 +123,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
+     * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
      * value and is used to define the lower limit on the number of the tasks in the service that remain in the
@@ -131,6 +142,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private Integer minimumHealthyPercent;
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     */
+    private DeploymentAlarms alarms;
 
     /**
      * <note>
@@ -141,9 +158,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      * 
      * @param deploymentCircuitBreaker
@@ -154,9 +173,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </note>
      *        <p>
      *        The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
-     *        can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition
-     *        to a failed state and stop launching new tasks. If rollback is enabled, when a service deployment fails,
-     *        the service is rolled back to the last deployment that completed successfully.
+     *        can't reach a steady state. If you use the deployment circuit breaker, a service deployment will
+     *        transition to a failed state and stop launching new tasks. If you use the rollback option, when a service
+     *        deployment fails, the service is rolled back to the last deployment that completed successfully. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     *        update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
      */
 
     public void setDeploymentCircuitBreaker(DeploymentCircuitBreaker deploymentCircuitBreaker) {
@@ -172,9 +194,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      * 
      * @return <p>
@@ -184,9 +208,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         </note>
      *         <p>
      *         The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
-     *         can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will
-     *         transition to a failed state and stop launching new tasks. If rollback is enabled, when a service
-     *         deployment fails, the service is rolled back to the last deployment that completed successfully.
+     *         can't reach a steady state. If you use the deployment circuit breaker, a service deployment will
+     *         transition to a failed state and stop launching new tasks. If you use the rollback option, when a service
+     *         deployment fails, the service is rolled back to the last deployment that completed successfully. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     *         update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
      */
 
     public DeploymentCircuitBreaker getDeploymentCircuitBreaker() {
@@ -202,9 +229,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      * 
      * @param deploymentCircuitBreaker
@@ -215,9 +244,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </note>
      *        <p>
      *        The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
-     *        can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition
-     *        to a failed state and stop launching new tasks. If rollback is enabled, when a service deployment fails,
-     *        the service is rolled back to the last deployment that completed successfully.
+     *        can't reach a steady state. If you use the deployment circuit breaker, a service deployment will
+     *        transition to a failed state and stop launching new tasks. If you use the rollback option, when a service
+     *        deployment fails, the service is rolled back to the last deployment that completed successfully. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     *        update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,7 +425,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * For services are that <i>do</i> use a load balancer, the following should be noted:
+     * For services that <i>do</i> use a load balancer, the following should be noted:
      * </p>
      * <ul>
      * <li>
@@ -411,6 +443,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
      * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
@@ -457,7 +498,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </li>
      *        </ul>
      *        <p>
-     *        For services are that <i>do</i> use a load balancer, the following should be noted:
+     *        For services that <i>do</i> use a load balancer, the following should be noted:
      *        </p>
      *        <ul>
      *        <li>
@@ -475,6 +516,16 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     *        <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is
+     *        0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     *        Console.
+     *        </p>
+     *        <p>
+     *        The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     *        </p>
      *        <p>
      *        If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment
      *        types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set
@@ -526,7 +577,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * For services are that <i>do</i> use a load balancer, the following should be noted:
+     * For services that <i>do</i> use a load balancer, the following should be noted:
      * </p>
      * <ul>
      * <li>
@@ -544,6 +595,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
      * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
@@ -589,7 +649,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         </li>
      *         </ul>
      *         <p>
-     *         For services are that <i>do</i> use a load balancer, the following should be noted:
+     *         For services that <i>do</i> use a load balancer, the following should be noted:
      *         </p>
      *         <ul>
      *         <li>
@@ -607,6 +667,16 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     *         <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is
+     *         0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     *         Console.
+     *         </p>
+     *         <p>
+     *         The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
+     *         the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     *         </p>
      *         <p>
      *         If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
      *         deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b>
@@ -658,7 +728,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * For services are that <i>do</i> use a load balancer, the following should be noted:
+     * For services that <i>do</i> use a load balancer, the following should be noted:
      * </p>
      * <ul>
      * <li>
@@ -676,6 +746,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
      * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
@@ -722,7 +801,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </li>
      *        </ul>
      *        <p>
-     *        For services are that <i>do</i> use a load balancer, the following should be noted:
+     *        For services that <i>do</i> use a load balancer, the following should be noted:
      *        </p>
      *        <ul>
      *        <li>
@@ -741,6 +820,16 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </li>
      *        </ul>
      *        <p>
+     *        The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     *        <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is
+     *        0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     *        Console.
+     *        </p>
+     *        <p>
+     *        The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     *        </p>
+     *        <p>
      *        If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment
      *        types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set
      *        to the default value and is used to define the lower limit on the number of the tasks in the service that
@@ -753,6 +842,46 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
 
     public DeploymentConfiguration withMinimumHealthyPercent(Integer minimumHealthyPercent) {
         setMinimumHealthyPercent(minimumHealthyPercent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     * 
+     * @param alarms
+     *        Information about the CloudWatch alarms.
+     */
+
+    public void setAlarms(DeploymentAlarms alarms) {
+        this.alarms = alarms;
+    }
+
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     * 
+     * @return Information about the CloudWatch alarms.
+     */
+
+    public DeploymentAlarms getAlarms() {
+        return this.alarms;
+    }
+
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     * 
+     * @param alarms
+     *        Information about the CloudWatch alarms.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfiguration withAlarms(DeploymentAlarms alarms) {
+        setAlarms(alarms);
         return this;
     }
 
@@ -773,7 +902,9 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
         if (getMaximumPercent() != null)
             sb.append("MaximumPercent: ").append(getMaximumPercent()).append(",");
         if (getMinimumHealthyPercent() != null)
-            sb.append("MinimumHealthyPercent: ").append(getMinimumHealthyPercent());
+            sb.append("MinimumHealthyPercent: ").append(getMinimumHealthyPercent()).append(",");
+        if (getAlarms() != null)
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -800,6 +931,10 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getMinimumHealthyPercent() != null && other.getMinimumHealthyPercent().equals(this.getMinimumHealthyPercent()) == false)
             return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -811,6 +946,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDeploymentCircuitBreaker() == null) ? 0 : getDeploymentCircuitBreaker().hashCode());
         hashCode = prime * hashCode + ((getMaximumPercent() == null) ? 0 : getMaximumPercent().hashCode());
         hashCode = prime * hashCode + ((getMinimumHealthyPercent() == null) ? 0 : getMinimumHealthyPercent().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 

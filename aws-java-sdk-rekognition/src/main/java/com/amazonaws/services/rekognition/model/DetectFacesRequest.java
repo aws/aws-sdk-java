@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,21 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Image image;
     /**
      * <p>
-     * An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
-     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned, but the operation takes longer to complete.
+     * An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes -
+     * <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to
+     * the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
+     * You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase
+     * response time.
      * </p>
      * <p>
-     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
-     * attributes to return (in this case, all attributes).
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine
+     * which attributes to return (in this case, all attributes).
+     * </p>
+     * <p>
+     * Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>,
+     * they aren't supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.
      * </p>
      */
     private java.util.List<String> attributes;
@@ -118,26 +124,37 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
-     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned, but the operation takes longer to complete.
+     * An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes -
+     * <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to
+     * the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
+     * You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase
+     * response time.
      * </p>
      * <p>
-     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
-     * attributes to return (in this case, all attributes).
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine
+     * which attributes to return (in this case, all attributes).
+     * </p>
+     * <p>
+     * Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>,
+     * they aren't supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.
      * </p>
      * 
-     * @return An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     *         attributes. If you don't specify a value for <code>Attributes</code> or if you specify
-     *         <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *         <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
-     *         <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
-     *         operation takes longer to complete.</p>
+     * @return An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes
+     *         - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *         <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in
+     *         addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [
+     *         <code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>.
+     *         Requesting more attributes may increase response time.</p>
      *         <p>
-     *         If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to
+     *         If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to
      *         determine which attributes to return (in this case, all attributes).
+     *         </p>
+     *         <p>
+     *         Note that while the FaceOccluded and EyeDirection attributes are supported when using
+     *         <code>DetectFaces</code>, they aren't supported when analyzing videos with
+     *         <code>StartFaceDetection</code> and <code>GetFaceDetection</code>.
      * @see Attribute
      */
 
@@ -147,27 +164,38 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
-     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned, but the operation takes longer to complete.
+     * An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes -
+     * <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to
+     * the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
+     * You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase
+     * response time.
      * </p>
      * <p>
-     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
-     * attributes to return (in this case, all attributes).
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine
+     * which attributes to return (in this case, all attributes).
+     * </p>
+     * <p>
+     * Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>,
+     * they aren't supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.
      * </p>
      * 
      * @param attributes
-     *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
-     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
-     *        operation takes longer to complete.</p>
+     *        An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes
+     *        - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in
+     *        addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [
+     *        <code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>.
+     *        Requesting more attributes may increase response time.</p>
      *        <p>
-     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
-     *        which attributes to return (in this case, all attributes).
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to
+     *        determine which attributes to return (in this case, all attributes).
+     *        </p>
+     *        <p>
+     *        Note that while the FaceOccluded and EyeDirection attributes are supported when using
+     *        <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code>
+     *        and <code>GetFaceDetection</code>.
      * @see Attribute
      */
 
@@ -182,15 +210,21 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
-     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned, but the operation takes longer to complete.
+     * An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes -
+     * <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to
+     * the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
+     * You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase
+     * response time.
      * </p>
      * <p>
-     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
-     * attributes to return (in this case, all attributes).
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine
+     * which attributes to return (in this case, all attributes).
+     * </p>
+     * <p>
+     * Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>,
+     * they aren't supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -199,15 +233,20 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param attributes
-     *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
-     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
-     *        operation takes longer to complete.</p>
+     *        An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes
+     *        - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in
+     *        addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [
+     *        <code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>.
+     *        Requesting more attributes may increase response time.</p>
      *        <p>
-     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
-     *        which attributes to return (in this case, all attributes).
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to
+     *        determine which attributes to return (in this case, all attributes).
+     *        </p>
+     *        <p>
+     *        Note that while the FaceOccluded and EyeDirection attributes are supported when using
+     *        <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code>
+     *        and <code>GetFaceDetection</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -224,27 +263,38 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
-     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned, but the operation takes longer to complete.
+     * An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes -
+     * <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to
+     * the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
+     * You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase
+     * response time.
      * </p>
      * <p>
-     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
-     * attributes to return (in this case, all attributes).
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine
+     * which attributes to return (in this case, all attributes).
+     * </p>
+     * <p>
+     * Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>,
+     * they aren't supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.
      * </p>
      * 
      * @param attributes
-     *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
-     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
-     *        operation takes longer to complete.</p>
+     *        An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes
+     *        - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in
+     *        addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [
+     *        <code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>.
+     *        Requesting more attributes may increase response time.</p>
      *        <p>
-     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
-     *        which attributes to return (in this case, all attributes).
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to
+     *        determine which attributes to return (in this case, all attributes).
+     *        </p>
+     *        <p>
+     *        Note that while the FaceOccluded and EyeDirection attributes are supported when using
+     *        <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code>
+     *        and <code>GetFaceDetection</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -256,27 +306,38 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
-     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
-     * facial attributes are returned, but the operation takes longer to complete.
+     * An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes -
+     * <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in addition to
+     * the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
+     * You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting more attributes may increase
+     * response time.
      * </p>
      * <p>
-     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
-     * attributes to return (in this case, all attributes).
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to determine
+     * which attributes to return (in this case, all attributes).
+     * </p>
+     * <p>
+     * Note that while the FaceOccluded and EyeDirection attributes are supported when using <code>DetectFaces</code>,
+     * they aren't supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.
      * </p>
      * 
      * @param attributes
-     *        An array of facial attributes you want to be returned. This can be the default list of attributes or all
-     *        attributes. If you don't specify a value for <code>Attributes</code> or if you specify
-     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
-     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
-     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the
-     *        operation takes longer to complete.</p>
+     *        An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset of facial attributes
+     *        - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     *        <code>Landmarks</code> - will always be returned. You can request for specific facial attributes (in
+     *        addition to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [
+     *        <code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes by using [<code>"ALL"]</code>.
+     *        Requesting more attributes may increase response time.</p>
      *        <p>
-     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
-     *        which attributes to return (in this case, all attributes).
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND" operator to
+     *        determine which attributes to return (in this case, all attributes).
+     *        </p>
+     *        <p>
+     *        Note that while the FaceOccluded and EyeDirection attributes are supported when using
+     *        <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code>
+     *        and <code>GetFaceDetection</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */

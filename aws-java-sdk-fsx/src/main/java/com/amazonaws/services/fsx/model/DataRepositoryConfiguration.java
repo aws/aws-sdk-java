@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>CreateFileSystem</code> operation.
  * </p>
  * <p>
- * This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .
+ * This data type is not supported on file systems with a data repository association. For file systems with a data
+ * repository association, see .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryConfiguration" target="_top">AWS

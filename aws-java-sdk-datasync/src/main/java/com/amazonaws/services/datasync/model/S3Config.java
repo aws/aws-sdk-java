@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,11 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.
+ * Specifies the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that DataSync uses to
+ * access your S3 bucket.
  * </p>
  * <p>
- * For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User
- * Guide</i>.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access"
+ * >Accessing S3 buckets</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/S3Config" target="_top">AWS API
@@ -34,18 +36,18 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role for accessing the S3 bucket.
+     * Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      * </p>
      */
     private String bucketAccessRoleArn;
 
     /**
      * <p>
-     * The ARN of the IAM role for accessing the S3 bucket.
+     * Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      * </p>
      * 
      * @param bucketAccessRoleArn
-     *        The ARN of the IAM role for accessing the S3 bucket.
+     *        Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      */
 
     public void setBucketAccessRoleArn(String bucketAccessRoleArn) {
@@ -54,10 +56,10 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role for accessing the S3 bucket.
+     * Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      * </p>
      * 
-     * @return The ARN of the IAM role for accessing the S3 bucket.
+     * @return Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      */
 
     public String getBucketAccessRoleArn() {
@@ -66,11 +68,11 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role for accessing the S3 bucket.
+     * Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      * </p>
      * 
      * @param bucketAccessRoleArn
-     *        The ARN of the IAM role for accessing the S3 bucket.
+     *        Specifies the ARN of the IAM role that DataSync uses to access your S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

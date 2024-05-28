@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,10 @@ import javax.annotation.Generated;
 /**
  * Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder
  * automatically choose this value for you based on characteristics of your input video. To enable this automatic
- * behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode
- * control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF,
- * set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the
- * GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the
- * related setting GOP size (GopSize).
+ * behavior, choose Auto and and leave GOP size blank. By default, if you don't specify GOP mode control, MediaConvert
+ * will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and
+ * leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified,
+ * frames or Specified, seconds and then provide the GOP length in the related setting GOP size.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265GopSizeUnits {

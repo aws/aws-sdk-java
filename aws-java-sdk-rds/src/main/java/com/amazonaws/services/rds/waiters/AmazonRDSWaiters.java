@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,19 @@ public class AmazonRDSWaiters {
     @SdkInternalApi
     public AmazonRDSWaiters(AmazonRDS client) {
         this.client = client;
+    }
+
+    /**
+     * Builds a TenantDatabaseDeleted waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeTenantDatabasesRequest> tenantDatabaseDeleted() {
+
+        return new WaiterBuilder<DescribeTenantDatabasesRequest, DescribeTenantDatabasesResult>().withSdkFunction(new DescribeTenantDatabasesFunction(client))
+                .withAcceptors(new TenantDatabaseDeleted.IsTrueMatcher(), new TenantDatabaseDeleted.IsDBInstanceNotFoundFaultMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
     }
 
     /**
@@ -86,6 +99,21 @@ public class AmazonRDSWaiters {
                 .withAcceptors(new DBClusterDeleted.IsTrueMatcher(), new DBClusterDeleted.IsDBClusterNotFoundFaultMatcher(),
                         new DBClusterDeleted.IsCreatingMatcher(), new DBClusterDeleted.IsModifyingMatcher(), new DBClusterDeleted.IsRebootingMatcher(),
                         new DBClusterDeleted.IsResettingmastercredentialsMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a TenantDatabaseAvailable waiter by using custom parameters waiterParameters and other parameters defined
+     * in the waiters specification, and then polls until it determines whether the resource entered the desired state
+     * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeTenantDatabasesRequest> tenantDatabaseAvailable() {
+
+        return new WaiterBuilder<DescribeTenantDatabasesRequest, DescribeTenantDatabasesResult>()
+                .withSdkFunction(new DescribeTenantDatabasesFunction(client))
+                .withAcceptors(new TenantDatabaseAvailable.IsAvailableMatcher(), new TenantDatabaseAvailable.IsDeletedMatcher(),
+                        new TenantDatabaseAvailable.IsIncompatibleparametersMatcher(), new TenantDatabaseAvailable.IsIncompatiblerestoreMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

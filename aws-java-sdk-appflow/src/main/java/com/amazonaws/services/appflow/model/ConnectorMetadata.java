@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,12 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     private HoneycodeMetadata honeycode;
 
     private SAPODataMetadata sAPOData;
+    /**
+     * <p>
+     * The connector metadata specific to Salesforce Pardot.
+     * </p>
+     */
+    private PardotMetadata pardot;
 
     /**
      * <p>
@@ -979,6 +985,46 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The connector metadata specific to Salesforce Pardot.
+     * </p>
+     * 
+     * @param pardot
+     *        The connector metadata specific to Salesforce Pardot.
+     */
+
+    public void setPardot(PardotMetadata pardot) {
+        this.pardot = pardot;
+    }
+
+    /**
+     * <p>
+     * The connector metadata specific to Salesforce Pardot.
+     * </p>
+     * 
+     * @return The connector metadata specific to Salesforce Pardot.
+     */
+
+    public PardotMetadata getPardot() {
+        return this.pardot;
+    }
+
+    /**
+     * <p>
+     * The connector metadata specific to Salesforce Pardot.
+     * </p>
+     * 
+     * @param pardot
+     *        The connector metadata specific to Salesforce Pardot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectorMetadata withPardot(PardotMetadata pardot) {
+        setPardot(pardot);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1031,7 +1077,9 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
         if (getHoneycode() != null)
             sb.append("Honeycode: ").append(getHoneycode()).append(",");
         if (getSAPOData() != null)
-            sb.append("SAPOData: ").append(getSAPOData());
+            sb.append("SAPOData: ").append(getSAPOData()).append(",");
+        if (getPardot() != null)
+            sb.append("Pardot: ").append(getPardot());
         sb.append("}");
         return sb.toString();
     }
@@ -1130,6 +1178,10 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getSAPOData() != null && other.getSAPOData().equals(this.getSAPOData()) == false)
             return false;
+        if (other.getPardot() == null ^ this.getPardot() == null)
+            return false;
+        if (other.getPardot() != null && other.getPardot().equals(this.getPardot()) == false)
+            return false;
         return true;
     }
 
@@ -1159,6 +1211,7 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCustomerProfiles() == null) ? 0 : getCustomerProfiles().hashCode());
         hashCode = prime * hashCode + ((getHoneycode() == null) ? 0 : getHoneycode().hashCode());
         hashCode = prime * hashCode + ((getSAPOData() == null) ? 0 : getSAPOData().hashCode());
+        hashCode = prime * hashCode + ((getPardot() == null) ? 0 : getPardot().hashCode());
         return hashCode;
     }
 

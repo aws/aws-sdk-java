@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class UriPathRouteInputMarshaller {
 
     private static final MarshallingInfo<String> ACTIVATIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActivationState").build();
+    private static final MarshallingInfo<Boolean> APPENDSOURCEPATH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppendSourcePath").build();
     private static final MarshallingInfo<Boolean> INCLUDECHILDPATHS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeChildPaths").build();
     private static final MarshallingInfo<List> METHODS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class UriPathRouteInputMarshaller {
 
         try {
             protocolMarshaller.marshall(uriPathRouteInput.getActivationState(), ACTIVATIONSTATE_BINDING);
+            protocolMarshaller.marshall(uriPathRouteInput.getAppendSourcePath(), APPENDSOURCEPATH_BINDING);
             protocolMarshaller.marshall(uriPathRouteInput.getIncludeChildPaths(), INCLUDECHILDPATHS_BINDING);
             protocolMarshaller.marshall(uriPathRouteInput.getMethods(), METHODS_BINDING);
             protocolMarshaller.marshall(uriPathRouteInput.getSourcePath(), SOURCEPATH_BINDING);

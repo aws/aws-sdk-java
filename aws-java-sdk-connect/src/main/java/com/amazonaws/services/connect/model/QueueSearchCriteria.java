@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The search criteria to be used to return queues.
  * </p>
+ * <note>
+ * <p>
+ * The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters
+ * and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueSearchCriteria" target="_top">AWS API
  *      Documentation</a>
@@ -40,7 +46,17 @@ public class QueueSearchCriteria implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.List<QueueSearchCriteria> andConditions;
-
+    /**
+     * <p>
+     * A leaf node condition which can be used to specify a string condition.
+     * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
+     */
     private StringCondition stringCondition;
     /**
      * <p>
@@ -190,7 +206,22 @@ public class QueueSearchCriteria implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A leaf node condition which can be used to specify a string condition.
+     * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
+     * 
      * @param stringCondition
+     *        A leaf node condition which can be used to specify a string condition.</p> <note>
+     *        <p>
+     *        The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
+     *        and <code>resourceID</code>.
+     *        </p>
      */
 
     public void setStringCondition(StringCondition stringCondition) {
@@ -198,7 +229,21 @@ public class QueueSearchCriteria implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * A leaf node condition which can be used to specify a string condition.
+     * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
+     * 
+     * @return A leaf node condition which can be used to specify a string condition.</p> <note>
+     *         <p>
+     *         The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>
+     *         , and <code>resourceID</code>.
+     *         </p>
      */
 
     public StringCondition getStringCondition() {
@@ -206,7 +251,22 @@ public class QueueSearchCriteria implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A leaf node condition which can be used to specify a string condition.
+     * </p>
+     * <note>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and
+     * <code>resourceID</code>.
+     * </p>
+     * </note>
+     * 
      * @param stringCondition
+     *        A leaf node condition which can be used to specify a string condition.</p> <note>
+     *        <p>
+     *        The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
+     *        and <code>resourceID</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

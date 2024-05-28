@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
- * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the
- * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this
- * parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple
- * documentation.
+ * choose Flag, MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the
+ * EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag, MediaConvert leaves this parameter
+ * out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CmfcDescriptiveVideoServiceFlag {

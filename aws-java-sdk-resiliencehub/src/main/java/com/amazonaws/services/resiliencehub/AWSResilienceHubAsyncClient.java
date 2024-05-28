@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,10 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions.
- * Resilience Hub offers continuous resiliency assessment and validation that integrates into your software development
- * lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point
- * objective (RPO) targets for your applications are met, and resolve issues before they are released into production.
+ * Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. It
+ * offers continual resiliency assessment and validation that integrates into your software development lifecycle. This
+ * enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO)
+ * targets for your applications are met, and resolve issues before they are released into production.
  * </p>
  */
 @ThreadSafe
@@ -114,6 +114,41 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            BatchUpdateRecommendationStatusRequest request) {
+
+        return batchUpdateRecommendationStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            final BatchUpdateRecommendationStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationStatusRequest, BatchUpdateRecommendationStatusResult> asyncHandler) {
+        final BatchUpdateRecommendationStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdateRecommendationStatusResult>() {
+            @Override
+            public BatchUpdateRecommendationStatusResult call() throws Exception {
+                BatchUpdateRecommendationStatusResult result = null;
+
+                try {
+                    result = executeBatchUpdateRecommendationStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request) {
 
         return createAppAsync(request, null);
@@ -131,6 +166,72 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
 
                 try {
                     result = executeCreateApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionAppComponentResult> createAppVersionAppComponentAsync(CreateAppVersionAppComponentRequest request) {
+
+        return createAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionAppComponentResult> createAppVersionAppComponentAsync(final CreateAppVersionAppComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppVersionAppComponentRequest, CreateAppVersionAppComponentResult> asyncHandler) {
+        final CreateAppVersionAppComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppVersionAppComponentResult>() {
+            @Override
+            public CreateAppVersionAppComponentResult call() throws Exception {
+                CreateAppVersionAppComponentResult result = null;
+
+                try {
+                    result = executeCreateAppVersionAppComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionResourceResult> createAppVersionResourceAsync(CreateAppVersionResourceRequest request) {
+
+        return createAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionResourceResult> createAppVersionResourceAsync(final CreateAppVersionResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppVersionResourceRequest, CreateAppVersionResourceResult> asyncHandler) {
+        final CreateAppVersionResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppVersionResourceResult>() {
+            @Override
+            public CreateAppVersionResourceResult call() throws Exception {
+                CreateAppVersionResourceResult result = null;
+
+                try {
+                    result = executeCreateAppVersionResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -279,6 +380,105 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAppInputSourceResult> deleteAppInputSourceAsync(DeleteAppInputSourceRequest request) {
+
+        return deleteAppInputSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInputSourceResult> deleteAppInputSourceAsync(final DeleteAppInputSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppInputSourceRequest, DeleteAppInputSourceResult> asyncHandler) {
+        final DeleteAppInputSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppInputSourceResult>() {
+            @Override
+            public DeleteAppInputSourceResult call() throws Exception {
+                DeleteAppInputSourceResult result = null;
+
+                try {
+                    result = executeDeleteAppInputSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionAppComponentResult> deleteAppVersionAppComponentAsync(DeleteAppVersionAppComponentRequest request) {
+
+        return deleteAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionAppComponentResult> deleteAppVersionAppComponentAsync(final DeleteAppVersionAppComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppVersionAppComponentRequest, DeleteAppVersionAppComponentResult> asyncHandler) {
+        final DeleteAppVersionAppComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppVersionAppComponentResult>() {
+            @Override
+            public DeleteAppVersionAppComponentResult call() throws Exception {
+                DeleteAppVersionAppComponentResult result = null;
+
+                try {
+                    result = executeDeleteAppVersionAppComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionResourceResult> deleteAppVersionResourceAsync(DeleteAppVersionResourceRequest request) {
+
+        return deleteAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionResourceResult> deleteAppVersionResourceAsync(final DeleteAppVersionResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppVersionResourceRequest, DeleteAppVersionResourceResult> asyncHandler) {
+        final DeleteAppVersionResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppVersionResourceResult>() {
+            @Override
+            public DeleteAppVersionResourceResult call() throws Exception {
+                DeleteAppVersionResourceResult result = null;
+
+                try {
+                    result = executeDeleteAppVersionResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRecommendationTemplateResult> deleteRecommendationTemplateAsync(DeleteRecommendationTemplateRequest request) {
 
         return deleteRecommendationTemplateAsync(request, null);
@@ -395,6 +595,106 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
 
                 try {
                     result = executeDescribeAppAssessment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResult> describeAppVersionAsync(DescribeAppVersionRequest request) {
+
+        return describeAppVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResult> describeAppVersionAsync(final DescribeAppVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppVersionRequest, DescribeAppVersionResult> asyncHandler) {
+        final DescribeAppVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppVersionResult>() {
+            @Override
+            public DescribeAppVersionResult call() throws Exception {
+                DescribeAppVersionResult result = null;
+
+                try {
+                    result = executeDescribeAppVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionAppComponentResult> describeAppVersionAppComponentAsync(DescribeAppVersionAppComponentRequest request) {
+
+        return describeAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionAppComponentResult> describeAppVersionAppComponentAsync(
+            final DescribeAppVersionAppComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppVersionAppComponentRequest, DescribeAppVersionAppComponentResult> asyncHandler) {
+        final DescribeAppVersionAppComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppVersionAppComponentResult>() {
+            @Override
+            public DescribeAppVersionAppComponentResult call() throws Exception {
+                DescribeAppVersionAppComponentResult result = null;
+
+                try {
+                    result = executeDescribeAppVersionAppComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResourceResult> describeAppVersionResourceAsync(DescribeAppVersionResourceRequest request) {
+
+        return describeAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResourceResult> describeAppVersionResourceAsync(final DescribeAppVersionResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppVersionResourceRequest, DescribeAppVersionResourceResult> asyncHandler) {
+        final DescribeAppVersionResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppVersionResourceResult>() {
+            @Override
+            public DescribeAppVersionResourceResult call() throws Exception {
+                DescribeAppVersionResourceResult result = null;
+
+                try {
+                    result = executeDescribeAppVersionResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -615,6 +915,76 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            ListAppAssessmentComplianceDriftsRequest request) {
+
+        return listAppAssessmentComplianceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            final ListAppAssessmentComplianceDriftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppAssessmentComplianceDriftsRequest, ListAppAssessmentComplianceDriftsResult> asyncHandler) {
+        final ListAppAssessmentComplianceDriftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppAssessmentComplianceDriftsResult>() {
+            @Override
+            public ListAppAssessmentComplianceDriftsResult call() throws Exception {
+                ListAppAssessmentComplianceDriftsResult result = null;
+
+                try {
+                    result = executeListAppAssessmentComplianceDrifts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest request) {
+
+        return listAppAssessmentResourceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            final ListAppAssessmentResourceDriftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppAssessmentResourceDriftsRequest, ListAppAssessmentResourceDriftsResult> asyncHandler) {
+        final ListAppAssessmentResourceDriftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppAssessmentResourceDriftsResult>() {
+            @Override
+            public ListAppAssessmentResourceDriftsResult call() throws Exception {
+                ListAppAssessmentResourceDriftsResult result = null;
+
+                try {
+                    result = executeListAppAssessmentResourceDrifts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppAssessmentsResult> listAppAssessmentsAsync(ListAppAssessmentsRequest request) {
 
         return listAppAssessmentsAsync(request, null);
@@ -700,6 +1070,72 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
 
                 try {
                     result = executeListAppComponentRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInputSourcesResult> listAppInputSourcesAsync(ListAppInputSourcesRequest request) {
+
+        return listAppInputSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInputSourcesResult> listAppInputSourcesAsync(final ListAppInputSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppInputSourcesRequest, ListAppInputSourcesResult> asyncHandler) {
+        final ListAppInputSourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppInputSourcesResult>() {
+            @Override
+            public ListAppInputSourcesResult call() throws Exception {
+                ListAppInputSourcesResult result = null;
+
+                try {
+                    result = executeListAppInputSources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppVersionAppComponentsResult> listAppVersionAppComponentsAsync(ListAppVersionAppComponentsRequest request) {
+
+        return listAppVersionAppComponentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppVersionAppComponentsResult> listAppVersionAppComponentsAsync(final ListAppVersionAppComponentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppVersionAppComponentsRequest, ListAppVersionAppComponentsResult> asyncHandler) {
+        final ListAppVersionAppComponentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppVersionAppComponentsResult>() {
+            @Override
+            public ListAppVersionAppComponentsResult call() throws Exception {
+                ListAppVersionAppComponentsResult result = null;
+
+                try {
+                    result = executeListAppVersionAppComponents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1334,6 +1770,105 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
 
                 try {
                     result = executeUpdateApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResult> updateAppVersionAsync(UpdateAppVersionRequest request) {
+
+        return updateAppVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResult> updateAppVersionAsync(final UpdateAppVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppVersionRequest, UpdateAppVersionResult> asyncHandler) {
+        final UpdateAppVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppVersionResult>() {
+            @Override
+            public UpdateAppVersionResult call() throws Exception {
+                UpdateAppVersionResult result = null;
+
+                try {
+                    result = executeUpdateAppVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionAppComponentResult> updateAppVersionAppComponentAsync(UpdateAppVersionAppComponentRequest request) {
+
+        return updateAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionAppComponentResult> updateAppVersionAppComponentAsync(final UpdateAppVersionAppComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppVersionAppComponentRequest, UpdateAppVersionAppComponentResult> asyncHandler) {
+        final UpdateAppVersionAppComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppVersionAppComponentResult>() {
+            @Override
+            public UpdateAppVersionAppComponentResult call() throws Exception {
+                UpdateAppVersionAppComponentResult result = null;
+
+                try {
+                    result = executeUpdateAppVersionAppComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResourceResult> updateAppVersionResourceAsync(UpdateAppVersionResourceRequest request) {
+
+        return updateAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResourceResult> updateAppVersionResourceAsync(final UpdateAppVersionResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppVersionResourceRequest, UpdateAppVersionResourceResult> asyncHandler) {
+        final UpdateAppVersionResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppVersionResourceResult>() {
+            @Override
+            public UpdateAppVersionResourceResult call() throws Exception {
+                UpdateAppVersionResourceResult result = null;
+
+                try {
+                    result = executeUpdateAppVersionResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the slot. A slot type name must be unique within the account.
+     * The name for the slot. A slot type name must be unique within the intent.
      * </p>
      */
     private String slotTypeName;
@@ -53,19 +53,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
      * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution
-     * list. If there is no resolution list, return null.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list. If there is no resolution list, return null.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.
+     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>
+     * .
      * </p>
      */
     private SlotValueSelectionSetting valueSelectionSetting;
@@ -115,11 +116,11 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the slot. A slot type name must be unique within the account.
+     * The name for the slot. A slot type name must be unique within the intent.
      * </p>
      * 
      * @param slotTypeName
-     *        The name for the slot. A slot type name must be unique within the account.
+     *        The name for the slot. A slot type name must be unique within the intent.
      */
 
     public void setSlotTypeName(String slotTypeName) {
@@ -128,10 +129,10 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the slot. A slot type name must be unique within the account.
+     * The name for the slot. A slot type name must be unique within the intent.
      * </p>
      * 
-     * @return The name for the slot. A slot type name must be unique within the account.
+     * @return The name for the slot. A slot type name must be unique within the intent.
      */
 
     public String getSlotTypeName() {
@@ -140,11 +141,11 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the slot. A slot type name must be unique within the account.
+     * The name for the slot. A slot type name must be unique within the intent.
      * </p>
      * 
      * @param slotTypeName
-     *        The name for the slot. A slot type name must be unique within the account.
+     *        The name for the slot. A slot type name must be unique within the intent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,19 +288,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
      * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution
-     * list. If there is no resolution list, return null.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list. If there is no resolution list, return null.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.
+     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>
+     * .
      * </p>
      * 
      * @param valueSelectionSetting
@@ -308,20 +310,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
      *        slot value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the
+     *        <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
      *        resolution list. If there is no resolution list, return null.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        If you don't specify the <code>valueSelectionSetting</code> parameter, the default is
-     *        <code>OriginalValue</code>.
+     *        <code>ORIGINAL_VALUE</code>.
      */
 
     public void setValueSelectionSetting(SlotValueSelectionSetting valueSelectionSetting) {
@@ -336,19 +338,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
      * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution
-     * list. If there is no resolution list, return null.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list. If there is no resolution list, return null.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.
+     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>
+     * .
      * </p>
      * 
      * @return Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The
@@ -356,20 +359,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the
+     *         <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
      *         slot value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the
+     *         <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
      *         resolution list. If there is no resolution list, return null.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         If you don't specify the <code>valueSelectionSetting</code> parameter, the default is
-     *         <code>OriginalValue</code>.
+     *         <code>ORIGINAL_VALUE</code>.
      */
 
     public SlotValueSelectionSetting getValueSelectionSetting() {
@@ -384,19 +387,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
      * value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the resolution
-     * list. If there is no resolution list, return null.
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
+     * resolution list. If there is no resolution list, return null.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.
+     * If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>ORIGINAL_VALUE</code>
+     * .
      * </p>
      * 
      * @param valueSelectionSetting
@@ -405,20 +409,20 @@ public class CreateSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>OriginalValue</code> - Returns the value entered by the user, if the user value is similar to the
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
      *        slot value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TopResolution</code> - If there is a resolution list for the slot, return the first value in the
+     *        <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the
      *        resolution list. If there is no resolution list, return null.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        If you don't specify the <code>valueSelectionSetting</code> parameter, the default is
-     *        <code>OriginalValue</code>.
+     *        <code>ORIGINAL_VALUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

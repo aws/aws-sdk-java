@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class CreateGrantRequestMarshaller {
             .marshallLocationName("GrantTokens").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final CreateGrantRequestMarshaller instance = new CreateGrantRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateGrantRequestMarshaller {
             protocolMarshaller.marshall(createGrantRequest.getConstraints(), CONSTRAINTS_BINDING);
             protocolMarshaller.marshall(createGrantRequest.getGrantTokens(), GRANTTOKENS_BINDING);
             protocolMarshaller.marshall(createGrantRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createGrantRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

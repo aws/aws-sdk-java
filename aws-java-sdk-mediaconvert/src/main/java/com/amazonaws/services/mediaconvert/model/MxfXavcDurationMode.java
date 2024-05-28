@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * To create an output that complies with the XAVC file format guidelines for interoperability, keep the default value,
- * Drop frames for compliance (DROP_FRAMES_FOR_COMPLIANCE). To include all frames from your input in this output, keep
- * the default setting, Allow any duration (ALLOW_ANY_DURATION). The number of frames that MediaConvert excludes when
- * you set this to Drop frames for compliance depends on the output frame rate and duration.
+ * Drop frames for compliance. To include all frames from your input in this output, keep the default setting, Allow any
+ * duration. The number of frames that MediaConvert excludes when you set this to Drop frames for compliance depends on
+ * the output frame rate and duration.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MxfXavcDurationMode {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,28 @@ public class ListMailboxPermissionsRequest extends com.amazonaws.AmazonWebServic
     private String organizationId;
     /**
      * <p>
-     * The identifier of the user, group, or resource for which to list mailbox permissions.
+     * The identifier of the user, or resource for which to list mailbox permissions.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      */
     private String entityId;
     /**
@@ -92,11 +112,50 @@ public class ListMailboxPermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the user, group, or resource for which to list mailbox permissions.
+     * The identifier of the user, or resource for which to list mailbox permissions.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entityId
-     *        The identifier of the user, group, or resource for which to list mailbox permissions.
+     *        The identifier of the user, or resource for which to list mailbox permissions.</p>
+     *        <p>
+     *        The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: entity@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Entity name: entity
+     *        </p>
+     *        </li>
      */
 
     public void setEntityId(String entityId) {
@@ -105,10 +164,49 @@ public class ListMailboxPermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the user, group, or resource for which to list mailbox permissions.
+     * The identifier of the user, or resource for which to list mailbox permissions.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier of the user, group, or resource for which to list mailbox permissions.
+     * @return The identifier of the user, or resource for which to list mailbox permissions.</p>
+     *         <p>
+     *         The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: entity@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Entity name: entity
+     *         </p>
+     *         </li>
      */
 
     public String getEntityId() {
@@ -117,11 +215,50 @@ public class ListMailboxPermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the user, group, or resource for which to list mailbox permissions.
+     * The identifier of the user, or resource for which to list mailbox permissions.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entityId
-     *        The identifier of the user, group, or resource for which to list mailbox permissions.
+     *        The identifier of the user, or resource for which to list mailbox permissions.</p>
+     *        <p>
+     *        The entity ID can accept <i>UserId or ResourceId</i>, <i>Username or Resourcename</i>, or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: entity@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Entity name: entity
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

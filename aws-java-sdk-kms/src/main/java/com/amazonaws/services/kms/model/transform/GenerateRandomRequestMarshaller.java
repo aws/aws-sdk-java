@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class GenerateRandomRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfBytes").build();
     private static final MarshallingInfo<String> CUSTOMKEYSTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomKeyStoreId").build();
+    private static final MarshallingInfo<StructuredPojo> RECIPIENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Recipient").build();
 
     private static final GenerateRandomRequestMarshaller instance = new GenerateRandomRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GenerateRandomRequestMarshaller {
         try {
             protocolMarshaller.marshall(generateRandomRequest.getNumberOfBytes(), NUMBEROFBYTES_BINDING);
             protocolMarshaller.marshall(generateRandomRequest.getCustomKeyStoreId(), CUSTOMKEYSTOREID_BINDING);
+            protocolMarshaller.marshall(generateRandomRequest.getRecipient(), RECIPIENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

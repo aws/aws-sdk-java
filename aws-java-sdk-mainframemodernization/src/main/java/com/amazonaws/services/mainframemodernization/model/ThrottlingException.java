@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ThrottlingException extends com.amazonaws.services.mainframemoderni
 
     /**
      * <p>
-     * The identifier of the throttled reuqest.
+     * The identifier of the throttled request.
      * </p>
      */
     private String quotaCode;
@@ -54,11 +54,11 @@ public class ThrottlingException extends com.amazonaws.services.mainframemoderni
 
     /**
      * <p>
-     * The identifier of the throttled reuqest.
+     * The identifier of the throttled request.
      * </p>
      * 
      * @param quotaCode
-     *        The identifier of the throttled reuqest.
+     *        The identifier of the throttled request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("quotaCode")
@@ -68,10 +68,10 @@ public class ThrottlingException extends com.amazonaws.services.mainframemoderni
 
     /**
      * <p>
-     * The identifier of the throttled reuqest.
+     * The identifier of the throttled request.
      * </p>
      * 
-     * @return The identifier of the throttled reuqest.
+     * @return The identifier of the throttled request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("quotaCode")
@@ -81,11 +81,11 @@ public class ThrottlingException extends com.amazonaws.services.mainframemoderni
 
     /**
      * <p>
-     * The identifier of the throttled reuqest.
+     * The identifier of the throttled request.
      * </p>
      * 
      * @param quotaCode
-     *        The identifier of the throttled reuqest.
+     *        The identifier of the throttled request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

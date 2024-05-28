@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,6 +110,76 @@ public class AWSPIAsyncClient extends AWSPIClient implements AWSPIAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePerformanceAnalysisReportResult> createPerformanceAnalysisReportAsync(
+            CreatePerformanceAnalysisReportRequest request) {
+
+        return createPerformanceAnalysisReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePerformanceAnalysisReportResult> createPerformanceAnalysisReportAsync(
+            final CreatePerformanceAnalysisReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePerformanceAnalysisReportRequest, CreatePerformanceAnalysisReportResult> asyncHandler) {
+        final CreatePerformanceAnalysisReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePerformanceAnalysisReportResult>() {
+            @Override
+            public CreatePerformanceAnalysisReportResult call() throws Exception {
+                CreatePerformanceAnalysisReportResult result = null;
+
+                try {
+                    result = executeCreatePerformanceAnalysisReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePerformanceAnalysisReportResult> deletePerformanceAnalysisReportAsync(
+            DeletePerformanceAnalysisReportRequest request) {
+
+        return deletePerformanceAnalysisReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePerformanceAnalysisReportResult> deletePerformanceAnalysisReportAsync(
+            final DeletePerformanceAnalysisReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePerformanceAnalysisReportRequest, DeletePerformanceAnalysisReportResult> asyncHandler) {
+        final DeletePerformanceAnalysisReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePerformanceAnalysisReportResult>() {
+            @Override
+            public DeletePerformanceAnalysisReportResult call() throws Exception {
+                DeletePerformanceAnalysisReportResult result = null;
+
+                try {
+                    result = executeDeletePerformanceAnalysisReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDimensionKeysResult> describeDimensionKeysAsync(DescribeDimensionKeysRequest request) {
 
         return describeDimensionKeysAsync(request, null);
@@ -160,6 +230,39 @@ public class AWSPIAsyncClient extends AWSPIClient implements AWSPIAsync {
 
                 try {
                     result = executeGetDimensionKeyDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPerformanceAnalysisReportResult> getPerformanceAnalysisReportAsync(GetPerformanceAnalysisReportRequest request) {
+
+        return getPerformanceAnalysisReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPerformanceAnalysisReportResult> getPerformanceAnalysisReportAsync(final GetPerformanceAnalysisReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPerformanceAnalysisReportRequest, GetPerformanceAnalysisReportResult> asyncHandler) {
+        final GetPerformanceAnalysisReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPerformanceAnalysisReportResult>() {
+            @Override
+            public GetPerformanceAnalysisReportResult call() throws Exception {
+                GetPerformanceAnalysisReportResult result = null;
+
+                try {
+                    result = executeGetPerformanceAnalysisReport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -294,6 +397,139 @@ public class AWSPIAsyncClient extends AWSPIClient implements AWSPIAsync {
 
                 try {
                     result = executeListAvailableResourceMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPerformanceAnalysisReportsResult> listPerformanceAnalysisReportsAsync(ListPerformanceAnalysisReportsRequest request) {
+
+        return listPerformanceAnalysisReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPerformanceAnalysisReportsResult> listPerformanceAnalysisReportsAsync(
+            final ListPerformanceAnalysisReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPerformanceAnalysisReportsRequest, ListPerformanceAnalysisReportsResult> asyncHandler) {
+        final ListPerformanceAnalysisReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPerformanceAnalysisReportsResult>() {
+            @Override
+            public ListPerformanceAnalysisReportsResult call() throws Exception {
+                ListPerformanceAnalysisReportsResult result = null;
+
+                try {
+                    result = executeListPerformanceAnalysisReports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     * The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The keys for the tags to be removed from the Healthlake Data Store.
+     * The keys for the tags to be removed from the HealthLake data store.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     * The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      * </p>
      * 
      * @param resourceARN
-     *        "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     *        The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     * The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      * </p>
      * 
-     * @return "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     * @return The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     * The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      * </p>
      * 
      * @param resourceARN
-     *        "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+     *        The Amazon Resource Name(ARN) of the data store for which tags are being removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys for the tags to be removed from the Healthlake Data Store.
+     * The keys for the tags to be removed from the HealthLake data store.
      * </p>
      * 
-     * @return The keys for the tags to be removed from the Healthlake Data Store.
+     * @return The keys for the tags to be removed from the HealthLake data store.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys for the tags to be removed from the Healthlake Data Store.
+     * The keys for the tags to be removed from the HealthLake data store.
      * </p>
      * 
      * @param tagKeys
-     *        The keys for the tags to be removed from the Healthlake Data Store.
+     *        The keys for the tags to be removed from the HealthLake data store.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys for the tags to be removed from the Healthlake Data Store.
+     * The keys for the tags to be removed from the HealthLake data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The keys for the tags to be removed from the Healthlake Data Store.
+     *        The keys for the tags to be removed from the HealthLake data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys for the tags to be removed from the Healthlake Data Store.
+     * The keys for the tags to be removed from the HealthLake data store.
      * </p>
      * 
      * @param tagKeys
-     *        The keys for the tags to be removed from the Healthlake Data Store.
+     *        The keys for the tags to be removed from the HealthLake data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

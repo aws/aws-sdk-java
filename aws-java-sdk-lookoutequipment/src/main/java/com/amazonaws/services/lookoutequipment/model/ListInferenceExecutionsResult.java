@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,13 @@ public class ListInferenceExecutionsResult extends com.amazonaws.AmazonWebServic
      * <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration,
      * and so on.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an
+     * inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<InferenceExecutionSummary> inferenceExecutionSummaries;
 
@@ -84,10 +91,22 @@ public class ListInferenceExecutionsResult extends com.amazonaws.AmazonWebServic
      * <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration,
      * and so on.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an
+     * inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.
+     * </p>
+     * </note>
      * 
      * @return Provides an array of information about the individual inference executions returned from the
      *         <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data
-     *         configuration, and so on.
+     *         configuration, and so on. </p> <note>
+     *         <p>
+     *         If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name
+     *         of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array
+     *         in <code>InferenceExecutionSummaries</code>.
+     *         </p>
      */
 
     public java.util.List<InferenceExecutionSummary> getInferenceExecutionSummaries() {
@@ -100,11 +119,23 @@ public class ListInferenceExecutionsResult extends com.amazonaws.AmazonWebServic
      * <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration,
      * and so on.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an
+     * inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.
+     * </p>
+     * </note>
      * 
      * @param inferenceExecutionSummaries
      *        Provides an array of information about the individual inference executions returned from the
      *        <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data
-     *        configuration, and so on.
+     *        configuration, and so on. </p> <note>
+     *        <p>
+     *        If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name
+     *        of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array
+     *        in <code>InferenceExecutionSummaries</code>.
+     *        </p>
      */
 
     public void setInferenceExecutionSummaries(java.util.Collection<InferenceExecutionSummary> inferenceExecutionSummaries) {
@@ -122,6 +153,13 @@ public class ListInferenceExecutionsResult extends com.amazonaws.AmazonWebServic
      * <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration,
      * and so on.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an
+     * inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInferenceExecutionSummaries(java.util.Collection)} or
@@ -131,7 +169,12 @@ public class ListInferenceExecutionsResult extends com.amazonaws.AmazonWebServic
      * @param inferenceExecutionSummaries
      *        Provides an array of information about the individual inference executions returned from the
      *        <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data
-     *        configuration, and so on.
+     *        configuration, and so on. </p> <note>
+     *        <p>
+     *        If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name
+     *        of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array
+     *        in <code>InferenceExecutionSummaries</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +194,23 @@ public class ListInferenceExecutionsResult extends com.amazonaws.AmazonWebServic
      * <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration,
      * and so on.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an
+     * inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in
+     * <code>InferenceExecutionSummaries</code>.
+     * </p>
+     * </note>
      * 
      * @param inferenceExecutionSummaries
      *        Provides an array of information about the individual inference executions returned from the
      *        <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data
-     *        configuration, and so on.
+     *        configuration, and so on. </p> <note>
+     *        <p>
+     *        If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name
+     *        of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array
+     *        in <code>InferenceExecutionSummaries</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

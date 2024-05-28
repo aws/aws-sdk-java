@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private String ec2VolumeId;
     /**
      * <p>
-     * The volume name.
+     * The volume name. Volume names are a maximum of 128 characters.
      * </p>
      */
     private String name;
@@ -86,7 +86,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private String mountPoint;
     /**
      * <p>
-     * The AWS region. For more information about AWS regions, see <a
+     * The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
@@ -125,12 +125,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -233,11 +233,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The volume name.
+     * The volume name. Volume names are a maximum of 128 characters.
      * </p>
      * 
      * @param name
-     *        The volume name.
+     *        The volume name. Volume names are a maximum of 128 characters.
      */
 
     public void setName(String name) {
@@ -246,10 +246,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The volume name.
+     * The volume name. Volume names are a maximum of 128 characters.
      * </p>
      * 
-     * @return The volume name.
+     * @return The volume name. Volume names are a maximum of 128 characters.
      */
 
     public String getName() {
@@ -258,11 +258,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The volume name.
+     * The volume name. Volume names are a maximum of 128 characters.
      * </p>
      * 
      * @param name
-     *        The volume name.
+     *        The volume name. Volume names are a maximum of 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,12 +525,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region. For more information about AWS regions, see <a
+     * The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The AWS region. For more information about AWS regions, see <a
+     *        The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
@@ -540,11 +540,11 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region. For more information about AWS regions, see <a
+     * The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
-     * @return The AWS region. For more information about AWS regions, see <a
+     * @return The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
@@ -554,12 +554,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region. For more information about AWS regions, see <a
+     * The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The AWS region. For more information about AWS regions, see <a
+     *        The Amazon Web Services Region. For more information about Amazon Web Services Regions, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -642,12 +642,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -679,12 +679,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
-     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        a minimum size of 125 GiB and a maximum size of 16384 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of
      *        16384 GiB.
      *        </p>
      *        </li>
@@ -721,12 +721,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -757,12 +757,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
-     *         a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *         a minimum size of 125 GiB and a maximum size of 16384 GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *         <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of
      *         16384 GiB.
      *         </p>
      *         </li>
@@ -799,12 +799,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -836,12 +836,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
-     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        a minimum size of 125 GiB and a maximum size of 16384 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of
      *        16384 GiB.
      *        </p>
      *        </li>

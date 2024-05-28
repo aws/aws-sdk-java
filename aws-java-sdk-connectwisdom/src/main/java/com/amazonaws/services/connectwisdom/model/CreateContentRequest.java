@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,17 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      */
     private String knowledgeBaseId;
@@ -82,11 +86,17 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -95,10 +105,16 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -107,11 +123,17 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +144,13 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      */
 
     public void setKnowledgeBaseId(String knowledgeBaseId) {
@@ -135,10 +159,12 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      * 
-     * @return The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * @return The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *         storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      */
 
     public String getKnowledgeBaseId() {
@@ -147,11 +173,13 @@ public class CreateContentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

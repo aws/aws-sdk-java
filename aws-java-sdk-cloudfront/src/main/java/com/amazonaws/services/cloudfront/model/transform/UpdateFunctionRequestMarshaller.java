@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,35 @@ public class UpdateFunctionRequestMarshaller implements Marshaller<Request<Updat
 
                         if (functionConfig.getRuntime() != null) {
                             xmlWriter.startElement("Runtime").value(functionConfig.getRuntime()).endElement();
+                        }
+
+                        {
+                            KeyValueStoreAssociations keyValueStoreAssociations = functionConfig.getKeyValueStoreAssociations();
+                            if (keyValueStoreAssociations != null) {
+                                xmlWriter.startElement("KeyValueStoreAssociations");
+
+                                if (keyValueStoreAssociations.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(keyValueStoreAssociations.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<KeyValueStoreAssociation> keyValueStoreAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<KeyValueStoreAssociation>) keyValueStoreAssociations
+                                        .getItems();
+                                if (!keyValueStoreAssociationsItemsList.isEmpty() || !keyValueStoreAssociationsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (KeyValueStoreAssociation keyValueStoreAssociationsItemsListValue : keyValueStoreAssociationsItemsList) {
+                                        xmlWriter.startElement("KeyValueStoreAssociation");
+
+                                        if (keyValueStoreAssociationsItemsListValue.getKeyValueStoreARN() != null) {
+                                            xmlWriter.startElement("KeyValueStoreARN").value(keyValueStoreAssociationsItemsListValue.getKeyValueStoreARN())
+                                                    .endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
                         }
                         xmlWriter.endElement();
                     }

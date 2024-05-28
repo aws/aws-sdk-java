@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,22 @@ public class GetLabelDetectionResultJsonUnmarshaller implements Unmarshaller<Get
                 if (context.testExpression("LabelModelVersion", targetDepth)) {
                     context.nextToken();
                     getLabelDetectionResult.setLabelModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Video", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobTag", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("GetRequestMetadata", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setGetRequestMetadata(GetLabelDetectionRequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

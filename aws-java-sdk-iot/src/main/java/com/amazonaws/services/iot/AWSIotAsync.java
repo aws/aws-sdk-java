@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -374,8 +374,8 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users,
-     * groups, and roles, Amazon Cognito identities or federated identities.
+     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito
+     * identities or federated identities.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -392,8 +392,8 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users,
-     * groups, and roles, Amazon Cognito identities or federated identities.
+     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito
+     * identities or federated identities.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -867,59 +867,57 @@ public interface AWSIotAsync extends AWSIot {
      * Creates an X.509 certificate using the specified certificate signing request.
      * </p>
      * <p>
-     * <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or
-     * an ECC key from NIST P-256, NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
-     * Certificate signing algorithms supported by IoT</a>.
-     * </p>
-     * <p>
-     * <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.
-     * </p>
-     * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
      * >CreateCertificateFromCsr</a> action.
      * </p>
+     * <note>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that
-     * directory, and then specifying that directory on the command line. The following commands show how to create a
-     * batch of certificates given a batch of CSRs.
+     * The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key
+     * from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+     * Certificate signing algorithms supported by IoT</a>.
      * </p>
+     * </note> <note>
      * <p>
-     * Assuming a set of CSRs are located inside of the directory my-csr-directory:
+     * Reusing the same certificate signing request (CSR) results in a distinct certificate.
+     * </p>
+     * </note>
+     * <p>
+     * You can create multiple certificates in a batch by creating a directory, copying multiple <code>.csr</code> files
+     * into that directory, and then specifying that directory on the command line. The following commands show how to
+     * create a batch of certificates given a batch of CSRs. In the following commands, we assume that a set of CSRs are
+     * located inside of the directory my-csr-directory:
      * </p>
      * <p>
      * On Linux and OS X, the command is:
      * </p>
      * <p>
-     * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/{}
+     * <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</code>
      * </p>
      * <p>
-     * This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot
-     * create-certificate-from-csr Amazon Web Services CLI command to create a certificate for the corresponding CSR.
+     * This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
+     * <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command to create a certificate for the
+     * corresponding CSR.
      * </p>
      * <p>
-     * The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the
-     * certificate creation process:
+     * You can also run the <code>aws iot create-certificate-from-csr</code> part of the command in parallel to speed up
+     * the certificate creation process:
      * </p>
      * <p>
-     * $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/{}
+     * <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </code>
      * </p>
      * <p>
      * On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:
      * </p>
      * <p>
-     * &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/$_}
+     * <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </code>
      * </p>
      * <p>
      * On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:
      * </p>
      * <p>
-     * &gt; forfiles /p my-csr-directory /c
-     * "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path"
+     * <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path" </code>
      * </p>
      * 
      * @param createCertificateFromCsrRequest
@@ -934,59 +932,57 @@ public interface AWSIotAsync extends AWSIot {
      * Creates an X.509 certificate using the specified certificate signing request.
      * </p>
      * <p>
-     * <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or
-     * an ECC key from NIST P-256, NIST P-384, or NIST P-512 curves. For supported certificates, consult <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
-     * Certificate signing algorithms supported by IoT</a>.
-     * </p>
-     * <p>
-     * <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.
-     * </p>
-     * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
      * >CreateCertificateFromCsr</a> action.
      * </p>
+     * <note>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that
-     * directory, and then specifying that directory on the command line. The following commands show how to create a
-     * batch of certificates given a batch of CSRs.
+     * The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key
+     * from NIST P-256, NIST P-384, or NIST P-521 curves. For supported certificates, consult <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
+     * Certificate signing algorithms supported by IoT</a>.
      * </p>
+     * </note> <note>
      * <p>
-     * Assuming a set of CSRs are located inside of the directory my-csr-directory:
+     * Reusing the same certificate signing request (CSR) results in a distinct certificate.
+     * </p>
+     * </note>
+     * <p>
+     * You can create multiple certificates in a batch by creating a directory, copying multiple <code>.csr</code> files
+     * into that directory, and then specifying that directory on the command line. The following commands show how to
+     * create a batch of certificates given a batch of CSRs. In the following commands, we assume that a set of CSRs are
+     * located inside of the directory my-csr-directory:
      * </p>
      * <p>
      * On Linux and OS X, the command is:
      * </p>
      * <p>
-     * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/{}
+     * <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</code>
      * </p>
      * <p>
-     * This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot
-     * create-certificate-from-csr Amazon Web Services CLI command to create a certificate for the corresponding CSR.
+     * This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
+     * <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command to create a certificate for the
+     * corresponding CSR.
      * </p>
      * <p>
-     * The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the
-     * certificate creation process:
+     * You can also run the <code>aws iot create-certificate-from-csr</code> part of the command in parallel to speed up
+     * the certificate creation process:
      * </p>
      * <p>
-     * $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/{}
+     * <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </code>
      * </p>
      * <p>
      * On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:
      * </p>
      * <p>
-     * &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-     * file://my-csr-directory/$_}
+     * <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </code>
      * </p>
      * <p>
      * On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:
      * </p>
      * <p>
-     * &gt; forfiles /p my-csr-directory /c
-     * "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path"
+     * <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path" </code>
      * </p>
      * 
      * @param createCertificateFromCsrRequest
@@ -1000,6 +996,73 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateCertificateFromCsrResult> createCertificateFromCsrAsync(CreateCertificateFromCsrRequest createCertificateFromCsrRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCertificateFromCsrRequest, CreateCertificateFromCsrResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web Services IoT Core
+     * certificate provider to customize how to sign a certificate signing request (CSR) in IoT fleet provisioning. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+     * certificate signing using Amazon Web Services IoT Core certificate provider</a> from <i>Amazon Web Services IoT
+     * Core Developer Guide</i>.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreateCertificateProvider</a> action.
+     * </p>
+     * <important>
+     * <p>
+     * After you create a certificate provider, the behavior of <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+     * <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and all API calls to
+     * <code>CreateCertificateFromCsr</code> will invoke the certificate provider to create the certificates. It can
+     * take up to a few minutes for this behavior to change after a certificate provider is created.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateProviderRequest
+     * @return A Java Future containing the result of the CreateCertificateProvider operation returned by the service.
+     * @sample AWSIotAsync.CreateCertificateProvider
+     */
+    java.util.concurrent.Future<CreateCertificateProviderResult> createCertificateProviderAsync(
+            CreateCertificateProviderRequest createCertificateProviderRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web Services IoT Core
+     * certificate provider to customize how to sign a certificate signing request (CSR) in IoT fleet provisioning. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+     * certificate signing using Amazon Web Services IoT Core certificate provider</a> from <i>Amazon Web Services IoT
+     * Core Developer Guide</i>.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreateCertificateProvider</a> action.
+     * </p>
+     * <important>
+     * <p>
+     * After you create a certificate provider, the behavior of <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+     * <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and all API calls to
+     * <code>CreateCertificateFromCsr</code> will invoke the certificate provider to create the certificates. It can
+     * take up to a few minutes for this behavior to change after a certificate provider is created.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCertificateProvider operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateCertificateProvider
+     */
+    java.util.concurrent.Future<CreateCertificateProviderResult> createCertificateProviderAsync(
+            CreateCertificateProviderRequest createCertificateProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCertificateProviderRequest, CreateCertificateProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -1406,6 +1469,88 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest createOTAUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateOTAUpdateRequest, CreateOTAUpdateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an IoT software package that can be deployed to your fleet.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageRequest
+     * @return A Java Future containing the result of the CreatePackage operation returned by the service.
+     * @sample AWSIotAsync.CreatePackage
+     */
+    java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest createPackageRequest);
+
+    /**
+     * <p>
+     * Creates an IoT software package that can be deployed to your fleet.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreatePackage
+     */
+    java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest createPackageRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageRequest, CreatePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new version for an existing IoT software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageVersionRequest
+     * @return A Java Future containing the result of the CreatePackageVersion operation returned by the service.
+     * @sample AWSIotAsync.CreatePackageVersion
+     */
+    java.util.concurrent.Future<CreatePackageVersionResult> createPackageVersionAsync(CreatePackageVersionRequest createPackageVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version for an existing IoT software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param createPackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreatePackageVersion
+     */
+    java.util.concurrent.Future<CreatePackageVersionResult> createPackageVersionAsync(CreatePackageVersionRequest createPackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageVersionRequest, CreatePackageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1841,6 +1986,10 @@ public interface AWSIotAsync extends AWSIot {
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for
      * information about authorizing control plane actions.
      * </p>
+     * <p>
+     * If the <code>ThingGroup</code> that you create has the exact same attributes as an existing
+     * <code>ThingGroup</code>, you will get a 200 success response.
+     * </p>
      * </note>
      * <p>
      * Requires permission to access the <a href=
@@ -1863,6 +2012,10 @@ public interface AWSIotAsync extends AWSIot {
      * This is a control plane operation. See <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for
      * information about authorizing control plane actions.
+     * </p>
+     * <p>
+     * If the <code>ThingGroup</code> that you create has the exact same attributes as an existing
+     * <code>ThingGroup</code>, you will get a 200 success response.
      * </p>
      * </note>
      * <p>
@@ -2242,6 +2395,53 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeleteCertificateProvider</a> action.
+     * </p>
+     * <p>
+     * If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code> will
+     * resume, and IoT will create certificates signed by IoT from a certificate signing request (CSR).
+     * </p>
+     * 
+     * @param deleteCertificateProviderRequest
+     * @return A Java Future containing the result of the DeleteCertificateProvider operation returned by the service.
+     * @sample AWSIotAsync.DeleteCertificateProvider
+     */
+    java.util.concurrent.Future<DeleteCertificateProviderResult> deleteCertificateProviderAsync(
+            DeleteCertificateProviderRequest deleteCertificateProviderRequest);
+
+    /**
+     * <p>
+     * Deletes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeleteCertificateProvider</a> action.
+     * </p>
+     * <p>
+     * If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code> will
+     * resume, and IoT will create certificates signed by IoT from a certificate signing request (CSR).
+     * </p>
+     * 
+     * @param deleteCertificateProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificateProvider operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteCertificateProvider
+     */
+    java.util.concurrent.Future<DeleteCertificateProviderResult> deleteCertificateProviderAsync(
+            DeleteCertificateProviderRequest deleteCertificateProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateProviderRequest, DeleteCertificateProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -2638,6 +2838,84 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest deleteOTAUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> All package versions must be deleted before deleting the software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeletePackageVersion</a> action.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     * @return A Java Future containing the result of the DeletePackage operation returned by the service.
+     * @sample AWSIotAsync.DeletePackage
+     */
+    java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> All package versions must be deleted before deleting the software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeletePackageVersion</a> action.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeletePackage
+     */
+    java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> If a package version is designated as default, you must remove the designation from the software
+     * package using the <a>UpdatePackage</a> action.
+     * </p>
+     * 
+     * @param deletePackageVersionRequest
+     * @return A Java Future containing the result of the DeletePackageVersion operation returned by the service.
+     * @sample AWSIotAsync.DeletePackageVersion
+     */
+    java.util.concurrent.Future<DeletePackageVersionResult> deletePackageVersionAsync(DeletePackageVersionRequest deletePackageVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version from a software package.
+     * </p>
+     * <p>
+     * <b>Note:</b> If a package version is designated as default, you must remove the designation from the software
+     * package using the <a>UpdatePackage</a> action.
+     * </p>
+     * 
+     * @param deletePackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeletePackageVersion
+     */
+    java.util.concurrent.Future<DeletePackageVersionResult> deletePackageVersionAsync(DeletePackageVersionRequest deletePackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageVersionRequest, DeletePackageVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -3634,6 +3912,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Describes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param describeCertificateProviderRequest
+     * @return A Java Future containing the result of the DescribeCertificateProvider operation returned by the service.
+     * @sample AWSIotAsync.DescribeCertificateProvider
+     */
+    java.util.concurrent.Future<DescribeCertificateProviderResult> describeCertificateProviderAsync(
+            DescribeCertificateProviderRequest describeCertificateProviderRequest);
+
+    /**
+     * <p>
+     * Describes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param describeCertificateProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCertificateProvider operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeCertificateProvider
+     */
+    java.util.concurrent.Future<DescribeCertificateProviderResult> describeCertificateProviderAsync(
+            DescribeCertificateProviderRequest describeCertificateProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificateProviderRequest, DescribeCertificateProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a Device Defender detect custom metric.
      * </p>
      * <p>
@@ -3827,8 +4144,14 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns a unique endpoint specific to the Amazon Web Services account making the call.
+     * Returns or creates a unique endpoint specific to the Amazon Web Services account making the call.
      * </p>
+     * <note>
+     * <p>
+     * The first time <code>DescribeEndpoint</code> is called, an endpoint is created. All subsequent calls to
+     * <code>DescribeEndpoint</code> return the same endpoint.
+     * </p>
+     * </note>
      * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
@@ -3844,8 +4167,14 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Returns a unique endpoint specific to the Amazon Web Services account making the call.
+     * Returns or creates a unique endpoint specific to the Amazon Web Services account making the call.
      * </p>
+     * <note>
+     * <p>
+     * The first time <code>DescribeEndpoint</code> is called, an endpoint is created. All subsequent calls to
+     * <code>DescribeEndpoint</code> return the same endpoint.
+     * </p>
+     * </note>
      * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
@@ -5106,6 +5435,117 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets information about the specified software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackage</a> action.
+     * </p>
+     * 
+     * @param getPackageRequest
+     * @return A Java Future containing the result of the GetPackage operation returned by the service.
+     * @sample AWSIotAsync.GetPackage
+     */
+    java.util.concurrent.Future<GetPackageResult> getPackageAsync(GetPackageRequest getPackageRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackage</a> action.
+     * </p>
+     * 
+     * @param getPackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPackage
+     */
+    java.util.concurrent.Future<GetPackageResult> getPackageAsync(GetPackageRequest getPackageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageRequest, GetPackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified software package's configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageConfiguration</a> action.
+     * </p>
+     * 
+     * @param getPackageConfigurationRequest
+     * @return A Java Future containing the result of the GetPackageConfiguration operation returned by the service.
+     * @sample AWSIotAsync.GetPackageConfiguration
+     */
+    java.util.concurrent.Future<GetPackageConfigurationResult> getPackageConfigurationAsync(GetPackageConfigurationRequest getPackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified software package's configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageConfiguration</a> action.
+     * </p>
+     * 
+     * @param getPackageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackageConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPackageConfiguration
+     */
+    java.util.concurrent.Future<GetPackageConfigurationResult> getPackageConfigurationAsync(GetPackageConfigurationRequest getPackageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageConfigurationRequest, GetPackageConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageVersion</a> action.
+     * </p>
+     * 
+     * @param getPackageVersionRequest
+     * @return A Java Future containing the result of the GetPackageVersion operation returned by the service.
+     * @sample AWSIotAsync.GetPackageVersion
+     */
+    java.util.concurrent.Future<GetPackageVersionResult> getPackageVersionAsync(GetPackageVersionRequest getPackageVersionRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetPackageVersion</a> action.
+     * </p>
+     * 
+     * @param getPackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetPackageVersion
+     */
+    java.util.concurrent.Future<GetPackageVersionResult> getPackageVersionAsync(GetPackageVersionRequest getPackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPackageVersionRequest, GetPackageVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Groups the aggregated values that match the query into percentile groupings. The default percentile groupings
      * are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This
      * function returns a value for each percentile group specified (or the default percentile groupings). The
@@ -5236,6 +5676,10 @@ public interface AWSIotAsync extends AWSIot {
      * Gets a registration code used to register a CA certificate with IoT.
      * </p>
      * <p>
+     * IoT will create a registration code as part of this API call if the registration code doesn't exist or has been
+     * deleted. If you already have a registration code, this API call will return the same registration code.
+     * </p>
+     * <p>
      * Requires permission to access the <a href=
      * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
      * >GetRegistrationCode</a> action.
@@ -5251,6 +5695,10 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Gets a registration code used to register a CA certificate with IoT.
+     * </p>
+     * <p>
+     * IoT will create a registration code as part of this API call if the registration code doesn't exist or has been
+     * deleted. If you already have a registration code, this API call will return the same registration code.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -5813,6 +6261,43 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(ListCACertificatesRequest listCACertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all your certificate providers in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListCertificateProviders</a> action.
+     * </p>
+     * 
+     * @param listCertificateProvidersRequest
+     * @return A Java Future containing the result of the ListCertificateProviders operation returned by the service.
+     * @sample AWSIotAsync.ListCertificateProviders
+     */
+    java.util.concurrent.Future<ListCertificateProvidersResult> listCertificateProvidersAsync(ListCertificateProvidersRequest listCertificateProvidersRequest);
+
+    /**
+     * <p>
+     * Lists all your certificate providers in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListCertificateProviders</a> action.
+     * </p>
+     * 
+     * @param listCertificateProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCertificateProviders operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListCertificateProviders
+     */
+    java.util.concurrent.Future<ListCertificateProvidersResult> listCertificateProvidersAsync(ListCertificateProvidersRequest listCertificateProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCertificateProvidersRequest, ListCertificateProvidersResult> asyncHandler);
 
     /**
      * <p>
@@ -6490,6 +6975,80 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists the software package versions associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackageVersions</a> action.
+     * </p>
+     * 
+     * @param listPackageVersionsRequest
+     * @return A Java Future containing the result of the ListPackageVersions operation returned by the service.
+     * @sample AWSIotAsync.ListPackageVersions
+     */
+    java.util.concurrent.Future<ListPackageVersionsResult> listPackageVersionsAsync(ListPackageVersionsRequest listPackageVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the software package versions associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackageVersions</a> action.
+     * </p>
+     * 
+     * @param listPackageVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPackageVersions operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPackageVersions
+     */
+    java.util.concurrent.Future<ListPackageVersionsResult> listPackageVersionsAsync(ListPackageVersionsRequest listPackageVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPackageVersionsRequest, ListPackageVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the software packages associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackages</a> action.
+     * </p>
+     * 
+     * @param listPackagesRequest
+     * @return A Java Future containing the result of the ListPackages operation returned by the service.
+     * @sample AWSIotAsync.ListPackages
+     */
+    java.util.concurrent.Future<ListPackagesResult> listPackagesAsync(ListPackagesRequest listPackagesRequest);
+
+    /**
+     * <p>
+     * Lists the software packages associated to the account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListPackages</a> action.
+     * </p>
+     * 
+     * @param listPackagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPackages operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListPackages
+     */
+    java.util.concurrent.Future<ListPackagesResult> listPackagesAsync(ListPackagesRequest listPackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPackagesRequest, ListPackagesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists your policies.
      * </p>
      * <p>
@@ -6790,6 +7349,151 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<ListProvisioningTemplatesResult> listProvisioningTemplatesAsync(
             ListProvisioningTemplatesRequest listProvisioningTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * The related resources of an Audit finding. The following resources can be returned from calling this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DEVICE_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOT_POLICY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COGNITO_IDENTITY_POOL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CLIENT_ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACCOUNT_SETTINGS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ROLE_ALIAS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM_ROLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUER_CERTIFICATE
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This API is similar to DescribeAuditFinding's <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but
+     * provides pagination and is not limited to 10 resources. When calling <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+     * for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You
+     * must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.
+     * </p>
+     * </note>
+     * 
+     * @param listRelatedResourcesForAuditFindingRequest
+     * @return A Java Future containing the result of the ListRelatedResourcesForAuditFinding operation returned by the
+     *         service.
+     * @sample AWSIotAsync.ListRelatedResourcesForAuditFinding
+     */
+    java.util.concurrent.Future<ListRelatedResourcesForAuditFindingResult> listRelatedResourcesForAuditFindingAsync(
+            ListRelatedResourcesForAuditFindingRequest listRelatedResourcesForAuditFindingRequest);
+
+    /**
+     * <p>
+     * The related resources of an Audit finding. The following resources can be returned from calling this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DEVICE_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOT_POLICY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COGNITO_IDENTITY_POOL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CLIENT_ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACCOUNT_SETTINGS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ROLE_ALIAS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM_ROLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUER_CERTIFICATE
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This API is similar to DescribeAuditFinding's <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but
+     * provides pagination and is not limited to 10 resources. When calling <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+     * for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You
+     * must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.
+     * </p>
+     * </note>
+     * 
+     * @param listRelatedResourcesForAuditFindingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRelatedResourcesForAuditFinding operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.ListRelatedResourcesForAuditFinding
+     */
+    java.util.concurrent.Future<ListRelatedResourcesForAuditFindingResult> listRelatedResourcesForAuditFindingAsync(
+            ListRelatedResourcesForAuditFindingRequest listRelatedResourcesForAuditFindingRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRelatedResourcesForAuditFindingRequest, ListRelatedResourcesForAuditFindingResult> asyncHandler);
 
     /**
      * <p>
@@ -7335,7 +8039,9 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
-     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
+     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from
+     * the <i>Amazon Web Services IoT Core Developer Guide</i>.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -7361,7 +8067,9 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
-     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
+     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from
+     * the <i>Amazon Web Services IoT Core Developer Guide</i>.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -8909,6 +9617,45 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Updates a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdateCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param updateCertificateProviderRequest
+     * @return A Java Future containing the result of the UpdateCertificateProvider operation returned by the service.
+     * @sample AWSIotAsync.UpdateCertificateProvider
+     */
+    java.util.concurrent.Future<UpdateCertificateProviderResult> updateCertificateProviderAsync(
+            UpdateCertificateProviderRequest updateCertificateProviderRequest);
+
+    /**
+     * <p>
+     * Updates a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdateCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param updateCertificateProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCertificateProvider operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateCertificateProvider
+     */
+    java.util.concurrent.Future<UpdateCertificateProviderResult> updateCertificateProviderAsync(
+            UpdateCertificateProviderRequest updateCertificateProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateProviderRequest, UpdateCertificateProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a Device Defender detect custom metric.
      * </p>
      * <p>
@@ -9247,6 +9994,129 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest updateMitigationActionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMitigationActionRequest, UpdateMitigationActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     * @return A Java Future containing the result of the UpdatePackage operation returned by the service.
+     * @sample AWSIotAsync.UpdatePackage
+     */
+    java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific software package.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackage</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackage operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdatePackage
+     */
+    java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the software package configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.
+     * </p>
+     * 
+     * @param updatePackageConfigurationRequest
+     * @return A Java Future containing the result of the UpdatePackageConfiguration operation returned by the service.
+     * @sample AWSIotAsync.UpdatePackageConfiguration
+     */
+    java.util.concurrent.Future<UpdatePackageConfigurationResult> updatePackageConfigurationAsync(
+            UpdatePackageConfigurationRequest updatePackageConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the software package configuration.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.
+     * </p>
+     * 
+     * @param updatePackageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackageConfiguration operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdatePackageConfiguration
+     */
+    java.util.concurrent.Future<UpdatePackageConfigurationResult> updatePackageConfigurationAsync(
+            UpdatePackageConfigurationRequest updatePackageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageConfigurationRequest, UpdatePackageConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageVersionRequest
+     * @return A Java Future containing the result of the UpdatePackageVersion operation returned by the service.
+     * @sample AWSIotAsync.UpdatePackageVersion
+     */
+    java.util.concurrent.Future<UpdatePackageVersionResult> updatePackageVersionAsync(UpdatePackageVersionRequest updatePackageVersionRequest);
+
+    /**
+     * <p>
+     * Updates the supported fields for a specific package version.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdatePackageVersion</a> and <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >GetIndexingConfiguration</a> actions.
+     * </p>
+     * 
+     * @param updatePackageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackageVersion operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdatePackageVersion
+     */
+    java.util.concurrent.Future<UpdatePackageVersionResult> updatePackageVersionAsync(UpdatePackageVersionRequest updatePackageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageVersionRequest, UpdatePackageVersionResult> asyncHandler);
 
     /**
      * <p>

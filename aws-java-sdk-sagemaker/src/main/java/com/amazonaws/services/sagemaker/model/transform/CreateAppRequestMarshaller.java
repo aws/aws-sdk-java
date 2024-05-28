@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CreateAppRequestMarshaller {
             .marshallLocationName("DomainId").build();
     private static final MarshallingInfo<String> USERPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserProfileName").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
     private static final MarshallingInfo<String> APPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppType").build();
     private static final MarshallingInfo<String> APPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class CreateAppRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAppRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(createAppRequest.getUserProfileName(), USERPROFILENAME_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getSpaceName(), SPACENAME_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAppType(), APPTYPE_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAppName(), APPNAME_BINDING);
             protocolMarshaller.marshall(createAppRequest.getTags(), TAGS_BINDING);

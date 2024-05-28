@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution.
  * </p>
  * <p>
- * An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches
- * it, and serves it to viewers via a worldwide network of edge servers.
+ * An origin can be a Lightsail instance, bucket, container service, or load balancer. A distribution pulls content from
+ * an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InputOrigin" target="_top">AWS API
@@ -51,6 +51,14 @@ public class InputOrigin implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String protocolPolicy;
+    /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     */
+    private Integer responseTimeout;
 
     /**
      * <p>
@@ -219,6 +227,58 @@ public class InputOrigin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     * 
+     * @param responseTimeout
+     *        The amount of time, in seconds, that the distribution waits for a response after forwarding a request to
+     *        the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     *        specify otherwise) is 30 seconds.
+     */
+
+    public void setResponseTimeout(Integer responseTimeout) {
+        this.responseTimeout = responseTimeout;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     * 
+     * @return The amount of time, in seconds, that the distribution waits for a response after forwarding a request to
+     *         the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     *         specify otherwise) is 30 seconds.
+     */
+
+    public Integer getResponseTimeout() {
+        return this.responseTimeout;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     * 
+     * @param responseTimeout
+     *        The amount of time, in seconds, that the distribution waits for a response after forwarding a request to
+     *        the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     *        specify otherwise) is 30 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputOrigin withResponseTimeout(Integer responseTimeout) {
+        setResponseTimeout(responseTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -235,7 +295,9 @@ public class InputOrigin implements Serializable, Cloneable, StructuredPojo {
         if (getRegionName() != null)
             sb.append("RegionName: ").append(getRegionName()).append(",");
         if (getProtocolPolicy() != null)
-            sb.append("ProtocolPolicy: ").append(getProtocolPolicy());
+            sb.append("ProtocolPolicy: ").append(getProtocolPolicy()).append(",");
+        if (getResponseTimeout() != null)
+            sb.append("ResponseTimeout: ").append(getResponseTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +324,10 @@ public class InputOrigin implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProtocolPolicy() != null && other.getProtocolPolicy().equals(this.getProtocolPolicy()) == false)
             return false;
+        if (other.getResponseTimeout() == null ^ this.getResponseTimeout() == null)
+            return false;
+        if (other.getResponseTimeout() != null && other.getResponseTimeout().equals(this.getResponseTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +339,7 @@ public class InputOrigin implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getProtocolPolicy() == null) ? 0 : getProtocolPolicy().hashCode());
+        hashCode = prime * hashCode + ((getResponseTimeout() == null) ? 0 : getResponseTimeout().hashCode());
         return hashCode;
     }
 

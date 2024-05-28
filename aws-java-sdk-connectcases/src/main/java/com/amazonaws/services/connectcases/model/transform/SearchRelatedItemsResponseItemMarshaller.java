@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class SearchRelatedItemsResponseItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associationTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<StructuredPojo> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("content").build();
+    private static final MarshallingInfo<StructuredPojo> PERFORMEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("performedBy").build();
     private static final MarshallingInfo<String> RELATEDITEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relatedItemId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class SearchRelatedItemsResponseItemMarshaller {
         try {
             protocolMarshaller.marshall(searchRelatedItemsResponseItem.getAssociationTime(), ASSOCIATIONTIME_BINDING);
             protocolMarshaller.marshall(searchRelatedItemsResponseItem.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(searchRelatedItemsResponseItem.getPerformedBy(), PERFORMEDBY_BINDING);
             protocolMarshaller.marshall(searchRelatedItemsResponseItem.getRelatedItemId(), RELATEDITEMID_BINDING);
             protocolMarshaller.marshall(searchRelatedItemsResponseItem.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(searchRelatedItemsResponseItem.getType(), TYPE_BINDING);

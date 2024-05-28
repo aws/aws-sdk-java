@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.support.AWSSupportClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.support.model.*;
+
 import com.amazonaws.services.support.model.transform.*;
 
 /**
@@ -65,7 +66,7 @@ import com.amazonaws.services.support.model.transform.*;
  * </li>
  * <li>
  * <p>
- * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise On-Ramp, or
+ * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or
  * Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about
  * changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.
  * </p>
@@ -73,76 +74,47 @@ import com.amazonaws.services.support.model.transform.*;
  * </ul>
  * </note>
  * <p>
- * The Amazon Web Services Support service also exposes a set of <a
- * href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted Advisor</a> features. You can retrieve a list of
- * checks and their descriptions, get check results, specify checks to refresh, and get the refresh status of checks.
+ * You can also use the Amazon Web Services Support API to access features for <a
+ * href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted Advisor</a>. You can return a list of checks and
+ * their descriptions, get check results, specify checks to refresh, and get the refresh status of checks.
  * </p>
  * <p>
- * The following list describes the Amazon Web Services Support case management operations:
+ * You can manage your support cases with the following Amazon Web Services Support API operations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Service names, issue categories, and available severity levels - The <a>DescribeServices</a> and
- * <a>DescribeSeverityLevels</a> operations return Amazon Web Services service names, service codes, service categories,
- * and problem severity levels. You use these values when you call the <a>CreateCase</a> operation.
+ * The <a>CreateCase</a>, <a>DescribeCases</a>, <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create
+ * Amazon Web Services Support cases, retrieve information about cases, and resolve cases.
  * </p>
  * </li>
  * <li>
  * <p>
- * Case creation, case details, and case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
- * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create Amazon Web Services Support cases, retrieve
- * information about cases, and resolve cases.
+ * The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a> operations retrieve
+ * and add communications and attachments to Amazon Web Services Support cases.
  * </p>
  * </li>
  * <li>
  * <p>
- * Case communication - The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
- * operations retrieve and add communications and attachments to Amazon Web Services Support cases.
+ * The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return Amazon Web Service names, service
+ * codes, service categories, and problem severity levels. You use these values when you call the <a>CreateCase</a>
+ * operation.
  * </p>
  * </li>
  * </ul>
  * <p>
- * The following list describes the operations available from the Amazon Web Services Support service for Trusted
- * Advisor:
+ * You can also use the Amazon Web Services Support API to call the Trusted Advisor operations. For more information,
+ * see <a href="https://docs.aws.amazon.com/">Trusted Advisor</a> in the <i>Amazon Web Services Support User Guide</i>.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run against your Amazon Web Services resources.
- * </p>
- * </li>
- * <li>
- * <p>
- * Using the <code>checkId</code> for a specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call
- * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check that you specified.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results for one or more Trusted Advisor checks.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a specified check.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status of one or more checks.
- * </p>
- * </li>
- * </ul>
  * <p>
  * For authentication of requests, Amazon Web Services Support uses <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
  * Process</a>.
  * </p>
  * <p>
- * See <a href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the Amazon Web Services Support
- * API</a> in the <i>Amazon Web Services Support User Guide</i> for information about how to use this service to create
- * and manage your support cases, and how to call Trusted Advisor for results of checks on your resources.
+ * For more information about this service and the endpoints to use, see <a
+ * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html">About the Amazon Web Services
+ * Support API</a> in the <i>Amazon Web Services Support User Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -179,6 +151,9 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AttachmentSetExpired").withExceptionUnmarshaller(
                                     com.amazonaws.services.support.model.transform.AttachmentSetExpiredExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AttachmentLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.support.model.transform.AttachmentLimitExceededExceptionUnmarshaller.getInstance()))
@@ -414,10 +389,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -501,10 +476,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -615,10 +590,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -699,10 +674,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -804,10 +779,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -897,10 +872,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -963,6 +938,87 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
     /**
      * <p>
+     * Returns a list of CreateCaseOption types along with the corresponding supported hours and language availability.
+     * You can specify the <code>language</code> <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code> used to retrieve the CreateCaseOptions.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeCreateCaseOptionsRequest
+     * @return Result of the DescribeCreateCaseOptions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+     * @sample AWSSupport.DescribeCreateCaseOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeCreateCaseOptionsResult describeCreateCaseOptions(DescribeCreateCaseOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCreateCaseOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCreateCaseOptionsResult executeDescribeCreateCaseOptions(DescribeCreateCaseOptionsRequest describeCreateCaseOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCreateCaseOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCreateCaseOptionsRequest> request = null;
+        Response<DescribeCreateCaseOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCreateCaseOptionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeCreateCaseOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCreateCaseOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCreateCaseOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeCreateCaseOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the current list of Amazon Web Services services and a list of service categories for each service. You
      * then use service names and categories in your <a>CreateCase</a> requests. Each Amazon Web Services service has
      * its own set of categories.
@@ -985,10 +1041,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -1066,10 +1122,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -1135,6 +1191,87 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
 
     /**
      * <p>
+     * Returns a list of supported languages for a specified <code>categoryCode</code>, <code>issueType</code> and
+     * <code>serviceCode</code>. The returned supported languages will include a ISO 639-1 code for the
+     * <code>language</code>, and the language display name.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support
+     * API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeSupportedLanguagesRequest
+     * @return Result of the DescribeSupportedLanguages operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+     * @sample AWSSupport.DescribeSupportedLanguages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSupportedLanguagesResult describeSupportedLanguages(DescribeSupportedLanguagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSupportedLanguages(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSupportedLanguagesResult executeDescribeSupportedLanguages(DescribeSupportedLanguagesRequest describeSupportedLanguagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSupportedLanguagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSupportedLanguagesRequest> request = null;
+        Response<DescribeSupportedLanguagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSupportedLanguagesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSupportedLanguagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSupportedLanguages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSupportedLanguagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSupportedLanguagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. You can get the check
      * IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
@@ -1153,19 +1290,28 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N.
+     * Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted
+     * Advisor operations. For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web
+     * Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.
+     * </p>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
      * @return Result of the DescribeTrustedAdvisorCheckRefreshStatuses operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckRefreshStatuses
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses"
@@ -1274,19 +1420,28 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N.
+     * Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted
+     * Advisor operations. For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web
+     * Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.
+     * </p>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
      * @return Result of the DescribeTrustedAdvisorCheckResult operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckResult
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult"
      *      target="_top">AWS API Documentation</a>
@@ -1356,19 +1511,28 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N.
+     * Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted
+     * Advisor operations. For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web
+     * Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.
+     * </p>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
      * @return Result of the DescribeTrustedAdvisorCheckSummaries operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorCheckSummaries
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries"
      *      target="_top">AWS API Documentation</a>
@@ -1423,9 +1587,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     /**
      * <p>
      * Returns information about all available Trusted Advisor checks, including the name, ID, category, description,
-     * and metadata. You must specify a language code. The Amazon Web Services Support API currently supports English
-     * ("en") and Japanese ("ja"). The response contains a <a>TrustedAdvisorCheckDescription</a> object for each check.
-     * You must set the Amazon Web Services Region to us-east-1.
+     * and metadata. You must specify a language code.
+     * </p>
+     * <p>
+     * The response contains a <a>TrustedAdvisorCheckDescription</a> object for each check. You must set the Amazon Web
+     * Services Region to us-east-1.
      * </p>
      * <note>
      * <ul>
@@ -1437,10 +1603,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * <li>
@@ -1451,11 +1617,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N.
+     * Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted
+     * Advisor operations. For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web
+     * Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.
+     * </p>
      * 
      * @param describeTrustedAdvisorChecksRequest
      * @return Result of the DescribeTrustedAdvisorChecks operation returned by the service.
      * @throws InternalServerErrorException
      *         An internal server error occurred.
+     * @throws ThrottlingException
+     *         You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
      * @sample AWSSupport.DescribeTrustedAdvisorChecks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks"
      *      target="_top">AWS API Documentation</a>
@@ -1511,12 +1686,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * Refreshes the Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling the
      * <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
-     * <note>
      * <p>
      * Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code> operation to
      * refresh them, you might see the <code>InvalidParameterValue</code> error.
      * </p>
-     * </note>
      * <p>
      * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.
      * </p>
@@ -1530,14 +1703,21 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N.
+     * Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted
+     * Advisor operations. For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web
+     * Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.
+     * </p>
      * 
      * @param refreshTrustedAdvisorCheckRequest
      * @return Result of the RefreshTrustedAdvisorCheck operation returned by the service.
@@ -1608,10 +1788,10 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * </li>
      * <li>
      * <p>
-     * If you call the Amazon Web Services Support API from an account that does not have a Business, Enterprise
-     * On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For
-     * information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web
-     * Services Support</a>.
+     * If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp,
+     * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information
+     * about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+     * Support</a>.
      * </p>
      * </li>
      * </ul>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class GetQuantumTaskResultJsonUnmarshaller implements Unmarshaller<GetQua
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("associations", targetDepth)) {
+                    context.nextToken();
+                    getQuantumTaskResult.setAssociations(new ListUnmarshaller<Association>(AssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     getQuantumTaskResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -84,6 +90,10 @@ public class GetQuantumTaskResultJsonUnmarshaller implements Unmarshaller<GetQua
                 if (context.testExpression("quantumTaskArn", targetDepth)) {
                     context.nextToken();
                     getQuantumTaskResult.setQuantumTaskArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queueInfo", targetDepth)) {
+                    context.nextToken();
+                    getQuantumTaskResult.setQueueInfo(QuantumTaskQueueInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("shots", targetDepth)) {
                     context.nextToken();

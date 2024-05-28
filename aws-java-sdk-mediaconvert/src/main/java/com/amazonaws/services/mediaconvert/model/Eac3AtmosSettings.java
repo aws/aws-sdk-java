@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS.
+ * Required when you set Codec to the value EAC3_ATMOS.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Eac3AtmosSettings" target="_top">AWS API
  *      Documentation</a>
@@ -43,78 +43,70 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     private String dialogueIntelligence;
     /**
      * Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom
-     * (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use
-     * the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right
-     * only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right
-     * total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix
-     * (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify
-     * values for the related settings, MediaConvert uses default values for those settings.
+     * to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related
+     * settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total
+     * surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for
+     * Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      */
     private String downmixControl;
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression
-     * line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the
-     * Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     private String dynamicRangeCompressionLine;
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF
-     * (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic
-     * Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     private String dynamicRangeCompressionRf;
     /**
      * Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default
-     * value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source
-     * (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your
-     * dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range
-     * compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control
-     * (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for
-     * those settings.
+     * value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the
+     * metadata from your input. Related settings--Use these settings to specify your dynamic range control values:
+     * Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range
+     * control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      */
     private String dynamicRangeControl;
     /**
      * Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      */
     private Double loRoCenterMixLevel;
     /**
-     * Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses
-     * this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0,
-     * -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on
-     * the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use
-     * this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl).
-     * Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
+     * Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value for
+     * downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel.
+     * Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related
+     * setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control.
+     * Otherwise, MediaConvert ignores Left only/Right only surround.
      */
     private Double loRoSurroundMixLevel;
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      */
     private Double ltRtCenterMixLevel;
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses
-     * this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To
-     * have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     * (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0, -4.5, -6.0, and -60.
+     * The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you
+     * choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom
+     * for the setting Downmix control. Otherwise, the service ignores Left total/Right total surround.
      */
     private Double ltRtSurroundMixLevel;
     /** Choose how the service meters the loudness of your audio. */
@@ -127,10 +119,9 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
      */
     private Integer speechThreshold;
     /**
-     * Choose how the service does stereo downmixing. Default value: Not indicated
-     * (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default
-     * value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo
-     * downmix (StereoDownmix).
+     * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert
+     * use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores
+     * Stereo downmix.
      */
     private String stereoDownmix;
     /**
@@ -351,22 +342,19 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom
-     * (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use
-     * the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right
-     * only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right
-     * total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix
-     * (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify
-     * values for the related settings, MediaConvert uses default values for those settings.
+     * to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related
+     * settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total
+     * surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for
+     * Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @param downmixControl
      *        Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value,
-     *        Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source
-     *        (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to
-     *        specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total
-     *        surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only
-     *        center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for
-     *        Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses
-     *        default values for those settings.
+     *        Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your
+     *        input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround,
+     *        Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo
+     *        downmix. When you keep Custom for Downmix control and you don't specify values for the related settings,
+     *        MediaConvert uses default values for those settings.
      * @see Eac3AtmosDownmixControl
      */
 
@@ -376,21 +364,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom
-     * (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use
-     * the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right
-     * only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right
-     * total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix
-     * (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify
-     * values for the related settings, MediaConvert uses default values for those settings.
+     * to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related
+     * settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total
+     * surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for
+     * Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @return Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default
-     *         value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source
-     *         (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to
-     *         specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total
-     *         surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only
-     *         center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for
-     *         Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses
-     *         default values for those settings.
+     *         value, Custom to provide downmix values in your job settings. Choose Follow source to use the metadata
+     *         from your input. Related settings--Use these settings to specify your downmix values: Left only/Right
+     *         only surround, Left total/Right total surround, Left total/Right total center, Left only/Right only
+     *         center, and Stereo downmix. When you keep Custom for Downmix control and you don't specify values for the
+     *         related settings, MediaConvert uses default values for those settings.
      * @see Eac3AtmosDownmixControl
      */
 
@@ -400,22 +385,19 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom
-     * (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use
-     * the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right
-     * only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right
-     * total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix
-     * (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify
-     * values for the related settings, MediaConvert uses default values for those settings.
+     * to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related
+     * settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total
+     * surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for
+     * Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @param downmixControl
      *        Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value,
-     *        Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source
-     *        (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to
-     *        specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total
-     *        surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only
-     *        center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for
-     *        Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses
-     *        default values for those settings.
+     *        Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your
+     *        input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround,
+     *        Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo
+     *        downmix. When you keep Custom for Downmix control and you don't specify values for the related settings,
+     *        MediaConvert uses default values for those settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDownmixControl
      */
@@ -427,22 +409,19 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom
-     * (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use
-     * the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right
-     * only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right
-     * total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix
-     * (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify
-     * values for the related settings, MediaConvert uses default values for those settings.
+     * to provide downmix values in your job settings. Choose Follow source to use the metadata from your input. Related
+     * settings--Use these settings to specify your downmix values: Left only/Right only surround, Left total/Right total
+     * surround, Left total/Right total center, Left only/Right only center, and Stereo downmix. When you keep Custom for
+     * Downmix control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @param downmixControl
      *        Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value,
-     *        Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source
-     *        (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to
-     *        specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total
-     *        surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only
-     *        center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for
-     *        Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses
-     *        default values for those settings.
+     *        Custom to provide downmix values in your job settings. Choose Follow source to use the metadata from your
+     *        input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround,
+     *        Left total/Right total surround, Left total/Right total center, Left only/Right only center, and Stereo
+     *        downmix. When you keep Custom for Downmix control and you don't specify values for the related settings,
+     *        MediaConvert uses default values for those settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDownmixControl
      */
@@ -454,21 +433,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression
-     * line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the
-     * Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
      *        Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *        the Dolby stream for the line operating mode. Default value: Film light
-     *        (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here,
-     *        keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl).
-     *        Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For
-     *        information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     *        Dolby Metadata Guide at
+     *        the Dolby stream for the line operating mode. Default value: Film light Related setting: To have
+     *        MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *        control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby
+     *        DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3AtmosDynamicRangeCompressionLine
      */
@@ -479,20 +455,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression
-     * line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the
-     * Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @return Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *         the Dolby stream for the line operating mode. Default value: Film light
-     *         (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify
-     *         here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control
-     *         (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression line
-     *         (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the
-     *         Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         the Dolby stream for the line operating mode. Default value: Film light Related setting: To have
+     *         MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *         control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby
+     *         DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3AtmosDynamicRangeCompressionLine
      */
@@ -503,21 +476,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression
-     * line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the
-     * Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
      *        Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *        the Dolby stream for the line operating mode. Default value: Film light
-     *        (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here,
-     *        keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl).
-     *        Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For
-     *        information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     *        Dolby Metadata Guide at
+     *        the Dolby stream for the line operating mode. Default value: Film light Related setting: To have
+     *        MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *        control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby
+     *        DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDynamicRangeCompressionLine
@@ -530,21 +500,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression
-     * line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the
-     * Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the line operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression line. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
      *        Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *        the Dolby stream for the line operating mode. Default value: Film light
-     *        (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here,
-     *        keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl).
-     *        Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For
-     *        information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     *        Dolby Metadata Guide at
+     *        the Dolby stream for the line operating mode. Default value: Film light Related setting: To have
+     *        MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *        control. Otherwise, MediaConvert ignores Dynamic range compression line. For information about the Dolby
+     *        DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDynamicRangeCompressionLine
@@ -557,20 +524,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF
-     * (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic
-     * Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
      *        Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *        the Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT)
-     *        Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom
-     *        (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores
-     *        Dynamic range compression RF (DynamicRangeCompressionRf). For information about the Dolby DRC operating
-     *        modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have
+     *        MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *        control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC
+     *        operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3AtmosDynamicRangeCompressionRf
      */
@@ -581,20 +546,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF
-     * (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic
-     * Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @return Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *         the Dolby stream for the RF operating mode. Default value: Film light
-     *         (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify
-     *         here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control
-     *         (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF
-     *         (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the
-     *         Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have
+     *         MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *         control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby
+     *         DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3AtmosDynamicRangeCompressionRf
      */
@@ -605,20 +567,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF
-     * (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic
-     * Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
      *        Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *        the Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT)
-     *        Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom
-     *        (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores
-     *        Dynamic range compression RF (DynamicRangeCompressionRf). For information about the Dolby DRC operating
-     *        modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have
+     *        MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *        control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC
+     *        operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDynamicRangeCompressionRf
@@ -631,20 +591,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
-     * Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related
-     * setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the
-     * setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF
-     * (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic
-     * Range Control chapter of the Dolby Metadata Guide at
+     * Dolby stream for the RF operating mode. Default value: Film light Related setting: To have MediaConvert use the
+     * value you specify here, keep the default value, Custom for the setting Dynamic range control. Otherwise,
+     * MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC operating modes and
+     * profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
      *        Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
-     *        the Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT)
-     *        Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom
-     *        (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores
-     *        Dynamic range compression RF (DynamicRangeCompressionRf). For information about the Dolby DRC operating
-     *        modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        the Dolby stream for the RF operating mode. Default value: Film light Related setting: To have
+     *        MediaConvert use the value you specify here, keep the default value, Custom for the setting Dynamic range
+     *        control. Otherwise, MediaConvert ignores Dynamic range compression RF. For information about the Dolby DRC
+     *        operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDynamicRangeCompressionRf
@@ -657,21 +615,19 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default
-     * value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source
-     * (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your
-     * dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range
-     * compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control
-     * (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for
-     * those settings.
+     * value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the
+     * metadata from your input. Related settings--Use these settings to specify your dynamic range control values:
+     * Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range
+     * control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @param dynamicRangeControl
      *        Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the
-     *        default value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose
-     *        Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these
-     *        settings to specify your dynamic range control values: Dynamic range compression line
-     *        (DynamicRangeCompressionLine) and Dynamic range compression RF (DynamicRangeCompressionRf). When you keep
-     *        the value Custom (SPECIFIED) for Dynamic range control (DynamicRangeControl) and you don't specify values
-     *        for the related settings, MediaConvert uses default values for those settings.
+     *        default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source
+     *        to use the metadata from your input. Related settings--Use these settings to specify your dynamic range
+     *        control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value
+     *        Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses
+     *        default values for those settings.
      * @see Eac3AtmosDynamicRangeControl
      */
 
@@ -681,20 +637,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default
-     * value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source
-     * (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your
-     * dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range
-     * compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control
-     * (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for
-     * those settings.
+     * value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the
+     * metadata from your input. Related settings--Use these settings to specify your dynamic range control values:
+     * Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range
+     * control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @return Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the
-     *         default value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose
-     *         Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these
-     *         settings to specify your dynamic range control values: Dynamic range compression line
-     *         (DynamicRangeCompressionLine) and Dynamic range compression RF (DynamicRangeCompressionRf). When you keep
-     *         the value Custom (SPECIFIED) for Dynamic range control (DynamicRangeControl) and you don't specify values
-     *         for the related settings, MediaConvert uses default values for those settings.
+     *         default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source
+     *         to use the metadata from your input. Related settings--Use these settings to specify your dynamic range
+     *         control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value
+     *         Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses
+     *         default values for those settings.
      * @see Eac3AtmosDynamicRangeControl
      */
 
@@ -704,21 +658,19 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default
-     * value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source
-     * (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your
-     * dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range
-     * compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control
-     * (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for
-     * those settings.
+     * value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the
+     * metadata from your input. Related settings--Use these settings to specify your dynamic range control values:
+     * Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range
+     * control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @param dynamicRangeControl
      *        Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the
-     *        default value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose
-     *        Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these
-     *        settings to specify your dynamic range control values: Dynamic range compression line
-     *        (DynamicRangeCompressionLine) and Dynamic range compression RF (DynamicRangeCompressionRf). When you keep
-     *        the value Custom (SPECIFIED) for Dynamic range control (DynamicRangeControl) and you don't specify values
-     *        for the related settings, MediaConvert uses default values for those settings.
+     *        default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source
+     *        to use the metadata from your input. Related settings--Use these settings to specify your dynamic range
+     *        control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value
+     *        Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses
+     *        default values for those settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDynamicRangeControl
      */
@@ -730,21 +682,19 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default
-     * value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source
-     * (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your
-     * dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range
-     * compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control
-     * (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for
-     * those settings.
+     * value, Custom, to provide dynamic range control values in your job settings. Choose Follow source to use the
+     * metadata from your input. Related settings--Use these settings to specify your dynamic range control values:
+     * Dynamic range compression line and Dynamic range compression RF. When you keep the value Custom for Dynamic range
+     * control and you don't specify values for the related settings, MediaConvert uses default values for those
+     * settings.
      * 
      * @param dynamicRangeControl
      *        Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the
-     *        default value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose
-     *        Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these
-     *        settings to specify your dynamic range control values: Dynamic range compression line
-     *        (DynamicRangeCompressionLine) and Dynamic range compression RF (DynamicRangeCompressionRf). When you keep
-     *        the value Custom (SPECIFIED) for Dynamic range control (DynamicRangeControl) and you don't specify values
-     *        for the related settings, MediaConvert uses default values for those settings.
+     *        default value, Custom, to provide dynamic range control values in your job settings. Choose Follow source
+     *        to use the metadata from your input. Related settings--Use these settings to specify your dynamic range
+     *        control values: Dynamic range compression line and Dynamic range compression RF. When you keep the value
+     *        Custom for Dynamic range control and you don't specify values for the related settings, MediaConvert uses
+     *        default values for those settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosDynamicRangeControl
      */
@@ -756,19 +706,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      * 
      * @param loRoCenterMixLevel
      *        Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     *        MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB).
-     *        Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value
-     *        depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have
-     *        MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     *        (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+     *        MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5,
+     *        -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value,
+     *        Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      */
 
     public void setLoRoCenterMixLevel(Double loRoCenterMixLevel) {
@@ -777,19 +725,16 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      * 
      * @return Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     *         MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB).
-     *         Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value
-     *         depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To
-     *         have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix
-     *         control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only center
-     *         (LoRoCenterMixLevel).
+     *         MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5,
+     *         -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you
+     *         choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value,
+     *         Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      */
 
     public Double getLoRoCenterMixLevel() {
@@ -798,19 +743,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      * 
      * @param loRoCenterMixLevel
      *        Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center).
-     *        MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB).
-     *        Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value
-     *        depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have
-     *        MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     *        (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
+     *        MediaConvert uses this value for downmixing. Default value: -3 dB. Valid values: 3.0, 1.5, 0.0, -1.5,
+     *        -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value,
+     *        Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -820,21 +763,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses
-     * this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0,
-     * -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on
-     * the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use
-     * this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl).
-     * Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
+     * Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value for
+     * downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel.
+     * Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related
+     * setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control.
+     * Otherwise, MediaConvert ignores Left only/Right only surround.
      * 
      * @param loRoSurroundMixLevel
-     *        Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert
-     *        uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values:
-     *        -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses
-     *        this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related
-     *        setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting
-     *        Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround
-     *        (LoRoSurroundMixLevel).
+     *        Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value
+     *        for downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes
+     *        the channel. Related setting: How the service uses this value depends on the value that you choose for
+     *        Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for
+     *        the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only surround.
      */
 
     public void setLoRoSurroundMixLevel(Double loRoSurroundMixLevel) {
@@ -842,20 +782,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses
-     * this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0,
-     * -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on
-     * the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use
-     * this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl).
-     * Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
+     * Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value for
+     * downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel.
+     * Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related
+     * setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control.
+     * Otherwise, MediaConvert ignores Left only/Right only surround.
      * 
-     * @return Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround).
-     *         MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB).
-     *         Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the
-     *         service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix).
-     *         Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the
-     *         setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround
-     *         (LoRoSurroundMixLevel).
+     * @return Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value
+     *         for downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes
+     *         the channel. Related setting: How the service uses this value depends on the value that you choose for
+     *         Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for
+     *         the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only surround.
      */
 
     public Double getLoRoSurroundMixLevel() {
@@ -863,21 +800,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses
-     * this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0,
-     * -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on
-     * the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use
-     * this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl).
-     * Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
+     * Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value for
+     * downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel.
+     * Related setting: How the service uses this value depends on the value that you choose for Stereo downmix. Related
+     * setting: To have MediaConvert use this value, keep the default value, Custom for the setting Downmix control.
+     * Otherwise, MediaConvert ignores Left only/Right only surround.
      * 
      * @param loRoSurroundMixLevel
-     *        Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert
-     *        uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values:
-     *        -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses
-     *        this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related
-     *        setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting
-     *        Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround
-     *        (LoRoSurroundMixLevel).
+     *        Specify a value for the following Dolby Atmos setting: Left only/Right only. MediaConvert uses this value
+     *        for downmixing. Default value: -3 dB. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes
+     *        the channel. Related setting: How the service uses this value depends on the value that you choose for
+     *        Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for
+     *        the setting Downmix control. Otherwise, MediaConvert ignores Left only/Right only surround.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -888,19 +822,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      * 
      * @param ltRtCenterMixLevel
      *        Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     *        MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB)
-     *        Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value
-     *        depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have
-     *        MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     *        (DownmixControl). Otherwise, MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+     *        MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0,
+     *        -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for
+     *        Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for
+     *        the setting Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      */
 
     public void setLtRtCenterMixLevel(Double ltRtCenterMixLevel) {
@@ -909,19 +841,16 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      * 
      * @return Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     *         MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB)
-     *         Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value
-     *         depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To
-     *         have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix
-     *         control (DownmixControl). Otherwise, MediaConvert ignores Left total/Right total center
-     *         (LtRtCenterMixLevel).
+     *         MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5,
+     *         -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you
+     *         choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value,
+     *         Custom for the setting Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      */
 
     public Double getLtRtCenterMixLevel() {
@@ -930,19 +859,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the
-     * value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this
-     * value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     * MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
+     * and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for the setting
+     * Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      * 
      * @param ltRtCenterMixLevel
      *        Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center).
-     *        MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB)
-     *        Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value
-     *        depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have
-     *        MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     *        (DownmixControl). Otherwise, MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
+     *        MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: 3.0, 1.5, 0.0, -1.5, -3.0,
+     *        -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for
+     *        Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom for
+     *        the setting Downmix control. Otherwise, MediaConvert ignores Left total/Right total center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -953,20 +880,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses
-     * this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To
-     * have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     * (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0, -4.5, -6.0, and -60.
+     * The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you
+     * choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom
+     * for the setting Downmix control. Otherwise, the service ignores Left total/Right total surround.
      * 
      * @param ltRtSurroundMixLevel
      *        Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt
-     *        surround). MediaConvert uses this value for downmixing. Default value: -3 dB
-     *        (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes
-     *        the channel. Related setting: How the service uses this value depends on the value that you choose for
-     *        Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the
-     *        default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, the service
-     *        ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     *        surround). MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0,
+     *        -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value
+     *        depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this
+     *        value, keep the default value, Custom for the setting Downmix control. Otherwise, the service ignores Left
+     *        total/Right total surround.
      */
 
     public void setLtRtSurroundMixLevel(Double ltRtSurroundMixLevel) {
@@ -975,19 +900,17 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses
-     * this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To
-     * have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     * (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0, -4.5, -6.0, and -60.
+     * The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you
+     * choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom
+     * for the setting Downmix control. Otherwise, the service ignores Left total/Right total surround.
      * 
      * @return Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt
-     *         surround). MediaConvert uses this value for downmixing. Default value: -3 dB
-     *         (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes
-     *         the channel. Related setting: How the service uses this value depends on the value that you choose for
-     *         Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the
-     *         default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, the
-     *         service ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     *         surround). MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0,
+     *         -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value
+     *         depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this
+     *         value, keep the default value, Custom for the setting Downmix control. Otherwise, the service ignores
+     *         Left total/Right total surround.
      */
 
     public Double getLtRtSurroundMixLevel() {
@@ -996,20 +919,18 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround).
-     * MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid
-     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses
-     * this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To
-     * have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control
-     * (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     * MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0, -4.5, -6.0, and -60.
+     * The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you
+     * choose for Stereo downmix. Related setting: To have MediaConvert use this value, keep the default value, Custom
+     * for the setting Downmix control. Otherwise, the service ignores Left total/Right total surround.
      * 
      * @param ltRtSurroundMixLevel
      *        Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt
-     *        surround). MediaConvert uses this value for downmixing. Default value: -3 dB
-     *        (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes
-     *        the channel. Related setting: How the service uses this value depends on the value that you choose for
-     *        Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the
-     *        default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, the service
-     *        ignores Left total/Right total surround (LtRtSurroundMixLevel).
+     *        surround). MediaConvert uses this value for downmixing. Default value: -3 dB Valid values: -1.5, -3.0,
+     *        -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value
+     *        depends on the value that you choose for Stereo downmix. Related setting: To have MediaConvert use this
+     *        value, keep the default value, Custom for the setting Downmix control. Otherwise, the service ignores Left
+     *        total/Right total surround.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1144,16 +1065,14 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Choose how the service does stereo downmixing. Default value: Not indicated
-     * (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default
-     * value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo
-     * downmix (StereoDownmix).
+     * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert
+     * use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores
+     * Stereo downmix.
      * 
      * @param stereoDownmix
-     *        Choose how the service does stereo downmixing. Default value: Not indicated
-     *        (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the
-     *        default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     *        MediaConvert ignores Stereo downmix (StereoDownmix).
+     *        Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have
+     *        MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise,
+     *        MediaConvert ignores Stereo downmix.
      * @see Eac3AtmosStereoDownmix
      */
 
@@ -1162,15 +1081,13 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Choose how the service does stereo downmixing. Default value: Not indicated
-     * (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default
-     * value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo
-     * downmix (StereoDownmix).
+     * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert
+     * use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores
+     * Stereo downmix.
      * 
-     * @return Choose how the service does stereo downmixing. Default value: Not indicated
-     *         (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the
-     *         default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     *         MediaConvert ignores Stereo downmix (StereoDownmix).
+     * @return Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have
+     *         MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise,
+     *         MediaConvert ignores Stereo downmix.
      * @see Eac3AtmosStereoDownmix
      */
 
@@ -1179,16 +1096,14 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Choose how the service does stereo downmixing. Default value: Not indicated
-     * (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default
-     * value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo
-     * downmix (StereoDownmix).
+     * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert
+     * use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores
+     * Stereo downmix.
      * 
      * @param stereoDownmix
-     *        Choose how the service does stereo downmixing. Default value: Not indicated
-     *        (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the
-     *        default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     *        MediaConvert ignores Stereo downmix (StereoDownmix).
+     *        Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have
+     *        MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise,
+     *        MediaConvert ignores Stereo downmix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosStereoDownmix
      */
@@ -1199,16 +1114,14 @@ public class Eac3AtmosSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Choose how the service does stereo downmixing. Default value: Not indicated
-     * (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default
-     * value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo
-     * downmix (StereoDownmix).
+     * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert
+     * use this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores
+     * Stereo downmix.
      * 
      * @param stereoDownmix
-     *        Choose how the service does stereo downmixing. Default value: Not indicated
-     *        (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the
-     *        default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise,
-     *        MediaConvert ignores Stereo downmix (StereoDownmix).
+     *        Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have
+     *        MediaConvert use this value, keep the default value, Custom for the setting Downmix control. Otherwise,
+     *        MediaConvert ignores Stereo downmix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AtmosStereoDownmix
      */

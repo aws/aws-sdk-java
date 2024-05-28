@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -181,13 +181,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      * </p>
      */
     private Boolean waitForQuietTime;
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      */
     private Boolean refreshOnSegmentUpdate;
@@ -199,25 +199,50 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
     private JourneyChannelSettings journeyChannelSettings;
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      */
     private Boolean sendingSchedule;
     /**
      * <p>
-     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
-     * set to true.
+     * The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set
+     * to true.
      * </p>
      */
     private OpenHours openHours;
     /**
      * <p>
-     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should
      * be set to true.
      * </p>
      */
     private ClosedDays closedDays;
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     */
+    private java.util.List<String> timezoneEstimationMethods;
 
     /**
      * <p>
@@ -1344,11 +1369,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      * </p>
      * 
      * @param waitForQuietTime
-     *        Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     *        Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      */
 
     public void setWaitForQuietTime(Boolean waitForQuietTime) {
@@ -1357,10 +1382,10 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      * </p>
      * 
-     * @return Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * @return Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      */
 
     public Boolean getWaitForQuietTime() {
@@ -1369,11 +1394,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      * </p>
      * 
      * @param waitForQuietTime
-     *        Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     *        Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1384,10 +1409,10 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      * </p>
      * 
-     * @return Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * @return Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.
      */
 
     public Boolean isWaitForQuietTime() {
@@ -1396,11 +1421,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
      * @param refreshOnSegmentUpdate
-     *        Specifies whether a journey should be refreshed on segment update.
+     *        Indicates whether the journey participants should be refreshed when a segment is updated.
      */
 
     public void setRefreshOnSegmentUpdate(Boolean refreshOnSegmentUpdate) {
@@ -1409,10 +1434,10 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
-     * @return Specifies whether a journey should be refreshed on segment update.
+     * @return Indicates whether the journey participants should be refreshed when a segment is updated.
      */
 
     public Boolean getRefreshOnSegmentUpdate() {
@@ -1421,11 +1446,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
      * @param refreshOnSegmentUpdate
-     *        Specifies whether a journey should be refreshed on segment update.
+     *        Indicates whether the journey participants should be refreshed when a segment is updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1436,10 +1461,10 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
-     * @return Specifies whether a journey should be refreshed on segment update.
+     * @return Indicates whether the journey participants should be refreshed when a segment is updated.
      */
 
     public Boolean isRefreshOnSegmentUpdate() {
@@ -1488,13 +1513,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
      * @param sendingSchedule
-     *        Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *        in order to allow (OpenHours and ClosedDays)
+     *        Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *        using OpenHours and ClosedDays.
      */
 
     public void setSendingSchedule(Boolean sendingSchedule) {
@@ -1503,12 +1528,12 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
-     * @return Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *         in order to allow (OpenHours and ClosedDays)
+     * @return Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *         using OpenHours and ClosedDays.
      */
 
     public Boolean getSendingSchedule() {
@@ -1517,13 +1542,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
      * @param sendingSchedule
-     *        Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *        in order to allow (OpenHours and ClosedDays)
+     *        Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *        using OpenHours and ClosedDays.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1534,12 +1559,12 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
-     * @return Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *         in order to allow (OpenHours and ClosedDays)
+     * @return Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *         using OpenHours and ClosedDays.
      */
 
     public Boolean isSendingSchedule() {
@@ -1548,13 +1573,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
-     * set to true.
+     * The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set
+     * to true.
      * </p>
      * 
      * @param openHours
-     *        The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule
-     *        should be set to true.
+     *        The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should
+     *        be set to true.
      */
 
     public void setOpenHours(OpenHours openHours) {
@@ -1563,11 +1588,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
-     * set to true.
+     * The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set
+     * to true.
      * </p>
      * 
-     * @return The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule
+     * @return The time when a journey can send messages. QuietTime should be configured first and SendingSchedule
      *         should be set to true.
      */
 
@@ -1577,13 +1602,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be
-     * set to true.
+     * The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set
+     * to true.
      * </p>
      * 
      * @param openHours
-     *        The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule
-     *        should be set to true.
+     *        The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should
+     *        be set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1594,12 +1619,12 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should
      * be set to true.
      * </p>
      * 
      * @param closedDays
-     *        The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule
+     *        The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule
      *        should be set to true.
      */
 
@@ -1609,12 +1634,12 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should
      * be set to true.
      * </p>
      * 
-     * @return The time when journey will stop sending messages. QuietTime should be configured first and
-     *         SendingSchedule should be set to true.
+     * @return The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule
+     *         should be set to true.
      */
 
     public ClosedDays getClosedDays() {
@@ -1623,18 +1648,307 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should
+     * The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should
      * be set to true.
      * </p>
      * 
      * @param closedDays
-     *        The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule
+     *        The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule
      *        should be set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JourneyResponse withClosedDays(ClosedDays closedDays) {
         setClosedDays(closedDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @return An array of time zone estimation methods, if any, to use for determining an <a
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *         >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone
+     *         attribute.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *         Endpoint.Location.Country.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *         Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *         </p>
+     *         </note></li>
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public java.util.List<String> getTimezoneEstimationMethods() {
+        return timezoneEstimationMethods;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public void setTimezoneEstimationMethods(java.util.Collection<String> timezoneEstimationMethods) {
+        if (timezoneEstimationMethods == null) {
+            this.timezoneEstimationMethods = null;
+            return;
+        }
+
+        this.timezoneEstimationMethods = new java.util.ArrayList<String>(timezoneEstimationMethods);
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTimezoneEstimationMethods(java.util.Collection)} or
+     * {@link #withTimezoneEstimationMethods(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public JourneyResponse withTimezoneEstimationMethods(String... timezoneEstimationMethods) {
+        if (this.timezoneEstimationMethods == null) {
+            setTimezoneEstimationMethods(new java.util.ArrayList<String>(timezoneEstimationMethods.length));
+        }
+        for (String ele : timezoneEstimationMethods) {
+            this.timezoneEstimationMethods.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public JourneyResponse withTimezoneEstimationMethods(java.util.Collection<String> timezoneEstimationMethods) {
+        setTimezoneEstimationMethods(timezoneEstimationMethods);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public JourneyResponse withTimezoneEstimationMethods(TimezoneEstimationMethodsElement... timezoneEstimationMethods) {
+        java.util.ArrayList<String> timezoneEstimationMethodsCopy = new java.util.ArrayList<String>(timezoneEstimationMethods.length);
+        for (TimezoneEstimationMethodsElement value : timezoneEstimationMethods) {
+            timezoneEstimationMethodsCopy.add(value.toString());
+        }
+        if (getTimezoneEstimationMethods() == null) {
+            setTimezoneEstimationMethods(timezoneEstimationMethodsCopy);
+        } else {
+            getTimezoneEstimationMethods().addAll(timezoneEstimationMethodsCopy);
+        }
         return this;
     }
 
@@ -1691,7 +2005,9 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         if (getOpenHours() != null)
             sb.append("OpenHours: ").append(getOpenHours()).append(",");
         if (getClosedDays() != null)
-            sb.append("ClosedDays: ").append(getClosedDays());
+            sb.append("ClosedDays: ").append(getClosedDays()).append(",");
+        if (getTimezoneEstimationMethods() != null)
+            sb.append("TimezoneEstimationMethods: ").append(getTimezoneEstimationMethods());
         sb.append("}");
         return sb.toString();
     }
@@ -1790,6 +2106,10 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getClosedDays() != null && other.getClosedDays().equals(this.getClosedDays()) == false)
             return false;
+        if (other.getTimezoneEstimationMethods() == null ^ this.getTimezoneEstimationMethods() == null)
+            return false;
+        if (other.getTimezoneEstimationMethods() != null && other.getTimezoneEstimationMethods().equals(this.getTimezoneEstimationMethods()) == false)
+            return false;
         return true;
     }
 
@@ -1819,6 +2139,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSendingSchedule() == null) ? 0 : getSendingSchedule().hashCode());
         hashCode = prime * hashCode + ((getOpenHours() == null) ? 0 : getOpenHours().hashCode());
         hashCode = prime * hashCode + ((getClosedDays() == null) ? 0 : getClosedDays().hashCode());
+        hashCode = prime * hashCode + ((getTimezoneEstimationMethods() == null) ? 0 : getTimezoneEstimationMethods().hashCode());
         return hashCode;
     }
 

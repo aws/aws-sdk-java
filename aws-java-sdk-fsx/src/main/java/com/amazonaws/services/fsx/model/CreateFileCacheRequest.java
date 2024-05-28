@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically
+     * An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically
      * filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * <p>
@@ -121,7 +121,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically
+     * An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically
      * filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * <p>
@@ -133,7 +133,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param clientRequestToken
-     *        An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is
+     *        An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.</p>
      *        <p>
@@ -150,7 +150,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically
+     * An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically
      * filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * <p>
@@ -161,7 +161,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
      * as the parameters are the same.
      * </p>
      * 
-     * @return An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is
+     * @return An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is
      *         automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *         Services SDK.</p>
      *         <p>
@@ -178,7 +178,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically
+     * An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically
      * filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * <p>
@@ -190,7 +190,7 @@ public class CreateFileCacheRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param clientRequestToken
-     *        An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is
+     *        An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.</p>
      *        <p>

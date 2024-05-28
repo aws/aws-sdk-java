@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.mediaconvert.AWSMediaConvertClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mediaconvert.model.*;
+
 import com.amazonaws.services.mediaconvert.model.transform.*;
 
 /**
@@ -829,25 +830,28 @@ public class AWSMediaConvertClient extends AmazonWebServiceClient implements AWS
      * Send an request with an empty body to the regional API endpoint to get your account API endpoint.
      * 
      * @param describeEndpointsRequest
-     *        DescribeEndpointsRequest
      * @return Result of the DescribeEndpoints operation returned by the service.
      * @throws BadRequestException
-     *         BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
      * @throws InternalServerErrorException
-     *         InternalServiceException
+     *         The service encountered an unexpected condition and can't fulfill your request.
      * @throws ForbiddenException
-     *         AccessDeniedException
+     *         You don't have permissions for this action with the credentials you sent.
      * @throws NotFoundException
-     *         ResourceNotFoundException
+     *         The resource you requested doesn't exist.
      * @throws TooManyRequestsException
-     *         LimitExceededException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
      * @throws ConflictException
-     *         ResourceInUseException
+     *         The service couldn't complete your request because there is a conflict with the current state of the
+     *         resource.
      * @sample AWSMediaConvert.DescribeEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeEndpoints(request);
@@ -963,7 +967,7 @@ public class AWSMediaConvertClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
-     * Retrieve the JSON for a specific completed transcoding job.
+     * Retrieve the JSON for a specific transcoding job.
      * 
      * @param getJobRequest
      * @return Result of the GetJob operation returned by the service.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<AssociateBrowserSettingsResult> associateBrowserSettingsAsync(AssociateBrowserSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateBrowserSettingsRequest, AssociateBrowserSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIpAccessSettingsResult> associateIpAccessSettingsAsync(AssociateIpAccessSettingsRequest request) {
+
+        return associateIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIpAccessSettingsResult> associateIpAccessSettingsAsync(AssociateIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateIpAccessSettingsRequest, AssociateIpAccessSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -116,6 +129,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<CreateIdentityProviderResult> createIdentityProviderAsync(CreateIdentityProviderRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIpAccessSettingsResult> createIpAccessSettingsAsync(CreateIpAccessSettingsRequest request) {
+
+        return createIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIpAccessSettingsResult> createIpAccessSettingsAsync(CreateIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateIpAccessSettingsRequest, CreateIpAccessSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +240,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteIpAccessSettingsResult> deleteIpAccessSettingsAsync(DeleteIpAccessSettingsRequest request) {
+
+        return deleteIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIpAccessSettingsResult> deleteIpAccessSettingsAsync(DeleteIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteIpAccessSettingsRequest, DeleteIpAccessSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNetworkSettingsResult> deleteNetworkSettingsAsync(DeleteNetworkSettingsRequest request) {
 
         return deleteNetworkSettingsAsync(request, null);
@@ -294,6 +333,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateIpAccessSettingsResult> disassociateIpAccessSettingsAsync(DisassociateIpAccessSettingsRequest request) {
+
+        return disassociateIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIpAccessSettingsResult> disassociateIpAccessSettingsAsync(DisassociateIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIpAccessSettingsRequest, DisassociateIpAccessSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateNetworkSettingsResult> disassociateNetworkSettingsAsync(DisassociateNetworkSettingsRequest request) {
 
         return disassociateNetworkSettingsAsync(request, null);
@@ -369,6 +421,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<GetIdentityProviderResult> getIdentityProviderAsync(GetIdentityProviderRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIdentityProviderRequest, GetIdentityProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIpAccessSettingsResult> getIpAccessSettingsAsync(GetIpAccessSettingsRequest request) {
+
+        return getIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIpAccessSettingsResult> getIpAccessSettingsAsync(GetIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetIpAccessSettingsRequest, GetIpAccessSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -488,6 +553,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(ListIdentityProvidersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpAccessSettingsResult> listIpAccessSettingsAsync(ListIpAccessSettingsRequest request) {
+
+        return listIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpAccessSettingsResult> listIpAccessSettingsAsync(ListIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIpAccessSettingsRequest, ListIpAccessSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -631,6 +709,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(UpdateIdentityProviderRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIpAccessSettingsResult> updateIpAccessSettingsAsync(UpdateIpAccessSettingsRequest request) {
+
+        return updateIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIpAccessSettingsResult> updateIpAccessSettingsAsync(UpdateIpAccessSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateIpAccessSettingsRequest, UpdateIpAccessSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

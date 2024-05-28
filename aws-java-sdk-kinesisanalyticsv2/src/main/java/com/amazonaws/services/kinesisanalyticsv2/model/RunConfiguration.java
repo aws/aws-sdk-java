@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the starting parameters for an Kinesis Data Analytics application.
+ * Describes the starting parameters for an Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RunConfiguration"
@@ -30,7 +30,7 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Managed Service for Apache Flink application.
      * </p>
      */
     private FlinkRunConfiguration flinkRunConfiguration;
@@ -49,11 +49,11 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param flinkRunConfiguration
-     *        Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     *        Describes the starting parameters for a Managed Service for Apache Flink application.
      */
 
     public void setFlinkRunConfiguration(FlinkRunConfiguration flinkRunConfiguration) {
@@ -62,10 +62,10 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     * @return Describes the starting parameters for a Managed Service for Apache Flink application.
      */
 
     public FlinkRunConfiguration getFlinkRunConfiguration() {
@@ -74,11 +74,11 @@ public class RunConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     * Describes the starting parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param flinkRunConfiguration
-     *        Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+     *        Describes the starting parameters for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

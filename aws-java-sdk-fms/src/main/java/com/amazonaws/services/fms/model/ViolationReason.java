@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,8 @@ public enum ViolationReason {
     BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET("BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET"),
     RESOURCE_MISSING_DNS_FIREWALL("RESOURCE_MISSING_DNS_FIREWALL"),
     ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT"),
-    FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT");
+    FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT"),
+    INVALID_NETWORK_ACL_ENTRY("INVALID_NETWORK_ACL_ENTRY");
 
     private String value;
 

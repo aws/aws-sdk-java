@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      */
     private String type;
@@ -78,7 +78,7 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
     private String actionPlanInstructions;
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      */
     private String controlSources;
@@ -90,25 +90,25 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ControlMappingSource> controlMappingSources;
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * The IAM user or role that created the control.
+     * The user or role that created the control.
      * </p>
      */
     private String createdBy;
     /**
      * <p>
-     * The IAM user or role that most recently updated the control.
+     * The user or role that most recently updated the control.
      * </p>
      */
     private String lastUpdatedBy;
@@ -201,11 +201,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
      * @param type
-     *        The type of control, such as a custom control or a standard control.
+     *        Specifies whether the control is a standard control or a custom control.
      * @see ControlType
      */
 
@@ -215,10 +215,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
-     * @return The type of control, such as a custom control or a standard control.
+     * @return Specifies whether the control is a standard control or a custom control.
      * @see ControlType
      */
 
@@ -228,11 +228,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
      * @param type
-     *        The type of control, such as a custom control or a standard control.
+     *        Specifies whether the control is a standard control or a custom control.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlType
      */
@@ -244,11 +244,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of control, such as a custom control or a standard control.
+     * Specifies whether the control is a standard control or a custom control.
      * </p>
      * 
      * @param type
-     *        The type of control, such as a custom control or a standard control.
+     *        Specifies whether the control is a standard control or a custom control.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlType
      */
@@ -460,11 +460,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      * 
      * @param controlSources
-     *        The data source that determines where Audit Manager collects evidence from for the control.
+     *        The data source types that determine where Audit Manager collects evidence from for the control.
      */
 
     public void setControlSources(String controlSources) {
@@ -473,10 +473,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      * 
-     * @return The data source that determines where Audit Manager collects evidence from for the control.
+     * @return The data source types that determine where Audit Manager collects evidence from for the control.
      */
 
     public String getControlSources() {
@@ -485,11 +485,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      * 
      * @param controlSources
-     *        The data source that determines where Audit Manager collects evidence from for the control.
+     *        The data source types that determine where Audit Manager collects evidence from for the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,11 +570,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the control was created.
+     *        The time when the control was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -583,10 +583,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      * 
-     * @return Specifies when the control was created.
+     * @return The time when the control was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -595,11 +595,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the control was created.
+     * The time when the control was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the control was created.
+     *        The time when the control was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,11 +610,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the control was most recently updated.
+     *        The time when the control was most recently updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -623,10 +623,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      * 
-     * @return Specifies when the control was most recently updated.
+     * @return The time when the control was most recently updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -635,11 +635,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the control was most recently updated.
+     * The time when the control was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the control was most recently updated.
+     *        The time when the control was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,11 +650,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the control.
+     * The user or role that created the control.
      * </p>
      * 
      * @param createdBy
-     *        The IAM user or role that created the control.
+     *        The user or role that created the control.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -663,10 +663,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the control.
+     * The user or role that created the control.
      * </p>
      * 
-     * @return The IAM user or role that created the control.
+     * @return The user or role that created the control.
      */
 
     public String getCreatedBy() {
@@ -675,11 +675,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the control.
+     * The user or role that created the control.
      * </p>
      * 
      * @param createdBy
-     *        The IAM user or role that created the control.
+     *        The user or role that created the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -690,11 +690,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that most recently updated the control.
+     * The user or role that most recently updated the control.
      * </p>
      * 
      * @param lastUpdatedBy
-     *        The IAM user or role that most recently updated the control.
+     *        The user or role that most recently updated the control.
      */
 
     public void setLastUpdatedBy(String lastUpdatedBy) {
@@ -703,10 +703,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that most recently updated the control.
+     * The user or role that most recently updated the control.
      * </p>
      * 
-     * @return The IAM user or role that most recently updated the control.
+     * @return The user or role that most recently updated the control.
      */
 
     public String getLastUpdatedBy() {
@@ -715,11 +715,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that most recently updated the control.
+     * The user or role that most recently updated the control.
      * </p>
      * 
      * @param lastUpdatedBy
-     *        The IAM user or role that most recently updated the control.
+     *        The user or role that most recently updated the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -819,11 +819,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTestingInformation() != null)
-            sb.append("TestingInformation: ").append(getTestingInformation()).append(",");
+            sb.append("TestingInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getActionPlanTitle() != null)
-            sb.append("ActionPlanTitle: ").append(getActionPlanTitle()).append(",");
+            sb.append("ActionPlanTitle: ").append("***Sensitive Data Redacted***").append(",");
         if (getActionPlanInstructions() != null)
-            sb.append("ActionPlanInstructions: ").append(getActionPlanInstructions()).append(",");
+            sb.append("ActionPlanInstructions: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlSources() != null)
             sb.append("ControlSources: ").append(getControlSources()).append(",");
         if (getControlMappingSources() != null)
@@ -833,9 +833,9 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+            sb.append("CreatedBy: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastUpdatedBy() != null)
-            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy()).append(",");
+            sb.append("LastUpdatedBy: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

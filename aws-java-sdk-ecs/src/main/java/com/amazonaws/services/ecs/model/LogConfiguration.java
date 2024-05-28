@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the valid
- * values below). Additional log drivers may be available in future releases of the Amazon ECS container agent.
+ * Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers
+ * may be available in future releases of the Amazon ECS container agent.
+ * </p>
+ * <p>
+ * For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and
+ * <code>awsfirelens</code>.
+ * </p>
+ * <p>
+ * For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+ * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>,
+ * <code>splunk</code>, and <code>awsfirelens</code>.
  * </p>
  * </li>
  * <li>

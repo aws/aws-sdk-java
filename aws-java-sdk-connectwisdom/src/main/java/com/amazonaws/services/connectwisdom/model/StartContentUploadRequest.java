@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,17 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
     private String contentType;
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      */
     private String knowledgeBaseId;
+    /**
+     * <p>
+     * The expected expiration time of the generated presigned URL, specified in minutes.
+     * </p>
+     */
+    private Integer presignedUrlTimeToLive;
 
     /**
      * <p>
@@ -80,11 +87,13 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      */
 
     public void setKnowledgeBaseId(String knowledgeBaseId) {
@@ -93,10 +102,12 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      * 
-     * @return The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * @return The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *         storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      */
 
     public String getKnowledgeBaseId() {
@@ -105,16 +116,58 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartContentUploadRequest withKnowledgeBaseId(String knowledgeBaseId) {
         setKnowledgeBaseId(knowledgeBaseId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expected expiration time of the generated presigned URL, specified in minutes.
+     * </p>
+     * 
+     * @param presignedUrlTimeToLive
+     *        The expected expiration time of the generated presigned URL, specified in minutes.
+     */
+
+    public void setPresignedUrlTimeToLive(Integer presignedUrlTimeToLive) {
+        this.presignedUrlTimeToLive = presignedUrlTimeToLive;
+    }
+
+    /**
+     * <p>
+     * The expected expiration time of the generated presigned URL, specified in minutes.
+     * </p>
+     * 
+     * @return The expected expiration time of the generated presigned URL, specified in minutes.
+     */
+
+    public Integer getPresignedUrlTimeToLive() {
+        return this.presignedUrlTimeToLive;
+    }
+
+    /**
+     * <p>
+     * The expected expiration time of the generated presigned URL, specified in minutes.
+     * </p>
+     * 
+     * @param presignedUrlTimeToLive
+     *        The expected expiration time of the generated presigned URL, specified in minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartContentUploadRequest withPresignedUrlTimeToLive(Integer presignedUrlTimeToLive) {
+        setPresignedUrlTimeToLive(presignedUrlTimeToLive);
         return this;
     }
 
@@ -133,7 +186,9 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getKnowledgeBaseId() != null)
-            sb.append("KnowledgeBaseId: ").append(getKnowledgeBaseId());
+            sb.append("KnowledgeBaseId: ").append(getKnowledgeBaseId()).append(",");
+        if (getPresignedUrlTimeToLive() != null)
+            sb.append("PresignedUrlTimeToLive: ").append(getPresignedUrlTimeToLive());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +211,10 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getKnowledgeBaseId() != null && other.getKnowledgeBaseId().equals(this.getKnowledgeBaseId()) == false)
             return false;
+        if (other.getPresignedUrlTimeToLive() == null ^ this.getPresignedUrlTimeToLive() == null)
+            return false;
+        if (other.getPresignedUrlTimeToLive() != null && other.getPresignedUrlTimeToLive().equals(this.getPresignedUrlTimeToLive()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +225,7 @@ public class StartContentUploadRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getKnowledgeBaseId() == null) ? 0 : getKnowledgeBaseId().hashCode());
+        hashCode = prime * hashCode + ((getPresignedUrlTimeToLive() == null) ? 0 : getPresignedUrlTimeToLive().hashCode());
         return hashCode;
     }
 

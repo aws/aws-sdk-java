@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (<code>my-certificate</code>).
      * </p>
      */
     private String name;
@@ -59,13 +59,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private java.util.Date createdAt;
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      */
     private ResourceLocation location;
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
+     * The resource type (<code>LoadBalancerTlsCertificate</code>).
      * </p>
      * <ul>
      * <li>
@@ -296,7 +296,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String subject;
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      */
@@ -304,11 +304,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (<code>my-certificate</code>).
      * </p>
      * 
      * @param name
-     *        The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     *        The name of the SSL/TLS certificate (<code>my-certificate</code>).
      */
 
     public void setName(String name) {
@@ -317,10 +317,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (<code>my-certificate</code>).
      * </p>
      * 
-     * @return The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     * @return The name of the SSL/TLS certificate (<code>my-certificate</code>).
      */
 
     public String getName() {
@@ -329,11 +329,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (<code>my-certificate</code>).
      * </p>
      * 
      * @param name
-     *        The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
+     *        The name of the SSL/TLS certificate (<code>my-certificate</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,11 +476,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      * 
      * @param location
-     *        The AWS Region and Availability Zone where you created your certificate.
+     *        The Amazon Web Services Region and Availability Zone where you created your certificate.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -489,10 +489,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      * 
-     * @return The AWS Region and Availability Zone where you created your certificate.
+     * @return The Amazon Web Services Region and Availability Zone where you created your certificate.
      */
 
     public ResourceLocation getLocation() {
@@ -501,11 +501,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      * 
      * @param location
-     *        The AWS Region and Availability Zone where you created your certificate.
+     *        The Amazon Web Services Region and Availability Zone where you created your certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,7 +516,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
+     * The resource type (<code>LoadBalancerTlsCertificate</code>).
      * </p>
      * <ul>
      * <li>
@@ -573,7 +573,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param resourceType
-     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *        The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -635,7 +635,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
+     * The resource type (<code>LoadBalancerTlsCertificate</code>).
      * </p>
      * <ul>
      * <li>
@@ -691,7 +691,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </li>
      * </ul>
      * 
-     * @return The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     * @return The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -753,7 +753,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
+     * The resource type (<code>LoadBalancerTlsCertificate</code>).
      * </p>
      * <ul>
      * <li>
@@ -810,7 +810,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param resourceType
-     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *        The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -874,7 +874,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
+     * The resource type (<code>LoadBalancerTlsCertificate</code>).
      * </p>
      * <ul>
      * <li>
@@ -931,7 +931,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param resourceType
-     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *        The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2354,12 +2354,12 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * 
-     * @return An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *         (e.g., <code>blog.example.com</code>) for the certificate.
+     * @return An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *         <code>blog.example.com</code>) for the certificate.
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -2368,13 +2368,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *        (e.g., <code>blog.example.com</code>) for the certificate.
+     *        An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *        <code>blog.example.com</code>) for the certificate.
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -2388,7 +2388,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
@@ -2398,8 +2398,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *        (e.g., <code>blog.example.com</code>) for the certificate.
+     *        An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *        <code>blog.example.com</code>) for the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2415,13 +2415,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *        (e.g., <code>blog.example.com</code>) for the certificate.
+     *        An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *        <code>blog.example.com</code>) for the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
     private Integer maxResults;
     /**
      * <p>
-     * The states.
+     * The current states of the Savings Plans.
      * </p>
      */
     private java.util.List<String> states;
@@ -291,10 +291,10 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The states.
+     * The current states of the Savings Plans.
      * </p>
      * 
-     * @return The states.
+     * @return The current states of the Savings Plans.
      * @see SavingsPlanState
      */
 
@@ -304,11 +304,11 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The states.
+     * The current states of the Savings Plans.
      * </p>
      * 
      * @param states
-     *        The states.
+     *        The current states of the Savings Plans.
      * @see SavingsPlanState
      */
 
@@ -323,7 +323,7 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The states.
+     * The current states of the Savings Plans.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -332,7 +332,7 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param states
-     *        The states.
+     *        The current states of the Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanState
      */
@@ -349,11 +349,11 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The states.
+     * The current states of the Savings Plans.
      * </p>
      * 
      * @param states
-     *        The states.
+     *        The current states of the Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanState
      */
@@ -365,11 +365,11 @@ public class DescribeSavingsPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The states.
+     * The current states of the Savings Plans.
      * </p>
      * 
      * @param states
-     *        The states.
+     *        The current states of the Savings Plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanState
      */

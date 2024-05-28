@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,10 @@ public class PackageDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailablePackageVersion").build();
     private static final MarshallingInfo<StructuredPojo> ERRORDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorDetails").build();
+    private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
+    private static final MarshallingInfo<StructuredPojo> AVAILABLEPLUGINPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailablePluginProperties").build();
 
     private static final PackageDetailsMarshaller instance = new PackageDetailsMarshaller();
 
@@ -71,6 +75,8 @@ public class PackageDetailsMarshaller {
             protocolMarshaller.marshall(packageDetails.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(packageDetails.getAvailablePackageVersion(), AVAILABLEPACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(packageDetails.getErrorDetails(), ERRORDETAILS_BINDING);
+            protocolMarshaller.marshall(packageDetails.getEngineVersion(), ENGINEVERSION_BINDING);
+            protocolMarshaller.marshall(packageDetails.getAvailablePluginProperties(), AVAILABLEPLUGINPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

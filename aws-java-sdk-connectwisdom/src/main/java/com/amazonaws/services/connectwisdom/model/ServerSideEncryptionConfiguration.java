@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The KMS key used for encryption.
+ * The configuration information for the customer managed key used for encryption.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ServerSideEncryptionConfiguration"
@@ -30,7 +30,9 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The KMS key. For information about valid ID values, see <a
+     * The customer managed key used for encryption. For more information about setting up a customer managed key for
+     * Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon
+     * Connect Wisdom for your instance</a>. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.
      * </p>
      */
@@ -38,12 +40,16 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The KMS key. For information about valid ID values, see <a
+     * The customer managed key used for encryption. For more information about setting up a customer managed key for
+     * Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon
+     * Connect Wisdom for your instance</a>. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key. For information about valid ID values, see <a
+     *        The customer managed key used for encryption. For more information about setting up a customer managed key
+     *        for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     *        Amazon Connect Wisdom for your instance</a>. For information about valid ID values, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers
      *        (KeyId)</a>.
      */
@@ -54,11 +60,16 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The KMS key. For information about valid ID values, see <a
+     * The customer managed key used for encryption. For more information about setting up a customer managed key for
+     * Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon
+     * Connect Wisdom for your instance</a>. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.
      * </p>
      * 
-     * @return The KMS key. For information about valid ID values, see <a
+     * @return The customer managed key used for encryption. For more information about setting up a customer managed
+     *         key for Wisdom, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *         Wisdom for your instance</a>. For information about valid ID values, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers
      *         (KeyId)</a>.
      */
@@ -69,12 +80,16 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The KMS key. For information about valid ID values, see <a
+     * The customer managed key used for encryption. For more information about setting up a customer managed key for
+     * Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon
+     * Connect Wisdom for your instance</a>. For information about valid ID values, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key. For information about valid ID values, see <a
+     *        The customer managed key used for encryption. For more information about setting up a customer managed key
+     *        for Wisdom, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable
+     *        Amazon Connect Wisdom for your instance</a>. For information about valid ID values, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers
      *        (KeyId)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

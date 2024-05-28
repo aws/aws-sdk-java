@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+ * The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RetryOptions" target="_top">AWS API
@@ -30,19 +30,18 @@ public class RetryOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.
+     * The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      * </p>
      */
     private Integer durationInSeconds;
 
     /**
      * <p>
-     * The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.
+     * The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      * </p>
      * 
      * @param durationInSeconds
-     *        The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3
-     *        prefix.
+     *        The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -51,11 +50,10 @@ public class RetryOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.
+     * The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      * </p>
      * 
-     * @return The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3
-     *         prefix.
+     * @return The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      */
 
     public Integer getDurationInSeconds() {
@@ -64,12 +62,11 @@ public class RetryOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.
+     * The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      * </p>
      * 
      * @param durationInSeconds
-     *        The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3
-     *        prefix.
+     *        The period of time during which Firehose retries to deliver data to the specified Amazon S3 prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

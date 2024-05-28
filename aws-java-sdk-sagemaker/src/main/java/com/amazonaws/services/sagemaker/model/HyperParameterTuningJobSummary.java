@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,22 +73,25 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
-     * that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">
+     * TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.
      * </p>
      */
     private TrainingJobStatusCounters trainingJobStatusCounters;
     /**
      * <p>
-     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
-     * metric status, that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     * ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric
+     * status, that this tuning job launched.
      * </p>
      */
     private ObjectiveStatusCounters objectiveStatusCounters;
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * allowed for this tuning job.
+     * The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.
      * </p>
      */
     private ResourceLimits resourceLimits;
@@ -421,13 +424,16 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
-     * that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">
+     * TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.
      * </p>
      * 
      * @param trainingJobStatusCounters
-     *        The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by
-     *        status, that this tuning job launched.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">
+     *        TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     *        that this tuning job launched.
      */
 
     public void setTrainingJobStatusCounters(TrainingJobStatusCounters trainingJobStatusCounters) {
@@ -436,12 +442,15 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
-     * that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">
+     * TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.
      * </p>
      * 
-     * @return The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by
-     *         status, that this tuning job launched.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html"
+     *         >TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     *         that this tuning job launched.
      */
 
     public TrainingJobStatusCounters getTrainingJobStatusCounters() {
@@ -450,13 +459,16 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
-     * that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">
+     * TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.
      * </p>
      * 
      * @param trainingJobStatusCounters
-     *        The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by
-     *        status, that this tuning job launched.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">
+     *        TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     *        that this tuning job launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,13 +479,15 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
-     * metric status, that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     * ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric
+     * status, that this tuning job launched.
      * </p>
      * 
      * @param objectiveStatusCounters
-     *        The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by
-     *        objective metric status, that this tuning job launched.
+     *        The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     *        ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     *        metric status, that this tuning job launched.
      */
 
     public void setObjectiveStatusCounters(ObjectiveStatusCounters objectiveStatusCounters) {
@@ -482,12 +496,14 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
-     * metric status, that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     * ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric
+     * status, that this tuning job launched.
      * </p>
      * 
-     * @return The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by
-     *         objective metric status, that this tuning job launched.
+     * @return The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     *         ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     *         metric status, that this tuning job launched.
      */
 
     public ObjectiveStatusCounters getObjectiveStatusCounters() {
@@ -496,13 +512,15 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
-     * metric status, that this tuning job launched.
+     * The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     * ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric
+     * status, that this tuning job launched.
      * </p>
      * 
      * @param objectiveStatusCounters
-     *        The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by
-     *        objective metric status, that this tuning job launched.
+     *        The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">
+     *        ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     *        metric status, that this tuning job launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,13 +531,16 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * allowed for this tuning job.
+     * The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
-     *        jobs allowed for this tuning job.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits
+     *        </a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this
+     *        tuning job.
      */
 
     public void setResourceLimits(ResourceLimits resourceLimits) {
@@ -528,12 +549,15 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * allowed for this tuning job.
+     * The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.
      * </p>
      * 
-     * @return The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
-     *         jobs allowed for this tuning job.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits
+     *         </a> object that specifies the maximum number of training jobs and parallel training jobs allowed for
+     *         this tuning job.
      */
 
     public ResourceLimits getResourceLimits() {
@@ -542,13 +566,16 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * allowed for this tuning job.
+     * The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
-     *        jobs allowed for this tuning job.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits
+     *        </a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this
+     *        tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

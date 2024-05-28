@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Represents a request to create an email template. For more information, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate" target="_top">AWS API
@@ -32,18 +31,18 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     * The content of the email, composed of a subject line and either an HTML part or a text-only part.
      * </p>
      */
     private Template template;
 
     /**
      * <p>
-     * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     * The content of the email, composed of a subject line and either an HTML part or a text-only part.
      * </p>
      * 
      * @param template
-     *        The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     *        The content of the email, composed of a subject line and either an HTML part or a text-only part.
      */
 
     public void setTemplate(Template template) {
@@ -52,10 +51,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     * The content of the email, composed of a subject line and either an HTML part or a text-only part.
      * </p>
      * 
-     * @return The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     * @return The content of the email, composed of a subject line and either an HTML part or a text-only part.
      */
 
     public Template getTemplate() {
@@ -64,11 +63,11 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     * The content of the email, composed of a subject line and either an HTML part or a text-only part.
      * </p>
      * 
      * @param template
-     *        The content of the email, composed of a subject line, an HTML part, and a text-only part.
+     *        The content of the email, composed of a subject line and either an HTML part or a text-only part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

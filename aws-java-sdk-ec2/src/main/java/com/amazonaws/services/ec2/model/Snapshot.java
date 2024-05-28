@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,8 +115,8 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on
-     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on
+     * Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private String outpostArn;
@@ -141,6 +141,12 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date restoreExpiryTime;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private String sseType;
 
     /**
      * <p>
@@ -767,14 +773,14 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on
-     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on
+     * Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param outpostArn
      *        The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local
-     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots
+     *        on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public void setOutpostArn(String outpostArn) {
@@ -784,13 +790,13 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on
-     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on
+     * Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local
-     *         snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local
+     *         snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public String getOutpostArn() {
@@ -800,14 +806,14 @@ public class Snapshot implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on
-     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on
+     * Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param outpostArn
      *        The ARN of the Outpost on which the snapshot is stored. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local
-     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots
+     *        on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1029,6 +1035,79 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @see SSEType
+     */
+
+    public void setSseType(String sseType) {
+        this.sseType = sseType;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     * @see SSEType
+     */
+
+    public String getSseType() {
+        return this.sseType;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public Snapshot withSseType(String sseType) {
+        setSseType(sseType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @see SSEType
+     */
+
+    public void setSseType(SSEType sseType) {
+        withSseType(sseType);
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public Snapshot withSseType(SSEType sseType) {
+        this.sseType = sseType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1073,7 +1152,9 @@ public class Snapshot implements Serializable, Cloneable {
         if (getStorageTier() != null)
             sb.append("StorageTier: ").append(getStorageTier()).append(",");
         if (getRestoreExpiryTime() != null)
-            sb.append("RestoreExpiryTime: ").append(getRestoreExpiryTime());
+            sb.append("RestoreExpiryTime: ").append(getRestoreExpiryTime()).append(",");
+        if (getSseType() != null)
+            sb.append("SseType: ").append(getSseType());
         sb.append("}");
         return sb.toString();
     }
@@ -1156,6 +1237,10 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getRestoreExpiryTime() != null && other.getRestoreExpiryTime().equals(this.getRestoreExpiryTime()) == false)
             return false;
+        if (other.getSseType() == null ^ this.getSseType() == null)
+            return false;
+        if (other.getSseType() != null && other.getSseType().equals(this.getSseType()) == false)
+            return false;
         return true;
     }
 
@@ -1181,6 +1266,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getStorageTier() == null) ? 0 : getStorageTier().hashCode());
         hashCode = prime * hashCode + ((getRestoreExpiryTime() == null) ? 0 : getRestoreExpiryTime().hashCode());
+        hashCode = prime * hashCode + ((getSseType() == null) ? 0 : getSseType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
     private String name;
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      */
     private String description;
@@ -80,11 +80,11 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      * 
      * @param description
-     *        The description of the event inegration.
+     *        The description of the event integration.
      */
 
     public void setDescription(String description) {
@@ -93,10 +93,10 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      * 
-     * @return The description of the event inegration.
+     * @return The description of the event integration.
      */
 
     public String getDescription() {
@@ -105,11 +105,11 @@ public class UpdateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The description of the event inegration.
+     * The description of the event integration.
      * </p>
      * 
      * @param description
-     *        The description of the event inegration.
+     *        The description of the event integration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

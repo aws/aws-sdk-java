@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,7 +101,7 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
     private String comment;
     /**
      * <p>
-     * The IAM user or role that created the delegation.
+     * The user or role that created the delegation.
      * </p>
      */
     private String createdBy;
@@ -630,11 +630,11 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the delegation.
+     * The user or role that created the delegation.
      * </p>
      * 
      * @param createdBy
-     *        The IAM user or role that created the delegation.
+     *        The user or role that created the delegation.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -643,10 +643,10 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the delegation.
+     * The user or role that created the delegation.
      * </p>
      * 
-     * @return The IAM user or role that created the delegation.
+     * @return The user or role that created the delegation.
      */
 
     public String getCreatedBy() {
@@ -655,11 +655,11 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the delegation.
+     * The user or role that created the delegation.
      * </p>
      * 
      * @param createdBy
-     *        The IAM user or role that created the delegation.
+     *        The user or role that created the delegation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,7 +683,7 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getAssessmentName() != null)
-            sb.append("AssessmentName: ").append(getAssessmentName()).append(",");
+            sb.append("AssessmentName: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId()).append(",");
         if (getStatus() != null)
@@ -699,9 +699,9 @@ public class Delegation implements Serializable, Cloneable, StructuredPojo {
         if (getControlSetId() != null)
             sb.append("ControlSetId: ").append(getControlSetId()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment()).append(",");
+            sb.append("Comment: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy());
+            sb.append("CreatedBy: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

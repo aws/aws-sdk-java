@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,8 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
     private String arn;
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.
      * </p>
      */
     private String type;
@@ -124,7 +125,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -153,7 +154,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -212,13 +213,13 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
     private String provisioningArtifactName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      */
     private String userArn;
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      */
     private String userArnSession;
@@ -305,12 +306,14 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.
      * </p>
      * 
      * @param type
-     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
-     *        <code>CFN_STACKSET</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code>,
+     *        <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     *        <code>EXTERNAL</code>.
      */
 
     public void setType(String type) {
@@ -319,11 +322,13 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.
      * </p>
      * 
-     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code> and
-     *         <code>CFN_STACKSET</code>.
+     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code>,
+     *         <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     *         <code>EXTERNAL</code>.
      */
 
     public String getType() {
@@ -332,12 +337,14 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and <code>EXTERNAL</code>.
      * </p>
      * 
      * @param type
-     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
-     *        <code>CFN_STACKSET</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code>,
+     *        <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
+     *        <code>EXTERNAL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -890,7 +897,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -916,7 +923,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -947,7 +954,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -972,7 +979,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *         <ul>
      *         <li>
      *         <p>
-     *         ProvisionedProduct
+     *         ProvisionProduct
      *         </p>
      *         </li>
      *         <li>
@@ -1003,7 +1010,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1029,7 +1036,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1063,7 +1070,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1089,7 +1096,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1121,7 +1128,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1146,7 +1153,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *         <ul>
      *         <li>
      *         <p>
-     *         ProvisionedProduct
+     *         ProvisionProduct
      *         </p>
      *         </li>
      *         <li>
@@ -1178,7 +1185,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1204,7 +1211,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1502,11 +1509,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
      * @param userArn
-     *        The Amazon Resource Name (ARN) of the IAM user.
+     *        The Amazon Resource Name (ARN) of the user.
      */
 
     public void setUserArn(String userArn) {
@@ -1515,10 +1522,10 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM user.
+     * @return The Amazon Resource Name (ARN) of the user.
      */
 
     public String getUserArn() {
@@ -1527,11 +1534,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
      * @param userArn
-     *        The Amazon Resource Name (ARN) of the IAM user.
+     *        The Amazon Resource Name (ARN) of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1542,11 +1549,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      * 
      * @param userArnSession
-     *        The ARN of the IAM user in the session. This ARN might contain a session ID.
+     *        The ARN of the user in the session. This ARN might contain a session ID.
      */
 
     public void setUserArnSession(String userArnSession) {
@@ -1555,10 +1562,10 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      * 
-     * @return The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * @return The ARN of the user in the session. This ARN might contain a session ID.
      */
 
     public String getUserArnSession() {
@@ -1567,11 +1574,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      * 
      * @param userArnSession
-     *        The ARN of the IAM user in the session. This ARN might contain a session ID.
+     *        The ARN of the user in the session. This ARN might contain a session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Amazon Technologies, Inc.
+ * Copyright 2015-2024 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,12 @@ public class GetBucketAccelerateConfigurationRequest extends
     private String expectedBucketOwner;
 
     /**
+     * If enabled, the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
+
+    /**
      * Creates a request object, ready to be executed to fetch the accelerate
      * configuration for the specified bucket.
      *
@@ -51,4 +57,36 @@ public class GetBucketAccelerateConfigurationRequest extends
         withExpectedBucketOwner(expectedBucketOwner);
     }
 
+    /**
+     * Returns whether the requester knows that they will be charged for the request.
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Confirms whether the requester knows that they will be charged for the request. Bucket owners need not specify this
+     * parameter in their requests.
+     *
+     * @param isRequesterPays if Requester Pays option is enabled for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Confirms whether the requester knows that they will be charged for the request. Bucket owners need not specify this
+     * parameter in their requests.
+     *
+     * @param isRequesterPays if Requester Pays option is enabled for the operation.
+     *
+     * @return The updated GetBucketAccelerateConfigurationRequest object.
+     */
+    public GetBucketAccelerateConfigurationRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
+        return this;
+    }
 }

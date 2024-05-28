@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When you
- * work directly in your JSON job specification, include this object only when your job has a transport stream output
- * and the container settings contain the object M2tsSettings.
+ * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbNitSettings" target="_top">AWS API
  *      Documentation</a>

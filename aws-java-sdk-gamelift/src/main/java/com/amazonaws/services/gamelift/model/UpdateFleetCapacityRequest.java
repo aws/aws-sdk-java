@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity" target="_top">AWS API
  *      Documentation</a>
@@ -37,7 +34,8 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall
-     * between the minimum and maximum size limits.
+     * between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.
      * </p>
      */
     private Integer desiredInstances;
@@ -109,12 +107,14 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall
-     * between the minimum and maximum size limits.
+     * between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.
      * </p>
      * 
      * @param desiredInstances
      *        The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must
-     *        fall between the minimum and maximum size limits.
+     *        fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1
+     *        minute to be reflected when viewing the fleet's capacity settings.
      */
 
     public void setDesiredInstances(Integer desiredInstances) {
@@ -124,11 +124,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall
-     * between the minimum and maximum size limits.
+     * between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.
      * </p>
      * 
      * @return The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must
-     *         fall between the minimum and maximum size limits.
+     *         fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1
+     *         minute to be reflected when viewing the fleet's capacity settings.
      */
 
     public Integer getDesiredInstances() {
@@ -138,12 +140,14 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall
-     * between the minimum and maximum size limits.
+     * between the minimum and maximum size limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.
      * </p>
      * 
      * @param desiredInstances
      *        The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must
-     *        fall between the minimum and maximum size limits.
+     *        fall between the minimum and maximum size limits. Changes in desired instance value can take up to 1
+     *        minute to be reflected when viewing the fleet's capacity settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

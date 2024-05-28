@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,17 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public CreateCalculatedAttributeDefinitionResult createCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDomainResult createDomain(CreateDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateEventStreamResult createEventStream(CreateEventStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,7 +58,17 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public DeleteCalculatedAttributeDefinitionResult deleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,12 +103,32 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public DetectProfileObjectTypeResult detectProfileObjectType(DetectProfileObjectTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAutoMergingPreviewResult getAutoMergingPreview(GetAutoMergingPreviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetCalculatedAttributeDefinitionResult getCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCalculatedAttributeForProfileResult getCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDomainResult getDomain(GetDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEventStreamResult getEventStream(GetEventStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +158,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public GetSimilarProfilesResult getSimilarProfiles(GetSimilarProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetWorkflowResult getWorkflow(GetWorkflowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,7 +178,22 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public ListCalculatedAttributeDefinitionsResult listCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCalculatedAttributesForProfileResult listCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDomainsResult listDomains(ListDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEventStreamsResult listEventStreams(ListEventStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,6 +219,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
 
     @Override
     public ListProfileObjectsResult listProfileObjects(ListProfileObjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRuleBasedMatchesResult listRuleBasedMatches(ListRuleBasedMatchesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,6 +269,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCalculatedAttributeDefinitionResult updateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

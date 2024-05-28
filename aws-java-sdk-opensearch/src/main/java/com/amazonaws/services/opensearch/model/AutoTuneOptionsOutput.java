@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+ * The Auto-Tune settings for a domain, displayed when enabling or disabling Auto-Tune.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,30 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.
+     * </p>
+     */
+    private Boolean useOffPeakWindow;
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
      * @param state
-     *        The <code>AutoTuneState</code> for the domain.
+     *        The current state of Auto-Tune on the domain.
      * @see AutoTuneState
      */
 
@@ -54,10 +60,10 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
-     * @return The <code>AutoTuneState</code> for the domain.
+     * @return The current state of Auto-Tune on the domain.
      * @see AutoTuneState
      */
 
@@ -67,11 +73,11 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
      * @param state
-     *        The <code>AutoTuneState</code> for the domain.
+     *        The current state of Auto-Tune on the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneState
      */
@@ -83,11 +89,11 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
      * @param state
-     *        The <code>AutoTuneState</code> for the domain.
+     *        The current state of Auto-Tune on the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneState
      */
@@ -99,11 +105,11 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      * 
      * @param errorMessage
-     *        The error message while enabling or disabling Auto-Tune.
+     *        Any errors that occurred while enabling or disabling Auto-Tune.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -112,10 +118,10 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      * 
-     * @return The error message while enabling or disabling Auto-Tune.
+     * @return Any errors that occurred while enabling or disabling Auto-Tune.
      */
 
     public String getErrorMessage() {
@@ -124,17 +130,73 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      * 
      * @param errorMessage
-     *        The error message while enabling or disabling Auto-Tune.
+     *        Any errors that occurred while enabling or disabling Auto-Tune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoTuneOptionsOutput withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.
+     * </p>
+     * 
+     * @param useOffPeakWindow
+     *        Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance
+     *        schedule.
+     */
+
+    public void setUseOffPeakWindow(Boolean useOffPeakWindow) {
+        this.useOffPeakWindow = useOffPeakWindow;
+    }
+
+    /**
+     * <p>
+     * Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.
+     * </p>
+     * 
+     * @return Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance
+     *         schedule.
+     */
+
+    public Boolean getUseOffPeakWindow() {
+        return this.useOffPeakWindow;
+    }
+
+    /**
+     * <p>
+     * Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.
+     * </p>
+     * 
+     * @param useOffPeakWindow
+     *        Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance
+     *        schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoTuneOptionsOutput withUseOffPeakWindow(Boolean useOffPeakWindow) {
+        setUseOffPeakWindow(useOffPeakWindow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.
+     * </p>
+     * 
+     * @return Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance
+     *         schedule.
+     */
+
+    public Boolean isUseOffPeakWindow() {
+        return this.useOffPeakWindow;
     }
 
     /**
@@ -152,7 +214,9 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getUseOffPeakWindow() != null)
+            sb.append("UseOffPeakWindow: ").append(getUseOffPeakWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -175,6 +239,10 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getUseOffPeakWindow() == null ^ this.getUseOffPeakWindow() == null)
+            return false;
+        if (other.getUseOffPeakWindow() != null && other.getUseOffPeakWindow().equals(this.getUseOffPeakWindow()) == false)
+            return false;
         return true;
     }
 
@@ -185,6 +253,7 @@ public class AutoTuneOptionsOutput implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getUseOffPeakWindow() == null) ? 0 : getUseOffPeakWindow().hashCode());
         return hashCode;
     }
 

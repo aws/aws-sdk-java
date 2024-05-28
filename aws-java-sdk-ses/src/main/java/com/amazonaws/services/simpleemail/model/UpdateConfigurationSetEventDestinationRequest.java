@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish
  * email sending events. For information about using configuration sets, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination"
@@ -33,24 +32,24 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to update.
+     * The name of the configuration set that contains the event destination.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * The event destination object that you want to apply to the specified configuration set.
+     * The event destination object.
      * </p>
      */
     private EventDestination eventDestination;
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to update.
+     * The name of the configuration set that contains the event destination.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that contains the event destination that you want to update.
+     *        The name of the configuration set that contains the event destination.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -59,10 +58,10 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to update.
+     * The name of the configuration set that contains the event destination.
      * </p>
      * 
-     * @return The name of the configuration set that contains the event destination that you want to update.
+     * @return The name of the configuration set that contains the event destination.
      */
 
     public String getConfigurationSetName() {
@@ -71,11 +70,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that contains the event destination that you want to update.
+     * The name of the configuration set that contains the event destination.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that contains the event destination that you want to update.
+     *        The name of the configuration set that contains the event destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +85,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The event destination object that you want to apply to the specified configuration set.
+     * The event destination object.
      * </p>
      * 
      * @param eventDestination
-     *        The event destination object that you want to apply to the specified configuration set.
+     *        The event destination object.
      */
 
     public void setEventDestination(EventDestination eventDestination) {
@@ -99,10 +98,10 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The event destination object that you want to apply to the specified configuration set.
+     * The event destination object.
      * </p>
      * 
-     * @return The event destination object that you want to apply to the specified configuration set.
+     * @return The event destination object.
      */
 
     public EventDestination getEventDestination() {
@@ -111,11 +110,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The event destination object that you want to apply to the specified configuration set.
+     * The event destination object.
      * </p>
      * 
      * @param eventDestination
-     *        The event destination object that you want to apply to the specified configuration set.
+     *        The event destination object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

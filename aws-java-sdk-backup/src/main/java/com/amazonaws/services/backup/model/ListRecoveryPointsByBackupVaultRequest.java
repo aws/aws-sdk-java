@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,14 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     private String backupVaultName;
     /**
      * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     */
+    private String backupVaultAccountId;
+    /**
+     * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      */
@@ -60,8 +66,90 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     private String byResourceArn;
     /**
      * <p>
-     * Returns only recovery points that match the specified resource type.
+     * Returns only recovery points that match the specified resource type(s):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
      */
     private String byResourceType;
     /**
@@ -82,6 +170,13 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
      * </p>
      */
     private java.util.Date byCreatedAfter;
+    /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     */
+    private String byParentRecoveryPointArn;
 
     /**
      * <p>
@@ -161,14 +256,54 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     * 
+     * @param backupVaultAccountId
+     *        This parameter will sort the list of recovery points by account ID.
+     */
+
+    public void setBackupVaultAccountId(String backupVaultAccountId) {
+        this.backupVaultAccountId = backupVaultAccountId;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     * 
+     * @return This parameter will sort the list of recovery points by account ID.
+     */
+
+    public String getBackupVaultAccountId() {
+        return this.backupVaultAccountId;
+    }
+
+    /**
+     * <p>
+     * This parameter will sort the list of recovery points by account ID.
+     * </p>
+     * 
+     * @param backupVaultAccountId
+     *        This parameter will sort the list of recovery points by account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecoveryPointsByBackupVaultRequest withBackupVaultAccountId(String backupVaultAccountId) {
+        setBackupVaultAccountId(backupVaultAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *        <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *        list starting at the location pointed to by the next token.
      */
 
@@ -179,12 +314,12 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @return The next item following a partial list of returned items. For example, if a request is made to return
-     *         <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *         <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *         list starting at the location pointed to by the next token.
      */
 
@@ -195,13 +330,13 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *        <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *        list starting at the location pointed to by the next token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -293,11 +428,174 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns only recovery points that match the specified resource type.
+     * Returns only recovery points that match the specified resource type(s):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param byResourceType
-     *        Returns only recovery points that match the specified resource type.
+     *        Returns only recovery points that match the specified resource type(s):</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FSx</code> for Amazon FSx
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Neptune</code> for Amazon Neptune
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Storage Gateway</code> for Storage Gateway
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VirtualMachine</code> for virtual machines
+     *        </p>
+     *        </li>
      */
 
     public void setByResourceType(String byResourceType) {
@@ -306,10 +604,173 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns only recovery points that match the specified resource type.
+     * Returns only recovery points that match the specified resource type(s):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Returns only recovery points that match the specified resource type.
+     * @return Returns only recovery points that match the specified resource type(s):</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CloudFormation</code> for CloudFormation
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DynamoDB</code> for Amazon DynamoDB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EBS</code> for Amazon Elastic Block Store
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EFS</code> for Amazon Elastic File System
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FSx</code> for Amazon FSx
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Neptune</code> for Amazon Neptune
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Redshift</code> for Amazon Redshift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Storage Gateway</code> for Storage Gateway
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>S3</code> for Amazon S3
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Timestream</code> for Amazon Timestream
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VirtualMachine</code> for virtual machines
+     *         </p>
+     *         </li>
      */
 
     public String getByResourceType() {
@@ -318,11 +779,174 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns only recovery points that match the specified resource type.
+     * Returns only recovery points that match the specified resource type(s):
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param byResourceType
-     *        Returns only recovery points that match the specified resource type.
+     *        Returns only recovery points that match the specified resource type(s):</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FSx</code> for Amazon FSx
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Neptune</code> for Amazon Neptune
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Storage Gateway</code> for Storage Gateway
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VirtualMachine</code> for virtual machines
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,6 +1076,52 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     * 
+     * @param byParentRecoveryPointArn
+     *        This returns only recovery points that match the specified parent (composite) recovery point Amazon
+     *        Resource Name (ARN).
+     */
+
+    public void setByParentRecoveryPointArn(String byParentRecoveryPointArn) {
+        this.byParentRecoveryPointArn = byParentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     * 
+     * @return This returns only recovery points that match the specified parent (composite) recovery point Amazon
+     *         Resource Name (ARN).
+     */
+
+    public String getByParentRecoveryPointArn() {
+        return this.byParentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     * 
+     * @param byParentRecoveryPointArn
+     *        This returns only recovery points that match the specified parent (composite) recovery point Amazon
+     *        Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecoveryPointsByBackupVaultRequest withByParentRecoveryPointArn(String byParentRecoveryPointArn) {
+        setByParentRecoveryPointArn(byParentRecoveryPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -465,6 +1135,8 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         sb.append("{");
         if (getBackupVaultName() != null)
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
+        if (getBackupVaultAccountId() != null)
+            sb.append("BackupVaultAccountId: ").append(getBackupVaultAccountId()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -478,7 +1150,9 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         if (getByCreatedBefore() != null)
             sb.append("ByCreatedBefore: ").append(getByCreatedBefore()).append(",");
         if (getByCreatedAfter() != null)
-            sb.append("ByCreatedAfter: ").append(getByCreatedAfter());
+            sb.append("ByCreatedAfter: ").append(getByCreatedAfter()).append(",");
+        if (getByParentRecoveryPointArn() != null)
+            sb.append("ByParentRecoveryPointArn: ").append(getByParentRecoveryPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -496,6 +1170,10 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         if (other.getBackupVaultName() == null ^ this.getBackupVaultName() == null)
             return false;
         if (other.getBackupVaultName() != null && other.getBackupVaultName().equals(this.getBackupVaultName()) == false)
+            return false;
+        if (other.getBackupVaultAccountId() == null ^ this.getBackupVaultAccountId() == null)
+            return false;
+        if (other.getBackupVaultAccountId() != null && other.getBackupVaultAccountId().equals(this.getBackupVaultAccountId()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -525,6 +1203,10 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
             return false;
         if (other.getByCreatedAfter() != null && other.getByCreatedAfter().equals(this.getByCreatedAfter()) == false)
             return false;
+        if (other.getByParentRecoveryPointArn() == null ^ this.getByParentRecoveryPointArn() == null)
+            return false;
+        if (other.getByParentRecoveryPointArn() != null && other.getByParentRecoveryPointArn().equals(this.getByParentRecoveryPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -534,6 +1216,7 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
+        hashCode = prime * hashCode + ((getBackupVaultAccountId() == null) ? 0 : getBackupVaultAccountId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getByResourceArn() == null) ? 0 : getByResourceArn().hashCode());
@@ -541,6 +1224,7 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getByBackupPlanId() == null) ? 0 : getByBackupPlanId().hashCode());
         hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
+        hashCode = prime * hashCode + ((getByParentRecoveryPointArn() == null) ? 0 : getByParentRecoveryPointArn().hashCode());
         return hashCode;
     }
 

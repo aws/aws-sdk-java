@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,14 @@ public class ContentModerationDetectionMarshaller {
             .marshallLocationName("Timestamp").build();
     private static final MarshallingInfo<StructuredPojo> MODERATIONLABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModerationLabel").build();
+    private static final MarshallingInfo<Long> STARTTIMESTAMPMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimestampMillis").build();
+    private static final MarshallingInfo<Long> ENDTIMESTAMPMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTimestampMillis").build();
+    private static final MarshallingInfo<Long> DURATIONMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DurationMillis").build();
+    private static final MarshallingInfo<List> CONTENTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ContentTypes").build();
 
     private static final ContentModerationDetectionMarshaller instance = new ContentModerationDetectionMarshaller();
 
@@ -50,6 +59,10 @@ public class ContentModerationDetectionMarshaller {
         try {
             protocolMarshaller.marshall(contentModerationDetection.getTimestamp(), TIMESTAMP_BINDING);
             protocolMarshaller.marshall(contentModerationDetection.getModerationLabel(), MODERATIONLABEL_BINDING);
+            protocolMarshaller.marshall(contentModerationDetection.getStartTimestampMillis(), STARTTIMESTAMPMILLIS_BINDING);
+            protocolMarshaller.marshall(contentModerationDetection.getEndTimestampMillis(), ENDTIMESTAMPMILLIS_BINDING);
+            protocolMarshaller.marshall(contentModerationDetection.getDurationMillis(), DURATIONMILLIS_BINDING);
+            protocolMarshaller.marshall(contentModerationDetection.getContentTypes(), CONTENTTYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

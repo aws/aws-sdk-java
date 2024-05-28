@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,9 @@ public class NetworkHeader implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol used for the component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      */
     private String protocol;
     /**
@@ -51,9 +54,14 @@ public class NetworkHeader implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol used for the component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      * 
      * @param protocol
-     *        The protocol used for the component.
+     *        The protocol used for the component.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 16.
      */
 
     public void setProtocol(String protocol) {
@@ -64,8 +72,13 @@ public class NetworkHeader implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol used for the component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      * 
-     * @return The protocol used for the component.
+     * @return The protocol used for the component.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 16.
      */
 
     public String getProtocol() {
@@ -76,9 +89,14 @@ public class NetworkHeader implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol used for the component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      * 
      * @param protocol
-     *        The protocol used for the component.
+     *        The protocol used for the component.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 16.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,11 @@ import com.amazonaws.*;
 public class AbstractAmazonAppflow implements AmazonAppflow {
 
     protected AbstractAmazonAppflow() {
+    }
+
+    @Override
+    public CancelFlowExecutionsResult cancelFlowExecutions(CancelFlowExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -103,6 +108,11 @@ public class AbstractAmazonAppflow implements AmazonAppflow {
     }
 
     @Override
+    public ResetConnectorMetadataCacheResult resetConnectorMetadataCache(ResetConnectorMetadataCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartFlowResult startFlow(StartFlowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +139,11 @@ public class AbstractAmazonAppflow implements AmazonAppflow {
 
     @Override
     public UpdateConnectorProfileResult updateConnectorProfile(UpdateConnectorProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConnectorRegistrationResult updateConnectorRegistration(UpdateConnectorRegistrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

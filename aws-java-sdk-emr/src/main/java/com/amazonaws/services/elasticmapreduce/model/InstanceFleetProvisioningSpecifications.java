@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
- * On-Demand and Spot Instance allocation strategies are available in Amazon EMR version 5.12.1 and later.
+ * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.
+ * On-Demand and Spot instance allocation strategies are available in Amazon EMR releases 5.12.1 and later.
  * </p>
  * </note>
  * 
@@ -38,7 +38,7 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
      * timeout behavior, and allocation strategy.
      * </p>
      */
@@ -49,8 +49,8 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.
      * </p>
      * </note>
      */
@@ -58,12 +58,12 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
      * timeout behavior, and allocation strategy.
      * </p>
      * 
      * @param spotSpecification
-     *        The launch specification for Spot Instances in the fleet, which determines the defined duration,
+     *        The launch specification for Spot instances in the fleet, which determines the defined duration,
      *        provisioning timeout behavior, and allocation strategy.
      */
 
@@ -73,11 +73,11 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
      * timeout behavior, and allocation strategy.
      * </p>
      * 
-     * @return The launch specification for Spot Instances in the fleet, which determines the defined duration,
+     * @return The launch specification for Spot instances in the fleet, which determines the defined duration,
      *         provisioning timeout behavior, and allocation strategy.
      */
 
@@ -87,12 +87,12 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
 
     /**
      * <p>
-     * The launch specification for Spot Instances in the fleet, which determines the defined duration, provisioning
+     * The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning
      * timeout behavior, and allocation strategy.
      * </p>
      * 
      * @param spotSpecification
-     *        The launch specification for Spot Instances in the fleet, which determines the defined duration,
+     *        The launch specification for Spot instances in the fleet, which determines the defined duration,
      *        provisioning timeout behavior, and allocation strategy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -108,8 +108,8 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.
      * </p>
      * </note>
      * 
@@ -117,8 +117,8 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
      *        The launch specification for On-Demand Instances in the instance fleet, which determines the allocation
      *        strategy. </p> <note>
      *        <p>
-     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     *        versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     *        The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     *        versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.
      *        </p>
      */
 
@@ -132,16 +132,16 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.
      * </p>
      * </note>
      * 
      * @return The launch specification for On-Demand Instances in the instance fleet, which determines the allocation
      *         strategy. </p> <note>
      *         <p>
-     *         The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding
-     *         5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and
+     *         The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding
+     *         5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and
      *         later.
      *         </p>
      */
@@ -156,8 +156,8 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     * versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     * versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.
      * </p>
      * </note>
      * 
@@ -165,8 +165,8 @@ public class InstanceFleetProvisioningSpecifications implements Serializable, Cl
      *        The launch specification for On-Demand Instances in the instance fleet, which determines the allocation
      *        strategy. </p> <note>
      *        <p>
-     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-     *        versions. On-Demand Instances allocation strategy is available in Amazon EMR version 5.12.1 and later.
+     *        The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
+     *        versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

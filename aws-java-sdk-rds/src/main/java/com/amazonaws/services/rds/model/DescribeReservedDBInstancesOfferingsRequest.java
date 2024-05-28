@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,7 +77,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     private String offeringType;
     /**
      * <p>
-     * A value that indicates whether to show only those reservations that support Multi-AZ.
+     * Specifies whether to show only those reservations that support Multi-AZ.
      * </p>
      */
     private Boolean multiAZ;
@@ -410,11 +410,11 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * A value that indicates whether to show only those reservations that support Multi-AZ.
+     * Specifies whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether to show only those reservations that support Multi-AZ.
+     *        Specifies whether to show only those reservations that support Multi-AZ.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -423,10 +423,10 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * A value that indicates whether to show only those reservations that support Multi-AZ.
+     * Specifies whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
-     * @return A value that indicates whether to show only those reservations that support Multi-AZ.
+     * @return Specifies whether to show only those reservations that support Multi-AZ.
      */
 
     public Boolean getMultiAZ() {
@@ -435,11 +435,11 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * A value that indicates whether to show only those reservations that support Multi-AZ.
+     * Specifies whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
      * @param multiAZ
-     *        A value that indicates whether to show only those reservations that support Multi-AZ.
+     *        Specifies whether to show only those reservations that support Multi-AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,10 +450,10 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * A value that indicates whether to show only those reservations that support Multi-AZ.
+     * Specifies whether to show only those reservations that support Multi-AZ.
      * </p>
      * 
-     * @return A value that indicates whether to show only those reservations that support Multi-AZ.
+     * @return Specifies whether to show only those reservations that support Multi-AZ.
      */
 
     public Boolean isMultiAZ() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
-     * by the same AWS account of the API owner.
+     * by the same Amazon Web Services account of the API owner.
      * </p>
      */
     private java.util.List<String> targetArns;
@@ -194,11 +194,11 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
-     * by the same AWS account of the API owner.
+     * by the same Amazon Web Services account of the API owner.
      * </p>
      * 
      * @return The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
-     *         be owned by the same AWS account of the API owner.
+     *         be owned by the same Amazon Web Services account of the API owner.
      */
 
     public java.util.List<String> getTargetArns() {
@@ -208,12 +208,12 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
-     * by the same AWS account of the API owner.
+     * by the same Amazon Web Services account of the API owner.
      * </p>
      * 
      * @param targetArns
      *        The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
-     *        be owned by the same AWS account of the API owner.
+     *        be owned by the same Amazon Web Services account of the API owner.
      */
 
     public void setTargetArns(java.util.Collection<String> targetArns) {
@@ -228,7 +228,7 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
-     * by the same AWS account of the API owner.
+     * by the same Amazon Web Services account of the API owner.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,7 +238,7 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param targetArns
      *        The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
-     *        be owned by the same AWS account of the API owner.
+     *        be owned by the same Amazon Web Services account of the API owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,12 +255,12 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
-     * by the same AWS account of the API owner.
+     * by the same Amazon Web Services account of the API owner.
      * </p>
      * 
      * @param targetArns
      *        The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
-     *        be owned by the same AWS account of the API owner.
+     *        be owned by the same Amazon Web Services account of the API owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

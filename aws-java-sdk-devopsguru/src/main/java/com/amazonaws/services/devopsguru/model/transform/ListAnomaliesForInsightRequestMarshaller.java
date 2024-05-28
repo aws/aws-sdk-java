@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ListAnomaliesForInsightRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filters").build();
 
     private static final ListAnomaliesForInsightRequestMarshaller instance = new ListAnomaliesForInsightRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListAnomaliesForInsightRequestMarshaller {
             protocolMarshaller.marshall(listAnomaliesForInsightRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAnomaliesForInsightRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAnomaliesForInsightRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listAnomaliesForInsightRequest.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

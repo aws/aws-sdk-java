@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,32 @@ public class AbstractAWSSSMContactsAsync extends AbstractAWSSSMContacts implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRotationResult> createRotationAsync(CreateRotationRequest request) {
+
+        return createRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRotationResult> createRotationAsync(CreateRotationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRotationRequest, CreateRotationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRotationOverrideResult> createRotationOverrideAsync(CreateRotationOverrideRequest request) {
+
+        return createRotationOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRotationOverrideResult> createRotationOverrideAsync(CreateRotationOverrideRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRotationOverrideRequest, CreateRotationOverrideResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeactivateContactChannelResult> deactivateContactChannelAsync(DeactivateContactChannelRequest request) {
 
         return deactivateContactChannelAsync(request, null);
@@ -114,6 +140,32 @@ public class AbstractAWSSSMContactsAsync extends AbstractAWSSSMContacts implemen
     @Override
     public java.util.concurrent.Future<DeleteContactChannelResult> deleteContactChannelAsync(DeleteContactChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteContactChannelRequest, DeleteContactChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationResult> deleteRotationAsync(DeleteRotationRequest request) {
+
+        return deleteRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationResult> deleteRotationAsync(DeleteRotationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRotationRequest, DeleteRotationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationOverrideResult> deleteRotationOverrideAsync(DeleteRotationOverrideRequest request) {
+
+        return deleteRotationOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationOverrideResult> deleteRotationOverrideAsync(DeleteRotationOverrideRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRotationOverrideRequest, DeleteRotationOverrideResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +236,32 @@ public class AbstractAWSSSMContactsAsync extends AbstractAWSSSMContacts implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetRotationResult> getRotationAsync(GetRotationRequest request) {
+
+        return getRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRotationResult> getRotationAsync(GetRotationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRotationRequest, GetRotationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRotationOverrideResult> getRotationOverrideAsync(GetRotationOverrideRequest request) {
+
+        return getRotationOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRotationOverrideResult> getRotationOverrideAsync(GetRotationOverrideRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRotationOverrideRequest, GetRotationOverrideResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListContactChannelsResult> listContactChannelsAsync(ListContactChannelsRequest request) {
 
         return listContactChannelsAsync(request, null);
@@ -236,6 +314,19 @@ public class AbstractAWSSSMContactsAsync extends AbstractAWSSSMContacts implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListPageResolutionsResult> listPageResolutionsAsync(ListPageResolutionsRequest request) {
+
+        return listPageResolutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPageResolutionsResult> listPageResolutionsAsync(ListPageResolutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPageResolutionsRequest, ListPageResolutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPagesByContactResult> listPagesByContactAsync(ListPagesByContactRequest request) {
 
         return listPagesByContactAsync(request, null);
@@ -257,6 +348,58 @@ public class AbstractAWSSSMContactsAsync extends AbstractAWSSSMContacts implemen
     @Override
     public java.util.concurrent.Future<ListPagesByEngagementResult> listPagesByEngagementAsync(ListPagesByEngagementRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPagesByEngagementRequest, ListPagesByEngagementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreviewRotationShiftsResult> listPreviewRotationShiftsAsync(ListPreviewRotationShiftsRequest request) {
+
+        return listPreviewRotationShiftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreviewRotationShiftsResult> listPreviewRotationShiftsAsync(ListPreviewRotationShiftsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPreviewRotationShiftsRequest, ListPreviewRotationShiftsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationOverridesResult> listRotationOverridesAsync(ListRotationOverridesRequest request) {
+
+        return listRotationOverridesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationOverridesResult> listRotationOverridesAsync(ListRotationOverridesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRotationOverridesRequest, ListRotationOverridesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationShiftsResult> listRotationShiftsAsync(ListRotationShiftsRequest request) {
+
+        return listRotationShiftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationShiftsResult> listRotationShiftsAsync(ListRotationShiftsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRotationShiftsRequest, ListRotationShiftsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationsResult> listRotationsAsync(ListRotationsRequest request) {
+
+        return listRotationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationsResult> listRotationsAsync(ListRotationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRotationsRequest, ListRotationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -374,6 +517,19 @@ public class AbstractAWSSSMContactsAsync extends AbstractAWSSSMContacts implemen
     @Override
     public java.util.concurrent.Future<UpdateContactChannelResult> updateContactChannelAsync(UpdateContactChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContactChannelRequest, UpdateContactChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRotationResult> updateRotationAsync(UpdateRotationRequest request) {
+
+        return updateRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRotationResult> updateRotationAsync(UpdateRotationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRotationRequest, UpdateRotationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

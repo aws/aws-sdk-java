@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class ListAccountAssociationsFilter implements Serializable, Cloneable, S
      * </p>
      */
     private String accountId;
+    /**
+     * <p>
+     * The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * </p>
+     */
+    private java.util.List<String> accountIds;
 
     /**
      * <p>
@@ -170,6 +176,76 @@ public class ListAccountAssociationsFilter implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * </p>
+     * 
+     * @return The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     */
+
+    public java.util.List<String> getAccountIds() {
+        return accountIds;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * </p>
+     * 
+     * @param accountIds
+     *        The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     */
+
+    public void setAccountIds(java.util.Collection<String> accountIds) {
+        if (accountIds == null) {
+            this.accountIds = null;
+            return;
+        }
+
+        this.accountIds = new java.util.ArrayList<String>(accountIds);
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param accountIds
+     *        The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAccountAssociationsFilter withAccountIds(String... accountIds) {
+        if (this.accountIds == null) {
+            setAccountIds(new java.util.ArrayList<String>(accountIds.length));
+        }
+        for (String ele : accountIds) {
+            this.accountIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * </p>
+     * 
+     * @param accountIds
+     *        The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAccountAssociationsFilter withAccountIds(java.util.Collection<String> accountIds) {
+        setAccountIds(accountIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +260,9 @@ public class ListAccountAssociationsFilter implements Serializable, Cloneable, S
         if (getAssociation() != null)
             sb.append("Association: ").append(getAssociation()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: ").append(getAccountId());
+            sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getAccountIds() != null)
+            sb.append("AccountIds: ").append(getAccountIds());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +285,10 @@ public class ListAccountAssociationsFilter implements Serializable, Cloneable, S
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
+            return false;
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +299,7 @@ public class ListAccountAssociationsFilter implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         return hashCode;
     }
 

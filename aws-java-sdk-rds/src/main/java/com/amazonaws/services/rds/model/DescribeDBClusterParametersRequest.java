@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,28 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A value that indicates to return only parameters for a specific source. Parameter sources can be
-     * <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     * A specific source to return parameters for.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>customer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>service</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String source;
     /**
@@ -177,13 +196,50 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates to return only parameters for a specific source. Parameter sources can be
-     * <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     * A specific source to return parameters for.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>customer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>service</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param source
-     *        A value that indicates to return only parameters for a specific source. Parameter sources can be
-     *        <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     *        A specific source to return parameters for.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>customer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>service</code>
+     *        </p>
+     *        </li>
      */
 
     public void setSource(String source) {
@@ -192,12 +248,49 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates to return only parameters for a specific source. Parameter sources can be
-     * <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     * A specific source to return parameters for.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>customer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>service</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A value that indicates to return only parameters for a specific source. Parameter sources can be
-     *         <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     * @return A specific source to return parameters for.</p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>customer</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>service</code>
+     *         </p>
+     *         </li>
      */
 
     public String getSource() {
@@ -206,13 +299,50 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates to return only parameters for a specific source. Parameter sources can be
-     * <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     * A specific source to return parameters for.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>customer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>service</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param source
-     *        A value that indicates to return only parameters for a specific source. Parameter sources can be
-     *        <code>engine</code>, <code>service</code>, or <code>customer</code>.
+     *        A specific source to return parameters for.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>customer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>service</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

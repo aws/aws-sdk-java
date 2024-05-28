@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,15 +114,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is
-     * configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -133,6 +134,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      */
     private java.util.Map<String, String> authParameters;
     /**
@@ -196,11 +204,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * <li>
      * <p>
      * Define auth challenge
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
      * </p>
      * </li>
      * </ul>
@@ -943,15 +946,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is
-     * configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -962,6 +966,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      * 
      * @return The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're
      *         invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
@@ -975,15 +986,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
-     *         <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+     *         For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code>
+     *         (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
      *         <code>DEVICE_KEY</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app
-     *         client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     *         For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     *         <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+     *         <code>DEVICE_KEY</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -994,6 +1006,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>SRP_A: (The SRP_A Value)</code>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about <code>SECRET_HASH</code>, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *         >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     *         href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     *         >Working with user devices in your user pool</a>.
      */
 
     public java.util.Map<String, String> getAuthParameters() {
@@ -1015,15 +1034,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is
-     * configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -1034,6 +1054,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      * 
      * @param authParameters
      *        The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're
@@ -1048,15 +1075,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
-     *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+     *        For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code>
+     *        (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
      *        <code>DEVICE_KEY</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app
-     *        client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+     *        <code>DEVICE_KEY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1066,6 +1094,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about <code>SECRET_HASH</code>, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *        >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     *        >Working with user devices in your user pool</a>.
      */
 
     public void setAuthParameters(java.util.Map<String, String> authParameters) {
@@ -1087,15 +1122,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is
-     * configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -1106,6 +1142,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about <code>SECRET_HASH</code>, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     * >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     * >Working with user devices in your user pool</a>.
+     * </p>
      * 
      * @param authParameters
      *        The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're
@@ -1120,15 +1163,16 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
-     *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+     *        For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code>
+     *        (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
      *        <code>DEVICE_KEY</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app
-     *        client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.
+     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
+     *        <code>DEVICE_KEY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1138,6 +1182,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about <code>SECRET_HASH</code>, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash"
+     *        >Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html"
+     *        >Working with user devices in your user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1237,11 +1288,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1332,11 +1378,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <li>
      *         <p>
      *         Define auth challenge
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Verify auth challenge
      *         </p>
      *         </li>
      *         </ul>
@@ -1437,11 +1478,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1533,11 +1569,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        Define auth challenge
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Verify auth challenge
      *        </p>
      *        </li>
      *        </ul>
@@ -1638,11 +1669,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1734,11 +1760,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        Define auth challenge
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Verify auth challenge
      *        </p>
      *        </li>
      *        </ul>

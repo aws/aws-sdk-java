@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon S3 data source.
+ * Describes the Amazon S3 data source.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLS3DataSource" target="_top">AWS API
@@ -32,8 +32,26 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * A ManifestFile should have the format shown below:
+     * If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects
+     * that match the specified key name prefix for model training.
+     * </p>
+     * <p>
+     * The <code>S3Prefix</code> should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     * containing a list of object keys that you want SageMaker to use for model training.
+     * </p>
+     * <p>
+     * A <code>ManifestFile</code> should have the format shown below:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -47,17 +65,36 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * An S3Prefix should have the following format:
+     * If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented
+     * manifest file in JSON lines format. This file contains the data you want to use for model training.
+     * <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).
      * </p>
      * <p>
-     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
      * </p>
+     * <p>
+     * <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     * </p>
+     * <p>
+     * <code>"label-metadata": {"class-name": "cat"</code>
+     * </p>
+     * <p>
+     * For more information on <code>AugmentedManifestFile</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     * Training Jobs with an Augmented Manifest File</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String s3DataType;
     /**
      * <p>
-     * The URL to the Amazon S3 data source.
+     * The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the
+     * data type.
      * </p>
      */
     private String s3Uri;
@@ -66,8 +103,26 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * A ManifestFile should have the format shown below:
+     * If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects
+     * that match the specified key name prefix for model training.
+     * </p>
+     * <p>
+     * The <code>S3Prefix</code> should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     * containing a list of object keys that you want SageMaker to use for model training.
+     * </p>
+     * <p>
+     * A <code>ManifestFile</code> should have the format shown below:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -81,17 +136,53 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * An S3Prefix should have the following format:
+     * If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented
+     * manifest file in JSON lines format. This file contains the data you want to use for model training.
+     * <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).
      * </p>
      * <p>
-     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
      * </p>
+     * <p>
+     * <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     * </p>
+     * <p>
+     * <code>"label-metadata": {"class-name": "cat"</code>
+     * </p>
+     * <p>
+     * For more information on <code>AugmentedManifestFile</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     * Training Jobs with an Augmented Manifest File</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param s3DataType
-     *        The data type.</p>
+     *        The data type. </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        A ManifestFile should have the format shown below:
+     *        If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all
+     *        objects that match the specified key name prefix for model training.
+     *        </p>
+     *        <p>
+     *        The <code>S3Prefix</code> should have the following format:
+     *        </p>
+     *        <p>
+     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     *        containing a list of object keys that you want SageMaker to use for model training.
+     *        </p>
+     *        <p>
+     *        A <code>ManifestFile</code> should have the format shown below:
      *        </p>
      *        <p>
      *        <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -105,11 +196,29 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        An S3Prefix should have the following format:
+     *        If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an
+     *        augmented manifest file in JSON lines format. This file contains the data you want to use for model
+     *        training. <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs
+     *        created by calling <code>CreateAutoMLJobV2</code>).
      *        </p>
      *        <p>
-     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *        Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
+     *        </p>
+     *        <p>
+     *        <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     *        </p>
+     *        <p>
+     *        <code>"label-metadata": {"class-name": "cat"</code>
+     *        </p>
+     *        <p>
+     *        For more information on <code>AugmentedManifestFile</code>, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     *        Training Jobs with an Augmented Manifest File</a>.
+     *        </p>
+     *        </li>
      * @see AutoMLS3DataType
      */
 
@@ -121,8 +230,26 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * A ManifestFile should have the format shown below:
+     * If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects
+     * that match the specified key name prefix for model training.
+     * </p>
+     * <p>
+     * The <code>S3Prefix</code> should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     * containing a list of object keys that you want SageMaker to use for model training.
+     * </p>
+     * <p>
+     * A <code>ManifestFile</code> should have the format shown below:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -136,16 +263,52 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * An S3Prefix should have the following format:
+     * If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented
+     * manifest file in JSON lines format. This file contains the data you want to use for model training.
+     * <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).
      * </p>
      * <p>
-     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
      * </p>
+     * <p>
+     * <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     * </p>
+     * <p>
+     * <code>"label-metadata": {"class-name": "cat"</code>
+     * </p>
+     * <p>
+     * For more information on <code>AugmentedManifestFile</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     * Training Jobs with an Augmented Manifest File</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The data type.</p>
+     * @return The data type. </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         A ManifestFile should have the format shown below:
+     *         If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all
+     *         objects that match the specified key name prefix for model training.
+     *         </p>
+     *         <p>
+     *         The <code>S3Prefix</code> should have the following format:
+     *         </p>
+     *         <p>
+     *         <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     *         containing a list of object keys that you want SageMaker to use for model training.
+     *         </p>
+     *         <p>
+     *         A <code>ManifestFile</code> should have the format shown below:
      *         </p>
      *         <p>
      *         <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -159,11 +322,29 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         An S3Prefix should have the following format:
+     *         If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an
+     *         augmented manifest file in JSON lines format. This file contains the data you want to use for model
+     *         training. <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs
+     *         created by calling <code>CreateAutoMLJobV2</code>).
      *         </p>
      *         <p>
-     *         <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *         Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
+     *         </p>
+     *         <p>
+     *         <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     *         </p>
+     *         <p>
+     *         <code>"label-metadata": {"class-name": "cat"</code>
+     *         </p>
+     *         <p>
+     *         For more information on <code>AugmentedManifestFile</code>, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata
+     *         to Training Jobs with an Augmented Manifest File</a>.
+     *         </p>
+     *         </li>
      * @see AutoMLS3DataType
      */
 
@@ -175,8 +356,26 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * A ManifestFile should have the format shown below:
+     * If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects
+     * that match the specified key name prefix for model training.
+     * </p>
+     * <p>
+     * The <code>S3Prefix</code> should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     * containing a list of object keys that you want SageMaker to use for model training.
+     * </p>
+     * <p>
+     * A <code>ManifestFile</code> should have the format shown below:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -190,17 +389,53 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * An S3Prefix should have the following format:
+     * If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented
+     * manifest file in JSON lines format. This file contains the data you want to use for model training.
+     * <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).
      * </p>
      * <p>
-     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
      * </p>
+     * <p>
+     * <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     * </p>
+     * <p>
+     * <code>"label-metadata": {"class-name": "cat"</code>
+     * </p>
+     * <p>
+     * For more information on <code>AugmentedManifestFile</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     * Training Jobs with an Augmented Manifest File</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param s3DataType
-     *        The data type.</p>
+     *        The data type. </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        A ManifestFile should have the format shown below:
+     *        If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all
+     *        objects that match the specified key name prefix for model training.
+     *        </p>
+     *        <p>
+     *        The <code>S3Prefix</code> should have the following format:
+     *        </p>
+     *        <p>
+     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     *        containing a list of object keys that you want SageMaker to use for model training.
+     *        </p>
+     *        <p>
+     *        A <code>ManifestFile</code> should have the format shown below:
      *        </p>
      *        <p>
      *        <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -214,11 +449,29 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        An S3Prefix should have the following format:
+     *        If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an
+     *        augmented manifest file in JSON lines format. This file contains the data you want to use for model
+     *        training. <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs
+     *        created by calling <code>CreateAutoMLJobV2</code>).
      *        </p>
      *        <p>
-     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *        Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
+     *        </p>
+     *        <p>
+     *        <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     *        </p>
+     *        <p>
+     *        <code>"label-metadata": {"class-name": "cat"</code>
+     *        </p>
+     *        <p>
+     *        For more information on <code>AugmentedManifestFile</code>, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     *        Training Jobs with an Augmented Manifest File</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLS3DataType
      */
@@ -232,8 +485,26 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * The data type.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * A ManifestFile should have the format shown below:
+     * If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects
+     * that match the specified key name prefix for model training.
+     * </p>
+     * <p>
+     * The <code>S3Prefix</code> should have the following format:
+     * </p>
+     * <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     * containing a list of object keys that you want SageMaker to use for model training.
+     * </p>
+     * <p>
+     * A <code>ManifestFile</code> should have the format shown below:
      * </p>
      * <p>
      * <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -247,17 +518,53 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      * <p>
      * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * An S3Prefix should have the following format:
+     * If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an augmented
+     * manifest file in JSON lines format. This file contains the data you want to use for model training.
+     * <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>).
      * </p>
      * <p>
-     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     * Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
      * </p>
+     * <p>
+     * <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     * </p>
+     * <p>
+     * <code>"label-metadata": {"class-name": "cat"</code>
+     * </p>
+     * <p>
+     * For more information on <code>AugmentedManifestFile</code>, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     * Training Jobs with an Augmented Manifest File</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param s3DataType
-     *        The data type.</p>
+     *        The data type. </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        A ManifestFile should have the format shown below:
+     *        If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all
+     *        objects that match the specified key name prefix for model training.
+     *        </p>
+     *        <p>
+     *        The <code>S3Prefix</code> should have the following format:
+     *        </p>
+     *        <p>
+     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that is a manifest file
+     *        containing a list of object keys that you want SageMaker to use for model training.
+     *        </p>
+     *        <p>
+     *        A <code>ManifestFile</code> should have the format shown below:
      *        </p>
      *        <p>
      *        <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code>
@@ -271,11 +578,29 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        An S3Prefix should have the following format:
+     *        If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an object that is an
+     *        augmented manifest file in JSON lines format. This file contains the data you want to use for model
+     *        training. <code>AugmentedManifestFile</code> is available for V2 API jobs only (for example, for jobs
+     *        created by calling <code>CreateAutoMLJobV2</code>).
      *        </p>
      *        <p>
-     *        <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code>
+     *        Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
+     *        </p>
+     *        <p>
+     *        <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+     *        </p>
+     *        <p>
+     *        <code>"label-metadata": {"class-name": "cat"</code>
+     *        </p>
+     *        <p>
+     *        For more information on <code>AugmentedManifestFile</code>, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide Dataset Metadata to
+     *        Training Jobs with an Augmented Manifest File</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLS3DataType
      */
@@ -287,11 +612,13 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the Amazon S3 data source.
+     * The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the
+     * data type.
      * </p>
      * 
      * @param s3Uri
-     *        The URL to the Amazon S3 data source.
+     *        The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on
+     *        the data type.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -300,10 +627,12 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the Amazon S3 data source.
+     * The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the
+     * data type.
      * </p>
      * 
-     * @return The URL to the Amazon S3 data source.
+     * @return The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on
+     *         the data type.
      */
 
     public String getS3Uri() {
@@ -312,11 +641,13 @@ public class AutoMLS3DataSource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the Amazon S3 data source.
+     * The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on the
+     * data type.
      * </p>
      * 
      * @param s3Uri
-     *        The URL to the Amazon S3 data source.
+     *        The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix or ManifestFile depending on
+     *        the data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

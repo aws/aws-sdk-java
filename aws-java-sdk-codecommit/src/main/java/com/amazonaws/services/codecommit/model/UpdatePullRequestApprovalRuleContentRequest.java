@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,10 +56,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
+     * user:
      * </p>
      * <ul>
      * <li>
@@ -235,10 +236,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
+     * user:
      * </p>
      * <ul>
      * <li>
@@ -283,11 +285,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for
-     *        both IAM users and federated access users whose name matches the provided resource name. This is a very
-     *        powerful option that offers a great deal of flexibility. For example, if you specify the AWS account
-     *        <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
-     *        user:
+     *        <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It
+     *        can be used for both IAM users and federated access users whose name matches the provided resource name.
+     *        This is a very powerful option that offers a great deal of flexibility. For example, if you specify the
+     *        Amazon Web Services account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as
+     *        approvals coming from that user:
      *        </p>
      *        <ul>
      *        <li>
@@ -339,10 +341,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
+     * user:
      * </p>
      * <ul>
      * <li>
@@ -386,11 +389,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for
-     *         both IAM users and federated access users whose name matches the provided resource name. This is a very
-     *         powerful option that offers a great deal of flexibility. For example, if you specify the AWS account
-     *         <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
-     *         user:
+     *         <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It
+     *         can be used for both IAM users and federated access users whose name matches the provided resource name.
+     *         This is a very powerful option that offers a great deal of flexibility. For example, if you specify the
+     *         Amazon Web Services account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted
+     *         as approvals coming from that user:
      *         </p>
      *         <ul>
      *         <li>
@@ -442,10 +445,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
+     * user:
      * </p>
      * <ul>
      * <li>
@@ -490,11 +494,11 @@ public class UpdatePullRequestApprovalRuleContentRequest extends com.amazonaws.A
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for
-     *        both IAM users and federated access users whose name matches the provided resource name. This is a very
-     *        powerful option that offers a great deal of flexibility. For example, if you specify the AWS account
-     *        <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that
-     *        user:
+     *        <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It
+     *        can be used for both IAM users and federated access users whose name matches the provided resource name.
+     *        This is a very powerful option that offers a great deal of flexibility. For example, if you specify the
+     *        Amazon Web Services account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as
+     *        approvals coming from that user:
      *        </p>
      *        <ul>
      *        <li>

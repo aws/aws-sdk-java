@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      */
     private Long createdAt;
@@ -233,14 +235,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      * 
      * @param createdAt
      *        The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
-     *        jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
-     *        called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     *        jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called).
+     *        For array child jobs, this is when the child job was spawned by its parent and entered the
      *        <code>PENDING</code> state.
      */
 
@@ -251,12 +256,15 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      * 
      * @return The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
-     *         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     *         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was
      *         called). For array child jobs, this is when the child job was spawned by its parent and entered the
      *         <code>PENDING</code> state.
      */
@@ -268,14 +276,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     * child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      * 
      * @param createdAt
      *        The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
-     *        jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
-     *        called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     *        jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called).
+     *        For array child jobs, this is when the child job was spawned by its parent and entered the
      *        <code>PENDING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

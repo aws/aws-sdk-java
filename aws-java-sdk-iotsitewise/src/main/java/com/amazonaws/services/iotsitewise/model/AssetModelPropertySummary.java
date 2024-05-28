@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,20 @@ public class AssetModelPropertySummary implements Serializable, Cloneable, Struc
      * </p>
      */
     private String assetModelCompositeModelId;
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     */
+    private java.util.List<AssetModelPropertyPathSegment> path;
+    /**
+     * <p>
+     * The external ID of the property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
@@ -360,6 +374,128 @@ public class AssetModelPropertySummary implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * 
+     * @return The structured path to the property from the root of the asset model.
+     */
+
+    public java.util.List<AssetModelPropertyPathSegment> getPath() {
+        return path;
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset model.
+     */
+
+    public void setPath(java.util.Collection<AssetModelPropertyPathSegment> path) {
+        if (path == null) {
+            this.path = null;
+            return;
+        }
+
+        this.path = new java.util.ArrayList<AssetModelPropertyPathSegment>(path);
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPath(java.util.Collection)} or {@link #withPath(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelPropertySummary withPath(AssetModelPropertyPathSegment... path) {
+        if (this.path == null) {
+            setPath(new java.util.ArrayList<AssetModelPropertyPathSegment>(path.length));
+        }
+        for (AssetModelPropertyPathSegment ele : path) {
+            this.path.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelPropertySummary withPath(java.util.Collection<AssetModelPropertyPathSegment> path) {
+        setPath(path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID of the property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID of the property. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The external ID of the property. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID of the property. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelPropertySummary withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -384,7 +520,11 @@ public class AssetModelPropertySummary implements Serializable, Cloneable, Struc
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getAssetModelCompositeModelId() != null)
-            sb.append("AssetModelCompositeModelId: ").append(getAssetModelCompositeModelId());
+            sb.append("AssetModelCompositeModelId: ").append(getAssetModelCompositeModelId()).append(",");
+        if (getPath() != null)
+            sb.append("Path: ").append(getPath()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -427,6 +567,14 @@ public class AssetModelPropertySummary implements Serializable, Cloneable, Struc
             return false;
         if (other.getAssetModelCompositeModelId() != null && other.getAssetModelCompositeModelId().equals(this.getAssetModelCompositeModelId()) == false)
             return false;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +590,8 @@ public class AssetModelPropertySummary implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAssetModelCompositeModelId() == null) ? 0 : getAssetModelCompositeModelId().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

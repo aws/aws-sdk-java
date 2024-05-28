@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.guardduty.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class UpdateOrganizationConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoEnable").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSources").build();
+    private static final MarshallingInfo<List> FEATURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("features").build();
+    private static final MarshallingInfo<String> AUTOENABLEORGANIZATIONMEMBERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoEnableOrganizationMembers").build();
 
     private static final UpdateOrganizationConfigurationRequestMarshaller instance = new UpdateOrganizationConfigurationRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class UpdateOrganizationConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getDetectorId(), DETECTORID_BINDING);
             protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getAutoEnable(), AUTOENABLE_BINDING);
             protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getDataSources(), DATASOURCES_BINDING);
+            protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getFeatures(), FEATURES_BINDING);
+            protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getAutoEnableOrganizationMembers(), AUTOENABLEORGANIZATIONMEMBERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

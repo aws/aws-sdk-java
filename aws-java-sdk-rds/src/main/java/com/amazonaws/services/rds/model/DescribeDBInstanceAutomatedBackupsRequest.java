@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
     /**
      * <p>
      * (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of
-     * an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter
+     * an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.
      * </p>
      */
@@ -58,17 +58,17 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available
+     * <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      * </p>
      * </li>
      * </ul>
@@ -166,13 +166,13 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
     /**
      * <p>
      * (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of
-     * an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter
+     * an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.
      * </p>
      * 
      * @param dBInstanceIdentifier
      *        (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the
-     *        identifier of an existing DB instance. It returns information from the specific DB instance' automated
+     *        identifier of an existing DB instance. It returns information from the specific DB instance's automated
      *        backup. This parameter isn't case-sensitive.
      */
 
@@ -183,12 +183,12 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
     /**
      * <p>
      * (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of
-     * an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter
+     * an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.
      * </p>
      * 
      * @return (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the
-     *         identifier of an existing DB instance. It returns information from the specific DB instance' automated
+     *         identifier of an existing DB instance. It returns information from the specific DB instance's automated
      *         backup. This parameter isn't case-sensitive.
      */
 
@@ -199,13 +199,13 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
     /**
      * <p>
      * (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the identifier of
-     * an existing DB instance. It returns information from the specific DB instance' automated backup. This parameter
+     * an existing DB instance. It returns information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.
      * </p>
      * 
      * @param dBInstanceIdentifier
      *        (Optional) The user-supplied instance identifier. If this parameter is specified, it must match the
-     *        identifier of an existing DB instance. It returns information from the specific DB instance' automated
+     *        identifier of an existing DB instance. It returns information from the specific DB instance's automated
      *        backup. This parameter isn't case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -230,17 +230,17 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available
+     * <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      * </p>
      * </li>
      * </ul>
@@ -274,18 +274,18 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>active</code> - automated backups for current instances
+     *         <code>active</code> - Automated backups for current instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     *         <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
+     *         available.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
-     *         available
+     *         <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      *         </p>
      *         </li>
      *         </ul>
@@ -329,17 +329,17 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available
+     * <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      * </p>
      * </li>
      * </ul>
@@ -374,18 +374,18 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - automated backups for current instances
+     *        <code>active</code> - Automated backups for current instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     *        <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
+     *        available.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
-     *        available
+     *        <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      *        </p>
      *        </li>
      *        </ul>
@@ -431,17 +431,17 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available
+     * <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      * </p>
      * </li>
      * </ul>
@@ -481,18 +481,18 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - automated backups for current instances
+     *        <code>active</code> - Automated backups for current instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     *        <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
+     *        available.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
-     *        available
+     *        <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      *        </p>
      *        </li>
      *        </ul>
@@ -540,17 +540,17 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available
+     * <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      * </p>
      * </li>
      * </ul>
@@ -585,18 +585,18 @@ public class DescribeDBInstanceAutomatedBackupsRequest extends com.amazonaws.Ama
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - automated backups for current instances
+     *        <code>active</code> - Automated backups for current instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances and after backup replication is stopped
+     *        <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
+     *        available.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
-     *        available
+     *        <code>retained</code> - Automated backups for deleted instances and after backup replication is stopped.
      *        </p>
      *        </li>
      *        </ul>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the status of a logging configuration.
+ * The status of the logging configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/LoggingConfigurationStatus" target="_top">AWS API
@@ -30,24 +30,24 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Status code of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      */
     private String statusCode;
     /**
      * <p>
-     * The reason for failure if any.
+     * If failed, the reason for the failure.
      * </p>
      */
     private String statusReason;
 
     /**
      * <p>
-     * Status code of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
      * @param statusCode
-     *        Status code of the logging configuration.
+     *        The current status of the logging configuration.
      * @see LoggingConfigurationStatusCode
      */
 
@@ -57,10 +57,10 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Status code of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
-     * @return Status code of the logging configuration.
+     * @return The current status of the logging configuration.
      * @see LoggingConfigurationStatusCode
      */
 
@@ -70,11 +70,11 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Status code of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
      * @param statusCode
-     *        Status code of the logging configuration.
+     *        The current status of the logging configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingConfigurationStatusCode
      */
@@ -86,11 +86,11 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Status code of the logging configuration.
+     * The current status of the logging configuration.
      * </p>
      * 
      * @param statusCode
-     *        Status code of the logging configuration.
+     *        The current status of the logging configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingConfigurationStatusCode
      */
@@ -102,11 +102,11 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for failure if any.
+     * If failed, the reason for the failure.
      * </p>
      * 
      * @param statusReason
-     *        The reason for failure if any.
+     *        If failed, the reason for the failure.
      */
 
     public void setStatusReason(String statusReason) {
@@ -115,10 +115,10 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for failure if any.
+     * If failed, the reason for the failure.
      * </p>
      * 
-     * @return The reason for failure if any.
+     * @return If failed, the reason for the failure.
      */
 
     public String getStatusReason() {
@@ -127,11 +127,11 @@ public class LoggingConfigurationStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for failure if any.
+     * If failed, the reason for the failure.
      * </p>
      * 
      * @param statusReason
-     *        The reason for failure if any.
+     *        If failed, the reason for the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

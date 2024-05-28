@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access
- * Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key
- * Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the
- * <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object.
+ * The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management
+ * (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service
+ * (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a>
+ * request, and part of the <a>DataDestination</a> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/S3Config" target="_top">AWS API
@@ -39,19 +39,19 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
     private String path;
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
+     * bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
      * key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     * The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      * </p>
      */
     private String kMSKeyArn;
@@ -98,22 +98,22 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
+     * bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
      * key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
+     *        The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
      *        Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow
      *        access to the key.</p>
      *        <p>
-     *        Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
-     *        an <code>InvalidInputException</code> error.
+     *        Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your
+     *        account, you get an <code>InvalidInputException</code> error.
      */
 
     public void setRoleArn(String roleArn) {
@@ -122,21 +122,21 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
+     * bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
      * key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      * 
-     * @return The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
-     *         the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must
-     *         allow access to the key.</p>
+     * @return The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
+     *         Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow
+     *         access to the key.</p>
      *         <p>
-     *         Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
-     *         an <code>InvalidInputException</code> error.
+     *         Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your
+     *         account, you get an <code>InvalidInputException</code> error.
      */
 
     public String getRoleArn() {
@@ -145,22 +145,22 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-     * S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
+     * The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3
+     * bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the
      * key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
+     *        The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the
      *        Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow
      *        access to the key.</p>
      *        <p>
-     *        Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
-     *        an <code>InvalidInputException</code> error.
+     *        Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your
+     *        account, you get an <code>InvalidInputException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +171,11 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     * The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     *        The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -184,10 +184,10 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     * The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     * @return The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      */
 
     public String getKMSKeyArn() {
@@ -196,11 +196,11 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     * The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+     *        The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

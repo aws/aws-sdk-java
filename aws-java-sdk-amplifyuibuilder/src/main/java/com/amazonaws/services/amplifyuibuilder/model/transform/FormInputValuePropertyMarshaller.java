@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.amplifyuibuilder.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class FormInputValuePropertyMarshaller {
 
     private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("value").build();
+    private static final MarshallingInfo<StructuredPojo> BINDINGPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bindingProperties").build();
+    private static final MarshallingInfo<List> CONCAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("concat").build();
 
     private static final FormInputValuePropertyMarshaller instance = new FormInputValuePropertyMarshaller();
 
@@ -47,6 +52,8 @@ public class FormInputValuePropertyMarshaller {
 
         try {
             protocolMarshaller.marshall(formInputValueProperty.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(formInputValueProperty.getBindingProperties(), BINDINGPROPERTIES_BINDING);
+            protocolMarshaller.marshall(formInputValueProperty.getConcat(), CONCAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

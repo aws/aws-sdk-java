@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class AbstractAmazonTimestreamWrite implements AmazonTimestreamWrite {
     }
 
     @Override
+    public CreateBatchLoadTaskResult createBatchLoadTask(CreateBatchLoadTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDatabaseResult createDatabase(CreateDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,6 +53,11 @@ public class AbstractAmazonTimestreamWrite implements AmazonTimestreamWrite {
     }
 
     @Override
+    public DescribeBatchLoadTaskResult describeBatchLoadTask(DescribeBatchLoadTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDatabaseResult describeDatabase(DescribeDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,6 +73,11 @@ public class AbstractAmazonTimestreamWrite implements AmazonTimestreamWrite {
     }
 
     @Override
+    public ListBatchLoadTasksResult listBatchLoadTasks(ListBatchLoadTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDatabasesResult listDatabases(ListDatabasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +89,11 @@ public class AbstractAmazonTimestreamWrite implements AmazonTimestreamWrite {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResumeBatchLoadTaskResult resumeBatchLoadTask(ResumeBatchLoadTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

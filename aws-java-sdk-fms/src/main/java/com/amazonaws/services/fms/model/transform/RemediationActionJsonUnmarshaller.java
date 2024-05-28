@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,23 @@ public class RemediationActionJsonUnmarshaller implements Unmarshaller<Remediati
                     context.nextToken();
                     remediationAction.setFMSPolicyUpdateFirewallCreationConfigAction(FMSPolicyUpdateFirewallCreationConfigActionJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (context.testExpression("CreateNetworkAclAction", targetDepth)) {
+                    context.nextToken();
+                    remediationAction.setCreateNetworkAclAction(CreateNetworkAclActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ReplaceNetworkAclAssociationAction", targetDepth)) {
+                    context.nextToken();
+                    remediationAction.setReplaceNetworkAclAssociationAction(ReplaceNetworkAclAssociationActionJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("CreateNetworkAclEntriesAction", targetDepth)) {
+                    context.nextToken();
+                    remediationAction.setCreateNetworkAclEntriesAction(CreateNetworkAclEntriesActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DeleteNetworkAclEntriesAction", targetDepth)) {
+                    context.nextToken();
+                    remediationAction.setDeleteNetworkAclEntriesAction(DeleteNetworkAclEntriesActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

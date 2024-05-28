@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,13 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
     private Long clientSecretExpiresAt;
     /**
      * <p>
-     * The endpoint where the client can request authorization.
+     * An endpoint that the client can use to request authorization.
      * </p>
      */
     private String authorizationEndpoint;
     /**
      * <p>
-     * The endpoint where the client can get an access token.
+     * An endpoint that the client can use to create tokens.
      * </p>
      */
     private String tokenEndpoint;
@@ -236,11 +236,11 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The endpoint where the client can request authorization.
+     * An endpoint that the client can use to request authorization.
      * </p>
      * 
      * @param authorizationEndpoint
-     *        The endpoint where the client can request authorization.
+     *        An endpoint that the client can use to request authorization.
      */
 
     public void setAuthorizationEndpoint(String authorizationEndpoint) {
@@ -249,10 +249,10 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The endpoint where the client can request authorization.
+     * An endpoint that the client can use to request authorization.
      * </p>
      * 
-     * @return The endpoint where the client can request authorization.
+     * @return An endpoint that the client can use to request authorization.
      */
 
     public String getAuthorizationEndpoint() {
@@ -261,11 +261,11 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The endpoint where the client can request authorization.
+     * An endpoint that the client can use to request authorization.
      * </p>
      * 
      * @param authorizationEndpoint
-     *        The endpoint where the client can request authorization.
+     *        An endpoint that the client can use to request authorization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,11 +276,11 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The endpoint where the client can get an access token.
+     * An endpoint that the client can use to create tokens.
      * </p>
      * 
      * @param tokenEndpoint
-     *        The endpoint where the client can get an access token.
+     *        An endpoint that the client can use to create tokens.
      */
 
     public void setTokenEndpoint(String tokenEndpoint) {
@@ -289,10 +289,10 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The endpoint where the client can get an access token.
+     * An endpoint that the client can use to create tokens.
      * </p>
      * 
-     * @return The endpoint where the client can get an access token.
+     * @return An endpoint that the client can use to create tokens.
      */
 
     public String getTokenEndpoint() {
@@ -301,11 +301,11 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The endpoint where the client can get an access token.
+     * An endpoint that the client can use to create tokens.
      * </p>
      * 
      * @param tokenEndpoint
-     *        The endpoint where the client can get an access token.
+     *        An endpoint that the client can use to create tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,7 +329,7 @@ public class RegisterClientResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getClientId() != null)
             sb.append("ClientId: ").append(getClientId()).append(",");
         if (getClientSecret() != null)
-            sb.append("ClientSecret: ").append(getClientSecret()).append(",");
+            sb.append("ClientSecret: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientIdIssuedAt() != null)
             sb.append("ClientIdIssuedAt: ").append(getClientIdIssuedAt()).append(",");
         if (getClientSecretExpiresAt() != null)

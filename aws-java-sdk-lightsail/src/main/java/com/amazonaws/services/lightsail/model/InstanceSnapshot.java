@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     * The Amazon Resource Name (ARN) of the snapshot (
      * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      */
@@ -50,7 +50,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     private String supportCode;
     /**
      * <p>
-     * The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     * The timestamp when the snapshot was created (<code>1479907467.024</code>).
      * </p>
      */
     private java.util.Date createdAt;
@@ -105,21 +105,21 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     private String fromInstanceName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      */
     private String fromInstanceArn;
     /**
      * <p>
-     * The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual
+     * The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual
      * private server (or <i>instance</i>) image used to create instances quickly.
      * </p>
      */
     private String fromBlueprintId;
     /**
      * <p>
-     * The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      * </p>
      */
     private String fromBundleId;
@@ -178,12 +178,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     * The Amazon Resource Name (ARN) of the snapshot (
      * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     *        The Amazon Resource Name (ARN) of the snapshot (
      *        <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
      *        ).
      */
@@ -194,11 +194,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     * The Amazon Resource Name (ARN) of the snapshot (
      * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     * @return The Amazon Resource Name (ARN) of the snapshot (
      *         <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
      *         ).
      */
@@ -209,12 +209,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     * The Amazon Resource Name (ARN) of the snapshot (
      * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     *        The Amazon Resource Name (ARN) of the snapshot (
      *        <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
      *        ).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -276,11 +276,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     * The timestamp when the snapshot was created (<code>1479907467.024</code>).
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     *        The timestamp when the snapshot was created (<code>1479907467.024</code>).
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -289,10 +289,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     * The timestamp when the snapshot was created (<code>1479907467.024</code>).
      * </p>
      * 
-     * @return The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     * @return The timestamp when the snapshot was created (<code>1479907467.024</code>).
      */
 
     public java.util.Date getCreatedAt() {
@@ -301,11 +301,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     * The timestamp when the snapshot was created (<code>1479907467.024</code>).
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).
+     *        The timestamp when the snapshot was created (<code>1479907467.024</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -762,12 +762,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      * 
      * @param fromInstanceArn
-     *        The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     *        The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      */
 
@@ -777,11 +777,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     * @return The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      *         <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      */
 
@@ -791,12 +791,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      * 
      * @param fromInstanceArn
-     *        The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
+     *        The Amazon Resource Name (ARN) of the instance from which the snapshot was created (
      *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -808,12 +808,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual
+     * The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual
      * private server (or <i>instance</i>) image used to create instances quickly.
      * </p>
      * 
      * @param fromBlueprintId
-     *        The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a
+     *        The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a
      *        virtual private server (or <i>instance</i>) image used to create instances quickly.
      */
 
@@ -823,11 +823,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual
+     * The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual
      * private server (or <i>instance</i>) image used to create instances quickly.
      * </p>
      * 
-     * @return The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a
+     * @return The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a
      *         virtual private server (or <i>instance</i>) image used to create instances quickly.
      */
 
@@ -837,12 +837,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual
+     * The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a virtual
      * private server (or <i>instance</i>) image used to create instances quickly.
      * </p>
      * 
      * @param fromBlueprintId
-     *        The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a
+     *        The blueprint ID from which you created the snapshot (<code>amazon_linux_2023</code>). A blueprint is a
      *        virtual private server (or <i>instance</i>) image used to create instances quickly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -854,11 +854,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      * </p>
      * 
      * @param fromBundleId
-     *        The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     *        The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      */
 
     public void setFromBundleId(String fromBundleId) {
@@ -867,10 +867,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      * </p>
      * 
-     * @return The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     * @return The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      */
 
     public String getFromBundleId() {
@@ -879,11 +879,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     * The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      * </p>
      * 
      * @param fromBundleId
-     *        The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).
+     *        The bundle ID from which you created the snapshot (<code>micro_x_x</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

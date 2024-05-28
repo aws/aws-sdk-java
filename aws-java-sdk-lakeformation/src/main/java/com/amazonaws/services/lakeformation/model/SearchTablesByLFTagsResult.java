@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class SearchTablesByLFTagsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A continuation token, present if the current list segment is not the last.
+     * A continuation token, present if the current list segment is not the last. On the first run, if you include a not
+     * null (a value) token you can get empty pages.
      * </p>
      */
     private String nextToken;
@@ -38,11 +39,13 @@ public class SearchTablesByLFTagsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A continuation token, present if the current list segment is not the last.
+     * A continuation token, present if the current list segment is not the last. On the first run, if you include a not
+     * null (a value) token you can get empty pages.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, present if the current list segment is not the last.
+     *        A continuation token, present if the current list segment is not the last. On the first run, if you
+     *        include a not null (a value) token you can get empty pages.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +54,12 @@ public class SearchTablesByLFTagsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A continuation token, present if the current list segment is not the last.
+     * A continuation token, present if the current list segment is not the last. On the first run, if you include a not
+     * null (a value) token you can get empty pages.
      * </p>
      * 
-     * @return A continuation token, present if the current list segment is not the last.
+     * @return A continuation token, present if the current list segment is not the last. On the first run, if you
+     *         include a not null (a value) token you can get empty pages.
      */
 
     public String getNextToken() {
@@ -63,11 +68,13 @@ public class SearchTablesByLFTagsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A continuation token, present if the current list segment is not the last.
+     * A continuation token, present if the current list segment is not the last. On the first run, if you include a not
+     * null (a value) token you can get empty pages.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, present if the current list segment is not the last.
+     *        A continuation token, present if the current list segment is not the last. On the first run, if you
+     *        include a not null (a value) token you can get empty pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

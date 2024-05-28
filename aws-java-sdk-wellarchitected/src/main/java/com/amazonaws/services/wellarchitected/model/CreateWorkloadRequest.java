@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,36 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     */
+    private WorkloadDiscoveryConfig discoveryConfig;
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     */
+    private java.util.List<String> applications;
+    /**
+     * <p>
+     * The list of profile ARNs associated with the workload.
+     * </p>
+     */
+    private java.util.List<String> profileArns;
+    /**
+     * <p>
+     * The list of review template ARNs to associate with the workload.
+     * </p>
+     */
+    private java.util.List<String> reviewTemplateArns;
+    /**
+     * <p>
+     * Jira configuration settings when creating a workload.
+     * </p>
+     */
+    private WorkloadJiraConfigurationInput jiraConfiguration;
 
     /**
      * @param workloadName
@@ -639,6 +669,296 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     * 
+     * @param discoveryConfig
+     *        Well-Architected discovery configuration settings associated to the workload.
+     */
+
+    public void setDiscoveryConfig(WorkloadDiscoveryConfig discoveryConfig) {
+        this.discoveryConfig = discoveryConfig;
+    }
+
+    /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     * 
+     * @return Well-Architected discovery configuration settings associated to the workload.
+     */
+
+    public WorkloadDiscoveryConfig getDiscoveryConfig() {
+        return this.discoveryConfig;
+    }
+
+    /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     * 
+     * @param discoveryConfig
+     *        Well-Architected discovery configuration settings associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withDiscoveryConfig(WorkloadDiscoveryConfig discoveryConfig) {
+        setDiscoveryConfig(discoveryConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @return List of AppRegistry application ARNs associated to the workload.
+     */
+
+    public java.util.List<String> getApplications() {
+        return applications;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     */
+
+    public void setApplications(java.util.Collection<String> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+
+        this.applications = new java.util.ArrayList<String>(applications);
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withApplications(String... applications) {
+        if (this.applications == null) {
+            setApplications(new java.util.ArrayList<String>(applications.length));
+        }
+        for (String ele : applications) {
+            this.applications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withApplications(java.util.Collection<String> applications) {
+        setApplications(applications);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of profile ARNs associated with the workload.
+     * </p>
+     * 
+     * @return The list of profile ARNs associated with the workload.
+     */
+
+    public java.util.List<String> getProfileArns() {
+        return profileArns;
+    }
+
+    /**
+     * <p>
+     * The list of profile ARNs associated with the workload.
+     * </p>
+     * 
+     * @param profileArns
+     *        The list of profile ARNs associated with the workload.
+     */
+
+    public void setProfileArns(java.util.Collection<String> profileArns) {
+        if (profileArns == null) {
+            this.profileArns = null;
+            return;
+        }
+
+        this.profileArns = new java.util.ArrayList<String>(profileArns);
+    }
+
+    /**
+     * <p>
+     * The list of profile ARNs associated with the workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfileArns(java.util.Collection)} or {@link #withProfileArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param profileArns
+     *        The list of profile ARNs associated with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withProfileArns(String... profileArns) {
+        if (this.profileArns == null) {
+            setProfileArns(new java.util.ArrayList<String>(profileArns.length));
+        }
+        for (String ele : profileArns) {
+            this.profileArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of profile ARNs associated with the workload.
+     * </p>
+     * 
+     * @param profileArns
+     *        The list of profile ARNs associated with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withProfileArns(java.util.Collection<String> profileArns) {
+        setProfileArns(profileArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of review template ARNs to associate with the workload.
+     * </p>
+     * 
+     * @return The list of review template ARNs to associate with the workload.
+     */
+
+    public java.util.List<String> getReviewTemplateArns() {
+        return reviewTemplateArns;
+    }
+
+    /**
+     * <p>
+     * The list of review template ARNs to associate with the workload.
+     * </p>
+     * 
+     * @param reviewTemplateArns
+     *        The list of review template ARNs to associate with the workload.
+     */
+
+    public void setReviewTemplateArns(java.util.Collection<String> reviewTemplateArns) {
+        if (reviewTemplateArns == null) {
+            this.reviewTemplateArns = null;
+            return;
+        }
+
+        this.reviewTemplateArns = new java.util.ArrayList<String>(reviewTemplateArns);
+    }
+
+    /**
+     * <p>
+     * The list of review template ARNs to associate with the workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReviewTemplateArns(java.util.Collection)} or {@link #withReviewTemplateArns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param reviewTemplateArns
+     *        The list of review template ARNs to associate with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withReviewTemplateArns(String... reviewTemplateArns) {
+        if (this.reviewTemplateArns == null) {
+            setReviewTemplateArns(new java.util.ArrayList<String>(reviewTemplateArns.length));
+        }
+        for (String ele : reviewTemplateArns) {
+            this.reviewTemplateArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of review template ARNs to associate with the workload.
+     * </p>
+     * 
+     * @param reviewTemplateArns
+     *        The list of review template ARNs to associate with the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withReviewTemplateArns(java.util.Collection<String> reviewTemplateArns) {
+        setReviewTemplateArns(reviewTemplateArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Jira configuration settings when creating a workload.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Jira configuration settings when creating a workload.
+     */
+
+    public void setJiraConfiguration(WorkloadJiraConfigurationInput jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Jira configuration settings when creating a workload.
+     * </p>
+     * 
+     * @return Jira configuration settings when creating a workload.
+     */
+
+    public WorkloadJiraConfigurationInput getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Jira configuration settings when creating a workload.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Jira configuration settings when creating a workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withJiraConfiguration(WorkloadJiraConfigurationInput jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -679,7 +999,17 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDiscoveryConfig() != null)
+            sb.append("DiscoveryConfig: ").append(getDiscoveryConfig()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications()).append(",");
+        if (getProfileArns() != null)
+            sb.append("ProfileArns: ").append(getProfileArns()).append(",");
+        if (getReviewTemplateArns() != null)
+            sb.append("ReviewTemplateArns: ").append(getReviewTemplateArns()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -754,6 +1084,26 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDiscoveryConfig() == null ^ this.getDiscoveryConfig() == null)
+            return false;
+        if (other.getDiscoveryConfig() != null && other.getDiscoveryConfig().equals(this.getDiscoveryConfig()) == false)
+            return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
+            return false;
+        if (other.getProfileArns() == null ^ this.getProfileArns() == null)
+            return false;
+        if (other.getProfileArns() != null && other.getProfileArns().equals(this.getProfileArns()) == false)
+            return false;
+        if (other.getReviewTemplateArns() == null ^ this.getReviewTemplateArns() == null)
+            return false;
+        if (other.getReviewTemplateArns() != null && other.getReviewTemplateArns().equals(this.getReviewTemplateArns()) == false)
+            return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -777,6 +1127,11 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDiscoveryConfig() == null) ? 0 : getDiscoveryConfig().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
+        hashCode = prime * hashCode + ((getProfileArns() == null) ? 0 : getProfileArns().hashCode());
+        hashCode = prime * hashCode + ((getReviewTemplateArns() == null) ? 0 : getReviewTemplateArns().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
         return hashCode;
     }
 

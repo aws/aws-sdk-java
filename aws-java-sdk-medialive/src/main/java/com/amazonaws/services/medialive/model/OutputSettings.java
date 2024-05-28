@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
     private RtmpOutputSettings rtmpOutputSettings;
 
     private UdpOutputSettings udpOutputSettings;
+
+    private CmafIngestOutputSettings cmafIngestOutputSettings;
 
     /**
      * @param archiveOutputSettings
@@ -251,6 +253,32 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param cmafIngestOutputSettings
+     */
+
+    public void setCmafIngestOutputSettings(CmafIngestOutputSettings cmafIngestOutputSettings) {
+        this.cmafIngestOutputSettings = cmafIngestOutputSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public CmafIngestOutputSettings getCmafIngestOutputSettings() {
+        return this.cmafIngestOutputSettings;
+    }
+
+    /**
+     * @param cmafIngestOutputSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputSettings withCmafIngestOutputSettings(CmafIngestOutputSettings cmafIngestOutputSettings) {
+        setCmafIngestOutputSettings(cmafIngestOutputSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -277,7 +305,9 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
         if (getRtmpOutputSettings() != null)
             sb.append("RtmpOutputSettings: ").append(getRtmpOutputSettings()).append(",");
         if (getUdpOutputSettings() != null)
-            sb.append("UdpOutputSettings: ").append(getUdpOutputSettings());
+            sb.append("UdpOutputSettings: ").append(getUdpOutputSettings()).append(",");
+        if (getCmafIngestOutputSettings() != null)
+            sb.append("CmafIngestOutputSettings: ").append(getCmafIngestOutputSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -324,6 +354,10 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUdpOutputSettings() != null && other.getUdpOutputSettings().equals(this.getUdpOutputSettings()) == false)
             return false;
+        if (other.getCmafIngestOutputSettings() == null ^ this.getCmafIngestOutputSettings() == null)
+            return false;
+        if (other.getCmafIngestOutputSettings() != null && other.getCmafIngestOutputSettings().equals(this.getCmafIngestOutputSettings()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +374,7 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMultiplexOutputSettings() == null) ? 0 : getMultiplexOutputSettings().hashCode());
         hashCode = prime * hashCode + ((getRtmpOutputSettings() == null) ? 0 : getRtmpOutputSettings().hashCode());
         hashCode = prime * hashCode + ((getUdpOutputSettings() == null) ? 0 : getUdpOutputSettings().hashCode());
+        hashCode = prime * hashCode + ((getCmafIngestOutputSettings() == null) ? 0 : getCmafIngestOutputSettings().hashCode());
         return hashCode;
     }
 

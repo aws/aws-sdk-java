@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class CallAnalyticsJobSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
     private static final MarshallingInfo<Map> LANGUAGEIDSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageIdSettings").build();
+    private static final MarshallingInfo<StructuredPojo> SUMMARIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Summarization").build();
 
     private static final CallAnalyticsJobSettingsMarshaller instance = new CallAnalyticsJobSettingsMarshaller();
 
@@ -67,6 +69,7 @@ public class CallAnalyticsJobSettingsMarshaller {
             protocolMarshaller.marshall(callAnalyticsJobSettings.getContentRedaction(), CONTENTREDACTION_BINDING);
             protocolMarshaller.marshall(callAnalyticsJobSettings.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
             protocolMarshaller.marshall(callAnalyticsJobSettings.getLanguageIdSettings(), LANGUAGEIDSETTINGS_BINDING);
+            protocolMarshaller.marshall(callAnalyticsJobSettings.getSummarization(), SUMMARIZATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

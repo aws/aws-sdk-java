@@ -1,0 +1,320 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.amplify.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The type of SSL/TLS certificate to use for your custom domain. If a certificate type isn't specified, Amplify uses
+ * the default <code>AMPLIFY_MANAGED</code> certificate.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CertificateSettings" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CertificateSettings implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The certificate type.
+     * </p>
+     * <p>
+     * Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia)
+     * Region (us-east-1). For more information about using ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * Certificate Manager</a> in the <i>ACM User guide</i>.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account.
+     * </p>
+     * <p>
+     * This field is required only when the certificate type is <code>CUSTOM</code>.
+     * </p>
+     */
+    private String customCertificateArn;
+
+    /**
+     * <p>
+     * The certificate type.
+     * </p>
+     * <p>
+     * Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia)
+     * Region (us-east-1). For more information about using ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * Certificate Manager</a> in the <i>ACM User guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The certificate type.</p>
+     *        <p>
+     *        Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     *        </p>
+     *        <p>
+     *        Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager
+     *        in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N.
+     *        Virginia) Region (us-east-1). For more information about using ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *        into Certificate Manager</a> in the <i>ACM User guide</i>.
+     * @see CertificateType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The certificate type.
+     * </p>
+     * <p>
+     * Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia)
+     * Region (us-east-1). For more information about using ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * Certificate Manager</a> in the <i>ACM User guide</i>.
+     * </p>
+     * 
+     * @return The certificate type.</p>
+     *         <p>
+     *         Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     *         </p>
+     *         <p>
+     *         Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate
+     *         Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US
+     *         East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *         into Certificate Manager</a> in the <i>ACM User guide</i>.
+     * @see CertificateType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The certificate type.
+     * </p>
+     * <p>
+     * Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia)
+     * Region (us-east-1). For more information about using ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * Certificate Manager</a> in the <i>ACM User guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The certificate type.</p>
+     *        <p>
+     *        Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     *        </p>
+     *        <p>
+     *        Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager
+     *        in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N.
+     *        Virginia) Region (us-east-1). For more information about using ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *        into Certificate Manager</a> in the <i>ACM User guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public CertificateSettings withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The certificate type.
+     * </p>
+     * <p>
+     * Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     * </p>
+     * <p>
+     * Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia)
+     * Region (us-east-1). For more information about using ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * Certificate Manager</a> in the <i>ACM User guide</i>.
+     * </p>
+     * 
+     * @param type
+     *        The certificate type.</p>
+     *        <p>
+     *        Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.
+     *        </p>
+     *        <p>
+     *        Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager
+     *        in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N.
+     *        Virginia) Region (us-east-1). For more information about using ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *        into Certificate Manager</a> in the <i>ACM User guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public CertificateSettings withType(CertificateType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account.
+     * </p>
+     * <p>
+     * This field is required only when the certificate type is <code>CUSTOM</code>.
+     * </p>
+     * 
+     * @param customCertificateArn
+     *        The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate
+     *        Manager in your Amazon Web Services account.</p>
+     *        <p>
+     *        This field is required only when the certificate type is <code>CUSTOM</code>.
+     */
+
+    public void setCustomCertificateArn(String customCertificateArn) {
+        this.customCertificateArn = customCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account.
+     * </p>
+     * <p>
+     * This field is required only when the certificate type is <code>CUSTOM</code>.
+     * </p>
+     * 
+     * @return The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate
+     *         Manager in your Amazon Web Services account.</p>
+     *         <p>
+     *         This field is required only when the certificate type is <code>CUSTOM</code>.
+     */
+
+    public String getCustomCertificateArn() {
+        return this.customCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in
+     * your Amazon Web Services account.
+     * </p>
+     * <p>
+     * This field is required only when the certificate type is <code>CUSTOM</code>.
+     * </p>
+     * 
+     * @param customCertificateArn
+     *        The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate
+     *        Manager in your Amazon Web Services account.</p>
+     *        <p>
+     *        This field is required only when the certificate type is <code>CUSTOM</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateSettings withCustomCertificateArn(String customCertificateArn) {
+        setCustomCertificateArn(customCertificateArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getCustomCertificateArn() != null)
+            sb.append("CustomCertificateArn: ").append(getCustomCertificateArn());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CertificateSettings == false)
+            return false;
+        CertificateSettings other = (CertificateSettings) obj;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getCustomCertificateArn() == null ^ this.getCustomCertificateArn() == null)
+            return false;
+        if (other.getCustomCertificateArn() != null && other.getCustomCertificateArn().equals(this.getCustomCertificateArn()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getCustomCertificateArn() == null) ? 0 : getCustomCertificateArn().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public CertificateSettings clone() {
+        try {
+            return (CertificateSettings) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.amplify.model.transform.CertificateSettingsMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,7 +72,8 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> additionalLanguageCodes;
     /**
      * <p>
-     * Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.
+     * Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     * <code>generative</code>) are supported by a given voice.
      * </p>
      */
     private java.util.List<String> supportedEngines;
@@ -538,11 +539,12 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.
+     * Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     * <code>generative</code>) are supported by a given voice.
      * </p>
      * 
-     * @return Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given
-     *         voice.
+     * @return Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     *         <code>generative</code>) are supported by a given voice.
      * @see Engine
      */
 
@@ -552,12 +554,13 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.
+     * Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     * <code>generative</code>) are supported by a given voice.
      * </p>
      * 
      * @param supportedEngines
-     *        Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given
-     *        voice.
+     *        Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     *        <code>generative</code>) are supported by a given voice.
      * @see Engine
      */
 
@@ -572,7 +575,8 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.
+     * Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     * <code>generative</code>) are supported by a given voice.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -581,8 +585,8 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param supportedEngines
-     *        Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given
-     *        voice.
+     *        Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     *        <code>generative</code>) are supported by a given voice.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Engine
      */
@@ -599,12 +603,13 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.
+     * Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     * <code>generative</code>) are supported by a given voice.
      * </p>
      * 
      * @param supportedEngines
-     *        Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given
-     *        voice.
+     *        Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     *        <code>generative</code>) are supported by a given voice.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Engine
      */
@@ -616,12 +621,13 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.
+     * Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     * <code>generative</code>) are supported by a given voice.
      * </p>
      * 
      * @param supportedEngines
-     *        Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given
-     *        voice.
+     *        Specifies which engines (<code>standard</code>, <code>neural</code>, <code>long-form</code> or
+     *        <code>generative</code>) are supported by a given voice.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Engine
      */

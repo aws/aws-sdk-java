@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.
+     * </p>
+     */
+    private java.util.List<AttemptEcsTaskDetails> taskProperties;
 
     /**
      * <p>
@@ -231,6 +237,80 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.
+     * </p>
+     * 
+     * @return The properties for a task definition that describes the container and volume definitions of an Amazon ECS
+     *         task.
+     */
+
+    public java.util.List<AttemptEcsTaskDetails> getTaskProperties() {
+        return taskProperties;
+    }
+
+    /**
+     * <p>
+     * The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.
+     * </p>
+     * 
+     * @param taskProperties
+     *        The properties for a task definition that describes the container and volume definitions of an Amazon ECS
+     *        task.
+     */
+
+    public void setTaskProperties(java.util.Collection<AttemptEcsTaskDetails> taskProperties) {
+        if (taskProperties == null) {
+            this.taskProperties = null;
+            return;
+        }
+
+        this.taskProperties = new java.util.ArrayList<AttemptEcsTaskDetails>(taskProperties);
+    }
+
+    /**
+     * <p>
+     * The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaskProperties(java.util.Collection)} or {@link #withTaskProperties(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param taskProperties
+     *        The properties for a task definition that describes the container and volume definitions of an Amazon ECS
+     *        task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttemptDetail withTaskProperties(AttemptEcsTaskDetails... taskProperties) {
+        if (this.taskProperties == null) {
+            setTaskProperties(new java.util.ArrayList<AttemptEcsTaskDetails>(taskProperties.length));
+        }
+        for (AttemptEcsTaskDetails ele : taskProperties) {
+            this.taskProperties.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The properties for a task definition that describes the container and volume definitions of an Amazon ECS task.
+     * </p>
+     * 
+     * @param taskProperties
+     *        The properties for a task definition that describes the container and volume definitions of an Amazon ECS
+     *        task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttemptDetail withTaskProperties(java.util.Collection<AttemptEcsTaskDetails> taskProperties) {
+        setTaskProperties(taskProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -249,7 +329,9 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
         if (getStoppedAt() != null)
             sb.append("StoppedAt: ").append(getStoppedAt()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getTaskProperties() != null)
+            sb.append("TaskProperties: ").append(getTaskProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -280,6 +362,10 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getTaskProperties() == null ^ this.getTaskProperties() == null)
+            return false;
+        if (other.getTaskProperties() != null && other.getTaskProperties().equals(this.getTaskProperties()) == false)
+            return false;
         return true;
     }
 
@@ -292,6 +378,7 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getTaskProperties() == null) ? 0 : getTaskProperties().hashCode());
         return hashCode;
     }
 

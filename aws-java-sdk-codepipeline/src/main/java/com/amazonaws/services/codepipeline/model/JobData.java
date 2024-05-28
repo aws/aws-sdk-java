@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,23 +65,21 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Artifact> outputArtifacts;
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifacts for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      * </p>
      */
     private AWSSessionCredentials artifactCredentials;
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     * asynchronously.
+     * A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      * </p>
      */
     private String continuationToken;
     /**
      * <p>
-     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
-     * Service (AWS KMS) key.
+     * Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      * </p>
      */
     private EncryptionKey encryptionKey;
@@ -372,15 +370,15 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifacts for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      * </p>
      * 
      * @param artifactCredentials
-     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
-     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket
-     *        used to store artifacts for the pipeline in AWS CodePipeline.
+     *        Represents an Amazon Web Services session credentials object. These credentials are temporary credentials
+     *        that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and
+     *        output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      */
 
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
@@ -389,14 +387,14 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifacts for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      * </p>
      * 
-     * @return Represents an AWS session credentials object. These credentials are temporary credentials that are issued
-     *         by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket
-     *         used to store artifacts for the pipeline in AWS CodePipeline.
+     * @return Represents an Amazon Web Services session credentials object. These credentials are temporary credentials
+     *         that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and
+     *         output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      */
 
     public AWSSessionCredentials getArtifactCredentials() {
@@ -405,15 +403,15 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifacts for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      * </p>
      * 
      * @param artifactCredentials
-     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
-     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket
-     *        used to store artifacts for the pipeline in AWS CodePipeline.
+     *        Represents an Amazon Web Services session credentials object. These credentials are temporary credentials
+     *        that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and
+     *        output artifacts in the S3 bucket used to store artifacts for the pipeline in CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,13 +422,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     * asynchronously.
+     * A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      * </p>
      * 
      * @param continuationToken
-     *        A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     *        asynchronously.
+     *        A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      */
 
     public void setContinuationToken(String continuationToken) {
@@ -439,12 +435,10 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     * asynchronously.
+     * A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      * </p>
      * 
-     * @return A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     *         asynchronously.
+     * @return A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      */
 
     public String getContinuationToken() {
@@ -453,13 +447,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     * asynchronously.
+     * A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      * </p>
      * 
      * @param continuationToken
-     *        A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job
-     *        asynchronously.
+     *        A system-generated token, such as a deployment ID, required by a job to continue the job asynchronously.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,13 +462,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
-     * Service (AWS KMS) key.
+     * Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      * </p>
      * 
      * @param encryptionKey
-     *        Represents information about the key used to encrypt data in the artifact store, such as an AWS Key
-     *        Management Service (AWS KMS) key.
+     *        Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -485,12 +475,10 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
-     * Service (AWS KMS) key.
+     * Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      * </p>
      * 
-     * @return Represents information about the key used to encrypt data in the artifact store, such as an AWS Key
-     *         Management Service (AWS KMS) key.
+     * @return Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -499,13 +487,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
-     * Service (AWS KMS) key.
+     * Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      * </p>
      * 
      * @param encryptionKey
-     *        Represents information about the key used to encrypt data in the artifact store, such as an AWS Key
-     *        Management Service (AWS KMS) key.
+     *        Represents information about the key used to encrypt data in the artifact store, such as an KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,20 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String stackId;
     /**
      * <p>
-     * The instance's hostname.
+     * The instance's host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      */
     private String hostname;
     /**
@@ -110,11 +122,34 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The instance's hostname.
+     * The instance's host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param hostname
-     *        The instance's hostname.
+     *        The instance's host name. The following are character limits for instance host names.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux-based instances: 63 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows-based instances: 15 characters
+     *        </p>
+     *        </li>
      */
 
     public void setHostname(String hostname) {
@@ -123,10 +158,33 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The instance's hostname.
+     * The instance's host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The instance's hostname.
+     * @return The instance's host name. The following are character limits for instance host names.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Linux-based instances: 63 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Windows-based instances: 15 characters
+     *         </p>
+     *         </li>
      */
 
     public String getHostname() {
@@ -135,11 +193,34 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The instance's hostname.
+     * The instance's host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param hostname
-     *        The instance's hostname.
+     *        The instance's host name. The following are character limits for instance host names.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux-based instances: 63 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows-based instances: 15 characters
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,21 @@ public class FieldInputConfigJsonUnmarshaller implements Unmarshaller<FieldInput
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("defaultChecked", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setDefaultChecked(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    fieldInputConfig.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("defaultCountryCode", targetDepth)) {
+                if (context.testExpression("required", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setDefaultCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
+                    fieldInputConfig.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("readOnly", targetDepth)) {
+                    context.nextToken();
+                    fieldInputConfig.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("placeholder", targetDepth)) {
+                    context.nextToken();
+                    fieldInputConfig.setPlaceholder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultValue", targetDepth)) {
                     context.nextToken();
@@ -64,49 +72,45 @@ public class FieldInputConfigJsonUnmarshaller implements Unmarshaller<FieldInput
                     context.nextToken();
                     fieldInputConfig.setDescriptiveText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("isArray", targetDepth)) {
+                if (context.testExpression("defaultChecked", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setIsArray(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    fieldInputConfig.setDefaultChecked(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("maxValue", targetDepth)) {
+                if (context.testExpression("defaultCountryCode", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setMaxValue(context.getUnmarshaller(Float.class).unmarshall(context));
+                    fieldInputConfig.setDefaultCountryCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("minValue", targetDepth)) {
+                if (context.testExpression("valueMappings", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setMinValue(context.getUnmarshaller(Float.class).unmarshall(context));
+                    fieldInputConfig.setValueMappings(ValueMappingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     fieldInputConfig.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("placeholder", targetDepth)) {
+                if (context.testExpression("minValue", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setPlaceholder(context.getUnmarshaller(String.class).unmarshall(context));
+                    fieldInputConfig.setMinValue(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
-                if (context.testExpression("readOnly", targetDepth)) {
+                if (context.testExpression("maxValue", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("required", targetDepth)) {
-                    context.nextToken();
-                    fieldInputConfig.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    fieldInputConfig.setMaxValue(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
                 if (context.testExpression("step", targetDepth)) {
                     context.nextToken();
                     fieldInputConfig.setStep(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
-                if (context.testExpression("type", targetDepth)) {
-                    context.nextToken();
-                    fieldInputConfig.setType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
                     fieldInputConfig.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("valueMappings", targetDepth)) {
+                if (context.testExpression("isArray", targetDepth)) {
                     context.nextToken();
-                    fieldInputConfig.setValueMappings(ValueMappingsJsonUnmarshaller.getInstance().unmarshall(context));
+                    fieldInputConfig.setIsArray(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("fileUploaderConfig", targetDepth)) {
+                    context.nextToken();
+                    fieldInputConfig.setFileUploaderConfig(FileUploaderFieldConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

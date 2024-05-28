@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class OptionVersion implements Serializable, Cloneable {
     private String version;
     /**
      * <p>
-     * True if the version is the default version of the option, and otherwise false.
+     * Indicates whether the version is the default version of the option.
      * </p>
      */
     private Boolean isDefault;
@@ -82,11 +82,11 @@ public class OptionVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the version is the default version of the option, and otherwise false.
+     * Indicates whether the version is the default version of the option.
      * </p>
      * 
      * @param isDefault
-     *        True if the version is the default version of the option, and otherwise false.
+     *        Indicates whether the version is the default version of the option.
      */
 
     public void setIsDefault(Boolean isDefault) {
@@ -95,10 +95,10 @@ public class OptionVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the version is the default version of the option, and otherwise false.
+     * Indicates whether the version is the default version of the option.
      * </p>
      * 
-     * @return True if the version is the default version of the option, and otherwise false.
+     * @return Indicates whether the version is the default version of the option.
      */
 
     public Boolean getIsDefault() {
@@ -107,11 +107,11 @@ public class OptionVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the version is the default version of the option, and otherwise false.
+     * Indicates whether the version is the default version of the option.
      * </p>
      * 
      * @param isDefault
-     *        True if the version is the default version of the option, and otherwise false.
+     *        Indicates whether the version is the default version of the option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,10 +122,10 @@ public class OptionVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the version is the default version of the option, and otherwise false.
+     * Indicates whether the version is the default version of the option.
      * </p>
      * 
-     * @return True if the version is the default version of the option, and otherwise false.
+     * @return Indicates whether the version is the default version of the option.
      */
 
     public Boolean isDefault() {

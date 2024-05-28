@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,12 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Date lastModifiedDate;
+    /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     */
+    private MetricsExportConfig metricsExportConfig;
 
     /**
      * <p>
@@ -649,6 +655,46 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     * 
+     * @param metricsExportConfig
+     *        Specifies the MQTT topic and role ARN required for metric export.
+     */
+
+    public void setMetricsExportConfig(MetricsExportConfig metricsExportConfig) {
+        this.metricsExportConfig = metricsExportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     * 
+     * @return Specifies the MQTT topic and role ARN required for metric export.
+     */
+
+    public MetricsExportConfig getMetricsExportConfig() {
+        return this.metricsExportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     * 
+     * @param metricsExportConfig
+     *        Specifies the MQTT topic and role ARN required for metric export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileResult withMetricsExportConfig(MetricsExportConfig metricsExportConfig) {
+        setMetricsExportConfig(metricsExportConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -679,7 +725,9 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: ").append(getLastModifiedDate());
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getMetricsExportConfig() != null)
+            sb.append("MetricsExportConfig: ").append(getMetricsExportConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -734,6 +782,10 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
+        if (other.getMetricsExportConfig() == null ^ this.getMetricsExportConfig() == null)
+            return false;
+        if (other.getMetricsExportConfig() != null && other.getMetricsExportConfig().equals(this.getMetricsExportConfig()) == false)
+            return false;
         return true;
     }
 
@@ -752,6 +804,7 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getMetricsExportConfig() == null) ? 0 : getMetricsExportConfig().hashCode());
         return hashCode;
     }
 

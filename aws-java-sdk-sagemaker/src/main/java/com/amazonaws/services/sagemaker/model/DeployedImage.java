@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this
- * <a>ProductionVariant</a>.
+ * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.
  * </p>
  * <p>
  * If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when

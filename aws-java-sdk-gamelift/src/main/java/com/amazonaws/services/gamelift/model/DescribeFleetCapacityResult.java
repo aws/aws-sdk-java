@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Represents the returned data in response to a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity" target="_top">AWS API
  *      Documentation</a>
@@ -29,7 +26,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      */
     private java.util.List<FleetCapacity> fleetCapacity;
@@ -44,11 +42,13 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * 
      * @return A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *         are returned only for fleets that currently exist.
+     *         are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *         minute to be reflected.
      */
 
     public java.util.List<FleetCapacity> getFleetCapacity() {
@@ -58,12 +58,14 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * 
      * @param fleetCapacity
      *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *        are returned only for fleets that currently exist.
+     *        are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *        minute to be reflected.
      */
 
     public void setFleetCapacity(java.util.Collection<FleetCapacity> fleetCapacity) {
@@ -78,7 +80,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +91,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @param fleetCapacity
      *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *        are returned only for fleets that currently exist.
+     *        are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *        minute to be reflected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,12 +109,14 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
-     * returned only for fleets that currently exist.
+     * returned only for fleets that currently exist. Changes in desired instance value can take up to 1 minute to be
+     * reflected.
      * </p>
      * 
      * @param fleetCapacity
      *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
-     *        are returned only for fleets that currently exist.
+     *        are returned only for fleets that currently exist. Changes in desired instance value can take up to 1
+     *        minute to be reflected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

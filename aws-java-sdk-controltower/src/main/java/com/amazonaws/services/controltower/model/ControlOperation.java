@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,28 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The <code>controlIdentifier</code> of the control for the operation.
+     * </p>
+     */
+    private String controlIdentifier;
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the enabled control.
+     * </p>
+     */
+    private String enabledControlIdentifier;
+    /**
+     * <p>
      * The time that the operation finished.
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * The identifier of the specified operation.
+     * </p>
+     */
+    private String operationIdentifier;
     /**
      * <p>
      * One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.
@@ -59,6 +77,92 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String statusMessage;
+    /**
+     * <p>
+     * The target upon which the control operation is working.
+     * </p>
+     */
+    private String targetIdentifier;
+
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the control for the operation.
+     * </p>
+     * 
+     * @param controlIdentifier
+     *        The <code>controlIdentifier</code> of the control for the operation.
+     */
+
+    public void setControlIdentifier(String controlIdentifier) {
+        this.controlIdentifier = controlIdentifier;
+    }
+
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the control for the operation.
+     * </p>
+     * 
+     * @return The <code>controlIdentifier</code> of the control for the operation.
+     */
+
+    public String getControlIdentifier() {
+        return this.controlIdentifier;
+    }
+
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the control for the operation.
+     * </p>
+     * 
+     * @param controlIdentifier
+     *        The <code>controlIdentifier</code> of the control for the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ControlOperation withControlIdentifier(String controlIdentifier) {
+        setControlIdentifier(controlIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the enabled control.
+     * </p>
+     * 
+     * @param enabledControlIdentifier
+     *        The <code>controlIdentifier</code> of the enabled control.
+     */
+
+    public void setEnabledControlIdentifier(String enabledControlIdentifier) {
+        this.enabledControlIdentifier = enabledControlIdentifier;
+    }
+
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the enabled control.
+     * </p>
+     * 
+     * @return The <code>controlIdentifier</code> of the enabled control.
+     */
+
+    public String getEnabledControlIdentifier() {
+        return this.enabledControlIdentifier;
+    }
+
+    /**
+     * <p>
+     * The <code>controlIdentifier</code> of the enabled control.
+     * </p>
+     * 
+     * @param enabledControlIdentifier
+     *        The <code>controlIdentifier</code> of the enabled control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ControlOperation withEnabledControlIdentifier(String enabledControlIdentifier) {
+        setEnabledControlIdentifier(enabledControlIdentifier);
+        return this;
+    }
 
     /**
      * <p>
@@ -97,6 +201,46 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
 
     public ControlOperation withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the specified operation.
+     * </p>
+     * 
+     * @param operationIdentifier
+     *        The identifier of the specified operation.
+     */
+
+    public void setOperationIdentifier(String operationIdentifier) {
+        this.operationIdentifier = operationIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the specified operation.
+     * </p>
+     * 
+     * @return The identifier of the specified operation.
+     */
+
+    public String getOperationIdentifier() {
+        return this.operationIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the specified operation.
+     * </p>
+     * 
+     * @param operationIdentifier
+     *        The identifier of the specified operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ControlOperation withOperationIdentifier(String operationIdentifier) {
+        setOperationIdentifier(operationIdentifier);
         return this;
     }
 
@@ -305,6 +449,46 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The target upon which the control operation is working.
+     * </p>
+     * 
+     * @param targetIdentifier
+     *        The target upon which the control operation is working.
+     */
+
+    public void setTargetIdentifier(String targetIdentifier) {
+        this.targetIdentifier = targetIdentifier;
+    }
+
+    /**
+     * <p>
+     * The target upon which the control operation is working.
+     * </p>
+     * 
+     * @return The target upon which the control operation is working.
+     */
+
+    public String getTargetIdentifier() {
+        return this.targetIdentifier;
+    }
+
+    /**
+     * <p>
+     * The target upon which the control operation is working.
+     * </p>
+     * 
+     * @param targetIdentifier
+     *        The target upon which the control operation is working.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ControlOperation withTargetIdentifier(String targetIdentifier) {
+        setTargetIdentifier(targetIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,8 +500,14 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getControlIdentifier() != null)
+            sb.append("ControlIdentifier: ").append(getControlIdentifier()).append(",");
+        if (getEnabledControlIdentifier() != null)
+            sb.append("EnabledControlIdentifier: ").append(getEnabledControlIdentifier()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getOperationIdentifier() != null)
+            sb.append("OperationIdentifier: ").append(getOperationIdentifier()).append(",");
         if (getOperationType() != null)
             sb.append("OperationType: ").append(getOperationType()).append(",");
         if (getStartTime() != null)
@@ -325,7 +515,9 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getTargetIdentifier() != null)
+            sb.append("TargetIdentifier: ").append(getTargetIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -340,9 +532,21 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof ControlOperation == false)
             return false;
         ControlOperation other = (ControlOperation) obj;
+        if (other.getControlIdentifier() == null ^ this.getControlIdentifier() == null)
+            return false;
+        if (other.getControlIdentifier() != null && other.getControlIdentifier().equals(this.getControlIdentifier()) == false)
+            return false;
+        if (other.getEnabledControlIdentifier() == null ^ this.getEnabledControlIdentifier() == null)
+            return false;
+        if (other.getEnabledControlIdentifier() != null && other.getEnabledControlIdentifier().equals(this.getEnabledControlIdentifier()) == false)
+            return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
+        if (other.getOperationIdentifier() == null ^ this.getOperationIdentifier() == null)
+            return false;
+        if (other.getOperationIdentifier() != null && other.getOperationIdentifier().equals(this.getOperationIdentifier()) == false)
             return false;
         if (other.getOperationType() == null ^ this.getOperationType() == null)
             return false;
@@ -360,6 +564,10 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getTargetIdentifier() == null ^ this.getTargetIdentifier() == null)
+            return false;
+        if (other.getTargetIdentifier() != null && other.getTargetIdentifier().equals(this.getTargetIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -368,11 +576,15 @@ public class ControlOperation implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getControlIdentifier() == null) ? 0 : getControlIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getEnabledControlIdentifier() == null) ? 0 : getEnabledControlIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getOperationIdentifier() == null) ? 0 : getOperationIdentifier().hashCode());
         hashCode = prime * hashCode + ((getOperationType() == null) ? 0 : getOperationType().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTargetIdentifier() == null) ? 0 : getTargetIdentifier().hashCode());
         return hashCode;
     }
 

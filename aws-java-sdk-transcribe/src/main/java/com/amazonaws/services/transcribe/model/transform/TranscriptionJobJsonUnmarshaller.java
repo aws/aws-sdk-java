@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,6 +146,13 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                     context.nextToken();
                     transcriptionJob.setLanguageIdSettings(new MapUnmarshaller<String, LanguageIdSettings>(context.getUnmarshaller(String.class),
                             LanguageIdSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ToxicityDetection", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setToxicityDetection(new ListUnmarshaller<ToxicityDetectionSettings>(ToxicityDetectionSettingsJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,21 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<ExportECSServiceRecommendationsResult> exportECSServiceRecommendationsAsync(
+            ExportECSServiceRecommendationsRequest request) {
+
+        return exportECSServiceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportECSServiceRecommendationsResult> exportECSServiceRecommendationsAsync(
+            ExportECSServiceRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportECSServiceRecommendationsRequest, ExportECSServiceRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
             ExportLambdaFunctionRecommendationsRequest request) {
 
@@ -111,6 +126,19 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
             ExportLambdaFunctionRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ExportLambdaFunctionRecommendationsRequest, ExportLambdaFunctionRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(ExportLicenseRecommendationsRequest request) {
+
+        return exportLicenseRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLicenseRecommendationsResult> exportLicenseRecommendationsAsync(ExportLicenseRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportLicenseRecommendationsRequest, ExportLicenseRecommendationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -172,6 +200,34 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationProjectedMetricsResult> getECSServiceRecommendationProjectedMetricsAsync(
+            GetECSServiceRecommendationProjectedMetricsRequest request) {
+
+        return getECSServiceRecommendationProjectedMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationProjectedMetricsResult> getECSServiceRecommendationProjectedMetricsAsync(
+            GetECSServiceRecommendationProjectedMetricsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetECSServiceRecommendationProjectedMetricsRequest, GetECSServiceRecommendationProjectedMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationsResult> getECSServiceRecommendationsAsync(GetECSServiceRecommendationsRequest request) {
+
+        return getECSServiceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationsResult> getECSServiceRecommendationsAsync(GetECSServiceRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetECSServiceRecommendationsRequest, GetECSServiceRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEffectiveRecommendationPreferencesResult> getEffectiveRecommendationPreferencesAsync(
             GetEffectiveRecommendationPreferencesRequest request) {
 
@@ -225,6 +281,19 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     public java.util.concurrent.Future<GetLambdaFunctionRecommendationsResult> getLambdaFunctionRecommendationsAsync(
             GetLambdaFunctionRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLambdaFunctionRecommendationsRequest, GetLambdaFunctionRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(GetLicenseRecommendationsRequest request) {
+
+        return getLicenseRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseRecommendationsResult> getLicenseRecommendationsAsync(GetLicenseRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseRecommendationsRequest, GetLicenseRecommendationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

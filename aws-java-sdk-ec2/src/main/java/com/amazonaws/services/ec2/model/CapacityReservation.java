@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -247,6 +247,12 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CapacityAllocation> capacityAllocations;
+    /**
+     * <p>
+     * The type of Capacity Reservation.
+     * </p>
+     */
+    private String reservationType;
 
     /**
      * <p>
@@ -2006,6 +2012,65 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of Capacity Reservation.
+     * </p>
+     * 
+     * @param reservationType
+     *        The type of Capacity Reservation.
+     * @see CapacityReservationType
+     */
+
+    public void setReservationType(String reservationType) {
+        this.reservationType = reservationType;
+    }
+
+    /**
+     * <p>
+     * The type of Capacity Reservation.
+     * </p>
+     * 
+     * @return The type of Capacity Reservation.
+     * @see CapacityReservationType
+     */
+
+    public String getReservationType() {
+        return this.reservationType;
+    }
+
+    /**
+     * <p>
+     * The type of Capacity Reservation.
+     * </p>
+     * 
+     * @param reservationType
+     *        The type of Capacity Reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityReservationType
+     */
+
+    public CapacityReservation withReservationType(String reservationType) {
+        setReservationType(reservationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of Capacity Reservation.
+     * </p>
+     * 
+     * @param reservationType
+     *        The type of Capacity Reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityReservationType
+     */
+
+    public CapacityReservation withReservationType(CapacityReservationType reservationType) {
+        this.reservationType = reservationType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2062,7 +2127,9 @@ public class CapacityReservation implements Serializable, Cloneable {
         if (getPlacementGroupArn() != null)
             sb.append("PlacementGroupArn: ").append(getPlacementGroupArn()).append(",");
         if (getCapacityAllocations() != null)
-            sb.append("CapacityAllocations: ").append(getCapacityAllocations());
+            sb.append("CapacityAllocations: ").append(getCapacityAllocations()).append(",");
+        if (getReservationType() != null)
+            sb.append("ReservationType: ").append(getReservationType());
         sb.append("}");
         return sb.toString();
     }
@@ -2169,6 +2236,10 @@ public class CapacityReservation implements Serializable, Cloneable {
             return false;
         if (other.getCapacityAllocations() != null && other.getCapacityAllocations().equals(this.getCapacityAllocations()) == false)
             return false;
+        if (other.getReservationType() == null ^ this.getReservationType() == null)
+            return false;
+        if (other.getReservationType() != null && other.getReservationType().equals(this.getReservationType()) == false)
+            return false;
         return true;
     }
 
@@ -2200,6 +2271,7 @@ public class CapacityReservation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCapacityReservationFleetId() == null) ? 0 : getCapacityReservationFleetId().hashCode());
         hashCode = prime * hashCode + ((getPlacementGroupArn() == null) ? 0 : getPlacementGroupArn().hashCode());
         hashCode = prime * hashCode + ((getCapacityAllocations() == null) ? 0 : getCapacityAllocations().hashCode());
+        hashCode = prime * hashCode + ((getReservationType() == null) ? 0 : getReservationType().hashCode());
         return hashCode;
     }
 

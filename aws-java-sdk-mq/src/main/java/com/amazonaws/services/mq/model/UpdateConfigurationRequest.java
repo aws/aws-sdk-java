@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     private String configurationId;
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     * Cuttlefish configuration.
      * </p>
      */
     private String data;
@@ -89,11 +90,13 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     * Cuttlefish configuration.
      * </p>
      * 
      * @param data
-     *        Required. The base64-encoded XML configuration.
+     *        Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     *        Cuttlefish configuration.
      */
 
     public void setData(String data) {
@@ -102,10 +105,12 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     * Cuttlefish configuration.
      * </p>
      * 
-     * @return Required. The base64-encoded XML configuration.
+     * @return Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     *         Cuttlefish configuration.
      */
 
     public String getData() {
@@ -114,11 +119,13 @@ public class UpdateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     * Cuttlefish configuration.
      * </p>
      * 
      * @param data
-     *        Required. The base64-encoded XML configuration.
+     *        Amazon MQ for Active MQ: The base64-encoded XML configuration. Amazon MQ for RabbitMQ: the base64-encoded
+     *        Cuttlefish configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

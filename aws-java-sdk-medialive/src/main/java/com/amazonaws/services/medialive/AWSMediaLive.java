@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -165,7 +165,7 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The update schedule request failed validation.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to update the channel schedule.
      * @throws BadGatewayException
@@ -173,7 +173,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The specified channel id does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on update schedule calls.
      * @sample AWSMediaLive.BatchUpdateSchedule
@@ -201,7 +201,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -233,7 +233,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Device not found or you called an unsupported region.
      * @throws GatewayTimeoutException
-     *         Bad gateway error. Try again.
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded. Your have sent this request too many times. There might be a bug in your API
      *         client.
@@ -254,13 +254,13 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The Channel failed validation and could not be created.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to create the channel.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on create channel calls to channel service.
      * @throws ConflictException
@@ -270,6 +270,106 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     CreateChannelResult createChannel(CreateChannelRequest createChannelRequest);
+
+    /**
+     * Creates a cloudwatch alarm template to dynamically generate cloudwatch metric alarms on targeted resource types.
+     * 
+     * @param createCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateRequest
+     * @return Result of the CreateCloudWatchAlarmTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCloudWatchAlarmTemplateResult createCloudWatchAlarmTemplate(CreateCloudWatchAlarmTemplateRequest createCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Creates a cloudwatch alarm template group to group your cloudwatch alarm templates and to attach to signal maps
+     * for dynamically creating alarms.
+     * 
+     * @param createCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for CreateCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the CreateCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCloudWatchAlarmTemplateGroupResult createCloudWatchAlarmTemplateGroup(
+            CreateCloudWatchAlarmTemplateGroupRequest createCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Creates an eventbridge rule template to monitor events and send notifications to your targeted resources.
+     * 
+     * @param createEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateRequest
+     * @return Result of the CreateEventBridgeRuleTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateEventBridgeRuleTemplateResult createEventBridgeRuleTemplate(CreateEventBridgeRuleTemplateRequest createEventBridgeRuleTemplateRequest);
+
+    /**
+     * Creates an eventbridge rule template group to group your eventbridge rule templates and to attach to signal maps
+     * for dynamically creating notification rules.
+     * 
+     * @param createEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for CreateEventBridgeRuleTemplateGroupRequest
+     * @return Result of the CreateEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateEventBridgeRuleTemplateGroupResult createEventBridgeRuleTemplateGroup(
+            CreateEventBridgeRuleTemplateGroupRequest createEventBridgeRuleTemplateGroupRequest);
 
     /**
      * Create an input
@@ -286,7 +386,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.CreateInput
@@ -310,7 +410,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.CreateInputSecurityGroup
@@ -331,13 +431,13 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The Multiplex failed validation and could not be created.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to create the multiplex.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex calls to multiplex service.
      * @throws ConflictException
@@ -360,13 +460,13 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The Multiplex program failed validation and could not be created.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to create a program.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -392,7 +492,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @sample AWSMediaLive.CreatePartnerInput
@@ -400,6 +500,31 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest createPartnerInputRequest);
+
+    /**
+     * Initiates the creation of a new signal map. Will discover a new mediaResourceMap based on the provided
+     * discoveryEntryPointArn.
+     * 
+     * @param createSignalMapRequest
+     *        Placeholder documentation for CreateSignalMapRequest
+     * @return Result of the CreateSignalMap operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.CreateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSignalMapResult createSignalMap(CreateSignalMapRequest createSignalMapRequest);
 
     /**
      * Create tags for a resource
@@ -430,7 +555,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to delete the channel.
      * @throws BadGatewayException
@@ -438,7 +563,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The channel you're requesting to delete does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete channel calls to channel service.
      * @throws ConflictException
@@ -448,6 +573,106 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     DeleteChannelResult deleteChannel(DeleteChannelRequest deleteChannelRequest);
+
+    /**
+     * Deletes a cloudwatch alarm template.
+     * 
+     * @param deleteCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateRequest
+     * @return Result of the DeleteCloudWatchAlarmTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCloudWatchAlarmTemplateResult deleteCloudWatchAlarmTemplate(DeleteCloudWatchAlarmTemplateRequest deleteCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Deletes a cloudwatch alarm template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for DeleteCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the DeleteCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCloudWatchAlarmTemplateGroupResult deleteCloudWatchAlarmTemplateGroup(
+            DeleteCloudWatchAlarmTemplateGroupRequest deleteCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Deletes an eventbridge rule template.
+     * 
+     * @param deleteEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateRequest
+     * @return Result of the DeleteEventBridgeRuleTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEventBridgeRuleTemplateResult deleteEventBridgeRuleTemplate(DeleteEventBridgeRuleTemplateRequest deleteEventBridgeRuleTemplateRequest);
+
+    /**
+     * Deletes an eventbridge rule template group. You must detach this group from all signal maps and ensure its
+     * existing templates are moved to another group or deleted.
+     * 
+     * @param deleteEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for DeleteEventBridgeRuleTemplateGroupRequest
+     * @return Result of the DeleteEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEventBridgeRuleTemplateGroupResult deleteEventBridgeRuleTemplateGroup(
+            DeleteEventBridgeRuleTemplateGroupRequest deleteEventBridgeRuleTemplateGroupRequest);
 
     /**
      * Deletes the input end point
@@ -466,7 +691,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit exceeded
      * @throws ConflictException
@@ -494,7 +719,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input Security Group not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.DeleteInputSecurityGroup
@@ -512,7 +737,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex.
      * @throws BadGatewayException
@@ -520,7 +745,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex calls to multiplex service.
      * @throws ConflictException
@@ -540,7 +765,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex program.
      * @throws BadGatewayException
@@ -548,7 +773,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -576,7 +801,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation you're attempting to delete does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete reservation request
      * @throws ConflictException
@@ -596,7 +821,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request to delete the schedule on this channel was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to delete the channel schedule.
      * @throws BadGatewayException
@@ -604,7 +829,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The specified channel does not exist to have its schedule deleted.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete schedule calls.
      * @sample AWSMediaLive.DeleteSchedule
@@ -612,6 +837,30 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     DeleteScheduleResult deleteSchedule(DeleteScheduleRequest deleteScheduleRequest);
+
+    /**
+     * Deletes the specified signal map.
+     * 
+     * @param deleteSignalMapRequest
+     *        Placeholder documentation for DeleteSignalMapRequest
+     * @return Result of the DeleteSignalMap operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.DeleteSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSignalMapResult deleteSignalMap(DeleteSignalMapRequest deleteSignalMapRequest);
 
     /**
      * Removes tags for a resource
@@ -634,6 +883,30 @@ public interface AWSMediaLive {
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
+     * Describe account configuration
+     * 
+     * @param describeAccountConfigurationRequest
+     *        Placeholder documentation for DescribeAccountConfigurationRequest
+     * @return Result of the DescribeAccountConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You do not have permission to describe the account configuration.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe account configuration calls.
+     * @sample AWSMediaLive.DescribeAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountConfigurationResult describeAccountConfiguration(DescribeAccountConfigurationRequest describeAccountConfigurationRequest);
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -642,7 +915,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to describe the channel.
      * @throws BadGatewayException
@@ -650,7 +923,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The channel you're requesting to describe does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe channel calls to channel service.
      * @sample AWSMediaLive.DescribeChannel
@@ -702,7 +975,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input device you're requesting to describe does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDevice
@@ -728,7 +1001,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on get thumbnail calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDeviceThumbnail
@@ -754,7 +1027,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input Security Group not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.DescribeInputSecurityGroup
@@ -772,7 +1045,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex.
      * @throws BadGatewayException
@@ -780,7 +1053,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplex
@@ -798,7 +1071,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex program.
      * @throws BadGatewayException
@@ -807,7 +1080,7 @@ public interface AWSMediaLive {
      *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
      *         Check the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex program calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplexProgram
@@ -833,7 +1106,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Offering you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe offering request
      * @sample AWSMediaLive.DescribeOffering
@@ -859,7 +1132,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe reservation request
      * @sample AWSMediaLive.DescribeReservation
@@ -877,7 +1150,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to describe the channel schedule.
      * @throws BadGatewayException
@@ -885,7 +1158,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The channel you're requesting a schedule describe for does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe schedule calls.
      * @sample AWSMediaLive.DescribeSchedule
@@ -893,6 +1166,144 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     DescribeScheduleResult describeSchedule(DescribeScheduleRequest describeScheduleRequest);
+
+    /**
+     * Describe the latest thumbnails data.
+     * 
+     * @param describeThumbnailsRequest
+     *        Placeholder documentation for DescribeThumbnailsRequest
+     * @return Result of the DescribeThumbnails operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe thumbnails.
+     * @throws BadGatewayException
+     *         Bad Gateway error.
+     * @throws NotFoundException
+     *         There are no thumbnails for this channel.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe thumbnails calls to channel service.
+     * @throws ConflictException
+     *         Service do not have permission to customer's KMS key.
+     * @sample AWSMediaLive.DescribeThumbnails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeThumbnailsResult describeThumbnails(DescribeThumbnailsRequest describeThumbnailsRequest);
+
+    /**
+     * Retrieves the specified cloudwatch alarm template.
+     * 
+     * @param getCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateRequest
+     * @return Result of the GetCloudWatchAlarmTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCloudWatchAlarmTemplateResult getCloudWatchAlarmTemplate(GetCloudWatchAlarmTemplateRequest getCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Retrieves the specified cloudwatch alarm template group.
+     * 
+     * @param getCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for GetCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the GetCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCloudWatchAlarmTemplateGroupResult getCloudWatchAlarmTemplateGroup(GetCloudWatchAlarmTemplateGroupRequest getCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Retrieves the specified eventbridge rule template.
+     * 
+     * @param getEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateRequest
+     * @return Result of the GetEventBridgeRuleTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEventBridgeRuleTemplateResult getEventBridgeRuleTemplate(GetEventBridgeRuleTemplateRequest getEventBridgeRuleTemplateRequest);
+
+    /**
+     * Retrieves the specified eventbridge rule template group.
+     * 
+     * @param getEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for GetEventBridgeRuleTemplateGroupRequest
+     * @return Result of the GetEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEventBridgeRuleTemplateGroupResult getEventBridgeRuleTemplateGroup(GetEventBridgeRuleTemplateGroupRequest getEventBridgeRuleTemplateGroupRequest);
+
+    /**
+     * Retrieves the specified signal map.
+     * 
+     * @param getSignalMapRequest
+     *        Placeholder documentation for GetSignalMapRequest
+     * @return Result of the GetSignalMap operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.GetSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSignalMapResult getSignalMap(GetSignalMapRequest getSignalMapRequest);
 
     /**
      * Produces list of channels that have been created
@@ -903,13 +1314,13 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to list channels.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list channel calls to channel service.
      * @sample AWSMediaLive.ListChannels
@@ -917,6 +1328,94 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     ListChannelsResult listChannels(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * Lists cloudwatch alarm template groups.
+     * 
+     * @param listCloudWatchAlarmTemplateGroupsRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplateGroupsRequest
+     * @return Result of the ListCloudWatchAlarmTemplateGroups operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListCloudWatchAlarmTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCloudWatchAlarmTemplateGroupsResult listCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest listCloudWatchAlarmTemplateGroupsRequest);
+
+    /**
+     * Lists cloudwatch alarm templates.
+     * 
+     * @param listCloudWatchAlarmTemplatesRequest
+     *        Placeholder documentation for ListCloudWatchAlarmTemplatesRequest
+     * @return Result of the ListCloudWatchAlarmTemplates operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListCloudWatchAlarmTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCloudWatchAlarmTemplatesResult listCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest listCloudWatchAlarmTemplatesRequest);
+
+    /**
+     * Lists eventbridge rule template groups.
+     * 
+     * @param listEventBridgeRuleTemplateGroupsRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplateGroupsRequest
+     * @return Result of the ListEventBridgeRuleTemplateGroups operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListEventBridgeRuleTemplateGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEventBridgeRuleTemplateGroupsResult listEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest listEventBridgeRuleTemplateGroupsRequest);
+
+    /**
+     * Lists eventbridge rule templates.
+     * 
+     * @param listEventBridgeRuleTemplatesRequest
+     *        Placeholder documentation for ListEventBridgeRuleTemplatesRequest
+     * @return Result of the ListEventBridgeRuleTemplates operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListEventBridgeRuleTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEventBridgeRuleTemplatesResult listEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest listEventBridgeRuleTemplatesRequest);
 
     /**
      * List input devices that are currently being transferred. List input devices that you are transferring from your
@@ -936,7 +1435,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDeviceTransfers
@@ -960,7 +1459,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDevices
@@ -984,7 +1483,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Limit Exceeded Error
      * @sample AWSMediaLive.ListInputSecurityGroups
@@ -1027,7 +1526,7 @@ public interface AWSMediaLive {
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to list multiplex programs.
      * @throws BadGatewayException
@@ -1036,7 +1535,7 @@ public interface AWSMediaLive {
      *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
      *         ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexPrograms
@@ -1055,13 +1554,13 @@ public interface AWSMediaLive {
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to list multiplexes.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexes
@@ -1085,7 +1584,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list offerings request
      * @sample AWSMediaLive.ListOfferings
@@ -1109,7 +1608,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on list reservations request
      * @sample AWSMediaLive.ListReservations
@@ -1117,6 +1616,28 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     ListReservationsResult listReservations(ListReservationsRequest listReservationsRequest);
+
+    /**
+     * Lists signal maps.
+     * 
+     * @param listSignalMapsRequest
+     *        Placeholder documentation for ListSignalMapsRequest
+     * @return Result of the ListSignalMaps operation returned by the service.
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @sample AWSMediaLive.ListSignalMaps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSignalMapsResult listSignalMaps(ListSignalMapsRequest listSignalMapsRequest);
 
     /**
      * Produces list of tags that have been created for a resource
@@ -1155,7 +1676,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Offering you're attempting to purchase does not exist
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on purchase offering request
      * @throws ConflictException
@@ -1186,7 +1707,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on reboot device calls to the input device service.
      * @sample AWSMediaLive.RebootInputDevice
@@ -1214,7 +1735,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -1226,6 +1747,37 @@ public interface AWSMediaLive {
     RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest);
 
     /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @return Result of the RestartChannelPipelines operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Verify that the syntax is
+     *         correct.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials that you sent.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel or pipeline you specified doesn't exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaLive.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RestartChannelPipelinesResult restartChannelPipelines(RestartChannelPipelinesRequest restartChannelPipelinesRequest);
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest
@@ -1234,7 +1786,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to start the channel.
      * @throws BadGatewayException
@@ -1242,7 +1794,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The channel you're requesting to start does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on start channel calls to channel service.
      * @throws ConflictException
@@ -1252,6 +1804,59 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     StartChannelResult startChannel(StartChannelRequest startChannelRequest);
+
+    /**
+     * Initiates a deployment to delete the monitor of the specified signal map.
+     * 
+     * @param startDeleteMonitorDeploymentRequest
+     *        Placeholder documentation for StartDeleteMonitorDeploymentRequest
+     * @return Result of the StartDeleteMonitorDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.StartDeleteMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDeleteMonitorDeploymentResult startDeleteMonitorDeployment(StartDeleteMonitorDeploymentRequest startDeleteMonitorDeploymentRequest);
+
+    /**
+     * Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is
+     * attached to a MediaLive input; MediaLive starts the device when the channel starts.)
+     * 
+     * @param startInputDeviceRequest
+     *        Placeholder documentation for StartInputDeviceRequest
+     * @return Result of the StartInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Start operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start device calls to the input device service.
+     * @sample AWSMediaLive.StartInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartInputDeviceResult startInputDevice(StartInputDeviceRequest startInputDeviceRequest);
 
     /**
      * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
@@ -1277,7 +1882,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on start maintenance window calls to the input device service.
      * @sample AWSMediaLive.StartInputDeviceMaintenanceWindow
@@ -1285,6 +1890,30 @@ public interface AWSMediaLive {
      *      target="_top">AWS API Documentation</a>
      */
     StartInputDeviceMaintenanceWindowResult startInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest startInputDeviceMaintenanceWindowRequest);
+
+    /**
+     * Initiates a deployment to deploy the latest monitor of the specified signal map.
+     * 
+     * @param startMonitorDeploymentRequest
+     *        Placeholder documentation for StartMonitorDeploymentRequest
+     * @return Result of the StartMonitorDeployment operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.StartMonitorDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMonitorDeploymentResult startMonitorDeployment(StartMonitorDeploymentRequest startMonitorDeploymentRequest);
 
     /**
      * Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each
@@ -1297,7 +1926,7 @@ public interface AWSMediaLive {
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to start the multiplex.
      * @throws BadGatewayException
@@ -1305,7 +1934,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on start multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1317,6 +1946,31 @@ public interface AWSMediaLive {
     StartMultiplexResult startMultiplex(StartMultiplexRequest startMultiplexRequest);
 
     /**
+     * Initiates an update for the specified signal map. Will discover a new signal map if a changed
+     * discoveryEntryPointArn is provided.
+     * 
+     * @param startUpdateSignalMapRequest
+     *        Placeholder documentation for StartUpdateSignalMapRequest
+     * @return Result of the StartUpdateSignalMap operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.StartUpdateSignalMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartUpdateSignalMapResult startUpdateSignalMap(StartUpdateSignalMapRequest startUpdateSignalMapRequest);
+
+    /**
      * Stops a running channel
      * 
      * @param stopChannelRequest
@@ -1325,7 +1979,7 @@ public interface AWSMediaLive {
      * @throws BadRequestException
      *         This request was invalid.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to stop the channel.
      * @throws BadGatewayException
@@ -1333,7 +1987,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The channel you're requesting to stop does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop channel calls to channel service.
      * @throws ConflictException
@@ -1345,6 +1999,35 @@ public interface AWSMediaLive {
     StopChannelResult stopChannel(StopChannelRequest stopChannelRequest);
 
     /**
+     * Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached
+     * to a MediaLive input; MediaLive automatically stops the device when the channel stops.)
+     * 
+     * @param stopInputDeviceRequest
+     *        Placeholder documentation for StopInputDeviceRequest
+     * @return Result of the StopInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Start operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to stop the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop device calls to the input device service.
+     * @sample AWSMediaLive.StopInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopInputDeviceResult stopInputDevice(StopInputDeviceRequest stopInputDeviceRequest);
+
+    /**
      * Stops a running multiplex. If the multiplex isn't running, this action has no effect.
      * 
      * @param stopMultiplexRequest
@@ -1354,7 +2037,7 @@ public interface AWSMediaLive {
      *         MediaLive can't process your request because of a problem in the request. Please check your request form
      *         and syntax.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to stop the multiplex.
      * @throws BadGatewayException
@@ -1362,7 +2045,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1393,7 +2076,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Input device not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on transfer device calls to the input device service.
      * @throws ConflictException
@@ -1403,6 +2086,32 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest transferInputDeviceRequest);
+
+    /**
+     * Update account configuration
+     * 
+     * @param updateAccountConfigurationRequest
+     *        List of account configuration parameters to update.
+     * @return Result of the UpdateAccountConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The update account configuration request failed validation.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You do not have permission to update the account's configuration.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update account configuration calls.
+     * @sample AWSMediaLive.UpdateAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAccountConfigurationResult updateAccountConfiguration(UpdateAccountConfigurationRequest updateAccountConfigurationRequest);
 
     /**
      * Updates a channel.
@@ -1415,13 +2124,13 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The channel configuration failed validation and could not be updated.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to update the channel.
      * @throws BadGatewayException
      *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The channel is unable to update due to an issue with channel resources.
      * @sample AWSMediaLive.UpdateChannel
@@ -1441,7 +2150,7 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The channel configuration failed validation when attempting to update the channel class.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You do not have permission to update the class of this channel.
      * @throws BadGatewayException
@@ -1449,7 +2158,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The channel you're trying to update the class on does not exist.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on update channel class calls.
      * @throws ConflictException
@@ -1459,6 +2168,104 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     UpdateChannelClassResult updateChannelClass(UpdateChannelClassRequest updateChannelClassRequest);
+
+    /**
+     * Updates the specified cloudwatch alarm template.
+     * 
+     * @param updateCloudWatchAlarmTemplateRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateRequest
+     * @return Result of the UpdateCloudWatchAlarmTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateCloudWatchAlarmTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCloudWatchAlarmTemplateResult updateCloudWatchAlarmTemplate(UpdateCloudWatchAlarmTemplateRequest updateCloudWatchAlarmTemplateRequest);
+
+    /**
+     * Updates the specified cloudwatch alarm template group.
+     * 
+     * @param updateCloudWatchAlarmTemplateGroupRequest
+     *        Placeholder documentation for UpdateCloudWatchAlarmTemplateGroupRequest
+     * @return Result of the UpdateCloudWatchAlarmTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateCloudWatchAlarmTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCloudWatchAlarmTemplateGroupResult updateCloudWatchAlarmTemplateGroup(
+            UpdateCloudWatchAlarmTemplateGroupRequest updateCloudWatchAlarmTemplateGroupRequest);
+
+    /**
+     * Updates the specified eventbridge rule template.
+     * 
+     * @param updateEventBridgeRuleTemplateRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateRequest
+     * @return Result of the UpdateEventBridgeRuleTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateEventBridgeRuleTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateEventBridgeRuleTemplateResult updateEventBridgeRuleTemplate(UpdateEventBridgeRuleTemplateRequest updateEventBridgeRuleTemplateRequest);
+
+    /**
+     * Updates the specified eventbridge rule template group.
+     * 
+     * @param updateEventBridgeRuleTemplateGroupRequest
+     *        Placeholder documentation for UpdateEventBridgeRuleTemplateGroupRequest
+     * @return Result of the UpdateEventBridgeRuleTemplateGroup operation returned by the service.
+     * @throws BadRequestException
+     *         BadRequestException 400 response
+     * @throws InternalServerErrorException
+     *         InternalServerErrorException 500 response
+     * @throws ForbiddenException
+     *         ForbiddenException 403 response
+     * @throws NotFoundException
+     *         NotFoundException 404 response
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException 429 response
+     * @throws ConflictException
+     *         ConflictException 409 response
+     * @sample AWSMediaLive.UpdateEventBridgeRuleTemplateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateEventBridgeRuleTemplateGroupResult updateEventBridgeRuleTemplateGroup(
+            UpdateEventBridgeRuleTemplateGroupRequest updateEventBridgeRuleTemplateGroupRequest);
 
     /**
      * Updates an input.
@@ -1477,7 +2284,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input was not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The input was unable to be updated at this time due to an issue with input resources.
      * @sample AWSMediaLive.UpdateInput
@@ -1505,7 +2312,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input device you're requesting to does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded on update calls to the input device service.
      * @sample AWSMediaLive.UpdateInputDevice
@@ -1532,7 +2339,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The Input Security Group was not found.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The Input Security Group was unable to be updated due to an issue with input security group resources.
      * @sample AWSMediaLive.UpdateInputSecurityGroup
@@ -1553,7 +2360,7 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The multiplex configuration failed validation and could not be updated.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex.
      * @throws BadGatewayException
@@ -1561,7 +2368,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The multiplex is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplex
@@ -1582,7 +2389,7 @@ public interface AWSMediaLive {
      * @throws UnprocessableEntityException
      *         The multiplex program failed validation and could not be updated.
      * @throws InternalServerErrorException
-     *         Unexpected internal service error.
+     *         Internal Service Error
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex program.
      * @throws BadGatewayException
@@ -1591,7 +2398,7 @@ public interface AWSMediaLive {
      *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
      *         the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws ConflictException
      *         The multiplex program is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplexProgram
@@ -1617,7 +2424,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation not found
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error
+     *         Gateway Timeout
      * @throws TooManyRequestsException
      *         Request limit exceeded
      * @throws ConflictException

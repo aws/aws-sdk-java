@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,18 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
      * </p>
      */
     private String currentPerformanceRisk;
+    /**
+     * <p>
+     * A list of tags assigned to your Amazon EBS volume recommendations.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Describes the effective recommendation preferences for Amazon EBS volume.
+     * </p>
+     */
+    private EBSEffectiveRecommendationPreferences effectiveRecommendationPreferences;
 
     /**
      * <p>
@@ -709,6 +721,116 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * A list of tags assigned to your Amazon EBS volume recommendations.
+     * </p>
+     * 
+     * @return A list of tags assigned to your Amazon EBS volume recommendations.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags assigned to your Amazon EBS volume recommendations.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags assigned to your Amazon EBS volume recommendations.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags assigned to your Amazon EBS volume recommendations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags assigned to your Amazon EBS volume recommendations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeRecommendation withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags assigned to your Amazon EBS volume recommendations.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags assigned to your Amazon EBS volume recommendations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeRecommendation withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the effective recommendation preferences for Amazon EBS volume.
+     * </p>
+     * 
+     * @param effectiveRecommendationPreferences
+     *        Describes the effective recommendation preferences for Amazon EBS volume.
+     */
+
+    public void setEffectiveRecommendationPreferences(EBSEffectiveRecommendationPreferences effectiveRecommendationPreferences) {
+        this.effectiveRecommendationPreferences = effectiveRecommendationPreferences;
+    }
+
+    /**
+     * <p>
+     * Describes the effective recommendation preferences for Amazon EBS volume.
+     * </p>
+     * 
+     * @return Describes the effective recommendation preferences for Amazon EBS volume.
+     */
+
+    public EBSEffectiveRecommendationPreferences getEffectiveRecommendationPreferences() {
+        return this.effectiveRecommendationPreferences;
+    }
+
+    /**
+     * <p>
+     * Describes the effective recommendation preferences for Amazon EBS volume.
+     * </p>
+     * 
+     * @param effectiveRecommendationPreferences
+     *        Describes the effective recommendation preferences for Amazon EBS volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeRecommendation withEffectiveRecommendationPreferences(EBSEffectiveRecommendationPreferences effectiveRecommendationPreferences) {
+        setEffectiveRecommendationPreferences(effectiveRecommendationPreferences);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -737,7 +859,11 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
         if (getLastRefreshTimestamp() != null)
             sb.append("LastRefreshTimestamp: ").append(getLastRefreshTimestamp()).append(",");
         if (getCurrentPerformanceRisk() != null)
-            sb.append("CurrentPerformanceRisk: ").append(getCurrentPerformanceRisk());
+            sb.append("CurrentPerformanceRisk: ").append(getCurrentPerformanceRisk()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEffectiveRecommendationPreferences() != null)
+            sb.append("EffectiveRecommendationPreferences: ").append(getEffectiveRecommendationPreferences());
         sb.append("}");
         return sb.toString();
     }
@@ -788,6 +914,15 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
             return false;
         if (other.getCurrentPerformanceRisk() != null && other.getCurrentPerformanceRisk().equals(this.getCurrentPerformanceRisk()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getEffectiveRecommendationPreferences() == null ^ this.getEffectiveRecommendationPreferences() == null)
+            return false;
+        if (other.getEffectiveRecommendationPreferences() != null
+                && other.getEffectiveRecommendationPreferences().equals(this.getEffectiveRecommendationPreferences()) == false)
+            return false;
         return true;
     }
 
@@ -805,6 +940,8 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getVolumeRecommendationOptions() == null) ? 0 : getVolumeRecommendationOptions().hashCode());
         hashCode = prime * hashCode + ((getLastRefreshTimestamp() == null) ? 0 : getLastRefreshTimestamp().hashCode());
         hashCode = prime * hashCode + ((getCurrentPerformanceRisk() == null) ? 0 : getCurrentPerformanceRisk().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEffectiveRecommendationPreferences() == null) ? 0 : getEffectiveRecommendationPreferences().hashCode());
         return hashCode;
     }
 

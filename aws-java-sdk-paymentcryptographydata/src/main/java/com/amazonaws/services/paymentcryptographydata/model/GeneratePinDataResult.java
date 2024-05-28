@@ -1,0 +1,469 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.paymentcryptographydata.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GeneratePinData"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GeneratePinDataResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a
+     * composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with
+     * ISO 9564 standard.
+     * </p>
+     */
+    private String encryptedPinBlock;
+    /**
+     * <p>
+     * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block
+     * generation.
+     * </p>
+     */
+    private String encryptionKeyArn;
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     */
+    private String encryptionKeyCheckValue;
+    /**
+     * <p>
+     * The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for
+     * PIN, PVV or PIN Offset generation.
+     * </p>
+     */
+    private String generationKeyArn;
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     */
+    private String generationKeyCheckValue;
+    /**
+     * <p>
+     * The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     * </p>
+     */
+    private PinData pinData;
+
+    /**
+     * <p>
+     * The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a
+     * composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with
+     * ISO 9564 standard.
+     * </p>
+     * 
+     * @param encryptedPinBlock
+     *        The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block
+     *        is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in
+     *        accordance with ISO 9564 standard.
+     */
+
+    public void setEncryptedPinBlock(String encryptedPinBlock) {
+        this.encryptedPinBlock = encryptedPinBlock;
+    }
+
+    /**
+     * <p>
+     * The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a
+     * composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with
+     * ISO 9564 standard.
+     * </p>
+     * 
+     * @return The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block
+     *         is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in
+     *         accordance with ISO 9564 standard.
+     */
+
+    public String getEncryptedPinBlock() {
+        return this.encryptedPinBlock;
+    }
+
+    /**
+     * <p>
+     * The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block is a
+     * composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in accordance with
+     * ISO 9564 standard.
+     * </p>
+     * 
+     * @param encryptedPinBlock
+     *        The PIN block encrypted under PEK from Amazon Web Services Payment Cryptography. The encrypted PIN block
+     *        is a composite of PAN (Primary Account Number) and PIN (Personal Identification Number), generated in
+     *        accordance with ISO 9564 standard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratePinDataResult withEncryptedPinBlock(String encryptedPinBlock) {
+        setEncryptedPinBlock(encryptedPinBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block
+     * generation.
+     * </p>
+     * 
+     * @param encryptionKeyArn
+     *        The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin
+     *        block generation.
+     */
+
+    public void setEncryptionKeyArn(String encryptionKeyArn) {
+        this.encryptionKeyArn = encryptionKeyArn;
+    }
+
+    /**
+     * <p>
+     * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block
+     * generation.
+     * </p>
+     * 
+     * @return The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin
+     *         block generation.
+     */
+
+    public String getEncryptionKeyArn() {
+        return this.encryptionKeyArn;
+    }
+
+    /**
+     * <p>
+     * The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin block
+     * generation.
+     * </p>
+     * 
+     * @param encryptionKeyArn
+     *        The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses for encrypted pin
+     *        block generation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratePinDataResult withEncryptionKeyArn(String encryptionKeyArn) {
+        setEncryptionKeyArn(encryptionKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     * 
+     * @param encryptionKeyCheckValue
+     *        The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given
+     *        key have the same key or to detect that a key has changed.</p>
+     *        <p>
+     *        Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     */
+
+    public void setEncryptionKeyCheckValue(String encryptionKeyCheckValue) {
+        this.encryptionKeyCheckValue = encryptionKeyCheckValue;
+    }
+
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     * 
+     * @return The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given
+     *         key have the same key or to detect that a key has changed.</p>
+     *         <p>
+     *         Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     */
+
+    public String getEncryptionKeyCheckValue() {
+        return this.encryptionKeyCheckValue;
+    }
+
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     * 
+     * @param encryptionKeyCheckValue
+     *        The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given
+     *        key have the same key or to detect that a key has changed.</p>
+     *        <p>
+     *        Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratePinDataResult withEncryptionKeyCheckValue(String encryptionKeyCheckValue) {
+        setEncryptionKeyCheckValue(encryptionKeyCheckValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for
+     * PIN, PVV or PIN Offset generation.
+     * </p>
+     * 
+     * @param generationKeyArn
+     *        The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses
+     *        for PIN, PVV or PIN Offset generation.
+     */
+
+    public void setGenerationKeyArn(String generationKeyArn) {
+        this.generationKeyArn = generationKeyArn;
+    }
+
+    /**
+     * <p>
+     * The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for
+     * PIN, PVV or PIN Offset generation.
+     * </p>
+     * 
+     * @return The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses
+     *         for PIN, PVV or PIN Offset generation.
+     */
+
+    public String getGenerationKeyArn() {
+        return this.generationKeyArn;
+    }
+
+    /**
+     * <p>
+     * The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses for
+     * PIN, PVV or PIN Offset generation.
+     * </p>
+     * 
+     * @param generationKeyArn
+     *        The <code>keyARN</code> of the pin data generation key that Amazon Web Services Payment Cryptography uses
+     *        for PIN, PVV or PIN Offset generation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratePinDataResult withGenerationKeyArn(String generationKeyArn) {
+        setGenerationKeyArn(generationKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     * 
+     * @param generationKeyCheckValue
+     *        The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given
+     *        key have the same key or to detect that a key has changed.</p>
+     *        <p>
+     *        Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     */
+
+    public void setGenerationKeyCheckValue(String generationKeyCheckValue) {
+        this.generationKeyCheckValue = generationKeyCheckValue;
+    }
+
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     * 
+     * @return The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given
+     *         key have the same key or to detect that a key has changed.</p>
+     *         <p>
+     *         Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     */
+
+    public String getGenerationKeyCheckValue() {
+        return this.generationKeyCheckValue;
+    }
+
+    /**
+     * <p>
+     * The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have
+     * the same key or to detect that a key has changed.
+     * </p>
+     * <p>
+     * Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * </p>
+     * 
+     * @param generationKeyCheckValue
+     *        The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given
+     *        key have the same key or to detect that a key has changed.</p>
+     *        <p>
+     *        Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratePinDataResult withGenerationKeyCheckValue(String generationKeyCheckValue) {
+        setGenerationKeyCheckValue(generationKeyCheckValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     * </p>
+     * 
+     * @param pinData
+     *        The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     */
+
+    public void setPinData(PinData pinData) {
+        this.pinData = pinData;
+    }
+
+    /**
+     * <p>
+     * The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     * </p>
+     * 
+     * @return The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     */
+
+    public PinData getPinData() {
+        return this.pinData;
+    }
+
+    /**
+     * <p>
+     * The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     * </p>
+     * 
+     * @param pinData
+     *        The attributes and values Amazon Web Services Payment Cryptography uses for pin data generation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeneratePinDataResult withPinData(PinData pinData) {
+        setPinData(pinData);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getEncryptedPinBlock() != null)
+            sb.append("EncryptedPinBlock: ").append(getEncryptedPinBlock()).append(",");
+        if (getEncryptionKeyArn() != null)
+            sb.append("EncryptionKeyArn: ").append(getEncryptionKeyArn()).append(",");
+        if (getEncryptionKeyCheckValue() != null)
+            sb.append("EncryptionKeyCheckValue: ").append(getEncryptionKeyCheckValue()).append(",");
+        if (getGenerationKeyArn() != null)
+            sb.append("GenerationKeyArn: ").append(getGenerationKeyArn()).append(",");
+        if (getGenerationKeyCheckValue() != null)
+            sb.append("GenerationKeyCheckValue: ").append(getGenerationKeyCheckValue()).append(",");
+        if (getPinData() != null)
+            sb.append("PinData: ").append(getPinData());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GeneratePinDataResult == false)
+            return false;
+        GeneratePinDataResult other = (GeneratePinDataResult) obj;
+        if (other.getEncryptedPinBlock() == null ^ this.getEncryptedPinBlock() == null)
+            return false;
+        if (other.getEncryptedPinBlock() != null && other.getEncryptedPinBlock().equals(this.getEncryptedPinBlock()) == false)
+            return false;
+        if (other.getEncryptionKeyArn() == null ^ this.getEncryptionKeyArn() == null)
+            return false;
+        if (other.getEncryptionKeyArn() != null && other.getEncryptionKeyArn().equals(this.getEncryptionKeyArn()) == false)
+            return false;
+        if (other.getEncryptionKeyCheckValue() == null ^ this.getEncryptionKeyCheckValue() == null)
+            return false;
+        if (other.getEncryptionKeyCheckValue() != null && other.getEncryptionKeyCheckValue().equals(this.getEncryptionKeyCheckValue()) == false)
+            return false;
+        if (other.getGenerationKeyArn() == null ^ this.getGenerationKeyArn() == null)
+            return false;
+        if (other.getGenerationKeyArn() != null && other.getGenerationKeyArn().equals(this.getGenerationKeyArn()) == false)
+            return false;
+        if (other.getGenerationKeyCheckValue() == null ^ this.getGenerationKeyCheckValue() == null)
+            return false;
+        if (other.getGenerationKeyCheckValue() != null && other.getGenerationKeyCheckValue().equals(this.getGenerationKeyCheckValue()) == false)
+            return false;
+        if (other.getPinData() == null ^ this.getPinData() == null)
+            return false;
+        if (other.getPinData() != null && other.getPinData().equals(this.getPinData()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getEncryptedPinBlock() == null) ? 0 : getEncryptedPinBlock().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKeyArn() == null) ? 0 : getEncryptionKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKeyCheckValue() == null) ? 0 : getEncryptionKeyCheckValue().hashCode());
+        hashCode = prime * hashCode + ((getGenerationKeyArn() == null) ? 0 : getGenerationKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getGenerationKeyCheckValue() == null) ? 0 : getGenerationKeyCheckValue().hashCode());
+        hashCode = prime * hashCode + ((getPinData() == null) ? 0 : getPinData().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GeneratePinDataResult clone() {
+        try {
+            return (GeneratePinDataResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

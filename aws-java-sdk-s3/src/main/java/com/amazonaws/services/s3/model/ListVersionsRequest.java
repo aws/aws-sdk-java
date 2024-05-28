@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,9 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
@@ -174,6 +177,18 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
     private String encodingType;
 
     private String expectedBucketOwner;
+
+    /**
+     * If enabled, the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
+
+    /**
+     * Optional parameter indicating to include some attributes of an object in
+     * the response.
+     */
+    private List<String> optionalObjectAttributes;
 
 
     /**
@@ -650,5 +665,89 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
     public ListVersionsRequest withEncodingType(String encodingType) {
         setEncodingType(encodingType);
         return this;
+    }
+
+    /**
+     * Returns whether the requester knows that they will be charged for the request.
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Confirms whether the requester knows that they will be charged for the request. Bucket owners need not specify this
+     * parameter in their requests.
+     *
+     * @param isRequesterPays if Requester Pays option is enabled for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Confirms whether the requester knows that they will be charged for the request. Bucket owners need not specify this
+     * parameter in their requests.
+     *
+     * @param isRequesterPays if Requester Pays option is enabled for the operation.
+     *
+     * @return The updated ListVersionsRequest object.
+     */
+    public ListVersionsRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
+        return this;
+    }
+
+    /**
+     * Gets the optional object attribute parameter indicating that customer also need
+     * some extra information about an object in the response like Restore Status.
+     *
+     * @return The optional parameter indicating that customer also need
+     *      some extra information about an object on the response
+     *
+     * @see ListVersionsRequest#setOptionalObjectAttributes(List)
+     * @see ListVersionsRequest#withOptionalObjectAttributes(List)
+     */
+    public List<String> getOptionalObjectAttributes() {
+        if(optionalObjectAttributes != null) {
+            return Collections.unmodifiableList(optionalObjectAttributes);
+        }
+        return null;
+    }
+
+    /**
+     * Sets the optional object attribute parameter indicating that customer also need
+     * some extra information about an object in the response like Restore Status.
+     *
+     * @param optionalObjectAttributes
+     *                  The optional parameter indicating to include
+     *                  some extra object information in the response.
+     *                  Valid values: null or "RestoreStatus".
+     *
+     * @see ListVersionsRequest#getOptionalObjectAttributes()
+     * @see ListVersionsRequest#setOptionalObjectAttributes(List)
+     *
+     */
+    public ListVersionsRequest withOptionalObjectAttributes(List<String> optionalObjectAttributes) {
+        this.optionalObjectAttributes = optionalObjectAttributes != null ? new ArrayList(optionalObjectAttributes) : null;
+        return this;
+    }
+
+    /**
+     * Sets the optional object attribute parameter indicating that customer also need
+     * some extra information about an object in the response like Restore Status.
+     *
+     * @param optionalObjectAttributes
+     *                  The optional parameter indicating to include
+     *                  some extra object information in the response.
+     *                  Valid values: null or "RestoreStatus".
+     *
+     * @see ListVersionsRequest#getOptionalObjectAttributes()
+     * @see ListVersionsRequest#withOptionalObjectAttributes(List)
+     */
+    public void setOptionalObjectAttributes(List<String> optionalObjectAttributes) {
+        withOptionalObjectAttributes(optionalObjectAttributes);
     }
 }

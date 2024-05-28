@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,56 +27,16 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * Retrieves the next page of the results.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
-     * </p>
-     * 
-     * @return The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListEnvironmentsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
+    private Integer maxResults;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+     * </p>
+     * 
+     * @return The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEnvironmentsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -130,10 +130,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof ListEnvironmentsRequest == false)
             return false;
         ListEnvironmentsRequest other = (ListEnvironmentsRequest) obj;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

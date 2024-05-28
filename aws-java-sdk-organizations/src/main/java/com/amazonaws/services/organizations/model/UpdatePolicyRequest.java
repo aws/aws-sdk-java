@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,8 +55,13 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP
+     * syntax</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * </p>
      */
     private String content;
@@ -227,15 +232,24 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP
+     * syntax</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @param content
      *        If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *        the syntax for the policy's type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html"
+     *        >SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
+     *        <p>
+     *        The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *        >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      */
 
     public void setContent(String content) {
@@ -246,14 +260,23 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP
+     * syntax</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @return If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *         the syntax for the policy's type. For more information, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *         Control Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html"
+     *         >SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
+     *         <p>
+     *         The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *         >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      */
 
     public String getContent() {
@@ -264,15 +287,24 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
-     * Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html">SCP
+     * syntax</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @param content
      *        If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *        the syntax for the policy's type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
-     *        Control Policy Syntax</a> in the <i>Organizations User Guide.</i>
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_syntax.html"
+     *        >SCP syntax</a> in the <i>Organizations User Guide</i>.</p>
+     *        <p>
+     *        The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *        >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

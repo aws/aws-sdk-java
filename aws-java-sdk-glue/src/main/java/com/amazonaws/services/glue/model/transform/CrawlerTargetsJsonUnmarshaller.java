@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,6 +81,18 @@ public class CrawlerTargetsJsonUnmarshaller implements Unmarshaller<CrawlerTarge
                 if (context.testExpression("DeltaTargets", targetDepth)) {
                     context.nextToken();
                     crawlerTargets.setDeltaTargets(new ListUnmarshaller<DeltaTarget>(DeltaTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("IcebergTargets", targetDepth)) {
+                    context.nextToken();
+                    crawlerTargets.setIcebergTargets(new ListUnmarshaller<IcebergTarget>(IcebergTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("HudiTargets", targetDepth)) {
+                    context.nextToken();
+                    crawlerTargets.setHudiTargets(new ListUnmarshaller<HudiTarget>(HudiTargetJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

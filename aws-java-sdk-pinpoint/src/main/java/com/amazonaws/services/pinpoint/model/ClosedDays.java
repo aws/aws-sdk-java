@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The time when journey will stop sending messages.
+ * The time when a journey will not send messages. QuietTime should be configured first and SendingSchedule should be
+ * set to true.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ClosedDays" target="_top">AWS API
@@ -30,41 +31,41 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Rules for the Email channel.
      * </p>
      */
     private java.util.List<ClosedDaysRule> eMAIL;
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Rules for the SMS channel.
      * </p>
      */
     private java.util.List<ClosedDaysRule> sMS;
     /**
      * <p>
-     * Rules for Push Channel.
+     * Rules for the Push channel.
      * </p>
      */
     private java.util.List<ClosedDaysRule> pUSH;
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Rules for the Voice channel.
      * </p>
      */
     private java.util.List<ClosedDaysRule> vOICE;
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Rules for the Custom channel.
      * </p>
      */
     private java.util.List<ClosedDaysRule> cUSTOM;
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Rules for the Email channel.
      * </p>
      * 
-     * @return Rules for Email Channel.
+     * @return Rules for the Email channel.
      */
 
     public java.util.List<ClosedDaysRule> getEMAIL() {
@@ -73,11 +74,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Rules for the Email channel.
      * </p>
      * 
      * @param eMAIL
-     *        Rules for Email Channel.
+     *        Rules for the Email channel.
      */
 
     public void setEMAIL(java.util.Collection<ClosedDaysRule> eMAIL) {
@@ -91,7 +92,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Rules for the Email channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,7 +101,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param eMAIL
-     *        Rules for Email Channel.
+     *        Rules for the Email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +117,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Rules for the Email channel.
      * </p>
      * 
      * @param eMAIL
-     *        Rules for Email Channel.
+     *        Rules for the Email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,10 +132,10 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Rules for the SMS channel.
      * </p>
      * 
-     * @return Rules for SMS Channel.
+     * @return Rules for the SMS channel.
      */
 
     public java.util.List<ClosedDaysRule> getSMS() {
@@ -143,11 +144,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Rules for the SMS channel.
      * </p>
      * 
      * @param sMS
-     *        Rules for SMS Channel.
+     *        Rules for the SMS channel.
      */
 
     public void setSMS(java.util.Collection<ClosedDaysRule> sMS) {
@@ -161,7 +162,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Rules for the SMS channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -170,7 +171,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param sMS
-     *        Rules for SMS Channel.
+     *        Rules for the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +187,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Rules for the SMS channel.
      * </p>
      * 
      * @param sMS
-     *        Rules for SMS Channel.
+     *        Rules for the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,10 +202,10 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Rules for the Push channel.
      * </p>
      * 
-     * @return Rules for Push Channel.
+     * @return Rules for the Push channel.
      */
 
     public java.util.List<ClosedDaysRule> getPUSH() {
@@ -213,11 +214,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Rules for the Push channel.
      * </p>
      * 
      * @param pUSH
-     *        Rules for Push Channel.
+     *        Rules for the Push channel.
      */
 
     public void setPUSH(java.util.Collection<ClosedDaysRule> pUSH) {
@@ -231,7 +232,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Rules for the Push channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -240,7 +241,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param pUSH
-     *        Rules for Push Channel.
+     *        Rules for the Push channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +257,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Rules for the Push channel.
      * </p>
      * 
      * @param pUSH
-     *        Rules for Push Channel.
+     *        Rules for the Push channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,10 +272,10 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Rules for the Voice channel.
      * </p>
      * 
-     * @return Rules for Voice Channel.
+     * @return Rules for the Voice channel.
      */
 
     public java.util.List<ClosedDaysRule> getVOICE() {
@@ -283,11 +284,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Rules for the Voice channel.
      * </p>
      * 
      * @param vOICE
-     *        Rules for Voice Channel.
+     *        Rules for the Voice channel.
      */
 
     public void setVOICE(java.util.Collection<ClosedDaysRule> vOICE) {
@@ -301,7 +302,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Rules for the Voice channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -310,7 +311,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param vOICE
-     *        Rules for Voice Channel.
+     *        Rules for the Voice channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,11 +327,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Rules for the Voice channel.
      * </p>
      * 
      * @param vOICE
-     *        Rules for Voice Channel.
+     *        Rules for the Voice channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,10 +342,10 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Rules for the Custom channel.
      * </p>
      * 
-     * @return Rules for Custom Channel.
+     * @return Rules for the Custom channel.
      */
 
     public java.util.List<ClosedDaysRule> getCUSTOM() {
@@ -353,11 +354,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Rules for the Custom channel.
      * </p>
      * 
      * @param cUSTOM
-     *        Rules for Custom Channel.
+     *        Rules for the Custom channel.
      */
 
     public void setCUSTOM(java.util.Collection<ClosedDaysRule> cUSTOM) {
@@ -371,7 +372,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Rules for the Custom channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -380,7 +381,7 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cUSTOM
-     *        Rules for Custom Channel.
+     *        Rules for the Custom channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,11 +397,11 @@ public class ClosedDays implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Rules for the Custom channel.
      * </p>
      * 
      * @param cUSTOM
-     *        Rules for Custom Channel.
+     *        Rules for the Custom channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,11 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     * </p>
+     * <p>
+     * For lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     * >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -166,6 +171,11 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
      * </p>
+     * <p>
+     * For lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     * >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * </li>
      * </ul>
      * 
@@ -204,6 +214,12 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      *         </p>
      *         <p>
      *         Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *         </p>
+     *         <p>
+     *         For lists of all <code>State</code> values, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     *         >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User
+     *         Guide</i>.
      *         </p>
      *         </li>
      */
@@ -254,6 +270,11 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
      * </p>
+     * <p>
+     * For lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     * >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * </li>
      * </ul>
      * 
@@ -293,6 +314,12 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *        </p>
+     *        <p>
+     *        For lists of all <code>State</code> values, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     *        >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>.
      *        </p>
      *        </li>
      */
@@ -345,6 +372,11 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
      * </p>
+     * <p>
+     * For lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     * >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -389,6 +421,12 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *        </p>
+     *        <p>
+     *        For lists of all <code>State</code> values, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     *        >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -443,6 +481,11 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
      * </p>
+     * <p>
+     * For lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     * >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * </li>
      * </ul>
      * 
@@ -482,6 +525,12 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code>
+     *        </p>
+     *        <p>
+     *        For lists of all <code>State</code> values, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html"
+     *        >Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

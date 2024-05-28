@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana
- * <code>Admin</code> and <code>Editor</code> roles in the workspace.
+ * <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of
+ * <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/RoleValues" target="_top">AWS API
@@ -195,9 +196,9 @@ public class RoleValues implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdmin() != null)
-            sb.append("Admin: ").append(getAdmin()).append(",");
+            sb.append("Admin: ").append("***Sensitive Data Redacted***").append(",");
         if (getEditor() != null)
-            sb.append("Editor: ").append(getEditor());
+            sb.append("Editor: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the GuardDuty finding that triggered the BirdDog scan.
+     * The ID of the GuardDuty finding that triggered the malware scan.
      * </p>
      */
     private String guardDutyFindingId;
@@ -43,11 +43,11 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the GuardDuty finding that triggered the BirdDog scan.
+     * The ID of the GuardDuty finding that triggered the malware scan.
      * </p>
      * 
      * @param guardDutyFindingId
-     *        The ID of the GuardDuty finding that triggered the BirdDog scan.
+     *        The ID of the GuardDuty finding that triggered the malware scan.
      */
 
     public void setGuardDutyFindingId(String guardDutyFindingId) {
@@ -56,10 +56,10 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the GuardDuty finding that triggered the BirdDog scan.
+     * The ID of the GuardDuty finding that triggered the malware scan.
      * </p>
      * 
-     * @return The ID of the GuardDuty finding that triggered the BirdDog scan.
+     * @return The ID of the GuardDuty finding that triggered the malware scan.
      */
 
     public String getGuardDutyFindingId() {
@@ -68,11 +68,11 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the GuardDuty finding that triggered the BirdDog scan.
+     * The ID of the GuardDuty finding that triggered the malware scan.
      * </p>
      * 
      * @param guardDutyFindingId
-     *        The ID of the GuardDuty finding that triggered the BirdDog scan.
+     *        The ID of the GuardDuty finding that triggered the malware scan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

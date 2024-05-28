@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -68,7 +73,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
     private String description;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -171,6 +177,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -187,6 +198,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -217,6 +233,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -232,6 +253,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      *         <li>
      *         <p>
      *         <code>Esri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Grab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -262,6 +288,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -278,6 +309,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      *        <li>
      *        <p>
      *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -380,7 +416,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -391,7 +428,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     *        Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -406,7 +444,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -416,7 +455,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+     * @return The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     *         Services. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -431,7 +471,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -442,7 +483,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     *        Services. </p>
      *        <ul>
      *        <li>
      *        <p>

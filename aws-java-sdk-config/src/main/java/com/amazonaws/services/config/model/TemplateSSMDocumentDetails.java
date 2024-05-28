@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,7 @@ public class TemplateSSMDocumentDetails implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the
-     * document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want
-     * to use an SSM document from another Region or account, you must provide the ARN.
+     * document name, Config checks only your account and Amazon Web Services Region for the SSM document.
      * </p>
      */
     private String documentName;
@@ -59,14 +58,12 @@ public class TemplateSSMDocumentDetails implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the
-     * document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want
-     * to use an SSM document from another Region or account, you must provide the ARN.
+     * document name, Config checks only your account and Amazon Web Services Region for the SSM document.
      * </p>
      * 
      * @param documentName
      *        The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use
-     *        the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If
-     *        you want to use an SSM document from another Region or account, you must provide the ARN.
+     *        the document name, Config checks only your account and Amazon Web Services Region for the SSM document.
      */
 
     public void setDocumentName(String documentName) {
@@ -76,13 +73,12 @@ public class TemplateSSMDocumentDetails implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the
-     * document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want
-     * to use an SSM document from another Region or account, you must provide the ARN.
+     * document name, Config checks only your account and Amazon Web Services Region for the SSM document.
      * </p>
      * 
      * @return The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you
      *         use the document name, Config checks only your account and Amazon Web Services Region for the SSM
-     *         document. If you want to use an SSM document from another Region or account, you must provide the ARN.
+     *         document.
      */
 
     public String getDocumentName() {
@@ -92,14 +88,12 @@ public class TemplateSSMDocumentDetails implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use the
-     * document name, Config checks only your account and Amazon Web Services Region for the SSM document. If you want
-     * to use an SSM document from another Region or account, you must provide the ARN.
+     * document name, Config checks only your account and Amazon Web Services Region for the SSM document.
      * </p>
      * 
      * @param documentName
      *        The name or Amazon Resource Name (ARN) of the SSM document to use to create a conformance pack. If you use
-     *        the document name, Config checks only your account and Amazon Web Services Region for the SSM document. If
-     *        you want to use an SSM document from another Region or account, you must provide the ARN.
+     *        the document name, Config checks only your account and Amazon Web Services Region for the SSM document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

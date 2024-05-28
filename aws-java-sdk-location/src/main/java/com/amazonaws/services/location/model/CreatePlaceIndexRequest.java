@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,14 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
@@ -60,7 +68,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -186,6 +194,14 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
@@ -197,7 +213,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -229,6 +245,15 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information
+     *        about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     *        coverage, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     *        countries and areas covered</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Here</code> – For additional information about <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
      *        coverage in your region of interest, see <a
@@ -240,7 +265,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      *        href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html"
      *        >store results</a> for locations in Japan. For more information, see the <a
-     *        href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     *        href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location
+     *        Service.
      *        </p>
      *        </important></li>
      *        </ul>
@@ -278,6 +304,14 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
@@ -289,7 +323,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -320,6 +354,16 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
+     *         <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional
+     *         information about <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     *         countries and areas covered</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>Here</code> – For additional information about <a
      *         href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
      *         coverage in your region of interest, see <a
@@ -331,7 +375,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *         If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      *         href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html"
      *         >store results</a> for locations in Japan. For more information, see the <a
-     *         href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     *         href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location
+     *         Service.
      *         </p>
      *         </important></li>
      *         </ul>
@@ -369,6 +414,14 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries
+     * and areas covered</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code> – For additional information about <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in
      * your region of interest, see <a
@@ -380,7 +433,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -412,6 +465,15 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information
+     *        about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
+     *        coverage, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
+     *        countries and areas covered</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Here</code> – For additional information about <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
      *        coverage in your region of interest, see <a
@@ -423,7 +485,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      *        href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html"
      *        >store results</a> for locations in Japan. For more information, see the <a
-     *        href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     *        href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location
+     *        Service.
      *        </p>
      *        </important></li>
      *        </ul>

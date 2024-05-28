@@ -1,0 +1,1380 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.securityhub.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * One or more network interfaces to attach to an Amazon EC2 instance. If you specify a network interface, you must
+ * specify security groups and subnets as part of the network interface.
+ * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option
+     * when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network
+     * interface. For more information, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     * </p>
+     */
+    private Boolean associateCarrierIpAddress;
+    /**
+     * <p>
+     * Associates a public IPv4 address with eth0 for a new network interface.
+     * </p>
+     */
+    private Boolean associatePublicIpAddress;
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     */
+    private Boolean deleteOnTermination;
+    /**
+     * <p>
+     * A description for the network interface.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The device index for the network interface attachment.
+     * </p>
+     */
+    private Integer deviceIndex;
+    /**
+     * <p>
+     * The IDs of one or more security groups.
+     * </p>
+     */
+    private java.util.List<String> groups;
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     */
+    private String interfaceType;
+    /**
+     * <p>
+     * The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv4Prefixes</code> option.
+     * </p>
+     */
+    private Integer ipv4PrefixCount;
+    /**
+     * <p>
+     * One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv4PrefixCount</code> option.
+     * </p>
+     */
+    private java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails> ipv4Prefixes;
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     * </p>
+     */
+    private Integer ipv6AddressCount;
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you use <code>Ipv6AddressCount</code>.
+     * </p>
+     */
+    private java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails> ipv6Addresses;
+    /**
+     * <p>
+     * The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     */
+    private Integer ipv6PrefixCount;
+    /**
+     * <p>
+     * One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv6PrefixCount</code> option.
+     * </p>
+     */
+    private java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails> ipv6Prefixes;
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>.
+     * </p>
+     */
+    private Integer networkCardIndex;
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     */
+    private String networkInterfaceId;
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface.
+     * </p>
+     */
+    private String privateIpAddress;
+    /**
+     * <p>
+     * One or more private IPv4 addresses.
+     * </p>
+     */
+    private java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails> privateIpAddresses;
+    /**
+     * <p>
+     * The number of secondary private IPv4 addresses to assign to a network interface.
+     * </p>
+     */
+    private Integer secondaryPrivateIpAddressCount;
+    /**
+     * <p>
+     * The ID of the subnet for the network interface.
+     * </p>
+     */
+    private String subnetId;
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option
+     * when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network
+     * interface. For more information, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this
+     *        option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     *        the network interface. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *        >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     */
+
+    public void setAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        this.associateCarrierIpAddress = associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option
+     * when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network
+     * interface. For more information, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this
+     *         option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     *         the network interface. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *         >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     */
+
+    public Boolean getAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option
+     * when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network
+     * interface. For more information, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this
+     *        option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     *        the network interface. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *        >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        setAssociateCarrierIpAddress(associateCarrierIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this option
+     * when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network
+     * interface. For more information, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to associate a Carrier IP address with eth0 for a new network interface. You use this
+     *         option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     *         the network interface. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *         >Carrier IP address</a> in the <i>Wavelength Developer Guide</i>.
+     */
+
+    public Boolean isAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associates a public IPv4 address with eth0 for a new network interface.
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Associates a public IPv4 address with eth0 for a new network interface.
+     */
+
+    public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        this.associatePublicIpAddress = associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associates a public IPv4 address with eth0 for a new network interface.
+     * </p>
+     * 
+     * @return Associates a public IPv4 address with eth0 for a new network interface.
+     */
+
+    public Boolean getAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associates a public IPv4 address with eth0 for a new network interface.
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Associates a public IPv4 address with eth0 for a new network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        setAssociatePublicIpAddress(associatePublicIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Associates a public IPv4 address with eth0 for a new network interface.
+     * </p>
+     * 
+     * @return Associates a public IPv4 address with eth0 for a new network interface.
+     */
+
+    public Boolean isAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @param deleteOnTermination
+     *        Indicates whether the network interface is deleted when the instance is terminated.
+     */
+
+    public void setDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @return Indicates whether the network interface is deleted when the instance is terminated.
+     */
+
+    public Boolean getDeleteOnTermination() {
+        return this.deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @param deleteOnTermination
+     *        Indicates whether the network interface is deleted when the instance is terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withDeleteOnTermination(Boolean deleteOnTermination) {
+        setDeleteOnTermination(deleteOnTermination);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the network interface is deleted when the instance is terminated.
+     * </p>
+     * 
+     * @return Indicates whether the network interface is deleted when the instance is terminated.
+     */
+
+    public Boolean isDeleteOnTermination() {
+        return this.deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * A description for the network interface.
+     * </p>
+     * 
+     * @param description
+     *        A description for the network interface.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the network interface.
+     * </p>
+     * 
+     * @return A description for the network interface.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the network interface.
+     * </p>
+     * 
+     * @param description
+     *        A description for the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device index for the network interface attachment.
+     * </p>
+     * 
+     * @param deviceIndex
+     *        The device index for the network interface attachment.
+     */
+
+    public void setDeviceIndex(Integer deviceIndex) {
+        this.deviceIndex = deviceIndex;
+    }
+
+    /**
+     * <p>
+     * The device index for the network interface attachment.
+     * </p>
+     * 
+     * @return The device index for the network interface attachment.
+     */
+
+    public Integer getDeviceIndex() {
+        return this.deviceIndex;
+    }
+
+    /**
+     * <p>
+     * The device index for the network interface attachment.
+     * </p>
+     * 
+     * @param deviceIndex
+     *        The device index for the network interface attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withDeviceIndex(Integer deviceIndex) {
+        setDeviceIndex(deviceIndex);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups.
+     * </p>
+     * 
+     * @return The IDs of one or more security groups.
+     */
+
+    public java.util.List<String> getGroups() {
+        return groups;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups.
+     * </p>
+     * 
+     * @param groups
+     *        The IDs of one or more security groups.
+     */
+
+    public void setGroups(java.util.Collection<String> groups) {
+        if (groups == null) {
+            this.groups = null;
+            return;
+        }
+
+        this.groups = new java.util.ArrayList<String>(groups);
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param groups
+     *        The IDs of one or more security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withGroups(String... groups) {
+        if (this.groups == null) {
+            setGroups(new java.util.ArrayList<String>(groups.length));
+        }
+        for (String ele : groups) {
+            this.groups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups.
+     * </p>
+     * 
+     * @param groups
+     *        The IDs of one or more security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withGroups(java.util.Collection<String> groups) {
+        setGroups(groups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     * 
+     * @param interfaceType
+     *        The type of network interface.
+     */
+
+    public void setInterfaceType(String interfaceType) {
+        this.interfaceType = interfaceType;
+    }
+
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     * 
+     * @return The type of network interface.
+     */
+
+    public String getInterfaceType() {
+        return this.interfaceType;
+    }
+
+    /**
+     * <p>
+     * The type of network interface.
+     * </p>
+     * 
+     * @param interfaceType
+     *        The type of network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withInterfaceType(String interfaceType) {
+        setInterfaceType(interfaceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv4Prefixes</code> option.
+     * </p>
+     * 
+     * @param ipv4PrefixCount
+     *        The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this
+     *        option if you use the <code>Ipv4Prefixes</code> option.
+     */
+
+    public void setIpv4PrefixCount(Integer ipv4PrefixCount) {
+        this.ipv4PrefixCount = ipv4PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv4Prefixes</code> option.
+     * </p>
+     * 
+     * @return The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this
+     *         option if you use the <code>Ipv4Prefixes</code> option.
+     */
+
+    public Integer getIpv4PrefixCount() {
+        return this.ipv4PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv4Prefixes</code> option.
+     * </p>
+     * 
+     * @param ipv4PrefixCount
+     *        The number of IPv4 prefixes to be automatically assigned to the network interface. You cannot use this
+     *        option if you use the <code>Ipv4Prefixes</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv4PrefixCount(Integer ipv4PrefixCount) {
+        setIpv4PrefixCount(ipv4PrefixCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @return One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *         the <code>Ipv4PrefixCount</code> option.
+     */
+
+    public java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails> getIpv4Prefixes() {
+        return ipv4Prefixes;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *        the <code>Ipv4PrefixCount</code> option.
+     */
+
+    public void setIpv4Prefixes(java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails> ipv4Prefixes) {
+        if (ipv4Prefixes == null) {
+            this.ipv4Prefixes = null;
+            return;
+        }
+
+        this.ipv4Prefixes = new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>(ipv4Prefixes);
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv4Prefixes(java.util.Collection)} or {@link #withIpv4Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *        the <code>Ipv4PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv4Prefixes(AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails... ipv4Prefixes) {
+        if (this.ipv4Prefixes == null) {
+            setIpv4Prefixes(new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>(ipv4Prefixes.length));
+        }
+        for (AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails ele : ipv4Prefixes) {
+            this.ipv4Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv4PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv4Prefixes
+     *        One or more IPv4 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *        the <code>Ipv4PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv4Prefixes(
+            java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails> ipv4Prefixes) {
+        setIpv4Prefixes(ipv4Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     * </p>
+     * 
+     * @param ipv6AddressCount
+     *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     *        addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     */
+
+    public void setIpv6AddressCount(Integer ipv6AddressCount) {
+        this.ipv6AddressCount = ipv6AddressCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     * </p>
+     * 
+     * @return The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     *         addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     */
+
+    public Integer getIpv6AddressCount() {
+        return this.ipv6AddressCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     * </p>
+     * 
+     * @param ipv6AddressCount
+     *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     *        addresses from the subnet range. You can't use this option if you use <code>Ipv6Addresses</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv6AddressCount(Integer ipv6AddressCount) {
+        setIpv6AddressCount(ipv6AddressCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you use <code>Ipv6AddressCount</code>.
+     * </p>
+     * 
+     * @return One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *         option if you use <code>Ipv6AddressCount</code>.
+     */
+
+    public java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails> getIpv6Addresses() {
+        return ipv6Addresses;
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you use <code>Ipv6AddressCount</code>.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *        option if you use <code>Ipv6AddressCount</code>.
+     */
+
+    public void setIpv6Addresses(java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails> ipv6Addresses) {
+        if (ipv6Addresses == null) {
+            this.ipv6Addresses = null;
+            return;
+        }
+
+        this.ipv6Addresses = new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>(ipv6Addresses);
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you use <code>Ipv6AddressCount</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *        option if you use <code>Ipv6AddressCount</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv6Addresses(
+            AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails... ipv6Addresses) {
+        if (this.ipv6Addresses == null) {
+            setIpv6Addresses(new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails>(ipv6Addresses.length));
+        }
+        for (AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails ele : ipv6Addresses) {
+            this.ipv6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you use <code>Ipv6AddressCount</code>.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *        option if you use <code>Ipv6AddressCount</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv6Addresses(
+            java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails> ipv6Addresses) {
+        setIpv6Addresses(ipv6Addresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     * 
+     * @param ipv6PrefixCount
+     *        The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this
+     *        option if you use the <code>Ipv6Prefix</code> option.
+     */
+
+    public void setIpv6PrefixCount(Integer ipv6PrefixCount) {
+        this.ipv6PrefixCount = ipv6PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     * 
+     * @return The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this
+     *         option if you use the <code>Ipv6Prefix</code> option.
+     */
+
+    public Integer getIpv6PrefixCount() {
+        return this.ipv6PrefixCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this option if
+     * you use the <code>Ipv6Prefix</code> option.
+     * </p>
+     * 
+     * @param ipv6PrefixCount
+     *        The number of IPv6 prefixes to be automatically assigned to the network interface. You cannot use this
+     *        option if you use the <code>Ipv6Prefix</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv6PrefixCount(Integer ipv6PrefixCount) {
+        setIpv6PrefixCount(ipv6PrefixCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * 
+     * @return One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *         the <code>Ipv6PrefixCount</code> option.
+     */
+
+    public java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails> getIpv6Prefixes() {
+        return ipv6Prefixes;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *        the <code>Ipv6PrefixCount</code> option.
+     */
+
+    public void setIpv6Prefixes(java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails> ipv6Prefixes) {
+        if (ipv6Prefixes == null) {
+            this.ipv6Prefixes = null;
+            return;
+        }
+
+        this.ipv6Prefixes = new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>(ipv6Prefixes);
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Prefixes(java.util.Collection)} or {@link #withIpv6Prefixes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *        the <code>Ipv6PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv6Prefixes(AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails... ipv6Prefixes) {
+        if (this.ipv6Prefixes == null) {
+            setIpv6Prefixes(new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>(ipv6Prefixes.length));
+        }
+        for (AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails ele : ipv6Prefixes) {
+            this.ipv6Prefixes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use the
+     * <code>Ipv6PrefixCount</code> option.
+     * </p>
+     * 
+     * @param ipv6Prefixes
+     *        One or more IPv6 prefixes to be assigned to the network interface. You cannot use this option if you use
+     *        the <code>Ipv6PrefixCount</code> option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withIpv6Prefixes(
+            java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails> ipv6Prefixes) {
+        setIpv6Prefixes(ipv6Prefixes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index <code>0</code>. The default is network card index
+     *        <code>0</code>.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>.
+     * </p>
+     * 
+     * @return The index of the network card. Some instance types support multiple network cards. The primary network
+     *         interface must be assigned to network card index <code>0</code>. The default is network card index
+     *         <code>0</code>.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card. Some instance types support multiple network cards. The primary network interface
+     * must be assigned to network card index <code>0</code>. The default is network card index <code>0</code>.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card. Some instance types support multiple network cards. The primary network
+     *        interface must be assigned to network card index <code>0</code>. The default is network card index
+     *        <code>0</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The primary private IPv4 address of the network interface.
+     */
+
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @return The primary private IPv4 address of the network interface.
+     */
+
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The primary private IPv4 address of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more private IPv4 addresses.
+     * </p>
+     * 
+     * @return One or more private IPv4 addresses.
+     */
+
+    public java.util.List<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails> getPrivateIpAddresses() {
+        return privateIpAddresses;
+    }
+
+    /**
+     * <p>
+     * One or more private IPv4 addresses.
+     * </p>
+     * 
+     * @param privateIpAddresses
+     *        One or more private IPv4 addresses.
+     */
+
+    public void setPrivateIpAddresses(java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+            return;
+        }
+
+        this.privateIpAddresses = new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>(privateIpAddresses);
+    }
+
+    /**
+     * <p>
+     * One or more private IPv4 addresses.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrivateIpAddresses(java.util.Collection)} or {@link #withPrivateIpAddresses(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param privateIpAddresses
+     *        One or more private IPv4 addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withPrivateIpAddresses(
+            AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails... privateIpAddresses) {
+        if (this.privateIpAddresses == null) {
+            setPrivateIpAddresses(new java.util.ArrayList<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>(privateIpAddresses.length));
+        }
+        for (AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails ele : privateIpAddresses) {
+            this.privateIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more private IPv4 addresses.
+     * </p>
+     * 
+     * @param privateIpAddresses
+     *        One or more private IPv4 addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withPrivateIpAddresses(
+            java.util.Collection<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails> privateIpAddresses) {
+        setPrivateIpAddresses(privateIpAddresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of secondary private IPv4 addresses to assign to a network interface.
+     * </p>
+     * 
+     * @param secondaryPrivateIpAddressCount
+     *        The number of secondary private IPv4 addresses to assign to a network interface.
+     */
+
+    public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+        this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+    }
+
+    /**
+     * <p>
+     * The number of secondary private IPv4 addresses to assign to a network interface.
+     * </p>
+     * 
+     * @return The number of secondary private IPv4 addresses to assign to a network interface.
+     */
+
+    public Integer getSecondaryPrivateIpAddressCount() {
+        return this.secondaryPrivateIpAddressCount;
+    }
+
+    /**
+     * <p>
+     * The number of secondary private IPv4 addresses to assign to a network interface.
+     * </p>
+     * 
+     * @param secondaryPrivateIpAddressCount
+     *        The number of secondary private IPv4 addresses to assign to a network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+        setSecondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet for the network interface.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet for the network interface.
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet for the network interface.
+     * </p>
+     * 
+     * @return The ID of the subnet for the network interface.
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet for the network interface.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet for the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAssociateCarrierIpAddress() != null)
+            sb.append("AssociateCarrierIpAddress: ").append(getAssociateCarrierIpAddress()).append(",");
+        if (getAssociatePublicIpAddress() != null)
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
+        if (getDeleteOnTermination() != null)
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDeviceIndex() != null)
+            sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
+        if (getGroups() != null)
+            sb.append("Groups: ").append(getGroups()).append(",");
+        if (getInterfaceType() != null)
+            sb.append("InterfaceType: ").append(getInterfaceType()).append(",");
+        if (getIpv4PrefixCount() != null)
+            sb.append("Ipv4PrefixCount: ").append(getIpv4PrefixCount()).append(",");
+        if (getIpv4Prefixes() != null)
+            sb.append("Ipv4Prefixes: ").append(getIpv4Prefixes()).append(",");
+        if (getIpv6AddressCount() != null)
+            sb.append("Ipv6AddressCount: ").append(getIpv6AddressCount()).append(",");
+        if (getIpv6Addresses() != null)
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
+        if (getIpv6PrefixCount() != null)
+            sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount()).append(",");
+        if (getIpv6Prefixes() != null)
+            sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getPrivateIpAddress() != null)
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
+        if (getPrivateIpAddresses() != null)
+            sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
+        if (getSecondaryPrivateIpAddressCount() != null)
+            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails == false)
+            return false;
+        AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails other = (AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails) obj;
+        if (other.getAssociateCarrierIpAddress() == null ^ this.getAssociateCarrierIpAddress() == null)
+            return false;
+        if (other.getAssociateCarrierIpAddress() != null && other.getAssociateCarrierIpAddress().equals(this.getAssociateCarrierIpAddress()) == false)
+            return false;
+        if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
+            return false;
+        if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
+            return false;
+        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
+            return false;
+        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDeviceIndex() == null ^ this.getDeviceIndex() == null)
+            return false;
+        if (other.getDeviceIndex() != null && other.getDeviceIndex().equals(this.getDeviceIndex()) == false)
+            return false;
+        if (other.getGroups() == null ^ this.getGroups() == null)
+            return false;
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
+            return false;
+        if (other.getInterfaceType() == null ^ this.getInterfaceType() == null)
+            return false;
+        if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false)
+            return false;
+        if (other.getIpv4PrefixCount() == null ^ this.getIpv4PrefixCount() == null)
+            return false;
+        if (other.getIpv4PrefixCount() != null && other.getIpv4PrefixCount().equals(this.getIpv4PrefixCount()) == false)
+            return false;
+        if (other.getIpv4Prefixes() == null ^ this.getIpv4Prefixes() == null)
+            return false;
+        if (other.getIpv4Prefixes() != null && other.getIpv4Prefixes().equals(this.getIpv4Prefixes()) == false)
+            return false;
+        if (other.getIpv6AddressCount() == null ^ this.getIpv6AddressCount() == null)
+            return false;
+        if (other.getIpv6AddressCount() != null && other.getIpv6AddressCount().equals(this.getIpv6AddressCount()) == false)
+            return false;
+        if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
+            return false;
+        if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
+        if (other.getIpv6PrefixCount() == null ^ this.getIpv6PrefixCount() == null)
+            return false;
+        if (other.getIpv6PrefixCount() != null && other.getIpv6PrefixCount().equals(this.getIpv6PrefixCount()) == false)
+            return false;
+        if (other.getIpv6Prefixes() == null ^ this.getIpv6Prefixes() == null)
+            return false;
+        if (other.getIpv6Prefixes() != null && other.getIpv6Prefixes().equals(this.getIpv6Prefixes()) == false)
+            return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+            return false;
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
+            return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
+            return false;
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null)
+            return false;
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false)
+            return false;
+        if (other.getSecondaryPrivateIpAddressCount() == null ^ this.getSecondaryPrivateIpAddressCount() == null)
+            return false;
+        if (other.getSecondaryPrivateIpAddressCount() != null
+                && other.getSecondaryPrivateIpAddressCount().equals(this.getSecondaryPrivateIpAddressCount()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAssociateCarrierIpAddress() == null) ? 0 : getAssociateCarrierIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
+        hashCode = prime * hashCode + ((getIpv4PrefixCount() == null) ? 0 : getIpv4PrefixCount().hashCode());
+        hashCode = prime * hashCode + ((getIpv4Prefixes() == null) ? 0 : getIpv4Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getIpv6AddressCount() == null) ? 0 : getIpv6AddressCount().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getIpv6PrefixCount() == null) ? 0 : getIpv6PrefixCount().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails clone() {
+        try {
+            return (AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.securityhub.model.transform.AwsEc2LaunchTemplateDataNetworkInterfaceSetDetailsMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
+    }
+}

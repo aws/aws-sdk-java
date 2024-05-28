@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,24 +29,24 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ActionParametersMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ANCHOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("anchor").build();
-    private static final MarshallingInfo<Map> FIELDS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("fields").build();
-    private static final MarshallingInfo<StructuredPojo> GLOBAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("global").build();
-    private static final MarshallingInfo<StructuredPojo> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("id").build();
-    private static final MarshallingInfo<String> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("model").build();
-    private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("state").build();
-    private static final MarshallingInfo<StructuredPojo> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("target").build();
     private static final MarshallingInfo<StructuredPojo> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("type").build();
     private static final MarshallingInfo<StructuredPojo> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("url").build();
+    private static final MarshallingInfo<StructuredPojo> ANCHOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("anchor").build();
+    private static final MarshallingInfo<StructuredPojo> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("target").build();
+    private static final MarshallingInfo<StructuredPojo> GLOBAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("global").build();
+    private static final MarshallingInfo<String> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("model").build();
+    private static final MarshallingInfo<StructuredPojo> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("id").build();
+    private static final MarshallingInfo<Map> FIELDS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("fields").build();
+    private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("state").build();
 
     private static final ActionParametersMarshaller instance = new ActionParametersMarshaller();
 
@@ -64,15 +64,15 @@ public class ActionParametersMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(actionParameters.getAnchor(), ANCHOR_BINDING);
-            protocolMarshaller.marshall(actionParameters.getFields(), FIELDS_BINDING);
-            protocolMarshaller.marshall(actionParameters.getGlobal(), GLOBAL_BINDING);
-            protocolMarshaller.marshall(actionParameters.getId(), ID_BINDING);
-            protocolMarshaller.marshall(actionParameters.getModel(), MODEL_BINDING);
-            protocolMarshaller.marshall(actionParameters.getState(), STATE_BINDING);
-            protocolMarshaller.marshall(actionParameters.getTarget(), TARGET_BINDING);
             protocolMarshaller.marshall(actionParameters.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(actionParameters.getUrl(), URL_BINDING);
+            protocolMarshaller.marshall(actionParameters.getAnchor(), ANCHOR_BINDING);
+            protocolMarshaller.marshall(actionParameters.getTarget(), TARGET_BINDING);
+            protocolMarshaller.marshall(actionParameters.getGlobal(), GLOBAL_BINDING);
+            protocolMarshaller.marshall(actionParameters.getModel(), MODEL_BINDING);
+            protocolMarshaller.marshall(actionParameters.getId(), ID_BINDING);
+            protocolMarshaller.marshall(actionParameters.getFields(), FIELDS_BINDING);
+            protocolMarshaller.marshall(actionParameters.getState(), STATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

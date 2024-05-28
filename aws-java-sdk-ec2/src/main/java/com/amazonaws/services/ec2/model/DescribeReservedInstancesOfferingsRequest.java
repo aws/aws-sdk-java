@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,15 +69,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
-     * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
-     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
-     * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> |
+     * <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> |
+     * <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     * <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     * <code>Windows with SQL Server Enterprise</code>).
      * </p>
      * </li>
      * <li>
@@ -273,15 +270,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
-     * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
-     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
-     * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> |
+     * <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> |
+     * <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     * <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     * <code>Windows with SQL Server Enterprise</code>).
      * </p>
      * </li>
      * <li>
@@ -333,16 +327,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         <code>product-description</code> - The Reserved Instance product platform description. Instances that
-     *         include <code>(Amazon VPC)</code> in the product platform description will only be displayed to
-     *         EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
-     *         <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     *         <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *         <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
-     *         <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     *         <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     *         <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     *         | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     *         <code>product-description</code> - The Reserved Instance product platform description (
+     *         <code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> |
+     *         <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> |
+     *         <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     *         <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     *         <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     *         <code>Windows with SQL Server Enterprise</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -405,15 +396,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
-     * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
-     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
-     * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> |
+     * <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> |
+     * <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     * <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     * <code>Windows with SQL Server Enterprise</code>).
      * </p>
      * </li>
      * <li>
@@ -466,16 +454,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>product-description</code> - The Reserved Instance product platform description. Instances that
-     *        include <code>(Amazon VPC)</code> in the product platform description will only be displayed to
-     *        EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
-     *        <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     *        <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *        <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
-     *        <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     *        <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     *        <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     *        <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     *        <code>product-description</code> - The Reserved Instance product platform description (
+     *        <code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> |
+     *        <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> |
+     *        <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     *        <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     *        <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     *        <code>Windows with SQL Server Enterprise</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -540,15 +525,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
-     * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
-     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
-     * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> |
+     * <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> |
+     * <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     * <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     * <code>Windows with SQL Server Enterprise</code>).
      * </p>
      * </li>
      * <li>
@@ -606,16 +588,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>product-description</code> - The Reserved Instance product platform description. Instances that
-     *        include <code>(Amazon VPC)</code> in the product platform description will only be displayed to
-     *        EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
-     *        <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     *        <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *        <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
-     *        <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     *        <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     *        <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     *        <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     *        <code>product-description</code> - The Reserved Instance product platform description (
+     *        <code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> |
+     *        <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> |
+     *        <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     *        <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     *        <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     *        <code>Windows with SQL Server Enterprise</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -682,15 +661,12 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>product-description</code> - The Reserved Instance product platform description. Instances that include
-     * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
-     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
-     * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> |
+     * <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> |
+     * <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     * <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     * <code>Windows with SQL Server Enterprise</code>).
      * </p>
      * </li>
      * <li>
@@ -743,16 +719,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>product-description</code> - The Reserved Instance product platform description. Instances that
-     *        include <code>(Amazon VPC)</code> in the product platform description will only be displayed to
-     *        EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
-     *        <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     *        <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *        <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
-     *        <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
-     *        <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
-     *        <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
-     *        <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     *        <code>product-description</code> - The Reserved Instance product platform description (
+     *        <code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> |
+     *        <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> |
+     *        <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> |
+     *        <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> |
+     *        <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> |
+     *        <code>Windows with SQL Server Enterprise</code>).
      *        </p>
      *        </li>
      *        <li>

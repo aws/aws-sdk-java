@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding users or bots.
      * </p>
      */
     private String channelArn;
@@ -42,13 +42,14 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
     private String type;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     * The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     * <code>AppInstanceBots</code> can be added as a channel member.
      * </p>
      */
     private java.util.List<String> memberArns;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      */
     private String chimeBearer;
@@ -66,11 +67,11 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding users or bots.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel to which you're adding users.
+     *        The ARN of the channel to which you're adding users or bots.
      */
 
     public void setChannelArn(String channelArn) {
@@ -79,10 +80,10 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding users or bots.
      * </p>
      * 
-     * @return The ARN of the channel to which you're adding users.
+     * @return The ARN of the channel to which you're adding users or bots.
      */
 
     public String getChannelArn() {
@@ -91,11 +92,11 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding users or bots.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel to which you're adding users.
+     *        The ARN of the channel to which you're adding users or bots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,10 +190,12 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     * The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     * <code>AppInstanceBots</code> can be added as a channel member.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     * @return The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     *         <code>AppInstanceBots</code> can be added as a channel member.
      */
 
     public java.util.List<String> getMemberArns() {
@@ -201,11 +204,13 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     * The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     * <code>AppInstanceBots</code> can be added as a channel member.
      * </p>
      * 
      * @param memberArns
-     *        The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     *        The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     *        <code>AppInstanceBots</code> can be added as a channel member.
      */
 
     public void setMemberArns(java.util.Collection<String> memberArns) {
@@ -219,7 +224,8 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     * The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     * <code>AppInstanceBots</code> can be added as a channel member.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -228,7 +234,8 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param memberArns
-     *        The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     *        The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     *        <code>AppInstanceBots</code> can be added as a channel member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,11 +251,13 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     * The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     * <code>AppInstanceBots</code> can be added as a channel member.
      * </p>
      * 
      * @param memberArns
-     *        The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+     *        The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code> and
+     *        <code>AppInstanceBots</code> can be added as a channel member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,11 +268,11 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -272,10 +281,10 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public String getChimeBearer() {
@@ -284,11 +293,11 @@ public class BatchCreateChannelMembershipRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class EndpointInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimeOffset").build();
     private static final MarshallingInfo<String> ENDTIMEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTimeOffset").build();
+    private static final MarshallingInfo<String> EXCLUDEFEATURESATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeFeaturesAttribute").build();
 
     private static final EndpointInputMarshaller instance = new EndpointInputMarshaller();
 
@@ -74,6 +76,7 @@ public class EndpointInputMarshaller {
             protocolMarshaller.marshall(endpointInput.getProbabilityThresholdAttribute(), PROBABILITYTHRESHOLDATTRIBUTE_BINDING);
             protocolMarshaller.marshall(endpointInput.getStartTimeOffset(), STARTTIMEOFFSET_BINDING);
             protocolMarshaller.marshall(endpointInput.getEndTimeOffset(), ENDTIMEOFFSET_BINDING);
+            protocolMarshaller.marshall(endpointInput.getExcludeFeaturesAttribute(), EXCLUDEFEATURESATTRIBUTE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

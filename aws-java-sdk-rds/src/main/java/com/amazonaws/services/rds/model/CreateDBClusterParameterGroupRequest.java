@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,13 +57,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -75,7 +75,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -101,12 +101,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -277,13 +272,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -295,7 +290,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -321,12 +316,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -354,13 +344,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     *        Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      *        </p>
      *        <p>
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora-postgresql9.6</code>
+     *        Example: <code>aurora-postgresql14</code>
      *        </p>
      *        <p>
      *        <b>RDS for MySQL</b>
@@ -372,7 +362,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>RDS for PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>postgres12</code>
+     *        Example: <code>postgres13</code>
      *        </p>
      *        <p>
      *        To list all of the available parameter group families for a DB engine, use the following command:
@@ -398,12 +388,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -437,13 +422,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -455,7 +440,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -481,12 +466,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -513,13 +493,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     *         Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      *         </p>
      *         <p>
      *         <b>Aurora PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>aurora-postgresql9.6</code>
+     *         Example: <code>aurora-postgresql14</code>
      *         </p>
      *         <p>
      *         <b>RDS for MySQL</b>
@@ -531,7 +511,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <b>RDS for PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>postgres12</code>
+     *         Example: <code>postgres13</code>
      *         </p>
      *         <p>
      *         To list all of the available parameter group families for a DB engine, use the following command:
@@ -557,12 +537,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *         <code>aurora-mysql</code>
      *         </p>
      *         </li>
      *         <li>
@@ -596,13 +571,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -614,7 +589,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -640,12 +615,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -673,13 +643,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     *        Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      *        </p>
      *        <p>
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora-postgresql9.6</code>
+     *        Example: <code>aurora-postgresql14</code>
      *        </p>
      *        <p>
      *        <b>RDS for MySQL</b>
@@ -691,7 +661,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>RDS for PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>postgres12</code>
+     *        Example: <code>postgres13</code>
      *        </p>
      *        <p>
      *        To list all of the available parameter group families for a DB engine, use the following command:
@@ -717,12 +687,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>

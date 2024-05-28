@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.keyspaces.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class KeyspaceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("keyspaceName").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
+    private static final MarshallingInfo<String> REPLICATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationStrategy").build();
+    private static final MarshallingInfo<List> REPLICATIONREGIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationRegions").build();
 
     private static final KeyspaceSummaryMarshaller instance = new KeyspaceSummaryMarshaller();
 
@@ -50,6 +55,8 @@ public class KeyspaceSummaryMarshaller {
         try {
             protocolMarshaller.marshall(keyspaceSummary.getKeyspaceName(), KEYSPACENAME_BINDING);
             protocolMarshaller.marshall(keyspaceSummary.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(keyspaceSummary.getReplicationStrategy(), REPLICATIONSTRATEGY_BINDING);
+            protocolMarshaller.marshall(keyspaceSummary.getReplicationRegions(), REPLICATIONREGIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

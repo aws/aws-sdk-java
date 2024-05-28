@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,9 +38,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For
-     * example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     * <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     * The friendly name of the secret.
      * </p>
      */
     private String name;
@@ -107,6 +105,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date deletedDate;
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
+     * </p>
+     */
+    private java.util.Date nextRotationDate;
     /**
      * <p>
      * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
@@ -192,15 +197,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For
-     * example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     * <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     * The friendly name of the secret.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy.
-     *        For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     *        <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     *        The friendly name of the secret.
      */
 
     public void setName(String name) {
@@ -209,14 +210,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For
-     * example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     * <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     * The friendly name of the secret.
      * </p>
      * 
-     * @return The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy.
-     *         For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     *         <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     * @return The friendly name of the secret.
      */
 
     public String getName() {
@@ -225,15 +222,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy. For
-     * example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     * <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     * The friendly name of the secret.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy.
-     *        For example, <code>/prod/databases/dbserver1</code> could represent the secret for a server named
-     *        <code>dbserver1</code> in the folder <code>databases</code> in the folder <code>prod</code>.
+     *        The friendly name of the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -673,6 +666,52 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
+     * </p>
+     * 
+     * @param nextRotationDate
+     *        The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *        rotation or rotation has been disabled, Secrets Manager returns null.
+     */
+
+    public void setNextRotationDate(java.util.Date nextRotationDate) {
+        this.nextRotationDate = nextRotationDate;
+    }
+
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
+     * </p>
+     * 
+     * @return The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *         rotation or rotation has been disabled, Secrets Manager returns null.
+     */
+
+    public java.util.Date getNextRotationDate() {
+        return this.nextRotationDate;
+    }
+
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
+     * </p>
+     * 
+     * @param nextRotationDate
+     *        The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *        rotation or rotation has been disabled, Secrets Manager returns null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecretListEntry withNextRotationDate(java.util.Date nextRotationDate) {
+        setNextRotationDate(nextRotationDate);
+        return this;
+    }
+
+    /**
+     * <p>
      * The list of user-defined tags associated with the secret. To add tags to a secret, use <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html">
      * <code>TagResource</code> </a>. To remove tags, use <a
@@ -1037,6 +1076,8 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
             sb.append("LastAccessedDate: ").append(getLastAccessedDate()).append(",");
         if (getDeletedDate() != null)
             sb.append("DeletedDate: ").append(getDeletedDate()).append(",");
+        if (getNextRotationDate() != null)
+            sb.append("NextRotationDate: ").append(getNextRotationDate()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSecretVersionsToStages() != null)
@@ -1105,6 +1146,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDeletedDate() != null && other.getDeletedDate().equals(this.getDeletedDate()) == false)
             return false;
+        if (other.getNextRotationDate() == null ^ this.getNextRotationDate() == null)
+            return false;
+        if (other.getNextRotationDate() != null && other.getNextRotationDate().equals(this.getNextRotationDate()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1144,6 +1189,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getLastChangedDate() == null) ? 0 : getLastChangedDate().hashCode());
         hashCode = prime * hashCode + ((getLastAccessedDate() == null) ? 0 : getLastAccessedDate().hashCode());
         hashCode = prime * hashCode + ((getDeletedDate() == null) ? 0 : getDeletedDate().hashCode());
+        hashCode = prime * hashCode + ((getNextRotationDate() == null) ? 0 : getNextRotationDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSecretVersionsToStages() == null) ? 0 : getSecretVersionsToStages().hashCode());
         hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());

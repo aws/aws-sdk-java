@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class SearchRelatedItemsResponseItem implements Serializable, Cloneable, 
      * </p>
      */
     private RelatedItemContent content;
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     */
+    private UserUnion performedBy;
     /**
      * <p>
      * Unique identifier of a related item.
@@ -137,6 +143,46 @@ public class SearchRelatedItemsResponseItem implements Serializable, Cloneable, 
 
     public SearchRelatedItemsResponseItem withContent(RelatedItemContent content) {
         setContent(content);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     * 
+     * @param performedBy
+     *        Represents the creator of the related item.
+     */
+
+    public void setPerformedBy(UserUnion performedBy) {
+        this.performedBy = performedBy;
+    }
+
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     * 
+     * @return Represents the creator of the related item.
+     */
+
+    public UserUnion getPerformedBy() {
+        return this.performedBy;
+    }
+
+    /**
+     * <p>
+     * Represents the creator of the related item.
+     * </p>
+     * 
+     * @param performedBy
+     *        Represents the creator of the related item.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRelatedItemsResponseItem withPerformedBy(UserUnion performedBy) {
+        setPerformedBy(performedBy);
         return this;
     }
 
@@ -329,6 +375,8 @@ public class SearchRelatedItemsResponseItem implements Serializable, Cloneable, 
             sb.append("AssociationTime: ").append(getAssociationTime()).append(",");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
+        if (getPerformedBy() != null)
+            sb.append("PerformedBy: ").append(getPerformedBy()).append(",");
         if (getRelatedItemId() != null)
             sb.append("RelatedItemId: ").append(getRelatedItemId()).append(",");
         if (getTags() != null)
@@ -357,6 +405,10 @@ public class SearchRelatedItemsResponseItem implements Serializable, Cloneable, 
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getPerformedBy() == null ^ this.getPerformedBy() == null)
+            return false;
+        if (other.getPerformedBy() != null && other.getPerformedBy().equals(this.getPerformedBy()) == false)
+            return false;
         if (other.getRelatedItemId() == null ^ this.getRelatedItemId() == null)
             return false;
         if (other.getRelatedItemId() != null && other.getRelatedItemId().equals(this.getRelatedItemId()) == false)
@@ -379,6 +431,7 @@ public class SearchRelatedItemsResponseItem implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getAssociationTime() == null) ? 0 : getAssociationTime().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getPerformedBy() == null) ? 0 : getPerformedBy().hashCode());
         hashCode = prime * hashCode + ((getRelatedItemId() == null) ? 0 : getRelatedItemId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());

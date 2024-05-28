@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
-     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
-     * Services CloudFormation and the instance type parameter value is not passed.
+     * set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is
+     * not passed.
      * </p>
      * </note>
      */
@@ -68,8 +68,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
-     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
-     * Services CloudFormation and the instance type parameter value is not passed.
+     * set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is
+     * not passed.
      * </p>
      * </note>
      * 
@@ -78,8 +78,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      *        KernelGateway app.</p> <note>
      *        <p>
      *        The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance
-     *        type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon
-     *        Web Services CloudFormation and the instance type parameter value is not passed.
+     *        type set here is used when Apps are created using the CLI or CloudFormation and the instance type
+     *        parameter value is not passed.
      *        </p>
      */
 
@@ -95,8 +95,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
-     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
-     * Services CloudFormation and the instance type parameter value is not passed.
+     * set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is
+     * not passed.
      * </p>
      * </note>
      * 
@@ -104,8 +104,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      *         KernelGateway app.</p> <note>
      *         <p>
      *         The Amazon SageMaker Studio UI does not use the default instance type value set here. The default
-     *         instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface
-     *         or Amazon Web Services CloudFormation and the instance type parameter value is not passed.
+     *         instance type set here is used when Apps are created using the CLI or CloudFormation and the instance
+     *         type parameter value is not passed.
      *         </p>
      */
 
@@ -121,8 +121,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      * <note>
      * <p>
      * The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type
-     * set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web
-     * Services CloudFormation and the instance type parameter value is not passed.
+     * set here is used when Apps are created using the CLI or CloudFormation and the instance type parameter value is
+     * not passed.
      * </p>
      * </note>
      * 
@@ -131,8 +131,8 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
      *        KernelGateway app.</p> <note>
      *        <p>
      *        The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance
-     *        type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon
-     *        Web Services CloudFormation and the instance type parameter value is not passed.
+     *        type set here is used when Apps are created using the CLI or CloudFormation and the instance type
+     *        parameter value is not passed.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

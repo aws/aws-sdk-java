@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,11 @@ public class EventFeedbackType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      */
     private String feedbackValue;
@@ -49,11 +53,19 @@ public class EventFeedbackType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @see FeedbackValueType
      */
 
@@ -63,10 +75,18 @@ public class EventFeedbackType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
-     * @return The event feedback value.
+     * @return The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *         <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *         evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>
+     *         , you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *         evaluated a high-enough risk level.
      * @see FeedbackValueType
      */
 
@@ -76,11 +96,19 @@ public class EventFeedbackType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeedbackValueType
      */
@@ -92,11 +120,19 @@ public class EventFeedbackType implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeedbackValueType
      */

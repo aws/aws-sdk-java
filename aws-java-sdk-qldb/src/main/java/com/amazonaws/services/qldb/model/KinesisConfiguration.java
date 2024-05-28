@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,12 +40,17 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
      * records sent per API call.
      * </p>
      * <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important implications for processing records
-     * and requires de-aggregation in your stream consumer. To learn more, see <a
+     * Default: <code>True</code>
+     * </p>
+     * <important>
+     * <p>
+     * Record aggregation has important implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
+     * </important>
      */
     private Boolean aggregationEnabled;
 
@@ -95,22 +100,32 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
      * records sent per API call.
      * </p>
      * <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important implications for processing records
-     * and requires de-aggregation in your stream consumer. To learn more, see <a
+     * Default: <code>True</code>
+     * </p>
+     * <important>
+     * <p>
+     * Record aggregation has important implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
+     * </important>
      * 
      * @param aggregationEnabled
      *        Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
      *        number of records sent per API call.</p>
      *        <p>
-     *        <i>This option is enabled by default.</i> Record aggregation has important implications for processing
-     *        records and requires de-aggregation in your stream consumer. To learn more, see <a
+     *        Default: <code>True</code>
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Record aggregation has important implications for processing records and requires de-aggregation in your
+     *        stream consumer. To learn more, see <a
      *        href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and
      *        <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      *        De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     *        </p>
      */
 
     public void setAggregationEnabled(Boolean aggregationEnabled) {
@@ -123,21 +138,31 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
      * records sent per API call.
      * </p>
      * <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important implications for processing records
-     * and requires de-aggregation in your stream consumer. To learn more, see <a
+     * Default: <code>True</code>
+     * </p>
+     * <important>
+     * <p>
+     * Record aggregation has important implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
+     * </important>
      * 
      * @return Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
      *         number of records sent per API call.</p>
      *         <p>
-     *         <i>This option is enabled by default.</i> Record aggregation has important implications for processing
-     *         records and requires de-aggregation in your stream consumer. To learn more, see <a
+     *         Default: <code>True</code>
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Record aggregation has important implications for processing records and requires de-aggregation in your
+     *         stream consumer. To learn more, see <a
      *         href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and
      *         <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      *         De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     *         </p>
      */
 
     public Boolean getAggregationEnabled() {
@@ -150,22 +175,32 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
      * records sent per API call.
      * </p>
      * <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important implications for processing records
-     * and requires de-aggregation in your stream consumer. To learn more, see <a
+     * Default: <code>True</code>
+     * </p>
+     * <important>
+     * <p>
+     * Record aggregation has important implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
+     * </important>
      * 
      * @param aggregationEnabled
      *        Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
      *        number of records sent per API call.</p>
      *        <p>
-     *        <i>This option is enabled by default.</i> Record aggregation has important implications for processing
-     *        records and requires de-aggregation in your stream consumer. To learn more, see <a
+     *        Default: <code>True</code>
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Record aggregation has important implications for processing records and requires de-aggregation in your
+     *        stream consumer. To learn more, see <a
      *        href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and
      *        <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      *        De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,21 +215,31 @@ public class KinesisConfiguration implements Serializable, Cloneable, Structured
      * records sent per API call.
      * </p>
      * <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important implications for processing records
-     * and requires de-aggregation in your stream consumer. To learn more, see <a
+     * Default: <code>True</code>
+     * </p>
+     * <important>
+     * <p>
+     * Record aggregation has important implications for processing records and requires de-aggregation in your stream
+     * consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
      * </p>
+     * </important>
      * 
      * @return Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
      *         number of records sent per API call.</p>
      *         <p>
-     *         <i>This option is enabled by default.</i> Record aggregation has important implications for processing
-     *         records and requires de-aggregation in your stream consumer. To learn more, see <a
+     *         Default: <code>True</code>
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Record aggregation has important implications for processing records and requires de-aggregation in your
+     *         stream consumer. To learn more, see <a
      *         href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and
      *         <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      *         De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
+     *         </p>
      */
 
     public Boolean isAggregationEnabled() {

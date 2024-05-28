@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,30 @@ public class EntitySummaryJsonUnmarshaller implements Unmarshaller<EntitySummary
                 if (context.testExpression("Visibility", targetDepth)) {
                     context.nextToken();
                     entitySummary.setVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AmiProductSummary", targetDepth)) {
+                    context.nextToken();
+                    entitySummary.setAmiProductSummary(AmiProductSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ContainerProductSummary", targetDepth)) {
+                    context.nextToken();
+                    entitySummary.setContainerProductSummary(ContainerProductSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataProductSummary", targetDepth)) {
+                    context.nextToken();
+                    entitySummary.setDataProductSummary(DataProductSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SaaSProductSummary", targetDepth)) {
+                    context.nextToken();
+                    entitySummary.setSaaSProductSummary(SaaSProductSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OfferSummary", targetDepth)) {
+                    context.nextToken();
+                    entitySummary.setOfferSummary(OfferSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ResaleAuthorizationSummary", targetDepth)) {
+                    context.nextToken();
+                    entitySummary.setResaleAuthorizationSummary(ResaleAuthorizationSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,13 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Change types are single string values that describe your intention for the change. Each change type is unique for
-     * each <code>EntityType</code> provided in the change's scope.
+     * each <code>EntityType</code> provided in the change's scope. For more information about change types available
+     * for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      */
     private String changeType;
@@ -43,7 +49,19 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
     private Entity entity;
     /**
      * <p>
-     * This object contains details specific to the change type of the requested change.
+     * The tags associated with the change.
+     * </p>
+     */
+    private java.util.List<Tag> entityTags;
+    /**
+     * <p>
+     * This object contains details specific to the change type of the requested change. For more information about
+     * change types available for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      */
     private String details;
@@ -57,12 +75,24 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Change types are single string values that describe your intention for the change. Each change type is unique for
-     * each <code>EntityType</code> provided in the change's scope.
+     * each <code>EntityType</code> provided in the change's scope. For more information about change types available
+     * for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @param changeType
      *        Change types are single string values that describe your intention for the change. Each change type is
-     *        unique for each <code>EntityType</code> provided in the change's scope.
+     *        unique for each <code>EntityType</code> provided in the change's scope. For more information about change
+     *        types available for single-AMI products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     *        >Working with single-AMI products</a>. Also, for more information about change types available for
+     *        container-based products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     *        >Working with container products</a>.
      */
 
     public void setChangeType(String changeType) {
@@ -72,11 +102,23 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Change types are single string values that describe your intention for the change. Each change type is unique for
-     * each <code>EntityType</code> provided in the change's scope.
+     * each <code>EntityType</code> provided in the change's scope. For more information about change types available
+     * for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @return Change types are single string values that describe your intention for the change. Each change type is
-     *         unique for each <code>EntityType</code> provided in the change's scope.
+     *         unique for each <code>EntityType</code> provided in the change's scope. For more information about change
+     *         types available for single-AMI products, see <a href=
+     *         "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     *         >Working with single-AMI products</a>. Also, for more information about change types available for
+     *         container-based products, see <a href=
+     *         "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     *         >Working with container products</a>.
      */
 
     public String getChangeType() {
@@ -86,12 +128,24 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Change types are single string values that describe your intention for the change. Each change type is unique for
-     * each <code>EntityType</code> provided in the change's scope.
+     * each <code>EntityType</code> provided in the change's scope. For more information about change types available
+     * for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @param changeType
      *        Change types are single string values that describe your intention for the change. Each change type is
-     *        unique for each <code>EntityType</code> provided in the change's scope.
+     *        unique for each <code>EntityType</code> provided in the change's scope. For more information about change
+     *        types available for single-AMI products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     *        >Working with single-AMI products</a>. Also, for more information about change types available for
+     *        container-based products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     *        >Working with container products</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +196,93 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This object contains details specific to the change type of the requested change.
+     * The tags associated with the change.
+     * </p>
+     * 
+     * @return The tags associated with the change.
+     */
+
+    public java.util.List<Tag> getEntityTags() {
+        return entityTags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the change.
+     * </p>
+     * 
+     * @param entityTags
+     *        The tags associated with the change.
+     */
+
+    public void setEntityTags(java.util.Collection<Tag> entityTags) {
+        if (entityTags == null) {
+            this.entityTags = null;
+            return;
+        }
+
+        this.entityTags = new java.util.ArrayList<Tag>(entityTags);
+    }
+
+    /**
+     * <p>
+     * The tags associated with the change.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEntityTags(java.util.Collection)} or {@link #withEntityTags(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param entityTags
+     *        The tags associated with the change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Change withEntityTags(Tag... entityTags) {
+        if (this.entityTags == null) {
+            setEntityTags(new java.util.ArrayList<Tag>(entityTags.length));
+        }
+        for (Tag ele : entityTags) {
+            this.entityTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the change.
+     * </p>
+     * 
+     * @param entityTags
+     *        The tags associated with the change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Change withEntityTags(java.util.Collection<Tag> entityTags) {
+        setEntityTags(entityTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This object contains details specific to the change type of the requested change. For more information about
+     * change types available for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @param details
-     *        This object contains details specific to the change type of the requested change.
+     *        This object contains details specific to the change type of the requested change. For more information
+     *        about change types available for single-AMI products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     *        >Working with single-AMI products</a>. Also, for more information about change types available for
+     *        container-based products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     *        >Working with container products</a>.
      */
 
     public void setDetails(String details) {
@@ -155,10 +291,22 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This object contains details specific to the change type of the requested change.
+     * This object contains details specific to the change type of the requested change. For more information about
+     * change types available for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
-     * @return This object contains details specific to the change type of the requested change.
+     * @return This object contains details specific to the change type of the requested change. For more information
+     *         about change types available for single-AMI products, see <a href=
+     *         "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     *         >Working with single-AMI products</a>. Also, for more information about change types available for
+     *         container-based products, see <a href=
+     *         "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     *         >Working with container products</a>.
      */
 
     public String getDetails() {
@@ -167,11 +315,23 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This object contains details specific to the change type of the requested change.
+     * This object contains details specific to the change type of the requested change. For more information about
+     * change types available for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @param details
-     *        This object contains details specific to the change type of the requested change.
+     *        This object contains details specific to the change type of the requested change. For more information
+     *        about change types available for single-AMI products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     *        >Working with single-AMI products</a>. Also, for more information about change types available for
+     *        container-based products, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     *        >Working with container products</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,6 +396,8 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
             sb.append("ChangeType: ").append(getChangeType()).append(",");
         if (getEntity() != null)
             sb.append("Entity: ").append(getEntity()).append(",");
+        if (getEntityTags() != null)
+            sb.append("EntityTags: ").append(getEntityTags()).append(",");
         if (getDetails() != null)
             sb.append("Details: ").append(getDetails()).append(",");
         if (getChangeName() != null)
@@ -262,6 +424,10 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEntity() != null && other.getEntity().equals(this.getEntity()) == false)
             return false;
+        if (other.getEntityTags() == null ^ this.getEntityTags() == null)
+            return false;
+        if (other.getEntityTags() != null && other.getEntityTags().equals(this.getEntityTags()) == false)
+            return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
@@ -280,6 +446,7 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         hashCode = prime * hashCode + ((getEntity() == null) ? 0 : getEntity().hashCode());
+        hashCode = prime * hashCode + ((getEntityTags() == null) ? 0 : getEntityTags().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         hashCode = prime * hashCode + ((getChangeName() == null) ? 0 : getChangeName().hashCode());
         return hashCode;

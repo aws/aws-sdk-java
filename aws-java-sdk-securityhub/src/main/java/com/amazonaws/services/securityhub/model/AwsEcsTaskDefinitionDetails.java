@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,6 +190,12 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
      * </p>
      */
     private java.util.List<AwsEcsTaskDefinitionVolumesDetails> volumes;
+    /**
+     * <p>
+     * The status of the task definition.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -1352,6 +1358,46 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The status of the task definition.
+     * </p>
+     * 
+     * @param status
+     *        The status of the task definition.
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the task definition.
+     * </p>
+     * 
+     * @return The status of the task definition.
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the task definition.
+     * </p>
+     * 
+     * @param status
+     *        The status of the task definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEcsTaskDefinitionDetails withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1390,7 +1436,9 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
         if (getTaskRoleArn() != null)
             sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
         if (getVolumes() != null)
-            sb.append("Volumes: ").append(getVolumes());
+            sb.append("Volumes: ").append(getVolumes()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1461,6 +1509,10 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
             return false;
         if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1483,6 +1535,7 @@ public class AwsEcsTaskDefinitionDetails implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getRequiresCompatibilities() == null) ? 0 : getRequiresCompatibilities().hashCode());
         hashCode = prime * hashCode + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class CreateMeetingRoomConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private CreateRequireCheckIn requireCheckIn;
+
+    private CreateProactiveJoin proactiveJoin;
 
     /**
      * <p>
@@ -225,6 +227,32 @@ public class CreateMeetingRoomConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * @param proactiveJoin
+     */
+
+    public void setProactiveJoin(CreateProactiveJoin proactiveJoin) {
+        this.proactiveJoin = proactiveJoin;
+    }
+
+    /**
+     * @return
+     */
+
+    public CreateProactiveJoin getProactiveJoin() {
+        return this.proactiveJoin;
+    }
+
+    /**
+     * @param proactiveJoin
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeetingRoomConfiguration withProactiveJoin(CreateProactiveJoin proactiveJoin) {
+        setProactiveJoin(proactiveJoin);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +271,9 @@ public class CreateMeetingRoomConfiguration implements Serializable, Cloneable, 
         if (getInstantBooking() != null)
             sb.append("InstantBooking: ").append(getInstantBooking()).append(",");
         if (getRequireCheckIn() != null)
-            sb.append("RequireCheckIn: ").append(getRequireCheckIn());
+            sb.append("RequireCheckIn: ").append(getRequireCheckIn()).append(",");
+        if (getProactiveJoin() != null)
+            sb.append("ProactiveJoin: ").append(getProactiveJoin());
         sb.append("}");
         return sb.toString();
     }
@@ -275,6 +305,10 @@ public class CreateMeetingRoomConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getRequireCheckIn() != null && other.getRequireCheckIn().equals(this.getRequireCheckIn()) == false)
             return false;
+        if (other.getProactiveJoin() == null ^ this.getProactiveJoin() == null)
+            return false;
+        if (other.getProactiveJoin() != null && other.getProactiveJoin().equals(this.getProactiveJoin()) == false)
+            return false;
         return true;
     }
 
@@ -287,6 +321,7 @@ public class CreateMeetingRoomConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getEndOfMeetingReminder() == null) ? 0 : getEndOfMeetingReminder().hashCode());
         hashCode = prime * hashCode + ((getInstantBooking() == null) ? 0 : getInstantBooking().hashCode());
         hashCode = prime * hashCode + ((getRequireCheckIn() == null) ? 0 : getRequireCheckIn().hashCode());
+        hashCode = prime * hashCode + ((getProactiveJoin() == null) ? 0 : getProactiveJoin().hashCode());
         return hashCode;
     }
 

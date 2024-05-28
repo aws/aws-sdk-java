@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.customerprofiles.AmazonCustomerProfilesClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.customerprofiles.model.*;
+
 import com.amazonaws.services.customerprofiles.model.transform.*;
 
 /**
@@ -52,19 +53,11 @@ import com.amazonaws.services.customerprofiles.model.transform.*;
  * <p>
  * <fullname>Amazon Connect Customer Profiles</fullname>
  * <p>
- * Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information about the Amazon
- * Connect Customer Profiles API, including supported operations, data types, parameters, and schemas.
- * </p>
- * <p>
  * Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors
  * powered by AppFlow that make it easy to combine customer information from third party applications, such as
  * Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your
- * Amazon Connect contact center.
- * </p>
- * <p>
- * If you're new to Amazon Connect , you might find it helpful to also review the <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon Connect Administrator
- * Guide</a>.
+ * Amazon Connect contact center. If you're new to Amazon Connect, you might find it helpful to review the <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon Connect Administrator Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -91,17 +84,17 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.customerprofiles.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.customerprofiles.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.customerprofiles.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.customerprofiles.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.customerprofiles.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.customerprofiles.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.customerprofiles.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
@@ -224,6 +217,80 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles
+     * will be included in the calculated attribute, which can be retrieved for a profile using the <a href=
+     * "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html"
+     * >GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles
+     * within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields
+     * from that <code>ObjectType</code>.
+     * </p>
+     * 
+     * @param createCalculatedAttributeDefinitionRequest
+     * @return Result of the CreateCalculatedAttributeDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.CreateCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCalculatedAttributeDefinitionResult createCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCalculatedAttributeDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateCalculatedAttributeDefinitionResult executeCreateCalculatedAttributeDefinition(
+            CreateCalculatedAttributeDefinitionRequest createCalculatedAttributeDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCalculatedAttributeDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCalculatedAttributeDefinitionRequest> request = null;
+        Response<CreateCalculatedAttributeDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCalculatedAttributeDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCalculatedAttributeDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCalculatedAttributeDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCalculatedAttributeDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCalculatedAttributeDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a domain, which is a container for all customer data, such as customer profile attributes, object types,
      * profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party
      * integrations.
@@ -294,6 +361,76 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an event stream, which is a subscription to real-time events, such as when profiles are created and
+     * updated through Amazon Connect Customer Profiles.
+     * </p>
+     * <p>
+     * Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon
+     * Web Services account as the customer profiles domain
+     * </p>
+     * 
+     * @param createEventStreamRequest
+     * @return Result of the CreateEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.CreateEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateEventStreamResult createEventStream(CreateEventStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEventStream(request);
+    }
+
+    @SdkInternalApi
+    final CreateEventStreamResult executeCreateEventStream(CreateEventStreamRequest createEventStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEventStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEventStreamRequest> request = null;
+        Response<CreateEventStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEventStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEventStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEventStreamResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateEventStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -443,6 +580,77 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is
+     * possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own
+     * using the CreateCalculatedAttributeDefinition API if you want it back.
+     * </p>
+     * 
+     * @param deleteCalculatedAttributeDefinitionRequest
+     * @return Result of the DeleteCalculatedAttributeDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.DeleteCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCalculatedAttributeDefinitionResult deleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCalculatedAttributeDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCalculatedAttributeDefinitionResult executeDeleteCalculatedAttributeDefinition(
+            DeleteCalculatedAttributeDefinitionRequest deleteCalculatedAttributeDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCalculatedAttributeDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCalculatedAttributeDefinitionRequest> request = null;
+        Response<DeleteCalculatedAttributeDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCalculatedAttributeDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCalculatedAttributeDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCalculatedAttributeDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCalculatedAttributeDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCalculatedAttributeDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a specific domain and all of its customer data, such as customer profile attributes and their related
      * objects.
      * </p>
@@ -497,6 +705,71 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables and deletes the specified event stream.
+     * </p>
+     * 
+     * @param deleteEventStreamRequest
+     * @return Result of the DeleteEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.DeleteEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventStream(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventStreamResult executeDeleteEventStream(DeleteEventStreamRequest deleteEventStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventStreamRequest> request = null;
+        Response<DeleteEventStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventStreamResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEventStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -903,6 +1176,73 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * The process of detecting profile object type mapping by using given objects.
+     * </p>
+     * 
+     * @param detectProfileObjectTypeRequest
+     * @return Result of the DetectProfileObjectType operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.DetectProfileObjectType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetectProfileObjectTypeResult detectProfileObjectType(DetectProfileObjectTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectProfileObjectType(request);
+    }
+
+    @SdkInternalApi
+    final DetectProfileObjectTypeResult executeDetectProfileObjectType(DetectProfileObjectTypeRequest detectProfileObjectTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detectProfileObjectTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectProfileObjectTypeRequest> request = null;
+        Response<DetectProfileObjectTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectProfileObjectTypeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(detectProfileObjectTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectProfileObjectType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetectProfileObjectTypeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DetectProfileObjectTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a
      * sample of matching groups from the existing matching results, and applies the automerging settings that you
      * provided. You can then view the number of profiles in the sample, the number of matches, and the number of
@@ -984,6 +1324,144 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Provides more information on a calculated attribute definition for Customer Profiles.
+     * </p>
+     * 
+     * @param getCalculatedAttributeDefinitionRequest
+     * @return Result of the GetCalculatedAttributeDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.GetCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCalculatedAttributeDefinitionResult getCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCalculatedAttributeDefinition(request);
+    }
+
+    @SdkInternalApi
+    final GetCalculatedAttributeDefinitionResult executeGetCalculatedAttributeDefinition(
+            GetCalculatedAttributeDefinitionRequest getCalculatedAttributeDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCalculatedAttributeDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCalculatedAttributeDefinitionRequest> request = null;
+        Response<GetCalculatedAttributeDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCalculatedAttributeDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCalculatedAttributeDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCalculatedAttributeDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCalculatedAttributeDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCalculatedAttributeDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve a calculated attribute for a customer profile.
+     * </p>
+     * 
+     * @param getCalculatedAttributeForProfileRequest
+     * @return Result of the GetCalculatedAttributeForProfile operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.GetCalculatedAttributeForProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCalculatedAttributeForProfileResult getCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCalculatedAttributeForProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetCalculatedAttributeForProfileResult executeGetCalculatedAttributeForProfile(
+            GetCalculatedAttributeForProfileRequest getCalculatedAttributeForProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCalculatedAttributeForProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCalculatedAttributeForProfileRequest> request = null;
+        Response<GetCalculatedAttributeForProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCalculatedAttributeForProfileRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCalculatedAttributeForProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCalculatedAttributeForProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCalculatedAttributeForProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCalculatedAttributeForProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a specific domain.
      * </p>
      * 
@@ -1037,6 +1515,71 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDomainResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the specified event stream in a specific domain.
+     * </p>
+     * 
+     * @param getEventStreamRequest
+     * @return Result of the GetEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.GetEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEventStreamResult getEventStream(GetEventStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventStream(request);
+    }
+
+    @SdkInternalApi
+    final GetEventStreamResult executeGetEventStream(GetEventStreamRequest getEventStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEventStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEventStreamRequest> request = null;
+        Response<GetEventStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEventStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventStreamResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEventStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1460,6 +2003,73 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Returns a set of profiles that belong to the same matching group using the <code>matchId</code> or
+     * <code>profileId</code>. You can also specify the type of matching that you want for finding similar profiles
+     * using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+     * </p>
+     * 
+     * @param getSimilarProfilesRequest
+     * @return Result of the GetSimilarProfiles operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.GetSimilarProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSimilarProfilesResult getSimilarProfiles(GetSimilarProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSimilarProfiles(request);
+    }
+
+    @SdkInternalApi
+    final GetSimilarProfilesResult executeGetSimilarProfiles(GetSimilarProfilesRequest getSimilarProfilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSimilarProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSimilarProfilesRequest> request = null;
+        Response<GetSimilarProfilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSimilarProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSimilarProfilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSimilarProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSimilarProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSimilarProfilesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get details of specified workflow.
      * </p>
      * 
@@ -1657,6 +2267,144 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists calculated attribute definitions for Customer Profiles
+     * </p>
+     * 
+     * @param listCalculatedAttributeDefinitionsRequest
+     * @return Result of the ListCalculatedAttributeDefinitions operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.ListCalculatedAttributeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCalculatedAttributeDefinitionsResult listCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCalculatedAttributeDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListCalculatedAttributeDefinitionsResult executeListCalculatedAttributeDefinitions(
+            ListCalculatedAttributeDefinitionsRequest listCalculatedAttributeDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCalculatedAttributeDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCalculatedAttributeDefinitionsRequest> request = null;
+        Response<ListCalculatedAttributeDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCalculatedAttributeDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCalculatedAttributeDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCalculatedAttributeDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCalculatedAttributeDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCalculatedAttributeDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve a list of calculated attributes for a customer profile.
+     * </p>
+     * 
+     * @param listCalculatedAttributesForProfileRequest
+     * @return Result of the ListCalculatedAttributesForProfile operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.ListCalculatedAttributesForProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCalculatedAttributesForProfileResult listCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCalculatedAttributesForProfile(request);
+    }
+
+    @SdkInternalApi
+    final ListCalculatedAttributesForProfileResult executeListCalculatedAttributesForProfile(
+            ListCalculatedAttributesForProfileRequest listCalculatedAttributesForProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCalculatedAttributesForProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCalculatedAttributesForProfileRequest> request = null;
+        Response<ListCalculatedAttributesForProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCalculatedAttributesForProfileRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCalculatedAttributesForProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCalculatedAttributesForProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCalculatedAttributesForProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCalculatedAttributesForProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of all the domains for an AWS account that have been created.
      * </p>
      * 
@@ -1710,6 +2458,71 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDomainsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all the event streams in a specific domain.
+     * </p>
+     * 
+     * @param listEventStreamsRequest
+     * @return Result of the ListEventStreams operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.ListEventStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEventStreamsResult listEventStreams(ListEventStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEventStreams(request);
+    }
+
+    @SdkInternalApi
+    final ListEventStreamsResult executeListEventStreams(ListEventStreamsRequest listEventStreamsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEventStreamsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEventStreamsRequest> request = null;
+        Response<ListEventStreamsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEventStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventStreamsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventStreams");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventStreamsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEventStreamsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2041,6 +2854,71 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProfileObjectsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProfileObjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a set of <code>MatchIds</code> that belong to the given domain.
+     * </p>
+     * 
+     * @param listRuleBasedMatchesRequest
+     * @return Result of the ListRuleBasedMatches operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.ListRuleBasedMatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRuleBasedMatchesResult listRuleBasedMatches(ListRuleBasedMatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRuleBasedMatches(request);
+    }
+
+    @SdkInternalApi
+    final ListRuleBasedMatchesResult executeListRuleBasedMatches(ListRuleBasedMatchesRequest listRuleBasedMatchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRuleBasedMatchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRuleBasedMatchesRequest> request = null;
+        Response<ListRuleBasedMatchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRuleBasedMatchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleBasedMatchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleBasedMatches");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRuleBasedMatchesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRuleBasedMatchesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2524,8 +3402,13 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Searches for profiles within a specific domain name using name, phone number, email address, account number, or a
-     * custom defined index.
+     * Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone,
+     * _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a
+     * <code>KeyName</code> and <code>Values</code> list.
+     * </p>
+     * <p>
+     * This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s)
+     * pairs using either <code>AND</code> or <code>OR</code> logic.
      * </p>
      * 
      * @param searchProfilesRequest
@@ -2715,6 +3598,77 @@ public class AmazonCustomerProfilesClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date
+     * range of a calculated attribute will not trigger inclusion of historical data greater than the current date
+     * range.
+     * </p>
+     * 
+     * @param updateCalculatedAttributeDefinitionRequest
+     * @return Result of the UpdateCalculatedAttributeDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.UpdateCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCalculatedAttributeDefinitionResult updateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCalculatedAttributeDefinition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCalculatedAttributeDefinitionResult executeUpdateCalculatedAttributeDefinition(
+            UpdateCalculatedAttributeDefinitionRequest updateCalculatedAttributeDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCalculatedAttributeDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCalculatedAttributeDefinitionRequest> request = null;
+        Response<UpdateCalculatedAttributeDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCalculatedAttributeDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCalculatedAttributeDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Customer Profiles");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCalculatedAttributeDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCalculatedAttributeDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCalculatedAttributeDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

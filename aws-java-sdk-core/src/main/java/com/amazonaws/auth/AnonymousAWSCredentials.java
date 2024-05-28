@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,16 @@ package com.amazonaws.auth;
  * before sending to the service.  Any service that does not accept unsigned requests
  * will return a service exception in this case.
  */
-public class AnonymousAWSCredentials implements AWSCredentials {
+public class AnonymousAWSCredentials implements AWSCredentials, AccountIdAware, ProviderNameAware {
+
+    private final String providerName;
+
+    public AnonymousAWSCredentials() {
+        this(null);
+    }
+    public AnonymousAWSCredentials(String providerName) {
+        this.providerName = providerName;
+    }
 
     /* (non-Javadoc)
      * @see com.amazonaws.auth.AWSCredentials#getAWSAccessKeyId()
@@ -35,5 +44,16 @@ public class AnonymousAWSCredentials implements AWSCredentials {
      */
     public String getAWSSecretKey() {
         return null;
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.auth.AccountIdAware#getAccountId()
+     */
+    public String getAccountId() {
+        return null;
+    }
+
+    public String getProviderName() {
+        return providerName;
     }
 }

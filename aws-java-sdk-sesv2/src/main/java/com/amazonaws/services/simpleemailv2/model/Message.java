@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Body body;
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     */
+    private java.util.List<MessageHeader> headers;
 
     /**
      * <p>
@@ -144,6 +150,76 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * 
+     * @return The list of message headers that will be added to the email message.
+     */
+
+    public java.util.List<MessageHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * 
+     * @param headers
+     *        The list of message headers that will be added to the email message.
+     */
+
+    public void setHeaders(java.util.Collection<MessageHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<MessageHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The list of message headers that will be added to the email message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withHeaders(MessageHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<MessageHeader>(headers.length));
+        }
+        for (MessageHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * 
+     * @param headers
+     *        The list of message headers that will be added to the email message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withHeaders(java.util.Collection<MessageHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -158,7 +234,9 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         if (getSubject() != null)
             sb.append("Subject: ").append(getSubject()).append(",");
         if (getBody() != null)
-            sb.append("Body: ").append(getBody());
+            sb.append("Body: ").append(getBody()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders());
         sb.append("}");
         return sb.toString();
     }
@@ -181,6 +259,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         return true;
     }
 
@@ -191,6 +273,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         return hashCode;
     }
 

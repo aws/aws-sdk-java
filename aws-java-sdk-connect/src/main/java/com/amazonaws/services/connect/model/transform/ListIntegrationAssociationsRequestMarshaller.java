@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ListIntegrationAssociationsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> INTEGRATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("integrationArn").build();
 
     private static final ListIntegrationAssociationsRequestMarshaller instance = new ListIntegrationAssociationsRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class ListIntegrationAssociationsRequestMarshaller {
             protocolMarshaller.marshall(listIntegrationAssociationsRequest.getIntegrationType(), INTEGRATIONTYPE_BINDING);
             protocolMarshaller.marshall(listIntegrationAssociationsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listIntegrationAssociationsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listIntegrationAssociationsRequest.getIntegrationArn(), INTEGRATIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

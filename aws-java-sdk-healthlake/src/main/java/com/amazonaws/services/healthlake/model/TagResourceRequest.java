@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,25 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+     * The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The user specified key and value pair tags being added to a Data Store.
+     * The user specified key and value pair tags being added to a data store.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+     * The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being
-     *        added to.
+     *        The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added
+     *        to.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -54,10 +54,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+     * The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to.
      * </p>
      * 
-     * @return The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being
+     * @return The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being
      *         added to.
      */
 
@@ -67,12 +67,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to.
+     * The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added to.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being
-     *        added to.
+     *        The Amazon Resource Name(ARN)that gives AWS HealthLake access to the data store which tags are being added
+     *        to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user specified key and value pair tags being added to a Data Store.
+     * The user specified key and value pair tags being added to a data store.
      * </p>
      * 
-     * @return The user specified key and value pair tags being added to a Data Store.
+     * @return The user specified key and value pair tags being added to a data store.
      */
 
     public java.util.List<Tag> getTags() {
@@ -95,11 +95,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user specified key and value pair tags being added to a Data Store.
+     * The user specified key and value pair tags being added to a data store.
      * </p>
      * 
      * @param tags
-     *        The user specified key and value pair tags being added to a Data Store.
+     *        The user specified key and value pair tags being added to a data store.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -113,7 +113,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user specified key and value pair tags being added to a Data Store.
+     * The user specified key and value pair tags being added to a data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The user specified key and value pair tags being added to a Data Store.
+     *        The user specified key and value pair tags being added to a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user specified key and value pair tags being added to a Data Store.
+     * The user specified key and value pair tags being added to a data store.
      * </p>
      * 
      * @param tags
-     *        The user specified key and value pair tags being added to a Data Store.
+     *        The user specified key and value pair tags being added to a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

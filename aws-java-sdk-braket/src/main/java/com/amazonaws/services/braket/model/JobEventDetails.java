@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class JobEventDetails implements Serializable, Cloneable, StructuredPojo 
     private String message;
     /**
      * <p>
-     * TThe type of event that occurred related to the Amazon Braket job.
+     * The type of event that occurred related to the Amazon Braket job.
      * </p>
      */
     private java.util.Date timeOfEvent;
@@ -148,11 +148,11 @@ public class JobEventDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * TThe type of event that occurred related to the Amazon Braket job.
+     * The type of event that occurred related to the Amazon Braket job.
      * </p>
      * 
      * @param timeOfEvent
-     *        TThe type of event that occurred related to the Amazon Braket job.
+     *        The type of event that occurred related to the Amazon Braket job.
      */
 
     public void setTimeOfEvent(java.util.Date timeOfEvent) {
@@ -161,10 +161,10 @@ public class JobEventDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * TThe type of event that occurred related to the Amazon Braket job.
+     * The type of event that occurred related to the Amazon Braket job.
      * </p>
      * 
-     * @return TThe type of event that occurred related to the Amazon Braket job.
+     * @return The type of event that occurred related to the Amazon Braket job.
      */
 
     public java.util.Date getTimeOfEvent() {
@@ -173,11 +173,11 @@ public class JobEventDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * TThe type of event that occurred related to the Amazon Braket job.
+     * The type of event that occurred related to the Amazon Braket job.
      * </p>
      * 
      * @param timeOfEvent
-     *        TThe type of event that occurred related to the Amazon Braket job.
+     *        The type of event that occurred related to the Amazon Braket job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

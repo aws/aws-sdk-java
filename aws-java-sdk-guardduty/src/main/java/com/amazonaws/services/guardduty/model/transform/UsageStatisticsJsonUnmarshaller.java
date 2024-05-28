@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,12 @@ public class UsageStatisticsJsonUnmarshaller implements Unmarshaller<UsageStatis
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("topAccountsByFeature", targetDepth)) {
+                    context.nextToken();
+                    usageStatistics.setTopAccountsByFeature(new ListUnmarshaller<UsageTopAccountsResult>(UsageTopAccountsResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("sumByDataSource", targetDepth)) {
                     context.nextToken();
                     usageStatistics.setSumByDataSource(new ListUnmarshaller<UsageDataSourceResult>(UsageDataSourceResultJsonUnmarshaller.getInstance())
@@ -69,6 +75,12 @@ public class UsageStatisticsJsonUnmarshaller implements Unmarshaller<UsageStatis
                 if (context.testExpression("topResources", targetDepth)) {
                     context.nextToken();
                     usageStatistics.setTopResources(new ListUnmarshaller<UsageResourceResult>(UsageResourceResultJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("sumByFeature", targetDepth)) {
+                    context.nextToken();
+                    usageStatistics.setSumByFeature(new ListUnmarshaller<UsageFeatureResult>(UsageFeatureResultJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

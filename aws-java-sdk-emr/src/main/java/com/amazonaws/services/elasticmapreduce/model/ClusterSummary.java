@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,9 +49,9 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      */
     private Integer normalizedInstanceHours;
@@ -191,16 +191,16 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
      *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
-     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2
+     *        instance that is roughly four times more expensive would result in the normalized instance hours being
+     *        incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
@@ -210,15 +210,15 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
-     *         that is roughly four times more expensive would result in the normalized instance hours being incremented
-     *         by four. This result is only an approximation and does not reflect the actual billing rate.
+     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2
+     *         instance that is roughly four times more expensive would result in the normalized instance hours being
+     *         incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public Integer getNormalizedInstanceHours() {
@@ -228,16 +228,16 @@ public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
      *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
-     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2
+     *        instance that is roughly four times more expensive would result in the normalized instance hours being
+     *        incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,10 +61,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys
- * as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a
- * tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and
- * will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your
- * tags per resource limit.
+ * as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have
+ * this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+ * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+ * count against your tags per resource limit.
  * </p>
  * </li>
  * </ul>

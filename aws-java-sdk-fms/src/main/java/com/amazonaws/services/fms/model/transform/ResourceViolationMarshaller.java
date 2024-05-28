@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,8 +66,6 @@ public class ResourceViolationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsDuplicateRuleGroupViolation").build();
     private static final MarshallingInfo<StructuredPojo> DNSRULEGROUPLIMITEXCEEDEDVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsRuleGroupLimitExceededViolation").build();
-    private static final MarshallingInfo<StructuredPojo> POSSIBLEREMEDIATIONACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PossibleRemediationActions").build();
     private static final MarshallingInfo<StructuredPojo> FIREWALLSUBNETISOUTOFSCOPEVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirewallSubnetIsOutOfScopeViolation").build();
     private static final MarshallingInfo<StructuredPojo> ROUTEHASOUTOFSCOPEENDPOINTVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -83,6 +81,10 @@ public class ResourceViolationMarshaller {
     private static final MarshallingInfo<StructuredPojo> FIREWALLSUBNETMISSINGVPCENDPOINTVIOLATION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirewallSubnetMissingVPCEndpointViolation")
             .build();
+    private static final MarshallingInfo<StructuredPojo> INVALIDNETWORKACLENTRIESVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvalidNetworkAclEntriesViolation").build();
+    private static final MarshallingInfo<StructuredPojo> POSSIBLEREMEDIATIONACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PossibleRemediationActions").build();
 
     private static final ResourceViolationMarshaller instance = new ResourceViolationMarshaller();
 
@@ -122,7 +124,6 @@ public class ResourceViolationMarshaller {
             protocolMarshaller.marshall(resourceViolation.getDnsRuleGroupPriorityConflictViolation(), DNSRULEGROUPPRIORITYCONFLICTVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getDnsDuplicateRuleGroupViolation(), DNSDUPLICATERULEGROUPVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getDnsRuleGroupLimitExceededViolation(), DNSRULEGROUPLIMITEXCEEDEDVIOLATION_BINDING);
-            protocolMarshaller.marshall(resourceViolation.getPossibleRemediationActions(), POSSIBLEREMEDIATIONACTIONS_BINDING);
             protocolMarshaller.marshall(resourceViolation.getFirewallSubnetIsOutOfScopeViolation(), FIREWALLSUBNETISOUTOFSCOPEVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getRouteHasOutOfScopeEndpointViolation(), ROUTEHASOUTOFSCOPEENDPOINTVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getThirdPartyFirewallMissingFirewallViolation(), THIRDPARTYFIREWALLMISSINGFIREWALLVIOLATION_BINDING);
@@ -130,6 +131,8 @@ public class ResourceViolationMarshaller {
             protocolMarshaller.marshall(resourceViolation.getThirdPartyFirewallMissingExpectedRouteTableViolation(),
                     THIRDPARTYFIREWALLMISSINGEXPECTEDROUTETABLEVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getFirewallSubnetMissingVPCEndpointViolation(), FIREWALLSUBNETMISSINGVPCENDPOINTVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getInvalidNetworkAclEntriesViolation(), INVALIDNETWORKACLENTRIESVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getPossibleRemediationActions(), POSSIBLEREMEDIATIONACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

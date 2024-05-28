@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the cache
- * key and automatically included in requests that CloudFront sends to the origin.
+ * key and in requests that CloudFront sends to the origin.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyCookiesConfig"
@@ -29,34 +29,34 @@ public class CachePolicyCookiesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any cookies in viewer requests are included in the cache key and automatically included in
-     * requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that CloudFront
+     * sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code> type are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type
+     * are included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
+     * <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code>
+     * type, which are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically included in
-     * requests that CloudFront sends to the origin.
+     * <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin.
      * </p>
      * </li>
      * </ul>
@@ -67,68 +67,67 @@ public class CachePolicyCookiesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any cookies in viewer requests are included in the cache key and automatically included in
-     * requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that CloudFront
+     * sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code> type are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type
+     * are included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
+     * <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code>
+     * type, which are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically included in
-     * requests that CloudFront sends to the origin.
+     * <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param cookieBehavior
-     *        Determines whether any cookies in viewer requests are included in the cache key and automatically included
-     *        in requests that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     *        included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>
-     *        , any cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin
-     *        requests.
+     *        <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that
+     *        CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are
+     *        listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code>
-     *        type are included in the cache key and automatically included in requests that CloudFront sends to the
+     *        <code>whitelist</code> – Only the cookies in viewer requests that are listed in the
+     *        <code>CookieNames</code> type are included in the cache key and in requests that CloudFront sends to the
      *        origin.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     *        <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     *        CloudFront sends to the origin.
+     *        <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the
+     *        <code>CookieNames</code> type, which are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically
-     *        included in requests that CloudFront sends to the origin.
+     *        <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @see CachePolicyCookieBehavior
@@ -140,67 +139,66 @@ public class CachePolicyCookiesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any cookies in viewer requests are included in the cache key and automatically included in
-     * requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that CloudFront
+     * sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code> type are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type
+     * are included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
+     * <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code>
+     * type, which are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically included in
-     * requests that CloudFront sends to the origin.
+     * <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Determines whether any cookies in viewer requests are included in the cache key and automatically
-     *         included in requests that CloudFront sends to the origin. Valid values are:</p>
+     * @return Determines whether any cookies in viewer requests are included in the cache key and in requests that
+     *         CloudFront sends to the origin. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>none</code> – Cookies in viewer requests are not included in the cache key and are not
-     *         automatically included in requests that CloudFront sends to the origin. Even when this field is set to
-     *         <code>none</code>, any cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included
-     *         in origin requests.
+     *         <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that
+     *         CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are
+     *         listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code>
-     *         type are included in the cache key and automatically included in requests that CloudFront sends to the
+     *         <code>whitelist</code> – Only the cookies in viewer requests that are listed in the
+     *         <code>CookieNames</code> type are included in the cache key and in requests that CloudFront sends to the
      *         origin.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     *         <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     *         CloudFront sends to the origin.
+     *         <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests
+     *         that CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the
+     *         <code>CookieNames</code> type, which are not included.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically
-     *         included in requests that CloudFront sends to the origin.
+     *         <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *         CloudFront sends to the origin.
      *         </p>
      *         </li>
      * @see CachePolicyCookieBehavior
@@ -212,68 +210,67 @@ public class CachePolicyCookiesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any cookies in viewer requests are included in the cache key and automatically included in
-     * requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that CloudFront
+     * sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code> type are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type
+     * are included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
+     * <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code>
+     * type, which are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically included in
-     * requests that CloudFront sends to the origin.
+     * <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param cookieBehavior
-     *        Determines whether any cookies in viewer requests are included in the cache key and automatically included
-     *        in requests that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     *        included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>
-     *        , any cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin
-     *        requests.
+     *        <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that
+     *        CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are
+     *        listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code>
-     *        type are included in the cache key and automatically included in requests that CloudFront sends to the
+     *        <code>whitelist</code> – Only the cookies in viewer requests that are listed in the
+     *        <code>CookieNames</code> type are included in the cache key and in requests that CloudFront sends to the
      *        origin.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     *        <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     *        CloudFront sends to the origin.
+     *        <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the
+     *        <code>CookieNames</code> type, which are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically
-     *        included in requests that CloudFront sends to the origin.
+     *        <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -287,68 +284,67 @@ public class CachePolicyCookiesConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any cookies in viewer requests are included in the cache key and automatically included in
-     * requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that CloudFront
+     * sends to the origin. Even when this field is set to <code>none</code>, any cookies that are listed in an
+     * <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code> type are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * <code>whitelist</code> – Only the cookies in viewer requests that are listed in the <code>CookieNames</code> type
+     * are included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
+     * <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the <code>CookieNames</code>
+     * type, which are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically included in
-     * requests that CloudFront sends to the origin.
+     * <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that CloudFront
+     * sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param cookieBehavior
-     *        Determines whether any cookies in viewer requests are included in the cache key and automatically included
-     *        in requests that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Cookies in viewer requests are not included in the cache key and are not automatically
-     *        included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>
-     *        , any cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin
-     *        requests.
+     *        <code>none</code> – No cookies in viewer requests are included in the cache key or in requests that
+     *        CloudFront sends to the origin. Even when this field is set to <code>none</code>, any cookies that are
+     *        listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The cookies in viewer requests that are listed in the <code>CookieNames</code>
-     *        type are included in the cache key and automatically included in requests that CloudFront sends to the
+     *        <code>whitelist</code> – Only the cookies in viewer requests that are listed in the
+     *        <code>CookieNames</code> type are included in the cache key and in requests that CloudFront sends to the
      *        origin.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allExcept</code> – All cookies in viewer requests that are <i> <b>not</b> </i> listed in the
-     *        <code>CookieNames</code> type are included in the cache key and automatically included in requests that
-     *        CloudFront sends to the origin.
+     *        <code>allExcept</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin, <i> <b>except</b> </i> for those that are listed in the
+     *        <code>CookieNames</code> type, which are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>all</code> – All cookies in viewer requests are included in the cache key and are automatically
-     *        included in requests that CloudFront sends to the origin.
+     *        <code>all</code> – All cookies in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

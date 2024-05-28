@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,6 +86,12 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private String callAnalyticsJobStatus;
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     */
+    private CallAnalyticsJobDetails callAnalyticsJobDetails;
     /**
      * <p>
      * If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
@@ -506,6 +512,49 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @param callAnalyticsJobDetails
+     *        Provides detailed information about a call analytics job, including information about skipped analytics
+     *        features.
+     */
+
+    public void setCallAnalyticsJobDetails(CallAnalyticsJobDetails callAnalyticsJobDetails) {
+        this.callAnalyticsJobDetails = callAnalyticsJobDetails;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @return Provides detailed information about a call analytics job, including information about skipped analytics
+     *         features.
+     */
+
+    public CallAnalyticsJobDetails getCallAnalyticsJobDetails() {
+        return this.callAnalyticsJobDetails;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @param callAnalyticsJobDetails
+     *        Provides detailed information about a call analytics job, including information about skipped analytics
+     *        features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CallAnalyticsJobSummary withCallAnalyticsJobDetails(CallAnalyticsJobDetails callAnalyticsJobDetails) {
+        setCallAnalyticsJobDetails(callAnalyticsJobDetails);
+        return this;
+    }
+
+    /**
+     * <p>
      * If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
      * about why the Call Analytics job failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
@@ -580,6 +629,8 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getCallAnalyticsJobStatus() != null)
             sb.append("CallAnalyticsJobStatus: ").append(getCallAnalyticsJobStatus()).append(",");
+        if (getCallAnalyticsJobDetails() != null)
+            sb.append("CallAnalyticsJobDetails: ").append(getCallAnalyticsJobDetails()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason());
         sb.append("}");
@@ -620,6 +671,10 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getCallAnalyticsJobStatus() != null && other.getCallAnalyticsJobStatus().equals(this.getCallAnalyticsJobStatus()) == false)
             return false;
+        if (other.getCallAnalyticsJobDetails() == null ^ this.getCallAnalyticsJobDetails() == null)
+            return false;
+        if (other.getCallAnalyticsJobDetails() != null && other.getCallAnalyticsJobDetails().equals(this.getCallAnalyticsJobDetails()) == false)
+            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -638,6 +693,7 @@ public class CallAnalyticsJobSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getCallAnalyticsJobStatus() == null) ? 0 : getCallAnalyticsJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getCallAnalyticsJobDetails() == null) ? 0 : getCallAnalyticsJobDetails().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         return hashCode;
     }

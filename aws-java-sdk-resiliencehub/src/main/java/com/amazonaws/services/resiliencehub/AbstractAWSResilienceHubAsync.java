@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,21 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            BatchUpdateRecommendationStatusRequest request) {
+
+        return batchUpdateRecommendationStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationStatusResult> batchUpdateRecommendationStatusAsync(
+            BatchUpdateRecommendationStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationStatusRequest, BatchUpdateRecommendationStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request) {
 
         return createAppAsync(request, null);
@@ -51,6 +66,32 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     @Override
     public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionAppComponentResult> createAppVersionAppComponentAsync(CreateAppVersionAppComponentRequest request) {
+
+        return createAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionAppComponentResult> createAppVersionAppComponentAsync(CreateAppVersionAppComponentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAppVersionAppComponentRequest, CreateAppVersionAppComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionResourceResult> createAppVersionResourceAsync(CreateAppVersionResourceRequest request) {
+
+        return createAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppVersionResourceResult> createAppVersionResourceAsync(CreateAppVersionResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAppVersionResourceRequest, CreateAppVersionResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,6 +149,45 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAppInputSourceResult> deleteAppInputSourceAsync(DeleteAppInputSourceRequest request) {
+
+        return deleteAppInputSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInputSourceResult> deleteAppInputSourceAsync(DeleteAppInputSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInputSourceRequest, DeleteAppInputSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionAppComponentResult> deleteAppVersionAppComponentAsync(DeleteAppVersionAppComponentRequest request) {
+
+        return deleteAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionAppComponentResult> deleteAppVersionAppComponentAsync(DeleteAppVersionAppComponentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppVersionAppComponentRequest, DeleteAppVersionAppComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionResourceResult> deleteAppVersionResourceAsync(DeleteAppVersionResourceRequest request) {
+
+        return deleteAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppVersionResourceResult> deleteAppVersionResourceAsync(DeleteAppVersionResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppVersionResourceRequest, DeleteAppVersionResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRecommendationTemplateResult> deleteRecommendationTemplateAsync(DeleteRecommendationTemplateRequest request) {
 
         return deleteRecommendationTemplateAsync(request, null);
@@ -155,6 +235,45 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     @Override
     public java.util.concurrent.Future<DescribeAppAssessmentResult> describeAppAssessmentAsync(DescribeAppAssessmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAppAssessmentRequest, DescribeAppAssessmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResult> describeAppVersionAsync(DescribeAppVersionRequest request) {
+
+        return describeAppVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResult> describeAppVersionAsync(DescribeAppVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppVersionRequest, DescribeAppVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionAppComponentResult> describeAppVersionAppComponentAsync(DescribeAppVersionAppComponentRequest request) {
+
+        return describeAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionAppComponentResult> describeAppVersionAppComponentAsync(DescribeAppVersionAppComponentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppVersionAppComponentRequest, DescribeAppVersionAppComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResourceResult> describeAppVersionResourceAsync(DescribeAppVersionResourceRequest request) {
+
+        return describeAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppVersionResourceResult> describeAppVersionResourceAsync(DescribeAppVersionResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppVersionResourceRequest, DescribeAppVersionResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +363,36 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            ListAppAssessmentComplianceDriftsRequest request) {
+
+        return listAppAssessmentComplianceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentComplianceDriftsResult> listAppAssessmentComplianceDriftsAsync(
+            ListAppAssessmentComplianceDriftsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAppAssessmentComplianceDriftsRequest, ListAppAssessmentComplianceDriftsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest request) {
+
+        return listAppAssessmentResourceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAppAssessmentResourceDriftsRequest, ListAppAssessmentResourceDriftsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppAssessmentsResult> listAppAssessmentsAsync(ListAppAssessmentsRequest request) {
 
         return listAppAssessmentsAsync(request, null);
@@ -280,6 +429,32 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     public java.util.concurrent.Future<ListAppComponentRecommendationsResult> listAppComponentRecommendationsAsync(
             ListAppComponentRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAppComponentRecommendationsRequest, ListAppComponentRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInputSourcesResult> listAppInputSourcesAsync(ListAppInputSourcesRequest request) {
+
+        return listAppInputSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInputSourcesResult> listAppInputSourcesAsync(ListAppInputSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAppInputSourcesRequest, ListAppInputSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppVersionAppComponentsResult> listAppVersionAppComponentsAsync(ListAppVersionAppComponentsRequest request) {
+
+        return listAppVersionAppComponentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppVersionAppComponentsResult> listAppVersionAppComponentsAsync(ListAppVersionAppComponentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAppVersionAppComponentsRequest, ListAppVersionAppComponentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -533,6 +708,45 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     @Override
     public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(UpdateAppRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, UpdateAppResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResult> updateAppVersionAsync(UpdateAppVersionRequest request) {
+
+        return updateAppVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResult> updateAppVersionAsync(UpdateAppVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppVersionRequest, UpdateAppVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionAppComponentResult> updateAppVersionAppComponentAsync(UpdateAppVersionAppComponentRequest request) {
+
+        return updateAppVersionAppComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionAppComponentResult> updateAppVersionAppComponentAsync(UpdateAppVersionAppComponentRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppVersionAppComponentRequest, UpdateAppVersionAppComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResourceResult> updateAppVersionResourceAsync(UpdateAppVersionResourceRequest request) {
+
+        return updateAppVersionResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppVersionResourceResult> updateAppVersionResourceAsync(UpdateAppVersionResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppVersionResourceRequest, UpdateAppVersionResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

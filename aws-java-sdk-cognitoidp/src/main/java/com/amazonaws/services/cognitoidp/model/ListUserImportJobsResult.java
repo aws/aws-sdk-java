@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,9 @@ public class ListUserImportJobsResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.List<UserImportJobType> userImportJobs;
     /**
      * <p>
-     * An identifier that can be used to return the next set of user import jobs in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      */
     private String paginationToken;
@@ -111,11 +113,15 @@ public class ListUserImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An identifier that can be used to return the next set of user import jobs in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that can be used to return the next set of user import jobs in the list.
+     *        The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *        a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *        this token, you can paginate through the full list of items.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -124,10 +130,14 @@ public class ListUserImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An identifier that can be used to return the next set of user import jobs in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
-     * @return An identifier that can be used to return the next set of user import jobs in the list.
+     * @return The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *         a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *         this token, you can paginate through the full list of items.
      */
 
     public String getPaginationToken() {
@@ -136,11 +146,15 @@ public class ListUserImportJobsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An identifier that can be used to return the next set of user import jobs in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that can be used to return the next set of user import jobs in the list.
+     *        The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *        a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *        this token, you can paginate through the full list of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

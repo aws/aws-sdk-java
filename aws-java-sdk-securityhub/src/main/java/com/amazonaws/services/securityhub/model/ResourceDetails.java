@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -538,6 +538,126 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsBackupRecoveryPointDetails awsBackupRecoveryPoint;
+
+    private AwsEc2LaunchTemplateDetails awsEc2LaunchTemplate;
+
+    private AwsSageMakerNotebookInstanceDetails awsSageMakerNotebookInstance;
+
+    private AwsWafv2WebAclDetails awsWafv2WebAcl;
+
+    private AwsWafv2RuleGroupDetails awsWafv2RuleGroup;
+    /**
+     * <p>
+     * Provides details about a route table. A route table contains a set of rules, called routes, that determine where
+     * to direct network traffic from your subnet or gateway.
+     * </p>
+     */
+    private AwsEc2RouteTableDetails awsEc2RouteTable;
+    /**
+     * <p>
+     * Provides details about AppSync message broker. A message broker allows software applications and components to
+     * communicate using various programming languages, operating systems, and formal messaging protocols.
+     * </p>
+     */
+    private AwsAmazonMqBrokerDetails awsAmazonMqBroker;
+    /**
+     * <p>
+     * Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs
+     * from a single GraphQL endpoint.
+     * </p>
+     */
+    private AwsAppSyncGraphQlApiDetails awsAppSyncGraphQlApi;
+    /**
+     * <p>
+     * A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers
+     * for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     * </p>
+     */
+    private AwsEventSchemasRegistryDetails awsEventSchemasRegistry;
+    /**
+     * <p>
+     * Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty
+     * service. A detector is required for GuardDuty to become operational.
+     * </p>
+     */
+    private AwsGuardDutyDetectorDetails awsGuardDutyDetector;
+    /**
+     * <p>
+     * Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     * event-driven steps.
+     * </p>
+     */
+    private AwsStepFunctionStateMachineDetails awsStepFunctionStateMachine;
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     */
+    private AwsAthenaWorkGroupDetails awsAthenaWorkGroup;
+    /**
+     * <p>
+     * Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives
+     * events and delivers them to zero or more destinations, or targets.
+     * </p>
+     */
+    private AwsEventsEventbusDetails awsEventsEventbus;
+    /**
+     * <p>
+     * Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store
+     * type, and location information about your data store.
+     * </p>
+     */
+    private AwsDmsEndpointDetails awsDmsEndpoint;
+    /**
+     * <p>
+     * Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     * availability by making it Regional-fault tolerant.
+     * </p>
+     */
+    private AwsEventsEndpointDetails awsEventsEndpoint;
+    /**
+     * <p>
+     * Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint
+     * to the target endpoint.
+     * </p>
+     */
+    private AwsDmsReplicationTaskDetails awsDmsReplicationTask;
+    /**
+     * <p>
+     * Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source
+     * data store, read the source data, and format the data for consumption by the target data store.
+     * </p>
+     */
+    private AwsDmsReplicationInstanceDetails awsDmsReplicationInstance;
+    /**
+     * <p>
+     * Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the hosted
+     * zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent
+     * domain name.
+     * </p>
+     */
+    private AwsRoute53HostedZoneDetails awsRoute53HostedZone;
+    /**
+     * <p>
+     * Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     * </p>
+     */
+    private AwsMskClusterDetails awsMskCluster;
+    /**
+     * <p>
+     * Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named
+     * network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     * </p>
+     */
+    private AwsS3AccessPointDetails awsS3AccessPoint;
+    /**
+     * <p>
+     * Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     * configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.
+     * </p>
+     */
+    private AwsEc2ClientVpnEndpointDetails awsEc2ClientVpnEndpoint;
 
     /**
      * <p>
@@ -3869,6 +3989,852 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @param awsEc2LaunchTemplate
+     */
+
+    public void setAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails awsEc2LaunchTemplate) {
+        this.awsEc2LaunchTemplate = awsEc2LaunchTemplate;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsEc2LaunchTemplateDetails getAwsEc2LaunchTemplate() {
+        return this.awsEc2LaunchTemplate;
+    }
+
+    /**
+     * @param awsEc2LaunchTemplate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails awsEc2LaunchTemplate) {
+        setAwsEc2LaunchTemplate(awsEc2LaunchTemplate);
+        return this;
+    }
+
+    /**
+     * @param awsSageMakerNotebookInstance
+     */
+
+    public void setAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails awsSageMakerNotebookInstance) {
+        this.awsSageMakerNotebookInstance = awsSageMakerNotebookInstance;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsSageMakerNotebookInstanceDetails getAwsSageMakerNotebookInstance() {
+        return this.awsSageMakerNotebookInstance;
+    }
+
+    /**
+     * @param awsSageMakerNotebookInstance
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails awsSageMakerNotebookInstance) {
+        setAwsSageMakerNotebookInstance(awsSageMakerNotebookInstance);
+        return this;
+    }
+
+    /**
+     * @param awsWafv2WebAcl
+     */
+
+    public void setAwsWafv2WebAcl(AwsWafv2WebAclDetails awsWafv2WebAcl) {
+        this.awsWafv2WebAcl = awsWafv2WebAcl;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsWafv2WebAclDetails getAwsWafv2WebAcl() {
+        return this.awsWafv2WebAcl;
+    }
+
+    /**
+     * @param awsWafv2WebAcl
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafv2WebAcl(AwsWafv2WebAclDetails awsWafv2WebAcl) {
+        setAwsWafv2WebAcl(awsWafv2WebAcl);
+        return this;
+    }
+
+    /**
+     * @param awsWafv2RuleGroup
+     */
+
+    public void setAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails awsWafv2RuleGroup) {
+        this.awsWafv2RuleGroup = awsWafv2RuleGroup;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsWafv2RuleGroupDetails getAwsWafv2RuleGroup() {
+        return this.awsWafv2RuleGroup;
+    }
+
+    /**
+     * @param awsWafv2RuleGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails awsWafv2RuleGroup) {
+        setAwsWafv2RuleGroup(awsWafv2RuleGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about a route table. A route table contains a set of rules, called routes, that determine where
+     * to direct network traffic from your subnet or gateway.
+     * </p>
+     * 
+     * @param awsEc2RouteTable
+     *        Provides details about a route table. A route table contains a set of rules, called routes, that determine
+     *        where to direct network traffic from your subnet or gateway.
+     */
+
+    public void setAwsEc2RouteTable(AwsEc2RouteTableDetails awsEc2RouteTable) {
+        this.awsEc2RouteTable = awsEc2RouteTable;
+    }
+
+    /**
+     * <p>
+     * Provides details about a route table. A route table contains a set of rules, called routes, that determine where
+     * to direct network traffic from your subnet or gateway.
+     * </p>
+     * 
+     * @return Provides details about a route table. A route table contains a set of rules, called routes, that
+     *         determine where to direct network traffic from your subnet or gateway.
+     */
+
+    public AwsEc2RouteTableDetails getAwsEc2RouteTable() {
+        return this.awsEc2RouteTable;
+    }
+
+    /**
+     * <p>
+     * Provides details about a route table. A route table contains a set of rules, called routes, that determine where
+     * to direct network traffic from your subnet or gateway.
+     * </p>
+     * 
+     * @param awsEc2RouteTable
+     *        Provides details about a route table. A route table contains a set of rules, called routes, that determine
+     *        where to direct network traffic from your subnet or gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2RouteTable(AwsEc2RouteTableDetails awsEc2RouteTable) {
+        setAwsEc2RouteTable(awsEc2RouteTable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about AppSync message broker. A message broker allows software applications and components to
+     * communicate using various programming languages, operating systems, and formal messaging protocols.
+     * </p>
+     * 
+     * @param awsAmazonMqBroker
+     *        Provides details about AppSync message broker. A message broker allows software applications and
+     *        components to communicate using various programming languages, operating systems, and formal messaging
+     *        protocols.
+     */
+
+    public void setAwsAmazonMqBroker(AwsAmazonMqBrokerDetails awsAmazonMqBroker) {
+        this.awsAmazonMqBroker = awsAmazonMqBroker;
+    }
+
+    /**
+     * <p>
+     * Provides details about AppSync message broker. A message broker allows software applications and components to
+     * communicate using various programming languages, operating systems, and formal messaging protocols.
+     * </p>
+     * 
+     * @return Provides details about AppSync message broker. A message broker allows software applications and
+     *         components to communicate using various programming languages, operating systems, and formal messaging
+     *         protocols.
+     */
+
+    public AwsAmazonMqBrokerDetails getAwsAmazonMqBroker() {
+        return this.awsAmazonMqBroker;
+    }
+
+    /**
+     * <p>
+     * Provides details about AppSync message broker. A message broker allows software applications and components to
+     * communicate using various programming languages, operating systems, and formal messaging protocols.
+     * </p>
+     * 
+     * @param awsAmazonMqBroker
+     *        Provides details about AppSync message broker. A message broker allows software applications and
+     *        components to communicate using various programming languages, operating systems, and formal messaging
+     *        protocols.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsAmazonMqBroker(AwsAmazonMqBrokerDetails awsAmazonMqBroker) {
+        setAwsAmazonMqBroker(awsAmazonMqBroker);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs
+     * from a single GraphQL endpoint.
+     * </p>
+     * 
+     * @param awsAppSyncGraphQlApi
+     *        Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices,
+     *        and APIs from a single GraphQL endpoint.
+     */
+
+    public void setAwsAppSyncGraphQlApi(AwsAppSyncGraphQlApiDetails awsAppSyncGraphQlApi) {
+        this.awsAppSyncGraphQlApi = awsAppSyncGraphQlApi;
+    }
+
+    /**
+     * <p>
+     * Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs
+     * from a single GraphQL endpoint.
+     * </p>
+     * 
+     * @return Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices,
+     *         and APIs from a single GraphQL endpoint.
+     */
+
+    public AwsAppSyncGraphQlApiDetails getAwsAppSyncGraphQlApi() {
+        return this.awsAppSyncGraphQlApi;
+    }
+
+    /**
+     * <p>
+     * Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs
+     * from a single GraphQL endpoint.
+     * </p>
+     * 
+     * @param awsAppSyncGraphQlApi
+     *        Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices,
+     *        and APIs from a single GraphQL endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsAppSyncGraphQlApi(AwsAppSyncGraphQlApiDetails awsAppSyncGraphQlApi) {
+        setAwsAppSyncGraphQlApi(awsAppSyncGraphQlApi);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers
+     * for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     * </p>
+     * 
+     * @param awsEventSchemasRegistry
+     *        A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are
+     *        containers for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     */
+
+    public void setAwsEventSchemasRegistry(AwsEventSchemasRegistryDetails awsEventSchemasRegistry) {
+        this.awsEventSchemasRegistry = awsEventSchemasRegistry;
+    }
+
+    /**
+     * <p>
+     * A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers
+     * for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     * </p>
+     * 
+     * @return A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are
+     *         containers for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     */
+
+    public AwsEventSchemasRegistryDetails getAwsEventSchemasRegistry() {
+        return this.awsEventSchemasRegistry;
+    }
+
+    /**
+     * <p>
+     * A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers
+     * for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     * </p>
+     * 
+     * @param awsEventSchemasRegistry
+     *        A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are
+     *        containers for schemas. They collect and organize schemas so that your schemas are in logical groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEventSchemasRegistry(AwsEventSchemasRegistryDetails awsEventSchemasRegistry) {
+        setAwsEventSchemasRegistry(awsEventSchemasRegistry);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty
+     * service. A detector is required for GuardDuty to become operational.
+     * </p>
+     * 
+     * @param awsGuardDutyDetector
+     *        Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty
+     *        service. A detector is required for GuardDuty to become operational.
+     */
+
+    public void setAwsGuardDutyDetector(AwsGuardDutyDetectorDetails awsGuardDutyDetector) {
+        this.awsGuardDutyDetector = awsGuardDutyDetector;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty
+     * service. A detector is required for GuardDuty to become operational.
+     * </p>
+     * 
+     * @return Provides details about an Amazon GuardDuty detector. A detector is an object that represents the
+     *         GuardDuty service. A detector is required for GuardDuty to become operational.
+     */
+
+    public AwsGuardDutyDetectorDetails getAwsGuardDutyDetector() {
+        return this.awsGuardDutyDetector;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty
+     * service. A detector is required for GuardDuty to become operational.
+     * </p>
+     * 
+     * @param awsGuardDutyDetector
+     *        Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty
+     *        service. A detector is required for GuardDuty to become operational.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsGuardDutyDetector(AwsGuardDutyDetectorDetails awsGuardDutyDetector) {
+        setAwsGuardDutyDetector(awsGuardDutyDetector);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     * event-driven steps.
+     * </p>
+     * 
+     * @param awsStepFunctionStateMachine
+     *        Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     *        event-driven steps.
+     */
+
+    public void setAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails awsStepFunctionStateMachine) {
+        this.awsStepFunctionStateMachine = awsStepFunctionStateMachine;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     * event-driven steps.
+     * </p>
+     * 
+     * @return Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     *         event-driven steps.
+     */
+
+    public AwsStepFunctionStateMachineDetails getAwsStepFunctionStateMachine() {
+        return this.awsStepFunctionStateMachine;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     * event-driven steps.
+     * </p>
+     * 
+     * @param awsStepFunctionStateMachine
+     *        Provides details about an Step Functions state machine, which is a workflow consisting of a series of
+     *        event-driven steps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails awsStepFunctionStateMachine) {
+        setAwsStepFunctionStateMachine(awsStepFunctionStateMachine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     * 
+     * @param awsAthenaWorkGroup
+     *        Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams,
+     *        applications, or workloads. It also helps you set limits on data processing and track costs.
+     */
+
+    public void setAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails awsAthenaWorkGroup) {
+        this.awsAthenaWorkGroup = awsAthenaWorkGroup;
+    }
+
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     * 
+     * @return Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams,
+     *         applications, or workloads. It also helps you set limits on data processing and track costs.
+     */
+
+    public AwsAthenaWorkGroupDetails getAwsAthenaWorkGroup() {
+        return this.awsAthenaWorkGroup;
+    }
+
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     * 
+     * @param awsAthenaWorkGroup
+     *        Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams,
+     *        applications, or workloads. It also helps you set limits on data processing and track costs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails awsAthenaWorkGroup) {
+        setAwsAthenaWorkGroup(awsAthenaWorkGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives
+     * events and delivers them to zero or more destinations, or targets.
+     * </p>
+     * 
+     * @param awsEventsEventbus
+     *        Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that
+     *        receives events and delivers them to zero or more destinations, or targets.
+     */
+
+    public void setAwsEventsEventbus(AwsEventsEventbusDetails awsEventsEventbus) {
+        this.awsEventsEventbus = awsEventsEventbus;
+    }
+
+    /**
+     * <p>
+     * Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives
+     * events and delivers them to zero or more destinations, or targets.
+     * </p>
+     * 
+     * @return Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that
+     *         receives events and delivers them to zero or more destinations, or targets.
+     */
+
+    public AwsEventsEventbusDetails getAwsEventsEventbus() {
+        return this.awsEventsEventbus;
+    }
+
+    /**
+     * <p>
+     * Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that receives
+     * events and delivers them to zero or more destinations, or targets.
+     * </p>
+     * 
+     * @param awsEventsEventbus
+     *        Provides details about Amazon EventBridge event bus for an endpoint. An event bus is a router that
+     *        receives events and delivers them to zero or more destinations, or targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEventsEventbus(AwsEventsEventbusDetails awsEventsEventbus) {
+        setAwsEventsEventbus(awsEventsEventbus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store
+     * type, and location information about your data store.
+     * </p>
+     * 
+     * @param awsDmsEndpoint
+     *        Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data
+     *        store type, and location information about your data store.
+     */
+
+    public void setAwsDmsEndpoint(AwsDmsEndpointDetails awsDmsEndpoint) {
+        this.awsDmsEndpoint = awsDmsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store
+     * type, and location information about your data store.
+     * </p>
+     * 
+     * @return Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection,
+     *         data store type, and location information about your data store.
+     */
+
+    public AwsDmsEndpointDetails getAwsDmsEndpoint() {
+        return this.awsDmsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data store
+     * type, and location information about your data store.
+     * </p>
+     * 
+     * @param awsDmsEndpoint
+     *        Provides details about an Database Migration Service (DMS) endpoint. An endpoint provides connection, data
+     *        store type, and location information about your data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsDmsEndpoint(AwsDmsEndpointDetails awsDmsEndpoint) {
+        setAwsDmsEndpoint(awsDmsEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     * availability by making it Regional-fault tolerant.
+     * </p>
+     * 
+     * @param awsEventsEndpoint
+     *        Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     *        availability by making it Regional-fault tolerant.
+     */
+
+    public void setAwsEventsEndpoint(AwsEventsEndpointDetails awsEventsEndpoint) {
+        this.awsEventsEndpoint = awsEventsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     * availability by making it Regional-fault tolerant.
+     * </p>
+     * 
+     * @return Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     *         availability by making it Regional-fault tolerant.
+     */
+
+    public AwsEventsEndpointDetails getAwsEventsEndpoint() {
+        return this.awsEventsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     * availability by making it Regional-fault tolerant.
+     * </p>
+     * 
+     * @param awsEventsEndpoint
+     *        Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s
+     *        availability by making it Regional-fault tolerant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEventsEndpoint(AwsEventsEndpointDetails awsEventsEndpoint) {
+        setAwsEventsEndpoint(awsEventsEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint
+     * to the target endpoint.
+     * </p>
+     * 
+     * @param awsDmsReplicationTask
+     *        Provides details about an DMS replication task. A replication task moves a set of data from the source
+     *        endpoint to the target endpoint.
+     */
+
+    public void setAwsDmsReplicationTask(AwsDmsReplicationTaskDetails awsDmsReplicationTask) {
+        this.awsDmsReplicationTask = awsDmsReplicationTask;
+    }
+
+    /**
+     * <p>
+     * Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint
+     * to the target endpoint.
+     * </p>
+     * 
+     * @return Provides details about an DMS replication task. A replication task moves a set of data from the source
+     *         endpoint to the target endpoint.
+     */
+
+    public AwsDmsReplicationTaskDetails getAwsDmsReplicationTask() {
+        return this.awsDmsReplicationTask;
+    }
+
+    /**
+     * <p>
+     * Provides details about an DMS replication task. A replication task moves a set of data from the source endpoint
+     * to the target endpoint.
+     * </p>
+     * 
+     * @param awsDmsReplicationTask
+     *        Provides details about an DMS replication task. A replication task moves a set of data from the source
+     *        endpoint to the target endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsDmsReplicationTask(AwsDmsReplicationTaskDetails awsDmsReplicationTask) {
+        setAwsDmsReplicationTask(awsDmsReplicationTask);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source
+     * data store, read the source data, and format the data for consumption by the target data store.
+     * </p>
+     * 
+     * @param awsDmsReplicationInstance
+     *        Provides details about an DMS replication instance. DMS uses a replication instance to connect to your
+     *        source data store, read the source data, and format the data for consumption by the target data store.
+     */
+
+    public void setAwsDmsReplicationInstance(AwsDmsReplicationInstanceDetails awsDmsReplicationInstance) {
+        this.awsDmsReplicationInstance = awsDmsReplicationInstance;
+    }
+
+    /**
+     * <p>
+     * Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source
+     * data store, read the source data, and format the data for consumption by the target data store.
+     * </p>
+     * 
+     * @return Provides details about an DMS replication instance. DMS uses a replication instance to connect to your
+     *         source data store, read the source data, and format the data for consumption by the target data store.
+     */
+
+    public AwsDmsReplicationInstanceDetails getAwsDmsReplicationInstance() {
+        return this.awsDmsReplicationInstance;
+    }
+
+    /**
+     * <p>
+     * Provides details about an DMS replication instance. DMS uses a replication instance to connect to your source
+     * data store, read the source data, and format the data for consumption by the target data store.
+     * </p>
+     * 
+     * @param awsDmsReplicationInstance
+     *        Provides details about an DMS replication instance. DMS uses a replication instance to connect to your
+     *        source data store, read the source data, and format the data for consumption by the target data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsDmsReplicationInstance(AwsDmsReplicationInstanceDetails awsDmsReplicationInstance) {
+        setAwsDmsReplicationInstance(awsDmsReplicationInstance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the hosted
+     * zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent
+     * domain name.
+     * </p>
+     * 
+     * @param awsRoute53HostedZone
+     *        Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the
+     *        hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a
+     *        single parent domain name.
+     */
+
+    public void setAwsRoute53HostedZone(AwsRoute53HostedZoneDetails awsRoute53HostedZone) {
+        this.awsRoute53HostedZone = awsRoute53HostedZone;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the hosted
+     * zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent
+     * domain name.
+     * </p>
+     * 
+     * @return Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the
+     *         hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to
+     *         a single parent domain name.
+     */
+
+    public AwsRoute53HostedZoneDetails getAwsRoute53HostedZone() {
+        return this.awsRoute53HostedZone;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the hosted
+     * zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent
+     * domain name.
+     * </p>
+     * 
+     * @param awsRoute53HostedZone
+     *        Provides details about an Amazon Route 53 hosted zone, including the four name servers assigned to the
+     *        hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a
+     *        single parent domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsRoute53HostedZone(AwsRoute53HostedZoneDetails awsRoute53HostedZone) {
+        setAwsRoute53HostedZone(awsRoute53HostedZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     * </p>
+     * 
+     * @param awsMskCluster
+     *        Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     */
+
+    public void setAwsMskCluster(AwsMskClusterDetails awsMskCluster) {
+        this.awsMskCluster = awsMskCluster;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     * </p>
+     * 
+     * @return Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     */
+
+    public AwsMskClusterDetails getAwsMskCluster() {
+        return this.awsMskCluster;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     * </p>
+     * 
+     * @param awsMskCluster
+     *        Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsMskCluster(AwsMskClusterDetails awsMskCluster) {
+        setAwsMskCluster(awsMskCluster);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named
+     * network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     * </p>
+     * 
+     * @param awsS3AccessPoint
+     *        Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are
+     *        named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     */
+
+    public void setAwsS3AccessPoint(AwsS3AccessPointDetails awsS3AccessPoint) {
+        this.awsS3AccessPoint = awsS3AccessPoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named
+     * network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     * </p>
+     * 
+     * @return Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are
+     *         named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     */
+
+    public AwsS3AccessPointDetails getAwsS3AccessPoint() {
+        return this.awsS3AccessPoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named
+     * network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     * </p>
+     * 
+     * @param awsS3AccessPoint
+     *        Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are
+     *        named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsS3AccessPoint(AwsS3AccessPointDetails awsS3AccessPoint) {
+        setAwsS3AccessPoint(awsS3AccessPoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     * configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.
+     * </p>
+     * 
+     * @param awsEc2ClientVpnEndpoint
+     *        Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     *        configure to enable and manage client VPN sessions. It's the termination point for all client VPN
+     *        sessions.
+     */
+
+    public void setAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointDetails awsEc2ClientVpnEndpoint) {
+        this.awsEc2ClientVpnEndpoint = awsEc2ClientVpnEndpoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     * configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.
+     * </p>
+     * 
+     * @return Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     *         configure to enable and manage client VPN sessions. It's the termination point for all client VPN
+     *         sessions.
+     */
+
+    public AwsEc2ClientVpnEndpointDetails getAwsEc2ClientVpnEndpoint() {
+        return this.awsEc2ClientVpnEndpoint;
+    }
+
+    /**
+     * <p>
+     * Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     * configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions.
+     * </p>
+     * 
+     * @param awsEc2ClientVpnEndpoint
+     *        Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and
+     *        configure to enable and manage client VPN sessions. It's the termination point for all client VPN
+     *        sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2ClientVpnEndpoint(AwsEc2ClientVpnEndpointDetails awsEc2ClientVpnEndpoint) {
+        setAwsEc2ClientVpnEndpoint(awsEc2ClientVpnEndpoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4037,7 +5003,47 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (getAwsBackupBackupPlan() != null)
             sb.append("AwsBackupBackupPlan: ").append(getAwsBackupBackupPlan()).append(",");
         if (getAwsBackupRecoveryPoint() != null)
-            sb.append("AwsBackupRecoveryPoint: ").append(getAwsBackupRecoveryPoint());
+            sb.append("AwsBackupRecoveryPoint: ").append(getAwsBackupRecoveryPoint()).append(",");
+        if (getAwsEc2LaunchTemplate() != null)
+            sb.append("AwsEc2LaunchTemplate: ").append(getAwsEc2LaunchTemplate()).append(",");
+        if (getAwsSageMakerNotebookInstance() != null)
+            sb.append("AwsSageMakerNotebookInstance: ").append(getAwsSageMakerNotebookInstance()).append(",");
+        if (getAwsWafv2WebAcl() != null)
+            sb.append("AwsWafv2WebAcl: ").append(getAwsWafv2WebAcl()).append(",");
+        if (getAwsWafv2RuleGroup() != null)
+            sb.append("AwsWafv2RuleGroup: ").append(getAwsWafv2RuleGroup()).append(",");
+        if (getAwsEc2RouteTable() != null)
+            sb.append("AwsEc2RouteTable: ").append(getAwsEc2RouteTable()).append(",");
+        if (getAwsAmazonMqBroker() != null)
+            sb.append("AwsAmazonMqBroker: ").append(getAwsAmazonMqBroker()).append(",");
+        if (getAwsAppSyncGraphQlApi() != null)
+            sb.append("AwsAppSyncGraphQlApi: ").append(getAwsAppSyncGraphQlApi()).append(",");
+        if (getAwsEventSchemasRegistry() != null)
+            sb.append("AwsEventSchemasRegistry: ").append(getAwsEventSchemasRegistry()).append(",");
+        if (getAwsGuardDutyDetector() != null)
+            sb.append("AwsGuardDutyDetector: ").append(getAwsGuardDutyDetector()).append(",");
+        if (getAwsStepFunctionStateMachine() != null)
+            sb.append("AwsStepFunctionStateMachine: ").append(getAwsStepFunctionStateMachine()).append(",");
+        if (getAwsAthenaWorkGroup() != null)
+            sb.append("AwsAthenaWorkGroup: ").append(getAwsAthenaWorkGroup()).append(",");
+        if (getAwsEventsEventbus() != null)
+            sb.append("AwsEventsEventbus: ").append(getAwsEventsEventbus()).append(",");
+        if (getAwsDmsEndpoint() != null)
+            sb.append("AwsDmsEndpoint: ").append(getAwsDmsEndpoint()).append(",");
+        if (getAwsEventsEndpoint() != null)
+            sb.append("AwsEventsEndpoint: ").append(getAwsEventsEndpoint()).append(",");
+        if (getAwsDmsReplicationTask() != null)
+            sb.append("AwsDmsReplicationTask: ").append(getAwsDmsReplicationTask()).append(",");
+        if (getAwsDmsReplicationInstance() != null)
+            sb.append("AwsDmsReplicationInstance: ").append(getAwsDmsReplicationInstance()).append(",");
+        if (getAwsRoute53HostedZone() != null)
+            sb.append("AwsRoute53HostedZone: ").append(getAwsRoute53HostedZone()).append(",");
+        if (getAwsMskCluster() != null)
+            sb.append("AwsMskCluster: ").append(getAwsMskCluster()).append(",");
+        if (getAwsS3AccessPoint() != null)
+            sb.append("AwsS3AccessPoint: ").append(getAwsS3AccessPoint()).append(",");
+        if (getAwsEc2ClientVpnEndpoint() != null)
+            sb.append("AwsEc2ClientVpnEndpoint: ").append(getAwsEc2ClientVpnEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -4374,6 +5380,86 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsBackupRecoveryPoint() != null && other.getAwsBackupRecoveryPoint().equals(this.getAwsBackupRecoveryPoint()) == false)
             return false;
+        if (other.getAwsEc2LaunchTemplate() == null ^ this.getAwsEc2LaunchTemplate() == null)
+            return false;
+        if (other.getAwsEc2LaunchTemplate() != null && other.getAwsEc2LaunchTemplate().equals(this.getAwsEc2LaunchTemplate()) == false)
+            return false;
+        if (other.getAwsSageMakerNotebookInstance() == null ^ this.getAwsSageMakerNotebookInstance() == null)
+            return false;
+        if (other.getAwsSageMakerNotebookInstance() != null && other.getAwsSageMakerNotebookInstance().equals(this.getAwsSageMakerNotebookInstance()) == false)
+            return false;
+        if (other.getAwsWafv2WebAcl() == null ^ this.getAwsWafv2WebAcl() == null)
+            return false;
+        if (other.getAwsWafv2WebAcl() != null && other.getAwsWafv2WebAcl().equals(this.getAwsWafv2WebAcl()) == false)
+            return false;
+        if (other.getAwsWafv2RuleGroup() == null ^ this.getAwsWafv2RuleGroup() == null)
+            return false;
+        if (other.getAwsWafv2RuleGroup() != null && other.getAwsWafv2RuleGroup().equals(this.getAwsWafv2RuleGroup()) == false)
+            return false;
+        if (other.getAwsEc2RouteTable() == null ^ this.getAwsEc2RouteTable() == null)
+            return false;
+        if (other.getAwsEc2RouteTable() != null && other.getAwsEc2RouteTable().equals(this.getAwsEc2RouteTable()) == false)
+            return false;
+        if (other.getAwsAmazonMqBroker() == null ^ this.getAwsAmazonMqBroker() == null)
+            return false;
+        if (other.getAwsAmazonMqBroker() != null && other.getAwsAmazonMqBroker().equals(this.getAwsAmazonMqBroker()) == false)
+            return false;
+        if (other.getAwsAppSyncGraphQlApi() == null ^ this.getAwsAppSyncGraphQlApi() == null)
+            return false;
+        if (other.getAwsAppSyncGraphQlApi() != null && other.getAwsAppSyncGraphQlApi().equals(this.getAwsAppSyncGraphQlApi()) == false)
+            return false;
+        if (other.getAwsEventSchemasRegistry() == null ^ this.getAwsEventSchemasRegistry() == null)
+            return false;
+        if (other.getAwsEventSchemasRegistry() != null && other.getAwsEventSchemasRegistry().equals(this.getAwsEventSchemasRegistry()) == false)
+            return false;
+        if (other.getAwsGuardDutyDetector() == null ^ this.getAwsGuardDutyDetector() == null)
+            return false;
+        if (other.getAwsGuardDutyDetector() != null && other.getAwsGuardDutyDetector().equals(this.getAwsGuardDutyDetector()) == false)
+            return false;
+        if (other.getAwsStepFunctionStateMachine() == null ^ this.getAwsStepFunctionStateMachine() == null)
+            return false;
+        if (other.getAwsStepFunctionStateMachine() != null && other.getAwsStepFunctionStateMachine().equals(this.getAwsStepFunctionStateMachine()) == false)
+            return false;
+        if (other.getAwsAthenaWorkGroup() == null ^ this.getAwsAthenaWorkGroup() == null)
+            return false;
+        if (other.getAwsAthenaWorkGroup() != null && other.getAwsAthenaWorkGroup().equals(this.getAwsAthenaWorkGroup()) == false)
+            return false;
+        if (other.getAwsEventsEventbus() == null ^ this.getAwsEventsEventbus() == null)
+            return false;
+        if (other.getAwsEventsEventbus() != null && other.getAwsEventsEventbus().equals(this.getAwsEventsEventbus()) == false)
+            return false;
+        if (other.getAwsDmsEndpoint() == null ^ this.getAwsDmsEndpoint() == null)
+            return false;
+        if (other.getAwsDmsEndpoint() != null && other.getAwsDmsEndpoint().equals(this.getAwsDmsEndpoint()) == false)
+            return false;
+        if (other.getAwsEventsEndpoint() == null ^ this.getAwsEventsEndpoint() == null)
+            return false;
+        if (other.getAwsEventsEndpoint() != null && other.getAwsEventsEndpoint().equals(this.getAwsEventsEndpoint()) == false)
+            return false;
+        if (other.getAwsDmsReplicationTask() == null ^ this.getAwsDmsReplicationTask() == null)
+            return false;
+        if (other.getAwsDmsReplicationTask() != null && other.getAwsDmsReplicationTask().equals(this.getAwsDmsReplicationTask()) == false)
+            return false;
+        if (other.getAwsDmsReplicationInstance() == null ^ this.getAwsDmsReplicationInstance() == null)
+            return false;
+        if (other.getAwsDmsReplicationInstance() != null && other.getAwsDmsReplicationInstance().equals(this.getAwsDmsReplicationInstance()) == false)
+            return false;
+        if (other.getAwsRoute53HostedZone() == null ^ this.getAwsRoute53HostedZone() == null)
+            return false;
+        if (other.getAwsRoute53HostedZone() != null && other.getAwsRoute53HostedZone().equals(this.getAwsRoute53HostedZone()) == false)
+            return false;
+        if (other.getAwsMskCluster() == null ^ this.getAwsMskCluster() == null)
+            return false;
+        if (other.getAwsMskCluster() != null && other.getAwsMskCluster().equals(this.getAwsMskCluster()) == false)
+            return false;
+        if (other.getAwsS3AccessPoint() == null ^ this.getAwsS3AccessPoint() == null)
+            return false;
+        if (other.getAwsS3AccessPoint() != null && other.getAwsS3AccessPoint().equals(this.getAwsS3AccessPoint()) == false)
+            return false;
+        if (other.getAwsEc2ClientVpnEndpoint() == null ^ this.getAwsEc2ClientVpnEndpoint() == null)
+            return false;
+        if (other.getAwsEc2ClientVpnEndpoint() != null && other.getAwsEc2ClientVpnEndpoint().equals(this.getAwsEc2ClientVpnEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -4461,6 +5547,26 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsBackupBackupVault() == null) ? 0 : getAwsBackupBackupVault().hashCode());
         hashCode = prime * hashCode + ((getAwsBackupBackupPlan() == null) ? 0 : getAwsBackupBackupPlan().hashCode());
         hashCode = prime * hashCode + ((getAwsBackupRecoveryPoint() == null) ? 0 : getAwsBackupRecoveryPoint().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2LaunchTemplate() == null) ? 0 : getAwsEc2LaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getAwsSageMakerNotebookInstance() == null) ? 0 : getAwsSageMakerNotebookInstance().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafv2WebAcl() == null) ? 0 : getAwsWafv2WebAcl().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafv2RuleGroup() == null) ? 0 : getAwsWafv2RuleGroup().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2RouteTable() == null) ? 0 : getAwsEc2RouteTable().hashCode());
+        hashCode = prime * hashCode + ((getAwsAmazonMqBroker() == null) ? 0 : getAwsAmazonMqBroker().hashCode());
+        hashCode = prime * hashCode + ((getAwsAppSyncGraphQlApi() == null) ? 0 : getAwsAppSyncGraphQlApi().hashCode());
+        hashCode = prime * hashCode + ((getAwsEventSchemasRegistry() == null) ? 0 : getAwsEventSchemasRegistry().hashCode());
+        hashCode = prime * hashCode + ((getAwsGuardDutyDetector() == null) ? 0 : getAwsGuardDutyDetector().hashCode());
+        hashCode = prime * hashCode + ((getAwsStepFunctionStateMachine() == null) ? 0 : getAwsStepFunctionStateMachine().hashCode());
+        hashCode = prime * hashCode + ((getAwsAthenaWorkGroup() == null) ? 0 : getAwsAthenaWorkGroup().hashCode());
+        hashCode = prime * hashCode + ((getAwsEventsEventbus() == null) ? 0 : getAwsEventsEventbus().hashCode());
+        hashCode = prime * hashCode + ((getAwsDmsEndpoint() == null) ? 0 : getAwsDmsEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getAwsEventsEndpoint() == null) ? 0 : getAwsEventsEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getAwsDmsReplicationTask() == null) ? 0 : getAwsDmsReplicationTask().hashCode());
+        hashCode = prime * hashCode + ((getAwsDmsReplicationInstance() == null) ? 0 : getAwsDmsReplicationInstance().hashCode());
+        hashCode = prime * hashCode + ((getAwsRoute53HostedZone() == null) ? 0 : getAwsRoute53HostedZone().hashCode());
+        hashCode = prime * hashCode + ((getAwsMskCluster() == null) ? 0 : getAwsMskCluster().hashCode());
+        hashCode = prime * hashCode + ((getAwsS3AccessPoint() == null) ? 0 : getAwsS3AccessPoint().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2ClientVpnEndpoint() == null) ? 0 : getAwsEc2ClientVpnEndpoint().hashCode());
         return hashCode;
     }
 

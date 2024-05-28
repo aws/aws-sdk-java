@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,9 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * If you specify <code>true</code> for this value, your automation or command continue to run even if we can't
-     * gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.
+     * When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve
+     * alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or
+     * INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.
      * </p>
      */
     private Boolean ignorePollAlarmFailure;
@@ -44,14 +45,16 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * If you specify <code>true</code> for this value, your automation or command continue to run even if we can't
-     * gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.
+     * When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve
+     * alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or
+     * INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.
      * </p>
      * 
      * @param ignorePollAlarmFailure
-     *        If you specify <code>true</code> for this value, your automation or command continue to run even if we
-     *        can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>
-     *        .
+     *        When this value is <i>true</i>, your automation or command continues to run in cases where we can’t
+     *        retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status
+     *        of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default
+     *        is <i>false</i>.
      */
 
     public void setIgnorePollAlarmFailure(Boolean ignorePollAlarmFailure) {
@@ -60,13 +63,15 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * If you specify <code>true</code> for this value, your automation or command continue to run even if we can't
-     * gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.
+     * When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve
+     * alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or
+     * INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.
      * </p>
      * 
-     * @return If you specify <code>true</code> for this value, your automation or command continue to run even if we
-     *         can't gather information about the state of your CloudWatch alarm. The default value is
-     *         <code>false</code>.
+     * @return When this value is <i>true</i>, your automation or command continues to run in cases where we can’t
+     *         retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm
+     *         status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value.
+     *         Default is <i>false</i>.
      */
 
     public Boolean getIgnorePollAlarmFailure() {
@@ -75,14 +80,16 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * If you specify <code>true</code> for this value, your automation or command continue to run even if we can't
-     * gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.
+     * When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve
+     * alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or
+     * INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.
      * </p>
      * 
      * @param ignorePollAlarmFailure
-     *        If you specify <code>true</code> for this value, your automation or command continue to run even if we
-     *        can't gather information about the state of your CloudWatch alarm. The default value is <code>false</code>
-     *        .
+     *        When this value is <i>true</i>, your automation or command continues to run in cases where we can’t
+     *        retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status
+     *        of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default
+     *        is <i>false</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,13 +100,15 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * If you specify <code>true</code> for this value, your automation or command continue to run even if we can't
-     * gather information about the state of your CloudWatch alarm. The default value is <code>false</code>.
+     * When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve
+     * alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or
+     * INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.
      * </p>
      * 
-     * @return If you specify <code>true</code> for this value, your automation or command continue to run even if we
-     *         can't gather information about the state of your CloudWatch alarm. The default value is
-     *         <code>false</code>.
+     * @return When this value is <i>true</i>, your automation or command continues to run in cases where we can’t
+     *         retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm
+     *         status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value.
+     *         Default is <i>false</i>.
      */
 
     public Boolean isIgnorePollAlarmFailure() {

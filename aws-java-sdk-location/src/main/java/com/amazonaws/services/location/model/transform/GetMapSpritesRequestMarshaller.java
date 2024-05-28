@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class GetMapSpritesRequestMarshaller {
 
     private static final MarshallingInfo<String> FILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("FileName").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> MAPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("MapName").build();
 
@@ -49,6 +51,7 @@ public class GetMapSpritesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getMapSpritesRequest.getFileName(), FILENAME_BINDING);
+            protocolMarshaller.marshall(getMapSpritesRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(getMapSpritesRequest.getMapName(), MAPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

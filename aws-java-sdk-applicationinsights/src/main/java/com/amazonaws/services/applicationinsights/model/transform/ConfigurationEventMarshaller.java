@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ConfigurationEventMarshaller {
 
+    private static final MarshallingInfo<String> RESOURCEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceGroupName").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> MONITOREDRESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoredResourceARN").build();
     private static final MarshallingInfo<String> EVENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +60,8 @@ public class ConfigurationEventMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(configurationEvent.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(configurationEvent.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(configurationEvent.getMonitoredResourceARN(), MONITOREDRESOURCEARN_BINDING);
             protocolMarshaller.marshall(configurationEvent.getEventStatus(), EVENTSTATUS_BINDING);
             protocolMarshaller.marshall(configurationEvent.getEventResourceType(), EVENTRESOURCETYPE_BINDING);

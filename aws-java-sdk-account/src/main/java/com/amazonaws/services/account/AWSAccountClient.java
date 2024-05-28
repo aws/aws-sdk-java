@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.account.AWSAccountClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.account.model.*;
+
 import com.amazonaws.services.account.model.transform.*;
 
 /**
@@ -84,14 +85,17 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.account.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.account.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.account.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.account.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.account.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.account.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.account.model.AWSAccountException.class));
 
     public static AWSAccountClientBuilder builder() {
@@ -210,6 +214,140 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAlternateContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteAlternateContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables (opts-out) a particular Region for an account.
+     * </p>
+     * 
+     * @param disableRegionRequest
+     * @return Result of the DisableRegion operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws ConflictException
+     *         The request could not be processed because of a conflict in the current status of the resource. For
+     *         example, this happens if you try to enable a Region that is currently being disabled (in a status of
+     *         DISABLING).
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.DisableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DisableRegionResult disableRegion(DisableRegionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableRegion(request);
+    }
+
+    @SdkInternalApi
+    final DisableRegionResult executeDisableRegion(DisableRegionRequest disableRegionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableRegionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableRegionRequest> request = null;
+        Response<DisableRegionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRegionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Account");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRegion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableRegionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisableRegionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables (opts-in) a particular Region for an account.
+     * </p>
+     * 
+     * @param enableRegionRequest
+     * @return Result of the EnableRegion operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws ConflictException
+     *         The request could not be processed because of a conflict in the current status of the resource. For
+     *         example, this happens if you try to enable a Region that is currently being disabled (in a status of
+     *         DISABLING).
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.EnableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public EnableRegionResult enableRegion(EnableRegionRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableRegion(request);
+    }
+
+    @SdkInternalApi
+    final EnableRegionResult executeEnableRegion(EnableRegionRequest enableRegionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableRegionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableRegionRequest> request = null;
+        Response<EnableRegionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRegionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Account");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRegion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableRegionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableRegionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -360,6 +498,133 @@ public class AWSAccountClient extends AmazonWebServiceClient implements AWSAccou
             HttpResponseHandler<AmazonWebServiceResponse<GetContactInformationResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetContactInformationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the opt-in status of a particular Region.
+     * </p>
+     * 
+     * @param getRegionOptStatusRequest
+     * @return Result of the GetRegionOptStatus operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.GetRegionOptStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetRegionOptStatusResult getRegionOptStatus(GetRegionOptStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRegionOptStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetRegionOptStatusResult executeGetRegionOptStatus(GetRegionOptStatusRequest getRegionOptStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRegionOptStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRegionOptStatusRequest> request = null;
+        Response<GetRegionOptStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRegionOptStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegionOptStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Account");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegionOptStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRegionOptStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRegionOptStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the Regions for a given account and their respective opt-in statuses. Optionally, this list can be
+     * filtered by the <code>region-opt-status-contains</code> parameter.
+     * </p>
+     * 
+     * @param listRegionsRequest
+     * @return Result of the ListRegions operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.ListRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListRegionsResult listRegions(ListRegionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRegions(request);
+    }
+
+    @SdkInternalApi
+    final ListRegionsResult executeListRegions(ListRegionsRequest listRegionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRegionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRegionsRequest> request = null;
+        Response<ListRegionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRegionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRegionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Account");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRegionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRegionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

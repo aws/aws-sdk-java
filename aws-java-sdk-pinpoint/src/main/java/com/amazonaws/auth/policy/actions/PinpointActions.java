@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,6 +159,12 @@ public enum PinpointActions implements Action {
     GetJourneyExecutionActivityMetrics("pinpoint:GetJourneyExecutionActivityMetrics"),
     /** Action for the GetJourneyExecutionMetrics operation. */
     GetJourneyExecutionMetrics("pinpoint:GetJourneyExecutionMetrics"),
+    /** Action for the GetJourneyRunExecutionActivityMetrics operation. */
+    GetJourneyRunExecutionActivityMetrics("pinpoint:GetJourneyRunExecutionActivityMetrics"),
+    /** Action for the GetJourneyRunExecutionMetrics operation. */
+    GetJourneyRunExecutionMetrics("pinpoint:GetJourneyRunExecutionMetrics"),
+    /** Action for the GetJourneyRuns operation. */
+    GetJourneyRuns("pinpoint:GetJourneyRuns"),
     /** Action for the GetPushTemplate operation. */
     GetPushTemplate("pinpoint:GetPushTemplate"),
     /** Action for the GetRecommenderConfiguration operation. */

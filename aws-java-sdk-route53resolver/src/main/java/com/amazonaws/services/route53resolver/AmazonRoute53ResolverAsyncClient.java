@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -343,6 +343,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOutpostResolverResult> createOutpostResolverAsync(CreateOutpostResolverRequest request) {
+
+        return createOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOutpostResolverResult> createOutpostResolverAsync(final CreateOutpostResolverRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateOutpostResolverRequest, CreateOutpostResolverResult> asyncHandler) {
+        final CreateOutpostResolverRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateOutpostResolverResult>() {
+            @Override
+            public CreateOutpostResolverResult call() throws Exception {
+                CreateOutpostResolverResult result = null;
+
+                try {
+                    result = executeCreateOutpostResolver(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResolverEndpointResult> createResolverEndpointAsync(CreateResolverEndpointRequest request) {
 
         return createResolverEndpointAsync(request, null);
@@ -525,6 +558,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeDeleteFirewallRuleGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutpostResolverResult> deleteOutpostResolverAsync(DeleteOutpostResolverRequest request) {
+
+        return deleteOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutpostResolverResult> deleteOutpostResolverAsync(final DeleteOutpostResolverRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOutpostResolverRequest, DeleteOutpostResolverResult> asyncHandler) {
+        final DeleteOutpostResolverRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOutpostResolverResult>() {
+            @Override
+            public DeleteOutpostResolverResult call() throws Exception {
+                DeleteOutpostResolverResult result = null;
+
+                try {
+                    result = executeDeleteOutpostResolver(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -928,6 +994,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeGetFirewallRuleGroupPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOutpostResolverResult> getOutpostResolverAsync(GetOutpostResolverRequest request) {
+
+        return getOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOutpostResolverResult> getOutpostResolverAsync(final GetOutpostResolverRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOutpostResolverRequest, GetOutpostResolverResult> asyncHandler) {
+        final GetOutpostResolverRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOutpostResolverResult>() {
+            @Override
+            public GetOutpostResolverResult call() throws Exception {
+                GetOutpostResolverResult result = null;
+
+                try {
+                    result = executeGetOutpostResolver(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1462,6 +1561,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeListFirewallRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostResolversResult> listOutpostResolversAsync(ListOutpostResolversRequest request) {
+
+        return listOutpostResolversAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostResolversResult> listOutpostResolversAsync(final ListOutpostResolversRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOutpostResolversRequest, ListOutpostResolversResult> asyncHandler) {
+        final ListOutpostResolversRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOutpostResolversResult>() {
+            @Override
+            public ListOutpostResolversResult call() throws Exception {
+                ListOutpostResolversResult result = null;
+
+                try {
+                    result = executeListOutpostResolvers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2064,6 +2196,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeUpdateFirewallRuleGroupAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOutpostResolverResult> updateOutpostResolverAsync(UpdateOutpostResolverRequest request) {
+
+        return updateOutpostResolverAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOutpostResolverResult> updateOutpostResolverAsync(final UpdateOutpostResolverRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateOutpostResolverRequest, UpdateOutpostResolverResult> asyncHandler) {
+        final UpdateOutpostResolverRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateOutpostResolverResult>() {
+            @Override
+            public UpdateOutpostResolverResult call() throws Exception {
+                UpdateOutpostResolverResult result = null;
+
+                try {
+                    result = executeUpdateOutpostResolver(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

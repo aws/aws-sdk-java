@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class InterpretationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sentimentResponse").build();
     private static final MarshallingInfo<StructuredPojo> INTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("intent").build();
+    private static final MarshallingInfo<String> INTERPRETATIONSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interpretationSource").build();
 
     private static final InterpretationMarshaller instance = new InterpretationMarshaller();
 
@@ -53,6 +55,7 @@ public class InterpretationMarshaller {
             protocolMarshaller.marshall(interpretation.getNluConfidence(), NLUCONFIDENCE_BINDING);
             protocolMarshaller.marshall(interpretation.getSentimentResponse(), SENTIMENTRESPONSE_BINDING);
             protocolMarshaller.marshall(interpretation.getIntent(), INTENT_BINDING);
+            protocolMarshaller.marshall(interpretation.getInterpretationSource(), INTERPRETATIONSOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

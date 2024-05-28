@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,8 @@ import com.amazonaws.services.voiceid.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide describes the APIs
- * used for this service.
+ * Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice
+ * interactions in contact centers more secure and efficient.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,8 +35,39 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
+     * Associates the fraudsters with the watchlist specified in the same domain.
+     * </p>
+     * 
+     * @param associateFraudsterRequest
+     * @return A Java Future containing the result of the AssociateFraudster operation returned by the service.
+     * @sample AmazonVoiceIDAsync.AssociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateFraudsterResult> associateFraudsterAsync(AssociateFraudsterRequest associateFraudsterRequest);
+
+    /**
+     * <p>
+     * Associates the fraudsters with the watchlist specified in the same domain.
+     * </p>
+     * 
+     * @param associateFraudsterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateFraudster operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.AssociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateFraudsterResult> associateFraudsterAsync(AssociateFraudsterRequest associateFraudsterRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateFraudsterRequest, AssociateFraudsterResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio,
-     * and voiceprints.
+     * and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of.
      * </p>
      * 
      * @param createDomainRequest
@@ -50,7 +81,7 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
     /**
      * <p>
      * Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio,
-     * and voiceprints.
+     * and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of.
      * </p>
      * 
      * @param createDomainRequest
@@ -65,6 +96,37 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
      */
     java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest createDomainRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a watchlist that fraudsters can be a part of.
+     * </p>
+     * 
+     * @param createWatchlistRequest
+     * @return A Java Future containing the result of the CreateWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsync.CreateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWatchlistResult> createWatchlistAsync(CreateWatchlistRequest createWatchlistRequest);
+
+    /**
+     * <p>
+     * Creates a watchlist that fraudsters can be a part of.
+     * </p>
+     * 
+     * @param createWatchlistRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.CreateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWatchlistResult> createWatchlistAsync(CreateWatchlistRequest createWatchlistRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWatchlistRequest, CreateWatchlistResult> asyncHandler);
 
     /**
      * <p>
@@ -99,7 +161,8 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified fraudster from Voice ID.
+     * Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is
+     * a part of.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -112,7 +175,8 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified fraudster from Voice ID.
+     * Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is
+     * a part of.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -158,6 +222,41 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
      */
     java.util.concurrent.Future<DeleteSpeakerResult> deleteSpeakerAsync(DeleteSpeakerRequest deleteSpeakerRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSpeakerRequest, DeleteSpeakerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the
+     * watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every
+     * domain has a default watchlist which cannot be deleted.
+     * </p>
+     * 
+     * @param deleteWatchlistRequest
+     * @return A Java Future containing the result of the DeleteWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsync.DeleteWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWatchlistResult> deleteWatchlistAsync(DeleteWatchlistRequest deleteWatchlistRequest);
+
+    /**
+     * <p>
+     * Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the
+     * watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every
+     * domain has a default watchlist which cannot be deleted.
+     * </p>
+     * 
+     * @param deleteWatchlistRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.DeleteWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWatchlistResult> deleteWatchlistAsync(DeleteWatchlistRequest deleteWatchlistRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWatchlistRequest, DeleteWatchlistResult> asyncHandler);
 
     /**
      * <p>
@@ -324,6 +423,72 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
+     * Describes the specified watchlist.
+     * </p>
+     * 
+     * @param describeWatchlistRequest
+     * @return A Java Future containing the result of the DescribeWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsync.DescribeWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWatchlistResult> describeWatchlistAsync(DescribeWatchlistRequest describeWatchlistRequest);
+
+    /**
+     * <p>
+     * Describes the specified watchlist.
+     * </p>
+     * 
+     * @param describeWatchlistRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.DescribeWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWatchlistResult> describeWatchlistAsync(DescribeWatchlistRequest describeWatchlistRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeWatchlistRequest, DescribeWatchlistResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at
+     * least one watchlist. If you try to disassociate a fraudster from its only watchlist, a
+     * <code>ValidationException</code> is thrown.
+     * </p>
+     * 
+     * @param disassociateFraudsterRequest
+     * @return A Java Future containing the result of the DisassociateFraudster operation returned by the service.
+     * @sample AmazonVoiceIDAsync.DisassociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFraudsterResult> disassociateFraudsterAsync(DisassociateFraudsterRequest disassociateFraudsterRequest);
+
+    /**
+     * <p>
+     * Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at
+     * least one watchlist. If you try to disassociate a fraudster from its only watchlist, a
+     * <code>ValidationException</code> is thrown.
+     * </p>
+     * 
+     * @param disassociateFraudsterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateFraudster operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.DisassociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFraudsterResult> disassociateFraudsterAsync(DisassociateFraudsterRequest disassociateFraudsterRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFraudsterRequest, DisassociateFraudsterResult> asyncHandler);
+
+    /**
+     * <p>
      * Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call.
      * </p>
      * 
@@ -423,6 +588,37 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
 
     /**
      * <p>
+     * Lists all fraudsters in a specified watchlist or domain.
+     * </p>
+     * 
+     * @param listFraudstersRequest
+     * @return A Java Future containing the result of the ListFraudsters operation returned by the service.
+     * @sample AmazonVoiceIDAsync.ListFraudsters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFraudstersResult> listFraudstersAsync(ListFraudstersRequest listFraudstersRequest);
+
+    /**
+     * <p>
+     * Lists all fraudsters in a specified watchlist or domain.
+     * </p>
+     * 
+     * @param listFraudstersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFraudsters operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.ListFraudsters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFraudstersResult> listFraudstersAsync(ListFraudstersRequest listFraudstersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFraudstersRequest, ListFraudstersResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If
      * <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job statuses.
      * </p>
@@ -517,6 +713,37 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all watchlists in a specified domain.
+     * </p>
+     * 
+     * @param listWatchlistsRequest
+     * @return A Java Future containing the result of the ListWatchlists operation returned by the service.
+     * @sample AmazonVoiceIDAsync.ListWatchlists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWatchlistsResult> listWatchlistsAsync(ListWatchlistsRequest listWatchlistsRequest);
+
+    /**
+     * <p>
+     * Lists all watchlists in a specified domain.
+     * </p>
+     * 
+     * @param listWatchlistsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWatchlists operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.ListWatchlists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWatchlistsResult> listWatchlistsAsync(ListWatchlistsRequest listWatchlistsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWatchlistsRequest, ListWatchlistsResult> asyncHandler);
 
     /**
      * <p>
@@ -717,5 +944,36 @@ public interface AmazonVoiceIDAsync extends AmazonVoiceID {
      */
     java.util.concurrent.Future<UpdateDomainResult> updateDomainAsync(UpdateDomainRequest updateDomainRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainRequest, UpdateDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.
+     * </p>
+     * 
+     * @param updateWatchlistRequest
+     * @return A Java Future containing the result of the UpdateWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsync.UpdateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWatchlistResult> updateWatchlistAsync(UpdateWatchlistRequest updateWatchlistRequest);
+
+    /**
+     * <p>
+     * Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.
+     * </p>
+     * 
+     * @param updateWatchlistRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWatchlist operation returned by the service.
+     * @sample AmazonVoiceIDAsyncHandler.UpdateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWatchlistResult> updateWatchlistAsync(UpdateWatchlistRequest updateWatchlistRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWatchlistRequest, UpdateWatchlistResult> asyncHandler);
 
 }

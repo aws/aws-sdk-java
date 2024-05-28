@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,7 @@ public enum ValidationExceptionReason {
     INVALID_CUSTOMER_KEY("INVALID_CUSTOMER_KEY"),
     INVALID_PAGE_TOKEN("INVALID_PAGE_TOKEN"),
     INVALID_BLOCK_TOKEN("INVALID_BLOCK_TOKEN"),
+    INVALID_GRANT_TOKEN("INVALID_GRANT_TOKEN"),
     INVALID_SNAPSHOT_ID("INVALID_SNAPSHOT_ID"),
     UNRELATED_SNAPSHOTS("UNRELATED_SNAPSHOTS"),
     INVALID_BLOCK("INVALID_BLOCK"),
@@ -31,7 +32,9 @@ public enum ValidationExceptionReason {
     INVALID_DEPENDENCY_REQUEST("INVALID_DEPENDENCY_REQUEST"),
     INVALID_PARAMETER_VALUE("INVALID_PARAMETER_VALUE"),
     INVALID_VOLUME_SIZE("INVALID_VOLUME_SIZE"),
-    CONFLICTING_BLOCK_UPDATE("CONFLICTING_BLOCK_UPDATE");
+    CONFLICTING_BLOCK_UPDATE("CONFLICTING_BLOCK_UPDATE"),
+    INVALID_IMAGE_ID("INVALID_IMAGE_ID"),
+    WRITE_REQUEST_TIMEOUT("WRITE_REQUEST_TIMEOUT");
 
     private String value;
 

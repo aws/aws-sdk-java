@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ import com.amazonaws.services.voiceid.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide describes the APIs
- * used for this service.
+ * Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice
+ * interactions in contact centers more secure and efficient.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -44,8 +44,41 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
+     * Associates the fraudsters with the watchlist specified in the same domain.
+     * </p>
+     * 
+     * @param associateFraudsterRequest
+     * @return Result of the AssociateFraudster operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded the service quota. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas"
+     *         >Voice ID Service Quotas</a> and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.AssociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AssociateFraudsterResult associateFraudster(AssociateFraudsterRequest associateFraudsterRequest);
+
+    /**
+     * <p>
      * Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio,
-     * and voiceprints.
+     * and voiceprints. Every domain is created with a default watchlist that fraudsters can be a part of.
      * </p>
      * 
      * @param createDomainRequest
@@ -78,6 +111,39 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
+     * Creates a watchlist that fraudsters can be a part of.
+     * </p>
+     * 
+     * @param createWatchlistRequest
+     * @return Result of the CreateWatchlist operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded the service quota. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas"
+     *         >Voice ID Service Quotas</a> and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.CreateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateWatchlistResult createWatchlist(CreateWatchlistRequest createWatchlistRequest);
+
+    /**
+     * <p>
      * Deletes the specified domain from Voice ID.
      * </p>
      * 
@@ -107,7 +173,8 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
-     * Deletes the specified fraudster from Voice ID.
+     * Deletes the specified fraudster from Voice ID. This action disassociates the fraudster from any watchlists it is
+     * a part of.
      * </p>
      * 
      * @param deleteFraudsterRequest
@@ -162,6 +229,37 @@ public interface AmazonVoiceID {
      *      Documentation</a>
      */
     DeleteSpeakerResult deleteSpeaker(DeleteSpeakerRequest deleteSpeakerRequest);
+
+    /**
+     * <p>
+     * Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the
+     * watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every
+     * domain has a default watchlist which cannot be deleted.
+     * </p>
+     * 
+     * @param deleteWatchlistRequest
+     * @return Result of the DeleteWatchlist operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.DeleteWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteWatchlistResult deleteWatchlist(DeleteWatchlistRequest deleteWatchlistRequest);
 
     /**
      * <p>
@@ -295,6 +393,63 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
+     * Describes the specified watchlist.
+     * </p>
+     * 
+     * @param describeWatchlistRequest
+     * @return Result of the DescribeWatchlist operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.DescribeWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeWatchlistResult describeWatchlist(DescribeWatchlistRequest describeWatchlistRequest);
+
+    /**
+     * <p>
+     * Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at
+     * least one watchlist. If you try to disassociate a fraudster from its only watchlist, a
+     * <code>ValidationException</code> is thrown.
+     * </p>
+     * 
+     * @param disassociateFraudsterRequest
+     * @return Result of the DisassociateFraudster operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.DisassociateFraudster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisassociateFraudsterResult disassociateFraudster(DisassociateFraudsterRequest disassociateFraudsterRequest);
+
+    /**
+     * <p>
      * Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call.
      * </p>
      * 
@@ -374,6 +529,32 @@ public interface AmazonVoiceID {
 
     /**
      * <p>
+     * Lists all fraudsters in a specified watchlist or domain.
+     * </p>
+     * 
+     * @param listFraudstersRequest
+     * @return Result of the ListFraudsters operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.ListFraudsters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFraudstersResult listFraudsters(ListFraudstersRequest listFraudstersRequest);
+
+    /**
+     * <p>
      * Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If
      * <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job statuses.
      * </p>
@@ -450,6 +631,32 @@ public interface AmazonVoiceID {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all watchlists in a specified domain.
+     * </p>
+     * 
+     * @param listWatchlistsRequest
+     * @return Result of the ListWatchlists operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.ListWatchlists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListWatchlistsResult listWatchlists(ListWatchlistsRequest listWatchlistsRequest);
 
     /**
      * <p>
@@ -640,6 +847,35 @@ public interface AmazonVoiceID {
      *      Documentation</a>
      */
     UpdateDomainResult updateDomain(UpdateDomainRequest updateDomainRequest);
+
+    /**
+     * <p>
+     * Updates the specified watchlist. Every domain has a default watchlist which cannot be updated.
+     * </p>
+     * 
+     * @param updateWatchlistRequest
+     * @return Result of the UpdateWatchlist operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
+     *         details.
+     * @throws ValidationException
+     *         The request failed one or more validations; check the error message for more details.
+     * @throws ConflictException
+     *         The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more
+     *         details.
+     * @throws InternalServerException
+     *         The request failed due to an unknown error on the server side.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please slow down your request rate. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas"
+     *         > Amazon Connect Voice ID Service API throttling quotas </a> and try your request again.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action. Check the error message and try again.
+     * @sample AmazonVoiceID.UpdateWatchlist
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateWatchlistResult updateWatchlist(UpdateWatchlistRequest updateWatchlistRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

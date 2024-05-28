@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -65,6 +65,16 @@ public class RegionsTest {
     @Test(expected = IllegalArgumentException.class)
     public void fromName_whenRegionNameInvalid_throwsIllegalArgumentException() {
         Regions.fromName("northpole");
+    }
+
+    @Test
+    public void fromName_whenRegionNameInvalid_recommendsRegionUtils() {
+        try {
+            Regions.fromName("northpole");
+            Assert.fail();
+        } catch (IllegalArgumentException e) {
+            Assert.assertTrue(e.getMessage().contains("RegionUtils"));
+        }
     }
 
     @Test

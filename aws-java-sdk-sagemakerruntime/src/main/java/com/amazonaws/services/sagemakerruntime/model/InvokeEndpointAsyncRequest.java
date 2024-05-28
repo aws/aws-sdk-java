@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      */
     private String endpointName;
@@ -41,7 +40,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     private String contentType;
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      */
     private String accept;
@@ -57,7 +56,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -80,22 +79,28 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     private String inputLocation;
     /**
      * <p>
-     * Maximum age in seconds a request can be in the queue before it is marked as expired.
+     * Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or
+     * 21,600 seconds.
      * </p>
      */
     private Integer requestTTLSeconds;
+    /**
+     * <p>
+     * Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15
+     * minutes, or 900 seconds.
+     * </p>
+     */
+    private Integer invocationTimeoutSeconds;
 
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint that you specified when you created the endpoint using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     *        <code>CreateEndpoint</code> </a> API.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      */
 
     public void setEndpointName(String endpointName) {
@@ -105,13 +110,11 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @return The name of the endpoint that you specified when you created the endpoint using the <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     *         <code>CreateEndpoint</code> </a> API.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      */
 
     public String getEndpointName() {
@@ -121,14 +124,12 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The name of the endpoint that you specified when you created the endpoint using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * </p>
      * 
      * @param endpointName
      *        The name of the endpoint that you specified when you created the endpoint using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     *        <code>CreateEndpoint</code> </a> API.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +180,11 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      */
 
     public void setAccept(String accept) {
@@ -192,10 +193,10 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
-     * @return The desired MIME type of the inference in the response.
+     * @return The desired MIME type of the inference response from the model container.
      */
 
     public String getAccept() {
@@ -204,11 +205,11 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,7 +230,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -246,7 +247,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
-     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>:
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
      *        in your post-processing function.
      *        </p>
      *        <p>
@@ -270,7 +271,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -287,8 +288,8 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         The code in your model is responsible for setting or updating any custom attributes in the response. If
      *         your code does not set this value in the response, an empty value is returned. For example, if a custom
-     *         attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>
-     *         : in your post-processing function.
+     *         attribute represents the trace ID, your model can prepend the custom attribute with
+     *         <code>Trace ID:</code> in your post-processing function.
      *         </p>
      *         <p>
      *         This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker
@@ -311,7 +312,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
      * does not set this value in the response, an empty value is returned. For example, if a custom attribute
-     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>: in your
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
      * post-processing function.
      * </p>
      * <p>
@@ -328,7 +329,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
-     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID</code>:
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
      *        in your post-processing function.
      *        </p>
      *        <p>
@@ -430,11 +431,13 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum age in seconds a request can be in the queue before it is marked as expired.
+     * Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or
+     * 21,600 seconds.
      * </p>
      * 
      * @param requestTTLSeconds
-     *        Maximum age in seconds a request can be in the queue before it is marked as expired.
+     *        Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6
+     *        hours, or 21,600 seconds.
      */
 
     public void setRequestTTLSeconds(Integer requestTTLSeconds) {
@@ -443,10 +446,12 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum age in seconds a request can be in the queue before it is marked as expired.
+     * Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or
+     * 21,600 seconds.
      * </p>
      * 
-     * @return Maximum age in seconds a request can be in the queue before it is marked as expired.
+     * @return Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6
+     *         hours, or 21,600 seconds.
      */
 
     public Integer getRequestTTLSeconds() {
@@ -455,16 +460,64 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum age in seconds a request can be in the queue before it is marked as expired.
+     * Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or
+     * 21,600 seconds.
      * </p>
      * 
      * @param requestTTLSeconds
-     *        Maximum age in seconds a request can be in the queue before it is marked as expired.
+     *        Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6
+     *        hours, or 21,600 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeEndpointAsyncRequest withRequestTTLSeconds(Integer requestTTLSeconds) {
         setRequestTTLSeconds(requestTTLSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15
+     * minutes, or 900 seconds.
+     * </p>
+     * 
+     * @param invocationTimeoutSeconds
+     *        Maximum amount of time in seconds a request can be processed before it is marked as expired. The default
+     *        is 15 minutes, or 900 seconds.
+     */
+
+    public void setInvocationTimeoutSeconds(Integer invocationTimeoutSeconds) {
+        this.invocationTimeoutSeconds = invocationTimeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15
+     * minutes, or 900 seconds.
+     * </p>
+     * 
+     * @return Maximum amount of time in seconds a request can be processed before it is marked as expired. The default
+     *         is 15 minutes, or 900 seconds.
+     */
+
+    public Integer getInvocationTimeoutSeconds() {
+        return this.invocationTimeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15
+     * minutes, or 900 seconds.
+     * </p>
+     * 
+     * @param invocationTimeoutSeconds
+     *        Maximum amount of time in seconds a request can be processed before it is marked as expired. The default
+     *        is 15 minutes, or 900 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointAsyncRequest withInvocationTimeoutSeconds(Integer invocationTimeoutSeconds) {
+        setInvocationTimeoutSeconds(invocationTimeoutSeconds);
         return this;
     }
 
@@ -493,7 +546,9 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
         if (getInputLocation() != null)
             sb.append("InputLocation: ").append(getInputLocation()).append(",");
         if (getRequestTTLSeconds() != null)
-            sb.append("RequestTTLSeconds: ").append(getRequestTTLSeconds());
+            sb.append("RequestTTLSeconds: ").append(getRequestTTLSeconds()).append(",");
+        if (getInvocationTimeoutSeconds() != null)
+            sb.append("InvocationTimeoutSeconds: ").append(getInvocationTimeoutSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -536,6 +591,10 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getRequestTTLSeconds() != null && other.getRequestTTLSeconds().equals(this.getRequestTTLSeconds()) == false)
             return false;
+        if (other.getInvocationTimeoutSeconds() == null ^ this.getInvocationTimeoutSeconds() == null)
+            return false;
+        if (other.getInvocationTimeoutSeconds() != null && other.getInvocationTimeoutSeconds().equals(this.getInvocationTimeoutSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +610,7 @@ public class InvokeEndpointAsyncRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
         hashCode = prime * hashCode + ((getInputLocation() == null) ? 0 : getInputLocation().hashCode());
         hashCode = prime * hashCode + ((getRequestTTLSeconds() == null) ? 0 : getRequestTTLSeconds().hashCode());
+        hashCode = prime * hashCode + ((getInvocationTimeoutSeconds() == null) ? 0 : getInvocationTimeoutSeconds().hashCode());
         return hashCode;
     }
 

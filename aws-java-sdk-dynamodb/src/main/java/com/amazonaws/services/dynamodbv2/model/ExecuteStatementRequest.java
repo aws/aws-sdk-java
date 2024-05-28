@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,17 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed
+     * a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     */
+    private String returnValuesOnConditionCheckFailure;
 
     /**
      * <p>
@@ -389,6 +400,101 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed
+     * a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that
+     *        failed a condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public void setReturnValuesOnConditionCheckFailure(String returnValuesOnConditionCheckFailure) {
+        this.returnValuesOnConditionCheckFailure = returnValuesOnConditionCheckFailure;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed
+     * a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @return An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation
+     *         that failed a condition check.</p>
+     *         <p>
+     *         There is no additional cost associated with requesting a return value aside from the small network and
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public String getReturnValuesOnConditionCheckFailure() {
+        return this.returnValuesOnConditionCheckFailure;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed
+     * a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that
+     *        failed a condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public ExecuteStatementRequest withReturnValuesOnConditionCheckFailure(String returnValuesOnConditionCheckFailure) {
+        setReturnValuesOnConditionCheckFailure(returnValuesOnConditionCheckFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that failed
+     * a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for an <code>ExecuteStatement</code> operation that
+     *        failed a condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public ExecuteStatementRequest withReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure) {
+        this.returnValuesOnConditionCheckFailure = returnValuesOnConditionCheckFailure.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -411,7 +517,9 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         if (getReturnConsumedCapacity() != null)
             sb.append("ReturnConsumedCapacity: ").append(getReturnConsumedCapacity()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: ").append(getLimit());
+            sb.append("Limit: ").append(getLimit()).append(",");
+        if (getReturnValuesOnConditionCheckFailure() != null)
+            sb.append("ReturnValuesOnConditionCheckFailure: ").append(getReturnValuesOnConditionCheckFailure());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +558,11 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getReturnValuesOnConditionCheckFailure() == null ^ this.getReturnValuesOnConditionCheckFailure() == null)
+            return false;
+        if (other.getReturnValuesOnConditionCheckFailure() != null
+                && other.getReturnValuesOnConditionCheckFailure().equals(this.getReturnValuesOnConditionCheckFailure()) == false)
+            return false;
         return true;
     }
 
@@ -464,6 +577,7 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getReturnConsumedCapacity() == null) ? 0 : getReturnConsumedCapacity().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getReturnValuesOnConditionCheckFailure() == null) ? 0 : getReturnValuesOnConditionCheckFailure().hashCode());
         return hashCode;
     }
 

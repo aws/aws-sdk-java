@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.
+ * The DataSync agents that are connecting to a Network File System (NFS) location.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/OnPremConfig" target="_top">AWS API
@@ -30,17 +30,17 @@ public class OnPremConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARNs of the agents to use for an NFS location.
+     * The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * </p>
      */
     private java.util.List<String> agentArns;
 
     /**
      * <p>
-     * ARNs of the agents to use for an NFS location.
+     * The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * </p>
      * 
-     * @return ARNs of the agents to use for an NFS location.
+     * @return The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -49,11 +49,11 @@ public class OnPremConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARNs of the agents to use for an NFS location.
+     * The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * </p>
      * 
      * @param agentArns
-     *        ARNs of the agents to use for an NFS location.
+     *        The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -67,7 +67,7 @@ public class OnPremConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARNs of the agents to use for an NFS location.
+     * The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class OnPremConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param agentArns
-     *        ARNs of the agents to use for an NFS location.
+     *        The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class OnPremConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARNs of the agents to use for an NFS location.
+     * The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * </p>
      * 
      * @param agentArns
-     *        ARNs of the agents to use for an NFS location.
+     *        The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

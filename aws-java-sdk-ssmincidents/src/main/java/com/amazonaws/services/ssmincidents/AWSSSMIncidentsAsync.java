@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,41 @@ import com.amazonaws.services.ssmincidents.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSSMIncidentsAsync extends AWSSSMIncidents {
+
+    /**
+     * <p>
+     * Retrieves details about all specified findings for an incident, including descriptive details about each finding.
+     * A finding represents a recent application environment change made by an CodeDeploy deployment or an
+     * CloudFormation stack creation or update that can be investigated as a potential cause of the incident.
+     * </p>
+     * 
+     * @param batchGetIncidentFindingsRequest
+     * @return A Java Future containing the result of the BatchGetIncidentFindings operation returned by the service.
+     * @sample AWSSSMIncidentsAsync.BatchGetIncidentFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetIncidentFindingsResult> batchGetIncidentFindingsAsync(BatchGetIncidentFindingsRequest batchGetIncidentFindingsRequest);
+
+    /**
+     * <p>
+     * Retrieves details about all specified findings for an incident, including descriptive details about each finding.
+     * A finding represents a recent application environment change made by an CodeDeploy deployment or an
+     * CloudFormation stack creation or update that can be investigated as a potential cause of the incident.
+     * </p>
+     * 
+     * @param batchGetIncidentFindingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetIncidentFindings operation returned by the service.
+     * @sample AWSSSMIncidentsAsyncHandler.BatchGetIncidentFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetIncidentFindingsResult> batchGetIncidentFindingsAsync(BatchGetIncidentFindingsRequest batchGetIncidentFindingsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetIncidentFindingsRequest, BatchGetIncidentFindingsResult> asyncHandler);
 
     /**
      * <p>
@@ -106,9 +141,9 @@ public interface AWSSSMIncidentsAsync extends AWSSSMIncidents {
 
     /**
      * <p>
-     * Creates a custom timeline event on the incident details page of an incident record. Timeline events are
-     * automatically created by Incident Manager, marking key moment during an incident. You can create custom timeline
-     * events to mark important events that are automatically detected by Incident Manager.
+     * Creates a custom timeline event on the incident details page of an incident record. Incident Manager
+     * automatically creates timeline events that mark key moments during an incident. You can create custom timeline
+     * events to mark important events that Incident Manager can detect automatically.
      * </p>
      * 
      * @param createTimelineEventRequest
@@ -121,9 +156,9 @@ public interface AWSSSMIncidentsAsync extends AWSSSMIncidents {
 
     /**
      * <p>
-     * Creates a custom timeline event on the incident details page of an incident record. Timeline events are
-     * automatically created by Incident Manager, marking key moment during an incident. You can create custom timeline
-     * events to mark important events that are automatically detected by Incident Manager.
+     * Creates a custom timeline event on the incident details page of an incident record. Incident Manager
+     * automatically creates timeline events that mark key moments during an incident. You can create custom timeline
+     * events to mark important events that Incident Manager can detect automatically.
      * </p>
      * 
      * @param createTimelineEventRequest
@@ -453,6 +488,41 @@ public interface AWSSSMIncidentsAsync extends AWSSSMIncidents {
 
     /**
      * <p>
+     * Retrieves a list of the IDs of findings, plus their last modified times, that have been identified for a
+     * specified incident. A finding represents a recent application environment change made by an CloudFormation stack
+     * creation or update or an CodeDeploy deployment that can be investigated as a potential cause of the incident.
+     * </p>
+     * 
+     * @param listIncidentFindingsRequest
+     * @return A Java Future containing the result of the ListIncidentFindings operation returned by the service.
+     * @sample AWSSSMIncidentsAsync.ListIncidentFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIncidentFindingsResult> listIncidentFindingsAsync(ListIncidentFindingsRequest listIncidentFindingsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of the IDs of findings, plus their last modified times, that have been identified for a
+     * specified incident. A finding represents a recent application environment change made by an CloudFormation stack
+     * creation or update or an CodeDeploy deployment that can be investigated as a potential cause of the incident.
+     * </p>
+     * 
+     * @param listIncidentFindingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIncidentFindings operation returned by the service.
+     * @sample AWSSSMIncidentsAsyncHandler.ListIncidentFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIncidentFindingsResult> listIncidentFindingsAsync(ListIncidentFindingsRequest listIncidentFindingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIncidentFindingsRequest, ListIncidentFindingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the
      * incident record you want to update.
      * </p>
@@ -579,7 +649,7 @@ public interface AWSSSMIncidentsAsync extends AWSSSMIncidents {
 
     /**
      * <p>
-     * Lists the tags that are attached to the specified response plan.
+     * Lists the tags that are attached to the specified response plan or incident.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -592,7 +662,7 @@ public interface AWSSSMIncidentsAsync extends AWSSSMIncidents {
 
     /**
      * <p>
-     * Lists the tags that are attached to the specified response plan.
+     * Lists the tags that are attached to the specified response plan or incident.
      * </p>
      * 
      * @param listTagsForResourceRequest

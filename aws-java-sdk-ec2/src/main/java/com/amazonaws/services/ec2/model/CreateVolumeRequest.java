@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      */
     private String availabilityZone;
@@ -36,13 +36,13 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
-     * default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      */
@@ -60,24 +60,24 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
      * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
@@ -141,22 +141,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -199,10 +204,15 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </li>
      * </ul>
+     * <important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     * volumes.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -222,8 +232,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      * and <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private Boolean multiAttachEnabled;
@@ -270,26 +280,31 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
     public CreateVolumeRequest(Integer size, String availabilityZone) {
         setSize(size);
@@ -303,7 +318,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param snapshotId
      *        The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
     public CreateVolumeRequest(String snapshotId, String availabilityZone) {
         setSnapshotId(snapshotId);
@@ -312,11 +327,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -325,10 +340,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      * 
-     * @return The Availability Zone in which to create the volume.
+     * @return The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      */
 
     public String getAvailabilityZone() {
@@ -337,11 +352,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone in which to create the volume.
+     * The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create the volume.
+     *        The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,13 +370,13 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
-     * default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      * 
@@ -369,12 +384,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *        <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *        ownership, and whether encryption by default is enabled. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
-     *        >Encryption by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default"
+     *        >Encryption by default</a> in the <i>Amazon EBS User Guide</i>.</p>
      *        <p>
      *        Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
      *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *        "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      *        >Supported instance types</a>.
      */
 
@@ -387,25 +402,25 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
-     * default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      * 
      * @return Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *         <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *         ownership, and whether encryption by default is enabled. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
-     *         >Encryption by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default"
+     *         >Encryption by default</a> in the <i>Amazon EBS User Guide</i>.</p>
      *         <p>
      *         Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
      *         information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *         "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      *         >Supported instance types</a>.
      */
 
@@ -418,13 +433,13 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
-     * default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      * 
@@ -432,12 +447,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *        <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *        ownership, and whether encryption by default is enabled. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
-     *        >Encryption by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default"
+     *        >Encryption by default</a> in the <i>Amazon EBS User Guide</i>.</p>
      *        <p>
      *        Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
      *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *        "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      *        >Supported instance types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -452,25 +467,25 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Indicates whether the volume should be encrypted. The effect of setting the encryption state to <code>true</code>
      * depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether
      * encryption by default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption by
-     * default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      * 
      * @return Indicates whether the volume should be encrypted. The effect of setting the encryption state to
      *         <code>true</code> depends on the volume origin (new or from a snapshot), starting encryption state,
      *         ownership, and whether encryption by default is enabled. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default"
-     *         >Encryption by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default"
+     *         >Encryption by default</a> in the <i>Amazon EBS User Guide</i>.</p>
      *         <p>
      *         Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more
      *         information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *         "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      *         >Supported instance types</a>.
      */
 
@@ -491,24 +506,24 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
      * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
@@ -527,24 +542,25 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        <code>gp3</code>: 3,000 - 16,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code>: 100-64,000 IOPS
+     *        <code>io1</code>: 100 - 64,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io2</code>: 100-64,000 IOPS
+     *        <code>io2</code>: 100 - 256,000 IOPS
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
+     *        For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Instances built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     *        >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *        IOPS.
      *        </p>
      *        <p>
      *        This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
@@ -569,24 +585,24 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
      * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
@@ -604,24 +620,25 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>gp3</code>: 3,000-16,000 IOPS
+     *         <code>gp3</code>: 3,000 - 16,000 IOPS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code>: 100-64,000 IOPS
+     *         <code>io1</code>: 100 - 64,000 IOPS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io2</code>: 100-64,000 IOPS
+     *         <code>io2</code>: 100 - 256,000 IOPS
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
+     *         For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Instances built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     *         >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *         IOPS.
      *         </p>
      *         <p>
      *         This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
@@ -646,24 +663,24 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
      * <p>
-     * <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
      * </p>
      * <p>
      * This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code>
@@ -682,24 +699,25 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        <code>gp3</code>: 3,000 - 16,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code>: 100-64,000 IOPS
+     *        <code>io1</code>: 100 - 64,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io2</code>: 100-64,000 IOPS
+     *        <code>io2</code>: 100 - 256,000 IOPS
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>io1</code> and <code>io2</code> volumes support up to 64,000 IOPS only on <a
+     *        For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Instances built on the Nitro System</a>. Other instance families support performance up to 32,000 IOPS.
+     *        >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *        IOPS.
      *        </p>
      *        <p>
      *        This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for
@@ -988,22 +1006,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -1018,22 +1041,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      */
@@ -1054,22 +1082,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -1083,22 +1116,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *         <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code> and <code>io2</code>: 4-16,384
+     *         <code>io1</code>: 4 - 16,384 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>st1</code> and <code>sc1</code>: 125-16,384
+     *         <code>io2</code>: 4 - 65,536 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>standard</code>: 1-1,024
+     *         <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>: 1 - 1024 GiB
      *         </p>
      *         </li>
      */
@@ -1119,22 +1157,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -1149,22 +1192,27 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1246,10 +1294,15 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </li>
      * </ul>
+     * <important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     * volumes.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -1284,10 +1337,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        </li>
      *        </ul>
+     *        <important>
+     *        <p>
+     *        Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     *        volumes.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      *        </p>
      *        <p>
      *        Default: <code>gp2</code>
@@ -1329,10 +1388,15 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </li>
      * </ul>
+     * <important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     * volumes.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -1366,10 +1430,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         </p>
      *         </li>
      *         </ul>
+     *         <important>
+     *         <p>
+     *         Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     *         volumes.
+     *         </p>
+     *         </important>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
-     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *         in the <i>Amazon EBS User Guide</i>.
      *         </p>
      *         <p>
      *         Default: <code>gp2</code>
@@ -1411,10 +1481,15 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </li>
      * </ul>
+     * <important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     * volumes.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -1449,10 +1524,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        </li>
      *        </ul>
+     *        <important>
+     *        <p>
+     *        Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     *        volumes.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      *        </p>
      *        <p>
      *        Default: <code>gp2</code>
@@ -1496,10 +1577,15 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </li>
      * </ul>
+     * <important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     * volumes.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -1534,10 +1620,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        </li>
      *        </ul>
+     *        <important>
+     *        <p>
+     *        Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     *        volumes.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      *        </p>
      *        <p>
      *        Default: <code>gp2</code>
@@ -1579,10 +1671,15 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * </li>
      * </ul>
+     * <important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     * volumes.
+     * </p>
+     * </important>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -1617,10 +1714,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        </li>
      *        </ul>
+     *        <important>
+     *        <p>
+     *        Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes can't be used as boot
+     *        volumes.
+     *        </p>
+     *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.
      *        </p>
      *        <p>
      *        Default: <code>gp2</code>
@@ -1713,8 +1816,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      * and <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param multiAttachEnabled
@@ -1723,8 +1826,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
      *        >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
      *        <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *        Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public void setMultiAttachEnabled(Boolean multiAttachEnabled) {
@@ -1738,8 +1841,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      * and <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
@@ -1747,8 +1850,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
      *         >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
      *         <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *         Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public Boolean getMultiAttachEnabled() {
@@ -1762,8 +1865,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      * and <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param multiAttachEnabled
@@ -1772,8 +1875,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
      *        >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
      *        <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *        Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1789,8 +1892,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
      * built on the Nitro System</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      * and <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
@@ -1798,8 +1901,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
      *         >Instances built on the Nitro System</a> in the same Availability Zone. This parameter is supported with
      *         <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *         Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public Boolean isMultiAttachEnabled() {

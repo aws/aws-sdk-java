@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.workspacesweb.AmazonWorkSpacesWebClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.workspacesweb.model.*;
+
 import com.amazonaws.services.workspacesweb.model.transform.*;
 
 /**
@@ -212,6 +213,75 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<AssociateBrowserSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateBrowserSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates an IP access settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateIpAccessSettingsRequest
+     * @return Result of the AssociateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.AssociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateIpAccessSettingsResult associateIpAccessSettings(AssociateIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final AssociateIpAccessSettingsResult executeAssociateIpAccessSettings(AssociateIpAccessSettingsRequest associateIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateIpAccessSettingsRequest> request = null;
+        Response<AssociateIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateIpAccessSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -626,6 +696,74 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<CreateIdentityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateIdentityProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an IP access settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createIpAccessSettingsRequest
+     * @return Result of the CreateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.CreateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateIpAccessSettingsResult createIpAccessSettings(CreateIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final CreateIpAccessSettingsResult executeCreateIpAccessSettings(CreateIpAccessSettingsRequest createIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateIpAccessSettingsRequest> request = null;
+        Response<CreateIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateIpAccessSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1116,6 +1254,72 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Deletes IP access settings.
+     * </p>
+     * 
+     * @param deleteIpAccessSettingsRequest
+     * @return Result of the DeleteIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.DeleteIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteIpAccessSettingsResult deleteIpAccessSettings(DeleteIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIpAccessSettingsResult executeDeleteIpAccessSettings(DeleteIpAccessSettingsRequest deleteIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteIpAccessSettingsRequest> request = null;
+        Response<DeleteIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteIpAccessSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes network settings.
      * </p>
      * 
@@ -1500,6 +1704,73 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateBrowserSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateBrowserSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates IP access settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateIpAccessSettingsRequest
+     * @return Result of the DisassociateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.DisassociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateIpAccessSettingsResult disassociateIpAccessSettings(DisassociateIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateIpAccessSettingsResult executeDisassociateIpAccessSettings(DisassociateIpAccessSettingsRequest disassociateIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateIpAccessSettingsRequest> request = null;
+        Response<DisassociateIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateIpAccessSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1899,6 +2170,71 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIdentityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIdentityProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the IP access settings.
+     * </p>
+     * 
+     * @param getIpAccessSettingsRequest
+     * @return Result of the GetIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.GetIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetIpAccessSettingsResult getIpAccessSettings(GetIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetIpAccessSettingsResult executeGetIpAccessSettings(GetIpAccessSettingsRequest getIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetIpAccessSettingsRequest> request = null;
+        Response<GetIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIpAccessSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2488,6 +2824,69 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<ListIdentityProvidersResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListIdentityProvidersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of IP access settings.
+     * </p>
+     * 
+     * @param listIpAccessSettingsRequest
+     * @return Result of the ListIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.ListIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListIpAccessSettingsResult listIpAccessSettings(ListIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final ListIpAccessSettingsResult executeListIpAccessSettings(ListIpAccessSettingsRequest listIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIpAccessSettingsRequest> request = null;
+        Response<ListIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIpAccessSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3213,6 +3612,72 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Updates IP access settings.
+     * </p>
+     * 
+     * @param updateIpAccessSettingsRequest
+     * @return Result of the UpdateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.UpdateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateIpAccessSettingsResult updateIpAccessSettings(UpdateIpAccessSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateIpAccessSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateIpAccessSettingsResult executeUpdateIpAccessSettings(UpdateIpAccessSettingsRequest updateIpAccessSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateIpAccessSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateIpAccessSettingsRequest> request = null;
+        Response<UpdateIpAccessSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateIpAccessSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIpAccessSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces Web");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIpAccessSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateIpAccessSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateIpAccessSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates network settings.
      * </p>
      * 
@@ -3292,8 +3757,12 @@ public class AmazonWorkSpacesWebClient extends AmazonWebServiceClient implements
      *         Access is denied.
      * @throws ThrottlingException
      *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
      * @throws ValidationException
      *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
      * @sample AmazonWorkSpacesWeb.UpdatePortal
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdatePortal" target="_top">AWS
      *      API Documentation</a>

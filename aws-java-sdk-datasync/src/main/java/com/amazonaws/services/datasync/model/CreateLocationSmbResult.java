@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class CreateLocationSmbResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARN of the SMB location that you created.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARN of the SMB location that you created.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     *        The ARN of the SMB location that you created.
      */
 
     public void setLocationArn(String locationArn) {
@@ -48,10 +48,10 @@ public class CreateLocationSmbResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARN of the SMB location that you created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * @return The ARN of the SMB location that you created.
      */
 
     public String getLocationArn() {
@@ -60,11 +60,11 @@ public class CreateLocationSmbResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARN of the SMB location that you created.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     *        The ARN of the SMB location that you created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

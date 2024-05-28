@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,10 @@ public enum InitiatedBy {
     FAILBACK("FAILBACK"),
     DIAGNOSTIC("DIAGNOSTIC"),
     TERMINATE_RECOVERY_INSTANCES("TERMINATE_RECOVERY_INSTANCES"),
-    TARGET_ACCOUNT("TARGET_ACCOUNT");
+    TARGET_ACCOUNT("TARGET_ACCOUNT"),
+    CREATE_NETWORK_RECOVERY("CREATE_NETWORK_RECOVERY"),
+    UPDATE_NETWORK_RECOVERY("UPDATE_NETWORK_RECOVERY"),
+    ASSOCIATE_NETWORK_RECOVERY("ASSOCIATE_NETWORK_RECOVERY");
 
     private String value;
 

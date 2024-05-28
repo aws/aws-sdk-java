@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents key, value pair to be matched against given resource property.
+ * Represents the <code>key:value</code> pair to be matched against given resource property.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanConditionPair" target="_top">AWS API
@@ -30,25 +30,24 @@ public class ScanConditionPair implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents <i>key</i> <b/> in the map condition.
+     * Represents the <b>key</b> in the map condition.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will be
-     * matched.
+     * Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Represents <i>key</i> <b/> in the map condition.
+     * Represents the <b>key</b> in the map condition.
      * </p>
      * 
      * @param key
-     *        Represents <i>key</i> <b/> in the map condition.
+     *        Represents the <b>key</b> in the map condition.
      */
 
     public void setKey(String key) {
@@ -57,10 +56,10 @@ public class ScanConditionPair implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents <i>key</i> <b/> in the map condition.
+     * Represents the <b>key</b> in the map condition.
      * </p>
      * 
-     * @return Represents <i>key</i> <b/> in the map condition.
+     * @return Represents the <b>key</b> in the map condition.
      */
 
     public String getKey() {
@@ -69,11 +68,11 @@ public class ScanConditionPair implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents <i>key</i> <b/> in the map condition.
+     * Represents the <b>key</b> in the map condition.
      * </p>
      * 
      * @param key
-     *        Represents <i>key</i> <b/> in the map condition.
+     *        Represents the <b>key</b> in the map condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +83,11 @@ public class ScanConditionPair implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will be
-     * matched.
+     * Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.
      * </p>
      * 
      * @param value
-     *        Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will be
+     *        Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be
      *        matched.
      */
 
@@ -99,12 +97,11 @@ public class ScanConditionPair implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will be
-     * matched.
+     * Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.
      * </p>
      * 
-     * @return Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will
-     *         be matched.
+     * @return Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be
+     *         matched.
      */
 
     public String getValue() {
@@ -113,12 +110,11 @@ public class ScanConditionPair implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will be
-     * matched.
+     * Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be matched.
      * </p>
      * 
      * @param value
-     *        Represents optional <i>value</i> <b/> in the map condition. If not specified, only <i>key</i> <b/> will be
+     *        Represents optional <b>value</b> in the map condition. If not specified, only the <b>key</b> will be
      *        matched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

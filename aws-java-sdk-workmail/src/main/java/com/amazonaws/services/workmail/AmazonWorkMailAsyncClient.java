@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1051,6 +1051,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest request) {
+
+        return describeEntityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(final DescribeEntityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEntityRequest, DescribeEntityResult> asyncHandler) {
+        final DescribeEntityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEntityResult>() {
+            @Override
+            public DescribeEntityResult call() throws Exception {
+                DescribeEntityResult result = null;
+
+                try {
+                    result = executeDescribeEntity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGroupResult> describeGroupAsync(DescribeGroupRequest request) {
 
         return describeGroupAsync(request, null);
@@ -1732,6 +1765,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeListGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsForEntityResult> listGroupsForEntityAsync(ListGroupsForEntityRequest request) {
+
+        return listGroupsForEntityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsForEntityResult> listGroupsForEntityAsync(final ListGroupsForEntityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGroupsForEntityRequest, ListGroupsForEntityResult> asyncHandler) {
+        final ListGroupsForEntityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGroupsForEntityResult>() {
+            @Override
+            public ListGroupsForEntityResult call() throws Exception {
+                ListGroupsForEntityResult result = null;
+
+                try {
+                    result = executeListGroupsForEntity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2614,6 +2680,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest request) {
+
+        return updateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(final UpdateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
+        final UpdateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGroupResult>() {
+            @Override
+            public UpdateGroupResult call() throws Exception {
+                UpdateGroupResult result = null;
+
+                try {
+                    result = executeUpdateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest request) {
 
         return updateImpersonationRoleAsync(request, null);
@@ -2763,6 +2862,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeUpdateResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request) {
+
+        return updateUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(final UpdateUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
+        final UpdateUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateUserResult>() {
+            @Override
+            public UpdateUserResult call() throws Exception {
+                UpdateUserResult result = null;
+
+                try {
+                    result = executeUpdateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

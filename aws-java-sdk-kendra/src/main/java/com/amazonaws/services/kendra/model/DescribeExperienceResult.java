@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,13 +59,13 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
     private ExperienceConfiguration configuration;
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was created.
+     * The Unix timestamp when your Amazon Kendra experience was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was last updated.
+     * The Unix timestamp when your Amazon Kendra experience was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -356,11 +356,11 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was created.
+     * The Unix timestamp when your Amazon Kendra experience was created.
      * </p>
      * 
      * @param createdAt
-     *        Shows the date-time your Amazon Kendra experience was created.
+     *        The Unix timestamp when your Amazon Kendra experience was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -369,10 +369,10 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was created.
+     * The Unix timestamp when your Amazon Kendra experience was created.
      * </p>
      * 
-     * @return Shows the date-time your Amazon Kendra experience was created.
+     * @return The Unix timestamp when your Amazon Kendra experience was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -381,11 +381,11 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was created.
+     * The Unix timestamp when your Amazon Kendra experience was created.
      * </p>
      * 
      * @param createdAt
-     *        Shows the date-time your Amazon Kendra experience was created.
+     *        The Unix timestamp when your Amazon Kendra experience was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,11 +396,11 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was last updated.
+     * The Unix timestamp when your Amazon Kendra experience was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        Shows the date-time your Amazon Kendra experience was last updated.
+     *        The Unix timestamp when your Amazon Kendra experience was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -409,10 +409,10 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was last updated.
+     * The Unix timestamp when your Amazon Kendra experience was last updated.
      * </p>
      * 
-     * @return Shows the date-time your Amazon Kendra experience was last updated.
+     * @return The Unix timestamp when your Amazon Kendra experience was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -421,11 +421,11 @@ public class DescribeExperienceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Shows the date-time your Amazon Kendra experience was last updated.
+     * The Unix timestamp when your Amazon Kendra experience was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        Shows the date-time your Amazon Kendra experience was last updated.
+     *        The Unix timestamp when your Amazon Kendra experience was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

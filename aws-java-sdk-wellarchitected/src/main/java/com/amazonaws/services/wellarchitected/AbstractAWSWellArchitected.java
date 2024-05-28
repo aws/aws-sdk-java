@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,11 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public AssociateProfilesResult associateProfiles(AssociateProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateLensShareResult createLensShare(CreateLensShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +49,26 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
 
     @Override
     public CreateMilestoneResult createMilestone(CreateMilestoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProfileResult createProfile(CreateProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProfileShareResult createProfileShare(CreateProfileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateReviewTemplateResult createReviewTemplate(CreateReviewTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTemplateShareResult createTemplateShare(CreateTemplateShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +93,26 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public DeleteProfileResult deleteProfile(DeleteProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProfileShareResult deleteProfileShare(DeleteProfileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteReviewTemplateResult deleteReviewTemplate(DeleteReviewTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTemplateShareResult deleteTemplateShare(DeleteTemplateShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWorkloadResult deleteWorkload(DeleteWorkloadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,12 +128,27 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public DisassociateProfilesResult disassociateProfiles(DisassociateProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportLensResult exportLens(ExportLensRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetAnswerResult getAnswer(GetAnswerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConsolidatedReportResult getConsolidatedReport(GetConsolidatedReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGlobalSettingsResult getGlobalSettings(GetGlobalSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +178,31 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public GetProfileResult getProfile(GetProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetProfileTemplateResult getProfileTemplate(GetProfileTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReviewTemplateResult getReviewTemplate(GetReviewTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReviewTemplateAnswerResult getReviewTemplateAnswer(GetReviewTemplateAnswerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReviewTemplateLensReviewResult getReviewTemplateLensReview(GetReviewTemplateLensReviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetWorkloadResult getWorkload(GetWorkloadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +214,16 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
 
     @Override
     public ListAnswersResult listAnswers(ListAnswersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCheckDetailsResult listCheckDetails(ListCheckDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCheckSummariesResult listCheckSummaries(ListCheckSummariesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,12 +258,42 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public ListProfileNotificationsResult listProfileNotifications(ListProfileNotificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProfileSharesResult listProfileShares(ListProfileSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProfilesResult listProfiles(ListProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReviewTemplateAnswersResult listReviewTemplateAnswers(ListReviewTemplateAnswersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReviewTemplatesResult listReviewTemplates(ListReviewTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListShareInvitationsResult listShareInvitations(ListShareInvitationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTemplateSharesResult listTemplateShares(ListTemplateSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,7 +328,32 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
     }
 
     @Override
+    public UpdateIntegrationResult updateIntegration(UpdateIntegrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateLensReviewResult updateLensReview(UpdateLensReviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProfileResult updateProfile(UpdateProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateReviewTemplateResult updateReviewTemplate(UpdateReviewTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateReviewTemplateAnswerResult updateReviewTemplateAnswer(UpdateReviewTemplateAnswerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateReviewTemplateLensReviewResult updateReviewTemplateLensReview(UpdateReviewTemplateLensReviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,6 +374,16 @@ public class AbstractAWSWellArchitected implements AWSWellArchitected {
 
     @Override
     public UpgradeLensReviewResult upgradeLensReview(UpgradeLensReviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpgradeProfileVersionResult upgradeProfileVersion(UpgradeProfileVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpgradeReviewTemplateLensReviewResult upgradeReviewTemplateLensReview(UpgradeReviewTemplateLensReviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

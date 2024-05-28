@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class GetLifecyclePoliciesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("targetTags").build();
     private static final MarshallingInfo<List> TAGSTOADD_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("tagsToAdd").build();
+    private static final MarshallingInfo<String> DEFAULTPOLICYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("defaultPolicyType").build();
 
     private static final GetLifecyclePoliciesRequestMarshaller instance = new GetLifecyclePoliciesRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class GetLifecyclePoliciesRequestMarshaller {
             protocolMarshaller.marshall(getLifecyclePoliciesRequest.getResourceTypes(), RESOURCETYPES_BINDING);
             protocolMarshaller.marshall(getLifecyclePoliciesRequest.getTargetTags(), TARGETTAGS_BINDING);
             protocolMarshaller.marshall(getLifecyclePoliciesRequest.getTagsToAdd(), TAGSTOADD_BINDING);
+            protocolMarshaller.marshall(getLifecyclePoliciesRequest.getDefaultPolicyType(), DEFAULTPOLICYTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

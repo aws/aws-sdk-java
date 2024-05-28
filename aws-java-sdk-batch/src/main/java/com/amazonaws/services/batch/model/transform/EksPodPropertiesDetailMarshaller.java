@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,22 @@ public class EksPodPropertiesDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostNetwork").build();
     private static final MarshallingInfo<String> DNSPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dnsPolicy").build();
+    private static final MarshallingInfo<List> IMAGEPULLSECRETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePullSecrets").build();
     private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("containers").build();
+    private static final MarshallingInfo<List> INITCONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initContainers").build();
     private static final MarshallingInfo<List> VOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("volumes").build();
     private static final MarshallingInfo<String> PODNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("podName").build();
     private static final MarshallingInfo<String> NODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nodeName").build();
+    private static final MarshallingInfo<StructuredPojo> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadata").build();
+    private static final MarshallingInfo<Boolean> SHAREPROCESSNAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("shareProcessNamespace").build();
 
     private static final EksPodPropertiesDetailMarshaller instance = new EksPodPropertiesDetailMarshaller();
 
@@ -62,10 +70,14 @@ public class EksPodPropertiesDetailMarshaller {
             protocolMarshaller.marshall(eksPodPropertiesDetail.getServiceAccountName(), SERVICEACCOUNTNAME_BINDING);
             protocolMarshaller.marshall(eksPodPropertiesDetail.getHostNetwork(), HOSTNETWORK_BINDING);
             protocolMarshaller.marshall(eksPodPropertiesDetail.getDnsPolicy(), DNSPOLICY_BINDING);
+            protocolMarshaller.marshall(eksPodPropertiesDetail.getImagePullSecrets(), IMAGEPULLSECRETS_BINDING);
             protocolMarshaller.marshall(eksPodPropertiesDetail.getContainers(), CONTAINERS_BINDING);
+            protocolMarshaller.marshall(eksPodPropertiesDetail.getInitContainers(), INITCONTAINERS_BINDING);
             protocolMarshaller.marshall(eksPodPropertiesDetail.getVolumes(), VOLUMES_BINDING);
             protocolMarshaller.marshall(eksPodPropertiesDetail.getPodName(), PODNAME_BINDING);
             protocolMarshaller.marshall(eksPodPropertiesDetail.getNodeName(), NODENAME_BINDING);
+            protocolMarshaller.marshall(eksPodPropertiesDetail.getMetadata(), METADATA_BINDING);
+            protocolMarshaller.marshall(eksPodPropertiesDetail.getShareProcessNamespace(), SHAREPROCESSNAMESPACE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,79 @@ public class SalesforceConnectorProfileProperties implements Serializable, Clone
      * </p>
      */
     private Boolean isSandboxEnvironment;
+    /**
+     * <p>
+     * If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the
+     * private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls
+     * through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without
+     * being exposed to the public internet.
+     * </p>
+     * <p>
+     * Set either of the following values:
+     * </p>
+     * <dl>
+     * <dt>true</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow sends all calls to Salesforce over the private network.
+     * </p>
+     * <p>
+     * These private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>false</dt>
+     * <dd>
+     * <p>
+     * The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     * internet.
+     * </p>
+     * <p>
+     * The public calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     */
+    private Boolean usePrivateLinkForMetadataAndAuthorization;
 
     /**
      * <p>
@@ -134,6 +207,590 @@ public class SalesforceConnectorProfileProperties implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the
+     * private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls
+     * through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without
+     * being exposed to the public internet.
+     * </p>
+     * <p>
+     * Set either of the following values:
+     * </p>
+     * <dl>
+     * <dt>true</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow sends all calls to Salesforce over the private network.
+     * </p>
+     * <p>
+     * These private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>false</dt>
+     * <dd>
+     * <p>
+     * The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     * internet.
+     * </p>
+     * <p>
+     * The public calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @param usePrivateLinkForMetadataAndAuthorization
+     *        If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow
+     *        uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends
+     *        private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services
+     *        infrastructure without being exposed to the public internet.</p>
+     *        <p>
+     *        Set either of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>true</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow sends all calls to Salesforce over the private network.
+     *        </p>
+     *        <p>
+     *        These private calls are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and
+     *        their fields.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Calls to transfer your Salesforce records as part of a flow run.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>false</dt>
+     *        <dd>
+     *        <p>
+     *        The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     *        internet.
+     *        </p>
+     *        <p>
+     *        The public calls are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Calls to get metadata about your Salesforce records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Calls to get or refresh access tokens.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The private calls are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Calls to transfer your Salesforce records as part of a flow run.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     */
+
+    public void setUsePrivateLinkForMetadataAndAuthorization(Boolean usePrivateLinkForMetadataAndAuthorization) {
+        this.usePrivateLinkForMetadataAndAuthorization = usePrivateLinkForMetadataAndAuthorization;
+    }
+
+    /**
+     * <p>
+     * If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the
+     * private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls
+     * through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without
+     * being exposed to the public internet.
+     * </p>
+     * <p>
+     * Set either of the following values:
+     * </p>
+     * <dl>
+     * <dt>true</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow sends all calls to Salesforce over the private network.
+     * </p>
+     * <p>
+     * These private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>false</dt>
+     * <dd>
+     * <p>
+     * The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     * internet.
+     * </p>
+     * <p>
+     * The public calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @return If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow
+     *         uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends
+     *         private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services
+     *         infrastructure without being exposed to the public internet.</p>
+     *         <p>
+     *         Set either of the following values:
+     *         </p>
+     *         <dl>
+     *         <dt>true</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon AppFlow sends all calls to Salesforce over the private network.
+     *         </p>
+     *         <p>
+     *         These private calls are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and
+     *         their fields.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Calls to transfer your Salesforce records as part of a flow run.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     *         <dt>false</dt>
+     *         <dd>
+     *         <p>
+     *         The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the
+     *         public internet.
+     *         </p>
+     *         <p>
+     *         The public calls are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Calls to get metadata about your Salesforce records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Calls to get or refresh access tokens.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The private calls are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Calls to transfer your Salesforce records as part of a flow run.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     */
+
+    public Boolean getUsePrivateLinkForMetadataAndAuthorization() {
+        return this.usePrivateLinkForMetadataAndAuthorization;
+    }
+
+    /**
+     * <p>
+     * If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the
+     * private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls
+     * through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without
+     * being exposed to the public internet.
+     * </p>
+     * <p>
+     * Set either of the following values:
+     * </p>
+     * <dl>
+     * <dt>true</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow sends all calls to Salesforce over the private network.
+     * </p>
+     * <p>
+     * These private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>false</dt>
+     * <dd>
+     * <p>
+     * The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     * internet.
+     * </p>
+     * <p>
+     * The public calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @param usePrivateLinkForMetadataAndAuthorization
+     *        If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow
+     *        uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends
+     *        private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services
+     *        infrastructure without being exposed to the public internet.</p>
+     *        <p>
+     *        Set either of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>true</dt>
+     *        <dd>
+     *        <p>
+     *        Amazon AppFlow sends all calls to Salesforce over the private network.
+     *        </p>
+     *        <p>
+     *        These private calls are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and
+     *        their fields.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Calls to transfer your Salesforce records as part of a flow run.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     *        <dt>false</dt>
+     *        <dd>
+     *        <p>
+     *        The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     *        internet.
+     *        </p>
+     *        <p>
+     *        The public calls are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Calls to get metadata about your Salesforce records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Calls to get or refresh access tokens.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The private calls are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Calls to transfer your Salesforce records as part of a flow run.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SalesforceConnectorProfileProperties withUsePrivateLinkForMetadataAndAuthorization(Boolean usePrivateLinkForMetadataAndAuthorization) {
+        setUsePrivateLinkForMetadataAndAuthorization(usePrivateLinkForMetadataAndAuthorization);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the
+     * private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls
+     * through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without
+     * being exposed to the public internet.
+     * </p>
+     * <p>
+     * Set either of the following values:
+     * </p>
+     * <dl>
+     * <dt>true</dt>
+     * <dd>
+     * <p>
+     * Amazon AppFlow sends all calls to Salesforce over the private network.
+     * </p>
+     * <p>
+     * These private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * <dt>false</dt>
+     * <dd>
+     * <p>
+     * The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public
+     * internet.
+     * </p>
+     * <p>
+     * The public calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to get metadata about your Salesforce records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to get or refresh access tokens.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The private calls are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Calls to transfer your Salesforce records as part of a flow run.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @return If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow
+     *         uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends
+     *         private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services
+     *         infrastructure without being exposed to the public internet.</p>
+     *         <p>
+     *         Set either of the following values:
+     *         </p>
+     *         <dl>
+     *         <dt>true</dt>
+     *         <dd>
+     *         <p>
+     *         Amazon AppFlow sends all calls to Salesforce over the private network.
+     *         </p>
+     *         <p>
+     *         These private calls are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and
+     *         their fields.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Calls to transfer your Salesforce records as part of a flow run.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     *         <dt>false</dt>
+     *         <dd>
+     *         <p>
+     *         The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the
+     *         public internet.
+     *         </p>
+     *         <p>
+     *         The public calls are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Calls to get metadata about your Salesforce records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Calls to get or refresh access tokens.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The private calls are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Calls to transfer your Salesforce records as part of a flow run.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     */
+
+    public Boolean isUsePrivateLinkForMetadataAndAuthorization() {
+        return this.usePrivateLinkForMetadataAndAuthorization;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -148,7 +805,9 @@ public class SalesforceConnectorProfileProperties implements Serializable, Clone
         if (getInstanceUrl() != null)
             sb.append("InstanceUrl: ").append(getInstanceUrl()).append(",");
         if (getIsSandboxEnvironment() != null)
-            sb.append("IsSandboxEnvironment: ").append(getIsSandboxEnvironment());
+            sb.append("IsSandboxEnvironment: ").append(getIsSandboxEnvironment()).append(",");
+        if (getUsePrivateLinkForMetadataAndAuthorization() != null)
+            sb.append("UsePrivateLinkForMetadataAndAuthorization: ").append(getUsePrivateLinkForMetadataAndAuthorization());
         sb.append("}");
         return sb.toString();
     }
@@ -171,6 +830,11 @@ public class SalesforceConnectorProfileProperties implements Serializable, Clone
             return false;
         if (other.getIsSandboxEnvironment() != null && other.getIsSandboxEnvironment().equals(this.getIsSandboxEnvironment()) == false)
             return false;
+        if (other.getUsePrivateLinkForMetadataAndAuthorization() == null ^ this.getUsePrivateLinkForMetadataAndAuthorization() == null)
+            return false;
+        if (other.getUsePrivateLinkForMetadataAndAuthorization() != null
+                && other.getUsePrivateLinkForMetadataAndAuthorization().equals(this.getUsePrivateLinkForMetadataAndAuthorization()) == false)
+            return false;
         return true;
     }
 
@@ -181,6 +845,8 @@ public class SalesforceConnectorProfileProperties implements Serializable, Clone
 
         hashCode = prime * hashCode + ((getInstanceUrl() == null) ? 0 : getInstanceUrl().hashCode());
         hashCode = prime * hashCode + ((getIsSandboxEnvironment() == null) ? 0 : getIsSandboxEnvironment().hashCode());
+        hashCode = prime * hashCode
+                + ((getUsePrivateLinkForMetadataAndAuthorization() == null) ? 0 : getUsePrivateLinkForMetadataAndAuthorization().hashCode());
         return hashCode;
     }
 

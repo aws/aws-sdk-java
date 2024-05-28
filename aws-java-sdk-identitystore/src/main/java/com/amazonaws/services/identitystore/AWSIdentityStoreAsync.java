@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,19 @@ import com.amazonaws.services.identitystore.model.*;
  * </p>
  * <p>
  * <p>
- * The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place
- * to retrieve all of your identities (users and groups). For more information, see the <a
+ * The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities
+ * (users and groups). For more information, see the <a
  * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
- * 
- * <pre>
- * <code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information on data types and errors.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * This reference guide describes the identity store operations that you can call programmatically and includes detailed
+ * information about data types and errors.
+ * </p>
+ * <note>
+ * <p>
+ * IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIdentityStoreAsync extends AWSIdentityStore {
@@ -104,7 +109,7 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
 
     /**
      * <p>
-     * Creates a new user within the specified identity store.
+     * Creates a user within the specified identity store.
      * </p>
      * 
      * @param createUserRequest
@@ -117,7 +122,7 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
 
     /**
      * <p>
-     * Creates a new user within the specified identity store.
+     * Creates a user within the specified identity store.
      * </p>
      * 
      * @param createUserRequest
@@ -230,6 +235,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeGroupRequest
      * @return A Java Future containing the result of the DescribeGroup operation returned by the service.
@@ -243,6 +255,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeGroupRequest
      * @param asyncHandler
@@ -261,6 +280,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves membership metadata and attributes from <code>MembershipId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeGroupMembershipRequest
      * @return A Java Future containing the result of the DescribeGroupMembership operation returned by the service.
@@ -274,6 +300,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves membership metadata and attributes from <code>MembershipId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeGroupMembershipRequest
      * @param asyncHandler
@@ -292,6 +325,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the user metadata and attributes from the <code>UserId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeUserRequest
      * @return A Java Future containing the result of the DescribeUser operation returned by the service.
@@ -305,6 +345,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the user metadata and attributes from the <code>UserId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeUserRequest
      * @param asyncHandler
@@ -323,6 +370,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves <code>GroupId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getGroupIdRequest
      * @return A Java Future containing the result of the GetGroupId operation returned by the service.
@@ -336,6 +390,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves <code>GroupId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getGroupIdRequest
      * @param asyncHandler
@@ -354,6 +415,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the <code>MembershipId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getGroupMembershipIdRequest
      * @return A Java Future containing the result of the GetGroupMembershipId operation returned by the service.
@@ -367,6 +435,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the <code>MembershipId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getGroupMembershipIdRequest
      * @param asyncHandler
@@ -385,6 +460,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the <code>UserId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getUserIdRequest
      * @return A Java Future containing the result of the GetUserId operation returned by the service.
@@ -398,6 +480,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Retrieves the <code>UserId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getUserIdRequest
      * @param asyncHandler
@@ -416,6 +505,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Checks the user's membership in all requested groups and returns if the member exists in all queried groups.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param isMemberInGroupsRequest
      * @return A Java Future containing the result of the IsMemberInGroups operation returned by the service.
@@ -429,6 +525,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * <p>
      * Checks the user's membership in all requested groups and returns if the member exists in all queried groups.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param isMemberInGroupsRequest
      * @param asyncHandler
@@ -448,6 +551,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
      * objects and returns results in paginated form.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupMembershipsRequest
      * @return A Java Future containing the result of the ListGroupMemberships operation returned by the service.
@@ -462,6 +572,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
      * objects and returns results in paginated form.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupMembershipsRequest
      * @param asyncHandler
@@ -481,6 +598,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code>
      * objects and returns results in paginated form.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupMembershipsForMemberRequest
      * @return A Java Future containing the result of the ListGroupMembershipsForMember operation returned by the
@@ -497,6 +621,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code>
      * objects and returns results in paginated form.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupMembershipsForMemberRequest
      * @param asyncHandler
@@ -519,6 +650,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute is deprecated. Instead, use the
      * <code>GetGroupId</code> API action.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupsRequest
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
@@ -534,6 +672,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute is deprecated. Instead, use the
      * <code>GetGroupId</code> API action.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupsRequest
      * @param asyncHandler
@@ -554,6 +699,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * for a <code>User</code> by the <code>UserName</code> attribute is deprecated. Instead, use the
      * <code>GetUserId</code> API action.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listUsersRequest
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
@@ -569,6 +721,13 @@ public interface AWSIdentityStoreAsync extends AWSIdentityStore {
      * for a <code>User</code> by the <code>UserName</code> attribute is deprecated. Instead, use the
      * <code>GetUserId</code> API action.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listUsersRequest
      * @param asyncHandler

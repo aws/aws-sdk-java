@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,11 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer bitrate;
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      */
     private Integer channels;
-    /** Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000. */
+    /** Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000. */
     private Integer sampleRate;
 
     /**
@@ -80,12 +80,12 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      * 
      * @param channels
-     *        Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     *        channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     *        Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel;
+     *        choosing Stereo gives you 2. In the API, valid values are 1 and 2.
      */
 
     public void setChannels(Integer channels) {
@@ -93,11 +93,11 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      * 
-     * @return Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1
-     *         output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * @return Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel;
+     *         choosing Stereo gives you 2. In the API, valid values are 1 and 2.
      */
 
     public Integer getChannels() {
@@ -105,12 +105,12 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     * channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel; choosing
+     * Stereo gives you 2. In the API, valid values are 1 and 2.
      * 
      * @param channels
-     *        Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output
-     *        channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
+     *        Specify the number of channels in this output audio track. Choosing Mono on gives you 1 output channel;
+     *        choosing Stereo gives you 2. In the API, valid values are 1 and 2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * 
      * @param sampleRate
-     *        Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     *        Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      */
 
     public void setSampleRate(Integer sampleRate) {
@@ -131,9 +131,9 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * 
-     * @return Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * @return Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      */
 
     public Integer getSampleRate() {
@@ -141,10 +141,10 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * 
      * @param sampleRate
-     *        Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     *        Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

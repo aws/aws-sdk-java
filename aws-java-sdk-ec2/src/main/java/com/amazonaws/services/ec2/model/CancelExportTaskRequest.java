@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,21 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     * The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     * <code>ExportImage</code> operations.
      * </p>
      */
     private String exportTaskId;
 
     /**
      * <p>
-     * The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     * The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     * <code>ExportImage</code> operations.
      * </p>
      * 
      * @param exportTaskId
-     *        The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     *        The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     *        <code>ExportImage</code> operations.
      */
 
     public void setExportTaskId(String exportTaskId) {
@@ -47,10 +50,12 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     * The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     * <code>ExportImage</code> operations.
      * </p>
      * 
-     * @return The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     * @return The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     *         <code>ExportImage</code> operations.
      */
 
     public String getExportTaskId() {
@@ -59,11 +64,13 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     * The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     * <code>ExportImage</code> operations.
      * </p>
      * 
      * @param exportTaskId
-     *        The ID of the export task. This is the ID returned by <code>CreateInstanceExportTask</code>.
+     *        The ID of the export task. This is the ID returned by the <code>CreateInstanceExportTask</code> and
+     *        <code>ExportImage</code> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

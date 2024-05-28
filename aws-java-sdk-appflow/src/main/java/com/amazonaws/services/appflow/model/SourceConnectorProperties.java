@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,6 +116,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     private SAPODataSourceProperties sAPOData;
 
     private CustomConnectorSourceProperties customConnector;
+    /**
+     * <p>
+     * Specifies the information that is required for querying Salesforce Pardot.
+     * </p>
+     */
+    private PardotSourceProperties pardot;
 
     /**
      * <p>
@@ -730,6 +736,46 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Specifies the information that is required for querying Salesforce Pardot.
+     * </p>
+     * 
+     * @param pardot
+     *        Specifies the information that is required for querying Salesforce Pardot.
+     */
+
+    public void setPardot(PardotSourceProperties pardot) {
+        this.pardot = pardot;
+    }
+
+    /**
+     * <p>
+     * Specifies the information that is required for querying Salesforce Pardot.
+     * </p>
+     * 
+     * @return Specifies the information that is required for querying Salesforce Pardot.
+     */
+
+    public PardotSourceProperties getPardot() {
+        return this.pardot;
+    }
+
+    /**
+     * <p>
+     * Specifies the information that is required for querying Salesforce Pardot.
+     * </p>
+     * 
+     * @param pardot
+     *        Specifies the information that is required for querying Salesforce Pardot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceConnectorProperties withPardot(PardotSourceProperties pardot) {
+        setPardot(pardot);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -772,7 +818,9 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
         if (getSAPOData() != null)
             sb.append("SAPOData: ").append(getSAPOData()).append(",");
         if (getCustomConnector() != null)
-            sb.append("CustomConnector: ").append(getCustomConnector());
+            sb.append("CustomConnector: ").append(getCustomConnector()).append(",");
+        if (getPardot() != null)
+            sb.append("Pardot: ").append(getPardot());
         sb.append("}");
         return sb.toString();
     }
@@ -851,6 +899,10 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
             return false;
         if (other.getCustomConnector() != null && other.getCustomConnector().equals(this.getCustomConnector()) == false)
             return false;
+        if (other.getPardot() == null ^ this.getPardot() == null)
+            return false;
+        if (other.getPardot() != null && other.getPardot().equals(this.getPardot()) == false)
+            return false;
         return true;
     }
 
@@ -875,6 +927,7 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getZendesk() == null) ? 0 : getZendesk().hashCode());
         hashCode = prime * hashCode + ((getSAPOData() == null) ? 0 : getSAPOData().hashCode());
         hashCode = prime * hashCode + ((getCustomConnector() == null) ? 0 : getCustomConnector().hashCode());
+        hashCode = prime * hashCode + ((getPardot() == null) ? 0 : getPardot().hashCode());
         return hashCode;
     }
 

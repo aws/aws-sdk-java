@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,8 +92,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
-     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
-     * Step Functions User Guide.
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step
+     * Functions User Guide.
      * </p>
      * </note>
      */
@@ -105,7 +105,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -116,10 +116,25 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      */
     private TracingConfiguration tracingConfiguration;
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean publish;
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     */
+    private String versionDescription;
 
     /**
      * <p>
@@ -556,8 +571,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
-     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
-     * Step Functions User Guide.
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step
+     * Functions User Guide.
      * </p>
      * </note>
      * 
@@ -566,7 +581,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
      *        href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in
-     *        the AWS Step Functions User Guide.
+     *        the Step Functions User Guide.
      *        </p>
      */
 
@@ -581,8 +596,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
-     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
-     * Step Functions User Guide.
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step
+     * Functions User Guide.
      * </p>
      * </note>
      * 
@@ -590,7 +605,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
      *         href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in
-     *         the AWS Step Functions User Guide.
+     *         the Step Functions User Guide.
      *         </p>
      */
 
@@ -605,8 +620,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
-     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
-     * Step Functions User Guide.
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step
+     * Functions User Guide.
      * </p>
      * </note>
      * 
@@ -615,7 +630,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
      *        href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in
-     *        the AWS Step Functions User Guide.
+     *        the Step Functions User Guide.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -632,7 +647,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -644,7 +659,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         An array of key-value pairs. For more information, see <a
      *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *         Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *         Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *         Tags</a>.
      *         </p>
@@ -664,7 +679,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -677,7 +692,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      *        </p>
@@ -701,7 +716,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -719,7 +734,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      *        </p>
@@ -745,7 +760,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -758,7 +773,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      *        </p>
@@ -774,11 +789,11 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      */
 
     public void setTracingConfiguration(TracingConfiguration tracingConfiguration) {
@@ -787,10 +802,10 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
-     * @return Selects whether AWS X-Ray tracing is enabled.
+     * @return Selects whether X-Ray tracing is enabled.
      */
 
     public TracingConfiguration getTracingConfiguration() {
@@ -799,16 +814,131 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStateMachineRequest withTracingConfiguration(TracingConfiguration tracingConfiguration) {
         setTracingConfiguration(tracingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param publish
+     *        Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     *        <code>false</code>.
+     */
+
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to publish the first version of the state machine during creation. The default
+     *         is <code>false</code>.
+     */
+
+    public Boolean getPublish() {
+        return this.publish;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param publish
+     *        Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     *        <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineRequest withPublish(Boolean publish) {
+        setPublish(publish);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to publish the first version of the state machine during creation. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to publish the first version of the state machine during creation. The default
+     *         is <code>false</code>.
+     */
+
+    public Boolean isPublish() {
+        return this.publish;
+    }
+
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     * 
+     * @param versionDescription
+     *        Sets description about the state machine version. You can only set the description if the
+     *        <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set
+     *        <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws
+     *        <code>ValidationException</code>.
+     */
+
+    public void setVersionDescription(String versionDescription) {
+        this.versionDescription = versionDescription;
+    }
+
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     * 
+     * @return Sets description about the state machine version. You can only set the description if the
+     *         <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set
+     *         <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws
+     *         <code>ValidationException</code>.
+     */
+
+    public String getVersionDescription() {
+        return this.versionDescription;
+    }
+
+    /**
+     * <p>
+     * Sets description about the state machine version. You can only set the description if the <code>publish</code>
+     * parameter is set to <code>true</code>. Otherwise, if you set <code>versionDescription</code>, but
+     * <code>publish</code> to <code>false</code>, this API action throws <code>ValidationException</code>.
+     * </p>
+     * 
+     * @param versionDescription
+     *        Sets description about the state machine version. You can only set the description if the
+     *        <code>publish</code> parameter is set to <code>true</code>. Otherwise, if you set
+     *        <code>versionDescription</code>, but <code>publish</code> to <code>false</code>, this API action throws
+     *        <code>ValidationException</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineRequest withVersionDescription(String versionDescription) {
+        setVersionDescription(versionDescription);
         return this;
     }
 
@@ -837,7 +967,11 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTracingConfiguration() != null)
-            sb.append("TracingConfiguration: ").append(getTracingConfiguration());
+            sb.append("TracingConfiguration: ").append(getTracingConfiguration()).append(",");
+        if (getPublish() != null)
+            sb.append("Publish: ").append(getPublish()).append(",");
+        if (getVersionDescription() != null)
+            sb.append("VersionDescription: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -880,6 +1014,14 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTracingConfiguration() != null && other.getTracingConfiguration().equals(this.getTracingConfiguration()) == false)
             return false;
+        if (other.getPublish() == null ^ this.getPublish() == null)
+            return false;
+        if (other.getPublish() != null && other.getPublish().equals(this.getPublish()) == false)
+            return false;
+        if (other.getVersionDescription() == null ^ this.getVersionDescription() == null)
+            return false;
+        if (other.getVersionDescription() != null && other.getVersionDescription().equals(this.getVersionDescription()) == false)
+            return false;
         return true;
     }
 
@@ -895,6 +1037,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
+        hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         return hashCode;
     }
 

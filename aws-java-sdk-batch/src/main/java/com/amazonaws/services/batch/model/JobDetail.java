@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,14 +88,41 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A short, human-readable string to provide more details for the current status of the job.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to
+     * service the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     * <code>maxVcpu</code> setting that is smaller than the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances
+     * that meet the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service
+     * role permissions.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String statusReason;
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a> was
-     * called. For array child jobs, this is when the child job was spawned by its parent and entered the
-     * <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      */
     private Long createdAt;
@@ -108,8 +135,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     * provided for child jobs of array jobs or multi-node parallel jobs.
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      */
     private Long startedAt;
@@ -142,7 +168,8 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * An object that represents the details for the container that's associated with the job.
+     * An object that represents the details for the container that's associated with the job. If the details are for a
+     * multiple-container job, this object will be empty.
      * </p>
      */
     private ContainerDetail container;
@@ -199,8 +226,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> platformCapabilities;
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>,
-     * <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     * An object with various properties that are specific to Amazon EKS based jobs.
      * </p>
      */
     private EksPropertiesDetail eksProperties;
@@ -210,6 +236,24 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<EksAttemptDetail> eksAttempts;
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs.
+     * </p>
+     */
+    private EcsPropertiesDetail ecsProperties;
+    /**
+     * <p>
+     * Indicates whether the job is canceled.
+     * </p>
+     */
+    private Boolean isCancelled;
+    /**
+     * <p>
+     * Indicates whether the job is terminated.
+     * </p>
+     */
+    private Boolean isTerminated;
 
     /**
      * <p>
@@ -665,9 +709,60 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A short, human-readable string to provide more details for the current status of the job.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to
+     * service the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     * <code>maxVcpu</code> setting that is smaller than the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances
+     * that meet the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service
+     * role permissions.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide more details for the current status of the job.
+     *        A short, human-readable string to provide more details for the current status of the job.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity
+     *        to service the job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     *        <code>maxVcpu</code> setting that is smaller than the job requirements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected
+     *        instances that meet the job requirements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the
+     *        service role permissions.
+     *        </p>
+     *        </li>
      */
 
     public void setStatusReason(String statusReason) {
@@ -678,8 +773,59 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A short, human-readable string to provide more details for the current status of the job.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to
+     * service the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     * <code>maxVcpu</code> setting that is smaller than the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances
+     * that meet the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service
+     * role permissions.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A short, human-readable string to provide more details for the current status of the job.
+     * @return A short, human-readable string to provide more details for the current status of the job.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient
+     *         capacity to service the job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     *         <code>maxVcpu</code> setting that is smaller than the job requirements.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected
+     *         instances that meet the job requirements.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the
+     *         service role permissions.
+     *         </p>
+     *         </li>
      */
 
     public String getStatusReason() {
@@ -690,9 +836,60 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A short, human-readable string to provide more details for the current status of the job.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to
+     * service the job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     * <code>maxVcpu</code> setting that is smaller than the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances
+     * that meet the job requirements.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service
+     * role permissions.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statusReason
-     *        A short, human-readable string to provide more details for the current status of the job.
+     *        A short, human-readable string to provide more details for the current status of the job.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity
+     *        to service the job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a
+     *        <code>maxVcpu</code> setting that is smaller than the job requirements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected
+     *        instances that meet the job requirements.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the
+     *        service role permissions.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,16 +901,18 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a> was
-     * called. For array child jobs, this is when the child job was spawned by its parent and entered the
-     * <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      * 
      * @param createdAt
      *        The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
-     *        jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time
-     *        <a>SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent
-     *        and entered the <code>PENDING</code> state.
+     *        jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called.
+     *        For array child jobs, this is when the child job was spawned by its parent and entered the
+     *        <code>PENDING</code> state.
      */
 
     public void setCreatedAt(Long createdAt) {
@@ -723,15 +922,17 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a> was
-     * called. For array child jobs, this is when the child job was spawned by its parent and entered the
-     * <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      * 
      * @return The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
-     *         jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time
-     *         <a>SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent
-     *         and entered the <code>PENDING</code> state.
+     *         jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called.
+     *         For array child jobs, this is when the child job was spawned by its parent and entered the
+     *         <code>PENDING</code> state.
      */
 
     public Long getCreatedAt() {
@@ -741,16 +942,18 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this
-     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a> was
-     * called. For array child jobs, this is when the child job was spawned by its parent and entered the
-     * <code>PENDING</code> state.
+     * is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For
+     * array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.
      * </p>
      * 
      * @param createdAt
      *        The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array
-     *        jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time
-     *        <a>SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent
-     *        and entered the <code>PENDING</code> state.
+     *        jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called.
+     *        For array child jobs, this is when the child job was spawned by its parent and entered the
+     *        <code>PENDING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,14 +1005,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     * provided for child jobs of array jobs or multi-node parallel jobs.
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      * 
      * @param startedAt
      *        The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     *        transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     *        provided for child jobs of array jobs or multi-node parallel jobs.
+     *        transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      */
 
     public void setStartedAt(Long startedAt) {
@@ -819,13 +1020,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     * provided for child jobs of array jobs or multi-node parallel jobs.
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      * 
      * @return The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     *         transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     *         provided for child jobs of array jobs or multi-node parallel jobs.
+     *         transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      */
 
     public Long getStartedAt() {
@@ -835,14 +1034,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     * provided for child jobs of array jobs or multi-node parallel jobs.
+     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      * </p>
      * 
      * @param startedAt
      *        The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job
-     *        transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't
-     *        provided for child jobs of array jobs or multi-node parallel jobs.
+     *        transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1089,11 +1286,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the details for the container that's associated with the job.
+     * An object that represents the details for the container that's associated with the job. If the details are for a
+     * multiple-container job, this object will be empty.
      * </p>
      * 
      * @param container
-     *        An object that represents the details for the container that's associated with the job.
+     *        An object that represents the details for the container that's associated with the job. If the details are
+     *        for a multiple-container job, this object will be empty.
      */
 
     public void setContainer(ContainerDetail container) {
@@ -1102,10 +1301,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the details for the container that's associated with the job.
+     * An object that represents the details for the container that's associated with the job. If the details are for a
+     * multiple-container job, this object will be empty.
      * </p>
      * 
-     * @return An object that represents the details for the container that's associated with the job.
+     * @return An object that represents the details for the container that's associated with the job. If the details
+     *         are for a multiple-container job, this object will be empty.
      */
 
     public ContainerDetail getContainer() {
@@ -1114,11 +1315,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the details for the container that's associated with the job.
+     * An object that represents the details for the container that's associated with the job. If the details are for a
+     * multiple-container job, this object will be empty.
      * </p>
      * 
      * @param container
-     *        An object that represents the details for the container that's associated with the job.
+     *        An object that represents the details for the container that's associated with the job. If the details are
+     *        for a multiple-container job, this object will be empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1569,13 +1772,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>,
-     * <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     * An object with various properties that are specific to Amazon EKS based jobs.
      * </p>
      * 
      * @param eksProperties
-     *        An object with various properties that are specific to Amazon EKS based jobs. Only one of
-     *        <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     *        An object with various properties that are specific to Amazon EKS based jobs.
      */
 
     public void setEksProperties(EksPropertiesDetail eksProperties) {
@@ -1584,12 +1785,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>,
-     * <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     * An object with various properties that are specific to Amazon EKS based jobs.
      * </p>
      * 
-     * @return An object with various properties that are specific to Amazon EKS based jobs. Only one of
-     *         <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     * @return An object with various properties that are specific to Amazon EKS based jobs.
      */
 
     public EksPropertiesDetail getEksProperties() {
@@ -1598,13 +1797,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>,
-     * <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     * An object with various properties that are specific to Amazon EKS based jobs.
      * </p>
      * 
      * @param eksProperties
-     *        An object with various properties that are specific to Amazon EKS based jobs. Only one of
-     *        <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.
+     *        An object with various properties that are specific to Amazon EKS based jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1684,6 +1881,150 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs.
+     * </p>
+     * 
+     * @param ecsProperties
+     *        An object with properties that are specific to Amazon ECS-based jobs.
+     */
+
+    public void setEcsProperties(EcsPropertiesDetail ecsProperties) {
+        this.ecsProperties = ecsProperties;
+    }
+
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs.
+     * </p>
+     * 
+     * @return An object with properties that are specific to Amazon ECS-based jobs.
+     */
+
+    public EcsPropertiesDetail getEcsProperties() {
+        return this.ecsProperties;
+    }
+
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs.
+     * </p>
+     * 
+     * @param ecsProperties
+     *        An object with properties that are specific to Amazon ECS-based jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withEcsProperties(EcsPropertiesDetail ecsProperties) {
+        setEcsProperties(ecsProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is canceled.
+     * </p>
+     * 
+     * @param isCancelled
+     *        Indicates whether the job is canceled.
+     */
+
+    public void setIsCancelled(Boolean isCancelled) {
+        this.isCancelled = isCancelled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is canceled.
+     * </p>
+     * 
+     * @return Indicates whether the job is canceled.
+     */
+
+    public Boolean getIsCancelled() {
+        return this.isCancelled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is canceled.
+     * </p>
+     * 
+     * @param isCancelled
+     *        Indicates whether the job is canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withIsCancelled(Boolean isCancelled) {
+        setIsCancelled(isCancelled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is canceled.
+     * </p>
+     * 
+     * @return Indicates whether the job is canceled.
+     */
+
+    public Boolean isCancelled() {
+        return this.isCancelled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is terminated.
+     * </p>
+     * 
+     * @param isTerminated
+     *        Indicates whether the job is terminated.
+     */
+
+    public void setIsTerminated(Boolean isTerminated) {
+        this.isTerminated = isTerminated;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is terminated.
+     * </p>
+     * 
+     * @return Indicates whether the job is terminated.
+     */
+
+    public Boolean getIsTerminated() {
+        return this.isTerminated;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is terminated.
+     * </p>
+     * 
+     * @param isTerminated
+     *        Indicates whether the job is terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withIsTerminated(Boolean isTerminated) {
+        setIsTerminated(isTerminated);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the job is terminated.
+     * </p>
+     * 
+     * @return Indicates whether the job is terminated.
+     */
+
+    public Boolean isTerminated() {
+        return this.isTerminated;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1746,7 +2087,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         if (getEksProperties() != null)
             sb.append("EksProperties: ").append(getEksProperties()).append(",");
         if (getEksAttempts() != null)
-            sb.append("EksAttempts: ").append(getEksAttempts());
+            sb.append("EksAttempts: ").append(getEksAttempts()).append(",");
+        if (getEcsProperties() != null)
+            sb.append("EcsProperties: ").append(getEcsProperties()).append(",");
+        if (getIsCancelled() != null)
+            sb.append("IsCancelled: ").append(getIsCancelled()).append(",");
+        if (getIsTerminated() != null)
+            sb.append("IsTerminated: ").append(getIsTerminated());
         sb.append("}");
         return sb.toString();
     }
@@ -1865,6 +2212,18 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEksAttempts() != null && other.getEksAttempts().equals(this.getEksAttempts()) == false)
             return false;
+        if (other.getEcsProperties() == null ^ this.getEcsProperties() == null)
+            return false;
+        if (other.getEcsProperties() != null && other.getEcsProperties().equals(this.getEcsProperties()) == false)
+            return false;
+        if (other.getIsCancelled() == null ^ this.getIsCancelled() == null)
+            return false;
+        if (other.getIsCancelled() != null && other.getIsCancelled().equals(this.getIsCancelled()) == false)
+            return false;
+        if (other.getIsTerminated() == null ^ this.getIsTerminated() == null)
+            return false;
+        if (other.getIsTerminated() != null && other.getIsTerminated().equals(this.getIsTerminated()) == false)
+            return false;
         return true;
     }
 
@@ -1899,6 +2258,9 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
         hashCode = prime * hashCode + ((getEksProperties() == null) ? 0 : getEksProperties().hashCode());
         hashCode = prime * hashCode + ((getEksAttempts() == null) ? 0 : getEksAttempts().hashCode());
+        hashCode = prime * hashCode + ((getEcsProperties() == null) ? 0 : getEcsProperties().hashCode());
+        hashCode = prime * hashCode + ((getIsCancelled() == null) ? 0 : getIsCancelled().hashCode());
+        hashCode = prime * hashCode + ((getIsTerminated() == null) ? 0 : getIsTerminated().hashCode());
         return hashCode;
     }
 

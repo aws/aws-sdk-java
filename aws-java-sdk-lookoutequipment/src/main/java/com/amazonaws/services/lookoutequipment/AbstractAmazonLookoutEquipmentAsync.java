@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRetrainingSchedulerResult> createRetrainingSchedulerAsync(CreateRetrainingSchedulerRequest request) {
+
+        return createRetrainingSchedulerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRetrainingSchedulerResult> createRetrainingSchedulerAsync(CreateRetrainingSchedulerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRetrainingSchedulerRequest, CreateRetrainingSchedulerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest request) {
 
         return deleteDatasetAsync(request, null);
@@ -153,6 +166,32 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRetrainingSchedulerResult> deleteRetrainingSchedulerAsync(DeleteRetrainingSchedulerRequest request) {
+
+        return deleteRetrainingSchedulerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRetrainingSchedulerResult> deleteRetrainingSchedulerAsync(DeleteRetrainingSchedulerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRetrainingSchedulerRequest, DeleteRetrainingSchedulerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -231,6 +270,71 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<DescribeModelResult> describeModelAsync(DescribeModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeModelRequest, DescribeModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest request) {
+
+        return describeModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelVersionRequest, DescribeModelVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request) {
+
+        return describeResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRetrainingSchedulerResult> describeRetrainingSchedulerAsync(DescribeRetrainingSchedulerRequest request) {
+
+        return describeRetrainingSchedulerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRetrainingSchedulerResult> describeRetrainingSchedulerAsync(DescribeRetrainingSchedulerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRetrainingSchedulerRequest, DescribeRetrainingSchedulerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest request) {
+
+        return importDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportDatasetRequest, ImportDatasetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest request) {
+
+        return importModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportModelVersionRequest, ImportModelVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -327,6 +431,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest request) {
+
+        return listModelVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListModelVersionsRequest, ListModelVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest request) {
 
         return listModelsAsync(request, null);
@@ -335,6 +452,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListModelsRequest, ListModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRetrainingSchedulersResult> listRetrainingSchedulersAsync(ListRetrainingSchedulersRequest request) {
+
+        return listRetrainingSchedulersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRetrainingSchedulersResult> listRetrainingSchedulersAsync(ListRetrainingSchedulersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRetrainingSchedulersRequest, ListRetrainingSchedulersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -366,6 +496,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDataIngestionJobResult> startDataIngestionJobAsync(StartDataIngestionJobRequest request) {
 
         return startDataIngestionJobAsync(request, null);
@@ -392,6 +535,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<StartRetrainingSchedulerResult> startRetrainingSchedulerAsync(StartRetrainingSchedulerRequest request) {
+
+        return startRetrainingSchedulerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartRetrainingSchedulerResult> startRetrainingSchedulerAsync(StartRetrainingSchedulerRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartRetrainingSchedulerRequest, StartRetrainingSchedulerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopInferenceSchedulerResult> stopInferenceSchedulerAsync(StopInferenceSchedulerRequest request) {
 
         return stopInferenceSchedulerAsync(request, null);
@@ -400,6 +556,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<StopInferenceSchedulerResult> stopInferenceSchedulerAsync(StopInferenceSchedulerRequest request,
             com.amazonaws.handlers.AsyncHandler<StopInferenceSchedulerRequest, StopInferenceSchedulerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRetrainingSchedulerResult> stopRetrainingSchedulerAsync(StopRetrainingSchedulerRequest request) {
+
+        return stopRetrainingSchedulerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRetrainingSchedulerResult> stopRetrainingSchedulerAsync(StopRetrainingSchedulerRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopRetrainingSchedulerRequest, StopRetrainingSchedulerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -431,6 +600,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest request) {
+
+        return updateActiveModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateActiveModelVersionRequest, UpdateActiveModelVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateInferenceSchedulerResult> updateInferenceSchedulerAsync(UpdateInferenceSchedulerRequest request) {
 
         return updateInferenceSchedulerAsync(request, null);
@@ -452,6 +634,32 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<UpdateLabelGroupResult> updateLabelGroupAsync(UpdateLabelGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLabelGroupRequest, UpdateLabelGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest request) {
+
+        return updateModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateModelRequest, UpdateModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRetrainingSchedulerResult> updateRetrainingSchedulerAsync(UpdateRetrainingSchedulerRequest request) {
+
+        return updateRetrainingSchedulerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRetrainingSchedulerResult> updateRetrainingSchedulerAsync(UpdateRetrainingSchedulerRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRetrainingSchedulerRequest, UpdateRetrainingSchedulerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,8 +46,8 @@ public class ListHealthChecksRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the
-     * current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value
-     * greater than 100, Route 53 returns only the first 100 health checks.
+     * current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value
+     * greater than 1000, Route 53 returns only the first 1000 health checks.
      * </p>
      */
     private String maxItems;
@@ -149,14 +149,14 @@ public class ListHealthChecksRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the
-     * current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value
-     * greater than 100, Route 53 returns only the first 100 health checks.
+     * current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value
+     * greater than 1000, Route 53 returns only the first 1000 health checks.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to
-     *        the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a
-     *        value greater than 100, Route 53 returns only the first 100 health checks.
+     *        the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to
+     *        a value greater than 1000, Route 53 returns only the first 1000 health checks.
      */
 
     public void setMaxItems(String maxItems) {
@@ -166,13 +166,13 @@ public class ListHealthChecksRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the
-     * current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value
-     * greater than 100, Route 53 returns only the first 100 health checks.
+     * current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value
+     * greater than 1000, Route 53 returns only the first 1000 health checks.
      * </p>
      * 
      * @return The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to
-     *         the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to
-     *         a value greater than 100, Route 53 returns only the first 100 health checks.
+     *         the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to
+     *         a value greater than 1000, Route 53 returns only the first 1000 health checks.
      */
 
     public String getMaxItems() {
@@ -182,14 +182,14 @@ public class ListHealthChecksRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the
-     * current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value
-     * greater than 100, Route 53 returns only the first 100 health checks.
+     * current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to a value
+     * greater than 1000, Route 53 returns only the first 1000 health checks.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to
-     *        the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a
-     *        value greater than 100, Route 53 returns only the first 100 health checks.
+     *        the current request. Amazon Route 53 returns a maximum of 1000 items. If you set <code>MaxItems</code> to
+     *        a value greater than 1000, Route 53 returns only the first 1000 health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

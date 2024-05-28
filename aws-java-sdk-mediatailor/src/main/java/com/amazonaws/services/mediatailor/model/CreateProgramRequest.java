@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<AdBreak> adBreaks;
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     */
+    private java.util.List<AudienceMedia> audienceMedia;
     /**
      * <p>
      * The name of the channel for this Program.
@@ -135,6 +141,76 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateProgramRequest withAdBreaks(java.util.Collection<AdBreak> adBreaks) {
         setAdBreaks(adBreaks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @return The list of AudienceMedia defined in program.
+     */
+
+    public java.util.List<AudienceMedia> getAudienceMedia() {
+        return audienceMedia;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     */
+
+    public void setAudienceMedia(java.util.Collection<AudienceMedia> audienceMedia) {
+        if (audienceMedia == null) {
+            this.audienceMedia = null;
+            return;
+        }
+
+        this.audienceMedia = new java.util.ArrayList<AudienceMedia>(audienceMedia);
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudienceMedia(java.util.Collection)} or {@link #withAudienceMedia(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProgramRequest withAudienceMedia(AudienceMedia... audienceMedia) {
+        if (this.audienceMedia == null) {
+            setAudienceMedia(new java.util.ArrayList<AudienceMedia>(audienceMedia.length));
+        }
+        for (AudienceMedia ele : audienceMedia) {
+            this.audienceMedia.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProgramRequest withAudienceMedia(java.util.Collection<AudienceMedia> audienceMedia) {
+        setAudienceMedia(audienceMedia);
         return this;
     }
 
@@ -392,6 +468,8 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getAdBreaks() != null)
             sb.append("AdBreaks: ").append(getAdBreaks()).append(",");
+        if (getAudienceMedia() != null)
+            sb.append("AudienceMedia: ").append(getAudienceMedia()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getLiveSourceName() != null)
@@ -421,6 +499,10 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getAdBreaks() == null ^ this.getAdBreaks() == null)
             return false;
         if (other.getAdBreaks() != null && other.getAdBreaks().equals(this.getAdBreaks()) == false)
+            return false;
+        if (other.getAudienceMedia() == null ^ this.getAudienceMedia() == null)
+            return false;
+        if (other.getAudienceMedia() != null && other.getAudienceMedia().equals(this.getAudienceMedia()) == false)
             return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
@@ -455,6 +537,7 @@ public class CreateProgramRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdBreaks() == null) ? 0 : getAdBreaks().hashCode());
+        hashCode = prime * hashCode + ((getAudienceMedia() == null) ? 0 : getAudienceMedia().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getLiveSourceName() == null) ? 0 : getLiveSourceName().hashCode());
         hashCode = prime * hashCode + ((getProgramName() == null) ? 0 : getProgramName().hashCode());

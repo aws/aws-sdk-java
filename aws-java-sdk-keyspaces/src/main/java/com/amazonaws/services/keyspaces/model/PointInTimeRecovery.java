@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,12 +38,18 @@ public class PointInTimeRecovery implements Serializable, Cloneable, StructuredP
      * <p>
      * The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      */
     private String status;
 
@@ -51,20 +57,32 @@ public class PointInTimeRecovery implements Serializable, Cloneable, StructuredP
      * <p>
      * The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
      *        The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>ENABLED</code>
+     *        <code>status=ENABLED</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>DISABLED</code>
+     *        <code>status=DISABLED</code>
+     *        </p>
+     *        </li>
      * @see PointInTimeRecoveryStatus
      */
 
@@ -76,19 +94,31 @@ public class PointInTimeRecovery implements Serializable, Cloneable, StructuredP
      * <p>
      * The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The options are:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         • <code>ENABLED</code>
+     *         <code>status=ENABLED</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         • <code>DISABLED</code>
+     *         <code>status=DISABLED</code>
+     *         </p>
+     *         </li>
      * @see PointInTimeRecoveryStatus
      */
 
@@ -100,20 +130,32 @@ public class PointInTimeRecovery implements Serializable, Cloneable, StructuredP
      * <p>
      * The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
      *        The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>ENABLED</code>
+     *        <code>status=ENABLED</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>DISABLED</code>
+     *        <code>status=DISABLED</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PointInTimeRecoveryStatus
      */
@@ -127,20 +169,32 @@ public class PointInTimeRecovery implements Serializable, Cloneable, StructuredP
      * <p>
      * The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
      *        The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>ENABLED</code>
+     *        <code>status=ENABLED</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>DISABLED</code>
+     *        <code>status=DISABLED</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PointInTimeRecoveryStatus
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,6 +136,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("Ipv6Address." + ipv6AddressesListIndex + ".Ipv6Address",
                             StringUtils.fromString(runInstancesRequestIpv6AddressesListValue.getIpv6Address()));
                 }
+
+                if (runInstancesRequestIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                    request.addParameter("Ipv6Address." + ipv6AddressesListIndex + ".IsPrimaryIpv6",
+                            StringUtils.fromBoolean(runInstancesRequestIpv6AddressesListValue.getIsPrimaryIpv6()));
+                }
                 ipv6AddressesListIndex++;
             }
         }
@@ -193,6 +198,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
             if (placement.getHostResourceGroupArn() != null) {
                 request.addParameter("Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
+            }
+
+            if (placement.getGroupId() != null) {
+                request.addParameter("Placement.GroupId", StringUtils.fromString(placement.getGroupId()));
             }
         }
 
@@ -323,6 +332,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                                     "NetworkInterface." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex + ".Ipv6Address",
                                     StringUtils.fromString(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIpv6Address()));
                         }
+
+                        if (instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                            request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6Addresses." + ipv6AddressesListIndex
+                                    + ".IsPrimaryIpv6", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationIpv6AddressesListValue.getIsPrimaryIpv6()));
+                        }
                         ipv6AddressesListIndex++;
                     }
                 }
@@ -424,6 +438,50 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                 if (runInstancesRequestNetworkInterfacesListValue.getIpv6PrefixCount() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Ipv6PrefixCount",
                             StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getIpv6PrefixCount()));
+                }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getPrimaryIpv6() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
+                            StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getPrimaryIpv6()));
+                }
+
+                EnaSrdSpecificationRequest enaSrdSpecification = runInstancesRequestNetworkInterfacesListValue.getEnaSrdSpecification();
+                if (enaSrdSpecification != null) {
+
+                    if (enaSrdSpecification.getEnaSrdEnabled() != null) {
+                        request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".EnaSrdSpecification.EnaSrdEnabled",
+                                StringUtils.fromBoolean(enaSrdSpecification.getEnaSrdEnabled()));
+                    }
+
+                    EnaSrdUdpSpecificationRequest enaSrdUdpSpecification = enaSrdSpecification.getEnaSrdUdpSpecification();
+                    if (enaSrdUdpSpecification != null) {
+
+                        if (enaSrdUdpSpecification.getEnaSrdUdpEnabled() != null) {
+                            request.addParameter("NetworkInterface." + networkInterfacesListIndex
+                                    + ".EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled",
+                                    StringUtils.fromBoolean(enaSrdUdpSpecification.getEnaSrdUdpEnabled()));
+                        }
+                    }
+                }
+
+                ConnectionTrackingSpecificationRequest connectionTrackingSpecification = runInstancesRequestNetworkInterfacesListValue
+                        .getConnectionTrackingSpecification();
+                if (connectionTrackingSpecification != null) {
+
+                    if (connectionTrackingSpecification.getTcpEstablishedTimeout() != null) {
+                        request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".ConnectionTrackingSpecification.TcpEstablishedTimeout",
+                                StringUtils.fromInteger(connectionTrackingSpecification.getTcpEstablishedTimeout()));
+                    }
+
+                    if (connectionTrackingSpecification.getUdpStreamTimeout() != null) {
+                        request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".ConnectionTrackingSpecification.UdpStreamTimeout",
+                                StringUtils.fromInteger(connectionTrackingSpecification.getUdpStreamTimeout()));
+                    }
+
+                    if (connectionTrackingSpecification.getUdpTimeout() != null) {
+                        request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".ConnectionTrackingSpecification.UdpTimeout",
+                                StringUtils.fromInteger(connectionTrackingSpecification.getUdpTimeout()));
+                    }
                 }
                 networkInterfacesListIndex++;
             }
@@ -571,6 +629,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             if (cpuOptions.getThreadsPerCore() != null) {
                 request.addParameter("CpuOptions.ThreadsPerCore", StringUtils.fromInteger(cpuOptions.getThreadsPerCore()));
             }
+
+            if (cpuOptions.getAmdSevSnp() != null) {
+                request.addParameter("CpuOptions.AmdSevSnp", StringUtils.fromString(cpuOptions.getAmdSevSnp()));
+            }
         }
 
         CapacityReservationSpecification capacityReservationSpecification = runInstancesRequest.getCapacityReservationSpecification();
@@ -679,6 +741,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         if (runInstancesRequest.getDisableApiStop() != null) {
             request.addParameter("DisableApiStop", StringUtils.fromBoolean(runInstancesRequest.getDisableApiStop()));
+        }
+
+        if (runInstancesRequest.getEnablePrimaryIpv6() != null) {
+            request.addParameter("EnablePrimaryIpv6", StringUtils.fromBoolean(runInstancesRequest.getEnablePrimaryIpv6()));
         }
 
         return request;

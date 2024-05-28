@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Allows you to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code>
- * modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.
+ * Makes it possible to control how your transcription job is processed. Currently, the only
+ * <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
+ * <code>AllowDeferredExecution</code> sub-parameter.
  * </p>
  * <p>
  * If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters:
@@ -35,14 +36,11 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
      * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
      * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
      * <code>LimitExceededException</code> error.
-     * </p>
-     * <p>
-     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
      * If you include <code>AllowDeferredExecution</code> in your request, you must also include
@@ -53,8 +51,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -70,14 +68,11 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
      * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
      * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
      * <code>LimitExceededException</code> error.
-     * </p>
-     * <p>
-     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
      * If you include <code>AllowDeferredExecution</code> in your request, you must also include
@@ -85,14 +80,11 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param allowDeferredExecution
-     *        Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     *        Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      *        <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
      *        a queue until the number of jobs falls below the concurrent request limit. If
      *        <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
      *        requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-     *        <p>
-     *        Note that job queuing is enabled by default for Call Analytics jobs.
-     *        </p>
      *        <p>
      *        If you include <code>AllowDeferredExecution</code> in your request, you must also include
      *        <code>DataAccessRoleArn</code>.
@@ -104,28 +96,22 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
      * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
      * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
      * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for Call Analytics jobs.
-     * </p>
-     * <p>
      * If you include <code>AllowDeferredExecution</code> in your request, you must also include
      * <code>DataAccessRoleArn</code>.
      * </p>
      * 
-     * @return Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * @return Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      *         <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
      *         a queue until the number of jobs falls below the concurrent request limit. If
      *         <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
      *         requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-     *         <p>
-     *         Note that job queuing is enabled by default for Call Analytics jobs.
-     *         </p>
      *         <p>
      *         If you include <code>AllowDeferredExecution</code> in your request, you must also include
      *         <code>DataAccessRoleArn</code>.
@@ -137,14 +123,11 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
      * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
      * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
      * <code>LimitExceededException</code> error.
-     * </p>
-     * <p>
-     * Note that job queuing is enabled by default for Call Analytics jobs.
      * </p>
      * <p>
      * If you include <code>AllowDeferredExecution</code> in your request, you must also include
@@ -152,14 +135,11 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param allowDeferredExecution
-     *        Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     *        Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      *        <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
      *        a queue until the number of jobs falls below the concurrent request limit. If
      *        <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
      *        requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-     *        <p>
-     *        Note that job queuing is enabled by default for Call Analytics jobs.
-     *        </p>
      *        <p>
      *        If you include <code>AllowDeferredExecution</code> in your request, you must also include
      *        <code>DataAccessRoleArn</code>.
@@ -173,28 +153,22 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      * <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in a queue
      * until the number of jobs falls below the concurrent request limit. If <code>AllowDeferredExecution</code> is set
      * to <code>false</code> and the number of transcription job requests exceed the concurrent request limit, you get a
      * <code>LimitExceededException</code> error.
      * </p>
      * <p>
-     * Note that job queuing is enabled by default for Call Analytics jobs.
-     * </p>
-     * <p>
      * If you include <code>AllowDeferredExecution</code> in your request, you must also include
      * <code>DataAccessRoleArn</code>.
      * </p>
      * 
-     * @return Allows you to enable job queuing when your concurrent request limit is exceeded. When
+     * @return Makes it possible to enable job queuing when your concurrent request limit is exceeded. When
      *         <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription job requests are placed in
      *         a queue until the number of jobs falls below the concurrent request limit. If
      *         <code>AllowDeferredExecution</code> is set to <code>false</code> and the number of transcription job
      *         requests exceed the concurrent request limit, you get a <code>LimitExceededException</code> error.</p>
-     *         <p>
-     *         Note that job queuing is enabled by default for Call Analytics jobs.
-     *         </p>
      *         <p>
      *         If you include <code>AllowDeferredExecution</code> in your request, you must also include
      *         <code>DataAccessRoleArn</code>.
@@ -207,8 +181,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -222,8 +196,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
@@ -242,8 +216,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -256,8 +230,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *         specified Amazon S3 location, your request fails.</p>
+     *         contains your input files. If the role that you specify doesn’t have the appropriate permissions to
+     *         access the specified Amazon S3 location, your request fails.</p>
      *         <p>
      *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *         example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a
@@ -276,8 +250,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -291,8 +265,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information, see <a

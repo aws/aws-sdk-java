@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,11 +30,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
-     * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
+     * The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:
      * </p>
      * <ul>
@@ -95,9 +95,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </li>
      * </ul>
      * <p>
-     * The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
-     * <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
-     * <code>KmsKeyId</code>:
+     * The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>, <code>GetRecord</code>,
+     * <code>DeleteRecord</code>) must have the following permissions to the <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -111,11 +110,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
-     * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
+     * The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:
      * </p>
      * <ul>
@@ -176,9 +175,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </li>
      * </ul>
      * <p>
-     * The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
-     * <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
-     * <code>KmsKeyId</code>:
+     * The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>, <code>GetRecord</code>,
+     * <code>DeleteRecord</code>) must have the following permissions to the <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -189,11 +187,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker
-     *        Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+     *        The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt
+     *        the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
      *        <p>
-     *        The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
-     *        the <code>OnlineStore</code> <code>KmsKeyId</code>:
+     *        The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
+     *        <code>OnlineStore</code> <code>KmsKeyId</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -253,7 +251,7 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      *        </li>
      *        </ul>
      *        <p>
-     *        The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
+     *        The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
      *        <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
      *        <code>KmsKeyId</code>:
      *        </p>
@@ -271,11 +269,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
-     * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
+     * The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:
      * </p>
      * <ul>
@@ -336,9 +334,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </li>
      * </ul>
      * <p>
-     * The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
-     * <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
-     * <code>KmsKeyId</code>:
+     * The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>, <code>GetRecord</code>,
+     * <code>DeleteRecord</code>) must have the following permissions to the <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -348,11 +345,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </li>
      * </ul>
      * 
-     * @return The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker
-     *         Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+     * @return The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt
+     *         the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
      *         <p>
-     *         The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions
-     *         to the <code>OnlineStore</code> <code>KmsKeyId</code>:
+     *         The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
+     *         the <code>OnlineStore</code> <code>KmsKeyId</code>:
      *         </p>
      *         <ul>
      *         <li>
@@ -412,7 +409,7 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      *         </li>
      *         </ul>
      *         <p>
-     *         The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
+     *         The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
      *         <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
      *         <code>KmsKeyId</code>:
      *         </p>
@@ -430,11 +427,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
-     * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
+     * The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
      * <code>OnlineStore</code> <code>KmsKeyId</code>:
      * </p>
      * <ul>
@@ -495,9 +492,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </li>
      * </ul>
      * <p>
-     * The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
-     * <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
-     * <code>KmsKeyId</code>:
+     * The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>, <code>GetRecord</code>,
+     * <code>DeleteRecord</code>) must have the following permissions to the <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
@@ -508,11 +504,11 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker
-     *        Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+     *        The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt
+     *        the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
      *        <p>
-     *        The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
-     *        the <code>OnlineStore</code> <code>KmsKeyId</code>:
+     *        The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
+     *        <code>OnlineStore</code> <code>KmsKeyId</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -572,7 +568,7 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      *        </li>
      *        </ul>
      *        <p>
-     *        The caller (either IAM user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
+     *        The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
      *        <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the
      *        <code>KmsKeyId</code>:
      *        </p>

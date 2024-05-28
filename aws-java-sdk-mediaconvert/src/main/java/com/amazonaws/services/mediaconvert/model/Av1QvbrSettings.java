@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR
- * for Rate control mode (RateControlMode).
+ * for Rate control mode.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Av1QvbrSettings" target="_top">AWS API
  *      Documentation</a>
@@ -28,14 +28,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Av1QvbrSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level
-     * for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain
-     * the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for
-     * you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from
-     * 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality
-     * level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole
-     * numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality
-     * level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output.
+     * MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality
+     * that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on
+     * characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10.
+     * Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for
+     * most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also
+     * provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      */
     private Integer qvbrQualityLevel;
     /**
@@ -47,25 +47,25 @@ public class Av1QvbrSettings implements Serializable, Cloneable, StructuredPojo 
     private Double qvbrQualityLevelFineTune;
 
     /**
-     * Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level
-     * for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain
-     * the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for
-     * you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from
-     * 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality
-     * level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole
-     * numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality
-     * level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output.
+     * MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality
+     * that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on
+     * characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10.
+     * Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for
+     * most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also
+     * provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      * 
      * @param qvbrQualityLevel
-     *        Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality
-     *        level for this output. MediaConvert determines the right number of bits to use for each part of the video
-     *        to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks
-     *        a quality level for you, based on characteristics of your input video. If you prefer to specify a quality
-     *        level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in
-     *        nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9.
-     *        Optionally, to specify a value between whole numbers, also provide a value for the setting
-     *        qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set
-     *        qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     *        Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this
+     *        output. MediaConvert determines the right number of bits to use for each part of the video to maintain the
+     *        video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level
+     *        for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a
+     *        number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless
+     *        compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to
+     *        specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For
+     *        example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set
+     *        qvbrQualityLevelFineTune to .33.
      */
 
     public void setQvbrQualityLevel(Integer qvbrQualityLevel) {
@@ -73,23 +73,23 @@ public class Av1QvbrSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level
-     * for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain
-     * the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for
-     * you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from
-     * 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality
-     * level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole
-     * numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality
-     * level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output.
+     * MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality
+     * that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on
+     * characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10.
+     * Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for
+     * most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also
+     * provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      * 
-     * @return Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target
-     *         quality level for this output. MediaConvert determines the right number of bits to use for each part of
-     *         the video to maintain the video quality that you specify. When you keep the default value, AUTO,
-     *         MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer
-     *         to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality.
-     *         Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes
-     *         is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the
-     *         setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set
+     * @return Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this
+     *         output. MediaConvert determines the right number of bits to use for each part of the video to maintain
+     *         the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality
+     *         level for you, based on characteristics of your input video. If you prefer to specify a quality level,
+     *         specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly
+     *         lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9.
+     *         Optionally, to specify a value between whole numbers, also provide a value for the setting
+     *         qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set
      *         qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      */
 
@@ -98,25 +98,25 @@ public class Av1QvbrSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level
-     * for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain
-     * the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for
-     * you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from
-     * 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality
-     * level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole
-     * numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality
-     * level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this output.
+     * MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality
+     * that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on
+     * characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10.
+     * Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for
+     * most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also
+     * provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      * 
      * @param qvbrQualityLevel
-     *        Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality
-     *        level for this output. MediaConvert determines the right number of bits to use for each part of the video
-     *        to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks
-     *        a quality level for you, based on characteristics of your input video. If you prefer to specify a quality
-     *        level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in
-     *        nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9.
-     *        Optionally, to specify a value between whole numbers, also provide a value for the setting
-     *        qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set
-     *        qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     *        Use this setting only when you set Rate control mode to QVBR. Specify the target quality level for this
+     *        output. MediaConvert determines the right number of bits to use for each part of the video to maintain the
+     *        video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level
+     *        for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a
+     *        number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless
+     *        compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to
+     *        specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For
+     *        example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set
+     *        qvbrQualityLevelFineTune to .33.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

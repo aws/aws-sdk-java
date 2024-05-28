@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,14 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
      * hexadecimal value.
      */
     private String videoPid;
+    /** If set to passthrough, passes any KLV data from the input source to this output. */
+    private String klvBehavior;
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be
+     * entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified
+     * must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    private String klvDataPids;
 
     /**
      * The number of audio frames to insert for each PES packet.
@@ -817,6 +825,103 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     * 
+     * @param klvBehavior
+     *        If set to passthrough, passes any KLV data from the input source to this output.
+     * @see M3u8KlvBehavior
+     */
+
+    public void setKlvBehavior(String klvBehavior) {
+        this.klvBehavior = klvBehavior;
+    }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     * 
+     * @return If set to passthrough, passes any KLV data from the input source to this output.
+     * @see M3u8KlvBehavior
+     */
+
+    public String getKlvBehavior() {
+        return this.klvBehavior;
+    }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     * 
+     * @param klvBehavior
+     *        If set to passthrough, passes any KLV data from the input source to this output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M3u8KlvBehavior
+     */
+
+    public M3u8Settings withKlvBehavior(String klvBehavior) {
+        setKlvBehavior(klvBehavior);
+        return this;
+    }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     * 
+     * @param klvBehavior
+     *        If set to passthrough, passes any KLV data from the input source to this output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M3u8KlvBehavior
+     */
+
+    public M3u8Settings withKlvBehavior(M3u8KlvBehavior klvBehavior) {
+        this.klvBehavior = klvBehavior.toString();
+        return this;
+    }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be
+     * entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified
+     * must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     * 
+     * @param klvDataPids
+     *        Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be
+     *        entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID
+     *        specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+
+    public void setKlvDataPids(String klvDataPids) {
+        this.klvDataPids = klvDataPids;
+    }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be
+     * entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified
+     * must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     * 
+     * @return Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can
+     *         be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each
+     *         PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+
+    public String getKlvDataPids() {
+        return this.klvDataPids;
+    }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be
+     * entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified
+     * must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     * 
+     * @param klvDataPids
+     *        Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be
+     *        entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID
+     *        specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public M3u8Settings withKlvDataPids(String klvDataPids) {
+        setKlvDataPids(klvDataPids);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -861,7 +966,11 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         if (getTransportStreamId() != null)
             sb.append("TransportStreamId: ").append(getTransportStreamId()).append(",");
         if (getVideoPid() != null)
-            sb.append("VideoPid: ").append(getVideoPid());
+            sb.append("VideoPid: ").append(getVideoPid()).append(",");
+        if (getKlvBehavior() != null)
+            sb.append("KlvBehavior: ").append(getKlvBehavior()).append(",");
+        if (getKlvDataPids() != null)
+            sb.append("KlvDataPids: ").append(getKlvDataPids());
         sb.append("}");
         return sb.toString();
     }
@@ -944,6 +1053,14 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVideoPid() != null && other.getVideoPid().equals(this.getVideoPid()) == false)
             return false;
+        if (other.getKlvBehavior() == null ^ this.getKlvBehavior() == null)
+            return false;
+        if (other.getKlvBehavior() != null && other.getKlvBehavior().equals(this.getKlvBehavior()) == false)
+            return false;
+        if (other.getKlvDataPids() == null ^ this.getKlvDataPids() == null)
+            return false;
+        if (other.getKlvDataPids() != null && other.getKlvDataPids().equals(this.getKlvDataPids()) == false)
+            return false;
         return true;
     }
 
@@ -969,6 +1086,8 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimedMetadataPid() == null) ? 0 : getTimedMetadataPid().hashCode());
         hashCode = prime * hashCode + ((getTransportStreamId() == null) ? 0 : getTransportStreamId().hashCode());
         hashCode = prime * hashCode + ((getVideoPid() == null) ? 0 : getVideoPid().hashCode());
+        hashCode = prime * hashCode + ((getKlvBehavior() == null) ? 0 : getKlvBehavior().hashCode());
+        hashCode = prime * hashCode + ((getKlvDataPids() == null) ? 0 : getKlvDataPids().hashCode());
         return hashCode;
     }
 

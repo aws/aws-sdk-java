@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date disabledDate;
+    /**
+     * <p>
+     * Resource description.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -390,6 +396,46 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Resource description.
+     * </p>
+     * 
+     * @param description
+     *        Resource description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * Resource description.
+     * </p>
+     * 
+     * @return Resource description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Resource description.
+     * </p>
+     * 
+     * @param description
+     *        Resource description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +460,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         if (getEnabledDate() != null)
             sb.append("EnabledDate: ").append(getEnabledDate()).append(",");
         if (getDisabledDate() != null)
-            sb.append("DisabledDate: ").append(getDisabledDate());
+            sb.append("DisabledDate: ").append(getDisabledDate()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -457,6 +505,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDisabledDate() != null && other.getDisabledDate().equals(this.getDisabledDate()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -472,6 +524,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getEnabledDate() == null) ? 0 : getEnabledDate().hashCode());
         hashCode = prime * hashCode + ((getDisabledDate() == null) ? 0 : getDisabledDate().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

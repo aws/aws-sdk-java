@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      */
     private String appImageConfigArn;
@@ -53,14 +53,26 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private KernelGatewayImageConfig kernelGatewayImageConfig;
+    /**
+     * <p>
+     * The configuration of the JupyterLab app.
+     * </p>
+     */
+    private JupyterLabAppImageConfig jupyterLabAppImageConfig;
+    /**
+     * <p>
+     * The configuration of the Code Editor app.
+     * </p>
+     */
+    private CodeEditorAppImageConfig codeEditorAppImageConfig;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
      * @param appImageConfigArn
-     *        The Amazon Resource Name (ARN) of the AppImageConfig.
+     *        The ARN of the AppImageConfig.
      */
 
     public void setAppImageConfigArn(String appImageConfigArn) {
@@ -69,10 +81,10 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AppImageConfig.
+     * @return The ARN of the AppImageConfig.
      */
 
     public String getAppImageConfigArn() {
@@ -81,11 +93,11 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
      * @param appImageConfigArn
-     *        The Amazon Resource Name (ARN) of the AppImageConfig.
+     *        The ARN of the AppImageConfig.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,6 +267,86 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The configuration of the JupyterLab app.
+     * </p>
+     * 
+     * @param jupyterLabAppImageConfig
+     *        The configuration of the JupyterLab app.
+     */
+
+    public void setJupyterLabAppImageConfig(JupyterLabAppImageConfig jupyterLabAppImageConfig) {
+        this.jupyterLabAppImageConfig = jupyterLabAppImageConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of the JupyterLab app.
+     * </p>
+     * 
+     * @return The configuration of the JupyterLab app.
+     */
+
+    public JupyterLabAppImageConfig getJupyterLabAppImageConfig() {
+        return this.jupyterLabAppImageConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of the JupyterLab app.
+     * </p>
+     * 
+     * @param jupyterLabAppImageConfig
+     *        The configuration of the JupyterLab app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAppImageConfigResult withJupyterLabAppImageConfig(JupyterLabAppImageConfig jupyterLabAppImageConfig) {
+        setJupyterLabAppImageConfig(jupyterLabAppImageConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration of the Code Editor app.
+     * </p>
+     * 
+     * @param codeEditorAppImageConfig
+     *        The configuration of the Code Editor app.
+     */
+
+    public void setCodeEditorAppImageConfig(CodeEditorAppImageConfig codeEditorAppImageConfig) {
+        this.codeEditorAppImageConfig = codeEditorAppImageConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of the Code Editor app.
+     * </p>
+     * 
+     * @return The configuration of the Code Editor app.
+     */
+
+    public CodeEditorAppImageConfig getCodeEditorAppImageConfig() {
+        return this.codeEditorAppImageConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of the Code Editor app.
+     * </p>
+     * 
+     * @param codeEditorAppImageConfig
+     *        The configuration of the Code Editor app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAppImageConfigResult withCodeEditorAppImageConfig(CodeEditorAppImageConfig codeEditorAppImageConfig) {
+        setCodeEditorAppImageConfig(codeEditorAppImageConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,7 +367,11 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getKernelGatewayImageConfig() != null)
-            sb.append("KernelGatewayImageConfig: ").append(getKernelGatewayImageConfig());
+            sb.append("KernelGatewayImageConfig: ").append(getKernelGatewayImageConfig()).append(",");
+        if (getJupyterLabAppImageConfig() != null)
+            sb.append("JupyterLabAppImageConfig: ").append(getJupyterLabAppImageConfig()).append(",");
+        if (getCodeEditorAppImageConfig() != null)
+            sb.append("CodeEditorAppImageConfig: ").append(getCodeEditorAppImageConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +406,14 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getKernelGatewayImageConfig() != null && other.getKernelGatewayImageConfig().equals(this.getKernelGatewayImageConfig()) == false)
             return false;
+        if (other.getJupyterLabAppImageConfig() == null ^ this.getJupyterLabAppImageConfig() == null)
+            return false;
+        if (other.getJupyterLabAppImageConfig() != null && other.getJupyterLabAppImageConfig().equals(this.getJupyterLabAppImageConfig()) == false)
+            return false;
+        if (other.getCodeEditorAppImageConfig() == null ^ this.getCodeEditorAppImageConfig() == null)
+            return false;
+        if (other.getCodeEditorAppImageConfig() != null && other.getCodeEditorAppImageConfig().equals(this.getCodeEditorAppImageConfig()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +427,8 @@ public class DescribeAppImageConfigResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getKernelGatewayImageConfig() == null) ? 0 : getKernelGatewayImageConfig().hashCode());
+        hashCode = prime * hashCode + ((getJupyterLabAppImageConfig() == null) ? 0 : getJupyterLabAppImageConfig().hashCode());
+        hashCode = prime * hashCode + ((getCodeEditorAppImageConfig() == null) ? 0 : getCodeEditorAppImageConfig().hashCode());
         return hashCode;
     }
 

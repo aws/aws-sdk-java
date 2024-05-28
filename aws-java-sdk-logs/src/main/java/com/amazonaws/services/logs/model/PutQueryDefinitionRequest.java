@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
@@ -66,19 +66,26 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String queryString;
+    /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
      * </p>
      * 
      * @param name
-     *        A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
-     *        them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *        A name for the query definition. If you are saving numerous query definitions, we recommend that you name
+     *        them. This way, you can find the ones you want by using the first part of the name as a filter in the
      *        <code>queryDefinitionNamePrefix</code> parameter of <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      *        >DescribeQueryDefinitions</a>.
@@ -90,15 +97,15 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
      * </p>
      * 
-     * @return A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
-     *         them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     * @return A name for the query definition. If you are saving numerous query definitions, we recommend that you name
+     *         them. This way, you can find the ones you want by using the first part of the name as a filter in the
      *         <code>queryDefinitionNamePrefix</code> parameter of <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      *         >DescribeQueryDefinitions</a>.
@@ -110,16 +117,16 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
      * </p>
      * 
      * @param name
-     *        A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
-     *        them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *        A name for the query definition. If you are saving numerous query definitions, we recommend that you name
+     *        them. This way, you can find the ones you want by using the first part of the name as a filter in the
      *        <code>queryDefinitionNamePrefix</code> parameter of <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      *        >DescribeQueryDefinitions</a>.
@@ -364,6 +371,52 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     * 
+     * @param clientToken
+     *        Used as an idempotency token, to avoid returning an exception if the service receives the same request
+     *        twice because of a network error.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     * 
+     * @return Used as an idempotency token, to avoid returning an exception if the service receives the same request
+     *         twice because of a network error.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Used as an idempotency token, to avoid returning an exception if the service receives the same request twice
+     * because of a network error.
+     * </p>
+     * 
+     * @param clientToken
+     *        Used as an idempotency token, to avoid returning an exception if the service receives the same request
+     *        twice because of a network error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutQueryDefinitionRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -382,7 +435,9 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getLogGroupNames() != null)
             sb.append("LogGroupNames: ").append(getLogGroupNames()).append(",");
         if (getQueryString() != null)
-            sb.append("QueryString: ").append(getQueryString());
+            sb.append("QueryString: ").append(getQueryString()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +468,10 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getQueryString() != null && other.getQueryString().equals(this.getQueryString()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -425,6 +484,7 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getQueryDefinitionId() == null) ? 0 : getQueryDefinitionId().hashCode());
         hashCode = prime * hashCode + ((getLogGroupNames() == null) ? 0 : getLogGroupNames().hashCode());
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

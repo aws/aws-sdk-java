@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -41,18 +41,18 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings
-     * for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     * for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      * </p>
      */
     private Boolean preserve;
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to delete the add-on from.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -61,10 +61,10 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster to delete the add-on from.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -73,11 +73,11 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to delete the add-on from.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,12 +138,12 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings
-     * for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     * for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      * </p>
      * 
      * @param preserve
      *        Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any
-     *        settings for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     *        settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      */
 
     public void setPreserve(Boolean preserve) {
@@ -153,11 +153,11 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings
-     * for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     * for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      * </p>
      * 
      * @return Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any
-     *         settings for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     *         settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      */
 
     public Boolean getPreserve() {
@@ -167,12 +167,12 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings
-     * for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     * for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      * </p>
      * 
      * @param preserve
      *        Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any
-     *        settings for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     *        settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings
-     * for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     * for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      * </p>
      * 
      * @return Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any
-     *         settings for the add-on. If an IAM account is associated with the add-on, it is not removed.
+     *         settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.
      */
 
     public Boolean isPreserve() {

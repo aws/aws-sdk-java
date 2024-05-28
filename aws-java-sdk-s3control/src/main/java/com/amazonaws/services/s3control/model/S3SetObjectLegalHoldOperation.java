@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,16 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every
- * object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a
+ * Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every
+ * object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with
  * S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
+ * <note>
+ * <p>
+ * This functionality is not supported by directory buckets.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectLegalHoldOperation"
  *      target="_top">AWS API Documentation</a>

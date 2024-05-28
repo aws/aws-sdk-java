@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,8 +94,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -185,8 +185,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
-     * underscores (_) are allowed.
+     * call with the <code>startedBy</code> value. Up to 128 letters (uppercase and lowercase), numbers, hyphens (-),
+     * and underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -251,31 +251,46 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
-     * </p>
-     * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
-     * When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this
-     * value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     * When you specify a task definition, you must either specify a specific revision, or all revisions in the ARN.
      * </p>
      * <p>
-     * When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     * To specify a specific revision, include the revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
+     * </p>
+     * <p>
+     * To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      * </p>
      */
     private String taskDefinition;
+    /**
+     * <p>
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring idempotency</a>.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     * >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from
+     * the task definition.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TaskVolumeConfiguration> volumeConfigurations;
 
     /**
      * <p>
@@ -745,8 +760,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -776,8 +791,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *        capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     *        capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -814,8 +829,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -844,8 +859,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         <p>
      *         Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *         capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html"
+     *         >Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *         </p>
      *         </note>
      *         <p>
@@ -882,8 +897,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -913,8 +928,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *        capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     *        capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -953,8 +968,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -984,8 +999,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *        capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     *        capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -1528,8 +1543,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
-     * underscores (_) are allowed.
+     * call with the <code>startedBy</code> value. Up to 128 letters (uppercase and lowercase), numbers, hyphens (-),
+     * and underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -1540,7 +1555,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        An optional tag specified when a task is started. For example, if you automatically trigger a task to run
      *        a batch process job, you could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
-     *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 128 letters (uppercase and
      *        lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *        <p>
      *        If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
@@ -1556,8 +1571,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
-     * underscores (_) are allowed.
+     * call with the <code>startedBy</code> value. Up to 128 letters (uppercase and lowercase), numbers, hyphens (-),
+     * and underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -1567,8 +1582,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @return An optional tag specified when a task is started. For example, if you automatically trigger a task to run
      *         a batch process job, you could apply a unique identifier for that job to your task with the
      *         <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
-     *         results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
-     *         lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
+     *         results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 128 letters (uppercase
+     *         and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *         <p>
      *         If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
      *         deployment ID of the service that starts it.
@@ -1583,8 +1598,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch
      * process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the results of a <a>ListTasks</a>
-     * call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and
-     * underscores (_) are allowed.
+     * call with the <code>startedBy</code> value. Up to 128 letters (uppercase and lowercase), numbers, hyphens (-),
+     * and underscores (_) are allowed.
      * </p>
      * <p>
      * If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment
@@ -1595,7 +1610,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        An optional tag specified when a task is started. For example, if you automatically trigger a task to run
      *        a batch process job, you could apply a unique identifier for that job to your task with the
      *        <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the
-     *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and
+     *        results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to 128 letters (uppercase and
      *        lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
      *        <p>
      *        If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the
@@ -2044,28 +2059,24 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
-     * </p>
-     * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
-     * When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this
-     * value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     * When you specify a task definition, you must either specify a specific revision, or all revisions in the ARN.
      * </p>
      * <p>
-     * When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     * To specify a specific revision, include the revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
+     * </p>
+     * <p>
+     * To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      * </p>
      * 
      * @param taskDefinition
@@ -2073,30 +2084,25 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *        used.</p>
      *        <p>
-     *        When you create an IAM policy for run-task, you can set the resource to be the latest task definition
-     *        revision, or a specific revision.
+     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
+     *        permissions policy.
      *        </p>
      *        <p>
-     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
-     *        principal's permissions policy.
+     *        When you specify a task definition, you must either specify a specific revision, or all revisions in the
+     *        ARN.
      *        </p>
      *        <p>
-     *        When you specify the policy resource as the latest task definition version (by setting the
-     *        <code>Resource</code> in the policy to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     *        To specify a specific revision, include the revision number in the ARN. For example, to specify revision
+     *        2, use <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
      *        </p>
      *        <p>
-     *        When you specify the policy resource as a specific task definition version (by setting the
-     *        <code>Resource</code> in the policy to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     *        To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     *        >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     *        >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -2109,58 +2115,49 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
-     * </p>
-     * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
-     * When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this
-     * value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     * When you specify a task definition, you must either specify a specific revision, or all revisions in the ARN.
      * </p>
      * <p>
-     * When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     * To specify a specific revision, include the revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
+     * </p>
+     * <p>
+     * To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      * </p>
      * 
      * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
      *         definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *         used.</p>
      *         <p>
-     *         When you create an IAM policy for run-task, you can set the resource to be the latest task definition
-     *         revision, or a specific revision.
-     *         </p>
-     *         <p>
-     *         The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
+     *         The full ARN value must match the value that you specified as the <code>Resource</code> of the
      *         principal's permissions policy.
      *         </p>
      *         <p>
-     *         When you specify the policy resource as the latest task definition version (by setting the
-     *         <code>Resource</code> in the policy to
-     *         <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to
-     *         <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     *         When you specify a task definition, you must either specify a specific revision, or all revisions in the
+     *         ARN.
      *         </p>
      *         <p>
-     *         When you specify the policy resource as a specific task definition version (by setting the
-     *         <code>Resource</code> in the policy to
-     *         <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     *         <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     *         <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     *         To specify a specific revision, include the revision number in the ARN. For example, to specify revision
+     *         2, use <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
+     *         </p>
+     *         <p>
+     *         To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     *         <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      *         </p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     *         >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     *         >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      */
 
     public String getTaskDefinition() {
@@ -2173,28 +2170,24 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
-     * </p>
-     * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
-     * When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this
-     * value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     * When you specify a task definition, you must either specify a specific revision, or all revisions in the ARN.
      * </p>
      * <p>
-     * When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code>
-     * in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     * To specify a specific revision, include the revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
+     * </p>
+     * <p>
+     * To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      * </p>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     * >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      * </p>
      * 
      * @param taskDefinition
@@ -2202,35 +2195,196 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *        used.</p>
      *        <p>
-     *        When you create an IAM policy for run-task, you can set the resource to be the latest task definition
-     *        revision, or a specific revision.
+     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
+     *        permissions policy.
      *        </p>
      *        <p>
-     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
-     *        principal's permissions policy.
+     *        When you specify a task definition, you must either specify a specific revision, or all revisions in the
+     *        ARN.
      *        </p>
      *        <p>
-     *        When you specify the policy resource as the latest task definition version (by setting the
-     *        <code>Resource</code> in the policy to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+     *        To specify a specific revision, include the revision number in the ARN. For example, to specify revision
+     *        2, use <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.
      *        </p>
      *        <p>
-     *        When you specify the policy resource as a specific task definition version (by setting the
-     *        <code>Resource</code> in the policy to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to
-     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+     *        To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use
+     *        <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.
      *        </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources"
-     *        >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.
+     *        >Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RunTaskRequest withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
+     *        sensitive. Up to 64 characters are allowed. The valid characters are characters in the range of 33-126,
+     *        inclusive. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     *        idempotency</a>.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring idempotency</a>.
+     * </p>
+     * 
+     * @return An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
+     *         sensitive. Up to 64 characters are allowed. The valid characters are characters in the range of 33-126,
+     *         inclusive. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     *         idempotency</a>.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
+     *        sensitive. Up to 64 characters are allowed. The valid characters are characters in the range of 33-126,
+     *        inclusive. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     *        idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     * >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from
+     * the task definition.
+     * </p>
+     * 
+     * @return The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *         volumeType, IOPS, throughput, snapshot and encryption in in <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     *         >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *         <code>name</code> from the task definition.
+     */
+
+    public java.util.List<TaskVolumeConfiguration> getVolumeConfigurations() {
+        if (volumeConfigurations == null) {
+            volumeConfigurations = new com.amazonaws.internal.SdkInternalList<TaskVolumeConfiguration>();
+        }
+        return volumeConfigurations;
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     * >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from
+     * the task definition.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *        volumeType, IOPS, throughput, snapshot and encryption in in <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     *        >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *        <code>name</code> from the task definition.
+     */
+
+    public void setVolumeConfigurations(java.util.Collection<TaskVolumeConfiguration> volumeConfigurations) {
+        if (volumeConfigurations == null) {
+            this.volumeConfigurations = null;
+            return;
+        }
+
+        this.volumeConfigurations = new com.amazonaws.internal.SdkInternalList<TaskVolumeConfiguration>(volumeConfigurations);
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     * >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from
+     * the task definition.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeConfigurations(java.util.Collection)} or {@link #withVolumeConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *        volumeType, IOPS, throughput, snapshot and encryption in in <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     *        >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *        <code>name</code> from the task definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withVolumeConfigurations(TaskVolumeConfiguration... volumeConfigurations) {
+        if (this.volumeConfigurations == null) {
+            setVolumeConfigurations(new com.amazonaws.internal.SdkInternalList<TaskVolumeConfiguration>(volumeConfigurations.length));
+        }
+        for (TaskVolumeConfiguration ele : volumeConfigurations) {
+            this.volumeConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     * >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from
+     * the task definition.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *        volumeType, IOPS, throughput, snapshot and encryption in in <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html"
+     *        >TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *        <code>name</code> from the task definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withVolumeConfigurations(java.util.Collection<TaskVolumeConfiguration> volumeConfigurations) {
+        setVolumeConfigurations(volumeConfigurations);
         return this;
     }
 
@@ -2279,7 +2433,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: ").append(getTaskDefinition());
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getVolumeConfigurations() != null)
+            sb.append("VolumeConfigurations: ").append(getVolumeConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -2362,6 +2520,14 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getTaskDefinition() != null && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getVolumeConfigurations() == null ^ this.getVolumeConfigurations() == null)
+            return false;
+        if (other.getVolumeConfigurations() != null && other.getVolumeConfigurations().equals(this.getVolumeConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -2387,6 +2553,8 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode());
         return hashCode;
     }
 

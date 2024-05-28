@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,48 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ChangeMessageVisibilityBatchRequest Marshaller
+ * ChangeMessageVisibilityBatchRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ChangeMessageVisibilityBatchRequestMarshaller implements
-        Marshaller<Request<ChangeMessageVisibilityBatchRequest>, ChangeMessageVisibilityBatchRequest> {
+@SdkInternalApi
+public class ChangeMessageVisibilityBatchRequestMarshaller {
 
-    public Request<ChangeMessageVisibilityBatchRequest> marshall(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<List> ENTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Entries").build();
+
+    private static final ChangeMessageVisibilityBatchRequestMarshaller instance = new ChangeMessageVisibilityBatchRequestMarshaller();
+
+    public static ChangeMessageVisibilityBatchRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (changeMessageVisibilityBatchRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ChangeMessageVisibilityBatchRequest> request = new DefaultRequest<ChangeMessageVisibilityBatchRequest>(changeMessageVisibilityBatchRequest,
-                "AmazonSQS");
-        request.addParameter("Action", "ChangeMessageVisibilityBatch");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (changeMessageVisibilityBatchRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityBatchRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(changeMessageVisibilityBatchRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(changeMessageVisibilityBatchRequest.getEntries(), ENTRIES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (!changeMessageVisibilityBatchRequest.getEntries().isEmpty()
-                || !((com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry>) changeMessageVisibilityBatchRequest.getEntries())
-                        .isAutoConstruct()) {
-            com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry>) changeMessageVisibilityBatchRequest
-                    .getEntries();
-            int entriesListIndex = 1;
-
-            for (ChangeMessageVisibilityBatchRequestEntry entriesListValue : entriesList) {
-                if (entriesListValue != null) {
-
-                    if (entriesListValue.getId() != null) {
-                        request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".Id",
-                                StringUtils.fromString(entriesListValue.getId()));
-                    }
-
-                    if (entriesListValue.getReceiptHandle() != null) {
-                        request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
-                                StringUtils.fromString(entriesListValue.getReceiptHandle()));
-                    }
-
-                    if (entriesListValue.getVisibilityTimeout() != null) {
-                        request.addParameter("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".VisibilityTimeout",
-                                StringUtils.fromInteger(entriesListValue.getVisibilityTimeout()));
-                    }
-                }
-                entriesListIndex++;
-            }
-        }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or
- * <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+ * <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a
+ * managed rule group as a top-level statement within a rule that you define in a web ACL.
  * </p>
  * <note>
  * <p>
  * You are charged additional fees when you use the WAF Bot Control managed rule group
- * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule
- * group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+ * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule
+ * group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP)
+ * managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
  * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
  * </p>
  * </note>
@@ -44,7 +46,7 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      */
@@ -89,9 +91,31 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
+     * The rule groups used for intelligent threat mitigation require additional configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud
+     * prevention managed rule group. The configuration includes the registration and sign-up pages of your application
+     * and the locations in the account creation request payload of data, such as the user email and phone number
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention
+     * managed rule group. The configuration includes the sign-in page of your application and the locations in the
+     * login request payload of data such as the username and password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
      * you want the Bot Control rule group to use.
      * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<ManagedRuleGroupConfig> managedRuleGroupConfigs;
     /**
@@ -109,12 +133,12 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      * 
      * @param vendorName
-     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify the
+     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify a
      *        rule group.
      */
 
@@ -124,11 +148,11 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      * 
-     * @return The name of the managed rule group vendor. You use this, along with the rule group name, to identify the
+     * @return The name of the managed rule group vendor. You use this, along with the rule group name, to identify a
      *         rule group.
      */
 
@@ -138,12 +162,12 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      * 
      * @param vendorName
-     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify the
+     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify a
      *        rule group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -418,15 +442,59 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
+     * The rule groups used for intelligent threat mitigation require additional configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud
+     * prevention managed rule group. The configuration includes the registration and sign-up pages of your application
+     * and the locations in the account creation request payload of data, such as the user email and phone number
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention
+     * managed rule group. The configuration includes the sign-in page of your application and the locations in the
+     * login request payload of data such as the username and password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
      * you want the Bot Control rule group to use.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return Additional information that's used by a managed rule group. Many managed rule groups don't require
      *         this.</p>
      *         <p>
+     *         The rule groups used for intelligent threat mitigation require additional configuration:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation
+     *         fraud prevention managed rule group. The configuration includes the registration and sign-up pages of
+     *         your application and the locations in the account creation request payload of data, such as the user
+     *         email and phone number fields.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover
+     *         prevention managed rule group. The configuration includes the sign-in page of your application and the
+     *         locations in the login request payload of data such as the username and password.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
      *         level that you want the Bot Control rule group to use.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<ManagedRuleGroupConfig> getManagedRuleGroupConfigs() {
@@ -438,16 +506,60 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
+     * The rule groups used for intelligent threat mitigation require additional configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud
+     * prevention managed rule group. The configuration includes the registration and sign-up pages of your application
+     * and the locations in the account creation request payload of data, such as the user email and phone number
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention
+     * managed rule group. The configuration includes the sign-in page of your application and the locations in the
+     * login request payload of data such as the username and password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
      * you want the Bot Control rule group to use.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param managedRuleGroupConfigs
      *        Additional information that's used by a managed rule group. Many managed rule groups don't require
      *        this.</p>
      *        <p>
+     *        The rule groups used for intelligent threat mitigation require additional configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation
+     *        fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your
+     *        application and the locations in the account creation request payload of data, such as the user email and
+     *        phone number fields.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover
+     *        prevention managed rule group. The configuration includes the sign-in page of your application and the
+     *        locations in the login request payload of data such as the username and password.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
      *        level that you want the Bot Control rule group to use.
+     *        </p>
+     *        </li>
      */
 
     public void setManagedRuleGroupConfigs(java.util.Collection<ManagedRuleGroupConfig> managedRuleGroupConfigs) {
@@ -464,9 +576,31 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
+     * The rule groups used for intelligent threat mitigation require additional configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud
+     * prevention managed rule group. The configuration includes the registration and sign-up pages of your application
+     * and the locations in the account creation request payload of data, such as the user email and phone number
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention
+     * managed rule group. The configuration includes the sign-in page of your application and the locations in the
+     * login request payload of data such as the username and password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
      * you want the Bot Control rule group to use.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setManagedRuleGroupConfigs(java.util.Collection)} or
@@ -477,8 +611,30 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      *        Additional information that's used by a managed rule group. Many managed rule groups don't require
      *        this.</p>
      *        <p>
+     *        The rule groups used for intelligent threat mitigation require additional configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation
+     *        fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your
+     *        application and the locations in the account creation request payload of data, such as the user email and
+     *        phone number fields.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover
+     *        prevention managed rule group. The configuration includes the sign-in page of your application and the
+     *        locations in the login request payload of data such as the username and password.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
      *        level that you want the Bot Control rule group to use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,16 +653,60 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
+     * The rule groups used for intelligent threat mitigation require additional configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud
+     * prevention managed rule group. The configuration includes the registration and sign-up pages of your application
+     * and the locations in the account creation request payload of data, such as the user email and phone number
+     * fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention
+     * managed rule group. The configuration includes the sign-in page of your application and the locations in the
+     * login request payload of data such as the username and password.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
      * you want the Bot Control rule group to use.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param managedRuleGroupConfigs
      *        Additional information that's used by a managed rule group. Many managed rule groups don't require
      *        this.</p>
      *        <p>
+     *        The rule groups used for intelligent threat mitigation require additional configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation
+     *        fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your
+     *        application and the locations in the account creation request payload of data, such as the user email and
+     *        phone number fields.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover
+     *        prevention managed rule group. The configuration includes the sign-in page of your application and the
+     *        locations in the login request payload of data such as the username and password.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
      *        level that you want the Bot Control rule group to use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

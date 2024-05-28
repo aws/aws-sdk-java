@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String transactionId;
+    /**
+     * <p>
+     * Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     * </p>
+     */
+    private OpenTableFormatInput openTableFormatInput;
 
     /**
      * <p>
@@ -297,6 +303,46 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     * </p>
+     * 
+     * @param openTableFormatInput
+     *        Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     */
+
+    public void setOpenTableFormatInput(OpenTableFormatInput openTableFormatInput) {
+        this.openTableFormatInput = openTableFormatInput;
+    }
+
+    /**
+     * <p>
+     * Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     * </p>
+     * 
+     * @return Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     */
+
+    public OpenTableFormatInput getOpenTableFormatInput() {
+        return this.openTableFormatInput;
+    }
+
+    /**
+     * <p>
+     * Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     * </p>
+     * 
+     * @param openTableFormatInput
+     *        Specifies an <code>OpenTableFormatInput</code> structure when creating an open format table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withOpenTableFormatInput(OpenTableFormatInput openTableFormatInput) {
+        setOpenTableFormatInput(openTableFormatInput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -317,7 +363,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getPartitionIndexes() != null)
             sb.append("PartitionIndexes: ").append(getPartitionIndexes()).append(",");
         if (getTransactionId() != null)
-            sb.append("TransactionId: ").append(getTransactionId());
+            sb.append("TransactionId: ").append(getTransactionId()).append(",");
+        if (getOpenTableFormatInput() != null)
+            sb.append("OpenTableFormatInput: ").append(getOpenTableFormatInput());
         sb.append("}");
         return sb.toString();
     }
@@ -352,6 +400,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTransactionId() != null && other.getTransactionId().equals(this.getTransactionId()) == false)
             return false;
+        if (other.getOpenTableFormatInput() == null ^ this.getOpenTableFormatInput() == null)
+            return false;
+        if (other.getOpenTableFormatInput() != null && other.getOpenTableFormatInput().equals(this.getOpenTableFormatInput()) == false)
+            return false;
         return true;
     }
 
@@ -365,6 +417,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTableInput() == null) ? 0 : getTableInput().hashCode());
         hashCode = prime * hashCode + ((getPartitionIndexes() == null) ? 0 : getPartitionIndexes().hashCode());
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
+        hashCode = prime * hashCode + ((getOpenTableFormatInput() == null) ? 0 : getOpenTableFormatInput().hashCode());
         return hashCode;
     }
 

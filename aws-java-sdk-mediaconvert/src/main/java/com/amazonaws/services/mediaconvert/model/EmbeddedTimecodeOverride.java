@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains
- * timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode
- * source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE),
- * when your input does not contain MDPM timecode.
+ * Set Embedded timecode override to Use MDPM when your AVCHD input contains timecode tag data in the Modified Digital
+ * Video Pack Metadata. When you do, we recommend you also set Timecode source to Embedded. Leave Embedded timecode
+ * override blank, or set to None, when your input does not contain MDPM timecode.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EmbeddedTimecodeOverride {

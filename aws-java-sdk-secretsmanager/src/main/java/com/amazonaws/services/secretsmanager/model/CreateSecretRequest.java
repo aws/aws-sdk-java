@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,11 +48,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
      * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
-     * this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     * and include the value in the request.
+     * this parameter in the request.
      * </p>
      * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
+     * </p>
      * <p>
      * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
      * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
@@ -170,44 +172,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * single quotes to avoid confusion with the double quotes required in the JSON text.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<Tag> tags;
     /**
@@ -218,7 +186,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<ReplicaRegionType> addReplicaRegions;
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      */
     private Boolean forceOverwriteReplicaSecret;
@@ -317,11 +286,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
      * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
-     * this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     * and include the value in the request.
+     * this parameter in the request.
      * </p>
      * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
+     * </p>
      * <p>
      * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
      * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
@@ -360,11 +331,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then
      *        you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the
-     *        value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request
-     *        to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
-     *        for the new version and include the value in the request.
+     *        value for this parameter in the request.
      *        </p>
      *        </note>
+     *        <p>
+     *        If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     *        <code>ClientRequestToken</code> and include it in the request.
+     *        </p>
      *        <p>
      *        This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
      *        duplicate versions if there are failures and retries during a rotation. We recommend that you generate a
@@ -409,11 +382,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
      * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
-     * this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     * and include the value in the request.
+     * this parameter in the request.
      * </p>
      * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
+     * </p>
      * <p>
      * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
      * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
@@ -451,11 +426,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation,
      *         then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
-     *         as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP
-     *         request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code>
-     *         yourself for the new version and include the value in the request.
+     *         as the value for this parameter in the request.
      *         </p>
      *         </note>
+     *         <p>
+     *         If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     *         <code>ClientRequestToken</code> and include it in the request.
+     *         </p>
      *         <p>
      *         This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation
      *         of duplicate versions if there are failures and retries during a rotation. We recommend that you generate
@@ -500,11 +477,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you
      * can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for
-     * this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets
-     * Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     * and include the value in the request.
+     * this parameter in the request.
      * </p>
      * </note>
+     * <p>
+     * If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.
+     * </p>
      * <p>
      * This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
      * duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a
@@ -543,11 +522,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then
      *        you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the
-     *        value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request
-     *        to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
-     *        for the new version and include the value in the request.
+     *        value for this parameter in the request.
      *        </p>
      *        </note>
+     *        <p>
+     *        If you generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     *        <code>ClientRequestToken</code> and include it in the request.
+     *        </p>
      *        <p>
      *        This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of
      *        duplicate versions if there are failures and retries during a rotation. We recommend that you generate a
@@ -984,44 +965,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * single quotes to avoid confusion with the double quotes required in the JSON text.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text
      *         string, for example:</p>
@@ -1050,43 +997,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         you should use single quotes to avoid confusion with the double quotes required in the JSON text.
      *         </p>
      *         <p>
-     *         The following restrictions apply to tags:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Maximum number of tags per secret: 50
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Maximum key length: 127 Unicode characters in UTF-8
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Maximum value length: 255 Unicode characters in UTF-8
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Tag keys and values are case sensitive.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves
-     *         it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with
-     *         this prefix do not count against your tags per secret limit.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If you use your tagging schema across multiple services and resources, other services might have
-     *         restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
-     *         representable in UTF-8, plus the following special characters: + - = . _ : / @.
-     *         </p>
-     *         </li>
+     *         For tag quotas and naming restrictions, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     *         Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1122,44 +1035,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * single quotes to avoid confusion with the double quotes required in the JSON text.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tags
      *        A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string,
@@ -1188,43 +1067,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        you should use single quotes to avoid confusion with the double quotes required in the JSON text.
      *        </p>
      *        <p>
-     *        The following restrictions apply to tags:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Maximum number of tags per secret: 50
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Maximum key length: 127 Unicode characters in UTF-8
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Maximum value length: 255 Unicode characters in UTF-8
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Tag keys and values are case sensitive.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves
-     *        it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with
-     *        this prefix do not count against your tags per secret limit.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If you use your tagging schema across multiple services and resources, other services might have
-     *        restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
-     *        representable in UTF-8, plus the following special characters: + - = . _ : / @.
-     *        </p>
-     *        </li>
+     *        For tag quotas and naming restrictions, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     *        Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1265,44 +1110,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * single quotes to avoid confusion with the double quotes required in the JSON text.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -1336,43 +1147,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        you should use single quotes to avoid confusion with the double quotes required in the JSON text.
      *        </p>
      *        <p>
-     *        The following restrictions apply to tags:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Maximum number of tags per secret: 50
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Maximum key length: 127 Unicode characters in UTF-8
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Maximum value length: 255 Unicode characters in UTF-8
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Tag keys and values are case sensitive.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves
-     *        it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with
-     *        this prefix do not count against your tags per secret limit.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If you use your tagging schema across multiple services and resources, other services might have
-     *        restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
-     *        representable in UTF-8, plus the following special characters: + - = . _ : / @.
-     *        </p>
-     *        </li>
+     *        For tag quotas and naming restrictions, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     *        Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1415,44 +1192,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * single quotes to avoid confusion with the double quotes required in the JSON text.
      * </p>
      * <p>
-     * The following restrictions apply to tags:
+     * For tag quotas and naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     * Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Maximum number of tags per secret: 50
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum key length: 127 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Maximum value length: 255 Unicode characters in UTF-8
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Tag keys and values are case sensitive.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for
-     * Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do
-     * not count against your tags per secret limit.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you use your tagging schema across multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tags
      *        A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string,
@@ -1481,43 +1224,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        you should use single quotes to avoid confusion with the double quotes required in the JSON text.
      *        </p>
      *        <p>
-     *        The following restrictions apply to tags:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Maximum number of tags per secret: 50
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Maximum key length: 127 Unicode characters in UTF-8
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Maximum value length: 255 Unicode characters in UTF-8
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Tag keys and values are case sensitive.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves
-     *        it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with
-     *        this prefix do not count against your tags per secret limit.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If you use your tagging schema across multiple services and resources, other services might have
-     *        restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
-     *        representable in UTF-8, plus the following special characters: + - = . _ : / @.
-     *        </p>
-     *        </li>
+     *        For tag quotas and naming restrictions, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service quotas for
+     *        Tagging</a> in the <i>Amazon Web Services General Reference guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1598,11 +1307,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
      * @param forceOverwriteReplicaSecret
-     *        Specifies whether to overwrite a secret with the same name in the destination Region.
+     *        Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *        aren't overwritten.
      */
 
     public void setForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
@@ -1611,10 +1322,12 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
-     * @return Specifies whether to overwrite a secret with the same name in the destination Region.
+     * @return Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *         aren't overwritten.
      */
 
     public Boolean getForceOverwriteReplicaSecret() {
@@ -1623,11 +1336,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
      * @param forceOverwriteReplicaSecret
-     *        Specifies whether to overwrite a secret with the same name in the destination Region.
+     *        Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *        aren't overwritten.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1638,10 +1353,12 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
-     * @return Specifies whether to overwrite a secret with the same name in the destination Region.
+     * @return Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *         aren't overwritten.
      */
 
     public Boolean isForceOverwriteReplicaSecret() {

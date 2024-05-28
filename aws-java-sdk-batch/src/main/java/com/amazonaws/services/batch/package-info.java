@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@
  * means for developers, scientists, and engineers to access large amounts of compute resources. Batch uses the
  * advantages of the batch computing to remove the undifferentiated heavy lifting of configuring and managing required
  * infrastructure. At the same time, it also adopts a familiar batch computing software approach. You can use Batch to
- * efficiently provision resources d, and work toward eliminating capacity constraints, reducing your overall compute
+ * efficiently provision resources, and work toward eliminating capacity constraints, reducing your overall compute
  * costs, and delivering results more quickly.
  * </p>
  * <p>

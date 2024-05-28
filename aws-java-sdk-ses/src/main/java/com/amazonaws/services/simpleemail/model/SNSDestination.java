@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,7 @@ import javax.annotation.Generated;
  * <p>
  * Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email
  * sending events. For information about using configuration sets, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SNSDestination" target="_top">AWS API
@@ -34,25 +33,33 @@ public class SNSDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic
-     * ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.
+     * </p>
+     * <p>
+     * For more information about Amazon SNS topics, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * </p>
      */
     private String topicARN;
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic
-     * ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.
+     * </p>
+     * <p>
+     * For more information about Amazon SNS topics, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * </p>
      * 
      * @param topicARN
-     *        The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon
-     *        SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     *        Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     *        Developer Guide</a>.
+     *        The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS
+     *        operation.</p>
+     *        <p>
+     *        For more information about Amazon SNS topics, see the <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setTopicARN(String topicARN) {
@@ -61,15 +68,20 @@ public class SNSDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic
-     * ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.
+     * </p>
+     * <p>
+     * For more information about Amazon SNS topics, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * </p>
      * 
-     * @return The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon
-     *         SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     *         Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
-     *         SNS Developer Guide</a>.
+     * @return The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     *         href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS
+     *         operation.</p>
+     *         <p>
+     *         For more information about Amazon SNS topics, see the <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getTopicARN() {
@@ -78,16 +90,21 @@ public class SNSDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic
-     * ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see
-     * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     * The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS operation.
+     * </p>
+     * <p>
+     * For more information about Amazon SNS topics, see the <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * </p>
      * 
      * @param topicARN
-     *        The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon
-     *        SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     *        Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     *        Developer Guide</a>.
+     *        The ARN of the Amazon SNS topic for email sending events. You can find the ARN of a topic by using the <a
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a> Amazon SNS
+     *        operation.</p>
+     *        <p>
+     *        For more information about Amazon SNS topics, see the <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

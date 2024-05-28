@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,41 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      */
     private Double desiredValue;
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     */
+    private String contextId;
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -59,10 +70,12 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
-     * @return The service identifier.
+     * @return Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *         the <a>ListServices</a> operation.
      */
 
     public String getServiceCode() {
@@ -71,11 +84,13 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +101,14 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -99,10 +117,13 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
-     * @return The quota identifier.
+     * @return Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *         <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for
+     *         the quota you want.
      */
 
     public String getQuotaCode() {
@@ -111,11 +132,14 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +150,11 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        The new, increased value for the quota.
+     *        Specifies the new, increased value for the quota.
      */
 
     public void setDesiredValue(Double desiredValue) {
@@ -139,10 +163,10 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      * 
-     * @return The new, increased value for the quota.
+     * @return Specifies the new, increased value for the quota.
      */
 
     public Double getDesiredValue() {
@@ -151,16 +175,62 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new, increased value for the quota.
+     * Specifies the new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        The new, increased value for the quota.
+     *        Specifies the new, increased value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RequestServiceQuotaIncreaseRequest withDesiredValue(Double desiredValue) {
         setDesiredValue(desiredValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     * 
+     * @param contextId
+     *        Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field
+     *        depends on the context scope associated with the specified service quota.
+     */
+
+    public void setContextId(String contextId) {
+        this.contextId = contextId;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     * 
+     * @return Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field
+     *         depends on the context scope associated with the specified service quota.
+     */
+
+    public String getContextId() {
+        return this.contextId;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     * 
+     * @param contextId
+     *        Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field
+     *        depends on the context scope associated with the specified service quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestServiceQuotaIncreaseRequest withContextId(String contextId) {
+        setContextId(contextId);
         return this;
     }
 
@@ -181,7 +251,9 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
         if (getQuotaCode() != null)
             sb.append("QuotaCode: ").append(getQuotaCode()).append(",");
         if (getDesiredValue() != null)
-            sb.append("DesiredValue: ").append(getDesiredValue());
+            sb.append("DesiredValue: ").append(getDesiredValue()).append(",");
+        if (getContextId() != null)
+            sb.append("ContextId: ").append(getContextId());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +280,10 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDesiredValue() != null && other.getDesiredValue().equals(this.getDesiredValue()) == false)
             return false;
+        if (other.getContextId() == null ^ this.getContextId() == null)
+            return false;
+        if (other.getContextId() != null && other.getContextId().equals(this.getContextId()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +295,7 @@ public class RequestServiceQuotaIncreaseRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getServiceCode() == null) ? 0 : getServiceCode().hashCode());
         hashCode = prime * hashCode + ((getQuotaCode() == null) ? 0 : getQuotaCode().hashCode());
         hashCode = prime * hashCode + ((getDesiredValue() == null) ? 0 : getDesiredValue().hashCode());
+        hashCode = prime * hashCode + ((getContextId() == null) ? 0 : getContextId().hashCode());
         return hashCode;
     }
 

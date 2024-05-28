@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class NodeCountsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalAttributes").build();
     private static final MarshallingInfo<Integer> TOTALACTUATORS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalActuators").build();
+    private static final MarshallingInfo<Integer> TOTALSTRUCTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalStructs").build();
+    private static final MarshallingInfo<Integer> TOTALPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalProperties").build();
 
     private static final NodeCountsMarshaller instance = new NodeCountsMarshaller();
 
@@ -59,6 +63,8 @@ public class NodeCountsMarshaller {
             protocolMarshaller.marshall(nodeCounts.getTotalSensors(), TOTALSENSORS_BINDING);
             protocolMarshaller.marshall(nodeCounts.getTotalAttributes(), TOTALATTRIBUTES_BINDING);
             protocolMarshaller.marshall(nodeCounts.getTotalActuators(), TOTALACTUATORS_BINDING);
+            protocolMarshaller.marshall(nodeCounts.getTotalStructs(), TOTALSTRUCTS_BINDING);
+            protocolMarshaller.marshall(nodeCounts.getTotalProperties(), TOTALPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

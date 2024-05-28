@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,72 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeAssociateApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateMergedGraphqlApiResult> associateMergedGraphqlApiAsync(AssociateMergedGraphqlApiRequest request) {
+
+        return associateMergedGraphqlApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateMergedGraphqlApiResult> associateMergedGraphqlApiAsync(final AssociateMergedGraphqlApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateMergedGraphqlApiRequest, AssociateMergedGraphqlApiResult> asyncHandler) {
+        final AssociateMergedGraphqlApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateMergedGraphqlApiResult>() {
+            @Override
+            public AssociateMergedGraphqlApiResult call() throws Exception {
+                AssociateMergedGraphqlApiResult result = null;
+
+                try {
+                    result = executeAssociateMergedGraphqlApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSourceGraphqlApiResult> associateSourceGraphqlApiAsync(AssociateSourceGraphqlApiRequest request) {
+
+        return associateSourceGraphqlApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSourceGraphqlApiResult> associateSourceGraphqlApiAsync(final AssociateSourceGraphqlApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateSourceGraphqlApiRequest, AssociateSourceGraphqlApiResult> asyncHandler) {
+        final AssociateSourceGraphqlApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateSourceGraphqlApiResult>() {
+            @Override
+            public AssociateSourceGraphqlApiResult call() throws Exception {
+                AssociateSourceGraphqlApiResult result = null;
+
+                try {
+                    result = executeAssociateSourceGraphqlApi(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -668,6 +734,105 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateMergedGraphqlApiResult> disassociateMergedGraphqlApiAsync(DisassociateMergedGraphqlApiRequest request) {
+
+        return disassociateMergedGraphqlApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateMergedGraphqlApiResult> disassociateMergedGraphqlApiAsync(final DisassociateMergedGraphqlApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateMergedGraphqlApiRequest, DisassociateMergedGraphqlApiResult> asyncHandler) {
+        final DisassociateMergedGraphqlApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateMergedGraphqlApiResult>() {
+            @Override
+            public DisassociateMergedGraphqlApiResult call() throws Exception {
+                DisassociateMergedGraphqlApiResult result = null;
+
+                try {
+                    result = executeDisassociateMergedGraphqlApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSourceGraphqlApiResult> disassociateSourceGraphqlApiAsync(DisassociateSourceGraphqlApiRequest request) {
+
+        return disassociateSourceGraphqlApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSourceGraphqlApiResult> disassociateSourceGraphqlApiAsync(final DisassociateSourceGraphqlApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateSourceGraphqlApiRequest, DisassociateSourceGraphqlApiResult> asyncHandler) {
+        final DisassociateSourceGraphqlApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateSourceGraphqlApiResult>() {
+            @Override
+            public DisassociateSourceGraphqlApiResult call() throws Exception {
+                DisassociateSourceGraphqlApiResult result = null;
+
+                try {
+                    result = executeDisassociateSourceGraphqlApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EvaluateCodeResult> evaluateCodeAsync(EvaluateCodeRequest request) {
+
+        return evaluateCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EvaluateCodeResult> evaluateCodeAsync(final EvaluateCodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EvaluateCodeRequest, EvaluateCodeResult> asyncHandler) {
+        final EvaluateCodeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EvaluateCodeResult>() {
+            @Override
+            public EvaluateCodeResult call() throws Exception {
+                EvaluateCodeResult result = null;
+
+                try {
+                    result = executeEvaluateCode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EvaluateMappingTemplateResult> evaluateMappingTemplateAsync(EvaluateMappingTemplateRequest request) {
 
         return evaluateMappingTemplateAsync(request, null);
@@ -833,6 +998,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataSourceIntrospectionResult> getDataSourceIntrospectionAsync(GetDataSourceIntrospectionRequest request) {
+
+        return getDataSourceIntrospectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceIntrospectionResult> getDataSourceIntrospectionAsync(final GetDataSourceIntrospectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataSourceIntrospectionRequest, GetDataSourceIntrospectionResult> asyncHandler) {
+        final GetDataSourceIntrospectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataSourceIntrospectionResult>() {
+            @Override
+            public GetDataSourceIntrospectionResult call() throws Exception {
+                GetDataSourceIntrospectionResult result = null;
+
+                try {
+                    result = executeGetDataSourceIntrospection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainNameResult> getDomainNameAsync(GetDomainNameRequest request) {
 
         return getDomainNameAsync(request, null);
@@ -932,6 +1130,41 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetGraphqlApiEnvironmentVariablesResult> getGraphqlApiEnvironmentVariablesAsync(
+            GetGraphqlApiEnvironmentVariablesRequest request) {
+
+        return getGraphqlApiEnvironmentVariablesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGraphqlApiEnvironmentVariablesResult> getGraphqlApiEnvironmentVariablesAsync(
+            final GetGraphqlApiEnvironmentVariablesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGraphqlApiEnvironmentVariablesRequest, GetGraphqlApiEnvironmentVariablesResult> asyncHandler) {
+        final GetGraphqlApiEnvironmentVariablesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGraphqlApiEnvironmentVariablesResult>() {
+            @Override
+            public GetGraphqlApiEnvironmentVariablesResult call() throws Exception {
+                GetGraphqlApiEnvironmentVariablesResult result = null;
+
+                try {
+                    result = executeGetGraphqlApiEnvironmentVariables(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntrospectionSchemaResult> getIntrospectionSchemaAsync(GetIntrospectionSchemaRequest request) {
 
         return getIntrospectionSchemaAsync(request, null);
@@ -1015,6 +1248,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeGetSchemaCreationStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSourceApiAssociationResult> getSourceApiAssociationAsync(GetSourceApiAssociationRequest request) {
+
+        return getSourceApiAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSourceApiAssociationResult> getSourceApiAssociationAsync(final GetSourceApiAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSourceApiAssociationRequest, GetSourceApiAssociationResult> asyncHandler) {
+        final GetSourceApiAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSourceApiAssociationResult>() {
+            @Override
+            public GetSourceApiAssociationResult call() throws Exception {
+                GetSourceApiAssociationResult result = null;
+
+                try {
+                    result = executeGetSourceApiAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1295,6 +1561,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListSourceApiAssociationsResult> listSourceApiAssociationsAsync(ListSourceApiAssociationsRequest request) {
+
+        return listSourceApiAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSourceApiAssociationsResult> listSourceApiAssociationsAsync(final ListSourceApiAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSourceApiAssociationsRequest, ListSourceApiAssociationsResult> asyncHandler) {
+        final ListSourceApiAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSourceApiAssociationsResult>() {
+            @Override
+            public ListSourceApiAssociationsResult call() throws Exception {
+                ListSourceApiAssociationsResult result = null;
+
+                try {
+                    result = executeListSourceApiAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1361,6 +1660,107 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListTypesByAssociationResult> listTypesByAssociationAsync(ListTypesByAssociationRequest request) {
+
+        return listTypesByAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypesByAssociationResult> listTypesByAssociationAsync(final ListTypesByAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTypesByAssociationRequest, ListTypesByAssociationResult> asyncHandler) {
+        final ListTypesByAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTypesByAssociationResult>() {
+            @Override
+            public ListTypesByAssociationResult call() throws Exception {
+                ListTypesByAssociationResult result = null;
+
+                try {
+                    result = executeListTypesByAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGraphqlApiEnvironmentVariablesResult> putGraphqlApiEnvironmentVariablesAsync(
+            PutGraphqlApiEnvironmentVariablesRequest request) {
+
+        return putGraphqlApiEnvironmentVariablesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGraphqlApiEnvironmentVariablesResult> putGraphqlApiEnvironmentVariablesAsync(
+            final PutGraphqlApiEnvironmentVariablesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutGraphqlApiEnvironmentVariablesRequest, PutGraphqlApiEnvironmentVariablesResult> asyncHandler) {
+        final PutGraphqlApiEnvironmentVariablesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutGraphqlApiEnvironmentVariablesResult>() {
+            @Override
+            public PutGraphqlApiEnvironmentVariablesResult call() throws Exception {
+                PutGraphqlApiEnvironmentVariablesResult result = null;
+
+                try {
+                    result = executePutGraphqlApiEnvironmentVariables(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDataSourceIntrospectionResult> startDataSourceIntrospectionAsync(StartDataSourceIntrospectionRequest request) {
+
+        return startDataSourceIntrospectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDataSourceIntrospectionResult> startDataSourceIntrospectionAsync(final StartDataSourceIntrospectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDataSourceIntrospectionRequest, StartDataSourceIntrospectionResult> asyncHandler) {
+        final StartDataSourceIntrospectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDataSourceIntrospectionResult>() {
+            @Override
+            public StartDataSourceIntrospectionResult call() throws Exception {
+                StartDataSourceIntrospectionResult result = null;
+
+                try {
+                    result = executeStartDataSourceIntrospection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartSchemaCreationResult> startSchemaCreationAsync(StartSchemaCreationRequest request) {
 
         return startSchemaCreationAsync(request, null);
@@ -1378,6 +1778,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeStartSchemaCreation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSchemaMergeResult> startSchemaMergeAsync(StartSchemaMergeRequest request) {
+
+        return startSchemaMergeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSchemaMergeResult> startSchemaMergeAsync(final StartSchemaMergeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSchemaMergeRequest, StartSchemaMergeResult> asyncHandler) {
+        final StartSchemaMergeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSchemaMergeResult>() {
+            @Override
+            public StartSchemaMergeResult call() throws Exception {
+                StartSchemaMergeResult result = null;
+
+                try {
+                    result = executeStartSchemaMerge(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1675,6 +2108,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeUpdateResolver(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSourceApiAssociationResult> updateSourceApiAssociationAsync(UpdateSourceApiAssociationRequest request) {
+
+        return updateSourceApiAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSourceApiAssociationResult> updateSourceApiAssociationAsync(final UpdateSourceApiAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSourceApiAssociationRequest, UpdateSourceApiAssociationResult> asyncHandler) {
+        final UpdateSourceApiAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSourceApiAssociationResult>() {
+            @Override
+            public UpdateSourceApiAssociationResult call() throws Exception {
+                UpdateSourceApiAssociationResult result = null;
+
+                try {
+                    result = executeUpdateSourceApiAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

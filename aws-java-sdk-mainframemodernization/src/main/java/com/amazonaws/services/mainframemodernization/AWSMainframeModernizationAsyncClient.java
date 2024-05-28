@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -576,6 +576,39 @@ public class AWSMainframeModernizationAsyncClient extends AWSMainframeModernizat
     }
 
     @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(GetSignedBluinsightsUrlRequest request) {
+
+        return getSignedBluinsightsUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignedBluinsightsUrlResult> getSignedBluinsightsUrlAsync(final GetSignedBluinsightsUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSignedBluinsightsUrlRequest, GetSignedBluinsightsUrlResult> asyncHandler) {
+        final GetSignedBluinsightsUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSignedBluinsightsUrlResult>() {
+            @Override
+            public GetSignedBluinsightsUrlResult call() throws Exception {
+                GetSignedBluinsightsUrlResult result = null;
+
+                try {
+                    result = executeGetSignedBluinsightsUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
 
         return listApplicationVersionsAsync(request, null);
@@ -692,6 +725,39 @@ public class AWSMainframeModernizationAsyncClient extends AWSMainframeModernizat
 
                 try {
                     result = executeListBatchJobExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchJobRestartPointsResult> listBatchJobRestartPointsAsync(ListBatchJobRestartPointsRequest request) {
+
+        return listBatchJobRestartPointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchJobRestartPointsResult> listBatchJobRestartPointsAsync(final ListBatchJobRestartPointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBatchJobRestartPointsRequest, ListBatchJobRestartPointsResult> asyncHandler) {
+        final ListBatchJobRestartPointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBatchJobRestartPointsResult>() {
+            @Override
+            public ListBatchJobRestartPointsResult call() throws Exception {
+                ListBatchJobRestartPointsResult result = null;
+
+                try {
+                    result = executeListBatchJobRestartPoints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

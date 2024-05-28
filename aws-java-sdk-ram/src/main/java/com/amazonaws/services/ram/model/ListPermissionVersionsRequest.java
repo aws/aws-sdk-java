@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class ListPermissionVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      * <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to specify a
      * non-default version to attach.
      * </p>
@@ -57,15 +57,15 @@ public class ListPermissionVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      * <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to specify a
      * non-default version to attach.
      * </p>
      * 
      * @param permissionArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     *        Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      *        <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to
      *        specify a non-default version to attach.
      */
@@ -76,14 +76,14 @@ public class ListPermissionVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      * <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to specify a
      * non-default version to attach.
      * </p>
      * 
      * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     *         Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      *         <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to
      *         specify a non-default version to attach.
      */
@@ -94,15 +94,15 @@ public class ListPermissionVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      * <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to specify a
      * non-default version to attach.
      * </p>
      * 
      * @param permissionArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
+     *        Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the
      *        <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a> operation to
      *        specify a non-default version to attach.
      * @return Returns a reference to this object so that method calls can be chained together.

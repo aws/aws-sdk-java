@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,7 +95,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
     /**
      * <p>
      * Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code>
-     * or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.
+     * or <code>EXECUTING</code> state. When you cancel am export task, Amazon FSx does the following.
      * </p>
      * <ul>
      * <li>
@@ -105,7 +105,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
-     * FSx continues to export any files that are "in-flight" when the cancel operation is received.
+     * FSx continues to export any files that are in-flight when the cancel operation is received.
      * </p>
      * </li>
      * <li>
@@ -114,6 +114,10 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For a release task, Amazon FSx will stop releasing files upon cancellation. Any files that have already been
+     * released will remain in the released state.
+     * </p>
      * 
      * @param cancelDataRepositoryTaskRequest
      *        Cancels a data repository task.
@@ -127,7 +131,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
     /**
      * <p>
      * Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code>
-     * or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.
+     * or <code>EXECUTING</code> state. When you cancel am export task, Amazon FSx does the following.
      * </p>
      * <ul>
      * <li>
@@ -137,7 +141,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
-     * FSx continues to export any files that are "in-flight" when the cancel operation is received.
+     * FSx continues to export any files that are in-flight when the cancel operation is received.
      * </p>
      * </li>
      * <li>
@@ -146,6 +150,10 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For a release task, Amazon FSx will stop releasing files upon cancellation. Any files that have already been
+     * released will remain in the released state.
+     * </p>
      * 
      * @param cancelDataRepositoryTaskRequest
      *        Cancels a data repository task.
@@ -249,6 +257,45 @@ public interface AmazonFSxAsync extends AmazonFSx {
      */
     java.util.concurrent.Future<CopyBackupResult> copyBackupAsync(CopyBackupRequest copyBackupRequest,
             com.amazonaws.handlers.AsyncHandler<CopyBackupRequest, CopyBackupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing volume by using a snapshot from another Amazon FSx for OpenZFS file system. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html">on-demand data
+     * replication</a> in the Amazon FSx for OpenZFS User Guide.
+     * </p>
+     * 
+     * @param copySnapshotAndUpdateVolumeRequest
+     * @return A Java Future containing the result of the CopySnapshotAndUpdateVolume operation returned by the service.
+     * @sample AmazonFSxAsync.CopySnapshotAndUpdateVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CopySnapshotAndUpdateVolumeResult> copySnapshotAndUpdateVolumeAsync(
+            CopySnapshotAndUpdateVolumeRequest copySnapshotAndUpdateVolumeRequest);
+
+    /**
+     * <p>
+     * Updates an existing volume by using a snapshot from another Amazon FSx for OpenZFS file system. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/on-demand-replication.html">on-demand data
+     * replication</a> in the Amazon FSx for OpenZFS User Guide.
+     * </p>
+     * 
+     * @param copySnapshotAndUpdateVolumeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopySnapshotAndUpdateVolume operation returned by the service.
+     * @sample AmazonFSxAsyncHandler.CopySnapshotAndUpdateVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CopySnapshotAndUpdateVolumeResult> copySnapshotAndUpdateVolumeAsync(
+            CopySnapshotAndUpdateVolumeRequest copySnapshotAndUpdateVolumeRequest,
+            com.amazonaws.handlers.AsyncHandler<CopySnapshotAndUpdateVolumeRequest, CopySnapshotAndUpdateVolumeResult> asyncHandler);
 
     /**
      * <p>
@@ -451,8 +498,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * Creates an Amazon FSx for Lustre data repository association (DRA). A data repository association is a link
      * between a directory on the file system and an Amazon S3 bucket or prefix. You can have a maximum of 8 data
-     * repository associations on a file system. Data repository associations are supported only for file systems with
-     * the <code>Persistent_2</code> deployment type.
+     * repository associations on a file system. Data repository associations are supported on all FSx for Lustre 2.12
+     * and 2.15 file systems, excluding <code>scratch_1</code> deployment type.
      * </p>
      * <p>
      * Each data repository association must have a unique Amazon FSx file system directory and a unique S3 bucket or
@@ -482,8 +529,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * Creates an Amazon FSx for Lustre data repository association (DRA). A data repository association is a link
      * between a directory on the file system and an Amazon S3 bucket or prefix. You can have a maximum of 8 data
-     * repository associations on a file system. Data repository associations are supported only for file systems with
-     * the <code>Persistent_2</code> deployment type.
+     * repository associations on a file system. Data repository associations are supported on all FSx for Lustre 2.12
+     * and 2.15 file systems, excluding <code>scratch_1</code> deployment type.
      * </p>
      * <p>
      * Each data repository association must have a unique Amazon FSx file system directory and a unique S3 bucket or
@@ -516,12 +563,22 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
-     * Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations
-     * between your Amazon FSx file system and its linked data repositories. An example of a data repository task is
-     * exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links
-     * (symlinks) from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code>
-     * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
-     * repository tasks, see <a
+     * Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code> operation will
+     * fail if a data repository is not linked to the FSx file system.
+     * </p>
+     * <p>
+     * You use import and export data repository tasks to perform bulk operations between your FSx for Lustre file
+     * system and its linked data repositories. An example of a data repository task is exporting any data and metadata
+     * changes, including POSIX metadata, to files, directories, and symbolic links (symlinks) from your FSx file system
+     * to a linked data repository.
+     * </p>
+     * <p>
+     * You use release data repository tasks to release data from your file system for files that are exported to S3.
+     * The metadata of released files remains on the file system so users or applications can still access released
+     * files by reading the files again, which will restore data from Amazon S3 to the FSx for Lustre file system.
+     * </p>
+     * <p>
+     * To learn more about data repository tasks, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
      * To learn more about linking a data repository to your file system, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file
@@ -538,12 +595,22 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
-     * Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations
-     * between your Amazon FSx file system and its linked data repositories. An example of a data repository task is
-     * exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links
-     * (symlinks) from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code>
-     * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
-     * repository tasks, see <a
+     * Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code> operation will
+     * fail if a data repository is not linked to the FSx file system.
+     * </p>
+     * <p>
+     * You use import and export data repository tasks to perform bulk operations between your FSx for Lustre file
+     * system and its linked data repositories. An example of a data repository task is exporting any data and metadata
+     * changes, including POSIX metadata, to files, directories, and symbolic links (symlinks) from your FSx file system
+     * to a linked data repository.
+     * </p>
+     * <p>
+     * You use release data repository tasks to release data from your file system for files that are exported to S3.
+     * The metadata of released files remains on the file system so users or applications can still access released
+     * files by reading the files again, which will restore data from Amazon S3 to the FSx for Lustre file system.
+     * </p>
+     * <p>
+     * To learn more about data repository tasks, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
      * To learn more about linking a data repository to your file system, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file
@@ -1162,7 +1229,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository
      * association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you
      * have the option of deleting the data in the file system that corresponds to the data repository association. Data
-     * repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.
+     * repository associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
+     * <code>scratch_1</code> deployment type.
      * </p>
      * 
      * @param deleteDataRepositoryAssociationRequest
@@ -1180,7 +1248,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository
      * association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you
      * have the option of deleting the data in the file system that corresponds to the data repository association. Data
-     * repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.
+     * repository associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
+     * <code>scratch_1</code> deployment type.
      * </p>
      * 
      * @param deleteDataRepositoryAssociationRequest
@@ -1268,6 +1337,20 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * deletion. This final backup isn't subject to the file system's retention policy, and must be manually deleted.
      * </p>
      * <p>
+     * To delete an Amazon FSx for Lustre file system, first <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a> it from every connected
+     * Amazon EC2 instance, then provide a <code>FileSystemId</code> value to the <code>DeleFileSystem</code> operation.
+     * By default, Amazon FSx will not take a final backup when the <code>DeleteFileSystem</code> operation is invoked.
+     * On file systems not linked to an Amazon S3 bucket, set <code>SkipFinalBackup</code> to <code>false</code> to take
+     * a final backup of the file system you are deleting. Backups cannot be enabled on S3-linked file systems. To
+     * ensure all of your data is written back to S3 before deleting your file system, you can either monitor for the <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/monitoring-cloudwatch.html#auto-import-export-metrics">
+     * AgeOfOldestQueuedMessage</a> metric to be zero (if using automatic export) or you can run an <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repo-task-dra.html">export data repository
+     * task</a>. If you have automatic export enabled and want to use an export data repository task, you have to
+     * disable automatic export before executing the export data repository task.
+     * </p>
+     * <p>
      * The <code>DeleteFileSystem</code> operation returns while the file system has the <code>DELETING</code> status.
      * You can check the file system deletion status by calling the <a
      * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
@@ -1307,6 +1390,20 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * By default, when you delete an Amazon FSx for Windows File Server file system, a final backup is created upon
      * deletion. This final backup isn't subject to the file system's retention policy, and must be manually deleted.
+     * </p>
+     * <p>
+     * To delete an Amazon FSx for Lustre file system, first <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a> it from every connected
+     * Amazon EC2 instance, then provide a <code>FileSystemId</code> value to the <code>DeleFileSystem</code> operation.
+     * By default, Amazon FSx will not take a final backup when the <code>DeleteFileSystem</code> operation is invoked.
+     * On file systems not linked to an Amazon S3 bucket, set <code>SkipFinalBackup</code> to <code>false</code> to take
+     * a final backup of the file system you are deleting. Backups cannot be enabled on S3-linked file systems. To
+     * ensure all of your data is written back to S3 before deleting your file system, you can either monitor for the <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/monitoring-cloudwatch.html#auto-import-export-metrics">
+     * AgeOfOldestQueuedMessage</a> metric to be zero (if using automatic export) or you can run an <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repo-task-dra.html">export data repository
+     * task</a>. If you have automatic export enabled and want to use an export data repository task, you have to
+     * disable automatic export before executing the export data repository task.
      * </p>
      * <p>
      * The <code>DeleteFileSystem</code> operation returns while the file system has the <code>DELETING</code> status.
@@ -1546,8 +1643,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository associations, if
      * one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the
-     * request. Data repository associations are supported only for Amazon FSx for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type and for Amazon File Cache resources.
+     * request. Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12
+     * and 2,15 file systems, excluding <code>scratch_1</code> deployment type.
      * </p>
      * <p>
      * You can use filters to narrow the response to include just data repository associations for specific file systems
@@ -1579,8 +1676,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository associations, if
      * one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the
-     * request. Data repository associations are supported only for Amazon FSx for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type and for Amazon File Cache resources.
+     * request. Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12
+     * and 2,15 file systems, excluding <code>scratch_1</code> deployment type.
      * </p>
      * <p>
      * You can use filters to narrow the response to include just data repository associations for specific file systems
@@ -1895,6 +1992,47 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
+     * Indicates whether participant accounts in your organization can create Amazon FSx for NetApp ONTAP Multi-AZ file
+     * systems in subnets that are shared by a virtual private cloud (VPC) owner. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-file-systems.html#fsxn-vpc-shared-subnets"
+     * >Creating FSx for ONTAP file systems in shared subnets</a>.
+     * </p>
+     * 
+     * @param describeSharedVpcConfigurationRequest
+     * @return A Java Future containing the result of the DescribeSharedVpcConfiguration operation returned by the
+     *         service.
+     * @sample AmazonFSxAsync.DescribeSharedVpcConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSharedVpcConfigurationResult> describeSharedVpcConfigurationAsync(
+            DescribeSharedVpcConfigurationRequest describeSharedVpcConfigurationRequest);
+
+    /**
+     * <p>
+     * Indicates whether participant accounts in your organization can create Amazon FSx for NetApp ONTAP Multi-AZ file
+     * systems in subnets that are shared by a virtual private cloud (VPC) owner. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-file-systems.html#fsxn-vpc-shared-subnets"
+     * >Creating FSx for ONTAP file systems in shared subnets</a>.
+     * </p>
+     * 
+     * @param describeSharedVpcConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSharedVpcConfiguration operation returned by the
+     *         service.
+     * @sample AmazonFSxAsyncHandler.DescribeSharedVpcConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSharedVpcConfigurationResult> describeSharedVpcConfigurationAsync(
+            DescribeSharedVpcConfigurationRequest describeSharedVpcConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSharedVpcConfigurationRequest, DescribeSharedVpcConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code> value is
      * provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon
      * Web Services Region of the endpoint that you're calling.
@@ -2056,7 +2194,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases from an Amazon FSx for
      * Windows File Server file system. If you attempt to disassociate a DNS alias that is not associated with the file
-     * system, Amazon FSx responds with a 400 Bad Request. For more information, see <a
+     * system, Amazon FSx responds with an HTTP status code 400 (Bad Request). For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
      * Aliases</a>.
      * </p>
@@ -2081,7 +2219,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <p>
      * Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases from an Amazon FSx for
      * Windows File Server file system. If you attempt to disassociate a DNS alias that is not associated with the file
-     * system, Amazon FSx responds with a 400 Bad Request. For more information, see <a
+     * system, Amazon FSx responds with an HTTP status code 400 (Bad Request). For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
      * Aliases</a>.
      * </p>
@@ -2266,6 +2404,43 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
+     * After performing steps to repair the Active Directory configuration of an FSx for Windows File Server file
+     * system, use this action to initiate the process of Amazon FSx attempting to reconnect to the file system.
+     * </p>
+     * 
+     * @param startMisconfiguredStateRecoveryRequest
+     * @return A Java Future containing the result of the StartMisconfiguredStateRecovery operation returned by the
+     *         service.
+     * @sample AmazonFSxAsync.StartMisconfiguredStateRecovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            StartMisconfiguredStateRecoveryRequest startMisconfiguredStateRecoveryRequest);
+
+    /**
+     * <p>
+     * After performing steps to repair the Active Directory configuration of an FSx for Windows File Server file
+     * system, use this action to initiate the process of Amazon FSx attempting to reconnect to the file system.
+     * </p>
+     * 
+     * @param startMisconfiguredStateRecoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMisconfiguredStateRecovery operation returned by the
+     *         service.
+     * @sample AmazonFSxAsyncHandler.StartMisconfiguredStateRecovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            StartMisconfiguredStateRecoveryRequest startMisconfiguredStateRecoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMisconfiguredStateRecoveryRequest, StartMisconfiguredStateRecoveryResult> asyncHandler);
+
+    /**
+     * <p>
      * Tags an Amazon FSx resource.
      * </p>
      * 
@@ -2333,8 +2508,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
     /**
      * <p>
      * Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system.
-     * Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment
-     * type.
+     * Data repository associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
+     * <code>scratch_1</code> deployment type.
      * </p>
      * 
      * @param updateDataRepositoryAssociationRequest
@@ -2350,8 +2525,8 @@ public interface AmazonFSxAsync extends AmazonFSx {
     /**
      * <p>
      * Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system.
-     * Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment
-     * type.
+     * Data repository associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
+     * <code>scratch_1</code> deployment type.
      * </p>
      * 
      * @param updateDataRepositoryAssociationRequest
@@ -2408,7 +2583,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * properties in a single request.
      * </p>
      * <p>
-     * For Amazon FSx for Windows File Server file systems, you can update the following properties:
+     * For FSx for Windows File Server file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -2438,7 +2613,17 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>StorageType</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ThroughputCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DiskIopsConfiguration</code>
      * </p>
      * </li>
      * <li>
@@ -2448,7 +2633,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * </ul>
      * <p>
-     * For Amazon FSx for Lustre file systems, you can update the following properties:
+     * For FSx for Lustre file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -2473,7 +2658,17 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>LogConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>LustreRootSquashConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PerUnitStorageThroughput</code>
      * </p>
      * </li>
      * <li>
@@ -2488,9 +2683,14 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * </ul>
      * <p>
-     * For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+     * For FSx for ONTAP file systems, you can update the following properties:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AddRouteTableIds</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>AutomaticBackupRetentionDays</code>
@@ -2513,6 +2713,16 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>HAPairs</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RemoveRouteTableIds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>StorageCapacity</code>
      * </p>
      * </li>
@@ -2523,14 +2733,24 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>ThroughputCapacityPerHAPair</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>WeeklyMaintenanceStartTime</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+     * For FSx for OpenZFS file systems, you can update the following properties:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AddRouteTableIds</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>AutomaticBackupRetentionDays</code>
@@ -2549,6 +2769,21 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <li>
      * <p>
      * <code>DailyAutomaticBackupStartTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DiskIopsConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RemoveRouteTableIds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageCapacity</code>
      * </p>
      * </li>
      * <li>
@@ -2578,7 +2813,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * properties in a single request.
      * </p>
      * <p>
-     * For Amazon FSx for Windows File Server file systems, you can update the following properties:
+     * For FSx for Windows File Server file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -2608,7 +2843,17 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>StorageType</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ThroughputCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DiskIopsConfiguration</code>
      * </p>
      * </li>
      * <li>
@@ -2618,7 +2863,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * </ul>
      * <p>
-     * For Amazon FSx for Lustre file systems, you can update the following properties:
+     * For FSx for Lustre file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -2643,7 +2888,17 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>LogConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>LustreRootSquashConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PerUnitStorageThroughput</code>
      * </p>
      * </li>
      * <li>
@@ -2658,9 +2913,14 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * </ul>
      * <p>
-     * For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+     * For FSx for ONTAP file systems, you can update the following properties:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AddRouteTableIds</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>AutomaticBackupRetentionDays</code>
@@ -2683,6 +2943,16 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>HAPairs</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RemoveRouteTableIds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>StorageCapacity</code>
      * </p>
      * </li>
@@ -2693,14 +2963,24 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>ThroughputCapacityPerHAPair</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>WeeklyMaintenanceStartTime</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+     * For FSx for OpenZFS file systems, you can update the following properties:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AddRouteTableIds</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>AutomaticBackupRetentionDays</code>
@@ -2719,6 +2999,21 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <li>
      * <p>
      * <code>DailyAutomaticBackupStartTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DiskIopsConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RemoveRouteTableIds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageCapacity</code>
      * </p>
      * </li>
      * <li>
@@ -2746,6 +3041,65 @@ public interface AmazonFSxAsync extends AmazonFSx {
      */
     java.util.concurrent.Future<UpdateFileSystemResult> updateFileSystemAsync(UpdateFileSystemRequest updateFileSystemRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Configures whether participant accounts in your organization can create Amazon FSx for NetApp ONTAP Multi-AZ file
+     * systems in subnets that are shared by a virtual private cloud (VPC) owner. For more information, see the <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon FSx for NetApp ONTAP User
+     * Guide</a>.
+     * </p>
+     * <note>
+     * <p>
+     * We strongly recommend that participant-created Multi-AZ file systems in the shared VPC are deleted before you
+     * disable this feature. Once the feature is disabled, these file systems will enter a <code>MISCONFIGURED</code>
+     * state and behave like Single-AZ file systems. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html#disabling-maz-vpc-sharing">Important
+     * considerations before disabling shared VPC support for Multi-AZ file systems</a>.
+     * </p>
+     * </note>
+     * 
+     * @param updateSharedVpcConfigurationRequest
+     * @return A Java Future containing the result of the UpdateSharedVpcConfiguration operation returned by the
+     *         service.
+     * @sample AmazonFSxAsync.UpdateSharedVpcConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSharedVpcConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSharedVpcConfigurationResult> updateSharedVpcConfigurationAsync(
+            UpdateSharedVpcConfigurationRequest updateSharedVpcConfigurationRequest);
+
+    /**
+     * <p>
+     * Configures whether participant accounts in your organization can create Amazon FSx for NetApp ONTAP Multi-AZ file
+     * systems in subnets that are shared by a virtual private cloud (VPC) owner. For more information, see the <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon FSx for NetApp ONTAP User
+     * Guide</a>.
+     * </p>
+     * <note>
+     * <p>
+     * We strongly recommend that participant-created Multi-AZ file systems in the shared VPC are deleted before you
+     * disable this feature. Once the feature is disabled, these file systems will enter a <code>MISCONFIGURED</code>
+     * state and behave like Single-AZ file systems. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html#disabling-maz-vpc-sharing">Important
+     * considerations before disabling shared VPC support for Multi-AZ file systems</a>.
+     * </p>
+     * </note>
+     * 
+     * @param updateSharedVpcConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSharedVpcConfiguration operation returned by the
+     *         service.
+     * @sample AmazonFSxAsyncHandler.UpdateSharedVpcConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSharedVpcConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSharedVpcConfigurationResult> updateSharedVpcConfigurationAsync(
+            UpdateSharedVpcConfigurationRequest updateSharedVpcConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSharedVpcConfigurationRequest, UpdateSharedVpcConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -2780,7 +3134,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
-     * Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
+     * Updates an FSx for ONTAP storage virtual machine (SVM).
      * </p>
      * 
      * @param updateStorageVirtualMachineRequest
@@ -2794,7 +3148,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
-     * Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
+     * Updates an FSx for ONTAP storage virtual machine (SVM).
      * </p>
      * 
      * @param updateStorageVirtualMachineRequest

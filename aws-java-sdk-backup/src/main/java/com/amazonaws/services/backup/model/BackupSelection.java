@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,8 +60,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
@@ -96,8 +96,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
@@ -314,8 +314,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
@@ -336,8 +336,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @return A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *         <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *         . Condition operators are case sensitive.</p>
+     *         <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *         operators are case sensitive.</p>
      *         <p>
      *         <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
      *         </p>
@@ -364,8 +364,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
@@ -387,8 +387,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param listOfTags
      *        A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *        <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *        . Condition operators are case sensitive.</p>
+     *        <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *        operators are case sensitive.</p>
      *        <p>
      *        <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
      *        </p>
@@ -420,8 +420,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
@@ -448,8 +448,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param listOfTags
      *        A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *        <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *        . Condition operators are case sensitive.</p>
+     *        <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *        operators are case sensitive.</p>
      *        <p>
      *        <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
      *        </p>
@@ -483,8 +483,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
@@ -506,8 +506,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param listOfTags
      *        A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *        <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *        . Condition operators are case sensitive.</p>
+     *        <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *        operators are case sensitive.</p>
      *        <p>
      *        <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
      *        </p>
@@ -646,8 +646,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
@@ -669,8 +669,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param conditions
      *        A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *        <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *        . Condition operators are case sensitive.</p>
+     *        <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *        operators are case sensitive.</p>
      *        <p>
      *        <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
      *        </p>
@@ -697,8 +697,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
@@ -719,8 +719,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @return A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *         <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *         . Condition operators are case sensitive.</p>
+     *         <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *         operators are case sensitive.</p>
      *         <p>
      *         <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
      *         </p>
@@ -747,8 +747,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     * <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>.
-     * Condition operators are case sensitive.
+     * <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators
+     * are case sensitive.
      * </p>
      * <p>
      * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
@@ -770,8 +770,8 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param conditions
      *        A list of conditions that you define to assign resources to your backup plans using tags. For example,
-     *        <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>
-     *        . Condition operators are case sensitive.</p>
+     *        <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition
+     *        operators are case sensitive.</p>
      *        <p>
      *        <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
      *        </p>

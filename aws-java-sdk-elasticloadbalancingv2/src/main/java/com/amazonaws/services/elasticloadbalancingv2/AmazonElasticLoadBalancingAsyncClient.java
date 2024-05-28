@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -362,6 +362,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<AddTrustStoreRevocationsResult> addTrustStoreRevocationsAsync(AddTrustStoreRevocationsRequest request) {
+
+        return addTrustStoreRevocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTrustStoreRevocationsResult> addTrustStoreRevocationsAsync(final AddTrustStoreRevocationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddTrustStoreRevocationsRequest, AddTrustStoreRevocationsResult> asyncHandler) {
+        final AddTrustStoreRevocationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddTrustStoreRevocationsResult>() {
+            @Override
+            public AddTrustStoreRevocationsResult call() throws Exception {
+                AddTrustStoreRevocationsResult result = null;
+
+                try {
+                    result = executeAddTrustStoreRevocations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateListenerResult> createListenerAsync(CreateListenerRequest request) {
 
         return createListenerAsync(request, null);
@@ -494,6 +527,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTrustStoreResult> createTrustStoreAsync(CreateTrustStoreRequest request) {
+
+        return createTrustStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrustStoreResult> createTrustStoreAsync(final CreateTrustStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTrustStoreRequest, CreateTrustStoreResult> asyncHandler) {
+        final CreateTrustStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTrustStoreResult>() {
+            @Override
+            public CreateTrustStoreResult call() throws Exception {
+                CreateTrustStoreResult result = null;
+
+                try {
+                    result = executeCreateTrustStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteListenerResult> deleteListenerAsync(DeleteListenerRequest request) {
 
         return deleteListenerAsync(request, null);
@@ -610,6 +676,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
                 try {
                     result = executeDeleteTargetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustStoreResult> deleteTrustStoreAsync(DeleteTrustStoreRequest request) {
+
+        return deleteTrustStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustStoreResult> deleteTrustStoreAsync(final DeleteTrustStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTrustStoreRequest, DeleteTrustStoreResult> asyncHandler) {
+        final DeleteTrustStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTrustStoreResult>() {
+            @Override
+            public DeleteTrustStoreResult call() throws Exception {
+                DeleteTrustStoreResult result = null;
+
+                try {
+                    result = executeDeleteTrustStore(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1024,6 +1123,176 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrustStoreAssociationsResult> describeTrustStoreAssociationsAsync(DescribeTrustStoreAssociationsRequest request) {
+
+        return describeTrustStoreAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustStoreAssociationsResult> describeTrustStoreAssociationsAsync(
+            final DescribeTrustStoreAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrustStoreAssociationsRequest, DescribeTrustStoreAssociationsResult> asyncHandler) {
+        final DescribeTrustStoreAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrustStoreAssociationsResult>() {
+            @Override
+            public DescribeTrustStoreAssociationsResult call() throws Exception {
+                DescribeTrustStoreAssociationsResult result = null;
+
+                try {
+                    result = executeDescribeTrustStoreAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustStoreRevocationsResult> describeTrustStoreRevocationsAsync(DescribeTrustStoreRevocationsRequest request) {
+
+        return describeTrustStoreRevocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustStoreRevocationsResult> describeTrustStoreRevocationsAsync(
+            final DescribeTrustStoreRevocationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrustStoreRevocationsRequest, DescribeTrustStoreRevocationsResult> asyncHandler) {
+        final DescribeTrustStoreRevocationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrustStoreRevocationsResult>() {
+            @Override
+            public DescribeTrustStoreRevocationsResult call() throws Exception {
+                DescribeTrustStoreRevocationsResult result = null;
+
+                try {
+                    result = executeDescribeTrustStoreRevocations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustStoresResult> describeTrustStoresAsync(DescribeTrustStoresRequest request) {
+
+        return describeTrustStoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustStoresResult> describeTrustStoresAsync(final DescribeTrustStoresRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrustStoresRequest, DescribeTrustStoresResult> asyncHandler) {
+        final DescribeTrustStoresRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrustStoresResult>() {
+            @Override
+            public DescribeTrustStoresResult call() throws Exception {
+                DescribeTrustStoresResult result = null;
+
+                try {
+                    result = executeDescribeTrustStores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTrustStoreCaCertificatesBundleResult> getTrustStoreCaCertificatesBundleAsync(
+            GetTrustStoreCaCertificatesBundleRequest request) {
+
+        return getTrustStoreCaCertificatesBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTrustStoreCaCertificatesBundleResult> getTrustStoreCaCertificatesBundleAsync(
+            final GetTrustStoreCaCertificatesBundleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTrustStoreCaCertificatesBundleRequest, GetTrustStoreCaCertificatesBundleResult> asyncHandler) {
+        final GetTrustStoreCaCertificatesBundleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTrustStoreCaCertificatesBundleResult>() {
+            @Override
+            public GetTrustStoreCaCertificatesBundleResult call() throws Exception {
+                GetTrustStoreCaCertificatesBundleResult result = null;
+
+                try {
+                    result = executeGetTrustStoreCaCertificatesBundle(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTrustStoreRevocationContentResult> getTrustStoreRevocationContentAsync(GetTrustStoreRevocationContentRequest request) {
+
+        return getTrustStoreRevocationContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTrustStoreRevocationContentResult> getTrustStoreRevocationContentAsync(
+            final GetTrustStoreRevocationContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTrustStoreRevocationContentRequest, GetTrustStoreRevocationContentResult> asyncHandler) {
+        final GetTrustStoreRevocationContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTrustStoreRevocationContentResult>() {
+            @Override
+            public GetTrustStoreRevocationContentResult call() throws Exception {
+                GetTrustStoreRevocationContentResult result = null;
+
+                try {
+                    result = executeGetTrustStoreRevocationContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyListenerResult> modifyListenerAsync(ModifyListenerRequest request) {
 
         return modifyListenerAsync(request, null);
@@ -1189,6 +1458,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyTrustStoreResult> modifyTrustStoreAsync(ModifyTrustStoreRequest request) {
+
+        return modifyTrustStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTrustStoreResult> modifyTrustStoreAsync(final ModifyTrustStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyTrustStoreRequest, ModifyTrustStoreResult> asyncHandler) {
+        final ModifyTrustStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyTrustStoreResult>() {
+            @Override
+            public ModifyTrustStoreResult call() throws Exception {
+                ModifyTrustStoreResult result = null;
+
+                try {
+                    result = executeModifyTrustStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterTargetsResult> registerTargetsAsync(RegisterTargetsRequest request) {
 
         return registerTargetsAsync(request, null);
@@ -1272,6 +1574,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
                 try {
                     result = executeRemoveTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTrustStoreRevocationsResult> removeTrustStoreRevocationsAsync(RemoveTrustStoreRevocationsRequest request) {
+
+        return removeTrustStoreRevocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTrustStoreRevocationsResult> removeTrustStoreRevocationsAsync(final RemoveTrustStoreRevocationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveTrustStoreRevocationsRequest, RemoveTrustStoreRevocationsResult> asyncHandler) {
+        final RemoveTrustStoreRevocationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveTrustStoreRevocationsResult>() {
+            @Override
+            public RemoveTrustStoreRevocationsResult call() throws Exception {
+                RemoveTrustStoreRevocationsResult result = null;
+
+                try {
+                    result = executeRemoveTrustStoreRevocations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class SalesforceConnectorProfileCredentialsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oAuthRequest").build();
     private static final MarshallingInfo<String> CLIENTCREDENTIALSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientCredentialsArn").build();
+    private static final MarshallingInfo<String> OAUTH2GRANTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oAuth2GrantType").build();
+    private static final MarshallingInfo<String> JWTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jwtToken").build();
 
     private static final SalesforceConnectorProfileCredentialsMarshaller instance = new SalesforceConnectorProfileCredentialsMarshaller();
 
@@ -56,6 +60,8 @@ public class SalesforceConnectorProfileCredentialsMarshaller {
             protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getRefreshToken(), REFRESHTOKEN_BINDING);
             protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getOAuthRequest(), OAUTHREQUEST_BINDING);
             protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getClientCredentialsArn(), CLIENTCREDENTIALSARN_BINDING);
+            protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getOAuth2GrantType(), OAUTH2GRANTTYPE_BINDING);
+            protocolMarshaller.marshall(salesforceConnectorProfileCredentials.getJwtToken(), JWTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

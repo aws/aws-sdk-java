@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,12 @@ public class CreateTrainingJobRequestMarshaller {
             .marshallLocationName("Environment").build();
     private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetryStrategy").build();
+    private static final MarshallingInfo<StructuredPojo> REMOTEDEBUGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteDebugConfig").build();
+    private static final MarshallingInfo<StructuredPojo> INFRACHECKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InfraCheckConfig").build();
+    private static final MarshallingInfo<StructuredPojo> SESSIONCHAININGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionChainingConfig").build();
 
     private static final CreateTrainingJobRequestMarshaller instance = new CreateTrainingJobRequestMarshaller();
 
@@ -112,6 +118,9 @@ public class CreateTrainingJobRequestMarshaller {
             protocolMarshaller.marshall(createTrainingJobRequest.getProfilerRuleConfigurations(), PROFILERRULECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getRemoteDebugConfig(), REMOTEDEBUGCONFIG_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getInfraCheckConfig(), INFRACHECKCONFIG_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getSessionChainingConfig(), SESSIONCHAININGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

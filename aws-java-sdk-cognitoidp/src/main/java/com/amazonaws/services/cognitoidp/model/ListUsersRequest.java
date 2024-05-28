@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,15 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String userPoolId;
     /**
      * <p>
-     * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is null, all attributes are returned.
+     * A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
+     * Cognito returns all attributes for each user.
+     * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
      * </p>
      */
     private java.util.List<String> attributesToGet;
@@ -49,16 +56,18 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer limit;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      */
     private String paginationToken;
     /**
      * <p>
      * A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-     * within the filter string must be escaped using the backslash (\) character. For example, "
-     * <code>family_name</code> = \"Reddy\"".
+     * within the filter string must be escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.
      * </p>
      * <ul>
      * <li>
@@ -68,8 +77,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix
-     * ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     * <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>
+     * ". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".
      * </p>
      * </li>
      * <li>
@@ -207,12 +216,25 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is null, all attributes are returned.
+     * A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
+     * Cognito returns all attributes for each user.
+     * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
      * </p>
      * 
-     * @return An array of strings, where each string is the name of a user attribute to be returned for each user in
-     *         the search results. If the array is null, all attributes are returned.
+     * @return A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito
+     *         to include in the response for each user. When you don't provide an <code>AttributesToGet</code>
+     *         parameter, Amazon Cognito returns all attributes for each user.</p>
+     *         <p>
+     *         Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *         <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *         the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *         value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -221,13 +243,26 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is null, all attributes are returned.
+     * A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
+     * Cognito returns all attributes for each user.
+     * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
      * </p>
      * 
      * @param attributesToGet
-     *        An array of strings, where each string is the name of a user attribute to be returned for each user in the
-     *        search results. If the array is null, all attributes are returned.
+     *        A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     *        include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter,
+     *        Amazon Cognito returns all attributes for each user.</p>
+     *        <p>
+     *        Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *        <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *        the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *        value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -241,8 +276,15 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is null, all attributes are returned.
+     * A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
+     * Cognito returns all attributes for each user.
+     * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -251,8 +293,14 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param attributesToGet
-     *        An array of strings, where each string is the name of a user attribute to be returned for each user in the
-     *        search results. If the array is null, all attributes are returned.
+     *        A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     *        include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter,
+     *        Amazon Cognito returns all attributes for each user.</p>
+     *        <p>
+     *        Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *        <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *        the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *        value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,13 +316,26 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An array of strings, where each string is the name of a user attribute to be returned for each user in the search
-     * results. If the array is null, all attributes are returned.
+     * A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
+     * Cognito returns all attributes for each user.
+     * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
      * </p>
      * 
      * @param attributesToGet
-     *        An array of strings, where each string is the name of a user attribute to be returned for each user in the
-     *        search results. If the array is null, all attributes are returned.
+     *        A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
+     *        include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter,
+     *        Amazon Cognito returns all attributes for each user.</p>
+     *        <p>
+     *        Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *        <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *        the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *        value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,13 +386,17 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        This API operation returns a limited number of results. The pagination token is an identifier that you can
+     *        present in an additional API request with the same parameters. When you include the pagination token,
+     *        Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *        pagination token. By use of this token, you can paginate through the full list of items.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -340,12 +405,16 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
-     *         next set of items in the list.
+     * @return This API operation returns a limited number of results. The pagination token is an identifier that you
+     *         can present in an additional API request with the same parameters. When you include the pagination token,
+     *         Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *         pagination token. By use of this token, you can paginate through the full list of items.
      */
 
     public String getPaginationToken() {
@@ -354,13 +423,17 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        This API operation returns a limited number of results. The pagination token is an identifier that you can
+     *        present in an additional API request with the same parameters. When you include the pagination token,
+     *        Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *        pagination token. By use of this token, you can paginate through the full list of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,8 +445,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-     * within the filter string must be escaped using the backslash (\) character. For example, "
-     * <code>family_name</code> = \"Reddy\"".
+     * within the filter string must be escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.
      * </p>
      * <ul>
      * <li>
@@ -383,8 +456,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix
-     * ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     * <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>
+     * ". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".
      * </p>
      * </li>
      * <li>
@@ -480,8 +553,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param filter
      *        A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation
-     *        marks within the filter string must be escaped using the backslash (\) character. For example, "
-     *        <code>family_name</code> = \"Reddy\"".</p>
+     *        marks within the filter string must be escaped using the backslash (<code>\</code>) character. For
+     *        example, <code>"family_name = \"Reddy\""</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -491,8 +564,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a
-     *        prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     *        <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "
+     *        <code>given_name = \"Jon\"</code>". For a prefix ("starts with") match, use <code>^=</code>, for example,
+     *        "<code>given_name ^= \"Jon\"</code>".
      *        </p>
      *        </li>
      *        <li>
@@ -593,8 +667,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-     * within the filter string must be escaped using the backslash (\) character. For example, "
-     * <code>family_name</code> = \"Reddy\"".
+     * within the filter string must be escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.
      * </p>
      * <ul>
      * <li>
@@ -604,8 +678,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix
-     * ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     * <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>
+     * ". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".
      * </p>
      * </li>
      * <li>
@@ -700,8 +774,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @return A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation
-     *         marks within the filter string must be escaped using the backslash (\) character. For example, "
-     *         <code>family_name</code> = \"Reddy\"".</p>
+     *         marks within the filter string must be escaped using the backslash (<code>\</code>) character. For
+     *         example, <code>"family_name = \"Reddy\""</code>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -711,8 +785,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a
-     *         prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     *         <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "
+     *         <code>given_name = \"Jon\"</code>". For a prefix ("starts with") match, use <code>^=</code>, for example,
+     *         "<code>given_name ^= \"Jon\"</code>".
      *         </p>
      *         </li>
      *         <li>
@@ -813,8 +888,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks
-     * within the filter string must be escaped using the backslash (\) character. For example, "
-     * <code>family_name</code> = \"Reddy\"".
+     * within the filter string must be escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.
      * </p>
      * <ul>
      * <li>
@@ -824,8 +899,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix
-     * ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     * <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>
+     * ". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".
      * </p>
      * </li>
      * <li>
@@ -921,8 +996,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param filter
      *        A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation
-     *        marks within the filter string must be escaped using the backslash (\) character. For example, "
-     *        <code>family_name</code> = \"Reddy\"".</p>
+     *        marks within the filter string must be escaped using the backslash (<code>\</code>) character. For
+     *        example, <code>"family_name = \"Reddy\""</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -932,8 +1007,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a
-     *        prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".
+     *        <i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "
+     *        <code>given_name = \"Jon\"</code>". For a prefix ("starts with") match, use <code>^=</code>, for example,
+     *        "<code>given_name ^= \"Jon\"</code>".
      *        </p>
      *        </li>
      *        <li>

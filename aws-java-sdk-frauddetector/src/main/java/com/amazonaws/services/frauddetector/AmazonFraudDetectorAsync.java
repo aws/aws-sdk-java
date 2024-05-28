@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ import com.amazonaws.services.frauddetector.model.*;
  * who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS.
  * These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your
  * requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more
- * information about the AWS SDKs, see <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
- * on AWS</a>.
+ * information about the AWS SDKs, go to <a href="https://aws.amazon.com/developer/tools/">Tools to build on AWS</a>
+ * page, scroll down to the <b>SDK</b> section, and choose plus (+) sign to expand the section.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -263,6 +263,47 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<CreateDetectorVersionResult> createDetectorVersionAsync(CreateDetectorVersionRequest createDetectorVersionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDetectorVersionRequest, CreateDetectorVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a list.
+     * </p>
+     * <p>
+     * List is a set of input data for a variable in your event dataset. You use the input data in a rule that's
+     * associated with your detector. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.
+     * </p>
+     * 
+     * @param createListRequest
+     * @return A Java Future containing the result of the CreateList operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.CreateList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateListResult> createListAsync(CreateListRequest createListRequest);
+
+    /**
+     * <p>
+     * Creates a list.
+     * </p>
+     * <p>
+     * List is a set of input data for a variable in your event dataset. You use the input data in a rule that's
+     * associated with your detector. For more information, see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html">Lists</a>.
+     * </p>
+     * 
+     * @param createListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateList operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.CreateList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateListResult> createListAsync(CreateListRequest createListRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateListRequest, CreateListResult> asyncHandler);
 
     /**
      * <p>
@@ -581,7 +622,8 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      * </p>
      * <p>
      * When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer
-     * stored in Amazon Fraud Detector.
+     * stored in Amazon Fraud Detector. If <code>deleteAuditHistory</code> is <code>True</code>, event data is available
+     * through search for up to 30 seconds after the delete operation is completed.
      * </p>
      * 
      * @param deleteEventRequest
@@ -598,7 +640,8 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      * </p>
      * <p>
      * When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer
-     * stored in Amazon Fraud Detector.
+     * stored in Amazon Fraud Detector. If <code>deleteAuditHistory</code> is <code>True</code>, event data is available
+     * through search for up to 30 seconds after the delete operation is completed.
      * </p>
      * 
      * @param deleteEventRequest
@@ -779,6 +822,43 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<DeleteLabelResult> deleteLabelAsync(DeleteLabelRequest deleteLabelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLabelRequest, DeleteLabelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the list, provided it is not used in a rule.
+     * </p>
+     * <p>
+     * When you delete a list, Amazon Fraud Detector permanently deletes that list and the elements in the list.
+     * </p>
+     * 
+     * @param deleteListRequest
+     * @return A Java Future containing the result of the DeleteList operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteListResult> deleteListAsync(DeleteListRequest deleteListRequest);
+
+    /**
+     * <p>
+     * Deletes the list, provided it is not used in a rule.
+     * </p>
+     * <p>
+     * When you delete a list, Amazon Fraud Detector permanently deletes that list and the elements in the list.
+     * </p>
+     * 
+     * @param deleteListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteList operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteListResult> deleteListAsync(DeleteListRequest deleteListRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteListRequest, DeleteListResult> asyncHandler);
 
     /**
      * <p>
@@ -1548,6 +1628,68 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Gets all the elements in the specified list.
+     * </p>
+     * 
+     * @param getListElementsRequest
+     * @return A Java Future containing the result of the GetListElements operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetListElements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetListElementsResult> getListElementsAsync(GetListElementsRequest getListElementsRequest);
+
+    /**
+     * <p>
+     * Gets all the elements in the specified list.
+     * </p>
+     * 
+     * @param getListElementsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetListElements operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetListElements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListElements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetListElementsResult> getListElementsAsync(GetListElementsRequest getListElementsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetListElementsRequest, GetListElementsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the metadata of either all the lists under the account or the specified list.
+     * </p>
+     * 
+     * @param getListsMetadataRequest
+     * @return A Java Future containing the result of the GetListsMetadata operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetListsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetListsMetadataResult> getListsMetadataAsync(GetListsMetadataRequest getListsMetadataRequest);
+
+    /**
+     * <p>
+     * Gets the metadata of either all the lists under the account or the specified list.
+     * </p>
+     * 
+     * @param getListsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetListsMetadata operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetListsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetListsMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetListsMetadataResult> getListsMetadataAsync(GetListsMetadataRequest getListsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetListsMetadataRequest, GetListsMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the details of the specified model version.
      * </p>
      * 
@@ -2300,6 +2442,37 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<UpdateEventLabelResult> updateEventLabelAsync(UpdateEventLabelRequest updateEventLabelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEventLabelRequest, UpdateEventLabelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a list.
+     * </p>
+     * 
+     * @param updateListRequest
+     * @return A Java Future containing the result of the UpdateList operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.UpdateList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateListResult> updateListAsync(UpdateListRequest updateListRequest);
+
+    /**
+     * <p>
+     * Updates a list.
+     * </p>
+     * 
+     * @param updateListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateList operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.UpdateList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateListResult> updateListAsync(UpdateListRequest updateListRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateListRequest, UpdateListResult> asyncHandler);
 
     /**
      * <p>

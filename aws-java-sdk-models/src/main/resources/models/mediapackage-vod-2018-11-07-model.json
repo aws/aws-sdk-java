@@ -828,6 +828,11 @@
           "locationName": "authorization",
           "shape": "Authorization"
         },
+        "CreatedAt": {
+          "documentation": "The time the PackagingGroup was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
+        },
         "DomainName": {
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
           "locationName": "domainName",
@@ -990,6 +995,11 @@
           "locationName": "cmafPackage",
           "shape": "CmafPackage"
         },
+        "CreatedAt": {
+          "documentation": "The time the PackagingConfiguration was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
+        },
         "DashPackage": {
           "locationName": "dashPackage",
           "shape": "DashPackage"
@@ -1055,6 +1065,11 @@
         "Authorization": {
           "locationName": "authorization",
           "shape": "Authorization"
+        },
+        "CreatedAt": {
+          "documentation": "The time the PackagingGroup was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
         },
         "DomainName": {
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
@@ -1140,6 +1155,11 @@
         "IncludeEncoderConfigurationInSegments": {
           "documentation": "When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.\n",
           "locationName": "includeEncoderConfigurationInSegments",
+          "shape": "__boolean"
+        },
+        "IncludeIframeOnlyStream": {
+          "documentation": "When enabled, an I-Frame only stream will be included in the output.",
+          "locationName": "includeIframeOnlyStream",
           "shape": "__boolean"
         },
         "PeriodTriggers": {
@@ -1305,6 +1325,11 @@
           "locationName": "cmafPackage",
           "shape": "CmafPackage"
         },
+        "CreatedAt": {
+          "documentation": "The time the PackagingConfiguration was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
+        },
         "DashPackage": {
           "locationName": "dashPackage",
           "shape": "DashPackage"
@@ -1350,6 +1375,11 @@
     },
     "DescribePackagingGroupResponse": {
       "members": {
+        "ApproximateAssetCount": {
+          "documentation": "The approximate asset count of the PackagingGroup.",
+          "locationName": "approximateAssetCount",
+          "shape": "__integer"
+        },
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
@@ -1358,6 +1388,11 @@
         "Authorization": {
           "locationName": "authorization",
           "shape": "Authorization"
+        },
+        "CreatedAt": {
+          "documentation": "The time the PackagingGroup was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
         },
         "DomainName": {
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
@@ -1779,6 +1814,11 @@
           "locationName": "cmafPackage",
           "shape": "CmafPackage"
         },
+        "CreatedAt": {
+          "documentation": "The time the PackagingConfiguration was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
+        },
         "DashPackage": {
           "locationName": "dashPackage",
           "shape": "DashPackage"
@@ -1867,6 +1907,11 @@
     "PackagingGroup": {
       "documentation": "A MediaPackage VOD PackagingGroup resource.",
       "members": {
+        "ApproximateAssetCount": {
+          "documentation": "The approximate asset count of the PackagingGroup.",
+          "locationName": "approximateAssetCount",
+          "shape": "__integer"
+        },
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
@@ -1875,6 +1920,11 @@
         "Authorization": {
           "locationName": "authorization",
           "shape": "Authorization"
+        },
+        "CreatedAt": {
+          "documentation": "The time the PackagingGroup was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
         },
         "DomainName": {
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
@@ -2182,6 +2232,11 @@
     },
     "UpdatePackagingGroupResponse": {
       "members": {
+        "ApproximateAssetCount": {
+          "documentation": "The approximate asset count of the PackagingGroup.",
+          "locationName": "approximateAssetCount",
+          "shape": "__integer"
+        },
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
@@ -2190,6 +2245,11 @@
         "Authorization": {
           "locationName": "authorization",
           "shape": "Authorization"
+        },
+        "CreatedAt": {
+          "documentation": "The time the PackagingGroup was created.",
+          "locationName": "createdAt",
+          "shape": "__string"
         },
         "DomainName": {
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",

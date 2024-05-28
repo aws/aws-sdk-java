@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,12 @@ public class BatchDeleteImportDataRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<String> importTaskIds;
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     * </p>
+     */
+    private Boolean deleteHistory;
 
     /**
      * <p>
@@ -98,6 +104,58 @@ public class BatchDeleteImportDataRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     * </p>
+     * 
+     * @param deleteHistory
+     *        Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     */
+
+    public void setDeleteHistory(Boolean deleteHistory) {
+        this.deleteHistory = deleteHistory;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     */
+
+    public Boolean getDeleteHistory() {
+        return this.deleteHistory;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     * </p>
+     * 
+     * @param deleteHistory
+     *        Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchDeleteImportDataRequest withDeleteHistory(Boolean deleteHistory) {
+        setDeleteHistory(deleteHistory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+     */
+
+    public Boolean isDeleteHistory() {
+        return this.deleteHistory;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -110,7 +168,9 @@ public class BatchDeleteImportDataRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportTaskIds() != null)
-            sb.append("ImportTaskIds: ").append(getImportTaskIds());
+            sb.append("ImportTaskIds: ").append(getImportTaskIds()).append(",");
+        if (getDeleteHistory() != null)
+            sb.append("DeleteHistory: ").append(getDeleteHistory());
         sb.append("}");
         return sb.toString();
     }
@@ -129,6 +189,10 @@ public class BatchDeleteImportDataRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getImportTaskIds() != null && other.getImportTaskIds().equals(this.getImportTaskIds()) == false)
             return false;
+        if (other.getDeleteHistory() == null ^ this.getDeleteHistory() == null)
+            return false;
+        if (other.getDeleteHistory() != null && other.getDeleteHistory().equals(this.getDeleteHistory()) == false)
+            return false;
         return true;
     }
 
@@ -138,6 +202,7 @@ public class BatchDeleteImportDataRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImportTaskIds() == null) ? 0 : getImportTaskIds().hashCode());
+        hashCode = prime * hashCode + ((getDeleteHistory() == null) ? 0 : getDeleteHistory().hashCode());
         return hashCode;
     }
 

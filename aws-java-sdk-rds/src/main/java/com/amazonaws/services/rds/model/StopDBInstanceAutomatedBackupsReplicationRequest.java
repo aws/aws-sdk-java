@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class StopDBInstanceAutomatedBackupsReplicationRequest extends com.amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for
+     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for
      * example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      * </p>
      */
@@ -35,12 +35,12 @@ public class StopDBInstanceAutomatedBackupsReplicationRequest extends com.amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for
+     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for
      * example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      * </p>
      * 
      * @param sourceDBInstanceArn
-     *        The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups,
+     *        The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups,
      *        for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      */
 
@@ -50,11 +50,11 @@ public class StopDBInstanceAutomatedBackupsReplicationRequest extends com.amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for
+     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for
      * example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups,
+     * @return The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups,
      *         for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      */
 
@@ -64,12 +64,12 @@ public class StopDBInstanceAutomatedBackupsReplicationRequest extends com.amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for
+     * The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups, for
      * example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      * </p>
      * 
      * @param sourceDBInstanceArn
-     *        The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups,
+     *        The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automate backups,
      *        for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,15 +48,15 @@ public class PutDialRequestBatchResultJsonUnmarshaller implements Unmarshaller<P
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("failedRequests", targetDepth)) {
-                    context.nextToken();
-                    putDialRequestBatchResult.setFailedRequests(new ListUnmarshaller<FailedRequest>(FailedRequestJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("successfulRequests", targetDepth)) {
                     context.nextToken();
                     putDialRequestBatchResult.setSuccessfulRequests(new ListUnmarshaller<SuccessfulRequest>(SuccessfulRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("failedRequests", targetDepth)) {
+                    context.nextToken();
+                    putDialRequestBatchResult.setFailedRequests(new ListUnmarshaller<FailedRequest>(FailedRequestJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

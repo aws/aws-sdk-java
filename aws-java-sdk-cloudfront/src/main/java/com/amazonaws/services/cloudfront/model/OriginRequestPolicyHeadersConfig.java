@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,14 +35,14 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included
-     * in origin requests.
+     * <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
      * requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -57,6 +57,12 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional CloudFront
      * headers that are listed in the <code>Headers</code> type are included in requests that CloudFront sends to the
      * origin. The additional headers are added by CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.
      * </p>
      * </li>
      * </ul>
@@ -73,14 +79,14 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included
-     * in origin requests.
+     * <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
      * requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -97,6 +103,12 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * origin. The additional headers are added by CloudFront.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param headerBehavior
@@ -105,15 +117,15 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even
-     *        when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code>
-     *        <i>are</i> included in origin requests.
+     *        <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to
+     *        the origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     *        <code>CachePolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
-     *        requests that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *        included in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
      *        <li>
@@ -127,6 +139,13 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *        <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional
      *        CloudFront headers that are listed in the <code>Headers</code> type are included in requests that
      *        CloudFront sends to the origin. The additional headers are added by CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront
+     *        sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are
+     *        not included.
      *        </p>
      *        </li>
      * @see OriginRequestPolicyHeaderBehavior
@@ -144,14 +163,14 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included
-     * in origin requests.
+     * <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
      * requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -168,6 +187,12 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * origin. The additional headers are added by CloudFront.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid
@@ -175,15 +200,15 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even
-     *         when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code>
-     *         <i>are</i> included in origin requests.
+     *         <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to
+     *         the origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     *         <code>CachePolicy</code> <i>are</i> included in origin requests.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included
-     *         in requests that CloudFront sends to the origin.
+     *         <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *         included in requests that CloudFront sends to the origin.
      *         </p>
      *         </li>
      *         <li>
@@ -197,6 +222,13 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *         <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional
      *         CloudFront headers that are listed in the <code>Headers</code> type are included in requests that
      *         CloudFront sends to the origin. The additional headers are added by CloudFront.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront
+     *         sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are
+     *         not included.
      *         </p>
      *         </li>
      * @see OriginRequestPolicyHeaderBehavior
@@ -214,14 +246,14 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included
-     * in origin requests.
+     * <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
      * requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -238,6 +270,12 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * origin. The additional headers are added by CloudFront.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param headerBehavior
@@ -246,15 +284,15 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even
-     *        when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code>
-     *        <i>are</i> included in origin requests.
+     *        <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to
+     *        the origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     *        <code>CachePolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
-     *        requests that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *        included in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
      *        <li>
@@ -268,6 +306,13 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *        <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional
      *        CloudFront headers that are listed in the <code>Headers</code> type are included in requests that
      *        CloudFront sends to the origin. The additional headers are added by CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront
+     *        sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are
+     *        not included.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -287,14 +332,14 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even when this
-     * field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code> <i>are</i> included
-     * in origin requests.
+     * <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to the
+     * origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
+     * <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in
      * requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -311,6 +356,12 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      * origin. The additional headers are added by CloudFront.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param headerBehavior
@@ -319,15 +370,15 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the origin. Even
-     *        when this field is set to <code>none</code>, any headers that are listed in a <code>CachePolicy</code>
-     *        <i>are</i> included in origin requests.
+     *        <code>none</code> – No HTTP headers in viewer requests are included in requests that CloudFront sends to
+     *        the origin. Even when this field is set to <code>none</code>, any headers that are listed in a
+     *        <code>CachePolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type are included in
-     *        requests that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are
+     *        included in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
      *        <li>
@@ -341,6 +392,13 @@ public class OriginRequestPolicyHeadersConfig implements Serializable, Cloneable
      *        <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the additional
      *        CloudFront headers that are listed in the <code>Headers</code> type are included in requests that
      *        CloudFront sends to the origin. The additional headers are added by CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront
+     *        sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are
+     *        not included.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

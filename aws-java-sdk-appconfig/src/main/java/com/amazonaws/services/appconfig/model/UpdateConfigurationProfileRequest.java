@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,16 @@ public class UpdateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.List<Validator> validators;
+    /**
+     * <p>
+     * The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     */
+    private String kmsKeyIdentifier;
 
     /**
      * <p>
@@ -336,6 +346,70 @@ public class UpdateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier for a Key Management Service key to encrypt new configuration data versions in the
+     *        AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *        types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *        alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *        KMS key for that particular service.
+     */
+
+    public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
+        this.kmsKeyIdentifier = kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @return The identifier for a Key Management Service key to encrypt new configuration data versions in the
+     *         AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *         types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *         alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *         KMS key for that particular service.
+     */
+
+    public String getKmsKeyIdentifier() {
+        return this.kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for a Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier for a Key Management Service key to encrypt new configuration data versions in the
+     *        AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *        types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *        alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *        KMS key for that particular service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateConfigurationProfileRequest withKmsKeyIdentifier(String kmsKeyIdentifier) {
+        setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +432,9 @@ public class UpdateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
         if (getRetrievalRoleArn() != null)
             sb.append("RetrievalRoleArn: ").append(getRetrievalRoleArn()).append(",");
         if (getValidators() != null)
-            sb.append("Validators: ").append(getValidators());
+            sb.append("Validators: ").append(getValidators()).append(",");
+        if (getKmsKeyIdentifier() != null)
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +473,10 @@ public class UpdateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getValidators() != null && other.getValidators().equals(this.getValidators()) == false)
             return false;
+        if (other.getKmsKeyIdentifier() == null ^ this.getKmsKeyIdentifier() == null)
+            return false;
+        if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +491,7 @@ public class UpdateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRetrievalRoleArn() == null) ? 0 : getRetrievalRoleArn().hashCode());
         hashCode = prime * hashCode + ((getValidators() == null) ? 0 : getValidators().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
         return hashCode;
     }
 

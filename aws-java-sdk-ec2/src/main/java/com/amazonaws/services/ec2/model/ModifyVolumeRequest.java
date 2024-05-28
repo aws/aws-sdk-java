@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,22 +42,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -69,8 +74,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: The existing type is retained.
@@ -88,20 +93,25 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
+     * </p>
      * <p>
      * Default: The existing value is retained if you keep the same volume type. If you change the volume type to
      * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -128,8 +138,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
      * <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private Boolean multiAttachEnabled;
@@ -185,22 +195,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -217,22 +232,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      *        </ul>
@@ -255,22 +275,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -286,22 +311,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *         <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code> and <code>io2</code>: 4-16,384
+     *         <code>io1</code>: 4 - 16,384 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>st1</code> and <code>sc1</code>: 125-16,384
+     *         <code>io2</code>: 4 - 65,536 GiB
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>standard</code>: 1-1,024
+     *         <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>: 1 - 1024 GiB
      *         </p>
      *         </li>
      *         </ul>
@@ -324,22 +354,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp2</code> and <code>gp3</code>: 1-16,384
+     * <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> and <code>io2</code>: 4-16,384
+     * <code>io1</code>: 4 - 16,384 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>st1</code> and <code>sc1</code>: 125-16,384
+     * <code>io2</code>: 4 - 65,536 GiB
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>standard</code>: 1-1,024
+     * <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1 - 1024 GiB
      * </p>
      * </li>
      * </ul>
@@ -356,22 +391,27 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
+     *        <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> and <code>io2</code>: 4-16,384
+     *        <code>io1</code>: 4 - 16,384 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>st1</code> and <code>sc1</code>: 125-16,384
+     *        <code>io2</code>: 4 - 65,536 GiB
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>standard</code>: 1-1,024
+     *        <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1 - 1024 GiB
      *        </p>
      *        </li>
      *        </ul>
@@ -388,8 +428,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: The existing type is retained.
@@ -397,8 +437,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param volumeType
      *        The target EBS volume type of the volume. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.</p>
      *        <p>
      *        Default: The existing type is retained.
      * @see VolumeType
@@ -411,16 +451,16 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: The existing type is retained.
      * </p>
      * 
      * @return The target EBS volume type of the volume. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume
-     *         types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *         in the <i>Amazon EBS User Guide</i>.</p>
      *         <p>
      *         Default: The existing type is retained.
      * @see VolumeType
@@ -433,8 +473,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: The existing type is retained.
@@ -442,8 +482,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param volumeType
      *        The target EBS volume type of the volume. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.</p>
      *        <p>
      *        Default: The existing type is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -458,8 +498,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: The existing type is retained.
@@ -467,8 +507,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param volumeType
      *        The target EBS volume type of the volume. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.</p>
      *        <p>
      *        Default: The existing type is retained.
      * @see VolumeType
@@ -481,8 +521,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Default: The existing type is retained.
@@ -490,8 +530,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param volumeType
      *        The target EBS volume type of the volume. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a>
+     *        in the <i>Amazon EBS User Guide</i>.</p>
      *        <p>
      *        Default: The existing type is retained.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -514,20 +554,25 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
+     * </p>
      * <p>
      * Default: The existing value is retained if you keep the same volume type. If you change the volume type to
      * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -542,20 +587,26 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        <code>gp3</code>: 3,000 - 16,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code>: 100-64,000 IOPS
+     *        <code>io1</code>: 100 - 64,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io2</code>: 100-64,000 IOPS
+     *        <code>io2</code>: 100 - 256,000 IOPS
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *        IOPS.
+     *        </p>
      *        <p>
      *        Default: The existing value is retained if you keep the same volume type. If you change the volume type to
      *        <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -576,20 +627,25 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
+     * </p>
      * <p>
      * Default: The existing value is retained if you keep the same volume type. If you change the volume type to
      * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -603,20 +659,26 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>gp3</code>: 3,000-16,000 IOPS
+     *         <code>gp3</code>: 3,000 - 16,000 IOPS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code>: 100-64,000 IOPS
+     *         <code>io1</code>: 100 - 64,000 IOPS
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io2</code>: 100-64,000 IOPS
+     *         <code>io2</code>: 100 - 256,000 IOPS
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *         >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *         IOPS.
+     *         </p>
      *         <p>
      *         Default: The existing value is retained if you keep the same volume type. If you change the volume type
      *         to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -637,20 +699,25 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <ul>
      * <li>
      * <p>
-     * <code>gp3</code>: 3,000-16,000 IOPS
+     * <code>gp3</code>: 3,000 - 16,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code>: 100-64,000 IOPS
+     * <code>io1</code>: 100 - 64,000 IOPS
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io2</code>: 100-64,000 IOPS
+     * <code>io2</code>: 100 - 256,000 IOPS
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.
+     * </p>
      * <p>
      * Default: The existing value is retained if you keep the same volume type. If you change the volume type to
      * <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -665,20 +732,26 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        <code>gp3</code>: 3,000 - 16,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code>: 100-64,000 IOPS
+     *        <code>io1</code>: 100 - 64,000 IOPS
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io2</code>: 100-64,000 IOPS
+     *        <code>io2</code>: 100 - 256,000 IOPS
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000
+     *        IOPS.
+     *        </p>
      *        <p>
      *        Default: The existing value is retained if you keep the same volume type. If you change the volume type to
      *        <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.
@@ -781,8 +854,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
      * <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param multiAttachEnabled
@@ -791,8 +864,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      *        Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      *        and <code>io2</code> volumes only. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *        Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public void setMultiAttachEnabled(Boolean multiAttachEnabled) {
@@ -805,8 +878,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
      * <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
@@ -814,8 +887,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      *         Nitro-based instances</a> in the same Availability Zone. This parameter is supported with
      *         <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *         Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public Boolean getMultiAttachEnabled() {
@@ -828,8 +901,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
      * <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param multiAttachEnabled
@@ -838,8 +911,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      *        Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code>
      *        and <code>io2</code> volumes only. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *        Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *        Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -854,8 +927,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      * Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and
      * <code>io2</code> volumes only. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the
@@ -863,8 +936,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
      *         Nitro-based instances</a> in the same Availability Zone. This parameter is supported with
      *         <code>io1</code> and <code>io2</code> volumes only. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html"> Amazon EBS
-     *         Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS
+     *         Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public Boolean isMultiAttachEnabled() {

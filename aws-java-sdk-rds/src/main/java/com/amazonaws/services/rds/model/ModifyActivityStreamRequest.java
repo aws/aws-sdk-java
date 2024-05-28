@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class ModifyActivityStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     * <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     * The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     * <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      * </p>
      */
     private String resourceArn;
@@ -42,13 +42,13 @@ public class ModifyActivityStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     * <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     * The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     * <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     *        <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     *        The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     *        <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,12 +57,12 @@ public class ModifyActivityStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     * <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     * The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     * <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     *         <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     * @return The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     *         <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      */
 
     public String getResourceArn() {
@@ -71,13 +71,13 @@ public class ModifyActivityStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     * <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     * The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     * <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example,
-     *        <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.
+     *        The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example,
+     *        <code>arn:aws:rds:us-east-1:12345667890:db:my-orcl-db</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

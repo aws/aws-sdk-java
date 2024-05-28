@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,19 @@ public class ExecutionResult implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Long recordsProcessed;
+    /**
+     * <p>
+     * The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     * </p>
+     */
+    private Long numParallelProcesses;
+    /**
+     * <p>
+     * The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     * application.
+     * </p>
+     */
+    private Long maxPageSize;
 
     /**
      * <p>
@@ -214,6 +227,92 @@ public class ExecutionResult implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     * </p>
+     * 
+     * @param numParallelProcesses
+     *        The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     */
+
+    public void setNumParallelProcesses(Long numParallelProcesses) {
+        this.numParallelProcesses = numParallelProcesses;
+    }
+
+    /**
+     * <p>
+     * The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     * </p>
+     * 
+     * @return The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     */
+
+    public Long getNumParallelProcesses() {
+        return this.numParallelProcesses;
+    }
+
+    /**
+     * <p>
+     * The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     * </p>
+     * 
+     * @param numParallelProcesses
+     *        The number of processes that Amazon AppFlow ran at the same time when it retrieved your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionResult withNumParallelProcesses(Long numParallelProcesses) {
+        setNumParallelProcesses(numParallelProcesses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     * application.
+     * </p>
+     * 
+     * @param maxPageSize
+     *        The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     *        application.
+     */
+
+    public void setMaxPageSize(Long maxPageSize) {
+        this.maxPageSize = maxPageSize;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     * application.
+     * </p>
+     * 
+     * @return The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     *         application.
+     */
+
+    public Long getMaxPageSize() {
+        return this.maxPageSize;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     * application.
+     * </p>
+     * 
+     * @param maxPageSize
+     *        The maximum number of records that Amazon AppFlow receives in each page of the response from your SAP
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionResult withMaxPageSize(Long maxPageSize) {
+        setMaxPageSize(maxPageSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +331,11 @@ public class ExecutionResult implements Serializable, Cloneable, StructuredPojo 
         if (getBytesWritten() != null)
             sb.append("BytesWritten: ").append(getBytesWritten()).append(",");
         if (getRecordsProcessed() != null)
-            sb.append("RecordsProcessed: ").append(getRecordsProcessed());
+            sb.append("RecordsProcessed: ").append(getRecordsProcessed()).append(",");
+        if (getNumParallelProcesses() != null)
+            sb.append("NumParallelProcesses: ").append(getNumParallelProcesses()).append(",");
+        if (getMaxPageSize() != null)
+            sb.append("MaxPageSize: ").append(getMaxPageSize());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +366,14 @@ public class ExecutionResult implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getRecordsProcessed() != null && other.getRecordsProcessed().equals(this.getRecordsProcessed()) == false)
             return false;
+        if (other.getNumParallelProcesses() == null ^ this.getNumParallelProcesses() == null)
+            return false;
+        if (other.getNumParallelProcesses() != null && other.getNumParallelProcesses().equals(this.getNumParallelProcesses()) == false)
+            return false;
+        if (other.getMaxPageSize() == null ^ this.getMaxPageSize() == null)
+            return false;
+        if (other.getMaxPageSize() != null && other.getMaxPageSize().equals(this.getMaxPageSize()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +386,8 @@ public class ExecutionResult implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getBytesProcessed() == null) ? 0 : getBytesProcessed().hashCode());
         hashCode = prime * hashCode + ((getBytesWritten() == null) ? 0 : getBytesWritten().hashCode());
         hashCode = prime * hashCode + ((getRecordsProcessed() == null) ? 0 : getRecordsProcessed().hashCode());
+        hashCode = prime * hashCode + ((getNumParallelProcesses() == null) ? 0 : getNumParallelProcesses().hashCode());
+        hashCode = prime * hashCode + ((getMaxPageSize() == null) ? 0 : getMaxPageSize().hashCode());
         return hashCode;
     }
 

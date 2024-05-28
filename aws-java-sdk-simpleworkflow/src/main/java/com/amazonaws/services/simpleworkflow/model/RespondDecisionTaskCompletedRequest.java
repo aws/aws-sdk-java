@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,27 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String executionContext;
+    /**
+     * <p>
+     * The task list to use for the future decision tasks of this workflow execution. This list overrides the original
+     * task list you specified while starting the workflow execution.
+     * </p>
+     */
+    private TaskList taskList;
+    /**
+     * <p>
+     * Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list
+     * override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task
+     * scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon
+     * SWF will revert the override and schedule a new decision task to the original task list.
+     * </p>
+     * <p>
+     * If a decision task scheduled on the override task list is started within the timeout, but not completed within
+     * the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the
+     * original task list.
+     * </p>
+     */
+    private String taskListScheduleToStartTimeout;
 
     /**
      * <p>
@@ -250,6 +271,140 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The task list to use for the future decision tasks of this workflow execution. This list overrides the original
+     * task list you specified while starting the workflow execution.
+     * </p>
+     * 
+     * @param taskList
+     *        The task list to use for the future decision tasks of this workflow execution. This list overrides the
+     *        original task list you specified while starting the workflow execution.
+     */
+
+    public void setTaskList(TaskList taskList) {
+        this.taskList = taskList;
+    }
+
+    /**
+     * <p>
+     * The task list to use for the future decision tasks of this workflow execution. This list overrides the original
+     * task list you specified while starting the workflow execution.
+     * </p>
+     * 
+     * @return The task list to use for the future decision tasks of this workflow execution. This list overrides the
+     *         original task list you specified while starting the workflow execution.
+     */
+
+    public TaskList getTaskList() {
+        return this.taskList;
+    }
+
+    /**
+     * <p>
+     * The task list to use for the future decision tasks of this workflow execution. This list overrides the original
+     * task list you specified while starting the workflow execution.
+     * </p>
+     * 
+     * @param taskList
+     *        The task list to use for the future decision tasks of this workflow execution. This list overrides the
+     *        original task list you specified while starting the workflow execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RespondDecisionTaskCompletedRequest withTaskList(TaskList taskList) {
+        setTaskList(taskList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list
+     * override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task
+     * scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon
+     * SWF will revert the override and schedule a new decision task to the original task list.
+     * </p>
+     * <p>
+     * If a decision task scheduled on the override task list is started within the timeout, but not completed within
+     * the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the
+     * original task list.
+     * </p>
+     * 
+     * @param taskListScheduleToStartTimeout
+     *        Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list
+     *        override is permanent. This parameter makes it possible to temporarily override the task list. If a
+     *        decision task scheduled on the override task list is not started within the timeout, the decision task
+     *        will time out. Amazon SWF will revert the override and schedule a new decision task to the original task
+     *        list.</p>
+     *        <p>
+     *        If a decision task scheduled on the override task list is started within the timeout, but not completed
+     *        within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision
+     *        task to the original task list.
+     */
+
+    public void setTaskListScheduleToStartTimeout(String taskListScheduleToStartTimeout) {
+        this.taskListScheduleToStartTimeout = taskListScheduleToStartTimeout;
+    }
+
+    /**
+     * <p>
+     * Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list
+     * override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task
+     * scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon
+     * SWF will revert the override and schedule a new decision task to the original task list.
+     * </p>
+     * <p>
+     * If a decision task scheduled on the override task list is started within the timeout, but not completed within
+     * the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the
+     * original task list.
+     * </p>
+     * 
+     * @return Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task
+     *         list override is permanent. This parameter makes it possible to temporarily override the task list. If a
+     *         decision task scheduled on the override task list is not started within the timeout, the decision task
+     *         will time out. Amazon SWF will revert the override and schedule a new decision task to the original task
+     *         list.</p>
+     *         <p>
+     *         If a decision task scheduled on the override task list is started within the timeout, but not completed
+     *         within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision
+     *         task to the original task list.
+     */
+
+    public String getTaskListScheduleToStartTimeout() {
+        return this.taskListScheduleToStartTimeout;
+    }
+
+    /**
+     * <p>
+     * Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list
+     * override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task
+     * scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon
+     * SWF will revert the override and schedule a new decision task to the original task list.
+     * </p>
+     * <p>
+     * If a decision task scheduled on the override task list is started within the timeout, but not completed within
+     * the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the
+     * original task list.
+     * </p>
+     * 
+     * @param taskListScheduleToStartTimeout
+     *        Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list
+     *        override is permanent. This parameter makes it possible to temporarily override the task list. If a
+     *        decision task scheduled on the override task list is not started within the timeout, the decision task
+     *        will time out. Amazon SWF will revert the override and schedule a new decision task to the original task
+     *        list.</p>
+     *        <p>
+     *        If a decision task scheduled on the override task list is started within the timeout, but not completed
+     *        within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision
+     *        task to the original task list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RespondDecisionTaskCompletedRequest withTaskListScheduleToStartTimeout(String taskListScheduleToStartTimeout) {
+        setTaskListScheduleToStartTimeout(taskListScheduleToStartTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -266,7 +421,11 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
         if (getDecisions() != null)
             sb.append("Decisions: ").append(getDecisions()).append(",");
         if (getExecutionContext() != null)
-            sb.append("ExecutionContext: ").append(getExecutionContext());
+            sb.append("ExecutionContext: ").append(getExecutionContext()).append(",");
+        if (getTaskList() != null)
+            sb.append("TaskList: ").append(getTaskList()).append(",");
+        if (getTaskListScheduleToStartTimeout() != null)
+            sb.append("TaskListScheduleToStartTimeout: ").append(getTaskListScheduleToStartTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +452,15 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getExecutionContext() != null && other.getExecutionContext().equals(this.getExecutionContext()) == false)
             return false;
+        if (other.getTaskList() == null ^ this.getTaskList() == null)
+            return false;
+        if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false)
+            return false;
+        if (other.getTaskListScheduleToStartTimeout() == null ^ this.getTaskListScheduleToStartTimeout() == null)
+            return false;
+        if (other.getTaskListScheduleToStartTimeout() != null
+                && other.getTaskListScheduleToStartTimeout().equals(this.getTaskListScheduleToStartTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -304,6 +472,8 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getTaskToken() == null) ? 0 : getTaskToken().hashCode());
         hashCode = prime * hashCode + ((getDecisions() == null) ? 0 : getDecisions().hashCode());
         hashCode = prime * hashCode + ((getExecutionContext() == null) ? 0 : getExecutionContext().hashCode());
+        hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode());
+        hashCode = prime * hashCode + ((getTaskListScheduleToStartTimeout() == null) ? 0 : getTaskListScheduleToStartTimeout().hashCode());
         return hashCode;
     }
 

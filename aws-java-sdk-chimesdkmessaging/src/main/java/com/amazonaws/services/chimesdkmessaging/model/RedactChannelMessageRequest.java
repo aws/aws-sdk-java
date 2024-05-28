@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
     private String messageId;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      */
     private String chimeBearer;
@@ -132,11 +132,11 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -145,10 +145,10 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public String getChimeBearer() {
@@ -157,11 +157,11 @@ public class RedactChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

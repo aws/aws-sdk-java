@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,56 @@ public class RetryDataReplicationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Retry data replication for Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Retry data replication for Source Server ID.
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * Retry data replication for Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Retry data replication for Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Retry data replication for Account ID.
+     * </p>
+     * 
+     * @return Retry data replication for Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Retry data replication for Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Retry data replication for Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +130,8 @@ public class RetryDataReplicationRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID());
         sb.append("}");
@@ -100,6 +148,10 @@ public class RetryDataReplicationRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof RetryDataReplicationRequest == false)
             return false;
         RetryDataReplicationRequest other = (RetryDataReplicationRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
         if (other.getSourceServerID() != null && other.getSourceServerID().equals(this.getSourceServerID()) == false)
@@ -112,6 +164,7 @@ public class RetryDataReplicationRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         return hashCode;
     }

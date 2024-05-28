@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Table represents a database table in Timestream. Tables contain one or more related time series. You can modify the
+ * Represents a database table in Timestream. Tables contain one or more related time series. You can modify the
  * retention duration of the memory store and the magnetic store for a table.
  * </p>
  * 
@@ -89,6 +89,12 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MagneticStoreWriteProperties magneticStoreWriteProperties;
+    /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     */
+    private Schema schema;
 
     /**
      * <p>
@@ -522,6 +528,46 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     * 
+     * @param schema
+     *        The schema of the table.
+     */
+
+    public void setSchema(Schema schema) {
+        this.schema = schema;
+    }
+
+    /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     * 
+     * @return The schema of the table.
+     */
+
+    public Schema getSchema() {
+        return this.schema;
+    }
+
+    /**
+     * <p>
+     * The schema of the table.
+     * </p>
+     * 
+     * @param schema
+     *        The schema of the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withSchema(Schema schema) {
+        setSchema(schema);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -548,7 +594,9 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getMagneticStoreWriteProperties() != null)
-            sb.append("MagneticStoreWriteProperties: ").append(getMagneticStoreWriteProperties());
+            sb.append("MagneticStoreWriteProperties: ").append(getMagneticStoreWriteProperties()).append(",");
+        if (getSchema() != null)
+            sb.append("Schema: ").append(getSchema());
         sb.append("}");
         return sb.toString();
     }
@@ -595,6 +643,10 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMagneticStoreWriteProperties() != null && other.getMagneticStoreWriteProperties().equals(this.getMagneticStoreWriteProperties()) == false)
             return false;
+        if (other.getSchema() == null ^ this.getSchema() == null)
+            return false;
+        if (other.getSchema() != null && other.getSchema().equals(this.getSchema()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +663,7 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getMagneticStoreWriteProperties() == null) ? 0 : getMagneticStoreWriteProperties().hashCode());
+        hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         return hashCode;
     }
 

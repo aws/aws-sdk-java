@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of information about a AWS IoT Device Management web application.
+ * A summary of information about a Fleet Hub for IoT Device Management web application.
  * </p>
- * <note>
- * <p>
- * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleethub-2020-11-03/ApplicationSummary" target="_top">AWS API
  *      Documentation</a>

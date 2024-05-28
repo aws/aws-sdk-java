@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,20 @@ public class DescribeOrganizationConfigurationRequest extends com.amazonaws.Amaz
      * </p>
      */
     private String detectorId;
+    /**
+     * <p>
+     * You can use this parameter to indicate the maximum number of items that you want in the response.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of
+     * <code>NextToken</code> from the previous response to continue listing data.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -73,6 +87,98 @@ public class DescribeOrganizationConfigurationRequest extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * You can use this parameter to indicate the maximum number of items that you want in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        You can use this parameter to indicate the maximum number of items that you want in the response.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to indicate the maximum number of items that you want in the response.
+     * </p>
+     * 
+     * @return You can use this parameter to indicate the maximum number of items that you want in the response.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to indicate the maximum number of items that you want in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        You can use this parameter to indicate the maximum number of items that you want in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrganizationConfigurationRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of
+     * <code>NextToken</code> from the previous response to continue listing data.
+     * </p>
+     * 
+     * @param nextToken
+     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *        call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request
+     *        with the value of <code>NextToken</code> from the previous response to continue listing data.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of
+     * <code>NextToken</code> from the previous response to continue listing data.
+     * </p>
+     * 
+     * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *         call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request
+     *         with the value of <code>NextToken</code> from the previous response to continue listing data.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
+     * the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request with the value of
+     * <code>NextToken</code> from the previous response to continue listing data.
+     * </p>
+     * 
+     * @param nextToken
+     *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
+     *        call to the list action. For subsequent calls to the action, fill <code>nextToken</code> in the request
+     *        with the value of <code>NextToken</code> from the previous response to continue listing data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrganizationConfigurationRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +191,11 @@ public class DescribeOrganizationConfigurationRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDetectorId() != null)
-            sb.append("DetectorId: ").append(getDetectorId());
+            sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +214,14 @@ public class DescribeOrganizationConfigurationRequest extends com.amazonaws.Amaz
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +231,8 @@ public class DescribeOrganizationConfigurationRequest extends com.amazonaws.Amaz
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

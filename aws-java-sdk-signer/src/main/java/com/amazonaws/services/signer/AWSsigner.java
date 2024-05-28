@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,29 +28,32 @@ import com.amazonaws.services.signer.waiters.AWSsignerWaiters;
  * </p>
  * <p>
  * <p>
- * AWS Signer is a fully managed code signing service to help you ensure the trust and integrity of your code.
+ * AWS Signer is a fully managed code-signing service to help you ensure the trust and integrity of your code.
  * </p>
  * <p>
- * AWS Signer supports the following applications:
+ * Signer supports the following applications:
  * </p>
  * <p>
- * With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages. Integrated support is provided
- * for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then
- * use Signer to sign Lambda zip files in S3.
+ * With code signing for AWS Lambda, you can sign <a href="http://docs.aws.amazon.com/lambda/latest/dg/">AWS Lambda</a>
+ * deployment packages. Integrated support is provided for <a
+ * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/">Amazon S3</a>, <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/">Amazon CloudWatch</a>, and <a
+ * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail</a>. In order to sign code, you
+ * create a signing profile and then use Signer to sign Lambda zip files in S3.
  * </p>
  * <p>
- * With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported by AWS. IoT code signing is
+ * With code signing for IoT, you can sign code for any IoT device that is supported by AWS. IoT code signing is
  * available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
  * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and is integrated with <a
  * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
- * import a third-party code signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT
- * Device Management.
+ * Project</a>, you can sign container images stored in a container registry such as Amazon Elastic Container Registry
+ * (ECR). The signatures are stored in the registry alongside the images, where they are available for verifying image
+ * authenticity and integrity.
  * </p>
  * <p>
- * For more information about AWS Signer, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * For more information about Signer, see the <a
+ * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
  * </p>
- * <p/>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSsigner {
@@ -143,6 +146,29 @@ public interface AWSsigner {
 
     /**
      * <p>
+     * Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate.
+     * </p>
+     * 
+     * @param getRevocationStatusRequest
+     * @return Result of the GetRevocationStatus operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.GetRevocationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetRevocationStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetRevocationStatusResult getRevocationStatus(GetRevocationStatusRequest getRevocationStatusRequest);
+
+    /**
+     * <p>
      * Returns information on a specific signing platform.
      * </p>
      * 
@@ -215,10 +241,10 @@ public interface AWSsigner {
     /**
      * <p>
      * Lists all your signing jobs. You can use the <code>maxResults</code> parameter to limit the number of signing
-     * jobs that are returned in the response. If additional jobs remain to be listed, code signing returns a
+     * jobs that are returned in the response. If additional jobs remain to be listed, AWS Signer returns a
      * <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the
      * remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-     * parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your
+     * parameter and with new values that Signer returns in the <code>nextToken</code> parameter until all of your
      * signing jobs have been returned.
      * </p>
      * 
@@ -242,11 +268,11 @@ public interface AWSsigner {
 
     /**
      * <p>
-     * Lists all signing platforms available in code signing that match the request parameters. If additional jobs
-     * remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to
+     * Lists all signing platforms available in AWS Signer that match the request parameters. If additional jobs remain
+     * to be listed, Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to
      * <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-     * with your <code>maxResults</code> parameter and with new values that code signing returns in the
-     * <code>nextToken</code> parameter until all of your signing jobs have been returned.
+     * with your <code>maxResults</code> parameter and with new values that Signer returns in the <code>nextToken</code>
+     * parameter until all of your signing jobs have been returned.
      * </p>
      * 
      * @param listSigningPlatformsRequest
@@ -271,10 +297,10 @@ public interface AWSsigner {
      * <p>
      * Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code>
      * status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs
-     * remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to
+     * remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this value in subsequent calls to
      * <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-     * with your <code>maxResults</code> parameter and with new values that code signing returns in the
-     * <code>nextToken</code> parameter until all of your signing jobs have been returned.
+     * with your <code>maxResults</code> parameter and with new values that Signer returns in the <code>nextToken</code>
+     * parameter until all of your signing jobs have been returned.
      * </p>
      * 
      * @param listSigningProfilesRequest
@@ -319,10 +345,8 @@ public interface AWSsigner {
 
     /**
      * <p>
-     * Creates a signing profile. A signing profile is a code signing template that can be used to carry out a
-     * pre-defined signing job. For more information, see <a
-     * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html"
-     * >http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+     * Creates a signing profile. A signing profile is a code-signing template that can be used to carry out a
+     * pre-defined signing job.
      * </p>
      * 
      * @param putSigningProfileRequest
@@ -425,6 +449,31 @@ public interface AWSsigner {
 
     /**
      * <p>
+     * Signs a binary payload and returns a signature envelope.
+     * </p>
+     * 
+     * @param signPayloadRequest
+     * @return Result of the SignPayload operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.SignPayload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignPayload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SignPayloadResult signPayload(SignPayloadRequest signPayloadRequest);
+
+    /**
+     * <p>
      * Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the
      * <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements:
      * </p>
@@ -432,7 +481,7 @@ public interface AWSsigner {
      * <li>
      * <p>
      * You must create an Amazon S3 source bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the <i>Amazon
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating a Bucket</a> in the <i>Amazon
      * S3 Getting Started Guide</i>.
      * </p>
      * </li>
@@ -443,7 +492,7 @@ public interface AWSsigner {
      * </li>
      * <li>
      * <p>
-     * You must create an S3 destination bucket. Code signing uses your S3 destination bucket to write your signed code.
+     * You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket to write your signed code.
      * </p>
      * </li>
      * <li>
@@ -454,7 +503,13 @@ public interface AWSsigner {
      * </li>
      * <li>
      * <p>
-     * You must also specify a request token that identifies your request to code signing.
+     * You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region signing isn't
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must also specify a request token that identifies your request to Signer.
      * </p>
      * </li>
      * </ul>
@@ -464,7 +519,7 @@ public interface AWSsigner {
      * </p>
      * <p>
      * For a Java example that shows how to use this action, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+     * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.
      * </p>
      * 
      * @param startSigningJobRequest

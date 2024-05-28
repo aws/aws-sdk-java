@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,13 @@ import com.amazonaws.services.codecommit.model.*;
  * {@link com.amazonaws.services.codecommit.AbstractAWSCodeCommit} instead.
  * </p>
  * <p>
- * <fullname>AWS CodeCommit</fullname>
+ * <fullname>CodeCommit</fullname>
  * <p>
- * This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data
- * types for AWS CodeCommit API along with usage examples.
+ * This is the <i>CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types
+ * for CodeCommit API along with usage examples.
  * </p>
  * <p>
- * You can use the AWS CodeCommit API to work with the following objects:
+ * You can use the CodeCommit API to work with the following objects:
  * </p>
  * <p>
  * Repositories, by calling the following:
@@ -40,18 +40,18 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
- * account.
+ * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your Amazon Web
+ * Services account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
+ * <a>CreateRepository</a>, which creates an CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
+ * <a>DeleteRepository</a>, which deletes an CodeCommit repository.
  * </p>
  * </li>
  * <li>
@@ -61,12 +61,18 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account.
+ * <a>ListRepositories</a>, which lists all CodeCommit repositories associated with your Amazon Web Services account.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateRepositoryEncryptionKey</a>, which updates the Key Management Service encryption key used to encrypt and
+ * decrypt a repository.
  * </p>
  * </li>
  * <li>
@@ -128,6 +134,11 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListFileCommitHistory</a>, which retrieves a list of commits and changes to a specified file.
  * </p>
  * </li>
  * <li>
@@ -290,7 +301,7 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * <a>MergePullRequestByThreeWay</a>, which merges the source destination branch of a pull request into the specified
  * destination branch for that pull request using the three-way merge option.
  * </p>
  * </li>
@@ -337,15 +348,15 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>AssociateApprovalRuleTemplateWithRepository</a>, which associates a template with a specified repository. After
- * the template is associated with a repository, AWS CodeCommit creates approval rules that match the template
- * conditions on every pull request created in the specified repository.
+ * the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on
+ * every pull request created in the specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>BatchAssociateApprovalRuleTemplateWithRepositories</a>, which associates a template with one or more specified
- * repositories. After the template is associated with a repository, AWS CodeCommit creates approval rules that match
- * the template conditions on every pull request created in the specified repositories.
+ * repositories. After the template is associated with a repository, CodeCommit creates approval rules that match the
+ * template conditions on every pull request created in the specified repositories.
  * </p>
  * </li>
  * <li>
@@ -358,7 +369,7 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>CreateApprovalRuleTemplate</a>, which creates a template for approval rules that can then be associated with one
- * or more repositories in your AWS account.
+ * or more repositories in your Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -381,7 +392,8 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
- * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the AWS Region in your AWS account.
+ * <a>ListApprovalRuleTemplates</a>, which lists all approval rule templates in the Amazon Web Services Region in your
+ * Amazon Web Services account.
  * </p>
  * </li>
  * <li>
@@ -460,23 +472,23 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
- * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * Tags used to tag resources in CodeCommit (not Git tags), by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
- * CodeCommit.
+ * <a>ListTagsForResource</a>, which gets information about Amazon Web Servicestags for a specified Amazon Resource Name
+ * (ARN) in CodeCommit.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * <a>TagResource</a>, which adds or updates tags for a resource in CodeCommit.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
+ * <a>UntagResource</a>, which removes tags for a resource in CodeCommit.
  * </p>
  * </li>
  * </ul>
@@ -503,8 +515,8 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeCommit, see the <a
- * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * For information about how to use CodeCommit, see the <a
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -585,11 +597,12 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws MaximumRuleTemplatesAssociatedWithRepositoryException
      *         The maximum number of approval rule templates for a repository has been exceeded. You cannot associate
      *         more than 25 approval rule templates with a repository.
@@ -632,11 +645,12 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws RepositoryNamesRequiredException
      *         At least one repository name object is required, but was not specified.
      * @throws MaximumRepositoryNamesExceededException
@@ -734,11 +748,12 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws RepositoryNamesRequiredException
      *         At least one repository name object is required, but was not specified.
      * @throws MaximumRepositoryNamesExceededException
@@ -843,9 +858,9 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Creates a template for approval rules that can then be associated with one or more repositories in your AWS
-     * account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches
-     * the conditions of the template for all pull requests that meet the conditions of the template. For more
+     * Creates a template for approval rules that can then be associated with one or more repositories in your Amazon
+     * Web Services account. When you associate a template with a repository, CodeCommit creates an approval rule that
+     * matches the conditions of the template for all pull requests that meet the conditions of the template. For more
      * information, see <a>AssociateApprovalRuleTemplateWithRepository</a>.
      * </p>
      * 
@@ -855,11 +870,13 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateNameAlreadyExistsException
      *         You cannot create an approval rule template with that name because a template with that name already
-     *         exists in this AWS Region for your AWS account. Approval rule template names must be unique.
+     *         exists in this Amazon Web Services Region for your Amazon Web Services account. Approval rule template
+     *         names must be unique.
      * @throws ApprovalRuleTemplateContentRequiredException
      *         The content for the approval rule template is empty. You must provide some content for an approval rule
      *         template. The content cannot be null.
@@ -867,10 +884,11 @@ public interface AWSCodeCommit {
      *         The content of the approval rule template is not valid.
      * @throws InvalidApprovalRuleTemplateDescriptionException
      *         The description for the approval rule template is not valid because it exceeds the maximum characters
-     *         allowed for a description. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         allowed for a description. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws NumberOfRuleTemplatesExceededException
-     *         The maximum number of approval rule templates has been exceeded for this AWS Region.
+     *         The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region.
      * @sample AWSCodeCommit.CreateApprovalRuleTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate"
      *      target="_top">AWS API Documentation</a>
@@ -1089,7 +1107,7 @@ public interface AWSCodeCommit {
      *         A reference name is required, but none was provided.
      * @throws InvalidReferenceNameException
      *         The specified reference name format is not valid. Reference names must conform to the Git references
-     *         format (for example, refs/heads/master). For more information, see <a
+     *         format (for example, refs/heads/main). For more information, see <a
      *         href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or
      *         consult your Git documentation.
      * @throws ReferenceDoesNotExistException
@@ -1210,10 +1228,15 @@ public interface AWSCodeCommit {
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
+     * @throws EncryptionKeyInvalidIdException
+     *         The Key Management Service encryption key is not valid.
+     * @throws EncryptionKeyInvalidUsageException
+     *         A KMS encryption key was used to try and encrypt or decrypt a repository, but either the repository or
+     *         the key was not in a valid state to support the operation.
      * @throws InvalidTagsMapException
      *         The map of tags is not valid.
      * @throws TooManyTagsException
-     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     *         The maximum number of tags for an CodeCommit resource has been exceeded.
      * @throws InvalidSystemTagUsageException
      *         The specified tag is not valid. Key names cannot be prefixed with aws:.
      * @throws TagPolicyException
@@ -1347,8 +1370,9 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateInUseException
      *         The approval rule template is associated with one or more repositories. You cannot delete a template that
      *         is associated with a repository. Remove all associations, and then try again.
@@ -1661,7 +1685,7 @@ public interface AWSCodeCommit {
      *         The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user
      *         who initiated the change for the pull request, and then try again.
      * @throws ActorDoesNotExistException
-     *         The specified Amazon Resource Name (ARN) does not exist in the AWS account.
+     *         The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services account.
      * @throws InvalidMaxResultsException
      *         The specified number of maximum results is not valid.
      * @throws InvalidContinuationTokenException
@@ -1695,11 +1719,12 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws RepositoryNameRequiredException
      *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
@@ -1777,11 +1802,12 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @sample AWSCodeCommit.GetApprovalRuleTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate"
      *      target="_top">AWS API Documentation</a>
@@ -1823,9 +1849,9 @@ public interface AWSCodeCommit {
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @throws FileTooLargeException
-     *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-     *         CodeCommit User Guide</a>.
+     *         The specified file exceeds the file size limit for CodeCommit. For more information about limits in
+     *         CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+     *         in the <i>CodeCommit User Guide</i>.
      * @sample AWSCodeCommit.GetBlob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob" target="_top">AWS API
      *      Documentation</a>
@@ -2179,9 +2205,9 @@ public interface AWSCodeCommit {
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
      * @throws FileTooLargeException
-     *         The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in
-     *         AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS
-     *         CodeCommit User Guide</a>.
+     *         The specified file exceeds the file size limit for CodeCommit. For more information about limits in
+     *         CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+     *         in the <i>CodeCommit User Guide</i>.
      * @sample AWSCodeCommit.GetFile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile" target="_top">AWS API
      *      Documentation</a>
@@ -2579,8 +2605,9 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not
-     * specified, the AWS Region where you are signed in is used.
+     * Lists all approval rule templates in the specified Amazon Web Services Region in your Amazon Web Services
+     * account. If an Amazon Web Services Region is not specified, the Amazon Web Services Region where you are signed
+     * in is used.
      * </p>
      * 
      * @param listApprovalRuleTemplatesRequest
@@ -2672,6 +2699,53 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
+     * Retrieves a list of commits and changes to a specified file.
+     * </p>
+     * 
+     * @param listFileCommitHistoryRequest
+     * @return Result of the ListFileCommitHistory operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required, but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         A specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws InvalidMaxResultsException
+     *         The specified number of maximum results is not valid.
+     * @throws TipsDivergenceExceededException
+     *         The divergence between the tips of the provided commit specifiers is too great to determine whether there
+     *         might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.
+     * @throws CommitRequiredException
+     *         A commit was not specified.
+     * @throws InvalidCommitException
+     *         The specified commit is not valid.
+     * @throws CommitDoesNotExistException
+     *         The specified commit does not exist or no commit was specified, and the specified repository has no
+     *         default branch.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.ListFileCommitHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFileCommitHistoryResult listFileCommitHistory(ListFileCommitHistoryRequest listFileCommitHistoryRequest);
+
+    /**
+     * <p>
      * Returns a list of pull requests for a specified repository. The return list can be refined by pull request status
      * or pull request author ARN.
      * </p>
@@ -2685,7 +2759,7 @@ public interface AWSCodeCommit {
      *         The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the author
      *         of the pull request, and then try again.
      * @throws AuthorDoesNotExistException
-     *         The specified Amazon Resource Name (ARN) does not exist in the AWS account.
+     *         The specified Amazon Resource Name (ARN) does not exist in the Amazon Web Services account.
      * @throws RepositoryNameRequiredException
      *         A repository name is required, but was not specified.
      * @throws InvalidRepositoryNameException
@@ -2747,11 +2821,12 @@ public interface AWSCodeCommit {
      *         An approval rule template name is required, but was not specified.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws InvalidMaxResultsException
      *         The specified number of maximum results is not valid.
      * @throws InvalidContinuationTokenException
@@ -2776,10 +2851,10 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
-     * resources in AWS CodeCommit, see <a href=
+     * Gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit. For a
+     * list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the<i> CodeCommit User Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2793,15 +2868,15 @@ public interface AWSCodeCommit {
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ResourceArnRequiredException
-     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
-     *         resources in AWS CodeCommit, see <a href=
+     *         A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources
+     *         in CodeCommit, see <a href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     *         >CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
      * @throws InvalidResourceArnException
-     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-     *         <a href=
+     *         The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a
+     *         href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     *         >CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
      * @sample AWSCodeCommit.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -3450,7 +3525,7 @@ public interface AWSCodeCommit {
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
-     *         The comment is too large. Comments are limited to 1,000 characters.
+     *         The comment is too large. Comments are limited to 10,240 characters.
      * @throws InvalidFileLocationException
      *         The location of the file is not valid. Make sure that you include the file name and extension.
      * @throws InvalidRelativeFileVersionEnumException
@@ -3534,7 +3609,7 @@ public interface AWSCodeCommit {
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
-     *         The comment is too large. Comments are limited to 1,000 characters.
+     *         The comment is too large. Comments are limited to 10,240 characters.
      * @throws InvalidFileLocationException
      *         The location of the file is not valid. Make sure that you include the file name and extension.
      * @throws InvalidRelativeFileVersionEnumException
@@ -3597,7 +3672,7 @@ public interface AWSCodeCommit {
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
-     *         The comment is too large. Comments are limited to 1,000 characters.
+     *         The comment is too large. Comments are limited to 10,240 characters.
      * @throws CommentDoesNotExistException
      *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
      * @throws CommentIdRequiredException
@@ -3626,8 +3701,7 @@ public interface AWSCodeCommit {
      *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
      * @throws InvalidReactionValueException
      *         The value of the reaction is not valid. For more information, see the <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User
-     *         Guide</a>.
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.
      * @throws ReactionValueRequiredException
      *         A reaction value is required.
      * @throws ReactionLimitExceededException
@@ -3643,8 +3717,8 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in
-     * the specified branch.
+     * Adds or updates a file in a branch in an CodeCommit repository, and generates a commit for the addition in the
+     * specified branch.
      * </p>
      * 
      * @param putFileRequest
@@ -3764,8 +3838,9 @@ public interface AWSCodeCommit {
      *         The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most
      *         common reason for this error is that the ARN does not meet the requirements for the service type.
      * @throws InvalidRepositoryTriggerRegionException
-     *         The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be
-     *         created in the same Region as the target for the trigger.
+     *         The Amazon Web Services Region for the trigger target does not match the Amazon Web Services Region for
+     *         the repository. Triggers must be created in the same Amazon Web Services Region as the target for the
+     *         trigger.
      * @throws InvalidRepositoryTriggerCustomDataException
      *         The custom data provided for the trigger is not valid.
      * @throws MaximumBranchesExceededException
@@ -3801,10 +3876,9 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
-     * href=
+     * Adds or updates tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -3818,21 +3892,21 @@ public interface AWSCodeCommit {
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ResourceArnRequiredException
-     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
-     *         resources in AWS CodeCommit, see <a href=
+     *         A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources
+     *         in CodeCommit, see <a href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     *         >CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
      * @throws InvalidResourceArnException
-     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-     *         <a href=
+     *         The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a
+     *         href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     *         >CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
      * @throws TagsMapRequiredException
      *         A map of tags is required.
      * @throws InvalidTagsMapException
      *         The map of tags is not valid.
      * @throws TooManyTagsException
-     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     *         The maximum number of tags for an CodeCommit resource has been exceeded.
      * @throws InvalidSystemTagUsageException
      *         The specified tag is not valid. Key names cannot be prefixed with aws:.
      * @throws TagPolicyException
@@ -3873,8 +3947,9 @@ public interface AWSCodeCommit {
      *         The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most
      *         common reason for this error is that the ARN does not meet the requirements for the service type.
      * @throws InvalidRepositoryTriggerRegionException
-     *         The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be
-     *         created in the same Region as the target for the trigger.
+     *         The Amazon Web Services Region for the trigger target does not match the Amazon Web Services Region for
+     *         the repository. Triggers must be created in the same Amazon Web Services Region as the target for the
+     *         trigger.
      * @throws InvalidRepositoryTriggerCustomDataException
      *         The custom data provided for the trigger is not valid.
      * @throws MaximumBranchesExceededException
@@ -3910,9 +3985,9 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * Removes tags for a resource in CodeCommit. For a list of valid resources in CodeCommit, see <a href=
      * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     * >CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.
+     * >CodeCommit Resources and Operations</a> in the <i>CodeCommit User Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3926,21 +4001,21 @@ public interface AWSCodeCommit {
      *         required repository parameter is missing, or when a specified repository does not exist.
      *         </p>
      * @throws ResourceArnRequiredException
-     *         A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid
-     *         resources in AWS CodeCommit, see <a href=
+     *         A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources
+     *         in CodeCommit, see <a href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     *         >CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
      * @throws InvalidResourceArnException
-     *         The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see
-     *         <a href=
+     *         The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a
+     *         href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
-     *         >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     *         >CodeCommit Resources and Operations</a> in the CodeCommit User Guide.
      * @throws TagKeysListRequiredException
      *         A list of tag keys is required. The list cannot be empty or null.
      * @throws InvalidTagKeysListException
      *         The list of tags is not valid.
      * @throws TooManyTagsException
-     *         The maximum number of tags for an AWS CodeCommit resource has been exceeded.
+     *         The maximum number of tags for an CodeCommit resource has been exceeded.
      * @throws InvalidSystemTagUsageException
      *         The specified tag is not valid. Key names cannot be prefixed with aws:.
      * @throws TagPolicyException
@@ -3961,13 +4036,14 @@ public interface AWSCodeCommit {
      * @return Result of the UpdateApprovalRuleTemplateContent operation returned by the service.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateNameRequiredException
      *         An approval rule template name is required, but was not specified.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws InvalidApprovalRuleTemplateContentException
      *         The content of the approval rule template is not valid.
      * @throws InvalidRuleContentSha256Exception
@@ -3990,17 +4066,19 @@ public interface AWSCodeCommit {
      * @return Result of the UpdateApprovalRuleTemplateDescription operation returned by the service.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateNameRequiredException
      *         An approval rule template name is required, but was not specified.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws InvalidApprovalRuleTemplateDescriptionException
      *         The description for the approval rule template is not valid because it exceeds the maximum characters
-     *         allowed for a description. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         allowed for a description. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @sample AWSCodeCommit.UpdateApprovalRuleTemplateDescription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription"
      *      target="_top">AWS API Documentation</a>
@@ -4017,16 +4095,18 @@ public interface AWSCodeCommit {
      * @return Result of the UpdateApprovalRuleTemplateName operation returned by the service.
      * @throws InvalidApprovalRuleTemplateNameException
      *         The name of the approval rule template is not valid. Template names must be between 1 and 100 valid
-     *         characters in length. For more information about limits in AWS CodeCommit, see <a
-     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         characters in length. For more information about limits in CodeCommit, see <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the
+     *         <i>CodeCommit User Guide</i>.
      * @throws ApprovalRuleTemplateNameRequiredException
      *         An approval rule template name is required, but was not specified.
      * @throws ApprovalRuleTemplateDoesNotExistException
      *         The specified approval rule template does not exist. Verify that the name is correct and that you are
-     *         signed in to the AWS Region where the template was created, and then try again.
+     *         signed in to the Amazon Web Services Region where the template was created, and then try again.
      * @throws ApprovalRuleTemplateNameAlreadyExistsException
      *         You cannot create an approval rule template with that name because a template with that name already
-     *         exists in this AWS Region for your AWS account. Approval rule template names must be unique.
+     *         exists in this Amazon Web Services Region for your Amazon Web Services account. Approval rule template
+     *         names must be unique.
      * @sample AWSCodeCommit.UpdateApprovalRuleTemplateName
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName"
      *      target="_top">AWS API Documentation</a>
@@ -4043,7 +4123,7 @@ public interface AWSCodeCommit {
      * @throws CommentContentRequiredException
      *         The comment is empty. You must provide some content for a comment. The content cannot be null.
      * @throws CommentContentSizeLimitExceededException
-     *         The comment is too large. Comments are limited to 1,000 characters.
+     *         The comment is too large. Comments are limited to 10,240 characters.
      * @throws CommentDoesNotExistException
      *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
      * @throws CommentIdRequiredException
@@ -4344,10 +4424,50 @@ public interface AWSCodeCommit {
 
     /**
      * <p>
-     * Renames a repository. The repository name must be unique across the calling AWS account. Repository names are
-     * limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix
-     * .git is prohibited. For more information about the limits on repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * Updates the Key Management Service encryption key used to encrypt and decrypt a CodeCommit repository.
+     * </p>
+     * 
+     * @param updateRepositoryEncryptionKeyRequest
+     * @return Result of the UpdateRepositoryEncryptionKey operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required, but was not specified.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         A specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception occurs only when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws EncryptionKeyRequiredException
+     *         A KMS encryption key ID is required but was not specified.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyInvalidIdException
+     *         The Key Management Service encryption key is not valid.
+     * @throws EncryptionKeyInvalidUsageException
+     *         A KMS encryption key was used to try and encrypt or decrypt a repository, but either the repository or
+     *         the key was not in a valid state to support the operation.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.UpdateRepositoryEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRepositoryEncryptionKeyResult updateRepositoryEncryptionKey(UpdateRepositoryEncryptionKeyRequest updateRepositoryEncryptionKeyRequest);
+
+    /**
+     * <p>
+     * Renames a repository. The repository name must be unique across the calling Amazon Web Services account.
+     * Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain
+     * characters. The suffix .git is prohibited. For more information about the limits on repository names, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the CodeCommit User
      * Guide.
      * </p>
      * 

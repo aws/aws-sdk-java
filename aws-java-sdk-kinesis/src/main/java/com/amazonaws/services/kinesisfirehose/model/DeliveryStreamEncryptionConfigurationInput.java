@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a
      * service-account CMK.
      * </p>
      */
@@ -39,29 +39,29 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
+     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant
-     * that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and
-     * decryption. Kinesis Data Firehose manages that grant.
+     * that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose
+     * manages that grant.
      * </p>
      * <p>
      * When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is encrypted
-     * with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.
+     * with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      * </p>
      * <p>
      * You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis Data
-     * Firehose throws a <code>LimitExceededException</code>.
+     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose throws
+     * a <code>LimitExceededException</code>.
      * </p>
      * <important>
      * <p>
-     * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
-     * information about symmetric and asymmetric CMKs, see <a
+     * To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information
+     * about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      */
@@ -70,13 +70,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a
      * service-account CMK.
      * </p>
      * 
      * @param keyARN
      *        If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource
-     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data
+     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>,
      *        Firehose uses a service-account CMK.
      */
 
@@ -87,13 +87,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a
      * service-account CMK.
      * </p>
      * 
      * @return If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon
-     *         Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis
-     *         Data Firehose uses a service-account CMK.
+     *         Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to
+     *         <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a service-account CMK.
      */
 
     public String getKeyARN() {
@@ -103,13 +103,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose uses a
      * service-account CMK.
      * </p>
      * 
      * @param keyARN
      *        If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource
-     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data
+     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>,
      *        Firehose uses a service-account CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -122,57 +122,56 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
+     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant
-     * that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and
-     * decryption. Kinesis Data Firehose manages that grant.
+     * that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose
+     * manages that grant.
      * </p>
      * <p>
      * When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is encrypted
-     * with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.
+     * with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      * </p>
      * <p>
      * You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis Data
-     * Firehose throws a <code>LimitExceededException</code>.
+     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose throws
+     * a <code>LimitExceededException</code>.
      * </p>
      * <important>
      * <p>
-     * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
-     * information about symmetric and asymmetric CMKs, see <a
+     * To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information
+     * about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
-     *        <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to
-     *        create a grant that allows the Kinesis Data Firehose service to use the customer managed CMK to perform
-     *        encryption and decryption. Kinesis Data Firehose manages that grant. </p>
+     *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create
+     *        a grant that allows the Firehose service to use the customer managed CMK to perform encryption and
+     *        decryption. Firehose manages that grant. </p>
      *        <p>
      *        When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is
-     *        encrypted with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for
-     *        retirement.
+     *        encrypted with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      *        </p>
      *        <p>
      *        You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     *        <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis
-     *        Data Firehose throws a <code>LimitExceededException</code>.
+     *        <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose
+     *        throws a <code>LimitExceededException</code>.
      *        </p>
      *        <important>
      *        <p>
-     *        To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
-     *        CMKs. For information about symmetric and asymmetric CMKs, see <a
+     *        To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For
+     *        information about symmetric and asymmetric CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *        Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *        Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *        </p>
      * @see KeyType
      */
@@ -184,56 +183,55 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
+     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant
-     * that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and
-     * decryption. Kinesis Data Firehose manages that grant.
+     * that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose
+     * manages that grant.
      * </p>
      * <p>
      * When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is encrypted
-     * with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.
+     * with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      * </p>
      * <p>
      * You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis Data
-     * Firehose throws a <code>LimitExceededException</code>.
+     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose throws
+     * a <code>LimitExceededException</code>.
      * </p>
      * <important>
      * <p>
-     * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
-     * information about symmetric and asymmetric CMKs, see <a
+     * To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information
+     * about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @return Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *         <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *         <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *         Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     *         <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
-     *         <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to
-     *         create a grant that allows the Kinesis Data Firehose service to use the customer managed CMK to perform
-     *         encryption and decryption. Kinesis Data Firehose manages that grant. </p>
+     *         <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
+     *         href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create
+     *         a grant that allows the Firehose service to use the customer managed CMK to perform encryption and
+     *         decryption. Firehose manages that grant. </p>
      *         <p>
      *         When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is
-     *         encrypted with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK
-     *         for retirement.
+     *         encrypted with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      *         </p>
      *         <p>
      *         You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     *         <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis
-     *         Data Firehose throws a <code>LimitExceededException</code>.
+     *         <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit,
+     *         Firehose throws a <code>LimitExceededException</code>.
      *         </p>
      *         <important>
      *         <p>
-     *         To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
-     *         CMKs. For information about symmetric and asymmetric CMKs, see <a
+     *         To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For
+     *         information about symmetric and asymmetric CMKs, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *         Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *         Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *         </p>
      * @see KeyType
      */
@@ -245,57 +243,56 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
+     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant
-     * that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and
-     * decryption. Kinesis Data Firehose manages that grant.
+     * that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose
+     * manages that grant.
      * </p>
      * <p>
      * When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is encrypted
-     * with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.
+     * with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      * </p>
      * <p>
      * You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis Data
-     * Firehose throws a <code>LimitExceededException</code>.
+     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose throws
+     * a <code>LimitExceededException</code>.
      * </p>
      * <important>
      * <p>
-     * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
-     * information about symmetric and asymmetric CMKs, see <a
+     * To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information
+     * about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
-     *        <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to
-     *        create a grant that allows the Kinesis Data Firehose service to use the customer managed CMK to perform
-     *        encryption and decryption. Kinesis Data Firehose manages that grant. </p>
+     *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create
+     *        a grant that allows the Firehose service to use the customer managed CMK to perform encryption and
+     *        decryption. Firehose manages that grant. </p>
      *        <p>
      *        When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is
-     *        encrypted with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for
-     *        retirement.
+     *        encrypted with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      *        </p>
      *        <p>
      *        You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     *        <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis
-     *        Data Firehose throws a <code>LimitExceededException</code>.
+     *        <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose
+     *        throws a <code>LimitExceededException</code>.
      *        </p>
      *        <important>
      *        <p>
-     *        To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
-     *        CMKs. For information about symmetric and asymmetric CMKs, see <a
+     *        To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For
+     *        information about symmetric and asymmetric CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *        Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *        Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyType
@@ -309,57 +306,56 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
+     * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create a grant
-     * that allows the Kinesis Data Firehose service to use the customer managed CMK to perform encryption and
-     * decryption. Kinesis Data Firehose manages that grant.
+     * that allows the Firehose service to use the customer managed CMK to perform encryption and decryption. Firehose
+     * manages that grant.
      * </p>
      * <p>
      * When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is encrypted
-     * with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for retirement.
+     * with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      * </p>
      * <p>
      * You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis Data
-     * Firehose throws a <code>LimitExceededException</code>.
+     * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose throws
+     * a <code>LimitExceededException</code>.
      * </p>
      * <important>
      * <p>
-     * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
-     * information about symmetric and asymmetric CMKs, see <a
+     * To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For information
+     * about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
-     *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
-     *        <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to
-     *        create a grant that allows the Kinesis Data Firehose service to use the customer managed CMK to perform
-     *        encryption and decryption. Kinesis Data Firehose manages that grant. </p>
+     *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Firehose invokes the Amazon KMS operation <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a> to create
+     *        a grant that allows the Firehose service to use the customer managed CMK to perform encryption and
+     *        decryption. Firehose manages that grant. </p>
      *        <p>
      *        When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a delivery stream that is
-     *        encrypted with a customer managed CMK, Kinesis Data Firehose schedules the grant it had on the old CMK for
-     *        retirement.
+     *        encrypted with a customer managed CMK, Firehose schedules the grant it had on the old CMK for retirement.
      *        </p>
      *        <p>
      *        You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
-     *        <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Kinesis
-     *        Data Firehose throws a <code>LimitExceededException</code>.
+     *        <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation exceeds this limit, Firehose
+     *        throws a <code>LimitExceededException</code>.
      *        </p>
      *        <important>
      *        <p>
-     *        To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
-     *        CMKs. For information about symmetric and asymmetric CMKs, see <a
+     *        To encrypt your delivery stream, use symmetric CMKs. Firehose doesn't support asymmetric CMKs. For
+     *        information about symmetric and asymmetric CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *        Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *        Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyType

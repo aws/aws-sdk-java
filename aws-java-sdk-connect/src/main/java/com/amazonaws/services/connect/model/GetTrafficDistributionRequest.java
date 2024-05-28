@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,24 @@ public class GetTrafficDistributionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the traffic distribution group.
+     * The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the
+     * Region where the traffic distribution group was created. The ARN must be provided if the call is from the
+     * replicated Region.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The identifier of the traffic distribution group.
+     * The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the
+     * Region where the traffic distribution group was created. The ARN must be provided if the call is from the
+     * replicated Region.
      * </p>
      * 
      * @param id
-     *        The identifier of the traffic distribution group.
+     *        The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called
+     *        in the Region where the traffic distribution group was created. The ARN must be provided if the call is
+     *        from the replicated Region.
      */
 
     public void setId(String id) {
@@ -47,10 +53,14 @@ public class GetTrafficDistributionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the traffic distribution group.
+     * The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the
+     * Region where the traffic distribution group was created. The ARN must be provided if the call is from the
+     * replicated Region.
      * </p>
      * 
-     * @return The identifier of the traffic distribution group.
+     * @return The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being
+     *         called in the Region where the traffic distribution group was created. The ARN must be provided if the
+     *         call is from the replicated Region.
      */
 
     public String getId() {
@@ -59,11 +69,15 @@ public class GetTrafficDistributionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the traffic distribution group.
+     * The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the
+     * Region where the traffic distribution group was created. The ARN must be provided if the call is from the
+     * replicated Region.
      * </p>
      * 
      * @param id
-     *        The identifier of the traffic distribution group.
+     *        The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called
+     *        in the Region where the traffic distribution group was created. The ARN must be provided if the call is
+     *        from the replicated Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

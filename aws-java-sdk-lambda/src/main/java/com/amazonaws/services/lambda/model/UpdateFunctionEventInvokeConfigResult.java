@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,12 +63,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -255,12 +255,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -283,12 +283,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Queue</b> - The ARN of an SQS queue.
+     *        <b>Queue</b> - The ARN of a standard SQS queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Topic</b> - The ARN of an SNS topic.
+     *        <b>Topic</b> - The ARN of a standard SNS topic.
      *        </p>
      *        </li>
      *        <li>
@@ -317,12 +317,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -344,12 +344,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Queue</b> - The ARN of an SQS queue.
+     *         <b>Queue</b> - The ARN of a standard SQS queue.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Topic</b> - The ARN of an SNS topic.
+     *         <b>Topic</b> - The ARN of a standard SNS topic.
      *         </p>
      *         </li>
      *         <li>
@@ -378,12 +378,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -406,12 +406,12 @@ public class UpdateFunctionEventInvokeConfigResult extends com.amazonaws.AmazonW
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Queue</b> - The ARN of an SQS queue.
+     *        <b>Queue</b> - The ARN of a standard SQS queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Topic</b> - The ARN of an SNS topic.
+     *        <b>Topic</b> - The ARN of a standard SNS topic.
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The collection of medical entities extracted from the input text and their associated information. For each entity,
  * the response provides the entity text, the entity category, where the entity text begins and ends, and the level of
- * confidence that Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also
- * returned.
+ * confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are
+ * also returned.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTEntity" target="_top">AWS
@@ -60,7 +60,7 @@ public class SNOMEDCTEntity implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      * </p>
      */
     private Float score;
@@ -320,11 +320,11 @@ public class SNOMEDCTEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      */
 
     public void setScore(Float score) {
@@ -333,10 +333,10 @@ public class SNOMEDCTEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      * </p>
      * 
-     * @return The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     * @return The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      */
 
     public Float getScore() {
@@ -345,11 +345,11 @@ public class SNOMEDCTEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     * The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has in the accuracy of the detected entity.
+     *        The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

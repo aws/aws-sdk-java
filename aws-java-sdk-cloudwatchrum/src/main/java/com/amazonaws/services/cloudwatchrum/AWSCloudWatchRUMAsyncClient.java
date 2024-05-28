@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,12 @@ import java.util.concurrent.ExecutorService;
  * client-side errors, and user behavior. When you view this data, you can see it all aggregated together and also see
  * breakdowns by the browsers and devices that your customers use.
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you visualize anomalies in your application performance and find relevant debugging data such as error messages, stack traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of users, geolocations, and browsers used.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you
+ * visualize anomalies in your application performance and find relevant debugging data such as error messages, stack
+ * traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of
+ * users, geolocations, and browsers used.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class DocumentClassifierOutputDataConfigMarshaller {
             .marshallLocationName("S3Uri").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> FLYWHEELSTATSS3PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlywheelStatsS3Prefix").build();
 
     private static final DocumentClassifierOutputDataConfigMarshaller instance = new DocumentClassifierOutputDataConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class DocumentClassifierOutputDataConfigMarshaller {
         try {
             protocolMarshaller.marshall(documentClassifierOutputDataConfig.getS3Uri(), S3URI_BINDING);
             protocolMarshaller.marshall(documentClassifierOutputDataConfig.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(documentClassifierOutputDataConfig.getFlywheelStatsS3Prefix(), FLYWHEELSTATSS3PREFIX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

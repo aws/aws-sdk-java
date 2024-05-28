@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the S3 data source.
+ * </p>
+ * <p>
+ * Your input bucket must be in the same Amazon Web Services region as your training job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3DataSource" target="_top">AWS API
@@ -52,7 +55,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      * </p>
      * </li>
      * <li>
@@ -108,6 +111,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      */
     private String s3Uri;
     /**
@@ -289,7 +295,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      * </p>
      * </li>
      * <li>
@@ -345,6 +351,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param s3Uri
      *        Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a
@@ -352,7 +361,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      *        </p>
      *        </li>
      *        <li>
@@ -408,6 +417,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        uses to perform tasks on your behalf.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Your input bucket must be located in same Amazon Web Services region as your training job.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -422,7 +434,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      * </p>
      * </li>
      * <li>
@@ -478,13 +490,16 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @return Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or
      *         a manifest. For example: </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     *         A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      *         </p>
      *         </li>
      *         <li>
@@ -540,6 +555,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         uses to perform tasks on your behalf.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Your input bucket must be located in same Amazon Web Services region as your training job.
      */
 
     public String getS3Uri() {
@@ -554,7 +572,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     * A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      * </p>
      * </li>
      * <li>
@@ -610,6 +628,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Your input bucket must be located in same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param s3Uri
      *        Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a
@@ -617,7 +638,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
+     *        A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>
      *        </p>
      *        </li>
      *        <li>
@@ -673,6 +694,9 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        uses to perform tasks on your behalf.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Your input bucket must be located in same Amazon Web Services region as your training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

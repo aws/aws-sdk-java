@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,9 +25,9 @@ import com.amazonaws.services.servicecatalog.model.*;
  * {@link com.amazonaws.services.servicecatalog.AbstractAWSServiceCatalogAsync} instead.
  * </p>
  * <p>
- * <fullname>AWS Service Catalog</fullname>
+ * <fullname>Service Catalog</fullname>
  * <p>
- * <a href="https://aws.amazon.com/servicecatalog/">Service Catalog</a> enables organizations to create and manage
+ * <a href="http://aws.amazon.com/servicecatalog">Service Catalog</a> enables organizations to create and manage
  * catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you
  * should be familiar with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service Catalog
@@ -105,6 +105,29 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Associates the specified principal ARN with the specified portfolio.
      * </p>
+     * <p>
+     * If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is
+     * included in the share.
+     * </p>
+     * <p>
+     * The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are required.
+     * </p>
+     * <p>
+     * You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as
+     * <code>IAM_PATTERN</code>.
+     * </p>
+     * <note>
+     * <p>
+     * When you associate a principal with portfolio, a potential privilege escalation path may occur when that
+     * portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service
+     * Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role
+     * that matches a principal name association for the portfolio. Although this user may not know which principal
+     * names are associated through Service Catalog, they may be able to guess the user. If this potential escalation
+     * path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With
+     * this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be
+     * associated.
+     * </p>
+     * </note>
      * 
      * @param associatePrincipalWithPortfolioRequest
      * @return A Java Future containing the result of the AssociatePrincipalWithPortfolio operation returned by the
@@ -120,6 +143,29 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Associates the specified principal ARN with the specified portfolio.
      * </p>
+     * <p>
+     * If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is
+     * included in the share.
+     * </p>
+     * <p>
+     * The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are required.
+     * </p>
+     * <p>
+     * You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as
+     * <code>IAM_PATTERN</code>.
+     * </p>
+     * <note>
+     * <p>
+     * When you associate a principal with portfolio, a potential privilege escalation path may occur when that
+     * portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service
+     * Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role
+     * that matches a principal name association for the portfolio. Although this user may not know which principal
+     * names are associated through Service Catalog, they may be able to guess the user. If this potential escalation
+     * path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With
+     * this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be
+     * associated.
+     * </p>
+     * </note>
      * 
      * @param associatePrincipalWithPortfolioRequest
      * @param asyncHandler
@@ -466,6 +512,18 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * effect and will not return an error. To update an existing share, you must use the
      * <code> UpdatePortfolioShare</code> API instead.
      * </p>
+     * <note>
+     * <p>
+     * When you associate a principal with portfolio, a potential privilege escalation path may occur when that
+     * portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service
+     * Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role
+     * that matches a principal name association for the portfolio. Although this user may not know which principal
+     * names are associated through Service Catalog, they may be able to guess the user. If this potential escalation
+     * path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With
+     * this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be
+     * associated.
+     * </p>
+     * </note>
      * 
      * @param createPortfolioShareRequest
      * @return A Java Future containing the result of the CreatePortfolioShare operation returned by the service.
@@ -495,6 +553,18 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * effect and will not return an error. To update an existing share, you must use the
      * <code> UpdatePortfolioShare</code> API instead.
      * </p>
+     * <note>
+     * <p>
+     * When you associate a principal with portfolio, a potential privilege escalation path may occur when that
+     * portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service
+     * Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role
+     * that matches a principal name association for the portfolio. Although this user may not know which principal
+     * names are associated through Service Catalog, they may be able to guess the user. If this potential escalation
+     * path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With
+     * this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be
+     * associated.
+     * </p>
+     * </note>
      * 
      * @param createPortfolioShareRequest
      * @param asyncHandler
@@ -1221,6 +1291,12 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Gets information about the specified product.
      * </p>
+     * <note>
+     * <p>
+     * Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a> should be
+     * used instead.
+     * </p>
+     * </note>
      * 
      * @param describeProductRequest
      * @return A Java Future containing the result of the DescribeProduct operation returned by the service.
@@ -1234,6 +1310,12 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Gets information about the specified product.
      * </p>
+     * <note>
+     * <p>
+     * Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a> should be
+     * used instead.
+     * </p>
+     * </note>
      * 
      * @param describeProductRequest
      * @param asyncHandler
@@ -1734,6 +1816,31 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
+     * <p>
+     * The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the
+     * <code>AssociatePrincipalWithPortfolio</code> call request details. For example, to disassociate an association
+     * created with a <code>PrincipalARN</code> of <code>PrincipalType</code> IAM you must use the
+     * <code>PrincipalType</code> IAM when calling <code>DisassociatePrincipalFromPortfolio</code>.
+     * </p>
+     * <p>
+     * For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share
+     * recipient accounts will no longer be able to provision products in this portfolio using a role matching the name
+     * of the associated principal.
+     * </p>
+     * <p>
+     * For more information, review <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     * >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
+     * <note>
+     * <p>
+     * If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>, the same principal will
+     * still have access to the portfolio if it matches one of the associated principals of type
+     * <code>IAM_PATTERN</code>. To fully remove access for a principal, verify all the associated Principals of type
+     * <code>IAM_PATTERN</code>, and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match the
+     * principal whose access you are removing.
+     * </p>
+     * </note>
      * 
      * @param disassociatePrincipalFromPortfolioRequest
      * @return A Java Future containing the result of the DisassociatePrincipalFromPortfolio operation returned by the
@@ -1750,6 +1857,31 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
+     * <p>
+     * The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the
+     * <code>AssociatePrincipalWithPortfolio</code> call request details. For example, to disassociate an association
+     * created with a <code>PrincipalARN</code> of <code>PrincipalType</code> IAM you must use the
+     * <code>PrincipalType</code> IAM when calling <code>DisassociatePrincipalFromPortfolio</code>.
+     * </p>
+     * <p>
+     * For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share
+     * recipient accounts will no longer be able to provision products in this portfolio using a role matching the name
+     * of the associated principal.
+     * </p>
+     * <p>
+     * For more information, review <a href=
+     * "https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options"
+     * >associate-principal-with-portfolio</a> in the Amazon Web Services CLI Command Reference.
+     * </p>
+     * <note>
+     * <p>
+     * If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>, the same principal will
+     * still have access to the portfolio if it matches one of the associated principals of type
+     * <code>IAM_PATTERN</code>. To fully remove access for a principal, verify all the associated Principals of type
+     * <code>IAM_PATTERN</code>, and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match the
+     * principal whose access you are removing.
+     * </p>
+     * </note>
      * 
      * @param disassociatePrincipalFromPortfolioRequest
      * @param asyncHandler
@@ -2101,26 +2233,37 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests the import of a resource as a Amazon Web Services Service Catalog provisioned product that is associated
-     * to a Amazon Web Services Service Catalog product and provisioning artifact. Once imported, all supported Amazon
-     * Web Services Service Catalog governance actions are supported on the provisioned product.
+     * Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service
+     * Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the
+     * provisioned product.
      * </p>
      * <p>
-     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
-     * not supported.
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks,
+     * are not supported.
      * </p>
      * <p>
      * The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
-     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and
      * <code>IMPORT_ROLLBACK_COMPLETE</code>.
      * </p>
      * <p>
-     * Import of the resource requires that the CloudFormation stack template matches the associated Amazon Web Services
-     * Service Catalog product provisioning artifact.
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
      * </p>
+     * <note>
+     * <p>
+     * When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product's
+     * associated constraints during the import process. Service Catalog applies the constraints after you call
+     * <code>UpdateProvisionedProduct</code> for the provisioned product.
+     * </p>
+     * </note>
      * <p>
      * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and
      * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
+     * </p>
+     * <p>
+     * You can only import one provisioned product at a time. The product's CloudFormation stack must have the
+     * <code>IMPORT_COMPLETE</code> status before you import another.
      * </p>
      * 
      * @param importAsProvisionedProductRequest
@@ -2134,26 +2277,37 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests the import of a resource as a Amazon Web Services Service Catalog provisioned product that is associated
-     * to a Amazon Web Services Service Catalog product and provisioning artifact. Once imported, all supported Amazon
-     * Web Services Service Catalog governance actions are supported on the provisioned product.
+     * Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service
+     * Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the
+     * provisioned product.
      * </p>
      * <p>
-     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
-     * not supported.
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks,
+     * are not supported.
      * </p>
      * <p>
      * The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
-     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and
      * <code>IMPORT_ROLLBACK_COMPLETE</code>.
      * </p>
      * <p>
-     * Import of the resource requires that the CloudFormation stack template matches the associated Amazon Web Services
-     * Service Catalog product provisioning artifact.
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
      * </p>
+     * <note>
+     * <p>
+     * When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product's
+     * associated constraints during the import process. Service Catalog applies the constraints after you call
+     * <code>UpdateProvisionedProduct</code> for the provisioned product.
+     * </p>
+     * </note>
      * <p>
      * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and
      * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
+     * </p>
+     * <p>
+     * You can only import one provisioned product at a time. The product's CloudFormation stack must have the
+     * <code>IMPORT_COMPLETE</code> status before you import another.
      * </p>
      * 
      * @param importAsProvisionedProductRequest
@@ -2273,9 +2427,18 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the paths to the specified product. A path is how the user has access to a specified product, and is
-     * necessary when provisioning a product. A path also determines the constraints put on the product.
+     * Lists the paths to the specified product. A path describes how the user gets access to a specified product and is
+     * necessary when provisioning a product. A path also determines the constraints that are put on a product. A path
+     * is dependent on a specific product, porfolio, and principal.
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to
+     * the portfolio. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users
+     * access</a> in the <i>Service Catalog User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listLaunchPathsRequest
      * @return A Java Future containing the result of the ListLaunchPaths operation returned by the service.
@@ -2287,9 +2450,18 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the paths to the specified product. A path is how the user has access to a specified product, and is
-     * necessary when provisioning a product. A path also determines the constraints put on the product.
+     * Lists the paths to the specified product. A path describes how the user gets access to a specified product and is
+     * necessary when provisioning a product. A path also determines the constraints that are put on a product. A path
+     * is dependent on a specific product, porfolio, and principal.
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to
+     * the portfolio. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users
+     * access</a> in the <i>Service Catalog User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listLaunchPathsRequest
      * @param asyncHandler
@@ -2450,7 +2622,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists all principal ARNs associated with the specified portfolio.
+     * Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the specified
+     * portfolio.
      * </p>
      * 
      * @param listPrincipalsForPortfolioRequest
@@ -2464,7 +2637,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists all principal ARNs associated with the specified portfolio.
+     * Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the specified
+     * portfolio.
      * </p>
      * 
      * @param listPrincipalsForPortfolioRequest
@@ -2792,18 +2966,137 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Notifies the result of the provisioning engine execution.
+     * </p>
+     * 
+     * @param notifyProvisionProductEngineWorkflowResultRequest
+     * @return A Java Future containing the result of the NotifyProvisionProductEngineWorkflowResult operation returned
+     *         by the service.
+     * @sample AWSServiceCatalogAsync.NotifyProvisionProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest notifyProvisionProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the provisioning engine execution.
+     * </p>
+     * 
+     * @param notifyProvisionProductEngineWorkflowResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyProvisionProductEngineWorkflowResult operation returned
+     *         by the service.
+     * @sample AWSServiceCatalogAsyncHandler.NotifyProvisionProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest notifyProvisionProductEngineWorkflowResultRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyProvisionProductEngineWorkflowResultRequest, NotifyProvisionProductEngineWorkflowResultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Notifies the result of the terminate engine execution.
+     * </p>
+     * 
+     * @param notifyTerminateProvisionedProductEngineWorkflowResultRequest
+     * @return A Java Future containing the result of the NotifyTerminateProvisionedProductEngineWorkflowResult
+     *         operation returned by the service.
+     * @sample AWSServiceCatalogAsync.NotifyTerminateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest notifyTerminateProvisionedProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the terminate engine execution.
+     * </p>
+     * 
+     * @param notifyTerminateProvisionedProductEngineWorkflowResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyTerminateProvisionedProductEngineWorkflowResult
+     *         operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.NotifyTerminateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest notifyTerminateProvisionedProductEngineWorkflowResultRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyTerminateProvisionedProductEngineWorkflowResultRequest, NotifyTerminateProvisionedProductEngineWorkflowResultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Notifies the result of the update engine execution.
+     * </p>
+     * 
+     * @param notifyUpdateProvisionedProductEngineWorkflowResultRequest
+     * @return A Java Future containing the result of the NotifyUpdateProvisionedProductEngineWorkflowResult operation
+     *         returned by the service.
+     * @sample AWSServiceCatalogAsync.NotifyUpdateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest notifyUpdateProvisionedProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the update engine execution.
+     * </p>
+     * 
+     * @param notifyUpdateProvisionedProductEngineWorkflowResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyUpdateProvisionedProductEngineWorkflowResult operation
+     *         returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.NotifyUpdateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest notifyUpdateProvisionedProductEngineWorkflowResultRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyUpdateProvisionedProductEngineWorkflowResultRequest, NotifyUpdateProvisionedProductEngineWorkflowResultResult> asyncHandler);
+
+    /**
+     * <p>
      * Provisions the specified product.
      * </p>
      * <p>
-     * A provisioned product is a resourced instance of a product. For example, provisioning a product based on a
-     * CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of
-     * this request using <a>DescribeRecord</a>.
+     * A provisioned product is a resourced instance of a product. For example, provisioning a product that's based on
+     * an CloudFormation template launches an CloudFormation stack and its underlying resources. You can check the
+     * status of this request using <a>DescribeRecord</a>.
      * </p>
      * <p>
-     * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
-     * include conflicted keys as tags, or this causes the error
+     * If the request contains a tag key with an empty list of values, there's a tag conflict for that key. Don't
+     * include conflicted keys as tags, or this will cause the error
      * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to
+     * the portfolio. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users
+     * access</a> in the <i>Service Catalog User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param provisionProductRequest
      * @return A Java Future containing the result of the ProvisionProduct operation returned by the service.
@@ -2818,15 +3111,23 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Provisions the specified product.
      * </p>
      * <p>
-     * A provisioned product is a resourced instance of a product. For example, provisioning a product based on a
-     * CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of
-     * this request using <a>DescribeRecord</a>.
+     * A provisioned product is a resourced instance of a product. For example, provisioning a product that's based on
+     * an CloudFormation template launches an CloudFormation stack and its underlying resources. You can check the
+     * status of this request using <a>DescribeRecord</a>.
      * </p>
      * <p>
-     * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
-     * include conflicted keys as tags, or this causes the error
+     * If the request contains a tag key with an empty list of values, there's a tag conflict for that key. Don't
+     * include conflicted keys as tags, or this will cause the error
      * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to
+     * the portfolio. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users
+     * access</a> in the <i>Service Catalog User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param provisionProductRequest
      * @param asyncHandler
@@ -2975,18 +3276,6 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Gets information about the provisioned products that meet the specified criteria.
      * </p>
-     * <note>
-     * <p>
-     * To ensure a complete list of provisioned products and remove duplicate products, use
-     * <code>sort-by createdTime</code>.
-     * </p>
-     * <p>
-     * Here is a CLI example: <code> </code>
-     * </p>
-     * <p>
-     * <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code>
-     * </p>
-     * </note>
      * 
      * @param searchProvisionedProductsRequest
      * @return A Java Future containing the result of the SearchProvisionedProducts operation returned by the service.
@@ -3001,18 +3290,6 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Gets information about the provisioned products that meet the specified criteria.
      * </p>
-     * <note>
-     * <p>
-     * To ensure a complete list of provisioned products and remove duplicate products, use
-     * <code>sort-by createdTime</code>.
-     * </p>
-     * <p>
-     * Here is a CLI example: <code> </code>
-     * </p>
-     * <p>
-     * <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code>
-     * </p>
-     * </note>
      * 
      * @param searchProvisionedProductsRequest
      * @param asyncHandler
@@ -3143,13 +3420,13 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an
-     * existing portfolio share.
+     * Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code> sharing
+     * or Principal sharing for an existing portfolio share.
      * </p>
      * <p>
-     * The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is
+     * The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is
      * <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for
-     * the portfolio share to be COMPLETED.
+     * the portfolio share to be completed.
      * </p>
      * <p>
      * You must provide the <code>accountId</code> or organization node in the input, but not both.
@@ -3162,6 +3439,18 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for
      * that action.
      * </p>
+     * <note>
+     * <p>
+     * When you associate a principal with portfolio, a potential privilege escalation path may occur when that
+     * portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service
+     * Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role
+     * that matches a principal name association for the portfolio. Although this user may not know which principal
+     * names are associated through Service Catalog, they may be able to guess the user. If this potential escalation
+     * path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With
+     * this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be
+     * associated.
+     * </p>
+     * </note>
      * 
      * @param updatePortfolioShareRequest
      * @return A Java Future containing the result of the UpdatePortfolioShare operation returned by the service.
@@ -3173,13 +3462,13 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an
-     * existing portfolio share.
+     * Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code> sharing
+     * or Principal sharing for an existing portfolio share.
      * </p>
      * <p>
-     * The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is
+     * The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is
      * <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for
-     * the portfolio share to be COMPLETED.
+     * the portfolio share to be completed.
      * </p>
      * <p>
      * You must provide the <code>accountId</code> or organization node in the input, but not both.
@@ -3192,6 +3481,18 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for
      * that action.
      * </p>
+     * <note>
+     * <p>
+     * When you associate a principal with portfolio, a potential privilege escalation path may occur when that
+     * portfolio is then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service
+     * Catalog Admin, but still has the ability to create Principals (Users/Groups/Roles), that user could create a role
+     * that matches a principal name association for the portfolio. Although this user may not know which principal
+     * names are associated through Service Catalog, they may be able to guess the user. If this potential escalation
+     * path is a concern, then Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With
+     * this configuration, the <code>PrincipalARN</code> must already exist in the recipient account before it can be
+     * associated.
+     * </p>
+     * </note>
      * 
      * @param updatePortfolioShareRequest
      * @param asyncHandler

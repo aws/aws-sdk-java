@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,7 +68,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      */
@@ -121,10 +121,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private SqsParameters sqsParameters;
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to
      * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
      * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
      * conflicting keys, values from the Connection take precedence.
@@ -165,6 +165,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RetryPolicy retryPolicy;
+    /**
+     * <p>
+     * Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     * </p>
+     */
+    private AppSyncParameters appSyncParameters;
 
     /**
      * <p>
@@ -353,14 +359,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      * 
      * @param inputPath
      *        The value of the JSONPath that is used for extracting part of the matched event when passing it to the
-     *        target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see
-     *        <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     *        target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
+     *        href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      */
 
     public void setInputPath(String inputPath) {
@@ -370,13 +376,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      * 
      * @return The value of the JSONPath that is used for extracting part of the matched event when passing it to the
-     *         target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see
-     *         <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     *         target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
+     *         href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      */
 
     public String getInputPath() {
@@ -386,14 +392,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      * 
      * @param inputPath
      *        The value of the JSONPath that is used for extracting part of the matched event when passing it to the
-     *        target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see
-     *        <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     *        target. You may use JSON dot notation or bracket notation. For more information about JSON paths, see <a
+     *        href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,23 +710,23 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to
      * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
      * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
      * conflicting keys, values from the Connection take precedence.
      * </p>
      * 
      * @param httpParameters
-     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *        Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge
      *        ApiDestination.</p>
      *        <p>
-     *        If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
-     *        parameter to specify headers, path parameters, and query string keys/values as part of your target
-     *        invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values
-     *        configured. In case of any conflicting keys, values from the Connection take precedence.
+     *        If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to
+     *        specify headers, path parameters, and query string keys/values as part of your target invoking request. If
+     *        you're using ApiDestinations, the corresponding Connection can also have these values configured. In case
+     *        of any conflicting keys, values from the Connection take precedence.
      */
 
     public void setHttpParameters(HttpParameters httpParameters) {
@@ -729,22 +735,22 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to
      * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
      * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
      * conflicting keys, values from the Connection take precedence.
      * </p>
      * 
-     * @return Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     * @return Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge
      *         ApiDestination.</p>
      *         <p>
-     *         If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
-     *         parameter to specify headers, path parameters, and query string keys/values as part of your target
-     *         invoking request. If you're using ApiDestinations, the corresponding Connection can also have these
-     *         values configured. In case of any conflicting keys, values from the Connection take precedence.
+     *         If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter
+     *         to specify headers, path parameters, and query string keys/values as part of your target invoking
+     *         request. If you're using ApiDestinations, the corresponding Connection can also have these values
+     *         configured. In case of any conflicting keys, values from the Connection take precedence.
      */
 
     public HttpParameters getHttpParameters() {
@@ -753,23 +759,23 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.
      * </p>
      * <p>
-     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to
      * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
      * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
      * conflicting keys, values from the Connection take precedence.
      * </p>
      * 
      * @param httpParameters
-     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *        Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge
      *        ApiDestination.</p>
      *        <p>
-     *        If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
-     *        parameter to specify headers, path parameters, and query string keys/values as part of your target
-     *        invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values
-     *        configured. In case of any conflicting keys, values from the Connection take precedence.
+     *        If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to
+     *        specify headers, path parameters, and query string keys/values as part of your target invoking request. If
+     *        you're using ApiDestinations, the corresponding Connection can also have these values configured. In case
+     *        of any conflicting keys, values from the Connection take precedence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -993,6 +999,46 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     * </p>
+     * 
+     * @param appSyncParameters
+     *        Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     */
+
+    public void setAppSyncParameters(AppSyncParameters appSyncParameters) {
+        this.appSyncParameters = appSyncParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     * </p>
+     * 
+     * @return Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     */
+
+    public AppSyncParameters getAppSyncParameters() {
+        return this.appSyncParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     * </p>
+     * 
+     * @param appSyncParameters
+     *        Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withAppSyncParameters(AppSyncParameters appSyncParameters) {
+        setAppSyncParameters(appSyncParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1035,7 +1081,9 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         if (getDeadLetterConfig() != null)
             sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getRetryPolicy() != null)
-            sb.append("RetryPolicy: ").append(getRetryPolicy());
+            sb.append("RetryPolicy: ").append(getRetryPolicy()).append(",");
+        if (getAppSyncParameters() != null)
+            sb.append("AppSyncParameters: ").append(getAppSyncParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1114,6 +1162,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRetryPolicy() != null && other.getRetryPolicy().equals(this.getRetryPolicy()) == false)
             return false;
+        if (other.getAppSyncParameters() == null ^ this.getAppSyncParameters() == null)
+            return false;
+        if (other.getAppSyncParameters() != null && other.getAppSyncParameters().equals(this.getAppSyncParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1138,6 +1190,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSageMakerPipelineParameters() == null) ? 0 : getSageMakerPipelineParameters().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getRetryPolicy() == null) ? 0 : getRetryPolicy().hashCode());
+        hashCode = prime * hashCode + ((getAppSyncParameters() == null) ? 0 : getAppSyncParameters().hashCode());
         return hashCode;
     }
 

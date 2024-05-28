@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your
- * input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information,
- * see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
+ * input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum XavcHdProfileTelecine {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,9 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
-     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
-     * the IAM user name.
+     * includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
+     * to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user
+     * name.
      * </p>
      */
     private String sshUsername;
@@ -98,16 +98,16 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
-     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
-     * the IAM user name.
+     * includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
+     * to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user
+     * name.
      * </p>
      * 
      * @param sshUsername
      *        The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified
-     *        name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code>
-     *        will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks
-     *        generates one from the IAM user name.
+     *        name includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code>
+     *        will be changed to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates
+     *        one from the IAM user name.
      */
 
     public void setSshUsername(String sshUsername) {
@@ -117,14 +117,14 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
-     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
-     * the IAM user name.
+     * includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
+     * to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user
+     * name.
      * </p>
      * 
      * @return The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the
-     *         specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-     *         <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS
+     *         specified name includes other punctuation marks, OpsWorks Stacks removes them. For example,
+     *         <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name,
      *         OpsWorks Stacks generates one from the IAM user name.
      */
 
@@ -135,16 +135,16 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
-     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
-     * the IAM user name.
+     * includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed
+     * to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates one from the IAM user
+     * name.
      * </p>
      * 
      * @param sshUsername
      *        The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified
-     *        name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code>
-     *        will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks
-     *        generates one from the IAM user name.
+     *        name includes other punctuation marks, OpsWorks Stacks removes them. For example, <code>my.name</code>
+     *        will be changed to <code>myname</code>. If you do not specify an SSH user name, OpsWorks Stacks generates
+     *        one from the IAM user name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

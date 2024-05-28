@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Advanced event selectors let you create fine-grained selectors for the following CloudTrail event record ﬁelds. They
- * help you control costs by logging only those events that are important to you. For more information about advanced
- * event selectors, see <a
+ * Advanced event selectors let you create fine-grained selectors for CloudTrail management and data events. They help
+ * you control costs by logging only those events that are important to you. For more information about advanced event
+ * selectors, see <a
+ * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+ * >Logging management events</a> and <a
  * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
- * data events for trails</a> in the <i>CloudTrail User Guide</i>.
+ * data events</a> in the <i>CloudTrail User Guide</i>.
+ * </p>
+ * <p>
+ * You cannot apply both event selectors and advanced event selectors to a trail.
+ * </p>
+ * <p>
+ * <b>Supported CloudTrail event record fields for management events</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>readOnly</code>
+ * <code>eventCategory</code> (required)
  * </p>
  * </li>
  * <li>
@@ -38,17 +46,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
+ * <code>readOnly</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Supported CloudTrail event record fields for data events</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>eventCategory</code> (required)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>resources.type</code> (required)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>readOnly</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>eventName</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>eventCategory</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>resources.type</code>
  * </p>
  * </li>
  * <li>
@@ -57,9 +80,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </li>
  * </ul>
+ * <note>
  * <p>
- * You cannot apply both event selectors and advanced event selectors to a trail.
+ * For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events
+ * outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.
  * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedEventSelector" target="_top">AWS
  *      API Documentation</a>

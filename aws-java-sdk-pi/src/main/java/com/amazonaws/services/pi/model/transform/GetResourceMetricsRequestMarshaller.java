@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class GetResourceMetricsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> PERIODALIGNMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PeriodAlignment").build();
 
     private static final GetResourceMetricsRequestMarshaller instance = new GetResourceMetricsRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class GetResourceMetricsRequestMarshaller {
             protocolMarshaller.marshall(getResourceMetricsRequest.getPeriodInSeconds(), PERIODINSECONDS_BINDING);
             protocolMarshaller.marshall(getResourceMetricsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getResourceMetricsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(getResourceMetricsRequest.getPeriodAlignment(), PERIODALIGNMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

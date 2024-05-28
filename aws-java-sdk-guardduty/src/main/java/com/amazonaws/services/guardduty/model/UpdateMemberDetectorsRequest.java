@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,14 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
      * Describes which data sources will be updated.
      * </p>
      */
+    @Deprecated
     private DataSourceConfigurations dataSources;
+    /**
+     * <p>
+     * A list of features that will be updated for the specified member accounts.
+     * </p>
+     */
+    private java.util.List<MemberFeaturesConfiguration> features;
 
     /**
      * <p>
@@ -162,7 +169,7 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
      * @param dataSources
      *        Describes which data sources will be updated.
      */
-
+    @Deprecated
     public void setDataSources(DataSourceConfigurations dataSources) {
         this.dataSources = dataSources;
     }
@@ -174,7 +181,7 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
      * 
      * @return Describes which data sources will be updated.
      */
-
+    @Deprecated
     public DataSourceConfigurations getDataSources() {
         return this.dataSources;
     }
@@ -188,9 +195,79 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
      *        Describes which data sources will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateMemberDetectorsRequest withDataSources(DataSourceConfigurations dataSources) {
         setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of features that will be updated for the specified member accounts.
+     * </p>
+     * 
+     * @return A list of features that will be updated for the specified member accounts.
+     */
+
+    public java.util.List<MemberFeaturesConfiguration> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * A list of features that will be updated for the specified member accounts.
+     * </p>
+     * 
+     * @param features
+     *        A list of features that will be updated for the specified member accounts.
+     */
+
+    public void setFeatures(java.util.Collection<MemberFeaturesConfiguration> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<MemberFeaturesConfiguration>(features);
+    }
+
+    /**
+     * <p>
+     * A list of features that will be updated for the specified member accounts.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        A list of features that will be updated for the specified member accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMemberDetectorsRequest withFeatures(MemberFeaturesConfiguration... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<MemberFeaturesConfiguration>(features.length));
+        }
+        for (MemberFeaturesConfiguration ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of features that will be updated for the specified member accounts.
+     * </p>
+     * 
+     * @param features
+     *        A list of features that will be updated for the specified member accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMemberDetectorsRequest withFeatures(java.util.Collection<MemberFeaturesConfiguration> features) {
+        setFeatures(features);
         return this;
     }
 
@@ -211,7 +288,9 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
         if (getAccountIds() != null)
             sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDataSources() != null)
-            sb.append("DataSources: ").append(getDataSources());
+            sb.append("DataSources: ").append(getDataSources()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +317,10 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -249,6 +332,7 @@ public class UpdateMemberDetectorsRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
         return hashCode;
     }
 

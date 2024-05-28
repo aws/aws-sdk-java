@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
     private String backupVaultArn;
     /**
      * <p>
+     * This is the type of vault described.
+     * </p>
+     */
+    private String vaultType;
+    /**
+     * <p>
      * The server-side encryption key that is used to protect your backups; for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
@@ -56,7 +62,8 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A unique string that identifies the request and allows failed requests to be retried without the risk of running
-     * the operation twice.
+     * the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or
+     * '-_.' characters.
      * </p>
      */
     private String creatorRequestId;
@@ -215,6 +222,65 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * This is the type of vault described.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault described.
+     * @see VaultType
+     */
+
+    public void setVaultType(String vaultType) {
+        this.vaultType = vaultType;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault described.
+     * </p>
+     * 
+     * @return This is the type of vault described.
+     * @see VaultType
+     */
+
+    public String getVaultType() {
+        return this.vaultType;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault described.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public DescribeBackupVaultResult withVaultType(String vaultType) {
+        setVaultType(vaultType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault described.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public DescribeBackupVaultResult withVaultType(VaultType vaultType) {
+        this.vaultType = vaultType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The server-side encryption key that is used to protect your backups; for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
      * </p>
@@ -314,12 +380,14 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A unique string that identifies the request and allows failed requests to be retried without the risk of running
-     * the operation twice.
+     * the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or
+     * '-_.' characters.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        running the operation twice.
+     *        running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50
+     *        alphanumeric or '-_.' characters.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -329,11 +397,13 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A unique string that identifies the request and allows failed requests to be retried without the risk of running
-     * the operation twice.
+     * the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or
+     * '-_.' characters.
      * </p>
      * 
      * @return A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *         running the operation twice.
+     *         running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50
+     *         alphanumeric or '-_.' characters.
      */
 
     public String getCreatorRequestId() {
@@ -343,12 +413,14 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A unique string that identifies the request and allows failed requests to be retried without the risk of running
-     * the operation twice.
+     * the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or
+     * '-_.' characters.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        running the operation twice.
+     *        running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50
+     *        alphanumeric or '-_.' characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,6 +807,8 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
         if (getBackupVaultArn() != null)
             sb.append("BackupVaultArn: ").append(getBackupVaultArn()).append(",");
+        if (getVaultType() != null)
+            sb.append("VaultType: ").append(getVaultType()).append(",");
         if (getEncryptionKeyArn() != null)
             sb.append("EncryptionKeyArn: ").append(getEncryptionKeyArn()).append(",");
         if (getCreationDate() != null)
@@ -772,6 +846,10 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getBackupVaultArn() == null ^ this.getBackupVaultArn() == null)
             return false;
         if (other.getBackupVaultArn() != null && other.getBackupVaultArn().equals(this.getBackupVaultArn()) == false)
+            return false;
+        if (other.getVaultType() == null ^ this.getVaultType() == null)
+            return false;
+        if (other.getVaultType() != null && other.getVaultType().equals(this.getVaultType()) == false)
             return false;
         if (other.getEncryptionKeyArn() == null ^ this.getEncryptionKeyArn() == null)
             return false;
@@ -815,6 +893,7 @@ public class DescribeBackupVaultResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
+        hashCode = prime * hashCode + ((getVaultType() == null) ? 0 : getVaultType().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKeyArn() == null) ? 0 : getEncryptionKeyArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());

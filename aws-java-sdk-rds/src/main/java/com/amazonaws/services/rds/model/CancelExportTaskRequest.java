@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the snapshot export task to cancel.
+     * The identifier of the snapshot or cluster export task to cancel.
      * </p>
      */
     private String exportTaskIdentifier;
 
     /**
      * <p>
-     * The identifier of the snapshot export task to cancel.
+     * The identifier of the snapshot or cluster export task to cancel.
      * </p>
      * 
      * @param exportTaskIdentifier
-     *        The identifier of the snapshot export task to cancel.
+     *        The identifier of the snapshot or cluster export task to cancel.
      */
 
     public void setExportTaskIdentifier(String exportTaskIdentifier) {
@@ -47,10 +47,10 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the snapshot export task to cancel.
+     * The identifier of the snapshot or cluster export task to cancel.
      * </p>
      * 
-     * @return The identifier of the snapshot export task to cancel.
+     * @return The identifier of the snapshot or cluster export task to cancel.
      */
 
     public String getExportTaskIdentifier() {
@@ -59,11 +59,11 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the snapshot export task to cancel.
+     * The identifier of the snapshot or cluster export task to cancel.
      * </p>
      * 
      * @param exportTaskIdentifier
-     *        The identifier of the snapshot export task to cancel.
+     *        The identifier of the snapshot or cluster export task to cancel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

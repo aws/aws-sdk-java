@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class ThreatIntelligenceDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("threatListName").build();
     private static final MarshallingInfo<List> THREATNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("threatNames").build();
+    private static final MarshallingInfo<String> THREATFILESHA256_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("threatFileSha256").build();
 
     private static final ThreatIntelligenceDetailMarshaller instance = new ThreatIntelligenceDetailMarshaller();
 
@@ -51,6 +53,7 @@ public class ThreatIntelligenceDetailMarshaller {
         try {
             protocolMarshaller.marshall(threatIntelligenceDetail.getThreatListName(), THREATLISTNAME_BINDING);
             protocolMarshaller.marshall(threatIntelligenceDetail.getThreatNames(), THREATNAMES_BINDING);
+            protocolMarshaller.marshall(threatIntelligenceDetail.getThreatFileSha256(), THREATFILESHA256_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

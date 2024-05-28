@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,6 +127,22 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                 if (context.testExpression("WorkflowDetails", targetDepth)) {
                     context.nextToken();
                     describedServer.setWorkflowDetails(WorkflowDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StructuredLogDestinations", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setStructuredLogDestinations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("S3StorageOptions", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setS3StorageOptions(S3StorageOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("As2ServiceManagedEgressIpAddresses", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setAs2ServiceManagedEgressIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

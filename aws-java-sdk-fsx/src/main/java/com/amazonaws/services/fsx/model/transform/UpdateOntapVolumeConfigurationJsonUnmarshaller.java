@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,22 @@ public class UpdateOntapVolumeConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("TieringPolicy", targetDepth)) {
                     context.nextToken();
                     updateOntapVolumeConfiguration.setTieringPolicy(TieringPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SnapshotPolicy", targetDepth)) {
+                    context.nextToken();
+                    updateOntapVolumeConfiguration.setSnapshotPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CopyTagsToBackups", targetDepth)) {
+                    context.nextToken();
+                    updateOntapVolumeConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SnaplockConfiguration", targetDepth)) {
+                    context.nextToken();
+                    updateOntapVolumeConfiguration.setSnaplockConfiguration(UpdateSnaplockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    updateOntapVolumeConfiguration.setSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

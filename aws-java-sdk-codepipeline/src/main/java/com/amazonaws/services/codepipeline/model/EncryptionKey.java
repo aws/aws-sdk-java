@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
- * Service (AWS KMS) key.
+ * Represents information about the key used to encrypt data in the artifact store, such as an Amazon Web Services Key
+ * Management Service (Key Management Service) key.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EncryptionKey" target="_top">AWS API
@@ -31,41 +31,46 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
+     * The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the
+     * alias ARN.
      * </p>
      * <note>
      * <p>
-     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
-     * you can only use the key ID or key ARN to identify the key.
+     * Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use
+     * the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account
+     * (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      * </p>
      * </note>
      */
     private String id;
     /**
      * <p>
-     * The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a
-     * pipeline, the value must be set to 'KMS'.
+     * The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the
+     * value must be set to 'KMS'.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
+     * The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the
+     * alias ARN.
      * </p>
      * <note>
      * <p>
-     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
-     * you can only use the key ID or key ARN to identify the key.
+     * Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use
+     * the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account
+     * (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      * </p>
      * </note>
      * 
      * @param id
-     *        The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias
-     *        ARN.</p> <note>
+     *        The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN,
+     *        or the alias ARN.</p> <note>
      *        <p>
-     *        Aliases are recognized only in the account that created the customer master key (CMK). For cross-account
-     *        actions, you can only use the key ID or key ARN to identify the key.
+     *        Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can
+     *        only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the
+     *        other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      *        </p>
      */
 
@@ -75,20 +80,23 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
+     * The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the
+     * alias ARN.
      * </p>
      * <note>
      * <p>
-     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
-     * you can only use the key ID or key ARN to identify the key.
+     * Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use
+     * the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account
+     * (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      * </p>
      * </note>
      * 
-     * @return The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias
-     *         ARN.</p> <note>
+     * @return The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN,
+     *         or the alias ARN.</p> <note>
      *         <p>
-     *         Aliases are recognized only in the account that created the customer master key (CMK). For cross-account
-     *         actions, you can only use the key ID or key ARN to identify the key.
+     *         Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can
+     *         only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the
+     *         other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      *         </p>
      */
 
@@ -98,21 +106,24 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
+     * The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN, or the
+     * alias ARN.
      * </p>
      * <note>
      * <p>
-     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
-     * you can only use the key ID or key ARN to identify the key.
+     * Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can only use
+     * the key ID or key ARN to identify the key. Cross-account actions involve using the role from the other account
+     * (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      * </p>
      * </note>
      * 
      * @param id
-     *        The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias
-     *        ARN.</p> <note>
+     *        The ID used to identify the key. For an Amazon Web Services KMS key, you can use the key ID, the key ARN,
+     *        or the alias ARN.</p> <note>
      *        <p>
-     *        Aliases are recognized only in the account that created the customer master key (CMK). For cross-account
-     *        actions, you can only use the key ID or key ARN to identify the key.
+     *        Aliases are recognized only in the account that created the KMS key. For cross-account actions, you can
+     *        only use the key ID or key ARN to identify the key. Cross-account actions involve using the role from the
+     *        other account (AccountB), so specifying the key ID will use the key from the other account (AccountB).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -124,13 +135,13 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a
-     * pipeline, the value must be set to 'KMS'.
+     * The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the
+     * value must be set to 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating
-     *        a pipeline, the value must be set to 'KMS'.
+     *        The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline,
+     *        the value must be set to 'KMS'.
      * @see EncryptionKeyType
      */
 
@@ -140,12 +151,12 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a
-     * pipeline, the value must be set to 'KMS'.
+     * The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the
+     * value must be set to 'KMS'.
      * </p>
      * 
-     * @return The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or
-     *         updating a pipeline, the value must be set to 'KMS'.
+     * @return The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline,
+     *         the value must be set to 'KMS'.
      * @see EncryptionKeyType
      */
 
@@ -155,13 +166,13 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a
-     * pipeline, the value must be set to 'KMS'.
+     * The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the
+     * value must be set to 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating
-     *        a pipeline, the value must be set to 'KMS'.
+     *        The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline,
+     *        the value must be set to 'KMS'.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionKeyType
      */
@@ -173,13 +184,13 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a
-     * pipeline, the value must be set to 'KMS'.
+     * The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the
+     * value must be set to 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating
-     *        a pipeline, the value must be set to 'KMS'.
+     *        The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline,
+     *        the value must be set to 'KMS'.
      * @see EncryptionKeyType
      */
 
@@ -189,13 +200,13 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a
-     * pipeline, the value must be set to 'KMS'.
+     * The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline, the
+     * value must be set to 'KMS'.
      * </p>
      * 
      * @param type
-     *        The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating
-     *        a pipeline, the value must be set to 'KMS'.
+     *        The type of encryption key, such as an Amazon Web Services KMS key. When creating or updating a pipeline,
+     *        the value must be set to 'KMS'.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionKeyType
      */

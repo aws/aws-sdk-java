@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -141,6 +141,18 @@ public class ContainerPropertiesJsonUnmarshaller implements Unmarshaller<Contain
                 if (context.testExpression("fargatePlatformConfiguration", targetDepth)) {
                     context.nextToken();
                     containerProperties.setFargatePlatformConfiguration(FargatePlatformConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    context.nextToken();
+                    containerProperties.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("runtimePlatform", targetDepth)) {
+                    context.nextToken();
+                    containerProperties.setRuntimePlatform(RuntimePlatformJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("repositoryCredentials", targetDepth)) {
+                    context.nextToken();
+                    containerProperties.setRepositoryCredentials(RepositoryCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

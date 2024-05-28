@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,6 +86,7 @@ public enum ProductionVariantInstanceType {
     MlInf12xlarge("ml.inf1.2xlarge"),
     MlInf16xlarge("ml.inf1.6xlarge"),
     MlInf124xlarge("ml.inf1.24xlarge"),
+    MlDl124xlarge("ml.dl1.24xlarge"),
     MlC6iLarge("ml.c6i.large"),
     MlC6iXlarge("ml.c6i.xlarge"),
     MlC6i2xlarge("ml.c6i.2xlarge"),
@@ -103,6 +104,14 @@ public enum ProductionVariantInstanceType {
     MlG516xlarge("ml.g5.16xlarge"),
     MlG524xlarge("ml.g5.24xlarge"),
     MlG548xlarge("ml.g5.48xlarge"),
+    MlG6Xlarge("ml.g6.xlarge"),
+    MlG62xlarge("ml.g6.2xlarge"),
+    MlG64xlarge("ml.g6.4xlarge"),
+    MlG68xlarge("ml.g6.8xlarge"),
+    MlG612xlarge("ml.g6.12xlarge"),
+    MlG616xlarge("ml.g6.16xlarge"),
+    MlG624xlarge("ml.g6.24xlarge"),
+    MlG648xlarge("ml.g6.48xlarge"),
     MlP4d24xlarge("ml.p4d.24xlarge"),
     MlC7gLarge("ml.c7g.large"),
     MlC7gXlarge("ml.c7g.xlarge"),
@@ -159,7 +168,43 @@ public enum ProductionVariantInstanceType {
     MlR6gd4xlarge("ml.r6gd.4xlarge"),
     MlR6gd8xlarge("ml.r6gd.8xlarge"),
     MlR6gd12xlarge("ml.r6gd.12xlarge"),
-    MlR6gd16xlarge("ml.r6gd.16xlarge");
+    MlR6gd16xlarge("ml.r6gd.16xlarge"),
+    MlP4de24xlarge("ml.p4de.24xlarge"),
+    MlTrn12xlarge("ml.trn1.2xlarge"),
+    MlTrn132xlarge("ml.trn1.32xlarge"),
+    MlTrn1n32xlarge("ml.trn1n.32xlarge"),
+    MlInf2Xlarge("ml.inf2.xlarge"),
+    MlInf28xlarge("ml.inf2.8xlarge"),
+    MlInf224xlarge("ml.inf2.24xlarge"),
+    MlInf248xlarge("ml.inf2.48xlarge"),
+    MlP548xlarge("ml.p5.48xlarge"),
+    MlM7iLarge("ml.m7i.large"),
+    MlM7iXlarge("ml.m7i.xlarge"),
+    MlM7i2xlarge("ml.m7i.2xlarge"),
+    MlM7i4xlarge("ml.m7i.4xlarge"),
+    MlM7i8xlarge("ml.m7i.8xlarge"),
+    MlM7i12xlarge("ml.m7i.12xlarge"),
+    MlM7i16xlarge("ml.m7i.16xlarge"),
+    MlM7i24xlarge("ml.m7i.24xlarge"),
+    MlM7i48xlarge("ml.m7i.48xlarge"),
+    MlC7iLarge("ml.c7i.large"),
+    MlC7iXlarge("ml.c7i.xlarge"),
+    MlC7i2xlarge("ml.c7i.2xlarge"),
+    MlC7i4xlarge("ml.c7i.4xlarge"),
+    MlC7i8xlarge("ml.c7i.8xlarge"),
+    MlC7i12xlarge("ml.c7i.12xlarge"),
+    MlC7i16xlarge("ml.c7i.16xlarge"),
+    MlC7i24xlarge("ml.c7i.24xlarge"),
+    MlC7i48xlarge("ml.c7i.48xlarge"),
+    MlR7iLarge("ml.r7i.large"),
+    MlR7iXlarge("ml.r7i.xlarge"),
+    MlR7i2xlarge("ml.r7i.2xlarge"),
+    MlR7i4xlarge("ml.r7i.4xlarge"),
+    MlR7i8xlarge("ml.r7i.8xlarge"),
+    MlR7i12xlarge("ml.r7i.12xlarge"),
+    MlR7i16xlarge("ml.r7i.16xlarge"),
+    MlR7i24xlarge("ml.r7i.24xlarge"),
+    MlR7i48xlarge("ml.r7i.48xlarge");
 
     private String value;
 

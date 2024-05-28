@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,13 +98,16 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The <code>nextToken</code> value returned by a previous paginated request.
+     * The token returned by a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     * The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
@@ -733,11 +736,13 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned by a previous paginated request.
+     * The token returned by a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned by a previous paginated request.
+     *        The token returned by a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -746,10 +751,12 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned by a previous paginated request.
+     * The token returned by a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The <code>nextToken</code> value returned by a previous paginated request.
+     * @return The token returned by a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -758,11 +765,13 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned by a previous paginated request.
+     * The token returned by a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned by a previous paginated request.
+     *        The token returned by a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -773,11 +782,16 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     * The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     *        The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -786,10 +800,15 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     * The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     * @return The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -798,11 +817,16 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     * The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results (up to a limit of 500) to be returned in a paginated request.
+     *        The maximum number of results (up to a limit of 500) to be returned in a paginated request. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

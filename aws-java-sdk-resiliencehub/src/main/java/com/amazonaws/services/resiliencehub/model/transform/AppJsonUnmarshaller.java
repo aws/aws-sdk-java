@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,9 +68,23 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("driftStatus", targetDepth)) {
+                    context.nextToken();
+                    app.setDriftStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("eventSubscriptions", targetDepth)) {
+                    context.nextToken();
+                    app.setEventSubscriptions(new ListUnmarshaller<EventSubscription>(EventSubscriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("lastAppComplianceEvaluationTime", targetDepth)) {
                     context.nextToken();
                     app.setLastAppComplianceEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastDriftEvaluationTime", targetDepth)) {
+                    context.nextToken();
+                    app.setLastDriftEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastResiliencyScoreEvaluationTime", targetDepth)) {
                     context.nextToken();
@@ -80,6 +94,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("permissionModel", targetDepth)) {
+                    context.nextToken();
+                    app.setPermissionModel(PermissionModelJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("policyArn", targetDepth)) {
                     context.nextToken();
                     app.setPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +105,14 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                 if (context.testExpression("resiliencyScore", targetDepth)) {
                     context.nextToken();
                     app.setResiliencyScore(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("rpoInSecs", targetDepth)) {
+                    context.nextToken();
+                    app.setRpoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("rtoInSecs", targetDepth)) {
+                    context.nextToken();
+                    app.setRtoInSecs(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

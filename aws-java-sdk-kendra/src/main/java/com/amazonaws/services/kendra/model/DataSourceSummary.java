@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information for an Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> API.
+ * Summary information for a Amazon Kendra data source.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSummary" target="_top">AWS API
@@ -36,7 +36,7 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The unique identifier for the data source.
+     * The identifier for the data source.
      * </p>
      */
     private String id;
@@ -48,13 +48,13 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
     private String type;
     /**
      * <p>
-     * The UNIX datetime that the data source was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The UNIX datetime that the data source was lasted updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -116,11 +116,11 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the data source.
+     * The identifier for the data source.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the data source.
+     *        The identifier for the data source.
      */
 
     public void setId(String id) {
@@ -129,10 +129,10 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the data source.
+     * The identifier for the data source.
      * </p>
      * 
-     * @return The unique identifier for the data source.
+     * @return The identifier for the data source.
      */
 
     public String getId() {
@@ -141,11 +141,11 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the data source.
+     * The identifier for the data source.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the data source.
+     *        The identifier for the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +215,11 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UNIX datetime that the data source was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      * 
      * @param createdAt
-     *        The UNIX datetime that the data source was created.
+     *        The Unix timestamp when the data source connector was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -228,10 +228,10 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UNIX datetime that the data source was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      * 
-     * @return The UNIX datetime that the data source was created.
+     * @return The Unix timestamp when the data source connector was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -240,11 +240,11 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UNIX datetime that the data source was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      * 
      * @param createdAt
-     *        The UNIX datetime that the data source was created.
+     *        The Unix timestamp when the data source connector was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +255,11 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UNIX datetime that the data source was lasted updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The UNIX datetime that the data source was lasted updated.
+     *        The Unix timestamp when the data source connector was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -268,10 +268,10 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UNIX datetime that the data source was lasted updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      * 
-     * @return The UNIX datetime that the data source was lasted updated.
+     * @return The Unix timestamp when the data source connector was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -280,11 +280,11 @@ public class DataSourceSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The UNIX datetime that the data source was lasted updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The UNIX datetime that the data source was lasted updated.
+     *        The Unix timestamp when the data source connector was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

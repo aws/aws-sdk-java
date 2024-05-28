@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class BranchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fullyQualifiedName").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> DEPRECATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationMessage").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comment").build();
 
     private static final BranchMarshaller instance = new BranchMarshaller();
 
@@ -50,6 +54,8 @@ public class BranchMarshaller {
         try {
             protocolMarshaller.marshall(branch.getFullyQualifiedName(), FULLYQUALIFIEDNAME_BINDING);
             protocolMarshaller.marshall(branch.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(branch.getDeprecationMessage(), DEPRECATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(branch.getComment(), COMMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

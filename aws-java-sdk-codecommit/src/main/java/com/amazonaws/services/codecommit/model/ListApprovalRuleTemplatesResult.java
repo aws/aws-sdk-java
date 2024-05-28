@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class ListApprovalRuleTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of all the approval rule templates found in the AWS Region for your AWS account.
+     * The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services
+     * account.
      * </p>
      */
     private java.util.List<String> approvalRuleTemplateNames;
@@ -38,10 +39,12 @@ public class ListApprovalRuleTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of all the approval rule templates found in the AWS Region for your AWS account.
+     * The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services
+     * account.
      * </p>
      * 
-     * @return The names of all the approval rule templates found in the AWS Region for your AWS account.
+     * @return The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web
+     *         Services account.
      */
 
     public java.util.List<String> getApprovalRuleTemplateNames() {
@@ -50,11 +53,13 @@ public class ListApprovalRuleTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of all the approval rule templates found in the AWS Region for your AWS account.
+     * The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services
+     * account.
      * </p>
      * 
      * @param approvalRuleTemplateNames
-     *        The names of all the approval rule templates found in the AWS Region for your AWS account.
+     *        The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web
+     *        Services account.
      */
 
     public void setApprovalRuleTemplateNames(java.util.Collection<String> approvalRuleTemplateNames) {
@@ -68,7 +73,8 @@ public class ListApprovalRuleTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of all the approval rule templates found in the AWS Region for your AWS account.
+     * The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services
+     * account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +83,8 @@ public class ListApprovalRuleTemplatesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param approvalRuleTemplateNames
-     *        The names of all the approval rule templates found in the AWS Region for your AWS account.
+     *        The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web
+     *        Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,13 @@ public class ListApprovalRuleTemplatesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of all the approval rule templates found in the AWS Region for your AWS account.
+     * The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web Services
+     * account.
      * </p>
      * 
      * @param approvalRuleTemplateNames
-     *        The names of all the approval rule templates found in the AWS Region for your AWS account.
+     *        The names of all the approval rule templates found in the Amazon Web Services Region for your Amazon Web
+     *        Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,14 +35,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to the
+     * <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to the
      * origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      * <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -52,13 +52,23 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * origin.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not
+     * included.
+     * </p>
+     * </li>
      * </ul>
      */
     private String queryStringBehavior;
     /**
      * <p>
-     * Contains a list of the query strings in viewer requests that are included in requests that CloudFront sends to
-     * the origin.
+     * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
+     * included in requests that CloudFront sends to the origin. The behavior depends on whether the
+     * <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      */
     private QueryStringNames queryStrings;
@@ -71,14 +81,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to the
+     * <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to the
      * origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      * <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -86,6 +96,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <p>
      * <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to the
      * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not
+     * included.
      * </p>
      * </li>
      * </ul>
@@ -96,14 +113,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to
+     *        <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to
      *        the origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      *        <code>CachePolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     *        <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      *        <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
@@ -111,6 +128,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *        <p>
      *        <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to
      *        the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront
+     *        sends to the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type,
+     *        which are not included.
      *        </p>
      *        </li>
      * @see OriginRequestPolicyQueryStringBehavior
@@ -128,14 +152,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to the
+     * <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to the
      * origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      * <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -145,6 +169,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * origin.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not
+     * included.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Determines whether any URL query strings in viewer requests are included in requests that CloudFront
@@ -152,14 +183,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends
-     *         to the origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
+     *         <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to
+     *         the origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      *         <code>CachePolicy</code> <i>are</i> included in origin requests.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     *         <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      *         <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      *         </p>
      *         </li>
@@ -167,6 +198,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *         <p>
      *         <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to
      *         the origin.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront
+     *         sends to the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type,
+     *         which are not included.
      *         </p>
      *         </li>
      * @see OriginRequestPolicyQueryStringBehavior
@@ -184,14 +222,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to the
+     * <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to the
      * origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      * <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -199,6 +237,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <p>
      * <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to the
      * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not
+     * included.
      * </p>
      * </li>
      * </ul>
@@ -209,14 +254,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to
+     *        <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to
      *        the origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      *        <code>CachePolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     *        <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      *        <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
@@ -224,6 +269,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *        <p>
      *        <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to
      *        the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront
+     *        sends to the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type,
+     *        which are not included.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -243,14 +295,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to the
+     * <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to the
      * origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      * <code>CachePolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      * <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
@@ -258,6 +310,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      * <p>
      * <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to the
      * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront sends to
+     * the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type, which are not
+     * included.
      * </p>
      * </li>
      * </ul>
@@ -268,14 +327,14 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Query strings in viewer requests are not included in requests that CloudFront sends to
+     *        <code>none</code> – No query strings in viewer requests are included in requests that CloudFront sends to
      *        the origin. Even when this field is set to <code>none</code>, any query strings that are listed in a
      *        <code>CachePolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The query strings in viewer requests that are listed in the
+     *        <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
      *        <code>QueryStringNames</code> type are included in requests that CloudFront sends to the origin.
      *        </p>
      *        </li>
@@ -283,6 +342,13 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
      *        <p>
      *        <code>all</code> – All query strings in viewer requests are included in requests that CloudFront sends to
      *        the origin.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>allExcept</code> – All query strings in viewer requests are included in requests that CloudFront
+     *        sends to the origin, <i> <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type,
+     *        which are not included.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -296,13 +362,20 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Contains a list of the query strings in viewer requests that are included in requests that CloudFront sends to
-     * the origin.
+     * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
+     * included in requests that CloudFront sends to the origin. The behavior depends on whether the
+     * <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      * 
      * @param queryStrings
-     *        Contains a list of the query strings in viewer requests that are included in requests that CloudFront
-     *        sends to the origin.
+     *        Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are
+     *        not</b> </i> included in requests that CloudFront sends to the origin. The behavior depends on whether the
+     *        <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is
+     *        set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or
+     *        <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query
+     *        strings are).
      */
 
     public void setQueryStrings(QueryStringNames queryStrings) {
@@ -311,12 +384,19 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Contains a list of the query strings in viewer requests that are included in requests that CloudFront sends to
-     * the origin.
+     * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
+     * included in requests that CloudFront sends to the origin. The behavior depends on whether the
+     * <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      * 
-     * @return Contains a list of the query strings in viewer requests that are included in requests that CloudFront
-     *         sends to the origin.
+     * @return Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are
+     *         not</b> </i> included in requests that CloudFront sends to the origin. The behavior depends on whether
+     *         the <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type
+     *         is set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or
+     *         <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query
+     *         strings are).
      */
 
     public QueryStringNames getQueryStrings() {
@@ -325,13 +405,20 @@ public class OriginRequestPolicyQueryStringsConfig implements Serializable, Clon
 
     /**
      * <p>
-     * Contains a list of the query strings in viewer requests that are included in requests that CloudFront sends to
-     * the origin.
+     * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
+     * included in requests that CloudFront sends to the origin. The behavior depends on whether the
+     * <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      * 
      * @param queryStrings
-     *        Contains a list of the query strings in viewer requests that are included in requests that CloudFront
-     *        sends to the origin.
+     *        Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are
+     *        not</b> </i> included in requests that CloudFront sends to the origin. The behavior depends on whether the
+     *        <code>QueryStringBehavior</code> field in the <code>OriginRequestPolicyQueryStringsConfig</code> type is
+     *        set to <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or
+     *        <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included, but all other query
+     *        strings are).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

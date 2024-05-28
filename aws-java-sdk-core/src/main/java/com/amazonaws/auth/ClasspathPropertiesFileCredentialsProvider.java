@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ import com.amazonaws.SdkClientException;
  * <code>secretKey</code> property.
  */
 public class ClasspathPropertiesFileCredentialsProvider implements AWSCredentialsProvider {
+
+    private static final String PROVIDER_NAME = "ClasspathPropertiesFileCredentialsProvider";
 
     /** The name of the properties file to check for credentials */
     private static String DEFAULT_PROPERTIES_FILE = "AwsCredentials.properties";
@@ -82,7 +84,7 @@ public class ClasspathPropertiesFileCredentialsProvider implements AWSCredential
         }
 
         try {
-            return new PropertiesCredentials(inputStream);
+            return new PropertiesCredentials(inputStream, PROVIDER_NAME);
         } catch (IOException e) {
             throw new SdkClientException("Unable to load AWS credentials from the " + credentialsFilePath + " file on the classpath", e);
         }

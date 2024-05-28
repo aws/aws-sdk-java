@@ -1,0 +1,242 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The data path that needs to be sorted.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataPathValue" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DataPathValue implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The field ID of the field that needs to be sorted.
+     * </p>
+     */
+    private String fieldId;
+    /**
+     * <p>
+     * The actual value of the field that needs to be sorted.
+     * </p>
+     */
+    private String fieldValue;
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     */
+    private DataPathType dataPathType;
+
+    /**
+     * <p>
+     * The field ID of the field that needs to be sorted.
+     * </p>
+     * 
+     * @param fieldId
+     *        The field ID of the field that needs to be sorted.
+     */
+
+    public void setFieldId(String fieldId) {
+        this.fieldId = fieldId;
+    }
+
+    /**
+     * <p>
+     * The field ID of the field that needs to be sorted.
+     * </p>
+     * 
+     * @return The field ID of the field that needs to be sorted.
+     */
+
+    public String getFieldId() {
+        return this.fieldId;
+    }
+
+    /**
+     * <p>
+     * The field ID of the field that needs to be sorted.
+     * </p>
+     * 
+     * @param fieldId
+     *        The field ID of the field that needs to be sorted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataPathValue withFieldId(String fieldId) {
+        setFieldId(fieldId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actual value of the field that needs to be sorted.
+     * </p>
+     * 
+     * @param fieldValue
+     *        The actual value of the field that needs to be sorted.
+     */
+
+    public void setFieldValue(String fieldValue) {
+        this.fieldValue = fieldValue;
+    }
+
+    /**
+     * <p>
+     * The actual value of the field that needs to be sorted.
+     * </p>
+     * 
+     * @return The actual value of the field that needs to be sorted.
+     */
+
+    public String getFieldValue() {
+        return this.fieldValue;
+    }
+
+    /**
+     * <p>
+     * The actual value of the field that needs to be sorted.
+     * </p>
+     * 
+     * @param fieldValue
+     *        The actual value of the field that needs to be sorted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataPathValue withFieldValue(String fieldValue) {
+        setFieldValue(fieldValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     * 
+     * @param dataPathType
+     *        The type configuration of the field.
+     */
+
+    public void setDataPathType(DataPathType dataPathType) {
+        this.dataPathType = dataPathType;
+    }
+
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     * 
+     * @return The type configuration of the field.
+     */
+
+    public DataPathType getDataPathType() {
+        return this.dataPathType;
+    }
+
+    /**
+     * <p>
+     * The type configuration of the field.
+     * </p>
+     * 
+     * @param dataPathType
+     *        The type configuration of the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataPathValue withDataPathType(DataPathType dataPathType) {
+        setDataPathType(dataPathType);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getFieldId() != null)
+            sb.append("FieldId: ").append(getFieldId()).append(",");
+        if (getFieldValue() != null)
+            sb.append("FieldValue: ").append("***Sensitive Data Redacted***").append(",");
+        if (getDataPathType() != null)
+            sb.append("DataPathType: ").append(getDataPathType());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DataPathValue == false)
+            return false;
+        DataPathValue other = (DataPathValue) obj;
+        if (other.getFieldId() == null ^ this.getFieldId() == null)
+            return false;
+        if (other.getFieldId() != null && other.getFieldId().equals(this.getFieldId()) == false)
+            return false;
+        if (other.getFieldValue() == null ^ this.getFieldValue() == null)
+            return false;
+        if (other.getFieldValue() != null && other.getFieldValue().equals(this.getFieldValue()) == false)
+            return false;
+        if (other.getDataPathType() == null ^ this.getDataPathType() == null)
+            return false;
+        if (other.getDataPathType() != null && other.getDataPathType().equals(this.getDataPathType()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getFieldId() == null) ? 0 : getFieldId().hashCode());
+        hashCode = prime * hashCode + ((getFieldValue() == null) ? 0 : getFieldValue().hashCode());
+        hashCode = prime * hashCode + ((getDataPathType() == null) ? 0 : getDataPathType().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public DataPathValue clone() {
+        try {
+            return (DataPathValue) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.quicksight.model.transform.DataPathValueMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

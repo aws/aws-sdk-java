@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,17 +36,17 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the
-     * action. To resolve the error, you must have permission to access the service or quota.
+     * action. To resolve the error, you must have permission to access the Amazon Web Service or quota.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     * <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      * </p>
      * </li>
      * <li>
@@ -72,17 +72,17 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the
-     * action. To resolve the error, you must have permission to access the service or quota.
+     * action. To resolve the error, you must have permission to access the Amazon Web Service or quota.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     * <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      * </p>
      * </li>
      * <li>
@@ -98,17 +98,18 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to
-     *        complete the action. To resolve the error, you must have permission to access the service or quota.
+     *        complete the action. To resolve the error, you must have permission to access the Amazon Web Service or
+     *        quota.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     *        <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     *        <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      *        </p>
      *        </li>
      *        <li>
@@ -131,17 +132,17 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the
-     * action. To resolve the error, you must have permission to access the service or quota.
+     * action. To resolve the error, you must have permission to access the Amazon Web Service or quota.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     * <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      * </p>
      * </li>
      * <li>
@@ -156,17 +157,18 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to
-     *         complete the action. To resolve the error, you must have permission to access the service or quota.
+     *         complete the action. To resolve the error, you must have permission to access the Amazon Web Service or
+     *         quota.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     *         <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     *         <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      *         </p>
      *         </li>
      *         <li>
@@ -189,17 +191,17 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the
-     * action. To resolve the error, you must have permission to access the service or quota.
+     * action. To resolve the error, you must have permission to access the Amazon Web Service or quota.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     * <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      * </p>
      * </li>
      * <li>
@@ -215,17 +217,18 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to
-     *        complete the action. To resolve the error, you must have permission to access the service or quota.
+     *        complete the action. To resolve the error, you must have permission to access the Amazon Web Service or
+     *        quota.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     *        <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     *        <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      *        </p>
      *        </li>
      *        <li>
@@ -250,17 +253,17 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the
-     * action. To resolve the error, you must have permission to access the service or quota.
+     * action. To resolve the error, you must have permission to access the Amazon Web Service or quota.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     * <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     * <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      * </p>
      * </li>
      * <li>
@@ -276,17 +279,18 @@ public class ErrorReason implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to
-     *        complete the action. To resolve the error, you must have permission to access the service or quota.
+     *        complete the action. To resolve the error, you must have permission to access the Amazon Web Service or
+     *        quota.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
+     *        <code>DEPENDENCY_THROTTLING_ERROR</code> - The Amazon Web Service is throttling Service Quotas.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
+     *        <code>DEPENDENCY_SERVICE_ERROR</code> - The Amazon Web Service is not available.
      *        </p>
      *        </li>
      *        <li>

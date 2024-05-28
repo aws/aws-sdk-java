@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,11 @@ public class BatchDescribeTypeConfigurationsError implements Serializable, Clone
      * </p>
      */
     private String errorMessage;
-
+    /**
+     * <p>
+     * Identifying information for the configuration of a CloudFormation extension.
+     * </p>
+     */
     private TypeConfigurationIdentifier typeConfigurationIdentifier;
 
     /**
@@ -123,7 +127,12 @@ public class BatchDescribeTypeConfigurationsError implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Identifying information for the configuration of a CloudFormation extension.
+     * </p>
+     * 
      * @param typeConfigurationIdentifier
+     *        Identifying information for the configuration of a CloudFormation extension.
      */
 
     public void setTypeConfigurationIdentifier(TypeConfigurationIdentifier typeConfigurationIdentifier) {
@@ -131,7 +140,11 @@ public class BatchDescribeTypeConfigurationsError implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * Identifying information for the configuration of a CloudFormation extension.
+     * </p>
+     * 
+     * @return Identifying information for the configuration of a CloudFormation extension.
      */
 
     public TypeConfigurationIdentifier getTypeConfigurationIdentifier() {
@@ -139,7 +152,12 @@ public class BatchDescribeTypeConfigurationsError implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Identifying information for the configuration of a CloudFormation extension.
+     * </p>
+     * 
      * @param typeConfigurationIdentifier
+     *        Identifying information for the configuration of a CloudFormation extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

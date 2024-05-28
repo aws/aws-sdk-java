@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,17 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>Amazon Timestream Write</fullname>
  * <p>
- * Amazon Timestream is a fast, scalable, fully managed time series database service that makes it easy to store and
- * analyze trillions of time series data points per day. With Timestream, you can easily store and analyze IoT sensor
+ * Amazon Timestream is a fast, scalable, fully managed time-series database service that makes it easy to store and
+ * analyze trillions of time-series data points per day. With Timestream, you can easily store and analyze IoT sensor
  * data to derive insights from your IoT applications. You can analyze industrial telemetry to streamline equipment
  * management and maintenance. You can also store and analyze log data and metrics to improve the performance and
- * availability of your applications. Timestream is built from the ground up to effectively ingest, process, and store
- * time series data. It organizes data to optimize query processing. It automatically scales based on the volume of data
- * ingested and on the query volume to ensure you receive optimal performance while inserting and querying data. As your
- * data grows over time, Timestream’s adaptive query processing engine spans across storage tiers to provide fast
- * analysis while reducing costs.
+ * availability of your applications.
+ * </p>
+ * <p>
+ * Timestream is built from the ground up to effectively ingest, process, and store time-series data. It organizes data
+ * to optimize query processing. It automatically scales based on the volume of data ingested and on the query volume to
+ * ensure you receive optimal performance while inserting and querying data. As your data grows over time, Timestream’s
+ * adaptive query processing engine spans across storage tiers to provide fast analysis while reducing costs.
  * </p>
  */
 @ThreadSafe
@@ -82,6 +84,39 @@ public class AmazonTimestreamWriteAsyncClient extends AmazonTimestreamWriteClien
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchLoadTaskResult> createBatchLoadTaskAsync(CreateBatchLoadTaskRequest request) {
+
+        return createBatchLoadTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchLoadTaskResult> createBatchLoadTaskAsync(final CreateBatchLoadTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBatchLoadTaskRequest, CreateBatchLoadTaskResult> asyncHandler) {
+        final CreateBatchLoadTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBatchLoadTaskResult>() {
+            @Override
+            public CreateBatchLoadTaskResult call() throws Exception {
+                CreateBatchLoadTaskResult result = null;
+
+                try {
+                    result = executeCreateBatchLoadTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -217,6 +252,39 @@ public class AmazonTimestreamWriteAsyncClient extends AmazonTimestreamWriteClien
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBatchLoadTaskResult> describeBatchLoadTaskAsync(DescribeBatchLoadTaskRequest request) {
+
+        return describeBatchLoadTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBatchLoadTaskResult> describeBatchLoadTaskAsync(final DescribeBatchLoadTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBatchLoadTaskRequest, DescribeBatchLoadTaskResult> asyncHandler) {
+        final DescribeBatchLoadTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBatchLoadTaskResult>() {
+            @Override
+            public DescribeBatchLoadTaskResult call() throws Exception {
+                DescribeBatchLoadTaskResult result = null;
+
+                try {
+                    result = executeDescribeBatchLoadTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDatabaseResult> describeDatabaseAsync(DescribeDatabaseRequest request) {
 
         return describeDatabaseAsync(request, null);
@@ -316,6 +384,39 @@ public class AmazonTimestreamWriteAsyncClient extends AmazonTimestreamWriteClien
     }
 
     @Override
+    public java.util.concurrent.Future<ListBatchLoadTasksResult> listBatchLoadTasksAsync(ListBatchLoadTasksRequest request) {
+
+        return listBatchLoadTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchLoadTasksResult> listBatchLoadTasksAsync(final ListBatchLoadTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBatchLoadTasksRequest, ListBatchLoadTasksResult> asyncHandler) {
+        final ListBatchLoadTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBatchLoadTasksResult>() {
+            @Override
+            public ListBatchLoadTasksResult call() throws Exception {
+                ListBatchLoadTasksResult result = null;
+
+                try {
+                    result = executeListBatchLoadTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatabasesResult> listDatabasesAsync(ListDatabasesRequest request) {
 
         return listDatabasesAsync(request, null);
@@ -399,6 +500,39 @@ public class AmazonTimestreamWriteAsyncClient extends AmazonTimestreamWriteClien
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeBatchLoadTaskResult> resumeBatchLoadTaskAsync(ResumeBatchLoadTaskRequest request) {
+
+        return resumeBatchLoadTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeBatchLoadTaskResult> resumeBatchLoadTaskAsync(final ResumeBatchLoadTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResumeBatchLoadTaskRequest, ResumeBatchLoadTaskResult> asyncHandler) {
+        final ResumeBatchLoadTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResumeBatchLoadTaskResult>() {
+            @Override
+            public ResumeBatchLoadTaskResult call() throws Exception {
+                ResumeBatchLoadTaskResult result = null;
+
+                try {
+                    result = executeResumeBatchLoadTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The unique identifier (ID) associated with this OU.
+     * The unique identifier (ID) associated with this OU. The ID is unique to the organization only.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
@@ -65,7 +65,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The unique identifier (ID) associated with this OU.
+     * The unique identifier (ID) associated with this OU. The ID is unique to the organization only.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
@@ -74,7 +74,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param id
-     *        The unique identifier (ID) associated with this OU.</p>
+     *        The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string
      *        requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
@@ -87,7 +87,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The unique identifier (ID) associated with this OU.
+     * The unique identifier (ID) associated with this OU. The ID is unique to the organization only.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
@@ -95,7 +95,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
      * is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.
      * </p>
      * 
-     * @return The unique identifier (ID) associated with this OU.</p>
+     * @return The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string
      *         requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
@@ -109,7 +109,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The unique identifier (ID) associated with this OU.
+     * The unique identifier (ID) associated with this OU. The ID is unique to the organization only.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires
@@ -118,7 +118,7 @@ public class OrganizationalUnit implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param id
-     *        The unique identifier (ID) associated with this OU.</p>
+     *        The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string
      *        requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the

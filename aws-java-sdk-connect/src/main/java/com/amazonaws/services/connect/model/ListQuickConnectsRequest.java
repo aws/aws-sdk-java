@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -46,19 +48,23 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      */
     private java.util.List<String> quickConnectTypes;
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -67,10 +73,14 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -79,11 +89,15 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +194,11 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
-     * @return The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     * @return The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *         prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @see QuickConnectType
      */
@@ -195,12 +209,12 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
      * @param quickConnectTypes
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @see QuickConnectType
      */
@@ -216,8 +230,8 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -226,7 +240,7 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param quickConnectTypes
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuickConnectType
@@ -244,12 +258,12 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
      * @param quickConnectTypes
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuickConnectType
@@ -262,12 +276,12 @@ public class ListQuickConnectsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
      * @param quickConnectTypes
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuickConnectType

@@ -1,0 +1,23 @@
+<settings>
+    <servers>
+        <server>
+            <id>amazon-shared</id>
+            <username>aws</username>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <id>amazon-shared</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>amazon-shared</id>
+                    <url>https://amazon-149122183214.d.codeartifact.us-west-2.amazonaws.com/maven/shared/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+</settings>

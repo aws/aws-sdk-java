@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,65 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CampaignSummary implements Serializable, Cloneable, StructuredPojo {
 
-    private String arn;
-
-    private String connectInstanceId;
-
     private String id;
+
+    private String arn;
 
     private String name;
 
-    /**
-     * @param arn
-     */
-
-    public void setArn(String arn) {
-        this.arn = arn;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getArn() {
-        return this.arn;
-    }
-
-    /**
-     * @param arn
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CampaignSummary withArn(String arn) {
-        setArn(arn);
-        return this;
-    }
-
-    /**
-     * @param connectInstanceId
-     */
-
-    public void setConnectInstanceId(String connectInstanceId) {
-        this.connectInstanceId = connectInstanceId;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getConnectInstanceId() {
-        return this.connectInstanceId;
-    }
-
-    /**
-     * @param connectInstanceId
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CampaignSummary withConnectInstanceId(String connectInstanceId) {
-        setConnectInstanceId(connectInstanceId);
-        return this;
-    }
+    private String connectInstanceId;
 
     /**
      * @param id
@@ -111,6 +59,32 @@ public class CampaignSummary implements Serializable, Cloneable, StructuredPojo 
 
     public CampaignSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * @param arn
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * @param arn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignSummary withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -141,6 +115,32 @@ public class CampaignSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @param connectInstanceId
+     */
+
+    public void setConnectInstanceId(String connectInstanceId) {
+        this.connectInstanceId = connectInstanceId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getConnectInstanceId() {
+        return this.connectInstanceId;
+    }
+
+    /**
+     * @param connectInstanceId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignSummary withConnectInstanceId(String connectInstanceId) {
+        setConnectInstanceId(connectInstanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,14 +152,14 @@ public class CampaignSummary implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
-        if (getConnectInstanceId() != null)
-            sb.append("ConnectInstanceId: ").append(getConnectInstanceId()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getConnectInstanceId() != null)
+            sb.append("ConnectInstanceId: ").append(getConnectInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -174,21 +174,21 @@ public class CampaignSummary implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof CampaignSummary == false)
             return false;
         CampaignSummary other = (CampaignSummary) obj;
-        if (other.getArn() == null ^ this.getArn() == null)
-            return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
-            return false;
-        if (other.getConnectInstanceId() == null ^ this.getConnectInstanceId() == null)
-            return false;
-        if (other.getConnectInstanceId() != null && other.getConnectInstanceId().equals(this.getConnectInstanceId()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getConnectInstanceId() == null ^ this.getConnectInstanceId() == null)
+            return false;
+        if (other.getConnectInstanceId() != null && other.getConnectInstanceId().equals(this.getConnectInstanceId()) == false)
             return false;
         return true;
     }
@@ -198,10 +198,10 @@ public class CampaignSummary implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getConnectInstanceId() == null) ? 0 : getConnectInstanceId().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getConnectInstanceId() == null) ? 0 : getConnectInstanceId().hashCode());
         return hashCode;
     }
 

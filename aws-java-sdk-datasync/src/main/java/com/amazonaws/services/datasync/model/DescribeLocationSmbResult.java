@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,37 +28,37 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB location that was described.
+     * The ARN of the SMB location.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The URL of the source SMB location that was described.
+     * The URI of the SMB location.
      * </p>
      */
     private String locationUri;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARNs of the DataSync agents that can connect with your SMB file server.
      * </p>
      */
     private java.util.List<String> agentArns;
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * The user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      */
     private String user;
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * The mount options that are available for DataSync to use to access an SMB location.
+     * The protocol that DataSync use to access your SMB file.
      * </p>
      */
     private SmbMountOptions mountOptions;
@@ -71,11 +71,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB location that was described.
+     * The ARN of the SMB location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the SMB location that was described.
+     *        The ARN of the SMB location.
      */
 
     public void setLocationArn(String locationArn) {
@@ -84,10 +84,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB location that was described.
+     * The ARN of the SMB location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SMB location that was described.
+     * @return The ARN of the SMB location.
      */
 
     public String getLocationArn() {
@@ -96,11 +96,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SMB location that was described.
+     * The ARN of the SMB location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the SMB location that was described.
+     *        The ARN of the SMB location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SMB location that was described.
+     * The URI of the SMB location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source SMB location that was described.
+     *        The URI of the SMB location.
      */
 
     public void setLocationUri(String locationUri) {
@@ -124,10 +124,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SMB location that was described.
+     * The URI of the SMB location.
      * </p>
      * 
-     * @return The URL of the source SMB location that was described.
+     * @return The URI of the SMB location.
      */
 
     public String getLocationUri() {
@@ -136,11 +136,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SMB location that was described.
+     * The URI of the SMB location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source SMB location that was described.
+     *        The URI of the SMB location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,10 +151,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARNs of the DataSync agents that can connect with your SMB file server.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * @return The ARNs of the DataSync agents that can connect with your SMB file server.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -163,11 +163,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARNs of the DataSync agents that can connect with your SMB file server.
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     *        The ARNs of the DataSync agents that can connect with your SMB file server.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -181,7 +181,7 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARNs of the DataSync agents that can connect with your SMB file server.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -190,7 +190,7 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     *        The ARNs of the DataSync agents that can connect with your SMB file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +206,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     * The ARNs of the DataSync agents that can connect with your SMB file server.
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Name (ARN) of the source SMB file system location that is created.
+     *        The ARNs of the DataSync agents that can connect with your SMB file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * The user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * 
      * @param user
-     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     *        The user that can mount and access the files, folders, and file metadata in your SMB file server.
      */
 
     public void setUser(String user) {
@@ -234,10 +234,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * The user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * 
-     * @return The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * @return The user that can mount and access the files, folders, and file metadata in your SMB file server.
      */
 
     public String getUser() {
@@ -246,11 +246,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * The user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * 
      * @param user
-     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     *        The user that can mount and access the files, folders, and file metadata in your SMB file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,11 +261,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the SMB server belongs to.
+     *        The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      */
 
     public void setDomain(String domain) {
@@ -274,10 +274,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      * </p>
      * 
-     * @return The name of the Windows domain that the SMB server belongs to.
+     * @return The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      */
 
     public String getDomain() {
@@ -286,11 +286,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the SMB server belongs to.
+     *        The name of the Microsoft Active Directory domain that the SMB file server belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +301,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The mount options that are available for DataSync to use to access an SMB location.
+     * The protocol that DataSync use to access your SMB file.
      * </p>
      * 
      * @param mountOptions
-     *        The mount options that are available for DataSync to use to access an SMB location.
+     *        The protocol that DataSync use to access your SMB file.
      */
 
     public void setMountOptions(SmbMountOptions mountOptions) {
@@ -314,10 +314,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The mount options that are available for DataSync to use to access an SMB location.
+     * The protocol that DataSync use to access your SMB file.
      * </p>
      * 
-     * @return The mount options that are available for DataSync to use to access an SMB location.
+     * @return The protocol that DataSync use to access your SMB file.
      */
 
     public SmbMountOptions getMountOptions() {
@@ -326,11 +326,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The mount options that are available for DataSync to use to access an SMB location.
+     * The protocol that DataSync use to access your SMB file.
      * </p>
      * 
      * @param mountOptions
-     *        The mount options that are available for DataSync to use to access an SMB location.
+     *        The protocol that DataSync use to access your SMB file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

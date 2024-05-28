@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class DescribeProvisioningArtifactRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<Boolean> VERBOSE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Verbose").build();
+    private static final MarshallingInfo<Boolean> INCLUDEPROVISIONINGARTIFACTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeProvisioningArtifactParameters").build();
 
     private static final DescribeProvisioningArtifactRequestMarshaller instance = new DescribeProvisioningArtifactRequestMarshaller();
 
@@ -62,6 +64,8 @@ public class DescribeProvisioningArtifactRequestMarshaller {
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningArtifactRequest.getVerbose(), VERBOSE_BINDING);
+            protocolMarshaller.marshall(describeProvisioningArtifactRequest.getIncludeProvisioningArtifactParameters(),
+                    INCLUDEPROVISIONINGARTIFACTPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,12 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private Integrations integrations;
+    /**
+     * <p>
+     * A key-value pair that identifies an associated resource.
+     * </p>
+     */
+    private java.util.Map<String, String> applicationTag;
 
     /**
      * <p>
@@ -470,6 +476,74 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * A key-value pair that identifies an associated resource.
+     * </p>
+     * 
+     * @return A key-value pair that identifies an associated resource.
+     */
+
+    public java.util.Map<String, String> getApplicationTag() {
+        return applicationTag;
+    }
+
+    /**
+     * <p>
+     * A key-value pair that identifies an associated resource.
+     * </p>
+     * 
+     * @param applicationTag
+     *        A key-value pair that identifies an associated resource.
+     */
+
+    public void setApplicationTag(java.util.Map<String, String> applicationTag) {
+        this.applicationTag = applicationTag;
+    }
+
+    /**
+     * <p>
+     * A key-value pair that identifies an associated resource.
+     * </p>
+     * 
+     * @param applicationTag
+     *        A key-value pair that identifies an associated resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withApplicationTag(java.util.Map<String, String> applicationTag) {
+        setApplicationTag(applicationTag);
+        return this;
+    }
+
+    /**
+     * Add a single ApplicationTag entry
+     *
+     * @see GetApplicationResult#withApplicationTag
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult addApplicationTagEntry(String key, String value) {
+        if (null == this.applicationTag) {
+            this.applicationTag = new java.util.HashMap<String, String>();
+        }
+        if (this.applicationTag.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.applicationTag.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ApplicationTag.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult clearApplicationTagEntries() {
+        this.applicationTag = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -498,7 +572,9 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getIntegrations() != null)
-            sb.append("Integrations: ").append(getIntegrations());
+            sb.append("Integrations: ").append(getIntegrations()).append(",");
+        if (getApplicationTag() != null)
+            sb.append("ApplicationTag: ").append(getApplicationTag());
         sb.append("}");
         return sb.toString();
     }
@@ -549,6 +625,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getIntegrations() != null && other.getIntegrations().equals(this.getIntegrations()) == false)
             return false;
+        if (other.getApplicationTag() == null ^ this.getApplicationTag() == null)
+            return false;
+        if (other.getApplicationTag() != null && other.getApplicationTag().equals(this.getApplicationTag()) == false)
+            return false;
         return true;
     }
 
@@ -566,6 +646,7 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getAssociatedResourceCount() == null) ? 0 : getAssociatedResourceCount().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getIntegrations() == null) ? 0 : getIntegrations().hashCode());
+        hashCode = prime * hashCode + ((getApplicationTag() == null) ? 0 : getApplicationTag().hashCode());
         return hashCode;
     }
 

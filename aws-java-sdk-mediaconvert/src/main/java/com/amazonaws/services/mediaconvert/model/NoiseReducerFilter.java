@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,11 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To
- * use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing
- * noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max
- * noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video
- * quality for complex motion.
+ * Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you
+ * must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian,
+ * Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does
+ * frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NoiseReducerFilter {

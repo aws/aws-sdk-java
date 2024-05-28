@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,14 @@ public enum ContentType {
     HTML("HTML"),
     MS_WORD("MS_WORD"),
     PLAIN_TEXT("PLAIN_TEXT"),
-    PPT("PPT");
+    PPT("PPT"),
+    RTF("RTF"),
+    XML("XML"),
+    XSLT("XSLT"),
+    MS_EXCEL("MS_EXCEL"),
+    CSV("CSV"),
+    JSON("JSON"),
+    MD("MD");
 
     private String value;
 

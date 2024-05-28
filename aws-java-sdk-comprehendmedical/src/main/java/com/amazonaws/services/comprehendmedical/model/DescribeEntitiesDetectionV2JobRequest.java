@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeEntitiesDetectionV2JobRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code>
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code>
      * operation returns this identifier in its response.
      * </p>
      */
@@ -35,12 +35,12 @@ public class DescribeEntitiesDetectionV2JobRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code>
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code>
      * operation returns this identifier in its response.
      * </p>
      * 
      * @param jobId
-     *        The identifier that Comprehend Medical; generated for the job. The
+     *        The identifier that Amazon Comprehend Medical generated for the job. The
      *        <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.
      */
 
@@ -50,11 +50,11 @@ public class DescribeEntitiesDetectionV2JobRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code>
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code>
      * operation returns this identifier in its response.
      * </p>
      * 
-     * @return The identifier that Comprehend Medical; generated for the job. The
+     * @return The identifier that Amazon Comprehend Medical generated for the job. The
      *         <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.
      */
 
@@ -64,12 +64,12 @@ public class DescribeEntitiesDetectionV2JobRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code>
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code>
      * operation returns this identifier in its response.
      * </p>
      * 
      * @param jobId
-     *        The identifier that Comprehend Medical; generated for the job. The
+     *        The identifier that Amazon Comprehend Medical generated for the job. The
      *        <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

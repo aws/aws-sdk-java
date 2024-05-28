@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Define a unique name for this cluster for your Region.
+     * A unique name for this cluster in your Amazon Web Services Region.
      * </p>
      */
     private String name;
@@ -39,26 +39,25 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private ConnectorConfigRequest connectorConfig;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
-     * associated with the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * Define a unique name for this cluster for your Region.
+     * A unique name for this cluster in your Amazon Web Services Region.
      * </p>
      * 
      * @param name
-     *        Define a unique name for this cluster for your Region.
+     *        A unique name for this cluster in your Amazon Web Services Region.
      */
 
     public void setName(String name) {
@@ -67,10 +66,10 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Define a unique name for this cluster for your Region.
+     * A unique name for this cluster in your Amazon Web Services Region.
      * </p>
      * 
-     * @return Define a unique name for this cluster for your Region.
+     * @return A unique name for this cluster in your Amazon Web Services Region.
      */
 
     public String getName() {
@@ -79,11 +78,11 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Define a unique name for this cluster for your Region.
+     * A unique name for this cluster in your Amazon Web Services Region.
      * </p>
      * 
      * @param name
-     *        Define a unique name for this cluster for your Region.
+     *        A unique name for this cluster in your Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +133,11 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -147,10 +146,10 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -159,11 +158,11 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,14 +173,12 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
-     * associated with the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any
-     *         other resources associated with the cluster.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -190,15 +187,13 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
-     * associated with the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any
-     *        other resources associated with the cluster.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -207,15 +202,13 @@ public class RegisterClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
-     * associated with the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any
-     *        other resources associated with the cluster.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,30 +28,29 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.
+     * The IDs of the security groups. You cannot specify security groups from a different VPC.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groups;
     /**
      * <p>
-     * The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     * The ID of the EC2-Classic instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC.
+     * The ID of the ClassicLink-enabled VPC.
      * </p>
      */
     private String vpcId;
 
     /**
      * <p>
-     * The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.
+     * The IDs of the security groups. You cannot specify security groups from a different VPC.
      * </p>
      * 
-     * @return The ID of one or more of the VPC's security groups. You cannot specify security groups from a different
-     *         VPC.
+     * @return The IDs of the security groups. You cannot specify security groups from a different VPC.
      */
 
     public java.util.List<String> getGroups() {
@@ -63,12 +62,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.
+     * The IDs of the security groups. You cannot specify security groups from a different VPC.
      * </p>
      * 
      * @param groups
-     *        The ID of one or more of the VPC's security groups. You cannot specify security groups from a different
-     *        VPC.
+     *        The IDs of the security groups. You cannot specify security groups from a different VPC.
      */
 
     public void setGroups(java.util.Collection<String> groups) {
@@ -82,7 +80,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.
+     * The IDs of the security groups. You cannot specify security groups from a different VPC.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,8 +89,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param groups
-     *        The ID of one or more of the VPC's security groups. You cannot specify security groups from a different
-     *        VPC.
+     *        The IDs of the security groups. You cannot specify security groups from a different VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,12 +105,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of one or more of the VPC's security groups. You cannot specify security groups from a different VPC.
+     * The IDs of the security groups. You cannot specify security groups from a different VPC.
      * </p>
      * 
      * @param groups
-     *        The ID of one or more of the VPC's security groups. You cannot specify security groups from a different
-     *        VPC.
+     *        The IDs of the security groups. You cannot specify security groups from a different VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +120,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     * The ID of the EC2-Classic instance.
      * </p>
      * 
      * @param instanceId
-     *        The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     *        The ID of the EC2-Classic instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -137,10 +133,10 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     * The ID of the EC2-Classic instance.
      * </p>
      * 
-     * @return The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     * @return The ID of the EC2-Classic instance.
      */
 
     public String getInstanceId() {
@@ -149,11 +145,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     * The ID of the EC2-Classic instance.
      * </p>
      * 
      * @param instanceId
-     *        The ID of an EC2-Classic instance to link to the ClassicLink-enabled VPC.
+     *        The ID of the EC2-Classic instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +160,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC.
+     * The ID of the ClassicLink-enabled VPC.
      * </p>
      * 
      * @param vpcId
-     *        The ID of a ClassicLink-enabled VPC.
+     *        The ID of the ClassicLink-enabled VPC.
      */
 
     public void setVpcId(String vpcId) {
@@ -177,10 +173,10 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC.
+     * The ID of the ClassicLink-enabled VPC.
      * </p>
      * 
-     * @return The ID of a ClassicLink-enabled VPC.
+     * @return The ID of the ClassicLink-enabled VPC.
      */
 
     public String getVpcId() {
@@ -189,11 +185,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The ID of a ClassicLink-enabled VPC.
+     * The ID of the ClassicLink-enabled VPC.
      * </p>
      * 
      * @param vpcId
-     *        The ID of a ClassicLink-enabled VPC.
+     *        The ID of the ClassicLink-enabled VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When using the DynamoDB console, <code>ALL</code> is selected by default.
+     * </p>
      */
     private String projectionType;
     /**
@@ -87,6 +90,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When using the DynamoDB console, <code>ALL</code> is selected by default.
+     * </p>
      * 
      * @param projectionType
      *        The set of attributes that are projected into the index:</p>
@@ -107,6 +113,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <code>ALL</code> - All of the table attributes are projected into the index.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When using the DynamoDB console, <code>ALL</code> is selected by default.
      * @see ProjectionType
      */
 
@@ -136,6 +145,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When using the DynamoDB console, <code>ALL</code> is selected by default.
+     * </p>
      * 
      * @return The set of attributes that are projected into the index:</p>
      *         <ul>
@@ -155,6 +167,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *         <code>ALL</code> - All of the table attributes are projected into the index.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         When using the DynamoDB console, <code>ALL</code> is selected by default.
      * @see ProjectionType
      */
 
@@ -184,6 +199,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When using the DynamoDB console, <code>ALL</code> is selected by default.
+     * </p>
      * 
      * @param projectionType
      *        The set of attributes that are projected into the index:</p>
@@ -204,6 +222,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <code>ALL</code> - All of the table attributes are projected into the index.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When using the DynamoDB console, <code>ALL</code> is selected by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProjectionType
      */
@@ -235,6 +256,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When using the DynamoDB console, <code>ALL</code> is selected by default.
+     * </p>
      * 
      * @param projectionType
      *        The set of attributes that are projected into the index:</p>
@@ -255,6 +279,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <code>ALL</code> - All of the table attributes are projected into the index.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When using the DynamoDB console, <code>ALL</code> is selected by default.
      * @see ProjectionType
      */
 
@@ -284,6 +311,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * When using the DynamoDB console, <code>ALL</code> is selected by default.
+     * </p>
      * 
      * @param projectionType
      *        The set of attributes that are projected into the index:</p>
@@ -304,6 +334,9 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      *        <code>ALL</code> - All of the table attributes are projected into the index.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        When using the DynamoDB console, <code>ALL</code> is selected by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProjectionType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,21 +25,22 @@ public class DescribeFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
-     * Store status, created at, Data Store type version, and Data Store endpoint.
+     * All properties associated with a data store, including the data store ID, data store ARN, data store name, data
+     * store status, when the data store was created, data store type version, and the data store's endpoint.
      * </p>
      */
     private DatastoreProperties datastoreProperties;
 
     /**
      * <p>
-     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
-     * Store status, created at, Data Store type version, and Data Store endpoint.
+     * All properties associated with a data store, including the data store ID, data store ARN, data store name, data
+     * store status, when the data store was created, data store type version, and the data store's endpoint.
      * </p>
      * 
      * @param datastoreProperties
-     *        All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name,
-     *        Data Store status, created at, Data Store type version, and Data Store endpoint.
+     *        All properties associated with a data store, including the data store ID, data store ARN, data store name,
+     *        data store status, when the data store was created, data store type version, and the data store's
+     *        endpoint.
      */
 
     public void setDatastoreProperties(DatastoreProperties datastoreProperties) {
@@ -48,12 +49,13 @@ public class DescribeFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
-     * Store status, created at, Data Store type version, and Data Store endpoint.
+     * All properties associated with a data store, including the data store ID, data store ARN, data store name, data
+     * store status, when the data store was created, data store type version, and the data store's endpoint.
      * </p>
      * 
-     * @return All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store
-     *         name, Data Store status, created at, Data Store type version, and Data Store endpoint.
+     * @return All properties associated with a data store, including the data store ID, data store ARN, data store
+     *         name, data store status, when the data store was created, data store type version, and the data store's
+     *         endpoint.
      */
 
     public DatastoreProperties getDatastoreProperties() {
@@ -62,13 +64,14 @@ public class DescribeFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data
-     * Store status, created at, Data Store type version, and Data Store endpoint.
+     * All properties associated with a data store, including the data store ID, data store ARN, data store name, data
+     * store status, when the data store was created, data store type version, and the data store's endpoint.
      * </p>
      * 
      * @param datastoreProperties
-     *        All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name,
-     *        Data Store status, created at, Data Store type version, and Data Store endpoint.
+     *        All properties associated with a data store, including the data store ID, data store ARN, data store name,
+     *        data store status, when the data store was created, data store type version, and the data store's
+     *        endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

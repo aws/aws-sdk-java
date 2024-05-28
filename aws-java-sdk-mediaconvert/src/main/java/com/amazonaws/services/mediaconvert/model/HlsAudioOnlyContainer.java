@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS
- * container. Keep the default value Automatic (AUTOMATIC) to create a raw audio-only file with no container. Regardless
- * of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS
- * container.
+ * container. Keep the default value Automatic to create a raw audio-only file with no container. Regardless of the
+ * value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsAudioOnlyContainer {

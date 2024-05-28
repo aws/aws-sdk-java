@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,125 +22,178 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains
-     * owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the
-     * following characters: a-z (lowercase), 0-9, and - (hyphen).
+     * Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account
+     * within an Amazon Web Services Region.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch
-     * Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     * target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service
+     * domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     * >Creating and managing Amazon OpenSearch Service domains</a>.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     * Container for the cluster configuration of a domain.
      * </p>
      */
     private ClusterConfig clusterConfig;
     /**
      * <p>
-     * Options to enable, disable, and specify the type and size of EBS storage volumes.
+     * Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      * </p>
      */
     private EBSOptions eBSOptions;
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      * </p>
      */
     private String accessPolicies;
     /**
      * <p>
-     * Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     * Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across
+     * IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you
+     * can't change your address type later.
+     * </p>
+     */
+    private String iPAddressType;
+    /**
+     * <p>
+     * DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      * </p>
      */
     private SnapshotOptions snapshotOptions;
     /**
      * <p>
-     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch
+     * Service creates the domain with a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      */
     private VPCOptions vPCOptions;
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon
+     * Cognito authentication for OpenSearch Dashboards</a>.
      * </p>
      */
     private CognitoOptions cognitoOptions;
     /**
      * <p>
-     * Options for encryption of data at rest.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      */
     private EncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
-     * Node-to-node encryption options.
+     * Enables node-to-node encryption.
      * </p>
      */
     private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
     /**
      * <p>
-     * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
-     * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced cluster parameters </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      */
     private java.util.Map<String, String> advancedOptions;
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Key-value pairs to configure log publishing.
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
     /**
      * <p>
-     * Options to specify configurations that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      */
     private DomainEndpointOptions domainEndpointOptions;
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      */
     private AdvancedSecurityOptionsInput advancedSecurityOptions;
     /**
      * <p>
-     * A list of <code>Tag</code> added during domain creation.
+     * List of tags to add to the domain upon creation.
      * </p>
      */
     private java.util.List<Tag> tagList;
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      */
     private AutoTuneOptionsInput autoTuneOptions;
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     */
+    private OffPeakWindowOptions offPeakWindowOptions;
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     */
+    private SoftwareUpdateOptions softwareUpdateOptions;
 
     /**
      * <p>
-     * The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains
-     * owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the
-     * following characters: a-z (lowercase), 0-9, and - (hyphen).
+     * Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account
+     * within an Amazon Web Services Region.
      * </p>
      * 
      * @param domainName
-     *        The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the
-     *        domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can
-     *        contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+     *        Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an
+     *        account within an Amazon Web Services Region.
      */
 
     public void setDomainName(String domainName) {
@@ -149,14 +202,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains
-     * owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the
-     * following characters: a-z (lowercase), 0-9, and - (hyphen).
+     * Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account
+     * within an Amazon Web Services Region.
      * </p>
      * 
-     * @return The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the
-     *         domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can
-     *         contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+     * @return Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an
+     *         account within an Amazon Web Services Region.
      */
 
     public String getDomainName() {
@@ -165,15 +216,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains
-     * owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the
-     * following characters: a-z (lowercase), 0-9, and - (hyphen).
+     * Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account
+     * within an Amazon Web Services Region.
      * </p>
      * 
      * @param domainName
-     *        The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the
-     *        domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can
-     *        contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+     *        Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an
+     *        account within an Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,18 +233,19 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch
-     * Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     * target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service
+     * domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     * >Creating and managing Amazon OpenSearch Service domains</a>.
      * </p>
      * 
      * @param engineVersion
-     *        String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon
-     *        OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see
-     *        <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     *        target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     *        String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch
+     *        Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     *        >Creating and managing Amazon OpenSearch Service domains</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -204,17 +254,18 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch
-     * Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     * target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service
+     * domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     * >Creating and managing Amazon OpenSearch Service domains</a>.
      * </p>
      * 
-     * @return String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon
-     *         OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information,
-     *         see <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     *         target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     * @return String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch
+     *         Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     *         >Creating and managing Amazon OpenSearch Service domains</a>.
      */
 
     public String getEngineVersion() {
@@ -223,18 +274,19 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon OpenSearch
-     * Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     * target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service
+     * domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     * >Creating and managing Amazon OpenSearch Service domains</a>.
      * </p>
      * 
      * @param engineVersion
-     *        String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the Amazon
-     *        OpenSearch Service domain. For example, "OpenSearch_1.0" or "Elasticsearch_7.9". For more information, see
-     *        <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
-     *        target="_blank">Creating and managing Amazon OpenSearch Service domains </a>.
+     *        String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch
+     *        Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains"
+     *        >Creating and managing Amazon OpenSearch Service domains</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +297,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     * Container for the cluster configuration of a domain.
      * </p>
      * 
      * @param clusterConfig
-     *        Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     *        Container for the cluster configuration of a domain.
      */
 
     public void setClusterConfig(ClusterConfig clusterConfig) {
@@ -258,10 +310,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     * Container for the cluster configuration of a domain.
      * </p>
      * 
-     * @return Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     * @return Container for the cluster configuration of a domain.
      */
 
     public ClusterConfig getClusterConfig() {
@@ -270,11 +322,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     * Container for the cluster configuration of a domain.
      * </p>
      * 
      * @param clusterConfig
-     *        Configuration options for a domain. Specifies the instance type and number of instances in the domain.
+     *        Container for the cluster configuration of a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +337,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to enable, disable, and specify the type and size of EBS storage volumes.
+     * Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      * </p>
      * 
      * @param eBSOptions
-     *        Options to enable, disable, and specify the type and size of EBS storage volumes.
+     *        Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      */
 
     public void setEBSOptions(EBSOptions eBSOptions) {
@@ -298,10 +350,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to enable, disable, and specify the type and size of EBS storage volumes.
+     * Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      * </p>
      * 
-     * @return Options to enable, disable, and specify the type and size of EBS storage volumes.
+     * @return Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      */
 
     public EBSOptions getEBSOptions() {
@@ -310,11 +362,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to enable, disable, and specify the type and size of EBS storage volumes.
+     * Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      * </p>
      * 
      * @param eBSOptions
-     *        Options to enable, disable, and specify the type and size of EBS storage volumes.
+     *        Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +377,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      */
 
     public void setAccessPolicies(String accessPolicies) {
@@ -338,10 +390,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      * </p>
      * 
-     * @return IAM access policy as a JSON-formatted string.
+     * @return Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      */
 
     public String getAccessPolicies() {
@@ -350,11 +402,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Identity and Access Management (IAM) policy document specifying the access policies for the new domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,11 +417,86 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     * Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across
+     * IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you
+     * can't change your address type later.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources
+     *        across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual
+     *        stack, you can't change your address type later.
+     * @see IPAddressType
+     */
+
+    public void setIPAddressType(String iPAddressType) {
+        this.iPAddressType = iPAddressType;
+    }
+
+    /**
+     * <p>
+     * Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across
+     * IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you
+     * can't change your address type later.
+     * </p>
+     * 
+     * @return Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain
+     *         resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address
+     *         type to dual stack, you can't change your address type later.
+     * @see IPAddressType
+     */
+
+    public String getIPAddressType() {
+        return this.iPAddressType;
+    }
+
+    /**
+     * <p>
+     * Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across
+     * IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you
+     * can't change your address type later.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources
+     *        across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual
+     *        stack, you can't change your address type later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public CreateDomainRequest withIPAddressType(String iPAddressType) {
+        setIPAddressType(iPAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across
+     * IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you
+     * can't change your address type later.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources
+     *        across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual
+     *        stack, you can't change your address type later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public CreateDomainRequest withIPAddressType(IPAddressType iPAddressType) {
+        this.iPAddressType = iPAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
      * @param snapshotOptions
-     *        Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     *        DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      */
 
     public void setSnapshotOptions(SnapshotOptions snapshotOptions) {
@@ -378,10 +505,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     * DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
-     * @return Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     * @return DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      */
 
     public SnapshotOptions getSnapshotOptions() {
@@ -390,11 +517,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     * DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
      * @param snapshotOptions
-     *        Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.
+     *        DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,15 +532,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch
+     * Service creates the domain with a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      * 
      * @param vPCOptions
-     *        Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-     *        target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
+     *        Container for the values required to configure VPC access domains. If you don't specify these values,
+     *        OpenSearch Service creates the domain with a public endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     *        OpenSearch Service domains using a VPC</a>.
      */
 
     public void setVPCOptions(VPCOptions vPCOptions) {
@@ -422,14 +551,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch
+     * Service creates the domain with a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      * 
-     * @return Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-     *         target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
+     * @return Container for the values required to configure VPC access domains. If you don't specify these values,
+     *         OpenSearch Service creates the domain with a public endpoint. For more information, see <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your
+     *         Amazon OpenSearch Service domains using a VPC</a>.
      */
 
     public VPCOptions getVPCOptions() {
@@ -438,15 +569,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch
+     * Service creates the domain with a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      * 
      * @param vPCOptions
-     *        Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-     *        target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
+     *        Container for the values required to configure VPC access domains. If you don't specify these values,
+     *        OpenSearch Service creates the domain with a public endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     *        OpenSearch Service domains using a VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,16 +590,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon
+     * Cognito authentication for OpenSearch Dashboards</a>.
      * </p>
      * 
      * @param cognitoOptions
-     *        Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
+     *        Amazon Cognito authentication for OpenSearch Dashboards</a>.
      */
 
     public void setCognitoOptions(CognitoOptions cognitoOptions) {
@@ -475,15 +607,14 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon
+     * Cognito authentication for OpenSearch Dashboards</a>.
      * </p>
      * 
-     * @return Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *         target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * @return Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
+     *         Amazon Cognito authentication for OpenSearch Dashboards</a>.
      */
 
     public CognitoOptions getCognitoOptions() {
@@ -492,16 +623,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon
+     * Cognito authentication for OpenSearch Dashboards</a>.
      * </p>
      * 
      * @param cognitoOptions
-     *        Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Key-value pairs to configure Amazon Cognito authentication. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
+     *        Amazon Cognito authentication for OpenSearch Dashboards</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,11 +642,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options for encryption of data at rest.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        Options for encryption of data at rest.
+     *        Key-value pairs to enable encryption at rest.
      */
 
     public void setEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
@@ -525,10 +655,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options for encryption of data at rest.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      * 
-     * @return Options for encryption of data at rest.
+     * @return Key-value pairs to enable encryption at rest.
      */
 
     public EncryptionAtRestOptions getEncryptionAtRestOptions() {
@@ -537,11 +667,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options for encryption of data at rest.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        Options for encryption of data at rest.
+     *        Key-value pairs to enable encryption at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,11 +682,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Node-to-node encryption options.
+     * Enables node-to-node encryption.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        Node-to-node encryption options.
+     *        Enables node-to-node encryption.
      */
 
     public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
@@ -565,10 +695,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Node-to-node encryption options.
+     * Enables node-to-node encryption.
      * </p>
      * 
-     * @return Node-to-node encryption options.
+     * @return Enables node-to-node encryption.
      */
 
     public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
@@ -577,11 +707,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Node-to-node encryption options.
+     * Enables node-to-node encryption.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        Node-to-node encryption options.
+     *        Enables node-to-node encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,16 +722,81 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
-     * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced cluster parameters </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      * 
-     * @return Option to allow references to indices in an HTTP request body. Must be <code>false</code> when
-     *         configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *         target="_blank">Advanced cluster parameters </a> for more information.
+     * @return Key-value pairs to specify advanced configuration options. The following key-value pairs are
+     *         supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather
+     *         than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP
+     *         requests. If you want to configure access policies for domain sub-resources, such as specific indexes and
+     *         domain APIs, you must disable this property. Default is true.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean.
+     *         Specifies the percentage of heap space allocated to field data. Default is unbounded.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a
+     *         boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024.
+     *         Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a
+     *         boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and
+     *         plugins to continue working with it. Default is false when creating a domain and true when upgrading a
+     *         domain.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *         >Advanced cluster parameters</a>.
      */
 
     public java.util.Map<String, String> getAdvancedOptions() {
@@ -610,17 +805,82 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
-     * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced cluster parameters </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      * 
      * @param advancedOptions
-     *        Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
-     *        access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *        target="_blank">Advanced cluster parameters </a> for more information.
+     *        Key-value pairs to specify advanced configuration options. The following key-value pairs are
+     *        supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather
+     *        than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP
+     *        requests. If you want to configure access policies for domain sub-resources, such as specific indexes and
+     *        domain APIs, you must disable this property. Default is true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean.
+     *        Specifies the percentage of heap space allocated to field data. Default is unbounded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a
+     *        boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024.
+     *        Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a
+     *        boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and
+     *        plugins to continue working with it. Default is false when creating a domain and true when upgrading a
+     *        domain.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *        >Advanced cluster parameters</a>.
      */
 
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
@@ -629,17 +889,82 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
-     * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced cluster parameters </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      * 
      * @param advancedOptions
-     *        Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
-     *        access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *        target="_blank">Advanced cluster parameters </a> for more information.
+     *        Key-value pairs to specify advanced configuration options. The following key-value pairs are
+     *        supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather
+     *        than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP
+     *        requests. If you want to configure access policies for domain sub-resources, such as specific indexes and
+     *        domain APIs, you must disable this property. Default is true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean.
+     *        Specifies the percentage of heap space allocated to field data. Default is unbounded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a
+     *        boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024.
+     *        Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a
+     *        boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and
+     *        plugins to continue working with it. Default is false when creating a domain and true when upgrading a
+     *        domain.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *        >Advanced cluster parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -678,12 +1003,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
-     * @return Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
-     *         given type of OpenSearch log.
+     * @return Key-value pairs to configure log publishing.
      */
 
     public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
@@ -692,13 +1015,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
-     *        given type of OpenSearch log.
+     *        Key-value pairs to configure log publishing.
      */
 
     public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
@@ -707,13 +1028,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
-     *        given type of OpenSearch log.
+     *        Key-value pairs to configure log publishing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -752,11 +1071,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify configurations that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        Options to specify configurations that will be applied to the domain endpoint.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public void setDomainEndpointOptions(DomainEndpointOptions domainEndpointOptions) {
@@ -765,10 +1084,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify configurations that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
-     * @return Options to specify configurations that will be applied to the domain endpoint.
+     * @return Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public DomainEndpointOptions getDomainEndpointOptions() {
@@ -777,11 +1096,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Options to specify configurations that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        Options to specify configurations that will be applied to the domain endpoint.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -792,11 +1111,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        Specifies advanced security options.
+     *        Options for fine-grained access control.
      */
 
     public void setAdvancedSecurityOptions(AdvancedSecurityOptionsInput advancedSecurityOptions) {
@@ -805,10 +1124,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      * 
-     * @return Specifies advanced security options.
+     * @return Options for fine-grained access control.
      */
 
     public AdvancedSecurityOptionsInput getAdvancedSecurityOptions() {
@@ -817,11 +1136,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        Specifies advanced security options.
+     *        Options for fine-grained access control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -832,10 +1151,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of <code>Tag</code> added during domain creation.
+     * List of tags to add to the domain upon creation.
      * </p>
      * 
-     * @return A list of <code>Tag</code> added during domain creation.
+     * @return List of tags to add to the domain upon creation.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -844,11 +1163,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of <code>Tag</code> added during domain creation.
+     * List of tags to add to the domain upon creation.
      * </p>
      * 
      * @param tagList
-     *        A list of <code>Tag</code> added during domain creation.
+     *        List of tags to add to the domain upon creation.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -862,7 +1181,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of <code>Tag</code> added during domain creation.
+     * List of tags to add to the domain upon creation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -871,7 +1190,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tagList
-     *        A list of <code>Tag</code> added during domain creation.
+     *        List of tags to add to the domain upon creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -887,11 +1206,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A list of <code>Tag</code> added during domain creation.
+     * List of tags to add to the domain upon creation.
      * </p>
      * 
      * @param tagList
-     *        A list of <code>Tag</code> added during domain creation.
+     *        List of tags to add to the domain upon creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -902,11 +1221,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      * 
      * @param autoTuneOptions
-     *        Specifies Auto-Tune options.
+     *        Options for Auto-Tune.
      */
 
     public void setAutoTuneOptions(AutoTuneOptionsInput autoTuneOptions) {
@@ -915,10 +1234,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      * 
-     * @return Specifies Auto-Tune options.
+     * @return Options for Auto-Tune.
      */
 
     public AutoTuneOptionsInput getAutoTuneOptions() {
@@ -927,16 +1246,114 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      * 
      * @param autoTuneOptions
-     *        Specifies Auto-Tune options.
+     *        Options for Auto-Tune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDomainRequest withAutoTuneOptions(AutoTuneOptionsInput autoTuneOptions) {
         setAutoTuneOptions(autoTuneOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on
+     *        the domain, including service software updates and Auto-Tune enhancements that require a blue/green
+     *        deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region
+     *        that the domain is created in) is used.
+     */
+
+    public void setOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        this.offPeakWindowOptions = offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     * 
+     * @return Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on
+     *         the domain, including service software updates and Auto-Tune enhancements that require a blue/green
+     *         deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region
+     *         that the domain is created in) is used.
+     */
+
+    public OffPeakWindowOptions getOffPeakWindowOptions() {
+        return this.offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on
+     *        the domain, including service software updates and Auto-Tune enhancements that require a blue/green
+     *        deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region
+     *        that the domain is created in) is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        setOffPeakWindowOptions(offPeakWindowOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Software update options for the domain.
+     */
+
+    public void setSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        this.softwareUpdateOptions = softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @return Software update options for the domain.
+     */
+
+    public SoftwareUpdateOptions getSoftwareUpdateOptions() {
+        return this.softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Software update options for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        setSoftwareUpdateOptions(softwareUpdateOptions);
         return this;
     }
 
@@ -962,6 +1379,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
+        if (getIPAddressType() != null)
+            sb.append("IPAddressType: ").append(getIPAddressType()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
@@ -983,7 +1402,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTagList() != null)
             sb.append("TagList: ").append(getTagList()).append(",");
         if (getAutoTuneOptions() != null)
-            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
+        if (getOffPeakWindowOptions() != null)
+            sb.append("OffPeakWindowOptions: ").append(getOffPeakWindowOptions()).append(",");
+        if (getSoftwareUpdateOptions() != null)
+            sb.append("SoftwareUpdateOptions: ").append(getSoftwareUpdateOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1017,6 +1440,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getAccessPolicies() == null ^ this.getAccessPolicies() == null)
             return false;
         if (other.getAccessPolicies() != null && other.getAccessPolicies().equals(this.getAccessPolicies()) == false)
+            return false;
+        if (other.getIPAddressType() == null ^ this.getIPAddressType() == null)
+            return false;
+        if (other.getIPAddressType() != null && other.getIPAddressType().equals(this.getIPAddressType()) == false)
             return false;
         if (other.getSnapshotOptions() == null ^ this.getSnapshotOptions() == null)
             return false;
@@ -1062,6 +1489,14 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
             return false;
+        if (other.getOffPeakWindowOptions() == null ^ this.getOffPeakWindowOptions() == null)
+            return false;
+        if (other.getOffPeakWindowOptions() != null && other.getOffPeakWindowOptions().equals(this.getOffPeakWindowOptions()) == false)
+            return false;
+        if (other.getSoftwareUpdateOptions() == null ^ this.getSoftwareUpdateOptions() == null)
+            return false;
+        if (other.getSoftwareUpdateOptions() != null && other.getSoftwareUpdateOptions().equals(this.getSoftwareUpdateOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1075,6 +1510,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getClusterConfig() == null) ? 0 : getClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
+        hashCode = prime * hashCode + ((getIPAddressType() == null) ? 0 : getIPAddressType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
@@ -1086,6 +1522,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
+        hashCode = prime * hashCode + ((getOffPeakWindowOptions() == null) ? 0 : getOffPeakWindowOptions().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdateOptions() == null) ? 0 : getSoftwareUpdateOptions().hashCode());
         return hashCode;
     }
 

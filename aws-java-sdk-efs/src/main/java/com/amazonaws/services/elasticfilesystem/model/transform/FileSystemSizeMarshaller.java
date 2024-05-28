@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class FileSystemSizeMarshaller {
             .marshallLocationName("ValueInIA").build();
     private static final MarshallingInfo<Long> VALUEINSTANDARD_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueInStandard").build();
+    private static final MarshallingInfo<Long> VALUEINARCHIVE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueInArchive").build();
 
     private static final FileSystemSizeMarshaller instance = new FileSystemSizeMarshaller();
 
@@ -56,6 +58,7 @@ public class FileSystemSizeMarshaller {
             protocolMarshaller.marshall(fileSystemSize.getTimestamp(), TIMESTAMP_BINDING);
             protocolMarshaller.marshall(fileSystemSize.getValueInIA(), VALUEINIA_BINDING);
             protocolMarshaller.marshall(fileSystemSize.getValueInStandard(), VALUEINSTANDARD_BINDING);
+            protocolMarshaller.marshall(fileSystemSize.getValueInArchive(), VALUEINARCHIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

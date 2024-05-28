@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,26 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * An Auto Scaling lifecycle event hook name.
+     * The name of the launch hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the launch hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     * >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      */
     private String hook;
+    /**
+     * <p>
+     * The name of the termination hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the termination hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     */
+    private String terminationHook;
 
     /**
      * <p>
@@ -83,11 +99,20 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An Auto Scaling lifecycle event hook name.
+     * The name of the launch hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the launch hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     * >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param hook
-     *        An Auto Scaling lifecycle event hook name.
+     *        The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+     *        <p>
+     *        For more information about the launch hook, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     *        >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public void setHook(String hook) {
@@ -96,10 +121,19 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An Auto Scaling lifecycle event hook name.
+     * The name of the launch hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the launch hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     * >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
-     * @return An Auto Scaling lifecycle event hook name.
+     * @return The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+     *         <p>
+     *         For more information about the launch hook, see <a href=
+     *         "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     *         >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      */
 
     public String getHook() {
@@ -108,16 +142,95 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An Auto Scaling lifecycle event hook name.
+     * The name of the launch hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the launch hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     * >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * </p>
      * 
      * @param hook
-     *        An Auto Scaling lifecycle event hook name.
+     *        The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+     *        <p>
+     *        For more information about the launch hook, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors"
+     *        >How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoScalingGroup withHook(String hook) {
         setHook(hook);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the termination hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the termination hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * 
+     * @param terminationHook
+     *        The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+     *        <p>
+     *        For more information about the termination hook, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *        >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *        Guide</i>.
+     */
+
+    public void setTerminationHook(String terminationHook) {
+        this.terminationHook = terminationHook;
+    }
+
+    /**
+     * <p>
+     * The name of the termination hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the termination hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * 
+     * @return The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+     *         <p>
+     *         For more information about the termination hook, see <a href=
+     *         "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *         >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *         Guide</i>.
+     */
+
+    public String getTerminationHook() {
+        return this.terminationHook;
+    }
+
+    /**
+     * <p>
+     * The name of the termination hook that CodeDeploy installed into the Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information about the termination hook, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * 
+     * @param terminationHook
+     *        The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+     *        <p>
+     *        For more information about the termination hook, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *        >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withTerminationHook(String terminationHook) {
+        setTerminationHook(terminationHook);
         return this;
     }
 
@@ -136,7 +249,9 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getHook() != null)
-            sb.append("Hook: ").append(getHook());
+            sb.append("Hook: ").append(getHook()).append(",");
+        if (getTerminationHook() != null)
+            sb.append("TerminationHook: ").append(getTerminationHook());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +274,10 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getHook() != null && other.getHook().equals(this.getHook()) == false)
             return false;
+        if (other.getTerminationHook() == null ^ this.getTerminationHook() == null)
+            return false;
+        if (other.getTerminationHook() != null && other.getTerminationHook().equals(this.getTerminationHook()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +288,7 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getHook() == null) ? 0 : getHook().hashCode());
+        hashCode = prime * hashCode + ((getTerminationHook() == null) ? 0 : getTerminationHook().hashCode());
         return hashCode;
     }
 

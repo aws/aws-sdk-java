@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,6 +146,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Specifies that encryption context to use when the reencrypting the data.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS key.
      * The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -202,6 +208,17 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -975,6 +992,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Specifies that encryption context to use when the reencrypting the data.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS key.
      * The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -992,7 +1015,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Specifies that encryption context to use when the reencrypting the data.</p>
+     * @return Specifies that encryption context to use when the reencrypting the data.</p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important>
      *         <p>
      *         A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS
      *         key. The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -1021,6 +1049,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Specifies that encryption context to use when the reencrypting the data.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS key.
      * The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -1039,7 +1073,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param destinationEncryptionContext
-     *        Specifies that encryption context to use when the reencrypting the data.</p>
+     *        Specifies that encryption context to use when the reencrypting the data.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS
      *        key. The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -1066,6 +1105,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Specifies that encryption context to use when the reencrypting the data.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS key.
      * The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -1084,7 +1129,12 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param destinationEncryptionContext
-     *        Specifies that encryption context to use when the reencrypting the data.</p>
+     *        Specifies that encryption context to use when the reencrypting the data.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        A destination encryption context is valid only when the destination KMS key is a symmetric encryption KMS
      *        key. The standard ciphertext format for asymmetric KMS keys does not include fields for metadata.
@@ -1480,6 +1530,94 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReEncryptRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1506,7 +1644,9 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getDestinationEncryptionAlgorithm() != null)
             sb.append("DestinationEncryptionAlgorithm: ").append(getDestinationEncryptionAlgorithm()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: ").append(getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -1554,6 +1694,10 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -1570,6 +1714,7 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSourceEncryptionAlgorithm() == null) ? 0 : getSourceEncryptionAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getDestinationEncryptionAlgorithm() == null) ? 0 : getDestinationEncryptionAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

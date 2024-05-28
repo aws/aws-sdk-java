@@ -1,0 +1,303 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iottwinmaker.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The property group response
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyGroupResponse" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PropertyGroupResponse implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The group types.
+     * </p>
+     */
+    private String groupType;
+    /**
+     * <p>
+     * The names of properties.
+     * </p>
+     */
+    private java.util.List<String> propertyNames;
+    /**
+     * <p>
+     * A Boolean value that specifies whether the property group is inherited from a parent entity
+     * </p>
+     */
+    private Boolean isInherited;
+
+    /**
+     * <p>
+     * The group types.
+     * </p>
+     * 
+     * @param groupType
+     *        The group types.
+     * @see GroupType
+     */
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
+    /**
+     * <p>
+     * The group types.
+     * </p>
+     * 
+     * @return The group types.
+     * @see GroupType
+     */
+
+    public String getGroupType() {
+        return this.groupType;
+    }
+
+    /**
+     * <p>
+     * The group types.
+     * </p>
+     * 
+     * @param groupType
+     *        The group types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GroupType
+     */
+
+    public PropertyGroupResponse withGroupType(String groupType) {
+        setGroupType(groupType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The group types.
+     * </p>
+     * 
+     * @param groupType
+     *        The group types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GroupType
+     */
+
+    public PropertyGroupResponse withGroupType(GroupType groupType) {
+        this.groupType = groupType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of properties.
+     * </p>
+     * 
+     * @return The names of properties.
+     */
+
+    public java.util.List<String> getPropertyNames() {
+        return propertyNames;
+    }
+
+    /**
+     * <p>
+     * The names of properties.
+     * </p>
+     * 
+     * @param propertyNames
+     *        The names of properties.
+     */
+
+    public void setPropertyNames(java.util.Collection<String> propertyNames) {
+        if (propertyNames == null) {
+            this.propertyNames = null;
+            return;
+        }
+
+        this.propertyNames = new java.util.ArrayList<String>(propertyNames);
+    }
+
+    /**
+     * <p>
+     * The names of properties.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPropertyNames(java.util.Collection)} or {@link #withPropertyNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param propertyNames
+     *        The names of properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PropertyGroupResponse withPropertyNames(String... propertyNames) {
+        if (this.propertyNames == null) {
+            setPropertyNames(new java.util.ArrayList<String>(propertyNames.length));
+        }
+        for (String ele : propertyNames) {
+            this.propertyNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of properties.
+     * </p>
+     * 
+     * @param propertyNames
+     *        The names of properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PropertyGroupResponse withPropertyNames(java.util.Collection<String> propertyNames) {
+        setPropertyNames(propertyNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether the property group is inherited from a parent entity
+     * </p>
+     * 
+     * @param isInherited
+     *        A Boolean value that specifies whether the property group is inherited from a parent entity
+     */
+
+    public void setIsInherited(Boolean isInherited) {
+        this.isInherited = isInherited;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether the property group is inherited from a parent entity
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether the property group is inherited from a parent entity
+     */
+
+    public Boolean getIsInherited() {
+        return this.isInherited;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether the property group is inherited from a parent entity
+     * </p>
+     * 
+     * @param isInherited
+     *        A Boolean value that specifies whether the property group is inherited from a parent entity
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PropertyGroupResponse withIsInherited(Boolean isInherited) {
+        setIsInherited(isInherited);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether the property group is inherited from a parent entity
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether the property group is inherited from a parent entity
+     */
+
+    public Boolean isInherited() {
+        return this.isInherited;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getGroupType() != null)
+            sb.append("GroupType: ").append(getGroupType()).append(",");
+        if (getPropertyNames() != null)
+            sb.append("PropertyNames: ").append(getPropertyNames()).append(",");
+        if (getIsInherited() != null)
+            sb.append("IsInherited: ").append(getIsInherited());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PropertyGroupResponse == false)
+            return false;
+        PropertyGroupResponse other = (PropertyGroupResponse) obj;
+        if (other.getGroupType() == null ^ this.getGroupType() == null)
+            return false;
+        if (other.getGroupType() != null && other.getGroupType().equals(this.getGroupType()) == false)
+            return false;
+        if (other.getPropertyNames() == null ^ this.getPropertyNames() == null)
+            return false;
+        if (other.getPropertyNames() != null && other.getPropertyNames().equals(this.getPropertyNames()) == false)
+            return false;
+        if (other.getIsInherited() == null ^ this.getIsInherited() == null)
+            return false;
+        if (other.getIsInherited() != null && other.getIsInherited().equals(this.getIsInherited()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getGroupType() == null) ? 0 : getGroupType().hashCode());
+        hashCode = prime * hashCode + ((getPropertyNames() == null) ? 0 : getPropertyNames().hashCode());
+        hashCode = prime * hashCode + ((getIsInherited() == null) ? 0 : getIsInherited().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public PropertyGroupResponse clone() {
+        try {
+            return (PropertyGroupResponse) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iottwinmaker.model.transform.PropertyGroupResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

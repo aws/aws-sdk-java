@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -177,6 +177,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAssetModelCompositeModelResult> createAssetModelCompositeModelAsync(CreateAssetModelCompositeModelRequest request) {
+
+        return createAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAssetModelCompositeModelResult> createAssetModelCompositeModelAsync(CreateAssetModelCompositeModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAssetModelCompositeModelRequest, CreateAssetModelCompositeModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest request) {
 
         return createBulkImportJobAsync(request, null);
@@ -281,6 +294,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAssetModelCompositeModelResult> deleteAssetModelCompositeModelAsync(DeleteAssetModelCompositeModelRequest request) {
+
+        return deleteAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAssetModelCompositeModelResult> deleteAssetModelCompositeModelAsync(DeleteAssetModelCompositeModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAssetModelCompositeModelRequest, DeleteAssetModelCompositeModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDashboardResult> deleteDashboardAsync(DeleteDashboardRequest request) {
 
         return deleteDashboardAsync(request, null);
@@ -359,6 +385,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeActionResult> describeActionAsync(DescribeActionRequest request) {
+
+        return describeActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActionResult> describeActionAsync(DescribeActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeActionRequest, DescribeActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAssetResult> describeAssetAsync(DescribeAssetRequest request) {
 
         return describeAssetAsync(request, null);
@@ -372,6 +411,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAssetCompositeModelResult> describeAssetCompositeModelAsync(DescribeAssetCompositeModelRequest request) {
+
+        return describeAssetCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssetCompositeModelResult> describeAssetCompositeModelAsync(DescribeAssetCompositeModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssetCompositeModelRequest, DescribeAssetCompositeModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAssetModelResult> describeAssetModelAsync(DescribeAssetModelRequest request) {
 
         return describeAssetModelAsync(request, null);
@@ -380,6 +432,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<DescribeAssetModelResult> describeAssetModelAsync(DescribeAssetModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetModelRequest, DescribeAssetModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssetModelCompositeModelResult> describeAssetModelCompositeModelAsync(
+            DescribeAssetModelCompositeModelRequest request) {
+
+        return describeAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssetModelCompositeModelResult> describeAssetModelCompositeModelAsync(
+            DescribeAssetModelCompositeModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssetModelCompositeModelRequest, DescribeAssetModelCompositeModelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -560,6 +627,32 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteActionResult> executeActionAsync(ExecuteActionRequest request) {
+
+        return executeActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteActionResult> executeActionAsync(ExecuteActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteActionRequest, ExecuteActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest request) {
+
+        return executeQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteQueryRequest, ExecuteQueryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAssetPropertyAggregatesResult> getAssetPropertyAggregatesAsync(GetAssetPropertyAggregatesRequest request) {
 
         return getAssetPropertyAggregatesAsync(request, null);
@@ -622,6 +715,32 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest request) {
+
+        return listActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListActionsRequest, ListActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelCompositeModelsResult> listAssetModelCompositeModelsAsync(ListAssetModelCompositeModelsRequest request) {
+
+        return listAssetModelCompositeModelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelCompositeModelsResult> listAssetModelCompositeModelsAsync(ListAssetModelCompositeModelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssetModelCompositeModelsRequest, ListAssetModelCompositeModelsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -713,6 +832,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBulkImportJobsRequest, ListBulkImportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionRelationshipsResult> listCompositionRelationshipsAsync(ListCompositionRelationshipsRequest request) {
+
+        return listCompositionRelationshipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionRelationshipsResult> listCompositionRelationshipsAsync(ListCompositionRelationshipsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCompositionRelationshipsRequest, ListCompositionRelationshipsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -910,6 +1042,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<UpdateAssetModelResult> updateAssetModelAsync(UpdateAssetModelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssetModelRequest, UpdateAssetModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssetModelCompositeModelResult> updateAssetModelCompositeModelAsync(UpdateAssetModelCompositeModelRequest request) {
+
+        return updateAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssetModelCompositeModelResult> updateAssetModelCompositeModelAsync(UpdateAssetModelCompositeModelRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAssetModelCompositeModelRequest, UpdateAssetModelCompositeModelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

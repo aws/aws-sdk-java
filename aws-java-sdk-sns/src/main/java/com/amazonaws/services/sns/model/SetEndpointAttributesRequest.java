@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Input for SetEndpointAttributes action.
+ * Input for <code>SetEndpointAttributes</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes" target="_top">AWS API
@@ -30,7 +30,7 @@ public class SetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn used for SetEndpointAttributes action.
+     * EndpointArn used for <code>SetEndpointAttributes</code> action.
      * </p>
      */
     private String endpointArn;
@@ -65,11 +65,11 @@ public class SetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn used for SetEndpointAttributes action.
+     * EndpointArn used for <code>SetEndpointAttributes</code> action.
      * </p>
      * 
      * @param endpointArn
-     *        EndpointArn used for SetEndpointAttributes action.
+     *        EndpointArn used for <code>SetEndpointAttributes</code> action.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -78,10 +78,10 @@ public class SetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn used for SetEndpointAttributes action.
+     * EndpointArn used for <code>SetEndpointAttributes</code> action.
      * </p>
      * 
-     * @return EndpointArn used for SetEndpointAttributes action.
+     * @return EndpointArn used for <code>SetEndpointAttributes</code> action.
      */
 
     public String getEndpointArn() {
@@ -90,11 +90,11 @@ public class SetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn used for SetEndpointAttributes action.
+     * EndpointArn used for <code>SetEndpointAttributes</code> action.
      * </p>
      * 
      * @param endpointArn
-     *        EndpointArn used for SetEndpointAttributes action.
+     *        EndpointArn used for <code>SetEndpointAttributes</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

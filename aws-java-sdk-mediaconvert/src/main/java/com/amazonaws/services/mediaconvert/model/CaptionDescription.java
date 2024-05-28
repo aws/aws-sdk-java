@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,9 +43,8 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
      */
     private String customLanguageCode;
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
-     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
-     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one
+     * output captions track. Depending on your output captions format, one tab might correspond to a set of output
      * captions tracks. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
@@ -174,17 +173,15 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
-     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
-     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one
+     * output captions track. Depending on your output captions format, one tab might correspond to a set of output
      * captions tracks. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * 
      * @param destinationSettings
-     *        Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of
-     *        captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab
-     *        corresponds to one output captions track. Depending on your output captions format, one tab might
-     *        correspond to a set of output captions tracks. For more information, see
+     *        Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to
+     *        one output captions track. Depending on your output captions format, one tab might correspond to a set of
+     *        output captions tracks. For more information, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
 
@@ -193,16 +190,14 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
-     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
-     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one
+     * output captions track. Depending on your output captions format, one tab might correspond to a set of output
      * captions tracks. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * 
-     * @return Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of
-     *         captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab
-     *         corresponds to one output captions track. Depending on your output captions format, one tab might
-     *         correspond to a set of output captions tracks. For more information, see
+     * @return Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds
+     *         to one output captions track. Depending on your output captions format, one tab might correspond to a set
+     *         of output captions tracks. For more information, see
      *         https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
 
@@ -211,17 +206,15 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
-     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
-     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to one
+     * output captions track. Depending on your output captions format, one tab might correspond to a set of output
      * captions tracks. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * 
      * @param destinationSettings
-     *        Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of
-     *        captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab
-     *        corresponds to one output captions track. Depending on your output captions format, one tab might
-     *        correspond to a set of output captions tracks. For more information, see
+     *        Settings related to one captions tab on the MediaConvert console. Usually, one captions tab corresponds to
+     *        one output captions track. Depending on your output captions format, one tab might correspond to a set of
+     *        output captions tracks. For more information, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

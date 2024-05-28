@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,10 @@ public class EnvironmentSummaryJsonUnmarshaller implements Unmarshaller<Environm
                     context.nextToken();
                     environmentSummary.setEnvironmentAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    environmentSummary.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastDeploymentAttemptedAt", targetDepth)) {
                     context.nextToken();
                     environmentSummary.setLastDeploymentAttemptedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -87,6 +91,10 @@ public class EnvironmentSummaryJsonUnmarshaller implements Unmarshaller<Environm
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
                     context.nextToken();
                     environmentSummary.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    environmentSummary.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

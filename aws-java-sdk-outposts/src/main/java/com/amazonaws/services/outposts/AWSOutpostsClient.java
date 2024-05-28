@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.outposts.AWSOutpostsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.outposts.model.*;
+
 import com.amazonaws.services.outposts.model.transform.*;
 
 /**
@@ -145,6 +146,71 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/outposts/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/outposts/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Cancels the capacity task.
+     * </p>
+     * 
+     * @param cancelCapacityTaskRequest
+     * @return Result of the CancelCapacityTask operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.CancelCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CancelCapacityTaskResult cancelCapacityTask(CancelCapacityTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCapacityTask(request);
+    }
+
+    @SdkInternalApi
+    final CancelCapacityTaskResult executeCancelCapacityTask(CancelCapacityTaskRequest cancelCapacityTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelCapacityTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelCapacityTaskRequest> request = null;
+        Response<CancelCapacityTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelCapacityTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelCapacityTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCapacityTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelCapacityTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelCapacityTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -546,6 +612,69 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
 
     /**
      * <p>
+     * Gets details of the specified capacity task.
+     * </p>
+     * 
+     * @param getCapacityTaskRequest
+     * @return Result of the GetCapacityTask operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.GetCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCapacityTaskResult getCapacityTask(GetCapacityTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCapacityTask(request);
+    }
+
+    @SdkInternalApi
+    final GetCapacityTaskResult executeGetCapacityTask(GetCapacityTaskRequest getCapacityTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCapacityTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCapacityTaskRequest> request = null;
+        Response<GetCapacityTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCapacityTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCapacityTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCapacityTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCapacityTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified catalog item.
      * </p>
      * 
@@ -873,6 +1002,74 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
 
     /**
      * <p>
+     * Gets the instance types that an Outpost can support in <code>InstanceTypeCapacity</code>. This will generally
+     * include instance types that are not currently configured and therefore cannot be launched with the current
+     * Outpost capacity configuration.
+     * </p>
+     * 
+     * @param getOutpostSupportedInstanceTypesRequest
+     * @return Result of the GetOutpostSupportedInstanceTypes operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.GetOutpostSupportedInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOutpostSupportedInstanceTypesResult getOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOutpostSupportedInstanceTypes(request);
+    }
+
+    @SdkInternalApi
+    final GetOutpostSupportedInstanceTypesResult executeGetOutpostSupportedInstanceTypes(
+            GetOutpostSupportedInstanceTypesRequest getOutpostSupportedInstanceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOutpostSupportedInstanceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOutpostSupportedInstanceTypesRequest> request = null;
+        Response<GetOutpostSupportedInstanceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOutpostSupportedInstanceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getOutpostSupportedInstanceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOutpostSupportedInstanceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOutpostSupportedInstanceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetOutpostSupportedInstanceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified Outpost site.
      * </p>
      * 
@@ -1055,6 +1252,74 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAssetsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the capacity tasks for your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
+     * </p>
+     * 
+     * @param listCapacityTasksRequest
+     * @return Result of the ListCapacityTasks operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.ListCapacityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCapacityTasksResult listCapacityTasks(ListCapacityTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCapacityTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListCapacityTasksResult executeListCapacityTasks(ListCapacityTasksRequest listCapacityTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCapacityTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCapacityTasksRequest> request = null;
+        Response<ListCapacityTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCapacityTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCapacityTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCapacityTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCapacityTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCapacityTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1377,6 +1642,71 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the specified capacity task. You can have one active capacity task for an order.
+     * </p>
+     * 
+     * @param startCapacityTaskRequest
+     * @return Result of the StartCapacityTask operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
+     * @sample AWSOutposts.StartCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartCapacityTaskResult startCapacityTask(StartCapacityTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCapacityTask(request);
+    }
+
+    @SdkInternalApi
+    final StartCapacityTaskResult executeStartCapacityTask(StartCapacityTaskRequest startCapacityTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCapacityTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCapacityTaskRequest> request = null;
+        Response<StartCapacityTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCapacityTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCapacityTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCapacityTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCapacityTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCapacityTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

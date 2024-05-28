@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,18 @@ public class ProductionVariantJsonUnmarshaller implements Unmarshaller<Productio
                 if (context.testExpression("ContainerStartupHealthCheckTimeoutInSeconds", targetDepth)) {
                     context.nextToken();
                     productionVariant.setContainerStartupHealthCheckTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("EnableSSMAccess", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setEnableSSMAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ManagedInstanceScaling", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setManagedInstanceScaling(ProductionVariantManagedInstanceScalingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RoutingConfig", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setRoutingConfig(ProductionVariantRoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the properties of a security policy that was specified. For more information about security policies, see
- * <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
- * policies</a>.
+ * Describes the properties of a security policy that you specify. For more information about security policies, see <a
+ * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies
+ * for servers</a> or <a
+ * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working with security
+ * policies for SFTP connectors</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedSecurityPolicy" target="_top">AWS
@@ -32,52 +34,83 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter applies to
+     * both server and connector security policies.
      * </p>
      */
     private Boolean fips;
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * The text name of the specified security policy.
      * </p>
      */
     private String securityPolicyName;
     /**
      * <p>
-     * Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to
-     * the server.
+     * Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      */
     private java.util.List<String> sshCiphers;
     /**
      * <p>
-     * Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
-     * server.
+     * Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      */
     private java.util.List<String> sshKexs;
     /**
      * <p>
-     * Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
-     * attached to the server.
+     * Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
+     * attached to the server or connector. This parameter applies to both server and connector security policies.
      * </p>
      */
     private java.util.List<String> sshMacs;
     /**
      * <p>
-     * Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
+     * Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
      * attached to the server.
      * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for servers.
+     * </p>
+     * </note>
      */
     private java.util.List<String> tlsCiphers;
+    /**
+     * <p>
+     * Lists the host key algorithms for the security policy.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for connectors.
+     * </p>
+     * </note>
+     */
+    private java.util.List<String> sshHostKeyAlgorithms;
+    /**
+     * <p>
+     * The resource type to which the security policy applies, either server or connector.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * Lists the file transfer protocols that the security policy applies to.
+     * </p>
+     */
+    private java.util.List<String> protocols;
 
     /**
      * <p>
-     * Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter applies to
+     * both server and connector security policies.
      * </p>
      * 
      * @param fips
-     *        Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     *        Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter
+     *        applies to both server and connector security policies.
      */
 
     public void setFips(Boolean fips) {
@@ -86,10 +119,12 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter applies to
+     * both server and connector security policies.
      * </p>
      * 
-     * @return Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * @return Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter
+     *         applies to both server and connector security policies.
      */
 
     public Boolean getFips() {
@@ -98,11 +133,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter applies to
+     * both server and connector security policies.
      * </p>
      * 
      * @param fips
-     *        Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     *        Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter
+     *        applies to both server and connector security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +150,12 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter applies to
+     * both server and connector security policies.
      * </p>
      * 
-     * @return Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+     * @return Specifies whether this policy enables Federal Information Processing Standards (FIPS). This parameter
+     *         applies to both server and connector security policies.
      */
 
     public Boolean isFips() {
@@ -125,11 +164,11 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * The text name of the specified security policy.
      * </p>
      * 
      * @param securityPolicyName
-     *        Specifies the name of the security policy that is attached to the server.
+     *        The text name of the specified security policy.
      */
 
     public void setSecurityPolicyName(String securityPolicyName) {
@@ -138,10 +177,10 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * The text name of the specified security policy.
      * </p>
      * 
-     * @return Specifies the name of the security policy that is attached to the server.
+     * @return The text name of the specified security policy.
      */
 
     public String getSecurityPolicyName() {
@@ -150,11 +189,11 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * The text name of the specified security policy.
      * </p>
      * 
      * @param securityPolicyName
-     *        Specifies the name of the security policy that is attached to the server.
+     *        The text name of the specified security policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,12 +204,12 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to
-     * the server.
+     * Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
-     * @return Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is
-     *         attached to the server.
+     * @return Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached
+     *         to the server or connector. This parameter applies to both server and connector security policies.
      */
 
     public java.util.List<String> getSshCiphers() {
@@ -179,13 +218,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to
-     * the server.
+     * Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
      * @param sshCiphers
-     *        Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is
-     *        attached to the server.
+     *        Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached
+     *        to the server or connector. This parameter applies to both server and connector security policies.
      */
 
     public void setSshCiphers(java.util.Collection<String> sshCiphers) {
@@ -199,8 +238,8 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to
-     * the server.
+     * Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -209,8 +248,8 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param sshCiphers
-     *        Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is
-     *        attached to the server.
+     *        Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached
+     *        to the server or connector. This parameter applies to both server and connector security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,13 +265,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to
-     * the server.
+     * Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
      * @param sshCiphers
-     *        Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is
-     *        attached to the server.
+     *        Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached
+     *        to the server or connector. This parameter applies to both server and connector security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,12 +282,12 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
-     * server.
+     * Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
-     * @return Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is
-     *         attached to the server.
+     * @return Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to
+     *         the server or connector. This parameter applies to both server and connector security policies.
      */
 
     public java.util.List<String> getSshKexs() {
@@ -257,13 +296,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
-     * server.
+     * Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
      * @param sshKexs
-     *        Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached
-     *        to the server.
+     *        Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to
+     *        the server or connector. This parameter applies to both server and connector security policies.
      */
 
     public void setSshKexs(java.util.Collection<String> sshKexs) {
@@ -277,8 +316,8 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
-     * server.
+     * Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -287,8 +326,8 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param sshKexs
-     *        Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached
-     *        to the server.
+     *        Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to
+     *        the server or connector. This parameter applies to both server and connector security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,13 +343,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
-     * server.
+     * Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the
+     * server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
      * @param sshKexs
-     *        Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached
-     *        to the server.
+     *        Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to
+     *        the server or connector. This parameter applies to both server and connector security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,12 +360,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
-     * attached to the server.
+     * Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
+     * attached to the server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
-     * @return Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy
-     *         that is attached to the server.
+     * @return Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that
+     *         is attached to the server or connector. This parameter applies to both server and connector security
+     *         policies.
      */
 
     public java.util.List<String> getSshMacs() {
@@ -335,13 +375,14 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
-     * attached to the server.
+     * Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
+     * attached to the server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
      * @param sshMacs
-     *        Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy
-     *        that is attached to the server.
+     *        Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that
+     *        is attached to the server or connector. This parameter applies to both server and connector security
+     *        policies.
      */
 
     public void setSshMacs(java.util.Collection<String> sshMacs) {
@@ -355,8 +396,8 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
-     * attached to the server.
+     * Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
+     * attached to the server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -365,8 +406,9 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param sshMacs
-     *        Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy
-     *        that is attached to the server.
+     *        Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that
+     *        is attached to the server or connector. This parameter applies to both server and connector security
+     *        policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,13 +424,14 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
-     * attached to the server.
+     * Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is
+     * attached to the server or connector. This parameter applies to both server and connector security policies.
      * </p>
      * 
      * @param sshMacs
-     *        Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy
-     *        that is attached to the server.
+     *        Lists the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that
+     *        is attached to the server or connector. This parameter applies to both server and connector security
+     *        policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,12 +442,20 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
+     * Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
      * attached to the server.
      * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for servers.
+     * </p>
+     * </note>
      * 
-     * @return Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy
-     *         that is attached to the server.
+     * @return Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that
+     *         is attached to the server.</p> <note>
+     *         <p>
+     *         This parameter only applies to security policies for servers.
+     *         </p>
      */
 
     public java.util.List<String> getTlsCiphers() {
@@ -413,13 +464,21 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
+     * Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
      * attached to the server.
      * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for servers.
+     * </p>
+     * </note>
      * 
      * @param tlsCiphers
-     *        Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy
-     *        that is attached to the server.
+     *        Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that
+     *        is attached to the server.</p> <note>
+     *        <p>
+     *        This parameter only applies to security policies for servers.
+     *        </p>
      */
 
     public void setTlsCiphers(java.util.Collection<String> tlsCiphers) {
@@ -433,9 +492,14 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
+     * Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
      * attached to the server.
      * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for servers.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTlsCiphers(java.util.Collection)} or {@link #withTlsCiphers(java.util.Collection)} if you want to
@@ -443,8 +507,11 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param tlsCiphers
-     *        Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy
-     *        that is attached to the server.
+     *        Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that
+     *        is attached to the server.</p> <note>
+     *        <p>
+     *        This parameter only applies to security policies for servers.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,18 +527,285 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
+     * Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is
      * attached to the server.
      * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for servers.
+     * </p>
+     * </note>
      * 
      * @param tlsCiphers
-     *        Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy
-     *        that is attached to the server.
+     *        Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that
+     *        is attached to the server.</p> <note>
+     *        <p>
+     *        This parameter only applies to security policies for servers.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribedSecurityPolicy withTlsCiphers(java.util.Collection<String> tlsCiphers) {
         setTlsCiphers(tlsCiphers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the host key algorithms for the security policy.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for connectors.
+     * </p>
+     * </note>
+     * 
+     * @return Lists the host key algorithms for the security policy.</p> <note>
+     *         <p>
+     *         This parameter only applies to security policies for connectors.
+     *         </p>
+     */
+
+    public java.util.List<String> getSshHostKeyAlgorithms() {
+        return sshHostKeyAlgorithms;
+    }
+
+    /**
+     * <p>
+     * Lists the host key algorithms for the security policy.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for connectors.
+     * </p>
+     * </note>
+     * 
+     * @param sshHostKeyAlgorithms
+     *        Lists the host key algorithms for the security policy.</p> <note>
+     *        <p>
+     *        This parameter only applies to security policies for connectors.
+     *        </p>
+     */
+
+    public void setSshHostKeyAlgorithms(java.util.Collection<String> sshHostKeyAlgorithms) {
+        if (sshHostKeyAlgorithms == null) {
+            this.sshHostKeyAlgorithms = null;
+            return;
+        }
+
+        this.sshHostKeyAlgorithms = new java.util.ArrayList<String>(sshHostKeyAlgorithms);
+    }
+
+    /**
+     * <p>
+     * Lists the host key algorithms for the security policy.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for connectors.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSshHostKeyAlgorithms(java.util.Collection)} or {@link #withSshHostKeyAlgorithms(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param sshHostKeyAlgorithms
+     *        Lists the host key algorithms for the security policy.</p> <note>
+     *        <p>
+     *        This parameter only applies to security policies for connectors.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedSecurityPolicy withSshHostKeyAlgorithms(String... sshHostKeyAlgorithms) {
+        if (this.sshHostKeyAlgorithms == null) {
+            setSshHostKeyAlgorithms(new java.util.ArrayList<String>(sshHostKeyAlgorithms.length));
+        }
+        for (String ele : sshHostKeyAlgorithms) {
+            this.sshHostKeyAlgorithms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the host key algorithms for the security policy.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter only applies to security policies for connectors.
+     * </p>
+     * </note>
+     * 
+     * @param sshHostKeyAlgorithms
+     *        Lists the host key algorithms for the security policy.</p> <note>
+     *        <p>
+     *        This parameter only applies to security policies for connectors.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedSecurityPolicy withSshHostKeyAlgorithms(java.util.Collection<String> sshHostKeyAlgorithms) {
+        setSshHostKeyAlgorithms(sshHostKeyAlgorithms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource type to which the security policy applies, either server or connector.
+     * </p>
+     * 
+     * @param type
+     *        The resource type to which the security policy applies, either server or connector.
+     * @see SecurityPolicyResourceType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The resource type to which the security policy applies, either server or connector.
+     * </p>
+     * 
+     * @return The resource type to which the security policy applies, either server or connector.
+     * @see SecurityPolicyResourceType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The resource type to which the security policy applies, either server or connector.
+     * </p>
+     * 
+     * @param type
+     *        The resource type to which the security policy applies, either server or connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicyResourceType
+     */
+
+    public DescribedSecurityPolicy withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource type to which the security policy applies, either server or connector.
+     * </p>
+     * 
+     * @param type
+     *        The resource type to which the security policy applies, either server or connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicyResourceType
+     */
+
+    public DescribedSecurityPolicy withType(SecurityPolicyResourceType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the file transfer protocols that the security policy applies to.
+     * </p>
+     * 
+     * @return Lists the file transfer protocols that the security policy applies to.
+     * @see SecurityPolicyProtocol
+     */
+
+    public java.util.List<String> getProtocols() {
+        return protocols;
+    }
+
+    /**
+     * <p>
+     * Lists the file transfer protocols that the security policy applies to.
+     * </p>
+     * 
+     * @param protocols
+     *        Lists the file transfer protocols that the security policy applies to.
+     * @see SecurityPolicyProtocol
+     */
+
+    public void setProtocols(java.util.Collection<String> protocols) {
+        if (protocols == null) {
+            this.protocols = null;
+            return;
+        }
+
+        this.protocols = new java.util.ArrayList<String>(protocols);
+    }
+
+    /**
+     * <p>
+     * Lists the file transfer protocols that the security policy applies to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param protocols
+     *        Lists the file transfer protocols that the security policy applies to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicyProtocol
+     */
+
+    public DescribedSecurityPolicy withProtocols(String... protocols) {
+        if (this.protocols == null) {
+            setProtocols(new java.util.ArrayList<String>(protocols.length));
+        }
+        for (String ele : protocols) {
+            this.protocols.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the file transfer protocols that the security policy applies to.
+     * </p>
+     * 
+     * @param protocols
+     *        Lists the file transfer protocols that the security policy applies to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicyProtocol
+     */
+
+    public DescribedSecurityPolicy withProtocols(java.util.Collection<String> protocols) {
+        setProtocols(protocols);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the file transfer protocols that the security policy applies to.
+     * </p>
+     * 
+     * @param protocols
+     *        Lists the file transfer protocols that the security policy applies to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicyProtocol
+     */
+
+    public DescribedSecurityPolicy withProtocols(SecurityPolicyProtocol... protocols) {
+        java.util.ArrayList<String> protocolsCopy = new java.util.ArrayList<String>(protocols.length);
+        for (SecurityPolicyProtocol value : protocols) {
+            protocolsCopy.add(value.toString());
+        }
+        if (getProtocols() == null) {
+            setProtocols(protocolsCopy);
+        } else {
+            getProtocols().addAll(protocolsCopy);
+        }
         return this;
     }
 
@@ -498,7 +832,13 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
         if (getSshMacs() != null)
             sb.append("SshMacs: ").append(getSshMacs()).append(",");
         if (getTlsCiphers() != null)
-            sb.append("TlsCiphers: ").append(getTlsCiphers());
+            sb.append("TlsCiphers: ").append(getTlsCiphers()).append(",");
+        if (getSshHostKeyAlgorithms() != null)
+            sb.append("SshHostKeyAlgorithms: ").append(getSshHostKeyAlgorithms()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getProtocols() != null)
+            sb.append("Protocols: ").append(getProtocols());
         sb.append("}");
         return sb.toString();
     }
@@ -537,6 +877,18 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
             return false;
         if (other.getTlsCiphers() != null && other.getTlsCiphers().equals(this.getTlsCiphers()) == false)
             return false;
+        if (other.getSshHostKeyAlgorithms() == null ^ this.getSshHostKeyAlgorithms() == null)
+            return false;
+        if (other.getSshHostKeyAlgorithms() != null && other.getSshHostKeyAlgorithms().equals(this.getSshHostKeyAlgorithms()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getProtocols() == null ^ this.getProtocols() == null)
+            return false;
+        if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +903,9 @@ public class DescribedSecurityPolicy implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getSshKexs() == null) ? 0 : getSshKexs().hashCode());
         hashCode = prime * hashCode + ((getSshMacs() == null) ? 0 : getSshMacs().hashCode());
         hashCode = prime * hashCode + ((getTlsCiphers() == null) ? 0 : getTlsCiphers().hashCode());
+        hashCode = prime * hashCode + ((getSshHostKeyAlgorithms() == null) ? 0 : getSshHostKeyAlgorithms().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
         return hashCode;
     }
 

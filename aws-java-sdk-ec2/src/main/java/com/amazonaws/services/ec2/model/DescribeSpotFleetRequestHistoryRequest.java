@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,14 +36,16 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
     private String eventType;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      */
     private String nextToken;
@@ -136,14 +138,16 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
-     *        value is 1000. To retrieve the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -152,13 +156,15 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
-     *         value is 1000. To retrieve the remaining results, make another call with the returned
-     *         <code>NextToken</code> value.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -167,14 +173,16 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
-     *        value is 1000. To retrieve the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +193,13 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -198,10 +208,12 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
-     * @return The token for the next set of results.
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -210,11 +222,13 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

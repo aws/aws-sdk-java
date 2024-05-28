@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.voiceid.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class RegistrationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DuplicateRegistrationAction").build();
     private static final MarshallingInfo<Integer> FRAUDSTERSIMILARITYTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FraudsterSimilarityThreshold").build();
+    private static final MarshallingInfo<List> WATCHLISTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WatchlistIds").build();
 
     private static final RegistrationConfigMarshaller instance = new RegistrationConfigMarshaller();
 
@@ -50,6 +53,7 @@ public class RegistrationConfigMarshaller {
         try {
             protocolMarshaller.marshall(registrationConfig.getDuplicateRegistrationAction(), DUPLICATEREGISTRATIONACTION_BINDING);
             protocolMarshaller.marshall(registrationConfig.getFraudsterSimilarityThreshold(), FRAUDSTERSIMILARITYTHRESHOLD_BINDING);
+            protocolMarshaller.marshall(registrationConfig.getWatchlistIds(), WATCHLISTIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

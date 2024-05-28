@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class CreateFHIRDatastoreRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderConfiguration").build();
 
     private static final CreateFHIRDatastoreRequestMarshaller instance = new CreateFHIRDatastoreRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateFHIRDatastoreRequestMarshaller {
             protocolMarshaller.marshall(createFHIRDatastoreRequest.getPreloadDataConfig(), PRELOADDATACONFIG_BINDING);
             protocolMarshaller.marshall(createFHIRDatastoreRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createFHIRDatastoreRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFHIRDatastoreRequest.getIdentityProviderConfiguration(), IDENTITYPROVIDERCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.migrationhubconfig.AWSMigrationHubConfigClientBuil
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.migrationhubconfig.model.*;
+
 import com.amazonaws.services.migrationhubconfig.model.transform.*;
 
 /**
@@ -231,6 +232,75 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<CreateHomeRegionControlResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateHomeRegionControlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation deletes the home region configuration for the calling account. The operation does not delete
+     * discovery or migration tracking data in the home region.
+     * </p>
+     * 
+     * @param deleteHomeRegionControlRequest
+     * @return Result of the DeleteHomeRegionControl operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
+     * @throws ServiceUnavailableException
+     *         Exception raised when a request fails due to temporary unavailability of the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InvalidInputException
+     *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
+     *         or data type.
+     * @sample AWSMigrationHubConfig.DeleteHomeRegionControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteHomeRegionControlResult deleteHomeRegionControl(DeleteHomeRegionControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHomeRegionControl(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHomeRegionControlResult executeDeleteHomeRegionControl(DeleteHomeRegionControlRequest deleteHomeRegionControlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteHomeRegionControlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHomeRegionControlRequest> request = null;
+        Response<DeleteHomeRegionControlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHomeRegionControlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteHomeRegionControlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHomeRegionControl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHomeRegionControlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteHomeRegionControlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class BatchGetAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.
+     * The list of asset property value entries for the batch get request. You can specify up to 128 entries per
+     * request.
      * </p>
      */
     private java.util.List<BatchGetAssetPropertyValueEntry> entries;
@@ -40,10 +41,11 @@ public class BatchGetAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.
+     * The list of asset property value entries for the batch get request. You can specify up to 128 entries per
+     * request.
      * </p>
      * 
-     * @return The list of asset property value entries for the batch get request. You can specify up to 16 entries per
+     * @return The list of asset property value entries for the batch get request. You can specify up to 128 entries per
      *         request.
      */
 
@@ -53,11 +55,12 @@ public class BatchGetAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.
+     * The list of asset property value entries for the batch get request. You can specify up to 128 entries per
+     * request.
      * </p>
      * 
      * @param entries
-     *        The list of asset property value entries for the batch get request. You can specify up to 16 entries per
+     *        The list of asset property value entries for the batch get request. You can specify up to 128 entries per
      *        request.
      */
 
@@ -72,7 +75,8 @@ public class BatchGetAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.
+     * The list of asset property value entries for the batch get request. You can specify up to 128 entries per
+     * request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +85,7 @@ public class BatchGetAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param entries
-     *        The list of asset property value entries for the batch get request. You can specify up to 16 entries per
+     *        The list of asset property value entries for the batch get request. You can specify up to 128 entries per
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -98,11 +102,12 @@ public class BatchGetAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The list of asset property value entries for the batch get request. You can specify up to 16 entries per request.
+     * The list of asset property value entries for the batch get request. You can specify up to 128 entries per
+     * request.
      * </p>
      * 
      * @param entries
-     *        The list of asset property value entries for the batch get request. You can specify up to 16 entries per
+     *        The list of asset property value entries for the batch get request. You can specify up to 128 entries per
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

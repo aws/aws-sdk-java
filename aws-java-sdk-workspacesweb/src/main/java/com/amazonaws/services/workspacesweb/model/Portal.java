@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,29 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The additional encryption context of the portal.
+     * </p>
+     */
+    private java.util.Map<String, String> additionalEncryptionContext;
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
+     * </p>
+     */
+    private String authenticationType;
+    /**
+     * <p>
      * The ARN of the browser settings that is associated with this web portal.
      * </p>
      */
@@ -48,10 +71,34 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationDate;
     /**
      * <p>
+     * The customer managed key used to encrypt sensitive information in the portal.
+     * </p>
+     */
+    private String customerManagedKey;
+    /**
+     * <p>
      * The name of the web portal.
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     */
+    private String ipAccessSettingsArn;
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     */
+    private Integer maxConcurrentSessions;
     /**
      * <p>
      * The ARN of the network settings that is associated with the web portal.
@@ -106,6 +153,217 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String userSettingsArn;
+
+    /**
+     * <p>
+     * The additional encryption context of the portal.
+     * </p>
+     * 
+     * @return The additional encryption context of the portal.
+     */
+
+    public java.util.Map<String, String> getAdditionalEncryptionContext() {
+        return additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the portal.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the portal.
+     */
+
+    public void setAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        this.additionalEncryptionContext = additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the portal.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal withAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        setAdditionalEncryptionContext(additionalEncryptionContext);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalEncryptionContext entry
+     *
+     * @see Portal#withAdditionalEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal addAdditionalEncryptionContextEntry(String key, String value) {
+        if (null == this.additionalEncryptionContext) {
+            this.additionalEncryptionContext = new java.util.HashMap<String, String>();
+        }
+        if (this.additionalEncryptionContext.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalEncryptionContext.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalEncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal clearAdditionalEncryptionContextEntries() {
+        this.additionalEncryptionContext = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The type of authentication integration points used when signing into the web portal. Defaults to
+     *        <code>Standard</code>.</p>
+     *        <p>
+     *        <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *        call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *        and group access to your web portal is controlled through your identity provider.
+     *        </p>
+     *        <p>
+     *        <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *        Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *        access to your web portal, can be configured in the IAM Identity Center.
+     * @see AuthenticationType
+     */
+
+    public void setAuthenticationType(String authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @return The type of authentication integration points used when signing into the web portal. Defaults to
+     *         <code>Standard</code>.</p>
+     *         <p>
+     *         <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *         call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *         and group access to your web portal is controlled through your identity provider.
+     *         </p>
+     *         <p>
+     *         <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *         Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *         access to your web portal, can be configured in the IAM Identity Center.
+     * @see AuthenticationType
+     */
+
+    public String getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The type of authentication integration points used when signing into the web portal. Defaults to
+     *        <code>Standard</code>.</p>
+     *        <p>
+     *        <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *        call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *        and group access to your web portal is controlled through your identity provider.
+     *        </p>
+     *        <p>
+     *        <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *        Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *        access to your web portal, can be configured in the IAM Identity Center.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public Portal withAuthenticationType(String authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of authentication integration points used when signing into the web portal. Defaults to
+     * <code>Standard</code>.
+     * </p>
+     * <p>
+     * <code>Standard</code> web portals are authenticated directly through your identity provider. You need to call
+     * <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group
+     * access to your web portal is controlled through your identity provider.
+     * </p>
+     * <p>
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The type of authentication integration points used when signing into the web portal. Defaults to
+     *        <code>Standard</code>.</p>
+     *        <p>
+     *        <code>Standard</code> web portals are authenticated directly through your identity provider. You need to
+     *        call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User
+     *        and group access to your web portal is controlled through your identity provider.
+     *        </p>
+     *        <p>
+     *        <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *        Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *        access to your web portal, can be configured in the IAM Identity Center.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public Portal withAuthenticationType(AuthenticationType authenticationType) {
+        this.authenticationType = authenticationType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -248,6 +506,46 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The customer managed key used to encrypt sensitive information in the portal.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the portal.
+     */
+
+    public void setCustomerManagedKey(String customerManagedKey) {
+        this.customerManagedKey = customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the portal.
+     * </p>
+     * 
+     * @return The customer managed key used to encrypt sensitive information in the portal.
+     */
+
+    public String getCustomerManagedKey() {
+        return this.customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the portal.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal withCustomerManagedKey(String customerManagedKey) {
+        setCustomerManagedKey(customerManagedKey);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the web portal.
      * </p>
      * 
@@ -283,6 +581,145 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
 
     public Portal withDisplayName(String displayName) {
         setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The type and resources of the underlying instance.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @return The type and resources of the underlying instance.
+     * @see InstanceType
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The type and resources of the underlying instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public Portal withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The type and resources of the underlying instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public Portal withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     * 
+     * @param ipAccessSettingsArn
+     *        The ARN of the IP access settings.
+     */
+
+    public void setIpAccessSettingsArn(String ipAccessSettingsArn) {
+        this.ipAccessSettingsArn = ipAccessSettingsArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     * 
+     * @return The ARN of the IP access settings.
+     */
+
+    public String getIpAccessSettingsArn() {
+        return this.ipAccessSettingsArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IP access settings.
+     * </p>
+     * 
+     * @param ipAccessSettingsArn
+     *        The ARN of the IP access settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal withIpAccessSettingsArn(String ipAccessSettingsArn) {
+        setIpAccessSettingsArn(ipAccessSettingsArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for the portal.
+     */
+
+    public void setMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        this.maxConcurrentSessions = maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     * 
+     * @return The maximum number of concurrent sessions for the portal.
+     */
+
+    public Integer getMaxConcurrentSessions() {
+        return this.maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for the portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal withMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        setMaxConcurrentSessions(maxConcurrentSessions);
         return this;
     }
 
@@ -696,14 +1133,26 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalEncryptionContext() != null)
+            sb.append("AdditionalEncryptionContext: ").append(getAdditionalEncryptionContext()).append(",");
+        if (getAuthenticationType() != null)
+            sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getBrowserSettingsArn() != null)
             sb.append("BrowserSettingsArn: ").append(getBrowserSettingsArn()).append(",");
         if (getBrowserType() != null)
             sb.append("BrowserType: ").append(getBrowserType()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getCustomerManagedKey() != null)
+            sb.append("CustomerManagedKey: ").append(getCustomerManagedKey()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getIpAccessSettingsArn() != null)
+            sb.append("IpAccessSettingsArn: ").append(getIpAccessSettingsArn()).append(",");
+        if (getMaxConcurrentSessions() != null)
+            sb.append("MaxConcurrentSessions: ").append(getMaxConcurrentSessions()).append(",");
         if (getNetworkSettingsArn() != null)
             sb.append("NetworkSettingsArn: ").append(getNetworkSettingsArn()).append(",");
         if (getPortalArn() != null)
@@ -736,6 +1185,14 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Portal == false)
             return false;
         Portal other = (Portal) obj;
+        if (other.getAdditionalEncryptionContext() == null ^ this.getAdditionalEncryptionContext() == null)
+            return false;
+        if (other.getAdditionalEncryptionContext() != null && other.getAdditionalEncryptionContext().equals(this.getAdditionalEncryptionContext()) == false)
+            return false;
+        if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
+            return false;
+        if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
+            return false;
         if (other.getBrowserSettingsArn() == null ^ this.getBrowserSettingsArn() == null)
             return false;
         if (other.getBrowserSettingsArn() != null && other.getBrowserSettingsArn().equals(this.getBrowserSettingsArn()) == false)
@@ -748,9 +1205,25 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getCustomerManagedKey() == null ^ this.getCustomerManagedKey() == null)
+            return false;
+        if (other.getCustomerManagedKey() != null && other.getCustomerManagedKey().equals(this.getCustomerManagedKey()) == false)
+            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getIpAccessSettingsArn() == null ^ this.getIpAccessSettingsArn() == null)
+            return false;
+        if (other.getIpAccessSettingsArn() != null && other.getIpAccessSettingsArn().equals(this.getIpAccessSettingsArn()) == false)
+            return false;
+        if (other.getMaxConcurrentSessions() == null ^ this.getMaxConcurrentSessions() == null)
+            return false;
+        if (other.getMaxConcurrentSessions() != null && other.getMaxConcurrentSessions().equals(this.getMaxConcurrentSessions()) == false)
             return false;
         if (other.getNetworkSettingsArn() == null ^ this.getNetworkSettingsArn() == null)
             return false;
@@ -796,10 +1269,16 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalEncryptionContext() == null) ? 0 : getAdditionalEncryptionContext().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getBrowserSettingsArn() == null) ? 0 : getBrowserSettingsArn().hashCode());
         hashCode = prime * hashCode + ((getBrowserType() == null) ? 0 : getBrowserType().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomerManagedKey() == null) ? 0 : getCustomerManagedKey().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getIpAccessSettingsArn() == null) ? 0 : getIpAccessSettingsArn().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentSessions() == null) ? 0 : getMaxConcurrentSessions().hashCode());
         hashCode = prime * hashCode + ((getNetworkSettingsArn() == null) ? 0 : getNetworkSettingsArn().hashCode());
         hashCode = prime * hashCode + ((getPortalArn() == null) ? 0 : getPortalArn().hashCode());
         hashCode = prime * hashCode + ((getPortalEndpoint() == null) ? 0 : getPortalEndpoint().hashCode());

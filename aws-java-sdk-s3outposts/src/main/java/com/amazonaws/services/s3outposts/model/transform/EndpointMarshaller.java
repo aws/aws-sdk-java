@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessType").build();
     private static final MarshallingInfo<String> CUSTOMEROWNEDIPV4POOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerOwnedIpv4Pool").build();
+    private static final MarshallingInfo<StructuredPojo> FAILEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailedReason").build();
 
     private static final EndpointMarshaller instance = new EndpointMarshaller();
 
@@ -78,6 +80,7 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getSecurityGroupId(), SECURITYGROUPID_BINDING);
             protocolMarshaller.marshall(endpoint.getAccessType(), ACCESSTYPE_BINDING);
             protocolMarshaller.marshall(endpoint.getCustomerOwnedIpv4Pool(), CUSTOMEROWNEDIPV4POOL_BINDING);
+            protocolMarshaller.marshall(endpoint.getFailedReason(), FAILEDREASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

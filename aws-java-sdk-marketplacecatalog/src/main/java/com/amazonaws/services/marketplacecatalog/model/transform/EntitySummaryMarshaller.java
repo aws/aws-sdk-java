@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,18 @@ public class EntitySummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
     private static final MarshallingInfo<String> VISIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Visibility").build();
+    private static final MarshallingInfo<StructuredPojo> AMIPRODUCTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmiProductSummary").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERPRODUCTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerProductSummary").build();
+    private static final MarshallingInfo<StructuredPojo> DATAPRODUCTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataProductSummary").build();
+    private static final MarshallingInfo<StructuredPojo> SAASPRODUCTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaaSProductSummary").build();
+    private static final MarshallingInfo<StructuredPojo> OFFERSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OfferSummary").build();
+    private static final MarshallingInfo<StructuredPojo> RESALEAUTHORIZATIONSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResaleAuthorizationSummary").build();
 
     private static final EntitySummaryMarshaller instance = new EntitySummaryMarshaller();
 
@@ -62,6 +74,12 @@ public class EntitySummaryMarshaller {
             protocolMarshaller.marshall(entitySummary.getEntityArn(), ENTITYARN_BINDING);
             protocolMarshaller.marshall(entitySummary.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(entitySummary.getVisibility(), VISIBILITY_BINDING);
+            protocolMarshaller.marshall(entitySummary.getAmiProductSummary(), AMIPRODUCTSUMMARY_BINDING);
+            protocolMarshaller.marshall(entitySummary.getContainerProductSummary(), CONTAINERPRODUCTSUMMARY_BINDING);
+            protocolMarshaller.marshall(entitySummary.getDataProductSummary(), DATAPRODUCTSUMMARY_BINDING);
+            protocolMarshaller.marshall(entitySummary.getSaaSProductSummary(), SAASPRODUCTSUMMARY_BINDING);
+            protocolMarshaller.marshall(entitySummary.getOfferSummary(), OFFERSUMMARY_BINDING);
+            protocolMarshaller.marshall(entitySummary.getResaleAuthorizationSummary(), RESALEAUTHORIZATIONSUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

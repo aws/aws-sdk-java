@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
     private String objectEncryptionType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support
-     * asymmetric KMS keys.
+     * The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not
+     * support asymmetric KMS keys.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -153,8 +153,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support
-     * asymmetric KMS keys.
+     * The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not
+     * support asymmetric KMS keys.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -166,8 +166,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not
-     *        support asymmetric KMS keys.</p>
+     *        The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3
+     *        does not support asymmetric KMS keys.</p>
      *        <p>
      *        You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *        <code>ObjectEncryptionType</code>.
@@ -183,8 +183,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support
-     * asymmetric KMS keys.
+     * The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not
+     * support asymmetric KMS keys.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -195,8 +195,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * <code>ObjectEncryptionType</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not
-     *         support asymmetric KMS keys.</p>
+     * @return The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3
+     *         does not support asymmetric KMS keys.</p>
      *         <p>
      *         You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *         <code>ObjectEncryptionType</code>.
@@ -212,8 +212,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support
-     * asymmetric KMS keys.
+     * The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not
+     * support asymmetric KMS keys.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -225,8 +225,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not
-     *        support asymmetric KMS keys.</p>
+     *        The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3
+     *        does not support asymmetric KMS keys.</p>
      *        <p>
      *        You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *        <code>ObjectEncryptionType</code>.

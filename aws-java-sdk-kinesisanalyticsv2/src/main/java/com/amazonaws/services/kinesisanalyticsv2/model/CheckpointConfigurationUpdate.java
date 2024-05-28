@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to the checkpointing parameters for a Flink-based Kinesis Data Analytics application.
+ * Describes updates to the checkpointing parameters for a Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfigurationUpdate"
@@ -30,9 +30,10 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics.
-     * You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
-     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+     * Describes updates to whether the application uses the default checkpointing behavior of Managed Service for
+     * Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
+     * <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters.
      * </p>
      * <note>
      * <p>
@@ -102,9 +103,10 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics.
-     * You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
-     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+     * Describes updates to whether the application uses the default checkpointing behavior of Managed Service for
+     * Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
+     * <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters.
      * </p>
      * <note>
      * <p>
@@ -131,8 +133,8 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * </note>
      * 
      * @param configurationTypeUpdate
-     *        Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data
-     *        Analytics. You must set this property to <code>CUSTOM</code> in order to set the
+     *        Describes updates to whether the application uses the default checkpointing behavior of Managed Service
+     *        for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
      *        <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or
      *        <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
      *        <p>
@@ -165,9 +167,10 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics.
-     * You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
-     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+     * Describes updates to whether the application uses the default checkpointing behavior of Managed Service for
+     * Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
+     * <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters.
      * </p>
      * <note>
      * <p>
@@ -193,8 +196,8 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * </ul>
      * </note>
      * 
-     * @return Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data
-     *         Analytics. You must set this property to <code>CUSTOM</code> in order to set the
+     * @return Describes updates to whether the application uses the default checkpointing behavior of Managed Service
+     *         for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
      *         <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or
      *         <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
      *         <p>
@@ -227,9 +230,10 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics.
-     * You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
-     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+     * Describes updates to whether the application uses the default checkpointing behavior of Managed Service for
+     * Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
+     * <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters.
      * </p>
      * <note>
      * <p>
@@ -256,8 +260,8 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * </note>
      * 
      * @param configurationTypeUpdate
-     *        Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data
-     *        Analytics. You must set this property to <code>CUSTOM</code> in order to set the
+     *        Describes updates to whether the application uses the default checkpointing behavior of Managed Service
+     *        for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
      *        <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or
      *        <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
      *        <p>
@@ -292,9 +296,10 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data Analytics.
-     * You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
-     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+     * Describes updates to whether the application uses the default checkpointing behavior of Managed Service for
+     * Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
+     * <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters.
      * </p>
      * <note>
      * <p>
@@ -321,8 +326,8 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * </note>
      * 
      * @param configurationTypeUpdate
-     *        Describes updates to whether the application uses the default checkpointing behavior of Kinesis Data
-     *        Analytics. You must set this property to <code>CUSTOM</code> in order to set the
+     *        Describes updates to whether the application uses the default checkpointing behavior of Managed Service
+     *        for Apache Flink. You must set this property to <code>CUSTOM</code> in order to set the
      *        <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or
      *        <code>MinPauseBetweenCheckpoints</code> parameters. </p> <note>
      *        <p>

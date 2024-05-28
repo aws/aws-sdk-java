@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,62 +30,22 @@ public class FormButton implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the button's properties.
-     * </p>
-     */
-    private String children;
-    /**
-     * <p>
      * Specifies whether the button is visible on the form.
      * </p>
      */
     private Boolean excluded;
     /**
      * <p>
+     * Describes the button's properties.
+     * </p>
+     */
+    private String children;
+    /**
+     * <p>
      * The position of the button.
      * </p>
      */
     private FieldPosition position;
-
-    /**
-     * <p>
-     * Describes the button's properties.
-     * </p>
-     * 
-     * @param children
-     *        Describes the button's properties.
-     */
-
-    public void setChildren(String children) {
-        this.children = children;
-    }
-
-    /**
-     * <p>
-     * Describes the button's properties.
-     * </p>
-     * 
-     * @return Describes the button's properties.
-     */
-
-    public String getChildren() {
-        return this.children;
-    }
-
-    /**
-     * <p>
-     * Describes the button's properties.
-     * </p>
-     * 
-     * @param children
-     *        Describes the button's properties.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FormButton withChildren(String children) {
-        setChildren(children);
-        return this;
-    }
 
     /**
      * <p>
@@ -141,6 +101,46 @@ public class FormButton implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Describes the button's properties.
+     * </p>
+     * 
+     * @param children
+     *        Describes the button's properties.
+     */
+
+    public void setChildren(String children) {
+        this.children = children;
+    }
+
+    /**
+     * <p>
+     * Describes the button's properties.
+     * </p>
+     * 
+     * @return Describes the button's properties.
+     */
+
+    public String getChildren() {
+        return this.children;
+    }
+
+    /**
+     * <p>
+     * Describes the button's properties.
+     * </p>
+     * 
+     * @param children
+     *        Describes the button's properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormButton withChildren(String children) {
+        setChildren(children);
+        return this;
+    }
+
+    /**
+     * <p>
      * The position of the button.
      * </p>
      * 
@@ -191,10 +191,10 @@ public class FormButton implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getChildren() != null)
-            sb.append("Children: ").append(getChildren()).append(",");
         if (getExcluded() != null)
             sb.append("Excluded: ").append(getExcluded()).append(",");
+        if (getChildren() != null)
+            sb.append("Children: ").append(getChildren()).append(",");
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition());
         sb.append("}");
@@ -211,13 +211,13 @@ public class FormButton implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FormButton == false)
             return false;
         FormButton other = (FormButton) obj;
-        if (other.getChildren() == null ^ this.getChildren() == null)
-            return false;
-        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
-            return false;
         if (other.getExcluded() == null ^ this.getExcluded() == null)
             return false;
         if (other.getExcluded() != null && other.getExcluded().equals(this.getExcluded()) == false)
+            return false;
+        if (other.getChildren() == null ^ this.getChildren() == null)
+            return false;
+        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
             return false;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
@@ -231,8 +231,8 @@ public class FormButton implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
         hashCode = prime * hashCode + ((getExcluded() == null) ? 0 : getExcluded().hashCode());
+        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         return hashCode;
     }

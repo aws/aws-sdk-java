@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String serverId;
     /**
      * <p>
-     * A unique string that identifies a user account associated with a server.
+     * A unique string that identifies a Transfer Family user.
      * </p>
      */
     private String userName;
@@ -78,11 +78,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A unique string that identifies a user account associated with a server.
+     * A unique string that identifies a Transfer Family user.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user account associated with a server.
+     *        A unique string that identifies a Transfer Family user.
      */
 
     public void setUserName(String userName) {
@@ -91,10 +91,10 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A unique string that identifies a user account associated with a server.
+     * A unique string that identifies a Transfer Family user.
      * </p>
      * 
-     * @return A unique string that identifies a user account associated with a server.
+     * @return A unique string that identifies a Transfer Family user.
      */
 
     public String getUserName() {
@@ -103,11 +103,11 @@ public class CreateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A unique string that identifies a user account associated with a server.
+     * A unique string that identifies a Transfer Family user.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user account associated with a server.
+     *        A unique string that identifies a Transfer Family user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

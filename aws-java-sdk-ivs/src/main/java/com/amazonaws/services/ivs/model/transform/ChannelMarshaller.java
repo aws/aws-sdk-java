@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,14 +35,22 @@ public class ChannelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorized").build();
     private static final MarshallingInfo<String> INGESTENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ingestEndpoint").build();
+    private static final MarshallingInfo<Boolean> INSECUREINGEST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("insecureIngest").build();
     private static final MarshallingInfo<String> LATENCYMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latencyMode").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> PLAYBACKRESTRICTIONPOLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("playbackRestrictionPolicyArn").build();
     private static final MarshallingInfo<String> PLAYBACKURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("playbackUrl").build();
+    private static final MarshallingInfo<String> PRESET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("preset").build();
     private static final MarshallingInfo<String> RECORDINGCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingConfigurationArn").build();
+    private static final MarshallingInfo<StructuredPojo> SRT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("srt").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -67,10 +75,14 @@ public class ChannelMarshaller {
             protocolMarshaller.marshall(channel.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(channel.getAuthorized(), AUTHORIZED_BINDING);
             protocolMarshaller.marshall(channel.getIngestEndpoint(), INGESTENDPOINT_BINDING);
+            protocolMarshaller.marshall(channel.getInsecureIngest(), INSECUREINGEST_BINDING);
             protocolMarshaller.marshall(channel.getLatencyMode(), LATENCYMODE_BINDING);
             protocolMarshaller.marshall(channel.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(channel.getPlaybackRestrictionPolicyArn(), PLAYBACKRESTRICTIONPOLICYARN_BINDING);
             protocolMarshaller.marshall(channel.getPlaybackUrl(), PLAYBACKURL_BINDING);
+            protocolMarshaller.marshall(channel.getPreset(), PRESET_BINDING);
             protocolMarshaller.marshall(channel.getRecordingConfigurationArn(), RECORDINGCONFIGURATIONARN_BINDING);
+            protocolMarshaller.marshall(channel.getSrt(), SRT_BINDING);
             protocolMarshaller.marshall(channel.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(channel.getType(), TYPE_BINDING);
         } catch (Exception e) {

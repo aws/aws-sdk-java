@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,22 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * </p>
      */
     private IngressConfiguration ingressConfiguration;
+    /**
+     * <p>
+     * App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and <i>dual
+     * stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional parameter. If you
+     * do not specify an <code>IpAddressType</code>, it defaults to select IPv4.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private endpoint.
+     * If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive traffic originating from IPv6
+     * endpoint.
+     * </p>
+     * </note>
+     */
+    private String ipAddressType;
 
     /**
      * <p>
@@ -123,6 +139,137 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and <i>dual
+     * stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional parameter. If you
+     * do not specify an <code>IpAddressType</code>, it defaults to select IPv4.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private endpoint.
+     * If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive traffic originating from IPv6
+     * endpoint.
+     * </p>
+     * </note>
+     * 
+     * @param ipAddressType
+     *        App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and
+     *        <i>dual stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional
+     *        parameter. If you do not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p> <note>
+     *        <p>
+     *        Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private
+     *        endpoint. If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App
+     *        Runner service will default to support only IPv4 for Private endpoint and fail to receive traffic
+     *        originating from IPv6 endpoint.
+     *        </p>
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and <i>dual
+     * stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional parameter. If you
+     * do not specify an <code>IpAddressType</code>, it defaults to select IPv4.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private endpoint.
+     * If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive traffic originating from IPv6
+     * endpoint.
+     * </p>
+     * </note>
+     * 
+     * @return App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and
+     *         <i>dual stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional
+     *         parameter. If you do not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p> <note>
+     *         <p>
+     *         Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private
+     *         endpoint. If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App
+     *         Runner service will default to support only IPv4 for Private endpoint and fail to receive traffic
+     *         originating from IPv6 endpoint.
+     *         </p>
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and <i>dual
+     * stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional parameter. If you
+     * do not specify an <code>IpAddressType</code>, it defaults to select IPv4.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private endpoint.
+     * If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive traffic originating from IPv6
+     * endpoint.
+     * </p>
+     * </note>
+     * 
+     * @param ipAddressType
+     *        App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and
+     *        <i>dual stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional
+     *        parameter. If you do not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p> <note>
+     *        <p>
+     *        Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private
+     *        endpoint. If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App
+     *        Runner service will default to support only IPv4 for Private endpoint and fail to receive traffic
+     *        originating from IPv6 endpoint.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public NetworkConfiguration withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and <i>dual
+     * stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional parameter. If you
+     * do not specify an <code>IpAddressType</code>, it defaults to select IPv4.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private endpoint.
+     * If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App Runner service
+     * will default to support only IPv4 for Private endpoint and fail to receive traffic originating from IPv6
+     * endpoint.
+     * </p>
+     * </note>
+     * 
+     * @param ipAddressType
+     *        App Runner provides you with the option to choose between <i>Internet Protocol version 4 (IPv4)</i> and
+     *        <i>dual stack</i> (IPv4 and IPv6) for your incoming public network configuration. This is an optional
+     *        parameter. If you do not specify an <code>IpAddressType</code>, it defaults to select IPv4.</p> <note>
+     *        <p>
+     *        Currently, App Runner supports dual stack for only Public endpoint. Only IPv4 is supported for Private
+     *        endpoint. If you update a service that's using dual-stack Public endpoint to a Private endpoint, your App
+     *        Runner service will default to support only IPv4 for Private endpoint and fail to receive traffic
+     *        originating from IPv6 endpoint.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public NetworkConfiguration withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -137,7 +284,9 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
         if (getEgressConfiguration() != null)
             sb.append("EgressConfiguration: ").append(getEgressConfiguration()).append(",");
         if (getIngressConfiguration() != null)
-            sb.append("IngressConfiguration: ").append(getIngressConfiguration());
+            sb.append("IngressConfiguration: ").append(getIngressConfiguration()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +309,10 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getIngressConfiguration() != null && other.getIngressConfiguration().equals(this.getIngressConfiguration()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +323,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getEgressConfiguration() == null) ? 0 : getEgressConfiguration().hashCode());
         hashCode = prime * hashCode + ((getIngressConfiguration() == null) ? 0 : getIngressConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         return hashCode;
     }
 

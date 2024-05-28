@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -271,6 +271,24 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date snapshotRetentionStartTime;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     */
+    private String masterPasswordSecretArn;
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     */
+    private String masterPasswordSecretKmsKeyId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot.
+     * </p>
+     */
+    private String snapshotArn;
 
     /**
      * <p>
@@ -2026,6 +2044,129 @@ public class Snapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     */
+
+    public void setMasterPasswordSecretArn(String masterPasswordSecretArn) {
+        this.masterPasswordSecretArn = masterPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     */
+
+    public String getMasterPasswordSecretArn() {
+        return this.masterPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withMasterPasswordSecretArn(String masterPasswordSecretArn) {
+        setMasterPasswordSecretArn(masterPasswordSecretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret.
+     */
+
+    public void setMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        this.masterPasswordSecretKmsKeyId = masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *         secret.
+     */
+
+    public String getMasterPasswordSecretKmsKeyId() {
+        return this.masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        setMasterPasswordSecretKmsKeyId(masterPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot.
+     */
+
+    public void setSnapshotArn(String snapshotArn) {
+        this.snapshotArn = snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the snapshot.
+     */
+
+    public String getSnapshotArn() {
+        return this.snapshotArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the snapshot.
+     * </p>
+     * 
+     * @param snapshotArn
+     *        The Amazon Resource Name (ARN) of the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withSnapshotArn(String snapshotArn) {
+        setSnapshotArn(snapshotArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2104,7 +2245,13 @@ public class Snapshot implements Serializable, Cloneable {
         if (getManualSnapshotRemainingDays() != null)
             sb.append("ManualSnapshotRemainingDays: ").append(getManualSnapshotRemainingDays()).append(",");
         if (getSnapshotRetentionStartTime() != null)
-            sb.append("SnapshotRetentionStartTime: ").append(getSnapshotRetentionStartTime());
+            sb.append("SnapshotRetentionStartTime: ").append(getSnapshotRetentionStartTime()).append(",");
+        if (getMasterPasswordSecretArn() != null)
+            sb.append("MasterPasswordSecretArn: ").append(getMasterPasswordSecretArn()).append(",");
+        if (getMasterPasswordSecretKmsKeyId() != null)
+            sb.append("MasterPasswordSecretKmsKeyId: ").append(getMasterPasswordSecretKmsKeyId()).append(",");
+        if (getSnapshotArn() != null)
+            sb.append("SnapshotArn: ").append(getSnapshotArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2258,6 +2405,18 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getSnapshotRetentionStartTime() != null && other.getSnapshotRetentionStartTime().equals(this.getSnapshotRetentionStartTime()) == false)
             return false;
+        if (other.getMasterPasswordSecretArn() == null ^ this.getMasterPasswordSecretArn() == null)
+            return false;
+        if (other.getMasterPasswordSecretArn() != null && other.getMasterPasswordSecretArn().equals(this.getMasterPasswordSecretArn()) == false)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() == null ^ this.getMasterPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() != null && other.getMasterPasswordSecretKmsKeyId().equals(this.getMasterPasswordSecretKmsKeyId()) == false)
+            return false;
+        if (other.getSnapshotArn() == null ^ this.getSnapshotArn() == null)
+            return false;
+        if (other.getSnapshotArn() != null && other.getSnapshotArn().equals(this.getSnapshotArn()) == false)
+            return false;
         return true;
     }
 
@@ -2300,6 +2459,9 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getManualSnapshotRemainingDays() == null) ? 0 : getManualSnapshotRemainingDays().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionStartTime() == null) ? 0 : getSnapshotRetentionStartTime().hashCode());
+        hashCode = prime * hashCode + ((getMasterPasswordSecretArn() == null) ? 0 : getMasterPasswordSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getMasterPasswordSecretKmsKeyId() == null) ? 0 : getMasterPasswordSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotArn() == null) ? 0 : getSnapshotArn().hashCode());
         return hashCode;
     }
 

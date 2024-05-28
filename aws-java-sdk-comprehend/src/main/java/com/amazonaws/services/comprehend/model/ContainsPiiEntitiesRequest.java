@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ContainsPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRe
     private String text;
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents.
      * </p>
      */
     private String languageCode;
@@ -80,11 +80,11 @@ public class ContainsPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. Currently, English is the only valid language.
+     *        The language of the input documents.
      * @see LanguageCode
      */
 
@@ -94,10 +94,10 @@ public class ContainsPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents.
      * </p>
      * 
-     * @return The language of the input documents. Currently, English is the only valid language.
+     * @return The language of the input documents.
      * @see LanguageCode
      */
 
@@ -107,11 +107,11 @@ public class ContainsPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. Currently, English is the only valid language.
+     *        The language of the input documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -123,11 +123,11 @@ public class ContainsPiiEntitiesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. Currently, English is the only valid language.
+     *        The language of the input documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

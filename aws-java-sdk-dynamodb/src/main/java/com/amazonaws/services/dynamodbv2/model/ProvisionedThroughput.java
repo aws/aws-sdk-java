@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,9 +37,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <code>ThrottlingException</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -49,9 +49,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
-     * more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -72,15 +72,15 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <code>ThrottlingException</code>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *        <code>ThrottlingException</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
      * @param writeCapacityUnits
      *        The maximum number of writes consumed per second before DynamoDB returns a
-     *        <code>ThrottlingException</code>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *        <code>ThrottlingException</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
@@ -94,9 +94,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <code>ThrottlingException</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -104,8 +104,8 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <code>ThrottlingException</code>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *        <code>ThrottlingException</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -118,17 +118,17 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <code>ThrottlingException</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
      * </p>
      * 
      * @return The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *         <code>ThrottlingException</code>. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *         <code>ThrottlingException</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *         >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
      *         If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -141,9 +141,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>. For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <code>ThrottlingException</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -151,8 +151,8 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
      * 
      * @param readCapacityUnits
      *        The maximum number of strongly consistent reads consumed per second before DynamoDB returns a
-     *        <code>ThrottlingException</code>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *        <code>ThrottlingException</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -167,9 +167,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
-     * more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -177,8 +177,8 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
      * 
      * @param writeCapacityUnits
      *        The maximum number of writes consumed per second before DynamoDB returns a
-     *        <code>ThrottlingException</code>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *        <code>ThrottlingException</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -191,17 +191,17 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
-     * more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
      * </p>
      * 
      * @return The maximum number of writes consumed per second before DynamoDB returns a
-     *         <code>ThrottlingException</code>. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *         <code>ThrottlingException</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *         >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
      *         If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -214,9 +214,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For
-     * more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
-     * >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
@@ -224,8 +224,8 @@ public class ProvisionedThroughput implements Serializable, Cloneable, Structure
      * 
      * @param writeCapacityUnits
      *        The maximum number of writes consumed per second before DynamoDB returns a
-     *        <code>ThrottlingException</code>. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput"
+     *        <code>ThrottlingException</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html"
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.

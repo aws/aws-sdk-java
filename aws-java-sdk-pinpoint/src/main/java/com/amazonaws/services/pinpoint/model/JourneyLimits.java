@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,19 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String endpointReentryInterval;
+    /**
+     * <p>
+     * The number of messages that an endpoint can receive during the specified timeframe.
+     * </p>
+     */
+    private JourneyTimeframeCap timeframeCap;
+    /**
+     * <p>
+     * The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0,
+     * this limit will not apply.
+     * </p>
+     */
+    private Integer totalCap;
 
     /**
      * <p>
@@ -235,6 +248,92 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of messages that an endpoint can receive during the specified timeframe.
+     * </p>
+     * 
+     * @param timeframeCap
+     *        The number of messages that an endpoint can receive during the specified timeframe.
+     */
+
+    public void setTimeframeCap(JourneyTimeframeCap timeframeCap) {
+        this.timeframeCap = timeframeCap;
+    }
+
+    /**
+     * <p>
+     * The number of messages that an endpoint can receive during the specified timeframe.
+     * </p>
+     * 
+     * @return The number of messages that an endpoint can receive during the specified timeframe.
+     */
+
+    public JourneyTimeframeCap getTimeframeCap() {
+        return this.timeframeCap;
+    }
+
+    /**
+     * <p>
+     * The number of messages that an endpoint can receive during the specified timeframe.
+     * </p>
+     * 
+     * @param timeframeCap
+     *        The number of messages that an endpoint can receive during the specified timeframe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyLimits withTimeframeCap(JourneyTimeframeCap timeframeCap) {
+        setTimeframeCap(timeframeCap);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0,
+     * this limit will not apply.
+     * </p>
+     * 
+     * @param totalCap
+     *        The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set
+     *        to 0, this limit will not apply.
+     */
+
+    public void setTotalCap(Integer totalCap) {
+        this.totalCap = totalCap;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0,
+     * this limit will not apply.
+     * </p>
+     * 
+     * @return The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set
+     *         to 0, this limit will not apply.
+     */
+
+    public Integer getTotalCap() {
+        return this.totalCap;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set to 0,
+     * this limit will not apply.
+     * </p>
+     * 
+     * @param totalCap
+     *        The maximum number of messages a journey can sent to a single endpoint. The maximum value is 100. If set
+     *        to 0, this limit will not apply.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyLimits withTotalCap(Integer totalCap) {
+        setTotalCap(totalCap);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -253,7 +352,11 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
         if (getMessagesPerSecond() != null)
             sb.append("MessagesPerSecond: ").append(getMessagesPerSecond()).append(",");
         if (getEndpointReentryInterval() != null)
-            sb.append("EndpointReentryInterval: ").append(getEndpointReentryInterval());
+            sb.append("EndpointReentryInterval: ").append(getEndpointReentryInterval()).append(",");
+        if (getTimeframeCap() != null)
+            sb.append("TimeframeCap: ").append(getTimeframeCap()).append(",");
+        if (getTotalCap() != null)
+            sb.append("TotalCap: ").append(getTotalCap());
         sb.append("}");
         return sb.toString();
     }
@@ -284,6 +387,14 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndpointReentryInterval() != null && other.getEndpointReentryInterval().equals(this.getEndpointReentryInterval()) == false)
             return false;
+        if (other.getTimeframeCap() == null ^ this.getTimeframeCap() == null)
+            return false;
+        if (other.getTimeframeCap() != null && other.getTimeframeCap().equals(this.getTimeframeCap()) == false)
+            return false;
+        if (other.getTotalCap() == null ^ this.getTotalCap() == null)
+            return false;
+        if (other.getTotalCap() != null && other.getTotalCap().equals(this.getTotalCap()) == false)
+            return false;
         return true;
     }
 
@@ -296,6 +407,8 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndpointReentryCap() == null) ? 0 : getEndpointReentryCap().hashCode());
         hashCode = prime * hashCode + ((getMessagesPerSecond() == null) ? 0 : getMessagesPerSecond().hashCode());
         hashCode = prime * hashCode + ((getEndpointReentryInterval() == null) ? 0 : getEndpointReentryInterval().hashCode());
+        hashCode = prime * hashCode + ((getTimeframeCap() == null) ? 0 : getTimeframeCap().hashCode());
+        hashCode = prime * hashCode + ((getTotalCap() == null) ? 0 : getTotalCap().hashCode());
         return hashCode;
     }
 

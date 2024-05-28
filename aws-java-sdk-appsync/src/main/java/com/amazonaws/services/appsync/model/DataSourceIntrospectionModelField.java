@@ -1,0 +1,242 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.appsync.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Represents the fields that were retrieved from the introspected data.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DataSourceIntrospectionModelField"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DataSourceIntrospectionModelField implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The name of the field that was retrieved from the introspected data.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     * </p>
+     */
+    private DataSourceIntrospectionModelFieldType type;
+    /**
+     * <p>
+     * The length value of the introspected field.
+     * </p>
+     */
+    private Long length;
+
+    /**
+     * <p>
+     * The name of the field that was retrieved from the introspected data.
+     * </p>
+     * 
+     * @param name
+     *        The name of the field that was retrieved from the introspected data.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the field that was retrieved from the introspected data.
+     * </p>
+     * 
+     * @return The name of the field that was retrieved from the introspected data.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the field that was retrieved from the introspected data.
+     * </p>
+     * 
+     * @param name
+     *        The name of the field that was retrieved from the introspected data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceIntrospectionModelField withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     * </p>
+     * 
+     * @param type
+     *        The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     */
+
+    public void setType(DataSourceIntrospectionModelFieldType type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     * </p>
+     * 
+     * @return The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     */
+
+    public DataSourceIntrospectionModelFieldType getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     * </p>
+     * 
+     * @param type
+     *        The <code>DataSourceIntrospectionModelFieldType</code> object data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceIntrospectionModelField withType(DataSourceIntrospectionModelFieldType type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The length value of the introspected field.
+     * </p>
+     * 
+     * @param length
+     *        The length value of the introspected field.
+     */
+
+    public void setLength(Long length) {
+        this.length = length;
+    }
+
+    /**
+     * <p>
+     * The length value of the introspected field.
+     * </p>
+     * 
+     * @return The length value of the introspected field.
+     */
+
+    public Long getLength() {
+        return this.length;
+    }
+
+    /**
+     * <p>
+     * The length value of the introspected field.
+     * </p>
+     * 
+     * @param length
+     *        The length value of the introspected field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceIntrospectionModelField withLength(Long length) {
+        setLength(length);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getLength() != null)
+            sb.append("Length: ").append(getLength());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DataSourceIntrospectionModelField == false)
+            return false;
+        DataSourceIntrospectionModelField other = (DataSourceIntrospectionModelField) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getLength() == null ^ this.getLength() == null)
+            return false;
+        if (other.getLength() != null && other.getLength().equals(this.getLength()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getLength() == null) ? 0 : getLength().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public DataSourceIntrospectionModelField clone() {
+        try {
+            return (DataSourceIntrospectionModelField) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.appsync.model.transform.DataSourceIntrospectionModelFieldMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

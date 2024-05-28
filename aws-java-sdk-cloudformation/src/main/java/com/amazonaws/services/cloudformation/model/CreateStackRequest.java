@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -59,7 +59,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -95,8 +96,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private RollbackConfiguration rollbackConfiguration;
     /**
      * <p>
-     * The amount of time that can pass before the stack status becomes CREATE_FAILED; if <code>DisableRollback</code>
-     * is not set or is set to <code>false</code>, the stack will be rolled back.
+     * The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
+     * <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      * </p>
      */
     private Integer timeoutInMinutes;
@@ -151,14 +152,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
@@ -170,20 +171,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -195,7 +198,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -210,9 +213,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <p>
@@ -231,11 +234,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
     /**
@@ -255,6 +263,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with Identity and Access Management</a>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
     /**
@@ -294,8 +307,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+     * parameter, but not both.
      * </p>
      */
     private String stackPolicyURL;
@@ -330,16 +344,26 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
      * Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on
      * stacks by default.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.
      * </p>
      */
     private Boolean enableTerminationProtection;
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean retainExceptOnCreate;
 
     /**
      * <p>
@@ -422,7 +446,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -433,7 +457,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      *        parameter, but not both.
@@ -448,7 +472,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -458,7 +482,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *         bytes. For more information, go to <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         anatomy</a> in the CloudFormation User Guide.</p>
+     *         anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *         <p>
      *         Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
@@ -473,7 +497,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -484,7 +508,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      *        parameter, but not both.
@@ -501,7 +525,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -512,7 +537,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *        that's located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *        <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      *        parameter, but not both.
@@ -527,7 +553,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -537,7 +564,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *         that's located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         anatomy</a> in the CloudFormation User Guide.</p>
+     *         anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *         <code>https://</code>.</p>
      *         <p>
      *         Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
@@ -552,7 +580,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but
@@ -563,7 +592,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *        that's located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *        <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
      *        parameter, but not both.
@@ -800,12 +830,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The amount of time that can pass before the stack status becomes CREATE_FAILED; if <code>DisableRollback</code>
-     * is not set or is set to <code>false</code>, the stack will be rolled back.
+     * The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
+     * <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The amount of time that can pass before the stack status becomes CREATE_FAILED; if
+     *        The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
      *        <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      */
 
@@ -815,11 +845,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The amount of time that can pass before the stack status becomes CREATE_FAILED; if <code>DisableRollback</code>
-     * is not set or is set to <code>false</code>, the stack will be rolled back.
+     * The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
+     * <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      * </p>
      * 
-     * @return The amount of time that can pass before the stack status becomes CREATE_FAILED; if
+     * @return The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
      *         <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      */
 
@@ -829,12 +859,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The amount of time that can pass before the stack status becomes CREATE_FAILED; if <code>DisableRollback</code>
-     * is not set or is set to <code>false</code>, the stack will be rolled back.
+     * The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
+     * <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The amount of time that can pass before the stack status becomes CREATE_FAILED; if
+     *        The amount of time that can pass before the stack status becomes <code>CREATE_FAILED</code>; if
      *        <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will be rolled back.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -969,14 +999,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
@@ -988,20 +1018,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1013,7 +1045,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1028,9 +1060,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <p>
@@ -1049,11 +1081,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @return In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
      *         order for CloudFormation to create the stack.</p>
@@ -1097,14 +1134,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *         AWS::IAM::AccessKey</a>
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
+     *         >AWS::IAM::AccessKey</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *         AWS::IAM::Group</a>
+     *         <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *         ::IAM::Group</a>
      *         </p>
      *         </li>
      *         <li>
@@ -1122,14 +1160,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *         AWS::IAM::Role</a>
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *         IAM::Role</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *         AWS::IAM::User</a>
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS
+     *         ::IAM::User</a>
      *         </p>
      *         </li>
      *         <li>
@@ -1142,7 +1180,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *         </p>
      *         </li>
@@ -1158,9 +1196,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         one or more macros, and you choose to create a stack directly from the processed template, without first
      *         reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *         <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *         >AWS::Include</a> and <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *         </p>
      *         <p>
@@ -1179,10 +1217,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </important>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *         CloudFormation macros to perform custom processing on templates</a>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *         </p>
      * @see Capability
      */
 
@@ -1237,14 +1280,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
@@ -1256,20 +1299,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1281,7 +1326,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1296,9 +1341,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <p>
@@ -1317,11 +1362,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
@@ -1372,8 +1422,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
@@ -1385,20 +1435,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
@@ -1411,7 +1463,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1427,9 +1479,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <p>
@@ -1448,10 +1500,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @see Capability
      */
 
@@ -1508,14 +1565,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
@@ -1527,20 +1584,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1552,7 +1611,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1567,9 +1626,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <p>
@@ -1588,11 +1647,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
@@ -1648,8 +1712,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
@@ -1661,20 +1725,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
@@ -1687,7 +1753,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1703,9 +1769,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <p>
@@ -1724,10 +1790,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1786,14 +1857,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
@@ -1805,20 +1876,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1830,7 +1903,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1845,9 +1918,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <p>
@@ -1866,11 +1939,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
@@ -1921,8 +1999,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
@@ -1934,20 +2012,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
@@ -1960,7 +2040,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1976,9 +2056,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <p>
@@ -1997,10 +2077,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -2054,14 +2139,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
@@ -2073,20 +2158,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -2098,7 +2185,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -2113,9 +2200,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      * </p>
      * <p>
@@ -2134,11 +2221,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * macros to perform custom processing on templates</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in
@@ -2189,8 +2281,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
@@ -2202,20 +2294,22 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
@@ -2228,7 +2322,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -2244,9 +2338,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.
      *        </p>
      *        <p>
@@ -2265,10 +2359,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </important>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation macros to perform custom processing on templates</a>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -2303,6 +2402,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with Identity and Access Management</a>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @return The template resource types that you have permissions to work with for this create stack action, such as
      *         <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
@@ -2318,6 +2422,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see
      *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
      *         Controlling Access with Identity and Access Management</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *         </p>
      */
 
     public java.util.List<String> getResourceTypes() {
@@ -2344,6 +2453,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with Identity and Access Management</a>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
      *        The template resource types that you have permissions to work with for this create stack action, such as
@@ -2360,6 +2474,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
      *        Controlling Access with Identity and Access Management</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      */
 
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
@@ -2388,6 +2507,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with Identity and Access Management</a>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceTypes(java.util.Collection)} or {@link #withResourceTypes(java.util.Collection)} if you want
@@ -2409,6 +2533,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
      *        Controlling Access with Identity and Access Management</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2439,6 +2568,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with Identity and Access Management</a>.
      * </p>
+     * <note>
+     * <p>
+     * Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     * </p>
+     * </note>
      * 
      * @param resourceTypes
      *        The template resource types that you have permissions to work with for this create stack action, such as
@@ -2455,6 +2589,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">
      *        Controlling Access with Identity and Access Management</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2730,14 +2869,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+     * parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
      *        Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
-     *        located in an S3 bucket in the same Region as the stack. You can specify either the
-     *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
+     *        located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start
+     *        with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the
+     *        <code>StackPolicyURL</code> parameter, but not both.
      */
 
     public void setStackPolicyURL(String stackPolicyURL) {
@@ -2747,13 +2888,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+     * parameter, but not both.
      * </p>
      * 
      * @return Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
-     *         located in an S3 bucket in the same Region as the stack. You can specify either the
-     *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
+     *         located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start
+     *         with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the
+     *         <code>StackPolicyURL</code> parameter, but not both.
      */
 
     public String getStackPolicyURL() {
@@ -2763,14 +2906,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-     * <code>StackPolicyURL</code> parameter, but not both.
+     * an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+     * parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
      *        Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
-     *        located in an S3 bucket in the same Region as the stack. You can specify either the
-     *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
+     *        located in an S3 bucket in the same Region as the stack. The location for an Amazon S3 bucket must start
+     *        with <code>https://</code>. You can specify either the <code>StackPolicyBody</code> or the
+     *        <code>StackPolicyURL</code> parameter, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2991,26 +3136,26 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
      * Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on
      * stacks by default.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.
      * </p>
      * 
      * @param enableTerminationProtection
      *        Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      *        termination protection enabled, the operation fails and the stack remains unchanged. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">
      *        Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection
      *        is deactivated on stacks by default.</p>
      *        <p>
-     *        For <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     *        stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested
-     *        stack.
+     *        For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">
+     *        nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the
+     *        nested stack.
      */
 
     public void setEnableTerminationProtection(Boolean enableTerminationProtection) {
@@ -3021,25 +3166,26 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
      * Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on
      * stacks by default.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.
      * </p>
      * 
      * @return Whether to enable termination protection on the specified stack. If a user attempts to delete a stack
      *         with termination protection enabled, the operation fails and the stack remains unchanged. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html"
      *         >Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination
      *         protection is deactivated on stacks by default.</p>
      *         <p>
-     *         For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">
-     *         nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the
-     *         nested stack.
+     *         For <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     *         stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested
+     *         stack.
      */
 
     public Boolean getEnableTerminationProtection() {
@@ -3050,26 +3196,26 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
      * Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on
      * stacks by default.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.
      * </p>
      * 
      * @param enableTerminationProtection
      *        Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      *        termination protection enabled, the operation fails and the stack remains unchanged. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">
      *        Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection
      *        is deactivated on stacks by default.</p>
      *        <p>
-     *        For <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     *        stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested
-     *        stack.
+     *        For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">
+     *        nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the
+     *        nested stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3082,29 +3228,110 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
      * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
      * Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is deactivated on
      * stacks by default.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested stack.
      * </p>
      * 
      * @return Whether to enable termination protection on the specified stack. If a user attempts to delete a stack
      *         with termination protection enabled, the operation fails and the stack remains unchanged. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html"
      *         >Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>. Termination
      *         protection is deactivated on stacks by default.</p>
      *         <p>
-     *         For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">
-     *         nested stacks</a>, termination protection is set on the root stack and can't be changed directly on the
-     *         nested stack.
+     *         For <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     *         stacks</a>, termination protection is set on the root stack and can't be changed directly on the nested
+     *         stack.
      */
 
     public Boolean isEnableTerminationProtection() {
         return this.enableTerminationProtection;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param retainExceptOnCreate
+     *        When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *        includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setRetainExceptOnCreate(Boolean retainExceptOnCreate) {
+        this.retainExceptOnCreate = retainExceptOnCreate;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *         includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getRetainExceptOnCreate() {
+        return this.retainExceptOnCreate;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param retainExceptOnCreate
+     *        When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *        includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withRetainExceptOnCreate(Boolean retainExceptOnCreate) {
+        setRetainExceptOnCreate(retainExceptOnCreate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *         includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isRetainExceptOnCreate() {
+        return this.retainExceptOnCreate;
     }
 
     /**
@@ -3152,7 +3379,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getEnableTerminationProtection() != null)
-            sb.append("EnableTerminationProtection: ").append(getEnableTerminationProtection());
+            sb.append("EnableTerminationProtection: ").append(getEnableTerminationProtection()).append(",");
+        if (getRetainExceptOnCreate() != null)
+            sb.append("RetainExceptOnCreate: ").append(getRetainExceptOnCreate());
         sb.append("}");
         return sb.toString();
     }
@@ -3235,6 +3464,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getEnableTerminationProtection() != null && other.getEnableTerminationProtection().equals(this.getEnableTerminationProtection()) == false)
             return false;
+        if (other.getRetainExceptOnCreate() == null ^ this.getRetainExceptOnCreate() == null)
+            return false;
+        if (other.getRetainExceptOnCreate() != null && other.getRetainExceptOnCreate().equals(this.getRetainExceptOnCreate()) == false)
+            return false;
         return true;
     }
 
@@ -3260,6 +3493,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getEnableTerminationProtection() == null) ? 0 : getEnableTerminationProtection().hashCode());
+        hashCode = prime * hashCode + ((getRetainExceptOnCreate() == null) ? 0 : getRetainExceptOnCreate().hashCode());
         return hashCode;
     }
 

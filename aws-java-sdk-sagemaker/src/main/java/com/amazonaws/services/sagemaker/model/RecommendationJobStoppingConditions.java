@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,14 @@ public class RecommendationJobStoppingConditions implements Serializable, Clonea
      * </p>
      */
     private java.util.List<ModelLatencyThreshold> modelLatencyThresholds;
+    /**
+     * <p>
+     * Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has
+     * reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations
+     * have flattened, set the value to <code>Continue</code>.
+     * </p>
+     */
+    private String flatInvocations;
 
     /**
      * <p>
@@ -170,6 +178,81 @@ public class RecommendationJobStoppingConditions implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has
+     * reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations
+     * have flattened, set the value to <code>Continue</code>.
+     * </p>
+     * 
+     * @param flatInvocations
+     *        Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance
+     *        has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after
+     *        invocations have flattened, set the value to <code>Continue</code>.
+     * @see FlatInvocations
+     */
+
+    public void setFlatInvocations(String flatInvocations) {
+        this.flatInvocations = flatInvocations;
+    }
+
+    /**
+     * <p>
+     * Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has
+     * reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations
+     * have flattened, set the value to <code>Continue</code>.
+     * </p>
+     * 
+     * @return Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance
+     *         has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after
+     *         invocations have flattened, set the value to <code>Continue</code>.
+     * @see FlatInvocations
+     */
+
+    public String getFlatInvocations() {
+        return this.flatInvocations;
+    }
+
+    /**
+     * <p>
+     * Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has
+     * reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations
+     * have flattened, set the value to <code>Continue</code>.
+     * </p>
+     * 
+     * @param flatInvocations
+     *        Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance
+     *        has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after
+     *        invocations have flattened, set the value to <code>Continue</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FlatInvocations
+     */
+
+    public RecommendationJobStoppingConditions withFlatInvocations(String flatInvocations) {
+        setFlatInvocations(flatInvocations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance has
+     * reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after invocations
+     * have flattened, set the value to <code>Continue</code>.
+     * </p>
+     * 
+     * @param flatInvocations
+     *        Stops a load test when the number of invocations (TPS) peaks and flattens, which means that the instance
+     *        has reached capacity. The default value is <code>Stop</code>. If you want the load test to continue after
+     *        invocations have flattened, set the value to <code>Continue</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FlatInvocations
+     */
+
+    public RecommendationJobStoppingConditions withFlatInvocations(FlatInvocations flatInvocations) {
+        this.flatInvocations = flatInvocations.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +267,9 @@ public class RecommendationJobStoppingConditions implements Serializable, Clonea
         if (getMaxInvocations() != null)
             sb.append("MaxInvocations: ").append(getMaxInvocations()).append(",");
         if (getModelLatencyThresholds() != null)
-            sb.append("ModelLatencyThresholds: ").append(getModelLatencyThresholds());
+            sb.append("ModelLatencyThresholds: ").append(getModelLatencyThresholds()).append(",");
+        if (getFlatInvocations() != null)
+            sb.append("FlatInvocations: ").append(getFlatInvocations());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +292,10 @@ public class RecommendationJobStoppingConditions implements Serializable, Clonea
             return false;
         if (other.getModelLatencyThresholds() != null && other.getModelLatencyThresholds().equals(this.getModelLatencyThresholds()) == false)
             return false;
+        if (other.getFlatInvocations() == null ^ this.getFlatInvocations() == null)
+            return false;
+        if (other.getFlatInvocations() != null && other.getFlatInvocations().equals(this.getFlatInvocations()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +306,7 @@ public class RecommendationJobStoppingConditions implements Serializable, Clonea
 
         hashCode = prime * hashCode + ((getMaxInvocations() == null) ? 0 : getMaxInvocations().hashCode());
         hashCode = prime * hashCode + ((getModelLatencyThresholds() == null) ? 0 : getModelLatencyThresholds().hashCode());
+        hashCode = prime * hashCode + ((getFlatInvocations() == null) ? 0 : getFlatInvocations().hashCode());
         return hashCode;
     }
 

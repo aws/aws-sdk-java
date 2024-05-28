@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
-     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
+     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
      * returned in the previous response and include it in <code>NextToken</code> in the next request.
      * </p>
      */
@@ -50,7 +50,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
-     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
+     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
      * returned in the previous response and include it in <code>NextToken</code> in the next request.
      * </p>
      * 
@@ -60,7 +60,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      *        <p>
      *        If a response doesn't include the last of the configurations, you can get more configurations by
      *        submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that
-     *        Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next
+     *        Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next
      *        request.
      */
 
@@ -75,7 +75,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
-     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
+     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
      * returned in the previous response and include it in <code>NextToken</code> in the next request.
      * </p>
      * 
@@ -84,7 +84,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      *         <p>
      *         If a response doesn't include the last of the configurations, you can get more configurations by
      *         submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that
-     *         Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next
+     *         Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next
      *         request.
      */
 
@@ -99,7 +99,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * <p>
      * If a response doesn't include the last of the configurations, you can get more configurations by submitting
-     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
+     * another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53
      * returned in the previous response and include it in <code>NextToken</code> in the next request.
      * </p>
      * 
@@ -109,7 +109,7 @@ public class ListResolverConfigsResult extends com.amazonaws.AmazonWebServiceRes
      *        <p>
      *        If a response doesn't include the last of the configurations, you can get more configurations by
      *        submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that
-     *        Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next
+     *        Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

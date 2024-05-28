@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * your application finishes modifying the file.
  * </p>
  * <p>
- * This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the
- * <code>Persistent_2</code> deployment type.
+ * The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository
+ * association.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AutoExportPolicy" target="_top">AWS API

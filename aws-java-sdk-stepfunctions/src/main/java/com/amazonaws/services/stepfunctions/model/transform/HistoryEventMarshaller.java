@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,8 @@ public class HistoryEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionAbortedEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> EXECUTIONTIMEDOUTEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionTimedOutEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTIONREDRIVENEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRedrivenEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> MAPSTATESTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapStateStartedEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> MAPITERATIONSTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -99,6 +101,12 @@ public class HistoryEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateEnteredEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> STATEEXITEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateExitedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPRUNSTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapRunStartedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPRUNFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapRunFailedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPRUNREDRIVENEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapRunRedrivenEventDetails").build();
 
     private static final HistoryEventMarshaller instance = new HistoryEventMarshaller();
 
@@ -139,6 +147,7 @@ public class HistoryEventMarshaller {
             protocolMarshaller.marshall(historyEvent.getExecutionSucceededEventDetails(), EXECUTIONSUCCEEDEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionAbortedEventDetails(), EXECUTIONABORTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionTimedOutEventDetails(), EXECUTIONTIMEDOUTEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getExecutionRedrivenEventDetails(), EXECUTIONREDRIVENEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getMapStateStartedEventDetails(), MAPSTATESTARTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getMapIterationStartedEventDetails(), MAPITERATIONSTARTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getMapIterationSucceededEventDetails(), MAPITERATIONSUCCEEDEDEVENTDETAILS_BINDING);
@@ -152,6 +161,9 @@ public class HistoryEventMarshaller {
             protocolMarshaller.marshall(historyEvent.getLambdaFunctionTimedOutEventDetails(), LAMBDAFUNCTIONTIMEDOUTEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getStateEnteredEventDetails(), STATEENTEREDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getStateExitedEventDetails(), STATEEXITEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapRunStartedEventDetails(), MAPRUNSTARTEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapRunFailedEventDetails(), MAPRUNFAILEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapRunRedrivenEventDetails(), MAPRUNREDRIVENEVENTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

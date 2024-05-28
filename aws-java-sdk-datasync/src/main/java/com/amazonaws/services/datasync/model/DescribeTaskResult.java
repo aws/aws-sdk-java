@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,110 +28,107 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that was described.
+     * The ARN of your task.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The status of the task that was described.
-     * </p>
-     * <p>
-     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User
-     * Guide</i>.
+     * The status of your task. For information about what each status means, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     * >Task statuses</a>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The name of the task that was described.
+     * The name of your task.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     * The ARN of the most recent task execution.
      * </p>
      */
     private String currentTaskExecutionArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source file system's location.
+     * The ARN of your transfer's source location.
      * </p>
      */
     private String sourceLocationArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     * The ARN of your transfer's destination location.
      * </p>
      */
     private String destinationLocationArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * task.
+     * The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.
      * </p>
      * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with
+     * Amazon CloudWatch</a>.
      * </p>
      */
     private String cloudWatchLogGroupArn;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your source location.
      * </p>
      */
     private java.util.List<String> sourceNetworkInterfaceArns;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your destination location.
      * </p>
      */
     private java.util.List<String> destinationNetworkInterfaceArns;
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group (GID), file permissions, data integrity verification, and so on.
-     * </p>
-     * <p>
-     * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end
+     * of your transfer, bandwidth limits, among other options.
      * </p>
      */
     private Options options;
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * The exclude filters that define the files, objects, and folders in your source location that you don't want
+     * DataSync to transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      */
     private java.util.List<FilterRule> excludes;
     /**
      * <p>
-     * The schedule used to periodically transfer files from a source to a destination location.
+     * The schedule for when you want your task to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      */
     private TaskSchedule schedule;
     /**
      * <p>
-     * Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot
-     * issues.
+     * If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * Detailed description of an error that was encountered during the task execution. You can use this information to
-     * help troubleshoot issues.
+     * If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      */
     private String errorDetail;
@@ -143,20 +140,45 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.Date creationTime;
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2</code>".
+     * The include filters that define the files, objects, and folders in your source location that you want DataSync to
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      */
     private java.util.List<FilterRule> includes;
+    /**
+     * <p>
+     * The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     */
+    private ManifestConfig manifestConfig;
+    /**
+     * <p>
+     * The configuration of your task report, which provides detailed information about your DataSync transfer. For more
+     * information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.
+     * </p>
+     */
+    private TaskReportConfig taskReportConfig;
+    /**
+     * <p>
+     * The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task
+     * schedule</a>.
+     * </p>
+     */
+    private TaskScheduleDetails scheduleDetails;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that was described.
+     * The ARN of your task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task that was described.
+     *        The ARN of your task.
      */
 
     public void setTaskArn(String taskArn) {
@@ -165,10 +187,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that was described.
+     * The ARN of your task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task that was described.
+     * @return The ARN of your task.
      */
 
     public String getTaskArn() {
@@ -177,11 +199,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that was described.
+     * The ARN of your task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task that was described.
+     *        The ARN of your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,18 +214,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the task that was described.
-     * </p>
-     * <p>
-     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User
-     * Guide</i>.
+     * The status of your task. For information about what each status means, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     * >Task statuses</a>.
      * </p>
      * 
      * @param status
-     *        The status of the task that was described.</p>
-     *        <p>
-     *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync
-     *        User Guide</i>.
+     *        The status of your task. For information about what each status means, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     *        >Task statuses</a>.
      * @see TaskStatus
      */
 
@@ -213,17 +232,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the task that was described.
-     * </p>
-     * <p>
-     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User
-     * Guide</i>.
+     * The status of your task. For information about what each status means, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     * >Task statuses</a>.
      * </p>
      * 
-     * @return The status of the task that was described.</p>
-     *         <p>
-     *         For detailed information about task execution statuses, see Understanding Task Statuses in the
-     *         <i>DataSync User Guide</i>.
+     * @return The status of your task. For information about what each status means, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     *         >Task statuses</a>.
      * @see TaskStatus
      */
 
@@ -233,18 +249,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the task that was described.
-     * </p>
-     * <p>
-     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User
-     * Guide</i>.
+     * The status of your task. For information about what each status means, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     * >Task statuses</a>.
      * </p>
      * 
      * @param status
-     *        The status of the task that was described.</p>
-     *        <p>
-     *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync
-     *        User Guide</i>.
+     *        The status of your task. For information about what each status means, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     *        >Task statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
@@ -256,18 +269,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the task that was described.
-     * </p>
-     * <p>
-     * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User
-     * Guide</i>.
+     * The status of your task. For information about what each status means, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     * >Task statuses</a>.
      * </p>
      * 
      * @param status
-     *        The status of the task that was described.</p>
-     *        <p>
-     *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync
-     *        User Guide</i>.
+     *        The status of your task. For information about what each status means, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses"
+     *        >Task statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
@@ -279,11 +289,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The name of the task that was described.
+     * The name of your task.
      * </p>
      * 
      * @param name
-     *        The name of the task that was described.
+     *        The name of your task.
      */
 
     public void setName(String name) {
@@ -292,10 +302,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The name of the task that was described.
+     * The name of your task.
      * </p>
      * 
-     * @return The name of the task that was described.
+     * @return The name of your task.
      */
 
     public String getName() {
@@ -304,11 +314,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The name of the task that was described.
+     * The name of your task.
      * </p>
      * 
      * @param name
-     *        The name of the task that was described.
+     *        The name of your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +329,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     * The ARN of the most recent task execution.
      * </p>
      * 
      * @param currentTaskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     *        The ARN of the most recent task execution.
      */
 
     public void setCurrentTaskExecutionArn(String currentTaskExecutionArn) {
@@ -332,10 +342,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     * The ARN of the most recent task execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     * @return The ARN of the most recent task execution.
      */
 
     public String getCurrentTaskExecutionArn() {
@@ -344,11 +354,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     * The ARN of the most recent task execution.
      * </p>
      * 
      * @param currentTaskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task execution that is syncing files.
+     *        The ARN of the most recent task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +369,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source file system's location.
+     * The ARN of your transfer's source location.
      * </p>
      * 
      * @param sourceLocationArn
-     *        The Amazon Resource Name (ARN) of the source file system's location.
+     *        The ARN of your transfer's source location.
      */
 
     public void setSourceLocationArn(String sourceLocationArn) {
@@ -372,10 +382,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source file system's location.
+     * The ARN of your transfer's source location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source file system's location.
+     * @return The ARN of your transfer's source location.
      */
 
     public String getSourceLocationArn() {
@@ -384,11 +394,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source file system's location.
+     * The ARN of your transfer's source location.
      * </p>
      * 
      * @param sourceLocationArn
-     *        The Amazon Resource Name (ARN) of the source file system's location.
+     *        The ARN of your transfer's source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,11 +409,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     * The ARN of your transfer's destination location.
      * </p>
      * 
      * @param destinationLocationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     *        The ARN of your transfer's destination location.
      */
 
     public void setDestinationLocationArn(String destinationLocationArn) {
@@ -412,10 +422,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     * The ARN of your transfer's destination location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     * @return The ARN of your transfer's destination location.
      */
 
     public String getDestinationLocationArn() {
@@ -424,11 +434,11 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     * The ARN of your transfer's destination location.
      * </p>
      * 
      * @param destinationLocationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+     *        The ARN of your transfer's destination location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,20 +449,20 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * task.
+     * The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.
      * </p>
      * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with
+     * Amazon CloudWatch</a>.
      * </p>
      * 
      * @param cloudWatchLogGroupArn
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
-     *        in the task.</p>
+     *        The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
      *        <p>
-     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *        CloudWatch User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync
+     *        with Amazon CloudWatch</a>.
      */
 
     public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
@@ -461,19 +471,19 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * task.
+     * The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.
      * </p>
      * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with
+     * Amazon CloudWatch</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
-     *         in the task.</p>
+     * @return The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
      *         <p>
-     *         For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *         CloudWatch User Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync
+     *         with Amazon CloudWatch</a>.
      */
 
     public String getCloudWatchLogGroupArn() {
@@ -482,20 +492,20 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
-     * task.
+     * The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.
      * </p>
      * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync with
+     * Amazon CloudWatch</a>.
      * </p>
      * 
      * @param cloudWatchLogGroupArn
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
-     *        in the task.</p>
+     *        The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your task.</p>
      *        <p>
-     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *        CloudWatch User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring DataSync
+     *        with Amazon CloudWatch</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,12 +516,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your source location.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for
-     *         your subnet.
+     * @return The ARNs of the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *         >network interfaces</a> that DataSync created for your source location.
      */
 
     public java.util.List<String> getSourceNetworkInterfaceArns() {
@@ -520,13 +532,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your source location.
      * </p>
      * 
      * @param sourceNetworkInterfaceArns
-     *        The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for
-     *        your subnet.
+     *        The ARNs of the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> that DataSync created for your source location.
      */
 
     public void setSourceNetworkInterfaceArns(java.util.Collection<String> sourceNetworkInterfaceArns) {
@@ -540,8 +554,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your source location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -550,8 +565,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param sourceNetworkInterfaceArns
-     *        The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for
-     *        your subnet.
+     *        The ARNs of the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> that DataSync created for your source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -567,13 +583,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your source location.
      * </p>
      * 
      * @param sourceNetworkInterfaceArns
-     *        The Amazon Resource Names (ARNs) of the source elastic network interfaces (ENIs) that were created for
-     *        your subnet.
+     *        The ARNs of the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> that DataSync created for your source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -584,12 +602,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your destination location.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created
-     *         for your subnet.
+     * @return The ARNs of the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *         >network interfaces</a> that DataSync created for your destination location.
      */
 
     public java.util.List<String> getDestinationNetworkInterfaceArns() {
@@ -598,13 +618,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your destination location.
      * </p>
      * 
      * @param destinationNetworkInterfaceArns
-     *        The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created
-     *        for your subnet.
+     *        The ARNs of the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> that DataSync created for your destination location.
      */
 
     public void setDestinationNetworkInterfaceArns(java.util.Collection<String> destinationNetworkInterfaceArns) {
@@ -618,8 +640,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your destination location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -628,8 +651,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param destinationNetworkInterfaceArns
-     *        The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created
-     *        for your subnet.
+     *        The ARNs of the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> that DataSync created for your destination location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,13 +669,15 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created for your
-     * subnet.
+     * The ARNs of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> that DataSync created for your destination location.
      * </p>
      * 
      * @param destinationNetworkInterfaceArns
-     *        The Amazon Resource Names (ARNs) of the destination elastic network interfaces (ENIs) that were created
-     *        for your subnet.
+     *        The ARNs of the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> that DataSync created for your destination location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -662,26 +688,13 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group (GID), file permissions, data integrity verification, and so on.
-     * </p>
-     * <p>
-     * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end
+     * of your transfer, bandwidth limits, among other options.
      * </p>
      * 
      * @param options
-     *        The set of configuration options that control the behavior of a single execution of the task that occurs
-     *        when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such
-     *        as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-     *        <p>
-     *        For each individual task execution, you can override these options by specifying the overriding
-     *        <code>OverrideOptions</code> value to <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
-     *        >StartTaskExecution</a> operation.
+     *        The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at
+     *        the end of your transfer, bandwidth limits, among other options.
      */
 
     public void setOptions(Options options) {
@@ -690,25 +703,12 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group (GID), file permissions, data integrity verification, and so on.
-     * </p>
-     * <p>
-     * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end
+     * of your transfer, bandwidth limits, among other options.
      * </p>
      * 
-     * @return The set of configuration options that control the behavior of a single execution of the task that occurs
-     *         when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such
-     *         as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-     *         <p>
-     *         For each individual task execution, you can override these options by specifying the overriding
-     *         <code>OverrideOptions</code> value to <a
-     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
-     *         >StartTaskExecution</a> operation.
+     * @return The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at
+     *         the end of your transfer, bandwidth limits, among other options.
      */
 
     public Options getOptions() {
@@ -717,26 +717,13 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group (GID), file permissions, data integrity verification, and so on.
-     * </p>
-     * <p>
-     * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at the end
+     * of your transfer, bandwidth limits, among other options.
      * </p>
      * 
      * @param options
-     *        The set of configuration options that control the behavior of a single execution of the task that occurs
-     *        when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such
-     *        as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
-     *        <p>
-     *        For each individual task execution, you can override these options by specifying the overriding
-     *        <code>OverrideOptions</code> value to <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
-     *        >StartTaskExecution</a> operation.
+     *        The task's settings. For example, what file metadata gets preserved, how data integrity gets verified at
+     *        the end of your transfer, bandwidth limits, among other options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,17 +734,16 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * The exclude filters that define the files, objects, and folders in your source location that you don't want
+     * DataSync to transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *         <p>
+     * @return The exclude filters that define the files, objects, and folders in your source location that you don't
+     *         want DataSync to transfer. For more information and examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *         transfers by using filters</a>.
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -766,18 +752,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * The exclude filters that define the files, objects, and folders in your source location that you don't want
+     * DataSync to transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        The exclude filters that define the files, objects, and folders in your source location that you don't
+     *        want DataSync to transfer. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *        transfers by using filters</a>.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -791,11 +776,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * The exclude filters that define the files, objects, and folders in your source location that you don't want
+     * DataSync to transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -804,10 +788,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        The exclude filters that define the files, objects, and folders in your source location that you don't
+     *        want DataSync to transfer. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *        transfers by using filters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -823,18 +807,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * The exclude filters that define the files, objects, and folders in your source location that you don't want
+     * DataSync to transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        The exclude filters that define the files, objects, and folders in your source location that you don't
+     *        want DataSync to transfer. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *        transfers by using filters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -845,11 +828,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The schedule used to periodically transfer files from a source to a destination location.
+     * The schedule for when you want your task to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
-     *        The schedule used to periodically transfer files from a source to a destination location.
+     *        The schedule for when you want your task to run. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      */
 
     public void setSchedule(TaskSchedule schedule) {
@@ -858,10 +844,13 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The schedule used to periodically transfer files from a source to a destination location.
+     * The schedule for when you want your task to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
-     * @return The schedule used to periodically transfer files from a source to a destination location.
+     * @return The schedule for when you want your task to run. For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *         task</a>.
      */
 
     public TaskSchedule getSchedule() {
@@ -870,11 +859,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The schedule used to periodically transfer files from a source to a destination location.
+     * The schedule for when you want your task to run. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
-     *        The schedule used to periodically transfer files from a source to a destination location.
+     *        The schedule for when you want your task to run. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -885,13 +877,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot
-     * issues.
+     * If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      * 
      * @param errorCode
-     *        Errors that DataSync encountered during execution of the task. You can use this error code to help
-     *        troubleshoot issues.
+     *        If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     *        >Troubleshooting issues with DataSync transfers</a>.
      */
 
     public void setErrorCode(String errorCode) {
@@ -900,12 +896,16 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot
-     * issues.
+     * If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      * 
-     * @return Errors that DataSync encountered during execution of the task. You can use this error code to help
-     *         troubleshoot issues.
+     * @return If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     *         >Troubleshooting issues with DataSync transfers</a>.
      */
 
     public String getErrorCode() {
@@ -914,13 +914,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot
-     * issues.
+     * If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      * 
      * @param errorCode
-     *        Errors that DataSync encountered during execution of the task. You can use this error code to help
-     *        troubleshoot issues.
+     *        If there's an issue with your task, you can use the error code to help you troubleshoot the problem. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     *        >Troubleshooting issues with DataSync transfers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -931,13 +935,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Detailed description of an error that was encountered during the task execution. You can use this information to
-     * help troubleshoot issues.
+     * If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      * 
      * @param errorDetail
-     *        Detailed description of an error that was encountered during the task execution. You can use this
-     *        information to help troubleshoot issues.
+     *        If there's an issue with your task, you can use the error details to help you troubleshoot the problem.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     *        >Troubleshooting issues with DataSync transfers</a>.
      */
 
     public void setErrorDetail(String errorDetail) {
@@ -946,12 +954,16 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Detailed description of an error that was encountered during the task execution. You can use this information to
-     * help troubleshoot issues.
+     * If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      * 
-     * @return Detailed description of an error that was encountered during the task execution. You can use this
-     *         information to help troubleshoot issues.
+     * @return If there's an issue with your task, you can use the error details to help you troubleshoot the problem.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     *         >Troubleshooting issues with DataSync transfers</a>.
      */
 
     public String getErrorDetail() {
@@ -960,13 +972,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Detailed description of an error that was encountered during the task execution. You can use this information to
-     * help troubleshoot issues.
+     * If there's an issue with your task, you can use the error details to help you troubleshoot the problem. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     * >Troubleshooting issues with DataSync transfers</a>.
      * </p>
      * 
      * @param errorDetail
-     *        Detailed description of an error that was encountered during the task execution. You can use this
-     *        information to help troubleshoot issues.
+     *        If there's an issue with your task, you can use the error details to help you troubleshoot the problem.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html"
+     *        >Troubleshooting issues with DataSync transfers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1017,14 +1033,16 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2</code>".
+     * The include filters that define the files, objects, and folders in your source location that you want DataSync to
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *         single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2</code>".
+     * @return The include filters that define the files, objects, and folders in your source location that you want
+     *         DataSync to transfer. For more information and examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *         transfers by using filters</a>.
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -1033,15 +1051,17 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2</code>".
+     * The include filters that define the files, objects, and folders in your source location that you want DataSync to
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2</code>".
+     *        The include filters that define the files, objects, and folders in your source location that you want
+     *        DataSync to transfer. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *        transfers by using filters</a>.
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -1055,9 +1075,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2</code>".
+     * The include filters that define the files, objects, and folders in your source location that you want DataSync to
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1066,9 +1087,10 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2</code>".
+     *        The include filters that define the files, objects, and folders in your source location that you want
+     *        DataSync to transfer. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *        transfers by using filters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1084,20 +1106,181 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2</code>".
+     * The include filters that define the files, objects, and folders in your source location that you want DataSync to
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync transfers by
+     * using filters</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2</code>".
+     *        The include filters that define the files, objects, and folders in your source location that you want
+     *        DataSync to transfer. For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying what DataSync
+     *        transfers by using filters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTaskResult withIncludes(java.util.Collection<FilterRule> includes) {
         setIncludes(includes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * 
+     * @param manifestConfig
+     *        The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     *        what DataSync transfers by using a manifest</a>.
+     */
+
+    public void setManifestConfig(ManifestConfig manifestConfig) {
+        this.manifestConfig = manifestConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * 
+     * @return The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     *         what DataSync transfers by using a manifest</a>.
+     */
+
+    public ManifestConfig getManifestConfig() {
+        return this.manifestConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * 
+     * @param manifestConfig
+     *        The configuration of the manifest that lists the files or objects that you want DataSync to transfer. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     *        what DataSync transfers by using a manifest</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskResult withManifestConfig(ManifestConfig manifestConfig) {
+        setManifestConfig(manifestConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration of your task report, which provides detailed information about your DataSync transfer. For more
+     * information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        The configuration of your task report, which provides detailed information about your DataSync transfer.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync
+     *        transfers with task reports</a>.
+     */
+
+    public void setTaskReportConfig(TaskReportConfig taskReportConfig) {
+        this.taskReportConfig = taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of your task report, which provides detailed information about your DataSync transfer. For more
+     * information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.
+     * </p>
+     * 
+     * @return The configuration of your task report, which provides detailed information about your DataSync transfer.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync
+     *         transfers with task reports</a>.
+     */
+
+    public TaskReportConfig getTaskReportConfig() {
+        return this.taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of your task report, which provides detailed information about your DataSync transfer. For more
+     * information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+     * your DataSync transfers with task reports</a>.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        The configuration of your task report, which provides detailed information about your DataSync transfer.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync
+     *        transfers with task reports</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskResult withTaskReportConfig(TaskReportConfig taskReportConfig) {
+        setTaskReportConfig(taskReportConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task
+     * schedule</a>.
+     * </p>
+     * 
+     * @param scheduleDetails
+     *        The details about your <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.
+     */
+
+    public void setScheduleDetails(TaskScheduleDetails scheduleDetails) {
+        this.scheduleDetails = scheduleDetails;
+    }
+
+    /**
+     * <p>
+     * The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task
+     * schedule</a>.
+     * </p>
+     * 
+     * @return The details about your <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.
+     */
+
+    public TaskScheduleDetails getScheduleDetails() {
+        return this.scheduleDetails;
+    }
+
+    /**
+     * <p>
+     * The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task
+     * schedule</a>.
+     * </p>
+     * 
+     * @param scheduleDetails
+     *        The details about your <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task schedule</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskResult withScheduleDetails(TaskScheduleDetails scheduleDetails) {
+        setScheduleDetails(scheduleDetails);
         return this;
     }
 
@@ -1144,7 +1327,13 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getIncludes() != null)
-            sb.append("Includes: ").append(getIncludes());
+            sb.append("Includes: ").append(getIncludes()).append(",");
+        if (getManifestConfig() != null)
+            sb.append("ManifestConfig: ").append(getManifestConfig()).append(",");
+        if (getTaskReportConfig() != null)
+            sb.append("TaskReportConfig: ").append(getTaskReportConfig()).append(",");
+        if (getScheduleDetails() != null)
+            sb.append("ScheduleDetails: ").append(getScheduleDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1224,6 +1413,18 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getIncludes() != null && other.getIncludes().equals(this.getIncludes()) == false)
             return false;
+        if (other.getManifestConfig() == null ^ this.getManifestConfig() == null)
+            return false;
+        if (other.getManifestConfig() != null && other.getManifestConfig().equals(this.getManifestConfig()) == false)
+            return false;
+        if (other.getTaskReportConfig() == null ^ this.getTaskReportConfig() == null)
+            return false;
+        if (other.getTaskReportConfig() != null && other.getTaskReportConfig().equals(this.getTaskReportConfig()) == false)
+            return false;
+        if (other.getScheduleDetails() == null ^ this.getScheduleDetails() == null)
+            return false;
+        if (other.getScheduleDetails() != null && other.getScheduleDetails().equals(this.getScheduleDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1248,6 +1449,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getErrorDetail() == null) ? 0 : getErrorDetail().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
+        hashCode = prime * hashCode + ((getManifestConfig() == null) ? 0 : getManifestConfig().hashCode());
+        hashCode = prime * hashCode + ((getTaskReportConfig() == null) ? 0 : getTaskReportConfig().hashCode());
+        hashCode = prime * hashCode + ((getScheduleDetails() == null) ? 0 : getScheduleDetails().hashCode());
         return hashCode;
     }
 

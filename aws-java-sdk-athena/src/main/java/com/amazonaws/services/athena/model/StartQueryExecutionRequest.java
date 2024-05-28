@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once).
      * If another <code>StartQueryExecution</code> request is received, the same response is returned and another query
-     * is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.
+     * is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to
+     * <code>StartQueryExecution</code> that uses a previous client request token returns the same
+     * <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.
      * </p>
      * <important>
      * <p>
@@ -74,6 +77,12 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<String> executionParameters;
+    /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     */
+    private ResultReuseConfiguration resultReuseConfiguration;
 
     /**
      * <p>
@@ -119,7 +128,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once).
      * If another <code>StartQueryExecution</code> request is received, the same response is returned and another query
-     * is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.
+     * is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to
+     * <code>StartQueryExecution</code> that uses a previous client request token returns the same
+     * <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.
      * </p>
      * <important>
      * <p>
@@ -132,8 +144,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param clientRequestToken
      *        A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only
      *        once). If another <code>StartQueryExecution</code> request is received, the same response is returned and
-     *        another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an
-     *        error is returned.</p> <important>
+     *        another query is not created. An error is returned if a parameter, such as <code>QueryString</code>, has
+     *        changed. A call to <code>StartQueryExecution</code> that uses a previous client request token returns the
+     *        same <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified
+     *        in <code>QueryString</code>.</p> <important>
      *        <p>
      *        This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services
      *        SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the
@@ -149,7 +163,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once).
      * If another <code>StartQueryExecution</code> request is received, the same response is returned and another query
-     * is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.
+     * is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to
+     * <code>StartQueryExecution</code> that uses a previous client request token returns the same
+     * <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.
      * </p>
      * <important>
      * <p>
@@ -161,8 +178,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return A unique case-sensitive string used to ensure the request to create the query is idempotent (executes
      *         only once). If another <code>StartQueryExecution</code> request is received, the same response is
-     *         returned and another query is not created. If a parameter has changed, for example, the
-     *         <code>QueryString</code>, an error is returned.</p> <important>
+     *         returned and another query is not created. An error is returned if a parameter, such as
+     *         <code>QueryString</code>, has changed. A call to <code>StartQueryExecution</code> that uses a previous
+     *         client request token returns the same <code>QueryExecutionId</code> even if the requester doesn't have
+     *         permission on the tables specified in <code>QueryString</code>.</p> <important>
      *         <p>
      *         This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web
      *         Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services
@@ -178,7 +197,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once).
      * If another <code>StartQueryExecution</code> request is received, the same response is returned and another query
-     * is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.
+     * is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to
+     * <code>StartQueryExecution</code> that uses a previous client request token returns the same
+     * <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in
+     * <code>QueryString</code>.
      * </p>
      * <important>
      * <p>
@@ -191,8 +213,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param clientRequestToken
      *        A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only
      *        once). If another <code>StartQueryExecution</code> request is received, the same response is returned and
-     *        another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an
-     *        error is returned.</p> <important>
+     *        another query is not created. An error is returned if a parameter, such as <code>QueryString</code>, has
+     *        changed. A call to <code>StartQueryExecution</code> that uses a previous client request token returns the
+     *        same <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified
+     *        in <code>QueryString</code>.</p> <important>
      *        <p>
      *        This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services
      *        SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the
@@ -423,6 +447,46 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior for the query.
+     */
+
+    public void setResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        this.resultReuseConfiguration = resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     * 
+     * @return Specifies the query result reuse behavior for the query.
+     */
+
+    public ResultReuseConfiguration getResultReuseConfiguration() {
+        return this.resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior for the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryExecutionRequest withResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        setResultReuseConfiguration(resultReuseConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -445,7 +509,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getWorkGroup() != null)
             sb.append("WorkGroup: ").append(getWorkGroup()).append(",");
         if (getExecutionParameters() != null)
-            sb.append("ExecutionParameters: ").append(getExecutionParameters());
+            sb.append("ExecutionParameters: ").append(getExecutionParameters()).append(",");
+        if (getResultReuseConfiguration() != null)
+            sb.append("ResultReuseConfiguration: ").append(getResultReuseConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +550,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getExecutionParameters() != null && other.getExecutionParameters().equals(this.getExecutionParameters()) == false)
             return false;
+        if (other.getResultReuseConfiguration() == null ^ this.getResultReuseConfiguration() == null)
+            return false;
+        if (other.getResultReuseConfiguration() != null && other.getResultReuseConfiguration().equals(this.getResultReuseConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -498,6 +568,7 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         hashCode = prime * hashCode + ((getExecutionParameters() == null) ? 0 : getExecutionParameters().hashCode());
+        hashCode = prime * hashCode + ((getResultReuseConfiguration() == null) ? 0 : getResultReuseConfiguration().hashCode());
         return hashCode;
     }
 

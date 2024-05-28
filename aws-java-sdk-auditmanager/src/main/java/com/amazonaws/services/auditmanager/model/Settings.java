@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     private String snsTopic;
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      */
     private AssessmentReportsDestination defaultAssessmentReportsDestination;
@@ -58,6 +58,25 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String kmsKey;
+    /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     */
+    private EvidenceFinderEnablement evidenceFinderEnablement;
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     */
+    private DeregistrationPolicy deregistrationPolicy;
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     */
+    private DefaultExportDestination defaultExportDestination;
 
     /**
      * <p>
@@ -153,11 +172,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
      * @param defaultAssessmentReportsDestination
-     *        The default storage destination for assessment reports.
+     *        The default S3 destination bucket for storing assessment reports.
      */
 
     public void setDefaultAssessmentReportsDestination(AssessmentReportsDestination defaultAssessmentReportsDestination) {
@@ -166,10 +185,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
-     * @return The default storage destination for assessment reports.
+     * @return The default S3 destination bucket for storing assessment reports.
      */
 
     public AssessmentReportsDestination getDefaultAssessmentReportsDestination() {
@@ -178,11 +197,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
      * @param defaultAssessmentReportsDestination
-     *        The default storage destination for assessment reports.
+     *        The default S3 destination bucket for storing assessment reports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,6 +321,132 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     * 
+     * @param evidenceFinderEnablement
+     *        The current evidence finder status and event data store details.
+     */
+
+    public void setEvidenceFinderEnablement(EvidenceFinderEnablement evidenceFinderEnablement) {
+        this.evidenceFinderEnablement = evidenceFinderEnablement;
+    }
+
+    /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     * 
+     * @return The current evidence finder status and event data store details.
+     */
+
+    public EvidenceFinderEnablement getEvidenceFinderEnablement() {
+        return this.evidenceFinderEnablement;
+    }
+
+    /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     * 
+     * @param evidenceFinderEnablement
+     *        The current evidence finder status and event data store details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Settings withEvidenceFinderEnablement(EvidenceFinderEnablement evidenceFinderEnablement) {
+        setEvidenceFinderEnablement(evidenceFinderEnablement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     */
+
+    public void setDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        this.deregistrationPolicy = deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @return The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *         data is handled when you deregister Audit Manager.
+     */
+
+    public DeregistrationPolicy getDeregistrationPolicy() {
+        return this.deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Settings withDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        setDeregistrationPolicy(deregistrationPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @param defaultExportDestination
+     *        The default S3 destination bucket for storing evidence finder exports.
+     */
+
+    public void setDefaultExportDestination(DefaultExportDestination defaultExportDestination) {
+        this.defaultExportDestination = defaultExportDestination;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @return The default S3 destination bucket for storing evidence finder exports.
+     */
+
+    public DefaultExportDestination getDefaultExportDestination() {
+        return this.defaultExportDestination;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @param defaultExportDestination
+     *        The default S3 destination bucket for storing evidence finder exports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Settings withDefaultExportDestination(DefaultExportDestination defaultExportDestination) {
+        setDefaultExportDestination(defaultExportDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,13 +461,19 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         if (getIsAwsOrgEnabled() != null)
             sb.append("IsAwsOrgEnabled: ").append(getIsAwsOrgEnabled()).append(",");
         if (getSnsTopic() != null)
-            sb.append("SnsTopic: ").append(getSnsTopic()).append(",");
+            sb.append("SnsTopic: ").append("***Sensitive Data Redacted***").append(",");
         if (getDefaultAssessmentReportsDestination() != null)
-            sb.append("DefaultAssessmentReportsDestination: ").append(getDefaultAssessmentReportsDestination()).append(",");
+            sb.append("DefaultAssessmentReportsDestination: ").append("***Sensitive Data Redacted***").append(",");
         if (getDefaultProcessOwners() != null)
-            sb.append("DefaultProcessOwners: ").append(getDefaultProcessOwners()).append(",");
+            sb.append("DefaultProcessOwners: ").append("***Sensitive Data Redacted***").append(",");
         if (getKmsKey() != null)
-            sb.append("KmsKey: ").append(getKmsKey());
+            sb.append("KmsKey: ").append(getKmsKey()).append(",");
+        if (getEvidenceFinderEnablement() != null)
+            sb.append("EvidenceFinderEnablement: ").append(getEvidenceFinderEnablement()).append(",");
+        if (getDeregistrationPolicy() != null)
+            sb.append("DeregistrationPolicy: ").append(getDeregistrationPolicy()).append(",");
+        if (getDefaultExportDestination() != null)
+            sb.append("DefaultExportDestination: ").append(getDefaultExportDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +509,18 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKmsKey() != null && other.getKmsKey().equals(this.getKmsKey()) == false)
             return false;
+        if (other.getEvidenceFinderEnablement() == null ^ this.getEvidenceFinderEnablement() == null)
+            return false;
+        if (other.getEvidenceFinderEnablement() != null && other.getEvidenceFinderEnablement().equals(this.getEvidenceFinderEnablement()) == false)
+            return false;
+        if (other.getDeregistrationPolicy() == null ^ this.getDeregistrationPolicy() == null)
+            return false;
+        if (other.getDeregistrationPolicy() != null && other.getDeregistrationPolicy().equals(this.getDeregistrationPolicy()) == false)
+            return false;
+        if (other.getDefaultExportDestination() == null ^ this.getDefaultExportDestination() == null)
+            return false;
+        if (other.getDefaultExportDestination() != null && other.getDefaultExportDestination().equals(this.getDefaultExportDestination()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +534,9 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDefaultAssessmentReportsDestination() == null) ? 0 : getDefaultAssessmentReportsDestination().hashCode());
         hashCode = prime * hashCode + ((getDefaultProcessOwners() == null) ? 0 : getDefaultProcessOwners().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
+        hashCode = prime * hashCode + ((getEvidenceFinderEnablement() == null) ? 0 : getEvidenceFinderEnablement().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationPolicy() == null) ? 0 : getDeregistrationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDefaultExportDestination() == null) ? 0 : getDefaultExportDestination().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,6 +158,39 @@ public class AmazonTimestreamQueryAsyncClient extends AmazonTimestreamQueryClien
 
                 try {
                     result = executeDeleteScheduledQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest request) {
+
+        return describeAccountSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(final DescribeAccountSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult> asyncHandler) {
+        final DescribeAccountSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountSettingsResult>() {
+            @Override
+            public DescribeAccountSettingsResult call() throws Exception {
+                DescribeAccountSettingsResult result = null;
+
+                try {
+                    result = executeDescribeAccountSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -455,6 +488,39 @@ public class AmazonTimestreamQueryAsyncClient extends AmazonTimestreamQueryClien
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest request) {
+
+        return updateAccountSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(final UpdateAccountSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult> asyncHandler) {
+        final UpdateAccountSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccountSettingsResult>() {
+            @Override
+            public UpdateAccountSettingsResult call() throws Exception {
+                UpdateAccountSettingsResult result = null;
+
+                try {
+                    result = executeUpdateAccountSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

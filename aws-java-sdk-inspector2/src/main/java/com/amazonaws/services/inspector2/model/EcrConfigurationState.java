@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class EcrConfigurationState implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An object that contains details about the state of the ECR automated re-scan setting.
+     * An object that contains details about the state of the ECR re-scan settings.
      * </p>
      */
     private EcrRescanDurationState rescanDurationState;
 
     /**
      * <p>
-     * An object that contains details about the state of the ECR automated re-scan setting.
+     * An object that contains details about the state of the ECR re-scan settings.
      * </p>
      * 
      * @param rescanDurationState
-     *        An object that contains details about the state of the ECR automated re-scan setting.
+     *        An object that contains details about the state of the ECR re-scan settings.
      */
 
     public void setRescanDurationState(EcrRescanDurationState rescanDurationState) {
@@ -50,10 +50,10 @@ public class EcrConfigurationState implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An object that contains details about the state of the ECR automated re-scan setting.
+     * An object that contains details about the state of the ECR re-scan settings.
      * </p>
      * 
-     * @return An object that contains details about the state of the ECR automated re-scan setting.
+     * @return An object that contains details about the state of the ECR re-scan settings.
      */
 
     public EcrRescanDurationState getRescanDurationState() {
@@ -62,11 +62,11 @@ public class EcrConfigurationState implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An object that contains details about the state of the ECR automated re-scan setting.
+     * An object that contains details about the state of the ECR re-scan settings.
      * </p>
      * 
      * @param rescanDurationState
-     *        An object that contains details about the state of the ECR automated re-scan setting.
+     *        An object that contains details about the state of the ECR re-scan settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

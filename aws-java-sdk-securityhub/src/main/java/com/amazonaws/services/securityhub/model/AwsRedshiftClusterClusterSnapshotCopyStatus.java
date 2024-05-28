@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a cross-Region snapshot copy.
+ * You can configure Amazon Redshift to copy snapshots for a cluster to another Amazon Web Services Region. This
+ * parameter provides information about a cross-Region snapshot copy.
  * </p>
  * 
  * @see <a
@@ -37,8 +38,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
     private String destinationRegion;
     /**
      * <p>
-     * The number of days that manual snapshots are retained in the destination region after they are copied from a
-     * source region.
+     * The number of days that manual snapshots are retained in the destination Region after they are copied from a
+     * source Region.
      * </p>
      * <p>
      * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
@@ -107,8 +108,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
 
     /**
      * <p>
-     * The number of days that manual snapshots are retained in the destination region after they are copied from a
-     * source region.
+     * The number of days that manual snapshots are retained in the destination Region after they are copied from a
+     * source Region.
      * </p>
      * <p>
      * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
@@ -118,8 +119,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
-     *        The number of days that manual snapshots are retained in the destination region after they are copied from
-     *        a source region.</p>
+     *        The number of days that manual snapshots are retained in the destination Region after they are copied from
+     *        a source Region.</p>
      *        <p>
      *        If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      *        </p>
@@ -133,8 +134,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
 
     /**
      * <p>
-     * The number of days that manual snapshots are retained in the destination region after they are copied from a
-     * source region.
+     * The number of days that manual snapshots are retained in the destination Region after they are copied from a
+     * source Region.
      * </p>
      * <p>
      * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
@@ -143,8 +144,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * Valid values: Either <code>-1</code> or an integer between 1 and 3,653
      * </p>
      * 
-     * @return The number of days that manual snapshots are retained in the destination region after they are copied
-     *         from a source region.</p>
+     * @return The number of days that manual snapshots are retained in the destination Region after they are copied
+     *         from a source Region.</p>
      *         <p>
      *         If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      *         </p>
@@ -158,8 +159,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
 
     /**
      * <p>
-     * The number of days that manual snapshots are retained in the destination region after they are copied from a
-     * source region.
+     * The number of days that manual snapshots are retained in the destination Region after they are copied from a
+     * source Region.
      * </p>
      * <p>
      * If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
@@ -169,8 +170,8 @@ public class AwsRedshiftClusterClusterSnapshotCopyStatus implements Serializable
      * </p>
      * 
      * @param manualSnapshotRetentionPeriod
-     *        The number of days that manual snapshots are retained in the destination region after they are copied from
-     *        a source region.</p>
+     *        The number of days that manual snapshots are retained in the destination Region after they are copied from
+     *        a source Region.</p>
      *        <p>
      *        If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
      *        </p>

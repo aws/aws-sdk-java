@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,7 +90,7 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
     private String stateDetails;
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      */
     private String releaseLabel;
@@ -522,11 +522,11 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application your job is running on.
+     *        The Amazon EMR release associated with the application your job is running on.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -535,10 +535,10 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      * 
-     * @return The EMR release version associated with the application your job is running on.
+     * @return The Amazon EMR release associated with the application your job is running on.
      */
 
     public String getReleaseLabel() {
@@ -547,11 +547,11 @@ public class JobRunSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application your job is running on.
+     * The Amazon EMR release associated with the application your job is running on.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application your job is running on.
+     *        The Amazon EMR release associated with the application your job is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

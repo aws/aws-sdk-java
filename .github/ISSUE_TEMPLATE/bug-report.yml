@@ -5,6 +5,13 @@ title: "(short issue description)"
 labels: [bug, needs-triage]
 assignees: []
 body:
+  - type: checkboxes
+    attributes:
+      label: Upcoming End-of-Support
+      options:
+        - label: I acknowledge the upcoming end-of-support for AWS SDK for Java v1 was [announced](https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-aws-sdk-for-java-v1-x-on-december-31-2025/), and migration to AWS SDK for Java v2 is recommended.
+          required: true
+
   - type: textarea
     id: description
     attributes:

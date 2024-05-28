@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     * The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      * </p>
      */
     private String incidentRecordArn;
     /**
      * <p>
-     * Details about the item you are adding or deleting.
+     * Details about the item that you are add to, or delete from, an incident.
      * </p>
      */
     private RelatedItemsUpdate relatedItemsUpdate;
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token ensuring that the operation is called only once with the specified details.
+     *        A token that ensures that a client calls the operation only once with the specified details.
      */
 
     public void setClientToken(String clientToken) {
@@ -59,10 +59,10 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
-     * @return A token ensuring that the operation is called only once with the specified details.
+     * @return A token that ensures that a client calls the operation only once with the specified details.
      */
 
     public String getClientToken() {
@@ -71,11 +71,11 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token ensuring that the operation is called only once with the specified details.
+     *        A token that ensures that a client calls the operation only once with the specified details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     * The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      * </p>
      * 
      * @param incidentRecordArn
-     *        The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     *        The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      */
 
     public void setIncidentRecordArn(String incidentRecordArn) {
@@ -99,10 +99,10 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     * The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     * @return The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      */
 
     public String getIncidentRecordArn() {
@@ -111,11 +111,11 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     * The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      * </p>
      * 
      * @param incidentRecordArn
-     *        The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.
+     *        The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Details about the item you are adding or deleting.
+     * Details about the item that you are add to, or delete from, an incident.
      * </p>
      * 
      * @param relatedItemsUpdate
-     *        Details about the item you are adding or deleting.
+     *        Details about the item that you are add to, or delete from, an incident.
      */
 
     public void setRelatedItemsUpdate(RelatedItemsUpdate relatedItemsUpdate) {
@@ -139,10 +139,10 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Details about the item you are adding or deleting.
+     * Details about the item that you are add to, or delete from, an incident.
      * </p>
      * 
-     * @return Details about the item you are adding or deleting.
+     * @return Details about the item that you are add to, or delete from, an incident.
      */
 
     public RelatedItemsUpdate getRelatedItemsUpdate() {
@@ -151,11 +151,11 @@ public class UpdateRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Details about the item you are adding or deleting.
+     * Details about the item that you are add to, or delete from, an incident.
      * </p>
      * 
      * @param relatedItemsUpdate
-     *        Details about the item you are adding or deleting.
+     *        Details about the item that you are add to, or delete from, an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

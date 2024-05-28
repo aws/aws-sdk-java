@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a
-     * viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of an object in
-     * your distribution (<code>http://www.example.com/product-description.html</code>). Specifying a default root
+     * viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in
+     * your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
@@ -127,7 +127,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private CustomErrorResponses customErrorResponses;
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -170,7 +170,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      */
     private ViewerCertificate viewerCertificate;
@@ -184,9 +184,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web
      * ACL created using the latest version of WAF, use the ACL ARN, for example
-     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      * . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * </p>
      * <p>
      * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
@@ -200,9 +200,9 @@ public class DistributionConfig implements Serializable, Cloneable {
     private String webACLId;
     /**
      * <p>
-     * (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The
-     * default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically
-     * use an earlier HTTP version.
+     * (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The default
+     * value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.
      * </p>
      * <p>
      * For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name
@@ -266,6 +266,20 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      */
     private Boolean isIPV6Enabled;
+    /**
+     * <p>
+     * The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.
+     * </p>
+     */
+    private String continuousDeploymentPolicyId;
+    /**
+     * <p>
+     * A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a
+     * staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     * </p>
+     */
+    private Boolean staging;
 
     /**
      * Default constructor for DistributionConfig object. Callers should use the setter or fluent setter (with...)
@@ -426,8 +440,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a
-     * viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of an object in
-     * your distribution (<code>http://www.example.com/product-description.html</code>). Specifying a default root
+     * viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in
+     * your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
@@ -453,9 +467,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @param defaultRootObject
      *        The object that you want CloudFront to request from your origin (for example, <code>index.html</code>)
-     *        when a viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of
-     *        an object in your distribution (<code>http://www.example.com/product-description.html</code>). Specifying
-     *        a default root object avoids exposing the contents of your distribution.</p>
+     *        when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead
+     *        of an object in your distribution (<code>https://www.example.com/product-description.html</code>).
+     *        Specifying a default root object avoids exposing the contents of your distribution.</p>
      *        <p>
      *        Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the
      *        object name.
@@ -484,8 +498,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a
-     * viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of an object in
-     * your distribution (<code>http://www.example.com/product-description.html</code>). Specifying a default root
+     * viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in
+     * your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
@@ -510,8 +524,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @return The object that you want CloudFront to request from your origin (for example, <code>index.html</code>)
-     *         when a viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead
-     *         of an object in your distribution (<code>http://www.example.com/product-description.html</code>).
+     *         when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead
+     *         of an object in your distribution (<code>https://www.example.com/product-description.html</code>).
      *         Specifying a default root object avoids exposing the contents of your distribution.</p>
      *         <p>
      *         Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the
@@ -541,8 +555,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The object that you want CloudFront to request from your origin (for example, <code>index.html</code>) when a
-     * viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of an object in
-     * your distribution (<code>http://www.example.com/product-description.html</code>). Specifying a default root
+     * viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead of an object in
+     * your distribution (<code>https://www.example.com/product-description.html</code>). Specifying a default root
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
@@ -568,9 +582,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @param defaultRootObject
      *        The object that you want CloudFront to request from your origin (for example, <code>index.html</code>)
-     *        when a viewer requests the root URL for your distribution (<code>http://www.example.com</code>) instead of
-     *        an object in your distribution (<code>http://www.example.com/product-description.html</code>). Specifying
-     *        a default root object avoids exposing the contents of your distribution.</p>
+     *        when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>) instead
+     *        of an object in your distribution (<code>https://www.example.com/product-description.html</code>).
+     *        Specifying a default root object avoids exposing the contents of your distribution.</p>
      *        <p>
      *        Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the
      *        object name.
@@ -917,11 +931,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     *        A comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -930,10 +944,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * @return A comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -942,11 +956,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     *        A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1290,11 +1304,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
@@ -1303,10 +1317,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
-     * @return A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * @return A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public ViewerCertificate getViewerCertificate() {
@@ -1315,11 +1329,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1372,9 +1386,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web
      * ACL created using the latest version of WAF, use the ACL ARN, for example
-     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      * . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * </p>
      * <p>
      * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
@@ -1388,9 +1402,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @param webACLId
      *        A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To
      *        specify a web ACL created using the latest version of WAF, use the ACL ARN, for example
-     *        <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     *        <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      *        . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     *        <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+     *        <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      *        <p>
      *        WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
      *        CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the
@@ -1409,9 +1423,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web
      * ACL created using the latest version of WAF, use the ACL ARN, for example
-     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      * . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * </p>
      * <p>
      * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
@@ -1424,9 +1438,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @return A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To
      *         specify a web ACL created using the latest version of WAF, use the ACL ARN, for example
-     *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      *         . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+     *         <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      *         <p>
      *         WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
      *         CloudFront, and lets you control access to your content. Based on conditions that you specify, such as
@@ -1445,9 +1459,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To specify a web
      * ACL created using the latest version of WAF, use the ACL ARN, for example
-     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      * . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     * <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+     * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * </p>
      * <p>
      * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
@@ -1461,9 +1475,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @param webACLId
      *        A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution. To
      *        specify a web ACL created using the latest version of WAF, use the ACL ARN, for example
-     *        <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
+     *        <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
      *        . To specify a web ACL created using WAF Classic, use the ACL ID, for example
-     *        <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+     *        <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      *        <p>
      *        WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to
      *        CloudFront, and lets you control access to your content. Based on conditions that you specify, such as the
@@ -1482,9 +1496,9 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The
-     * default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically
-     * use an earlier HTTP version.
+     * (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The default
+     * value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.
      * </p>
      * <p>
      * For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name
@@ -1501,9 +1515,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with
-     *        CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support
-     *        HTTP/2 automatically use an earlier HTTP version.</p>
+     *        (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The
+     *        default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2
+     *        automatically use an earlier HTTP version.</p>
      *        <p>
      *        For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server
      *        Name Indication (SNI).
@@ -1525,9 +1539,9 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The
-     * default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically
-     * use an earlier HTTP version.
+     * (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The default
+     * value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.
      * </p>
      * <p>
      * For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name
@@ -1543,9 +1557,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * >Supported protocols and ciphers between viewers and CloudFront</a>.
      * </p>
      * 
-     * @return (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with
-     *         CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support
-     *         HTTP/2 automatically use an earlier HTTP version.</p>
+     * @return (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The
+     *         default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2
+     *         automatically use an earlier HTTP version.</p>
      *         <p>
      *         For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server
      *         Name Indication (SNI).
@@ -1567,9 +1581,9 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The
-     * default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically
-     * use an earlier HTTP version.
+     * (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The default
+     * value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.
      * </p>
      * <p>
      * For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name
@@ -1586,9 +1600,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with
-     *        CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support
-     *        HTTP/2 automatically use an earlier HTTP version.</p>
+     *        (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The
+     *        default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2
+     *        automatically use an earlier HTTP version.</p>
      *        <p>
      *        For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server
      *        Name Indication (SNI).
@@ -1612,9 +1626,9 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The
-     * default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically
-     * use an earlier HTTP version.
+     * (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The default
+     * value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.
      * </p>
      * <p>
      * For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name
@@ -1631,9 +1645,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with
-     *        CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support
-     *        HTTP/2 automatically use an earlier HTTP version.</p>
+     *        (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The
+     *        default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2
+     *        automatically use an earlier HTTP version.</p>
      *        <p>
      *        For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server
      *        Name Indication (SNI).
@@ -1655,9 +1669,9 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with CloudFront. The
-     * default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically
-     * use an earlier HTTP version.
+     * (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The default
+     * value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2 automatically use an
+     * earlier HTTP version.
      * </p>
      * <p>
      * For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server Name
@@ -1674,9 +1688,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param httpVersion
-     *        (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate with
-     *        CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't support
-     *        HTTP/2 automatically use an earlier HTTP version.</p>
+     *        (Optional) Specify the HTTP version(s) that you want viewers to use to communicate with CloudFront. The
+     *        default value for new web distributions is <code>http2</code>. Viewers that don't support HTTP/2
+     *        automatically use an earlier HTTP version.</p>
      *        <p>
      *        For viewers and CloudFront to use HTTP/2, viewers must support TLSv1.2 or later, and must support Server
      *        Name Indication (SNI).
@@ -1748,7 +1762,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify
      *        <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the
      *        DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second
-     *        request, for an IPv4 address for your distribution. </p>
+     *        request, for an IPv4 address for your distribution.</p>
      *        <p>
      *        In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *        However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -1841,7 +1855,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution,
      *         specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests
      *         with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a
-     *         second request, for an IPv4 address for your distribution. </p>
+     *         second request, for an IPv4 address for your distribution.</p>
      *         <p>
      *         In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *         However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -1935,7 +1949,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify
      *        <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the
      *        DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second
-     *        request, for an IPv4 address for your distribution. </p>
+     *        request, for an IPv4 address for your distribution.</p>
      *        <p>
      *        In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *        However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -2030,7 +2044,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution,
      *         specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests
      *         with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a
-     *         second request, for an IPv4 address for your distribution. </p>
+     *         second request, for an IPv4 address for your distribution.</p>
      *         <p>
      *         In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *         However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -2072,6 +2086,114 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     public Boolean isIPV6Enabled() {
         return this.isIPV6Enabled;
+    }
+
+    /**
+     * <p>
+     * The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.
+     * </p>
+     * 
+     * @param continuousDeploymentPolicyId
+     *        The identifier of a continuous deployment policy. For more information, see
+     *        <code>CreateContinuousDeploymentPolicy</code>.
+     */
+
+    public void setContinuousDeploymentPolicyId(String continuousDeploymentPolicyId) {
+        this.continuousDeploymentPolicyId = continuousDeploymentPolicyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.
+     * </p>
+     * 
+     * @return The identifier of a continuous deployment policy. For more information, see
+     *         <code>CreateContinuousDeploymentPolicy</code>.
+     */
+
+    public String getContinuousDeploymentPolicyId() {
+        return this.continuousDeploymentPolicyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.
+     * </p>
+     * 
+     * @param continuousDeploymentPolicyId
+     *        The identifier of a continuous deployment policy. For more information, see
+     *        <code>CreateContinuousDeploymentPolicy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionConfig withContinuousDeploymentPolicyId(String continuousDeploymentPolicyId) {
+        setContinuousDeploymentPolicyId(continuousDeploymentPolicyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a
+     * staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     * </p>
+     * 
+     * @param staging
+     *        A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>,
+     *        this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     */
+
+    public void setStaging(Boolean staging) {
+        this.staging = staging;
+    }
+
+    /**
+     * <p>
+     * A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a
+     * staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     * </p>
+     * 
+     * @return A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>,
+     *         this is a staging distribution. When this value is <code>false</code>, this is not a staging
+     *         distribution.
+     */
+
+    public Boolean getStaging() {
+        return this.staging;
+    }
+
+    /**
+     * <p>
+     * A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a
+     * staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     * </p>
+     * 
+     * @param staging
+     *        A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>,
+     *        this is a staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionConfig withStaging(Boolean staging) {
+        setStaging(staging);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>, this is a
+     * staging distribution. When this value is <code>false</code>, this is not a staging distribution.
+     * </p>
+     * 
+     * @return A Boolean that indicates whether this is a staging distribution. When this value is <code>true</code>,
+     *         this is a staging distribution. When this value is <code>false</code>, this is not a staging
+     *         distribution.
+     */
+
+    public Boolean isStaging() {
+        return this.staging;
     }
 
     /**
@@ -2119,7 +2241,11 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (getHttpVersion() != null)
             sb.append("HttpVersion: ").append(getHttpVersion()).append(",");
         if (getIsIPV6Enabled() != null)
-            sb.append("IsIPV6Enabled: ").append(getIsIPV6Enabled());
+            sb.append("IsIPV6Enabled: ").append(getIsIPV6Enabled()).append(",");
+        if (getContinuousDeploymentPolicyId() != null)
+            sb.append("ContinuousDeploymentPolicyId: ").append(getContinuousDeploymentPolicyId()).append(",");
+        if (getStaging() != null)
+            sb.append("Staging: ").append(getStaging());
         sb.append("}");
         return sb.toString();
     }
@@ -2202,6 +2328,14 @@ public class DistributionConfig implements Serializable, Cloneable {
             return false;
         if (other.getIsIPV6Enabled() != null && other.getIsIPV6Enabled().equals(this.getIsIPV6Enabled()) == false)
             return false;
+        if (other.getContinuousDeploymentPolicyId() == null ^ this.getContinuousDeploymentPolicyId() == null)
+            return false;
+        if (other.getContinuousDeploymentPolicyId() != null && other.getContinuousDeploymentPolicyId().equals(this.getContinuousDeploymentPolicyId()) == false)
+            return false;
+        if (other.getStaging() == null ^ this.getStaging() == null)
+            return false;
+        if (other.getStaging() != null && other.getStaging().equals(this.getStaging()) == false)
+            return false;
         return true;
     }
 
@@ -2227,6 +2361,8 @@ public class DistributionConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
         hashCode = prime * hashCode + ((getHttpVersion() == null) ? 0 : getHttpVersion().hashCode());
         hashCode = prime * hashCode + ((getIsIPV6Enabled() == null) ? 0 : getIsIPV6Enabled().hashCode());
+        hashCode = prime * hashCode + ((getContinuousDeploymentPolicyId() == null) ? 0 : getContinuousDeploymentPolicyId().hashCode());
+        hashCode = prime * hashCode + ((getStaging() == null) ? 0 : getStaging().hashCode());
         return hashCode;
     }
 

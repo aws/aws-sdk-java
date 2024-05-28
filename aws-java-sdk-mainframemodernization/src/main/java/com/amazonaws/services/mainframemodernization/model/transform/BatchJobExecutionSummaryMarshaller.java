@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class BatchJobExecutionSummaryMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<StructuredPojo> BATCHJOBIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchJobIdentifier").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -39,6 +41,8 @@ public class BatchJobExecutionSummaryMarshaller {
             .marshallLocationName("jobName").build();
     private static final MarshallingInfo<String> JOBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobType").build();
+    private static final MarshallingInfo<String> RETURNCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("returnCode").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,11 +65,13 @@ public class BatchJobExecutionSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(batchJobExecutionSummary.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(batchJobExecutionSummary.getBatchJobIdentifier(), BATCHJOBIDENTIFIER_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getExecutionId(), EXECUTIONID_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getJobType(), JOBTYPE_BINDING);
+            protocolMarshaller.marshall(batchJobExecutionSummary.getReturnCode(), RETURNCODE_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(batchJobExecutionSummary.getStatus(), STATUS_BINDING);
         } catch (Exception e) {

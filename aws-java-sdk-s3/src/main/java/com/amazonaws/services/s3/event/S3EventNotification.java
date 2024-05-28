@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2022 Amazon Technologies, Inc.
+ * Copyright 2014-2024 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,16 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 /**
 * A helper class that represents a strongly typed S3 EventNotification item sent
 * to SQS, SNS, or Lambda.
+ *
+ * <p>
+ * <b>Migrating to the AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/eventnotifications/s3/model/S3EventNotification.html">S3EventNotification</a>
+ *
+ * <p>
+ * See <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration.html">Migration Guide</a>
+ * for more information.
 */
 public class S3EventNotification {
 

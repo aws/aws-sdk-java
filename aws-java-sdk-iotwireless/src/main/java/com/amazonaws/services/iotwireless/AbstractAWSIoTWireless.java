@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,6 +158,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public DeleteWirelessDeviceImportTaskResult deleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWirelessGatewayResult deleteWirelessGateway(DeleteWirelessGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -169,6 +174,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public DeleteWirelessGatewayTaskDefinitionResult deleteWirelessGatewayTaskDefinition(DeleteWirelessGatewayTaskDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeregisterWirelessDeviceResult deregisterWirelessDevice(DeregisterWirelessDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,6 +244,16 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public GetMetricConfigurationResult getMetricConfiguration(GetMetricConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMetricsResult getMetrics(GetMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMulticastGroupResult getMulticastGroup(GetMulticastGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -254,12 +274,19 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public GetPositionResult getPosition(GetPositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    @Deprecated
     public GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPositionEstimateResult getPositionEstimate(GetPositionEstimateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -270,6 +297,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourcePositionResult getResourcePosition(GetResourcePositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -285,6 +317,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public GetWirelessDeviceResult getWirelessDevice(GetWirelessDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetWirelessDeviceImportTaskResult getWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -334,6 +371,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public ListDevicesForWirelessDeviceImportTaskResult listDevicesForWirelessDeviceImportTask(ListDevicesForWirelessDeviceImportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEventConfigurationsResult listEventConfigurations(ListEventConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -364,6 +406,7 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -384,6 +427,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public ListWirelessDeviceImportTasksResult listWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWirelessDevicesResult listWirelessDevices(ListWirelessDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -399,6 +447,7 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -451,6 +500,16 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public StartSingleWirelessDeviceImportTaskResult startSingleWirelessDeviceImportTask(StartSingleWirelessDeviceImportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartWirelessDeviceImportTaskResult startWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -486,6 +545,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public UpdateMetricConfigurationResult updateMetricConfiguration(UpdateMetricConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateMulticastGroupResult updateMulticastGroup(UpdateMulticastGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -501,6 +565,7 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public UpdatePositionResult updatePosition(UpdatePositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -511,7 +576,17 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public UpdateResourcePositionResult updateResourcePosition(UpdateResourcePositionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateWirelessDeviceResult updateWirelessDevice(UpdateWirelessDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWirelessDeviceImportTaskResult updateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

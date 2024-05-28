@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the configuration information to fetch access levels of groups and users from an IAM Identity Center
- * (successor to Single Sign-On) identity source. This is useful for user context filtering, where search results are
- * filtered based on the user or their group access to documents. You can also use the <a
+ * Provides the configuration information to get users and groups from an IAM Identity Center identity source. This is
+ * useful for user context filtering, where search results are filtered based on the user or their group access to
+ * documents. You can also use the <a
  * href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping</a> API to map
  * users to their groups so that you only need to provide the user ID when you issue the query.
  * </p>
@@ -47,24 +47,24 @@ public class UserGroupResolutionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity
-     * Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an
-     * IAM Identity Center identity source in order to use this mode.
+     * The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the
+     * only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use
+     * this mode.
      * </p>
      */
     private String userGroupResolutionMode;
 
     /**
      * <p>
-     * The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity
-     * Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an
-     * IAM Identity Center identity source in order to use this mode.
+     * The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the
+     * only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use
+     * this mode.
      * </p>
      * 
      * @param userGroupResolutionMode
-     *        The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM
-     *        Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups
-     *        must exist in an IAM Identity Center identity source in order to use this mode.
+     *        The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is
+     *        currently the only available mode. Your users and groups must exist in an IAM Identity Center identity
+     *        source in order to use this mode.
      * @see UserGroupResolutionMode
      */
 
@@ -74,14 +74,14 @@ public class UserGroupResolutionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity
-     * Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an
-     * IAM Identity Center identity source in order to use this mode.
+     * The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the
+     * only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use
+     * this mode.
      * </p>
      * 
-     * @return The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM
-     *         Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups
-     *         must exist in an IAM Identity Center identity source in order to use this mode.
+     * @return The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is
+     *         currently the only available mode. Your users and groups must exist in an IAM Identity Center identity
+     *         source in order to use this mode.
      * @see UserGroupResolutionMode
      */
 
@@ -91,15 +91,15 @@ public class UserGroupResolutionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity
-     * Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an
-     * IAM Identity Center identity source in order to use this mode.
+     * The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the
+     * only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use
+     * this mode.
      * </p>
      * 
      * @param userGroupResolutionMode
-     *        The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM
-     *        Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups
-     *        must exist in an IAM Identity Center identity source in order to use this mode.
+     *        The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is
+     *        currently the only available mode. Your users and groups must exist in an IAM Identity Center identity
+     *        source in order to use this mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserGroupResolutionMode
      */
@@ -111,15 +111,15 @@ public class UserGroupResolutionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity
-     * Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an
-     * IAM Identity Center identity source in order to use this mode.
+     * The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is currently the
+     * only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use
+     * this mode.
      * </p>
      * 
      * @param userGroupResolutionMode
-     *        The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM
-     *        Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups
-     *        must exist in an IAM Identity Center identity source in order to use this mode.
+     *        The identity store provider (mode) you want to use to get users and groups. IAM Identity Center is
+     *        currently the only available mode. Your users and groups must exist in an IAM Identity Center identity
+     *        source in order to use this mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserGroupResolutionMode
      */

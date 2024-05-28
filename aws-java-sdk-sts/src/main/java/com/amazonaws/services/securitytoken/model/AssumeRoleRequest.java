@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,10 +61,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -98,10 +98,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      */
@@ -155,10 +155,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -265,6 +265,20 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String sourceIdentity;
+    /**
+     * <p>
+     * A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context
+     * assertion is signed and encrypted by Amazon Web Services STS.
+     * </p>
+     * <p>
+     * The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     * </p>
+     * <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
+     */
+    private java.util.List<ProvidedContext> providedContexts;
 
     /**
      * <p>
@@ -425,10 +439,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -452,10 +466,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <note>
      *         <p>
-     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
-     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
-     *         how close the policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *         session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *         even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *         indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *         </p>
      *         </note>
      *         <p>
@@ -485,10 +499,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -513,10 +527,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -551,10 +565,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -584,10 +598,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -624,10 +638,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -652,10 +666,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -694,10 +708,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -721,10 +735,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      */
 
@@ -752,10 +766,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -778,10 +792,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <note>
      *         <p>
-     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
-     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
-     *         how close the policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *         session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *         even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *         indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *         </p>
      */
 
@@ -809,10 +823,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -836,10 +850,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1073,10 +1087,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1112,10 +1126,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <note>
      *         <p>
-     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
-     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
-     *         how close the policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *         session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *         even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *         indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *         </p>
      *         </note>
      *         <p>
@@ -1157,10 +1171,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1197,10 +1211,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -1247,10 +1261,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1292,10 +1306,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -1344,10 +1358,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -1384,10 +1398,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -1981,6 +1995,137 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context
+     * assertion is signed and encrypted by Amazon Web Services STS.
+     * </p>
+     * <p>
+     * The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     * </p>
+     * <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
+     * 
+     * @return A list of previously acquired trusted context assertions in the format of a JSON array. The trusted
+     *         context assertion is signed and encrypted by Amazon Web Services STS.</p>
+     *         <p>
+     *         The following is an example of a <code>ProvidedContext</code> value that includes a single trusted
+     *         context assertion and the ARN of the context provider from which the trusted context assertion was
+     *         generated.
+     *         </p>
+     *         <p>
+     *         <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     */
+
+    public java.util.List<ProvidedContext> getProvidedContexts() {
+        return providedContexts;
+    }
+
+    /**
+     * <p>
+     * A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context
+     * assertion is signed and encrypted by Amazon Web Services STS.
+     * </p>
+     * <p>
+     * The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     * </p>
+     * <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
+     * 
+     * @param providedContexts
+     *        A list of previously acquired trusted context assertions in the format of a JSON array. The trusted
+     *        context assertion is signed and encrypted by Amazon Web Services STS.</p>
+     *        <p>
+     *        The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     *        assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     *        </p>
+     *        <p>
+     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     */
+
+    public void setProvidedContexts(java.util.Collection<ProvidedContext> providedContexts) {
+        if (providedContexts == null) {
+            this.providedContexts = null;
+            return;
+        }
+
+        this.providedContexts = new java.util.ArrayList<ProvidedContext>(providedContexts);
+    }
+
+    /**
+     * <p>
+     * A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context
+     * assertion is signed and encrypted by Amazon Web Services STS.
+     * </p>
+     * <p>
+     * The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     * </p>
+     * <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvidedContexts(java.util.Collection)} or {@link #withProvidedContexts(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param providedContexts
+     *        A list of previously acquired trusted context assertions in the format of a JSON array. The trusted
+     *        context assertion is signed and encrypted by Amazon Web Services STS.</p>
+     *        <p>
+     *        The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     *        assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     *        </p>
+     *        <p>
+     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleRequest withProvidedContexts(ProvidedContext... providedContexts) {
+        if (this.providedContexts == null) {
+            setProvidedContexts(new java.util.ArrayList<ProvidedContext>(providedContexts.length));
+        }
+        for (ProvidedContext ele : providedContexts) {
+            this.providedContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context
+     * assertion is signed and encrypted by Amazon Web Services STS.
+     * </p>
+     * <p>
+     * The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     * </p>
+     * <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
+     * 
+     * @param providedContexts
+     *        A list of previously acquired trusted context assertions in the format of a JSON array. The trusted
+     *        context assertion is signed and encrypted by Amazon Web Services STS.</p>
+     *        <p>
+     *        The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context
+     *        assertion and the ARN of the context provider from which the trusted context assertion was generated.
+     *        </p>
+     *        <p>
+     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleRequest withProvidedContexts(java.util.Collection<ProvidedContext> providedContexts) {
+        setProvidedContexts(providedContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2013,7 +2158,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getTokenCode() != null)
             sb.append("TokenCode: ").append(getTokenCode()).append(",");
         if (getSourceIdentity() != null)
-            sb.append("SourceIdentity: ").append(getSourceIdentity());
+            sb.append("SourceIdentity: ").append(getSourceIdentity()).append(",");
+        if (getProvidedContexts() != null)
+            sb.append("ProvidedContexts: ").append(getProvidedContexts());
         sb.append("}");
         return sb.toString();
     }
@@ -2072,6 +2219,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getSourceIdentity() != null && other.getSourceIdentity().equals(this.getSourceIdentity()) == false)
             return false;
+        if (other.getProvidedContexts() == null ^ this.getProvidedContexts() == null)
+            return false;
+        if (other.getProvidedContexts() != null && other.getProvidedContexts().equals(this.getProvidedContexts()) == false)
+            return false;
         return true;
     }
 
@@ -2091,6 +2242,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getTokenCode() == null) ? 0 : getTokenCode().hashCode());
         hashCode = prime * hashCode + ((getSourceIdentity() == null) ? 0 : getSourceIdentity().hashCode());
+        hashCode = prime * hashCode + ((getProvidedContexts() == null) ? 0 : getProvidedContexts().hashCode());
         return hashCode;
     }
 

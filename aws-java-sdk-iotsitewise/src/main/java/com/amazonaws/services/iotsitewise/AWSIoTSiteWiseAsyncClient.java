@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -451,6 +451,40 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAssetModelCompositeModelResult> createAssetModelCompositeModelAsync(CreateAssetModelCompositeModelRequest request) {
+
+        return createAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAssetModelCompositeModelResult> createAssetModelCompositeModelAsync(
+            final CreateAssetModelCompositeModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAssetModelCompositeModelRequest, CreateAssetModelCompositeModelResult> asyncHandler) {
+        final CreateAssetModelCompositeModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAssetModelCompositeModelResult>() {
+            @Override
+            public CreateAssetModelCompositeModelResult call() throws Exception {
+                CreateAssetModelCompositeModelResult result = null;
+
+                try {
+                    result = executeCreateAssetModelCompositeModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBulkImportJobResult> createBulkImportJobAsync(CreateBulkImportJobRequest request) {
 
         return createBulkImportJobAsync(request, null);
@@ -715,6 +749,40 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAssetModelCompositeModelResult> deleteAssetModelCompositeModelAsync(DeleteAssetModelCompositeModelRequest request) {
+
+        return deleteAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAssetModelCompositeModelResult> deleteAssetModelCompositeModelAsync(
+            final DeleteAssetModelCompositeModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAssetModelCompositeModelRequest, DeleteAssetModelCompositeModelResult> asyncHandler) {
+        final DeleteAssetModelCompositeModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAssetModelCompositeModelResult>() {
+            @Override
+            public DeleteAssetModelCompositeModelResult call() throws Exception {
+                DeleteAssetModelCompositeModelResult result = null;
+
+                try {
+                    result = executeDeleteAssetModelCompositeModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDashboardResult> deleteDashboardAsync(DeleteDashboardRequest request) {
 
         return deleteDashboardAsync(request, null);
@@ -913,6 +981,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeActionResult> describeActionAsync(DescribeActionRequest request) {
+
+        return describeActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActionResult> describeActionAsync(final DescribeActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeActionRequest, DescribeActionResult> asyncHandler) {
+        final DescribeActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeActionResult>() {
+            @Override
+            public DescribeActionResult call() throws Exception {
+                DescribeActionResult result = null;
+
+                try {
+                    result = executeDescribeAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAssetResult> describeAssetAsync(DescribeAssetRequest request) {
 
         return describeAssetAsync(request, null);
@@ -946,6 +1047,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAssetCompositeModelResult> describeAssetCompositeModelAsync(DescribeAssetCompositeModelRequest request) {
+
+        return describeAssetCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssetCompositeModelResult> describeAssetCompositeModelAsync(final DescribeAssetCompositeModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssetCompositeModelRequest, DescribeAssetCompositeModelResult> asyncHandler) {
+        final DescribeAssetCompositeModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAssetCompositeModelResult>() {
+            @Override
+            public DescribeAssetCompositeModelResult call() throws Exception {
+                DescribeAssetCompositeModelResult result = null;
+
+                try {
+                    result = executeDescribeAssetCompositeModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAssetModelResult> describeAssetModelAsync(DescribeAssetModelRequest request) {
 
         return describeAssetModelAsync(request, null);
@@ -963,6 +1097,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeDescribeAssetModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssetModelCompositeModelResult> describeAssetModelCompositeModelAsync(
+            DescribeAssetModelCompositeModelRequest request) {
+
+        return describeAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssetModelCompositeModelResult> describeAssetModelCompositeModelAsync(
+            final DescribeAssetModelCompositeModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssetModelCompositeModelRequest, DescribeAssetModelCompositeModelResult> asyncHandler) {
+        final DescribeAssetModelCompositeModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAssetModelCompositeModelResult>() {
+            @Override
+            public DescribeAssetModelCompositeModelResult call() throws Exception {
+                DescribeAssetModelCompositeModelResult result = null;
+
+                try {
+                    result = executeDescribeAssetModelCompositeModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1414,6 +1583,72 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteActionResult> executeActionAsync(ExecuteActionRequest request) {
+
+        return executeActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteActionResult> executeActionAsync(final ExecuteActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteActionRequest, ExecuteActionResult> asyncHandler) {
+        final ExecuteActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteActionResult>() {
+            @Override
+            public ExecuteActionResult call() throws Exception {
+                ExecuteActionResult result = null;
+
+                try {
+                    result = executeExecuteAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest request) {
+
+        return executeQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(final ExecuteQueryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteQueryRequest, ExecuteQueryResult> asyncHandler) {
+        final ExecuteQueryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteQueryResult>() {
+            @Override
+            public ExecuteQueryResult call() throws Exception {
+                ExecuteQueryResult result = null;
+
+                try {
+                    result = executeExecuteQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAssetPropertyAggregatesResult> getAssetPropertyAggregatesAsync(GetAssetPropertyAggregatesRequest request) {
 
         return getAssetPropertyAggregatesAsync(request, null);
@@ -1565,6 +1800,73 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListAccessPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest request) {
+
+        return listActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionsResult> listActionsAsync(final ListActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListActionsRequest, ListActionsResult> asyncHandler) {
+        final ListActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListActionsResult>() {
+            @Override
+            public ListActionsResult call() throws Exception {
+                ListActionsResult result = null;
+
+                try {
+                    result = executeListActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelCompositeModelsResult> listAssetModelCompositeModelsAsync(ListAssetModelCompositeModelsRequest request) {
+
+        return listAssetModelCompositeModelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelCompositeModelsResult> listAssetModelCompositeModelsAsync(
+            final ListAssetModelCompositeModelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssetModelCompositeModelsRequest, ListAssetModelCompositeModelsResult> asyncHandler) {
+        final ListAssetModelCompositeModelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssetModelCompositeModelsResult>() {
+            @Override
+            public ListAssetModelCompositeModelsResult call() throws Exception {
+                ListAssetModelCompositeModelsResult result = null;
+
+                try {
+                    result = executeListAssetModelCompositeModels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1796,6 +2098,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListBulkImportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionRelationshipsResult> listCompositionRelationshipsAsync(ListCompositionRelationshipsRequest request) {
+
+        return listCompositionRelationshipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionRelationshipsResult> listCompositionRelationshipsAsync(final ListCompositionRelationshipsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCompositionRelationshipsRequest, ListCompositionRelationshipsResult> asyncHandler) {
+        final ListCompositionRelationshipsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCompositionRelationshipsResult>() {
+            @Override
+            public ListCompositionRelationshipsResult call() throws Exception {
+                ListCompositionRelationshipsResult result = null;
+
+                try {
+                    result = executeListCompositionRelationships(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2293,6 +2628,40 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeUpdateAssetModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssetModelCompositeModelResult> updateAssetModelCompositeModelAsync(UpdateAssetModelCompositeModelRequest request) {
+
+        return updateAssetModelCompositeModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssetModelCompositeModelResult> updateAssetModelCompositeModelAsync(
+            final UpdateAssetModelCompositeModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAssetModelCompositeModelRequest, UpdateAssetModelCompositeModelResult> asyncHandler) {
+        final UpdateAssetModelCompositeModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAssetModelCompositeModelResult>() {
+            @Override
+            public UpdateAssetModelCompositeModelResult call() throws Exception {
+                UpdateAssetModelCompositeModelResult result = null;
+
+                try {
+                    result = executeUpdateAssetModelCompositeModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

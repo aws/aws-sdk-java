@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,8 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
     private String name;
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      */
     private String customerId;
@@ -208,11 +209,13 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      * 
      * @param customerId
-     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     *        An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     *        Marketplace.
      */
 
     public void setCustomerId(String customerId) {
@@ -221,10 +224,12 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      * 
-     * @return An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * @return An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services
+     *         SaaS Marketplace.
      */
 
     public String getCustomerId() {
@@ -233,11 +238,13 @@ public class CreateApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     * An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     * Marketplace.
      * </p>
      * 
      * @param customerId
-     *        An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+     *        An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS
+     *        Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

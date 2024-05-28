@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -189,9 +189,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.SdkInternalList<String> groupIds;
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
@@ -200,15 +199,17 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
-     * specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then
+     * all items are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
@@ -1545,17 +1546,15 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
      * </p>
      * 
-     * @return [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *         group name or the security group ID. For security groups in a nondefault VPC, use the
-     *         <code>group-name</code> filter to describe security groups by name.</p>
+     * @return [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *         security group ID.</p>
      *         <p>
      *         Default: Describes all of your security groups.
      */
@@ -1569,18 +1568,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupNames
-     *        [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *        security group ID.</p>
      *        <p>
      *        Default: Describes all of your security groups.
      */
@@ -1596,9 +1593,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
@@ -1610,9 +1606,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param groupNames
-     *        [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *        security group ID.</p>
      *        <p>
      *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1630,18 +1625,16 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
+     * [Default VPC] The names of the security groups. You can specify either the security group name or the security
+     * group ID.
      * </p>
      * <p>
      * Default: Describes all of your security groups.
      * </p>
      * 
      * @param groupNames
-     *        [EC2-Classic and default VPC only] The names of the security groups. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        [Default VPC] The names of the security groups. You can specify either the security group name or the
+     *        security group ID.</p>
      *        <p>
      *        Default: Describes all of your security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1654,11 +1647,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -1667,10 +1662,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token to request the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -1679,11 +1676,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1694,15 +1693,18 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
-     * specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then
+     * all items are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this
-     *        parameter is not specified, then all results are returned.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. This value can be between 5 and 1000. If this parameter is
+     *        not specified, then all items are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -1711,14 +1713,17 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
-     * specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then
+     * all items are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this
-     *         parameter is not specified, then all results are returned.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. This value can be between 5 and 1000. If this parameter is
+     *         not specified, then all items are returned. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -1727,15 +1732,18 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this parameter is not
-     * specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. This value can be between 5 and 1000. If this parameter is not specified, then
+     * all items are returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000. If this
-     *        parameter is not specified, then all results are returned.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. This value can be between 5 and 1000. If this parameter is
+     *        not specified, then all items are returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

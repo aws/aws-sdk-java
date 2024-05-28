@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class GetLoggingConfigurationRequestMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+    private static final MarshallingInfo<String> LOGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogType").build();
+    private static final MarshallingInfo<String> LOGSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogScope").build();
 
     private static final GetLoggingConfigurationRequestMarshaller instance = new GetLoggingConfigurationRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class GetLoggingConfigurationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getLoggingConfigurationRequest.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(getLoggingConfigurationRequest.getLogType(), LOGTYPE_BINDING);
+            protocolMarshaller.marshall(getLoggingConfigurationRequest.getLogScope(), LOGSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

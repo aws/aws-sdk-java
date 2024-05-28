@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,9 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields support "contains" queries with a
- * minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range
- * result in empty results.
+ * The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters
+ * and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.
  * </p>
  * </note>
  * 
@@ -50,6 +49,10 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A leaf node condition which can be used to specify a string condition.
+     * </p>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>,
+     * <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.
      * </p>
      */
     private StringCondition stringCondition;
@@ -204,9 +207,17 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>,
+     * <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.
+     * </p>
      * 
      * @param stringCondition
-     *        A leaf node condition which can be used to specify a string condition.
+     *        A leaf node condition which can be used to specify a string condition.</p>
+     *        <p>
+     *        The currently supported values for <code>FieldName</code> are <code>Username</code>,
+     *        <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>,
+     *        <code>SecurityProfileId</code>, <code>ResourceId</code>.
      */
 
     public void setStringCondition(StringCondition stringCondition) {
@@ -217,8 +228,16 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>,
+     * <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.
+     * </p>
      * 
-     * @return A leaf node condition which can be used to specify a string condition.
+     * @return A leaf node condition which can be used to specify a string condition.</p>
+     *         <p>
+     *         The currently supported values for <code>FieldName</code> are <code>Username</code>,
+     *         <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>,
+     *         <code>SecurityProfileId</code>, <code>ResourceId</code>.
      */
 
     public StringCondition getStringCondition() {
@@ -229,9 +248,17 @@ public class UserSearchCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * A leaf node condition which can be used to specify a string condition.
      * </p>
+     * <p>
+     * The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>,
+     * <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.
+     * </p>
      * 
      * @param stringCondition
-     *        A leaf node condition which can be used to specify a string condition.
+     *        A leaf node condition which can be used to specify a string condition.</p>
+     *        <p>
+     *        The currently supported values for <code>FieldName</code> are <code>Username</code>,
+     *        <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>,
+     *        <code>SecurityProfileId</code>, <code>ResourceId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

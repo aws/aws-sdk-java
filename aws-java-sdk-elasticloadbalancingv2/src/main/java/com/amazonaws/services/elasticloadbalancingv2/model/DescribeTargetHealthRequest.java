@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<TargetDescription> targets;
+    /**
+     * <p>
+     * Used to inclue anomaly detection information.
+     * </p>
+     */
+    private java.util.List<String> include;
 
     /**
      * <p>
@@ -149,6 +155,104 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Used to inclue anomaly detection information.
+     * </p>
+     * 
+     * @return Used to inclue anomaly detection information.
+     * @see DescribeTargetHealthInputIncludeEnum
+     */
+
+    public java.util.List<String> getInclude() {
+        return include;
+    }
+
+    /**
+     * <p>
+     * Used to inclue anomaly detection information.
+     * </p>
+     * 
+     * @param include
+     *        Used to inclue anomaly detection information.
+     * @see DescribeTargetHealthInputIncludeEnum
+     */
+
+    public void setInclude(java.util.Collection<String> include) {
+        if (include == null) {
+            this.include = null;
+            return;
+        }
+
+        this.include = new java.util.ArrayList<String>(include);
+    }
+
+    /**
+     * <p>
+     * Used to inclue anomaly detection information.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInclude(java.util.Collection)} or {@link #withInclude(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param include
+     *        Used to inclue anomaly detection information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DescribeTargetHealthInputIncludeEnum
+     */
+
+    public DescribeTargetHealthRequest withInclude(String... include) {
+        if (this.include == null) {
+            setInclude(new java.util.ArrayList<String>(include.length));
+        }
+        for (String ele : include) {
+            this.include.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to inclue anomaly detection information.
+     * </p>
+     * 
+     * @param include
+     *        Used to inclue anomaly detection information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DescribeTargetHealthInputIncludeEnum
+     */
+
+    public DescribeTargetHealthRequest withInclude(java.util.Collection<String> include) {
+        setInclude(include);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to inclue anomaly detection information.
+     * </p>
+     * 
+     * @param include
+     *        Used to inclue anomaly detection information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DescribeTargetHealthInputIncludeEnum
+     */
+
+    public DescribeTargetHealthRequest withInclude(DescribeTargetHealthInputIncludeEnum... include) {
+        java.util.ArrayList<String> includeCopy = new java.util.ArrayList<String>(include.length);
+        for (DescribeTargetHealthInputIncludeEnum value : include) {
+            includeCopy.add(value.toString());
+        }
+        if (getInclude() == null) {
+            setInclude(includeCopy);
+        } else {
+            getInclude().addAll(includeCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +267,9 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
         if (getTargetGroupArn() != null)
             sb.append("TargetGroupArn: ").append(getTargetGroupArn()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: ").append(getTargets());
+            sb.append("Targets: ").append(getTargets()).append(",");
+        if (getInclude() != null)
+            sb.append("Include: ").append(getInclude());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +292,10 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
+        if (other.getInclude() == null ^ this.getInclude() == null)
+            return false;
+        if (other.getInclude() != null && other.getInclude().equals(this.getInclude()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +306,7 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getTargetGroupArn() == null) ? 0 : getTargetGroupArn().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getInclude() == null) ? 0 : getInclude().hashCode());
         return hashCode;
     }
 

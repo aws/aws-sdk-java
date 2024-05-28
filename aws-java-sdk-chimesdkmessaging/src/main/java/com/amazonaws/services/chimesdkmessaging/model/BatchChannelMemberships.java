@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
     private Identity invitedBy;
     /**
      * <p>
-     * The membership types set for the channel users.
+     * The membership types set for the channel members.
      * </p>
      */
     private String type;
@@ -48,7 +48,7 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
     private java.util.List<Identity> members;
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding members.
      * </p>
      */
     private String channelArn;
@@ -101,11 +101,11 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The membership types set for the channel users.
+     * The membership types set for the channel members.
      * </p>
      * 
      * @param type
-     *        The membership types set for the channel users.
+     *        The membership types set for the channel members.
      * @see ChannelMembershipType
      */
 
@@ -115,10 +115,10 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The membership types set for the channel users.
+     * The membership types set for the channel members.
      * </p>
      * 
-     * @return The membership types set for the channel users.
+     * @return The membership types set for the channel members.
      * @see ChannelMembershipType
      */
 
@@ -128,11 +128,11 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The membership types set for the channel users.
+     * The membership types set for the channel members.
      * </p>
      * 
      * @param type
-     *        The membership types set for the channel users.
+     *        The membership types set for the channel members.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMembershipType
      */
@@ -144,11 +144,11 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The membership types set for the channel users.
+     * The membership types set for the channel members.
      * </p>
      * 
      * @param type
-     *        The membership types set for the channel users.
+     *        The membership types set for the channel members.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMembershipType
      */
@@ -230,11 +230,11 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding members.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel to which you're adding users.
+     *        The ARN of the channel to which you're adding members.
      */
 
     public void setChannelArn(String channelArn) {
@@ -243,10 +243,10 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding members.
      * </p>
      * 
-     * @return The ARN of the channel to which you're adding users.
+     * @return The ARN of the channel to which you're adding members.
      */
 
     public String getChannelArn() {
@@ -255,11 +255,11 @@ public class BatchChannelMemberships implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the channel to which you're adding users.
+     * The ARN of the channel to which you're adding members.
      * </p>
      * 
      * @param channelArn
-     *        The ARN of the channel to which you're adding users.
+     *        The ARN of the channel to which you're adding members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class CreateVocabularyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyFileUri").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
 
     private static final CreateVocabularyRequestMarshaller instance = new CreateVocabularyRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateVocabularyRequestMarshaller {
             protocolMarshaller.marshall(createVocabularyRequest.getPhrases(), PHRASES_BINDING);
             protocolMarshaller.marshall(createVocabularyRequest.getVocabularyFileUri(), VOCABULARYFILEURI_BINDING);
             protocolMarshaller.marshall(createVocabularyRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createVocabularyRequest.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

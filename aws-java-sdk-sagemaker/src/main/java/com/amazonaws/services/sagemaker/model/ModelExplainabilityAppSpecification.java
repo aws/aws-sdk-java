@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class ModelExplainabilityAppSpecification implements Serializable, Clonea
     private String imageUri;
     /**
      * <p>
-     * JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration
-     * file, see <a href=
+     * JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
+     * configuration file, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      * >Configure model explainability parameters</a>.
      * </p>
@@ -92,14 +92,14 @@ public class ModelExplainabilityAppSpecification implements Serializable, Clonea
 
     /**
      * <p>
-     * JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration
-     * file, see <a href=
+     * JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
+     * configuration file, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      * >Configure model explainability parameters</a>.
      * </p>
      * 
      * @param configUri
-     *        JSON formatted S3 file that defines explainability parameters. For more information on this JSON
+     *        JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
      *        configuration file, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      *        >Configure model explainability parameters</a>.
@@ -111,13 +111,13 @@ public class ModelExplainabilityAppSpecification implements Serializable, Clonea
 
     /**
      * <p>
-     * JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration
-     * file, see <a href=
+     * JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
+     * configuration file, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      * >Configure model explainability parameters</a>.
      * </p>
      * 
-     * @return JSON formatted S3 file that defines explainability parameters. For more information on this JSON
+     * @return JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
      *         configuration file, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      *         >Configure model explainability parameters</a>.
@@ -129,14 +129,14 @@ public class ModelExplainabilityAppSpecification implements Serializable, Clonea
 
     /**
      * <p>
-     * JSON formatted S3 file that defines explainability parameters. For more information on this JSON configuration
-     * file, see <a href=
+     * JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
+     * configuration file, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      * >Configure model explainability parameters</a>.
      * </p>
      * 
      * @param configUri
-     *        JSON formatted S3 file that defines explainability parameters. For more information on this JSON
+     *        JSON formatted Amazon S3 file that defines explainability parameters. For more information on this JSON
      *        configuration file, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html"
      *        >Configure model explainability parameters</a>.

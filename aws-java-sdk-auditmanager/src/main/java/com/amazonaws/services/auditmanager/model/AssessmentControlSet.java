@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
     private String description;
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      */
     private String status;
@@ -162,11 +162,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the control set.
+     *        The current status of the control set.
      * @see ControlSetStatus
      */
 
@@ -176,10 +176,10 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
-     * @return Specifies the current status of the control set.
+     * @return The current status of the control set.
      * @see ControlSetStatus
      */
 
@@ -189,11 +189,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the control set.
+     *        The current status of the control set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlSetStatus
      */
@@ -205,11 +205,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies the current status of the control set.
+     * The current status of the control set.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the control set.
+     *        The current status of the control set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlSetStatus
      */
@@ -528,11 +528,11 @@ public class AssessmentControlSet implements Serializable, Cloneable, Structured
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRoles() != null)
-            sb.append("Roles: ").append(getRoles()).append(",");
+            sb.append("Roles: ").append("***Sensitive Data Redacted***").append(",");
         if (getControls() != null)
             sb.append("Controls: ").append(getControls()).append(",");
         if (getDelegations() != null)
-            sb.append("Delegations: ").append(getDelegations()).append(",");
+            sb.append("Delegations: ").append("***Sensitive Data Redacted***").append(",");
         if (getSystemEvidenceCount() != null)
             sb.append("SystemEvidenceCount: ").append(getSystemEvidenceCount()).append(",");
         if (getManualEvidenceCount() != null)

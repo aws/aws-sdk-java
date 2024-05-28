@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,40 +15,44 @@ package com.amazonaws.services.sqs.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetQueueUrlRequest Marshaller
+ * GetQueueUrlRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetQueueUrlRequestMarshaller implements Marshaller<Request<GetQueueUrlRequest>, GetQueueUrlRequest> {
+@SdkInternalApi
+public class GetQueueUrlRequestMarshaller {
 
-    public Request<GetQueueUrlRequest> marshall(GetQueueUrlRequest getQueueUrlRequest) {
+    private static final MarshallingInfo<String> QUEUENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueName").build();
+    private static final MarshallingInfo<String> QUEUEOWNERAWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueueOwnerAWSAccountId").build();
+
+    private static final GetQueueUrlRequestMarshaller instance = new GetQueueUrlRequestMarshaller();
+
+    public static GetQueueUrlRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetQueueUrlRequest getQueueUrlRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getQueueUrlRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetQueueUrlRequest> request = new DefaultRequest<GetQueueUrlRequest>(getQueueUrlRequest, "AmazonSQS");
-        request.addParameter("Action", "GetQueueUrl");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (getQueueUrlRequest.getQueueName() != null) {
-            request.addParameter("QueueName", StringUtils.fromString(getQueueUrlRequest.getQueueName()));
+        try {
+            protocolMarshaller.marshall(getQueueUrlRequest.getQueueName(), QUEUENAME_BINDING);
+            protocolMarshaller.marshall(getQueueUrlRequest.getQueueOwnerAWSAccountId(), QUEUEOWNERAWSACCOUNTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getQueueUrlRequest.getQueueOwnerAWSAccountId() != null) {
-            request.addParameter("QueueOwnerAWSAccountId", StringUtils.fromString(getQueueUrlRequest.getQueueOwnerAWSAccountId()));
-        }
-
-        return request;
     }
 
 }

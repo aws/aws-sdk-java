@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,7 +93,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      */
     private java.util.Date initiationTimestamp;
@@ -111,10 +113,70 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     */
+    private java.util.Date lastPausedTimestamp;
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     */
+    private java.util.Date lastResumedTimestamp;
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     */
+    private Integer totalPauseCount;
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     */
+    private Integer totalPauseDurationInSeconds;
+    /**
+     * <p>
      * The timestamp, in Unix epoch time format, at which to start running the inbound flow.
      * </p>
      */
     private java.util.Date scheduledTimestamp;
+    /**
+     * <p>
+     * The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.
+     * </p>
+     */
+    private String relatedContactId;
+    /**
+     * <p>
+     * Information about Amazon Connect Wisdom.
+     * </p>
+     */
+    private WisdomInfo wisdomInfo;
+    /**
+     * <p>
+     * An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue
+     * time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.
+     * </p>
+     */
+    private Integer queueTimeAdjustmentSeconds;
+    /**
+     * <p>
+     * An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     * preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined,
+     * must be larger than zero, and a valid integer value. Default Value is 5.
+     * </p>
+     */
+    private Long queuePriority;
+    /**
+     * <p>
+     * Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -559,7 +621,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      * 
      * @param initiationTimestamp
@@ -567,7 +631,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      *        contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For
      *        <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and
      *        <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when
-     *        the request arrived.
+     *        the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     *        external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a
+     *        contact.
      */
 
     public void setInitiationTimestamp(java.util.Date initiationTimestamp) {
@@ -579,14 +645,18 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      * 
      * @return The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the
      *         contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For
      *         <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and
      *         <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when
-     *         the request arrived.
+     *         the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     *         external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a
+     *         contact.
      */
 
     public java.util.Date getInitiationTimestamp() {
@@ -598,7 +668,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      * The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact
      * arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
      * the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the
-     * transfer was initiated. For <code>API</code>, this is when the request arrived.
+     * transfer was initiated. For <code>API</code>, this is when the request arrived. For
+     * <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For
+     * <code>MONITOR</code>, this is when the supervisor started listening to a contact.
      * </p>
      * 
      * @param initiationTimestamp
@@ -606,7 +678,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
      *        contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For
      *        <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and
      *        <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when
-     *        the request arrived.
+     *        the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the
+     *        external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a
+     *        contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -697,6 +771,166 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     * 
+     * @param lastPausedTimestamp
+     *        The timestamp when the contact was last paused.
+     */
+
+    public void setLastPausedTimestamp(java.util.Date lastPausedTimestamp) {
+        this.lastPausedTimestamp = lastPausedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     * 
+     * @return The timestamp when the contact was last paused.
+     */
+
+    public java.util.Date getLastPausedTimestamp() {
+        return this.lastPausedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     * 
+     * @param lastPausedTimestamp
+     *        The timestamp when the contact was last paused.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withLastPausedTimestamp(java.util.Date lastPausedTimestamp) {
+        setLastPausedTimestamp(lastPausedTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     * 
+     * @param lastResumedTimestamp
+     *        The timestamp when the contact was last resumed.
+     */
+
+    public void setLastResumedTimestamp(java.util.Date lastResumedTimestamp) {
+        this.lastResumedTimestamp = lastResumedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     * 
+     * @return The timestamp when the contact was last resumed.
+     */
+
+    public java.util.Date getLastResumedTimestamp() {
+        return this.lastResumedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     * 
+     * @param lastResumedTimestamp
+     *        The timestamp when the contact was last resumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withLastResumedTimestamp(java.util.Date lastResumedTimestamp) {
+        setLastResumedTimestamp(lastResumedTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     * 
+     * @param totalPauseCount
+     *        Total pause count for a contact.
+     */
+
+    public void setTotalPauseCount(Integer totalPauseCount) {
+        this.totalPauseCount = totalPauseCount;
+    }
+
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     * 
+     * @return Total pause count for a contact.
+     */
+
+    public Integer getTotalPauseCount() {
+        return this.totalPauseCount;
+    }
+
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     * 
+     * @param totalPauseCount
+     *        Total pause count for a contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withTotalPauseCount(Integer totalPauseCount) {
+        setTotalPauseCount(totalPauseCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @param totalPauseDurationInSeconds
+     *        Total pause duration for a contact in seconds.
+     */
+
+    public void setTotalPauseDurationInSeconds(Integer totalPauseDurationInSeconds) {
+        this.totalPauseDurationInSeconds = totalPauseDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @return Total pause duration for a contact in seconds.
+     */
+
+    public Integer getTotalPauseDurationInSeconds() {
+        return this.totalPauseDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @param totalPauseDurationInSeconds
+     *        Total pause duration for a contact in seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withTotalPauseDurationInSeconds(Integer totalPauseDurationInSeconds) {
+        setTotalPauseDurationInSeconds(totalPauseDurationInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp, in Unix epoch time format, at which to start running the inbound flow.
      * </p>
      * 
@@ -736,6 +970,270 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.
+     * </p>
+     * 
+     * @param relatedContactId
+     *        The contactId that is <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid"
+     *        >related</a> to this contact.
+     */
+
+    public void setRelatedContactId(String relatedContactId) {
+        this.relatedContactId = relatedContactId;
+    }
+
+    /**
+     * <p>
+     * The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.
+     * </p>
+     * 
+     * @return The contactId that is <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid"
+     *         >related</a> to this contact.
+     */
+
+    public String getRelatedContactId() {
+        return this.relatedContactId;
+    }
+
+    /**
+     * <p>
+     * The contactId that is <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a>
+     * to this contact.
+     * </p>
+     * 
+     * @param relatedContactId
+     *        The contactId that is <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid"
+     *        >related</a> to this contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withRelatedContactId(String relatedContactId) {
+        setRelatedContactId(relatedContactId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about Amazon Connect Wisdom.
+     * </p>
+     * 
+     * @param wisdomInfo
+     *        Information about Amazon Connect Wisdom.
+     */
+
+    public void setWisdomInfo(WisdomInfo wisdomInfo) {
+        this.wisdomInfo = wisdomInfo;
+    }
+
+    /**
+     * <p>
+     * Information about Amazon Connect Wisdom.
+     * </p>
+     * 
+     * @return Information about Amazon Connect Wisdom.
+     */
+
+    public WisdomInfo getWisdomInfo() {
+        return this.wisdomInfo;
+    }
+
+    /**
+     * <p>
+     * Information about Amazon Connect Wisdom.
+     * </p>
+     * 
+     * @param wisdomInfo
+     *        Information about Amazon Connect Wisdom.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withWisdomInfo(WisdomInfo wisdomInfo) {
+        setWisdomInfo(wisdomInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue
+     * time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.
+     * </p>
+     * 
+     * @param queueTimeAdjustmentSeconds
+     *        An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger
+     *        queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be
+     *        statically defined and a valid integer value.
+     */
+
+    public void setQueueTimeAdjustmentSeconds(Integer queueTimeAdjustmentSeconds) {
+        this.queueTimeAdjustmentSeconds = queueTimeAdjustmentSeconds;
+    }
+
+    /**
+     * <p>
+     * An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue
+     * time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.
+     * </p>
+     * 
+     * @return An integer that represents the queue time adjust to be applied to the contact, in seconds (longer /
+     *         larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must
+     *         be statically defined and a valid integer value.
+     */
+
+    public Integer getQueueTimeAdjustmentSeconds() {
+        return this.queueTimeAdjustmentSeconds;
+    }
+
+    /**
+     * <p>
+     * An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue
+     * time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically
+     * defined and a valid integer value.
+     * </p>
+     * 
+     * @param queueTimeAdjustmentSeconds
+     *        An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger
+     *        queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be
+     *        statically defined and a valid integer value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withQueueTimeAdjustmentSeconds(Integer queueTimeAdjustmentSeconds) {
+        setQueueTimeAdjustmentSeconds(queueTimeAdjustmentSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     * preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined,
+     * must be larger than zero, and a valid integer value. Default Value is 5.
+     * </p>
+     * 
+     * @param queuePriority
+     *        An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     *        preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically
+     *        defined, must be larger than zero, and a valid integer value. Default Value is 5.
+     */
+
+    public void setQueuePriority(Long queuePriority) {
+        this.queuePriority = queuePriority;
+    }
+
+    /**
+     * <p>
+     * An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     * preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined,
+     * must be larger than zero, and a valid integer value. Default Value is 5.
+     * </p>
+     * 
+     * @return An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     *         preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically
+     *         defined, must be larger than zero, and a valid integer value. Default Value is 5.
+     */
+
+    public Long getQueuePriority() {
+        return this.queuePriority;
+    }
+
+    /**
+     * <p>
+     * An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     * preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined,
+     * must be larger than zero, and a valid integer value. Default Value is 5.
+     * </p>
+     * 
+     * @param queuePriority
+     *        An integer that represents the queue priority to be applied to the contact (lower priorities are routed
+     *        preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically
+     *        defined, must be larger than zero, and a valid integer value. Default Value is 5.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withQueuePriority(Long queuePriority) {
+        setQueuePriority(queuePriority);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     * </p>
+     * 
+     * @return Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     * </p>
+     * 
+     * @param tags
+     *        Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     * </p>
+     * 
+     * @param tags
+     *        Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Contact#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -758,9 +1256,9 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
         if (getInitiationMethod() != null)
             sb.append("InitiationMethod: ").append(getInitiationMethod()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getChannel() != null)
             sb.append("Channel: ").append(getChannel()).append(",");
         if (getQueueInfo() != null)
@@ -773,8 +1271,26 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
             sb.append("DisconnectTimestamp: ").append(getDisconnectTimestamp()).append(",");
         if (getLastUpdateTimestamp() != null)
             sb.append("LastUpdateTimestamp: ").append(getLastUpdateTimestamp()).append(",");
+        if (getLastPausedTimestamp() != null)
+            sb.append("LastPausedTimestamp: ").append(getLastPausedTimestamp()).append(",");
+        if (getLastResumedTimestamp() != null)
+            sb.append("LastResumedTimestamp: ").append(getLastResumedTimestamp()).append(",");
+        if (getTotalPauseCount() != null)
+            sb.append("TotalPauseCount: ").append(getTotalPauseCount()).append(",");
+        if (getTotalPauseDurationInSeconds() != null)
+            sb.append("TotalPauseDurationInSeconds: ").append(getTotalPauseDurationInSeconds()).append(",");
         if (getScheduledTimestamp() != null)
-            sb.append("ScheduledTimestamp: ").append(getScheduledTimestamp());
+            sb.append("ScheduledTimestamp: ").append(getScheduledTimestamp()).append(",");
+        if (getRelatedContactId() != null)
+            sb.append("RelatedContactId: ").append(getRelatedContactId()).append(",");
+        if (getWisdomInfo() != null)
+            sb.append("WisdomInfo: ").append(getWisdomInfo()).append(",");
+        if (getQueueTimeAdjustmentSeconds() != null)
+            sb.append("QueueTimeAdjustmentSeconds: ").append(getQueueTimeAdjustmentSeconds()).append(",");
+        if (getQueuePriority() != null)
+            sb.append("QueuePriority: ").append(getQueuePriority()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -841,9 +1357,45 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdateTimestamp() != null && other.getLastUpdateTimestamp().equals(this.getLastUpdateTimestamp()) == false)
             return false;
+        if (other.getLastPausedTimestamp() == null ^ this.getLastPausedTimestamp() == null)
+            return false;
+        if (other.getLastPausedTimestamp() != null && other.getLastPausedTimestamp().equals(this.getLastPausedTimestamp()) == false)
+            return false;
+        if (other.getLastResumedTimestamp() == null ^ this.getLastResumedTimestamp() == null)
+            return false;
+        if (other.getLastResumedTimestamp() != null && other.getLastResumedTimestamp().equals(this.getLastResumedTimestamp()) == false)
+            return false;
+        if (other.getTotalPauseCount() == null ^ this.getTotalPauseCount() == null)
+            return false;
+        if (other.getTotalPauseCount() != null && other.getTotalPauseCount().equals(this.getTotalPauseCount()) == false)
+            return false;
+        if (other.getTotalPauseDurationInSeconds() == null ^ this.getTotalPauseDurationInSeconds() == null)
+            return false;
+        if (other.getTotalPauseDurationInSeconds() != null && other.getTotalPauseDurationInSeconds().equals(this.getTotalPauseDurationInSeconds()) == false)
+            return false;
         if (other.getScheduledTimestamp() == null ^ this.getScheduledTimestamp() == null)
             return false;
         if (other.getScheduledTimestamp() != null && other.getScheduledTimestamp().equals(this.getScheduledTimestamp()) == false)
+            return false;
+        if (other.getRelatedContactId() == null ^ this.getRelatedContactId() == null)
+            return false;
+        if (other.getRelatedContactId() != null && other.getRelatedContactId().equals(this.getRelatedContactId()) == false)
+            return false;
+        if (other.getWisdomInfo() == null ^ this.getWisdomInfo() == null)
+            return false;
+        if (other.getWisdomInfo() != null && other.getWisdomInfo().equals(this.getWisdomInfo()) == false)
+            return false;
+        if (other.getQueueTimeAdjustmentSeconds() == null ^ this.getQueueTimeAdjustmentSeconds() == null)
+            return false;
+        if (other.getQueueTimeAdjustmentSeconds() != null && other.getQueueTimeAdjustmentSeconds().equals(this.getQueueTimeAdjustmentSeconds()) == false)
+            return false;
+        if (other.getQueuePriority() == null ^ this.getQueuePriority() == null)
+            return false;
+        if (other.getQueuePriority() != null && other.getQueuePriority().equals(this.getQueuePriority()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -866,7 +1418,16 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInitiationTimestamp() == null) ? 0 : getInitiationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimestamp() == null) ? 0 : getDisconnectTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTimestamp() == null) ? 0 : getLastUpdateTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastPausedTimestamp() == null) ? 0 : getLastPausedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastResumedTimestamp() == null) ? 0 : getLastResumedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getTotalPauseCount() == null) ? 0 : getTotalPauseCount().hashCode());
+        hashCode = prime * hashCode + ((getTotalPauseDurationInSeconds() == null) ? 0 : getTotalPauseDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getScheduledTimestamp() == null) ? 0 : getScheduledTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getRelatedContactId() == null) ? 0 : getRelatedContactId().hashCode());
+        hashCode = prime * hashCode + ((getWisdomInfo() == null) ? 0 : getWisdomInfo().hashCode());
+        hashCode = prime * hashCode + ((getQueueTimeAdjustmentSeconds() == null) ? 0 : getQueueTimeAdjustmentSeconds().hashCode());
+        hashCode = prime * hashCode + ((getQueuePriority() == null) ? 0 : getQueuePriority().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback
-     * API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      */
     private String queryId;
@@ -37,14 +37,14 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     private java.util.List<QueryResultItem> resultItems;
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      */
     private java.util.List<FacetResult> facetResults;
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      */
@@ -67,16 +67,25 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * </p>
      */
     private java.util.List<SpellCorrectedQuery> spellCorrectedQueries;
+    /**
+     * <p>
+     * The list of featured result items. Featured results are displayed at the top of the search results page, placed
+     * above all other results for certain queries. If there's an exact match of a query, then certain documents are
+     * featured in the search results.
+     * </p>
+     */
+    private java.util.List<FeaturedResultsItem> featuredResultsItems;
 
     /**
      * <p>
-     * The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback
-     * API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      * 
      * @param queryId
-     *        The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the
-     *        feedback API.
+     *        The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     *        API.
      */
 
     public void setQueryId(String queryId) {
@@ -85,12 +94,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback
-     * API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      * 
-     * @return The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the
-     *         feedback API.
+     * @return The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     *         API.
      */
 
     public String getQueryId() {
@@ -99,13 +109,14 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback
-     * API.
+     * The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.
      * </p>
      * 
      * @param queryId
-     *        The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the
-     *        feedback API.
+     *        The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,12 +197,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * 
-     * @return Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that
-     *         was specified in the <code>Facets</code> input parameter.
+     * @return Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *         that was specified in the <code>Facets</code> input parameter.
      */
 
     public java.util.List<FacetResult> getFacetResults() {
@@ -200,13 +211,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * 
      * @param facetResults
-     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
-     *        specified in the <code>Facets</code> input parameter.
+     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *        that was specified in the <code>Facets</code> input parameter.
      */
 
     public void setFacetResults(java.util.Collection<FacetResult> facetResults) {
@@ -220,7 +231,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * <p>
@@ -230,8 +241,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * </p>
      * 
      * @param facetResults
-     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
-     *        specified in the <code>Facets</code> input parameter.
+     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *        that was specified in the <code>Facets</code> input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,13 +258,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
+     * Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was
      * specified in the <code>Facets</code> input parameter.
      * </p>
      * 
      * @param facetResults
-     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was
-     *        specified in the <code>Facets</code> input parameter.
+     *        Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key
+     *        that was specified in the <code>Facets</code> input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,12 +275,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
      * @param totalNumberOfResults
-     *        The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *        The total number of items found by the search. However, you can only retrieve up to 100 items. For
      *        example, if the search found 192 items, you can only retrieve the first 100 of the items.
      */
 
@@ -279,11 +290,11 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
-     * @return The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     * @return The total number of items found by the search. However, you can only retrieve up to 100 items. For
      *         example, if the search found 192 items, you can only retrieve the first 100 of the items.
      */
 
@@ -293,12 +304,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if
      * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
      * @param totalNumberOfResults
-     *        The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *        The total number of items found by the search. However, you can only retrieve up to 100 items. For
      *        example, if the search found 192 items, you can only retrieve the first 100 of the items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -493,6 +504,92 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
+     * <p>
+     * The list of featured result items. Featured results are displayed at the top of the search results page, placed
+     * above all other results for certain queries. If there's an exact match of a query, then certain documents are
+     * featured in the search results.
+     * </p>
+     * 
+     * @return The list of featured result items. Featured results are displayed at the top of the search results page,
+     *         placed above all other results for certain queries. If there's an exact match of a query, then certain
+     *         documents are featured in the search results.
+     */
+
+    public java.util.List<FeaturedResultsItem> getFeaturedResultsItems() {
+        return featuredResultsItems;
+    }
+
+    /**
+     * <p>
+     * The list of featured result items. Featured results are displayed at the top of the search results page, placed
+     * above all other results for certain queries. If there's an exact match of a query, then certain documents are
+     * featured in the search results.
+     * </p>
+     * 
+     * @param featuredResultsItems
+     *        The list of featured result items. Featured results are displayed at the top of the search results page,
+     *        placed above all other results for certain queries. If there's an exact match of a query, then certain
+     *        documents are featured in the search results.
+     */
+
+    public void setFeaturedResultsItems(java.util.Collection<FeaturedResultsItem> featuredResultsItems) {
+        if (featuredResultsItems == null) {
+            this.featuredResultsItems = null;
+            return;
+        }
+
+        this.featuredResultsItems = new java.util.ArrayList<FeaturedResultsItem>(featuredResultsItems);
+    }
+
+    /**
+     * <p>
+     * The list of featured result items. Featured results are displayed at the top of the search results page, placed
+     * above all other results for certain queries. If there's an exact match of a query, then certain documents are
+     * featured in the search results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeaturedResultsItems(java.util.Collection)} or {@link #withFeaturedResultsItems(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param featuredResultsItems
+     *        The list of featured result items. Featured results are displayed at the top of the search results page,
+     *        placed above all other results for certain queries. If there's an exact match of a query, then certain
+     *        documents are featured in the search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResult withFeaturedResultsItems(FeaturedResultsItem... featuredResultsItems) {
+        if (this.featuredResultsItems == null) {
+            setFeaturedResultsItems(new java.util.ArrayList<FeaturedResultsItem>(featuredResultsItems.length));
+        }
+        for (FeaturedResultsItem ele : featuredResultsItems) {
+            this.featuredResultsItems.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of featured result items. Featured results are displayed at the top of the search results page, placed
+     * above all other results for certain queries. If there's an exact match of a query, then certain documents are
+     * featured in the search results.
+     * </p>
+     * 
+     * @param featuredResultsItems
+     *        The list of featured result items. Featured results are displayed at the top of the search results page,
+     *        placed above all other results for certain queries. If there's an exact match of a query, then certain
+     *        documents are featured in the search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResult withFeaturedResultsItems(java.util.Collection<FeaturedResultsItem> featuredResultsItems) {
+        setFeaturedResultsItems(featuredResultsItems);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -515,7 +612,9 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         if (getWarnings() != null)
             sb.append("Warnings: ").append(getWarnings()).append(",");
         if (getSpellCorrectedQueries() != null)
-            sb.append("SpellCorrectedQueries: ").append(getSpellCorrectedQueries());
+            sb.append("SpellCorrectedQueries: ").append(getSpellCorrectedQueries()).append(",");
+        if (getFeaturedResultsItems() != null)
+            sb.append("FeaturedResultsItems: ").append(getFeaturedResultsItems());
         sb.append("}");
         return sb.toString();
     }
@@ -554,6 +653,10 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
             return false;
         if (other.getSpellCorrectedQueries() != null && other.getSpellCorrectedQueries().equals(this.getSpellCorrectedQueries()) == false)
             return false;
+        if (other.getFeaturedResultsItems() == null ^ this.getFeaturedResultsItems() == null)
+            return false;
+        if (other.getFeaturedResultsItems() != null && other.getFeaturedResultsItems().equals(this.getFeaturedResultsItems()) == false)
+            return false;
         return true;
     }
 
@@ -568,6 +671,7 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         hashCode = prime * hashCode + ((getTotalNumberOfResults() == null) ? 0 : getTotalNumberOfResults().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode + ((getSpellCorrectedQueries() == null) ? 0 : getSpellCorrectedQueries().hashCode());
+        hashCode = prime * hashCode + ((getFeaturedResultsItems() == null) ? 0 : getFeaturedResultsItems().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AvailConfiguration implements Serializable, Cloneable, StructuredPojo {
 
-    /** Ad avail settings. */
+    /**
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With
+     * Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM
+     * mode, signals are forwarded to an ESAM server for possible update.
+     */
     private AvailSettings availSettings;
+    /**
+     * Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented outputs.
+     * Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular cadence of
+     * breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if any).
+     * 
+     * ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs. This is
+     * the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups that have SCTE
+     * 35 passthrough enabled. This is the recommended value, because it reduces unnecessary segment breaks.
+     */
+    private String scte35SegmentationScope;
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With
+     * Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM
+     * mode, signals are forwarded to an ESAM server for possible update.
      * 
      * @param availSettings
-     *        Ad avail settings.
+     *        Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals
+     *        traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create
+     *        segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
      */
 
     public void setAvailSettings(AvailSettings availSettings) {
@@ -41,9 +59,13 @@ public class AvailConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With
+     * Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM
+     * mode, signals are forwarded to an ESAM server for possible update.
      * 
-     * @return Ad avail settings.
+     * @return Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals
+     *         traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages
+     *         create segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
      */
 
     public AvailSettings getAvailSettings() {
@@ -51,15 +73,126 @@ public class AvailConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Ad avail settings.
+     * Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals traditionally. With
+     * Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create segment breaks. With ESAM
+     * mode, signals are forwarded to an ESAM server for possible update.
      * 
      * @param availSettings
-     *        Ad avail settings.
+     *        Controls how SCTE-35 messages create cues. Splice Insert mode treats all segmentation signals
+     *        traditionally. With Time Signal APOS mode only Time Signal Placement Opportunity and Break messages create
+     *        segment breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AvailConfiguration withAvailSettings(AvailSettings availSettings) {
         setAvailSettings(availSettings);
+        return this;
+    }
+
+    /**
+     * Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented outputs.
+     * Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular cadence of
+     * breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if any).
+     * 
+     * ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs. This is
+     * the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups that have SCTE
+     * 35 passthrough enabled. This is the recommended value, because it reduces unnecessary segment breaks.
+     * 
+     * @param scte35SegmentationScope
+     *        Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented
+     *        outputs. Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular
+     *        cadence of breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if
+     *        any).
+     * 
+     *        ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs.
+     *        This is the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups
+     *        that have SCTE 35 passthrough enabled. This is the recommended value, because it reduces unnecessary
+     *        segment breaks.
+     * @see Scte35SegmentationScope
+     */
+
+    public void setScte35SegmentationScope(String scte35SegmentationScope) {
+        this.scte35SegmentationScope = scte35SegmentationScope;
+    }
+
+    /**
+     * Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented outputs.
+     * Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular cadence of
+     * breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if any).
+     * 
+     * ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs. This is
+     * the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups that have SCTE
+     * 35 passthrough enabled. This is the recommended value, because it reduces unnecessary segment breaks.
+     * 
+     * @return Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented
+     *         outputs. Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular
+     *         cadence of breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if
+     *         any).
+     * 
+     *         ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs.
+     *         This is the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups
+     *         that have SCTE 35 passthrough enabled. This is the recommended value, because it reduces unnecessary
+     *         segment breaks.
+     * @see Scte35SegmentationScope
+     */
+
+    public String getScte35SegmentationScope() {
+        return this.scte35SegmentationScope;
+    }
+
+    /**
+     * Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented outputs.
+     * Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular cadence of
+     * breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if any).
+     * 
+     * ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs. This is
+     * the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups that have SCTE
+     * 35 passthrough enabled. This is the recommended value, because it reduces unnecessary segment breaks.
+     * 
+     * @param scte35SegmentationScope
+     *        Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented
+     *        outputs. Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular
+     *        cadence of breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if
+     *        any).
+     * 
+     *        ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs.
+     *        This is the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups
+     *        that have SCTE 35 passthrough enabled. This is the recommended value, because it reduces unnecessary
+     *        segment breaks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scte35SegmentationScope
+     */
+
+    public AvailConfiguration withScte35SegmentationScope(String scte35SegmentationScope) {
+        setScte35SegmentationScope(scte35SegmentationScope);
+        return this;
+    }
+
+    /**
+     * Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented outputs.
+     * Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular cadence of
+     * breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if any).
+     * 
+     * ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs. This is
+     * the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups that have SCTE
+     * 35 passthrough enabled. This is the recommended value, because it reduces unnecessary segment breaks.
+     * 
+     * @param scte35SegmentationScope
+     *        Configures whether SCTE 35 passthrough triggers segment breaks in all output groups that use segmented
+     *        outputs. Insertion of a SCTE 35 message typically results in a segment break, in addition to the regular
+     *        cadence of breaks. The segment breaks appear in video outputs, audio outputs, and captions outputs (if
+     *        any).
+     * 
+     *        ALL_OUTPUT_GROUPS: Default. Insert the segment break in in all output groups that have segmented outputs.
+     *        This is the legacy behavior. SCTE35_ENABLED_OUTPUT_GROUPS: Insert the segment break only in output groups
+     *        that have SCTE 35 passthrough enabled. This is the recommended value, because it reduces unnecessary
+     *        segment breaks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scte35SegmentationScope
+     */
+
+    public AvailConfiguration withScte35SegmentationScope(Scte35SegmentationScope scte35SegmentationScope) {
+        this.scte35SegmentationScope = scte35SegmentationScope.toString();
         return this;
     }
 
@@ -76,7 +209,9 @@ public class AvailConfiguration implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailSettings() != null)
-            sb.append("AvailSettings: ").append(getAvailSettings());
+            sb.append("AvailSettings: ").append(getAvailSettings()).append(",");
+        if (getScte35SegmentationScope() != null)
+            sb.append("Scte35SegmentationScope: ").append(getScte35SegmentationScope());
         sb.append("}");
         return sb.toString();
     }
@@ -95,6 +230,10 @@ public class AvailConfiguration implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAvailSettings() != null && other.getAvailSettings().equals(this.getAvailSettings()) == false)
             return false;
+        if (other.getScte35SegmentationScope() == null ^ this.getScte35SegmentationScope() == null)
+            return false;
+        if (other.getScte35SegmentationScope() != null && other.getScte35SegmentationScope().equals(this.getScte35SegmentationScope()) == false)
+            return false;
         return true;
     }
 
@@ -104,6 +243,7 @@ public class AvailConfiguration implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailSettings() == null) ? 0 : getAvailSettings().hashCode());
+        hashCode = prime * hashCode + ((getScte35SegmentationScope() == null) ? 0 : getScte35SegmentationScope().hashCode());
         return hashCode;
     }
 

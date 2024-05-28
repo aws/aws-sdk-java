@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ActionExecutionResultMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalExecutionSummary").build();
     private static final MarshallingInfo<String> EXTERNALEXECUTIONURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalExecutionUrl").build();
+    private static final MarshallingInfo<StructuredPojo> ERRORDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorDetails").build();
 
     private static final ActionExecutionResultMarshaller instance = new ActionExecutionResultMarshaller();
 
@@ -53,6 +55,7 @@ public class ActionExecutionResultMarshaller {
             protocolMarshaller.marshall(actionExecutionResult.getExternalExecutionId(), EXTERNALEXECUTIONID_BINDING);
             protocolMarshaller.marshall(actionExecutionResult.getExternalExecutionSummary(), EXTERNALEXECUTIONSUMMARY_BINDING);
             protocolMarshaller.marshall(actionExecutionResult.getExternalExecutionUrl(), EXTERNALEXECUTIONURL_BINDING);
+            protocolMarshaller.marshall(actionExecutionResult.getErrorDetails(), ERRORDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class ExportResourceSpecification implements Serializable, Cloneable, Str
      * </p>
      */
     private CustomVocabularyExportSpecification customVocabularyExportSpecification;
+    /**
+     * <p>
+     * Specifications for the test set that is exported as a resource.
+     * </p>
+     */
+    private TestSetExportSpecification testSetExportSpecification;
 
     /**
      * <p>
@@ -169,6 +175,46 @@ public class ExportResourceSpecification implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Specifications for the test set that is exported as a resource.
+     * </p>
+     * 
+     * @param testSetExportSpecification
+     *        Specifications for the test set that is exported as a resource.
+     */
+
+    public void setTestSetExportSpecification(TestSetExportSpecification testSetExportSpecification) {
+        this.testSetExportSpecification = testSetExportSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifications for the test set that is exported as a resource.
+     * </p>
+     * 
+     * @return Specifications for the test set that is exported as a resource.
+     */
+
+    public TestSetExportSpecification getTestSetExportSpecification() {
+        return this.testSetExportSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifications for the test set that is exported as a resource.
+     * </p>
+     * 
+     * @param testSetExportSpecification
+     *        Specifications for the test set that is exported as a resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportResourceSpecification withTestSetExportSpecification(TestSetExportSpecification testSetExportSpecification) {
+        setTestSetExportSpecification(testSetExportSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +231,9 @@ public class ExportResourceSpecification implements Serializable, Cloneable, Str
         if (getBotLocaleExportSpecification() != null)
             sb.append("BotLocaleExportSpecification: ").append(getBotLocaleExportSpecification()).append(",");
         if (getCustomVocabularyExportSpecification() != null)
-            sb.append("CustomVocabularyExportSpecification: ").append(getCustomVocabularyExportSpecification());
+            sb.append("CustomVocabularyExportSpecification: ").append(getCustomVocabularyExportSpecification()).append(",");
+        if (getTestSetExportSpecification() != null)
+            sb.append("TestSetExportSpecification: ").append(getTestSetExportSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +261,10 @@ public class ExportResourceSpecification implements Serializable, Cloneable, Str
         if (other.getCustomVocabularyExportSpecification() != null
                 && other.getCustomVocabularyExportSpecification().equals(this.getCustomVocabularyExportSpecification()) == false)
             return false;
+        if (other.getTestSetExportSpecification() == null ^ this.getTestSetExportSpecification() == null)
+            return false;
+        if (other.getTestSetExportSpecification() != null && other.getTestSetExportSpecification().equals(this.getTestSetExportSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +276,7 @@ public class ExportResourceSpecification implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getBotExportSpecification() == null) ? 0 : getBotExportSpecification().hashCode());
         hashCode = prime * hashCode + ((getBotLocaleExportSpecification() == null) ? 0 : getBotLocaleExportSpecification().hashCode());
         hashCode = prime * hashCode + ((getCustomVocabularyExportSpecification() == null) ? 0 : getCustomVocabularyExportSpecification().hashCode());
+        hashCode = prime * hashCode + ((getTestSetExportSpecification() == null) ? 0 : getTestSetExportSpecification().hashCode());
         return hashCode;
     }
 

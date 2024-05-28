@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,31 +48,31 @@ public class MetricDatumJsonUnmarshaller implements Unmarshaller<MetricDatum, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("MetricName", targetDepth)) {
+                    context.nextToken();
+                    metricDatum.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Timestamp", targetDepth)) {
+                    context.nextToken();
+                    metricDatum.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("Dimensions", targetDepth)) {
                     context.nextToken();
                     metricDatum.setDimensions(new ListUnmarshaller<Dimension>(DimensionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("MetricName", targetDepth)) {
+                if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    metricDatum.setMetricName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("StatisticValues", targetDepth)) {
-                    context.nextToken();
-                    metricDatum.setStatisticValues(StatisticSetJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("Timestamp", targetDepth)) {
-                    context.nextToken();
-                    metricDatum.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    metricDatum.setValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Unit", targetDepth)) {
                     context.nextToken();
                     metricDatum.setUnit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Value", targetDepth)) {
+                if (context.testExpression("StatisticValues", targetDepth)) {
                     context.nextToken();
-                    metricDatum.setValue(context.getUnmarshaller(Double.class).unmarshall(context));
+                    metricDatum.setStatisticValues(StatisticSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

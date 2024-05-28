@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,25 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String clusterId;
+    /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     */
+    private RedshiftIAMParameters iAMParameters;
+    /**
+     * <p>
+     * An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to
+     * your cluster.
+     * </p>
+     * <p>
+     * This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.
+     * </p>
+     */
+    private IdentityCenterConfiguration identityCenterConfiguration;
 
     /**
      * <p>
@@ -216,6 +235,128 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     * 
+     * @param iAMParameters
+     *        An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     *        parameter can be used instead of <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     *        >DataSourceCredentials</a>.
+     */
+
+    public void setIAMParameters(RedshiftIAMParameters iAMParameters) {
+        this.iAMParameters = iAMParameters;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     * 
+     * @return An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster.
+     *         This parameter can be used instead of <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     *         >DataSourceCredentials</a>.
+     */
+
+    public RedshiftIAMParameters getIAMParameters() {
+        return this.iAMParameters;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     * parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     * >DataSourceCredentials</a>.
+     * </p>
+     * 
+     * @param iAMParameters
+     *        An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This
+     *        parameter can be used instead of <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html"
+     *        >DataSourceCredentials</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftParameters withIAMParameters(RedshiftIAMParameters iAMParameters) {
+        setIAMParameters(iAMParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to
+     * your cluster.
+     * </p>
+     * <p>
+     * This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.
+     * </p>
+     * 
+     * @param identityCenterConfiguration
+     *        An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access
+     *        to your cluster.</p>
+     *        <p>
+     *        This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity
+     *        Center.
+     */
+
+    public void setIdentityCenterConfiguration(IdentityCenterConfiguration identityCenterConfiguration) {
+        this.identityCenterConfiguration = identityCenterConfiguration;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to
+     * your cluster.
+     * </p>
+     * <p>
+     * This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.
+     * </p>
+     * 
+     * @return An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight
+     *         access to your cluster.</p>
+     *         <p>
+     *         This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity
+     *         Center.
+     */
+
+    public IdentityCenterConfiguration getIdentityCenterConfiguration() {
+        return this.identityCenterConfiguration;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to
+     * your cluster.
+     * </p>
+     * <p>
+     * This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.
+     * </p>
+     * 
+     * @param identityCenterConfiguration
+     *        An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access
+     *        to your cluster.</p>
+     *        <p>
+     *        This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity
+     *        Center.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftParameters withIdentityCenterConfiguration(IdentityCenterConfiguration identityCenterConfiguration) {
+        setIdentityCenterConfiguration(identityCenterConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,7 +375,11 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
         if (getDatabase() != null)
             sb.append("Database: ").append(getDatabase()).append(",");
         if (getClusterId() != null)
-            sb.append("ClusterId: ").append(getClusterId());
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
+        if (getIAMParameters() != null)
+            sb.append("IAMParameters: ").append(getIAMParameters()).append(",");
+        if (getIdentityCenterConfiguration() != null)
+            sb.append("IdentityCenterConfiguration: ").append(getIdentityCenterConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -265,6 +410,14 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
+        if (other.getIAMParameters() == null ^ this.getIAMParameters() == null)
+            return false;
+        if (other.getIAMParameters() != null && other.getIAMParameters().equals(this.getIAMParameters()) == false)
+            return false;
+        if (other.getIdentityCenterConfiguration() == null ^ this.getIdentityCenterConfiguration() == null)
+            return false;
+        if (other.getIdentityCenterConfiguration() != null && other.getIdentityCenterConfiguration().equals(this.getIdentityCenterConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -277,6 +430,8 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getIAMParameters() == null) ? 0 : getIAMParameters().hashCode());
+        hashCode = prime * hashCode + ((getIdentityCenterConfiguration() == null) ? 0 : getIdentityCenterConfiguration().hashCode());
         return hashCode;
     }
 

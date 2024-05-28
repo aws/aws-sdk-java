@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      */
     private String applicationName;
@@ -168,14 +168,37 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see
+     * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into
+     * your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform
+     * termination deployments.
+     * </p>
+     * <p>
+     * For information about termination deployments, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about Auto Scaling scale-in events, see the <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     * >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
+    private Boolean terminationHookEnabled;
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     *        The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -184,10 +207,10 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * @return The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      */
 
     public String getApplicationName() {
@@ -196,11 +219,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     *        The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1331,6 +1354,198 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see
+     * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into
+     * your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform
+     * termination deployments.
+     * </p>
+     * <p>
+     * For information about termination deployments, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about Auto Scaling scale-in events, see the <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     * >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param terminationHookEnabled
+     *        This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html"
+     *        >Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
+     *        <p>
+     *        Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook
+     *        into your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy
+     *        will perform termination deployments.
+     *        </p>
+     *        <p>
+     *        For information about termination deployments, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *        >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about Auto Scaling scale-in events, see the <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     *        >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public void setTerminationHookEnabled(Boolean terminationHookEnabled) {
+        this.terminationHookEnabled = terminationHookEnabled;
+    }
+
+    /**
+     * <p>
+     * This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see
+     * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into
+     * your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform
+     * termination deployments.
+     * </p>
+     * <p>
+     * For information about termination deployments, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about Auto Scaling scale-in events, see the <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     * >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html"
+     *         >Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
+     *         <p>
+     *         Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination
+     *         hook into your Auto Scaling group when you create a deployment group. When this hook is installed,
+     *         CodeDeploy will perform termination deployments.
+     *         </p>
+     *         <p>
+     *         For information about termination deployments, see <a href=
+     *         "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *         >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about Auto Scaling scale-in events, see the <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     *         >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public Boolean getTerminationHookEnabled() {
+        return this.terminationHookEnabled;
+    }
+
+    /**
+     * <p>
+     * This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see
+     * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into
+     * your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform
+     * termination deployments.
+     * </p>
+     * <p>
+     * For information about termination deployments, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about Auto Scaling scale-in events, see the <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     * >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param terminationHookEnabled
+     *        This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html"
+     *        >Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
+     *        <p>
+     *        Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook
+     *        into your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy
+     *        will perform termination deployments.
+     *        </p>
+     *        <p>
+     *        For information about termination deployments, see <a href=
+     *        "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *        >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about Auto Scaling scale-in events, see the <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     *        >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentGroupRequest withTerminationHookEnabled(Boolean terminationHookEnabled) {
+        setTerminationHookEnabled(terminationHookEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see
+     * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating
+     * CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into
+     * your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform
+     * termination deployments.
+     * </p>
+     * <p>
+     * For information about termination deployments, see <a href=
+     * "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     * >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about Auto Scaling scale-in events, see the <a href=
+     * "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     * >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html"
+     *         >Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
+     *         <p>
+     *         Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination
+     *         hook into your Auto Scaling group when you create a deployment group. When this hook is installed,
+     *         CodeDeploy will perform termination deployments.
+     *         </p>
+     *         <p>
+     *         For information about termination deployments, see <a href=
+     *         "https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable"
+     *         >Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about Auto Scaling scale-in events, see the <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in"
+     *         >Scale in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public Boolean isTerminationHookEnabled() {
+        return this.terminationHookEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1377,7 +1592,9 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         if (getOnPremisesTagSet() != null)
             sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTerminationHookEnabled() != null)
+            sb.append("TerminationHookEnabled: ").append(getTerminationHookEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -1465,6 +1682,10 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTerminationHookEnabled() == null ^ this.getTerminationHookEnabled() == null)
+            return false;
+        if (other.getTerminationHookEnabled() != null && other.getTerminationHookEnabled().equals(this.getTerminationHookEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -1491,6 +1712,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getEcsServices() == null) ? 0 : getEcsServices().hashCode());
         hashCode = prime * hashCode + ((getOnPremisesTagSet() == null) ? 0 : getOnPremisesTagSet().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTerminationHookEnabled() == null) ? 0 : getTerminationHookEnabled().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,10 @@ public class GetDomainResultJsonUnmarshaller implements Unmarshaller<GetDomainRe
                 if (context.testExpression("Matching", targetDepth)) {
                     context.nextToken();
                     getDomainResult.setMatching(MatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RuleBasedMatching", targetDepth)) {
+                    context.nextToken();
+                    getDomainResult.setRuleBasedMatching(RuleBasedMatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();

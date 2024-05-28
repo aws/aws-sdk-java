@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,27 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.List<AppliedExtension> appliedExtensions;
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt
+     * secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or
+     * secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     */
+    private String kmsKeyArn;
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     */
+    private String kmsKeyIdentifier;
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     */
+    private String versionLabel;
 
     /**
      * <p>
@@ -1022,6 +1043,144 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt
+     * secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or
+     * secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can
+     *        encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted
+     *        with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt
+     * secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or
+     * secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can
+     *         encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted
+     *         with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can encrypt
+     * secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted with SSE-KMS, or
+     * secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key used to encrypt configuration data. You can
+     *        encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service (Amazon S3) objects encrypted
+     *        with SSE-KMS, or secure string parameters stored in Amazon Web Services Systems Manager Parameter Store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *        created or updated.
+     */
+
+    public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
+        this.kmsKeyIdentifier = kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     * 
+     * @return The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *         created or updated.
+     */
+
+    public String getKmsKeyIdentifier() {
+        return this.kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *        created or updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withKmsKeyIdentifier(String kmsKeyIdentifier) {
+        setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @return A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1070,7 +1229,13 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getCompletedAt() != null)
             sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getAppliedExtensions() != null)
-            sb.append("AppliedExtensions: ").append(getAppliedExtensions());
+            sb.append("AppliedExtensions: ").append(getAppliedExtensions()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn()).append(",");
+        if (getKmsKeyIdentifier() != null)
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier()).append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -1161,6 +1326,18 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getAppliedExtensions() != null && other.getAppliedExtensions().equals(this.getAppliedExtensions()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
+        if (other.getKmsKeyIdentifier() == null ^ this.getKmsKeyIdentifier() == null)
+            return false;
+        if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
+            return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
         return true;
     }
 
@@ -1188,6 +1365,9 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());
         hashCode = prime * hashCode + ((getAppliedExtensions() == null) ? 0 : getAppliedExtensions().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         return hashCode;
     }
 

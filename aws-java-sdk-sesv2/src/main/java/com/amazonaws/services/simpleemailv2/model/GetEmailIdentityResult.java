@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,12 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
      * </ul>
      */
     private String verificationStatus;
+    /**
+     * <p>
+     * An object that contains additional information about the verification status for the identity.
+     * </p>
+     */
+    private VerificationInfo verificationInfo;
 
     /**
      * <p>
@@ -936,6 +942,46 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * An object that contains additional information about the verification status for the identity.
+     * </p>
+     * 
+     * @param verificationInfo
+     *        An object that contains additional information about the verification status for the identity.
+     */
+
+    public void setVerificationInfo(VerificationInfo verificationInfo) {
+        this.verificationInfo = verificationInfo;
+    }
+
+    /**
+     * <p>
+     * An object that contains additional information about the verification status for the identity.
+     * </p>
+     * 
+     * @return An object that contains additional information about the verification status for the identity.
+     */
+
+    public VerificationInfo getVerificationInfo() {
+        return this.verificationInfo;
+    }
+
+    /**
+     * <p>
+     * An object that contains additional information about the verification status for the identity.
+     * </p>
+     * 
+     * @param verificationInfo
+     *        An object that contains additional information about the verification status for the identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult withVerificationInfo(VerificationInfo verificationInfo) {
+        setVerificationInfo(verificationInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -964,7 +1010,9 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         if (getConfigurationSetName() != null)
             sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
         if (getVerificationStatus() != null)
-            sb.append("VerificationStatus: ").append(getVerificationStatus());
+            sb.append("VerificationStatus: ").append(getVerificationStatus()).append(",");
+        if (getVerificationInfo() != null)
+            sb.append("VerificationInfo: ").append(getVerificationInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -1015,6 +1063,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getVerificationStatus() != null && other.getVerificationStatus().equals(this.getVerificationStatus()) == false)
             return false;
+        if (other.getVerificationInfo() == null ^ this.getVerificationInfo() == null)
+            return false;
+        if (other.getVerificationInfo() != null && other.getVerificationInfo().equals(this.getVerificationInfo()) == false)
+            return false;
         return true;
     }
 
@@ -1032,6 +1084,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
         hashCode = prime * hashCode + ((getVerificationStatus() == null) ? 0 : getVerificationStatus().hashCode());
+        hashCode = prime * hashCode + ((getVerificationInfo() == null) ? 0 : getVerificationInfo().hashCode());
         return hashCode;
     }
 

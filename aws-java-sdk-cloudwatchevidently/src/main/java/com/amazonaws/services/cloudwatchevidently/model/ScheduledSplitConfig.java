@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,10 +35,15 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that
      * variation during this step.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to
+     * that variation.
+     * </p>
+     * <p>
+     * If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the
+     * remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the
+     * next segment override or the default traffic split.
+     * </p>
      */
     private java.util.Map<String, Long> groupWeights;
     /**
@@ -67,16 +72,27 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that
      * variation during this step.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to
+     * that variation.
+     * </p>
+     * <p>
+     * If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the
+     * remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the
+     * next segment override or the default traffic split.
+     * </p>
      * 
      * @return The traffic allocation percentages among the feature variations during one step of a launch. This is a
      *         set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to
      *         allocate to that variation during this step.</p>
-     * 
-     * <pre><code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     *         <p>
+     *         The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of
+     *         traffic to that variation.
+     *         </p>
+     *         <p>
+     *         If the sum of the weights for all the variations in a segment override does not add up to 100,000, then
+     *         the remaining traffic that matches this segment is not assigned by this segment override, and instead
+     *         moves on to the next segment override or the default traffic split.
      */
 
     public java.util.Map<String, Long> getGroupWeights() {
@@ -89,17 +105,28 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that
      * variation during this step.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to
+     * that variation.
+     * </p>
+     * <p>
+     * If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the
+     * remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the
+     * next segment override or the default traffic split.
+     * </p>
      * 
      * @param groupWeights
      *        The traffic allocation percentages among the feature variations during one step of a launch. This is a set
      *        of key-value pairs. The keys are variation names. The values represent the percentage of traffic to
      *        allocate to that variation during this step.</p>
-     * 
-     * <pre><code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     *        <p>
+     *        The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic
+     *        to that variation.
+     *        </p>
+     *        <p>
+     *        If the sum of the weights for all the variations in a segment override does not add up to 100,000, then
+     *        the remaining traffic that matches this segment is not assigned by this segment override, and instead
+     *        moves on to the next segment override or the default traffic split.
      */
 
     public void setGroupWeights(java.util.Map<String, Long> groupWeights) {
@@ -112,18 +139,28 @@ public class ScheduledSplitConfig implements Serializable, Cloneable, Structured
      * key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that
      * variation during this step.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to
+     * that variation.
+     * </p>
+     * <p>
+     * If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the
+     * remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the
+     * next segment override or the default traffic split.
+     * </p>
      * 
      * @param groupWeights
      *        The traffic allocation percentages among the feature variations during one step of a launch. This is a set
      *        of key-value pairs. The keys are variation names. The values represent the percentage of traffic to
      *        allocate to that variation during this step.</p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If the sum of the weights for all the variations in a segment override does not add up to 100,000, then the remaining traffic that matches this segment is not assigned by this segment override, and instead moves on to the next segment override or the default traffic split.&lt;/p&gt; </code>
+     *        <p>
+     *        The values is expressed in thousandths of a percent, so assigning a weight of 50000 assigns 50% of traffic
+     *        to that variation.
+     *        </p>
+     *        <p>
+     *        If the sum of the weights for all the variations in a segment override does not add up to 100,000, then
+     *        the remaining traffic that matches this segment is not assigned by this segment override, and instead
+     *        moves on to the next segment override or the default traffic split.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

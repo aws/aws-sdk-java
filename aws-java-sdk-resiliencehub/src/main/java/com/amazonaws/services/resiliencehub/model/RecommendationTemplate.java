@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,19 +30,19 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String assessmentArn;
@@ -54,7 +54,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
     private java.util.Date endTime;
     /**
      * <p>
-     * The format of the recommendation template.
+     * Format of the recommendation template.
      * </p>
      * <dl>
      * <dt>CfnJson</dt>
@@ -74,13 +74,13 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
     private String format;
     /**
      * <p>
-     * The message for the recommendation template.
+     * Message for the recommendation template.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * The name for the recommendation template.
+     * Name for the recommendation template.
      * </p>
      */
     private String name;
@@ -98,7 +98,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
     private java.util.List<String> recommendationIds;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the recommendation template.
+     * Amazon Resource Name (ARN) for the recommendation template.
      * </p>
      */
     private String recommendationTemplateArn;
@@ -136,13 +136,13 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
     private java.util.Date startTime;
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      */
@@ -156,17 +156,18 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -175,16 +176,17 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     *         For more information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -193,17 +195,18 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,18 +217,18 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param assessmentArn
-     *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     *        Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
      *        information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAssessmentArn(String assessmentArn) {
@@ -234,17 +237,17 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * @return Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      *         :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
      *         information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAssessmentArn() {
@@ -253,18 +256,18 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param assessmentArn
-     *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     *        Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
      *        information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +318,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The format of the recommendation template.
+     * Format of the recommendation template.
      * </p>
      * <dl>
      * <dt>CfnJson</dt>
@@ -333,7 +336,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
      * </dl>
      * 
      * @param format
-     *        The format of the recommendation template.</p>
+     *        Format of the recommendation template.</p>
      *        <dl>
      *        <dt>CfnJson</dt>
      *        <dd>
@@ -356,7 +359,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The format of the recommendation template.
+     * Format of the recommendation template.
      * </p>
      * <dl>
      * <dt>CfnJson</dt>
@@ -373,7 +376,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
      * </dd>
      * </dl>
      * 
-     * @return The format of the recommendation template.</p>
+     * @return Format of the recommendation template.</p>
      *         <dl>
      *         <dt>CfnJson</dt>
      *         <dd>
@@ -396,7 +399,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The format of the recommendation template.
+     * Format of the recommendation template.
      * </p>
      * <dl>
      * <dt>CfnJson</dt>
@@ -414,7 +417,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
      * </dl>
      * 
      * @param format
-     *        The format of the recommendation template.</p>
+     *        Format of the recommendation template.</p>
      *        <dl>
      *        <dt>CfnJson</dt>
      *        <dd>
@@ -439,7 +442,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The format of the recommendation template.
+     * Format of the recommendation template.
      * </p>
      * <dl>
      * <dt>CfnJson</dt>
@@ -457,7 +460,7 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
      * </dl>
      * 
      * @param format
-     *        The format of the recommendation template.</p>
+     *        Format of the recommendation template.</p>
      *        <dl>
      *        <dt>CfnJson</dt>
      *        <dd>
@@ -482,11 +485,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The message for the recommendation template.
+     * Message for the recommendation template.
      * </p>
      * 
      * @param message
-     *        The message for the recommendation template.
+     *        Message for the recommendation template.
      */
 
     public void setMessage(String message) {
@@ -495,10 +498,10 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The message for the recommendation template.
+     * Message for the recommendation template.
      * </p>
      * 
-     * @return The message for the recommendation template.
+     * @return Message for the recommendation template.
      */
 
     public String getMessage() {
@@ -507,11 +510,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The message for the recommendation template.
+     * Message for the recommendation template.
      * </p>
      * 
      * @param message
-     *        The message for the recommendation template.
+     *        Message for the recommendation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -522,11 +525,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name for the recommendation template.
+     * Name for the recommendation template.
      * </p>
      * 
      * @param name
-     *        The name for the recommendation template.
+     *        Name for the recommendation template.
      */
 
     public void setName(String name) {
@@ -535,10 +538,10 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name for the recommendation template.
+     * Name for the recommendation template.
      * </p>
      * 
-     * @return The name for the recommendation template.
+     * @return Name for the recommendation template.
      */
 
     public String getName() {
@@ -547,11 +550,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name for the recommendation template.
+     * Name for the recommendation template.
      * </p>
      * 
      * @param name
-     *        The name for the recommendation template.
+     *        Name for the recommendation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,11 +687,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the recommendation template.
+     * Amazon Resource Name (ARN) for the recommendation template.
      * </p>
      * 
      * @param recommendationTemplateArn
-     *        The Amazon Resource Name (ARN) for the recommendation template.
+     *        Amazon Resource Name (ARN) for the recommendation template.
      */
 
     public void setRecommendationTemplateArn(String recommendationTemplateArn) {
@@ -697,10 +700,10 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the recommendation template.
+     * Amazon Resource Name (ARN) for the recommendation template.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the recommendation template.
+     * @return Amazon Resource Name (ARN) for the recommendation template.
      */
 
     public String getRecommendationTemplateArn() {
@@ -709,11 +712,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the recommendation template.
+     * Amazon Resource Name (ARN) for the recommendation template.
      * </p>
      * 
      * @param recommendationTemplateArn
-     *        The Amazon Resource Name (ARN) for the recommendation template.
+     *        Amazon Resource Name (ARN) for the recommendation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1057,11 +1060,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @see RecommendationTemplateStatus
      */
 
@@ -1071,10 +1074,10 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
-     * @return The status of the action.
+     * @return Status of the action.
      * @see RecommendationTemplateStatus
      */
 
@@ -1084,11 +1087,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationTemplateStatus
      */
@@ -1100,11 +1103,11 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationTemplateStatus
      */
@@ -1116,12 +1119,12 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
-     * @return The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *         Each tag consists of a key/value pair.
+     * @return Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *         tag consists of a key/value pair.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1130,13 +1133,13 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1145,13 +1148,13 @@ public class RecommendationTemplate implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

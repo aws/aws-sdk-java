@@ -1,0 +1,380 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ec2.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.services.ec2.model.transform.ModifyVerifiedAccessGroupPolicyRequestMarshaller;
+
+/**
+ * 
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
+        DryRunSupportedRequest<ModifyVerifiedAccessGroupPolicyRequest> {
+
+    /**
+     * <p>
+     * The ID of the Verified Access group.
+     * </p>
+     */
+    private String verifiedAccessGroupId;
+    /**
+     * <p>
+     * The status of the Verified Access policy.
+     * </p>
+     */
+    private Boolean policyEnabled;
+    /**
+     * <p>
+     * The Verified Access policy document.
+     * </p>
+     */
+    private String policyDocument;
+    /**
+     * <p>
+     * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
+     * The options for server side encryption.
+     * </p>
+     */
+    private VerifiedAccessSseSpecificationRequest sseSpecification;
+
+    /**
+     * <p>
+     * The ID of the Verified Access group.
+     * </p>
+     * 
+     * @param verifiedAccessGroupId
+     *        The ID of the Verified Access group.
+     */
+
+    public void setVerifiedAccessGroupId(String verifiedAccessGroupId) {
+        this.verifiedAccessGroupId = verifiedAccessGroupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Verified Access group.
+     * </p>
+     * 
+     * @return The ID of the Verified Access group.
+     */
+
+    public String getVerifiedAccessGroupId() {
+        return this.verifiedAccessGroupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Verified Access group.
+     * </p>
+     * 
+     * @param verifiedAccessGroupId
+     *        The ID of the Verified Access group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessGroupPolicyRequest withVerifiedAccessGroupId(String verifiedAccessGroupId) {
+        setVerifiedAccessGroupId(verifiedAccessGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the Verified Access policy.
+     * </p>
+     * 
+     * @param policyEnabled
+     *        The status of the Verified Access policy.
+     */
+
+    public void setPolicyEnabled(Boolean policyEnabled) {
+        this.policyEnabled = policyEnabled;
+    }
+
+    /**
+     * <p>
+     * The status of the Verified Access policy.
+     * </p>
+     * 
+     * @return The status of the Verified Access policy.
+     */
+
+    public Boolean getPolicyEnabled() {
+        return this.policyEnabled;
+    }
+
+    /**
+     * <p>
+     * The status of the Verified Access policy.
+     * </p>
+     * 
+     * @param policyEnabled
+     *        The status of the Verified Access policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessGroupPolicyRequest withPolicyEnabled(Boolean policyEnabled) {
+        setPolicyEnabled(policyEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the Verified Access policy.
+     * </p>
+     * 
+     * @return The status of the Verified Access policy.
+     */
+
+    public Boolean isPolicyEnabled() {
+        return this.policyEnabled;
+    }
+
+    /**
+     * <p>
+     * The Verified Access policy document.
+     * </p>
+     * 
+     * @param policyDocument
+     *        The Verified Access policy document.
+     */
+
+    public void setPolicyDocument(String policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
+    /**
+     * <p>
+     * The Verified Access policy document.
+     * </p>
+     * 
+     * @return The Verified Access policy document.
+     */
+
+    public String getPolicyDocument() {
+        return this.policyDocument;
+    }
+
+    /**
+     * <p>
+     * The Verified Access policy document.
+     * </p>
+     * 
+     * @param policyDocument
+     *        The Verified Access policy document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessGroupPolicyRequest withPolicyDocument(String policyDocument) {
+        setPolicyDocument(policyDocument);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @return A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessGroupPolicyRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for server side encryption.
+     * </p>
+     * 
+     * @param sseSpecification
+     *        The options for server side encryption.
+     */
+
+    public void setSseSpecification(VerifiedAccessSseSpecificationRequest sseSpecification) {
+        this.sseSpecification = sseSpecification;
+    }
+
+    /**
+     * <p>
+     * The options for server side encryption.
+     * </p>
+     * 
+     * @return The options for server side encryption.
+     */
+
+    public VerifiedAccessSseSpecificationRequest getSseSpecification() {
+        return this.sseSpecification;
+    }
+
+    /**
+     * <p>
+     * The options for server side encryption.
+     * </p>
+     * 
+     * @param sseSpecification
+     *        The options for server side encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessGroupPolicyRequest withSseSpecification(VerifiedAccessSseSpecificationRequest sseSpecification) {
+        setSseSpecification(sseSpecification);
+        return this;
+    }
+
+    /**
+     * This method is intended for internal use only. Returns the marshaled request configured with additional
+     * parameters to enable operation dry-run.
+     */
+    @Override
+    public Request<ModifyVerifiedAccessGroupPolicyRequest> getDryRunRequest() {
+        Request<ModifyVerifiedAccessGroupPolicyRequest> request = new ModifyVerifiedAccessGroupPolicyRequestMarshaller().marshall(this);
+        request.addParameter("DryRun", Boolean.toString(true));
+        return request;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getVerifiedAccessGroupId() != null)
+            sb.append("VerifiedAccessGroupId: ").append(getVerifiedAccessGroupId()).append(",");
+        if (getPolicyEnabled() != null)
+            sb.append("PolicyEnabled: ").append(getPolicyEnabled()).append(",");
+        if (getPolicyDocument() != null)
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getSseSpecification() != null)
+            sb.append("SseSpecification: ").append(getSseSpecification());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ModifyVerifiedAccessGroupPolicyRequest == false)
+            return false;
+        ModifyVerifiedAccessGroupPolicyRequest other = (ModifyVerifiedAccessGroupPolicyRequest) obj;
+        if (other.getVerifiedAccessGroupId() == null ^ this.getVerifiedAccessGroupId() == null)
+            return false;
+        if (other.getVerifiedAccessGroupId() != null && other.getVerifiedAccessGroupId().equals(this.getVerifiedAccessGroupId()) == false)
+            return false;
+        if (other.getPolicyEnabled() == null ^ this.getPolicyEnabled() == null)
+            return false;
+        if (other.getPolicyEnabled() != null && other.getPolicyEnabled().equals(this.getPolicyEnabled()) == false)
+            return false;
+        if (other.getPolicyDocument() == null ^ this.getPolicyDocument() == null)
+            return false;
+        if (other.getPolicyDocument() != null && other.getPolicyDocument().equals(this.getPolicyDocument()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getSseSpecification() == null ^ this.getSseSpecification() == null)
+            return false;
+        if (other.getSseSpecification() != null && other.getSseSpecification().equals(this.getSseSpecification()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getVerifiedAccessGroupId() == null) ? 0 : getVerifiedAccessGroupId().hashCode());
+        hashCode = prime * hashCode + ((getPolicyEnabled() == null) ? 0 : getPolicyEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getSseSpecification() == null) ? 0 : getSseSpecification().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ModifyVerifiedAccessGroupPolicyRequest clone() {
+        return (ModifyVerifiedAccessGroupPolicyRequest) super.clone();
+    }
+}

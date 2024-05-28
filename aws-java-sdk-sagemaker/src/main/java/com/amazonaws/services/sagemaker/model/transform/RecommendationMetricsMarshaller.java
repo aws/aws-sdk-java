@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class RecommendationMetricsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxInvocations").build();
     private static final MarshallingInfo<Integer> MODELLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelLatency").build();
+    private static final MarshallingInfo<Float> CPUUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CpuUtilization").build();
+    private static final MarshallingInfo<Float> MEMORYUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemoryUtilization").build();
+    private static final MarshallingInfo<Integer> MODELSETUPTIME_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelSetupTime").build();
 
     private static final RecommendationMetricsMarshaller instance = new RecommendationMetricsMarshaller();
 
@@ -56,6 +62,9 @@ public class RecommendationMetricsMarshaller {
             protocolMarshaller.marshall(recommendationMetrics.getCostPerInference(), COSTPERINFERENCE_BINDING);
             protocolMarshaller.marshall(recommendationMetrics.getMaxInvocations(), MAXINVOCATIONS_BINDING);
             protocolMarshaller.marshall(recommendationMetrics.getModelLatency(), MODELLATENCY_BINDING);
+            protocolMarshaller.marshall(recommendationMetrics.getCpuUtilization(), CPUUTILIZATION_BINDING);
+            protocolMarshaller.marshall(recommendationMetrics.getMemoryUtilization(), MEMORYUTILIZATION_BINDING);
+            protocolMarshaller.marshall(recommendationMetrics.getModelSetupTime(), MODELSETUPTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

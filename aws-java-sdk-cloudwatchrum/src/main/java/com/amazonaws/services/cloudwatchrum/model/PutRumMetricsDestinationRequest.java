@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,11 +50,18 @@ public class PutRumMetricsDestinationRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is
-     * <code>CloudWatch</code>, do not use this parameter.
+     * <code>CloudWatch</code>, don't use this parameter.
      * </p>
      * <p>
      * This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that
      * you are sending metrics to. This role must have permission to write to that experiment.
+     * </p>
+     * <p>
+     * If you specify this parameter, you must be signed on to a role that has <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a> permissions
+     * attached to it, to allow the role to be passed. The <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     * > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
      * </p>
      */
     private String iamRoleArn;
@@ -231,19 +238,33 @@ public class PutRumMetricsDestinationRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is
-     * <code>CloudWatch</code>, do not use this parameter.
+     * <code>CloudWatch</code>, don't use this parameter.
      * </p>
      * <p>
      * This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that
      * you are sending metrics to. This role must have permission to write to that experiment.
      * </p>
+     * <p>
+     * If you specify this parameter, you must be signed on to a role that has <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a> permissions
+     * attached to it, to allow the role to be passed. The <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     * > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
+     * </p>
      * 
      * @param iamRoleArn
      *        This parameter is required if <code>Destination</code> is <code>Evidently</code>. If
-     *        <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+     *        <code>Destination</code> is <code>CloudWatch</code>, don't use this parameter.</p>
      *        <p>
      *        This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment
      *        that you are sending metrics to. This role must have permission to write to that experiment.
+     *        </p>
+     *        <p>
+     *        If you specify this parameter, you must be signed on to a role that has <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+     *        permissions attached to it, to allow the role to be passed. The <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     *        > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -253,18 +274,32 @@ public class PutRumMetricsDestinationRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is
-     * <code>CloudWatch</code>, do not use this parameter.
+     * <code>CloudWatch</code>, don't use this parameter.
      * </p>
      * <p>
      * This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that
      * you are sending metrics to. This role must have permission to write to that experiment.
      * </p>
+     * <p>
+     * If you specify this parameter, you must be signed on to a role that has <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a> permissions
+     * attached to it, to allow the role to be passed. The <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     * > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
+     * </p>
      * 
      * @return This parameter is required if <code>Destination</code> is <code>Evidently</code>. If
-     *         <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+     *         <code>Destination</code> is <code>CloudWatch</code>, don't use this parameter.</p>
      *         <p>
      *         This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment
      *         that you are sending metrics to. This role must have permission to write to that experiment.
+     *         </p>
+     *         <p>
+     *         If you specify this parameter, you must be signed on to a role that has <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+     *         permissions attached to it, to allow the role to be passed. The <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     *         > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
      */
 
     public String getIamRoleArn() {
@@ -274,19 +309,33 @@ public class PutRumMetricsDestinationRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is
-     * <code>CloudWatch</code>, do not use this parameter.
+     * <code>CloudWatch</code>, don't use this parameter.
      * </p>
      * <p>
      * This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that
      * you are sending metrics to. This role must have permission to write to that experiment.
      * </p>
+     * <p>
+     * If you specify this parameter, you must be signed on to a role that has <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a> permissions
+     * attached to it, to allow the role to be passed. The <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     * > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
+     * </p>
      * 
      * @param iamRoleArn
      *        This parameter is required if <code>Destination</code> is <code>Evidently</code>. If
-     *        <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+     *        <code>Destination</code> is <code>CloudWatch</code>, don't use this parameter.</p>
      *        <p>
      *        This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment
      *        that you are sending metrics to. This role must have permission to write to that experiment.
+     *        </p>
+     *        <p>
+     *        If you specify this parameter, you must be signed on to a role that has <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+     *        permissions attached to it, to allow the role to be passed. The <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM"
+     *        > CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <code>PassRole</code> permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class TrustAnchorDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * A list of notification settings to be associated to the trust anchor.
+     * </p>
+     */
+    private java.util.List<NotificationSettingDetail> notificationSettings;
     /**
      * <p>
      * The trust anchor type and its related certificate data.
@@ -200,6 +206,76 @@ public class TrustAnchorDetail implements Serializable, Cloneable, StructuredPoj
 
     public TrustAnchorDetail withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of notification settings to be associated to the trust anchor.
+     * </p>
+     * 
+     * @return A list of notification settings to be associated to the trust anchor.
+     */
+
+    public java.util.List<NotificationSettingDetail> getNotificationSettings() {
+        return notificationSettings;
+    }
+
+    /**
+     * <p>
+     * A list of notification settings to be associated to the trust anchor.
+     * </p>
+     * 
+     * @param notificationSettings
+     *        A list of notification settings to be associated to the trust anchor.
+     */
+
+    public void setNotificationSettings(java.util.Collection<NotificationSettingDetail> notificationSettings) {
+        if (notificationSettings == null) {
+            this.notificationSettings = null;
+            return;
+        }
+
+        this.notificationSettings = new java.util.ArrayList<NotificationSettingDetail>(notificationSettings);
+    }
+
+    /**
+     * <p>
+     * A list of notification settings to be associated to the trust anchor.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNotificationSettings(java.util.Collection)} or {@link #withNotificationSettings(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param notificationSettings
+     *        A list of notification settings to be associated to the trust anchor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrustAnchorDetail withNotificationSettings(NotificationSettingDetail... notificationSettings) {
+        if (this.notificationSettings == null) {
+            setNotificationSettings(new java.util.ArrayList<NotificationSettingDetail>(notificationSettings.length));
+        }
+        for (NotificationSettingDetail ele : notificationSettings) {
+            this.notificationSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of notification settings to be associated to the trust anchor.
+     * </p>
+     * 
+     * @param notificationSettings
+     *        A list of notification settings to be associated to the trust anchor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrustAnchorDetail withNotificationSettings(java.util.Collection<NotificationSettingDetail> notificationSettings) {
+        setNotificationSettings(notificationSettings);
         return this;
     }
 
@@ -381,6 +457,8 @@ public class TrustAnchorDetail implements Serializable, Cloneable, StructuredPoj
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNotificationSettings() != null)
+            sb.append("NotificationSettings: ").append(getNotificationSettings()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
         if (getTrustAnchorArn() != null)
@@ -415,6 +493,10 @@ public class TrustAnchorDetail implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNotificationSettings() == null ^ this.getNotificationSettings() == null)
+            return false;
+        if (other.getNotificationSettings() != null && other.getNotificationSettings().equals(this.getNotificationSettings()) == false)
+            return false;
         if (other.getSource() == null ^ this.getSource() == null)
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
@@ -442,6 +524,7 @@ public class TrustAnchorDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNotificationSettings() == null) ? 0 : getNotificationSettings().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getTrustAnchorArn() == null) ? 0 : getTrustAnchorArn().hashCode());
         hashCode = prime * hashCode + ((getTrustAnchorId() == null) ? 0 : getTrustAnchorId().hashCode());

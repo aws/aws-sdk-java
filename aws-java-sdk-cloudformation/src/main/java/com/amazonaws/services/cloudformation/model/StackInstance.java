@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,7 +71,10 @@ public class StackInstance implements Serializable, Cloneable {
      * <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might
      * need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-     * <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     * <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can
+     * be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried
+     * once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code>
+     * member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.
      * </p>
      * </li>
      * <li>
@@ -416,7 +419,10 @@ public class StackInstance implements Serializable, Cloneable {
      * <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might
      * need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-     * <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     * <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can
+     * be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried
+     * once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code>
+     * member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.
      * </p>
      * </li>
      * <li>
@@ -453,6 +459,10 @@ public class StackInstance implements Serializable, Cloneable {
      *        unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You
      *        might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
      *        <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     *        <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed
+     *        import, the operation can be retried once the failures are fixed. To see if this is due to a failed
+     *        import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member
+     *        that is a peer to this <code>Status</code> member.
      *        </p>
      *        </li>
      *        <li>
@@ -495,7 +505,10 @@ public class StackInstance implements Serializable, Cloneable {
      * <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might
      * need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-     * <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     * <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can
+     * be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried
+     * once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code>
+     * member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.
      * </p>
      * </li>
      * <li>
@@ -531,6 +544,10 @@ public class StackInstance implements Serializable, Cloneable {
      *         an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations.
      *         You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code>
      *         set to <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     *         <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed
+     *         import, the operation can be retried once the failures are fixed. To see if this is due to a failed
+     *         import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member
+     *         that is a peer to this <code>Status</code> member.
      *         </p>
      *         </li>
      *         <li>
@@ -574,7 +591,10 @@ public class StackInstance implements Serializable, Cloneable {
      * <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might
      * need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-     * <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     * <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can
+     * be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried
+     * once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code>
+     * member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.
      * </p>
      * </li>
      * <li>
@@ -611,6 +631,10 @@ public class StackInstance implements Serializable, Cloneable {
      *        unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You
      *        might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
      *        <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     *        <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed
+     *        import, the operation can be retried once the failures are fixed. To see if this is due to a failed
+     *        import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member
+     *        that is a peer to this <code>Status</code> member.
      *        </p>
      *        </li>
      *        <li>
@@ -655,7 +679,10 @@ public class StackInstance implements Serializable, Cloneable {
      * <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might
      * need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-     * <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     * <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can
+     * be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried
+     * once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code>
+     * member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.
      * </p>
      * </li>
      * <li>
@@ -692,6 +719,10 @@ public class StackInstance implements Serializable, Cloneable {
      *        unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You
      *        might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
      *        <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     *        <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed
+     *        import, the operation can be retried once the failures are fixed. To see if this is due to a failed
+     *        import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member
+     *        that is a peer to this <code>Status</code> member.
      *        </p>
      *        </li>
      *        <li>
@@ -734,7 +765,10 @@ public class StackInstance implements Serializable, Cloneable {
      * <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an
      * unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might
      * need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
-     * <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     * <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can
+     * be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried
+     * once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code>
+     * member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.
      * </p>
      * </li>
      * <li>
@@ -771,6 +805,10 @@ public class StackInstance implements Serializable, Cloneable {
      *        unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You
      *        might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to
      *        <code>true</code>, to delete the stack instance, and then delete the stack manually.
+     *        <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed
+     *        import, the operation can be retried once the failures are fixed. To see if this is due to a failed
+     *        import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member
+     *        that is a peer to this <code>Status</code> member.
      *        </p>
      *        </li>
      *        <li>

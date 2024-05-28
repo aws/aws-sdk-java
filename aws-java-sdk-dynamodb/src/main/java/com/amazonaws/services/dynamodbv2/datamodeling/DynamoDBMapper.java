@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,6 +189,12 @@ import static com.amazonaws.services.dynamodbv2.datamodeling.TransactionWriteReq
  * will be used when possible.
  * <p>
  * This class is thread-safe and can be shared between threads.
+ *
+ * <p>
+ * <b>Migrating to the AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/enhanced/dynamodb/DynamoDbEnhancedClient.html">DynamoDbEnhancedClient</a>
  *
  * @see DynamoDBTable
  * @see DynamoDBHashKey

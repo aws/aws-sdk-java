@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,9 +60,21 @@ public class EksPodPropertiesJsonUnmarshaller implements Unmarshaller<EksPodProp
                     context.nextToken();
                     eksPodProperties.setDnsPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("imagePullSecrets", targetDepth)) {
+                    context.nextToken();
+                    eksPodProperties.setImagePullSecrets(new ListUnmarshaller<ImagePullSecret>(ImagePullSecretJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("containers", targetDepth)) {
                     context.nextToken();
                     eksPodProperties.setContainers(new ListUnmarshaller<EksContainer>(EksContainerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("initContainers", targetDepth)) {
+                    context.nextToken();
+                    eksPodProperties.setInitContainers(new ListUnmarshaller<EksContainer>(EksContainerJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
@@ -71,6 +83,14 @@ public class EksPodPropertiesJsonUnmarshaller implements Unmarshaller<EksPodProp
                     eksPodProperties.setVolumes(new ListUnmarshaller<EksVolume>(EksVolumeJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("metadata", targetDepth)) {
+                    context.nextToken();
+                    eksPodProperties.setMetadata(EksMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("shareProcessNamespace", targetDepth)) {
+                    context.nextToken();
+                    eksPodProperties.setShareProcessNamespace(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,7 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
     private java.util.List<String> affectedAccounts;
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -141,8 +140,7 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -168,8 +166,8 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -200,8 +198,7 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -226,8 +223,8 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
      * </li>
      * </ul>
      * 
-     * @return This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *         account-specific event.</p>
+     * @return This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *         event.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -258,8 +255,7 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -285,8 +281,8 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -319,8 +315,7 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -346,8 +341,8 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>

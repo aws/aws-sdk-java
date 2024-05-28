@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,13 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      */
     private String externalMeetingId;
     /**
@@ -56,7 +63,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      */
     private String mediaRegion;
@@ -68,7 +76,7 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
     private MediaPlacement mediaPlacement;
     /**
      * <p>
-     * The features available to a meeting, such as Amazon Voice Focus.
+     * The features available to a meeting, such as echo reduction.
      * </p>
      */
     private MeetingFeaturesConfiguration meetingFeatures;
@@ -175,9 +183,22 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @param externalMeetingId
-     *        The external meeting ID.
+     *        The external meeting ID.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *        Case insensitive.
      */
 
     public void setExternalMeetingId(String externalMeetingId) {
@@ -188,8 +209,21 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
-     * @return The external meeting ID.
+     * @return The external meeting ID.</p>
+     *         <p>
+     *         Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *         </p>
+     *         <p>
+     *         Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *         Case insensitive.
      */
 
     public String getExternalMeetingId() {
@@ -200,9 +234,22 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @param externalMeetingId
-     *        The external meeting ID.
+     *        The external meeting ID.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *        Case insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,7 +268,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      * 
      * @param mediaRegion
@@ -232,7 +280,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      *        <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      *        <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
      *        <p>
-     *        Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     *        Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     *        <code>us-gov-west-1</code>.
      */
 
     public void setMediaRegion(String mediaRegion) {
@@ -249,7 +298,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      * 
      * @return The Region in which you create the meeting. Available values: <code>af-south-1</code>,
@@ -259,7 +309,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      *         <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      *         <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
      *         <p>
-     *         Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     *         Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     *         <code>us-gov-west-1</code>.
      */
 
     public String getMediaRegion() {
@@ -276,7 +327,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      * <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      * 
      * @param mediaRegion
@@ -287,7 +339,8 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
      *        <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
      *        <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.</p>
      *        <p>
-     *        Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     *        Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     *        <code>us-gov-west-1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +391,11 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The features available to a meeting, such as Amazon Voice Focus.
+     * The features available to a meeting, such as echo reduction.
      * </p>
      * 
      * @param meetingFeatures
-     *        The features available to a meeting, such as Amazon Voice Focus.
+     *        The features available to a meeting, such as echo reduction.
      */
 
     public void setMeetingFeatures(MeetingFeaturesConfiguration meetingFeatures) {
@@ -351,10 +404,10 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The features available to a meeting, such as Amazon Voice Focus.
+     * The features available to a meeting, such as echo reduction.
      * </p>
      * 
-     * @return The features available to a meeting, such as Amazon Voice Focus.
+     * @return The features available to a meeting, such as echo reduction.
      */
 
     public MeetingFeaturesConfiguration getMeetingFeatures() {
@@ -363,11 +416,11 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The features available to a meeting, such as Amazon Voice Focus.
+     * The features available to a meeting, such as echo reduction.
      * </p>
      * 
      * @param meetingFeatures
-     *        The features available to a meeting, such as Amazon Voice Focus.
+     *        The features available to a meeting, such as echo reduction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

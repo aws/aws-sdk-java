@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,13 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
      * restart.
      */
     private Integer restartDelay;
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the
+     * RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly
+     * constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We
+     * recommend that you choose Auto.
+     */
+    private String includeFillerNalUnits;
 
     /**
      * Choose the ad marker type for this output group. MediaLive will create a message based on the content of each
@@ -519,6 +526,81 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the
+     * RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly
+     * constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We
+     * recommend that you choose Auto.
+     * 
+     * @param includeFillerNalUnits
+     *        Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls
+     *        whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate
+     *        that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the
+     *        codec settings). We recommend that you choose Auto.
+     * @see IncludeFillerNalUnits
+     */
+
+    public void setIncludeFillerNalUnits(String includeFillerNalUnits) {
+        this.includeFillerNalUnits = includeFillerNalUnits;
+    }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the
+     * RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly
+     * constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We
+     * recommend that you choose Auto.
+     * 
+     * @return Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls
+     *         whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate
+     *         that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the
+     *         codec settings). We recommend that you choose Auto.
+     * @see IncludeFillerNalUnits
+     */
+
+    public String getIncludeFillerNalUnits() {
+        return this.includeFillerNalUnits;
+    }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the
+     * RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly
+     * constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We
+     * recommend that you choose Auto.
+     * 
+     * @param includeFillerNalUnits
+     *        Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls
+     *        whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate
+     *        that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the
+     *        codec settings). We recommend that you choose Auto.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IncludeFillerNalUnits
+     */
+
+    public RtmpGroupSettings withIncludeFillerNalUnits(String includeFillerNalUnits) {
+        setIncludeFillerNalUnits(includeFillerNalUnits);
+        return this;
+    }
+
+    /**
+     * Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls whether the
+     * RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate that is truly
+     * constant. When there is no padding, the bandwidth varies (up to the bitrate value in the codec settings). We
+     * recommend that you choose Auto.
+     * 
+     * @param includeFillerNalUnits
+     *        Applies only when the rate control mode (in the codec settings) is CBR (constant bit rate). Controls
+     *        whether the RTMP output stream is padded (with FILL NAL units) in order to achieve a constant bit rate
+     *        that is truly constant. When there is no padding, the bandwidth varies (up to the bitrate value in the
+     *        codec settings). We recommend that you choose Auto.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IncludeFillerNalUnits
+     */
+
+    public RtmpGroupSettings withIncludeFillerNalUnits(IncludeFillerNalUnits includeFillerNalUnits) {
+        this.includeFillerNalUnits = includeFillerNalUnits.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -543,7 +625,9 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
         if (getInputLossAction() != null)
             sb.append("InputLossAction: ").append(getInputLossAction()).append(",");
         if (getRestartDelay() != null)
-            sb.append("RestartDelay: ").append(getRestartDelay());
+            sb.append("RestartDelay: ").append(getRestartDelay()).append(",");
+        if (getIncludeFillerNalUnits() != null)
+            sb.append("IncludeFillerNalUnits: ").append(getIncludeFillerNalUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -586,6 +670,10 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRestartDelay() != null && other.getRestartDelay().equals(this.getRestartDelay()) == false)
             return false;
+        if (other.getIncludeFillerNalUnits() == null ^ this.getIncludeFillerNalUnits() == null)
+            return false;
+        if (other.getIncludeFillerNalUnits() != null && other.getIncludeFillerNalUnits().equals(this.getIncludeFillerNalUnits()) == false)
+            return false;
         return true;
     }
 
@@ -601,6 +689,7 @@ public class RtmpGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCaptionData() == null) ? 0 : getCaptionData().hashCode());
         hashCode = prime * hashCode + ((getInputLossAction() == null) ? 0 : getInputLossAction().hashCode());
         hashCode = prime * hashCode + ((getRestartDelay() == null) ? 0 : getRestartDelay().hashCode());
+        hashCode = prime * hashCode + ((getIncludeFillerNalUnits() == null) ? 0 : getIncludeFillerNalUnits().hashCode());
         return hashCode;
     }
 

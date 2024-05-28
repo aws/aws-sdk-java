@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -174,6 +174,138 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAdapterResult> createAdapterAsync(CreateAdapterRequest request) {
+
+        return createAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdapterResult> createAdapterAsync(final CreateAdapterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAdapterRequest, CreateAdapterResult> asyncHandler) {
+        final CreateAdapterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAdapterResult>() {
+            @Override
+            public CreateAdapterResult call() throws Exception {
+                CreateAdapterResult result = null;
+
+                try {
+                    result = executeCreateAdapter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdapterVersionResult> createAdapterVersionAsync(CreateAdapterVersionRequest request) {
+
+        return createAdapterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdapterVersionResult> createAdapterVersionAsync(final CreateAdapterVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAdapterVersionRequest, CreateAdapterVersionResult> asyncHandler) {
+        final CreateAdapterVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAdapterVersionResult>() {
+            @Override
+            public CreateAdapterVersionResult call() throws Exception {
+                CreateAdapterVersionResult result = null;
+
+                try {
+                    result = executeCreateAdapterVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterResult> deleteAdapterAsync(DeleteAdapterRequest request) {
+
+        return deleteAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterResult> deleteAdapterAsync(final DeleteAdapterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAdapterRequest, DeleteAdapterResult> asyncHandler) {
+        final DeleteAdapterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAdapterResult>() {
+            @Override
+            public DeleteAdapterResult call() throws Exception {
+                DeleteAdapterResult result = null;
+
+                try {
+                    result = executeDeleteAdapter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterVersionResult> deleteAdapterVersionAsync(DeleteAdapterVersionRequest request) {
+
+        return deleteAdapterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdapterVersionResult> deleteAdapterVersionAsync(final DeleteAdapterVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAdapterVersionRequest, DeleteAdapterVersionResult> asyncHandler) {
+        final DeleteAdapterVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAdapterVersionResult>() {
+            @Override
+            public DeleteAdapterVersionResult call() throws Exception {
+                DeleteAdapterVersionResult result = null;
+
+                try {
+                    result = executeDeleteAdapterVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetectDocumentTextResult> detectDocumentTextAsync(DetectDocumentTextRequest request) {
 
         return detectDocumentTextAsync(request, null);
@@ -191,6 +323,72 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
 
                 try {
                     result = executeDetectDocumentText(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterResult> getAdapterAsync(GetAdapterRequest request) {
+
+        return getAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterResult> getAdapterAsync(final GetAdapterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAdapterRequest, GetAdapterResult> asyncHandler) {
+        final GetAdapterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAdapterResult>() {
+            @Override
+            public GetAdapterResult call() throws Exception {
+                GetAdapterResult result = null;
+
+                try {
+                    result = executeGetAdapter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterVersionResult> getAdapterVersionAsync(GetAdapterVersionRequest request) {
+
+        return getAdapterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdapterVersionResult> getAdapterVersionAsync(final GetAdapterVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAdapterVersionRequest, GetAdapterVersionResult> asyncHandler) {
+        final GetAdapterVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAdapterVersionResult>() {
+            @Override
+            public GetAdapterVersionResult call() throws Exception {
+                GetAdapterVersionResult result = null;
+
+                try {
+                    result = executeGetAdapterVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -306,6 +504,171 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetLendingAnalysisResult> getLendingAnalysisAsync(GetLendingAnalysisRequest request) {
+
+        return getLendingAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLendingAnalysisResult> getLendingAnalysisAsync(final GetLendingAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLendingAnalysisRequest, GetLendingAnalysisResult> asyncHandler) {
+        final GetLendingAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLendingAnalysisResult>() {
+            @Override
+            public GetLendingAnalysisResult call() throws Exception {
+                GetLendingAnalysisResult result = null;
+
+                try {
+                    result = executeGetLendingAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLendingAnalysisSummaryResult> getLendingAnalysisSummaryAsync(GetLendingAnalysisSummaryRequest request) {
+
+        return getLendingAnalysisSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLendingAnalysisSummaryResult> getLendingAnalysisSummaryAsync(final GetLendingAnalysisSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLendingAnalysisSummaryRequest, GetLendingAnalysisSummaryResult> asyncHandler) {
+        final GetLendingAnalysisSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLendingAnalysisSummaryResult>() {
+            @Override
+            public GetLendingAnalysisSummaryResult call() throws Exception {
+                GetLendingAnalysisSummaryResult result = null;
+
+                try {
+                    result = executeGetLendingAnalysisSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdapterVersionsResult> listAdapterVersionsAsync(ListAdapterVersionsRequest request) {
+
+        return listAdapterVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdapterVersionsResult> listAdapterVersionsAsync(final ListAdapterVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAdapterVersionsRequest, ListAdapterVersionsResult> asyncHandler) {
+        final ListAdapterVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAdapterVersionsResult>() {
+            @Override
+            public ListAdapterVersionsResult call() throws Exception {
+                ListAdapterVersionsResult result = null;
+
+                try {
+                    result = executeListAdapterVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdaptersResult> listAdaptersAsync(ListAdaptersRequest request) {
+
+        return listAdaptersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdaptersResult> listAdaptersAsync(final ListAdaptersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAdaptersRequest, ListAdaptersResult> asyncHandler) {
+        final ListAdaptersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAdaptersResult>() {
+            @Override
+            public ListAdaptersResult call() throws Exception {
+                ListAdaptersResult result = null;
+
+                try {
+                    result = executeListAdapters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDocumentAnalysisResult> startDocumentAnalysisAsync(StartDocumentAnalysisRequest request) {
 
         return startDocumentAnalysisAsync(request, null);
@@ -389,6 +752,138 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
 
                 try {
                     result = executeStartExpenseAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLendingAnalysisResult> startLendingAnalysisAsync(StartLendingAnalysisRequest request) {
+
+        return startLendingAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLendingAnalysisResult> startLendingAnalysisAsync(final StartLendingAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartLendingAnalysisRequest, StartLendingAnalysisResult> asyncHandler) {
+        final StartLendingAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartLendingAnalysisResult>() {
+            @Override
+            public StartLendingAnalysisResult call() throws Exception {
+                StartLendingAnalysisResult result = null;
+
+                try {
+                    result = executeStartLendingAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAdapterResult> updateAdapterAsync(UpdateAdapterRequest request) {
+
+        return updateAdapterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAdapterResult> updateAdapterAsync(final UpdateAdapterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAdapterRequest, UpdateAdapterResult> asyncHandler) {
+        final UpdateAdapterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAdapterResult>() {
+            @Override
+            public UpdateAdapterResult call() throws Exception {
+                UpdateAdapterResult result = null;
+
+                try {
+                    result = executeUpdateAdapter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

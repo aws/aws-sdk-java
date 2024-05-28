@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,35 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      */
     private String quotaCode;
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     */
+    private String contextId;
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -53,10 +64,12 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
-     * @return The service identifier.
+     * @return Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *         the <a>ListServices</a> operation.
      */
 
     public String getServiceCode() {
@@ -65,11 +78,13 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +95,14 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -93,10 +111,13 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
-     * @return The quota identifier.
+     * @return Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *         <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for
+     *         the quota you want.
      */
 
     public String getQuotaCode() {
@@ -105,16 +126,65 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetServiceQuotaRequest withQuotaCode(String quotaCode) {
         setQuotaCode(quotaCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     * 
+     * @param contextId
+     *        Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field
+     *        depends on the context scope associated with the specified service quota.
+     */
+
+    public void setContextId(String contextId) {
+        this.contextId = contextId;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     * 
+     * @return Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field
+     *         depends on the context scope associated with the specified service quota.
+     */
+
+    public String getContextId() {
+        return this.contextId;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends
+     * on the context scope associated with the specified service quota.
+     * </p>
+     * 
+     * @param contextId
+     *        Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field
+     *        depends on the context scope associated with the specified service quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetServiceQuotaRequest withContextId(String contextId) {
+        setContextId(contextId);
         return this;
     }
 
@@ -133,7 +203,9 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
         if (getServiceCode() != null)
             sb.append("ServiceCode: ").append(getServiceCode()).append(",");
         if (getQuotaCode() != null)
-            sb.append("QuotaCode: ").append(getQuotaCode());
+            sb.append("QuotaCode: ").append(getQuotaCode()).append(",");
+        if (getContextId() != null)
+            sb.append("ContextId: ").append(getContextId());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +228,10 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getQuotaCode() != null && other.getQuotaCode().equals(this.getQuotaCode()) == false)
             return false;
+        if (other.getContextId() == null ^ this.getContextId() == null)
+            return false;
+        if (other.getContextId() != null && other.getContextId().equals(this.getContextId()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +242,7 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getServiceCode() == null) ? 0 : getServiceCode().hashCode());
         hashCode = prime * hashCode + ((getQuotaCode() == null) ? 0 : getQuotaCode().hashCode());
+        hashCode = prime * hashCode + ((getContextId() == null) ? 0 : getContextId().hashCode());
         return hashCode;
     }
 

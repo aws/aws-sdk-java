@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -949,6 +949,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetClusterSessionCredentialsResult> getClusterSessionCredentialsAsync(GetClusterSessionCredentialsRequest request) {
+
+        return getClusterSessionCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterSessionCredentialsResult> getClusterSessionCredentialsAsync(final GetClusterSessionCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetClusterSessionCredentialsRequest, GetClusterSessionCredentialsResult> asyncHandler) {
+        final GetClusterSessionCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetClusterSessionCredentialsResult>() {
+            @Override
+            public GetClusterSessionCredentialsResult call() throws Exception {
+                GetClusterSessionCredentialsResult result = null;
+
+                try {
+                    result = executeGetClusterSessionCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request) {
 
         return getManagedScalingPolicyAsync(request, null);
@@ -1401,6 +1434,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedInstanceTypesResult> listSupportedInstanceTypesAsync(ListSupportedInstanceTypesRequest request) {
+
+        return listSupportedInstanceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedInstanceTypesResult> listSupportedInstanceTypesAsync(final ListSupportedInstanceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSupportedInstanceTypesRequest, ListSupportedInstanceTypesResult> asyncHandler) {
+        final ListSupportedInstanceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSupportedInstanceTypesResult>() {
+            @Override
+            public ListSupportedInstanceTypesResult call() throws Exception {
+                ListSupportedInstanceTypesResult result = null;
+
+                try {
+                    result = executeListSupportedInstanceTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest request) {
 
         return modifyClusterAsync(request, null);
@@ -1822,6 +1888,40 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<SetKeepJobFlowAliveWhenNoStepsResult> setKeepJobFlowAliveWhenNoStepsAsync(SetKeepJobFlowAliveWhenNoStepsRequest request) {
+
+        return setKeepJobFlowAliveWhenNoStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetKeepJobFlowAliveWhenNoStepsResult> setKeepJobFlowAliveWhenNoStepsAsync(
+            final SetKeepJobFlowAliveWhenNoStepsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetKeepJobFlowAliveWhenNoStepsRequest, SetKeepJobFlowAliveWhenNoStepsResult> asyncHandler) {
+        final SetKeepJobFlowAliveWhenNoStepsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetKeepJobFlowAliveWhenNoStepsResult>() {
+            @Override
+            public SetKeepJobFlowAliveWhenNoStepsResult call() throws Exception {
+                SetKeepJobFlowAliveWhenNoStepsResult result = null;
+
+                try {
+                    result = executeSetKeepJobFlowAliveWhenNoSteps(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetTerminationProtectionResult> setTerminationProtectionAsync(SetTerminationProtectionRequest request) {
 
         return setTerminationProtectionAsync(request, null);
@@ -1839,6 +1939,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
 
                 try {
                     result = executeSetTerminationProtection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUnhealthyNodeReplacementResult> setUnhealthyNodeReplacementAsync(SetUnhealthyNodeReplacementRequest request) {
+
+        return setUnhealthyNodeReplacementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUnhealthyNodeReplacementResult> setUnhealthyNodeReplacementAsync(final SetUnhealthyNodeReplacementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetUnhealthyNodeReplacementRequest, SetUnhealthyNodeReplacementResult> asyncHandler) {
+        final SetUnhealthyNodeReplacementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetUnhealthyNodeReplacementResult>() {
+            @Override
+            public SetUnhealthyNodeReplacementResult call() throws Exception {
+                SetUnhealthyNodeReplacementResult result = null;
+
+                try {
+                    result = executeSetUnhealthyNodeReplacement(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

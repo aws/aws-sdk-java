@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,12 @@ public class FieldValueUnionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("booleanValue").build();
     private static final MarshallingInfo<Double> DOUBLEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("doubleValue").build();
+    private static final MarshallingInfo<StructuredPojo> EMPTYVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("emptyValue").build();
     private static final MarshallingInfo<String> STRINGVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringValue").build();
+    private static final MarshallingInfo<String> USERARNVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userArnValue").build();
 
     private static final FieldValueUnionMarshaller instance = new FieldValueUnionMarshaller();
 
@@ -52,7 +56,9 @@ public class FieldValueUnionMarshaller {
         try {
             protocolMarshaller.marshall(fieldValueUnion.getBooleanValue(), BOOLEANVALUE_BINDING);
             protocolMarshaller.marshall(fieldValueUnion.getDoubleValue(), DOUBLEVALUE_BINDING);
+            protocolMarshaller.marshall(fieldValueUnion.getEmptyValue(), EMPTYVALUE_BINDING);
             protocolMarshaller.marshall(fieldValueUnion.getStringValue(), STRINGVALUE_BINDING);
+            protocolMarshaller.marshall(fieldValueUnion.getUserArnValue(), USERARNVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

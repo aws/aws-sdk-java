@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,18 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<DeltaTarget> deltaTargets;
+    /**
+     * <p>
+     * Specifies Apache Iceberg data store targets.
+     * </p>
+     */
+    private java.util.List<IcebergTarget> icebergTargets;
+    /**
+     * <p>
+     * Specifies Apache Hudi data store targets.
+     * </p>
+     */
+    private java.util.List<HudiTarget> hudiTargets;
 
     /**
      * <p>
@@ -486,6 +498,146 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies Apache Iceberg data store targets.
+     * </p>
+     * 
+     * @return Specifies Apache Iceberg data store targets.
+     */
+
+    public java.util.List<IcebergTarget> getIcebergTargets() {
+        return icebergTargets;
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Iceberg data store targets.
+     * </p>
+     * 
+     * @param icebergTargets
+     *        Specifies Apache Iceberg data store targets.
+     */
+
+    public void setIcebergTargets(java.util.Collection<IcebergTarget> icebergTargets) {
+        if (icebergTargets == null) {
+            this.icebergTargets = null;
+            return;
+        }
+
+        this.icebergTargets = new java.util.ArrayList<IcebergTarget>(icebergTargets);
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Iceberg data store targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIcebergTargets(java.util.Collection)} or {@link #withIcebergTargets(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param icebergTargets
+     *        Specifies Apache Iceberg data store targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withIcebergTargets(IcebergTarget... icebergTargets) {
+        if (this.icebergTargets == null) {
+            setIcebergTargets(new java.util.ArrayList<IcebergTarget>(icebergTargets.length));
+        }
+        for (IcebergTarget ele : icebergTargets) {
+            this.icebergTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Iceberg data store targets.
+     * </p>
+     * 
+     * @param icebergTargets
+     *        Specifies Apache Iceberg data store targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withIcebergTargets(java.util.Collection<IcebergTarget> icebergTargets) {
+        setIcebergTargets(icebergTargets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Hudi data store targets.
+     * </p>
+     * 
+     * @return Specifies Apache Hudi data store targets.
+     */
+
+    public java.util.List<HudiTarget> getHudiTargets() {
+        return hudiTargets;
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Hudi data store targets.
+     * </p>
+     * 
+     * @param hudiTargets
+     *        Specifies Apache Hudi data store targets.
+     */
+
+    public void setHudiTargets(java.util.Collection<HudiTarget> hudiTargets) {
+        if (hudiTargets == null) {
+            this.hudiTargets = null;
+            return;
+        }
+
+        this.hudiTargets = new java.util.ArrayList<HudiTarget>(hudiTargets);
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Hudi data store targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHudiTargets(java.util.Collection)} or {@link #withHudiTargets(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param hudiTargets
+     *        Specifies Apache Hudi data store targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withHudiTargets(HudiTarget... hudiTargets) {
+        if (this.hudiTargets == null) {
+            setHudiTargets(new java.util.ArrayList<HudiTarget>(hudiTargets.length));
+        }
+        for (HudiTarget ele : hudiTargets) {
+            this.hudiTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies Apache Hudi data store targets.
+     * </p>
+     * 
+     * @param hudiTargets
+     *        Specifies Apache Hudi data store targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withHudiTargets(java.util.Collection<HudiTarget> hudiTargets) {
+        setHudiTargets(hudiTargets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -508,7 +660,11 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
         if (getCatalogTargets() != null)
             sb.append("CatalogTargets: ").append(getCatalogTargets()).append(",");
         if (getDeltaTargets() != null)
-            sb.append("DeltaTargets: ").append(getDeltaTargets());
+            sb.append("DeltaTargets: ").append(getDeltaTargets()).append(",");
+        if (getIcebergTargets() != null)
+            sb.append("IcebergTargets: ").append(getIcebergTargets()).append(",");
+        if (getHudiTargets() != null)
+            sb.append("HudiTargets: ").append(getHudiTargets());
         sb.append("}");
         return sb.toString();
     }
@@ -547,6 +703,14 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeltaTargets() != null && other.getDeltaTargets().equals(this.getDeltaTargets()) == false)
             return false;
+        if (other.getIcebergTargets() == null ^ this.getIcebergTargets() == null)
+            return false;
+        if (other.getIcebergTargets() != null && other.getIcebergTargets().equals(this.getIcebergTargets()) == false)
+            return false;
+        if (other.getHudiTargets() == null ^ this.getHudiTargets() == null)
+            return false;
+        if (other.getHudiTargets() != null && other.getHudiTargets().equals(this.getHudiTargets()) == false)
+            return false;
         return true;
     }
 
@@ -561,6 +725,8 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDynamoDBTargets() == null) ? 0 : getDynamoDBTargets().hashCode());
         hashCode = prime * hashCode + ((getCatalogTargets() == null) ? 0 : getCatalogTargets().hashCode());
         hashCode = prime * hashCode + ((getDeltaTargets() == null) ? 0 : getDeltaTargets().hashCode());
+        hashCode = prime * hashCode + ((getIcebergTargets() == null) ? 0 : getIcebergTargets().hashCode());
+        hashCode = prime * hashCode + ((getHudiTargets() == null) ? 0 : getHudiTargets().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,10 @@ public class OrderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrderSubmissionDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ORDERFULFILLEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrderFulfilledDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> PAYMENTTERM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PaymentTerm").build();
+    private static final MarshallingInfo<String> ORDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OrderType").build();
 
     private static final OrderMarshaller instance = new OrderMarshaller();
 
@@ -66,6 +70,8 @@ public class OrderMarshaller {
             protocolMarshaller.marshall(order.getPaymentOption(), PAYMENTOPTION_BINDING);
             protocolMarshaller.marshall(order.getOrderSubmissionDate(), ORDERSUBMISSIONDATE_BINDING);
             protocolMarshaller.marshall(order.getOrderFulfilledDate(), ORDERFULFILLEDDATE_BINDING);
+            protocolMarshaller.marshall(order.getPaymentTerm(), PAYMENTTERM_BINDING);
+            protocolMarshaller.marshall(order.getOrderType(), ORDERTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

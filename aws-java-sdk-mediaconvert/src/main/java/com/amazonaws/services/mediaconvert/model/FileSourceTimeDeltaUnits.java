@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use
- * this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units
- * (TimeDeltaUnits), MediaConvert uses seconds by default.
+ * When you use the setting Time delta to adjust the sync between your sidecar captions and your video, use this setting
+ * to specify the units for the delta that you specify. When you don't specify a value for Time delta units,
+ * MediaConvert uses seconds by default.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FileSourceTimeDeltaUnits {

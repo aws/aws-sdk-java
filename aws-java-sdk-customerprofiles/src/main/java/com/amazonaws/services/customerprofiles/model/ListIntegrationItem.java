@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,8 +82,8 @@ public class ListIntegrationItem implements Serializable, Cloneable, StructuredP
     private String workflowId;
     /**
      * <p>
-     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      * </p>
      */
     private Boolean isUnstructured;
@@ -493,13 +493,13 @@ public class ListIntegrationItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      * </p>
      * 
      * @param isUnstructured
-     *        Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     *        ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     *        Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or
+     *        with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      */
 
     public void setIsUnstructured(Boolean isUnstructured) {
@@ -508,12 +508,12 @@ public class ListIntegrationItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      * </p>
      * 
-     * @return Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     *         ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * @return Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or
+     *         with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      */
 
     public Boolean getIsUnstructured() {
@@ -522,13 +522,13 @@ public class ListIntegrationItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      * </p>
      * 
      * @param isUnstructured
-     *        Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     *        ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     *        Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or
+     *        with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -539,12 +539,12 @@ public class ListIntegrationItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or with
+     * ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      * </p>
      * 
-     * @return Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with
-     *         ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+     * @return Boolean that shows if the Flow that's associated with the Integration is created in Amazon Appflow, or
+     *         with ObjectTypeName equals _unstructured via API/CLI in flowDefinition.
      */
 
     public Boolean isUnstructured() {

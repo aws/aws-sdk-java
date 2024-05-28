@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,8 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set
-     * the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.
+     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to
+     * <code>DATE</code> fields.
      * </p>
      */
     private Boolean freshness;
@@ -69,14 +69,14 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * task tracking application, a priority 1 task is more important than a priority 5 task.
      * </p>
      * <p>
-     * Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     * Only applies to <code>LONG</code> fields.
      * </p>
      */
     private String rankOrder;
     /**
      * <p>
      * A list of values that should be given a different boost when they appear in the result list. For example, if you
-     * are boosting a field called "department," query terms that match the department field are boosted in the result.
+     * are boosting a field called "department", query terms that match the department field are boosted in the result.
      * However, you can add entries from the department field to boost documents with those values higher.
      * </p>
      * <p>
@@ -90,15 +90,14 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set
-     * the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.
+     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to
+     * <code>DATE</code> fields.
      * </p>
      * 
      * @param freshness
      *        Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     *        November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can
-     *        only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to
-     *        <code>DATE</code> fields.
+     *        November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only
+     *        applies to <code>DATE</code> fields.
      */
 
     public void setFreshness(Boolean freshness) {
@@ -108,14 +107,13 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set
-     * the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.
+     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to
+     * <code>DATE</code> fields.
      * </p>
      * 
      * @return Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     *         November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can
-     *         only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to
-     *         <code>DATE</code> fields.
+     *         November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only
+     *         applies to <code>DATE</code> fields.
      */
 
     public Boolean getFreshness() {
@@ -125,15 +123,14 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set
-     * the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.
+     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to
+     * <code>DATE</code> fields.
      * </p>
      * 
      * @param freshness
      *        Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     *        November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can
-     *        only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to
-     *        <code>DATE</code> fields.
+     *        November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only
+     *        applies to <code>DATE</code> fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,14 +142,13 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set
-     * the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.
+     * November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only applies to
+     * <code>DATE</code> fields.
      * </p>
      * 
      * @return Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on
-     *         November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can
-     *         only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to
-     *         <code>DATE</code> fields.
+     *         November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. Only
+     *         applies to <code>DATE</code> fields.
      */
 
     public Boolean isFreshness() {
@@ -294,7 +290,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * task tracking application, a priority 1 task is more important than a priority 5 task.
      * </p>
      * <p>
-     * Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     * Only applies to <code>LONG</code> fields.
      * </p>
      * 
      * @param rankOrder
@@ -308,7 +304,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      *        in a task tracking application, a priority 1 task is more important than a priority 5 task.
      *        </p>
      *        <p>
-     *        Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     *        Only applies to <code>LONG</code> fields.
      * @see Order
      */
 
@@ -329,7 +325,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * task tracking application, a priority 1 task is more important than a priority 5 task.
      * </p>
      * <p>
-     * Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     * Only applies to <code>LONG</code> fields.
      * </p>
      * 
      * @return Determines how values should be interpreted.</p>
@@ -342,7 +338,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      *         in a task tracking application, a priority 1 task is more important than a priority 5 task.
      *         </p>
      *         <p>
-     *         Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     *         Only applies to <code>LONG</code> fields.
      * @see Order
      */
 
@@ -363,7 +359,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * task tracking application, a priority 1 task is more important than a priority 5 task.
      * </p>
      * <p>
-     * Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     * Only applies to <code>LONG</code> fields.
      * </p>
      * 
      * @param rankOrder
@@ -377,7 +373,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      *        in a task tracking application, a priority 1 task is more important than a priority 5 task.
      *        </p>
      *        <p>
-     *        Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     *        Only applies to <code>LONG</code> fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -400,7 +396,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * task tracking application, a priority 1 task is more important than a priority 5 task.
      * </p>
      * <p>
-     * Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     * Only applies to <code>LONG</code> fields.
      * </p>
      * 
      * @param rankOrder
@@ -414,7 +410,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      *        in a task tracking application, a priority 1 task is more important than a priority 5 task.
      *        </p>
      *        <p>
-     *        Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+     *        Only applies to <code>LONG</code> fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -427,7 +423,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values that should be given a different boost when they appear in the result list. For example, if you
-     * are boosting a field called "department," query terms that match the department field are boosted in the result.
+     * are boosting a field called "department", query terms that match the department field are boosted in the result.
      * However, you can add entries from the department field to boost documents with those values higher.
      * </p>
      * <p>
@@ -437,7 +433,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A list of values that should be given a different boost when they appear in the result list. For example,
-     *         if you are boosting a field called "department," query terms that match the department field are boosted
+     *         if you are boosting a field called "department", query terms that match the department field are boosted
      *         in the result. However, you can add entries from the department field to boost documents with those
      *         values higher. </p>
      *         <p>
@@ -453,7 +449,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values that should be given a different boost when they appear in the result list. For example, if you
-     * are boosting a field called "department," query terms that match the department field are boosted in the result.
+     * are boosting a field called "department", query terms that match the department field are boosted in the result.
      * However, you can add entries from the department field to boost documents with those values higher.
      * </p>
      * <p>
@@ -464,7 +460,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param valueImportanceMap
      *        A list of values that should be given a different boost when they appear in the result list. For example,
-     *        if you are boosting a field called "department," query terms that match the department field are boosted
+     *        if you are boosting a field called "department", query terms that match the department field are boosted
      *        in the result. However, you can add entries from the department field to boost documents with those values
      *        higher. </p>
      *        <p>
@@ -480,7 +476,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values that should be given a different boost when they appear in the result list. For example, if you
-     * are boosting a field called "department," query terms that match the department field are boosted in the result.
+     * are boosting a field called "department", query terms that match the department field are boosted in the result.
      * However, you can add entries from the department field to boost documents with those values higher.
      * </p>
      * <p>
@@ -491,7 +487,7 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param valueImportanceMap
      *        A list of values that should be given a different boost when they appear in the result list. For example,
-     *        if you are boosting a field called "department," query terms that match the department field are boosted
+     *        if you are boosting a field called "department", query terms that match the department field are boosted
      *        in the result. However, you can add entries from the department field to boost documents with those values
      *        higher. </p>
      *        <p>

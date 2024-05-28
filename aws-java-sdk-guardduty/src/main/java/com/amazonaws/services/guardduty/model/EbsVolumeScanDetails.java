@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,12 @@ public class EbsVolumeScanDetails implements Serializable, Cloneable, Structured
      * </p>
      */
     private ScanDetections scanDetections;
+    /**
+     * <p>
+     * Specifies the scan type that invoked the malware scan.
+     * </p>
+     */
+    private String scanType;
 
     /**
      * <p>
@@ -336,6 +342,65 @@ public class EbsVolumeScanDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Specifies the scan type that invoked the malware scan.
+     * </p>
+     * 
+     * @param scanType
+     *        Specifies the scan type that invoked the malware scan.
+     * @see ScanType
+     */
+
+    public void setScanType(String scanType) {
+        this.scanType = scanType;
+    }
+
+    /**
+     * <p>
+     * Specifies the scan type that invoked the malware scan.
+     * </p>
+     * 
+     * @return Specifies the scan type that invoked the malware scan.
+     * @see ScanType
+     */
+
+    public String getScanType() {
+        return this.scanType;
+    }
+
+    /**
+     * <p>
+     * Specifies the scan type that invoked the malware scan.
+     * </p>
+     * 
+     * @param scanType
+     *        Specifies the scan type that invoked the malware scan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanType
+     */
+
+    public EbsVolumeScanDetails withScanType(String scanType) {
+        setScanType(scanType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the scan type that invoked the malware scan.
+     * </p>
+     * 
+     * @param scanType
+     *        Specifies the scan type that invoked the malware scan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanType
+     */
+
+    public EbsVolumeScanDetails withScanType(ScanType scanType) {
+        this.scanType = scanType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +423,9 @@ public class EbsVolumeScanDetails implements Serializable, Cloneable, Structured
         if (getSources() != null)
             sb.append("Sources: ").append(getSources()).append(",");
         if (getScanDetections() != null)
-            sb.append("ScanDetections: ").append(getScanDetections());
+            sb.append("ScanDetections: ").append(getScanDetections()).append(",");
+        if (getScanType() != null)
+            sb.append("ScanType: ").append(getScanType());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +464,10 @@ public class EbsVolumeScanDetails implements Serializable, Cloneable, Structured
             return false;
         if (other.getScanDetections() != null && other.getScanDetections().equals(this.getScanDetections()) == false)
             return false;
+        if (other.getScanType() == null ^ this.getScanType() == null)
+            return false;
+        if (other.getScanType() != null && other.getScanType().equals(this.getScanType()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +482,7 @@ public class EbsVolumeScanDetails implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTriggerFindingId() == null) ? 0 : getTriggerFindingId().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getScanDetections() == null) ? 0 : getScanDetections().hashCode());
+        hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());
         return hashCode;
     }
 

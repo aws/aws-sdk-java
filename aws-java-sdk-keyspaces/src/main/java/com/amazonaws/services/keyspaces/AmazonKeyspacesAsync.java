@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ import com.amazonaws.services.keyspaces.model.*;
  * <p>
  * In addition to supporting Cassandra Query Language (CQL) requests via open-source Cassandra drivers, Amazon Keyspaces
  * supports data definition language (DDL) operations to manage keyspaces and tables using the Amazon Web Services SDK
- * and CLI. This API reference describes the supported DDL operations in detail.
+ * and CLI, as well as infrastructure as code (IaC) services and tools such as CloudFormation and Terraform. This API
+ * reference describes the supported DDL operations in detail.
  * </p>
  * <p>
  * For the list of all supported CQL APIs, see <a
@@ -309,6 +310,97 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
 
     /**
      * <p>
+     * Returns auto scaling related settings of the specified table in JSON format. If the table is a multi-Region
+     * table, the Amazon Web Services Region specific auto scaling settings of the table are included.
+     * </p>
+     * <p>
+     * Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in response to application traffic.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * <code>GetTableAutoScalingSettings</code> can't be used as an action in an IAM policy.
+     * </p>
+     * </important>
+     * <p>
+     * To define permissions for <code>GetTableAutoScalingSettings</code>, you must allow the following two actions in
+     * the IAM policy statement's <code>Action</code> element:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>application-autoscaling:DescribeScalableTargets</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application-autoscaling:DescribeScalingPolicies</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getTableAutoScalingSettingsRequest
+     * @return A Java Future containing the result of the GetTableAutoScalingSettings operation returned by the service.
+     * @sample AmazonKeyspacesAsync.GetTableAutoScalingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(
+            GetTableAutoScalingSettingsRequest getTableAutoScalingSettingsRequest);
+
+    /**
+     * <p>
+     * Returns auto scaling related settings of the specified table in JSON format. If the table is a multi-Region
+     * table, the Amazon Web Services Region specific auto scaling settings of the table are included.
+     * </p>
+     * <p>
+     * Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in response to application traffic.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * <code>GetTableAutoScalingSettings</code> can't be used as an action in an IAM policy.
+     * </p>
+     * </important>
+     * <p>
+     * To define permissions for <code>GetTableAutoScalingSettings</code>, you must allow the following two actions in
+     * the IAM policy statement's <code>Action</code> element:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>application-autoscaling:DescribeScalableTargets</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>application-autoscaling:DescribeScalingPolicies</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getTableAutoScalingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTableAutoScalingSettings operation returned by the service.
+     * @sample AmazonKeyspacesAsyncHandler.GetTableAutoScalingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(
+            GetTableAutoScalingSettingsRequest getTableAutoScalingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTableAutoScalingSettingsRequest, GetTableAutoScalingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of keyspaces.
      * </p>
      * 
@@ -402,8 +494,8 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
 
     /**
      * <p>
-     * Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code>
-     * and the current time. For more information about restore points, see <a href=
+     * Restores the table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the
+     * current time. For more information about restore points, see <a href=
      * "https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"
      * > Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
@@ -417,25 +509,40 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
      * </p>
      * <p>
      * In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code> restores the capacity mode,
-     * encryption, and point-in-time recovery settings from the source table. Unlike the table's schema data and TTL
-     * settings, which are restored based on the selected timestamp, these settings are always restored based on the
-     * table's settings as of the current time or when the table was deleted.
+     * auto scaling settings, encryption settings, and point-in-time recovery settings from the source table. Unlike the
+     * table's schema data and TTL settings, which are restored based on the selected timestamp, these settings are
+     * always restored based on the table's settings as of the current time or when the table was deleted.
      * </p>
      * <p>
      * You can also overwrite these settings during restore:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • Read/write capacity mode
+     * Read/write capacity mode
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Provisioned throughput capacity settings
+     * Provisioned throughput capacity units
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Point-in-time (PITR) settings
+     * Auto scaling settings
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Tags
+     * Point-in-time (PITR) settings
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings"
@@ -444,15 +551,18 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
      * <p>
      * Note that the following settings are not restored, and you must configure them manually for the new table:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • Automatic scaling policies (for tables that use provisioned capacity mode)
+     * Identity and Access Management (IAM) policies
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Identity and Access Management (IAM) policies
+     * Amazon CloudWatch metrics and alarms
      * </p>
-     * <p>
-     * • Amazon CloudWatch metrics and alarms
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param restoreTableRequest
      * @return A Java Future containing the result of the RestoreTable operation returned by the service.
@@ -464,8 +574,8 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
 
     /**
      * <p>
-     * Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code>
-     * and the current time. For more information about restore points, see <a href=
+     * Restores the table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the
+     * current time. For more information about restore points, see <a href=
      * "https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"
      * > Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
@@ -479,25 +589,40 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
      * </p>
      * <p>
      * In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code> restores the capacity mode,
-     * encryption, and point-in-time recovery settings from the source table. Unlike the table's schema data and TTL
-     * settings, which are restored based on the selected timestamp, these settings are always restored based on the
-     * table's settings as of the current time or when the table was deleted.
+     * auto scaling settings, encryption settings, and point-in-time recovery settings from the source table. Unlike the
+     * table's schema data and TTL settings, which are restored based on the selected timestamp, these settings are
+     * always restored based on the table's settings as of the current time or when the table was deleted.
      * </p>
      * <p>
      * You can also overwrite these settings during restore:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • Read/write capacity mode
+     * Read/write capacity mode
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Provisioned throughput capacity settings
+     * Provisioned throughput capacity units
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Point-in-time (PITR) settings
+     * Auto scaling settings
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Tags
+     * Point-in-time (PITR) settings
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings"
@@ -506,15 +631,18 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
      * <p>
      * Note that the following settings are not restored, and you must configure them manually for the new table:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • Automatic scaling policies (for tables that use provisioned capacity mode)
+     * Identity and Access Management (IAM) policies
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • Identity and Access Management (IAM) policies
+     * Amazon CloudWatch metrics and alarms
      * </p>
-     * <p>
-     * • Amazon CloudWatch metrics and alarms
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param restoreTableRequest
      * @param asyncHandler
@@ -537,9 +665,9 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
      * Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
      * <p>
-     * For IAM policy examples that show how to control access to Amazon Keyspaces resources based on tags, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples-tags">Amazon
-     * Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * For IAM policy examples that show how to control access to Amazon Keyspaces resources based on tags, see <a href=
+     * "https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-tags"
+     * >Amazon Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -558,9 +686,9 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
      * Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
      * <p>
-     * For IAM policy examples that show how to control access to Amazon Keyspaces resources based on tags, see <a
-     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples-tags">Amazon
-     * Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * For IAM policy examples that show how to control access to Amazon Keyspaces resources based on tags, see <a href=
+     * "https://docs.aws.amazon.com/keyspaces/latest/devguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-tags"
+     * >Amazon Keyspaces resource access based on tags</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -609,9 +737,9 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
 
     /**
      * <p>
-     * Adds new columns to the table or updates one of the table's settings, for example capacity mode, encryption,
-     * point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update
-     * operation.
+     * Adds new columns to the table or updates one of the table's settings, for example capacity mode, auto scaling,
+     * encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per
+     * update operation.
      * </p>
      * 
      * @param updateTableRequest
@@ -624,9 +752,9 @@ public interface AmazonKeyspacesAsync extends AmazonKeyspaces {
 
     /**
      * <p>
-     * Adds new columns to the table or updates one of the table's settings, for example capacity mode, encryption,
-     * point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update
-     * operation.
+     * Adds new columns to the table or updates one of the table's settings, for example capacity mode, auto scaling,
+     * encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per
+     * update operation.
      * </p>
      * 
      * @param updateTableRequest

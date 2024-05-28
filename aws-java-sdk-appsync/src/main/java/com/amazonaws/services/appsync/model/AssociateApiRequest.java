@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class AssociateApiRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String domainName;
     /**
      * <p>
-     * The API ID.
+     * The API ID. Private APIs can not be associated with custom domains.
      * </p>
      */
     private String apiId;
@@ -80,11 +80,11 @@ public class AssociateApiRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The API ID.
+     * The API ID. Private APIs can not be associated with custom domains.
      * </p>
      * 
      * @param apiId
-     *        The API ID.
+     *        The API ID. Private APIs can not be associated with custom domains.
      */
 
     public void setApiId(String apiId) {
@@ -93,10 +93,10 @@ public class AssociateApiRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The API ID.
+     * The API ID. Private APIs can not be associated with custom domains.
      * </p>
      * 
-     * @return The API ID.
+     * @return The API ID. Private APIs can not be associated with custom domains.
      */
 
     public String getApiId() {
@@ -105,11 +105,11 @@ public class AssociateApiRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The API ID.
+     * The API ID. Private APIs can not be associated with custom domains.
      * </p>
      * 
      * @param apiId
-     *        The API ID.
+     *        The API ID. Private APIs can not be associated with custom domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

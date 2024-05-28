@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class DeleteOrganizationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
     private static final MarshallingInfo<Boolean> DELETEDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteDirectory").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceDelete").build();
 
     private static final DeleteOrganizationRequestMarshaller instance = new DeleteOrganizationRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DeleteOrganizationRequestMarshaller {
             protocolMarshaller.marshall(deleteOrganizationRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(deleteOrganizationRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(deleteOrganizationRequest.getDeleteDirectory(), DELETEDIRECTORY_BINDING);
+            protocolMarshaller.marshall(deleteOrganizationRequest.getForceDelete(), FORCEDELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

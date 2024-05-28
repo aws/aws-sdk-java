@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,21 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest request) {
+
+        return batchStartViewerSessionRevocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartViewerSessionRevocationResult> batchStartViewerSessionRevocationAsync(
+            BatchStartViewerSessionRevocationRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchStartViewerSessionRevocationRequest, BatchStartViewerSessionRevocationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request) {
 
         return createChannelAsync(request, null);
@@ -61,6 +76,21 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlaybackRestrictionPolicyResult> createPlaybackRestrictionPolicyAsync(
+            CreatePlaybackRestrictionPolicyRequest request) {
+
+        return createPlaybackRestrictionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePlaybackRestrictionPolicyResult> createPlaybackRestrictionPolicyAsync(
+            CreatePlaybackRestrictionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePlaybackRestrictionPolicyRequest, CreatePlaybackRestrictionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -118,6 +148,21 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePlaybackRestrictionPolicyResult> deletePlaybackRestrictionPolicyAsync(
+            DeletePlaybackRestrictionPolicyRequest request) {
+
+        return deletePlaybackRestrictionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePlaybackRestrictionPolicyResult> deletePlaybackRestrictionPolicyAsync(
+            DeletePlaybackRestrictionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePlaybackRestrictionPolicyRequest, DeletePlaybackRestrictionPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRecordingConfigurationResult> deleteRecordingConfigurationAsync(DeleteRecordingConfigurationRequest request) {
 
         return deleteRecordingConfigurationAsync(request, null);
@@ -165,6 +210,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPlaybackKeyPairRequest, GetPlaybackKeyPairResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaybackRestrictionPolicyResult> getPlaybackRestrictionPolicyAsync(GetPlaybackRestrictionPolicyRequest request) {
+
+        return getPlaybackRestrictionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaybackRestrictionPolicyResult> getPlaybackRestrictionPolicyAsync(GetPlaybackRestrictionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPlaybackRestrictionPolicyRequest, GetPlaybackRestrictionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -261,6 +319,21 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<ListPlaybackRestrictionPoliciesResult> listPlaybackRestrictionPoliciesAsync(
+            ListPlaybackRestrictionPoliciesRequest request) {
+
+        return listPlaybackRestrictionPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlaybackRestrictionPoliciesResult> listPlaybackRestrictionPoliciesAsync(
+            ListPlaybackRestrictionPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPlaybackRestrictionPoliciesRequest, ListPlaybackRestrictionPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRecordingConfigurationsResult> listRecordingConfigurationsAsync(ListRecordingConfigurationsRequest request) {
 
         return listRecordingConfigurationsAsync(request, null);
@@ -339,6 +412,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(StartViewerSessionRevocationRequest request) {
+
+        return startViewerSessionRevocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartViewerSessionRevocationResult> startViewerSessionRevocationAsync(StartViewerSessionRevocationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartViewerSessionRevocationRequest, StartViewerSessionRevocationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopStreamResult> stopStreamAsync(StopStreamRequest request) {
 
         return stopStreamAsync(request, null);
@@ -386,6 +472,21 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateChannelRequest, UpdateChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePlaybackRestrictionPolicyResult> updatePlaybackRestrictionPolicyAsync(
+            UpdatePlaybackRestrictionPolicyRequest request) {
+
+        return updatePlaybackRestrictionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePlaybackRestrictionPolicyResult> updatePlaybackRestrictionPolicyAsync(
+            UpdatePlaybackRestrictionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePlaybackRestrictionPolicyRequest, UpdatePlaybackRestrictionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

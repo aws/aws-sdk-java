@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,8 +56,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.
+     * compute environments in the <code>DISABLED</code> state don't scale out.
+     * </p>
+     * <note>
+     * <p>
+     * Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     * additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     * "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     * >State</a> in the <i>Batch User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size
+     * doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of
+     * <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a
+     * <code>c5.large</code> instance.
      * </p>
      */
     private String state;
@@ -290,8 +303,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.
+     * compute environments in the <code>DISABLED</code> state don't scale out.
+     * </p>
+     * <note>
+     * <p>
+     * Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     * additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     * "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     * >State</a> in the <i>Batch User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size
+     * doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of
+     * <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a
+     * <code>c5.large</code> instance.
      * </p>
      * 
      * @param state
@@ -305,8 +331,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
-     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     *        <code>minvCpus</code> value after instances become idle.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     *        additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     *        >State</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the
+     *        instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a
+     *        <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>.
+     *        This instance doesn't scale down to a <code>c5.large</code> instance.
      * @see CEState
      */
 
@@ -327,8 +366,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.
+     * compute environments in the <code>DISABLED</code> state don't scale out.
+     * </p>
+     * <note>
+     * <p>
+     * Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     * additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     * "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     * >State</a> in the <i>Batch User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size
+     * doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of
+     * <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a
+     * <code>c5.large</code> instance.
      * </p>
      * 
      * @return The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment
@@ -341,8 +393,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *         <p>
      *         If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      *         environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
-     *         Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in
-     *         to <code>minvCpus</code> value after instances become idle.
+     *         Managed compute environments in the <code>DISABLED</code> state don't scale out.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     *         additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     *         >State</a> in the <i>Batch User Guide</i>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the
+     *         instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a
+     *         <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>.
+     *         This instance doesn't scale down to a <code>c5.large</code> instance.
      * @see CEState
      */
 
@@ -363,8 +428,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.
+     * compute environments in the <code>DISABLED</code> state don't scale out.
+     * </p>
+     * <note>
+     * <p>
+     * Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     * additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     * "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     * >State</a> in the <i>Batch User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size
+     * doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of
+     * <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a
+     * <code>c5.large</code> instance.
      * </p>
      * 
      * @param state
@@ -378,8 +456,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
-     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     *        <code>minvCpus</code> value after instances become idle.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     *        additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     *        >State</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the
+     *        instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a
+     *        <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>.
+     *        This instance doesn't scale down to a <code>c5.large</code> instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */
@@ -402,8 +493,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.
+     * compute environments in the <code>DISABLED</code> state don't scale out.
+     * </p>
+     * <note>
+     * <p>
+     * Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     * additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     * "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     * >State</a> in the <i>Batch User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size
+     * doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of
+     * <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a
+     * <code>c5.large</code> instance.
      * </p>
      * 
      * @param state
@@ -417,8 +521,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
-     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     *        <code>minvCpus</code> value after instances become idle.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     *        additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     *        >State</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the
+     *        instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a
+     *        <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>.
+     *        This instance doesn't scale down to a <code>c5.large</code> instance.
      * @see CEState
      */
 
@@ -439,8 +556,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      * environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-     * compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     * <code>minvCpus</code> value after instances become idle.
+     * compute environments in the <code>DISABLED</code> state don't scale out.
+     * </p>
+     * <note>
+     * <p>
+     * Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     * additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     * "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     * >State</a> in the <i>Batch User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size
+     * doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of
+     * <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a
+     * <code>c5.large</code> instance.
      * </p>
      * 
      * @param state
@@ -454,8 +584,21 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
      *        environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally.
-     *        Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-     *        <code>minvCpus</code> value after instances become idle.
+     *        Managed compute environments in the <code>DISABLED</code> state don't scale out.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent
+     *        additional charges, turn off and then delete the compute environment. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state"
+     *        >State</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the
+     *        instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a
+     *        <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>.
+     *        This instance doesn't scale down to a <code>c5.large</code> instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CEState
      */

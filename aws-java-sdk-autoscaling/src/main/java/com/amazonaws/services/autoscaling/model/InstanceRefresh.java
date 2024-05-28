@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,34 +45,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The request was created, but the operation has not started.
+     * <code>Pending</code> - The request was created, but the instance refresh has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InProgress</code> - The operation is in progress.
+     * <code>InProgress</code> - An instance refresh is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Successful</code> - The operation completed successfully.
+     * <code>Successful</code> - An instance refresh completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
-     * scaling activities.
+     * <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     * replacements that have already been completed, but it prevents new replacements from being started.
+     * <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelled</code> - The operation is cancelled.
+     * <code>Cancelled</code> - The instance refresh is cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackSuccessful</code> - The rollback completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -80,7 +95,7 @@ public class InstanceRefresh implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * Provides more details about the current status of the instance refresh.
+     * The explanation for the specific status assigned to this operation.
      * </p>
      */
     private String statusReason;
@@ -102,12 +117,25 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
      * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
+     * <note>
+     * <p>
+     * <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value
+     * gradually goes back down to zero during a rollback.
+     * </p>
+     * </note>
      */
     private Integer percentageComplete;
     /**
      * <p>
      * The number of instances remaining to update before the instance refresh is complete.
      * </p>
+     * <note>
+     * <p>
+     * If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were
+     * not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the
+     * rollback.
+     * </p>
+     * </note>
      */
     private Integer instancesToUpdate;
     /**
@@ -116,14 +144,24 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * </p>
      */
     private InstanceRefreshProgressDetails progressDetails;
-
+    /**
+     * <p>
+     * The preferences for an instance refresh.
+     * </p>
+     */
     private RefreshPreferences preferences;
     /**
      * <p>
-     * Describes the specific update you want to deploy.
+     * Describes the desired configuration for the instance refresh.
      * </p>
      */
     private DesiredConfiguration desiredConfiguration;
+    /**
+     * <p>
+     * The rollback details.
+     * </p>
+     */
+    private RollbackDetails rollbackDetails;
 
     /**
      * <p>
@@ -212,34 +250,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The request was created, but the operation has not started.
+     * <code>Pending</code> - The request was created, but the instance refresh has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InProgress</code> - The operation is in progress.
+     * <code>InProgress</code> - An instance refresh is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Successful</code> - The operation completed successfully.
+     * <code>Successful</code> - An instance refresh completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
-     * scaling activities.
+     * <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     * replacements that have already been completed, but it prevents new replacements from being started.
+     * <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelled</code> - The operation is cancelled.
+     * <code>Cancelled</code> - The instance refresh is cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackSuccessful</code> - The rollback completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -249,34 +302,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Pending</code> - The request was created, but the operation has not started.
+     *        <code>Pending</code> - The request was created, but the instance refresh has not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InProgress</code> - The operation is in progress.
+     *        <code>InProgress</code> - An instance refresh is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Successful</code> - The operation completed successfully.
+     *        <code>Successful</code> - An instance refresh completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and
-     *        the scaling activities.
+     *        <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason
+     *        and the scaling activities.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     *        replacements that have already been completed, but it prevents new replacements from being started.
+     *        <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Cancelled</code> - The operation is cancelled.
+     *        <code>Cancelled</code> - The instance refresh is cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status
+     *        reason and the scaling activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackSuccessful</code> - The rollback completed successfully.
      *        </p>
      *        </li>
      * @see InstanceRefreshStatus
@@ -293,34 +361,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The request was created, but the operation has not started.
+     * <code>Pending</code> - The request was created, but the instance refresh has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InProgress</code> - The operation is in progress.
+     * <code>InProgress</code> - An instance refresh is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Successful</code> - The operation completed successfully.
+     * <code>Successful</code> - An instance refresh completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
-     * scaling activities.
+     * <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     * replacements that have already been completed, but it prevents new replacements from being started.
+     * <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelled</code> - The operation is cancelled.
+     * <code>Cancelled</code> - The instance refresh is cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackSuccessful</code> - The rollback completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -329,34 +412,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Pending</code> - The request was created, but the operation has not started.
+     *         <code>Pending</code> - The request was created, but the instance refresh has not started.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>InProgress</code> - The operation is in progress.
+     *         <code>InProgress</code> - An instance refresh is in progress.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Successful</code> - The operation completed successfully.
+     *         <code>Successful</code> - An instance refresh completed successfully.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and
-     *         the scaling activities.
+     *         <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status
+     *         reason and the scaling activities.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     *         replacements that have already been completed, but it prevents new replacements from being started.
+     *         <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Cancelled</code> - The operation is cancelled.
+     *         <code>Cancelled</code> - The instance refresh is cancelled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status
+     *         reason and the scaling activities.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RollbackSuccessful</code> - The rollback completed successfully.
      *         </p>
      *         </li>
      * @see InstanceRefreshStatus
@@ -373,34 +471,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The request was created, but the operation has not started.
+     * <code>Pending</code> - The request was created, but the instance refresh has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InProgress</code> - The operation is in progress.
+     * <code>InProgress</code> - An instance refresh is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Successful</code> - The operation completed successfully.
+     * <code>Successful</code> - An instance refresh completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
-     * scaling activities.
+     * <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     * replacements that have already been completed, but it prevents new replacements from being started.
+     * <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelled</code> - The operation is cancelled.
+     * <code>Cancelled</code> - The instance refresh is cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackSuccessful</code> - The rollback completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -410,34 +523,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Pending</code> - The request was created, but the operation has not started.
+     *        <code>Pending</code> - The request was created, but the instance refresh has not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InProgress</code> - The operation is in progress.
+     *        <code>InProgress</code> - An instance refresh is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Successful</code> - The operation completed successfully.
+     *        <code>Successful</code> - An instance refresh completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and
-     *        the scaling activities.
+     *        <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason
+     *        and the scaling activities.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     *        replacements that have already been completed, but it prevents new replacements from being started.
+     *        <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Cancelled</code> - The operation is cancelled.
+     *        <code>Cancelled</code> - The instance refresh is cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status
+     *        reason and the scaling activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackSuccessful</code> - The rollback completed successfully.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -456,34 +584,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The request was created, but the operation has not started.
+     * <code>Pending</code> - The request was created, but the instance refresh has not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InProgress</code> - The operation is in progress.
+     * <code>InProgress</code> - An instance refresh is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Successful</code> - The operation completed successfully.
+     * <code>Successful</code> - An instance refresh completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
-     * scaling activities.
+     * <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     * replacements that have already been completed, but it prevents new replacements from being started.
+     * <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Cancelled</code> - The operation is cancelled.
+     * <code>Cancelled</code> - The instance refresh is cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and
+     * the scaling activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RollbackSuccessful</code> - The rollback completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -493,34 +636,49 @@ public class InstanceRefresh implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Pending</code> - The request was created, but the operation has not started.
+     *        <code>Pending</code> - The request was created, but the instance refresh has not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InProgress</code> - The operation is in progress.
+     *        <code>InProgress</code> - An instance refresh is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Successful</code> - The operation completed successfully.
+     *        <code>Successful</code> - An instance refresh completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and
-     *        the scaling activities.
+     *        <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason
+     *        and the scaling activities.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     *        replacements that have already been completed, but it prevents new replacements from being started.
+     *        <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Cancelled</code> - The operation is cancelled.
+     *        <code>Cancelled</code> - The instance refresh is cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status
+     *        reason and the scaling activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RollbackSuccessful</code> - The rollback completed successfully.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -534,11 +692,11 @@ public class InstanceRefresh implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides more details about the current status of the instance refresh.
+     * The explanation for the specific status assigned to this operation.
      * </p>
      * 
      * @param statusReason
-     *        Provides more details about the current status of the instance refresh.
+     *        The explanation for the specific status assigned to this operation.
      */
 
     public void setStatusReason(String statusReason) {
@@ -547,10 +705,10 @@ public class InstanceRefresh implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides more details about the current status of the instance refresh.
+     * The explanation for the specific status assigned to this operation.
      * </p>
      * 
-     * @return Provides more details about the current status of the instance refresh.
+     * @return The explanation for the specific status assigned to this operation.
      */
 
     public String getStatusReason() {
@@ -559,11 +717,11 @@ public class InstanceRefresh implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides more details about the current status of the instance refresh.
+     * The explanation for the specific status assigned to this operation.
      * </p>
      * 
      * @param statusReason
-     *        Provides more details about the current status of the instance refresh.
+     *        The explanation for the specific status assigned to this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,12 +816,22 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
      * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
+     * <note>
+     * <p>
+     * <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value
+     * gradually goes back down to zero during a rollback.
+     * </p>
+     * </note>
      * 
      * @param percentageComplete
      *        The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto
      *        Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to
      *        healthy and the specified warm-up time passes, the instance is considered updated and is added to the
-     *        percentage complete.
+     *        percentage complete.</p> <note>
+     *        <p>
+     *        <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value
+     *        gradually goes back down to zero during a rollback.
+     *        </p>
      */
 
     public void setPercentageComplete(Integer percentageComplete) {
@@ -676,11 +844,21 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
      * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
+     * <note>
+     * <p>
+     * <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value
+     * gradually goes back down to zero during a rollback.
+     * </p>
+     * </note>
      * 
      * @return The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto
      *         Scaling tracks the instance's health status and warm-up time. When the instance's health status changes
      *         to healthy and the specified warm-up time passes, the instance is considered updated and is added to the
-     *         percentage complete.
+     *         percentage complete.</p> <note>
+     *         <p>
+     *         <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This
+     *         value gradually goes back down to zero during a rollback.
+     *         </p>
      */
 
     public Integer getPercentageComplete() {
@@ -693,12 +871,22 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
      * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
+     * <note>
+     * <p>
+     * <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value
+     * gradually goes back down to zero during a rollback.
+     * </p>
+     * </note>
      * 
      * @param percentageComplete
      *        The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto
      *        Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to
      *        healthy and the specified warm-up time passes, the instance is considered updated and is added to the
-     *        percentage complete.
+     *        percentage complete.</p> <note>
+     *        <p>
+     *        <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value
+     *        gradually goes back down to zero during a rollback.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -711,9 +899,21 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The number of instances remaining to update before the instance refresh is complete.
      * </p>
+     * <note>
+     * <p>
+     * If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were
+     * not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the
+     * rollback.
+     * </p>
+     * </note>
      * 
      * @param instancesToUpdate
-     *        The number of instances remaining to update before the instance refresh is complete.
+     *        The number of instances remaining to update before the instance refresh is complete.</p> <note>
+     *        <p>
+     *        If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances
+     *        that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as
+     *        part of the rollback.
+     *        </p>
      */
 
     public void setInstancesToUpdate(Integer instancesToUpdate) {
@@ -724,8 +924,20 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The number of instances remaining to update before the instance refresh is complete.
      * </p>
+     * <note>
+     * <p>
+     * If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were
+     * not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the
+     * rollback.
+     * </p>
+     * </note>
      * 
-     * @return The number of instances remaining to update before the instance refresh is complete.
+     * @return The number of instances remaining to update before the instance refresh is complete.</p> <note>
+     *         <p>
+     *         If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances
+     *         that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced
+     *         as part of the rollback.
+     *         </p>
      */
 
     public Integer getInstancesToUpdate() {
@@ -736,9 +948,21 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The number of instances remaining to update before the instance refresh is complete.
      * </p>
+     * <note>
+     * <p>
+     * If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were
+     * not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the
+     * rollback.
+     * </p>
+     * </note>
      * 
      * @param instancesToUpdate
-     *        The number of instances remaining to update before the instance refresh is complete.
+     *        The number of instances remaining to update before the instance refresh is complete.</p> <note>
+     *        <p>
+     *        If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances
+     *        that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as
+     *        part of the rollback.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -788,7 +1012,12 @@ public class InstanceRefresh implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The preferences for an instance refresh.
+     * </p>
+     * 
      * @param preferences
+     *        The preferences for an instance refresh.
      */
 
     public void setPreferences(RefreshPreferences preferences) {
@@ -796,7 +1025,11 @@ public class InstanceRefresh implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The preferences for an instance refresh.
+     * </p>
+     * 
+     * @return The preferences for an instance refresh.
      */
 
     public RefreshPreferences getPreferences() {
@@ -804,7 +1037,12 @@ public class InstanceRefresh implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The preferences for an instance refresh.
+     * </p>
+     * 
      * @param preferences
+     *        The preferences for an instance refresh.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -815,11 +1053,11 @@ public class InstanceRefresh implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the specific update you want to deploy.
+     * Describes the desired configuration for the instance refresh.
      * </p>
      * 
      * @param desiredConfiguration
-     *        Describes the specific update you want to deploy.
+     *        Describes the desired configuration for the instance refresh.
      */
 
     public void setDesiredConfiguration(DesiredConfiguration desiredConfiguration) {
@@ -828,10 +1066,10 @@ public class InstanceRefresh implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the specific update you want to deploy.
+     * Describes the desired configuration for the instance refresh.
      * </p>
      * 
-     * @return Describes the specific update you want to deploy.
+     * @return Describes the desired configuration for the instance refresh.
      */
 
     public DesiredConfiguration getDesiredConfiguration() {
@@ -840,16 +1078,56 @@ public class InstanceRefresh implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the specific update you want to deploy.
+     * Describes the desired configuration for the instance refresh.
      * </p>
      * 
      * @param desiredConfiguration
-     *        Describes the specific update you want to deploy.
+     *        Describes the desired configuration for the instance refresh.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceRefresh withDesiredConfiguration(DesiredConfiguration desiredConfiguration) {
         setDesiredConfiguration(desiredConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rollback details.
+     * </p>
+     * 
+     * @param rollbackDetails
+     *        The rollback details.
+     */
+
+    public void setRollbackDetails(RollbackDetails rollbackDetails) {
+        this.rollbackDetails = rollbackDetails;
+    }
+
+    /**
+     * <p>
+     * The rollback details.
+     * </p>
+     * 
+     * @return The rollback details.
+     */
+
+    public RollbackDetails getRollbackDetails() {
+        return this.rollbackDetails;
+    }
+
+    /**
+     * <p>
+     * The rollback details.
+     * </p>
+     * 
+     * @param rollbackDetails
+     *        The rollback details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRefresh withRollbackDetails(RollbackDetails rollbackDetails) {
+        setRollbackDetails(rollbackDetails);
         return this;
     }
 
@@ -886,7 +1164,9 @@ public class InstanceRefresh implements Serializable, Cloneable {
         if (getPreferences() != null)
             sb.append("Preferences: ").append(getPreferences()).append(",");
         if (getDesiredConfiguration() != null)
-            sb.append("DesiredConfiguration: ").append(getDesiredConfiguration());
+            sb.append("DesiredConfiguration: ").append(getDesiredConfiguration()).append(",");
+        if (getRollbackDetails() != null)
+            sb.append("RollbackDetails: ").append(getRollbackDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -945,6 +1225,10 @@ public class InstanceRefresh implements Serializable, Cloneable {
             return false;
         if (other.getDesiredConfiguration() != null && other.getDesiredConfiguration().equals(this.getDesiredConfiguration()) == false)
             return false;
+        if (other.getRollbackDetails() == null ^ this.getRollbackDetails() == null)
+            return false;
+        if (other.getRollbackDetails() != null && other.getRollbackDetails().equals(this.getRollbackDetails()) == false)
+            return false;
         return true;
     }
 
@@ -964,6 +1248,7 @@ public class InstanceRefresh implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getProgressDetails() == null) ? 0 : getProgressDetails().hashCode());
         hashCode = prime * hashCode + ((getPreferences() == null) ? 0 : getPreferences().hashCode());
         hashCode = prime * hashCode + ((getDesiredConfiguration() == null) ? 0 : getDesiredConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRollbackDetails() == null) ? 0 : getRollbackDetails().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,10 +46,9 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * The time when the model compilation job started the <code>CompilationJob</code> instances.
      * </p>
      * <p>
-     * You are billed for the time between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time might
-     * be later than this time. That's because it takes time to download the compilation job, which depends on the size
-     * of the compilation job container.
+     * You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to
+     * download the compilation job, which depends on the size of the compilation job container.
      * </p>
      */
     private java.util.Date compilationStartTime;
@@ -134,13 +133,20 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private OutputConfig outputConfig;
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      */
     private NeoVpcConfig vpcConfig;
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     */
+    private DerivedInformation derivedInformation;
 
     /**
      * <p>
@@ -286,19 +292,18 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * The time when the model compilation job started the <code>CompilationJob</code> instances.
      * </p>
      * <p>
-     * You are billed for the time between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time might
-     * be later than this time. That's because it takes time to download the compilation job, which depends on the size
-     * of the compilation job container.
+     * You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to
+     * download the compilation job, which depends on the size of the compilation job container.
      * </p>
      * 
      * @param compilationStartTime
      *        The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
      *        <p>
      *        You are billed for the time between this timestamp and the timestamp in the
-     *        <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time
-     *        might be later than this time. That's because it takes time to download the compilation job, which depends
-     *        on the size of the compilation job container.
+     *        <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this
+     *        time. That's because it takes time to download the compilation job, which depends on the size of the
+     *        compilation job container.
      */
 
     public void setCompilationStartTime(java.util.Date compilationStartTime) {
@@ -310,18 +315,17 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * The time when the model compilation job started the <code>CompilationJob</code> instances.
      * </p>
      * <p>
-     * You are billed for the time between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time might
-     * be later than this time. That's because it takes time to download the compilation job, which depends on the size
-     * of the compilation job container.
+     * You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to
+     * download the compilation job, which depends on the size of the compilation job container.
      * </p>
      * 
      * @return The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
      *         <p>
      *         You are billed for the time between this timestamp and the timestamp in the
-     *         <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time
-     *         might be later than this time. That's because it takes time to download the compilation job, which
-     *         depends on the size of the compilation job container.
+     *         <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this
+     *         time. That's because it takes time to download the compilation job, which depends on the size of the
+     *         compilation job container.
      */
 
     public java.util.Date getCompilationStartTime() {
@@ -333,19 +337,18 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
      * The time when the model compilation job started the <code>CompilationJob</code> instances.
      * </p>
      * <p>
-     * You are billed for the time between this timestamp and the timestamp in the
-     * <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time might
-     * be later than this time. That's because it takes time to download the compilation job, which depends on the size
-     * of the compilation job container.
+     * You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+     * field. In Amazon CloudWatch Logs, the start time might be later than this time. That's because it takes time to
+     * download the compilation job, which depends on the size of the compilation job container.
      * </p>
      * 
      * @param compilationStartTime
      *        The time when the model compilation job started the <code>CompilationJob</code> instances. </p>
      *        <p>
      *        You are billed for the time between this timestamp and the timestamp in the
-     *        <a>DescribeCompilationJobResponse$CompilationEndTime</a> field. In Amazon CloudWatch Logs, the start time
-     *        might be later than this time. That's because it takes time to download the compilation job, which depends
-     *        on the size of the compilation job container.
+     *        <code>CompilationEndTime</code> field. In Amazon CloudWatch Logs, the start time might be later than this
+     *        time. That's because it takes time to download the compilation job, which depends on the size of the
+     *        compilation job container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -882,15 +885,17 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
-     *        access to your models by configuring the VPC. For more information, see <a
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that you want your compilation job to connect to. Control access to your
+     *        models by configuring the VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      */
@@ -901,14 +906,16 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
-     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to.
-     *         Control access to your models by configuring the VPC. For more information, see <a
+     * @return A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *         object that specifies the VPC that you want your compilation job to connect to. Control access to your
+     *         models by configuring the VPC. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
      *         Amazon Virtual Private Cloud</a>.
      */
@@ -919,15 +926,17 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control access
-     * to your models by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your compilation job to connect to. Control access to your models by
+     * configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job to connect to. Control
-     *        access to your models by configuring the VPC. For more information, see <a
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that you want your compilation job to connect to. Control access to your
+     *        models by configuring the VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -935,6 +944,46 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     public DescribeCompilationJobResult withVpcConfig(NeoVpcConfig vpcConfig) {
         setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     * 
+     * @param derivedInformation
+     *        Information that SageMaker Neo automatically derived about the model.
+     */
+
+    public void setDerivedInformation(DerivedInformation derivedInformation) {
+        this.derivedInformation = derivedInformation;
+    }
+
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     * 
+     * @return Information that SageMaker Neo automatically derived about the model.
+     */
+
+    public DerivedInformation getDerivedInformation() {
+        return this.derivedInformation;
+    }
+
+    /**
+     * <p>
+     * Information that SageMaker Neo automatically derived about the model.
+     * </p>
+     * 
+     * @param derivedInformation
+     *        Information that SageMaker Neo automatically derived about the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCompilationJobResult withDerivedInformation(DerivedInformation derivedInformation) {
+        setDerivedInformation(derivedInformation);
         return this;
     }
 
@@ -983,7 +1032,9 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         if (getOutputConfig() != null)
             sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getDerivedInformation() != null)
+            sb.append("DerivedInformation: ").append(getDerivedInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -1066,6 +1117,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getDerivedInformation() == null ^ this.getDerivedInformation() == null)
+            return false;
+        if (other.getDerivedInformation() != null && other.getDerivedInformation().equals(this.getDerivedInformation()) == false)
+            return false;
         return true;
     }
 
@@ -1091,6 +1146,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getDerivedInformation() == null) ? 0 : getDerivedInformation().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      */
     private AccountGrouping accountGrouping;
@@ -59,7 +59,7 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     private String primaryAccountId;
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      */
     private String description;
@@ -160,12 +160,12 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      * 
      * @param accountGrouping
      *        The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts
-     *        in a consolidated family.
+     *        in a consolidated billing family.
      */
 
     public void setAccountGrouping(AccountGrouping accountGrouping) {
@@ -175,11 +175,11 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      * 
      * @return The set of accounts that will be under the billing group. The set of accounts resemble the linked
-     *         accounts in a consolidated family.
+     *         accounts in a consolidated billing family.
      */
 
     public AccountGrouping getAccountGrouping() {
@@ -189,12 +189,12 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
-     * consolidated family.
+     * consolidated billing family.
      * </p>
      * 
      * @param accountGrouping
      *        The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts
-     *        in a consolidated family.
+     *        in a consolidated billing family.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +288,11 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
      * @param description
-     *        The billing group description.
+     *        The description of the billing group.
      */
 
     public void setDescription(String description) {
@@ -301,10 +301,10 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
-     * @return The billing group description.
+     * @return The description of the billing group.
      */
 
     public String getDescription() {
@@ -313,11 +313,11 @@ public class CreateBillingGroupRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
      * @param description
-     *        The billing group description.
+     *        The description of the billing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

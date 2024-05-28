@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.athena.AmazonAthenaClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.athena.model.*;
+
 import com.amazonaws.services.athena.model.transform.*;
 
 /**
@@ -62,11 +63,6 @@ import com.amazonaws.services.athena.model.transform.*;
  * If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API.
  * Earlier version drivers do not support the API. For more information and to download the driver, see <a
  * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing Amazon Athena with JDBC</a>.
- * </p>
- * <p>
- * For code samples using the Amazon Web Services SDK for Java, see <a
- * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon
- * Athena User Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -92,9 +88,6 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MetadataException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.athena.model.transform.MetadataExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.athena.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -103,6 +96,12 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.athena.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MetadataException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.athena.model.transform.MetadataExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SessionAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.athena.model.transform.SessionAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.athena.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
@@ -353,6 +352,132 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will
+     * be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has
+     * been cancelled, but you can refer to its tags and view it for historical reference.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @return Result of the CancelCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelCapacityReservationResult cancelCapacityReservation(CancelCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final CancelCapacityReservationResult executeCancelCapacityReservation(CancelCapacityReservationRequest cancelCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelCapacityReservationRequest> request = null;
+        Response<CancelCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelCapacityReservationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a capacity reservation with the specified name and number of requested data processing units.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @return Result of the CreateCapacityReservation operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final CreateCapacityReservationResult executeCreateCapacityReservation(CreateCapacityReservationRequest createCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCapacityReservationRequest> request = null;
+        Response<CreateCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCapacityReservationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
      * users of the same Amazon Web Services account.
      * </p>
@@ -416,11 +541,6 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
-     * <p>
-     * For code samples using the Amazon Web Services SDK for Java, see <a
-     * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
-     * <i>Amazon Athena User Guide</i>.
-     * </p>
      * 
      * @param createNamedQueryRequest
      * @return Result of the CreateNamedQuery operation returned by the service.
@@ -467,6 +587,69 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateNamedQueryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNamedQueryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a
+     * file in the workgroup with the same name already exists.
+     * </p>
+     * 
+     * @param createNotebookRequest
+     * @return Result of the CreateNotebook operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.CreateNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateNotebookResult createNotebook(CreateNotebookRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNotebook(request);
+    }
+
+    @SdkInternalApi
+    final CreateNotebookResult executeCreateNotebook(CreateNotebookRequest createNotebookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNotebookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNotebookRequest> request = null;
+        Response<CreateNotebookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNotebookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotebookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotebook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNotebookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNotebookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -541,7 +724,76 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Creates a workgroup with the specified name.
+     * Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access,
+     * <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For
+     * information about granting programmatic access, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant
+     * programmatic access</a>.
+     * </p>
+     * 
+     * @param createPresignedNotebookUrlRequest
+     * @return Result of the CreatePresignedNotebookUrl operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.CreatePresignedNotebookUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePresignedNotebookUrlResult createPresignedNotebookUrl(CreatePresignedNotebookUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePresignedNotebookUrl(request);
+    }
+
+    @SdkInternalApi
+    final CreatePresignedNotebookUrlResult executeCreatePresignedNotebookUrl(CreatePresignedNotebookUrlRequest createPresignedNotebookUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPresignedNotebookUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePresignedNotebookUrlRequest> request = null;
+        Response<CreatePresignedNotebookUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePresignedNotebookUrlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createPresignedNotebookUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePresignedNotebookUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePresignedNotebookUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreatePresignedNotebookUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena
+     * SQL workgroup.
      * </p>
      * 
      * @param createWorkGroupRequest
@@ -589,6 +841,71 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted
+     * reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A
+     * deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not
+     * appear in the output of <code>ListCapacityReservations</code>.
+     * </p>
+     * 
+     * @param deleteCapacityReservationRequest
+     * @return Result of the DeleteCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.DeleteCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteCapacityReservationResult deleteCapacityReservation(DeleteCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCapacityReservationResult executeDeleteCapacityReservation(DeleteCapacityReservationRequest deleteCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCapacityReservationRequest> request = null;
+        Response<DeleteCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCapacityReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -663,11 +980,6 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Deletes the named query if you have access to the workgroup in which the query was saved.
      * </p>
-     * <p>
-     * For code samples using the Amazon Web Services SDK for Java, see <a
-     * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
-     * <i>Amazon Athena User Guide</i>.
-     * </p>
      * 
      * @param deleteNamedQueryRequest
      * @return Result of the DeleteNamedQuery operation returned by the service.
@@ -714,6 +1026,68 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteNamedQueryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNamedQueryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified notebook.
+     * </p>
+     * 
+     * @param deleteNotebookRequest
+     * @return Result of the DeleteNotebook operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.DeleteNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteNotebookResult deleteNotebook(DeleteNotebookRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNotebook(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNotebookResult executeDeleteNotebook(DeleteNotebookRequest deleteNotebookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNotebookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNotebookRequest> request = null;
+        Response<DeleteNotebookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNotebookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotebookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotebook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNotebookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNotebookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -838,6 +1212,384 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Exports the specified notebook and its metadata.
+     * </p>
+     * 
+     * @param exportNotebookRequest
+     * @return Result of the ExportNotebook operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.ExportNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ExportNotebookResult exportNotebook(ExportNotebookRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportNotebook(request);
+    }
+
+    @SdkInternalApi
+    final ExportNotebookResult executeExportNotebook(ExportNotebookRequest exportNotebookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportNotebookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportNotebookRequest> request = null;
+        Response<ExportNotebookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportNotebookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportNotebookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportNotebook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportNotebookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExportNotebookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a previously submitted calculation execution.
+     * </p>
+     * 
+     * @param getCalculationExecutionRequest
+     * @return Result of the GetCalculationExecution operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCalculationExecutionResult getCalculationExecution(GetCalculationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCalculationExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetCalculationExecutionResult executeGetCalculationExecution(GetCalculationExecutionRequest getCalculationExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCalculationExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCalculationExecutionRequest> request = null;
+        Response<GetCalculationExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCalculationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCalculationExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCalculationExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCalculationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCalculationExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the unencrypted code that was executed for the calculation.
+     * </p>
+     * 
+     * @param getCalculationExecutionCodeRequest
+     * @return Result of the GetCalculationExecutionCode operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetCalculationExecutionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCalculationExecutionCodeResult getCalculationExecutionCode(GetCalculationExecutionCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCalculationExecutionCode(request);
+    }
+
+    @SdkInternalApi
+    final GetCalculationExecutionCodeResult executeGetCalculationExecutionCode(GetCalculationExecutionCodeRequest getCalculationExecutionCodeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCalculationExecutionCodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCalculationExecutionCodeRequest> request = null;
+        Response<GetCalculationExecutionCodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCalculationExecutionCodeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCalculationExecutionCodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCalculationExecutionCode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCalculationExecutionCodeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCalculationExecutionCodeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the status of a current calculation.
+     * </p>
+     * 
+     * @param getCalculationExecutionStatusRequest
+     * @return Result of the GetCalculationExecutionStatus operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetCalculationExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCalculationExecutionStatusResult getCalculationExecutionStatus(GetCalculationExecutionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCalculationExecutionStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetCalculationExecutionStatusResult executeGetCalculationExecutionStatus(GetCalculationExecutionStatusRequest getCalculationExecutionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCalculationExecutionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCalculationExecutionStatusRequest> request = null;
+        Response<GetCalculationExecutionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCalculationExecutionStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCalculationExecutionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCalculationExecutionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCalculationExecutionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCalculationExecutionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the capacity assignment configuration for a capacity reservation, if one exists.
+     * </p>
+     * 
+     * @param getCapacityAssignmentConfigurationRequest
+     * @return Result of the GetCapacityAssignmentConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.GetCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCapacityAssignmentConfigurationResult getCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCapacityAssignmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetCapacityAssignmentConfigurationResult executeGetCapacityAssignmentConfiguration(
+            GetCapacityAssignmentConfigurationRequest getCapacityAssignmentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCapacityAssignmentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCapacityAssignmentConfigurationRequest> request = null;
+        Response<GetCapacityAssignmentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCapacityAssignmentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCapacityAssignmentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityAssignmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCapacityAssignmentConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCapacityAssignmentConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param getCapacityReservationRequest
+     * @return Result of the GetCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.GetCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCapacityReservationResult getCapacityReservation(GetCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final GetCapacityReservationResult executeGetCapacityReservation(GetCapacityReservationRequest getCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCapacityReservationRequest> request = null;
+        Response<GetCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCapacityReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1036,6 +1788,68 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Retrieves notebook metadata for the specified notebook ID.
+     * </p>
+     * 
+     * @param getNotebookMetadataRequest
+     * @return Result of the GetNotebookMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.GetNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetNotebookMetadataResult getNotebookMetadata(GetNotebookMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetNotebookMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetNotebookMetadataResult executeGetNotebookMetadata(GetNotebookMetadataRequest getNotebookMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getNotebookMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetNotebookMetadataRequest> request = null;
+        Response<GetNotebookMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetNotebookMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNotebookMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNotebookMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetNotebookMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetNotebookMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the prepared statement with the specified name from the specified workgroup.
      * </p>
      * 
@@ -1161,9 +1975,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query
      * results location in Amazon S3. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> in the <i>Amazon Athena User
-     * Guide</i>. This request does not execute the query but returns results. Use <a>StartQueryExecution</a> to run a
-     * query.
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns
+     * results. Use <a>StartQueryExecution</a> to run a query.
      * </p>
      * <p>
      * To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code> also
@@ -1185,6 +1999,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidRequestException
      *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
      *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
      * @sample AmazonAthena.GetQueryResults
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults" target="_top">AWS API
      *      Documentation</a>
@@ -1236,8 +2052,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Returns query execution runtime statistics related to a single execution of a query if you have access to the
-     * workgroup in which the query ran. The query execution runtime statistics is returned only when
-     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state.
+     * workgroup in which the query ran. Query execution runtime statistics are returned only when
+     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and
+     * data size statistics are not shown when a query has row-level filters defined in Lake Formation.
      * </p>
      * 
      * @param getQueryRuntimeStatisticsRequest
@@ -1287,6 +2104,130 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<GetQueryRuntimeStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetQueryRuntimeStatisticsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the full details of a previously created session, including the session status and configuration.
+     * </p>
+     * 
+     * @param getSessionRequest
+     * @return Result of the GetSession operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSessionResult getSession(GetSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSession(request);
+    }
+
+    @SdkInternalApi
+    final GetSessionResult executeGetSession(GetSessionRequest getSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSessionRequest> request = null;
+        Response<GetSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSessionResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the current status of a session.
+     * </p>
+     * 
+     * @param getSessionStatusRequest
+     * @return Result of the GetSessionStatus operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetSessionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSessionStatusResult getSessionStatus(GetSessionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSessionStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetSessionStatusResult executeGetSessionStatus(GetSessionStatusRequest getSessionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSessionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSessionStatusRequest> request = null;
+        Response<GetSessionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSessionStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSessionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSessionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSessionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSessionStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1424,8 +2365,271 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Imports a single <code>ipynb</code> file to a Spark enabled workgroup. To import the notebook, the request must
+     * specify a value for either <code>Payload</code> or <code>NoteBookS3LocationUri</code>. If neither is specified or
+     * both are specified, an <code>InvalidRequestException</code> occurs. The maximum file size that can be imported is
+     * 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.
+     * </p>
+     * 
+     * @param importNotebookRequest
+     * @return Result of the ImportNotebook operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.ImportNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ImportNotebookResult importNotebook(ImportNotebookRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportNotebook(request);
+    }
+
+    @SdkInternalApi
+    final ImportNotebookResult executeImportNotebook(ImportNotebookRequest importNotebookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importNotebookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportNotebookRequest> request = null;
+        Response<ImportNotebookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportNotebookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importNotebookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportNotebook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportNotebookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportNotebookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the supported DPU sizes for the supported application runtimes (for example,
+     * <code>Athena notebook version 1</code>).
+     * </p>
+     * 
+     * @param listApplicationDPUSizesRequest
+     * @return Result of the ListApplicationDPUSizes operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.ListApplicationDPUSizes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListApplicationDPUSizesResult listApplicationDPUSizes(ListApplicationDPUSizesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationDPUSizes(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationDPUSizesResult executeListApplicationDPUSizes(ListApplicationDPUSizesRequest listApplicationDPUSizesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationDPUSizesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationDPUSizesRequest> request = null;
+        Response<ListApplicationDPUSizesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationDPUSizesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationDPUSizesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationDPUSizes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationDPUSizesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationDPUSizesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed
+     * first; older calculations are listed later.
+     * </p>
+     * 
+     * @param listCalculationExecutionsRequest
+     * @return Result of the ListCalculationExecutions operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListCalculationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCalculationExecutionsResult listCalculationExecutions(ListCalculationExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCalculationExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListCalculationExecutionsResult executeListCalculationExecutions(ListCalculationExecutionsRequest listCalculationExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCalculationExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCalculationExecutionsRequest> request = null;
+        Response<ListCalculationExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCalculationExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCalculationExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCalculationExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCalculationExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCalculationExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the capacity reservations for the current account.
+     * </p>
+     * 
+     * @param listCapacityReservationsRequest
+     * @return Result of the ListCapacityReservations operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCapacityReservationsResult listCapacityReservations(ListCapacityReservationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCapacityReservations(request);
+    }
+
+    @SdkInternalApi
+    final ListCapacityReservationsResult executeListCapacityReservations(ListCapacityReservationsRequest listCapacityReservationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCapacityReservationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCapacityReservationsRequest> request = null;
+        Response<ListCapacityReservationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCapacityReservationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCapacityReservationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCapacityReservations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCapacityReservationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCapacityReservationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the data catalogs in the current Amazon Web Services account.
      * </p>
+     * <note>
+     * <p>
+     * In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the
+     * <b>Data source name</b> column.
+     * </p>
+     * </note>
      * 
      * @param listDataCatalogsRequest
      * @return Result of the ListDataCatalogs operation returned by the service.
@@ -1609,14 +2813,72 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Lists, in descending order, the executors that joined a session. Newer executors are listed first; older
+     * executors are listed later. The result can be optionally filtered by state.
+     * </p>
+     * 
+     * @param listExecutorsRequest
+     * @return Result of the ListExecutors operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListExecutors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExecutorsResult listExecutors(ListExecutorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExecutors(request);
+    }
+
+    @SdkInternalApi
+    final ListExecutorsResult executeListExecutors(ListExecutorsRequest listExecutorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExecutorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExecutorsRequest> request = null;
+        Response<ListExecutorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExecutorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExecutorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExecutors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExecutorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExecutorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
      * access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary
      * workgroup.
-     * </p>
-     * <p>
-     * For code samples using the Amazon Web Services SDK for Java, see <a
-     * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
-     * <i>Amazon Athena User Guide</i>.
      * </p>
      * 
      * @param listNamedQueriesRequest
@@ -1664,6 +2926,132 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<ListNamedQueriesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListNamedQueriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Displays the notebook files for the specified workgroup in paginated format.
+     * </p>
+     * 
+     * @param listNotebookMetadataRequest
+     * @return Result of the ListNotebookMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.ListNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListNotebookMetadataResult listNotebookMetadata(ListNotebookMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNotebookMetadata(request);
+    }
+
+    @SdkInternalApi
+    final ListNotebookMetadataResult executeListNotebookMetadata(ListNotebookMetadataRequest listNotebookMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNotebookMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNotebookMetadataRequest> request = null;
+        Response<ListNotebookMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNotebookMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNotebookMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNotebookMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListNotebookMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists, in descending order, the sessions that have been created in a notebook that are in an active state like
+     * <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed
+     * first; older sessions are listed later.
+     * </p>
+     * 
+     * @param listNotebookSessionsRequest
+     * @return Result of the ListNotebookSessions operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListNotebookSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListNotebookSessionsResult listNotebookSessions(ListNotebookSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNotebookSessions(request);
+    }
+
+    @SdkInternalApi
+    final ListNotebookSessionsResult executeListNotebookSessions(ListNotebookSessionsRequest listNotebookSessionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNotebookSessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNotebookSessionsRequest> request = null;
+        Response<ListNotebookSessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNotebookSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNotebookSessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookSessions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNotebookSessionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListNotebookSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1737,14 +3125,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is
-     * not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to
-     * the workgroup in which the queries ran.
-     * </p>
-     * <p>
-     * For code samples using the Amazon Web Services SDK for Java, see <a
-     * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
-     * <i>Amazon Athena User Guide</i>.
+     * Provides a list of available query execution IDs for the queries in the specified workgroup. Athena keeps a query
+     * history for 45 days. If a workgroup is not specified, returns a list of query execution IDs for the primary
+     * workgroup. Requires you to have access to the workgroup in which the queries ran.
      * </p>
      * 
      * @param listQueryExecutionsRequest
@@ -1792,6 +3175,69 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<ListQueryExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListQueryExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>,
+     * <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
+     * </p>
+     * 
+     * @param listSessionsRequest
+     * @return Result of the ListSessions operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSessionsResult listSessions(ListSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSessions(request);
+    }
+
+    @SdkInternalApi
+    final ListSessionsResult executeListSessions(ListSessionsRequest listSessionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSessionsRequest> request = null;
+        Response<ListSessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSessions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSessionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1869,7 +3315,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Lists the tags associated with an Athena workgroup or data catalog resource.
+     * Lists the tags associated with an Athena resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1991,6 +3437,144 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment
+     * configuration already exists for the capacity reservation, replaces the existing capacity assignment
+     * configuration.
+     * </p>
+     * 
+     * @param putCapacityAssignmentConfigurationRequest
+     * @return Result of the PutCapacityAssignmentConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.PutCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutCapacityAssignmentConfigurationResult putCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutCapacityAssignmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutCapacityAssignmentConfigurationResult executePutCapacityAssignmentConfiguration(
+            PutCapacityAssignmentConfigurationRequest putCapacityAssignmentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putCapacityAssignmentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutCapacityAssignmentConfigurationRequest> request = null;
+        Response<PutCapacityAssignmentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutCapacityAssignmentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putCapacityAssignmentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCapacityAssignmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutCapacityAssignmentConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutCapacityAssignmentConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Submits calculations for execution within a session. You can supply the code to run as an inline code block
+     * within the request.
+     * </p>
+     * <note>
+     * <p>
+     * The request syntax requires the <a>StartCalculationExecutionRequest$CodeBlock</a> parameter or the
+     * <a>CalculationConfiguration$CodeBlock</a> parameter, but not both. Because
+     * <a>CalculationConfiguration$CodeBlock</a> is deprecated, use the
+     * <a>StartCalculationExecutionRequest$CodeBlock</a> parameter instead.
+     * </p>
+     * </note>
+     * 
+     * @param startCalculationExecutionRequest
+     * @return Result of the StartCalculationExecution operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.StartCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartCalculationExecutionResult startCalculationExecution(StartCalculationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCalculationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartCalculationExecutionResult executeStartCalculationExecution(StartCalculationExecutionRequest startCalculationExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCalculationExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCalculationExecutionRequest> request = null;
+        Response<StartCalculationExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCalculationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startCalculationExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCalculationExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCalculationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartCalculationExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
      * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
      * the catalog. For code samples using the Amazon Web Services SDK for Java, see <a
@@ -2057,12 +3641,147 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Stops a query execution. Requires you to have access to the workgroup in which the query ran.
+     * Creates a session for running calculations within a workgroup. The session is ready when it reaches an
+     * <code>IDLE</code> state.
      * </p>
+     * 
+     * @param startSessionRequest
+     * @return Result of the StartSession operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @throws SessionAlreadyExistsException
+     *         The specified session already exists.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartSessionResult startSession(StartSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSession(request);
+    }
+
+    @SdkInternalApi
+    final StartSessionResult executeStartSession(StartSessionRequest startSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSessionRequest> request = null;
+        Response<StartSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * For code samples using the Amazon Web Services SDK for Java, see <a
-     * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
-     * <i>Amazon Athena User Guide</i>.
+     * Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is
+     * already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>)
+     * succeeds but has no effect.
+     * </p>
+     * <note>
+     * <p>
+     * Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged
+     * for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider
+     * terminating the session in which the calculation is running.
+     * </p>
+     * </note>
+     * 
+     * @param stopCalculationExecutionRequest
+     * @return Result of the StopCalculationExecution operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.StopCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopCalculationExecutionResult stopCalculationExecution(StopCalculationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopCalculationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StopCalculationExecutionResult executeStopCalculationExecution(StopCalculationExecutionRequest stopCalculationExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopCalculationExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopCalculationExecutionRequest> request = null;
+        Response<StopCalculationExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopCalculationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopCalculationExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCalculationExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopCalculationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopCalculationExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a query execution. Requires you to have access to the workgroup in which the query ran.
      * </p>
      * 
      * @param stopQueryExecutionRequest
@@ -2122,16 +3841,15 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
-     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
-     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
-     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
-     * in your account. For best practices, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag
-     * keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters.
-     * Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
-     * and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate
-     * them by commas.
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of
+     * a key and an optional value, both of which you define. For example, you can use tags to categorize Athena
+     * workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of
+     * tag keys to make it easier to search and filter the resources in your account. For best practices, see <a
+     * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
+     * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256
+     * UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters:
+     * + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify
+     * more than one tag, separate them by commas.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2193,7 +3911,72 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Removes one or more tags from a data catalog or workgroup resource.
+     * Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for
+     * example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no
+     * effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped,
+     * but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @return Result of the TerminateSession operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TerminateSessionResult terminateSession(TerminateSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateSession(request);
+    }
+
+    @SdkInternalApi
+    final TerminateSessionResult executeTerminateSession(TerminateSessionRequest terminateSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(terminateSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TerminateSessionRequest> request = null;
+        Response<TerminateSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TerminateSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TerminateSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from an Athena resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2243,6 +4026,68 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the number of requested data processing units for the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param updateCapacityReservationRequest
+     * @return Result of the UpdateCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.UpdateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCapacityReservationResult updateCapacityReservation(UpdateCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCapacityReservationResult executeUpdateCapacityReservation(UpdateCapacityReservationRequest updateCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCapacityReservationRequest> request = null;
+        Response<UpdateCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCapacityReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2375,6 +4220,131 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Updates the contents of a Spark notebook.
+     * </p>
+     * 
+     * @param updateNotebookRequest
+     * @return Result of the UpdateNotebook operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.UpdateNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateNotebookResult updateNotebook(UpdateNotebookRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNotebook(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNotebookResult executeUpdateNotebook(UpdateNotebookRequest updateNotebookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNotebookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNotebookRequest> request = null;
+        Response<UpdateNotebookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNotebookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotebookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotebook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNotebookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateNotebookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the metadata for a notebook.
+     * </p>
+     * 
+     * @param updateNotebookMetadataRequest
+     * @return Result of the UpdateNotebookMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws TooManyRequestsException
+     *         Indicates that the request was throttled.
+     * @sample AmazonAthena.UpdateNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateNotebookMetadataResult updateNotebookMetadata(UpdateNotebookMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNotebookMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNotebookMetadataResult executeUpdateNotebookMetadata(UpdateNotebookMetadataRequest updateNotebookMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNotebookMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNotebookMetadataRequest> request = null;
+        Response<UpdateNotebookMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNotebookMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotebookMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotebookMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNotebookMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateNotebookMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a prepared statement.
      * </p>
      * 
@@ -2439,7 +4409,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+     * Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only
+     * <code>ConfigurationUpdates</code> can be specified.
      * </p>
      * 
      * @param updateWorkGroupRequest

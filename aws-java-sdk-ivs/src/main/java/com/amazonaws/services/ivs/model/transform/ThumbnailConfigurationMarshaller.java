@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ivs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class ThumbnailConfigurationMarshaller {
 
     private static final MarshallingInfo<String> RECORDINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingMode").build();
+    private static final MarshallingInfo<String> RESOLUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resolution").build();
+    private static final MarshallingInfo<List> STORAGE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("storage").build();
     private static final MarshallingInfo<Long> TARGETINTERVALSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetIntervalSeconds").build();
 
@@ -49,6 +54,8 @@ public class ThumbnailConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(thumbnailConfiguration.getRecordingMode(), RECORDINGMODE_BINDING);
+            protocolMarshaller.marshall(thumbnailConfiguration.getResolution(), RESOLUTION_BINDING);
+            protocolMarshaller.marshall(thumbnailConfiguration.getStorage(), STORAGE_BINDING);
             protocolMarshaller.marshall(thumbnailConfiguration.getTargetIntervalSeconds(), TARGETINTERVALSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

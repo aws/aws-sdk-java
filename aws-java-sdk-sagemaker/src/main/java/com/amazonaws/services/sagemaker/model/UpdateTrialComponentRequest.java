@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,8 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.Date endTime;
     /**
      * <p>
-     * Replaces all of the component's hyperparameters with the specified hyperparameters.
+     * Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters.
+     * Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.
      * </p>
      */
     private java.util.Map<String, TrialComponentParameterValue> parameters;
@@ -70,7 +71,8 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> parametersToRemove;
     /**
      * <p>
-     * Replaces all of the component's input artifacts with the specified artifacts.
+     * Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     * Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.
      * </p>
      */
     private java.util.Map<String, TrialComponentArtifact> inputArtifacts;
@@ -82,7 +84,8 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> inputArtifactsToRemove;
     /**
      * <p>
-     * Replaces all of the component's output artifacts with the specified artifacts.
+     * Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts.
+     * Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.
      * </p>
      */
     private java.util.Map<String, TrialComponentArtifact> outputArtifacts;
@@ -301,10 +304,13 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's hyperparameters with the specified hyperparameters.
+     * Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters.
+     * Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.
      * </p>
      * 
-     * @return Replaces all of the component's hyperparameters with the specified hyperparameters.
+     * @return Replaces all of the component's hyperparameters with the specified hyperparameters or add new
+     *         hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an
+     *         identical hyperparameter key.
      */
 
     public java.util.Map<String, TrialComponentParameterValue> getParameters() {
@@ -313,11 +319,14 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's hyperparameters with the specified hyperparameters.
+     * Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters.
+     * Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.
      * </p>
      * 
      * @param parameters
-     *        Replaces all of the component's hyperparameters with the specified hyperparameters.
+     *        Replaces all of the component's hyperparameters with the specified hyperparameters or add new
+     *        hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical
+     *        hyperparameter key.
      */
 
     public void setParameters(java.util.Map<String, TrialComponentParameterValue> parameters) {
@@ -326,11 +335,14 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's hyperparameters with the specified hyperparameters.
+     * Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters.
+     * Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.
      * </p>
      * 
      * @param parameters
-     *        Replaces all of the component's hyperparameters with the specified hyperparameters.
+     *        Replaces all of the component's hyperparameters with the specified hyperparameters or add new
+     *        hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical
+     *        hyperparameter key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,10 +451,13 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's input artifacts with the specified artifacts.
+     * Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     * Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.
      * </p>
      * 
-     * @return Replaces all of the component's input artifacts with the specified artifacts.
+     * @return Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     *         Existing input artifacts are replaced if the trial component is updated with an identical input artifact
+     *         key.
      */
 
     public java.util.Map<String, TrialComponentArtifact> getInputArtifacts() {
@@ -451,11 +466,14 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's input artifacts with the specified artifacts.
+     * Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     * Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.
      * </p>
      * 
      * @param inputArtifacts
-     *        Replaces all of the component's input artifacts with the specified artifacts.
+     *        Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     *        Existing input artifacts are replaced if the trial component is updated with an identical input artifact
+     *        key.
      */
 
     public void setInputArtifacts(java.util.Map<String, TrialComponentArtifact> inputArtifacts) {
@@ -464,11 +482,14 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's input artifacts with the specified artifacts.
+     * Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     * Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.
      * </p>
      * 
      * @param inputArtifacts
-     *        Replaces all of the component's input artifacts with the specified artifacts.
+     *        Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts.
+     *        Existing input artifacts are replaced if the trial component is updated with an identical input artifact
+     *        key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,10 +598,13 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's output artifacts with the specified artifacts.
+     * Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts.
+     * Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.
      * </p>
      * 
-     * @return Replaces all of the component's output artifacts with the specified artifacts.
+     * @return Replaces all of the component's output artifacts with the specified artifacts or adds new output
+     *         artifacts. Existing output artifacts are replaced if the trial component is updated with an identical
+     *         output artifact key.
      */
 
     public java.util.Map<String, TrialComponentArtifact> getOutputArtifacts() {
@@ -589,11 +613,14 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's output artifacts with the specified artifacts.
+     * Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts.
+     * Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.
      * </p>
      * 
      * @param outputArtifacts
-     *        Replaces all of the component's output artifacts with the specified artifacts.
+     *        Replaces all of the component's output artifacts with the specified artifacts or adds new output
+     *        artifacts. Existing output artifacts are replaced if the trial component is updated with an identical
+     *        output artifact key.
      */
 
     public void setOutputArtifacts(java.util.Map<String, TrialComponentArtifact> outputArtifacts) {
@@ -602,11 +629,14 @@ public class UpdateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Replaces all of the component's output artifacts with the specified artifacts.
+     * Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts.
+     * Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.
      * </p>
      * 
      * @param outputArtifacts
-     *        Replaces all of the component's output artifacts with the specified artifacts.
+     *        Replaces all of the component's output artifacts with the specified artifacts or adds new output
+     *        artifacts. Existing output artifacts are replaced if the trial component is updated with an identical
+     *        output artifact key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

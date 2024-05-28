@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class CandidateArtifactLocationsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Explainability").build();
     private static final MarshallingInfo<String> MODELINSIGHTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelInsights").build();
+    private static final MarshallingInfo<String> BACKTESTRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BacktestResults").build();
 
     private static final CandidateArtifactLocationsMarshaller instance = new CandidateArtifactLocationsMarshaller();
 
@@ -50,6 +52,7 @@ public class CandidateArtifactLocationsMarshaller {
         try {
             protocolMarshaller.marshall(candidateArtifactLocations.getExplainability(), EXPLAINABILITY_BINDING);
             protocolMarshaller.marshall(candidateArtifactLocations.getModelInsights(), MODELINSIGHTS_BINDING);
+            protocolMarshaller.marshall(candidateArtifactLocations.getBacktestResults(), BACKTESTRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

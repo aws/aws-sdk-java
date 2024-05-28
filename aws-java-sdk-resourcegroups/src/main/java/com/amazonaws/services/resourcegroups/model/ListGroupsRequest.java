@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,9 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
-     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     * <code>resource-type</code> - Filter the results to include only those resource groups that have the specified
+     * resource type in their <code>ResourceTypeFilter</code>. For example, <code>AWS::EC2::Instance</code> would return
+     * any resource group with a <code>ResourceTypeFilter</code> that includes <code>AWS::EC2::Instance</code>.
      * </p>
      * </li>
      * <li>
@@ -45,12 +45,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>AWS:EC2::CapacityReservationPool</code>
+     * <code>AWS::AppRegistry::Application</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS:EC2::HostManagement</code>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::CloudFormation::Stack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::HostManagement</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code>
      * </p>
      * </li>
      * </ul>
@@ -87,9 +107,9 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
-     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     * <code>resource-type</code> - Filter the results to include only those resource groups that have the specified
+     * resource type in their <code>ResourceTypeFilter</code>. For example, <code>AWS::EC2::Instance</code> would return
+     * any resource group with a <code>ResourceTypeFilter</code> that includes <code>AWS::EC2::Instance</code>.
      * </p>
      * </li>
      * <li>
@@ -100,12 +120,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>AWS:EC2::CapacityReservationPool</code>
+     * <code>AWS::AppRegistry::Application</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS:EC2::HostManagement</code>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::CloudFormation::Stack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::HostManagement</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code>
      * </p>
      * </li>
      * </ul>
@@ -117,10 +157,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>resource-type</code> - Filter the results to include only those of the specified resource types.
-     *         Specify up to five resource types in the format
-     *         <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>,
-     *         or <code>AWS::S3::Bucket</code>.
+     *         <code>resource-type</code> - Filter the results to include only those resource groups that have the
+     *         specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     *         <code>AWS::EC2::Instance</code> would return any resource group with a <code>ResourceTypeFilter</code>
+     *         that includes <code>AWS::EC2::Instance</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -131,12 +171,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AWS:EC2::CapacityReservationPool</code>
+     *         <code>AWS::AppRegistry::Application</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS:EC2::HostManagement</code>
+     *         <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::CloudFormation::Stack</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::CapacityReservationPool</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::HostManagement</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::NetworkFirewall::RuleGroup</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -154,9 +214,9 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
-     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     * <code>resource-type</code> - Filter the results to include only those resource groups that have the specified
+     * resource type in their <code>ResourceTypeFilter</code>. For example, <code>AWS::EC2::Instance</code> would return
+     * any resource group with a <code>ResourceTypeFilter</code> that includes <code>AWS::EC2::Instance</code>.
      * </p>
      * </li>
      * <li>
@@ -167,12 +227,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>AWS:EC2::CapacityReservationPool</code>
+     * <code>AWS::AppRegistry::Application</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS:EC2::HostManagement</code>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::CloudFormation::Stack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::HostManagement</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code>
      * </p>
      * </li>
      * </ul>
@@ -185,9 +265,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - Filter the results to include only those of the specified resource types.
-     *        Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>
-     *        . For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     *        <code>resource-type</code> - Filter the results to include only those resource groups that have the
+     *        specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     *        <code>AWS::EC2::Instance</code> would return any resource group with a <code>ResourceTypeFilter</code>
+     *        that includes <code>AWS::EC2::Instance</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -198,12 +279,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS:EC2::CapacityReservationPool</code>
+     *        <code>AWS::AppRegistry::Application</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS:EC2::HostManagement</code>
+     *        <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::CloudFormation::Stack</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::CapacityReservationPool</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::HostManagement</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::NetworkFirewall::RuleGroup</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -226,9 +327,9 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
-     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     * <code>resource-type</code> - Filter the results to include only those resource groups that have the specified
+     * resource type in their <code>ResourceTypeFilter</code>. For example, <code>AWS::EC2::Instance</code> would return
+     * any resource group with a <code>ResourceTypeFilter</code> that includes <code>AWS::EC2::Instance</code>.
      * </p>
      * </li>
      * <li>
@@ -239,12 +340,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>AWS:EC2::CapacityReservationPool</code>
+     * <code>AWS::AppRegistry::Application</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS:EC2::HostManagement</code>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::CloudFormation::Stack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::HostManagement</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code>
      * </p>
      * </li>
      * </ul>
@@ -262,9 +383,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - Filter the results to include only those of the specified resource types.
-     *        Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>
-     *        . For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     *        <code>resource-type</code> - Filter the results to include only those resource groups that have the
+     *        specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     *        <code>AWS::EC2::Instance</code> would return any resource group with a <code>ResourceTypeFilter</code>
+     *        that includes <code>AWS::EC2::Instance</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -275,12 +397,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS:EC2::CapacityReservationPool</code>
+     *        <code>AWS::AppRegistry::Application</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS:EC2::HostManagement</code>
+     *        <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::CloudFormation::Stack</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::CapacityReservationPool</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::HostManagement</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::NetworkFirewall::RuleGroup</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -305,9 +447,9 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
-     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
-     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     * <code>resource-type</code> - Filter the results to include only those resource groups that have the specified
+     * resource type in their <code>ResourceTypeFilter</code>. For example, <code>AWS::EC2::Instance</code> would return
+     * any resource group with a <code>ResourceTypeFilter</code> that includes <code>AWS::EC2::Instance</code>.
      * </p>
      * </li>
      * <li>
@@ -318,12 +460,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>AWS:EC2::CapacityReservationPool</code>
+     * <code>AWS::AppRegistry::Application</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS:EC2::HostManagement</code>
+     * <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::CloudFormation::Stack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::HostManagement</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::NetworkFirewall::RuleGroup</code>
      * </p>
      * </li>
      * </ul>
@@ -336,9 +498,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - Filter the results to include only those of the specified resource types.
-     *        Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>
-     *        . For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     *        <code>resource-type</code> - Filter the results to include only those resource groups that have the
+     *        specified resource type in their <code>ResourceTypeFilter</code>. For example,
+     *        <code>AWS::EC2::Instance</code> would return any resource group with a <code>ResourceTypeFilter</code>
+     *        that includes <code>AWS::EC2::Instance</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -349,12 +512,32 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS:EC2::CapacityReservationPool</code>
+     *        <code>AWS::AppRegistry::Application</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS:EC2::HostManagement</code>
+     *        <code>AWS::AppRegistry::ApplicationResourceGroups</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::CloudFormation::Stack</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::CapacityReservationPool</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::HostManagement</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::NetworkFirewall::RuleGroup</code>
      *        </p>
      *        </li>
      *        </ul>

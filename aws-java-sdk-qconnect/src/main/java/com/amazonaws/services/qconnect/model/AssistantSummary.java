@@ -1,0 +1,761 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.qconnect.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Summary information about the assistant.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/AssistantSummary" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AssistantSummary implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     * </p>
+     */
+    private String assistantArn;
+    /**
+     * <p>
+     * The identifier of the Amazon Q in Connect assistant.
+     * </p>
+     */
+    private String assistantId;
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant capability.
+     * </p>
+     */
+    private AssistantCapabilityConfiguration capabilityConfiguration;
+    /**
+     * <p>
+     * The description of the assistant.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant integration.
+     * </p>
+     */
+    private AssistantIntegrationConfiguration integrationConfiguration;
+    /**
+     * <p>
+     * The name of the assistant.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to
+     * invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     * <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your
+     * instance</a>.
+     * </p>
+     */
+    private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
+    /**
+     * <p>
+     * The status of the assistant.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The type of the assistant.
+     * </p>
+     */
+    private String type;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     * </p>
+     * 
+     * @param assistantArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     */
+
+    public void setAssistantArn(String assistantArn) {
+        this.assistantArn = assistantArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     */
+
+    public String getAssistantArn() {
+        return this.assistantArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     * </p>
+     * 
+     * @param assistantArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q in Connect assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withAssistantArn(String assistantArn) {
+        setAssistantArn(assistantArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q in Connect assistant.
+     * </p>
+     * 
+     * @param assistantId
+     *        The identifier of the Amazon Q in Connect assistant.
+     */
+
+    public void setAssistantId(String assistantId) {
+        this.assistantId = assistantId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q in Connect assistant.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Q in Connect assistant.
+     */
+
+    public String getAssistantId() {
+        return this.assistantId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q in Connect assistant.
+     * </p>
+     * 
+     * @param assistantId
+     *        The identifier of the Amazon Q in Connect assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withAssistantId(String assistantId) {
+        setAssistantId(assistantId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant capability.
+     * </p>
+     * 
+     * @param capabilityConfiguration
+     *        The configuration information for the Amazon Q in Connect assistant capability.
+     */
+
+    public void setCapabilityConfiguration(AssistantCapabilityConfiguration capabilityConfiguration) {
+        this.capabilityConfiguration = capabilityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant capability.
+     * </p>
+     * 
+     * @return The configuration information for the Amazon Q in Connect assistant capability.
+     */
+
+    public AssistantCapabilityConfiguration getCapabilityConfiguration() {
+        return this.capabilityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant capability.
+     * </p>
+     * 
+     * @param capabilityConfiguration
+     *        The configuration information for the Amazon Q in Connect assistant capability.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withCapabilityConfiguration(AssistantCapabilityConfiguration capabilityConfiguration) {
+        setCapabilityConfiguration(capabilityConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the assistant.
+     * </p>
+     * 
+     * @param description
+     *        The description of the assistant.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the assistant.
+     * </p>
+     * 
+     * @return The description of the assistant.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the assistant.
+     * </p>
+     * 
+     * @param description
+     *        The description of the assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the Amazon Q in Connect assistant integration.
+     */
+
+    public void setIntegrationConfiguration(AssistantIntegrationConfiguration integrationConfiguration) {
+        this.integrationConfiguration = integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant integration.
+     * </p>
+     * 
+     * @return The configuration information for the Amazon Q in Connect assistant integration.
+     */
+
+    public AssistantIntegrationConfiguration getIntegrationConfiguration() {
+        return this.integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Amazon Q in Connect assistant integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the Amazon Q in Connect assistant integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withIntegrationConfiguration(AssistantIntegrationConfiguration integrationConfiguration) {
+        setIntegrationConfiguration(integrationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the assistant.
+     * </p>
+     * 
+     * @param name
+     *        The name of the assistant.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the assistant.
+     * </p>
+     * 
+     * @return The name of the assistant.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the assistant.
+     * </p>
+     * 
+     * @param name
+     *        The name of the assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to
+     * invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     * <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your
+     * instance</a>.
+     * </p>
+     * 
+     * @param serverSideEncryptionConfiguration
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *        <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the
+     *        key to invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     *        <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
+     *        to the <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for
+     *        your instance</a>.
+     */
+
+    public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
+        this.serverSideEncryptionConfiguration = serverSideEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to
+     * invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     * <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your
+     * instance</a>.
+     * </p>
+     * 
+     * @return The configuration information for the customer managed key used for encryption. </p>
+     *         <p>
+     *         This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *         <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the
+     *         key to invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     *         <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
+     *         to the <code>connect.amazonaws.com</code> service principal.
+     *         </p>
+     *         <p>
+     *         For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for
+     *         your instance</a>.
+     */
+
+    public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
+        return this.serverSideEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     * <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the key to
+     * invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     * <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for your
+     * instance</a>.
+     * </p>
+     * 
+     * @param serverSideEncryptionConfiguration
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *        <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the IAM identity using the
+     *        key to invoke Amazon Q in Connect. To use Amazon Q in Connect with chat, the key policy must also allow
+     *        <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
+     *        to the <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Amazon Q in Connect, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html">Enable Amazon Q in Connect for
+     *        your instance</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
+        setServerSideEncryptionConfiguration(serverSideEncryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the assistant.
+     * </p>
+     * 
+     * @param status
+     *        The status of the assistant.
+     * @see AssistantStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the assistant.
+     * </p>
+     * 
+     * @return The status of the assistant.
+     * @see AssistantStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the assistant.
+     * </p>
+     * 
+     * @param status
+     *        The status of the assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssistantStatus
+     */
+
+    public AssistantSummary withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the assistant.
+     * </p>
+     * 
+     * @param status
+     *        The status of the assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssistantStatus
+     */
+
+    public AssistantSummary withStatus(AssistantStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource.
+     * </p>
+     * 
+     * @return The tags used to organize, track, or control access for this resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags used to organize, track, or control access for this resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags used to organize, track, or control access for this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see AssistantSummary#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the assistant.
+     * </p>
+     * 
+     * @param type
+     *        The type of the assistant.
+     * @see AssistantType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of the assistant.
+     * </p>
+     * 
+     * @return The type of the assistant.
+     * @see AssistantType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of the assistant.
+     * </p>
+     * 
+     * @param type
+     *        The type of the assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssistantType
+     */
+
+    public AssistantSummary withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the assistant.
+     * </p>
+     * 
+     * @param type
+     *        The type of the assistant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssistantType
+     */
+
+    public AssistantSummary withType(AssistantType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAssistantArn() != null)
+            sb.append("AssistantArn: ").append(getAssistantArn()).append(",");
+        if (getAssistantId() != null)
+            sb.append("AssistantId: ").append(getAssistantId()).append(",");
+        if (getCapabilityConfiguration() != null)
+            sb.append("CapabilityConfiguration: ").append(getCapabilityConfiguration()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getIntegrationConfiguration() != null)
+            sb.append("IntegrationConfiguration: ").append(getIntegrationConfiguration()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getServerSideEncryptionConfiguration() != null)
+            sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AssistantSummary == false)
+            return false;
+        AssistantSummary other = (AssistantSummary) obj;
+        if (other.getAssistantArn() == null ^ this.getAssistantArn() == null)
+            return false;
+        if (other.getAssistantArn() != null && other.getAssistantArn().equals(this.getAssistantArn()) == false)
+            return false;
+        if (other.getAssistantId() == null ^ this.getAssistantId() == null)
+            return false;
+        if (other.getAssistantId() != null && other.getAssistantId().equals(this.getAssistantId()) == false)
+            return false;
+        if (other.getCapabilityConfiguration() == null ^ this.getCapabilityConfiguration() == null)
+            return false;
+        if (other.getCapabilityConfiguration() != null && other.getCapabilityConfiguration().equals(this.getCapabilityConfiguration()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getIntegrationConfiguration() == null ^ this.getIntegrationConfiguration() == null)
+            return false;
+        if (other.getIntegrationConfiguration() != null && other.getIntegrationConfiguration().equals(this.getIntegrationConfiguration()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getServerSideEncryptionConfiguration() == null ^ this.getServerSideEncryptionConfiguration() == null)
+            return false;
+        if (other.getServerSideEncryptionConfiguration() != null
+                && other.getServerSideEncryptionConfiguration().equals(this.getServerSideEncryptionConfiguration()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAssistantArn() == null) ? 0 : getAssistantArn().hashCode());
+        hashCode = prime * hashCode + ((getAssistantId() == null) ? 0 : getAssistantId().hashCode());
+        hashCode = prime * hashCode + ((getCapabilityConfiguration() == null) ? 0 : getCapabilityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationConfiguration() == null) ? 0 : getIntegrationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public AssistantSummary clone() {
+        try {
+            return (AssistantSummary) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.qconnect.model.transform.AssistantSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

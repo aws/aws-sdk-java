@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -46,7 +46,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -60,7 +61,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -71,7 +72,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
@@ -86,7 +87,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -96,7 +97,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *         bytes. For more information, go to <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the CloudFormation User Guide.</p>
+     *         Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *         <p>
      *         Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      *         only <code>TemplateBody</code> is used.
@@ -111,7 +112,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -122,7 +123,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
@@ -139,7 +140,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -150,7 +152,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *        that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *        <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
@@ -165,7 +168,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -175,7 +179,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *         that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the CloudFormation User Guide.</p>
+     *         Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *         <code>https://</code>.</p>
      *         <p>
      *         Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      *         only <code>TemplateBody</code> is used.
@@ -190,7 +195,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -201,7 +207,8 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *        that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *        <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.

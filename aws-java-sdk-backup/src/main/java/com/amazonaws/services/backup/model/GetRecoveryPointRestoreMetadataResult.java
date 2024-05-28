@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,12 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
      * </p>
      */
     private java.util.Map<String, String> restoreMetadata;
+    /**
+     * <p>
+     * This is the resource type associated with the recovery point.
+     * </p>
+     */
+    private String resourceType;
 
     /**
      * <p>
@@ -213,6 +219,46 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * This is the resource type associated with the recovery point.
+     * </p>
+     * 
+     * @param resourceType
+     *        This is the resource type associated with the recovery point.
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * This is the resource type associated with the recovery point.
+     * </p>
+     * 
+     * @return This is the resource type associated with the recovery point.
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * This is the resource type associated with the recovery point.
+     * </p>
+     * 
+     * @param resourceType
+     *        This is the resource type associated with the recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecoveryPointRestoreMetadataResult withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +275,9 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
         if (getRecoveryPointArn() != null)
             sb.append("RecoveryPointArn: ").append(getRecoveryPointArn()).append(",");
         if (getRestoreMetadata() != null)
-            sb.append("RestoreMetadata: ").append("***Sensitive Data Redacted***");
+            sb.append("RestoreMetadata: ").append("***Sensitive Data Redacted***").append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -256,6 +304,10 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
             return false;
         if (other.getRestoreMetadata() != null && other.getRestoreMetadata().equals(this.getRestoreMetadata()) == false)
             return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
         return true;
     }
 
@@ -267,6 +319,7 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getRestoreMetadata() == null) ? 0 : getRestoreMetadata().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     */
+    private Boolean appendSourcePath;
     /**
      * <p>
      * The ID of the application that the route belongs to.
@@ -118,8 +124,9 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String serviceId;
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      */
     private String sourcePath;
@@ -136,6 +143,58 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @param appendSourcePath
+     *        If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     */
+
+    public void setAppendSourcePath(Boolean appendSourcePath) {
+        this.appendSourcePath = appendSourcePath;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     */
+
+    public Boolean getAppendSourcePath() {
+        return this.appendSourcePath;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @param appendSourcePath
+     *        If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRouteResult withAppendSourcePath(Boolean appendSourcePath) {
+        setAppendSourcePath(appendSourcePath);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     */
+
+    public Boolean isAppendSourcePath() {
+        return this.appendSourcePath;
+    }
 
     /**
      * <p>
@@ -873,13 +932,15 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      * 
      * @param sourcePath
-     *        The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     *        application.
+     *        This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     *        relative to the base of the application. To use path parameters in the source path, add a variable in
+     *        curly braces. For example, the resource path {user} represents a path parameter called 'user'.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -888,12 +949,14 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      * 
-     * @return The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of
-     *         the application.
+     * @return This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     *         relative to the base of the application. To use path parameters in the source path, add a variable in
+     *         curly braces. For example, the resource path {user} represents a path parameter called 'user'.
      */
 
     public String getSourcePath() {
@@ -902,13 +965,15 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      * 
      * @param sourcePath
-     *        The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     *        application.
+     *        This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     *        relative to the base of the application. To use path parameters in the source path, add a variable in
+     *        curly braces. For example, the resource path {user} represents a path parameter called 'user'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1062,6 +1127,8 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAppendSourcePath() != null)
+            sb.append("AppendSourcePath: ").append(getAppendSourcePath()).append(",");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getArn() != null)
@@ -1110,6 +1177,10 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (obj instanceof GetRouteResult == false)
             return false;
         GetRouteResult other = (GetRouteResult) obj;
+        if (other.getAppendSourcePath() == null ^ this.getAppendSourcePath() == null)
+            return false;
+        if (other.getAppendSourcePath() != null && other.getAppendSourcePath().equals(this.getAppendSourcePath()) == false)
+            return false;
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
@@ -1186,6 +1257,7 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAppendSourcePath() == null) ? 0 : getAppendSourcePath().hashCode());
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedByAccountId() == null) ? 0 : getCreatedByAccountId().hashCode());

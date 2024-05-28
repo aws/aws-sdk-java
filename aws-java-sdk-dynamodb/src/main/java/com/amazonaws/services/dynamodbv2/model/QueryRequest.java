@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the
+     * table in this parameter.
      * </p>
      */
     private String tableName;
@@ -64,7 +65,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -219,9 +222,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String filterExpression;
@@ -453,7 +456,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * initialize any additional object members.
      * 
      * @param tableName
-     *        The name of the table containing the requested items.
+     *        The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN)
+     *        of the table in this parameter.
      */
     public QueryRequest(String tableName) {
         setTableName(tableName);
@@ -461,11 +465,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the
+     * table in this parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table containing the requested items.
+     *        The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN)
+     *        of the table in this parameter.
      */
 
     public void setTableName(String tableName) {
@@ -474,10 +480,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the
+     * table in this parameter.
      * </p>
      * 
-     * @return The name of the table containing the requested items.
+     * @return The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN)
+     *         of the table in this parameter.
      */
 
     public String getTableName() {
@@ -486,11 +494,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The name of the table containing the requested items.
+     * The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN) of the
+     * table in this parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table containing the requested items.
+     *        The name of the table containing the requested items. You can also provide the Amazon Resource Name (ARN)
+     *        of the table in this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -571,7 +581,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -628,7 +640,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -692,7 +706,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -749,6 +765,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <li>
      *         <p>
      *         <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *         Note that this uses the same quantity of read capacity units as getting the items, and is subject to the
+     *         same item size calculations.
      *         </p>
      *         </li>
      *         <li>
@@ -812,7 +830,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -869,7 +889,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -935,7 +957,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -992,7 +1016,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -1056,7 +1082,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -1113,7 +1141,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -2083,9 +2113,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param filterExpression
@@ -2103,9 +2133,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        </note>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
+     *        Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setFilterExpression(String filterExpression) {
@@ -2128,9 +2158,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but
@@ -2147,8 +2177,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </p>
      *         </note>
      *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html"
      *         >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2172,9 +2202,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param filterExpression
@@ -2192,9 +2222,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        </note>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
+     *        Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,25 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
     private Boolean alreadyImplemented;
     /**
      * <p>
-     * The resource identifier.
+     * Indicates the reason for excluding an operational recommendation.
+     * </p>
+     */
+    private String excludeReason;
+    /**
+     * <p>
+     * Indicates if an operational recommendation item is excluded.
+     * </p>
+     */
+    private Boolean excluded;
+    /**
+     * <p>
+     * Identifier of the resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The target account identifier.
+     * Identifier of the target account.
      * </p>
      */
     private String targetAccountId;
@@ -107,11 +119,122 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The resource identifier.
+     * Indicates the reason for excluding an operational recommendation.
+     * </p>
+     * 
+     * @param excludeReason
+     *        Indicates the reason for excluding an operational recommendation.
+     * @see ExcludeRecommendationReason
+     */
+
+    public void setExcludeReason(String excludeReason) {
+        this.excludeReason = excludeReason;
+    }
+
+    /**
+     * <p>
+     * Indicates the reason for excluding an operational recommendation.
+     * </p>
+     * 
+     * @return Indicates the reason for excluding an operational recommendation.
+     * @see ExcludeRecommendationReason
+     */
+
+    public String getExcludeReason() {
+        return this.excludeReason;
+    }
+
+    /**
+     * <p>
+     * Indicates the reason for excluding an operational recommendation.
+     * </p>
+     * 
+     * @param excludeReason
+     *        Indicates the reason for excluding an operational recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExcludeRecommendationReason
+     */
+
+    public RecommendationItem withExcludeReason(String excludeReason) {
+        setExcludeReason(excludeReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the reason for excluding an operational recommendation.
+     * </p>
+     * 
+     * @param excludeReason
+     *        Indicates the reason for excluding an operational recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExcludeRecommendationReason
+     */
+
+    public RecommendationItem withExcludeReason(ExcludeRecommendationReason excludeReason) {
+        this.excludeReason = excludeReason.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if an operational recommendation item is excluded.
+     * </p>
+     * 
+     * @param excluded
+     *        Indicates if an operational recommendation item is excluded.
+     */
+
+    public void setExcluded(Boolean excluded) {
+        this.excluded = excluded;
+    }
+
+    /**
+     * <p>
+     * Indicates if an operational recommendation item is excluded.
+     * </p>
+     * 
+     * @return Indicates if an operational recommendation item is excluded.
+     */
+
+    public Boolean getExcluded() {
+        return this.excluded;
+    }
+
+    /**
+     * <p>
+     * Indicates if an operational recommendation item is excluded.
+     * </p>
+     * 
+     * @param excluded
+     *        Indicates if an operational recommendation item is excluded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationItem withExcluded(Boolean excluded) {
+        setExcluded(excluded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if an operational recommendation item is excluded.
+     * </p>
+     * 
+     * @return Indicates if an operational recommendation item is excluded.
+     */
+
+    public Boolean isExcluded() {
+        return this.excluded;
+    }
+
+    /**
+     * <p>
+     * Identifier of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The resource identifier.
+     *        Identifier of the resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -120,10 +243,10 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The resource identifier.
+     * Identifier of the resource.
      * </p>
      * 
-     * @return The resource identifier.
+     * @return Identifier of the resource.
      */
 
     public String getResourceId() {
@@ -132,11 +255,11 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The resource identifier.
+     * Identifier of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The resource identifier.
+     *        Identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +270,11 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target account identifier.
+     * Identifier of the target account.
      * </p>
      * 
      * @param targetAccountId
-     *        The target account identifier.
+     *        Identifier of the target account.
      */
 
     public void setTargetAccountId(String targetAccountId) {
@@ -160,10 +283,10 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target account identifier.
+     * Identifier of the target account.
      * </p>
      * 
-     * @return The target account identifier.
+     * @return Identifier of the target account.
      */
 
     public String getTargetAccountId() {
@@ -172,11 +295,11 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target account identifier.
+     * Identifier of the target account.
      * </p>
      * 
      * @param targetAccountId
-     *        The target account identifier.
+     *        Identifier of the target account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,6 +362,10 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getAlreadyImplemented() != null)
             sb.append("AlreadyImplemented: ").append(getAlreadyImplemented()).append(",");
+        if (getExcludeReason() != null)
+            sb.append("ExcludeReason: ").append(getExcludeReason()).append(",");
+        if (getExcluded() != null)
+            sb.append("Excluded: ").append(getExcluded()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getTargetAccountId() != null)
@@ -263,6 +390,14 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAlreadyImplemented() != null && other.getAlreadyImplemented().equals(this.getAlreadyImplemented()) == false)
             return false;
+        if (other.getExcludeReason() == null ^ this.getExcludeReason() == null)
+            return false;
+        if (other.getExcludeReason() != null && other.getExcludeReason().equals(this.getExcludeReason()) == false)
+            return false;
+        if (other.getExcluded() == null ^ this.getExcluded() == null)
+            return false;
+        if (other.getExcluded() != null && other.getExcluded().equals(this.getExcluded()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -284,6 +419,8 @@ public class RecommendationItem implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAlreadyImplemented() == null) ? 0 : getAlreadyImplemented().hashCode());
+        hashCode = prime * hashCode + ((getExcludeReason() == null) ? 0 : getExcludeReason().hashCode());
+        hashCode = prime * hashCode + ((getExcluded() == null) ? 0 : getExcluded().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getTargetAccountId() == null) ? 0 : getTargetAccountId().hashCode());
         hashCode = prime * hashCode + ((getTargetRegion() == null) ? 0 : getTargetRegion().hashCode());

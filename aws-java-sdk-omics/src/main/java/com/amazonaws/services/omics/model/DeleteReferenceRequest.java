@@ -1,0 +1,177 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.omics.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReference" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteReferenceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The reference's ID.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * The reference's store ID.
+     * </p>
+     */
+    private String referenceStoreId;
+
+    /**
+     * <p>
+     * The reference's ID.
+     * </p>
+     * 
+     * @param id
+     *        The reference's ID.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The reference's ID.
+     * </p>
+     * 
+     * @return The reference's ID.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The reference's ID.
+     * </p>
+     * 
+     * @param id
+     *        The reference's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteReferenceRequest withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reference's store ID.
+     * </p>
+     * 
+     * @param referenceStoreId
+     *        The reference's store ID.
+     */
+
+    public void setReferenceStoreId(String referenceStoreId) {
+        this.referenceStoreId = referenceStoreId;
+    }
+
+    /**
+     * <p>
+     * The reference's store ID.
+     * </p>
+     * 
+     * @return The reference's store ID.
+     */
+
+    public String getReferenceStoreId() {
+        return this.referenceStoreId;
+    }
+
+    /**
+     * <p>
+     * The reference's store ID.
+     * </p>
+     * 
+     * @param referenceStoreId
+     *        The reference's store ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteReferenceRequest withReferenceStoreId(String referenceStoreId) {
+        setReferenceStoreId(referenceStoreId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getReferenceStoreId() != null)
+            sb.append("ReferenceStoreId: ").append(getReferenceStoreId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeleteReferenceRequest == false)
+            return false;
+        DeleteReferenceRequest other = (DeleteReferenceRequest) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getReferenceStoreId() == null ^ this.getReferenceStoreId() == null)
+            return false;
+        if (other.getReferenceStoreId() != null && other.getReferenceStoreId().equals(this.getReferenceStoreId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getReferenceStoreId() == null) ? 0 : getReferenceStoreId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public DeleteReferenceRequest clone() {
+        return (DeleteReferenceRequest) super.clone();
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,6 +158,19 @@ public class ExportDescription implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Long itemCount;
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     */
+    private String exportType;
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     */
+    private IncrementalExportSpecification incrementalExportSpecification;
 
     /**
      * <p>
@@ -1097,6 +1110,113 @@ public class ExportDescription implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @param exportType
+     *        The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *        <code>INCREMENTAL_EXPORT</code>.
+     * @see ExportType
+     */
+
+    public void setExportType(String exportType) {
+        this.exportType = exportType;
+    }
+
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @return The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *         <code>INCREMENTAL_EXPORT</code>.
+     * @see ExportType
+     */
+
+    public String getExportType() {
+        return this.exportType;
+    }
+
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @param exportType
+     *        The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *        <code>INCREMENTAL_EXPORT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportType
+     */
+
+    public ExportDescription withExportType(String exportType) {
+        setExportType(exportType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     * <code>INCREMENTAL_EXPORT</code>.
+     * </p>
+     * 
+     * @param exportType
+     *        The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
+     *        <code>INCREMENTAL_EXPORT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExportType
+     */
+
+    public ExportDescription withExportType(ExportType exportType) {
+        this.exportType = exportType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     * 
+     * @param incrementalExportSpecification
+     *        Optional object containing the parameters specific to an incremental export.
+     */
+
+    public void setIncrementalExportSpecification(IncrementalExportSpecification incrementalExportSpecification) {
+        this.incrementalExportSpecification = incrementalExportSpecification;
+    }
+
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     * 
+     * @return Optional object containing the parameters specific to an incremental export.
+     */
+
+    public IncrementalExportSpecification getIncrementalExportSpecification() {
+        return this.incrementalExportSpecification;
+    }
+
+    /**
+     * <p>
+     * Optional object containing the parameters specific to an incremental export.
+     * </p>
+     * 
+     * @param incrementalExportSpecification
+     *        Optional object containing the parameters specific to an incremental export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportDescription withIncrementalExportSpecification(IncrementalExportSpecification incrementalExportSpecification) {
+        setIncrementalExportSpecification(incrementalExportSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1145,7 +1265,11 @@ public class ExportDescription implements Serializable, Cloneable, StructuredPoj
         if (getBilledSizeBytes() != null)
             sb.append("BilledSizeBytes: ").append(getBilledSizeBytes()).append(",");
         if (getItemCount() != null)
-            sb.append("ItemCount: ").append(getItemCount());
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
+        if (getExportType() != null)
+            sb.append("ExportType: ").append(getExportType()).append(",");
+        if (getIncrementalExportSpecification() != null)
+            sb.append("IncrementalExportSpecification: ").append(getIncrementalExportSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1236,6 +1360,15 @@ public class ExportDescription implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
             return false;
+        if (other.getExportType() == null ^ this.getExportType() == null)
+            return false;
+        if (other.getExportType() != null && other.getExportType().equals(this.getExportType()) == false)
+            return false;
+        if (other.getIncrementalExportSpecification() == null ^ this.getIncrementalExportSpecification() == null)
+            return false;
+        if (other.getIncrementalExportSpecification() != null
+                && other.getIncrementalExportSpecification().equals(this.getIncrementalExportSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1263,6 +1396,8 @@ public class ExportDescription implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getExportFormat() == null) ? 0 : getExportFormat().hashCode());
         hashCode = prime * hashCode + ((getBilledSizeBytes() == null) ? 0 : getBilledSizeBytes().hashCode());
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode + ((getExportType() == null) ? 0 : getExportType().hashCode());
+        hashCode = prime * hashCode + ((getIncrementalExportSpecification() == null) ? 0 : getIncrementalExportSpecification().hashCode());
         return hashCode;
     }
 

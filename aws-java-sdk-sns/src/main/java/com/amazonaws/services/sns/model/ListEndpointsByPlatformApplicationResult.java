@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for ListEndpointsByPlatformApplication action.
+ * Response for <code>ListEndpointsByPlatformApplication</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication"
@@ -29,24 +29,24 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Endpoints returned for ListEndpointsByPlatformApplication action.
+     * Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Endpoint> endpoints;
     /**
      * <p>
-     * NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are
-     * available after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code> action if
+     * additional records are available after the first page results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Endpoints returned for ListEndpointsByPlatformApplication action.
+     * Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * </p>
      * 
-     * @return Endpoints returned for ListEndpointsByPlatformApplication action.
+     * @return Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      */
 
     public java.util.List<Endpoint> getEndpoints() {
@@ -58,11 +58,11 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Endpoints returned for ListEndpointsByPlatformApplication action.
+     * Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * </p>
      * 
      * @param endpoints
-     *        Endpoints returned for ListEndpointsByPlatformApplication action.
+     *        Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      */
 
     public void setEndpoints(java.util.Collection<Endpoint> endpoints) {
@@ -76,7 +76,7 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Endpoints returned for ListEndpointsByPlatformApplication action.
+     * Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param endpoints
-     *        Endpoints returned for ListEndpointsByPlatformApplication action.
+     *        Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Endpoints returned for ListEndpointsByPlatformApplication action.
+     * Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * </p>
      * 
      * @param endpoints
-     *        Endpoints returned for ListEndpointsByPlatformApplication action.
+     *        Endpoints returned for <code>ListEndpointsByPlatformApplication</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,13 +116,13 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are
-     * available after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code> action if
+     * additional records are available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records
-     *        are available after the first page results.
+     *        <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code>
+     *        action if additional records are available after the first page results.
      */
 
     public void setNextToken(String nextToken) {
@@ -131,12 +131,12 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are
-     * available after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code> action if
+     * additional records are available after the first page results.
      * </p>
      * 
-     * @return NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records
-     *         are available after the first page results.
+     * @return <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code>
+     *         action if additional records are available after the first page results.
      */
 
     public String getNextToken() {
@@ -145,13 +145,13 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are
-     * available after the first page results.
+     * <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code> action if
+     * additional records are available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records
-     *        are available after the first page results.
+     *        <code>NextToken</code> string is returned when calling <code>ListEndpointsByPlatformApplication</code>
+     *        action if additional records are available after the first page results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

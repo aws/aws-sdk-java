@@ -1,0 +1,86 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotwireless.model.transform;
+
+import java.util.List;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.iotwireless.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * SummaryMetricQueryResultMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class SummaryMetricQueryResultMarshaller {
+
+    private static final MarshallingInfo<String> QUERYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueryId").build();
+    private static final MarshallingInfo<String> QUERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryStatus").build();
+    private static final MarshallingInfo<String> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Error").build();
+    private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
+    private static final MarshallingInfo<List> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Dimensions").build();
+    private static final MarshallingInfo<String> AGGREGATIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AggregationPeriod").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TIMESTAMPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Timestamps").build();
+    private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Values").build();
+    private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Unit").build();
+
+    private static final SummaryMetricQueryResultMarshaller instance = new SummaryMetricQueryResultMarshaller();
+
+    public static SummaryMetricQueryResultMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SummaryMetricQueryResult summaryMetricQueryResult, ProtocolMarshaller protocolMarshaller) {
+
+        if (summaryMetricQueryResult == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(summaryMetricQueryResult.getQueryId(), QUERYID_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getQueryStatus(), QUERYSTATUS_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getError(), ERROR_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getMetricName(), METRICNAME_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getDimensions(), DIMENSIONS_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getAggregationPeriod(), AGGREGATIONPERIOD_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getStartTimestamp(), STARTTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getEndTimestamp(), ENDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getTimestamps(), TIMESTAMPS_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(summaryMetricQueryResult.getUnit(), UNIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

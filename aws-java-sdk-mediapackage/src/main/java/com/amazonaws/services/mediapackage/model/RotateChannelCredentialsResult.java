@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,8 @@ public class RotateChannelCredentialsResult extends com.amazonaws.AmazonWebServi
 
     /** The Amazon Resource Name (ARN) assigned to the Channel. */
     private String arn;
+    /** The date and time the Channel was created. */
+    private String createdAt;
     /** A short text description of the Channel. */
     private String description;
 
@@ -70,6 +72,40 @@ public class RotateChannelCredentialsResult extends com.amazonaws.AmazonWebServi
 
     public RotateChannelCredentialsResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * The date and time the Channel was created.
+     * 
+     * @param createdAt
+     *        The date and time the Channel was created.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * The date and time the Channel was created.
+     * 
+     * @return The date and time the Channel was created.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * The date and time the Channel was created.
+     * 
+     * @param createdAt
+     *        The date and time the Channel was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RotateChannelCredentialsResult withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -287,6 +323,8 @@ public class RotateChannelCredentialsResult extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEgressAccessLogs() != null)
@@ -316,6 +354,10 @@ public class RotateChannelCredentialsResult extends com.amazonaws.AmazonWebServi
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -350,6 +392,7 @@ public class RotateChannelCredentialsResult extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEgressAccessLogs() == null) ? 0 : getEgressAccessLogs().hashCode());
         hashCode = prime * hashCode + ((getHlsIngest() == null) ? 0 : getHlsIngest().hashCode());

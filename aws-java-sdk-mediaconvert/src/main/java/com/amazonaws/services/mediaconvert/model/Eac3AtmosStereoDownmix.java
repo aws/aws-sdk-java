@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED)
- * Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting
- * Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
+ * Choose how the service does stereo downmixing. Default value: Not indicated Related setting: To have MediaConvert use
+ * this value, keep the default value, Custom for the setting Downmix control. Otherwise, MediaConvert ignores Stereo
+ * downmix.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3AtmosStereoDownmix {

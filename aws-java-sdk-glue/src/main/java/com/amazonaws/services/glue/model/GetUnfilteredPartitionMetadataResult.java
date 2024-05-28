@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,14 +24,32 @@ import javax.annotation.Generated;
 public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * A Partition object containing the partition metadata.
+     * </p>
+     */
     private Partition partition;
-
+    /**
+     * <p>
+     * A list of column names that the user has been granted access to.
+     * </p>
+     */
     private java.util.List<String> authorizedColumns;
-
+    /**
+     * <p>
+     * A Boolean value that indicates whether the partition location is registered with Lake Formation.
+     * </p>
+     */
     private Boolean isRegisteredWithLakeFormation;
 
     /**
+     * <p>
+     * A Partition object containing the partition metadata.
+     * </p>
+     * 
      * @param partition
+     *        A Partition object containing the partition metadata.
      */
 
     public void setPartition(Partition partition) {
@@ -39,7 +57,11 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * A Partition object containing the partition metadata.
+     * </p>
+     * 
+     * @return A Partition object containing the partition metadata.
      */
 
     public Partition getPartition() {
@@ -47,7 +69,12 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A Partition object containing the partition metadata.
+     * </p>
+     * 
      * @param partition
+     *        A Partition object containing the partition metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -57,7 +84,11 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * A list of column names that the user has been granted access to.
+     * </p>
+     * 
+     * @return A list of column names that the user has been granted access to.
      */
 
     public java.util.List<String> getAuthorizedColumns() {
@@ -65,7 +96,12 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A list of column names that the user has been granted access to.
+     * </p>
+     * 
      * @param authorizedColumns
+     *        A list of column names that the user has been granted access to.
      */
 
     public void setAuthorizedColumns(java.util.Collection<String> authorizedColumns) {
@@ -79,12 +115,16 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * A list of column names that the user has been granted access to.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAuthorizedColumns(java.util.Collection)} or {@link #withAuthorizedColumns(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param authorizedColumns
+     *        A list of column names that the user has been granted access to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,7 +139,12 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A list of column names that the user has been granted access to.
+     * </p>
+     * 
      * @param authorizedColumns
+     *        A list of column names that the user has been granted access to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +154,12 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A Boolean value that indicates whether the partition location is registered with Lake Formation.
+     * </p>
+     * 
      * @param isRegisteredWithLakeFormation
+     *        A Boolean value that indicates whether the partition location is registered with Lake Formation.
      */
 
     public void setIsRegisteredWithLakeFormation(Boolean isRegisteredWithLakeFormation) {
@@ -117,7 +167,11 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * A Boolean value that indicates whether the partition location is registered with Lake Formation.
+     * </p>
+     * 
+     * @return A Boolean value that indicates whether the partition location is registered with Lake Formation.
      */
 
     public Boolean getIsRegisteredWithLakeFormation() {
@@ -125,7 +179,12 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A Boolean value that indicates whether the partition location is registered with Lake Formation.
+     * </p>
+     * 
      * @param isRegisteredWithLakeFormation
+     *        A Boolean value that indicates whether the partition location is registered with Lake Formation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,7 +194,11 @@ public class GetUnfilteredPartitionMetadataResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * A Boolean value that indicates whether the partition location is registered with Lake Formation.
+     * </p>
+     * 
+     * @return A Boolean value that indicates whether the partition location is registered with Lake Formation.
      */
 
     public Boolean isRegisteredWithLakeFormation() {

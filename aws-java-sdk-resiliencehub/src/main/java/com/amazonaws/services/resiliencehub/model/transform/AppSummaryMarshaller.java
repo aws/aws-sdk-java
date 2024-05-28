@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,10 +37,18 @@ public class AppSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> DRIFTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("driftStatus").build();
+    private static final MarshallingInfo<java.util.Date> LASTAPPCOMPLIANCEEVALUATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAppComplianceEvaluationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Double> RESILIENCYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resiliencyScore").build();
+    private static final MarshallingInfo<Integer> RPOINSECS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rpoInSecs").build();
+    private static final MarshallingInfo<Integer> RTOINSECS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rtoInSecs").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
 
@@ -65,8 +73,12 @@ public class AppSummaryMarshaller {
             protocolMarshaller.marshall(appSummary.getComplianceStatus(), COMPLIANCESTATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(appSummary.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(appSummary.getDriftStatus(), DRIFTSTATUS_BINDING);
+            protocolMarshaller.marshall(appSummary.getLastAppComplianceEvaluationTime(), LASTAPPCOMPLIANCEEVALUATIONTIME_BINDING);
             protocolMarshaller.marshall(appSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(appSummary.getResiliencyScore(), RESILIENCYSCORE_BINDING);
+            protocolMarshaller.marshall(appSummary.getRpoInSecs(), RPOINSECS_BINDING);
+            protocolMarshaller.marshall(appSummary.getRtoInSecs(), RTOINSECS_BINDING);
             protocolMarshaller.marshall(appSummary.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,26 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * Specifies the deletion mode for the stack. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to
+     * resource deletion failure.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String deletionMode;
 
     /**
      * <p>
@@ -433,6 +453,173 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Specifies the deletion mode for the stack. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to
+     * resource deletion failure.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deletionMode
+     *        Specifies the deletion mode for the stack. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying
+     *        this parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due
+     *        to resource deletion failure.
+     *        </p>
+     *        </li>
+     * @see DeletionMode
+     */
+
+    public void setDeletionMode(String deletionMode) {
+        this.deletionMode = deletionMode;
+    }
+
+    /**
+     * <p>
+     * Specifies the deletion mode for the stack. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to
+     * resource deletion failure.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the deletion mode for the stack. Possible values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying
+     *         this parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state
+     *         due to resource deletion failure.
+     *         </p>
+     *         </li>
+     * @see DeletionMode
+     */
+
+    public String getDeletionMode() {
+        return this.deletionMode;
+    }
+
+    /**
+     * <p>
+     * Specifies the deletion mode for the stack. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to
+     * resource deletion failure.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deletionMode
+     *        Specifies the deletion mode for the stack. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying
+     *        this parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due
+     *        to resource deletion failure.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeletionMode
+     */
+
+    public DeleteStackRequest withDeletionMode(String deletionMode) {
+        setDeletionMode(deletionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the deletion mode for the stack. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying this
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due to
+     * resource deletion failure.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deletionMode
+     *        Specifies the deletion mode for the stack. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code> - Use the standard behavior. Specifying this value is the same as not specifying
+     *        this parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FORCE_DELETE_STACK</code> - Delete the stack if it's stuck in a <code>DELETE_FAILED</code> state due
+     *        to resource deletion failure.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeletionMode
+     */
+
+    public DeleteStackRequest withDeletionMode(DeletionMode deletionMode) {
+        this.deletionMode = deletionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -451,7 +638,9 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRoleARN() != null)
             sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getDeletionMode() != null)
+            sb.append("DeletionMode: ").append(getDeletionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -482,6 +671,10 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getDeletionMode() == null ^ this.getDeletionMode() == null)
+            return false;
+        if (other.getDeletionMode() != null && other.getDeletionMode().equals(this.getDeletionMode()) == false)
+            return false;
         return true;
     }
 
@@ -494,6 +687,7 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getRetainResources() == null) ? 0 : getRetainResources().hashCode());
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getDeletionMode() == null) ? 0 : getDeletionMode().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dkimTokens;
@@ -208,7 +209,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * 
      * @return A set of character strings that represent the domain's identity. Using these tokens, you need to create
@@ -218,8 +220,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *         (This only applies to domain identities, not email address identities.)</p>
      *         <p>
      *         For more information about creating DNS records using DKIM tokens, see the <a
-     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-     *         Guide</a>.
+     *         href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES
+     *         Developer Guide</a>.
      */
 
     public java.util.List<String> getDkimTokens() {
@@ -239,7 +241,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * 
      * @param dkimTokens
@@ -250,8 +253,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        applies to domain identities, not email address identities.)</p>
      *        <p>
      *        For more information about creating DNS records using DKIM tokens, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES
+     *        Developer Guide</a>.
      */
 
     public void setDkimTokens(java.util.Collection<String> dkimTokens) {
@@ -273,7 +276,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -289,8 +293,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        applies to domain identities, not email address identities.)</p>
      *        <p>
      *        For more information about creating DNS records using DKIM tokens, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES
+     *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,7 +318,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * 
      * @param dkimTokens
@@ -325,8 +330,8 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        applies to domain identities, not email address identities.)</p>
      *        <p>
      *        For more information about creating DNS records using DKIM tokens, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon SES
+     *        Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

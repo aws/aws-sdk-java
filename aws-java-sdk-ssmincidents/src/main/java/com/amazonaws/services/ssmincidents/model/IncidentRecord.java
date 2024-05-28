@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
     private ChatChannel chatChannel;
     /**
      * <p>
-     * The time that Incident Manager created the incident record.
+     * The timestamp for when Incident Manager created the incident record.
      * </p>
      */
     private java.util.Date creationTime;
@@ -63,6 +63,36 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The impact of the incident on customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer impact;
     /**
@@ -79,7 +109,7 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
     private String lastModifiedBy;
     /**
      * <p>
-     * The time at which the incident was most recently modified.
+     * The timestamp for when the incident was most recently modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
@@ -91,7 +121,7 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<NotificationTargetItem> notificationTargets;
     /**
      * <p>
-     * The time at which the incident was resolved. This appears as a timeline event.
+     * The timestamp for when the incident was resolved. This appears as a timeline event.
      * </p>
      */
     private java.util.Date resolvedTime;
@@ -267,11 +297,11 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that Incident Manager created the incident record.
+     * The timestamp for when Incident Manager created the incident record.
      * </p>
      * 
      * @param creationTime
-     *        The time that Incident Manager created the incident record.
+     *        The timestamp for when Incident Manager created the incident record.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -280,10 +310,10 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that Incident Manager created the incident record.
+     * The timestamp for when Incident Manager created the incident record.
      * </p>
      * 
-     * @return The time that Incident Manager created the incident record.
+     * @return The timestamp for when Incident Manager created the incident record.
      */
 
     public java.util.Date getCreationTime() {
@@ -292,11 +322,11 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that Incident Manager created the incident record.
+     * The timestamp for when Incident Manager created the incident record.
      * </p>
      * 
      * @param creationTime
-     *        The time that Incident Manager created the incident record.
+     *        The timestamp for when Incident Manager created the incident record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,9 +385,68 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The impact of the incident on customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param impact
-     *        The impact of the incident on customers and applications.
+     *        The impact of the incident on customers and applications.</p>
+     *        <p class="title">
+     *        <b>Supported impact codes</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>1</code> - Critical
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>2</code> - High
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>3</code> - Medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>4</code> - Low
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5</code> - No Impact
+     *        </p>
+     *        </li>
      */
 
     public void setImpact(Integer impact) {
@@ -368,8 +457,67 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The impact of the incident on customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The impact of the incident on customers and applications.
+     * @return The impact of the incident on customers and applications.</p>
+     *         <p class="title">
+     *         <b>Supported impact codes</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>1</code> - Critical
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>2</code> - High
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>3</code> - Medium
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>4</code> - Low
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5</code> - No Impact
+     *         </p>
+     *         </li>
      */
 
     public Integer getImpact() {
@@ -380,9 +528,68 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The impact of the incident on customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param impact
-     *        The impact of the incident on customers and applications.
+     *        The impact of the incident on customers and applications.</p>
+     *        <p class="title">
+     *        <b>Supported impact codes</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>1</code> - Critical
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>2</code> - High
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>3</code> - Medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>4</code> - Low
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5</code> - No Impact
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,11 +680,11 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the incident was most recently modified.
+     * The timestamp for when the incident was most recently modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The time at which the incident was most recently modified.
+     *        The timestamp for when the incident was most recently modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -486,10 +693,10 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the incident was most recently modified.
+     * The timestamp for when the incident was most recently modified.
      * </p>
      * 
-     * @return The time at which the incident was most recently modified.
+     * @return The timestamp for when the incident was most recently modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -498,11 +705,11 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the incident was most recently modified.
+     * The timestamp for when the incident was most recently modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The time at which the incident was most recently modified.
+     *        The timestamp for when the incident was most recently modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,11 +790,11 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the incident was resolved. This appears as a timeline event.
+     * The timestamp for when the incident was resolved. This appears as a timeline event.
      * </p>
      * 
      * @param resolvedTime
-     *        The time at which the incident was resolved. This appears as a timeline event.
+     *        The timestamp for when the incident was resolved. This appears as a timeline event.
      */
 
     public void setResolvedTime(java.util.Date resolvedTime) {
@@ -596,10 +803,10 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the incident was resolved. This appears as a timeline event.
+     * The timestamp for when the incident was resolved. This appears as a timeline event.
      * </p>
      * 
-     * @return The time at which the incident was resolved. This appears as a timeline event.
+     * @return The timestamp for when the incident was resolved. This appears as a timeline event.
      */
 
     public java.util.Date getResolvedTime() {
@@ -608,11 +815,11 @@ public class IncidentRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time at which the incident was resolved. This appears as a timeline event.
+     * The timestamp for when the incident was resolved. This appears as a timeline event.
      * </p>
      * 
      * @param resolvedTime
-     *        The time at which the incident was resolved. This appears as a timeline event.
+     *        The timestamp for when the incident was resolved. This appears as a timeline event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -178,8 +178,13 @@ public interface AWSAmplifyUIBuilder {
     DeleteThemeResult deleteTheme(DeleteThemeRequest deleteThemeRequest);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -242,6 +247,27 @@ public interface AWSAmplifyUIBuilder {
      *      API Documentation</a>
      */
     ExportThemesResult exportThemes(ExportThemesRequest exportThemesRequest);
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @return Result of the GetCodegenJob operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCodegenJobResult getCodegenJob(GetCodegenJobRequest getCodegenJobRequest);
 
     /**
      * <p>
@@ -319,6 +345,25 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @return Result of the ListCodegenJobs operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAmplifyUIBuilder.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCodegenJobsResult listCodegenJobs(ListCodegenJobsRequest listCodegenJobsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of components for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -353,6 +398,29 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Returns a list of tags for a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Retrieves a list of themes for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -370,7 +438,7 @@ public interface AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Stores the metadata information about a feature on a form or view.
+     * Stores the metadata information about a feature on a form.
      * </p>
      * 
      * @param putMetadataFlagRequest
@@ -386,8 +454,13 @@ public interface AWSAmplifyUIBuilder {
     PutMetadataFlagResult putMetadataFlag(PutMetadataFlagRequest putMetadataFlagRequest);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -399,6 +472,71 @@ public interface AWSAmplifyUIBuilder {
      *      API Documentation</a>
      */
     RefreshTokenResult refreshToken(RefreshTokenRequest refreshTokenRequest);
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @return Result of the StartCodegenJob operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAmplifyUIBuilder.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartCodegenJobResult startCodegenJob(StartCodegenJobRequest startCodegenJobRequest);
+
+    /**
+     * <p>
+     * Tags the resource with a tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Untags a resource with a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

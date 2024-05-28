@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,20 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
     private String disassociatedDataStorage;
 
     private RetentionPeriod retentionPeriod;
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     */
+    private String warmTier;
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     */
+    private WarmTierRetentionPeriod warmTierRetentionPeriod;
 
     /**
      * <p>
@@ -572,6 +586,119 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @param warmTier
+     *        A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered
+     *        and historical data ingested with the CreaeBulkImportJob API.
+     * @see WarmTierState
+     */
+
+    public void setWarmTier(String warmTier) {
+        this.warmTier = warmTier;
+    }
+
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @return A service managed storage tier optimized for analytical queries. It stores periodically uploaded,
+     *         buffered and historical data ingested with the CreaeBulkImportJob API.
+     * @see WarmTierState
+     */
+
+    public String getWarmTier() {
+        return this.warmTier;
+    }
+
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @param warmTier
+     *        A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered
+     *        and historical data ingested with the CreaeBulkImportJob API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WarmTierState
+     */
+
+    public PutStorageConfigurationRequest withWarmTier(String warmTier) {
+        setWarmTier(warmTier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @param warmTier
+     *        A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered
+     *        and historical data ingested with the CreaeBulkImportJob API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WarmTierState
+     */
+
+    public PutStorageConfigurationRequest withWarmTier(WarmTierState warmTier) {
+        this.warmTier = warmTier.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     * 
+     * @param warmTierRetentionPeriod
+     *        Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set
+     *        this only if cold tier is enabled.
+     */
+
+    public void setWarmTierRetentionPeriod(WarmTierRetentionPeriod warmTierRetentionPeriod) {
+        this.warmTierRetentionPeriod = warmTierRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     * 
+     * @return Set this period to specify how long your data is stored in the warm tier before it is deleted. You can
+     *         set this only if cold tier is enabled.
+     */
+
+    public WarmTierRetentionPeriod getWarmTierRetentionPeriod() {
+        return this.warmTierRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     * 
+     * @param warmTierRetentionPeriod
+     *        Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set
+     *        this only if cold tier is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutStorageConfigurationRequest withWarmTierRetentionPeriod(WarmTierRetentionPeriod warmTierRetentionPeriod) {
+        setWarmTierRetentionPeriod(warmTierRetentionPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -590,7 +717,11 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
         if (getDisassociatedDataStorage() != null)
             sb.append("DisassociatedDataStorage: ").append(getDisassociatedDataStorage()).append(",");
         if (getRetentionPeriod() != null)
-            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
+        if (getWarmTier() != null)
+            sb.append("WarmTier: ").append(getWarmTier()).append(",");
+        if (getWarmTierRetentionPeriod() != null)
+            sb.append("WarmTierRetentionPeriod: ").append(getWarmTierRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -621,6 +752,14 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
             return false;
+        if (other.getWarmTier() == null ^ this.getWarmTier() == null)
+            return false;
+        if (other.getWarmTier() != null && other.getWarmTier().equals(this.getWarmTier()) == false)
+            return false;
+        if (other.getWarmTierRetentionPeriod() == null ^ this.getWarmTierRetentionPeriod() == null)
+            return false;
+        if (other.getWarmTierRetentionPeriod() != null && other.getWarmTierRetentionPeriod().equals(this.getWarmTierRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -633,6 +772,8 @@ public class PutStorageConfigurationRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMultiLayerStorage() == null) ? 0 : getMultiLayerStorage().hashCode());
         hashCode = prime * hashCode + ((getDisassociatedDataStorage() == null) ? 0 : getDisassociatedDataStorage().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getWarmTier() == null) ? 0 : getWarmTier().hashCode());
+        hashCode = prime * hashCode + ((getWarmTierRetentionPeriod() == null) ? 0 : getWarmTierRetentionPeriod().hashCode());
         return hashCode;
     }
 

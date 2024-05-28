@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,32 +12,62 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
-import org.w3c.dom.Node;
+import java.math.*;
+
 import javax.annotation.Generated;
 
-import com.amazonaws.AmazonServiceException;
+import com.amazonaws.services.sqs.model.*;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
+import com.amazonaws.transform.*;
 
-import com.amazonaws.transform.StandardErrorUnmarshaller;
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
 
-import com.amazonaws.services.sqs.model.QueueNameExistsException;
-
+/**
+ * QueueNameExistsException JSON Unmarshaller
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class QueueNameExistsExceptionUnmarshaller extends StandardErrorUnmarshaller {
-
-    public QueueNameExistsExceptionUnmarshaller() {
-        super(QueueNameExistsException.class);
+public class QueueNameExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private QueueNameExistsExceptionUnmarshaller() {
+        super(com.amazonaws.services.sqs.model.QueueNameExistsException.class, "QueueNameExists");
     }
 
     @Override
-    public AmazonServiceException unmarshall(Node node) throws Exception {
-        // Bail out if this isn't the right error code that this
-        // marshaller understands
-        String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("QueueAlreadyExists"))
+    public com.amazonaws.services.sqs.model.QueueNameExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.sqs.model.QueueNameExistsException queueNameExistsException = new com.amazonaws.services.sqs.model.QueueNameExistsException(null);
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
             return null;
+        }
 
-        QueueNameExistsException e = (QueueNameExistsException) super.unmarshall(node);
+        while (true) {
+            if (token == null)
+                break;
 
-        return e;
+            if (token == FIELD_NAME || token == START_OBJECT) {
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
+        return queueNameExistsException;
+    }
+
+    private static QueueNameExistsExceptionUnmarshaller instance;
+
+    public static QueueNameExistsExceptionUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new QueueNameExistsExceptionUnmarshaller();
+        return instance;
     }
 }

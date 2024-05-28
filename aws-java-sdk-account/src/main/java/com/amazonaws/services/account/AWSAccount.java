@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,56 @@ public interface AWSAccount {
 
     /**
      * <p>
+     * Disables (opts-out) a particular Region for an account.
+     * </p>
+     * 
+     * @param disableRegionRequest
+     * @return Result of the DisableRegion operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws ConflictException
+     *         The request could not be processed because of a conflict in the current status of the resource. For
+     *         example, this happens if you try to enable a Region that is currently being disabled (in a status of
+     *         DISABLING).
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.DisableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DisableRegionResult disableRegion(DisableRegionRequest disableRegionRequest);
+
+    /**
+     * <p>
+     * Enables (opts-in) a particular Region for an account.
+     * </p>
+     * 
+     * @param enableRegionRequest
+     * @return Result of the EnableRegion operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws ConflictException
+     *         The request could not be processed because of a conflict in the current status of the resource. For
+     *         example, this happens if you try to enable a Region that is currently being disabled (in a status of
+     *         DISABLING).
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.EnableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    EnableRegionResult enableRegion(EnableRegionRequest enableRegionRequest);
+
+    /**
+     * <p>
      * Retrieves the specified alternate contact attached to an Amazon Web Services account.
      * </p>
      * <p>
@@ -142,6 +192,49 @@ public interface AWSAccount {
      *      API Documentation</a>
      */
     GetContactInformationResult getContactInformation(GetContactInformationRequest getContactInformationRequest);
+
+    /**
+     * <p>
+     * Retrieves the opt-in status of a particular Region.
+     * </p>
+     * 
+     * @param getRegionOptStatusRequest
+     * @return Result of the GetRegionOptStatus operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.GetRegionOptStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetRegionOptStatusResult getRegionOptStatus(GetRegionOptStatusRequest getRegionOptStatusRequest);
+
+    /**
+     * <p>
+     * Lists all the Regions for a given account and their respective opt-in statuses. Optionally, this list can be
+     * filtered by the <code>region-opt-status-contains</code> parameter.
+     * </p>
+     * 
+     * @param listRegionsRequest
+     * @return Result of the ListRegions operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed because one of the input parameters was invalid.
+     * @throws AccessDeniedException
+     *         The operation failed because the calling identity doesn't have the minimum required permissions.
+     * @throws TooManyRequestsException
+     *         The operation failed because it was called too frequently and exceeded a throttle limit.
+     * @throws InternalServerException
+     *         The operation failed because of an error internal to Amazon Web Services. Try your operation again later.
+     * @sample AWSAccount.ListRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListRegionsResult listRegions(ListRegionsRequest listRegionsRequest);
 
     /**
      * <p>

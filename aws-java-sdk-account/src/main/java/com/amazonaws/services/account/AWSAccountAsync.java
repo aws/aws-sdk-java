@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,68 @@ public interface AWSAccountAsync extends AWSAccount {
      */
     java.util.concurrent.Future<DeleteAlternateContactResult> deleteAlternateContactAsync(DeleteAlternateContactRequest deleteAlternateContactRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAlternateContactRequest, DeleteAlternateContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables (opts-out) a particular Region for an account.
+     * </p>
+     * 
+     * @param disableRegionRequest
+     * @return A Java Future containing the result of the DisableRegion operation returned by the service.
+     * @sample AWSAccountAsync.DisableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableRegionResult> disableRegionAsync(DisableRegionRequest disableRegionRequest);
+
+    /**
+     * <p>
+     * Disables (opts-out) a particular Region for an account.
+     * </p>
+     * 
+     * @param disableRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableRegion operation returned by the service.
+     * @sample AWSAccountAsyncHandler.DisableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableRegionResult> disableRegionAsync(DisableRegionRequest disableRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableRegionRequest, DisableRegionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables (opts-in) a particular Region for an account.
+     * </p>
+     * 
+     * @param enableRegionRequest
+     * @return A Java Future containing the result of the EnableRegion operation returned by the service.
+     * @sample AWSAccountAsync.EnableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableRegionResult> enableRegionAsync(EnableRegionRequest enableRegionRequest);
+
+    /**
+     * <p>
+     * Enables (opts-in) a particular Region for an account.
+     * </p>
+     * 
+     * @param enableRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableRegion operation returned by the service.
+     * @sample AWSAccountAsyncHandler.EnableRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableRegionResult> enableRegionAsync(EnableRegionRequest enableRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableRegionRequest, EnableRegionResult> asyncHandler);
 
     /**
      * <p>
@@ -190,6 +252,70 @@ public interface AWSAccountAsync extends AWSAccount {
      */
     java.util.concurrent.Future<GetContactInformationResult> getContactInformationAsync(GetContactInformationRequest getContactInformationRequest,
             com.amazonaws.handlers.AsyncHandler<GetContactInformationRequest, GetContactInformationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the opt-in status of a particular Region.
+     * </p>
+     * 
+     * @param getRegionOptStatusRequest
+     * @return A Java Future containing the result of the GetRegionOptStatus operation returned by the service.
+     * @sample AWSAccountAsync.GetRegionOptStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRegionOptStatusResult> getRegionOptStatusAsync(GetRegionOptStatusRequest getRegionOptStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the opt-in status of a particular Region.
+     * </p>
+     * 
+     * @param getRegionOptStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRegionOptStatus operation returned by the service.
+     * @sample AWSAccountAsyncHandler.GetRegionOptStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRegionOptStatusResult> getRegionOptStatusAsync(GetRegionOptStatusRequest getRegionOptStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRegionOptStatusRequest, GetRegionOptStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the Regions for a given account and their respective opt-in statuses. Optionally, this list can be
+     * filtered by the <code>region-opt-status-contains</code> parameter.
+     * </p>
+     * 
+     * @param listRegionsRequest
+     * @return A Java Future containing the result of the ListRegions operation returned by the service.
+     * @sample AWSAccountAsync.ListRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegionsResult> listRegionsAsync(ListRegionsRequest listRegionsRequest);
+
+    /**
+     * <p>
+     * Lists all the Regions for a given account and their respective opt-in statuses. Optionally, this list can be
+     * filtered by the <code>region-opt-status-contains</code> parameter.
+     * </p>
+     * 
+     * @param listRegionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRegions operation returned by the service.
+     * @sample AWSAccountAsyncHandler.ListRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegionsResult> listRegionsAsync(ListRegionsRequest listRegionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRegionsRequest, ListRegionsResult> asyncHandler);
 
     /**
      * <p>

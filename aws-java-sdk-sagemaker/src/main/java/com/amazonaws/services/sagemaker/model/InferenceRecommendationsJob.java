@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,25 @@ public class InferenceRecommendationsJob implements Serializable, Cloneable, Str
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The name of the created model.
+     * </p>
+     */
+    private String modelName;
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix).
+     * </p>
+     */
+    private String samplePayloadUrl;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a versioned model package.
+     * </p>
+     */
+    private String modelPackageVersionArn;
 
     /**
      * <p>
@@ -531,6 +550,132 @@ public class InferenceRecommendationsJob implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The name of the created model.
+     * </p>
+     * 
+     * @param modelName
+     *        The name of the created model.
+     */
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    /**
+     * <p>
+     * The name of the created model.
+     * </p>
+     * 
+     * @return The name of the created model.
+     */
+
+    public String getModelName() {
+        return this.modelName;
+    }
+
+    /**
+     * <p>
+     * The name of the created model.
+     * </p>
+     * 
+     * @param modelName
+     *        The name of the created model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendationsJob withModelName(String modelName) {
+        setModelName(modelName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix).
+     * </p>
+     * 
+     * @param samplePayloadUrl
+     *        The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must
+     *        point to a single gzip compressed tar archive (.tar.gz suffix).
+     */
+
+    public void setSamplePayloadUrl(String samplePayloadUrl) {
+        this.samplePayloadUrl = samplePayloadUrl;
+    }
+
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix).
+     * </p>
+     * 
+     * @return The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must
+     *         point to a single gzip compressed tar archive (.tar.gz suffix).
+     */
+
+    public String getSamplePayloadUrl() {
+        return this.samplePayloadUrl;
+    }
+
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix).
+     * </p>
+     * 
+     * @param samplePayloadUrl
+     *        The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must
+     *        point to a single gzip compressed tar archive (.tar.gz suffix).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendationsJob withSamplePayloadUrl(String samplePayloadUrl) {
+        setSamplePayloadUrl(samplePayloadUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a versioned model package.
+     * </p>
+     * 
+     * @param modelPackageVersionArn
+     *        The Amazon Resource Name (ARN) of a versioned model package.
+     */
+
+    public void setModelPackageVersionArn(String modelPackageVersionArn) {
+        this.modelPackageVersionArn = modelPackageVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a versioned model package.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a versioned model package.
+     */
+
+    public String getModelPackageVersionArn() {
+        return this.modelPackageVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a versioned model package.
+     * </p>
+     * 
+     * @param modelPackageVersionArn
+     *        The Amazon Resource Name (ARN) of a versioned model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendationsJob withModelPackageVersionArn(String modelPackageVersionArn) {
+        setModelPackageVersionArn(modelPackageVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -561,7 +706,13 @@ public class InferenceRecommendationsJob implements Serializable, Cloneable, Str
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getModelName() != null)
+            sb.append("ModelName: ").append(getModelName()).append(",");
+        if (getSamplePayloadUrl() != null)
+            sb.append("SamplePayloadUrl: ").append(getSamplePayloadUrl()).append(",");
+        if (getModelPackageVersionArn() != null)
+            sb.append("ModelPackageVersionArn: ").append(getModelPackageVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -616,6 +767,18 @@ public class InferenceRecommendationsJob implements Serializable, Cloneable, Str
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getModelName() == null ^ this.getModelName() == null)
+            return false;
+        if (other.getModelName() != null && other.getModelName().equals(this.getModelName()) == false)
+            return false;
+        if (other.getSamplePayloadUrl() == null ^ this.getSamplePayloadUrl() == null)
+            return false;
+        if (other.getSamplePayloadUrl() != null && other.getSamplePayloadUrl().equals(this.getSamplePayloadUrl()) == false)
+            return false;
+        if (other.getModelPackageVersionArn() == null ^ this.getModelPackageVersionArn() == null)
+            return false;
+        if (other.getModelPackageVersionArn() != null && other.getModelPackageVersionArn().equals(this.getModelPackageVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -634,6 +797,9 @@ public class InferenceRecommendationsJob implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
+        hashCode = prime * hashCode + ((getSamplePayloadUrl() == null) ? 0 : getSamplePayloadUrl().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageVersionArn() == null) ? 0 : getModelPackageVersionArn().hashCode());
         return hashCode;
     }
 

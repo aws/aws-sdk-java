@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,6 +86,12 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
      * </p>
      */
     private String networkInterfaceId;
+    /**
+     * <p>
+     * The ID of the prefix list.
+     * </p>
+     */
+    private String destinationPrefixListId;
 
     /**
      * <p>
@@ -526,6 +532,46 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the prefix list.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of the prefix list.
+     */
+
+    public void setDestinationPrefixListId(String destinationPrefixListId) {
+        this.destinationPrefixListId = destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list.
+     * </p>
+     * 
+     * @return The ID of the prefix list.
+     */
+
+    public String getDestinationPrefixListId() {
+        return this.destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of the prefix list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRoute withDestinationPrefixListId(String destinationPrefixListId) {
+        setDestinationPrefixListId(destinationPrefixListId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -556,7 +602,9 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
         if (getCoipPoolId() != null)
             sb.append("CoipPoolId: ").append(getCoipPoolId()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getDestinationPrefixListId() != null)
+            sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId());
         sb.append("}");
         return sb.toString();
     }
@@ -612,6 +660,10 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
+            return false;
+        if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
+            return false;
         return true;
     }
 
@@ -630,6 +682,7 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getCoipPoolId() == null) ? 0 : getCoipPoolId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
         return hashCode;
     }
 

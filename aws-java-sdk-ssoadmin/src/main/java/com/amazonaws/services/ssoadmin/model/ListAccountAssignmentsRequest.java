@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,18 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     */
-    private String instanceArn;
-    /**
-     * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The ARN of the permission set from which to list assignments.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
-    private String permissionSetArn;
+    private String instanceArn;
     /**
      * <p>
      * The maximum number of results to display for the assignment.
@@ -58,66 +52,20 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * The ARN of the permission set from which to list assignments.
      * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
-
-    public void setInstanceArn(String instanceArn) {
-        this.instanceArn = instanceArn;
-    }
+    private String permissionSetArn;
 
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     */
-
-    public String getInstanceArn() {
-        return this.instanceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListAccountAssignmentsRequest withInstanceArn(String instanceArn) {
-        setInstanceArn(instanceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the AWS account from which to list the assignments.
+     *        The identifier of the Amazon Web Services account from which to list the assignments.
      */
 
     public void setAccountId(String accountId) {
@@ -126,10 +74,10 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      * 
-     * @return The identifier of the AWS account from which to list the assignments.
+     * @return The identifier of the Amazon Web Services account from which to list the assignments.
      */
 
     public String getAccountId() {
@@ -138,11 +86,11 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the AWS account from which to list the assignments.
+     *        The identifier of the Amazon Web Services account from which to list the assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,41 +101,56 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the permission set from which to list assignments.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @param permissionSetArn
-     *        The ARN of the permission set from which to list assignments.
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
-    public void setPermissionSetArn(String permissionSetArn) {
-        this.permissionSetArn = permissionSetArn;
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
     }
 
     /**
      * <p>
-     * The ARN of the permission set from which to list assignments.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the permission set from which to list assignments.
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
-    public String getPermissionSetArn() {
-        return this.permissionSetArn;
+    public String getInstanceArn() {
+        return this.instanceArn;
     }
 
     /**
      * <p>
-     * The ARN of the permission set from which to list assignments.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @param permissionSetArn
-     *        The ARN of the permission set from which to list assignments.
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListAccountAssignmentsRequest withPermissionSetArn(String permissionSetArn) {
-        setPermissionSetArn(permissionSetArn);
+    public ListAccountAssignmentsRequest withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
         return this;
     }
 
@@ -278,6 +241,46 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The ARN of the permission set from which to list assignments.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the permission set from which to list assignments.
+     */
+
+    public void setPermissionSetArn(String permissionSetArn) {
+        this.permissionSetArn = permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the permission set from which to list assignments.
+     * </p>
+     * 
+     * @return The ARN of the permission set from which to list assignments.
+     */
+
+    public String getPermissionSetArn() {
+        return this.permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the permission set from which to list assignments.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the permission set from which to list assignments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAccountAssignmentsRequest withPermissionSetArn(String permissionSetArn) {
+        setPermissionSetArn(permissionSetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -289,16 +292,16 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceArn() != null)
-            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
-        if (getPermissionSetArn() != null)
-            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPermissionSetArn() != null)
+            sb.append("PermissionSetArn: ").append(getPermissionSetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -313,17 +316,13 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof ListAccountAssignmentsRequest == false)
             return false;
         ListAccountAssignmentsRequest other = (ListAccountAssignmentsRequest) obj;
-        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
-            return false;
-        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
-            return false;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
-        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
-        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -333,6 +332,10 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
+            return false;
+        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
+            return false;
         return true;
     }
 
@@ -341,11 +344,11 @@ public class ListAccountAssignmentsRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,10 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featureName").build();
     private static final MarshallingInfo<StructuredPojo> EBSVOLUMESCANDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebsVolumeScanDetails").build();
+    private static final MarshallingInfo<StructuredPojo> RUNTIMEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeDetails").build();
+    private static final MarshallingInfo<StructuredPojo> DETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("detection").build();
 
     private static final ServiceMarshaller instance = new ServiceMarshaller();
 
@@ -83,6 +87,8 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getAdditionalInfo(), ADDITIONALINFO_BINDING);
             protocolMarshaller.marshall(service.getFeatureName(), FEATURENAME_BINDING);
             protocolMarshaller.marshall(service.getEbsVolumeScanDetails(), EBSVOLUMESCANDETAILS_BINDING);
+            protocolMarshaller.marshall(service.getRuntimeDetails(), RUNTIMEDETAILS_BINDING);
+            protocolMarshaller.marshall(service.getDetection(), DETECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

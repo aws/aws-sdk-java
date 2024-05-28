@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ import com.amazonaws.services.batch.model.*;
  * means for developers, scientists, and engineers to access large amounts of compute resources. Batch uses the
  * advantages of the batch computing to remove the undifferentiated heavy lifting of configuring and managing required
  * infrastructure. At the same time, it also adopts a familiar batch computing software approach. You can use Batch to
- * efficiently provision resources d, and work toward eliminating capacity constraints, reducing your overall compute
+ * efficiently provision resources, and work toward eliminating capacity constraints, reducing your overall compute
  * costs, and delivering results more quickly.
  * </p>
  * <p>
@@ -46,10 +46,24 @@ public interface AWSBatchAsync extends AWSBatch {
 
     /**
      * <p>
-     * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
-     * <code>RUNNABLE</code> state are canceled. Jobs that progressed to the <code>STARTING</code> or
-     * <code>RUNNING</code> state aren't canceled. However, the API operation still succeeds, even if no job is
-     * canceled. These jobs must be terminated with the <a>TerminateJob</a> operation.
+     * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code> or <code>PENDING</code> are
+     * canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code> until it reaches the head of the job
+     * queue. Then the job status is updated to <code>FAILED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * A <code>PENDING</code> job is canceled after all dependency jobs are completed. Therefore, it may take longer
+     * than expected to cancel a job in <code>PENDING</code> status.
+     * </p>
+     * <p>
+     * When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts to cancel all child jobs. The
+     * array parent job is canceled when all child jobs are completed.
+     * </p>
+     * </note>
+     * <p>
+     * Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't canceled. However, the API
+     * operation still succeeds, even if no job is canceled. These jobs must be terminated with the <a>TerminateJob</a>
+     * operation.
      * </p>
      * 
      * @param cancelJobRequest
@@ -63,10 +77,24 @@ public interface AWSBatchAsync extends AWSBatch {
 
     /**
      * <p>
-     * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
-     * <code>RUNNABLE</code> state are canceled. Jobs that progressed to the <code>STARTING</code> or
-     * <code>RUNNING</code> state aren't canceled. However, the API operation still succeeds, even if no job is
-     * canceled. These jobs must be terminated with the <a>TerminateJob</a> operation.
+     * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code> or <code>PENDING</code> are
+     * canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code> until it reaches the head of the job
+     * queue. Then the job status is updated to <code>FAILED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * A <code>PENDING</code> job is canceled after all dependency jobs are completed. Therefore, it may take longer
+     * than expected to cancel a job in <code>PENDING</code> status.
+     * </p>
+     * <p>
+     * When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts to cancel all child jobs. The
+     * array parent job is canceled when all child jobs are completed.
+     * </p>
+     * </note>
+     * <p>
+     * Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't canceled. However, the API
+     * operation still succeeds, even if no job is canceled. These jobs must be terminated with the <a>TerminateJob</a>
+     * operation.
      * </p>
      * 
      * @param cancelJobRequest
@@ -117,6 +145,11 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * <note>
      * <p>
+     * To create a compute environment that uses EKS resources, the caller must have permissions to call
+     * <code>eks:DescribeCluster</code>.
+     * </p>
+     * </note> <note>
+     * <p>
      * Batch doesn't automatically upgrade the AMIs in a compute environment after it's created. For example, it also
      * doesn't update the AMIs in your compute environment when a newer version of the Amazon ECS optimized AMI is
      * available. You're responsible for the management of the guest operating system. This includes any updates and
@@ -160,13 +193,15 @@ public interface AWSBatchAsync extends AWSBatch {
      * </li>
      * <li>
      * <p>
-     * Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code> or
-     * <code>SPOT_CAPACITY_OPTIMIZED</code>.
+     * Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter to <code>true</code>.
+     * The <code>updateToLatestImageVersion</code> parameter is used when you update a compute environment. This
+     * parameter is ignored when you create a compute environment.
      * </p>
      * </li>
      * <li>
@@ -236,6 +271,11 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * <note>
      * <p>
+     * To create a compute environment that uses EKS resources, the caller must have permissions to call
+     * <code>eks:DescribeCluster</code>.
+     * </p>
+     * </note> <note>
+     * <p>
      * Batch doesn't automatically upgrade the AMIs in a compute environment after it's created. For example, it also
      * doesn't update the AMIs in your compute environment when a newer version of the Amazon ECS optimized AMI is
      * available. You're responsible for the management of the guest operating system. This includes any updates and
@@ -279,13 +319,15 @@ public interface AWSBatchAsync extends AWSBatch {
      * </li>
      * <li>
      * <p>
-     * Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code> or
-     * <code>SPOT_CAPACITY_OPTIMIZED</code>.
+     * Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter to <code>true</code>.
+     * The <code>updateToLatestImageVersion</code> parameter is used when you update a compute environment. This
+     * parameter is ignored when you create a compute environment.
      * </p>
      * </li>
      * <li>

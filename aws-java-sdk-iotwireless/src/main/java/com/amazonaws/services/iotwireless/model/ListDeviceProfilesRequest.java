@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,13 @@ public class ListDeviceProfilesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     * <code>Sidewalk</code>.
+     * </p>
+     */
+    private String deviceProfileType;
 
     /**
      * <p>
@@ -126,6 +133,73 @@ public class ListDeviceProfilesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     * <code>Sidewalk</code>.
+     * </p>
+     * 
+     * @param deviceProfileType
+     *        A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     *        <code>Sidewalk</code>.
+     * @see DeviceProfileType
+     */
+
+    public void setDeviceProfileType(String deviceProfileType) {
+        this.deviceProfileType = deviceProfileType;
+    }
+
+    /**
+     * <p>
+     * A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     * <code>Sidewalk</code>.
+     * </p>
+     * 
+     * @return A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     *         <code>Sidewalk</code>.
+     * @see DeviceProfileType
+     */
+
+    public String getDeviceProfileType() {
+        return this.deviceProfileType;
+    }
+
+    /**
+     * <p>
+     * A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     * <code>Sidewalk</code>.
+     * </p>
+     * 
+     * @param deviceProfileType
+     *        A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     *        <code>Sidewalk</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceProfileType
+     */
+
+    public ListDeviceProfilesRequest withDeviceProfileType(String deviceProfileType) {
+        setDeviceProfileType(deviceProfileType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     * <code>Sidewalk</code>.
+     * </p>
+     * 
+     * @param deviceProfileType
+     *        A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or
+     *        <code>Sidewalk</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceProfileType
+     */
+
+    public ListDeviceProfilesRequest withDeviceProfileType(DeviceProfileType deviceProfileType) {
+        this.deviceProfileType = deviceProfileType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +214,9 @@ public class ListDeviceProfilesRequest extends com.amazonaws.AmazonWebServiceReq
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getDeviceProfileType() != null)
+            sb.append("DeviceProfileType: ").append(getDeviceProfileType());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +239,10 @@ public class ListDeviceProfilesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getDeviceProfileType() == null ^ this.getDeviceProfileType() == null)
+            return false;
+        if (other.getDeviceProfileType() != null && other.getDeviceProfileType().equals(this.getDeviceProfileType()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +253,7 @@ public class ListDeviceProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getDeviceProfileType() == null) ? 0 : getDeviceProfileType().hashCode());
         return hashCode;
     }
 

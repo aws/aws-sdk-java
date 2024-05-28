@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateSourceServerReplicationTypeRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<String> REPLICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationType").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class UpdateSourceServerReplicationTypeRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateSourceServerReplicationTypeRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateSourceServerReplicationTypeRequest.getReplicationType(), REPLICATIONTYPE_BINDING);
             protocolMarshaller.marshall(updateSourceServerReplicationTypeRequest.getSourceServerID(), SOURCESERVERID_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,10 @@ public class HyperParameterTuningJobSearchEntityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmStartConfig").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
+    private static final MarshallingInfo<StructuredPojo> TUNINGJOBCOMPLETIONDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TuningJobCompletionDetails").build();
+    private static final MarshallingInfo<StructuredPojo> CONSUMEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumedResources").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -92,6 +96,8 @@ public class HyperParameterTuningJobSearchEntityMarshaller {
             protocolMarshaller.marshall(hyperParameterTuningJobSearchEntity.getOverallBestTrainingJob(), OVERALLBESTTRAININGJOB_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobSearchEntity.getWarmStartConfig(), WARMSTARTCONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobSearchEntity.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(hyperParameterTuningJobSearchEntity.getTuningJobCompletionDetails(), TUNINGJOBCOMPLETIONDETAILS_BINDING);
+            protocolMarshaller.marshall(hyperParameterTuningJobSearchEntity.getConsumedResources(), CONSUMEDRESOURCES_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobSearchEntity.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

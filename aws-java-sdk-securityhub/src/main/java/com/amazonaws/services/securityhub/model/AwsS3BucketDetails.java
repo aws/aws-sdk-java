@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of an Amazon S3 bucket.
+ * The details of an Amazon Simple Storage Service (Amazon S3) bucket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketDetails" target="_top">AWS API
@@ -51,10 +51,37 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * Indicates when the S3 bucket was created.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String createdAt;
     /**
@@ -65,7 +92,7 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     private AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
     /**
      * <p>
-     * The lifecycle configuration for objects in the S3 bucket.
+     * The lifecycle configuration for objects in the specified bucket.
      * </p>
      */
     private AwsS3BucketBucketLifecycleConfigurationDetails bucketLifecycleConfiguration;
@@ -105,6 +132,18 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private AwsS3BucketBucketVersioningConfiguration bucketVersioningConfiguration;
+    /**
+     * <p>
+     * Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     * </p>
+     */
+    private AwsS3BucketObjectLockConfiguration objectLockConfiguration;
+    /**
+     * <p>
+     * The name of the bucket.
+     * </p>
+     */
+    private String name;
 
     /**
      * <p>
@@ -231,17 +270,72 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * Indicates when the S3 bucket was created.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createdAt
      *        Indicates when the S3 bucket was created.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setCreatedAt(String createdAt) {
@@ -253,16 +347,71 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * Indicates when the S3 bucket was created.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Indicates when the S3 bucket was created.</p>
      *         <p>
-     *         Uses the <code>date-time</code> format specified in <a
-     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getCreatedAt() {
@@ -274,17 +423,72 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * Indicates when the S3 bucket was created.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createdAt
      *        Indicates when the S3 bucket was created.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +539,11 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The lifecycle configuration for objects in the S3 bucket.
+     * The lifecycle configuration for objects in the specified bucket.
      * </p>
      * 
      * @param bucketLifecycleConfiguration
-     *        The lifecycle configuration for objects in the S3 bucket.
+     *        The lifecycle configuration for objects in the specified bucket.
      */
 
     public void setBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails bucketLifecycleConfiguration) {
@@ -348,10 +552,10 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The lifecycle configuration for objects in the S3 bucket.
+     * The lifecycle configuration for objects in the specified bucket.
      * </p>
      * 
-     * @return The lifecycle configuration for objects in the S3 bucket.
+     * @return The lifecycle configuration for objects in the specified bucket.
      */
 
     public AwsS3BucketBucketLifecycleConfigurationDetails getBucketLifecycleConfiguration() {
@@ -360,11 +564,11 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The lifecycle configuration for objects in the S3 bucket.
+     * The lifecycle configuration for objects in the specified bucket.
      * </p>
      * 
      * @param bucketLifecycleConfiguration
-     *        The lifecycle configuration for objects in the S3 bucket.
+     *        The lifecycle configuration for objects in the specified bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,6 +818,86 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     * </p>
+     * 
+     * @param objectLockConfiguration
+     *        Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     */
+
+    public void setObjectLockConfiguration(AwsS3BucketObjectLockConfiguration objectLockConfiguration) {
+        this.objectLockConfiguration = objectLockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     * </p>
+     * 
+     * @return Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     */
+
+    public AwsS3BucketObjectLockConfiguration getObjectLockConfiguration() {
+        return this.objectLockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     * </p>
+     * 
+     * @param objectLockConfiguration
+     *        Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withObjectLockConfiguration(AwsS3BucketObjectLockConfiguration objectLockConfiguration) {
+        setObjectLockConfiguration(objectLockConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the bucket.
+     * </p>
+     * 
+     * @param name
+     *        The name of the bucket.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the bucket.
+     * </p>
+     * 
+     * @return The name of the bucket.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the bucket.
+     * </p>
+     * 
+     * @param name
+     *        The name of the bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -648,7 +932,11 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (getBucketNotificationConfiguration() != null)
             sb.append("BucketNotificationConfiguration: ").append(getBucketNotificationConfiguration()).append(",");
         if (getBucketVersioningConfiguration() != null)
-            sb.append("BucketVersioningConfiguration: ").append(getBucketVersioningConfiguration());
+            sb.append("BucketVersioningConfiguration: ").append(getBucketVersioningConfiguration()).append(",");
+        if (getObjectLockConfiguration() != null)
+            sb.append("ObjectLockConfiguration: ").append(getObjectLockConfiguration()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -715,6 +1003,14 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (other.getBucketVersioningConfiguration() != null
                 && other.getBucketVersioningConfiguration().equals(this.getBucketVersioningConfiguration()) == false)
             return false;
+        if (other.getObjectLockConfiguration() == null ^ this.getObjectLockConfiguration() == null)
+            return false;
+        if (other.getObjectLockConfiguration() != null && other.getObjectLockConfiguration().equals(this.getObjectLockConfiguration()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         return true;
     }
 
@@ -735,6 +1031,8 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getBucketWebsiteConfiguration() == null) ? 0 : getBucketWebsiteConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBucketNotificationConfiguration() == null) ? 0 : getBucketNotificationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBucketVersioningConfiguration() == null) ? 0 : getBucketVersioningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getObjectLockConfiguration() == null) ? 0 : getObjectLockConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,11 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * the reusable delegation set when you created it. For more information about reusable delegation sets, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
      * CreateReusableDelegationSet</a>.
+     * </p>
+     * <p>
+     * If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the
+     * parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the
+     * operation will cause a <code>ConflictingDomainsExist</code> error.
      * </p>
      */
     private String delegationSetId;
@@ -513,13 +518,22 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
      * CreateReusableDelegationSet</a>.
      * </p>
+     * <p>
+     * If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the
+     * parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the
+     * operation will cause a <code>ConflictingDomainsExist</code> error.
+     * </p>
      * 
      * @param delegationSetId
      *        If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *        assigned to the reusable delegation set when you created it. For more information about reusable
      *        delegation sets, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html"
-     *        >CreateReusableDelegationSet</a>.
+     *        >CreateReusableDelegationSet</a>.</p>
+     *        <p>
+     *        If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that
+     *        the parent hosted zone doesn't use one or more of the same name servers. If you have overlapping
+     *        nameservers, the operation will cause a <code>ConflictingDomainsExist</code> error.
      */
 
     public void setDelegationSetId(String delegationSetId) {
@@ -533,12 +547,21 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
      * CreateReusableDelegationSet</a>.
      * </p>
+     * <p>
+     * If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the
+     * parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the
+     * operation will cause a <code>ConflictingDomainsExist</code> error.
+     * </p>
      * 
      * @return If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *         assigned to the reusable delegation set when you created it. For more information about reusable
      *         delegation sets, see <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html"
-     *         >CreateReusableDelegationSet</a>.
+     *         >CreateReusableDelegationSet</a>.</p>
+     *         <p>
+     *         If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that
+     *         the parent hosted zone doesn't use one or more of the same name servers. If you have overlapping
+     *         nameservers, the operation will cause a <code>ConflictingDomainsExist</code> error.
      */
 
     public String getDelegationSetId() {
@@ -552,13 +575,22 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
      * CreateReusableDelegationSet</a>.
      * </p>
+     * <p>
+     * If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the
+     * parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the
+     * operation will cause a <code>ConflictingDomainsExist</code> error.
+     * </p>
      * 
      * @param delegationSetId
      *        If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *        assigned to the reusable delegation set when you created it. For more information about reusable
      *        delegation sets, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html"
-     *        >CreateReusableDelegationSet</a>.
+     *        >CreateReusableDelegationSet</a>.</p>
+     *        <p>
+     *        If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that
+     *        the parent hosted zone doesn't use one or more of the same name servers. If you have overlapping
+     *        nameservers, the operation will cause a <code>ConflictingDomainsExist</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

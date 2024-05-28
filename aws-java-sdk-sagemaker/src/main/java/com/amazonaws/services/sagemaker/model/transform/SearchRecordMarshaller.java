@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,12 +47,16 @@ public class SearchRecordMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PipelineExecution").build();
     private static final MarshallingInfo<StructuredPojo> FEATUREGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureGroup").build();
-    private static final MarshallingInfo<StructuredPojo> PROJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Project").build();
     private static final MarshallingInfo<StructuredPojo> FEATUREMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> PROJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Project").build();
     private static final MarshallingInfo<StructuredPojo> HYPERPARAMETERTUNINGJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterTuningJob").build();
+    private static final MarshallingInfo<StructuredPojo> MODELCARD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelCard").build();
+    private static final MarshallingInfo<StructuredPojo> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Model").build();
 
     private static final SearchRecordMarshaller instance = new SearchRecordMarshaller();
 
@@ -80,9 +84,11 @@ public class SearchRecordMarshaller {
             protocolMarshaller.marshall(searchRecord.getPipeline(), PIPELINE_BINDING);
             protocolMarshaller.marshall(searchRecord.getPipelineExecution(), PIPELINEEXECUTION_BINDING);
             protocolMarshaller.marshall(searchRecord.getFeatureGroup(), FEATUREGROUP_BINDING);
-            protocolMarshaller.marshall(searchRecord.getProject(), PROJECT_BINDING);
             protocolMarshaller.marshall(searchRecord.getFeatureMetadata(), FEATUREMETADATA_BINDING);
+            protocolMarshaller.marshall(searchRecord.getProject(), PROJECT_BINDING);
             protocolMarshaller.marshall(searchRecord.getHyperParameterTuningJob(), HYPERPARAMETERTUNINGJOB_BINDING);
+            protocolMarshaller.marshall(searchRecord.getModelCard(), MODELCARD_BINDING);
+            protocolMarshaller.marshall(searchRecord.getModel(), MODEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

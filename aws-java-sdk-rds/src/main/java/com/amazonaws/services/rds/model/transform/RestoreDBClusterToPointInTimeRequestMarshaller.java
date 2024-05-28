@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -225,6 +225,34 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
 
         if (restoreDBClusterToPointInTimeRequest.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getNetworkType()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getSourceDbClusterResourceId() != null) {
+            request.addParameter("SourceDbClusterResourceId", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getSourceDbClusterResourceId()));
+        }
+
+        {
+            RdsCustomClusterConfiguration rdsCustomClusterConfiguration = restoreDBClusterToPointInTimeRequest.getRdsCustomClusterConfiguration();
+            if (rdsCustomClusterConfiguration != null) {
+
+                if (rdsCustomClusterConfiguration.getInterconnectSubnetId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.InterconnectSubnetId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getInterconnectSubnetId()));
+                }
+
+                if (rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.TransitGatewayMulticastDomainId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId()));
+                }
+
+                if (rdsCustomClusterConfiguration.getReplicaMode() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.ReplicaMode", StringUtils.fromString(rdsCustomClusterConfiguration.getReplicaMode()));
+                }
+            }
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getEngineLifecycleSupport() != null) {
+            request.addParameter("EngineLifecycleSupport", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getEngineLifecycleSupport()));
         }
 
         return request;

@@ -1,0 +1,203 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.logs.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListAnomalies" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListAnomaliesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * An array of structures, where each structure contains information about one anomaly that a log anomaly detector
+     * has found.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Anomaly> anomalies;
+
+    private String nextToken;
+
+    /**
+     * <p>
+     * An array of structures, where each structure contains information about one anomaly that a log anomaly detector
+     * has found.
+     * </p>
+     * 
+     * @return An array of structures, where each structure contains information about one anomaly that a log anomaly
+     *         detector has found.
+     */
+
+    public java.util.List<Anomaly> getAnomalies() {
+        if (anomalies == null) {
+            anomalies = new com.amazonaws.internal.SdkInternalList<Anomaly>();
+        }
+        return anomalies;
+    }
+
+    /**
+     * <p>
+     * An array of structures, where each structure contains information about one anomaly that a log anomaly detector
+     * has found.
+     * </p>
+     * 
+     * @param anomalies
+     *        An array of structures, where each structure contains information about one anomaly that a log anomaly
+     *        detector has found.
+     */
+
+    public void setAnomalies(java.util.Collection<Anomaly> anomalies) {
+        if (anomalies == null) {
+            this.anomalies = null;
+            return;
+        }
+
+        this.anomalies = new com.amazonaws.internal.SdkInternalList<Anomaly>(anomalies);
+    }
+
+    /**
+     * <p>
+     * An array of structures, where each structure contains information about one anomaly that a log anomaly detector
+     * has found.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAnomalies(java.util.Collection)} or {@link #withAnomalies(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param anomalies
+     *        An array of structures, where each structure contains information about one anomaly that a log anomaly
+     *        detector has found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnomaliesResult withAnomalies(Anomaly... anomalies) {
+        if (this.anomalies == null) {
+            setAnomalies(new com.amazonaws.internal.SdkInternalList<Anomaly>(anomalies.length));
+        }
+        for (Anomaly ele : anomalies) {
+            this.anomalies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of structures, where each structure contains information about one anomaly that a log anomaly detector
+     * has found.
+     * </p>
+     * 
+     * @param anomalies
+     *        An array of structures, where each structure contains information about one anomaly that a log anomaly
+     *        detector has found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnomaliesResult withAnomalies(java.util.Collection<Anomaly> anomalies) {
+        setAnomalies(anomalies);
+        return this;
+    }
+
+    /**
+     * @param nextToken
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * @param nextToken
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnomaliesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAnomalies() != null)
+            sb.append("Anomalies: ").append(getAnomalies()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListAnomaliesResult == false)
+            return false;
+        ListAnomaliesResult other = (ListAnomaliesResult) obj;
+        if (other.getAnomalies() == null ^ this.getAnomalies() == null)
+            return false;
+        if (other.getAnomalies() != null && other.getAnomalies().equals(this.getAnomalies()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAnomalies() == null) ? 0 : getAnomalies().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListAnomaliesResult clone() {
+        try {
+            return (ListAnomaliesResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

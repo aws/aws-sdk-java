@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -164,6 +164,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -204,6 +222,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose
      * delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      */
@@ -1055,6 +1115,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -1097,6 +1175,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
@@ -1115,6 +1235,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *         messages, rather than receiving every message published to the topic.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *         following string value types:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MessageBody</code> – The filter is applied on the message body.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -1160,6 +1298,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes apply only to <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay
+     *         messages stored in the specified Amazon SNS topic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of
+     *         the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering
+     *         newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the
+     *         subscription will no longer receive newly published messages.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>In progress</code> – The replay is currently replaying the selected messages.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code> – The replay was unable to complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Pending</code> – The default state while the replay initiates.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -1192,6 +1372,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -1234,6 +1432,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1253,6 +1493,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *        messages, rather than receiving every message published to the topic.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *        following string value types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MessageBody</code> – The filter is applied on the message body.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -1296,6 +1554,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
      *        Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes apply only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay
+     *        messages stored in the specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of
+     *        the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     *        published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the
+     *        subscription will no longer receive newly published messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>In progress</code> – The replay is currently replaying the selected messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The replay was unable to complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code> – The default state while the replay initiates.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -1326,6 +1626,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -1368,6 +1686,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes apply only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages
+     * stored in the specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     * published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will
+     * no longer receive newly published messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>In progress</code> – The replay is currently replaying the selected messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The replay was unable to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code> – The default state while the replay initiates.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1387,6 +1747,24 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *        messages, rather than receiving every message published to the topic.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *        following string value types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MessageBody</code> – The filter is applied on the message body.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -1430,6 +1808,48 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
      *        Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes apply only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay
+     *        messages stored in the specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of
+     *        the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly
+     *        published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the
+     *        subscription will no longer receive newly published messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>In progress</code> – The replay is currently replaying the selected messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The replay was unable to complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code> – The default state while the replay initiates.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

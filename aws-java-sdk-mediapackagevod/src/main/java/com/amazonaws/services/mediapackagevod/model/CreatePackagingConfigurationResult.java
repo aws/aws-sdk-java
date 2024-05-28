@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ public class CreatePackagingConfigurationResult extends com.amazonaws.AmazonWebS
     private String arn;
 
     private CmafPackage cmafPackage;
+    /** The time the PackagingConfiguration was created. */
+    private String createdAt;
 
     private DashPackage dashPackage;
 
@@ -97,6 +99,40 @@ public class CreatePackagingConfigurationResult extends com.amazonaws.AmazonWebS
 
     public CreatePackagingConfigurationResult withCmafPackage(CmafPackage cmafPackage) {
         setCmafPackage(cmafPackage);
+        return this;
+    }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     * 
+     * @param createdAt
+     *        The time the PackagingConfiguration was created.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     * 
+     * @return The time the PackagingConfiguration was created.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * The time the PackagingConfiguration was created.
+     * 
+     * @param createdAt
+     *        The time the PackagingConfiguration was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePackagingConfigurationResult withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -316,6 +352,8 @@ public class CreatePackagingConfigurationResult extends com.amazonaws.AmazonWebS
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCmafPackage() != null)
             sb.append("CmafPackage: ").append(getCmafPackage()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDashPackage() != null)
             sb.append("DashPackage: ").append(getDashPackage()).append(",");
         if (getHlsPackage() != null)
@@ -349,6 +387,10 @@ public class CreatePackagingConfigurationResult extends com.amazonaws.AmazonWebS
         if (other.getCmafPackage() == null ^ this.getCmafPackage() == null)
             return false;
         if (other.getCmafPackage() != null && other.getCmafPackage().equals(this.getCmafPackage()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getDashPackage() == null ^ this.getDashPackage() == null)
             return false;
@@ -384,6 +426,7 @@ public class CreatePackagingConfigurationResult extends com.amazonaws.AmazonWebS
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCmafPackage() == null) ? 0 : getCmafPackage().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDashPackage() == null) ? 0 : getDashPackage().hashCode());
         hashCode = prime * hashCode + ((getHlsPackage() == null) ? 0 : getHlsPackage().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());

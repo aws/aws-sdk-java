@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,10 @@ public class NetworkResourceJsonUnmarshaller implements Unmarshaller<NetworkReso
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("commitmentInformation", targetDepth)) {
+                    context.nextToken();
+                    networkResource.setCommitmentInformation(CommitmentInformationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     networkResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -89,6 +93,10 @@ public class NetworkResourceJsonUnmarshaller implements Unmarshaller<NetworkReso
                 if (context.testExpression("position", targetDepth)) {
                     context.nextToken();
                     networkResource.setPosition(PositionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("returnInformation", targetDepth)) {
+                    context.nextToken();
+                    networkResource.setReturnInformation(ReturnInformationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serialNumber", targetDepth)) {
                     context.nextToken();

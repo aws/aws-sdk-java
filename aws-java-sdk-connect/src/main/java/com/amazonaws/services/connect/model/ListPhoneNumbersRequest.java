@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -35,6 +37,15 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of phone number.
      * </p>
+     * <note>
+     * <p>
+     * We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>,
+     * <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<String> phoneNumberTypes;
     /**
@@ -59,11 +70,15 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -72,10 +87,14 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -84,11 +103,15 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,8 +124,24 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of phone number.
      * </p>
+     * <note>
+     * <p>
+     * We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>,
+     * <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>.
+     * </p>
+     * </note>
      * 
-     * @return The type of phone number.
+     * @return The type of phone number.</p> <note>
+     *         <p>
+     *         We recommend using <a
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html"
+     *         >ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types
+     *         <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it
+     *         incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.
+     *         </p>
      * @see PhoneNumberType
      */
 
@@ -114,9 +153,25 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of phone number.
      * </p>
+     * <note>
+     * <p>
+     * We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>,
+     * <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>.
+     * </p>
+     * </note>
      * 
      * @param phoneNumberTypes
-     *        The type of phone number.
+     *        The type of phone number.</p> <note>
+     *        <p>
+     *        We recommend using <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html"
+     *        >ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types
+     *        <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it
+     *        incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.
+     *        </p>
      * @see PhoneNumberType
      */
 
@@ -133,6 +188,15 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of phone number.
      * </p>
+     * <note>
+     * <p>
+     * We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>,
+     * <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPhoneNumberTypes(java.util.Collection)} or {@link #withPhoneNumberTypes(java.util.Collection)} if you
@@ -140,7 +204,14 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param phoneNumberTypes
-     *        The type of phone number.
+     *        The type of phone number.</p> <note>
+     *        <p>
+     *        We recommend using <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html"
+     *        >ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types
+     *        <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it
+     *        incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneNumberType
      */
@@ -159,9 +230,25 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of phone number.
      * </p>
+     * <note>
+     * <p>
+     * We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>,
+     * <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>.
+     * </p>
+     * </note>
      * 
      * @param phoneNumberTypes
-     *        The type of phone number.
+     *        The type of phone number.</p> <note>
+     *        <p>
+     *        We recommend using <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html"
+     *        >ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types
+     *        <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it
+     *        incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneNumberType
      */
@@ -175,9 +262,25 @@ public class ListPhoneNumbersRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The type of phone number.
      * </p>
+     * <note>
+     * <p>
+     * We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>,
+     * <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>.
+     * </p>
+     * </note>
      * 
      * @param phoneNumberTypes
-     *        The type of phone number.
+     *        The type of phone number.</p> <note>
+     *        <p>
+     *        We recommend using <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html"
+     *        >ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types
+     *        <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it
+     *        incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhoneNumberType
      */

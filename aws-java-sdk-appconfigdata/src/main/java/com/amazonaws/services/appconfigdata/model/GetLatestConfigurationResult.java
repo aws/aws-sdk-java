@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,9 +25,16 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to <code>GetLatestConfiguration.</code>
+     * The latest token describing the current state of the configuration session. This <i>must</i> be provided to the
+     * next call to <code>GetLatestConfiguration.</code>
      * </p>
+     * <important>
+     * <p>
+     * This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     * <code>BadRequestException</code>.
+     * </p>
+     * </important>
      */
     private String nextPollConfigurationToken;
     /**
@@ -49,16 +56,36 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.nio.ByteBuffer configuration;
+    /**
+     * <p>
+     * The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the
+     * configuration is not from an AppConfig hosted configuration version. If the client already has the latest version
+     * of the configuration data, this value is empty.
+     * </p>
+     */
+    private String versionLabel;
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to <code>GetLatestConfiguration.</code>
+     * The latest token describing the current state of the configuration session. This <i>must</i> be provided to the
+     * next call to <code>GetLatestConfiguration.</code>
      * </p>
+     * <important>
+     * <p>
+     * This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     * <code>BadRequestException</code>.
+     * </p>
+     * </important>
      * 
      * @param nextPollConfigurationToken
-     *        The latest token describing the current state of the configuration session. This MUST be provided to the
-     *        next call to <code>GetLatestConfiguration.</code>
+     *        The latest token describing the current state of the configuration session. This <i>must</i> be provided
+     *        to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+     *        <p>
+     *        This token should only be used once. To support long poll use cases, the token is valid for up to 24
+     *        hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     *        <code>BadRequestException</code>.
+     *        </p>
      */
 
     public void setNextPollConfigurationToken(String nextPollConfigurationToken) {
@@ -67,12 +94,24 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to <code>GetLatestConfiguration.</code>
+     * The latest token describing the current state of the configuration session. This <i>must</i> be provided to the
+     * next call to <code>GetLatestConfiguration.</code>
      * </p>
+     * <important>
+     * <p>
+     * This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     * <code>BadRequestException</code>.
+     * </p>
+     * </important>
      * 
-     * @return The latest token describing the current state of the configuration session. This MUST be provided to the
-     *         next call to <code>GetLatestConfiguration.</code>
+     * @return The latest token describing the current state of the configuration session. This <i>must</i> be provided
+     *         to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+     *         <p>
+     *         This token should only be used once. To support long poll use cases, the token is valid for up to 24
+     *         hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     *         <code>BadRequestException</code>.
+     *         </p>
      */
 
     public String getNextPollConfigurationToken() {
@@ -81,13 +120,25 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The latest token describing the current state of the configuration session. This MUST be provided to the next
-     * call to <code>GetLatestConfiguration.</code>
+     * The latest token describing the current state of the configuration session. This <i>must</i> be provided to the
+     * next call to <code>GetLatestConfiguration.</code>
      * </p>
+     * <important>
+     * <p>
+     * This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a
+     * <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     * <code>BadRequestException</code>.
+     * </p>
+     * </important>
      * 
      * @param nextPollConfigurationToken
-     *        The latest token describing the current state of the configuration session. This MUST be provided to the
-     *        next call to <code>GetLatestConfiguration.</code>
+     *        The latest token describing the current state of the configuration session. This <i>must</i> be provided
+     *        to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+     *        <p>
+     *        This token should only be used once. To support long poll use cases, the token is valid for up to 24
+     *        hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     *        <code>BadRequestException</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,6 +304,58 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the
+     * configuration is not from an AppConfig hosted configuration version. If the client already has the latest version
+     * of the configuration data, this value is empty.
+     * </p>
+     * 
+     * @param versionLabel
+     *        The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the
+     *        configuration is not from an AppConfig hosted configuration version. If the client already has the latest
+     *        version of the configuration data, this value is empty.
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the
+     * configuration is not from an AppConfig hosted configuration version. If the client already has the latest version
+     * of the configuration data, this value is empty.
+     * </p>
+     * 
+     * @return The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if
+     *         the configuration is not from an AppConfig hosted configuration version. If the client already has the
+     *         latest version of the configuration data, this value is empty.
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the
+     * configuration is not from an AppConfig hosted configuration version. If the client already has the latest version
+     * of the configuration data, this value is empty.
+     * </p>
+     * 
+     * @param versionLabel
+     *        The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the
+     *        configuration is not from an AppConfig hosted configuration version. If the client already has the latest
+     *        version of the configuration data, this value is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLatestConfigurationResult withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -271,7 +374,9 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append("***Sensitive Data Redacted***");
+            sb.append("Configuration: ").append("***Sensitive Data Redacted***").append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -302,6 +407,10 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
         return true;
     }
 
@@ -314,6 +423,7 @@ public class GetLatestConfigurationResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getNextPollIntervalInSeconds() == null) ? 0 : getNextPollIntervalInSeconds().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         return hashCode;
     }
 

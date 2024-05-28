@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,7 +158,7 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
     private Boolean waitForQuietTime;
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      */
     private Boolean refreshOnSegmentUpdate;
@@ -170,8 +170,8 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
     private JourneyChannelSettings journeyChannelSettings;
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      */
     private Boolean sendingSchedule;
@@ -189,6 +189,31 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private ClosedDays closedDays;
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     */
+    private java.util.List<String> timezoneEstimationMethods;
 
     /**
      * <p>
@@ -1119,11 +1144,11 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
      * @param refreshOnSegmentUpdate
-     *        Specifies whether a journey should be refreshed on segment update.
+     *        Indicates whether the journey participants should be refreshed when a segment is updated.
      */
 
     public void setRefreshOnSegmentUpdate(Boolean refreshOnSegmentUpdate) {
@@ -1132,10 +1157,10 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
-     * @return Specifies whether a journey should be refreshed on segment update.
+     * @return Indicates whether the journey participants should be refreshed when a segment is updated.
      */
 
     public Boolean getRefreshOnSegmentUpdate() {
@@ -1144,11 +1169,11 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
      * @param refreshOnSegmentUpdate
-     *        Specifies whether a journey should be refreshed on segment update.
+     *        Indicates whether the journey participants should be refreshed when a segment is updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1159,10 +1184,10 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether a journey should be refreshed on segment update.
+     * Indicates whether the journey participants should be refreshed when a segment is updated.
      * </p>
      * 
-     * @return Specifies whether a journey should be refreshed on segment update.
+     * @return Indicates whether the journey participants should be refreshed when a segment is updated.
      */
 
     public Boolean isRefreshOnSegmentUpdate() {
@@ -1211,13 +1236,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
      * @param sendingSchedule
-     *        Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *        in order to allow (OpenHours and ClosedDays)
+     *        Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *        using OpenHours and ClosedDays.
      */
 
     public void setSendingSchedule(Boolean sendingSchedule) {
@@ -1226,12 +1251,12 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
-     * @return Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *         in order to allow (OpenHours and ClosedDays)
+     * @return Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *         using OpenHours and ClosedDays.
      */
 
     public Boolean getSendingSchedule() {
@@ -1240,13 +1265,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
      * @param sendingSchedule
-     *        Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *        in order to allow (OpenHours and ClosedDays)
+     *        Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *        using OpenHours and ClosedDays.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1257,12 +1282,12 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order
-     * to allow (OpenHours and ClosedDays)
+     * Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using
+     * OpenHours and ClosedDays.
      * </p>
      * 
-     * @return Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true
-     *         in order to allow (OpenHours and ClosedDays)
+     * @return Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow
+     *         using OpenHours and ClosedDays.
      */
 
     public Boolean isSendingSchedule() {
@@ -1362,6 +1387,295 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @return An array of time zone estimation methods, if any, to use for determining an <a
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *         >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone
+     *         attribute.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *         Endpoint.Location.Country.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *         Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *         </p>
+     *         </note></li>
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public java.util.List<String> getTimezoneEstimationMethods() {
+        return timezoneEstimationMethods;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public void setTimezoneEstimationMethods(java.util.Collection<String> timezoneEstimationMethods) {
+        if (timezoneEstimationMethods == null) {
+            this.timezoneEstimationMethods = null;
+            return;
+        }
+
+        this.timezoneEstimationMethods = new java.util.ArrayList<String>(timezoneEstimationMethods);
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTimezoneEstimationMethods(java.util.Collection)} or
+     * {@link #withTimezoneEstimationMethods(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public WriteJourneyRequest withTimezoneEstimationMethods(String... timezoneEstimationMethods) {
+        if (this.timezoneEstimationMethods == null) {
+            setTimezoneEstimationMethods(new java.util.ArrayList<String>(timezoneEstimationMethods.length));
+        }
+        for (String ele : timezoneEstimationMethods) {
+            this.timezoneEstimationMethods.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public WriteJourneyRequest withTimezoneEstimationMethods(java.util.Collection<String> timezoneEstimationMethods) {
+        setTimezoneEstimationMethods(timezoneEstimationMethods);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of time zone estimation methods, if any, to use for determining an <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     * >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.
+     * </p>
+     * <note>
+     * <p>
+     * POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada,
+     * France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param timezoneEstimationMethods
+     *        An array of time zone estimation methods, if any, to use for determining an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html"
+     *        >Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and
+     *        Endpoint.Location.Country.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand,
+     *        Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimezoneEstimationMethodsElement
+     */
+
+    public WriteJourneyRequest withTimezoneEstimationMethods(TimezoneEstimationMethodsElement... timezoneEstimationMethods) {
+        java.util.ArrayList<String> timezoneEstimationMethodsCopy = new java.util.ArrayList<String>(timezoneEstimationMethods.length);
+        for (TimezoneEstimationMethodsElement value : timezoneEstimationMethods) {
+            timezoneEstimationMethodsCopy.add(value.toString());
+        }
+        if (getTimezoneEstimationMethods() == null) {
+            setTimezoneEstimationMethods(timezoneEstimationMethodsCopy);
+        } else {
+            getTimezoneEstimationMethods().addAll(timezoneEstimationMethodsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1408,7 +1722,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         if (getOpenHours() != null)
             sb.append("OpenHours: ").append(getOpenHours()).append(",");
         if (getClosedDays() != null)
-            sb.append("ClosedDays: ").append(getClosedDays());
+            sb.append("ClosedDays: ").append(getClosedDays()).append(",");
+        if (getTimezoneEstimationMethods() != null)
+            sb.append("TimezoneEstimationMethods: ").append(getTimezoneEstimationMethods());
         sb.append("}");
         return sb.toString();
     }
@@ -1495,6 +1811,10 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getClosedDays() != null && other.getClosedDays().equals(this.getClosedDays()) == false)
             return false;
+        if (other.getTimezoneEstimationMethods() == null ^ this.getTimezoneEstimationMethods() == null)
+            return false;
+        if (other.getTimezoneEstimationMethods() != null && other.getTimezoneEstimationMethods().equals(this.getTimezoneEstimationMethods()) == false)
+            return false;
         return true;
     }
 
@@ -1521,6 +1841,7 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getSendingSchedule() == null) ? 0 : getSendingSchedule().hashCode());
         hashCode = prime * hashCode + ((getOpenHours() == null) ? 0 : getOpenHours().hashCode());
         hashCode = prime * hashCode + ((getClosedDays() == null) ? 0 : getClosedDays().hashCode());
+        hashCode = prime * hashCode + ((getTimezoneEstimationMethods() == null) ? 0 : getTimezoneEstimationMethods().hashCode());
         return hashCode;
     }
 

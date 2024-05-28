@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,8 +107,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     * federated user.
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -536,8 +535,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     * federated user.
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -567,7 +565,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      *        </ul>
      *        <p>
      *        The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     *        federated user.
+     *        user.
      *        </p>
      *        <p>
      *        The following pseudocode shows how the hash value is calculated:
@@ -602,8 +600,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     * federated user.
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -632,7 +629,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      *         </ul>
      *         <p>
      *         The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     *         federated user.
+     *         user.
      *         </p>
      *         <p>
      *         The following pseudocode shows how the hash value is calculated:
@@ -667,8 +664,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * </ul>
      * <p>
-     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     * federated user.
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -698,7 +694,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      *        </ul>
      *        <p>
      *        The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
-     *        federated user.
+     *        user.
      *        </p>
      *        <p>
      *        The following pseudocode shows how the hash value is calculated:

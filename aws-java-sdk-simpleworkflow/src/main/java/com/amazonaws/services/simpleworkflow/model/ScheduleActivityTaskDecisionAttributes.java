@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,9 +86,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * The <code>activityId</code> of the activity task.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      */
     private String activityId;
@@ -135,9 +135,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -250,18 +250,17 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * The <code>activityId</code> of the activity task.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param activityId
      *        The <code>activityId</code> of the activity task.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public void setActivityId(String activityId) {
@@ -273,17 +272,16 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * The <code>activityId</code> of the activity task.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @return The <code>activityId</code> of the activity task.</p>
      *         <p>
-     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     *         <code>arn</code>.
+     *         The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *         (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+     *         Also, it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public String getActivityId() {
@@ -295,18 +293,17 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * The <code>activityId</code> of the activity task.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param activityId
      *        The <code>activityId</code> of the activity task.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,9 +514,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -532,10 +529,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      *        </p>
      *        </note>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -555,9 +551,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @return If set, specifies the name of the task list in which to schedule the activity task. If not specified, the
@@ -569,10 +565,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      *         </p>
      *         </note>
      *         <p>
-     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     *         <code>arn</code>.
+     *         The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *         (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+     *         Also, it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -592,9 +587,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -607,10 +602,9 @@ public class ScheduleActivityTaskDecisionAttributes implements Serializable, Clo
      *        </p>
      *        </note>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

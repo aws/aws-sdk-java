@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,9 @@ import com.amazonaws.services.lexruntimev2.model.*;
  * {@link com.amazonaws.services.lexruntimev2.AbstractAmazonLexRuntimeV2Async} instead.
  * </p>
  * <p>
- * <p/>
+ * <p>
+ * This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonLexRuntimeV2Async extends AmazonLexRuntimeV2 {

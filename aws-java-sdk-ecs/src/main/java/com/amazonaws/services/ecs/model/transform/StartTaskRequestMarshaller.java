@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class StartTaskRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TASKDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskDefinition").build();
+    private static final MarshallingInfo<List> VOLUMECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeConfigurations").build();
 
     private static final StartTaskRequestMarshaller instance = new StartTaskRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class StartTaskRequestMarshaller {
             protocolMarshaller.marshall(startTaskRequest.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getTaskDefinition(), TASKDEFINITION_BINDING);
+            protocolMarshaller.marshall(startTaskRequest.getVolumeConfigurations(), VOLUMECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

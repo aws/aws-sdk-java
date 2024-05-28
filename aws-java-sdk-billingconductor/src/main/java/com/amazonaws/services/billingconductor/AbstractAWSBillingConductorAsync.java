@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -214,6 +214,19 @@ public class AbstractAWSBillingConductorAsync extends AbstractAWSBillingConducto
     }
 
     @Override
+    public java.util.concurrent.Future<GetBillingGroupCostReportResult> getBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request) {
+
+        return getBillingGroupCostReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBillingGroupCostReportResult> getBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBillingGroupCostReportRequest, GetBillingGroupCostReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountAssociationsResult> listAccountAssociationsAsync(ListAccountAssociationsRequest request) {
 
         return listAccountAssociationsAsync(request, null);
@@ -248,6 +261,19 @@ public class AbstractAWSBillingConductorAsync extends AbstractAWSBillingConducto
     @Override
     public java.util.concurrent.Future<ListBillingGroupsResult> listBillingGroupsAsync(ListBillingGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBillingGroupsRequest, ListBillingGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomLineItemVersionsResult> listCustomLineItemVersionsAsync(ListCustomLineItemVersionsRequest request) {
+
+        return listCustomLineItemVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomLineItemVersionsResult> listCustomLineItemVersionsAsync(ListCustomLineItemVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCustomLineItemVersionsRequest, ListCustomLineItemVersionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

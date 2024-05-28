@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,17 +38,16 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String messages;
     /**
      * <p>
-     * Represents the current state of the dialog between the user and the bot.
-     * </p>
-     * <p>
-     * Use this to determine the progress of the conversation and what the next action may be.
+     * A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use
+     * this to determine the progress of the conversation and what the next action may be.
      * </p>
      */
     private String sessionState;
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex V2. These are the same as the
-     * <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     * A base-64-encoded gzipped field that provides request-specific information passed between the client application
+     * and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.
      * </p>
      */
     private String requestAttributes;
@@ -156,16 +155,13 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Represents the current state of the dialog between the user and the bot.
-     * </p>
-     * <p>
-     * Use this to determine the progress of the conversation and what the next action may be.
+     * A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use
+     * this to determine the progress of the conversation and what the next action may be.
      * </p>
      * 
      * @param sessionState
-     *        Represents the current state of the dialog between the user and the bot.</p>
-     *        <p>
-     *        Use this to determine the progress of the conversation and what the next action may be.
+     *        A base-64-encoded gzipped field that represents the current state of the dialog between the user and the
+     *        bot. Use this to determine the progress of the conversation and what the next action may be.
      */
 
     public void setSessionState(String sessionState) {
@@ -174,15 +170,12 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Represents the current state of the dialog between the user and the bot.
-     * </p>
-     * <p>
-     * Use this to determine the progress of the conversation and what the next action may be.
+     * A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use
+     * this to determine the progress of the conversation and what the next action may be.
      * </p>
      * 
-     * @return Represents the current state of the dialog between the user and the bot.</p>
-     *         <p>
-     *         Use this to determine the progress of the conversation and what the next action may be.
+     * @return A base-64-encoded gzipped field that represents the current state of the dialog between the user and the
+     *         bot. Use this to determine the progress of the conversation and what the next action may be.
      */
 
     public String getSessionState() {
@@ -191,16 +184,13 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Represents the current state of the dialog between the user and the bot.
-     * </p>
-     * <p>
-     * Use this to determine the progress of the conversation and what the next action may be.
+     * A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use
+     * this to determine the progress of the conversation and what the next action may be.
      * </p>
      * 
      * @param sessionState
-     *        Represents the current state of the dialog between the user and the bot.</p>
-     *        <p>
-     *        Use this to determine the progress of the conversation and what the next action may be.
+     *        A base-64-encoded gzipped field that represents the current state of the dialog between the user and the
+     *        bot. Use this to determine the progress of the conversation and what the next action may be.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,13 +201,15 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex V2. These are the same as the
-     * <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     * A base-64-encoded gzipped field that provides request-specific information passed between the client application
+     * and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.
      * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between the client application and Amazon Lex V2. These are the same
-     *        as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     *        A base-64-encoded gzipped field that provides request-specific information passed between the client
+     *        application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
+     *        call to the <code>PutSession</code> operation.
      */
 
     public void setRequestAttributes(String requestAttributes) {
@@ -226,12 +218,14 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex V2. These are the same as the
-     * <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     * A base-64-encoded gzipped field that provides request-specific information passed between the client application
+     * and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.
      * </p>
      * 
-     * @return Request-specific information passed between the client application and Amazon Lex V2. These are the same
-     *         as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     * @return A base-64-encoded gzipped field that provides request-specific information passed between the client
+     *         application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
+     *         call to the <code>PutSession</code> operation.
      */
 
     public String getRequestAttributes() {
@@ -240,13 +234,15 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex V2. These are the same as the
-     * <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     * A base-64-encoded gzipped field that provides request-specific information passed between the client application
+     * and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.
      * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between the client application and Amazon Lex V2. These are the same
-     *        as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.
+     *        A base-64-encoded gzipped field that provides request-specific information passed between the client
+     *        application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
+     *        call to the <code>PutSession</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -112,6 +112,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<String> alpnPolicy;
+    /**
+     * <p>
+     * The mutual authentication configuration information.
+     * </p>
+     */
+    private MutualAuthenticationAttributes mutualAuthentication;
 
     /**
      * <p>
@@ -861,6 +867,46 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The mutual authentication configuration information.
+     * </p>
+     * 
+     * @param mutualAuthentication
+     *        The mutual authentication configuration information.
+     */
+
+    public void setMutualAuthentication(MutualAuthenticationAttributes mutualAuthentication) {
+        this.mutualAuthentication = mutualAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual authentication configuration information.
+     * </p>
+     * 
+     * @return The mutual authentication configuration information.
+     */
+
+    public MutualAuthenticationAttributes getMutualAuthentication() {
+        return this.mutualAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual authentication configuration information.
+     * </p>
+     * 
+     * @param mutualAuthentication
+     *        The mutual authentication configuration information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyListenerRequest withMutualAuthentication(MutualAuthenticationAttributes mutualAuthentication) {
+        setMutualAuthentication(mutualAuthentication);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -885,7 +931,9 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDefaultActions() != null)
             sb.append("DefaultActions: ").append(getDefaultActions()).append(",");
         if (getAlpnPolicy() != null)
-            sb.append("AlpnPolicy: ").append(getAlpnPolicy());
+            sb.append("AlpnPolicy: ").append(getAlpnPolicy()).append(",");
+        if (getMutualAuthentication() != null)
+            sb.append("MutualAuthentication: ").append(getMutualAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -928,6 +976,10 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAlpnPolicy() != null && other.getAlpnPolicy().equals(this.getAlpnPolicy()) == false)
             return false;
+        if (other.getMutualAuthentication() == null ^ this.getMutualAuthentication() == null)
+            return false;
+        if (other.getMutualAuthentication() != null && other.getMutualAuthentication().equals(this.getMutualAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -943,6 +995,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
         hashCode = prime * hashCode + ((getDefaultActions() == null) ? 0 : getDefaultActions().hashCode());
         hashCode = prime * hashCode + ((getAlpnPolicy() == null) ? 0 : getAlpnPolicy().hashCode());
+        hashCode = prime * hashCode + ((getMutualAuthentication() == null) ? 0 : getMutualAuthentication().hashCode());
         return hashCode;
     }
 

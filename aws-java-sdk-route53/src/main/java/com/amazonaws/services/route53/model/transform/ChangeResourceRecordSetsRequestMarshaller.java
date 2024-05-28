@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -192,6 +192,42 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
 
                                                 if (cidrRoutingConfig.getLocationName() != null) {
                                                     xmlWriter.startElement("LocationName").value(cidrRoutingConfig.getLocationName()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        {
+                                            GeoProximityLocation geoProximityLocation = resourceRecordSet.getGeoProximityLocation();
+                                            if (geoProximityLocation != null) {
+                                                xmlWriter.startElement("GeoProximityLocation");
+
+                                                if (geoProximityLocation.getAWSRegion() != null) {
+                                                    xmlWriter.startElement("AWSRegion").value(geoProximityLocation.getAWSRegion()).endElement();
+                                                }
+
+                                                if (geoProximityLocation.getLocalZoneGroup() != null) {
+                                                    xmlWriter.startElement("LocalZoneGroup").value(geoProximityLocation.getLocalZoneGroup()).endElement();
+                                                }
+
+                                                {
+                                                    Coordinates coordinates = geoProximityLocation.getCoordinates();
+                                                    if (coordinates != null) {
+                                                        xmlWriter.startElement("Coordinates");
+
+                                                        if (coordinates.getLatitude() != null) {
+                                                            xmlWriter.startElement("Latitude").value(coordinates.getLatitude()).endElement();
+                                                        }
+
+                                                        if (coordinates.getLongitude() != null) {
+                                                            xmlWriter.startElement("Longitude").value(coordinates.getLongitude()).endElement();
+                                                        }
+                                                        xmlWriter.endElement();
+                                                    }
+                                                }
+
+                                                if (geoProximityLocation.getBias() != null) {
+                                                    xmlWriter.startElement("Bias").value(geoProximityLocation.getBias()).endElement();
                                                 }
                                                 xmlWriter.endElement();
                                             }

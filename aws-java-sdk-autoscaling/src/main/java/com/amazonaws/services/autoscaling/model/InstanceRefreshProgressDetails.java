@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Reports the progress of an instance refresh on an Auto Scaling group that has a warm pool. This includes separate
- * details for instances in the warm pool and instances in the Auto Scaling group (the live pool).
+ * Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details
+ * for instances in the warm pool and instances in the Auto Scaling group (the live pool).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefreshProgressDetails"
@@ -29,24 +29,24 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     * Reports progress on replacing instances that are in the Auto Scaling group.
      * </p>
      */
     private InstanceRefreshLivePoolProgress livePoolProgress;
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the warm pool.
+     * Reports progress on replacing instances that are in the warm pool.
      * </p>
      */
     private InstanceRefreshWarmPoolProgress warmPoolProgress;
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     * Reports progress on replacing instances that are in the Auto Scaling group.
      * </p>
      * 
      * @param livePoolProgress
-     *        Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     *        Reports progress on replacing instances that are in the Auto Scaling group.
      */
 
     public void setLivePoolProgress(InstanceRefreshLivePoolProgress livePoolProgress) {
@@ -55,10 +55,10 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     * Reports progress on replacing instances that are in the Auto Scaling group.
      * </p>
      * 
-     * @return Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     * @return Reports progress on replacing instances that are in the Auto Scaling group.
      */
 
     public InstanceRefreshLivePoolProgress getLivePoolProgress() {
@@ -67,11 +67,11 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     * Reports progress on replacing instances that are in the Auto Scaling group.
      * </p>
      * 
      * @param livePoolProgress
-     *        Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
+     *        Reports progress on replacing instances that are in the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,11 +82,11 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the warm pool.
+     * Reports progress on replacing instances that are in the warm pool.
      * </p>
      * 
      * @param warmPoolProgress
-     *        Indicates the progress of an instance refresh on instances that are in the warm pool.
+     *        Reports progress on replacing instances that are in the warm pool.
      */
 
     public void setWarmPoolProgress(InstanceRefreshWarmPoolProgress warmPoolProgress) {
@@ -95,10 +95,10 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the warm pool.
+     * Reports progress on replacing instances that are in the warm pool.
      * </p>
      * 
-     * @return Indicates the progress of an instance refresh on instances that are in the warm pool.
+     * @return Reports progress on replacing instances that are in the warm pool.
      */
 
     public InstanceRefreshWarmPoolProgress getWarmPoolProgress() {
@@ -107,11 +107,11 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance refresh on instances that are in the warm pool.
+     * Reports progress on replacing instances that are in the warm pool.
      * </p>
      * 
      * @param warmPoolProgress
-     *        Indicates the progress of an instance refresh on instances that are in the warm pool.
+     *        Reports progress on replacing instances that are in the warm pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

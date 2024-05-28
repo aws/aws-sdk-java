@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,22 +48,38 @@ public class ComponentPropertyJsonUnmarshaller implements Unmarshaller<Component
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("value", targetDepth)) {
+                    context.nextToken();
+                    componentProperty.setValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("bindingProperties", targetDepth)) {
                     context.nextToken();
                     componentProperty.setBindingProperties(ComponentPropertyBindingPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("collectionBindingProperties", targetDepth)) {
+                    context.nextToken();
+                    componentProperty.setCollectionBindingProperties(ComponentPropertyBindingPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("defaultValue", targetDepth)) {
+                    context.nextToken();
+                    componentProperty.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("model", targetDepth)) {
+                    context.nextToken();
+                    componentProperty.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bindings", targetDepth)) {
                     context.nextToken();
                     componentProperty.setBindings(new MapUnmarshaller<String, FormBindingElement>(context.getUnmarshaller(String.class),
                             FormBindingElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("collectionBindingProperties", targetDepth)) {
+                if (context.testExpression("event", targetDepth)) {
                     context.nextToken();
-                    componentProperty.setCollectionBindingProperties(ComponentPropertyBindingPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                    componentProperty.setEvent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("componentName", targetDepth)) {
+                if (context.testExpression("userAttribute", targetDepth)) {
                     context.nextToken();
-                    componentProperty.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
+                    componentProperty.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("concat", targetDepth)) {
                     context.nextToken();
@@ -79,37 +95,21 @@ public class ComponentPropertyJsonUnmarshaller implements Unmarshaller<Component
                     context.nextToken();
                     componentProperty.setConfigured(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("defaultValue", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    componentProperty.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("event", targetDepth)) {
-                    context.nextToken();
-                    componentProperty.setEvent(context.getUnmarshaller(String.class).unmarshall(context));
+                    componentProperty.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("importedValue", targetDepth)) {
                     context.nextToken();
                     componentProperty.setImportedValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("model", targetDepth)) {
+                if (context.testExpression("componentName", targetDepth)) {
                     context.nextToken();
-                    componentProperty.setModel(context.getUnmarshaller(String.class).unmarshall(context));
+                    componentProperty.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("property", targetDepth)) {
                     context.nextToken();
                     componentProperty.setProperty(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("type", targetDepth)) {
-                    context.nextToken();
-                    componentProperty.setType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("userAttribute", targetDepth)) {
-                    context.nextToken();
-                    componentProperty.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("value", targetDepth)) {
-                    context.nextToken();
-                    componentProperty.setValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

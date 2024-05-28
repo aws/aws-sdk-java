@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,8 +51,8 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     private String roleArn;
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the dataset import job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the dataset import job.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -77,6 +77,12 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      */
     private String importMode;
+    /**
+     * <p>
+     * If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     * </p>
+     */
+    private Boolean publishAttributionMetricsToS3;
 
     /**
      * <p>
@@ -240,11 +246,11 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the dataset import job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the dataset import job.
      * </p>
      * 
-     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *         apply to the dataset import job.
      */
 
@@ -254,12 +260,12 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the dataset import job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the dataset import job.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the dataset import job.
      */
 
@@ -274,8 +280,8 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the dataset import job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the dataset import job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -284,7 +290,7 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the dataset import job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -301,12 +307,12 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the dataset import job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the dataset import job.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the dataset import job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -496,6 +502,58 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     * </p>
+     * 
+     * @param publishAttributionMetricsToS3
+     *        If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     */
+
+    public void setPublishAttributionMetricsToS3(Boolean publishAttributionMetricsToS3) {
+        this.publishAttributionMetricsToS3 = publishAttributionMetricsToS3;
+    }
+
+    /**
+     * <p>
+     * If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     * </p>
+     * 
+     * @return If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     */
+
+    public Boolean getPublishAttributionMetricsToS3() {
+        return this.publishAttributionMetricsToS3;
+    }
+
+    /**
+     * <p>
+     * If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     * </p>
+     * 
+     * @param publishAttributionMetricsToS3
+     *        If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withPublishAttributionMetricsToS3(Boolean publishAttributionMetricsToS3) {
+        setPublishAttributionMetricsToS3(publishAttributionMetricsToS3);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     * </p>
+     * 
+     * @return If you created a metric attribution, specify whether to publish metrics for this import job to Amazon S3
+     */
+
+    public Boolean isPublishAttributionMetricsToS3() {
+        return this.publishAttributionMetricsToS3;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -518,7 +576,9 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getImportMode() != null)
-            sb.append("ImportMode: ").append(getImportMode());
+            sb.append("ImportMode: ").append(getImportMode()).append(",");
+        if (getPublishAttributionMetricsToS3() != null)
+            sb.append("PublishAttributionMetricsToS3: ").append(getPublishAttributionMetricsToS3());
         sb.append("}");
         return sb.toString();
     }
@@ -557,6 +617,11 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getImportMode() != null && other.getImportMode().equals(this.getImportMode()) == false)
             return false;
+        if (other.getPublishAttributionMetricsToS3() == null ^ this.getPublishAttributionMetricsToS3() == null)
+            return false;
+        if (other.getPublishAttributionMetricsToS3() != null
+                && other.getPublishAttributionMetricsToS3().equals(this.getPublishAttributionMetricsToS3()) == false)
+            return false;
         return true;
     }
 
@@ -571,6 +636,7 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
+        hashCode = prime * hashCode + ((getPublishAttributionMetricsToS3() == null) ? 0 : getPublishAttributionMetricsToS3().hashCode());
         return hashCode;
     }
 

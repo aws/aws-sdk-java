@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB instance.
+ * Information about an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB
+ * instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceRole" target="_top">AWS API
@@ -41,8 +42,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
     private String featureName;
     /**
      * <p>
-     * Describes the state of association between the IAM role and the DB instance. The Status property returns one of
-     * the following values:
+     * Information about the state of association between the IAM role and the DB instance. The Status property returns
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -154,8 +155,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the state of association between the IAM role and the DB instance. The Status property returns one of
-     * the following values:
+     * Information about the state of association between the IAM role and the DB instance. The Status property returns
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -178,8 +179,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * </ul>
      * 
      * @param status
-     *        Describes the state of association between the IAM role and the DB instance. The Status property returns
-     *        one of the following values:</p>
+     *        Information about the state of association between the IAM role and the DB instance. The Status property
+     *        returns one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -206,8 +207,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the state of association between the IAM role and the DB instance. The Status property returns one of
-     * the following values:
+     * Information about the state of association between the IAM role and the DB instance. The Status property returns
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -229,8 +230,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return Describes the state of association between the IAM role and the DB instance. The Status property returns
-     *         one of the following values:</p>
+     * @return Information about the state of association between the IAM role and the DB instance. The Status property
+     *         returns one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -257,8 +258,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the state of association between the IAM role and the DB instance. The Status property returns one of
-     * the following values:
+     * Information about the state of association between the IAM role and the DB instance. The Status property returns
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -281,8 +282,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * </ul>
      * 
      * @param status
-     *        Describes the state of association between the IAM role and the DB instance. The Status property returns
-     *        one of the following values:</p>
+     *        Information about the state of association between the IAM role and the DB instance. The Status property
+     *        returns one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>

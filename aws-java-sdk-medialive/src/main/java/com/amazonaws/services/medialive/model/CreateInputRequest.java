@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -282,7 +282,6 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and
      * presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate
      * Availability Zone as this ensures your EML input is redundant to AZ issues.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMediaConnectFlows(java.util.Collection)} or {@link #withMediaConnectFlows(java.util.Collection)} if
@@ -458,7 +457,6 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only
      * specify sources for PULL type Inputs. Leave Destinations empty.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override

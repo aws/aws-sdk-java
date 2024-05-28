@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,9 +55,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     private String field;
     /**
      * <p>
-     * The service code or attribute value that you want to filter by. If you are filtering by service code this is the
-     * actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
-     * attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
+     * The service code or attribute value that you want to filter by. If you're filtering by service code this is the
+     * actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute
+     * value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
      * </p>
      */
     private String value;
@@ -245,16 +245,16 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service code or attribute value that you want to filter by. If you are filtering by service code this is the
-     * actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
-     * attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
+     * The service code or attribute value that you want to filter by. If you're filtering by service code this is the
+     * actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute
+     * value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
      * </p>
      * 
      * @param value
-     *        The service code or attribute value that you want to filter by. If you are filtering by service code this
-     *        is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this
-     *        is the attribute value that you want the returned products to match, such as a
-     *        <code>Provisioned IOPS</code> volume.
+     *        The service code or attribute value that you want to filter by. If you're filtering by service code this
+     *        is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is
+     *        the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code>
+     *        volume.
      */
 
     public void setValue(String value) {
@@ -263,13 +263,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service code or attribute value that you want to filter by. If you are filtering by service code this is the
-     * actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
-     * attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
+     * The service code or attribute value that you want to filter by. If you're filtering by service code this is the
+     * actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute
+     * value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
      * </p>
      * 
-     * @return The service code or attribute value that you want to filter by. If you are filtering by service code this
-     *         is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this
+     * @return The service code or attribute value that you want to filter by. If you're filtering by service code this
+     *         is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this
      *         is the attribute value that you want the returned products to match, such as a
      *         <code>Provisioned IOPS</code> volume.
      */
@@ -280,16 +280,16 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service code or attribute value that you want to filter by. If you are filtering by service code this is the
-     * actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
-     * attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
+     * The service code or attribute value that you want to filter by. If you're filtering by service code this is the
+     * actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is the attribute
+     * value that you want the returned products to match, such as a <code>Provisioned IOPS</code> volume.
      * </p>
      * 
      * @param value
-     *        The service code or attribute value that you want to filter by. If you are filtering by service code this
-     *        is the actual service code, such as <code>AmazonEC2</code>. If you are filtering by attribute name, this
-     *        is the attribute value that you want the returned products to match, such as a
-     *        <code>Provisioned IOPS</code> volume.
+     *        The service code or attribute value that you want to filter by. If you're filtering by service code this
+     *        is the actual service code, such as <code>AmazonEC2</code>. If you're filtering by attribute name, this is
+     *        the attribute value that you want the returned products to match, such as a <code>Provisioned IOPS</code>
+     *        volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

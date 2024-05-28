@@ -1,0 +1,71 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model.transform;
+
+import java.util.List;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.quicksight.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * PivotTableVisualMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class PivotTableVisualMarshaller {
+
+    private static final MarshallingInfo<String> VISUALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VisualId").build();
+    private static final MarshallingInfo<StructuredPojo> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Title").build();
+    private static final MarshallingInfo<StructuredPojo> SUBTITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Subtitle").build();
+    private static final MarshallingInfo<StructuredPojo> CHARTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChartConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> CONDITIONALFORMATTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalFormatting").build();
+    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Actions").build();
+
+    private static final PivotTableVisualMarshaller instance = new PivotTableVisualMarshaller();
+
+    public static PivotTableVisualMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PivotTableVisual pivotTableVisual, ProtocolMarshaller protocolMarshaller) {
+
+        if (pivotTableVisual == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(pivotTableVisual.getVisualId(), VISUALID_BINDING);
+            protocolMarshaller.marshall(pivotTableVisual.getTitle(), TITLE_BINDING);
+            protocolMarshaller.marshall(pivotTableVisual.getSubtitle(), SUBTITLE_BINDING);
+            protocolMarshaller.marshall(pivotTableVisual.getChartConfiguration(), CHARTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(pivotTableVisual.getConditionalFormatting(), CONDITIONALFORMATTING_BINDING);
+            protocolMarshaller.marshall(pivotTableVisual.getActions(), ACTIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

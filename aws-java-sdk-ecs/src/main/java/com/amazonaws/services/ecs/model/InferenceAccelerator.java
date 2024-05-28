@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public class InferenceAccelerator implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container
-     * definition as a <a>ResourceRequirement</a>.
+     * definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">
+     * ResourceRequirement</a>.
      * </p>
      */
     private String deviceName;
@@ -47,12 +48,15 @@ public class InferenceAccelerator implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container
-     * definition as a <a>ResourceRequirement</a>.
+     * definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">
+     * ResourceRequirement</a>.
      * </p>
      * 
      * @param deviceName
      *        The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a
-     *        container definition as a <a>ResourceRequirement</a>.
+     *        container definition as a <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html"
+     *        >ResourceRequirement</a>.
      */
 
     public void setDeviceName(String deviceName) {
@@ -62,11 +66,14 @@ public class InferenceAccelerator implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container
-     * definition as a <a>ResourceRequirement</a>.
+     * definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">
+     * ResourceRequirement</a>.
      * </p>
      * 
      * @return The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a
-     *         container definition as a <a>ResourceRequirement</a>.
+     *         container definition as a <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html"
+     *         >ResourceRequirement</a>.
      */
 
     public String getDeviceName() {
@@ -76,12 +83,15 @@ public class InferenceAccelerator implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a container
-     * definition as a <a>ResourceRequirement</a>.
+     * definition as a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">
+     * ResourceRequirement</a>.
      * </p>
      * 
      * @param deviceName
      *        The Elastic Inference accelerator device name. The <code>deviceName</code> must also be referenced in a
-     *        container definition as a <a>ResourceRequirement</a>.
+     *        container definition as a <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html"
+     *        >ResourceRequirement</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

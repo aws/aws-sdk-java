@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -259,6 +259,39 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      */
     java.util.concurrent.Future<ReplicationGroup> completeMigrationAsync(CompleteMigrationRequest completeMigrationRequest,
             com.amazonaws.handlers.AsyncHandler<CompleteMigrationRequest, ReplicationGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a copy of an existing serverless cache’s snapshot. Available for Redis only.
+     * </p>
+     * 
+     * @param copyServerlessCacheSnapshotRequest
+     * @return A Java Future containing the result of the CopyServerlessCacheSnapshot operation returned by the service.
+     * @sample AmazonElastiCacheAsync.CopyServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CopyServerlessCacheSnapshotResult> copyServerlessCacheSnapshotAsync(
+            CopyServerlessCacheSnapshotRequest copyServerlessCacheSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a copy of an existing serverless cache’s snapshot. Available for Redis only.
+     * </p>
+     * 
+     * @param copyServerlessCacheSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyServerlessCacheSnapshot operation returned by the service.
+     * @sample AmazonElastiCacheAsyncHandler.CopyServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CopyServerlessCacheSnapshotResult> copyServerlessCacheSnapshotAsync(
+            CopyServerlessCacheSnapshotRequest copyServerlessCacheSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyServerlessCacheSnapshotRequest, CopyServerlessCacheSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -781,7 +814,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * associated with a Global datastore.
      * </p>
      * <p>
-     * A Redis (cluster mode disabled) replication group is a collection of clusters, where one of the clusters is a
+     * A Redis (cluster mode disabled) replication group is a collection of nodes, where one of the nodes is a
      * read/write primary and the others are read-only replicas. Writes to the primary are asynchronously propagated to
      * the replicas.
      * </p>
@@ -835,7 +868,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * associated with a Global datastore.
      * </p>
      * <p>
-     * A Redis (cluster mode disabled) replication group is a collection of clusters, where one of the clusters is a
+     * A Redis (cluster mode disabled) replication group is a collection of nodes, where one of the nodes is a
      * read/write primary and the others are read-only replicas. Writes to the primary are asynchronously propagated to
      * the replicas.
      * </p>
@@ -884,6 +917,72 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      */
     java.util.concurrent.Future<ReplicationGroup> createReplicationGroupAsync(CreateReplicationGroupRequest createReplicationGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateReplicationGroupRequest, ReplicationGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a serverless cache.
+     * </p>
+     * 
+     * @param createServerlessCacheRequest
+     * @return A Java Future containing the result of the CreateServerlessCache operation returned by the service.
+     * @sample AmazonElastiCacheAsync.CreateServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServerlessCacheResult> createServerlessCacheAsync(CreateServerlessCacheRequest createServerlessCacheRequest);
+
+    /**
+     * <p>
+     * Creates a serverless cache.
+     * </p>
+     * 
+     * @param createServerlessCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateServerlessCache operation returned by the service.
+     * @sample AmazonElastiCacheAsyncHandler.CreateServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServerlessCacheResult> createServerlessCacheAsync(CreateServerlessCacheRequest createServerlessCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateServerlessCacheRequest, CreateServerlessCacheResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API creates a copy of an entire ServerlessCache at a specific moment in time. Available for Redis only.
+     * </p>
+     * 
+     * @param createServerlessCacheSnapshotRequest
+     * @return A Java Future containing the result of the CreateServerlessCacheSnapshot operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsync.CreateServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServerlessCacheSnapshotResult> createServerlessCacheSnapshotAsync(
+            CreateServerlessCacheSnapshotRequest createServerlessCacheSnapshotRequest);
+
+    /**
+     * <p>
+     * This API creates a copy of an entire ServerlessCache at a specific moment in time. Available for Redis only.
+     * </p>
+     * 
+     * @param createServerlessCacheSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateServerlessCacheSnapshot operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsyncHandler.CreateServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServerlessCacheSnapshotResult> createServerlessCacheSnapshotAsync(
+            CreateServerlessCacheSnapshotRequest createServerlessCacheSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateServerlessCacheSnapshotRequest, CreateServerlessCacheSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -1449,6 +1548,72 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      */
     java.util.concurrent.Future<ReplicationGroup> deleteReplicationGroupAsync(DeleteReplicationGroupRequest deleteReplicationGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteReplicationGroupRequest, ReplicationGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified existing serverless cache.
+     * </p>
+     * 
+     * @param deleteServerlessCacheRequest
+     * @return A Java Future containing the result of the DeleteServerlessCache operation returned by the service.
+     * @sample AmazonElastiCacheAsync.DeleteServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServerlessCacheResult> deleteServerlessCacheAsync(DeleteServerlessCacheRequest deleteServerlessCacheRequest);
+
+    /**
+     * <p>
+     * Deletes a specified existing serverless cache.
+     * </p>
+     * 
+     * @param deleteServerlessCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteServerlessCache operation returned by the service.
+     * @sample AmazonElastiCacheAsyncHandler.DeleteServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServerlessCacheResult> deleteServerlessCacheAsync(DeleteServerlessCacheRequest deleteServerlessCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteServerlessCacheRequest, DeleteServerlessCacheResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing serverless cache snapshot. Available for Redis only.
+     * </p>
+     * 
+     * @param deleteServerlessCacheSnapshotRequest
+     * @return A Java Future containing the result of the DeleteServerlessCacheSnapshot operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsync.DeleteServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServerlessCacheSnapshotResult> deleteServerlessCacheSnapshotAsync(
+            DeleteServerlessCacheSnapshotRequest deleteServerlessCacheSnapshotRequest);
+
+    /**
+     * <p>
+     * Deletes an existing serverless cache snapshot. Available for Redis only.
+     * </p>
+     * 
+     * @param deleteServerlessCacheSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteServerlessCacheSnapshot operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsyncHandler.DeleteServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServerlessCacheSnapshotResult> deleteServerlessCacheSnapshotAsync(
+            DeleteServerlessCacheSnapshotRequest deleteServerlessCacheSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteServerlessCacheSnapshotRequest, DeleteServerlessCacheSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -2205,6 +2370,78 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
+     * Returns information about serverless cache snapshots. By default, this API lists all of the customer’s serverless
+     * cache snapshots. It can also describe a single serverless cache snapshot, or the snapshots associated with a
+     * particular serverless cache. Available for Redis only.
+     * </p>
+     * 
+     * @param describeServerlessCacheSnapshotsRequest
+     * @return A Java Future containing the result of the DescribeServerlessCacheSnapshots operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsync.DescribeServerlessCacheSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeServerlessCacheSnapshotsResult> describeServerlessCacheSnapshotsAsync(
+            DescribeServerlessCacheSnapshotsRequest describeServerlessCacheSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about serverless cache snapshots. By default, this API lists all of the customer’s serverless
+     * cache snapshots. It can also describe a single serverless cache snapshot, or the snapshots associated with a
+     * particular serverless cache. Available for Redis only.
+     * </p>
+     * 
+     * @param describeServerlessCacheSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeServerlessCacheSnapshots operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsyncHandler.DescribeServerlessCacheSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeServerlessCacheSnapshotsResult> describeServerlessCacheSnapshotsAsync(
+            DescribeServerlessCacheSnapshotsRequest describeServerlessCacheSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeServerlessCacheSnapshotsRequest, DescribeServerlessCacheSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific serverless cache. If no identifier is specified, then the API returns
+     * information on all the serverless caches belonging to this Amazon Web Services account.
+     * </p>
+     * 
+     * @param describeServerlessCachesRequest
+     * @return A Java Future containing the result of the DescribeServerlessCaches operation returned by the service.
+     * @sample AmazonElastiCacheAsync.DescribeServerlessCaches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeServerlessCachesResult> describeServerlessCachesAsync(DescribeServerlessCachesRequest describeServerlessCachesRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific serverless cache. If no identifier is specified, then the API returns
+     * information on all the serverless caches belonging to this Amazon Web Services account.
+     * </p>
+     * 
+     * @param describeServerlessCachesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeServerlessCaches operation returned by the service.
+     * @sample AmazonElastiCacheAsyncHandler.DescribeServerlessCaches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeServerlessCachesResult> describeServerlessCachesAsync(DescribeServerlessCachesRequest describeServerlessCachesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeServerlessCachesRequest, DescribeServerlessCachesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns details of the service updates
      * </p>
      * 
@@ -2430,8 +2667,43 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Used to failover the primary region to a selected secondary region. The selected secondary region will become
-     * primary, and all other clusters will become secondary.
+     * Provides the functionality to export the serverless cache snapshot data to Amazon S3. Available for Redis only.
+     * </p>
+     * 
+     * @param exportServerlessCacheSnapshotRequest
+     * @return A Java Future containing the result of the ExportServerlessCacheSnapshot operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsync.ExportServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportServerlessCacheSnapshotResult> exportServerlessCacheSnapshotAsync(
+            ExportServerlessCacheSnapshotRequest exportServerlessCacheSnapshotRequest);
+
+    /**
+     * <p>
+     * Provides the functionality to export the serverless cache snapshot data to Amazon S3. Available for Redis only.
+     * </p>
+     * 
+     * @param exportServerlessCacheSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportServerlessCacheSnapshot operation returned by the
+     *         service.
+     * @sample AmazonElastiCacheAsyncHandler.ExportServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportServerlessCacheSnapshotResult> exportServerlessCacheSnapshotAsync(
+            ExportServerlessCacheSnapshotRequest exportServerlessCacheSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportServerlessCacheSnapshotRequest, ExportServerlessCacheSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to failover the primary region to a secondary region. The secondary region will become primary, and all
+     * other clusters will become secondary.
      * </p>
      * 
      * @param failoverGlobalReplicationGroupRequest
@@ -2446,8 +2718,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Used to failover the primary region to a selected secondary region. The selected secondary region will become
-     * primary, and all other clusters will become secondary.
+     * Used to failover the primary region to a secondary region. The secondary region will become primary, and all
+     * other clusters will become secondary.
      * </p>
      * 
      * @param failoverGlobalReplicationGroupRequest
@@ -2797,7 +3069,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Modifies the settings for a replication group.
+     * Modifies the settings for a replication group. This is limited to Redis 7 and newer.
      * </p>
      * <ul>
      * <li>
@@ -2831,7 +3103,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Modifies the settings for a replication group.
+     * Modifies the settings for a replication group. This is limited to Redis 7 and newer.
      * </p>
      * <ul>
      * <li>
@@ -2908,6 +3180,37 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     java.util.concurrent.Future<ReplicationGroup> modifyReplicationGroupShardConfigurationAsync(
             ModifyReplicationGroupShardConfigurationRequest modifyReplicationGroupShardConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyReplicationGroupShardConfigurationRequest, ReplicationGroup> asyncHandler);
+
+    /**
+     * <p>
+     * This API modifies the attributes of a serverless cache.
+     * </p>
+     * 
+     * @param modifyServerlessCacheRequest
+     * @return A Java Future containing the result of the ModifyServerlessCache operation returned by the service.
+     * @sample AmazonElastiCacheAsync.ModifyServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyServerlessCacheResult> modifyServerlessCacheAsync(ModifyServerlessCacheRequest modifyServerlessCacheRequest);
+
+    /**
+     * <p>
+     * This API modifies the attributes of a serverless cache.
+     * </p>
+     * 
+     * @param modifyServerlessCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyServerlessCache operation returned by the service.
+     * @sample AmazonElastiCacheAsyncHandler.ModifyServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyServerlessCacheResult> modifyServerlessCacheAsync(ModifyServerlessCacheRequest modifyServerlessCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyServerlessCacheRequest, ModifyServerlessCacheResult> asyncHandler);
 
     /**
      * <p>
@@ -3482,5 +3785,36 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      */
     java.util.concurrent.Future<ReplicationGroup> testFailoverAsync(TestFailoverRequest testFailoverRequest,
             com.amazonaws.handlers.AsyncHandler<TestFailoverRequest, ReplicationGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Async API to test connection between source and target replication group.
+     * </p>
+     * 
+     * @param testMigrationRequest
+     * @return A Java Future containing the result of the TestMigration operation returned by the service.
+     * @sample AmazonElastiCacheAsync.TestMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReplicationGroup> testMigrationAsync(TestMigrationRequest testMigrationRequest);
+
+    /**
+     * <p>
+     * Async API to test connection between source and target replication group.
+     * </p>
+     * 
+     * @param testMigrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestMigration operation returned by the service.
+     * @sample AmazonElastiCacheAsyncHandler.TestMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReplicationGroup> testMigrationAsync(TestMigrationRequest testMigrationRequest,
+            com.amazonaws.handlers.AsyncHandler<TestMigrationRequest, ReplicationGroup> asyncHandler);
 
 }

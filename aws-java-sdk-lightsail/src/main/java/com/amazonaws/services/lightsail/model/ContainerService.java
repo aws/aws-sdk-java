@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
     private ResourceLocation location;
     /**
      * <p>
-     * The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     * The Lightsail resource type of the container service.
      * </p>
      */
     private String resourceType;
@@ -408,11 +408,11 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     * The Lightsail resource type of the container service.
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     *        The Lightsail resource type of the container service.
      * @see ResourceType
      */
 
@@ -422,10 +422,10 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     * The Lightsail resource type of the container service.
      * </p>
      * 
-     * @return The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     * @return The Lightsail resource type of the container service.
      * @see ResourceType
      */
 
@@ -435,11 +435,11 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     * The Lightsail resource type of the container service.
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     *        The Lightsail resource type of the container service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -451,11 +451,11 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     * The Lightsail resource type of the container service.
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).
+     *        The Lightsail resource type of the container service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

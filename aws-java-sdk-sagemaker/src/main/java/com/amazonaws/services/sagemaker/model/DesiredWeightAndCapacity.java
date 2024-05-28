@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class DesiredWeightAndCapacity implements Serializable, Cloneable, Struct
      * </p>
      */
     private Integer desiredInstanceCount;
+    /**
+     * <p>
+     * Specifies the serverless update concurrency configuration for an endpoint variant.
+     * </p>
+     */
+    private ProductionVariantServerlessUpdateConfig serverlessUpdateConfig;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class DesiredWeightAndCapacity implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies the serverless update concurrency configuration for an endpoint variant.
+     * </p>
+     * 
+     * @param serverlessUpdateConfig
+     *        Specifies the serverless update concurrency configuration for an endpoint variant.
+     */
+
+    public void setServerlessUpdateConfig(ProductionVariantServerlessUpdateConfig serverlessUpdateConfig) {
+        this.serverlessUpdateConfig = serverlessUpdateConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the serverless update concurrency configuration for an endpoint variant.
+     * </p>
+     * 
+     * @return Specifies the serverless update concurrency configuration for an endpoint variant.
+     */
+
+    public ProductionVariantServerlessUpdateConfig getServerlessUpdateConfig() {
+        return this.serverlessUpdateConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the serverless update concurrency configuration for an endpoint variant.
+     * </p>
+     * 
+     * @param serverlessUpdateConfig
+     *        Specifies the serverless update concurrency configuration for an endpoint variant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DesiredWeightAndCapacity withServerlessUpdateConfig(ProductionVariantServerlessUpdateConfig serverlessUpdateConfig) {
+        setServerlessUpdateConfig(serverlessUpdateConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class DesiredWeightAndCapacity implements Serializable, Cloneable, Struct
         if (getDesiredWeight() != null)
             sb.append("DesiredWeight: ").append(getDesiredWeight()).append(",");
         if (getDesiredInstanceCount() != null)
-            sb.append("DesiredInstanceCount: ").append(getDesiredInstanceCount());
+            sb.append("DesiredInstanceCount: ").append(getDesiredInstanceCount()).append(",");
+        if (getServerlessUpdateConfig() != null)
+            sb.append("ServerlessUpdateConfig: ").append(getServerlessUpdateConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class DesiredWeightAndCapacity implements Serializable, Cloneable, Struct
             return false;
         if (other.getDesiredInstanceCount() != null && other.getDesiredInstanceCount().equals(this.getDesiredInstanceCount()) == false)
             return false;
+        if (other.getServerlessUpdateConfig() == null ^ this.getServerlessUpdateConfig() == null)
+            return false;
+        if (other.getServerlessUpdateConfig() != null && other.getServerlessUpdateConfig().equals(this.getServerlessUpdateConfig()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class DesiredWeightAndCapacity implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getVariantName() == null) ? 0 : getVariantName().hashCode());
         hashCode = prime * hashCode + ((getDesiredWeight() == null) ? 0 : getDesiredWeight().hashCode());
         hashCode = prime * hashCode + ((getDesiredInstanceCount() == null) ? 0 : getDesiredInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getServerlessUpdateConfig() == null) ? 0 : getServerlessUpdateConfig().hashCode());
         return hashCode;
     }
 

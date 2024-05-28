@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -380,7 +380,7 @@ public class CreateChatTokenRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes()).append(",");
+            sb.append("Attributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getCapabilities() != null)
             sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getRoomIdentifier() != null)
@@ -388,7 +388,7 @@ public class CreateChatTokenRequest extends com.amazonaws.AmazonWebServiceReques
         if (getSessionDurationInMinutes() != null)
             sb.append("SessionDurationInMinutes: ").append(getSessionDurationInMinutes()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("UserId: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

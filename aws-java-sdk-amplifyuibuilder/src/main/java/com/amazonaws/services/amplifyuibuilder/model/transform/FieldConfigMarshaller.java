@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FieldConfigMarshaller {
 
-    private static final MarshallingInfo<Boolean> EXCLUDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excluded").build();
-    private static final MarshallingInfo<StructuredPojo> INPUTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputType").build();
     private static final MarshallingInfo<String> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("label").build();
     private static final MarshallingInfo<StructuredPojo> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
+    private static final MarshallingInfo<Boolean> EXCLUDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excluded").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputType").build();
     private static final MarshallingInfo<List> VALIDATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("validations").build();
 
@@ -55,10 +55,10 @@ public class FieldConfigMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(fieldConfig.getExcluded(), EXCLUDED_BINDING);
-            protocolMarshaller.marshall(fieldConfig.getInputType(), INPUTTYPE_BINDING);
             protocolMarshaller.marshall(fieldConfig.getLabel(), LABEL_BINDING);
             protocolMarshaller.marshall(fieldConfig.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(fieldConfig.getExcluded(), EXCLUDED_BINDING);
+            protocolMarshaller.marshall(fieldConfig.getInputType(), INPUTTYPE_BINDING);
             protocolMarshaller.marshall(fieldConfig.getValidations(), VALIDATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

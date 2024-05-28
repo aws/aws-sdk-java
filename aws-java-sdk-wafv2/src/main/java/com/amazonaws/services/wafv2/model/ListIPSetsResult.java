@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,7 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String nextMarker;
     /**
      * <p>
-     * Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     * specification for this request.
+     * Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * </p>
      */
     private java.util.List<IPSetSummary> iPSets;
@@ -96,12 +95,10 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     * specification for this request.
+     * Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * </p>
      * 
-     * @return Array of IPSets. This may not be the full list of IPSets that you have defined. See the
-     *         <code>Limit</code> specification for this request.
+     * @return Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      */
 
     public java.util.List<IPSetSummary> getIPSets() {
@@ -110,13 +107,11 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     * specification for this request.
+     * Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * </p>
      * 
      * @param iPSets
-     *        Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     *        specification for this request.
+     *        Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      */
 
     public void setIPSets(java.util.Collection<IPSetSummary> iPSets) {
@@ -130,8 +125,7 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     * specification for this request.
+     * Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,8 +134,7 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param iPSets
-     *        Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     *        specification for this request.
+     *        Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,13 +150,11 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     * specification for this request.
+     * Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * </p>
      * 
      * @param iPSets
-     *        Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code>
-     *        specification for this request.
+     *        Array of IPSets. If you specified a <code>Limit</code> in your request, this might not be the full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

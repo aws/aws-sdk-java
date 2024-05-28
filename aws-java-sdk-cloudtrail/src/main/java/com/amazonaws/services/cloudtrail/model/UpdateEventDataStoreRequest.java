@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * Specifies whether an event data store collects events from all regions, or only from the region in which it was
+     * Specifies whether an event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      */
@@ -55,12 +55,35 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Specifies whether an event data store collects events logged for an organization in Organizations.
      * </p>
+     * <note>
+     * <p>
+     * Only the management account for the organization can convert an organization event data store to a
+     * non-organization event data store, or convert a non-organization event data store to an organization event data
+     * store.
+     * </p>
+     * </note>
      */
     private Boolean organizationEnabled;
     /**
      * <p>
-     * The retention period, in days.
+     * The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the equivalent of
+     * 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you can set a retention
+     * period of up to 2557 days, the equivalent of seven years.
      * </p>
+     * <p>
+     * CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is
+     * within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will
+     * remove events when the <code>eventTime</code> is older than 90 days.
+     * </p>
+     * <note>
+     * <p>
+     * If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     * <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365
+     * days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100
+     * days.
+     * </p>
+     * </note>
      */
     private Integer retentionPeriod;
     /**
@@ -69,6 +92,94 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Boolean terminationProtectionEnabled;
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String kmsKeyId;
+    /**
+     * <note>
+     * <p>
+     * You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     * <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code> instead,
+     * you'll need to stop ingestion on the event data store and create a new event data store that uses
+     * <code>FIXED_RETENTION_PRICING</code>.
+     * </p>
+     * </note>
+     * <p>
+     * The billing mode for the event data store determines the cost for ingesting events and the default and maximum
+     * retention period for the event data store.
+     * </p>
+     * <p>
+     * The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible
+     * retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366
+     * days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB
+     * of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention
+     * period for this billing mode is 2557 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+     * Pricing</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
+     * CloudTrail Lake costs</a>.
+     * </p>
+     */
+    private String billingMode;
 
     /**
      * <p>
@@ -233,12 +344,12 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether an event data store collects events from all regions, or only from the region in which it was
+     * Specifies whether an event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Specifies whether an event data store collects events from all regions, or only from the region in which
+     *        Specifies whether an event data store collects events from all Regions, or only from the Region in which
      *        it was created.
      */
 
@@ -248,11 +359,11 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether an event data store collects events from all regions, or only from the region in which it was
+     * Specifies whether an event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Specifies whether an event data store collects events from all regions, or only from the region in which
+     * @return Specifies whether an event data store collects events from all Regions, or only from the Region in which
      *         it was created.
      */
 
@@ -262,12 +373,12 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether an event data store collects events from all regions, or only from the region in which it was
+     * Specifies whether an event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Specifies whether an event data store collects events from all regions, or only from the region in which
+     *        Specifies whether an event data store collects events from all Regions, or only from the Region in which
      *        it was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -279,11 +390,11 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies whether an event data store collects events from all regions, or only from the region in which it was
+     * Specifies whether an event data store collects events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Specifies whether an event data store collects events from all regions, or only from the region in which
+     * @return Specifies whether an event data store collects events from all Regions, or only from the Region in which
      *         it was created.
      */
 
@@ -295,9 +406,22 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Specifies whether an event data store collects events logged for an organization in Organizations.
      * </p>
+     * <note>
+     * <p>
+     * Only the management account for the organization can convert an organization event data store to a
+     * non-organization event data store, or convert a non-organization event data store to an organization event data
+     * store.
+     * </p>
+     * </note>
      * 
      * @param organizationEnabled
-     *        Specifies whether an event data store collects events logged for an organization in Organizations.
+     *        Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+     *        <note>
+     *        <p>
+     *        Only the management account for the organization can convert an organization event data store to a
+     *        non-organization event data store, or convert a non-organization event data store to an organization event
+     *        data store.
+     *        </p>
      */
 
     public void setOrganizationEnabled(Boolean organizationEnabled) {
@@ -308,8 +432,21 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Specifies whether an event data store collects events logged for an organization in Organizations.
      * </p>
+     * <note>
+     * <p>
+     * Only the management account for the organization can convert an organization event data store to a
+     * non-organization event data store, or convert a non-organization event data store to an organization event data
+     * store.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether an event data store collects events logged for an organization in Organizations.
+     * @return Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+     *         <note>
+     *         <p>
+     *         Only the management account for the organization can convert an organization event data store to a
+     *         non-organization event data store, or convert a non-organization event data store to an organization
+     *         event data store.
+     *         </p>
      */
 
     public Boolean getOrganizationEnabled() {
@@ -320,9 +457,22 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Specifies whether an event data store collects events logged for an organization in Organizations.
      * </p>
+     * <note>
+     * <p>
+     * Only the management account for the organization can convert an organization event data store to a
+     * non-organization event data store, or convert a non-organization event data store to an organization event data
+     * store.
+     * </p>
+     * </note>
      * 
      * @param organizationEnabled
-     *        Specifies whether an event data store collects events logged for an organization in Organizations.
+     *        Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+     *        <note>
+     *        <p>
+     *        Only the management account for the organization can convert an organization event data store to a
+     *        non-organization event data store, or convert a non-organization event data store to an organization event
+     *        data store.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,8 +485,21 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Specifies whether an event data store collects events logged for an organization in Organizations.
      * </p>
+     * <note>
+     * <p>
+     * Only the management account for the organization can convert an organization event data store to a
+     * non-organization event data store, or convert a non-organization event data store to an organization event data
+     * store.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether an event data store collects events logged for an organization in Organizations.
+     * @return Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+     *         <note>
+     *         <p>
+     *         Only the management account for the organization can convert an organization event data store to a
+     *         non-organization event data store, or convert a non-organization event data store to an organization
+     *         event data store.
+     *         </p>
      */
 
     public Boolean isOrganizationEnabled() {
@@ -345,11 +508,42 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The retention period, in days.
+     * The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the equivalent of
+     * 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you can set a retention
+     * period of up to 2557 days, the equivalent of seven years.
      * </p>
+     * <p>
+     * CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is
+     * within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will
+     * remove events when the <code>eventTime</code> is older than 90 days.
+     * </p>
+     * <note>
+     * <p>
+     * If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     * <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365
+     * days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100
+     * days.
+     * </p>
+     * </note>
      * 
      * @param retentionPeriod
-     *        The retention period, in days.
+     *        The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     *        <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the
+     *        equivalent of 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you
+     *        can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+     *        <p>
+     *        CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the
+     *        event is within the specified retention period. For example, if you set a retention period of 90 days,
+     *        CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     *        <code>eventTime</code> older than the new retention period. For example, if the previous retention period
+     *        was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code>
+     *        older than 100 days.
+     *        </p>
      */
 
     public void setRetentionPeriod(Integer retentionPeriod) {
@@ -358,10 +552,41 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The retention period, in days.
+     * The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the equivalent of
+     * 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you can set a retention
+     * period of up to 2557 days, the equivalent of seven years.
      * </p>
+     * <p>
+     * CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is
+     * within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will
+     * remove events when the <code>eventTime</code> is older than 90 days.
+     * </p>
+     * <note>
+     * <p>
+     * If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     * <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365
+     * days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100
+     * days.
+     * </p>
+     * </note>
      * 
-     * @return The retention period, in days.
+     * @return The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     *         <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the
+     *         equivalent of 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you
+     *         can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+     *         <p>
+     *         CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the
+     *         event is within the specified retention period. For example, if you set a retention period of 90 days,
+     *         CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     *         <code>eventTime</code> older than the new retention period. For example, if the previous retention period
+     *         was 365 days and you decrease it to 100 days, CloudTrail will remove events with an
+     *         <code>eventTime</code> older than 100 days.
+     *         </p>
      */
 
     public Integer getRetentionPeriod() {
@@ -370,11 +595,42 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The retention period, in days.
+     * The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the equivalent of
+     * 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you can set a retention
+     * period of up to 2557 days, the equivalent of seven years.
      * </p>
+     * <p>
+     * CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is
+     * within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will
+     * remove events when the <code>eventTime</code> is older than 90 days.
+     * </p>
+     * <note>
+     * <p>
+     * If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     * <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365
+     * days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100
+     * days.
+     * </p>
+     * </note>
      * 
      * @param retentionPeriod
-     *        The retention period, in days.
+     *        The retention period of the event data store, in days. If <code>BillingMode</code> is set to
+     *        <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the
+     *        equivalent of 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you
+     *        can set a retention period of up to 2557 days, the equivalent of seven years.</p>
+     *        <p>
+     *        CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the
+     *        event is within the specified retention period. For example, if you set a retention period of 90 days,
+     *        CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you decrease the retention period of an event data store, CloudTrail will remove any events with an
+     *        <code>eventTime</code> older than the new retention period. For example, if the previous retention period
+     *        was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code>
+     *        older than 100 days.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,6 +694,625 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias
+     *        name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p> <important>
+     *        <p>
+     *        Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     *        logging events to the event data store, and prevents users from querying the data in the event data store
+     *        that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key
+     *        cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data
+     *        store, delete or back up your event data store.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias
+     *         name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *         or a globally unique identifier.</p> <important>
+     *         <p>
+     *         Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail
+     *         from logging events to the event data store, and prevents users from querying the data in the event data
+     *         store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS
+     *         key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event
+     *         data store, delete or back up your event data store.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *         multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias
+     *        name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p> <important>
+     *        <p>
+     *        Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     *        logging events to the event data store, and prevents users from querying the data in the event data store
+     *        that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key
+     *        cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data
+     *        store, delete or back up your event data store.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventDataStoreRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     * <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code> instead,
+     * you'll need to stop ingestion on the event data store and create a new event data store that uses
+     * <code>FIXED_RETENTION_PRICING</code>.
+     * </p>
+     * </note>
+     * <p>
+     * The billing mode for the event data store determines the cost for ingesting events and the default and maximum
+     * retention period for the event data store.
+     * </p>
+     * <p>
+     * The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible
+     * retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366
+     * days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB
+     * of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention
+     * period for this billing mode is 2557 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+     * Pricing</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
+     * CloudTrail Lake costs</a>.
+     * </p>
+     * 
+     * @param billingMode
+     *        <p>
+     *        You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     *        <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     *        <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code>
+     *        instead, you'll need to stop ingestion on the event data store and create a new event data store that uses
+     *        <code>FIXED_RETENTION_PRICING</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The billing mode for the event data store determines the cost for ingesting events and the default and
+     *        maximum retention period for the event data store.
+     *        </p>
+     *        <p>
+     *        The following are the possible values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a
+     *        flexible retention period of up to 3653 days (about 10 years). The default retention period for this
+     *        billing mode is 366 days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than
+     *        25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default
+     *        retention period for this billing mode is 2557 days.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about CloudTrail pricing, see <a
+     *        href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html"
+     *        >Managing CloudTrail Lake costs</a>.
+     * @see BillingMode
+     */
+
+    public void setBillingMode(String billingMode) {
+        this.billingMode = billingMode;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     * <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code> instead,
+     * you'll need to stop ingestion on the event data store and create a new event data store that uses
+     * <code>FIXED_RETENTION_PRICING</code>.
+     * </p>
+     * </note>
+     * <p>
+     * The billing mode for the event data store determines the cost for ingesting events and the default and maximum
+     * retention period for the event data store.
+     * </p>
+     * <p>
+     * The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible
+     * retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366
+     * days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB
+     * of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention
+     * period for this billing mode is 2557 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+     * Pricing</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
+     * CloudTrail Lake costs</a>.
+     * </p>
+     * 
+     * @return <p>
+     *         You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     *         <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     *         <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code>
+     *         instead, you'll need to stop ingestion on the event data store and create a new event data store that
+     *         uses <code>FIXED_RETENTION_PRICING</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The billing mode for the event data store determines the cost for ingesting events and the default and
+     *         maximum retention period for the event data store.
+     *         </p>
+     *         <p>
+     *         The following are the possible values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a
+     *         flexible retention period of up to 3653 days (about 10 years). The default retention period for this
+     *         billing mode is 366 days.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than
+     *         25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default
+     *         retention period for this billing mode is 2557 days.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about CloudTrail pricing, see <a
+     *         href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html"
+     *         >Managing CloudTrail Lake costs</a>.
+     * @see BillingMode
+     */
+
+    public String getBillingMode() {
+        return this.billingMode;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     * <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code> instead,
+     * you'll need to stop ingestion on the event data store and create a new event data store that uses
+     * <code>FIXED_RETENTION_PRICING</code>.
+     * </p>
+     * </note>
+     * <p>
+     * The billing mode for the event data store determines the cost for ingesting events and the default and maximum
+     * retention period for the event data store.
+     * </p>
+     * <p>
+     * The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible
+     * retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366
+     * days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB
+     * of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention
+     * period for this billing mode is 2557 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+     * Pricing</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
+     * CloudTrail Lake costs</a>.
+     * </p>
+     * 
+     * @param billingMode
+     *        <p>
+     *        You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     *        <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     *        <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code>
+     *        instead, you'll need to stop ingestion on the event data store and create a new event data store that uses
+     *        <code>FIXED_RETENTION_PRICING</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The billing mode for the event data store determines the cost for ingesting events and the default and
+     *        maximum retention period for the event data store.
+     *        </p>
+     *        <p>
+     *        The following are the possible values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a
+     *        flexible retention period of up to 3653 days (about 10 years). The default retention period for this
+     *        billing mode is 366 days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than
+     *        25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default
+     *        retention period for this billing mode is 2557 days.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about CloudTrail pricing, see <a
+     *        href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html"
+     *        >Managing CloudTrail Lake costs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public UpdateEventDataStoreRequest withBillingMode(String billingMode) {
+        setBillingMode(billingMode);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     * <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     * <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code> instead,
+     * you'll need to stop ingestion on the event data store and create a new event data store that uses
+     * <code>FIXED_RETENTION_PRICING</code>.
+     * </p>
+     * </note>
+     * <p>
+     * The billing mode for the event data store determines the cost for ingesting events and the default and maximum
+     * retention period for the event data store.
+     * </p>
+     * <p>
+     * The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a flexible
+     * retention period of up to 3653 days (about 10 years). The default retention period for this billing mode is 366
+     * days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB
+     * of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention
+     * period for this billing mode is 2557 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
+     * Pricing</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing
+     * CloudTrail Lake costs</a>.
+     * </p>
+     * 
+     * @param billingMode
+     *        <p>
+     *        You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to
+     *        <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to
+     *        <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code>
+     *        instead, you'll need to stop ingestion on the event data store and create a new event data store that uses
+     *        <code>FIXED_RETENTION_PRICING</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The billing mode for the event data store determines the cost for ingesting events and the default and
+     *        maximum retention period for the event data store.
+     *        </p>
+     *        <p>
+     *        The following are the possible values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended if you want a
+     *        flexible retention period of up to 3653 days (about 10 years). The default retention period for this
+     *        billing mode is 366 days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than
+     *        25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default
+     *        retention period for this billing mode is 2557 days.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about CloudTrail pricing, see <a
+     *        href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html"
+     *        >Managing CloudTrail Lake costs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public UpdateEventDataStoreRequest withBillingMode(BillingMode billingMode) {
+        this.billingMode = billingMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -462,7 +1337,11 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getTerminationProtectionEnabled() != null)
-            sb.append("TerminationProtectionEnabled: ").append(getTerminationProtectionEnabled());
+            sb.append("TerminationProtectionEnabled: ").append(getTerminationProtectionEnabled()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getBillingMode() != null)
+            sb.append("BillingMode: ").append(getBillingMode());
         sb.append("}");
         return sb.toString();
     }
@@ -505,6 +1384,14 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTerminationProtectionEnabled() != null && other.getTerminationProtectionEnabled().equals(this.getTerminationProtectionEnabled()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
+        if (other.getBillingMode() == null ^ this.getBillingMode() == null)
+            return false;
+        if (other.getBillingMode() != null && other.getBillingMode().equals(this.getBillingMode()) == false)
+            return false;
         return true;
     }
 
@@ -520,6 +1407,8 @@ public class UpdateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getOrganizationEnabled() == null) ? 0 : getOrganizationEnabled().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getTerminationProtectionEnabled() == null) ? 0 : getTerminationProtectionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
         return hashCode;
     }
 

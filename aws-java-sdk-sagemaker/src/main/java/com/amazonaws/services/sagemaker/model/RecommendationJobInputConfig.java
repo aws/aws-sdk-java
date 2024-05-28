@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,13 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
     private String modelPackageVersionArn;
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * The name of the created model.
+     * </p>
+     */
+    private String modelName;
+    /**
+     * <p>
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      */
     private Integer jobDurationInSeconds;
@@ -127,6 +133,12 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
      * </p>
      */
     private java.util.List<EndpointInfo> endpoints;
+    /**
+     * <p>
+     * Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.
+     * </p>
+     */
+    private RecommendationJobVpcConfig vpcConfig;
 
     /**
      * <p>
@@ -170,11 +182,51 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * The name of the created model.
+     * </p>
+     * 
+     * @param modelName
+     *        The name of the created model.
+     */
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    /**
+     * <p>
+     * The name of the created model.
+     * </p>
+     * 
+     * @return The name of the created model.
+     */
+
+    public String getModelName() {
+        return this.modelName;
+    }
+
+    /**
+     * <p>
+     * The name of the created model.
+     * </p>
+     * 
+     * @param modelName
+     *        The name of the created model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInputConfig withModelName(String modelName) {
+        setModelName(modelName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      * 
      * @param jobDurationInSeconds
-     *        Specifies the maximum duration of the job, in seconds.&gt;
+     *        Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      */
 
     public void setJobDurationInSeconds(Integer jobDurationInSeconds) {
@@ -183,10 +235,10 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      * 
-     * @return Specifies the maximum duration of the job, in seconds.&gt;
+     * @return Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      */
 
     public Integer getJobDurationInSeconds() {
@@ -195,11 +247,11 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Specifies the maximum duration of the job, in seconds.&gt;
+     * Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * </p>
      * 
      * @param jobDurationInSeconds
-     *        Specifies the maximum duration of the job, in seconds.&gt;
+     *        Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -812,6 +864,49 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation
+     *        job.
+     */
+
+    public void setVpcConfig(RecommendationJobVpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.
+     * </p>
+     * 
+     * @return Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation
+     *         job.
+     */
+
+    public RecommendationJobVpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation
+     *        job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInputConfig withVpcConfig(RecommendationJobVpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -825,6 +920,8 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         sb.append("{");
         if (getModelPackageVersionArn() != null)
             sb.append("ModelPackageVersionArn: ").append(getModelPackageVersionArn()).append(",");
+        if (getModelName() != null)
+            sb.append("ModelName: ").append(getModelName()).append(",");
         if (getJobDurationInSeconds() != null)
             sb.append("JobDurationInSeconds: ").append(getJobDurationInSeconds()).append(",");
         if (getTrafficPattern() != null)
@@ -838,7 +935,9 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         if (getContainerConfig() != null)
             sb.append("ContainerConfig: ").append(getContainerConfig()).append(",");
         if (getEndpoints() != null)
-            sb.append("Endpoints: ").append(getEndpoints());
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -856,6 +955,10 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         if (other.getModelPackageVersionArn() == null ^ this.getModelPackageVersionArn() == null)
             return false;
         if (other.getModelPackageVersionArn() != null && other.getModelPackageVersionArn().equals(this.getModelPackageVersionArn()) == false)
+            return false;
+        if (other.getModelName() == null ^ this.getModelName() == null)
+            return false;
+        if (other.getModelName() != null && other.getModelName().equals(this.getModelName()) == false)
             return false;
         if (other.getJobDurationInSeconds() == null ^ this.getJobDurationInSeconds() == null)
             return false;
@@ -885,6 +988,10 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -894,6 +1001,7 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelPackageVersionArn() == null) ? 0 : getModelPackageVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getJobDurationInSeconds() == null) ? 0 : getJobDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getTrafficPattern() == null) ? 0 : getTrafficPattern().hashCode());
         hashCode = prime * hashCode + ((getResourceLimit() == null) ? 0 : getResourceLimit().hashCode());
@@ -901,6 +1009,7 @@ public class RecommendationJobInputConfig implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getContainerConfig() == null) ? 0 : getContainerConfig().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

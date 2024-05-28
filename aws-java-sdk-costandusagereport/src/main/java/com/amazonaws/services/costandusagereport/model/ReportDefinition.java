@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression
- * format, S3 bucket, additional artifacts, and schema elements in the definition.
+ * The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report
+ * format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ReportDefinition" target="_top">AWS API
@@ -71,11 +71,19 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     private String reportVersioning;
     /**
      * <p>
-     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
-     * APIs.
+     * The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web
+     * Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor
+     * service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      * </p>
      */
     private String billingViewArn;
+    /**
+     * <p>
+     * The status of the report.
+     * </p>
+     */
+    private ReportStatus reportStatus;
 
     /**
      * @param reportName
@@ -706,13 +714,17 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
-     * APIs.
+     * The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web
+     * Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor
+     * service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      * </p>
      * 
      * @param billingViewArn
-     *        The Amazon resource name of the billing view. You can get this value by using the billing view service
-     *        public APIs.
+     *        The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon
+     *        Web Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing
+     *        Conductor service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     *        <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      */
 
     public void setBillingViewArn(String billingViewArn) {
@@ -721,12 +733,16 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
-     * APIs.
+     * The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web
+     * Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor
+     * service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      * </p>
      * 
-     * @return The Amazon resource name of the billing view. You can get this value by using the billing view service
-     *         public APIs.
+     * @return The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon
+     *         Web Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing
+     *         Conductor service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     *         <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      */
 
     public String getBillingViewArn() {
@@ -735,18 +751,62 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
-     * APIs.
+     * The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon Web
+     * Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing Conductor
+     * service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      * </p>
      * 
      * @param billingViewArn
-     *        The Amazon resource name of the billing view. You can get this value by using the billing view service
-     *        public APIs.
+     *        The Amazon resource name of the billing view. The <code>BillingViewArn</code> is needed to create Amazon
+     *        Web Services Cost and Usage Report for each billing group maintained in the Amazon Web Services Billing
+     *        Conductor service. The <code>BillingViewArn</code> for a billing group can be constructed as:
+     *        <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ReportDefinition withBillingViewArn(String billingViewArn) {
         setBillingViewArn(billingViewArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the report.
+     * </p>
+     * 
+     * @param reportStatus
+     *        The status of the report.
+     */
+
+    public void setReportStatus(ReportStatus reportStatus) {
+        this.reportStatus = reportStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the report.
+     * </p>
+     * 
+     * @return The status of the report.
+     */
+
+    public ReportStatus getReportStatus() {
+        return this.reportStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the report.
+     * </p>
+     * 
+     * @param reportStatus
+     *        The status of the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportDefinition withReportStatus(ReportStatus reportStatus) {
+        setReportStatus(reportStatus);
         return this;
     }
 
@@ -785,7 +845,9 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
         if (getReportVersioning() != null)
             sb.append("ReportVersioning: ").append(getReportVersioning()).append(",");
         if (getBillingViewArn() != null)
-            sb.append("BillingViewArn: ").append(getBillingViewArn());
+            sb.append("BillingViewArn: ").append(getBillingViewArn()).append(",");
+        if (getReportStatus() != null)
+            sb.append("ReportStatus: ").append(getReportStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -848,6 +910,10 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getBillingViewArn() != null && other.getBillingViewArn().equals(this.getBillingViewArn()) == false)
             return false;
+        if (other.getReportStatus() == null ^ this.getReportStatus() == null)
+            return false;
+        if (other.getReportStatus() != null && other.getReportStatus().equals(this.getReportStatus()) == false)
+            return false;
         return true;
     }
 
@@ -868,6 +934,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getRefreshClosedReports() == null) ? 0 : getRefreshClosedReports().hashCode());
         hashCode = prime * hashCode + ((getReportVersioning() == null) ? 0 : getReportVersioning().hashCode());
         hashCode = prime * hashCode + ((getBillingViewArn() == null) ? 0 : getBillingViewArn().hashCode());
+        hashCode = prime * hashCode + ((getReportStatus() == null) ? 0 : getReportStatus().hashCode());
         return hashCode;
     }
 

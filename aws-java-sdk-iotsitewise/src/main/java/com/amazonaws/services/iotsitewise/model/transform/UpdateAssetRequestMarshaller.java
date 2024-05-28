@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class UpdateAssetRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> ASSETDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetDescription").build();
+    private static final MarshallingInfo<String> ASSETEXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetExternalId").build();
 
     private static final UpdateAssetRequestMarshaller instance = new UpdateAssetRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class UpdateAssetRequestMarshaller {
             protocolMarshaller.marshall(updateAssetRequest.getAssetName(), ASSETNAME_BINDING);
             protocolMarshaller.marshall(updateAssetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(updateAssetRequest.getAssetDescription(), ASSETDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateAssetRequest.getAssetExternalId(), ASSETEXTERNALID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

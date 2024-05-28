@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,16 @@ public enum SupportedRfRegion {
     EU868("EU868"),
     US915("US915"),
     AU915("AU915"),
-    AS9231("AS923-1");
+    AS9231("AS923-1"),
+    AS9232("AS923-2"),
+    AS9233("AS923-3"),
+    AS9234("AS923-4"),
+    EU433("EU433"),
+    CN470("CN470"),
+    CN779("CN779"),
+    RU864("RU864"),
+    KR920("KR920"),
+    IN865("IN865");
 
     private String value;
 

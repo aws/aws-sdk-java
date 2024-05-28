@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,10 +32,10 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
-     * related object key constraints</a>.
+     * When you're using XML requests, you must replace special characters (such as carriage returns) in object keys
+     * with their equivalent XML entity codes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </important>
      */
@@ -67,20 +67,20 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
-     * related object key constraints</a>.
+     * When you're using XML requests, you must replace special characters (such as carriage returns) in object keys
+     * with their equivalent XML entity codes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </important>
      * 
      * @param prefix
      *        Prefix identifying one or more objects to which the rule applies.</p> <important>
      *        <p>
-     *        Replacement must be made for object keys containing special characters (such as carriage returns) when
-     *        using XML requests. For more information, see <a href=
+     *        When you're using XML requests, you must replace special characters (such as carriage returns) in object
+     *        keys with their equivalent XML entity codes. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"
-     *        > XML related object key constraints</a>.
+     *        > XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      *        </p>
      */
 
@@ -94,19 +94,19 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
-     * related object key constraints</a>.
+     * When you're using XML requests, you must replace special characters (such as carriage returns) in object keys
+     * with their equivalent XML entity codes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </important>
      * 
      * @return Prefix identifying one or more objects to which the rule applies.</p> <important>
      *         <p>
-     *         Replacement must be made for object keys containing special characters (such as carriage returns) when
-     *         using XML requests. For more information, see <a href=
+     *         When you're using XML requests, you must replace special characters (such as carriage returns) in object
+     *         keys with their equivalent XML entity codes. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"
-     *         > XML related object key constraints</a>.
+     *         > XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      *         </p>
      */
 
@@ -120,20 +120,20 @@ public class LifecycleRuleFilter implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * Replacement must be made for object keys containing special characters (such as carriage returns) when using XML
-     * requests. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML
-     * related object key constraints</a>.
+     * When you're using XML requests, you must replace special characters (such as carriage returns) in object keys
+     * with their equivalent XML entity codes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+     * XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </important>
      * 
      * @param prefix
      *        Prefix identifying one or more objects to which the rule applies.</p> <important>
      *        <p>
-     *        Replacement must be made for object keys containing special characters (such as carriage returns) when
-     *        using XML requests. For more information, see <a href=
+     *        When you're using XML requests, you must replace special characters (such as carriage returns) in object
+     *        keys with their equivalent XML entity codes. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"
-     *        > XML related object key constraints</a>.
+     *        > XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

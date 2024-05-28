@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,12 +42,6 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
     private ModuleLoggingConfigurationInput schedulerLogs;
     /**
      * <p>
-     * Publishes Airflow task logs to CloudWatch Logs.
-     * </p>
-     */
-    private ModuleLoggingConfigurationInput taskLogs;
-    /**
-     * <p>
      * Publishes Airflow web server logs to CloudWatch Logs.
      * </p>
      */
@@ -58,6 +52,12 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
      * </p>
      */
     private ModuleLoggingConfigurationInput workerLogs;
+    /**
+     * <p>
+     * Publishes Airflow task logs to CloudWatch Logs.
+     * </p>
+     */
+    private ModuleLoggingConfigurationInput taskLogs;
 
     /**
      * <p>
@@ -136,46 +136,6 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
 
     public LoggingConfigurationInput withSchedulerLogs(ModuleLoggingConfigurationInput schedulerLogs) {
         setSchedulerLogs(schedulerLogs);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Publishes Airflow task logs to CloudWatch Logs.
-     * </p>
-     * 
-     * @param taskLogs
-     *        Publishes Airflow task logs to CloudWatch Logs.
-     */
-
-    public void setTaskLogs(ModuleLoggingConfigurationInput taskLogs) {
-        this.taskLogs = taskLogs;
-    }
-
-    /**
-     * <p>
-     * Publishes Airflow task logs to CloudWatch Logs.
-     * </p>
-     * 
-     * @return Publishes Airflow task logs to CloudWatch Logs.
-     */
-
-    public ModuleLoggingConfigurationInput getTaskLogs() {
-        return this.taskLogs;
-    }
-
-    /**
-     * <p>
-     * Publishes Airflow task logs to CloudWatch Logs.
-     * </p>
-     * 
-     * @param taskLogs
-     *        Publishes Airflow task logs to CloudWatch Logs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LoggingConfigurationInput withTaskLogs(ModuleLoggingConfigurationInput taskLogs) {
-        setTaskLogs(taskLogs);
         return this;
     }
 
@@ -260,6 +220,46 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Publishes Airflow task logs to CloudWatch Logs.
+     * </p>
+     * 
+     * @param taskLogs
+     *        Publishes Airflow task logs to CloudWatch Logs.
+     */
+
+    public void setTaskLogs(ModuleLoggingConfigurationInput taskLogs) {
+        this.taskLogs = taskLogs;
+    }
+
+    /**
+     * <p>
+     * Publishes Airflow task logs to CloudWatch Logs.
+     * </p>
+     * 
+     * @return Publishes Airflow task logs to CloudWatch Logs.
+     */
+
+    public ModuleLoggingConfigurationInput getTaskLogs() {
+        return this.taskLogs;
+    }
+
+    /**
+     * <p>
+     * Publishes Airflow task logs to CloudWatch Logs.
+     * </p>
+     * 
+     * @param taskLogs
+     *        Publishes Airflow task logs to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfigurationInput withTaskLogs(ModuleLoggingConfigurationInput taskLogs) {
+        setTaskLogs(taskLogs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,12 +275,12 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
             sb.append("DagProcessingLogs: ").append(getDagProcessingLogs()).append(",");
         if (getSchedulerLogs() != null)
             sb.append("SchedulerLogs: ").append(getSchedulerLogs()).append(",");
-        if (getTaskLogs() != null)
-            sb.append("TaskLogs: ").append(getTaskLogs()).append(",");
         if (getWebserverLogs() != null)
             sb.append("WebserverLogs: ").append(getWebserverLogs()).append(",");
         if (getWorkerLogs() != null)
-            sb.append("WorkerLogs: ").append(getWorkerLogs());
+            sb.append("WorkerLogs: ").append(getWorkerLogs()).append(",");
+        if (getTaskLogs() != null)
+            sb.append("TaskLogs: ").append(getTaskLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -303,10 +303,6 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
             return false;
         if (other.getSchedulerLogs() != null && other.getSchedulerLogs().equals(this.getSchedulerLogs()) == false)
             return false;
-        if (other.getTaskLogs() == null ^ this.getTaskLogs() == null)
-            return false;
-        if (other.getTaskLogs() != null && other.getTaskLogs().equals(this.getTaskLogs()) == false)
-            return false;
         if (other.getWebserverLogs() == null ^ this.getWebserverLogs() == null)
             return false;
         if (other.getWebserverLogs() != null && other.getWebserverLogs().equals(this.getWebserverLogs()) == false)
@@ -314,6 +310,10 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
         if (other.getWorkerLogs() == null ^ this.getWorkerLogs() == null)
             return false;
         if (other.getWorkerLogs() != null && other.getWorkerLogs().equals(this.getWorkerLogs()) == false)
+            return false;
+        if (other.getTaskLogs() == null ^ this.getTaskLogs() == null)
+            return false;
+        if (other.getTaskLogs() != null && other.getTaskLogs().equals(this.getTaskLogs()) == false)
             return false;
         return true;
     }
@@ -325,9 +325,9 @@ public class LoggingConfigurationInput implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getDagProcessingLogs() == null) ? 0 : getDagProcessingLogs().hashCode());
         hashCode = prime * hashCode + ((getSchedulerLogs() == null) ? 0 : getSchedulerLogs().hashCode());
-        hashCode = prime * hashCode + ((getTaskLogs() == null) ? 0 : getTaskLogs().hashCode());
         hashCode = prime * hashCode + ((getWebserverLogs() == null) ? 0 : getWebserverLogs().hashCode());
         hashCode = prime * hashCode + ((getWorkerLogs() == null) ? 0 : getWorkerLogs().hashCode());
+        hashCode = prime * hashCode + ((getTaskLogs() == null) ? 0 : getTaskLogs().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class DescribeVpcEndpointConnectionNotificationsResult extends com.amazon
 
     /**
      * <p>
-     * One or more notifications.
+     * The notifications.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConnectionNotification> connectionNotificationSet;
@@ -40,10 +40,10 @@ public class DescribeVpcEndpointConnectionNotificationsResult extends com.amazon
 
     /**
      * <p>
-     * One or more notifications.
+     * The notifications.
      * </p>
      * 
-     * @return One or more notifications.
+     * @return The notifications.
      */
 
     public java.util.List<ConnectionNotification> getConnectionNotificationSet() {
@@ -55,11 +55,11 @@ public class DescribeVpcEndpointConnectionNotificationsResult extends com.amazon
 
     /**
      * <p>
-     * One or more notifications.
+     * The notifications.
      * </p>
      * 
      * @param connectionNotificationSet
-     *        One or more notifications.
+     *        The notifications.
      */
 
     public void setConnectionNotificationSet(java.util.Collection<ConnectionNotification> connectionNotificationSet) {
@@ -73,7 +73,7 @@ public class DescribeVpcEndpointConnectionNotificationsResult extends com.amazon
 
     /**
      * <p>
-     * One or more notifications.
+     * The notifications.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVpcEndpointConnectionNotificationsResult extends com.amazon
      * </p>
      * 
      * @param connectionNotificationSet
-     *        One or more notifications.
+     *        The notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeVpcEndpointConnectionNotificationsResult extends com.amazon
 
     /**
      * <p>
-     * One or more notifications.
+     * The notifications.
      * </p>
      * 
      * @param connectionNotificationSet
-     *        One or more notifications.
+     *        The notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

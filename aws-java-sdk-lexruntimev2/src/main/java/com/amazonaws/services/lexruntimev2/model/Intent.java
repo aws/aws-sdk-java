@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,13 +43,48 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, Slot> slots;
     /**
      * <p>
-     * Contains fulfillment information for the intent.
+     * Indicates the fulfillment state for the intent. The meanings of each value are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The bot failed to fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to fulfill the
+     * intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     * fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming conversations).
+     * </p>
+     * </li>
+     * </ul>
      */
     private String state;
     /**
      * <p>
-     * Contains information about whether fulfillment of the intent has been confirmed.
+     * Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if the
+     * confirmation stage has not yet been reached.
      * </p>
      */
     private String confirmationState;
@@ -170,11 +205,79 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains fulfillment information for the intent.
+     * Indicates the fulfillment state for the intent. The meanings of each value are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The bot failed to fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to fulfill the
+     * intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     * fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming conversations).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        Contains fulfillment information for the intent.
+     *        Indicates the fulfillment state for the intent. The meanings of each value are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The bot failed to fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to
+     *        fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     *        fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming
+     *        conversations).
+     *        </p>
+     *        </li>
      * @see IntentState
      */
 
@@ -184,10 +287,78 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains fulfillment information for the intent.
+     * Indicates the fulfillment state for the intent. The meanings of each value are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The bot failed to fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to fulfill the
+     * intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     * fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming conversations).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Contains fulfillment information for the intent.
+     * @return Indicates the fulfillment state for the intent. The meanings of each value are as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code> – The bot failed to fulfill the intent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to
+     *         fulfill the intent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready
+     *         to fulfill the intent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming
+     *         conversations).
+     *         </p>
+     *         </li>
      * @see IntentState
      */
 
@@ -197,11 +368,79 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains fulfillment information for the intent.
+     * Indicates the fulfillment state for the intent. The meanings of each value are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The bot failed to fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to fulfill the
+     * intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     * fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming conversations).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        Contains fulfillment information for the intent.
+     *        Indicates the fulfillment state for the intent. The meanings of each value are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The bot failed to fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to
+     *        fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     *        fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming
+     *        conversations).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IntentState
      */
@@ -213,11 +452,79 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains fulfillment information for the intent.
+     * Indicates the fulfillment state for the intent. The meanings of each value are as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Failed</code> – The bot failed to fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to fulfill the
+     * intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     * fulfill the intent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming conversations).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        Contains fulfillment information for the intent.
+     *        Indicates the fulfillment state for the intent. The meanings of each value are as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code> – The bot failed to fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InProgress</code> – The bot is in the middle of eliciting the slot values that are necessary to
+     *        fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the intent and is ready to
+     *        fulfill the intent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Waiting</code> – The bot is waiting for a response from the user (limited to streaming
+     *        conversations).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IntentState
      */
@@ -229,11 +536,13 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about whether fulfillment of the intent has been confirmed.
+     * Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if the
+     * confirmation stage has not yet been reached.
      * </p>
      * 
      * @param confirmationState
-     *        Contains information about whether fulfillment of the intent has been confirmed.
+     *        Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if
+     *        the confirmation stage has not yet been reached.
      * @see ConfirmationState
      */
 
@@ -243,10 +552,12 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about whether fulfillment of the intent has been confirmed.
+     * Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if the
+     * confirmation stage has not yet been reached.
      * </p>
      * 
-     * @return Contains information about whether fulfillment of the intent has been confirmed.
+     * @return Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code>
+     *         if the confirmation stage has not yet been reached.
      * @see ConfirmationState
      */
 
@@ -256,11 +567,13 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about whether fulfillment of the intent has been confirmed.
+     * Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if the
+     * confirmation stage has not yet been reached.
      * </p>
      * 
      * @param confirmationState
-     *        Contains information about whether fulfillment of the intent has been confirmed.
+     *        Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if
+     *        the confirmation stage has not yet been reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfirmationState
      */
@@ -272,11 +585,13 @@ public class Intent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information about whether fulfillment of the intent has been confirmed.
+     * Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if the
+     * confirmation stage has not yet been reached.
      * </p>
      * 
      * @param confirmationState
-     *        Contains information about whether fulfillment of the intent has been confirmed.
+     *        Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>, or <code>None</code> if
+     *        the confirmation stage has not yet been reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfirmationState
      */

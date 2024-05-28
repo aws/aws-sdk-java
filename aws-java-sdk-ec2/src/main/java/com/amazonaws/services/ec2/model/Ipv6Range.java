@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [EC2-VPC only] Describes an IPv6 range.
+ * Describes an IPv6 address range.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipv6Range" target="_top">AWS API
@@ -28,7 +28,7 @@ public class Ipv6Range implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv6 address, use the /128 prefix length.
      * </p>
      */
@@ -46,13 +46,13 @@ public class Ipv6Range implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
-     *        The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv6 address, use the /128 prefix length.
+     *        The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To
+     *        specify a single IPv6 address, use the /128 prefix length.
      */
 
     public void setCidrIpv6(String cidrIpv6) {
@@ -61,12 +61,12 @@ public class Ipv6Range implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
-     * @return The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *         a single IPv6 address, use the /128 prefix length.
+     * @return The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To
+     *         specify a single IPv6 address, use the /128 prefix length.
      */
 
     public String getCidrIpv6() {
@@ -75,13 +75,13 @@ public class Ipv6Range implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
-     *        The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv6 address, use the /128 prefix length.
+     *        The IPv6 address range. You can either specify a CIDR block or a source security group, not both. To
+     *        specify a single IPv6 address, use the /128 prefix length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

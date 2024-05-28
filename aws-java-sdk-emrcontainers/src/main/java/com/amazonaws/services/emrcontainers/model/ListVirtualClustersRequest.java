@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
     private String containerProviderId;
     /**
      * <p>
-     * The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     * The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * </p>
      */
     private String containerProviderType;
@@ -67,6 +67,13 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Optional Boolean that specifies whether the operation should return the virtual clusters that have the access
+     * entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.
+     * </p>
+     */
+    private Boolean eksAccessEntryIntegrated;
 
     /**
      * <p>
@@ -110,11 +117,11 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     * The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * </p>
      * 
      * @param containerProviderType
-     *        The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     *        The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * @see ContainerProviderType
      */
 
@@ -124,10 +131,10 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     * The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * </p>
      * 
-     * @return The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     * @return The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * @see ContainerProviderType
      */
 
@@ -137,11 +144,11 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     * The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * </p>
      * 
      * @param containerProviderType
-     *        The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     *        The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerProviderType
      */
@@ -153,11 +160,11 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     * The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * </p>
      * 
      * @param containerProviderType
-     *        The container provider type of the virtual cluster. EKS is the only supported type as of now.
+     *        The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerProviderType
      */
@@ -426,6 +433,70 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Optional Boolean that specifies whether the operation should return the virtual clusters that have the access
+     * entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.
+     * </p>
+     * 
+     * @param eksAccessEntryIntegrated
+     *        Optional Boolean that specifies whether the operation should return the virtual clusters that have the
+     *        access entry integration enabled or disabled. If not specified, the operation returns all applicable
+     *        virtual clusters.
+     */
+
+    public void setEksAccessEntryIntegrated(Boolean eksAccessEntryIntegrated) {
+        this.eksAccessEntryIntegrated = eksAccessEntryIntegrated;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean that specifies whether the operation should return the virtual clusters that have the access
+     * entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.
+     * </p>
+     * 
+     * @return Optional Boolean that specifies whether the operation should return the virtual clusters that have the
+     *         access entry integration enabled or disabled. If not specified, the operation returns all applicable
+     *         virtual clusters.
+     */
+
+    public Boolean getEksAccessEntryIntegrated() {
+        return this.eksAccessEntryIntegrated;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean that specifies whether the operation should return the virtual clusters that have the access
+     * entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.
+     * </p>
+     * 
+     * @param eksAccessEntryIntegrated
+     *        Optional Boolean that specifies whether the operation should return the virtual clusters that have the
+     *        access entry integration enabled or disabled. If not specified, the operation returns all applicable
+     *        virtual clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVirtualClustersRequest withEksAccessEntryIntegrated(Boolean eksAccessEntryIntegrated) {
+        setEksAccessEntryIntegrated(eksAccessEntryIntegrated);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean that specifies whether the operation should return the virtual clusters that have the access
+     * entry integration enabled or disabled. If not specified, the operation returns all applicable virtual clusters.
+     * </p>
+     * 
+     * @return Optional Boolean that specifies whether the operation should return the virtual clusters that have the
+     *         access entry integration enabled or disabled. If not specified, the operation returns all applicable
+     *         virtual clusters.
+     */
+
+    public Boolean isEksAccessEntryIntegrated() {
+        return this.eksAccessEntryIntegrated;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -450,7 +521,9 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getEksAccessEntryIntegrated() != null)
+            sb.append("EksAccessEntryIntegrated: ").append(getEksAccessEntryIntegrated());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +566,10 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getEksAccessEntryIntegrated() == null ^ this.getEksAccessEntryIntegrated() == null)
+            return false;
+        if (other.getEksAccessEntryIntegrated() != null && other.getEksAccessEntryIntegrated().equals(this.getEksAccessEntryIntegrated()) == false)
+            return false;
         return true;
     }
 
@@ -508,6 +585,7 @@ public class ListVirtualClustersRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getStates() == null) ? 0 : getStates().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getEksAccessEntryIntegrated() == null) ? 0 : getEksAccessEntryIntegrated().hashCode());
         return hashCode;
     }
 

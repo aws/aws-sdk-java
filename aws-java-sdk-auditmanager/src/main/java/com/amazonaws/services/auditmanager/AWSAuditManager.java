@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ import com.amazonaws.services.auditmanager.model.*;
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html">Common parameters</a>:
- * Parameters that all Query operations can use.
+ * Parameters that all operations can use.
  * </p>
  * </li>
  * <li>
@@ -88,7 +88,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Associates an evidence folder to an assessment report in a Audit Manager assessment.
+     * Associates an evidence folder to an assessment report in an Audit Manager assessment.
      * </p>
      * 
      * @param associateAssessmentReportEvidenceFolderRequest
@@ -204,7 +204,44 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
+     * Adds one or more pieces of evidence to a control in an Audit Manager assessment.
+     * </p>
+     * <p>
+     * You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a
+     * file from your browser, or enter plain text in response to a risk assessment question.
+     * </p>
+     * <p>
+     * The following restrictions apply to this action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+     * <code>s3ResourcePath</code>, or <code>textResponse</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum size of an individual evidence file: 100 MB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Number of daily manual evidence uploads per control: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Supported file formats: See <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files"
+     * >Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Audit Manager service restrictions, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for
+     * Audit Manager</a>.
      * </p>
      * 
      * @param batchImportEvidenceToAssessmentControlRequest
@@ -218,6 +255,8 @@ public interface AWSAuditManager {
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSAuditManager.BatchImportEvidenceToAssessmentControl
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl"
@@ -459,6 +498,13 @@ public interface AWSAuditManager {
      * <p>
      * Deletes a custom control in Audit Manager.
      * </p>
+     * <important>
+     * <p>
+     * When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s
+     * currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of
+     * your assessments. This includes assessments that you previously created before you deleted the custom control.
+     * </p>
+     * </important>
      * 
      * @param deleteControlRequest
      * @return Result of the DeleteControl operation returned by the service.
@@ -483,58 +529,16 @@ public interface AWSAuditManager {
      * </p>
      * <note>
      * <p>
-     * When you deregister your account from Audit Manager, your data isn’t deleted. If you want to delete your resource
-     * data, you must perform that task separately before you deregister your account. Either, you can do this in the
-     * Audit Manager console. Or, you can use one of the delete API operations that are provided by Audit Manager.
+     * Before you deregister, you can use the <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a>
+     * API operation to set your preferred data retention policy. By default, Audit Manager retains your data. If you
+     * want to delete your data, you can use the <code>DeregistrationPolicy</code> attribute to request the deletion of
+     * your data.
      * </p>
      * <p>
-     * To delete your Audit Manager resource data, see the following instructions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessment.html">DeleteAssessment
-     * </a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html">Deleting an
-     * assessment</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFramework.html">
-     * DeleteAssessmentFramework</a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html">Deleting a custom
-     * framework</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentFrameworkShare.html">
-     * DeleteAssessmentFrameworkShare</a> (see also: <a
-     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html"
-     * >Deleting a share request</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteAssessmentReport.html">
-     * DeleteAssessmentReport</a> (see also: <a href=
-     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps"
-     * >Deleting an assessment report</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeleteControl.html">DeleteControl</a>
-     * (see also: <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html">Deleting a
-     * custom control</a> in the <i>Audit Manager User Guide</i>)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are
-     * listed above.
+     * For more information about data retention, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the
+     * <i>Audit Manager User Guide</i>.
      * </p>
      * </note>
      * 
@@ -559,14 +563,31 @@ public interface AWSAuditManager {
      * <p>
      * Removes the specified Amazon Web Services account as a delegated administrator for Audit Manager.
      * </p>
-     * <important>
      * <p>
      * When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the
      * evidence that you previously collected under that account. This is also the case when you deregister a delegated
-     * administrator from Organizations. However, Audit Manager will stop collecting and attaching evidence to that
+     * administrator from Organizations. However, Audit Manager stops collecting and attaching evidence to that
      * delegated administrator account moving forward.
      * </p>
-     * </important> <note>
+     * <important>
+     * <p>
+     * Keep in mind the following cleanup task if you use evidence finder:
+     * </p>
+     * <p>
+     * Before you use your management account to remove a delegated administrator, make sure that the current delegated
+     * administrator account signs in to Audit Manager and disables evidence finder first. Disabling evidence finder
+     * automatically deletes the event data store that was created in their account when they enabled evidence finder.
+     * If this task isn’t completed, the event data store remains in their account. In this case, we recommend that the
+     * original delegated administrator goes to CloudTrail Lake and manually <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes the
+     * event data store</a>.
+     * </p>
+     * <p>
+     * This cleanup task is necessary to ensure that you don't end up with multiple event data stores. Audit Manager
+     * ignores an unused event data store after you remove or change a delegated administrator account. However, the
+     * unused event data store continues to incur storage costs from CloudTrail Lake if you don't delete it.
+     * </p>
+     * </important>
      * <p>
      * When you deregister a delegated administrator account for Audit Manager, the data for that account isn’t deleted.
      * If you want to delete resource data for a delegated administrator account, you must perform that task separately
@@ -619,10 +640,10 @@ public interface AWSAuditManager {
      * </li>
      * </ul>
      * <p>
-     * At this time, Audit Manager doesn't provide an option to delete evidence. All available delete operations are
-     * listed above.
+     * At this time, Audit Manager doesn't provide an option to delete evidence for a specific delegated administrator.
+     * Instead, when your management account deregisters Audit Manager, we perform a cleanup for the current delegated
+     * administrator account at the time of deregistration.
      * </p>
-     * </note>
      * 
      * @param deregisterOrganizationAdminAccountRequest
      * @return Result of the DeregisterOrganizationAdminAccount operation returned by the service.
@@ -668,7 +689,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns the registration status of an account in Audit Manager.
+     * Gets the registration status of an account in Audit Manager.
      * </p>
      * 
      * @param getAccountStatusRequest
@@ -683,7 +704,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns an assessment from Audit Manager.
+     * Gets information about a specified assessment.
      * </p>
      * 
      * @param getAssessmentRequest
@@ -705,7 +726,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns a framework from Audit Manager.
+     * Gets information about a specified framework.
      * </p>
      * 
      * @param getAssessmentFrameworkRequest
@@ -727,7 +748,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns the URL of an assessment report in Audit Manager.
+     * Gets the URL of an assessment report in Audit Manager.
      * </p>
      * 
      * @param getAssessmentReportUrlRequest
@@ -749,7 +770,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of changelogs from Audit Manager.
+     * Gets a list of changelogs from Audit Manager.
      * </p>
      * 
      * @param getChangeLogsRequest
@@ -771,7 +792,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns a control from Audit Manager.
+     * Gets information about a specified control.
      * </p>
      * 
      * @param getControlRequest
@@ -793,7 +814,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of delegations from an audit owner to a delegate.
+     * Gets a list of delegations from an audit owner to a delegate.
      * </p>
      * 
      * @param getDelegationsRequest
@@ -813,7 +834,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns evidence from Audit Manager.
+     * Gets information about a specified evidence item.
      * </p>
      * 
      * @param getEvidenceRequest
@@ -835,7 +856,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns all evidence from a specified evidence folder in Audit Manager.
+     * Gets all evidence from a specified evidence folder in Audit Manager.
      * </p>
      * 
      * @param getEvidenceByEvidenceFolderRequest
@@ -857,7 +878,59 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns an evidence folder from the specified assessment in Audit Manager.
+     * Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how
+     * to use this operation, see <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files"
+     * >Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to this operation:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum size of an individual evidence file: 100 MB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Number of daily manual evidence uploads per control: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Supported file formats: See <a href=
+     * "https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files"
+     * >Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about Audit Manager service restrictions, see <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for
+     * Audit Manager</a>.
+     * </p>
+     * 
+     * @param getEvidenceFileUploadUrlRequest
+     * @return Result of the GetEvidenceFileUploadUrl operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws AccessDeniedException
+     *         Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit
+     *         Manager settings page, and try again.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAuditManager.GetEvidenceFileUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEvidenceFileUploadUrlResult getEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest getEvidenceFileUploadUrlRequest);
+
+    /**
+     * <p>
+     * Gets an evidence folder from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFolderRequest
@@ -879,7 +952,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns the evidence folders from a specified assessment in Audit Manager.
+     * Gets the evidence folders from a specified assessment in Audit Manager.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentRequest
@@ -901,8 +974,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of evidence folders that are associated with a specified control of an assessment in Audit
-     * Manager.
+     * Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
      * </p>
      * 
      * @param getEvidenceFoldersByAssessmentControlRequest
@@ -966,7 +1038,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns the name of the delegated Amazon Web Services administrator account for the organization.
+     * Gets the name of the delegated Amazon Web Services administrator account for a specified organization.
      * </p>
      * 
      * @param getOrganizationAdminAccountRequest
@@ -988,7 +1060,10 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns a list of the in-scope Amazon Web Services for the specified assessment.
+     * Gets a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create an
+     * assessment</a>, specify which of these services you want to include to narrow the assessment's <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
      * </p>
      * 
      * @param getServicesInScopeRequest
@@ -1008,7 +1083,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Returns the settings for the specified Amazon Web Services account.
+     * Gets the settings for a specified Amazon Web Services account.
      * </p>
      * 
      * @param getSettingsRequest
@@ -1572,6 +1647,13 @@ public interface AWSAuditManager {
      *         Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ServiceQuotaExceededException
+     *         You've reached your account quota for this resource type. To perform the requested action, delete some
+     *         existing resources or <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a>
+     *         from the Service Quotas console. For a list of Audit Manager service quotas, see <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and
+     *         restrictions for Audit Manager</a>.
      * @sample AWSAuditManager.UpdateAssessmentFrameworkShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkShare"
      *      target="_top">AWS API Documentation</a>
@@ -1631,7 +1713,7 @@ public interface AWSAuditManager {
 
     /**
      * <p>
-     * Updates Audit Manager settings for the current user account.
+     * Updates Audit Manager settings for the current account.
      * </p>
      * 
      * @param updateSettingsRequest

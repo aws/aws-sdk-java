@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,14 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
      * </p>
      */
     private CurrentPerformanceRiskRatings currentPerformanceRiskRatings;
+    /**
+     * <p>
+     * An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
+     * </p>
+     */
+    private java.util.List<InferredWorkloadSaving> inferredWorkloadSavings;
 
     /**
      * <p>
@@ -316,6 +324,92 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
+     * </p>
+     * 
+     * @return An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     *         specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for
+     *         the instances that run inferred workload types.
+     */
+
+    public java.util.List<InferredWorkloadSaving> getInferredWorkloadSavings() {
+        return inferredWorkloadSavings;
+    }
+
+    /**
+     * <p>
+     * An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
+     * </p>
+     * 
+     * @param inferredWorkloadSavings
+     *        An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     *        specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     *        instances that run inferred workload types.
+     */
+
+    public void setInferredWorkloadSavings(java.util.Collection<InferredWorkloadSaving> inferredWorkloadSavings) {
+        if (inferredWorkloadSavings == null) {
+            this.inferredWorkloadSavings = null;
+            return;
+        }
+
+        this.inferredWorkloadSavings = new java.util.ArrayList<InferredWorkloadSaving>(inferredWorkloadSavings);
+    }
+
+    /**
+     * <p>
+     * An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInferredWorkloadSavings(java.util.Collection)} or
+     * {@link #withInferredWorkloadSavings(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param inferredWorkloadSavings
+     *        An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     *        specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     *        instances that run inferred workload types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationSummary withInferredWorkloadSavings(InferredWorkloadSaving... inferredWorkloadSavings) {
+        if (this.inferredWorkloadSavings == null) {
+            setInferredWorkloadSavings(new java.util.ArrayList<InferredWorkloadSaving>(inferredWorkloadSavings.length));
+        }
+        for (InferredWorkloadSaving ele : inferredWorkloadSavings) {
+            this.inferredWorkloadSavings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     * specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     * instances that run inferred workload types.
+     * </p>
+     * 
+     * @param inferredWorkloadSavings
+     *        An array of objects that describes the estimated monthly saving amounts for the instances running on the
+     *        specified <code>inferredWorkloadTypes</code>. The array contains the top five savings opportunites for the
+     *        instances that run inferred workload types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationSummary withInferredWorkloadSavings(java.util.Collection<InferredWorkloadSaving> inferredWorkloadSavings) {
+        setInferredWorkloadSavings(inferredWorkloadSavings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -336,7 +430,9 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
         if (getSavingsOpportunity() != null)
             sb.append("SavingsOpportunity: ").append(getSavingsOpportunity()).append(",");
         if (getCurrentPerformanceRiskRatings() != null)
-            sb.append("CurrentPerformanceRiskRatings: ").append(getCurrentPerformanceRiskRatings());
+            sb.append("CurrentPerformanceRiskRatings: ").append(getCurrentPerformanceRiskRatings()).append(",");
+        if (getInferredWorkloadSavings() != null)
+            sb.append("InferredWorkloadSavings: ").append(getInferredWorkloadSavings());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +468,10 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
         if (other.getCurrentPerformanceRiskRatings() != null
                 && other.getCurrentPerformanceRiskRatings().equals(this.getCurrentPerformanceRiskRatings()) == false)
             return false;
+        if (other.getInferredWorkloadSavings() == null ^ this.getInferredWorkloadSavings() == null)
+            return false;
+        if (other.getInferredWorkloadSavings() != null && other.getInferredWorkloadSavings().equals(this.getInferredWorkloadSavings()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +485,7 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getSavingsOpportunity() == null) ? 0 : getSavingsOpportunity().hashCode());
         hashCode = prime * hashCode + ((getCurrentPerformanceRiskRatings() == null) ? 0 : getCurrentPerformanceRiskRatings().hashCode());
+        hashCode = prime * hashCode + ((getInferredWorkloadSavings() == null) ? 0 : getInferredWorkloadSavings().hashCode());
         return hashCode;
     }
 

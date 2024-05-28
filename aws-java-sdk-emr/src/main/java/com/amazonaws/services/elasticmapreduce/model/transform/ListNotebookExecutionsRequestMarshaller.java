@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ListNotebookExecutionsRequestMarshaller {
             .marshallLocationName("To").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Marker").build();
+    private static final MarshallingInfo<String> EXECUTIONENGINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionEngineId").build();
 
     private static final ListNotebookExecutionsRequestMarshaller instance = new ListNotebookExecutionsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListNotebookExecutionsRequestMarshaller {
             protocolMarshaller.marshall(listNotebookExecutionsRequest.getFrom(), FROM_BINDING);
             protocolMarshaller.marshall(listNotebookExecutionsRequest.getTo(), TO_BINDING);
             protocolMarshaller.marshall(listNotebookExecutionsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listNotebookExecutionsRequest.getExecutionEngineId(), EXECUTIONENGINEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

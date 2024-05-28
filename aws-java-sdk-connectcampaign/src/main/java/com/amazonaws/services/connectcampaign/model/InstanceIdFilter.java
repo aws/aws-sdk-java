@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceIdFilter implements Serializable, Cloneable, StructuredPojo {
 
+    private String value;
+
     private String operator;
 
-    private String value;
+    /**
+     * @param value
+     */
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * @param value
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceIdFilter withValue(String value) {
+        setValue(value);
+        return this;
+    }
 
     /**
      * @param operator
@@ -73,32 +99,6 @@ public class InstanceIdFilter implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @param value
-     */
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getValue() {
-        return this.value;
-    }
-
-    /**
-     * @param value
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceIdFilter withValue(String value) {
-        setValue(value);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -110,10 +110,10 @@ public class InstanceIdFilter implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOperator() != null)
-            sb.append("Operator: ").append(getOperator()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getOperator() != null)
+            sb.append("Operator: ").append(getOperator());
         sb.append("}");
         return sb.toString();
     }
@@ -128,13 +128,13 @@ public class InstanceIdFilter implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof InstanceIdFilter == false)
             return false;
         InstanceIdFilter other = (InstanceIdFilter) obj;
-        if (other.getOperator() == null ^ this.getOperator() == null)
-            return false;
-        if (other.getOperator() != null && other.getOperator().equals(this.getOperator()) == false)
-            return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
+        if (other.getOperator() == null ^ this.getOperator() == null)
+            return false;
+        if (other.getOperator() != null && other.getOperator().equals(this.getOperator()) == false)
             return false;
         return true;
     }
@@ -144,8 +144,8 @@ public class InstanceIdFilter implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
         return hashCode;
     }
 

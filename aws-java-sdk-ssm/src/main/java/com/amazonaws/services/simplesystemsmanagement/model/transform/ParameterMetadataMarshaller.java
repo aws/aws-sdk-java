@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class ParameterMetadataMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ARN").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class ParameterMetadataMarshaller {
 
         try {
             protocolMarshaller.marshall(parameterMetadata.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(parameterMetadata.getARN(), ARN_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);

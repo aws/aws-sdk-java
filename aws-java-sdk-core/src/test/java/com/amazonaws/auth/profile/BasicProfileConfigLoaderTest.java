@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@ package com.amazonaws.auth.profile;
 
 import static org.hamcrest.Matchers.isEmptyString;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 import com.amazonaws.AmazonClientException;
@@ -75,10 +77,11 @@ public class BasicProfileConfigLoaderTest {
         assertEquals("testProfile2", profile.getAwsSessionToken());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void duplicateProperty() {
+    @Test
+    public void duplicatePropertyPicksLastValue() {
         File file = ProfileResourceLoader.profilesWithTwoAccessKeyUnderSameProfile().asFile();
-        loadProfiles(file);
+        BasicProfile profile = loadProfiles(file).getProfile("test2");
+        assertEquals("testProfile3", profile.getAwsAccessIdKey());
     }
 
     @Test
@@ -100,6 +103,33 @@ public class BasicProfileConfigLoaderTest {
         File file = ProfileResourceLoader.duplicateProfileWithAndWithoutProfilePrefix().asFile();
         BasicProfile profile = loadProfiles(file).getProfile("test");
         assertEquals("withoutPrefix", profile.getAwsAccessIdKey());
+    }
+
+    @Test
+    public void profilesWithSubPropertiesAreSupported() {
+        File file = ProfileResourceLoader.profileWithSubProperties().asFile();
+        BasicProfile profile = loadProfiles(file).getProfile("test");
+        assertEquals("", profile.getProperties().get("s3"));
+        assertEquals("https://s3-endpoint-override.aws", profile.getProperties().get("endpoint_url"));
+    }
+
+    @Test
+    public void profilesWithSubPropertiesIgnoresDuplicates() {
+        File file = ProfileResourceLoader.profileWithDuplicateSubProperties().asFile();
+        BasicProfile profile = loadProfiles(file).getProfile("test");
+        assertEquals("", profile.getProperties().get("s3"));
+        assertEquals("https://elastic-beanstalk-endpoint-override.aws", profile.getProperties().get("endpoint_url"));
+    }
+
+    @Test
+    public void profilesWithServiceSectionIsSupported() {
+        File file = ProfileResourceLoader.profileWithServiceSection().asFile();
+        AllProfiles allProfiles = loadProfiles(file);
+        BasicProfile serviceSectionAsProfile = allProfiles.getProfile("my-services");
+        BasicProfile serviceSectionRaw = allProfiles.getProfiles().get("services my-services");
+        assertNull(serviceSectionAsProfile);
+        assertNotNull(serviceSectionRaw);
+        assertEquals("https://s3-endpoint-override.aws", serviceSectionRaw.getPropertyValue("endpoint_url"));
     }
 
     public AllProfiles loadProfiles(File file) {

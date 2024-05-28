@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,16 +42,16 @@ public class UpdateThemeData implements Serializable, Cloneable, StructuredPojo 
     private String name;
     /**
      * <p>
-     * Describes the properties that can be overriden to customize the theme.
-     * </p>
-     */
-    private java.util.List<ThemeValues> overrides;
-    /**
-     * <p>
      * A list of key-value pairs that define the theme's properties.
      * </p>
      */
     private java.util.List<ThemeValues> values;
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the theme.
+     * </p>
+     */
+    private java.util.List<ThemeValues> overrides;
 
     /**
      * <p>
@@ -135,76 +135,6 @@ public class UpdateThemeData implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Describes the properties that can be overriden to customize the theme.
-     * </p>
-     * 
-     * @return Describes the properties that can be overriden to customize the theme.
-     */
-
-    public java.util.List<ThemeValues> getOverrides() {
-        return overrides;
-    }
-
-    /**
-     * <p>
-     * Describes the properties that can be overriden to customize the theme.
-     * </p>
-     * 
-     * @param overrides
-     *        Describes the properties that can be overriden to customize the theme.
-     */
-
-    public void setOverrides(java.util.Collection<ThemeValues> overrides) {
-        if (overrides == null) {
-            this.overrides = null;
-            return;
-        }
-
-        this.overrides = new java.util.ArrayList<ThemeValues>(overrides);
-    }
-
-    /**
-     * <p>
-     * Describes the properties that can be overriden to customize the theme.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setOverrides(java.util.Collection)} or {@link #withOverrides(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param overrides
-     *        Describes the properties that can be overriden to customize the theme.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateThemeData withOverrides(ThemeValues... overrides) {
-        if (this.overrides == null) {
-            setOverrides(new java.util.ArrayList<ThemeValues>(overrides.length));
-        }
-        for (ThemeValues ele : overrides) {
-            this.overrides.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes the properties that can be overriden to customize the theme.
-     * </p>
-     * 
-     * @param overrides
-     *        Describes the properties that can be overriden to customize the theme.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateThemeData withOverrides(java.util.Collection<ThemeValues> overrides) {
-        setOverrides(overrides);
-        return this;
-    }
-
-    /**
-     * <p>
      * A list of key-value pairs that define the theme's properties.
      * </p>
      * 
@@ -274,6 +204,76 @@ public class UpdateThemeData implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Describes the properties that can be overriden to customize the theme.
+     * </p>
+     * 
+     * @return Describes the properties that can be overriden to customize the theme.
+     */
+
+    public java.util.List<ThemeValues> getOverrides() {
+        return overrides;
+    }
+
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the theme.
+     * </p>
+     * 
+     * @param overrides
+     *        Describes the properties that can be overriden to customize the theme.
+     */
+
+    public void setOverrides(java.util.Collection<ThemeValues> overrides) {
+        if (overrides == null) {
+            this.overrides = null;
+            return;
+        }
+
+        this.overrides = new java.util.ArrayList<ThemeValues>(overrides);
+    }
+
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the theme.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOverrides(java.util.Collection)} or {@link #withOverrides(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param overrides
+     *        Describes the properties that can be overriden to customize the theme.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateThemeData withOverrides(ThemeValues... overrides) {
+        if (this.overrides == null) {
+            setOverrides(new java.util.ArrayList<ThemeValues>(overrides.length));
+        }
+        for (ThemeValues ele : overrides) {
+            this.overrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the theme.
+     * </p>
+     * 
+     * @param overrides
+     *        Describes the properties that can be overriden to customize the theme.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateThemeData withOverrides(java.util.Collection<ThemeValues> overrides) {
+        setOverrides(overrides);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -289,10 +289,10 @@ public class UpdateThemeData implements Serializable, Cloneable, StructuredPojo 
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getOverrides() != null)
-            sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getOverrides() != null)
+            sb.append("Overrides: ").append(getOverrides());
         sb.append("}");
         return sb.toString();
     }
@@ -315,13 +315,13 @@ public class UpdateThemeData implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getOverrides() == null ^ this.getOverrides() == null)
-            return false;
-        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
-            return false;
         if (other.getValues() == null ^ this.getValues() == null)
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
+            return false;
+        if (other.getOverrides() == null ^ this.getOverrides() == null)
+            return false;
+        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
             return false;
         return true;
     }
@@ -333,8 +333,8 @@ public class UpdateThemeData implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         return hashCode;
     }
 

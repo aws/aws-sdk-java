@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class UpdateExperimentTemplateRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<StructuredPojo> LOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> EXPERIMENTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("experimentOptions").build();
 
     private static final UpdateExperimentTemplateRequestMarshaller instance = new UpdateExperimentTemplateRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class UpdateExperimentTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateExperimentTemplateRequest.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(updateExperimentTemplateRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateExperimentTemplateRequest.getLogConfiguration(), LOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateExperimentTemplateRequest.getExperimentOptions(), EXPERIMENTOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

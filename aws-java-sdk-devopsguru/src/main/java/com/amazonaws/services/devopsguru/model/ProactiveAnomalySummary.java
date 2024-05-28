@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,12 @@ public class ProactiveAnomalySummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.List<AnomalyResource> anomalyResources;
+    /**
+     * <p>
+     * A description of the proactive anomaly.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -690,6 +696,46 @@ public class ProactiveAnomalySummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A description of the proactive anomaly.
+     * </p>
+     * 
+     * @param description
+     *        A description of the proactive anomaly.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the proactive anomaly.
+     * </p>
+     * 
+     * @return A description of the proactive anomaly.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the proactive anomaly.
+     * </p>
+     * 
+     * @param description
+     *        A description of the proactive anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveAnomalySummary withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -726,7 +772,9 @@ public class ProactiveAnomalySummary implements Serializable, Cloneable, Structu
         if (getSourceMetadata() != null)
             sb.append("SourceMetadata: ").append(getSourceMetadata()).append(",");
         if (getAnomalyResources() != null)
-            sb.append("AnomalyResources: ").append(getAnomalyResources());
+            sb.append("AnomalyResources: ").append(getAnomalyResources()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -793,6 +841,10 @@ public class ProactiveAnomalySummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getAnomalyResources() != null && other.getAnomalyResources().equals(this.getAnomalyResources()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -814,6 +866,7 @@ public class ProactiveAnomalySummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getSourceMetadata() == null) ? 0 : getSourceMetadata().hashCode());
         hashCode = prime * hashCode + ((getAnomalyResources() == null) ? 0 : getAnomalyResources().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     private Transport transport;
     /** The name of the VPC interface attachment to use for this output. */
     private VpcInterfaceAttachment vpcInterfaceAttachment;
+    /** The ARN of the bridge that added this output. */
+    private String bridgeArn;
+    /** The bridge output ports currently in use. */
+    private java.util.List<Integer> bridgePorts;
 
     /**
      * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
@@ -565,6 +569,102 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The ARN of the bridge that added this output.
+     * 
+     * @param bridgeArn
+     *        The ARN of the bridge that added this output.
+     */
+
+    public void setBridgeArn(String bridgeArn) {
+        this.bridgeArn = bridgeArn;
+    }
+
+    /**
+     * The ARN of the bridge that added this output.
+     * 
+     * @return The ARN of the bridge that added this output.
+     */
+
+    public String getBridgeArn() {
+        return this.bridgeArn;
+    }
+
+    /**
+     * The ARN of the bridge that added this output.
+     * 
+     * @param bridgeArn
+     *        The ARN of the bridge that added this output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withBridgeArn(String bridgeArn) {
+        setBridgeArn(bridgeArn);
+        return this;
+    }
+
+    /**
+     * The bridge output ports currently in use.
+     * 
+     * @return The bridge output ports currently in use.
+     */
+
+    public java.util.List<Integer> getBridgePorts() {
+        return bridgePorts;
+    }
+
+    /**
+     * The bridge output ports currently in use.
+     * 
+     * @param bridgePorts
+     *        The bridge output ports currently in use.
+     */
+
+    public void setBridgePorts(java.util.Collection<Integer> bridgePorts) {
+        if (bridgePorts == null) {
+            this.bridgePorts = null;
+            return;
+        }
+
+        this.bridgePorts = new java.util.ArrayList<Integer>(bridgePorts);
+    }
+
+    /**
+     * The bridge output ports currently in use.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBridgePorts(java.util.Collection)} or {@link #withBridgePorts(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param bridgePorts
+     *        The bridge output ports currently in use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withBridgePorts(Integer... bridgePorts) {
+        if (this.bridgePorts == null) {
+            setBridgePorts(new java.util.ArrayList<Integer>(bridgePorts.length));
+        }
+        for (Integer ele : bridgePorts) {
+            this.bridgePorts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The bridge output ports currently in use.
+     * 
+     * @param bridgePorts
+     *        The bridge output ports currently in use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withBridgePorts(java.util.Collection<Integer> bridgePorts) {
+        setBridgePorts(bridgePorts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -601,7 +701,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
         if (getTransport() != null)
             sb.append("Transport: ").append(getTransport()).append(",");
         if (getVpcInterfaceAttachment() != null)
-            sb.append("VpcInterfaceAttachment: ").append(getVpcInterfaceAttachment());
+            sb.append("VpcInterfaceAttachment: ").append(getVpcInterfaceAttachment()).append(",");
+        if (getBridgeArn() != null)
+            sb.append("BridgeArn: ").append(getBridgeArn()).append(",");
+        if (getBridgePorts() != null)
+            sb.append("BridgePorts: ").append(getBridgePorts());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +774,14 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVpcInterfaceAttachment() != null && other.getVpcInterfaceAttachment().equals(this.getVpcInterfaceAttachment()) == false)
             return false;
+        if (other.getBridgeArn() == null ^ this.getBridgeArn() == null)
+            return false;
+        if (other.getBridgeArn() != null && other.getBridgeArn().equals(this.getBridgeArn()) == false)
+            return false;
+        if (other.getBridgePorts() == null ^ this.getBridgePorts() == null)
+            return false;
+        if (other.getBridgePorts() != null && other.getBridgePorts().equals(this.getBridgePorts()) == false)
+            return false;
         return true;
     }
 
@@ -691,6 +803,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getTransport() == null) ? 0 : getTransport().hashCode());
         hashCode = prime * hashCode + ((getVpcInterfaceAttachment() == null) ? 0 : getVpcInterfaceAttachment().hashCode());
+        hashCode = prime * hashCode + ((getBridgeArn() == null) ? 0 : getBridgeArn().hashCode());
+        hashCode = prime * hashCode + ((getBridgePorts() == null) ? 0 : getBridgePorts().hashCode());
         return hashCode;
     }
 

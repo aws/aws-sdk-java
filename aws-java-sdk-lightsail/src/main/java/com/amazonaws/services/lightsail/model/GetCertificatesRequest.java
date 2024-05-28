@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,16 @@ public class GetCertificatesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String certificateName;
+    /**
+     * <p>
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the
+     * response will return a next page token that you can specify as the page token in a subsequent request.
+     * </p>
+     */
+    private String pageToken;
 
     /**
      * <p>
@@ -364,6 +374,70 @@ public class GetCertificatesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the
+     * response will return a next page token that you can specify as the page token in a subsequent request.
+     * </p>
+     * 
+     * @param pageToken
+     *        The token to advance to the next page of results from your request.</p>
+     *        <p>
+     *        To get a page token, perform an initial <code>GetCertificates</code> request. If your results are
+     *        paginated, the response will return a next page token that you can specify as the page token in a
+     *        subsequent request.
+     */
+
+    public void setPageToken(String pageToken) {
+        this.pageToken = pageToken;
+    }
+
+    /**
+     * <p>
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the
+     * response will return a next page token that you can specify as the page token in a subsequent request.
+     * </p>
+     * 
+     * @return The token to advance to the next page of results from your request.</p>
+     *         <p>
+     *         To get a page token, perform an initial <code>GetCertificates</code> request. If your results are
+     *         paginated, the response will return a next page token that you can specify as the page token in a
+     *         subsequent request.
+     */
+
+    public String getPageToken() {
+        return this.pageToken;
+    }
+
+    /**
+     * <p>
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the
+     * response will return a next page token that you can specify as the page token in a subsequent request.
+     * </p>
+     * 
+     * @param pageToken
+     *        The token to advance to the next page of results from your request.</p>
+     *        <p>
+     *        To get a page token, perform an initial <code>GetCertificates</code> request. If your results are
+     *        paginated, the response will return a next page token that you can specify as the page token in a
+     *        subsequent request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCertificatesRequest withPageToken(String pageToken) {
+        setPageToken(pageToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -380,7 +454,9 @@ public class GetCertificatesRequest extends com.amazonaws.AmazonWebServiceReques
         if (getIncludeCertificateDetails() != null)
             sb.append("IncludeCertificateDetails: ").append(getIncludeCertificateDetails()).append(",");
         if (getCertificateName() != null)
-            sb.append("CertificateName: ").append(getCertificateName());
+            sb.append("CertificateName: ").append(getCertificateName()).append(",");
+        if (getPageToken() != null)
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }
@@ -407,6 +483,10 @@ public class GetCertificatesRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getCertificateName() != null && other.getCertificateName().equals(this.getCertificateName()) == false)
             return false;
+        if (other.getPageToken() == null ^ this.getPageToken() == null)
+            return false;
+        if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false)
+            return false;
         return true;
     }
 
@@ -418,6 +498,7 @@ public class GetCertificatesRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getCertificateStatuses() == null) ? 0 : getCertificateStatuses().hashCode());
         hashCode = prime * hashCode + ((getIncludeCertificateDetails() == null) ? 0 : getIncludeCertificateDetails().hashCode());
         hashCode = prime * hashCode + ((getCertificateName() == null) ? 0 : getCertificateName().hashCode());
+        hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
         return hashCode;
     }
 

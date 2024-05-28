@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,16 +46,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-mainnet</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-ropsten</code>
-     * </p>
-     * </li>
      * </ul>
      */
     private String networkId;
@@ -76,11 +66,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private NodeConfiguration nodeConfiguration;
     /**
      * <p>
-     * Tags to assign to the node. Each tag consists of a key and optional value.
+     * Tags to assign to the node.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -160,16 +150,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-mainnet</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-ropsten</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param networkId
@@ -181,16 +161,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>n-ethereum-mainnet</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>n-ethereum-rinkeby</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>n-ethereum-ropsten</code>
      *        </p>
      *        </li>
      */
@@ -212,16 +182,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-mainnet</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-ropsten</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The unique identifier of the network for the node.</p>
@@ -232,16 +192,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         <code>n-ethereum-mainnet</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>n-ethereum-rinkeby</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>n-ethereum-ropsten</code>
      *         </p>
      *         </li>
      */
@@ -263,16 +213,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>n-ethereum-mainnet</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-rinkeby</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>n-ethereum-ropsten</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param networkId
@@ -284,16 +224,6 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>n-ethereum-mainnet</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>n-ethereum-rinkeby</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>n-ethereum-ropsten</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -401,11 +331,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Tags to assign to the node. Each tag consists of a key and optional value.
+     * Tags to assign to the node.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -415,10 +345,10 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * 
-     * @return Tags to assign to the node. Each tag consists of a key and optional value.</p>
+     * @return Tags to assign to the node.</p>
      *         <p>
-     *         When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *         an overall maximum of 50 tags added to each resource.
+     *         Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *         request with an overall maximum of 50 tags allowed per resource.
      *         </p>
      *         <p>
      *         For more information about tags, see <a
@@ -434,11 +364,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Tags to assign to the node. Each tag consists of a key and optional value.
+     * Tags to assign to the node.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -449,10 +379,10 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        Tags to assign to the node. Each tag consists of a key and optional value.</p>
+     *        Tags to assign to the node.</p>
      *        <p>
-     *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 tags added to each resource.
+     *        Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *        request with an overall maximum of 50 tags allowed per resource.
      *        </p>
      *        <p>
      *        For more information about tags, see <a
@@ -468,11 +398,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Tags to assign to the node. Each tag consists of a key and optional value.
+     * Tags to assign to the node.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -483,10 +413,10 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        Tags to assign to the node. Each tag consists of a key and optional value.</p>
+     *        Tags to assign to the node.</p>
      *        <p>
-     *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 tags added to each resource.
+     *        Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *        request with an overall maximum of 50 tags allowed per resource.
      *        </p>
      *        <p>
      *        For more information about tags, see <a

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -139,6 +139,11 @@ public class ReplicationRule implements Serializable {
 
     /**
      * Returns the status of existing object replication of current rule.
+     * <p>
+     * Optional configuration to replicate existing source bucket objects. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication"
+     * >Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
      */
     public ExistingObjectReplication getExistingObjectReplication() {
         return existingObjectReplication;

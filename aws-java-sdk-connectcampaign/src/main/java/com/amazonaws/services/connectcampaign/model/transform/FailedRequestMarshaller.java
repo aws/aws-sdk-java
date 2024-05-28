@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,10 @@ public class FailedRequestMarshaller {
 
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
-    private static final MarshallingInfo<String> FAILURECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureCode").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> FAILURECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureCode").build();
 
     private static final FailedRequestMarshaller instance = new FailedRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class FailedRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(failedRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(failedRequest.getFailureCode(), FAILURECODE_BINDING);
             protocolMarshaller.marshall(failedRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(failedRequest.getFailureCode(), FAILURECODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

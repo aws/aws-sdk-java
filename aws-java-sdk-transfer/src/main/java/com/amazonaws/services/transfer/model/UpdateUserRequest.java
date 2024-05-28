@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,15 +32,30 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     * <code>PATH</code>.
+     * </p>
+     * </note>
      */
     private String homeDirectory;
     /**
      * <p>
      * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
-     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as
+     * is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
+     * in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your
+     * users.
      * </p>
+     * <note>
+     * <p>
+     * If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     * <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have
+     * both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     * </p>
+     * </note>
      */
     private String homeDirectoryType;
     /**
@@ -120,7 +135,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String role;
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      * </p>
      */
     private String serverId;
@@ -141,11 +156,23 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     * <code>PATH</code>.
+     * </p>
+     * </note>
      * 
      * @param homeDirectory
      *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
      *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     *        <code>PATH</code>.
+     *        </p>
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -159,10 +186,22 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     * <code>PATH</code>.
+     * </p>
+     * </note>
      * 
      * @return The landing directory (folder) for a user when they log in to the server using the client.</p>
      *         <p>
      *         A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     *         <code>PATH</code>.
+     *         </p>
      */
 
     public String getHomeDirectory() {
@@ -176,11 +215,23 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     * <code>PATH</code>.
+     * </p>
+     * </note>
      * 
      * @param homeDirectory
      *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
      *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code> is set to
+     *        <code>PATH</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,17 +243,32 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
-     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as
+     * is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
+     * in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your
+     * users.
      * </p>
+     * <note>
+     * <p>
+     * If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     * <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have
+     * both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     * </p>
+     * </note>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     *        paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon
+     *        EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to
      *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     *        EFS paths visible to your users.
+     *        EFS paths visible to your users.</p> <note>
+     *        <p>
+     *        If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     *        <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     *        <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot
+     *        have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     *        </p>
      * @see HomeDirectoryType
      */
 
@@ -213,16 +279,31 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
-     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as
+     * is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
+     * in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your
+     * users.
      * </p>
+     * <note>
+     * <p>
+     * If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     * <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have
+     * both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     * </p>
+     * </note>
      * 
      * @return The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *         the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     *         paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
-     *         provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     *         EFS paths visible to your users.
+     *         the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon
+     *         EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need
+     *         to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or
+     *         Amazon EFS paths visible to your users.</p> <note>
+     *         <p>
+     *         If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     *         <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     *         <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You
+     *         cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     *         </p>
      * @see HomeDirectoryType
      */
 
@@ -233,17 +314,32 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
-     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as
+     * is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
+     * in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your
+     * users.
      * </p>
+     * <note>
+     * <p>
+     * If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     * <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have
+     * both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     * </p>
+     * </note>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     *        paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon
+     *        EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to
      *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     *        EFS paths visible to your users.
+     *        EFS paths visible to your users.</p> <note>
+     *        <p>
+     *        If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     *        <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     *        <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot
+     *        have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -256,17 +352,32 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in
-     * their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
+     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon EFS path as
+     * is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
+     * in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your
+     * users.
      * </p>
+     * <note>
+     * <p>
+     * If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     * <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     * <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot have
+     * both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     * </p>
+     * </note>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     *        paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to
+     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or Amazon
+     *        EFS path as is in their file transfer protocol clients. If you set it to <code>LOGICAL</code>, you need to
      *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-     *        EFS paths visible to your users.
+     *        EFS paths visible to your users.</p> <note>
+     *        <p>
+     *        If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings, using the
+     *        <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code> is
+     *        <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code> parameter. You cannot
+     *        have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your template.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -819,11 +930,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
+     *        A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -832,10 +943,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * @return A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      */
 
     public String getServerId() {
@@ -844,11 +955,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
+     *        A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,9 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot
+     * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for
+     * filtering results.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
@@ -101,13 +103,16 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot
+     * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for
+     * filtering results.
      * </p>
      * 
      * @return Filters the results by compliance.</p>
      *         <p>
-     *         The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     *         <code>NOT_APPLICABLE</code>.
+     *         <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config
+     *         rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a
+     *         <code>ComplianceType</code> for filtering results.
      * @see ComplianceType
      */
 
@@ -123,13 +128,17 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot
+     * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for
+     * filtering results.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *        <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule
+     *        cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a
+     *        <code>ComplianceType</code> for filtering results.
      * @see ComplianceType
      */
 
@@ -147,7 +156,9 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot
+     * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for
+     * filtering results.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,7 +169,9 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *        <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule
+     *        cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a
+     *        <code>ComplianceType</code> for filtering results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -178,13 +191,17 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot
+     * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for
+     * filtering results.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *        <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule
+     *        cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a
+     *        <code>ComplianceType</code> for filtering results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -199,13 +216,17 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     * <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot
+     * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for
+     * filtering results.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+     *        <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule
+     *        cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a
+     *        <code>ComplianceType</code> for filtering results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */

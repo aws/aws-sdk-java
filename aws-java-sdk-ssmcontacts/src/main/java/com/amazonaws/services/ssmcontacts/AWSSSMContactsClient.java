@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.ssmcontacts.AWSSSMContactsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ssmcontacts.model.*;
+
 import com.amazonaws.services.ssmcontacts.model.transform.*;
 
 /**
@@ -85,6 +86,15 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssmcontacts.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssmcontacts.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssmcontacts.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssmcontacts.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -94,20 +104,11 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssmcontacts.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ssmcontacts.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssmcontacts.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DataEncryptionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssmcontacts.model.transform.DataEncryptionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ssmcontacts.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ssmcontacts.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ssmcontacts.model.AWSSSMContactsException.class));
 
     public static AWSSSMContactsClientBuilder builder() {
@@ -427,6 +428,141 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Creates a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationRequest
+     * @return Result of the CreateRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.CreateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateRotationResult createRotation(CreateRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRotation(request);
+    }
+
+    @SdkInternalApi
+    final CreateRotationResult executeCreateRotation(CreateRotationRequest createRotationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRotationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRotationRequest> request = null;
+        Response<CreateRotationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRotationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRotation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRotationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an override for a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationOverrideRequest
+     * @return Result of the CreateRotationOverride operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.CreateRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRotationOverrideResult createRotationOverride(CreateRotationOverrideRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRotationOverride(request);
+    }
+
+    @SdkInternalApi
+    final CreateRotationOverrideResult executeCreateRotationOverride(CreateRotationOverrideRequest createRotationOverrideRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRotationOverrideRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRotationOverrideRequest> request = null;
+        Response<CreateRotationOverrideResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRotationOverrideRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRotationOverrideRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRotationOverride");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRotationOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRotationOverrideResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.
      * </p>
      * 
@@ -509,6 +645,8 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
      *         Request references a resource that doesn't exist.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DeleteContact
@@ -616,6 +754,140 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteContactChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation
+     * deletes it from all of them.
+     * </p>
+     * 
+     * @param deleteRotationRequest
+     * @return Result of the DeleteRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.DeleteRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteRotationResult deleteRotation(DeleteRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRotation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRotationResult executeDeleteRotation(DeleteRotationRequest deleteRotationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRotationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRotationRequest> request = null;
+        Response<DeleteRotationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRotationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRotation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRotationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an existing override for an on-call rotation.
+     * </p>
+     * 
+     * @param deleteRotationOverrideRequest
+     * @return Result of the DeleteRotationOverride operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.DeleteRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRotationOverrideResult deleteRotationOverride(DeleteRotationOverrideRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRotationOverride(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRotationOverrideResult executeDeleteRotationOverride(DeleteRotationOverrideRequest deleteRotationOverrideRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRotationOverrideRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRotationOverrideRequest> request = null;
+        Response<DeleteRotationOverrideResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRotationOverrideRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRotationOverrideRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRotationOverride");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRotationOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRotationOverrideResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -962,6 +1234,136 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Retrieves information about an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationRequest
+     * @return Result of the GetRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.GetRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetRotationResult getRotation(GetRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRotation(request);
+    }
+
+    @SdkInternalApi
+    final GetRotationResult executeGetRotation(GetRotationRequest getRotationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRotationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRotationRequest> request = null;
+        Response<GetRotationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRotationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRotation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRotationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about an override to an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationOverrideRequest
+     * @return Result of the GetRotationOverride operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.GetRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRotationOverrideResult getRotationOverride(GetRotationOverrideRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRotationOverride(request);
+    }
+
+    @SdkInternalApi
+    final GetRotationOverrideResult executeGetRotationOverride(GetRotationOverrideRequest getRotationOverrideRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRotationOverrideRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRotationOverrideRequest> request = null;
+        Response<GetRotationOverrideResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRotationOverrideRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRotationOverrideRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRotationOverride");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRotationOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRotationOverrideResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all contact channels for the specified contact.
      * </p>
      * 
@@ -1220,6 +1622,74 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might
+     * target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the
+     * incident starts. The resolution path indicates the hierarchy of <i>escalation plan &gt; on-call schedule &gt;
+     * contact</i>.
+     * </p>
+     * 
+     * @param listPageResolutionsRequest
+     * @return Result of the ListPageResolutions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListPageResolutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPageResolutionsResult listPageResolutions(ListPageResolutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPageResolutions(request);
+    }
+
+    @SdkInternalApi
+    final ListPageResolutionsResult executeListPageResolutions(ListPageResolutionsRequest listPageResolutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPageResolutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPageResolutionsRequest> request = null;
+        Response<ListPageResolutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPageResolutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPageResolutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPageResolutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPageResolutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPageResolutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the engagements to a contact's contact channels.
      * </p>
      * 
@@ -1339,6 +1809,275 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
             HttpResponseHandler<AmazonWebServiceResponse<ListPagesByEngagementResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListPagesByEngagementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of shifts based on rotation configuration parameters.
+     * </p>
+     * <note>
+     * <p>
+     * The Incident Manager primarily uses this operation to populate the <b>Preview</b> calendar. It is not typically
+     * run by end users.
+     * </p>
+     * </note>
+     * 
+     * @param listPreviewRotationShiftsRequest
+     * @return Result of the ListPreviewRotationShifts operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListPreviewRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPreviewRotationShiftsResult listPreviewRotationShifts(ListPreviewRotationShiftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPreviewRotationShifts(request);
+    }
+
+    @SdkInternalApi
+    final ListPreviewRotationShiftsResult executeListPreviewRotationShifts(ListPreviewRotationShiftsRequest listPreviewRotationShiftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPreviewRotationShiftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPreviewRotationShiftsRequest> request = null;
+        Response<ListPreviewRotationShiftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPreviewRotationShiftsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPreviewRotationShiftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPreviewRotationShifts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPreviewRotationShiftsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPreviewRotationShiftsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of overrides currently specified for an on-call rotation.
+     * </p>
+     * 
+     * @param listRotationOverridesRequest
+     * @return Result of the ListRotationOverrides operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListRotationOverrides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRotationOverridesResult listRotationOverrides(ListRotationOverridesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRotationOverrides(request);
+    }
+
+    @SdkInternalApi
+    final ListRotationOverridesResult executeListRotationOverrides(ListRotationOverridesRequest listRotationOverridesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRotationOverridesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRotationOverridesRequest> request = null;
+        Response<ListRotationOverridesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRotationOverridesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRotationOverridesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRotationOverrides");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRotationOverridesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListRotationOverridesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of shifts generated by an existing rotation in the system.
+     * </p>
+     * 
+     * @param listRotationShiftsRequest
+     * @return Result of the ListRotationShifts operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRotationShiftsResult listRotationShifts(ListRotationShiftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRotationShifts(request);
+    }
+
+    @SdkInternalApi
+    final ListRotationShiftsResult executeListRotationShifts(ListRotationShiftsRequest listRotationShiftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRotationShiftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRotationShiftsRequest> request = null;
+        Response<ListRotationShiftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRotationShiftsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRotationShiftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRotationShifts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRotationShiftsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRotationShiftsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of on-call rotations.
+     * </p>
+     * 
+     * @param listRotationsRequest
+     * @return Result of the ListRotations operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListRotations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListRotationsResult listRotations(ListRotationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRotations(request);
+    }
+
+    @SdkInternalApi
+    final ListRotationsResult executeListRotations(ListRotationsRequest listRotationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRotationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRotationsRequest> request = null;
+        Response<ListRotationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRotationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRotationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRotations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRotationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRotationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1950,6 +2689,73 @@ public class AWSSSMContactsClient extends AmazonWebServiceClient implements AWSS
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateContactChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateContactChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the information specified for an on-call rotation.
+     * </p>
+     * 
+     * @param updateRotationRequest
+     * @return Result of the UpdateRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.UpdateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateRotationResult updateRotation(UpdateRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRotation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRotationResult executeUpdateRotation(UpdateRotationRequest updateRotationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRotationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRotationRequest> request = null;
+        Response<UpdateRotationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRotationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Contacts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRotation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRotationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRotationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

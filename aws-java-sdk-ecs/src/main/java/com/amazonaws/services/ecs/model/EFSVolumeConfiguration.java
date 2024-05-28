@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
-     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
@@ -201,7 +201,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
-     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
@@ -209,7 +209,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * 
      * @param transitEncryption
      *        Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
-     *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
+     *        Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
      *        in the <i>Amazon Elastic File System User Guide</i>.
@@ -223,14 +223,14 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
-     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
      * </p>
      * 
      * @return Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
-     *         Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
+     *         Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this
      *         parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *         href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in
      *         transit</a> in the <i>Amazon Elastic File System User Guide</i>.
@@ -244,7 +244,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
-     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
@@ -252,7 +252,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * 
      * @param transitEncryption
      *        Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
-     *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
+     *        Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
      *        in the <i>Amazon Elastic File System User Guide</i>.
@@ -268,7 +268,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon
-     * EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this parameter is
+     * EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is
      * omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the
      * <i>Amazon Elastic File System User Guide</i>.
@@ -276,7 +276,7 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * 
      * @param transitEncryption
      *        Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the
-     *        Amazon EFS server. Transit encryption must be enabled if Amazon EFS IAM authorization is used. If this
+     *        Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this
      *        parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a>
      *        in the <i>Amazon Elastic File System User Guide</i>.

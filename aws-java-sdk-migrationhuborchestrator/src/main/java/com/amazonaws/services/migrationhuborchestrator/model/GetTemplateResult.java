@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,16 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String id;
     /**
      * <p>
+     * &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     * Orchestrator template ARN is
+     * <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource
+     * Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     */
+    private String templateArn;
+    /**
+     * <p>
      * The name of the template.
      * </p>
      */
@@ -55,16 +65,72 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.List<Tool> tools;
     /**
      * <p>
+     * The time at which the template was last created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * The owner of the migration workflow template.
+     * </p>
+     */
+    private String owner;
+    /**
+     * <p>
      * The status of the template.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The time at which the template was last created.
+     * The status message of retrieving migration workflow templates.
      * </p>
      */
-    private java.util.Date creationTime;
+    private String statusMessage;
+    /**
+     * <p>
+     * The class of the migration workflow template. The available template classes are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A2C
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MGN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAP_MULTI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_EC2
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_RDS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VMIE
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String templateClass;
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -103,6 +169,73 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetTemplateResult withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     * Orchestrator template ARN is
+     * <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource
+     * Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param templateArn
+     *        &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     *        Orchestrator template ARN is
+     *        <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public void setTemplateArn(String templateArn) {
+        this.templateArn = templateArn;
+    }
+
+    /**
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     * Orchestrator template ARN is
+     * <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource
+     * Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     *         Orchestrator template ARN is
+     *         <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more
+     *         information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public String getTemplateArn() {
+        return this.templateArn;
+    }
+
+    /**
+     * <p>
+     * &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     * Orchestrator template ARN is
+     * <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information
+     * about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource
+     * Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param templateArn
+     *        &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     *        Orchestrator template ARN is
+     *        <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withTemplateArn(String templateArn) {
+        setTemplateArn(templateArn);
         return this;
     }
 
@@ -328,6 +461,86 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The time at which the template was last created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time at which the template was last created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the template was last created.
+     * </p>
+     * 
+     * @return The time at which the template was last created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the template was last created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time at which the template was last created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the migration workflow template.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of the migration workflow template.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The owner of the migration workflow template.
+     * </p>
+     * 
+     * @return The owner of the migration workflow template.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The owner of the migration workflow template.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of the migration workflow template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the template.
      * </p>
      * 
@@ -387,41 +600,338 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The time at which the template was last created.
+     * The status message of retrieving migration workflow templates.
      * </p>
      * 
-     * @param creationTime
-     *        The time at which the template was last created.
+     * @param statusMessage
+     *        The status message of retrieving migration workflow templates.
      */
 
-    public void setCreationTime(java.util.Date creationTime) {
-        this.creationTime = creationTime;
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
     }
 
     /**
      * <p>
-     * The time at which the template was last created.
+     * The status message of retrieving migration workflow templates.
      * </p>
      * 
-     * @return The time at which the template was last created.
+     * @return The status message of retrieving migration workflow templates.
      */
 
-    public java.util.Date getCreationTime() {
-        return this.creationTime;
+    public String getStatusMessage() {
+        return this.statusMessage;
     }
 
     /**
      * <p>
-     * The time at which the template was last created.
+     * The status message of retrieving migration workflow templates.
      * </p>
      * 
-     * @param creationTime
-     *        The time at which the template was last created.
+     * @param statusMessage
+     *        The status message of retrieving migration workflow templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetTemplateResult withCreationTime(java.util.Date creationTime) {
-        setCreationTime(creationTime);
+    public GetTemplateResult withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The class of the migration workflow template. The available template classes are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A2C
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MGN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAP_MULTI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_EC2
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_RDS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VMIE
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param templateClass
+     *        The class of the migration workflow template. The available template classes are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A2C
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MGN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SAP_MULTI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SQL_EC2
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SQL_RDS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VMIE
+     *        </p>
+     *        </li>
+     */
+
+    public void setTemplateClass(String templateClass) {
+        this.templateClass = templateClass;
+    }
+
+    /**
+     * <p>
+     * The class of the migration workflow template. The available template classes are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A2C
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MGN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAP_MULTI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_EC2
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_RDS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VMIE
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The class of the migration workflow template. The available template classes are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A2C
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MGN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SAP_MULTI
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SQL_EC2
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SQL_RDS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VMIE
+     *         </p>
+     *         </li>
+     */
+
+    public String getTemplateClass() {
+        return this.templateClass;
+    }
+
+    /**
+     * <p>
+     * The class of the migration workflow template. The available template classes are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A2C
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MGN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SAP_MULTI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_EC2
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SQL_RDS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VMIE
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param templateClass
+     *        The class of the migration workflow template. The available template classes are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A2C
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MGN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SAP_MULTI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SQL_EC2
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SQL_RDS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VMIE
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withTemplateClass(String templateClass) {
+        setTemplateClass(templateClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     * 
+     * @return The tags added to the migration workflow template.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     * 
+     * @param tags
+     *        The tags added to the migration workflow template.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     * 
+     * @param tags
+     *        The tags added to the migration workflow template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see GetTemplateResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -439,6 +949,8 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getTemplateArn() != null)
+            sb.append("TemplateArn: ").append(getTemplateArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
@@ -447,10 +959,18 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("Inputs: ").append(getInputs()).append(",");
         if (getTools() != null)
             sb.append("Tools: ").append(getTools()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getTemplateClass() != null)
+            sb.append("TemplateClass: ").append(getTemplateClass()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +989,10 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getTemplateArn() == null ^ this.getTemplateArn() == null)
+            return false;
+        if (other.getTemplateArn() != null && other.getTemplateArn().equals(this.getTemplateArn()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -485,13 +1009,29 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTools() != null && other.getTools().equals(this.getTools()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
-        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
+        if (other.getTemplateClass() == null ^ this.getTemplateClass() == null)
+            return false;
+        if (other.getTemplateClass() != null && other.getTemplateClass().equals(this.getTemplateClass()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -502,12 +1042,17 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getTools() == null) ? 0 : getTools().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTemplateClass() == null) ? 0 : getTemplateClass().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

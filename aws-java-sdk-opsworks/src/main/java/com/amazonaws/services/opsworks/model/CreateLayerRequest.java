@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,19 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String type;
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric characters,
      * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      */
@@ -85,7 +85,7 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
-     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     * JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      * </p>
      */
     private String customJson;
@@ -292,11 +292,11 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The layer name, which is used by the console.
+     *        The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      */
 
     public void setName(String name) {
@@ -305,10 +305,10 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      * 
-     * @return The layer name, which is used by the console.
+     * @return The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      */
 
     public String getName() {
@@ -317,11 +317,11 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The layer name, which is used by the console.
+     * The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The layer name, which is used by the console.
+     *        The layer name, which is used by the console. Layer names can be a maximum of 32 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,23 +332,23 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric characters,
      * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @param shortname
      *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *        AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where
-     *        your app files are installed. It can have a maximum of 200 characters, which are limited to the
-     *        alphanumeric characters, '-', '_', and '.'.</p>
+     *        OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your
+     *        app files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric
+     *        characters, '-', '_', and '.'.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     *        Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      */
 
@@ -358,22 +358,22 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric characters,
      * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @return For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *         AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where
-     *         your app files are installed. It can have a maximum of 200 characters, which are limited to the
-     *         alphanumeric characters, '-', '_', and '.'.</p>
+     *         OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your
+     *         app files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric
+     *         characters, '-', '_', and '.'.</p>
      *         <p>
-     *         The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     *         Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      */
 
@@ -383,23 +383,23 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS
+     * For custom layers only, use this parameter to specify the layer's short name, which is used internally by
      * OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app
-     * files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters,
+     * files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric characters,
      * '-', '_', and '.'.
      * </p>
      * <p>
-     * The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * </p>
      * 
      * @param shortname
      *        For custom layers only, use this parameter to specify the layer's short name, which is used internally by
-     *        AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where
-     *        your app files are installed. It can have a maximum of 200 characters, which are limited to the
-     *        alphanumeric characters, '-', '_', and '.'.</p>
+     *        OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your
+     *        app files are installed. It can have a maximum of 32 characters, which are limited to the alphanumeric
+     *        characters, '-', '_', and '.'.</p>
      *        <p>
-     *        The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     *        Built-in layer short names are defined by OpsWorks Stacks. For more information, see the <a
      *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -595,14 +595,14 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
-     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     * JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      * </p>
      * 
      * @param customJson
      *        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on
      *        the layer's instances. For more information, see <a
      *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
-     *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      */
 
     public void setCustomJson(String customJson) {
@@ -614,13 +614,13 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
-     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     * JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      * </p>
      * 
      * @return A JSON-formatted string containing custom stack configuration and deployment attributes to be installed
      *         on the layer's instances. For more information, see <a
      *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
-     *         Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     *         Custom JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      */
 
     public String getCustomJson() {
@@ -632,14 +632,14 @@ public class CreateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the
      * layer's instances. For more information, see <a
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom
-     * JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     * JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      * </p>
      * 
      * @param customJson
      *        A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on
      *        the layer's instances. For more information, see <a
      *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using
-     *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
+     *        Custom JSON</a>. This feature is supported as of version 1.7.42 of the CLI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

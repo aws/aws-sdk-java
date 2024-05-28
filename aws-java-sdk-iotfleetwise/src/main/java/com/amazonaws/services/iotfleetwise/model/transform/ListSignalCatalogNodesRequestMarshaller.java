@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ListSignalCatalogNodesRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> SIGNALNODETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signalNodeType").build();
 
     private static final ListSignalCatalogNodesRequestMarshaller instance = new ListSignalCatalogNodesRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListSignalCatalogNodesRequestMarshaller {
             protocolMarshaller.marshall(listSignalCatalogNodesRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(listSignalCatalogNodesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listSignalCatalogNodesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listSignalCatalogNodesRequest.getSignalNodeType(), SIGNALNODETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,13 +40,15 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
     private java.util.List<S3Tag> tags;
     /**
      * <p>
-     * Minimum object size to which the rule applies.
+     * The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies
+     * to objects with a size that is greater than 7.
      * </p>
      */
     private Long objectSizeGreaterThan;
     /**
      * <p>
-     * Maximum object size to which the rule applies.
+     * The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies
+     * to objects with a size that is less than 77.
      * </p>
      */
     private Long objectSizeLessThan;
@@ -163,11 +165,13 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Minimum object size to which the rule applies.
+     * The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies
+     * to objects with a size that is greater than 7.
      * </p>
      * 
      * @param objectSizeGreaterThan
-     *        Minimum object size to which the rule applies.
+     *        The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule
+     *        applies to objects with a size that is greater than 7.
      */
 
     public void setObjectSizeGreaterThan(Long objectSizeGreaterThan) {
@@ -176,10 +180,12 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Minimum object size to which the rule applies.
+     * The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies
+     * to objects with a size that is greater than 7.
      * </p>
      * 
-     * @return Minimum object size to which the rule applies.
+     * @return The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule
+     *         applies to objects with a size that is greater than 7.
      */
 
     public Long getObjectSizeGreaterThan() {
@@ -188,11 +194,13 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Minimum object size to which the rule applies.
+     * The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule applies
+     * to objects with a size that is greater than 7.
      * </p>
      * 
      * @param objectSizeGreaterThan
-     *        Minimum object size to which the rule applies.
+     *        The non-inclusive minimum object size for the lifecycle rule. Setting this property to 7 means the rule
+     *        applies to objects with a size that is greater than 7.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +211,13 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum object size to which the rule applies.
+     * The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies
+     * to objects with a size that is less than 77.
      * </p>
      * 
      * @param objectSizeLessThan
-     *        Maximum object size to which the rule applies.
+     *        The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule
+     *        applies to objects with a size that is less than 77.
      */
 
     public void setObjectSizeLessThan(Long objectSizeLessThan) {
@@ -216,10 +226,12 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum object size to which the rule applies.
+     * The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies
+     * to objects with a size that is less than 77.
      * </p>
      * 
-     * @return Maximum object size to which the rule applies.
+     * @return The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule
+     *         applies to objects with a size that is less than 77.
      */
 
     public Long getObjectSizeLessThan() {
@@ -228,11 +240,13 @@ public class LifecycleRuleAndOperator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum object size to which the rule applies.
+     * The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule applies
+     * to objects with a size that is less than 77.
      * </p>
      * 
      * @param objectSizeLessThan
-     *        Maximum object size to which the rule applies.
+     *        The non-inclusive maximum object size for the lifecycle rule. Setting this property to 77 means the rule
+     *        applies to objects with a size that is less than 77.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

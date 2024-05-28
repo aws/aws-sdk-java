@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class TrainingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     * A manifest file that contains references to the training images and ground-truth annotations.
      * </p>
      */
     private java.util.List<Asset> assets;
 
     /**
      * <p>
-     * A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     * A manifest file that contains references to the training images and ground-truth annotations.
      * </p>
      * 
-     * @return A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     * @return A manifest file that contains references to the training images and ground-truth annotations.
      */
 
     public java.util.List<Asset> getAssets() {
@@ -46,11 +46,11 @@ public class TrainingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     * A manifest file that contains references to the training images and ground-truth annotations.
      * </p>
      * 
      * @param assets
-     *        A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     *        A manifest file that contains references to the training images and ground-truth annotations.
      */
 
     public void setAssets(java.util.Collection<Asset> assets) {
@@ -64,7 +64,7 @@ public class TrainingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     * A manifest file that contains references to the training images and ground-truth annotations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class TrainingData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param assets
-     *        A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     *        A manifest file that contains references to the training images and ground-truth annotations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class TrainingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     * A manifest file that contains references to the training images and ground-truth annotations.
      * </p>
      * 
      * @param assets
-     *        A Sagemaker GroundTruth manifest file that contains the training images (assets).
+     *        A manifest file that contains references to the training images and ground-truth annotations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

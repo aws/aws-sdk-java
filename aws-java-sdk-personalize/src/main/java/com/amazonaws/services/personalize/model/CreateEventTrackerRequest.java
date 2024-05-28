@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,8 @@ public class CreateEventTrackerRequest extends com.amazonaws.AmazonWebServiceReq
     private String datasetGroupArn;
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the event tracker.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the event tracker.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -127,11 +127,11 @@ public class CreateEventTrackerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the event tracker.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the event tracker.
      * </p>
      * 
-     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *         apply to the event tracker.
      */
 
@@ -141,12 +141,12 @@ public class CreateEventTrackerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the event tracker.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the event tracker.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the event tracker.
      */
 
@@ -161,8 +161,8 @@ public class CreateEventTrackerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the event tracker.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the event tracker.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +171,7 @@ public class CreateEventTrackerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the event tracker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -188,12 +188,12 @@ public class CreateEventTrackerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the event tracker.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the event tracker.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the event tracker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

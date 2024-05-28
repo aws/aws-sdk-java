@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@
  * Virtual Private Cloud (Amazon VPC). With Network Firewall, you can filter traffic at the perimeter of your VPC. This
  * includes filtering traffic going to and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
  * Network Firewall uses rules that are compatible with Suricata, a free, open source network analysis and threat
- * detection engine. Network Firewall supports Suricata version 5.0.2. For information about Suricata, see the <a
+ * detection engine. Network Firewall supports Suricata version 6.0.9. For information about Suricata, see the <a
  * href="https://suricata.io/">Suricata website</a>.
  * </p>
  * <p>

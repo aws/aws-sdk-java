@@ -1,0 +1,184 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.kinesis.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the data stream or consumer.
+     * </p>
+     */
+    private String resourceARN;
+    /**
+     * <p>
+     * Details of the resource policy. It must include the identity of the principal and the actions allowed on this
+     * resource. This is formatted as a JSON string.
+     * </p>
+     */
+    private String policy;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the data stream or consumer.
+     * </p>
+     * 
+     * @param resourceARN
+     *        The Amazon Resource Name (ARN) of the data stream or consumer.
+     */
+
+    public void setResourceARN(String resourceARN) {
+        this.resourceARN = resourceARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the data stream or consumer.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the data stream or consumer.
+     */
+
+    public String getResourceARN() {
+        return this.resourceARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the data stream or consumer.
+     * </p>
+     * 
+     * @param resourceARN
+     *        The Amazon Resource Name (ARN) of the data stream or consumer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutResourcePolicyRequest withResourceARN(String resourceARN) {
+        setResourceARN(resourceARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details of the resource policy. It must include the identity of the principal and the actions allowed on this
+     * resource. This is formatted as a JSON string.
+     * </p>
+     * 
+     * @param policy
+     *        Details of the resource policy. It must include the identity of the principal and the actions allowed on
+     *        this resource. This is formatted as a JSON string.
+     */
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
+
+    /**
+     * <p>
+     * Details of the resource policy. It must include the identity of the principal and the actions allowed on this
+     * resource. This is formatted as a JSON string.
+     * </p>
+     * 
+     * @return Details of the resource policy. It must include the identity of the principal and the actions allowed on
+     *         this resource. This is formatted as a JSON string.
+     */
+
+    public String getPolicy() {
+        return this.policy;
+    }
+
+    /**
+     * <p>
+     * Details of the resource policy. It must include the identity of the principal and the actions allowed on this
+     * resource. This is formatted as a JSON string.
+     * </p>
+     * 
+     * @param policy
+     *        Details of the resource policy. It must include the identity of the principal and the actions allowed on
+     *        this resource. This is formatted as a JSON string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutResourcePolicyRequest withPolicy(String policy) {
+        setPolicy(policy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getResourceARN() != null)
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
+        if (getPolicy() != null)
+            sb.append("Policy: ").append(getPolicy());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PutResourcePolicyRequest == false)
+            return false;
+        PutResourcePolicyRequest other = (PutResourcePolicyRequest) obj;
+        if (other.getResourceARN() == null ^ this.getResourceARN() == null)
+            return false;
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
+            return false;
+        if (other.getPolicy() == null ^ this.getPolicy() == null)
+            return false;
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public PutResourcePolicyRequest clone() {
+        return (PutResourcePolicyRequest) super.clone();
+    }
+
+}

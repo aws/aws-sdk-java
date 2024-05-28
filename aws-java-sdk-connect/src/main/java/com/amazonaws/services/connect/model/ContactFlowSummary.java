@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * You can also create and update flows using the <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+ * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowSummary" target="_top">AWS API
@@ -62,6 +62,12 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String contactFlowState;
+    /**
+     * <p>
+     * The status of the contact flow.
+     * </p>
+     */
+    private String contactFlowStatus;
 
     /**
      * <p>
@@ -302,6 +308,65 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The status of the contact flow.
+     * </p>
+     * 
+     * @param contactFlowStatus
+     *        The status of the contact flow.
+     * @see ContactFlowStatus
+     */
+
+    public void setContactFlowStatus(String contactFlowStatus) {
+        this.contactFlowStatus = contactFlowStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the contact flow.
+     * </p>
+     * 
+     * @return The status of the contact flow.
+     * @see ContactFlowStatus
+     */
+
+    public String getContactFlowStatus() {
+        return this.contactFlowStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the contact flow.
+     * </p>
+     * 
+     * @param contactFlowStatus
+     *        The status of the contact flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowStatus
+     */
+
+    public ContactFlowSummary withContactFlowStatus(String contactFlowStatus) {
+        setContactFlowStatus(contactFlowStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the contact flow.
+     * </p>
+     * 
+     * @param contactFlowStatus
+     *        The status of the contact flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowStatus
+     */
+
+    public ContactFlowSummary withContactFlowStatus(ContactFlowStatus contactFlowStatus) {
+        this.contactFlowStatus = contactFlowStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -322,7 +387,9 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
         if (getContactFlowType() != null)
             sb.append("ContactFlowType: ").append(getContactFlowType()).append(",");
         if (getContactFlowState() != null)
-            sb.append("ContactFlowState: ").append(getContactFlowState());
+            sb.append("ContactFlowState: ").append(getContactFlowState()).append(",");
+        if (getContactFlowStatus() != null)
+            sb.append("ContactFlowStatus: ").append(getContactFlowStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +424,10 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getContactFlowState() != null && other.getContactFlowState().equals(this.getContactFlowState()) == false)
             return false;
+        if (other.getContactFlowStatus() == null ^ this.getContactFlowStatus() == null)
+            return false;
+        if (other.getContactFlowStatus() != null && other.getContactFlowStatus().equals(this.getContactFlowStatus()) == false)
+            return false;
         return true;
     }
 
@@ -370,6 +441,7 @@ public class ContactFlowSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getContactFlowType() == null) ? 0 : getContactFlowType().hashCode());
         hashCode = prime * hashCode + ((getContactFlowState() == null) ? 0 : getContactFlowState().hashCode());
+        hashCode = prime * hashCode + ((getContactFlowStatus() == null) ? 0 : getContactFlowStatus().hashCode());
         return hashCode;
     }
 

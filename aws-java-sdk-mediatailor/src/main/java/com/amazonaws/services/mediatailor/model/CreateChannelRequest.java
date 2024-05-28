@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     */
+    private java.util.List<String> audiences;
     /**
      * <p>
      * The name of the channel.
@@ -73,6 +79,82 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String tier;
+    /**
+     * <p>
+     * The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    private TimeShiftConfiguration timeShiftConfiguration;
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @return The list of audiences defined in channel.
+     */
+
+    public java.util.List<String> getAudiences() {
+        return audiences;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     */
+
+    public void setAudiences(java.util.Collection<String> audiences) {
+        if (audiences == null) {
+            this.audiences = null;
+            return;
+        }
+
+        this.audiences = new java.util.ArrayList<String>(audiences);
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudiences(java.util.Collection)} or {@link #withAudiences(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withAudiences(String... audiences) {
+        if (this.audiences == null) {
+            setAudiences(new java.util.ArrayList<String>(audiences.length));
+        }
+        for (String ele : audiences) {
+            this.audiences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withAudiences(java.util.Collection<String> audiences) {
+        setAudiences(audiences);
+        return this;
+    }
 
     /**
      * <p>
@@ -493,6 +575,46 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     * 
+     * @param timeShiftConfiguration
+     *        The time-shifted viewing configuration you want to associate to the channel.
+     */
+
+    public void setTimeShiftConfiguration(TimeShiftConfiguration timeShiftConfiguration) {
+        this.timeShiftConfiguration = timeShiftConfiguration;
+    }
+
+    /**
+     * <p>
+     * The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     * 
+     * @return The time-shifted viewing configuration you want to associate to the channel.
+     */
+
+    public TimeShiftConfiguration getTimeShiftConfiguration() {
+        return this.timeShiftConfiguration;
+    }
+
+    /**
+     * <p>
+     * The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     * 
+     * @param timeShiftConfiguration
+     *        The time-shifted viewing configuration you want to associate to the channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withTimeShiftConfiguration(TimeShiftConfiguration timeShiftConfiguration) {
+        setTimeShiftConfiguration(timeShiftConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -504,6 +626,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudiences() != null)
+            sb.append("Audiences: ").append(getAudiences()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getFillerSlate() != null)
@@ -515,7 +639,9 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTier() != null)
-            sb.append("Tier: ").append(getTier());
+            sb.append("Tier: ").append(getTier()).append(",");
+        if (getTimeShiftConfiguration() != null)
+            sb.append("TimeShiftConfiguration: ").append(getTimeShiftConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +656,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof CreateChannelRequest == false)
             return false;
         CreateChannelRequest other = (CreateChannelRequest) obj;
+        if (other.getAudiences() == null ^ this.getAudiences() == null)
+            return false;
+        if (other.getAudiences() != null && other.getAudiences().equals(this.getAudiences()) == false)
+            return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
@@ -554,6 +684,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
             return false;
+        if (other.getTimeShiftConfiguration() == null ^ this.getTimeShiftConfiguration() == null)
+            return false;
+        if (other.getTimeShiftConfiguration() != null && other.getTimeShiftConfiguration().equals(this.getTimeShiftConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -562,12 +696,14 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudiences() == null) ? 0 : getAudiences().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getFillerSlate() == null) ? 0 : getFillerSlate().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getPlaybackMode() == null) ? 0 : getPlaybackMode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime * hashCode + ((getTimeShiftConfiguration() == null) ? 0 : getTimeShiftConfiguration().hashCode());
         return hashCode;
     }
 

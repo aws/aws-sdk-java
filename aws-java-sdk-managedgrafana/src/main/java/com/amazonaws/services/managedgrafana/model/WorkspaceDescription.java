@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private String accountAccessType;
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      */
@@ -54,6 +54,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
      * created to allow Amazon Managed Grafana to read data from these sources.
+     * </p>
+     * <p>
+     * This list is only used when the workspace was created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
      * </p>
      */
     private java.util.List<String> dataSources;
@@ -73,6 +77,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      */
     private Boolean freeTrialConsumed;
     /**
@@ -80,8 +89,21 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that
      * free trial ends.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      */
     private java.util.Date freeTrialExpiration;
+    /**
+     * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     */
+    private String grafanaToken;
     /**
      * <p>
      * The version of Grafana supported in this workspace.
@@ -96,15 +118,21 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private String id;
     /**
      * <p>
-     * If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be
-     * renewed.
+     * If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this
+     * specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through
+     * Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.
      * </p>
      */
     private java.util.Date licenseExpiration;
     /**
      * <p>
-     * Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     * Specifies whether this workspace has a full Grafana Enterprise license.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      */
     private String licenseType;
     /**
@@ -119,6 +147,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     */
+    private NetworkAccessConfiguration networkAccessControl;
     /**
      * <p>
      * The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and
@@ -141,18 +175,23 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private java.util.List<String> organizationalUnits;
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     * console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification channels.
      * </p>
      * <p>
-     * If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating
-     * this workspace in a member account of an organization and that account is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you
-     * must choose <code>CUSTOMER_MANAGED</code>.
+     * If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      * </p>
      * <p>
-     * For more information, see <a
+     * If you are working with a workspace in a member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in
+     * the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     * </p>
+     * <p>
+     * For more information about converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information about the roles and permissions
+     * that must be managed for customer managed workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
@@ -176,6 +215,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     */
+    private VpcConfiguration vpcConfiguration;
     /**
      * <p>
      * The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from.
@@ -269,13 +314,13 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      * 
      * @param authentication
-     *        A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for
-     *        user authentication.
+     *        A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
+     *        authentication.
      */
 
     public void setAuthentication(AuthenticationSummary authentication) {
@@ -284,12 +329,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      * 
-     * @return A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for
-     *         user authentication.
+     * @return A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
+     *         authentication.
      */
 
     public AuthenticationSummary getAuthentication() {
@@ -298,13 +343,13 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      * 
      * @param authentication
-     *        A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for
-     *        user authentication.
+     *        A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
+     *        authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,9 +403,16 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
      * created to allow Amazon Managed Grafana to read data from these sources.
      * </p>
+     * <p>
+     * This list is only used when the workspace was created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+     * </p>
      * 
      * @return Specifies the Amazon Web Services data sources that have been configured to have IAM roles and
-     *         permissions created to allow Amazon Managed Grafana to read data from these sources.
+     *         permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
+     *         <p>
+     *         This list is only used when the workspace was created through the Amazon Web Services console, and the
+     *         <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
      * @see DataSourceType
      */
 
@@ -373,10 +425,17 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
      * created to allow Amazon Managed Grafana to read data from these sources.
      * </p>
+     * <p>
+     * This list is only used when the workspace was created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+     * </p>
      * 
      * @param dataSources
      *        Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
-     *        created to allow Amazon Managed Grafana to read data from these sources.
+     *        created to allow Amazon Managed Grafana to read data from these sources.</p>
+     *        <p>
+     *        This list is only used when the workspace was created through the Amazon Web Services console, and the
+     *        <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
      * @see DataSourceType
      */
 
@@ -395,6 +454,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * created to allow Amazon Managed Grafana to read data from these sources.
      * </p>
      * <p>
+     * This list is only used when the workspace was created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDataSources(java.util.Collection)} or {@link #withDataSources(java.util.Collection)} if you want to
      * override the existing values.
@@ -402,7 +465,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * 
      * @param dataSources
      *        Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
-     *        created to allow Amazon Managed Grafana to read data from these sources.
+     *        created to allow Amazon Managed Grafana to read data from these sources.</p>
+     *        <p>
+     *        This list is only used when the workspace was created through the Amazon Web Services console, and the
+     *        <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -422,10 +488,17 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
      * created to allow Amazon Managed Grafana to read data from these sources.
      * </p>
+     * <p>
+     * This list is only used when the workspace was created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+     * </p>
      * 
      * @param dataSources
      *        Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
-     *        created to allow Amazon Managed Grafana to read data from these sources.
+     *        created to allow Amazon Managed Grafana to read data from these sources.</p>
+     *        <p>
+     *        This list is only used when the workspace was created through the Amazon Web Services console, and the
+     *        <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -440,10 +513,17 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
      * created to allow Amazon Managed Grafana to read data from these sources.
      * </p>
+     * <p>
+     * This list is only used when the workspace was created through the Amazon Web Services console, and the
+     * <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+     * </p>
      * 
      * @param dataSources
      *        Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions
-     *        created to allow Amazon Managed Grafana to read data from these sources.
+     *        created to allow Amazon Managed Grafana to read data from these sources.</p>
+     *        <p>
+     *        This list is only used when the workspace was created through the Amazon Web Services console, and the
+     *        <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -545,9 +625,17 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param freeTrialConsumed
-     *        Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
+     *        Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      */
 
     public void setFreeTrialConsumed(Boolean freeTrialConsumed) {
@@ -558,8 +646,16 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
+     * @return Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p> <note>
+     *         <p>
+     *         Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *         </p>
      */
 
     public Boolean getFreeTrialConsumed() {
@@ -570,9 +666,17 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param freeTrialConsumed
-     *        Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
+     *        Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,8 +689,16 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.
+     * @return Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p> <note>
+     *         <p>
+     *         Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *         </p>
      */
 
     public Boolean isFreeTrialConsumed() {
@@ -598,10 +710,18 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that
      * free trial ends.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param freeTrialExpiration
      *        If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when
-     *        that free trial ends.
+     *        that free trial ends.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      */
 
     public void setFreeTrialExpiration(java.util.Date freeTrialExpiration) {
@@ -613,9 +733,17 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that
      * free trial ends.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @return If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when
-     *         that free trial ends.
+     *         that free trial ends.</p> <note>
+     *         <p>
+     *         Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *         </p>
      */
 
     public java.util.Date getFreeTrialExpiration() {
@@ -627,15 +755,75 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that
      * free trial ends.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param freeTrialExpiration
      *        If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when
-     *        that free trial ends.
+     *        that free trial ends.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public WorkspaceDescription withFreeTrialExpiration(java.util.Date freeTrialExpiration) {
         setFreeTrialExpiration(freeTrialExpiration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @param grafanaToken
+     *        The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *        >Link your account with Grafana Labs</a>.
+     */
+
+    public void setGrafanaToken(String grafanaToken) {
+        this.grafanaToken = grafanaToken;
+    }
+
+    /**
+     * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @return The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *         >Link your account with Grafana Labs</a>.
+     */
+
+    public String getGrafanaToken() {
+        return this.grafanaToken;
+    }
+
+    /**
+     * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @param grafanaToken
+     *        The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *        >Link your account with Grafana Labs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDescription withGrafanaToken(String grafanaToken) {
+        setGrafanaToken(grafanaToken);
         return this;
     }
 
@@ -721,13 +909,15 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be
-     * renewed.
+     * If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this
+     * specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through
+     * Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.
      * </p>
      * 
      * @param licenseExpiration
-     *        If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will
-     *        need to be renewed.
+     *        If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace,
+     *        this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option
+     *        through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.
      */
 
     public void setLicenseExpiration(java.util.Date licenseExpiration) {
@@ -736,12 +926,15 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be
-     * renewed.
+     * If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this
+     * specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through
+     * Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.
      * </p>
      * 
-     * @return If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will
-     *         need to be renewed.
+     * @return If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services
+     *         Marketplace, this specifies when the license ends and will need to be renewed. Purchasing the Enterprise
+     *         plugins option through Amazon Managed Grafana does not have an expiration. It is valid until the license
+     *         is removed.
      */
 
     public java.util.Date getLicenseExpiration() {
@@ -750,13 +943,15 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be
-     * renewed.
+     * If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this
+     * specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through
+     * Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.
      * </p>
      * 
      * @param licenseExpiration
-     *        If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will
-     *        need to be renewed.
+     *        If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace,
+     *        this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option
+     *        through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -767,11 +962,19 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     * Specifies whether this workspace has a full Grafana Enterprise license.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param licenseType
-     *        Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     *        Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @see LicenseType
      */
 
@@ -781,10 +984,18 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     * Specifies whether this workspace has a full Grafana Enterprise license.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     * @return Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *         <p>
+     *         Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *         </p>
      * @see LicenseType
      */
 
@@ -794,11 +1005,19 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     * Specifies whether this workspace has a full Grafana Enterprise license.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param licenseType
-     *        Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     *        Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -810,11 +1029,19 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     * Specifies whether this workspace has a full Grafana Enterprise license.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
      * 
      * @param licenseType
-     *        Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.
+     *        Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -901,6 +1128,46 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     public WorkspaceDescription withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.
+     */
+
+    public void setNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        this.networkAccessControl = networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * 
+     * @return The configuration settings for network access to your workspace.
+     */
+
+    public NetworkAccessConfiguration getNetworkAccessControl() {
+        return this.networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDescription withNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        setNetworkAccessControl(networkAccessControl);
         return this;
     }
 
@@ -1132,34 +1399,44 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     * console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification channels.
      * </p>
      * <p>
-     * If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating
-     * this workspace in a member account of an organization and that account is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you
-     * must choose <code>CUSTOMER_MANAGED</code>.
+     * If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      * </p>
      * <p>
-     * For more information, see <a
+     * If you are working with a workspace in a member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in
+     * the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     * </p>
+     * <p>
+     * For more information about converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information about the roles and permissions
+     * that must be managed for customer managed workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
      * 
      * @param permissionType
-     *        If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     *        provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *        notification channels.</p>
+     *        If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     *        console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions
+     *        that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
      *        <p>
-     *        If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are
-     *        creating this workspace in a member account of an organization and that account is not a delegated
-     *        administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *        accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      *        </p>
      *        <p>
-     *        For more information, see <a
+     *        If you are working with a workspace in a member account of an organization and that account is not a
+     *        delegated administrator account, and you want the workspace to access data sources in other Amazon Web
+     *        Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     *        </p>
+     *        <p>
+     *        For more information about converting between customer and service managed, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *        permissions for data sources and notification channels</a>. For more information about the roles and
+     *        permissions that must be managed for customer managed workspaces, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *        Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
      * @see PermissionType
@@ -1171,33 +1448,43 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     * console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification channels.
      * </p>
      * <p>
-     * If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating
-     * this workspace in a member account of an organization and that account is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you
-     * must choose <code>CUSTOMER_MANAGED</code>.
+     * If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      * </p>
      * <p>
-     * For more information, see <a
+     * If you are working with a workspace in a member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in
+     * the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     * </p>
+     * <p>
+     * For more information about converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information about the roles and permissions
+     * that must be managed for customer managed workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
      * 
-     * @return If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     *         provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *         notification channels.</p>
+     * @return If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     *         console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions
+     *         that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
      *         <p>
-     *         If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are
-     *         creating this workspace in a member account of an organization and that account is not a delegated
-     *         administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *         accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *         If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      *         </p>
      *         <p>
-     *         For more information, see <a
+     *         If you are working with a workspace in a member account of an organization and that account is not a
+     *         delegated administrator account, and you want the workspace to access data sources in other Amazon Web
+     *         Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     *         </p>
+     *         <p>
+     *         For more information about converting between customer and service managed, see <a
+     *         href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *         permissions for data sources and notification channels</a>. For more information about the roles and
+     *         permissions that must be managed for customer managed workspaces, see <a
      *         href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *         Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
      * @see PermissionType
@@ -1209,34 +1496,44 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     * console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification channels.
      * </p>
      * <p>
-     * If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating
-     * this workspace in a member account of an organization and that account is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you
-     * must choose <code>CUSTOMER_MANAGED</code>.
+     * If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      * </p>
      * <p>
-     * For more information, see <a
+     * If you are working with a workspace in a member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in
+     * the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     * </p>
+     * <p>
+     * For more information about converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information about the roles and permissions
+     * that must be managed for customer managed workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
      * 
      * @param permissionType
-     *        If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     *        provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *        notification channels.</p>
+     *        If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     *        console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions
+     *        that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
      *        <p>
-     *        If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are
-     *        creating this workspace in a member account of an organization and that account is not a delegated
-     *        administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *        accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      *        </p>
      *        <p>
-     *        For more information, see <a
+     *        If you are working with a workspace in a member account of an organization and that account is not a
+     *        delegated administrator account, and you want the workspace to access data sources in other Amazon Web
+     *        Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     *        </p>
+     *        <p>
+     *        For more information about converting between customer and service managed, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *        permissions for data sources and notification channels</a>. For more information about the roles and
+     *        permissions that must be managed for customer managed workspaces, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *        Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1250,34 +1547,44 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
-     * channels.
+     * If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     * console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the
+     * workspace needs to use Amazon Web Services data sources and notification channels.
      * </p>
      * <p>
-     * If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are creating
-     * this workspace in a member account of an organization and that account is not a delegated administrator account,
-     * and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you
-     * must choose <code>CUSTOMER_MANAGED</code>.
+     * If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      * </p>
      * <p>
-     * For more information, see <a
+     * If you are working with a workspace in a member account of an organization and that account is not a delegated
+     * administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in
+     * the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     * </p>
+     * <p>
+     * For more information about converting between customer and service managed, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     * permissions for data sources and notification channels</a>. For more information about the roles and permissions
+     * that must be managed for customer managed workspaces, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
      * 
      * @param permissionType
-     *        If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
-     *        provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     *        notification channels.</p>
+     *        If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana
+     *        console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions
+     *        that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
      *        <p>
-     *        If this is <code>CUSTOMER_MANAGED</code>, you manage those roles and permissions yourself. If you are
-     *        creating this workspace in a member account of an organization and that account is not a delegated
-     *        administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *        accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.
      *        </p>
      *        <p>
-     *        For more information, see <a
+     *        If you are working with a workspace in a member account of an organization and that account is not a
+     *        delegated administrator account, and you want the workspace to access data sources in other Amazon Web
+     *        Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.
+     *        </p>
+     *        <p>
+     *        For more information about converting between customer and service managed, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing
+     *        permissions for data sources and notification channels</a>. For more information about the roles and
+     *        permissions that must be managed for customer managed workspaces, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
      *        Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1459,6 +1766,46 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     * 
+     * @return The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDescription withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from.
      * This role must already exist.
      * </p>
@@ -1531,6 +1878,8 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             sb.append("FreeTrialConsumed: ").append(getFreeTrialConsumed()).append(",");
         if (getFreeTrialExpiration() != null)
             sb.append("FreeTrialExpiration: ").append(getFreeTrialExpiration()).append(",");
+        if (getGrafanaToken() != null)
+            sb.append("GrafanaToken: ").append(getGrafanaToken()).append(",");
         if (getGrafanaVersion() != null)
             sb.append("GrafanaVersion: ").append(getGrafanaVersion()).append(",");
         if (getId() != null)
@@ -1543,6 +1892,8 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             sb.append("Modified: ").append(getModified()).append(",");
         if (getName() != null)
             sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
+        if (getNetworkAccessControl() != null)
+            sb.append("NetworkAccessControl: ").append(getNetworkAccessControl()).append(",");
         if (getNotificationDestinations() != null)
             sb.append("NotificationDestinations: ").append(getNotificationDestinations()).append(",");
         if (getOrganizationRoleName() != null)
@@ -1557,6 +1908,8 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getWorkspaceRoleArn() != null)
             sb.append("WorkspaceRoleArn: ").append("***Sensitive Data Redacted***");
         sb.append("}");
@@ -1605,6 +1958,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getFreeTrialExpiration() != null && other.getFreeTrialExpiration().equals(this.getFreeTrialExpiration()) == false)
             return false;
+        if (other.getGrafanaToken() == null ^ this.getGrafanaToken() == null)
+            return false;
+        if (other.getGrafanaToken() != null && other.getGrafanaToken().equals(this.getGrafanaToken()) == false)
+            return false;
         if (other.getGrafanaVersion() == null ^ this.getGrafanaVersion() == null)
             return false;
         if (other.getGrafanaVersion() != null && other.getGrafanaVersion().equals(this.getGrafanaVersion()) == false)
@@ -1628,6 +1985,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getNetworkAccessControl() == null ^ this.getNetworkAccessControl() == null)
+            return false;
+        if (other.getNetworkAccessControl() != null && other.getNetworkAccessControl().equals(this.getNetworkAccessControl()) == false)
             return false;
         if (other.getNotificationDestinations() == null ^ this.getNotificationDestinations() == null)
             return false;
@@ -1657,6 +2018,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
         if (other.getWorkspaceRoleArn() == null ^ this.getWorkspaceRoleArn() == null)
             return false;
         if (other.getWorkspaceRoleArn() != null && other.getWorkspaceRoleArn().equals(this.getWorkspaceRoleArn()) == false)
@@ -1677,12 +2042,14 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getFreeTrialConsumed() == null) ? 0 : getFreeTrialConsumed().hashCode());
         hashCode = prime * hashCode + ((getFreeTrialExpiration() == null) ? 0 : getFreeTrialExpiration().hashCode());
+        hashCode = prime * hashCode + ((getGrafanaToken() == null) ? 0 : getGrafanaToken().hashCode());
         hashCode = prime * hashCode + ((getGrafanaVersion() == null) ? 0 : getGrafanaVersion().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getLicenseExpiration() == null) ? 0 : getLicenseExpiration().hashCode());
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getModified() == null) ? 0 : getModified().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAccessControl() == null) ? 0 : getNetworkAccessControl().hashCode());
         hashCode = prime * hashCode + ((getNotificationDestinations() == null) ? 0 : getNotificationDestinations().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnits() == null) ? 0 : getOrganizationalUnits().hashCode());
@@ -1690,6 +2057,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceRoleArn() == null) ? 0 : getWorkspaceRoleArn().hashCode());
         return hashCode;
     }

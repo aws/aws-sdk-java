@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,12 +61,22 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
     private Integer maxRecords;
     /**
      * <p>
-     * Filters the list of option groups to only include groups associated with a specific database engine.
+     * A filter to only include option groups associated with this database engine.
      * </p>
      * <p>
      * Valid Values:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>mariadb</code>
@@ -385,12 +395,22 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters the list of option groups to only include groups associated with a specific database engine.
+     * A filter to only include option groups associated with this database engine.
      * </p>
      * <p>
      * Valid Values:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>mariadb</code>
@@ -449,11 +469,21 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param engineName
-     *        Filters the list of option groups to only include groups associated with a specific database engine.</p>
+     *        A filter to only include option groups associated with this database engine.</p>
      *        <p>
      *        Valid Values:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db2-ae</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-se</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>mariadb</code>
@@ -517,12 +547,22 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters the list of option groups to only include groups associated with a specific database engine.
+     * A filter to only include option groups associated with this database engine.
      * </p>
      * <p>
      * Valid Values:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>mariadb</code>
@@ -580,11 +620,21 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * 
-     * @return Filters the list of option groups to only include groups associated with a specific database engine.</p>
+     * @return A filter to only include option groups associated with this database engine.</p>
      *         <p>
      *         Valid Values:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>db2-ae</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>db2-se</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>mariadb</code>
@@ -648,12 +698,22 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters the list of option groups to only include groups associated with a specific database engine.
+     * A filter to only include option groups associated with this database engine.
      * </p>
      * <p>
      * Valid Values:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>mariadb</code>
@@ -712,11 +772,21 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param engineName
-     *        Filters the list of option groups to only include groups associated with a specific database engine.</p>
+     *        A filter to only include option groups associated with this database engine.</p>
      *        <p>
      *        Valid Values:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db2-ae</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-se</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>mariadb</code>

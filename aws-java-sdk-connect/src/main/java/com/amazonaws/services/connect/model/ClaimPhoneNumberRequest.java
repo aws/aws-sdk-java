@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,11 +27,19 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      */
     private String targetArn;
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     */
+    private String instanceId;
     /**
      * <p>
      * The phone number you want to claim. Phone numbers are formatted
@@ -47,7 +55,7 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
     private String phoneNumberDescription;
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      */
@@ -59,18 +67,22 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
      * idempotent APIs</a>.
      * </p>
+     * <p>
+     * Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
+     * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      * 
      * @param targetArn
      *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
-     *        numbers are claimed to.
+     *        number inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>
+     *        .
      */
 
     public void setTargetArn(String targetArn) {
@@ -79,12 +91,13 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
-     *         numbers are claimed to.
+     *         number inbound traffic is routed through. You must enter <code>InstanceId</code> or
+     *         <code>TargetArn</code>.
      */
 
     public String getTargetArn() {
@@ -93,18 +106,74 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are
-     * claimed to.
+     * The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number
+     * inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
      * </p>
      * 
      * @param targetArn
      *        The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone
-     *        numbers are claimed to.
+     *        number inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ClaimPhoneNumberRequest withTargetArn(String targetArn) {
         setTargetArn(targetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or
+     *        <code>TargetArn</code>.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or
+     *         <code>TargetArn</code>.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or
+     *        <code>TargetArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClaimPhoneNumberRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
         return this;
     }
 
@@ -196,11 +265,11 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
-     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     * @return The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *         {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -210,12 +279,12 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -225,12 +294,12 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -275,12 +344,17 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
      * idempotent APIs</a>.
      * </p>
+     * <p>
+     * Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
+     * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
      *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
      *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
-     *        safe with idempotent APIs</a>.
+     *        safe with idempotent APIs</a>.</p>
+     *        <p>
+     *        Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
      */
 
     public void setClientToken(String clientToken) {
@@ -294,11 +368,16 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
      * idempotent APIs</a>.
      * </p>
+     * <p>
+     * Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
+     * </p>
      * 
      * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
      *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
      *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     *         retries safe with idempotent APIs</a>.
+     *         retries safe with idempotent APIs</a>.</p>
+     *         <p>
+     *         Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
      */
 
     public String getClientToken() {
@@ -312,12 +391,17 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
      * idempotent APIs</a>.
      * </p>
+     * <p>
+     * Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
+     * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
      *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
      *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
-     *        safe with idempotent APIs</a>.
+     *        safe with idempotent APIs</a>.</p>
+     *        <p>
+     *        Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,6 +424,8 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getTargetArn() != null)
             sb.append("TargetArn: ").append(getTargetArn()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPhoneNumber() != null)
             sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
         if (getPhoneNumberDescription() != null)
@@ -366,6 +452,10 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTargetArn() != null && other.getTargetArn().equals(this.getTargetArn()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
             return false;
         if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
@@ -391,6 +481,7 @@ public class ClaimPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
         hashCode = prime * hashCode + ((getPhoneNumberDescription() == null) ? 0 : getPhoneNumberDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

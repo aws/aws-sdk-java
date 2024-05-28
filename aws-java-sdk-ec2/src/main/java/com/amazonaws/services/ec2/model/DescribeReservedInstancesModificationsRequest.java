@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,12 +69,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * <p>
      * <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved
      * Instances.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
@@ -164,12 +158,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
@@ -236,12 +224,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *         <p>
      *         <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
      *         Reserved Instances.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     *         Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -324,12 +306,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
@@ -397,12 +373,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *        <p>
      *        <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
      *        Reserved Instances.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     *        Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -487,12 +457,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
@@ -565,12 +529,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *        <p>
      *        <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
      *        Reserved Instances.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     *        Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -657,12 +615,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     * Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
      * </p>
      * </li>
@@ -730,12 +682,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      *        <p>
      *        <code>modification-result.target-configuration.instance-type</code> - The instance type of the new
      *        Reserved Instances.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>modification-result.target-configuration.platform</code> - The network platform of the new Reserved
-     *        Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>

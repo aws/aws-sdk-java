@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession" target="_top">AWS API
  *      Documentation</a>
@@ -42,8 +39,8 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
     private String playerId;
     /**
      * <p>
-     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
-     * needed for use in the game.
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
      * </p>
      */
     private String playerData;
@@ -130,13 +127,13 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
-     * needed for use in the game.
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
      * </p>
      * 
      * @param playerData
-     *        Developer-defined information related to a player. GameLift does not use this data, so it can be formatted
-     *        as needed for use in the game.
+     *        Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
+     *        formatted as needed for use in the game.
      */
 
     public void setPlayerData(String playerData) {
@@ -145,11 +142,11 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
-     * needed for use in the game.
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
      * </p>
      * 
-     * @return Developer-defined information related to a player. GameLift does not use this data, so it can be
+     * @return Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
      *         formatted as needed for use in the game.
      */
 
@@ -159,13 +156,13 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
-     * needed for use in the game.
+     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
+     * as needed for use in the game.
      * </p>
      * 
      * @param playerData
-     *        Developer-defined information related to a player. GameLift does not use this data, so it can be formatted
-     *        as needed for use in the game.
+     *        Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
+     *        formatted as needed for use in the game.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,7 +186,7 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getGameSessionId() != null)
             sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getPlayerId() != null)
-            sb.append("PlayerId: ").append(getPlayerId()).append(",");
+            sb.append("PlayerId: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlayerData() != null)
             sb.append("PlayerData: ").append(getPlayerData());
         sb.append("}");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format
- * in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose,
+ * The OpenX SerDe. Used by Firehose for deserializing data, which means converting it from the JSON format in
+ * preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose,
  * depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.
  * </p>
  * 
@@ -32,10 +32,10 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data
-     * Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column
-     * names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b"
-     * when using this option.
+     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Firehose to
+     * replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For
+     * example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using
+     * this option.
      * </p>
      * <p>
      * The default is <code>false</code>.
@@ -44,7 +44,7 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
     private Boolean convertDotsInJsonKeysToUnderscores;
     /**
      * <p>
-     * When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase before
+     * When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
      * deserializing them.
      * </p>
      */
@@ -61,18 +61,18 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data
-     * Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column
-     * names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b"
-     * when using this option.
+     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Firehose to
+     * replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For
+     * example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using
+     * this option.
      * </p>
      * <p>
      * The default is <code>false</code>.
      * </p>
      * 
      * @param convertDotsInJsonKeysToUnderscores
-     *        When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis
-     *        Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in
+     *        When set to <code>true</code>, specifies that the names of the keys include dots and that you want
+     *        Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in
      *        column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name
      *        to be "a_b" when using this option.</p>
      *        <p>
@@ -85,19 +85,19 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data
-     * Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column
-     * names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b"
-     * when using this option.
+     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Firehose to
+     * replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For
+     * example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using
+     * this option.
      * </p>
      * <p>
      * The default is <code>false</code>.
      * </p>
      * 
      * @return When set to <code>true</code>, specifies that the names of the keys include dots and that you want
-     *         Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow
-     *         dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the
-     *         column name to be "a_b" when using this option.</p>
+     *         Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in
+     *         column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name
+     *         to be "a_b" when using this option.</p>
      *         <p>
      *         The default is <code>false</code>.
      */
@@ -108,18 +108,18 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data
-     * Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column
-     * names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b"
-     * when using this option.
+     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Firehose to
+     * replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For
+     * example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using
+     * this option.
      * </p>
      * <p>
      * The default is <code>false</code>.
      * </p>
      * 
      * @param convertDotsInJsonKeysToUnderscores
-     *        When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis
-     *        Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in
+     *        When set to <code>true</code>, specifies that the names of the keys include dots and that you want
+     *        Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in
      *        column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name
      *        to be "a_b" when using this option.</p>
      *        <p>
@@ -134,19 +134,19 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Kinesis Data
-     * Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in column
-     * names. For example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b"
-     * when using this option.
+     * When set to <code>true</code>, specifies that the names of the keys include dots and that you want Firehose to
+     * replace them with underscores. This is useful because Apache Hive does not allow dots in column names. For
+     * example, if the JSON contains a key whose name is "a.b", you can define the column name to be "a_b" when using
+     * this option.
      * </p>
      * <p>
      * The default is <code>false</code>.
      * </p>
      * 
      * @return When set to <code>true</code>, specifies that the names of the keys include dots and that you want
-     *         Kinesis Data Firehose to replace them with underscores. This is useful because Apache Hive does not allow
-     *         dots in column names. For example, if the JSON contains a key whose name is "a.b", you can define the
-     *         column name to be "a_b" when using this option.</p>
+     *         Firehose to replace them with underscores. This is useful because Apache Hive does not allow dots in
+     *         column names. For example, if the JSON contains a key whose name is "a.b", you can define the column name
+     *         to be "a_b" when using this option.</p>
      *         <p>
      *         The default is <code>false</code>.
      */
@@ -157,13 +157,13 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase before
+     * When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
      * deserializing them.
      * </p>
      * 
      * @param caseInsensitive
-     *        When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase
-     *        before deserializing them.
+     *        When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
+     *        deserializing them.
      */
 
     public void setCaseInsensitive(Boolean caseInsensitive) {
@@ -172,12 +172,12 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase before
+     * When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
      * deserializing them.
      * </p>
      * 
-     * @return When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to
-     *         lowercase before deserializing them.
+     * @return When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
+     *         deserializing them.
      */
 
     public Boolean getCaseInsensitive() {
@@ -186,13 +186,13 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase before
+     * When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
      * deserializing them.
      * </p>
      * 
      * @param caseInsensitive
-     *        When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase
-     *        before deserializing them.
+     *        When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
+     *        deserializing them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,12 +203,12 @@ public class OpenXJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to lowercase before
+     * When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
      * deserializing them.
      * </p>
      * 
-     * @return When set to <code>true</code>, which is the default, Kinesis Data Firehose converts JSON keys to
-     *         lowercase before deserializing them.
+     * @return When set to <code>true</code>, which is the default, Firehose converts JSON keys to lowercase before
+     *         deserializing them.
      */
 
     public Boolean isCaseInsensitive() {

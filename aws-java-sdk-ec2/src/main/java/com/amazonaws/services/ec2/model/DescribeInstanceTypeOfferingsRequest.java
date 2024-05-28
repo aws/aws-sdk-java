@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,31 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <p>
      * The location type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     * Availability Zone for the current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>region</code> - The current Region. If you specify a location filter, it must match the current Region.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String locationType;
     /**
@@ -39,13 +64,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>location</code> - This depends on the location type. For example, if the location type is
-     * <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     * <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     * <code>location</code> - The location. For a list of possible identifiers, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
+     * Zones</a>.
      * </p>
      * </li>
      * </ul>
@@ -53,14 +80,16 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
@@ -69,9 +98,59 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <p>
      * The location type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     * Availability Zone for the current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>region</code> - The current Region. If you specify a location filter, it must match the current Region.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param locationType
-     *        The location type.
+     *        The location type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     *        Availability Zone for the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for
+     *        the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for
+     *        the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>region</code> - The current Region. If you specify a location filter, it must match the current
+     *        Region.
+     *        </p>
+     *        </li>
      * @see LocationType
      */
 
@@ -83,8 +162,58 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <p>
      * The location type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     * Availability Zone for the current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>region</code> - The current Region. If you specify a location filter, it must match the current Region.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The location type.
+     * @return The location type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     *         Availability Zone for the current Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID
+     *         for the current Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for
+     *         the current Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>region</code> - The current Region. If you specify a location filter, it must match the current
+     *         Region.
+     *         </p>
+     *         </li>
      * @see LocationType
      */
 
@@ -96,9 +225,59 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <p>
      * The location type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     * Availability Zone for the current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>region</code> - The current Region. If you specify a location filter, it must match the current Region.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param locationType
-     *        The location type.
+     *        The location type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     *        Availability Zone for the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for
+     *        the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for
+     *        the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>region</code> - The current Region. If you specify a location filter, it must match the current
+     *        Region.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationType
      */
@@ -112,9 +291,59 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <p>
      * The location type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     * Availability Zone for the current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for the
+     * current Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>region</code> - The current Region. If you specify a location filter, it must match the current Region.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param locationType
-     *        The location type.
+     *        The location type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone. When you specify a location filter, it must be an
+     *        Availability Zone for the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone-id</code> - The AZ ID. When you specify a location filter, it must be an AZ ID for
+     *        the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost</code> - The Outpost ARN. When you specify a location filter, it must be an Outpost ARN for
+     *        the current Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>region</code> - The current Region. If you specify a location filter, it must match the current
+     *        Region.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationType
      */
@@ -131,13 +360,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>location</code> - This depends on the location type. For example, if the location type is
-     * <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     * <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     * <code>location</code> - The location. For a list of possible identifiers, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
+     * Zones</a>.
      * </p>
      * </li>
      * </ul>
@@ -146,13 +377,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>location</code> - This depends on the location type. For example, if the location type is
-     *         <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     *         <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     *         <code>location</code> - The location. For a list of possible identifiers, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+     *         and Zones</a>.
      *         </p>
      *         </li>
      */
@@ -171,13 +404,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>location</code> - This depends on the location type. For example, if the location type is
-     * <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     * <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     * <code>location</code> - The location. For a list of possible identifiers, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
+     * Zones</a>.
      * </p>
      * </li>
      * </ul>
@@ -187,13 +422,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>location</code> - This depends on the location type. For example, if the location type is
-     *        <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     *        <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     *        <code>location</code> - The location. For a list of possible identifiers, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+     *        and Zones</a>.
      *        </p>
      *        </li>
      */
@@ -214,13 +451,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>location</code> - This depends on the location type. For example, if the location type is
-     * <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     * <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     * <code>location</code> - The location. For a list of possible identifiers, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
+     * Zones</a>.
      * </p>
      * </li>
      * </ul>
@@ -235,13 +474,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>location</code> - This depends on the location type. For example, if the location type is
-     *        <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     *        <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     *        <code>location</code> - The location. For a list of possible identifiers, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+     *        and Zones</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -264,13 +505,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>location</code> - This depends on the location type. For example, if the location type is
-     * <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     * <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     * <code>location</code> - The location. For a list of possible identifiers, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
+     * Zones</a>.
      * </p>
      * </li>
      * </ul>
@@ -280,13 +523,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>location</code> - This depends on the location type. For example, if the location type is
-     *        <code>region</code> (default), the location is the Region code (for example, <code>us-east-2</code>.)
+     *        <code>instance-type</code> - The instance type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+     *        <code>location</code> - The location. For a list of possible identifiers, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+     *        and Zones</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -299,13 +544,16 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the next token value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -314,12 +562,15 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the next token value.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -328,13 +579,16 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the next token value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,11 +599,13 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -358,10 +614,12 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -370,11 +628,13 @@ public class DescribeInstanceTypeOfferingsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

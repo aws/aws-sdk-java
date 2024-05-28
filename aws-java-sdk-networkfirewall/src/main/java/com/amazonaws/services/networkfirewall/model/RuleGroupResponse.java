@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,6 +131,17 @@ public class RuleGroupResponse implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to
+     * <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network
+     * Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's
+     * functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which
+     * impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis
+     * results.
+     * </p>
+     */
+    private java.util.List<AnalysisResult> analysisResults;
 
     /**
      * <p>
@@ -865,6 +876,116 @@ public class RuleGroupResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to
+     * <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network
+     * Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's
+     * functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which
+     * impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis
+     * results.
+     * </p>
+     * 
+     * @return The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code>
+     *         to <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
+     *         Network Firewall analyzes the rule group and identifies the rules that might adversely effect your
+     *         firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic
+     *         asymmetrically, which impacts the service's ability to properly process traffic, the service includes the
+     *         rule in the list of analysis results.
+     */
+
+    public java.util.List<AnalysisResult> getAnalysisResults() {
+        return analysisResults;
+    }
+
+    /**
+     * <p>
+     * The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to
+     * <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network
+     * Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's
+     * functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which
+     * impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis
+     * results.
+     * </p>
+     * 
+     * @param analysisResults
+     *        The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code>
+     *        to <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
+     *        Network Firewall analyzes the rule group and identifies the rules that might adversely effect your
+     *        firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic
+     *        asymmetrically, which impacts the service's ability to properly process traffic, the service includes the
+     *        rule in the list of analysis results.
+     */
+
+    public void setAnalysisResults(java.util.Collection<AnalysisResult> analysisResults) {
+        if (analysisResults == null) {
+            this.analysisResults = null;
+            return;
+        }
+
+        this.analysisResults = new java.util.ArrayList<AnalysisResult>(analysisResults);
+    }
+
+    /**
+     * <p>
+     * The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to
+     * <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network
+     * Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's
+     * functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which
+     * impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis
+     * results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAnalysisResults(java.util.Collection)} or {@link #withAnalysisResults(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param analysisResults
+     *        The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code>
+     *        to <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
+     *        Network Firewall analyzes the rule group and identifies the rules that might adversely effect your
+     *        firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic
+     *        asymmetrically, which impacts the service's ability to properly process traffic, the service includes the
+     *        rule in the list of analysis results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroupResponse withAnalysisResults(AnalysisResult... analysisResults) {
+        if (this.analysisResults == null) {
+            setAnalysisResults(new java.util.ArrayList<AnalysisResult>(analysisResults.length));
+        }
+        for (AnalysisResult ele : analysisResults) {
+            this.analysisResults.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code> to
+     * <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network
+     * Firewall analyzes the rule group and identifies the rules that might adversely effect your firewall's
+     * functionality. For example, if Network Firewall detects a rule that's routing traffic asymmetrically, which
+     * impacts the service's ability to properly process traffic, the service includes the rule in the list of analysis
+     * results.
+     * </p>
+     * 
+     * @param analysisResults
+     *        The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code>
+     *        to <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
+     *        Network Firewall analyzes the rule group and identifies the rules that might adversely effect your
+     *        firewall's functionality. For example, if Network Firewall detects a rule that's routing traffic
+     *        asymmetrically, which impacts the service's ability to properly process traffic, the service includes the
+     *        rule in the list of analysis results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroupResponse withAnalysisResults(java.util.Collection<AnalysisResult> analysisResults) {
+        setAnalysisResults(analysisResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -903,7 +1024,9 @@ public class RuleGroupResponse implements Serializable, Cloneable, StructuredPoj
         if (getSnsTopic() != null)
             sb.append("SnsTopic: ").append(getSnsTopic()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getAnalysisResults() != null)
+            sb.append("AnalysisResults: ").append(getAnalysisResults());
         sb.append("}");
         return sb.toString();
     }
@@ -974,6 +1097,10 @@ public class RuleGroupResponse implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getAnalysisResults() == null ^ this.getAnalysisResults() == null)
+            return false;
+        if (other.getAnalysisResults() != null && other.getAnalysisResults().equals(this.getAnalysisResults()) == false)
+            return false;
         return true;
     }
 
@@ -996,6 +1123,7 @@ public class RuleGroupResponse implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getSourceMetadata() == null) ? 0 : getSourceMetadata().hashCode());
         hashCode = prime * hashCode + ((getSnsTopic() == null) ? 0 : getSnsTopic().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisResults() == null) ? 0 : getAnalysisResults().hashCode());
         return hashCode;
     }
 

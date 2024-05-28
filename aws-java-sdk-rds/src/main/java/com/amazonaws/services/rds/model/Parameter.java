@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,13 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      * </p>
      */
     private String parameterName;
     /**
      * <p>
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      * </p>
      */
     private String parameterValue;
@@ -51,7 +51,7 @@ public class Parameter implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * Indicates the source of the parameter value.
+     * The source of the parameter value.
      * </p>
      */
     private String source;
@@ -101,11 +101,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      * </p>
      * 
      * @param parameterName
-     *        Specifies the name of the parameter.
+     *        The name of the parameter.
      */
 
     public void setParameterName(String parameterName) {
@@ -114,10 +114,10 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      * </p>
      * 
-     * @return Specifies the name of the parameter.
+     * @return The name of the parameter.
      */
 
     public String getParameterName() {
@@ -126,11 +126,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the parameter.
+     * The name of the parameter.
      * </p>
      * 
      * @param parameterName
-     *        Specifies the name of the parameter.
+     *        The name of the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      * </p>
      * 
      * @param parameterValue
-     *        Specifies the value of the parameter.
+     *        The value of the parameter.
      */
 
     public void setParameterValue(String parameterValue) {
@@ -154,10 +154,10 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      * </p>
      * 
-     * @return Specifies the value of the parameter.
+     * @return The value of the parameter.
      */
 
     public String getParameterValue() {
@@ -166,11 +166,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the value of the parameter.
+     * The value of the parameter.
      * </p>
      * 
      * @param parameterValue
-     *        Specifies the value of the parameter.
+     *        The value of the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the source of the parameter value.
+     * The source of the parameter value.
      * </p>
      * 
      * @param source
-     *        Indicates the source of the parameter value.
+     *        The source of the parameter value.
      */
 
     public void setSource(String source) {
@@ -234,10 +234,10 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the source of the parameter value.
+     * The source of the parameter value.
      * </p>
      * 
-     * @return Indicates the source of the parameter value.
+     * @return The source of the parameter value.
      */
 
     public String getSource() {
@@ -246,11 +246,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the source of the parameter value.
+     * The source of the parameter value.
      * </p>
      * 
      * @param source
-     *        Indicates the source of the parameter value.
+     *        The source of the parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

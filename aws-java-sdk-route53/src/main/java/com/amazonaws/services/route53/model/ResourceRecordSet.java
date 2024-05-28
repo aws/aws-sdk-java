@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,11 +73,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important></li>
      * </ul>
-     * <p>
-     * You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You
-     * can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the
-     * * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.
-     * </p>
      */
     private String name;
     /**
@@ -235,12 +230,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -283,12 +272,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
      * </p>
-     * <note>
-     * <p>
-     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
-     * it's not supported.
-     * </p>
-     * </note>
      * <p>
      * If you create separate resource record sets for overlapping geographic regions (for example, one resource record
      * set for a continent and one for a country on the same continent), priority goes to the smallest geographic
@@ -709,6 +692,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     private String trafficPolicyInstanceId;
 
     private CidrRoutingConfig cidrRoutingConfig;
+    /**
+     * <p>
+     * <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     * responds to DNS queries based on the geographic origin of the query and your resources.
+     * </p>
+     */
+    private GeoProximityLocation geoProximityLocation;
 
     /**
      * Default constructor for ResourceRecordSet object. Callers should use the setter or fluent setter (with...)
@@ -766,40 +756,32 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        You can't use the * wildcard for resource records sets that have a type of NS.
      *        </p>
      *        </important></li>
-     *        </ul>
-     *        <p>
-     *        You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>
-     *        . You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In
-     *        addition, the * must replace the entire label; for example, you can't specify
-     *        <code>prod*.example.com</code>.
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
-     *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
-     *        </p>
+     *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
-     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR
+     *        </code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
-     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
-     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
-     *        resource record sets in the group.
+     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA
+     *        </code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code>
+     *        | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
+     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
+     *        in the group.
      *        </p>
      *        <p>
-     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     *        <code>TXT</code>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX
+     *        </code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
      *        SPF records were formerly used to verify the identity of the sender of email messages. However, we no
-     *        longer recommend that you create resource record sets for which the value of <code>Type</code> is
-     *        <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
-     *        Version 1</i>, has been updated to say,
+     *        longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>
+     *        SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version
+     *        1</i>, has been updated to say,
      *        "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it."
      *        In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS
      *        Record Type</a>.
@@ -911,40 +893,32 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        You can't use the * wildcard for resource records sets that have a type of NS.
      *        </p>
      *        </important></li>
-     *        </ul>
-     *        <p>
-     *        You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>
-     *        . You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In
-     *        addition, the * must replace the entire label; for example, you can't specify
-     *        <code>prod*.example.com</code>.
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
-     *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
-     *        </p>
+     *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
-     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> |
-     *        <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR
+     *        </code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
-     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
-     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
-     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
-     *        resource record sets in the group.
+     *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA
+     *        </code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code>
+     *        | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
+     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
+     *        in the group.
      *        </p>
      *        <p>
-     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     *        <code>TXT</code>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX
+     *        </code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
      *        SPF records were formerly used to verify the identity of the sender of email messages. However, we no
-     *        longer recommend that you create resource record sets for which the value of <code>Type</code> is
-     *        <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
-     *        Version 1</i>, has been updated to say,
+     *        longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>
+     *        SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version
+     *        1</i>, has been updated to say,
      *        "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it."
      *        In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS
      *        Record Type</a>.
@@ -1054,11 +1028,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important></li>
      * </ul>
-     * <p>
-     * You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You
-     * can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the
-     * * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.
-     * </p>
      * 
      * @param name
      *        For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
@@ -1105,12 +1074,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        You can't use the * wildcard for resource records sets that have a type of NS.
      *        </p>
      *        </important></li>
-     *        </ul>
-     *        <p>
-     *        You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>
-     *        . You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In
-     *        addition, the * must replace the entire label; for example, you can't specify
-     *        <code>prod*.example.com</code>.
      */
 
     public void setName(String name) {
@@ -1164,11 +1127,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important></li>
      * </ul>
-     * <p>
-     * You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You
-     * can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the
-     * * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.
-     * </p>
      * 
      * @return For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
      *         update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the
@@ -1214,12 +1172,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         You can't use the * wildcard for resource records sets that have a type of NS.
      *         </p>
      *         </important></li>
-     *         </ul>
-     *         <p>
-     *         You can use the * wildcard as the leftmost label in a domain name, for example,
-     *         <code>*.example.com</code>. You can't use an * for one of the middle labels, for example,
-     *         <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you
-     *         can't specify <code>prod*.example.com</code>.
      */
 
     public String getName() {
@@ -1273,11 +1225,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </important></li>
      * </ul>
-     * <p>
-     * You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You
-     * can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the
-     * * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.
-     * </p>
      * 
      * @param name
      *        For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
@@ -1324,12 +1271,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        You can't use the * wildcard for resource records sets that have a type of NS.
      *        </p>
      *        </important></li>
-     *        </ul>
-     *        <p>
-     *        You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>
-     *        . You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In
-     *        addition, the * must replace the entire label; for example, you can't specify
-     *        <code>prod*.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2608,12 +2549,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2652,12 +2587,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -2704,12 +2634,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2747,12 +2671,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *         this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *         EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *         on the record type.</p> <note>
-     *         <p>
-     *         Although creating latency and latency alias resource record sets in a private hosted zone is allowed,
-     *         it's not supported.
-     *         </p>
-     *         </note>
+     *         on the record type.</p>
      *         <p>
      *         When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *         resource record sets, Route 53 selects the latency resource record set that has the lowest latency
@@ -2799,12 +2718,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2843,12 +2756,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -2897,12 +2805,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2941,12 +2843,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -2993,12 +2890,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -3037,12 +2928,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -3092,12 +2978,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
      * </p>
-     * <note>
-     * <p>
-     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
-     * it's not supported.
-     * </p>
-     * </note>
      * <p>
      * If you create separate resource record sets for overlapping geographic regions (for example, one resource record
      * set for a continent and one for a country on the same continent), priority goes to the smallest geographic
@@ -3134,12 +3014,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        responds to DNS queries based on the geographic origin of the query. For example, if you want all queries
      *        from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource
      *        record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>
-     *        .</p> <note>
-     *        <p>
-     *        Although creating geolocation and geolocation alias resource record sets in a private hosted zone is
-     *        allowed, it's not supported.
-     *        </p>
-     *        </note>
+     *        .</p>
      *        <p>
      *        If you create separate resource record sets for overlapping geographic regions (for example, one resource
      *        record set for a continent and one for a country on the same continent), priority goes to the smallest
@@ -3182,12 +3057,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
      * </p>
-     * <note>
-     * <p>
-     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
-     * it's not supported.
-     * </p>
-     * </note>
      * <p>
      * If you create separate resource record sets for overlapping geographic regions (for example, one resource record
      * set for a continent and one for a country on the same continent), priority goes to the smallest geographic
@@ -3223,12 +3092,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         responds to DNS queries based on the geographic origin of the query. For example, if you want all queries
      *         from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      *         resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of
-     *         <code>AF</code>.</p> <note>
-     *         <p>
-     *         Although creating geolocation and geolocation alias resource record sets in a private hosted zone is
-     *         allowed, it's not supported.
-     *         </p>
-     *         </note>
+     *         <code>AF</code>.</p>
      *         <p>
      *         If you create separate resource record sets for overlapping geographic regions (for example, one resource
      *         record set for a continent and one for a country on the same continent), priority goes to the smallest
@@ -3271,12 +3135,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
      * </p>
-     * <note>
-     * <p>
-     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
-     * it's not supported.
-     * </p>
-     * </note>
      * <p>
      * If you create separate resource record sets for overlapping geographic regions (for example, one resource record
      * set for a continent and one for a country on the same continent), priority goes to the smallest geographic
@@ -3313,12 +3171,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        responds to DNS queries based on the geographic origin of the query. For example, if you want all queries
      *        from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource
      *        record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>
-     *        .</p> <note>
-     *        <p>
-     *        Although creating geolocation and geolocation alias resource record sets in a private hosted zone is
-     *        allowed, it's not supported.
-     *        </p>
-     *        </note>
+     *        .</p>
      *        <p>
      *        If you create separate resource record sets for overlapping geographic regions (for example, one resource
      *        record set for a continent and one for a country on the same continent), priority goes to the smallest
@@ -6134,6 +5987,52 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     * responds to DNS queries based on the geographic origin of the query and your resources.
+     * </p>
+     * 
+     * @param geoProximityLocation
+     *        <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     *        responds to DNS queries based on the geographic origin of the query and your resources.
+     */
+
+    public void setGeoProximityLocation(GeoProximityLocation geoProximityLocation) {
+        this.geoProximityLocation = geoProximityLocation;
+    }
+
+    /**
+     * <p>
+     * <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     * responds to DNS queries based on the geographic origin of the query and your resources.
+     * </p>
+     * 
+     * @return <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     *         responds to DNS queries based on the geographic origin of the query and your resources.
+     */
+
+    public GeoProximityLocation getGeoProximityLocation() {
+        return this.geoProximityLocation;
+    }
+
+    /**
+     * <p>
+     * <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     * responds to DNS queries based on the geographic origin of the query and your resources.
+     * </p>
+     * 
+     * @param geoProximityLocation
+     *        <i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route 53
+     *        responds to DNS queries based on the geographic origin of the query and your resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceRecordSet withGeoProximityLocation(GeoProximityLocation geoProximityLocation) {
+        setGeoProximityLocation(geoProximityLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6172,7 +6071,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         if (getTrafficPolicyInstanceId() != null)
             sb.append("TrafficPolicyInstanceId: ").append(getTrafficPolicyInstanceId()).append(",");
         if (getCidrRoutingConfig() != null)
-            sb.append("CidrRoutingConfig: ").append(getCidrRoutingConfig());
+            sb.append("CidrRoutingConfig: ").append(getCidrRoutingConfig()).append(",");
+        if (getGeoProximityLocation() != null)
+            sb.append("GeoProximityLocation: ").append(getGeoProximityLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -6243,6 +6144,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             return false;
         if (other.getCidrRoutingConfig() != null && other.getCidrRoutingConfig().equals(this.getCidrRoutingConfig()) == false)
             return false;
+        if (other.getGeoProximityLocation() == null ^ this.getGeoProximityLocation() == null)
+            return false;
+        if (other.getGeoProximityLocation() != null && other.getGeoProximityLocation().equals(this.getGeoProximityLocation()) == false)
+            return false;
         return true;
     }
 
@@ -6265,6 +6170,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode());
         hashCode = prime * hashCode + ((getTrafficPolicyInstanceId() == null) ? 0 : getTrafficPolicyInstanceId().hashCode());
         hashCode = prime * hashCode + ((getCidrRoutingConfig() == null) ? 0 : getCidrRoutingConfig().hashCode());
+        hashCode = prime * hashCode + ((getGeoProximityLocation() == null) ? 0 : getGeoProximityLocation().hashCode());
         return hashCode;
     }
 

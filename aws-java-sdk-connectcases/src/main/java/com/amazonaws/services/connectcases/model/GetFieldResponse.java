@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,18 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     */
+    private Boolean deleted;
+    /**
+     * <p>
      * Description of the field.
      * </p>
      */
@@ -46,6 +58,12 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String fieldId;
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
     /**
      * <p>
      * Name of the field.
@@ -71,6 +89,98 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String type;
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        Timestamp at which the resource was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @return Timestamp at which the resource was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        Timestamp at which the resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFieldResponse withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @param deleted
+     *        Denotes whether or not the resource has been deleted.
+     */
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @return Denotes whether or not the resource has been deleted.
+     */
+
+    public Boolean getDeleted() {
+        return this.deleted;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @param deleted
+     *        Denotes whether or not the resource has been deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFieldResponse withDeleted(Boolean deleted) {
+        setDeleted(deleted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @return Denotes whether or not the resource has been deleted.
+     */
+
+    public Boolean isDeleted() {
+        return this.deleted;
+    }
 
     /**
      * <p>
@@ -189,6 +299,46 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
 
     public GetFieldResponse withFieldId(String fieldId) {
         setFieldId(fieldId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        Timestamp at which the resource was created or last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @return Timestamp at which the resource was created or last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        Timestamp at which the resource was created or last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFieldResponse withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
         return this;
     }
 
@@ -436,12 +586,18 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getDeleted() != null)
+            sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getFieldArn() != null)
             sb.append("FieldArn: ").append(getFieldArn()).append(",");
         if (getFieldId() != null)
             sb.append("FieldId: ").append(getFieldId()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getNamespace() != null)
@@ -464,6 +620,14 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof GetFieldResponse == false)
             return false;
         GetFieldResponse other = (GetFieldResponse) obj;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getDeleted() == null ^ this.getDeleted() == null)
+            return false;
+        if (other.getDeleted() != null && other.getDeleted().equals(this.getDeleted()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -475,6 +639,10 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
         if (other.getFieldId() == null ^ this.getFieldId() == null)
             return false;
         if (other.getFieldId() != null && other.getFieldId().equals(this.getFieldId()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -500,9 +668,12 @@ public class GetFieldResponse implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFieldArn() == null) ? 0 : getFieldArn().hashCode());
         hashCode = prime * hashCode + ((getFieldId() == null) ? 0 : getFieldId().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

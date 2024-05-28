@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * billing report that you set up.
      */
     private String billingTagsSource;
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    private String clientRequestToken;
     /** The time, in Unix epoch format in seconds, when the job got created. */
     private java.util.Date createdAt;
     /** A job's phase can be PROBING, TRANSCODING OR UPLOADING */
@@ -114,6 +121,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * pairs.
      */
     private java.util.Map<String, String> userMetadata;
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    private java.util.List<WarningGroup> warnings;
 
     /**
      * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
@@ -350,6 +362,59 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withBillingTagsSource(BillingTagsSource billingTagsSource) {
         this.billingTagsSource = billingTagsSource.toString();
+        return this;
+    }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     * 
+     * @param clientRequestToken
+     *        Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token
+     *        can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one
+     *        minute of a successful request, the API returns the job details of the original request instead. For more
+     *        information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     * 
+     * @return Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request
+     *         token can be any string that includes up to 64 ASCII characters. If you reuse a client request token
+     *         within one minute of a successful request, the API returns the job details of the original request
+     *         instead. For more information see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     * 
+     * @param clientRequestToken
+     *        Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token
+     *        can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one
+     *        minute of a successful request, the API returns the job details of the original request instead. For more
+     *        information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
         return this;
     }
 
@@ -1340,6 +1405,76 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     * 
+     * @return Contains any warning messages for the job. Use to help identify potential issues with your input, output,
+     *         or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+
+    public java.util.List<WarningGroup> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     * 
+     * @param warnings
+     *        Contains any warning messages for the job. Use to help identify potential issues with your input, output,
+     *        or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+
+    public void setWarnings(java.util.Collection<WarningGroup> warnings) {
+        if (warnings == null) {
+            this.warnings = null;
+            return;
+        }
+
+        this.warnings = new java.util.ArrayList<WarningGroup>(warnings);
+    }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param warnings
+     *        Contains any warning messages for the job. Use to help identify potential issues with your input, output,
+     *        or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withWarnings(WarningGroup... warnings) {
+        if (this.warnings == null) {
+            setWarnings(new java.util.ArrayList<WarningGroup>(warnings.length));
+        }
+        for (WarningGroup ele : warnings) {
+            this.warnings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     * 
+     * @param warnings
+     *        Contains any warning messages for the job. Use to help identify potential issues with your input, output,
+     *        or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withWarnings(java.util.Collection<WarningGroup> warnings) {
+        setWarnings(warnings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1359,6 +1494,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getBillingTagsSource() != null)
             sb.append("BillingTagsSource: ").append(getBillingTagsSource()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getCurrentPhase() != null)
@@ -1400,7 +1537,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getTiming() != null)
             sb.append("Timing: ").append(getTiming()).append(",");
         if (getUserMetadata() != null)
-            sb.append("UserMetadata: ").append(getUserMetadata());
+            sb.append("UserMetadata: ").append(getUserMetadata()).append(",");
+        if (getWarnings() != null)
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }
@@ -1430,6 +1569,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getBillingTagsSource() == null ^ this.getBillingTagsSource() == null)
             return false;
         if (other.getBillingTagsSource() != null && other.getBillingTagsSource().equals(this.getBillingTagsSource()) == false)
+            return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -1515,6 +1658,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUserMetadata() != null && other.getUserMetadata().equals(this.getUserMetadata()) == false)
             return false;
+        if (other.getWarnings() == null ^ this.getWarnings() == null)
+            return false;
+        if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
+            return false;
         return true;
     }
 
@@ -1527,6 +1674,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccelerationStatus() == null) ? 0 : getAccelerationStatus().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getBillingTagsSource() == null) ? 0 : getBillingTagsSource().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getCurrentPhase() == null) ? 0 : getCurrentPhase().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
@@ -1548,6 +1696,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         hashCode = prime * hashCode + ((getTiming() == null) ? 0 : getTiming().hashCode());
         hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode());
+        hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

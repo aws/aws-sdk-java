@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
     private String elasticIp;
     /**
      * <p>
-     * The new name.
+     * The new name, which can be a maximum of 32 characters.
      * </p>
      */
     private String name;
@@ -80,11 +80,11 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new name.
+     * The new name, which can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The new name.
+     *        The new name, which can be a maximum of 32 characters.
      */
 
     public void setName(String name) {
@@ -93,10 +93,10 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new name.
+     * The new name, which can be a maximum of 32 characters.
      * </p>
      * 
-     * @return The new name.
+     * @return The new name, which can be a maximum of 32 characters.
      */
 
     public String getName() {
@@ -105,11 +105,11 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new name.
+     * The new name, which can be a maximum of 32 characters.
      * </p>
      * 
      * @param name
-     *        The new name.
+     *        The new name, which can be a maximum of 32 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

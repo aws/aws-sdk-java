@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
+     * Grab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Here
      * </p>
      * </li>
@@ -72,6 +77,12 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      * </p>
      */
     private java.util.List<Double> filterBBox;
+    /**
+     * <p>
+     * The optional category filter specified in the request.
+     * </p>
+     */
+    private java.util.List<String> filterCategories;
     /**
      * <p>
      * Contains the optional country filter specified in the request.
@@ -253,6 +264,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
+     * Grab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Here
      * </p>
      * </li>
@@ -270,6 +286,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        Esri
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Grab
      *        </p>
      *        </li>
      *        <li>
@@ -301,6 +322,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
+     * Grab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Here
      * </p>
      * </li>
@@ -317,6 +343,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      *         <li>
      *         <p>
      *         Esri
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Grab
      *         </p>
      *         </li>
      *         <li>
@@ -348,6 +379,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
+     * Grab
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Here
      * </p>
      * </li>
@@ -365,6 +401,11 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        Esri
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Grab
      *        </p>
      *        </li>
      *        <li>
@@ -452,6 +493,76 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
 
     public SearchPlaceIndexForTextSummary withFilterBBox(java.util.Collection<Double> filterBBox) {
         setFilterBBox(filterBBox);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional category filter specified in the request.
+     * </p>
+     * 
+     * @return The optional category filter specified in the request.
+     */
+
+    public java.util.List<String> getFilterCategories() {
+        return filterCategories;
+    }
+
+    /**
+     * <p>
+     * The optional category filter specified in the request.
+     * </p>
+     * 
+     * @param filterCategories
+     *        The optional category filter specified in the request.
+     */
+
+    public void setFilterCategories(java.util.Collection<String> filterCategories) {
+        if (filterCategories == null) {
+            this.filterCategories = null;
+            return;
+        }
+
+        this.filterCategories = new java.util.ArrayList<String>(filterCategories);
+    }
+
+    /**
+     * <p>
+     * The optional category filter specified in the request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilterCategories(java.util.Collection)} or {@link #withFilterCategories(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param filterCategories
+     *        The optional category filter specified in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchPlaceIndexForTextSummary withFilterCategories(String... filterCategories) {
+        if (this.filterCategories == null) {
+            setFilterCategories(new java.util.ArrayList<String>(filterCategories.length));
+        }
+        for (String ele : filterCategories) {
+            this.filterCategories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional category filter specified in the request.
+     * </p>
+     * 
+     * @param filterCategories
+     *        The optional category filter specified in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchPlaceIndexForTextSummary withFilterCategories(java.util.Collection<String> filterCategories) {
+        setFilterCategories(filterCategories);
         return this;
     }
 
@@ -782,6 +893,8 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
             sb.append("DataSource: ").append(getDataSource()).append(",");
         if (getFilterBBox() != null)
             sb.append("FilterBBox: ").append("***Sensitive Data Redacted***").append(",");
+        if (getFilterCategories() != null)
+            sb.append("FilterCategories: ").append(getFilterCategories()).append(",");
         if (getFilterCountries() != null)
             sb.append("FilterCountries: ").append(getFilterCountries()).append(",");
         if (getLanguage() != null)
@@ -818,6 +931,10 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
             return false;
         if (other.getFilterBBox() != null && other.getFilterBBox().equals(this.getFilterBBox()) == false)
             return false;
+        if (other.getFilterCategories() == null ^ this.getFilterCategories() == null)
+            return false;
+        if (other.getFilterCategories() != null && other.getFilterCategories().equals(this.getFilterCategories()) == false)
+            return false;
         if (other.getFilterCountries() == null ^ this.getFilterCountries() == null)
             return false;
         if (other.getFilterCountries() != null && other.getFilterCountries().equals(this.getFilterCountries()) == false)
@@ -849,6 +966,7 @@ public class SearchPlaceIndexForTextSummary implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getBiasPosition() == null) ? 0 : getBiasPosition().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getFilterBBox() == null) ? 0 : getFilterBBox().hashCode());
+        hashCode = prime * hashCode + ((getFilterCategories() == null) ? 0 : getFilterCategories().hashCode());
         hashCode = prime * hashCode + ((getFilterCountries() == null) ? 0 : getFilterCountries().hashCode());
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());

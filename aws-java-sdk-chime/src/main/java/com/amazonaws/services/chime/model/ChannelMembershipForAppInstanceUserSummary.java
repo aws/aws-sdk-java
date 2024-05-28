@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ChannelMembershipForAppInstanceUserSummary implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Summary of the details of a <code>Channel</code>.
+     * </p>
+     */
     private ChannelSummary channelSummary;
-
+    /**
+     * <p>
+     * Summary of the membership details of an <code>AppInstanceUser</code>.
+     * </p>
+     */
     private AppInstanceUserMembershipSummary appInstanceUserMembershipSummary;
 
     /**
+     * <p>
+     * Summary of the details of a <code>Channel</code>.
+     * </p>
+     * 
      * @param channelSummary
+     *        Summary of the details of a <code>Channel</code>.
      */
 
     public void setChannelSummary(ChannelSummary channelSummary) {
@@ -41,7 +55,11 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
     }
 
     /**
-     * @return
+     * <p>
+     * Summary of the details of a <code>Channel</code>.
+     * </p>
+     * 
+     * @return Summary of the details of a <code>Channel</code>.
      */
 
     public ChannelSummary getChannelSummary() {
@@ -49,7 +67,12 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
     }
 
     /**
+     * <p>
+     * Summary of the details of a <code>Channel</code>.
+     * </p>
+     * 
      * @param channelSummary
+     *        Summary of the details of a <code>Channel</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +82,12 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
     }
 
     /**
+     * <p>
+     * Summary of the membership details of an <code>AppInstanceUser</code>.
+     * </p>
+     * 
      * @param appInstanceUserMembershipSummary
+     *        Summary of the membership details of an <code>AppInstanceUser</code>.
      */
 
     public void setAppInstanceUserMembershipSummary(AppInstanceUserMembershipSummary appInstanceUserMembershipSummary) {
@@ -67,7 +95,11 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
     }
 
     /**
-     * @return
+     * <p>
+     * Summary of the membership details of an <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @return Summary of the membership details of an <code>AppInstanceUser</code>.
      */
 
     public AppInstanceUserMembershipSummary getAppInstanceUserMembershipSummary() {
@@ -75,7 +107,12 @@ public class ChannelMembershipForAppInstanceUserSummary implements Serializable,
     }
 
     /**
+     * <p>
+     * Summary of the membership details of an <code>AppInstanceUser</code>.
+     * </p>
+     * 
      * @param appInstanceUserMembershipSummary
+     *        Summary of the membership details of an <code>AppInstanceUser</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

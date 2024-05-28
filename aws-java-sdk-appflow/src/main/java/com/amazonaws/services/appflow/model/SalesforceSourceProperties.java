@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,7 +88,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      * <p>
      * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
-     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.
      * </p>
      * </dd>
      * </dl>
@@ -288,7 +288,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      * <p>
      * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
-     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.
      * </p>
      * </dd>
      * </dl>
@@ -334,7 +334,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      *        <p>
      *        Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      *        consistent output, but you decrease performance for large data transfers that are better suited for Bulk
-     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a
      *        timed out error.
      *        </p>
      *        </dd>
@@ -386,7 +386,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      * <p>
      * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
-     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.
      * </p>
      * </dd>
      * </dl>
@@ -432,7 +432,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      *         <p>
      *         Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      *         consistent output, but you decrease performance for large data transfers that are better suited for Bulk
-     *         API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *         API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a
      *         timed out error.
      *         </p>
      *         </dd>
@@ -484,7 +484,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      * <p>
      * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
-     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.
      * </p>
      * </dd>
      * </dl>
@@ -530,7 +530,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      *        <p>
      *        Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      *        consistent output, but you decrease performance for large data transfers that are better suited for Bulk
-     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a
      *        timed out error.
      *        </p>
      *        </dd>
@@ -584,7 +584,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      * <p>
      * Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      * consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0.
-     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.
+     * In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a timed out error.
      * </p>
      * </dd>
      * </dl>
@@ -630,7 +630,7 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
      *        <p>
      *        Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes
      *        consistent output, but you decrease performance for large data transfers that are better suited for Bulk
-     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a
+     *        API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail wituh a
      *        timed out error.
      *        </p>
      *        </dd>

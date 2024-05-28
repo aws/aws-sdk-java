@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a service.
+ * Information about an Amazon Web Service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceInfo" target="_top">AWS API
@@ -30,24 +30,27 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      */
     private String serviceName;
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -56,10 +59,12 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
-     * @return The service identifier.
+     * @return Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *         the <a>ListServices</a> operation.
      */
 
     public String getServiceCode() {
@@ -68,11 +73,13 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +90,11 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        Specifies the service name.
      */
 
     public void setServiceName(String serviceName) {
@@ -96,10 +103,10 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
-     * @return The service name.
+     * @return Specifies the service name.
      */
 
     public String getServiceName() {
@@ -108,11 +115,11 @@ public class ServiceInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        Specifies the service name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

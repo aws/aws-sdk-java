@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,16 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * <p>
      * Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web
      * Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica
-     * objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     * Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      *
      * @return Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in
      *         Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to
-     *         encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more
-     *         information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *         and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *         encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see
+     *         <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys
+     *         in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      */
     public String getReplicaKmsKeyID() {
         return replicaKmsKeyID;
@@ -47,17 +47,17 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * <p>
      * Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web
      * Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica
-     * objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     * Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      *
      * @param replicaKmsKeyID
      *        Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in
      *        Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to
-     *        encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more
-     *        information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *        and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *        encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see
+     *        <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys
+     *        in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      */
     public void setReplicaKmsKeyID(String replicaKmsKeyID) {
         this.replicaKmsKeyID = replicaKmsKeyID;
@@ -67,17 +67,17 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * <p>
      * Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web
      * Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica
-     * objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     * Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      *
      * @param replicaKmsKeyID
      *        Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in
      *        Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to
-     *        encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more
-     *        information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *        and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *        encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see
+     *        <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys
+     *        in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * @return This object for method chaining.
      */
     public EncryptionConfiguration withReplicaKmsKeyID(String replicaKmsKeyID) {

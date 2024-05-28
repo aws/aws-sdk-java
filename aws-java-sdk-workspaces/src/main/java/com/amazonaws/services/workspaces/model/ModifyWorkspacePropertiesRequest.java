@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private WorkspaceProperties workspaceProperties;
+    /**
+     * <p>
+     * Indicates the data replication status.
+     * </p>
+     */
+    private String dataReplication;
 
     /**
      * <p>
@@ -119,6 +125,65 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Indicates the data replication status.
+     * </p>
+     * 
+     * @param dataReplication
+     *        Indicates the data replication status.
+     * @see DataReplication
+     */
+
+    public void setDataReplication(String dataReplication) {
+        this.dataReplication = dataReplication;
+    }
+
+    /**
+     * <p>
+     * Indicates the data replication status.
+     * </p>
+     * 
+     * @return Indicates the data replication status.
+     * @see DataReplication
+     */
+
+    public String getDataReplication() {
+        return this.dataReplication;
+    }
+
+    /**
+     * <p>
+     * Indicates the data replication status.
+     * </p>
+     * 
+     * @param dataReplication
+     *        Indicates the data replication status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplication
+     */
+
+    public ModifyWorkspacePropertiesRequest withDataReplication(String dataReplication) {
+        setDataReplication(dataReplication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the data replication status.
+     * </p>
+     * 
+     * @param dataReplication
+     *        Indicates the data replication status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplication
+     */
+
+    public ModifyWorkspacePropertiesRequest withDataReplication(DataReplication dataReplication) {
+        this.dataReplication = dataReplication.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +198,9 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
         if (getWorkspaceId() != null)
             sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getWorkspaceProperties() != null)
-            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties());
+            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties()).append(",");
+        if (getDataReplication() != null)
+            sb.append("DataReplication: ").append(getDataReplication());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +223,10 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getWorkspaceProperties() != null && other.getWorkspaceProperties().equals(this.getWorkspaceProperties()) == false)
             return false;
+        if (other.getDataReplication() == null ^ this.getDataReplication() == null)
+            return false;
+        if (other.getDataReplication() != null && other.getDataReplication().equals(this.getDataReplication()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +237,7 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceProperties() == null) ? 0 : getWorkspaceProperties().hashCode());
+        hashCode = prime * hashCode + ((getDataReplication() == null) ? 0 : getDataReplication().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,6 +89,32 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Discovery configuration associated to the workload.
+     * </p>
+     */
+    private WorkloadDiscoveryConfig discoveryConfig;
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     */
+    private java.util.List<String> applications;
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     */
+    private java.util.List<WorkloadProfile> profiles;
+
+    private java.util.Map<String, Integer> prioritizedRiskCounts;
+    /**
+     * <p>
+     * Jira configuration for a specific workload.
+     * </p>
+     */
+    private WorkloadJiraConfigurationOutput jiraConfiguration;
 
     /**
      * @param workloadId
@@ -989,6 +1015,280 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Discovery configuration associated to the workload.
+     * </p>
+     * 
+     * @param discoveryConfig
+     *        Discovery configuration associated to the workload.
+     */
+
+    public void setDiscoveryConfig(WorkloadDiscoveryConfig discoveryConfig) {
+        this.discoveryConfig = discoveryConfig;
+    }
+
+    /**
+     * <p>
+     * Discovery configuration associated to the workload.
+     * </p>
+     * 
+     * @return Discovery configuration associated to the workload.
+     */
+
+    public WorkloadDiscoveryConfig getDiscoveryConfig() {
+        return this.discoveryConfig;
+    }
+
+    /**
+     * <p>
+     * Discovery configuration associated to the workload.
+     * </p>
+     * 
+     * @param discoveryConfig
+     *        Discovery configuration associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withDiscoveryConfig(WorkloadDiscoveryConfig discoveryConfig) {
+        setDiscoveryConfig(discoveryConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @return List of AppRegistry application ARNs associated to the workload.
+     */
+
+    public java.util.List<String> getApplications() {
+        return applications;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     */
+
+    public void setApplications(java.util.Collection<String> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+
+        this.applications = new java.util.ArrayList<String>(applications);
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withApplications(String... applications) {
+        if (this.applications == null) {
+            setApplications(new java.util.ArrayList<String>(applications.length));
+        }
+        for (String ele : applications) {
+            this.applications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withApplications(java.util.Collection<String> applications) {
+        setApplications(applications);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * 
+     * @return Profile associated with a workload.
+     */
+
+    public java.util.List<WorkloadProfile> getProfiles() {
+        return profiles;
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * 
+     * @param profiles
+     *        Profile associated with a workload.
+     */
+
+    public void setProfiles(java.util.Collection<WorkloadProfile> profiles) {
+        if (profiles == null) {
+            this.profiles = null;
+            return;
+        }
+
+        this.profiles = new java.util.ArrayList<WorkloadProfile>(profiles);
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfiles(java.util.Collection)} or {@link #withProfiles(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param profiles
+     *        Profile associated with a workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withProfiles(WorkloadProfile... profiles) {
+        if (this.profiles == null) {
+            setProfiles(new java.util.ArrayList<WorkloadProfile>(profiles.length));
+        }
+        for (WorkloadProfile ele : profiles) {
+            this.profiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profile associated with a workload.
+     * </p>
+     * 
+     * @param profiles
+     *        Profile associated with a workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withProfiles(java.util.Collection<WorkloadProfile> profiles) {
+        setProfiles(profiles);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Map<String, Integer> getPrioritizedRiskCounts() {
+        return prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     */
+
+    public void setPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        this.prioritizedRiskCounts = prioritizedRiskCounts;
+    }
+
+    /**
+     * @param prioritizedRiskCounts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withPrioritizedRiskCounts(java.util.Map<String, Integer> prioritizedRiskCounts) {
+        setPrioritizedRiskCounts(prioritizedRiskCounts);
+        return this;
+    }
+
+    /**
+     * Add a single PrioritizedRiskCounts entry
+     *
+     * @see Workload#withPrioritizedRiskCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload addPrioritizedRiskCountsEntry(String key, Integer value) {
+        if (null == this.prioritizedRiskCounts) {
+            this.prioritizedRiskCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.prioritizedRiskCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.prioritizedRiskCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PrioritizedRiskCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload clearPrioritizedRiskCountsEntries() {
+        this.prioritizedRiskCounts = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Jira configuration for a specific workload.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Jira configuration for a specific workload.
+     */
+
+    public void setJiraConfiguration(WorkloadJiraConfigurationOutput jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Jira configuration for a specific workload.
+     * </p>
+     * 
+     * @return Jira configuration for a specific workload.
+     */
+
+    public WorkloadJiraConfigurationOutput getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Jira configuration for a specific workload.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Jira configuration for a specific workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workload withJiraConfiguration(WorkloadJiraConfigurationOutput jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1045,7 +1345,17 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
         if (getShareInvitationId() != null)
             sb.append("ShareInvitationId: ").append(getShareInvitationId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDiscoveryConfig() != null)
+            sb.append("DiscoveryConfig: ").append(getDiscoveryConfig()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications()).append(",");
+        if (getProfiles() != null)
+            sb.append("Profiles: ").append(getProfiles()).append(",");
+        if (getPrioritizedRiskCounts() != null)
+            sb.append("PrioritizedRiskCounts: ").append(getPrioritizedRiskCounts()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1153,6 +1463,26 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDiscoveryConfig() == null ^ this.getDiscoveryConfig() == null)
+            return false;
+        if (other.getDiscoveryConfig() != null && other.getDiscoveryConfig().equals(this.getDiscoveryConfig()) == false)
+            return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
+            return false;
+        if (other.getProfiles() == null ^ this.getProfiles() == null)
+            return false;
+        if (other.getProfiles() != null && other.getProfiles().equals(this.getProfiles()) == false)
+            return false;
+        if (other.getPrioritizedRiskCounts() == null ^ this.getPrioritizedRiskCounts() == null)
+            return false;
+        if (other.getPrioritizedRiskCounts() != null && other.getPrioritizedRiskCounts().equals(this.getPrioritizedRiskCounts()) == false)
+            return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1184,6 +1514,11 @@ public class Workload implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getShareInvitationId() == null) ? 0 : getShareInvitationId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDiscoveryConfig() == null) ? 0 : getDiscoveryConfig().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
+        hashCode = prime * hashCode + ((getProfiles() == null) ? 0 : getProfiles().hashCode());
+        hashCode = prime * hashCode + ((getPrioritizedRiskCounts() == null) ? 0 : getPrioritizedRiskCounts().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
         return hashCode;
     }
 

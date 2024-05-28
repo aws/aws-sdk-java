@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
-     * indexes that use HERE as a data provider.
+     * indexes that use HERE or Grab as a data provider.
      * </p>
      * </note>
      */
@@ -178,7 +178,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
-     * indexes that use HERE as a data provider.
+     * indexes that use HERE or Grab as a data provider.
      * </p>
      * </note>
      * 
@@ -187,7 +187,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      *        place again later.</p> <note>
      *        <p>
      *        For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by
-     *        place indexes that use HERE as a data provider.
+     *        place indexes that use HERE or Grab as a data provider.
      *        </p>
      */
 
@@ -203,7 +203,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
-     * indexes that use HERE as a data provider.
+     * indexes that use HERE or Grab as a data provider.
      * </p>
      * </note>
      * 
@@ -211,7 +211,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      *         place again later.</p> <note>
      *         <p>
      *         For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by
-     *         place indexes that use HERE as a data provider.
+     *         place indexes that use HERE or Grab as a data provider.
      *         </p>
      */
 
@@ -227,7 +227,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by place
-     * indexes that use HERE as a data provider.
+     * indexes that use HERE or Grab as a data provider.
      * </p>
      * </note>
      * 
@@ -236,7 +236,7 @@ public class SearchForPositionResult implements Serializable, Cloneable, Structu
      *        place again later.</p> <note>
      *        <p>
      *        For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code> is returned only by
-     *        place indexes that use HERE as a data provider.
+     *        place indexes that use HERE or Grab as a data provider.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

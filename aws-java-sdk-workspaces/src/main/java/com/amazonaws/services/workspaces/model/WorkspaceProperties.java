@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,40 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String computeTypeName;
+    /**
+     * <p>
+     * The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for
+     * Amazon WorkSpaces</a>.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Only available for WorkSpaces created with PCoIP bundles.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     * Graphics.g4dn, and GraphicsPro.g4dn).
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> protocols;
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     */
+    private String operatingSystemName;
 
     /**
      * <p>
@@ -463,6 +497,395 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for
+     * Amazon WorkSpaces</a>.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Only available for WorkSpaces created with PCoIP bundles.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     * Graphics.g4dn, and GraphicsPro.g4dn).
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @return The protocol. For more information, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     *         Protocols for Amazon WorkSpaces</a>.</p> <note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Only available for WorkSpaces created with PCoIP bundles.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or
+     *         <code>WSP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     *         Graphics.g4dn, and GraphicsPro.g4dn).
+     *         </p>
+     *         </li>
+     *         </ul>
+     * @see Protocol
+     */
+
+    public java.util.List<String> getProtocols() {
+        if (protocols == null) {
+            protocols = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return protocols;
+    }
+
+    /**
+     * <p>
+     * The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for
+     * Amazon WorkSpaces</a>.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Only available for WorkSpaces created with PCoIP bundles.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     * Graphics.g4dn, and GraphicsPro.g4dn).
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param protocols
+     *        The protocol. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     *        Protocols for Amazon WorkSpaces</a>.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Only available for WorkSpaces created with PCoIP bundles.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or
+     *        <code>WSP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     *        Graphics.g4dn, and GraphicsPro.g4dn).
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @see Protocol
+     */
+
+    public void setProtocols(java.util.Collection<String> protocols) {
+        if (protocols == null) {
+            this.protocols = null;
+            return;
+        }
+
+        this.protocols = new com.amazonaws.internal.SdkInternalList<String>(protocols);
+    }
+
+    /**
+     * <p>
+     * The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for
+     * Amazon WorkSpaces</a>.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Only available for WorkSpaces created with PCoIP bundles.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     * Graphics.g4dn, and GraphicsPro.g4dn).
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param protocols
+     *        The protocol. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     *        Protocols for Amazon WorkSpaces</a>.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Only available for WorkSpaces created with PCoIP bundles.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or
+     *        <code>WSP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     *        Graphics.g4dn, and GraphicsPro.g4dn).
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public WorkspaceProperties withProtocols(String... protocols) {
+        if (this.protocols == null) {
+            setProtocols(new com.amazonaws.internal.SdkInternalList<String>(protocols.length));
+        }
+        for (String ele : protocols) {
+            this.protocols.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for
+     * Amazon WorkSpaces</a>.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Only available for WorkSpaces created with PCoIP bundles.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     * Graphics.g4dn, and GraphicsPro.g4dn).
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param protocols
+     *        The protocol. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     *        Protocols for Amazon WorkSpaces</a>.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Only available for WorkSpaces created with PCoIP bundles.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or
+     *        <code>WSP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     *        Graphics.g4dn, and GraphicsPro.g4dn).
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public WorkspaceProperties withProtocols(java.util.Collection<String> protocols) {
+        setProtocols(protocols);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocol. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for
+     * Amazon WorkSpaces</a>.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Only available for WorkSpaces created with PCoIP bundles.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     * Graphics.g4dn, and GraphicsPro.g4dn).
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param protocols
+     *        The protocol. For more information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html">
+     *        Protocols for Amazon WorkSpaces</a>.</p> <note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Only available for WorkSpaces created with PCoIP bundles.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or
+     *        <code>WSP</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro,
+     *        Graphics.g4dn, and GraphicsPro.g4dn).
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public WorkspaceProperties withProtocols(Protocol... protocols) {
+        com.amazonaws.internal.SdkInternalList<String> protocolsCopy = new com.amazonaws.internal.SdkInternalList<String>(protocols.length);
+        for (Protocol value : protocols) {
+            protocolsCopy.add(value.toString());
+        }
+        if (getProtocols() == null) {
+            setProtocols(protocolsCopy);
+        } else {
+            getProtocols().addAll(protocolsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @see OperatingSystemName
+     */
+
+    public void setOperatingSystemName(String operatingSystemName) {
+        this.operatingSystemName = operatingSystemName;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @return The name of the operating system.
+     * @see OperatingSystemName
+     */
+
+    public String getOperatingSystemName() {
+        return this.operatingSystemName;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystemName
+     */
+
+    public WorkspaceProperties withOperatingSystemName(String operatingSystemName) {
+        setOperatingSystemName(operatingSystemName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @see OperatingSystemName
+     */
+
+    public void setOperatingSystemName(OperatingSystemName operatingSystemName) {
+        withOperatingSystemName(operatingSystemName);
+    }
+
+    /**
+     * <p>
+     * The name of the operating system.
+     * </p>
+     * 
+     * @param operatingSystemName
+     *        The name of the operating system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystemName
+     */
+
+    public WorkspaceProperties withOperatingSystemName(OperatingSystemName operatingSystemName) {
+        this.operatingSystemName = operatingSystemName.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -483,7 +906,11 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
         if (getUserVolumeSizeGib() != null)
             sb.append("UserVolumeSizeGib: ").append(getUserVolumeSizeGib()).append(",");
         if (getComputeTypeName() != null)
-            sb.append("ComputeTypeName: ").append(getComputeTypeName());
+            sb.append("ComputeTypeName: ").append(getComputeTypeName()).append(",");
+        if (getProtocols() != null)
+            sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getOperatingSystemName() != null)
+            sb.append("OperatingSystemName: ").append(getOperatingSystemName());
         sb.append("}");
         return sb.toString();
     }
@@ -519,6 +946,14 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getComputeTypeName() != null && other.getComputeTypeName().equals(this.getComputeTypeName()) == false)
             return false;
+        if (other.getProtocols() == null ^ this.getProtocols() == null)
+            return false;
+        if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
+            return false;
+        if (other.getOperatingSystemName() == null ^ this.getOperatingSystemName() == null)
+            return false;
+        if (other.getOperatingSystemName() != null && other.getOperatingSystemName().equals(this.getOperatingSystemName()) == false)
+            return false;
         return true;
     }
 
@@ -532,6 +967,8 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getRootVolumeSizeGib() == null) ? 0 : getRootVolumeSizeGib().hashCode());
         hashCode = prime * hashCode + ((getUserVolumeSizeGib() == null) ? 0 : getUserVolumeSizeGib().hashCode());
         hashCode = prime * hashCode + ((getComputeTypeName() == null) ? 0 : getComputeTypeName().hashCode());
+        hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystemName() == null) ? 0 : getOperatingSystemName().hashCode());
         return hashCode;
     }
 

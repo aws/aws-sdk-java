@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,14 +52,19 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> securityGroupArns;
     /**
      * <p>
-     * Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.
+     * Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or
+     * from.
      * </p>
      */
     private String storageVirtualMachineArn;
     /**
      * <p>
-     * Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from
-     * (for example, <code>/vol1</code>).
+     * Specifies a path to the file share in the SVM where you'll copy your data.
+     * </p>
+     * <p>
+     * You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name
+     * (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or
+     * <code>/share1</code>.
      * </p>
      * <note>
      * <p>
@@ -320,12 +325,13 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.
+     * Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or
+     * from.
      * </p>
      * 
      * @param storageVirtualMachineArn
-     *        Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or
-     *        from.
+     *        Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to
+     *        or from.
      */
 
     public void setStorageVirtualMachineArn(String storageVirtualMachineArn) {
@@ -334,10 +340,11 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.
+     * Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or
+     * from.
      * </p>
      * 
-     * @return Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to
+     * @return Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to
      *         or from.
      */
 
@@ -347,12 +354,13 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.
+     * Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or
+     * from.
      * </p>
      * 
      * @param storageVirtualMachineArn
-     *        Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or
-     *        from.
+     *        Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to
+     *        or from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,8 +371,12 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from
-     * (for example, <code>/vol1</code>).
+     * Specifies a path to the file share in the SVM where you'll copy your data.
+     * </p>
+     * <p>
+     * You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name
+     * (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or
+     * <code>/share1</code>.
      * </p>
      * <note>
      * <p>
@@ -375,8 +387,13 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param subdirectory
-     *        Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to
-     *        or from (for example, <code>/vol1</code>).</p> <note>
+     *        Specifies a path to the file share in the SVM where you'll copy your data.</p>
+     *        <p>
+     *        You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share
+     *        name (for SMB file shares). For example, your mount path might be <code>/vol1</code>,
+     *        <code>/vol1/tree1</code>, or <code>/share1</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        Don't specify a junction path in the SVM's root volume. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage
@@ -390,8 +407,12 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from
-     * (for example, <code>/vol1</code>).
+     * Specifies a path to the file share in the SVM where you'll copy your data.
+     * </p>
+     * <p>
+     * You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name
+     * (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or
+     * <code>/share1</code>.
      * </p>
      * <note>
      * <p>
@@ -401,8 +422,13 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * 
-     * @return Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to
-     *         or from (for example, <code>/vol1</code>).</p> <note>
+     * @return Specifies a path to the file share in the SVM where you'll copy your data.</p>
+     *         <p>
+     *         You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share
+     *         name (for SMB file shares). For example, your mount path might be <code>/vol1</code>,
+     *         <code>/vol1/tree1</code>, or <code>/share1</code>.
+     *         </p>
+     *         <note>
      *         <p>
      *         Don't specify a junction path in the SVM's root volume. For more information, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP
@@ -416,8 +442,12 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from
-     * (for example, <code>/vol1</code>).
+     * Specifies a path to the file share in the SVM where you'll copy your data.
+     * </p>
+     * <p>
+     * You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name
+     * (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or
+     * <code>/share1</code>.
      * </p>
      * <note>
      * <p>
@@ -428,8 +458,13 @@ public class CreateLocationFsxOntapRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @param subdirectory
-     *        Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to
-     *        or from (for example, <code>/vol1</code>).</p> <note>
+     *        Specifies a path to the file share in the SVM where you'll copy your data.</p>
+     *        <p>
+     *        You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share
+     *        name (for SMB file shares). For example, your mount path might be <code>/vol1</code>,
+     *        <code>/vol1/tree1</code>, or <code>/share1</code>.
+     *        </p>
+     *        <note>
      *        <p>
      *        Don't specify a junction path in the SVM's root volume. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage

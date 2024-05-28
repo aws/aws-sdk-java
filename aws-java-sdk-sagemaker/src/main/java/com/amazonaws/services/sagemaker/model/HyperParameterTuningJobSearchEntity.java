@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,6 +92,18 @@ public class HyperParameterTuningJobSearchEntity implements Serializable, Clonea
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * Information about either a current or completed hyperparameter tuning job.
+     * </p>
+     */
+    private HyperParameterTuningJobCompletionDetails tuningJobCompletionDetails;
+    /**
+     * <p>
+     * The total amount of resources consumed by a hyperparameter tuning job.
+     * </p>
+     */
+    private HyperParameterTuningJobConsumedResources consumedResources;
     /**
      * <p>
      * The tags associated with a hyperparameter tuning job. For more information see <a
@@ -653,6 +665,86 @@ public class HyperParameterTuningJobSearchEntity implements Serializable, Clonea
 
     /**
      * <p>
+     * Information about either a current or completed hyperparameter tuning job.
+     * </p>
+     * 
+     * @param tuningJobCompletionDetails
+     *        Information about either a current or completed hyperparameter tuning job.
+     */
+
+    public void setTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetails tuningJobCompletionDetails) {
+        this.tuningJobCompletionDetails = tuningJobCompletionDetails;
+    }
+
+    /**
+     * <p>
+     * Information about either a current or completed hyperparameter tuning job.
+     * </p>
+     * 
+     * @return Information about either a current or completed hyperparameter tuning job.
+     */
+
+    public HyperParameterTuningJobCompletionDetails getTuningJobCompletionDetails() {
+        return this.tuningJobCompletionDetails;
+    }
+
+    /**
+     * <p>
+     * Information about either a current or completed hyperparameter tuning job.
+     * </p>
+     * 
+     * @param tuningJobCompletionDetails
+     *        Information about either a current or completed hyperparameter tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTuningJobSearchEntity withTuningJobCompletionDetails(HyperParameterTuningJobCompletionDetails tuningJobCompletionDetails) {
+        setTuningJobCompletionDetails(tuningJobCompletionDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total amount of resources consumed by a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param consumedResources
+     *        The total amount of resources consumed by a hyperparameter tuning job.
+     */
+
+    public void setConsumedResources(HyperParameterTuningJobConsumedResources consumedResources) {
+        this.consumedResources = consumedResources;
+    }
+
+    /**
+     * <p>
+     * The total amount of resources consumed by a hyperparameter tuning job.
+     * </p>
+     * 
+     * @return The total amount of resources consumed by a hyperparameter tuning job.
+     */
+
+    public HyperParameterTuningJobConsumedResources getConsumedResources() {
+        return this.consumedResources;
+    }
+
+    /**
+     * <p>
+     * The total amount of resources consumed by a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param consumedResources
+     *        The total amount of resources consumed by a hyperparameter tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTuningJobSearchEntity withConsumedResources(HyperParameterTuningJobConsumedResources consumedResources) {
+        setConsumedResources(consumedResources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags associated with a hyperparameter tuning job. For more information see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
@@ -775,6 +867,10 @@ public class HyperParameterTuningJobSearchEntity implements Serializable, Clonea
             sb.append("WarmStartConfig: ").append(getWarmStartConfig()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getTuningJobCompletionDetails() != null)
+            sb.append("TuningJobCompletionDetails: ").append(getTuningJobCompletionDetails()).append(",");
+        if (getConsumedResources() != null)
+            sb.append("ConsumedResources: ").append(getConsumedResources()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -853,6 +949,14 @@ public class HyperParameterTuningJobSearchEntity implements Serializable, Clonea
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getTuningJobCompletionDetails() == null ^ this.getTuningJobCompletionDetails() == null)
+            return false;
+        if (other.getTuningJobCompletionDetails() != null && other.getTuningJobCompletionDetails().equals(this.getTuningJobCompletionDetails()) == false)
+            return false;
+        if (other.getConsumedResources() == null ^ this.getConsumedResources() == null)
+            return false;
+        if (other.getConsumedResources() != null && other.getConsumedResources().equals(this.getConsumedResources()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -880,6 +984,8 @@ public class HyperParameterTuningJobSearchEntity implements Serializable, Clonea
         hashCode = prime * hashCode + ((getOverallBestTrainingJob() == null) ? 0 : getOverallBestTrainingJob().hashCode());
         hashCode = prime * hashCode + ((getWarmStartConfig() == null) ? 0 : getWarmStartConfig().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getTuningJobCompletionDetails() == null) ? 0 : getTuningJobCompletionDetails().hashCode());
+        hashCode = prime * hashCode + ((getConsumedResources() == null) ? 0 : getConsumedResources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

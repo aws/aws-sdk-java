@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,15 +39,15 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
     private String status;
     /**
      * <p>
-     * The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for
-     * mapping users to their groups.
+     * The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code>
+     * action for mapping users to their groups.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code>
-     * action for mapping users to their groups.
+     * The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.
      * </p>
      */
     private java.util.Date receivedAt;
@@ -143,13 +143,13 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for
-     * mapping users to their groups.
+     * The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code>
+     * action for mapping users to their groups.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code>
-     *        action for mapping users to their groups.
+     *        The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or
+     *        <code>DELETE</code> action for mapping users to their groups.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -158,12 +158,12 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for
-     * mapping users to their groups.
+     * The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code>
+     * action for mapping users to their groups.
      * </p>
      * 
-     * @return The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code>
-     *         action for mapping users to their groups.
+     * @return The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or
+     *         <code>DELETE</code> action for mapping users to their groups.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -172,13 +172,13 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code> action for
-     * mapping users to their groups.
+     * The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or <code>DELETE</code>
+     * action for mapping users to their groups.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The last date-time an action was updated. An action can be a <code>PUT</code> or <code>DELETE</code>
-     *        action for mapping users to their groups.
+     *        The Unix timestamp when an action was last updated. An action can be a <code>PUT</code> or
+     *        <code>DELETE</code> action for mapping users to their groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,12 +189,12 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code>
-     * action for mapping users to their groups.
+     * The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.
      * </p>
      * 
      * @param receivedAt
-     *        The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     *        The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
      *        <code>DELETE</code> action for mapping users to their groups.
      */
 
@@ -204,11 +204,11 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code>
-     * action for mapping users to their groups.
+     * The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.
      * </p>
      * 
-     * @return The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     * @return The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
      *         <code>DELETE</code> action for mapping users to their groups.
      */
 
@@ -218,12 +218,12 @@ public class GroupOrderingIdSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or <code>DELETE</code>
-     * action for mapping users to their groups.
+     * The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     * <code>DELETE</code> action for mapping users to their groups.
      * </p>
      * 
      * @param receivedAt
-     *        The date-time an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
+     *        The Unix timestamp when an action was received by Amazon Kendra. An action can be a <code>PUT</code> or
      *        <code>DELETE</code> action for mapping users to their groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,13 +59,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the read/write throughput capacity mode for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>throughputMode:PAY_PER_REQUEST</code>
+     * <code>throughputMode:PAY_PER_REQUEST</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
+     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
      * <code>writeCapacityUnits</code> as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      * </p>
@@ -80,14 +86,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
+     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
      * managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name
      * (ARN) format as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      * </p>
@@ -102,14 +114,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * <p>
-     * If it's not specified, the default is <code>DISABLED</code>.
+     * If it's not specified, the default is <code>status=DISABLED</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -129,6 +147,26 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<Tag> tagsOverride;
+    /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     */
+    private AutoScalingSpecification autoScalingSpecification;
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     */
+    private java.util.List<ReplicaSpecification> replicaSpecifications;
 
     /**
      * <p>
@@ -334,13 +372,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the read/write throughput capacity mode for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>throughputMode:PAY_PER_REQUEST</code>
+     * <code>throughputMode:PAY_PER_REQUEST</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
+     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
      * <code>writeCapacityUnits</code> as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      * </p>
@@ -352,13 +396,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param capacitySpecificationOverride
      *        Specifies the read/write throughput capacity mode for the target table. The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>throughputMode:PAY_PER_REQUEST</code>
+     *        <code>throughputMode:PAY_PER_REQUEST</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
+     *        <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
      *        <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      *        </p>
@@ -376,13 +426,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the read/write throughput capacity mode for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>throughputMode:PAY_PER_REQUEST</code>
+     * <code>throughputMode:PAY_PER_REQUEST</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
+     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
      * <code>writeCapacityUnits</code> as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      * </p>
@@ -393,13 +449,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @return Specifies the read/write throughput capacity mode for the target table. The options are:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         • <code>throughputMode:PAY_PER_REQUEST</code>
+     *         <code>throughputMode:PAY_PER_REQUEST</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
+     *         <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
      *         <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      *         </p>
@@ -417,13 +479,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the read/write throughput capacity mode for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>throughputMode:PAY_PER_REQUEST</code>
+     * <code>throughputMode:PAY_PER_REQUEST</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
+     * <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and
      * <code>writeCapacityUnits</code> as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      * </p>
@@ -435,13 +503,19 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param capacitySpecificationOverride
      *        Specifies the read/write throughput capacity mode for the target table. The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>throughputMode:PAY_PER_REQUEST</code>
+     *        <code>throughputMode:PAY_PER_REQUEST</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
+     *        <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires
      *        <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
      *        </p>
@@ -461,14 +535,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
+     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
      * managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name
      * (ARN) format as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      * </p>
@@ -481,14 +561,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param encryptionSpecificationOverride
      *        Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS
      *        key):</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     *        <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned,
-     *        and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon
-     *        Resource Name (ARN) format as input.
+     *        <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
+     *        managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     *        Name (ARN) format as input.
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      *        </p>
@@ -506,14 +592,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
+     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
      * managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name
      * (ARN) format as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      * </p>
@@ -525,14 +617,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS
      *         key):</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     *         <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned,
+     *         <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned,
      *         and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon
      *         Resource Name (ARN) format as input.
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      *         </p>
@@ -550,14 +648,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     * <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
+     * <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
      * managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name
      * (ARN) format as input.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      * </p>
@@ -570,14 +674,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param encryptionSpecificationOverride
      *        Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS
      *        key):</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
+     *        <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned,
-     *        and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon
-     *        Resource Name (ARN) format as input.
+     *        <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and
+     *        managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource
+     *        Name (ARN) format as input.
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The default is <code>type:AWS_OWNED_KMS_KEY</code>.
      *        </p>
@@ -597,14 +707,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * <p>
-     * If it's not specified, the default is <code>DISABLED</code>.
+     * If it's not specified, the default is <code>status=DISABLED</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -614,14 +730,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param pointInTimeRecoveryOverride
      *        Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>ENABLED</code>
+     *        <code>status=ENABLED</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>DISABLED</code>
+     *        <code>status=DISABLED</code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        If it's not specified, the default is <code>DISABLED</code>.
+     *        If it's not specified, the default is <code>status=DISABLED</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -637,14 +759,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * <p>
-     * If it's not specified, the default is <code>DISABLED</code>.
+     * If it's not specified, the default is <code>status=DISABLED</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -653,14 +781,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @return Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         • <code>ENABLED</code>
+     *         <code>status=ENABLED</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         • <code>DISABLED</code>
+     *         <code>status=DISABLED</code>
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
-     *         If it's not specified, the default is <code>DISABLED</code>.
+     *         If it's not specified, the default is <code>status=DISABLED</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -676,14 +810,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * • <code>ENABLED</code>
+     * <code>status=ENABLED</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * • <code>DISABLED</code>
+     * <code>status=DISABLED</code>
      * </p>
+     * </li>
+     * </ul>
      * <p>
-     * If it's not specified, the default is <code>DISABLED</code>.
+     * If it's not specified, the default is <code>status=DISABLED</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -693,14 +833,20 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param pointInTimeRecoveryOverride
      *        Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        • <code>ENABLED</code>
+     *        <code>status=ENABLED</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        • <code>DISABLED</code>
+     *        <code>status=DISABLED</code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        If it's not specified, the default is <code>DISABLED</code>.
+     *        If it's not specified, the default is <code>status=DISABLED</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -821,6 +967,165 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the
+     *        service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *        Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *        increasing and decreasing your table's read and write capacity automatically in response to application
+     *        traffic.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     *        automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     */
+
+    public void setAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        this.autoScalingSpecification = autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @return The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the
+     *         service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *         Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *         increasing and decreasing your table's read and write capacity automatically in response to application
+     *         traffic.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput
+     *         capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     *         Guide</i>.
+     */
+
+    public AutoScalingSpecification getAutoScalingSpecification() {
+        return this.autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the
+     *        service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *        Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *        increasing and decreasing your table's read and write capacity automatically in response to application
+     *        traffic.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     *        automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableRequest withAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        setAutoScalingSpecification(autoScalingSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @return The optional Region specific settings of a multi-Regional table.
+     */
+
+    public java.util.List<ReplicaSpecification> getReplicaSpecifications() {
+        return replicaSpecifications;
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Region specific settings of a multi-Regional table.
+     */
+
+    public void setReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        if (replicaSpecifications == null) {
+            this.replicaSpecifications = null;
+            return;
+        }
+
+        this.replicaSpecifications = new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications);
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaSpecifications(java.util.Collection)} or
+     * {@link #withReplicaSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Region specific settings of a multi-Regional table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableRequest withReplicaSpecifications(ReplicaSpecification... replicaSpecifications) {
+        if (this.replicaSpecifications == null) {
+            setReplicaSpecifications(new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications.length));
+        }
+        for (ReplicaSpecification ele : replicaSpecifications) {
+            this.replicaSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Region specific settings of a multi-Regional table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableRequest withReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        setReplicaSpecifications(replicaSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -849,7 +1154,11 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getPointInTimeRecoveryOverride() != null)
             sb.append("PointInTimeRecoveryOverride: ").append(getPointInTimeRecoveryOverride()).append(",");
         if (getTagsOverride() != null)
-            sb.append("TagsOverride: ").append(getTagsOverride());
+            sb.append("TagsOverride: ").append(getTagsOverride()).append(",");
+        if (getAutoScalingSpecification() != null)
+            sb.append("AutoScalingSpecification: ").append(getAutoScalingSpecification()).append(",");
+        if (getReplicaSpecifications() != null)
+            sb.append("ReplicaSpecifications: ").append(getReplicaSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -902,6 +1211,14 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTagsOverride() != null && other.getTagsOverride().equals(this.getTagsOverride()) == false)
             return false;
+        if (other.getAutoScalingSpecification() == null ^ this.getAutoScalingSpecification() == null)
+            return false;
+        if (other.getAutoScalingSpecification() != null && other.getAutoScalingSpecification().equals(this.getAutoScalingSpecification()) == false)
+            return false;
+        if (other.getReplicaSpecifications() == null ^ this.getReplicaSpecifications() == null)
+            return false;
+        if (other.getReplicaSpecifications() != null && other.getReplicaSpecifications().equals(this.getReplicaSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -919,6 +1236,8 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getEncryptionSpecificationOverride() == null) ? 0 : getEncryptionSpecificationOverride().hashCode());
         hashCode = prime * hashCode + ((getPointInTimeRecoveryOverride() == null) ? 0 : getPointInTimeRecoveryOverride().hashCode());
         hashCode = prime * hashCode + ((getTagsOverride() == null) ? 0 : getTagsOverride().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingSpecification() == null) ? 0 : getAutoScalingSpecification().hashCode());
+        hashCode = prime * hashCode + ((getReplicaSpecifications() == null) ? 0 : getReplicaSpecifications().hashCode());
         return hashCode;
     }
 

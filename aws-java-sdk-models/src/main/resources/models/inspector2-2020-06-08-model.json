@@ -5,6 +5,7 @@
     "endpointPrefix":"inspector2",
     "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceAbbreviation":"Inspector2",
     "serviceFullName":"Inspector2",
     "serviceId":"Inspector2",
@@ -28,7 +29,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.</p>"
+      "documentation":"<p>Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response indicates the association was successfully started, but doesn’t indicate whether it was completed. You can check if the association completed by using <a href=\"https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html\">ListMembers</a> for multiple accounts or <a href=\"https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html\">GetMembers</a> for a single account.</p>"
     },
     "BatchGetAccountStatus":{
       "name":"BatchGetAccountStatus",
@@ -48,6 +49,40 @@
       ],
       "documentation":"<p>Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts within your environment.</p>"
     },
+    "BatchGetCodeSnippet":{
+      "name":"BatchGetCodeSnippet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/codesnippet/batchget",
+        "responseCode":200
+      },
+      "input":{"shape":"BatchGetCodeSnippetRequest"},
+      "output":{"shape":"BatchGetCodeSnippetResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities in.</p>"
+    },
+    "BatchGetFindingDetails":{
+      "name":"BatchGetFindingDetails",
+      "http":{
+        "method":"POST",
+        "requestUri":"/findings/details/batch/get",
+        "responseCode":200
+      },
+      "input":{"shape":"BatchGetFindingDetailsRequest"},
+      "output":{"shape":"BatchGetFindingDetailsResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Gets vulnerability details for findings.</p>"
+    },
     "BatchGetFreeTrialInfo":{
       "name":"BatchGetFreeTrialInfo",
       "http":{
@@ -64,6 +99,40 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Gets free trial status for multiple Amazon Web Services accounts.</p>"
+    },
+    "BatchGetMemberEc2DeepInspectionStatus":{
+      "name":"BatchGetMemberEc2DeepInspectionStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/ec2deepinspectionstatus/member/batch/get",
+        "responseCode":200
+      },
+      "input":{"shape":"BatchGetMemberEc2DeepInspectionStatusRequest"},
+      "output":{"shape":"BatchGetMemberEc2DeepInspectionStatusResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.</p>"
+    },
+    "BatchUpdateMemberEc2DeepInspectionStatus":{
+      "name":"BatchUpdateMemberEc2DeepInspectionStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/ec2deepinspectionstatus/member/batch/update",
+        "responseCode":200
+      },
+      "input":{"shape":"BatchUpdateMemberEc2DeepInspectionStatusRequest"},
+      "output":{"shape":"BatchUpdateMemberEc2DeepInspectionStatusResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.</p>"
     },
     "CancelFindingsReport":{
       "name":"CancelFindingsReport",
@@ -83,6 +152,42 @@
       ],
       "documentation":"<p>Cancels the given findings report.</p>"
     },
+    "CancelSbomExport":{
+      "name":"CancelSbomExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/sbomexport/cancel",
+        "responseCode":200
+      },
+      "input":{"shape":"CancelSbomExportRequest"},
+      "output":{"shape":"CancelSbomExportResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Cancels a software bill of materials (SBOM) report.</p>",
+      "idempotent":true
+    },
+    "CreateCisScanConfiguration":{
+      "name":"CreateCisScanConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-configuration/create",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateCisScanConfigurationRequest"},
+      "output":{"shape":"CreateCisScanConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Creates a CIS scan configuration.</p>"
+    },
     "CreateFilter":{
       "name":"CreateFilter",
       "http":{
@@ -100,7 +205,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Creates a filter resource using specified filter criteria.</p>"
+      "documentation":"<p>Creates a filter resource using specified filter criteria. When the filter action is set to <code>SUPPRESS</code> this action creates a suppression rule.</p>"
     },
     "CreateFindingsReport":{
       "name":"CreateFindingsReport",
@@ -118,7 +223,44 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Creates a finding report.</p>"
+      "documentation":"<p>Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. </p>"
+    },
+    "CreateSbomExport":{
+      "name":"CreateSbomExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/sbomexport/create",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateSbomExportRequest"},
+      "output":{"shape":"CreateSbomExportResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Creates a software bill of materials (SBOM) report.</p>",
+      "idempotent":true
+    },
+    "DeleteCisScanConfiguration":{
+      "name":"DeleteCisScanConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-configuration/delete",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteCisScanConfigurationRequest"},
+      "output":{"shape":"DeleteCisScanConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes a CIS scan configuration.</p>"
     },
     "DeleteFilter":{
       "name":"DeleteFilter",
@@ -153,7 +295,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Describe Amazon Inspector configuration settings for an Amazon Web Services organization</p>"
+      "documentation":"<p>Describe Amazon Inspector configuration settings for an Amazon Web Services organization.</p>"
     },
     "Disable":{
       "name":"Disable",
@@ -246,6 +388,41 @@
       ],
       "documentation":"<p>Enables the Amazon Inspector delegated administrator for your Organizations organization.</p>"
     },
+    "GetCisScanReport":{
+      "name":"GetCisScanReport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan/report/get",
+        "responseCode":200
+      },
+      "input":{"shape":"GetCisScanReportRequest"},
+      "output":{"shape":"GetCisScanReportResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieves a CIS scan report.</p>"
+    },
+    "GetCisScanResultDetails":{
+      "name":"GetCisScanResultDetails",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-result/details/get",
+        "responseCode":200
+      },
+      "input":{"shape":"GetCisScanResultDetailsRequest"},
+      "output":{"shape":"GetCisScanResultDetailsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieves CIS scan result details.</p>"
+    },
     "GetConfiguration":{
       "name":"GetConfiguration",
       "http":{
@@ -279,6 +456,41 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Retrieves information about the Amazon Inspector delegated administrator for your organization.</p>"
+    },
+    "GetEc2DeepInspectionConfiguration":{
+      "name":"GetEc2DeepInspectionConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/ec2deepinspectionconfiguration/get",
+        "responseCode":200
+      },
+      "input":{"shape":"GetEc2DeepInspectionConfigurationRequest"},
+      "output":{"shape":"GetEc2DeepInspectionConfigurationResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieves the activation status of Amazon Inspector deep inspection and custom paths associated with your account. </p>"
+    },
+    "GetEncryptionKey":{
+      "name":"GetEncryptionKey",
+      "http":{
+        "method":"GET",
+        "requestUri":"/encryptionkey/get",
+        "responseCode":200
+      },
+      "input":{"shape":"GetEncryptionKeyRequest"},
+      "output":{"shape":"GetEncryptionKeyResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Gets an encryption key.</p>"
     },
     "GetFindingsReportStatus":{
       "name":"GetFindingsReportStatus",
@@ -316,6 +528,25 @@
       ],
       "documentation":"<p>Gets member information for your organization.</p>"
     },
+    "GetSbomExport":{
+      "name":"GetSbomExport",
+      "http":{
+        "method":"POST",
+        "requestUri":"/sbomexport/get",
+        "responseCode":200
+      },
+      "input":{"shape":"GetSbomExportRequest"},
+      "output":{"shape":"GetSbomExportResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Gets details of a software bill of materials (SBOM) report.</p>",
+      "idempotent":true
+    },
     "ListAccountPermissions":{
       "name":"ListAccountPermissions",
       "http":{
@@ -332,6 +563,74 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Lists the permissions an account has to configure Amazon Inspector.</p>"
+    },
+    "ListCisScanConfigurations":{
+      "name":"ListCisScanConfigurations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-configuration/list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListCisScanConfigurationsRequest"},
+      "output":{"shape":"ListCisScanConfigurationsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists CIS scan configurations.</p>"
+    },
+    "ListCisScanResultsAggregatedByChecks":{
+      "name":"ListCisScanResultsAggregatedByChecks",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-result/check/list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListCisScanResultsAggregatedByChecksRequest"},
+      "output":{"shape":"ListCisScanResultsAggregatedByChecksResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists scan results aggregated by checks.</p>"
+    },
+    "ListCisScanResultsAggregatedByTargetResource":{
+      "name":"ListCisScanResultsAggregatedByTargetResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-result/resource/list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListCisScanResultsAggregatedByTargetResourceRequest"},
+      "output":{"shape":"ListCisScanResultsAggregatedByTargetResourceResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists scan results aggregated by a target resource.</p>"
+    },
+    "ListCisScans":{
+      "name":"ListCisScans",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan/list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListCisScansRequest"},
+      "output":{"shape":"ListCisScansResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Returns a CIS scan list.</p>"
     },
     "ListCoverage":{
       "name":"ListCoverage",
@@ -482,6 +781,118 @@
       ],
       "documentation":"<p>Lists the Amazon Inspector usage totals over the last 30 days.</p>"
     },
+    "ResetEncryptionKey":{
+      "name":"ResetEncryptionKey",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/encryptionkey/reset",
+        "responseCode":200
+      },
+      "input":{"shape":"ResetEncryptionKeyRequest"},
+      "output":{"shape":"ResetEncryptionKeyResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned key.</p>",
+      "idempotent":true
+    },
+    "SearchVulnerabilities":{
+      "name":"SearchVulnerabilities",
+      "http":{
+        "method":"POST",
+        "requestUri":"/vulnerabilities/search",
+        "responseCode":200
+      },
+      "input":{"shape":"SearchVulnerabilitiesRequest"},
+      "output":{"shape":"SearchVulnerabilitiesResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists Amazon Inspector coverage details for a specific vulnerability.</p>"
+    },
+    "SendCisSessionHealth":{
+      "name":"SendCisSessionHealth",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/cissession/health/send",
+        "responseCode":200
+      },
+      "input":{"shape":"SendCisSessionHealthRequest"},
+      "output":{"shape":"SendCisSessionHealthResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p> Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service. </p>",
+      "idempotent":true
+    },
+    "SendCisSessionTelemetry":{
+      "name":"SendCisSessionTelemetry",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/cissession/telemetry/send",
+        "responseCode":200
+      },
+      "input":{"shape":"SendCisSessionTelemetryRequest"},
+      "output":{"shape":"SendCisSessionTelemetryResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p> Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service. </p>",
+      "idempotent":true
+    },
+    "StartCisSession":{
+      "name":"StartCisSession",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/cissession/start",
+        "responseCode":200
+      },
+      "input":{"shape":"StartCisSessionRequest"},
+      "output":{"shape":"StartCisSessionResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p> Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service. </p>",
+      "idempotent":true
+    },
+    "StopCisSession":{
+      "name":"StopCisSession",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/cissession/stop",
+        "responseCode":200
+      },
+      "input":{"shape":"StopCisSessionRequest"},
+      "output":{"shape":"StopCisSessionResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p> Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by the service. </p>",
+      "idempotent":true
+    },
     "TagResource":{
       "name":"TagResource",
       "http":{
@@ -518,6 +929,24 @@
       ],
       "documentation":"<p>Removes tags from a resource.</p>"
     },
+    "UpdateCisScanConfiguration":{
+      "name":"UpdateCisScanConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/cis/scan-configuration/update",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateCisScanConfigurationRequest"},
+      "output":{"shape":"UpdateCisScanConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates a CIS scan configuration.</p>"
+    },
     "UpdateConfiguration":{
       "name":"UpdateConfiguration",
       "http":{
@@ -534,6 +963,42 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Updates setting configurations for your Amazon Inspector account. When you use this API as an Amazon Inspector delegated administrator this updates the setting for all accounts you manage. Member accounts in an organization cannot update this setting.</p>"
+    },
+    "UpdateEc2DeepInspectionConfiguration":{
+      "name":"UpdateEc2DeepInspectionConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/ec2deepinspectionconfiguration/update",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateEc2DeepInspectionConfigurationRequest"},
+      "output":{"shape":"UpdateEc2DeepInspectionConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for your account. </p>"
+    },
+    "UpdateEncryptionKey":{
+      "name":"UpdateEncryptionKey",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/encryptionkey/update",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateEncryptionKeyRequest"},
+      "output":{"shape":"UpdateEncryptionKeyResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates an encryption key. A <code>ResourceNotFoundException</code> means that an Amazon Web Services owned key is being used for encryption.</p>",
+      "idempotent":true
     },
     "UpdateFilter":{
       "name":"UpdateFilter",
@@ -552,6 +1017,23 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Specifies the action that is to be applied to the findings that match the filter.</p>"
+    },
+    "UpdateOrgEc2DeepInspectionConfiguration":{
+      "name":"UpdateOrgEc2DeepInspectionConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/ec2deepinspectionconfiguration/org/update",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateOrgEc2DeepInspectionConfigurationRequest"},
+      "output":{"shape":"UpdateOrgEc2DeepInspectionConfigurationResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates the Amazon Inspector deep inspection custom paths for your organization. You must be an Amazon Inspector delegated administrator to use this API.</p>"
     },
     "UpdateOrganizationConfiguration":{
       "name":"UpdateOrganizationConfiguration",
@@ -650,6 +1132,12 @@
       "min":12,
       "pattern":"^\\d{12}$"
     },
+    "AccountIdFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
     "AccountIdSet":{
       "type":"list",
       "member":{"shape":"AccountId"},
@@ -689,7 +1177,7 @@
           "documentation":"<p>An object detailing the status of Amazon Inspector for the account.</p>"
         }
       },
-      "documentation":"<p>An object with details the status of an Amazon Web Services account within your Amazon Inspector environment</p>"
+      "documentation":"<p>An object with details the status of an Amazon Web Services account within your Amazon Inspector environment.</p>"
     },
     "AccountStateList":{
       "type":"list",
@@ -702,7 +1190,8 @@
       "type":"string",
       "enum":[
         "NETWORK_REACHABILITY",
-        "PACKAGE_VULNERABILITY"
+        "PACKAGE_VULNERABILITY",
+        "CODE_VULNERABILITY"
       ]
     },
     "AggregationRequest":{
@@ -732,6 +1221,14 @@
           "shape":"ImageLayerAggregation",
           "documentation":"<p>An object that contains details about an aggregation request based on container image layers.</p>"
         },
+        "lambdaFunctionAggregation":{
+          "shape":"LambdaFunctionAggregation",
+          "documentation":"<p>Returns an object with findings aggregated by Amazon Web Services Lambda function.</p>"
+        },
+        "lambdaLayerAggregation":{
+          "shape":"LambdaLayerAggregation",
+          "documentation":"<p>Returns an object with findings aggregated by Amazon Web Services Lambda layer.</p>"
+        },
         "packageAggregation":{
           "shape":"PackageAggregation",
           "documentation":"<p>An object that contains details about an aggregation request based on operating system package type.</p>"
@@ -752,7 +1249,8 @@
       "type":"string",
       "enum":[
         "AWS_EC2_INSTANCE",
-        "AWS_ECR_CONTAINER_IMAGE"
+        "AWS_ECR_CONTAINER_IMAGE",
+        "AWS_LAMBDA_FUNCTION"
       ]
     },
     "AggregationResponse":{
@@ -781,6 +1279,14 @@
         "imageLayerAggregation":{
           "shape":"ImageLayerAggregationResponse",
           "documentation":"<p>An object that contains details about an aggregation response based on container image layers.</p>"
+        },
+        "lambdaFunctionAggregation":{
+          "shape":"LambdaFunctionAggregationResponse",
+          "documentation":"<p>An aggregation of findings by Amazon Web Services Lambda function.</p>"
+        },
+        "lambdaLayerAggregation":{
+          "shape":"LambdaLayerAggregationResponse",
+          "documentation":"<p>An aggregation of findings by Amazon Web Services Lambda layer.</p>"
         },
         "packageAggregation":{
           "shape":"PackageAggregationResponse",
@@ -813,7 +1319,9 @@
         "AWS_EC2_INSTANCE",
         "AWS_ECR_CONTAINER",
         "IMAGE_LAYER",
-        "ACCOUNT"
+        "ACCOUNT",
+        "AWS_LAMBDA_FUNCTION",
+        "LAMBDA_LAYER"
       ]
     },
     "AmiAggregation":{
@@ -840,12 +1348,11 @@
       "members":{
         "accountId":{
           "shape":"AccountId",
-          "documentation":"<p>The Amazon Web Services account ID that the AMI belongs.</p>"
+          "documentation":"<p>The Amazon Web Services account ID for the AMI.</p>"
         },
         "affectedInstances":{
           "shape":"Long",
-          "documentation":"<p>The IDs of Amazon EC2 instances using this AMI.</p>",
-          "box":true
+          "documentation":"<p>The IDs of Amazon EC2 instances using this AMI.</p>"
         },
         "ami":{
           "shape":"AmiId",
@@ -870,6 +1377,19 @@
         "ALL",
         "AFFECTED_INSTANCES"
       ]
+    },
+    "Architecture":{
+      "type":"string",
+      "enum":[
+        "X86_64",
+        "ARM64"
+      ]
+    },
+    "ArchitectureList":{
+      "type":"list",
+      "member":{"shape":"Architecture"},
+      "max":1,
+      "min":1
     },
     "Arn":{
       "type":"string",
@@ -896,6 +1416,28 @@
         }
       }
     },
+    "AtigData":{
+      "type":"structure",
+      "members":{
+        "firstSeen":{
+          "shape":"FirstSeen",
+          "documentation":"<p>The date and time this vulnerability was first observed.</p>"
+        },
+        "lastSeen":{
+          "shape":"LastSeen",
+          "documentation":"<p>The date and time this vulnerability was last observed.</p>"
+        },
+        "targets":{
+          "shape":"Targets",
+          "documentation":"<p>The commercial sectors this vulnerability targets.</p>"
+        },
+        "ttps":{
+          "shape":"Ttps",
+          "documentation":"<p>The <a href=\"https://attack.mitre.org/\">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>"
+        }
+      },
+      "documentation":"<p>The Amazon Web Services Threat Intel Group (ATIG) details for a specific vulnerability.</p>"
+    },
     "AutoEnable":{
       "type":"structure",
       "required":[
@@ -905,13 +1447,19 @@
       "members":{
         "ec2":{
           "shape":"Boolean",
-          "documentation":"<p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>",
-          "box":true
+          "documentation":"<p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>"
         },
         "ecr":{
           "shape":"Boolean",
-          "documentation":"<p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>",
-          "box":true
+          "documentation":"<p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>"
+        },
+        "lambda":{
+          "shape":"Boolean",
+          "documentation":"<p>Represents whether Amazon Web Services Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>"
+        },
+        "lambdaCode":{
+          "shape":"Boolean",
+          "documentation":"<p>Represents whether Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>"
         }
       },
       "documentation":"<p>Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.</p>"
@@ -1065,7 +1613,7 @@
         },
         "registry":{
           "shape":"NonEmptyString",
-          "documentation":"<p>The registry the Amazon ECR container image belongs to.</p>"
+          "documentation":"<p>The registry for the Amazon ECR container image.</p>"
         },
         "repositoryName":{
           "shape":"NonEmptyString",
@@ -1081,6 +1629,59 @@
         "HIGH",
         "ALL"
       ]
+    },
+    "AwsLambdaFunctionDetails":{
+      "type":"structure",
+      "required":[
+        "codeSha256",
+        "executionRoleArn",
+        "functionName",
+        "runtime",
+        "version"
+      ],
+      "members":{
+        "architectures":{
+          "shape":"ArchitectureList",
+          "documentation":"<p>The instruction set architecture that the Amazon Web Services Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>"
+        },
+        "codeSha256":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The SHA256 hash of the Amazon Web Services Lambda function's deployment package.</p>"
+        },
+        "executionRoleArn":{
+          "shape":"ExecutionRoleArn",
+          "documentation":"<p>The Amazon Web Services Lambda function's execution role.</p>"
+        },
+        "functionName":{
+          "shape":"FunctionName",
+          "documentation":"<p>The name of the Amazon Web Services Lambda function.</p>"
+        },
+        "lastModifiedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time that a user last updated the configuration, in <a href=\"https://www.iso.org/iso-8601-date-and-time-format.html\">ISO 8601 format</a> </p>"
+        },
+        "layers":{
+          "shape":"LayerList",
+          "documentation":"<p>The Amazon Web Services Lambda function's <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html\"> layers</a>. A Lambda function can have up to five layers.</p>"
+        },
+        "packageType":{
+          "shape":"PackageType",
+          "documentation":"<p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>"
+        },
+        "runtime":{
+          "shape":"Runtime",
+          "documentation":"<p>The runtime environment for the Amazon Web Services Lambda function.</p>"
+        },
+        "version":{
+          "shape":"Version",
+          "documentation":"<p>The version of the Amazon Web Services Lambda function.</p>"
+        },
+        "vpcConfig":{
+          "shape":"LambdaVpcConfig",
+          "documentation":"<p>The Amazon Web Services Lambda function's networking configuration.</p>"
+        }
+      },
+      "documentation":"<p> A summary of information about the Amazon Web Services Lambda function.</p>"
     },
     "BadRequestException":{
       "type":"structure",
@@ -1118,6 +1719,58 @@
         }
       }
     },
+    "BatchGetCodeSnippetRequest":{
+      "type":"structure",
+      "required":["findingArns"],
+      "members":{
+        "findingArns":{
+          "shape":"BatchGetCodeSnippetRequestFindingArnsList",
+          "documentation":"<p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>"
+        }
+      }
+    },
+    "BatchGetCodeSnippetRequestFindingArnsList":{
+      "type":"list",
+      "member":{"shape":"FindingArn"},
+      "max":10,
+      "min":1
+    },
+    "BatchGetCodeSnippetResponse":{
+      "type":"structure",
+      "members":{
+        "codeSnippetResults":{
+          "shape":"CodeSnippetResultList",
+          "documentation":"<p>The retrieved code snippets associated with the provided finding ARNs.</p>"
+        },
+        "errors":{
+          "shape":"CodeSnippetErrorList",
+          "documentation":"<p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>"
+        }
+      }
+    },
+    "BatchGetFindingDetailsRequest":{
+      "type":"structure",
+      "required":["findingArns"],
+      "members":{
+        "findingArns":{
+          "shape":"FindingArnList",
+          "documentation":"<p>A list of finding ARNs.</p>"
+        }
+      }
+    },
+    "BatchGetFindingDetailsResponse":{
+      "type":"structure",
+      "members":{
+        "errors":{
+          "shape":"FindingDetailsErrorList",
+          "documentation":"<p>Error information for findings that details could not be returned for.</p>"
+        },
+        "findingDetails":{
+          "shape":"FindingDetails",
+          "documentation":"<p>A finding's vulnerability details.</p>"
+        }
+      }
+    },
     "BatchGetFreeTrialInfoRequest":{
       "type":"structure",
       "required":["accountIds"],
@@ -1151,7 +1804,65 @@
         }
       }
     },
-    "Boolean":{"type":"boolean"},
+    "BatchGetMemberEc2DeepInspectionStatusRequest":{
+      "type":"structure",
+      "members":{
+        "accountIds":{
+          "shape":"AccountIdSet",
+          "documentation":"<p>The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt; </code></pre>"
+        }
+      }
+    },
+    "BatchGetMemberEc2DeepInspectionStatusResponse":{
+      "type":"structure",
+      "members":{
+        "accountIds":{
+          "shape":"MemberAccountEc2DeepInspectionStatusStateList",
+          "documentation":"<p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts. <pre><code> &lt;/p&gt; </code></pre>"
+        },
+        "failedAccountIds":{
+          "shape":"FailedMemberAccountEc2DeepInspectionStatusStateList",
+          "documentation":"<p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why. <pre><code> &lt;/p&gt; </code></pre>"
+        }
+      }
+    },
+    "BatchUpdateMemberEc2DeepInspectionStatusRequest":{
+      "type":"structure",
+      "required":["accountIds"],
+      "members":{
+        "accountIds":{
+          "shape":"MemberAccountEc2DeepInspectionStatusList",
+          "documentation":"<p>The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.</p>"
+        }
+      }
+    },
+    "BatchUpdateMemberEc2DeepInspectionStatusResponse":{
+      "type":"structure",
+      "members":{
+        "accountIds":{
+          "shape":"MemberAccountEc2DeepInspectionStatusStateList",
+          "documentation":"<p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. </p>"
+        },
+        "failedAccountIds":{
+          "shape":"FailedMemberAccountEc2DeepInspectionStatusStateList",
+          "documentation":"<p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. </p>"
+        }
+      }
+    },
+    "BenchmarkProfile":{
+      "type":"string",
+      "max":128,
+      "min":0
+    },
+    "BenchmarkVersion":{
+      "type":"string",
+      "max":8,
+      "min":0
+    },
+    "Boolean":{
+      "type":"boolean",
+      "box":true
+    },
     "CancelFindingsReportRequest":{
       "type":"structure",
       "required":["reportId"],
@@ -1172,13 +1883,1049 @@
         }
       }
     },
+    "CancelSbomExportRequest":{
+      "type":"structure",
+      "required":["reportId"],
+      "members":{
+        "reportId":{
+          "shape":"ReportId",
+          "documentation":"<p>The report ID of the SBOM export to cancel.</p>"
+        }
+      }
+    },
+    "CancelSbomExportResponse":{
+      "type":"structure",
+      "members":{
+        "reportId":{
+          "shape":"ReportId",
+          "documentation":"<p>The report ID of the canceled SBOM export.</p>"
+        }
+      }
+    },
+    "CheckCount":{
+      "type":"integer",
+      "max":65536,
+      "min":0
+    },
+    "CheckIdFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisAccountIdList":{
+      "type":"list",
+      "member":{"shape":"AccountId"},
+      "max":10000,
+      "min":1
+    },
+    "CisCheckAggregation":{
+      "type":"structure",
+      "required":["scanArn"],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The account ID for the CIS check.</p>"
+        },
+        "checkDescription":{
+          "shape":"String",
+          "documentation":"<p>The description for the CIS check.</p>"
+        },
+        "checkId":{
+          "shape":"String",
+          "documentation":"<p>The check ID for the CIS check.</p>"
+        },
+        "level":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p>The CIS check level.</p>"
+        },
+        "platform":{
+          "shape":"String",
+          "documentation":"<p>The CIS check platform.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The scan ARN for the CIS check scan ARN.</p>"
+        },
+        "statusCounts":{
+          "shape":"StatusCounts",
+          "documentation":"<p>The CIS check status counts.</p>"
+        },
+        "title":{
+          "shape":"String",
+          "documentation":"<p>The CIS check title.</p>"
+        }
+      },
+      "documentation":"<p>A CIS check.</p>"
+    },
+    "CisCheckAggregationList":{
+      "type":"list",
+      "member":{"shape":"CisCheckAggregation"},
+      "max":1000,
+      "min":1
+    },
+    "CisDateFilter":{
+      "type":"structure",
+      "members":{
+        "earliestScanStartTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The CIS date filter's earliest scan start time.</p>"
+        },
+        "latestScanStartTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The CIS date filter's latest scan start time.</p>"
+        }
+      },
+      "documentation":"<p>The CIS date filter.</p>"
+    },
+    "CisFindingArn":{
+      "type":"string",
+      "pattern":"^arn:aws(-gov|-cn)?:inspector2:[-.a-z0-9]{0,20}:\\d{12}:owner/\\d{12}/cis-finding/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    },
+    "CisFindingArnFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisFindingStatus":{
+      "type":"string",
+      "enum":[
+        "PASSED",
+        "FAILED",
+        "SKIPPED"
+      ]
+    },
+    "CisFindingStatusComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "CisFindingStatusFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisFindingStatusComparison",
+          "documentation":"<p>The comparison value of the CIS finding status filter.</p>"
+        },
+        "value":{
+          "shape":"CisFindingStatus",
+          "documentation":"<p>The value of the CIS finding status filter.</p>"
+        }
+      },
+      "documentation":"<p>The CIS finding status filter.</p>"
+    },
+    "CisFindingStatusFilterList":{
+      "type":"list",
+      "member":{"shape":"CisFindingStatusFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisNumberFilter":{
+      "type":"structure",
+      "members":{
+        "lowerInclusive":{
+          "shape":"Integer",
+          "documentation":"<p>The CIS number filter's lower inclusive.</p>"
+        },
+        "upperInclusive":{
+          "shape":"Integer",
+          "documentation":"<p>The CIS number filter's upper inclusive.</p>"
+        }
+      },
+      "documentation":"<p>The CIS number filter.</p>"
+    },
+    "CisNumberFilterList":{
+      "type":"list",
+      "member":{"shape":"CisNumberFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisOwnerId":{
+      "type":"string",
+      "pattern":"^\\d{12}|o-[a-z0-9]{10,32}$"
+    },
+    "CisReportFormat":{
+      "type":"string",
+      "enum":[
+        "PDF",
+        "CSV"
+      ]
+    },
+    "CisReportStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCEEDED",
+        "FAILED",
+        "IN_PROGRESS"
+      ]
+    },
+    "CisResultStatus":{
+      "type":"string",
+      "enum":[
+        "PASSED",
+        "FAILED",
+        "SKIPPED"
+      ]
+    },
+    "CisResultStatusComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "CisResultStatusFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisResultStatusComparison",
+          "documentation":"<p>The comparison value of the CIS result status filter.</p>"
+        },
+        "value":{
+          "shape":"CisResultStatus",
+          "documentation":"<p>The value of the CIS result status filter.</p>"
+        }
+      },
+      "documentation":"<p>The CIS result status filter.</p>"
+    },
+    "CisResultStatusFilterList":{
+      "type":"list",
+      "member":{"shape":"CisResultStatusFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisRuleDetails":{
+      "type":"blob",
+      "max":1000,
+      "min":0
+    },
+    "CisRuleStatus":{
+      "type":"string",
+      "enum":[
+        "FAILED",
+        "PASSED",
+        "NOT_EVALUATED",
+        "INFORMATIONAL",
+        "UNKNOWN",
+        "NOT_APPLICABLE",
+        "ERROR"
+      ]
+    },
+    "CisScan":{
+      "type":"structure",
+      "required":[
+        "scanArn",
+        "scanConfigurationArn"
+      ],
+      "members":{
+        "failedChecks":{
+          "shape":"Integer",
+          "documentation":"<p>The CIS scan's failed checks.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The CIS scan's ARN.</p>"
+        },
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The CIS scan's configuration ARN.</p>"
+        },
+        "scanDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>The CIS scan's date.</p>"
+        },
+        "scanName":{
+          "shape":"CisScanName",
+          "documentation":"<p>The the name of the scan configuration that's associated with this scan.</p>"
+        },
+        "scheduledBy":{
+          "shape":"String",
+          "documentation":"<p>The account or organization that schedules the CIS scan.</p>"
+        },
+        "securityLevel":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p> The security level for the CIS scan. Security level refers to the Benchmark levels that CIS assigns to a profile. </p>"
+        },
+        "status":{
+          "shape":"CisScanStatus",
+          "documentation":"<p>The CIS scan's status.</p>"
+        },
+        "targets":{
+          "shape":"CisTargets",
+          "documentation":"<p>The CIS scan's targets.</p>"
+        },
+        "totalChecks":{
+          "shape":"Integer",
+          "documentation":"<p>The CIS scan's total checks.</p>"
+        }
+      },
+      "documentation":"<p>The CIS scan.</p>"
+    },
+    "CisScanArn":{
+      "type":"string",
+      "pattern":"^arn:aws(-us-gov|-cn)?:inspector2:[-.a-z0-9]{0,20}:\\d{12}:owner/(\\d{12}|o-[a-z0-9]{10,32})/cis-scan/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+    },
+    "CisScanArnFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisScanConfiguration":{
+      "type":"structure",
+      "required":["scanConfigurationArn"],
+      "members":{
+        "ownerId":{
+          "shape":"CisOwnerId",
+          "documentation":"<p>The CIS scan configuration's owner ID.</p>"
+        },
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The CIS scan configuration's scan configuration ARN.</p>"
+        },
+        "scanName":{
+          "shape":"CisScanName",
+          "documentation":"<p>The name of the CIS scan configuration.</p>"
+        },
+        "schedule":{
+          "shape":"Schedule",
+          "documentation":"<p>The CIS scan configuration's schedule.</p>"
+        },
+        "securityLevel":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p>The CIS scan configuration's security level.</p>"
+        },
+        "tags":{
+          "shape":"CisTagMap",
+          "documentation":"<p>The CIS scan configuration's tags.</p>"
+        },
+        "targets":{
+          "shape":"CisTargets",
+          "documentation":"<p>The CIS scan configuration's targets.</p>"
+        }
+      },
+      "documentation":"<p>The CIS scan configuration.</p>"
+    },
+    "CisScanConfigurationArn":{
+      "type":"string",
+      "pattern":"^arn:aws(-us-gov|-cn)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-[0-9]{1}:[0-9]{12}:owner/(o-[a-z0-9]+|[0-9]{12})/cis-configuration/[0-9a-fA-F-]+$"
+    },
+    "CisScanConfigurationArnFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisScanConfigurationList":{
+      "type":"list",
+      "member":{"shape":"CisScanConfiguration"},
+      "max":100,
+      "min":0
+    },
+    "CisScanConfigurationsSortBy":{
+      "type":"string",
+      "enum":[
+        "SCAN_NAME",
+        "SCAN_CONFIGURATION_ARN"
+      ]
+    },
+    "CisScanDateFilterList":{
+      "type":"list",
+      "member":{"shape":"CisDateFilter"},
+      "max":1,
+      "min":1
+    },
+    "CisScanList":{
+      "type":"list",
+      "member":{"shape":"CisScan"},
+      "max":50,
+      "min":0
+    },
+    "CisScanName":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "CisScanNameFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisScanResultDetails":{
+      "type":"structure",
+      "required":["scanArn"],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The CIS scan result details' account ID.</p>"
+        },
+        "checkDescription":{
+          "shape":"String",
+          "documentation":"<p>The account ID that's associated with the CIS scan result details.</p>"
+        },
+        "checkId":{
+          "shape":"String",
+          "documentation":"<p>The CIS scan result details' check ID.</p>"
+        },
+        "findingArn":{
+          "shape":"CisFindingArn",
+          "documentation":"<p>The CIS scan result details' finding ARN.</p>"
+        },
+        "level":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p>The CIS scan result details' level.</p>"
+        },
+        "platform":{
+          "shape":"String",
+          "documentation":"<p>The CIS scan result details' platform.</p>"
+        },
+        "remediation":{
+          "shape":"String",
+          "documentation":"<p>The CIS scan result details' remediation.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The CIS scan result details' scan ARN.</p>"
+        },
+        "status":{
+          "shape":"CisFindingStatus",
+          "documentation":"<p>The CIS scan result details' status.</p>"
+        },
+        "statusReason":{
+          "shape":"String",
+          "documentation":"<p>The CIS scan result details' status reason.</p>"
+        },
+        "targetResourceId":{
+          "shape":"ResourceId",
+          "documentation":"<p>The CIS scan result details' target resource ID.</p>"
+        },
+        "title":{
+          "shape":"String",
+          "documentation":"<p>The CIS scan result details' title.</p>"
+        }
+      },
+      "documentation":"<p>The CIS scan result details.</p>"
+    },
+    "CisScanResultDetailsFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "checkIdFilters":{
+          "shape":"CheckIdFilterList",
+          "documentation":"<p>The criteria's check ID filters.</p>"
+        },
+        "findingArnFilters":{
+          "shape":"CisFindingArnFilterList",
+          "documentation":"<p>The criteria's finding ARN filters.</p>"
+        },
+        "findingStatusFilters":{
+          "shape":"CisFindingStatusFilterList",
+          "documentation":"<p>The criteria's finding status filters.</p>"
+        },
+        "securityLevelFilters":{
+          "shape":"CisSecurityLevelFilterList",
+          "documentation":"<p> The criteria's security level filters. . Security level refers to the Benchmark levels that CIS assigns to a profile. </p>"
+        },
+        "titleFilters":{
+          "shape":"TitleFilterList",
+          "documentation":"<p>The criteria's title filters.</p>"
+        }
+      },
+      "documentation":"<p>The CIS scan result details filter criteria.</p>"
+    },
+    "CisScanResultDetailsList":{
+      "type":"list",
+      "member":{"shape":"CisScanResultDetails"},
+      "max":1000,
+      "min":1
+    },
+    "CisScanResultDetailsSortBy":{
+      "type":"string",
+      "enum":[
+        "CHECK_ID",
+        "STATUS"
+      ]
+    },
+    "CisScanResultsAggregatedByChecksFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "accountIdFilters":{
+          "shape":"OneAccountIdFilterList",
+          "documentation":"<p>The criteria's account ID filters.</p>"
+        },
+        "checkIdFilters":{
+          "shape":"CheckIdFilterList",
+          "documentation":"<p>The criteria's check ID filters.</p>"
+        },
+        "failedResourcesFilters":{
+          "shape":"CisNumberFilterList",
+          "documentation":"<p>The criteria's failed resources filters.</p>"
+        },
+        "platformFilters":{
+          "shape":"PlatformFilterList",
+          "documentation":"<p>The criteria's platform filters.</p>"
+        },
+        "securityLevelFilters":{
+          "shape":"CisSecurityLevelFilterList",
+          "documentation":"<p>The criteria's security level filters.</p>"
+        },
+        "titleFilters":{
+          "shape":"TitleFilterList",
+          "documentation":"<p>The criteria's title filters.</p>"
+        }
+      },
+      "documentation":"<p>The scan results aggregated by checks filter criteria.</p>"
+    },
+    "CisScanResultsAggregatedByChecksSortBy":{
+      "type":"string",
+      "enum":[
+        "CHECK_ID",
+        "TITLE",
+        "PLATFORM",
+        "FAILED_COUNTS",
+        "SECURITY_LEVEL"
+      ]
+    },
+    "CisScanResultsAggregatedByTargetResourceFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "accountIdFilters":{
+          "shape":"AccountIdFilterList",
+          "documentation":"<p>The criteria's account ID filters.</p>"
+        },
+        "checkIdFilters":{
+          "shape":"CheckIdFilterList",
+          "documentation":"<p>The criteria's check ID filters.</p>"
+        },
+        "failedChecksFilters":{
+          "shape":"CisNumberFilterList",
+          "documentation":"<p>The criteria's failed checks filters.</p>"
+        },
+        "platformFilters":{
+          "shape":"PlatformFilterList",
+          "documentation":"<p>The criteria's platform filters.</p>"
+        },
+        "statusFilters":{
+          "shape":"CisResultStatusFilterList",
+          "documentation":"<p>The criteria's status filter.</p>"
+        },
+        "targetResourceIdFilters":{
+          "shape":"ResourceIdFilterList",
+          "documentation":"<p>The criteria's target resource ID filters.</p>"
+        },
+        "targetResourceTagFilters":{
+          "shape":"ResourceTagFilterList",
+          "documentation":"<p>The criteria's target resource tag filters.</p>"
+        },
+        "targetStatusFilters":{
+          "shape":"TargetStatusFilterList",
+          "documentation":"<p>The criteria's target status filters.</p>"
+        },
+        "targetStatusReasonFilters":{
+          "shape":"TargetStatusReasonFilterList",
+          "documentation":"<p>The criteria's target status reason filters.</p>"
+        }
+      },
+      "documentation":"<p>The scan results aggregated by target resource filter criteria.</p>"
+    },
+    "CisScanResultsAggregatedByTargetResourceSortBy":{
+      "type":"string",
+      "enum":[
+        "RESOURCE_ID",
+        "FAILED_COUNTS",
+        "ACCOUNT_ID",
+        "PLATFORM",
+        "TARGET_STATUS",
+        "TARGET_STATUS_REASON"
+      ]
+    },
+    "CisScanResultsMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "CisScanStatus":{
+      "type":"string",
+      "enum":[
+        "FAILED",
+        "COMPLETED",
+        "CANCELLED",
+        "IN_PROGRESS"
+      ]
+    },
+    "CisScanStatusComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "CisScanStatusFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisScanStatusComparison",
+          "documentation":"<p>The filter comparison value.</p>"
+        },
+        "value":{
+          "shape":"CisScanStatus",
+          "documentation":"<p>The filter value.</p>"
+        }
+      },
+      "documentation":"<p>The CIS scan status filter.</p>"
+    },
+    "CisScanStatusFilterList":{
+      "type":"list",
+      "member":{"shape":"CisScanStatusFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisScheduledByFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisSecurityLevel":{
+      "type":"string",
+      "enum":[
+        "LEVEL_1",
+        "LEVEL_2"
+      ]
+    },
+    "CisSecurityLevelComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "CisSecurityLevelFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisSecurityLevelComparison",
+          "documentation":"<p>The CIS security filter comparison value.</p>"
+        },
+        "value":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p>The CIS security filter value.</p>"
+        }
+      },
+      "documentation":"<p> The CIS security level filter. Security level refers to the Benchmark levels that CIS assigns to a profile. </p>"
+    },
+    "CisSecurityLevelFilterList":{
+      "type":"list",
+      "member":{"shape":"CisSecurityLevelFilter"},
+      "max":10,
+      "min":1
+    },
+    "CisSessionMessage":{
+      "type":"structure",
+      "required":[
+        "cisRuleDetails",
+        "ruleId",
+        "status"
+      ],
+      "members":{
+        "cisRuleDetails":{
+          "shape":"CisRuleDetails",
+          "documentation":"<p>The CIS rule details for the CIS session message.</p>"
+        },
+        "ruleId":{
+          "shape":"RuleId",
+          "documentation":"<p>The rule ID for the CIS session message.</p>"
+        },
+        "status":{
+          "shape":"CisRuleStatus",
+          "documentation":"<p>The status of the CIS session message.</p>"
+        }
+      },
+      "documentation":"<p>The CIS session message.</p>"
+    },
+    "CisSessionMessages":{
+      "type":"list",
+      "member":{"shape":"CisSessionMessage"},
+      "max":150,
+      "min":1
+    },
+    "CisSortOrder":{
+      "type":"string",
+      "enum":[
+        "ASC",
+        "DESC"
+      ]
+    },
+    "CisStringComparison":{
+      "type":"string",
+      "enum":[
+        "EQUALS",
+        "PREFIX",
+        "NOT_EQUALS"
+      ]
+    },
+    "CisStringFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisStringComparison",
+          "documentation":"<p>The comparison value of the CIS string filter.</p>"
+        },
+        "value":{
+          "shape":"String",
+          "documentation":"<p>The value of the CIS string filter.</p>"
+        }
+      },
+      "documentation":"<p>The CIS string filter.</p>"
+    },
+    "CisTagMap":{
+      "type":"map",
+      "key":{"shape":"MapKey"},
+      "value":{"shape":"MapValue"}
+    },
+    "CisTargetResourceAggregation":{
+      "type":"structure",
+      "required":["scanArn"],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The account ID for the CIS target resource.</p>"
+        },
+        "platform":{
+          "shape":"String",
+          "documentation":"<p>The platform for the CIS target resource.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The scan ARN for the CIS target resource.</p>"
+        },
+        "statusCounts":{
+          "shape":"StatusCounts",
+          "documentation":"<p>The target resource status counts.</p>"
+        },
+        "targetResourceId":{
+          "shape":"ResourceId",
+          "documentation":"<p>The ID of the target resource.</p>"
+        },
+        "targetResourceTags":{
+          "shape":"TargetResourceTags",
+          "documentation":"<p>The tag for the target resource.</p>"
+        },
+        "targetStatus":{
+          "shape":"CisTargetStatus",
+          "documentation":"<p>The status of the target resource.</p>"
+        },
+        "targetStatusReason":{
+          "shape":"CisTargetStatusReason",
+          "documentation":"<p>The reason for the target resource.</p>"
+        }
+      },
+      "documentation":"<p>The CIS target resource aggregation.</p>"
+    },
+    "CisTargetResourceAggregationList":{
+      "type":"list",
+      "member":{"shape":"CisTargetResourceAggregation"},
+      "max":1000,
+      "min":1
+    },
+    "CisTargetStatus":{
+      "type":"string",
+      "enum":[
+        "TIMED_OUT",
+        "CANCELLED",
+        "COMPLETED"
+      ]
+    },
+    "CisTargetStatusComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "CisTargetStatusFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisTargetStatusComparison",
+          "documentation":"<p>The comparison value of the CIS target status filter.</p>"
+        },
+        "value":{
+          "shape":"CisTargetStatus",
+          "documentation":"<p>The value of the CIS target status filter.</p>"
+        }
+      },
+      "documentation":"<p>The CIS target status filter.</p>"
+    },
+    "CisTargetStatusReason":{
+      "type":"string",
+      "enum":[
+        "SCAN_IN_PROGRESS",
+        "UNSUPPORTED_OS",
+        "SSM_UNMANAGED"
+      ]
+    },
+    "CisTargetStatusReasonFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"CisTargetStatusComparison",
+          "documentation":"<p>The comparison value of the CIS target status reason filter.</p>"
+        },
+        "value":{
+          "shape":"CisTargetStatusReason",
+          "documentation":"<p>The value of the CIS target status reason filter.</p>"
+        }
+      },
+      "documentation":"<p>The CIS target status reason filter.</p>"
+    },
+    "CisTargets":{
+      "type":"structure",
+      "members":{
+        "accountIds":{
+          "shape":"CisAccountIdList",
+          "documentation":"<p>The CIS target account ids.</p>"
+        },
+        "targetResourceTags":{
+          "shape":"TargetResourceTags",
+          "documentation":"<p>The CIS target resource tags.</p>"
+        }
+      },
+      "documentation":"<p>The CIS targets.</p>"
+    },
+    "CisaAction":{
+      "type":"string",
+      "min":0
+    },
+    "CisaData":{
+      "type":"structure",
+      "members":{
+        "action":{
+          "shape":"CisaAction",
+          "documentation":"<p>The remediation action recommended by CISA for this vulnerability.</p>"
+        },
+        "dateAdded":{
+          "shape":"CisaDateAdded",
+          "documentation":"<p>The date and time CISA added this vulnerability to their catalogue.</p>"
+        },
+        "dateDue":{
+          "shape":"CisaDateDue",
+          "documentation":"<p>The date and time CISA expects a fix to have been provided vulnerability.</p>"
+        }
+      },
+      "documentation":"<p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.</p>"
+    },
+    "CisaDateAdded":{"type":"timestamp"},
+    "CisaDateDue":{"type":"timestamp"},
     "ClientToken":{
       "type":"string",
       "max":64,
       "min":1
     },
+    "CodeFilePath":{
+      "type":"structure",
+      "required":[
+        "endLine",
+        "fileName",
+        "filePath",
+        "startLine"
+      ],
+      "members":{
+        "endLine":{
+          "shape":"Integer",
+          "documentation":"<p>The line number of the last line of code that a vulnerability was found in.</p>"
+        },
+        "fileName":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The name of the file the code vulnerability was found in.</p>"
+        },
+        "filePath":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The file path to the code that a vulnerability was found in.</p>"
+        },
+        "startLine":{
+          "shape":"Integer",
+          "documentation":"<p>The line number of the first line of code that a vulnerability was found in.</p>"
+        }
+      },
+      "documentation":"<p>Contains information on where a code vulnerability is located in your Lambda function.</p>"
+    },
+    "CodeLine":{
+      "type":"structure",
+      "required":[
+        "content",
+        "lineNumber"
+      ],
+      "members":{
+        "content":{
+          "shape":"CodeLineContentString",
+          "documentation":"<p>The content of a line of code</p>"
+        },
+        "lineNumber":{
+          "shape":"Integer",
+          "documentation":"<p>The line number that a section of code is located at.</p>"
+        }
+      },
+      "documentation":"<p>Contains information on the lines of code associated with a code snippet.</p>"
+    },
+    "CodeLineContentString":{
+      "type":"string",
+      "max":240,
+      "min":0
+    },
+    "CodeLineList":{
+      "type":"list",
+      "member":{"shape":"CodeLine"},
+      "max":20,
+      "min":1
+    },
+    "CodeSnippetError":{
+      "type":"structure",
+      "required":[
+        "errorCode",
+        "errorMessage",
+        "findingArn"
+      ],
+      "members":{
+        "errorCode":{
+          "shape":"CodeSnippetErrorCode",
+          "documentation":"<p>The error code for the error that prevented a code snippet from being retrieved.</p>"
+        },
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>"
+        },
+        "findingArn":{
+          "shape":"FindingArn",
+          "documentation":"<p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about any errors encountered while trying to retrieve a code snippet.</p>"
+    },
+    "CodeSnippetErrorCode":{
+      "type":"string",
+      "enum":[
+        "INTERNAL_ERROR",
+        "ACCESS_DENIED",
+        "CODE_SNIPPET_NOT_FOUND",
+        "INVALID_INPUT"
+      ]
+    },
+    "CodeSnippetErrorList":{
+      "type":"list",
+      "member":{"shape":"CodeSnippetError"}
+    },
+    "CodeSnippetResult":{
+      "type":"structure",
+      "members":{
+        "codeSnippet":{
+          "shape":"CodeLineList",
+          "documentation":"<p>Contains information on the retrieved code snippet.</p>"
+        },
+        "endLine":{
+          "shape":"Integer",
+          "documentation":"<p>The line number of the last line of a code snippet.</p>"
+        },
+        "findingArn":{
+          "shape":"FindingArn",
+          "documentation":"<p>The ARN of a finding that the code snippet is associated with.</p>"
+        },
+        "startLine":{
+          "shape":"Integer",
+          "documentation":"<p>The line number of the first line of a code snippet.</p>"
+        },
+        "suggestedFixes":{
+          "shape":"SuggestedFixes",
+          "documentation":"<p>Details of a suggested code fix.</p>"
+        }
+      },
+      "documentation":"<p>Contains information on a code snippet retrieved by Amazon Inspector from a code vulnerability finding.</p>"
+    },
+    "CodeSnippetResultList":{
+      "type":"list",
+      "member":{"shape":"CodeSnippetResult"}
+    },
+    "CodeVulnerabilityDetails":{
+      "type":"structure",
+      "required":[
+        "cwes",
+        "detectorId",
+        "detectorName",
+        "filePath"
+      ],
+      "members":{
+        "cwes":{
+          "shape":"CweList",
+          "documentation":"<p>The Common Weakness Enumeration (CWE) item associated with the detected vulnerability.</p>"
+        },
+        "detectorId":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The ID for the Amazon CodeGuru detector associated with the finding. For more information on detectors see <a href=\"https://docs.aws.amazon.com/codeguru/detector-library\">Amazon CodeGuru Detector Library</a>.</p>"
+        },
+        "detectorName":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The name of the detector used to identify the code vulnerability. For more information on detectors see <a href=\"https://docs.aws.amazon.com/codeguru/detector-library\">CodeGuru Detector Library</a>.</p>"
+        },
+        "detectorTags":{
+          "shape":"DetectorTagList",
+          "documentation":"<p>The detector tag associated with the vulnerability. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href=\"https://docs.aws.amazon.com/codeguru/detector-library/java/tags/\">Java tags</a>, or <a href=\"https://docs.aws.amazon.com/codeguru/detector-library/python/tags/\">Python tags</a>. </p>"
+        },
+        "filePath":{
+          "shape":"CodeFilePath",
+          "documentation":"<p>Contains information on where the code vulnerability is located in your code.</p>"
+        },
+        "referenceUrls":{
+          "shape":"ReferenceUrls",
+          "documentation":"<p>A URL containing supporting documentation about the code vulnerability detected.</p>"
+        },
+        "ruleId":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The identifier for a rule that was used to detect the code vulnerability.</p>"
+        },
+        "sourceLambdaLayerArn":{
+          "shape":"LambdaLayerArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Lambda layer that the code vulnerability was detected in.</p>"
+        }
+      },
+      "documentation":"<p>Contains information on the code vulnerability identified in your Lambda function.</p>"
+    },
     "Component":{"type":"string"},
     "ComponentType":{"type":"string"},
+    "ComputePlatform":{
+      "type":"structure",
+      "members":{
+        "product":{
+          "shape":"Product",
+          "documentation":"<p>The compute platform product.</p>"
+        },
+        "vendor":{
+          "shape":"Vendor",
+          "documentation":"<p>The compute platform vendor.</p>"
+        },
+        "version":{
+          "shape":"PlatformVersion",
+          "documentation":"<p>The compute platform version.</p>"
+        }
+      },
+      "documentation":"<p>A compute platform.</p>"
+    },
     "ConflictException":{
       "type":"structure",
       "required":[
@@ -1209,8 +2956,7 @@
       "members":{
         "count":{
           "shape":"AggCounts",
-          "documentation":"<p>The number of resources.</p>",
-          "default":0
+          "documentation":"<p>The number of resources.</p>"
         },
         "groupKey":{
           "shape":"GroupKey",
@@ -1223,6 +2969,26 @@
       "type":"list",
       "member":{"shape":"Counts"},
       "max":5,
+      "min":1
+    },
+    "CoverageDateFilter":{
+      "type":"structure",
+      "members":{
+        "endInclusive":{
+          "shape":"DateTimeTimestamp",
+          "documentation":"<p>A timestamp representing the end of the time period to filter results by.</p>"
+        },
+        "startInclusive":{
+          "shape":"DateTimeTimestamp",
+          "documentation":"<p>A timestamp representing the start of the time period to filter results by.</p>"
+        }
+      },
+      "documentation":"<p>Contains details of a coverage date filter.</p>"
+    },
+    "CoverageDateFilterList":{
+      "type":"list",
+      "member":{"shape":"CoverageDateFilter"},
+      "max":10,
       "min":1
     },
     "CoverageFilterCriteria":{
@@ -1244,17 +3010,41 @@
           "shape":"CoverageStringFilterList",
           "documentation":"<p>The Amazon ECR repository name to filter on.</p>"
         },
+        "imagePulledAt":{
+          "shape":"CoverageDateFilterList",
+          "documentation":"<p>The date an image was last pulled at.</p>"
+        },
+        "lambdaFunctionName":{
+          "shape":"CoverageStringFilterList",
+          "documentation":"<p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by function names.</p>"
+        },
+        "lambdaFunctionRuntime":{
+          "shape":"CoverageStringFilterList",
+          "documentation":"<p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>"
+        },
+        "lambdaFunctionTags":{
+          "shape":"CoverageMapFilterList",
+          "documentation":"<p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.</p>"
+        },
+        "lastScannedAt":{
+          "shape":"CoverageDateFilterList",
+          "documentation":"<p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>"
+        },
         "resourceId":{
           "shape":"CoverageStringFilterList",
           "documentation":"<p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>"
         },
         "resourceType":{
           "shape":"CoverageStringFilterList",
-          "documentation":"<p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.</p>"
+          "documentation":"<p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>"
+        },
+        "scanMode":{
+          "shape":"CoverageStringFilterList",
+          "documentation":"<p>The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.</p>"
         },
         "scanStatusCode":{
           "shape":"CoverageStringFilterList",
-          "documentation":"<p>The scan status code to filter on.</p>"
+          "documentation":"<p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>"
         },
         "scanStatusReason":{
           "shape":"CoverageStringFilterList",
@@ -1304,7 +3094,8 @@
       "enum":[
         "AWS_EC2_INSTANCE",
         "AWS_ECR_CONTAINER_IMAGE",
-        "AWS_ECR_REPOSITORY"
+        "AWS_ECR_REPOSITORY",
+        "AWS_LAMBDA_FUNCTION"
       ]
     },
     "CoverageStringComparison":{
@@ -1356,6 +3147,10 @@
           "shape":"AccountId",
           "documentation":"<p>The Amazon Web Services account ID of the covered resource.</p>"
         },
+        "lastScannedAt":{
+          "shape":"DateTimeTimestamp",
+          "documentation":"<p>The date and time the resource was last checked for vulnerabilities.</p>"
+        },
         "resourceId":{
           "shape":"ResourceId",
           "documentation":"<p>The ID of the covered resource.</p>"
@@ -1367,6 +3162,10 @@
         "resourceType":{
           "shape":"CoverageResourceType",
           "documentation":"<p>The type of the covered resource.</p>"
+        },
+        "scanMode":{
+          "shape":"ScanMode",
+          "documentation":"<p>The scan method that is applied to the instance.</p>"
         },
         "scanStatus":{
           "shape":"ScanStatus",
@@ -1382,6 +3181,64 @@
     "CoveredResources":{
       "type":"list",
       "member":{"shape":"CoveredResource"}
+    },
+    "CreateCisScanConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "scanName",
+        "schedule",
+        "securityLevel",
+        "targets"
+      ],
+      "members":{
+        "scanName":{
+          "shape":"CisScanName",
+          "documentation":"<p>The scan name for the CIS scan configuration.</p>"
+        },
+        "schedule":{
+          "shape":"Schedule",
+          "documentation":"<p>The schedule for the CIS scan configuration.</p>"
+        },
+        "securityLevel":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p> The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile. </p>"
+        },
+        "tags":{
+          "shape":"CisTagMap",
+          "documentation":"<p>The tags for the CIS scan configuration.</p>"
+        },
+        "targets":{
+          "shape":"CreateCisTargets",
+          "documentation":"<p>The targets for the CIS scan configuration.</p>"
+        }
+      }
+    },
+    "CreateCisScanConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The scan configuration ARN for the CIS scan configuration.</p>"
+        }
+      }
+    },
+    "CreateCisTargets":{
+      "type":"structure",
+      "required":[
+        "accountIds",
+        "targetResourceTags"
+      ],
+      "members":{
+        "accountIds":{
+          "shape":"TargetAccountList",
+          "documentation":"<p>The CIS target account ids.</p>"
+        },
+        "targetResourceTags":{
+          "shape":"TargetResourceTags",
+          "documentation":"<p>The CIS target resource tags.</p>"
+        }
+      },
+      "documentation":"<p>Creates CIS targets.</p>"
     },
     "CreateFilterRequest":{
       "type":"structure",
@@ -1457,9 +3314,74 @@
         }
       }
     },
+    "CreateSbomExportRequest":{
+      "type":"structure",
+      "required":[
+        "reportFormat",
+        "s3Destination"
+      ],
+      "members":{
+        "reportFormat":{
+          "shape":"SbomReportFormat",
+          "documentation":"<p>The output format for the software bill of materials (SBOM) report.</p>"
+        },
+        "resourceFilterCriteria":{
+          "shape":"ResourceFilterCriteria",
+          "documentation":"<p>The resource filter criteria for the software bill of materials (SBOM) report.</p>"
+        },
+        "s3Destination":{"shape":"Destination"}
+      }
+    },
+    "CreateSbomExportResponse":{
+      "type":"structure",
+      "members":{
+        "reportId":{
+          "shape":"ReportId",
+          "documentation":"<p>The report ID for the software bill of materials (SBOM) report.</p>"
+        }
+      }
+    },
     "Currency":{
       "type":"string",
       "enum":["USD"]
+    },
+    "Cvss2":{
+      "type":"structure",
+      "members":{
+        "baseScore":{
+          "shape":"Cvss2BaseScore",
+          "documentation":"<p>The CVSS v2 base score for the vulnerability.</p>"
+        },
+        "scoringVector":{
+          "shape":"Cvss2ScoringVector",
+          "documentation":"<p>The scoring vector associated with the CVSS v2 score.</p>"
+        }
+      },
+      "documentation":"<p>The Common Vulnerability Scoring System (CVSS) version 2 details for the vulnerability.</p>"
+    },
+    "Cvss2BaseScore":{"type":"double"},
+    "Cvss2ScoringVector":{
+      "type":"string",
+      "min":0
+    },
+    "Cvss3":{
+      "type":"structure",
+      "members":{
+        "baseScore":{
+          "shape":"Cvss3BaseScore",
+          "documentation":"<p>The CVSS v3 base score for the vulnerability.</p>"
+        },
+        "scoringVector":{
+          "shape":"Cvss3ScoringVector",
+          "documentation":"<p>The scoring vector associated with the CVSS v3 score.</p>"
+        }
+      },
+      "documentation":"<p>The Common Vulnerability Scoring System (CVSS) version 3 details for the vulnerability.</p>"
+    },
+    "Cvss3BaseScore":{"type":"double"},
+    "Cvss3ScoringVector":{
+      "type":"string",
+      "min":0
     },
     "CvssScore":{
       "type":"structure",
@@ -1472,8 +3394,7 @@
       "members":{
         "baseScore":{
           "shape":"Double",
-          "documentation":"<p>The base CVSS score used for the finding.</p>",
-          "box":true
+          "documentation":"<p>The base CVSS score used for the finding.</p>"
         },
         "scoringVector":{
           "shape":"NonEmptyString",
@@ -1531,8 +3452,7 @@
         },
         "score":{
           "shape":"Double",
-          "documentation":"<p>The CVSS score.</p>",
-          "box":true
+          "documentation":"<p>The CVSS score.</p>"
         },
         "scoreSource":{
           "shape":"NonEmptyString",
@@ -1552,6 +3472,32 @@
     "CvssScoreList":{
       "type":"list",
       "member":{"shape":"CvssScore"}
+    },
+    "Cwe":{
+      "type":"string",
+      "min":0
+    },
+    "CweList":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"},
+      "max":10,
+      "min":1
+    },
+    "Cwes":{
+      "type":"list",
+      "member":{"shape":"Cwe"},
+      "min":0
+    },
+    "DailySchedule":{
+      "type":"structure",
+      "required":["startTime"],
+      "members":{
+        "startTime":{
+          "shape":"Time",
+          "documentation":"<p>The schedule start time.</p>"
+        }
+      },
+      "documentation":"<p>A daily schedule.</p>"
     },
     "DateFilter":{
       "type":"structure",
@@ -1574,6 +3520,24 @@
       "min":1
     },
     "DateTimeTimestamp":{"type":"timestamp"},
+    "Day":{
+      "type":"string",
+      "enum":[
+        "SUN",
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI",
+        "SAT"
+      ]
+    },
+    "DaysList":{
+      "type":"list",
+      "member":{"shape":"Day"},
+      "max":7,
+      "min":1
+    },
     "DelegatedAdmin":{
       "type":"structure",
       "members":{
@@ -1615,6 +3579,26 @@
         "DISABLE_IN_PROGRESS"
       ]
     },
+    "DeleteCisScanConfigurationRequest":{
+      "type":"structure",
+      "required":["scanConfigurationArn"],
+      "members":{
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The ARN of the CIS scan configuration.</p>"
+        }
+      }
+    },
+    "DeleteCisScanConfigurationResponse":{
+      "type":"structure",
+      "required":["scanConfigurationArn"],
+      "members":{
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The ARN of the CIS scan configuration.</p>"
+        }
+      }
+    },
     "DeleteFilterRequest":{
       "type":"structure",
       "required":["arn"],
@@ -1649,8 +3633,7 @@
         },
         "maxAccountLimitReached":{
           "shape":"Boolean",
-          "documentation":"<p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>",
-          "box":true
+          "documentation":"<p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>"
         }
       }
     },
@@ -1667,7 +3650,7 @@
         },
         "keyPrefix":{
           "shape":"String",
-          "documentation":"<p>The prefix of the KMS key used to export findings.</p>"
+          "documentation":"<p>The prefix that the findings will be written under.</p>"
         },
         "kmsKeyArn":{
           "shape":"String",
@@ -1675,6 +3658,18 @@
         }
       },
       "documentation":"<p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>"
+    },
+    "DetectionPlatforms":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"},
+      "max":100,
+      "min":0
+    },
+    "DetectorTagList":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"},
+      "max":10,
+      "min":1
     },
     "DisableDelegatedAdminAccountRequest":{
       "type":"structure",
@@ -1712,7 +3707,7 @@
     "DisableResourceTypeList":{
       "type":"list",
       "member":{"shape":"ResourceScanType"},
-      "max":2,
+      "max":3,
       "min":0
     },
     "DisableResponse":{
@@ -1749,7 +3744,40 @@
         }
       }
     },
-    "Double":{"type":"double"},
+    "Double":{
+      "type":"double",
+      "box":true
+    },
+    "Ec2Configuration":{
+      "type":"structure",
+      "required":["scanMode"],
+      "members":{
+        "scanMode":{
+          "shape":"Ec2ScanMode",
+          "documentation":"<p>The scan method that is applied to the instance.</p>"
+        }
+      },
+      "documentation":"<p>Enables agent-based scanning, which scans instances that are not managed by SSM.</p>"
+    },
+    "Ec2ConfigurationState":{
+      "type":"structure",
+      "members":{
+        "scanModeState":{
+          "shape":"Ec2ScanModeState",
+          "documentation":"<p>An object that contains details about the state of the Amazon EC2 scan mode.</p>"
+        }
+      },
+      "documentation":"<p>Details about the state of the EC2 scan configuration for your environment.</p>"
+    },
+    "Ec2DeepInspectionStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVATED",
+        "DEACTIVATED",
+        "PENDING",
+        "FAILED"
+      ]
+    },
     "Ec2InstanceAggregation":{
       "type":"structure",
       "members":{
@@ -1786,7 +3814,7 @@
       "members":{
         "accountId":{
           "shape":"String",
-          "documentation":"<p>The Amazon Web Services account the Amazon EC2 instance belongs to.</p>"
+          "documentation":"<p>The Amazon Web Services account for the Amazon EC2 instance.</p>"
         },
         "ami":{
           "shape":"AmiId",
@@ -1802,8 +3830,7 @@
         },
         "networkFindings":{
           "shape":"Long",
-          "documentation":"<p>The number of network findings for the Amazon EC2 instance.</p>",
-          "box":true
+          "documentation":"<p>The number of network findings for the Amazon EC2 instance.</p>"
         },
         "operatingSystem":{
           "shape":"String",
@@ -1848,26 +3875,59 @@
       "enum":[
         "WINDOWS",
         "LINUX",
-        "UNKNOWN"
+        "UNKNOWN",
+        "MACOS"
+      ]
+    },
+    "Ec2ScanMode":{
+      "type":"string",
+      "enum":[
+        "EC2_SSM_AGENT_BASED",
+        "EC2_HYBRID"
+      ]
+    },
+    "Ec2ScanModeState":{
+      "type":"structure",
+      "members":{
+        "scanMode":{
+          "shape":"Ec2ScanMode",
+          "documentation":"<p>The scan method that is applied to the instance.</p>"
+        },
+        "scanModeStatus":{
+          "shape":"Ec2ScanModeStatus",
+          "documentation":"<p>The status of the Amazon EC2 scan mode setting.</p>"
+        }
+      },
+      "documentation":"<p>The state of your Amazon EC2 scan mode configuration.</p>"
+    },
+    "Ec2ScanModeStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCESS",
+        "PENDING"
       ]
     },
     "EcrConfiguration":{
       "type":"structure",
       "required":["rescanDuration"],
       "members":{
+        "pullDateRescanDuration":{
+          "shape":"EcrPullDateRescanDuration",
+          "documentation":"<p>The rescan duration configured for image pull date.</p>"
+        },
         "rescanDuration":{
           "shape":"EcrRescanDuration",
-          "documentation":"<p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>"
+          "documentation":"<p>The rescan duration configured for image push date.</p>"
         }
       },
-      "documentation":"<p>Details about the ECR automated re-scan duration setting for your environment</p>"
+      "documentation":"<p>Details about the ECR automated re-scan duration setting for your environment.</p>"
     },
     "EcrConfigurationState":{
       "type":"structure",
       "members":{
         "rescanDurationState":{
           "shape":"EcrRescanDurationState",
-          "documentation":"<p>An object that contains details about the state of the ECR automated re-scan setting.</p>"
+          "documentation":"<p>An object that contains details about the state of the ECR re-scan settings.</p>"
         }
       },
       "documentation":"<p>Details about the state of the ECR scans for your environment.</p>"
@@ -1875,12 +3935,26 @@
     "EcrContainerImageMetadata":{
       "type":"structure",
       "members":{
+        "imagePulledAt":{
+          "shape":"DateTimeTimestamp",
+          "documentation":"<p>The date an image was last pulled at.</p>"
+        },
         "tags":{
           "shape":"TagList",
           "documentation":"<p>Tags associated with the Amazon ECR image metadata.</p>"
         }
       },
       "documentation":"<p>Information on the Amazon ECR image metadata associated with a finding.</p>"
+    },
+    "EcrPullDateRescanDuration":{
+      "type":"string",
+      "enum":[
+        "DAYS_14",
+        "DAYS_30",
+        "DAYS_60",
+        "DAYS_90",
+        "DAYS_180"
+      ]
     },
     "EcrRepositoryMetadata":{
       "type":"structure",
@@ -1901,15 +3975,22 @@
       "enum":[
         "LIFETIME",
         "DAYS_30",
-        "DAYS_180"
+        "DAYS_180",
+        "DAYS_14",
+        "DAYS_60",
+        "DAYS_90"
       ]
     },
     "EcrRescanDurationState":{
       "type":"structure",
       "members":{
+        "pullDateRescanDuration":{
+          "shape":"EcrPullDateRescanDuration",
+          "documentation":"<p>The rescan duration configured for image pull date.</p>"
+        },
         "rescanDuration":{
           "shape":"EcrRescanDuration",
-          "documentation":"<p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>"
+          "documentation":"<p>The rescan duration configured for image push date. <pre><code> &lt;/p&gt; </code></pre>"
         },
         "status":{
           "shape":"EcrRescanDurationStatus",
@@ -1920,7 +4001,7 @@
           "documentation":"<p>A timestamp representing when the last time the ECR scan duration setting was changed.</p>"
         }
       },
-      "documentation":"<p>Details about the state of any changes to the ECR automated re-scan duration setting.</p>"
+      "documentation":"<p>Details about the state of your ECR re-scan duration settings. The ECR re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the duration configured for image pull date, and the duration configured for image pull date, the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>"
     },
     "EcrRescanDurationStatus":{
       "type":"string",
@@ -1985,7 +4066,7 @@
     "EnableResourceTypeList":{
       "type":"list",
       "member":{"shape":"ResourceScanType"},
-      "max":2,
+      "max":3,
       "min":1
     },
     "EnableResponse":{
@@ -2001,6 +4082,32 @@
           "documentation":"<p>Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.</p>"
         }
       }
+    },
+    "Epss":{
+      "type":"structure",
+      "members":{
+        "score":{
+          "shape":"EpssScore",
+          "documentation":"<p>The Exploit Prediction Scoring System (EPSS) score.</p>"
+        }
+      },
+      "documentation":"<p>Details about the Exploit Prediction Scoring System (EPSS) score.</p>"
+    },
+    "EpssDetails":{
+      "type":"structure",
+      "members":{
+        "score":{
+          "shape":"EpssScoreValue",
+          "documentation":"<p>The EPSS score.</p>"
+        }
+      },
+      "documentation":"<p>Details about the Exploit Prediction Scoring System (EPSS) score for a finding.</p>"
+    },
+    "EpssScore":{"type":"double"},
+    "EpssScoreValue":{
+      "type":"double",
+      "max":1.0,
+      "min":0.0
     },
     "ErrorCode":{
       "type":"string",
@@ -2022,6 +4129,75 @@
       ]
     },
     "ErrorMessage":{"type":"string"},
+    "Evidence":{
+      "type":"structure",
+      "members":{
+        "evidenceDetail":{
+          "shape":"EvidenceDetail",
+          "documentation":"<p>The evidence details.</p>"
+        },
+        "evidenceRule":{
+          "shape":"EvidenceRule",
+          "documentation":"<p>The evidence rule.</p>"
+        },
+        "severity":{
+          "shape":"EvidenceSeverity",
+          "documentation":"<p>The evidence severity.</p>"
+        }
+      },
+      "documentation":"<p>Details of the evidence for a vulnerability identified in a finding.</p>"
+    },
+    "EvidenceDetail":{
+      "type":"string",
+      "min":0
+    },
+    "EvidenceList":{
+      "type":"list",
+      "member":{"shape":"Evidence"}
+    },
+    "EvidenceRule":{
+      "type":"string",
+      "min":0
+    },
+    "EvidenceSeverity":{
+      "type":"string",
+      "min":0
+    },
+    "ExecutionRoleArn":{
+      "type":"string",
+      "pattern":"^arn:(aws[a-zA-Z-]*)?:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
+    },
+    "ExploitAvailable":{
+      "type":"string",
+      "enum":[
+        "YES",
+        "NO"
+      ]
+    },
+    "ExploitObserved":{
+      "type":"structure",
+      "members":{
+        "firstSeen":{
+          "shape":"FirstSeen",
+          "documentation":"<p>The date an time when the exploit was first seen.</p>"
+        },
+        "lastSeen":{
+          "shape":"LastSeen",
+          "documentation":"<p>The date an time when the exploit was last seen.</p>"
+        }
+      },
+      "documentation":"<p>Contains information on when this exploit was observed.</p>"
+    },
+    "ExploitabilityDetails":{
+      "type":"structure",
+      "members":{
+        "lastKnownExploitAt":{
+          "shape":"DateTimeTimestamp",
+          "documentation":"<p>The date and time of the last exploit associated with a finding discovered in your environment.</p>"
+        }
+      },
+      "documentation":"<p>The details of an exploit available for a finding discovered in your environment.</p>"
+    },
     "ExternalReportStatus":{
       "type":"string",
       "enum":[
@@ -2065,6 +4241,31 @@
     "FailedAccountList":{
       "type":"list",
       "member":{"shape":"FailedAccount"},
+      "max":100,
+      "min":0
+    },
+    "FailedMemberAccountEc2DeepInspectionStatusState":{
+      "type":"structure",
+      "required":["accountId"],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The unique identifier for the Amazon Web Services account of the organization member that failed to activate Amazon Inspector deep inspection.</p>"
+        },
+        "ec2ScanStatus":{
+          "shape":"Status",
+          "documentation":"<p>The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.</p>"
+        },
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains details about a member account in your organization that failed to activate Amazon Inspector deep inspection.</p>"
+    },
+    "FailedMemberAccountEc2DeepInspectionStatusStateList":{
+      "type":"list",
+      "member":{"shape":"FailedMemberAccountEc2DeepInspectionStatusState"},
       "max":100,
       "min":0
     },
@@ -2151,6 +4352,18 @@
           "shape":"StringFilterList",
           "documentation":"<p>Details of the Amazon Web Services account IDs used to filter findings.</p>"
         },
+        "codeVulnerabilityDetectorName":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>"
+        },
+        "codeVulnerabilityDetectorTags":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href=\"https://docs.aws.amazon.com/codeguru/detector-library/java/tags/\">Java tags</a>, or <a href=\"https://docs.aws.amazon.com/codeguru/detector-library/python/tags/\">Python tags</a>. </p>"
+        },
+        "codeVulnerabilityFilePath":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>"
+        },
         "componentId":{
           "shape":"StringFilterList",
           "documentation":"<p>Details of the component IDs used to filter findings.</p>"
@@ -2195,6 +4408,14 @@
           "shape":"StringFilterList",
           "documentation":"<p>The tags attached to the Amazon ECR container image.</p>"
         },
+        "epssScore":{
+          "shape":"NumberFilterList",
+          "documentation":"<p>The EPSS score used to filter findings.</p>"
+        },
+        "exploitAvailable":{
+          "shape":"StringFilterList",
+          "documentation":"<p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>"
+        },
         "findingArn":{
           "shape":"StringFilterList",
           "documentation":"<p>Details on the finding ARNs used to filter findings.</p>"
@@ -2219,13 +4440,33 @@
           "shape":"NumberFilterList",
           "documentation":"<p>The Amazon Inspector score to filter on.</p>"
         },
+        "lambdaFunctionExecutionRoleArn":{
+          "shape":"StringFilterList",
+          "documentation":"<p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>"
+        },
+        "lambdaFunctionLastModifiedAt":{
+          "shape":"DateFilterList",
+          "documentation":"<p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href=\"https://www.iso.org/iso-8601-date-and-time-format.html\">ISO 8601 format</a> </p>"
+        },
+        "lambdaFunctionLayers":{
+          "shape":"StringFilterList",
+          "documentation":"<p>Filters the list of Amazon Web Services Lambda functions by the function's <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html\"> layers</a>. A Lambda function can have up to five layers.</p>"
+        },
+        "lambdaFunctionName":{
+          "shape":"StringFilterList",
+          "documentation":"<p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>"
+        },
+        "lambdaFunctionRuntime":{
+          "shape":"StringFilterList",
+          "documentation":"<p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>"
+        },
         "lastObservedAt":{
           "shape":"DateFilterList",
           "documentation":"<p>Details on the date and time a finding was last seen used to filter findings.</p>"
         },
         "networkProtocol":{
           "shape":"StringFilterList",
-          "documentation":"<p>Details on the ingress source addresses used to filter findings.</p>"
+          "documentation":"<p>Details on network protocol used to filter findings.</p>"
         },
         "portRange":{
           "shape":"PortRangeFilterList",
@@ -2316,9 +4557,25 @@
           "shape":"AccountId",
           "documentation":"<p>The Amazon Web Services account ID associated with the finding.</p>"
         },
+        "codeVulnerabilityDetails":{
+          "shape":"CodeVulnerabilityDetails",
+          "documentation":"<p>Details about the code vulnerability identified in a Lambda function used to filter findings.</p>"
+        },
         "description":{
           "shape":"FindingDescription",
           "documentation":"<p>The description of the finding.</p>"
+        },
+        "epss":{
+          "shape":"EpssDetails",
+          "documentation":"<p>The finding's EPSS score.</p>"
+        },
+        "exploitAvailable":{
+          "shape":"ExploitAvailable",
+          "documentation":"<p>If a finding discovered in your environment has an exploit available.</p>"
+        },
+        "exploitabilityDetails":{
+          "shape":"ExploitabilityDetails",
+          "documentation":"<p>The details of an exploit available for a finding discovered in your environment.</p>"
         },
         "findingArn":{
           "shape":"FindingArn",
@@ -2334,8 +4591,7 @@
         },
         "inspectorScore":{
           "shape":"Double",
-          "documentation":"<p>The Amazon Inspector score given to the finding.</p>",
-          "box":true
+          "documentation":"<p>The Amazon Inspector score given to the finding.</p>"
         },
         "inspectorScoreDetails":{
           "shape":"InspectorScoreDetails",
@@ -2343,7 +4599,7 @@
         },
         "lastObservedAt":{
           "shape":"DateTimeTimestamp",
-          "documentation":"<p>The date and time that the finding was last observed.</p>"
+          "documentation":"<p> The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding is updated. </p>"
         },
         "networkReachabilityDetails":{
           "shape":"NetworkReachabilityDetails",
@@ -2359,11 +4615,11 @@
         },
         "resources":{
           "shape":"ResourceList",
-          "documentation":"<p>Contains information on the resources involved in a finding.</p>"
+          "documentation":"<p>Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid values for <code>type</code> in your request. For more information, see <a href=\"https://docs.aws.amazon.com/inspector/latest/user/findings-types.html\">Finding types</a> in the Amazon Inspector user guide.</p>"
         },
         "severity":{
           "shape":"Severity",
-          "documentation":"<p>The severity of the finding.</p>"
+          "documentation":"<p>The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings that the vendor has not assigned a severity yet. For more information, see <a href=\"https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html\">Severity levels for findings</a> in the Amazon Inspector user guide.</p>"
         },
         "status":{
           "shape":"FindingStatus",
@@ -2375,7 +4631,7 @@
         },
         "type":{
           "shape":"FindingType",
-          "documentation":"<p>The type of the finding.</p>"
+          "documentation":"<p>The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in your request. For more information, see <a href=\"https://docs.aws.amazon.com/inspector/latest/user/findings-types.html\">Finding types</a> in the Amazon Inspector user guide.</p>"
         },
         "updatedAt":{
           "shape":"DateTimeTimestamp",
@@ -2386,13 +4642,101 @@
     },
     "FindingArn":{
       "type":"string",
-      "max":1024,
+      "max":100,
+      "min":1,
+      "pattern":"^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:finding/[a-f0-9]{32}$"
+    },
+    "FindingArnList":{
+      "type":"list",
+      "member":{"shape":"FindingArn"},
+      "max":10,
       "min":1
     },
     "FindingDescription":{
       "type":"string",
       "max":1024,
       "min":1
+    },
+    "FindingDetail":{
+      "type":"structure",
+      "members":{
+        "cisaData":{"shape":"CisaData"},
+        "cwes":{
+          "shape":"Cwes",
+          "documentation":"<p>The Common Weakness Enumerations (CWEs) associated with the vulnerability.</p>"
+        },
+        "epssScore":{
+          "shape":"Double",
+          "documentation":"<p>The Exploit Prediction Scoring System (EPSS) score of the vulnerability.</p>"
+        },
+        "evidences":{
+          "shape":"EvidenceList",
+          "documentation":"<p>Information on the evidence of the vulnerability.</p>"
+        },
+        "exploitObserved":{"shape":"ExploitObserved"},
+        "findingArn":{
+          "shape":"FindingArn",
+          "documentation":"<p>The finding ARN that the vulnerability details are associated with.</p>"
+        },
+        "referenceUrls":{
+          "shape":"VulnerabilityReferenceUrls",
+          "documentation":"<p>The reference URLs for the vulnerability data.</p>"
+        },
+        "riskScore":{
+          "shape":"RiskScore",
+          "documentation":"<p>The risk score of the vulnerability.</p>"
+        },
+        "tools":{
+          "shape":"Tools",
+          "documentation":"<p>The known malware tools or kits that can exploit the vulnerability.</p>"
+        },
+        "ttps":{
+          "shape":"Ttps",
+          "documentation":"<p>The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.</p>"
+        }
+      },
+      "documentation":"<p>Details of the vulnerability identified in a finding.</p>"
+    },
+    "FindingDetails":{
+      "type":"list",
+      "member":{"shape":"FindingDetail"},
+      "min":0
+    },
+    "FindingDetailsError":{
+      "type":"structure",
+      "required":[
+        "errorCode",
+        "errorMessage",
+        "findingArn"
+      ],
+      "members":{
+        "errorCode":{
+          "shape":"FindingDetailsErrorCode",
+          "documentation":"<p>The error code.</p>"
+        },
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The error message.</p>"
+        },
+        "findingArn":{
+          "shape":"FindingArn",
+          "documentation":"<p>The finding ARN that returned an error.</p>"
+        }
+      },
+      "documentation":"<p>Details about an error encountered when trying to return vulnerability data for a finding.</p>"
+    },
+    "FindingDetailsErrorCode":{
+      "type":"string",
+      "enum":[
+        "INTERNAL_ERROR",
+        "ACCESS_DENIED",
+        "FINDING_DETAILS_NOT_FOUND",
+        "INVALID_INPUT"
+      ]
+    },
+    "FindingDetailsErrorList":{
+      "type":"list",
+      "member":{"shape":"FindingDetailsError"}
     },
     "FindingList":{
       "type":"list",
@@ -2417,7 +4761,8 @@
       "type":"string",
       "enum":[
         "NETWORK_REACHABILITY",
-        "PACKAGE_VULNERABILITY"
+        "PACKAGE_VULNERABILITY",
+        "CODE_VULNERABILITY"
       ]
     },
     "FindingTypeAggregation":{
@@ -2464,6 +4809,7 @@
         "ALL"
       ]
     },
+    "FirstSeen":{"type":"timestamp"},
     "FixAvailable":{
       "type":"string",
       "enum":[
@@ -2571,8 +4917,106 @@
       "type":"string",
       "enum":[
         "EC2",
-        "ECR"
+        "ECR",
+        "LAMBDA",
+        "LAMBDA_CODE"
       ]
+    },
+    "FunctionName":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9-_\\.]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?$"
+    },
+    "GetCisScanReportRequest":{
+      "type":"structure",
+      "required":["scanArn"],
+      "members":{
+        "reportFormat":{
+          "shape":"CisReportFormat",
+          "documentation":"<p> The format of the report. Valid values are <code>PDF</code> and <code>CSV</code>. If no value is specified, the report format defaults to <code>PDF</code>. </p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The scan ARN.</p>"
+        },
+        "targetAccounts":{
+          "shape":"ReportTargetAccounts",
+          "documentation":"<p>The target accounts.</p>"
+        }
+      }
+    },
+    "GetCisScanReportResponse":{
+      "type":"structure",
+      "members":{
+        "status":{
+          "shape":"CisReportStatus",
+          "documentation":"<p>The status.</p>"
+        },
+        "url":{
+          "shape":"String",
+          "documentation":"<p> The URL where a PDF or CSV of the CIS scan report can be downloaded. </p>"
+        }
+      }
+    },
+    "GetCisScanResultDetailsMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":1000,
+      "min":1
+    },
+    "GetCisScanResultDetailsRequest":{
+      "type":"structure",
+      "required":[
+        "accountId",
+        "scanArn",
+        "targetResourceId"
+      ],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The account ID.</p>"
+        },
+        "filterCriteria":{
+          "shape":"CisScanResultDetailsFilterCriteria",
+          "documentation":"<p>The filter criteria.</p>"
+        },
+        "maxResults":{
+          "shape":"GetCisScanResultDetailsMaxResults",
+          "documentation":"<p>The maximum number of CIS scan result details to be returned in a single page of results.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The scan ARN.</p>"
+        },
+        "sortBy":{
+          "shape":"CisScanResultDetailsSortBy",
+          "documentation":"<p>The sort by order.</p>"
+        },
+        "sortOrder":{
+          "shape":"CisSortOrder",
+          "documentation":"<p>The sort order.</p>"
+        },
+        "targetResourceId":{
+          "shape":"ResourceId",
+          "documentation":"<p>The target resource ID.</p>"
+        }
+      }
+    },
+    "GetCisScanResultDetailsResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "scanResultDetails":{
+          "shape":"CisScanResultDetailsList",
+          "documentation":"<p>The scan result details.</p>"
+        }
+      }
     },
     "GetConfigurationRequest":{
       "type":"structure",
@@ -2582,6 +5026,10 @@
     "GetConfigurationResponse":{
       "type":"structure",
       "members":{
+        "ec2Configuration":{
+          "shape":"Ec2ConfigurationState",
+          "documentation":"<p>Specifies how the Amazon EC2 automated scan mode is currently configured for your environment.</p>"
+        },
         "ecrConfiguration":{
           "shape":"EcrConfigurationState",
           "documentation":"<p>Specifies how the ECR automated re-scan duration is currently configured for your environment.</p>"
@@ -2599,6 +5047,63 @@
         "delegatedAdmin":{
           "shape":"DelegatedAdmin",
           "documentation":"<p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>"
+        }
+      }
+    },
+    "GetEc2DeepInspectionConfigurationRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "GetEc2DeepInspectionConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.</p>"
+        },
+        "orgPackagePaths":{
+          "shape":"PathList",
+          "documentation":"<p>The Amazon Inspector deep inspection custom paths for your organization.</p>"
+        },
+        "packagePaths":{
+          "shape":"PathList",
+          "documentation":"<p>The Amazon Inspector deep inspection custom paths for your account.</p>"
+        },
+        "status":{
+          "shape":"Ec2DeepInspectionStatus",
+          "documentation":"<p>The activation status of Amazon Inspector deep inspection in your account.</p>"
+        }
+      }
+    },
+    "GetEncryptionKeyRequest":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "scanType"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"ResourceType",
+          "documentation":"<p>The resource type the key encrypts.</p>",
+          "location":"querystring",
+          "locationName":"resourceType"
+        },
+        "scanType":{
+          "shape":"ScanType",
+          "documentation":"<p>The scan type the key encrypts.</p>",
+          "location":"querystring",
+          "locationName":"scanType"
+        }
+      }
+    },
+    "GetEncryptionKeyResponse":{
+      "type":"structure",
+      "required":["kmsKeyId"],
+      "members":{
+        "kmsKeyId":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>A kms key ID.</p>"
         }
       }
     },
@@ -2656,6 +5161,46 @@
         "member":{
           "shape":"Member",
           "documentation":"<p>Details of the retrieved member account.</p>"
+        }
+      }
+    },
+    "GetSbomExportRequest":{
+      "type":"structure",
+      "required":["reportId"],
+      "members":{
+        "reportId":{
+          "shape":"ReportId",
+          "documentation":"<p>The report ID of the SBOM export to get details for.</p>"
+        }
+      }
+    },
+    "GetSbomExportResponse":{
+      "type":"structure",
+      "members":{
+        "errorCode":{
+          "shape":"ReportingErrorCode",
+          "documentation":"<p>An error code.</p>"
+        },
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>An error message.</p>"
+        },
+        "filterCriteria":{
+          "shape":"ResourceFilterCriteria",
+          "documentation":"<p>Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.</p>"
+        },
+        "format":{
+          "shape":"SbomReportFormat",
+          "documentation":"<p>The format of the software bill of materials (SBOM) report.</p>"
+        },
+        "reportId":{
+          "shape":"ReportId",
+          "documentation":"<p>The report ID of the software bill of materials (SBOM) report.</p>"
+        },
+        "s3Destination":{"shape":"Destination"},
+        "status":{
+          "shape":"ExternalReportStatus",
+          "documentation":"<p>The status of the software bill of materials (SBOM) report.</p>"
         }
       }
     },
@@ -2755,7 +5300,10 @@
       },
       "documentation":"<p>Information about the Amazon Inspector score given to a finding.</p>"
     },
-    "Integer":{"type":"integer"},
+    "Integer":{
+      "type":"integer",
+      "box":true
+    },
     "InternalServerException":{
       "type":"structure",
       "required":["message"],
@@ -2764,7 +5312,6 @@
         "retryAfterSeconds":{
           "shape":"Integer",
           "documentation":"<p>The number of seconds to wait before retrying the request.</p>",
-          "box":true,
           "location":"header",
           "locationName":"Retry-After"
         }
@@ -2794,8 +5341,203 @@
       "type":"list",
       "member":{"shape":"IpV6Address"}
     },
+    "KmsKeyArn":{
+      "type":"string",
+      "pattern":"^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$"
+    },
+    "LambdaFunctionAggregation":{
+      "type":"structure",
+      "members":{
+        "functionNames":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The Amazon Web Services Lambda function names to include in the aggregation results.</p>"
+        },
+        "functionTags":{
+          "shape":"MapFilterList",
+          "documentation":"<p>The tags to include in the aggregation results.</p>"
+        },
+        "resourceIds":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The resource IDs to include in the aggregation results.</p>"
+        },
+        "runtimes":{
+          "shape":"StringFilterList",
+          "documentation":"<p>Returns findings aggregated by Amazon Web Services Lambda function runtime environments.</p>"
+        },
+        "sortBy":{
+          "shape":"LambdaFunctionSortBy",
+          "documentation":"<p>The finding severity to use for sorting the results.</p>"
+        },
+        "sortOrder":{
+          "shape":"SortOrder",
+          "documentation":"<p>The order to use for sorting the results.</p>"
+        }
+      },
+      "documentation":"<p>The details that define a findings aggregation based on Amazon Web Services Lambda functions.</p>"
+    },
+    "LambdaFunctionAggregationResponse":{
+      "type":"structure",
+      "required":["resourceId"],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda function. </p>"
+        },
+        "functionName":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Web Services Lambda function names included in the aggregation results.</p>"
+        },
+        "lambdaTags":{
+          "shape":"TagMap",
+          "documentation":"<p>The tags included in the aggregation results.</p>"
+        },
+        "lastModifiedAt":{
+          "shape":"DateTimeTimestamp",
+          "documentation":"<p>The date that the Amazon Web Services Lambda function included in the aggregation results was last changed.</p>"
+        },
+        "resourceId":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The resource IDs included in the aggregation results.</p>"
+        },
+        "runtime":{
+          "shape":"String",
+          "documentation":"<p>The runtimes included in the aggregation results.</p>"
+        },
+        "severityCounts":{"shape":"SeverityCounts"}
+      },
+      "documentation":"<p>A response that contains the results of an Amazon Web Services Lambda function finding aggregation.</p>"
+    },
+    "LambdaFunctionMetadata":{
+      "type":"structure",
+      "members":{
+        "functionName":{
+          "shape":"String",
+          "documentation":"<p>The name of a function.</p>"
+        },
+        "functionTags":{
+          "shape":"TagMap",
+          "documentation":"<p>The resource tags on an Amazon Web Services Lambda function.</p>"
+        },
+        "layers":{
+          "shape":"LambdaLayerList",
+          "documentation":"<p>The layers for an Amazon Web Services Lambda function. A Lambda function can have up to five layers.</p>"
+        },
+        "runtime":{
+          "shape":"Runtime",
+          "documentation":"<p>An Amazon Web Services Lambda function's runtime.</p>"
+        }
+      },
+      "documentation":"<p>The Amazon Web Services Lambda function metadata.</p>"
+    },
+    "LambdaFunctionSortBy":{
+      "type":"string",
+      "enum":[
+        "CRITICAL",
+        "HIGH",
+        "ALL"
+      ]
+    },
+    "LambdaLayerAggregation":{
+      "type":"structure",
+      "members":{
+        "functionNames":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>"
+        },
+        "layerArns":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer. </p>"
+        },
+        "resourceIds":{
+          "shape":"StringFilterList",
+          "documentation":"<p>The resource IDs for the Amazon Web Services Lambda function layers.</p>"
+        },
+        "sortBy":{
+          "shape":"LambdaLayerSortBy",
+          "documentation":"<p>The finding severity to use for sorting the results.</p>"
+        },
+        "sortOrder":{
+          "shape":"SortOrder",
+          "documentation":"<p>The order to use for sorting the results.</p>"
+        }
+      },
+      "documentation":"<p>The details that define a findings aggregation based on an Amazon Web Services Lambda function's layers.</p>"
+    },
+    "LambdaLayerAggregationResponse":{
+      "type":"structure",
+      "required":[
+        "accountId",
+        "functionName",
+        "layerArn",
+        "resourceId"
+      ],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The account ID of the Amazon Web Services Lambda function layer.</p>"
+        },
+        "functionName":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>"
+        },
+        "layerArn":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>"
+        },
+        "resourceId":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The Resource ID of the Amazon Web Services Lambda function layer.</p>"
+        },
+        "severityCounts":{"shape":"SeverityCounts"}
+      },
+      "documentation":"<p>A response that contains the results of an Amazon Web Services Lambda function layer finding aggregation.</p>"
+    },
+    "LambdaLayerArn":{
+      "type":"string",
+      "pattern":"^arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+$"
+    },
+    "LambdaLayerList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":5,
+      "min":0
+    },
+    "LambdaLayerSortBy":{
+      "type":"string",
+      "enum":[
+        "CRITICAL",
+        "HIGH",
+        "ALL"
+      ]
+    },
+    "LambdaVpcConfig":{
+      "type":"structure",
+      "members":{
+        "securityGroupIds":{
+          "shape":"SecurityGroupIdList",
+          "documentation":"<p>The VPC security groups and subnets that are attached to an Amazon Web Services Lambda function. For more information, see <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html\">VPC Settings</a>.</p>"
+        },
+        "subnetIds":{
+          "shape":"SubnetIdList",
+          "documentation":"<p>A list of VPC subnet IDs.</p>"
+        },
+        "vpcId":{
+          "shape":"VpcId",
+          "documentation":"<p>The ID of the VPC.</p>"
+        }
+      },
+      "documentation":"<p>The VPC security groups and subnets that are attached to an Amazon Web Services Lambda function. For more information, see <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html\">VPC Settings</a>.</p>"
+    },
+    "LastSeen":{"type":"timestamp"},
+    "LayerList":{
+      "type":"list",
+      "member":{"shape":"LambdaLayerArn"},
+      "max":5,
+      "min":1
+    },
     "ListAccountPermissionsMaxResults":{
       "type":"integer",
+      "box":true,
       "max":1024,
       "min":1
     },
@@ -2804,12 +5546,11 @@
       "members":{
         "maxResults":{
           "shape":"ListAccountPermissionsMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>"
         },
         "service":{
           "shape":"Service",
@@ -2831,8 +5572,267 @@
         }
       }
     },
+    "ListCisScanConfigurationsFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "scanConfigurationArnFilters":{
+          "shape":"CisScanConfigurationArnFilterList",
+          "documentation":"<p>The list of scan configuration ARN filters.</p>"
+        },
+        "scanNameFilters":{
+          "shape":"CisScanNameFilterList",
+          "documentation":"<p>The list of scan name filters.</p>"
+        },
+        "targetResourceTagFilters":{
+          "shape":"ResourceTagFilterList",
+          "documentation":"<p>The list of target resource tag filters.</p>"
+        }
+      },
+      "documentation":"<p>A list of CIS scan configurations filter criteria.</p>"
+    },
+    "ListCisScanConfigurationsMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListCisScanConfigurationsRequest":{
+      "type":"structure",
+      "members":{
+        "filterCriteria":{
+          "shape":"ListCisScanConfigurationsFilterCriteria",
+          "documentation":"<p>The CIS scan configuration filter criteria.</p>"
+        },
+        "maxResults":{
+          "shape":"ListCisScanConfigurationsMaxResults",
+          "documentation":"<p>The maximum number of CIS scan configurations to be returned in a single page of results.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "sortBy":{
+          "shape":"CisScanConfigurationsSortBy",
+          "documentation":"<p>The CIS scan configuration sort by order.</p>"
+        },
+        "sortOrder":{
+          "shape":"CisSortOrder",
+          "documentation":"<p>The CIS scan configuration sort order order.</p>"
+        }
+      }
+    },
+    "ListCisScanConfigurationsResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "scanConfigurations":{
+          "shape":"CisScanConfigurationList",
+          "documentation":"<p>The CIS scan configuration scan configurations.</p>"
+        }
+      }
+    },
+    "ListCisScanResultsAggregatedByChecksRequest":{
+      "type":"structure",
+      "required":["scanArn"],
+      "members":{
+        "filterCriteria":{
+          "shape":"CisScanResultsAggregatedByChecksFilterCriteria",
+          "documentation":"<p>The filter criteria.</p>"
+        },
+        "maxResults":{
+          "shape":"CisScanResultsMaxResults",
+          "documentation":"<p>The maximum number of scan results aggregated by checks to be returned in a single page of results.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The scan ARN.</p>"
+        },
+        "sortBy":{
+          "shape":"CisScanResultsAggregatedByChecksSortBy",
+          "documentation":"<p>The sort by order.</p>"
+        },
+        "sortOrder":{
+          "shape":"CisSortOrder",
+          "documentation":"<p>The sort order.</p>"
+        }
+      }
+    },
+    "ListCisScanResultsAggregatedByChecksResponse":{
+      "type":"structure",
+      "members":{
+        "checkAggregations":{
+          "shape":"CisCheckAggregationList",
+          "documentation":"<p>The check aggregations.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        }
+      }
+    },
+    "ListCisScanResultsAggregatedByTargetResourceRequest":{
+      "type":"structure",
+      "required":["scanArn"],
+      "members":{
+        "filterCriteria":{
+          "shape":"CisScanResultsAggregatedByTargetResourceFilterCriteria",
+          "documentation":"<p>The filter criteria.</p>"
+        },
+        "maxResults":{
+          "shape":"CisScanResultsMaxResults",
+          "documentation":"<p>The maximum number of scan results aggregated by a target resource to be returned in a single page of results.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "scanArn":{
+          "shape":"CisScanArn",
+          "documentation":"<p>The scan ARN.</p>"
+        },
+        "sortBy":{
+          "shape":"CisScanResultsAggregatedByTargetResourceSortBy",
+          "documentation":"<p>The sort by order.</p>"
+        },
+        "sortOrder":{
+          "shape":"CisSortOrder",
+          "documentation":"<p>The sort order.</p>"
+        }
+      }
+    },
+    "ListCisScanResultsAggregatedByTargetResourceResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "targetResourceAggregations":{
+          "shape":"CisTargetResourceAggregationList",
+          "documentation":"<p>The resource aggregations.</p>"
+        }
+      }
+    },
+    "ListCisScansDetailLevel":{
+      "type":"string",
+      "enum":[
+        "ORGANIZATION",
+        "MEMBER"
+      ]
+    },
+    "ListCisScansFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "failedChecksFilters":{
+          "shape":"CisNumberFilterList",
+          "documentation":"<p>The list of failed checks filters.</p>"
+        },
+        "scanArnFilters":{
+          "shape":"CisScanArnFilterList",
+          "documentation":"<p>The list of scan ARN filters.</p>"
+        },
+        "scanAtFilters":{
+          "shape":"CisScanDateFilterList",
+          "documentation":"<p>The list of scan at filters.</p>"
+        },
+        "scanConfigurationArnFilters":{
+          "shape":"CisScanConfigurationArnFilterList",
+          "documentation":"<p>The list of scan configuration ARN filters.</p>"
+        },
+        "scanNameFilters":{
+          "shape":"CisScanNameFilterList",
+          "documentation":"<p>The list of scan name filters.</p>"
+        },
+        "scanStatusFilters":{
+          "shape":"CisScanStatusFilterList",
+          "documentation":"<p>The list of scan status filters.</p>"
+        },
+        "scheduledByFilters":{
+          "shape":"CisScheduledByFilterList",
+          "documentation":"<p>The list of scheduled by filters.</p>"
+        },
+        "targetAccountIdFilters":{
+          "shape":"AccountIdFilterList",
+          "documentation":"<p>The list of target account ID filters.</p>"
+        },
+        "targetResourceIdFilters":{
+          "shape":"ResourceIdFilterList",
+          "documentation":"<p>The list of target resource ID filters.</p>"
+        },
+        "targetResourceTagFilters":{
+          "shape":"ResourceTagFilterList",
+          "documentation":"<p>The list of target resource tag filters.</p>"
+        }
+      },
+      "documentation":"<p>A list of CIS scans filter criteria.</p>"
+    },
+    "ListCisScansMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListCisScansRequest":{
+      "type":"structure",
+      "members":{
+        "detailLevel":{
+          "shape":"ListCisScansDetailLevel",
+          "documentation":"<p>The detail applied to the CIS scan.</p>"
+        },
+        "filterCriteria":{
+          "shape":"ListCisScansFilterCriteria",
+          "documentation":"<p>The CIS scan filter criteria.</p>"
+        },
+        "maxResults":{
+          "shape":"ListCisScansMaxResults",
+          "documentation":"<p>The maximum number of results to be returned.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "sortBy":{
+          "shape":"ListCisScansSortBy",
+          "documentation":"<p>The CIS scans sort by order.</p>"
+        },
+        "sortOrder":{
+          "shape":"CisSortOrder",
+          "documentation":"<p>The CIS scans sort order.</p>"
+        }
+      }
+    },
+    "ListCisScansResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination token from a previous request that's used to retrieve the next page of results.</p>"
+        },
+        "scans":{
+          "shape":"CisScanList",
+          "documentation":"<p>The CIS scans.</p>"
+        }
+      }
+    },
+    "ListCisScansSortBy":{
+      "type":"string",
+      "enum":[
+        "STATUS",
+        "SCHEDULED_BY",
+        "SCAN_START_DATE",
+        "FAILED_CHECKS"
+      ]
+    },
     "ListCoverageMaxResults":{
       "type":"integer",
+      "box":true,
       "max":200,
       "min":1
     },
@@ -2845,12 +5845,11 @@
         },
         "maxResults":{
           "shape":"ListCoverageMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         }
       }
     },
@@ -2898,8 +5897,7 @@
         },
         "totalCounts":{
           "shape":"Long",
-          "documentation":"<p>The total number for all groups.</p>",
-          "box":true
+          "documentation":"<p>The total number for all groups.</p>"
         }
       }
     },
@@ -2908,12 +5906,11 @@
       "members":{
         "maxResults":{
           "shape":"ListDelegatedAdminMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         }
       }
     },
@@ -2932,11 +5929,13 @@
     },
     "ListDelegatedAdminMaxResults":{
       "type":"integer",
+      "box":true,
       "max":5,
       "min":1
     },
     "ListFilterMaxResults":{
       "type":"integer",
+      "box":true,
       "max":100,
       "min":1
     },
@@ -2953,12 +5952,11 @@
         },
         "maxResults":{
           "shape":"ListFilterMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         }
       }
     },
@@ -2978,6 +5976,7 @@
     },
     "ListFindingAggregationsMaxResults":{
       "type":"integer",
+      "box":true,
       "max":100,
       "min":1
     },
@@ -2999,12 +5998,11 @@
         },
         "maxResults":{
           "shape":"ListFindingAggregationsMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         }
       }
     },
@@ -3028,6 +6026,7 @@
     },
     "ListFindingsMaxResults":{
       "type":"integer",
+      "box":true,
       "max":100,
       "min":1
     },
@@ -3040,12 +6039,11 @@
         },
         "maxResults":{
           "shape":"ListFindingsMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         },
         "sortCriteria":{
           "shape":"SortCriteria",
@@ -3068,6 +6066,7 @@
     },
     "ListMembersMaxResults":{
       "type":"integer",
+      "box":true,
       "max":50,
       "min":1
     },
@@ -3076,17 +6075,15 @@
       "members":{
         "maxResults":{
           "shape":"ListMembersMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         },
         "onlyAssociated":{
           "shape":"Boolean",
-          "documentation":"<p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>",
-          "box":true
+          "documentation":"<p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>"
         }
       }
     },
@@ -3126,6 +6123,7 @@
     },
     "ListUsageTotalsMaxResults":{
       "type":"integer",
+      "box":true,
       "max":500,
       "min":1
     },
@@ -3142,12 +6140,11 @@
         },
         "maxResults":{
           "shape":"ListUsageTotalsMaxResults",
-          "documentation":"<p>The maximum number of results to return in the response.</p>",
-          "box":true
+          "documentation":"<p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>"
         },
         "nextToken":{
           "shape":"ListUsageTotalsNextToken",
-          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
         }
       }
     },
@@ -3164,7 +6161,10 @@
         }
       }
     },
-    "Long":{"type":"long"},
+    "Long":{
+      "type":"long",
+      "box":true
+    },
     "MapComparison":{
       "type":"string",
       "enum":["EQUALS"]
@@ -3229,6 +6229,55 @@
       },
       "documentation":"<p>Details on a member account in your organization.</p>"
     },
+    "MemberAccountEc2DeepInspectionStatus":{
+      "type":"structure",
+      "required":[
+        "accountId",
+        "activateDeepInspection"
+      ],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The unique identifier for the Amazon Web Services account of the organization member.</p>"
+        },
+        "activateDeepInspection":{
+          "shape":"Boolean",
+          "documentation":"<p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains details about the status of Amazon Inspector deep inspection for a member account in your organization.</p>"
+    },
+    "MemberAccountEc2DeepInspectionStatusList":{
+      "type":"list",
+      "member":{"shape":"MemberAccountEc2DeepInspectionStatus"},
+      "max":100,
+      "min":0
+    },
+    "MemberAccountEc2DeepInspectionStatusState":{
+      "type":"structure",
+      "required":["accountId"],
+      "members":{
+        "accountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The unique identifier for the Amazon Web Services account of the organization member</p>"
+        },
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>"
+        },
+        "status":{
+          "shape":"Ec2DeepInspectionStatus",
+          "documentation":"<p>The state of Amazon Inspector deep inspection in the member account.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains details about the state of Amazon Inspector deep inspection for a member account.</p>"
+    },
+    "MemberAccountEc2DeepInspectionStatusStateList":{
+      "type":"list",
+      "member":{"shape":"MemberAccountEc2DeepInspectionStatusState"},
+      "max":100,
+      "min":0
+    },
     "MemberList":{
       "type":"list",
       "member":{"shape":"Member"},
@@ -3242,6 +6291,24 @@
     "MonthlyCostEstimate":{
       "type":"double",
       "min":0
+    },
+    "MonthlySchedule":{
+      "type":"structure",
+      "required":[
+        "day",
+        "startTime"
+      ],
+      "members":{
+        "day":{
+          "shape":"Day",
+          "documentation":"<p>The monthly schedule's day.</p>"
+        },
+        "startTime":{
+          "shape":"Time",
+          "documentation":"<p>The monthly schedule's start time.</p>"
+        }
+      },
+      "documentation":"<p>A monthly schedule.</p>"
     },
     "NetworkPath":{
       "type":"structure",
@@ -3301,13 +6368,11 @@
       "members":{
         "lowerInclusive":{
           "shape":"Double",
-          "documentation":"<p>The lowest number to be included in the filter.</p>",
-          "box":true
+          "documentation":"<p>The lowest number to be included in the filter.</p>"
         },
         "upperInclusive":{
           "shape":"Double",
-          "documentation":"<p>The highest number to be included in the filter.</p>",
-          "box":true
+          "documentation":"<p>The highest number to be included in the filter.</p>"
         }
       },
       "documentation":"<p>An object that describes the details of a number filter.</p>"
@@ -3317,6 +6382,18 @@
       "member":{"shape":"NumberFilter"},
       "max":10,
       "min":1
+    },
+    "OneAccountIdFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":1,
+      "min":1
+    },
+    "OneTimeSchedule":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>A one time schedule.</p>"
     },
     "Operation":{
       "type":"string",
@@ -3395,6 +6472,7 @@
           "shape":"StringFilter",
           "documentation":"<p>An object that contains details on the package release to filter on.</p>"
         },
+        "sourceLambdaLayerArn":{"shape":"StringFilter"},
         "sourceLayerHash":{
           "shape":"StringFilter",
           "documentation":"<p>An object that contains details on the source layer hash to filter on.</p>"
@@ -3430,7 +6508,8 @@
         "PIP",
         "PYTHONPKG",
         "NODEPKG",
-        "POM"
+        "POM",
+        "GEMSPEC"
       ]
     },
     "PackageName":{
@@ -3449,6 +6528,13 @@
         "CRITICAL",
         "HIGH",
         "ALL"
+      ]
+    },
+    "PackageType":{
+      "type":"string",
+      "enum":[
+        "IMAGE",
+        "ZIP"
       ]
     },
     "PackageVersion":{
@@ -3506,6 +6592,18 @@
       },
       "documentation":"<p>Information about a package vulnerability finding.</p>"
     },
+    "Path":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"^(?:/(?:\\.[-\\w]+|[-\\w]+(?:\\.[-\\w]+)?))+/?$"
+    },
+    "PathList":{
+      "type":"list",
+      "member":{"shape":"Path"},
+      "max":5,
+      "min":0
+    },
     "Permission":{
       "type":"structure",
       "required":[
@@ -3535,8 +6633,20 @@
       "max":1024,
       "min":1
     },
+    "PlatformFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "PlatformVersion":{
+      "type":"string",
+      "max":8,
+      "min":0
+    },
     "Port":{
       "type":"integer",
+      "box":true,
       "max":65535,
       "min":0
     },
@@ -3549,13 +6659,11 @@
       "members":{
         "begin":{
           "shape":"Port",
-          "documentation":"<p>The beginning port in a port range.</p>",
-          "box":true
+          "documentation":"<p>The beginning port in a port range.</p>"
         },
         "end":{
           "shape":"Port",
-          "documentation":"<p>The ending port in a port range.</p>",
-          "box":true
+          "documentation":"<p>The ending port in a port range.</p>"
         }
       },
       "documentation":"<p>Details about the port range associated with a finding.</p>"
@@ -3565,13 +6673,11 @@
       "members":{
         "beginInclusive":{
           "shape":"Port",
-          "documentation":"<p>The port number the port range begins at.</p>",
-          "box":true
+          "documentation":"<p>The port number the port range begins at.</p>"
         },
         "endInclusive":{
           "shape":"Port",
-          "documentation":"<p>The port number the port range ends at.</p>",
-          "box":true
+          "documentation":"<p>The port number the port range ends at.</p>"
         }
       },
       "documentation":"<p>An object that describes the details of a port range filter.</p>"
@@ -3581,6 +6687,16 @@
       "member":{"shape":"PortRangeFilter"},
       "max":10,
       "min":1
+    },
+    "Product":{
+      "type":"string",
+      "max":32,
+      "min":0
+    },
+    "Reason":{
+      "type":"string",
+      "max":1024,
+      "min":0
     },
     "Recommendation":{
       "type":"structure",
@@ -3595,6 +6711,22 @@
         }
       },
       "documentation":"<p>Details about the recommended course of action to remediate the finding.</p>"
+    },
+    "ReferenceUrls":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"},
+      "max":10,
+      "min":1
+    },
+    "RelatedVulnerabilities":{
+      "type":"list",
+      "member":{"shape":"RelatedVulnerability"},
+      "max":100,
+      "min":0
+    },
+    "RelatedVulnerability":{
+      "type":"string",
+      "min":0
     },
     "RelationshipStatus":{
       "type":"string",
@@ -3633,6 +6765,12 @@
     "ReportId":{
       "type":"string",
       "pattern":"\\b[a-f0-9]{8}\\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\\b[a-f0-9]{12}\\b"
+    },
+    "ReportTargetAccounts":{
+      "type":"list",
+      "member":{"shape":"AccountId"},
+      "max":1,
+      "min":0
     },
     "ReportingErrorCode":{
       "type":"string",
@@ -3673,8 +6811,7 @@
         },
         "affectedImages":{
           "shape":"Long",
-          "documentation":"<p>The number of container images impacted by the findings.</p>",
-          "box":true
+          "documentation":"<p>The number of container images impacted by the findings.</p>"
         },
         "repository":{
           "shape":"NonEmptyString",
@@ -3695,6 +6832,28 @@
         "ALL",
         "AFFECTED_IMAGES"
       ]
+    },
+    "ResetEncryptionKeyRequest":{
+      "type":"structure",
+      "required":[
+        "resourceType",
+        "scanType"
+      ],
+      "members":{
+        "resourceType":{
+          "shape":"ResourceType",
+          "documentation":"<p>The resource type the key encrypts.</p>"
+        },
+        "scanType":{
+          "shape":"ScanType",
+          "documentation":"<p>The scan type the key encrypts.</p>"
+        }
+      }
+    },
+    "ResetEncryptionKeyResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "Resource":{
       "type":"structure",
@@ -3740,19 +6899,99 @@
         "awsEcrContainerImage":{
           "shape":"AwsEcrContainerImageDetails",
           "documentation":"<p>An object that contains details about the Amazon ECR container image involved in the finding.</p>"
+        },
+        "awsLambdaFunction":{
+          "shape":"AwsLambdaFunctionDetails",
+          "documentation":"<p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>"
         }
       },
       "documentation":"<p>Contains details about the resource involved in the finding.</p>"
+    },
+    "ResourceFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "accountId":{
+          "shape":"ResourceStringFilterList",
+          "documentation":"<p>The account IDs used as resource filter criteria.</p>"
+        },
+        "ec2InstanceTags":{
+          "shape":"ResourceMapFilterList",
+          "documentation":"<p>The EC2 instance tags used as resource filter criteria.</p>"
+        },
+        "ecrImageTags":{
+          "shape":"ResourceStringFilterList",
+          "documentation":"<p>The ECR image tags used as resource filter criteria.</p>"
+        },
+        "ecrRepositoryName":{
+          "shape":"ResourceStringFilterList",
+          "documentation":"<p>The ECR repository names used as resource filter criteria.</p>"
+        },
+        "lambdaFunctionName":{
+          "shape":"ResourceStringFilterList",
+          "documentation":"<p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>"
+        },
+        "lambdaFunctionTags":{
+          "shape":"ResourceMapFilterList",
+          "documentation":"<p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>"
+        },
+        "resourceId":{
+          "shape":"ResourceStringFilterList",
+          "documentation":"<p>The resource IDs used as resource filter criteria.</p>"
+        },
+        "resourceType":{
+          "shape":"ResourceStringFilterList",
+          "documentation":"<p>The resource types used as resource filter criteria.</p>"
+        }
+      },
+      "documentation":"<p>The resource filter criteria for a Software bill of materials (SBOM) report.</p>"
     },
     "ResourceId":{
       "type":"string",
       "max":341,
       "min":10,
-      "pattern":"(^arn:.*:ecr:.*:\\d{12}:repository\\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\\\*)$)"
+      "pattern":"(^arn:.*:ecr:.*:\\d{12}:repository\\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_\\.]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?$))"
+    },
+    "ResourceIdFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
     },
     "ResourceList":{
       "type":"list",
       "member":{"shape":"Resource"},
+      "max":10,
+      "min":1
+    },
+    "ResourceMapComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "ResourceMapFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "key"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"ResourceMapComparison",
+          "documentation":"<p>The filter's comparison.</p>"
+        },
+        "key":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The filter's key.</p>"
+        },
+        "value":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The filter's value.</p>"
+        }
+      },
+      "documentation":"<p>A resource map filter for a software bill of material report.</p>"
+    },
+    "ResourceMapFilterList":{
+      "type":"list",
+      "member":{"shape":"ResourceMapFilter"},
       "max":10,
       "min":1
     },
@@ -3783,6 +7022,10 @@
         "ecrRepository":{
           "shape":"EcrRepositoryMetadata",
           "documentation":"<p>An object that contains details about the repository an Amazon ECR image resides in.</p>"
+        },
+        "lambdaFunction":{
+          "shape":"LambdaFunctionMetadata",
+          "documentation":"<p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>"
         }
       },
       "documentation":"<p>An object that contains details about the metadata for an Amazon ECR resource.</p>"
@@ -3791,7 +7034,9 @@
       "type":"string",
       "enum":[
         "EC2",
-        "ECR"
+        "ECR",
+        "LAMBDA",
+        "LAMBDA_CODE"
       ]
     },
     "ResourceState":{
@@ -3808,7 +7053,9 @@
         "ecr":{
           "shape":"State",
           "documentation":"<p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>"
-        }
+        },
+        "lambda":{"shape":"State"},
+        "lambdaCode":{"shape":"State"}
       },
       "documentation":"<p>Details the state of Amazon Inspector for each resource type Amazon Inspector scans.</p>"
     },
@@ -3826,16 +7073,110 @@
         "ecr":{
           "shape":"Status",
           "documentation":"<p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>"
+        },
+        "lambda":{
+          "shape":"Status",
+          "documentation":"<p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>"
+        },
+        "lambdaCode":{
+          "shape":"Status",
+          "documentation":"<p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. </p>"
         }
       },
       "documentation":"<p>Details the status of Amazon Inspector for each resource type Amazon Inspector scans.</p>"
+    },
+    "ResourceStringComparison":{
+      "type":"string",
+      "enum":[
+        "EQUALS",
+        "NOT_EQUALS"
+      ]
+    },
+    "ResourceStringFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"ResourceStringComparison",
+          "documentation":"<p>The filter's comparison.</p>"
+        },
+        "value":{
+          "shape":"ResourceStringInput",
+          "documentation":"<p>The filter's value.</p>"
+        }
+      },
+      "documentation":"<p>A resource string filter for a software bill of materials report.</p>"
+    },
+    "ResourceStringFilterList":{
+      "type":"list",
+      "member":{"shape":"ResourceStringFilter"},
+      "max":10,
+      "min":1
+    },
+    "ResourceStringInput":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
+    "ResourceTagFilterList":{
+      "type":"list",
+      "member":{"shape":"TagFilter"},
+      "max":10,
+      "min":1
     },
     "ResourceType":{
       "type":"string",
       "enum":[
         "AWS_EC2_INSTANCE",
         "AWS_ECR_CONTAINER_IMAGE",
-        "AWS_ECR_REPOSITORY"
+        "AWS_ECR_REPOSITORY",
+        "AWS_LAMBDA_FUNCTION"
+      ]
+    },
+    "RiskScore":{
+      "type":"integer",
+      "box":true
+    },
+    "RuleId":{
+      "type":"string",
+      "max":500,
+      "min":1
+    },
+    "Runtime":{
+      "type":"string",
+      "enum":[
+        "NODEJS",
+        "NODEJS_12_X",
+        "NODEJS_14_X",
+        "NODEJS_16_X",
+        "JAVA_8",
+        "JAVA_8_AL2",
+        "JAVA_11",
+        "PYTHON_3_7",
+        "PYTHON_3_8",
+        "PYTHON_3_9",
+        "UNSUPPORTED",
+        "NODEJS_18_X",
+        "GO_1_X",
+        "JAVA_17",
+        "PYTHON_3_10"
+      ]
+    },
+    "SbomReportFormat":{
+      "type":"string",
+      "enum":[
+        "CYCLONEDX_1_4",
+        "SPDX_2_3"
+      ]
+    },
+    "ScanMode":{
+      "type":"string",
+      "enum":[
+        "EC2_SSM_AGENT_BASED",
+        "EC2_AGENTLESS"
       ]
     },
     "ScanStatus":{
@@ -3847,7 +7188,7 @@
       "members":{
         "reason":{
           "shape":"ScanStatusReason",
-          "documentation":"<p>The reason for the scan.</p>"
+          "documentation":"<p>The scan status. Possible return values and descriptions are: </p> <p> <code>PENDING_INITIAL_SCAN</code> - This resource has been identified for scanning, results will be available soon.</p> <p> <code>ACCESS_DENIED</code> - Resource access policy restricting Amazon Inspector access. Please update the IAM policy.</p> <p> <code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error for this resource. Amazon Inspector service will automatically resolve the issue and resume the scanning. No action required from the user.</p> <p> <code>UNMANAGED_EC2_INSTANCE</code> - The EC2 instance is not managed by SSM, please use the following SSM automation to remediate the issue: <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html\">https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-awssupport-troubleshoot-managed-instance.html</a>. Once the instance becomes managed by SSM, Inspector will automatically begin scanning this instance. </p> <p> <code>UNSUPPORTED_OS</code> - Amazon Inspector does not support this OS, architecture, or image manifest type at this time. To see a complete list of supported operating systems see: <a href=\" https://docs.aws.amazon.com/inspector/latest/user/supported.html\">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p> <p> <code>SCAN_ELIGIBILITY_EXPIRED</code> - The configured scan duration has lapsed for this image.</p> <p> <code>RESOURCE_TERMINATED</code> - This resource has been terminated. The findings and coverage associated with this resource are in the process of being cleaned up.</p> <p> <code>SUCCESSFUL</code> - The scan was successful.</p> <p> <code>NO_RESOURCES_FOUND</code> - Reserved for future use.</p> <p> <code>IMAGE_SIZE_EXCEEDED</code> - Reserved for future use.</p> <p> <code>SCAN_FREQUENCY_MANUAL</code> - This image will not be covered by Amazon Inspector due to the repository scan frequency configuration.</p> <p> <code>SCAN_FREQUENCY_SCAN_ON_PUSH </code>- This image will be scanned one time and will not new findings because of the scan frequency configuration.</p> <p> <code>EC2_INSTANCE_STOPPED</code> - This EC2 instance is in a stopped state, therefore, Amazon Inspector will pause scanning. The existing findings will continue to exist until the instance is terminated. Once the instance is re-started, Inspector will automatically start scanning the instance again. Please note that you will not be charged for this instance while it’s in a stopped state.</p> <p> <code>PENDING_DISABLE</code> - This resource is pending cleanup during disablement. The customer will not be billed while a resource is in the pending disable status.</p> <p> <code>NO INVENTORY</code> - Amazon Inspector couldn’t find software application inventory to scan for vulnerabilities. This might be caused due to required Amazon Inspector associations being deleted or failing to run on your resource. Please verify the status of <code>InspectorInventoryCollection-do-not-delete</code> association in the SSM console for the resource. Additionally, you can verify the instance’s inventory in the SSM Fleet Manager console.</p> <p> <code>STALE_INVENTORY</code> - Amazon Inspector wasn’t able to collect an updated software application inventory in the last 7 days. Please confirm the required Amazon Inspector associations still exist and you can still see an updated inventory in the SSM console.</p> <p> <code>EXCLUDED_BY_TAG</code> - This resource was not scanned because it has been excluded by a tag.</p> <p> <code>UNSUPPORTED_RUNTIME</code> - The function was not scanned because it has an unsupported runtime. To see a complete list of supported runtimes see: <a href=\" https://docs.aws.amazon.com/inspector/latest/user/supported.html\">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.</p> <p> <code>UNSUPPORTED_MEDIA_TYPE </code>- The ECR image has an unsupported media type.</p> <p> <code>UNSUPPORTED_CONFIG_FILE</code> - Reserved for future use.</p> <p> <code>DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED</code> - The instance has exceeded the 5000 package limit for Amazon Inspector Deep inspection. To resume Deep inspection for this instance you can try to adjust the custom paths associated with the account.</p> <p> <code>DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED</code> - The SSM agent couldn't send inventory to Amazon Inspector because the SSM quota for Inventory data collected per instance per day has already been reached for this instance.</p> <p> <code>DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED</code> - Amazon Inspector failed to extract the package inventory because the package collection time exceeding the maximum threshold of 15 minutes.</p> <p> <code>DEEP_INSPECTION_NO_INVENTORY</code> The Amazon Inspector plugin hasn't yet been able to collect an inventory of packages for this instance. This is usually the result of a pending scan, however, if this status persists after 6 hours, use SSM to ensure that the required Amazon Inspector associations exist and are running for the instance.</p> <p/>"
         },
         "statusCode":{
           "shape":"ScanStatusCode",
@@ -3881,21 +7222,152 @@
         "EC2_INSTANCE_STOPPED",
         "PENDING_DISABLE",
         "NO_INVENTORY",
-        "STALE_INVENTORY"
+        "STALE_INVENTORY",
+        "EXCLUDED_BY_TAG",
+        "UNSUPPORTED_RUNTIME",
+        "UNSUPPORTED_MEDIA_TYPE",
+        "UNSUPPORTED_CONFIG_FILE",
+        "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
+        "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
+        "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
+        "DEEP_INSPECTION_NO_INVENTORY"
       ]
     },
     "ScanType":{
       "type":"string",
       "enum":[
         "NETWORK",
-        "PACKAGE"
+        "PACKAGE",
+        "CODE"
       ]
+    },
+    "Schedule":{
+      "type":"structure",
+      "members":{
+        "daily":{
+          "shape":"DailySchedule",
+          "documentation":"<p>The schedule's daily.</p>"
+        },
+        "monthly":{
+          "shape":"MonthlySchedule",
+          "documentation":"<p>The schedule's monthly.</p>"
+        },
+        "oneTime":{
+          "shape":"OneTimeSchedule",
+          "documentation":"<p>The schedule's one time.</p>"
+        },
+        "weekly":{
+          "shape":"WeeklySchedule",
+          "documentation":"<p>The schedule's weekly.</p>"
+        }
+      },
+      "documentation":"<p>A schedule.</p>",
+      "union":true
+    },
+    "SearchVulnerabilitiesFilterCriteria":{
+      "type":"structure",
+      "required":["vulnerabilityIds"],
+      "members":{
+        "vulnerabilityIds":{
+          "shape":"VulnIdList",
+          "documentation":"<p>The IDs for specific vulnerabilities.</p>"
+        }
+      },
+      "documentation":"<p>Details on the criteria used to define the filter for a vulnerability search. </p>"
+    },
+    "SearchVulnerabilitiesRequest":{
+      "type":"structure",
+      "required":["filterCriteria"],
+      "members":{
+        "filterCriteria":{
+          "shape":"SearchVulnerabilitiesFilterCriteria",
+          "documentation":"<p>The criteria used to filter the results of a vulnerability search.</p>"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>"
+        }
+      }
+    },
+    "SearchVulnerabilitiesResponse":{
+      "type":"structure",
+      "required":["vulnerabilities"],
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The pagination parameter to be used on the next list operation to retrieve more items.</p>"
+        },
+        "vulnerabilities":{
+          "shape":"Vulnerabilities",
+          "documentation":"<p>Details about the listed vulnerability.</p>"
+        }
+      }
+    },
+    "SecurityGroupId":{
+      "type":"string",
+      "pattern":"^sg-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$"
+    },
+    "SecurityGroupIdList":{
+      "type":"list",
+      "member":{"shape":"SecurityGroupId"},
+      "max":5,
+      "min":0
+    },
+    "SendCisSessionHealthRequest":{
+      "type":"structure",
+      "required":[
+        "scanJobId",
+        "sessionToken"
+      ],
+      "members":{
+        "scanJobId":{
+          "shape":"UUID",
+          "documentation":"<p>A unique identifier for the scan job.</p>"
+        },
+        "sessionToken":{
+          "shape":"UUID",
+          "documentation":"<p>The unique token that identifies the CIS session.</p>"
+        }
+      }
+    },
+    "SendCisSessionHealthResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "SendCisSessionTelemetryRequest":{
+      "type":"structure",
+      "required":[
+        "messages",
+        "scanJobId",
+        "sessionToken"
+      ],
+      "members":{
+        "messages":{
+          "shape":"CisSessionMessages",
+          "documentation":"<p>The CIS session telemetry messages.</p>"
+        },
+        "scanJobId":{
+          "shape":"UUID",
+          "documentation":"<p>A unique identifier for the scan job.</p>"
+        },
+        "sessionToken":{
+          "shape":"UUID",
+          "documentation":"<p>The unique token that identifies the CIS session.</p>"
+        }
+      }
+    },
+    "SendCisSessionTelemetryResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "Service":{
       "type":"string",
       "enum":[
         "EC2",
-        "ECR"
+        "ECR",
+        "LAMBDA"
       ]
     },
     "ServiceQuotaExceededException":{
@@ -3934,23 +7406,19 @@
       "members":{
         "all":{
           "shape":"Long",
-          "documentation":"<p>The total count of findings from all severities.</p>",
-          "box":true
+          "documentation":"<p>The total count of findings from all severities.</p>"
         },
         "critical":{
           "shape":"Long",
-          "documentation":"<p>The total count of critical severity findings.</p>",
-          "box":true
+          "documentation":"<p>The total count of critical severity findings.</p>"
         },
         "high":{
           "shape":"Long",
-          "documentation":"<p>The total count of high severity findings.</p>",
-          "box":true
+          "documentation":"<p>The total count of high severity findings.</p>"
         },
         "medium":{
           "shape":"Long",
-          "documentation":"<p>The total count of medium severity findings.</p>",
-          "box":true
+          "documentation":"<p>The total count of medium severity findings.</p>"
         }
       },
       "documentation":"<p>An object that contains the counts of aggregated finding per severity.</p>"
@@ -3991,7 +7459,8 @@
         "VULNERABILITY_ID",
         "VULNERABILITY_SOURCE",
         "INSPECTOR_SCORE",
-        "VENDOR_SEVERITY"
+        "VENDOR_SEVERITY",
+        "EPSS_SCORE"
       ]
     },
     "SortOrder":{
@@ -4006,6 +7475,39 @@
       "max":71,
       "min":71,
       "pattern":"^sha256:[a-z0-9]{64}$"
+    },
+    "StartCisSessionMessage":{
+      "type":"structure",
+      "required":["sessionToken"],
+      "members":{
+        "sessionToken":{
+          "shape":"UUID",
+          "documentation":"<p>The unique token that identifies the CIS session.</p>"
+        }
+      },
+      "documentation":"<p>The start CIS session message.</p>"
+    },
+    "StartCisSessionRequest":{
+      "type":"structure",
+      "required":[
+        "message",
+        "scanJobId"
+      ],
+      "members":{
+        "message":{
+          "shape":"StartCisSessionMessage",
+          "documentation":"<p>The start CIS session message.</p>"
+        },
+        "scanJobId":{
+          "shape":"UUID",
+          "documentation":"<p>A unique identifier for the scan job.</p>"
+        }
+      }
+    },
+    "StartCisSessionResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "State":{
       "type":"structure",
@@ -4041,6 +7543,24 @@
         "SUSPENDED"
       ]
     },
+    "StatusCounts":{
+      "type":"structure",
+      "members":{
+        "failed":{
+          "shape":"Integer",
+          "documentation":"<p>The number of checks that failed.</p>"
+        },
+        "passed":{
+          "shape":"Integer",
+          "documentation":"<p>The number of checks that passed.</p>"
+        },
+        "skipped":{
+          "shape":"Integer",
+          "documentation":"<p>The number of checks that were skipped.</p>"
+        }
+      },
+      "documentation":"<p>The status counts.</p>"
+    },
     "Step":{
       "type":"structure",
       "required":[
@@ -4065,6 +7585,114 @@
       "max":30,
       "min":1
     },
+    "StopCisMessageProgress":{
+      "type":"structure",
+      "members":{
+        "errorChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' error checks.</p>"
+        },
+        "failedChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' failed checks.</p>"
+        },
+        "informationalChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' informational checks.</p>"
+        },
+        "notApplicableChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' not applicable checks.</p>"
+        },
+        "notEvaluatedChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' not evaluated checks.</p>"
+        },
+        "successfulChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' successful checks.</p>"
+        },
+        "totalChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' total checks.</p>"
+        },
+        "unknownChecks":{
+          "shape":"CheckCount",
+          "documentation":"<p>The progress' unknown checks.</p>"
+        }
+      },
+      "documentation":"<p>The stop CIS message progress.</p>"
+    },
+    "StopCisSessionMessage":{
+      "type":"structure",
+      "required":[
+        "progress",
+        "status"
+      ],
+      "members":{
+        "benchmarkProfile":{
+          "shape":"BenchmarkProfile",
+          "documentation":"<p>The message benchmark profile.</p>"
+        },
+        "benchmarkVersion":{
+          "shape":"BenchmarkVersion",
+          "documentation":"<p>The message benchmark version.</p>"
+        },
+        "computePlatform":{
+          "shape":"ComputePlatform",
+          "documentation":"<p>The message compute platform.</p>"
+        },
+        "progress":{
+          "shape":"StopCisMessageProgress",
+          "documentation":"<p>The progress of the message.</p>"
+        },
+        "reason":{
+          "shape":"Reason",
+          "documentation":"<p>The reason for the message.</p>"
+        },
+        "status":{
+          "shape":"StopCisSessionStatus",
+          "documentation":"<p>The status of the message.</p>"
+        }
+      },
+      "documentation":"<p>The stop CIS session message.</p>"
+    },
+    "StopCisSessionRequest":{
+      "type":"structure",
+      "required":[
+        "message",
+        "scanJobId",
+        "sessionToken"
+      ],
+      "members":{
+        "message":{
+          "shape":"StopCisSessionMessage",
+          "documentation":"<p>The stop CIS session message.</p>"
+        },
+        "scanJobId":{
+          "shape":"UUID",
+          "documentation":"<p>A unique identifier for the scan job.</p>"
+        },
+        "sessionToken":{
+          "shape":"UUID",
+          "documentation":"<p>The unique token that identifies the CIS session.</p>"
+        }
+      }
+    },
+    "StopCisSessionResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "StopCisSessionStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCESS",
+        "FAILED",
+        "INTERRUPTED",
+        "UNSUPPORTED_OS"
+      ]
+    },
     "String":{"type":"string"},
     "StringComparison":{
       "type":"string",
@@ -4083,7 +7711,7 @@
       "members":{
         "comparison":{
           "shape":"StringComparison",
-          "documentation":"<p>The operator to use when comparing values in the filter</p>"
+          "documentation":"<p>The operator to use when comparing values in the filter.</p>"
         },
         "value":{
           "shape":"StringInput",
@@ -4106,6 +7734,73 @@
     "StringList":{
       "type":"list",
       "member":{"shape":"NonEmptyString"}
+    },
+    "SubnetId":{
+      "type":"string",
+      "pattern":"^subnet-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$"
+    },
+    "SubnetIdList":{
+      "type":"list",
+      "member":{"shape":"SubnetId"},
+      "max":16,
+      "min":0
+    },
+    "SuggestedFix":{
+      "type":"structure",
+      "members":{
+        "code":{
+          "shape":"SuggestedFixCodeString",
+          "documentation":"<p>The fix's code.</p>"
+        },
+        "description":{
+          "shape":"SuggestedFixDescriptionString",
+          "documentation":"<p>The fix's description.</p>"
+        }
+      },
+      "documentation":"<p>A suggested fix for a vulnerability in your Lambda function code.</p>"
+    },
+    "SuggestedFixCodeString":{
+      "type":"string",
+      "max":2500,
+      "min":1
+    },
+    "SuggestedFixDescriptionString":{
+      "type":"string",
+      "max":1000,
+      "min":1
+    },
+    "SuggestedFixes":{
+      "type":"list",
+      "member":{"shape":"SuggestedFix"},
+      "max":5,
+      "min":1
+    },
+    "TagComparison":{
+      "type":"string",
+      "enum":["EQUALS"]
+    },
+    "TagFilter":{
+      "type":"structure",
+      "required":[
+        "comparison",
+        "key",
+        "value"
+      ],
+      "members":{
+        "comparison":{
+          "shape":"TagComparison",
+          "documentation":"<p>The tag filter comparison value.</p>"
+        },
+        "key":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The tag filter key.</p>"
+        },
+        "value":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The tag filter value.</p>"
+        }
+      },
+      "documentation":"<p>The tag filter.</p>"
     },
     "TagKey":{
       "type":"string",
@@ -4152,23 +7847,106 @@
       "members":{
       }
     },
+    "TagValueList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":5,
+      "min":1
+    },
+    "Target":{
+      "type":"string",
+      "max":50,
+      "min":0
+    },
+    "TargetAccount":{
+      "type":"string",
+      "pattern":"^\\d{12}|ALL_ACCOUNTS|SELF$"
+    },
+    "TargetAccountList":{
+      "type":"list",
+      "member":{"shape":"TargetAccount"},
+      "max":10000,
+      "min":1
+    },
+    "TargetResourceTags":{
+      "type":"map",
+      "key":{"shape":"NonEmptyString"},
+      "value":{"shape":"TagValueList"},
+      "max":5,
+      "min":1
+    },
+    "TargetStatusFilterList":{
+      "type":"list",
+      "member":{"shape":"CisTargetStatusFilter"},
+      "max":10,
+      "min":1
+    },
+    "TargetStatusReasonFilterList":{
+      "type":"list",
+      "member":{"shape":"CisTargetStatusReasonFilter"},
+      "max":10,
+      "min":1
+    },
+    "Targets":{
+      "type":"list",
+      "member":{"shape":"Target"},
+      "min":0
+    },
     "ThrottlingException":{
       "type":"structure",
       "required":["message"],
       "members":{
-        "message":{"shape":"String"}
+        "message":{"shape":"String"},
+        "retryAfterSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The number of seconds to wait before retrying the request.</p>",
+          "location":"header",
+          "locationName":"Retry-After"
+        }
       },
       "documentation":"<p>The limit on the number of requests per second was exceeded.</p>",
       "error":{
         "httpStatusCode":429,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "retryable":{"throttling":true}
+    },
+    "Time":{
+      "type":"structure",
+      "required":[
+        "timeOfDay",
+        "timezone"
+      ],
+      "members":{
+        "timeOfDay":{
+          "shape":"TimeOfDay",
+          "documentation":"<p>The time of day in 24-hour format (00:00).</p>"
+        },
+        "timezone":{
+          "shape":"Timezone",
+          "documentation":"<p>The timezone.</p>"
+        }
+      },
+      "documentation":"<p>The time.</p>"
+    },
+    "TimeOfDay":{
+      "type":"string",
+      "pattern":"^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
     },
     "Timestamp":{"type":"timestamp"},
+    "Timezone":{
+      "type":"string",
+      "max":50,
+      "min":1
+    },
     "TitleAggregation":{
       "type":"structure",
       "members":{
+        "findingType":{
+          "shape":"AggregationFindingType",
+          "documentation":"<p>The type of finding to aggregate on.</p>"
+        },
         "resourceType":{
           "shape":"AggregationResourceType",
           "documentation":"<p>The resource type to aggregate on.</p>"
@@ -4215,6 +7993,12 @@
       },
       "documentation":"<p>A response that contains details on the results of a finding aggregation by title.</p>"
     },
+    "TitleFilterList":{
+      "type":"list",
+      "member":{"shape":"CisStringFilter"},
+      "max":10,
+      "min":1
+    },
     "TitleSortBy":{
       "type":"string",
       "enum":[
@@ -4222,6 +8006,28 @@
         "HIGH",
         "ALL"
       ]
+    },
+    "Tool":{
+      "type":"string",
+      "min":0
+    },
+    "Tools":{
+      "type":"list",
+      "member":{"shape":"Tool"}
+    },
+    "Ttp":{
+      "type":"string",
+      "max":30,
+      "min":0
+    },
+    "Ttps":{
+      "type":"list",
+      "member":{"shape":"Ttp"},
+      "min":0
+    },
+    "UUID":{
+      "type":"string",
+      "pattern":"^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -4249,10 +8055,63 @@
       "members":{
       }
     },
+    "UpdateCisScanConfigurationRequest":{
+      "type":"structure",
+      "required":["scanConfigurationArn"],
+      "members":{
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The CIS scan configuration ARN.</p>"
+        },
+        "scanName":{
+          "shape":"CisScanName",
+          "documentation":"<p>The scan name for the CIS scan configuration.</p>"
+        },
+        "schedule":{
+          "shape":"Schedule",
+          "documentation":"<p>The schedule for the CIS scan configuration.</p>"
+        },
+        "securityLevel":{
+          "shape":"CisSecurityLevel",
+          "documentation":"<p> The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile. </p>"
+        },
+        "targets":{
+          "shape":"UpdateCisTargets",
+          "documentation":"<p>The targets for the CIS scan configuration.</p>"
+        }
+      }
+    },
+    "UpdateCisScanConfigurationResponse":{
+      "type":"structure",
+      "required":["scanConfigurationArn"],
+      "members":{
+        "scanConfigurationArn":{
+          "shape":"CisScanConfigurationArn",
+          "documentation":"<p>The CIS scan configuration ARN.</p>"
+        }
+      }
+    },
+    "UpdateCisTargets":{
+      "type":"structure",
+      "members":{
+        "accountIds":{
+          "shape":"TargetAccountList",
+          "documentation":"<p>The target account ids.</p>"
+        },
+        "targetResourceTags":{
+          "shape":"TargetResourceTags",
+          "documentation":"<p>The target resource tags.</p>"
+        }
+      },
+      "documentation":"<p>Updates CIS targets.</p>"
+    },
     "UpdateConfigurationRequest":{
       "type":"structure",
-      "required":["ecrConfiguration"],
       "members":{
+        "ec2Configuration":{
+          "shape":"Ec2Configuration",
+          "documentation":"<p>Specifies how the Amazon EC2 automated scan will be updated for your environment.</p>"
+        },
         "ecrConfiguration":{
           "shape":"EcrConfiguration",
           "documentation":"<p>Specifies how the ECR automated re-scan will be updated for your environment.</p>"
@@ -4260,6 +8119,67 @@
       }
     },
     "UpdateConfigurationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "UpdateEc2DeepInspectionConfigurationRequest":{
+      "type":"structure",
+      "members":{
+        "activateDeepInspection":{
+          "shape":"Boolean",
+          "documentation":"<p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href=\"https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html\">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>"
+        },
+        "packagePaths":{
+          "shape":"PathList",
+          "documentation":"<p>The Amazon Inspector deep inspection custom paths you are adding for your account.</p>"
+        }
+      }
+    },
+    "UpdateEc2DeepInspectionConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "errorMessage":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>An error message explaining why new Amazon Inspector deep inspection custom paths could not be added.</p>"
+        },
+        "orgPackagePaths":{
+          "shape":"PathList",
+          "documentation":"<p>The current Amazon Inspector deep inspection custom paths for the organization.</p>"
+        },
+        "packagePaths":{
+          "shape":"PathList",
+          "documentation":"<p>The current Amazon Inspector deep inspection custom paths for your account.</p>"
+        },
+        "status":{
+          "shape":"Ec2DeepInspectionStatus",
+          "documentation":"<p>The status of Amazon Inspector deep inspection in your account.</p>"
+        }
+      }
+    },
+    "UpdateEncryptionKeyRequest":{
+      "type":"structure",
+      "required":[
+        "kmsKeyId",
+        "resourceType",
+        "scanType"
+      ],
+      "members":{
+        "kmsKeyId":{
+          "shape":"KmsKeyArn",
+          "documentation":"<p>A KMS key ID for the encryption key.</p>"
+        },
+        "resourceType":{
+          "shape":"ResourceType",
+          "documentation":"<p>The resource type for the encryption key.</p>"
+        },
+        "scanType":{
+          "shape":"ScanType",
+          "documentation":"<p>The scan type for the encryption key.</p>"
+        }
+      }
+    },
+    "UpdateEncryptionKeyResponse":{
       "type":"structure",
       "members":{
       }
@@ -4304,6 +8224,21 @@
         }
       }
     },
+    "UpdateOrgEc2DeepInspectionConfigurationRequest":{
+      "type":"structure",
+      "required":["orgPackagePaths"],
+      "members":{
+        "orgPackagePaths":{
+          "shape":"PathList",
+          "documentation":"<p>The Amazon Inspector deep inspection custom paths you are adding for your organization.</p>"
+        }
+      }
+    },
+    "UpdateOrgEc2DeepInspectionConfigurationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateOrganizationConfigurationRequest":{
       "type":"structure",
       "required":["autoEnable"],
@@ -4333,13 +8268,11 @@
         },
         "estimatedMonthlyCost":{
           "shape":"MonthlyCostEstimate",
-          "documentation":"<p>The estimated monthly cost of Amazon Inspector.</p>",
-          "default":0
+          "documentation":"<p>The estimated monthly cost of Amazon Inspector.</p>"
         },
         "total":{
           "shape":"UsageValue",
-          "documentation":"<p>The total of usage.</p>",
-          "default":0
+          "documentation":"<p>The total of usage.</p>"
         },
         "type":{
           "shape":"UsageType",
@@ -4355,7 +8288,7 @@
     "UsageAccountIdList":{
       "type":"list",
       "member":{"shape":"UsageAccountId"},
-      "max":5000,
+      "max":7000,
       "min":1
     },
     "UsageList":{
@@ -4385,7 +8318,9 @@
       "enum":[
         "EC2_INSTANCE_HOURS",
         "ECR_INITIAL_SCAN",
-        "ECR_RESCAN"
+        "ECR_RESCAN",
+        "LAMBDA_FUNCTION_HOURS",
+        "LAMBDA_FUNCTION_CODE_HOURS"
       ]
     },
     "UsageValue":{
@@ -4446,6 +8381,118 @@
         "OTHER"
       ]
     },
+    "Vendor":{
+      "type":"string",
+      "max":16,
+      "min":0
+    },
+    "VendorCreatedAt":{"type":"timestamp"},
+    "VendorSeverity":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "VendorUpdatedAt":{"type":"timestamp"},
+    "Version":{
+      "type":"string",
+      "pattern":"^\\$LATEST|[0-9]+$"
+    },
+    "VpcId":{
+      "type":"string",
+      "pattern":"^vpc-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$"
+    },
+    "VulnId":{
+      "type":"string",
+      "pattern":"^CVE-[12][0-9]{3}-[0-9]{1,10}$"
+    },
+    "VulnIdList":{
+      "type":"list",
+      "member":{"shape":"VulnId"},
+      "max":1,
+      "min":1
+    },
+    "Vulnerabilities":{
+      "type":"list",
+      "member":{"shape":"Vulnerability"},
+      "max":1,
+      "min":0
+    },
+    "Vulnerability":{
+      "type":"structure",
+      "required":["id"],
+      "members":{
+        "atigData":{
+          "shape":"AtigData",
+          "documentation":"<p>An object that contains information about the Amazon Web Services Threat Intel Group (ATIG) details for the vulnerability.</p>"
+        },
+        "cisaData":{
+          "shape":"CisaData",
+          "documentation":"<p>An object that contains the Cybersecurity and Infrastructure Security Agency (CISA) details for the vulnerability.</p>"
+        },
+        "cvss2":{
+          "shape":"Cvss2",
+          "documentation":"<p>An object that contains the Common Vulnerability Scoring System (CVSS) Version 2 details for the vulnerability.</p>"
+        },
+        "cvss3":{
+          "shape":"Cvss3",
+          "documentation":"<p>An object that contains the Common Vulnerability Scoring System (CVSS) Version 3 details for the vulnerability.</p>"
+        },
+        "cwes":{
+          "shape":"Cwes",
+          "documentation":"<p>The Common Weakness Enumeration (CWE) associated with the vulnerability.</p>"
+        },
+        "description":{
+          "shape":"VulnerabilityDescription",
+          "documentation":"<p>A description of the vulnerability.</p>"
+        },
+        "detectionPlatforms":{
+          "shape":"DetectionPlatforms",
+          "documentation":"<p>Platforms that the vulnerability can be detected on.</p>"
+        },
+        "epss":{
+          "shape":"Epss",
+          "documentation":"<p>An object that contains the Exploit Prediction Scoring System (EPSS) score for a vulnerability.</p>"
+        },
+        "exploitObserved":{
+          "shape":"ExploitObserved",
+          "documentation":"<p>An object that contains details on when the exploit was observed.</p>"
+        },
+        "id":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The ID for the specific vulnerability.</p>"
+        },
+        "referenceUrls":{
+          "shape":"VulnerabilityReferenceUrls",
+          "documentation":"<p>Links to various resources with more information on this vulnerability. </p>"
+        },
+        "relatedVulnerabilities":{
+          "shape":"RelatedVulnerabilities",
+          "documentation":"<p>A list of related vulnerabilities.</p>"
+        },
+        "source":{
+          "shape":"VulnerabilitySource",
+          "documentation":"<p>The source of the vulnerability information. Possible results are <code>RHEL</code>, <code>AMAZON_CVE</code>, <code>DEBIAN</code> or <code>NVD</code>.</p>"
+        },
+        "sourceUrl":{
+          "shape":"VulnerabilitySourceUrl",
+          "documentation":"<p>A link to the official source material for this vulnerability.</p>"
+        },
+        "vendorCreatedAt":{
+          "shape":"VendorCreatedAt",
+          "documentation":"<p>The date and time when the vendor created this vulnerability.</p>"
+        },
+        "vendorSeverity":{
+          "shape":"VendorSeverity",
+          "documentation":"<p>The severity assigned by the vendor.</p>"
+        },
+        "vendorUpdatedAt":{
+          "shape":"VendorUpdatedAt",
+          "documentation":"<p>The date and time when the vendor last updated this vulnerability.</p>"
+        }
+      },
+      "documentation":"<p>Contains details about a specific vulnerability Amazon Inspector can detect.</p>"
+    },
+    "VulnerabilityDescription":{"type":"string"},
     "VulnerabilityId":{
       "type":"string",
       "max":128,
@@ -4454,6 +8501,24 @@
     "VulnerabilityIdList":{
       "type":"list",
       "member":{"shape":"VulnerabilityId"}
+    },
+    "VulnerabilityReferenceUrl":{
+      "type":"string",
+      "min":0
+    },
+    "VulnerabilityReferenceUrls":{
+      "type":"list",
+      "member":{"shape":"VulnerabilityReferenceUrl"},
+      "max":100,
+      "min":0
+    },
+    "VulnerabilitySource":{
+      "type":"string",
+      "enum":["NVD"]
+    },
+    "VulnerabilitySourceUrl":{
+      "type":"string",
+      "min":0
     },
     "VulnerablePackage":{
       "type":"structure",
@@ -4468,8 +8533,7 @@
         },
         "epoch":{
           "shape":"PackageEpoch",
-          "documentation":"<p>The epoch of the vulnerable package.</p>",
-          "default":0
+          "documentation":"<p>The epoch of the vulnerable package.</p>"
         },
         "filePath":{
           "shape":"FilePath",
@@ -4495,6 +8559,10 @@
           "shape":"VulnerablePackageRemediation",
           "documentation":"<p>The code to run in your environment to update packages with a fix available.</p>"
         },
+        "sourceLambdaLayerArn":{
+          "shape":"LambdaLayerArn",
+          "documentation":"<p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>"
+        },
         "sourceLayerHash":{
           "shape":"SourceLayerHash",
           "documentation":"<p>The source layer hash of the vulnerable package.</p>"
@@ -4514,7 +8582,25 @@
       "type":"string",
       "max":1024,
       "min":1
+    },
+    "WeeklySchedule":{
+      "type":"structure",
+      "required":[
+        "days",
+        "startTime"
+      ],
+      "members":{
+        "days":{
+          "shape":"DaysList",
+          "documentation":"<p>The weekly schedule's days.</p>"
+        },
+        "startTime":{
+          "shape":"Time",
+          "documentation":"<p>The weekly schedule's start time.</p>"
+        }
+      },
+      "documentation":"<p>A weekly schedule.</p>"
     }
   },
-  "documentation":"<p>Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.</p>"
+  "documentation":"<p>Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.</p>"
 }

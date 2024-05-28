@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the properties of a workspace.
+ * The full details about one Amazon Managed Service for Prometheus workspace in your account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/WorkspaceDescription" target="_top">AWS API
@@ -30,54 +30,60 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Alias of this workspace.
+     * The alias that is assigned to this workspace to help identify it. It may not be unique.
      * </p>
      */
     private String alias;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this workspace.
+     * The ARN of the workspace.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The time when the workspace was created.
+     * The date and time that the workspace was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Prometheus endpoint URI.
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     */
+    private String kmsKeyArn;
+    /**
+     * <p>
+     * The Prometheus endpoint available for this workspace.
      * </p>
      */
     private String prometheusEndpoint;
     /**
      * <p>
-     * The status of this workspace.
+     * The current status of the workspace.
      * </p>
      */
     private WorkspaceStatus status;
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Unique string identifying this workspace.
+     * The unique ID for the workspace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * Alias of this workspace.
+     * The alias that is assigned to this workspace to help identify it. It may not be unique.
      * </p>
      * 
      * @param alias
-     *        Alias of this workspace.
+     *        The alias that is assigned to this workspace to help identify it. It may not be unique.
      */
 
     public void setAlias(String alias) {
@@ -86,10 +92,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Alias of this workspace.
+     * The alias that is assigned to this workspace to help identify it. It may not be unique.
      * </p>
      * 
-     * @return Alias of this workspace.
+     * @return The alias that is assigned to this workspace to help identify it. It may not be unique.
      */
 
     public String getAlias() {
@@ -98,11 +104,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Alias of this workspace.
+     * The alias that is assigned to this workspace to help identify it. It may not be unique.
      * </p>
      * 
      * @param alias
-     *        Alias of this workspace.
+     *        The alias that is assigned to this workspace to help identify it. It may not be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +119,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this workspace.
+     * The ARN of the workspace.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of this workspace.
+     *        The ARN of the workspace.
      */
 
     public void setArn(String arn) {
@@ -126,10 +132,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this workspace.
+     * The ARN of the workspace.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of this workspace.
+     * @return The ARN of the workspace.
      */
 
     public String getArn() {
@@ -138,11 +144,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this workspace.
+     * The ARN of the workspace.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of this workspace.
+     *        The ARN of the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +159,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time when the workspace was created.
+     * The date and time that the workspace was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the workspace was created.
+     *        The date and time that the workspace was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -166,10 +172,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time when the workspace was created.
+     * The date and time that the workspace was created.
      * </p>
      * 
-     * @return The time when the workspace was created.
+     * @return The date and time that the workspace was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -178,11 +184,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The time when the workspace was created.
+     * The date and time that the workspace was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the workspace was created.
+     *        The date and time that the workspace was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +199,51 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Prometheus endpoint URI.
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     * 
+     * @return (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        (optional) If the workspace was created with a customer managed KMS key, the ARN for the key used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDescription withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Prometheus endpoint available for this workspace.
      * </p>
      * 
      * @param prometheusEndpoint
-     *        Prometheus endpoint URI.
+     *        The Prometheus endpoint available for this workspace.
      */
 
     public void setPrometheusEndpoint(String prometheusEndpoint) {
@@ -206,10 +252,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Prometheus endpoint URI.
+     * The Prometheus endpoint available for this workspace.
      * </p>
      * 
-     * @return Prometheus endpoint URI.
+     * @return The Prometheus endpoint available for this workspace.
      */
 
     public String getPrometheusEndpoint() {
@@ -218,11 +264,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Prometheus endpoint URI.
+     * The Prometheus endpoint available for this workspace.
      * </p>
      * 
      * @param prometheusEndpoint
-     *        Prometheus endpoint URI.
+     *        The Prometheus endpoint available for this workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +279,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
      * @param status
-     *        The status of this workspace.
+     *        The current status of the workspace.
      */
 
     public void setStatus(WorkspaceStatus status) {
@@ -246,10 +292,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
-     * @return The status of this workspace.
+     * @return The current status of the workspace.
      */
 
     public WorkspaceStatus getStatus() {
@@ -258,11 +304,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
      * @param status
-     *        The status of this workspace.
+     *        The current status of the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,10 +319,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      * 
-     * @return The tags of this workspace.
+     * @return The list of tag keys and values that are associated with the workspace.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -285,11 +331,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      * 
      * @param tags
-     *        The tags of this workspace.
+     *        The list of tag keys and values that are associated with the workspace.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -298,11 +344,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The tags of this workspace.
+     * The list of tag keys and values that are associated with the workspace.
      * </p>
      * 
      * @param tags
-     *        The tags of this workspace.
+     *        The list of tag keys and values that are associated with the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,11 +387,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique string identifying this workspace.
+     * The unique ID for the workspace.
      * </p>
      * 
      * @param workspaceId
-     *        Unique string identifying this workspace.
+     *        The unique ID for the workspace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -354,10 +400,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique string identifying this workspace.
+     * The unique ID for the workspace.
      * </p>
      * 
-     * @return Unique string identifying this workspace.
+     * @return The unique ID for the workspace.
      */
 
     public String getWorkspaceId() {
@@ -366,11 +412,11 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique string identifying this workspace.
+     * The unique ID for the workspace.
      * </p>
      * 
      * @param workspaceId
-     *        Unique string identifying this workspace.
+     *        The unique ID for the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,6 +443,8 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn()).append(",");
         if (getPrometheusEndpoint() != null)
             sb.append("PrometheusEndpoint: ").append(getPrometheusEndpoint()).append(",");
         if (getStatus() != null)
@@ -431,6 +479,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         if (other.getPrometheusEndpoint() == null ^ this.getPrometheusEndpoint() == null)
             return false;
         if (other.getPrometheusEndpoint() != null && other.getPrometheusEndpoint().equals(this.getPrometheusEndpoint()) == false)
@@ -458,6 +510,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         hashCode = prime * hashCode + ((getPrometheusEndpoint() == null) ? 0 : getPrometheusEndpoint().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

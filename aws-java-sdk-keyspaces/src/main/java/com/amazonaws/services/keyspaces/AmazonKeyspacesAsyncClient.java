@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * In addition to supporting Cassandra Query Language (CQL) requests via open-source Cassandra drivers, Amazon Keyspaces
  * supports data definition language (DDL) operations to manage keyspaces and tables using the Amazon Web Services SDK
- * and CLI. This API reference describes the supported DDL operations in detail.
+ * and CLI, as well as infrastructure as code (IaC) services and tools such as CloudFormation and Terraform. This API
+ * reference describes the supported DDL operations in detail.
  * </p>
  * <p>
  * For the list of all supported CQL APIs, see <a
@@ -281,6 +282,39 @@ public class AmazonKeyspacesAsyncClient extends AmazonKeyspacesClient implements
 
                 try {
                     result = executeGetTable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request) {
+
+        return getTableAutoScalingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(final GetTableAutoScalingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTableAutoScalingSettingsRequest, GetTableAutoScalingSettingsResult> asyncHandler) {
+        final GetTableAutoScalingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTableAutoScalingSettingsResult>() {
+            @Override
+            public GetTableAutoScalingSettingsResult call() throws Exception {
+                GetTableAutoScalingSettingsResult result = null;
+
+                try {
+                    result = executeGetTableAutoScalingSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

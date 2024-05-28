@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class CreateDeviceProfileRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<StructuredPojo> SIDEWALK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sidewalk").build();
 
     private static final CreateDeviceProfileRequestMarshaller instance = new CreateDeviceProfileRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateDeviceProfileRequestMarshaller {
             protocolMarshaller.marshall(createDeviceProfileRequest.getLoRaWAN(), LORAWAN_BINDING);
             protocolMarshaller.marshall(createDeviceProfileRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createDeviceProfileRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createDeviceProfileRequest.getSidewalk(), SIDEWALK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

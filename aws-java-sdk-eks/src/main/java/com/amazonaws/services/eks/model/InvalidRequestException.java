@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,19 @@ public class InvalidRequestException extends com.amazonaws.services.eks.model.Am
      * </p>
      */
     private String nodegroupName;
-
+    /**
+     * <p>
+     * The request is invalid given the state of the add-on name. Check the state of the cluster and the associated
+     * operations.
+     * </p>
+     */
     private String addonName;
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     */
+    private String subscriptionId;
 
     /**
      * Constructs a new InvalidRequestException with the specified error message.
@@ -133,7 +144,14 @@ public class InvalidRequestException extends com.amazonaws.services.eks.model.Am
     }
 
     /**
+     * <p>
+     * The request is invalid given the state of the add-on name. Check the state of the cluster and the associated
+     * operations.
+     * </p>
+     * 
      * @param addonName
+     *        The request is invalid given the state of the add-on name. Check the state of the cluster and the
+     *        associated operations.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
@@ -142,7 +160,13 @@ public class InvalidRequestException extends com.amazonaws.services.eks.model.Am
     }
 
     /**
-     * @return
+     * <p>
+     * The request is invalid given the state of the add-on name. Check the state of the cluster and the associated
+     * operations.
+     * </p>
+     * 
+     * @return The request is invalid given the state of the add-on name. Check the state of the cluster and the
+     *         associated operations.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
@@ -151,12 +175,61 @@ public class InvalidRequestException extends com.amazonaws.services.eks.model.Am
     }
 
     /**
+     * <p>
+     * The request is invalid given the state of the add-on name. Check the state of the cluster and the associated
+     * operations.
+     * </p>
+     * 
      * @param addonName
+     *        The request is invalid given the state of the add-on name. Check the state of the cluster and the
+     *        associated operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidRequestException withAddonName(String addonName) {
         setAddonName(addonName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     * 
+     * @param subscriptionId
+     *        The Amazon EKS subscription ID with the exception.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     * 
+     * @return The Amazon EKS subscription ID with the exception.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    public String getSubscriptionId() {
+        return this.subscriptionId;
+    }
+
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     * 
+     * @param subscriptionId
+     *        The Amazon EKS subscription ID with the exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidRequestException withSubscriptionId(String subscriptionId) {
+        setSubscriptionId(subscriptionId);
         return this;
     }
 

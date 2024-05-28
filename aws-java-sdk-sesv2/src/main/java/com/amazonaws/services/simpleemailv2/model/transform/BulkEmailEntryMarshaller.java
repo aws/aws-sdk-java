@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class BulkEmailEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplacementTags").build();
     private static final MarshallingInfo<StructuredPojo> REPLACEMENTEMAILCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplacementEmailContent").build();
+    private static final MarshallingInfo<List> REPLACEMENTHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplacementHeaders").build();
 
     private static final BulkEmailEntryMarshaller instance = new BulkEmailEntryMarshaller();
 
@@ -54,6 +56,7 @@ public class BulkEmailEntryMarshaller {
             protocolMarshaller.marshall(bulkEmailEntry.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(bulkEmailEntry.getReplacementTags(), REPLACEMENTTAGS_BINDING);
             protocolMarshaller.marshall(bulkEmailEntry.getReplacementEmailContent(), REPLACEMENTEMAILCONTENT_BINDING);
+            protocolMarshaller.marshall(bulkEmailEntry.getReplacementHeaders(), REPLACEMENTHEADERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

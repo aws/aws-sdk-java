@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -161,7 +161,7 @@ public class BatchCreateDelegationByAssessmentRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreateDelegationRequests() != null)
-            sb.append("CreateDelegationRequests: ").append(getCreateDelegationRequests()).append(",");
+            sb.append("CreateDelegationRequests: ").append("***Sensitive Data Redacted***").append(",");
         if (getAssessmentId() != null)
             sb.append("AssessmentId: ").append(getAssessmentId());
         sb.append("}");

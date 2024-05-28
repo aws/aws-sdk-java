@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeLocationFsxWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      */
 
     public void setLocationArn(String locationArn) {
@@ -47,10 +47,10 @@ public class DescribeLocationFsxWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     * @return Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      */
 
     public String getLocationArn() {
@@ -59,11 +59,11 @@ public class DescribeLocationFsxWindowsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     * Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.
+     *        Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

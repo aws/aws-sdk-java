@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Updates the Microsoft Active Directory (AD) configuration of an SVM joined to an AD. Please note, account credentials
- * are not returned in the response payload.
+ * Specifies updates to an FSx for ONTAP storage virtual machine's (SVM) Microsoft Active Directory (AD) configuration.
+ * Note that account credentials are not returned in the response payload.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSvmActiveDirectoryConfiguration"
@@ -30,6 +30,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class UpdateSvmActiveDirectoryConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     private SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration;
+    /**
+     * <p>
+     * Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.
+     * </p>
+     */
+    private String netBiosName;
 
     /**
      * @param selfManagedActiveDirectoryConfiguration
@@ -59,6 +65,49 @@ public class UpdateSvmActiveDirectoryConfiguration implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.
+     * </p>
+     * 
+     * @param netBiosName
+     *        Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is
+     *        joined.
+     */
+
+    public void setNetBiosName(String netBiosName) {
+        this.netBiosName = netBiosName;
+    }
+
+    /**
+     * <p>
+     * Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.
+     * </p>
+     * 
+     * @return Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is
+     *         joined.
+     */
+
+    public String getNetBiosName() {
+        return this.netBiosName;
+    }
+
+    /**
+     * <p>
+     * Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is joined.
+     * </p>
+     * 
+     * @param netBiosName
+     *        Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code> to which an SVM is
+     *        joined.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSvmActiveDirectoryConfiguration withNetBiosName(String netBiosName) {
+        setNetBiosName(netBiosName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -71,7 +120,9 @@ public class UpdateSvmActiveDirectoryConfiguration implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSelfManagedActiveDirectoryConfiguration() != null)
-            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration());
+            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration()).append(",");
+        if (getNetBiosName() != null)
+            sb.append("NetBiosName: ").append(getNetBiosName());
         sb.append("}");
         return sb.toString();
     }
@@ -91,6 +142,10 @@ public class UpdateSvmActiveDirectoryConfiguration implements Serializable, Clon
         if (other.getSelfManagedActiveDirectoryConfiguration() != null
                 && other.getSelfManagedActiveDirectoryConfiguration().equals(this.getSelfManagedActiveDirectoryConfiguration()) == false)
             return false;
+        if (other.getNetBiosName() == null ^ this.getNetBiosName() == null)
+            return false;
+        if (other.getNetBiosName() != null && other.getNetBiosName().equals(this.getNetBiosName()) == false)
+            return false;
         return true;
     }
 
@@ -100,6 +155,7 @@ public class UpdateSvmActiveDirectoryConfiguration implements Serializable, Clon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSelfManagedActiveDirectoryConfiguration() == null) ? 0 : getSelfManagedActiveDirectoryConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNetBiosName() == null) ? 0 : getNetBiosName().hashCode());
         return hashCode;
     }
 

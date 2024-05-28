@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,7 +136,7 @@ import com.amazonaws.services.detective.model.*;
  * </p>
  * <note>
  * <p>
- * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * We replaced the term "master account" with the term "administrator account". An administrator account is used to
  * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
  * behavior graph.
  * </p>
@@ -167,6 +167,8 @@ public interface AmazonDetective {
      * 
      * @param acceptInvitationRequest
      * @return Result of the AcceptInvitation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -188,6 +190,8 @@ public interface AmazonDetective {
      * 
      * @param batchGetGraphMemberDatasourcesRequest
      * @return Result of the BatchGetGraphMemberDatasources operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -207,6 +211,8 @@ public interface AmazonDetective {
      * 
      * @param batchGetMembershipDatasourcesRequest
      * @return Result of the BatchGetMembershipDatasources operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -225,12 +231,6 @@ public interface AmazonDetective {
      * operation is called by the account that is enabling Detective.
      * </p>
      * <p>
-     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
-     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
-     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
-     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
-     * </p>
-     * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
      * of the new behavior graph.
      * </p>
@@ -245,6 +245,8 @@ public interface AmazonDetective {
      * 
      * @param createGraphRequest
      * @return Result of the CreateGraph operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -254,19 +256,14 @@ public interface AmazonDetective {
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @sample AmazonDetective.CreateGraph
@@ -320,6 +317,8 @@ public interface AmazonDetective {
      * 
      * @param createMembersRequest
      * @return Result of the CreateMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -331,19 +330,14 @@ public interface AmazonDetective {
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @sample AmazonDetective.CreateMembers
@@ -363,6 +357,8 @@ public interface AmazonDetective {
      * 
      * @param deleteGraphRequest
      * @return Result of the DeleteGraph operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -396,6 +392,8 @@ public interface AmazonDetective {
      * 
      * @param deleteMembersRequest
      * @return Result of the DeleteMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -421,6 +419,8 @@ public interface AmazonDetective {
      * 
      * @param describeOrganizationConfigurationRequest
      * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -452,6 +452,8 @@ public interface AmazonDetective {
      * 
      * @param disableOrganizationAdminAccountRequest
      * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -477,6 +479,8 @@ public interface AmazonDetective {
      * 
      * @param disassociateMembershipRequest
      * @return Result of the DisassociateMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -515,6 +519,8 @@ public interface AmazonDetective {
      * 
      * @param enableOrganizationAdminAccountRequest
      * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -529,11 +535,39 @@ public interface AmazonDetective {
 
     /**
      * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>GetInvestigation</code>
+     * returns the investigation results of an investigation for a behavior graph.
+     * </p>
+     * 
+     * @param getInvestigationRequest
+     * @return Result of the GetInvestigation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.GetInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInvestigationResult getInvestigation(GetInvestigationRequest getInvestigationRequest);
+
+    /**
+     * <p>
      * Returns the membership details for specified member accounts for a behavior graph.
      * </p>
      * 
      * @param getMembersRequest
      * @return Result of the GetMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -553,6 +587,8 @@ public interface AmazonDetective {
      * 
      * @param listDatasourcePackagesRequest
      * @return Result of the ListDatasourcePackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -577,6 +613,8 @@ public interface AmazonDetective {
      * 
      * @param listGraphsRequest
      * @return Result of the ListGraphs operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -586,6 +624,56 @@ public interface AmazonDetective {
      *      Documentation</a>
      */
     ListGraphsResult listGraphs(ListGraphsRequest listGraphsRequest);
+
+    /**
+     * <p>
+     * Gets the indicators from an investigation. You can use the information from the indicators to determine if an IAM
+     * user and/or IAM role is involved in an unusual activity that could indicate malicious behavior and its impact.
+     * </p>
+     * 
+     * @param listIndicatorsRequest
+     * @return Result of the ListIndicators operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.ListIndicators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListIndicatorsResult listIndicators(ListIndicatorsRequest listIndicatorsRequest);
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>ListInvestigations</code>
+     * lists all active Detective investigations.
+     * </p>
+     * 
+     * @param listInvestigationsRequest
+     * @return Result of the ListInvestigations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.ListInvestigations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListInvestigationsResult listInvestigations(ListInvestigationsRequest listInvestigationsRequest);
 
     /**
      * <p>
@@ -602,6 +690,8 @@ public interface AmazonDetective {
      * 
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -626,6 +716,8 @@ public interface AmazonDetective {
      * 
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -646,6 +738,8 @@ public interface AmazonDetective {
      * 
      * @param listOrganizationAdminAccountsRequest
      * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -665,6 +759,8 @@ public interface AmazonDetective {
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -689,6 +785,8 @@ public interface AmazonDetective {
      * 
      * @param rejectInvitationRequest
      * @return Result of the RejectInvitation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -702,6 +800,32 @@ public interface AmazonDetective {
      *      Documentation</a>
      */
     RejectInvitationResult rejectInvitation(RejectInvitationRequest rejectInvitationRequest);
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>StartInvestigation</code>
+     * initiates an investigation on an entity in a behavior graph.
+     * </p>
+     * 
+     * @param startInvestigationRequest
+     * @return Result of the StartInvestigation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.StartInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartInvestigationResult startInvestigation(StartInvestigationRequest startInvestigationRequest);
 
     /**
      * <p>
@@ -726,6 +850,8 @@ public interface AmazonDetective {
      * 
      * @param startMonitoringMemberRequest
      * @return Result of the StartMonitoringMember operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -737,19 +863,14 @@ public interface AmazonDetective {
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @throws ValidationException
@@ -767,6 +888,8 @@ public interface AmazonDetective {
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -786,6 +909,8 @@ public interface AmazonDetective {
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -805,6 +930,8 @@ public interface AmazonDetective {
      * 
      * @param updateDatasourcePackagesRequest
      * @return Result of the UpdateDatasourcePackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -814,19 +941,14 @@ public interface AmazonDetective {
      *         <ul>
      *         <li>
      *         <p>
-     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
-     *         allowed. A behavior graph cannot have more than 1200 member accounts.
+     *         This request cannot be completed if it would cause the number of member accounts in the behavior graph to
+     *         exceed the maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Detective is unable to verify the data rate for the member account. This is usually because the member
-     *         account is not enrolled in Amazon GuardDuty.
+     *         This request cannot be completed if the current volume ingested is above the limit of 10 TB per day.
+     *         Detective will not allow you to add additional member accounts.
      *         </p>
      *         </li>
      * @throws ValidationException
@@ -839,12 +961,37 @@ public interface AmazonDetective {
 
     /**
      * <p>
+     * Updates the state of an investigation.
+     * </p>
+     * 
+     * @param updateInvestigationStateRequest
+     * @return Result of the UpdateInvestigationState operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws TooManyRequestsException
+     *         The request cannot be completed because too many other requests are occurring at the same time.
+     * @sample AmazonDetective.UpdateInvestigationState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateInvestigationStateResult updateInvestigationState(UpdateInvestigationStateRequest updateInvestigationStateRequest);
+
+    /**
+     * <p>
      * Updates the configuration for the Organizations integration in the current Region. Can only be called by the
      * Detective administrator account for the organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest
      * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException

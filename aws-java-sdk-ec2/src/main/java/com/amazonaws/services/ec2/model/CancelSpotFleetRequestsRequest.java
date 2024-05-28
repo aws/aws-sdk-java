@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,19 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
      * <p>
      * The IDs of the Spot Fleet requests.
      * </p>
+     * <p>
+     * Constraint: You can specify up to 100 IDs in a single request.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIds;
     /**
      * <p>
-     * Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is
+     * to terminate the instances.
+     * </p>
+     * <p>
+     * To let the instances continue to run after the Spot Fleet request is canceled, specify
+     * <code>no-terminate-instances</code>.
      * </p>
      */
     private Boolean terminateInstances;
@@ -45,8 +53,13 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
      * <p>
      * The IDs of the Spot Fleet requests.
      * </p>
+     * <p>
+     * Constraint: You can specify up to 100 IDs in a single request.
+     * </p>
      * 
-     * @return The IDs of the Spot Fleet requests.
+     * @return The IDs of the Spot Fleet requests.</p>
+     *         <p>
+     *         Constraint: You can specify up to 100 IDs in a single request.
      */
 
     public java.util.List<String> getSpotFleetRequestIds() {
@@ -60,9 +73,14 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
      * <p>
      * The IDs of the Spot Fleet requests.
      * </p>
+     * <p>
+     * Constraint: You can specify up to 100 IDs in a single request.
+     * </p>
      * 
      * @param spotFleetRequestIds
-     *        The IDs of the Spot Fleet requests.
+     *        The IDs of the Spot Fleet requests.</p>
+     *        <p>
+     *        Constraint: You can specify up to 100 IDs in a single request.
      */
 
     public void setSpotFleetRequestIds(java.util.Collection<String> spotFleetRequestIds) {
@@ -79,13 +97,18 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
      * The IDs of the Spot Fleet requests.
      * </p>
      * <p>
+     * Constraint: You can specify up to 100 IDs in a single request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSpotFleetRequestIds(java.util.Collection)} or {@link #withSpotFleetRequestIds(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param spotFleetRequestIds
-     *        The IDs of the Spot Fleet requests.
+     *        The IDs of the Spot Fleet requests.</p>
+     *        <p>
+     *        Constraint: You can specify up to 100 IDs in a single request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,9 +126,14 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
      * <p>
      * The IDs of the Spot Fleet requests.
      * </p>
+     * <p>
+     * Constraint: You can specify up to 100 IDs in a single request.
+     * </p>
      * 
      * @param spotFleetRequestIds
-     *        The IDs of the Spot Fleet requests.
+     *        The IDs of the Spot Fleet requests.</p>
+     *        <p>
+     *        Constraint: You can specify up to 100 IDs in a single request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +144,20 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is
+     * to terminate the instances.
+     * </p>
+     * <p>
+     * To let the instances continue to run after the Spot Fleet request is canceled, specify
+     * <code>no-terminate-instances</code>.
      * </p>
      * 
      * @param terminateInstances
-     *        Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     *        Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The
+     *        default is to terminate the instances.</p>
+     *        <p>
+     *        To let the instances continue to run after the Spot Fleet request is canceled, specify
+     *        <code>no-terminate-instances</code>.
      */
 
     public void setTerminateInstances(Boolean terminateInstances) {
@@ -129,10 +166,19 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is
+     * to terminate the instances.
+     * </p>
+     * <p>
+     * To let the instances continue to run after the Spot Fleet request is canceled, specify
+     * <code>no-terminate-instances</code>.
      * </p>
      * 
-     * @return Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * @return Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The
+     *         default is to terminate the instances.</p>
+     *         <p>
+     *         To let the instances continue to run after the Spot Fleet request is canceled, specify
+     *         <code>no-terminate-instances</code>.
      */
 
     public Boolean getTerminateInstances() {
@@ -141,11 +187,20 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is
+     * to terminate the instances.
+     * </p>
+     * <p>
+     * To let the instances continue to run after the Spot Fleet request is canceled, specify
+     * <code>no-terminate-instances</code>.
      * </p>
      * 
      * @param terminateInstances
-     *        Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     *        Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The
+     *        default is to terminate the instances.</p>
+     *        <p>
+     *        To let the instances continue to run after the Spot Fleet request is canceled, specify
+     *        <code>no-terminate-instances</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,10 +211,19 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is
+     * to terminate the instances.
+     * </p>
+     * <p>
+     * To let the instances continue to run after the Spot Fleet request is canceled, specify
+     * <code>no-terminate-instances</code>.
      * </p>
      * 
-     * @return Indicates whether to terminate instances for a Spot Fleet request if it is canceled successfully.
+     * @return Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The
+     *         default is to terminate the instances.</p>
+     *         <p>
+     *         To let the instances continue to run after the Spot Fleet request is canceled, specify
+     *         <code>no-terminate-instances</code>.
      */
 
     public Boolean isTerminateInstances() {

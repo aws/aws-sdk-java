@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class DomainSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerSideEncryptionUpdateDetails").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> WATCHLISTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WatchlistDetails").build();
 
     private static final DomainSummaryMarshaller instance = new DomainSummaryMarshaller();
 
@@ -71,6 +73,7 @@ public class DomainSummaryMarshaller {
             protocolMarshaller.marshall(domainSummary.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(domainSummary.getServerSideEncryptionUpdateDetails(), SERVERSIDEENCRYPTIONUPDATEDETAILS_BINDING);
             protocolMarshaller.marshall(domainSummary.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(domainSummary.getWatchlistDetails(), WATCHLISTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

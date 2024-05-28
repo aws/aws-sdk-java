@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,16 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public CancelCapacityReservationResult cancelCapacityReservation(CancelCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDataCatalogResult createDataCatalog(CreateDataCatalogRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,12 +63,27 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public CreateNotebookResult createNotebook(CreateNotebookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePreparedStatementResult createPreparedStatement(CreatePreparedStatementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public CreatePresignedNotebookUrlResult createPresignedNotebookUrl(CreatePresignedNotebookUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCapacityReservationResult deleteCapacityReservation(DeleteCapacityReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,12 +98,47 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public DeleteNotebookResult deleteNotebook(DeleteNotebookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePreparedStatementResult deletePreparedStatement(DeletePreparedStatementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteWorkGroupResult deleteWorkGroup(DeleteWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExportNotebookResult exportNotebook(ExportNotebookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCalculationExecutionResult getCalculationExecution(GetCalculationExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCalculationExecutionCodeResult getCalculationExecutionCode(GetCalculationExecutionCodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCalculationExecutionStatusResult getCalculationExecutionStatus(GetCalculationExecutionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCapacityAssignmentConfigurationResult getCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCapacityReservationResult getCapacityReservation(GetCapacityReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,6 +154,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public GetNamedQueryResult getNamedQuery(GetNamedQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetNotebookMetadataResult getNotebookMetadata(GetNotebookMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,12 +183,42 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public GetSessionResult getSession(GetSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSessionStatusResult getSessionStatus(GetSessionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTableMetadataResult getTableMetadata(GetTableMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetWorkGroupResult getWorkGroup(GetWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportNotebookResult importNotebook(ImportNotebookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListApplicationDPUSizesResult listApplicationDPUSizes(ListApplicationDPUSizesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCalculationExecutionsResult listCalculationExecutions(ListCalculationExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCapacityReservationsResult listCapacityReservations(ListCapacityReservationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,7 +238,22 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public ListExecutorsResult listExecutors(ListExecutorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListNamedQueriesResult listNamedQueries(ListNamedQueriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNotebookMetadataResult listNotebookMetadata(ListNotebookMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNotebookSessionsResult listNotebookSessions(ListNotebookSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +264,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public ListQueryExecutionsResult listQueryExecutions(ListQueryExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSessionsResult listSessions(ListSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,7 +288,27 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public PutCapacityAssignmentConfigurationResult putCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCalculationExecutionResult startCalculationExecution(StartCalculationExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartQueryExecutionResult startQueryExecution(StartQueryExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSessionResult startSession(StartSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopCalculationExecutionResult stopCalculationExecution(StopCalculationExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,7 +323,17 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public TerminateSessionResult terminateSession(TerminateSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCapacityReservationResult updateCapacityReservation(UpdateCapacityReservationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +344,16 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public UpdateNamedQueryResult updateNamedQuery(UpdateNamedQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNotebookResult updateNotebook(UpdateNotebookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNotebookMetadataResult updateNotebookMetadata(UpdateNotebookMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

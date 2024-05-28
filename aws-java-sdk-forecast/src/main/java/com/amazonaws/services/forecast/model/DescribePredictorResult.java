@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,8 +68,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -123,8 +123,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private FeaturizationConfig featurizationConfig;
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      */
     private EncryptionConfig encryptionConfig;
@@ -594,8 +594,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -608,8 +608,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * 
      * @param autoMLOverrideStrategy
      *        <p>
-     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *        Support or your account manager to learn more about access privileges.
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *        Amazon Web Services Support or your account manager to learn more about access privileges.
      *        </p>
      *        </note>
      *        <p>
@@ -628,8 +628,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -641,8 +641,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @return <p>
-     *         The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *         Support or your account manager to learn more about access privileges.
+     *         The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *         Amazon Web Services Support or your account manager to learn more about access privileges.
      *         </p>
      *         </note>
      *         <p>
@@ -661,8 +661,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -675,8 +675,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * 
      * @param autoMLOverrideStrategy
      *        <p>
-     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *        Support or your account manager to learn more about access privileges.
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *        Amazon Web Services Support or your account manager to learn more about access privileges.
      *        </p>
      *        </note>
      *        <p>
@@ -697,8 +697,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -711,8 +711,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
      * 
      * @param autoMLOverrideStrategy
      *        <p>
-     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *        Support or your account manager to learn more about access privileges.
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *        Amazon Web Services Support or your account manager to learn more about access privileges.
      *        </p>
      *        </note>
      *        <p>
@@ -1036,13 +1036,13 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      * 
      * @param encryptionConfig
-     *        An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     *        Forecast can assume to access the key.
+     *        An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast
+     *        can assume to access the key.
      */
 
     public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
@@ -1051,11 +1051,11 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      * 
-     * @return An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     * @return An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon
      *         Forecast can assume to access the key.
      */
 
@@ -1065,13 +1065,13 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      * 
      * @param encryptionConfig
-     *        An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     *        Forecast can assume to access the key.
+     *        An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast
+     *        can assume to access the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

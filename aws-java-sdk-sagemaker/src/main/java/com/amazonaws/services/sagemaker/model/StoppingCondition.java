@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,12 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Integer maxWaitTimeInSeconds;
+    /**
+     * <p>
+     * The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.
+     * </p>
+     */
+    private Integer maxPendingTimeInSeconds;
 
     /**
      * <p>
@@ -281,6 +287,49 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.
+     * </p>
+     * 
+     * @param maxPendingTimeInSeconds
+     *        The maximum length of time, in seconds, that a training or compilation job can be pending before it is
+     *        stopped.
+     */
+
+    public void setMaxPendingTimeInSeconds(Integer maxPendingTimeInSeconds) {
+        this.maxPendingTimeInSeconds = maxPendingTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.
+     * </p>
+     * 
+     * @return The maximum length of time, in seconds, that a training or compilation job can be pending before it is
+     *         stopped.
+     */
+
+    public Integer getMaxPendingTimeInSeconds() {
+        return this.maxPendingTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.
+     * </p>
+     * 
+     * @param maxPendingTimeInSeconds
+     *        The maximum length of time, in seconds, that a training or compilation job can be pending before it is
+     *        stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StoppingCondition withMaxPendingTimeInSeconds(Integer maxPendingTimeInSeconds) {
+        setMaxPendingTimeInSeconds(maxPendingTimeInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -295,7 +344,9 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
         if (getMaxRuntimeInSeconds() != null)
             sb.append("MaxRuntimeInSeconds: ").append(getMaxRuntimeInSeconds()).append(",");
         if (getMaxWaitTimeInSeconds() != null)
-            sb.append("MaxWaitTimeInSeconds: ").append(getMaxWaitTimeInSeconds());
+            sb.append("MaxWaitTimeInSeconds: ").append(getMaxWaitTimeInSeconds()).append(",");
+        if (getMaxPendingTimeInSeconds() != null)
+            sb.append("MaxPendingTimeInSeconds: ").append(getMaxPendingTimeInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -318,6 +369,10 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMaxWaitTimeInSeconds() != null && other.getMaxWaitTimeInSeconds().equals(this.getMaxWaitTimeInSeconds()) == false)
             return false;
+        if (other.getMaxPendingTimeInSeconds() == null ^ this.getMaxPendingTimeInSeconds() == null)
+            return false;
+        if (other.getMaxPendingTimeInSeconds() != null && other.getMaxPendingTimeInSeconds().equals(this.getMaxPendingTimeInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +383,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getMaxRuntimeInSeconds() == null) ? 0 : getMaxRuntimeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getMaxWaitTimeInSeconds() == null) ? 0 : getMaxWaitTimeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getMaxPendingTimeInSeconds() == null) ? 0 : getMaxPendingTimeInSeconds().hashCode());
         return hashCode;
     }
 

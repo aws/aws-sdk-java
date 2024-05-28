@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The first copy of management events is free. You are charged for additional copies of management events that you
-     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a
      * href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      * </p>
      */
@@ -90,7 +90,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service
      * or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>.
      * By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are
-     * logged to your trail. You can exclude management event sources only in regions that support the event source.
+     * logged to your trail. You can exclude management event sources only in Regions that support the event source.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> excludeManagementEventSources;
@@ -227,7 +227,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The first copy of management events is free. You are charged for additional copies of management events that you
-     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a
      * href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      * </p>
      * 
@@ -243,7 +243,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        The first copy of management events is free. You are charged for additional copies of management events
-     *        that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *        that you are logging on any subsequent trail in the same Region. For more information about CloudTrail
      *        pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      */
 
@@ -265,7 +265,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The first copy of management events is free. You are charged for additional copies of management events that you
-     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a
      * href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      * </p>
      * 
@@ -280,7 +280,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         The first copy of management events is free. You are charged for additional copies of management events
-     *         that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *         that you are logging on any subsequent trail in the same Region. For more information about CloudTrail
      *         pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      */
 
@@ -302,7 +302,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The first copy of management events is free. You are charged for additional copies of management events that you
-     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a
      * href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      * </p>
      * 
@@ -318,7 +318,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        The first copy of management events is free. You are charged for additional copies of management events
-     *        that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *        that you are logging on any subsequent trail in the same Region. For more information about CloudTrail
      *        pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -342,7 +342,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The first copy of management events is free. You are charged for additional copies of management events that you
-     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * are logging on any subsequent trail in the same Region. For more information about CloudTrail pricing, see <a
      * href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      * </p>
      * 
@@ -357,7 +357,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         The first copy of management events is free. You are charged for additional copies of management events
-     *         that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *         that you are logging on any subsequent trail in the same Region. For more information about CloudTrail
      *         pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.
      */
 
@@ -520,7 +520,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service
      * or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>.
      * By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are
-     * logged to your trail. You can exclude management event sources only in regions that support the event source.
+     * logged to your trail. You can exclude management event sources only in Regions that support the event source.
      * </p>
      * 
      * @return An optional list of service event sources from which you do not want management events to be logged on
@@ -528,7 +528,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      *         <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and
      *         KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources
-     *         only in regions that support the event source.
+     *         only in Regions that support the event source.
      */
 
     public java.util.List<String> getExcludeManagementEventSources() {
@@ -544,7 +544,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service
      * or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>.
      * By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are
-     * logged to your trail. You can exclude management event sources only in regions that support the event source.
+     * logged to your trail. You can exclude management event sources only in Regions that support the event source.
      * </p>
      * 
      * @param excludeManagementEventSources
@@ -553,7 +553,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      *        <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and
      *        KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only
-     *        in regions that support the event source.
+     *        in Regions that support the event source.
      */
 
     public void setExcludeManagementEventSources(java.util.Collection<String> excludeManagementEventSources) {
@@ -571,7 +571,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service
      * or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>.
      * By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are
-     * logged to your trail. You can exclude management event sources only in regions that support the event source.
+     * logged to your trail. You can exclude management event sources only in Regions that support the event source.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -585,7 +585,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      *        <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and
      *        KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only
-     *        in regions that support the event source.
+     *        in Regions that support the event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,7 +605,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service
      * or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>.
      * By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are
-     * logged to your trail. You can exclude management event sources only in regions that support the event source.
+     * logged to your trail. You can exclude management event sources only in Regions that support the event source.
      * </p>
      * 
      * @param excludeManagementEventSources
@@ -614,7 +614,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or
      *        <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and
      *        KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only
-     *        in regions that support the event source.
+     *        in Regions that support the event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

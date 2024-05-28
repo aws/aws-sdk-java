@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,15 +45,46 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
     private String description;
     /**
      * <p>
-     * A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager
-     * (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and
-     * for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the
-     * format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     * specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the
+     * format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
+     * name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     * </p>
+     * </li>
+     * </ul>
      */
     private String locationUri;
     /**
@@ -96,6 +127,16 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     */
+    private String kmsKeyIdentifier;
 
     /**
      * <p>
@@ -219,25 +260,86 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager
-     * (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and
-     * for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the
-     * format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     * specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the
+     * format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
+     * name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param locationUri
-     *        A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems
-     *        Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted
-     *        configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify
-     *        either the document name in the format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon
-     *        Resource Name (ARN). For a parameter, specify either the parameter name in the format
-     *        <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI
-     *        in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     *        A URI to locate the configuration. You can specify the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in
+     *        the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     *        <code>codepipeline</code>://&lt;pipeline name&gt;.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>
+     *        ://&lt;secret name&gt;.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon S3 object, specify the URI in the following format:
+     *        <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      *        <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an SSM document, specify either the document name in the format
+     *        <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     *        </p>
+     *        </li>
      */
 
     public void setLocationUri(String locationUri) {
@@ -246,24 +348,85 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager
-     * (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and
-     * for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the
-     * format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     * specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the
+     * format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
+     * name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems
-     *         Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted
-     *         configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify
-     *         either the document name in the format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon
-     *         Resource Name (ARN). For a parameter, specify either the parameter name in the format
-     *         <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI
-     *         in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * @return A URI to locate the configuration. You can specify the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name
+     *         in the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     *         <code>codepipeline</code>://&lt;pipeline name&gt;.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>
+     *         ://&lt;secret name&gt;.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon S3 object, specify the URI in the following format:
+     *         <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      *         <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an SSM document, specify either the document name in the format
+     *         <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     *         </p>
+     *         </li>
      */
 
     public String getLocationUri() {
@@ -272,25 +435,86 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager
-     * (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and
-     * for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the
-     * format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     * specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the
+     * format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     * <code>codepipeline</code>://&lt;pipeline name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
+     * name&gt;.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param locationUri
-     *        A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems
-     *        Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted
-     *        configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify
-     *        either the document name in the format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon
-     *        Resource Name (ARN). For a parameter, specify either the parameter name in the format
-     *        <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI
-     *        in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     *        A URI to locate the configuration. You can specify the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in
+     *        the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format:
+     *        <code>codepipeline</code>://&lt;pipeline name&gt;.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>
+     *        ://&lt;secret name&gt;.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon S3 object, specify the URI in the following format:
+     *        <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      *        <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an SSM document, specify either the document name in the format
+     *        <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name (ARN).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,6 +832,70 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier for an Key Management Service key to encrypt new configuration data versions in the
+     *        AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *        types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *        alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *        KMS key for that particular service.
+     */
+
+    public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
+        this.kmsKeyIdentifier = kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @return The identifier for an Key Management Service key to encrypt new configuration data versions in the
+     *         AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *         types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *         alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *         KMS key for that particular service.
+     */
+
+    public String getKmsKeyIdentifier() {
+        return this.kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig
+     * hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The
+     * identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data
+     * managed in other configuration stores, see the documentation for how to specify an KMS key for that particular
+     * service.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier for an Key Management Service key to encrypt new configuration data versions in the
+     *        AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration
+     *        types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or
+     *        alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an
+     *        KMS key for that particular service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationProfileRequest withKmsKeyIdentifier(String kmsKeyIdentifier) {
+        setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -634,7 +922,9 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getKmsKeyIdentifier() != null)
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -681,6 +971,10 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getKmsKeyIdentifier() == null ^ this.getKmsKeyIdentifier() == null)
+            return false;
+        if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -697,6 +991,7 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getValidators() == null) ? 0 : getValidators().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
         return hashCode;
     }
 

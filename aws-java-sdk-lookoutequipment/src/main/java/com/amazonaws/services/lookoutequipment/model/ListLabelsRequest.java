@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListLabelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Retruns the name of the label group.
+     * Returns the name of the label group.
      * </p>
      */
     private String labelGroupName;
@@ -70,11 +70,11 @@ public class ListLabelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Retruns the name of the label group.
+     * Returns the name of the label group.
      * </p>
      * 
      * @param labelGroupName
-     *        Retruns the name of the label group.
+     *        Returns the name of the label group.
      */
 
     public void setLabelGroupName(String labelGroupName) {
@@ -83,10 +83,10 @@ public class ListLabelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Retruns the name of the label group.
+     * Returns the name of the label group.
      * </p>
      * 
-     * @return Retruns the name of the label group.
+     * @return Returns the name of the label group.
      */
 
     public String getLabelGroupName() {
@@ -95,11 +95,11 @@ public class ListLabelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Retruns the name of the label group.
+     * Returns the name of the label group.
      * </p>
      * 
      * @param labelGroupName
-     *        Retruns the name of the label group.
+     *        Returns the name of the label group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

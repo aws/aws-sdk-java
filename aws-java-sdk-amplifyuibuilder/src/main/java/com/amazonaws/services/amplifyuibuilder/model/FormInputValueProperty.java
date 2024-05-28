@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,18 @@ public class FormInputValueProperty implements Serializable, Cloneable, Structur
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     */
+    private FormInputValuePropertyBindingProperties bindingProperties;
+    /**
+     * <p>
+     * A list of form properties to concatenate to create the value to assign to this field property.
+     * </p>
+     */
+    private java.util.List<FormInputValueProperty> concat;
 
     /**
      * <p>
@@ -77,6 +89,116 @@ public class FormInputValueProperty implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     * 
+     * @param bindingProperties
+     *        The information to bind fields to data at runtime.
+     */
+
+    public void setBindingProperties(FormInputValuePropertyBindingProperties bindingProperties) {
+        this.bindingProperties = bindingProperties;
+    }
+
+    /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     * 
+     * @return The information to bind fields to data at runtime.
+     */
+
+    public FormInputValuePropertyBindingProperties getBindingProperties() {
+        return this.bindingProperties;
+    }
+
+    /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     * 
+     * @param bindingProperties
+     *        The information to bind fields to data at runtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormInputValueProperty withBindingProperties(FormInputValuePropertyBindingProperties bindingProperties) {
+        setBindingProperties(bindingProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of form properties to concatenate to create the value to assign to this field property.
+     * </p>
+     * 
+     * @return A list of form properties to concatenate to create the value to assign to this field property.
+     */
+
+    public java.util.List<FormInputValueProperty> getConcat() {
+        return concat;
+    }
+
+    /**
+     * <p>
+     * A list of form properties to concatenate to create the value to assign to this field property.
+     * </p>
+     * 
+     * @param concat
+     *        A list of form properties to concatenate to create the value to assign to this field property.
+     */
+
+    public void setConcat(java.util.Collection<FormInputValueProperty> concat) {
+        if (concat == null) {
+            this.concat = null;
+            return;
+        }
+
+        this.concat = new java.util.ArrayList<FormInputValueProperty>(concat);
+    }
+
+    /**
+     * <p>
+     * A list of form properties to concatenate to create the value to assign to this field property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConcat(java.util.Collection)} or {@link #withConcat(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param concat
+     *        A list of form properties to concatenate to create the value to assign to this field property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormInputValueProperty withConcat(FormInputValueProperty... concat) {
+        if (this.concat == null) {
+            setConcat(new java.util.ArrayList<FormInputValueProperty>(concat.length));
+        }
+        for (FormInputValueProperty ele : concat) {
+            this.concat.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of form properties to concatenate to create the value to assign to this field property.
+     * </p>
+     * 
+     * @param concat
+     *        A list of form properties to concatenate to create the value to assign to this field property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormInputValueProperty withConcat(java.util.Collection<FormInputValueProperty> concat) {
+        setConcat(concat);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +211,11 @@ public class FormInputValueProperty implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getBindingProperties() != null)
+            sb.append("BindingProperties: ").append(getBindingProperties()).append(",");
+        if (getConcat() != null)
+            sb.append("Concat: ").append(getConcat());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +234,14 @@ public class FormInputValueProperty implements Serializable, Cloneable, Structur
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getBindingProperties() == null ^ this.getBindingProperties() == null)
+            return false;
+        if (other.getBindingProperties() != null && other.getBindingProperties().equals(this.getBindingProperties()) == false)
+            return false;
+        if (other.getConcat() == null ^ this.getConcat() == null)
+            return false;
+        if (other.getConcat() != null && other.getConcat().equals(this.getConcat()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +251,8 @@ public class FormInputValueProperty implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getBindingProperties() == null) ? 0 : getBindingProperties().hashCode());
+        hashCode = prime * hashCode + ((getConcat() == null) ? 0 : getConcat().hashCode());
         return hashCode;
     }
 

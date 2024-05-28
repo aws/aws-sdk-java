@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NamespaceMarshaller {
 
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretArn").build();
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretKmsKeyId").build();
     private static final MarshallingInfo<String> ADMINUSERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminUsername").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -67,6 +71,8 @@ public class NamespaceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(namespace.getAdminPasswordSecretArn(), ADMINPASSWORDSECRETARN_BINDING);
+            protocolMarshaller.marshall(namespace.getAdminPasswordSecretKmsKeyId(), ADMINPASSWORDSECRETKMSKEYID_BINDING);
             protocolMarshaller.marshall(namespace.getAdminUsername(), ADMINUSERNAME_BINDING);
             protocolMarshaller.marshall(namespace.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(namespace.getDbName(), DBNAME_BINDING);

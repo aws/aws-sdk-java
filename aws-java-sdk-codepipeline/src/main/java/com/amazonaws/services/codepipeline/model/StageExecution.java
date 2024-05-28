@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String status;
+    /**
+     * <p>
+     * The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -211,6 +217,79 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * </p>
+     * 
+     * @param type
+     *        The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * @see ExecutionType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * </p>
+     * 
+     * @return The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * @see ExecutionType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * </p>
+     * 
+     * @param type
+     *        The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionType
+     */
+
+    public StageExecution withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * </p>
+     * 
+     * @param type
+     *        The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * @see ExecutionType
+     */
+
+    public void setType(ExecutionType type) {
+        withType(type);
+    }
+
+    /**
+     * <p>
+     * The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * </p>
+     * 
+     * @param type
+     *        The type of pipeline execution for the stage, such as a rollback pipeline execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionType
+     */
+
+    public StageExecution withType(ExecutionType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -225,7 +304,9 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
         if (getPipelineExecutionId() != null)
             sb.append("PipelineExecutionId: ").append(getPipelineExecutionId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +329,10 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -258,6 +343,7 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPipelineExecutionId() == null) ? 0 : getPipelineExecutionId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

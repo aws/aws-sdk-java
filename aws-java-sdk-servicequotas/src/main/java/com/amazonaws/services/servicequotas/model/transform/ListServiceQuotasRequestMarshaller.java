@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class ListServiceQuotasRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> QUOTACODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QuotaCode").build();
+    private static final MarshallingInfo<String> QUOTAAPPLIEDATLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuotaAppliedAtLevel").build();
 
     private static final ListServiceQuotasRequestMarshaller instance = new ListServiceQuotasRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class ListServiceQuotasRequestMarshaller {
             protocolMarshaller.marshall(listServiceQuotasRequest.getServiceCode(), SERVICECODE_BINDING);
             protocolMarshaller.marshall(listServiceQuotasRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listServiceQuotasRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listServiceQuotasRequest.getQuotaCode(), QUOTACODE_BINDING);
+            protocolMarshaller.marshall(listServiceQuotasRequest.getQuotaAppliedAtLevel(), QUOTAAPPLIEDATLEVEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

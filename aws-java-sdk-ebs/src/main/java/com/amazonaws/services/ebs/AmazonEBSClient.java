@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.ebs.AmazonEBSClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ebs.model.*;
+
 import com.amazonaws.services.ebs.model.transform.*;
 
 /**
@@ -176,6 +177,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
      * been completed.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param completeSnapshotRequest
      * @return Result of the CompleteSnapshot operation returned by the service.
@@ -186,11 +195,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws RequestThrottledException
-     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the
+     *         snapshot. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ServiceQuotaExceededException
      *         Your current service quotas do not allow you to perform this action.
      * @throws InternalServerException
-     *         An internal error has occurred.
+     *         An internal error has occurred. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @sample AmazonEBS.CompleteSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/CompleteSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -243,6 +255,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * <p>
      * Returns the data in a block in an Amazon Elastic Block Store snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getSnapshotBlockRequest
      * @return Result of the GetSnapshotBlock operation returned by the service.
@@ -253,11 +273,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws RequestThrottledException
-     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the
+     *         snapshot. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ServiceQuotaExceededException
      *         Your current service quotas do not allow you to perform this action.
      * @throws InternalServerException
-     *         An internal error has occurred.
+     *         An internal error has occurred. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @sample AmazonEBS.GetSnapshotBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/GetSnapshotBlock" target="_top">AWS API
      *      Documentation</a>
@@ -313,6 +336,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the
      * same volume/snapshot lineage.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listChangedBlocksRequest
      * @return Result of the ListChangedBlocks operation returned by the service.
@@ -323,11 +354,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws RequestThrottledException
-     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the
+     *         snapshot. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ServiceQuotaExceededException
      *         Your current service quotas do not allow you to perform this action.
      * @throws InternalServerException
-     *         An internal error has occurred.
+     *         An internal error has occurred. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @sample AmazonEBS.ListChangedBlocks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListChangedBlocks" target="_top">AWS API
      *      Documentation</a>
@@ -380,6 +414,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * <p>
      * Returns information about the blocks in an Amazon Elastic Block Store snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listSnapshotBlocksRequest
      * @return Result of the ListSnapshotBlocks operation returned by the service.
@@ -390,11 +432,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws RequestThrottledException
-     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the
+     *         snapshot. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ServiceQuotaExceededException
      *         Your current service quotas do not allow you to perform this action.
      * @throws InternalServerException
-     *         An internal error has occurred.
+     *         An internal error has occurred. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @sample AmazonEBS.ListSnapshotBlocks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ListSnapshotBlocks" target="_top">AWS API
      *      Documentation</a>
@@ -451,6 +496,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * <p>
      * Data written to a snapshot must be aligned with 512-KiB sectors.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param putSnapshotBlockRequest
      * @return Result of the PutSnapshotBlock operation returned by the service.
@@ -461,11 +514,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws RequestThrottledException
-     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the
+     *         snapshot. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ServiceQuotaExceededException
      *         Your current service quotas do not allow you to perform this action.
      * @throws InternalServerException
-     *         An internal error has occurred.
+     *         An internal error has occurred. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @sample AmazonEBS.PutSnapshotBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/PutSnapshotBlock" target="_top">AWS API
      *      Documentation</a>
@@ -526,6 +582,14 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
      * write blocks of data to the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startSnapshotRequest
      * @return Result of the StartSnapshot operation returned by the service.
@@ -534,13 +598,16 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
      * @throws ValidationException
      *         The input fails to satisfy the constraints of the EBS direct APIs.
      * @throws RequestThrottledException
-     *         The number of API requests has exceed the maximum allowed API request throttling limit.
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the
+     *         snapshot. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws ServiceQuotaExceededException
      *         Your current service quotas do not allow you to perform this action.
      * @throws InternalServerException
-     *         An internal error has occurred.
+     *         An internal error has occurred. For more information see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a>.
      * @throws ConcurrentLimitExceededException
      *         You have reached the limit for concurrent API requests. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance"

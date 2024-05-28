@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The GameLift service limits for an Amazon EC2 instance type and current utilization. GameLift allows Amazon Web
- * Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for
- * use with GameLift. You can request an limit increase for your account by using the <b>Service limits</b> page in the
- * GameLift console.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
+ * The Amazon GameLift service limits for an Amazon EC2 instance type and current utilization. Amazon GameLift allows
+ * Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or
+ * location, for use with Amazon GameLift. You can request an limit increase for your account by using the <b>Service
+ * limits</b> page in the Amazon GameLift console.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit" target="_top">AWS API

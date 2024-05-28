@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,10 +20,10 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
-     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
-     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
-     * each agent/Connector.
+     * Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not
+     * specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides, and the version number of each
+     * agent/collector.
      * </p>
      */
     private java.util.List<AgentInfo> agentsInfo;
@@ -39,16 +39,16 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
-     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
-     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
-     * each agent/Connector.
+     * Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not
+     * specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides, and the version number of each
+     * agent/collector.
      * </p>
      * 
-     * @return Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
-     *         you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
-     *         access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
-     *         the version number of each agent/Connector.
+     * @return Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did
+     *         not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access
+     *         control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the
+     *         version number of each agent/collector.
      */
 
     public java.util.List<AgentInfo> getAgentsInfo() {
@@ -57,17 +57,17 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
-     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
-     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
-     * each agent/Connector.
+     * Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not
+     * specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides, and the version number of each
+     * agent/collector.
      * </p>
      * 
      * @param agentsInfo
-     *        Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
-     *        you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
-     *        access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
-     *        the version number of each agent/Connector.
+     *        Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did
+     *        not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access
+     *        control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the
+     *        version number of each agent/collector.
      */
 
     public void setAgentsInfo(java.util.Collection<AgentInfo> agentsInfo) {
@@ -81,10 +81,10 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
-     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
-     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
-     * each agent/Connector.
+     * Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not
+     * specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides, and the version number of each
+     * agent/collector.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -93,10 +93,10 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param agentsInfo
-     *        Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
-     *        you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
-     *        access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
-     *        the version number of each agent/Connector.
+     *        Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did
+     *        not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access
+     *        control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the
+     *        version number of each agent/collector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,17 +112,17 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
-     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
-     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
-     * each agent/Connector.
+     * Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did not
+     * specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides, and the version number of each
+     * agent/collector.
      * </p>
      * 
      * @param agentsInfo
-     *        Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
-     *        you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
-     *        access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
-     *        the version number of each agent/Connector.
+     *        Lists agents or the collector by ID or lists all agents/collectors associated with your user, if you did
+     *        not specify an agent/collector ID. The output includes agent/collector IDs, IP addresses, media access
+     *        control (MAC) addresses, agent/collector health, host name where the agent/collector resides, and the
+     *        version number of each agent/collector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

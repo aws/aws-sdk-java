@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,12 +29,6 @@ public class UpdateChannelReadMarkerResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String channelArn;
-    /**
-     * <p>
-     * The ID of the SubChannel in the response.
-     * </p>
-     */
-    private String subChannelId;
 
     /**
      * <p>
@@ -77,46 +71,6 @@ public class UpdateChannelReadMarkerResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p>
-     * The ID of the SubChannel in the response.
-     * </p>
-     * 
-     * @param subChannelId
-     *        The ID of the SubChannel in the response.
-     */
-
-    public void setSubChannelId(String subChannelId) {
-        this.subChannelId = subChannelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the SubChannel in the response.
-     * </p>
-     * 
-     * @return The ID of the SubChannel in the response.
-     */
-
-    public String getSubChannelId() {
-        return this.subChannelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the SubChannel in the response.
-     * </p>
-     * 
-     * @param subChannelId
-     *        The ID of the SubChannel in the response.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateChannelReadMarkerResult withSubChannelId(String subChannelId) {
-        setSubChannelId(subChannelId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -129,9 +83,7 @@ public class UpdateChannelReadMarkerResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChannelArn() != null)
-            sb.append("ChannelArn: ").append(getChannelArn()).append(",");
-        if (getSubChannelId() != null)
-            sb.append("SubChannelId: ").append(getSubChannelId());
+            sb.append("ChannelArn: ").append(getChannelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -150,10 +102,6 @@ public class UpdateChannelReadMarkerResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getChannelArn() != null && other.getChannelArn().equals(this.getChannelArn()) == false)
             return false;
-        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
-            return false;
-        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
-            return false;
         return true;
     }
 
@@ -163,7 +111,6 @@ public class UpdateChannelReadMarkerResult extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
-        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

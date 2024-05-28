@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class HarvestJob implements Serializable, Cloneable, StructuredPojo {
      */
     private String channelId;
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
      */
     private String createdAt;
     /**
@@ -134,10 +134,10 @@ public class HarvestJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
      * 
      * @param createdAt
-     *        The time the HarvestJob was submitted
+     *        The date and time the HarvestJob was submitted.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -145,9 +145,9 @@ public class HarvestJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
      * 
-     * @return The time the HarvestJob was submitted
+     * @return The date and time the HarvestJob was submitted.
      */
 
     public String getCreatedAt() {
@@ -155,10 +155,10 @@ public class HarvestJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time the HarvestJob was submitted
+     * The date and time the HarvestJob was submitted.
      * 
      * @param createdAt
-     *        The time the HarvestJob was submitted
+     *        The date and time the HarvestJob was submitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

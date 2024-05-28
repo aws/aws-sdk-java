@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      */
     private java.util.List<Entity> entities;
@@ -57,14 +57,14 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * 
      * @return The collection of medical entities extracted from the input text and their associated information. For
      *         each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *         ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes
-     *         and traits of the entity are also returned.
+     *         ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *         Attributes and traits of the entity are also returned.
      */
 
     public java.util.List<Entity> getEntities() {
@@ -75,15 +75,15 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * 
      * @param entities
      *        The collection of medical entities extracted from the input text and their associated information. For
      *        each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *        ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes
-     *        and traits of the entity are also returned.
+     *        ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *        Attributes and traits of the entity are also returned.
      */
 
     public void setEntities(java.util.Collection<Entity> entities) {
@@ -99,8 +99,8 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -111,8 +111,8 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * @param entities
      *        The collection of medical entities extracted from the input text and their associated information. For
      *        each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *        ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes
-     *        and traits of the entity are also returned.
+     *        ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *        Attributes and traits of the entity are also returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,15 +130,15 @@ public class DetectEntitiesResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * The collection of medical entities extracted from the input text and their associated information. For each
      * entity, the response provides the entity text, the entity category, where the entity text begins and ends, and
-     * the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes and traits of the
-     * entity are also returned.
+     * the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits
+     * of the entity are also returned.
      * </p>
      * 
      * @param entities
      *        The collection of medical entities extracted from the input text and their associated information. For
      *        each entity, the response provides the entity text, the entity category, where the entity text begins and
-     *        ends, and the level of confidence that Comprehend Medical; has in the detection and analysis. Attributes
-     *        and traits of the entity are also returned.
+     *        ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis.
+     *        Attributes and traits of the entity are also returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

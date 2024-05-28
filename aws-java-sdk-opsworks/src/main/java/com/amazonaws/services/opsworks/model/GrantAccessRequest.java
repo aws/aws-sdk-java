@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,26 +27,26 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
-     * automatically will be logged out.
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are
+     * logged out.
      * </p>
      */
     private Integer validForInMinutes;
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks Stacks ID.
+     *        The instance's OpsWorks Stacks ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -55,10 +55,10 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      * 
-     * @return The instance's AWS OpsWorks Stacks ID.
+     * @return The instance's OpsWorks Stacks ID.
      */
 
     public String getInstanceId() {
@@ -67,11 +67,11 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks Stacks ID.
+     *        The instance's OpsWorks Stacks ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,14 +83,14 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
-     * automatically will be logged out.
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are
+     * logged out.
      * </p>
      * 
      * @param validForInMinutes
      *        The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period,
-     *        the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he
-     *        or she automatically will be logged out.
+     *        the user will no longer be able to use the credentials to log in. If the user is logged in at the time,
+     *        they are logged out.
      */
 
     public void setValidForInMinutes(Integer validForInMinutes) {
@@ -100,13 +100,13 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
-     * automatically will be logged out.
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are
+     * logged out.
      * </p>
      * 
      * @return The length of time (in minutes) that the grant is valid. When the grant expires at the end of this
      *         period, the user will no longer be able to use the credentials to log in. If the user is logged in at the
-     *         time, he or she automatically will be logged out.
+     *         time, they are logged out.
      */
 
     public Integer getValidForInMinutes() {
@@ -116,14 +116,14 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she
-     * automatically will be logged out.
+     * user will no longer be able to use the credentials to log in. If the user is logged in at the time, they are
+     * logged out.
      * </p>
      * 
      * @param validForInMinutes
      *        The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period,
-     *        the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he
-     *        or she automatically will be logged out.
+     *        the user will no longer be able to use the credentials to log in. If the user is logged in at the time,
+     *        they are logged out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

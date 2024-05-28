@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class AttributeGroupSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("createdBy").build();
 
     private static final AttributeGroupSummaryMarshaller instance = new AttributeGroupSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class AttributeGroupSummaryMarshaller {
             protocolMarshaller.marshall(attributeGroupSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(attributeGroupSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(attributeGroupSummary.getLastUpdateTime(), LASTUPDATETIME_BINDING);
+            protocolMarshaller.marshall(attributeGroupSummary.getCreatedBy(), CREATEDBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

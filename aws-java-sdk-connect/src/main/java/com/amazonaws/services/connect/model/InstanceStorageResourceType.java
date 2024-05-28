@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,12 @@ public enum InstanceStorageResourceType {
     MEDIA_STREAMS("MEDIA_STREAMS"),
     CONTACT_TRACE_RECORDS("CONTACT_TRACE_RECORDS"),
     AGENT_EVENTS("AGENT_EVENTS"),
-    REAL_TIME_CONTACT_ANALYSIS_SEGMENTS("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS");
+    REAL_TIME_CONTACT_ANALYSIS_SEGMENTS("REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"),
+    ATTACHMENTS("ATTACHMENTS"),
+    CONTACT_EVALUATIONS("CONTACT_EVALUATIONS"),
+    SCREEN_RECORDINGS("SCREEN_RECORDINGS"),
+    REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS("REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS"),
+    REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS("REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for
-     * <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:
+     * <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -46,18 +47,24 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      * <code>workflow_state</code>, or <code>active</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     * </p>
+     * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The variable is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      */
     private String templateUri;
 
     /**
      * <p>
      * A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for
-     * <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:
+     * <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -72,16 +79,21 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      * <code>workflow_state</code>, or <code>active</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     * </p>
+     * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The variable is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      * 
      * @param templateUri
      *        A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be
-     *        set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of
-     *        the following:</p>
+     *        set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must
+     *        be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -95,9 +107,15 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      *        <code>workflow_state</code>, or <code>active</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     *        </p>
+     *        </li>
      *        </ul>
-     * 
-     * <pre><code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
+     *        <p>
+     *        The variable is replaced with the actual value for a piece of content when calling <a
+     *        href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
      */
 
     public void setTemplateUri(String templateUri) {
@@ -107,7 +125,8 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for
-     * <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:
+     * <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -122,15 +141,20 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      * <code>workflow_state</code>, or <code>active</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     * </p>
+     * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The variable is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      * 
      * @return A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be
-     *         set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of
-     *         the following:</p>
+     *         set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must
+     *         be one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -144,9 +168,15 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      *         <code>workflow_state</code>, or <code>active</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     *         </p>
+     *         </li>
      *         </ul>
-     * 
-     * <pre><code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
+     *         <p>
+     *         The variable is replaced with the actual value for a piece of content when calling <a
+     *         href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
      */
 
     public String getTemplateUri() {
@@ -156,7 +186,8 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for
-     * <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:
+     * <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must be one of the
+     * following:
      * </p>
      * <ul>
      * <li>
@@ -171,16 +202,21 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      * <code>workflow_state</code>, or <code>active</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     * </p>
+     * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * The variable is replaced with the actual value for a piece of content when calling <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+     * </p>
      * 
      * @param templateUri
      *        A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be
-     *        set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of
-     *        the following:</p>
+     *        set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow, and Zendesk, the variable must
+     *        be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -194,10 +230,15 @@ public class RenderingConfiguration implements Serializable, Cloneable, Structur
      *        <code>workflow_state</code>, or <code>active</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+     *        </p>
+     *        </li>
      *        </ul>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;The variable is replaced with the actual value for a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;. &lt;/p&gt; </code>
+     *        <p>
+     *        The variable is replaced with the actual value for a piece of content when calling <a
+     *        href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

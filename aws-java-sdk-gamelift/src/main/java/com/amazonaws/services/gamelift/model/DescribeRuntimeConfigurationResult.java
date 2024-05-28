@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Represents the returned data in response to a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -28,19 +25,18 @@ public class DescribeRuntimeConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Instructions that describe how server processes should be launched and maintained on each instance in the fleet.
+     * Instructions that describe how server processes are launched and maintained on computes in the fleet.
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
 
     /**
      * <p>
-     * Instructions that describe how server processes should be launched and maintained on each instance in the fleet.
+     * Instructions that describe how server processes are launched and maintained on computes in the fleet.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions that describe how server processes should be launched and maintained on each instance in the
-     *        fleet.
+     *        Instructions that describe how server processes are launched and maintained on computes in the fleet.
      */
 
     public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
@@ -49,11 +45,10 @@ public class DescribeRuntimeConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Instructions that describe how server processes should be launched and maintained on each instance in the fleet.
+     * Instructions that describe how server processes are launched and maintained on computes in the fleet.
      * </p>
      * 
-     * @return Instructions that describe how server processes should be launched and maintained on each instance in the
-     *         fleet.
+     * @return Instructions that describe how server processes are launched and maintained on computes in the fleet.
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -62,12 +57,11 @@ public class DescribeRuntimeConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Instructions that describe how server processes should be launched and maintained on each instance in the fleet.
+     * Instructions that describe how server processes are launched and maintained on computes in the fleet.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions that describe how server processes should be launched and maintained on each instance in the
-     *        fleet.
+     *        Instructions that describe how server processes are launched and maintained on computes in the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

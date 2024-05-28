@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.route53recoverycontrolconfig.waiters.AWSRoute53Rec
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.route53recoverycontrolconfig.model.*;
+
 import com.amazonaws.services.route53recoverycontrolconfig.model.transform.*;
 
 /**
@@ -172,7 +173,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws ServiceQuotaExceededException
      *         402 response
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -246,7 +247,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws ServiceQuotaExceededException
      *         402 response
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -326,7 +327,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws ServiceQuotaExceededException
      *         402 response
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -392,7 +393,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * </p>
      * <p>
      * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
-     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * is met. For example, the criteria might be that at least one routing control state is On after the transaction so
      * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      * scenario.
      * </p>
@@ -476,7 +477,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -544,7 +545,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -613,7 +614,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -746,7 +747,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -814,7 +815,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -888,7 +889,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -1008,6 +1009,66 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
 
     /**
      * <p>
+     * Get information about the resource policy for a cluster.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
+     * @throws InternalServerException
+     *         500 response - InternalServiceError. Temporary service error. Retry the request.
+     * @sample AWSRoute53RecoveryControlConfig.GetResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePolicyResult executeGetResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePolicyRequest> request = null;
+        Response<GetResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53 Recovery Control Config");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of all Amazon Route 53 health checks associated with a specific routing control.
      * </p>
      * 
@@ -1089,7 +1150,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListClusters"
      *      target="_top">AWS API Documentation</a>
@@ -1155,7 +1216,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListControlPanels
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels"
@@ -1224,7 +1285,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListRoutingControls
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListRoutingControls"
@@ -1292,7 +1353,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListSafetyRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListSafetyRules"
      *      target="_top">AWS API Documentation</a>
@@ -1544,7 +1605,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -1616,7 +1677,7 @@ public class AWSRoute53RecoveryControlConfigClient extends AmazonWebServiceClien
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException

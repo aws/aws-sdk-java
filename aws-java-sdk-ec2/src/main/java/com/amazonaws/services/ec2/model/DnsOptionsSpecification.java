@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,14 @@ public class DnsOptionsSpecification implements Serializable, Cloneable {
      * </p>
      */
     private String dnsRecordIpType;
+    /**
+     * <p>
+     * Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services
+     * that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface endpoint.
+     * </p>
+     */
+    private Boolean privateDnsOnlyForInboundResolverEndpoint;
 
     /**
      * <p>
@@ -93,6 +101,74 @@ public class DnsOptionsSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services
+     * that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface endpoint.
+     * </p>
+     * 
+     * @param privateDnsOnlyForInboundResolverEndpoint
+     *        Indicates whether to enable private DNS only for inbound endpoints. This option is available only for
+     *        services that support both gateway and interface endpoints. It routes traffic that originates from the VPC
+     *        to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.
+     */
+
+    public void setPrivateDnsOnlyForInboundResolverEndpoint(Boolean privateDnsOnlyForInboundResolverEndpoint) {
+        this.privateDnsOnlyForInboundResolverEndpoint = privateDnsOnlyForInboundResolverEndpoint;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services
+     * that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface endpoint.
+     * </p>
+     * 
+     * @return Indicates whether to enable private DNS only for inbound endpoints. This option is available only for
+     *         services that support both gateway and interface endpoints. It routes traffic that originates from the
+     *         VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.
+     */
+
+    public Boolean getPrivateDnsOnlyForInboundResolverEndpoint() {
+        return this.privateDnsOnlyForInboundResolverEndpoint;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services
+     * that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface endpoint.
+     * </p>
+     * 
+     * @param privateDnsOnlyForInboundResolverEndpoint
+     *        Indicates whether to enable private DNS only for inbound endpoints. This option is available only for
+     *        services that support both gateway and interface endpoints. It routes traffic that originates from the VPC
+     *        to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DnsOptionsSpecification withPrivateDnsOnlyForInboundResolverEndpoint(Boolean privateDnsOnlyForInboundResolverEndpoint) {
+        setPrivateDnsOnlyForInboundResolverEndpoint(privateDnsOnlyForInboundResolverEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services
+     * that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway
+     * endpoint and traffic that originates from on-premises to the interface endpoint.
+     * </p>
+     * 
+     * @return Indicates whether to enable private DNS only for inbound endpoints. This option is available only for
+     *         services that support both gateway and interface endpoints. It routes traffic that originates from the
+     *         VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.
+     */
+
+    public Boolean isPrivateDnsOnlyForInboundResolverEndpoint() {
+        return this.privateDnsOnlyForInboundResolverEndpoint;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -105,7 +181,9 @@ public class DnsOptionsSpecification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDnsRecordIpType() != null)
-            sb.append("DnsRecordIpType: ").append(getDnsRecordIpType());
+            sb.append("DnsRecordIpType: ").append(getDnsRecordIpType()).append(",");
+        if (getPrivateDnsOnlyForInboundResolverEndpoint() != null)
+            sb.append("PrivateDnsOnlyForInboundResolverEndpoint: ").append(getPrivateDnsOnlyForInboundResolverEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -124,6 +202,11 @@ public class DnsOptionsSpecification implements Serializable, Cloneable {
             return false;
         if (other.getDnsRecordIpType() != null && other.getDnsRecordIpType().equals(this.getDnsRecordIpType()) == false)
             return false;
+        if (other.getPrivateDnsOnlyForInboundResolverEndpoint() == null ^ this.getPrivateDnsOnlyForInboundResolverEndpoint() == null)
+            return false;
+        if (other.getPrivateDnsOnlyForInboundResolverEndpoint() != null
+                && other.getPrivateDnsOnlyForInboundResolverEndpoint().equals(this.getPrivateDnsOnlyForInboundResolverEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -133,6 +216,7 @@ public class DnsOptionsSpecification implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDnsRecordIpType() == null) ? 0 : getDnsRecordIpType().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsOnlyForInboundResolverEndpoint() == null) ? 0 : getPrivateDnsOnlyForInboundResolverEndpoint().hashCode());
         return hashCode;
     }
 

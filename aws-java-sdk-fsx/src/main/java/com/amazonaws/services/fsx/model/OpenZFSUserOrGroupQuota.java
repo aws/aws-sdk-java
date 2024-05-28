@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for how much storage a user or group can use on the volume.
+ * Used to configure quotas that define how much storage a user or group can use on an FSx for OpenZFS volume. For more
+ * information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume
+ * properties</a> in the FSx for OpenZFS User Guide.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSUserOrGroupQuota" target="_top">AWS API
@@ -30,30 +33,30 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A value that specifies whether the quota applies to a user or group.
+     * Specifies whether the quota applies to a user or group.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The ID of the user or group.
+     * The ID of the user or group that the quota applies to.
      * </p>
      */
     private Integer id;
     /**
      * <p>
-     * The amount of storage that the user or group can use in gibibytes (GiB).
+     * The user or group's storage quota, in gibibytes (GiB).
      * </p>
      */
     private Integer storageCapacityQuotaGiB;
 
     /**
      * <p>
-     * A value that specifies whether the quota applies to a user or group.
+     * Specifies whether the quota applies to a user or group.
      * </p>
      * 
      * @param type
-     *        A value that specifies whether the quota applies to a user or group.
+     *        Specifies whether the quota applies to a user or group.
      * @see OpenZFSQuotaType
      */
 
@@ -63,10 +66,10 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A value that specifies whether the quota applies to a user or group.
+     * Specifies whether the quota applies to a user or group.
      * </p>
      * 
-     * @return A value that specifies whether the quota applies to a user or group.
+     * @return Specifies whether the quota applies to a user or group.
      * @see OpenZFSQuotaType
      */
 
@@ -76,11 +79,11 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A value that specifies whether the quota applies to a user or group.
+     * Specifies whether the quota applies to a user or group.
      * </p>
      * 
      * @param type
-     *        A value that specifies whether the quota applies to a user or group.
+     *        Specifies whether the quota applies to a user or group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSQuotaType
      */
@@ -92,11 +95,11 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A value that specifies whether the quota applies to a user or group.
+     * Specifies whether the quota applies to a user or group.
      * </p>
      * 
      * @param type
-     *        A value that specifies whether the quota applies to a user or group.
+     *        Specifies whether the quota applies to a user or group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSQuotaType
      */
@@ -108,11 +111,11 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the user or group.
+     * The ID of the user or group that the quota applies to.
      * </p>
      * 
      * @param id
-     *        The ID of the user or group.
+     *        The ID of the user or group that the quota applies to.
      */
 
     public void setId(Integer id) {
@@ -121,10 +124,10 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the user or group.
+     * The ID of the user or group that the quota applies to.
      * </p>
      * 
-     * @return The ID of the user or group.
+     * @return The ID of the user or group that the quota applies to.
      */
 
     public Integer getId() {
@@ -133,11 +136,11 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the user or group.
+     * The ID of the user or group that the quota applies to.
      * </p>
      * 
      * @param id
-     *        The ID of the user or group.
+     *        The ID of the user or group that the quota applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +151,11 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of storage that the user or group can use in gibibytes (GiB).
+     * The user or group's storage quota, in gibibytes (GiB).
      * </p>
      * 
      * @param storageCapacityQuotaGiB
-     *        The amount of storage that the user or group can use in gibibytes (GiB).
+     *        The user or group's storage quota, in gibibytes (GiB).
      */
 
     public void setStorageCapacityQuotaGiB(Integer storageCapacityQuotaGiB) {
@@ -161,10 +164,10 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of storage that the user or group can use in gibibytes (GiB).
+     * The user or group's storage quota, in gibibytes (GiB).
      * </p>
      * 
-     * @return The amount of storage that the user or group can use in gibibytes (GiB).
+     * @return The user or group's storage quota, in gibibytes (GiB).
      */
 
     public Integer getStorageCapacityQuotaGiB() {
@@ -173,11 +176,11 @@ public class OpenZFSUserOrGroupQuota implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The amount of storage that the user or group can use in gibibytes (GiB).
+     * The user or group's storage quota, in gibibytes (GiB).
      * </p>
      * 
      * @param storageCapacityQuotaGiB
-     *        The amount of storage that the user or group can use in gibibytes (GiB).
+     *        The user or group's storage quota, in gibibytes (GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

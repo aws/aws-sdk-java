@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,9 +37,16 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private String subscriptionName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS
+     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN
      * when you create a topic and subscribe to it.
      * </p>
+     * <note>
+     * <p>
+     * RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO
+     * topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * </note>
      */
     private String snsTopicArn;
     /**
@@ -49,9 +56,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <code>db-proxy</code>. If this value isn't specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code>
+     * Valid Values:
+     * <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      * </p>
      */
     private String sourceType;
@@ -122,8 +128,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> sourceIds;
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     * activated, the subscription is created but not active.
+     * Specifies whether to activate the subscription. If the event notification subscription isn't activated, the
+     * subscription is created but not active.
      * </p>
      */
     private Boolean enabled;
@@ -187,13 +193,25 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS
+     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN
      * when you create a topic and subscribe to it.
      * </p>
+     * <note>
+     * <p>
+     * RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO
+     * topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param snsTopicArn
-     *        The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by
-     *        Amazon SNS when you create a topic and subscribe to it.
+     *        The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates
+     *        the ARN when you create a topic and subscribe to it.</p> <note>
+     *        <p>
+     *        RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication
+     *        (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     *        </p>
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -202,12 +220,24 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS
+     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN
      * when you create a topic and subscribe to it.
      * </p>
+     * <note>
+     * <p>
+     * RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO
+     * topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by
-     *         Amazon SNS when you create a topic and subscribe to it.
+     * @return The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates
+     *         the ARN when you create a topic and subscribe to it.</p> <note>
+     *         <p>
+     *         RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication
+     *         (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     *         </p>
      */
 
     public String getSnsTopicArn() {
@@ -216,13 +246,25 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS
+     * The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN
      * when you create a topic and subscribe to it.
      * </p>
+     * <note>
+     * <p>
+     * RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO
+     * topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param snsTopicArn
-     *        The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by
-     *        Amazon SNS when you create a topic and subscribe to it.
+     *        The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates
+     *        the ARN when you create a topic and subscribe to it.</p> <note>
+     *        <p>
+     *        RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication
+     *        (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,9 +280,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <code>db-proxy</code>. If this value isn't specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code>
+     * Valid Values:
+     * <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      * </p>
      * 
      * @param sourceType
@@ -248,9 +289,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        generated by a DB instance, you set this parameter to <code>db-instance</code>. For RDS Proxy events,
      *        specify <code>db-proxy</code>. If this value isn't specified, all events are returned.</p>
      *        <p>
-     *        Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     *        <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     *        <code>db-proxy</code>
+     *        Valid Values:
+     *        <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      */
 
     public void setSourceType(String sourceType) {
@@ -264,18 +304,16 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <code>db-proxy</code>. If this value isn't specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code>
+     * Valid Values:
+     * <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      * </p>
      * 
      * @return The type of source that is generating the events. For example, if you want to be notified of events
      *         generated by a DB instance, you set this parameter to <code>db-instance</code>. For RDS Proxy events,
      *         specify <code>db-proxy</code>. If this value isn't specified, all events are returned.</p>
      *         <p>
-     *         Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     *         <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     *         <code>db-proxy</code>
+     *         Valid Values:
+     *         <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      */
 
     public String getSourceType() {
@@ -289,9 +327,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <code>db-proxy</code>. If this value isn't specified, all events are returned.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     * <code>db-proxy</code>
+     * Valid Values:
+     * <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      * </p>
      * 
      * @param sourceType
@@ -299,9 +336,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        generated by a DB instance, you set this parameter to <code>db-instance</code>. For RDS Proxy events,
      *        specify <code>db-proxy</code>. If this value isn't specified, all events are returned.</p>
      *        <p>
-     *        Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
-     *        <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
-     *        <code>db-proxy</code>
+     *        Valid Values:
+     *        <code> db-instance | db-cluster | db-parameter-group | db-security-group | db-snapshot | db-cluster-snapshot | db-proxy | zero-etl | custom-engine-version | blue-green-deployment </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -886,13 +922,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     * activated, the subscription is created but not active.
+     * Specifies whether to activate the subscription. If the event notification subscription isn't activated, the
+     * subscription is created but not active.
      * </p>
      * 
      * @param enabled
-     *        A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     *        activated, the subscription is created but not active.
+     *        Specifies whether to activate the subscription. If the event notification subscription isn't activated,
+     *        the subscription is created but not active.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -901,12 +937,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     * activated, the subscription is created but not active.
+     * Specifies whether to activate the subscription. If the event notification subscription isn't activated, the
+     * subscription is created but not active.
      * </p>
      * 
-     * @return A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     *         activated, the subscription is created but not active.
+     * @return Specifies whether to activate the subscription. If the event notification subscription isn't activated,
+     *         the subscription is created but not active.
      */
 
     public Boolean getEnabled() {
@@ -915,13 +951,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     * activated, the subscription is created but not active.
+     * Specifies whether to activate the subscription. If the event notification subscription isn't activated, the
+     * subscription is created but not active.
      * </p>
      * 
      * @param enabled
-     *        A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     *        activated, the subscription is created but not active.
+     *        Specifies whether to activate the subscription. If the event notification subscription isn't activated,
+     *        the subscription is created but not active.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -932,12 +968,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     * activated, the subscription is created but not active.
+     * Specifies whether to activate the subscription. If the event notification subscription isn't activated, the
+     * subscription is created but not active.
      * </p>
      * 
-     * @return A value that indicates whether to activate the subscription. If the event notification subscription isn't
-     *         activated, the subscription is created but not active.
+     * @return Specifies whether to activate the subscription. If the event notification subscription isn't activated,
+     *         the subscription is created but not active.
      */
 
     public Boolean isEnabled() {

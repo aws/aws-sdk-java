@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,17 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness. */
     private String peakCalculation;
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      */
     private Double targetLkfs;
+    /**
+     * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
+     * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
+     */
+    private Double truePeakLimiterThreshold;
 
     /**
      * Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of
@@ -359,16 +364,15 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * 
      * @param targetLkfs
-     *        When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
-     *        target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
-     *        algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
-     *        choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     *        When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't
+     *        specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for
+     *        Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     *        choose -23 LKFS.
      */
 
     public void setTargetLkfs(Double targetLkfs) {
@@ -376,15 +380,14 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * 
-     * @return When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
-     *         target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
-     *         algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
-     *         choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     * @return When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't
+     *         specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for
+     *         Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     *         choose -23 LKFS.
      */
 
     public Double getTargetLkfs() {
@@ -392,21 +395,66 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target
-     * loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you
-     * choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the
-     * encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't specify
+     * a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm. If you
+     * choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
      * 
      * @param targetLkfs
-     *        When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a
-     *        target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the
-     *        algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will
-     *        choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     *        When you use Audio normalization, optionally use this setting to specify a target loudness. If you don't
+     *        specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for
+     *        Algorithm. If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     *        choose -23 LKFS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AudioNormalizationSettings withTargetLkfs(Double targetLkfs) {
         setTargetLkfs(targetLkfs);
+        return this;
+    }
+
+    /**
+     * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
+     * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
+     * 
+     * @param truePeakLimiterThreshold
+     *        Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio
+     *        sample loudness in your output will be limited to the value that you specify, without affecting the
+     *        overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
+     */
+
+    public void setTruePeakLimiterThreshold(Double truePeakLimiterThreshold) {
+        this.truePeakLimiterThreshold = truePeakLimiterThreshold;
+    }
+
+    /**
+     * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
+     * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
+     * 
+     * @return Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio
+     *         sample loudness in your output will be limited to the value that you specify, without affecting the
+     *         overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
+     */
+
+    public Double getTruePeakLimiterThreshold() {
+        return this.truePeakLimiterThreshold;
+    }
+
+    /**
+     * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
+     * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
+     * 
+     * @param truePeakLimiterThreshold
+     *        Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio
+     *        sample loudness in your output will be limited to the value that you specify, without affecting the
+     *        overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioNormalizationSettings withTruePeakLimiterThreshold(Double truePeakLimiterThreshold) {
+        setTruePeakLimiterThreshold(truePeakLimiterThreshold);
         return this;
     }
 
@@ -433,7 +481,9 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
         if (getPeakCalculation() != null)
             sb.append("PeakCalculation: ").append(getPeakCalculation()).append(",");
         if (getTargetLkfs() != null)
-            sb.append("TargetLkfs: ").append(getTargetLkfs());
+            sb.append("TargetLkfs: ").append(getTargetLkfs()).append(",");
+        if (getTruePeakLimiterThreshold() != null)
+            sb.append("TruePeakLimiterThreshold: ").append(getTruePeakLimiterThreshold());
         sb.append("}");
         return sb.toString();
     }
@@ -472,6 +522,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
             return false;
         if (other.getTargetLkfs() != null && other.getTargetLkfs().equals(this.getTargetLkfs()) == false)
             return false;
+        if (other.getTruePeakLimiterThreshold() == null ^ this.getTruePeakLimiterThreshold() == null)
+            return false;
+        if (other.getTruePeakLimiterThreshold() != null && other.getTruePeakLimiterThreshold().equals(this.getTruePeakLimiterThreshold()) == false)
+            return false;
         return true;
     }
 
@@ -486,6 +540,7 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getLoudnessLogging() == null) ? 0 : getLoudnessLogging().hashCode());
         hashCode = prime * hashCode + ((getPeakCalculation() == null) ? 0 : getPeakCalculation().hashCode());
         hashCode = prime * hashCode + ((getTargetLkfs() == null) ? 0 : getTargetLkfs().hashCode());
+        hashCode = prime * hashCode + ((getTruePeakLimiterThreshold() == null) ? 0 : getTruePeakLimiterThreshold().hashCode());
         return hashCode;
     }
 

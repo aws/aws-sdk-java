@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -181,6 +181,41 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String remoteManagement;
+    /**
+     * <p>
+     * If provided, each job will be automatically created and associated with the new cluster. If not provided, will be
+     * treated as 0.
+     * </p>
+     */
+    private Integer initialClusterSize;
+    /**
+     * <p>
+     * Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     * overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     * (underprovisioned) than what needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.
+     * </p>
+     */
+    private Boolean forceCreateJobs;
+    /**
+     * <p>
+     * Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.
+     * </p>
+     */
+    private java.util.List<String> longTermPricingIds;
+    /**
+     * <p>
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     */
+    private String snowballCapacityPreference;
 
     /**
      * <p>
@@ -1598,6 +1633,345 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If provided, each job will be automatically created and associated with the new cluster. If not provided, will be
+     * treated as 0.
+     * </p>
+     * 
+     * @param initialClusterSize
+     *        If provided, each job will be automatically created and associated with the new cluster. If not provided,
+     *        will be treated as 0.
+     */
+
+    public void setInitialClusterSize(Integer initialClusterSize) {
+        this.initialClusterSize = initialClusterSize;
+    }
+
+    /**
+     * <p>
+     * If provided, each job will be automatically created and associated with the new cluster. If not provided, will be
+     * treated as 0.
+     * </p>
+     * 
+     * @return If provided, each job will be automatically created and associated with the new cluster. If not provided,
+     *         will be treated as 0.
+     */
+
+    public Integer getInitialClusterSize() {
+        return this.initialClusterSize;
+    }
+
+    /**
+     * <p>
+     * If provided, each job will be automatically created and associated with the new cluster. If not provided, will be
+     * treated as 0.
+     * </p>
+     * 
+     * @param initialClusterSize
+     *        If provided, each job will be automatically created and associated with the new cluster. If not provided,
+     *        will be treated as 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withInitialClusterSize(Integer initialClusterSize) {
+        setInitialClusterSize(initialClusterSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     * overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     * (underprovisioned) than what needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.
+     * </p>
+     * 
+     * @param forceCreateJobs
+     *        Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     *        overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     *        (underprovisioned) than what needed to meet capacity requirement specified with
+     *        <code>OnDeviceServiceConfiguration</code>.
+     */
+
+    public void setForceCreateJobs(Boolean forceCreateJobs) {
+        this.forceCreateJobs = forceCreateJobs;
+    }
+
+    /**
+     * <p>
+     * Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     * overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     * (underprovisioned) than what needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.
+     * </p>
+     * 
+     * @return Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     *         overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     *         (underprovisioned) than what needed to meet capacity requirement specified with
+     *         <code>OnDeviceServiceConfiguration</code>.
+     */
+
+    public Boolean getForceCreateJobs() {
+        return this.forceCreateJobs;
+    }
+
+    /**
+     * <p>
+     * Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     * overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     * (underprovisioned) than what needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.
+     * </p>
+     * 
+     * @param forceCreateJobs
+     *        Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     *        overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     *        (underprovisioned) than what needed to meet capacity requirement specified with
+     *        <code>OnDeviceServiceConfiguration</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withForceCreateJobs(Boolean forceCreateJobs) {
+        setForceCreateJobs(forceCreateJobs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     * overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     * (underprovisioned) than what needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.
+     * </p>
+     * 
+     * @return Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is
+     *         overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less
+     *         (underprovisioned) than what needed to meet capacity requirement specified with
+     *         <code>OnDeviceServiceConfiguration</code>.
+     */
+
+    public Boolean isForceCreateJobs() {
+        return this.forceCreateJobs;
+    }
+
+    /**
+     * <p>
+     * Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.
+     * </p>
+     * 
+     * @return Lists long-term pricing id that will be used to associate with jobs automatically created for the new
+     *         cluster.
+     */
+
+    public java.util.List<String> getLongTermPricingIds() {
+        return longTermPricingIds;
+    }
+
+    /**
+     * <p>
+     * Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.
+     * </p>
+     * 
+     * @param longTermPricingIds
+     *        Lists long-term pricing id that will be used to associate with jobs automatically created for the new
+     *        cluster.
+     */
+
+    public void setLongTermPricingIds(java.util.Collection<String> longTermPricingIds) {
+        if (longTermPricingIds == null) {
+            this.longTermPricingIds = null;
+            return;
+        }
+
+        this.longTermPricingIds = new java.util.ArrayList<String>(longTermPricingIds);
+    }
+
+    /**
+     * <p>
+     * Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLongTermPricingIds(java.util.Collection)} or {@link #withLongTermPricingIds(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param longTermPricingIds
+     *        Lists long-term pricing id that will be used to associate with jobs automatically created for the new
+     *        cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withLongTermPricingIds(String... longTermPricingIds) {
+        if (this.longTermPricingIds == null) {
+            setLongTermPricingIds(new java.util.ArrayList<String>(longTermPricingIds.length));
+        }
+        for (String ele : longTermPricingIds) {
+            this.longTermPricingIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.
+     * </p>
+     * 
+     * @param longTermPricingIds
+     *        Lists long-term pricing id that will be used to associate with jobs automatically created for the new
+     *        cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withLongTermPricingIds(java.util.Collection<String> longTermPricingIds) {
+        setLongTermPricingIds(longTermPricingIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @param snowballCapacityPreference
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
+     * @see SnowballCapacity
+     */
+
+    public void setSnowballCapacityPreference(String snowballCapacityPreference) {
+        this.snowballCapacityPreference = snowballCapacityPreference;
+    }
+
+    /**
+     * <p>
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @return If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *         device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
+     * @see SnowballCapacity
+     */
+
+    public String getSnowballCapacityPreference() {
+        return this.snowballCapacityPreference;
+    }
+
+    /**
+     * <p>
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @param snowballCapacityPreference
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SnowballCapacity
+     */
+
+    public CreateClusterRequest withSnowballCapacityPreference(String snowballCapacityPreference) {
+        setSnowballCapacityPreference(snowballCapacityPreference);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @param snowballCapacityPreference
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
+     * @see SnowballCapacity
+     */
+
+    public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
+        withSnowballCapacityPreference(snowballCapacityPreference);
+    }
+
+    /**
+     * <p>
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @param snowballCapacityPreference
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SnowballCapacity
+     */
+
+    public CreateClusterRequest withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1634,7 +2008,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTaxDocuments() != null)
             sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
         if (getRemoteManagement() != null)
-            sb.append("RemoteManagement: ").append(getRemoteManagement());
+            sb.append("RemoteManagement: ").append(getRemoteManagement()).append(",");
+        if (getInitialClusterSize() != null)
+            sb.append("InitialClusterSize: ").append(getInitialClusterSize()).append(",");
+        if (getForceCreateJobs() != null)
+            sb.append("ForceCreateJobs: ").append(getForceCreateJobs()).append(",");
+        if (getLongTermPricingIds() != null)
+            sb.append("LongTermPricingIds: ").append(getLongTermPricingIds()).append(",");
+        if (getSnowballCapacityPreference() != null)
+            sb.append("SnowballCapacityPreference: ").append(getSnowballCapacityPreference());
         sb.append("}");
         return sb.toString();
     }
@@ -1701,6 +2083,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getRemoteManagement() != null && other.getRemoteManagement().equals(this.getRemoteManagement()) == false)
             return false;
+        if (other.getInitialClusterSize() == null ^ this.getInitialClusterSize() == null)
+            return false;
+        if (other.getInitialClusterSize() != null && other.getInitialClusterSize().equals(this.getInitialClusterSize()) == false)
+            return false;
+        if (other.getForceCreateJobs() == null ^ this.getForceCreateJobs() == null)
+            return false;
+        if (other.getForceCreateJobs() != null && other.getForceCreateJobs().equals(this.getForceCreateJobs()) == false)
+            return false;
+        if (other.getLongTermPricingIds() == null ^ this.getLongTermPricingIds() == null)
+            return false;
+        if (other.getLongTermPricingIds() != null && other.getLongTermPricingIds().equals(this.getLongTermPricingIds()) == false)
+            return false;
+        if (other.getSnowballCapacityPreference() == null ^ this.getSnowballCapacityPreference() == null)
+            return false;
+        if (other.getSnowballCapacityPreference() != null && other.getSnowballCapacityPreference().equals(this.getSnowballCapacityPreference()) == false)
+            return false;
         return true;
     }
 
@@ -1722,6 +2120,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
         hashCode = prime * hashCode + ((getRemoteManagement() == null) ? 0 : getRemoteManagement().hashCode());
+        hashCode = prime * hashCode + ((getInitialClusterSize() == null) ? 0 : getInitialClusterSize().hashCode());
+        hashCode = prime * hashCode + ((getForceCreateJobs() == null) ? 0 : getForceCreateJobs().hashCode());
+        hashCode = prime * hashCode + ((getLongTermPricingIds() == null) ? 0 : getLongTermPricingIds().hashCode());
+        hashCode = prime * hashCode + ((getSnowballCapacityPreference() == null) ? 0 : getSnowballCapacityPreference().hashCode());
         return hashCode;
     }
 

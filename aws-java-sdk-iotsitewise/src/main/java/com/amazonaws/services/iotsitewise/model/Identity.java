@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM
- * Identity Center identity IDs in the URL of user and group pages in the <a
+ * Currently, you can't use Amazon Web Services API operations to retrieve IAM Identity Center identity IDs. You can
+ * find the IAM Identity Center identity IDs in the URL of user and group pages in the <a
  * href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.
  * </p>
  * </note>

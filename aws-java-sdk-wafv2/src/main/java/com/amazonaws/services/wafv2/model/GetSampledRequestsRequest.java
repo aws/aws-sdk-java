@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,16 +33,16 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     private String webAclArn;
     /**
      * <p>
-     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of
-     * requests.
+     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample
+     * of requests.
      * </p>
      */
     private String ruleMetricName;
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -122,13 +122,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of
-     * requests.
+     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample
+     * of requests.
      * </p>
      * 
      * @param ruleMetricName
-     *        The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of
-     *        requests.
+     *        The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a
+     *        sample of requests.
      */
 
     public void setRuleMetricName(String ruleMetricName) {
@@ -137,12 +137,12 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of
-     * requests.
+     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample
+     * of requests.
      * </p>
      * 
-     * @return The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample
-     *         of requests.
+     * @return The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want
+     *         a sample of requests.
      */
 
     public String getRuleMetricName() {
@@ -151,13 +151,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of
-     * requests.
+     * The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample
+     * of requests.
      * </p>
      * 
      * @param ruleMetricName
-     *        The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of
-     *        requests.
+     *        The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a
+     *        sample of requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,8 +169,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -191,7 +191,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, or an Amazon Cognito user pool. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -217,8 +218,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -238,7 +239,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *         API, or an Amazon Cognito user pool. </p>
+     *         API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *         instance. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -264,8 +266,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -286,7 +288,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, or an Amazon Cognito user pool. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -314,8 +317,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
-     * an Amazon Cognito user pool.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -336,7 +339,8 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, or an Amazon Cognito user pool. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be
- * worked on by a partner action.
+ * A response to a <code>PollForThirdPartyJobs</code> request returned by CodePipeline when there is a job to be worked
+ * on by a partner action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJob" target="_top">AWS API
@@ -38,7 +38,7 @@ public class ThirdPartyJob implements Serializable, Cloneable, StructuredPojo {
     private String clientId;
     /**
      * <p>
-     * The identifier used to identify the job in AWS CodePipeline.
+     * The identifier used to identify the job in CodePipeline.
      * </p>
      */
     private String jobId;
@@ -91,11 +91,11 @@ public class ThirdPartyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to identify the job in AWS CodePipeline.
+     * The identifier used to identify the job in CodePipeline.
      * </p>
      * 
      * @param jobId
-     *        The identifier used to identify the job in AWS CodePipeline.
+     *        The identifier used to identify the job in CodePipeline.
      */
 
     public void setJobId(String jobId) {
@@ -104,10 +104,10 @@ public class ThirdPartyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to identify the job in AWS CodePipeline.
+     * The identifier used to identify the job in CodePipeline.
      * </p>
      * 
-     * @return The identifier used to identify the job in AWS CodePipeline.
+     * @return The identifier used to identify the job in CodePipeline.
      */
 
     public String getJobId() {
@@ -116,11 +116,11 @@ public class ThirdPartyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier used to identify the job in AWS CodePipeline.
+     * The identifier used to identify the job in CodePipeline.
      * </p>
      * 
      * @param jobId
-     *        The identifier used to identify the job in AWS CodePipeline.
+     *        The identifier used to identify the job in CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private AlgorithmSpecification algorithmSpecification;
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     */
+    private java.util.List<Association> associations;
     /**
      * <p>
      * The billable time the Amazon Braket job used to complete.
@@ -112,6 +118,13 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private JobOutputDataConfig outputDataConfig;
     /**
      * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     */
+    private HybridJobQueueInfo queueInfo;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user.
      * It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the
      * s3 buckets of a user.
@@ -187,6 +200,76 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     public GetJobResult withAlgorithmSpecification(AlgorithmSpecification algorithmSpecification) {
         setAlgorithmSpecification(algorithmSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * 
+     * @return The list of Amazon Braket resources associated with the hybrid job.
+     */
+
+    public java.util.List<Association> getAssociations() {
+        return associations;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the hybrid job.
+     */
+
+    public void setAssociations(java.util.Collection<Association> associations) {
+        if (associations == null) {
+            this.associations = null;
+            return;
+        }
+
+        this.associations = new java.util.ArrayList<Association>(associations);
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociations(java.util.Collection)} or {@link #withAssociations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the hybrid job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetJobResult withAssociations(Association... associations) {
+        if (this.associations == null) {
+            setAssociations(new java.util.ArrayList<Association>(associations.length));
+        }
+        for (Association ele : associations) {
+            this.associations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the hybrid job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetJobResult withAssociations(java.util.Collection<Association> associations) {
+        setAssociations(associations);
         return this;
     }
 
@@ -815,6 +898,52 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     *        <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     */
+
+    public void setQueueInfo(HybridJobQueueInfo queueInfo) {
+        this.queueInfo = queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     * 
+     * @return Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     *         <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     */
+
+    public HybridJobQueueInfo getQueueInfo() {
+        return this.queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the
+     *        <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetJobResult withQueueInfo(HybridJobQueueInfo queueInfo) {
+        setQueueInfo(queueInfo);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user.
      * It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the
      * s3 buckets of a user.
@@ -1089,6 +1218,8 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         sb.append("{");
         if (getAlgorithmSpecification() != null)
             sb.append("AlgorithmSpecification: ").append(getAlgorithmSpecification()).append(",");
+        if (getAssociations() != null)
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getBillableDuration() != null)
             sb.append("BillableDuration: ").append(getBillableDuration()).append(",");
         if (getCheckpointConfig() != null)
@@ -1115,6 +1246,8 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getOutputDataConfig() != null)
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
+        if (getQueueInfo() != null)
+            sb.append("QueueInfo: ").append(getQueueInfo()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStartedAt() != null)
@@ -1142,6 +1275,10 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (other.getAlgorithmSpecification() == null ^ this.getAlgorithmSpecification() == null)
             return false;
         if (other.getAlgorithmSpecification() != null && other.getAlgorithmSpecification().equals(this.getAlgorithmSpecification()) == false)
+            return false;
+        if (other.getAssociations() == null ^ this.getAssociations() == null)
+            return false;
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
             return false;
         if (other.getBillableDuration() == null ^ this.getBillableDuration() == null)
             return false;
@@ -1195,6 +1332,10 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getOutputDataConfig() != null && other.getOutputDataConfig().equals(this.getOutputDataConfig()) == false)
             return false;
+        if (other.getQueueInfo() == null ^ this.getQueueInfo() == null)
+            return false;
+        if (other.getQueueInfo() != null && other.getQueueInfo().equals(this.getQueueInfo()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -1224,6 +1365,7 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAlgorithmSpecification() == null) ? 0 : getAlgorithmSpecification().hashCode());
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
         hashCode = prime * hashCode + ((getBillableDuration() == null) ? 0 : getBillableDuration().hashCode());
         hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
@@ -1237,6 +1379,7 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
+        hashCode = prime * hashCode + ((getQueueInfo() == null) ? 0 : getQueueInfo().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

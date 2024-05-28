@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class S3BucketLogDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored
-     * in an S3 bucket.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio
+     * log files stored in an S3 bucket.
      * </p>
      */
     private String kmsKeyArn;
@@ -50,13 +50,13 @@ public class S3BucketLogDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored
-     * in an S3 bucket.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio
+     * log files stored in an S3 bucket.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files
-     *        stored in an S3 bucket.
+     *        The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting
+     *        audio log files stored in an S3 bucket.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -65,12 +65,12 @@ public class S3BucketLogDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored
-     * in an S3 bucket.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio
+     * log files stored in an S3 bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files
-     *         stored in an S3 bucket.
+     * @return The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting
+     *         audio log files stored in an S3 bucket.
      */
 
     public String getKmsKeyArn() {
@@ -79,13 +79,13 @@ public class S3BucketLogDestination implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored
-     * in an S3 bucket.
+     * The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting audio
+     * log files stored in an S3 bucket.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files
-     *        stored in an S3 bucket.
+     *        The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS) key for encrypting
+     *        audio log files stored in an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

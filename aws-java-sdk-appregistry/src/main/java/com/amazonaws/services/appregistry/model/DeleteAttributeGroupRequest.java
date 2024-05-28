@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeleteAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      * </p>
      */
     private String attributeGroup;
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      * </p>
      * 
      * @param attributeGroup
-     *        The name or ID of the attribute group that holds the attributes to describe the application.
+     *        The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      */
 
     public void setAttributeGroup(String attributeGroup) {
@@ -47,10 +47,10 @@ public class DeleteAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      * </p>
      * 
-     * @return The name or ID of the attribute group that holds the attributes to describe the application.
+     * @return The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      */
 
     public String getAttributeGroup() {
@@ -59,11 +59,11 @@ public class DeleteAttributeGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name or ID of the attribute group that holds the attributes to describe the application.
+     * The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      * </p>
      * 
      * @param attributeGroup
-     *        The name or ID of the attribute group that holds the attributes to describe the application.
+     *        The name, ID, or ARN of the attribute group that holds the attributes to describe the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

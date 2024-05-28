@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,18 +37,27 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
      * <p>
      * The source bucket used by the ManifestGenerator.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.
+     * </p>
+     * </note>
      */
     private String sourceBucket;
     /**
      * <p>
-     * Specifies the location the generated manifest will be written to.
+     * Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     * buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      */
     private S3ManifestOutputLocation manifestOutputLocation;
     /**
      * <p>
-     * Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket
-     * should or should not be included in the generated job manifest.
+     * Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or
+     * should not be included in the generated job manifest.
      * </p>
      */
     private JobManifestGeneratorFilter filter;
@@ -112,9 +121,19 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
      * <p>
      * The source bucket used by the ManifestGenerator.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.
+     * </p>
+     * </note>
      * 
      * @param sourceBucket
-     *        The source bucket used by the ManifestGenerator.
+     *        The source bucket used by the ManifestGenerator.</p> <note>
+     *        <p>
+     *        <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     *        <code>S3JobManifestGenerator</code> to generate the job manifest.
+     *        </p>
      */
 
     public void setSourceBucket(String sourceBucket) {
@@ -125,8 +144,18 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
      * <p>
      * The source bucket used by the ManifestGenerator.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.
+     * </p>
+     * </note>
      * 
-     * @return The source bucket used by the ManifestGenerator.
+     * @return The source bucket used by the ManifestGenerator.</p> <note>
+     *         <p>
+     *         <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     *         <code>S3JobManifestGenerator</code> to generate the job manifest.
+     *         </p>
      */
 
     public String getSourceBucket() {
@@ -137,9 +166,19 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
      * <p>
      * The source bucket used by the ManifestGenerator.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.
+     * </p>
+     * </note>
      * 
      * @param sourceBucket
-     *        The source bucket used by the ManifestGenerator.
+     *        The source bucket used by the ManifestGenerator.</p> <note>
+     *        <p>
+     *        <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by
+     *        <code>S3JobManifestGenerator</code> to generate the job manifest.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +189,17 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the location the generated manifest will be written to.
+     * Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     * buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      * 
      * @param manifestOutputLocation
-     *        Specifies the location the generated manifest will be written to.
+     *        Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     *        buckets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     *        buckets</a>.
      */
 
     public void setManifestOutputLocation(S3ManifestOutputLocation manifestOutputLocation) {
@@ -163,10 +208,16 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the location the generated manifest will be written to.
+     * Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     * buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      * 
-     * @return Specifies the location the generated manifest will be written to.
+     * @return Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     *         buckets. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     *         buckets</a>.
      */
 
     public S3ManifestOutputLocation getManifestOutputLocation() {
@@ -175,11 +226,17 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the location the generated manifest will be written to.
+     * Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     * buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.
      * </p>
      * 
      * @param manifestOutputLocation
-     *        Specifies the location the generated manifest will be written to.
+     *        Specifies the location the generated manifest will be written to. Manifests can't be written to directory
+     *        buckets. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     *        buckets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,13 +247,13 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket
-     * should or should not be included in the generated job manifest.
+     * Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or
+     * should not be included in the generated job manifest.
      * </p>
      * 
      * @param filter
-     *        Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source
-     *        bucket should or should not be included in the generated job manifest.
+     *        Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket
+     *        should or should not be included in the generated job manifest.
      */
 
     public void setFilter(JobManifestGeneratorFilter filter) {
@@ -205,12 +262,12 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket
-     * should or should not be included in the generated job manifest.
+     * Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or
+     * should not be included in the generated job manifest.
      * </p>
      * 
-     * @return Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source
-     *         bucket should or should not be included in the generated job manifest.
+     * @return Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket
+     *         should or should not be included in the generated job manifest.
      */
 
     public JobManifestGeneratorFilter getFilter() {
@@ -219,13 +276,13 @@ public class S3JobManifestGenerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source bucket
-     * should or should not be included in the generated job manifest.
+     * Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or
+     * should not be included in the generated job manifest.
      * </p>
      * 
      * @param filter
-     *        Specifies rules the S3JobManifestGenerator should use to use to decide whether an object in the source
-     *        bucket should or should not be included in the generated job manifest.
+     *        Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket
+     *        should or should not be included in the generated job manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

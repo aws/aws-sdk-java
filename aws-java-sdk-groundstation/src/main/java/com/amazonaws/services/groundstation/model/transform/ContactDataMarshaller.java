@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class ContactDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<java.util.Date> VISIBILITYENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("visibilityEndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> VISIBILITYSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("visibilityStartTime").timestampFormat("unixTimestamp").build();
 
     private static final ContactDataMarshaller instance = new ContactDataMarshaller();
 
@@ -85,6 +89,8 @@ public class ContactDataMarshaller {
             protocolMarshaller.marshall(contactData.getSatelliteArn(), SATELLITEARN_BINDING);
             protocolMarshaller.marshall(contactData.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(contactData.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(contactData.getVisibilityEndTime(), VISIBILITYENDTIME_BINDING);
+            protocolMarshaller.marshall(contactData.getVisibilityStartTime(), VISIBILITYSTARTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,6 +104,36 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String secretsManagerSecretId;
+    /**
+     * <p>
+     * The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The
+     * default value is 1200 (20 minutes).
+     * </p>
+     */
+    private Integer loadTimeout;
+    /**
+     * <p>
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS
+     * replication instance. The default value is 1024 (1 MB).
+     * </p>
+     */
+    private Integer writeBufferSize;
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     * </p>
+     */
+    private Integer maxFileSize;
+    /**
+     * <p>
+     * If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files
+     * for analysis and troubleshooting.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     */
+    private Boolean keepCsvFiles;
 
     /**
      * <p>
@@ -614,6 +644,218 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The
+     * default value is 1200 (20 minutes).
+     * </p>
+     * 
+     * @param loadTimeout
+     *        The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target.
+     *        The default value is 1200 (20 minutes).
+     */
+
+    public void setLoadTimeout(Integer loadTimeout) {
+        this.loadTimeout = loadTimeout;
+    }
+
+    /**
+     * <p>
+     * The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The
+     * default value is 1200 (20 minutes).
+     * </p>
+     * 
+     * @return The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target.
+     *         The default value is 1200 (20 minutes).
+     */
+
+    public Integer getLoadTimeout() {
+        return this.loadTimeout;
+    }
+
+    /**
+     * <p>
+     * The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target. The
+     * default value is 1200 (20 minutes).
+     * </p>
+     * 
+     * @param loadTimeout
+     *        The amount of time (in milliseconds) before DMS times out operations performed by DMS on the Db2 target.
+     *        The default value is 1200 (20 minutes).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withLoadTimeout(Integer loadTimeout) {
+        setLoadTimeout(loadTimeout);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS
+     * replication instance. The default value is 1024 (1 MB).
+     * </p>
+     * 
+     * @param writeBufferSize
+     *        The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on
+     *        the DMS replication instance. The default value is 1024 (1 MB).
+     */
+
+    public void setWriteBufferSize(Integer writeBufferSize) {
+        this.writeBufferSize = writeBufferSize;
+    }
+
+    /**
+     * <p>
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS
+     * replication instance. The default value is 1024 (1 MB).
+     * </p>
+     * 
+     * @return The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on
+     *         the DMS replication instance. The default value is 1024 (1 MB).
+     */
+
+    public Integer getWriteBufferSize() {
+        return this.writeBufferSize;
+    }
+
+    /**
+     * <p>
+     * The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on the DMS
+     * replication instance. The default value is 1024 (1 MB).
+     * </p>
+     * 
+     * @param writeBufferSize
+     *        The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk on
+     *        the DMS replication instance. The default value is 1024 (1 MB).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withWriteBufferSize(Integer writeBufferSize) {
+        setWriteBufferSize(writeBufferSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     * </p>
+     * 
+     * @param maxFileSize
+     *        Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     */
+
+    public void setMaxFileSize(Integer maxFileSize) {
+        this.maxFileSize = maxFileSize;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     * </p>
+     * 
+     * @return Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     */
+
+    public Integer getMaxFileSize() {
+        return this.maxFileSize;
+    }
+
+    /**
+     * <p>
+     * Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     * </p>
+     * 
+     * @param maxFileSize
+     *        Specifies the maximum size (in KB) of .csv files used to transfer data to Db2 LUW.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withMaxFileSize(Integer maxFileSize) {
+        setMaxFileSize(maxFileSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files
+     * for analysis and troubleshooting.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @param keepCsvFiles
+     *        If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these
+     *        files for analysis and troubleshooting.</p>
+     *        <p>
+     *        The default value is false.
+     */
+
+    public void setKeepCsvFiles(Boolean keepCsvFiles) {
+        this.keepCsvFiles = keepCsvFiles;
+    }
+
+    /**
+     * <p>
+     * If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files
+     * for analysis and troubleshooting.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @return If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these
+     *         files for analysis and troubleshooting.</p>
+     *         <p>
+     *         The default value is false.
+     */
+
+    public Boolean getKeepCsvFiles() {
+        return this.keepCsvFiles;
+    }
+
+    /**
+     * <p>
+     * If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files
+     * for analysis and troubleshooting.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @param keepCsvFiles
+     *        If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these
+     *        files for analysis and troubleshooting.</p>
+     *        <p>
+     *        The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IBMDb2Settings withKeepCsvFiles(Boolean keepCsvFiles) {
+        setKeepCsvFiles(keepCsvFiles);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these files
+     * for analysis and troubleshooting.
+     * </p>
+     * <p>
+     * The default value is false.
+     * </p>
+     * 
+     * @return If true, DMS saves any .csv files to the Db2 LUW target that were used to replicate data. DMS uses these
+     *         files for analysis and troubleshooting.</p>
+     *         <p>
+     *         The default value is false.
+     */
+
+    public Boolean isKeepCsvFiles() {
+        return this.keepCsvFiles;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -644,7 +886,15 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
-            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
+        if (getLoadTimeout() != null)
+            sb.append("LoadTimeout: ").append(getLoadTimeout()).append(",");
+        if (getWriteBufferSize() != null)
+            sb.append("WriteBufferSize: ").append(getWriteBufferSize()).append(",");
+        if (getMaxFileSize() != null)
+            sb.append("MaxFileSize: ").append(getMaxFileSize()).append(",");
+        if (getKeepCsvFiles() != null)
+            sb.append("KeepCsvFiles: ").append(getKeepCsvFiles());
         sb.append("}");
         return sb.toString();
     }
@@ -699,6 +949,22 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
             return false;
+        if (other.getLoadTimeout() == null ^ this.getLoadTimeout() == null)
+            return false;
+        if (other.getLoadTimeout() != null && other.getLoadTimeout().equals(this.getLoadTimeout()) == false)
+            return false;
+        if (other.getWriteBufferSize() == null ^ this.getWriteBufferSize() == null)
+            return false;
+        if (other.getWriteBufferSize() != null && other.getWriteBufferSize().equals(this.getWriteBufferSize()) == false)
+            return false;
+        if (other.getMaxFileSize() == null ^ this.getMaxFileSize() == null)
+            return false;
+        if (other.getMaxFileSize() != null && other.getMaxFileSize().equals(this.getMaxFileSize()) == false)
+            return false;
+        if (other.getKeepCsvFiles() == null ^ this.getKeepCsvFiles() == null)
+            return false;
+        if (other.getKeepCsvFiles() != null && other.getKeepCsvFiles().equals(this.getKeepCsvFiles()) == false)
+            return false;
         return true;
     }
 
@@ -717,6 +983,10 @@ public class IBMDb2Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
+        hashCode = prime * hashCode + ((getLoadTimeout() == null) ? 0 : getLoadTimeout().hashCode());
+        hashCode = prime * hashCode + ((getWriteBufferSize() == null) ? 0 : getWriteBufferSize().hashCode());
+        hashCode = prime * hashCode + ((getMaxFileSize() == null) ? 0 : getMaxFileSize().hashCode());
+        hashCode = prime * hashCode + ((getKeepCsvFiles() == null) ? 0 : getKeepCsvFiles().hashCode());
         return hashCode;
     }
 

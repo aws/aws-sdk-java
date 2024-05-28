@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,19 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastModified;
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     */
+    private Boolean withFederation;
+    /**
+     * <p>
+     * Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     * permissions as well as Amazon S3 bucket policies.
+     * </p>
+     */
+    private Boolean hybridAccessEnabled;
 
     /**
      * <p>
@@ -168,6 +181,118 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @param withFederation
+     *        Whether or not the resource is a federated resource.
+     */
+
+    public void setWithFederation(Boolean withFederation) {
+        this.withFederation = withFederation;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @return Whether or not the resource is a federated resource.
+     */
+
+    public Boolean getWithFederation() {
+        return this.withFederation;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @param withFederation
+     *        Whether or not the resource is a federated resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceInfo withWithFederation(Boolean withFederation) {
+        setWithFederation(withFederation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @return Whether or not the resource is a federated resource.
+     */
+
+    public Boolean isWithFederation() {
+        return this.withFederation;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     * permissions as well as Amazon S3 bucket policies.
+     * </p>
+     * 
+     * @param hybridAccessEnabled
+     *        Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     *        permissions as well as Amazon S3 bucket policies.
+     */
+
+    public void setHybridAccessEnabled(Boolean hybridAccessEnabled) {
+        this.hybridAccessEnabled = hybridAccessEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     * permissions as well as Amazon S3 bucket policies.
+     * </p>
+     * 
+     * @return Indicates whether the data access of tables pointing to the location can be managed by both Lake
+     *         Formation permissions as well as Amazon S3 bucket policies.
+     */
+
+    public Boolean getHybridAccessEnabled() {
+        return this.hybridAccessEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     * permissions as well as Amazon S3 bucket policies.
+     * </p>
+     * 
+     * @param hybridAccessEnabled
+     *        Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     *        permissions as well as Amazon S3 bucket policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceInfo withHybridAccessEnabled(Boolean hybridAccessEnabled) {
+        setHybridAccessEnabled(hybridAccessEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation
+     * permissions as well as Amazon S3 bucket policies.
+     * </p>
+     * 
+     * @return Indicates whether the data access of tables pointing to the location can be managed by both Lake
+     *         Formation permissions as well as Amazon S3 bucket policies.
+     */
+
+    public Boolean isHybridAccessEnabled() {
+        return this.hybridAccessEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +309,11 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getLastModified() != null)
-            sb.append("LastModified: ").append(getLastModified());
+            sb.append("LastModified: ").append(getLastModified()).append(",");
+        if (getWithFederation() != null)
+            sb.append("WithFederation: ").append(getWithFederation()).append(",");
+        if (getHybridAccessEnabled() != null)
+            sb.append("HybridAccessEnabled: ").append(getHybridAccessEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +340,14 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastModified() != null && other.getLastModified().equals(this.getLastModified()) == false)
             return false;
+        if (other.getWithFederation() == null ^ this.getWithFederation() == null)
+            return false;
+        if (other.getWithFederation() != null && other.getWithFederation().equals(this.getWithFederation()) == false)
+            return false;
+        if (other.getHybridAccessEnabled() == null ^ this.getHybridAccessEnabled() == null)
+            return false;
+        if (other.getHybridAccessEnabled() != null && other.getHybridAccessEnabled().equals(this.getHybridAccessEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +359,8 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
+        hashCode = prime * hashCode + ((getWithFederation() == null) ? 0 : getWithFederation().hashCode());
+        hashCode = prime * hashCode + ((getHybridAccessEnabled() == null) ? 0 : getHybridAccessEnabled().hashCode());
         return hashCode;
     }
 

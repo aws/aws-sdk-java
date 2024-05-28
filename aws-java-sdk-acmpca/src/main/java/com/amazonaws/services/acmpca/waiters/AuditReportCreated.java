@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,6 +13,7 @@
 
 package com.amazonaws.services.acmpca.waiters;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.WaiterAcceptor;
 import com.amazonaws.waiters.WaiterState;
@@ -95,6 +96,31 @@ class AuditReportCreated {
             JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
             JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
             return AcceptorPathMatcher.path(expectedResult, finalResult);
+        }
+
+        /**
+         * Represents the current waiter state in the case where resource state matches the expected state
+         * 
+         * @return Corresponding state of the waiter
+         */
+        @Override
+        public WaiterState getState() {
+            return WaiterState.FAILURE;
+        }
+    }
+
+    static class IsAccessDeniedExceptionMatcher extends WaiterAcceptor<DescribeCertificateAuthorityAuditReportResult> {
+        /**
+         * Takes the response exception and determines whether this exception matches the expected exception, by
+         * comparing the respective error codes.
+         * 
+         * @param e
+         *        Response Exception
+         * @return True if it matches, False otherwise
+         */
+        @Override
+        public boolean matches(AmazonServiceException e) {
+            return "AccessDeniedException".equals(e.getErrorCode());
         }
 
         /**

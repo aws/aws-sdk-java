@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it
- * from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers
- * you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
+ * The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it from the
+ * JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can
+ * choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/HiveJsonSerDe" target="_top">AWS API
@@ -32,33 +32,31 @@ public class HiveJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input
-     * data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
-     * strings. For more information, see <a
-     * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>.
-     * You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't
-     * specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
+     * Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To
+     * specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
+     * DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
+     * milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
      * </p>
      */
     private java.util.List<String> timestampFormats;
 
     /**
      * <p>
-     * Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input
-     * data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
-     * strings. For more information, see <a
-     * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>.
-     * You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't
-     * specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
+     * Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To
+     * specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
+     * DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
+     * milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
      * </p>
      * 
-     * @return Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your
-     *         input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat
-     *         format strings. For more information, see <a
+     * @return Indicates how you want Firehose to parse the date and timestamps that may be present in your input data
+     *         JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
+     *         strings. For more information, see <a
      *         href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      *         DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
-     *         milliseconds. If you don't specify a format, Kinesis Data Firehose uses
-     *         <code>java.sql.Timestamp::valueOf</code> by default.
+     *         milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by
+     *         default.
      */
 
     public java.util.List<String> getTimestampFormats() {
@@ -67,22 +65,21 @@ public class HiveJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input
-     * data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
-     * strings. For more information, see <a
-     * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>.
-     * You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't
-     * specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
+     * Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To
+     * specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
+     * DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
+     * milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
      * </p>
      * 
      * @param timestampFormats
-     *        Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your
-     *        input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat
-     *        format strings. For more information, see <a
+     *        Indicates how you want Firehose to parse the date and timestamps that may be present in your input data
+     *        JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
+     *        strings. For more information, see <a
      *        href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      *        DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
-     *        milliseconds. If you don't specify a format, Kinesis Data Firehose uses
-     *        <code>java.sql.Timestamp::valueOf</code> by default.
+     *        milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by
+     *        default.
      */
 
     public void setTimestampFormats(java.util.Collection<String> timestampFormats) {
@@ -96,12 +93,11 @@ public class HiveJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input
-     * data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
-     * strings. For more information, see <a
-     * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>.
-     * You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't
-     * specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
+     * Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To
+     * specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
+     * DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
+     * milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -110,13 +106,13 @@ public class HiveJsonSerDe implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param timestampFormats
-     *        Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your
-     *        input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat
-     *        format strings. For more information, see <a
+     *        Indicates how you want Firehose to parse the date and timestamps that may be present in your input data
+     *        JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
+     *        strings. For more information, see <a
      *        href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      *        DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
-     *        milliseconds. If you don't specify a format, Kinesis Data Firehose uses
-     *        <code>java.sql.Timestamp::valueOf</code> by default.
+     *        milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by
+     *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,22 +128,21 @@ public class HiveJsonSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your input
-     * data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
-     * strings. For more information, see <a
-     * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>.
-     * You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't
-     * specify a format, Kinesis Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
+     * Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To
+     * specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
+     * DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
+     * milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.
      * </p>
      * 
      * @param timestampFormats
-     *        Indicates how you want Kinesis Data Firehose to parse the date and timestamps that may be present in your
-     *        input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat
-     *        format strings. For more information, see <a
+     *        Indicates how you want Firehose to parse the date and timestamps that may be present in your input data
+     *        JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format
+     *        strings. For more information, see <a
      *        href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      *        DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch
-     *        milliseconds. If you don't specify a format, Kinesis Data Firehose uses
-     *        <code>java.sql.Timestamp::valueOf</code> by default.
+     *        milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by
+     *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

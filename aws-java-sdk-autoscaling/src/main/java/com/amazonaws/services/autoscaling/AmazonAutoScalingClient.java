@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.autoscaling.model.*;
+
 import com.amazonaws.services.autoscaling.model.transform.*;
 
 /**
@@ -320,6 +321,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
             exceptionUnmarshallersMap.put("ResourceInUse", new ResourceInUseExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("IrreversibleInstanceRefresh") == null) {
+            exceptionUnmarshallersMap.put("IrreversibleInstanceRefresh", new IrreversibleInstanceRefreshExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new IrreversibleInstanceRefreshExceptionUnmarshaller());
         defaultUnmarshaller = new StandardErrorUnmarshaller(com.amazonaws.services.autoscaling.model.AmazonAutoScalingException.class);
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.autoscaling.model.AmazonAutoScalingException.class));
 
@@ -410,6 +415,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This API operation is superseded by <a>AttachTrafficSources</a>, which can attach multiple traffic sources types.
+     * We recommend using <code>AttachTrafficSources</code> to simplify how you manage traffic sources. However, we
+     * continue to support <code>AttachLoadBalancerTargetGroups</code>. You can use both the original
+     * <code>AttachLoadBalancerTargetGroups</code> API operation and <code>AttachTrafficSources</code> on the same Auto
+     * Scaling group.
+     * </p>
+     * </note>
      * <p>
      * Attaches one or more target groups to the specified Auto Scaling group.
      * </p>
@@ -507,8 +521,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     /**
      * <note>
      * <p>
-     * To attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer, use the
-     * <a>AttachLoadBalancerTargetGroups</a> API operation instead.
+     * This API operation is superseded by <a>AttachTrafficSources</a>, which can attach multiple traffic sources types.
+     * We recommend using <code>AttachTrafficSources</code> to simplify how you manage traffic sources. However, we
+     * continue to support <code>AttachLoadBalancers</code>. You can use both the original
+     * <code>AttachLoadBalancers</code> API operation and <code>AttachTrafficSources</code> on the same Auto Scaling
+     * group.
      * </p>
      * </note>
      * <p>
@@ -589,6 +606,105 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public AttachLoadBalancersResult attachLoadBalancers() {
         return attachLoadBalancers(new AttachLoadBalancersRequest());
+    }
+
+    /**
+     * <p>
+     * Attaches one or more traffic sources to the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * You can use any of the following as traffic sources for an Auto Scaling group:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Application Load Balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Classic Load Balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Gateway Load Balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Network Load Balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VPC Lattice
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This operation is additive and does not detach existing traffic sources from the Auto Scaling group.
+     * </p>
+     * <p>
+     * After the operation completes, use the <a>DescribeTrafficSources</a> API to return details about the state of the
+     * attachments between traffic sources and your Auto Scaling group. To detach a traffic source from the Auto Scaling
+     * group, call the <a>DetachTrafficSources</a> API.
+     * </p>
+     * 
+     * @param attachTrafficSourcesRequest
+     * @return Result of the AttachTrafficSources operation returned by the service.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
+     * @sample AmazonAutoScaling.AttachTrafficSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AttachTrafficSourcesResult attachTrafficSources(AttachTrafficSourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachTrafficSources(request);
+    }
+
+    @SdkInternalApi
+    final AttachTrafficSourcesResult executeAttachTrafficSources(AttachTrafficSourcesRequest attachTrafficSourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(attachTrafficSourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AttachTrafficSourcesRequest> request = null;
+        Response<AttachTrafficSourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachTrafficSourcesRequestMarshaller().marshall(super.beforeMarshalling(attachTrafficSourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachTrafficSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AttachTrafficSourcesResult> responseHandler = new StaxResponseHandler<AttachTrafficSourcesResult>(
+                    new AttachTrafficSourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -720,14 +836,18 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Cancels an instance refresh operation in progress. Cancellation does not roll back any replacements that have
-     * already been completed, but it prevents new replacements from being started.
+     * Cancels an instance refresh or rollback that is in progress. If an instance refresh or rollback is not in
+     * progress, an <code>ActiveInstanceRefreshNotFound</code> error occurs.
      * </p>
      * <p>
      * This operation is part of the <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
      * feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you
      * make configuration changes.
+     * </p>
+     * <p>
+     * When you cancel an instance refresh, this does not roll back any changes that it made. Use the
+     * <a>RollbackInstanceRefresh</a> API to roll back instead.
      * </p>
      * 
      * @param cancelInstanceRefreshRequest
@@ -741,7 +861,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
      *         group, instance, or load balancer).
      * @throws ActiveInstanceRefreshNotFoundException
-     *         The request failed because an active instance refresh for the specified Auto Scaling group was not found.
+     *         The request failed because an active instance refresh or rollback for the specified Auto Scaling group
+     *         was not found.
      * @sample AmazonAutoScaling.CancelInstanceRefresh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh"
      *      target="_top">AWS API Documentation</a>
@@ -836,8 +957,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </ol>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling
-     * lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/completing-lifecycle-hooks.html">Complete a lifecycle
+     * action</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param completeLifecycleActionRequest
@@ -909,13 +1030,9 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * For introductory exercises for creating an Auto Scaling group, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting started with
-     * Amazon EC2 Auto Scaling</a> and <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial: Set up a
-     * scaled and load-balanced application</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information,
-     * see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto Scaling groups</a>
-     * in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * If you're new to Amazon EC2 Auto Scaling, see the introductory tutorials in <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/get-started-with-ec2-auto-scaling.html">Get started
+     * with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Every Auto Scaling group has three size properties (<code>DesiredCapacity</code>, <code>MaxSize</code>, and
@@ -1002,6 +1119,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch configurations</a>
      * in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Amazon EC2 Auto Scaling configures instances launched as part of an Auto Scaling group using either a launch
+     * template or a launch configuration. We strongly recommend that you do not use launch configurations. They do not
+     * provide full functionality for Amazon EC2 Auto Scaling or Amazon EC2. For information about using launch
+     * templates, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch
+     * templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param createLaunchConfigurationRequest
      * @return Result of the CreateLaunchConfiguration operation returned by the service.
@@ -1147,11 +1273,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * If the group has instances or scaling activities in progress, you must specify the option to force the deletion
-     * in order for it to succeed.
-     * </p>
-     * <p>
-     * If the group has policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm
-     * that no longer has an associated action.
+     * in order for it to succeed. The force delete operation will also terminate the EC2 instances. If the group has a
+     * warm pool, the force delete option also deletes the warm pool.
      * </p>
      * <p>
      * To remove instances from the Auto Scaling group before deleting it, call the <a>DetachInstances</a> API with the
@@ -1161,6 +1284,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a> API and
      * set the minimum size and desired capacity of the Auto Scaling group to zero.
+     * </p>
+     * <p>
+     * If the group has scaling policies, deleting the group deletes the policies, the underlying alarm actions, and any
+     * alarm that no longer has an associated action.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-process-shutdown.html">Delete your Auto Scaling
+     * infrastructure</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
@@ -2034,7 +2166,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets information about the instance refreshes for the specified Auto Scaling group.
+     * Gets information about the instance refreshes for the specified Auto Scaling group from the previous six weeks.
      * </p>
      * <p>
      * This operation is part of the <a
@@ -2043,47 +2175,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * make configuration changes.
      * </p>
      * <p>
-     * To help you determine the status of an instance refresh, this operation returns information about the instance
-     * refreshes you previously initiated, including their status, end time, the percentage of the instance refresh that
-     * is complete, and the number of instances remaining to update before the instance refresh is complete.
+     * To help you determine the status of an instance refresh, Amazon EC2 Auto Scaling returns information about the
+     * instance refreshes you previously initiated, including their status, start time, end time, the percentage of the
+     * instance refresh that is complete, and the number of instances remaining to update before the instance refresh is
+     * complete. If a rollback is initiated while an instance refresh is in progress, Amazon EC2 Auto Scaling also
+     * returns information about the rollback of the instance refresh.
      * </p>
-     * <p>
-     * The following are the possible statuses:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Pending</code> - The request was created, but the operation has not started.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>InProgress</code> - The operation is in progress.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Successful</code> - The operation completed successfully.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the
-     * scaling activities.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any
-     * replacements that have already been completed, but it prevents new replacements from being started.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Cancelled</code> - The operation is cancelled.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param describeInstanceRefreshesRequest
      * @return Result of the DescribeInstanceRefreshes operation returned by the service.
@@ -2346,6 +2443,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe multiple traffic sources
+     * types. We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However,
+     * we continue to support <code>DescribeLoadBalancerTargetGroups</code>. You can use both the original
+     * <code>DescribeLoadBalancerTargetGroups</code> API operation and <code>DescribeTrafficSources</code> on the same
+     * Auto Scaling group.
+     * </p>
+     * </note>
      * <p>
      * Gets information about the Elastic Load Balancing target groups for the specified Auto Scaling group.
      * </p>
@@ -2372,6 +2478,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * You can use this operation to describe target groups that were attached by using
+     * <a>AttachLoadBalancerTargetGroups</a>, but not for target groups that were attached by using
+     * <a>AttachTrafficSources</a>.
+     * </p>
+     * </note>
      * 
      * @param describeLoadBalancerTargetGroupsRequest
      * @return Result of the DescribeLoadBalancerTargetGroups operation returned by the service.
@@ -2431,12 +2544,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe multiple traffic sources
+     * types. We recommend using <code>DescribeTrafficSources</code> to simplify how you manage traffic sources.
+     * However, we continue to support <code>DescribeLoadBalancers</code>. You can use both the original
+     * <code>DescribeLoadBalancers</code> API operation and <code>DescribeTrafficSources</code> on the same Auto Scaling
+     * group.
+     * </p>
+     * </note>
      * <p>
      * Gets information about the load balancers for the specified Auto Scaling group.
      * </p>
      * <p>
      * This operation describes only Classic Load Balancers. If you have Application Load Balancers, Network Load
-     * Balancers, or Gateway Load Balancer, use the <a>DescribeLoadBalancerTargetGroups</a> API instead.
+     * Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a> API instead.
      * </p>
      * <p>
      * To determine the attachment status of the load balancer, use the <code>State</code> element in the response. When
@@ -3082,6 +3204,75 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets information about the traffic sources for the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * You can optionally provide a traffic source type. If you provide a traffic source type, then the results only
+     * include that traffic source type.
+     * </p>
+     * <p>
+     * If you do not provide a traffic source type, then the results include all the traffic sources for the specified
+     * Auto Scaling group.
+     * </p>
+     * 
+     * @param describeTrafficSourcesRequest
+     * @return Result of the DescribeTrafficSources operation returned by the service.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @sample AmazonAutoScaling.DescribeTrafficSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrafficSourcesResult describeTrafficSources(DescribeTrafficSourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrafficSources(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrafficSourcesResult executeDescribeTrafficSources(DescribeTrafficSourcesRequest describeTrafficSourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrafficSourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrafficSourcesRequest> request = null;
+        Response<DescribeTrafficSourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrafficSourcesRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficSourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrafficSourcesResult> responseHandler = new StaxResponseHandler<DescribeTrafficSourcesResult>(
+                    new DescribeTrafficSourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a warm pool and its instances.
      * </p>
      * <p>
@@ -3228,6 +3419,15 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This API operation is superseded by <a>DetachTrafficSources</a>, which can detach multiple traffic sources types.
+     * We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we
+     * continue to support <code>DetachLoadBalancerTargetGroups</code>. You can use both the original
+     * <code>DetachLoadBalancerTargetGroups</code> API operation and <code>DetachTrafficSources</code> on the same Auto
+     * Scaling group.
+     * </p>
+     * </note>
      * <p>
      * Detaches one or more target groups from the specified Auto Scaling group.
      * </p>
@@ -3236,6 +3436,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * the group. When all instances are deregistered, then you can no longer describe the target group using the
      * <a>DescribeLoadBalancerTargetGroups</a> API call. The instances remain running.
      * </p>
+     * <note>
+     * <p>
+     * You can use this operation to detach target groups that were attached by using
+     * <a>AttachLoadBalancerTargetGroups</a>, but not for target groups that were attached by using
+     * <a>AttachTrafficSources</a>.
+     * </p>
+     * </note>
      * 
      * @param detachLoadBalancerTargetGroupsRequest
      * @return Result of the DetachLoadBalancerTargetGroups operation returned by the service.
@@ -3292,12 +3499,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <note>
+     * <p>
+     * This API operation is superseded by <a>DetachTrafficSources</a>, which can detach multiple traffic sources types.
+     * We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we
+     * continue to support <code>DetachLoadBalancers</code>. You can use both the original
+     * <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code> on the same Auto Scaling
+     * group.
+     * </p>
+     * </note>
      * <p>
      * Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
      * </p>
      * <p>
      * This operation detaches only Classic Load Balancers. If you have Application Load Balancers, Network Load
-     * Balancers, or Gateway Load Balancer, use the <a>DetachLoadBalancerTargetGroups</a> API instead.
+     * Balancers, or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a> API instead.
      * </p>
      * <p>
      * When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in
@@ -3362,6 +3578,70 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     @Override
     public DetachLoadBalancersResult detachLoadBalancers() {
         return detachLoadBalancers(new DetachLoadBalancersRequest());
+    }
+
+    /**
+     * <p>
+     * Detaches one or more traffic sources from the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * When you detach a traffic source, it enters the <code>Removing</code> state while deregistering the instances in
+     * the group. When all instances are deregistered, then you can no longer describe the traffic source using the
+     * <a>DescribeTrafficSources</a> API call. The instances continue to run.
+     * </p>
+     * 
+     * @param detachTrafficSourcesRequest
+     * @return Result of the DetachTrafficSources operation returned by the service.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DetachTrafficSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetachTrafficSourcesResult detachTrafficSources(DetachTrafficSourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachTrafficSources(request);
+    }
+
+    @SdkInternalApi
+    final DetachTrafficSourcesResult executeDetachTrafficSources(DetachTrafficSourcesRequest detachTrafficSourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detachTrafficSourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetachTrafficSourcesRequest> request = null;
+        Response<DetachTrafficSourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachTrafficSourcesRequestMarshaller().marshall(super.beforeMarshalling(detachTrafficSourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachTrafficSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DetachTrafficSourcesResult> responseHandler = new StaxResponseHandler<DetachTrafficSourcesResult>(
+                    new DetachTrafficSourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -4371,6 +4651,110 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Cancels an instance refresh that is in progress and rolls back any changes that it made. Amazon EC2 Auto Scaling
+     * replaces any instances that were replaced during the instance refresh. This restores your Auto Scaling group to
+     * the configuration that it was using before the start of the instance refresh.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
+     * feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you
+     * make configuration changes.
+     * </p>
+     * <p>
+     * A rollback is not supported in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * There is no desired configuration specified for the instance refresh.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead
+     * of an AMI ID for the <code>ImageId</code> property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you receive a successful response from this operation, Amazon EC2 Auto Scaling immediately begins replacing
+     * instances. You can check the status of this operation through the <a>DescribeInstanceRefreshes</a> API operation.
+     * </p>
+     * 
+     * @param rollbackInstanceRefreshRequest
+     * @return Result of the RollbackInstanceRefresh operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws ActiveInstanceRefreshNotFoundException
+     *         The request failed because an active instance refresh or rollback for the specified Auto Scaling group
+     *         was not found.
+     * @throws IrreversibleInstanceRefreshException
+     *         The request failed because a desired configuration was not found or an incompatible launch template (uses
+     *         a Systems Manager parameter instead of an AMI ID) or launch template version (<code>$Latest</code> or
+     *         <code>$Default</code>) is present on the Auto Scaling group.
+     * @sample AmazonAutoScaling.RollbackInstanceRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RollbackInstanceRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RollbackInstanceRefreshResult rollbackInstanceRefresh(RollbackInstanceRefreshRequest request) {
+        request = beforeClientExecution(request);
+        return executeRollbackInstanceRefresh(request);
+    }
+
+    @SdkInternalApi
+    final RollbackInstanceRefreshResult executeRollbackInstanceRefresh(RollbackInstanceRefreshRequest rollbackInstanceRefreshRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rollbackInstanceRefreshRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RollbackInstanceRefreshRequest> request = null;
+        Response<RollbackInstanceRefreshResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RollbackInstanceRefreshRequestMarshaller().marshall(super.beforeMarshalling(rollbackInstanceRefreshRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RollbackInstanceRefresh");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RollbackInstanceRefreshResult> responseHandler = new StaxResponseHandler<RollbackInstanceRefreshResult>(
+                    new RollbackInstanceRefreshResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets the size of the specified Auto Scaling group.
      * </p>
      * <p>
@@ -4579,9 +4963,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Starts a new instance refresh operation. An instance refresh performs a rolling replacement of all or some
-     * instances in an Auto Scaling group. Each instance is terminated first and then replaced, which temporarily
-     * reduces the capacity available within your Auto Scaling group.
+     * Starts an instance refresh.
      * </p>
      * <p>
      * This operation is part of the <a
@@ -4592,10 +4974,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * process of updating instances in the group.
      * </p>
      * <p>
-     * If the call succeeds, it creates a new instance refresh request with a unique ID that you can use to track its
-     * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
-     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an instance refresh operation in
+     * If successful, the request's response contains a unique ID that you can use to track the progress of the instance
+     * refresh. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
+     * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an instance refresh that is in
      * progress, use the <a>CancelInstanceRefresh</a> API.
+     * </p>
+     * <p>
+     * An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured health checks, or
+     * not ignoring or allowing the termination of instances that are in <code>Standby</code> state or protected from
+     * scale in. You can monitor for failed EC2 launches using the scaling activities. To find the scaling activities,
+     * call the <a>DescribeScalingActivities</a> API.
+     * </p>
+     * <p>
+     * If you enable auto rollback, your Auto Scaling group will be rolled back automatically when the instance refresh
+     * fails. You can enable this feature before starting an instance refresh by specifying the
+     * <code>AutoRollback</code> property in the instance refresh preferences. Otherwise, to roll back an instance
+     * refresh before it finishes, use the <a>RollbackInstanceRefresh</a> API.
      * </p>
      * 
      * @param startInstanceRefreshRequest
@@ -4609,8 +5003,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
      *         group, instance, or load balancer).
      * @throws InstanceRefreshInProgressException
-     *         The request failed because an active instance refresh operation already exists for the specified Auto
-     *         Scaling group.
+     *         The request failed because an active instance refresh already exists for the specified Auto Scaling
+     *         group.
      * @sample AmazonAutoScaling.StartInstanceRefresh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh"
      *      target="_top">AWS API Documentation</a>

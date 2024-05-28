@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,6 +146,39 @@ public class AmazonChimeSDKIdentityAsyncClient extends AmazonChimeSDKIdentityCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAppInstanceBotResult> createAppInstanceBotAsync(CreateAppInstanceBotRequest request) {
+
+        return createAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppInstanceBotResult> createAppInstanceBotAsync(final CreateAppInstanceBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppInstanceBotRequest, CreateAppInstanceBotResult> asyncHandler) {
+        final CreateAppInstanceBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppInstanceBotResult>() {
+            @Override
+            public CreateAppInstanceBotResult call() throws Exception {
+                CreateAppInstanceBotResult result = null;
+
+                try {
+                    result = executeCreateAppInstanceBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAppInstanceUserResult> createAppInstanceUserAsync(CreateAppInstanceUserRequest request) {
 
         return createAppInstanceUserAsync(request, null);
@@ -229,6 +262,39 @@ public class AmazonChimeSDKIdentityAsyncClient extends AmazonChimeSDKIdentityCli
 
                 try {
                     result = executeDeleteAppInstanceAdmin(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceBotResult> deleteAppInstanceBotAsync(DeleteAppInstanceBotRequest request) {
+
+        return deleteAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppInstanceBotResult> deleteAppInstanceBotAsync(final DeleteAppInstanceBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceBotRequest, DeleteAppInstanceBotResult> asyncHandler) {
+        final DeleteAppInstanceBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppInstanceBotResult>() {
+            @Override
+            public DeleteAppInstanceBotResult call() throws Exception {
+                DeleteAppInstanceBotResult result = null;
+
+                try {
+                    result = executeDeleteAppInstanceBot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -379,6 +445,39 @@ public class AmazonChimeSDKIdentityAsyncClient extends AmazonChimeSDKIdentityCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAppInstanceBotResult> describeAppInstanceBotAsync(DescribeAppInstanceBotRequest request) {
+
+        return describeAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAppInstanceBotResult> describeAppInstanceBotAsync(final DescribeAppInstanceBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceBotRequest, DescribeAppInstanceBotResult> asyncHandler) {
+        final DescribeAppInstanceBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAppInstanceBotResult>() {
+            @Override
+            public DescribeAppInstanceBotResult call() throws Exception {
+                DescribeAppInstanceBotResult result = null;
+
+                try {
+                    result = executeDescribeAppInstanceBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAppInstanceUserResult> describeAppInstanceUserAsync(DescribeAppInstanceUserRequest request) {
 
         return describeAppInstanceUserAsync(request, null);
@@ -499,6 +598,39 @@ public class AmazonChimeSDKIdentityAsyncClient extends AmazonChimeSDKIdentityCli
 
                 try {
                     result = executeListAppInstanceAdmins(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceBotsResult> listAppInstanceBotsAsync(ListAppInstanceBotsRequest request) {
+
+        return listAppInstanceBotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppInstanceBotsResult> listAppInstanceBotsAsync(final ListAppInstanceBotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppInstanceBotsRequest, ListAppInstanceBotsResult> asyncHandler) {
+        final ListAppInstanceBotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppInstanceBotsResult>() {
+            @Override
+            public ListAppInstanceBotsResult call() throws Exception {
+                ListAppInstanceBotsResult result = null;
+
+                try {
+                    result = executeListAppInstanceBots(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -682,6 +814,41 @@ public class AmazonChimeSDKIdentityAsyncClient extends AmazonChimeSDKIdentityCli
     }
 
     @Override
+    public java.util.concurrent.Future<PutAppInstanceUserExpirationSettingsResult> putAppInstanceUserExpirationSettingsAsync(
+            PutAppInstanceUserExpirationSettingsRequest request) {
+
+        return putAppInstanceUserExpirationSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppInstanceUserExpirationSettingsResult> putAppInstanceUserExpirationSettingsAsync(
+            final PutAppInstanceUserExpirationSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAppInstanceUserExpirationSettingsRequest, PutAppInstanceUserExpirationSettingsResult> asyncHandler) {
+        final PutAppInstanceUserExpirationSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAppInstanceUserExpirationSettingsResult>() {
+            @Override
+            public PutAppInstanceUserExpirationSettingsResult call() throws Exception {
+                PutAppInstanceUserExpirationSettingsResult result = null;
+
+                try {
+                    result = executePutAppInstanceUserExpirationSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterAppInstanceUserEndpointResult> registerAppInstanceUserEndpointAsync(
             RegisterAppInstanceUserEndpointRequest request) {
 
@@ -800,6 +967,39 @@ public class AmazonChimeSDKIdentityAsyncClient extends AmazonChimeSDKIdentityCli
 
                 try {
                     result = executeUpdateAppInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceBotResult> updateAppInstanceBotAsync(UpdateAppInstanceBotRequest request) {
+
+        return updateAppInstanceBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppInstanceBotResult> updateAppInstanceBotAsync(final UpdateAppInstanceBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceBotRequest, UpdateAppInstanceBotResult> asyncHandler) {
+        final UpdateAppInstanceBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppInstanceBotResult>() {
+            @Override
+            public UpdateAppInstanceBotResult call() throws Exception {
+                UpdateAppInstanceBotResult result = null;
+
+                try {
+                    result = executeUpdateAppInstanceBot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,24 @@ public class AppBlockJsonUnmarshaller implements Unmarshaller<AppBlock, JsonUnma
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     appBlock.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PostSetupScriptDetails", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setPostSetupScriptDetails(ScriptDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PackagingType", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setPackagingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("State", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AppBlockErrors", targetDepth)) {
+                    context.nextToken();
+                    appBlock.setAppBlockErrors(new ListUnmarshaller<ErrorDetails>(ErrorDetailsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

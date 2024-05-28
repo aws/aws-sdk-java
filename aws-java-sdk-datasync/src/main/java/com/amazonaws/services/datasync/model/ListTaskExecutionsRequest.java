@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,31 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The maximum number of executed tasks to list.
+     * Specifies how many results you want in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     * Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     * response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     *        Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      */
 
     public void setTaskArn(String taskArn) {
@@ -62,10 +63,10 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     * @return Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      */
 
     public String getTaskArn() {
@@ -74,11 +75,11 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+     *        Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +90,11 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of executed tasks to list.
+     * Specifies how many results you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of executed tasks to list.
+     *        Specifies how many results you want in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -102,10 +103,10 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of executed tasks to list.
+     * Specifies how many results you want in the response.
      * </p>
      * 
-     * @return The maximum number of executed tasks to list.
+     * @return Specifies how many results you want in the response.
      */
 
     public Integer getMaxResults() {
@@ -114,11 +115,11 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of executed tasks to list.
+     * Specifies how many results you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of executed tasks to list.
+     *        Specifies how many results you want in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +130,13 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     * Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     * response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     *        Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     *        response.
      */
 
     public void setNextToken(String nextToken) {
@@ -142,10 +145,12 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     * Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     * response.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     * @return Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     *         response.
      */
 
     public String getNextToken() {
@@ -154,11 +159,13 @@ public class ListTaskExecutionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     * Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     * response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin the next list of the executed tasks.
+     *        Specifies an opaque string that indicates the position at which to begin the next list of results in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

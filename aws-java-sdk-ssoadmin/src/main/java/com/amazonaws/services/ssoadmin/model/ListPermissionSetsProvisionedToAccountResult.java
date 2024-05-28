@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
     private String nextToken;
     /**
      * <p>
-     * Defines the level of access that an AWS account has.
+     * Defines the level of access that an Amazon Web Services account has.
      * </p>
      */
     private java.util.List<String> permissionSets;
@@ -86,10 +86,10 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an AWS account has.
+     * Defines the level of access that an Amazon Web Services account has.
      * </p>
      * 
-     * @return Defines the level of access that an AWS account has.
+     * @return Defines the level of access that an Amazon Web Services account has.
      */
 
     public java.util.List<String> getPermissionSets() {
@@ -98,11 +98,11 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an AWS account has.
+     * Defines the level of access that an Amazon Web Services account has.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access that an AWS account has.
+     *        Defines the level of access that an Amazon Web Services account has.
      */
 
     public void setPermissionSets(java.util.Collection<String> permissionSets) {
@@ -116,7 +116,7 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an AWS account has.
+     * Defines the level of access that an Amazon Web Services account has.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access that an AWS account has.
+     *        Defines the level of access that an Amazon Web Services account has.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class ListPermissionSetsProvisionedToAccountResult extends com.amazonaws.
 
     /**
      * <p>
-     * Defines the level of access that an AWS account has.
+     * Defines the level of access that an Amazon Web Services account has.
      * </p>
      * 
      * @param permissionSets
-     *        Defines the level of access that an AWS account has.
+     *        Defines the level of access that an Amazon Web Services account has.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

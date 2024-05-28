@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,7 +95,7 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of routes to return.
+     * The maximum number of routes to return. If a value is not provided, the default is 1000.
      * </p>
      */
     private Integer maxResults;
@@ -652,11 +652,11 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of routes to return.
+     * The maximum number of routes to return. If a value is not provided, the default is 1000.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of routes to return.
+     *        The maximum number of routes to return. If a value is not provided, the default is 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -665,10 +665,10 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of routes to return.
+     * The maximum number of routes to return. If a value is not provided, the default is 1000.
      * </p>
      * 
-     * @return The maximum number of routes to return.
+     * @return The maximum number of routes to return. If a value is not provided, the default is 1000.
      */
 
     public Integer getMaxResults() {
@@ -677,11 +677,11 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of routes to return.
+     * The maximum number of routes to return. If a value is not provided, the default is 1000.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of routes to return.
+     *        The maximum number of routes to return. If a value is not provided, the default is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

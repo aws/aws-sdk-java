@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class AttributeGroupDetailsMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("createdBy").build();
 
     private static final AttributeGroupDetailsMarshaller instance = new AttributeGroupDetailsMarshaller();
 
@@ -53,6 +55,7 @@ public class AttributeGroupDetailsMarshaller {
             protocolMarshaller.marshall(attributeGroupDetails.getId(), ID_BINDING);
             protocolMarshaller.marshall(attributeGroupDetails.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(attributeGroupDetails.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(attributeGroupDetails.getCreatedBy(), CREATEDBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

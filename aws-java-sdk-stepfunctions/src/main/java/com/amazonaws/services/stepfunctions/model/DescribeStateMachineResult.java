@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
+     * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
      * </p>
      */
     private String stateMachineArn;
@@ -85,7 +90,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains
-     * security by granting Step Functions access to AWS resources.)
+     * security by granting Step Functions access to Amazon Web Services resources.)
      * </p>
      */
     private String roleArn;
@@ -99,24 +104,59 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      */
     private java.util.Date creationDate;
 
     private LoggingConfiguration loggingConfiguration;
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      */
     private TracingConfiguration tracingConfiguration;
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present
+     * only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     * </p>
+     */
+    private String label;
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     */
+    private String revisionId;
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) that identifies the state machine.
+     *        The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     *        <p>
+     *        If you specified a state machine version ARN in your request, the API returns the version ARN. The version
+     *        ARN is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -127,8 +167,17 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the state machine.
+     * @return The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     *         <p>
+     *         If you specified a state machine version ARN in your request, the API returns the version ARN. The
+     *         version ARN is a combination of state machine ARN and the version number separated by a colon (:). For
+     *         example, <code>stateMachineARN:1</code>.
      */
 
     public String getStateMachineArn() {
@@ -139,9 +188,18 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the state machine.
      * </p>
+     * <p>
+     * If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is
+     * a combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) that identifies the state machine.
+     *        The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     *        <p>
+     *        If you specified a state machine version ARN in your request, the API returns the version ARN. The version
+     *        ARN is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,12 +571,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains
-     * security by granting Step Functions access to AWS resources.)
+     * security by granting Step Functions access to Amazon Web Services resources.)
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-     *        maintains security by granting Step Functions access to AWS resources.)
+     *        maintains security by granting Step Functions access to Amazon Web Services resources.)
      */
 
     public void setRoleArn(String roleArn) {
@@ -528,11 +586,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains
-     * security by granting Step Functions access to AWS resources.)
+     * security by granting Step Functions access to Amazon Web Services resources.)
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-     *         maintains security by granting Step Functions access to AWS resources.)
+     *         maintains security by granting Step Functions access to Amazon Web Services resources.)
      */
 
     public String getRoleArn() {
@@ -542,12 +600,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains
-     * security by granting Step Functions access to AWS resources.)
+     * security by granting Step Functions access to Amazon Web Services resources.)
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-     *        maintains security by granting Step Functions access to AWS resources.)
+     *        maintains security by granting Step Functions access to Amazon Web Services resources.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,9 +691,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the state machine is created.
+     *        The date the state machine is created.</p>
+     *        <p>
+     *        For a state machine version, <code>creationDate</code> is the date the version was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -646,8 +709,13 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      * 
-     * @return The date the state machine is created.
+     * @return The date the state machine is created.</p>
+     *         <p>
+     *         For a state machine version, <code>creationDate</code> is the date the version was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -658,9 +726,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The date the state machine is created.
      * </p>
+     * <p>
+     * For a state machine version, <code>creationDate</code> is the date the version was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the state machine is created.
+     *        The date the state machine is created.</p>
+     *        <p>
+     *        For a state machine version, <code>creationDate</code> is the date the version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -697,11 +770,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      */
 
     public void setTracingConfiguration(TracingConfiguration tracingConfiguration) {
@@ -710,10 +783,10 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
-     * @return Selects whether AWS X-Ray tracing is enabled.
+     * @return Selects whether X-Ray tracing is enabled.
      */
 
     public TracingConfiguration getTracingConfiguration() {
@@ -722,16 +795,166 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStateMachineResult withTracingConfiguration(TracingConfiguration tracingConfiguration) {
         setTracingConfiguration(tracingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present
+     * only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     * </p>
+     * 
+     * @param label
+     *        A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is
+     *        present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     */
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present
+     * only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     * </p>
+     * 
+     * @return A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is
+     *         present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     */
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present
+     * only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     * </p>
+     * 
+     * @param label
+     *        A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is
+     *        present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineResult withLabel(String label) {
+        setLabel(label);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the state machine.</p>
+     *        <p>
+     *        Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration
+     *        used for executions without performing a diff of the properties, such as <code>definition</code> and
+     *        <code>roleArn</code>.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @return The revision identifier for the state machine.</p>
+     *         <p>
+     *         Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration
+     *         used for executions without performing a diff of the properties, such as <code>definition</code> and
+     *         <code>roleArn</code>.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the state machine.
+     * </p>
+     * <p>
+     * Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for
+     * executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the state machine.</p>
+     *        <p>
+     *        Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration
+     *        used for executions without performing a diff of the properties, such as <code>definition</code> and
+     *        <code>roleArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     * 
+     * @param description
+     *        The description of the state machine version.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     * 
+     * @return The description of the state machine version.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the state machine version.
+     * </p>
+     * 
+     * @param description
+     *        The description of the state machine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineResult withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -764,7 +987,13 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         if (getLoggingConfiguration() != null)
             sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
         if (getTracingConfiguration() != null)
-            sb.append("TracingConfiguration: ").append(getTracingConfiguration());
+            sb.append("TracingConfiguration: ").append(getTracingConfiguration()).append(",");
+        if (getLabel() != null)
+            sb.append("Label: ").append(getLabel()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -815,6 +1044,18 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTracingConfiguration() != null && other.getTracingConfiguration().equals(this.getTracingConfiguration()) == false)
             return false;
+        if (other.getLabel() == null ^ this.getLabel() == null)
+            return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
+            return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -832,6 +1073,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

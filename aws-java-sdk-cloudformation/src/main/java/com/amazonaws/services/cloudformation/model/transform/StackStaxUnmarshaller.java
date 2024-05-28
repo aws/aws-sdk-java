@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -177,6 +177,21 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
 
                 if (context.testExpression("DriftInformation", targetDepth)) {
                     stack.setDriftInformation(StackDriftInformationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RetainExceptOnCreate", targetDepth)) {
+                    stack.setRetainExceptOnCreate(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeletionMode", targetDepth)) {
+                    stack.setDeletionMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DetailedStatus", targetDepth)) {
+                    stack.setDetailedStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

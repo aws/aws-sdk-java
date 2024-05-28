@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,10 +63,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      * clients receive a configuration.
      * </p>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * To avoid excess charges, we recommend you use the <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     * >StartConfigurationSession</a> and <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     * >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to
+     * continue using <code>GetConfiguration</code>, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use
+     * for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned
+     * by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to
+     * <code>GetConfiguration</code>.
      * </p>
      * </important>
      * <p>
@@ -261,10 +267,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      * clients receive a configuration.
      * </p>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * To avoid excess charges, we recommend you use the <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     * >StartConfigurationSession</a> and <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     * >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to
+     * continue using <code>GetConfiguration</code>, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use
+     * for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned
+     * by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to
+     * <code>GetConfiguration</code>.
      * </p>
      * </important>
      * <p>
@@ -283,10 +295,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      *        each time your clients receive a configuration.
      *        </p>
      *        <p>
-     *        To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value
-     *        with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-     *        calls to <code>GetConfiguration</code> must pass this value by using the
-     *        <code>ClientConfigurationVersion</code> parameter.
+     *        To avoid excess charges, we recommend you use the <a
+     *        href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     *        >StartConfigurationSession</a> and <a
+     *        href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     *        >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you
+     *        choose to continue using <code>GetConfiguration</code>, we recommend that you include the
+     *        <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value
+     *        to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code>
+     *        attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved
+     *        for subsequent calls to <code>GetConfiguration</code>.
      *        </p>
      *        </important>
      *        <p>
@@ -311,10 +329,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      * clients receive a configuration.
      * </p>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * To avoid excess charges, we recommend you use the <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     * >StartConfigurationSession</a> and <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     * >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to
+     * continue using <code>GetConfiguration</code>, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use
+     * for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned
+     * by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to
+     * <code>GetConfiguration</code>.
      * </p>
      * </important>
      * <p>
@@ -332,10 +356,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      *         charged each time your clients receive a configuration.
      *         </p>
      *         <p>
-     *         To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value
-     *         with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-     *         calls to <code>GetConfiguration</code> must pass this value by using the
-     *         <code>ClientConfigurationVersion</code> parameter.
+     *         To avoid excess charges, we recommend you use the <a
+     *         href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     *         >StartConfigurationSession</a> and <a
+     *         href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     *         >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you
+     *         choose to continue using <code>GetConfiguration</code>, we recommend that you include the
+     *         <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value
+     *         to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code>
+     *         attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be
+     *         saved for subsequent calls to <code>GetConfiguration</code>.
      *         </p>
      *         </important>
      *         <p>
@@ -360,10 +390,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      * clients receive a configuration.
      * </p>
      * <p>
-     * To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with
-     * every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
-     * <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code>
-     * parameter.
+     * To avoid excess charges, we recommend you use the <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     * >StartConfigurationSession</a> and <a
+     * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     * >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you choose to
+     * continue using <code>GetConfiguration</code>, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value to use
+     * for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code> attribute returned
+     * by <code>GetConfiguration</code> when there is new or updated data, and should be saved for subsequent calls to
+     * <code>GetConfiguration</code>.
      * </p>
      * </important>
      * <p>
@@ -382,10 +418,16 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
      *        each time your clients receive a configuration.
      *        </p>
      *        <p>
-     *        To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value
-     *        with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-     *        calls to <code>GetConfiguration</code> must pass this value by using the
-     *        <code>ClientConfigurationVersion</code> parameter.
+     *        To avoid excess charges, we recommend you use the <a
+     *        href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/StartConfigurationSession.html"
+     *        >StartConfigurationSession</a> and <a
+     *        href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/GetLatestConfiguration.html"
+     *        >GetLatestConfiguration</a> APIs, which track the client configuration version on your behalf. If you
+     *        choose to continue using <code>GetConfiguration</code>, we recommend that you include the
+     *        <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. The value
+     *        to use for <code>ClientConfigurationVersion</code> comes from the <code>ConfigurationVersion</code>
+     *        attribute returned by <code>GetConfiguration</code> when there is new or updated data, and should be saved
+     *        for subsequent calls to <code>GetConfiguration</code>.
      *        </p>
      *        </important>
      *        <p>

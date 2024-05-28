@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class CreateUserGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
-     * value, although null is accepted.
+     * value, although null is accepted. Available for Redis only.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -207,11 +207,11 @@ public class CreateUserGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
-     * value, although null is accepted.
+     * value, although null is accepted. Available for Redis only.
      * </p>
      * 
      * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
-     *         a tag value, although null is accepted.
+     *         a tag value, although null is accepted. Available for Redis only.
      */
 
     public java.util.List<Tag> getTags() {
@@ -224,12 +224,12 @@ public class CreateUserGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
-     * value, although null is accepted.
+     * value, although null is accepted. Available for Redis only.
      * </p>
      * 
      * @param tags
      *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
-     *        tag value, although null is accepted.
+     *        tag value, although null is accepted. Available for Redis only.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -244,7 +244,7 @@ public class CreateUserGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
-     * value, although null is accepted.
+     * value, although null is accepted. Available for Redis only.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -254,7 +254,7 @@ public class CreateUserGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param tags
      *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
-     *        tag value, although null is accepted.
+     *        tag value, although null is accepted. Available for Redis only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,12 +271,12 @@ public class CreateUserGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
-     * value, although null is accepted.
+     * value, although null is accepted. Available for Redis only.
      * </p>
      * 
      * @param tags
      *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
-     *        tag value, although null is accepted.
+     *        tag value, although null is accepted. Available for Redis only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

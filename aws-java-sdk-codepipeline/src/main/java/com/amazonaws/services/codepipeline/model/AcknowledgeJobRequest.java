@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
     private String jobId;
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      */
     private String nonce;
@@ -84,14 +84,14 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned
-     *        this job.
+     *        A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *        one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this
+     *        job.
      */
 
     public void setNonce(String nonce) {
@@ -100,13 +100,13 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      * 
-     * @return A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *         only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned
-     *         this job.
+     * @return A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *         one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this
+     *         job.
      */
 
     public String getNonce() {
@@ -115,14 +115,14 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned
-     *        this job.
+     *        A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *        one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this
+     *        job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,39 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OutboundCallConfig implements Serializable, Cloneable, StructuredPojo {
 
-    private AnswerMachineDetectionConfig answerMachineDetectionConfig;
-
     private String connectContactFlowId;
-
-    private String connectQueueId;
 
     private String connectSourcePhoneNumber;
 
-    /**
-     * @param answerMachineDetectionConfig
-     */
+    private String connectQueueId;
 
-    public void setAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
-        this.answerMachineDetectionConfig = answerMachineDetectionConfig;
-    }
-
-    /**
-     * @return
-     */
-
-    public AnswerMachineDetectionConfig getAnswerMachineDetectionConfig() {
-        return this.answerMachineDetectionConfig;
-    }
-
-    /**
-     * @param answerMachineDetectionConfig
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public OutboundCallConfig withAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
-        setAnswerMachineDetectionConfig(answerMachineDetectionConfig);
-        return this;
-    }
+    private AnswerMachineDetectionConfig answerMachineDetectionConfig;
 
     /**
      * @param connectContactFlowId
@@ -85,32 +59,6 @@ public class OutboundCallConfig implements Serializable, Cloneable, StructuredPo
 
     public OutboundCallConfig withConnectContactFlowId(String connectContactFlowId) {
         setConnectContactFlowId(connectContactFlowId);
-        return this;
-    }
-
-    /**
-     * @param connectQueueId
-     */
-
-    public void setConnectQueueId(String connectQueueId) {
-        this.connectQueueId = connectQueueId;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getConnectQueueId() {
-        return this.connectQueueId;
-    }
-
-    /**
-     * @param connectQueueId
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public OutboundCallConfig withConnectQueueId(String connectQueueId) {
-        setConnectQueueId(connectQueueId);
         return this;
     }
 
@@ -141,6 +89,58 @@ public class OutboundCallConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param connectQueueId
+     */
+
+    public void setConnectQueueId(String connectQueueId) {
+        this.connectQueueId = connectQueueId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getConnectQueueId() {
+        return this.connectQueueId;
+    }
+
+    /**
+     * @param connectQueueId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutboundCallConfig withConnectQueueId(String connectQueueId) {
+        setConnectQueueId(connectQueueId);
+        return this;
+    }
+
+    /**
+     * @param answerMachineDetectionConfig
+     */
+
+    public void setAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
+        this.answerMachineDetectionConfig = answerMachineDetectionConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public AnswerMachineDetectionConfig getAnswerMachineDetectionConfig() {
+        return this.answerMachineDetectionConfig;
+    }
+
+    /**
+     * @param answerMachineDetectionConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutboundCallConfig withAnswerMachineDetectionConfig(AnswerMachineDetectionConfig answerMachineDetectionConfig) {
+        setAnswerMachineDetectionConfig(answerMachineDetectionConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,14 +152,14 @@ public class OutboundCallConfig implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAnswerMachineDetectionConfig() != null)
-            sb.append("AnswerMachineDetectionConfig: ").append(getAnswerMachineDetectionConfig()).append(",");
         if (getConnectContactFlowId() != null)
             sb.append("ConnectContactFlowId: ").append(getConnectContactFlowId()).append(",");
+        if (getConnectSourcePhoneNumber() != null)
+            sb.append("ConnectSourcePhoneNumber: ").append(getConnectSourcePhoneNumber()).append(",");
         if (getConnectQueueId() != null)
             sb.append("ConnectQueueId: ").append(getConnectQueueId()).append(",");
-        if (getConnectSourcePhoneNumber() != null)
-            sb.append("ConnectSourcePhoneNumber: ").append(getConnectSourcePhoneNumber());
+        if (getAnswerMachineDetectionConfig() != null)
+            sb.append("AnswerMachineDetectionConfig: ").append(getAnswerMachineDetectionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -174,21 +174,21 @@ public class OutboundCallConfig implements Serializable, Cloneable, StructuredPo
         if (obj instanceof OutboundCallConfig == false)
             return false;
         OutboundCallConfig other = (OutboundCallConfig) obj;
-        if (other.getAnswerMachineDetectionConfig() == null ^ this.getAnswerMachineDetectionConfig() == null)
-            return false;
-        if (other.getAnswerMachineDetectionConfig() != null && other.getAnswerMachineDetectionConfig().equals(this.getAnswerMachineDetectionConfig()) == false)
-            return false;
         if (other.getConnectContactFlowId() == null ^ this.getConnectContactFlowId() == null)
             return false;
         if (other.getConnectContactFlowId() != null && other.getConnectContactFlowId().equals(this.getConnectContactFlowId()) == false)
+            return false;
+        if (other.getConnectSourcePhoneNumber() == null ^ this.getConnectSourcePhoneNumber() == null)
+            return false;
+        if (other.getConnectSourcePhoneNumber() != null && other.getConnectSourcePhoneNumber().equals(this.getConnectSourcePhoneNumber()) == false)
             return false;
         if (other.getConnectQueueId() == null ^ this.getConnectQueueId() == null)
             return false;
         if (other.getConnectQueueId() != null && other.getConnectQueueId().equals(this.getConnectQueueId()) == false)
             return false;
-        if (other.getConnectSourcePhoneNumber() == null ^ this.getConnectSourcePhoneNumber() == null)
+        if (other.getAnswerMachineDetectionConfig() == null ^ this.getAnswerMachineDetectionConfig() == null)
             return false;
-        if (other.getConnectSourcePhoneNumber() != null && other.getConnectSourcePhoneNumber().equals(this.getConnectSourcePhoneNumber()) == false)
+        if (other.getAnswerMachineDetectionConfig() != null && other.getAnswerMachineDetectionConfig().equals(this.getAnswerMachineDetectionConfig()) == false)
             return false;
         return true;
     }
@@ -198,10 +198,10 @@ public class OutboundCallConfig implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAnswerMachineDetectionConfig() == null) ? 0 : getAnswerMachineDetectionConfig().hashCode());
         hashCode = prime * hashCode + ((getConnectContactFlowId() == null) ? 0 : getConnectContactFlowId().hashCode());
-        hashCode = prime * hashCode + ((getConnectQueueId() == null) ? 0 : getConnectQueueId().hashCode());
         hashCode = prime * hashCode + ((getConnectSourcePhoneNumber() == null) ? 0 : getConnectSourcePhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getConnectQueueId() == null) ? 0 : getConnectQueueId().hashCode());
+        hashCode = prime * hashCode + ((getAnswerMachineDetectionConfig() == null) ? 0 : getAnswerMachineDetectionConfig().hashCode());
         return hashCode;
     }
 

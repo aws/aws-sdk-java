@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -232,8 +232,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
             com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -245,8 +250,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
     java.util.concurrent.Future<ExchangeCodeForTokenResult> exchangeCodeForTokenAsync(ExchangeCodeForTokenRequest exchangeCodeForTokenRequest);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -354,6 +364,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<ExportThemesResult> exportThemesAsync(ExportThemesRequest exportThemesRequest,
             com.amazonaws.handlers.AsyncHandler<ExportThemesRequest, ExportThemesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @return A Java Future containing the result of the GetCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest getCodegenJobRequest);
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest getCodegenJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCodegenJobRequest, GetCodegenJobResult> asyncHandler);
 
     /**
      * <p>
@@ -481,6 +522,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @return A Java Future containing the result of the ListCodegenJobs operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest listCodegenJobsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCodegenJobs operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest listCodegenJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCodegenJobsRequest, ListCodegenJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of components for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -543,6 +615,37 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
+     * Returns a list of tags for a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags for a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of themes for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -574,7 +677,7 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Stores the metadata information about a feature on a form or view.
+     * Stores the metadata information about a feature on a form.
      * </p>
      * 
      * @param putMetadataFlagRequest
@@ -587,7 +690,7 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Stores the metadata information about a feature on a form or view.
+     * Stores the metadata information about a feature on a form.
      * </p>
      * 
      * @param putMetadataFlagRequest
@@ -604,8 +707,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
             com.amazonaws.handlers.AsyncHandler<PutMetadataFlagRequest, PutMetadataFlagResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -617,8 +725,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
     java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest refreshTokenRequest);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -633,6 +746,99 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
      */
     java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest refreshTokenRequest,
             com.amazonaws.handlers.AsyncHandler<RefreshTokenRequest, RefreshTokenResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @return A Java Future containing the result of the StartCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest startCodegenJobRequest);
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCodegenJob operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest startCodegenJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCodegenJobRequest, StartCodegenJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tags the resource with a tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Tags the resource with a tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untags a resource with a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Untags a resource with a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSAmplifyUIBuilderAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

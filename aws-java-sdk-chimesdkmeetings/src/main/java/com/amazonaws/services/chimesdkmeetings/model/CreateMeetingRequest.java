@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      */
     private String mediaRegion;
@@ -56,6 +57,13 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The external meeting ID.
+     * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
      * </p>
      */
     private String externalMeetingId;
@@ -106,7 +114,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified AWS Region for the AWS account.
+     * You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     * Services account.
      * </p>
      * </li>
      * <li>
@@ -127,7 +136,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <b>Minimum permissions</b>
      * </p>
      * <p>
-     * In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the
+     * In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the
      * tagging permission defined by the service that created the resource. For example, to tag a
      * <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the
      * following permissions:
@@ -200,7 +209,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      * 
      * @param mediaRegion
@@ -213,7 +223,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      *        </p>
      *        <p>
-     *        Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     *        Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     *        <code>us-gov-west-1</code>.
      */
 
     public void setMediaRegion(String mediaRegion) {
@@ -232,7 +243,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      * 
      * @return The Region in which to create the meeting.</p>
@@ -244,7 +256,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      *         </p>
      *         <p>
-     *         Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     *         Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     *         <code>us-gov-west-1</code>.
      */
 
     public String getMediaRegion() {
@@ -263,7 +276,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      * </p>
      * <p>
-     * Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     * Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     * <code>us-gov-west-1</code>.
      * </p>
      * 
      * @param mediaRegion
@@ -276,7 +290,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      *        </p>
      *        <p>
-     *        Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.
+     *        Available values in Amazon Web Services GovCloud (US) Regions: <code>us-gov-east-1</code>,
+     *        <code>us-gov-west-1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,9 +344,22 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @param externalMeetingId
-     *        The external meeting ID.
+     *        The external meeting ID.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *        Case insensitive.
      */
 
     public void setExternalMeetingId(String externalMeetingId) {
@@ -342,8 +370,21 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
-     * @return The external meeting ID.
+     * @return The external meeting ID.</p>
+     *         <p>
+     *         Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *         </p>
+     *         <p>
+     *         Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *         Case insensitive.
      */
 
     public String getExternalMeetingId() {
@@ -354,9 +395,22 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The external meeting ID.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @param externalMeetingId
-     *        The external meeting ID.
+     *        The external meeting ID.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *        Case insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,7 +636,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified AWS Region for the AWS account.
+     * You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     * Services account.
      * </p>
      * </li>
      * <li>
@@ -603,7 +658,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <b>Minimum permissions</b>
      * </p>
      * <p>
-     * In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the
+     * In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the
      * tagging permission defined by the service that created the resource. For example, to tag a
      * <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the
      * following permissions:
@@ -643,7 +698,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         You can only tag resources that are located in the specified AWS Region for the AWS account.
+     *         You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon
+     *         Web Services account.
      *         </p>
      *         </li>
      *         <li>
@@ -664,7 +720,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <b>Minimum permissions</b>
      *         </p>
      *         <p>
-     *         In addition to the <code>tag:TagResources </code>permission required by this operation, you must also
+     *         In addition to the <code>tag:TagResources</code> permission required by this operation, you must also
      *         have the tagging permission defined by the service that created the resource. For example, to tag a
      *         <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both
      *         of the following permissions:
@@ -710,7 +766,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified AWS Region for the AWS account.
+     * You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     * Services account.
      * </p>
      * </li>
      * <li>
@@ -731,7 +788,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <b>Minimum permissions</b>
      * </p>
      * <p>
-     * In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the
+     * In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the
      * tagging permission defined by the service that created the resource. For example, to tag a
      * <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the
      * following permissions:
@@ -772,7 +829,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        You can only tag resources that are located in the specified AWS Region for the AWS account.
+     *        You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     *        Services account.
      *        </p>
      *        </li>
      *        <li>
@@ -793,7 +851,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <b>Minimum permissions</b>
      *        </p>
      *        <p>
-     *        In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have
+     *        In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have
      *        the tagging permission defined by the service that created the resource. For example, to tag a
      *        <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both
      *        of the following permissions:
@@ -844,7 +902,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified AWS Region for the AWS account.
+     * You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     * Services account.
      * </p>
      * </li>
      * <li>
@@ -865,7 +924,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <b>Minimum permissions</b>
      * </p>
      * <p>
-     * In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the
+     * In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the
      * tagging permission defined by the service that created the resource. For example, to tag a
      * <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the
      * following permissions:
@@ -911,7 +970,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        You can only tag resources that are located in the specified AWS Region for the AWS account.
+     *        You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     *        Services account.
      *        </p>
      *        </li>
      *        <li>
@@ -932,7 +992,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <b>Minimum permissions</b>
      *        </p>
      *        <p>
-     *        In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have
+     *        In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have
      *        the tagging permission defined by the service that created the resource. For example, to tag a
      *        <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both
      *        of the following permissions:
@@ -985,7 +1045,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * You can only tag resources that are located in the specified AWS Region for the AWS account.
+     * You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     * Services account.
      * </p>
      * </li>
      * <li>
@@ -1006,7 +1067,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <b>Minimum permissions</b>
      * </p>
      * <p>
-     * In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the
+     * In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the
      * tagging permission defined by the service that created the resource. For example, to tag a
      * <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the
      * following permissions:
@@ -1047,7 +1108,8 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        You can only tag resources that are located in the specified AWS Region for the AWS account.
+     *        You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web
+     *        Services account.
      *        </p>
      *        </li>
      *        <li>
@@ -1068,7 +1130,7 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <b>Minimum permissions</b>
      *        </p>
      *        <p>
-     *        In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have
+     *        In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have
      *        the tagging permission defined by the service that created the resource. For example, to tag a
      *        <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both
      *        of the following permissions:

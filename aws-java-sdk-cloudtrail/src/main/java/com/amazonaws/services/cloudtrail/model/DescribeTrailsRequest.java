@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,37 +36,37 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
-     * If an empty list is specified, information for the trail in the current region is returned.
+     * If an empty list is specified, information for the trail in the current Region is returned.
      * </p>
      * <ul>
      * <li>
      * <p>
      * If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.
+     * the current Region is returned.
      * </p>
      * </li>
      * <li>
      * <p>
      * If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
+     * current Region and any associated shadow trails in other Regions is returned.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
      * If one or more trail names are specified, information is returned only if the names match the names of trails
-     * belonging only to the current region. To return information about a trail in another region, you must specify its
-     * trail ARN.
+     * belonging only to the current Region and current account. To return information about a trail in another Region,
+     * you must specify its trail ARN.
      * </p>
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> trailNameList;
     /**
      * <p>
-     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a
-     * trail that was created in a different region, or in the case of an organization trail, the replication of an
+     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a
+     * trail that was created in a different Region, or in the case of an organization trail, the replication of an
      * organization trail in member accounts. If you do not include shadow trails, organization trails in a member
-     * account and region replication trails will not be returned. The default is true.
+     * account and Region replication trails will not be returned. The default is true.
      * </p>
      */
     private Boolean includeShadowTrails;
@@ -79,27 +79,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
-     * If an empty list is specified, information for the trail in the current region is returned.
+     * If an empty list is specified, information for the trail in the current Region is returned.
      * </p>
      * <ul>
      * <li>
      * <p>
      * If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.
+     * the current Region is returned.
      * </p>
      * </li>
      * <li>
      * <p>
      * If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
+     * current Region and any associated shadow trails in other Regions is returned.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
      * If one or more trail names are specified, information is returned only if the names match the names of trails
-     * belonging only to the current region. To return information about a trail in another region, you must specify its
-     * trail ARN.
+     * belonging only to the current Region and current account. To return information about a trail in another Region,
+     * you must specify its trail ARN.
      * </p>
      * </note>
      * 
@@ -109,27 +109,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *         </p>
      *         <p>
-     *         If an empty list is specified, information for the trail in the current region is returned.
+     *         If an empty list is specified, information for the trail in the current Region is returned.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all
-     *         trails in the current region is returned.
+     *         trails in the current Region is returned.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in
-     *         the current region and any associated shadow trails in other regions is returned.
+     *         the current Region and any associated shadow trails in other Regions is returned.
      *         </p>
      *         </li>
      *         </ul>
      *         <note>
      *         <p>
      *         If one or more trail names are specified, information is returned only if the names match the names of
-     *         trails belonging only to the current region. To return information about a trail in another region, you
-     *         must specify its trail ARN.
+     *         trails belonging only to the current Region and current account. To return information about a trail in
+     *         another Region, you must specify its trail ARN.
      *         </p>
      */
 
@@ -148,27 +148,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
-     * If an empty list is specified, information for the trail in the current region is returned.
+     * If an empty list is specified, information for the trail in the current Region is returned.
      * </p>
      * <ul>
      * <li>
      * <p>
      * If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.
+     * the current Region is returned.
      * </p>
      * </li>
      * <li>
      * <p>
      * If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
+     * current Region and any associated shadow trails in other Regions is returned.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
      * If one or more trail names are specified, information is returned only if the names match the names of trails
-     * belonging only to the current region. To return information about a trail in another region, you must specify its
-     * trail ARN.
+     * belonging only to the current Region and current account. To return information about a trail in another Region,
+     * you must specify its trail ARN.
      * </p>
      * </note>
      * 
@@ -179,27 +179,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *        </p>
      *        <p>
-     *        If an empty list is specified, information for the trail in the current region is returned.
+     *        If an empty list is specified, information for the trail in the current Region is returned.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all
-     *        trails in the current region is returned.
+     *        trails in the current Region is returned.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in
-     *        the current region and any associated shadow trails in other regions is returned.
+     *        the current Region and any associated shadow trails in other Regions is returned.
      *        </p>
      *        </li>
      *        </ul>
      *        <note>
      *        <p>
      *        If one or more trail names are specified, information is returned only if the names match the names of
-     *        trails belonging only to the current region. To return information about a trail in another region, you
-     *        must specify its trail ARN.
+     *        trails belonging only to the current Region and current account. To return information about a trail in
+     *        another Region, you must specify its trail ARN.
      *        </p>
      */
 
@@ -220,27 +220,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
-     * If an empty list is specified, information for the trail in the current region is returned.
+     * If an empty list is specified, information for the trail in the current Region is returned.
      * </p>
      * <ul>
      * <li>
      * <p>
      * If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.
+     * the current Region is returned.
      * </p>
      * </li>
      * <li>
      * <p>
      * If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
+     * current Region and any associated shadow trails in other Regions is returned.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
      * If one or more trail names are specified, information is returned only if the names match the names of trails
-     * belonging only to the current region. To return information about a trail in another region, you must specify its
-     * trail ARN.
+     * belonging only to the current Region and current account. To return information about a trail in another Region,
+     * you must specify its trail ARN.
      * </p>
      * </note>
      * <p>
@@ -256,27 +256,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *        </p>
      *        <p>
-     *        If an empty list is specified, information for the trail in the current region is returned.
+     *        If an empty list is specified, information for the trail in the current Region is returned.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all
-     *        trails in the current region is returned.
+     *        trails in the current Region is returned.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in
-     *        the current region and any associated shadow trails in other regions is returned.
+     *        the current Region and any associated shadow trails in other Regions is returned.
      *        </p>
      *        </li>
      *        </ul>
      *        <note>
      *        <p>
      *        If one or more trail names are specified, information is returned only if the names match the names of
-     *        trails belonging only to the current region. To return information about a trail in another region, you
-     *        must specify its trail ARN.
+     *        trails belonging only to the current Region and current account. To return information about a trail in
+     *        another Region, you must specify its trail ARN.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -299,27 +299,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
-     * If an empty list is specified, information for the trail in the current region is returned.
+     * If an empty list is specified, information for the trail in the current Region is returned.
      * </p>
      * <ul>
      * <li>
      * <p>
      * If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in
-     * the current region is returned.
+     * the current Region is returned.
      * </p>
      * </li>
      * <li>
      * <p>
      * If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the
-     * current region and any associated shadow trails in other regions is returned.
+     * current Region and any associated shadow trails in other Regions is returned.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
      * If one or more trail names are specified, information is returned only if the names match the names of trails
-     * belonging only to the current region. To return information about a trail in another region, you must specify its
-     * trail ARN.
+     * belonging only to the current Region and current account. To return information about a trail in another Region,
+     * you must specify its trail ARN.
      * </p>
      * </note>
      * 
@@ -330,27 +330,27 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      *        </p>
      *        <p>
-     *        If an empty list is specified, information for the trail in the current region is returned.
+     *        If an empty list is specified, information for the trail in the current Region is returned.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all
-     *        trails in the current region is returned.
+     *        trails in the current Region is returned.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in
-     *        the current region and any associated shadow trails in other regions is returned.
+     *        the current Region and any associated shadow trails in other Regions is returned.
      *        </p>
      *        </li>
      *        </ul>
      *        <note>
      *        <p>
      *        If one or more trail names are specified, information is returned only if the names match the names of
-     *        trails belonging only to the current region. To return information about a trail in another region, you
-     *        must specify its trail ARN.
+     *        trails belonging only to the current Region and current account. To return information about a trail in
+     *        another Region, you must specify its trail ARN.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -362,17 +362,17 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a
-     * trail that was created in a different region, or in the case of an organization trail, the replication of an
+     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a
+     * trail that was created in a different Region, or in the case of an organization trail, the replication of an
      * organization trail in member accounts. If you do not include shadow trails, organization trails in a member
-     * account and region replication trails will not be returned. The default is true.
+     * account and Region replication trails will not be returned. The default is true.
      * </p>
      * 
      * @param includeShadowTrails
-     *        Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region
-     *        of a trail that was created in a different region, or in the case of an organization trail, the
+     *        Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region
+     *        of a trail that was created in a different Region, or in the case of an organization trail, the
      *        replication of an organization trail in member accounts. If you do not include shadow trails, organization
-     *        trails in a member account and region replication trails will not be returned. The default is true.
+     *        trails in a member account and Region replication trails will not be returned. The default is true.
      */
 
     public void setIncludeShadowTrails(Boolean includeShadowTrails) {
@@ -381,16 +381,16 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a
-     * trail that was created in a different region, or in the case of an organization trail, the replication of an
+     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a
+     * trail that was created in a different Region, or in the case of an organization trail, the replication of an
      * organization trail in member accounts. If you do not include shadow trails, organization trails in a member
-     * account and region replication trails will not be returned. The default is true.
+     * account and Region replication trails will not be returned. The default is true.
      * </p>
      * 
-     * @return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region
-     *         of a trail that was created in a different region, or in the case of an organization trail, the
+     * @return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region
+     *         of a trail that was created in a different Region, or in the case of an organization trail, the
      *         replication of an organization trail in member accounts. If you do not include shadow trails,
-     *         organization trails in a member account and region replication trails will not be returned. The default
+     *         organization trails in a member account and Region replication trails will not be returned. The default
      *         is true.
      */
 
@@ -400,17 +400,17 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a
-     * trail that was created in a different region, or in the case of an organization trail, the replication of an
+     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a
+     * trail that was created in a different Region, or in the case of an organization trail, the replication of an
      * organization trail in member accounts. If you do not include shadow trails, organization trails in a member
-     * account and region replication trails will not be returned. The default is true.
+     * account and Region replication trails will not be returned. The default is true.
      * </p>
      * 
      * @param includeShadowTrails
-     *        Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region
-     *        of a trail that was created in a different region, or in the case of an organization trail, the
+     *        Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region
+     *        of a trail that was created in a different Region, or in the case of an organization trail, the
      *        replication of an organization trail in member accounts. If you do not include shadow trails, organization
-     *        trails in a member account and region replication trails will not be returned. The default is true.
+     *        trails in a member account and Region replication trails will not be returned. The default is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,16 +421,16 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a
-     * trail that was created in a different region, or in the case of an organization trail, the replication of an
+     * Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a
+     * trail that was created in a different Region, or in the case of an organization trail, the replication of an
      * organization trail in member accounts. If you do not include shadow trails, organization trails in a member
-     * account and region replication trails will not be returned. The default is true.
+     * account and Region replication trails will not be returned. The default is true.
      * </p>
      * 
-     * @return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region
-     *         of a trail that was created in a different region, or in the case of an organization trail, the
+     * @return Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region
+     *         of a trail that was created in a different Region, or in the case of an organization trail, the
      *         replication of an organization trail in member accounts. If you do not include shadow trails,
-     *         organization trails in a member account and region replication trails will not be returned. The default
+     *         organization trails in a member account and Region replication trails will not be returned. The default
      *         is true.
      */
 

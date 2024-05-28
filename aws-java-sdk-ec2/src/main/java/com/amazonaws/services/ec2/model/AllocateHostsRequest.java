@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,7 +79,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     private String instanceFamily;
     /**
      * <p>
-     * The number of Dedicated Hosts to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the
+     * Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon
+     * EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and
+     * <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs
+     * specified.
      * </p>
      */
     private Integer quantity;
@@ -103,10 +107,44 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     private String hostRecovery;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you
+     * specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.
+     * </p>
+     * <p>
+     * If you are allocating the Dedicated Host in a Region, omit this parameter.
      * </p>
      */
     private String outpostArn;
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     */
+    private String hostMaintenance;
+    /**
+     * <p>
+     * The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware
+     * assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you
+     * specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host
+     * on each specified hardware asset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> assetIds;
 
     /**
      * <p>
@@ -492,11 +530,19 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The number of Dedicated Hosts to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the
+     * Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon
+     * EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and
+     * <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs
+     * specified.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated Hosts to allocate to your account with these parameters.
+     *        The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the
+     *        Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case,
+     *        Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both
+     *        <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to
+     *        the number of asset IDs specified.
      */
 
     public void setQuantity(Integer quantity) {
@@ -505,10 +551,18 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The number of Dedicated Hosts to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the
+     * Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon
+     * EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and
+     * <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs
+     * specified.
      * </p>
      * 
-     * @return The number of Dedicated Hosts to allocate to your account with these parameters.
+     * @return The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating
+     *         the Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this
+     *         case, Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both
+     *         <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to
+     *         the number of asset IDs specified.
      */
 
     public Integer getQuantity() {
@@ -517,11 +571,19 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The number of Dedicated Hosts to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the
+     * Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon
+     * EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both <b>AssetIds</b> and
+     * <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to the number of asset IDs
+     * specified.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated Hosts to allocate to your account with these parameters.
+     *        The number of Dedicated Hosts to allocate to your account with these parameters. If you are allocating the
+     *        Dedicated Hosts on an Outpost, and you specify <b>AssetIds</b>, you can omit this parameter. In this case,
+     *        Amazon EC2 allocates a Dedicated Host on each specified hardware asset. If you specify both
+     *        <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for <b>Quantity</b> must be equal to
+     *        the number of asset IDs specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -733,11 +795,18 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you
+     * specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.
+     * </p>
+     * <p>
+     * If you are allocating the Dedicated Host in a Region, omit this parameter.
      * </p>
      * 
      * @param outpostArn
      *        The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+     *        If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+     *        <p>
+     *        If you are allocating the Dedicated Host in a Region, omit this parameter.
      */
 
     public void setOutpostArn(String outpostArn) {
@@ -746,11 +815,17 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you
+     * specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.
+     * </p>
+     * <p>
+     * If you are allocating the Dedicated Host in a Region, omit this parameter.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated
-     *         Host.
+     *         Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+     *         <p>
+     *         If you are allocating the Dedicated Host in a Region, omit this parameter.
      */
 
     public String getOutpostArn() {
@@ -759,16 +834,317 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you
+     * specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.
+     * </p>
+     * <p>
+     * If you are allocating the Dedicated Host in a Region, omit this parameter.
      * </p>
      * 
      * @param outpostArn
      *        The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host.
+     *        If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p>
+     *        <p>
+     *        If you are allocating the Dedicated Host in a Region, omit this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateHostsRequest withOutpostArn(String outpostArn) {
         setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @see HostMaintenance
+     */
+
+    public void setHostMaintenance(String hostMaintenance) {
+        this.hostMaintenance = hostMaintenance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *         maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @see HostMaintenance
+     */
+
+    public String getHostMaintenance() {
+        return this.hostMaintenance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostMaintenance
+     */
+
+    public AllocateHostsRequest withHostMaintenance(String hostMaintenance) {
+        setHostMaintenance(hostMaintenance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @see HostMaintenance
+     */
+
+    public void setHostMaintenance(HostMaintenance hostMaintenance) {
+        withHostMaintenance(hostMaintenance);
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostMaintenance
+     */
+
+    public AllocateHostsRequest withHostMaintenance(HostMaintenance hostMaintenance) {
+        this.hostMaintenance = hostMaintenance.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware
+     * assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you
+     * specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host
+     * on each specified hardware asset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific
+     *         hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is
+     *         supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region,
+     *         omit this parameter.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a
+     *         Dedicated Host on each specified hardware asset.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal
+     *         to the number of asset IDs specified.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<String> getAssetIds() {
+        if (assetIds == null) {
+            assetIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return assetIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware
+     * assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you
+     * specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host
+     * on each specified hardware asset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetIds
+     *        The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific
+     *        hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is
+     *        supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region,
+     *        omit this parameter.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a
+     *        Dedicated Host on each specified hardware asset.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal
+     *        to the number of asset IDs specified.
+     *        </p>
+     *        </li>
+     */
+
+    public void setAssetIds(java.util.Collection<String> assetIds) {
+        if (assetIds == null) {
+            this.assetIds = null;
+            return;
+        }
+
+        this.assetIds = new com.amazonaws.internal.SdkInternalList<String>(assetIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware
+     * assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you
+     * specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host
+     * on each specified hardware asset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetIds(java.util.Collection)} or {@link #withAssetIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param assetIds
+     *        The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific
+     *        hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is
+     *        supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region,
+     *        omit this parameter.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a
+     *        Dedicated Host on each specified hardware asset.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal
+     *        to the number of asset IDs specified.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateHostsRequest withAssetIds(String... assetIds) {
+        if (this.assetIds == null) {
+            setAssetIds(new com.amazonaws.internal.SdkInternalList<String>(assetIds.length));
+        }
+        for (String ele : assetIds) {
+            this.assetIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific hardware
+     * assets on an Outpost can help to minimize latency between your workloads. This parameter is supported only if you
+     * specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit this parameter.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host
+     * on each specified hardware asset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetIds
+     *        The IDs of the Outpost hardware assets on which to allocate the Dedicated Hosts. Targeting specific
+     *        hardware assets on an Outpost can help to minimize latency between your workloads. This parameter is
+     *        supported only if you specify <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region,
+     *        omit this parameter.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you specify this parameter, you can omit <b>Quantity</b>. In this case, Amazon EC2 allocates a
+     *        Dedicated Host on each specified hardware asset.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you specify both <b>AssetIds</b> and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal
+     *        to the number of asset IDs specified.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateHostsRequest withAssetIds(java.util.Collection<String> assetIds) {
+        setAssetIds(assetIds);
         return this;
     }
 
@@ -812,7 +1188,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         if (getHostRecovery() != null)
             sb.append("HostRecovery: ").append(getHostRecovery()).append(",");
         if (getOutpostArn() != null)
-            sb.append("OutpostArn: ").append(getOutpostArn());
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getHostMaintenance() != null)
+            sb.append("HostMaintenance: ").append(getHostMaintenance()).append(",");
+        if (getAssetIds() != null)
+            sb.append("AssetIds: ").append(getAssetIds());
         sb.append("}");
         return sb.toString();
     }
@@ -863,6 +1243,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
             return false;
+        if (other.getHostMaintenance() == null ^ this.getHostMaintenance() == null)
+            return false;
+        if (other.getHostMaintenance() != null && other.getHostMaintenance().equals(this.getHostMaintenance()) == false)
+            return false;
+        if (other.getAssetIds() == null ^ this.getAssetIds() == null)
+            return false;
+        if (other.getAssetIds() != null && other.getAssetIds().equals(this.getAssetIds()) == false)
+            return false;
         return true;
     }
 
@@ -880,6 +1268,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getHostMaintenance() == null) ? 0 : getHostMaintenance().hashCode());
+        hashCode = prime * hashCode + ((getAssetIds() == null) ? 0 : getAssetIds().hashCode());
         return hashCode;
     }
 

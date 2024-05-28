@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class RepositoryMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloneUrlSsh").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
 
     private static final RepositoryMetadataMarshaller instance = new RepositoryMetadataMarshaller();
 
@@ -74,6 +76,7 @@ public class RepositoryMetadataMarshaller {
             protocolMarshaller.marshall(repositoryMetadata.getCloneUrlHttp(), CLONEURLHTTP_BINDING);
             protocolMarshaller.marshall(repositoryMetadata.getCloneUrlSsh(), CLONEURLSSH_BINDING);
             protocolMarshaller.marshall(repositoryMetadata.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(repositoryMetadata.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

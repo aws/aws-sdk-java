@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,9 +14,8 @@
 /**
  * <fullname>DataSync</fullname>
  * <p>
- * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
- * providers and Amazon Web Services storage services.
+ * DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly,
+ * easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services.
  * </p>
  * <p>
  * This API interface reference includes documentation for using DataSync programmatically. For complete information,

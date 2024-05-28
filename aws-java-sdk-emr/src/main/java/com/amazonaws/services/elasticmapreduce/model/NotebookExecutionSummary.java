@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -121,6 +121,18 @@ public class NotebookExecutionSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     */
+    private NotebookS3LocationForOutput notebookS3Location;
+    /**
+     * <p>
+     * The unique ID of the execution engine for the notebook execution.
+     * </p>
+     */
+    private String executionEngineId;
 
     /**
      * <p>
@@ -826,6 +838,86 @@ public class NotebookExecutionSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     * 
+     * @param notebookS3Location
+     *        The Amazon S3 location that stores the notebook execution input.
+     */
+
+    public void setNotebookS3Location(NotebookS3LocationForOutput notebookS3Location) {
+        this.notebookS3Location = notebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     * 
+     * @return The Amazon S3 location that stores the notebook execution input.
+     */
+
+    public NotebookS3LocationForOutput getNotebookS3Location() {
+        return this.notebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     * 
+     * @param notebookS3Location
+     *        The Amazon S3 location that stores the notebook execution input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecutionSummary withNotebookS3Location(NotebookS3LocationForOutput notebookS3Location) {
+        setNotebookS3Location(notebookS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the execution engine for the notebook execution.
+     * </p>
+     * 
+     * @param executionEngineId
+     *        The unique ID of the execution engine for the notebook execution.
+     */
+
+    public void setExecutionEngineId(String executionEngineId) {
+        this.executionEngineId = executionEngineId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the execution engine for the notebook execution.
+     * </p>
+     * 
+     * @return The unique ID of the execution engine for the notebook execution.
+     */
+
+    public String getExecutionEngineId() {
+        return this.executionEngineId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the execution engine for the notebook execution.
+     * </p>
+     * 
+     * @param executionEngineId
+     *        The unique ID of the execution engine for the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecutionSummary withExecutionEngineId(String executionEngineId) {
+        setExecutionEngineId(executionEngineId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -848,7 +940,11 @@ public class NotebookExecutionSummary implements Serializable, Cloneable, Struct
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime());
+            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getNotebookS3Location() != null)
+            sb.append("NotebookS3Location: ").append(getNotebookS3Location()).append(",");
+        if (getExecutionEngineId() != null)
+            sb.append("ExecutionEngineId: ").append(getExecutionEngineId());
         sb.append("}");
         return sb.toString();
     }
@@ -887,6 +983,14 @@ public class NotebookExecutionSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getNotebookS3Location() == null ^ this.getNotebookS3Location() == null)
+            return false;
+        if (other.getNotebookS3Location() != null && other.getNotebookS3Location().equals(this.getNotebookS3Location()) == false)
+            return false;
+        if (other.getExecutionEngineId() == null ^ this.getExecutionEngineId() == null)
+            return false;
+        if (other.getExecutionEngineId() != null && other.getExecutionEngineId().equals(this.getExecutionEngineId()) == false)
+            return false;
         return true;
     }
 
@@ -901,6 +1005,8 @@ public class NotebookExecutionSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getNotebookS3Location() == null) ? 0 : getNotebookS3Location().hashCode());
+        hashCode = prime * hashCode + ((getExecutionEngineId() == null) ? 0 : getExecutionEngineId().hashCode());
         return hashCode;
     }
 

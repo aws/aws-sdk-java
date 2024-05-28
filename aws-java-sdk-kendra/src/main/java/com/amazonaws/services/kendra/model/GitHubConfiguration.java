@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provides the configuration information to connect to GitHub as your data source.
  * </p>
+ * <note>
+ * <p>
+ * Amazon Kendra now supports an upgraded GitHub connector.
+ * </p>
+ * <p>
+ * You must now use the <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration
+ * </a> object instead of the <code>GitHubConfiguration</code> object to configure your connector.
+ * </p>
+ * <p>
+ * Connectors configured using the older console and API architecture will continue to function as configured. However,
+ * you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create
+ * a new connector.
+ * </p>
+ * <p>
+ * We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the
+ * older architecture is scheduled to end by June 2024.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GitHubConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -55,9 +74,8 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.
+     * personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -381,9 +399,8 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.
+     * personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -394,9 +411,9 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">
-     *        Authentication for a GitHub data source</a>.
+     *        personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see
+     *        <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data
+     *        source</a>.
      *        </p>
      *        </li>
      */
@@ -413,9 +430,8 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.
+     * personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -425,9 +441,9 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see
-     *         <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">
-     *         Authentication for a GitHub data source</a>.
+     *         personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see
+     *         <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data
+     *         source</a>.
      *         </p>
      *         </li>
      */
@@ -444,9 +460,8 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">Authentication
-     * for a GitHub data source</a>.
+     * personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -457,9 +472,9 @@ public class GitHubConfiguration implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        githubToken—The access token created in GitHub. For more information on creating a token in GitHub, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html#github-authentication">
-     *        Authentication for a GitHub data source</a>.
+     *        personalToken—The access token created in GitHub. For more information on creating a token in GitHub, see
+     *        <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html">Using a GitHub data
+     *        source</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,16 @@ public class NodeRangePropertyJsonUnmarshaller implements Unmarshaller<NodeRange
                 if (context.testExpression("container", targetDepth)) {
                     context.nextToken();
                     nodeRangeProperty.setContainer(ContainerPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("instanceTypes", targetDepth)) {
+                    context.nextToken();
+                    nodeRangeProperty.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ecsProperties", targetDepth)) {
+                    context.nextToken();
+                    nodeRangeProperty.setEcsProperties(EcsPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

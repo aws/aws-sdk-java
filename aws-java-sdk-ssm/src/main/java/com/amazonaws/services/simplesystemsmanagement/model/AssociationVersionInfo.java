@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -173,6 +173,14 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
      * </p>
      */
     private Integer scheduleOffset;
+    /**
+     * <p>
+     * The number of hours that an association can run on specified targets. After the resulting cutoff time passes,
+     * associations that are currently running are cancelled, and no pending executions are started on remaining
+     * targets.
+     * </p>
+     */
+    private Integer duration;
     /**
      * <p>
      * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
@@ -1339,6 +1347,58 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The number of hours that an association can run on specified targets. After the resulting cutoff time passes,
+     * associations that are currently running are cancelled, and no pending executions are started on remaining
+     * targets.
+     * </p>
+     * 
+     * @param duration
+     *        The number of hours that an association can run on specified targets. After the resulting cutoff time
+     *        passes, associations that are currently running are cancelled, and no pending executions are started on
+     *        remaining targets.
+     */
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * <p>
+     * The number of hours that an association can run on specified targets. After the resulting cutoff time passes,
+     * associations that are currently running are cancelled, and no pending executions are started on remaining
+     * targets.
+     * </p>
+     * 
+     * @return The number of hours that an association can run on specified targets. After the resulting cutoff time
+     *         passes, associations that are currently running are cancelled, and no pending executions are started on
+     *         remaining targets.
+     */
+
+    public Integer getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * <p>
+     * The number of hours that an association can run on specified targets. After the resulting cutoff time passes,
+     * associations that are currently running are cancelled, and no pending executions are started on remaining
+     * targets.
+     * </p>
+     * 
+     * @param duration
+     *        The number of hours that an association can run on specified targets. After the resulting cutoff time
+     *        passes, associations that are currently running are cancelled, and no pending executions are started on
+     *        remaining targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationVersionInfo withDuration(Integer duration) {
+        setDuration(duration);
+        return this;
+    }
+
+    /**
+     * <p>
      * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
      * together.
      * </p>
@@ -1466,6 +1526,8 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
             sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
         if (getScheduleOffset() != null)
             sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
+        if (getDuration() != null)
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getTargetMaps() != null)
             sb.append("TargetMaps: ").append(getTargetMaps());
         sb.append("}");
@@ -1554,6 +1616,10 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
             return false;
         if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
             return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
+            return false;
         if (other.getTargetMaps() == null ^ this.getTargetMaps() == null)
             return false;
         if (other.getTargetMaps() != null && other.getTargetMaps().equals(this.getTargetMaps()) == false)
@@ -1584,6 +1650,7 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getCalendarNames() == null) ? 0 : getCalendarNames().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getTargetMaps() == null) ? 0 : getTargetMaps().hashCode());
         return hashCode;
     }

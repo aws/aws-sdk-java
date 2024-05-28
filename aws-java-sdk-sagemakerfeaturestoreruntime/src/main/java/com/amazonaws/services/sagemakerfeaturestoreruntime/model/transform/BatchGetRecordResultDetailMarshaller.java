@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class BatchGetRecordResultDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecordIdentifierValueAsString").build();
     private static final MarshallingInfo<List> RECORD_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Record").build();
+    private static final MarshallingInfo<String> EXPIRESAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ExpiresAt").build();
 
     private static final BatchGetRecordResultDetailMarshaller instance = new BatchGetRecordResultDetailMarshaller();
 
@@ -54,6 +56,7 @@ public class BatchGetRecordResultDetailMarshaller {
             protocolMarshaller.marshall(batchGetRecordResultDetail.getFeatureGroupName(), FEATUREGROUPNAME_BINDING);
             protocolMarshaller.marshall(batchGetRecordResultDetail.getRecordIdentifierValueAsString(), RECORDIDENTIFIERVALUEASSTRING_BINDING);
             protocolMarshaller.marshall(batchGetRecordResultDetail.getRecord(), RECORD_BINDING);
+            protocolMarshaller.marshall(batchGetRecordResultDetail.getExpiresAt(), EXPIRESAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

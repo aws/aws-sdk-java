@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains information about the event destination that the specified email sending events will be published to.
+ * Contains information about an event destination.
  * </p>
  * <note>
  * <p>
@@ -28,9 +28,8 @@ import javax.annotation.Generated;
  * <p>
  * Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon
  * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using
- * configuration sets, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
+ * SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination" target="_top">AWS API
@@ -41,17 +40,17 @@ public class EventDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the event destination. The name must:
+     * The name of the event destination. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -69,6 +68,49 @@ public class EventDestination implements Serializable, Cloneable {
      * <p>
      * The type of email sending events to publish to the event destination.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard
+     * bounce.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>complaint</code> - The recipient marked the email as spam.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>open</code> - The recipient received the email and opened it in their email client.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> matchingEventTypes;
     /**
@@ -95,32 +137,32 @@ public class EventDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the event destination. The name must:
+     * The name of the event destination. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the event destination. The name must:</p>
+     *        The name of the event destination. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -131,31 +173,31 @@ public class EventDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the event destination. The name must:
+     * The name of the event destination. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the event destination. The name must:</p>
+     * @return The name of the event destination. The name must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 64 characters.
+     *         Contain 64 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -166,32 +208,32 @@ public class EventDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the event destination. The name must:
+     * The name of the event destination. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the event destination. The name must:</p>
+     *        The name of the event destination. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -274,8 +316,93 @@ public class EventDestination implements Serializable, Cloneable {
      * <p>
      * The type of email sending events to publish to the event destination.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard
+     * bounce.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>complaint</code> - The recipient marked the email as spam.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>open</code> - The recipient received the email and opened it in their email client.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of email sending events to publish to the event destination.
+     * @return The type of email sending events to publish to the event destination.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a
+     *         hard bounce.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>complaint</code> - The recipient marked the email as spam.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>open</code> - The recipient received the email and opened it in their email client.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>click</code> - The recipient clicked one or more links in the email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     *         </p>
+     *         </li>
      * @see EventType
      */
 
@@ -290,9 +417,94 @@ public class EventDestination implements Serializable, Cloneable {
      * <p>
      * The type of email sending events to publish to the event destination.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard
+     * bounce.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>complaint</code> - The recipient marked the email as spam.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>open</code> - The recipient received the email and opened it in their email client.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param matchingEventTypes
-     *        The type of email sending events to publish to the event destination.
+     *        The type of email sending events to publish to the event destination.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a
+     *        hard bounce.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>complaint</code> - The recipient marked the email as spam.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>open</code> - The recipient received the email and opened it in their email client.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>click</code> - The recipient clicked one or more links in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     *        </p>
+     *        </li>
      * @see EventType
      */
 
@@ -309,6 +521,49 @@ public class EventDestination implements Serializable, Cloneable {
      * <p>
      * The type of email sending events to publish to the event destination.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard
+     * bounce.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>complaint</code> - The recipient marked the email as spam.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>open</code> - The recipient received the email and opened it in their email client.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if
@@ -316,7 +571,49 @@ public class EventDestination implements Serializable, Cloneable {
      * </p>
      * 
      * @param matchingEventTypes
-     *        The type of email sending events to publish to the event destination.
+     *        The type of email sending events to publish to the event destination.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a
+     *        hard bounce.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>complaint</code> - The recipient marked the email as spam.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>open</code> - The recipient received the email and opened it in their email client.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>click</code> - The recipient clicked one or more links in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -335,9 +632,94 @@ public class EventDestination implements Serializable, Cloneable {
      * <p>
      * The type of email sending events to publish to the event destination.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard
+     * bounce.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>complaint</code> - The recipient marked the email as spam.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>open</code> - The recipient received the email and opened it in their email client.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param matchingEventTypes
-     *        The type of email sending events to publish to the event destination.
+     *        The type of email sending events to publish to the event destination.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a
+     *        hard bounce.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>complaint</code> - The recipient marked the email as spam.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>open</code> - The recipient received the email and opened it in their email client.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>click</code> - The recipient clicked one or more links in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -351,9 +733,94 @@ public class EventDestination implements Serializable, Cloneable {
      * <p>
      * The type of email sending events to publish to the event destination.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a hard
+     * bounce.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>complaint</code> - The recipient marked the email as spam.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>open</code> - The recipient received the email and opened it in their email client.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param matchingEventTypes
-     *        The type of email sending events to publish to the event destination.
+     *        The type of email sending events to publish to the event destination.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>send</code> - The call was successful and Amazon SES is attempting to deliver the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>reject</code> - Amazon SES determined that the email contained a virus and rejected it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bounce</code> - The recipient's mail server permanently rejected the email. This corresponds to a
+     *        hard bounce.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>complaint</code> - The recipient marked the email as spam.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's mail server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>open</code> - The recipient received the email and opened it in their email client.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>click</code> - The recipient clicked one or more links in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>renderingFailure</code> - Amazon SES did not send the email because of a template rendering issue.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */

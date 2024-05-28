@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing an OpenID Connect (OIDC) configuration. Before associating an OIDC identity provider to your
  * cluster, review the considerations in <a
  * href="https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html">Authenticating users
- * for your cluster from an OpenID Connect identity provider</a> in the <i>Amazon EKS User Guide</i>.
+ * for your cluster from an OIDC identity provider</a> in the <i>Amazon EKS User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OidcIdentityProviderConfigRequest"
@@ -39,9 +39,9 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
     private String identityProviderConfigName;
     /**
      * <p>
-     * The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying
+     * The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying
      * tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not.
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are allowed but query parameters are not.
      * Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.
@@ -51,7 +51,7 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
     /**
      * <p>
      * This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to
-     * the OpenID identity provider.
+     * the OIDC identity provider.
      * </p>
      */
     private String clientId;
@@ -59,8 +59,8 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
      * <p>
      * The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a
      * unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL
-     * to prevent naming clashes with other plug-ins.
+     * depending on the OIDC identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to
+     * prevent naming clashes with other plug-ins.
      * </p>
      */
     private String usernameClaim;
@@ -138,18 +138,18 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying
+     * The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying
      * tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not.
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are allowed but query parameters are not.
      * Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.
      * </p>
      * 
      * @param issuerUrl
-     *        The URL of the OpenID identity provider that allows the API server to discover public signing keys for
+     *        The URL of the OIDC identity provider that allows the API server to discover public signing keys for
      *        verifying tokens. The URL must begin with <code>https://</code> and should correspond to the
-     *        <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are
+     *        <code>iss</code> claim in the provider's OIDC ID tokens. Based on the OIDC standard, path components are
      *        allowed but query parameters are not. Typically the URL consists of only a hostname, like
      *        <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the
      *        level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the
@@ -162,17 +162,17 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying
+     * The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying
      * tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not.
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are allowed but query parameters are not.
      * Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.
      * </p>
      * 
-     * @return The URL of the OpenID identity provider that allows the API server to discover public signing keys for
+     * @return The URL of the OIDC identity provider that allows the API server to discover public signing keys for
      *         verifying tokens. The URL must begin with <code>https://</code> and should correspond to the
-     *         <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are
+     *         <code>iss</code> claim in the provider's OIDC ID tokens. Based on the OIDC standard, path components are
      *         allowed but query parameters are not. Typically the URL consists of only a hostname, like
      *         <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the
      *         level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the
@@ -185,18 +185,18 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying
+     * The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying
      * tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not.
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are allowed but query parameters are not.
      * Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.
      * </p>
      * 
      * @param issuerUrl
-     *        The URL of the OpenID identity provider that allows the API server to discover public signing keys for
+     *        The URL of the OIDC identity provider that allows the API server to discover public signing keys for
      *        verifying tokens. The URL must begin with <code>https://</code> and should correspond to the
-     *        <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are
+     *        <code>iss</code> claim in the provider's OIDC ID tokens. Based on the OIDC standard, path components are
      *        allowed but query parameters are not. Typically the URL consists of only a hostname, like
      *        <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the
      *        level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the
@@ -212,12 +212,12 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
     /**
      * <p>
      * This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to
-     * the OpenID identity provider.
+     * the OIDC identity provider.
      * </p>
      * 
      * @param clientId
      *        This is also known as <i>audience</i>. The ID for the client application that makes authentication
-     *        requests to the OpenID identity provider.
+     *        requests to the OIDC identity provider.
      */
 
     public void setClientId(String clientId) {
@@ -227,11 +227,11 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
     /**
      * <p>
      * This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to
-     * the OpenID identity provider.
+     * the OIDC identity provider.
      * </p>
      * 
      * @return This is also known as <i>audience</i>. The ID for the client application that makes authentication
-     *         requests to the OpenID identity provider.
+     *         requests to the OIDC identity provider.
      */
 
     public String getClientId() {
@@ -241,12 +241,12 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
     /**
      * <p>
      * This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to
-     * the OpenID identity provider.
+     * the OIDC identity provider.
      * </p>
      * 
      * @param clientId
      *        This is also known as <i>audience</i>. The ID for the client application that makes authentication
-     *        requests to the OpenID identity provider.
+     *        requests to the OIDC identity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,14 +259,14 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
      * <p>
      * The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a
      * unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL
-     * to prevent naming clashes with other plug-ins.
+     * depending on the OIDC identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to
+     * prevent naming clashes with other plug-ins.
      * </p>
      * 
      * @param usernameClaim
      *        The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected
      *        to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or
-     *        <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are
+     *        <code>name</code>, depending on the OIDC identity provider. Claims other than <code>email</code> are
      *        prefixed with the issuer URL to prevent naming clashes with other plug-ins.
      */
 
@@ -278,13 +278,13 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
      * <p>
      * The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a
      * unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL
-     * to prevent naming clashes with other plug-ins.
+     * depending on the OIDC identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to
+     * prevent naming clashes with other plug-ins.
      * </p>
      * 
      * @return The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected
      *         to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or
-     *         <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are
+     *         <code>name</code>, depending on the OIDC identity provider. Claims other than <code>email</code> are
      *         prefixed with the issuer URL to prevent naming clashes with other plug-ins.
      */
 
@@ -296,14 +296,14 @@ public class OidcIdentityProviderConfigRequest implements Serializable, Cloneabl
      * <p>
      * The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a
      * unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL
-     * to prevent naming clashes with other plug-ins.
+     * depending on the OIDC identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to
+     * prevent naming clashes with other plug-ins.
      * </p>
      * 
      * @param usernameClaim
      *        The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected
      *        to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or
-     *        <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are
+     *        <code>name</code>, depending on the OIDC identity provider. Claims other than <code>email</code> are
      *        prefixed with the issuer URL to prevent naming clashes with other plug-ins.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

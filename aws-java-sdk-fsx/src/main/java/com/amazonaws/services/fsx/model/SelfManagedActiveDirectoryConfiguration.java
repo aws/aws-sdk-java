@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an ONTAP storage virtual
- * machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more
+ * The configuration that Amazon FSx uses to join a FSx for Windows File Server file system or an FSx for ONTAP storage
+ * virtual machine (SVM) to a self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more
  * information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx
- * with your self-managed Microsoft Active Directory</a> or <a
- * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing SVMs</a>.
+ * for Windows with your self-managed Microsoft Active Directory</a> or <a
+ * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP SVMs</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryConfiguration"

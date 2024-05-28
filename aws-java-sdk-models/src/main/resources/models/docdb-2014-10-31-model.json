@@ -982,6 +982,25 @@
         {"shape":"InvalidDBInstanceStateFault"}
       ],
       "documentation":"<p>Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the <i>available</i> state. For more information, see <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html\">Stopping and Starting an Amazon DocumentDB Cluster</a>.</p>"
+    },
+    "SwitchoverGlobalCluster":{
+      "name":"SwitchoverGlobalCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SwitchoverGlobalClusterMessage"},
+      "output":{
+        "shape":"SwitchoverGlobalClusterResult",
+        "resultWrapper":"SwitchoverGlobalClusterResult"
+      },
+      "errors":[
+        {"shape":"GlobalClusterNotFoundFault"},
+        {"shape":"InvalidGlobalClusterStateFault"},
+        {"shape":"DBClusterNotFoundFault"},
+        {"shape":"InvalidDBClusterStateFault"}
+      ],
+      "documentation":"<p>Switches over the specified secondary Amazon DocumentDB cluster to be the new primary Amazon DocumentDB cluster in the global database cluster.</p>"
     }
   },
   "shapes":{
@@ -1109,6 +1128,10 @@
     },
     "Boolean":{"type":"boolean"},
     "BooleanOptional":{"type":"boolean"},
+    "CACertificateIdentifiersList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "Certificate":{
       "type":"structure",
       "members":{
@@ -1139,6 +1162,20 @@
       },
       "documentation":"<p>A certificate authority (CA) certificate for an Amazon Web Services account.</p>",
       "wrapper":true
+    },
+    "CertificateDetails":{
+      "type":"structure",
+      "members":{
+        "CAIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>"
+        },
+        "ValidTill":{
+          "shape":"TStamp",
+          "documentation":"<p>The expiration date of the DB instance’s server certificate.</p>"
+        }
+      },
+      "documentation":"<p>Returns the details of the DB instance’s server certificate.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html\">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html\"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>"
     },
     "CertificateList":{
       "type":"list",
@@ -1345,6 +1382,10 @@
         "GlobalClusterIdentifier":{
           "shape":"GlobalClusterIdentifier",
           "documentation":"<p>The cluster identifier of the new global cluster.</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>The storage type to associate with the DB cluster.</p> <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code> </p> <note> <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p> </note>"
         }
       },
       "documentation":"<p>Represents the input to <a>CreateDBCluster</a>. </p>"
@@ -1472,6 +1513,10 @@
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
           "documentation":"<p>The KMS key identifier for encryption of Performance Insights data.</p> <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>"
+        },
+        "CACertificateIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The CA certificate identifier to use for the DB instance's server certificate.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html\">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html\"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>"
         }
       },
       "documentation":"<p>Represents the input to <a>CreateDBInstance</a>.</p>"
@@ -1730,6 +1775,10 @@
         "DeletionProtection":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>Storage type associated with your cluster</p> <p>Storage type associated with your cluster</p> <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code> </p>"
         }
       },
       "documentation":"<p>Detailed information about a cluster. </p>",
@@ -1993,6 +2042,10 @@
         "SourceDBClusterSnapshotArn":{
           "shape":"String",
           "documentation":"<p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>Storage type associated with your cluster snapshot </p> <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code> </p>"
         }
       },
       "documentation":"<p>Detailed information about a cluster snapshot. </p>",
@@ -2113,6 +2166,14 @@
         "SupportsLogExportsToCloudwatchLogs":{
           "shape":"Boolean",
           "documentation":"<p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>"
+        },
+        "SupportedCACertificateIdentifiers":{
+          "shape":"CACertificateIdentifiersList",
+          "documentation":"<p>A list of the supported CA certificate identifiers.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html\">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html\"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>"
+        },
+        "SupportsCertificateRotationWithoutRestart":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>"
         }
       },
       "documentation":"<p> Detailed information about an engine version. </p>"
@@ -2248,6 +2309,18 @@
         "EnabledCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>A list of log types that this instance is configured to export to CloudWatch Logs.</p>"
+        },
+        "CertificateDetails":{
+          "shape":"CertificateDetails",
+          "documentation":"<p>The details of the DB instance's server certificate.</p>"
+        },
+        "PerformanceInsightsEnabled":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise <code>false</code>.</p>"
+        },
+        "PerformanceInsightsKMSKeyId":{
+          "shape":"String",
+          "documentation":"<p>The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
         }
       },
       "documentation":"<p>Detailed information about an instance. </p>",
@@ -3328,7 +3401,7 @@
         },
         "GlobalClusterResourceId":{
           "shape":"String",
-          "documentation":"<p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the cluster is accessed. </p>"
+          "documentation":"<p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in CloudTrail log entries whenever the KMS customer master key (CMK) for the cluster is accessed. </p>"
         },
         "GlobalClusterArn":{
           "shape":"String",
@@ -3745,11 +3818,19 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to which you want to upgrade. Modifying engine version is not supported on Amazon DocumentDB.</p>"
+          "documentation":"<p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p> <p>To list all of the available engine versions for Amazon DocumentDB use the following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine docdb --query \"DBEngineVersions[].EngineVersion\"</code> </p>"
+        },
+        "AllowMajorVersionUpgrade":{
+          "shape":"Boolean",
+          "documentation":"<p>A value that indicates whether major version upgrades are allowed.</p> <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>"
         },
         "DeletionProtection":{
           "shape":"BooleanOptional",
           "documentation":"<p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>The storage type to associate with the DB cluster.</p> <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code> </p>"
         }
       },
       "documentation":"<p>Represents the input to <a>ModifyDBCluster</a>.</p>"
@@ -3857,6 +3938,10 @@
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
           "documentation":"<p>The KMS key identifier for encryption of Performance Insights data.</p> <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>"
+        },
+        "CertificateRotationRestart":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p> <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important> <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p> </important> <p>If you are using SSL/TLS to connect to the DB instance, see <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html\">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href=\"https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html\"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>"
         }
       },
       "documentation":"<p>Represents the input to <a>ModifyDBInstance</a>.</p>"
@@ -3979,6 +4064,10 @@
         "Vpc":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether an instance is in a virtual private cloud (VPC).</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>The storage type to associate with the DB cluster</p>"
         }
       },
       "documentation":"<p>The options that are available for an instance.</p>",
@@ -4391,6 +4480,14 @@
         "DeletionProtection":{
           "shape":"BooleanOptional",
           "documentation":"<p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>"
+        },
+        "DBClusterParameterGroupName":{
+          "shape":"String",
+          "documentation":"<p>The name of the DB cluster parameter group to associate with this DB cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>The storage type to associate with the DB cluster.</p> <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code> </p>"
         }
       },
       "documentation":"<p>Represents the input to <a>RestoreDBClusterFromSnapshot</a>.</p>"
@@ -4414,7 +4511,7 @@
         },
         "RestoreType":{
           "shape":"String",
-          "documentation":"<p>The type of restore to be performed. You can specify one of the following values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li> <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li> </ul> <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>"
+          "documentation":"<p>The type of restore to be performed. You can specify one of the following values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li> <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>"
         },
         "SourceDBClusterIdentifier":{
           "shape":"String",
@@ -4455,6 +4552,10 @@
         "DeletionProtection":{
           "shape":"BooleanOptional",
           "documentation":"<p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>"
+        },
+        "StorageType":{
+          "shape":"String",
+          "documentation":"<p>The storage type to associate with the DB cluster.</p> <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard </code> </p>"
         }
       },
       "documentation":"<p>Represents the input to <a>RestoreDBClusterToPointInTime</a>.</p>"
@@ -4692,6 +4793,29 @@
       },
       "exception":true
     },
+    "SwitchoverGlobalClusterMessage":{
+      "type":"structure",
+      "required":[
+        "GlobalClusterIdentifier",
+        "TargetDbClusterIdentifier"
+      ],
+      "members":{
+        "GlobalClusterIdentifier":{
+          "shape":"GlobalClusterIdentifier",
+          "documentation":"<p>The identifier of the Amazon DocumentDB global database cluster to switch over. The identifier is the unique key assigned by the user when the cluster is created. In other words, it's the name of the global cluster. This parameter isn’t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing global cluster (Amazon DocumentDB global database).</p> </li> <li> <p>Minimum length of 1. Maximum length of 255.</p> </li> </ul> <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code> </p>"
+        },
+        "TargetDbClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the secondary Amazon DocumentDB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Amazon DocumentDB can locate the cluster in its Amazon Web Services region.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing secondary cluster.</p> </li> <li> <p>Minimum length of 1. Maximum length of 255.</p> </li> </ul> <p>Pattern: <code>[A-Za-z][0-9A-Za-z-:._]*</code> </p>"
+        }
+      }
+    },
+    "SwitchoverGlobalClusterResult":{
+      "type":"structure",
+      "members":{
+        "GlobalCluster":{"shape":"GlobalCluster"}
+      }
+    },
     "TStamp":{"type":"timestamp"},
     "Tag":{
       "type":"structure",
@@ -4786,5 +4910,5 @@
       }
     }
   },
-  "documentation":"<p>Amazon DocumentDB API documentation</p>"
+  "documentation":"<p>Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you can run the same application code and use the same drivers and tools that you use with MongoDB.</p>"
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private DatasetSource datasetSource;
     /**
      * <p>
-     * The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to
+     * The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to
      * create a test dataset.
      * </p>
      */
@@ -103,13 +103,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to
+     * The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to
      * create a test dataset.
      * </p>
      * 
      * @param datasetType
-     *        The type of the dataset. Specify <code>train</code> to create a training dataset. Specify
-     *        <code>test</code> to create a test dataset.
+     *        The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify
+     *        <code>TEST</code> to create a test dataset.
      * @see DatasetType
      */
 
@@ -119,12 +119,12 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to
+     * The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to
      * create a test dataset.
      * </p>
      * 
-     * @return The type of the dataset. Specify <code>train</code> to create a training dataset. Specify
-     *         <code>test</code> to create a test dataset.
+     * @return The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify
+     *         <code>TEST</code> to create a test dataset.
      * @see DatasetType
      */
 
@@ -134,13 +134,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to
+     * The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to
      * create a test dataset.
      * </p>
      * 
      * @param datasetType
-     *        The type of the dataset. Specify <code>train</code> to create a training dataset. Specify
-     *        <code>test</code> to create a test dataset.
+     *        The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify
+     *        <code>TEST</code> to create a test dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetType
      */
@@ -152,13 +152,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to
+     * The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify <code>TEST</code> to
      * create a test dataset.
      * </p>
      * 
      * @param datasetType
-     *        The type of the dataset. Specify <code>train</code> to create a training dataset. Specify
-     *        <code>test</code> to create a test dataset.
+     *        The type of the dataset. Specify <code>TRAIN</code> to create a training dataset. Specify
+     *        <code>TEST</code> to create a test dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetType
      */

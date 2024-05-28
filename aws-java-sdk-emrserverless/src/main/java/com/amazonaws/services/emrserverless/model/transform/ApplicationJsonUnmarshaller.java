@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -109,6 +109,33 @@ public class ApplicationJsonUnmarshaller implements Unmarshaller<Application, Js
                 if (context.testExpression("networkConfiguration", targetDepth)) {
                     context.nextToken();
                     application.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("architecture", targetDepth)) {
+                    context.nextToken();
+                    application.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("imageConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setImageConfiguration(ImageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("workerTypeSpecifications", targetDepth)) {
+                    context.nextToken();
+                    application.setWorkerTypeSpecifications(new MapUnmarshaller<String, WorkerTypeSpecification>(context.getUnmarshaller(String.class),
+                            WorkerTypeSpecificationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("runtimeConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setRuntimeConfiguration(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("monitoringConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setMonitoringConfiguration(MonitoringConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("interactiveConfiguration", targetDepth)) {
+                    context.nextToken();
+                    application.setInteractiveConfiguration(InteractiveConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

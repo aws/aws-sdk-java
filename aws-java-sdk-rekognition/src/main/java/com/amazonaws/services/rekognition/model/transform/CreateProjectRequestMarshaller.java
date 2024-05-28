@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class CreateProjectRequestMarshaller {
 
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProjectName").build();
+    private static final MarshallingInfo<String> FEATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Feature").build();
+    private static final MarshallingInfo<String> AUTOUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoUpdate").build();
 
     private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class CreateProjectRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createProjectRequest.getProjectName(), PROJECTNAME_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getFeature(), FEATURE_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getAutoUpdate(), AUTOUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,70 +27,18 @@ public class DescribeAccountAssignmentCreationStatusRequest extends com.amazonaw
 
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     */
-    private String instanceArn;
-    /**
-     * <p>
      * The identifier that is used to track the request operation progress.
      * </p>
      */
     private String accountAssignmentCreationRequestId;
-
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
-
-    public void setInstanceArn(String instanceArn) {
-        this.instanceArn = instanceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     */
-
-    public String getInstanceArn() {
-        return this.instanceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAccountAssignmentCreationStatusRequest withInstanceArn(String instanceArn) {
-        setInstanceArn(instanceArn);
-        return this;
-    }
+    private String instanceArn;
 
     /**
      * <p>
@@ -133,6 +81,61 @@ public class DescribeAccountAssignmentCreationStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
+     */
+
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
+     */
+
+    public String getInstanceArn() {
+        return this.instanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAccountAssignmentCreationStatusRequest withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -144,10 +147,10 @@ public class DescribeAccountAssignmentCreationStatusRequest extends com.amazonaw
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceArn() != null)
-            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getAccountAssignmentCreationRequestId() != null)
-            sb.append("AccountAssignmentCreationRequestId: ").append(getAccountAssignmentCreationRequestId());
+            sb.append("AccountAssignmentCreationRequestId: ").append(getAccountAssignmentCreationRequestId()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -162,14 +165,14 @@ public class DescribeAccountAssignmentCreationStatusRequest extends com.amazonaw
         if (obj instanceof DescribeAccountAssignmentCreationStatusRequest == false)
             return false;
         DescribeAccountAssignmentCreationStatusRequest other = (DescribeAccountAssignmentCreationStatusRequest) obj;
-        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
-            return false;
-        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
-            return false;
         if (other.getAccountAssignmentCreationRequestId() == null ^ this.getAccountAssignmentCreationRequestId() == null)
             return false;
         if (other.getAccountAssignmentCreationRequestId() != null
                 && other.getAccountAssignmentCreationRequestId().equals(this.getAccountAssignmentCreationRequestId()) == false)
+            return false;
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
+            return false;
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         return true;
     }
@@ -179,8 +182,8 @@ public class DescribeAccountAssignmentCreationStatusRequest extends com.amazonaw
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getAccountAssignmentCreationRequestId() == null) ? 0 : getAccountAssignmentCreationRequestId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<CancelImageCreationResult> cancelImageCreationAsync(CancelImageCreationRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelImageCreationRequest, CancelImageCreationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest request) {
+
+        return cancelLifecycleExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelLifecycleExecutionRequest, CancelLifecycleExecutionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -136,6 +149,32 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest request) {
+
+        return createLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest request) {
+
+        return createWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkflowRequest, CreateWorkflowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request) {
 
         return deleteComponentAsync(request, null);
@@ -226,6 +265,32 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<DeleteInfrastructureConfigurationResult> deleteInfrastructureConfigurationAsync(
             DeleteInfrastructureConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInfrastructureConfigurationRequest, DeleteInfrastructureConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest request) {
+
+        return deleteWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkflowRequest, DeleteWorkflowResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -374,6 +439,71 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest request) {
+
+        return getLifecycleExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLifecycleExecutionRequest, GetLifecycleExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request) {
+
+        return getLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
+
+        return getWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRequest, GetWorkflowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowExecutionResult> getWorkflowExecutionAsync(GetWorkflowExecutionRequest request) {
+
+        return getWorkflowExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowExecutionResult> getWorkflowExecutionAsync(GetWorkflowExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowExecutionRequest, GetWorkflowExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowStepExecutionResult> getWorkflowStepExecutionAsync(GetWorkflowStepExecutionRequest request) {
+
+        return getWorkflowStepExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowStepExecutionResult> getWorkflowStepExecutionAsync(GetWorkflowStepExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowStepExecutionRequest, GetWorkflowStepExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportComponentResult> importComponentAsync(ImportComponentRequest request) {
 
         return importComponentAsync(request, null);
@@ -517,6 +647,34 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListImageScanFindingAggregationsResult> listImageScanFindingAggregationsAsync(
+            ListImageScanFindingAggregationsRequest request) {
+
+        return listImageScanFindingAggregationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImageScanFindingAggregationsResult> listImageScanFindingAggregationsAsync(
+            ListImageScanFindingAggregationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImageScanFindingAggregationsRequest, ListImageScanFindingAggregationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImageScanFindingsResult> listImageScanFindingsAsync(ListImageScanFindingsRequest request) {
+
+        return listImageScanFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImageScanFindingsResult> listImageScanFindingsAsync(ListImageScanFindingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImageScanFindingsRequest, ListImageScanFindingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest request) {
 
         return listImagesAsync(request, null);
@@ -545,6 +703,47 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest request) {
+
+        return listLifecycleExecutionResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionResourcesRequest, ListLifecycleExecutionResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest request) {
+
+        return listLifecycleExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionsRequest, ListLifecycleExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request) {
+
+        return listLifecyclePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -553,6 +752,71 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest request) {
+
+        return listWaitingWorkflowStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWaitingWorkflowStepsRequest, ListWaitingWorkflowStepsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(ListWorkflowBuildVersionsRequest request) {
+
+        return listWorkflowBuildVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(ListWorkflowBuildVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowBuildVersionsRequest, ListWorkflowBuildVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowExecutionsResult> listWorkflowExecutionsAsync(ListWorkflowExecutionsRequest request) {
+
+        return listWorkflowExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowExecutionsResult> listWorkflowExecutionsAsync(ListWorkflowExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowStepExecutionsResult> listWorkflowStepExecutionsAsync(ListWorkflowStepExecutionsRequest request) {
+
+        return listWorkflowStepExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowStepExecutionsResult> listWorkflowStepExecutionsAsync(ListWorkflowStepExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowStepExecutionsRequest, ListWorkflowStepExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest request) {
+
+        return listWorkflowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowsRequest, ListWorkflowsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -610,6 +874,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest request) {
+
+        return sendWorkflowStepActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendWorkflowStepActionRequest, SendWorkflowStepActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartImagePipelineExecutionResult> startImagePipelineExecutionAsync(StartImagePipelineExecutionRequest request) {
 
         return startImagePipelineExecutionAsync(request, null);
@@ -618,6 +895,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<StartImagePipelineExecutionResult> startImagePipelineExecutionAsync(StartImagePipelineExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartImagePipelineExecutionRequest, StartImagePipelineExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest request) {
+
+        return startResourceStateUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartResourceStateUpdateRequest, StartResourceStateUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -687,6 +977,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<UpdateInfrastructureConfigurationResult> updateInfrastructureConfigurationAsync(
             UpdateInfrastructureConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInfrastructureConfigurationRequest, UpdateInfrastructureConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request) {
+
+        return updateLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

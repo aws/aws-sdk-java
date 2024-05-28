@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,8 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * the <code>ReturnValues</code> parameter.
      * </p>
      * <p>
-     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
-     * than <code>NONE</code> in the request. Each element represents one attribute.
+     * The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      */
     private java.util.Map<String, AttributeValue> attributes;
@@ -42,9 +42,9 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * specified. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     * >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private ConsumedCapacity consumedCapacity;
@@ -86,15 +86,16 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * the <code>ReturnValues</code> parameter.
      * </p>
      * <p>
-     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
-     * than <code>NONE</code> in the request. Each element represents one attribute.
+     * The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @return A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
      *         determined by the <code>ReturnValues</code> parameter.</p>
      *         <p>
-     *         The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
-     *         other than <code>NONE</code> in the request. Each element represents one attribute.
+     *         The <code>Attributes</code> map is only present if the update was successful and
+     *         <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each
+     *         element represents one attribute.
      */
 
     public java.util.Map<String, AttributeValue> getAttributes() {
@@ -107,16 +108,17 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * the <code>ReturnValues</code> parameter.
      * </p>
      * <p>
-     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
-     * than <code>NONE</code> in the request. Each element represents one attribute.
+     * The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @param attributes
      *        A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
      *        determined by the <code>ReturnValues</code> parameter.</p>
      *        <p>
-     *        The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
-     *        other than <code>NONE</code> in the request. Each element represents one attribute.
+     *        The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code>
+     *        was specified as something other than <code>NONE</code> in the request. Each element represents one
+     *        attribute.
      */
 
     public void setAttributes(java.util.Map<String, AttributeValue> attributes) {
@@ -129,16 +131,17 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * the <code>ReturnValues</code> parameter.
      * </p>
      * <p>
-     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
-     * than <code>NONE</code> in the request. Each element represents one attribute.
+     * The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was
+     * specified as something other than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @param attributes
      *        A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
      *        determined by the <code>ReturnValues</code> parameter.</p>
      *        <p>
-     *        The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
-     *        other than <code>NONE</code> in the request. Each element represents one attribute.
+     *        The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code>
+     *        was specified as something other than <code>NONE</code> in the request. Each element represents one
+     *        attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,18 +183,18 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * specified. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     * >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param consumedCapacity
      *        The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
-     *        parameter was specified. For more information, see <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        parameter was specified. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     *        >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -203,17 +206,17 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * specified. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     * >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the
      *         total provisioned throughput consumed, along with statistics for the table and any indexes involved in
      *         the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
-     *         parameter was specified. For more information, see <a
-     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     *         >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         parameter was specified. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     *         >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ConsumedCapacity getConsumedCapacity() {
@@ -225,18 +228,18 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
-     * specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * specified. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     * >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param consumedCapacity
      *        The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
-     *        parameter was specified. For more information, see <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        parameter was specified. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption"
+     *        >Capacity unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

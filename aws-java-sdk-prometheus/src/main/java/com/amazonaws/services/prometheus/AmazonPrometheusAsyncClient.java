@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,35 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Managed Service for Prometheus
+ * Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible monitoring service for container metrics
+ * that makes it easier to securely monitor container environments at scale. With Amazon Managed Service for Prometheus,
+ * you can use the same open-source Prometheus data model and query language that you use today to monitor the
+ * performance of your containerized workloads, and also enjoy improved scalability, availability, and security without
+ * having to manage the underlying infrastructure.
  * </p>
+ * <p>
+ * For more information about Amazon Managed Service for Prometheus, see the <a
+ * href="https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html">Amazon
+ * Managed Service for Prometheus</a> User Guide.
+ * </p>
+ * <p>
+ * Amazon Managed Service for Prometheus includes two APIs.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Use the Amazon Web Services API described in this guide to manage Amazon Managed Service for Prometheus resources,
+ * such as workspaces, rule groups, and alert managers.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use the <a href=
+ * "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis"
+ * >Prometheus-compatible API</a> to work within your Prometheus workspace.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -175,6 +202,39 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScraperResult> createScraperAsync(CreateScraperRequest request) {
+
+        return createScraperAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateScraperResult> createScraperAsync(final CreateScraperRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateScraperRequest, CreateScraperResult> asyncHandler) {
+        final CreateScraperRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateScraperResult>() {
+            @Override
+            public CreateScraperResult call() throws Exception {
+                CreateScraperResult result = null;
+
+                try {
+                    result = executeCreateScraper(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspaceResult> createWorkspaceAsync(CreateWorkspaceRequest request) {
 
         return createWorkspaceAsync(request, null);
@@ -291,6 +351,39 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
 
                 try {
                     result = executeDeleteRuleGroupsNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScraperResult> deleteScraperAsync(DeleteScraperRequest request) {
+
+        return deleteScraperAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScraperResult> deleteScraperAsync(final DeleteScraperRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteScraperRequest, DeleteScraperResult> asyncHandler) {
+        final DeleteScraperRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteScraperResult>() {
+            @Override
+            public DeleteScraperResult call() throws Exception {
+                DeleteScraperResult result = null;
+
+                try {
+                    result = executeDeleteScraper(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -440,6 +533,39 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeScraperResult> describeScraperAsync(DescribeScraperRequest request) {
+
+        return describeScraperAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeScraperResult> describeScraperAsync(final DescribeScraperRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeScraperRequest, DescribeScraperResult> asyncHandler) {
+        final DescribeScraperRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeScraperResult>() {
+            @Override
+            public DescribeScraperResult call() throws Exception {
+                DescribeScraperResult result = null;
+
+                try {
+                    result = executeDescribeScraper(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeWorkspaceResult> describeWorkspaceAsync(DescribeWorkspaceRequest request) {
 
         return describeWorkspaceAsync(request, null);
@@ -473,6 +599,40 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetDefaultScraperConfigurationResult> getDefaultScraperConfigurationAsync(GetDefaultScraperConfigurationRequest request) {
+
+        return getDefaultScraperConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDefaultScraperConfigurationResult> getDefaultScraperConfigurationAsync(
+            final GetDefaultScraperConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDefaultScraperConfigurationRequest, GetDefaultScraperConfigurationResult> asyncHandler) {
+        final GetDefaultScraperConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDefaultScraperConfigurationResult>() {
+            @Override
+            public GetDefaultScraperConfigurationResult call() throws Exception {
+                GetDefaultScraperConfigurationResult result = null;
+
+                try {
+                    result = executeGetDefaultScraperConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRuleGroupsNamespacesResult> listRuleGroupsNamespacesAsync(ListRuleGroupsNamespacesRequest request) {
 
         return listRuleGroupsNamespacesAsync(request, null);
@@ -490,6 +650,39 @@ public class AmazonPrometheusAsyncClient extends AmazonPrometheusClient implemen
 
                 try {
                     result = executeListRuleGroupsNamespaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScrapersResult> listScrapersAsync(ListScrapersRequest request) {
+
+        return listScrapersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScrapersResult> listScrapersAsync(final ListScrapersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListScrapersRequest, ListScrapersResult> asyncHandler) {
+        final ListScrapersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListScrapersResult>() {
+            @Override
+            public ListScrapersResult call() throws Exception {
+                ListScrapersResult result = null;
+
+                try {
+                    result = executeListScrapers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

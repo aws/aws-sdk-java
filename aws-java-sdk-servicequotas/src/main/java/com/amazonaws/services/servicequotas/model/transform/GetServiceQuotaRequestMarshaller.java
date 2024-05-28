@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class GetServiceQuotaRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceCode").build();
     private static final MarshallingInfo<String> QUOTACODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("QuotaCode").build();
+    private static final MarshallingInfo<String> CONTEXTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ContextId").build();
 
     private static final GetServiceQuotaRequestMarshaller instance = new GetServiceQuotaRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetServiceQuotaRequestMarshaller {
         try {
             protocolMarshaller.marshall(getServiceQuotaRequest.getServiceCode(), SERVICECODE_BINDING);
             protocolMarshaller.marshall(getServiceQuotaRequest.getQuotaCode(), QUOTACODE_BINDING);
+            protocolMarshaller.marshall(getServiceQuotaRequest.getContextId(), CONTEXTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

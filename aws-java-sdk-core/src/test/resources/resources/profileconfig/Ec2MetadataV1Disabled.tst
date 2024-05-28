@@ -1,0 +1,2 @@
+[default]
+ec2_metadata_v1_disabled=true

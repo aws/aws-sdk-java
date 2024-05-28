@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class KubernetesWorkloadDetailsMarshaller {
             .marshallLocationName("containers").build();
     private static final MarshallingInfo<List> VOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("volumes").build();
+    private static final MarshallingInfo<String> SERVICEACCOUNTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceAccountName").build();
+    private static final MarshallingInfo<Boolean> HOSTIPC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("hostIPC").build();
+    private static final MarshallingInfo<Boolean> HOSTPID_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("hostPID").build();
 
     private static final KubernetesWorkloadDetailsMarshaller instance = new KubernetesWorkloadDetailsMarshaller();
 
@@ -66,6 +72,9 @@ public class KubernetesWorkloadDetailsMarshaller {
             protocolMarshaller.marshall(kubernetesWorkloadDetails.getHostNetwork(), HOSTNETWORK_BINDING);
             protocolMarshaller.marshall(kubernetesWorkloadDetails.getContainers(), CONTAINERS_BINDING);
             protocolMarshaller.marshall(kubernetesWorkloadDetails.getVolumes(), VOLUMES_BINDING);
+            protocolMarshaller.marshall(kubernetesWorkloadDetails.getServiceAccountName(), SERVICEACCOUNTNAME_BINDING);
+            protocolMarshaller.marshall(kubernetesWorkloadDetails.getHostIPC(), HOSTIPC_BINDING);
+            protocolMarshaller.marshall(kubernetesWorkloadDetails.getHostPID(), HOSTPID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class UpdateReplicationConfigurationResult extends com.amazonaws.AmazonWe
      * </p>
      */
     private Boolean associateDefaultSecurityGroup;
+    /**
+     * <p>
+     * Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     * </p>
+     */
+    private Boolean autoReplicateNewDisks;
     /**
      * <p>
      * Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
@@ -176,6 +182,58 @@ public class UpdateReplicationConfigurationResult extends com.amazonaws.AmazonWe
 
     public Boolean isAssociateDefaultSecurityGroup() {
         return this.associateDefaultSecurityGroup;
+    }
+
+    /**
+     * <p>
+     * Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     * </p>
+     * 
+     * @param autoReplicateNewDisks
+     *        Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     */
+
+    public void setAutoReplicateNewDisks(Boolean autoReplicateNewDisks) {
+        this.autoReplicateNewDisks = autoReplicateNewDisks;
+    }
+
+    /**
+     * <p>
+     * Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     * </p>
+     * 
+     * @return Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     */
+
+    public Boolean getAutoReplicateNewDisks() {
+        return this.autoReplicateNewDisks;
+    }
+
+    /**
+     * <p>
+     * Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     * </p>
+     * 
+     * @param autoReplicateNewDisks
+     *        Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReplicationConfigurationResult withAutoReplicateNewDisks(Boolean autoReplicateNewDisks) {
+        setAutoReplicateNewDisks(autoReplicateNewDisks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     * </p>
+     * 
+     * @return Whether to allow the AWS replication agent to automatically replicate newly added disks.
+     */
+
+    public Boolean isAutoReplicateNewDisks() {
+        return this.autoReplicateNewDisks;
     }
 
     /**
@@ -998,6 +1056,8 @@ public class UpdateReplicationConfigurationResult extends com.amazonaws.AmazonWe
         sb.append("{");
         if (getAssociateDefaultSecurityGroup() != null)
             sb.append("AssociateDefaultSecurityGroup: ").append(getAssociateDefaultSecurityGroup()).append(",");
+        if (getAutoReplicateNewDisks() != null)
+            sb.append("AutoReplicateNewDisks: ").append(getAutoReplicateNewDisks()).append(",");
         if (getBandwidthThrottling() != null)
             sb.append("BandwidthThrottling: ").append(getBandwidthThrottling()).append(",");
         if (getCreatePublicIP() != null)
@@ -1046,6 +1106,10 @@ public class UpdateReplicationConfigurationResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getAssociateDefaultSecurityGroup() != null
                 && other.getAssociateDefaultSecurityGroup().equals(this.getAssociateDefaultSecurityGroup()) == false)
+            return false;
+        if (other.getAutoReplicateNewDisks() == null ^ this.getAutoReplicateNewDisks() == null)
+            return false;
+        if (other.getAutoReplicateNewDisks() != null && other.getAutoReplicateNewDisks().equals(this.getAutoReplicateNewDisks()) == false)
             return false;
         if (other.getBandwidthThrottling() == null ^ this.getBandwidthThrottling() == null)
             return false;
@@ -1119,6 +1183,7 @@ public class UpdateReplicationConfigurationResult extends com.amazonaws.AmazonWe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAssociateDefaultSecurityGroup() == null) ? 0 : getAssociateDefaultSecurityGroup().hashCode());
+        hashCode = prime * hashCode + ((getAutoReplicateNewDisks() == null) ? 0 : getAutoReplicateNewDisks().hashCode());
         hashCode = prime * hashCode + ((getBandwidthThrottling() == null) ? 0 : getBandwidthThrottling().hashCode());
         hashCode = prime * hashCode + ((getCreatePublicIP() == null) ? 0 : getCreatePublicIP().hashCode());
         hashCode = prime * hashCode + ((getDataPlaneRouting() == null) ? 0 : getDataPlaneRouting().hashCode());

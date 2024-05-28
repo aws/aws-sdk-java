@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class LifeCycleLastLaunchMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> INITIATED_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initiated").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
     private static final LifeCycleLastLaunchMarshaller instance = new LifeCycleLastLaunchMarshaller();
 
@@ -47,6 +49,7 @@ public class LifeCycleLastLaunchMarshaller {
 
         try {
             protocolMarshaller.marshall(lifeCycleLastLaunch.getInitiated(), INITIATED_BINDING);
+            protocolMarshaller.marshall(lifeCycleLastLaunch.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

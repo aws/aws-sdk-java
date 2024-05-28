@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The namespace for the metric data.
+     * The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters
+     * which are not supported.
      * </p>
      * <p>
      * To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins
@@ -44,7 +45,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The namespace for the metric data.
+     * The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters
+     * which are not supported.
      * </p>
      * <p>
      * To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins
@@ -52,7 +54,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param namespace
-     *        The namespace for the metric data.</p>
+     *        The namespace for the metric data. You can use ASCII characters for the namespace, except for control
+     *        characters which are not supported.</p>
      *        <p>
      *        To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that
      *        begins with <code>AWS/</code>
@@ -64,14 +67,16 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The namespace for the metric data.
+     * The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters
+     * which are not supported.
      * </p>
      * <p>
      * To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins
      * with <code>AWS/</code>
      * </p>
      * 
-     * @return The namespace for the metric data.</p>
+     * @return The namespace for the metric data. You can use ASCII characters for the namespace, except for control
+     *         characters which are not supported.</p>
      *         <p>
      *         To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that
      *         begins with <code>AWS/</code>
@@ -83,7 +88,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The namespace for the metric data.
+     * The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters
+     * which are not supported.
      * </p>
      * <p>
      * To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins
@@ -91,7 +97,8 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param namespace
-     *        The namespace for the metric data.</p>
+     *        The namespace for the metric data. You can use ASCII characters for the namespace, except for control
+     *        characters which are not supported.</p>
      *        <p>
      *        To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that
      *        begins with <code>AWS/</code>

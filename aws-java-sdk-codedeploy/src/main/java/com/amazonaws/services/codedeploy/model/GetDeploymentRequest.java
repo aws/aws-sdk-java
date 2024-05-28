@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     * The unique ID of a deployment associated with the user or Amazon Web Services account.
      * </p>
      */
     private String deploymentId;
 
     /**
      * <p>
-     * The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     * The unique ID of a deployment associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param deploymentId
-     *        The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     *        The unique ID of a deployment associated with the user or Amazon Web Services account.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -50,10 +50,10 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     * The unique ID of a deployment associated with the user or Amazon Web Services account.
      * </p>
      * 
-     * @return The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     * @return The unique ID of a deployment associated with the user or Amazon Web Services account.
      */
 
     public String getDeploymentId() {
@@ -62,11 +62,11 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     * The unique ID of a deployment associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param deploymentId
-     *        The unique ID of a deployment associated with the IAM user or Amazon Web Services account.
+     *        The unique ID of a deployment associated with the user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

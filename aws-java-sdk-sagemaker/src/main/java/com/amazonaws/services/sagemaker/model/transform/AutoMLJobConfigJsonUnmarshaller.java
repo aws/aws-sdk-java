@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,13 @@ public class AutoMLJobConfigJsonUnmarshaller implements Unmarshaller<AutoMLJobCo
                     context.nextToken();
                     autoMLJobConfig.setSecurityConfig(AutoMLSecurityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("DataSplitConfig", targetDepth)) {
-                    context.nextToken();
-                    autoMLJobConfig.setDataSplitConfig(AutoMLDataSplitConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("CandidateGenerationConfig", targetDepth)) {
                     context.nextToken();
                     autoMLJobConfig.setCandidateGenerationConfig(AutoMLCandidateGenerationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataSplitConfig", targetDepth)) {
+                    context.nextToken();
+                    autoMLJobConfig.setDataSplitConfig(AutoMLDataSplitConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
                     context.nextToken();

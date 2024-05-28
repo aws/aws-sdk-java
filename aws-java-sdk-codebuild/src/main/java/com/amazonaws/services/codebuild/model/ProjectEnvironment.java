@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,10 +42,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
-     * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     * The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * <li>
@@ -59,11 +58,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
@@ -123,8 +137,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your environment
+     * type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -150,6 +222,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
@@ -157,6 +234,12 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String computeType;
+    /**
+     * <p>
+     * A ProjectFleet object to use for this build project.
+     * </p>
+     */
+    private ProjectFleet fleet;
     /**
      * <p>
      * A set of environment variables to make available to builds for this build project.
@@ -247,10 +330,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
-     * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     * The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * <li>
@@ -264,11 +346,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
@@ -287,10 +384,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
-     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *        East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
+     *        (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     *        (Ningxia).
      *        </p>
      *        </li>
      *        <li>
@@ -305,11 +402,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are
      *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -335,10 +447,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
-     * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     * The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * <li>
@@ -352,11 +463,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
@@ -374,10 +500,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code>
-     *         is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central),
-     *         EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
-     *         (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *         The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *         East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
+     *         (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     *         China (Ningxia).
      *         </p>
      *         </li>
      *         <li>
@@ -392,11 +518,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
+     *         The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *         available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *         Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *         South America (São Paulo).
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
      *         The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are
      *         available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
+     *         <p>
+     *         If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     *         </p>
+     *         </note>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -422,10 +563,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
-     * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     * The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * <li>
@@ -439,11 +579,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
@@ -462,10 +617,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
-     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *        East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
+     *        (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     *        (Ningxia).
      *        </p>
      *        </li>
      *        <li>
@@ -480,11 +635,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are
      *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -512,10 +682,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
-     * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     * The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * <li>
@@ -529,11 +698,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
@@ -552,10 +736,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
-     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *        East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
+     *        (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     *        (Ningxia).
      *        </p>
      *        </li>
      *        <li>
@@ -570,11 +754,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are
      *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -600,10 +799,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
-     * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     * The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * <li>
@@ -617,11 +815,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
+     * The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are available
+     * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific
+     * (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and South America (São
+     * Paulo).
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
      * The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available
      * only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
@@ -640,10 +853,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
-     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
-     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *        East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
+     *        (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     *        (Ningxia).
      *        </p>
      *        </li>
      *        <li>
@@ -658,11 +871,26 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
+     *        The environment types <code>ARM_LAMBDA_CONTAINER</code> and <code>LINUX_LAMBDA_CONTAINER</code> are
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Mumbai),
+     *        Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), EU (Frankfurt), EU (Ireland), and
+     *        South America (São Paulo).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are
      *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>type</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -877,8 +1105,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your environment
+     * type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -904,6 +1190,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
@@ -931,8 +1222,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
+     *        <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your
+     *        environment type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -958,6 +1307,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -992,8 +1346,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your environment
+     * type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -1019,6 +1431,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
@@ -1045,8 +1462,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
+     *         <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your
+     *         environment type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *         builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *         <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *         NVIDIA A10G Tensor Core GPU for builds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *         processors for builds.
      *         </p>
      *         </li>
      *         </ul>
@@ -1072,6 +1547,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
+     *         <p>
+     *         If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     *         </p>
+     *         </note>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -1106,8 +1586,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your environment
+     * type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -1133,6 +1671,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
@@ -1160,8 +1703,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
+     *        <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your
+     *        environment type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -1187,6 +1788,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -1223,8 +1829,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your environment
+     * type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -1250,6 +1914,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
@@ -1277,8 +1946,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
+     *        <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your
+     *        environment type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -1304,6 +2031,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -1338,8 +2070,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your environment
+     * type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for builds.
      * This compute type supports Docker images up to 100 GB uncompressed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you use <code>BUILD_GENERAL1_SMALL</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1 NVIDIA A10G
+     * Tensor Core GPU for builds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     * processors for builds.
      * </p>
      * </li>
      * </ul>
@@ -1365,6 +2155,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
@@ -1392,8 +2187,66 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
+     *        <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs for builds, depending on your
+     *        environment type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD storage for
      *        builds. This compute type supports Docker images up to 100 GB uncompressed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_1GB</code>: Use up to 1 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GB memory for builds. Only available for environment type
+     *        <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you use <code>BUILD_GENERAL1_SMALL</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
+     *        NVIDIA A10G Tensor Core GPU for builds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For environment type <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on ARM-based
+     *        processors for builds.
      *        </p>
      *        </li>
      *        </ul>
@@ -1419,6 +2272,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, <code>computeType</code> will be ignored.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
@@ -1429,6 +2287,46 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     public ProjectEnvironment withComputeType(ComputeType computeType) {
         this.computeType = computeType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A ProjectFleet object to use for this build project.
+     * </p>
+     * 
+     * @param fleet
+     *        A ProjectFleet object to use for this build project.
+     */
+
+    public void setFleet(ProjectFleet fleet) {
+        this.fleet = fleet;
+    }
+
+    /**
+     * <p>
+     * A ProjectFleet object to use for this build project.
+     * </p>
+     * 
+     * @return A ProjectFleet object to use for this build project.
+     */
+
+    public ProjectFleet getFleet() {
+        return this.fleet;
+    }
+
+    /**
+     * <p>
+     * A ProjectFleet object to use for this build project.
+     * </p>
+     * 
+     * @param fleet
+     *        A ProjectFleet object to use for this build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectEnvironment withFleet(ProjectFleet fleet) {
+        setFleet(fleet);
         return this;
     }
 
@@ -2104,6 +3002,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
             sb.append("Image: ").append(getImage()).append(",");
         if (getComputeType() != null)
             sb.append("ComputeType: ").append(getComputeType()).append(",");
+        if (getFleet() != null)
+            sb.append("Fleet: ").append(getFleet()).append(",");
         if (getEnvironmentVariables() != null)
             sb.append("EnvironmentVariables: ").append(getEnvironmentVariables()).append(",");
         if (getPrivilegedMode() != null)
@@ -2140,6 +3040,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getComputeType() != null && other.getComputeType().equals(this.getComputeType()) == false)
             return false;
+        if (other.getFleet() == null ^ this.getFleet() == null)
+            return false;
+        if (other.getFleet() != null && other.getFleet().equals(this.getFleet()) == false)
+            return false;
         if (other.getEnvironmentVariables() == null ^ this.getEnvironmentVariables() == null)
             return false;
         if (other.getEnvironmentVariables() != null && other.getEnvironmentVariables().equals(this.getEnvironmentVariables()) == false)
@@ -2171,6 +3075,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
+        hashCode = prime * hashCode + ((getFleet() == null) ? 0 : getFleet().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getPrivilegedMode() == null) ? 0 : getPrivilegedMode().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());

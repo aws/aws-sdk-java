@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
     private String queueUrl;
     /**
      * <p>
-     * A list of receipt handles of the messages for which the visibility timeout must be changed.
+     * Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry> entries;
@@ -58,7 +58,7 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
      *        <p>
      *        Queue URLs and names are case-sensitive.
      * @param entries
-     *        A list of receipt handles of the messages for which the visibility timeout must be changed.
+     *        Lists the receipt handles of the messages for which the visibility timeout must be changed.
      */
     public ChangeMessageVisibilityBatchRequest(String queueUrl, java.util.List<ChangeMessageVisibilityBatchRequestEntry> entries) {
         setQueueUrl(queueUrl);
@@ -122,10 +122,10 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of receipt handles of the messages for which the visibility timeout must be changed.
+     * Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * </p>
      * 
-     * @return A list of receipt handles of the messages for which the visibility timeout must be changed.
+     * @return Lists the receipt handles of the messages for which the visibility timeout must be changed.
      */
 
     public java.util.List<ChangeMessageVisibilityBatchRequestEntry> getEntries() {
@@ -137,11 +137,11 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of receipt handles of the messages for which the visibility timeout must be changed.
+     * Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * </p>
      * 
      * @param entries
-     *        A list of receipt handles of the messages for which the visibility timeout must be changed.
+     *        Lists the receipt handles of the messages for which the visibility timeout must be changed.
      */
 
     public void setEntries(java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {
@@ -155,7 +155,7 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of receipt handles of the messages for which the visibility timeout must be changed.
+     * Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +164,7 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param entries
-     *        A list of receipt handles of the messages for which the visibility timeout must be changed.
+     *        Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +180,11 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of receipt handles of the messages for which the visibility timeout must be changed.
+     * Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * </p>
      * 
      * @param entries
-     *        A list of receipt handles of the messages for which the visibility timeout must be changed.
+     *        Lists the receipt handles of the messages for which the visibility timeout must be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

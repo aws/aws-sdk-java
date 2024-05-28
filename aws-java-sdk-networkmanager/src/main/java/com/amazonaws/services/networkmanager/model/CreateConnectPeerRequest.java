@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,12 @@ public class CreateConnectPeerRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The subnet ARN for the Connect peer.
+     * </p>
+     */
+    private String subnetArn;
 
     /**
      * <p>
@@ -409,6 +415,46 @@ public class CreateConnectPeerRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The subnet ARN for the Connect peer.
+     * </p>
+     * 
+     * @param subnetArn
+     *        The subnet ARN for the Connect peer.
+     */
+
+    public void setSubnetArn(String subnetArn) {
+        this.subnetArn = subnetArn;
+    }
+
+    /**
+     * <p>
+     * The subnet ARN for the Connect peer.
+     * </p>
+     * 
+     * @return The subnet ARN for the Connect peer.
+     */
+
+    public String getSubnetArn() {
+        return this.subnetArn;
+    }
+
+    /**
+     * <p>
+     * The subnet ARN for the Connect peer.
+     * </p>
+     * 
+     * @param subnetArn
+     *        The subnet ARN for the Connect peer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectPeerRequest withSubnetArn(String subnetArn) {
+        setSubnetArn(subnetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -433,7 +479,9 @@ public class CreateConnectPeerRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getSubnetArn() != null)
+            sb.append("SubnetArn: ").append(getSubnetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -476,6 +524,10 @@ public class CreateConnectPeerRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getSubnetArn() == null ^ this.getSubnetArn() == null)
+            return false;
+        if (other.getSubnetArn() != null && other.getSubnetArn().equals(this.getSubnetArn()) == false)
+            return false;
         return true;
     }
 
@@ -491,6 +543,7 @@ public class CreateConnectPeerRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getInsideCidrBlocks() == null) ? 0 : getInsideCidrBlocks().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getSubnetArn() == null) ? 0 : getSubnetArn().hashCode());
         return hashCode;
     }
 

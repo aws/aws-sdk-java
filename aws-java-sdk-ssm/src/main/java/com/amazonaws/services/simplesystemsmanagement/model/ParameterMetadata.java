@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Metadata includes information like the ARN of the last user and the date/time the parameter was last used.
+ * Metadata includes information like the Amazon Resource Name (ARN) of the last user to update the parameter and the
+ * date and time the parameter was last used.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterMetadata" target="_top">AWS API
@@ -36,6 +37,12 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
+     * The (ARN) of the last user to update the parameter.
+     * </p>
+     */
+    private String aRN;
+    /**
+     * <p>
      * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
      * and <code>SecureString</code>.
      * </p>
@@ -43,7 +50,8 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     private String type;
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only.
      * </p>
      */
     private String keyId;
@@ -142,6 +150,46 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The (ARN) of the last user to update the parameter.
+     * </p>
+     * 
+     * @param aRN
+     *        The (ARN) of the last user to update the parameter.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The (ARN) of the last user to update the parameter.
+     * </p>
+     * 
+     * @return The (ARN) of the last user to update the parameter.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The (ARN) of the last user to update the parameter.
+     * </p>
+     * 
+     * @param aRN
+     *        The (ARN) of the last user to update the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
+     * <p>
      * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
      * and <code>SecureString</code>.
      * </p>
@@ -225,11 +273,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only.
      * </p>
      * 
      * @param keyId
-     *        The ID of the query key used for this parameter.
+     *        The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     *        <code>SecureString</code> parameters only.
      */
 
     public void setKeyId(String keyId) {
@@ -238,10 +288,12 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only.
      * </p>
      * 
-     * @return The ID of the query key used for this parameter.
+     * @return The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     *         <code>SecureString</code> parameters only.
      */
 
     public String getKeyId() {
@@ -250,11 +302,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only.
      * </p>
      * 
      * @param keyId
-     *        The ID of the query key used for this parameter.
+     *        The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     *        <code>SecureString</code> parameters only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,6 +738,8 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getKeyId() != null)
@@ -721,6 +777,10 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -771,6 +831,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());

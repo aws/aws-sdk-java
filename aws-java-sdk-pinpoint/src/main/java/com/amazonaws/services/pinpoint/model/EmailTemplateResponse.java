@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,14 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
      * </p>
      */
     private String subject;
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * </p>
+     */
+    private java.util.List<MessageHeader> headers;
     /**
      * <p>
      * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
@@ -406,6 +414,92 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * </p>
+     * 
+     * @return The list of <a href=
+     *         "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     *         >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     */
+
+    public java.util.List<MessageHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * </p>
+     * 
+     * @param headers
+     *        The list of <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     *        >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     */
+
+    public void setHeaders(java.util.Collection<MessageHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<MessageHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The list of <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     *        >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailTemplateResponse withHeaders(MessageHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<MessageHeader>(headers.length));
+        }
+        for (MessageHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * </p>
+     * 
+     * @param headers
+     *        The list of <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-model-messageheader"
+     *        >MessageHeaders</a> for the email. You can have up to 15 Headers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailTemplateResponse withHeaders(java.util.Collection<MessageHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
      * Each tag consists of a required tag key and an associated tag value.
      * </p>
@@ -733,6 +827,8 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             sb.append("RecommenderId: ").append(getRecommenderId()).append(",");
         if (getSubject() != null)
             sb.append("Subject: ").append(getSubject()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTemplateDescription() != null)
@@ -787,6 +883,10 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             return false;
         if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -826,6 +926,7 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getRecommenderId() == null) ? 0 : getRecommenderId().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());

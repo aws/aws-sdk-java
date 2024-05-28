@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,23 +68,23 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     private java.util.List<Artifact> outputArtifacts;
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      * </p>
      */
     private AWSSessionCredentials artifactCredentials;
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     * A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      * asynchronously.
      * </p>
      */
     private String continuationToken;
     /**
      * <p>
-     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key
-     * Management Service (AWS KMS) key. This is optional and might not be present.
+     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web
+     * Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.
      * </p>
      */
     private EncryptionKey encryptionKey;
@@ -403,15 +403,15 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      * </p>
      * 
      * @param artifactCredentials
-     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
-     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket
-     *        used to store artifact for the pipeline in AWS CodePipeline.
+     *        Represents an Amazon Web Services session credentials object. These credentials are temporary credentials
+     *        that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and
+     *        output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      */
 
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
@@ -420,14 +420,14 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      * </p>
      * 
-     * @return Represents an AWS session credentials object. These credentials are temporary credentials that are issued
-     *         by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket
-     *         used to store artifact for the pipeline in AWS CodePipeline.
+     * @return Represents an Amazon Web Services session credentials object. These credentials are temporary credentials
+     *         that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and
+     *         output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      */
 
     public AWSSessionCredentials getArtifactCredentials() {
@@ -436,15 +436,15 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
-     * Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline.
+     * Represents an Amazon Web Services session credentials object. These credentials are temporary credentials that
+     * are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and output
+     * artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      * </p>
      * 
      * @param artifactCredentials
-     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
-     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket
-     *        used to store artifact for the pipeline in AWS CodePipeline.
+     *        Represents an Amazon Web Services session credentials object. These credentials are temporary credentials
+     *        that are issued by Amazon Web Services Secure Token Service (STS). They can be used to access input and
+     *        output artifacts in the S3 bucket used to store artifact for the pipeline in CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,12 +455,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     * A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      * asynchronously.
      * </p>
      * 
      * @param continuationToken
-     *        A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     *        A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      *        asynchronously.
      */
 
@@ -470,11 +470,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     * A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      * asynchronously.
      * </p>
      * 
-     * @return A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     * @return A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      *         asynchronously.
      */
 
@@ -484,12 +484,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     * A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      * asynchronously.
      * </p>
      * 
      * @param continuationToken
-     *        A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job
+     *        A system-generated token, such as a CodeDeploy deployment ID, that a job requires to continue the job
      *        asynchronously.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -501,13 +501,14 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key
-     * Management Service (AWS KMS) key. This is optional and might not be present.
+     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web
+     * Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.
      * </p>
      * 
      * @param encryptionKey
-     *        The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS
-     *        Key Management Service (AWS KMS) key. This is optional and might not be present.
+     *        The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an
+     *        Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not
+     *        be present.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -516,12 +517,13 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key
-     * Management Service (AWS KMS) key. This is optional and might not be present.
+     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web
+     * Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.
      * </p>
      * 
      * @return The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an
-     *         AWS Key Management Service (AWS KMS) key. This is optional and might not be present.
+     *         Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not
+     *         be present.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -530,13 +532,14 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key
-     * Management Service (AWS KMS) key. This is optional and might not be present.
+     * The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an Amazon Web
+     * Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not be present.
      * </p>
      * 
      * @param encryptionKey
-     *        The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS
-     *        Key Management Service (AWS KMS) key. This is optional and might not be present.
+     *        The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an
+     *        Amazon Web Services Key Management Service (Amazon Web Services KMS) key. This is optional and might not
+     *        be present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

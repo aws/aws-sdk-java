@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,10 @@ public class RecordingGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeGlobalResourceTypes").build();
     private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceTypes").build();
+    private static final MarshallingInfo<StructuredPojo> EXCLUSIONBYRESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exclusionByResourceTypes").build();
+    private static final MarshallingInfo<StructuredPojo> RECORDINGSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingStrategy").build();
 
     private static final RecordingGroupMarshaller instance = new RecordingGroupMarshaller();
 
@@ -54,6 +58,8 @@ public class RecordingGroupMarshaller {
             protocolMarshaller.marshall(recordingGroup.getAllSupported(), ALLSUPPORTED_BINDING);
             protocolMarshaller.marshall(recordingGroup.getIncludeGlobalResourceTypes(), INCLUDEGLOBALRESOURCETYPES_BINDING);
             protocolMarshaller.marshall(recordingGroup.getResourceTypes(), RESOURCETYPES_BINDING);
+            protocolMarshaller.marshall(recordingGroup.getExclusionByResourceTypes(), EXCLUSIONBYRESOURCETYPES_BINDING);
+            protocolMarshaller.marshall(recordingGroup.getRecordingStrategy(), RECORDINGSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

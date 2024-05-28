@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,26 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     BatchGetMetricDataResult batchGetMetricData(BatchGetMetricDataRequest batchGetMetricDataRequest);
+
+    /**
+     * <p>
+     * Cancels an export job.
+     * </p>
+     * 
+     * @param cancelExportJobRequest
+     *        Represents a request to cancel an export job using the export job ID.
+     * @return Result of the CancelExportJob operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.CancelExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CancelExportJobResult cancelExportJob(CancelExportJobRequest cancelExportJobRequest);
 
     /**
      * <p>
@@ -406,6 +426,31 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     CreateEmailTemplateResult createEmailTemplate(CreateEmailTemplateRequest createEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Creates an export job for a data source and destination.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createExportJobRequest
+     *        Represents a request to create an export job from a data source to a data destination.
+     * @return Result of the CreateExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @sample AmazonSimpleEmailServiceV2.CreateExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateExportJobResult createExportJob(CreateExportJobRequest createExportJobRequest);
 
     /**
      * <p>
@@ -1082,6 +1127,26 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Provides information about an export job.
+     * </p>
+     * 
+     * @param getExportJobRequest
+     *        Represents a request to retrieve information about an export job using the export job ID.
+     * @return Result of the GetExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.GetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetExportJobResult getExportJob(GetExportJobRequest getExportJobRequest);
+
+    /**
+     * <p>
      * Provides information about an import job.
      * </p>
      * 
@@ -1099,6 +1164,30 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest);
+
+    /**
+     * <p>
+     * Provides information about a specific message, including the from address, the subject, the recipient address,
+     * email tags, as well as events associated with the message.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getMessageInsightsRequest
+     *        A request to return information about a message.
+     * @return Result of the GetMessageInsights operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetMessageInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMessageInsightsResult getMessageInsights(GetMessageInsightsRequest getMessageInsightsRequest);
 
     /**
      * <p>
@@ -1316,6 +1405,24 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     ListEmailTemplatesResult listEmailTemplates(ListEmailTemplatesRequest listEmailTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists all of the export jobs.
+     * </p>
+     * 
+     * @param listExportJobsRequest
+     *        Represents a request to list all export jobs with filters.
+     * @return Result of the ListExportJobs operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.ListExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportJobsResult listExportJobs(ListExportJobsRequest listExportJobsRequest);
 
     /**
      * <p>
@@ -1657,6 +1764,34 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     PutDedicatedIpInPoolResult putDedicatedIpInPool(PutDedicatedIpInPoolRequest putDedicatedIpInPoolRequest);
+
+    /**
+     * <p>
+     * Used to convert a dedicated IP pool to a different scaling mode.
+     * </p>
+     * <note>
+     * <p>
+     * <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+     * </p>
+     * </note>
+     * 
+     * @param putDedicatedIpPoolScalingAttributesRequest
+     *        A request to convert a dedicated IP pool to a different scaling mode.
+     * @return Result of the PutDedicatedIpPoolScalingAttributes operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutDedicatedIpPoolScalingAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutDedicatedIpPoolScalingAttributesResult putDedicatedIpPoolScalingAttributes(
+            PutDedicatedIpPoolScalingAttributesRequest putDedicatedIpPoolScalingAttributesRequest);
 
     /**
      * <p/>
@@ -2109,9 +2244,14 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
-     * Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the
-     * TopicPreferences object, just the ones that need updating.
+     * Updates a contact's preferences for a list.
      * </p>
+     * <note>
+     * <p>
+     * You must specify all existing topic preferences in the <code>TopicPreferences</code> object, not just the ones
+     * that need updating; otherwise, all your existing preferences will be removed.
+     * </p>
+     * </note>
      * 
      * @param updateContactRequest
      * @return Result of the UpdateContact operation returned by the service.

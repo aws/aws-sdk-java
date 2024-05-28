@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -239,6 +239,22 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
                 }
                 logDeliveryConfigurationsListIndex++;
             }
+        }
+
+        if (modifyReplicationGroupRequest.getIpDiscovery() != null) {
+            request.addParameter("IpDiscovery", StringUtils.fromString(modifyReplicationGroupRequest.getIpDiscovery()));
+        }
+
+        if (modifyReplicationGroupRequest.getTransitEncryptionEnabled() != null) {
+            request.addParameter("TransitEncryptionEnabled", StringUtils.fromBoolean(modifyReplicationGroupRequest.getTransitEncryptionEnabled()));
+        }
+
+        if (modifyReplicationGroupRequest.getTransitEncryptionMode() != null) {
+            request.addParameter("TransitEncryptionMode", StringUtils.fromString(modifyReplicationGroupRequest.getTransitEncryptionMode()));
+        }
+
+        if (modifyReplicationGroupRequest.getClusterMode() != null) {
+            request.addParameter("ClusterMode", StringUtils.fromString(modifyReplicationGroupRequest.getClusterMode()));
         }
 
         return request;

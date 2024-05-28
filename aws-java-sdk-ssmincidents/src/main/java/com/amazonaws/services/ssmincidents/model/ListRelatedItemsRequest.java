@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class ListRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer maxResults;
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
@@ -126,11 +126,11 @@ public class ListRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to continue to the next page of results.
+     *        The pagination token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -139,10 +139,10 @@ public class ListRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return The pagination token to continue to the next page of results.
+     * @return The pagination token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -151,11 +151,11 @@ public class ListRelatedItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to continue to the next page of results.
+     *        The pagination token for the next set of items to return. (You received this token from a previous call.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

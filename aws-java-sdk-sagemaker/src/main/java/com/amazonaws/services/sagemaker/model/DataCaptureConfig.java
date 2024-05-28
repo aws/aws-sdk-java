@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
     private String destinationS3Uri;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
-     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data
+     * at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -229,8 +229,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
-     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data
+     * at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -259,8 +259,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
-     *        encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *        The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the
+     *        captured data at rest using Amazon S3 server-side encryption.</p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>
@@ -293,8 +293,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
-     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data
+     * at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -322,8 +322,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
-     *         encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     * @return The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the
+     *         captured data at rest using Amazon S3 server-side encryption.</p>
      *         <p>
      *         The KmsKeyId can be any of the following formats:
      *         </p>
@@ -356,8 +356,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt
-     * data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the captured data
+     * at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The KmsKeyId can be any of the following formats:
@@ -386,8 +386,8 @@ public class DataCaptureConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to
-     *        encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+     *        The Amazon Resource Name (ARN) of an Key Management Service key that SageMaker uses to encrypt the
+     *        captured data at rest using Amazon S3 server-side encryption.</p>
      *        <p>
      *        The KmsKeyId can be any of the following formats:
      *        </p>

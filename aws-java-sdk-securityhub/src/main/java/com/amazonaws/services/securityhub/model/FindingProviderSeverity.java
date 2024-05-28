@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,9 @@ public class FindingProviderSeverity implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The finding provider's original value for the severity.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
      * </p>
      */
     private String original;
@@ -104,9 +107,14 @@ public class FindingProviderSeverity implements Serializable, Cloneable, Structu
      * <p>
      * The finding provider's original value for the severity.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param original
-     *        The finding provider's original value for the severity.
+     *        The finding provider's original value for the severity.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public void setOriginal(String original) {
@@ -117,8 +125,13 @@ public class FindingProviderSeverity implements Serializable, Cloneable, Structu
      * <p>
      * The finding provider's original value for the severity.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
-     * @return The finding provider's original value for the severity.
+     * @return The finding provider's original value for the severity.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public String getOriginal() {
@@ -129,9 +142,14 @@ public class FindingProviderSeverity implements Serializable, Cloneable, Structu
      * <p>
      * The finding provider's original value for the severity.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param original
-     *        The finding provider's original value for the severity.
+     *        The finding provider's original value for the severity.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

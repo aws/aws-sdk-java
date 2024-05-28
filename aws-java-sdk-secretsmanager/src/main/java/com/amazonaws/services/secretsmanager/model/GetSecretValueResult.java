@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte
-     * array. The response parameter represents the binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.
+     * array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.
      * </p>
      * <p>
      * If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as
@@ -202,8 +202,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte
-     * array. The response parameter represents the binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.
+     * array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.
      * </p>
      * <p>
      * If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as
@@ -222,8 +222,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param secretBinary
      *        The decrypted secret value, if the secret value was originally provided as binary data in the form of a
-     *        byte array. The response parameter represents the binary data as a <a
-     *        href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+     *        byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the
+     *        Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
      *        <p>
      *        If the secret was created by using the Secrets Manager console, or if the secret value was originally
      *        provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code>
@@ -237,8 +237,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte
-     * array. The response parameter represents the binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.
+     * array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.
      * </p>
      * <p>
      * If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as
@@ -253,8 +253,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @return The decrypted secret value, if the secret value was originally provided as binary data in the form of a
-     *         byte array. The response parameter represents the binary data as a <a
-     *         href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+     *         byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the
+     *         Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
      *         <p>
      *         If the secret was created by using the Secrets Manager console, or if the secret value was originally
      *         provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code>
@@ -268,8 +268,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte
-     * array. The response parameter represents the binary data as a <a
-     * href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.
+     * array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.
      * </p>
      * <p>
      * If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as
@@ -288,8 +288,8 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param secretBinary
      *        The decrypted secret value, if the secret value was originally provided as binary data in the form of a
-     *        byte array. The response parameter represents the binary data as a <a
-     *        href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
+     *        byte array. When you retrieve a <code>SecretBinary</code> using the HTTP API, the Python SDK, or the
+     *        Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not encoded.</p>
      *        <p>
      *        If the secret was created by using the Secrets Manager console, or if the secret value was originally
      *        provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class SlotValueElicitationSettingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("waitAndContinueSpecification").build();
     private static final MarshallingInfo<StructuredPojo> SLOTCAPTURESETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("slotCaptureSetting").build();
+    private static final MarshallingInfo<StructuredPojo> SLOTRESOLUTIONSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("slotResolutionSetting").build();
 
     private static final SlotValueElicitationSettingMarshaller instance = new SlotValueElicitationSettingMarshaller();
 
@@ -63,6 +65,7 @@ public class SlotValueElicitationSettingMarshaller {
             protocolMarshaller.marshall(slotValueElicitationSetting.getSampleUtterances(), SAMPLEUTTERANCES_BINDING);
             protocolMarshaller.marshall(slotValueElicitationSetting.getWaitAndContinueSpecification(), WAITANDCONTINUESPECIFICATION_BINDING);
             protocolMarshaller.marshall(slotValueElicitationSetting.getSlotCaptureSetting(), SLOTCAPTURESETTING_BINDING);
+            protocolMarshaller.marshall(slotValueElicitationSetting.getSlotResolutionSetting(), SLOTRESOLUTIONSETTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

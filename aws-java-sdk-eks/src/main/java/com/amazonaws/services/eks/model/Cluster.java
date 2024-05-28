@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      */
     private String name;
@@ -41,7 +41,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      */
     private java.util.Date createdAt;
@@ -68,9 +68,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
      * work properly with Kubernetes. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      */
     private VpcConfigResponse resourcesVpcConfig;
@@ -106,23 +106,25 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Certificate certificateAuthority;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
-     * <i>Amazon EKS User Guide</i> </i>.
+     * The platform version of your Amazon EKS cluster. For more information about clusters deployed on the Amazon Web
+     * Services Cloud, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on
+     * an Outpost, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS local
+     * cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      */
     private String platformVersion;
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -159,14 +161,20 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private OutpostConfigResponse outpostConfig;
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     */
+    private AccessConfigResponse accessConfig;
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param name
-     *        The name of the cluster.
+     *        The name of your cluster.
      */
 
     public void setName(String name) {
@@ -175,10 +183,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of your cluster.
      */
 
     public String getName() {
@@ -187,11 +195,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param name
-     *        The name of the cluster.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +250,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the cluster was created.
+     *        The Unix epoch timestamp at object creation.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -255,10 +263,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the cluster was created.
+     * @return The Unix epoch timestamp at object creation.
      */
 
     public java.util.Date getCreatedAt() {
@@ -267,11 +275,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the cluster was created.
+     *        The Unix epoch timestamp at object creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,17 +418,17 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
      * work properly with Kubernetes. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param resourcesVpcConfig
      *        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
      *        requirements to work properly with Kubernetes. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
-     *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     *        Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a>
+     *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.
      */
 
     public void setResourcesVpcConfig(VpcConfigResponse resourcesVpcConfig) {
@@ -431,16 +439,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
      * work properly with Kubernetes. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @return The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
      *         requirements to work properly with Kubernetes. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
-     *         and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     *         Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a>
+     *         and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     *         considerations</a> in the <i>Amazon EKS User Guide</i>.
      */
 
     public VpcConfigResponse getResourcesVpcConfig() {
@@ -451,17 +459,17 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to
      * work properly with Kubernetes. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     * Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param resourcesVpcConfig
      *        The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific
      *        requirements to work properly with Kubernetes. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a>
-     *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group
-     *        Considerations</a> in the <i>Amazon EKS User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC considerations</a>
+     *        and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster security group
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -691,11 +699,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -704,10 +712,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -716,11 +724,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,15 +739,22 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
-     * <i>Amazon EKS User Guide</i> </i>.
+     * The platform version of your Amazon EKS cluster. For more information about clusters deployed on the Amazon Web
+     * Services Cloud, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on
+     * an Outpost, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS local
+     * cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version of your Amazon EKS cluster. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
-     *        the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        The platform version of your Amazon EKS cluster. For more information about clusters deployed on the
+     *        Amazon Web Services Cloud, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform versions</a> in
+     *        the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on an
+     *        Outpost, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS
+     *        local cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -748,14 +763,21 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
-     * <i>Amazon EKS User Guide</i> </i>.
+     * The platform version of your Amazon EKS cluster. For more information about clusters deployed on the Amazon Web
+     * Services Cloud, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on
+     * an Outpost, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS local
+     * cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
-     * @return The platform version of your Amazon EKS cluster. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
-     *         the <i> <i>Amazon EKS User Guide</i> </i>.
+     * @return The platform version of your Amazon EKS cluster. For more information about clusters deployed on the
+     *         Amazon Web Services Cloud, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform versions</a> in
+     *         the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on an
+     *         Outpost, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS
+     *         local cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
 
     public String getPlatformVersion() {
@@ -764,15 +786,22 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i>
-     * <i>Amazon EKS User Guide</i> </i>.
+     * The platform version of your Amazon EKS cluster. For more information about clusters deployed on the Amazon Web
+     * Services Cloud, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on
+     * an Outpost, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS local
+     * cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version of your Amazon EKS cluster. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in
-     *        the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        The platform version of your Amazon EKS cluster. For more information about clusters deployed on the
+     *        Amazon Web Services Cloud, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform versions</a> in
+     *        the <i> <i>Amazon EKS User Guide</i> </i>. For more information about local clusters deployed on an
+     *        Outpost, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-platform-versions.html">Amazon EKS
+     *        local cluster platform versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -783,14 +812,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value. You define both. Cluster tags do not propagate to any other
-     *         resources associated with the cluster.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -799,15 +826,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both. Cluster tags do not propagate to any other
-     *        resources associated with the cluster.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -816,15 +841,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both. Cluster tags do not propagate to any other
-     *        resources associated with the cluster.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1110,6 +1133,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @param accessConfig
+     *        The access configuration for the cluster.
+     */
+
+    public void setAccessConfig(AccessConfigResponse accessConfig) {
+        this.accessConfig = accessConfig;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @return The access configuration for the cluster.
+     */
+
+    public AccessConfigResponse getAccessConfig() {
+        return this.accessConfig;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @param accessConfig
+     *        The access configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAccessConfig(AccessConfigResponse accessConfig) {
+        setAccessConfig(accessConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1160,7 +1223,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getHealth() != null)
             sb.append("Health: ").append(getHealth()).append(",");
         if (getOutpostConfig() != null)
-            sb.append("OutpostConfig: ").append(getOutpostConfig());
+            sb.append("OutpostConfig: ").append(getOutpostConfig()).append(",");
+        if (getAccessConfig() != null)
+            sb.append("AccessConfig: ").append(getAccessConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1255,6 +1320,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOutpostConfig() != null && other.getOutpostConfig().equals(this.getOutpostConfig()) == false)
             return false;
+        if (other.getAccessConfig() == null ^ this.getAccessConfig() == null)
+            return false;
+        if (other.getAccessConfig() != null && other.getAccessConfig().equals(this.getAccessConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1283,6 +1352,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());
         hashCode = prime * hashCode + ((getOutpostConfig() == null) ? 0 : getOutpostConfig().hashCode());
+        hashCode = prime * hashCode + ((getAccessConfig() == null) ? 0 : getAccessConfig().hashCode());
         return hashCode;
     }
 

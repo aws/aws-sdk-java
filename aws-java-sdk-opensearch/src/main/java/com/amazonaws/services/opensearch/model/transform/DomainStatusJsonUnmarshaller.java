@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,10 +72,18 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                     context.nextToken();
                     domainStatus.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EndpointV2", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setEndpointV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Endpoints", targetDepth)) {
                     context.nextToken();
                     domainStatus.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("DomainEndpointV2HostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setDomainEndpointV2HostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Processing", targetDepth)) {
                     context.nextToken();
@@ -100,6 +108,10 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                 if (context.testExpression("AccessPolicies", targetDepth)) {
                     context.nextToken();
                     domainStatus.setAccessPolicies(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IPAddressType", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setIPAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();
@@ -150,6 +162,24 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                 if (context.testExpression("ChangeProgressDetails", targetDepth)) {
                     context.nextToken();
                     domainStatus.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OffPeakWindowOptions", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setOffPeakWindowOptions(OffPeakWindowOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SoftwareUpdateOptions", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setSoftwareUpdateOptions(SoftwareUpdateOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DomainProcessingStatus", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setDomainProcessingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModifyingProperties", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setModifyingProperties(new ListUnmarshaller<ModifyingProperties>(ModifyingPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

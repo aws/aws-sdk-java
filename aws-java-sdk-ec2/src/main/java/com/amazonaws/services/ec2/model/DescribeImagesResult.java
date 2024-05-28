@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,13 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Image> images;
+    /**
+     * <p>
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -104,6 +111,52 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
+     * </p>
+     * 
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -116,7 +169,9 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImages() != null)
-            sb.append("Images: ").append(getImages());
+            sb.append("Images: ").append(getImages()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +190,10 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getImages() != null && other.getImages().equals(this.getImages()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -144,6 +203,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImages() == null) ? 0 : getImages().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

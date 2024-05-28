@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,32 @@ public class AbstractAWSAccount implements AWSAccount {
     }
 
     @Override
+    public DisableRegionResult disableRegion(DisableRegionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableRegionResult enableRegion(EnableRegionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAlternateContactResult getAlternateContact(GetAlternateContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetContactInformationResult getContactInformation(GetContactInformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRegionOptStatusResult getRegionOptStatus(GetRegionOptStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRegionsResult listRegions(ListRegionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

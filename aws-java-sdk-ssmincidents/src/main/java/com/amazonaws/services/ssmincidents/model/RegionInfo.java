@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class RegionInfo implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
-     * The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     * The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      * </p>
      */
     private java.util.Date statusUpdateDateTime;
@@ -194,11 +194,11 @@ public class RegionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     * The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      * </p>
      * 
      * @param statusUpdateDateTime
-     *        The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     *        The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      */
 
     public void setStatusUpdateDateTime(java.util.Date statusUpdateDateTime) {
@@ -207,10 +207,10 @@ public class RegionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     * The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      * </p>
      * 
-     * @return The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     * @return The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      */
 
     public java.util.Date getStatusUpdateDateTime() {
@@ -219,11 +219,11 @@ public class RegionInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     * The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      * </p>
      * 
      * @param statusUpdateDateTime
-     *        The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+     *        The timestamp for when Incident Manager updated the status of the Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

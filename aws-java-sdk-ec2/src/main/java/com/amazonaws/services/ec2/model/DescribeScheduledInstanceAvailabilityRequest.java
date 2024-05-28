@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,11 +41,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * <li>
      * <p>
      * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      * </p>
      * </li>
      * <li>
@@ -114,11 +109,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
@@ -134,11 +124,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      *         <li>
      *         <p>
      *         <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -172,11 +157,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
@@ -193,11 +173,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -233,11 +208,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
@@ -259,11 +229,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -301,11 +266,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      * </p>
      * </li>
@@ -322,11 +282,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      *        <li>
      *        <p>
      *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must
      * match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      */
     private TemplateSourceEntity sourceEntity;
     /**
@@ -81,6 +85,26 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String versionDescription;
+    /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     */
+    private TemplateVersionDefinition definition;
+    /**
+     * <p>
+     * TThe option to relax the validation needed to create a template with definition objects. This skips the
+     * validation step for specific errors.
+     * </p>
+     */
+    private ValidationStrategy validationStrategy;
 
     /**
      * <p>
@@ -298,6 +322,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must
      * match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      * 
      * @param sourceEntity
      *        The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you
@@ -310,6 +338,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
      *        <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original.
      *        The schema in each dataset must match its placeholder.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
      */
 
     public void setSourceEntity(TemplateSourceEntity sourceEntity) {
@@ -330,6 +362,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must
      * match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      * 
      * @return The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you
      *         specify the type of object you're using as source: <code>SourceTemplate</code> for a template or
@@ -341,6 +377,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
      *         <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original.
      *         The schema in each dataset must match its placeholder.
+     *         </p>
+     *         <p>
+     *         Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *         to be valid.
      */
 
     public TemplateSourceEntity getSourceEntity() {
@@ -361,6 +401,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must
      * match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      * 
      * @param sourceEntity
      *        The entity that you are using as a source when you create the template. In <code>SourceEntity</code>, you
@@ -373,6 +417,10 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
      *        <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original.
      *        The schema in each dataset must match its placeholder.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,6 +552,131 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a template.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
+     */
+
+    public void setDefinition(TemplateVersionDefinition definition) {
+        this.definition = definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     * 
+     * @return The definition of a template.</p>
+     *         <p>
+     *         A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     *         </p>
+     *         <p>
+     *         Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *         to be valid.
+     */
+
+    public TemplateVersionDefinition getDefinition() {
+        return this.definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a template.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateRequest withDefinition(TemplateVersionDefinition definition) {
+        setDefinition(definition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * TThe option to relax the validation needed to create a template with definition objects. This skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        TThe option to relax the validation needed to create a template with definition objects. This skips the
+     *        validation step for specific errors.
+     */
+
+    public void setValidationStrategy(ValidationStrategy validationStrategy) {
+        this.validationStrategy = validationStrategy;
+    }
+
+    /**
+     * <p>
+     * TThe option to relax the validation needed to create a template with definition objects. This skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @return TThe option to relax the validation needed to create a template with definition objects. This skips the
+     *         validation step for specific errors.
+     */
+
+    public ValidationStrategy getValidationStrategy() {
+        return this.validationStrategy;
+    }
+
+    /**
+     * <p>
+     * TThe option to relax the validation needed to create a template with definition objects. This skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        TThe option to relax the validation needed to create a template with definition objects. This skips the
+     *        validation step for specific errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateRequest withValidationStrategy(ValidationStrategy validationStrategy) {
+        setValidationStrategy(validationStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -528,7 +701,11 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVersionDescription() != null)
-            sb.append("VersionDescription: ").append(getVersionDescription());
+            sb.append("VersionDescription: ").append(getVersionDescription()).append(",");
+        if (getDefinition() != null)
+            sb.append("Definition: ").append(getDefinition()).append(",");
+        if (getValidationStrategy() != null)
+            sb.append("ValidationStrategy: ").append(getValidationStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -571,6 +748,14 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getVersionDescription() != null && other.getVersionDescription().equals(this.getVersionDescription()) == false)
             return false;
+        if (other.getDefinition() == null ^ this.getDefinition() == null)
+            return false;
+        if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
+            return false;
+        if (other.getValidationStrategy() == null ^ this.getValidationStrategy() == null)
+            return false;
+        if (other.getValidationStrategy() != null && other.getValidationStrategy().equals(this.getValidationStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -586,6 +771,8 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSourceEntity() == null) ? 0 : getSourceEntity().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
+        hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
+        hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
         return hashCode;
     }
 

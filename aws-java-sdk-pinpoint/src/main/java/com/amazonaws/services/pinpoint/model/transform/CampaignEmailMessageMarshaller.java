@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CampaignEmailMessageMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<String> FROMADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromAddress").build();
+    private static final MarshallingInfo<List> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Headers").build();
     private static final MarshallingInfo<String> HTMLBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HtmlBody").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +57,7 @@ public class CampaignEmailMessageMarshaller {
         try {
             protocolMarshaller.marshall(campaignEmailMessage.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(campaignEmailMessage.getFromAddress(), FROMADDRESS_BINDING);
+            protocolMarshaller.marshall(campaignEmailMessage.getHeaders(), HEADERS_BINDING);
             protocolMarshaller.marshall(campaignEmailMessage.getHtmlBody(), HTMLBODY_BINDING);
             protocolMarshaller.marshall(campaignEmailMessage.getTitle(), TITLE_BINDING);
         } catch (Exception e) {

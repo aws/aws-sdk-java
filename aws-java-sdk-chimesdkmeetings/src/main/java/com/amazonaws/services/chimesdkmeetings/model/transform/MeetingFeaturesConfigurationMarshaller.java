@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class MeetingFeaturesConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> AUDIO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Audio").build();
+    private static final MarshallingInfo<StructuredPojo> VIDEO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Video").build();
+    private static final MarshallingInfo<StructuredPojo> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Content").build();
+    private static final MarshallingInfo<StructuredPojo> ATTENDEE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Attendee").build();
 
     private static final MeetingFeaturesConfigurationMarshaller instance = new MeetingFeaturesConfigurationMarshaller();
 
@@ -47,6 +53,9 @@ public class MeetingFeaturesConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(meetingFeaturesConfiguration.getAudio(), AUDIO_BINDING);
+            protocolMarshaller.marshall(meetingFeaturesConfiguration.getVideo(), VIDEO_BINDING);
+            protocolMarshaller.marshall(meetingFeaturesConfiguration.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(meetingFeaturesConfiguration.getAttendee(), ATTENDEE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

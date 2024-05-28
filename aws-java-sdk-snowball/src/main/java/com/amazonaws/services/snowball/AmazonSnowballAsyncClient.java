@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -939,6 +939,72 @@ public class AmazonSnowballAsyncClient extends AmazonSnowballClient implements A
 
                 try {
                     result = executeListLongTermPricing(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(ListPickupLocationsRequest request) {
+
+        return listPickupLocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(final ListPickupLocationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPickupLocationsRequest, ListPickupLocationsResult> asyncHandler) {
+        final ListPickupLocationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPickupLocationsResult>() {
+            @Override
+            public ListPickupLocationsResult call() throws Exception {
+                ListPickupLocationsResult result = null;
+
+                try {
+                    result = executeListPickupLocations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceVersionsResult> listServiceVersionsAsync(ListServiceVersionsRequest request) {
+
+        return listServiceVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceVersionsResult> listServiceVersionsAsync(final ListServiceVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListServiceVersionsRequest, ListServiceVersionsResult> asyncHandler) {
+        final ListServiceVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListServiceVersionsResult>() {
+            @Override
+            public ListServiceVersionsResult call() throws Exception {
+                ListServiceVersionsResult result = null;
+
+                try {
+                    result = executeListServiceVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

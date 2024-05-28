@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class GetJobResultJsonUnmarshaller implements Unmarshaller<GetJobResult, 
                 if (context.testExpression("algorithmSpecification", targetDepth)) {
                     context.nextToken();
                     getJobResult.setAlgorithmSpecification(AlgorithmSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("associations", targetDepth)) {
+                    context.nextToken();
+                    getJobResult.setAssociations(new ListUnmarshaller<Association>(AssociationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("billableDuration", targetDepth)) {
                     context.nextToken();
@@ -108,6 +114,10 @@ public class GetJobResultJsonUnmarshaller implements Unmarshaller<GetJobResult, 
                 if (context.testExpression("outputDataConfig", targetDepth)) {
                     context.nextToken();
                     getJobResult.setOutputDataConfig(JobOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("queueInfo", targetDepth)) {
+                    context.nextToken();
+                    getJobResult.setQueueInfo(HybridJobQueueInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
     private String queueUrl;
     /**
      * <p>
-     * The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by
-     * the <code> <a>ReceiveMessage</a> </code> action.
+     * The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned
+     * by the <code> <a>ReceiveMessage</a> </code> action.
      * </p>
      */
     private String receiptHandle;
@@ -65,7 +65,7 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        Queue URLs and names are case-sensitive.
      * @param receiptHandle
-     *        The receipt handle associated with the message whose visibility timeout is changed. This parameter is
+     *        The receipt handle associated with the message, whose visibility timeout is changed. This parameter is
      *        returned by the <code> <a>ReceiveMessage</a> </code> action.
      * @param visibilityTimeout
      *        The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to
@@ -134,12 +134,12 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by
-     * the <code> <a>ReceiveMessage</a> </code> action.
+     * The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned
+     * by the <code> <a>ReceiveMessage</a> </code> action.
      * </p>
      * 
      * @param receiptHandle
-     *        The receipt handle associated with the message whose visibility timeout is changed. This parameter is
+     *        The receipt handle associated with the message, whose visibility timeout is changed. This parameter is
      *        returned by the <code> <a>ReceiveMessage</a> </code> action.
      */
 
@@ -149,11 +149,11 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by
-     * the <code> <a>ReceiveMessage</a> </code> action.
+     * The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned
+     * by the <code> <a>ReceiveMessage</a> </code> action.
      * </p>
      * 
-     * @return The receipt handle associated with the message whose visibility timeout is changed. This parameter is
+     * @return The receipt handle associated with the message, whose visibility timeout is changed. This parameter is
      *         returned by the <code> <a>ReceiveMessage</a> </code> action.
      */
 
@@ -163,12 +163,12 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by
-     * the <code> <a>ReceiveMessage</a> </code> action.
+     * The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned
+     * by the <code> <a>ReceiveMessage</a> </code> action.
      * </p>
      * 
      * @param receiptHandle
-     *        The receipt handle associated with the message whose visibility timeout is changed. This parameter is
+     *        The receipt handle associated with the message, whose visibility timeout is changed. This parameter is
      *        returned by the <code> <a>ReceiveMessage</a> </code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

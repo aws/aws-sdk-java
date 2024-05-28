@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,14 @@ public class JourneyLimitsJsonUnmarshaller implements Unmarshaller<JourneyLimits
                 if (context.testExpression("EndpointReentryInterval", targetDepth)) {
                     context.nextToken();
                     journeyLimits.setEndpointReentryInterval(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TimeframeCap", targetDepth)) {
+                    context.nextToken();
+                    journeyLimits.setTimeframeCap(JourneyTimeframeCapJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TotalCap", targetDepth)) {
+                    context.nextToken();
+                    journeyLimits.setTotalCap(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

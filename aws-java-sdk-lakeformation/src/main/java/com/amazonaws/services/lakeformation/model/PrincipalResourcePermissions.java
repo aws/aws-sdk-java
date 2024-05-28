@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,18 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
      * </p>
      */
     private DetailsMap additionalDetails;
+    /**
+     * <p>
+     * The date and time when the resource was last updated.
+     * </p>
+     */
+    private java.util.Date lastUpdated;
+    /**
+     * <p>
+     * The user who updated the record.
+     * </p>
+     */
+    private String lastUpdatedBy;
 
     /**
      * <p>
@@ -383,6 +395,86 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The date and time when the resource was last updated.
+     * </p>
+     * 
+     * @param lastUpdated
+     *        The date and time when the resource was last updated.
+     */
+
+    public void setLastUpdated(java.util.Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
+    /**
+     * <p>
+     * The date and time when the resource was last updated.
+     * </p>
+     * 
+     * @return The date and time when the resource was last updated.
+     */
+
+    public java.util.Date getLastUpdated() {
+        return this.lastUpdated;
+    }
+
+    /**
+     * <p>
+     * The date and time when the resource was last updated.
+     * </p>
+     * 
+     * @param lastUpdated
+     *        The date and time when the resource was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrincipalResourcePermissions withLastUpdated(java.util.Date lastUpdated) {
+        setLastUpdated(lastUpdated);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user who updated the record.
+     * </p>
+     * 
+     * @param lastUpdatedBy
+     *        The user who updated the record.
+     */
+
+    public void setLastUpdatedBy(String lastUpdatedBy) {
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
+
+    /**
+     * <p>
+     * The user who updated the record.
+     * </p>
+     * 
+     * @return The user who updated the record.
+     */
+
+    public String getLastUpdatedBy() {
+        return this.lastUpdatedBy;
+    }
+
+    /**
+     * <p>
+     * The user who updated the record.
+     * </p>
+     * 
+     * @param lastUpdatedBy
+     *        The user who updated the record.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrincipalResourcePermissions withLastUpdatedBy(String lastUpdatedBy) {
+        setLastUpdatedBy(lastUpdatedBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -403,7 +495,11 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
         if (getPermissionsWithGrantOption() != null)
             sb.append("PermissionsWithGrantOption: ").append(getPermissionsWithGrantOption()).append(",");
         if (getAdditionalDetails() != null)
-            sb.append("AdditionalDetails: ").append(getAdditionalDetails());
+            sb.append("AdditionalDetails: ").append(getAdditionalDetails()).append(",");
+        if (getLastUpdated() != null)
+            sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
+        if (getLastUpdatedBy() != null)
+            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +534,14 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
             return false;
         if (other.getAdditionalDetails() != null && other.getAdditionalDetails().equals(this.getAdditionalDetails()) == false)
             return false;
+        if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
+            return false;
+        if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
+            return false;
+        if (other.getLastUpdatedBy() == null ^ this.getLastUpdatedBy() == null)
+            return false;
+        if (other.getLastUpdatedBy() != null && other.getLastUpdatedBy().equals(this.getLastUpdatedBy()) == false)
+            return false;
         return true;
     }
 
@@ -451,6 +555,8 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getPermissionsWithGrantOption() == null) ? 0 : getPermissionsWithGrantOption().hashCode());
         hashCode = prime * hashCode + ((getAdditionalDetails() == null) ? 0 : getAdditionalDetails().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedBy() == null) ? 0 : getLastUpdatedBy().hashCode());
         return hashCode;
     }
 

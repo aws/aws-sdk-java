@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
@@ -101,16 +102,15 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
     private OutputDataConfig outputDataConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -131,10 +131,16 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     */
+    private String flywheelArn;
 
     /**
      * <p>
@@ -179,7 +185,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
@@ -193,8 +200,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified
-     *        identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *        follows:</p>
+     *        identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *        job ID. The format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      *        </p>
@@ -212,7 +219,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
@@ -225,8 +233,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified
-     *         identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *         follows:</p>
+     *         identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *         job ID. The format of the ARN is as follows:</p>
      *         <p>
      *         <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      *         </p>
@@ -244,7 +252,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
@@ -258,8 +267,8 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified
-     *        identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *        follows:</p>
+     *        identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *        job ID. The format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:document-classification-job/&lt;job-id&gt;</code>
      *        </p>
@@ -625,13 +634,12 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -640,12 +648,11 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -654,13 +661,12 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,9 +677,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -690,9 +696,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -713,9 +719,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -731,9 +737,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
-     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
-     *         can be either of the following formats:</p>
+     * @return ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *         data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *         VolumeKmsKeyId can be either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -754,9 +760,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -773,9 +779,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -800,13 +806,13 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *        for your document classification job. For more information, see <a
-     *        href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -817,12 +823,12 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @return Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *         for your document classification job. For more information, see <a
-     *         href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -833,18 +839,58 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your document classification job. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *        for your document classification job. For more information, see <a
-     *        href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentClassificationJobProperties withVpcConfig(VpcConfig vpcConfig) {
         setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassificationJobProperties withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
         return this;
     }
 
@@ -885,7 +931,9 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
         if (getVolumeKmsKeyId() != null)
             sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -952,6 +1000,10 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
         return true;
     }
 
@@ -973,6 +1025,7 @@ public class DocumentClassificationJobProperties implements Serializable, Clonea
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,23 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
     private String snapshotArn;
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
-     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     * snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot
+     * exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster
+     * identifier and use it to validate snapshot authorization.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String snapshotClusterIdentifier;
     /**
@@ -137,14 +151,40 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
-     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     * snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot
+     * exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster
+     * identifier and use it to validate snapshot authorization.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snapshotClusterIdentifier
-     *        The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     *        has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     *        name.
+     *        The identifier of the cluster the snapshot was created from.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     *        snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the
+     *        snapshot exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster
+     *        identifier and use it to validate snapshot authorization.
+     *        </p>
+     *        </li>
      */
 
     public void setSnapshotClusterIdentifier(String snapshotClusterIdentifier) {
@@ -153,13 +193,39 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
-     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     * snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot
+     * exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster
+     * identifier and use it to validate snapshot authorization.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     *         has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     *         name.
+     * @return The identifier of the cluster the snapshot was created from.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     *         snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the
+     *         snapshot exists.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the
+     *         cluster identifier and use it to validate snapshot authorization.
+     *         </p>
+     *         </li>
      */
 
     public String getSnapshotClusterIdentifier() {
@@ -168,14 +234,40 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a
-     * policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+     * The identifier of the cluster the snapshot was created from.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     * snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot
+     * exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster
+     * identifier and use it to validate snapshot authorization.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snapshotClusterIdentifier
-     *        The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user
-     *        has a policy containing a snapshot resource element that specifies anything other than * for the cluster
-     *        name.
+     *        The identifier of the cluster the snapshot was created from.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*)
+     *        snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the
+     *        snapshot exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster
+     *        identifier and use it to validate snapshot authorization.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

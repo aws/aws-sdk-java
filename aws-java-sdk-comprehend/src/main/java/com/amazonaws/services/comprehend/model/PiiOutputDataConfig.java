@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ public class PiiOutputDataConfig implements Serializable, Cloneable, StructuredP
     private String s3Uri;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job.
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job.
      * </p>
      */
     private String kmsKeyId;
@@ -116,13 +116,13 @@ public class PiiOutputDataConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job.
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job.
      * </p>
      * 
      * @param kmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results
-     *        from an analysis job.
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+     *        output results from an analysis job.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -131,12 +131,12 @@ public class PiiOutputDataConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job.
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job.
      * </p>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results
-     *         from an analysis job.
+     * @return ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *         the output results from an analysis job.
      */
 
     public String getKmsKeyId() {
@@ -145,13 +145,13 @@ public class PiiOutputDataConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job.
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job.
      * </p>
      * 
      * @param kmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results
-     *        from an analysis job.
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+     *        output results from an analysis job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

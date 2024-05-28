@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,22 @@ public class AbstractAWSControlTower implements AWSControlTower {
     }
 
     @Override
+    public DeleteLandingZoneResult deleteLandingZone(DeleteLandingZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableBaselineResult disableBaseline(DisableBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableControlResult disableControl(DisableControlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableBaselineResult enableBaseline(EnableBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,12 +53,87 @@ public class AbstractAWSControlTower implements AWSControlTower {
     }
 
     @Override
+    public GetBaselineResult getBaseline(GetBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBaselineOperationResult getBaselineOperation(GetBaselineOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetControlOperationResult getControlOperation(GetControlOperationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetEnabledBaselineResult getEnabledBaseline(GetEnabledBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEnabledControlResult getEnabledControl(GetEnabledControlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLandingZoneOperationResult getLandingZoneOperation(GetLandingZoneOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBaselinesResult listBaselines(ListBaselinesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListControlOperationsResult listControlOperations(ListControlOperationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEnabledBaselinesResult listEnabledBaselines(ListEnabledBaselinesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEnabledControlsResult listEnabledControls(ListEnabledControlsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLandingZonesResult listLandingZones(ListLandingZonesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetEnabledBaselineResult resetEnabledBaseline(ResetEnabledBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetLandingZoneResult resetLandingZone(ResetLandingZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEnabledBaselineResult updateEnabledBaseline(UpdateEnabledBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
     private String serviceId;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -109,7 +109,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -125,7 +125,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -149,7 +149,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -166,7 +166,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -192,7 +192,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -214,7 +214,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -242,7 +242,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -259,7 +259,7 @@ public class DescribeVpcEndpointServicePermissionsRequest extends AmazonWebServi
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

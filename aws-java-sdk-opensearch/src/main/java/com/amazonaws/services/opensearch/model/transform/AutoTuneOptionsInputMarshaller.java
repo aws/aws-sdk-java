@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class AutoTuneOptionsInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredState").build();
     private static final MarshallingInfo<List> MAINTENANCESCHEDULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaintenanceSchedules").build();
+    private static final MarshallingInfo<Boolean> USEOFFPEAKWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseOffPeakWindow").build();
 
     private static final AutoTuneOptionsInputMarshaller instance = new AutoTuneOptionsInputMarshaller();
 
@@ -51,6 +53,7 @@ public class AutoTuneOptionsInputMarshaller {
         try {
             protocolMarshaller.marshall(autoTuneOptionsInput.getDesiredState(), DESIREDSTATE_BINDING);
             protocolMarshaller.marshall(autoTuneOptionsInput.getMaintenanceSchedules(), MAINTENANCESCHEDULES_BINDING);
+            protocolMarshaller.marshall(autoTuneOptionsInput.getUseOffPeakWindow(), USEOFFPEAKWINDOW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

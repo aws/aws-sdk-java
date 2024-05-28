@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RestoreFromSnapshotRequestMarshaller {
 
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretKmsKeyId").build();
+    private static final MarshallingInfo<Boolean> MANAGEADMINPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manageAdminPassword").build();
     private static final MarshallingInfo<String> NAMESPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceName").build();
     private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +58,8 @@ public class RestoreFromSnapshotRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(restoreFromSnapshotRequest.getAdminPasswordSecretKmsKeyId(), ADMINPASSWORDSECRETKMSKEYID_BINDING);
+            protocolMarshaller.marshall(restoreFromSnapshotRequest.getManageAdminPassword(), MANAGEADMINPASSWORD_BINDING);
             protocolMarshaller.marshall(restoreFromSnapshotRequest.getNamespaceName(), NAMESPACENAME_BINDING);
             protocolMarshaller.marshall(restoreFromSnapshotRequest.getOwnerAccount(), OWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(restoreFromSnapshotRequest.getSnapshotArn(), SNAPSHOTARN_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     */
+    private String recommendationId;
+    /**
+     * <p>
      * The metrics used to decide what recommendation to make.
      * </p>
      */
@@ -46,6 +52,58 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
      * </p>
      */
     private ModelConfiguration modelConfiguration;
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     */
+    private java.util.Date invocationEndTime;
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     */
+    private java.util.Date invocationStartTime;
+
+    /**
+     * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The recommendation ID which uniquely identifies each recommendation.
+     */
+
+    public void setRecommendationId(String recommendationId) {
+        this.recommendationId = recommendationId;
+    }
+
+    /**
+     * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     * 
+     * @return The recommendation ID which uniquely identifies each recommendation.
+     */
+
+    public String getRecommendationId() {
+        return this.recommendationId;
+    }
+
+    /**
+     * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The recommendation ID which uniquely identifies each recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendation withRecommendationId(String recommendationId) {
+        setRecommendationId(recommendationId);
+        return this;
+    }
 
     /**
      * <p>
@@ -168,6 +226,86 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     * 
+     * @param invocationEndTime
+     *        A timestamp that shows when the benchmark completed.
+     */
+
+    public void setInvocationEndTime(java.util.Date invocationEndTime) {
+        this.invocationEndTime = invocationEndTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     * 
+     * @return A timestamp that shows when the benchmark completed.
+     */
+
+    public java.util.Date getInvocationEndTime() {
+        return this.invocationEndTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark completed.
+     * </p>
+     * 
+     * @param invocationEndTime
+     *        A timestamp that shows when the benchmark completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendation withInvocationEndTime(java.util.Date invocationEndTime) {
+        setInvocationEndTime(invocationEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     * 
+     * @param invocationStartTime
+     *        A timestamp that shows when the benchmark started.
+     */
+
+    public void setInvocationStartTime(java.util.Date invocationStartTime) {
+        this.invocationStartTime = invocationStartTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     * 
+     * @return A timestamp that shows when the benchmark started.
+     */
+
+    public java.util.Date getInvocationStartTime() {
+        return this.invocationStartTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the benchmark started.
+     * </p>
+     * 
+     * @param invocationStartTime
+     *        A timestamp that shows when the benchmark started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendation withInvocationStartTime(java.util.Date invocationStartTime) {
+        setInvocationStartTime(invocationStartTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,12 +317,18 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRecommendationId() != null)
+            sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
         if (getModelConfiguration() != null)
-            sb.append("ModelConfiguration: ").append(getModelConfiguration());
+            sb.append("ModelConfiguration: ").append(getModelConfiguration()).append(",");
+        if (getInvocationEndTime() != null)
+            sb.append("InvocationEndTime: ").append(getInvocationEndTime()).append(",");
+        if (getInvocationStartTime() != null)
+            sb.append("InvocationStartTime: ").append(getInvocationStartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +343,10 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
         if (obj instanceof InferenceRecommendation == false)
             return false;
         InferenceRecommendation other = (InferenceRecommendation) obj;
+        if (other.getRecommendationId() == null ^ this.getRecommendationId() == null)
+            return false;
+        if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
+            return false;
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
@@ -211,6 +359,14 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
             return false;
         if (other.getModelConfiguration() != null && other.getModelConfiguration().equals(this.getModelConfiguration()) == false)
             return false;
+        if (other.getInvocationEndTime() == null ^ this.getInvocationEndTime() == null)
+            return false;
+        if (other.getInvocationEndTime() != null && other.getInvocationEndTime().equals(this.getInvocationEndTime()) == false)
+            return false;
+        if (other.getInvocationStartTime() == null ^ this.getInvocationStartTime() == null)
+            return false;
+        if (other.getInvocationStartTime() != null && other.getInvocationStartTime().equals(this.getInvocationStartTime()) == false)
+            return false;
         return true;
     }
 
@@ -219,9 +375,12 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelConfiguration() == null) ? 0 : getModelConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInvocationEndTime() == null) ? 0 : getInvocationEndTime().hashCode());
+        hashCode = prime * hashCode + ((getInvocationStartTime() == null) ? 0 : getInvocationStartTime().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -220,6 +220,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<AdditionalInferenceSpecificationDefinition> additionalInferenceSpecifications;
     /**
      * <p>
+     * The URI of the source for the model package.
+     * </p>
+     */
+    private String sourceUri;
+    /**
+     * <p>
      * A list of the tags associated with the model package. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
@@ -238,6 +244,12 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DriftCheckBaselines driftCheckBaselines;
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     */
+    private String skipModelValidation;
 
     /**
      * <p>
@@ -1639,6 +1651,46 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The URI of the source for the model package.
+     * </p>
+     * 
+     * @param sourceUri
+     *        The URI of the source for the model package.
+     */
+
+    public void setSourceUri(String sourceUri) {
+        this.sourceUri = sourceUri;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package.
+     * </p>
+     * 
+     * @return The URI of the source for the model package.
+     */
+
+    public String getSourceUri() {
+        return this.sourceUri;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package.
+     * </p>
+     * 
+     * @param sourceUri
+     *        The URI of the source for the model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelPackage withSourceUri(String sourceUri) {
+        setSourceUri(sourceUri);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of the tags associated with the model package. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
@@ -1835,6 +1887,65 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public void setSkipModelValidation(String skipModelValidation) {
+        this.skipModelValidation = skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @return Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public String getSkipModelValidation() {
+        return this.skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public ModelPackage withSkipModelValidation(String skipModelValidation) {
+        setSkipModelValidation(skipModelValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public ModelPackage withSkipModelValidation(SkipModelValidation skipModelValidation) {
+        this.skipModelValidation = skipModelValidation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1892,12 +2003,16 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
             sb.append("SamplePayloadUrl: ").append(getSamplePayloadUrl()).append(",");
         if (getAdditionalInferenceSpecifications() != null)
             sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications()).append(",");
+        if (getSourceUri() != null)
+            sb.append("SourceUri: ").append(getSourceUri()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCustomerMetadataProperties() != null)
             sb.append("CustomerMetadataProperties: ").append(getCustomerMetadataProperties()).append(",");
         if (getDriftCheckBaselines() != null)
-            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines());
+            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines()).append(",");
+        if (getSkipModelValidation() != null)
+            sb.append("SkipModelValidation: ").append(getSkipModelValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -2005,6 +2120,10 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
         if (other.getAdditionalInferenceSpecifications() != null
                 && other.getAdditionalInferenceSpecifications().equals(this.getAdditionalInferenceSpecifications()) == false)
             return false;
+        if (other.getSourceUri() == null ^ this.getSourceUri() == null)
+            return false;
+        if (other.getSourceUri() != null && other.getSourceUri().equals(this.getSourceUri()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -2016,6 +2135,10 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
         if (other.getDriftCheckBaselines() == null ^ this.getDriftCheckBaselines() == null)
             return false;
         if (other.getDriftCheckBaselines() != null && other.getDriftCheckBaselines().equals(this.getDriftCheckBaselines()) == false)
+            return false;
+        if (other.getSkipModelValidation() == null ^ this.getSkipModelValidation() == null)
+            return false;
+        if (other.getSkipModelValidation() != null && other.getSkipModelValidation().equals(this.getSkipModelValidation()) == false)
             return false;
         return true;
     }
@@ -2048,9 +2171,11 @@ public class ModelPackage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getSamplePayloadUrl() == null) ? 0 : getSamplePayloadUrl().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInferenceSpecifications() == null) ? 0 : getAdditionalInferenceSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getSourceUri() == null) ? 0 : getSourceUri().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getDriftCheckBaselines() == null) ? 0 : getDriftCheckBaselines().hashCode());
+        hashCode = prime * hashCode + ((getSkipModelValidation() == null) ? 0 : getSkipModelValidation().hashCode());
         return hashCode;
     }
 

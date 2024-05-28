@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,24 +28,53 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The users returned in the request to list users.
+     * A list of the user pool users, and their attributes, that match your query.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user
+     * ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and
+     * the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response
+     * by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<UserType> users;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      */
     private String paginationToken;
 
     /**
      * <p>
-     * The users returned in the request to list users.
+     * A list of the user pool users, and their attributes, that match your query.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user
+     * ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and
+     * the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response
+     * by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     * </p>
+     * </note>
      * 
-     * @return The users returned in the request to list users.
+     * @return A list of the user pool users, and their attributes, that match your query.</p> <note>
+     *         <p>
+     *         Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each
+     *         unique user ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     *         >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP
+     *         user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of
+     *         this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     *         </p>
      */
 
     public java.util.List<UserType> getUsers() {
@@ -54,11 +83,29 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The users returned in the request to list users.
+     * A list of the user pool users, and their attributes, that match your query.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user
+     * ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and
+     * the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response
+     * by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     * </p>
+     * </note>
      * 
      * @param users
-     *        The users returned in the request to list users.
+     *        A list of the user pool users, and their attributes, that match your query.</p> <note>
+     *        <p>
+     *        Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique
+     *        user ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     *        >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP
+     *        user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of
+     *        this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     *        </p>
      */
 
     public void setUsers(java.util.Collection<UserType> users) {
@@ -72,8 +119,18 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The users returned in the request to list users.
+     * A list of the user pool users, and their attributes, that match your query.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user
+     * ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and
+     * the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response
+     * by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUsers(java.util.Collection)} or {@link #withUsers(java.util.Collection)} if you want to override the
@@ -81,7 +138,15 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param users
-     *        The users returned in the request to list users.
+     *        A list of the user pool users, and their attributes, that match your query.</p> <note>
+     *        <p>
+     *        Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique
+     *        user ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     *        >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP
+     *        user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of
+     *        this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +162,29 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The users returned in the request to list users.
+     * A list of the user pool users, and their attributes, that match your query.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user
+     * ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and
+     * the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response
+     * by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     * </p>
+     * </note>
      * 
      * @param users
-     *        The users returned in the request to list users.
+     *        A list of the user pool users, and their attributes, that match your query.</p> <note>
+     *        <p>
+     *        Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique
+     *        user ID from your third-party identity providers (IdPs). When you link users with the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     *        >AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP
+     *        user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of
+     *        this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +195,15 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *        a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *        this token, you can paginate through the full list of items.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -127,12 +212,14 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
-     *         next set of items in the list.
+     * @return The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *         a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *         this token, you can paginate through the full list of items.
      */
 
     public String getPaginationToken() {
@@ -141,13 +228,15 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *        a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *        this token, you can paginate through the full list of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

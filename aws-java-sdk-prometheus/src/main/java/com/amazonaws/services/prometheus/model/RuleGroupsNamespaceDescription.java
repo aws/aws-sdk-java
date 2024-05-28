@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a description of the rule groups namespace.
+ * The details about one rule groups namespace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/RuleGroupsNamespaceDescription" target="_top">AWS
@@ -30,54 +30,59 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The time when the rule groups namespace was created.
+     * The date and time that the rule groups namespace was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The rule groups namespace data.
+     * The rule groups file used in the namespace.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      */
     private java.nio.ByteBuffer data;
     /**
      * <p>
-     * The time when the rule groups namespace was modified.
+     * The date and time that the rule groups namespace was most recently changed.
      * </p>
      */
     private java.util.Date modifiedAt;
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The status of rule groups namespace.
+     * The current status of the rule groups namespace.
      * </p>
      */
     private RuleGroupsNamespaceStatus status;
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the rule groups namespace.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of this rule groups namespace.
+     *        The ARN of the rule groups namespace.
      */
 
     public void setArn(String arn) {
@@ -86,10 +91,10 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of this rule groups namespace.
+     * @return The ARN of the rule groups namespace.
      */
 
     public String getArn() {
@@ -98,11 +103,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of this rule groups namespace.
+     * The ARN of the rule groups namespace.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of this rule groups namespace.
+     *        The ARN of the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +118,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The time when the rule groups namespace was created.
+     * The date and time that the rule groups namespace was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the rule groups namespace was created.
+     *        The date and time that the rule groups namespace was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -126,10 +131,10 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The time when the rule groups namespace was created.
+     * The date and time that the rule groups namespace was created.
      * </p>
      * 
-     * @return The time when the rule groups namespace was created.
+     * @return The date and time that the rule groups namespace was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -138,11 +143,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The time when the rule groups namespace was created.
+     * The date and time that the rule groups namespace was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the rule groups namespace was created.
+     *        The date and time that the rule groups namespace was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +158,12 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The rule groups namespace data.
+     * The rule groups file used in the namespace.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -167,7 +177,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
      * </p>
      * 
      * @param data
-     *        The rule groups namespace data.
+     *        The rule groups file used in the namespace.</p>
+     *        <p>
+     *        For details about the rule groups namespace structure, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     *        >RuleGroupsNamespaceData</a>.
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -176,7 +190,12 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The rule groups namespace data.
+     * The rule groups file used in the namespace.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -186,7 +205,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
      * {@code position}.
      * </p>
      * 
-     * @return The rule groups namespace data.
+     * @return The rule groups file used in the namespace.</p>
+     *         <p>
+     *         For details about the rule groups namespace structure, see <a
+     *         href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     *         >RuleGroupsNamespaceData</a>.
      */
 
     public java.nio.ByteBuffer getData() {
@@ -195,7 +218,12 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The rule groups namespace data.
+     * The rule groups file used in the namespace.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -209,7 +237,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
      * </p>
      * 
      * @param data
-     *        The rule groups namespace data.
+     *        The rule groups file used in the namespace.</p>
+     *        <p>
+     *        For details about the rule groups namespace structure, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     *        >RuleGroupsNamespaceData</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +252,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The time when the rule groups namespace was modified.
+     * The date and time that the rule groups namespace was most recently changed.
      * </p>
      * 
      * @param modifiedAt
-     *        The time when the rule groups namespace was modified.
+     *        The date and time that the rule groups namespace was most recently changed.
      */
 
     public void setModifiedAt(java.util.Date modifiedAt) {
@@ -233,10 +265,10 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The time when the rule groups namespace was modified.
+     * The date and time that the rule groups namespace was most recently changed.
      * </p>
      * 
-     * @return The time when the rule groups namespace was modified.
+     * @return The date and time that the rule groups namespace was most recently changed.
      */
 
     public java.util.Date getModifiedAt() {
@@ -245,11 +277,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The time when the rule groups namespace was modified.
+     * The date and time that the rule groups namespace was most recently changed.
      * </p>
      * 
      * @param modifiedAt
-     *        The time when the rule groups namespace was modified.
+     *        The date and time that the rule groups namespace was most recently changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,11 +292,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace.
      * </p>
      * 
      * @param name
-     *        The rule groups namespace name.
+     *        The name of the rule groups namespace.
      */
 
     public void setName(String name) {
@@ -273,10 +305,10 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace.
      * </p>
      * 
-     * @return The rule groups namespace name.
+     * @return The name of the rule groups namespace.
      */
 
     public String getName() {
@@ -285,11 +317,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name of the rule groups namespace.
      * </p>
      * 
      * @param name
-     *        The rule groups namespace name.
+     *        The name of the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,11 +332,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The status of rule groups namespace.
+     * The current status of the rule groups namespace.
      * </p>
      * 
      * @param status
-     *        The status of rule groups namespace.
+     *        The current status of the rule groups namespace.
      */
 
     public void setStatus(RuleGroupsNamespaceStatus status) {
@@ -313,10 +345,10 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The status of rule groups namespace.
+     * The current status of the rule groups namespace.
      * </p>
      * 
-     * @return The status of rule groups namespace.
+     * @return The current status of the rule groups namespace.
      */
 
     public RuleGroupsNamespaceStatus getStatus() {
@@ -325,11 +357,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The status of rule groups namespace.
+     * The current status of the rule groups namespace.
      * </p>
      * 
      * @param status
-     *        The status of rule groups namespace.
+     *        The current status of the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,10 +372,10 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the rule groups namespace.
      * </p>
      * 
-     * @return The tags of this rule groups namespace.
+     * @return The list of tag keys and values that are associated with the rule groups namespace.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -352,11 +384,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the rule groups namespace.
      * </p>
      * 
      * @param tags
-     *        The tags of this rule groups namespace.
+     *        The list of tag keys and values that are associated with the rule groups namespace.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -365,11 +397,11 @@ public class RuleGroupsNamespaceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The tags of this rule groups namespace.
+     * The list of tag keys and values that are associated with the rule groups namespace.
      * </p>
      * 
      * @param tags
-     *        The tags of this rule groups namespace.
+     *        The list of tag keys and values that are associated with the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

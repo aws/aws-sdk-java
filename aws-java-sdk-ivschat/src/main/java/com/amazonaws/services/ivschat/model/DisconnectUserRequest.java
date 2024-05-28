@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -184,7 +184,7 @@ public class DisconnectUserRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRoomIdentifier() != null)
             sb.append("RoomIdentifier: ").append(getRoomIdentifier()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("UserId: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

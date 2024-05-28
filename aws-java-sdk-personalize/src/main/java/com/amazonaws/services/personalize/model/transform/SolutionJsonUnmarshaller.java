@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class SolutionJsonUnmarshaller implements Unmarshaller<Solution, JsonUnma
                 if (context.testExpression("performAutoML", targetDepth)) {
                     context.nextToken();
                     solution.setPerformAutoML(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("performAutoTraining", targetDepth)) {
+                    context.nextToken();
+                    solution.setPerformAutoTraining(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("recipeArn", targetDepth)) {
                     context.nextToken();

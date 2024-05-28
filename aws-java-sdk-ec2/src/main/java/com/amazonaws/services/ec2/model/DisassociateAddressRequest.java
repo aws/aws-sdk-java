@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The association ID. Required for EC2-VPC.
+     * The association ID. This parameter is required.
      * </p>
      */
     private String associationId;
     /**
      * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * Deprecated.
      * </p>
      */
     private String publicIp;
@@ -50,7 +50,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
      * methods to initialize any additional object members.
      * 
      * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     *        Deprecated.
      */
     public DisassociateAddressRequest(String publicIp) {
         setPublicIp(publicIp);
@@ -58,11 +58,11 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The association ID. Required for EC2-VPC.
+     * The association ID. This parameter is required.
      * </p>
      * 
      * @param associationId
-     *        [EC2-VPC] The association ID. Required for EC2-VPC.
+     *        The association ID. This parameter is required.
      */
 
     public void setAssociationId(String associationId) {
@@ -71,10 +71,10 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The association ID. Required for EC2-VPC.
+     * The association ID. This parameter is required.
      * </p>
      * 
-     * @return [EC2-VPC] The association ID. Required for EC2-VPC.
+     * @return The association ID. This parameter is required.
      */
 
     public String getAssociationId() {
@@ -83,11 +83,11 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The association ID. Required for EC2-VPC.
+     * The association ID. This parameter is required.
      * </p>
      * 
      * @param associationId
-     *        [EC2-VPC] The association ID. Required for EC2-VPC.
+     *        The association ID. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * Deprecated.
      * </p>
      * 
      * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     *        Deprecated.
      */
 
     public void setPublicIp(String publicIp) {
@@ -111,10 +111,10 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * Deprecated.
      * </p>
      * 
-     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * @return Deprecated.
      */
 
     public String getPublicIp() {
@@ -123,11 +123,11 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * Deprecated.
      * </p>
      * 
      * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     *        Deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,13 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
     private AnomalyDetectorConfiguration configuration;
     /**
      * <p>
+     * Use this object to include parameters to provide information about your metric to CloudWatch to help it build
+     * more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.
+     * </p>
+     */
+    private MetricCharacteristics metricCharacteristics;
+    /**
+     * <p>
      * A single metric anomaly detector to be created.
      * </p>
      * <p>
@@ -94,7 +101,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -403,6 +410,55 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Use this object to include parameters to provide information about your metric to CloudWatch to help it build
+     * more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.
+     * </p>
+     * 
+     * @param metricCharacteristics
+     *        Use this object to include parameters to provide information about your metric to CloudWatch to help it
+     *        build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code>
+     *        parameter.
+     */
+
+    public void setMetricCharacteristics(MetricCharacteristics metricCharacteristics) {
+        this.metricCharacteristics = metricCharacteristics;
+    }
+
+    /**
+     * <p>
+     * Use this object to include parameters to provide information about your metric to CloudWatch to help it build
+     * more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.
+     * </p>
+     * 
+     * @return Use this object to include parameters to provide information about your metric to CloudWatch to help it
+     *         build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code>
+     *         parameter.
+     */
+
+    public MetricCharacteristics getMetricCharacteristics() {
+        return this.metricCharacteristics;
+    }
+
+    /**
+     * <p>
+     * Use this object to include parameters to provide information about your metric to CloudWatch to help it build
+     * more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code> parameter.
+     * </p>
+     * 
+     * @param metricCharacteristics
+     *        Use this object to include parameters to provide information about your metric to CloudWatch to help it
+     *        build more accurate anomaly detection models. Currently, it includes the <code>PeriodicSpikes</code>
+     *        parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutAnomalyDetectorRequest withMetricCharacteristics(MetricCharacteristics metricCharacteristics) {
+        setMetricCharacteristics(metricCharacteristics);
+        return this;
+    }
+
+    /**
+     * <p>
      * A single metric anomaly detector to be created.
      * </p>
      * <p>
@@ -432,7 +488,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -470,7 +526,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     *        the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -514,7 +570,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -551,7 +607,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     *         the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -595,7 +651,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -633,7 +689,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     *        the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -917,6 +973,8 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("Stat: ").append(getStat()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getMetricCharacteristics() != null)
+            sb.append("MetricCharacteristics: ").append(getMetricCharacteristics()).append(",");
         if (getSingleMetricAnomalyDetector() != null)
             sb.append("SingleMetricAnomalyDetector: ").append(getSingleMetricAnomalyDetector()).append(",");
         if (getMetricMathAnomalyDetector() != null)
@@ -955,6 +1013,10 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getMetricCharacteristics() == null ^ this.getMetricCharacteristics() == null)
+            return false;
+        if (other.getMetricCharacteristics() != null && other.getMetricCharacteristics().equals(this.getMetricCharacteristics()) == false)
+            return false;
         if (other.getSingleMetricAnomalyDetector() == null ^ this.getSingleMetricAnomalyDetector() == null)
             return false;
         if (other.getSingleMetricAnomalyDetector() != null && other.getSingleMetricAnomalyDetector().equals(this.getSingleMetricAnomalyDetector()) == false)
@@ -976,6 +1038,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getStat() == null) ? 0 : getStat().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMetricCharacteristics() == null) ? 0 : getMetricCharacteristics().hashCode());
         hashCode = prime * hashCode + ((getSingleMetricAnomalyDetector() == null) ? 0 : getSingleMetricAnomalyDetector().hashCode());
         hashCode = prime * hashCode + ((getMetricMathAnomalyDetector() == null) ? 0 : getMetricMathAnomalyDetector().hashCode());
         return hashCode;

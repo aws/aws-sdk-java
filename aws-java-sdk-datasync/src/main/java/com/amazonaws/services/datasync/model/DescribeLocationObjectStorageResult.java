@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     private String locationArn;
     /**
      * <p>
-     * The URL of the object storage system location.
+     * The URI of the object storage system location.
      * </p>
      */
     private String locationUri;
@@ -59,7 +59,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     private String serverProtocol;
     /**
      * <p>
-     * The ARNs of the DataSync agents that can securely connect with your location.
+     * The ARNs of the DataSync agents that can connect with your object storage system.
      * </p>
      */
     private java.util.List<String> agentArns;
@@ -71,7 +71,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     private java.util.Date creationTime;
     /**
      * <p>
-     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * The certificate chain for DataSync to authenticate with your object storage system if the system uses a private
+     * or self-signed certificate authority (CA).
      * </p>
      */
     private java.nio.ByteBuffer serverCertificate;
@@ -118,11 +119,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the object storage system location.
+     * The URI of the object storage system location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the object storage system location.
+     *        The URI of the object storage system location.
      */
 
     public void setLocationUri(String locationUri) {
@@ -131,10 +132,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the object storage system location.
+     * The URI of the object storage system location.
      * </p>
      * 
-     * @return The URL of the object storage system location.
+     * @return The URI of the object storage system location.
      */
 
     public String getLocationUri() {
@@ -143,11 +144,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the object storage system location.
+     * The URI of the object storage system location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the object storage system location.
+     *        The URI of the object storage system location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,10 +298,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARNs of the DataSync agents that can securely connect with your location.
+     * The ARNs of the DataSync agents that can connect with your object storage system.
      * </p>
      * 
-     * @return The ARNs of the DataSync agents that can securely connect with your location.
+     * @return The ARNs of the DataSync agents that can connect with your object storage system.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -309,11 +310,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARNs of the DataSync agents that can securely connect with your location.
+     * The ARNs of the DataSync agents that can connect with your object storage system.
      * </p>
      * 
      * @param agentArns
-     *        The ARNs of the DataSync agents that can securely connect with your location.
+     *        The ARNs of the DataSync agents that can connect with your object storage system.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -327,7 +328,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARNs of the DataSync agents that can securely connect with your location.
+     * The ARNs of the DataSync agents that can connect with your object storage system.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -336,7 +337,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param agentArns
-     *        The ARNs of the DataSync agents that can securely connect with your location.
+     *        The ARNs of the DataSync agents that can connect with your object storage system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +353,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARNs of the DataSync agents that can securely connect with your location.
+     * The ARNs of the DataSync agents that can connect with your object storage system.
      * </p>
      * 
      * @param agentArns
-     *        The ARNs of the DataSync agents that can securely connect with your location.
+     *        The ARNs of the DataSync agents that can connect with your object storage system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,7 +408,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * The certificate chain for DataSync to authenticate with your object storage system if the system uses a private
+     * or self-signed certificate authority (CA).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -421,7 +423,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param serverCertificate
-     *        The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     *        The certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     *        private or self-signed certificate authority (CA).
      */
 
     public void setServerCertificate(java.nio.ByteBuffer serverCertificate) {
@@ -430,7 +433,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * The certificate chain for DataSync to authenticate with your object storage system if the system uses a private
+     * or self-signed certificate authority (CA).
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -440,7 +444,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
      * {@code position}.
      * </p>
      * 
-     * @return The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * @return The certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     *         private or self-signed certificate authority (CA).
      */
 
     public java.nio.ByteBuffer getServerCertificate() {
@@ -449,7 +454,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * The certificate chain for DataSync to authenticate with your object storage system if the system uses a private
+     * or self-signed certificate authority (CA).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -463,7 +469,8 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param serverCertificate
-     *        The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     *        The certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     *        private or self-signed certificate authority (CA).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

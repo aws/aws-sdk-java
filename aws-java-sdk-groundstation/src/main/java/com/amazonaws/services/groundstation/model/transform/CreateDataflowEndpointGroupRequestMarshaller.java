@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateDataflowEndpointGroupRequestMarshaller {
 
+    private static final MarshallingInfo<Integer> CONTACTPOSTPASSDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contactPostPassDurationSeconds").build();
+    private static final MarshallingInfo<Integer> CONTACTPREPASSDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contactPrePassDurationSeconds").build();
     private static final MarshallingInfo<List> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointDetails").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -50,6 +54,8 @@ public class CreateDataflowEndpointGroupRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createDataflowEndpointGroupRequest.getContactPostPassDurationSeconds(), CONTACTPOSTPASSDURATIONSECONDS_BINDING);
+            protocolMarshaller.marshall(createDataflowEndpointGroupRequest.getContactPrePassDurationSeconds(), CONTACTPREPASSDURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(createDataflowEndpointGroupRequest.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
             protocolMarshaller.marshall(createDataflowEndpointGroupRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

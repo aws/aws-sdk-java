@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,6 +115,12 @@ public class ReplicationConfigurationTemplate implements Serializable, Cloneable
      * </p>
      */
     private Boolean useDedicatedReplicationServer;
+    /**
+     * <p>
+     * Replication Configuration template use Fips Endpoint.
+     * </p>
+     */
+    private Boolean useFipsEndpoint;
 
     /**
      * <p>
@@ -897,6 +903,58 @@ public class ReplicationConfigurationTemplate implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * Replication Configuration template use Fips Endpoint.
+     * </p>
+     * 
+     * @param useFipsEndpoint
+     *        Replication Configuration template use Fips Endpoint.
+     */
+
+    public void setUseFipsEndpoint(Boolean useFipsEndpoint) {
+        this.useFipsEndpoint = useFipsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Replication Configuration template use Fips Endpoint.
+     * </p>
+     * 
+     * @return Replication Configuration template use Fips Endpoint.
+     */
+
+    public Boolean getUseFipsEndpoint() {
+        return this.useFipsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Replication Configuration template use Fips Endpoint.
+     * </p>
+     * 
+     * @param useFipsEndpoint
+     *        Replication Configuration template use Fips Endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationConfigurationTemplate withUseFipsEndpoint(Boolean useFipsEndpoint) {
+        setUseFipsEndpoint(useFipsEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Replication Configuration template use Fips Endpoint.
+     * </p>
+     * 
+     * @return Replication Configuration template use Fips Endpoint.
+     */
+
+    public Boolean isUseFipsEndpoint() {
+        return this.useFipsEndpoint;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -937,7 +995,9 @@ public class ReplicationConfigurationTemplate implements Serializable, Cloneable
         if (getTags() != null)
             sb.append("Tags: ").append("***Sensitive Data Redacted***").append(",");
         if (getUseDedicatedReplicationServer() != null)
-            sb.append("UseDedicatedReplicationServer: ").append(getUseDedicatedReplicationServer());
+            sb.append("UseDedicatedReplicationServer: ").append(getUseDedicatedReplicationServer()).append(",");
+        if (getUseFipsEndpoint() != null)
+            sb.append("UseFipsEndpoint: ").append(getUseFipsEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -1017,6 +1077,10 @@ public class ReplicationConfigurationTemplate implements Serializable, Cloneable
         if (other.getUseDedicatedReplicationServer() != null
                 && other.getUseDedicatedReplicationServer().equals(this.getUseDedicatedReplicationServer()) == false)
             return false;
+        if (other.getUseFipsEndpoint() == null ^ this.getUseFipsEndpoint() == null)
+            return false;
+        if (other.getUseFipsEndpoint() != null && other.getUseFipsEndpoint().equals(this.getUseFipsEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -1040,6 +1104,7 @@ public class ReplicationConfigurationTemplate implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getStagingAreaTags() == null) ? 0 : getStagingAreaTags().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUseDedicatedReplicationServer() == null) ? 0 : getUseDedicatedReplicationServer().hashCode());
+        hashCode = prime * hashCode + ((getUseFipsEndpoint() == null) ? 0 : getUseFipsEndpoint().hashCode());
         return hashCode;
     }
 

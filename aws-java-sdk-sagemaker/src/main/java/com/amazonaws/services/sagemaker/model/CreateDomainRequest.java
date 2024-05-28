@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,19 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private UserSettings defaultUserSettings;
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     */
+    private DomainSettings domainSettings;
+    /**
+     * <p>
+     * The VPC subnets that the domain uses for communication.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      */
     private String vpcId;
@@ -84,7 +90,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -99,7 +105,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String homeEfsFileSystemKmsKeyId;
     /**
      * <p>
-     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an Amazon Web
      * Services managed key by default. For more control, specify a customer managed key.
      * </p>
      */
@@ -108,16 +114,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      */
     private String appSecurityGroupManagement;
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
+     * The default settings used to create a space.
      * </p>
      */
-    private DomainSettings domainSettings;
+    private DefaultSpaceSettings defaultSpaceSettings;
 
     /**
      * <p>
@@ -293,10 +300,50 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * A collection of <code>Domain</code> settings.
      * </p>
      * 
-     * @return The VPC subnets that Studio uses for communication.
+     * @param domainSettings
+     *        A collection of <code>Domain</code> settings.
+     */
+
+    public void setDomainSettings(DomainSettings domainSettings) {
+        this.domainSettings = domainSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @return A collection of <code>Domain</code> settings.
+     */
+
+    public DomainSettings getDomainSettings() {
+        return this.domainSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @param domainSettings
+     *        A collection of <code>Domain</code> settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withDomainSettings(DomainSettings domainSettings) {
+        setDomainSettings(domainSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that the domain uses for communication.
+     * </p>
+     * 
+     * @return The VPC subnets that the domain uses for communication.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -305,11 +352,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        The VPC subnets that Studio uses for communication.
+     *        The VPC subnets that the domain uses for communication.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -323,7 +370,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -332,7 +379,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param subnetIds
-     *        The VPC subnets that Studio uses for communication.
+     *        The VPC subnets that the domain uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,11 +395,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        The VPC subnets that Studio uses for communication.
+     *        The VPC subnets that the domain uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,11 +410,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      */
 
     public void setVpcId(String vpcId) {
@@ -376,10 +423,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * 
-     * @return The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * @return The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      */
 
     public String getVpcId() {
@@ -388,11 +435,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,7 +559,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -528,7 +575,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *        </p>
      *        </li>
      * @see AppNetworkAccessType
@@ -551,7 +598,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -566,7 +613,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *         <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *         </p>
      *         </li>
      * @see AppNetworkAccessType
@@ -589,7 +636,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -605,7 +652,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -630,7 +677,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -646,7 +693,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -700,13 +747,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an Amazon Web
      * Services managed key by default. For more control, specify a customer managed key.
      * </p>
      * 
      * @param kmsKeyId
-     *        SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
-     *        Services managed key by default. For more control, specify a customer managed key.
+     *        SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an
+     *        Amazon Web Services managed key by default. For more control, specify a customer managed key.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -715,12 +762,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an Amazon Web
      * Services managed key by default. For more control, specify a customer managed key.
      * </p>
      * 
-     * @return SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon
-     *         Web Services managed key by default. For more control, specify a customer managed key.
+     * @return SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an
+     *         Amazon Web Services managed key by default. For more control, specify a customer managed key.
      */
 
     public String getKmsKeyId() {
@@ -729,13 +776,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
+     * SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an Amazon Web
      * Services managed key by default. For more control, specify a customer managed key.
      * </p>
      * 
      * @param kmsKeyId
-     *        SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web
-     *        Services managed key by default. For more control, specify a customer managed key.
+     *        SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an
+     *        Amazon Web Services managed key by default. For more control, specify a customer managed key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -748,14 +795,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @param appSecurityGroupManagement
      *        The entity that creates and manages the required security groups for inter-app communication in
      *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     *        is provided.
+     *        is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>
+     *        .
      * @see AppSecurityGroupManagement
      */
 
@@ -767,13 +816,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @return The entity that creates and manages the required security groups for inter-app communication in
      *         <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *         <code>VPCOnly</code> and
-     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting
+     *         up the domain for use with RStudio, this value must be set to <code>Service</code>.
      * @see AppSecurityGroupManagement
      */
 
@@ -785,14 +836,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @param appSecurityGroupManagement
      *        The entity that creates and manages the required security groups for inter-app communication in
      *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     *        is provided.
+     *        is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppSecurityGroupManagement
      */
@@ -806,14 +859,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
-     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
+     * the domain for use with RStudio, this value must be set to <code>Service</code>.
      * </p>
      * 
      * @param appSecurityGroupManagement
      *        The entity that creates and manages the required security groups for inter-app communication in
      *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
      *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     *        is provided.
+     *        is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppSecurityGroupManagement
      */
@@ -825,41 +880,41 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
+     * The default settings used to create a space.
      * </p>
      * 
-     * @param domainSettings
-     *        A collection of <code>Domain</code> settings.
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space.
      */
 
-    public void setDomainSettings(DomainSettings domainSettings) {
-        this.domainSettings = domainSettings;
+    public void setDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        this.defaultSpaceSettings = defaultSpaceSettings;
     }
 
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
+     * The default settings used to create a space.
      * </p>
      * 
-     * @return A collection of <code>Domain</code> settings.
+     * @return The default settings used to create a space.
      */
 
-    public DomainSettings getDomainSettings() {
-        return this.domainSettings;
+    public DefaultSpaceSettings getDefaultSpaceSettings() {
+        return this.defaultSpaceSettings;
     }
 
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
+     * The default settings used to create a space.
      * </p>
      * 
-     * @param domainSettings
-     *        A collection of <code>Domain</code> settings.
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDomainRequest withDomainSettings(DomainSettings domainSettings) {
-        setDomainSettings(domainSettings);
+    public CreateDomainRequest withDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        setDefaultSpaceSettings(defaultSpaceSettings);
         return this;
     }
 
@@ -881,6 +936,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("AuthMode: ").append(getAuthMode()).append(",");
         if (getDefaultUserSettings() != null)
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
+        if (getDomainSettings() != null)
+            sb.append("DomainSettings: ").append(getDomainSettings()).append(",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getVpcId() != null)
@@ -895,8 +952,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getAppSecurityGroupManagement() != null)
             sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement()).append(",");
-        if (getDomainSettings() != null)
-            sb.append("DomainSettings: ").append(getDomainSettings());
+        if (getDefaultSpaceSettings() != null)
+            sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -922,6 +979,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getDefaultUserSettings() == null ^ this.getDefaultUserSettings() == null)
             return false;
         if (other.getDefaultUserSettings() != null && other.getDefaultUserSettings().equals(this.getDefaultUserSettings()) == false)
+            return false;
+        if (other.getDomainSettings() == null ^ this.getDomainSettings() == null)
+            return false;
+        if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
@@ -951,9 +1012,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getAppSecurityGroupManagement() != null && other.getAppSecurityGroupManagement().equals(this.getAppSecurityGroupManagement()) == false)
             return false;
-        if (other.getDomainSettings() == null ^ this.getDomainSettings() == null)
+        if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
             return false;
-        if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
+        if (other.getDefaultSpaceSettings() != null && other.getDefaultSpaceSettings().equals(this.getDefaultSpaceSettings()) == false)
             return false;
         return true;
     }
@@ -966,6 +1027,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getAuthMode() == null) ? 0 : getAuthMode().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
@@ -973,7 +1035,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
-        hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
+        hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         return hashCode;
     }
 

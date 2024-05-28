@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,21 @@ public class ProductionVariantServerlessConfig implements Serializable, Cloneabl
      * </p>
      */
     private Integer maxConcurrency;
+    /**
+     * <p>
+     * The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to
+     * <code>MaxConcurrency</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more
+     * information about creating an Inference Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     * >CreateInferenceRecommendationsJobs</a>.
+     * </p>
+     * </note>
+     */
+    private Integer provisionedConcurrency;
 
     /**
      * <p>
@@ -129,6 +144,94 @@ public class ProductionVariantServerlessConfig implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to
+     * <code>MaxConcurrency</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more
+     * information about creating an Inference Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     * >CreateInferenceRecommendationsJobs</a>.
+     * </p>
+     * </note>
+     * 
+     * @param provisionedConcurrency
+     *        The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or
+     *        equal to <code>MaxConcurrency</code>.</p> <note>
+     *        <p>
+     *        This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For
+     *        more information about creating an Inference Recommender job, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     *        >CreateInferenceRecommendationsJobs</a>.
+     *        </p>
+     */
+
+    public void setProvisionedConcurrency(Integer provisionedConcurrency) {
+        this.provisionedConcurrency = provisionedConcurrency;
+    }
+
+    /**
+     * <p>
+     * The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to
+     * <code>MaxConcurrency</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more
+     * information about creating an Inference Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     * >CreateInferenceRecommendationsJobs</a>.
+     * </p>
+     * </note>
+     * 
+     * @return The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or
+     *         equal to <code>MaxConcurrency</code>.</p> <note>
+     *         <p>
+     *         This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For
+     *         more information about creating an Inference Recommender job, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     *         >CreateInferenceRecommendationsJobs</a>.
+     *         </p>
+     */
+
+    public Integer getProvisionedConcurrency() {
+        return this.provisionedConcurrency;
+    }
+
+    /**
+     * <p>
+     * The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to
+     * <code>MaxConcurrency</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For more
+     * information about creating an Inference Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     * >CreateInferenceRecommendationsJobs</a>.
+     * </p>
+     * </note>
+     * 
+     * @param provisionedConcurrency
+     *        The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or
+     *        equal to <code>MaxConcurrency</code>.</p> <note>
+     *        <p>
+     *        This field is not supported for serverless endpoint recommendations for Inference Recommender jobs. For
+     *        more information about creating an Inference Recommender job, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html"
+     *        >CreateInferenceRecommendationsJobs</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantServerlessConfig withProvisionedConcurrency(Integer provisionedConcurrency) {
+        setProvisionedConcurrency(provisionedConcurrency);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,7 +246,9 @@ public class ProductionVariantServerlessConfig implements Serializable, Cloneabl
         if (getMemorySizeInMB() != null)
             sb.append("MemorySizeInMB: ").append(getMemorySizeInMB()).append(",");
         if (getMaxConcurrency() != null)
-            sb.append("MaxConcurrency: ").append(getMaxConcurrency());
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
+        if (getProvisionedConcurrency() != null)
+            sb.append("ProvisionedConcurrency: ").append(getProvisionedConcurrency());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +271,10 @@ public class ProductionVariantServerlessConfig implements Serializable, Cloneabl
             return false;
         if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
             return false;
+        if (other.getProvisionedConcurrency() == null ^ this.getProvisionedConcurrency() == null)
+            return false;
+        if (other.getProvisionedConcurrency() != null && other.getProvisionedConcurrency().equals(this.getProvisionedConcurrency()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +285,7 @@ public class ProductionVariantServerlessConfig implements Serializable, Cloneabl
 
         hashCode = prime * hashCode + ((getMemorySizeInMB() == null) ? 0 : getMemorySizeInMB().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getProvisionedConcurrency() == null) ? 0 : getProvisionedConcurrency().hashCode());
         return hashCode;
     }
 

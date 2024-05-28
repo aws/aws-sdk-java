@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output
- * video quality. The default behavior is faster, lower quality, single-pass encoding.
+ * The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output
+ * video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance
+ * between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video
+ * quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input
+ * followed by an encoding pass. Outputs that use this feature incur pro-tier pricing.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264QualityTuningLevel {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class UpdateFuotaTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirmwareUpdateImage").build();
     private static final MarshallingInfo<String> FIRMWAREUPDATEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirmwareUpdateRole").build();
+    private static final MarshallingInfo<Integer> REDUNDANCYPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedundancyPercent").build();
+    private static final MarshallingInfo<Integer> FRAGMENTSIZEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FragmentSizeBytes").build();
+    private static final MarshallingInfo<Integer> FRAGMENTINTERVALMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FragmentIntervalMS").build();
 
     private static final UpdateFuotaTaskRequestMarshaller instance = new UpdateFuotaTaskRequestMarshaller();
 
@@ -62,6 +68,9 @@ public class UpdateFuotaTaskRequestMarshaller {
             protocolMarshaller.marshall(updateFuotaTaskRequest.getLoRaWAN(), LORAWAN_BINDING);
             protocolMarshaller.marshall(updateFuotaTaskRequest.getFirmwareUpdateImage(), FIRMWAREUPDATEIMAGE_BINDING);
             protocolMarshaller.marshall(updateFuotaTaskRequest.getFirmwareUpdateRole(), FIRMWAREUPDATEROLE_BINDING);
+            protocolMarshaller.marshall(updateFuotaTaskRequest.getRedundancyPercent(), REDUNDANCYPERCENT_BINDING);
+            protocolMarshaller.marshall(updateFuotaTaskRequest.getFragmentSizeBytes(), FRAGMENTSIZEBYTES_BINDING);
+            protocolMarshaller.marshall(updateFuotaTaskRequest.getFragmentIntervalMS(), FRAGMENTINTERVALMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

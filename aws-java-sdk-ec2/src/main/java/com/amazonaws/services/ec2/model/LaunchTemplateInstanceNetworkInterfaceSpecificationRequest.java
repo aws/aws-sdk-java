@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * <p>
      * Associates a public IPv4 address with eth0 for a new network interface.
      * </p>
+     * <p>
+     * Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
+     * <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      */
     private Boolean associatePublicIpAddress;
     /**
@@ -59,7 +64,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
     private String description;
     /**
      * <p>
-     * The device index for the network interface attachment.
+     * The device index for the network interface attachment. Each network interface requires a device index. If you
+     * create a launch template that includes secondary network interfaces but not a primary network interface, then you
+     * must add a primary network interface as a launch parameter when you launch an instance from the template.
      * </p>
      */
     private Integer deviceIndex;
@@ -162,6 +169,30 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * </p>
      */
     private Integer ipv6PrefixCount;
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     */
+    private Boolean primaryIpv6;
+    /**
+     * <p>
+     * Configure ENA Express settings for your launch template.
+     * </p>
+     */
+    private EnaSrdSpecificationRequest enaSrdSpecification;
+    /**
+     * <p>
+     * A security group connection tracking specification that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private ConnectionTrackingSpecificationRequest connectionTrackingSpecification;
 
     /**
      * <p>
@@ -263,9 +294,18 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * <p>
      * Associates a public IPv4 address with eth0 for a new network interface.
      * </p>
+     * <p>
+     * Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
+     * <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
      * @param associatePublicIpAddress
-     *        Associates a public IPv4 address with eth0 for a new network interface.
+     *        Associates a public IPv4 address with eth0 for a new network interface.</p>
+     *        <p>
+     *        Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     *        running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab
+     *        on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
      */
 
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -276,8 +316,17 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * <p>
      * Associates a public IPv4 address with eth0 for a new network interface.
      * </p>
+     * <p>
+     * Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
+     * <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
-     * @return Associates a public IPv4 address with eth0 for a new network interface.
+     * @return Associates a public IPv4 address with eth0 for a new network interface.</p>
+     *         <p>
+     *         Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated
+     *         with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
+     *         tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
      */
 
     public Boolean getAssociatePublicIpAddress() {
@@ -288,9 +337,18 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * <p>
      * Associates a public IPv4 address with eth0 for a new network interface.
      * </p>
+     * <p>
+     * Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
+     * <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
      * @param associatePublicIpAddress
-     *        Associates a public IPv4 address with eth0 for a new network interface.
+     *        Associates a public IPv4 address with eth0 for a new network interface.</p>
+     *        <p>
+     *        Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     *        running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab
+     *        on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,8 +361,17 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * <p>
      * Associates a public IPv4 address with eth0 for a new network interface.
      * </p>
+     * <p>
+     * Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with
+     * running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the
+     * <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
-     * @return Associates a public IPv4 address with eth0 for a new network interface.
+     * @return Associates a public IPv4 address with eth0 for a new network interface.</p>
+     *         <p>
+     *         Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated
+     *         with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
+     *         tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
      */
 
     public Boolean isAssociatePublicIpAddress() {
@@ -405,11 +472,16 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
 
     /**
      * <p>
-     * The device index for the network interface attachment.
+     * The device index for the network interface attachment. Each network interface requires a device index. If you
+     * create a launch template that includes secondary network interfaces but not a primary network interface, then you
+     * must add a primary network interface as a launch parameter when you launch an instance from the template.
      * </p>
      * 
      * @param deviceIndex
-     *        The device index for the network interface attachment.
+     *        The device index for the network interface attachment. Each network interface requires a device index. If
+     *        you create a launch template that includes secondary network interfaces but not a primary network
+     *        interface, then you must add a primary network interface as a launch parameter when you launch an instance
+     *        from the template.
      */
 
     public void setDeviceIndex(Integer deviceIndex) {
@@ -418,10 +490,15 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
 
     /**
      * <p>
-     * The device index for the network interface attachment.
+     * The device index for the network interface attachment. Each network interface requires a device index. If you
+     * create a launch template that includes secondary network interfaces but not a primary network interface, then you
+     * must add a primary network interface as a launch parameter when you launch an instance from the template.
      * </p>
      * 
-     * @return The device index for the network interface attachment.
+     * @return The device index for the network interface attachment. Each network interface requires a device index. If
+     *         you create a launch template that includes secondary network interfaces but not a primary network
+     *         interface, then you must add a primary network interface as a launch parameter when you launch an
+     *         instance from the template.
      */
 
     public Integer getDeviceIndex() {
@@ -430,11 +507,16 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
 
     /**
      * <p>
-     * The device index for the network interface attachment.
+     * The device index for the network interface attachment. Each network interface requires a device index. If you
+     * create a launch template that includes secondary network interfaces but not a primary network interface, then you
+     * must add a primary network interface as a launch parameter when you launch an instance from the template.
      * </p>
      * 
      * @param deviceIndex
-     *        The device index for the network interface attachment.
+     *        The device index for the network interface attachment. Each network interface requires a device index. If
+     *        you create a launch template that includes secondary network interfaces but not a primary network
+     *        interface, then you must add a primary network interface as a launch parameter when you launch an instance
+     *        from the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1263,6 +1345,181 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
     }
 
     /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @param primaryIpv6
+     *        The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *        IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *        network interface is detached. For more information about primary IPv6 addresses, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     */
+
+    public void setPrimaryIpv6(Boolean primaryIpv6) {
+        this.primaryIpv6 = primaryIpv6;
+    }
+
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @return The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. For more information about primary IPv6 addresses, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     */
+
+    public Boolean getPrimaryIpv6() {
+        return this.primaryIpv6;
+    }
+
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @param primaryIpv6
+     *        The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *        IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *        network interface is detached. For more information about primary IPv6 addresses, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecificationRequest withPrimaryIpv6(Boolean primaryIpv6) {
+        setPrimaryIpv6(primaryIpv6);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the
+     * first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     * </p>
+     * 
+     * @return The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. For more information about primary IPv6 addresses, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
+     */
+
+    public Boolean isPrimaryIpv6() {
+        return this.primaryIpv6;
+    }
+
+    /**
+     * <p>
+     * Configure ENA Express settings for your launch template.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Configure ENA Express settings for your launch template.
+     */
+
+    public void setEnaSrdSpecification(EnaSrdSpecificationRequest enaSrdSpecification) {
+        this.enaSrdSpecification = enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Configure ENA Express settings for your launch template.
+     * </p>
+     * 
+     * @return Configure ENA Express settings for your launch template.
+     */
+
+    public EnaSrdSpecificationRequest getEnaSrdSpecification() {
+        return this.enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Configure ENA Express settings for your launch template.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Configure ENA Express settings for your launch template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecificationRequest withEnaSrdSpecification(EnaSrdSpecificationRequest enaSrdSpecification) {
+        setEnaSrdSpecification(enaSrdSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A security group connection tracking specification that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param connectionTrackingSpecification
+     *        A security group connection tracking specification that enables you to set the timeout for connection
+     *        tracking on an Elastic network interface. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     *        >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest connectionTrackingSpecification) {
+        this.connectionTrackingSpecification = connectionTrackingSpecification;
+    }
+
+    /**
+     * <p>
+     * A security group connection tracking specification that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return A security group connection tracking specification that enables you to set the timeout for connection
+     *         tracking on an Elastic network interface. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     *         >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public ConnectionTrackingSpecificationRequest getConnectionTrackingSpecification() {
+        return this.connectionTrackingSpecification;
+    }
+
+    /**
+     * <p>
+     * A security group connection tracking specification that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param connectionTrackingSpecification
+     *        A security group connection tracking specification that enables you to set the timeout for connection
+     *        tracking on an Elastic network interface. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     *        >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecificationRequest withConnectionTrackingSpecification(
+            ConnectionTrackingSpecificationRequest connectionTrackingSpecification) {
+        setConnectionTrackingSpecification(connectionTrackingSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1311,7 +1568,13 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
         if (getIpv6Prefixes() != null)
             sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes()).append(",");
         if (getIpv6PrefixCount() != null)
-            sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount());
+            sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount()).append(",");
+        if (getPrimaryIpv6() != null)
+            sb.append("PrimaryIpv6: ").append(getPrimaryIpv6()).append(",");
+        if (getEnaSrdSpecification() != null)
+            sb.append("EnaSrdSpecification: ").append(getEnaSrdSpecification()).append(",");
+        if (getConnectionTrackingSpecification() != null)
+            sb.append("ConnectionTrackingSpecification: ").append(getConnectionTrackingSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1403,6 +1666,19 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
             return false;
         if (other.getIpv6PrefixCount() != null && other.getIpv6PrefixCount().equals(this.getIpv6PrefixCount()) == false)
             return false;
+        if (other.getPrimaryIpv6() == null ^ this.getPrimaryIpv6() == null)
+            return false;
+        if (other.getPrimaryIpv6() != null && other.getPrimaryIpv6().equals(this.getPrimaryIpv6()) == false)
+            return false;
+        if (other.getEnaSrdSpecification() == null ^ this.getEnaSrdSpecification() == null)
+            return false;
+        if (other.getEnaSrdSpecification() != null && other.getEnaSrdSpecification().equals(this.getEnaSrdSpecification()) == false)
+            return false;
+        if (other.getConnectionTrackingSpecification() == null ^ this.getConnectionTrackingSpecification() == null)
+            return false;
+        if (other.getConnectionTrackingSpecification() != null
+                && other.getConnectionTrackingSpecification().equals(this.getConnectionTrackingSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1430,6 +1706,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
         hashCode = prime * hashCode + ((getIpv4PrefixCount() == null) ? 0 : getIpv4PrefixCount().hashCode());
         hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
         hashCode = prime * hashCode + ((getIpv6PrefixCount() == null) ? 0 : getIpv6PrefixCount().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryIpv6() == null) ? 0 : getPrimaryIpv6().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSpecification() == null) ? 0 : getEnaSrdSpecification().hashCode());
+        hashCode = prime * hashCode + ((getConnectionTrackingSpecification() == null) ? 0 : getConnectionTrackingSpecification().hashCode());
         return hashCode;
     }
 

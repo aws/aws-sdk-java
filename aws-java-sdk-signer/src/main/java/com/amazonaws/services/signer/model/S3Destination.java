@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The name and prefix of the S3 bucket where code signing saves your signed objects.
+ * The name and prefix of the Amazon S3 bucket where AWS Signer saves your signed objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/S3Destination" target="_top">AWS API
@@ -36,7 +36,7 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     * An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      * </p>
      */
     private String prefix;
@@ -83,11 +83,11 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     * An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      * </p>
      * 
      * @param prefix
-     *        An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     *        An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      */
 
     public void setPrefix(String prefix) {
@@ -96,10 +96,10 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     * An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      * </p>
      * 
-     * @return An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     * @return An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      */
 
     public String getPrefix() {
@@ -108,11 +108,11 @@ public class S3Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     * An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      * </p>
      * 
      * @param prefix
-     *        An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.
+     *        An S3 prefix that you can use to limit responses to those that begin with the specified prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

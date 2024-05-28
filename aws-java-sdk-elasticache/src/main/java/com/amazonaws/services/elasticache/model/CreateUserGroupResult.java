@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,12 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> replicationGroups;
+    /**
+     * <p>
+     * Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> serverlessCaches;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the user group.
@@ -420,6 +426,79 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * </p>
+     * 
+     * @return Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     */
+
+    public java.util.List<String> getServerlessCaches() {
+        if (serverlessCaches == null) {
+            serverlessCaches = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return serverlessCaches;
+    }
+
+    /**
+     * <p>
+     * Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * </p>
+     * 
+     * @param serverlessCaches
+     *        Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     */
+
+    public void setServerlessCaches(java.util.Collection<String> serverlessCaches) {
+        if (serverlessCaches == null) {
+            this.serverlessCaches = null;
+            return;
+        }
+
+        this.serverlessCaches = new com.amazonaws.internal.SdkInternalList<String>(serverlessCaches);
+    }
+
+    /**
+     * <p>
+     * Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServerlessCaches(java.util.Collection)} or {@link #withServerlessCaches(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param serverlessCaches
+     *        Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserGroupResult withServerlessCaches(String... serverlessCaches) {
+        if (this.serverlessCaches == null) {
+            setServerlessCaches(new com.amazonaws.internal.SdkInternalList<String>(serverlessCaches.length));
+        }
+        for (String ele : serverlessCaches) {
+            this.serverlessCaches.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * </p>
+     * 
+     * @param serverlessCaches
+     *        Indicates which serverless caches the specified user group is associated with. Available for Redis only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserGroupResult withServerlessCaches(java.util.Collection<String> serverlessCaches) {
+        setServerlessCaches(serverlessCaches);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the user group.
      * </p>
      * 
@@ -484,6 +563,8 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("PendingChanges: ").append(getPendingChanges()).append(",");
         if (getReplicationGroups() != null)
             sb.append("ReplicationGroups: ").append(getReplicationGroups()).append(",");
+        if (getServerlessCaches() != null)
+            sb.append("ServerlessCaches: ").append(getServerlessCaches()).append(",");
         if (getARN() != null)
             sb.append("ARN: ").append(getARN());
         sb.append("}");
@@ -528,6 +609,10 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getReplicationGroups() != null && other.getReplicationGroups().equals(this.getReplicationGroups()) == false)
             return false;
+        if (other.getServerlessCaches() == null ^ this.getServerlessCaches() == null)
+            return false;
+        if (other.getServerlessCaches() != null && other.getServerlessCaches().equals(this.getServerlessCaches()) == false)
+            return false;
         if (other.getARN() == null ^ this.getARN() == null)
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
@@ -547,6 +632,7 @@ public class CreateUserGroupResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getPendingChanges() == null) ? 0 : getPendingChanges().hashCode());
         hashCode = prime * hashCode + ((getReplicationGroups() == null) ? 0 : getReplicationGroups().hashCode());
+        hashCode = prime * hashCode + ((getServerlessCaches() == null) ? 0 : getServerlessCaches().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }

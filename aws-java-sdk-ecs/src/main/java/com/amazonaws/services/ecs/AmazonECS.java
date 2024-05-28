@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,8 +125,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws LimitExceededException
@@ -152,8 +152,8 @@ public interface AmazonECS {
      * <p>
      * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS service-linked
      * role for your account. This is so that it can manage required resources in other Amazon Web Services services on
-     * your behalf. However, if the IAM user that makes the call doesn't have permissions to create the service-linked
-     * role, it isn't created. For more information, see <a
+     * your behalf. However, if the user that makes the call doesn't have permissions to create the service-linked role,
+     * it isn't created. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -165,10 +165,12 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
      * @sample AmazonECS.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -188,12 +190,25 @@ public interface AmazonECS {
      * in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified
      * cluster. To update an existing service, see the <a>UpdateService</a> action.
      * </p>
+     * <note>
+     * <p>
+     * On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task
+     * definition revision is not specified, authorization will occur using the latest revision of a task definition.
+     * </p>
+     * </note>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
      * one or more load balancers. The load balancers distribute traffic across the tasks that are associated with the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load
      * balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when creating or updating a
+     * service. <code>volumeConfigurations</code> is only supported for REPLICA service and not DAEMON service. For more
+     * infomation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS
+     * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * Tasks for services that don't use a load balancer are considered healthy if they're in the <code>RUNNING</code>
@@ -275,7 +290,14 @@ public interface AmazonECS {
      * When the service scheduler launches new tasks, it determines task placement. For information about task placement
      * and task placement strategies, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon ECS task
-     * placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
+     * </p>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
      * </p>
      * 
      * @param createServiceRequest
@@ -284,8 +306,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -299,6 +321,8 @@ public interface AmazonECS {
      *         The specified platform version doesn't satisfy the required capabilities of the task definition.
      * @throws AccessDeniedException
      *         You don't have authorization to perform the requested action.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
      * @sample AmazonECS.CreateService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService" target="_top">AWS API
      *      Documentation</a>
@@ -312,6 +336,17 @@ public interface AmazonECS {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
      * types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task
+     * definition revision is not specified, authorization will occur using the latest revision of a task definition.
+     * </p>
+     * </note>
+     * <p>
+     * For information about the maximum number of task sets and otther quotas, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service
+     * quotas</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
      * @param createTaskSetRequest
      * @return Result of the CreateTaskSet operation returned by the service.
@@ -319,8 +354,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -340,6 +375,8 @@ public interface AmazonECS {
      * @throws ServiceNotActiveException
      *         The specified service isn't active. You can't update a service that's inactive. If you have previously
      *         deleted a service, you can re-create it with <a>CreateService</a>.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
      * @sample AmazonECS.CreateTaskSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet" target="_top">AWS API
      *      Documentation</a>
@@ -348,7 +385,7 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Disables an account setting for a specified IAM user, IAM role, or the root user for an account.
+     * Disables an account setting for a specified user, role, or the root user for an account.
      * </p>
      * 
      * @param deleteAccountSettingRequest
@@ -357,8 +394,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.DeleteAccountSetting
@@ -415,8 +452,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.DeleteCapacityProvider
@@ -444,8 +481,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -502,8 +539,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -520,6 +557,57 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Deletes one or more task definitions.
+     * </p>
+     * <p>
+     * You must deregister a task definition revision before you delete it. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html"
+     * >DeregisterTaskDefinition</a>.
+     * </p>
+     * <p>
+     * When you delete a task definition revision, it is immediately transitions from the <code>INACTIVE</code> to
+     * <code>DELETE_IN_PROGRESS</code>. Existing tasks and services that reference a <code>DELETE_IN_PROGRESS</code>
+     * task definition revision continue to run without disruption. Existing services that reference a
+     * <code>DELETE_IN_PROGRESS</code> task definition revision can still scale up or down by modifying the service's
+     * desired count.
+     * </p>
+     * <p>
+     * You can't use a <code>DELETE_IN_PROGRESS</code> task definition revision to run new tasks or create new services.
+     * You also can't update an existing service to reference a <code>DELETE_IN_PROGRESS</code> task definition
+     * revision.
+     * </p>
+     * <p>
+     * A task definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until all the associated tasks and
+     * services have been terminated.
+     * </p>
+     * <p>
+     * When you delete all <code>INACTIVE</code> task definition revisions, the task definition name is not displayed in
+     * the console and not returned in the API. If a task definition revisions are in the
+     * <code>DELETE_IN_PROGRESS</code> state, the task definition name is displayed in the console and returned in the
+     * API. The task definition name is retained by Amazon ECS and the revision is incremented the next time you create
+     * a task definition with that name.
+     * </p>
+     * 
+     * @param deleteTaskDefinitionsRequest
+     * @return Result of the DeleteTaskDefinitions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have authorization to perform the requested action.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. This client action might be using an action or
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
+     * @throws InvalidParameterException
+     *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AmazonECS.DeleteTaskDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTaskDefinitionsResult deleteTaskDefinitions(DeleteTaskDefinitionsRequest deleteTaskDefinitionsRequest);
+
+    /**
+     * <p>
      * Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code>
      * deployment controller type. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
@@ -532,8 +620,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -587,8 +675,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -605,7 +693,8 @@ public interface AmazonECS {
      * Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is
      * marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task
      * definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task
-     * definition can still scale up or down by modifying the service's desired count.
+     * definition can still scale up or down by modifying the service's desired count. If you want to delete a task
+     * definition revision, you must first deregister the task definition revision.
      * </p>
      * <p>
      * You can't use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you can't
@@ -619,6 +708,11 @@ public interface AmazonECS {
      * definitions persisting beyond the lifecycle of any associated tasks and services.
      * </p>
      * </note>
+     * <p>
+     * You must deregister a task definition revision before you delete it. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html"
+     * >DeleteTaskDefinitions</a>.
+     * </p>
      * 
      * @param deregisterTaskDefinitionRequest
      * @return Result of the DeregisterTaskDefinition operation returned by the service.
@@ -626,8 +720,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.DeregisterTaskDefinition
@@ -647,8 +741,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.DescribeCapacityProviders
@@ -668,8 +762,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.DescribeClusters
@@ -696,8 +790,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -720,8 +814,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -751,8 +845,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.DescribeTaskDefinition
@@ -775,8 +869,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -805,6 +899,11 @@ public interface AmazonECS {
      * <p>
      * Currently, stopped tasks appear in the returned results for at least one hour.
      * </p>
+     * <p>
+     * If you have tasks with tags, and then delete the cluster, the tagged tasks are returned in the response. If you
+     * create a new cluster with the same name as the deleted cluster, the tagged tasks are not included in the
+     * response.
+     * </p>
      * 
      * @param describeTasksRequest
      * @return Result of the DescribeTasks operation returned by the service.
@@ -812,8 +911,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -841,8 +940,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @sample AmazonECS.DiscoverPollEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -862,8 +961,13 @@ public interface AmazonECS {
      * </p>
      * <p>
      * If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example
-     * limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code> when there is a
+     * limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code> when there is a
      * mismatch between the condition key value and the corresponding parameter value.
+     * </p>
+     * <p>
+     * For information about required permissions and considerations, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using Amazon ECS Exec for
+     * debugging</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param executeCommandRequest
@@ -872,8 +976,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws AccessDeniedException
@@ -897,7 +1001,7 @@ public interface AmazonECS {
      *         </li>
      *         <li>
      *         <p>
-     *         There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for for Systems Manager
+     *         There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for Systems Manager
      *         Session Manager
      *         </p>
      *         </li>
@@ -914,6 +1018,36 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Retrieves the protection status of tasks in an Amazon ECS service.
+     * </p>
+     * 
+     * @param getTaskProtectionRequest
+     * @return Result of the GetTaskProtection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have authorization to perform the requested action.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. This client action might be using an action or
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
+     *         ECS clusters are Region specific.
+     * @throws InvalidParameterException
+     *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws ResourceNotFoundException
+     *         The specified resource wasn't found.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws UnsupportedFeatureException
+     *         The specified task isn't supported in this Region.
+     * @sample AmazonECS.GetTaskProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTaskProtectionResult getTaskProtection(GetTaskProtectionRequest getTaskProtectionRequest);
+
+    /**
+     * <p>
      * Lists the account settings for a specified principal.
      * </p>
      * 
@@ -923,8 +1057,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.ListAccountSettings
@@ -966,8 +1100,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.ListClusters
@@ -998,8 +1132,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1029,8 +1163,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1051,6 +1185,34 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * This operation lists all of the services that are associated with a Cloud Map namespace. This list might include
+     * services in different clusters. In contrast, <code>ListServices</code> can only list services in one cluster at a
+     * time. If you need to filter the list of services in a single cluster by various parameters, use
+     * <code>ListServices</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listServicesByNamespaceRequest
+     * @return Result of the ListServicesByNamespace operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. This client action might be using an action or
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
+     * @throws InvalidParameterException
+     *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
+     * @sample AmazonECS.ListServicesByNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListServicesByNamespaceResult listServicesByNamespace(ListServicesByNamespaceRequest listServicesByNamespaceRequest);
+
+    /**
+     * <p>
      * List the tags for an Amazon ECS resource.
      * </p>
      * 
@@ -1060,8 +1222,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws ClusterNotFoundException
      *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
      *         ECS clusters are Region specific.
@@ -1090,8 +1252,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.ListTaskDefinitionFamilies
@@ -1119,8 +1281,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.ListTaskDefinitions
@@ -1142,8 +1304,7 @@ public interface AmazonECS {
      * launch type, what IAM principal started the task, or by the desired status of the task.
      * </p>
      * <p>
-     * Recently stopped tasks might appear in the returned results. Currently, stopped tasks appear in the returned
-     * results for at least one hour.
+     * Recently stopped tasks might appear in the returned results.
      * </p>
      * 
      * @param listTasksRequest
@@ -1152,8 +1313,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1180,34 +1341,10 @@ public interface AmazonECS {
      * Modifies an account setting. Account settings are set on a per-Region basis.
      * </p>
      * <p>
-     * If you change the account setting for the root user, the default settings for all of the IAM users and roles that
-     * no individual account setting was specified are reset for. For more information, see <a
+     * If you change the root user account setting, the default settings are reset for users and roles that do not have
+     * specified individual account settings. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
-     * <code>containerInstanceLongArnFormat</code> are specified, the Amazon Resource Name (ARN) and resource ID format
-     * of the resource type for a specified IAM user, IAM role, or the root user for an account is affected. The opt-in
-     * and opt-out account setting must be set for each Amazon ECS resource separately. The ARN and resource ID format
-     * of a resource is defined by the opt-in status of the IAM user or role that created the resource. You must turn on
-     * this setting to use Amazon ECS features such as resource tagging.
-     * </p>
-     * <p>
-     * When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for any new container
-     * instances that support the feature is changed. If <code>awsvpcTrunking</code> is enabled, any new container
-     * instances that support the feature are launched have the increased ENI limits available to them. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic Network
-     * Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * When <code>containerInsights</code> is specified, the default setting indicating whether CloudWatch Container
-     * Insights is enabled for your clusters is changed. If <code>containerInsights</code> is enabled, any new clusters
-     * that are created will have Container Insights enabled unless you disable it during cluster creation. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
-     * Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param putAccountSettingRequest
@@ -1216,8 +1353,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.PutAccountSetting
@@ -1228,7 +1365,7 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Modifies an account setting for all IAM users on an account for whom no individual account setting has been
+     * Modifies an account setting for all users on an account for whom no individual account setting has been
      * specified. Account settings are set on a per-Region basis.
      * </p>
      * 
@@ -1238,8 +1375,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.PutAccountSettingDefault
@@ -1302,8 +1439,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1338,8 +1475,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.RegisterContainerInstance
@@ -1357,11 +1494,11 @@ public interface AmazonECS {
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter. When you specify an IAM
-     * role for a task, its containers can then use the latest versions of the CLI or SDKs to make API requests to the
-     * Amazon Web Services services that are specified in the IAM policy that's associated with the role. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
-     * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * You can specify a role for your task with the <code>taskRoleArn</code> parameter. When you specify a role for a
+     * task, its containers can then use the latest versions of the CLI or SDKs to make API requests to the Amazon Web
+     * Services services that are specified in the policy that's associated with the role. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * You can specify a Docker networking mode for the containers in your task definition with the
@@ -1380,8 +1517,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.RegisterTaskDefinition
@@ -1394,6 +1531,12 @@ public interface AmazonECS {
      * <p>
      * Starts a new task using the specified task definition.
      * </p>
+     * <note>
+     * <p>
+     * On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task
+     * definition revision is not specified, authorization will occur using the latest revision of a task definition.
+     * </p>
+     * </note>
      * <p>
      * You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement
      * constraints and placement strategies. For more information, see <a
@@ -1403,6 +1546,19 @@ public interface AmazonECS {
      * <p>
      * Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks manually on specific
      * container instances.
+     * </p>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
+     * <p>
+     * You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when creating or updating a
+     * service. For more infomation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS
+     * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * The Amazon ECS API follows an eventual consistency model. This is because of the distributed nature of the system
@@ -1437,8 +1593,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1455,6 +1611,25 @@ public interface AmazonECS {
      * @throws BlockedException
      *         Your Amazon Web Services account was blocked. For more information, contact <a
      *         href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.
+     * @throws ConflictException
+     *         The <code>RunTask</code> request could not be processed due to conflicts. The provided
+     *         <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The
+     *         <code>resourceIds</code> are the existing task ARNs which are already associated with the
+     *         <code>clientToken</code>. </p>
+     *         <p>
+     *         To fix this issue:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Run <code>RunTask</code> with a unique <code>clientToken</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters
+     *         </p>
+     *         </li>
      * @sample AmazonECS.RunTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask" target="_top">AWS API
      *      Documentation</a>
@@ -1465,10 +1640,29 @@ public interface AmazonECS {
      * <p>
      * Starts a new task from the specified task definition on the specified container instance or instances.
      * </p>
+     * <note>
+     * <p>
+     * On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task
+     * definition revision is not specified, authorization will occur using the latest revision of a task definition.
+     * </p>
+     * </note>
+     * <p>
+     * Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and
+     * will help current customers migrate their workloads to options that offer better price and performance. After
+     * April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon
+     * SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past
+     * 30-day period are considered current customers and will be able to continue using the service.
+     * </p>
      * <p>
      * Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when creating or updating a
+     * service. For more infomation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS
+     * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param startTaskRequest
@@ -1477,13 +1671,15 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
      *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
      *         ECS clusters are Region specific.
+     * @throws UnsupportedFeatureException
+     *         The specified task isn't supported in this Region.
      * @sample AmazonECS.StartTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask" target="_top">AWS API
      *      Documentation</a>
@@ -1516,8 +1712,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1545,8 +1741,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws AccessDeniedException
      *         You don't have authorization to perform the requested action.
      * @throws InvalidParameterException
@@ -1573,8 +1769,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws AccessDeniedException
      *         You don't have authorization to perform the requested action.
      * @sample AmazonECS.SubmitContainerStateChange
@@ -1606,8 +1802,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws AccessDeniedException
      *         You don't have authorization to perform the requested action.
      * @throws InvalidParameterException
@@ -1631,8 +1827,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws ClusterNotFoundException
      *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
      *         ECS clusters are Region specific.
@@ -1657,8 +1853,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws ClusterNotFoundException
      *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
      *         ECS clusters are Region specific.
@@ -1683,8 +1879,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @sample AmazonECS.UpdateCapacityProvider
@@ -1704,13 +1900,15 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws ClusterNotFoundException
      *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
      *         ECS clusters are Region specific.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
      * @sample AmazonECS.UpdateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1728,8 +1926,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws ClusterNotFoundException
      *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
      *         ECS clusters are Region specific.
@@ -1756,6 +1954,12 @@ public interface AmazonECS {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon
      * ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * </note> <note>
+     * <p>
+     * Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply to Windows container
+     * instances. We recommend that you launch new container instances to update the agent version in your Windows
+     * clusters.
+     * </p>
      * </note>
      * <p>
      * The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
@@ -1772,8 +1976,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1867,8 +2071,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -1884,11 +2088,28 @@ public interface AmazonECS {
      * <p>
      * Modifies the parameters of a service.
      * </p>
+     * <note>
+     * <p>
+     * On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task
+     * definition revision is not specified, authorization will occur using the latest revision of a task definition.
+     * </p>
+     * </note>
      * <p>
      * For services using the rolling update (<code>ECS</code>) you can update the desired count, deployment
      * configuration, network configuration, load balancers, service registries, enable ECS managed tags option,
      * propagate tags option, task placement constraints and strategies, and task definition. When you update any of
      * these parameters, Amazon ECS starts new tasks with the new configuration.
+     * </p>
+     * <p>
+     * You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when starting or running a task,
+     * or when creating or updating a service. For more infomation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS
+     * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You can update your volume
+     * configurations and trigger a new deployment. <code>volumeConfigurations</code> is only supported for REPLICA
+     * service and not DAEMON service. If you leave <code>volumeConfigurations</code> <code>null</code>, it doesn't
+     * trigger a new deployment. For more infomation on volumes, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS
+     * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count,
@@ -1910,7 +2131,13 @@ public interface AmazonECS {
      * cluster that the service is running in and a new <code>desiredCount</code> parameter.
      * </p>
      * <p>
-     * If you have updated the Docker image of your application, you can create a new task definition with that image
+     * You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when starting or running a task,
+     * or when creating or updating a service. For more infomation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS
+     * volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you have updated the container image of your application, you can create a new task definition with that image
      * and deploy it to your service. The service scheduler uses the minimum healthy percent and maximum percent
      * parameters (in the service's deployment configuration) to determine the deployment strategy.
      * </p>
@@ -2007,17 +2234,12 @@ public interface AmazonECS {
      * </ul>
      * <note>
      * <p>
-     * You must have a service-linked role when you update any of the following service properties. If you specified a
-     * custom IAM role when you created the service, Amazon ECS automatically replaces the <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn"
-     * >roleARN</a> associated with the service with the ARN of your service-linked role. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
-     * roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * You must have a service-linked role when you update any of the following service properties:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>loadBalancers,</code>
+     * <code>loadBalancers</code>,
      * </p>
      * </li>
      * <li>
@@ -2026,6 +2248,11 @@ public interface AmazonECS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the role see the <code>CreateService</code> request parameter <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role"
+     * > <code>role</code> </a>.
+     * </p>
      * </note>
      * 
      * @param updateServiceRequest
@@ -2034,8 +2261,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -2053,6 +2280,10 @@ public interface AmazonECS {
      *         The specified platform version doesn't satisfy the required capabilities of the task definition.
      * @throws AccessDeniedException
      *         You don't have authorization to perform the requested action.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
+     * @throws UnsupportedFeatureException
+     *         The specified task isn't supported in this Region.
      * @sample AmazonECS.UpdateService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService" target="_top">AWS API
      *      Documentation</a>
@@ -2074,8 +2305,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException
@@ -2102,6 +2333,70 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Updates the protection status of a task. You can set <code>protectionEnabled</code> to <code>true</code> to
+     * protect your task from termination during scale-in events from <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+     * Autoscaling</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
+     * </p>
+     * <p>
+     * Task-protection, by default, expires after 2 hours at which point Amazon ECS clears the
+     * <code>protectionEnabled</code> property making the task eligible for termination by a subsequent scale-in event.
+     * </p>
+     * <p>
+     * You can specify a custom expiration period for task protection from 1 minute to up to 2,880 minutes (48 hours).
+     * To specify the custom expiration period, set the <code>expiresInMinutes</code> property. The
+     * <code>expiresInMinutes</code> property is always reset when you invoke this operation for a task that already has
+     * <code>protectionEnabled</code> set to <code>true</code>. You can keep extending the protection expiration period
+     * of a task by invoking this operation repeatedly.
+     * </p>
+     * <p>
+     * To learn more about Amazon ECS task protection, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task scale-in
+     * protection</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for tasks belonging to an Amazon ECS service. Invoking this operation for a
+     * standalone task will result in an <code>TASK_NOT_VALID</code> failure. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a>.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If you prefer to set task protection from within the container, we recommend using the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task
+     * scale-in protection endpoint</a>.
+     * </p>
+     * </important>
+     * 
+     * @param updateTaskProtectionRequest
+     * @return Result of the UpdateTaskProtection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have authorization to perform the requested action.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. This client action might be using an action or
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>. Amazon
+     *         ECS clusters are Region specific.
+     * @throws InvalidParameterException
+     *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws ResourceNotFoundException
+     *         The specified resource wasn't found.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws UnsupportedFeatureException
+     *         The specified task isn't supported in this Region.
+     * @sample AmazonECS.UpdateTaskProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTaskProtectionResult updateTaskProtection(UpdateTaskProtectionRequest updateTaskProtectionRequest);
+
+    /**
+     * <p>
      * Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
@@ -2114,8 +2409,8 @@ public interface AmazonECS {
      *         These errors are usually caused by a server issue.
      * @throws ClientException
      *         These errors are usually caused by a client action. This client action might be using an action or
-     *         resource on behalf of a user that doesn't have permissions to use the action or resource,. Or, it might
-     *         be specifying an identifier that isn't valid.
+     *         resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be
+     *         specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
      * @throws ClusterNotFoundException

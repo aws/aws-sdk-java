@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class CreateAppInstanceUserRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> EXPIRATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationSettings").build();
 
     private static final CreateAppInstanceUserRequestMarshaller instance = new CreateAppInstanceUserRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateAppInstanceUserRequestMarshaller {
             protocolMarshaller.marshall(createAppInstanceUserRequest.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(createAppInstanceUserRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createAppInstanceUserRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAppInstanceUserRequest.getExpirationSettings(), EXPIRATIONSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

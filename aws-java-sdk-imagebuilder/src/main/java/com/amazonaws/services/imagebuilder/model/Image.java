@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      */
     private String type;
@@ -101,22 +101,21 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String version;
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      */
     private String platform;
     /**
      * <p>
-     * Collects additional information about the image being created, including the operating system (OS) version and
-     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.
+     * Indicates whether Image Builder collects additional information about the image, such as the operating system
+     * (OS) version and package list.
      * </p>
      */
     private Boolean enhancedImageMetadataEnabled;
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18,
+     * or Microsoft Windows Server 2019.
      * </p>
      */
     private String osVersion;
@@ -128,13 +127,15 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private ImageState state;
     /**
      * <p>
-     * The image recipe used when creating the image.
+     * For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For
+     * container images, this is empty.
      * </p>
      */
     private ImageRecipe imageRecipe;
     /**
      * <p>
-     * The recipe that is used to create an Image Builder container image.
+     * For container images, this is the container recipe that Image Builder used to create the image. For images that
+     * distribute an AMI, this is empty.
      * </p>
      */
     private ContainerRecipe containerRecipe;
@@ -152,37 +153,37 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String sourcePipelineArn;
     /**
      * <p>
-     * The infrastructure used when creating this image.
+     * The infrastructure that Image Builder used to create this image.
      * </p>
      */
     private InfrastructureConfiguration infrastructureConfiguration;
     /**
      * <p>
-     * The distribution configuration used when creating this image.
+     * The distribution configuration that Image Builder used to create this image.
      * </p>
      */
     private DistributionConfiguration distributionConfiguration;
     /**
      * <p>
-     * The image tests configuration used when creating this image.
+     * The image tests that ran when that Image Builder created this image.
      * </p>
      */
     private ImageTestsConfiguration imageTestsConfiguration;
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      */
     private String dateCreated;
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produces for this image.
      * </p>
      */
     private OutputResources outputResources;
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -210,6 +211,49 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String buildType;
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     */
+    private String imageSource;
+    /**
+     * <p>
+     * Contains information about the current state of scans for this image.
+     * </p>
+     */
+    private ImageScanState scanState;
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     */
+    private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     */
+    private java.util.Date deprecationTime;
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     */
+    private String lifecycleExecutionId;
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     */
+    private String executionRole;
+    /**
+     * <p>
+     * Contains the build and test workflows that are associated with the image.
+     * </p>
+     */
+    private java.util.List<WorkflowConfiguration> workflows;
 
     /**
      * <p>
@@ -392,11 +436,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this is an AMI or container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @see ImageType
      */
 
@@ -406,10 +450,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
-     * @return Specifies whether this is an AMI or container image.
+     * @return Specifies whether this image produces an AMI or a container image.
      * @see ImageType
      */
 
@@ -419,11 +463,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this is an AMI or container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageType
      */
@@ -435,11 +479,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this is an AMI or container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageType
      */
@@ -651,11 +695,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
      * @param platform
-     *        The platform of the image.
+     *        The image operating system platform, such as Linux or Windows.
      * @see Platform
      */
 
@@ -665,10 +709,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
-     * @return The platform of the image.
+     * @return The image operating system platform, such as Linux or Windows.
      * @see Platform
      */
 
@@ -678,11 +722,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
      * @param platform
-     *        The platform of the image.
+     *        The image operating system platform, such as Linux or Windows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -694,11 +738,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
      * @param platform
-     *        The platform of the image.
+     *        The image operating system platform, such as Linux or Windows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -710,15 +754,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collects additional information about the image being created, including the operating system (OS) version and
-     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.
+     * Indicates whether Image Builder collects additional information about the image, such as the operating system
+     * (OS) version and package list.
      * </p>
      * 
      * @param enhancedImageMetadataEnabled
-     *        Collects additional information about the image being created, including the operating system (OS) version
-     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
-     *        Enabled by default.
+     *        Indicates whether Image Builder collects additional information about the image, such as the operating
+     *        system (OS) version and package list.
      */
 
     public void setEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
@@ -727,14 +769,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collects additional information about the image being created, including the operating system (OS) version and
-     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.
+     * Indicates whether Image Builder collects additional information about the image, such as the operating system
+     * (OS) version and package list.
      * </p>
      * 
-     * @return Collects additional information about the image being created, including the operating system (OS)
-     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
-     *         Builder. Enabled by default.
+     * @return Indicates whether Image Builder collects additional information about the image, such as the operating
+     *         system (OS) version and package list.
      */
 
     public Boolean getEnhancedImageMetadataEnabled() {
@@ -743,15 +783,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collects additional information about the image being created, including the operating system (OS) version and
-     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.
+     * Indicates whether Image Builder collects additional information about the image, such as the operating system
+     * (OS) version and package list.
      * </p>
      * 
      * @param enhancedImageMetadataEnabled
-     *        Collects additional information about the image being created, including the operating system (OS) version
-     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
-     *        Enabled by default.
+     *        Indicates whether Image Builder collects additional information about the image, such as the operating
+     *        system (OS) version and package list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -762,14 +800,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collects additional information about the image being created, including the operating system (OS) version and
-     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
-     * default.
+     * Indicates whether Image Builder collects additional information about the image, such as the operating system
+     * (OS) version and package list.
      * </p>
      * 
-     * @return Collects additional information about the image being created, including the operating system (OS)
-     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
-     *         Builder. Enabled by default.
+     * @return Indicates whether Image Builder collects additional information about the image, such as the operating
+     *         system (OS) version and package list.
      */
 
     public Boolean isEnhancedImageMetadataEnabled() {
@@ -778,13 +814,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18,
+     * or Microsoft Windows Server 2019.
      * </p>
      * 
      * @param osVersion
-     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
-     *        Server 2019.
+     *        The operating system version for instances that launch from this image. For example, Amazon Linux 2,
+     *        Ubuntu 18, or Microsoft Windows Server 2019.
      */
 
     public void setOsVersion(String osVersion) {
@@ -793,12 +829,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18,
+     * or Microsoft Windows Server 2019.
      * </p>
      * 
-     * @return The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft
-     *         Windows Server 2019.
+     * @return The operating system version for instances that launch from this image. For example, Amazon Linux 2,
+     *         Ubuntu 18, or Microsoft Windows Server 2019.
      */
 
     public String getOsVersion() {
@@ -807,13 +843,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18,
+     * or Microsoft Windows Server 2019.
      * </p>
      * 
      * @param osVersion
-     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
-     *        Server 2019.
+     *        The operating system version for instances that launch from this image. For example, Amazon Linux 2,
+     *        Ubuntu 18, or Microsoft Windows Server 2019.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -864,11 +900,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image recipe used when creating the image.
+     * For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For
+     * container images, this is empty.
      * </p>
      * 
      * @param imageRecipe
-     *        The image recipe used when creating the image.
+     *        For images that distribute an AMI, this is the image recipe that Image Builder used to create the image.
+     *        For container images, this is empty.
      */
 
     public void setImageRecipe(ImageRecipe imageRecipe) {
@@ -877,10 +915,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image recipe used when creating the image.
+     * For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For
+     * container images, this is empty.
      * </p>
      * 
-     * @return The image recipe used when creating the image.
+     * @return For images that distribute an AMI, this is the image recipe that Image Builder used to create the image.
+     *         For container images, this is empty.
      */
 
     public ImageRecipe getImageRecipe() {
@@ -889,11 +929,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image recipe used when creating the image.
+     * For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For
+     * container images, this is empty.
      * </p>
      * 
      * @param imageRecipe
-     *        The image recipe used when creating the image.
+     *        For images that distribute an AMI, this is the image recipe that Image Builder used to create the image.
+     *        For container images, this is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -904,11 +946,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recipe that is used to create an Image Builder container image.
+     * For container images, this is the container recipe that Image Builder used to create the image. For images that
+     * distribute an AMI, this is empty.
      * </p>
      * 
      * @param containerRecipe
-     *        The recipe that is used to create an Image Builder container image.
+     *        For container images, this is the container recipe that Image Builder used to create the image. For images
+     *        that distribute an AMI, this is empty.
      */
 
     public void setContainerRecipe(ContainerRecipe containerRecipe) {
@@ -917,10 +961,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recipe that is used to create an Image Builder container image.
+     * For container images, this is the container recipe that Image Builder used to create the image. For images that
+     * distribute an AMI, this is empty.
      * </p>
      * 
-     * @return The recipe that is used to create an Image Builder container image.
+     * @return For container images, this is the container recipe that Image Builder used to create the image. For
+     *         images that distribute an AMI, this is empty.
      */
 
     public ContainerRecipe getContainerRecipe() {
@@ -929,11 +975,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The recipe that is used to create an Image Builder container image.
+     * For container images, this is the container recipe that Image Builder used to create the image. For images that
+     * distribute an AMI, this is empty.
      * </p>
      * 
      * @param containerRecipe
-     *        The recipe that is used to create an Image Builder container image.
+     *        For container images, this is the container recipe that Image Builder used to create the image. For images
+     *        that distribute an AMI, this is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1024,11 +1072,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The infrastructure used when creating this image.
+     * The infrastructure that Image Builder used to create this image.
      * </p>
      * 
      * @param infrastructureConfiguration
-     *        The infrastructure used when creating this image.
+     *        The infrastructure that Image Builder used to create this image.
      */
 
     public void setInfrastructureConfiguration(InfrastructureConfiguration infrastructureConfiguration) {
@@ -1037,10 +1085,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The infrastructure used when creating this image.
+     * The infrastructure that Image Builder used to create this image.
      * </p>
      * 
-     * @return The infrastructure used when creating this image.
+     * @return The infrastructure that Image Builder used to create this image.
      */
 
     public InfrastructureConfiguration getInfrastructureConfiguration() {
@@ -1049,11 +1097,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The infrastructure used when creating this image.
+     * The infrastructure that Image Builder used to create this image.
      * </p>
      * 
      * @param infrastructureConfiguration
-     *        The infrastructure used when creating this image.
+     *        The infrastructure that Image Builder used to create this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1064,11 +1112,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The distribution configuration used when creating this image.
+     * The distribution configuration that Image Builder used to create this image.
      * </p>
      * 
      * @param distributionConfiguration
-     *        The distribution configuration used when creating this image.
+     *        The distribution configuration that Image Builder used to create this image.
      */
 
     public void setDistributionConfiguration(DistributionConfiguration distributionConfiguration) {
@@ -1077,10 +1125,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The distribution configuration used when creating this image.
+     * The distribution configuration that Image Builder used to create this image.
      * </p>
      * 
-     * @return The distribution configuration used when creating this image.
+     * @return The distribution configuration that Image Builder used to create this image.
      */
 
     public DistributionConfiguration getDistributionConfiguration() {
@@ -1089,11 +1137,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The distribution configuration used when creating this image.
+     * The distribution configuration that Image Builder used to create this image.
      * </p>
      * 
      * @param distributionConfiguration
-     *        The distribution configuration used when creating this image.
+     *        The distribution configuration that Image Builder used to create this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1104,11 +1152,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image tests configuration used when creating this image.
+     * The image tests that ran when that Image Builder created this image.
      * </p>
      * 
      * @param imageTestsConfiguration
-     *        The image tests configuration used when creating this image.
+     *        The image tests that ran when that Image Builder created this image.
      */
 
     public void setImageTestsConfiguration(ImageTestsConfiguration imageTestsConfiguration) {
@@ -1117,10 +1165,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image tests configuration used when creating this image.
+     * The image tests that ran when that Image Builder created this image.
      * </p>
      * 
-     * @return The image tests configuration used when creating this image.
+     * @return The image tests that ran when that Image Builder created this image.
      */
 
     public ImageTestsConfiguration getImageTestsConfiguration() {
@@ -1129,11 +1177,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image tests configuration used when creating this image.
+     * The image tests that ran when that Image Builder created this image.
      * </p>
      * 
      * @param imageTestsConfiguration
-     *        The image tests configuration used when creating this image.
+     *        The image tests that ran when that Image Builder created this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1144,11 +1192,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      * 
      * @param dateCreated
-     *        The date on which this image was created.
+     *        The date on which Image Builder created this image.
      */
 
     public void setDateCreated(String dateCreated) {
@@ -1157,10 +1205,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      * 
-     * @return The date on which this image was created.
+     * @return The date on which Image Builder created this image.
      */
 
     public String getDateCreated() {
@@ -1169,11 +1217,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      * 
      * @param dateCreated
-     *        The date on which this image was created.
+     *        The date on which Image Builder created this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1184,11 +1232,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produces for this image.
      * </p>
      * 
      * @param outputResources
-     *        The output resources produced when creating this image.
+     *        The output resources that Image Builder produces for this image.
      */
 
     public void setOutputResources(OutputResources outputResources) {
@@ -1197,10 +1245,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produces for this image.
      * </p>
      * 
-     * @return The output resources produced when creating this image.
+     * @return The output resources that Image Builder produces for this image.
      */
 
     public OutputResources getOutputResources() {
@@ -1209,11 +1257,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produces for this image.
      * </p>
      * 
      * @param outputResources
-     *        The output resources produced when creating this image.
+     *        The output resources that Image Builder produces for this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1224,10 +1272,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      * 
-     * @return The tags of the image.
+     * @return The tags that apply to this image.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1236,11 +1284,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      * 
      * @param tags
-     *        The tags of the image.
+     *        The tags that apply to this image.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1249,11 +1297,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      * 
      * @param tags
-     *        The tags of the image.
+     *        The tags that apply to this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1491,6 +1539,341 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @see ImageSource
+     */
+
+    public void setImageSource(String imageSource) {
+        this.imageSource = imageSource;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @return The origin of the base image that Image Builder used to build this image.
+     * @see ImageSource
+     */
+
+    public String getImageSource() {
+        return this.imageSource;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageSource
+     */
+
+    public Image withImageSource(String imageSource) {
+        setImageSource(imageSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageSource
+     */
+
+    public Image withImageSource(ImageSource imageSource) {
+        this.imageSource = imageSource.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the current state of scans for this image.
+     * </p>
+     * 
+     * @param scanState
+     *        Contains information about the current state of scans for this image.
+     */
+
+    public void setScanState(ImageScanState scanState) {
+        this.scanState = scanState;
+    }
+
+    /**
+     * <p>
+     * Contains information about the current state of scans for this image.
+     * </p>
+     * 
+     * @return Contains information about the current state of scans for this image.
+     */
+
+    public ImageScanState getScanState() {
+        return this.scanState;
+    }
+
+    /**
+     * <p>
+     * Contains information about the current state of scans for this image.
+     * </p>
+     * 
+     * @param scanState
+     *        Contains information about the current state of scans for this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withScanState(ImageScanState scanState) {
+        setScanState(scanState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        Contains settings for vulnerability scans.
+     */
+
+    public void setImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        this.imageScanningConfiguration = imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @return Contains settings for vulnerability scans.
+     */
+
+    public ImageScanningConfiguration getImageScanningConfiguration() {
+        return this.imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        Contains settings for vulnerability scans.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        setImageScanningConfiguration(imageScanningConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     * 
+     * @param deprecationTime
+     *        The time when deprecation occurs for an image resource. This can be a past or future date.
+     */
+
+    public void setDeprecationTime(java.util.Date deprecationTime) {
+        this.deprecationTime = deprecationTime;
+    }
+
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     * 
+     * @return The time when deprecation occurs for an image resource. This can be a past or future date.
+     */
+
+    public java.util.Date getDeprecationTime() {
+        return this.deprecationTime;
+    }
+
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     * 
+     * @param deprecationTime
+     *        The time when deprecation occurs for an image resource. This can be a past or future date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withDeprecationTime(java.util.Date deprecationTime) {
+        setDeprecationTime(deprecationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     * 
+     * @param lifecycleExecutionId
+     *        Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     */
+
+    public void setLifecycleExecutionId(String lifecycleExecutionId) {
+        this.lifecycleExecutionId = lifecycleExecutionId;
+    }
+
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     * 
+     * @return Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     */
+
+    public String getLifecycleExecutionId() {
+        return this.lifecycleExecutionId;
+    }
+
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     * 
+     * @param lifecycleExecutionId
+     *        Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withLifecycleExecutionId(String lifecycleExecutionId) {
+        setLifecycleExecutionId(lifecycleExecutionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     */
+
+    public void setExecutionRole(String executionRole) {
+        this.executionRole = executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @return The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *         perform workflow actions.
+     */
+
+    public String getExecutionRole() {
+        return this.executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withExecutionRole(String executionRole) {
+        setExecutionRole(executionRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the build and test workflows that are associated with the image.
+     * </p>
+     * 
+     * @return Contains the build and test workflows that are associated with the image.
+     */
+
+    public java.util.List<WorkflowConfiguration> getWorkflows() {
+        return workflows;
+    }
+
+    /**
+     * <p>
+     * Contains the build and test workflows that are associated with the image.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains the build and test workflows that are associated with the image.
+     */
+
+    public void setWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        if (workflows == null) {
+            this.workflows = null;
+            return;
+        }
+
+        this.workflows = new java.util.ArrayList<WorkflowConfiguration>(workflows);
+    }
+
+    /**
+     * <p>
+     * Contains the build and test workflows that are associated with the image.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkflows(java.util.Collection)} or {@link #withWorkflows(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains the build and test workflows that are associated with the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withWorkflows(WorkflowConfiguration... workflows) {
+        if (this.workflows == null) {
+            setWorkflows(new java.util.ArrayList<WorkflowConfiguration>(workflows.length));
+        }
+        for (WorkflowConfiguration ele : workflows) {
+            this.workflows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the build and test workflows that are associated with the image.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains the build and test workflows that are associated with the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        setWorkflows(workflows);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1539,7 +1922,21 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getBuildType() != null)
-            sb.append("BuildType: ").append(getBuildType());
+            sb.append("BuildType: ").append(getBuildType()).append(",");
+        if (getImageSource() != null)
+            sb.append("ImageSource: ").append(getImageSource()).append(",");
+        if (getScanState() != null)
+            sb.append("ScanState: ").append(getScanState()).append(",");
+        if (getImageScanningConfiguration() != null)
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getDeprecationTime() != null)
+            sb.append("DeprecationTime: ").append(getDeprecationTime()).append(",");
+        if (getLifecycleExecutionId() != null)
+            sb.append("LifecycleExecutionId: ").append(getLifecycleExecutionId()).append(",");
+        if (getExecutionRole() != null)
+            sb.append("ExecutionRole: ").append(getExecutionRole()).append(",");
+        if (getWorkflows() != null)
+            sb.append("Workflows: ").append(getWorkflows());
         sb.append("}");
         return sb.toString();
     }
@@ -1630,6 +2027,34 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBuildType() != null && other.getBuildType().equals(this.getBuildType()) == false)
             return false;
+        if (other.getImageSource() == null ^ this.getImageSource() == null)
+            return false;
+        if (other.getImageSource() != null && other.getImageSource().equals(this.getImageSource()) == false)
+            return false;
+        if (other.getScanState() == null ^ this.getScanState() == null)
+            return false;
+        if (other.getScanState() != null && other.getScanState().equals(this.getScanState()) == false)
+            return false;
+        if (other.getImageScanningConfiguration() == null ^ this.getImageScanningConfiguration() == null)
+            return false;
+        if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
+            return false;
+        if (other.getDeprecationTime() == null ^ this.getDeprecationTime() == null)
+            return false;
+        if (other.getDeprecationTime() != null && other.getDeprecationTime().equals(this.getDeprecationTime()) == false)
+            return false;
+        if (other.getLifecycleExecutionId() == null ^ this.getLifecycleExecutionId() == null)
+            return false;
+        if (other.getLifecycleExecutionId() != null && other.getLifecycleExecutionId().equals(this.getLifecycleExecutionId()) == false)
+            return false;
+        if (other.getExecutionRole() == null ^ this.getExecutionRole() == null)
+            return false;
+        if (other.getExecutionRole() != null && other.getExecutionRole().equals(this.getExecutionRole()) == false)
+            return false;
+        if (other.getWorkflows() == null ^ this.getWorkflows() == null)
+            return false;
+        if (other.getWorkflows() != null && other.getWorkflows().equals(this.getWorkflows()) == false)
+            return false;
         return true;
     }
 
@@ -1657,6 +2082,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOutputResources() == null) ? 0 : getOutputResources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getBuildType() == null) ? 0 : getBuildType().hashCode());
+        hashCode = prime * hashCode + ((getImageSource() == null) ? 0 : getImageSource().hashCode());
+        hashCode = prime * hashCode + ((getScanState() == null) ? 0 : getScanState().hashCode());
+        hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationTime() == null) ? 0 : getDeprecationTime().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleExecutionId() == null) ? 0 : getLifecycleExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRole() == null) ? 0 : getExecutionRole().hashCode());
+        hashCode = prime * hashCode + ((getWorkflows() == null) ? 0 : getWorkflows().hashCode());
         return hashCode;
     }
 

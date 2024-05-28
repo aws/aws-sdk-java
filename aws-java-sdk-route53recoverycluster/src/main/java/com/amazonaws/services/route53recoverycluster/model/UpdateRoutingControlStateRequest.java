@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class UpdateRoutingControlStateRequest extends com.amazonaws.AmazonWebSer
     private String routingControlArn;
     /**
      * <p>
-     * The state of the routing control. You can set the value to be On or Off.
+     * The state of the routing control. You can set the value to ON or OFF.
      * </p>
      */
     private String routingControlState;
@@ -93,11 +93,11 @@ public class UpdateRoutingControlStateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of the routing control. You can set the value to be On or Off.
+     * The state of the routing control. You can set the value to ON or OFF.
      * </p>
      * 
      * @param routingControlState
-     *        The state of the routing control. You can set the value to be On or Off.
+     *        The state of the routing control. You can set the value to ON or OFF.
      * @see RoutingControlState
      */
 
@@ -107,10 +107,10 @@ public class UpdateRoutingControlStateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of the routing control. You can set the value to be On or Off.
+     * The state of the routing control. You can set the value to ON or OFF.
      * </p>
      * 
-     * @return The state of the routing control. You can set the value to be On or Off.
+     * @return The state of the routing control. You can set the value to ON or OFF.
      * @see RoutingControlState
      */
 
@@ -120,11 +120,11 @@ public class UpdateRoutingControlStateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of the routing control. You can set the value to be On or Off.
+     * The state of the routing control. You can set the value to ON or OFF.
      * </p>
      * 
      * @param routingControlState
-     *        The state of the routing control. You can set the value to be On or Off.
+     *        The state of the routing control. You can set the value to ON or OFF.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingControlState
      */
@@ -136,11 +136,11 @@ public class UpdateRoutingControlStateRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The state of the routing control. You can set the value to be On or Off.
+     * The state of the routing control. You can set the value to ON or OFF.
      * </p>
      * 
      * @param routingControlState
-     *        The state of the routing control. You can set the value to be On or Off.
+     *        The state of the routing control. You can set the value to ON or OFF.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingControlState
      */

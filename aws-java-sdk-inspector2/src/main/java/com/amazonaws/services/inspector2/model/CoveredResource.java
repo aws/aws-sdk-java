@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
     private String accountId;
     /**
      * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     */
+    private java.util.Date lastScannedAt;
+    /**
+     * <p>
      * The ID of the covered resource.
      * </p>
      */
@@ -52,6 +58,12 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     */
+    private String scanMode;
     /**
      * <p>
      * The status of the scan covering the resource.
@@ -102,6 +114,46 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
 
     public CoveredResource withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     * 
+     * @param lastScannedAt
+     *        The date and time the resource was last checked for vulnerabilities.
+     */
+
+    public void setLastScannedAt(java.util.Date lastScannedAt) {
+        this.lastScannedAt = lastScannedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     * 
+     * @return The date and time the resource was last checked for vulnerabilities.
+     */
+
+    public java.util.Date getLastScannedAt() {
+        return this.lastScannedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was last checked for vulnerabilities.
+     * </p>
+     * 
+     * @param lastScannedAt
+     *        The date and time the resource was last checked for vulnerabilities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoveredResource withLastScannedAt(java.util.Date lastScannedAt) {
+        setLastScannedAt(lastScannedAt);
         return this;
     }
 
@@ -246,6 +298,65 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @param scanMode
+     *        The scan method that is applied to the instance.
+     * @see ScanMode
+     */
+
+    public void setScanMode(String scanMode) {
+        this.scanMode = scanMode;
+    }
+
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @return The scan method that is applied to the instance.
+     * @see ScanMode
+     */
+
+    public String getScanMode() {
+        return this.scanMode;
+    }
+
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @param scanMode
+     *        The scan method that is applied to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanMode
+     */
+
+    public CoveredResource withScanMode(String scanMode) {
+        setScanMode(scanMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @param scanMode
+     *        The scan method that is applied to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanMode
+     */
+
+    public CoveredResource withScanMode(ScanMode scanMode) {
+        this.scanMode = scanMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the scan covering the resource.
      * </p>
      * 
@@ -357,12 +468,16 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getLastScannedAt() != null)
+            sb.append("LastScannedAt: ").append(getLastScannedAt()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceMetadata() != null)
             sb.append("ResourceMetadata: ").append(getResourceMetadata()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getScanMode() != null)
+            sb.append("ScanMode: ").append(getScanMode()).append(",");
         if (getScanStatus() != null)
             sb.append("ScanStatus: ").append(getScanStatus()).append(",");
         if (getScanType() != null)
@@ -385,6 +500,10 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getLastScannedAt() == null ^ this.getLastScannedAt() == null)
+            return false;
+        if (other.getLastScannedAt() != null && other.getLastScannedAt().equals(this.getLastScannedAt()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -396,6 +515,10 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getScanMode() == null ^ this.getScanMode() == null)
+            return false;
+        if (other.getScanMode() != null && other.getScanMode().equals(this.getScanMode()) == false)
             return false;
         if (other.getScanStatus() == null ^ this.getScanStatus() == null)
             return false;
@@ -414,9 +537,11 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getLastScannedAt() == null) ? 0 : getLastScannedAt().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceMetadata() == null) ? 0 : getResourceMetadata().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getScanMode() == null) ? 0 : getScanMode().hashCode());
         hashCode = prime * hashCode + ((getScanStatus() == null) ? 0 : getScanStatus().hashCode());
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());
         return hashCode;

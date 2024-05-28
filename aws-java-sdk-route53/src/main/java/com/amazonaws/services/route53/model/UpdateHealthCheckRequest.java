@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -222,6 +222,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
      * Using an IPv4 address that is returned by DNS, Route 53 then checks the health of the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     * <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on creation, a
+     * <code>FullyQualifiedDomainName</code> is required.
      * </p>
      * <note>
      * <p>
@@ -1354,6 +1359,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
      * Using an IPv4 address that is returned by DNS, Route 53 then checks the health of the endpoint.
      * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     * <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on creation, a
+     * <code>FullyQualifiedDomainName</code> is required.
+     * </p>
      * <note>
      * <p>
      * If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the
@@ -1437,6 +1447,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      *        <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS, Route 53 then checks the
      *        health of the endpoint.
+     *        </p>
+     *        <p>
+     *        If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     *        <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on
+     *        creation, a <code>FullyQualifiedDomainName</code> is required.
      *        </p>
      *        <note>
      *        <p>
@@ -1529,6 +1544,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
      * Using an IPv4 address that is returned by DNS, Route 53 then checks the health of the endpoint.
      * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     * <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on creation, a
+     * <code>FullyQualifiedDomainName</code> is required.
+     * </p>
      * <note>
      * <p>
      * If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the
@@ -1611,6 +1631,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *         you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      *         <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS, Route 53 then checks the
      *         health of the endpoint.
+     *         </p>
+     *         <p>
+     *         If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     *         <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on
+     *         creation, a <code>FullyQualifiedDomainName</code> is required.
      *         </p>
      *         <note>
      *         <p>
@@ -1703,6 +1728,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>.
      * Using an IPv4 address that is returned by DNS, Route 53 then checks the health of the endpoint.
      * </p>
+     * <p>
+     * If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     * <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on creation, a
+     * <code>FullyQualifiedDomainName</code> is required.
+     * </p>
      * <note>
      * <p>
      * If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the
@@ -1786,6 +1816,11 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in
      *        <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS, Route 53 then checks the
      *        health of the endpoint.
+     *        </p>
+     *        <p>
+     *        If you don't specify a value for <code>IPAddress</code>, you can’t update the health check to remove the
+     *        <code>FullyQualifiedDomainName</code>; if you don’t specify a value for <code>IPAddress</code> on
+     *        creation, a <code>FullyQualifiedDomainName</code> is required.
      *        </p>
      *        <note>
      *        <p>

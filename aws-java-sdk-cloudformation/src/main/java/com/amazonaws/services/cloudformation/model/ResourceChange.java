@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,44 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceChange implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The action that will be taken on the physical resource when the change set is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Delete</code> The resource will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Retain</code> The resource will be retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Snapshot</code> The resource will have a snapshot taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String policyAction;
     /**
      * <p>
      * The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource),
@@ -97,6 +135,406 @@ public class ResourceChange implements Serializable, Cloneable {
      * </p>
      */
     private ModuleInfo moduleInfo;
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource before the change is executed.
+     * </p>
+     */
+    private String beforeContext;
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource after the change is executed.
+     * </p>
+     */
+    private String afterContext;
+
+    /**
+     * <p>
+     * The action that will be taken on the physical resource when the change set is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Delete</code> The resource will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Retain</code> The resource will be retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Snapshot</code> The resource will have a snapshot taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyAction
+     *        The action that will be taken on the physical resource when the change set is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Delete</code> The resource will be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Retain</code> The resource will be retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Snapshot</code> The resource will have a snapshot taken.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     *        </p>
+     *        </li>
+     * @see PolicyAction
+     */
+
+    public void setPolicyAction(String policyAction) {
+        this.policyAction = policyAction;
+    }
+
+    /**
+     * <p>
+     * The action that will be taken on the physical resource when the change set is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Delete</code> The resource will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Retain</code> The resource will be retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Snapshot</code> The resource will have a snapshot taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The action that will be taken on the physical resource when the change set is executed.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Delete</code> The resource will be deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Retain</code> The resource will be retained.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Snapshot</code> The resource will have a snapshot taken.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     *         </p>
+     *         </li>
+     * @see PolicyAction
+     */
+
+    public String getPolicyAction() {
+        return this.policyAction;
+    }
+
+    /**
+     * <p>
+     * The action that will be taken on the physical resource when the change set is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Delete</code> The resource will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Retain</code> The resource will be retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Snapshot</code> The resource will have a snapshot taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyAction
+     *        The action that will be taken on the physical resource when the change set is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Delete</code> The resource will be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Retain</code> The resource will be retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Snapshot</code> The resource will have a snapshot taken.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyAction
+     */
+
+    public ResourceChange withPolicyAction(String policyAction) {
+        setPolicyAction(policyAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action that will be taken on the physical resource when the change set is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Delete</code> The resource will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Retain</code> The resource will be retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Snapshot</code> The resource will have a snapshot taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyAction
+     *        The action that will be taken on the physical resource when the change set is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Delete</code> The resource will be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Retain</code> The resource will be retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Snapshot</code> The resource will have a snapshot taken.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     *        </p>
+     *        </li>
+     * @see PolicyAction
+     */
+
+    public void setPolicyAction(PolicyAction policyAction) {
+        withPolicyAction(policyAction);
+    }
+
+    /**
+     * <p>
+     * The action that will be taken on the physical resource when the change set is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Delete</code> The resource will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Retain</code> The resource will be retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Snapshot</code> The resource will have a snapshot taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyAction
+     *        The action that will be taken on the physical resource when the change set is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Delete</code> The resource will be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Retain</code> The resource will be retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Snapshot</code> The resource will have a snapshot taken.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndDelete</code> The resource will be replaced and then deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndRetain</code> The resource will be replaced and then retained.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplaceAndSnapshot</code> The resource will be replaced and then have a snapshot taken.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyAction
+     */
+
+    public ResourceChange withPolicyAction(PolicyAction policyAction) {
+        this.policyAction = policyAction.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -775,6 +1213,86 @@ public class ResourceChange implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An encoded JSON string containing the context of the resource before the change is executed.
+     * </p>
+     * 
+     * @param beforeContext
+     *        An encoded JSON string containing the context of the resource before the change is executed.
+     */
+
+    public void setBeforeContext(String beforeContext) {
+        this.beforeContext = beforeContext;
+    }
+
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource before the change is executed.
+     * </p>
+     * 
+     * @return An encoded JSON string containing the context of the resource before the change is executed.
+     */
+
+    public String getBeforeContext() {
+        return this.beforeContext;
+    }
+
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource before the change is executed.
+     * </p>
+     * 
+     * @param beforeContext
+     *        An encoded JSON string containing the context of the resource before the change is executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceChange withBeforeContext(String beforeContext) {
+        setBeforeContext(beforeContext);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource after the change is executed.
+     * </p>
+     * 
+     * @param afterContext
+     *        An encoded JSON string containing the context of the resource after the change is executed.
+     */
+
+    public void setAfterContext(String afterContext) {
+        this.afterContext = afterContext;
+    }
+
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource after the change is executed.
+     * </p>
+     * 
+     * @return An encoded JSON string containing the context of the resource after the change is executed.
+     */
+
+    public String getAfterContext() {
+        return this.afterContext;
+    }
+
+    /**
+     * <p>
+     * An encoded JSON string containing the context of the resource after the change is executed.
+     * </p>
+     * 
+     * @param afterContext
+     *        An encoded JSON string containing the context of the resource after the change is executed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceChange withAfterContext(String afterContext) {
+        setAfterContext(afterContext);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -786,6 +1304,8 @@ public class ResourceChange implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPolicyAction() != null)
+            sb.append("PolicyAction: ").append(getPolicyAction()).append(",");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
         if (getLogicalResourceId() != null)
@@ -803,7 +1323,11 @@ public class ResourceChange implements Serializable, Cloneable {
         if (getChangeSetId() != null)
             sb.append("ChangeSetId: ").append(getChangeSetId()).append(",");
         if (getModuleInfo() != null)
-            sb.append("ModuleInfo: ").append(getModuleInfo());
+            sb.append("ModuleInfo: ").append(getModuleInfo()).append(",");
+        if (getBeforeContext() != null)
+            sb.append("BeforeContext: ").append(getBeforeContext()).append(",");
+        if (getAfterContext() != null)
+            sb.append("AfterContext: ").append(getAfterContext());
         sb.append("}");
         return sb.toString();
     }
@@ -818,6 +1342,10 @@ public class ResourceChange implements Serializable, Cloneable {
         if (obj instanceof ResourceChange == false)
             return false;
         ResourceChange other = (ResourceChange) obj;
+        if (other.getPolicyAction() == null ^ this.getPolicyAction() == null)
+            return false;
+        if (other.getPolicyAction() != null && other.getPolicyAction().equals(this.getPolicyAction()) == false)
+            return false;
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
@@ -854,6 +1382,14 @@ public class ResourceChange implements Serializable, Cloneable {
             return false;
         if (other.getModuleInfo() != null && other.getModuleInfo().equals(this.getModuleInfo()) == false)
             return false;
+        if (other.getBeforeContext() == null ^ this.getBeforeContext() == null)
+            return false;
+        if (other.getBeforeContext() != null && other.getBeforeContext().equals(this.getBeforeContext()) == false)
+            return false;
+        if (other.getAfterContext() == null ^ this.getAfterContext() == null)
+            return false;
+        if (other.getAfterContext() != null && other.getAfterContext().equals(this.getAfterContext()) == false)
+            return false;
         return true;
     }
 
@@ -862,6 +1398,7 @@ public class ResourceChange implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPolicyAction() == null) ? 0 : getPolicyAction().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getLogicalResourceId() == null) ? 0 : getLogicalResourceId().hashCode());
         hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode());
@@ -871,6 +1408,8 @@ public class ResourceChange implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         hashCode = prime * hashCode + ((getChangeSetId() == null) ? 0 : getChangeSetId().hashCode());
         hashCode = prime * hashCode + ((getModuleInfo() == null) ? 0 : getModuleInfo().hashCode());
+        hashCode = prime * hashCode + ((getBeforeContext() == null) ? 0 : getBeforeContext().hashCode());
+        hashCode = prime * hashCode + ((getAfterContext() == null) ? 0 : getAfterContext().hashCode());
         return hashCode;
     }
 

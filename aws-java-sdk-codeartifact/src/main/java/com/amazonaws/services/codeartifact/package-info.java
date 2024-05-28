@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,10 +20,7 @@
  * the point of view of a package manager client.
  * </p>
  * <p>
- * <b>CodeArtifact Components</b>
- * </p>
- * <p>
- * Use the information in this guide to help you work with the following CodeArtifact components:
+ * <b>CodeArtifact concepts</b>
  * </p>
  * <ul>
  * <li>
@@ -32,8 +29,9 @@
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
- * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b>
- * <code>pip</code> </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
+ * tools such as the <b> <code>npm</code> </b> CLI or the Maven CLI (<b> <code>mvn</code> </b>). For a list of supported
+ * package managers, see the <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact User
+ * Guide</a>.
  * </p>
  * </li>
  * <li>
@@ -58,11 +56,9 @@
  * <li>
  * <p>
  * <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required to resolve dependencies and
- * install the software. CodeArtifact supports <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
+ * install the software. CodeArtifact supports npm, PyPI, Maven, NuGet, Swift, Ruby, and generic package formats. For
+ * more information about the supported package formats and how to use CodeArtifact with them, see the <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact User Guide</a>.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -92,6 +88,15 @@
  * </li>
  * <li>
  * <p>
+ * <b>Package group</b>: A group of packages that match a specified definition. Package groups can be used to apply
+ * configuration to multiple packages that match a defined pattern using package format, package namespace, and package
+ * name. You can use package groups to more conveniently configure package origin controls for multiple packages.
+ * Package origin controls are used to block or allow ingestion or publishing of new package versions, which protects
+ * users from malicious actions known as dependency substitution attacks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <b>Package version</b>: A version of a package, such as <code>@types/node 12.6.9</code>. The version number format
  * and semantics vary for different package formats. For example, npm package versions must conform to the <a
  * href="https://semver.org/">Semantic Versioning specification</a>. In CodeArtifact, a package version consists of the
@@ -114,7 +119,7 @@
  * </li>
  * </ul>
  * <p>
- * CodeArtifact supports these operations:
+ * <b>CodeArtifact supported API operations</b>
  * </p>
  * <ul>
  * <li>
@@ -130,7 +135,12 @@
  * </li>
  * <li>
  * <p>
- * <code>CreateDomain</code>: Creates a domain
+ * <code>CreateDomain</code>: Creates a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CreatePackageGroup</code>: Creates a package group.
  * </p>
  * </li>
  * <li>
@@ -146,6 +156,17 @@
  * <li>
  * <p>
  * <code>DeleteDomainPermissionsPolicy</code>: Deletes the resource policy that is set on a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeletePackageGroup</code>: Deletes a package group. Does not delete packages or package versions that are
+ * associated with a package group.
  * </p>
  * </li>
  * <li>
@@ -179,6 +200,13 @@
  * </li>
  * <li>
  * <p>
+ * <code>DescribePackageGroup</code>: Returns a <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a> object
+ * that contains details about a package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePackageVersion</code>: Returns a <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
  * >PackageVersionDescription</a> object that contains details about a package version.
@@ -199,6 +227,11 @@
  * <li>
  * <p>
  * <code>DisassociateExternalConnection</code>: Removes an existing external connection from a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetAssociatedPackageGroup</code>: Returns the most closely associated package group to the specified package.
  * </p>
  * </li>
  * <li>
@@ -231,6 +264,11 @@
  * <ul>
  * <li>
  * <p>
+ * <code>generic</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>maven</code>
  * </p>
  * </li>
@@ -249,11 +287,32 @@
  * <code>pypi</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>ruby</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>swift</code>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
  * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is set on a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for a package group that has origin
+ * configuration set to <code>ALLOW_SPECIFIC_REPOSITORIES</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAssociatedPackages</code>: Returns a list of packages associated with the requested package group.
  * </p>
  * </li>
  * <li>
@@ -265,6 +324,11 @@
  * <li>
  * <p>
  * <code>ListPackages</code>: Lists the packages in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListPackageGroups</code>: Returns a list of package groups in the requested domain.
  * </p>
  * </li>
  * <li>
@@ -295,6 +359,16 @@
  * </li>
  * <li>
  * <p>
+ * <code>ListSubPackageGroups</code>: Returns a list of direct children of the specified package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
  * </p>
  * </li>
@@ -308,6 +382,17 @@
  * <p>
  * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that specifies permissions to
  * access it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroup</code>: Updates a package group. This API cannot be used to update a package group's origin
+ * configuration or pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroupOriginConfiguration</code>: Updates the package origin configuration for a package group.
  * </p>
  * </li>
  * <li>

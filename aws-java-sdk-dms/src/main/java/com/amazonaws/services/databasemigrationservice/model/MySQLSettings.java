@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,9 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private String afterConnectScript;
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      */
     private Boolean cleanSourceMetadataOnMismatch;
@@ -115,7 +115,19 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer port;
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      */
     private String serverName;
@@ -164,6 +176,12 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String secretsManagerSecretId;
+    /**
+     * <p>
+     * Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     * </p>
+     */
+    private Integer executeTimeout;
 
     /**
      * <p>
@@ -228,15 +246,15 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
      * @param cleanSourceMetadataOnMismatch
-     *        Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an
-     *        Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for
-     *        transaction backups, set this attribute to <code>false</code>.
+     *        Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *        example, in a situation where running an alter DDL on the table could result in different information
+     *        about the table cached in the replication instance.
      */
 
     public void setCleanSourceMetadataOnMismatch(Boolean cleanSourceMetadataOnMismatch) {
@@ -245,14 +263,14 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
-     * @return Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of
-     *         an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster
-     *         for transaction backups, set this attribute to <code>false</code>.
+     * @return Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *         example, in a situation where running an alter DDL on the table could result in different information
+     *         about the table cached in the replication instance.
      */
 
     public Boolean getCleanSourceMetadataOnMismatch() {
@@ -261,15 +279,15 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
      * @param cleanSourceMetadataOnMismatch
-     *        Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an
-     *        Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for
-     *        transaction backups, set this attribute to <code>false</code>.
+     *        Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *        example, in a situation where running an alter DDL on the table could result in different information
+     *        about the table cached in the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,14 +298,14 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
-     * @return Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of
-     *         an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster
-     *         for transaction backups, set this attribute to <code>false</code>.
+     * @return Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *         example, in a situation where running an alter DDL on the table could result in different information
+     *         about the table cached in the replication instance.
      */
 
     public Boolean isCleanSourceMetadataOnMismatch() {
@@ -745,11 +763,34 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        The host name of the endpoint database. </p>
+     *        <p>
+     *        For an Amazon RDS MySQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *        >DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
+     *        </p>
+     *        <p>
+     *        For an Aurora MySQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     *        >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      */
 
     public void setServerName(String serverName) {
@@ -758,10 +799,33 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      * 
-     * @return Fully qualified domain name of the endpoint.
+     * @return The host name of the endpoint database. </p>
+     *         <p>
+     *         For an Amazon RDS MySQL instance, this is the output of <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *         >DescribeDBInstances</a>, in the
+     *         <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *         field.
+     *         </p>
+     *         <p>
+     *         For an Aurora MySQL instance, this is the output of <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     *         >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      */
 
     public String getServerName() {
@@ -770,11 +834,34 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora MySQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        The host name of the endpoint database. </p>
+     *        <p>
+     *        For an Amazon RDS MySQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *        >DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
+     *        </p>
+     *        <p>
+     *        For an Aurora MySQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     *        >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,6 +1154,46 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     * </p>
+     * 
+     * @param executeTimeout
+     *        Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     */
+
+    public void setExecuteTimeout(Integer executeTimeout) {
+        this.executeTimeout = executeTimeout;
+    }
+
+    /**
+     * <p>
+     * Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     * </p>
+     * 
+     * @return Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     */
+
+    public Integer getExecuteTimeout() {
+        return this.executeTimeout;
+    }
+
+    /**
+     * <p>
+     * Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     * </p>
+     * 
+     * @param executeTimeout
+     *        Sets the client statement timeout (in seconds) for a MySQL source endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withExecuteTimeout(Integer executeTimeout) {
+        setExecuteTimeout(executeTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1105,7 +1232,9 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
-            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
+        if (getExecuteTimeout() != null)
+            sb.append("ExecuteTimeout: ").append(getExecuteTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -1177,6 +1306,10 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
             return false;
+        if (other.getExecuteTimeout() == null ^ this.getExecuteTimeout() == null)
+            return false;
+        if (other.getExecuteTimeout() != null && other.getExecuteTimeout().equals(this.getExecuteTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -1199,6 +1332,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
+        hashCode = prime * hashCode + ((getExecuteTimeout() == null) ? 0 : getExecuteTimeout().hashCode());
         return hashCode;
     }
 

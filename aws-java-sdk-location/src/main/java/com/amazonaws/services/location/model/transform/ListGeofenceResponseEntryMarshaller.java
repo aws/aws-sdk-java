@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.location.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -31,6 +33,8 @@ public class ListGeofenceResponseEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> GEOFENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeofenceId").build();
+    private static final MarshallingInfo<Map> GEOFENCEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeofenceProperties").build();
     private static final MarshallingInfo<StructuredPojo> GEOMETRY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Geometry").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,6 +60,7 @@ public class ListGeofenceResponseEntryMarshaller {
         try {
             protocolMarshaller.marshall(listGeofenceResponseEntry.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(listGeofenceResponseEntry.getGeofenceId(), GEOFENCEID_BINDING);
+            protocolMarshaller.marshall(listGeofenceResponseEntry.getGeofenceProperties(), GEOFENCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(listGeofenceResponseEntry.getGeometry(), GEOMETRY_BINDING);
             protocolMarshaller.marshall(listGeofenceResponseEntry.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(listGeofenceResponseEntry.getUpdateTime(), UPDATETIME_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -113,17 +113,17 @@ public interface AWSMarketplaceCommerceAnalytics {
     GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest);
 
     /**
-     * Given a data set type and a from date, asynchronously publishes the requested customer support data to the
-     * specified S3 bucket and notifies the specified SNS topic once the data is available. Returns a unique request
-     * identifier that can be used to correlate requests with notifications from the SNS topic. Data sets will be
-     * published in comma-separated values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
-     * If a file with the same name already exists (e.g. if the same data set is requested twice), the original file will
-     * be overwritten by the new file. Requires a Role with an attached permissions policy providing Allow permissions
-     * for the following actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
-     * iam:GetRolePolicy.
+     * <i>This target has been deprecated.</i> Given a data set type and a from date, asynchronously publishes the
+     * requested customer support data to the specified S3 bucket and notifies the specified SNS topic once the data is
+     * available. Returns a unique request identifier that can be used to correlate requests with notifications from the
+     * SNS topic. Data sets will be published in comma-separated values (CSV) format with the file name
+     * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name already exists (e.g. if the same data
+     * set is requested twice), the original file will be overwritten by the new file. Requires a Role with an attached
+     * permissions policy providing Allow permissions for the following actions: s3:PutObject, s3:GetBucketLocation,
+     * sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
      * 
      * @param startSupportDataExportRequest
-     *        Container for the parameters to the StartSupportDataExport operation.
+     *        This target has been deprecated.
      * @return Result of the StartSupportDataExport operation returned by the service.
      * @throws MarketplaceCommerceAnalyticsException
      *         This exception is thrown when an internal service error occurs.
@@ -132,6 +132,7 @@ public interface AWSMarketplaceCommerceAnalytics {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest);
 
     /**

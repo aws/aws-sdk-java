@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -54,6 +56,13 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound
      * calls.
      * </p>
+     * <p>
+     * The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per
+     * routing profile per instance that is listed in <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
+     * service quotas</a>.
+     * </p>
      */
     private java.util.List<RoutingProfileQueueConfig> queueConfigs;
     /**
@@ -64,19 +73,30 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<MediaConcurrency> mediaConcurrencies;
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     */
+    private String agentAvailabilityTimer;
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -85,10 +105,14 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -97,11 +121,15 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,9 +263,22 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound
      * calls.
      * </p>
+     * <p>
+     * The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per
+     * routing profile per instance that is listed in <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
+     * service quotas</a>.
+     * </p>
      * 
      * @return The inbound queues associated with the routing profile. If no queue is added, the agent can make only
-     *         outbound calls.
+     *         outbound calls.</p>
+     *         <p>
+     *         The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+     *         objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of
+     *         50 queues per routing profile per instance that is listed in <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     *         Connect service quotas</a>.
      */
 
     public java.util.List<RoutingProfileQueueConfig> getQueueConfigs() {
@@ -249,10 +290,23 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound
      * calls.
      * </p>
+     * <p>
+     * The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per
+     * routing profile per instance that is listed in <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
+     * service quotas</a>.
+     * </p>
      * 
      * @param queueConfigs
      *        The inbound queues associated with the routing profile. If no queue is added, the agent can make only
-     *        outbound calls.
+     *        outbound calls.</p>
+     *        <p>
+     *        The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+     *        objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50
+     *        queues per routing profile per instance that is listed in <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     *        Connect service quotas</a>.
      */
 
     public void setQueueConfigs(java.util.Collection<RoutingProfileQueueConfig> queueConfigs) {
@@ -270,6 +324,13 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * calls.
      * </p>
      * <p>
+     * The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per
+     * routing profile per instance that is listed in <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
+     * service quotas</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setQueueConfigs(java.util.Collection)} or {@link #withQueueConfigs(java.util.Collection)} if you want to
      * override the existing values.
@@ -277,7 +338,13 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param queueConfigs
      *        The inbound queues associated with the routing profile. If no queue is added, the agent can make only
-     *        outbound calls.
+     *        outbound calls.</p>
+     *        <p>
+     *        The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+     *        objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50
+     *        queues per routing profile per instance that is listed in <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     *        Connect service quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,10 +363,23 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
      * The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound
      * calls.
      * </p>
+     * <p>
+     * The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects
+     * that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per
+     * routing profile per instance that is listed in <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
+     * service quotas</a>.
+     * </p>
      * 
      * @param queueConfigs
      *        The inbound queues associated with the routing profile. If no queue is added, the agent can make only
-     *        outbound calls.
+     *        outbound calls.</p>
+     *        <p>
+     *        The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+     *        objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50
+     *        queues per routing profile per instance that is listed in <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     *        Connect service quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,11 +460,11 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
-     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     * @return The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *         {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -394,12 +474,12 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -409,12 +489,12 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -453,6 +533,73 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     *        time</i> or <i>time since their last inbound contact</i>.
+     * @see AgentAvailabilityTimer
+     */
+
+    public void setAgentAvailabilityTimer(String agentAvailabilityTimer) {
+        this.agentAvailabilityTimer = agentAvailabilityTimer;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @return Whether agents with this routing profile will have their routing order calculated based on <i>longest
+     *         idle time</i> or <i>time since their last inbound contact</i>.
+     * @see AgentAvailabilityTimer
+     */
+
+    public String getAgentAvailabilityTimer() {
+        return this.agentAvailabilityTimer;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     *        time</i> or <i>time since their last inbound contact</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AgentAvailabilityTimer
+     */
+
+    public CreateRoutingProfileRequest withAgentAvailabilityTimer(String agentAvailabilityTimer) {
+        setAgentAvailabilityTimer(agentAvailabilityTimer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     * time</i> or <i>time since their last inbound contact</i>.
+     * </p>
+     * 
+     * @param agentAvailabilityTimer
+     *        Whether agents with this routing profile will have their routing order calculated based on <i>longest idle
+     *        time</i> or <i>time since their last inbound contact</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AgentAvailabilityTimer
+     */
+
+    public CreateRoutingProfileRequest withAgentAvailabilityTimer(AgentAvailabilityTimer agentAvailabilityTimer) {
+        this.agentAvailabilityTimer = agentAvailabilityTimer.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -477,7 +624,9 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
         if (getMediaConcurrencies() != null)
             sb.append("MediaConcurrencies: ").append(getMediaConcurrencies()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAgentAvailabilityTimer() != null)
+            sb.append("AgentAvailabilityTimer: ").append(getAgentAvailabilityTimer());
         sb.append("}");
         return sb.toString();
     }
@@ -520,6 +669,10 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAgentAvailabilityTimer() == null ^ this.getAgentAvailabilityTimer() == null)
+            return false;
+        if (other.getAgentAvailabilityTimer() != null && other.getAgentAvailabilityTimer().equals(this.getAgentAvailabilityTimer()) == false)
+            return false;
         return true;
     }
 
@@ -535,6 +688,7 @@ public class CreateRoutingProfileRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getQueueConfigs() == null) ? 0 : getQueueConfigs().hashCode());
         hashCode = prime * hashCode + ((getMediaConcurrencies() == null) ? 0 : getMediaConcurrencies().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAgentAvailabilityTimer() == null) ? 0 : getAgentAvailabilityTimer().hashCode());
         return hashCode;
     }
 

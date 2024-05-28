@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,15 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Allows you to specify that you want to list the databases shared with your account. The allowable values are
-     * <code>FOREIGN</code> or <code>ALL</code>.
+     * <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with
+     * your account.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -194,9 +200,15 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Allows you to specify that you want to list the databases shared with your account. The allowable values are
-     * <code>FOREIGN</code> or <code>ALL</code>.
+     * <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with
+     * your account.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -212,8 +224,14 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param resourceShareType
      *        Allows you to specify that you want to list the databases shared with your account. The allowable values
-     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity)
+     *        shared with your account.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -235,9 +253,15 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Allows you to specify that you want to list the databases shared with your account. The allowable values are
-     * <code>FOREIGN</code> or <code>ALL</code>.
+     * <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with
+     * your account.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -252,8 +276,14 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @return Allows you to specify that you want to list the databases shared with your account. The allowable values
-     *         are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *         are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity)
+     *         shared with your account.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -275,9 +305,15 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Allows you to specify that you want to list the databases shared with your account. The allowable values are
-     * <code>FOREIGN</code> or <code>ALL</code>.
+     * <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with
+     * your account.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -293,8 +329,14 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param resourceShareType
      *        Allows you to specify that you want to list the databases shared with your account. The allowable values
-     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity)
+     *        shared with your account.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -318,9 +360,15 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Allows you to specify that you want to list the databases shared with your account. The allowable values are
-     * <code>FOREIGN</code> or <code>ALL</code>.
+     * <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with
+     * your account.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * If set to <code>FOREIGN</code>, will list the databases shared with your account.
@@ -336,8 +384,14 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param resourceShareType
      *        Allows you to specify that you want to list the databases shared with your account. The allowable values
-     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity)
+     *        shared with your account.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        If set to <code>FOREIGN</code>, will list the databases shared with your account.

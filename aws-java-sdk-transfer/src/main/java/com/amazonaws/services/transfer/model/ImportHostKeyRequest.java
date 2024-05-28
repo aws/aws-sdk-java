@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String serverId;
     /**
      * <p>
-     * The public key portion of an SSH key pair.
+     * The private key portion of an SSH key pair.
      * </p>
      * <p>
      * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
@@ -95,14 +95,14 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The public key portion of an SSH key pair.
+     * The private key portion of an SSH key pair.
      * </p>
      * <p>
      * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      * </p>
      * 
      * @param hostKeyBody
-     *        The public key portion of an SSH key pair.</p>
+     *        The private key portion of an SSH key pair.</p>
      *        <p>
      *        Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      */
@@ -113,13 +113,13 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The public key portion of an SSH key pair.
+     * The private key portion of an SSH key pair.
      * </p>
      * <p>
      * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      * </p>
      * 
-     * @return The public key portion of an SSH key pair.</p>
+     * @return The private key portion of an SSH key pair.</p>
      *         <p>
      *         Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      */
@@ -130,14 +130,14 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The public key portion of an SSH key pair.
+     * The private key portion of an SSH key pair.
      * </p>
      * <p>
      * Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      * </p>
      * 
      * @param hostKeyBody
-     *        The public key portion of an SSH key pair.</p>
+     *        The private key portion of an SSH key pair.</p>
      *        <p>
      *        Transfer Family accepts RSA, ECDSA, and ED25519 keys.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through
  * email. For information about email feedback forwarding, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-email.html">Amazon SES
+ * Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled"
@@ -40,11 +40,11 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
     private String identity;
     /**
      * <p>
-     * Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies
-     * that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic
-     * publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint
-     * notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics
-     * are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
+     * Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that
+     * Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing
+     * otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications
+     * only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both
+     * <code>Bounce</code> and <code>Complaint</code> notification types.
      * </p>
      */
     private Boolean forwardingEnabled;
@@ -97,20 +97,19 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies
-     * that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic
-     * publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint
-     * notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics
-     * are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
+     * Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that
+     * Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing
+     * otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications
+     * only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both
+     * <code>Bounce</code> and <code>Complaint</code> notification types.
      * </p>
      * 
      * @param forwardingEnabled
-     *        Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code>
-     *        specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any
-     *        Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish
-     *        bounce and complaint notifications only through Amazon SNS. This value can only be set to
-     *        <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-     *        notification types.
+     *        Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies
+     *        that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic
+     *        publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and
+     *        complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when
+     *        Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
      */
 
     public void setForwardingEnabled(Boolean forwardingEnabled) {
@@ -119,19 +118,18 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies
-     * that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic
-     * publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint
-     * notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics
-     * are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
+     * Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that
+     * Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing
+     * otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications
+     * only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both
+     * <code>Bounce</code> and <code>Complaint</code> notification types.
      * </p>
      * 
-     * @return Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code>
-     *         specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any
-     *         Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will
-     *         publish bounce and complaint notifications only through Amazon SNS. This value can only be set to
-     *         <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-     *         notification types.
+     * @return Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies
+     *         that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic
+     *         publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and
+     *         complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when
+     *         Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
      */
 
     public Boolean getForwardingEnabled() {
@@ -140,20 +138,19 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies
-     * that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic
-     * publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint
-     * notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics
-     * are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
+     * Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that
+     * Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing
+     * otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications
+     * only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both
+     * <code>Bounce</code> and <code>Complaint</code> notification types.
      * </p>
      * 
      * @param forwardingEnabled
-     *        Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code>
-     *        specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any
-     *        Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish
-     *        bounce and complaint notifications only through Amazon SNS. This value can only be set to
-     *        <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-     *        notification types.
+     *        Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies
+     *        that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic
+     *        publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and
+     *        complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when
+     *        Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,19 +161,18 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies
-     * that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic
-     * publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint
-     * notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics
-     * are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
+     * Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that
+     * Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing
+     * otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications
+     * only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both
+     * <code>Bounce</code> and <code>Complaint</code> notification types.
      * </p>
      * 
-     * @return Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code>
-     *         specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any
-     *         Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will
-     *         publish bounce and complaint notifications only through Amazon SNS. This value can only be set to
-     *         <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-     *         notification types.
+     * @return Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies
+     *         that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic
+     *         publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and
+     *         complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when
+     *         Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.
      */
 
     public Boolean isForwardingEnabled() {

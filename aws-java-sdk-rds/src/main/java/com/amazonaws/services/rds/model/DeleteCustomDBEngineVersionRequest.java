@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,30 @@ public class DeleteCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engine;
     /**
@@ -42,11 +64,54 @@ public class DeleteCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     *        The database engine. RDS Custom for Oracle supports the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2-cdb</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngine(String engine) {
@@ -55,10 +120,53 @@ public class DeleteCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     * @return The database engine. RDS Custom for Oracle supports the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee-cdb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-se2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-se2-cdb</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngine() {
@@ -67,11 +175,54 @@ public class DeleteCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The database engine. The only supported engine is <code>custom-oracle-ee</code>.
+     *        The database engine. RDS Custom for Oracle supports the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2-cdb</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The
-     * data inputs are <a>InputConfig$Framework</a> specific.
+     * data inputs are <code>Framework</code> specific.
      * </p>
      * <ul>
      * <li>
@@ -232,8 +232,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code>
+     * (ML Model format):
      * </p>
      * <ul>
      * <li>
@@ -283,8 +283,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
-     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     * examples:
      * </p>
      * <ul>
      * <li>
@@ -468,7 +470,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The
-     * data inputs are <a>InputConfig$Framework</a> specific.
+     * data inputs are <code>Framework</code> specific.
      * </p>
      * <ul>
      * <li>
@@ -661,8 +663,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code>
+     * (ML Model format):
      * </p>
      * <ul>
      * <li>
@@ -712,8 +714,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
-     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     * examples:
      * </p>
      * <ul>
      * <li>
@@ -828,7 +832,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
-     *        form. The data inputs are <a>InputConfig$Framework</a> specific. </p>
+     *        form. The data inputs are <code>Framework</code> specific. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1022,7 +1026,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     *        <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *        <code>TargetDevice</code> (ML Model format):
      *        </p>
      *        <ul>
      *        <li>
@@ -1074,9 +1078,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        CoreML <code>ClassifierConfig</code> parameters can be specified using
-     *        <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
-     *        conversion examples:
+     *        CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     *        <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     *        examples:
      *        </p>
      *        <ul>
      *        <li>
@@ -1196,7 +1201,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The
-     * data inputs are <a>InputConfig$Framework</a> specific.
+     * data inputs are <code>Framework</code> specific.
      * </p>
      * <ul>
      * <li>
@@ -1389,8 +1394,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code>
+     * (ML Model format):
      * </p>
      * <ul>
      * <li>
@@ -1440,8 +1445,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
-     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     * examples:
      * </p>
      * <ul>
      * <li>
@@ -1555,7 +1562,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @return Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
-     *         form. The data inputs are <a>InputConfig$Framework</a> specific. </p>
+     *         form. The data inputs are <code>Framework</code> specific. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1749,7 +1756,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     *         <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *         <code>TargetDevice</code> (ML Model format):
      *         </p>
      *         <ul>
      *         <li>
@@ -1801,9 +1808,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         CoreML <code>ClassifierConfig</code> parameters can be specified using
-     *         <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
-     *         conversion examples:
+     *         CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     *         <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     *         examples:
      *         </p>
      *         <ul>
      *         <li>
@@ -1923,7 +1931,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. The
-     * data inputs are <a>InputConfig$Framework</a> specific.
+     * data inputs are <code>Framework</code> specific.
      * </p>
      * <ul>
      * <li>
@@ -2116,8 +2124,8 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code> <code>TargetDevice</code>
+     * (ML Model format):
      * </p>
      * <ul>
      * <li>
@@ -2167,8 +2175,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
-     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     * examples:
      * </p>
      * <ul>
      * <li>
@@ -2283,7 +2293,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
-     *        form. The data inputs are <a>InputConfig$Framework</a> specific. </p>
+     *        form. The data inputs are <code>Framework</code> specific. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2477,7 +2487,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-     *        <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *        <code>TargetDevice</code> (ML Model format):
      *        </p>
      *        <ul>
      *        <li>
@@ -2529,9 +2539,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        CoreML <code>ClassifierConfig</code> parameters can be specified using
-     *        <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
-     *        conversion examples:
+     *        CoreML <code>ClassifierConfig</code> parameters can be specified using <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     *        <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models. CoreML conversion
+     *        examples:
      *        </p>
      *        <ul>
      *        <li>

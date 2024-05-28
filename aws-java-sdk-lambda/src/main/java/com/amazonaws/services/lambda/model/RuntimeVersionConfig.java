@@ -1,0 +1,189 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.lambda.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The ARN of the runtime and any errors that occured.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RuntimeVersionConfig" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RuntimeVersionConfig implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The ARN of the runtime version you want the function to use.
+     * </p>
+     */
+    private String runtimeVersionArn;
+    /**
+     * <p>
+     * Error response when Lambda is unable to retrieve the runtime version for a function.
+     * </p>
+     */
+    private RuntimeVersionError error;
+
+    /**
+     * <p>
+     * The ARN of the runtime version you want the function to use.
+     * </p>
+     * 
+     * @param runtimeVersionArn
+     *        The ARN of the runtime version you want the function to use.
+     */
+
+    public void setRuntimeVersionArn(String runtimeVersionArn) {
+        this.runtimeVersionArn = runtimeVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the runtime version you want the function to use.
+     * </p>
+     * 
+     * @return The ARN of the runtime version you want the function to use.
+     */
+
+    public String getRuntimeVersionArn() {
+        return this.runtimeVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the runtime version you want the function to use.
+     * </p>
+     * 
+     * @param runtimeVersionArn
+     *        The ARN of the runtime version you want the function to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeVersionConfig withRuntimeVersionArn(String runtimeVersionArn) {
+        setRuntimeVersionArn(runtimeVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Error response when Lambda is unable to retrieve the runtime version for a function.
+     * </p>
+     * 
+     * @param error
+     *        Error response when Lambda is unable to retrieve the runtime version for a function.
+     */
+
+    public void setError(RuntimeVersionError error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * Error response when Lambda is unable to retrieve the runtime version for a function.
+     * </p>
+     * 
+     * @return Error response when Lambda is unable to retrieve the runtime version for a function.
+     */
+
+    public RuntimeVersionError getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * Error response when Lambda is unable to retrieve the runtime version for a function.
+     * </p>
+     * 
+     * @param error
+     *        Error response when Lambda is unable to retrieve the runtime version for a function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeVersionConfig withError(RuntimeVersionError error) {
+        setError(error);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getRuntimeVersionArn() != null)
+            sb.append("RuntimeVersionArn: ").append(getRuntimeVersionArn()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RuntimeVersionConfig == false)
+            return false;
+        RuntimeVersionConfig other = (RuntimeVersionConfig) obj;
+        if (other.getRuntimeVersionArn() == null ^ this.getRuntimeVersionArn() == null)
+            return false;
+        if (other.getRuntimeVersionArn() != null && other.getRuntimeVersionArn().equals(this.getRuntimeVersionArn()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getRuntimeVersionArn() == null) ? 0 : getRuntimeVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RuntimeVersionConfig clone() {
+        try {
+            return (RuntimeVersionConfig) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.RuntimeVersionConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

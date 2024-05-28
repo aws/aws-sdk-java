@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -121,6 +121,12 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                 if (context.testExpression("DataSetUsageConfiguration", targetDepth)) {
                     context.nextToken();
                     dataSet.setDataSetUsageConfiguration(DataSetUsageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DatasetParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSet.setDatasetParameters(new ListUnmarshaller<DatasetParameter>(DatasetParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

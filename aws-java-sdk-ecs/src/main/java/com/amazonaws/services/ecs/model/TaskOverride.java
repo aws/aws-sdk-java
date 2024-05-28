@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ContainerOverride> containerOverrides;
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      */
     private String cpu;
@@ -48,7 +48,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride> inferenceAcceleratorOverrides;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a
+     * The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
      * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -62,8 +62,8 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private String memory;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role. For more information, see <a
+     * The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task
+     * are granted the permissions that are specified in this role. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -168,11 +168,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      * 
      * @param cpu
-     *        The cpu override for the task.
+     *        The CPU override for the task.
      */
 
     public void setCpu(String cpu) {
@@ -181,10 +181,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      * 
-     * @return The cpu override for the task.
+     * @return The CPU override for the task.
      */
 
     public String getCpu() {
@@ -193,11 +193,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      * 
      * @param cpu
-     *        The cpu override for the task.
+     *        The CPU override for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,16 +281,15 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a
+     * The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
      * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information,
-     *        see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
-     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *        ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -299,13 +298,13 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a
+     * The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
      * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more
-     *         information, see <a
+     * @return The Amazon Resource Name (ARN) of the task execution role override for the task. For more information,
+     *         see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
      *         ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -316,16 +315,15 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a
+     * The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
      * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information,
-     *        see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
-     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *        ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,15 +374,15 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role. For more information, see <a
+     * The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task
+     * are granted the permissions that are specified in this role. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *        this task are granted the permissions that are specified in this role. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this
+     *        task are granted the permissions that are specified in this role. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for
      *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -395,13 +393,13 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role. For more information, see <a
+     * The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task
+     * are granted the permissions that are specified in this role. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
+     * @return The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in
      *         this task are granted the permissions that are specified in this role. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for
      *         Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -413,15 +411,15 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role. For more information, see <a
+     * The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task
+     * are granted the permissions that are specified in this role. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *        this task are granted the permissions that are specified in this role. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this
+     *        task are granted the permissions that are specified in this role. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for
      *        Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

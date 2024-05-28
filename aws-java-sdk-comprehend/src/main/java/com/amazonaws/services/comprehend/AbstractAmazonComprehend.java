@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public CreateDatasetResult createDataset(CreateDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public CreateEntityRecognizerResult createEntityRecognizer(CreateEntityRecognizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFlywheelResult createFlywheel(CreateFlywheelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,7 +108,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public DeleteFlywheelResult deleteFlywheel(DeleteFlywheelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDatasetResult describeDataset(DescribeDatasetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,6 +154,16 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public DescribeEventsDetectionJobResult describeEventsDetectionJob(DescribeEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFlywheelResult describeFlywheel(DescribeFlywheelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFlywheelIterationResult describeFlywheelIteration(DescribeFlywheelIterationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,7 +233,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public DetectToxicContentResult detectToxicContent(DetectToxicContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportModelResult importModel(ImportModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDatasetsResult listDatasets(ListDatasetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -249,6 +289,16 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public ListEventsDetectionJobsResult listEventsDetectionJobs(ListEventsDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFlywheelIterationHistoryResult listFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFlywheelsResult listFlywheels(ListFlywheelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -304,6 +354,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public StartEventsDetectionJobResult startEventsDetectionJob(StartEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartFlywheelIterationResult startFlywheelIteration(StartFlywheelIterationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -389,6 +444,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFlywheelResult updateFlywheel(UpdateFlywheelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

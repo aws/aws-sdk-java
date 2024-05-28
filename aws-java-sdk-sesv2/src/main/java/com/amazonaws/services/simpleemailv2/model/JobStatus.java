@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,30 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The status of the import job.
+ * The status of a job.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>CREATED</code> – Job has just been created.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PROCESSING</code> – Job is processing.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ERROR</code> – An error occurred during processing.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>COMPLETED</code> – Job has completed processing successfully.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum JobStatus {
@@ -25,7 +47,8 @@ public enum JobStatus {
     CREATED("CREATED"),
     PROCESSING("PROCESSING"),
     COMPLETED("COMPLETED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    CANCELLED("CANCELLED");
 
     private String value;
 

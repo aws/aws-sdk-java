@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,8 @@ import com.amazonaws.services.connectwisdom.model.*;
  * <p>
  * Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking
  * with customers. Agents can search across connected repositories from within their agent desktop to find answers
- * quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage
- * content by uploading custom files.
+ * quickly. Use Amazon Connect Wisdom to create an assistant and a knowledge base, for example, or manage content by
+ * uploading custom files.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -134,10 +134,37 @@ public interface AmazonConnectWisdom {
      * DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an
      * <code>InvalidRequestException</code> error.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html&quot;&gt;DeleteKnowledgeBase&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html&quot;&gt;DeleteDataIntegration&lt;/a&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call &lt;a href=&quot;https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html&quot;&gt;CreateDataIntegration&lt;/a&gt; to recreate the DataIntegration or a create different one.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Call CreateKnowledgeBase.&lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <p>
+     * For example, you're programmatically managing your external knowledge base, and you want to add or remove one of
+     * the fields that is being ingested from Salesforce. Do the following:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Call <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase
+     * </a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">
+     * DeleteDataIntegration</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">
+     * CreateDataIntegration</a> to recreate the DataIntegration or a create different one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call CreateKnowledgeBase.
+     * </p>
+     * </li>
+     * </ol>
+     * </note>
      * 
      * @param createKnowledgeBaseRequest
      * @return Result of the CreateKnowledgeBase operation returned by the service.
@@ -157,6 +184,32 @@ public interface AmazonConnectWisdom {
      *      Documentation</a>
      */
     CreateKnowledgeBaseResult createKnowledgeBase(CreateKnowledgeBaseRequest createKnowledgeBaseRequest);
+
+    /**
+     * <p>
+     * Creates a Wisdom quick response.
+     * </p>
+     * 
+     * @param createQuickResponseRequest
+     * @return Result of the CreateQuickResponse operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource. For example,
+     *         if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a
+     *         conflicting resource (usually with the same name) is being created or mutated.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws ServiceQuotaExceededException
+     *         You've exceeded your service quota. To perform the requested action, remove some of the relevant
+     *         resources, or use service quotas to request a service quota increase.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.CreateQuickResponse
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/CreateQuickResponse" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateQuickResponseResult createQuickResponse(CreateQuickResponseRequest createQuickResponseRequest);
 
     /**
      * <p>
@@ -239,6 +292,29 @@ public interface AmazonConnectWisdom {
 
     /**
      * <p>
+     * Deletes the quick response import job.
+     * </p>
+     * 
+     * @param deleteImportJobRequest
+     * @return Result of the DeleteImportJob operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource. For example,
+     *         if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a
+     *         conflicting resource (usually with the same name) is being created or mutated.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.DeleteImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteImportJobResult deleteImportJob(DeleteImportJobRequest deleteImportJobRequest);
+
+    /**
+     * <p>
      * Deletes the knowledge base.
      * </p>
      * <note>
@@ -271,6 +347,25 @@ public interface AmazonConnectWisdom {
      *      Documentation</a>
      */
     DeleteKnowledgeBaseResult deleteKnowledgeBase(DeleteKnowledgeBaseRequest deleteKnowledgeBaseRequest);
+
+    /**
+     * <p>
+     * Deletes a quick response.
+     * </p>
+     * 
+     * @param deleteQuickResponseRequest
+     * @return Result of the DeleteQuickResponse operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.DeleteQuickResponse
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/DeleteQuickResponse" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteQuickResponseResult deleteQuickResponse(DeleteQuickResponseRequest deleteQuickResponseRequest);
 
     /**
      * <p>
@@ -350,6 +445,25 @@ public interface AmazonConnectWisdom {
 
     /**
      * <p>
+     * Retrieves the started import job.
+     * </p>
+     * 
+     * @param getImportJobRequest
+     * @return Result of the GetImportJob operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest);
+
+    /**
+     * <p>
      * Retrieves information about the knowledge base.
      * </p>
      * 
@@ -366,6 +480,25 @@ public interface AmazonConnectWisdom {
      *      Documentation</a>
      */
     GetKnowledgeBaseResult getKnowledgeBase(GetKnowledgeBaseRequest getKnowledgeBaseRequest);
+
+    /**
+     * <p>
+     * Retrieves the quick response.
+     * </p>
+     * 
+     * @param getQuickResponseRequest
+     * @return Result of the GetQuickResponse operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.GetQuickResponse
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetQuickResponse" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetQuickResponseResult getQuickResponse(GetQuickResponseRequest getQuickResponseRequest);
 
     /**
      * <p>
@@ -390,6 +523,7 @@ public interface AmazonConnectWisdom {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/GetRecommendations" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetRecommendationsResult getRecommendations(GetRecommendationsRequest getRecommendationsRequest);
 
     /**
@@ -468,6 +602,23 @@ public interface AmazonConnectWisdom {
 
     /**
      * <p>
+     * Lists information about import jobs.
+     * </p>
+     * 
+     * @param listImportJobsRequest
+     * @return Result of the ListImportJobs operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonConnectWisdom.ListImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListImportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportJobsResult listImportJobs(ListImportJobsRequest listImportJobsRequest);
+
+    /**
+     * <p>
      * Lists the knowledge bases.
      * </p>
      * 
@@ -482,6 +633,25 @@ public interface AmazonConnectWisdom {
      *      Documentation</a>
      */
     ListKnowledgeBasesResult listKnowledgeBases(ListKnowledgeBasesRequest listKnowledgeBasesRequest);
+
+    /**
+     * <p>
+     * Lists information about quick response.
+     * </p>
+     * 
+     * @param listQuickResponsesRequest
+     * @return Result of the ListQuickResponses operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.ListQuickResponses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ListQuickResponses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListQuickResponsesResult listQuickResponses(ListQuickResponsesRequest listQuickResponsesRequest);
 
     /**
      * <p>
@@ -528,6 +698,10 @@ public interface AmazonConnectWisdom {
      * 
      * @param queryAssistantRequest
      * @return Result of the QueryAssistant operation returned by the service.
+     * @throws RequestTimeoutException
+     *         The request reached the service more than 15 minutes after the date stamp on the request or more than 15
+     *         minutes after the request expiration date (such as for pre-signed URLs), or the date stamp on the request
+     *         is more than 15 minutes in the future.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by a service.
      * @throws AccessDeniedException
@@ -538,6 +712,7 @@ public interface AmazonConnectWisdom {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/QueryAssistant" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     QueryAssistantResult queryAssistant(QueryAssistantRequest queryAssistantRequest);
 
     /**
@@ -577,6 +752,29 @@ public interface AmazonConnectWisdom {
      *      Documentation</a>
      */
     SearchContentResult searchContent(SearchContentRequest searchContentRequest);
+
+    /**
+     * <p>
+     * Searches existing Wisdom quick responses in a Wisdom knowledge base.
+     * </p>
+     * 
+     * @param searchQuickResponsesRequest
+     * @return Result of the SearchQuickResponses operation returned by the service.
+     * @throws RequestTimeoutException
+     *         The request reached the service more than 15 minutes after the date stamp on the request or more than 15
+     *         minutes after the request expiration date (such as for pre-signed URLs), or the date stamp on the request
+     *         is more than 15 minutes in the future.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.SearchQuickResponses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SearchQuickResponses" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SearchQuickResponsesResult searchQuickResponses(SearchQuickResponsesRequest searchQuickResponsesRequest);
 
     /**
      * <p>
@@ -620,6 +818,44 @@ public interface AmazonConnectWisdom {
      *      Documentation</a>
      */
     StartContentUploadResult startContentUpload(StartContentUploadRequest startContentUploadRequest);
+
+    /**
+     * <p>
+     * Start an asynchronous job to import Wisdom resources from an uploaded source file. Before calling this API, use
+     * <a
+     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>
+     * to upload an asset that contains the resource data.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For importing Wisdom quick responses, you need to upload a csv file including the quick responses. For
+     * information about how to format the csv file for importing quick responses, see <a
+     * href="https://docs.aws.amazon.com/console/connect/quick-responses/add-data">Import quick responses</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startImportJobRequest
+     * @return Result of the StartImportJob operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource. For example,
+     *         if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a
+     *         conflicting resource (usually with the same name) is being created or mutated.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws ServiceQuotaExceededException
+     *         You've exceeded your service quota. To perform the requested action, remove some of the relevant
+     *         resources, or use service quotas to request a service quota increase.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.StartImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/StartImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartImportJobResult startImportJob(StartImportJobRequest startImportJobRequest);
 
     /**
      * <p>
@@ -696,6 +932,32 @@ public interface AmazonConnectWisdom {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateKnowledgeBaseTemplateUriResult updateKnowledgeBaseTemplateUri(UpdateKnowledgeBaseTemplateUriRequest updateKnowledgeBaseTemplateUriRequest);
+
+    /**
+     * <p>
+     * Updates an existing Wisdom quick response.
+     * </p>
+     * 
+     * @param updateQuickResponseRequest
+     * @return Result of the UpdateQuickResponse operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource. For example,
+     *         if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a
+     *         conflicting resource (usually with the same name) is being created or mutated.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by a service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws PreconditionFailedException
+     *         The provided <code>revisionId</code> does not match, indicating the content has been modified since it
+     *         was last read.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AmazonConnectWisdom.UpdateQuickResponse
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/UpdateQuickResponse" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateQuickResponseResult updateQuickResponse(UpdateQuickResponseRequest updateQuickResponseRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

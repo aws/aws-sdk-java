@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class EndpointOutputConfiguration implements Serializable, Cloneable, Str
      * </p>
      */
     private Integer initialInstanceCount;
+
+    private ProductionVariantServerlessConfig serverlessConfig;
 
     /**
      * <p>
@@ -233,6 +235,32 @@ public class EndpointOutputConfiguration implements Serializable, Cloneable, Str
     }
 
     /**
+     * @param serverlessConfig
+     */
+
+    public void setServerlessConfig(ProductionVariantServerlessConfig serverlessConfig) {
+        this.serverlessConfig = serverlessConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ProductionVariantServerlessConfig getServerlessConfig() {
+        return this.serverlessConfig;
+    }
+
+    /**
+     * @param serverlessConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointOutputConfiguration withServerlessConfig(ProductionVariantServerlessConfig serverlessConfig) {
+        setServerlessConfig(serverlessConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +279,9 @@ public class EndpointOutputConfiguration implements Serializable, Cloneable, Str
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInitialInstanceCount() != null)
-            sb.append("InitialInstanceCount: ").append(getInitialInstanceCount());
+            sb.append("InitialInstanceCount: ").append(getInitialInstanceCount()).append(",");
+        if (getServerlessConfig() != null)
+            sb.append("ServerlessConfig: ").append(getServerlessConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +312,10 @@ public class EndpointOutputConfiguration implements Serializable, Cloneable, Str
             return false;
         if (other.getInitialInstanceCount() != null && other.getInitialInstanceCount().equals(this.getInitialInstanceCount()) == false)
             return false;
+        if (other.getServerlessConfig() == null ^ this.getServerlessConfig() == null)
+            return false;
+        if (other.getServerlessConfig() != null && other.getServerlessConfig().equals(this.getServerlessConfig()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +328,7 @@ public class EndpointOutputConfiguration implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getVariantName() == null) ? 0 : getVariantName().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInitialInstanceCount() == null) ? 0 : getInitialInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getServerlessConfig() == null) ? 0 : getServerlessConfig().hashCode());
         return hashCode;
     }
 

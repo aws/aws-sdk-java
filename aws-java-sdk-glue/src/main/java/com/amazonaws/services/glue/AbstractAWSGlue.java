@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchGetDataQualityResultResult batchGetDataQualityResult(BatchGetDataQualityResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetDevEndpointsResult batchGetDevEndpoints(BatchGetDevEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public BatchGetPartitionResult batchGetPartition(BatchGetPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetTableOptimizerResult batchGetTableOptimizer(BatchGetTableOptimizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +109,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelDataQualityRuleRecommendationRunResult cancelDataQualityRuleRecommendationRun(CancelDataQualityRuleRecommendationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelDataQualityRulesetEvaluationRunResult cancelDataQualityRulesetEvaluationRun(CancelDataQualityRulesetEvaluationRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,6 +159,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public CreateCustomEntityTypeResult createCustomEntityType(CreateCustomEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDataQualityRulesetResult createDataQualityRuleset(CreateDataQualityRulesetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,6 +228,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public CreateTableOptimizerResult createTableOptimizer(CreateTableOptimizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTriggerResult createTrigger(CreateTriggerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +279,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeleteCustomEntityTypeResult deleteCustomEntityType(DeleteCustomEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataQualityRulesetResult deleteDataQualityRuleset(DeleteDataQualityRulesetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -318,6 +353,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public DeleteTableOptimizerResult deleteTableOptimizer(DeleteTableOptimizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTableVersionResult deleteTableVersion(DeleteTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -378,6 +418,16 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetColumnStatisticsTaskRunResult getColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetColumnStatisticsTaskRunsResult getColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConnectionResult getConnection(GetConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -409,6 +459,26 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public GetDataCatalogEncryptionSettingsResult getDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityResultResult getDataQualityResult(GetDataQualityResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityRuleRecommendationRunResult getDataQualityRuleRecommendationRun(GetDataQualityRuleRecommendationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityRulesetResult getDataQualityRuleset(GetDataQualityRulesetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityRulesetEvaluationRunResult getDataQualityRulesetEvaluationRun(GetDataQualityRulesetEvaluationRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -568,6 +638,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetTableOptimizerResult getTableOptimizer(GetTableOptimizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTableVersionResult getTableVersion(GetTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -653,6 +728,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ListColumnStatisticsTaskRunsResult listColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCrawlersResult listCrawlers(ListCrawlersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -664,6 +744,26 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public ListCustomEntityTypesResult listCustomEntityTypes(ListCustomEntityTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityResultsResult listDataQualityResults(ListDataQualityResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityRuleRecommendationRunsResult listDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityRulesetEvaluationRunsResult listDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityRulesetsResult listDataQualityRulesets(ListDataQualityRulesetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -704,6 +804,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public ListStatementsResult listStatements(ListStatementsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTableOptimizerRunsResult listTableOptimizerRuns(ListTableOptimizerRunsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -778,12 +883,27 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public StartColumnStatisticsTaskRunResult startColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartCrawlerResult startCrawler(StartCrawlerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartCrawlerScheduleResult startCrawlerSchedule(StartCrawlerScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDataQualityRuleRecommendationRunResult startDataQualityRuleRecommendationRun(StartDataQualityRuleRecommendationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDataQualityRulesetEvaluationRunResult startDataQualityRulesetEvaluationRun(StartDataQualityRulesetEvaluationRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -819,6 +939,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public StartWorkflowRunResult startWorkflowRun(StartWorkflowRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopColumnStatisticsTaskRunResult stopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -893,6 +1018,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public UpdateDataQualityRulesetResult updateDataQualityRuleset(UpdateDataQualityRulesetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDatabaseResult updateDatabase(UpdateDatabaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -939,6 +1069,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public UpdateTableResult updateTable(UpdateTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTableOptimizerResult updateTableOptimizer(UpdateTableOptimizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

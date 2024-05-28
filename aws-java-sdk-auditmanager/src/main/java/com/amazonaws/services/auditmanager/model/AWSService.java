@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An Amazon Web Service such as Amazon S3 or CloudTrail.
  * </p>
+ * <p>
+ * For an example of how to find an Amazon Web Service name and how to define it in your assessment scope, see the
+ * following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html#API_GetServicesInScope_Example_2"
+ * >Finding an Amazon Web Service name to use in your assessment scope</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html#API_GetServicesInScope_Example_3"
+ * >Defining an Amazon Web Service name in your assessment scope</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AWSService" target="_top">AWS API
  *      Documentation</a>

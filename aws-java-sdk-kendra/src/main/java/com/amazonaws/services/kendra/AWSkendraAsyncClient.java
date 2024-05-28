@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,6 +158,40 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeBatchDeleteDocument(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteFeaturedResultsSetResult> batchDeleteFeaturedResultsSetAsync(BatchDeleteFeaturedResultsSetRequest request) {
+
+        return batchDeleteFeaturedResultsSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteFeaturedResultsSetResult> batchDeleteFeaturedResultsSetAsync(
+            final BatchDeleteFeaturedResultsSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteFeaturedResultsSetRequest, BatchDeleteFeaturedResultsSetResult> asyncHandler) {
+        final BatchDeleteFeaturedResultsSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteFeaturedResultsSetResult>() {
+            @Override
+            public BatchDeleteFeaturedResultsSetResult call() throws Exception {
+                BatchDeleteFeaturedResultsSetResult result = null;
+
+                try {
+                    result = executeBatchDeleteFeaturedResultsSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -391,6 +425,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeCreateFaq(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFeaturedResultsSetResult> createFeaturedResultsSetAsync(CreateFeaturedResultsSetRequest request) {
+
+        return createFeaturedResultsSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFeaturedResultsSetResult> createFeaturedResultsSetAsync(final CreateFeaturedResultsSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFeaturedResultsSetRequest, CreateFeaturedResultsSetResult> asyncHandler) {
+        final CreateFeaturedResultsSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFeaturedResultsSetResult>() {
+            @Override
+            public CreateFeaturedResultsSetResult call() throws Exception {
+                CreateFeaturedResultsSetResult result = null;
+
+                try {
+                    result = executeCreateFeaturedResultsSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -894,6 +961,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeDescribeFaq(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFeaturedResultsSetResult> describeFeaturedResultsSetAsync(DescribeFeaturedResultsSetRequest request) {
+
+        return describeFeaturedResultsSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFeaturedResultsSetResult> describeFeaturedResultsSetAsync(final DescribeFeaturedResultsSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFeaturedResultsSetRequest, DescribeFeaturedResultsSetResult> asyncHandler) {
+        final DescribeFeaturedResultsSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFeaturedResultsSetResult>() {
+            @Override
+            public DescribeFeaturedResultsSetResult call() throws Exception {
+                DescribeFeaturedResultsSetResult result = null;
+
+                try {
+                    result = executeDescribeFeaturedResultsSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1447,6 +1547,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListFeaturedResultsSetsResult> listFeaturedResultsSetsAsync(ListFeaturedResultsSetsRequest request) {
+
+        return listFeaturedResultsSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFeaturedResultsSetsResult> listFeaturedResultsSetsAsync(final ListFeaturedResultsSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFeaturedResultsSetsRequest, ListFeaturedResultsSetsResult> asyncHandler) {
+        final ListFeaturedResultsSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFeaturedResultsSetsResult>() {
+            @Override
+            public ListFeaturedResultsSetsResult call() throws Exception {
+                ListFeaturedResultsSetsResult result = null;
+
+                try {
+                    result = executeListFeaturedResultsSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGroupsOlderThanOrderingIdResult> listGroupsOlderThanOrderingIdAsync(ListGroupsOlderThanOrderingIdRequest request) {
 
         return listGroupsOlderThanOrderingIdAsync(request, null);
@@ -1664,6 +1797,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveResult> retrieveAsync(RetrieveRequest request) {
+
+        return retrieveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrieveResult> retrieveAsync(final RetrieveRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetrieveRequest, RetrieveResult> asyncHandler) {
+        final RetrieveRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RetrieveResult>() {
+            @Override
+            public RetrieveResult call() throws Exception {
+                RetrieveResult result = null;
+
+                try {
+                    result = executeRetrieve(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1930,6 +2096,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeUpdateExperience(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFeaturedResultsSetResult> updateFeaturedResultsSetAsync(UpdateFeaturedResultsSetRequest request) {
+
+        return updateFeaturedResultsSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFeaturedResultsSetResult> updateFeaturedResultsSetAsync(final UpdateFeaturedResultsSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFeaturedResultsSetRequest, UpdateFeaturedResultsSetResult> asyncHandler) {
+        final UpdateFeaturedResultsSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFeaturedResultsSetResult>() {
+            @Override
+            public UpdateFeaturedResultsSetResult call() throws Exception {
+                UpdateFeaturedResultsSetResult result = null;
+
+                try {
+                    result = executeUpdateFeaturedResultsSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

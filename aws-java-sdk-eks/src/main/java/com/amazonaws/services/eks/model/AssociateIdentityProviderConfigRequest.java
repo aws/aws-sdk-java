@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the cluster to associate the configuration to.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -39,25 +39,25 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
     private OidcIdentityProviderConfigRequest oidc;
     /**
      * <p>
-     * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
 
     /**
      * <p>
-     * The name of the cluster to associate the configuration to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to associate the configuration to.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -66,10 +66,10 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the cluster to associate the configuration to.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster to associate the configuration to.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -78,11 +78,11 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the cluster to associate the configuration to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to associate the configuration to.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,12 +133,12 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata to apply to the configuration to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value. You define both.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -147,13 +147,13 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the configuration to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -162,13 +162,13 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the configuration to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +207,11 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -220,10 +220,10 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -232,11 +232,11 @@ public class AssociateIdentityProviderConfigRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.mainframemodernization.AWSMainframeModernizationCl
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mainframemodernization.model.*;
+
 import com.amazonaws.services.mainframemodernization.model.transform.*;
 
 /**
@@ -101,6 +102,12 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mainframemodernization.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mainframemodernization.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExecutionTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mainframemodernization.model.transform.ExecutionTimeoutExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.mainframemodernization.model.AWSMainframeModernizationException.class));
 
     public static AWSMainframeModernizationClientBuilder builder() {
@@ -156,18 +163,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param cancelBatchJobExecutionRequest
      * @return Result of the CancelBatchJobExecution operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.CancelBatchJobExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CancelBatchJobExecution" target="_top">AWS API
      *      Documentation</a>
@@ -220,24 +227,24 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Creates a new application with given parameters. Requires an existing environment and application definition
-     * file.
+     * Creates a new application with given parameters. Requires an existing runtime environment and application
+     * definition file.
      * </p>
      * 
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
      * @throws ServiceQuotaExceededException
      *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
      * @throws ThrottlingException
      *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateApplication" target="_top">AWS API
      *      Documentation</a>
@@ -293,20 +300,20 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param createDataSetImportTaskRequest
      * @return Result of the CreateDataSetImportTask operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ServiceQuotaExceededException
-     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.CreateDataSetImportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetImportTask" target="_top">AWS API
      *      Documentation</a>
@@ -359,25 +366,25 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Creates and starts a deployment to deploy an application into an environment.
+     * Creates and starts a deployment to deploy an application into a runtime environment.
      * </p>
      * 
      * @param createDeploymentRequest
      * @return Result of the CreateDeployment operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ServiceQuotaExceededException
-     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDeployment" target="_top">AWS API
      *      Documentation</a>
@@ -433,18 +440,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param createEnvironmentRequest
      * @return Result of the CreateEnvironment operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
      * @throws ServiceQuotaExceededException
      *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
      * @throws ThrottlingException
      *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.CreateEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateEnvironment" target="_top">AWS API
      *      Documentation</a>
@@ -500,16 +507,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param deleteApplicationRequest
      * @return Result of the DeleteApplication operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
      * @throws ThrottlingException
      *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplication" target="_top">AWS API
      *      Documentation</a>
@@ -560,25 +567,26 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Deletes a specific application from a specified environment where it has been previously deployed. You cannot
-     * delete an environment using DeleteEnvironment, if any application has ever been deployed to it. This API removes
-     * the association of the application with the environment so you can delete the environment smoothly.
+     * Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot
+     * delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API
+     * removes the association of the application with the runtime environment so you can delete the environment
+     * smoothly.
      * </p>
      * 
      * @param deleteApplicationFromEnvironmentRequest
      * @return Result of the DeleteApplicationFromEnvironment operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.DeleteApplicationFromEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplicationFromEnvironment"
      *      target="_top">AWS API Documentation</a>
@@ -632,22 +640,22 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Deletes a specific environment. The environment cannot contain deployed applications. If it does, you must delete
-     * those applications before you delete the environment.
+     * Deletes a specific runtime environment. The environment cannot contain deployed applications. If it does, you
+     * must delete those applications before you delete the environment.
      * </p>
      * 
      * @param deleteEnvironmentRequest
      * @return Result of the DeleteEnvironment operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
      * @throws ThrottlingException
      *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.DeleteEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteEnvironment" target="_top">AWS API
      *      Documentation</a>
@@ -703,16 +711,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getApplicationRequest
      * @return Result of the GetApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetApplication" target="_top">AWS API
      *      Documentation</a>
@@ -768,16 +776,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getApplicationVersionRequest
      * @return Result of the GetApplicationVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetApplicationVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetApplicationVersion" target="_top">AWS API
      *      Documentation</a>
@@ -834,16 +842,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getBatchJobExecutionRequest
      * @return Result of the GetBatchJobExecution operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetBatchJobExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetBatchJobExecution" target="_top">AWS API
      *      Documentation</a>
@@ -899,16 +907,22 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getDataSetDetailsRequest
      * @return Result of the GetDataSetDetails operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ExecutionTimeoutException
+     *         Failed to connect to server, or didn’t receive response within expected time period.
+     * @throws ServiceUnavailableException
+     *         Server cannot process the request at the moment.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetDataSetDetails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetDetails" target="_top">AWS API
      *      Documentation</a>
@@ -964,16 +978,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getDataSetImportTaskRequest
      * @return Result of the GetDataSetImportTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetDataSetImportTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetImportTask" target="_top">AWS API
      *      Documentation</a>
@@ -1029,16 +1043,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getDeploymentRequest
      * @return Result of the GetDeployment operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDeployment" target="_top">AWS API
      *      Documentation</a>
@@ -1094,16 +1108,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param getEnvironmentRequest
      * @return Result of the GetEnvironment operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.GetEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetEnvironment" target="_top">AWS API
      *      Documentation</a>
@@ -1154,21 +1168,84 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Gets a single sign-on URL that can be used to connect to AWS Blu Insights.
+     * </p>
+     * 
+     * @param getSignedBluinsightsUrlRequest
+     * @return Result of the GetSignedBluinsightsUrl operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
+     * @sample AWSMainframeModernization.GetSignedBluinsightsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSignedBluinsightsUrlResult getSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSignedBluinsightsUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetSignedBluinsightsUrlResult executeGetSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest getSignedBluinsightsUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSignedBluinsightsUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSignedBluinsightsUrlRequest> request = null;
+        Response<GetSignedBluinsightsUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSignedBluinsightsUrlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSignedBluinsightsUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "m2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSignedBluinsightsUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSignedBluinsightsUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSignedBluinsightsUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the application versions for a specific application.
      * </p>
      * 
      * @param listApplicationVersionsRequest
      * @return Result of the ListApplicationVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListApplicationVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplicationVersions" target="_top">AWS API
      *      Documentation</a>
@@ -1222,20 +1299,20 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
     /**
      * <p>
      * Lists the applications associated with a specific Amazon Web Services account. You can provide the unique
-     * identifier of a specific environment in a query parameter to see all applications associated with that
+     * identifier of a specific runtime environment in a query parameter to see all applications associated with that
      * environment.
      * </p>
      * 
      * @param listApplicationsRequest
      * @return Result of the ListApplications operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @sample AWSMainframeModernization.ListApplications
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplications" target="_top">AWS API
      *      Documentation</a>
@@ -1287,21 +1364,21 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
     /**
      * <p>
      * Lists all the available batch job definitions based on the batch job resources uploaded during the application
-     * creation. The listed batch job definitions can then be used to start a batch job.
+     * creation. You can use the batch job definitions in the list to start a batch job.
      * </p>
      * 
      * @param listBatchJobDefinitionsRequest
      * @return Result of the ListBatchJobDefinitions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListBatchJobDefinitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobDefinitions" target="_top">AWS API
      *      Documentation</a>
@@ -1359,16 +1436,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param listBatchJobExecutionsRequest
      * @return Result of the ListBatchJobExecutions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListBatchJobExecutions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobExecutions" target="_top">AWS API
      *      Documentation</a>
@@ -1420,21 +1497,91 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Lists all the job steps for JCL files to restart a batch job. This is only applicable for Micro Focus engine with
+     * versions 8.0.6 and above.
+     * </p>
+     * 
+     * @param listBatchJobRestartPointsRequest
+     * @return Result of the ListBatchJobRestartPoints operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
+     * @sample AWSMainframeModernization.ListBatchJobRestartPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListBatchJobRestartPointsResult listBatchJobRestartPoints(ListBatchJobRestartPointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBatchJobRestartPoints(request);
+    }
+
+    @SdkInternalApi
+    final ListBatchJobRestartPointsResult executeListBatchJobRestartPoints(ListBatchJobRestartPointsRequest listBatchJobRestartPointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBatchJobRestartPointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBatchJobRestartPointsRequest> request = null;
+        Response<ListBatchJobRestartPointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBatchJobRestartPointsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listBatchJobRestartPointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "m2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBatchJobRestartPoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBatchJobRestartPointsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListBatchJobRestartPointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the data set imports for the specified application.
      * </p>
      * 
      * @param listDataSetImportHistoryRequest
      * @return Result of the ListDataSetImportHistory operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListDataSetImportHistory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetImportHistory" target="_top">AWS
      *      API Documentation</a>
@@ -1488,24 +1635,30 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
     /**
      * <p>
      * Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data
-     * sets are associated with applications deployed on environments. This is known as importing data sets. Currently,
-     * Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a
+     * sets are associated with applications deployed on runtime environments. This is known as importing data sets.
+     * Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a
      * href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html"
      * >CreateDataSetImportTask</a>.
      * </p>
      * 
      * @param listDataSetsRequest
      * @return Result of the ListDataSets operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ExecutionTimeoutException
+     *         Failed to connect to server, or didn’t receive response within expected time period.
+     * @throws ServiceUnavailableException
+     *         Server cannot process the request at the moment.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListDataSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSets" target="_top">AWS API
      *      Documentation</a>
@@ -1563,16 +1716,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param listDeploymentsRequest
      * @return Result of the ListDeployments operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListDeployments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDeployments" target="_top">AWS API
      *      Documentation</a>
@@ -1628,14 +1781,14 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param listEngineVersionsRequest
      * @return Result of the ListEngineVersions operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @sample AWSMainframeModernization.ListEngineVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListEngineVersions" target="_top">AWS API
      *      Documentation</a>
@@ -1691,14 +1844,14 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param listEnvironmentsRequest
      * @return Result of the ListEnvironments operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @sample AWSMainframeModernization.ListEnvironments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListEnvironments" target="_top">AWS API
      *      Documentation</a>
@@ -1754,16 +1907,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -1819,18 +1972,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param startApplicationRequest
      * @return Result of the StartApplication operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.StartApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StartApplication" target="_top">AWS API
      *      Documentation</a>
@@ -1887,18 +2040,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param startBatchJobRequest
      * @return Result of the StartBatchJob operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.StartBatchJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StartBatchJob" target="_top">AWS API
      *      Documentation</a>
@@ -1954,18 +2107,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param stopApplicationRequest
      * @return Result of the StopApplication operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StopApplication" target="_top">AWS API
      *      Documentation</a>
@@ -2021,18 +2174,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ServiceQuotaExceededException
-     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -2088,16 +2241,16 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
      * @throws ValidationException
      *         One or more parameters provided in the request is not valid.
      * @throws InternalServerException
      *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @sample AWSMainframeModernization.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -2153,18 +2306,18 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
      * 
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateApplication" target="_top">AWS API
      *      Documentation</a>
@@ -2215,25 +2368,25 @@ public class AWSMainframeModernizationClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Updates the configuration details for a specific environment.
+     * Updates the configuration details for a specific runtime environment.
      * </p>
      * 
      * @param updateEnvironmentRequest
      * @return Result of the UpdateEnvironment operation returned by the service.
-     * @throws ValidationException
-     *         One or more parameters provided in the request is not valid.
-     * @throws ServiceQuotaExceededException
-     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
-     * @throws ConflictException
-     *         The parameters provided in the request conflict with existing resources.
-     * @throws InternalServerException
-     *         An unexpected error occurred during the processing of the request.
-     * @throws AccessDeniedException
-     *         The account or role doesn't have the right permissions to make the request.
-     * @throws ThrottlingException
-     *         The number of requests made exceeds the limit.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         One or more quotas for Amazon Web Services Mainframe Modernization exceeds the limit.
+     * @throws ThrottlingException
+     *         The number of requests made exceeds the limit.
+     * @throws AccessDeniedException
+     *         The account or role doesn't have the right permissions to make the request.
+     * @throws ConflictException
+     *         The parameters provided in the request conflict with existing resources.
+     * @throws ValidationException
+     *         One or more parameters provided in the request is not valid.
+     * @throws InternalServerException
+     *         An unexpected error occurred during the processing of the request.
      * @sample AWSMainframeModernization.UpdateEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateEnvironment" target="_top">AWS API
      *      Documentation</a>

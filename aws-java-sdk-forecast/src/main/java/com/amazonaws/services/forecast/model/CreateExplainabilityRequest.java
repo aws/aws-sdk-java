@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
     private Schema schema;
     /**
      * <p>
-     * Create an Explainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the Amazon Web Services console.
      * </p>
      */
     private Boolean enableVisualization;
@@ -298,11 +298,11 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Explainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the Amazon Web Services console.
      * </p>
      * 
      * @param enableVisualization
-     *        Create an Explainability visualization that is viewable within the AWS console.
+     *        Create an Explainability visualization that is viewable within the Amazon Web Services console.
      */
 
     public void setEnableVisualization(Boolean enableVisualization) {
@@ -311,10 +311,10 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Explainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the Amazon Web Services console.
      * </p>
      * 
-     * @return Create an Explainability visualization that is viewable within the AWS console.
+     * @return Create an Explainability visualization that is viewable within the Amazon Web Services console.
      */
 
     public Boolean getEnableVisualization() {
@@ -323,11 +323,11 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Explainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the Amazon Web Services console.
      * </p>
      * 
      * @param enableVisualization
-     *        Create an Explainability visualization that is viewable within the AWS console.
+     *        Create an Explainability visualization that is viewable within the Amazon Web Services console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,10 +338,10 @@ public class CreateExplainabilityRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Create an Explainability visualization that is viewable within the AWS console.
+     * Create an Explainability visualization that is viewable within the Amazon Web Services console.
      * </p>
      * 
-     * @return Create an Explainability visualization that is viewable within the AWS console.
+     * @return Create an Explainability visualization that is viewable within the Amazon Web Services console.
      */
 
     public Boolean isEnableVisualization() {

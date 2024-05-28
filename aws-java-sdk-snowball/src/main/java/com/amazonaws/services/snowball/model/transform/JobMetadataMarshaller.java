@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,12 @@ public class JobMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LongTermPricingId").build();
     private static final MarshallingInfo<StructuredPojo> ONDEVICESERVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDeviceServiceConfiguration").build();
+    private static final MarshallingInfo<String> IMPACTLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImpactLevel").build();
+    private static final MarshallingInfo<StructuredPojo> PICKUPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PickupDetails").build();
+    private static final MarshallingInfo<String> SNOWBALLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowballId").build();
 
     private static final JobMetadataMarshaller instance = new JobMetadataMarshaller();
 
@@ -110,6 +116,9 @@ public class JobMetadataMarshaller {
             protocolMarshaller.marshall(jobMetadata.getRemoteManagement(), REMOTEMANAGEMENT_BINDING);
             protocolMarshaller.marshall(jobMetadata.getLongTermPricingId(), LONGTERMPRICINGID_BINDING);
             protocolMarshaller.marshall(jobMetadata.getOnDeviceServiceConfiguration(), ONDEVICESERVICECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(jobMetadata.getImpactLevel(), IMPACTLEVEL_BINDING);
+            protocolMarshaller.marshall(jobMetadata.getPickupDetails(), PICKUPDETAILS_BINDING);
+            protocolMarshaller.marshall(jobMetadata.getSnowballId(), SNOWBALLID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

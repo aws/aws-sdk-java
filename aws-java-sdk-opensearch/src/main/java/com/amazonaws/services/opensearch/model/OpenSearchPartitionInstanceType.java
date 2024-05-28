@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,14 @@ public enum OpenSearchPartitionInstanceType {
     T3LargeSearch("t3.large.search"),
     T3XlargeSearch("t3.xlarge.search"),
     T32xlargeSearch("t3.2xlarge.search"),
+    Or1MediumSearch("or1.medium.search"),
+    Or1LargeSearch("or1.large.search"),
+    Or1XlargeSearch("or1.xlarge.search"),
+    Or12xlargeSearch("or1.2xlarge.search"),
+    Or14xlargeSearch("or1.4xlarge.search"),
+    Or18xlargeSearch("or1.8xlarge.search"),
+    Or112xlargeSearch("or1.12xlarge.search"),
+    Or116xlargeSearch("or1.16xlarge.search"),
     Ultrawarm1MediumSearch("ultrawarm1.medium.search"),
     Ultrawarm1LargeSearch("ultrawarm1.large.search"),
     Ultrawarm1XlargeSearch("ultrawarm1.xlarge.search"),

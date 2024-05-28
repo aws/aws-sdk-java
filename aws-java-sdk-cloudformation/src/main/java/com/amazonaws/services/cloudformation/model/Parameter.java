@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class Parameter implements Serializable, Cloneable {
      * <p>
      * Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     * > <code>SSM</code> </a> parameter types in the template.
+     * > SSM</a> parameter types in the template.
      * </p>
      */
     private String resolvedValue;
@@ -205,13 +205,13 @@ public class Parameter implements Serializable, Cloneable {
      * <p>
      * Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     * > <code>SSM</code> </a> parameter types in the template.
+     * > SSM</a> parameter types in the template.
      * </p>
      * 
      * @param resolvedValue
      *        Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     *        > <code>SSM</code> </a> parameter types in the template.
+     *        > SSM</a> parameter types in the template.
      */
 
     public void setResolvedValue(String resolvedValue) {
@@ -222,12 +222,12 @@ public class Parameter implements Serializable, Cloneable {
      * <p>
      * Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     * > <code>SSM</code> </a> parameter types in the template.
+     * > SSM</a> parameter types in the template.
      * </p>
      * 
      * @return Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     *         > <code>SSM</code> </a> parameter types in the template.
+     *         > SSM</a> parameter types in the template.
      */
 
     public String getResolvedValue() {
@@ -238,13 +238,13 @@ public class Parameter implements Serializable, Cloneable {
      * <p>
      * Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     * > <code>SSM</code> </a> parameter types in the template.
+     * > SSM</a> parameter types in the template.
      * </p>
      * 
      * @param resolvedValue
      *        Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
-     *        > <code>SSM</code> </a> parameter types in the template.
+     *        > SSM</a> parameter types in the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

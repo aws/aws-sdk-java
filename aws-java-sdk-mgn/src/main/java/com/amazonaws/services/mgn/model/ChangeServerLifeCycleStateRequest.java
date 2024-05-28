@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class ChangeServerLifeCycleStateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * The request to change the source server migration account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * The request to change the source server migration lifecycle state.
      * </p>
      */
@@ -37,6 +43,46 @@ public class ChangeServerLifeCycleStateRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * The request to change the source server migration account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        The request to change the source server migration account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * The request to change the source server migration account ID.
+     * </p>
+     * 
+     * @return The request to change the source server migration account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * The request to change the source server migration account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        The request to change the source server migration account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChangeServerLifeCycleStateRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -130,6 +176,8 @@ public class ChangeServerLifeCycleStateRequest extends com.amazonaws.AmazonWebSe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getLifeCycle() != null)
             sb.append("LifeCycle: ").append(getLifeCycle()).append(",");
         if (getSourceServerID() != null)
@@ -148,6 +196,10 @@ public class ChangeServerLifeCycleStateRequest extends com.amazonaws.AmazonWebSe
         if (obj instanceof ChangeServerLifeCycleStateRequest == false)
             return false;
         ChangeServerLifeCycleStateRequest other = (ChangeServerLifeCycleStateRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getLifeCycle() == null ^ this.getLifeCycle() == null)
             return false;
         if (other.getLifeCycle() != null && other.getLifeCycle().equals(this.getLifeCycle()) == false)
@@ -164,6 +216,7 @@ public class ChangeServerLifeCycleStateRequest extends com.amazonaws.AmazonWebSe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getLifeCycle() == null) ? 0 : getLifeCycle().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         return hashCode;

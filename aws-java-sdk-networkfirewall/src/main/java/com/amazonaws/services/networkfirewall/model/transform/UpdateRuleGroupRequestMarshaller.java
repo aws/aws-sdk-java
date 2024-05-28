@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class UpdateRuleGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceMetadata").build();
+    private static final MarshallingInfo<Boolean> ANALYZERULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyzeRuleGroup").build();
 
     private static final UpdateRuleGroupRequestMarshaller instance = new UpdateRuleGroupRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class UpdateRuleGroupRequestMarshaller {
             protocolMarshaller.marshall(updateRuleGroupRequest.getDryRun(), DRYRUN_BINDING);
             protocolMarshaller.marshall(updateRuleGroupRequest.getEncryptionConfiguration(), ENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateRuleGroupRequest.getSourceMetadata(), SOURCEMETADATA_BINDING);
+            protocolMarshaller.marshall(updateRuleGroupRequest.getAnalyzeRuleGroup(), ANALYZERULEGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

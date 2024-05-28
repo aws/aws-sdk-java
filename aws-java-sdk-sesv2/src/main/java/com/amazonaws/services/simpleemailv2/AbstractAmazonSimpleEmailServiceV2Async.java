@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<BatchGetMetricDataResult> batchGetMetricDataAsync(BatchGetMetricDataRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGetMetricDataRequest, BatchGetMetricDataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelExportJobResult> cancelExportJobAsync(CancelExportJobRequest request) {
+
+        return cancelExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelExportJobResult> cancelExportJobAsync(CancelExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelExportJobRequest, CancelExportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -170,6 +183,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<CreateEmailTemplateResult> createEmailTemplateAsync(CreateEmailTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEmailTemplateRequest, CreateEmailTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest request) {
+
+        return createExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExportJobRequest, CreateExportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -551,6 +577,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest request) {
+
+        return getExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExportJobRequest, GetExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request) {
 
         return getImportJobAsync(request, null);
@@ -559,6 +598,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessageInsightsResult> getMessageInsightsAsync(GetMessageInsightsRequest request) {
+
+        return getMessageInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessageInsightsResult> getMessageInsightsAsync(GetMessageInsightsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMessageInsightsRequest, GetMessageInsightsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -693,6 +745,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEmailTemplatesRequest, ListEmailTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportJobsResult> listExportJobsAsync(ListExportJobsRequest request) {
+
+        return listExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportJobsResult> listExportJobsAsync(ListExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExportJobsRequest, ListExportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -915,6 +980,21 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<PutDedicatedIpInPoolResult> putDedicatedIpInPoolAsync(PutDedicatedIpInPoolRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDedicatedIpInPoolRequest, PutDedicatedIpInPoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDedicatedIpPoolScalingAttributesResult> putDedicatedIpPoolScalingAttributesAsync(
+            PutDedicatedIpPoolScalingAttributesRequest request) {
+
+        return putDedicatedIpPoolScalingAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDedicatedIpPoolScalingAttributesResult> putDedicatedIpPoolScalingAttributesAsync(
+            PutDedicatedIpPoolScalingAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDedicatedIpPoolScalingAttributesRequest, PutDedicatedIpPoolScalingAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

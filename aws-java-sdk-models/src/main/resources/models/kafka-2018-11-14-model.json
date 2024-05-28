@@ -186,6 +186,98 @@
       ],
       "documentation": "\n            <p>Creates a new MSK configuration.</p>\n         "
     },
+    "CreateReplicator": {
+      "name": "CreateReplicator",
+      "http": {
+        "method": "POST",
+        "requestUri": "/replication/v1/replicators",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateReplicatorRequest"
+      },
+      "output": {
+        "shape": "CreateReplicatorResponse",
+        "documentation": "<p>HTTP Status Code 200: OK.</p>"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "<p>HTTP Status Code 409: Conflict. This replicator name already exists. Retry your request with another name.</p>"
+        }
+      ],
+      "documentation": "<p>Creates the replicator.</p>"
+    },
+    "CreateVpcConnection": {
+      "name": "CreateVpcConnection",
+      "http": {
+        "method": "POST",
+        "requestUri": "/v1/vpc-connection",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CreateVpcConnectionRequest"
+      },
+      "output": {
+        "shape": "CreateVpcConnectionResponse",
+        "documentation": "\n            <p>200 response</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "\n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "\n            <p>503 response</p>\n         "
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "\n            <p>429 response</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Creates a new MSK VPC connection.</p>\n         "
+    },
     "DeleteCluster": {
       "name": "DeleteCluster",
       "http": {
@@ -220,6 +312,40 @@
       ],
       "documentation": "\n            <p>Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the request.</p>\n         "
     },
+    "DeleteClusterPolicy": {
+      "name": "DeleteClusterPolicy",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/clusters/{clusterArn}/policy",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteClusterPolicyRequest"
+      },
+      "output": {
+        "shape": "DeleteClusterPolicyResponse",
+        "documentation": "\n            <p>Successful response.</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "NotFoundException",
+          "documentation": "\n            <p>The resource could not be found due to incorrect input. Correct the input, then retry the request.</p>\n         "
+        },
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Deletes the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.</p>\n         "
+    },
     "DeleteConfiguration": {
       "name": "DeleteConfiguration",
       "http": {
@@ -253,6 +379,85 @@
         }
       ],
       "documentation": "\n            <p>Deletes an MSK Configuration.</p>\n         "
+    },
+    "DeleteReplicator": {
+      "name": "DeleteReplicator",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/replication/v1/replicators/{replicatorArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteReplicatorRequest"
+      },
+      "output": {
+        "shape": "DeleteReplicatorResponse",
+        "documentation": "HTTP Status Code 200: OK."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+        }, {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+        }
+      ],
+      "documentation": "<p>Deletes a replicator.</p>"
+    },
+    "DeleteVpcConnection": {
+      "name": "DeleteVpcConnection",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/vpc-connection/{arn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DeleteVpcConnectionRequest"
+      },
+      "output": {
+        "shape": "DeleteVpcConnectionResponse",
+        "documentation": "\n            <p>Successful response.</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "NotFoundException",
+          "documentation": "\n            <p>The resource could not be found due to incorrect input. Correct the input, then retry the request.</p>\n         "
+        },
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Deletes a MSK VPC connection.</p>\n         "
     },
     "DescribeCluster": {
       "name": "DescribeCluster",
@@ -368,6 +573,44 @@
       ],
       "documentation": "\n            <p>Returns a description of the cluster operation specified by the ARN.</p>\n         "
     },
+    "DescribeClusterOperationV2" : {
+      "name" : "DescribeClusterOperationV2",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/api/v2/operations/{clusterOperationArn}",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "DescribeClusterOperationV2Request"
+      },
+      "output" : {
+        "shape" : "DescribeClusterOperationV2Response",
+        "documentation" : "\n            <p>HTTP Status Code 200: OK.</p>"
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "\n            <p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+      }, {
+        "shape" : "UnauthorizedException",
+        "documentation" : "\n            <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+      }, {
+        "shape" : "InternalServerErrorException",
+        "documentation" : "\n            <p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+      }, {
+        "shape" : "ForbiddenException",
+        "documentation" : "\n            <p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+      }, {
+        "shape" : "NotFoundException",
+        "documentation" : "\n            <p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+      }, {
+        "shape" : "ServiceUnavailableException",
+        "documentation" : "\n            <p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+      }, {
+        "shape" : "TooManyRequestsException",
+        "documentation" : "\n            <p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+      } ],
+      "documentation" : "\n            <p>Returns a description of the cluster operation specified by the ARN.</p>\n"
+    },
     "DescribeConfiguration": {
       "name": "DescribeConfiguration",
       "http": {
@@ -451,6 +694,94 @@
         }
       ],
       "documentation": "\n            <p>Returns a description of this revision of the configuration.</p>\n         "
+    },
+    "DescribeReplicator": {
+      "name": "DescribeReplicator",
+      "http": {
+        "method": "GET",
+        "requestUri": "/replication/v1/replicators/{replicatorArn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeReplicatorRequest"
+      },
+      "output": {
+        "shape": "DescribeReplicatorResponse",
+        "documentation": "<p>HTTP Status Code 200: OK."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+        }
+      ],
+      "documentation": "<p>Describes a replicator.</p>"
+    },
+    "DescribeVpcConnection": {
+      "name": "DescribeVpcConnection",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/vpc-connection/{arn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeVpcConnectionRequest"
+      },
+      "output": {
+        "shape": "DescribeVpcConnectionResponse",
+        "documentation": "\n            <p>200 response</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "\n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "\n            <p>The resource could not be found due to incorrect input. Correct the input, then retry the request.</p>\n         "
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "\n            <p>503 response</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Returns a description of this MSK VPC connection.</p>\n         "
     },
     "BatchDisassociateScramSecret" : {
       "name" : "BatchDisassociateScramSecret",
@@ -542,38 +873,72 @@
         "shape" : "GetCompatibleKafkaVersionsResponse",
         "documentation": "\n            <p>Successful response.</p>\n         "
       },
-      "errors" : 
-      [ 
+      "errors" :
+      [
         {
           "shape" : "BadRequestException",
           "documentation" : "n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>n            "
-        }, 
+        },
         {
           "shape" : "UnauthorizedException",
           "documentation" : "n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>n            "
-        }, 
+        },
         {
           "shape" : "InternalServerErrorException",
           "documentation" : "n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>n            "
-        }, 
+        },
         {
           "shape" : "ForbiddenException",
           "documentation" : "n            <p>Access forbidden. Check your credentials and then retry your request.</p>n            "
-        }, 
+        },
         {
           "shape" : "NotFoundException",
           "documentation" : "n            <p>The resource could not be found due to incorrect input. Correct the input, then retry the request.</p>n            "
-        }, 
+        },
         {
           "shape" : "ServiceUnavailableException",
           "documentation" : "n            <p>503 response</p>n            "
-        }, 
+        },
         {
           "shape" : "TooManyRequestsException",
           "documentation" : "n            <p>429 response</p>n            "
-        } 
+        }
       ],
       "documentation": "\n            <p>Gets the Apache Kafka versions to which you can update the MSK cluster.</p>\n         "
+    },
+    "GetClusterPolicy": {
+      "name": "GetClusterPolicy",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters/{clusterArn}/policy",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetClusterPolicyRequest"
+      },
+      "output": {
+        "shape": "GetClusterPolicyResponse",
+        "documentation": "\n            <p>Successful response.</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "NotFoundException",
+          "documentation": "\n            <p>The resource could not be found due to incorrect input. Correct the input, then retry the request.</p>\n         "
+        },
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.</p>\n         "
     },
     "ListClusterOperations": {
       "name": "ListClusterOperations",
@@ -608,6 +973,44 @@
         }
       ],
       "documentation": "\n            <p>Returns a list of all the operations that have been performed on the specified MSK cluster.</p>\n         "
+    },
+    "ListClusterOperationsV2" : {
+      "name" : "ListClusterOperationsV2",
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/api/v2/clusters/{clusterArn}/operations",
+        "responseCode" : 200
+      },
+      "input" : {
+        "shape" : "ListClusterOperationsV2Request"
+      },
+      "output" : {
+        "shape" : "ListClusterOperationsV2Response",
+        "documentation" : "\n            <p>HTTP Status Code 200: OK.</p>"
+      },
+      "errors" : [ {
+        "shape" : "BadRequestException",
+        "documentation" : "\n            <p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+      }, {
+        "shape" : "UnauthorizedException",
+        "documentation" : "\n            <p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+      }, {
+        "shape" : "InternalServerErrorException",
+        "documentation" : "\n            <p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+      }, {
+        "shape" : "ForbiddenException",
+        "documentation" : "\n            <p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+      }, {
+        "shape" : "NotFoundException",
+        "documentation" : "\n            <p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+      }, {
+        "shape" : "ServiceUnavailableException",
+        "documentation" : "\n            <p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+      }, {
+        "shape" : "TooManyRequestsException",
+        "documentation" : "\n            <p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+      } ],
+      "documentation" : "\n            <p>Returns a list of all the operations that have been performed on the specified MSK cluster.</p>\n         "
     },
     "ListClusters": {
       "name": "ListClusters",
@@ -824,6 +1227,52 @@
       ],
       "documentation": "\n            <p>Returns a list of the broker nodes in the cluster.</p>\n         "
     },
+    "ListReplicators": {
+      "name": "ListReplicators",
+      "http": {
+        "method": "GET",
+        "requestUri": "/replication/v1/replicators",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListReplicatorsRequest"
+      },
+      "output": {
+        "shape": "ListReplicatorsResponse",
+        "documentation": "HTTP Status Code 200: OK."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+        }
+      ],
+      "documentation": "<p>Lists the replicators.</p>"
+    },
     "ListScramSecrets" : {
       "name" : "ListScramSecrets",
       "http" : {
@@ -891,6 +1340,150 @@
         }
       ],
       "documentation": "\n            <p>Returns a list of the tags associated with the specified resource.</p>\n         "
+    },
+    "ListClientVpcConnections": {
+      "name": "ListClientVpcConnections",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/clusters/{clusterArn}/client-vpc-connections",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListClientVpcConnectionsRequest"
+      },
+      "output": {
+        "shape": "ListClientVpcConnectionsResponse",
+        "documentation": "\n            <p>200 response</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "\n            <p>503 response</p>\n         "
+        },
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "\n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Returns a list of all the VPC connections in this Region.</p>\n         "
+    },
+    "ListVpcConnections": {
+      "name": "ListVpcConnections",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/vpc-connections",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListVpcConnectionsRequest"
+      },
+      "output": {
+        "shape": "ListVpcConnectionsResponse",
+        "documentation": "\n            <p>200 response</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "\n            <p>503 response</p>\n         "
+        },
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "\n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Returns a list of all the VPC connections in this Region.</p>\n         "
+    },
+    "RejectClientVpcConnection": {
+      "name": "RejectClientVpcConnection",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/clusters/{clusterArn}/client-vpc-connection",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RejectClientVpcConnectionRequest"
+      },
+      "output": {
+        "shape": "RejectClientVpcConnectionResponse",
+        "documentation": "\n            <p>200 response</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "\n            <p>503 response</p>\n         "
+        },
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "\n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Returns empty response.</p>\n         "
+    },
+    "PutClusterPolicy": {
+      "name": "PutClusterPolicy",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/clusters/{clusterArn}/policy",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "PutClusterPolicyRequest"
+      },
+      "output": {
+        "shape": "PutClusterPolicyResponse",
+        "documentation": "\n            <p>Successful response.</p>\n         "
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n         "
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n         "
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
+        }
+      ],
+      "documentation": "\n            <p>Creates or updates the MSK cluster policy specified by the cluster Amazon Resource Name (ARN) in the request.</p>\n         "
     },
     "RebootBroker" : {
       "name" : "RebootBroker",
@@ -1252,35 +1845,35 @@
         "shape" : "UpdateClusterKafkaVersionResponse",
         "documentation" : "\n            <p>Successful response.</p>\n            "
       },
-      "errors" : [ 
+      "errors" : [
         {
           "shape" : "BadRequestException",
           "documentation" : "\n            <p>The request isn't valid because the input is incorrect. Correct your input and then submit it again.</p>\n            "
-        }, 
+        },
         {
           "shape" : "UnauthorizedException",
           "documentation" : "\n            <p>The request is not authorized. The provided credentials couldn't be validated.</p>\n            "
-        }, 
+        },
         {
           "shape" : "InternalServerErrorException",
           "documentation" : "\n            <p>There was an unexpected internal server error. Retrying your request might resolve the issue.</p>\n            "
-        }, 
+        },
         {
           "shape" : "ForbiddenException",
           "documentation" : "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n            "
-        }, 
+        },
         {
           "shape" : "NotFoundException",
           "documentation" : "\n            <p>The resource could not be found due to incorrect input. Correct the input, then retry the request.</p>\n            "
-        }, 
+        },
         {
           "shape" : "ServiceUnavailableException",
           "documentation" : "\n            <p>503 response</p>\n            "
-        }, 
+        },
         {
           "shape" : "TooManyRequestsException",
           "documentation" : "\n            <p>429 response</p>\n            "
-        } 
+        }
       ],
       "documentation": "\n            <p>Updates the Apache Kafka version for the cluster.</p>\n         "
     },
@@ -1315,6 +1908,52 @@
         "documentation" : "\n            <p>Access forbidden. Check your credentials and then retry your request.</p>\n         "
       } ],
       "documentation" : "\n            <p>Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus.</p>\n         "
+    },
+    "UpdateReplicationInfo": {
+      "name": "UpdateReplicationInfo",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/replication/v1/replicators/{replicatorArn}/replication-info",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateReplicationInfoRequest"
+      },
+      "output": {
+        "shape": "UpdateReplicationInfoResponse",
+        "documentation": "HTTP Status Code 200: OK."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.</p>"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>HTTP Status Code 429: Limit exceeded. Resource limit reached.</p>"
+        }
+      ],
+      "documentation": "<p>Updates replication info of a replicator.</p>"
     },
     "UpdateSecurity" : {
       "name" : "UpdateSecurity",
@@ -1393,6 +2032,18 @@
     }
   },
   "shapes": {
+    "AmazonMskCluster": {
+      "type": "structure",
+      "members": {
+        "MskClusterArn": {
+          "shape": "__string",
+          "locationName": "mskClusterArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of an Amazon MSK cluster.</p>"
+        }
+      },
+      "documentation": "<p>Details of an Amazon MSK Cluster.</p>",
+      "required": ["MskClusterArn"]
+    },
     "BatchAssociateScramSecretRequest" : {
       "type" : "structure",
       "members" : {
@@ -1452,6 +2103,22 @@
       "enum": [
         "DEFAULT"
       ]
+    },
+    "BrokerCountUpdateInfo" : {
+      "type" : "structure",
+      "members" : {
+        "CreatedBrokerIds" : {
+          "shape" : "__listOf__double",
+          "locationName" : "createdBrokerIds",
+          "documentation": "\n            <p>Kafka Broker IDs of brokers being created.</p>\n         "
+        },
+        "DeletedBrokerIds" : {
+          "shape" : "__listOf__double",
+          "locationName" : "deletedBrokerIds",
+          "documentation": "\n            <p>Kafka Broker IDs of brokers being deleted.</p>\n         "
+        }
+      },
+      "documentation": "\n            <p>Information regarding UpdateBrokerCount.</p>\n         "
     },
     "BrokerEBSVolumeInfo": {
       "type": "structure",
@@ -1526,6 +2193,11 @@
           "shape" : "ConnectivityInfo",
           "locationName" : "connectivityInfo",
           "documentation" : "\n            <p>Information about the broker access configuration.</p>\n         "
+        },
+        "ZoneIds": {
+          "shape": "__listOf__string",
+          "locationName": "zoneIds",
+          "documentation": "\n            <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>\n         "
         }
       },
       "documentation": "\n            <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>\n         ",
@@ -1611,6 +2283,22 @@
         }
       },
       "documentation" : "\n            <p>Includes all client authentication information.</p>\n         "
+    },
+    "VpcConnectivityClientAuthentication" : {
+      "type" : "structure",
+      "members" : {
+        "Sasl" : {
+          "shape" : "VpcConnectivitySasl",
+          "locationName" : "sasl",
+          "documentation" : "\n            <p>SASL authentication type details for VPC connectivity.</p>\n         "
+        },
+        "Tls": {
+          "shape": "VpcConnectivityTls",
+          "locationName": "tls",
+          "documentation": "\n            <p>TLS authentication type details for VPC connectivity.</p>\n         "
+        }
+      },
+      "documentation" : "\n            <p>Includes all client authentication information for VPC connectivity.</p>\n         "
     },
     "ServerlessClientAuthentication" : {
       "type" : "structure",
@@ -1707,7 +2395,7 @@
         "LoggingInfo": {
           "shape": "LoggingInfo",
           "locationName": "loggingInfo"
-         },
+        },
         "NumberOfBrokerNodes": {
           "shape": "__integer",
           "locationName": "numberOfBrokerNodes",
@@ -1741,6 +2429,11 @@
           "shape" : "StorageMode",
           "locationName" : "storageMode",
           "documentation" : "\n            <p>This controls storage mode for supported storage tiers.</p>\n         "
+        },
+        "CustomerActionStatus": {
+          "shape": "CustomerActionStatus",
+          "locationName": "customerActionStatus",
+          "documentation": "\n            <p>Determines if there is an action required from the customer.</p>\n         "
         }
       },
       "documentation": "\n            <p>Returns information about a cluster.</p>\n         "
@@ -1863,6 +2556,11 @@
           "shape": "MutableClusterInfo",
           "locationName": "targetClusterInfo",
           "documentation": "\n            <p>Information about cluster attributes after a cluster is updated.</p>\n         "
+        },
+        "VpcConnectionInfo": {
+          "shape": "VpcConnectionInfo",
+          "locationName": "vpcConnectionInfo",
+          "documentation": "\n            <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>\n         "
         }
       },
       "documentation": "\n            <p>Returns information about a cluster operation.</p>\n         "
@@ -2035,6 +2733,11 @@
           "shape" : "StorageMode",
           "locationName" : "storageMode",
           "documentation" : "\n            <p>This controls storage mode for supported storage tiers.</p>\n         "
+        },
+        "CustomerActionStatus": {
+          "shape": "CustomerActionStatus",
+          "locationName": "customerActionStatus",
+          "documentation": "\n            <p>Determines if there is an action required from the customer.</p>\n         "
         }
       },
       "required": [
@@ -2097,6 +2800,82 @@
       },
       "required": [
         "VpcConfigs"
+      ]
+    },
+    "ClientVpcConnection": {
+      "type": "structure",
+      "documentation": "\n            <p>The client VPC connection object.</p>\n         ",
+      "members": {
+        "Authentication": {
+          "shape": "__string",
+          "locationName": "authentication",
+          "documentation": "\n            <p>Information about the auth scheme of Vpc Connection.</p>\n         "
+
+        },
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation": "\n            <p>Creation time of the Vpc Connection.</p>\n         "
+        },
+        "State": {
+          "shape": "VpcConnectionState",
+          "locationName": "state",
+          "documentation": "\n            <p>State of the Vpc Connection.</p>\n         "
+        },
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation": "\n            <p>The ARN that identifies the Vpc Connection.</p>\n         "
+        },
+        "Owner": {
+          "shape": "__string",
+          "locationName": "owner",
+          "documentation": "\n            <p>The Owner of the Vpc Connection.</p>\n         "
+
+        }
+      },
+      "required": [
+        "VpcConnectionArn"
+      ]
+    },
+    "VpcConnection": {
+      "type": "structure",
+      "documentation": "\n            <p>The VPC connection object.</p>\n         ",
+      "members": {
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation": "\n            <p>The ARN that identifies the Vpc Connection.</p>\n         "
+        },
+        "TargetClusterArn": {
+          "shape": "__string",
+          "locationName": "targetClusterArn",
+          "documentation": "\n            <p>The ARN that identifies the Cluster which the Vpc Connection belongs to.</p>\n         "
+        },
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation": "\n            <p>Creation time of the Vpc Connection.</p>\n         "
+        },
+        "Authentication": {
+          "shape": "__string",
+          "locationName": "authentication",
+          "documentation": "\n            <p>Information about the auth scheme of Vpc Connection.</p>\n         "
+        },
+        "VpcId": {
+          "shape": "__string",
+          "locationName": "vpcId",
+          "documentation": "\n            <p>The vpcId that belongs to the Vpc Connection.</p>\n         "
+        },
+        "State": {
+          "shape": "VpcConnectionState",
+          "locationName": "state",
+          "documentation": "\n            <p>State of the Vpc Connection.</p>\n         "
+        }
+      },
+      "required": [
+        "VpcConnectionArn",
+        "TargetClusterArn"
       ]
     },
     "CompatibleKafkaVersion" : {
@@ -2246,9 +3025,68 @@
           "shape": "PublicAccess",
           "locationName": "publicAccess",
           "documentation": "\n            <p>Public access control for brokers.</p>\n         "
+        },
+        "VpcConnectivity": {
+          "shape": "VpcConnectivity",
+          "locationName": "vpcConnectivity",
+          "documentation": "\n            <p>VPC connectivity access control for brokers.</p>\n         "
         }
       },
       "documentation": "\n            <p>Information about the broker access configuration.</p>\n         "
+    },
+    "ConsumerGroupReplication": {
+      "type": "structure",
+      "members": {
+        "ConsumerGroupsToExclude": {
+          "shape": "__listOf__stringMax256",
+          "locationName": "consumerGroupsToExclude",
+          "documentation": "<p>List of regular expression patterns indicating the consumer groups that should not be replicated.</p>"
+        },
+        "ConsumerGroupsToReplicate": {
+          "shape": "__listOf__stringMax256",
+          "locationName": "consumerGroupsToReplicate",
+          "documentation": "<p>List of regular expression patterns indicating the consumer groups to copy.</p>"
+        },
+        "DetectAndCopyNewConsumerGroups": {
+            "shape": "__boolean",
+            "locationName": "detectAndCopyNewConsumerGroups",
+            "documentation": "<p>Enables synchronization of consumer groups to target cluster.</p>"
+        },
+        "SynchroniseConsumerGroupOffsets": {
+          "shape": "__boolean",
+          "locationName": "synchroniseConsumerGroupOffsets",
+          "documentation": "<p>Enables synchronization of consumer group offsets to target cluster. The translated offsets will be written to topic __consumer_offsets.</p>"
+          }
+        },
+        "documentation": "<p>Details about consumer group replication.</p>",
+        "required": ["ConsumerGroupsToReplicate"]
+    },
+    "ConsumerGroupReplicationUpdate": {
+      "type": "structure",
+      "members": {
+        "ConsumerGroupsToExclude": {
+          "shape": "__listOf__stringMax256",
+          "locationName": "consumerGroupsToExclude",
+          "documentation": "<p>List of regular expression patterns indicating the consumer groups that should not be replicated.</p>"
+        },
+        "ConsumerGroupsToReplicate": {
+          "shape": "__listOf__stringMax256",
+          "locationName": "consumerGroupsToReplicate",
+          "documentation": "<p>List of regular expression patterns indicating the consumer groups to copy.</p>"
+        },
+        "DetectAndCopyNewConsumerGroups": {
+          "shape": "__boolean",
+          "locationName": "detectAndCopyNewConsumerGroups",
+          "documentation": "<p>Enables synchronization of consumer groups to target cluster.</p>"
+        },
+        "SynchroniseConsumerGroupOffsets": {
+          "shape": "__boolean",
+          "locationName": "synchroniseConsumerGroupOffsets",
+          "documentation": "<p>Enables synchronization of consumer group offsets to target cluster. The translated offsets will be written to topic __consumer_offsets.</p>"
+        }
+      },
+      "documentation": "<p>Details about consumer group replication.</p>",
+      "required": ["ConsumerGroupsToReplicate", "ConsumerGroupsToExclude", "SynchroniseConsumerGroupOffsets", "DetectAndCopyNewConsumerGroups"]
     },
     "CreateClusterV2Request": {
       "type": "structure",
@@ -2324,7 +3162,7 @@
         "LoggingInfo": {
           "shape": "LoggingInfo",
           "locationName": "loggingInfo"
-         },
+        },
         "NumberOfBrokerNodes": {
           "shape": "__integerMin1Max15",
           "locationName": "numberOfBrokerNodes",
@@ -2452,6 +3290,290 @@
         }
       }
     },
+    "CreateReplicatorRequest": {
+      "type": "structure",
+      "members": {
+        "Description": {
+          "shape": "__stringMax1024",
+          "locationName": "description",
+          "documentation": "<p>A summary description of the replicator.</p>"
+        },
+        "KafkaClusters": {
+          "shape": "__listOfKafkaCluster",
+          "locationName": "kafkaClusters",
+          "documentation": "<p>Kafka Clusters to use in setting up sources / targets for replication.</p>"
+        },
+        "ReplicationInfoList": {
+          "shape": "__listOfReplicationInfo",
+          "locationName": "replicationInfoList",
+          "documentation": "<p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>"
+        },
+        "ReplicatorName": {
+          "shape": "__stringMin1Max128Pattern09AZaZ09AZaZ0",
+          "locationName": "replicatorName",
+          "documentation": "<p>The name of the replicator. Alpha-numeric characters with '-' are allowed.</p>"
+        },
+        "ServiceExecutionRoleArn": {
+          "shape": "__string",
+          "locationName": "serviceExecutionRoleArn",
+          "documentation": "<p>The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>"
+        },
+        "Tags": {
+          "shape": "__mapOf__string",
+          "locationName": "tags",
+          "documentation": "<p>List of tags to attach to created Replicator.</p>"
+        }
+      },
+      "documentation": "<p>Creates a replicator using the specified configuration.</p>",
+      "required": ["ServiceExecutionRoleArn", "ReplicatorName", "ReplicationInfoList", "KafkaClusters"]
+    },
+    "CreateReplicatorResponse": {
+      "type": "structure",
+      "members": {
+        "ReplicatorArn": {
+          "shape": "__string",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator.</p>"
+        },
+        "ReplicatorName": {
+          "shape": "__string",
+          "locationName": "replicatorName",
+          "documentation": "<p>Name of the replicator provided by the customer.</p>"
+        },
+        "ReplicatorState": {
+          "shape": "ReplicatorState",
+          "locationName": "replicatorState",
+          "documentation": "<p>State of the replicator.</p>"
+        }
+      }
+    },
+    "CreateVpcConnectionRequest": {
+      "type": "structure",
+      "members": {
+        "TargetClusterArn": {
+          "shape": "__string",
+          "locationName": "targetClusterArn",
+          "documentation": "\n            <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>\n         "
+        },
+        "Authentication": {
+          "shape": "__string",
+          "locationName": "authentication",
+          "documentation": "\n            <p>The authentication type of VPC connection.</p>\n         "
+        },
+        "VpcId": {
+          "shape": "__string",
+          "locationName": "vpcId",
+          "documentation": "\n            <p>The VPC ID of VPC connection.</p>\n         "
+        },
+        "ClientSubnets": {
+          "shape": "__listOf__string",
+          "locationName": "clientSubnets",
+          "documentation": "\n            <p>The list of client subnets.</p>\n         "
+        },
+        "SecurityGroups": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroups",
+          "documentation": "\n            <p>The list of security groups.</p>\n         "
+        },
+        "Tags": {
+          "shape": "__mapOf__string",
+          "locationName": "tags",
+          "documentation": "\n            <p>A map of tags for the VPC connection.</p>\n         "
+        }
+      },
+      "required": [
+        "TargetClusterArn",
+        "Authentication",
+        "VpcId",
+        "ClientSubnets",
+        "SecurityGroups"
+      ]
+    },
+    "CreateVpcConnectionResponse": {
+      "type": "structure",
+      "members": {
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation": "\n            <p>The VPC connection ARN.</p>\n         "
+        },
+        "State": {
+          "shape": "VpcConnectionState",
+          "locationName": "state",
+          "documentation": "\n            <p>The State of Vpc Connection.</p>\n         "
+
+        },
+        "Authentication": {
+          "shape": "__string",
+          "locationName": "authentication",
+          "documentation": "\n            <p>The authentication type of VPC connection.</p>\n         "
+        },
+        "VpcId": {
+          "shape": "__string",
+          "locationName": "vpcId",
+          "documentation": "\n            <p>The VPC ID of the VPC connection.</p>\n         "
+        },
+        "ClientSubnets": {
+          "shape": "__listOf__string",
+          "locationName": "clientSubnets",
+          "documentation": "\n            <p>The list of client subnets.</p>\n         "
+        },
+        "SecurityGroups": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroups",
+          "documentation": "\n            <p>The list of security groups.</p>\n         "
+        },
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation": "\n            <p>The creation time of VPC connection.</p>\n         "
+        },
+        "Tags": {
+          "shape": "__mapOf__string",
+          "locationName": "tags",
+          "documentation": "\n            <p>A map of tags for the VPC connection.</p>\n         "
+        }
+      }
+    },
+    "ClusterOperationV2" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterArn" : {
+          "shape" : "__string",
+          "locationName" : "clusterArn",
+          "documentation" : "\n            <p>ARN of the cluster.</p>"
+        },
+        "ClusterType" : {
+          "shape" : "ClusterType",
+          "locationName" : "clusterType",
+          "documentation" : "\n            <p>Type of the backend cluster.</p>"
+        },
+        "StartTime" : {
+          "shape" : "__timestampIso8601",
+          "locationName" : "startTime",
+          "documentation" : "\n            <p>The time at which operation was started.</p>"
+        },
+        "EndTime" : {
+          "shape" : "__timestampIso8601",
+          "locationName" : "endTime",
+          "documentation" : "\n            <p>The time at which the operation finished.</p>"
+        },
+        "ErrorInfo" : {
+          "shape" : "ErrorInfo",
+          "locationName" : "errorInfo",
+          "documentation" : "\n            <p>If cluster operation failed from an error, it describes the error.</p>"
+        },
+        "OperationArn" : {
+          "shape" : "__string",
+          "locationName" : "operationArn",
+          "documentation" : "\n            <p>ARN of the cluster operation.</p>"
+        },
+        "OperationState" : {
+          "shape" : "__string",
+          "locationName" : "operationState",
+          "documentation" : "\n            <p>State of the cluster operation.</p>"
+        },
+        "OperationType" : {
+          "shape" : "__string",
+          "locationName" : "operationType",
+          "documentation" : "\n            <p>Type of the cluster operation.</p>"
+        },
+        "Provisioned" : {
+          "shape" : "ClusterOperationV2Provisioned",
+          "locationName" : "provisioned",
+          "documentation" : "\n            <p>Properties of a provisioned cluster.</p>"
+        },
+        "Serverless" : {
+          "shape" : "ClusterOperationV2Serverless",
+          "locationName" : "serverless",
+          "documentation" : "\n            <p>Properties of a serverless cluster.</p>"
+        }
+      },
+      "documentation" : "\n            <p>Returns information about a cluster operation.</p>"
+    },
+    "ClusterOperationV2Provisioned" : {
+      "type" : "structure",
+      "members" : {
+        "OperationSteps" : {
+          "shape" : "__listOfClusterOperationStep",
+          "locationName" : "operationSteps",
+          "documentation" : "\n            <p>Steps completed during the operation.</p>"
+        },
+        "SourceClusterInfo" : {
+          "shape" : "MutableClusterInfo",
+          "locationName" : "sourceClusterInfo",
+          "documentation" : "\n            <p>Information about cluster attributes before a cluster is updated.</p>"
+        },
+        "TargetClusterInfo" : {
+          "shape" : "MutableClusterInfo",
+          "locationName" : "targetClusterInfo",
+          "documentation" : "\n            <p>Information about cluster attributes after a cluster is updated.</p>"
+        },
+        "VpcConnectionInfo" : {
+          "shape" : "VpcConnectionInfo",
+          "locationName" : "vpcConnectionInfo",
+          "documentation" : "\n            <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>"
+        }
+      },
+      "documentation" : "\n            <p>Returns information about a provisioned cluster operation.</p>"
+    },
+    "ClusterOperationV2Serverless" : {
+      "type" : "structure",
+      "members" : {
+        "VpcConnectionInfo" : {
+          "shape" : "VpcConnectionInfoServerless",
+          "locationName" : "vpcConnectionInfo",
+          "documentation" : "\n            <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>"
+        }
+      },
+      "documentation" : "\n            <p>Returns information about a serverless cluster operation.</p>"
+    },
+    "ClusterOperationV2Summary" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterArn" : {
+          "shape" : "__string",
+          "locationName" : "clusterArn",
+          "documentation" : "\n            <p>ARN of the cluster.</p>"
+        },
+        "ClusterType" : {
+          "shape" : "ClusterType",
+          "locationName" : "clusterType",
+          "documentation" : "\n            <p>Type of the backend cluster.</p>"
+        },
+        "StartTime" : {
+          "shape" : "__timestampIso8601",
+          "locationName" : "startTime",
+          "documentation" : "\n            <p>The time at which operation was started.</p>"
+        },
+        "EndTime" : {
+          "shape" : "__timestampIso8601",
+          "locationName" : "endTime",
+          "documentation" : "\n            <p>The time at which the operation finished.</p>"
+        },
+        "OperationArn" : {
+          "shape" : "__string",
+          "locationName" : "operationArn",
+          "documentation" : "\n            <p>ARN of the cluster operation.</p>"
+        },
+        "OperationState" : {
+          "shape" : "__string",
+          "locationName" : "operationState",
+          "documentation" : "\n            <p>State of the cluster operation.</p>"
+        },
+        "OperationType" : {
+          "shape" : "__string",
+          "locationName" : "operationType",
+          "documentation" : "\n            <p>Type of the cluster operation.</p>"
+        }
+      },
+      "documentation" : "\n            <p>Returns information about a cluster operation.</p>"
+    },
+    "CustomerActionStatus": {
+      "type": "string",
+      "documentation": "\n            <p>A type of an action required from the customer.</p>",
+      "enum": [ "CRITICAL_ACTION_REQUIRED", "ACTION_RECOMMENDED", "NONE" ]
+    },
     "DeleteClusterRequest": {
       "type": "structure",
       "members": {
@@ -2487,6 +3609,25 @@
         }
       }
     },
+    "DeleteClusterPolicyRequest": {
+      "type": "structure",
+      "members": {
+        "ClusterArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "clusterArn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) of the cluster.</p>\n         "
+        }
+      },
+      "required": [
+        "ClusterArn"
+      ]
+    },
+    "DeleteClusterPolicyResponse": {
+      "type": "structure",
+      "members": {
+      }
+    },
     "DeleteConfigurationRequest": {
       "type": "structure",
       "members": {
@@ -2516,6 +3657,68 @@
         }
       }
     },
+    "DeleteReplicatorRequest": {
+      "type": "structure",
+      "members": {
+        "CurrentVersion": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "currentVersion",
+          "documentation": "<p>The current version of the replicator.</p>"
+        },
+        "ReplicatorArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator to be deleted.</p>"
+        }
+      },
+      "required": ["ReplicatorArn"]
+    },
+    "DeleteReplicatorResponse": {
+      "type": "structure",
+      "members": {
+        "ReplicatorArn": {
+          "shape": "__string",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator.</p>"
+        },
+        "ReplicatorState": {
+          "shape": "ReplicatorState",
+          "locationName": "replicatorState",
+          "documentation": "<p>The state of the replicator.</p>"
+        }
+      }
+    },
+    "DeleteVpcConnectionRequest": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "arn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>\n         "
+        }
+      },
+      "required": [
+        "Arn"
+      ]
+    },
+    "DeleteVpcConnectionResponse": {
+      "type": "structure",
+      "members": {
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.</p>\n         "
+        },
+        "State": {
+          "shape": "VpcConnectionState",
+          "locationName": "state",
+          "documentation": "\n            <p>The state of the VPC connection.</p>\n         "
+        }
+      }
+    },
     "DescribeClusterOperationRequest": {
       "type": "structure",
       "members": {
@@ -2530,6 +3733,18 @@
         "ClusterOperationArn"
       ]
     },
+    "DescribeClusterOperationV2Request" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterOperationArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "clusterOperationArn",
+          "documentation" : "ARN of the cluster operation to describe."
+        }
+      },
+      "required" : [ "ClusterOperationArn" ]
+    },
     "DescribeClusterOperationResponse": {
       "type": "structure",
       "members": {
@@ -2537,6 +3752,16 @@
           "shape": "ClusterOperationInfo",
           "locationName": "clusterOperationInfo",
           "documentation": "\n            <p>Cluster operation information</p>\n         "
+        }
+      }
+    },
+    "DescribeClusterOperationV2Response" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterOperationInfo" : {
+          "shape" : "ClusterOperationV2",
+          "locationName" : "clusterOperationInfo",
+          "documentation" : "\n            <p>Cluster operation information</p>"
         }
       }
     },
@@ -2690,6 +3915,155 @@
           "shape": "__blob",
           "locationName": "serverProperties",
           "documentation": "\n            <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. \n               When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>\n         "
+        }
+      }
+    },
+    "DescribeVpcConnectionRequest": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "arn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>\n   "
+        }
+      },
+      "required": [
+        "Arn"
+      ]
+    },
+    "DescribeReplicatorRequest": {
+      "type": "structure",
+      "members": {
+        "ReplicatorArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator to be described.</p>"
+        }
+      },
+      "required": ["ReplicatorArn"]
+    },
+    "DescribeReplicatorResponse": {
+      "type": "structure",
+      "members": {
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation": "<p>The time when the replicator was created.</p>"
+        },
+        "CurrentVersion": {
+          "shape": "__string",
+          "locationName": "currentVersion",
+          "documentation": "<p>The current version number of the replicator.</p>"
+        },
+        "IsReplicatorReference": {
+          "shape": "__boolean",
+          "locationName": "isReplicatorReference",
+          "documentation": "<p>Whether this resource is a replicator reference.</p>"
+        },
+        "KafkaClusters": {
+          "shape": "__listOfKafkaClusterDescription",
+          "locationName": "kafkaClusters",
+          "documentation": "<p>Kafka Clusters used in setting up sources / targets for replication.</p>"
+        },
+        "ReplicationInfoList": {
+          "shape": "__listOfReplicationInfoDescription",
+          "locationName": "replicationInfoList",
+          "documentation": "<p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>"
+        },
+        "ReplicatorArn": {
+          "shape": "__string",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator.</p>"
+        },
+        "ReplicatorDescription": {
+          "shape": "__string",
+          "locationName": "replicatorDescription",
+          "documentation": "<p>The description of the replicator.</p>"
+        },
+        "ReplicatorName": {
+          "shape": "__string",
+          "locationName": "replicatorName",
+          "documentation": "<p>The name of the replicator.</p>"
+        },
+        "ReplicatorResourceArn": {
+          "shape": "__string",
+          "locationName": "replicatorResourceArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>"
+        },
+        "ReplicatorState": {
+          "shape": "ReplicatorState",
+          "locationName": "replicatorState",
+          "documentation": "<p>State of the replicator.</p>"
+        },
+        "ServiceExecutionRoleArn": {
+          "shape": "__string",
+          "locationName": "serviceExecutionRoleArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>"
+        },
+        "StateInfo": {
+          "shape": "ReplicationStateInfo",
+          "locationName": "stateInfo",
+          "documentation": "<p>Details about the state of the replicator.</p>"
+        },
+        "Tags": {
+          "shape": "__mapOf__string",
+          "locationName": "tags",
+          "documentation": "<p>List of tags attached to the Replicator.</p>"
+        }
+      }
+    },
+    "DescribeVpcConnectionResponse": {
+      "type": "structure",
+      "members": {
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>\n   "
+        },
+        "TargetClusterArn": {
+          "shape": "__string",
+          "locationName": "targetClusterArn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK cluster.</p>\n   "
+        },
+        "State": {
+          "shape": "VpcConnectionState",
+          "locationName": "state",
+          "documentation": "\n            <p>The state of VPC connection.</p>\n   "
+        },
+        "Authentication": {
+          "shape": "__string",
+          "locationName": "authentication",
+          "documentation": "\n            <p>The authentication type of VPC connection.</p>\n   "
+        },
+        "VpcId": {
+          "shape": "__string",
+          "locationName": "vpcId",
+          "documentation": "\n            <p>The VPC Id for the VPC connection.</p>\n   "
+        },
+        "Subnets": {
+          "shape": "__listOf__string",
+          "locationName": "subnets",
+          "documentation": "\n            <p>The list of subnets for the VPC connection.</p>\n   "
+
+        },
+        "SecurityGroups": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroups",
+          "documentation": "\n            <p>The list of security groups for the VPC connection.</p>\n   "
+
+        },
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation": "\n            <p>The creation time of the VPC connection.</p>\n   "
+
+        },
+        "Tags": {
+          "shape": "__mapOf__string",
+          "locationName": "tags",
+          "documentation": "\n            <p>A map of tags for the VPC connection.</p>\n         "
         }
       }
     },
@@ -2915,6 +4289,21 @@
           "shape": "__string",
           "locationName": "bootstrapBrokerStringPublicSaslIam",
           "documentation": "\n            <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>\n         "
+        },
+        "BootstrapBrokerStringVpcConnectivityTls": {
+          "shape": "__string",
+          "locationName": "bootstrapBrokerStringVpcConnectivityTls",
+          "documentation": "\n            <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>\n         "
+        },
+        "BootstrapBrokerStringVpcConnectivitySaslScram": {
+          "shape": "__string",
+          "locationName": "bootstrapBrokerStringVpcConnectivitySaslScram",
+          "documentation": "\n            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>\n         "
+        },
+        "BootstrapBrokerStringVpcConnectivitySaslIam": {
+          "shape": "__string",
+          "locationName": "bootstrapBrokerStringVpcConnectivitySaslIam",
+          "documentation": "\n            <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>\n         "
         }
       }
     },
@@ -2939,6 +4328,36 @@
         }
       }
     },
+    "GetClusterPolicyRequest": {
+      "type": "structure",
+      "members": {
+        "ClusterArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "clusterArn",
+          "documentation": "\n            <p>The Amazon Resource Name (ARN) of the cluster.</p>\n            "
+        }
+      },
+      "required": [
+        "ClusterArn"
+      ]
+    },
+    "GetClusterPolicyResponse": {
+      "type": "structure",
+      "members": {
+        "CurrentVersion": {
+          "shape": "__string",
+          "locationName": "currentVersion",
+          "documentation": "\n            <p>The version of cluster policy.</p>\n            "
+        },
+        "Policy": {
+          "shape": "__string",
+          "locationName": "policy",
+          "documentation": "\n            <p>The cluster policy.</p>\n            "
+
+        }
+      }
+    },
     "InternalServerErrorException": {
       "type": "structure",
       "members": {
@@ -2958,6 +4377,77 @@
       "error": {
         "httpStatusCode": 500
       }
+    },
+    "KafkaCluster": {
+      "type": "structure",
+      "members": {
+        "AmazonMskCluster": {
+          "shape": "AmazonMskCluster",
+          "locationName": "amazonMskCluster",
+          "documentation": "<p>Details of an Amazon MSK Cluster.</p>"
+        },
+        "VpcConfig": {
+          "shape": "KafkaClusterClientVpcConfig",
+          "locationName": "vpcConfig",
+          "documentation": "<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>"
+        }
+      },
+      "documentation": "<p>Information about Kafka Cluster to be used as source / target for replication.</p>",
+      "required": ["VpcConfig", "AmazonMskCluster"]
+    },
+    "KafkaClusterClientVpcConfig" : {
+      "type" : "structure",
+      "members" : {
+        "SecurityGroupIds" : {
+          "shape" : "__listOf__string",
+          "locationName" : "securityGroupIds",
+          "documentation" : "<p>The security groups to attach to the ENIs for the broker nodes.</p>"
+        },
+        "SubnetIds" : {
+          "shape" : "__listOf__string",
+          "locationName" : "subnetIds",
+          "documentation" : "<p>The list of subnets in the client VPC to connect to.</p>"
+        }
+      },
+      "documentation" : "<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>",
+      "required" : [ "SubnetIds" ]
+    },
+    "KafkaClusterDescription": {
+      "type": "structure",
+      "members": {
+        "AmazonMskCluster": {
+          "shape": "AmazonMskCluster",
+          "locationName": "amazonMskCluster",
+          "documentation": "<p>Details of an Amazon MSK Cluster.</p>"
+        },
+        "KafkaClusterAlias": {
+          "shape": "__string",
+          "locationName": "kafkaClusterAlias",
+          "documentation": "<p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p> "
+        },
+        "VpcConfig": {
+          "shape": "KafkaClusterClientVpcConfig",
+          "locationName": "vpcConfig",
+          "documentation": "<p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>"
+        }
+      },
+      "documentation": "<p>Information about Kafka Cluster used as source / target for replication.</p>"
+    },
+    "KafkaClusterSummary": {
+      "type": "structure",
+      "members": {
+        "AmazonMskCluster": {
+          "shape": "AmazonMskCluster",
+          "locationName": "amazonMskCluster",
+          "documentation": "<p>Details of an Amazon MSK Cluster.</p>"
+        },
+        "KafkaClusterAlias": {
+          "shape": "__string",
+          "locationName": "kafkaClusterAlias",
+          "documentation": "<p>The alias of the Kafka cluster. Used to prefix names of replicated topics.</p> "
+        }
+      },
+      "documentation": "<p>Summarized information about Kafka Cluster used as source / target for replication.</p>"
     },
     "KafkaVersion": {
       "type": "structure",
@@ -3005,6 +4495,30 @@
         "ClusterArn"
       ]
     },
+    "ListClusterOperationsV2Request" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "clusterArn",
+          "documentation" : "The arn of the cluster whose operations are being requested."
+        },
+        "MaxResults" : {
+          "shape" : "MaxResults",
+          "location" : "querystring",
+          "locationName" : "maxResults",
+          "documentation" : "The maxResults of the query."
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "nextToken",
+          "documentation" : "The nextToken of the query."
+        }
+      },
+      "required" : [ "ClusterArn" ]
+    },
     "ListClusterOperationsResponse": {
       "type": "structure",
       "members": {
@@ -3017,6 +4531,21 @@
           "shape": "__string",
           "locationName": "nextToken",
           "documentation": "\n            <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>\n         "
+        }
+      }
+    },
+    "ListClusterOperationsV2Response" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterOperationInfoList" : {
+          "shape" : "__listOfClusterOperationV2Summary",
+          "locationName" : "clusterOperationInfoList",
+          "documentation" : "\n            <p>An array of cluster operation information objects.</p>"
+        },
+        "NextToken" : {
+          "shape" : "__string",
+          "locationName" : "nextToken",
+          "documentation" : "\n            <p>If the response of ListClusterOperationsV2 is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListClusterOperationsV2.</p>"
         }
       }
     },
@@ -3246,6 +4775,44 @@
         }
       }
     },
+    "ListReplicatorsRequest": {
+      "type": "structure",
+      "members": {
+        "MaxResults": {
+          "shape": "MaxResults",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "documentation": "<p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>"
+        },
+        "NextToken": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "documentation": "<p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>"
+        },
+        "ReplicatorNameFilter": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "replicatorNameFilter",
+          "documentation": "<p>Returns replicators starting with given name.</p>"
+        }
+      }
+    },
+    "ListReplicatorsResponse": {
+      "type": "structure",
+      "members": {
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "<p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>"
+        },
+        "Replicators": {
+          "shape": "__listOfReplicatorSummary",
+          "locationName": "replicators",
+          "documentation": "<p>List containing information of each of the replicators in the account.</p>"
+        }
+      }
+    },
     "ListScramSecretsRequest" : {
       "type" : "structure",
       "members" : {
@@ -3307,6 +4874,99 @@
           "locationName": "tags",
           "documentation": "\n            <p>The key-value pair for the resource tag.</p>\n         "
         }
+      }
+    },
+    "ListClientVpcConnectionsRequest": {
+      "type": "structure",
+      "members": {
+        "ClusterArn" : {
+          "shape" : "__string",
+          "location" : "uri",
+          "locationName" : "clusterArn",
+          "documentation" : "\n            <p>The Amazon Resource Name (ARN) of the cluster.</p>\n         "
+        },
+        "MaxResults": {
+          "shape": "MaxResults",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "documentation": "\n            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>\n         "
+        },
+        "NextToken": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "documentation": "\n            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. \n            To get the next batch, provide this token in your next request.</p>\n         "
+        }
+      },
+      "required": [ "ClusterArn" ]
+    },
+    "ListClientVpcConnectionsResponse": {
+      "type": "structure",
+      "members": {
+        "ClientVpcConnections" : {
+          "shape" : "__listOfClientVpcConnection",
+          "locationName" : "clientVpcConnections",
+          "documentation": "\n            <p>List of client VPC connections.</p>\n         "
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "\n            <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. \n               To get another batch of configurations, provide this token in your next request.</p>\n         "
+        }
+      }
+    },
+    "ListVpcConnectionsRequest": {
+      "type": "structure",
+      "members": {
+        "MaxResults": {
+          "shape": "MaxResults",
+          "location": "querystring",
+          "locationName": "maxResults",
+          "documentation": "\n            <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>\n         "
+        },
+        "NextToken": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "nextToken",
+          "documentation": "\n            <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. \n            To get the next batch, provide this token in your next request.</p>\n         "
+        }
+      }
+    },
+    "ListVpcConnectionsResponse": {
+      "type": "structure",
+      "members": {
+        "VpcConnections" : {
+          "shape" : "__listOfVpcConnection",
+          "locationName" : "vpcConnections",
+          "documentation": "\n            <p>List of VPC connections.</p>\n         "
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "\n            <p>The paginated results marker. When the result of a ListClientVpcConnections operation is truncated, the call returns NextToken in the response. \n               To get another batch of configurations, provide this token in your next request.</p>\n         "
+        }
+      }
+    },
+    "RejectClientVpcConnectionRequest" : {
+      "type" : "structure",
+      "members" : {
+        "ClusterArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "clusterArn",
+          "documentation" : "\n            <p>The Amazon Resource Name (ARN) of the cluster.</p>\n         "
+        },
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation": "\n            <p>The VPC connection ARN.</p>\n         "
+        }
+      },
+      "required" : [ "VpcConnectionArn", "ClusterArn" ]
+    },
+    "RejectClientVpcConnectionResponse" : {
+      "type": "structure",
+      "members": {
       }
     },
     "MaxResults": {
@@ -3386,6 +5046,11 @@
           "shape" : "StorageMode",
           "locationName" : "storageMode",
           "documentation" : "\n            <p>This controls storage mode for supported storage tiers.</p>\n         "
+        },
+        "BrokerCountUpdateInfo" : {
+          "shape": "BrokerCountUpdateInfo",
+          "locationName" : "brokerCountUpdateInfo",
+          "documentation" : "\n            <p>Describes brokers being changed during a broker count update.</p>\n         "
         }
       },
       "documentation": "\n            <p>Information about cluster attributes that can be updated via update APIs.</p>\n         "
@@ -3521,6 +5186,42 @@
       },
       "documentation" : "Public access control for brokers."
     },
+    "PutClusterPolicyRequest": {
+      "type": "structure",
+      "members": {
+        "ClusterArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "clusterArn",
+          "documentation" : "\n            <p>The Amazon Resource Name (ARN) of the cluster.</p>\n         "
+        },
+        "CurrentVersion": {
+          "shape": "__string",
+          "locationName": "currentVersion",
+          "documentation" : "\n            <p>The policy version.</p>\n         "
+        },
+        "Policy": {
+          "shape": "__string",
+          "locationName": "policy",
+          "documentation" : "\n            <p>The policy.</p>\n         "
+
+        }
+      },
+      "required": [
+        "ClusterArn",
+        "Policy"
+      ]
+    },
+    "PutClusterPolicyResponse": {
+      "type": "structure",
+      "members": {
+        "CurrentVersion": {
+          "shape": "__string",
+          "locationName": "currentVersion",
+          "documentation" : "\n            <p>The policy version.</p>\n         "
+        }
+      }
+    },
     "RebootBrokerRequest" : {
       "type" : "structure",
       "members" : {
@@ -3599,6 +5300,22 @@
       },
       "documentation" : "\n            <p>Details for client authentication using SASL.</p>\n         "
     },
+    "VpcConnectivitySasl" : {
+      "type" : "structure",
+      "members" : {
+        "Scram" : {
+          "shape" : "VpcConnectivityScram",
+          "locationName" : "scram",
+          "documentation" : "\n            <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>\n         "
+        },
+        "Iam" : {
+          "shape" : "VpcConnectivityIam",
+          "locationName" : "iam",
+          "documentation" : "\n            <p>Details for SASL/IAM client authentication for VPC connectivity.</p>\n         "
+        }
+      },
+      "documentation" : "\n            <p>Details for SASL client authentication for VPC connectivity.</p>\n         "
+    },
     "Scram" : {
       "type" : "structure",
       "members" : {
@@ -3610,6 +5327,17 @@
       },
       "documentation" : "\n            <p>Details for SASL/SCRAM client authentication.</p>\n         "
     },
+    "VpcConnectivityScram" : {
+      "type" : "structure",
+      "members" : {
+        "Enabled" : {
+          "shape" : "__boolean",
+          "locationName" : "enabled",
+          "documentation" : "\n            <p>SASL/SCRAM authentication is on or off for VPC connectivity.</p>\n         "
+        }
+      },
+      "documentation" : "\n            <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>\n         "
+    },
     "Iam" : {
       "type" : "structure",
       "members" : {
@@ -3620,6 +5348,17 @@
         }
       },
       "documentation" : "\n            <p>Details for IAM access control.</p>\n         "
+    },
+    "VpcConnectivityIam" : {
+      "type" : "structure",
+      "members" : {
+        "Enabled" : {
+          "shape" : "__boolean",
+          "locationName" : "enabled",
+          "documentation" : "\n            <p>SASL/IAM authentication is on or off for VPC connectivity.</p>\n         "
+        }
+      },
+      "documentation" : "\n            <p>Details for IAM access control for VPC connectivity.</p>\n         "
     },
     "NodeInfo": {
       "type": "structure",
@@ -3683,6 +5422,173 @@
       "error": {
         "httpStatusCode": 404
       }
+    },
+    "ReplicationInfo": {
+      "type": "structure",
+      "members": {
+        "ConsumerGroupReplication": {
+          "shape": "ConsumerGroupReplication",
+          "locationName": "consumerGroupReplication",
+          "documentation": "<p>Configuration relating to consumer group replication.</p>"
+        },
+        "SourceKafkaClusterArn": {
+          "shape": "__string",
+          "locationName": "sourceKafkaClusterArn",
+          "documentation": "<p>The ARN of the source Kafka cluster.</p>"
+        },
+        "TargetCompressionType": {
+          "shape": "TargetCompressionType",
+          "locationName": "targetCompressionType",
+          "documentation": "<p>The compression type to use when producing records to target cluster.</p>"
+        },
+        "TargetKafkaClusterArn": {
+          "shape": "__string",
+          "locationName": "targetKafkaClusterArn",
+          "documentation": "<p>The ARN of the target Kafka cluster.</p>"
+        },
+        "TopicReplication": {
+          "shape": "TopicReplication",
+          "locationName": "topicReplication",
+          "documentation": "<p>Configuration relating to topic replication.</p>"
+        }
+      },
+      "documentation": "<p>Specifies configuration for replication between a source and target Kafka cluster.</p>",
+      "required": ["TargetCompressionType", "TopicReplication", "ConsumerGroupReplication", "SourceKafkaClusterArn", "TargetKafkaClusterArn"]
+    },
+    "ReplicationInfoDescription": {
+      "type": "structure",
+      "members": {
+        "ConsumerGroupReplication": {
+          "shape": "ConsumerGroupReplication",
+          "locationName": "consumerGroupReplication",
+          "documentation": "<p>Configuration relating to consumer group replication.</p>"
+        },
+        "SourceKafkaClusterAlias": {
+          "shape": "__string",
+          "locationName": "sourceKafkaClusterAlias",
+          "documentation": "<p>The alias of the source Kafka cluster.</p>"
+        },
+        "TargetCompressionType": {
+          "shape": "TargetCompressionType",
+          "locationName": "targetCompressionType",
+          "documentation": "<p>The compression type to use when producing records to target cluster.</p>"
+        },
+        "TargetKafkaClusterAlias": {
+          "shape": "__string",
+          "locationName": "targetKafkaClusterAlias",
+          "documentation": "<p>The alias of the target Kafka cluster.</p>"
+        },
+        "TopicReplication": {
+          "shape": "TopicReplication",
+          "locationName": "topicReplication",
+          "documentation": "<p>Configuration relating to topic replication.</p>"
+        }
+      },
+      "documentation": "<p>Specifies configuration for replication between a source and target Kafka cluster (sourceKafkaClusterAlias -> targetKafkaClusterAlias)</p>"
+    },
+    "ReplicationInfoSummary": {
+      "type": "structure",
+      "members": {
+        "SourceKafkaClusterAlias": {
+          "shape": "__string",
+          "locationName": "sourceKafkaClusterAlias",
+          "documentation": "<p>The alias of the source Kafka cluster.</p>"
+        },
+        "TargetKafkaClusterAlias": {
+          "shape": "__string",
+          "locationName": "targetKafkaClusterAlias",
+          "documentation": "<p>The alias of the target Kafka cluster.</p>"
+        }
+      },
+      "documentation": "<p>Summarized information of replication between clusters.</p>"
+    },
+    "ReplicationStartingPosition" : {
+      "type" : "structure",
+      "members" : {
+        "Type" : {
+          "shape" : "ReplicationStartingPositionType",
+          "locationName" : "type",
+          "documentation": "<p>The type of replication starting position.</p>"
+        }
+      },
+      "documentation": "<p>Configuration for specifying the position in the topics to start replicating from.</p>"
+    },
+    "ReplicationStartingPositionType" : {
+      "type" : "string",
+      "enum" : [ "LATEST", "EARLIEST" ],
+      "documentation": "<p>The type of replication starting position.</p>"
+    },
+    "ReplicationStateInfo" : {
+      "type" : "structure",
+      "members" : {
+        "Code" : {
+          "shape" : "__string",
+          "locationName" : "code",
+          "documentation" : "Code that describes the current state of the replicator."
+        },
+        "Message" : {
+          "shape" : "__string",
+          "locationName" : "message",
+          "documentation" : "Message that describes the state of the replicator."
+        }
+      },
+      "documentation" : "Details about the state of a replicator"
+    },
+    "ReplicatorState": {
+      "type": "string",
+      "documentation": "<p>The state of a replicator.</p>",
+      "enum": ["RUNNING", "CREATING", "UPDATING", "DELETING", "FAILED"]
+    },
+    "ReplicatorSummary": {
+      "type": "structure",
+      "members": {
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation": "<p>The time the replicator was created.</p>"
+        },
+        "CurrentVersion": {
+          "shape": "__string",
+          "locationName": "currentVersion",
+          "documentation": "<p>The current version of the replicator.</p>"
+        },
+        "IsReplicatorReference": {
+          "shape": "__boolean",
+          "locationName": "isReplicatorReference",
+          "documentation": "<p>Whether this resource is a replicator reference.</p>"
+        },
+        "KafkaClustersSummary": {
+          "shape": "__listOfKafkaClusterSummary",
+          "locationName": "kafkaClustersSummary",
+          "documentation": "<p>Kafka Clusters used in setting up sources / targets for replication.</p>"
+        },
+        "ReplicationInfoSummaryList": {
+          "shape": "__listOfReplicationInfoSummary",
+          "locationName": "replicationInfoSummaryList",
+          "documentation": "<p>A list of summarized information of replications between clusters.</p>"
+        },
+        "ReplicatorArn": {
+          "shape": "__string",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator.</p>"
+        },
+        "ReplicatorName": {
+          "shape": "__string",
+          "locationName": "replicatorName",
+          "documentation": "<p>The name of the replicator.</p>"
+        },
+        "ReplicatorResourceArn": {
+          "shape": "__string",
+          "locationName": "replicatorResourceArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>"
+        },
+        "ReplicatorState": {
+          "shape": "ReplicatorState",
+          "locationName": "replicatorState",
+          "documentation": "<p>State of the replicator.</p>"
+        }
+      },
+      "documentation": "<p>Information about a replicator.</p>"
     },
     "ServiceUnavailableException": {
       "type": "structure",
@@ -3753,6 +5659,11 @@
         "Tags"
       ]
     },
+    "TargetCompressionType": {
+      "type": "string",
+      "documentation": "<p>The type of compression to use producing records to the target cluster.</p>",
+      "enum": ["NONE", "GZIP", "SNAPPY", "LZ4", "ZSTD"]
+    },
     "Tls": {
       "type": "structure",
       "members": {
@@ -3768,6 +5679,17 @@
         }
       },
       "documentation": "\n            <p>Details for client authentication using TLS.</p>\n         "
+    },
+    "VpcConnectivityTls": {
+      "type": "structure",
+      "members": {
+        "Enabled" : {
+          "shape" : "__boolean",
+          "locationName" : "enabled",
+          "documentation" : "\n            <p>TLS authentication is on or off for VPC connectivity.</p>\n         "
+        }
+      },
+      "documentation": "\n            <p>Details for TLS client authentication for VPC connectivity.</p>\n         "
     },
     "TooManyRequestsException": {
       "type": "structure",
@@ -3788,6 +5710,75 @@
       "error": {
         "httpStatusCode": 429
       }
+    },
+    "TopicReplication": {
+      "type": "structure",
+      "members": {
+        "CopyAccessControlListsForTopics": {
+          "shape": "__boolean",
+          "locationName": "copyAccessControlListsForTopics",
+          "documentation": "<p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>"
+        },
+        "CopyTopicConfigurations": {
+          "shape": "__boolean",
+          "locationName": "copyTopicConfigurations",
+          "documentation": "<p>Whether to periodically configure remote topics to match their corresponding upstream topics.</p>"
+        },
+        "DetectAndCopyNewTopics": {
+          "shape": "__boolean",
+          "locationName": "detectAndCopyNewTopics",
+          "documentation": "<p>Whether to periodically check for new topics and partitions.</p>"
+        },
+        "StartingPosition" : {
+          "shape" : "ReplicationStartingPosition",
+          "locationName" : "startingPosition",
+          "documentation": "<p>Configuration for specifying the position in the topics to start replicating from.</p>"
+        },
+        "TopicsToExclude": {
+          "shape": "__listOf__stringMax249",
+          "locationName": "topicsToExclude",
+          "documentation": "<p>List of regular expression patterns indicating the topics that should not be replicated.</p>"
+        },
+        "TopicsToReplicate": {
+          "shape": "__listOf__stringMax249",
+          "locationName": "topicsToReplicate",
+          "documentation": "<p>List of regular expression patterns indicating the topics to copy.</p>"
+        }
+      },
+      "documentation": "<p>Details about topic replication.</p>",
+      "required": ["TopicsToReplicate"]
+    },
+    "TopicReplicationUpdate": {
+      "type": "structure",
+      "members": {
+        "CopyAccessControlListsForTopics": {
+          "shape": "__boolean",
+          "locationName": "copyAccessControlListsForTopics",
+          "documentation": "<p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>"
+        },
+        "CopyTopicConfigurations": {
+          "shape": "__boolean",
+          "locationName": "copyTopicConfigurations",
+          "documentation": "<p>Whether to periodically configure remote topics to match their corresponding upstream topics.</p>"
+        },
+        "DetectAndCopyNewTopics": {
+          "shape": "__boolean",
+          "locationName": "detectAndCopyNewTopics",
+          "documentation": "<p>Whether to periodically check for new topics and partitions.</p>"
+        },
+        "TopicsToExclude": {
+          "shape": "__listOf__stringMax249",
+          "locationName": "topicsToExclude",
+          "documentation": "<p>List of regular expression patterns indicating the topics that should not be replicated.</p>"
+        },
+        "TopicsToReplicate": {
+          "shape": "__listOf__stringMax249",
+          "locationName": "topicsToReplicate",
+          "documentation": "<p>List of regular expression patterns indicating the topics to copy.</p>"
+        }
+      },
+      "documentation": "<p>Details for updating the topic replication of a replicator.</p>",
+      "required": ["TopicsToReplicate", "TopicsToExclude", "CopyTopicConfigurations", "DetectAndCopyNewTopics", "CopyAccessControlListsForTopics"]
     },
     "Unauthenticated" : {
       "type" : "structure",
@@ -4047,7 +6038,7 @@
         "TargetKafkaVersion" : {
           "shape" : "__string",
           "locationName" : "targetKafkaVersion"
-          ,"documentation": "\n            <p>Target Kafka version.</p>\n            "
+        ,"documentation": "\n            <p>Target Kafka version.</p>\n            "
         }
       },
       "required" : [ "ClusterArn", "TargetKafkaVersion", "CurrentVersion" ]
@@ -4111,6 +6102,59 @@
           "shape" : "__string",
           "locationName" : "clusterOperationArn",
           "documentation" : "\n            <p>The Amazon Resource Name (ARN) of the cluster operation.</p>\n         "
+        }
+      }
+    },
+    "UpdateReplicationInfoRequest": {
+      "type": "structure",
+      "members": {
+        "ConsumerGroupReplication": {
+          "shape": "ConsumerGroupReplicationUpdate",
+          "locationName": "consumerGroupReplication",
+          "documentation": "<p>Updated consumer group replication information.</p>"
+        },
+        "CurrentVersion": {
+          "shape": "__string",
+          "locationName": "currentVersion",
+          "documentation": "<p>Current replicator version.</p>"
+        },
+        "ReplicatorArn": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator to be updated.</p>"
+        },
+        "SourceKafkaClusterArn": {
+          "shape": "__string",
+          "locationName": "sourceKafkaClusterArn",
+          "documentation": "<p>The ARN of the source Kafka cluster.</p>"
+        },
+        "TargetKafkaClusterArn": {
+          "shape": "__string",
+          "locationName": "targetKafkaClusterArn",
+          "documentation": "<p>The ARN of the target Kafka cluster.</p>"
+        },
+        "TopicReplication": {
+          "shape": "TopicReplicationUpdate",
+          "locationName": "topicReplication",
+          "documentation": "<p>Updated topic replication information.</p>"
+        }
+      },
+      "documentation": "<p>Update information relating to replication between a given source and target Kafka cluster.</p>",
+      "required": ["ReplicatorArn", "SourceKafkaClusterArn", "CurrentVersion", "TargetKafkaClusterArn"]
+    },
+    "UpdateReplicationInfoResponse": {
+      "type": "structure",
+      "members": {
+        "ReplicatorArn": {
+          "shape": "__string",
+          "locationName": "replicatorArn",
+          "documentation": "<p>The Amazon Resource Name (ARN) of the replicator.</p>"
+        },
+        "ReplicatorState": {
+          "shape": "ReplicatorState",
+          "locationName": "replicatorState",
+          "documentation": "<p>State of the replicator.</p>"
         }
       }
     },
@@ -4282,6 +6326,107 @@
         }
       }
     },
+    "UserIdentity": {
+      "type": "structure",
+      "members": {
+        "Type": {
+          "shape": "UserIdentityType",
+          "locationName": "type",
+          "documentation" : "\n            <p>The identity type of the requester that calls the API operation.</p>\n         "
+        },
+        "PrincipalId": {
+          "shape": "__string",
+          "locationName": "principalId",
+          "documentation" : "\n            <p>A unique identifier for the requester that calls the API operation.</p>\n         "
+        }
+      },
+      "documentation" : "\n            <p>Description of the requester that calls the API operation.</p>\n         "
+    },
+    "UserIdentityType": {
+      "type": "string",
+      "documentation": "\n            <p>The identity type of the requester that calls the API operation.</p>\n         ",
+      "enum": [
+        "AWSACCOUNT",
+        "AWSSERVICE"
+      ]
+    },
+    "VpcConnectionInfo": {
+      "type": "structure",
+      "members": {
+        "VpcConnectionArn": {
+          "shape": "__string",
+          "locationName": "vpcConnectionArn",
+          "documentation" : "\n            <p>The Amazon Resource Name (ARN) of the VPC connection.</p>\n         "
+        },
+        "Owner": {
+          "shape": "__string",
+          "locationName": "owner",
+          "documentation" : "\n            <p>The owner of the VPC Connection.</p>\n         "
+        },
+        "UserIdentity": {
+          "shape": "UserIdentity",
+          "locationName": "userIdentity",
+          "documentation" : "\n            <p>Description of the requester that calls the API operation.</p>\n         "
+        },
+        "CreationTime": {
+          "shape": "__timestampIso8601",
+          "locationName": "creationTime",
+          "documentation" : "\n            <p>The time when Amazon MSK creates the VPC Connnection.</p>\n         "
+        }
+      },
+      "documentation": "\n            <p>Description of the VPC connection.</p>\n         "
+    },
+    "VpcConnectionInfoServerless" : {
+      "type" : "structure",
+      "members" : {
+        "CreationTime" : {
+          "shape" : "__timestampIso8601",
+          "locationName" : "creationTime",
+          "documentation" : "\n            <p>The time when Amazon MSK creates the VPC Connnection.</p>"
+        },
+        "Owner" : {
+          "shape" : "__string",
+          "locationName" : "owner",
+          "documentation" : "\n            <p>The owner of the VPC Connection.</p>"
+        },
+        "UserIdentity" : {
+          "shape" : "UserIdentity",
+          "locationName" : "userIdentity",
+          "documentation" : "\n            <p>Description of the requester that calls the API operation.</p>"
+        },
+        "VpcConnectionArn" : {
+          "shape" : "__string",
+          "locationName" : "vpcConnectionArn",
+          "documentation" : "\n            <p>The Amazon Resource Name (ARN) of the VPC connection.</p>"
+        }
+      },
+      "documentation" : "Description of the VPC connection."
+    },
+    "VpcConnectionState": {
+      "type": "string",
+      "documentation": "\n            <p>The state of a VPC connection.</p>\n         ",
+      "enum": [
+        "CREATING",
+        "AVAILABLE",
+        "INACTIVE",
+        "DEACTIVATING",
+        "DELETING",
+        "FAILED",
+        "REJECTED",
+        "REJECTING"
+      ]
+    },
+    "VpcConnectivity" : {
+      "type" : "structure",
+      "members" : {
+        "ClientAuthentication": {
+          "shape": "VpcConnectivityClientAuthentication",
+          "locationName": "clientAuthentication",
+          "documentation": "\n            <p>Includes all client authentication information for VPC connectivity.</p>\n         "
+        }
+      },
+      "documentation" : "VPC connectivity access control for brokers."
+    },
     "ZookeeperNodeInfo": {
       "type": "structure",
       "members": {
@@ -4359,6 +6504,12 @@
         "shape": "ClusterOperationInfo"
       }
     },
+    "__listOfClusterOperationV2Summary" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "ClusterOperationV2Summary"
+      }
+    },
     "__listOfClusterOperationStep" : {
       "type" : "list",
       "member" : {
@@ -4395,16 +6546,76 @@
         "shape": "KafkaVersion"
       }
     },
+    "__listOfKafkaCluster": {
+      "type": "list",
+      "member": {
+        "shape": "KafkaCluster"
+      }
+    },
+    "__listOfKafkaClusterDescription": {
+      "type": "list",
+      "member": {
+        "shape": "KafkaClusterDescription"
+      }
+    },
+    "__listOfKafkaClusterSummary": {
+      "type": "list",
+      "member": {
+        "shape": "KafkaClusterSummary"
+      }
+    },
     "__listOfNodeInfo": {
       "type": "list",
       "member": {
         "shape": "NodeInfo"
       }
     },
+    "__listOfClientVpcConnection": {
+      "type": "list",
+      "member": {
+        "shape": "ClientVpcConnection"
+      }
+    },
+    "__listOfReplicationInfo": {
+      "type": "list",
+      "member": {
+        "shape": "ReplicationInfo"
+      }
+    },
+    "__listOfReplicationInfoDescription": {
+      "type": "list",
+      "member": {
+        "shape": "ReplicationInfoDescription"
+      }
+    },
+    "__listOfReplicationInfoSummary": {
+      "type": "list",
+      "member": {
+        "shape": "ReplicationInfoSummary"
+      }
+    },
+    "__listOfReplicatorSummary": {
+      "type": "list",
+      "member": {
+        "shape": "ReplicatorSummary"
+      }
+    },
+    "__listOfVpcConnection": {
+      "type": "list",
+      "member": {
+        "shape": "VpcConnection"
+      }
+    },
     "__listOfUnprocessedScramSecret" : {
       "type" : "list",
       "member" : {
         "shape" : "UnprocessedScramSecret"
+      }
+    },
+    "__listOf__double" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "__double"
       }
     },
     "__listOf__string": {
@@ -4425,8 +6636,32 @@
         "shape": "__string"
       }
     },
+    "__listOf__stringMax249": {
+      "type": "list",
+      "member": {
+        "shape": "__stringMax249"
+      }
+    },
+    "__listOf__stringMax256": {
+      "type": "list",
+      "member": {
+        "shape": "__stringMax256"
+      }
+    },
     "__string": {
       "type": "string"
+    },
+    "__stringMax1024": {
+      "type": "string",
+      "max": 1024
+    },
+    "__stringMax249": {
+      "type": "string",
+      "max": 249
+    },
+    "__stringMax256": {
+      "type": "string",
+      "max": 256
     },
     "__stringMin1Max128": {
       "type": "string",
@@ -4443,9 +6678,19 @@
       "min": 5,
       "max": 32
     },
+    "__stringMin1Max128Pattern09AZaZ09AZaZ0": {
+      "type": "string",
+      "min": 1,
+      "max": 128,
+      "pattern": "^[0-9A-Za-z][0-9A-Za-z-]{0,}$"
+    },
     "__timestampIso8601": {
       "type": "timestamp",
       "timestampFormat": "iso8601"
+    },
+    "__timestampUnix": {
+      "type": "timestamp",
+      "timestampFormat": "unixTimestamp"
     }
   },
   "documentation": "\n               <p>The operations for managing an Amazon MSK cluster.</p>\n            "

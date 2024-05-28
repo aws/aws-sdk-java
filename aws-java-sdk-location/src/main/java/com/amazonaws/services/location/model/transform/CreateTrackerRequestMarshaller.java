@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class CreateTrackerRequestMarshaller {
 
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Boolean> EVENTBRIDGEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventBridgeEnabled").build();
+    private static final MarshallingInfo<Boolean> KMSKEYENABLEGEOSPATIALQUERIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KmsKeyEnableGeospatialQueries").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<String> POSITIONFILTERING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +65,8 @@ public class CreateTrackerRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createTrackerRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createTrackerRequest.getEventBridgeEnabled(), EVENTBRIDGEENABLED_BINDING);
+            protocolMarshaller.marshall(createTrackerRequest.getKmsKeyEnableGeospatialQueries(), KMSKEYENABLEGEOSPATIALQUERIES_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getPositionFiltering(), POSITIONFILTERING_BINDING);
             protocolMarshaller.marshall(createTrackerRequest.getPricingPlan(), PRICINGPLAN_BINDING);

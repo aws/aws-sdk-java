@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,8 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
     private String s3Bucket;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
      * </p>
      */
     private String cloudFrontDistribution;
@@ -253,11 +254,13 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
      * </p>
      * 
      * @param cloudFrontDistribution
-     *        The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     *        The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
+     *        Name Service (DNS) provider.
      */
 
     public void setCloudFrontDistribution(String cloudFrontDistribution) {
@@ -266,10 +269,12 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     * @return The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
+     *         Name Service (DNS) provider.
      */
 
     public String getCloudFrontDistribution() {
@@ -278,11 +283,13 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
+     * Service (DNS) provider.
      * </p>
      * 
      * @param cloudFrontDistribution
-     *        The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.
+     *        The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
+     *        Name Service (DNS) provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

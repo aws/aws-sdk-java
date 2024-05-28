@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,13 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
 
     /**
      * <p>
+     * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
+     * path in each Amazon Web Services account where you want to deploy your permission set.
+     * </p>
+     */
+    private CustomerManagedPolicyReference customerManagedPolicyReference;
+    /**
+     * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed.
      * </p>
      */
@@ -38,13 +45,53 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
      * </p>
      */
     private String permissionSetArn;
+
     /**
      * <p>
      * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
-     * path in each AWS account where you want to deploy your permission set.
+     * path in each Amazon Web Services account where you want to deploy your permission set.
      * </p>
+     * 
+     * @param customerManagedPolicyReference
+     *        Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the
+     *        name and path in each Amazon Web Services account where you want to deploy your permission set.
      */
-    private CustomerManagedPolicyReference customerManagedPolicyReference;
+
+    public void setCustomerManagedPolicyReference(CustomerManagedPolicyReference customerManagedPolicyReference) {
+        this.customerManagedPolicyReference = customerManagedPolicyReference;
+    }
+
+    /**
+     * <p>
+     * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
+     * path in each Amazon Web Services account where you want to deploy your permission set.
+     * </p>
+     * 
+     * @return Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the
+     *         name and path in each Amazon Web Services account where you want to deploy your permission set.
+     */
+
+    public CustomerManagedPolicyReference getCustomerManagedPolicyReference() {
+        return this.customerManagedPolicyReference;
+    }
+
+    /**
+     * <p>
+     * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
+     * path in each Amazon Web Services account where you want to deploy your permission set.
+     * </p>
+     * 
+     * @param customerManagedPolicyReference
+     *        Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the
+     *        name and path in each Amazon Web Services account where you want to deploy your permission set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachCustomerManagedPolicyReferenceToPermissionSetRequest withCustomerManagedPolicyReference(
+            CustomerManagedPolicyReference customerManagedPolicyReference) {
+        setCustomerManagedPolicyReference(customerManagedPolicyReference);
+        return this;
+    }
 
     /**
      * <p>
@@ -127,53 +174,6 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
     }
 
     /**
-     * <p>
-     * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
-     * path in each AWS account where you want to deploy your permission set.
-     * </p>
-     * 
-     * @param customerManagedPolicyReference
-     *        Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the
-     *        name and path in each AWS account where you want to deploy your permission set.
-     */
-
-    public void setCustomerManagedPolicyReference(CustomerManagedPolicyReference customerManagedPolicyReference) {
-        this.customerManagedPolicyReference = customerManagedPolicyReference;
-    }
-
-    /**
-     * <p>
-     * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
-     * path in each AWS account where you want to deploy your permission set.
-     * </p>
-     * 
-     * @return Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the
-     *         name and path in each AWS account where you want to deploy your permission set.
-     */
-
-    public CustomerManagedPolicyReference getCustomerManagedPolicyReference() {
-        return this.customerManagedPolicyReference;
-    }
-
-    /**
-     * <p>
-     * Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and
-     * path in each AWS account where you want to deploy your permission set.
-     * </p>
-     * 
-     * @param customerManagedPolicyReference
-     *        Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the
-     *        name and path in each AWS account where you want to deploy your permission set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttachCustomerManagedPolicyReferenceToPermissionSetRequest withCustomerManagedPolicyReference(
-            CustomerManagedPolicyReference customerManagedPolicyReference) {
-        setCustomerManagedPolicyReference(customerManagedPolicyReference);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,12 +185,12 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomerManagedPolicyReference() != null)
+            sb.append("CustomerManagedPolicyReference: ").append(getCustomerManagedPolicyReference()).append(",");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getPermissionSetArn() != null)
-            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
-        if (getCustomerManagedPolicyReference() != null)
-            sb.append("CustomerManagedPolicyReference: ").append(getCustomerManagedPolicyReference());
+            sb.append("PermissionSetArn: ").append(getPermissionSetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +205,11 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
         if (obj instanceof AttachCustomerManagedPolicyReferenceToPermissionSetRequest == false)
             return false;
         AttachCustomerManagedPolicyReferenceToPermissionSetRequest other = (AttachCustomerManagedPolicyReferenceToPermissionSetRequest) obj;
+        if (other.getCustomerManagedPolicyReference() == null ^ this.getCustomerManagedPolicyReference() == null)
+            return false;
+        if (other.getCustomerManagedPolicyReference() != null
+                && other.getCustomerManagedPolicyReference().equals(this.getCustomerManagedPolicyReference()) == false)
+            return false;
         if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
@@ -212,11 +217,6 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
         if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
             return false;
         if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
-            return false;
-        if (other.getCustomerManagedPolicyReference() == null ^ this.getCustomerManagedPolicyReference() == null)
-            return false;
-        if (other.getCustomerManagedPolicyReference() != null
-                && other.getCustomerManagedPolicyReference().equals(this.getCustomerManagedPolicyReference()) == false)
             return false;
         return true;
     }
@@ -226,9 +226,9 @@ public class AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomerManagedPolicyReference() == null) ? 0 : getCustomerManagedPolicyReference().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
-        hashCode = prime * hashCode + ((getCustomerManagedPolicyReference() == null) ? 0 : getCustomerManagedPolicyReference().hashCode());
         return hashCode;
     }
 

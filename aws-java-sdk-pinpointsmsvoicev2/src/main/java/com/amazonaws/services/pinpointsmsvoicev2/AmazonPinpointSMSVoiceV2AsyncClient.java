@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,15 +32,35 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple
  * messaging channels. The Amazon Pinpoint SMS and Voice, version 2 API provides programmatic access to options that are
- * unique to the SMS and voice channels and supplements the resources provided by the Amazon Pinpoint API.
+ * unique to the SMS and voice channels. Amazon Pinpoint SMS and Voice, version 2 resources such as phone numbers,
+ * sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
  * </p>
  * <p>
- * If you're new to Amazon Pinpoint, it's also helpful to review the <a
- * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html"> Amazon Pinpoint Developer Guide</a>.
- * The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that demonstrate how to
- * use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and
- * other types of applications. The guide also provides key information, such as Amazon Pinpoint integration with other
- * Amazon Web Services services, and the quotas that apply to use of the service.
+ * If you're new to Amazon Pinpoint SMS, it's also helpful to review the <a
+ * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html"> Amazon Pinpoint SMS User
+ * Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that
+ * demonstrate how to use Amazon Pinpoint SMS features programmatically and how to integrate Amazon Pinpoint
+ * functionality into mobile apps and other types of applications. The guide also provides key information, such as
+ * Amazon Pinpoint integration with other Amazon Web Services services, and the quotas that apply to use of the service.
+ * </p>
+ * <p>
+ * <b>Regional availability</b>
+ * </p>
+ * <p>
+ * The <i>Amazon Pinpoint SMS and Voice, version 2 API Reference</i> is available in several Amazon Web Services Regions
+ * and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is
+ * currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">Amazon
+ * Web Services Service Endpoints</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/pinpoint.html">Amazon
+ * Pinpoint endpoints and quotas</a> in the Amazon Web Services General Reference. To learn more about Amazon Web
+ * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web
+ * Services Regions</a> in the Amazon Web Services General Reference.
+ * </p>
+ * <p>
+ * In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically
+ * isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network
+ * connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while
+ * also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see
+ * <a href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web Services Global Infrastructure.</a>
  * </p>
  */
 @ThreadSafe
@@ -107,6 +127,40 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeAssociateOriginationIdentity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProtectConfigurationResult> associateProtectConfigurationAsync(AssociateProtectConfigurationRequest request) {
+
+        return associateProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProtectConfigurationResult> associateProtectConfigurationAsync(
+            final AssociateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateProtectConfigurationRequest, AssociateProtectConfigurationResult> asyncHandler) {
+        final AssociateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateProtectConfigurationResult>() {
+            @Override
+            public AssociateProtectConfigurationResult call() throws Exception {
+                AssociateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeAssociateProtectConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -239,6 +293,242 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeCreatePool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProtectConfigurationResult> createProtectConfigurationAsync(CreateProtectConfigurationRequest request) {
+
+        return createProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProtectConfigurationResult> createProtectConfigurationAsync(final CreateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProtectConfigurationRequest, CreateProtectConfigurationResult> asyncHandler) {
+        final CreateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProtectConfigurationResult>() {
+            @Override
+            public CreateProtectConfigurationResult call() throws Exception {
+                CreateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeCreateProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationResult> createRegistrationAsync(CreateRegistrationRequest request) {
+
+        return createRegistrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationResult> createRegistrationAsync(final CreateRegistrationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegistrationRequest, CreateRegistrationResult> asyncHandler) {
+        final CreateRegistrationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegistrationResult>() {
+            @Override
+            public CreateRegistrationResult call() throws Exception {
+                CreateRegistrationResult result = null;
+
+                try {
+                    result = executeCreateRegistration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAssociationResult> createRegistrationAssociationAsync(CreateRegistrationAssociationRequest request) {
+
+        return createRegistrationAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAssociationResult> createRegistrationAssociationAsync(
+            final CreateRegistrationAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegistrationAssociationRequest, CreateRegistrationAssociationResult> asyncHandler) {
+        final CreateRegistrationAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegistrationAssociationResult>() {
+            @Override
+            public CreateRegistrationAssociationResult call() throws Exception {
+                CreateRegistrationAssociationResult result = null;
+
+                try {
+                    result = executeCreateRegistrationAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAttachmentResult> createRegistrationAttachmentAsync(CreateRegistrationAttachmentRequest request) {
+
+        return createRegistrationAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAttachmentResult> createRegistrationAttachmentAsync(final CreateRegistrationAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegistrationAttachmentRequest, CreateRegistrationAttachmentResult> asyncHandler) {
+        final CreateRegistrationAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegistrationAttachmentResult>() {
+            @Override
+            public CreateRegistrationAttachmentResult call() throws Exception {
+                CreateRegistrationAttachmentResult result = null;
+
+                try {
+                    result = executeCreateRegistrationAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationVersionResult> createRegistrationVersionAsync(CreateRegistrationVersionRequest request) {
+
+        return createRegistrationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationVersionResult> createRegistrationVersionAsync(final CreateRegistrationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegistrationVersionRequest, CreateRegistrationVersionResult> asyncHandler) {
+        final CreateRegistrationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegistrationVersionResult>() {
+            @Override
+            public CreateRegistrationVersionResult call() throws Exception {
+                CreateRegistrationVersionResult result = null;
+
+                try {
+                    result = executeCreateRegistrationVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVerifiedDestinationNumberResult> createVerifiedDestinationNumberAsync(
+            CreateVerifiedDestinationNumberRequest request) {
+
+        return createVerifiedDestinationNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVerifiedDestinationNumberResult> createVerifiedDestinationNumberAsync(
+            final CreateVerifiedDestinationNumberRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVerifiedDestinationNumberRequest, CreateVerifiedDestinationNumberResult> asyncHandler) {
+        final CreateVerifiedDestinationNumberRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVerifiedDestinationNumberResult>() {
+            @Override
+            public CreateVerifiedDestinationNumberResult call() throws Exception {
+                CreateVerifiedDestinationNumberResult result = null;
+
+                try {
+                    result = executeCreateVerifiedDestinationNumber(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountDefaultProtectConfigurationResult> deleteAccountDefaultProtectConfigurationAsync(
+            DeleteAccountDefaultProtectConfigurationRequest request) {
+
+        return deleteAccountDefaultProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountDefaultProtectConfigurationResult> deleteAccountDefaultProtectConfigurationAsync(
+            final DeleteAccountDefaultProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccountDefaultProtectConfigurationRequest, DeleteAccountDefaultProtectConfigurationResult> asyncHandler) {
+        final DeleteAccountDefaultProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccountDefaultProtectConfigurationResult>() {
+            @Override
+            public DeleteAccountDefaultProtectConfigurationResult call() throws Exception {
+                DeleteAccountDefaultProtectConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteAccountDefaultProtectConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -420,6 +710,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMediaMessageSpendLimitOverrideResult> deleteMediaMessageSpendLimitOverrideAsync(
+            DeleteMediaMessageSpendLimitOverrideRequest request) {
+
+        return deleteMediaMessageSpendLimitOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaMessageSpendLimitOverrideResult> deleteMediaMessageSpendLimitOverrideAsync(
+            final DeleteMediaMessageSpendLimitOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMediaMessageSpendLimitOverrideRequest, DeleteMediaMessageSpendLimitOverrideResult> asyncHandler) {
+        final DeleteMediaMessageSpendLimitOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMediaMessageSpendLimitOverrideResult>() {
+            @Override
+            public DeleteMediaMessageSpendLimitOverrideResult call() throws Exception {
+                DeleteMediaMessageSpendLimitOverrideResult result = null;
+
+                try {
+                    result = executeDeleteMediaMessageSpendLimitOverride(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOptOutListResult> deleteOptOutListAsync(DeleteOptOutListRequest request) {
 
         return deleteOptOutListAsync(request, null);
@@ -519,6 +844,138 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteProtectConfigurationResult> deleteProtectConfigurationAsync(DeleteProtectConfigurationRequest request) {
+
+        return deleteProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProtectConfigurationResult> deleteProtectConfigurationAsync(final DeleteProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProtectConfigurationRequest, DeleteProtectConfigurationResult> asyncHandler) {
+        final DeleteProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProtectConfigurationResult>() {
+            @Override
+            public DeleteProtectConfigurationResult call() throws Exception {
+                DeleteProtectConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationResult> deleteRegistrationAsync(DeleteRegistrationRequest request) {
+
+        return deleteRegistrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationResult> deleteRegistrationAsync(final DeleteRegistrationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegistrationRequest, DeleteRegistrationResult> asyncHandler) {
+        final DeleteRegistrationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegistrationResult>() {
+            @Override
+            public DeleteRegistrationResult call() throws Exception {
+                DeleteRegistrationResult result = null;
+
+                try {
+                    result = executeDeleteRegistration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationAttachmentResult> deleteRegistrationAttachmentAsync(DeleteRegistrationAttachmentRequest request) {
+
+        return deleteRegistrationAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationAttachmentResult> deleteRegistrationAttachmentAsync(final DeleteRegistrationAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegistrationAttachmentRequest, DeleteRegistrationAttachmentResult> asyncHandler) {
+        final DeleteRegistrationAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegistrationAttachmentResult>() {
+            @Override
+            public DeleteRegistrationAttachmentResult call() throws Exception {
+                DeleteRegistrationAttachmentResult result = null;
+
+                try {
+                    result = executeDeleteRegistrationAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationFieldValueResult> deleteRegistrationFieldValueAsync(DeleteRegistrationFieldValueRequest request) {
+
+        return deleteRegistrationFieldValueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationFieldValueResult> deleteRegistrationFieldValueAsync(final DeleteRegistrationFieldValueRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegistrationFieldValueRequest, DeleteRegistrationFieldValueResult> asyncHandler) {
+        final DeleteRegistrationFieldValueRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegistrationFieldValueResult>() {
+            @Override
+            public DeleteRegistrationFieldValueResult call() throws Exception {
+                DeleteRegistrationFieldValueResult result = null;
+
+                try {
+                    result = executeDeleteRegistrationFieldValue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTextMessageSpendLimitOverrideResult> deleteTextMessageSpendLimitOverrideAsync(
             DeleteTextMessageSpendLimitOverrideRequest request) {
 
@@ -538,6 +995,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeDeleteTextMessageSpendLimitOverride(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVerifiedDestinationNumberResult> deleteVerifiedDestinationNumberAsync(
+            DeleteVerifiedDestinationNumberRequest request) {
+
+        return deleteVerifiedDestinationNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVerifiedDestinationNumberResult> deleteVerifiedDestinationNumberAsync(
+            final DeleteVerifiedDestinationNumberRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVerifiedDestinationNumberRequest, DeleteVerifiedDestinationNumberResult> asyncHandler) {
+        final DeleteVerifiedDestinationNumberRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVerifiedDestinationNumberResult>() {
+            @Override
+            public DeleteVerifiedDestinationNumberResult call() throws Exception {
+                DeleteVerifiedDestinationNumberResult result = null;
+
+                try {
+                    result = executeDeleteVerifiedDestinationNumber(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -853,6 +1345,281 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeProtectConfigurationsResult> describeProtectConfigurationsAsync(DescribeProtectConfigurationsRequest request) {
+
+        return describeProtectConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProtectConfigurationsResult> describeProtectConfigurationsAsync(
+            final DescribeProtectConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProtectConfigurationsRequest, DescribeProtectConfigurationsResult> asyncHandler) {
+        final DescribeProtectConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProtectConfigurationsResult>() {
+            @Override
+            public DescribeProtectConfigurationsResult call() throws Exception {
+                DescribeProtectConfigurationsResult result = null;
+
+                try {
+                    result = executeDescribeProtectConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
+            DescribeRegistrationAttachmentsRequest request) {
+
+        return describeRegistrationAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
+            final DescribeRegistrationAttachmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationAttachmentsRequest, DescribeRegistrationAttachmentsResult> asyncHandler) {
+        final DescribeRegistrationAttachmentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationAttachmentsResult>() {
+            @Override
+            public DescribeRegistrationAttachmentsResult call() throws Exception {
+                DescribeRegistrationAttachmentsResult result = null;
+
+                try {
+                    result = executeDescribeRegistrationAttachments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldDefinitionsResult> describeRegistrationFieldDefinitionsAsync(
+            DescribeRegistrationFieldDefinitionsRequest request) {
+
+        return describeRegistrationFieldDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldDefinitionsResult> describeRegistrationFieldDefinitionsAsync(
+            final DescribeRegistrationFieldDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationFieldDefinitionsRequest, DescribeRegistrationFieldDefinitionsResult> asyncHandler) {
+        final DescribeRegistrationFieldDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationFieldDefinitionsResult>() {
+            @Override
+            public DescribeRegistrationFieldDefinitionsResult call() throws Exception {
+                DescribeRegistrationFieldDefinitionsResult result = null;
+
+                try {
+                    result = executeDescribeRegistrationFieldDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldValuesResult> describeRegistrationFieldValuesAsync(
+            DescribeRegistrationFieldValuesRequest request) {
+
+        return describeRegistrationFieldValuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldValuesResult> describeRegistrationFieldValuesAsync(
+            final DescribeRegistrationFieldValuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationFieldValuesRequest, DescribeRegistrationFieldValuesResult> asyncHandler) {
+        final DescribeRegistrationFieldValuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationFieldValuesResult>() {
+            @Override
+            public DescribeRegistrationFieldValuesResult call() throws Exception {
+                DescribeRegistrationFieldValuesResult result = null;
+
+                try {
+                    result = executeDescribeRegistrationFieldValues(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationSectionDefinitionsResult> describeRegistrationSectionDefinitionsAsync(
+            DescribeRegistrationSectionDefinitionsRequest request) {
+
+        return describeRegistrationSectionDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationSectionDefinitionsResult> describeRegistrationSectionDefinitionsAsync(
+            final DescribeRegistrationSectionDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationSectionDefinitionsRequest, DescribeRegistrationSectionDefinitionsResult> asyncHandler) {
+        final DescribeRegistrationSectionDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationSectionDefinitionsResult>() {
+            @Override
+            public DescribeRegistrationSectionDefinitionsResult call() throws Exception {
+                DescribeRegistrationSectionDefinitionsResult result = null;
+
+                try {
+                    result = executeDescribeRegistrationSectionDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationTypeDefinitionsResult> describeRegistrationTypeDefinitionsAsync(
+            DescribeRegistrationTypeDefinitionsRequest request) {
+
+        return describeRegistrationTypeDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationTypeDefinitionsResult> describeRegistrationTypeDefinitionsAsync(
+            final DescribeRegistrationTypeDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationTypeDefinitionsRequest, DescribeRegistrationTypeDefinitionsResult> asyncHandler) {
+        final DescribeRegistrationTypeDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationTypeDefinitionsResult>() {
+            @Override
+            public DescribeRegistrationTypeDefinitionsResult call() throws Exception {
+                DescribeRegistrationTypeDefinitionsResult result = null;
+
+                try {
+                    result = executeDescribeRegistrationTypeDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationVersionsResult> describeRegistrationVersionsAsync(DescribeRegistrationVersionsRequest request) {
+
+        return describeRegistrationVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationVersionsResult> describeRegistrationVersionsAsync(final DescribeRegistrationVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationVersionsRequest, DescribeRegistrationVersionsResult> asyncHandler) {
+        final DescribeRegistrationVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationVersionsResult>() {
+            @Override
+            public DescribeRegistrationVersionsResult call() throws Exception {
+                DescribeRegistrationVersionsResult result = null;
+
+                try {
+                    result = executeDescribeRegistrationVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationsResult> describeRegistrationsAsync(DescribeRegistrationsRequest request) {
+
+        return describeRegistrationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationsResult> describeRegistrationsAsync(final DescribeRegistrationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistrationsRequest, DescribeRegistrationsResult> asyncHandler) {
+        final DescribeRegistrationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistrationsResult>() {
+            @Override
+            public DescribeRegistrationsResult call() throws Exception {
+                DescribeRegistrationsResult result = null;
+
+                try {
+                    result = executeDescribeRegistrations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSenderIdsResult> describeSenderIdsAsync(DescribeSenderIdsRequest request) {
 
         return describeSenderIdsAsync(request, null);
@@ -919,6 +1686,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVerifiedDestinationNumbersResult> describeVerifiedDestinationNumbersAsync(
+            DescribeVerifiedDestinationNumbersRequest request) {
+
+        return describeVerifiedDestinationNumbersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVerifiedDestinationNumbersResult> describeVerifiedDestinationNumbersAsync(
+            final DescribeVerifiedDestinationNumbersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVerifiedDestinationNumbersRequest, DescribeVerifiedDestinationNumbersResult> asyncHandler) {
+        final DescribeVerifiedDestinationNumbersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVerifiedDestinationNumbersResult>() {
+            @Override
+            public DescribeVerifiedDestinationNumbersResult call() throws Exception {
+                DescribeVerifiedDestinationNumbersResult result = null;
+
+                try {
+                    result = executeDescribeVerifiedDestinationNumbers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateOriginationIdentityResult> disassociateOriginationIdentityAsync(
             DisassociateOriginationIdentityRequest request) {
 
@@ -954,6 +1756,109 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateProtectConfigurationResult> disassociateProtectConfigurationAsync(
+            DisassociateProtectConfigurationRequest request) {
+
+        return disassociateProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateProtectConfigurationResult> disassociateProtectConfigurationAsync(
+            final DisassociateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateProtectConfigurationRequest, DisassociateProtectConfigurationResult> asyncHandler) {
+        final DisassociateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateProtectConfigurationResult>() {
+            @Override
+            public DisassociateProtectConfigurationResult call() throws Exception {
+                DisassociateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeDisassociateProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(DiscardRegistrationVersionRequest request) {
+
+        return discardRegistrationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(final DiscardRegistrationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DiscardRegistrationVersionRequest, DiscardRegistrationVersionResult> asyncHandler) {
+        final DiscardRegistrationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DiscardRegistrationVersionResult>() {
+            @Override
+            public DiscardRegistrationVersionResult call() throws Exception {
+                DiscardRegistrationVersionResult result = null;
+
+                try {
+                    result = executeDiscardRegistrationVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectConfigurationCountryRuleSetResult> getProtectConfigurationCountryRuleSetAsync(
+            GetProtectConfigurationCountryRuleSetRequest request) {
+
+        return getProtectConfigurationCountryRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectConfigurationCountryRuleSetResult> getProtectConfigurationCountryRuleSetAsync(
+            final GetProtectConfigurationCountryRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProtectConfigurationCountryRuleSetRequest, GetProtectConfigurationCountryRuleSetResult> asyncHandler) {
+        final GetProtectConfigurationCountryRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProtectConfigurationCountryRuleSetResult>() {
+            @Override
+            public GetProtectConfigurationCountryRuleSetResult call() throws Exception {
+                GetProtectConfigurationCountryRuleSetResult result = null;
+
+                try {
+                    result = executeGetProtectConfigurationCountryRuleSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPoolOriginationIdentitiesResult> listPoolOriginationIdentitiesAsync(ListPoolOriginationIdentitiesRequest request) {
 
         return listPoolOriginationIdentitiesAsync(request, null);
@@ -972,6 +1877,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeListPoolOriginationIdentities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegistrationAssociationsResult> listRegistrationAssociationsAsync(ListRegistrationAssociationsRequest request) {
+
+        return listRegistrationAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegistrationAssociationsResult> listRegistrationAssociationsAsync(final ListRegistrationAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRegistrationAssociationsRequest, ListRegistrationAssociationsResult> asyncHandler) {
+        final ListRegistrationAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRegistrationAssociationsResult>() {
+            @Override
+            public ListRegistrationAssociationsResult call() throws Exception {
+                ListRegistrationAssociationsResult result = null;
+
+                try {
+                    result = executeListRegistrationAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1087,6 +2025,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<PutRegistrationFieldValueResult> putRegistrationFieldValueAsync(PutRegistrationFieldValueRequest request) {
+
+        return putRegistrationFieldValueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRegistrationFieldValueResult> putRegistrationFieldValueAsync(final PutRegistrationFieldValueRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRegistrationFieldValueRequest, PutRegistrationFieldValueResult> asyncHandler) {
+        final PutRegistrationFieldValueRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRegistrationFieldValueResult>() {
+            @Override
+            public PutRegistrationFieldValueResult call() throws Exception {
+                PutRegistrationFieldValueResult result = null;
+
+                try {
+                    result = executePutRegistrationFieldValue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReleasePhoneNumberResult> releasePhoneNumberAsync(ReleasePhoneNumberRequest request) {
 
         return releasePhoneNumberAsync(request, null);
@@ -1120,6 +2091,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<ReleaseSenderIdResult> releaseSenderIdAsync(ReleaseSenderIdRequest request) {
+
+        return releaseSenderIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReleaseSenderIdResult> releaseSenderIdAsync(final ReleaseSenderIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReleaseSenderIdRequest, ReleaseSenderIdResult> asyncHandler) {
+        final ReleaseSenderIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReleaseSenderIdResult>() {
+            @Override
+            public ReleaseSenderIdResult call() throws Exception {
+                ReleaseSenderIdResult result = null;
+
+                try {
+                    result = executeReleaseSenderId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestPhoneNumberResult> requestPhoneNumberAsync(RequestPhoneNumberRequest request) {
 
         return requestPhoneNumberAsync(request, null);
@@ -1137,6 +2141,107 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeRequestPhoneNumber(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestSenderIdResult> requestSenderIdAsync(RequestSenderIdRequest request) {
+
+        return requestSenderIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestSenderIdResult> requestSenderIdAsync(final RequestSenderIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RequestSenderIdRequest, RequestSenderIdResult> asyncHandler) {
+        final RequestSenderIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RequestSenderIdResult>() {
+            @Override
+            public RequestSenderIdResult call() throws Exception {
+                RequestSenderIdResult result = null;
+
+                try {
+                    result = executeRequestSenderId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDestinationNumberVerificationCodeResult> sendDestinationNumberVerificationCodeAsync(
+            SendDestinationNumberVerificationCodeRequest request) {
+
+        return sendDestinationNumberVerificationCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDestinationNumberVerificationCodeResult> sendDestinationNumberVerificationCodeAsync(
+            final SendDestinationNumberVerificationCodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendDestinationNumberVerificationCodeRequest, SendDestinationNumberVerificationCodeResult> asyncHandler) {
+        final SendDestinationNumberVerificationCodeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendDestinationNumberVerificationCodeResult>() {
+            @Override
+            public SendDestinationNumberVerificationCodeResult call() throws Exception {
+                SendDestinationNumberVerificationCodeResult result = null;
+
+                try {
+                    result = executeSendDestinationNumberVerificationCode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendMediaMessageResult> sendMediaMessageAsync(SendMediaMessageRequest request) {
+
+        return sendMediaMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendMediaMessageResult> sendMediaMessageAsync(final SendMediaMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendMediaMessageRequest, SendMediaMessageResult> asyncHandler) {
+        final SendMediaMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendMediaMessageResult>() {
+            @Override
+            public SendMediaMessageResult call() throws Exception {
+                SendMediaMessageResult result = null;
+
+                try {
+                    result = executeSendMediaMessage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1219,6 +2324,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<SetAccountDefaultProtectConfigurationResult> setAccountDefaultProtectConfigurationAsync(
+            SetAccountDefaultProtectConfigurationRequest request) {
+
+        return setAccountDefaultProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetAccountDefaultProtectConfigurationResult> setAccountDefaultProtectConfigurationAsync(
+            final SetAccountDefaultProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetAccountDefaultProtectConfigurationRequest, SetAccountDefaultProtectConfigurationResult> asyncHandler) {
+        final SetAccountDefaultProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetAccountDefaultProtectConfigurationResult>() {
+            @Override
+            public SetAccountDefaultProtectConfigurationResult call() throws Exception {
+                SetAccountDefaultProtectConfigurationResult result = null;
+
+                try {
+                    result = executeSetAccountDefaultProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetDefaultMessageTypeResult> setDefaultMessageTypeAsync(SetDefaultMessageTypeRequest request) {
 
         return setDefaultMessageTypeAsync(request, null);
@@ -1269,6 +2409,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeSetDefaultSenderId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetMediaMessageSpendLimitOverrideResult> setMediaMessageSpendLimitOverrideAsync(
+            SetMediaMessageSpendLimitOverrideRequest request) {
+
+        return setMediaMessageSpendLimitOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetMediaMessageSpendLimitOverrideResult> setMediaMessageSpendLimitOverrideAsync(
+            final SetMediaMessageSpendLimitOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetMediaMessageSpendLimitOverrideRequest, SetMediaMessageSpendLimitOverrideResult> asyncHandler) {
+        final SetMediaMessageSpendLimitOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetMediaMessageSpendLimitOverrideResult>() {
+            @Override
+            public SetMediaMessageSpendLimitOverrideResult call() throws Exception {
+                SetMediaMessageSpendLimitOverrideResult result = null;
+
+                try {
+                    result = executeSetMediaMessageSpendLimitOverride(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1339,6 +2514,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeSetVoiceMessageSpendLimitOverride(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitRegistrationVersionResult> submitRegistrationVersionAsync(SubmitRegistrationVersionRequest request) {
+
+        return submitRegistrationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitRegistrationVersionResult> submitRegistrationVersionAsync(final SubmitRegistrationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SubmitRegistrationVersionRequest, SubmitRegistrationVersionResult> asyncHandler) {
+        final SubmitRegistrationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SubmitRegistrationVersionResult>() {
+            @Override
+            public SubmitRegistrationVersionResult call() throws Exception {
+                SubmitRegistrationVersionResult result = null;
+
+                try {
+                    result = executeSubmitRegistrationVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1504,6 +2712,140 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeUpdatePool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationResult> updateProtectConfigurationAsync(UpdateProtectConfigurationRequest request) {
+
+        return updateProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationResult> updateProtectConfigurationAsync(final UpdateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProtectConfigurationRequest, UpdateProtectConfigurationResult> asyncHandler) {
+        final UpdateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProtectConfigurationResult>() {
+            @Override
+            public UpdateProtectConfigurationResult call() throws Exception {
+                UpdateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationCountryRuleSetResult> updateProtectConfigurationCountryRuleSetAsync(
+            UpdateProtectConfigurationCountryRuleSetRequest request) {
+
+        return updateProtectConfigurationCountryRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationCountryRuleSetResult> updateProtectConfigurationCountryRuleSetAsync(
+            final UpdateProtectConfigurationCountryRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProtectConfigurationCountryRuleSetRequest, UpdateProtectConfigurationCountryRuleSetResult> asyncHandler) {
+        final UpdateProtectConfigurationCountryRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProtectConfigurationCountryRuleSetResult>() {
+            @Override
+            public UpdateProtectConfigurationCountryRuleSetResult call() throws Exception {
+                UpdateProtectConfigurationCountryRuleSetResult result = null;
+
+                try {
+                    result = executeUpdateProtectConfigurationCountryRuleSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSenderIdResult> updateSenderIdAsync(UpdateSenderIdRequest request) {
+
+        return updateSenderIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSenderIdResult> updateSenderIdAsync(final UpdateSenderIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSenderIdRequest, UpdateSenderIdResult> asyncHandler) {
+        final UpdateSenderIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSenderIdResult>() {
+            @Override
+            public UpdateSenderIdResult call() throws Exception {
+                UpdateSenderIdResult result = null;
+
+                try {
+                    result = executeUpdateSenderId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyDestinationNumberResult> verifyDestinationNumberAsync(VerifyDestinationNumberRequest request) {
+
+        return verifyDestinationNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyDestinationNumberResult> verifyDestinationNumberAsync(final VerifyDestinationNumberRequest request,
+            final com.amazonaws.handlers.AsyncHandler<VerifyDestinationNumberRequest, VerifyDestinationNumberResult> asyncHandler) {
+        final VerifyDestinationNumberRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<VerifyDestinationNumberResult>() {
+            @Override
+            public VerifyDestinationNumberResult call() throws Exception {
+                VerifyDestinationNumberResult result = null;
+
+                try {
+                    result = executeVerifyDestinationNumber(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

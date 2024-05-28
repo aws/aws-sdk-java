@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -205,6 +205,22 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
 
         if (restoreFromClusterSnapshotRequest.getEncrypted() != null) {
             request.addParameter("Encrypted", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.getEncrypted()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getManageMasterPassword() != null) {
+            request.addParameter("ManageMasterPassword", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.getManageMasterPassword()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getMasterPasswordSecretKmsKeyId() != null) {
+            request.addParameter("MasterPasswordSecretKmsKeyId", StringUtils.fromString(restoreFromClusterSnapshotRequest.getMasterPasswordSecretKmsKeyId()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(restoreFromClusterSnapshotRequest.getIpAddressType()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.getMultiAZ()));
         }
 
         return request;

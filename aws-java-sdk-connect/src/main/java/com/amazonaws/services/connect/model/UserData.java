@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,12 @@ public class UserData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<AgentContactReference> contacts;
+    /**
+     * <p>
+     * The Next status of the agent.
+     * </p>
+     */
+    private String nextStatus;
 
     /**
      * <p>
@@ -557,6 +563,46 @@ public class UserData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Next status of the agent.
+     * </p>
+     * 
+     * @param nextStatus
+     *        The Next status of the agent.
+     */
+
+    public void setNextStatus(String nextStatus) {
+        this.nextStatus = nextStatus;
+    }
+
+    /**
+     * <p>
+     * The Next status of the agent.
+     * </p>
+     * 
+     * @return The Next status of the agent.
+     */
+
+    public String getNextStatus() {
+        return this.nextStatus;
+    }
+
+    /**
+     * <p>
+     * The Next status of the agent.
+     * </p>
+     * 
+     * @param nextStatus
+     *        The Next status of the agent.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserData withNextStatus(String nextStatus) {
+        setNextStatus(nextStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -583,7 +629,9 @@ public class UserData implements Serializable, Cloneable, StructuredPojo {
         if (getActiveSlotsByChannel() != null)
             sb.append("ActiveSlotsByChannel: ").append(getActiveSlotsByChannel()).append(",");
         if (getContacts() != null)
-            sb.append("Contacts: ").append(getContacts());
+            sb.append("Contacts: ").append(getContacts()).append(",");
+        if (getNextStatus() != null)
+            sb.append("NextStatus: ").append(getNextStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -630,6 +678,10 @@ public class UserData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContacts() != null && other.getContacts().equals(this.getContacts()) == false)
             return false;
+        if (other.getNextStatus() == null ^ this.getNextStatus() == null)
+            return false;
+        if (other.getNextStatus() != null && other.getNextStatus().equals(this.getNextStatus()) == false)
+            return false;
         return true;
     }
 
@@ -646,6 +698,7 @@ public class UserData implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaxSlotsByChannel() == null) ? 0 : getMaxSlotsByChannel().hashCode());
         hashCode = prime * hashCode + ((getActiveSlotsByChannel() == null) ? 0 : getActiveSlotsByChannel().hashCode());
         hashCode = prime * hashCode + ((getContacts() == null) ? 0 : getContacts().hashCode());
+        hashCode = prime * hashCode + ((getNextStatus() == null) ? 0 : getNextStatus().hashCode());
         return hashCode;
     }
 

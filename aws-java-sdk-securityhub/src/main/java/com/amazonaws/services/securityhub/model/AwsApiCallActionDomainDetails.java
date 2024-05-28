@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,9 @@ public class AwsApiCallActionDomainDetails implements Serializable, Cloneable, S
      * <p>
      * The name of the DNS domain that issued the API call.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      */
     private String domain;
 
@@ -40,9 +43,14 @@ public class AwsApiCallActionDomainDetails implements Serializable, Cloneable, S
      * <p>
      * The name of the DNS domain that issued the API call.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param domain
-     *        The name of the DNS domain that issued the API call.
+     *        The name of the DNS domain that issued the API call.</p>
+     *        <p>
+     *        Length Constraints: 128.
      */
 
     public void setDomain(String domain) {
@@ -53,8 +61,13 @@ public class AwsApiCallActionDomainDetails implements Serializable, Cloneable, S
      * <p>
      * The name of the DNS domain that issued the API call.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
-     * @return The name of the DNS domain that issued the API call.
+     * @return The name of the DNS domain that issued the API call.</p>
+     *         <p>
+     *         Length Constraints: 128.
      */
 
     public String getDomain() {
@@ -65,9 +78,14 @@ public class AwsApiCallActionDomainDetails implements Serializable, Cloneable, S
      * <p>
      * The name of the DNS domain that issued the API call.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param domain
-     *        The name of the DNS domain that issued the API call.
+     *        The name of the DNS domain that issued the API call.</p>
+     *        <p>
+     *        Length Constraints: 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

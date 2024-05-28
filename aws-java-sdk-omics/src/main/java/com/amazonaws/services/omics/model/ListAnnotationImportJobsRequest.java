@@ -1,0 +1,313 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.omics.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListAnnotationImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The maximum number of jobs to return in one page of results.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * IDs of annotation import jobs to retrieve.
+     * </p>
+     */
+    private java.util.List<String> ids;
+    /**
+     * <p>
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     */
+    private ListAnnotationImportJobsFilter filter;
+
+    /**
+     * <p>
+     * The maximum number of jobs to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of jobs to return in one page of results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of jobs to return in one page of results.
+     * </p>
+     * 
+     * @return The maximum number of jobs to return in one page of results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of jobs to return in one page of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of jobs to return in one page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnnotationImportJobsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * IDs of annotation import jobs to retrieve.
+     * </p>
+     * 
+     * @return IDs of annotation import jobs to retrieve.
+     */
+
+    public java.util.List<String> getIds() {
+        return ids;
+    }
+
+    /**
+     * <p>
+     * IDs of annotation import jobs to retrieve.
+     * </p>
+     * 
+     * @param ids
+     *        IDs of annotation import jobs to retrieve.
+     */
+
+    public void setIds(java.util.Collection<String> ids) {
+        if (ids == null) {
+            this.ids = null;
+            return;
+        }
+
+        this.ids = new java.util.ArrayList<String>(ids);
+    }
+
+    /**
+     * <p>
+     * IDs of annotation import jobs to retrieve.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIds(java.util.Collection)} or {@link #withIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param ids
+     *        IDs of annotation import jobs to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnnotationImportJobsRequest withIds(String... ids) {
+        if (this.ids == null) {
+            setIds(new java.util.ArrayList<String>(ids.length));
+        }
+        for (String ele : ids) {
+            this.ids.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * IDs of annotation import jobs to retrieve.
+     * </p>
+     * 
+     * @param ids
+     *        IDs of annotation import jobs to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnnotationImportJobsRequest withIds(java.util.Collection<String> ids) {
+        setIds(ids);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specifies the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @return Specifies the pagination token from a previous request to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Specifies the pagination token from a previous request to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specifies the pagination token from a previous request to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnnotationImportJobsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     */
+
+    public void setFilter(ListAnnotationImportJobsFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @return A filter to apply to the list.
+     */
+
+    public ListAnnotationImportJobsFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * A filter to apply to the list.
+     * </p>
+     * 
+     * @param filter
+     *        A filter to apply to the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnnotationImportJobsRequest withFilter(ListAnnotationImportJobsFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getIds() != null)
+            sb.append("Ids: ").append(getIds()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListAnnotationImportJobsRequest == false)
+            return false;
+        ListAnnotationImportJobsRequest other = (ListAnnotationImportJobsRequest) obj;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getIds() == null ^ this.getIds() == null)
+            return false;
+        if (other.getIds() != null && other.getIds().equals(this.getIds()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getIds() == null) ? 0 : getIds().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListAnnotationImportJobsRequest clone() {
+        return (ListAnnotationImportJobsRequest) super.clone();
+    }
+
+}

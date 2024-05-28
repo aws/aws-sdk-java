@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,13 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
     private String channelArn;
     /**
      * <p>
-     * The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     * The ARN of the user or bot in the moderated channel.
      * </p>
      */
     private String appInstanceUserArn;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      */
     private String chimeBearer;
@@ -87,11 +87,11 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
 
     /**
      * <p>
-     * The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     * The ARN of the user or bot in the moderated channel.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     *        The ARN of the user or bot in the moderated channel.
      */
 
     public void setAppInstanceUserArn(String appInstanceUserArn) {
@@ -100,10 +100,10 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
 
     /**
      * <p>
-     * The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     * The ARN of the user or bot in the moderated channel.
      * </p>
      * 
-     * @return The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     * @return The ARN of the user or bot in the moderated channel.
      */
 
     public String getAppInstanceUserArn() {
@@ -112,11 +112,11 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
 
     /**
      * <p>
-     * The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     * The ARN of the user or bot in the moderated channel.
      * </p>
      * 
      * @param appInstanceUserArn
-     *        The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+     *        The ARN of the user or bot in the moderated channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +127,11 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -140,10 +140,10 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public String getChimeBearer() {
@@ -152,11 +152,11 @@ public class DescribeChannelModeratedByAppInstanceUserRequest extends com.amazon
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

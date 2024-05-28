@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,8 +47,34 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
+     * <important>
+     * <p>
+     * Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public
+     * access from being granted through the resource policies that are directly attached to your secrets. In addition
+     * to using these features, carefully inspect the following policies to confirm that they do not grant public
+     * access:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service
+     * (KMS) keys)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To review permissions to your secrets, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     * >Determine who has permissions to your secrets</a>.
+     * </p>
+     * </important>
      */
     private Boolean blockPublicPolicy;
 
@@ -177,12 +203,62 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
+     * <important>
+     * <p>
+     * Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public
+     * access from being granted through the resource policies that are directly attached to your secrets. In addition
+     * to using these features, carefully inspect the following policies to confirm that they do not grant public
+     * access:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service
+     * (KMS) keys)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To review permissions to your secrets, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     * >Determine who has permissions to your secrets</a>.
+     * </p>
+     * </important>
      * 
      * @param blockPublicPolicy
      *        Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *        those that use a wildcard for the principal.
+     *        those that use a wildcard for the principal. By default, public policies aren't blocked.</p> <important>
+     *        <p>
+     *        Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing
+     *        public access from being granted through the resource policies that are directly attached to your secrets.
+     *        In addition to using these features, carefully inspect the following policies to confirm that they do not
+     *        grant public access:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management
+     *        Service (KMS) keys)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To review permissions to your secrets, see <a href=
+     *        "https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     *        >Determine who has permissions to your secrets</a>.
+     *        </p>
      */
 
     public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
@@ -192,11 +268,61 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
+     * <important>
+     * <p>
+     * Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public
+     * access from being granted through the resource policies that are directly attached to your secrets. In addition
+     * to using these features, carefully inspect the following policies to confirm that they do not grant public
+     * access:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service
+     * (KMS) keys)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To review permissions to your secrets, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     * >Determine who has permissions to your secrets</a>.
+     * </p>
+     * </important>
      * 
      * @return Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *         those that use a wildcard for the principal.
+     *         those that use a wildcard for the principal. By default, public policies aren't blocked.</p> <important>
+     *         <p>
+     *         Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing
+     *         public access from being granted through the resource policies that are directly attached to your
+     *         secrets. In addition to using these features, carefully inspect the following policies to confirm that
+     *         they do not grant public access:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management
+     *         Service (KMS) keys)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To review permissions to your secrets, see <a href=
+     *         "https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     *         >Determine who has permissions to your secrets</a>.
+     *         </p>
      */
 
     public Boolean getBlockPublicPolicy() {
@@ -206,12 +332,62 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
+     * <important>
+     * <p>
+     * Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public
+     * access from being granted through the resource policies that are directly attached to your secrets. In addition
+     * to using these features, carefully inspect the following policies to confirm that they do not grant public
+     * access:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service
+     * (KMS) keys)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To review permissions to your secrets, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     * >Determine who has permissions to your secrets</a>.
+     * </p>
+     * </important>
      * 
      * @param blockPublicPolicy
      *        Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *        those that use a wildcard for the principal.
+     *        those that use a wildcard for the principal. By default, public policies aren't blocked.</p> <important>
+     *        <p>
+     *        Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing
+     *        public access from being granted through the resource policies that are directly attached to your secrets.
+     *        In addition to using these features, carefully inspect the following policies to confirm that they do not
+     *        grant public access:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management
+     *        Service (KMS) keys)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To review permissions to your secrets, see <a href=
+     *        "https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     *        >Determine who has permissions to your secrets</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +399,61 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
+     * <important>
+     * <p>
+     * Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public
+     * access from being granted through the resource policies that are directly attached to your secrets. In addition
+     * to using these features, carefully inspect the following policies to confirm that they do not grant public
+     * access:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management Service
+     * (KMS) keys)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To review permissions to your secrets, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     * >Determine who has permissions to your secrets</a>.
+     * </p>
+     * </important>
      * 
      * @return Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *         those that use a wildcard for the principal.
+     *         those that use a wildcard for the principal. By default, public policies aren't blocked.</p> <important>
+     *         <p>
+     *         Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing
+     *         public access from being granted through the resource policies that are directly attached to your
+     *         secrets. In addition to using these features, carefully inspect the following policies to confirm that
+     *         they do not grant public access:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Identity-based policies attached to associated Amazon Web Services principals (for example, IAM roles)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Resource-based policies attached to associated Amazon Web Services resources (for example, Key Management
+     *         Service (KMS) keys)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To review permissions to your secrets, see <a href=
+     *         "https://docs.aws.amazon.com/secretsmanager/latest/userguide/determine-acccess_examine-iam-policies.html"
+     *         >Determine who has permissions to your secrets</a>.
+     *         </p>
      */
 
     public Boolean isBlockPublicPolicy() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,17 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     */
+    private String adminPasswordSecretKmsKeyId;
+    /**
+     * <p>
      * The password of the administrator for the first database created in the namespace.
+     * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * </p>
      */
     private String adminUserPassword;
@@ -70,10 +80,25 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> logExports;
     /**
      * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     */
+    private Boolean manageAdminPassword;
+    /**
+     * <p>
      * The name of the namespace.
      * </p>
      */
     private String namespaceName;
+    /**
+     * <p>
+     * The ARN for the Redshift application that integrates with IAM Identity Center.
+     * </p>
+     */
+    private String redshiftIdcApplicationArn;
     /**
      * <p>
      * A list of tag instances.
@@ -83,11 +108,62 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     */
+
+    public void setAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        this.adminPasswordSecretKmsKeyId = adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin
+     *         credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     */
+
+    public String getAdminPasswordSecretKmsKeyId() {
+        return this.adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret. You can only use this parameter if <code>manageAdminPassword</code> is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNamespaceRequest withAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        setAdminPasswordSecretKmsKeyId(adminPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The password of the administrator for the first database created in the namespace.
+     * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * </p>
      * 
      * @param adminUserPassword
-     *        The password of the administrator for the first database created in the namespace.
+     *        The password of the administrator for the first database created in the namespace.</p>
+     *        <p>
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      */
 
     public void setAdminUserPassword(String adminUserPassword) {
@@ -98,8 +174,13 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The password of the administrator for the first database created in the namespace.
      * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
+     * </p>
      * 
-     * @return The password of the administrator for the first database created in the namespace.
+     * @return The password of the administrator for the first database created in the namespace.</p>
+     *         <p>
+     *         You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      */
 
     public String getAdminUserPassword() {
@@ -110,9 +191,14 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The password of the administrator for the first database created in the namespace.
      * </p>
+     * <p>
+     * You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
+     * </p>
      * 
      * @param adminUserPassword
-     *        The password of the administrator for the first database created in the namespace.
+     *        The password of the administrator for the first database created in the namespace.</p>
+     *        <p>
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,6 +547,82 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @param manageAdminPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *        <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *        for the admin user account's password.
+     */
+
+    public void setManageAdminPassword(Boolean manageAdminPassword) {
+        this.manageAdminPassword = manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *         You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *         <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *         for the admin user account's password.
+     */
+
+    public Boolean getManageAdminPassword() {
+        return this.manageAdminPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @param manageAdminPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *        You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *        <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *        for the admin user account's password.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNamespaceRequest withManageAdminPassword(Boolean manageAdminPassword) {
+        setManageAdminPassword(manageAdminPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't
+     * use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     * <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials.
+     *         You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true. If
+     *         <code>manageAdminPassword</code> is false or not set, Amazon Redshift uses <code>adminUserPassword</code>
+     *         for the admin user account's password.
+     */
+
+    public Boolean isManageAdminPassword() {
+        return this.manageAdminPassword;
+    }
+
+    /**
+     * <p>
      * The name of the namespace.
      * </p>
      * 
@@ -496,6 +658,46 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateNamespaceRequest withNamespaceName(String namespaceName) {
         setNamespaceName(namespaceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Redshift application that integrates with IAM Identity Center.
+     * </p>
+     * 
+     * @param redshiftIdcApplicationArn
+     *        The ARN for the Redshift application that integrates with IAM Identity Center.
+     */
+
+    public void setRedshiftIdcApplicationArn(String redshiftIdcApplicationArn) {
+        this.redshiftIdcApplicationArn = redshiftIdcApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Redshift application that integrates with IAM Identity Center.
+     * </p>
+     * 
+     * @return The ARN for the Redshift application that integrates with IAM Identity Center.
+     */
+
+    public String getRedshiftIdcApplicationArn() {
+        return this.redshiftIdcApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the Redshift application that integrates with IAM Identity Center.
+     * </p>
+     * 
+     * @param redshiftIdcApplicationArn
+     *        The ARN for the Redshift application that integrates with IAM Identity Center.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNamespaceRequest withRedshiftIdcApplicationArn(String redshiftIdcApplicationArn) {
+        setRedshiftIdcApplicationArn(redshiftIdcApplicationArn);
         return this;
     }
 
@@ -581,6 +783,8 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdminPasswordSecretKmsKeyId() != null)
+            sb.append("AdminPasswordSecretKmsKeyId: ").append(getAdminPasswordSecretKmsKeyId()).append(",");
         if (getAdminUserPassword() != null)
             sb.append("AdminUserPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getAdminUsername() != null)
@@ -595,8 +799,12 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLogExports() != null)
             sb.append("LogExports: ").append(getLogExports()).append(",");
+        if (getManageAdminPassword() != null)
+            sb.append("ManageAdminPassword: ").append(getManageAdminPassword()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
+        if (getRedshiftIdcApplicationArn() != null)
+            sb.append("RedshiftIdcApplicationArn: ").append(getRedshiftIdcApplicationArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -613,6 +821,10 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof CreateNamespaceRequest == false)
             return false;
         CreateNamespaceRequest other = (CreateNamespaceRequest) obj;
+        if (other.getAdminPasswordSecretKmsKeyId() == null ^ this.getAdminPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() != null && other.getAdminPasswordSecretKmsKeyId().equals(this.getAdminPasswordSecretKmsKeyId()) == false)
+            return false;
         if (other.getAdminUserPassword() == null ^ this.getAdminUserPassword() == null)
             return false;
         if (other.getAdminUserPassword() != null && other.getAdminUserPassword().equals(this.getAdminUserPassword()) == false)
@@ -641,9 +853,17 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getLogExports() != null && other.getLogExports().equals(this.getLogExports()) == false)
             return false;
+        if (other.getManageAdminPassword() == null ^ this.getManageAdminPassword() == null)
+            return false;
+        if (other.getManageAdminPassword() != null && other.getManageAdminPassword().equals(this.getManageAdminPassword()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
+            return false;
+        if (other.getRedshiftIdcApplicationArn() == null ^ this.getRedshiftIdcApplicationArn() == null)
+            return false;
+        if (other.getRedshiftIdcApplicationArn() != null && other.getRedshiftIdcApplicationArn().equals(this.getRedshiftIdcApplicationArn()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -657,6 +877,7 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdminPasswordSecretKmsKeyId() == null) ? 0 : getAdminPasswordSecretKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAdminUserPassword() == null) ? 0 : getAdminUserPassword().hashCode());
         hashCode = prime * hashCode + ((getAdminUsername() == null) ? 0 : getAdminUsername().hashCode());
         hashCode = prime * hashCode + ((getDbName() == null) ? 0 : getDbName().hashCode());
@@ -664,7 +885,9 @@ public class CreateNamespaceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLogExports() == null) ? 0 : getLogExports().hashCode());
+        hashCode = prime * hashCode + ((getManageAdminPassword() == null) ? 0 : getManageAdminPassword().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
+        hashCode = prime * hashCode + ((getRedshiftIdcApplicationArn() == null) ? 0 : getRedshiftIdcApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

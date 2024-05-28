@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class JobReport implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.
+     * </p>
+     * </note>
      */
     private String bucket;
     /**
@@ -62,9 +68,20 @@ public class JobReport implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.
+     * </p>
+     * </note>
      * 
      * @param bucket
-     *        The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
+     *        The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+     *        <note>
+     *        <p>
+     *        <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store
+     *        job completion reports.
+     *        </p>
      */
 
     public void setBucket(String bucket) {
@@ -75,8 +92,19 @@ public class JobReport implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.
+     * </p>
+     * </note>
      * 
-     * @return The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
+     * @return The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+     *         <note>
+     *         <p>
+     *         <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store
+     *         job completion reports.
+     *         </p>
      */
 
     public String getBucket() {
@@ -87,9 +115,20 @@ public class JobReport implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
      * </p>
+     * <note>
+     * <p>
+     * <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job
+     * completion reports.
+     * </p>
+     * </note>
      * 
      * @param bucket
-     *        The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.
+     *        The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+     *        <note>
+     *        <p>
+     *        <b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store
+     *        job completion reports.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

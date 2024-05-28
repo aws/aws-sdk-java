@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class UpdateServiceIntegrationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsCenter").build();
     private static final MarshallingInfo<StructuredPojo> LOGSANOMALYDETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogsAnomalyDetection").build();
+    private static final MarshallingInfo<StructuredPojo> KMSSERVERSIDEENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSServerSideEncryption").build();
 
     private static final UpdateServiceIntegrationConfigMarshaller instance = new UpdateServiceIntegrationConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateServiceIntegrationConfigMarshaller {
         try {
             protocolMarshaller.marshall(updateServiceIntegrationConfig.getOpsCenter(), OPSCENTER_BINDING);
             protocolMarshaller.marshall(updateServiceIntegrationConfig.getLogsAnomalyDetection(), LOGSANOMALYDETECTION_BINDING);
+            protocolMarshaller.marshall(updateServiceIntegrationConfig.getKMSServerSideEncryption(), KMSSERVERSIDEENCRYPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

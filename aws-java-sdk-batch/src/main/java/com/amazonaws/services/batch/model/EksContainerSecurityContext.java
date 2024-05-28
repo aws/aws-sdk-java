@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,13 @@ public class EksContainerSecurityContext implements Serializable, Cloneable, Str
      * </p>
      */
     private Boolean privileged;
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The
+     * default value is <code>false</code>.
+     * </p>
+     */
+    private Boolean allowPrivilegeEscalation;
     /**
      * <p>
      * When this parameter is <code>true</code>, the container is given read-only access to its root file system. The
@@ -294,6 +301,66 @@ public class EksContainerSecurityContext implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @param allowPrivilegeEscalation
+     *        Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     *        The default value is <code>false</code>.
+     */
+
+    public void setAllowPrivilegeEscalation(Boolean allowPrivilegeEscalation) {
+        this.allowPrivilegeEscalation = allowPrivilegeEscalation;
+    }
+
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent
+     *         process. The default value is <code>false</code>.
+     */
+
+    public Boolean getAllowPrivilegeEscalation() {
+        return this.allowPrivilegeEscalation;
+    }
+
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @param allowPrivilegeEscalation
+     *        Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process.
+     *        The default value is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EksContainerSecurityContext withAllowPrivilegeEscalation(Boolean allowPrivilegeEscalation) {
+        setAllowPrivilegeEscalation(allowPrivilegeEscalation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent process. The
+     * default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Whether or not a container or a Kubernetes pod is allowed to gain more privileges than its parent
+     *         process. The default value is <code>false</code>.
+     */
+
+    public Boolean isAllowPrivilegeEscalation() {
+        return this.allowPrivilegeEscalation;
+    }
+
+    /**
+     * <p>
      * When this parameter is <code>true</code>, the container is given read-only access to its root file system. The
      * default value is <code>false</code>. This parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a
      * href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#volumes-and-file-systems">Volumes and
@@ -474,6 +541,8 @@ public class EksContainerSecurityContext implements Serializable, Cloneable, Str
             sb.append("RunAsGroup: ").append(getRunAsGroup()).append(",");
         if (getPrivileged() != null)
             sb.append("Privileged: ").append(getPrivileged()).append(",");
+        if (getAllowPrivilegeEscalation() != null)
+            sb.append("AllowPrivilegeEscalation: ").append(getAllowPrivilegeEscalation()).append(",");
         if (getReadOnlyRootFilesystem() != null)
             sb.append("ReadOnlyRootFilesystem: ").append(getReadOnlyRootFilesystem()).append(",");
         if (getRunAsNonRoot() != null)
@@ -504,6 +573,10 @@ public class EksContainerSecurityContext implements Serializable, Cloneable, Str
             return false;
         if (other.getPrivileged() != null && other.getPrivileged().equals(this.getPrivileged()) == false)
             return false;
+        if (other.getAllowPrivilegeEscalation() == null ^ this.getAllowPrivilegeEscalation() == null)
+            return false;
+        if (other.getAllowPrivilegeEscalation() != null && other.getAllowPrivilegeEscalation().equals(this.getAllowPrivilegeEscalation()) == false)
+            return false;
         if (other.getReadOnlyRootFilesystem() == null ^ this.getReadOnlyRootFilesystem() == null)
             return false;
         if (other.getReadOnlyRootFilesystem() != null && other.getReadOnlyRootFilesystem().equals(this.getReadOnlyRootFilesystem()) == false)
@@ -523,6 +596,7 @@ public class EksContainerSecurityContext implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getRunAsUser() == null) ? 0 : getRunAsUser().hashCode());
         hashCode = prime * hashCode + ((getRunAsGroup() == null) ? 0 : getRunAsGroup().hashCode());
         hashCode = prime * hashCode + ((getPrivileged() == null) ? 0 : getPrivileged().hashCode());
+        hashCode = prime * hashCode + ((getAllowPrivilegeEscalation() == null) ? 0 : getAllowPrivilegeEscalation().hashCode());
         hashCode = prime * hashCode + ((getReadOnlyRootFilesystem() == null) ? 0 : getReadOnlyRootFilesystem().hashCode());
         hashCode = prime * hashCode + ((getRunAsNonRoot() == null) ? 0 : getRunAsNonRoot().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,8 +46,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -71,12 +71,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -84,8 +89,10 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
     private String type;
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * <p>
+     * Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      * </p>
      */
     private Boolean disableTemplateValidation;
@@ -179,8 +186,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -194,8 +201,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * @return Specify the template source with one of the following options, but not both. Keys accepted: [
      *         <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
      *         <p>
-     *         The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *         format. Specify the URL in JSON format as follows:
+     *         The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON
+     *         format as follows:
      *         </p>
      *         <p>
      *         <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -216,8 +223,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -232,8 +239,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        Specify the template source with one of the following options, but not both. Keys accepted: [
      *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
      *        <p>
-     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *        format. Specify the URL in JSON format as follows:
+     *        The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON
+     *        format as follows:
      *        </p>
      *        <p>
      *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -254,8 +261,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -270,8 +277,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        Specify the template source with one of the following options, but not both. Keys accepted: [
      *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
      *        <p>
-     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *        format. Specify the URL in JSON format as follows:
+     *        The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON
+     *        format as follows:
      *        </p>
      *        <p>
      *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -328,12 +335,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -348,12 +360,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -375,12 +392,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -394,12 +416,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *         <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXTERNAL</code> - External configuration file
      *         </p>
      *         </li>
      * @see ProvisioningArtifactType
@@ -421,12 +448,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -441,12 +473,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -470,12 +507,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -490,12 +532,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -517,12 +564,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -537,12 +589,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -556,13 +613,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * <p>
+     * Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      * </p>
      * 
      * @param disableTemplateValidation
-     *        If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *        even if it is invalid.
+     *        If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid. </p>
+     *        <p>
+     *        Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      */
 
     public void setDisableTemplateValidation(Boolean disableTemplateValidation) {
@@ -571,12 +632,16 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * <p>
+     * Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      * </p>
      * 
-     * @return If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *         even if it is invalid.
+     * @return If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid. </p>
+     *         <p>
+     *         Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      */
 
     public Boolean getDisableTemplateValidation() {
@@ -585,13 +650,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * <p>
+     * Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      * </p>
      * 
      * @param disableTemplateValidation
-     *        If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *        even if it is invalid.
+     *        If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid. </p>
+     *        <p>
+     *        Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,12 +671,16 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * <p>
+     * Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      * </p>
      * 
-     * @return If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *         even if it is invalid.
+     * @return If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid. </p>
+     *         <p>
+     *         Service Catalog does not support template validation for the <code>TERRAFORM_OS</code> product type.
      */
 
     public Boolean isDisableTemplateValidation() {

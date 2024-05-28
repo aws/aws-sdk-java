@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.s3outposts.AmazonS3OutpostsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.s3outposts.model.*;
+
 import com.amazonaws.services.s3outposts.model.transform.*;
 
 /**
@@ -89,6 +90,12 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.s3outposts.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OutpostOfflineException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.s3outposts.model.transform.OutpostOfflineExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.s3outposts.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.s3outposts.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -178,6 +185,10 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
      *         The requested resource was not found.
      * @throws ConflictException
      *         There was a conflict with this action, and it could not be completed.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws OutpostOfflineException
+     *         The service link connection to your Outposts home Region is down. Check your connection and try again.
      * @sample AmazonS3Outposts.CreateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -262,6 +273,10 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
      *         The requested resource was not found.
      * @throws ValidationException
      *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws OutpostOfflineException
+     *         The service link connection to your Outposts home Region is down. Check your connection and try again.
      * @sample AmazonS3Outposts.DeleteEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -340,6 +355,8 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
      *         Access was denied for this action.
      * @throws ValidationException
      *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AmazonS3Outposts.ListEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints" target="_top">AWS API
      *      Documentation</a>
@@ -390,6 +407,70 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts
+     * that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param listOutpostsWithS3Request
+     * @return Result of the ListOutpostsWithS3 operation returned by the service.
+     * @throws InternalServerException
+     *         There was an exception with the internal server.
+     * @throws AccessDeniedException
+     *         Access was denied for this action.
+     * @throws ValidationException
+     *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonS3Outposts.ListOutpostsWithS3
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListOutpostsWithS3Result listOutpostsWithS3(ListOutpostsWithS3Request request) {
+        request = beforeClientExecution(request);
+        return executeListOutpostsWithS3(request);
+    }
+
+    @SdkInternalApi
+    final ListOutpostsWithS3Result executeListOutpostsWithS3(ListOutpostsWithS3Request listOutpostsWithS3Request) {
+
+        ExecutionContext executionContext = createExecutionContext(listOutpostsWithS3Request);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOutpostsWithS3Request> request = null;
+        Response<ListOutpostsWithS3Result> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOutpostsWithS3RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOutpostsWithS3Request));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOutpostsWithS3");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOutpostsWithS3Result>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOutpostsWithS3ResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access
      * Manager (RAM).
      * </p>
@@ -419,6 +500,8 @@ public class AmazonS3OutpostsClient extends AmazonWebServiceClient implements Am
      *         Access was denied for this action.
      * @throws ValidationException
      *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AmazonS3Outposts.ListSharedEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints" target="_top">AWS
      *      API Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,10 +37,42 @@ public class DescribeEventBusResult extends com.amazonaws.AmazonWebServiceResult
     private String arn;
     /**
      * <p>
+     * The event bus description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one
+     * has been specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     * EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     * </p>
+     */
+    private String kmsKeyIdentifier;
+
+    private DeadLetterConfig deadLetterConfig;
+    /**
+     * <p>
      * The policy that enables the external account to send events to your account.
      * </p>
      */
     private String policy;
+    /**
+     * <p>
+     * The time the event bus was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * The time the event bus was last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
 
     /**
      * <p>
@@ -124,6 +156,145 @@ public class DescribeEventBusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * The event bus description.
+     * </p>
+     * 
+     * @param description
+     *        The event bus description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The event bus description.
+     * </p>
+     * 
+     * @return The event bus description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The event bus description.
+     * </p>
+     * 
+     * @param description
+     *        The event bus description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventBusResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one
+     * has been specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     * EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus,
+     *        if one has been specified.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     *        EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     */
+
+    public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
+        this.kmsKeyIdentifier = kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one
+     * has been specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     * EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     * </p>
+     * 
+     * @return The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event
+     *         bus, if one has been specified.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     *         EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     */
+
+    public String getKmsKeyIdentifier() {
+        return this.kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus, if one
+     * has been specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     * EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The identifier of the KMS customer managed key for EventBridge to use to encrypt events on this event bus,
+     *        if one has been specified.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data encryption in
+     *        EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventBusResult withKmsKeyIdentifier(String kmsKeyIdentifier) {
+        setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
+     * @param deadLetterConfig
+     */
+
+    public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        this.deadLetterConfig = deadLetterConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DeadLetterConfig getDeadLetterConfig() {
+        return this.deadLetterConfig;
+    }
+
+    /**
+     * @param deadLetterConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventBusResult withDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        setDeadLetterConfig(deadLetterConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The policy that enables the external account to send events to your account.
      * </p>
      * 
@@ -163,6 +334,86 @@ public class DescribeEventBusResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The time the event bus was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time the event bus was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * The time the event bus was created.
+     * </p>
+     * 
+     * @return The time the event bus was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The time the event bus was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time the event bus was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventBusResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time the event bus was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The time the event bus was last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The time the event bus was last modified.
+     * </p>
+     * 
+     * @return The time the event bus was last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The time the event bus was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The time the event bus was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventBusResult withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -178,8 +429,18 @@ public class DescribeEventBusResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getKmsKeyIdentifier() != null)
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier()).append(",");
+        if (getDeadLetterConfig() != null)
+            sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: ").append(getPolicy());
+            sb.append("Policy: ").append(getPolicy()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -202,9 +463,29 @@ public class DescribeEventBusResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getKmsKeyIdentifier() == null ^ this.getKmsKeyIdentifier() == null)
+            return false;
+        if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
+            return false;
+        if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
+            return false;
+        if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
+            return false;
         if (other.getPolicy() == null ^ this.getPolicy() == null)
             return false;
         if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
         return true;
     }
@@ -216,7 +497,12 @@ public class DescribeEventBusResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         return hashCode;
     }
 

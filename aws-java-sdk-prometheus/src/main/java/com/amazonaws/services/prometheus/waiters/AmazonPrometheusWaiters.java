@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,19 @@ public class AmazonPrometheusWaiters {
     }
 
     /**
+     * Builds a ScraperDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeScraperRequest> scraperDeleted() {
+
+        return new WaiterBuilder<DescribeScraperRequest, DescribeScraperResult>().withSdkFunction(new DescribeScraperFunction(client))
+                .withAcceptors(new ScraperDeleted.IsResourceNotFoundExceptionMatcher(), new ScraperDeleted.IsDELETION_FAILEDMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(2)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a WorkspaceActive waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -64,6 +77,19 @@ public class AmazonPrometheusWaiters {
 
         return new WaiterBuilder<DescribeWorkspaceRequest, DescribeWorkspaceResult>().withSdkFunction(new DescribeWorkspaceFunction(client))
                 .withAcceptors(new WorkspaceActive.IsACTIVEMatcher(), new WorkspaceActive.IsUPDATINGMatcher(), new WorkspaceActive.IsCREATINGMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(2)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a ScraperActive waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeScraperRequest> scraperActive() {
+
+        return new WaiterBuilder<DescribeScraperRequest, DescribeScraperResult>().withSdkFunction(new DescribeScraperFunction(client))
+                .withAcceptors(new ScraperActive.IsACTIVEMatcher(), new ScraperActive.IsCREATION_FAILEDMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(2)))
                 .withExecutorService(executorService).build();
     }

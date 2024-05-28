@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ram.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,14 @@ public class ResourceSharePermissionDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> ISRESOURCETYPEDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isResourceTypeDefault").build();
+    private static final MarshallingInfo<String> PERMISSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionType").build();
+    private static final MarshallingInfo<String> FEATURESET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featureSet").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final ResourceSharePermissionDetailMarshaller instance = new ResourceSharePermissionDetailMarshaller();
 
@@ -71,6 +80,10 @@ public class ResourceSharePermissionDetailMarshaller {
             protocolMarshaller.marshall(resourceSharePermissionDetail.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(resourceSharePermissionDetail.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(resourceSharePermissionDetail.getIsResourceTypeDefault(), ISRESOURCETYPEDEFAULT_BINDING);
+            protocolMarshaller.marshall(resourceSharePermissionDetail.getPermissionType(), PERMISSIONTYPE_BINDING);
+            protocolMarshaller.marshall(resourceSharePermissionDetail.getFeatureSet(), FEATURESET_BINDING);
+            protocolMarshaller.marshall(resourceSharePermissionDetail.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(resourceSharePermissionDetail.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

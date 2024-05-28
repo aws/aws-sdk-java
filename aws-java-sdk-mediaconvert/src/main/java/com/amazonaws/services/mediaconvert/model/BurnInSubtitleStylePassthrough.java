@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,12 +15,13 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from
- * your input captions. MediaConvert uses default settings for any missing style and position information in your input
- * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your
- * input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic
- * sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the
- * individual style and position settings.
+ * To use the available style, color, and position information from your input captions: Set Style passthrough to
+ * Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input
+ * captions To ignore the style and position information from your input captions and use default settings: Leave blank
+ * or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center
+ * positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to
+ * manually override any of the individual style and position settings. You can also override any fonts by manually
+ * specifying custom font files.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BurnInSubtitleStylePassthrough {

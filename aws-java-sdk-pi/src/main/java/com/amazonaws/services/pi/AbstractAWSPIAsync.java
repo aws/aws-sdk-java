@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,36 @@ public class AbstractAWSPIAsync extends AbstractAWSPI implements AWSPIAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePerformanceAnalysisReportResult> createPerformanceAnalysisReportAsync(
+            CreatePerformanceAnalysisReportRequest request) {
+
+        return createPerformanceAnalysisReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePerformanceAnalysisReportResult> createPerformanceAnalysisReportAsync(
+            CreatePerformanceAnalysisReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePerformanceAnalysisReportRequest, CreatePerformanceAnalysisReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePerformanceAnalysisReportResult> deletePerformanceAnalysisReportAsync(
+            DeletePerformanceAnalysisReportRequest request) {
+
+        return deletePerformanceAnalysisReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePerformanceAnalysisReportResult> deletePerformanceAnalysisReportAsync(
+            DeletePerformanceAnalysisReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePerformanceAnalysisReportRequest, DeletePerformanceAnalysisReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDimensionKeysResult> describeDimensionKeysAsync(DescribeDimensionKeysRequest request) {
 
         return describeDimensionKeysAsync(request, null);
@@ -48,6 +78,19 @@ public class AbstractAWSPIAsync extends AbstractAWSPI implements AWSPIAsync {
     @Override
     public java.util.concurrent.Future<GetDimensionKeyDetailsResult> getDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDimensionKeyDetailsRequest, GetDimensionKeyDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPerformanceAnalysisReportResult> getPerformanceAnalysisReportAsync(GetPerformanceAnalysisReportRequest request) {
+
+        return getPerformanceAnalysisReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPerformanceAnalysisReportResult> getPerformanceAnalysisReportAsync(GetPerformanceAnalysisReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPerformanceAnalysisReportRequest, GetPerformanceAnalysisReportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -102,6 +145,58 @@ public class AbstractAWSPIAsync extends AbstractAWSPI implements AWSPIAsync {
     @Override
     public java.util.concurrent.Future<ListAvailableResourceMetricsResult> listAvailableResourceMetricsAsync(ListAvailableResourceMetricsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAvailableResourceMetricsRequest, ListAvailableResourceMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPerformanceAnalysisReportsResult> listPerformanceAnalysisReportsAsync(ListPerformanceAnalysisReportsRequest request) {
+
+        return listPerformanceAnalysisReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPerformanceAnalysisReportsResult> listPerformanceAnalysisReportsAsync(ListPerformanceAnalysisReportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPerformanceAnalysisReportsRequest, ListPerformanceAnalysisReportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

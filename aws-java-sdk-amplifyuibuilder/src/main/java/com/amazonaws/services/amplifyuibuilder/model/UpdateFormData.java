@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * The name of the form.
      * </p>
      */
-    private FormCTA cta;
+    private String name;
     /**
      * <p>
      * The type of data source to use to create the form.
@@ -42,28 +42,22 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
     private FormDataTypeConfig dataType;
     /**
      * <p>
-     * The configuration information for the form's fields.
-     * </p>
-     */
-    private java.util.Map<String, FieldConfig> fields;
-    /**
-     * <p>
      * Specifies whether to perform a create or update action on the form.
      * </p>
      */
     private String formActionType;
     /**
      * <p>
-     * The name of the form.
+     * The configuration information for the form's fields.
      * </p>
      */
-    private String name;
+    private java.util.Map<String, FieldConfig> fields;
     /**
      * <p>
-     * The schema version of the form.
+     * The configuration for the form's style.
      * </p>
      */
-    private String schemaVersion;
+    private FormStyle style;
     /**
      * <p>
      * The configuration information for the visual helper elements for the form. These elements are not associated with
@@ -73,48 +67,60 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, SectionalElement> sectionalElements;
     /**
      * <p>
-     * The configuration for the form's style.
+     * The schema version of the form.
      * </p>
      */
-    private FormStyle style;
-
+    private String schemaVersion;
     /**
      * <p>
      * The <code>FormCTA</code> object that stores the call to action configuration for the form.
      * </p>
+     */
+    private FormCTA cta;
+    /**
+     * <p>
+     * Specifies an icon or decoration to display on the form.
+     * </p>
+     */
+    private String labelDecorator;
+
+    /**
+     * <p>
+     * The name of the form.
+     * </p>
      * 
-     * @param cta
-     *        The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * @param name
+     *        The name of the form.
      */
 
-    public void setCta(FormCTA cta) {
-        this.cta = cta;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * <p>
-     * The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * The name of the form.
      * </p>
      * 
-     * @return The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * @return The name of the form.
      */
 
-    public FormCTA getCta() {
-        return this.cta;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <p>
-     * The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * The name of the form.
      * </p>
      * 
-     * @param cta
-     *        The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * @param name
+     *        The name of the form.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFormData withCta(FormCTA cta) {
-        setCta(cta);
+    public UpdateFormData withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -155,6 +161,65 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
 
     public UpdateFormData withDataType(FormDataTypeConfig dataType) {
         setDataType(dataType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to perform a create or update action on the form.
+     * </p>
+     * 
+     * @param formActionType
+     *        Specifies whether to perform a create or update action on the form.
+     * @see FormActionType
+     */
+
+    public void setFormActionType(String formActionType) {
+        this.formActionType = formActionType;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to perform a create or update action on the form.
+     * </p>
+     * 
+     * @return Specifies whether to perform a create or update action on the form.
+     * @see FormActionType
+     */
+
+    public String getFormActionType() {
+        return this.formActionType;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to perform a create or update action on the form.
+     * </p>
+     * 
+     * @param formActionType
+     *        Specifies whether to perform a create or update action on the form.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FormActionType
+     */
+
+    public UpdateFormData withFormActionType(String formActionType) {
+        setFormActionType(formActionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to perform a create or update action on the form.
+     * </p>
+     * 
+     * @param formActionType
+     *        Specifies whether to perform a create or update action on the form.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FormActionType
+     */
+
+    public UpdateFormData withFormActionType(FormActionType formActionType) {
+        this.formActionType = formActionType.toString();
         return this;
     }
 
@@ -228,140 +293,41 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether to perform a create or update action on the form.
+     * The configuration for the form's style.
      * </p>
      * 
-     * @param formActionType
-     *        Specifies whether to perform a create or update action on the form.
-     * @see FormActionType
+     * @param style
+     *        The configuration for the form's style.
      */
 
-    public void setFormActionType(String formActionType) {
-        this.formActionType = formActionType;
+    public void setStyle(FormStyle style) {
+        this.style = style;
     }
 
     /**
      * <p>
-     * Specifies whether to perform a create or update action on the form.
+     * The configuration for the form's style.
      * </p>
      * 
-     * @return Specifies whether to perform a create or update action on the form.
-     * @see FormActionType
+     * @return The configuration for the form's style.
      */
 
-    public String getFormActionType() {
-        return this.formActionType;
+    public FormStyle getStyle() {
+        return this.style;
     }
 
     /**
      * <p>
-     * Specifies whether to perform a create or update action on the form.
+     * The configuration for the form's style.
      * </p>
      * 
-     * @param formActionType
-     *        Specifies whether to perform a create or update action on the form.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FormActionType
-     */
-
-    public UpdateFormData withFormActionType(String formActionType) {
-        setFormActionType(formActionType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies whether to perform a create or update action on the form.
-     * </p>
-     * 
-     * @param formActionType
-     *        Specifies whether to perform a create or update action on the form.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see FormActionType
-     */
-
-    public UpdateFormData withFormActionType(FormActionType formActionType) {
-        this.formActionType = formActionType.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the form.
-     * </p>
-     * 
-     * @param name
-     *        The name of the form.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name of the form.
-     * </p>
-     * 
-     * @return The name of the form.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the form.
-     * </p>
-     * 
-     * @param name
-     *        The name of the form.
+     * @param style
+     *        The configuration for the form's style.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFormData withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The schema version of the form.
-     * </p>
-     * 
-     * @param schemaVersion
-     *        The schema version of the form.
-     */
-
-    public void setSchemaVersion(String schemaVersion) {
-        this.schemaVersion = schemaVersion;
-    }
-
-    /**
-     * <p>
-     * The schema version of the form.
-     * </p>
-     * 
-     * @return The schema version of the form.
-     */
-
-    public String getSchemaVersion() {
-        return this.schemaVersion;
-    }
-
-    /**
-     * <p>
-     * The schema version of the form.
-     * </p>
-     * 
-     * @param schemaVersion
-     *        The schema version of the form.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateFormData withSchemaVersion(String schemaVersion) {
-        setSchemaVersion(schemaVersion);
+    public UpdateFormData withStyle(FormStyle style) {
+        setStyle(style);
         return this;
     }
 
@@ -441,41 +407,140 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the form's style.
+     * The schema version of the form.
      * </p>
      * 
-     * @param style
-     *        The configuration for the form's style.
+     * @param schemaVersion
+     *        The schema version of the form.
      */
 
-    public void setStyle(FormStyle style) {
-        this.style = style;
+    public void setSchemaVersion(String schemaVersion) {
+        this.schemaVersion = schemaVersion;
     }
 
     /**
      * <p>
-     * The configuration for the form's style.
+     * The schema version of the form.
      * </p>
      * 
-     * @return The configuration for the form's style.
+     * @return The schema version of the form.
      */
 
-    public FormStyle getStyle() {
-        return this.style;
+    public String getSchemaVersion() {
+        return this.schemaVersion;
     }
 
     /**
      * <p>
-     * The configuration for the form's style.
+     * The schema version of the form.
      * </p>
      * 
-     * @param style
-     *        The configuration for the form's style.
+     * @param schemaVersion
+     *        The schema version of the form.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateFormData withStyle(FormStyle style) {
-        setStyle(style);
+    public UpdateFormData withSchemaVersion(String schemaVersion) {
+        setSchemaVersion(schemaVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * </p>
+     * 
+     * @param cta
+     *        The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     */
+
+    public void setCta(FormCTA cta) {
+        this.cta = cta;
+    }
+
+    /**
+     * <p>
+     * The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * </p>
+     * 
+     * @return The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     */
+
+    public FormCTA getCta() {
+        return this.cta;
+    }
+
+    /**
+     * <p>
+     * The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * </p>
+     * 
+     * @param cta
+     *        The <code>FormCTA</code> object that stores the call to action configuration for the form.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFormData withCta(FormCTA cta) {
+        setCta(cta);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies an icon or decoration to display on the form.
+     * </p>
+     * 
+     * @param labelDecorator
+     *        Specifies an icon or decoration to display on the form.
+     * @see LabelDecorator
+     */
+
+    public void setLabelDecorator(String labelDecorator) {
+        this.labelDecorator = labelDecorator;
+    }
+
+    /**
+     * <p>
+     * Specifies an icon or decoration to display on the form.
+     * </p>
+     * 
+     * @return Specifies an icon or decoration to display on the form.
+     * @see LabelDecorator
+     */
+
+    public String getLabelDecorator() {
+        return this.labelDecorator;
+    }
+
+    /**
+     * <p>
+     * Specifies an icon or decoration to display on the form.
+     * </p>
+     * 
+     * @param labelDecorator
+     *        Specifies an icon or decoration to display on the form.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LabelDecorator
+     */
+
+    public UpdateFormData withLabelDecorator(String labelDecorator) {
+        setLabelDecorator(labelDecorator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies an icon or decoration to display on the form.
+     * </p>
+     * 
+     * @param labelDecorator
+     *        Specifies an icon or decoration to display on the form.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LabelDecorator
+     */
+
+    public UpdateFormData withLabelDecorator(LabelDecorator labelDecorator) {
+        this.labelDecorator = labelDecorator.toString();
         return this;
     }
 
@@ -491,22 +556,24 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCta() != null)
-            sb.append("Cta: ").append(getCta()).append(",");
-        if (getDataType() != null)
-            sb.append("DataType: ").append(getDataType()).append(",");
-        if (getFields() != null)
-            sb.append("Fields: ").append(getFields()).append(",");
-        if (getFormActionType() != null)
-            sb.append("FormActionType: ").append(getFormActionType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
+        if (getDataType() != null)
+            sb.append("DataType: ").append(getDataType()).append(",");
+        if (getFormActionType() != null)
+            sb.append("FormActionType: ").append(getFormActionType()).append(",");
+        if (getFields() != null)
+            sb.append("Fields: ").append(getFields()).append(",");
+        if (getStyle() != null)
+            sb.append("Style: ").append(getStyle()).append(",");
         if (getSectionalElements() != null)
             sb.append("SectionalElements: ").append(getSectionalElements()).append(",");
-        if (getStyle() != null)
-            sb.append("Style: ").append(getStyle());
+        if (getSchemaVersion() != null)
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
+        if (getCta() != null)
+            sb.append("Cta: ").append(getCta()).append(",");
+        if (getLabelDecorator() != null)
+            sb.append("LabelDecorator: ").append(getLabelDecorator());
         sb.append("}");
         return sb.toString();
     }
@@ -521,37 +588,41 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof UpdateFormData == false)
             return false;
         UpdateFormData other = (UpdateFormData) obj;
-        if (other.getCta() == null ^ this.getCta() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getCta() != null && other.getCta().equals(this.getCta()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getDataType() == null ^ this.getDataType() == null)
             return false;
         if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
-        if (other.getFields() == null ^ this.getFields() == null)
-            return false;
-        if (other.getFields() != null && other.getFields().equals(this.getFields()) == false)
-            return false;
         if (other.getFormActionType() == null ^ this.getFormActionType() == null)
             return false;
         if (other.getFormActionType() != null && other.getFormActionType().equals(this.getFormActionType()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getFields() == null ^ this.getFields() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getFields() != null && other.getFields().equals(this.getFields()) == false)
             return false;
-        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
+        if (other.getStyle() == null ^ this.getStyle() == null)
             return false;
-        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
+        if (other.getStyle() != null && other.getStyle().equals(this.getStyle()) == false)
             return false;
         if (other.getSectionalElements() == null ^ this.getSectionalElements() == null)
             return false;
         if (other.getSectionalElements() != null && other.getSectionalElements().equals(this.getSectionalElements()) == false)
             return false;
-        if (other.getStyle() == null ^ this.getStyle() == null)
+        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
             return false;
-        if (other.getStyle() != null && other.getStyle().equals(this.getStyle()) == false)
+        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
+            return false;
+        if (other.getCta() == null ^ this.getCta() == null)
+            return false;
+        if (other.getCta() != null && other.getCta().equals(this.getCta()) == false)
+            return false;
+        if (other.getLabelDecorator() == null ^ this.getLabelDecorator() == null)
+            return false;
+        if (other.getLabelDecorator() != null && other.getLabelDecorator().equals(this.getLabelDecorator()) == false)
             return false;
         return true;
     }
@@ -561,14 +632,15 @@ public class UpdateFormData implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCta() == null) ? 0 : getCta().hashCode());
-        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
-        hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode());
-        hashCode = prime * hashCode + ((getFormActionType() == null) ? 0 : getFormActionType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
-        hashCode = prime * hashCode + ((getSectionalElements() == null) ? 0 : getSectionalElements().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getFormActionType() == null) ? 0 : getFormActionType().hashCode());
+        hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode());
         hashCode = prime * hashCode + ((getStyle() == null) ? 0 : getStyle().hashCode());
+        hashCode = prime * hashCode + ((getSectionalElements() == null) ? 0 : getSectionalElements().hashCode());
+        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
+        hashCode = prime * hashCode + ((getCta() == null) ? 0 : getCta().hashCode());
+        hashCode = prime * hashCode + ((getLabelDecorator() == null) ? 0 : getLabelDecorator().hashCode());
         return hashCode;
     }
 

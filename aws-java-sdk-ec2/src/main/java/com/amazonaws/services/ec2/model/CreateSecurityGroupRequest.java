@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,13 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      */
     private String description;
@@ -48,16 +45,13 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     * The ID of the VPC. Required for a nondefault VPC.
      * </p>
      */
     private String vpcId;
@@ -85,21 +79,15 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *        </p>
      *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     *        Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * @param description
-     *        A description for the security group. This is informational only.
+     *        A description for the security group.
      *        </p>
      *        <p>
      *        Constraints: Up to 255 characters in length
      *        </p>
      *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     *        Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
      **/
     public CreateSecurityGroupRequest(String groupName, String description) {
         setGroupName(groupName);
@@ -108,28 +96,22 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param description
-     *        A description for the security group. This is informational only.</p>
+     *        A description for the security group.</p>
      *        <p>
      *        Constraints: Up to 255 characters in length
      *        </p>
      *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     *        Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public void setDescription(String description) {
@@ -138,27 +120,21 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
-     * @return A description for the security group. This is informational only.</p>
+     * @return A description for the security group.</p>
      *         <p>
      *         Constraints: Up to 255 characters in length
      *         </p>
      *         <p>
-     *         Constraints for EC2-Classic: ASCII characters
-     *         </p>
-     *         <p>
-     *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     *         Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public String getDescription() {
@@ -167,28 +143,22 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param description
-     *        A description for the security group. This is informational only.</p>
+     *        A description for the security group.</p>
      *        <p>
      *        Constraints: Up to 255 characters in length
      *        </p>
      *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     *        Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,10 +175,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param groupName
@@ -217,10 +184,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *        </p>
      *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     *        Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public void setGroupName(String groupName) {
@@ -235,10 +199,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @return The name of the security group.</p>
@@ -246,10 +207,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *         Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *         </p>
      *         <p>
-     *         Constraints for EC2-Classic: ASCII characters
-     *         </p>
-     *         <p>
-     *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     *         Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public String getGroupName() {
@@ -264,10 +222,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      * </p>
      * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param groupName
@@ -276,10 +231,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
      *        </p>
      *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     *        Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,11 +242,11 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     * The ID of the VPC. Required for a nondefault VPC.
      * </p>
      * 
      * @param vpcId
-     *        [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     *        The ID of the VPC. Required for a nondefault VPC.
      */
 
     public void setVpcId(String vpcId) {
@@ -303,10 +255,10 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     * The ID of the VPC. Required for a nondefault VPC.
      * </p>
      * 
-     * @return [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     * @return The ID of the VPC. Required for a nondefault VPC.
      */
 
     public String getVpcId() {
@@ -315,11 +267,11 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     * The ID of the VPC. Required for a nondefault VPC.
      * </p>
      * 
      * @param vpcId
-     *        [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
+     *        The ID of the VPC. Required for a nondefault VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

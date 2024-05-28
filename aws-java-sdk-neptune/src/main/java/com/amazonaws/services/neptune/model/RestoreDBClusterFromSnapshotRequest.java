@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -221,8 +221,29 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private Boolean copyTagsToSnapshot;
-
+    /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     */
     private ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration;
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code>, <code>iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -1617,7 +1638,21 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public void setServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
@@ -1625,7 +1660,20 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
+     * @return Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *         Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public ServerlessV2ScalingConfiguration getServerlessV2ScalingConfiguration() {
@@ -1633,12 +1681,99 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RestoreDBClusterFromSnapshotRequest withServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
         setServerlessV2ScalingConfiguration(serverlessV2ScalingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code>, <code>iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param storageType
+     *        Specifies the storage type to be associated with the DB cluster.</p>
+     *        <p>
+     *        Valid values: <code>standard</code>, <code>iopt1</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>standard</code>
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code>, <code>iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @return Specifies the storage type to be associated with the DB cluster.</p>
+     *         <p>
+     *         Valid values: <code>standard</code>, <code>iopt1</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>standard</code>
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage type to be associated with the DB cluster.
+     * </p>
+     * <p>
+     * Valid values: <code>standard</code>, <code>iopt1</code>
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param storageType
+     *        Specifies the storage type to be associated with the DB cluster.</p>
+     *        <p>
+     *        Valid values: <code>standard</code>, <code>iopt1</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>standard</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromSnapshotRequest withStorageType(String storageType) {
+        setStorageType(storageType);
         return this;
     }
 
@@ -1689,7 +1824,9 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getServerlessV2ScalingConfiguration() != null)
-            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration());
+            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -1778,6 +1915,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (other.getServerlessV2ScalingConfiguration() != null
                 && other.getServerlessV2ScalingConfiguration().equals(this.getServerlessV2ScalingConfiguration()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -1804,6 +1945,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

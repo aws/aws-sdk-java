@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,12 +31,17 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
     private String accessorId;
     /**
      * <p>
-     * The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node.
-     * The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.
+     * The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network.
+     * The billing token is used to track your accessor token for billing requests.
      * </p>
      */
     private String billingToken;
+    /**
+     * <p>
+     * The blockchain network that the accessor token is created for.
+     * </p>
+     */
+    private String networkType;
 
     /**
      * <p>
@@ -80,15 +85,13 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node.
-     * The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.
+     * The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network.
+     * The billing token is used to track your accessor token for billing requests.
      * </p>
      * 
      * @param billingToken
-     *        The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your
-     *        Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests
-     *        made to your Ethereum nodes.
+     *        The billing token is a property of the Accessor. Use this token to when making calls to the blockchain
+     *        network. The billing token is used to track your accessor token for billing requests.
      */
 
     public void setBillingToken(String billingToken) {
@@ -97,14 +100,12 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node.
-     * The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.
+     * The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network.
+     * The billing token is used to track your accessor token for billing requests.
      * </p>
      * 
-     * @return The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your
-     *         Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests
-     *         made to your Ethereum nodes.
+     * @return The billing token is a property of the Accessor. Use this token to when making calls to the blockchain
+     *         network. The billing token is used to track your accessor token for billing requests.
      */
 
     public String getBillingToken() {
@@ -113,20 +114,77 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node.
-     * The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.
+     * The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network.
+     * The billing token is used to track your accessor token for billing requests.
      * </p>
      * 
      * @param billingToken
-     *        The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your
-     *        Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests
-     *        made to your Ethereum nodes.
+     *        The billing token is a property of the Accessor. Use this token to when making calls to the blockchain
+     *        network. The billing token is used to track your accessor token for billing requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAccessorResult withBillingToken(String billingToken) {
         setBillingToken(billingToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the accessor token is created for.
+     * </p>
+     * 
+     * @param networkType
+     *        The blockchain network that the accessor token is created for.
+     * @see AccessorNetworkType
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the accessor token is created for.
+     * </p>
+     * 
+     * @return The blockchain network that the accessor token is created for.
+     * @see AccessorNetworkType
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the accessor token is created for.
+     * </p>
+     * 
+     * @param networkType
+     *        The blockchain network that the accessor token is created for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessorNetworkType
+     */
+
+    public CreateAccessorResult withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The blockchain network that the accessor token is created for.
+     * </p>
+     * 
+     * @param networkType
+     *        The blockchain network that the accessor token is created for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessorNetworkType
+     */
+
+    public CreateAccessorResult withNetworkType(AccessorNetworkType networkType) {
+        this.networkType = networkType.toString();
         return this;
     }
 
@@ -145,7 +203,9 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getAccessorId() != null)
             sb.append("AccessorId: ").append(getAccessorId()).append(",");
         if (getBillingToken() != null)
-            sb.append("BillingToken: ").append(getBillingToken());
+            sb.append("BillingToken: ").append(getBillingToken()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType());
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +228,10 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getBillingToken() != null && other.getBillingToken().equals(this.getBillingToken()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
         return true;
     }
 
@@ -178,6 +242,7 @@ public class CreateAccessorResult extends com.amazonaws.AmazonWebServiceResult<c
 
         hashCode = prime * hashCode + ((getAccessorId() == null) ? 0 : getAccessorId().hashCode());
         hashCode = prime * hashCode + ((getBillingToken() == null) ? 0 : getBillingToken().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         return hashCode;
     }
 

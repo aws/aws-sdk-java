@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,21 +28,23 @@ import com.amazonaws.services.health.model.*;
  * <p>
  * <fullname>Health</fullname>
  * <p>
- * The Health API provides programmatic access to the Health information that appears in the <a
- * href="https://phd.aws.amazon.com/phd/home#/">Personal Health Dashboard</a>. You can use the API operations to get
- * information about events that might affect your Amazon Web Services services and resources.
+ * The Health API provides access to the Health information that appears in the <a
+ * href="https://health.aws.amazon.com/health/home">Health Dashboard</a>. You can use the API operations to get
+ * information about events that might affect your Amazon Web Services and resources.
  * </p>
- * <note>
- * <ul>
- * <li>
  * <p>
  * You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a
  * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to use the Health API. If you call the
  * Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
  * Support plan, you receive a <code>SubscriptionRequiredException</code> error.
  * </p>
- * </li>
- * <li>
+ * <p>
+ * For API access, you need an access key ID and a secret access key. Use temporary credentials instead of long-term
+ * access keys when possible. Temporary credentials include an access key ID, a secret access key, and a security token
+ * that indicates when the credentials expire. For more information, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best practices for managing
+ * Amazon Web Services access keys</a> in the <i>Amazon Web Services General Reference</i>.
+ * </p>
  * <p>
  * You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS) to call the Health API operations. Health
  * supports a multi-Region application architecture and has two regional endpoints in an active-passive configuration.
@@ -51,9 +53,6 @@ import com.amazonaws.services.health.model.*;
  * href="https://docs.aws.amazon.com/health/latest/ug/health-api.html">Accessing the Health API</a> in the <i>Health
  * User Guide</i>.
  * </p>
- * </li>
- * </ul>
- * </note>
  * <p>
  * For authentication of requests, Health uses the <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
@@ -186,8 +185,8 @@ public interface AWSHealth {
      * <p>
      * Returns a list of entities that have been affected by the specified events, based on the specified filter
      * criteria. Entities can refer to individual customer resources, groups of customer resources, or any other
-     * construct, depending on the Amazon Web Services service. Events that have impact beyond that of the affected
-     * entities, or where the extent of impact is unknown, include at least one entity indicating this.
+     * construct, depending on the Amazon Web Service. Events that have impact beyond that of the affected entities, or
+     * where the extent of impact is unknown, include at least one entity indicating this.
      * </p>
      * <p>
      * At least one event ARN is required.
@@ -227,7 +226,7 @@ public interface AWSHealth {
      * <p>
      * Returns a list of entities that have been affected by one or more events for one or more accounts in your
      * organization in Organizations, based on the filter criteria. Entities can refer to individual customer resources,
-     * groups of customer resources, or any other construct, depending on the Amazon Web Services service.
+     * groups of customer resources, or any other construct, depending on the Amazon Web Service.
      * </p>
      * <p>
      * At least one event Amazon Resource Name (ARN) and account ID are required.
@@ -282,6 +281,20 @@ public interface AWSHealth {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest);
+
+    /**
+     * <p>
+     * Returns a list of entity aggregates for your Organizations that are affected by each of the specified events.
+     * </p>
+     * 
+     * @param describeEntityAggregatesForOrganizationRequest
+     * @return Result of the DescribeEntityAggregatesForOrganization operation returned by the service.
+     * @sample AWSHealth.DescribeEntityAggregatesForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEntityAggregatesForOrganizationResult describeEntityAggregatesForOrganization(
+            DescribeEntityAggregatesForOrganizationRequest describeEntityAggregatesForOrganizationRequest);
 
     /**
      * <p>
@@ -402,8 +415,8 @@ public interface AWSHealth {
     /**
      * <p>
      * Returns the event types that meet the specified filter criteria. You can use this API operation to find
-     * information about the Health event, such as the category, Amazon Web Services service, and event code. The
-     * metadata for each event appears in the <a
+     * information about the Health event, such as the category, Amazon Web Service, and event code. The metadata for
+     * each event appears in the <a
      * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object.
      * </p>
      * <p>
@@ -541,8 +554,7 @@ public interface AWSHealth {
     /**
      * <p>
      * This operation provides status information on enabling or disabling Health to work with your organization. To
-     * call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not
-     * recommended) in the organization's management account.
+     * call this operation, you must use the organization's management account.
      * </p>
      * 
      * @param describeHealthServiceStatusForOrganizationRequest
@@ -557,9 +569,8 @@ public interface AWSHealth {
 
     /**
      * <p>
-     * Disables Health from working with Organizations. To call this operation, you must sign in as an Identity and
-     * Access Management (IAM) user, assume an IAM role, or sign in as the root user (not recommended) in the
-     * organization's management account. For more information, see <a
+     * Disables Health from working with Organizations. To call this operation, you must sign in to the organization's
+     * management account. For more information, see <a
      * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the
      * <i>Health User Guide</i>.
      * </p>

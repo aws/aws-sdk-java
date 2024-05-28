@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
      * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.
+     * <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      * </p>
      */
     private String name;
@@ -48,18 +48,27 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String pythonVersion;
+    /**
+     * <p>
+     * In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your
+     * environment. This field is not used in other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in
+     * the Glue Developer Guide.
+     * </p>
+     */
+    private String runtime;
 
     /**
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
      * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.
+     * <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      * </p>
      * 
      * @param name
      *        The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python
      *        shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     *        <code>gluestreaming</code>.
+     *        <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      */
 
     public void setName(String name) {
@@ -70,12 +79,12 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
      * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.
+     * <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      * </p>
      * 
      * @return The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python
      *         shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     *         <code>gluestreaming</code>.
+     *         <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      */
 
     public String getName() {
@@ -86,13 +95,13 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
      * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.
+     * <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      * </p>
      * 
      * @param name
      *        The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python
      *        shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     *        <code>gluestreaming</code>.
+     *        <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,6 +191,64 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your
+     * environment. This field is not used in other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in
+     * the Glue Developer Guide.
+     * </p>
+     * 
+     * @param runtime
+     *        In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in
+     *        your environment. This field is not used in other job types. For supported runtime environment values, see
+     *        <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime
+     *        environments</a> in the Glue Developer Guide.
+     */
+
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
+    }
+
+    /**
+     * <p>
+     * In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your
+     * environment. This field is not used in other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in
+     * the Glue Developer Guide.
+     * </p>
+     * 
+     * @return In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in
+     *         your environment. This field is not used in other job types. For supported runtime environment values,
+     *         see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime
+     *         environments</a> in the Glue Developer Guide.
+     */
+
+    public String getRuntime() {
+        return this.runtime;
+    }
+
+    /**
+     * <p>
+     * In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your
+     * environment. This field is not used in other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in
+     * the Glue Developer Guide.
+     * </p>
+     * 
+     * @param runtime
+     *        In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in
+     *        your environment. This field is not used in other job types. For supported runtime environment values, see
+     *        <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime
+     *        environments</a> in the Glue Developer Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobCommand withRuntime(String runtime) {
+        setRuntime(runtime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +265,9 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
         if (getScriptLocation() != null)
             sb.append("ScriptLocation: ").append(getScriptLocation()).append(",");
         if (getPythonVersion() != null)
-            sb.append("PythonVersion: ").append(getPythonVersion());
+            sb.append("PythonVersion: ").append(getPythonVersion()).append(",");
+        if (getRuntime() != null)
+            sb.append("Runtime: ").append(getRuntime());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +294,10 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPythonVersion() != null && other.getPythonVersion().equals(this.getPythonVersion()) == false)
             return false;
+        if (other.getRuntime() == null ^ this.getRuntime() == null)
+            return false;
+        if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +309,7 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getScriptLocation() == null) ? 0 : getScriptLocation().hashCode());
         hashCode = prime * hashCode + ((getPythonVersion() == null) ? 0 : getPythonVersion().hashCode());
+        hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
         return hashCode;
     }
 

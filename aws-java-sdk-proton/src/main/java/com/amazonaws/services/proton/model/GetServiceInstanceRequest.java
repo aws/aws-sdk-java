@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
     private String name;
     /**
      * <p>
-     * The name of the service that the service instance belongs to.
+     * The name of the service that you want the service instance input for.
      * </p>
      */
     private String serviceName;
@@ -80,11 +80,11 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the service that the service instance belongs to.
+     * The name of the service that you want the service instance input for.
      * </p>
      * 
      * @param serviceName
-     *        The name of the service that the service instance belongs to.
+     *        The name of the service that you want the service instance input for.
      */
 
     public void setServiceName(String serviceName) {
@@ -93,10 +93,10 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the service that the service instance belongs to.
+     * The name of the service that you want the service instance input for.
      * </p>
      * 
-     * @return The name of the service that the service instance belongs to.
+     * @return The name of the service that you want the service instance input for.
      */
 
     public String getServiceName() {
@@ -105,11 +105,11 @@ public class GetServiceInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the service that the service instance belongs to.
+     * The name of the service that you want the service instance input for.
      * </p>
      * 
      * @param serviceName
-     *        The name of the service that the service instance belongs to.
+     *        The name of the service that you want the service instance input for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

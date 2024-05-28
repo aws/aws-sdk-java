@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the cluster that you are associating with encryption configuration.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -39,18 +39,18 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<EncryptionConfig> encryptionConfig;
     /**
      * <p>
-     * The client request token you are using with the encryption configuration.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
 
     /**
      * <p>
-     * The name of the cluster that you are associating with encryption configuration.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster that you are associating with encryption configuration.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -59,10 +59,10 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the cluster that you are associating with encryption configuration.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster that you are associating with encryption configuration.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -71,11 +71,11 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the cluster that you are associating with encryption configuration.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster that you are associating with encryption configuration.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +156,11 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The client request token you are using with the encryption configuration.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        The client request token you are using with the encryption configuration.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -169,10 +169,10 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The client request token you are using with the encryption configuration.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return The client request token you are using with the encryption configuration.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -181,11 +181,11 @@ public class AssociateEncryptionConfigRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The client request token you are using with the encryption configuration.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        The client request token you are using with the encryption configuration.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,22 @@ public class BurninDestinationSettingsJsonUnmarshaller implements Unmarshaller<B
                 if (context.testExpression("fontColor", targetDepth)) {
                     context.nextToken();
                     burninDestinationSettings.setFontColor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fontFileBold", targetDepth)) {
+                    context.nextToken();
+                    burninDestinationSettings.setFontFileBold(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fontFileBoldItalic", targetDepth)) {
+                    context.nextToken();
+                    burninDestinationSettings.setFontFileBoldItalic(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fontFileItalic", targetDepth)) {
+                    context.nextToken();
+                    burninDestinationSettings.setFontFileItalic(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fontFileRegular", targetDepth)) {
+                    context.nextToken();
+                    burninDestinationSettings.setFontFileRegular(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fontOpacity", targetDepth)) {
                     context.nextToken();

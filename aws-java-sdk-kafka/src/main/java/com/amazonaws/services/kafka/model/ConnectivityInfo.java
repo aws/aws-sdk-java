@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private PublicAccess publicAccess;
+    /**
+     * <p>
+     * VPC connectivity access control for brokers.
+     * </p>
+     */
+    private VpcConnectivity vpcConnectivity;
 
     /**
      * <p>
@@ -83,6 +89,52 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * VPC connectivity access control for brokers.
+     * </p>
+     * 
+     * @param vpcConnectivity
+     *        <p>
+     *        VPC connectivity access control for brokers.
+     *        </p>
+     */
+
+    public void setVpcConnectivity(VpcConnectivity vpcConnectivity) {
+        this.vpcConnectivity = vpcConnectivity;
+    }
+
+    /**
+     * <p>
+     * VPC connectivity access control for brokers.
+     * </p>
+     * 
+     * @return <p>
+     *         VPC connectivity access control for brokers.
+     *         </p>
+     */
+
+    public VpcConnectivity getVpcConnectivity() {
+        return this.vpcConnectivity;
+    }
+
+    /**
+     * <p>
+     * VPC connectivity access control for brokers.
+     * </p>
+     * 
+     * @param vpcConnectivity
+     *        <p>
+     *        VPC connectivity access control for brokers.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectivityInfo withVpcConnectivity(VpcConnectivity vpcConnectivity) {
+        setVpcConnectivity(vpcConnectivity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +147,9 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicAccess() != null)
-            sb.append("PublicAccess: ").append(getPublicAccess());
+            sb.append("PublicAccess: ").append(getPublicAccess()).append(",");
+        if (getVpcConnectivity() != null)
+            sb.append("VpcConnectivity: ").append(getVpcConnectivity());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +168,10 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getPublicAccess() != null && other.getPublicAccess().equals(this.getPublicAccess()) == false)
             return false;
+        if (other.getVpcConnectivity() == null ^ this.getVpcConnectivity() == null)
+            return false;
+        if (other.getVpcConnectivity() != null && other.getVpcConnectivity().equals(this.getVpcConnectivity()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +181,7 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPublicAccess() == null) ? 0 : getPublicAccess().hashCode());
+        hashCode = prime * hashCode + ((getVpcConnectivity() == null) ? 0 : getVpcConnectivity().hashCode());
         return hashCode;
     }
 

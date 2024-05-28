@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class AppImageConfigDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> KERNELGATEWAYIMAGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KernelGatewayImageConfig").build();
+    private static final MarshallingInfo<StructuredPojo> JUPYTERLABAPPIMAGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JupyterLabAppImageConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CODEEDITORAPPIMAGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeEditorAppImageConfig").build();
 
     private static final AppImageConfigDetailsMarshaller instance = new AppImageConfigDetailsMarshaller();
 
@@ -59,6 +63,8 @@ public class AppImageConfigDetailsMarshaller {
             protocolMarshaller.marshall(appImageConfigDetails.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(appImageConfigDetails.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(appImageConfigDetails.getKernelGatewayImageConfig(), KERNELGATEWAYIMAGECONFIG_BINDING);
+            protocolMarshaller.marshall(appImageConfigDetails.getJupyterLabAppImageConfig(), JUPYTERLABAPPIMAGECONFIG_BINDING);
+            protocolMarshaller.marshall(appImageConfigDetails.getCodeEditorAppImageConfig(), CODEEDITORAPPIMAGECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

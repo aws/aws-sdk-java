@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,23 +48,23 @@ public class ComponentDataConfigurationJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("identifiers", targetDepth)) {
-                    context.nextToken();
-                    componentDataConfiguration.setIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("model", targetDepth)) {
                     context.nextToken();
                     componentDataConfiguration.setModel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sort", targetDepth)) {
+                    context.nextToken();
+                    componentDataConfiguration.setSort(new ListUnmarshaller<SortProperty>(SortPropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("predicate", targetDepth)) {
                     context.nextToken();
                     componentDataConfiguration.setPredicate(PredicateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("sort", targetDepth)) {
+                if (context.testExpression("identifiers", targetDepth)) {
                     context.nextToken();
-                    componentDataConfiguration.setSort(new ListUnmarshaller<SortProperty>(SortPropertyJsonUnmarshaller.getInstance())
+                    componentDataConfiguration.setIdentifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }

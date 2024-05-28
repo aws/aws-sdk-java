@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.voiceid.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class FraudsterMarshaller {
             .marshallLocationName("DomainId").build();
     private static final MarshallingInfo<String> GENERATEDFRAUDSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeneratedFraudsterId").build();
+    private static final MarshallingInfo<List> WATCHLISTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WatchlistIds").build();
 
     private static final FraudsterMarshaller instance = new FraudsterMarshaller();
 
@@ -53,6 +56,7 @@ public class FraudsterMarshaller {
             protocolMarshaller.marshall(fraudster.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(fraudster.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(fraudster.getGeneratedFraudsterId(), GENERATEDFRAUDSTERID_BINDING);
+            protocolMarshaller.marshall(fraudster.getWatchlistIds(), WATCHLISTIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

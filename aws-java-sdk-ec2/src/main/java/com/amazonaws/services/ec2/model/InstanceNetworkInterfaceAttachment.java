@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
      * </p>
      */
     private Integer networkCardIndex;
+    /**
+     * <p>
+     * Contains the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     */
+    private InstanceAttachmentEnaSrdSpecification enaSrdSpecification;
 
     /**
      * <p>
@@ -349,6 +355,46 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Contains the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Contains the ENA Express settings for the network interface that's attached to the instance.
+     */
+
+    public void setEnaSrdSpecification(InstanceAttachmentEnaSrdSpecification enaSrdSpecification) {
+        this.enaSrdSpecification = enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Contains the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     * 
+     * @return Contains the ENA Express settings for the network interface that's attached to the instance.
+     */
+
+    public InstanceAttachmentEnaSrdSpecification getEnaSrdSpecification() {
+        return this.enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Contains the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Contains the ENA Express settings for the network interface that's attached to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceAttachment withEnaSrdSpecification(InstanceAttachmentEnaSrdSpecification enaSrdSpecification) {
+        setEnaSrdSpecification(enaSrdSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -371,7 +417,9 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getNetworkCardIndex() != null)
-            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex()).append(",");
+        if (getEnaSrdSpecification() != null)
+            sb.append("EnaSrdSpecification: ").append(getEnaSrdSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +458,10 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
             return false;
         if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
             return false;
+        if (other.getEnaSrdSpecification() == null ^ this.getEnaSrdSpecification() == null)
+            return false;
+        if (other.getEnaSrdSpecification() != null && other.getEnaSrdSpecification().equals(this.getEnaSrdSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +476,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSpecification() == null) ? 0 : getEnaSrdSpecification().hashCode());
         return hashCode;
     }
 

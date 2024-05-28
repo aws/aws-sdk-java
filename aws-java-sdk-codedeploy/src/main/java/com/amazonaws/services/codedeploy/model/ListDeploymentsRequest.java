@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -112,7 +112,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -122,8 +122,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * 
      * @param applicationName
-     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-     *        <note>
+     *        The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
      *        <p>
      *        If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If
      *        it is not specified, then <code>deploymentGroupName</code> must not be specified.
@@ -136,7 +135,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -145,8 +144,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * 
-     * @return The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-     *         <note>
+     * @return The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
      *         <p>
      *         If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If
      *         it is not specified, then <code>deploymentGroupName</code> must not be specified.
@@ -159,7 +157,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -169,8 +167,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * 
      * @param applicationName
-     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-     *        <note>
+     *        The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
      *        <p>
      *        If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If
      *        it is not specified, then <code>deploymentGroupName</code> must not be specified.

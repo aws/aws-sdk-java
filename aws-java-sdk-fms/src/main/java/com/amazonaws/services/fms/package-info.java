@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@
  * Guide</a>.
  * </p>
  * <p>
- * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
- * permissions for API actions</a>.
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a href=
+ * "https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service"
+ * >Service roles for Firewall Manager</a>.
  * </p>
  */
 package com.amazonaws.services.fms;

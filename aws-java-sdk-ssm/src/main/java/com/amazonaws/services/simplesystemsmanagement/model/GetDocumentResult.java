@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,8 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String displayName;
     /**
      * <p>
-     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
-     * unique across all versions of a document, and can't be changed.
+     * The version of the artifact associated with the document. For example, 12.6. This value is unique across all
+     * versions of a document, and can't be changed.
      * </p>
      */
     private String versionName;
@@ -244,13 +244,13 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
-     * unique across all versions of a document, and can't be changed.
+     * The version of the artifact associated with the document. For example, 12.6. This value is unique across all
+     * versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
-     *        The version of the artifact associated with the document. For example, "Release 12, Update 6". This value
-     *        is unique across all versions of a document, and can't be changed.
+     *        The version of the artifact associated with the document. For example, 12.6. This value is unique across
+     *        all versions of a document, and can't be changed.
      */
 
     public void setVersionName(String versionName) {
@@ -259,12 +259,12 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
-     * unique across all versions of a document, and can't be changed.
+     * The version of the artifact associated with the document. For example, 12.6. This value is unique across all
+     * versions of a document, and can't be changed.
      * </p>
      * 
-     * @return The version of the artifact associated with the document. For example, "Release 12, Update 6". This value
-     *         is unique across all versions of a document, and can't be changed.
+     * @return The version of the artifact associated with the document. For example, 12.6. This value is unique across
+     *         all versions of a document, and can't be changed.
      */
 
     public String getVersionName() {
@@ -273,13 +273,13 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
-     * unique across all versions of a document, and can't be changed.
+     * The version of the artifact associated with the document. For example, 12.6. This value is unique across all
+     * versions of a document, and can't be changed.
      * </p>
      * 
      * @param versionName
-     *        The version of the artifact associated with the document. For example, "Release 12, Update 6". This value
-     *        is unique across all versions of a document, and can't be changed.
+     *        The version of the artifact associated with the document. For example, 12.6. This value is unique across
+     *        all versions of a document, and can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

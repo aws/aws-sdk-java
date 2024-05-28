@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies encryption at rest options.
+ * Specifies whether the domain should encrypt data at rest, and if so, the Key Management Service (KMS) key to use. Can
+ * only be used when creating a new domain or enabling encryption at rest for the first time on an existing domain. You
+ * can't modify this parameter after it's already been specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +29,24 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The option to enable encryption at rest.
+     * True to enable encryption at rest.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The KMS key ID for encryption at rest options.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The option to enable encryption at rest.
+     * True to enable encryption at rest.
      * </p>
      * 
      * @param enabled
-     *        The option to enable encryption at rest.
+     *        True to enable encryption at rest.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -53,10 +55,10 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The option to enable encryption at rest.
+     * True to enable encryption at rest.
      * </p>
      * 
-     * @return The option to enable encryption at rest.
+     * @return True to enable encryption at rest.
      */
 
     public Boolean getEnabled() {
@@ -65,11 +67,11 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The option to enable encryption at rest.
+     * True to enable encryption at rest.
      * </p>
      * 
      * @param enabled
-     *        The option to enable encryption at rest.
+     *        True to enable encryption at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +82,10 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The option to enable encryption at rest.
+     * True to enable encryption at rest.
      * </p>
      * 
-     * @return The option to enable encryption at rest.
+     * @return True to enable encryption at rest.
      */
 
     public Boolean isEnabled() {
@@ -92,11 +94,11 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The KMS key ID for encryption at rest options.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key ID for encryption at rest options.
+     *        The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -105,10 +107,10 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The KMS key ID for encryption at rest options.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      * 
-     * @return The KMS key ID for encryption at rest options.
+     * @return The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      */
 
     public String getKmsKeyId() {
@@ -117,11 +119,11 @@ public class EncryptionAtRestOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The KMS key ID for encryption at rest options.
+     * The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key ID for encryption at rest options.
+     *        The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

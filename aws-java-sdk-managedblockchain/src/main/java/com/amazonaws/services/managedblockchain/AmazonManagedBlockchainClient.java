@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.managedblockchain.AmazonManagedBlockchainClientBui
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.managedblockchain.model.*;
+
 import com.amazonaws.services.managedblockchain.model.transform.*;
 
 /**
@@ -169,15 +170,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
     }
 
     /**
-     * <important>
      * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
-     * <p>
-     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has
-     * the information required for token based access to your Ethereum nodes.
+     * Creates a new accessor for use with Amazon Managed Blockchain service that supports token based access. The
+     * accessor contains information required for token based access.
      * </p>
      * 
      * @param createAccessorRequest
@@ -197,6 +192,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      *         boundaries of the service edition and your account limits.
      * @throws InternalServiceErrorException
      *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws TooManyTagsException
      * @sample AmazonManagedBlockchain.CreateAccessor
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor"
      *      target="_top">AWS API Documentation</a>
@@ -550,18 +546,12 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
     }
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the
      * information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
      * After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to
      * <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new
-     * WebSocket requests or HTTP requests. However, WebSocket connections that are initiated while the accessor was in
+     * WebSocket requests or HTTP requests. However, WebSocket connections that were initiated while the accessor was in
      * the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).
      * </p>
      * 
@@ -777,12 +767,6 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
     }
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Returns detailed information about an accessor. An accessor object is a container that has the information
      * required for token based access to your Ethereum nodes.
@@ -1131,12 +1115,6 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
     }
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Returns a list of the accessors and their properties. Accessor objects are containers that have the information
      * required for token based access to your Ethereum nodes.

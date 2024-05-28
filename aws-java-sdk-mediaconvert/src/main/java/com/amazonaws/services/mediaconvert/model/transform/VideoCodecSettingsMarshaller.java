@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class VideoCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpeg2Settings").build();
     private static final MarshallingInfo<StructuredPojo> PRORESSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proresSettings").build();
+    private static final MarshallingInfo<StructuredPojo> UNCOMPRESSEDSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("uncompressedSettings").build();
     private static final MarshallingInfo<StructuredPojo> VC3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vc3Settings").build();
     private static final MarshallingInfo<StructuredPojo> VP8SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -76,6 +78,7 @@ public class VideoCodecSettingsMarshaller {
             protocolMarshaller.marshall(videoCodecSettings.getH265Settings(), H265SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getMpeg2Settings(), MPEG2SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getProresSettings(), PRORESSETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getUncompressedSettings(), UNCOMPRESSEDSETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getVc3Settings(), VC3SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getVp8Settings(), VP8SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getVp9Settings(), VP9SETTINGS_BINDING);

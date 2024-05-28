@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default encryption algorithm that is used in a code signing job.
+     * A specified override of the default encryption algorithm that is used in a code-signing job.
      * </p>
      */
     private String encryptionAlgorithm;
     /**
      * <p>
-     * A specified override of the default hash algorithm that is used in a code signing job.
+     * A specified override of the default hash algorithm that is used in a code-signing job.
      * </p>
      */
     private String hashAlgorithm;
 
     /**
      * <p>
-     * A specified override of the default encryption algorithm that is used in a code signing job.
+     * A specified override of the default encryption algorithm that is used in a code-signing job.
      * </p>
      * 
      * @param encryptionAlgorithm
-     *        A specified override of the default encryption algorithm that is used in a code signing job.
+     *        A specified override of the default encryption algorithm that is used in a code-signing job.
      * @see EncryptionAlgorithm
      */
 
@@ -57,10 +57,10 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default encryption algorithm that is used in a code signing job.
+     * A specified override of the default encryption algorithm that is used in a code-signing job.
      * </p>
      * 
-     * @return A specified override of the default encryption algorithm that is used in a code signing job.
+     * @return A specified override of the default encryption algorithm that is used in a code-signing job.
      * @see EncryptionAlgorithm
      */
 
@@ -70,11 +70,11 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default encryption algorithm that is used in a code signing job.
+     * A specified override of the default encryption algorithm that is used in a code-signing job.
      * </p>
      * 
      * @param encryptionAlgorithm
-     *        A specified override of the default encryption algorithm that is used in a code signing job.
+     *        A specified override of the default encryption algorithm that is used in a code-signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */
@@ -86,11 +86,11 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default encryption algorithm that is used in a code signing job.
+     * A specified override of the default encryption algorithm that is used in a code-signing job.
      * </p>
      * 
      * @param encryptionAlgorithm
-     *        A specified override of the default encryption algorithm that is used in a code signing job.
+     *        A specified override of the default encryption algorithm that is used in a code-signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithm
      */
@@ -102,11 +102,11 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default hash algorithm that is used in a code signing job.
+     * A specified override of the default hash algorithm that is used in a code-signing job.
      * </p>
      * 
      * @param hashAlgorithm
-     *        A specified override of the default hash algorithm that is used in a code signing job.
+     *        A specified override of the default hash algorithm that is used in a code-signing job.
      * @see HashAlgorithm
      */
 
@@ -116,10 +116,10 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default hash algorithm that is used in a code signing job.
+     * A specified override of the default hash algorithm that is used in a code-signing job.
      * </p>
      * 
-     * @return A specified override of the default hash algorithm that is used in a code signing job.
+     * @return A specified override of the default hash algorithm that is used in a code-signing job.
      * @see HashAlgorithm
      */
 
@@ -129,11 +129,11 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default hash algorithm that is used in a code signing job.
+     * A specified override of the default hash algorithm that is used in a code-signing job.
      * </p>
      * 
      * @param hashAlgorithm
-     *        A specified override of the default hash algorithm that is used in a code signing job.
+     *        A specified override of the default hash algorithm that is used in a code-signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */
@@ -145,11 +145,11 @@ public class SigningConfigurationOverrides implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A specified override of the default hash algorithm that is used in a code signing job.
+     * A specified override of the default hash algorithm that is used in a code-signing job.
      * </p>
      * 
      * @param hashAlgorithm
-     *        A specified override of the default hash algorithm that is used in a code signing job.
+     *        A specified override of the default hash algorithm that is used in a code-signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HashAlgorithm
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,21 +31,26 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
     private String versionName;
     /**
      * <p>
-     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-     * to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule
-     * group is modified, such as for new versions and for version expiration. For more information, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer
-     * Guide</a>.
+     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     * notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications
+     * when the managed rule group is modified, such as for new versions and for version expiration. For more
+     * information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification
+     * Service Developer Guide</a>.
      * </p>
      */
     private String snsTopicArn;
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private Long capacity;
@@ -134,19 +139,20 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-     * to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule
-     * group is modified, such as for new versions and for version expiration. For more information, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer
-     * Guide</a>.
+     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     * notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications
+     * when the managed rule group is modified, such as for new versions and for version expiration. For more
+     * information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification
+     * Service Developer Guide</a>.
      * </p>
      * 
      * @param snsTopicArn
-     *        The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record
-     *        changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the
-     *        managed rule group is modified, such as for new versions and for version expiration. For more information,
-     *        see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification
-     *        Service Developer Guide</a>.
+     *        The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     *        notification of changes to the managed rule group. You can subscribe to the SNS topic to receive
+     *        notifications when the managed rule group is modified, such as for new versions and for version
+     *        expiration. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer
+     *        Guide</a>.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -155,18 +161,19 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-     * to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule
-     * group is modified, such as for new versions and for version expiration. For more information, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer
-     * Guide</a>.
+     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     * notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications
+     * when the managed rule group is modified, such as for new versions and for version expiration. For more
+     * information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification
+     * Service Developer Guide</a>.
      * </p>
      * 
-     * @return The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record
-     *         changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the
-     *         managed rule group is modified, such as for new versions and for version expiration. For more
-     *         information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
-     *         Notification Service Developer Guide</a>.
+     * @return The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     *         notification of changes to the managed rule group. You can subscribe to the SNS topic to receive
+     *         notifications when the managed rule group is modified, such as for new versions and for version
+     *         expiration. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service
+     *         Developer Guide</a>.
      */
 
     public String getSnsTopicArn() {
@@ -175,19 +182,20 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-     * to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule
-     * group is modified, such as for new versions and for version expiration. For more information, see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer
-     * Guide</a>.
+     * The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     * notification of changes to the managed rule group. You can subscribe to the SNS topic to receive notifications
+     * when the managed rule group is modified, such as for new versions and for version expiration. For more
+     * information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification
+     * Service Developer Guide</a>.
      * </p>
      * 
      * @param snsTopicArn
-     *        The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record
-     *        changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the
-     *        managed rule group is modified, such as for new versions and for version expiration. For more information,
-     *        see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification
-     *        Service Developer Guide</a>.
+     *        The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to provide
+     *        notification of changes to the managed rule group. You can subscribe to the SNS topic to receive
+     *        notifications when the managed rule group is modified, such as for new versions and for version
+     *        expiration. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer
+     *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,19 +206,28 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param capacity
-     *        The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     *        calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
-     *        WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
-     *        capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
-     *        WCU limit for web ACLs is 1,500.
+     *        The web ACL capacity units (WCUs) required for this rule group.</p>
+     *        <p>
+     *        WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *        groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost
+     *        of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more
+     *        processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+     *        when they use a rule group. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL
+     *        capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
      */
 
     public void setCapacity(Long capacity) {
@@ -219,18 +236,27 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
-     * @return The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     *         calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
-     *         WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
-     *         capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
-     *         WCU limit for web ACLs is 1,500.
+     * @return The web ACL capacity units (WCUs) required for this rule group.</p>
+     *         <p>
+     *         WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *         groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative
+     *         cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use
+     *         more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
+     *         usage when they use a rule group. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL
+     *         capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
      */
 
     public Long getCapacity() {
@@ -239,19 +265,28 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param capacity
-     *        The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     *        calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
-     *        WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
-     *        capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
-     *        WCU limit for web ACLs is 1,500.
+     *        The web ACL capacity units (WCUs) required for this rule group.</p>
+     *        <p>
+     *        WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *        groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost
+     *        of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more
+     *        processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+     *        when they use a rule group. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL
+     *        capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

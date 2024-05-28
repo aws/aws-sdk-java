@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,37 +30,6 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The data binding information for the component's properties.
-     * </p>
-     */
-    private java.util.Map<String, ComponentBindingPropertiesValue> bindingProperties;
-    /**
-     * <p>
-     * The components that are instances of the main component.
-     * </p>
-     */
-    private java.util.List<ComponentChild> children;
-    /**
-     * <p>
-     * The configuration for binding a component's properties to a data model. Use this for a collection component.
-     * </p>
-     */
-    private java.util.Map<String, ComponentDataConfiguration> collectionProperties;
-    /**
-     * <p>
-     * The type of the component. This can be an Amplify custom UI component or another custom component.
-     * </p>
-     */
-    private String componentType;
-    /**
-     * <p>
-     * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
-     * events and actions to components.
-     * </p>
-     */
-    private java.util.Map<String, ComponentEvent> events;
-    /**
-     * <p>
      * The unique ID of the component to update.
      * </p>
      */
@@ -73,10 +42,16 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * Describes the properties that can be overriden to customize the component.
+     * The unique ID of the component in its original source system, such as Figma.
      * </p>
      */
-    private java.util.Map<String, java.util.Map<String, String>> overrides;
+    private String sourceId;
+    /**
+     * <p>
+     * The type of the component. This can be an Amplify custom UI component or another custom component.
+     * </p>
+     */
+    private String componentType;
     /**
      * <p>
      * Describes the component's properties.
@@ -85,345 +60,47 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
     private java.util.Map<String, ComponentProperty> properties;
     /**
      * <p>
-     * The schema version of the component when it was imported.
+     * The components that are instances of the main component.
      * </p>
      */
-    private String schemaVersion;
-    /**
-     * <p>
-     * The unique ID of the component in its original source system, such as Figma.
-     * </p>
-     */
-    private String sourceId;
+    private java.util.List<ComponentChild> children;
     /**
      * <p>
      * A list of the unique variants of the main component being updated.
      * </p>
      */
     private java.util.List<ComponentVariant> variants;
-
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the component.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, String>> overrides;
     /**
      * <p>
      * The data binding information for the component's properties.
      * </p>
-     * 
-     * @return The data binding information for the component's properties.
      */
-
-    public java.util.Map<String, ComponentBindingPropertiesValue> getBindingProperties() {
-        return bindingProperties;
-    }
-
-    /**
-     * <p>
-     * The data binding information for the component's properties.
-     * </p>
-     * 
-     * @param bindingProperties
-     *        The data binding information for the component's properties.
-     */
-
-    public void setBindingProperties(java.util.Map<String, ComponentBindingPropertiesValue> bindingProperties) {
-        this.bindingProperties = bindingProperties;
-    }
-
-    /**
-     * <p>
-     * The data binding information for the component's properties.
-     * </p>
-     * 
-     * @param bindingProperties
-     *        The data binding information for the component's properties.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData withBindingProperties(java.util.Map<String, ComponentBindingPropertiesValue> bindingProperties) {
-        setBindingProperties(bindingProperties);
-        return this;
-    }
-
-    /**
-     * Add a single BindingProperties entry
-     *
-     * @see UpdateComponentData#withBindingProperties
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData addBindingPropertiesEntry(String key, ComponentBindingPropertiesValue value) {
-        if (null == this.bindingProperties) {
-            this.bindingProperties = new java.util.HashMap<String, ComponentBindingPropertiesValue>();
-        }
-        if (this.bindingProperties.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.bindingProperties.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into BindingProperties.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData clearBindingPropertiesEntries() {
-        this.bindingProperties = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The components that are instances of the main component.
-     * </p>
-     * 
-     * @return The components that are instances of the main component.
-     */
-
-    public java.util.List<ComponentChild> getChildren() {
-        return children;
-    }
-
-    /**
-     * <p>
-     * The components that are instances of the main component.
-     * </p>
-     * 
-     * @param children
-     *        The components that are instances of the main component.
-     */
-
-    public void setChildren(java.util.Collection<ComponentChild> children) {
-        if (children == null) {
-            this.children = null;
-            return;
-        }
-
-        this.children = new java.util.ArrayList<ComponentChild>(children);
-    }
-
-    /**
-     * <p>
-     * The components that are instances of the main component.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setChildren(java.util.Collection)} or {@link #withChildren(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param children
-     *        The components that are instances of the main component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData withChildren(ComponentChild... children) {
-        if (this.children == null) {
-            setChildren(new java.util.ArrayList<ComponentChild>(children.length));
-        }
-        for (ComponentChild ele : children) {
-            this.children.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The components that are instances of the main component.
-     * </p>
-     * 
-     * @param children
-     *        The components that are instances of the main component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData withChildren(java.util.Collection<ComponentChild> children) {
-        setChildren(children);
-        return this;
-    }
-
+    private java.util.Map<String, ComponentBindingPropertiesValue> bindingProperties;
     /**
      * <p>
      * The configuration for binding a component's properties to a data model. Use this for a collection component.
      * </p>
-     * 
-     * @return The configuration for binding a component's properties to a data model. Use this for a collection
-     *         component.
      */
-
-    public java.util.Map<String, ComponentDataConfiguration> getCollectionProperties() {
-        return collectionProperties;
-    }
-
-    /**
-     * <p>
-     * The configuration for binding a component's properties to a data model. Use this for a collection component.
-     * </p>
-     * 
-     * @param collectionProperties
-     *        The configuration for binding a component's properties to a data model. Use this for a collection
-     *        component.
-     */
-
-    public void setCollectionProperties(java.util.Map<String, ComponentDataConfiguration> collectionProperties) {
-        this.collectionProperties = collectionProperties;
-    }
-
-    /**
-     * <p>
-     * The configuration for binding a component's properties to a data model. Use this for a collection component.
-     * </p>
-     * 
-     * @param collectionProperties
-     *        The configuration for binding a component's properties to a data model. Use this for a collection
-     *        component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData withCollectionProperties(java.util.Map<String, ComponentDataConfiguration> collectionProperties) {
-        setCollectionProperties(collectionProperties);
-        return this;
-    }
-
-    /**
-     * Add a single CollectionProperties entry
-     *
-     * @see UpdateComponentData#withCollectionProperties
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData addCollectionPropertiesEntry(String key, ComponentDataConfiguration value) {
-        if (null == this.collectionProperties) {
-            this.collectionProperties = new java.util.HashMap<String, ComponentDataConfiguration>();
-        }
-        if (this.collectionProperties.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.collectionProperties.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into CollectionProperties.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData clearCollectionPropertiesEntries() {
-        this.collectionProperties = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the component. This can be an Amplify custom UI component or another custom component.
-     * </p>
-     * 
-     * @param componentType
-     *        The type of the component. This can be an Amplify custom UI component or another custom component.
-     */
-
-    public void setComponentType(String componentType) {
-        this.componentType = componentType;
-    }
-
-    /**
-     * <p>
-     * The type of the component. This can be an Amplify custom UI component or another custom component.
-     * </p>
-     * 
-     * @return The type of the component. This can be an Amplify custom UI component or another custom component.
-     */
-
-    public String getComponentType() {
-        return this.componentType;
-    }
-
-    /**
-     * <p>
-     * The type of the component. This can be an Amplify custom UI component or another custom component.
-     * </p>
-     * 
-     * @param componentType
-     *        The type of the component. This can be an Amplify custom UI component or another custom component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData withComponentType(String componentType) {
-        setComponentType(componentType);
-        return this;
-    }
-
+    private java.util.Map<String, ComponentDataConfiguration> collectionProperties;
     /**
      * <p>
      * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
      * events and actions to components.
      * </p>
-     * 
-     * @return The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you
-     *         to bind events and actions to components.
      */
-
-    public java.util.Map<String, ComponentEvent> getEvents() {
-        return events;
-    }
-
+    private java.util.Map<String, ComponentEvent> events;
     /**
      * <p>
-     * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
-     * events and actions to components.
+     * The schema version of the component when it was imported.
      * </p>
-     * 
-     * @param events
-     *        The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you
-     *        to bind events and actions to components.
      */
-
-    public void setEvents(java.util.Map<String, ComponentEvent> events) {
-        this.events = events;
-    }
-
-    /**
-     * <p>
-     * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
-     * events and actions to components.
-     * </p>
-     * 
-     * @param events
-     *        The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you
-     *        to bind events and actions to components.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData withEvents(java.util.Map<String, ComponentEvent> events) {
-        setEvents(events);
-        return this;
-    }
-
-    /**
-     * Add a single Events entry
-     *
-     * @see UpdateComponentData#withEvents
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData addEventsEntry(String key, ComponentEvent value) {
-        if (null == this.events) {
-            this.events = new java.util.HashMap<String, ComponentEvent>();
-        }
-        if (this.events.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.events.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Events.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentData clearEventsEntries() {
-        this.events = null;
-        return this;
-    }
+    private String schemaVersion;
 
     /**
      * <p>
@@ -507,69 +184,81 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Describes the properties that can be overriden to customize the component.
+     * The unique ID of the component in its original source system, such as Figma.
      * </p>
      * 
-     * @return Describes the properties that can be overriden to customize the component.
+     * @param sourceId
+     *        The unique ID of the component in its original source system, such as Figma.
      */
 
-    public java.util.Map<String, java.util.Map<String, String>> getOverrides() {
-        return overrides;
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
     }
 
     /**
      * <p>
-     * Describes the properties that can be overriden to customize the component.
+     * The unique ID of the component in its original source system, such as Figma.
      * </p>
      * 
-     * @param overrides
-     *        Describes the properties that can be overriden to customize the component.
+     * @return The unique ID of the component in its original source system, such as Figma.
      */
 
-    public void setOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
-        this.overrides = overrides;
+    public String getSourceId() {
+        return this.sourceId;
     }
 
     /**
      * <p>
-     * Describes the properties that can be overriden to customize the component.
+     * The unique ID of the component in its original source system, such as Figma.
      * </p>
      * 
-     * @param overrides
-     *        Describes the properties that can be overriden to customize the component.
+     * @param sourceId
+     *        The unique ID of the component in its original source system, such as Figma.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateComponentData withOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
-        setOverrides(overrides);
+    public UpdateComponentData withSourceId(String sourceId) {
+        setSourceId(sourceId);
         return this;
     }
 
     /**
-     * Add a single Overrides entry
-     *
-     * @see UpdateComponentData#withOverrides
-     * @returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * The type of the component. This can be an Amplify custom UI component or another custom component.
+     * </p>
+     * 
+     * @param componentType
+     *        The type of the component. This can be an Amplify custom UI component or another custom component.
      */
 
-    public UpdateComponentData addOverridesEntry(String key, java.util.Map<String, String> value) {
-        if (null == this.overrides) {
-            this.overrides = new java.util.HashMap<String, java.util.Map<String, String>>();
-        }
-        if (this.overrides.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.overrides.put(key, value);
-        return this;
+    public void setComponentType(String componentType) {
+        this.componentType = componentType;
     }
 
     /**
-     * Removes all the entries added into Overrides.
-     *
+     * <p>
+     * The type of the component. This can be an Amplify custom UI component or another custom component.
+     * </p>
+     * 
+     * @return The type of the component. This can be an Amplify custom UI component or another custom component.
+     */
+
+    public String getComponentType() {
+        return this.componentType;
+    }
+
+    /**
+     * <p>
+     * The type of the component. This can be an Amplify custom UI component or another custom component.
+     * </p>
+     * 
+     * @param componentType
+     *        The type of the component. This can be an Amplify custom UI component or another custom component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateComponentData clearOverridesEntries() {
-        this.overrides = null;
+    public UpdateComponentData withComponentType(String componentType) {
+        setComponentType(componentType);
         return this;
     }
 
@@ -643,81 +332,71 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The schema version of the component when it was imported.
+     * The components that are instances of the main component.
      * </p>
      * 
-     * @param schemaVersion
-     *        The schema version of the component when it was imported.
+     * @return The components that are instances of the main component.
      */
 
-    public void setSchemaVersion(String schemaVersion) {
-        this.schemaVersion = schemaVersion;
+    public java.util.List<ComponentChild> getChildren() {
+        return children;
     }
 
     /**
      * <p>
-     * The schema version of the component when it was imported.
+     * The components that are instances of the main component.
      * </p>
      * 
-     * @return The schema version of the component when it was imported.
+     * @param children
+     *        The components that are instances of the main component.
      */
 
-    public String getSchemaVersion() {
-        return this.schemaVersion;
+    public void setChildren(java.util.Collection<ComponentChild> children) {
+        if (children == null) {
+            this.children = null;
+            return;
+        }
+
+        this.children = new java.util.ArrayList<ComponentChild>(children);
     }
 
     /**
      * <p>
-     * The schema version of the component when it was imported.
+     * The components that are instances of the main component.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChildren(java.util.Collection)} or {@link #withChildren(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param schemaVersion
-     *        The schema version of the component when it was imported.
+     * @param children
+     *        The components that are instances of the main component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateComponentData withSchemaVersion(String schemaVersion) {
-        setSchemaVersion(schemaVersion);
+    public UpdateComponentData withChildren(ComponentChild... children) {
+        if (this.children == null) {
+            setChildren(new java.util.ArrayList<ComponentChild>(children.length));
+        }
+        for (ComponentChild ele : children) {
+            this.children.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The unique ID of the component in its original source system, such as Figma.
+     * The components that are instances of the main component.
      * </p>
      * 
-     * @param sourceId
-     *        The unique ID of the component in its original source system, such as Figma.
-     */
-
-    public void setSourceId(String sourceId) {
-        this.sourceId = sourceId;
-    }
-
-    /**
-     * <p>
-     * The unique ID of the component in its original source system, such as Figma.
-     * </p>
-     * 
-     * @return The unique ID of the component in its original source system, such as Figma.
-     */
-
-    public String getSourceId() {
-        return this.sourceId;
-    }
-
-    /**
-     * <p>
-     * The unique ID of the component in its original source system, such as Figma.
-     * </p>
-     * 
-     * @param sourceId
-     *        The unique ID of the component in its original source system, such as Figma.
+     * @param children
+     *        The components that are instances of the main component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateComponentData withSourceId(String sourceId) {
-        setSourceId(sourceId);
+    public UpdateComponentData withChildren(java.util.Collection<ComponentChild> children) {
+        setChildren(children);
         return this;
     }
 
@@ -792,6 +471,327 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Describes the properties that can be overriden to customize the component.
+     * </p>
+     * 
+     * @return Describes the properties that can be overriden to customize the component.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getOverrides() {
+        return overrides;
+    }
+
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the component.
+     * </p>
+     * 
+     * @param overrides
+     *        Describes the properties that can be overriden to customize the component.
+     */
+
+    public void setOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
+        this.overrides = overrides;
+    }
+
+    /**
+     * <p>
+     * Describes the properties that can be overriden to customize the component.
+     * </p>
+     * 
+     * @param overrides
+     *        Describes the properties that can be overriden to customize the component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData withOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
+        setOverrides(overrides);
+        return this;
+    }
+
+    /**
+     * Add a single Overrides entry
+     *
+     * @see UpdateComponentData#withOverrides
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData addOverridesEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.overrides) {
+            this.overrides = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.overrides.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.overrides.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Overrides.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData clearOverridesEntries() {
+        this.overrides = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data binding information for the component's properties.
+     * </p>
+     * 
+     * @return The data binding information for the component's properties.
+     */
+
+    public java.util.Map<String, ComponentBindingPropertiesValue> getBindingProperties() {
+        return bindingProperties;
+    }
+
+    /**
+     * <p>
+     * The data binding information for the component's properties.
+     * </p>
+     * 
+     * @param bindingProperties
+     *        The data binding information for the component's properties.
+     */
+
+    public void setBindingProperties(java.util.Map<String, ComponentBindingPropertiesValue> bindingProperties) {
+        this.bindingProperties = bindingProperties;
+    }
+
+    /**
+     * <p>
+     * The data binding information for the component's properties.
+     * </p>
+     * 
+     * @param bindingProperties
+     *        The data binding information for the component's properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData withBindingProperties(java.util.Map<String, ComponentBindingPropertiesValue> bindingProperties) {
+        setBindingProperties(bindingProperties);
+        return this;
+    }
+
+    /**
+     * Add a single BindingProperties entry
+     *
+     * @see UpdateComponentData#withBindingProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData addBindingPropertiesEntry(String key, ComponentBindingPropertiesValue value) {
+        if (null == this.bindingProperties) {
+            this.bindingProperties = new java.util.HashMap<String, ComponentBindingPropertiesValue>();
+        }
+        if (this.bindingProperties.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.bindingProperties.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BindingProperties.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData clearBindingPropertiesEntries() {
+        this.bindingProperties = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for binding a component's properties to a data model. Use this for a collection component.
+     * </p>
+     * 
+     * @return The configuration for binding a component's properties to a data model. Use this for a collection
+     *         component.
+     */
+
+    public java.util.Map<String, ComponentDataConfiguration> getCollectionProperties() {
+        return collectionProperties;
+    }
+
+    /**
+     * <p>
+     * The configuration for binding a component's properties to a data model. Use this for a collection component.
+     * </p>
+     * 
+     * @param collectionProperties
+     *        The configuration for binding a component's properties to a data model. Use this for a collection
+     *        component.
+     */
+
+    public void setCollectionProperties(java.util.Map<String, ComponentDataConfiguration> collectionProperties) {
+        this.collectionProperties = collectionProperties;
+    }
+
+    /**
+     * <p>
+     * The configuration for binding a component's properties to a data model. Use this for a collection component.
+     * </p>
+     * 
+     * @param collectionProperties
+     *        The configuration for binding a component's properties to a data model. Use this for a collection
+     *        component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData withCollectionProperties(java.util.Map<String, ComponentDataConfiguration> collectionProperties) {
+        setCollectionProperties(collectionProperties);
+        return this;
+    }
+
+    /**
+     * Add a single CollectionProperties entry
+     *
+     * @see UpdateComponentData#withCollectionProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData addCollectionPropertiesEntry(String key, ComponentDataConfiguration value) {
+        if (null == this.collectionProperties) {
+            this.collectionProperties = new java.util.HashMap<String, ComponentDataConfiguration>();
+        }
+        if (this.collectionProperties.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.collectionProperties.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CollectionProperties.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData clearCollectionPropertiesEntries() {
+        this.collectionProperties = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
+     * events and actions to components.
+     * </p>
+     * 
+     * @return The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you
+     *         to bind events and actions to components.
+     */
+
+    public java.util.Map<String, ComponentEvent> getEvents() {
+        return events;
+    }
+
+    /**
+     * <p>
+     * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
+     * events and actions to components.
+     * </p>
+     * 
+     * @param events
+     *        The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you
+     *        to bind events and actions to components.
+     */
+
+    public void setEvents(java.util.Map<String, ComponentEvent> events) {
+        this.events = events;
+    }
+
+    /**
+     * <p>
+     * The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind
+     * events and actions to components.
+     * </p>
+     * 
+     * @param events
+     *        The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you
+     *        to bind events and actions to components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData withEvents(java.util.Map<String, ComponentEvent> events) {
+        setEvents(events);
+        return this;
+    }
+
+    /**
+     * Add a single Events entry
+     *
+     * @see UpdateComponentData#withEvents
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData addEventsEntry(String key, ComponentEvent value) {
+        if (null == this.events) {
+            this.events = new java.util.HashMap<String, ComponentEvent>();
+        }
+        if (this.events.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.events.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Events.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData clearEventsEntries() {
+        this.events = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The schema version of the component when it was imported.
+     * </p>
+     * 
+     * @param schemaVersion
+     *        The schema version of the component when it was imported.
+     */
+
+    public void setSchemaVersion(String schemaVersion) {
+        this.schemaVersion = schemaVersion;
+    }
+
+    /**
+     * <p>
+     * The schema version of the component when it was imported.
+     * </p>
+     * 
+     * @return The schema version of the component when it was imported.
+     */
+
+    public String getSchemaVersion() {
+        return this.schemaVersion;
+    }
+
+    /**
+     * <p>
+     * The schema version of the component when it was imported.
+     * </p>
+     * 
+     * @param schemaVersion
+     *        The schema version of the component when it was imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentData withSchemaVersion(String schemaVersion) {
+        setSchemaVersion(schemaVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -803,30 +803,30 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBindingProperties() != null)
-            sb.append("BindingProperties: ").append(getBindingProperties()).append(",");
-        if (getChildren() != null)
-            sb.append("Children: ").append(getChildren()).append(",");
-        if (getCollectionProperties() != null)
-            sb.append("CollectionProperties: ").append(getCollectionProperties()).append(",");
-        if (getComponentType() != null)
-            sb.append("ComponentType: ").append(getComponentType()).append(",");
-        if (getEvents() != null)
-            sb.append("Events: ").append(getEvents()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getOverrides() != null)
-            sb.append("Overrides: ").append(getOverrides()).append(",");
-        if (getProperties() != null)
-            sb.append("Properties: ").append(getProperties()).append(",");
-        if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getSourceId() != null)
             sb.append("SourceId: ").append(getSourceId()).append(",");
+        if (getComponentType() != null)
+            sb.append("ComponentType: ").append(getComponentType()).append(",");
+        if (getProperties() != null)
+            sb.append("Properties: ").append(getProperties()).append(",");
+        if (getChildren() != null)
+            sb.append("Children: ").append(getChildren()).append(",");
         if (getVariants() != null)
-            sb.append("Variants: ").append(getVariants());
+            sb.append("Variants: ").append(getVariants()).append(",");
+        if (getOverrides() != null)
+            sb.append("Overrides: ").append(getOverrides()).append(",");
+        if (getBindingProperties() != null)
+            sb.append("BindingProperties: ").append(getBindingProperties()).append(",");
+        if (getCollectionProperties() != null)
+            sb.append("CollectionProperties: ").append(getCollectionProperties()).append(",");
+        if (getEvents() != null)
+            sb.append("Events: ").append(getEvents()).append(",");
+        if (getSchemaVersion() != null)
+            sb.append("SchemaVersion: ").append(getSchemaVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -841,26 +841,6 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
         if (obj instanceof UpdateComponentData == false)
             return false;
         UpdateComponentData other = (UpdateComponentData) obj;
-        if (other.getBindingProperties() == null ^ this.getBindingProperties() == null)
-            return false;
-        if (other.getBindingProperties() != null && other.getBindingProperties().equals(this.getBindingProperties()) == false)
-            return false;
-        if (other.getChildren() == null ^ this.getChildren() == null)
-            return false;
-        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
-            return false;
-        if (other.getCollectionProperties() == null ^ this.getCollectionProperties() == null)
-            return false;
-        if (other.getCollectionProperties() != null && other.getCollectionProperties().equals(this.getCollectionProperties()) == false)
-            return false;
-        if (other.getComponentType() == null ^ this.getComponentType() == null)
-            return false;
-        if (other.getComponentType() != null && other.getComponentType().equals(this.getComponentType()) == false)
-            return false;
-        if (other.getEvents() == null ^ this.getEvents() == null)
-            return false;
-        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -869,25 +849,45 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getOverrides() == null ^ this.getOverrides() == null)
+        if (other.getSourceId() == null ^ this.getSourceId() == null)
             return false;
-        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
+        if (other.getSourceId() != null && other.getSourceId().equals(this.getSourceId()) == false)
+            return false;
+        if (other.getComponentType() == null ^ this.getComponentType() == null)
+            return false;
+        if (other.getComponentType() != null && other.getComponentType().equals(this.getComponentType()) == false)
             return false;
         if (other.getProperties() == null ^ this.getProperties() == null)
             return false;
         if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
             return false;
-        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
+        if (other.getChildren() == null ^ this.getChildren() == null)
             return false;
-        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
-            return false;
-        if (other.getSourceId() == null ^ this.getSourceId() == null)
-            return false;
-        if (other.getSourceId() != null && other.getSourceId().equals(this.getSourceId()) == false)
+        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
             return false;
         if (other.getVariants() == null ^ this.getVariants() == null)
             return false;
         if (other.getVariants() != null && other.getVariants().equals(this.getVariants()) == false)
+            return false;
+        if (other.getOverrides() == null ^ this.getOverrides() == null)
+            return false;
+        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
+            return false;
+        if (other.getBindingProperties() == null ^ this.getBindingProperties() == null)
+            return false;
+        if (other.getBindingProperties() != null && other.getBindingProperties().equals(this.getBindingProperties()) == false)
+            return false;
+        if (other.getCollectionProperties() == null ^ this.getCollectionProperties() == null)
+            return false;
+        if (other.getCollectionProperties() != null && other.getCollectionProperties().equals(this.getCollectionProperties()) == false)
+            return false;
+        if (other.getEvents() == null ^ this.getEvents() == null)
+            return false;
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
+            return false;
+        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
+            return false;
+        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
             return false;
         return true;
     }
@@ -897,18 +897,18 @@ public class UpdateComponentData implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getBindingProperties() == null) ? 0 : getBindingProperties().hashCode());
-        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
-        hashCode = prime * hashCode + ((getCollectionProperties() == null) ? 0 : getCollectionProperties().hashCode());
-        hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
-        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
-        hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
-        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
         hashCode = prime * hashCode + ((getSourceId() == null) ? 0 : getSourceId().hashCode());
+        hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
+        hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
         hashCode = prime * hashCode + ((getVariants() == null) ? 0 : getVariants().hashCode());
+        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
+        hashCode = prime * hashCode + ((getBindingProperties() == null) ? 0 : getBindingProperties().hashCode());
+        hashCode = prime * hashCode + ((getCollectionProperties() == null) ? 0 : getCollectionProperties().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
         return hashCode;
     }
 

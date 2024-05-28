@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,10 @@ public class StartDeploymentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> KMSKEYIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KmsKeyIdentifier").build();
+    private static final MarshallingInfo<Map> DYNAMICEXTENSIONPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamicExtensionParameters").build();
 
     private static final StartDeploymentRequestMarshaller instance = new StartDeploymentRequestMarshaller();
 
@@ -67,6 +71,8 @@ public class StartDeploymentRequestMarshaller {
             protocolMarshaller.marshall(startDeploymentRequest.getConfigurationVersion(), CONFIGURATIONVERSION_BINDING);
             protocolMarshaller.marshall(startDeploymentRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(startDeploymentRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(startDeploymentRequest.getKmsKeyIdentifier(), KMSKEYIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(startDeploymentRequest.getDynamicExtensionParameters(), DYNAMICEXTENSIONPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

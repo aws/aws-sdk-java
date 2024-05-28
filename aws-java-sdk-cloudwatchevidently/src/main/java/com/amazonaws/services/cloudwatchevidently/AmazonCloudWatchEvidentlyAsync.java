@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -331,10 +331,17 @@ public interface AmazonCloudWatchEvidentlyAsync extends AmazonCloudWatchEvidentl
      * criteria. Using one or more segments in a launch allows you to define different traffic splits for the different
      * audience segments.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt; Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;, which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt; operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * For more information about segment pattern syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"
+     * > Segment rule pattern syntax</a>.
+     * </p>
+     * <p>
+     * The pattern that you define for a segment is matched against the value of <code>evaluationContext</code>, which
+     * is passed into Evidently in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     * >EvaluateFeature</a> operation, when Evidently assigns a feature variation to a user.
+     * </p>
      * 
      * @param createSegmentRequest
      * @return A Java Future containing the result of the CreateSegment operation returned by the service.
@@ -355,10 +362,17 @@ public interface AmazonCloudWatchEvidentlyAsync extends AmazonCloudWatchEvidentl
      * criteria. Using one or more segments in a launch allows you to define different traffic splits for the different
      * audience segments.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt; Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;, which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt; operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * For more information about segment pattern syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"
+     * > Segment rule pattern syntax</a>.
+     * </p>
+     * <p>
+     * The pattern that you define for a segment is matched against the value of <code>evaluationContext</code>, which
+     * is passed into Evidently in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"
+     * >EvaluateFeature</a> operation, when Evidently assigns a feature variation to a user.
+     * </p>
      * 
      * @param createSegmentRequest
      * @param asyncHandler
@@ -563,10 +577,37 @@ public interface AmazonCloudWatchEvidentlyAsync extends AmazonCloudWatchEvidentl
      * The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an
      * override rule, the user is served the variation specified by that rule.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If there is a current launch with this feature that uses segment overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt; &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt; values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * If there is a current launch with this feature that uses segment overrides, and if the user session's
+     * <code>evaluationContext</code> matches a segment rule defined in a segment override, the configuration in the
+     * segment overrides is used. For more information about segments, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html"
+     * >CreateSegment</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.
+     * </p>
+     * <p>
+     * If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The
+     * chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in
+     * the launch, the variation they are served depends on the allocation of the various feature variations used for
+     * the launch.
+     * </p>
+     * <p>
+     * If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be
+     * assigned to a variation in the experiment. The chance of this depends on the percentage of users that are
+     * allocated to that experiment.
+     * </p>
+     * <p>
+     * If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match
+     * the segment rule are used in the experiment.
+     * </p>
+     * <p>
+     * If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various
+     * feature variations used for the experiment.
+     * </p>
+     * <p>
+     * If the user is not assigned to a launch or experiment, they are served the default variation.
+     * </p>
      * 
      * @param evaluateFeatureRequest
      * @return A Java Future containing the result of the EvaluateFeature operation returned by the service.
@@ -585,10 +626,37 @@ public interface AmazonCloudWatchEvidentlyAsync extends AmazonCloudWatchEvidentl
      * The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an
      * override rule, the user is served the variation specified by that rule.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If there is a current launch with this feature that uses segment overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt; &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt; values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * If there is a current launch with this feature that uses segment overrides, and if the user session's
+     * <code>evaluationContext</code> matches a segment rule defined in a segment override, the configuration in the
+     * segment overrides is used. For more information about segments, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html"
+     * >CreateSegment</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+     * segments to focus your audience</a>.
+     * </p>
+     * <p>
+     * If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The
+     * chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in
+     * the launch, the variation they are served depends on the allocation of the various feature variations used for
+     * the launch.
+     * </p>
+     * <p>
+     * If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be
+     * assigned to a variation in the experiment. The chance of this depends on the percentage of users that are
+     * allocated to that experiment.
+     * </p>
+     * <p>
+     * If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match
+     * the segment rule are used in the experiment.
+     * </p>
+     * <p>
+     * If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various
+     * feature variations used for the experiment.
+     * </p>
+     * <p>
+     * If the user is not assigned to a launch or experiment, they are served the default variation.
+     * </p>
      * 
      * @param evaluateFeatureRequest
      * @param asyncHandler

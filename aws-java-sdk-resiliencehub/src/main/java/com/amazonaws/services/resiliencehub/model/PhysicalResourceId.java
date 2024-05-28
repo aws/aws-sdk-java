@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
     private String awsRegion;
     /**
      * <p>
-     * The identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      */
     private String identifier;
@@ -54,14 +54,139 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      * <dt>Arn</dt>
      * <dd>
      * <p>
-     * The resource identifier is an Amazon Resource Name (ARN) .
+     * The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ECS::Service</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EFS::FileSystem</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Lambda::Function</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SNS::Topic</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * <dt>Native</dt>
      * <dd>
      * <p>
-     * The resource identifier is a Resilience Hub-native identifier.
+     * The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     * resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGateway::RestApi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGatewayV2::Api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::AutoScaling::AutoScalingGroup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBGlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::GlobalTable</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::EC2Fleet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Instance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::NatGateway</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Volume</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::GlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Route53::RecordSet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::Bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SQS::Queue</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * </dl>
      */
@@ -149,11 +274,11 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param identifier
-     *        The identifier of the physical resource.
+     *        Identifier of the physical resource.
      */
 
     public void setIdentifier(String identifier) {
@@ -162,10 +287,10 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      * 
-     * @return The identifier of the physical resource.
+     * @return Identifier of the physical resource.
      */
 
     public String getIdentifier() {
@@ -174,11 +299,11 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the physical resource.
+     * Identifier of the physical resource.
      * </p>
      * 
      * @param identifier
-     *        The identifier of the physical resource.
+     *        Identifier of the physical resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,14 +320,139 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      * <dt>Arn</dt>
      * <dd>
      * <p>
-     * The resource identifier is an Amazon Resource Name (ARN) .
+     * The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ECS::Service</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EFS::FileSystem</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Lambda::Function</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SNS::Topic</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * <dt>Native</dt>
      * <dd>
      * <p>
-     * The resource identifier is a Resilience Hub-native identifier.
+     * The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     * resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGateway::RestApi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGatewayV2::Api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::AutoScaling::AutoScalingGroup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBGlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::GlobalTable</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::EC2Fleet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Instance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::NatGateway</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Volume</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::GlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Route53::RecordSet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::Bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SQS::Queue</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * </dl>
      * 
@@ -212,14 +462,140 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      *        <dt>Arn</dt>
      *        <dd>
      *        <p>
-     *        The resource identifier is an Amazon Resource Name (ARN) .
+     *        The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of
+     *        resources:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ECS::Service</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EFS::FileSystem</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Lambda::Function</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SNS::Topic</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </dd>
      *        <dt>Native</dt>
      *        <dd>
      *        <p>
-     *        The resource identifier is a Resilience Hub-native identifier.
+     *        The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     *        resources:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ApiGateway::RestApi</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ApiGatewayV2::Api</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::AutoScaling::AutoScalingGroup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBGlobalCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBInstance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DynamoDB::GlobalTable</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DynamoDB::Table</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::EC2Fleet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::Instance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::NatGateway</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::Volume</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::DBCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::DBInstance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::GlobalCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Route53::RecordSet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3::Bucket</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SQS::Queue</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </dd>
      * @see PhysicalIdentifierType
      */
@@ -236,14 +612,139 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      * <dt>Arn</dt>
      * <dd>
      * <p>
-     * The resource identifier is an Amazon Resource Name (ARN) .
+     * The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ECS::Service</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EFS::FileSystem</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Lambda::Function</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SNS::Topic</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * <dt>Native</dt>
      * <dd>
      * <p>
-     * The resource identifier is a Resilience Hub-native identifier.
+     * The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     * resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGateway::RestApi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGatewayV2::Api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::AutoScaling::AutoScalingGroup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBGlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::GlobalTable</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::EC2Fleet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Instance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::NatGateway</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Volume</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::GlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Route53::RecordSet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::Bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SQS::Queue</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * </dl>
      * 
@@ -252,14 +753,140 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      *         <dt>Arn</dt>
      *         <dd>
      *         <p>
-     *         The resource identifier is an Amazon Resource Name (ARN) .
+     *         The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of
+     *         resources:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ECS::Service</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EFS::FileSystem</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::Lambda::Function</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::SNS::Topic</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </dd>
      *         <dt>Native</dt>
      *         <dd>
      *         <p>
-     *         The resource identifier is a Resilience Hub-native identifier.
+     *         The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     *         resources:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ApiGateway::RestApi</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ApiGatewayV2::Api</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::AutoScaling::AutoScalingGroup</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::DocDB::DBCluster</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::DocDB::DBGlobalCluster</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::DocDB::DBInstance</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::DynamoDB::GlobalTable</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::DynamoDB::Table</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::EC2Fleet</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::Instance</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::NatGateway</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::Volume</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::RDS::DBCluster</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::RDS::DBInstance</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::RDS::GlobalCluster</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::Route53::RecordSet</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::S3::Bucket</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS::SQS::Queue</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </dd>
      * @see PhysicalIdentifierType
      */
@@ -276,14 +903,139 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      * <dt>Arn</dt>
      * <dd>
      * <p>
-     * The resource identifier is an Amazon Resource Name (ARN) .
+     * The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ECS::Service</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EFS::FileSystem</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Lambda::Function</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SNS::Topic</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * <dt>Native</dt>
      * <dd>
      * <p>
-     * The resource identifier is a Resilience Hub-native identifier.
+     * The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     * resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGateway::RestApi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGatewayV2::Api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::AutoScaling::AutoScalingGroup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBGlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::GlobalTable</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::EC2Fleet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Instance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::NatGateway</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Volume</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::GlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Route53::RecordSet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::Bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SQS::Queue</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * </dl>
      * 
@@ -293,14 +1045,140 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      *        <dt>Arn</dt>
      *        <dd>
      *        <p>
-     *        The resource identifier is an Amazon Resource Name (ARN) .
+     *        The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of
+     *        resources:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ECS::Service</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EFS::FileSystem</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Lambda::Function</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SNS::Topic</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </dd>
      *        <dt>Native</dt>
      *        <dd>
      *        <p>
-     *        The resource identifier is a Resilience Hub-native identifier.
+     *        The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     *        resources:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ApiGateway::RestApi</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ApiGatewayV2::Api</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::AutoScaling::AutoScalingGroup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBGlobalCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBInstance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DynamoDB::GlobalTable</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DynamoDB::Table</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::EC2Fleet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::Instance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::NatGateway</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::Volume</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::DBCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::DBInstance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::GlobalCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Route53::RecordSet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3::Bucket</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SQS::Queue</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhysicalIdentifierType
@@ -319,14 +1197,139 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      * <dt>Arn</dt>
      * <dd>
      * <p>
-     * The resource identifier is an Amazon Resource Name (ARN) .
+     * The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ECS::Service</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EFS::FileSystem</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Lambda::Function</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SNS::Topic</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * <dt>Native</dt>
      * <dd>
      * <p>
-     * The resource identifier is a Resilience Hub-native identifier.
+     * The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     * resources:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGateway::RestApi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ApiGatewayV2::Api</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::AutoScaling::AutoScalingGroup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBGlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DocDB::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::GlobalTable</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::DynamoDB::Table</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::EC2Fleet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Instance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::NatGateway</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::Volume</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::DBInstance</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::RDS::GlobalCluster</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::Route53::RecordSet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::S3::Bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS::SQS::Queue</code>
+     * </p>
+     * </li>
+     * </ul>
      * </dd>
      * </dl>
      * 
@@ -336,14 +1339,140 @@ public class PhysicalResourceId implements Serializable, Cloneable, StructuredPo
      *        <dt>Arn</dt>
      *        <dd>
      *        <p>
-     *        The resource identifier is an Amazon Resource Name (ARN) .
+     *        The resource identifier is an Amazon Resource Name (ARN) and it can identify the following list of
+     *        resources:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ECS::Service</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EFS::FileSystem</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Lambda::Function</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SNS::Topic</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </dd>
      *        <dt>Native</dt>
      *        <dd>
      *        <p>
-     *        The resource identifier is a Resilience Hub-native identifier.
+     *        The resource identifier is an Resilience Hub-native identifier and it can identify the following list of
+     *        resources:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ApiGateway::RestApi</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ApiGatewayV2::Api</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::AutoScaling::AutoScalingGroup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBGlobalCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DocDB::DBInstance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DynamoDB::GlobalTable</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::DynamoDB::Table</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::EC2Fleet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::Instance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::NatGateway</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::Volume</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::ElasticLoadBalancing::LoadBalancer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::DBCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::DBInstance</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::RDS::GlobalCluster</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::Route53::RecordSet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::S3::Bucket</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS::SQS::Queue</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PhysicalIdentifierType

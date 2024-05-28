@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds the vended session credentials are valid for.
+     * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
+     * section of the <a href=
+     * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      */
     private Integer durationSeconds;
@@ -51,9 +55,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String profileId;
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      */
     private java.util.List<String> roleArns;
@@ -66,11 +68,19 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds the vended session credentials are valid for.
+     * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
+     * section of the <a href=
+     * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      * 
      * @param durationSeconds
-     *        The number of seconds the vended session credentials are valid for.
+     *        Used to determine how long sessions vended using this profile are valid for. See the
+     *        <code>Expiration</code> section of the <a href=
+     *        "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     *        >CreateSession API documentation</a> page for more details. In requests, if this value is not provided,
+     *        the default value will be 3600.
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -79,10 +89,18 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds the vended session credentials are valid for.
+     * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
+     * section of the <a href=
+     * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      * 
-     * @return The number of seconds the vended session credentials are valid for.
+     * @return Used to determine how long sessions vended using this profile are valid for. See the
+     *         <code>Expiration</code> section of the <a href=
+     *         "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     *         >CreateSession API documentation</a> page for more details. In requests, if this value is not provided,
+     *         the default value will be 3600.
      */
 
     public Integer getDurationSeconds() {
@@ -91,11 +109,19 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds the vended session credentials are valid for.
+     * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
+     * section of the <a href=
+     * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      * 
      * @param durationSeconds
-     *        The number of seconds the vended session credentials are valid for.
+     *        Used to determine how long sessions vended using this profile are valid for. See the
+     *        <code>Expiration</code> section of the <a href=
+     *        "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
+     *        >CreateSession API documentation</a> page for more details. In requests, if this value is not provided,
+     *        the default value will be 3600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,14 +282,10 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * 
-     * @return A list of IAM roles that this profile can assume in a <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation.
+     * @return A list of IAM roles that this profile can assume in a temporary credential request.
      */
 
     public java.util.List<String> getRoleArns() {
@@ -272,15 +294,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * 
      * @param roleArns
-     *        A list of IAM roles that this profile can assume in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        A list of IAM roles that this profile can assume in a temporary credential request.
      */
 
     public void setRoleArns(java.util.Collection<String> roleArns) {
@@ -294,9 +312,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,9 +321,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param roleArns
-     *        A list of IAM roles that this profile can assume in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        A list of IAM roles that this profile can assume in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,15 +337,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * A list of IAM roles that this profile can assume in a temporary credential request.
      * </p>
      * 
      * @param roleArns
-     *        A list of IAM roles that this profile can assume in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        A list of IAM roles that this profile can assume in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

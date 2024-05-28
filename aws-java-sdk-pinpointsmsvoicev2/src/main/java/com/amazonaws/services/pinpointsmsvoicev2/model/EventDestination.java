@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Event destinations are associated with configuration sets, which enable you to publish message sending events to
- * Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon SNS.
+ * CloudWatch, Kinesis Data Firehose, or Amazon SNS.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/EventDestination"
@@ -48,6 +48,11 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of event types that determine which events to log.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      */
     private java.util.List<String> matchingEventTypes;
     /**
@@ -166,8 +171,16 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of event types that determine which events to log.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
-     * @return An array of event types that determine which events to log.
+     * @return An array of event types that determine which events to log.</p> <note>
+     *         <p>
+     *         The <code>TEXT_SENT</code> event type is not supported.
+     *         </p>
      * @see EventType
      */
 
@@ -179,9 +192,17 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of event types that determine which events to log.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @param matchingEventTypes
-     *        An array of event types that determine which events to log.
+     *        An array of event types that determine which events to log.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @see EventType
      */
 
@@ -198,6 +219,11 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of event types that determine which events to log.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMatchingEventTypes(java.util.Collection)} or {@link #withMatchingEventTypes(java.util.Collection)} if
@@ -205,7 +231,10 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param matchingEventTypes
-     *        An array of event types that determine which events to log.
+     *        An array of event types that determine which events to log.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -224,9 +253,17 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of event types that determine which events to log.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @param matchingEventTypes
-     *        An array of event types that determine which events to log.
+     *        An array of event types that determine which events to log.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */
@@ -240,9 +277,17 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of event types that determine which events to log.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TEXT_SENT</code> event type is not supported.
+     * </p>
+     * </note>
      * 
      * @param matchingEventTypes
-     *        An array of event types that determine which events to log.
+     *        An array of event types that determine which events to log.</p> <note>
+     *        <p>
+     *        The <code>TEXT_SENT</code> event type is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventType
      */

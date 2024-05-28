@@ -1,2 +1,3 @@
 com.amazonaws.services.s3control.internal.handlers.S3ControlHandler
 com.amazonaws.services.s3control.internal.handlers.EndpointHandler
+com.amazonaws.services.s3control.internal.handlers.ArnHandler

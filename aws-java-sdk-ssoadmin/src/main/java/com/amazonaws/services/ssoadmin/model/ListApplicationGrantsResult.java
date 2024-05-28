@@ -1,0 +1,230 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ssoadmin.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListApplicationGrantsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * An array list of structures that describe the requested grants.
+     * </p>
+     */
+    private java.util.List<GrantItem> grants;
+    /**
+     * <p>
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
+     * </p>
+     */
+    private String nextToken;
+
+    /**
+     * <p>
+     * An array list of structures that describe the requested grants.
+     * </p>
+     * 
+     * @return An array list of structures that describe the requested grants.
+     */
+
+    public java.util.List<GrantItem> getGrants() {
+        return grants;
+    }
+
+    /**
+     * <p>
+     * An array list of structures that describe the requested grants.
+     * </p>
+     * 
+     * @param grants
+     *        An array list of structures that describe the requested grants.
+     */
+
+    public void setGrants(java.util.Collection<GrantItem> grants) {
+        if (grants == null) {
+            this.grants = null;
+            return;
+        }
+
+        this.grants = new java.util.ArrayList<GrantItem>(grants);
+    }
+
+    /**
+     * <p>
+     * An array list of structures that describe the requested grants.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGrants(java.util.Collection)} or {@link #withGrants(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param grants
+     *        An array list of structures that describe the requested grants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationGrantsResult withGrants(GrantItem... grants) {
+        if (this.grants == null) {
+            setGrants(new java.util.ArrayList<GrantItem>(grants.length));
+        }
+        for (GrantItem ele : grants) {
+            this.grants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array list of structures that describe the requested grants.
+     * </p>
+     * 
+     * @param grants
+     *        An array list of structures that describe the requested grants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationGrantsResult withGrants(java.util.Collection<GrantItem> grants) {
+        setGrants(grants);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
+     * </p>
+     * 
+     * @return If present, this value indicates that more output is available than is included in the current response.
+     *         Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *         get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *         comes back as <code>null</code>. This indicates that this is the last page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If present, this value indicates that more output is available than is included in the current response. Use this
+     * value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part
+     * of the output. You should repeat this until the <code>NextToken</code> response element comes back as
+     * <code>null</code>. This indicates that this is the last page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        If present, this value indicates that more output is available than is included in the current response.
+     *        Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to
+     *        get the next part of the output. You should repeat this until the <code>NextToken</code> response element
+     *        comes back as <code>null</code>. This indicates that this is the last page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationGrantsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getGrants() != null)
+            sb.append("Grants: ").append(getGrants()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListApplicationGrantsResult == false)
+            return false;
+        ListApplicationGrantsResult other = (ListApplicationGrantsResult) obj;
+        if (other.getGrants() == null ^ this.getGrants() == null)
+            return false;
+        if (other.getGrants() != null && other.getGrants().equals(this.getGrants()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getGrants() == null) ? 0 : getGrants().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListApplicationGrantsResult clone() {
+        try {
+            return (ListApplicationGrantsResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

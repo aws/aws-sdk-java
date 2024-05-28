@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     */
+    private java.util.List<String> audiences;
+    /**
+     * <p>
      * The name of the channel.
      * </p>
      */
@@ -68,6 +74,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The log configuration.
+     * </p>
+     */
+    private LogConfigurationForChannel logConfiguration;
     /**
      * <p>
      * The channel's output properties.
@@ -140,6 +152,76 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     public Channel withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @return The list of audiences defined in channel.
+     */
+
+    public java.util.List<String> getAudiences() {
+        return audiences;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     */
+
+    public void setAudiences(java.util.Collection<String> audiences) {
+        if (audiences == null) {
+            this.audiences = null;
+            return;
+        }
+
+        this.audiences = new java.util.ArrayList<String>(audiences);
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudiences(java.util.Collection)} or {@link #withAudiences(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withAudiences(String... audiences) {
+        if (this.audiences == null) {
+            setAudiences(new java.util.ArrayList<String>(audiences.length));
+        }
+        for (String ele : audiences) {
+            this.audiences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withAudiences(java.util.Collection<String> audiences) {
+        setAudiences(audiences);
         return this;
     }
 
@@ -352,6 +434,46 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     public Channel withLastModifiedTime(java.util.Date lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The log configuration.
+     * </p>
+     * 
+     * @param logConfiguration
+     *        The log configuration.
+     */
+
+    public void setLogConfiguration(LogConfigurationForChannel logConfiguration) {
+        this.logConfiguration = logConfiguration;
+    }
+
+    /**
+     * <p>
+     * The log configuration.
+     * </p>
+     * 
+     * @return The log configuration.
+     */
+
+    public LogConfigurationForChannel getLogConfiguration() {
+        return this.logConfiguration;
+    }
+
+    /**
+     * <p>
+     * The log configuration.
+     * </p>
+     * 
+     * @param logConfiguration
+     *        The log configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withLogConfiguration(LogConfigurationForChannel logConfiguration) {
+        setLogConfiguration(logConfiguration);
         return this;
     }
 
@@ -644,6 +766,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAudiences() != null)
+            sb.append("Audiences: ").append(getAudiences()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getChannelState() != null)
@@ -654,6 +778,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             sb.append("FillerSlate: ").append(getFillerSlate()).append(",");
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLogConfiguration() != null)
+            sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getPlaybackMode() != null)
@@ -680,6 +806,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getAudiences() == null ^ this.getAudiences() == null)
+            return false;
+        if (other.getAudiences() != null && other.getAudiences().equals(this.getAudiences()) == false)
+            return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
@@ -699,6 +829,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
+        if (other.getLogConfiguration() == null ^ this.getLogConfiguration() == null)
+            return false;
+        if (other.getLogConfiguration() != null && other.getLogConfiguration().equals(this.getLogConfiguration()) == false)
             return false;
         if (other.getOutputs() == null ^ this.getOutputs() == null)
             return false;
@@ -725,11 +859,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAudiences() == null) ? 0 : getAudiences().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getChannelState() == null) ? 0 : getChannelState().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getFillerSlate() == null) ? 0 : getFillerSlate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getPlaybackMode() == null) ? 0 : getPlaybackMode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

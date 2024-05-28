@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,20 +48,9 @@ public class ComponentChildJsonUnmarshaller implements Unmarshaller<ComponentChi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("children", targetDepth)) {
-                    context.nextToken();
-                    componentChild.setChildren(new ListUnmarshaller<ComponentChild>(ComponentChildJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("componentType", targetDepth)) {
                     context.nextToken();
                     componentChild.setComponentType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("events", targetDepth)) {
-                    context.nextToken();
-                    componentChild.setEvents(new MapUnmarshaller<String, ComponentEvent>(context.getUnmarshaller(String.class), ComponentEventJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -71,6 +60,17 @@ public class ComponentChildJsonUnmarshaller implements Unmarshaller<ComponentChi
                     context.nextToken();
                     componentChild.setProperties(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
                             ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("children", targetDepth)) {
+                    context.nextToken();
+                    componentChild.setChildren(new ListUnmarshaller<ComponentChild>(ComponentChildJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("events", targetDepth)) {
+                    context.nextToken();
+                    componentChild.setEvents(new MapUnmarshaller<String, ComponentEvent>(context.getUnmarshaller(String.class), ComponentEventJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("sourceId", targetDepth)) {
                     context.nextToken();

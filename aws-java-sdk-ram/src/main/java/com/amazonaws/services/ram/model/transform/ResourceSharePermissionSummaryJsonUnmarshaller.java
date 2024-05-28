@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,20 @@ public class ResourceSharePermissionSummaryJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("isResourceTypeDefault", targetDepth)) {
                     context.nextToken();
                     resourceSharePermissionSummary.setIsResourceTypeDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("permissionType", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setPermissionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("featureSet", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setFeatureSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

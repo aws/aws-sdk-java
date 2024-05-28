@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String policy;
+    /**
+     * <p>
+     * The name of the key policy. The only valid value is <code>default</code>.
+     * </p>
+     */
+    private String policyName;
 
     /**
      * <p>
@@ -71,6 +77,46 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The name of the key policy. The only valid value is <code>default</code>.
+     * </p>
+     * 
+     * @param policyName
+     *        The name of the key policy. The only valid value is <code>default</code>.
+     */
+
+    public void setPolicyName(String policyName) {
+        this.policyName = policyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key policy. The only valid value is <code>default</code>.
+     * </p>
+     * 
+     * @return The name of the key policy. The only valid value is <code>default</code>.
+     */
+
+    public String getPolicyName() {
+        return this.policyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key policy. The only valid value is <code>default</code>.
+     * </p>
+     * 
+     * @param policyName
+     *        The name of the key policy. The only valid value is <code>default</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetKeyPolicyResult withPolicyName(String policyName) {
+        setPolicyName(policyName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +129,9 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicy() != null)
-            sb.append("Policy: ").append(getPolicy());
+            sb.append("Policy: ").append(getPolicy()).append(",");
+        if (getPolicyName() != null)
+            sb.append("PolicyName: ").append(getPolicyName());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +150,10 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
             return false;
+        if (other.getPolicyName() == null ^ this.getPolicyName() == null)
+            return false;
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +163,7 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,16 @@ public class PipelineExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusSummary").build();
     private static final MarshallingInfo<List> ARTIFACTREVISIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactRevisions").build();
+    private static final MarshallingInfo<List> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("variables").build();
+    private static final MarshallingInfo<StructuredPojo> TRIGGER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trigger").build();
+    private static final MarshallingInfo<String> EXECUTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionMode").build();
+    private static final MarshallingInfo<String> EXECUTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionType").build();
+    private static final MarshallingInfo<StructuredPojo> ROLLBACKMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rollbackMetadata").build();
 
     private static final PipelineExecutionMarshaller instance = new PipelineExecutionMarshaller();
 
@@ -63,6 +73,11 @@ public class PipelineExecutionMarshaller {
             protocolMarshaller.marshall(pipelineExecution.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getStatusSummary(), STATUSSUMMARY_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getArtifactRevisions(), ARTIFACTREVISIONS_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getVariables(), VARIABLES_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getTrigger(), TRIGGER_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getExecutionMode(), EXECUTIONMODE_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getExecutionType(), EXECUTIONTYPE_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getRollbackMetadata(), ROLLBACKMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

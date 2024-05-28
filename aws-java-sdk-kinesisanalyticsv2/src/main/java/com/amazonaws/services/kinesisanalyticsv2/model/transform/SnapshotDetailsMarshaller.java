@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class SnapshotDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionId").build();
     private static final MarshallingInfo<java.util.Date> SNAPSHOTCREATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotCreationTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RUNTIMEENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeEnvironment").build();
 
     private static final SnapshotDetailsMarshaller instance = new SnapshotDetailsMarshaller();
 
@@ -56,6 +58,7 @@ public class SnapshotDetailsMarshaller {
             protocolMarshaller.marshall(snapshotDetails.getSnapshotStatus(), SNAPSHOTSTATUS_BINDING);
             protocolMarshaller.marshall(snapshotDetails.getApplicationVersionId(), APPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(snapshotDetails.getSnapshotCreationTimestamp(), SNAPSHOTCREATIONTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(snapshotDetails.getRuntimeEnvironment(), RUNTIMEENVIRONMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

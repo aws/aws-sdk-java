@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ClaimPhoneNumberRequestMarshaller {
 
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumber").build();
     private static final MarshallingInfo<String> PHONENUMBERDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class ClaimPhoneNumberRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(claimPhoneNumberRequest.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(claimPhoneNumberRequest.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(claimPhoneNumberRequest.getPhoneNumber(), PHONENUMBER_BINDING);
             protocolMarshaller.marshall(claimPhoneNumberRequest.getPhoneNumberDescription(), PHONENUMBERDESCRIPTION_BINDING);
             protocolMarshaller.marshall(claimPhoneNumberRequest.getTags(), TAGS_BINDING);

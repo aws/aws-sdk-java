@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
+ * AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
  * FHIR-formatted data in a consistent fashion in the cloud.
  * </p>
  */

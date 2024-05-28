@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeSavingsPlanRatesResult extends com.amazonaws.AmazonWebServi
     private String savingsPlanId;
     /**
      * <p>
-     * Information about the Savings Plans rates.
+     * Information about the Savings Plan rates.
      * </p>
      */
     private java.util.List<SavingsPlanRate> searchResults;
@@ -85,10 +85,10 @@ public class DescribeSavingsPlanRatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the Savings Plans rates.
+     * Information about the Savings Plan rates.
      * </p>
      * 
-     * @return Information about the Savings Plans rates.
+     * @return Information about the Savings Plan rates.
      */
 
     public java.util.List<SavingsPlanRate> getSearchResults() {
@@ -97,11 +97,11 @@ public class DescribeSavingsPlanRatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the Savings Plans rates.
+     * Information about the Savings Plan rates.
      * </p>
      * 
      * @param searchResults
-     *        Information about the Savings Plans rates.
+     *        Information about the Savings Plan rates.
      */
 
     public void setSearchResults(java.util.Collection<SavingsPlanRate> searchResults) {
@@ -115,7 +115,7 @@ public class DescribeSavingsPlanRatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the Savings Plans rates.
+     * Information about the Savings Plan rates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class DescribeSavingsPlanRatesResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param searchResults
-     *        Information about the Savings Plans rates.
+     *        Information about the Savings Plan rates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class DescribeSavingsPlanRatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the Savings Plans rates.
+     * Information about the Savings Plan rates.
      * </p>
      * 
      * @param searchResults
-     *        Information about the Savings Plans rates.
+     *        Information about the Savings Plan rates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

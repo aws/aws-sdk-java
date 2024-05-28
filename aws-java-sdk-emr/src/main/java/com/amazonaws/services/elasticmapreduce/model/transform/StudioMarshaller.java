@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,14 @@ public class StudioMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdpRelayStateParameterName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> IDCINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdcInstanceArn").build();
+    private static final MarshallingInfo<Boolean> TRUSTEDIDENTITYPROPAGATIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustedIdentityPropagationEnabled").build();
+    private static final MarshallingInfo<String> IDCUSERASSIGNMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdcUserAssignment").build();
+    private static final MarshallingInfo<String> ENCRYPTIONKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionKeyArn").build();
 
     private static final StudioMarshaller instance = new StudioMarshaller();
 
@@ -96,6 +104,10 @@ public class StudioMarshaller {
             protocolMarshaller.marshall(studio.getIdpAuthUrl(), IDPAUTHURL_BINDING);
             protocolMarshaller.marshall(studio.getIdpRelayStateParameterName(), IDPRELAYSTATEPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(studio.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(studio.getIdcInstanceArn(), IDCINSTANCEARN_BINDING);
+            protocolMarshaller.marshall(studio.getTrustedIdentityPropagationEnabled(), TRUSTEDIDENTITYPROPAGATIONENABLED_BINDING);
+            protocolMarshaller.marshall(studio.getIdcUserAssignment(), IDCUSERASSIGNMENT_BINDING);
+            protocolMarshaller.marshall(studio.getEncryptionKeyArn(), ENCRYPTIONKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

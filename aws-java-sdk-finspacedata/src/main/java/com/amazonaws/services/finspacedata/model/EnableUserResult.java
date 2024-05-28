@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class EnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the enabled user account.
+     *        The unique identifier for the active user.
      */
 
     public void setUserId(String userId) {
@@ -45,10 +45,10 @@ public class EnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      * 
-     * @return The unique identifier for the enabled user account.
+     * @return The unique identifier for the active user.
      */
 
     public String getUserId() {
@@ -57,11 +57,11 @@ public class EnableUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The unique identifier for the enabled user account.
+     * The unique identifier for the active user.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the enabled user account.
+     *        The unique identifier for the active user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

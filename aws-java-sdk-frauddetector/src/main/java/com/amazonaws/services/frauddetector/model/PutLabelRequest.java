@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,11 @@ public class PutLabelRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      */
     private String description;
-    /** <p/> */
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -121,9 +125,11 @@ public class PutLabelRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
      * 
-     * @return
+     * @return A collection of key and value pairs.
      */
 
     public java.util.List<Tag> getTags() {
@@ -131,9 +137,12 @@ public class PutLabelRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
      * 
      * @param tags
+     *        A collection of key and value pairs.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -146,7 +155,9 @@ public class PutLabelRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -154,6 +165,7 @@ public class PutLabelRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param tags
+     *        A collection of key and value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,9 +180,12 @@ public class PutLabelRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
      * 
      * @param tags
+     *        A collection of key and value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

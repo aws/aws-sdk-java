@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,34 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> itemExplorationConfig;
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns from
+     * your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     */
+    private Boolean enableMetadataWithRecommendations;
+    /**
+     * <p>
+     * Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If
+     * you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     * <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the latest solution version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
+     * </p>
+     */
+    private Boolean syncWithLatestSolutionVersion;
 
     /**
      * <p>
@@ -139,6 +167,236 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns from
+     * your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param enableMetadataWithRecommendations
+     *        Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns
+     *        from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each
+     *        item in the recommendation response. For information about enabling metadata for a campaign, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *        >Enabling metadata in recommendations for a campaign</a>.</p>
+     *        <p>
+     *        If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *        href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     */
+
+    public void setEnableMetadataWithRecommendations(Boolean enableMetadataWithRecommendations) {
+        this.enableMetadataWithRecommendations = enableMetadataWithRecommendations;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns from
+     * your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @return Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the
+     *         columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data
+     *         for each item in the recommendation response. For information about enabling metadata for a campaign, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *         >Enabling metadata in recommendations for a campaign</a>.</p>
+     *         <p>
+     *         If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *         href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     */
+
+    public Boolean getEnableMetadataWithRecommendations() {
+        return this.enableMetadataWithRecommendations;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns from
+     * your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param enableMetadataWithRecommendations
+     *        Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns
+     *        from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each
+     *        item in the recommendation response. For information about enabling metadata for a campaign, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *        >Enabling metadata in recommendations for a campaign</a>.</p>
+     *        <p>
+     *        If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *        href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignConfig withEnableMetadataWithRecommendations(Boolean enableMetadataWithRecommendations) {
+        setEnableMetadataWithRecommendations(enableMetadataWithRecommendations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the columns from
+     * your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the
+     * recommendation response. For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * <p>
+     * If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @return Whether metadata with recommendations is enabled for the campaign. If enabled, you can specify the
+     *         columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data
+     *         for each item in the recommendation response. For information about enabling metadata for a campaign, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *         >Enabling metadata in recommendations for a campaign</a>.</p>
+     *         <p>
+     *         If you enable metadata in recommendations, you will incur additional costs. For more information, see <a
+     *         href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     */
+
+    public Boolean isEnableMetadataWithRecommendations() {
+        return this.enableMetadataWithRecommendations;
+    }
+
+    /**
+     * <p>
+     * Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If
+     * you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     * <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the latest solution version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
+     * </p>
+     * 
+     * @param syncWithLatestSolutionVersion
+     *        Whether the campaign automatically updates to use the latest solution version (trained model) of a
+     *        solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     *        <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The
+     *        default is <code>False</code> and you must manually update the campaign to deploy the latest solution
+     *        version. </p>
+     *        <p>
+     *        For more information about automatic campaign updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *        >Enabling automatic campaign updates</a>.
+     */
+
+    public void setSyncWithLatestSolutionVersion(Boolean syncWithLatestSolutionVersion) {
+        this.syncWithLatestSolutionVersion = syncWithLatestSolutionVersion;
+    }
+
+    /**
+     * <p>
+     * Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If
+     * you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     * <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the latest solution version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
+     * </p>
+     * 
+     * @return Whether the campaign automatically updates to use the latest solution version (trained model) of a
+     *         solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     *         <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The
+     *         default is <code>False</code> and you must manually update the campaign to deploy the latest solution
+     *         version. </p>
+     *         <p>
+     *         For more information about automatic campaign updates, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *         >Enabling automatic campaign updates</a>.
+     */
+
+    public Boolean getSyncWithLatestSolutionVersion() {
+        return this.syncWithLatestSolutionVersion;
+    }
+
+    /**
+     * <p>
+     * Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If
+     * you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     * <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the latest solution version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
+     * </p>
+     * 
+     * @param syncWithLatestSolutionVersion
+     *        Whether the campaign automatically updates to use the latest solution version (trained model) of a
+     *        solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     *        <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The
+     *        default is <code>False</code> and you must manually update the campaign to deploy the latest solution
+     *        version. </p>
+     *        <p>
+     *        For more information about automatic campaign updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *        >Enabling automatic campaign updates</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignConfig withSyncWithLatestSolutionVersion(Boolean syncWithLatestSolutionVersion) {
+        setSyncWithLatestSolutionVersion(syncWithLatestSolutionVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the campaign automatically updates to use the latest solution version (trained model) of a solution. If
+     * you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     * <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The default is
+     * <code>False</code> and you must manually update the campaign to deploy the latest solution version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
+     * </p>
+     * 
+     * @return Whether the campaign automatically updates to use the latest solution version (trained model) of a
+     *         solution. If you specify <code>True</code>, you must specify the ARN of your <i>solution</i> for the
+     *         <code>SolutionVersionArn</code> parameter. It must be in <code>SolutionArn/$LATEST</code> format. The
+     *         default is <code>False</code> and you must manually update the campaign to deploy the latest solution
+     *         version. </p>
+     *         <p>
+     *         For more information about automatic campaign updates, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *         >Enabling automatic campaign updates</a>.
+     */
+
+    public Boolean isSyncWithLatestSolutionVersion() {
+        return this.syncWithLatestSolutionVersion;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -151,7 +409,11 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItemExplorationConfig() != null)
-            sb.append("ItemExplorationConfig: ").append(getItemExplorationConfig());
+            sb.append("ItemExplorationConfig: ").append(getItemExplorationConfig()).append(",");
+        if (getEnableMetadataWithRecommendations() != null)
+            sb.append("EnableMetadataWithRecommendations: ").append(getEnableMetadataWithRecommendations()).append(",");
+        if (getSyncWithLatestSolutionVersion() != null)
+            sb.append("SyncWithLatestSolutionVersion: ").append(getSyncWithLatestSolutionVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +432,16 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getItemExplorationConfig() != null && other.getItemExplorationConfig().equals(this.getItemExplorationConfig()) == false)
             return false;
+        if (other.getEnableMetadataWithRecommendations() == null ^ this.getEnableMetadataWithRecommendations() == null)
+            return false;
+        if (other.getEnableMetadataWithRecommendations() != null
+                && other.getEnableMetadataWithRecommendations().equals(this.getEnableMetadataWithRecommendations()) == false)
+            return false;
+        if (other.getSyncWithLatestSolutionVersion() == null ^ this.getSyncWithLatestSolutionVersion() == null)
+            return false;
+        if (other.getSyncWithLatestSolutionVersion() != null
+                && other.getSyncWithLatestSolutionVersion().equals(this.getSyncWithLatestSolutionVersion()) == false)
+            return false;
         return true;
     }
 
@@ -179,6 +451,8 @@ public class CampaignConfig implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getItemExplorationConfig() == null) ? 0 : getItemExplorationConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnableMetadataWithRecommendations() == null) ? 0 : getEnableMetadataWithRecommendations().hashCode());
+        hashCode = prime * hashCode + ((getSyncWithLatestSolutionVersion() == null) ? 0 : getSyncWithLatestSolutionVersion().hashCode());
         return hashCode;
     }
 

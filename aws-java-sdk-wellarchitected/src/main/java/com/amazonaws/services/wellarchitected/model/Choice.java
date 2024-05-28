@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,20 +35,29 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The choice level helpful resource.
+     * The helpful resource (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one helpful resource.
      * </p>
      */
     private ChoiceContent helpfulResource;
     /**
      * <p>
-     * The choice level improvement plan.
+     * The improvement plan (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one improvement plan.
      * </p>
      */
     private ChoiceContent improvementPlan;
     /**
      * <p>
-     * The additional resources for a choice. A choice can have up to two additional resources: one of type
-     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * The additional resources for a choice in a custom lens.
+     * </p>
+     * <p>
+     * A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.
      * </p>
      */
     private java.util.List<AdditionalResources> additionalResources;
@@ -133,11 +142,16 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The choice level helpful resource.
+     * The helpful resource (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one helpful resource.
      * </p>
      * 
      * @param helpfulResource
-     *        The choice level helpful resource.
+     *        The helpful resource (both text and URL) for a particular choice.</p>
+     *        <p>
+     *        This field only applies to custom lenses. Each choice can have only one helpful resource.
      */
 
     public void setHelpfulResource(ChoiceContent helpfulResource) {
@@ -146,10 +160,15 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The choice level helpful resource.
+     * The helpful resource (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one helpful resource.
      * </p>
      * 
-     * @return The choice level helpful resource.
+     * @return The helpful resource (both text and URL) for a particular choice.</p>
+     *         <p>
+     *         This field only applies to custom lenses. Each choice can have only one helpful resource.
      */
 
     public ChoiceContent getHelpfulResource() {
@@ -158,11 +177,16 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The choice level helpful resource.
+     * The helpful resource (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one helpful resource.
      * </p>
      * 
      * @param helpfulResource
-     *        The choice level helpful resource.
+     *        The helpful resource (both text and URL) for a particular choice.</p>
+     *        <p>
+     *        This field only applies to custom lenses. Each choice can have only one helpful resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +197,16 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The choice level improvement plan.
+     * The improvement plan (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one improvement plan.
      * </p>
      * 
      * @param improvementPlan
-     *        The choice level improvement plan.
+     *        The improvement plan (both text and URL) for a particular choice.</p>
+     *        <p>
+     *        This field only applies to custom lenses. Each choice can have only one improvement plan.
      */
 
     public void setImprovementPlan(ChoiceContent improvementPlan) {
@@ -186,10 +215,15 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The choice level improvement plan.
+     * The improvement plan (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one improvement plan.
      * </p>
      * 
-     * @return The choice level improvement plan.
+     * @return The improvement plan (both text and URL) for a particular choice.</p>
+     *         <p>
+     *         This field only applies to custom lenses. Each choice can have only one improvement plan.
      */
 
     public ChoiceContent getImprovementPlan() {
@@ -198,11 +232,16 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The choice level improvement plan.
+     * The improvement plan (both text and URL) for a particular choice.
+     * </p>
+     * <p>
+     * This field only applies to custom lenses. Each choice can have only one improvement plan.
      * </p>
      * 
      * @param improvementPlan
-     *        The choice level improvement plan.
+     *        The improvement plan (both text and URL) for a particular choice.</p>
+     *        <p>
+     *        This field only applies to custom lenses. Each choice can have only one improvement plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,12 +252,17 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The additional resources for a choice. A choice can have up to two additional resources: one of type
-     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * The additional resources for a choice in a custom lens.
+     * </p>
+     * <p>
+     * A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.
      * </p>
      * 
-     * @return The additional resources for a choice. A choice can have up to two additional resources: one of type
-     *         <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * @return The additional resources for a choice in a custom lens.</p>
+     *         <p>
+     *         A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     *         <code>IMPROVEMENT_PLAN</code>, or both.
      */
 
     public java.util.List<AdditionalResources> getAdditionalResources() {
@@ -227,13 +271,18 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The additional resources for a choice. A choice can have up to two additional resources: one of type
-     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * The additional resources for a choice in a custom lens.
+     * </p>
+     * <p>
+     * A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.
      * </p>
      * 
      * @param additionalResources
-     *        The additional resources for a choice. A choice can have up to two additional resources: one of type
-     *        <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     *        The additional resources for a choice in a custom lens.</p>
+     *        <p>
+     *        A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     *        <code>IMPROVEMENT_PLAN</code>, or both.
      */
 
     public void setAdditionalResources(java.util.Collection<AdditionalResources> additionalResources) {
@@ -247,8 +296,11 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The additional resources for a choice. A choice can have up to two additional resources: one of type
-     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * The additional resources for a choice in a custom lens.
+     * </p>
+     * <p>
+     * A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -257,8 +309,10 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param additionalResources
-     *        The additional resources for a choice. A choice can have up to two additional resources: one of type
-     *        <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     *        The additional resources for a choice in a custom lens.</p>
+     *        <p>
+     *        A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     *        <code>IMPROVEMENT_PLAN</code>, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,13 +328,18 @@ public class Choice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The additional resources for a choice. A choice can have up to two additional resources: one of type
-     * <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     * The additional resources for a choice in a custom lens.
+     * </p>
+     * <p>
+     * A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     * <code>IMPROVEMENT_PLAN</code>, or both.
      * </p>
      * 
      * @param additionalResources
-     *        The additional resources for a choice. A choice can have up to two additional resources: one of type
-     *        <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.
+     *        The additional resources for a choice in a custom lens.</p>
+     *        <p>
+     *        A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
+     *        <code>IMPROVEMENT_PLAN</code>, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

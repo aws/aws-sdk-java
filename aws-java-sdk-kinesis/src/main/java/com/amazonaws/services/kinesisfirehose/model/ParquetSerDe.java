@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,8 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      */
     private Integer blockSizeBytes;
@@ -76,14 +76,14 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      * 
      * @param blockSizeBytes
      *        The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from
-     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose
-     *        uses this value for padding calculations.
+     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this
+     *        value for padding calculations.
      */
 
     public void setBlockSizeBytes(Integer blockSizeBytes) {
@@ -93,13 +93,13 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      * 
      * @return The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from
-     *         Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data
-     *         Firehose uses this value for padding calculations.
+     *         Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this
+     *         value for padding calculations.
      */
 
     public Integer getBlockSizeBytes() {
@@ -109,14 +109,14 @@ public class ParquetSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      * 
      * @param blockSizeBytes
      *        The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from
-     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose
-     *        uses this value for padding calculations.
+     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this
+     *        value for padding calculations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

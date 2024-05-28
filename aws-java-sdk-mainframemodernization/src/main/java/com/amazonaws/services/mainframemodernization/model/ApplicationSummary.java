@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private java.util.Date creationTime;
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      */
     private String deploymentStatus;
@@ -78,8 +78,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String environmentId;
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      */
     private java.util.Date lastStartTime;
@@ -89,6 +88,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     */
+    private String roleArn;
     /**
      * <p>
      * The status of the application.
@@ -264,11 +269,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
      * @param deploymentStatus
-     *        Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     *        Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @see ApplicationDeploymentLifecycle
      */
 
@@ -278,10 +283,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
-     * @return Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * @return Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @see ApplicationDeploymentLifecycle
      */
 
@@ -291,11 +296,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
      * @param deploymentStatus
-     *        Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     *        Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationDeploymentLifecycle
      */
@@ -307,11 +312,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
      * @param deploymentStatus
-     *        Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     *        Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationDeploymentLifecycle
      */
@@ -462,13 +467,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
      * @param lastStartTime
-     *        The timestamp when the application was last started. Null until the application has started running for
-     *        the first time.
+     *        The timestamp when you last started the application. Null until the application runs for the first time.
      */
 
     public void setLastStartTime(java.util.Date lastStartTime) {
@@ -477,12 +480,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
-     * @return The timestamp when the application was last started. Null until the application has started running for
-     *         the first time.
+     * @return The timestamp when you last started the application. Null until the application runs for the first time.
      */
 
     public java.util.Date getLastStartTime() {
@@ -491,13 +492,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
      * @param lastStartTime
-     *        The timestamp when the application was last started. Null until the application has started running for
-     *        the first time.
+     *        The timestamp when you last started the application. Null until the application runs for the first time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,6 +542,46 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     public ApplicationSummary withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role associated with the application.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the role associated with the application.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role associated with the application.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role associated with the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationSummary withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
         return this;
     }
 
@@ -696,6 +735,8 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             sb.append("LastStartTime: ").append(getLastStartTime()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getVersionStatus() != null)
@@ -754,6 +795,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -780,6 +825,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
         hashCode = prime * hashCode + ((getLastStartTime() == null) ? 0 : getLastStartTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getVersionStatus() == null) ? 0 : getVersionStatus().hashCode());
         return hashCode;

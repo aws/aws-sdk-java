@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the
  * video container. Set up sidecar captions in the same output group, but different output from your video. For more
- * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work
- * directly in your JSON job specification, include this object and any required children when you set destinationType
- * to SCC.
+ * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SccDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -31,25 +29,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class SccDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
-     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
-     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
-     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate
+     * that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe
+     * only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
      */
     private String framerate;
 
     /**
-     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
-     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
-     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
-     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate
+     * that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe
+     * only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
      * 
      * @param framerate
-     *        Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
-     *        the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
-     *        rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
-     *        video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
-     *        (FRAMERATE_29_97_NON_DROPFRAME).
+     *        Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame
+     *        rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97
+     *        dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     *        non-dropframe.
      * @see SccDestinationFramerate
      */
 
@@ -58,16 +53,14 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
-     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
-     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
-     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate
+     * that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe
+     * only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
      * 
-     * @return Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
-     *         the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
-     *         rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
-     *         video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
-     *         (FRAMERATE_29_97_NON_DROPFRAME).
+     * @return Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a
+     *         frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose
+     *         29.97 dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise,
+     *         choose 29.97 non-dropframe.
      * @see SccDestinationFramerate
      */
 
@@ -76,17 +69,15 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
-     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
-     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
-     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate
+     * that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe
+     * only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
      * 
      * @param framerate
-     *        Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
-     *        the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
-     *        rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
-     *        video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
-     *        (FRAMERATE_29_97_NON_DROPFRAME).
+     *        Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame
+     *        rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97
+     *        dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     *        non-dropframe.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SccDestinationFramerate
      */
@@ -97,17 +88,15 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
-     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
-     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
-     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate
+     * that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe
+     * only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
      * 
      * @param framerate
-     *        Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
-     *        the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
-     *        rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
-     *        video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
-     *        (FRAMERATE_29_97_NON_DROPFRAME).
+     *        Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame
+     *        rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97
+     *        dropframe only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     *        non-dropframe.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SccDestinationFramerate
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,9 +17,6 @@ package com.amazonaws.auth.profile.internal;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.StringUtils;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -153,12 +150,6 @@ public class BasicProfileConfigLoader {
                                          String propertyValue, boolean isSupportedProperty,
                                          String line) {
             Map<String, String> properties = allProfileProperties.get(profileName);
-
-            if (properties.containsKey(propertyKey)) {
-                throw new IllegalArgumentException(
-                        "Duplicate property values for [" + propertyKey + "].");
-            }
-
             properties.put(propertyKey, propertyValue);
         }
 

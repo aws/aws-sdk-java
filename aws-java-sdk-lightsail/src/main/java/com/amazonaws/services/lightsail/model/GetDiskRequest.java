@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class GetDiskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the disk (e.g., <code>my-disk</code>).
+     * The name of the disk (<code>my-disk</code>).
      * </p>
      */
     private String diskName;
 
     /**
      * <p>
-     * The name of the disk (e.g., <code>my-disk</code>).
+     * The name of the disk (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The name of the disk (e.g., <code>my-disk</code>).
+     *        The name of the disk (<code>my-disk</code>).
      */
 
     public void setDiskName(String diskName) {
@@ -47,10 +47,10 @@ public class GetDiskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the disk (e.g., <code>my-disk</code>).
+     * The name of the disk (<code>my-disk</code>).
      * </p>
      * 
-     * @return The name of the disk (e.g., <code>my-disk</code>).
+     * @return The name of the disk (<code>my-disk</code>).
      */
 
     public String getDiskName() {
@@ -59,11 +59,11 @@ public class GetDiskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the disk (e.g., <code>my-disk</code>).
+     * The name of the disk (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The name of the disk (e.g., <code>my-disk</code>).
+     *        The name of the disk (<code>my-disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

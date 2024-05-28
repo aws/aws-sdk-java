@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class SavingsOpportunity implements Serializable, Cloneable, StructuredPo
     private Double savingsOpportunityPercentage;
     /**
      * <p>
-     * An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by
-     * adopting Compute Optimizer recommendations for a given resource.
+     * An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     * recommendations for a given resource. This is based on the On-Demand instance pricing..
      * </p>
      */
     private EstimatedMonthlySavings estimatedMonthlySavings;
@@ -108,13 +108,13 @@ public class SavingsOpportunity implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by
-     * adopting Compute Optimizer recommendations for a given resource.
+     * An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     * recommendations for a given resource. This is based on the On-Demand instance pricing..
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        An object that describes the estimated monthly savings amount possible, based on On-Demand instance
-     *        pricing, by adopting Compute Optimizer recommendations for a given resource.
+     *        An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     *        recommendations for a given resource. This is based on the On-Demand instance pricing..
      */
 
     public void setEstimatedMonthlySavings(EstimatedMonthlySavings estimatedMonthlySavings) {
@@ -123,12 +123,12 @@ public class SavingsOpportunity implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by
-     * adopting Compute Optimizer recommendations for a given resource.
+     * An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     * recommendations for a given resource. This is based on the On-Demand instance pricing..
      * </p>
      * 
-     * @return An object that describes the estimated monthly savings amount possible, based on On-Demand instance
-     *         pricing, by adopting Compute Optimizer recommendations for a given resource.
+     * @return An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     *         recommendations for a given resource. This is based on the On-Demand instance pricing..
      */
 
     public EstimatedMonthlySavings getEstimatedMonthlySavings() {
@@ -137,13 +137,13 @@ public class SavingsOpportunity implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by
-     * adopting Compute Optimizer recommendations for a given resource.
+     * An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     * recommendations for a given resource. This is based on the On-Demand instance pricing..
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        An object that describes the estimated monthly savings amount possible, based on On-Demand instance
-     *        pricing, by adopting Compute Optimizer recommendations for a given resource.
+     *        An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer
+     *        recommendations for a given resource. This is based on the On-Demand instance pricing..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

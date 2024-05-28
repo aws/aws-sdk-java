@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,10 @@ public class SnapshotMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountsWithRestoreAccess").build();
     private static final MarshallingInfo<Double> ACTUALINCREMENTALBACKUPSIZEINMEGABYTES_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actualIncrementalBackupSizeInMegaBytes").build();
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretArn").build();
+    private static final MarshallingInfo<String> ADMINPASSWORDSECRETKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminPasswordSecretKmsKeyId").build();
     private static final MarshallingInfo<String> ADMINUSERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adminUsername").build();
     private static final MarshallingInfo<Double> BACKUPPROGRESSINMEGABYTES_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
@@ -88,6 +92,8 @@ public class SnapshotMarshaller {
             protocolMarshaller.marshall(snapshot.getAccountsWithProvisionedRestoreAccess(), ACCOUNTSWITHPROVISIONEDRESTOREACCESS_BINDING);
             protocolMarshaller.marshall(snapshot.getAccountsWithRestoreAccess(), ACCOUNTSWITHRESTOREACCESS_BINDING);
             protocolMarshaller.marshall(snapshot.getActualIncrementalBackupSizeInMegaBytes(), ACTUALINCREMENTALBACKUPSIZEINMEGABYTES_BINDING);
+            protocolMarshaller.marshall(snapshot.getAdminPasswordSecretArn(), ADMINPASSWORDSECRETARN_BINDING);
+            protocolMarshaller.marshall(snapshot.getAdminPasswordSecretKmsKeyId(), ADMINPASSWORDSECRETKMSKEYID_BINDING);
             protocolMarshaller.marshall(snapshot.getAdminUsername(), ADMINUSERNAME_BINDING);
             protocolMarshaller.marshall(snapshot.getBackupProgressInMegaBytes(), BACKUPPROGRESSINMEGABYTES_BINDING);
             protocolMarshaller.marshall(snapshot.getCurrentBackupRateInMegaBytesPerSecond(), CURRENTBACKUPRATEINMEGABYTESPERSECOND_BINDING);

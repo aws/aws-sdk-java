@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
      * </p>
      */
     private String modelInsights;
+    /**
+     * <p>
+     * The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     * Available only for the time-series forecasting problem type.
+     * </p>
+     */
+    private String backtestResults;
 
     /**
      * <p>
@@ -122,6 +129,52 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     * Available only for the time-series forecasting problem type.
+     * </p>
+     * 
+     * @param backtestResults
+     *        The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     *        Available only for the time-series forecasting problem type.
+     */
+
+    public void setBacktestResults(String backtestResults) {
+        this.backtestResults = backtestResults;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     * Available only for the time-series forecasting problem type.
+     * </p>
+     * 
+     * @return The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     *         Available only for the time-series forecasting problem type.
+     */
+
+    public String getBacktestResults() {
+        return this.backtestResults;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     * Available only for the time-series forecasting problem type.
+     * </p>
+     * 
+     * @param backtestResults
+     *        The Amazon S3 prefix to the accuracy metrics and the inference results observed over the testing window.
+     *        Available only for the time-series forecasting problem type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CandidateArtifactLocations withBacktestResults(String backtestResults) {
+        setBacktestResults(backtestResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +189,9 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
         if (getExplainability() != null)
             sb.append("Explainability: ").append(getExplainability()).append(",");
         if (getModelInsights() != null)
-            sb.append("ModelInsights: ").append(getModelInsights());
+            sb.append("ModelInsights: ").append(getModelInsights()).append(",");
+        if (getBacktestResults() != null)
+            sb.append("BacktestResults: ").append(getBacktestResults());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +214,10 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
             return false;
         if (other.getModelInsights() != null && other.getModelInsights().equals(this.getModelInsights()) == false)
             return false;
+        if (other.getBacktestResults() == null ^ this.getBacktestResults() == null)
+            return false;
+        if (other.getBacktestResults() != null && other.getBacktestResults().equals(this.getBacktestResults()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +228,7 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getExplainability() == null) ? 0 : getExplainability().hashCode());
         hashCode = prime * hashCode + ((getModelInsights() == null) ? 0 : getModelInsights().hashCode());
+        hashCode = prime * hashCode + ((getBacktestResults() == null) ? 0 : getBacktestResults().hashCode());
         return hashCode;
     }
 

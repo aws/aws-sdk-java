@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,6 +110,10 @@ public class OracleSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerOracleAsmSecretId").build();
     private static final MarshallingInfo<Boolean> TRIMSPACEINCHAR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrimSpaceInChar").build();
+    private static final MarshallingInfo<Boolean> CONVERTTIMESTAMPWITHZONETOUTC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConvertTimestampWithZoneToUTC").build();
+    private static final MarshallingInfo<Integer> OPENTRANSACTIONWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenTransactionWindow").build();
 
     private static final OracleSettingsMarshaller instance = new OracleSettingsMarshaller();
 
@@ -168,6 +172,8 @@ public class OracleSettingsMarshaller {
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerOracleAsmAccessRoleArn(), SECRETSMANAGERORACLEASMACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerOracleAsmSecretId(), SECRETSMANAGERORACLEASMSECRETID_BINDING);
             protocolMarshaller.marshall(oracleSettings.getTrimSpaceInChar(), TRIMSPACEINCHAR_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getConvertTimestampWithZoneToUTC(), CONVERTTIMESTAMPWITHZONETOUTC_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getOpenTransactionWindow(), OPENTRANSACTIONWINDOW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

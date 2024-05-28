@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class DiskMap implements Serializable, Cloneable, StructuredPojo {
     private String originalDiskPath;
     /**
      * <p>
-     * The new disk name (e.g., <code>my-new-disk</code>).
+     * The new disk name (<code>my-new-disk</code>).
      * </p>
      */
     private String newDiskName;
@@ -83,11 +83,11 @@ public class DiskMap implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The new disk name (e.g., <code>my-new-disk</code>).
+     * The new disk name (<code>my-new-disk</code>).
      * </p>
      * 
      * @param newDiskName
-     *        The new disk name (e.g., <code>my-new-disk</code>).
+     *        The new disk name (<code>my-new-disk</code>).
      */
 
     public void setNewDiskName(String newDiskName) {
@@ -96,10 +96,10 @@ public class DiskMap implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The new disk name (e.g., <code>my-new-disk</code>).
+     * The new disk name (<code>my-new-disk</code>).
      * </p>
      * 
-     * @return The new disk name (e.g., <code>my-new-disk</code>).
+     * @return The new disk name (<code>my-new-disk</code>).
      */
 
     public String getNewDiskName() {
@@ -108,11 +108,11 @@ public class DiskMap implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The new disk name (e.g., <code>my-new-disk</code>).
+     * The new disk name (<code>my-new-disk</code>).
      * </p>
      * 
      * @param newDiskName
-     *        The new disk name (e.g., <code>my-new-disk</code>).
+     *        The new disk name (<code>my-new-disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

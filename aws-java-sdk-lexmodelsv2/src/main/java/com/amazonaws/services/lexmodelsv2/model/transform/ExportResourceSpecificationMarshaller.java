@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ExportResourceSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("botLocaleExportSpecification").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMVOCABULARYEXPORTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customVocabularyExportSpecification").build();
+    private static final MarshallingInfo<StructuredPojo> TESTSETEXPORTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("testSetExportSpecification").build();
 
     private static final ExportResourceSpecificationMarshaller instance = new ExportResourceSpecificationMarshaller();
 
@@ -53,6 +55,7 @@ public class ExportResourceSpecificationMarshaller {
             protocolMarshaller.marshall(exportResourceSpecification.getBotExportSpecification(), BOTEXPORTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(exportResourceSpecification.getBotLocaleExportSpecification(), BOTLOCALEEXPORTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(exportResourceSpecification.getCustomVocabularyExportSpecification(), CUSTOMVOCABULARYEXPORTSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(exportResourceSpecification.getTestSetExportSpecification(), TESTSETEXPORTSPECIFICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

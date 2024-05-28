@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
      * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to = IAM.
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -112,7 +112,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
      *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
-     *        format before submitting it to = IAM.
+     *        format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -285,7 +285,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
      * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to = IAM.
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -316,7 +316,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
      *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
-     *        format before submitting it to = IAM.
+     *        format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -354,7 +354,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
      * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to = IAM.
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -384,7 +384,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
      *         you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
-     *         format before submitting it to = IAM.
+     *         format before submitting it to IAM.
      *         </p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -422,7 +422,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can
      * provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before
-     * submitting it to = IAM.
+     * submitting it to IAM.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
@@ -453,7 +453,7 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML,
      *        you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON
-     *        format before submitting it to = IAM.
+     *        format before submitting it to IAM.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a

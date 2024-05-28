@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,14 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private String trainingJobName;
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      */
     private ProfilerConfigForUpdate profilerConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
@@ -49,6 +50,16 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private ResourceConfigForUpdate resourceConfig;
+    /**
+     * <p>
+     * Configuration for remote debugging while the training job is running. You can update the remote debugging
+     * configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     * <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     */
+    private RemoteDebugConfigForUpdate remoteDebugConfig;
 
     /**
      * <p>
@@ -92,11 +103,13 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      * 
      * @param profilerConfig
-     *        Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     *        Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and
+     *        storage paths.
      */
 
     public void setProfilerConfig(ProfilerConfigForUpdate profilerConfig) {
@@ -105,10 +118,12 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      * 
-     * @return Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * @return Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and
+     *         storage paths.
      */
 
     public ProfilerConfigForUpdate getProfilerConfig() {
@@ -117,11 +132,13 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      * 
      * @param profilerConfig
-     *        Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     *        Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and
+     *        storage paths.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +149,10 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
@@ -144,11 +161,11 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
@@ -162,7 +179,7 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +188,7 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +204,11 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,6 +258,70 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Configuration for remote debugging while the training job is running. You can update the remote debugging
+     * configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     * <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @param remoteDebugConfig
+     *        Configuration for remote debugging while the training job is running. You can update the remote debugging
+     *        configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     *        <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training
+     *        container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     */
+
+    public void setRemoteDebugConfig(RemoteDebugConfigForUpdate remoteDebugConfig) {
+        this.remoteDebugConfig = remoteDebugConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging while the training job is running. You can update the remote debugging
+     * configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     * <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @return Configuration for remote debugging while the training job is running. You can update the remote debugging
+     *         configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     *         <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training
+     *         container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     */
+
+    public RemoteDebugConfigForUpdate getRemoteDebugConfig() {
+        return this.remoteDebugConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging while the training job is running. You can update the remote debugging
+     * configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     * <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @param remoteDebugConfig
+     *        Configuration for remote debugging while the training job is running. You can update the remote debugging
+     *        configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or
+     *        <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training
+     *        container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTrainingJobRequest withRemoteDebugConfig(RemoteDebugConfigForUpdate remoteDebugConfig) {
+        setRemoteDebugConfig(remoteDebugConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -259,7 +340,9 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getProfilerRuleConfigurations() != null)
             sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations()).append(",");
         if (getResourceConfig() != null)
-            sb.append("ResourceConfig: ").append(getResourceConfig());
+            sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
+        if (getRemoteDebugConfig() != null)
+            sb.append("RemoteDebugConfig: ").append(getRemoteDebugConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -290,6 +373,10 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
             return false;
+        if (other.getRemoteDebugConfig() == null ^ this.getRemoteDebugConfig() == null)
+            return false;
+        if (other.getRemoteDebugConfig() != null && other.getRemoteDebugConfig().equals(this.getRemoteDebugConfig()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +389,7 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getProfilerConfig() == null) ? 0 : getProfilerConfig().hashCode());
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugConfig() == null) ? 0 : getRemoteDebugConfig().hashCode());
         return hashCode;
     }
 

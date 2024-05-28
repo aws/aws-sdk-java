@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,10 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
-     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary
+     * </a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code>
+     * request returned.
      * </p>
      */
     private java.util.List<HyperParameterTrainingJobSummary> trainingJobSummaries;
@@ -41,11 +43,15 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
-     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary
+     * </a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code>
+     * request returned.
      * </p>
      * 
-     * @return A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
+     * @return A list of <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">
+     *         TrainingJobSummary</a> objects that describe the training jobs that the
      *         <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      */
 
@@ -55,12 +61,15 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
-     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary
+     * </a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code>
+     * request returned.
      * </p>
      * 
      * @param trainingJobSummaries
-     *        A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
+     *        A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">
+     *        TrainingJobSummary</a> objects that describe the training jobs that the
      *        <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      */
 
@@ -75,8 +84,10 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
-     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary
+     * </a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code>
+     * request returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +96,8 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
      * </p>
      * 
      * @param trainingJobSummaries
-     *        A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
+     *        A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">
+     *        TrainingJobSummary</a> objects that describe the training jobs that the
      *        <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -102,12 +114,15 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
-     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
+     * A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary
+     * </a> objects that describe the training jobs that the <code>ListTrainingJobsForHyperParameterTuningJob</code>
+     * request returned.
      * </p>
      * 
      * @param trainingJobSummaries
-     *        A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
+     *        A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">
+     *        TrainingJobSummary</a> objects that describe the training jobs that the
      *        <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

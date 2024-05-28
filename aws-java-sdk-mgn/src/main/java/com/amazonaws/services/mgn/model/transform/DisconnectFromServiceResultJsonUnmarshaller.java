@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,25 @@ public class DisconnectFromServiceResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("applicationID", targetDepth)) {
+                    context.nextToken();
+                    disconnectFromServiceResult.setApplicationID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     disconnectFromServiceResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectorAction", targetDepth)) {
+                    context.nextToken();
+                    disconnectFromServiceResult.setConnectorAction(SourceServerConnectorActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dataReplicationInfo", targetDepth)) {
                     context.nextToken();
                     disconnectFromServiceResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    context.nextToken();
+                    disconnectFromServiceResult.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isArchived", targetDepth)) {
                     context.nextToken();
@@ -84,6 +96,10 @@ public class DisconnectFromServiceResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     disconnectFromServiceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("userProvidedID", targetDepth)) {
+                    context.nextToken();
+                    disconnectFromServiceResult.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
                     context.nextToken();

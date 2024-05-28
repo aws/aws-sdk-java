@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the Identity and Access Management (IAM) role
- * associated with an Kinesis Data Firehose event destination.
+ * associated with a Kinesis Data Firehose event destination.
  * </p>
  * <p>
  * Event destinations, such as Kinesis Data Firehose, are associated with configuration sets, which enable you to
@@ -35,7 +35,7 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon
+     * The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis Data
      * Firehose destination.
      * </p>
      */
@@ -49,13 +49,13 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon
+     * The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis Data
      * Firehose destination.
      * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an
-     *        Amazon Firehose destination.
+     *        The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis
+     *        Data Firehose destination.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -64,12 +64,12 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon
+     * The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis Data
      * Firehose destination.
      * </p>
      * 
-     * @return The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an
-     *         Amazon Firehose destination.
+     * @return The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis
+     *         Data Firehose destination.
      */
 
     public String getIamRoleArn() {
@@ -78,13 +78,13 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon
+     * The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis Data
      * Firehose destination.
      * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of an Amazon Identity and Access Management (IAM) role that is able to write event data to an
-     *        Amazon Firehose destination.
+     *        The ARN of an Identity and Access Management role that is able to write event data to an Amazon Kinesis
+     *        Data Firehose destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

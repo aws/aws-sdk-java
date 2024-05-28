@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class UpdateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoveSNSTopic").build();
     private static final MarshallingInfo<Boolean> AUTOCONFIGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoConfigEnabled").build();
+    private static final MarshallingInfo<Boolean> ATTACHMISSINGPERMISSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachMissingPermission").build();
 
     private static final UpdateApplicationRequestMarshaller instance = new UpdateApplicationRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class UpdateApplicationRequestMarshaller {
             protocolMarshaller.marshall(updateApplicationRequest.getOpsItemSNSTopicArn(), OPSITEMSNSTOPICARN_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getRemoveSNSTopic(), REMOVESNSTOPIC_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getAutoConfigEnabled(), AUTOCONFIGENABLED_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getAttachMissingPermission(), ATTACHMISSINGPERMISSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

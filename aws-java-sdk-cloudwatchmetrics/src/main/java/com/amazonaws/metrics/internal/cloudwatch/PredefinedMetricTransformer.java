@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,8 +136,9 @@ public class PredefinedMetricTransformer {
         }
         int requestCount = counter.intValue();
         if (requestCount < 1) {
-            LogFactory.getLog(getClass()).debug(
-                "request count must be at least one");
+            if (log.isDebugEnabled()) {
+                log.debug("request count must be at least one");
+            }
             return Collections.emptyList();
         }
         final double count = metricType == Field.RequestCount
@@ -284,7 +285,9 @@ public class PredefinedMetricTransformer {
         }
         int count = counter.intValue();
         if (count < 1) {
-            LogFactory.getLog(getClass()).debug("Count must be at least one");
+            if (log.isDebugEnabled()) {
+                log.debug("Count must be at least one");
+            }
             return Collections.emptyList();
         }
         final List<MetricDatum> result = new ArrayList<MetricDatum>();

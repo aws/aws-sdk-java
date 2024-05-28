@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion
- * adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother motion. Use
- * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline at the
- * bottom of the frame.
+ * Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while
+ * blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of
+ * the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that
+ * Linear interpolation may introduce video artifacts into your output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeinterlaceAlgorithm {
@@ -26,7 +26,8 @@ public enum DeinterlaceAlgorithm {
     INTERPOLATE("INTERPOLATE"),
     INTERPOLATE_TICKER("INTERPOLATE_TICKER"),
     BLEND("BLEND"),
-    BLEND_TICKER("BLEND_TICKER");
+    BLEND_TICKER("BLEND_TICKER"),
+    LINEAR_INTERPOLATION("LINEAR_INTERPOLATION");
 
     private String value;
 

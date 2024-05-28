@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,56 @@ public class SortProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The direction of the sort, either ascending or descending.
-     * </p>
-     */
-    private String direction;
-    /**
-     * <p>
      * The field to perform the sort on.
      * </p>
      */
     private String field;
+    /**
+     * <p>
+     * The direction of the sort, either ascending or descending.
+     * </p>
+     */
+    private String direction;
+
+    /**
+     * <p>
+     * The field to perform the sort on.
+     * </p>
+     * 
+     * @param field
+     *        The field to perform the sort on.
+     */
+
+    public void setField(String field) {
+        this.field = field;
+    }
+
+    /**
+     * <p>
+     * The field to perform the sort on.
+     * </p>
+     * 
+     * @return The field to perform the sort on.
+     */
+
+    public String getField() {
+        return this.field;
+    }
+
+    /**
+     * <p>
+     * The field to perform the sort on.
+     * </p>
+     * 
+     * @param field
+     *        The field to perform the sort on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SortProperty withField(String field) {
+        setField(field);
+        return this;
+    }
 
     /**
      * <p>
@@ -101,46 +141,6 @@ public class SortProperty implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The field to perform the sort on.
-     * </p>
-     * 
-     * @param field
-     *        The field to perform the sort on.
-     */
-
-    public void setField(String field) {
-        this.field = field;
-    }
-
-    /**
-     * <p>
-     * The field to perform the sort on.
-     * </p>
-     * 
-     * @return The field to perform the sort on.
-     */
-
-    public String getField() {
-        return this.field;
-    }
-
-    /**
-     * <p>
-     * The field to perform the sort on.
-     * </p>
-     * 
-     * @param field
-     *        The field to perform the sort on.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SortProperty withField(String field) {
-        setField(field);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class SortProperty implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDirection() != null)
-            sb.append("Direction: ").append(getDirection()).append(",");
         if (getField() != null)
-            sb.append("Field: ").append(getField());
+            sb.append("Field: ").append(getField()).append(",");
+        if (getDirection() != null)
+            sb.append("Direction: ").append(getDirection());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class SortProperty implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof SortProperty == false)
             return false;
         SortProperty other = (SortProperty) obj;
-        if (other.getDirection() == null ^ this.getDirection() == null)
-            return false;
-        if (other.getDirection() != null && other.getDirection().equals(this.getDirection()) == false)
-            return false;
         if (other.getField() == null ^ this.getField() == null)
             return false;
         if (other.getField() != null && other.getField().equals(this.getField()) == false)
+            return false;
+        if (other.getDirection() == null ^ this.getDirection() == null)
+            return false;
+        if (other.getDirection() != null && other.getDirection().equals(this.getDirection()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class SortProperty implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDirection() == null) ? 0 : getDirection().hashCode());
         hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
+        hashCode = prime * hashCode + ((getDirection() == null) ? 0 : getDirection().hashCode());
         return hashCode;
     }
 

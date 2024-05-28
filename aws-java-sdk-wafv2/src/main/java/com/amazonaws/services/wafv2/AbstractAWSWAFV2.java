@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,11 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
     }
 
     @Override
+    public CreateAPIKeyResult createAPIKey(CreateAPIKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateIPSetResult createIPSet(CreateIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
 
     @Override
     public CreateWebACLResult createWebACL(CreateWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAPIKeyResult deleteAPIKey(DeleteAPIKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +103,16 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
     }
 
     @Override
+    public DescribeAllManagedProductsResult describeAllManagedProducts(DescribeAllManagedProductsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeManagedProductsByVendorResult describeManagedProductsByVendor(DescribeManagedProductsByVendorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeManagedRuleGroupResult describeManagedRuleGroup(DescribeManagedRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +124,11 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
 
     @Override
     public GenerateMobileSdkReleaseUrlResult generateMobileSdkReleaseUrl(GenerateMobileSdkReleaseUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDecryptedAPIKeyResult getDecryptedAPIKey(GetDecryptedAPIKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,6 +184,11 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
 
     @Override
     public GetWebACLForResourceResult getWebACLForResource(GetWebACLForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAPIKeysResult listAPIKeys(ListAPIKeysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

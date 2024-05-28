@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,10 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
     private String userPoolId;
     /**
      * <p>
-     * The user pool username.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      */
     private String username;
@@ -45,7 +48,11 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
     private String eventId;
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      */
     private String feedbackValue;
@@ -92,11 +99,17 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The user pool username.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
      * @param username
-     *        The user pool username.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *        user from a third-party IdP.
      */
 
     public void setUsername(String username) {
@@ -105,10 +118,16 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The user pool username.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
-     * @return The user pool username.
+     * @return The username of the user that you want to query or modify. The value of this parameter is typically your
+     *         user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *         attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *         user from a third-party IdP.
      */
 
     public String getUsername() {
@@ -117,11 +136,17 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The user pool username.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
      * @param username
-     *        The user pool username.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *        user from a third-party IdP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +197,19 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The authentication event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @see FeedbackValueType
      */
 
@@ -186,10 +219,18 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
-     * @return The authentication event feedback value.
+     * @return The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *         <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *         evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>
+     *         , you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *         evaluated a high-enough risk level.
      * @see FeedbackValueType
      */
 
@@ -199,11 +240,19 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The authentication event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeedbackValueType
      */
@@ -215,11 +264,19 @@ public class AdminUpdateAuthEventFeedbackRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The authentication event feedback value.
+     * The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     * <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some
+     * level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>, you tell Amazon
+     * Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough
+     * risk level.
      * </p>
      * 
      * @param feedbackValue
-     *        The authentication event feedback value.
+     *        The authentication event feedback value. When you provide a <code>FeedbackValue</code> value of
+     *        <code>valid</code>, you tell Amazon Cognito that you trust a user session where Amazon Cognito has
+     *        evaluated some level of risk. When you provide a <code>FeedbackValue</code> value of <code>invalid</code>,
+     *        you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito
+     *        evaluated a high-enough risk level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeedbackValueType
      */

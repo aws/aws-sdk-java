@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -221,6 +221,32 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainIAMRoleName()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getDomainFqdn() != null) {
+            request.addParameter("DomainFqdn", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainFqdn()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDomainOu() != null) {
+            request.addParameter("DomainOu", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainOu()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDomainAuthSecretArn() != null) {
+            request.addParameter("DomainAuthSecretArn", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainAuthSecretArn()));
+        }
+
+        if (!createDBInstanceReadReplicaRequest.getDomainDnsIps().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getDomainDnsIps()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> domainDnsIpsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getDomainDnsIps();
+            int domainDnsIpsListIndex = 1;
+
+            for (String domainDnsIpsListValue : domainDnsIpsList) {
+                if (domainDnsIpsListValue != null) {
+                    request.addParameter("DomainDnsIps.member." + domainDnsIpsListIndex, StringUtils.fromString(domainDnsIpsListValue));
+                }
+                domainDnsIpsListIndex++;
+            }
+        }
+
         if (createDBInstanceReadReplicaRequest.getReplicaMode() != null) {
             request.addParameter("ReplicaMode", StringUtils.fromString(createDBInstanceReadReplicaRequest.getReplicaMode()));
         }
@@ -239,6 +265,30 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
 
         if (createDBInstanceReadReplicaRequest.getStorageThroughput() != null) {
             request.addParameter("StorageThroughput", StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getStorageThroughput()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getEnableCustomerOwnedIp() != null) {
+            request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getEnableCustomerOwnedIp()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getAllocatedStorage() != null) {
+            request.addParameter("AllocatedStorage", StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getAllocatedStorage()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getSourceDBClusterIdentifier() != null) {
+            request.addParameter("SourceDBClusterIdentifier", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceDBClusterIdentifier()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getDedicatedLogVolume()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getUpgradeStorageConfig() != null) {
+            request.addParameter("UpgradeStorageConfig", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getUpgradeStorageConfig()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(createDBInstanceReadReplicaRequest.getCACertificateIdentifier()));
         }
 
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {

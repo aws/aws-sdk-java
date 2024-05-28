@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class AwsEksClusterResourcesVpcConfigDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubnetIds").build();
+    private static final MarshallingInfo<Boolean> ENDPOINTPUBLICACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointPublicAccess").build();
 
     private static final AwsEksClusterResourcesVpcConfigDetailsMarshaller instance = new AwsEksClusterResourcesVpcConfigDetailsMarshaller();
 
@@ -51,6 +53,7 @@ public class AwsEksClusterResourcesVpcConfigDetailsMarshaller {
         try {
             protocolMarshaller.marshall(awsEksClusterResourcesVpcConfigDetails.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(awsEksClusterResourcesVpcConfigDetails.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(awsEksClusterResourcesVpcConfigDetails.getEndpointPublicAccess(), ENDPOINTPUBLICACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

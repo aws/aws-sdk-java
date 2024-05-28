@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are
- * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+ * included in the cache key and in requests that CloudFront sends to the origin.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyQueryStringsConfig"
@@ -29,35 +29,35 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any URL query strings in viewer requests are included in the cache key and automatically
-     * included in requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any URL query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     * CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that are
+     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     * <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to the
+     * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code>
+     * type, which are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
      * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>all</code> – All query strings in viewer requests are included in the cache key and are automatically
-     * included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
@@ -66,80 +66,78 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin. The
-     * behavior depends on whether the <code>QueryStringBehavior</code> field in the
-     * <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i>
-     * <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included,
-     * but all other query strings are).
+     * included in the cache key and in requests that CloudFront sends to the origin. The behavior depends on whether
+     * the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      */
     private QueryStringNames queryStrings;
 
     /**
      * <p>
-     * Determines whether any URL query strings in viewer requests are included in the cache key and automatically
-     * included in requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any URL query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     * CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that are
+     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     * <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to the
+     * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code>
+     * type, which are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
      * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>all</code> – All query strings in viewer requests are included in the cache key and are automatically
-     * included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param queryStringBehavior
-     *        Determines whether any URL query strings in viewer requests are included in the cache key and
-     *        automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any URL query strings in viewer requests are included in the cache key and in requests
+     *        that CloudFront sends to the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Query strings in viewer requests are not included in the cache key and are not
-     *        automatically included in requests that CloudFront sends to the origin. Even when this field is set to
-     *        <code>none</code>, any query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i>
-     *        included in origin requests.
+     *        <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     *        CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that
+     *        are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     *        <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     *        <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to
+     *        the origin.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     *        <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin.
+     *        <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in
+     *        requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the
+     *        <code>QueryStringNames</code> type, which are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>all</code> – All query strings in viewer requests are included in the cache key and are
-     *        automatically included in requests that CloudFront sends to the origin.
+     *        <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @see CachePolicyQueryStringBehavior
@@ -151,68 +149,67 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any URL query strings in viewer requests are included in the cache key and automatically
-     * included in requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any URL query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     * CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that are
+     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     * <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to the
+     * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code>
+     * type, which are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
      * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>all</code> – All query strings in viewer requests are included in the cache key and are automatically
-     * included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Determines whether any URL query strings in viewer requests are included in the cache key and
-     *         automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
+     * @return Determines whether any URL query strings in viewer requests are included in the cache key and in requests
+     *         that CloudFront sends to the origin. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>none</code> – Query strings in viewer requests are not included in the cache key and are not
-     *         automatically included in requests that CloudFront sends to the origin. Even when this field is set to
-     *         <code>none</code>, any query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i>
-     *         included in origin requests.
+     *         <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     *         CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that
+     *         are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     *         <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
+     *         <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     *         <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to
+     *         the origin.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in
+     *         requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the
+     *         <code>QueryStringNames</code> type, which are not included.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>all</code> – All query strings in viewer requests are included in the cache key and in requests
      *         that CloudFront sends to the origin.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     *         <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *         that CloudFront sends to the origin.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>all</code> – All query strings in viewer requests are included in the cache key and are
-     *         automatically included in requests that CloudFront sends to the origin.
      *         </p>
      *         </li>
      * @see CachePolicyQueryStringBehavior
@@ -224,69 +221,68 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any URL query strings in viewer requests are included in the cache key and automatically
-     * included in requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any URL query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     * CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that are
+     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     * <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to the
+     * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code>
+     * type, which are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
      * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>all</code> – All query strings in viewer requests are included in the cache key and are automatically
-     * included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param queryStringBehavior
-     *        Determines whether any URL query strings in viewer requests are included in the cache key and
-     *        automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any URL query strings in viewer requests are included in the cache key and in requests
+     *        that CloudFront sends to the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Query strings in viewer requests are not included in the cache key and are not
-     *        automatically included in requests that CloudFront sends to the origin. Even when this field is set to
-     *        <code>none</code>, any query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i>
-     *        included in origin requests.
+     *        <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     *        CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that
+     *        are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     *        <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     *        <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to
+     *        the origin.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     *        <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin.
+     *        <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in
+     *        requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the
+     *        <code>QueryStringNames</code> type, which are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>all</code> – All query strings in viewer requests are included in the cache key and are
-     *        automatically included in requests that CloudFront sends to the origin.
+     *        <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -300,69 +296,68 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Determines whether any URL query strings in viewer requests are included in the cache key and automatically
-     * included in requests that CloudFront sends to the origin. Valid values are:
+     * Determines whether any URL query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin. Valid values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>none</code> – Query strings in viewer requests are not included in the cache key and are not automatically
-     * included in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
-     * query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
+     * <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     * CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that are
+     * listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
+     * <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     * <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to the
+     * origin.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in requests that
+     * CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the <code>QueryStringNames</code>
+     * type, which are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
      * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     * <code>QueryStringNames</code> type are included in the cache key and automatically included in requests that
-     * CloudFront sends to the origin.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>all</code> – All query strings in viewer requests are included in the cache key and are automatically
-     * included in requests that CloudFront sends to the origin.
      * </p>
      * </li>
      * </ul>
      * 
      * @param queryStringBehavior
-     *        Determines whether any URL query strings in viewer requests are included in the cache key and
-     *        automatically included in requests that CloudFront sends to the origin. Valid values are:</p>
+     *        Determines whether any URL query strings in viewer requests are included in the cache key and in requests
+     *        that CloudFront sends to the origin. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>none</code> – Query strings in viewer requests are not included in the cache key and are not
-     *        automatically included in requests that CloudFront sends to the origin. Even when this field is set to
-     *        <code>none</code>, any query strings that are listed in an <code>OriginRequestPolicy</code> <i>are</i>
-     *        included in origin requests.
+     *        <code>none</code> – No query strings in viewer requests are included in the cache key or in requests that
+     *        CloudFront sends to the origin. Even when this field is set to <code>none</code>, any query strings that
+     *        are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>whitelist</code> – The query strings in viewer requests that are listed in the
-     *        <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin.
+     *        <code>whitelist</code> – Only the query strings in viewer requests that are listed in the
+     *        <code>QueryStringNames</code> type are included in the cache key and in requests that CloudFront sends to
+     *        the origin.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allExcept</code> – All query strings in viewer requests that are <i> <b>not</b> </i> listed in the
-     *        <code>QueryStringNames</code> type are included in the cache key and automatically included in requests
-     *        that CloudFront sends to the origin.
+     *        <code>allExcept</code> – All query strings in viewer requests are included in the cache key and in
+     *        requests that CloudFront sends to the origin, <i> <b>except</b> </i> those that are listed in the
+     *        <code>QueryStringNames</code> type, which are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>all</code> – All query strings in viewer requests are included in the cache key and are
-     *        automatically included in requests that CloudFront sends to the origin.
+     *        <code>all</code> – All query strings in viewer requests are included in the cache key and in requests that
+     *        CloudFront sends to the origin.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -377,17 +372,16 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin. The
-     * behavior depends on whether the <code>QueryStringBehavior</code> field in the
-     * <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i>
-     * <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included,
-     * but all other query strings are).
+     * included in the cache key and in requests that CloudFront sends to the origin. The behavior depends on whether
+     * the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      * 
      * @param queryStrings
      *        Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are
-     *        not</b> </i> included in the cache key and automatically included in requests that CloudFront sends to the
-     *        origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the
+     *        not</b> </i> included in the cache key and in requests that CloudFront sends to the origin. The behavior
+     *        depends on whether the <code>QueryStringBehavior</code> field in the
      *        <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings
      *        <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i>
      *        included, but all other query strings are).
@@ -400,16 +394,15 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin. The
-     * behavior depends on whether the <code>QueryStringBehavior</code> field in the
-     * <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i>
-     * <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included,
-     * but all other query strings are).
+     * included in the cache key and in requests that CloudFront sends to the origin. The behavior depends on whether
+     * the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      * 
      * @return Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are
-     *         not</b> </i> included in the cache key and automatically included in requests that CloudFront sends to
-     *         the origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the
+     *         not</b> </i> included in the cache key and in requests that CloudFront sends to the origin. The behavior
+     *         depends on whether the <code>QueryStringBehavior</code> field in the
      *         <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query
      *         strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are
      *         not</b> </i> included, but all other query strings are).
@@ -422,17 +415,16 @@ public class CachePolicyQueryStringsConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are not</b> </i>
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin. The
-     * behavior depends on whether the <code>QueryStringBehavior</code> field in the
-     * <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings <i>
-     * <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i> included,
-     * but all other query strings are).
+     * included in the cache key and in requests that CloudFront sends to the origin. The behavior depends on whether
+     * the <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code> type is set to
+     * <code>whitelist</code> (the listed query strings <i> <b>are</b> </i> included) or <code>allExcept</code> (the
+     * listed query strings <i> <b>are not</b> </i> included, but all other query strings are).
      * </p>
      * 
      * @param queryStrings
      *        Contains the specific query strings in viewer requests that either <i> <b>are</b> </i> or <i> <b>are
-     *        not</b> </i> included in the cache key and automatically included in requests that CloudFront sends to the
-     *        origin. The behavior depends on whether the <code>QueryStringBehavior</code> field in the
+     *        not</b> </i> included in the cache key and in requests that CloudFront sends to the origin. The behavior
+     *        depends on whether the <code>QueryStringBehavior</code> field in the
      *        <code>CachePolicyQueryStringsConfig</code> type is set to <code>whitelist</code> (the listed query strings
      *        <i> <b>are</b> </i> included) or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i>
      *        included, but all other query strings are).

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature> validProcessorFeatures;
+    /**
+     * <p>
+     * Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     * </p>
+     */
+    private Boolean supportsDedicatedLogVolume;
 
     /**
      * <p>
@@ -188,6 +194,58 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     * </p>
+     * 
+     * @param supportsDedicatedLogVolume
+     *        Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     */
+
+    public void setSupportsDedicatedLogVolume(Boolean supportsDedicatedLogVolume) {
+        this.supportsDedicatedLogVolume = supportsDedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     * </p>
+     * 
+     * @return Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     */
+
+    public Boolean getSupportsDedicatedLogVolume() {
+        return this.supportsDedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     * </p>
+     * 
+     * @param supportsDedicatedLogVolume
+     *        Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidDBInstanceModificationsMessage withSupportsDedicatedLogVolume(Boolean supportsDedicatedLogVolume) {
+        setSupportsDedicatedLogVolume(supportsDedicatedLogVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     * </p>
+     * 
+     * @return Indicates whether a DB instance supports using a dedicated log volume (DLV).
+     */
+
+    public Boolean isSupportsDedicatedLogVolume() {
+        return this.supportsDedicatedLogVolume;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -202,7 +260,9 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
         if (getStorage() != null)
             sb.append("Storage: ").append(getStorage()).append(",");
         if (getValidProcessorFeatures() != null)
-            sb.append("ValidProcessorFeatures: ").append(getValidProcessorFeatures());
+            sb.append("ValidProcessorFeatures: ").append(getValidProcessorFeatures()).append(",");
+        if (getSupportsDedicatedLogVolume() != null)
+            sb.append("SupportsDedicatedLogVolume: ").append(getSupportsDedicatedLogVolume());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +285,10 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
             return false;
         if (other.getValidProcessorFeatures() != null && other.getValidProcessorFeatures().equals(this.getValidProcessorFeatures()) == false)
             return false;
+        if (other.getSupportsDedicatedLogVolume() == null ^ this.getSupportsDedicatedLogVolume() == null)
+            return false;
+        if (other.getSupportsDedicatedLogVolume() != null && other.getSupportsDedicatedLogVolume().equals(this.getSupportsDedicatedLogVolume()) == false)
+            return false;
         return true;
     }
 
@@ -235,6 +299,7 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
 
         hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode());
         hashCode = prime * hashCode + ((getValidProcessorFeatures() == null) ? 0 : getValidProcessorFeatures().hashCode());
+        hashCode = prime * hashCode + ((getSupportsDedicatedLogVolume() == null) ? 0 : getSupportsDedicatedLogVolume().hashCode());
         return hashCode;
     }
 

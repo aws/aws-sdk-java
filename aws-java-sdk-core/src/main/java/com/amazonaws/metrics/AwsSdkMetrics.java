@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -743,6 +743,14 @@ public enum AwsSdkMetrics {
      */
     public static void setRegion(Regions region) {
         AwsSdkMetrics.region = RegionUtils.getRegion(region.getName());
+    }
+
+    /**
+     * Sets the region to be used for the default AWS SDK metric collector;
+     * or null if the default is to be used.
+     */
+    public static void setRegion(Region region) {
+        AwsSdkMetrics.region = region;
     }
 
     /**

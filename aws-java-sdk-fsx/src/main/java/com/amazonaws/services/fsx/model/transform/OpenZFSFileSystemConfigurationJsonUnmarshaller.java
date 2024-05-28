@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,24 @@ public class OpenZFSFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("RootVolumeId", targetDepth)) {
                     context.nextToken();
                     openZFSFileSystemConfiguration.setRootVolumeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredSubnetId", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setPreferredSubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EndpointIpAddressRange", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setEndpointIpAddressRange(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RouteTableIds", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setRouteTableIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("EndpointIpAddress", targetDepth)) {
+                    context.nextToken();
+                    openZFSFileSystemConfiguration.setEndpointIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

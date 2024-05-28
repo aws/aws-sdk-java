@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ChannelMessageStatusStructure implements Serializable, Cloneable, S
     private String value;
     /**
      * <p>
-     * Contains more details about the messasge status.
+     * Contains more details about the message status.
      * </p>
      */
     private String detail;
@@ -102,11 +102,11 @@ public class ChannelMessageStatusStructure implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Contains more details about the messasge status.
+     * Contains more details about the message status.
      * </p>
      * 
      * @param detail
-     *        Contains more details about the messasge status.
+     *        Contains more details about the message status.
      */
 
     public void setDetail(String detail) {
@@ -115,10 +115,10 @@ public class ChannelMessageStatusStructure implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Contains more details about the messasge status.
+     * Contains more details about the message status.
      * </p>
      * 
-     * @return Contains more details about the messasge status.
+     * @return Contains more details about the message status.
      */
 
     public String getDetail() {
@@ -127,11 +127,11 @@ public class ChannelMessageStatusStructure implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Contains more details about the messasge status.
+     * Contains more details about the message status.
      * </p>
      * 
      * @param detail
-     *        Contains more details about the messasge status.
+     *        Contains more details about the message status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

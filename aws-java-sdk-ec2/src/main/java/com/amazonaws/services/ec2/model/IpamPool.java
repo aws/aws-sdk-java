@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class IpamPool implements Serializable, Cloneable {
     private String sourceIpamPoolId;
     /**
      * <p>
-     * The ARN of the IPAM pool.
+     * The Amazon Resource Name (ARN) of the IPAM pool.
      * </p>
      */
     private String ipamPoolArn;
@@ -105,7 +105,7 @@ public class IpamPool implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * A message related to the failed creation of an IPAM pool.
+     * The state message.
      * </p>
      */
     private String stateMessage;
@@ -190,6 +190,24 @@ public class IpamPool implements Serializable, Cloneable {
      * </p>
      */
     private String awsService;
+    /**
+     * <p>
+     * The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the
+     * public scope. Default is <code>BYOIP</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a
+     * top-level IPv6 pool. For information on increasing the default limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.
+     * </p>
+     */
+    private String publicIpSource;
+    /**
+     * <p>
+     * The resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     */
+    private IpamPoolSourceResource sourceResource;
 
     /**
      * <p>
@@ -316,11 +334,11 @@ public class IpamPool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IPAM pool.
+     * The Amazon Resource Name (ARN) of the IPAM pool.
      * </p>
      * 
      * @param ipamPoolArn
-     *        The ARN of the IPAM pool.
+     *        The Amazon Resource Name (ARN) of the IPAM pool.
      */
 
     public void setIpamPoolArn(String ipamPoolArn) {
@@ -329,10 +347,10 @@ public class IpamPool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IPAM pool.
+     * The Amazon Resource Name (ARN) of the IPAM pool.
      * </p>
      * 
-     * @return The ARN of the IPAM pool.
+     * @return The Amazon Resource Name (ARN) of the IPAM pool.
      */
 
     public String getIpamPoolArn() {
@@ -341,11 +359,11 @@ public class IpamPool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IPAM pool.
+     * The Amazon Resource Name (ARN) of the IPAM pool.
      * </p>
      * 
      * @param ipamPoolArn
-     *        The ARN of the IPAM pool.
+     *        The Amazon Resource Name (ARN) of the IPAM pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -740,11 +758,11 @@ public class IpamPool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A message related to the failed creation of an IPAM pool.
+     * The state message.
      * </p>
      * 
      * @param stateMessage
-     *        A message related to the failed creation of an IPAM pool.
+     *        The state message.
      */
 
     public void setStateMessage(String stateMessage) {
@@ -753,10 +771,10 @@ public class IpamPool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A message related to the failed creation of an IPAM pool.
+     * The state message.
      * </p>
      * 
-     * @return A message related to the failed creation of an IPAM pool.
+     * @return The state message.
      */
 
     public String getStateMessage() {
@@ -765,11 +783,11 @@ public class IpamPool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A message related to the failed creation of an IPAM pool.
+     * The state message.
      * </p>
      * 
      * @param stateMessage
-     *        A message related to the failed creation of an IPAM pool.
+     *        The state message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1465,6 +1483,153 @@ public class IpamPool implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the
+     * public scope. Default is <code>BYOIP</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a
+     * top-level IPv6 pool. For information on increasing the default limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.
+     * </p>
+     * 
+     * @param publicIpSource
+     *        The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools
+     *        in the public scope. Default is <code>BYOIP</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in
+     *        the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to
+     *        a top-level IPv6 pool. For information on increasing the default limit, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the
+     *        <i>Amazon VPC IPAM User Guide</i>.
+     * @see IpamPoolPublicIpSource
+     */
+
+    public void setPublicIpSource(String publicIpSource) {
+        this.publicIpSource = publicIpSource;
+    }
+
+    /**
+     * <p>
+     * The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the
+     * public scope. Default is <code>BYOIP</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a
+     * top-level IPv6 pool. For information on increasing the default limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.
+     * </p>
+     * 
+     * @return The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools
+     *         in the public scope. Default is <code>BYOIP</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in
+     *         the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block
+     *         to a top-level IPv6 pool. For information on increasing the default limit, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the
+     *         <i>Amazon VPC IPAM User Guide</i>.
+     * @see IpamPoolPublicIpSource
+     */
+
+    public String getPublicIpSource() {
+        return this.publicIpSource;
+    }
+
+    /**
+     * <p>
+     * The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the
+     * public scope. Default is <code>BYOIP</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a
+     * top-level IPv6 pool. For information on increasing the default limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.
+     * </p>
+     * 
+     * @param publicIpSource
+     *        The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools
+     *        in the public scope. Default is <code>BYOIP</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in
+     *        the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to
+     *        a top-level IPv6 pool. For information on increasing the default limit, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the
+     *        <i>Amazon VPC IPAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpamPoolPublicIpSource
+     */
+
+    public IpamPool withPublicIpSource(String publicIpSource) {
+        setPublicIpSource(publicIpSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the
+     * public scope. Default is <code>BYOIP</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the
+     * <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a
+     * top-level IPv6 pool. For information on increasing the default limit, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon
+     * VPC IPAM User Guide</i>.
+     * </p>
+     * 
+     * @param publicIpSource
+     *        The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools
+     *        in the public scope. Default is <code>BYOIP</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in
+     *        the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to
+     *        a top-level IPv6 pool. For information on increasing the default limit, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the
+     *        <i>Amazon VPC IPAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpamPoolPublicIpSource
+     */
+
+    public IpamPool withPublicIpSource(IpamPoolPublicIpSource publicIpSource) {
+        this.publicIpSource = publicIpSource.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * 
+     * @param sourceResource
+     *        The resource used to provision CIDRs to a resource planning pool.
+     */
+
+    public void setSourceResource(IpamPoolSourceResource sourceResource) {
+        this.sourceResource = sourceResource;
+    }
+
+    /**
+     * <p>
+     * The resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * 
+     * @return The resource used to provision CIDRs to a resource planning pool.
+     */
+
+    public IpamPoolSourceResource getSourceResource() {
+        return this.sourceResource;
+    }
+
+    /**
+     * <p>
+     * The resource used to provision CIDRs to a resource planning pool.
+     * </p>
+     * 
+     * @param sourceResource
+     *        The resource used to provision CIDRs to a resource planning pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpamPool withSourceResource(IpamPoolSourceResource sourceResource) {
+        setSourceResource(sourceResource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1519,7 +1684,11 @@ public class IpamPool implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getAwsService() != null)
-            sb.append("AwsService: ").append(getAwsService());
+            sb.append("AwsService: ").append(getAwsService()).append(",");
+        if (getPublicIpSource() != null)
+            sb.append("PublicIpSource: ").append(getPublicIpSource()).append(",");
+        if (getSourceResource() != null)
+            sb.append("SourceResource: ").append(getSourceResource());
         sb.append("}");
         return sb.toString();
     }
@@ -1623,6 +1792,14 @@ public class IpamPool implements Serializable, Cloneable {
             return false;
         if (other.getAwsService() != null && other.getAwsService().equals(this.getAwsService()) == false)
             return false;
+        if (other.getPublicIpSource() == null ^ this.getPublicIpSource() == null)
+            return false;
+        if (other.getPublicIpSource() != null && other.getPublicIpSource().equals(this.getPublicIpSource()) == false)
+            return false;
+        if (other.getSourceResource() == null ^ this.getSourceResource() == null)
+            return false;
+        if (other.getSourceResource() != null && other.getSourceResource().equals(this.getSourceResource()) == false)
+            return false;
         return true;
     }
 
@@ -1653,6 +1830,8 @@ public class IpamPool implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAllocationResourceTags() == null) ? 0 : getAllocationResourceTags().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAwsService() == null) ? 0 : getAwsService().hashCode());
+        hashCode = prime * hashCode + ((getPublicIpSource() == null) ? 0 : getPublicIpSource().hashCode());
+        hashCode = prime * hashCode + ((getSourceResource() == null) ? 0 : getSourceResource().hashCode());
         return hashCode;
     }
 

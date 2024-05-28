@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+ * Options for configuring Auto-Tune. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,26 +29,33 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      */
     private String desiredState;
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and
+     * have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.
      * </p>
      */
     private java.util.List<AutoTuneMaintenanceSchedule> maintenanceSchedules;
+    /**
+     * <p>
+     * Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured
+     * daily off-peak window.
+     * </p>
+     */
+    private Boolean useOffPeakWindow;
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @see AutoTuneDesiredState
      */
 
@@ -56,10 +65,10 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
-     * @return The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * @return Whether Auto-Tune is enabled or disabled.
      * @see AutoTuneDesiredState
      */
 
@@ -69,11 +78,11 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneDesiredState
      */
@@ -85,11 +94,11 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneDesiredState
      */
@@ -101,14 +110,15 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and
+     * have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.
      * </p>
      * 
-     * @return A list of maintenance schedules. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are
+     *         deprecated and have been replaced with <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *         windows</a>.
      */
 
     public java.util.List<AutoTuneMaintenanceSchedule> getMaintenanceSchedules() {
@@ -117,15 +127,16 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and
+     * have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are
+     *        deprecated and have been replaced with <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *        windows</a>.
      */
 
     public void setMaintenanceSchedules(java.util.Collection<AutoTuneMaintenanceSchedule> maintenanceSchedules) {
@@ -139,9 +150,9 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and
+     * have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -150,9 +161,10 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are
+     *        deprecated and have been replaced with <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *        windows</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,21 +180,82 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and
+     * have been replaced with <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are
+     *        deprecated and have been replaced with <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *        windows</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoTuneOptionsInput withMaintenanceSchedules(java.util.Collection<AutoTuneMaintenanceSchedule> maintenanceSchedules) {
         setMaintenanceSchedules(maintenanceSchedules);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured
+     * daily off-peak window.
+     * </p>
+     * 
+     * @param useOffPeakWindow
+     *        Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's
+     *        configured daily off-peak window.
+     */
+
+    public void setUseOffPeakWindow(Boolean useOffPeakWindow) {
+        this.useOffPeakWindow = useOffPeakWindow;
+    }
+
+    /**
+     * <p>
+     * Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured
+     * daily off-peak window.
+     * </p>
+     * 
+     * @return Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's
+     *         configured daily off-peak window.
+     */
+
+    public Boolean getUseOffPeakWindow() {
+        return this.useOffPeakWindow;
+    }
+
+    /**
+     * <p>
+     * Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured
+     * daily off-peak window.
+     * </p>
+     * 
+     * @param useOffPeakWindow
+     *        Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's
+     *        configured daily off-peak window.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoTuneOptionsInput withUseOffPeakWindow(Boolean useOffPeakWindow) {
+        setUseOffPeakWindow(useOffPeakWindow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured
+     * daily off-peak window.
+     * </p>
+     * 
+     * @return Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's
+     *         configured daily off-peak window.
+     */
+
+    public Boolean isUseOffPeakWindow() {
+        return this.useOffPeakWindow;
     }
 
     /**
@@ -200,7 +273,9 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
         if (getDesiredState() != null)
             sb.append("DesiredState: ").append(getDesiredState()).append(",");
         if (getMaintenanceSchedules() != null)
-            sb.append("MaintenanceSchedules: ").append(getMaintenanceSchedules());
+            sb.append("MaintenanceSchedules: ").append(getMaintenanceSchedules()).append(",");
+        if (getUseOffPeakWindow() != null)
+            sb.append("UseOffPeakWindow: ").append(getUseOffPeakWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +298,10 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
             return false;
         if (other.getMaintenanceSchedules() != null && other.getMaintenanceSchedules().equals(this.getMaintenanceSchedules()) == false)
             return false;
+        if (other.getUseOffPeakWindow() == null ^ this.getUseOffPeakWindow() == null)
+            return false;
+        if (other.getUseOffPeakWindow() != null && other.getUseOffPeakWindow().equals(this.getUseOffPeakWindow()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +312,7 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getDesiredState() == null) ? 0 : getDesiredState().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceSchedules() == null) ? 0 : getMaintenanceSchedules().hashCode());
+        hashCode = prime * hashCode + ((getUseOffPeakWindow() == null) ? 0 : getUseOffPeakWindow().hashCode());
         return hashCode;
     }
 

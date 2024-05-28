@@ -1,0 +1,291 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.migrationhuborchestrator.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The ID of the migration workflow template.
+     * </p>
+     */
+    private String templateId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator
+     * template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     */
+    private String templateArn;
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The ID of the migration workflow template.
+     * </p>
+     * 
+     * @param templateId
+     *        The ID of the migration workflow template.
+     */
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the migration workflow template.
+     * </p>
+     * 
+     * @return The ID of the migration workflow template.
+     */
+
+    public String getTemplateId() {
+        return this.templateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the migration workflow template.
+     * </p>
+     * 
+     * @param templateId
+     *        The ID of the migration workflow template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateResult withTemplateId(String templateId) {
+        setTemplateId(templateId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator
+     * template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param templateArn
+     *        The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     *        Orchestrator template ARN is
+     *        <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public void setTemplateArn(String templateArn) {
+        this.templateArn = templateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator
+     * template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     *         Orchestrator template ARN is
+     *         <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more
+     *         information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public String getTemplateArn() {
+        return this.templateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator
+     * template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For
+     * more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in
+     * the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param templateArn
+     *        The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub
+     *        Orchestrator template ARN is
+     *        <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more
+     *        information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateResult withTemplateArn(String templateArn) {
+        setTemplateArn(templateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     * 
+     * @return The tags added to the migration workflow template.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     * 
+     * @param tags
+     *        The tags added to the migration workflow template.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags added to the migration workflow template.
+     * </p>
+     * 
+     * @param tags
+     *        The tags added to the migration workflow template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateTemplateResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTemplateResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getTemplateId() != null)
+            sb.append("TemplateId: ").append(getTemplateId()).append(",");
+        if (getTemplateArn() != null)
+            sb.append("TemplateArn: ").append(getTemplateArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateTemplateResult == false)
+            return false;
+        CreateTemplateResult other = (CreateTemplateResult) obj;
+        if (other.getTemplateId() == null ^ this.getTemplateId() == null)
+            return false;
+        if (other.getTemplateId() != null && other.getTemplateId().equals(this.getTemplateId()) == false)
+            return false;
+        if (other.getTemplateArn() == null ^ this.getTemplateArn() == null)
+            return false;
+        if (other.getTemplateArn() != null && other.getTemplateArn().equals(this.getTemplateArn()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
+        hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public CreateTemplateResult clone() {
+        try {
+            return (CreateTemplateResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

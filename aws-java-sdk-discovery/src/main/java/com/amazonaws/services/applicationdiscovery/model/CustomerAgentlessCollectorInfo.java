@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,25 +17,64 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * The inventory data for installed Agentless Collector collectors.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The number of active Agentless Collector collectors.
+     * </p>
+     */
     private Integer activeAgentlessCollectors;
-
+    /**
+     * <p>
+     * The number of healthy Agentless Collector collectors.
+     * </p>
+     */
     private Integer healthyAgentlessCollectors;
-
+    /**
+     * <p>
+     * The number of deny-listed Agentless Collector collectors.
+     * </p>
+     */
     private Integer denyListedAgentlessCollectors;
-
+    /**
+     * <p>
+     * The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
+     * </p>
+     */
     private Integer shutdownAgentlessCollectors;
-
+    /**
+     * <p>
+     * The number of unhealthy Agentless Collector collectors.
+     * </p>
+     */
     private Integer unhealthyAgentlessCollectors;
-
+    /**
+     * <p>
+     * The total number of Agentless Collector collectors.
+     * </p>
+     */
     private Integer totalAgentlessCollectors;
-
+    /**
+     * <p>
+     * The number of unknown Agentless Collector collectors.
+     * </p>
+     */
     private Integer unknownAgentlessCollectors;
 
     /**
+     * <p>
+     * The number of active Agentless Collector collectors.
+     * </p>
+     * 
      * @param activeAgentlessCollectors
+     *        The number of active Agentless Collector collectors.
      */
 
     public void setActiveAgentlessCollectors(Integer activeAgentlessCollectors) {
@@ -43,7 +82,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The number of active Agentless Collector collectors.
+     * </p>
+     * 
+     * @return The number of active Agentless Collector collectors.
      */
 
     public Integer getActiveAgentlessCollectors() {
@@ -51,7 +94,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of active Agentless Collector collectors.
+     * </p>
+     * 
      * @param activeAgentlessCollectors
+     *        The number of active Agentless Collector collectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -61,7 +109,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of healthy Agentless Collector collectors.
+     * </p>
+     * 
      * @param healthyAgentlessCollectors
+     *        The number of healthy Agentless Collector collectors.
      */
 
     public void setHealthyAgentlessCollectors(Integer healthyAgentlessCollectors) {
@@ -69,7 +122,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The number of healthy Agentless Collector collectors.
+     * </p>
+     * 
+     * @return The number of healthy Agentless Collector collectors.
      */
 
     public Integer getHealthyAgentlessCollectors() {
@@ -77,7 +134,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of healthy Agentless Collector collectors.
+     * </p>
+     * 
      * @param healthyAgentlessCollectors
+     *        The number of healthy Agentless Collector collectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +149,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of deny-listed Agentless Collector collectors.
+     * </p>
+     * 
      * @param denyListedAgentlessCollectors
+     *        The number of deny-listed Agentless Collector collectors.
      */
 
     public void setDenyListedAgentlessCollectors(Integer denyListedAgentlessCollectors) {
@@ -95,7 +162,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The number of deny-listed Agentless Collector collectors.
+     * </p>
+     * 
+     * @return The number of deny-listed Agentless Collector collectors.
      */
 
     public Integer getDenyListedAgentlessCollectors() {
@@ -103,7 +174,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of deny-listed Agentless Collector collectors.
+     * </p>
+     * 
      * @param denyListedAgentlessCollectors
+     *        The number of deny-listed Agentless Collector collectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +189,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
+     * </p>
+     * 
      * @param shutdownAgentlessCollectors
+     *        The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
      */
 
     public void setShutdownAgentlessCollectors(Integer shutdownAgentlessCollectors) {
@@ -121,7 +202,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
+     * </p>
+     * 
+     * @return The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
      */
 
     public Integer getShutdownAgentlessCollectors() {
@@ -129,7 +214,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
+     * </p>
+     * 
      * @param shutdownAgentlessCollectors
+     *        The number of Agentless Collector collectors with <code>SHUTDOWN</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,7 +229,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of unhealthy Agentless Collector collectors.
+     * </p>
+     * 
      * @param unhealthyAgentlessCollectors
+     *        The number of unhealthy Agentless Collector collectors.
      */
 
     public void setUnhealthyAgentlessCollectors(Integer unhealthyAgentlessCollectors) {
@@ -147,7 +242,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The number of unhealthy Agentless Collector collectors.
+     * </p>
+     * 
+     * @return The number of unhealthy Agentless Collector collectors.
      */
 
     public Integer getUnhealthyAgentlessCollectors() {
@@ -155,7 +254,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of unhealthy Agentless Collector collectors.
+     * </p>
+     * 
      * @param unhealthyAgentlessCollectors
+     *        The number of unhealthy Agentless Collector collectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +269,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The total number of Agentless Collector collectors.
+     * </p>
+     * 
      * @param totalAgentlessCollectors
+     *        The total number of Agentless Collector collectors.
      */
 
     public void setTotalAgentlessCollectors(Integer totalAgentlessCollectors) {
@@ -173,7 +282,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The total number of Agentless Collector collectors.
+     * </p>
+     * 
+     * @return The total number of Agentless Collector collectors.
      */
 
     public Integer getTotalAgentlessCollectors() {
@@ -181,7 +294,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The total number of Agentless Collector collectors.
+     * </p>
+     * 
      * @param totalAgentlessCollectors
+     *        The total number of Agentless Collector collectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,7 +309,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of unknown Agentless Collector collectors.
+     * </p>
+     * 
      * @param unknownAgentlessCollectors
+     *        The number of unknown Agentless Collector collectors.
      */
 
     public void setUnknownAgentlessCollectors(Integer unknownAgentlessCollectors) {
@@ -199,7 +322,11 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The number of unknown Agentless Collector collectors.
+     * </p>
+     * 
+     * @return The number of unknown Agentless Collector collectors.
      */
 
     public Integer getUnknownAgentlessCollectors() {
@@ -207,7 +334,12 @@ public class CustomerAgentlessCollectorInfo implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The number of unknown Agentless Collector collectors.
+     * </p>
+     * 
      * @param unknownAgentlessCollectors
+     *        The number of unknown Agentless Collector collectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

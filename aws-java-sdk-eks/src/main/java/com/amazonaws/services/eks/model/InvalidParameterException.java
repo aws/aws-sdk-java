@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,18 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
      * </p>
      */
     private String fargateProfileName;
-
+    /**
+     * <p>
+     * The specified parameter for the add-on name is invalid. Review the available parameters for the API request
+     * </p>
+     */
     private String addonName;
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     */
+    private String subscriptionId;
 
     /**
      * Constructs a new InvalidParameterException with the specified error message.
@@ -181,7 +191,13 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
     }
 
     /**
+     * <p>
+     * The specified parameter for the add-on name is invalid. Review the available parameters for the API request
+     * </p>
+     * 
      * @param addonName
+     *        The specified parameter for the add-on name is invalid. Review the available parameters for the API
+     *        request
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
@@ -190,7 +206,12 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
     }
 
     /**
-     * @return
+     * <p>
+     * The specified parameter for the add-on name is invalid. Review the available parameters for the API request
+     * </p>
+     * 
+     * @return The specified parameter for the add-on name is invalid. Review the available parameters for the API
+     *         request
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
@@ -199,12 +220,60 @@ public class InvalidParameterException extends com.amazonaws.services.eks.model.
     }
 
     /**
+     * <p>
+     * The specified parameter for the add-on name is invalid. Review the available parameters for the API request
+     * </p>
+     * 
      * @param addonName
+     *        The specified parameter for the add-on name is invalid. Review the available parameters for the API
+     *        request
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvalidParameterException withAddonName(String addonName) {
         setAddonName(addonName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     * 
+     * @param subscriptionId
+     *        The Amazon EKS subscription ID with the exception.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     * 
+     * @return The Amazon EKS subscription ID with the exception.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    public String getSubscriptionId() {
+        return this.subscriptionId;
+    }
+
+    /**
+     * <p>
+     * The Amazon EKS subscription ID with the exception.
+     * </p>
+     * 
+     * @param subscriptionId
+     *        The Amazon EKS subscription ID with the exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidParameterException withSubscriptionId(String subscriptionId) {
+        setSubscriptionId(subscriptionId);
         return this;
     }
 

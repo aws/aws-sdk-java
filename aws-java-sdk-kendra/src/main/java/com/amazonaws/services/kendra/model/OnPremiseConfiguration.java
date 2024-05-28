@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class OnPremiseConfiguration implements Serializable, Cloneable, Structur
     private String hostUrl;
     /**
      * <p>
-     * The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can
-     * find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
+     * The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect to. You
+     * can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
      * profile picture dropdown.
      * </p>
      */
@@ -98,13 +98,13 @@ public class OnPremiseConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can
-     * find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
+     * The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect to. You
+     * can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
      * profile picture dropdown.
      * </p>
      * 
      * @param organizationName
-     *        The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to.
+     *        The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect to.
      *        You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b>
      *        under your profile picture dropdown.
      */
@@ -115,13 +115,13 @@ public class OnPremiseConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can
-     * find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
+     * The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect to. You
+     * can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
      * profile picture dropdown.
      * </p>
      * 
-     * @return The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to.
-     *         You can find your organization name by logging into GitHub desktop and selecting <b>Your
+     * @return The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect
+     *         to. You can find your organization name by logging into GitHub desktop and selecting <b>Your
      *         organizations</b> under your profile picture dropdown.
      */
 
@@ -131,13 +131,13 @@ public class OnPremiseConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to. You can
-     * find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
+     * The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect to. You
+     * can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your
      * profile picture dropdown.
      * </p>
      * 
      * @param organizationName
-     *        The name of the organization of the GitHub Enterprise Server (in-premise) account you want to connect to.
+     *        The name of the organization of the GitHub Enterprise Server (on-premises) account you want to connect to.
      *        You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b>
      *        under your profile picture dropdown.
      * @return Returns a reference to this object so that method calls can be chained together.

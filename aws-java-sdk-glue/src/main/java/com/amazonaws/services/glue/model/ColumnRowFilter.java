@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A filter that uses both column-level and row-level filtering.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ColumnRowFilter" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ColumnRowFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A string containing the name of the column.
+     * </p>
+     */
     private String columnName;
-
+    /**
+     * <p>
+     * A string containing the row-level filter expression.
+     * </p>
+     */
     private String rowFilterExpression;
 
     /**
+     * <p>
+     * A string containing the name of the column.
+     * </p>
+     * 
      * @param columnName
+     *        A string containing the name of the column.
      */
 
     public void setColumnName(String columnName) {
@@ -38,7 +55,11 @@ public class ColumnRowFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * A string containing the name of the column.
+     * </p>
+     * 
+     * @return A string containing the name of the column.
      */
 
     public String getColumnName() {
@@ -46,7 +67,12 @@ public class ColumnRowFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A string containing the name of the column.
+     * </p>
+     * 
      * @param columnName
+     *        A string containing the name of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class ColumnRowFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A string containing the row-level filter expression.
+     * </p>
+     * 
      * @param rowFilterExpression
+     *        A string containing the row-level filter expression.
      */
 
     public void setRowFilterExpression(String rowFilterExpression) {
@@ -64,7 +95,11 @@ public class ColumnRowFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * A string containing the row-level filter expression.
+     * </p>
+     * 
+     * @return A string containing the row-level filter expression.
      */
 
     public String getRowFilterExpression() {
@@ -72,7 +107,12 @@ public class ColumnRowFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A string containing the row-level filter expression.
+     * </p>
+     * 
      * @param rowFilterExpression
+     *        A string containing the row-level filter expression.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

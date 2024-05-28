@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,13 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be
+     * included in the request.
+     * </p>
+     */
+    private String customDomainName;
+    /**
+     * <p>
      * The name of the database to get temporary authorization to log on to.
      * </p>
      * <p>
@@ -40,7 +47,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -79,6 +87,52 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be
+     * included in the request.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be
+     *        included in the request.
+     */
+
+    public void setCustomDomainName(String customDomainName) {
+        this.customDomainName = customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be
+     * included in the request.
+     * </p>
+     * 
+     * @return The custom domain name associated with the workgroup. The custom domain name or the workgroup name must
+     *         be included in the request.
+     */
+
+    public String getCustomDomainName() {
+        return this.customDomainName;
+    }
+
+    /**
+     * <p>
+     * The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be
+     * included in the request.
+     * </p>
+     * 
+     * @param customDomainName
+     *        The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be
+     *        included in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCredentialsRequest withCustomDomainName(String customDomainName) {
+        setCustomDomainName(customDomainName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the database to get temporary authorization to log on to.
      * </p>
      * <p>
@@ -92,7 +146,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -127,8 +182,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *        hyphen.
+     *        Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol
+     *        (@), or hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -169,7 +224,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -203,8 +259,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *         hyphen.
+     *         Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol
+     *         (@), or hyphen.
      *         </p>
      *         </li>
      *         <li>
@@ -245,7 +301,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     * hyphen.
      * </p>
      * </li>
      * <li>
@@ -280,8 +337,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
-     *        hyphen.
+     *        Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol
+     *        (@), or hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -407,6 +464,8 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomDomainName() != null)
+            sb.append("CustomDomainName: ").append(getCustomDomainName()).append(",");
         if (getDbName() != null)
             sb.append("DbName: ").append(getDbName()).append(",");
         if (getDurationSeconds() != null)
@@ -427,6 +486,10 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof GetCredentialsRequest == false)
             return false;
         GetCredentialsRequest other = (GetCredentialsRequest) obj;
+        if (other.getCustomDomainName() == null ^ this.getCustomDomainName() == null)
+            return false;
+        if (other.getCustomDomainName() != null && other.getCustomDomainName().equals(this.getCustomDomainName()) == false)
+            return false;
         if (other.getDbName() == null ^ this.getDbName() == null)
             return false;
         if (other.getDbName() != null && other.getDbName().equals(this.getDbName()) == false)
@@ -447,6 +510,7 @@ public class GetCredentialsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomDomainName() == null) ? 0 : getCustomDomainName().hashCode());
         hashCode = prime * hashCode + ((getDbName() == null) ? 0 : getDbName().hashCode());
         hashCode = prime * hashCode + ((getDurationSeconds() == null) ? 0 : getDurationSeconds().hashCode());
         hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());

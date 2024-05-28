@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,12 +46,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE
+     * (less than or equals), or NE (not equals)
      * </p>
      * </li>
      * <li>
      * <p>
-     * OBJECT_SIZE - Any operator except CONTAINS
+     * OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or
+     * equals), or NE (not equals)
      * </p>
      * </li>
      * </ul>
@@ -87,7 +89,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
-     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      * </p>
      * </li>
      * <li>
@@ -119,12 +121,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE
+     * (less than or equals), or NE (not equals)
      * </p>
      * </li>
      * <li>
      * <p>
-     * OBJECT_SIZE - Any operator except CONTAINS
+     * OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or
+     * equals), or NE (not equals)
      * </p>
      * </li>
      * </ul>
@@ -144,12 +148,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than),
+     *        LTE (less than or equals), or NE (not equals)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than
+     *        or equals), or NE (not equals)
      *        </p>
      *        </li>
      * @see JobComparator
@@ -176,12 +182,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE
+     * (less than or equals), or NE (not equals)
      * </p>
      * </li>
      * <li>
      * <p>
-     * OBJECT_SIZE - Any operator except CONTAINS
+     * OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or
+     * equals), or NE (not equals)
      * </p>
      * </li>
      * </ul>
@@ -200,12 +208,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *         OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than),
+     *         LTE (less than or equals), or NE (not equals)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         OBJECT_SIZE - Any operator except CONTAINS
+     *         OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less
+     *         than or equals), or NE (not equals)
      *         </p>
      *         </li>
      * @see JobComparator
@@ -232,12 +242,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE
+     * (less than or equals), or NE (not equals)
      * </p>
      * </li>
      * <li>
      * <p>
-     * OBJECT_SIZE - Any operator except CONTAINS
+     * OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or
+     * equals), or NE (not equals)
      * </p>
      * </li>
      * </ul>
@@ -257,12 +269,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than),
+     *        LTE (less than or equals), or NE (not equals)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than
+     *        or equals), or NE (not equals)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -291,12 +305,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE
+     * (less than or equals), or NE (not equals)
      * </p>
      * </li>
      * <li>
      * <p>
-     * OBJECT_SIZE - Any operator except CONTAINS
+     * OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than or
+     * equals), or NE (not equals)
      * </p>
      * </li>
      * </ul>
@@ -316,12 +332,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than),
+     *        LTE (less than or equals), or NE (not equals)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        OBJECT_SIZE - EQ (equals), GT (greater than), GTE (greater than or equals), LT (less than), LTE (less than
+     *        or equals), or NE (not equals)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -416,7 +434,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
-     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      * </p>
      * </li>
      * <li>
@@ -452,7 +470,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
-     *         created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *         created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      *         </p>
      *         </li>
      *         <li>
@@ -493,7 +511,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
-     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      * </p>
      * </li>
      * <li>
@@ -529,7 +547,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
-     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      *        </p>
      *        </li>
      *        <li>
@@ -575,7 +593,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
-     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      * </p>
      * </li>
      * <li>
@@ -616,7 +634,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
-     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      *        </p>
      *        </li>
      *        <li>
@@ -664,7 +682,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
-     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      * </p>
      * </li>
      * <li>
@@ -700,7 +718,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
-     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        created or last changed, whichever is latest. For example: 2023-09-24T14:31:13Z
      *        </p>
      *        </li>
      *        <li>

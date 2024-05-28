@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class CreateNetworkAnalyzerConfigurationRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> MULTICASTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MulticastGroups").build();
 
     private static final CreateNetworkAnalyzerConfigurationRequestMarshaller instance = new CreateNetworkAnalyzerConfigurationRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateNetworkAnalyzerConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createNetworkAnalyzerConfigurationRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createNetworkAnalyzerConfigurationRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createNetworkAnalyzerConfigurationRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createNetworkAnalyzerConfigurationRequest.getMulticastGroups(), MULTICASTGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

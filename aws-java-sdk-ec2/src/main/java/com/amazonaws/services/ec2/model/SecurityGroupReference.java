@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,24 @@ public class SecurityGroupReference implements Serializable, Cloneable {
     private String referencingVpcId;
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection (if applicable). For more information about security group referencing for
+     * peering connections, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your security
+     * groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      * </p>
      */
     private String vpcPeeringConnectionId;
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * The ID of the transit gateway (if applicable).
+     * </p>
+     */
+    private String transitGatewayId;
 
     /**
      * <p>
@@ -127,11 +141,17 @@ public class SecurityGroupReference implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection (if applicable). For more information about security group referencing for
+     * peering connections, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your security
+     * groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     *        The ID of the VPC peering connection (if applicable). For more information about security group
+     *        referencing for peering connections, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your
+     *        security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      */
 
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -140,10 +160,16 @@ public class SecurityGroupReference implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection (if applicable). For more information about security group referencing for
+     * peering connections, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your security
+     * groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      * </p>
      * 
-     * @return The ID of the VPC peering connection.
+     * @return The ID of the VPC peering connection (if applicable). For more information about security group
+     *         referencing for peering connections, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your
+     *         security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      */
 
     public String getVpcPeeringConnectionId() {
@@ -152,16 +178,92 @@ public class SecurityGroupReference implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection (if applicable). For more information about security group referencing for
+     * peering connections, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your security
+     * groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     *        The ID of the VPC peering connection (if applicable). For more information about security group
+     *        referencing for peering connections, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your
+     *        security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SecurityGroupReference withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         setVpcPeeringConnectionId(vpcPeeringConnectionId);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * The ID of the transit gateway (if applicable).
+     * </p>
+     * 
+     * @param transitGatewayId
+     *        <p>
+     *        This parameter is in preview and may not be available for your account.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The ID of the transit gateway (if applicable).
+     */
+
+    public void setTransitGatewayId(String transitGatewayId) {
+        this.transitGatewayId = transitGatewayId;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * The ID of the transit gateway (if applicable).
+     * </p>
+     * 
+     * @return <p>
+     *         This parameter is in preview and may not be available for your account.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The ID of the transit gateway (if applicable).
+     */
+
+    public String getTransitGatewayId() {
+        return this.transitGatewayId;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is in preview and may not be available for your account.
+     * </p>
+     * </note>
+     * <p>
+     * The ID of the transit gateway (if applicable).
+     * </p>
+     * 
+     * @param transitGatewayId
+     *        <p>
+     *        This parameter is in preview and may not be available for your account.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The ID of the transit gateway (if applicable).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityGroupReference withTransitGatewayId(String transitGatewayId) {
+        setTransitGatewayId(transitGatewayId);
         return this;
     }
 
@@ -182,7 +284,9 @@ public class SecurityGroupReference implements Serializable, Cloneable {
         if (getReferencingVpcId() != null)
             sb.append("ReferencingVpcId: ").append(getReferencingVpcId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
+        if (getTransitGatewayId() != null)
+            sb.append("TransitGatewayId: ").append(getTransitGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +313,10 @@ public class SecurityGroupReference implements Serializable, Cloneable {
             return false;
         if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
+        if (other.getTransitGatewayId() == null ^ this.getTransitGatewayId() == null)
+            return false;
+        if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +328,7 @@ public class SecurityGroupReference implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getReferencingVpcId() == null) ? 0 : getReferencingVpcId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         return hashCode;
     }
 

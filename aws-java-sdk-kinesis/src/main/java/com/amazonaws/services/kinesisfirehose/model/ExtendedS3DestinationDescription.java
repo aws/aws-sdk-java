@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
@@ -40,7 +40,7 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      */
     private String bucketARN;
@@ -55,8 +55,8 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
     private String prefix;
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
@@ -115,24 +115,34 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by
      * partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3
-     * destinations. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     * >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * destinations.
      * </p>
      */
     private DynamicPartitioningConfiguration dynamicPartitioningConfiguration;
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     */
+    private String fileExtension;
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     */
+    private String customTimeZone;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -141,14 +151,14 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -157,15 +167,15 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,13 +188,13 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
      *        The ARN of the S3 bucket. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public void setBucketARN(String bucketARN) {
@@ -195,12 +205,12 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @return The ARN of the S3 bucket. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public String getBucketARN() {
@@ -211,13 +221,13 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The ARN of the S3 bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
      *        The ARN of the S3 bucket. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,17 +296,17 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      */
 
     public void setErrorOutputPrefix(String errorOutputPrefix) {
@@ -305,16 +315,16 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
-     * @return A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *         prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *         see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *         S3 Objects</a>.
+     * @return A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     *         appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *         Objects</a>.
      */
 
     public String getErrorOutputPrefix() {
@@ -323,17 +333,17 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -738,17 +748,13 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by
      * partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3
-     * destinations. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     * >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * destinations.
      * </p>
      * 
      * @param dynamicPartitioningConfiguration
      *        The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming
      *        data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for
-     *        Amazon S3 destinations. For more information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     *        >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     *        Amazon S3 destinations.
      */
 
     public void setDynamicPartitioningConfiguration(DynamicPartitioningConfiguration dynamicPartitioningConfiguration) {
@@ -759,16 +765,12 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by
      * partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3
-     * destinations. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     * >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * destinations.
      * </p>
      * 
      * @return The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming
      *         data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for
-     *         Amazon S3 destinations. For more information, see <a
-     *         href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     *         >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     *         Amazon S3 destinations.
      */
 
     public DynamicPartitioningConfiguration getDynamicPartitioningConfiguration() {
@@ -779,22 +781,98 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      * <p>
      * The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by
      * partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3
-     * destinations. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     * >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     * destinations.
      * </p>
      * 
      * @param dynamicPartitioningConfiguration
      *        The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming
      *        data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for
-     *        Amazon S3 destinations. For more information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
-     *        >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+     *        Amazon S3 destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExtendedS3DestinationDescription withDynamicPartitioningConfiguration(DynamicPartitioningConfiguration dynamicPartitioningConfiguration) {
         setDynamicPartitioningConfiguration(dynamicPartitioningConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     * 
+     * @param fileExtension
+     *        Specify a file extension. It will override the default file extension
+     */
+
+    public void setFileExtension(String fileExtension) {
+        this.fileExtension = fileExtension;
+    }
+
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     * 
+     * @return Specify a file extension. It will override the default file extension
+     */
+
+    public String getFileExtension() {
+        return this.fileExtension;
+    }
+
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     * 
+     * @param fileExtension
+     *        Specify a file extension. It will override the default file extension
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExtendedS3DestinationDescription withFileExtension(String fileExtension) {
+        setFileExtension(fileExtension);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     * 
+     * @param customTimeZone
+     *        The time zone you prefer. UTC is the default.
+     */
+
+    public void setCustomTimeZone(String customTimeZone) {
+        this.customTimeZone = customTimeZone;
+    }
+
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     * 
+     * @return The time zone you prefer. UTC is the default.
+     */
+
+    public String getCustomTimeZone() {
+        return this.customTimeZone;
+    }
+
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     * 
+     * @param customTimeZone
+     *        The time zone you prefer. UTC is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExtendedS3DestinationDescription withCustomTimeZone(String customTimeZone) {
+        setCustomTimeZone(customTimeZone);
         return this;
     }
 
@@ -835,7 +913,11 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
         if (getDataFormatConversionConfiguration() != null)
             sb.append("DataFormatConversionConfiguration: ").append(getDataFormatConversionConfiguration()).append(",");
         if (getDynamicPartitioningConfiguration() != null)
-            sb.append("DynamicPartitioningConfiguration: ").append(getDynamicPartitioningConfiguration());
+            sb.append("DynamicPartitioningConfiguration: ").append(getDynamicPartitioningConfiguration()).append(",");
+        if (getFileExtension() != null)
+            sb.append("FileExtension: ").append(getFileExtension()).append(",");
+        if (getCustomTimeZone() != null)
+            sb.append("CustomTimeZone: ").append(getCustomTimeZone());
         sb.append("}");
         return sb.toString();
     }
@@ -904,6 +986,14 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
         if (other.getDynamicPartitioningConfiguration() != null
                 && other.getDynamicPartitioningConfiguration().equals(this.getDynamicPartitioningConfiguration()) == false)
             return false;
+        if (other.getFileExtension() == null ^ this.getFileExtension() == null)
+            return false;
+        if (other.getFileExtension() != null && other.getFileExtension().equals(this.getFileExtension()) == false)
+            return false;
+        if (other.getCustomTimeZone() == null ^ this.getCustomTimeZone() == null)
+            return false;
+        if (other.getCustomTimeZone() != null && other.getCustomTimeZone().equals(this.getCustomTimeZone()) == false)
+            return false;
         return true;
     }
 
@@ -925,6 +1015,8 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getS3BackupDescription() == null) ? 0 : getS3BackupDescription().hashCode());
         hashCode = prime * hashCode + ((getDataFormatConversionConfiguration() == null) ? 0 : getDataFormatConversionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDynamicPartitioningConfiguration() == null) ? 0 : getDynamicPartitioningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getFileExtension() == null) ? 0 : getFileExtension().hashCode());
+        hashCode = prime * hashCode + ((getCustomTimeZone() == null) ? 0 : getCustomTimeZone().hashCode());
         return hashCode;
     }
 

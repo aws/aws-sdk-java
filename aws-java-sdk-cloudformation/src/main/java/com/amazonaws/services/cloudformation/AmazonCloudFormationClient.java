@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cloudformation.model.*;
+
 import com.amazonaws.services.cloudformation.model.transform.*;
 
 /**
@@ -71,7 +72,7 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * <p>
  * CloudFormation makes use of other Amazon Web Services products. If you need additional technical information about a
  * specific Amazon Web Services product, you can find the product's technical documentation at <a
- * href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code> </a>.
+ * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 @ThreadSafe
@@ -305,6 +306,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             exceptionUnmarshallersMap.put("TypeConfigurationNotFoundException", new TypeConfigurationNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new TypeConfigurationNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("GeneratedTemplateNotFound") == null) {
+            exceptionUnmarshallersMap.put("GeneratedTemplateNotFound", new GeneratedTemplateNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new GeneratedTemplateNotFoundExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TokenAlreadyExistsException") == null) {
             exceptionUnmarshallersMap.put("TokenAlreadyExistsException", new TokenAlreadyExistsExceptionUnmarshaller());
         }
@@ -329,10 +334,18 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             exceptionUnmarshallersMap.put("StackSetNotFoundException", new StackSetNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new StackSetNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ResourceScanNotFound") == null) {
+            exceptionUnmarshallersMap.put("ResourceScanNotFound", new ResourceScanNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ResourceScanNotFoundExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InsufficientCapabilitiesException") == null) {
             exceptionUnmarshallersMap.put("InsufficientCapabilitiesException", new InsufficientCapabilitiesExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InsufficientCapabilitiesExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ConcurrentResourcesLimitExceeded") == null) {
+            exceptionUnmarshallersMap.put("ConcurrentResourcesLimitExceeded", new ConcurrentResourcesLimitExceededExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ConcurrentResourcesLimitExceededExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("AlreadyExistsException") == null) {
             exceptionUnmarshallersMap.put("AlreadyExistsException", new AlreadyExistsExceptionUnmarshaller());
         }
@@ -345,6 +358,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             exceptionUnmarshallersMap.put("StaleRequestException", new StaleRequestExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new StaleRequestExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ResourceScanInProgress") == null) {
+            exceptionUnmarshallersMap.put("ResourceScanInProgress", new ResourceScanInProgressExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ResourceScanInProgressExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidChangeSetStatus") == null) {
             exceptionUnmarshallersMap.put("InvalidChangeSetStatus", new InvalidChangeSetStatusExceptionUnmarshaller());
         }
@@ -361,6 +378,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             exceptionUnmarshallersMap.put("StackInstanceNotFoundException", new StackInstanceNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new StackInstanceNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ResourceScanLimitExceeded") == null) {
+            exceptionUnmarshallersMap.put("ResourceScanLimitExceeded", new ResourceScanLimitExceededExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ResourceScanLimitExceededExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("StackNotFoundException") == null) {
             exceptionUnmarshallersMap.put("StackNotFoundException", new StackNotFoundExceptionUnmarshaller());
         }
@@ -400,15 +421,77 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Activate trusted access with Organizations. With trusted access between StackSets and Organizations activated,
+     * the management account has permissions to create and manage StackSets for your organization.
+     * </p>
+     * 
+     * @param activateOrganizationsAccessRequest
+     * @return Result of the ActivateOrganizationsAccess operation returned by the service.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.ActivateOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ActivateOrganizationsAccessResult activateOrganizationsAccess(ActivateOrganizationsAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeActivateOrganizationsAccess(request);
+    }
+
+    @SdkInternalApi
+    final ActivateOrganizationsAccessResult executeActivateOrganizationsAccess(ActivateOrganizationsAccessRequest activateOrganizationsAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(activateOrganizationsAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ActivateOrganizationsAccessRequest> request = null;
+        Response<ActivateOrganizationsAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ActivateOrganizationsAccessRequestMarshaller().marshall(super.beforeMarshalling(activateOrganizationsAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateOrganizationsAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ActivateOrganizationsAccessResult> responseHandler = new StaxResponseHandler<ActivateOrganizationsAccessResult>(
+                    new ActivateOrganizationsAccessResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Activates a public third-party extension, making it available for use in stack templates. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using public
      * extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
-     * Once you have activated a public third-party extension in your account and region, use <a
-     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
-     * configuration properties for the extension. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * Once you have activated a public third-party extension in your account and Region, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
+     * >SetTypeConfiguration</a> to specify configuration properties for the extension. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -469,11 +552,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the
-     * account and region.
+     * account and Region.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -758,8 +841,77 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Creates a template from existing resources that are not already managed with CloudFormation. You can check the
+     * status of the template generation using the <code>DescribeGeneratedTemplate</code> API action.
+     * </p>
+     * 
+     * @param createGeneratedTemplateRequest
+     * @return Result of the CreateGeneratedTemplate operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource with the name requested already exists.
+     * @throws LimitExceededException
+     *         The quota for the resource has already been reached.</p>
+     *         <p>
+     *         For information about resource and stack limitations, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
+     *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
+     * @throws ConcurrentResourcesLimitExceededException
+     *         No more than 5 generated templates can be in an <code>InProgress</code> or <code>Pending</code> status at
+     *         one time. This error is also returned if a generated template that is in an <code>InProgress</code> or
+     *         <code>Pending</code> status is attempted to be updated or deleted.
+     * @sample AmazonCloudFormation.CreateGeneratedTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateGeneratedTemplateResult createGeneratedTemplate(CreateGeneratedTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGeneratedTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateGeneratedTemplateResult executeCreateGeneratedTemplate(CreateGeneratedTemplateRequest createGeneratedTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGeneratedTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGeneratedTemplateRequest> request = null;
+        Response<CreateGeneratedTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGeneratedTemplateRequestMarshaller().marshall(super.beforeMarshalling(createGeneratedTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGeneratedTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateGeneratedTemplateResult> responseHandler = new StaxResponseHandler<CreateGeneratedTemplateResult>(
+                    new CreateGeneratedTemplateResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a stack as specified in the template. After the call completes successfully, the stack creation starts.
-     * You can check the status of the stack through the <a>DescribeStacks</a>operation.
+     * You can check the status of the stack through the <a>DescribeStacks</a> operation.
      * </p>
      * 
      * @param createStackRequest
@@ -969,7 +1121,68 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Deactivates a public extension that was previously activated in this account and region.
+     * Deactivates trusted access with Organizations. If trusted access is deactivated, the management account does not
+     * have permissions to create and manage service-managed StackSets for your organization.
+     * </p>
+     * 
+     * @param deactivateOrganizationsAccessRequest
+     * @return Result of the DeactivateOrganizationsAccess operation returned by the service.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.DeactivateOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeactivateOrganizationsAccessResult deactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeactivateOrganizationsAccess(request);
+    }
+
+    @SdkInternalApi
+    final DeactivateOrganizationsAccessResult executeDeactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest deactivateOrganizationsAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deactivateOrganizationsAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeactivateOrganizationsAccessRequest> request = null;
+        Response<DeactivateOrganizationsAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeactivateOrganizationsAccessRequestMarshaller().marshall(super.beforeMarshalling(deactivateOrganizationsAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateOrganizationsAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeactivateOrganizationsAccessResult> responseHandler = new StaxResponseHandler<DeactivateOrganizationsAccessResult>(
+                    new DeactivateOrganizationsAccessResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deactivates a public extension that was previously activated in this account and Region.
      * </p>
      * <p>
      * Once deactivated, an extension can't be used in any CloudFormation operation. This includes stack update
@@ -1089,6 +1302,68 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DeleteChangeSetResult> responseHandler = new StaxResponseHandler<DeleteChangeSetResult>(
                     new DeleteChangeSetResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deleted a generated template.
+     * </p>
+     * 
+     * @param deleteGeneratedTemplateRequest
+     * @return Result of the DeleteGeneratedTemplate operation returned by the service.
+     * @throws GeneratedTemplateNotFoundException
+     *         The generated template was not found.
+     * @throws ConcurrentResourcesLimitExceededException
+     *         No more than 5 generated templates can be in an <code>InProgress</code> or <code>Pending</code> status at
+     *         one time. This error is also returned if a generated template that is in an <code>InProgress</code> or
+     *         <code>Pending</code> status is attempted to be updated or deleted.
+     * @sample AmazonCloudFormation.DeleteGeneratedTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteGeneratedTemplateResult deleteGeneratedTemplate(DeleteGeneratedTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGeneratedTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGeneratedTemplateResult executeDeleteGeneratedTemplate(DeleteGeneratedTemplateRequest deleteGeneratedTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGeneratedTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGeneratedTemplateRequest> request = null;
+        Response<DeleteGeneratedTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGeneratedTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteGeneratedTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGeneratedTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteGeneratedTemplateResult> responseHandler = new StaxResponseHandler<DeleteGeneratedTemplateResult>(
+                    new DeleteGeneratedTemplateResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1429,7 +1704,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * Returns the inputs for the change set and a list of changes that CloudFormation will make if you execute the
      * change set. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
-     * >Updating Stacks Using Change Sets</a> in the CloudFormation User Guide.
+     * >Updating Stacks Using Change Sets</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param describeChangeSetRequest
@@ -1549,6 +1824,128 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Describes a generated template. The output includes details about the progress of the creation of a generated
+     * template started by a <code>CreateGeneratedTemplate</code> API action or the update of a generated template
+     * started with an <code>UpdateGeneratedTemplate</code> API action.
+     * </p>
+     * 
+     * @param describeGeneratedTemplateRequest
+     * @return Result of the DescribeGeneratedTemplate operation returned by the service.
+     * @throws GeneratedTemplateNotFoundException
+     *         The generated template was not found.
+     * @sample AmazonCloudFormation.DescribeGeneratedTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeGeneratedTemplateResult describeGeneratedTemplate(DescribeGeneratedTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGeneratedTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGeneratedTemplateResult executeDescribeGeneratedTemplate(DescribeGeneratedTemplateRequest describeGeneratedTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGeneratedTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGeneratedTemplateRequest> request = null;
+        Response<DescribeGeneratedTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGeneratedTemplateRequestMarshaller().marshall(super.beforeMarshalling(describeGeneratedTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGeneratedTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeGeneratedTemplateResult> responseHandler = new StaxResponseHandler<DescribeGeneratedTemplateResult>(
+                    new DescribeGeneratedTemplateResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the account's <code>OrganizationAccess</code> status. This API can be called either
+     * by the management account or the delegated administrator by using the <code>CallAs</code> parameter. This API can
+     * also be called without the <code>CallAs</code> parameter by the management account.
+     * </p>
+     * 
+     * @param describeOrganizationsAccessRequest
+     * @return Result of the DescribeOrganizationsAccess operation returned by the service.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.DescribeOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeOrganizationsAccessResult describeOrganizationsAccess(DescribeOrganizationsAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationsAccess(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationsAccessResult executeDescribeOrganizationsAccess(DescribeOrganizationsAccessRequest describeOrganizationsAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOrganizationsAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOrganizationsAccessRequest> request = null;
+        Response<DescribeOrganizationsAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOrganizationsAccessRequestMarshaller().marshall(super.beforeMarshalling(describeOrganizationsAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationsAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeOrganizationsAccessResult> responseHandler = new StaxResponseHandler<DescribeOrganizationsAccessResult>(
+                    new DescribeOrganizationsAccessResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a CloudFormation extension publisher.
      * </p>
      * <p>
@@ -1628,8 +2025,66 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Describes details of a resource scan.
+     * </p>
+     * 
+     * @param describeResourceScanRequest
+     * @return Result of the DescribeResourceScan operation returned by the service.
+     * @throws ResourceScanNotFoundException
+     *         The resource scan was not found.
+     * @sample AmazonCloudFormation.DescribeResourceScan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeResourceScanResult describeResourceScan(DescribeResourceScanRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeResourceScan(request);
+    }
+
+    @SdkInternalApi
+    final DescribeResourceScanResult executeDescribeResourceScan(DescribeResourceScanRequest describeResourceScanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeResourceScanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeResourceScanRequest> request = null;
+        Response<DescribeResourceScanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeResourceScanRequestMarshaller().marshall(super.beforeMarshalling(describeResourceScanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourceScan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeResourceScanResult> responseHandler = new StaxResponseHandler<DescribeResourceScanResult>(
+                    new DescribeResourceScanResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a stack drift detection operation. A stack drift detection operation detects whether a
-     * stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the
+     * stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the
      * stack template and any values specified as template parameters. A stack is considered to have drifted if one or
      * more of its resources have drifted. For more information about stack and resource drift, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
@@ -1697,9 +2152,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Returns all stack related events for a specified stack in reverse chronological order. For more information about
-     * a stack's event history, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the
-     * CloudFormation User Guide.
+     * a stack's event history, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html"
+     * >CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1762,11 +2217,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns the stack instance that's associated with the specified stack set, Amazon Web Services account, and
-     * Region.
+     * Returns the stack instance that's associated with the specified StackSet, Amazon Web Services account, and Amazon
+     * Web Services Region.
      * </p>
      * <p>
-     * For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.
+     * For a list of stack instances that are associated with a specific StackSet, use <a>ListStackInstances</a>.
      * </p>
      * 
      * @param describeStackInstanceRequest
@@ -2038,7 +2493,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns the description of the specified stack set.
+     * Returns the description of the specified StackSet.
      * </p>
      * 
      * @param describeStackSetRequest
@@ -2096,7 +2551,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns the description of the specified stack set operation.
+     * Returns the description of the specified StackSet operation.
      * </p>
      * 
      * @param describeStackSetOperationRequest
@@ -2157,11 +2612,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Returns the description for the specified stack; if no stack name was specified, then it returns the description
-     * for all the stacks created.
+     * for all the stacks created. For more information about a stack's event history, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html"
+     * >CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If the stack doesn't exist, an <code>ValidationError</code> is returned.
+     * If the stack doesn't exist, a <code>ValidationError</code> is returned.
      * </p>
      * </note>
      * 
@@ -2291,12 +2748,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * identifiers.
      * </p>
      * <p>
-     * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
-     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of that registration request.
+     * When you initiate a registration request using <a>RegisterType</a>, you can then use
+     * <a>DescribeTypeRegistration</a> to monitor the progress of that registration request.
      * </p>
      * <p>
-     * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
-     * information about an extension.
+     * Once the registration request has completed, use <a>DescribeType</a> to return detailed information about an
+     * extension.
      * </p>
      * 
      * @param describeTypeRegistrationRequest
@@ -2354,7 +2811,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration,
+     * Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration,
      * as defined in the stack template and any values specified as template parameters. For each resource in the stack
      * that supports drift detection, CloudFormation compares the actual configuration of the resource with its expected
      * template configuration. Only resource properties explicitly defined in the stack template are checked for drift.
@@ -2436,7 +2893,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from it's
+     * Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from its
      * expected configuration, as defined in the stack template and any values specified as template parameters. This
      * information includes actual and expected property values for resources in which CloudFormation detects drift.
      * Only resource properties explicitly defined in the stack template are checked for drift. For more information
@@ -2515,9 +2972,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack set drift detection operation.
-     * Use this operation id with <code> <a>DescribeStackSetOperation</a> </code> to monitor the progress of the drift
-     * detection operation. The drift detection operation may take some time, depending on the number of stack instances
-     * included in the stack set, in addition to the number of resources included in each stack.
+     * Use this operation id with <a>DescribeStackSetOperation</a> to monitor the progress of the drift detection
+     * operation. The drift detection operation may take some time, depending on the number of stack instances included
+     * in the stack set, in addition to the number of resources included in each stack.
      * </p>
      * <p>
      * Once the operation has completed, use the following actions to return drift information:
@@ -2525,21 +2982,21 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <ul>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the stack set, including detailed
-     * information about the last <i>completed</i> drift operation performed on the stack set. (Information about drift
-     * operations that are in progress isn't included.)
+     * Use <a>DescribeStackSet</a> to return detailed information about the stack set, including detailed information
+     * about the last <i>completed</i> drift operation performed on the stack set. (Information about drift operations
+     * that are in progress isn't included.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Use <code> <a>ListStackInstances</a> </code> to return a list of stack instances belonging to the stack set,
-     * including the drift status and last drift time checked of each instance.
+     * Use <a>ListStackInstances</a> to return a list of stack instances belonging to the stack set, including the drift
+     * status and last drift time checked of each instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackInstance</a> </code> to return detailed information about a specific stack instance,
-     * including its drift status and last drift time checked.
+     * Use <a>DescribeStackInstance</a> to return detailed information about a specific stack instance, including its
+     * drift status and last drift time checked.
      * </p>
      * </li>
      * </ul>
@@ -2552,7 +3009,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * You can only run a single drift detection operation on a given stack set at one time.
      * </p>
      * <p>
-     * To stop a drift detection stack set operation, use <code> <a>StopStackSetOperation</a> </code>.
+     * To stop a drift detection stack set operation, use <a>StopStackSetOperation</a>.
      * </p>
      * 
      * @param detectStackSetDriftRequest
@@ -2746,6 +3203,66 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ExecuteChangeSetResult> responseHandler = new StaxResponseHandler<ExecuteChangeSetResult>(
                     new ExecuteChangeSetResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a generated template. If the template is in an <code>InProgress</code> or <code>Pending</code> status
+     * then the template returned will be the template when the template was last in a <code>Complete</code> status. If
+     * the template has not yet been in a <code>Complete</code> status then an empty template will be returned.
+     * </p>
+     * 
+     * @param getGeneratedTemplateRequest
+     * @return Result of the GetGeneratedTemplate operation returned by the service.
+     * @throws GeneratedTemplateNotFoundException
+     *         The generated template was not found.
+     * @sample AmazonCloudFormation.GetGeneratedTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGeneratedTemplateResult getGeneratedTemplate(GetGeneratedTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGeneratedTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetGeneratedTemplateResult executeGetGeneratedTemplate(GetGeneratedTemplateRequest getGeneratedTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGeneratedTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGeneratedTemplateRequest> request = null;
+        Response<GetGeneratedTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGeneratedTemplateRequestMarshaller().marshall(super.beforeMarshalling(getGeneratedTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeneratedTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetGeneratedTemplateResult> responseHandler = new StaxResponseHandler<GetGeneratedTemplateResult>(
+                    new GetGeneratedTemplateResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2962,11 +3479,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * stack set in the same account as the source stack or in a different administrator account and Region, by
      * specifying the stack ID of the stack you intend to import.
      * </p>
-     * <note>
-     * <p>
-     * <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
-     * </p>
-     * </note>
      * 
      * @param importStacksToStackSetRequest
      * @return Result of the ImportStacksToStackSet operation returned by the service.
@@ -3101,7 +3613,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * Lists all exported output values in the account and Region in which you call this action. Use this action to see
      * the exported output values that you can import into other stacks. To import values, use the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * <code>Fn::ImportValue</code> </a> function.
+     * Fn::ImportValue</a> function.
      * </p>
      * <p>
      * For more information, see <a
@@ -3161,14 +3673,70 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Lists your generated templates in this Region.
+     * </p>
+     * 
+     * @param listGeneratedTemplatesRequest
+     * @return Result of the ListGeneratedTemplates operation returned by the service.
+     * @sample AmazonCloudFormation.ListGeneratedTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListGeneratedTemplatesResult listGeneratedTemplates(ListGeneratedTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGeneratedTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListGeneratedTemplatesResult executeListGeneratedTemplates(ListGeneratedTemplatesRequest listGeneratedTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGeneratedTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGeneratedTemplatesRequest> request = null;
+        Response<ListGeneratedTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGeneratedTemplatesRequestMarshaller().marshall(super.beforeMarshalling(listGeneratedTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGeneratedTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListGeneratedTemplatesResult> responseHandler = new StaxResponseHandler<ListGeneratedTemplatesResult>(
+                    new ListGeneratedTemplatesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all stacks that are importing an exported output value. To modify or remove an exported output value, first
      * use this action to see which stacks are using it. To see the exported output values in your account, see
      * <a>ListExports</a>.
      * </p>
      * <p>
      * For more information about importing an exported output value, see the <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-     * <code>Fn::ImportValue</code> </a> function.
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html"
+     * >Fn::ImportValue</a> function.
      * </p>
      * 
      * @param listImportsRequest
@@ -3210,6 +3778,255 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListImportsResult> responseHandler = new StaxResponseHandler<ListImportsResult>(new ListImportsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the related resources for a list of resources from a resource scan. The response indicates whether each
+     * returned resource is already managed by CloudFormation.
+     * </p>
+     * 
+     * @param listResourceScanRelatedResourcesRequest
+     * @return Result of the ListResourceScanRelatedResources operation returned by the service.
+     * @throws ResourceScanNotFoundException
+     *         The resource scan was not found.
+     * @throws ResourceScanInProgressException
+     *         A resource scan is currently in progress. Only one can be run at a time for an account in a Region.
+     * @sample AmazonCloudFormation.ListResourceScanRelatedResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceScanRelatedResourcesResult listResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceScanRelatedResources(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceScanRelatedResourcesResult executeListResourceScanRelatedResources(
+            ListResourceScanRelatedResourcesRequest listResourceScanRelatedResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceScanRelatedResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceScanRelatedResourcesRequest> request = null;
+        Response<ListResourceScanRelatedResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceScanRelatedResourcesRequestMarshaller().marshall(super.beforeMarshalling(listResourceScanRelatedResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceScanRelatedResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListResourceScanRelatedResourcesResult> responseHandler = new StaxResponseHandler<ListResourceScanRelatedResourcesResult>(
+                    new ListResourceScanRelatedResourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the resources from a resource scan. The results can be filtered by resource identifier, resource type
+     * prefix, tag key, and tag value. Only resources that match all specified filters are returned. The response
+     * indicates whether each returned resource is already managed by CloudFormation.
+     * </p>
+     * 
+     * @param listResourceScanResourcesRequest
+     * @return Result of the ListResourceScanResources operation returned by the service.
+     * @throws ResourceScanNotFoundException
+     *         The resource scan was not found.
+     * @throws ResourceScanInProgressException
+     *         A resource scan is currently in progress. Only one can be run at a time for an account in a Region.
+     * @sample AmazonCloudFormation.ListResourceScanResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceScanResourcesResult listResourceScanResources(ListResourceScanResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceScanResources(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceScanResourcesResult executeListResourceScanResources(ListResourceScanResourcesRequest listResourceScanResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceScanResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceScanResourcesRequest> request = null;
+        Response<ListResourceScanResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceScanResourcesRequestMarshaller().marshall(super.beforeMarshalling(listResourceScanResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceScanResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListResourceScanResourcesResult> responseHandler = new StaxResponseHandler<ListResourceScanResourcesResult>(
+                    new ListResourceScanResourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the resource scans from newest to oldest. By default it will return up to 10 resource scans.
+     * </p>
+     * 
+     * @param listResourceScansRequest
+     * @return Result of the ListResourceScans operation returned by the service.
+     * @sample AmazonCloudFormation.ListResourceScans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceScansResult listResourceScans(ListResourceScansRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceScans(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceScansResult executeListResourceScans(ListResourceScansRequest listResourceScansRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceScansRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceScansRequest> request = null;
+        Response<ListResourceScansResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceScansRequestMarshaller().marshall(super.beforeMarshalling(listResourceScansRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceScans");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListResourceScansResult> responseHandler = new StaxResponseHandler<ListResourceScansResult>(
+                    new ListResourceScansResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns drift information for resources in a stack instance.
+     * </p>
+     * <note>
+     * <p>
+     * <code>ListStackInstanceResourceDrifts</code> returns drift information for the most recent drift detection
+     * operation. If an operation is in progress, it may only return partial results.
+     * </p>
+     * </note>
+     * 
+     * @param listStackInstanceResourceDriftsRequest
+     * @return Result of the ListStackInstanceResourceDrifts operation returned by the service.
+     * @throws StackSetNotFoundException
+     *         The specified stack set doesn't exist.
+     * @throws StackInstanceNotFoundException
+     *         The specified stack instance doesn't exist.
+     * @throws OperationNotFoundException
+     *         The specified ID refers to an operation that doesn't exist.
+     * @sample AmazonCloudFormation.ListStackInstanceResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstanceResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStackInstanceResourceDriftsResult listStackInstanceResourceDrifts(ListStackInstanceResourceDriftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStackInstanceResourceDrifts(request);
+    }
+
+    @SdkInternalApi
+    final ListStackInstanceResourceDriftsResult executeListStackInstanceResourceDrifts(
+            ListStackInstanceResourceDriftsRequest listStackInstanceResourceDriftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStackInstanceResourceDriftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStackInstanceResourceDriftsRequest> request = null;
+        Response<ListStackInstanceResourceDriftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStackInstanceResourceDriftsRequestMarshaller().marshall(super.beforeMarshalling(listStackInstanceResourceDriftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstanceResourceDrifts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListStackInstanceResourceDriftsResult> responseHandler = new StaxResponseHandler<ListStackInstanceResourceDriftsResult>(
+                    new ListStackInstanceResourceDriftsResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -3331,6 +4148,65 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListStackResourcesResult> responseHandler = new StaxResponseHandler<ListStackResourcesResult>(
                     new ListStackResourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns summary information about deployment targets for a stack set.
+     * </p>
+     * 
+     * @param listStackSetAutoDeploymentTargetsRequest
+     * @return Result of the ListStackSetAutoDeploymentTargets operation returned by the service.
+     * @throws StackSetNotFoundException
+     *         The specified stack set doesn't exist.
+     * @sample AmazonCloudFormation.ListStackSetAutoDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStackSetAutoDeploymentTargetsResult listStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStackSetAutoDeploymentTargets(request);
+    }
+
+    @SdkInternalApi
+    final ListStackSetAutoDeploymentTargetsResult executeListStackSetAutoDeploymentTargets(
+            ListStackSetAutoDeploymentTargetsRequest listStackSetAutoDeploymentTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStackSetAutoDeploymentTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStackSetAutoDeploymentTargetsRequest> request = null;
+        Response<ListStackSetAutoDeploymentTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStackSetAutoDeploymentTargetsRequestMarshaller().marshall(super.beforeMarshalling(listStackSetAutoDeploymentTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetAutoDeploymentTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListStackSetAutoDeploymentTargetsResult> responseHandler = new StaxResponseHandler<ListStackSetAutoDeploymentTargetsResult>(
+                    new ListStackSetAutoDeploymentTargetsResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -3777,7 +4653,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Publishes the specified extension to the CloudFormation registry as a public extension in this region. Public
+     * Publishes the specified extension to the CloudFormation registry as a public extension in this Region. Public
      * extensions are available for use by all CloudFormation users. For more information about publishing extensions,
      * see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
      * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
@@ -4006,18 +4882,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and
-     * per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
-     * deregister specific extension versions if necessary.
+     * per Region. Use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html"
+     * >DeregisterType</a> to deregister specific extension versions if necessary.
      * </p>
      * <p>
-     * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
-     * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
+     * Once you have initiated a registration request using <a>RegisterType</a>, you can use
+     * <a>DescribeTypeRegistration</a> to monitor the progress of the registration request.
      * </p>
      * <p>
-     * Once you have registered a private extension in your account and region, use <a
-     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
-     * configuration properties for the extension. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * Once you have registered a private extension in your account and Region, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html"
+     * >SetTypeConfiguration</a> to specify configuration properties for the extension. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -4225,13 +5103,14 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Specifies the configuration data for a registered CloudFormation extension, in the given account and region.
+     * Specifies the configuration data for a registered CloudFormation extension, in the given account and Region.
      * </p>
      * <p>
      * To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of
-     * <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see
-     * <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
      * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <important>
@@ -4422,6 +5301,84 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Starts a scan of the resources in this account in this Region. You can the status of a scan using the
+     * <code>ListResourceScans</code> API action.
+     * </p>
+     * 
+     * @param startResourceScanRequest
+     * @return Result of the StartResourceScan operation returned by the service.
+     * @throws ResourceScanInProgressException
+     *         A resource scan is currently in progress. Only one can be run at a time for an account in a Region.
+     * @throws ResourceScanLimitExceededException
+     *         The limit on resource scans has been exceeded. Reasons include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Exceeded the daily quota for resource scans.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A resource scan recently failed. You must wait 10 minutes before starting a new resource scan.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The last resource scan failed after exceeding 100,000 resources. When this happens, you must wait 24
+     *         hours before starting a new resource scan.
+     *         </p>
+     *         </li>
+     * @sample AmazonCloudFormation.StartResourceScan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartResourceScanResult startResourceScan(StartResourceScanRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartResourceScan(request);
+    }
+
+    @SdkInternalApi
+    final StartResourceScanResult executeStartResourceScan(StartResourceScanRequest startResourceScanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startResourceScanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartResourceScanRequest> request = null;
+        Response<StartResourceScanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartResourceScanRequestMarshaller().marshall(super.beforeMarshalling(startResourceScanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartResourceScan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartResourceScanResult> responseHandler = new StaxResponseHandler<StartResourceScanResult>(
+                    new StartResourceScanResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops an in-progress operation on a stack set and its associated stack instances. StackSets will cancel all the
      * unstarted stack instance deployments and wait for those are in-progress to complete.
      * </p>
@@ -4507,11 +5464,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * If you don't specify a version, CloudFormation uses the default version of the extension in your account and
-     * region for testing.
+     * Region for testing.
      * </p>
      * <p>
      * To perform testing, CloudFormation assumes the execution role specified when the type was registered. For more
-     * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
      * Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned
@@ -4568,6 +5526,74 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<TestTypeResult> responseHandler = new StaxResponseHandler<TestTypeResult>(new TestTypeResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a generated template. This can be used to change the name, add and remove resources, refresh resources,
+     * and change the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code> settings. You can check the
+     * status of the update to the generated template using the <code>DescribeGeneratedTemplate</code> API action.
+     * </p>
+     * 
+     * @param updateGeneratedTemplateRequest
+     * @return Result of the UpdateGeneratedTemplate operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource with the name requested already exists.
+     * @throws GeneratedTemplateNotFoundException
+     *         The generated template was not found.
+     * @throws LimitExceededException
+     *         The quota for the resource has already been reached.</p>
+     *         <p>
+     *         For information about resource and stack limitations, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html"
+     *         >CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
+     * @sample AmazonCloudFormation.UpdateGeneratedTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateGeneratedTemplateResult updateGeneratedTemplate(UpdateGeneratedTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGeneratedTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGeneratedTemplateResult executeUpdateGeneratedTemplate(UpdateGeneratedTemplateRequest updateGeneratedTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGeneratedTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGeneratedTemplateRequest> request = null;
+        Response<UpdateGeneratedTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGeneratedTemplateRequestMarshaller().marshall(super.beforeMarshalling(updateGeneratedTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGeneratedTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateGeneratedTemplateResult> responseHandler = new StaxResponseHandler<UpdateGeneratedTemplateResult>(
+                    new UpdateGeneratedTemplateResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

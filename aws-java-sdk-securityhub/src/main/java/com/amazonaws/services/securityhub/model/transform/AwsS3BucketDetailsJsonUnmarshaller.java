@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,14 @@ public class AwsS3BucketDetailsJsonUnmarshaller implements Unmarshaller<AwsS3Buc
                     context.nextToken();
                     awsS3BucketDetails.setBucketVersioningConfiguration(AwsS3BucketBucketVersioningConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (context.testExpression("ObjectLockConfiguration", targetDepth)) {
+                    context.nextToken();
+                    awsS3BucketDetails.setObjectLockConfiguration(AwsS3BucketObjectLockConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    awsS3BucketDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

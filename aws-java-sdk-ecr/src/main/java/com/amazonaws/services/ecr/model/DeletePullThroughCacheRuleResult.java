@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,13 @@ public class DeletePullThroughCacheRuleResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String registryId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through
+     * cache rule.
+     * </p>
+     */
+    private String credentialArn;
 
     /**
      * <p>
@@ -209,6 +216,52 @@ public class DeletePullThroughCacheRuleResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through
+     * cache rule.
+     * </p>
+     * 
+     * @param credentialArn
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull
+     *        through cache rule.
+     */
+
+    public void setCredentialArn(String credentialArn) {
+        this.credentialArn = credentialArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through
+     * cache rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull
+     *         through cache rule.
+     */
+
+    public String getCredentialArn() {
+        return this.credentialArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through
+     * cache rule.
+     * </p>
+     * 
+     * @param credentialArn
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull
+     *        through cache rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeletePullThroughCacheRuleResult withCredentialArn(String credentialArn) {
+        setCredentialArn(credentialArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -227,7 +280,9 @@ public class DeletePullThroughCacheRuleResult extends com.amazonaws.AmazonWebSer
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getRegistryId() != null)
-            sb.append("RegistryId: ").append(getRegistryId());
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
+        if (getCredentialArn() != null)
+            sb.append("CredentialArn: ").append(getCredentialArn());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +313,10 @@ public class DeletePullThroughCacheRuleResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
+        if (other.getCredentialArn() == null ^ this.getCredentialArn() == null)
+            return false;
+        if (other.getCredentialArn() != null && other.getCredentialArn().equals(this.getCredentialArn()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +329,7 @@ public class DeletePullThroughCacheRuleResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getUpstreamRegistryUrl() == null) ? 0 : getUpstreamRegistryUrl().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getCredentialArn() == null) ? 0 : getCredentialArn().hashCode());
         return hashCode;
     }
 

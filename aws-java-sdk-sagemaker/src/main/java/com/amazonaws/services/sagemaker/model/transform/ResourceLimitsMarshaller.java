@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ResourceLimitsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxNumberOfTrainingJobs").build();
     private static final MarshallingInfo<Integer> MAXPARALLELTRAININGJOBS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxParallelTrainingJobs").build();
+    private static final MarshallingInfo<Integer> MAXRUNTIMEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRuntimeInSeconds").build();
 
     private static final ResourceLimitsMarshaller instance = new ResourceLimitsMarshaller();
 
@@ -50,6 +52,7 @@ public class ResourceLimitsMarshaller {
         try {
             protocolMarshaller.marshall(resourceLimits.getMaxNumberOfTrainingJobs(), MAXNUMBEROFTRAININGJOBS_BINDING);
             protocolMarshaller.marshall(resourceLimits.getMaxParallelTrainingJobs(), MAXPARALLELTRAININGJOBS_BINDING);
+            protocolMarshaller.marshall(resourceLimits.getMaxRuntimeInSeconds(), MAXRUNTIMEINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

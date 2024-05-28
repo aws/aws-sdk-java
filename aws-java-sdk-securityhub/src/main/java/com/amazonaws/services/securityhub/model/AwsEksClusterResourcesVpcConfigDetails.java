@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,14 @@ public class AwsEksClusterResourcesVpcConfigDetails implements Serializable, Clo
      * </p>
      */
     private java.util.List<String> subnetIds;
+    /**
+     * <p>
+     * Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server
+     * endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within
+     * the cluster VPC.
+     * </p>
+     */
+    private Boolean endpointPublicAccess;
 
     /**
      * <p>
@@ -191,6 +199,74 @@ public class AwsEksClusterResourcesVpcConfigDetails implements Serializable, Clo
     }
 
     /**
+     * <p>
+     * Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server
+     * endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within
+     * the cluster VPC.
+     * </p>
+     * 
+     * @param endpointPublicAccess
+     *        Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API
+     *        server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that
+     *        originate from within the cluster VPC.
+     */
+
+    public void setEndpointPublicAccess(Boolean endpointPublicAccess) {
+        this.endpointPublicAccess = endpointPublicAccess;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server
+     * endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within
+     * the cluster VPC.
+     * </p>
+     * 
+     * @return Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API
+     *         server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that
+     *         originate from within the cluster VPC.
+     */
+
+    public Boolean getEndpointPublicAccess() {
+        return this.endpointPublicAccess;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server
+     * endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within
+     * the cluster VPC.
+     * </p>
+     * 
+     * @param endpointPublicAccess
+     *        Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API
+     *        server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that
+     *        originate from within the cluster VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsEksClusterResourcesVpcConfigDetails withEndpointPublicAccess(Boolean endpointPublicAccess) {
+        setEndpointPublicAccess(endpointPublicAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server
+     * endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within
+     * the cluster VPC.
+     * </p>
+     * 
+     * @return Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API
+     *         server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that
+     *         originate from within the cluster VPC.
+     */
+
+    public Boolean isEndpointPublicAccess() {
+        return this.endpointPublicAccess;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -205,7 +281,9 @@ public class AwsEksClusterResourcesVpcConfigDetails implements Serializable, Clo
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: ").append(getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
+        if (getEndpointPublicAccess() != null)
+            sb.append("EndpointPublicAccess: ").append(getEndpointPublicAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +306,10 @@ public class AwsEksClusterResourcesVpcConfigDetails implements Serializable, Clo
             return false;
         if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
+        if (other.getEndpointPublicAccess() == null ^ this.getEndpointPublicAccess() == null)
+            return false;
+        if (other.getEndpointPublicAccess() != null && other.getEndpointPublicAccess().equals(this.getEndpointPublicAccess()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +320,7 @@ public class AwsEksClusterResourcesVpcConfigDetails implements Serializable, Clo
 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getEndpointPublicAccess() == null) ? 0 : getEndpointPublicAccess().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ import com.amazonaws.Request;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkProtectedApi;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.ProviderNameAware;
 import com.amazonaws.retry.RetryMode;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -50,8 +52,10 @@ public class RuntimeHttpUtils {
     private static final String AWS_EXECUTION_ENV_NAME = "AWS_EXECUTION_ENV";
 
     private static final String RETRY_MODE_PREFIX = "cfg/retry-mode/";
+    private static final String PROVIDER_NAME_PREFIX = "cfg/auth-source#";
 
     private static final String TRACE_ID_ENVIRONMENT_VARIABLE = "_X_AMZN_TRACE_ID";
+    private static final String TRACE_ID_SYSTEM_PROPERTY = "com.amazonaws.xray.traceHeader";
     private static final String LAMBDA_FUNCTION_NAME_ENVIRONMENT_VARIABLE = "AWS_LAMBDA_FUNCTION_NAME";
 
 
@@ -115,11 +119,17 @@ public class RuntimeHttpUtils {
     }
 
     public static String getUserAgent(final ClientConfiguration config, final String userAgentMarker) {
+        return getUserAgent(config, userAgentMarker, null);
+    }
+
+    public static String getUserAgent(final ClientConfiguration config, final String userAgentMarker,
+                                      AWSCredentials credentials) {
 
         String userDefinedPrefix = "";
         String userDefinedSuffix = "";
         String retryModeName = "";
         String awsExecutionEnvironment = getEnvironmentVariable(AWS_EXECUTION_ENV_NAME);
+        String providerName = getProviderName(credentials);
 
         if (config != null) {
             userDefinedPrefix = config.getUserAgentPrefix();
@@ -138,6 +148,10 @@ public class RuntimeHttpUtils {
             userAgent.append(SPACE).append(RETRY_MODE_PREFIX).append(retryModeName.trim());
         }
 
+        if (StringUtils.hasValue(providerName)) {
+            userAgent.append(SPACE).append(PROVIDER_NAME_PREFIX).append(providerName);
+        }
+
         if(StringUtils.hasValue(userDefinedSuffix)) {
             userAgent.append(COMMA).append(userDefinedSuffix.trim());
         }
@@ -153,12 +167,28 @@ public class RuntimeHttpUtils {
         return userAgent.toString();
     }
 
+    private static String getProviderName(AWSCredentials credentials) {
+        if (credentials instanceof ProviderNameAware) {
+            ProviderNameAware providerNameAwareCredentials = (ProviderNameAware) credentials;
+            return CredentialsProviderNameMapping.mapFrom(providerNameAwareCredentials.getProviderName());
+        }
+        return null;
+    }
+
     private static String getEnvironmentVariable(String environmentVariableName) {
         try {
             return System.getenv(environmentVariableName);
         } catch (Exception e) {
             // Return an empty string if unable to get environment variable
             return "";
+        }
+    }
+
+    private static String getSystemProperty(String systemProperty) {
+        try {
+            return System.getProperty(systemProperty);
+        } catch (Exception e) {
+            return null;
         }
     }
 
@@ -279,11 +309,18 @@ public class RuntimeHttpUtils {
      */
     public static String getLambdaEnvironmentTraceId() {
         String lambdafunctionName = getEnvironmentVariable(LAMBDA_FUNCTION_NAME_ENVIRONMENT_VARIABLE);
-        String traceId = getEnvironmentVariable(TRACE_ID_ENVIRONMENT_VARIABLE);
-
+        String traceId = traceId();
         if (!StringUtils.isNullOrEmpty(lambdafunctionName) && !StringUtils.isNullOrEmpty(traceId)) {
             return traceId;
         };
         return null;
+    }
+
+    static String traceId() {
+        String traceId = getSystemProperty(TRACE_ID_SYSTEM_PROPERTY);
+        if (traceId == null) {
+            traceId = getEnvironmentVariable(TRACE_ID_ENVIRONMENT_VARIABLE);
+        }
+        return traceId;
     }
 }

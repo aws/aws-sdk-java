@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Identifies the launch template to use for faster launching of the Windows AMI.
+ * Identifies the launch template that the AMI uses for Windows fast launch.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FastLaunchLaunchTemplateSpecificationResponse"
@@ -28,30 +28,30 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The ID of the launch template for faster launching of the associated Windows AMI.
+     * The ID of the launch template that the AMI uses for Windows fast launch.
      * </p>
      */
     private String launchTemplateId;
     /**
      * <p>
-     * The name of the launch template for faster launching of the associated Windows AMI.
+     * The name of the launch template that the AMI uses for Windows fast launch.
      * </p>
      */
     private String launchTemplateName;
     /**
      * <p>
-     * The version of the launch template for faster launching of the associated Windows AMI.
+     * The version of the launch template that the AMI uses for Windows fast launch.
      * </p>
      */
     private String version;
 
     /**
      * <p>
-     * The ID of the launch template for faster launching of the associated Windows AMI.
+     * The ID of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
      * @param launchTemplateId
-     *        The ID of the launch template for faster launching of the associated Windows AMI.
+     *        The ID of the launch template that the AMI uses for Windows fast launch.
      */
 
     public void setLaunchTemplateId(String launchTemplateId) {
@@ -60,10 +60,10 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The ID of the launch template for faster launching of the associated Windows AMI.
+     * The ID of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
-     * @return The ID of the launch template for faster launching of the associated Windows AMI.
+     * @return The ID of the launch template that the AMI uses for Windows fast launch.
      */
 
     public String getLaunchTemplateId() {
@@ -72,11 +72,11 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The ID of the launch template for faster launching of the associated Windows AMI.
+     * The ID of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
      * @param launchTemplateId
-     *        The ID of the launch template for faster launching of the associated Windows AMI.
+     *        The ID of the launch template that the AMI uses for Windows fast launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The name of the launch template for faster launching of the associated Windows AMI.
+     * The name of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
      * @param launchTemplateName
-     *        The name of the launch template for faster launching of the associated Windows AMI.
+     *        The name of the launch template that the AMI uses for Windows fast launch.
      */
 
     public void setLaunchTemplateName(String launchTemplateName) {
@@ -100,10 +100,10 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The name of the launch template for faster launching of the associated Windows AMI.
+     * The name of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
-     * @return The name of the launch template for faster launching of the associated Windows AMI.
+     * @return The name of the launch template that the AMI uses for Windows fast launch.
      */
 
     public String getLaunchTemplateName() {
@@ -112,11 +112,11 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The name of the launch template for faster launching of the associated Windows AMI.
+     * The name of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
      * @param launchTemplateName
-     *        The name of the launch template for faster launching of the associated Windows AMI.
+     *        The name of the launch template that the AMI uses for Windows fast launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +127,11 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The version of the launch template for faster launching of the associated Windows AMI.
+     * The version of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
      * @param version
-     *        The version of the launch template for faster launching of the associated Windows AMI.
+     *        The version of the launch template that the AMI uses for Windows fast launch.
      */
 
     public void setVersion(String version) {
@@ -140,10 +140,10 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The version of the launch template for faster launching of the associated Windows AMI.
+     * The version of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
-     * @return The version of the launch template for faster launching of the associated Windows AMI.
+     * @return The version of the launch template that the AMI uses for Windows fast launch.
      */
 
     public String getVersion() {
@@ -152,11 +152,11 @@ public class FastLaunchLaunchTemplateSpecificationResponse implements Serializab
 
     /**
      * <p>
-     * The version of the launch template for faster launching of the associated Windows AMI.
+     * The version of the launch template that the AMI uses for Windows fast launch.
      * </p>
      * 
      * @param version
-     *        The version of the launch template for faster launching of the associated Windows AMI.
+     *        The version of the launch template that the AMI uses for Windows fast launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

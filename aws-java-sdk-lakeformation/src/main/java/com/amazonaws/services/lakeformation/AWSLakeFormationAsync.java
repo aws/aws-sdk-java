@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -307,6 +307,76 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Creates an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to
+     * access Data Catalog resources.
+     * </p>
+     * 
+     * @param createLakeFormationIdentityCenterConfigurationRequest
+     * @return A Java Future containing the result of the CreateLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsync.CreateLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLakeFormationIdentityCenterConfigurationResult> createLakeFormationIdentityCenterConfigurationAsync(
+            CreateLakeFormationIdentityCenterConfigurationRequest createLakeFormationIdentityCenterConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to
+     * access Data Catalog resources.
+     * </p>
+     * 
+     * @param createLakeFormationIdentityCenterConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.CreateLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLakeFormationIdentityCenterConfigurationResult> createLakeFormationIdentityCenterConfigurationAsync(
+            CreateLakeFormationIdentityCenterConfigurationRequest createLakeFormationIdentityCenterConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLakeFormationIdentityCenterConfigurationRequest, CreateLakeFormationIdentityCenterConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @return A Java Future containing the result of the CreateLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsync.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest createLakeFormationOptInRequest);
+
+    /**
+     * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLakeFormationOptInResult> createLakeFormationOptInAsync(CreateLakeFormationOptInRequest createLakeFormationOptInRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLakeFormationOptInRequest, CreateLakeFormationOptInResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a data cell filter.
      * </p>
      * 
@@ -372,6 +442,74 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest deleteLFTagRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLFTagRequest, DeleteLFTagResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an IAM Identity Center connection with Lake Formation.
+     * </p>
+     * 
+     * @param deleteLakeFormationIdentityCenterConfigurationRequest
+     * @return A Java Future containing the result of the DeleteLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsync.DeleteLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLakeFormationIdentityCenterConfigurationResult> deleteLakeFormationIdentityCenterConfigurationAsync(
+            DeleteLakeFormationIdentityCenterConfigurationRequest deleteLakeFormationIdentityCenterConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes an IAM Identity Center connection with Lake Formation.
+     * </p>
+     * 
+     * @param deleteLakeFormationIdentityCenterConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.DeleteLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLakeFormationIdentityCenterConfigurationResult> deleteLakeFormationIdentityCenterConfigurationAsync(
+            DeleteLakeFormationIdentityCenterConfigurationRequest deleteLakeFormationIdentityCenterConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLakeFormationIdentityCenterConfigurationRequest, DeleteLakeFormationIdentityCenterConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @return A Java Future containing the result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsync.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest);
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLakeFormationOptInResult> deleteLakeFormationOptInAsync(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLakeFormationOptInRequest, DeleteLakeFormationOptInResult> asyncHandler);
 
     /**
      * <p>
@@ -458,6 +596,43 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<DeregisterResourceResult> deregisterResourceAsync(DeregisterResourceRequest deregisterResourceRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterResourceRequest, DeregisterResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the instance ARN and application ARN for the connection.
+     * </p>
+     * 
+     * @param describeLakeFormationIdentityCenterConfigurationRequest
+     * @return A Java Future containing the result of the DescribeLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsync.DescribeLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLakeFormationIdentityCenterConfigurationResult> describeLakeFormationIdentityCenterConfigurationAsync(
+            DescribeLakeFormationIdentityCenterConfigurationRequest describeLakeFormationIdentityCenterConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the instance ARN and application ARN for the connection.
+     * </p>
+     * 
+     * @param describeLakeFormationIdentityCenterConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.DescribeLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLakeFormationIdentityCenterConfigurationResult> describeLakeFormationIdentityCenterConfigurationAsync(
+            DescribeLakeFormationIdentityCenterConfigurationRequest describeLakeFormationIdentityCenterConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLakeFormationIdentityCenterConfigurationRequest, DescribeLakeFormationIdentityCenterConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -559,6 +734,68 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<ExtendTransactionResult> extendTransactionAsync(ExtendTransactionRequest extendTransactionRequest,
             com.amazonaws.handlers.AsyncHandler<ExtendTransactionRequest, ExtendTransactionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a data cells filter.
+     * </p>
+     * 
+     * @param getDataCellsFilterRequest
+     * @return A Java Future containing the result of the GetDataCellsFilter operation returned by the service.
+     * @sample AWSLakeFormationAsync.GetDataCellsFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataCellsFilterResult> getDataCellsFilterAsync(GetDataCellsFilterRequest getDataCellsFilterRequest);
+
+    /**
+     * <p>
+     * Returns a data cells filter.
+     * </p>
+     * 
+     * @param getDataCellsFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataCellsFilter operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.GetDataCellsFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataCellsFilterResult> getDataCellsFilterAsync(GetDataCellsFilterRequest getDataCellsFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataCellsFilterRequest, GetDataCellsFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the identity of the invoking principal.
+     * </p>
+     * 
+     * @param getDataLakePrincipalRequest
+     * @return A Java Future containing the result of the GetDataLakePrincipal operation returned by the service.
+     * @sample AWSLakeFormationAsync.GetDataLakePrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest getDataLakePrincipalRequest);
+
+    /**
+     * <p>
+     * Returns the identity of the invoking principal.
+     * </p>
+     * 
+     * @param getDataLakePrincipalRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataLakePrincipal operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.GetDataLakePrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest getDataLakePrincipalRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakePrincipalRequest, GetDataLakePrincipalResult> asyncHandler);
 
     /**
      * <p>
@@ -938,7 +1175,7 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -957,7 +1194,7 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -1038,6 +1275,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @return A Java Future containing the result of the ListLakeFormationOptIns operation returned by the service.
+     * @sample AWSLakeFormationAsync.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest);
+
+    /**
+     * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLakeFormationOptIns operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLakeFormationOptInsResult> listLakeFormationOptInsAsync(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLakeFormationOptInsRequest, ListLakeFormationOptInsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For
      * example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.
      * </p>
@@ -1046,7 +1314,7 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -1068,7 +1336,7 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -1518,6 +1786,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Updates a data cell filter.
+     * </p>
+     * 
+     * @param updateDataCellsFilterRequest
+     * @return A Java Future containing the result of the UpdateDataCellsFilter operation returned by the service.
+     * @sample AWSLakeFormationAsync.UpdateDataCellsFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataCellsFilterResult> updateDataCellsFilterAsync(UpdateDataCellsFilterRequest updateDataCellsFilterRequest);
+
+    /**
+     * <p>
+     * Updates a data cell filter.
+     * </p>
+     * 
+     * @param updateDataCellsFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDataCellsFilter operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.UpdateDataCellsFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataCellsFilterResult> updateDataCellsFilterAsync(UpdateDataCellsFilterRequest updateDataCellsFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataCellsFilterRequest, UpdateDataCellsFilterResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation
      * throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible
      * values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception
@@ -1552,6 +1851,43 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(UpdateLFTagRequest updateLFTagRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLFTagRequest, UpdateLFTagResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the IAM Identity Center connection parameters.
+     * </p>
+     * 
+     * @param updateLakeFormationIdentityCenterConfigurationRequest
+     * @return A Java Future containing the result of the UpdateLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsync.UpdateLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLakeFormationIdentityCenterConfigurationResult> updateLakeFormationIdentityCenterConfigurationAsync(
+            UpdateLakeFormationIdentityCenterConfigurationRequest updateLakeFormationIdentityCenterConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the IAM Identity Center connection parameters.
+     * </p>
+     * 
+     * @param updateLakeFormationIdentityCenterConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLakeFormationIdentityCenterConfiguration operation
+     *         returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.UpdateLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLakeFormationIdentityCenterConfigurationResult> updateLakeFormationIdentityCenterConfigurationAsync(
+            UpdateLakeFormationIdentityCenterConfigurationRequest updateLakeFormationIdentityCenterConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLakeFormationIdentityCenterConfigurationRequest, UpdateLakeFormationIdentityCenterConfigurationResult> asyncHandler);
 
     /**
      * <p>

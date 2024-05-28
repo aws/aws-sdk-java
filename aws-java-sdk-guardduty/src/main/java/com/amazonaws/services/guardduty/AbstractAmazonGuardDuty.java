@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,6 +165,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public GetCoverageStatisticsResult getCoverageStatistics(GetCoverageStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDetectorResult getDetector(GetDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -216,6 +221,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public GetOrganizationStatisticsResult getOrganizationStatistics(GetOrganizationStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRemainingFreeTrialDaysResult getRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -232,6 +242,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public InviteMembersResult inviteMembers(InviteMembersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCoverageResult listCoverage(ListCoverageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -282,6 +297,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public ListThreatIntelSetsResult listThreatIntelSets(ListThreatIntelSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMalwareScanResult startMalwareScan(StartMalwareScanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

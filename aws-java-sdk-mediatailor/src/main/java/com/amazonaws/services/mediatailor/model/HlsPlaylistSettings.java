@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,11 +30,137 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     * <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     * <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * </p>
+     */
+    private java.util.List<String> adMarkupType;
+    /**
+     * <p>
      * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
      * <code>3600</code> seconds.
      * </p>
      */
     private Integer manifestWindowSeconds;
+
+    /**
+     * <p>
+     * Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     * <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     * <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * </p>
+     * 
+     * @return Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     *         <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     *         <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * @see AdMarkupType
+     */
+
+    public java.util.List<String> getAdMarkupType() {
+        return adMarkupType;
+    }
+
+    /**
+     * <p>
+     * Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     * <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     * <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * </p>
+     * 
+     * @param adMarkupType
+     *        Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     *        <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     *        <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * @see AdMarkupType
+     */
+
+    public void setAdMarkupType(java.util.Collection<String> adMarkupType) {
+        if (adMarkupType == null) {
+            this.adMarkupType = null;
+            return;
+        }
+
+        this.adMarkupType = new java.util.ArrayList<String>(adMarkupType);
+    }
+
+    /**
+     * <p>
+     * Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     * <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     * <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdMarkupType(java.util.Collection)} or {@link #withAdMarkupType(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param adMarkupType
+     *        Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     *        <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     *        <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdMarkupType
+     */
+
+    public HlsPlaylistSettings withAdMarkupType(String... adMarkupType) {
+        if (this.adMarkupType == null) {
+            setAdMarkupType(new java.util.ArrayList<String>(adMarkupType.length));
+        }
+        for (String ele : adMarkupType) {
+            this.adMarkupType.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     * <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     * <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * </p>
+     * 
+     * @param adMarkupType
+     *        Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     *        <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     *        <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdMarkupType
+     */
+
+    public HlsPlaylistSettings withAdMarkupType(java.util.Collection<String> adMarkupType) {
+        setAdMarkupType(adMarkupType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     * <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     * <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * </p>
+     * 
+     * @param adMarkupType
+     *        Determines the type of SCTE 35 tags to use in ad markup. Specify <code>DATERANGE</code> to use
+     *        <code>DATERANGE</code> tags (for live or VOD content). Specify <code>SCTE35_ENHANCED</code> to use
+     *        <code>EXT-X-CUE-OUT</code> and <code>EXT-X-CUE-IN</code> tags (for VOD content only).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdMarkupType
+     */
+
+    public HlsPlaylistSettings withAdMarkupType(AdMarkupType... adMarkupType) {
+        java.util.ArrayList<String> adMarkupTypeCopy = new java.util.ArrayList<String>(adMarkupType.length);
+        for (AdMarkupType value : adMarkupType) {
+            adMarkupTypeCopy.add(value.toString());
+        }
+        if (getAdMarkupType() == null) {
+            setAdMarkupType(adMarkupTypeCopy);
+        } else {
+            getAdMarkupType().addAll(adMarkupTypeCopy);
+        }
+        return this;
+    }
 
     /**
      * <p>
@@ -94,6 +220,8 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdMarkupType() != null)
+            sb.append("AdMarkupType: ").append(getAdMarkupType()).append(",");
         if (getManifestWindowSeconds() != null)
             sb.append("ManifestWindowSeconds: ").append(getManifestWindowSeconds());
         sb.append("}");
@@ -110,6 +238,10 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
         if (obj instanceof HlsPlaylistSettings == false)
             return false;
         HlsPlaylistSettings other = (HlsPlaylistSettings) obj;
+        if (other.getAdMarkupType() == null ^ this.getAdMarkupType() == null)
+            return false;
+        if (other.getAdMarkupType() != null && other.getAdMarkupType().equals(this.getAdMarkupType()) == false)
+            return false;
         if (other.getManifestWindowSeconds() == null ^ this.getManifestWindowSeconds() == null)
             return false;
         if (other.getManifestWindowSeconds() != null && other.getManifestWindowSeconds().equals(this.getManifestWindowSeconds()) == false)
@@ -122,6 +254,7 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdMarkupType() == null) ? 0 : getAdMarkupType().hashCode());
         hashCode = prime * hashCode + ((getManifestWindowSeconds() == null) ? 0 : getManifestWindowSeconds().hashCode());
         return hashCode;
     }

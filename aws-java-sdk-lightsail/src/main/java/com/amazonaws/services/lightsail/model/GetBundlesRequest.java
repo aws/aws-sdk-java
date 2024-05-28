@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,17 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String pageToken;
+    /**
+     * <p>
+     * Returns a list of bundles that are specific to Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * You must use this parameter to view Lightsail for Research bundles.
+     * </p>
+     * </important>
+     */
+    private String appCategory;
 
     /**
      * <p>
@@ -161,6 +172,97 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Returns a list of bundles that are specific to Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * You must use this parameter to view Lightsail for Research bundles.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
+     *        <p>
+     *        You must use this parameter to view Lightsail for Research bundles.
+     *        </p>
+     * @see AppCategory
+     */
+
+    public void setAppCategory(String appCategory) {
+        this.appCategory = appCategory;
+    }
+
+    /**
+     * <p>
+     * Returns a list of bundles that are specific to Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * You must use this parameter to view Lightsail for Research bundles.
+     * </p>
+     * </important>
+     * 
+     * @return Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
+     *         <p>
+     *         You must use this parameter to view Lightsail for Research bundles.
+     *         </p>
+     * @see AppCategory
+     */
+
+    public String getAppCategory() {
+        return this.appCategory;
+    }
+
+    /**
+     * <p>
+     * Returns a list of bundles that are specific to Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * You must use this parameter to view Lightsail for Research bundles.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
+     *        <p>
+     *        You must use this parameter to view Lightsail for Research bundles.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public GetBundlesRequest withAppCategory(String appCategory) {
+        setAppCategory(appCategory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns a list of bundles that are specific to Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * You must use this parameter to view Lightsail for Research bundles.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Returns a list of bundles that are specific to Lightsail for Research.</p> <important>
+     *        <p>
+     *        You must use this parameter to view Lightsail for Research bundles.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public GetBundlesRequest withAppCategory(AppCategory appCategory) {
+        this.appCategory = appCategory.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -175,7 +277,9 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getIncludeInactive() != null)
             sb.append("IncludeInactive: ").append(getIncludeInactive()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: ").append(getPageToken());
+            sb.append("PageToken: ").append(getPageToken()).append(",");
+        if (getAppCategory() != null)
+            sb.append("AppCategory: ").append(getAppCategory());
         sb.append("}");
         return sb.toString();
     }
@@ -198,6 +302,10 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false)
             return false;
+        if (other.getAppCategory() == null ^ this.getAppCategory() == null)
+            return false;
+        if (other.getAppCategory() != null && other.getAppCategory().equals(this.getAppCategory()) == false)
+            return false;
         return true;
     }
 
@@ -208,6 +316,7 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getIncludeInactive() == null) ? 0 : getIncludeInactive().hashCode());
         hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
+        hashCode = prime * hashCode + ((getAppCategory() == null) ? 0 : getAppCategory().hashCode());
         return hashCode;
     }
 

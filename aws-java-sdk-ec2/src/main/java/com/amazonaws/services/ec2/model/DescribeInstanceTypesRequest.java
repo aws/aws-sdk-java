@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon EC2 User Guide</i>.
+     * The instance types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceTypes;
@@ -41,8 +39,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     * <code>false</code>).
+     * <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -53,8 +51,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -243,6 +241,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -250,6 +265,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -304,28 +324,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon EC2 User Guide</i>.
+     * The instance types.
      * </p>
      * 
-     * @return The instance types. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *         <i>Amazon EC2 User Guide</i>.
+     * @return The instance types.
      * @see InstanceType
      */
 
@@ -338,15 +356,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon EC2 User Guide</i>.
+     * The instance types.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.
+     *        The instance types.
      * @see InstanceType
      */
 
@@ -361,9 +375,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon EC2 User Guide</i>.
+     * The instance types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,9 +384,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.
+     *        The instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -391,15 +401,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon EC2 User Guide</i>.
+     * The instance types.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.
+     *        The instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -411,15 +417,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     * <i>Amazon EC2 User Guide</i>.
+     * The instance types.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.
+     *        The instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -444,8 +446,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     * <code>false</code>).
+     * <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -456,8 +458,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -646,6 +648,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -653,6 +672,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -708,8 +732,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     *         <code>false</code>).
+     *         <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is
+     *         supported (<code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -720,8 +744,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *         type (<code>true</code> | <code>false</code>).
+     *         <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *         performance T instance type (<code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -912,6 +936,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
+     *         <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *         <code>supported</code> | <code>unsupported</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *         <code>unsupported</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *         <code>i386</code> | <code>x86_64</code>).
      *         </p>
@@ -919,6 +960,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -986,8 +1032,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     * <code>false</code>).
+     * <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -998,8 +1044,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1188,6 +1234,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -1195,6 +1258,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -1251,8 +1319,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     *        <code>false</code>).
+     *        <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is
+     *        supported (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1263,8 +1331,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type (<code>true</code> | <code>false</code>).
+     *        <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *        performance T instance type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1455,6 +1523,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *        <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
@@ -1462,6 +1547,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1531,8 +1621,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     * <code>false</code>).
+     * <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1543,8 +1633,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1733,6 +1823,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -1740,6 +1847,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -1801,8 +1913,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     *        <code>false</code>).
+     *        <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is
+     *        supported (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1813,8 +1925,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type (<code>true</code> | <code>false</code>).
+     *        <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *        performance T instance type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2005,6 +2117,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *        <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
@@ -2012,6 +2141,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2083,8 +2217,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     * <code>false</code>).
+     * <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -2095,8 +2229,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
-     * <code>true</code> | <code>false</code>).
+     * <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T
+     * instance type (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -2285,6 +2419,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     * <code>unsupported</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
      * | <code>x86_64</code>).
      * </p>
@@ -2292,6 +2443,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      * </p>
      * </li>
      * <li>
@@ -2348,8 +2504,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
-     *        <code>false</code>).
+     *        <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is
+     *        supported (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2360,8 +2516,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type (<code>true</code> | <code>false</code>).
+     *        <code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable
+     *        performance T instance type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2552,6 +2708,23 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
+     *        <code>nitro-enclaves-support</code> - Indicates whether Nitro Enclaves is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-support</code> - Indicates whether NitroTPM is supported (<code>supported</code> |
+     *        <code>unsupported</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>nitro-tpm-info.supported-versions</code> - The supported NitroTPM version (<code>2.0</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
      *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
@@ -2559,6 +2732,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-features</code> - The supported CPU features (<code>amd-sev-snp</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2620,13 +2798,16 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the next token value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -2635,12 +2816,15 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the next token value.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -2649,13 +2833,16 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the next token value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the next token value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2666,11 +2853,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -2679,10 +2868,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -2691,11 +2882,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

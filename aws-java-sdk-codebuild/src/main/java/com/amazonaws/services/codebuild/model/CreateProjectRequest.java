@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -133,7 +138,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String serviceRole;
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      */
@@ -173,6 +178,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, do not provide vpcConfig.
+     * </p>
+     * </note>
      */
     private VpcConfig vpcConfig;
     /**
@@ -425,6 +435,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -461,6 +476,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        the source code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitLab: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -511,6 +531,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -546,6 +571,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         the source code you want to build. If a pull request ID is specified, it must use the format
      *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For GitLab: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -596,6 +626,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -632,6 +667,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        the source code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitLab: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -987,12 +1027,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that
      *        has not been marked as completed. The default is 60 minutes.
      */
 
@@ -1002,11 +1042,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      * 
-     * @return How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that
+     * @return How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that
      *         has not been marked as completed. The default is 60 minutes.
      */
 
@@ -1016,12 +1056,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that
      *        has not been marked as completed. The default is 60 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1266,9 +1306,17 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, do not provide vpcConfig.
+     * </p>
+     * </note>
      * 
      * @param vpcConfig
-     *        VpcConfig enables CodeBuild to access resources in an Amazon VPC.
+     *        VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, do not provide vpcConfig.
+     *        </p>
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -1279,8 +1327,16 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, do not provide vpcConfig.
+     * </p>
+     * </note>
      * 
-     * @return VpcConfig enables CodeBuild to access resources in an Amazon VPC.
+     * @return VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> <note>
+     *         <p>
+     *         If you're using compute fleets during project creation, do not provide vpcConfig.
+     *         </p>
      */
 
     public VpcConfig getVpcConfig() {
@@ -1291,9 +1347,17 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * VpcConfig enables CodeBuild to access resources in an Amazon VPC.
      * </p>
+     * <note>
+     * <p>
+     * If you're using compute fleets during project creation, do not provide vpcConfig.
+     * </p>
+     * </note>
      * 
      * @param vpcConfig
-     *        VpcConfig enables CodeBuild to access resources in an Amazon VPC.
+     *        VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p> <note>
+     *        <p>
+     *        If you're using compute fleets during project creation, do not provide vpcConfig.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

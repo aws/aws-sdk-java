@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class RecoveryInstanceJsonUnmarshaller implements Unmarshaller<RecoveryIn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("agentVersion", targetDepth)) {
+                    context.nextToken();
+                    recoveryInstance.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     recoveryInstance.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -76,6 +80,14 @@ public class RecoveryInstanceJsonUnmarshaller implements Unmarshaller<RecoveryIn
                     context.nextToken();
                     recoveryInstance.setJobID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("originAvailabilityZone", targetDepth)) {
+                    context.nextToken();
+                    recoveryInstance.setOriginAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("originEnvironment", targetDepth)) {
+                    context.nextToken();
+                    recoveryInstance.setOriginEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("pointInTimeSnapshotDateTime", targetDepth)) {
                     context.nextToken();
                     recoveryInstance.setPointInTimeSnapshotDateTime(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +99,10 @@ public class RecoveryInstanceJsonUnmarshaller implements Unmarshaller<RecoveryIn
                 if (context.testExpression("recoveryInstanceProperties", targetDepth)) {
                     context.nextToken();
                     recoveryInstance.setRecoveryInstanceProperties(RecoveryInstancePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("sourceOutpostArn", targetDepth)) {
+                    context.nextToken();
+                    recoveryInstance.setSourceOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
                     context.nextToken();

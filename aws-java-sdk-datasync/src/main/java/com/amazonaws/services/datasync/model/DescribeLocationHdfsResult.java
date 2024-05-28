@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,19 +25,19 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the HDFS cluster location.
+     * The ARN of the HDFS location.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The URI of the HDFS cluster location.
+     * The URI of the HDFS location.
      * </p>
      */
     private String locationUri;
     /**
      * <p>
-     * The NameNode that manage the HDFS namespace.
+     * The NameNode that manages the HDFS namespace.
      * </p>
      */
     private java.util.List<HdfsNameNode> nameNodes;
@@ -61,8 +61,8 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
     private String kmsKeyProviderUri;
     /**
      * <p>
-     * The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     * protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     * The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data transfer
+     * protection settings configured on the HDFS cluster.
      * </p>
      */
     private QopConfiguration qopConfiguration;
@@ -74,7 +74,7 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
     private String authenticationType;
     /**
      * <p>
-     * The user name used to identify the client on the host operating system. This parameter is used if the
+     * The user name to identify the client on the host operating system. This parameter is used if the
      * <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      * </p>
      */
@@ -88,7 +88,7 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
     private String kerberosPrincipal;
     /**
      * <p>
-     * The ARNs of the agents that are used to connect to the HDFS cluster.
+     * The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * </p>
      */
     private java.util.List<String> agentArns;
@@ -101,11 +101,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the HDFS cluster location.
+     * The ARN of the HDFS location.
      * </p>
      * 
      * @param locationArn
-     *        The ARN of the HDFS cluster location.
+     *        The ARN of the HDFS location.
      */
 
     public void setLocationArn(String locationArn) {
@@ -114,10 +114,10 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the HDFS cluster location.
+     * The ARN of the HDFS location.
      * </p>
      * 
-     * @return The ARN of the HDFS cluster location.
+     * @return The ARN of the HDFS location.
      */
 
     public String getLocationArn() {
@@ -126,11 +126,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the HDFS cluster location.
+     * The ARN of the HDFS location.
      * </p>
      * 
      * @param locationArn
-     *        The ARN of the HDFS cluster location.
+     *        The ARN of the HDFS location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URI of the HDFS cluster location.
+     * The URI of the HDFS location.
      * </p>
      * 
      * @param locationUri
-     *        The URI of the HDFS cluster location.
+     *        The URI of the HDFS location.
      */
 
     public void setLocationUri(String locationUri) {
@@ -154,10 +154,10 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URI of the HDFS cluster location.
+     * The URI of the HDFS location.
      * </p>
      * 
-     * @return The URI of the HDFS cluster location.
+     * @return The URI of the HDFS location.
      */
 
     public String getLocationUri() {
@@ -166,11 +166,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URI of the HDFS cluster location.
+     * The URI of the HDFS location.
      * </p>
      * 
      * @param locationUri
-     *        The URI of the HDFS cluster location.
+     *        The URI of the HDFS location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,10 +181,10 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The NameNode that manage the HDFS namespace.
+     * The NameNode that manages the HDFS namespace.
      * </p>
      * 
-     * @return The NameNode that manage the HDFS namespace.
+     * @return The NameNode that manages the HDFS namespace.
      */
 
     public java.util.List<HdfsNameNode> getNameNodes() {
@@ -193,11 +193,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The NameNode that manage the HDFS namespace.
+     * The NameNode that manages the HDFS namespace.
      * </p>
      * 
      * @param nameNodes
-     *        The NameNode that manage the HDFS namespace.
+     *        The NameNode that manages the HDFS namespace.
      */
 
     public void setNameNodes(java.util.Collection<HdfsNameNode> nameNodes) {
@@ -211,7 +211,7 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The NameNode that manage the HDFS namespace.
+     * The NameNode that manages the HDFS namespace.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,7 +220,7 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param nameNodes
-     *        The NameNode that manage the HDFS namespace.
+     *        The NameNode that manages the HDFS namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The NameNode that manage the HDFS namespace.
+     * The NameNode that manages the HDFS namespace.
      * </p>
      * 
      * @param nameNodes
-     *        The NameNode that manage the HDFS namespace.
+     *        The NameNode that manages the HDFS namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,13 +371,13 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     * protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     * The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data transfer
+     * protection settings configured on the HDFS cluster.
      * </p>
      * 
      * @param qopConfiguration
-     *        The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     *        protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     *        The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data
+     *        transfer protection settings configured on the HDFS cluster.
      */
 
     public void setQopConfiguration(QopConfiguration qopConfiguration) {
@@ -386,12 +386,12 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     * protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     * The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data transfer
+     * protection settings configured on the HDFS cluster.
      * </p>
      * 
-     * @return The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     *         protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     * @return The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data
+     *         transfer protection settings configured on the HDFS cluster.
      */
 
     public QopConfiguration getQopConfiguration() {
@@ -400,13 +400,13 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     * protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     * The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data transfer
+     * protection settings configured on the HDFS cluster.
      * </p>
      * 
      * @param qopConfiguration
-     *        The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer
-     *        protection settings configured on the Hadoop Distributed File System (HDFS) cluster.
+     *        The Quality of Protection (QOP) configuration, which specifies the Remote Procedure Call (RPC) and data
+     *        transfer protection settings configured on the HDFS cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,12 +476,12 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user name used to identify the client on the host operating system. This parameter is used if the
+     * The user name to identify the client on the host operating system. This parameter is used if the
      * <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      * </p>
      * 
      * @param simpleUser
-     *        The user name used to identify the client on the host operating system. This parameter is used if the
+     *        The user name to identify the client on the host operating system. This parameter is used if the
      *        <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      */
 
@@ -491,11 +491,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user name used to identify the client on the host operating system. This parameter is used if the
+     * The user name to identify the client on the host operating system. This parameter is used if the
      * <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      * </p>
      * 
-     * @return The user name used to identify the client on the host operating system. This parameter is used if the
+     * @return The user name to identify the client on the host operating system. This parameter is used if the
      *         <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      */
 
@@ -505,12 +505,12 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user name used to identify the client on the host operating system. This parameter is used if the
+     * The user name to identify the client on the host operating system. This parameter is used if the
      * <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      * </p>
      * 
      * @param simpleUser
-     *        The user name used to identify the client on the host operating system. This parameter is used if the
+     *        The user name to identify the client on the host operating system. This parameter is used if the
      *        <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -568,10 +568,10 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARNs of the agents that are used to connect to the HDFS cluster.
+     * The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * </p>
      * 
-     * @return The ARNs of the agents that are used to connect to the HDFS cluster.
+     * @return The ARNs of the DataSync agents that can connect with your HDFS cluster.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -580,11 +580,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARNs of the agents that are used to connect to the HDFS cluster.
+     * The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * </p>
      * 
      * @param agentArns
-     *        The ARNs of the agents that are used to connect to the HDFS cluster.
+     *        The ARNs of the DataSync agents that can connect with your HDFS cluster.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -598,7 +598,7 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARNs of the agents that are used to connect to the HDFS cluster.
+     * The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -607,7 +607,7 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param agentArns
-     *        The ARNs of the agents that are used to connect to the HDFS cluster.
+     *        The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,11 +623,11 @@ public class DescribeLocationHdfsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARNs of the agents that are used to connect to the HDFS cluster.
+     * The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * </p>
      * 
      * @param agentArns
-     *        The ARNs of the agents that are used to connect to the HDFS cluster.
+     *        The ARNs of the DataSync agents that can connect with your HDFS cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

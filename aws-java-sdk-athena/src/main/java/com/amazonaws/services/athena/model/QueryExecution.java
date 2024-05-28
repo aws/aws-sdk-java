@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,19 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     private String statementType;
     /**
      * <p>
-     * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
-     * query uses the location for the query results and the encryption configuration that are specified for the
-     * workgroup.
+     * The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used
+     * for query results. These are known as "client-side settings". If workgroup settings override client-side
+     * settings, then the query uses the location for the query results and the encryption configuration that are
+     * specified for the workgroup.
      * </p>
      */
     private ResultConfiguration resultConfiguration;
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     */
+    private ResultReuseConfiguration resultReuseConfiguration;
     /**
      * <p>
      * The database in which the query execution occurred.
@@ -93,10 +99,22 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      */
     private java.util.List<String> executionParameters;
+    /**
+     * <p>
+     * The kind of query statement that was run.
+     * </p>
+     */
+    private String substatementType;
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     */
+    private QueryResultsS3AccessGrantsConfiguration queryResultsS3AccessGrantsConfiguration;
 
     /**
      * <p>
@@ -263,17 +281,17 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
-     * query uses the location for the query results and the encryption configuration that are specified for the
-     * workgroup.
+     * The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used
+     * for query results. These are known as "client-side settings". If workgroup settings override client-side
+     * settings, then the query uses the location for the query results and the encryption configuration that are
+     * specified for the workgroup.
      * </p>
      * 
      * @param resultConfiguration
-     *        The location in Amazon S3 where query results were stored and the encryption option, if any, used for
-     *        query results. These are known as "client-side settings". If workgroup settings override client-side
-     *        settings, then the query uses the location for the query results and the encryption configuration that are
-     *        specified for the workgroup.
+     *        The location in Amazon S3 where query and calculation results are stored and the encryption option, if
+     *        any, used for query results. These are known as "client-side settings". If workgroup settings override
+     *        client-side settings, then the query uses the location for the query results and the encryption
+     *        configuration that are specified for the workgroup.
      */
 
     public void setResultConfiguration(ResultConfiguration resultConfiguration) {
@@ -282,16 +300,16 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
-     * query uses the location for the query results and the encryption configuration that are specified for the
-     * workgroup.
+     * The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used
+     * for query results. These are known as "client-side settings". If workgroup settings override client-side
+     * settings, then the query uses the location for the query results and the encryption configuration that are
+     * specified for the workgroup.
      * </p>
      * 
-     * @return The location in Amazon S3 where query results were stored and the encryption option, if any, used for
-     *         query results. These are known as "client-side settings". If workgroup settings override client-side
-     *         settings, then the query uses the location for the query results and the encryption configuration that
-     *         are specified for the workgroup.
+     * @return The location in Amazon S3 where query and calculation results are stored and the encryption option, if
+     *         any, used for query results. These are known as "client-side settings". If workgroup settings override
+     *         client-side settings, then the query uses the location for the query results and the encryption
+     *         configuration that are specified for the workgroup.
      */
 
     public ResultConfiguration getResultConfiguration() {
@@ -300,22 +318,62 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
-     * query uses the location for the query results and the encryption configuration that are specified for the
-     * workgroup.
+     * The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used
+     * for query results. These are known as "client-side settings". If workgroup settings override client-side
+     * settings, then the query uses the location for the query results and the encryption configuration that are
+     * specified for the workgroup.
      * </p>
      * 
      * @param resultConfiguration
-     *        The location in Amazon S3 where query results were stored and the encryption option, if any, used for
-     *        query results. These are known as "client-side settings". If workgroup settings override client-side
-     *        settings, then the query uses the location for the query results and the encryption configuration that are
-     *        specified for the workgroup.
+     *        The location in Amazon S3 where query and calculation results are stored and the encryption option, if
+     *        any, used for query results. These are known as "client-side settings". If workgroup settings override
+     *        client-side settings, then the query uses the location for the query results and the encryption
+     *        configuration that are specified for the workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryExecution withResultConfiguration(ResultConfiguration resultConfiguration) {
         setResultConfiguration(resultConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior that was used for the query.
+     */
+
+    public void setResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        this.resultReuseConfiguration = resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     * 
+     * @return Specifies the query result reuse behavior that was used for the query.
+     */
+
+    public ResultReuseConfiguration getResultReuseConfiguration() {
+        return this.resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior that was used for the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecution withResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        setResultReuseConfiguration(resultReuseConfiguration);
         return this;
     }
 
@@ -534,11 +592,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * 
      * @return A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *         the query in the order in which the parameters occur.
+     *         the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *         response.
      */
 
     public java.util.List<String> getExecutionParameters() {
@@ -548,12 +607,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * 
      * @param executionParameters
      *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *        the query in the order in which the parameters occur.
+     *        the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *        response.
      */
 
     public void setExecutionParameters(java.util.Collection<String> executionParameters) {
@@ -568,7 +628,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -578,7 +638,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param executionParameters
      *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *        the query in the order in which the parameters occur.
+     *        the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,17 +656,98 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of values for the parameters in a query. The values are applied sequentially to the parameters in the
-     * query in the order in which the parameters occur.
+     * query in the order in which the parameters occur. The list of parameters is not returned in the response.
      * </p>
      * 
      * @param executionParameters
      *        A list of values for the parameters in a query. The values are applied sequentially to the parameters in
-     *        the query in the order in which the parameters occur.
+     *        the query in the order in which the parameters occur. The list of parameters is not returned in the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryExecution withExecutionParameters(java.util.Collection<String> executionParameters) {
         setExecutionParameters(executionParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The kind of query statement that was run.
+     * </p>
+     * 
+     * @param substatementType
+     *        The kind of query statement that was run.
+     */
+
+    public void setSubstatementType(String substatementType) {
+        this.substatementType = substatementType;
+    }
+
+    /**
+     * <p>
+     * The kind of query statement that was run.
+     * </p>
+     * 
+     * @return The kind of query statement that was run.
+     */
+
+    public String getSubstatementType() {
+        return this.substatementType;
+    }
+
+    /**
+     * <p>
+     * The kind of query statement that was run.
+     * </p>
+     * 
+     * @param substatementType
+     *        The kind of query statement that was run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecution withSubstatementType(String substatementType) {
+        setSubstatementType(substatementType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     * 
+     * @param queryResultsS3AccessGrantsConfiguration
+     *        Specifies whether Amazon S3 access grants are enabled for query results.
+     */
+
+    public void setQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration queryResultsS3AccessGrantsConfiguration) {
+        this.queryResultsS3AccessGrantsConfiguration = queryResultsS3AccessGrantsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     * 
+     * @return Specifies whether Amazon S3 access grants are enabled for query results.
+     */
+
+    public QueryResultsS3AccessGrantsConfiguration getQueryResultsS3AccessGrantsConfiguration() {
+        return this.queryResultsS3AccessGrantsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 access grants are enabled for query results.
+     * </p>
+     * 
+     * @param queryResultsS3AccessGrantsConfiguration
+     *        Specifies whether Amazon S3 access grants are enabled for query results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecution withQueryResultsS3AccessGrantsConfiguration(QueryResultsS3AccessGrantsConfiguration queryResultsS3AccessGrantsConfiguration) {
+        setQueryResultsS3AccessGrantsConfiguration(queryResultsS3AccessGrantsConfiguration);
         return this;
     }
 
@@ -629,6 +771,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             sb.append("StatementType: ").append(getStatementType()).append(",");
         if (getResultConfiguration() != null)
             sb.append("ResultConfiguration: ").append(getResultConfiguration()).append(",");
+        if (getResultReuseConfiguration() != null)
+            sb.append("ResultReuseConfiguration: ").append(getResultReuseConfiguration()).append(",");
         if (getQueryExecutionContext() != null)
             sb.append("QueryExecutionContext: ").append(getQueryExecutionContext()).append(",");
         if (getStatus() != null)
@@ -640,7 +784,11 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getExecutionParameters() != null)
-            sb.append("ExecutionParameters: ").append(getExecutionParameters());
+            sb.append("ExecutionParameters: ").append(getExecutionParameters()).append(",");
+        if (getSubstatementType() != null)
+            sb.append("SubstatementType: ").append(getSubstatementType()).append(",");
+        if (getQueryResultsS3AccessGrantsConfiguration() != null)
+            sb.append("QueryResultsS3AccessGrantsConfiguration: ").append(getQueryResultsS3AccessGrantsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -671,6 +819,10 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResultConfiguration() != null && other.getResultConfiguration().equals(this.getResultConfiguration()) == false)
             return false;
+        if (other.getResultReuseConfiguration() == null ^ this.getResultReuseConfiguration() == null)
+            return false;
+        if (other.getResultReuseConfiguration() != null && other.getResultReuseConfiguration().equals(this.getResultReuseConfiguration()) == false)
+            return false;
         if (other.getQueryExecutionContext() == null ^ this.getQueryExecutionContext() == null)
             return false;
         if (other.getQueryExecutionContext() != null && other.getQueryExecutionContext().equals(this.getQueryExecutionContext()) == false)
@@ -695,6 +847,15 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExecutionParameters() != null && other.getExecutionParameters().equals(this.getExecutionParameters()) == false)
             return false;
+        if (other.getSubstatementType() == null ^ this.getSubstatementType() == null)
+            return false;
+        if (other.getSubstatementType() != null && other.getSubstatementType().equals(this.getSubstatementType()) == false)
+            return false;
+        if (other.getQueryResultsS3AccessGrantsConfiguration() == null ^ this.getQueryResultsS3AccessGrantsConfiguration() == null)
+            return false;
+        if (other.getQueryResultsS3AccessGrantsConfiguration() != null
+                && other.getQueryResultsS3AccessGrantsConfiguration().equals(this.getQueryResultsS3AccessGrantsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -707,12 +868,15 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQuery() == null) ? 0 : getQuery().hashCode());
         hashCode = prime * hashCode + ((getStatementType() == null) ? 0 : getStatementType().hashCode());
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getResultReuseConfiguration() == null) ? 0 : getResultReuseConfiguration().hashCode());
         hashCode = prime * hashCode + ((getQueryExecutionContext() == null) ? 0 : getQueryExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getExecutionParameters() == null) ? 0 : getExecutionParameters().hashCode());
+        hashCode = prime * hashCode + ((getSubstatementType() == null) ? 0 : getSubstatementType().hashCode());
+        hashCode = prime * hashCode + ((getQueryResultsS3AccessGrantsConfiguration() == null) ? 0 : getQueryResultsS3AccessGrantsConfiguration().hashCode());
         return hashCode;
     }
 

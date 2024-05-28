@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines recommendations for a Resilience Hub application component, returned as an object. This object contains
+ * Defines recommendations for an Resilience Hub Application Component, returned as an object. This object contains
  * component names, configuration recommendations, and recommendation statuses.
  * </p>
  * 
@@ -31,30 +31,30 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      */
     private String appComponentName;
     /**
      * <p>
-     * The list of recommendations.
+     * List of recommendations.
      * </p>
      */
     private java.util.List<ConfigRecommendation> configRecommendations;
     /**
      * <p>
-     * The recommendation status.
+     * Status of the recommendation.
      * </p>
      */
     private String recommendationStatus;
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the application component.
+     *        Name of the Application Component.
      */
 
     public void setAppComponentName(String appComponentName) {
@@ -63,10 +63,10 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      * 
-     * @return The name of the application component.
+     * @return Name of the Application Component.
      */
 
     public String getAppComponentName() {
@@ -75,11 +75,11 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the application component.
+     *        Name of the Application Component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,10 +90,10 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The list of recommendations.
+     * List of recommendations.
      * </p>
      * 
-     * @return The list of recommendations.
+     * @return List of recommendations.
      */
 
     public java.util.List<ConfigRecommendation> getConfigRecommendations() {
@@ -102,11 +102,11 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The list of recommendations.
+     * List of recommendations.
      * </p>
      * 
      * @param configRecommendations
-     *        The list of recommendations.
+     *        List of recommendations.
      */
 
     public void setConfigRecommendations(java.util.Collection<ConfigRecommendation> configRecommendations) {
@@ -120,7 +120,7 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The list of recommendations.
+     * List of recommendations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param configRecommendations
-     *        The list of recommendations.
+     *        List of recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The list of recommendations.
+     * List of recommendations.
      * </p>
      * 
      * @param configRecommendations
-     *        The list of recommendations.
+     *        List of recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +160,11 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The recommendation status.
+     * Status of the recommendation.
      * </p>
      * 
      * @param recommendationStatus
-     *        The recommendation status.
+     *        Status of the recommendation.
      * @see RecommendationComplianceStatus
      */
 
@@ -174,10 +174,10 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The recommendation status.
+     * Status of the recommendation.
      * </p>
      * 
-     * @return The recommendation status.
+     * @return Status of the recommendation.
      * @see RecommendationComplianceStatus
      */
 
@@ -187,11 +187,11 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The recommendation status.
+     * Status of the recommendation.
      * </p>
      * 
      * @param recommendationStatus
-     *        The recommendation status.
+     *        Status of the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationComplianceStatus
      */
@@ -203,11 +203,11 @@ public class ComponentRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The recommendation status.
+     * Status of the recommendation.
      * </p>
      * 
      * @param recommendationStatus
-     *        The recommendation status.
+     *        Status of the recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationComplianceStatus
      */

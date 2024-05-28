@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class DataReplicationInfoReplicatedDisk implements Serializable, Cloneabl
      * </p>
      */
     private Long totalStorageBytes;
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     */
+    private String volumeStatus;
 
     /**
      * <p>
@@ -260,6 +266,65 @@ public class DataReplicationInfoReplicatedDisk implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param volumeStatus
+     *        The status of the volume.
+     * @see VolumeStatus
+     */
+
+    public void setVolumeStatus(String volumeStatus) {
+        this.volumeStatus = volumeStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @return The status of the volume.
+     * @see VolumeStatus
+     */
+
+    public String getVolumeStatus() {
+        return this.volumeStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param volumeStatus
+     *        The status of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeStatus
+     */
+
+    public DataReplicationInfoReplicatedDisk withVolumeStatus(String volumeStatus) {
+        setVolumeStatus(volumeStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param volumeStatus
+     *        The status of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeStatus
+     */
+
+    public DataReplicationInfoReplicatedDisk withVolumeStatus(VolumeStatus volumeStatus) {
+        this.volumeStatus = volumeStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +345,9 @@ public class DataReplicationInfoReplicatedDisk implements Serializable, Cloneabl
         if (getRescannedStorageBytes() != null)
             sb.append("RescannedStorageBytes: ").append(getRescannedStorageBytes()).append(",");
         if (getTotalStorageBytes() != null)
-            sb.append("TotalStorageBytes: ").append(getTotalStorageBytes());
+            sb.append("TotalStorageBytes: ").append(getTotalStorageBytes()).append(",");
+        if (getVolumeStatus() != null)
+            sb.append("VolumeStatus: ").append(getVolumeStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +382,10 @@ public class DataReplicationInfoReplicatedDisk implements Serializable, Cloneabl
             return false;
         if (other.getTotalStorageBytes() != null && other.getTotalStorageBytes().equals(this.getTotalStorageBytes()) == false)
             return false;
+        if (other.getVolumeStatus() == null ^ this.getVolumeStatus() == null)
+            return false;
+        if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +399,7 @@ public class DataReplicationInfoReplicatedDisk implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getReplicatedStorageBytes() == null) ? 0 : getReplicatedStorageBytes().hashCode());
         hashCode = prime * hashCode + ((getRescannedStorageBytes() == null) ? 0 : getRescannedStorageBytes().hashCode());
         hashCode = prime * hashCode + ((getTotalStorageBytes() == null) ? 0 : getTotalStorageBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
         return hashCode;
     }
 

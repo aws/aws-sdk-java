@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you
-     * need to specify a resource across all AWS.
+     * need to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -49,7 +49,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you
-     * need to specify a resource across all AWS.
+     * need to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -61,7 +61,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param consumerArn
      *        The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when
-     *        you need to specify a resource across all AWS.</p>
+     *        you need to specify a resource across all Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -78,7 +78,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you
-     * need to specify a resource across all AWS.
+     * need to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -89,7 +89,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used
-     *         when you need to specify a resource across all AWS.</p>
+     *         when you need to specify a resource across all Amazon Web Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -106,7 +106,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you
-     * need to specify a resource across all AWS.
+     * need to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -118,7 +118,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param consumerArn
      *        The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when
-     *        you need to specify a resource across all AWS.</p>
+     *        you need to specify a resource across all Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>

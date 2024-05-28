@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For more information about configuring scaling policies for a specific service, see <a
- * href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting started with
- * Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon Web
+ * Services services that you can use with Application Auto Scaling</a> in the <i>Application Auto Scaling User
+ * Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy"
@@ -157,6 +158,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -215,7 +228,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -275,12 +288,34 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
     /**
      * <p>
      * The scaling policy type.
+     * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
      * </p>
      */
     private String policyType;
@@ -573,6 +608,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -679,6 +726,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      */
@@ -793,6 +852,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -899,6 +970,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
+     *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *         identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *         </p>
      *         </li>
      */
@@ -1013,6 +1096,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1121,6 +1216,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        Example: <code>cluster:mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1184,7 +1291,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1244,6 +1351,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1300,7 +1419,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1361,6 +1480,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1425,7 +1556,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1485,6 +1616,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1540,7 +1683,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1601,6 +1744,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
+     *         SageMaker Serverless endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *         a SageMaker inference component.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1665,7 +1820,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1725,6 +1880,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1781,7 +1948,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1842,6 +2009,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1908,7 +2087,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1968,6 +2147,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2024,7 +2215,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2085,6 +2276,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -2149,7 +2352,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2209,6 +2412,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2265,7 +2480,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2328,6 +2543,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        cluster.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -2341,9 +2568,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @see PolicyType
      */
 
@@ -2355,8 +2601,27 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
-     * @return The scaling policy type.
+     * @return The scaling policy type.</p>
+     *         <p>
+     *         The following policy types are supported:
+     *         </p>
+     *         <p>
+     *         <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *         </p>
+     *         <p>
+     *         <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *         MSK, Amazon ElastiCache, or Neptune.
      * @see PolicyType
      */
 
@@ -2368,9 +2633,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -2384,9 +2668,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @see PolicyType
      */
 
@@ -2398,9 +2701,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

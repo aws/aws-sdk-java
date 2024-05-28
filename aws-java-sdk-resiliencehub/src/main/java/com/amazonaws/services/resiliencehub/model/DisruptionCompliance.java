@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,7 +72,7 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
     private String rpoDescription;
     /**
      * <p>
-     * The RPO reference identifier.
+     * Reference identifier of the RPO .
      * </p>
      */
     private String rpoReferenceId;
@@ -84,7 +84,7 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
     private String rtoDescription;
     /**
      * <p>
-     * The RTO reference identifier.
+     * Reference identifier of the RTO.
      * </p>
      */
     private String rtoReferenceId;
@@ -390,11 +390,11 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The RPO reference identifier.
+     * Reference identifier of the RPO .
      * </p>
      * 
      * @param rpoReferenceId
-     *        The RPO reference identifier.
+     *        Reference identifier of the RPO .
      */
 
     public void setRpoReferenceId(String rpoReferenceId) {
@@ -403,10 +403,10 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The RPO reference identifier.
+     * Reference identifier of the RPO .
      * </p>
      * 
-     * @return The RPO reference identifier.
+     * @return Reference identifier of the RPO .
      */
 
     public String getRpoReferenceId() {
@@ -415,11 +415,11 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The RPO reference identifier.
+     * Reference identifier of the RPO .
      * </p>
      * 
      * @param rpoReferenceId
-     *        The RPO reference identifier.
+     *        Reference identifier of the RPO .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +470,11 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The RTO reference identifier.
+     * Reference identifier of the RTO.
      * </p>
      * 
      * @param rtoReferenceId
-     *        The RTO reference identifier.
+     *        Reference identifier of the RTO.
      */
 
     public void setRtoReferenceId(String rtoReferenceId) {
@@ -483,10 +483,10 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The RTO reference identifier.
+     * Reference identifier of the RTO.
      * </p>
      * 
-     * @return The RTO reference identifier.
+     * @return Reference identifier of the RTO.
      */
 
     public String getRtoReferenceId() {
@@ -495,11 +495,11 @@ public class DisruptionCompliance implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The RTO reference identifier.
+     * Reference identifier of the RTO.
      * </p>
      * 
      * @param rtoReferenceId
-     *        The RTO reference identifier.
+     *        Reference identifier of the RTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

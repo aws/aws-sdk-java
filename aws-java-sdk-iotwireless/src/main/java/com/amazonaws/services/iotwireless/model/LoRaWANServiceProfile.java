@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,18 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer drMax;
+    /**
+     * <p>
+     * The PRAllowed value that describes whether passive roaming is allowed.
+     * </p>
+     */
+    private Boolean prAllowed;
+    /**
+     * <p>
+     * The RAAllowed value that describes whether roaming activation is allowed.
+     * </p>
+     */
+    private Boolean raAllowed;
 
     /**
      * <p>
@@ -180,6 +192,110 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The PRAllowed value that describes whether passive roaming is allowed.
+     * </p>
+     * 
+     * @param prAllowed
+     *        The PRAllowed value that describes whether passive roaming is allowed.
+     */
+
+    public void setPrAllowed(Boolean prAllowed) {
+        this.prAllowed = prAllowed;
+    }
+
+    /**
+     * <p>
+     * The PRAllowed value that describes whether passive roaming is allowed.
+     * </p>
+     * 
+     * @return The PRAllowed value that describes whether passive roaming is allowed.
+     */
+
+    public Boolean getPrAllowed() {
+        return this.prAllowed;
+    }
+
+    /**
+     * <p>
+     * The PRAllowed value that describes whether passive roaming is allowed.
+     * </p>
+     * 
+     * @param prAllowed
+     *        The PRAllowed value that describes whether passive roaming is allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANServiceProfile withPrAllowed(Boolean prAllowed) {
+        setPrAllowed(prAllowed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The PRAllowed value that describes whether passive roaming is allowed.
+     * </p>
+     * 
+     * @return The PRAllowed value that describes whether passive roaming is allowed.
+     */
+
+    public Boolean isPrAllowed() {
+        return this.prAllowed;
+    }
+
+    /**
+     * <p>
+     * The RAAllowed value that describes whether roaming activation is allowed.
+     * </p>
+     * 
+     * @param raAllowed
+     *        The RAAllowed value that describes whether roaming activation is allowed.
+     */
+
+    public void setRaAllowed(Boolean raAllowed) {
+        this.raAllowed = raAllowed;
+    }
+
+    /**
+     * <p>
+     * The RAAllowed value that describes whether roaming activation is allowed.
+     * </p>
+     * 
+     * @return The RAAllowed value that describes whether roaming activation is allowed.
+     */
+
+    public Boolean getRaAllowed() {
+        return this.raAllowed;
+    }
+
+    /**
+     * <p>
+     * The RAAllowed value that describes whether roaming activation is allowed.
+     * </p>
+     * 
+     * @param raAllowed
+     *        The RAAllowed value that describes whether roaming activation is allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANServiceProfile withRaAllowed(Boolean raAllowed) {
+        setRaAllowed(raAllowed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The RAAllowed value that describes whether roaming activation is allowed.
+     * </p>
+     * 
+     * @return The RAAllowed value that describes whether roaming activation is allowed.
+     */
+
+    public Boolean isRaAllowed() {
+        return this.raAllowed;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,7 +312,11 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
         if (getDrMin() != null)
             sb.append("DrMin: ").append(getDrMin()).append(",");
         if (getDrMax() != null)
-            sb.append("DrMax: ").append(getDrMax());
+            sb.append("DrMax: ").append(getDrMax()).append(",");
+        if (getPrAllowed() != null)
+            sb.append("PrAllowed: ").append(getPrAllowed()).append(",");
+        if (getRaAllowed() != null)
+            sb.append("RaAllowed: ").append(getRaAllowed());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +343,14 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
             return false;
         if (other.getDrMax() != null && other.getDrMax().equals(this.getDrMax()) == false)
             return false;
+        if (other.getPrAllowed() == null ^ this.getPrAllowed() == null)
+            return false;
+        if (other.getPrAllowed() != null && other.getPrAllowed().equals(this.getPrAllowed()) == false)
+            return false;
+        if (other.getRaAllowed() == null ^ this.getRaAllowed() == null)
+            return false;
+        if (other.getRaAllowed() != null && other.getRaAllowed().equals(this.getRaAllowed()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +362,8 @@ public class LoRaWANServiceProfile implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getAddGwMetadata() == null) ? 0 : getAddGwMetadata().hashCode());
         hashCode = prime * hashCode + ((getDrMin() == null) ? 0 : getDrMin().hashCode());
         hashCode = prime * hashCode + ((getDrMax() == null) ? 0 : getDrMax().hashCode());
+        hashCode = prime * hashCode + ((getPrAllowed() == null) ? 0 : getPrAllowed().hashCode());
+        hashCode = prime * hashCode + ((getRaAllowed() == null) ? 0 : getRaAllowed().hashCode());
         return hashCode;
     }
 

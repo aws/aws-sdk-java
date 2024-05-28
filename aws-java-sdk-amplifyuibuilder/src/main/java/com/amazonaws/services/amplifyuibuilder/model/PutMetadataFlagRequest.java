@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,6 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
     private String appId;
     /**
      * <p>
-     * The metadata information to store.
-     * </p>
-     */
-    private PutMetadataFlagBody body;
-    /**
-     * <p>
      * The name of the backend environment that is part of the Amplify app.
      * </p>
      */
@@ -49,6 +43,12 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String featureName;
+    /**
+     * <p>
+     * The metadata information to store.
+     * </p>
+     */
+    private PutMetadataFlagBody body;
 
     /**
      * <p>
@@ -87,46 +87,6 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
 
     public PutMetadataFlagRequest withAppId(String appId) {
         setAppId(appId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The metadata information to store.
-     * </p>
-     * 
-     * @param body
-     *        The metadata information to store.
-     */
-
-    public void setBody(PutMetadataFlagBody body) {
-        this.body = body;
-    }
-
-    /**
-     * <p>
-     * The metadata information to store.
-     * </p>
-     * 
-     * @return The metadata information to store.
-     */
-
-    public PutMetadataFlagBody getBody() {
-        return this.body;
-    }
-
-    /**
-     * <p>
-     * The metadata information to store.
-     * </p>
-     * 
-     * @param body
-     *        The metadata information to store.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutMetadataFlagRequest withBody(PutMetadataFlagBody body) {
-        setBody(body);
         return this;
     }
 
@@ -211,6 +171,46 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The metadata information to store.
+     * </p>
+     * 
+     * @param body
+     *        The metadata information to store.
+     */
+
+    public void setBody(PutMetadataFlagBody body) {
+        this.body = body;
+    }
+
+    /**
+     * <p>
+     * The metadata information to store.
+     * </p>
+     * 
+     * @return The metadata information to store.
+     */
+
+    public PutMetadataFlagBody getBody() {
+        return this.body;
+    }
+
+    /**
+     * <p>
+     * The metadata information to store.
+     * </p>
+     * 
+     * @param body
+     *        The metadata information to store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutMetadataFlagRequest withBody(PutMetadataFlagBody body) {
+        setBody(body);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -224,12 +224,12 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getAppId() != null)
             sb.append("AppId: ").append(getAppId()).append(",");
-        if (getBody() != null)
-            sb.append("Body: ").append(getBody()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getFeatureName() != null)
-            sb.append("FeatureName: ").append(getFeatureName());
+            sb.append("FeatureName: ").append(getFeatureName()).append(",");
+        if (getBody() != null)
+            sb.append("Body: ").append(getBody());
         sb.append("}");
         return sb.toString();
     }
@@ -248,10 +248,6 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
-        if (other.getBody() == null ^ this.getBody() == null)
-            return false;
-        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
-            return false;
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
@@ -259,6 +255,10 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getFeatureName() == null ^ this.getFeatureName() == null)
             return false;
         if (other.getFeatureName() != null && other.getFeatureName().equals(this.getFeatureName()) == false)
+            return false;
+        if (other.getBody() == null ^ this.getBody() == null)
+            return false;
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
         return true;
     }
@@ -269,9 +269,9 @@ public class PutMetadataFlagRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
-        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getFeatureName() == null) ? 0 : getFeatureName().hashCode());
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         return hashCode;
     }
 

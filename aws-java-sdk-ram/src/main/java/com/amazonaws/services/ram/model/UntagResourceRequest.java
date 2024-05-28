@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
-     * share, not the resources in the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the
+     * resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>,
+     * or <code>resourceArn</code>, but not both.
      * </p>
      */
     private String resourceShareArn;
@@ -39,18 +40,28 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<String> tagKeys;
+    /**
+     * <p>
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either
+     * <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     * </p>
+     */
+    private String resourceArn;
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
-     * share, not the resources in the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the
+     * resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>,
+     * or <code>resourceArn</code>, but not both.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
-     *        the resource share, not the resources in the resource share.
+     *        Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
+     *        the resource share, not the resources in the resource share. You must specify either
+     *        <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -59,14 +70,16 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
-     * share, not the resources in the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the
+     * resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>,
+     * or <code>resourceArn</code>, but not both.
      * </p>
      * 
      * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
-     *         the resource share, not the resources in the resource share.
+     *         Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed
+     *         from the resource share, not the resources in the resource share. You must specify either
+     *         <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.
      */
 
     public String getResourceShareArn() {
@@ -75,15 +88,17 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource
-     * share, not the resources in the resource share.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the
+     * resource share, not the resources in the resource share. You must specify either <code>resourceShareArn</code>,
+     * or <code>resourceArn</code>, but not both.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
-     *        the resource share, not the resources in the resource share.
+     *        Resource Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from
+     *        the resource share, not the resources in the resource share. You must specify either
+     *        <code>resourceShareArn</code>, or <code>resourceArn</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,6 +178,58 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either
+     * <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     * </p>
+     * 
+     * @param resourceArn
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify
+     *        either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either
+     * <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     * </p>
+     * 
+     * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *         Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify
+     *         either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify either
+     * <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     * </p>
+     * 
+     * @param resourceArn
+     *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resource Name (ARN)</a> of the managed permission that you want to remove tags from. You must specify
+     *        either <code>resourceArn</code>, or <code>resourceShareArn</code>, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UntagResourceRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -177,7 +244,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getResourceShareArn() != null)
             sb.append("ResourceShareArn: ").append(getResourceShareArn()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: ").append(getTagKeys());
+            sb.append("TagKeys: ").append(getTagKeys()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -200,6 +269,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +283,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getResourceShareArn() == null) ? 0 : getResourceShareArn().hashCode());
         hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;
     }
 

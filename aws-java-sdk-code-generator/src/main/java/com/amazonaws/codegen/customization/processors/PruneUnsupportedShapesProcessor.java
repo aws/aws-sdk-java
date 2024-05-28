@@ -19,6 +19,7 @@ import static com.amazonaws.codegen.internal.Utils.isListShape;
 import static com.amazonaws.codegen.internal.Utils.isMapShape;
 
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.service.ErrorMap;
 import com.amazonaws.codegen.model.service.Member;
@@ -41,6 +42,11 @@ public class PruneUnsupportedShapesProcessor implements CodegenCustomizationProc
     private static final List<Predicate<Shape>> PRUNE_CONDITIONS = Collections.singletonList(
         Shape::isDocument
     );
+    private final CustomizationConfig config;
+
+    public PruneUnsupportedShapesProcessor(CustomizationConfig config) {
+        this.config = config;
+    }
 
     @Override
     public void preprocess(ServiceModel serviceModel) {
@@ -60,10 +66,10 @@ public class PruneUnsupportedShapesProcessor implements CodegenCustomizationProc
     /**
      * Prune top-level shapes that match any of the provided {@link #PRUNE_CONDITIONS}.
      */
-    private static void pruneShapesThatMatchConditions(ServiceModel serviceModel) {
+    private void pruneShapesThatMatchConditions(ServiceModel serviceModel) {
         Map<String, Shape> shapes = copy(serviceModel.getShapes());
         serviceModel.getShapes().forEach((shapeName, shape) -> {
-            if (PRUNE_CONDITIONS.stream().anyMatch(p -> p.test(shape))) {
+            if (PRUNE_CONDITIONS.stream().anyMatch(p -> p.test(shape) && !config.getShapesToSkipPruning().contains(shapeName))) {
                 shapes.remove(shapeName);
                 log("Pruned shape [%s] that matched prune condition", shapeName);
             }

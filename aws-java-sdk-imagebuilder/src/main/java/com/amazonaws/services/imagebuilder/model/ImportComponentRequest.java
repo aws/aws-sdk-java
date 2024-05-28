@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,8 +56,8 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String description;
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version, or what makes this
-     * version different from other versions of this component.
+     * The change description of the component. This description indicates the change that has been made in this
+     * version, or what makes this version different from other versions of the component.
      * </p>
      */
     private String changeDescription;
@@ -108,7 +108,9 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The idempotency token of the component.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      */
     private String clientToken;
@@ -295,13 +297,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version, or what makes this
-     * version different from other versions of this component.
+     * The change description of the component. This description indicates the change that has been made in this
+     * version, or what makes this version different from other versions of the component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component. Describes what change has been made in this version, or what
-     *        makes this version different from other versions of this component.
+     *        The change description of the component. This description indicates the change that has been made in this
+     *        version, or what makes this version different from other versions of the component.
      */
 
     public void setChangeDescription(String changeDescription) {
@@ -310,12 +312,12 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version, or what makes this
-     * version different from other versions of this component.
+     * The change description of the component. This description indicates the change that has been made in this
+     * version, or what makes this version different from other versions of the component.
      * </p>
      * 
-     * @return The change description of the component. Describes what change has been made in this version, or what
-     *         makes this version different from other versions of this component.
+     * @return The change description of the component. This description indicates the change that has been made in this
+     *         version, or what makes this version different from other versions of the component.
      */
 
     public String getChangeDescription() {
@@ -324,13 +326,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version, or what makes this
-     * version different from other versions of this component.
+     * The change description of the component. This description indicates the change that has been made in this
+     * version, or what makes this version different from other versions of the component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component. Describes what change has been made in this version, or what
-     *        makes this version different from other versions of this component.
+     *        The change description of the component. This description indicates the change that has been made in this
+     *        version, or what makes this version different from other versions of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -724,11 +726,16 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The idempotency token of the component.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token of the component.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -737,10 +744,15 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The idempotency token of the component.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
-     * @return The idempotency token of the component.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public String getClientToken() {
@@ -749,11 +761,16 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The idempotency token of the component.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token of the component.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

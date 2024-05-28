@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -112,6 +112,12 @@ public class ListNotebookExecutionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String marker;
+    /**
+     * <p>
+     * The unique ID of the execution engine.
+     * </p>
+     */
+    private String executionEngineId;
 
     /**
      * <p>
@@ -786,6 +792,46 @@ public class ListNotebookExecutionsRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The unique ID of the execution engine.
+     * </p>
+     * 
+     * @param executionEngineId
+     *        The unique ID of the execution engine.
+     */
+
+    public void setExecutionEngineId(String executionEngineId) {
+        this.executionEngineId = executionEngineId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the execution engine.
+     * </p>
+     * 
+     * @return The unique ID of the execution engine.
+     */
+
+    public String getExecutionEngineId() {
+        return this.executionEngineId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of the execution engine.
+     * </p>
+     * 
+     * @param executionEngineId
+     *        The unique ID of the execution engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNotebookExecutionsRequest withExecutionEngineId(String executionEngineId) {
+        setExecutionEngineId(executionEngineId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -806,7 +852,9 @@ public class ListNotebookExecutionsRequest extends com.amazonaws.AmazonWebServic
         if (getTo() != null)
             sb.append("To: ").append(getTo()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: ").append(getMarker());
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getExecutionEngineId() != null)
+            sb.append("ExecutionEngineId: ").append(getExecutionEngineId());
         sb.append("}");
         return sb.toString();
     }
@@ -841,6 +889,10 @@ public class ListNotebookExecutionsRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
+        if (other.getExecutionEngineId() == null ^ this.getExecutionEngineId() == null)
+            return false;
+        if (other.getExecutionEngineId() != null && other.getExecutionEngineId().equals(this.getExecutionEngineId()) == false)
+            return false;
         return true;
     }
 
@@ -854,6 +906,7 @@ public class ListNotebookExecutionsRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getFrom() == null) ? 0 : getFrom().hashCode());
         hashCode = prime * hashCode + ((getTo() == null) ? 0 : getTo().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getExecutionEngineId() == null) ? 0 : getExecutionEngineId().hashCode());
         return hashCode;
     }
 

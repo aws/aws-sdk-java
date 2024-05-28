@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.
+ * Describes parameters for how a Managed Service for Apache Flink application executes multiple tasks simultaneously.
  * </p>
  * 
  * @see <a
@@ -31,14 +31,14 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     * Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service.
      * </p>
      */
     private String configurationType;
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can increase the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase
      * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
      * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
@@ -49,16 +49,16 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     private Integer parallelism;
     /**
      * <p>
-     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per
      * Kinesis Processing Unit (KPU) used by the application.
      * </p>
      */
     private Integer parallelismPerKPU;
     /**
      * <p>
-     * Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
-     * application load. The service can increase this value up to the maximum parallelism, which is
+     * Describes the current number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase this value in
+     * response to application load. The service can increase this value up to the maximum parallelism, which is
      * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
      * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
      * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
@@ -67,19 +67,20 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
     private Integer currentParallelism;
     /**
      * <p>
-     * Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response
-     * to increased throughput.
+     * Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in
+     * response to increased throughput.
      * </p>
      */
     private Boolean autoScalingEnabled;
 
     /**
      * <p>
-     * Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     * Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service.
      * </p>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     *        Describes whether the application uses the default parallelism for the Managed Service for Apache Flink
+     *        service.
      * @see ConfigurationType
      */
 
@@ -89,10 +90,11 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     * Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service.
      * </p>
      * 
-     * @return Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     * @return Describes whether the application uses the default parallelism for the Managed Service for Apache Flink
+     *         service.
      * @see ConfigurationType
      */
 
@@ -102,11 +104,12 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     * Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service.
      * </p>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     *        Describes whether the application uses the default parallelism for the Managed Service for Apache Flink
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -118,11 +121,12 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     * Describes whether the application uses the default parallelism for the Managed Service for Apache Flink service.
      * </p>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+     *        Describes whether the application uses the default parallelism for the Managed Service for Apache Flink
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationType
      */
@@ -134,8 +138,8 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can increase the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase
      * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
      * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
@@ -144,13 +148,14 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
      * </p>
      * 
      * @param parallelism
-     *        Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can
-     *        perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
-     *        <code>CurrentParallelism</code> value in response to application load. The service can increase
-     *        <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
-     *        times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
-     *        be increased by requesting a limit increase. If application load is reduced, the service can reduce the
-     *        <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
+     *        Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can
+     *        increase the <code>CurrentParallelism</code> value in response to application load. The service can
+     *        increase <code>CurrentParallelism</code> up to the maximum parallelism, which is
+     *        <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
+     *        application is 32 by default, and can be increased by requesting a limit increase. If application load is
+     *        reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *        <code>Parallelism</code> setting.
      */
 
     public void setParallelism(Integer parallelism) {
@@ -159,8 +164,8 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can increase the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase
      * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
      * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
@@ -168,13 +173,14 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
      * <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
-     * @return Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can
-     *         perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
-     *         <code>CurrentParallelism</code> value in response to application load. The service can increase
-     *         <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
-     *         times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
-     *         be increased by requesting a limit increase. If application load is reduced, the service can reduce the
-     *         <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
+     * @return Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can
+     *         perform. If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can
+     *         increase the <code>CurrentParallelism</code> value in response to application load. The service can
+     *         increase <code>CurrentParallelism</code> up to the maximum parallelism, which is
+     *         <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
+     *         application is 32 by default, and can be increased by requesting a limit increase. If application load is
+     *         reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *         <code>Parallelism</code> setting.
      */
 
     public Integer getParallelism() {
@@ -183,8 +189,8 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
+     * Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can increase the
      * <code>CurrentParallelism</code> value in response to application load. The service can increase
      * <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
      * maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can be increased by
@@ -193,13 +199,14 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
      * </p>
      * 
      * @param parallelism
-     *        Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics application can
-     *        perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data Analytics can increase the
-     *        <code>CurrentParallelism</code> value in response to application load. The service can increase
-     *        <code>CurrentParallelism</code> up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
-     *        times the maximum KPUs for the application. The maximum KPUs for an application is 32 by default, and can
-     *        be increased by requesting a limit increase. If application load is reduced, the service can reduce the
-     *        <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
+     *        Describes the initial number of parallel tasks that a Managed Service for Apache Flink application can
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, then Managed Service for Apache Flink can
+     *        increase the <code>CurrentParallelism</code> value in response to application load. The service can
+     *        increase <code>CurrentParallelism</code> up to the maximum parallelism, which is
+     *        <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
+     *        application is 32 by default, and can be increased by requesting a limit increase. If application load is
+     *        reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *        <code>Parallelism</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,13 +217,13 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per
      * Kinesis Processing Unit (KPU) used by the application.
      * </p>
      * 
      * @param parallelismPerKPU
-     *        Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform
-     *        per Kinesis Processing Unit (KPU) used by the application.
+     *        Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per
+     *        Kinesis Processing Unit (KPU) used by the application.
      */
 
     public void setParallelismPerKPU(Integer parallelismPerKPU) {
@@ -225,11 +232,11 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per
      * Kinesis Processing Unit (KPU) used by the application.
      * </p>
      * 
-     * @return Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform
+     * @return Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform
      *         per Kinesis Processing Unit (KPU) used by the application.
      */
 
@@ -239,13 +246,13 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform per
+     * Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per
      * Kinesis Processing Unit (KPU) used by the application.
      * </p>
      * 
      * @param parallelismPerKPU
-     *        Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform
-     *        per Kinesis Processing Unit (KPU) used by the application.
+     *        Describes the number of parallel tasks that a Managed Service for Apache Flink application can perform per
+     *        Kinesis Processing Unit (KPU) used by the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,21 +263,21 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
-     * application load. The service can increase this value up to the maximum parallelism, which is
+     * Describes the current number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase this value in
+     * response to application load. The service can increase this value up to the maximum parallelism, which is
      * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
      * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
      * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param currentParallelism
-     *        Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can
-     *        perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value
-     *        in response to application load. The service can increase this value up to the maximum parallelism, which
-     *        is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
-     *        application is 32 by default, and can be increased by requesting a limit increase. If application load is
-     *        reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *        Describes the current number of parallel tasks that a Managed Service for Apache Flink application can
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase
+     *        this value in response to application load. The service can increase this value up to the maximum
+     *        parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
+     *        maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If
+     *        application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
      *        <code>Parallelism</code> setting.
      */
 
@@ -280,20 +287,20 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
-     * application load. The service can increase this value up to the maximum parallelism, which is
+     * Describes the current number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase this value in
+     * response to application load. The service can increase this value up to the maximum parallelism, which is
      * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
      * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
      * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
-     * @return Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can
-     *         perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this
-     *         value in response to application load. The service can increase this value up to the maximum parallelism,
-     *         which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for
-     *         an application is 32 by default, and can be increased by requesting a limit increase. If application load
-     *         is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     * @return Describes the current number of parallel tasks that a Managed Service for Apache Flink application can
+     *         perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase
+     *         this value in response to application load. The service can increase this value up to the maximum
+     *         parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
+     *         maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If
+     *         application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
      *         <code>Parallelism</code> setting.
      */
 
@@ -303,21 +310,21 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can perform.
-     * If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value in response to
-     * application load. The service can increase this value up to the maximum parallelism, which is
+     * Describes the current number of parallel tasks that a Managed Service for Apache Flink application can perform.
+     * If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase this value in
+     * response to application load. The service can increase this value up to the maximum parallelism, which is
      * <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an application is
      * 32 by default, and can be increased by requesting a limit increase. If application load is reduced, the service
      * can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code> setting.
      * </p>
      * 
      * @param currentParallelism
-     *        Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics application can
-     *        perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis Data Analytics can increase this value
-     *        in response to application load. The service can increase this value up to the maximum parallelism, which
-     *        is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The maximum KPUs for an
-     *        application is 32 by default, and can be increased by requesting a limit increase. If application load is
-     *        reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
+     *        Describes the current number of parallel tasks that a Managed Service for Apache Flink application can
+     *        perform. If <code>AutoScalingEnabled</code> is set to True, Managed Service for Apache Flink can increase
+     *        this value in response to application load. The service can increase this value up to the maximum
+     *        parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for the application. The
+     *        maximum KPUs for an application is 32 by default, and can be increased by requesting a limit increase. If
+     *        application load is reduced, the service can reduce the <code>CurrentParallelism</code> value down to the
      *        <code>Parallelism</code> setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -329,13 +336,13 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response
-     * to increased throughput.
+     * Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in
+     * response to increased throughput.
      * </p>
      * 
      * @param autoScalingEnabled
-     *        Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in
-     *        response to increased throughput.
+     *        Describes whether the Managed Service for Apache Flink service can increase the parallelism of the
+     *        application in response to increased throughput.
      */
 
     public void setAutoScalingEnabled(Boolean autoScalingEnabled) {
@@ -344,12 +351,12 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response
-     * to increased throughput.
+     * Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in
+     * response to increased throughput.
      * </p>
      * 
-     * @return Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in
-     *         response to increased throughput.
+     * @return Describes whether the Managed Service for Apache Flink service can increase the parallelism of the
+     *         application in response to increased throughput.
      */
 
     public Boolean getAutoScalingEnabled() {
@@ -358,13 +365,13 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response
-     * to increased throughput.
+     * Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in
+     * response to increased throughput.
      * </p>
      * 
      * @param autoScalingEnabled
-     *        Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in
-     *        response to increased throughput.
+     *        Describes whether the Managed Service for Apache Flink service can increase the parallelism of the
+     *        application in response to increased throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,12 +382,12 @@ public class ParallelismConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in response
-     * to increased throughput.
+     * Describes whether the Managed Service for Apache Flink service can increase the parallelism of the application in
+     * response to increased throughput.
      * </p>
      * 
-     * @return Describes whether the Kinesis Data Analytics service can increase the parallelism of the application in
-     *         response to increased throughput.
+     * @return Describes whether the Managed Service for Apache Flink service can increase the parallelism of the
+     *         application in response to increased throughput.
      */
 
     public Boolean isAutoScalingEnabled() {

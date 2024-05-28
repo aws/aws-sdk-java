@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,10 @@ public class CreateStateMachineRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> TRACINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tracingConfiguration").build();
+    private static final MarshallingInfo<Boolean> PUBLISH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("publish").build();
+    private static final MarshallingInfo<String> VERSIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionDescription").build();
 
     private static final CreateStateMachineRequestMarshaller instance = new CreateStateMachineRequestMarshaller();
 
@@ -66,6 +70,8 @@ public class CreateStateMachineRequestMarshaller {
             protocolMarshaller.marshall(createStateMachineRequest.getLoggingConfiguration(), LOGGINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createStateMachineRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createStateMachineRequest.getTracingConfiguration(), TRACINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createStateMachineRequest.getPublish(), PUBLISH_BINDING);
+            protocolMarshaller.marshall(createStateMachineRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

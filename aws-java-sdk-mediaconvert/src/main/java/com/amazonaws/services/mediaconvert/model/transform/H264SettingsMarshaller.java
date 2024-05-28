@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class H264SettingsMarshaller {
 
     private static final MarshallingInfo<String> ADAPTIVEQUANTIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adaptiveQuantization").build();
+    private static final MarshallingInfo<StructuredPojo> BANDWIDTHREDUCTIONFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bandwidthReductionFilter").build();
     private static final MarshallingInfo<Integer> BITRATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bitrate").build();
     private static final MarshallingInfo<String> CODECLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -37,6 +39,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecProfile").build();
     private static final MarshallingInfo<String> DYNAMICSUBGOP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicSubGop").build();
+    private static final MarshallingInfo<String> ENDOFSTREAMMARKERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endOfStreamMarkers").build();
     private static final MarshallingInfo<String> ENTROPYENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entropyEncoding").build();
     private static final MarshallingInfo<String> FIELDENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -127,10 +131,12 @@ public class H264SettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(h264Settings.getAdaptiveQuantization(), ADAPTIVEQUANTIZATION_BINDING);
+            protocolMarshaller.marshall(h264Settings.getBandwidthReductionFilter(), BANDWIDTHREDUCTIONFILTER_BINDING);
             protocolMarshaller.marshall(h264Settings.getBitrate(), BITRATE_BINDING);
             protocolMarshaller.marshall(h264Settings.getCodecLevel(), CODECLEVEL_BINDING);
             protocolMarshaller.marshall(h264Settings.getCodecProfile(), CODECPROFILE_BINDING);
             protocolMarshaller.marshall(h264Settings.getDynamicSubGop(), DYNAMICSUBGOP_BINDING);
+            protocolMarshaller.marshall(h264Settings.getEndOfStreamMarkers(), ENDOFSTREAMMARKERS_BINDING);
             protocolMarshaller.marshall(h264Settings.getEntropyEncoding(), ENTROPYENCODING_BINDING);
             protocolMarshaller.marshall(h264Settings.getFieldEncoding(), FIELDENCODING_BINDING);
             protocolMarshaller.marshall(h264Settings.getFlickerAdaptiveQuantization(), FLICKERADAPTIVEQUANTIZATION_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,59 +27,70 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
     /**
      * <p>
-     * The names of the registered applications to remove from the resource mappings.
+     * The names of the registered applications you want to remove from the resource mappings.
      * </p>
      */
     private java.util.List<String> appRegistryAppNames;
     /**
      * <p>
-     * The names of the CloudFormation stacks to remove from the resource mappings.
+     * The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource
+     * mappings.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     */
+    private java.util.List<String> eksSourceNames;
+    /**
+     * <p>
+     * The names of the CloudFormation stacks you want to remove from the resource mappings.
      * </p>
      */
     private java.util.List<String> logicalStackNames;
     /**
      * <p>
-     * The names of the resource groups to remove from the resource mappings.
+     * The names of the resource groups you want to remove from the resource mappings.
      * </p>
      */
     private java.util.List<String> resourceGroupNames;
     /**
      * <p>
-     * The names of the resources to remove from the resource mappings.
+     * The names of the resources you want to remove from the resource mappings.
      * </p>
      */
     private java.util.List<String> resourceNames;
     /**
      * <p>
-     * 
-     * <pre>
-     * <code>&lt;/p&gt; </code>
-     * </pre>
+     * The names of the Terraform sources you want to remove from the resource mappings.
+     * </p>
      */
     private java.util.List<String> terraformSourceNames;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -88,16 +99,17 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     *         For more information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -106,17 +118,18 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,10 +140,10 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the registered applications to remove from the resource mappings.
+     * The names of the registered applications you want to remove from the resource mappings.
      * </p>
      * 
-     * @return The names of the registered applications to remove from the resource mappings.
+     * @return The names of the registered applications you want to remove from the resource mappings.
      */
 
     public java.util.List<String> getAppRegistryAppNames() {
@@ -139,11 +152,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the registered applications to remove from the resource mappings.
+     * The names of the registered applications you want to remove from the resource mappings.
      * </p>
      * 
      * @param appRegistryAppNames
-     *        The names of the registered applications to remove from the resource mappings.
+     *        The names of the registered applications you want to remove from the resource mappings.
      */
 
     public void setAppRegistryAppNames(java.util.Collection<String> appRegistryAppNames) {
@@ -157,7 +170,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the registered applications to remove from the resource mappings.
+     * The names of the registered applications you want to remove from the resource mappings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -166,7 +179,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
      * </p>
      * 
      * @param appRegistryAppNames
-     *        The names of the registered applications to remove from the resource mappings.
+     *        The names of the registered applications you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +195,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the registered applications to remove from the resource mappings.
+     * The names of the registered applications you want to remove from the resource mappings.
      * </p>
      * 
      * @param appRegistryAppNames
-     *        The names of the registered applications to remove from the resource mappings.
+     *        The names of the registered applications you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,10 +210,120 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the CloudFormation stacks to remove from the resource mappings.
+     * The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource
+     * mappings.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * 
+     * @return The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the
+     *         resource mappings.</p> <note>
+     *         <p>
+     *         This parameter accepts values in "eks-cluster/namespace" format.
+     *         </p>
+     */
+
+    public java.util.List<String> getEksSourceNames() {
+        return eksSourceNames;
+    }
+
+    /**
+     * <p>
+     * The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource
+     * mappings.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * 
+     * @param eksSourceNames
+     *        The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the
+     *        resource mappings.</p> <note>
+     *        <p>
+     *        This parameter accepts values in "eks-cluster/namespace" format.
+     *        </p>
+     */
+
+    public void setEksSourceNames(java.util.Collection<String> eksSourceNames) {
+        if (eksSourceNames == null) {
+            this.eksSourceNames = null;
+            return;
+        }
+
+        this.eksSourceNames = new java.util.ArrayList<String>(eksSourceNames);
+    }
+
+    /**
+     * <p>
+     * The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource
+     * mappings.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEksSourceNames(java.util.Collection)} or {@link #withEksSourceNames(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
-     * @return The names of the CloudFormation stacks to remove from the resource mappings.
+     * @param eksSourceNames
+     *        The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the
+     *        resource mappings.</p> <note>
+     *        <p>
+     *        This parameter accepts values in "eks-cluster/namespace" format.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoveDraftAppVersionResourceMappingsRequest withEksSourceNames(String... eksSourceNames) {
+        if (this.eksSourceNames == null) {
+            setEksSourceNames(new java.util.ArrayList<String>(eksSourceNames.length));
+        }
+        for (String ele : eksSourceNames) {
+            this.eksSourceNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource
+     * mappings.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * 
+     * @param eksSourceNames
+     *        The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the
+     *        resource mappings.</p> <note>
+     *        <p>
+     *        This parameter accepts values in "eks-cluster/namespace" format.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoveDraftAppVersionResourceMappingsRequest withEksSourceNames(java.util.Collection<String> eksSourceNames) {
+        setEksSourceNames(eksSourceNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the CloudFormation stacks you want to remove from the resource mappings.
+     * </p>
+     * 
+     * @return The names of the CloudFormation stacks you want to remove from the resource mappings.
      */
 
     public java.util.List<String> getLogicalStackNames() {
@@ -209,11 +332,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the CloudFormation stacks to remove from the resource mappings.
+     * The names of the CloudFormation stacks you want to remove from the resource mappings.
      * </p>
      * 
      * @param logicalStackNames
-     *        The names of the CloudFormation stacks to remove from the resource mappings.
+     *        The names of the CloudFormation stacks you want to remove from the resource mappings.
      */
 
     public void setLogicalStackNames(java.util.Collection<String> logicalStackNames) {
@@ -227,7 +350,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the CloudFormation stacks to remove from the resource mappings.
+     * The names of the CloudFormation stacks you want to remove from the resource mappings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -236,7 +359,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
      * </p>
      * 
      * @param logicalStackNames
-     *        The names of the CloudFormation stacks to remove from the resource mappings.
+     *        The names of the CloudFormation stacks you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +375,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the CloudFormation stacks to remove from the resource mappings.
+     * The names of the CloudFormation stacks you want to remove from the resource mappings.
      * </p>
      * 
      * @param logicalStackNames
-     *        The names of the CloudFormation stacks to remove from the resource mappings.
+     *        The names of the CloudFormation stacks you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,10 +390,10 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resource groups to remove from the resource mappings.
+     * The names of the resource groups you want to remove from the resource mappings.
      * </p>
      * 
-     * @return The names of the resource groups to remove from the resource mappings.
+     * @return The names of the resource groups you want to remove from the resource mappings.
      */
 
     public java.util.List<String> getResourceGroupNames() {
@@ -279,11 +402,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resource groups to remove from the resource mappings.
+     * The names of the resource groups you want to remove from the resource mappings.
      * </p>
      * 
      * @param resourceGroupNames
-     *        The names of the resource groups to remove from the resource mappings.
+     *        The names of the resource groups you want to remove from the resource mappings.
      */
 
     public void setResourceGroupNames(java.util.Collection<String> resourceGroupNames) {
@@ -297,7 +420,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resource groups to remove from the resource mappings.
+     * The names of the resource groups you want to remove from the resource mappings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -306,7 +429,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
      * </p>
      * 
      * @param resourceGroupNames
-     *        The names of the resource groups to remove from the resource mappings.
+     *        The names of the resource groups you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,11 +445,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resource groups to remove from the resource mappings.
+     * The names of the resource groups you want to remove from the resource mappings.
      * </p>
      * 
      * @param resourceGroupNames
-     *        The names of the resource groups to remove from the resource mappings.
+     *        The names of the resource groups you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,10 +460,10 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resources to remove from the resource mappings.
+     * The names of the resources you want to remove from the resource mappings.
      * </p>
      * 
-     * @return The names of the resources to remove from the resource mappings.
+     * @return The names of the resources you want to remove from the resource mappings.
      */
 
     public java.util.List<String> getResourceNames() {
@@ -349,11 +472,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resources to remove from the resource mappings.
+     * The names of the resources you want to remove from the resource mappings.
      * </p>
      * 
      * @param resourceNames
-     *        The names of the resources to remove from the resource mappings.
+     *        The names of the resources you want to remove from the resource mappings.
      */
 
     public void setResourceNames(java.util.Collection<String> resourceNames) {
@@ -367,7 +490,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resources to remove from the resource mappings.
+     * The names of the resources you want to remove from the resource mappings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -376,7 +499,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
      * </p>
      * 
      * @param resourceNames
-     *        The names of the resources to remove from the resource mappings.
+     *        The names of the resources you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,11 +515,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The names of the resources to remove from the resource mappings.
+     * The names of the resources you want to remove from the resource mappings.
      * </p>
      * 
      * @param resourceNames
-     *        The names of the resources to remove from the resource mappings.
+     *        The names of the resources you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,14 +530,10 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
+     * The names of the Terraform sources you want to remove from the resource mappings.
+     * </p>
      * 
-     * <pre>
-     * <code>&lt;/p&gt; </code>
-     * </pre>
-     * 
-     * @return <pre>
-     * 
-     *         <code>&lt;/p&gt; </code>
+     * @return The names of the Terraform sources you want to remove from the resource mappings.
      */
 
     public java.util.List<String> getTerraformSourceNames() {
@@ -423,15 +542,11 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * 
-     * <pre>
-     * <code>&lt;/p&gt; </code>
-     * </pre>
+     * The names of the Terraform sources you want to remove from the resource mappings.
+     * </p>
      * 
      * @param terraformSourceNames
-     *        <pre>
-     * 
-     *        <code>&lt;/p&gt; </code>
+     *        The names of the Terraform sources you want to remove from the resource mappings.
      */
 
     public void setTerraformSourceNames(java.util.Collection<String> terraformSourceNames) {
@@ -445,10 +560,8 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * 
-     * <pre>
-     * <code>&lt;/p&gt; </code>
-     * </pre>
+     * The names of the Terraform sources you want to remove from the resource mappings.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTerraformSourceNames(java.util.Collection)} or {@link #withTerraformSourceNames(java.util.Collection)}
@@ -456,8 +569,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
      * </p>
      * 
      * @param terraformSourceNames
-     *        <pre>
-     * <code>&lt;/p&gt; </code>
+     *        The names of the Terraform sources you want to remove from the resource mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,16 +585,12 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * 
-     * <pre>
-     * <code>&lt;/p&gt; </code>
-     * </pre>
+     * The names of the Terraform sources you want to remove from the resource mappings.
+     * </p>
      * 
      * @param terraformSourceNames
-     *        <pre>
-     * 
-     *        <code>&lt;/p&gt; </code> @return Returns a reference to this object so that method calls can be chained
-     *        together.
+     *        The names of the Terraform sources you want to remove from the resource mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RemoveDraftAppVersionResourceMappingsRequest withTerraformSourceNames(java.util.Collection<String> terraformSourceNames) {
@@ -506,6 +614,8 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
             sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getAppRegistryAppNames() != null)
             sb.append("AppRegistryAppNames: ").append(getAppRegistryAppNames()).append(",");
+        if (getEksSourceNames() != null)
+            sb.append("EksSourceNames: ").append(getEksSourceNames()).append(",");
         if (getLogicalStackNames() != null)
             sb.append("LogicalStackNames: ").append(getLogicalStackNames()).append(",");
         if (getResourceGroupNames() != null)
@@ -536,6 +646,10 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
             return false;
         if (other.getAppRegistryAppNames() != null && other.getAppRegistryAppNames().equals(this.getAppRegistryAppNames()) == false)
             return false;
+        if (other.getEksSourceNames() == null ^ this.getEksSourceNames() == null)
+            return false;
+        if (other.getEksSourceNames() != null && other.getEksSourceNames().equals(this.getEksSourceNames()) == false)
+            return false;
         if (other.getLogicalStackNames() == null ^ this.getLogicalStackNames() == null)
             return false;
         if (other.getLogicalStackNames() != null && other.getLogicalStackNames().equals(this.getLogicalStackNames()) == false)
@@ -562,6 +676,7 @@ public class RemoveDraftAppVersionResourceMappingsRequest extends com.amazonaws.
 
         hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
         hashCode = prime * hashCode + ((getAppRegistryAppNames() == null) ? 0 : getAppRegistryAppNames().hashCode());
+        hashCode = prime * hashCode + ((getEksSourceNames() == null) ? 0 : getEksSourceNames().hashCode());
         hashCode = prime * hashCode + ((getLogicalStackNames() == null) ? 0 : getLogicalStackNames().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupNames() == null) ? 0 : getResourceGroupNames().hashCode());
         hashCode = prime * hashCode + ((getResourceNames() == null) ? 0 : getResourceNames().hashCode());

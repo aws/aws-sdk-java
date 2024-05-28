@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,76 @@ import com.amazonaws.services.pi.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSPIAsync extends AWSPI {
+
+    /**
+     * <p>
+     * Creates a new performance analysis report for a specific time period for the DB instance.
+     * </p>
+     * 
+     * @param createPerformanceAnalysisReportRequest
+     * @return A Java Future containing the result of the CreatePerformanceAnalysisReport operation returned by the
+     *         service.
+     * @sample AWSPIAsync.CreatePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePerformanceAnalysisReportResult> createPerformanceAnalysisReportAsync(
+            CreatePerformanceAnalysisReportRequest createPerformanceAnalysisReportRequest);
+
+    /**
+     * <p>
+     * Creates a new performance analysis report for a specific time period for the DB instance.
+     * </p>
+     * 
+     * @param createPerformanceAnalysisReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePerformanceAnalysisReport operation returned by the
+     *         service.
+     * @sample AWSPIAsyncHandler.CreatePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePerformanceAnalysisReportResult> createPerformanceAnalysisReportAsync(
+            CreatePerformanceAnalysisReportRequest createPerformanceAnalysisReportRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePerformanceAnalysisReportRequest, CreatePerformanceAnalysisReportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a performance analysis report.
+     * </p>
+     * 
+     * @param deletePerformanceAnalysisReportRequest
+     * @return A Java Future containing the result of the DeletePerformanceAnalysisReport operation returned by the
+     *         service.
+     * @sample AWSPIAsync.DeletePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePerformanceAnalysisReportResult> deletePerformanceAnalysisReportAsync(
+            DeletePerformanceAnalysisReportRequest deletePerformanceAnalysisReportRequest);
+
+    /**
+     * <p>
+     * Deletes a performance analysis report.
+     * </p>
+     * 
+     * @param deletePerformanceAnalysisReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePerformanceAnalysisReport operation returned by the
+     *         service.
+     * @sample AWSPIAsyncHandler.DeletePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePerformanceAnalysisReportResult> deletePerformanceAnalysisReportAsync(
+            DeletePerformanceAnalysisReportRequest deletePerformanceAnalysisReportRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePerformanceAnalysisReportRequest, DeletePerformanceAnalysisReportResult> asyncHandler);
 
     /**
      * <p>
@@ -152,6 +222,45 @@ public interface AWSPIAsync extends AWSPI {
 
     /**
      * <p>
+     * Retrieves the report including the report ID, status, time details, and the insights with recommendations. The
+     * report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include
+     * the <code>description</code> and <code>recommendation</code> fields.
+     * </p>
+     * 
+     * @param getPerformanceAnalysisReportRequest
+     * @return A Java Future containing the result of the GetPerformanceAnalysisReport operation returned by the
+     *         service.
+     * @sample AWSPIAsync.GetPerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPerformanceAnalysisReportResult> getPerformanceAnalysisReportAsync(
+            GetPerformanceAnalysisReportRequest getPerformanceAnalysisReportRequest);
+
+    /**
+     * <p>
+     * Retrieves the report including the report ID, status, time details, and the insights with recommendations. The
+     * report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include
+     * the <code>description</code> and <code>recommendation</code> fields.
+     * </p>
+     * 
+     * @param getPerformanceAnalysisReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPerformanceAnalysisReport operation returned by the
+     *         service.
+     * @sample AWSPIAsyncHandler.GetPerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPerformanceAnalysisReportResult> getPerformanceAnalysisReportAsync(
+            GetPerformanceAnalysisReportRequest getPerformanceAnalysisReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPerformanceAnalysisReportRequest, GetPerformanceAnalysisReportResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned
      * on or off on a specific DB instance.
      * </p>
@@ -186,7 +295,8 @@ public interface AWSPIAsync extends AWSPI {
     /**
      * <p>
      * Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific
-     * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
+     * dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate
+     * function for each metric.
      * </p>
      * <note>
      * <p>
@@ -206,7 +316,8 @@ public interface AWSPIAsync extends AWSPI {
     /**
      * <p>
      * Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific
-     * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
+     * dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate
+     * function for each metric.
      * </p>
      * <note>
      * <p>
@@ -297,5 +408,135 @@ public interface AWSPIAsync extends AWSPI {
     java.util.concurrent.Future<ListAvailableResourceMetricsResult> listAvailableResourceMetricsAsync(
             ListAvailableResourceMetricsRequest listAvailableResourceMetricsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAvailableResourceMetricsRequest, ListAvailableResourceMetricsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the analysis reports created for the DB instance. The reports are sorted based on the start time of
+     * each report.
+     * </p>
+     * 
+     * @param listPerformanceAnalysisReportsRequest
+     * @return A Java Future containing the result of the ListPerformanceAnalysisReports operation returned by the
+     *         service.
+     * @sample AWSPIAsync.ListPerformanceAnalysisReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPerformanceAnalysisReportsResult> listPerformanceAnalysisReportsAsync(
+            ListPerformanceAnalysisReportsRequest listPerformanceAnalysisReportsRequest);
+
+    /**
+     * <p>
+     * Lists all the analysis reports created for the DB instance. The reports are sorted based on the start time of
+     * each report.
+     * </p>
+     * 
+     * @param listPerformanceAnalysisReportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPerformanceAnalysisReports operation returned by the
+     *         service.
+     * @sample AWSPIAsyncHandler.ListPerformanceAnalysisReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPerformanceAnalysisReportsResult> listPerformanceAnalysisReportsAsync(
+            ListPerformanceAnalysisReportsRequest listPerformanceAnalysisReportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPerformanceAnalysisReportsRequest, ListPerformanceAnalysisReportsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSPIAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSPIAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds metadata tags to the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSPIAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds metadata tags to the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSPIAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSPIAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSPIAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,7 +114,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The table is being updated.
+     * <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for
+     * data operations when <code>UPDATING</code>.
      * </p>
      * </li>
      * <li>
@@ -469,6 +470,19 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private TableClassSummary tableClassSummary;
+    /**
+     * <p>
+     * Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     * </p>
+     */
+    private Boolean deletionProtectionEnabled;
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must
+     * specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     */
+    private OnDemandThroughput onDemandThroughput;
 
     /**
      * <p>
@@ -1102,7 +1116,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The table is being updated.
+     * <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for
+     * data operations when <code>UPDATING</code>.
      * </p>
      * </li>
      * <li>
@@ -1144,7 +1159,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The table is being updated.
+     *        <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available
+     *        for data operations when <code>UPDATING</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1194,7 +1210,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The table is being updated.
+     * <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for
+     * data operations when <code>UPDATING</code>.
      * </p>
      * </li>
      * <li>
@@ -1235,7 +1252,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATING</code> - The table is being updated.
+     *         <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available
+     *         for data operations when <code>UPDATING</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1285,7 +1303,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The table is being updated.
+     * <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for
+     * data operations when <code>UPDATING</code>.
      * </p>
      * </li>
      * <li>
@@ -1327,7 +1346,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The table is being updated.
+     *        <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available
+     *        for data operations when <code>UPDATING</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1379,7 +1399,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The table is being updated.
+     * <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for
+     * data operations when <code>UPDATING</code>.
      * </p>
      * </li>
      * <li>
@@ -1421,7 +1442,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The table is being updated.
+     *        <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available
+     *        for data operations when <code>UPDATING</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1471,7 +1493,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The table is being updated.
+     * <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available for
+     * data operations when <code>UPDATING</code>.
      * </p>
      * </li>
      * <li>
@@ -1513,7 +1536,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The table is being updated.
+     *        <code>UPDATING</code> - The table/index configuration is being updated. The table/index remains available
+     *        for data operations when <code>UPDATING</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -4022,6 +4046,104 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @param deletionProtectionEnabled
+     *        Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     */
+
+    public void setDeletionProtectionEnabled(Boolean deletionProtectionEnabled) {
+        this.deletionProtectionEnabled = deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @return Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     */
+
+    public Boolean getDeletionProtectionEnabled() {
+        return this.deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @param deletionProtectionEnabled
+     *        Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withDeletionProtectionEnabled(Boolean deletionProtectionEnabled) {
+        setDeletionProtectionEnabled(deletionProtectionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @return Indicates whether deletion protection is enabled (true) or disabled (false) on the table.
+     */
+
+    public Boolean isDeletionProtectionEnabled() {
+        return this.deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must
+     * specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @param onDemandThroughput
+     *        The maximum number of read and write units for the specified on-demand table. If you use this parameter,
+     *        you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     */
+
+    public void setOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        this.onDemandThroughput = onDemandThroughput;
+    }
+
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must
+     * specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @return The maximum number of read and write units for the specified on-demand table. If you use this parameter,
+     *         you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     */
+
+    public OnDemandThroughput getOnDemandThroughput() {
+        return this.onDemandThroughput;
+    }
+
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must
+     * specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @param onDemandThroughput
+     *        The maximum number of read and write units for the specified on-demand table. If you use this parameter,
+     *        you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        setOnDemandThroughput(onDemandThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4076,7 +4198,11 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         if (getArchivalSummary() != null)
             sb.append("ArchivalSummary: ").append(getArchivalSummary()).append(",");
         if (getTableClassSummary() != null)
-            sb.append("TableClassSummary: ").append(getTableClassSummary());
+            sb.append("TableClassSummary: ").append(getTableClassSummary()).append(",");
+        if (getDeletionProtectionEnabled() != null)
+            sb.append("DeletionProtectionEnabled: ").append(getDeletionProtectionEnabled()).append(",");
+        if (getOnDemandThroughput() != null)
+            sb.append("OnDemandThroughput: ").append(getOnDemandThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -4179,6 +4305,14 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTableClassSummary() != null && other.getTableClassSummary().equals(this.getTableClassSummary()) == false)
             return false;
+        if (other.getDeletionProtectionEnabled() == null ^ this.getDeletionProtectionEnabled() == null)
+            return false;
+        if (other.getDeletionProtectionEnabled() != null && other.getDeletionProtectionEnabled().equals(this.getDeletionProtectionEnabled()) == false)
+            return false;
+        if (other.getOnDemandThroughput() == null ^ this.getOnDemandThroughput() == null)
+            return false;
+        if (other.getOnDemandThroughput() != null && other.getOnDemandThroughput().equals(this.getOnDemandThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -4209,6 +4343,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
         hashCode = prime * hashCode + ((getArchivalSummary() == null) ? 0 : getArchivalSummary().hashCode());
         hashCode = prime * hashCode + ((getTableClassSummary() == null) ? 0 : getTableClassSummary().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtectionEnabled() == null) ? 0 : getDeletionProtectionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughput() == null) ? 0 : getOnDemandThroughput().hashCode());
         return hashCode;
     }
 

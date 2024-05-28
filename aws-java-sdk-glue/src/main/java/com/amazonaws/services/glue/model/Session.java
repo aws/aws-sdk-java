@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,44 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String glueVersion;
+    /**
+     * <p>
+     * The number of workers of a defined <code>WorkerType</code> to use for the session.
+     * </p>
+     */
+    private Integer numberOfWorkers;
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     * <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     * <code>Z.2X</code> for Ray sessions.
+     * </p>
+     */
+    private String workerType;
+    /**
+     * <p>
+     * The date and time that this session is completed.
+     * </p>
+     */
+    private java.util.Date completedOn;
+    /**
+     * <p>
+     * The total time the session ran for.
+     * </p>
+     */
+    private Double executionTime;
+    /**
+     * <p>
+     * The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     * </p>
+     */
+    private Double dPUSeconds;
+    /**
+     * <p>
+     * The number of minutes when idle before the session times out.
+     * </p>
+     */
+    private Integer idleTimeout;
 
     /**
      * <p>
@@ -688,6 +726,281 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of workers of a defined <code>WorkerType</code> to use for the session.
+     * </p>
+     * 
+     * @param numberOfWorkers
+     *        The number of workers of a defined <code>WorkerType</code> to use for the session.
+     */
+
+    public void setNumberOfWorkers(Integer numberOfWorkers) {
+        this.numberOfWorkers = numberOfWorkers;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>WorkerType</code> to use for the session.
+     * </p>
+     * 
+     * @return The number of workers of a defined <code>WorkerType</code> to use for the session.
+     */
+
+    public Integer getNumberOfWorkers() {
+        return this.numberOfWorkers;
+    }
+
+    /**
+     * <p>
+     * The number of workers of a defined <code>WorkerType</code> to use for the session.
+     * </p>
+     * 
+     * @param numberOfWorkers
+     *        The number of workers of a defined <code>WorkerType</code> to use for the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withNumberOfWorkers(Integer numberOfWorkers) {
+        setNumberOfWorkers(numberOfWorkers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     * <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     * <code>Z.2X</code> for Ray sessions.
+     * </p>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     *        <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     *        <code>Z.2X</code> for Ray sessions.
+     * @see WorkerType
+     */
+
+    public void setWorkerType(String workerType) {
+        this.workerType = workerType;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     * <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     * <code>Z.2X</code> for Ray sessions.
+     * </p>
+     * 
+     * @return The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>
+     *         , <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     *         <code>Z.2X</code> for Ray sessions.
+     * @see WorkerType
+     */
+
+    public String getWorkerType() {
+        return this.workerType;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     * <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     * <code>Z.2X</code> for Ray sessions.
+     * </p>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     *        <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     *        <code>Z.2X</code> for Ray sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public Session withWorkerType(String workerType) {
+        setWorkerType(workerType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     * <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     * <code>Z.2X</code> for Ray sessions.
+     * </p>
+     * 
+     * @param workerType
+     *        The type of predefined worker that is allocated when a session runs. Accepts a value of <code>G.1X</code>,
+     *        <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for Spark sessions. Accepts the value
+     *        <code>Z.2X</code> for Ray sessions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkerType
+     */
+
+    public Session withWorkerType(WorkerType workerType) {
+        this.workerType = workerType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time that this session is completed.
+     * </p>
+     * 
+     * @param completedOn
+     *        The date and time that this session is completed.
+     */
+
+    public void setCompletedOn(java.util.Date completedOn) {
+        this.completedOn = completedOn;
+    }
+
+    /**
+     * <p>
+     * The date and time that this session is completed.
+     * </p>
+     * 
+     * @return The date and time that this session is completed.
+     */
+
+    public java.util.Date getCompletedOn() {
+        return this.completedOn;
+    }
+
+    /**
+     * <p>
+     * The date and time that this session is completed.
+     * </p>
+     * 
+     * @param completedOn
+     *        The date and time that this session is completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withCompletedOn(java.util.Date completedOn) {
+        setCompletedOn(completedOn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total time the session ran for.
+     * </p>
+     * 
+     * @param executionTime
+     *        The total time the session ran for.
+     */
+
+    public void setExecutionTime(Double executionTime) {
+        this.executionTime = executionTime;
+    }
+
+    /**
+     * <p>
+     * The total time the session ran for.
+     * </p>
+     * 
+     * @return The total time the session ran for.
+     */
+
+    public Double getExecutionTime() {
+        return this.executionTime;
+    }
+
+    /**
+     * <p>
+     * The total time the session ran for.
+     * </p>
+     * 
+     * @param executionTime
+     *        The total time the session ran for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withExecutionTime(Double executionTime) {
+        setExecutionTime(executionTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     * </p>
+     * 
+     * @param dPUSeconds
+     *        The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     */
+
+    public void setDPUSeconds(Double dPUSeconds) {
+        this.dPUSeconds = dPUSeconds;
+    }
+
+    /**
+     * <p>
+     * The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     * </p>
+     * 
+     * @return The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     */
+
+    public Double getDPUSeconds() {
+        return this.dPUSeconds;
+    }
+
+    /**
+     * <p>
+     * The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     * </p>
+     * 
+     * @param dPUSeconds
+     *        The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withDPUSeconds(Double dPUSeconds) {
+        setDPUSeconds(dPUSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of minutes when idle before the session times out.
+     * </p>
+     * 
+     * @param idleTimeout
+     *        The number of minutes when idle before the session times out.
+     */
+
+    public void setIdleTimeout(Integer idleTimeout) {
+        this.idleTimeout = idleTimeout;
+    }
+
+    /**
+     * <p>
+     * The number of minutes when idle before the session times out.
+     * </p>
+     * 
+     * @return The number of minutes when idle before the session times out.
+     */
+
+    public Integer getIdleTimeout() {
+        return this.idleTimeout;
+    }
+
+    /**
+     * <p>
+     * The number of minutes when idle before the session times out.
+     * </p>
+     * 
+     * @param idleTimeout
+     *        The number of minutes when idle before the session times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withIdleTimeout(Integer idleTimeout) {
+        setIdleTimeout(idleTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -724,7 +1037,19 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
         if (getSecurityConfiguration() != null)
             sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getGlueVersion() != null)
-            sb.append("GlueVersion: ").append(getGlueVersion());
+            sb.append("GlueVersion: ").append(getGlueVersion()).append(",");
+        if (getNumberOfWorkers() != null)
+            sb.append("NumberOfWorkers: ").append(getNumberOfWorkers()).append(",");
+        if (getWorkerType() != null)
+            sb.append("WorkerType: ").append(getWorkerType()).append(",");
+        if (getCompletedOn() != null)
+            sb.append("CompletedOn: ").append(getCompletedOn()).append(",");
+        if (getExecutionTime() != null)
+            sb.append("ExecutionTime: ").append(getExecutionTime()).append(",");
+        if (getDPUSeconds() != null)
+            sb.append("DPUSeconds: ").append(getDPUSeconds()).append(",");
+        if (getIdleTimeout() != null)
+            sb.append("IdleTimeout: ").append(getIdleTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -791,6 +1116,30 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGlueVersion() != null && other.getGlueVersion().equals(this.getGlueVersion()) == false)
             return false;
+        if (other.getNumberOfWorkers() == null ^ this.getNumberOfWorkers() == null)
+            return false;
+        if (other.getNumberOfWorkers() != null && other.getNumberOfWorkers().equals(this.getNumberOfWorkers()) == false)
+            return false;
+        if (other.getWorkerType() == null ^ this.getWorkerType() == null)
+            return false;
+        if (other.getWorkerType() != null && other.getWorkerType().equals(this.getWorkerType()) == false)
+            return false;
+        if (other.getCompletedOn() == null ^ this.getCompletedOn() == null)
+            return false;
+        if (other.getCompletedOn() != null && other.getCompletedOn().equals(this.getCompletedOn()) == false)
+            return false;
+        if (other.getExecutionTime() == null ^ this.getExecutionTime() == null)
+            return false;
+        if (other.getExecutionTime() != null && other.getExecutionTime().equals(this.getExecutionTime()) == false)
+            return false;
+        if (other.getDPUSeconds() == null ^ this.getDPUSeconds() == null)
+            return false;
+        if (other.getDPUSeconds() != null && other.getDPUSeconds().equals(this.getDPUSeconds()) == false)
+            return false;
+        if (other.getIdleTimeout() == null ^ this.getIdleTimeout() == null)
+            return false;
+        if (other.getIdleTimeout() != null && other.getIdleTimeout().equals(this.getIdleTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -812,6 +1161,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getGlueVersion() == null) ? 0 : getGlueVersion().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
+        hashCode = prime * hashCode + ((getWorkerType() == null) ? 0 : getWorkerType().hashCode());
+        hashCode = prime * hashCode + ((getCompletedOn() == null) ? 0 : getCompletedOn().hashCode());
+        hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
+        hashCode = prime * hashCode + ((getDPUSeconds() == null) ? 0 : getDPUSeconds().hashCode());
+        hashCode = prime * hashCode + ((getIdleTimeout() == null) ? 0 : getIdleTimeout().hashCode());
         return hashCode;
     }
 

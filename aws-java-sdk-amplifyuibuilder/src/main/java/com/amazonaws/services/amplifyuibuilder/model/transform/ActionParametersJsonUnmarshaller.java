@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,35 +48,6 @@ public class ActionParametersJsonUnmarshaller implements Unmarshaller<ActionPara
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("anchor", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setAnchor(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("fields", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setFields(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
-                            ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
-                if (context.testExpression("global", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setGlobal(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setId(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("model", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setModel(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("state", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setState(MutationActionSetStateParameterJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("target", targetDepth)) {
-                    context.nextToken();
-                    actionParameters.setTarget(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     actionParameters.setType(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
@@ -84,6 +55,35 @@ public class ActionParametersJsonUnmarshaller implements Unmarshaller<ActionPara
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
                     actionParameters.setUrl(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("anchor", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setAnchor(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("target", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setTarget(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("global", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setGlobal(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("model", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setModel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("id", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setId(ComponentPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fields", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setFields(new MapUnmarshaller<String, ComponentProperty>(context.getUnmarshaller(String.class),
+                            ComponentPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("state", targetDepth)) {
+                    context.nextToken();
+                    actionParameters.setState(MutationActionSetStateParameterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

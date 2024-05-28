@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class RelatedItemTypeFilter implements Serializable, Cloneable, Structure
      * </p>
      */
     private ContactFilter contact;
+    /**
+     * <p>
+     * A filter for related items of this type of <code>File</code>.
+     * </p>
+     */
+    private FileFilter file;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class RelatedItemTypeFilter implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A filter for related items of this type of <code>File</code>.
+     * </p>
+     * 
+     * @param file
+     *        A filter for related items of this type of <code>File</code>.
+     */
+
+    public void setFile(FileFilter file) {
+        this.file = file;
+    }
+
+    /**
+     * <p>
+     * A filter for related items of this type of <code>File</code>.
+     * </p>
+     * 
+     * @return A filter for related items of this type of <code>File</code>.
+     */
+
+    public FileFilter getFile() {
+        return this.file;
+    }
+
+    /**
+     * <p>
+     * A filter for related items of this type of <code>File</code>.
+     * </p>
+     * 
+     * @param file
+     *        A filter for related items of this type of <code>File</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelatedItemTypeFilter withFile(FileFilter file) {
+        setFile(file);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class RelatedItemTypeFilter implements Serializable, Cloneable, Structure
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getContact() != null)
-            sb.append("Contact: ").append(getContact());
+            sb.append("Contact: ").append(getContact()).append(",");
+        if (getFile() != null)
+            sb.append("File: ").append(getFile());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class RelatedItemTypeFilter implements Serializable, Cloneable, Structure
             return false;
         if (other.getContact() != null && other.getContact().equals(this.getContact()) == false)
             return false;
+        if (other.getFile() == null ^ this.getFile() == null)
+            return false;
+        if (other.getFile() != null && other.getFile().equals(this.getFile()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class RelatedItemTypeFilter implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getContact() == null) ? 0 : getContact().hashCode());
+        hashCode = prime * hashCode + ((getFile() == null) ? 0 : getFile().hashCode());
         return hashCode;
     }
 

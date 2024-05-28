@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href=
- * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
- * >What are the resource limits for OpsCenter?</a>.
+ * The request caused OpsItems to exceed one or more quotas.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

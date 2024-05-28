@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.simpleemailv2.AmazonSimpleEmailServiceV2ClientBuil
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.simpleemailv2.model.*;
+
 import com.amazonaws.services.simpleemailv2.model.transform.*;
 
 /**
@@ -230,6 +231,68 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetMetricDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels an export job.
+     * </p>
+     * 
+     * @param cancelExportJobRequest
+     *        Represents a request to cancel an export job using the export job ID.
+     * @return Result of the CancelExportJob operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.CancelExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelExportJobResult cancelExportJob(CancelExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelExportJobResult executeCancelExportJob(CancelExportJobRequest cancelExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelExportJobRequest> request = null;
+        Response<CancelExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -992,6 +1055,73 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateEmailTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateEmailTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an export job for a data source and destination.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createExportJobRequest
+     *        Represents a request to create an export job from a data source to a data destination.
+     * @return Result of the CreateExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @sample AmazonSimpleEmailServiceV2.CreateExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateExportJobResult createExportJob(CreateExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateExportJobResult executeCreateExportJob(CreateExportJobRequest createExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExportJobRequest> request = null;
+        Response<CreateExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2879,6 +3009,68 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Provides information about an export job.
+     * </p>
+     * 
+     * @param getExportJobRequest
+     *        Represents a request to retrieve information about an export job using the export job ID.
+     * @return Result of the GetExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.GetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetExportJobResult getExportJob(GetExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExportJob(request);
+    }
+
+    @SdkInternalApi
+    final GetExportJobResult executeGetExportJob(GetExportJobRequest getExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExportJobRequest> request = null;
+        Response<GetExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides information about an import job.
      * </p>
      * 
@@ -2929,6 +3121,72 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<GetImportJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetImportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides information about a specific message, including the from address, the subject, the recipient address,
+     * email tags, as well as events associated with the message.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getMessageInsightsRequest
+     *        A request to return information about a message.
+     * @return Result of the GetMessageInsights operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetMessageInsights
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMessageInsightsResult getMessageInsights(GetMessageInsightsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMessageInsights(request);
+    }
+
+    @SdkInternalApi
+    final GetMessageInsightsResult executeGetMessageInsights(GetMessageInsightsRequest getMessageInsightsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMessageInsightsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMessageInsightsRequest> request = null;
+        Response<GetMessageInsightsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMessageInsightsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMessageInsightsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMessageInsights");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMessageInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMessageInsightsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3576,6 +3834,66 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListEmailTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEmailTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all of the export jobs.
+     * </p>
+     * 
+     * @param listExportJobsRequest
+     *        Represents a request to list all export jobs with filters.
+     * @return Result of the ListExportJobs operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.ListExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExportJobsResult listExportJobs(ListExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListExportJobsResult executeListExportJobs(ListExportJobsRequest listExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExportJobsRequest> request = null;
+        Response<ListExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4613,6 +4931,78 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<PutDedicatedIpInPoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutDedicatedIpInPoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used to convert a dedicated IP pool to a different scaling mode.
+     * </p>
+     * <note>
+     * <p>
+     * <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+     * </p>
+     * </note>
+     * 
+     * @param putDedicatedIpPoolScalingAttributesRequest
+     *        A request to convert a dedicated IP pool to a different scaling mode.
+     * @return Result of the PutDedicatedIpPoolScalingAttributes operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws ConcurrentModificationException
+     *         The resource is being modified by another operation or thread.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.PutDedicatedIpPoolScalingAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutDedicatedIpPoolScalingAttributesResult putDedicatedIpPoolScalingAttributes(PutDedicatedIpPoolScalingAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDedicatedIpPoolScalingAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutDedicatedIpPoolScalingAttributesResult executePutDedicatedIpPoolScalingAttributes(
+            PutDedicatedIpPoolScalingAttributesRequest putDedicatedIpPoolScalingAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDedicatedIpPoolScalingAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDedicatedIpPoolScalingAttributesRequest> request = null;
+        Response<PutDedicatedIpPoolScalingAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDedicatedIpPoolScalingAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putDedicatedIpPoolScalingAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpPoolScalingAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutDedicatedIpPoolScalingAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutDedicatedIpPoolScalingAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5727,9 +6117,14 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the
-     * TopicPreferences object, just the ones that need updating.
+     * Updates a contact's preferences for a list.
      * </p>
+     * <note>
+     * <p>
+     * You must specify all existing topic preferences in the <code>TopicPreferences</code> object, not just the ones
+     * that need updating; otherwise, all your existing preferences will be removed.
+     * </p>
+     * </note>
      * 
      * @param updateContactRequest
      * @return Result of the UpdateContact operation returned by the service.

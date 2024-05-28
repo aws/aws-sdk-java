@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,10 @@ public class JobRunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYPOLICYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryPolicyConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYPOLICYEXECUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryPolicyExecution").build();
 
     private static final JobRunMarshaller instance = new JobRunMarshaller();
 
@@ -94,6 +98,8 @@ public class JobRunMarshaller {
             protocolMarshaller.marshall(jobRun.getStateDetails(), STATEDETAILS_BINDING);
             protocolMarshaller.marshall(jobRun.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(jobRun.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(jobRun.getRetryPolicyConfiguration(), RETRYPOLICYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(jobRun.getRetryPolicyExecution(), RETRYPOLICYEXECUTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

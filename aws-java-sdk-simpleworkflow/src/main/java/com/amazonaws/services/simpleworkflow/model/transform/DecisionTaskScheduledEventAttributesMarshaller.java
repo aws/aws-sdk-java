@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class DecisionTaskScheduledEventAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskPriority").build();
     private static final MarshallingInfo<String> STARTTOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startToCloseTimeout").build();
+    private static final MarshallingInfo<String> SCHEDULETOSTARTTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduleToStartTimeout").build();
 
     private static final DecisionTaskScheduledEventAttributesMarshaller instance = new DecisionTaskScheduledEventAttributesMarshaller();
 
@@ -53,6 +55,7 @@ public class DecisionTaskScheduledEventAttributesMarshaller {
             protocolMarshaller.marshall(decisionTaskScheduledEventAttributes.getTaskList(), TASKLIST_BINDING);
             protocolMarshaller.marshall(decisionTaskScheduledEventAttributes.getTaskPriority(), TASKPRIORITY_BINDING);
             protocolMarshaller.marshall(decisionTaskScheduledEventAttributes.getStartToCloseTimeout(), STARTTOCLOSETIMEOUT_BINDING);
+            protocolMarshaller.marshall(decisionTaskScheduledEventAttributes.getScheduleToStartTimeout(), SCHEDULETOSTARTTIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

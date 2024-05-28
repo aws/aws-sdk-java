@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -192,6 +192,29 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated
+     * bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     * diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     */
+    private String healthMetricsConfig;
 
     /**
      * <p>
@@ -1518,6 +1541,198 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated
+     * bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     * diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * 
+     * @param healthMetricsConfig
+     *        Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the
+     *        aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     *        diagnosing bottlenecks in a cache configuration.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * @see CacheHealthMetricsConfig
+     */
+
+    public void setHealthMetricsConfig(String healthMetricsConfig) {
+        this.healthMetricsConfig = healthMetricsConfig;
+    }
+
+    /**
+     * <p>
+     * Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated
+     * bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     * diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * 
+     * @return Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the
+     *         aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     *         diagnosing bottlenecks in a cache configuration.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or
+     *         <code>DISABLED</code>.
+     * @see CacheHealthMetricsConfig
+     */
+
+    public String getHealthMetricsConfig() {
+        return this.healthMetricsConfig;
+    }
+
+    /**
+     * <p>
+     * Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated
+     * bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     * diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * 
+     * @param healthMetricsConfig
+     *        Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the
+     *        aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     *        diagnosing bottlenecks in a cache configuration.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CacheHealthMetricsConfig
+     */
+
+    public ApiCache withHealthMetricsConfig(String healthMetricsConfig) {
+        setHealthMetricsConfig(healthMetricsConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated
+     * bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     * diagnosing bottlenecks in a cache configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * 
+     * @param healthMetricsConfig
+     *        Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the
+     *        aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for
+     *        diagnosing bottlenecks in a cache configuration.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CacheHealthMetricsConfig
+     */
+
+    public ApiCache withHealthMetricsConfig(CacheHealthMetricsConfig healthMetricsConfig) {
+        this.healthMetricsConfig = healthMetricsConfig.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1540,7 +1755,9 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getHealthMetricsConfig() != null)
+            sb.append("HealthMetricsConfig: ").append(getHealthMetricsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1579,6 +1796,10 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getHealthMetricsConfig() == null ^ this.getHealthMetricsConfig() == null)
+            return false;
+        if (other.getHealthMetricsConfig() != null && other.getHealthMetricsConfig().equals(this.getHealthMetricsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1593,6 +1814,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getHealthMetricsConfig() == null) ? 0 : getHealthMetricsConfig().hashCode());
         return hashCode;
     }
 

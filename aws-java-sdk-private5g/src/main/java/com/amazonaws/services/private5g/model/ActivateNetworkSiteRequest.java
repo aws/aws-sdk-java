@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,36 @@ public class ActivateNetworkSiteRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Determines the duration and renewal status of the commitment period for all pending radio units.
+     * </p>
+     * <p>
+     * If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you
+     * must specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether you want your commitment period to automatically renew for one more year after your current commitment
+     * period expires.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.
+     * </p>
+     * <p>
+     * If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action,
+     * the commitment period is set to 60-days.
+     * </p>
+     */
+    private CommitmentConfiguration commitmentConfiguration;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the network site.
@@ -98,6 +128,190 @@ public class ActivateNetworkSiteRequest extends com.amazonaws.AmazonWebServiceRe
 
     public ActivateNetworkSiteRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the duration and renewal status of the commitment period for all pending radio units.
+     * </p>
+     * <p>
+     * If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you
+     * must specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether you want your commitment period to automatically renew for one more year after your current commitment
+     * period expires.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.
+     * </p>
+     * <p>
+     * If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action,
+     * the commitment period is set to 60-days.
+     * </p>
+     * 
+     * @param commitmentConfiguration
+     *        Determines the duration and renewal status of the commitment period for all pending radio units.</p>
+     *        <p>
+     *        If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action,
+     *        you must specify the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Whether you want your commitment period to automatically renew for one more year after your current
+     *        commitment period expires.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     *        Pricing</a>.
+     *        </p>
+     *        <p>
+     *        If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+     *        action, the commitment period is set to 60-days.
+     */
+
+    public void setCommitmentConfiguration(CommitmentConfiguration commitmentConfiguration) {
+        this.commitmentConfiguration = commitmentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Determines the duration and renewal status of the commitment period for all pending radio units.
+     * </p>
+     * <p>
+     * If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you
+     * must specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether you want your commitment period to automatically renew for one more year after your current commitment
+     * period expires.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.
+     * </p>
+     * <p>
+     * If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action,
+     * the commitment period is set to 60-days.
+     * </p>
+     * 
+     * @return Determines the duration and renewal status of the commitment period for all pending radio units.</p>
+     *         <p>
+     *         If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+     *         action, you must specify the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Whether you want your commitment period to automatically renew for one more year after your current
+     *         commitment period expires.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     *         Pricing</a>.
+     *         </p>
+     *         <p>
+     *         If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+     *         action, the commitment period is set to 60-days.
+     */
+
+    public CommitmentConfiguration getCommitmentConfiguration() {
+        return this.commitmentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Determines the duration and renewal status of the commitment period for all pending radio units.
+     * </p>
+     * <p>
+     * If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you
+     * must specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether you want your commitment period to automatically renew for one more year after your current commitment
+     * period expires.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.
+     * </p>
+     * <p>
+     * If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action,
+     * the commitment period is set to 60-days.
+     * </p>
+     * 
+     * @param commitmentConfiguration
+     *        Determines the duration and renewal status of the commitment period for all pending radio units.</p>
+     *        <p>
+     *        If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action,
+     *        you must specify the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Whether you want your commitment period to automatically renew for one more year after your current
+     *        commitment period expires.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     *        Pricing</a>.
+     *        </p>
+     *        <p>
+     *        If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+     *        action, the commitment period is set to 60-days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivateNetworkSiteRequest withCommitmentConfiguration(CommitmentConfiguration commitmentConfiguration) {
+        setCommitmentConfiguration(commitmentConfiguration);
         return this;
     }
 
@@ -195,6 +409,8 @@ public class ActivateNetworkSiteRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getCommitmentConfiguration() != null)
+            sb.append("CommitmentConfiguration: ").append(getCommitmentConfiguration()).append(",");
         if (getNetworkSiteArn() != null)
             sb.append("NetworkSiteArn: ").append(getNetworkSiteArn()).append(",");
         if (getShippingAddress() != null)
@@ -217,6 +433,10 @@ public class ActivateNetworkSiteRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getCommitmentConfiguration() == null ^ this.getCommitmentConfiguration() == null)
+            return false;
+        if (other.getCommitmentConfiguration() != null && other.getCommitmentConfiguration().equals(this.getCommitmentConfiguration()) == false)
+            return false;
         if (other.getNetworkSiteArn() == null ^ this.getNetworkSiteArn() == null)
             return false;
         if (other.getNetworkSiteArn() != null && other.getNetworkSiteArn().equals(this.getNetworkSiteArn()) == false)
@@ -234,6 +454,7 @@ public class ActivateNetworkSiteRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getCommitmentConfiguration() == null) ? 0 : getCommitmentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkSiteArn() == null) ? 0 : getNetworkSiteArn().hashCode());
         hashCode = prime * hashCode + ((getShippingAddress() == null) ? 0 : getShippingAddress().hashCode());
         return hashCode;

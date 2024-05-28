@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -196,7 +196,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
      * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
-     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to
+     * <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * </p>
      */
     private String remoteManagement;
@@ -206,6 +207,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String longTermPricingId;
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     */
+    private String impactLevel;
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     */
+    private PickupDetails pickupDetails;
 
     /**
      * <p>
@@ -1617,13 +1630,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
      * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
-     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to
+     * <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * </p>
      * 
      * @param remoteManagement
      *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
      *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
-     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     *        device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device.
+     *        When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * @see RemoteManagement
      */
 
@@ -1635,12 +1650,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
      * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
-     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to
+     * <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * </p>
      * 
      * @return Allows you to securely operate and manage Snowcone devices remotely from outside of your internal
      *         network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available
-     *         when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the
+     *         when the device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage
+     *         the device. When set to <code>NOT_INSTALLED</code>, remote management will not be available on the
      *         device.
      * @see RemoteManagement
      */
@@ -1653,13 +1670,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
      * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
-     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to
+     * <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * </p>
      * 
      * @param remoteManagement
      *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
      *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
-     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     *        device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device.
+     *        When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RemoteManagement
      */
@@ -1673,13 +1692,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
      * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
-     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to
+     * <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * </p>
      * 
      * @param remoteManagement
      *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
      *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
-     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     *        device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device.
+     *        When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * @see RemoteManagement
      */
 
@@ -1691,13 +1712,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When
      * set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device
-     * arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     * arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device. When set to
+     * <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * </p>
      * 
      * @param remoteManagement
      *        Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network.
      *        When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the
-     *        device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.
+     *        device arrives at your location. Otherwise, you need to use the Snowball Edge client to manage the device.
+     *        When set to <code>NOT_INSTALLED</code>, remote management will not be available on the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RemoteManagement
      */
@@ -1748,6 +1771,120 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @see ImpactLevel
+     */
+
+    public void setImpactLevel(String impactLevel) {
+        this.impactLevel = impactLevel;
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @return The highest impact level of data that will be stored or processed on the device, provided at job
+     *         creation.
+     * @see ImpactLevel
+     */
+
+    public String getImpactLevel() {
+        return this.impactLevel;
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImpactLevel
+     */
+
+    public CreateJobRequest withImpactLevel(String impactLevel) {
+        setImpactLevel(impactLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @see ImpactLevel
+     */
+
+    public void setImpactLevel(ImpactLevel impactLevel) {
+        withImpactLevel(impactLevel);
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImpactLevel
+     */
+
+    public CreateJobRequest withImpactLevel(ImpactLevel impactLevel) {
+        this.impactLevel = impactLevel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     * 
+     * @param pickupDetails
+     *        Information identifying the person picking up the device.
+     */
+
+    public void setPickupDetails(PickupDetails pickupDetails) {
+        this.pickupDetails = pickupDetails;
+    }
+
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     * 
+     * @return Information identifying the person picking up the device.
+     */
+
+    public PickupDetails getPickupDetails() {
+        return this.pickupDetails;
+    }
+
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     * 
+     * @param pickupDetails
+     *        Information identifying the person picking up the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withPickupDetails(PickupDetails pickupDetails) {
+        setPickupDetails(pickupDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1792,7 +1929,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getRemoteManagement() != null)
             sb.append("RemoteManagement: ").append(getRemoteManagement()).append(",");
         if (getLongTermPricingId() != null)
-            sb.append("LongTermPricingId: ").append(getLongTermPricingId());
+            sb.append("LongTermPricingId: ").append(getLongTermPricingId()).append(",");
+        if (getImpactLevel() != null)
+            sb.append("ImpactLevel: ").append(getImpactLevel()).append(",");
+        if (getPickupDetails() != null)
+            sb.append("PickupDetails: ").append(getPickupDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1875,6 +2016,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
             return false;
+        if (other.getImpactLevel() == null ^ this.getImpactLevel() == null)
+            return false;
+        if (other.getImpactLevel() != null && other.getImpactLevel().equals(this.getImpactLevel()) == false)
+            return false;
+        if (other.getPickupDetails() == null ^ this.getPickupDetails() == null)
+            return false;
+        if (other.getPickupDetails() != null && other.getPickupDetails().equals(this.getPickupDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1900,6 +2049,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRemoteManagement() == null) ? 0 : getRemoteManagement().hashCode());
         hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
+        hashCode = prime * hashCode + ((getImpactLevel() == null) ? 0 : getImpactLevel().hashCode());
+        hashCode = prime * hashCode + ((getPickupDetails() == null) ? 0 : getPickupDetails().hashCode());
         return hashCode;
     }
 

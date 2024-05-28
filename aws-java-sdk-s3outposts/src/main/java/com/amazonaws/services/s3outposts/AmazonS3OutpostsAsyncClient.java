@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,6 +159,39 @@ public class AmazonS3OutpostsAsyncClient extends AmazonS3OutpostsClient implemen
 
                 try {
                     result = executeListEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostsWithS3Result> listOutpostsWithS3Async(ListOutpostsWithS3Request request) {
+
+        return listOutpostsWithS3Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostsWithS3Result> listOutpostsWithS3Async(final ListOutpostsWithS3Request request,
+            final com.amazonaws.handlers.AsyncHandler<ListOutpostsWithS3Request, ListOutpostsWithS3Result> asyncHandler) {
+        final ListOutpostsWithS3Request finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOutpostsWithS3Result>() {
+            @Override
+            public ListOutpostsWithS3Result call() throws Exception {
+                ListOutpostsWithS3Result result = null;
+
+                try {
+                    result = executeListOutpostsWithS3(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

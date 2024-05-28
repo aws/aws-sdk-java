@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,6 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The field position is below the field specified by the string.
-     * </p>
-     */
-    private String below;
-    /**
-     * <p>
      * The field position is fixed and doesn't change in relation to other fields.
      * </p>
      */
@@ -46,46 +40,12 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String rightOf;
-
     /**
      * <p>
      * The field position is below the field specified by the string.
      * </p>
-     * 
-     * @param below
-     *        The field position is below the field specified by the string.
      */
-
-    public void setBelow(String below) {
-        this.below = below;
-    }
-
-    /**
-     * <p>
-     * The field position is below the field specified by the string.
-     * </p>
-     * 
-     * @return The field position is below the field specified by the string.
-     */
-
-    public String getBelow() {
-        return this.below;
-    }
-
-    /**
-     * <p>
-     * The field position is below the field specified by the string.
-     * </p>
-     * 
-     * @param below
-     *        The field position is below the field specified by the string.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldPosition withBelow(String below) {
-        setBelow(below);
-        return this;
-    }
+    private String below;
 
     /**
      * <p>
@@ -187,6 +147,46 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The field position is below the field specified by the string.
+     * </p>
+     * 
+     * @param below
+     *        The field position is below the field specified by the string.
+     */
+
+    public void setBelow(String below) {
+        this.below = below;
+    }
+
+    /**
+     * <p>
+     * The field position is below the field specified by the string.
+     * </p>
+     * 
+     * @return The field position is below the field specified by the string.
+     */
+
+    public String getBelow() {
+        return this.below;
+    }
+
+    /**
+     * <p>
+     * The field position is below the field specified by the string.
+     * </p>
+     * 
+     * @param below
+     *        The field position is below the field specified by the string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldPosition withBelow(String below) {
+        setBelow(below);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,12 +198,12 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBelow() != null)
-            sb.append("Below: ").append(getBelow()).append(",");
         if (getFixed() != null)
             sb.append("Fixed: ").append(getFixed()).append(",");
         if (getRightOf() != null)
-            sb.append("RightOf: ").append(getRightOf());
+            sb.append("RightOf: ").append(getRightOf()).append(",");
+        if (getBelow() != null)
+            sb.append("Below: ").append(getBelow());
         sb.append("}");
         return sb.toString();
     }
@@ -218,10 +218,6 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FieldPosition == false)
             return false;
         FieldPosition other = (FieldPosition) obj;
-        if (other.getBelow() == null ^ this.getBelow() == null)
-            return false;
-        if (other.getBelow() != null && other.getBelow().equals(this.getBelow()) == false)
-            return false;
         if (other.getFixed() == null ^ this.getFixed() == null)
             return false;
         if (other.getFixed() != null && other.getFixed().equals(this.getFixed()) == false)
@@ -229,6 +225,10 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
         if (other.getRightOf() == null ^ this.getRightOf() == null)
             return false;
         if (other.getRightOf() != null && other.getRightOf().equals(this.getRightOf()) == false)
+            return false;
+        if (other.getBelow() == null ^ this.getBelow() == null)
+            return false;
+        if (other.getBelow() != null && other.getBelow().equals(this.getBelow()) == false)
             return false;
         return true;
     }
@@ -238,9 +238,9 @@ public class FieldPosition implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getBelow() == null) ? 0 : getBelow().hashCode());
         hashCode = prime * hashCode + ((getFixed() == null) ? 0 : getFixed().hashCode());
         hashCode = prime * hashCode + ((getRightOf() == null) ? 0 : getRightOf().hashCode());
+        hashCode = prime * hashCode + ((getBelow() == null) ? 0 : getBelow().hashCode());
         return hashCode;
     }
 

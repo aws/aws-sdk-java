@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,10 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     private String messageId;
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     * originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      */
     private String content;
@@ -91,10 +94,31 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     private ChannelMessageStatusStructure status;
     /**
      * <p>
-     * The message attribues listed in a the summary of a channel message.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, MessageAttributeValue> messageAttributes;
+    /**
+     * <p>
+     * The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type
+     * is <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     */
+    private String contentType;
+    /**
+     * <p>
+     * The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages.
+     * Only users who can see targeted messages can take actions on them. However, administrators can delete targeted
+     * messages that they can’t see.
+     * </p>
+     */
+    private java.util.List<Target> target;
 
     /**
      * <p>
@@ -138,11 +162,17 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     * originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param content
-     *        The content of the message.
+     *        The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     *        originating from the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public void setContent(String content) {
@@ -151,10 +181,16 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     * originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
-     * @return The content of the message.
+     * @return The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     *         originating from the bot. For more information, refer to <a
+     *         href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *         responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public String getContent() {
@@ -163,11 +199,17 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     * originating from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param content
-     *        The content of the message.
+     *        The content of the channel message. For Amazon Lex V2 bot responses, this field holds a list of messages
+     *        originating from the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,10 +577,16 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The message attribues listed in a the summary of a channel message.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
-     * @return The message attribues listed in a the summary of a channel message.
+     * @return The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to
+     *         specific fields from the bot. For more information, refer to <a
+     *         href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *         responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -547,11 +595,17 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The message attribues listed in a the summary of a channel message.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        The message attribues listed in a the summary of a channel message.
+     *        The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to
+     *        specific fields from the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -560,11 +614,17 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The message attribues listed in a the summary of a channel message.
+     * The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to specific
+     * fields from the bot. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        The message attribues listed in a the summary of a channel message.
+     *        The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes are mapped to
+     *        specific fields from the bot. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,6 +662,156 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type
+     * is <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the
+     *        content type is <code>application/amz-chime-lex-msgs</code> for success responses and
+     *        <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     */
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type
+     * is <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     * 
+     * @return The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the
+     *         content type is <code>application/amz-chime-lex-msgs</code> for success responses and
+     *         <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     *         href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *         responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     */
+
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the content type
+     * is <code>application/amz-chime-lex-msgs</code> for success responses and
+     * <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     * responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the channel message listed in the summary. For Amazon Lex V2 bot responses, the
+     *        content type is <code>application/amz-chime-lex-msgs</code> for success responses and
+     *        <code>application/amz-chime-lex-error</code> for failure responses. For more information, refer to <a
+     *        href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+     *        responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelMessageSummary withContentType(String contentType) {
+        setContentType(contentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages.
+     * Only users who can see targeted messages can take actions on them. However, administrators can delete targeted
+     * messages that they can’t see.
+     * </p>
+     * 
+     * @return The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted
+     *         messages. Only users who can see targeted messages can take actions on them. However, administrators can
+     *         delete targeted messages that they can’t see.
+     */
+
+    public java.util.List<Target> getTarget() {
+        return target;
+    }
+
+    /**
+     * <p>
+     * The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages.
+     * Only users who can see targeted messages can take actions on them. However, administrators can delete targeted
+     * messages that they can’t see.
+     * </p>
+     * 
+     * @param target
+     *        The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted
+     *        messages. Only users who can see targeted messages can take actions on them. However, administrators can
+     *        delete targeted messages that they can’t see.
+     */
+
+    public void setTarget(java.util.Collection<Target> target) {
+        if (target == null) {
+            this.target = null;
+            return;
+        }
+
+        this.target = new java.util.ArrayList<Target>(target);
+    }
+
+    /**
+     * <p>
+     * The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages.
+     * Only users who can see targeted messages can take actions on them. However, administrators can delete targeted
+     * messages that they can’t see.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTarget(java.util.Collection)} or {@link #withTarget(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param target
+     *        The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted
+     *        messages. Only users who can see targeted messages can take actions on them. However, administrators can
+     *        delete targeted messages that they can’t see.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelMessageSummary withTarget(Target... target) {
+        if (this.target == null) {
+            setTarget(new java.util.ArrayList<Target>(target.length));
+        }
+        for (Target ele : target) {
+            this.target.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted messages.
+     * Only users who can see targeted messages can take actions on them. However, administrators can delete targeted
+     * messages that they can’t see.
+     * </p>
+     * 
+     * @param target
+     *        The target of a message, a sender, a user, or a bot. Only the target and the sender can view targeted
+     *        messages. Only users who can see targeted messages can take actions on them. However, administrators can
+     *        delete targeted messages that they can’t see.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelMessageSummary withTarget(java.util.Collection<Target> target) {
+        setTarget(target);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -634,7 +844,11 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getMessageAttributes() != null)
-            sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***");
+            sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTarget() != null)
+            sb.append("Target: ").append(getTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +907,14 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getMessageAttributes() != null && other.getMessageAttributes().equals(this.getMessageAttributes()) == false)
             return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
+        if (other.getTarget() == null ^ this.getTarget() == null)
+            return false;
+        if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
+            return false;
         return true;
     }
 
@@ -712,6 +934,8 @@ public class ChannelMessageSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getRedacted() == null) ? 0 : getRedacted().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         return hashCode;
     }
 

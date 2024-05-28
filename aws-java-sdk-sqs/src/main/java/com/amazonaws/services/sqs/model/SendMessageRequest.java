@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String queueUrl;
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -211,7 +211,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
+     * The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
@@ -243,7 +243,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        Queue URLs and names are case-sensitive.
      * @param messageBody
-     *        The message to send. The minimum size is one character. The maximum size is 256 KB.
+     *        The message to send. The minimum size is one character. The maximum size is 256 KiB.
      *        </p>
      *        <important>
      *        <p>
@@ -320,7 +320,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -337,7 +337,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -357,7 +357,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -373,7 +373,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * 
-     * @return The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+     * @return The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
      *         <p>
      *         A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *         </p>
@@ -393,7 +393,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The minimum size is one character. The maximum size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KiB.
      * </p>
      * <important>
      * <p>
@@ -410,7 +410,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KiB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -1311,7 +1311,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
+     * The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
@@ -1351,8 +1351,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
-     *        punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+     *        The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters
+     *        and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
@@ -1396,7 +1396,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
+     * The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
@@ -1435,8 +1435,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         <p>
-     *         The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
-     *         punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+     *         The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric
+     *         characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageGroupId</code>, see <a href=
@@ -1480,7 +1480,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
+     * The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
      * punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      * </p>
      * <p>
@@ -1520,8 +1520,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and
-     *        punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+     *        The maximum length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters
+     *        and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageGroupId</code>, see <a href=

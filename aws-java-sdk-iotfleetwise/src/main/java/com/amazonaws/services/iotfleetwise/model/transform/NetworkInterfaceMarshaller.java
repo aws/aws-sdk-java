@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class NetworkInterfaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("canInterface").build();
     private static final MarshallingInfo<StructuredPojo> OBDINTERFACE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("obdInterface").build();
+    private static final MarshallingInfo<StructuredPojo> VEHICLEMIDDLEWARE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vehicleMiddleware").build();
 
     private static final NetworkInterfaceMarshaller instance = new NetworkInterfaceMarshaller();
 
@@ -56,6 +58,7 @@ public class NetworkInterfaceMarshaller {
             protocolMarshaller.marshall(networkInterface.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(networkInterface.getCanInterface(), CANINTERFACE_BINDING);
             protocolMarshaller.marshall(networkInterface.getObdInterface(), OBDINTERFACE_BINDING);
+            protocolMarshaller.marshall(networkInterface.getVehicleMiddleware(), VEHICLEMIDDLEWARE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,10 +56,6 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
                     context.nextToken();
                     loggingConfiguration.setSchedulerLogs(ModuleLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("TaskLogs", targetDepth)) {
-                    context.nextToken();
-                    loggingConfiguration.setTaskLogs(ModuleLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("WebserverLogs", targetDepth)) {
                     context.nextToken();
                     loggingConfiguration.setWebserverLogs(ModuleLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -67,6 +63,10 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
                 if (context.testExpression("WorkerLogs", targetDepth)) {
                     context.nextToken();
                     loggingConfiguration.setWorkerLogs(ModuleLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TaskLogs", targetDepth)) {
+                    context.nextToken();
+                    loggingConfiguration.setTaskLogs(ModuleLoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

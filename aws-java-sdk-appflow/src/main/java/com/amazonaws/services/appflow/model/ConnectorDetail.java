@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,26 @@ public class ConnectorDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> connectorModes;
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private java.util.List<String> supportedDataTransferTypes;
 
     /**
      * <p>
@@ -604,6 +624,239 @@ public class ConnectorDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The data transfer types that the connector supports.</p>
+     *         <dl>
+     *         <dt>RECORD</dt>
+     *         <dd>
+     *         <p>
+     *         Structured records.
+     *         </p>
+     *         </dd>
+     *         <dt>FILE</dt>
+     *         <dd>
+     *         <p>
+     *         Files or binary data.
+     *         </p>
+     *         </dd>
+     * @see SupportedDataTransferType
+     */
+
+    public java.util.List<String> getSupportedDataTransferTypes() {
+        return supportedDataTransferTypes;
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @see SupportedDataTransferType
+     */
+
+    public void setSupportedDataTransferTypes(java.util.Collection<String> supportedDataTransferTypes) {
+        if (supportedDataTransferTypes == null) {
+            this.supportedDataTransferTypes = null;
+            return;
+        }
+
+        this.supportedDataTransferTypes = new java.util.ArrayList<String>(supportedDataTransferTypes);
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedDataTransferTypes(java.util.Collection)} or
+     * {@link #withSupportedDataTransferTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SupportedDataTransferType
+     */
+
+    public ConnectorDetail withSupportedDataTransferTypes(String... supportedDataTransferTypes) {
+        if (this.supportedDataTransferTypes == null) {
+            setSupportedDataTransferTypes(new java.util.ArrayList<String>(supportedDataTransferTypes.length));
+        }
+        for (String ele : supportedDataTransferTypes) {
+            this.supportedDataTransferTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SupportedDataTransferType
+     */
+
+    public ConnectorDetail withSupportedDataTransferTypes(java.util.Collection<String> supportedDataTransferTypes) {
+        setSupportedDataTransferTypes(supportedDataTransferTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data transfer types that the connector supports.
+     * </p>
+     * <dl>
+     * <dt>RECORD</dt>
+     * <dd>
+     * <p>
+     * Structured records.
+     * </p>
+     * </dd>
+     * <dt>FILE</dt>
+     * <dd>
+     * <p>
+     * Files or binary data.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param supportedDataTransferTypes
+     *        The data transfer types that the connector supports.</p>
+     *        <dl>
+     *        <dt>RECORD</dt>
+     *        <dd>
+     *        <p>
+     *        Structured records.
+     *        </p>
+     *        </dd>
+     *        <dt>FILE</dt>
+     *        <dd>
+     *        <p>
+     *        Files or binary data.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SupportedDataTransferType
+     */
+
+    public ConnectorDetail withSupportedDataTransferTypes(SupportedDataTransferType... supportedDataTransferTypes) {
+        java.util.ArrayList<String> supportedDataTransferTypesCopy = new java.util.ArrayList<String>(supportedDataTransferTypes.length);
+        for (SupportedDataTransferType value : supportedDataTransferTypes) {
+            supportedDataTransferTypesCopy.add(value.toString());
+        }
+        if (getSupportedDataTransferTypes() == null) {
+            setSupportedDataTransferTypes(supportedDataTransferTypesCopy);
+        } else {
+            getSupportedDataTransferTypes().addAll(supportedDataTransferTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -636,7 +889,9 @@ public class ConnectorDetail implements Serializable, Cloneable, StructuredPojo 
         if (getConnectorProvisioningType() != null)
             sb.append("ConnectorProvisioningType: ").append(getConnectorProvisioningType()).append(",");
         if (getConnectorModes() != null)
-            sb.append("ConnectorModes: ").append(getConnectorModes());
+            sb.append("ConnectorModes: ").append(getConnectorModes()).append(",");
+        if (getSupportedDataTransferTypes() != null)
+            sb.append("SupportedDataTransferTypes: ").append(getSupportedDataTransferTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -695,6 +950,10 @@ public class ConnectorDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getConnectorModes() != null && other.getConnectorModes().equals(this.getConnectorModes()) == false)
             return false;
+        if (other.getSupportedDataTransferTypes() == null ^ this.getSupportedDataTransferTypes() == null)
+            return false;
+        if (other.getSupportedDataTransferTypes() != null && other.getSupportedDataTransferTypes().equals(this.getSupportedDataTransferTypes()) == false)
+            return false;
         return true;
     }
 
@@ -714,6 +973,7 @@ public class ConnectorDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode());
         hashCode = prime * hashCode + ((getConnectorProvisioningType() == null) ? 0 : getConnectorProvisioningType().hashCode());
         hashCode = prime * hashCode + ((getConnectorModes() == null) ? 0 : getConnectorModes().hashCode());
+        hashCode = prime * hashCode + ((getSupportedDataTransferTypes() == null) ? 0 : getSupportedDataTransferTypes().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,6 +110,30 @@ public class IpamStaxUnmarshaller implements Unmarshaller<Ipam, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("defaultResourceDiscoveryId", targetDepth)) {
+                    ipam.setDefaultResourceDiscoveryId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("defaultResourceDiscoveryAssociationId", targetDepth)) {
+                    ipam.setDefaultResourceDiscoveryAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("resourceDiscoveryAssociationCount", targetDepth)) {
+                    ipam.setResourceDiscoveryAssociationCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("stateMessage", targetDepth)) {
+                    ipam.setStateMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tier", targetDepth)) {
+                    ipam.setTier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ipam;

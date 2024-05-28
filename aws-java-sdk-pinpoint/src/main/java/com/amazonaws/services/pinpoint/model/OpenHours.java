@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set
- * to true.
+ * Specifies the times when message are allowed to be sent to endpoints.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/OpenHours" target="_top">AWS API
@@ -31,41 +30,41 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Specifies the schedule settings for the email channel.
      * </p>
      */
     private java.util.Map<String, java.util.List<OpenHoursRule>> eMAIL;
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Specifies the schedule settings for the SMS channel.
      * </p>
      */
     private java.util.Map<String, java.util.List<OpenHoursRule>> sMS;
     /**
      * <p>
-     * Rules for Push Channel.
+     * Specifies the schedule settings for the push channel.
      * </p>
      */
     private java.util.Map<String, java.util.List<OpenHoursRule>> pUSH;
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Specifies the schedule settings for the voice channel.
      * </p>
      */
     private java.util.Map<String, java.util.List<OpenHoursRule>> vOICE;
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Specifies the schedule settings for the custom channel.
      * </p>
      */
     private java.util.Map<String, java.util.List<OpenHoursRule>> cUSTOM;
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Specifies the schedule settings for the email channel.
      * </p>
      * 
-     * @return Rules for Email Channel.
+     * @return Specifies the schedule settings for the email channel.
      */
 
     public java.util.Map<String, java.util.List<OpenHoursRule>> getEMAIL() {
@@ -74,11 +73,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Specifies the schedule settings for the email channel.
      * </p>
      * 
      * @param eMAIL
-     *        Rules for Email Channel.
+     *        Specifies the schedule settings for the email channel.
      */
 
     public void setEMAIL(java.util.Map<String, java.util.List<OpenHoursRule>> eMAIL) {
@@ -87,11 +86,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Email Channel.
+     * Specifies the schedule settings for the email channel.
      * </p>
      * 
      * @param eMAIL
-     *        Rules for Email Channel.
+     *        Specifies the schedule settings for the email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,10 +129,10 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Specifies the schedule settings for the SMS channel.
      * </p>
      * 
-     * @return Rules for SMS Channel.
+     * @return Specifies the schedule settings for the SMS channel.
      */
 
     public java.util.Map<String, java.util.List<OpenHoursRule>> getSMS() {
@@ -142,11 +141,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Specifies the schedule settings for the SMS channel.
      * </p>
      * 
      * @param sMS
-     *        Rules for SMS Channel.
+     *        Specifies the schedule settings for the SMS channel.
      */
 
     public void setSMS(java.util.Map<String, java.util.List<OpenHoursRule>> sMS) {
@@ -155,11 +154,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for SMS Channel.
+     * Specifies the schedule settings for the SMS channel.
      * </p>
      * 
      * @param sMS
-     *        Rules for SMS Channel.
+     *        Specifies the schedule settings for the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,10 +197,10 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Specifies the schedule settings for the push channel.
      * </p>
      * 
-     * @return Rules for Push Channel.
+     * @return Specifies the schedule settings for the push channel.
      */
 
     public java.util.Map<String, java.util.List<OpenHoursRule>> getPUSH() {
@@ -210,11 +209,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Specifies the schedule settings for the push channel.
      * </p>
      * 
      * @param pUSH
-     *        Rules for Push Channel.
+     *        Specifies the schedule settings for the push channel.
      */
 
     public void setPUSH(java.util.Map<String, java.util.List<OpenHoursRule>> pUSH) {
@@ -223,11 +222,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Push Channel.
+     * Specifies the schedule settings for the push channel.
      * </p>
      * 
      * @param pUSH
-     *        Rules for Push Channel.
+     *        Specifies the schedule settings for the push channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,10 +265,10 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Specifies the schedule settings for the voice channel.
      * </p>
      * 
-     * @return Rules for Voice Channel.
+     * @return Specifies the schedule settings for the voice channel.
      */
 
     public java.util.Map<String, java.util.List<OpenHoursRule>> getVOICE() {
@@ -278,11 +277,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Specifies the schedule settings for the voice channel.
      * </p>
      * 
      * @param vOICE
-     *        Rules for Voice Channel.
+     *        Specifies the schedule settings for the voice channel.
      */
 
     public void setVOICE(java.util.Map<String, java.util.List<OpenHoursRule>> vOICE) {
@@ -291,11 +290,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Voice Channel.
+     * Specifies the schedule settings for the voice channel.
      * </p>
      * 
      * @param vOICE
-     *        Rules for Voice Channel.
+     *        Specifies the schedule settings for the voice channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,10 +333,10 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Specifies the schedule settings for the custom channel.
      * </p>
      * 
-     * @return Rules for Custom Channel.
+     * @return Specifies the schedule settings for the custom channel.
      */
 
     public java.util.Map<String, java.util.List<OpenHoursRule>> getCUSTOM() {
@@ -346,11 +345,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Specifies the schedule settings for the custom channel.
      * </p>
      * 
      * @param cUSTOM
-     *        Rules for Custom Channel.
+     *        Specifies the schedule settings for the custom channel.
      */
 
     public void setCUSTOM(java.util.Map<String, java.util.List<OpenHoursRule>> cUSTOM) {
@@ -359,11 +358,11 @@ public class OpenHours implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rules for Custom Channel.
+     * Specifies the schedule settings for the custom channel.
      * </p>
      * 
      * @param cUSTOM
-     *        Rules for Custom Channel.
+     *        Specifies the schedule settings for the custom channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

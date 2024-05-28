@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to
  * evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest
- * value for this metric, depending on the value you specify for the <code>Type</code> parameter.
+ * value for this metric, depending on the value you specify for the <code>Type</code> parameter. If you want to define
+ * a custom objective metric, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define
+ * metrics and environment variables</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobObjective"

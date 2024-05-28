@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Audiences", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setAudiences(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ChannelName", targetDepth)) {
                     context.nextToken();
                     describeChannelResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -72,6 +78,10 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeChannelResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LogConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setLogConfiguration(LogConfigurationForChannelJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
                     describeChannelResult.setOutputs(new ListUnmarshaller<ResponseOutputItem>(ResponseOutputItemJsonUnmarshaller.getInstance())
@@ -90,6 +100,10 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                 if (context.testExpression("Tier", targetDepth)) {
                     context.nextToken();
                     describeChannelResult.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TimeShiftConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setTimeShiftConfiguration(TimeShiftConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

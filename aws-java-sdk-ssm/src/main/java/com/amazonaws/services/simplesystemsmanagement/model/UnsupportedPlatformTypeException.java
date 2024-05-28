@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for
- * a Windows managed node to a Linux node.
+ * The document doesn't support the platform type of the given managed node IDs. For example, you sent an document for a
+ * Windows managed node to a Linux node.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

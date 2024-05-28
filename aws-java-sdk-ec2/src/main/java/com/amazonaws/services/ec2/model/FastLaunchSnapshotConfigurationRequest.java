@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.
+ * Configuration settings for creating and managing pre-provisioned snapshots for a Windows fast launch enabled AMI.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FastLaunchSnapshotConfigurationRequest"
@@ -28,18 +28,18 @@ public class FastLaunchSnapshotConfigurationRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     * The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      * </p>
      */
     private Integer targetResourceCount;
 
     /**
      * <p>
-     * The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     * The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      * </p>
      * 
      * @param targetResourceCount
-     *        The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     *        The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      */
 
     public void setTargetResourceCount(Integer targetResourceCount) {
@@ -48,10 +48,10 @@ public class FastLaunchSnapshotConfigurationRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     * The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      * </p>
      * 
-     * @return The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     * @return The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      */
 
     public Integer getTargetResourceCount() {
@@ -60,11 +60,11 @@ public class FastLaunchSnapshotConfigurationRequest implements Serializable, Clo
 
     /**
      * <p>
-     * The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     * The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      * </p>
      * 
      * @param targetResourceCount
-     *        The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.
+     *        The number of pre-provisioned snapshots to keep on hand for a Windows fast launch enabled AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

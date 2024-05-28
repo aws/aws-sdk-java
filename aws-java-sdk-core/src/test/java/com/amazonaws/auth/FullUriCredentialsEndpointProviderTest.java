@@ -53,10 +53,25 @@ public class FullUriCredentialsEndpointProviderTest {
 
         assertThat(sut.getCredentialsEndpoint().toString(), equalTo(fullUri));
     }
+    @Test
+    public void theLoopbackAddressIpv6IsAlsoAcceptable() throws URISyntaxException {
+        String fullUri = "http://[::1]:9851/endpoint";
+        helper.set(ContainerCredentialsProvider.CONTAINER_CREDENTIALS_FULL_URI, fullUri);
+
+        assertThat(sut.getCredentialsEndpoint().toString(), equalTo(fullUri));
+    }
+
+    @Test
+    public void httpsHostAddressesAreValid() throws URISyntaxException {
+        String fullUri = "https://google.com/endpoint";
+        helper.set(ContainerCredentialsProvider.CONTAINER_CREDENTIALS_FULL_URI, "https://google.com/endpoint");
+
+        assertThat(sut.getCredentialsEndpoint().toString(), equalTo(fullUri));
+    }
 
     @Test(expected = SdkClientException.class)
     public void onlyLocalHostAddressesAreValid() throws URISyntaxException {
-        helper.set(ContainerCredentialsProvider.CONTAINER_CREDENTIALS_FULL_URI, "https://google.com/endpoint");
+        helper.set(ContainerCredentialsProvider.CONTAINER_CREDENTIALS_FULL_URI, "http://google.com/endpoint");
         sut.getCredentialsEndpoint();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
-     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * OneDrive. The user name should be the application ID for the OneDrive application, and the password is the
      * application key for the OneDrive application.
      * </p>
      */
@@ -132,13 +132,13 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
-     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * OneDrive. The user name should be the application ID for the OneDrive application, and the password is the
      * application key for the OneDrive application.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to
-     *        connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
+     *        connect to OneDrive. The user name should be the application ID for the OneDrive application, and the
      *        password is the application key for the OneDrive application.
      */
 
@@ -149,12 +149,12 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
-     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * OneDrive. The user name should be the application ID for the OneDrive application, and the password is the
      * application key for the OneDrive application.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to
-     *         connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
+     *         connect to OneDrive. The user name should be the application ID for the OneDrive application, and the
      *         password is the application key for the OneDrive application.
      */
 
@@ -165,13 +165,13 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to connect to
-     * OneDrive. The user namd should be the application ID for the OneDrive application, and the password is the
+     * OneDrive. The user name should be the application ID for the OneDrive application, and the password is the
      * application key for the OneDrive application.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the user name and password to
-     *        connect to OneDrive. The user namd should be the application ID for the OneDrive application, and the
+     *        connect to OneDrive. The user name should be the application ID for the OneDrive application, and the
      *        password is the application key for the OneDrive application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

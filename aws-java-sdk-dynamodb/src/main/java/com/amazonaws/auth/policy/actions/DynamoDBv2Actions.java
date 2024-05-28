@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public enum DynamoDBv2Actions implements Action {
     DeleteBackup("dynamodb:DeleteBackup"),
     /** Action for the DeleteItem operation. */
     DeleteItem("dynamodb:DeleteItem"),
+    /** Action for the DeleteResourcePolicy operation. */
+    DeleteResourcePolicy("dynamodb:DeleteResourcePolicy"),
     /** Action for the DeleteTable operation. */
     DeleteTable("dynamodb:DeleteTable"),
     /** Action for the DescribeBackup operation. */
@@ -81,6 +83,8 @@ public enum DynamoDBv2Actions implements Action {
     ExportTableToPointInTime("dynamodb:ExportTableToPointInTime"),
     /** Action for the GetItem operation. */
     GetItem("dynamodb:GetItem"),
+    /** Action for the GetResourcePolicy operation. */
+    GetResourcePolicy("dynamodb:GetResourcePolicy"),
     /** Action for the ImportTable operation. */
     ImportTable("dynamodb:ImportTable"),
     /** Action for the ListBackups operation. */
@@ -99,6 +103,8 @@ public enum DynamoDBv2Actions implements Action {
     ListTagsOfResource("dynamodb:ListTagsOfResource"),
     /** Action for the PutItem operation. */
     PutItem("dynamodb:PutItem"),
+    /** Action for the PutResourcePolicy operation. */
+    PutResourcePolicy("dynamodb:PutResourcePolicy"),
     /** Action for the Query operation. */
     Query("dynamodb:Query"),
     /** Action for the RestoreTableFromBackup operation. */
@@ -125,6 +131,8 @@ public enum DynamoDBv2Actions implements Action {
     UpdateGlobalTableSettings("dynamodb:UpdateGlobalTableSettings"),
     /** Action for the UpdateItem operation. */
     UpdateItem("dynamodb:UpdateItem"),
+    /** Action for the UpdateKinesisStreamingDestination operation. */
+    UpdateKinesisStreamingDestination("dynamodb:UpdateKinesisStreamingDestination"),
     /** Action for the UpdateTable operation. */
     UpdateTable("dynamodb:UpdateTable"),
     /** Action for the UpdateTableReplicaAutoScaling operation. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,10 +100,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was installed before it was added to the
-     * <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is
-     * reported as <code>InstalledRejected</code>.
+     * <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies,
+     * aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the
+     * <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant
+     * with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      * </p>
      * </li>
      * </ul>
@@ -671,10 +671,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was installed before it was added to the
-     * <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is
-     * reported as <code>InstalledRejected</code>.
+     * <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies,
+     * aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the
+     * <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant
+     * with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      * </p>
      * </li>
      * </ul>
@@ -692,10 +692,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include
-     *        them as dependencies, aren't installed under any circumstances. If a package was installed before it was
-     *        added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-     *        and its status is reported as <code>InstalledRejected</code>.
+     *        <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as
+     *        dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before
+     *        it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's
+     *        considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      *        </p>
      *        </li>
      * @see PatchAction
@@ -719,10 +719,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was installed before it was added to the
-     * <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is
-     * reported as <code>InstalledRejected</code>.
+     * <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies,
+     * aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the
+     * <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant
+     * with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      * </p>
      * </li>
      * </ul>
@@ -739,10 +739,11 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include
-     *         them as dependencies, aren't installed under any circumstances. If a package was installed before it was
-     *         added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-     *         and its status is reported as <code>InstalledRejected</code>.
+     *         <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as
+     *         dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed
+     *         before it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager
+     *         afterward, it's considered noncompliant with the patch baseline and its status is reported as
+     *         <i>InstalledRejected</i>.
      *         </p>
      *         </li>
      * @see PatchAction
@@ -766,10 +767,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was installed before it was added to the
-     * <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is
-     * reported as <code>InstalledRejected</code>.
+     * <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies,
+     * aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the
+     * <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant
+     * with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      * </p>
      * </li>
      * </ul>
@@ -787,10 +788,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include
-     *        them as dependencies, aren't installed under any circumstances. If a package was installed before it was
-     *        added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-     *        and its status is reported as <code>InstalledRejected</code>.
+     *        <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as
+     *        dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before
+     *        it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's
+     *        considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -816,10 +817,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was installed before it was added to the
-     * <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is
-     * reported as <code>InstalledRejected</code>.
+     * <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies,
+     * aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the
+     * <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant
+     * with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      * </p>
      * </li>
      * </ul>
@@ -837,10 +838,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include
-     *        them as dependencies, aren't installed under any circumstances. If a package was installed before it was
-     *        added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-     *        and its status is reported as <code>InstalledRejected</code>.
+     *        <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as
+     *        dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before
+     *        it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's
+     *        considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      *        </p>
      *        </li>
      * @see PatchAction
@@ -864,10 +865,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was installed before it was added to the
-     * <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is
-     * reported as <code>InstalledRejected</code>.
+     * <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies,
+     * aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the
+     * <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant
+     * with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      * </p>
      * </li>
      * </ul>
@@ -885,10 +886,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include
-     *        them as dependencies, aren't installed under any circumstances. If a package was installed before it was
-     *        added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-     *        and its status is reported as <code>InstalledRejected</code>.
+     *        <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as
+     *        dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before
+     *        it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's
+     *        considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

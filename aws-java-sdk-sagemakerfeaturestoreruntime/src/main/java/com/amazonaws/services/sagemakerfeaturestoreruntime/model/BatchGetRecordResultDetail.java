@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The output of Records that have been retrieved in a batch.
+ * The output of records that have been retrieved in a batch.
  * </p>
  * 
  * @see <a
@@ -37,7 +37,7 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
     private String featureGroupName;
     /**
      * <p>
-     * The value of the record identifer in string format.
+     * The value of the record identifier in string format.
      * </p>
      */
     private String recordIdentifierValueAsString;
@@ -47,6 +47,12 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.List<FeatureValue> record;
+    /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     */
+    private String expiresAt;
 
     /**
      * <p>
@@ -90,11 +96,11 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The value of the record identifer in string format.
+     * The value of the record identifier in string format.
      * </p>
      * 
      * @param recordIdentifierValueAsString
-     *        The value of the record identifer in string format.
+     *        The value of the record identifier in string format.
      */
 
     public void setRecordIdentifierValueAsString(String recordIdentifierValueAsString) {
@@ -103,10 +109,10 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The value of the record identifer in string format.
+     * The value of the record identifier in string format.
      * </p>
      * 
-     * @return The value of the record identifer in string format.
+     * @return The value of the record identifier in string format.
      */
 
     public String getRecordIdentifierValueAsString() {
@@ -115,11 +121,11 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The value of the record identifer in string format.
+     * The value of the record identifier in string format.
      * </p>
      * 
      * @param recordIdentifierValueAsString
-     *        The value of the record identifer in string format.
+     *        The value of the record identifier in string format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,6 +205,46 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     * 
+     * @param expiresAt
+     *        The <code>ExpiresAt</code> ISO string of the requested record.
+     */
+
+    public void setExpiresAt(String expiresAt) {
+        this.expiresAt = expiresAt;
+    }
+
+    /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     * 
+     * @return The <code>ExpiresAt</code> ISO string of the requested record.
+     */
+
+    public String getExpiresAt() {
+        return this.expiresAt;
+    }
+
+    /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     * 
+     * @param expiresAt
+     *        The <code>ExpiresAt</code> ISO string of the requested record.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetRecordResultDetail withExpiresAt(String expiresAt) {
+        setExpiresAt(expiresAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -215,7 +261,9 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
         if (getRecordIdentifierValueAsString() != null)
             sb.append("RecordIdentifierValueAsString: ").append(getRecordIdentifierValueAsString()).append(",");
         if (getRecord() != null)
-            sb.append("Record: ").append(getRecord());
+            sb.append("Record: ").append(getRecord()).append(",");
+        if (getExpiresAt() != null)
+            sb.append("ExpiresAt: ").append(getExpiresAt());
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +291,10 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getRecord() != null && other.getRecord().equals(this.getRecord()) == false)
             return false;
+        if (other.getExpiresAt() == null ^ this.getExpiresAt() == null)
+            return false;
+        if (other.getExpiresAt() != null && other.getExpiresAt().equals(this.getExpiresAt()) == false)
+            return false;
         return true;
     }
 
@@ -254,6 +306,7 @@ public class BatchGetRecordResultDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getFeatureGroupName() == null) ? 0 : getFeatureGroupName().hashCode());
         hashCode = prime * hashCode + ((getRecordIdentifierValueAsString() == null) ? 0 : getRecordIdentifierValueAsString().hashCode());
         hashCode = prime * hashCode + ((getRecord() == null) ? 0 : getRecord().hashCode());
+        hashCode = prime * hashCode + ((getExpiresAt() == null) ? 0 : getExpiresAt().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,12 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     private String severityLevel;
     /**
      * <p>
+     * The AWS account ID for the owner of the resource group affected by the problem.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
      * The name of the resource group affected by the problem.
      * </p>
      */
@@ -100,6 +106,20 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastRecurrenceTime;
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.
+     * </p>
+     */
+    private String visibility;
+    /**
+     * <p>
+     * Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem.
+     * If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then
+     * the problem is not resolved.
+     * </p>
+     */
+    private String resolutionMethod;
 
     /**
      * <p>
@@ -461,6 +481,46 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The AWS account ID for the owner of the resource group affected by the problem.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the owner of the resource group affected by the problem.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the resource group affected by the problem.
+     * </p>
+     * 
+     * @return The AWS account ID for the owner of the resource group affected by the problem.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the resource group affected by the problem.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the owner of the resource group affected by the problem.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Problem withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the resource group affected by the problem.
      * </p>
      * 
@@ -648,6 +708,144 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.
+     * </p>
+     * 
+     * @param visibility
+     *        Specifies whether or not you can view the problem. Updates to ignored problems do not generate
+     *        notifications.
+     * @see Visibility
+     */
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.
+     * </p>
+     * 
+     * @return Specifies whether or not you can view the problem. Updates to ignored problems do not generate
+     *         notifications.
+     * @see Visibility
+     */
+
+    public String getVisibility() {
+        return this.visibility;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.
+     * </p>
+     * 
+     * @param visibility
+     *        Specifies whether or not you can view the problem. Updates to ignored problems do not generate
+     *        notifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public Problem withVisibility(String visibility) {
+        setVisibility(visibility);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. Updates to ignored problems do not generate notifications.
+     * </p>
+     * 
+     * @param visibility
+     *        Specifies whether or not you can view the problem. Updates to ignored problems do not generate
+     *        notifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public Problem withVisibility(Visibility visibility) {
+        this.visibility = visibility.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem.
+     * If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then
+     * the problem is not resolved.
+     * </p>
+     * 
+     * @param resolutionMethod
+     *        Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the
+     *        problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is
+     *        <code>UNRESOLVED</code>, then the problem is not resolved.
+     * @see ResolutionMethod
+     */
+
+    public void setResolutionMethod(String resolutionMethod) {
+        this.resolutionMethod = resolutionMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem.
+     * If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then
+     * the problem is not resolved.
+     * </p>
+     * 
+     * @return Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the
+     *         problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is
+     *         <code>UNRESOLVED</code>, then the problem is not resolved.
+     * @see ResolutionMethod
+     */
+
+    public String getResolutionMethod() {
+        return this.resolutionMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem.
+     * If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then
+     * the problem is not resolved.
+     * </p>
+     * 
+     * @param resolutionMethod
+     *        Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the
+     *        problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is
+     *        <code>UNRESOLVED</code>, then the problem is not resolved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResolutionMethod
+     */
+
+    public Problem withResolutionMethod(String resolutionMethod) {
+        setResolutionMethod(resolutionMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the problem.
+     * If the value is <code>MANUAL</code>, the user resolved the problem. If the value is <code>UNRESOLVED</code>, then
+     * the problem is not resolved.
+     * </p>
+     * 
+     * @param resolutionMethod
+     *        Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the system resolved the
+     *        problem. If the value is <code>MANUAL</code>, the user resolved the problem. If the value is
+     *        <code>UNRESOLVED</code>, then the problem is not resolved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResolutionMethod
+     */
+
+    public Problem withResolutionMethod(ResolutionMethod resolutionMethod) {
+        this.resolutionMethod = resolutionMethod.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -675,6 +873,8 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getSeverityLevel() != null)
             sb.append("SeverityLevel: ").append(getSeverityLevel()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getResourceGroupName() != null)
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getFeedback() != null)
@@ -682,7 +882,11 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
         if (getRecurringCount() != null)
             sb.append("RecurringCount: ").append(getRecurringCount()).append(",");
         if (getLastRecurrenceTime() != null)
-            sb.append("LastRecurrenceTime: ").append(getLastRecurrenceTime());
+            sb.append("LastRecurrenceTime: ").append(getLastRecurrenceTime()).append(",");
+        if (getVisibility() != null)
+            sb.append("Visibility: ").append(getVisibility()).append(",");
+        if (getResolutionMethod() != null)
+            sb.append("ResolutionMethod: ").append(getResolutionMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -729,6 +933,10 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSeverityLevel() != null && other.getSeverityLevel().equals(this.getSeverityLevel()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getResourceGroupName() == null ^ this.getResourceGroupName() == null)
             return false;
         if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
@@ -744,6 +952,14 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
         if (other.getLastRecurrenceTime() == null ^ this.getLastRecurrenceTime() == null)
             return false;
         if (other.getLastRecurrenceTime() != null && other.getLastRecurrenceTime().equals(this.getLastRecurrenceTime()) == false)
+            return false;
+        if (other.getVisibility() == null ^ this.getVisibility() == null)
+            return false;
+        if (other.getVisibility() != null && other.getVisibility().equals(this.getVisibility()) == false)
+            return false;
+        if (other.getResolutionMethod() == null ^ this.getResolutionMethod() == null)
+            return false;
+        if (other.getResolutionMethod() != null && other.getResolutionMethod().equals(this.getResolutionMethod()) == false)
             return false;
         return true;
     }
@@ -761,10 +977,13 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getSeverityLevel() == null) ? 0 : getSeverityLevel().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getFeedback() == null) ? 0 : getFeedback().hashCode());
         hashCode = prime * hashCode + ((getRecurringCount() == null) ? 0 : getRecurringCount().hashCode());
         hashCode = prime * hashCode + ((getLastRecurrenceTime() == null) ? 0 : getLastRecurrenceTime().hashCode());
+        hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
+        hashCode = prime * hashCode + ((getResolutionMethod() == null) ? 0 : getResolutionMethod().hashCode());
         return hashCode;
     }
 

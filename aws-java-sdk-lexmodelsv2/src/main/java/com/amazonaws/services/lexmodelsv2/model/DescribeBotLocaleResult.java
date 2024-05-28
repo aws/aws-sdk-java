@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
     private String botId;
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      */
     private String botVersion;
@@ -121,6 +121,12 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<String> recommendedActions;
+    /**
+     * <p>
+     * Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     * </p>
+     */
+    private GenerativeAISettings generativeAISettings;
 
     /**
      * <p>
@@ -164,11 +170,11 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the locale.
+     *        The version of the bot associated with the locale.
      */
 
     public void setBotVersion(String botVersion) {
@@ -177,10 +183,10 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
-     * @return The identifier of the version of the bot associated with the locale.
+     * @return The version of the bot associated with the locale.
      */
 
     public String getBotVersion() {
@@ -189,11 +195,11 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the locale.
+     *        The version of the bot associated with the locale.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -890,6 +896,46 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     * </p>
+     * 
+     * @param generativeAISettings
+     *        Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     */
+
+    public void setGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        this.generativeAISettings = generativeAISettings;
+    }
+
+    /**
+     * <p>
+     * Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     * </p>
+     * 
+     * @return Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     */
+
+    public GenerativeAISettings getGenerativeAISettings() {
+        return this.generativeAISettings;
+    }
+
+    /**
+     * <p>
+     * Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     * </p>
+     * 
+     * @param generativeAISettings
+     *        Contains settings for Amazon Bedrock's generative AI features for your bot locale.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotLocaleResult withGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        setGenerativeAISettings(generativeAISettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -932,7 +978,9 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
         if (getBotLocaleHistoryEvents() != null)
             sb.append("BotLocaleHistoryEvents: ").append(getBotLocaleHistoryEvents()).append(",");
         if (getRecommendedActions() != null)
-            sb.append("RecommendedActions: ").append(getRecommendedActions());
+            sb.append("RecommendedActions: ").append(getRecommendedActions()).append(",");
+        if (getGenerativeAISettings() != null)
+            sb.append("GenerativeAISettings: ").append(getGenerativeAISettings());
         sb.append("}");
         return sb.toString();
     }
@@ -1011,6 +1059,10 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getRecommendedActions() != null && other.getRecommendedActions().equals(this.getRecommendedActions()) == false)
             return false;
+        if (other.getGenerativeAISettings() == null ^ this.getGenerativeAISettings() == null)
+            return false;
+        if (other.getGenerativeAISettings() != null && other.getGenerativeAISettings().equals(this.getGenerativeAISettings()) == false)
+            return false;
         return true;
     }
 
@@ -1035,6 +1087,7 @@ public class DescribeBotLocaleResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getLastBuildSubmittedDateTime() == null) ? 0 : getLastBuildSubmittedDateTime().hashCode());
         hashCode = prime * hashCode + ((getBotLocaleHistoryEvents() == null) ? 0 : getBotLocaleHistoryEvents().hashCode());
         hashCode = prime * hashCode + ((getRecommendedActions() == null) ? 0 : getRecommendedActions().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeAISettings() == null) ? 0 : getGenerativeAISettings().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,13 @@ public class DescribeRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      */
     private String type;
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     * </p>
+     */
+    private Boolean analyzeRuleGroup;
 
     /**
      * <p>
@@ -267,6 +274,66 @@ public class DescribeRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     * </p>
+     * 
+     * @param analyzeRuleGroup
+     *        Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *        behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     */
+
+    public void setAnalyzeRuleGroup(Boolean analyzeRuleGroup) {
+        this.analyzeRuleGroup = analyzeRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     * </p>
+     * 
+     * @return Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *         behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     */
+
+    public Boolean getAnalyzeRuleGroup() {
+        return this.analyzeRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     * </p>
+     * 
+     * @param analyzeRuleGroup
+     *        Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *        behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRuleGroupRequest withAnalyzeRuleGroup(Boolean analyzeRuleGroup) {
+        setAnalyzeRuleGroup(analyzeRuleGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     * </p>
+     * 
+     * @return Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *         behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis.
+     */
+
+    public Boolean isAnalyzeRuleGroup() {
+        return this.analyzeRuleGroup;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -283,7 +350,9 @@ public class DescribeRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getRuleGroupArn() != null)
             sb.append("RuleGroupArn: ").append(getRuleGroupArn()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getAnalyzeRuleGroup() != null)
+            sb.append("AnalyzeRuleGroup: ").append(getAnalyzeRuleGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +379,10 @@ public class DescribeRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getAnalyzeRuleGroup() == null ^ this.getAnalyzeRuleGroup() == null)
+            return false;
+        if (other.getAnalyzeRuleGroup() != null && other.getAnalyzeRuleGroup().equals(this.getAnalyzeRuleGroup()) == false)
+            return false;
         return true;
     }
 
@@ -321,6 +394,7 @@ public class DescribeRuleGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRuleGroupName() == null) ? 0 : getRuleGroupName().hashCode());
         hashCode = prime * hashCode + ((getRuleGroupArn() == null) ? 0 : getRuleGroupArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzeRuleGroup() == null) ? 0 : getAnalyzeRuleGroup().hashCode());
         return hashCode;
     }
 

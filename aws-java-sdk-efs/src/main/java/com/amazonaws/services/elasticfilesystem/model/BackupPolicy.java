@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,22 +37,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     * <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     * <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     * <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      * </p>
      * </li>
      * </ul>
@@ -66,22 +66,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     * <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     * <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     * <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      * </p>
      * </li>
      * </ul>
@@ -91,22 +91,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     *        <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     *        <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     *        <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     *        <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      *        </p>
      *        </li>
      * @see Status
@@ -123,22 +123,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     * <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     * <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     * <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      * </p>
      * </li>
      * </ul>
@@ -147,22 +147,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     *         <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     *         <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     *         <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     *         <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      *         </p>
      *         </li>
      * @see Status
@@ -179,22 +179,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     * <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     * <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     * <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      * </p>
      * </li>
      * </ul>
@@ -204,22 +204,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     *        <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     *        <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     *        <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     *        <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -238,22 +238,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     * <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     * <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     * <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      * </p>
      * </li>
      * </ul>
@@ -263,22 +263,22 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
+     *        <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLING</code> </b> - EFS is turning on automatic backups for the file system.
+     *        <b> <code>ENABLING</code> </b> – EFS is turning on automatic backups for the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.
+     *        <b> <code>DISABLED</code> </b> – Automatic back ups are turned off for the file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.
+     *        <b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

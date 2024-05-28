@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,56 @@ public class ThemeValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs that define the theme's properties.
-     * </p>
-     */
-    private java.util.List<ThemeValues> children;
-    /**
-     * <p>
      * The value of a theme property.
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * A list of key-value pairs that define the theme's properties.
+     * </p>
+     */
+    private java.util.List<ThemeValues> children;
+
+    /**
+     * <p>
+     * The value of a theme property.
+     * </p>
+     * 
+     * @param value
+     *        The value of a theme property.
+     */
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * The value of a theme property.
+     * </p>
+     * 
+     * @return The value of a theme property.
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The value of a theme property.
+     * </p>
+     * 
+     * @param value
+     *        The value of a theme property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThemeValue withValue(String value) {
+        setValue(value);
+        return this;
+    }
 
     /**
      * <p>
@@ -112,46 +152,6 @@ public class ThemeValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The value of a theme property.
-     * </p>
-     * 
-     * @param value
-     *        The value of a theme property.
-     */
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    /**
-     * <p>
-     * The value of a theme property.
-     * </p>
-     * 
-     * @return The value of a theme property.
-     */
-
-    public String getValue() {
-        return this.value;
-    }
-
-    /**
-     * <p>
-     * The value of a theme property.
-     * </p>
-     * 
-     * @param value
-     *        The value of a theme property.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ThemeValue withValue(String value) {
-        setValue(value);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,10 +163,10 @@ public class ThemeValue implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getChildren() != null)
-            sb.append("Children: ").append(getChildren()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getChildren() != null)
+            sb.append("Children: ").append(getChildren());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +181,13 @@ public class ThemeValue implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ThemeValue == false)
             return false;
         ThemeValue other = (ThemeValue) obj;
-        if (other.getChildren() == null ^ this.getChildren() == null)
-            return false;
-        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
-            return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
+        if (other.getChildren() == null ^ this.getChildren() == null)
+            return false;
+        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
             return false;
         return true;
     }
@@ -197,8 +197,8 @@ public class ThemeValue implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
         return hashCode;
     }
 

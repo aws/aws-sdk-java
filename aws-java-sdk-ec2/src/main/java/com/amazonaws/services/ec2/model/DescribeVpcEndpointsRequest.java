@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcEndpointsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVpcEndpoints.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,13 +28,13 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * The IDs of the VPC endpoints.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcEndpointIds;
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -47,6 +45,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>service-name</code> - The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -70,20 +82,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <p>
      * <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> |
      * <code>GatewayLoadBalancer</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
-     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-     * and <code>TeamA</code> for the filter value.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
-     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * </ul>
@@ -108,10 +106,10 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * The IDs of the VPC endpoints.
      * </p>
      * 
-     * @return One or more endpoint IDs.
+     * @return The IDs of the VPC endpoints.
      */
 
     public java.util.List<String> getVpcEndpointIds() {
@@ -123,11 +121,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * The IDs of the VPC endpoints.
      * </p>
      * 
      * @param vpcEndpointIds
-     *        One or more endpoint IDs.
+     *        The IDs of the VPC endpoints.
      */
 
     public void setVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
@@ -141,7 +139,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * The IDs of the VPC endpoints.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -150,7 +148,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param vpcEndpointIds
-     *        One or more endpoint IDs.
+     *        The IDs of the VPC endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +164,11 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * The IDs of the VPC endpoints.
      * </p>
      * 
      * @param vpcEndpointIds
-     *        One or more endpoint IDs.
+     *        The IDs of the VPC endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,7 +179,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -192,6 +190,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>service-name</code> - The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -217,23 +229,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
-     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-     * and <code>TeamA</code> for the filter value.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
-     * a tag with a specific key, regardless of the tag value.
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -243,6 +241,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *         <li>
      *         <p>
      *         <code>service-name</code> - The name of the service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      *         <li>
@@ -268,20 +280,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *         | <code>GatewayLoadBalancer</code>).
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
-     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
-     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
-     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *         assigned a tag with a specific key, regardless of the tag value.
-     *         </p>
-     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -293,7 +291,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -304,6 +302,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>service-name</code> - The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -329,24 +341,10 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
-     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-     * and <code>TeamA</code> for the filter value.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
-     * a tag with a specific key, regardless of the tag value.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -356,6 +354,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>service-name</code> - The name of the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -379,20 +391,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <p>
      *        <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> |
      *        <code>GatewayLoadBalancer</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
-     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
-     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
-     *        the filter name and <code>TeamA</code> for the filter value.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      */
@@ -408,7 +406,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -419,6 +417,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>service-name</code> - The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -444,20 +456,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
-     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-     * and <code>TeamA</code> for the filter value.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
-     * a tag with a specific key, regardless of the tag value.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -466,7 +464,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -476,6 +474,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>service-name</code> - The name of the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -499,20 +511,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <p>
      *        <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> |
      *        <code>GatewayLoadBalancer</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
-     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
-     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
-     *        the filter name and <code>TeamA</code> for the filter value.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -530,7 +528,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -541,6 +539,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>service-name</code> - The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -566,24 +578,10 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
-     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
-     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-     * and <code>TeamA</code> for the filter value.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
-     * a tag with a specific key, regardless of the tag value.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -593,6 +591,20 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>service-name</code> - The name of the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -616,20 +628,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <p>
      *        <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code> | <code>Gateway</code> |
      *        <code>GatewayLoadBalancer</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
-     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
-     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
-     *        the filter name and <code>TeamA</code> for the filter value.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
-     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

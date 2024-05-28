@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,12 +41,14 @@ public class PipelineExecutionStepMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepStatus").build();
     private static final MarshallingInfo<StructuredPojo> CACHEHITRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheHitResult").build();
-    private static final MarshallingInfo<Integer> ATTEMPTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttemptCount").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<StructuredPojo> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Metadata").build();
+    private static final MarshallingInfo<Integer> ATTEMPTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttemptCount").build();
+    private static final MarshallingInfo<StructuredPojo> SELECTIVEEXECUTIONRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectiveExecutionResult").build();
 
     private static final PipelineExecutionStepMarshaller instance = new PipelineExecutionStepMarshaller();
 
@@ -71,9 +73,10 @@ public class PipelineExecutionStepMarshaller {
             protocolMarshaller.marshall(pipelineExecutionStep.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStep.getStepStatus(), STEPSTATUS_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStep.getCacheHitResult(), CACHEHITRESULT_BINDING);
-            protocolMarshaller.marshall(pipelineExecutionStep.getAttemptCount(), ATTEMPTCOUNT_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStep.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStep.getMetadata(), METADATA_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionStep.getAttemptCount(), ATTEMPTCOUNT_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionStep.getSelectiveExecutionResult(), SELECTIVEEXECUTIONRESULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

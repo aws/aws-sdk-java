@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private AlgorithmSpecification algorithmSpecification;
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     */
+    private java.util.List<Association> associations;
     /**
      * <p>
      * Information about the output locations for job checkpoint data.
@@ -146,6 +152,76 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public CreateJobRequest withAlgorithmSpecification(AlgorithmSpecification algorithmSpecification) {
         setAlgorithmSpecification(algorithmSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * 
+     * @return The list of Amazon Braket resources associated with the hybrid job.
+     */
+
+    public java.util.List<Association> getAssociations() {
+        return associations;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the hybrid job.
+     */
+
+    public void setAssociations(java.util.Collection<Association> associations) {
+        if (associations == null) {
+            this.associations = null;
+            return;
+        }
+
+        this.associations = new java.util.ArrayList<Association>(associations);
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociations(java.util.Collection)} or {@link #withAssociations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the hybrid job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withAssociations(Association... associations) {
+        if (this.associations == null) {
+            setAssociations(new java.util.ArrayList<Association>(associations.length));
+        }
+        for (Association ele : associations) {
+            this.associations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the hybrid job.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the hybrid job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withAssociations(java.util.Collection<Association> associations) {
+        setAssociations(associations);
         return this;
     }
 
@@ -719,6 +795,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getAlgorithmSpecification() != null)
             sb.append("AlgorithmSpecification: ").append(getAlgorithmSpecification()).append(",");
+        if (getAssociations() != null)
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getCheckpointConfig() != null)
             sb.append("CheckpointConfig: ").append(getCheckpointConfig()).append(",");
         if (getClientToken() != null)
@@ -758,6 +836,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getAlgorithmSpecification() == null ^ this.getAlgorithmSpecification() == null)
             return false;
         if (other.getAlgorithmSpecification() != null && other.getAlgorithmSpecification().equals(this.getAlgorithmSpecification()) == false)
+            return false;
+        if (other.getAssociations() == null ^ this.getAssociations() == null)
+            return false;
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
             return false;
         if (other.getCheckpointConfig() == null ^ this.getCheckpointConfig() == null)
             return false;
@@ -812,6 +894,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAlgorithmSpecification() == null) ? 0 : getAlgorithmSpecification().hashCode());
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
         hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfig() == null) ? 0 : getDeviceConfig().hashCode());

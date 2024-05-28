@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,12 +75,16 @@ public class ModelPackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamplePayloadUrl").build();
     private static final MarshallingInfo<List> ADDITIONALINFERENCESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalInferenceSpecifications").build();
+    private static final MarshallingInfo<String> SOURCEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SourceUri").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<Map> CUSTOMERMETADATAPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerMetadataProperties").build();
     private static final MarshallingInfo<StructuredPojo> DRIFTCHECKBASELINES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DriftCheckBaselines").build();
+    private static final MarshallingInfo<String> SKIPMODELVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SkipModelValidation").build();
 
     private static final ModelPackageMarshaller instance = new ModelPackageMarshaller();
 
@@ -121,9 +125,11 @@ public class ModelPackageMarshaller {
             protocolMarshaller.marshall(modelPackage.getTask(), TASK_BINDING);
             protocolMarshaller.marshall(modelPackage.getSamplePayloadUrl(), SAMPLEPAYLOADURL_BINDING);
             protocolMarshaller.marshall(modelPackage.getAdditionalInferenceSpecifications(), ADDITIONALINFERENCESPECIFICATIONS_BINDING);
+            protocolMarshaller.marshall(modelPackage.getSourceUri(), SOURCEURI_BINDING);
             protocolMarshaller.marshall(modelPackage.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(modelPackage.getCustomerMetadataProperties(), CUSTOMERMETADATAPROPERTIES_BINDING);
             protocolMarshaller.marshall(modelPackage.getDriftCheckBaselines(), DRIFTCHECKBASELINES_BINDING);
+            protocolMarshaller.marshall(modelPackage.getSkipModelValidation(), SKIPMODELVALIDATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

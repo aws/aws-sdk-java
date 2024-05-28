@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ import com.amazonaws.services.redshiftdataapi.model.*;
  * <p>
  * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
  * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
- * <i>Amazon Redshift Cluster Management Guide</i>.
+ * <i>Amazon Redshift Management Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -46,20 +46,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param batchExecuteStatementRequest
      * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
@@ -77,20 +107,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param batchExecuteStatementRequest
      * @param asyncHandler
@@ -109,6 +169,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <p>
      * Cancels a running query. To be canceled, a query must be running.
      * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param cancelStatementRequest
      * @return A Java Future containing the result of the CancelStatement operation returned by the service.
@@ -121,6 +186,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
     /**
      * <p>
      * Cancels a running query. To be canceled, a query must be running.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param cancelStatementRequest
@@ -142,6 +212,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * information includes when the query started, when it finished, the query status, the number of rows returned, and
      * the SQL statement.
      * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param describeStatementRequest
      * @return A Java Future containing the result of the DescribeStatement operation returned by the service.
@@ -156,6 +231,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * Describes the details about a specific instance when a query was run by the Amazon Redshift Data API. The
      * information includes when the query started, when it finished, the query status, the number of rows returned, and
      * the SQL statement.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param describeStatementRequest
@@ -180,20 +260,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param describeTableRequest
      * @return A Java Future containing the result of the DescribeTable operation returned by the service.
@@ -212,20 +322,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param describeTableRequest
      * @param asyncHandler
@@ -249,20 +389,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param executeStatementRequest
      * @return A Java Future containing the result of the ExecuteStatement operation returned by the service.
@@ -281,20 +451,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param executeStatementRequest
      * @param asyncHandler
@@ -314,6 +514,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * Fetches the temporarily cached result of an SQL statement. A token is returned to page through the statement
      * results.
      * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param getStatementResultRequest
      * @return A Java Future containing the result of the GetStatementResult operation returned by the service.
@@ -327,6 +532,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <p>
      * Fetches the temporarily cached result of an SQL statement. A token is returned to page through the statement
      * results.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param getStatementResultRequest
@@ -350,20 +560,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listDatabasesRequest
      * @return A Java Future containing the result of the ListDatabases operation returned by the service.
@@ -381,20 +621,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listDatabasesRequest
      * @param asyncHandler
@@ -417,20 +687,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listSchemasRequest
      * @return A Java Future containing the result of the ListSchemas operation returned by the service.
@@ -448,20 +748,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listSchemasRequest
      * @param asyncHandler
@@ -481,6 +811,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * List of SQL statements. By default, only finished statements are shown. A token is returned to page through the
      * statement list.
      * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listStatementsRequest
      * @return A Java Future containing the result of the ListStatements operation returned by the service.
@@ -494,6 +829,11 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <p>
      * List of SQL statements. By default, only finished statements are shown. A token is returned to page through the
      * statement list.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param listStatementsRequest
@@ -518,20 +858,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listTablesRequest
      * @return A Java Future containing the result of the ListTables operation returned by the service.
@@ -550,20 +920,50 @@ public interface AWSRedshiftDataAPIAsync extends AWSRedshiftDataAPI {
      * <ul>
      * <li>
      * <p>
-     * Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN) of the secret, the
-     * database name, and the cluster identifier that matches the cluster in the secret. When connecting to a serverless
-     * workgroup, specify the Amazon Resource Name (ARN) of the secret and the database name.
+     * Secrets Manager - when connecting to a cluster, provide the <code>secret-arn</code> of a secret stored in Secrets
+     * Manager which has <code>username</code> and <code>password</code>. The specified secret contains credentials to
+     * connect to the <code>database</code> you specify. When you are connecting to a cluster, you also supply the
+     * database name, If you provide a cluster identifier (<code>dbClusterIdentifier</code>), it must match the cluster
+     * identifier stored in the secret. When you are connecting to a serverless workgroup, you also supply the database
+     * name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Temporary credentials - when connecting to a cluster, specify the cluster identifier, the database name, and the
+     * Temporary credentials - when connecting to your data warehouse, choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When connecting to a serverless workgroup, specify the workgroup name and database name. The database user name
+     * is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has the database user
+     * name <code>IAM:foo</code>. Also, permission to call the <code>redshift-serverless:GetCredentials</code> operation
+     * is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as an IAM identity, specify the cluster identifier and the database name. The
+     * database user name is derived from the IAM identity. For example, <code>arn:iam::123456789012:user:foo</code> has
+     * the database user name <code>IAM:foo</code>. Also, permission to call the
+     * <code>redshift:GetClusterCredentialsWithIAM</code> operation is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When connecting to a cluster as a database user, specify the cluster identifier, the database name, and the
      * database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code> operation is
-     * required. When connecting to a serverless workgroup, specify the workgroup name and database name. Also,
-     * permission to call the <code>redshift-serverless:GetCredentials</code> operation is required.
+     * required.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listTablesRequest
      * @param asyncHandler

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,25 +36,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway REST API:
-     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an AppSync GraphQL API:
-     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon Cognito user pool:
-     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -72,25 +84,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway REST API:
-     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an AppSync GraphQL API:
-     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon Cognito user pool:
-     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -104,25 +128,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        For an Application Load Balancer:
-     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an Amazon API Gateway REST API:
-     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an AppSync GraphQL API:
-     *        <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     *        <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an Amazon Cognito user pool:
-     *        <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an App Runner service:
+     *        <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services Verified Access instance:
+     *        <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      *        </p>
      *        </li>
      */
@@ -142,25 +178,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway REST API:
-     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an AppSync GraphQL API:
-     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon Cognito user pool:
-     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -173,25 +221,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         For an Application Load Balancer:
-     *         <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *         <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For an Amazon API Gateway REST API:
-     *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *         <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For an AppSync GraphQL API:
-     *         <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     *         <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For an Amazon Cognito user pool:
-     *         <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *         <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an App Runner service:
+     *         <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon Web Services Verified Access instance:
+     *         <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      *         </p>
      *         </li>
      */
@@ -211,25 +271,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway REST API:
-     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an AppSync GraphQL API:
-     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     * <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon Cognito user pool:
-     * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -243,25 +315,37 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        For an Application Load Balancer:
-     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        <code>arn:<i>partition</i>:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an Amazon API Gateway REST API:
-     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        <code>arn:<i>partition</i>:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an AppSync GraphQL API:
-     *        <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
+     *        <code>arn:<i>partition</i>:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an Amazon Cognito user pool:
-     *        <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an App Runner service:
+     *        <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services Verified Access instance:
+     *        <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

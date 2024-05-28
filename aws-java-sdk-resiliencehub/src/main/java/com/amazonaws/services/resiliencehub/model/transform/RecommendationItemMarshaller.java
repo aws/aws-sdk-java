@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class RecommendationItemMarshaller {
 
     private static final MarshallingInfo<Boolean> ALREADYIMPLEMENTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("alreadyImplemented").build();
+    private static final MarshallingInfo<String> EXCLUDEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excludeReason").build();
+    private static final MarshallingInfo<Boolean> EXCLUDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excluded").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<String> TARGETACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +57,8 @@ public class RecommendationItemMarshaller {
 
         try {
             protocolMarshaller.marshall(recommendationItem.getAlreadyImplemented(), ALREADYIMPLEMENTED_BINDING);
+            protocolMarshaller.marshall(recommendationItem.getExcludeReason(), EXCLUDEREASON_BINDING);
+            protocolMarshaller.marshall(recommendationItem.getExcluded(), EXCLUDED_BINDING);
             protocolMarshaller.marshall(recommendationItem.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(recommendationItem.getTargetAccountId(), TARGETACCOUNTID_BINDING);
             protocolMarshaller.marshall(recommendationItem.getTargetRegion(), TARGETREGION_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,15 +42,15 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.
+     * applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     * <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter> filters;
     /**
      * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. The default value is 10 items.
      * </p>
      */
     private Integer maxResults;
@@ -193,13 +193,14 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.
+     * applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     * <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * 
      * @return One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based
-     *         on tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     *         <code>InstanceInformationFilterList</code>, which is deprecated.
+     *         on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     *         <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is
+     *         deprecated.
      */
 
     public java.util.List<InstanceInformationStringFilter> getFilters() {
@@ -212,14 +213,14 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.
+     * applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     * <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * 
      * @param filters
      *        One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on
-     *        tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     *        <code>InstanceInformationFilterList</code>, which is deprecated.
+     *        tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     *        <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      */
 
     public void setFilters(java.util.Collection<InstanceInformationStringFilter> filters) {
@@ -234,8 +235,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.
+     * applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     * <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -245,8 +246,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
      * 
      * @param filters
      *        One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on
-     *        tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     *        <code>InstanceInformationFilterList</code>, which is deprecated.
+     *        tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     *        <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,14 +264,14 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags
-     * applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.
+     * applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     * <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * </p>
      * 
      * @param filters
      *        One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on
-     *        tags applied to your managed nodes. Use this <code>Filters</code> data type instead of
-     *        <code>InstanceInformationFilterList</code>, which is deprecated.
+     *        tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this
+     *        <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,12 +283,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. The default value is 10 items.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this call. The call also returns a token that you can specify in
-     *        a subsequent call to get the next set of results.
+     *        a subsequent call to get the next set of results. The default value is 10 items.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -297,11 +298,11 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. The default value is 10 items.
      * </p>
      * 
      * @return The maximum number of items to return for this call. The call also returns a token that you can specify
-     *         in a subsequent call to get the next set of results.
+     *         in a subsequent call to get the next set of results. The default value is 10 items.
      */
 
     public Integer getMaxResults() {
@@ -311,12 +312,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. The default value is 10 items.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this call. The call also returns a token that you can specify in
-     *        a subsequent call to get the next set of results.
+     *        a subsequent call to get the next set of results. The default value is 10 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

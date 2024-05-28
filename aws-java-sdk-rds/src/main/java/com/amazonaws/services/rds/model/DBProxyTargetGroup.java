@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,8 +51,9 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
     private String targetGroupArn;
     /**
      * <p>
-     * Whether this target group is the first one used for connection requests by the associated proxy. Because each
-     * proxy is currently associated with a single target group, currently this setting is always <code>true</code>.
+     * Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     * Because each proxy is currently associated with a single target group, currently this setting is always
+     * <code>true</code>.
      * </p>
      */
     private Boolean isDefault;
@@ -211,13 +212,14 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this target group is the first one used for connection requests by the associated proxy. Because each
-     * proxy is currently associated with a single target group, currently this setting is always <code>true</code>.
+     * Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     * Because each proxy is currently associated with a single target group, currently this setting is always
+     * <code>true</code>.
      * </p>
      * 
      * @param isDefault
-     *        Whether this target group is the first one used for connection requests by the associated proxy. Because
-     *        each proxy is currently associated with a single target group, currently this setting is always
+     *        Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     *        Because each proxy is currently associated with a single target group, currently this setting is always
      *        <code>true</code>.
      */
 
@@ -227,13 +229,14 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this target group is the first one used for connection requests by the associated proxy. Because each
-     * proxy is currently associated with a single target group, currently this setting is always <code>true</code>.
+     * Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     * Because each proxy is currently associated with a single target group, currently this setting is always
+     * <code>true</code>.
      * </p>
      * 
-     * @return Whether this target group is the first one used for connection requests by the associated proxy. Because
-     *         each proxy is currently associated with a single target group, currently this setting is always
-     *         <code>true</code>.
+     * @return Indicates whether this target group is the first one used for connection requests by the associated
+     *         proxy. Because each proxy is currently associated with a single target group, currently this setting is
+     *         always <code>true</code>.
      */
 
     public Boolean getIsDefault() {
@@ -242,13 +245,14 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this target group is the first one used for connection requests by the associated proxy. Because each
-     * proxy is currently associated with a single target group, currently this setting is always <code>true</code>.
+     * Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     * Because each proxy is currently associated with a single target group, currently this setting is always
+     * <code>true</code>.
      * </p>
      * 
      * @param isDefault
-     *        Whether this target group is the first one used for connection requests by the associated proxy. Because
-     *        each proxy is currently associated with a single target group, currently this setting is always
+     *        Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     *        Because each proxy is currently associated with a single target group, currently this setting is always
      *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -260,13 +264,14 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this target group is the first one used for connection requests by the associated proxy. Because each
-     * proxy is currently associated with a single target group, currently this setting is always <code>true</code>.
+     * Indicates whether this target group is the first one used for connection requests by the associated proxy.
+     * Because each proxy is currently associated with a single target group, currently this setting is always
+     * <code>true</code>.
      * </p>
      * 
-     * @return Whether this target group is the first one used for connection requests by the associated proxy. Because
-     *         each proxy is currently associated with a single target group, currently this setting is always
-     *         <code>true</code>.
+     * @return Indicates whether this target group is the first one used for connection requests by the associated
+     *         proxy. Because each proxy is currently associated with a single target group, currently this setting is
+     *         always <code>true</code>.
      */
 
     public Boolean isDefault() {

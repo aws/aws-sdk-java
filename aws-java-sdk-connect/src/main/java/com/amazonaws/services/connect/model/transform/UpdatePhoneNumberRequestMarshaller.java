@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class UpdatePhoneNumberRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("PhoneNumberId").build();
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -55,6 +57,7 @@ public class UpdatePhoneNumberRequestMarshaller {
         try {
             protocolMarshaller.marshall(updatePhoneNumberRequest.getPhoneNumberId(), PHONENUMBERID_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(updatePhoneNumberRequest.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

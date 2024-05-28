@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class GetTemplateResultJsonUnmarshaller implements Unmarshaller<GetTempla
                     context.nextToken();
                     getTemplateResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("templateArn", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     getTemplateResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -72,13 +76,30 @@ public class GetTemplateResultJsonUnmarshaller implements Unmarshaller<GetTempla
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("creationTime", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("owner", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getTemplateResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationTime", targetDepth)) {
+                if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
-                    getTemplateResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getTemplateResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("templateClass", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setTemplateClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

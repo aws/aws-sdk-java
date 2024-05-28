@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,10 @@ public class ProjectDescriptionMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<List> DATASETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Datasets").build();
+    private static final MarshallingInfo<String> FEATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Feature").build();
+    private static final MarshallingInfo<String> AUTOUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoUpdate").build();
 
     private static final ProjectDescriptionMarshaller instance = new ProjectDescriptionMarshaller();
 
@@ -57,6 +61,8 @@ public class ProjectDescriptionMarshaller {
             protocolMarshaller.marshall(projectDescription.getCreationTimestamp(), CREATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(projectDescription.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(projectDescription.getDatasets(), DATASETS_BINDING);
+            protocolMarshaller.marshall(projectDescription.getFeature(), FEATURE_BINDING);
+            protocolMarshaller.marshall(projectDescription.getAutoUpdate(), AUTOUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

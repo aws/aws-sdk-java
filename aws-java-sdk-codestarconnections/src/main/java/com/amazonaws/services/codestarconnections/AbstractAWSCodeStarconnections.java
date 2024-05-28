@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,12 +38,32 @@ public class AbstractAWSCodeStarconnections implements AWSCodeStarconnections {
     }
 
     @Override
+    public CreateRepositoryLinkResult createRepositoryLink(CreateRepositoryLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSyncConfigurationResult createSyncConfiguration(CreateSyncConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteHostResult deleteHost(DeleteHostRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRepositoryLinkResult deleteRepositoryLink(DeleteRepositoryLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSyncConfigurationResult deleteSyncConfiguration(DeleteSyncConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,12 +78,52 @@ public class AbstractAWSCodeStarconnections implements AWSCodeStarconnections {
     }
 
     @Override
+    public GetRepositoryLinkResult getRepositoryLink(GetRepositoryLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRepositorySyncStatusResult getRepositorySyncStatus(GetRepositorySyncStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourceSyncStatusResult getResourceSyncStatus(GetResourceSyncStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSyncBlockerSummaryResult getSyncBlockerSummary(GetSyncBlockerSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSyncConfigurationResult getSyncConfiguration(GetSyncConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListConnectionsResult listConnections(ListConnectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListHostsResult listHosts(ListHostsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRepositoryLinksResult listRepositoryLinks(ListRepositoryLinksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRepositorySyncDefinitionsResult listRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSyncConfigurationsResult listSyncConfigurations(ListSyncConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +144,21 @@ public class AbstractAWSCodeStarconnections implements AWSCodeStarconnections {
 
     @Override
     public UpdateHostResult updateHost(UpdateHostRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRepositoryLinkResult updateRepositoryLink(UpdateRepositoryLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSyncBlockerResult updateSyncBlocker(UpdateSyncBlockerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSyncConfigurationResult updateSyncConfiguration(UpdateSyncConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

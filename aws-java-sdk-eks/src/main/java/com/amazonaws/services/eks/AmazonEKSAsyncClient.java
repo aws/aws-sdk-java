@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on
- * Amazon Web Services without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an
+ * Amazon Web Services without needing to setup or maintain your own Kubernetes control plane. Kubernetes is an
  * open-source system for automating the deployment, scaling, and management of containerized applications.
  * </p>
  * <p>
@@ -83,6 +83,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateAccessPolicyResult> associateAccessPolicyAsync(AssociateAccessPolicyRequest request) {
+
+        return associateAccessPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateAccessPolicyResult> associateAccessPolicyAsync(final AssociateAccessPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateAccessPolicyRequest, AssociateAccessPolicyResult> asyncHandler) {
+        final AssociateAccessPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateAccessPolicyResult>() {
+            @Override
+            public AssociateAccessPolicyResult call() throws Exception {
+                AssociateAccessPolicyResult result = null;
+
+                try {
+                    result = executeAssociateAccessPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(AssociateEncryptionConfigRequest request) {
 
         return associateEncryptionConfigAsync(request, null);
@@ -135,6 +168,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeAssociateIdentityProviderConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessEntryResult> createAccessEntryAsync(CreateAccessEntryRequest request) {
+
+        return createAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessEntryResult> createAccessEntryAsync(final CreateAccessEntryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessEntryRequest, CreateAccessEntryResult> asyncHandler) {
+        final CreateAccessEntryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessEntryResult>() {
+            @Override
+            public CreateAccessEntryResult call() throws Exception {
+                CreateAccessEntryResult result = null;
+
+                try {
+                    result = executeCreateAccessEntry(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -217,6 +283,40 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEksAnywhereSubscriptionResult> createEksAnywhereSubscriptionAsync(CreateEksAnywhereSubscriptionRequest request) {
+
+        return createEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEksAnywhereSubscriptionResult> createEksAnywhereSubscriptionAsync(
+            final CreateEksAnywhereSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEksAnywhereSubscriptionRequest, CreateEksAnywhereSubscriptionResult> asyncHandler) {
+        final CreateEksAnywhereSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEksAnywhereSubscriptionResult>() {
+            @Override
+            public CreateEksAnywhereSubscriptionResult call() throws Exception {
+                CreateEksAnywhereSubscriptionResult result = null;
+
+                try {
+                    result = executeCreateEksAnywhereSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(CreateFargateProfileRequest request) {
 
         return createFargateProfileAsync(request, null);
@@ -267,6 +367,72 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeCreateNodegroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePodIdentityAssociationResult> createPodIdentityAssociationAsync(CreatePodIdentityAssociationRequest request) {
+
+        return createPodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePodIdentityAssociationResult> createPodIdentityAssociationAsync(final CreatePodIdentityAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResult> asyncHandler) {
+        final CreatePodIdentityAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePodIdentityAssociationResult>() {
+            @Override
+            public CreatePodIdentityAssociationResult call() throws Exception {
+                CreatePodIdentityAssociationResult result = null;
+
+                try {
+                    result = executeCreatePodIdentityAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessEntryResult> deleteAccessEntryAsync(DeleteAccessEntryRequest request) {
+
+        return deleteAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessEntryResult> deleteAccessEntryAsync(final DeleteAccessEntryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessEntryRequest, DeleteAccessEntryResult> asyncHandler) {
+        final DeleteAccessEntryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessEntryResult>() {
+            @Override
+            public DeleteAccessEntryResult call() throws Exception {
+                DeleteAccessEntryResult result = null;
+
+                try {
+                    result = executeDeleteAccessEntry(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -349,6 +515,40 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEksAnywhereSubscriptionResult> deleteEksAnywhereSubscriptionAsync(DeleteEksAnywhereSubscriptionRequest request) {
+
+        return deleteEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEksAnywhereSubscriptionResult> deleteEksAnywhereSubscriptionAsync(
+            final DeleteEksAnywhereSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEksAnywhereSubscriptionRequest, DeleteEksAnywhereSubscriptionResult> asyncHandler) {
+        final DeleteEksAnywhereSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEksAnywhereSubscriptionResult>() {
+            @Override
+            public DeleteEksAnywhereSubscriptionResult call() throws Exception {
+                DeleteEksAnywhereSubscriptionResult result = null;
+
+                try {
+                    result = executeDeleteEksAnywhereSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(DeleteFargateProfileRequest request) {
 
         return deleteFargateProfileAsync(request, null);
@@ -415,6 +615,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePodIdentityAssociationResult> deletePodIdentityAssociationAsync(DeletePodIdentityAssociationRequest request) {
+
+        return deletePodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePodIdentityAssociationResult> deletePodIdentityAssociationAsync(final DeletePodIdentityAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResult> asyncHandler) {
+        final DeletePodIdentityAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePodIdentityAssociationResult>() {
+            @Override
+            public DeletePodIdentityAssociationResult call() throws Exception {
+                DeletePodIdentityAssociationResult result = null;
+
+                try {
+                    result = executeDeletePodIdentityAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest request) {
 
         return deregisterClusterAsync(request, null);
@@ -448,6 +681,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccessEntryResult> describeAccessEntryAsync(DescribeAccessEntryRequest request) {
+
+        return describeAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessEntryResult> describeAccessEntryAsync(final DescribeAccessEntryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccessEntryRequest, DescribeAccessEntryResult> asyncHandler) {
+        final DescribeAccessEntryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccessEntryResult>() {
+            @Override
+            public DescribeAccessEntryResult call() throws Exception {
+                DescribeAccessEntryResult result = null;
+
+                try {
+                    result = executeDescribeAccessEntry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request) {
 
         return describeAddonAsync(request, null);
@@ -465,6 +731,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeDescribeAddon(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonConfigurationResult> describeAddonConfigurationAsync(DescribeAddonConfigurationRequest request) {
+
+        return describeAddonConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonConfigurationResult> describeAddonConfigurationAsync(final DescribeAddonConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAddonConfigurationRequest, DescribeAddonConfigurationResult> asyncHandler) {
+        final DescribeAddonConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAddonConfigurationResult>() {
+            @Override
+            public DescribeAddonConfigurationResult call() throws Exception {
+                DescribeAddonConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeAddonConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -531,6 +830,41 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeDescribeCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEksAnywhereSubscriptionResult> describeEksAnywhereSubscriptionAsync(
+            DescribeEksAnywhereSubscriptionRequest request) {
+
+        return describeEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEksAnywhereSubscriptionResult> describeEksAnywhereSubscriptionAsync(
+            final DescribeEksAnywhereSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEksAnywhereSubscriptionRequest, DescribeEksAnywhereSubscriptionResult> asyncHandler) {
+        final DescribeEksAnywhereSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEksAnywhereSubscriptionResult>() {
+            @Override
+            public DescribeEksAnywhereSubscriptionResult call() throws Exception {
+                DescribeEksAnywhereSubscriptionResult result = null;
+
+                try {
+                    result = executeDescribeEksAnywhereSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -614,6 +948,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInsightResult> describeInsightAsync(DescribeInsightRequest request) {
+
+        return describeInsightAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInsightResult> describeInsightAsync(final DescribeInsightRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInsightRequest, DescribeInsightResult> asyncHandler) {
+        final DescribeInsightRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInsightResult>() {
+            @Override
+            public DescribeInsightResult call() throws Exception {
+                DescribeInsightResult result = null;
+
+                try {
+                    result = executeDescribeInsight(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(DescribeNodegroupRequest request) {
 
         return describeNodegroupAsync(request, null);
@@ -647,6 +1014,40 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePodIdentityAssociationResult> describePodIdentityAssociationAsync(DescribePodIdentityAssociationRequest request) {
+
+        return describePodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePodIdentityAssociationResult> describePodIdentityAssociationAsync(
+            final DescribePodIdentityAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePodIdentityAssociationRequest, DescribePodIdentityAssociationResult> asyncHandler) {
+        final DescribePodIdentityAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePodIdentityAssociationResult>() {
+            @Override
+            public DescribePodIdentityAssociationResult call() throws Exception {
+                DescribePodIdentityAssociationResult result = null;
+
+                try {
+                    result = executeDescribePodIdentityAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUpdateResult> describeUpdateAsync(DescribeUpdateRequest request) {
 
         return describeUpdateAsync(request, null);
@@ -664,6 +1065,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeDescribeUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateAccessPolicyResult> disassociateAccessPolicyAsync(DisassociateAccessPolicyRequest request) {
+
+        return disassociateAccessPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateAccessPolicyResult> disassociateAccessPolicyAsync(final DisassociateAccessPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateAccessPolicyRequest, DisassociateAccessPolicyResult> asyncHandler) {
+        final DisassociateAccessPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateAccessPolicyResult>() {
+            @Override
+            public DisassociateAccessPolicyResult call() throws Exception {
+                DisassociateAccessPolicyResult result = null;
+
+                try {
+                    result = executeDisassociateAccessPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -715,6 +1149,72 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListAccessEntriesResult> listAccessEntriesAsync(ListAccessEntriesRequest request) {
+
+        return listAccessEntriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessEntriesResult> listAccessEntriesAsync(final ListAccessEntriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessEntriesRequest, ListAccessEntriesResult> asyncHandler) {
+        final ListAccessEntriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessEntriesResult>() {
+            @Override
+            public ListAccessEntriesResult call() throws Exception {
+                ListAccessEntriesResult result = null;
+
+                try {
+                    result = executeListAccessEntries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request) {
+
+        return listAccessPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(final ListAccessPoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResult> asyncHandler) {
+        final ListAccessPoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessPoliciesResult>() {
+            @Override
+            public ListAccessPoliciesResult call() throws Exception {
+                ListAccessPoliciesResult result = null;
+
+                try {
+                    result = executeListAccessPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest request) {
 
         return listAddonsAsync(request, null);
@@ -748,6 +1248,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListAssociatedAccessPoliciesResult> listAssociatedAccessPoliciesAsync(ListAssociatedAccessPoliciesRequest request) {
+
+        return listAssociatedAccessPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedAccessPoliciesResult> listAssociatedAccessPoliciesAsync(final ListAssociatedAccessPoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssociatedAccessPoliciesRequest, ListAssociatedAccessPoliciesResult> asyncHandler) {
+        final ListAssociatedAccessPoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssociatedAccessPoliciesResult>() {
+            @Override
+            public ListAssociatedAccessPoliciesResult call() throws Exception {
+                ListAssociatedAccessPoliciesResult result = null;
+
+                try {
+                    result = executeListAssociatedAccessPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
 
         return listClustersAsync(request, null);
@@ -765,6 +1298,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeListClusters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEksAnywhereSubscriptionsResult> listEksAnywhereSubscriptionsAsync(ListEksAnywhereSubscriptionsRequest request) {
+
+        return listEksAnywhereSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEksAnywhereSubscriptionsResult> listEksAnywhereSubscriptionsAsync(final ListEksAnywhereSubscriptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEksAnywhereSubscriptionsRequest, ListEksAnywhereSubscriptionsResult> asyncHandler) {
+        final ListEksAnywhereSubscriptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEksAnywhereSubscriptionsResult>() {
+            @Override
+            public ListEksAnywhereSubscriptionsResult call() throws Exception {
+                ListEksAnywhereSubscriptionsResult result = null;
+
+                try {
+                    result = executeListEksAnywhereSubscriptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -847,6 +1413,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListInsightsResult> listInsightsAsync(ListInsightsRequest request) {
+
+        return listInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInsightsResult> listInsightsAsync(final ListInsightsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInsightsRequest, ListInsightsResult> asyncHandler) {
+        final ListInsightsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInsightsResult>() {
+            @Override
+            public ListInsightsResult call() throws Exception {
+                ListInsightsResult result = null;
+
+                try {
+                    result = executeListInsights(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(ListNodegroupsRequest request) {
 
         return listNodegroupsAsync(request, null);
@@ -864,6 +1463,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeListNodegroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPodIdentityAssociationsResult> listPodIdentityAssociationsAsync(ListPodIdentityAssociationsRequest request) {
+
+        return listPodIdentityAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPodIdentityAssociationsResult> listPodIdentityAssociationsAsync(final ListPodIdentityAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResult> asyncHandler) {
+        final ListPodIdentityAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPodIdentityAssociationsResult>() {
+            @Override
+            public ListPodIdentityAssociationsResult call() throws Exception {
+                ListPodIdentityAssociationsResult result = null;
+
+                try {
+                    result = executeListPodIdentityAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1045,6 +1677,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAccessEntryResult> updateAccessEntryAsync(UpdateAccessEntryRequest request) {
+
+        return updateAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessEntryResult> updateAccessEntryAsync(final UpdateAccessEntryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccessEntryRequest, UpdateAccessEntryResult> asyncHandler) {
+        final UpdateAccessEntryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccessEntryResult>() {
+            @Override
+            public UpdateAccessEntryResult call() throws Exception {
+                UpdateAccessEntryResult result = null;
+
+                try {
+                    result = executeUpdateAccessEntry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest request) {
 
         return updateAddonAsync(request, null);
@@ -1144,6 +1809,40 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateEksAnywhereSubscriptionResult> updateEksAnywhereSubscriptionAsync(UpdateEksAnywhereSubscriptionRequest request) {
+
+        return updateEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEksAnywhereSubscriptionResult> updateEksAnywhereSubscriptionAsync(
+            final UpdateEksAnywhereSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEksAnywhereSubscriptionRequest, UpdateEksAnywhereSubscriptionResult> asyncHandler) {
+        final UpdateEksAnywhereSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEksAnywhereSubscriptionResult>() {
+            @Override
+            public UpdateEksAnywhereSubscriptionResult call() throws Exception {
+                UpdateEksAnywhereSubscriptionResult result = null;
+
+                try {
+                    result = executeUpdateEksAnywhereSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateNodegroupConfigResult> updateNodegroupConfigAsync(UpdateNodegroupConfigRequest request) {
 
         return updateNodegroupConfigAsync(request, null);
@@ -1194,6 +1893,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeUpdateNodegroupVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePodIdentityAssociationResult> updatePodIdentityAssociationAsync(UpdatePodIdentityAssociationRequest request) {
+
+        return updatePodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePodIdentityAssociationResult> updatePodIdentityAssociationAsync(final UpdatePodIdentityAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResult> asyncHandler) {
+        final UpdatePodIdentityAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePodIdentityAssociationResult>() {
+            @Override
+            public UpdatePodIdentityAssociationResult call() throws Exception {
+                UpdatePodIdentityAssociationResult result = null;
+
+                try {
+                    result = executeUpdatePodIdentityAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

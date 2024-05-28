@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,20 +31,21 @@ import com.amazonaws.services.dataexchange.model.*;
  * </p>
  * <p>
  * As a subscriber, you can view and access the data sets that you have an entitlement to through a subscription. You
- * can use the APIS to download or copy your entitled data sets to Amazon S3 for use across a variety of AWS analytics
- * and machine learning services.
+ * can use the APIs to download or copy your entitled data sets to Amazon Simple Storage Service (Amazon S3) for use
+ * across a variety of AWS analytics and machine learning services.
  * </p>
  * <p>
  * As a provider, you can create and manage your data sets that you would like to publish to a product. Being able to
  * package and provide your data sets into products requires a few steps to determine eligibility. For more information,
- * visit the AWS Data Exchange User Guide.
+ * visit the <i>AWS Data Exchange User Guide</i>.
  * </p>
  * <p>
  * A data set is a collection of data that can be changed or updated over time. Data sets can be updated using
  * revisions, which represent a new version or incremental change to a data set. A revision contains one or more assets.
- * An asset in AWS Data Exchange is a piece of data that can be stored as an Amazon S3 object. The asset can be a
- * structured data file, an image file, or some other data file. Jobs are asynchronous import or export operations used
- * to create or copy assets.
+ * An asset in AWS Data Exchange is a piece of data that can be stored as an Amazon S3 object, Redshift datashare, API
+ * Gateway API, AWS Lake Formation data permission, or Amazon S3 data access. The asset can be a structured data file,
+ * an image file, or some other data file. Jobs are asynchronous import or export operations used to create or copy
+ * assets.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -702,6 +703,37 @@ public interface AWSDataExchangeAsync extends AWSDataExchange {
      */
     java.util.concurrent.Future<RevokeRevisionResult> revokeRevisionAsync(RevokeRevisionRequest revokeRevisionRequest,
             com.amazonaws.handlers.AsyncHandler<RevokeRevisionRequest, RevokeRevisionResult> asyncHandler);
+
+    /**
+     * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @return A Java Future containing the result of the SendDataSetNotification operation returned by the service.
+     * @sample AWSDataExchangeAsync.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest sendDataSetNotificationRequest);
+
+    /**
+     * <p>
+     * The type of event associated with the data set.
+     * </p>
+     * 
+     * @param sendDataSetNotificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendDataSetNotification operation returned by the service.
+     * @sample AWSDataExchangeAsyncHandler.SendDataSetNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDataSetNotificationResult> sendDataSetNotificationAsync(SendDataSetNotificationRequest sendDataSetNotificationRequest,
+            com.amazonaws.handlers.AsyncHandler<SendDataSetNotificationRequest, SendDataSetNotificationResult> asyncHandler);
 
     /**
      * <p>

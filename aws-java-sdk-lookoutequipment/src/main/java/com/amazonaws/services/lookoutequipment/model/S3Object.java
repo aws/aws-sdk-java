@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private String bucket;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the
-     * bucket is not accessible.
+     * The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this
+     * key, data in the bucket is not accessible.
      * </p>
      */
     private String key;
@@ -84,13 +84,13 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the
-     * bucket is not accessible.
+     * The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this
+     * key, data in the bucket is not accessible.
      * </p>
      * 
      * @param key
-     *        The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data
-     *        in the bucket is not accessible.
+     *        The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without
+     *        this key, data in the bucket is not accessible.
      */
 
     public void setKey(String key) {
@@ -99,12 +99,12 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the
-     * bucket is not accessible.
+     * The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this
+     * key, data in the bucket is not accessible.
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data
-     *         in the bucket is not accessible.
+     * @return The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without
+     *         this key, data in the bucket is not accessible.
      */
 
     public String getKey() {
@@ -113,13 +113,13 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data in the
-     * bucket is not accessible.
+     * The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this
+     * key, data in the bucket is not accessible.
      * </p>
      * 
      * @param key
-     *        The AWS Key Management Service (AWS KMS) key being used to encrypt the S3 object. Without this key, data
-     *        in the bucket is not accessible.
+     *        The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without
+     *        this key, data in the bucket is not accessible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

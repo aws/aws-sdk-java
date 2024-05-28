@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      */
     private String appComponentName;
@@ -42,13 +42,13 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> dependsOnAlarms;
     /**
      * <p>
-     * The description for the test recommendation.
+     * Description for the test recommendation.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The intent of the test recommendation.
+     * Intent of the test recommendation.
      * </p>
      */
     private String intent;
@@ -60,13 +60,13 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
     private java.util.List<RecommendationItem> items;
     /**
      * <p>
-     * The name of the test recommendation.
+     * Name of the test recommendation.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The prerequisite of the test recommendation.
+     * Prerequisite of the test recommendation.
      * </p>
      */
     private String prerequisite;
@@ -78,30 +78,36 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
     private String recommendationId;
     /**
      * <p>
-     * The reference identifier for the test recommendation.
+     * Status of the recommended test.
+     * </p>
+     */
+    private String recommendationStatus;
+    /**
+     * <p>
+     * Reference identifier for the test recommendation.
      * </p>
      */
     private String referenceId;
     /**
      * <p>
-     * The level of risk for this test recommendation.
+     * Level of risk for this test recommendation.
      * </p>
      */
     private String risk;
     /**
      * <p>
-     * The type of test recommendation.
+     * Type of test recommendation.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the application component.
+     *        Name of the Application Component.
      */
 
     public void setAppComponentName(String appComponentName) {
@@ -110,10 +116,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      * 
-     * @return The name of the application component.
+     * @return Name of the Application Component.
      */
 
     public String getAppComponentName() {
@@ -122,11 +128,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the application component.
+     * Name of the Application Component.
      * </p>
      * 
      * @param appComponentName
-     *        The name of the application component.
+     *        Name of the Application Component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +213,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The description for the test recommendation.
+     * Description for the test recommendation.
      * </p>
      * 
      * @param description
-     *        The description for the test recommendation.
+     *        Description for the test recommendation.
      */
 
     public void setDescription(String description) {
@@ -220,10 +226,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The description for the test recommendation.
+     * Description for the test recommendation.
      * </p>
      * 
-     * @return The description for the test recommendation.
+     * @return Description for the test recommendation.
      */
 
     public String getDescription() {
@@ -232,11 +238,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The description for the test recommendation.
+     * Description for the test recommendation.
      * </p>
      * 
      * @param description
-     *        The description for the test recommendation.
+     *        Description for the test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +253,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The intent of the test recommendation.
+     * Intent of the test recommendation.
      * </p>
      * 
      * @param intent
-     *        The intent of the test recommendation.
+     *        Intent of the test recommendation.
      */
 
     public void setIntent(String intent) {
@@ -260,10 +266,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The intent of the test recommendation.
+     * Intent of the test recommendation.
      * </p>
      * 
-     * @return The intent of the test recommendation.
+     * @return Intent of the test recommendation.
      */
 
     public String getIntent() {
@@ -272,11 +278,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The intent of the test recommendation.
+     * Intent of the test recommendation.
      * </p>
      * 
      * @param intent
-     *        The intent of the test recommendation.
+     *        Intent of the test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,11 +363,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the test recommendation.
+     * Name of the test recommendation.
      * </p>
      * 
      * @param name
-     *        The name of the test recommendation.
+     *        Name of the test recommendation.
      */
 
     public void setName(String name) {
@@ -370,10 +376,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the test recommendation.
+     * Name of the test recommendation.
      * </p>
      * 
-     * @return The name of the test recommendation.
+     * @return Name of the test recommendation.
      */
 
     public String getName() {
@@ -382,11 +388,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the test recommendation.
+     * Name of the test recommendation.
      * </p>
      * 
      * @param name
-     *        The name of the test recommendation.
+     *        Name of the test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +403,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The prerequisite of the test recommendation.
+     * Prerequisite of the test recommendation.
      * </p>
      * 
      * @param prerequisite
-     *        The prerequisite of the test recommendation.
+     *        Prerequisite of the test recommendation.
      */
 
     public void setPrerequisite(String prerequisite) {
@@ -410,10 +416,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The prerequisite of the test recommendation.
+     * Prerequisite of the test recommendation.
      * </p>
      * 
-     * @return The prerequisite of the test recommendation.
+     * @return Prerequisite of the test recommendation.
      */
 
     public String getPrerequisite() {
@@ -422,11 +428,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The prerequisite of the test recommendation.
+     * Prerequisite of the test recommendation.
      * </p>
      * 
      * @param prerequisite
-     *        The prerequisite of the test recommendation.
+     *        Prerequisite of the test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,11 +483,70 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The reference identifier for the test recommendation.
+     * Status of the recommended test.
+     * </p>
+     * 
+     * @param recommendationStatus
+     *        Status of the recommended test.
+     * @see RecommendationStatus
+     */
+
+    public void setRecommendationStatus(String recommendationStatus) {
+        this.recommendationStatus = recommendationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the recommended test.
+     * </p>
+     * 
+     * @return Status of the recommended test.
+     * @see RecommendationStatus
+     */
+
+    public String getRecommendationStatus() {
+        return this.recommendationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the recommended test.
+     * </p>
+     * 
+     * @param recommendationStatus
+     *        Status of the recommended test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationStatus
+     */
+
+    public TestRecommendation withRecommendationStatus(String recommendationStatus) {
+        setRecommendationStatus(recommendationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the recommended test.
+     * </p>
+     * 
+     * @param recommendationStatus
+     *        Status of the recommended test.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationStatus
+     */
+
+    public TestRecommendation withRecommendationStatus(RecommendationStatus recommendationStatus) {
+        this.recommendationStatus = recommendationStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reference identifier for the test recommendation.
      * </p>
      * 
      * @param referenceId
-     *        The reference identifier for the test recommendation.
+     *        Reference identifier for the test recommendation.
      */
 
     public void setReferenceId(String referenceId) {
@@ -490,10 +555,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The reference identifier for the test recommendation.
+     * Reference identifier for the test recommendation.
      * </p>
      * 
-     * @return The reference identifier for the test recommendation.
+     * @return Reference identifier for the test recommendation.
      */
 
     public String getReferenceId() {
@@ -502,11 +567,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The reference identifier for the test recommendation.
+     * Reference identifier for the test recommendation.
      * </p>
      * 
      * @param referenceId
-     *        The reference identifier for the test recommendation.
+     *        Reference identifier for the test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,11 +582,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of risk for this test recommendation.
+     * Level of risk for this test recommendation.
      * </p>
      * 
      * @param risk
-     *        The level of risk for this test recommendation.
+     *        Level of risk for this test recommendation.
      * @see TestRisk
      */
 
@@ -531,10 +596,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of risk for this test recommendation.
+     * Level of risk for this test recommendation.
      * </p>
      * 
-     * @return The level of risk for this test recommendation.
+     * @return Level of risk for this test recommendation.
      * @see TestRisk
      */
 
@@ -544,11 +609,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of risk for this test recommendation.
+     * Level of risk for this test recommendation.
      * </p>
      * 
      * @param risk
-     *        The level of risk for this test recommendation.
+     *        Level of risk for this test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestRisk
      */
@@ -560,11 +625,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of risk for this test recommendation.
+     * Level of risk for this test recommendation.
      * </p>
      * 
      * @param risk
-     *        The level of risk for this test recommendation.
+     *        Level of risk for this test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestRisk
      */
@@ -576,11 +641,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of test recommendation.
+     * Type of test recommendation.
      * </p>
      * 
      * @param type
-     *        The type of test recommendation.
+     *        Type of test recommendation.
      * @see TestType
      */
 
@@ -590,10 +655,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of test recommendation.
+     * Type of test recommendation.
      * </p>
      * 
-     * @return The type of test recommendation.
+     * @return Type of test recommendation.
      * @see TestType
      */
 
@@ -603,11 +668,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of test recommendation.
+     * Type of test recommendation.
      * </p>
      * 
      * @param type
-     *        The type of test recommendation.
+     *        Type of test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestType
      */
@@ -619,11 +684,11 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of test recommendation.
+     * Type of test recommendation.
      * </p>
      * 
      * @param type
-     *        The type of test recommendation.
+     *        Type of test recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TestType
      */
@@ -661,6 +726,8 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
             sb.append("Prerequisite: ").append(getPrerequisite()).append(",");
         if (getRecommendationId() != null)
             sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
+        if (getRecommendationStatus() != null)
+            sb.append("RecommendationStatus: ").append(getRecommendationStatus()).append(",");
         if (getReferenceId() != null)
             sb.append("ReferenceId: ").append(getReferenceId()).append(",");
         if (getRisk() != null)
@@ -713,6 +780,10 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
             return false;
+        if (other.getRecommendationStatus() == null ^ this.getRecommendationStatus() == null)
+            return false;
+        if (other.getRecommendationStatus() != null && other.getRecommendationStatus().equals(this.getRecommendationStatus()) == false)
+            return false;
         if (other.getReferenceId() == null ^ this.getReferenceId() == null)
             return false;
         if (other.getReferenceId() != null && other.getReferenceId().equals(this.getReferenceId()) == false)
@@ -741,6 +812,7 @@ public class TestRecommendation implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPrerequisite() == null) ? 0 : getPrerequisite().hashCode());
         hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
+        hashCode = prime * hashCode + ((getRecommendationStatus() == null) ? 0 : getRecommendationStatus().hashCode());
         hashCode = prime * hashCode + ((getReferenceId() == null) ? 0 : getReferenceId().hashCode());
         hashCode = prime * hashCode + ((getRisk() == null) ? 0 : getRisk().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());

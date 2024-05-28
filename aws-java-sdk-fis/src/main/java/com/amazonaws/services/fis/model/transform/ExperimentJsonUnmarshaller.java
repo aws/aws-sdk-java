@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class ExperimentJsonUnmarshaller implements Unmarshaller<Experiment, Json
                     context.nextToken();
                     experiment.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    experiment.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("experimentTemplateId", targetDepth)) {
                     context.nextToken();
                     experiment.setExperimentTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -100,6 +104,14 @@ public class ExperimentJsonUnmarshaller implements Unmarshaller<Experiment, Json
                 if (context.testExpression("logConfiguration", targetDepth)) {
                     context.nextToken();
                     experiment.setLogConfiguration(ExperimentLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("experimentOptions", targetDepth)) {
+                    context.nextToken();
+                    experiment.setExperimentOptions(ExperimentOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("targetAccountConfigurationsCount", targetDepth)) {
+                    context.nextToken();
+                    experiment.setTargetAccountConfigurationsCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,12 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
     private String modelDataUrl;
     /**
      * <p>
+     * Specifies the location of ML model data to deploy during endpoint creation.
+     * </p>
+     */
+    private ModelDataSource modelDataSource;
+    /**
+     * <p>
      * The Amazon Web Services Marketplace product ID of the model package.
      * </p>
      */
@@ -103,6 +109,12 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * </p>
      */
     private String nearestModelName;
+    /**
+     * <p>
+     * The additional data source that is used during inference in the Docker container for your model package.
+     * </p>
+     */
+    private AdditionalS3DataSource additionalS3DataSource;
 
     /**
      * <p>
@@ -330,6 +342,46 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     public ModelPackageContainerDefinition withModelDataUrl(String modelDataUrl) {
         setModelDataUrl(modelDataUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the location of ML model data to deploy during endpoint creation.
+     * </p>
+     * 
+     * @param modelDataSource
+     *        Specifies the location of ML model data to deploy during endpoint creation.
+     */
+
+    public void setModelDataSource(ModelDataSource modelDataSource) {
+        this.modelDataSource = modelDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies the location of ML model data to deploy during endpoint creation.
+     * </p>
+     * 
+     * @return Specifies the location of ML model data to deploy during endpoint creation.
+     */
+
+    public ModelDataSource getModelDataSource() {
+        return this.modelDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies the location of ML model data to deploy during endpoint creation.
+     * </p>
+     * 
+     * @param modelDataSource
+     *        Specifies the location of ML model data to deploy during endpoint creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelPackageContainerDefinition withModelDataSource(ModelDataSource modelDataSource) {
+        setModelDataSource(modelDataSource);
         return this;
     }
 
@@ -620,6 +672,46 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The additional data source that is used during inference in the Docker container for your model package.
+     * </p>
+     * 
+     * @param additionalS3DataSource
+     *        The additional data source that is used during inference in the Docker container for your model package.
+     */
+
+    public void setAdditionalS3DataSource(AdditionalS3DataSource additionalS3DataSource) {
+        this.additionalS3DataSource = additionalS3DataSource;
+    }
+
+    /**
+     * <p>
+     * The additional data source that is used during inference in the Docker container for your model package.
+     * </p>
+     * 
+     * @return The additional data source that is used during inference in the Docker container for your model package.
+     */
+
+    public AdditionalS3DataSource getAdditionalS3DataSource() {
+        return this.additionalS3DataSource;
+    }
+
+    /**
+     * <p>
+     * The additional data source that is used during inference in the Docker container for your model package.
+     * </p>
+     * 
+     * @param additionalS3DataSource
+     *        The additional data source that is used during inference in the Docker container for your model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelPackageContainerDefinition withAdditionalS3DataSource(AdditionalS3DataSource additionalS3DataSource) {
+        setAdditionalS3DataSource(additionalS3DataSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -639,6 +731,8 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
             sb.append("ImageDigest: ").append(getImageDigest()).append(",");
         if (getModelDataUrl() != null)
             sb.append("ModelDataUrl: ").append(getModelDataUrl()).append(",");
+        if (getModelDataSource() != null)
+            sb.append("ModelDataSource: ").append(getModelDataSource()).append(",");
         if (getProductId() != null)
             sb.append("ProductId: ").append(getProductId()).append(",");
         if (getEnvironment() != null)
@@ -650,7 +744,9 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
         if (getFrameworkVersion() != null)
             sb.append("FrameworkVersion: ").append(getFrameworkVersion()).append(",");
         if (getNearestModelName() != null)
-            sb.append("NearestModelName: ").append(getNearestModelName());
+            sb.append("NearestModelName: ").append(getNearestModelName()).append(",");
+        if (getAdditionalS3DataSource() != null)
+            sb.append("AdditionalS3DataSource: ").append(getAdditionalS3DataSource());
         sb.append("}");
         return sb.toString();
     }
@@ -681,6 +777,10 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
             return false;
         if (other.getModelDataUrl() != null && other.getModelDataUrl().equals(this.getModelDataUrl()) == false)
             return false;
+        if (other.getModelDataSource() == null ^ this.getModelDataSource() == null)
+            return false;
+        if (other.getModelDataSource() != null && other.getModelDataSource().equals(this.getModelDataSource()) == false)
+            return false;
         if (other.getProductId() == null ^ this.getProductId() == null)
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
@@ -705,6 +805,10 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
             return false;
         if (other.getNearestModelName() != null && other.getNearestModelName().equals(this.getNearestModelName()) == false)
             return false;
+        if (other.getAdditionalS3DataSource() == null ^ this.getAdditionalS3DataSource() == null)
+            return false;
+        if (other.getAdditionalS3DataSource() != null && other.getAdditionalS3DataSource().equals(this.getAdditionalS3DataSource()) == false)
+            return false;
         return true;
     }
 
@@ -717,12 +821,14 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getImageDigest() == null) ? 0 : getImageDigest().hashCode());
         hashCode = prime * hashCode + ((getModelDataUrl() == null) ? 0 : getModelDataUrl().hashCode());
+        hashCode = prime * hashCode + ((getModelDataSource() == null) ? 0 : getModelDataSource().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getModelInput() == null) ? 0 : getModelInput().hashCode());
         hashCode = prime * hashCode + ((getFramework() == null) ? 0 : getFramework().hashCode());
         hashCode = prime * hashCode + ((getFrameworkVersion() == null) ? 0 : getFrameworkVersion().hashCode());
         hashCode = prime * hashCode + ((getNearestModelName() == null) ? 0 : getNearestModelName().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalS3DataSource() == null) ? 0 : getAdditionalS3DataSource().hashCode());
         return hashCode;
     }
 

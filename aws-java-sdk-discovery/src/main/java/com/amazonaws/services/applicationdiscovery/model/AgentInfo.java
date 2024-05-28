@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about agents or connectors associated with the user’s Amazon Web Services account. Information includes
- * agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where
- * the agent or connector resides, and agent version for each agent.
+ * Information about agents associated with the user’s Amazon Web Services account. Information includes agent IDs, IP
+ * addresses, media access control (MAC) addresses, agent or collector status, hostname where the agent resides, and
+ * agent version for each agent.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,19 +29,19 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector ID.
+     * The agent or collector ID.
      * </p>
      */
     private String agentId;
     /**
      * <p>
-     * The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     * The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      * </p>
      */
     private String hostName;
     /**
      * <p>
-     * Network details about the host where the agent or connector resides.
+     * Network details about the host where the agent or collector resides.
      * </p>
      */
     private java.util.List<AgentNetworkInfo> agentNetworkInfoList;
@@ -53,25 +53,25 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
     private String connectorId;
     /**
      * <p>
-     * The agent or connector version.
+     * The agent or collector version.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * The health of the agent or connector.
+     * The health of the agent.
      * </p>
      */
     private String health;
     /**
      * <p>
-     * Time since agent or connector health was reported.
+     * Time since agent health was reported.
      * </p>
      */
     private String lastHealthPingTime;
     /**
      * <p>
-     * Status of the collection process for an agent or connector.
+     * Status of the collection process for an agent.
      * </p>
      */
     private String collectionStatus;
@@ -90,11 +90,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector ID.
+     * The agent or collector ID.
      * </p>
      * 
      * @param agentId
-     *        The agent or connector ID.
+     *        The agent or collector ID.
      */
 
     public void setAgentId(String agentId) {
@@ -103,10 +103,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector ID.
+     * The agent or collector ID.
      * </p>
      * 
-     * @return The agent or connector ID.
+     * @return The agent or collector ID.
      */
 
     public String getAgentId() {
@@ -115,11 +115,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector ID.
+     * The agent or collector ID.
      * </p>
      * 
      * @param agentId
-     *        The agent or connector ID.
+     *        The agent or collector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     * The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      * </p>
      * 
      * @param hostName
-     *        The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     *        The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      */
 
     public void setHostName(String hostName) {
@@ -143,10 +143,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     * The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      * </p>
      * 
-     * @return The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     * @return The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      */
 
     public String getHostName() {
@@ -155,11 +155,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     * The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      * </p>
      * 
      * @param hostName
-     *        The name of the host where the agent or connector resides. The host can be a server or virtual machine.
+     *        The name of the host where the agent or collector resides. The host can be a server or virtual machine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,10 +170,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network details about the host where the agent or connector resides.
+     * Network details about the host where the agent or collector resides.
      * </p>
      * 
-     * @return Network details about the host where the agent or connector resides.
+     * @return Network details about the host where the agent or collector resides.
      */
 
     public java.util.List<AgentNetworkInfo> getAgentNetworkInfoList() {
@@ -182,11 +182,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network details about the host where the agent or connector resides.
+     * Network details about the host where the agent or collector resides.
      * </p>
      * 
      * @param agentNetworkInfoList
-     *        Network details about the host where the agent or connector resides.
+     *        Network details about the host where the agent or collector resides.
      */
 
     public void setAgentNetworkInfoList(java.util.Collection<AgentNetworkInfo> agentNetworkInfoList) {
@@ -200,7 +200,7 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network details about the host where the agent or connector resides.
+     * Network details about the host where the agent or collector resides.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -209,7 +209,7 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param agentNetworkInfoList
-     *        Network details about the host where the agent or connector resides.
+     *        Network details about the host where the agent or collector resides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +225,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network details about the host where the agent or connector resides.
+     * Network details about the host where the agent or collector resides.
      * </p>
      * 
      * @param agentNetworkInfoList
-     *        Network details about the host where the agent or connector resides.
+     *        Network details about the host where the agent or collector resides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +280,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector version.
+     * The agent or collector version.
      * </p>
      * 
      * @param version
-     *        The agent or connector version.
+     *        The agent or collector version.
      */
 
     public void setVersion(String version) {
@@ -293,10 +293,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector version.
+     * The agent or collector version.
      * </p>
      * 
-     * @return The agent or connector version.
+     * @return The agent or collector version.
      */
 
     public String getVersion() {
@@ -305,11 +305,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The agent or connector version.
+     * The agent or collector version.
      * </p>
      * 
      * @param version
-     *        The agent or connector version.
+     *        The agent or collector version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +320,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health of the agent or connector.
+     * The health of the agent.
      * </p>
      * 
      * @param health
-     *        The health of the agent or connector.
+     *        The health of the agent.
      * @see AgentStatus
      */
 
@@ -334,10 +334,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health of the agent or connector.
+     * The health of the agent.
      * </p>
      * 
-     * @return The health of the agent or connector.
+     * @return The health of the agent.
      * @see AgentStatus
      */
 
@@ -347,11 +347,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health of the agent or connector.
+     * The health of the agent.
      * </p>
      * 
      * @param health
-     *        The health of the agent or connector.
+     *        The health of the agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentStatus
      */
@@ -363,11 +363,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health of the agent or connector.
+     * The health of the agent.
      * </p>
      * 
      * @param health
-     *        The health of the agent or connector.
+     *        The health of the agent.
      * @see AgentStatus
      */
 
@@ -377,11 +377,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The health of the agent or connector.
+     * The health of the agent.
      * </p>
      * 
      * @param health
-     *        The health of the agent or connector.
+     *        The health of the agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentStatus
      */
@@ -393,11 +393,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time since agent or connector health was reported.
+     * Time since agent health was reported.
      * </p>
      * 
      * @param lastHealthPingTime
-     *        Time since agent or connector health was reported.
+     *        Time since agent health was reported.
      */
 
     public void setLastHealthPingTime(String lastHealthPingTime) {
@@ -406,10 +406,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time since agent or connector health was reported.
+     * Time since agent health was reported.
      * </p>
      * 
-     * @return Time since agent or connector health was reported.
+     * @return Time since agent health was reported.
      */
 
     public String getLastHealthPingTime() {
@@ -418,11 +418,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time since agent or connector health was reported.
+     * Time since agent health was reported.
      * </p>
      * 
      * @param lastHealthPingTime
-     *        Time since agent or connector health was reported.
+     *        Time since agent health was reported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,11 +433,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the collection process for an agent or connector.
+     * Status of the collection process for an agent.
      * </p>
      * 
      * @param collectionStatus
-     *        Status of the collection process for an agent or connector.
+     *        Status of the collection process for an agent.
      */
 
     public void setCollectionStatus(String collectionStatus) {
@@ -446,10 +446,10 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the collection process for an agent or connector.
+     * Status of the collection process for an agent.
      * </p>
      * 
-     * @return Status of the collection process for an agent or connector.
+     * @return Status of the collection process for an agent.
      */
 
     public String getCollectionStatus() {
@@ -458,11 +458,11 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the collection process for an agent or connector.
+     * Status of the collection process for an agent.
      * </p>
      * 
      * @param collectionStatus
-     *        Status of the collection process for an agent or connector.
+     *        Status of the collection process for an agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,7 +568,7 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getHostName() != null)
             sb.append("HostName: ").append(getHostName()).append(",");
         if (getAgentNetworkInfoList() != null)
-            sb.append("AgentNetworkInfoList: ").append(getAgentNetworkInfoList()).append(",");
+            sb.append("AgentNetworkInfoList: ").append("***Sensitive Data Redacted***").append(",");
         if (getConnectorId() != null)
             sb.append("ConnectorId: ").append(getConnectorId()).append(",");
         if (getVersion() != null)

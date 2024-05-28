@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Summary information about a bot returned by the <a
- * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a> operation.
+ * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html">ListBots</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotSummary" target="_top">AWS API
@@ -32,7 +32,7 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.
      * </p>
      */
     private String botId;
@@ -66,16 +66,23 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * The type of the bot.
+     * </p>
+     */
+    private String botType;
 
     /**
      * <p>
      * The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.
      * </p>
      * 
      * @param botId
      *        The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the
-     *        <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     *        <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a>
+     *        operation.
      */
 
     public void setBotId(String botId) {
@@ -85,11 +92,12 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.
      * </p>
      * 
      * @return The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the
-     *         <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     *         <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a>
+     *         operation.
      */
 
     public String getBotId() {
@@ -99,12 +107,13 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.
      * </p>
      * 
      * @param botId
      *        The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the
-     *        <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.
+     *        <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a>
+     *        operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,6 +342,65 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of the bot.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot.
+     * @see BotType
+     */
+
+    public void setBotType(String botType) {
+        this.botType = botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot.
+     * </p>
+     * 
+     * @return The type of the bot.
+     * @see BotType
+     */
+
+    public String getBotType() {
+        return this.botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public BotSummary withBotType(String botType) {
+        setBotType(botType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the bot.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public BotSummary withBotType(BotType botType) {
+        this.botType = botType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +423,9 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
         if (getLatestBotVersion() != null)
             sb.append("LatestBotVersion: ").append(getLatestBotVersion()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getBotType() != null)
+            sb.append("BotType: ").append(getBotType());
         sb.append("}");
         return sb.toString();
     }
@@ -394,6 +464,10 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getBotType() == null ^ this.getBotType() == null)
+            return false;
+        if (other.getBotType() != null && other.getBotType().equals(this.getBotType()) == false)
+            return false;
         return true;
     }
 
@@ -408,6 +482,7 @@ public class BotSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBotStatus() == null) ? 0 : getBotStatus().hashCode());
         hashCode = prime * hashCode + ((getLatestBotVersion() == null) ? 0 : getLatestBotVersion().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getBotType() == null) ? 0 : getBotType().hashCode());
         return hashCode;
     }
 

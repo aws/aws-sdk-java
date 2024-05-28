@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,25 +36,19 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
     private Boolean crawlAttachments;
     /**
      * <p>
-     * A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to include knowledge article attachments. Attachments that match
+     * the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't
+     * included in the index.
      * </p>
      */
     private java.util.List<String> includeAttachmentFilePatterns;
     /**
      * <p>
-     * A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that
+     * match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If
+     * an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item
+     * isn't included in the index.
      * </p>
      */
     private java.util.List<String> excludeAttachmentFilePatterns;
@@ -146,21 +140,16 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to include knowledge article attachments. Attachments that match
+     * the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't
+     * included in the index.
      * </p>
      * 
-     * @return A list of regular expression patterns to include certain attachments of knowledge articles in your
-     *         ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns
-     *         are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *         pattern takes precedence and the item isn't included in the index.</p>
-     *         <p>
-     *         The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * @return A list of regular expression patterns applied to include knowledge article attachments. Attachments that
+     *         match the patterns are included in the index. Items that don't match the patterns are excluded from the
+     *         index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     *         and the item isn't included in the index.
      */
 
     public java.util.List<String> getIncludeAttachmentFilePatterns() {
@@ -169,22 +158,17 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to include knowledge article attachments. Attachments that match
+     * the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't
+     * included in the index.
      * </p>
      * 
      * @param includeAttachmentFilePatterns
-     *        A list of regular expression patterns to include certain attachments of knowledge articles in your
-     *        ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns
-     *        are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *        pattern takes precedence and the item isn't included in the index.</p>
-     *        <p>
-     *        The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     *        A list of regular expression patterns applied to include knowledge article attachments. Attachments that
+     *        match the patterns are included in the index. Items that don't match the patterns are excluded from the
+     *        index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     *        and the item isn't included in the index.
      */
 
     public void setIncludeAttachmentFilePatterns(java.util.Collection<String> includeAttachmentFilePatterns) {
@@ -198,13 +182,10 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to include knowledge article attachments. Attachments that match
+     * the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't
+     * included in the index.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -213,12 +194,10 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
      * </p>
      * 
      * @param includeAttachmentFilePatterns
-     *        A list of regular expression patterns to include certain attachments of knowledge articles in your
-     *        ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns
-     *        are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *        pattern takes precedence and the item isn't included in the index.</p>
-     *        <p>
-     *        The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     *        A list of regular expression patterns applied to include knowledge article attachments. Attachments that
+     *        match the patterns are included in the index. Items that don't match the patterns are excluded from the
+     *        index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     *        and the item isn't included in the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,22 +213,17 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to include certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to include knowledge article attachments. Attachments that match
+     * the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an
+     * item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't
+     * included in the index.
      * </p>
      * 
      * @param includeAttachmentFilePatterns
-     *        A list of regular expression patterns to include certain attachments of knowledge articles in your
-     *        ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns
-     *        are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *        pattern takes precedence and the item isn't included in the index.</p>
-     *        <p>
-     *        The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     *        A list of regular expression patterns applied to include knowledge article attachments. Attachments that
+     *        match the patterns are included in the index. Items that don't match the patterns are excluded from the
+     *        index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence
+     *        and the item isn't included in the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,21 +234,16 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that
+     * match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If
+     * an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item
+     * isn't included in the index.
      * </p>
      * 
-     * @return A list of regular expression patterns to exclude certain attachments of knowledge articles in your
-     *         ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns
-     *         are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *         pattern takes precedence and the item isn't included in the index.</p>
-     *         <p>
-     *         The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * @return A list of regular expression patterns applied to exclude certain knowledge article attachments.
+     *         Attachments that match the patterns are excluded from the index. Items that don't match the patterns are
+     *         included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern
+     *         takes precedence and the item isn't included in the index.
      */
 
     public java.util.List<String> getExcludeAttachmentFilePatterns() {
@@ -283,22 +252,17 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that
+     * match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If
+     * an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item
+     * isn't included in the index.
      * </p>
      * 
      * @param excludeAttachmentFilePatterns
-     *        A list of regular expression patterns to exclude certain attachments of knowledge articles in your
-     *        ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns
-     *        are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *        pattern takes precedence and the item isn't included in the index.</p>
-     *        <p>
-     *        The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     *        A list of regular expression patterns applied to exclude certain knowledge article attachments.
+     *        Attachments that match the patterns are excluded from the index. Items that don't match the patterns are
+     *        included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern
+     *        takes precedence and the item isn't included in the index.
      */
 
     public void setExcludeAttachmentFilePatterns(java.util.Collection<String> excludeAttachmentFilePatterns) {
@@ -312,13 +276,10 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that
+     * match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If
+     * an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item
+     * isn't included in the index.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -327,12 +288,10 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
      * </p>
      * 
      * @param excludeAttachmentFilePatterns
-     *        A list of regular expression patterns to exclude certain attachments of knowledge articles in your
-     *        ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns
-     *        are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *        pattern takes precedence and the item isn't included in the index.</p>
-     *        <p>
-     *        The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     *        A list of regular expression patterns applied to exclude certain knowledge article attachments.
+     *        Attachments that match the patterns are excluded from the index. Items that don't match the patterns are
+     *        included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern
+     *        takes precedence and the item isn't included in the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,22 +307,17 @@ public class ServiceNowKnowledgeArticleConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of regular expression patterns to exclude certain attachments of knowledge articles in your ServiceNow.
-     * Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the
-     * index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the
-     * item isn't included in the index.
-     * </p>
-     * <p>
-     * The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     * A list of regular expression patterns applied to exclude certain knowledge article attachments. Attachments that
+     * match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If
+     * an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item
+     * isn't included in the index.
      * </p>
      * 
      * @param excludeAttachmentFilePatterns
-     *        A list of regular expression patterns to exclude certain attachments of knowledge articles in your
-     *        ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns
-     *        are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion
-     *        pattern takes precedence and the item isn't included in the index.</p>
-     *        <p>
-     *        The regex is applied to the field specified in the <code>PatternTargetField</code>.
+     *        A list of regular expression patterns applied to exclude certain knowledge article attachments.
+     *        Attachments that match the patterns are excluded from the index. Items that don't match the patterns are
+     *        included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern
+     *        takes precedence and the item isn't included in the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

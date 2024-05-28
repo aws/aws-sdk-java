@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration of a code signing operation.
+ * The configuration of a signing operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningConfiguration" target="_top">AWS API
@@ -30,24 +30,24 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The encryption algorithm options that are available for a code signing job.
+     * The encryption algorithm options that are available for a code-signing job.
      * </p>
      */
     private EncryptionAlgorithmOptions encryptionAlgorithmOptions;
     /**
      * <p>
-     * The hash algorithm options that are available for a code signing job.
+     * The hash algorithm options that are available for a code-signing job.
      * </p>
      */
     private HashAlgorithmOptions hashAlgorithmOptions;
 
     /**
      * <p>
-     * The encryption algorithm options that are available for a code signing job.
+     * The encryption algorithm options that are available for a code-signing job.
      * </p>
      * 
      * @param encryptionAlgorithmOptions
-     *        The encryption algorithm options that are available for a code signing job.
+     *        The encryption algorithm options that are available for a code-signing job.
      */
 
     public void setEncryptionAlgorithmOptions(EncryptionAlgorithmOptions encryptionAlgorithmOptions) {
@@ -56,10 +56,10 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The encryption algorithm options that are available for a code signing job.
+     * The encryption algorithm options that are available for a code-signing job.
      * </p>
      * 
-     * @return The encryption algorithm options that are available for a code signing job.
+     * @return The encryption algorithm options that are available for a code-signing job.
      */
 
     public EncryptionAlgorithmOptions getEncryptionAlgorithmOptions() {
@@ -68,11 +68,11 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The encryption algorithm options that are available for a code signing job.
+     * The encryption algorithm options that are available for a code-signing job.
      * </p>
      * 
      * @param encryptionAlgorithmOptions
-     *        The encryption algorithm options that are available for a code signing job.
+     *        The encryption algorithm options that are available for a code-signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The hash algorithm options that are available for a code signing job.
+     * The hash algorithm options that are available for a code-signing job.
      * </p>
      * 
      * @param hashAlgorithmOptions
-     *        The hash algorithm options that are available for a code signing job.
+     *        The hash algorithm options that are available for a code-signing job.
      */
 
     public void setHashAlgorithmOptions(HashAlgorithmOptions hashAlgorithmOptions) {
@@ -96,10 +96,10 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The hash algorithm options that are available for a code signing job.
+     * The hash algorithm options that are available for a code-signing job.
      * </p>
      * 
-     * @return The hash algorithm options that are available for a code signing job.
+     * @return The hash algorithm options that are available for a code-signing job.
      */
 
     public HashAlgorithmOptions getHashAlgorithmOptions() {
@@ -108,11 +108,11 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The hash algorithm options that are available for a code signing job.
+     * The hash algorithm options that are available for a code-signing job.
      * </p>
      * 
      * @param hashAlgorithmOptions
-     *        The hash algorithm options that are available for a code signing job.
+     *        The hash algorithm options that are available for a code-signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

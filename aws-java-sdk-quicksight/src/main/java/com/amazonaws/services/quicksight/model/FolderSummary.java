@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,12 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * The sharing scope of the folder.
+     * </p>
+     */
+    private String sharingModel;
 
     /**
      * <p>
@@ -325,6 +331,65 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The sharing scope of the folder.
+     * </p>
+     * 
+     * @param sharingModel
+     *        The sharing scope of the folder.
+     * @see SharingModel
+     */
+
+    public void setSharingModel(String sharingModel) {
+        this.sharingModel = sharingModel;
+    }
+
+    /**
+     * <p>
+     * The sharing scope of the folder.
+     * </p>
+     * 
+     * @return The sharing scope of the folder.
+     * @see SharingModel
+     */
+
+    public String getSharingModel() {
+        return this.sharingModel;
+    }
+
+    /**
+     * <p>
+     * The sharing scope of the folder.
+     * </p>
+     * 
+     * @param sharingModel
+     *        The sharing scope of the folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SharingModel
+     */
+
+    public FolderSummary withSharingModel(String sharingModel) {
+        setSharingModel(sharingModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sharing scope of the folder.
+     * </p>
+     * 
+     * @param sharingModel
+     *        The sharing scope of the folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SharingModel
+     */
+
+    public FolderSummary withSharingModel(SharingModel sharingModel) {
+        this.sharingModel = sharingModel.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,7 +412,9 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getSharingModel() != null)
+            sb.append("SharingModel: ").append(getSharingModel());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +453,10 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getSharingModel() == null ^ this.getSharingModel() == null)
+            return false;
+        if (other.getSharingModel() != null && other.getSharingModel().equals(this.getSharingModel()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +471,7 @@ public class FolderSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFolderType() == null) ? 0 : getFolderType().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getSharingModel() == null) ? 0 : getSharingModel().hashCode());
         return hashCode;
     }
 

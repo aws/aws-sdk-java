@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,34 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String awsAccountId;
     /**
      * <p>
+     * Details about the code vulnerability identified in a Lambda function used to filter findings.
+     * </p>
+     */
+    private CodeVulnerabilityDetails codeVulnerabilityDetails;
+    /**
+     * <p>
      * The description of the finding.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The finding's EPSS score.
+     * </p>
+     */
+    private EpssDetails epss;
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     */
+    private String exploitAvailable;
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     */
+    private ExploitabilityDetails exploitabilityDetails;
     /**
      * <p>
      * The Amazon Resource Number (ARN) of the finding.
@@ -74,7 +98,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private InspectorScoreDetails inspectorScoreDetails;
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      */
     private java.util.Date lastObservedAt;
@@ -98,13 +123,19 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private Remediation remediation;
     /**
      * <p>
-     * Contains information on the resources involved in a finding.
+     * Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid
+     * values for <code>type</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      */
     private java.util.List<Resource> resources;
     /**
      * <p>
-     * The severity of the finding.
+     * The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings
+     * that the vendor has not assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for
+     * findings</a> in the Amazon Inspector user guide.
      * </p>
      */
     private String severity;
@@ -122,7 +153,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String title;
     /**
      * <p>
-     * The type of the finding.
+     * The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      */
     private String type;
@@ -175,6 +209,46 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Details about the code vulnerability identified in a Lambda function used to filter findings.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetails
+     *        Details about the code vulnerability identified in a Lambda function used to filter findings.
+     */
+
+    public void setCodeVulnerabilityDetails(CodeVulnerabilityDetails codeVulnerabilityDetails) {
+        this.codeVulnerabilityDetails = codeVulnerabilityDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the code vulnerability identified in a Lambda function used to filter findings.
+     * </p>
+     * 
+     * @return Details about the code vulnerability identified in a Lambda function used to filter findings.
+     */
+
+    public CodeVulnerabilityDetails getCodeVulnerabilityDetails() {
+        return this.codeVulnerabilityDetails;
+    }
+
+    /**
+     * <p>
+     * Details about the code vulnerability identified in a Lambda function used to filter findings.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetails
+     *        Details about the code vulnerability identified in a Lambda function used to filter findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withCodeVulnerabilityDetails(CodeVulnerabilityDetails codeVulnerabilityDetails) {
+        setCodeVulnerabilityDetails(codeVulnerabilityDetails);
+        return this;
+    }
+
+    /**
+     * <p>
      * The description of the finding.
      * </p>
      * 
@@ -210,6 +284,145 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     public Finding withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding's EPSS score.
+     * </p>
+     * 
+     * @param epss
+     *        The finding's EPSS score.
+     */
+
+    public void setEpss(EpssDetails epss) {
+        this.epss = epss;
+    }
+
+    /**
+     * <p>
+     * The finding's EPSS score.
+     * </p>
+     * 
+     * @return The finding's EPSS score.
+     */
+
+    public EpssDetails getEpss() {
+        return this.epss;
+    }
+
+    /**
+     * <p>
+     * The finding's EPSS score.
+     * </p>
+     * 
+     * @param epss
+     *        The finding's EPSS score.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withEpss(EpssDetails epss) {
+        setEpss(epss);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        If a finding discovered in your environment has an exploit available.
+     * @see ExploitAvailable
+     */
+
+    public void setExploitAvailable(String exploitAvailable) {
+        this.exploitAvailable = exploitAvailable;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @return If a finding discovered in your environment has an exploit available.
+     * @see ExploitAvailable
+     */
+
+    public String getExploitAvailable() {
+        return this.exploitAvailable;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        If a finding discovered in your environment has an exploit available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExploitAvailable
+     */
+
+    public Finding withExploitAvailable(String exploitAvailable) {
+        setExploitAvailable(exploitAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        If a finding discovered in your environment has an exploit available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExploitAvailable
+     */
+
+    public Finding withExploitAvailable(ExploitAvailable exploitAvailable) {
+        this.exploitAvailable = exploitAvailable.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     * 
+     * @param exploitabilityDetails
+     *        The details of an exploit available for a finding discovered in your environment.
+     */
+
+    public void setExploitabilityDetails(ExploitabilityDetails exploitabilityDetails) {
+        this.exploitabilityDetails = exploitabilityDetails;
+    }
+
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     * 
+     * @return The details of an exploit available for a finding discovered in your environment.
+     */
+
+    public ExploitabilityDetails getExploitabilityDetails() {
+        return this.exploitabilityDetails;
+    }
+
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     * 
+     * @param exploitabilityDetails
+     *        The details of an exploit available for a finding discovered in your environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withExploitabilityDetails(ExploitabilityDetails exploitabilityDetails) {
+        setExploitabilityDetails(exploitabilityDetails);
         return this;
     }
 
@@ -450,11 +663,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      * 
      * @param lastObservedAt
-     *        The date and time that the finding was last observed.
+     *        The date and time the finding was last observed. This timestamp for this field remains unchanged until a
+     *        finding is updated.
      */
 
     public void setLastObservedAt(java.util.Date lastObservedAt) {
@@ -463,10 +678,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      * 
-     * @return The date and time that the finding was last observed.
+     * @return The date and time the finding was last observed. This timestamp for this field remains unchanged until a
+     *         finding is updated.
      */
 
     public java.util.Date getLastObservedAt() {
@@ -475,11 +692,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      * 
      * @param lastObservedAt
-     *        The date and time that the finding was last observed.
+     *        The date and time the finding was last observed. This timestamp for this field remains unchanged until a
+     *        finding is updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,10 +829,16 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information on the resources involved in a finding.
+     * Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid
+     * values for <code>type</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
-     * @return Contains information on the resources involved in a finding.
+     * @return Contains information on the resources involved in a finding. The <code>resource</code> value determines
+     *         the valid values for <code>type</code> in your request. For more information, see <a
+     *         href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *         Amazon Inspector user guide.
      */
 
     public java.util.List<Resource> getResources() {
@@ -622,11 +847,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information on the resources involved in a finding.
+     * Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid
+     * values for <code>type</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
      * @param resources
-     *        Contains information on the resources involved in a finding.
+     *        Contains information on the resources involved in a finding. The <code>resource</code> value determines
+     *        the valid values for <code>type</code> in your request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *        Amazon Inspector user guide.
      */
 
     public void setResources(java.util.Collection<Resource> resources) {
@@ -640,7 +871,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information on the resources involved in a finding.
+     * Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid
+     * values for <code>type</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -649,7 +883,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resources
-     *        Contains information on the resources involved in a finding.
+     *        Contains information on the resources involved in a finding. The <code>resource</code> value determines
+     *        the valid values for <code>type</code> in your request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *        Amazon Inspector user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,11 +902,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains information on the resources involved in a finding.
+     * Contains information on the resources involved in a finding. The <code>resource</code> value determines the valid
+     * values for <code>type</code> in your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
      * @param resources
-     *        Contains information on the resources involved in a finding.
+     *        Contains information on the resources involved in a finding. The <code>resource</code> value determines
+     *        the valid values for <code>type</code> in your request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *        Amazon Inspector user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -680,11 +923,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings
+     * that the vendor has not assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for
+     * findings</a> in the Amazon Inspector user guide.
      * </p>
      * 
      * @param severity
-     *        The severity of the finding.
+     *        The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type
+     *        findings that the vendor has not assigned a severity yet. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     *        levels for findings</a> in the Amazon Inspector user guide.
      * @see Severity
      */
 
@@ -694,10 +943,16 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings
+     * that the vendor has not assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for
+     * findings</a> in the Amazon Inspector user guide.
      * </p>
      * 
-     * @return The severity of the finding.
+     * @return The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type
+     *         findings that the vendor has not assigned a severity yet. For more information, see <a
+     *         href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     *         levels for findings</a> in the Amazon Inspector user guide.
      * @see Severity
      */
 
@@ -707,11 +962,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings
+     * that the vendor has not assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for
+     * findings</a> in the Amazon Inspector user guide.
      * </p>
      * 
      * @param severity
-     *        The severity of the finding.
+     *        The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type
+     *        findings that the vendor has not assigned a severity yet. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     *        levels for findings</a> in the Amazon Inspector user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Severity
      */
@@ -723,11 +984,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the finding.
+     * The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type findings
+     * that the vendor has not assigned a severity yet. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity levels for
+     * findings</a> in the Amazon Inspector user guide.
      * </p>
      * 
      * @param severity
-     *        The severity of the finding.
+     *        The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code> type
+     *        findings that the vendor has not assigned a severity yet. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+     *        levels for findings</a> in the Amazon Inspector user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Severity
      */
@@ -838,11 +1105,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
      * @param type
-     *        The type of the finding.
+     *        The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code>
+     *        in your request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *        Amazon Inspector user guide.
      * @see FindingType
      */
 
@@ -852,10 +1125,16 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
-     * @return The type of the finding.
+     * @return The type of the finding. The <code>type</code> value determines the valid values for
+     *         <code>resource</code> in your request. For more information, see <a
+     *         href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *         Amazon Inspector user guide.
      * @see FindingType
      */
 
@@ -865,11 +1144,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
      * @param type
-     *        The type of the finding.
+     *        The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code>
+     *        in your request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *        Amazon Inspector user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingType
      */
@@ -881,11 +1166,17 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code> in
+     * your request. For more information, see <a
+     * href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the Amazon
+     * Inspector user guide.
      * </p>
      * 
      * @param type
-     *        The type of the finding.
+     *        The type of the finding. The <code>type</code> value determines the valid values for <code>resource</code>
+     *        in your request. For more information, see <a
+     *        href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding types</a> in the
+     *        Amazon Inspector user guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingType
      */
@@ -949,8 +1240,16 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAwsAccountId() != null)
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
+        if (getCodeVulnerabilityDetails() != null)
+            sb.append("CodeVulnerabilityDetails: ").append(getCodeVulnerabilityDetails()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getEpss() != null)
+            sb.append("Epss: ").append(getEpss()).append(",");
+        if (getExploitAvailable() != null)
+            sb.append("ExploitAvailable: ").append(getExploitAvailable()).append(",");
+        if (getExploitabilityDetails() != null)
+            sb.append("ExploitabilityDetails: ").append(getExploitabilityDetails()).append(",");
         if (getFindingArn() != null)
             sb.append("FindingArn: ").append(getFindingArn()).append(",");
         if (getFirstObservedAt() != null)
@@ -999,9 +1298,25 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsAccountId() != null && other.getAwsAccountId().equals(this.getAwsAccountId()) == false)
             return false;
+        if (other.getCodeVulnerabilityDetails() == null ^ this.getCodeVulnerabilityDetails() == null)
+            return false;
+        if (other.getCodeVulnerabilityDetails() != null && other.getCodeVulnerabilityDetails().equals(this.getCodeVulnerabilityDetails()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getEpss() == null ^ this.getEpss() == null)
+            return false;
+        if (other.getEpss() != null && other.getEpss().equals(this.getEpss()) == false)
+            return false;
+        if (other.getExploitAvailable() == null ^ this.getExploitAvailable() == null)
+            return false;
+        if (other.getExploitAvailable() != null && other.getExploitAvailable().equals(this.getExploitAvailable()) == false)
+            return false;
+        if (other.getExploitabilityDetails() == null ^ this.getExploitabilityDetails() == null)
+            return false;
+        if (other.getExploitabilityDetails() != null && other.getExploitabilityDetails().equals(this.getExploitabilityDetails()) == false)
             return false;
         if (other.getFindingArn() == null ^ this.getFindingArn() == null)
             return false;
@@ -1072,7 +1387,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
+        hashCode = prime * hashCode + ((getCodeVulnerabilityDetails() == null) ? 0 : getCodeVulnerabilityDetails().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEpss() == null) ? 0 : getEpss().hashCode());
+        hashCode = prime * hashCode + ((getExploitAvailable() == null) ? 0 : getExploitAvailable().hashCode());
+        hashCode = prime * hashCode + ((getExploitabilityDetails() == null) ? 0 : getExploitabilityDetails().hashCode());
         hashCode = prime * hashCode + ((getFindingArn() == null) ? 0 : getFindingArn().hashCode());
         hashCode = prime * hashCode + ((getFirstObservedAt() == null) ? 0 : getFirstObservedAt().hashCode());
         hashCode = prime * hashCode + ((getFixAvailable() == null) ? 0 : getFixAvailable().hashCode());

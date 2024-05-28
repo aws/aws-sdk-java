@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class PipelineSummaryMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
+    private static final MarshallingInfo<String> PIPELINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineType").build();
+    private static final MarshallingInfo<String> EXECUTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionMode").build();
     private static final MarshallingInfo<java.util.Date> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -54,6 +58,8 @@ public class PipelineSummaryMarshaller {
         try {
             protocolMarshaller.marshall(pipelineSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(pipelineSummary.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(pipelineSummary.getPipelineType(), PIPELINETYPE_BINDING);
+            protocolMarshaller.marshall(pipelineSummary.getExecutionMode(), EXECUTIONMODE_BINDING);
             protocolMarshaller.marshall(pipelineSummary.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(pipelineSummary.getUpdated(), UPDATED_BINDING);
         } catch (Exception e) {

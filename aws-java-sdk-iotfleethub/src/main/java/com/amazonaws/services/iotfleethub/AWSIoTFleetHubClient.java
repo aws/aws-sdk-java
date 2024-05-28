@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.iotfleethub.AWSIoTFleetHubClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotfleethub.model.*;
+
 import com.amazonaws.services.iotfleethub.model.transform.*;
 
 /**
@@ -51,14 +52,9 @@ import com.amazonaws.services.iotfleethub.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications for monitoring the health of
- * your device fleets.
+ * With Fleet Hub for IoT Device Management you can build stand-alone web applications for monitoring the health of your
+ * device fleets.
  * </p>
- * <note>
- * <p>
- * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
- * </p>
- * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -151,13 +147,17 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates a Fleet Hub for AWS IoT Device Management web application.
+     * Creates a Fleet Hub for IoT Device Management web application.
      * </p>
-     * <note>
      * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
+     * When creating a Fleet Hub application, you must create an organization instance of IAM Identity Center if you
+     * don't already have one. The Fleet Hub application you create must also be in the same Amazon Web Services Region
+     * of the organization instance of IAM Identity Center. For more information see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/get-set-up-for-idc.html">Enabling IAM Identity
+     * Center</a> and <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/organization-instances-identity-center.html"
+     * >Organization instances of IAM Identity Center</a>.
      * </p>
-     * </note>
      * 
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
@@ -219,13 +219,8 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Deletes a Fleet Hub for AWS IoT Device Management web application.
+     * Deletes a Fleet Hub for IoT Device Management web application.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param deleteApplicationRequest
      * @return Result of the DeleteApplication operation returned by the service.
@@ -287,13 +282,8 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Gets information about a Fleet Hub for AWS IoT Device Management web application.
+     * Gets information about a Fleet Hub for IoT Device Management web application.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param describeApplicationRequest
      * @return Result of the DescribeApplication operation returned by the service.
@@ -355,13 +345,8 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.
+     * Gets a list of Fleet Hub for IoT Device Management web applications for the current account.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listApplicationsRequest
      * @return Result of the ListApplications operation returned by the service.
@@ -423,11 +408,6 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Lists the tags for the specified resource.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -489,11 +469,6 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -555,11 +530,6 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Removes the specified tags (metadata) from the resource.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
@@ -619,13 +589,8 @@ public class AWSIoTFleetHubClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Updates information about a Fleet Hub for a AWS IoT Device Management web application.
+     * Updates information about a Fleet Hub for IoT Device Management web application.
      * </p>
-     * <note>
-     * <p>
-     * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.

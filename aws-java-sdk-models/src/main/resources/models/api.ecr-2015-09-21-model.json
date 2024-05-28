@@ -5,6 +5,7 @@
     "endpointPrefix":"api.ecr",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "protocols":["json"],
     "serviceAbbreviation":"Amazon ECR",
     "serviceFullName":"Amazon EC2 Container Registry",
     "serviceId":"ECR",
@@ -55,7 +56,9 @@
       "errors":[
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
-        {"shape":"RepositoryNotFoundException"}
+        {"shape":"RepositoryNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"UnableToGetUpstreamImageException"}
       ],
       "documentation":"<p>Gets detailed information for an image. Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.</p> <p>When an image is pulled, the BatchGetImage API is called once to retrieve the image manifest.</p>"
     },
@@ -110,9 +113,12 @@
         {"shape":"ValidationException"},
         {"shape":"PullThroughCacheRuleAlreadyExistsException"},
         {"shape":"UnsupportedUpstreamRegistryException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"UnableToAccessSecretException"},
+        {"shape":"SecretNotFoundException"},
+        {"shape":"UnableToDecryptSecretValueException"}
       ],
-      "documentation":"<p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external public registry in your Amazon ECR private registry.</p>"
+      "documentation":"<p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an upstream registry source in your Amazon ECR private registry. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html\">Using pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
     },
     "CreateRepository":{
       "name":"CreateRepository",
@@ -145,7 +151,8 @@
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
         {"shape":"RepositoryNotFoundException"},
-        {"shape":"LifecyclePolicyNotFoundException"}
+        {"shape":"LifecyclePolicyNotFoundException"},
+        {"shape":"ValidationException"}
       ],
       "documentation":"<p>Deletes the lifecycle policy associated with the specified repository.</p>"
     },
@@ -196,7 +203,7 @@
         {"shape":"RepositoryNotEmptyException"},
         {"shape":"KmsException"}
       ],
-      "documentation":"<p>Deletes a repository. If the repository contains images, you must either delete all images in the repository or use the <code>force</code> option to delete the repository.</p>"
+      "documentation":"<p>Deletes a repository. If the repository isn't empty, you must either delete the contents of the repository or use the <code>force</code> option to delete the repository and have Amazon ECR delete all of its contents on your behalf.</p>"
     },
     "DeleteRepositoryPolicy":{
       "name":"DeleteRepositoryPolicy",
@@ -338,7 +345,8 @@
         {"shape":"InvalidParameterException"},
         {"shape":"LayersNotFoundException"},
         {"shape":"LayerInaccessibleException"},
-        {"shape":"RepositoryNotFoundException"}
+        {"shape":"RepositoryNotFoundException"},
+        {"shape":"UnableToGetUpstreamLayerException"}
       ],
       "documentation":"<p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can only get URLs for image layers that are referenced in an image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer that is not already cached.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -354,7 +362,8 @@
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
         {"shape":"RepositoryNotFoundException"},
-        {"shape":"LifecyclePolicyNotFoundException"}
+        {"shape":"LifecyclePolicyNotFoundException"},
+        {"shape":"ValidationException"}
       ],
       "documentation":"<p>Retrieves the lifecycle policy for the specified repository.</p>"
     },
@@ -370,7 +379,8 @@
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
         {"shape":"RepositoryNotFoundException"},
-        {"shape":"LifecyclePolicyPreviewNotFoundException"}
+        {"shape":"LifecyclePolicyPreviewNotFoundException"},
+        {"shape":"ValidationException"}
       ],
       "documentation":"<p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>"
     },
@@ -531,7 +541,8 @@
       "errors":[
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
-        {"shape":"RepositoryNotFoundException"}
+        {"shape":"RepositoryNotFoundException"},
+        {"shape":"ValidationException"}
       ],
       "documentation":"<p>Creates or updates the lifecycle policy for the specified repository. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html\">Lifecycle policy template</a>.</p>"
     },
@@ -627,7 +638,8 @@
         {"shape":"InvalidParameterException"},
         {"shape":"RepositoryNotFoundException"},
         {"shape":"LifecyclePolicyNotFoundException"},
-        {"shape":"LifecyclePolicyPreviewInProgressException"}
+        {"shape":"LifecyclePolicyPreviewInProgressException"},
+        {"shape":"ValidationException"}
       ],
       "documentation":"<p>Starts a preview of a lifecycle policy for the specified repository. This allows you to see the results before associating the lifecycle policy with the repository.</p>"
     },
@@ -665,6 +677,25 @@
       ],
       "documentation":"<p>Deletes specified tags from a resource.</p>"
     },
+    "UpdatePullThroughCacheRule":{
+      "name":"UpdatePullThroughCacheRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdatePullThroughCacheRuleRequest"},
+      "output":{"shape":"UpdatePullThroughCacheRuleResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnableToAccessSecretException"},
+        {"shape":"PullThroughCacheRuleNotFoundException"},
+        {"shape":"SecretNotFoundException"},
+        {"shape":"UnableToDecryptSecretValueException"}
+      ],
+      "documentation":"<p>Updates an existing pull through cache rule.</p>"
+    },
     "UploadLayerPart":{
       "name":"UploadLayerPart",
       "http":{
@@ -683,6 +714,22 @@
         {"shape":"KmsException"}
       ],
       "documentation":"<p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
+    },
+    "ValidatePullThroughCacheRule":{
+      "name":"ValidatePullThroughCacheRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ValidatePullThroughCacheRuleRequest"},
+      "output":{"shape":"ValidatePullThroughCacheRuleResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ValidationException"},
+        {"shape":"PullThroughCacheRuleNotFoundException"}
+      ],
+      "documentation":"<p>Validates an existing pull through cache rule for an upstream registry that requires authentication. This will retrieve the contents of the Amazon Web Services Secrets Manager secret, verify the syntax, and then validate that authentication to the upstream registry is successful.</p>"
     }
   },
   "shapes":{
@@ -986,11 +1033,19 @@
         },
         "upstreamRegistryUrl":{
           "shape":"Url",
-          "documentation":"<p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>"
+          "documentation":"<p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code> </p> </li> <li> <p>GitLab Container Registry (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p> </li> </ul>"
         },
         "registryId":{
           "shape":"RegistryId",
           "documentation":"<p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>"
+        },
+        "upstreamRegistry":{
+          "shape":"UpstreamRegistry",
+          "documentation":"<p>The name of the upstream registry.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>"
         }
       }
     },
@@ -1012,6 +1067,14 @@
         "registryId":{
           "shape":"RegistryId",
           "documentation":"<p>The registry ID associated with the request.</p>"
+        },
+        "upstreamRegistry":{
+          "shape":"UpstreamRegistry",
+          "documentation":"<p>The name of the upstream registry associated with the pull through cache rule.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>"
         }
       }
     },
@@ -1025,7 +1088,7 @@
         },
         "repositoryName":{
           "shape":"RepositoryName",
-          "documentation":"<p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>"
+          "documentation":"<p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p> <p>The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes.</p>"
         },
         "tags":{
           "shape":"TagList",
@@ -1055,6 +1118,12 @@
       }
     },
     "CreationTimestamp":{"type":"timestamp"},
+    "CredentialArn":{
+      "type":"string",
+      "max":612,
+      "min":50,
+      "pattern":"^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\\-pullthroughcache\\/[a-zA-Z0-9\\/_+=.@-]+$"
+    },
     "CvssScore":{
       "type":"structure",
       "members":{
@@ -1193,6 +1262,10 @@
         "registryId":{
           "shape":"RegistryId",
           "documentation":"<p>The registry ID associated with the request.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>"
         }
       }
     },
@@ -1259,7 +1332,7 @@
         },
         "force":{
           "shape":"ForceFlag",
-          "documentation":"<p> If a repository contains images, forces the deletion.</p>"
+          "documentation":"<p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>"
         }
       }
     },
@@ -1983,7 +2056,10 @@
         "ImageNotFound",
         "MissingDigestAndTag",
         "ImageReferencedByManifestList",
-        "KmsError"
+        "KmsError",
+        "UpstreamAccessDenied",
+        "UpstreamTooManyRequests",
+        "UpstreamUnavailable"
       ]
     },
     "ImageFailureList":{
@@ -2265,6 +2341,7 @@
       "documentation":"<p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>",
       "exception":true
     },
+    "IsPTCRuleValid":{"type":"boolean"},
     "KmsError":{"type":"string"},
     "KmsException":{
       "type":"structure",
@@ -2606,6 +2683,7 @@
     },
     "Metric":{"type":"string"},
     "NextToken":{"type":"string"},
+    "PTCValidateFailure":{"type":"string"},
     "PackageManager":{"type":"string"},
     "PackageVulnerabilityDetails":{
       "type":"structure",
@@ -2677,6 +2755,18 @@
         "registryId":{
           "shape":"RegistryId",
           "documentation":"<p>The Amazon Web Services account ID associated with the registry the pull through cache rule is associated with.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The ARN of the Secrets Manager secret associated with the pull through cache rule.</p>"
+        },
+        "upstreamRegistry":{
+          "shape":"UpstreamRegistry",
+          "documentation":"<p>The name of the upstream source registry associated with the pull through cache rule.</p>"
+        },
+        "updatedAt":{
+          "shape":"UpdatedTimestamp",
+          "documentation":"<p>The date and time, in JavaScript date format, when the pull through cache rule was last updated.</p>"
         }
       },
       "documentation":"<p>The details of a pull through cache rule.</p>"
@@ -2703,9 +2793,9 @@
     },
     "PullThroughCacheRuleRepositoryPrefix":{
       "type":"string",
-      "max":20,
+      "max":30,
       "min":2,
-      "pattern":"[a-z0-9]+(?:[._-][a-z0-9]+)*"
+      "pattern":"(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*"
     },
     "PullThroughCacheRuleRepositoryPrefixList":{
       "type":"list",
@@ -3009,7 +3099,7 @@
       "members":{
         "scanFrequency":{
           "shape":"ScanFrequency",
-          "documentation":"<p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>"
+          "documentation":"<p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan frequency is supported. If scan on push is not specified, then the <code>MANUAL</code> scan frequency is set by default.</p>"
         },
         "repositoryFilters":{
           "shape":"ScanningRepositoryFilterList",
@@ -3110,7 +3200,7 @@
       "members":{
         "repositoryArn":{
           "shape":"Arn",
-          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon Web Services account ID of the repository owner, repository namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>"
         },
         "registryId":{
           "shape":"RegistryId",
@@ -3167,7 +3257,7 @@
           "documentation":"<p>The repository filter type. The only supported value is <code>PREFIX_MATCH</code>, which is a repository name prefix specified with the <code>filter</code> parameter.</p>"
         }
       },
-      "documentation":"<p>The filter settings used with image replication. Specifying a repository filter to a replication rule provides a method for controlling which repositories in a private registry are replicated. If no repository filter is specified, all images in the repository are replicated.</p>"
+      "documentation":"<p>The filter settings used with image replication. Specifying a repository filter to a replication rule provides a method for controlling which repositories in a private registry are replicated. If no filters are added, the contents of all repositories are replicated.</p>"
     },
     "RepositoryFilterList":{
       "type":"list",
@@ -3424,6 +3514,14 @@
       "documentation":"<p>Information about the Amazon Inspector score given to a finding.</p>"
     },
     "ScoringVector":{"type":"string"},
+    "SecretNotFoundException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The ARN of the secret specified in the pull through cache rule was not found. Update the pull through cache rule with a valid secret ARN and try again.</p>",
+      "exception":true
+    },
     "ServerException":{
       "type":"structure",
       "members":{
@@ -3563,6 +3661,10 @@
     "Status":{"type":"string"},
     "Tag":{
       "type":"structure",
+      "required":[
+        "Key",
+        "Value"
+      ],
       "members":{
         "Key":{
           "shape":"TagKey",
@@ -3630,6 +3732,38 @@
       "exception":true
     },
     "Type":{"type":"string"},
+    "UnableToAccessSecretException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The secret is unable to be accessed. Verify the resource permissions for the secret and try again.</p>",
+      "exception":true
+    },
+    "UnableToDecryptSecretValueException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The secret is accessible but is unable to be decrypted. Verify the resource permisisons and try again.</p>",
+      "exception":true
+    },
+    "UnableToGetUpstreamImageException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The image or images were unable to be pulled using the pull through cache rule. This is usually caused because of an issue with the Secrets Manager secret containing the credentials for the upstream registry.</p>",
+      "exception":true
+    },
+    "UnableToGetUpstreamLayerException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>There was an issue getting the upstream layer matching the pull through cache rule.</p>",
+      "exception":true
+    },
     "UnsupportedImageTypeException":{
       "type":"structure",
       "members":{
@@ -3668,6 +3802,49 @@
       "members":{
       }
     },
+    "UpdatePullThroughCacheRuleRequest":{
+      "type":"structure",
+      "required":[
+        "ecrRepositoryPrefix",
+        "credentialArn"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The Amazon Web Services account ID associated with the registry associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>"
+        },
+        "ecrRepositoryPrefix":{
+          "shape":"PullThroughCacheRuleRepositoryPrefix",
+          "documentation":"<p>The repository name prefix to use when caching images from the source registry.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>"
+        }
+      }
+    },
+    "UpdatePullThroughCacheRuleResponse":{
+      "type":"structure",
+      "members":{
+        "ecrRepositoryPrefix":{
+          "shape":"PullThroughCacheRuleRepositoryPrefix",
+          "documentation":"<p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>"
+        },
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The registry ID associated with the request.</p>"
+        },
+        "updatedAt":{
+          "shape":"UpdatedTimestamp",
+          "documentation":"<p>The date and time, in JavaScript date format, when the pull through cache rule was updated.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>"
+        }
+      }
+    },
+    "UpdatedTimestamp":{"type":"timestamp"},
     "UploadId":{
       "type":"string",
       "pattern":"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
@@ -3740,7 +3917,62 @@
       "documentation":"<p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>",
       "exception":true
     },
+    "UpstreamRegistry":{
+      "type":"string",
+      "enum":[
+        "ecr-public",
+        "quay",
+        "k8s",
+        "docker-hub",
+        "github-container-registry",
+        "azure-container-registry",
+        "gitlab-container-registry"
+      ]
+    },
     "Url":{"type":"string"},
+    "ValidatePullThroughCacheRuleRequest":{
+      "type":"structure",
+      "required":["ecrRepositoryPrefix"],
+      "members":{
+        "ecrRepositoryPrefix":{
+          "shape":"PullThroughCacheRuleRepositoryPrefix",
+          "documentation":"<p>The repository name prefix associated with the pull through cache rule.</p>"
+        },
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The registry ID associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>"
+        }
+      }
+    },
+    "ValidatePullThroughCacheRuleResponse":{
+      "type":"structure",
+      "members":{
+        "ecrRepositoryPrefix":{
+          "shape":"PullThroughCacheRuleRepositoryPrefix",
+          "documentation":"<p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>"
+        },
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The registry ID associated with the request.</p>"
+        },
+        "upstreamRegistryUrl":{
+          "shape":"Url",
+          "documentation":"<p>The upstream registry URL associated with the pull through cache rule.</p>"
+        },
+        "credentialArn":{
+          "shape":"CredentialArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>"
+        },
+        "isValid":{
+          "shape":"IsPTCRuleValid",
+          "documentation":"<p>Whether or not the pull through cache rule was validated. If <code>true</code>, Amazon ECR was able to reach the upstream registry and authentication was successful. If <code>false</code>, there was an issue and validation failed. The <code>failure</code> reason indicates the cause.</p>"
+        },
+        "failure":{
+          "shape":"PTCValidateFailure",
+          "documentation":"<p>The reason the validation failed. For more details about possible causes and how to address them, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html\">Using pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
+        }
+      }
+    },
     "ValidationException":{
       "type":"structure",
       "members":{

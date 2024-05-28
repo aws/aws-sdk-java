@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,21 @@ public class AbstractAWSNetworkFirewallAsync extends AbstractAWSNetworkFirewall 
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTLSInspectionConfigurationResult> createTLSInspectionConfigurationAsync(
+            CreateTLSInspectionConfigurationRequest request) {
+
+        return createTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTLSInspectionConfigurationResult> createTLSInspectionConfigurationAsync(
+            CreateTLSInspectionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTLSInspectionConfigurationRequest, CreateTLSInspectionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFirewallResult> deleteFirewallAsync(DeleteFirewallRequest request) {
 
         return deleteFirewallAsync(request, null);
@@ -140,6 +155,21 @@ public class AbstractAWSNetworkFirewallAsync extends AbstractAWSNetworkFirewall 
     @Override
     public java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupRequest, DeleteRuleGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTLSInspectionConfigurationResult> deleteTLSInspectionConfigurationAsync(
+            DeleteTLSInspectionConfigurationRequest request) {
+
+        return deleteTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTLSInspectionConfigurationResult> deleteTLSInspectionConfigurationAsync(
+            DeleteTLSInspectionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTLSInspectionConfigurationRequest, DeleteTLSInspectionConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,6 +253,21 @@ public class AbstractAWSNetworkFirewallAsync extends AbstractAWSNetworkFirewall 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTLSInspectionConfigurationResult> describeTLSInspectionConfigurationAsync(
+            DescribeTLSInspectionConfigurationRequest request) {
+
+        return describeTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTLSInspectionConfigurationResult> describeTLSInspectionConfigurationAsync(
+            DescribeTLSInspectionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTLSInspectionConfigurationRequest, DescribeTLSInspectionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateSubnetsResult> disassociateSubnetsAsync(DisassociateSubnetsRequest request) {
 
         return disassociateSubnetsAsync(request, null);
@@ -270,6 +315,21 @@ public class AbstractAWSNetworkFirewallAsync extends AbstractAWSNetworkFirewall 
     @Override
     public java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRuleGroupsRequest, ListRuleGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTLSInspectionConfigurationsResult> listTLSInspectionConfigurationsAsync(
+            ListTLSInspectionConfigurationsRequest request) {
+
+        return listTLSInspectionConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTLSInspectionConfigurationsResult> listTLSInspectionConfigurationsAsync(
+            ListTLSInspectionConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTLSInspectionConfigurationsRequest, ListTLSInspectionConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -430,6 +490,21 @@ public class AbstractAWSNetworkFirewallAsync extends AbstractAWSNetworkFirewall 
     @Override
     public java.util.concurrent.Future<UpdateSubnetChangeProtectionResult> updateSubnetChangeProtectionAsync(UpdateSubnetChangeProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSubnetChangeProtectionRequest, UpdateSubnetChangeProtectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTLSInspectionConfigurationResult> updateTLSInspectionConfigurationAsync(
+            UpdateTLSInspectionConfigurationRequest request) {
+
+        return updateTLSInspectionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTLSInspectionConfigurationResult> updateTLSInspectionConfigurationAsync(
+            UpdateTLSInspectionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTLSInspectionConfigurationRequest, UpdateTLSInspectionConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

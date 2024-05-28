@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,7 +122,7 @@
  * </p>
  * <note>
  * <p>
- * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * We replaced the term "master account" with the term "administrator account". An administrator account is used to
  * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
  * behavior graph.
  * </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class KinesisDataStreamDestinationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationStatus").build();
     private static final MarshallingInfo<String> DESTINATIONSTATUSDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationStatusDescription").build();
+    private static final MarshallingInfo<String> APPROXIMATECREATIONDATETIMEPRECISION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproximateCreationDateTimePrecision").build();
 
     private static final KinesisDataStreamDestinationMarshaller instance = new KinesisDataStreamDestinationMarshaller();
 
@@ -53,6 +55,7 @@ public class KinesisDataStreamDestinationMarshaller {
             protocolMarshaller.marshall(kinesisDataStreamDestination.getStreamArn(), STREAMARN_BINDING);
             protocolMarshaller.marshall(kinesisDataStreamDestination.getDestinationStatus(), DESTINATIONSTATUS_BINDING);
             protocolMarshaller.marshall(kinesisDataStreamDestination.getDestinationStatusDescription(), DESTINATIONSTATUSDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(kinesisDataStreamDestination.getApproximateCreationDateTimePrecision(), APPROXIMATECREATIONDATETIMEPRECISION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

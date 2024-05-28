@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class DescribeVpcEndpointServicePermissionsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information about one or more allowed principals.
+     * Information about the allowed principals.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AllowedPrincipal> allowedPrincipals;
@@ -40,10 +40,10 @@ public class DescribeVpcEndpointServicePermissionsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information about one or more allowed principals.
+     * Information about the allowed principals.
      * </p>
      * 
-     * @return Information about one or more allowed principals.
+     * @return Information about the allowed principals.
      */
 
     public java.util.List<AllowedPrincipal> getAllowedPrincipals() {
@@ -55,11 +55,11 @@ public class DescribeVpcEndpointServicePermissionsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information about one or more allowed principals.
+     * Information about the allowed principals.
      * </p>
      * 
      * @param allowedPrincipals
-     *        Information about one or more allowed principals.
+     *        Information about the allowed principals.
      */
 
     public void setAllowedPrincipals(java.util.Collection<AllowedPrincipal> allowedPrincipals) {
@@ -73,7 +73,7 @@ public class DescribeVpcEndpointServicePermissionsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information about one or more allowed principals.
+     * Information about the allowed principals.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVpcEndpointServicePermissionsResult extends com.amazonaws.A
      * </p>
      * 
      * @param allowedPrincipals
-     *        Information about one or more allowed principals.
+     *        Information about the allowed principals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeVpcEndpointServicePermissionsResult extends com.amazonaws.A
 
     /**
      * <p>
-     * Information about one or more allowed principals.
+     * Information about the allowed principals.
      * </p>
      * 
      * @param allowedPrincipals
-     *        Information about one or more allowed principals.
+     *        Information about the allowed principals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

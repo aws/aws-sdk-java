@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class OntapFileSystemConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputCapacity").build();
     private static final MarshallingInfo<String> WEEKLYMAINTENANCESTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WeeklyMaintenanceStartTime").build();
+    private static final MarshallingInfo<String> FSXADMINPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FsxAdminPassword").build();
+    private static final MarshallingInfo<Integer> HAPAIRS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HAPairs").build();
+    private static final MarshallingInfo<Integer> THROUGHPUTCAPACITYPERHAPAIR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputCapacityPerHAPair").build();
 
     private static final OntapFileSystemConfigurationMarshaller instance = new OntapFileSystemConfigurationMarshaller();
 
@@ -75,6 +81,9 @@ public class OntapFileSystemConfigurationMarshaller {
             protocolMarshaller.marshall(ontapFileSystemConfiguration.getRouteTableIds(), ROUTETABLEIDS_BINDING);
             protocolMarshaller.marshall(ontapFileSystemConfiguration.getThroughputCapacity(), THROUGHPUTCAPACITY_BINDING);
             protocolMarshaller.marshall(ontapFileSystemConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
+            protocolMarshaller.marshall(ontapFileSystemConfiguration.getFsxAdminPassword(), FSXADMINPASSWORD_BINDING);
+            protocolMarshaller.marshall(ontapFileSystemConfiguration.getHAPairs(), HAPAIRS_BINDING);
+            protocolMarshaller.marshall(ontapFileSystemConfiguration.getThroughputCapacityPerHAPair(), THROUGHPUTCAPACITYPERHAPAIR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      */
     private String market;
@@ -56,7 +56,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     private String bidPrice;
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      */
     private String instanceType;
@@ -73,22 +73,22 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
-     * for each instance group (master, core, and task).
+     * The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
+     * configuration for each instance group (master, core, and task).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
     /**
      * <p>
-     * EBS configurations that will be attached to each EC2 instance in the instance group.
+     * EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      * </p>
      */
     private EbsConfiguration ebsConfiguration;
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      * </p>
      */
     private AutoScalingPolicy autoScalingPolicy;
@@ -113,7 +113,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * @param instanceRole
      *        The role of the instance group in the cluster.
      * @param instanceType
-     *        The EC2 instance type for all instances in the instance group.
+     *        The Amazon EC2 instance type for all instances in the instance group.
      * @param instanceCount
      *        Target number of instances for the instance group.
      */
@@ -130,7 +130,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * @param instanceRole
      *        The role of the instance group in the cluster.
      * @param instanceType
-     *        The EC2 instance type for all instances in the instance group.
+     *        The Amazon EC2 instance type for all instances in the instance group.
      * @param instanceCount
      *        Target number of instances for the instance group.
      */
@@ -182,11 +182,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -196,10 +196,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
-     * @return Market type of the EC2 instances used to create a cluster node.
+     * @return Market type of the Amazon EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -209,11 +209,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketType
      */
@@ -225,11 +225,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -239,11 +239,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketType
      */
@@ -380,11 +380,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      * 
      * @param instanceType
-     *        The EC2 instance type for all instances in the instance group.
+     *        The Amazon EC2 instance type for all instances in the instance group.
      */
 
     public void setInstanceType(String instanceType) {
@@ -393,10 +393,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      * 
-     * @return The EC2 instance type for all instances in the instance group.
+     * @return The Amazon EC2 instance type for all instances in the instance group.
      */
 
     public String getInstanceType() {
@@ -405,11 +405,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The EC2 instance type for all instances in the instance group.
+     * The Amazon EC2 instance type for all instances in the instance group.
      * </p>
      * 
      * @param instanceType
-     *        The EC2 instance type for all instances in the instance group.
+     *        The Amazon EC2 instance type for all instances in the instance group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,8 +465,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
-     * for each instance group (master, core, and task).
+     * The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
+     * configuration for each instance group (master, core, and task).
      * </p>
      * 
      * @return <p>
@@ -474,7 +474,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      *         </p>
      *         </note>
      *         <p>
-     *         The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *         The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
      *         configuration for each instance group (master, core, and task).
      */
 
@@ -492,8 +492,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
-     * for each instance group (master, core, and task).
+     * The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
+     * configuration for each instance group (master, core, and task).
      * </p>
      * 
      * @param configurations
@@ -502,7 +502,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </note>
      *        <p>
-     *        The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *        The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
      *        configuration for each instance group (master, core, and task).
      */
 
@@ -522,8 +522,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
-     * for each instance group (master, core, and task).
+     * The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
+     * configuration for each instance group (master, core, and task).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -537,7 +537,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </note>
      *        <p>
-     *        The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *        The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
      *        configuration for each instance group (master, core, and task).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -559,8 +559,8 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration
-     * for each instance group (master, core, and task).
+     * The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
+     * configuration for each instance group (master, core, and task).
      * </p>
      * 
      * @param configurations
@@ -569,7 +569,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </note>
      *        <p>
-     *        The list of configurations supplied for an EMR cluster instance group. You can specify a separate
+     *        The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate
      *        configuration for each instance group (master, core, and task).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -581,11 +581,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * EBS configurations that will be attached to each EC2 instance in the instance group.
+     * EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      * </p>
      * 
      * @param ebsConfiguration
-     *        EBS configurations that will be attached to each EC2 instance in the instance group.
+     *        EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      */
 
     public void setEbsConfiguration(EbsConfiguration ebsConfiguration) {
@@ -594,10 +594,10 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * EBS configurations that will be attached to each EC2 instance in the instance group.
+     * EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      * </p>
      * 
-     * @return EBS configurations that will be attached to each EC2 instance in the instance group.
+     * @return EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      */
 
     public EbsConfiguration getEbsConfiguration() {
@@ -606,11 +606,11 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * EBS configurations that will be attached to each EC2 instance in the instance group.
+     * EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      * </p>
      * 
      * @param ebsConfiguration
-     *        EBS configurations that will be attached to each EC2 instance in the instance group.
+     *        EBS configurations that will be attached to each Amazon EC2 instance in the instance group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,14 +622,14 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      * </p>
      * 
      * @param autoScalingPolicy
      *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
-     *        response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     *        instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      */
 
     public void setAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
@@ -639,13 +639,13 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      * </p>
      * 
      * @return An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster.
-     *         The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances
-     *         in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     *         The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     *         instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      */
 
     public AutoScalingPolicy getAutoScalingPolicy() {
@@ -655,14 +655,14 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     * automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response
-     * to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     * automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in
+     * response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      * </p>
      * 
      * @param autoScalingPolicy
      *        An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The
-     *        automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in
-     *        response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
+     *        automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     *        instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

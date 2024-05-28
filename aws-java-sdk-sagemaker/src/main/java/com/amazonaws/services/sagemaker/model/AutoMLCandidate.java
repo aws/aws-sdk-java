@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     private String candidateStatus;
     /**
      * <p>
-     * Information about the inference container definitions.
+     * Information about the recommended inference container definitions.
      * </p>
      */
     private java.util.List<AutoMLContainerDefinition> inferenceContainers;
@@ -90,6 +90,14 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private CandidateProperties candidateProperties;
+    /**
+     * <p>
+     * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<AutoMLContainerDefinition>> inferenceContainerDefinitions;
 
     /**
      * <p>
@@ -347,10 +355,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the inference container definitions.
+     * Information about the recommended inference container definitions.
      * </p>
      * 
-     * @return Information about the inference container definitions.
+     * @return Information about the recommended inference container definitions.
      */
 
     public java.util.List<AutoMLContainerDefinition> getInferenceContainers() {
@@ -359,11 +367,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the inference container definitions.
+     * Information about the recommended inference container definitions.
      * </p>
      * 
      * @param inferenceContainers
-     *        Information about the inference container definitions.
+     *        Information about the recommended inference container definitions.
      */
 
     public void setInferenceContainers(java.util.Collection<AutoMLContainerDefinition> inferenceContainers) {
@@ -377,7 +385,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the inference container definitions.
+     * Information about the recommended inference container definitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -386,7 +394,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param inferenceContainers
-     *        Information about the inference container definitions.
+     *        Information about the recommended inference container definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,11 +410,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Information about the inference container definitions.
+     * Information about the recommended inference container definitions.
      * </p>
      * 
      * @param inferenceContainers
-     *        Information about the inference container definitions.
+     *        Information about the recommended inference container definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -616,6 +624,86 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     * </p>
+     * 
+     * @return The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for
+     *         the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     *         <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     */
+
+    public java.util.Map<String, java.util.List<AutoMLContainerDefinition>> getInferenceContainerDefinitions() {
+        return inferenceContainerDefinitions;
+    }
+
+    /**
+     * <p>
+     * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     * </p>
+     * 
+     * @param inferenceContainerDefinitions
+     *        The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
+     *        candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     *        <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     */
+
+    public void setInferenceContainerDefinitions(java.util.Map<String, java.util.List<AutoMLContainerDefinition>> inferenceContainerDefinitions) {
+        this.inferenceContainerDefinitions = inferenceContainerDefinitions;
+    }
+
+    /**
+     * <p>
+     * The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
+     * candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     * </p>
+     * 
+     * @param inferenceContainerDefinitions
+     *        The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the
+     *        candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling
+     *        <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLCandidate withInferenceContainerDefinitions(java.util.Map<String, java.util.List<AutoMLContainerDefinition>> inferenceContainerDefinitions) {
+        setInferenceContainerDefinitions(inferenceContainerDefinitions);
+        return this;
+    }
+
+    /**
+     * Add a single InferenceContainerDefinitions entry
+     *
+     * @see AutoMLCandidate#withInferenceContainerDefinitions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLCandidate addInferenceContainerDefinitionsEntry(String key, java.util.List<AutoMLContainerDefinition> value) {
+        if (null == this.inferenceContainerDefinitions) {
+            this.inferenceContainerDefinitions = new java.util.HashMap<String, java.util.List<AutoMLContainerDefinition>>();
+        }
+        if (this.inferenceContainerDefinitions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.inferenceContainerDefinitions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into InferenceContainerDefinitions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLCandidate clearInferenceContainerDefinitionsEntries() {
+        this.inferenceContainerDefinitions = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -648,7 +736,9 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getCandidateProperties() != null)
-            sb.append("CandidateProperties: ").append(getCandidateProperties());
+            sb.append("CandidateProperties: ").append(getCandidateProperties()).append(",");
+        if (getInferenceContainerDefinitions() != null)
+            sb.append("InferenceContainerDefinitions: ").append(getInferenceContainerDefinitions());
         sb.append("}");
         return sb.toString();
     }
@@ -708,6 +798,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCandidateProperties() != null && other.getCandidateProperties().equals(this.getCandidateProperties()) == false)
             return false;
+        if (other.getInferenceContainerDefinitions() == null ^ this.getInferenceContainerDefinitions() == null)
+            return false;
+        if (other.getInferenceContainerDefinitions() != null
+                && other.getInferenceContainerDefinitions().equals(this.getInferenceContainerDefinitions()) == false)
+            return false;
         return true;
     }
 
@@ -727,6 +822,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCandidateProperties() == null) ? 0 : getCandidateProperties().hashCode());
+        hashCode = prime * hashCode + ((getInferenceContainerDefinitions() == null) ? 0 : getInferenceContainerDefinitions().hashCode());
         return hashCode;
     }
 

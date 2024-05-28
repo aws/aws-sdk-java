@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.amplifyuibuilder.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -30,6 +31,8 @@ public class ValueMappingsMarshaller {
 
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("values").build();
+    private static final MarshallingInfo<Map> BINDINGPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bindingProperties").build();
 
     private static final ValueMappingsMarshaller instance = new ValueMappingsMarshaller();
 
@@ -48,6 +51,7 @@ public class ValueMappingsMarshaller {
 
         try {
             protocolMarshaller.marshall(valueMappings.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(valueMappings.getBindingProperties(), BINDINGPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

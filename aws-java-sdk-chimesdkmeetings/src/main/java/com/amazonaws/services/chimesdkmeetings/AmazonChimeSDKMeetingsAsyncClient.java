@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * The Amazon Chime SDK meetings APIs in this section allow software developers to create Amazon Chime SDK meetings, set
- * the AWS Regions for meetings, create and manage users, and send and receive meeting notifications. For more
- * information about the meeting APIs, see <a
+ * the Amazon Web Services Regions for meetings, create and manage users, and send and receive meeting notifications.
+ * For more information about the meeting APIs, see <a
  * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
  * Chime SDK meetings</a>.
  * </p>

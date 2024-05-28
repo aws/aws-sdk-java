@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following
-     * ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:
+     * The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     * <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email
+     * address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email
+     * address that you provide in one of the following ways, depending on the value that you specify for the
+     * <code>EmailSendingAccount</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -158,8 +161,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following
-     * ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:
+     * The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     * <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email
+     * address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email
+     * address that you provide in one of the following ways, depending on the value that you specify for the
+     * <code>EmailSendingAccount</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -186,9 +192,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param sourceArn
-     *        The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the
-     *        following ways, depending on the value that you specify for the <code>EmailSendingAccount</code>
-     *        parameter:</p>
+     *        The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     *        <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email
+     *        address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the
+     *        email address that you provide in one of the following ways, depending on the value that you specify for
+     *        the <code>EmailSendingAccount</code> parameter:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -219,8 +227,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following
-     * ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:
+     * The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     * <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email
+     * address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email
+     * address that you provide in one of the following ways, depending on the value that you specify for the
+     * <code>EmailSendingAccount</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -246,9 +257,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * Developer Guide</a>.
      * </p>
      * 
-     * @return The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the
-     *         following ways, depending on the value that you specify for the <code>EmailSendingAccount</code>
-     *         parameter:</p>
+     * @return The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     *         <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified
+     *         email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito
+     *         uses the email address that you provide in one of the following ways, depending on the value that you
+     *         specify for the <code>EmailSendingAccount</code> parameter:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -279,8 +292,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following
-     * ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:
+     * The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     * <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email
+     * address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email
+     * address that you provide in one of the following ways, depending on the value that you specify for the
+     * <code>EmailSendingAccount</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -307,9 +323,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param sourceArn
-     *        The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the
-     *        following ways, depending on the value that you specify for the <code>EmailSendingAccount</code>
-     *        parameter:</p>
+     *        The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a
+     *        <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email
+     *        address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the
+     *        email address that you provide in one of the following ways, depending on the value that you specify for
+     *        the <code>EmailSendingAccount</code> parameter:</p>
      *        <ul>
      *        <li>
      *        <p>

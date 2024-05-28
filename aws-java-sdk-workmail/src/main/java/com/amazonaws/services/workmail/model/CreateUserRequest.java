@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,34 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String password;
+    /**
+     * <p>
+     * The role of the new user.
+     * </p>
+     * <p>
+     * You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected,
+     * the default role of <i>USER</i> is selected.
+     * </p>
+     */
+    private String role;
+    /**
+     * <p>
+     * The first name of the new user.
+     * </p>
+     */
+    private String firstName;
+    /**
+     * <p>
+     * The last name of the new user.
+     * </p>
+     */
+    private String lastName;
+    /**
+     * <p>
+     * If this parameter is enabled, the user will be hidden from the address book.
+     * </p>
+     */
+    private Boolean hiddenFromGlobalAddressList;
 
     /**
      * <p>
@@ -218,6 +246,225 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The role of the new user.
+     * </p>
+     * <p>
+     * You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected,
+     * the default role of <i>USER</i> is selected.
+     * </p>
+     * 
+     * @param role
+     *        The role of the new user.</p>
+     *        <p>
+     *        You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not
+     *        selected, the default role of <i>USER</i> is selected.
+     * @see UserRole
+     */
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    /**
+     * <p>
+     * The role of the new user.
+     * </p>
+     * <p>
+     * You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected,
+     * the default role of <i>USER</i> is selected.
+     * </p>
+     * 
+     * @return The role of the new user.</p>
+     *         <p>
+     *         You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not
+     *         selected, the default role of <i>USER</i> is selected.
+     * @see UserRole
+     */
+
+    public String getRole() {
+        return this.role;
+    }
+
+    /**
+     * <p>
+     * The role of the new user.
+     * </p>
+     * <p>
+     * You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected,
+     * the default role of <i>USER</i> is selected.
+     * </p>
+     * 
+     * @param role
+     *        The role of the new user.</p>
+     *        <p>
+     *        You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not
+     *        selected, the default role of <i>USER</i> is selected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserRole
+     */
+
+    public CreateUserRequest withRole(String role) {
+        setRole(role);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The role of the new user.
+     * </p>
+     * <p>
+     * You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected,
+     * the default role of <i>USER</i> is selected.
+     * </p>
+     * 
+     * @param role
+     *        The role of the new user.</p>
+     *        <p>
+     *        You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not
+     *        selected, the default role of <i>USER</i> is selected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserRole
+     */
+
+    public CreateUserRequest withRole(UserRole role) {
+        this.role = role.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The first name of the new user.
+     * </p>
+     * 
+     * @param firstName
+     *        The first name of the new user.
+     */
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    /**
+     * <p>
+     * The first name of the new user.
+     * </p>
+     * 
+     * @return The first name of the new user.
+     */
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    /**
+     * <p>
+     * The first name of the new user.
+     * </p>
+     * 
+     * @param firstName
+     *        The first name of the new user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withFirstName(String firstName) {
+        setFirstName(firstName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last name of the new user.
+     * </p>
+     * 
+     * @param lastName
+     *        The last name of the new user.
+     */
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    /**
+     * <p>
+     * The last name of the new user.
+     * </p>
+     * 
+     * @return The last name of the new user.
+     */
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    /**
+     * <p>
+     * The last name of the new user.
+     * </p>
+     * 
+     * @param lastName
+     *        The last name of the new user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withLastName(String lastName) {
+        setLastName(lastName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the user will be hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If this parameter is enabled, the user will be hidden from the address book.
+     */
+
+    public void setHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        this.hiddenFromGlobalAddressList = hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the user will be hidden from the address book.
+     * </p>
+     * 
+     * @return If this parameter is enabled, the user will be hidden from the address book.
+     */
+
+    public Boolean getHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the user will be hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If this parameter is enabled, the user will be hidden from the address book.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        setHiddenFromGlobalAddressList(hiddenFromGlobalAddressList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the user will be hidden from the address book.
+     * </p>
+     * 
+     * @return If this parameter is enabled, the user will be hidden from the address book.
+     */
+
+    public Boolean isHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,9 +481,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+            sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append("***Sensitive Data Redacted***");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
+        if (getRole() != null)
+            sb.append("Role: ").append(getRole()).append(",");
+        if (getFirstName() != null)
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getLastName() != null)
+            sb.append("LastName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getHiddenFromGlobalAddressList() != null)
+            sb.append("HiddenFromGlobalAddressList: ").append(getHiddenFromGlobalAddressList());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +522,22 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getRole() == null ^ this.getRole() == null)
+            return false;
+        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
+            return false;
+        if (other.getFirstName() == null ^ this.getFirstName() == null)
+            return false;
+        if (other.getFirstName() != null && other.getFirstName().equals(this.getFirstName()) == false)
+            return false;
+        if (other.getLastName() == null ^ this.getLastName() == null)
+            return false;
+        if (other.getLastName() != null && other.getLastName().equals(this.getLastName()) == false)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() == null ^ this.getHiddenFromGlobalAddressList() == null)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() != null && other.getHiddenFromGlobalAddressList().equals(this.getHiddenFromGlobalAddressList()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +550,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getFirstName() == null) ? 0 : getFirstName().hashCode());
+        hashCode = prime * hashCode + ((getLastName() == null) ? 0 : getLastName().hashCode());
+        hashCode = prime * hashCode + ((getHiddenFromGlobalAddressList() == null) ? 0 : getHiddenFromGlobalAddressList().hashCode());
         return hashCode;
     }
 

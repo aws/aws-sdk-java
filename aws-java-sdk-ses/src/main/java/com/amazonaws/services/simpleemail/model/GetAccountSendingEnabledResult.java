@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a request to return the email sending status for your Amazon SES account in the current AWS Region.
+ * Represents a request to return the email sending status for your Amazon SES account in the current Amazon Web
+ * Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled" target="_top">AWS API
@@ -28,19 +29,21 @@ public class GetAccountSendingEnabledResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param enabled
-     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *        Region.
+     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *        Web Services Region.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -49,11 +52,12 @@ public class GetAccountSendingEnabledResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *         Region.
+     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *         Web Services Region.
      */
 
     public Boolean getEnabled() {
@@ -62,12 +66,13 @@ public class GetAccountSendingEnabledResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param enabled
-     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *        Region.
+     *        Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *        Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +83,12 @@ public class GetAccountSendingEnabledResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.
+     * Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS
-     *         Region.
+     * @return Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon
+     *         Web Services Region.
      */
 
     public Boolean isEnabled() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,7 +73,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </important> <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire
      * request fails and invitations are not sent.
      * </p>
      * </note>
@@ -283,7 +283,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </important> <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire
      * request fails and invitations are not sent.
      * </p>
      * </note>
@@ -302,7 +302,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *         </p>
      *         </important> <note>
      *         <p>
-     *         If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *         If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the
      *         entire request fails and invitations are not sent.
      *         </p>
      */
@@ -329,7 +329,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </important> <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire
      * request fails and invitations are not sent.
      * </p>
      * </note>
@@ -349,7 +349,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        </important> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the
      *        entire request fails and invitations are not sent.
      *        </p>
      */
@@ -381,7 +381,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </important> <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire
      * request fails and invitations are not sent.
      * </p>
      * </note>
@@ -406,7 +406,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        </important> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the
      *        entire request fails and invitations are not sent.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -440,7 +440,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * </important> <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the entire
      * request fails and invitations are not sent.
      * </p>
      * </note>
@@ -460,7 +460,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        </important> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for an account, then the
      *        entire request fails and invitations are not sent.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

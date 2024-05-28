@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.fsx.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,12 @@ public class CreateFileSystemOpenZFSConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiskIopsConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> ROOTVOLUMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootVolumeConfiguration").build();
+    private static final MarshallingInfo<String> PREFERREDSUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredSubnetId").build();
+    private static final MarshallingInfo<String> ENDPOINTIPADDRESSRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointIpAddressRange").build();
+    private static final MarshallingInfo<List> ROUTETABLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RouteTableIds").build();
 
     private static final CreateFileSystemOpenZFSConfigurationMarshaller instance = new CreateFileSystemOpenZFSConfigurationMarshaller();
 
@@ -71,6 +78,9 @@ public class CreateFileSystemOpenZFSConfigurationMarshaller {
             protocolMarshaller.marshall(createFileSystemOpenZFSConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
             protocolMarshaller.marshall(createFileSystemOpenZFSConfiguration.getDiskIopsConfiguration(), DISKIOPSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createFileSystemOpenZFSConfiguration.getRootVolumeConfiguration(), ROOTVOLUMECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createFileSystemOpenZFSConfiguration.getPreferredSubnetId(), PREFERREDSUBNETID_BINDING);
+            protocolMarshaller.marshall(createFileSystemOpenZFSConfiguration.getEndpointIpAddressRange(), ENDPOINTIPADDRESSRANGE_BINDING);
+            protocolMarshaller.marshall(createFileSystemOpenZFSConfiguration.getRouteTableIds(), ROUTETABLEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

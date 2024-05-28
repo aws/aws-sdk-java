@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party
- * firewall policy settings.
+ * Contains the settings to configure a network ACL policy, a Network Firewall firewall policy deployment model, or a
+ * third-party firewall policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyOption" target="_top">AWS API
@@ -41,6 +41,12 @@ public class PolicyOption implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ThirdPartyFirewallPolicy thirdPartyFirewallPolicy;
+    /**
+     * <p>
+     * Defines a Firewall Manager network ACL policy.
+     * </p>
+     */
+    private NetworkAclCommonPolicy networkAclCommonPolicy;
 
     /**
      * <p>
@@ -123,6 +129,46 @@ public class PolicyOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Defines a Firewall Manager network ACL policy.
+     * </p>
+     * 
+     * @param networkAclCommonPolicy
+     *        Defines a Firewall Manager network ACL policy.
+     */
+
+    public void setNetworkAclCommonPolicy(NetworkAclCommonPolicy networkAclCommonPolicy) {
+        this.networkAclCommonPolicy = networkAclCommonPolicy;
+    }
+
+    /**
+     * <p>
+     * Defines a Firewall Manager network ACL policy.
+     * </p>
+     * 
+     * @return Defines a Firewall Manager network ACL policy.
+     */
+
+    public NetworkAclCommonPolicy getNetworkAclCommonPolicy() {
+        return this.networkAclCommonPolicy;
+    }
+
+    /**
+     * <p>
+     * Defines a Firewall Manager network ACL policy.
+     * </p>
+     * 
+     * @param networkAclCommonPolicy
+     *        Defines a Firewall Manager network ACL policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyOption withNetworkAclCommonPolicy(NetworkAclCommonPolicy networkAclCommonPolicy) {
+        setNetworkAclCommonPolicy(networkAclCommonPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -137,7 +183,9 @@ public class PolicyOption implements Serializable, Cloneable, StructuredPojo {
         if (getNetworkFirewallPolicy() != null)
             sb.append("NetworkFirewallPolicy: ").append(getNetworkFirewallPolicy()).append(",");
         if (getThirdPartyFirewallPolicy() != null)
-            sb.append("ThirdPartyFirewallPolicy: ").append(getThirdPartyFirewallPolicy());
+            sb.append("ThirdPartyFirewallPolicy: ").append(getThirdPartyFirewallPolicy()).append(",");
+        if (getNetworkAclCommonPolicy() != null)
+            sb.append("NetworkAclCommonPolicy: ").append(getNetworkAclCommonPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +208,10 @@ public class PolicyOption implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getThirdPartyFirewallPolicy() != null && other.getThirdPartyFirewallPolicy().equals(this.getThirdPartyFirewallPolicy()) == false)
             return false;
+        if (other.getNetworkAclCommonPolicy() == null ^ this.getNetworkAclCommonPolicy() == null)
+            return false;
+        if (other.getNetworkAclCommonPolicy() != null && other.getNetworkAclCommonPolicy().equals(this.getNetworkAclCommonPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +222,7 @@ public class PolicyOption implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getNetworkFirewallPolicy() == null) ? 0 : getNetworkFirewallPolicy().hashCode());
         hashCode = prime * hashCode + ((getThirdPartyFirewallPolicy() == null) ? 0 : getThirdPartyFirewallPolicy().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAclCommonPolicy() == null) ? 0 : getNetworkAclCommonPolicy().hashCode());
         return hashCode;
     }
 

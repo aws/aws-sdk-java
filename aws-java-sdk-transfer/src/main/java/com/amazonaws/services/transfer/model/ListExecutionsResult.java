@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,33 +38,8 @@ public class ListExecutionsResult extends com.amazonaws.AmazonWebServiceResult<c
     private String workflowId;
     /**
      * <p>
-     * Returns the details for each execution.
+     * Returns the details for each execution, in a <code>ListedExecution</code> array.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue
-     * listing additional executions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service
-     * metadata.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<ListedExecution> executions;
 
@@ -156,59 +131,10 @@ public class ListExecutionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Returns the details for each execution.
+     * Returns the details for each execution, in a <code>ListedExecution</code> array.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue
-     * listing additional executions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service
-     * metadata.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Returns the details for each execution.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to
-     *         continue listing additional executions.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>StartTime</b>: timestamp indicating when the execution began.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Executions</b>: details of the execution, including the execution ID, initial file location, and
-     *         Service metadata.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     *         <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     *         </p>
-     *         </li>
+     * @return Returns the details for each execution, in a <code>ListedExecution</code> array.
      */
 
     public java.util.List<ListedExecution> getExecutions() {
@@ -217,60 +143,11 @@ public class ListExecutionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Returns the details for each execution.
+     * Returns the details for each execution, in a <code>ListedExecution</code> array.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue
-     * listing additional executions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service
-     * metadata.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param executions
-     *        Returns the details for each execution.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to
-     *        continue listing additional executions.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>StartTime</b>: timestamp indicating when the execution began.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Executions</b>: details of the execution, including the execution ID, initial file location, and
-     *        Service metadata.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     *        <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     *        </p>
-     *        </li>
+     *        Returns the details for each execution, in a <code>ListedExecution</code> array.
      */
 
     public void setExecutions(java.util.Collection<ListedExecution> executions) {
@@ -284,33 +161,8 @@ public class ListExecutionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Returns the details for each execution.
+     * Returns the details for each execution, in a <code>ListedExecution</code> array.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue
-     * listing additional executions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service
-     * metadata.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExecutions(java.util.Collection)} or {@link #withExecutions(java.util.Collection)} if you want to
@@ -318,31 +170,7 @@ public class ListExecutionsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param executions
-     *        Returns the details for each execution.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to
-     *        continue listing additional executions.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>StartTime</b>: timestamp indicating when the execution began.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Executions</b>: details of the execution, including the execution ID, initial file location, and
-     *        Service metadata.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     *        <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     *        </p>
-     *        </li>
+     *        Returns the details for each execution, in a <code>ListedExecution</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,60 +186,11 @@ public class ListExecutionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Returns the details for each execution.
+     * Returns the details for each execution, in a <code>ListedExecution</code> array.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue
-     * listing additional executions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service
-     * metadata.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param executions
-     *        Returns the details for each execution.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to
-     *        continue listing additional executions.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>StartTime</b>: timestamp indicating when the execution began.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Executions</b>: details of the execution, including the execution ID, initial file location, and
-     *        Service metadata.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     *        <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
-     *        </p>
-     *        </li>
+     *        Returns the details for each execution, in a <code>ListedExecution</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,16 @@ public class AbstractAWSSSMContacts implements AWSSSMContacts {
     }
 
     @Override
+    public CreateRotationResult createRotation(CreateRotationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRotationOverrideResult createRotationOverride(CreateRotationOverrideRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeactivateContactChannelResult deactivateContactChannel(DeactivateContactChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +69,16 @@ public class AbstractAWSSSMContacts implements AWSSSMContacts {
 
     @Override
     public DeleteContactChannelResult deleteContactChannel(DeleteContactChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRotationResult deleteRotation(DeleteRotationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRotationOverrideResult deleteRotationOverride(DeleteRotationOverrideRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +108,16 @@ public class AbstractAWSSSMContacts implements AWSSSMContacts {
     }
 
     @Override
+    public GetRotationResult getRotation(GetRotationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRotationOverrideResult getRotationOverride(GetRotationOverrideRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListContactChannelsResult listContactChannels(ListContactChannelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,12 +138,37 @@ public class AbstractAWSSSMContacts implements AWSSSMContacts {
     }
 
     @Override
+    public ListPageResolutionsResult listPageResolutions(ListPageResolutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPagesByContactResult listPagesByContact(ListPagesByContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListPagesByEngagementResult listPagesByEngagement(ListPagesByEngagementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPreviewRotationShiftsResult listPreviewRotationShifts(ListPreviewRotationShiftsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRotationOverridesResult listRotationOverrides(ListRotationOverridesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRotationShiftsResult listRotationShifts(ListRotationShiftsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRotationsResult listRotations(ListRotationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,6 +214,11 @@ public class AbstractAWSSSMContacts implements AWSSSMContacts {
 
     @Override
     public UpdateContactChannelResult updateContactChannel(UpdateContactChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRotationResult updateRotation(UpdateRotationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

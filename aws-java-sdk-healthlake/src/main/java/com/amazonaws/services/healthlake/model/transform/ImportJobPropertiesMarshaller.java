@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class ImportJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputDataConfig").build();
     private static final MarshallingInfo<StructuredPojo> JOBOUTPUTDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobOutputDataConfig").build();
+    private static final MarshallingInfo<StructuredPojo> JOBPROGRESSREPORT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobProgressReport").build();
     private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +74,7 @@ public class ImportJobPropertiesMarshaller {
             protocolMarshaller.marshall(importJobProperties.getDatastoreId(), DATASTOREID_BINDING);
             protocolMarshaller.marshall(importJobProperties.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(importJobProperties.getJobOutputDataConfig(), JOBOUTPUTDATACONFIG_BINDING);
+            protocolMarshaller.marshall(importJobProperties.getJobProgressReport(), JOBPROGRESSREPORT_BINDING);
             protocolMarshaller.marshall(importJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(importJobProperties.getMessage(), MESSAGE_BINDING);
         } catch (Exception e) {

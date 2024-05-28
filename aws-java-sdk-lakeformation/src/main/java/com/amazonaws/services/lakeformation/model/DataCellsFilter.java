@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,8 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
     private RowFilter rowFilter;
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      */
     private java.util.List<String> columnNames;
@@ -73,6 +74,12 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ColumnWildcard columnWildcard;
+    /**
+     * <p>
+     * The ID of the data cells filter version.
+     * </p>
+     */
+    private String versionId;
 
     /**
      * <p>
@@ -276,10 +283,13 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * 
-     * @return A list of column names.
+     * @return A list of column names and/or nested column attributes. When specifying nested attributes, use a
+     *         qualified dot (.) delimited format such as "address"."zip". Nested attributes within this list may not
+     *         exceed a depth of 5.
      */
 
     public java.util.List<String> getColumnNames() {
@@ -288,11 +298,14 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * 
      * @param columnNames
-     *        A list of column names.
+     *        A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified
+     *        dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a
+     *        depth of 5.
      */
 
     public void setColumnNames(java.util.Collection<String> columnNames) {
@@ -306,7 +319,8 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -315,7 +329,9 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param columnNames
-     *        A list of column names.
+     *        A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified
+     *        dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a
+     *        depth of 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,11 +347,14 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of column names.
+     * A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified dot
+     * (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a depth of 5.
      * </p>
      * 
      * @param columnNames
-     *        A list of column names.
+     *        A list of column names and/or nested column attributes. When specifying nested attributes, use a qualified
+     *        dot (.) delimited format such as "address"."zip". Nested attributes within this list may not exceed a
+     *        depth of 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,6 +419,46 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The ID of the data cells filter version.
+     * </p>
+     * 
+     * @param versionId
+     *        The ID of the data cells filter version.
+     */
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the data cells filter version.
+     * </p>
+     * 
+     * @return The ID of the data cells filter version.
+     */
+
+    public String getVersionId() {
+        return this.versionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the data cells filter version.
+     * </p>
+     * 
+     * @param versionId
+     *        The ID of the data cells filter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataCellsFilter withVersionId(String versionId) {
+        setVersionId(versionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -424,7 +483,9 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
         if (getColumnNames() != null)
             sb.append("ColumnNames: ").append(getColumnNames()).append(",");
         if (getColumnWildcard() != null)
-            sb.append("ColumnWildcard: ").append(getColumnWildcard());
+            sb.append("ColumnWildcard: ").append(getColumnWildcard()).append(",");
+        if (getVersionId() != null)
+            sb.append("VersionId: ").append(getVersionId());
         sb.append("}");
         return sb.toString();
     }
@@ -467,6 +528,10 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getColumnWildcard() != null && other.getColumnWildcard().equals(this.getColumnWildcard()) == false)
             return false;
+        if (other.getVersionId() == null ^ this.getVersionId() == null)
+            return false;
+        if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
+            return false;
         return true;
     }
 
@@ -482,6 +547,7 @@ public class DataCellsFilter implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getRowFilter() == null) ? 0 : getRowFilter().hashCode());
         hashCode = prime * hashCode + ((getColumnNames() == null) ? 0 : getColumnNames().hashCode());
         hashCode = prime * hashCode + ((getColumnWildcard() == null) ? 0 : getColumnWildcard().hashCode());
+        hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
         return hashCode;
     }
 

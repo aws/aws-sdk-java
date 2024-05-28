@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.services.s3.TargetObjectKeyFormat;
 
 /**
  * <p>
@@ -61,6 +62,7 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
 
     private String expectedBucketOwner;
 
+    private TargetObjectKeyFormat targetObjectKeyFormat;
 
     /**
      * Constructs a new {@link SetBucketLoggingConfigurationRequest}
@@ -76,6 +78,7 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
     public SetBucketLoggingConfigurationRequest(String bucketName, BucketLoggingConfiguration loggingConfiguration) {
         this.bucketName = bucketName;
         this.loggingConfiguration = loggingConfiguration;
+        this.targetObjectKeyFormat = loggingConfiguration.getTargetObjectKeyFormat();
     }
 
     public String getExpectedBucketOwner() {
@@ -181,4 +184,31 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Returns the {@link TargetObjectKeyFormat} for this logging configuration request.
+     *
+     * @return The {@link TargetObjectKeyFormat} for this logging configuration request.
+     */
+    public TargetObjectKeyFormat getTargetObjectKeyFormat() {
+        return targetObjectKeyFormat;
+    }
+
+    /**
+     * Sets the {@link TargetObjectKeyFormat} for this logging configuration request.
+     *
+     * @param targetObjectKeyFormat The {@link TargetObjectKeyFormat} for this logging configuration request.
+     */
+    public void setTargetObjectKeyFormat(TargetObjectKeyFormat targetObjectKeyFormat) {
+        this.targetObjectKeyFormat = targetObjectKeyFormat;
+    }
+
+    /**
+     * Sets the {@link TargetObjectKeyFormat} for this logging configuration request and returns this object for method chaining.
+     *
+     * @param targetObjectKeyFormat The {@link TargetObjectKeyFormat} for this logging configuration request.
+     */
+    public SetBucketLoggingConfigurationRequest withTargetObjectKeyFormat(TargetObjectKeyFormat targetObjectKeyFormat) {
+        setTargetObjectKeyFormat(targetObjectKeyFormat);
+        return this;
+    }
 }

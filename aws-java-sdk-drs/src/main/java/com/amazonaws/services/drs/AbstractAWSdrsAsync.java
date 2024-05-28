@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSourceNetworkStackResult> associateSourceNetworkStackAsync(AssociateSourceNetworkStackRequest request) {
+
+        return associateSourceNetworkStackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSourceNetworkStackResult> associateSourceNetworkStackAsync(AssociateSourceNetworkStackRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateSourceNetworkStackRequest, AssociateSourceNetworkStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(CreateExtendedSourceServerRequest request) {
 
         return createExtendedSourceServerAsync(request, null);
@@ -35,6 +48,21 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<CreateExtendedSourceServerResult> createExtendedSourceServerAsync(CreateExtendedSourceServerRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateExtendedSourceServerRequest, CreateExtendedSourceServerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLaunchConfigurationTemplateResult> createLaunchConfigurationTemplateAsync(
+            CreateLaunchConfigurationTemplateRequest request) {
+
+        return createLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLaunchConfigurationTemplateResult> createLaunchConfigurationTemplateAsync(
+            CreateLaunchConfigurationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationTemplateRequest, CreateLaunchConfigurationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -55,6 +83,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSourceNetworkResult> createSourceNetworkAsync(CreateSourceNetworkRequest request) {
+
+        return createSourceNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSourceNetworkResult> createSourceNetworkAsync(CreateSourceNetworkRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSourceNetworkRequest, CreateSourceNetworkResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request) {
 
         return deleteJobAsync(request, null);
@@ -63,6 +104,34 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchActionResult> deleteLaunchActionAsync(DeleteLaunchActionRequest request) {
+
+        return deleteLaunchActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchActionResult> deleteLaunchActionAsync(DeleteLaunchActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchActionRequest, DeleteLaunchActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchConfigurationTemplateResult> deleteLaunchConfigurationTemplateAsync(
+            DeleteLaunchConfigurationTemplateRequest request) {
+
+        return deleteLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLaunchConfigurationTemplateResult> deleteLaunchConfigurationTemplateAsync(
+            DeleteLaunchConfigurationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationTemplateRequest, DeleteLaunchConfigurationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -91,6 +160,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     public java.util.concurrent.Future<DeleteReplicationConfigurationTemplateResult> deleteReplicationConfigurationTemplateAsync(
             DeleteReplicationConfigurationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteReplicationConfigurationTemplateRequest, DeleteReplicationConfigurationTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSourceNetworkResult> deleteSourceNetworkAsync(DeleteSourceNetworkRequest request) {
+
+        return deleteSourceNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSourceNetworkResult> deleteSourceNetworkAsync(DeleteSourceNetworkRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSourceNetworkRequest, DeleteSourceNetworkResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -130,6 +212,21 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<DescribeJobsResult> describeJobsAsync(DescribeJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobsRequest, DescribeJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLaunchConfigurationTemplatesResult> describeLaunchConfigurationTemplatesAsync(
+            DescribeLaunchConfigurationTemplatesRequest request) {
+
+        return describeLaunchConfigurationTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLaunchConfigurationTemplatesResult> describeLaunchConfigurationTemplatesAsync(
+            DescribeLaunchConfigurationTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLaunchConfigurationTemplatesRequest, DescribeLaunchConfigurationTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -176,6 +273,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSourceNetworksResult> describeSourceNetworksAsync(DescribeSourceNetworksRequest request) {
+
+        return describeSourceNetworksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSourceNetworksResult> describeSourceNetworksAsync(DescribeSourceNetworksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSourceNetworksRequest, DescribeSourceNetworksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSourceServersResult> describeSourceServersAsync(DescribeSourceServersRequest request) {
 
         return describeSourceServersAsync(request, null);
@@ -210,6 +320,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<DisconnectSourceServerResult> disconnectSourceServerAsync(DisconnectSourceServerRequest request,
             com.amazonaws.handlers.AsyncHandler<DisconnectSourceServerRequest, DisconnectSourceServerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSourceNetworkCfnTemplateResult> exportSourceNetworkCfnTemplateAsync(ExportSourceNetworkCfnTemplateRequest request) {
+
+        return exportSourceNetworkCfnTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSourceNetworkCfnTemplateResult> exportSourceNetworkCfnTemplateAsync(ExportSourceNetworkCfnTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportSourceNetworkCfnTemplateRequest, ExportSourceNetworkCfnTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -282,6 +405,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListLaunchActionsResult> listLaunchActionsAsync(ListLaunchActionsRequest request) {
+
+        return listLaunchActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLaunchActionsResult> listLaunchActionsAsync(ListLaunchActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLaunchActionsRequest, ListLaunchActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStagingAccountsResult> listStagingAccountsAsync(ListStagingAccountsRequest request) {
 
         return listStagingAccountsAsync(request, null);
@@ -308,14 +444,42 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PutLaunchActionResult> putLaunchActionAsync(PutLaunchActionRequest request) {
+
+        return putLaunchActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLaunchActionResult> putLaunchActionAsync(PutLaunchActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutLaunchActionRequest, PutLaunchActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<RetryDataReplicationResult> retryDataReplicationAsync(RetryDataReplicationRequest request) {
 
         return retryDataReplicationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RetryDataReplicationResult> retryDataReplicationAsync(RetryDataReplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<RetryDataReplicationRequest, RetryDataReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest request) {
+
+        return reverseReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReverseReplicationRequest, ReverseReplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -347,6 +511,45 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request) {
+
+        return startReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkRecoveryResult> startSourceNetworkRecoveryAsync(StartSourceNetworkRecoveryRequest request) {
+
+        return startSourceNetworkRecoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkRecoveryResult> startSourceNetworkRecoveryAsync(StartSourceNetworkRecoveryRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSourceNetworkRecoveryRequest, StartSourceNetworkRecoveryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkReplicationResult> startSourceNetworkReplicationAsync(StartSourceNetworkReplicationRequest request) {
+
+        return startSourceNetworkReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSourceNetworkReplicationResult> startSourceNetworkReplicationAsync(StartSourceNetworkReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSourceNetworkReplicationRequest, StartSourceNetworkReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest request) {
 
         return stopFailbackAsync(request, null);
@@ -355,6 +558,32 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest request,
             com.amazonaws.handlers.AsyncHandler<StopFailbackRequest, StopFailbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request) {
+
+        return stopReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSourceNetworkReplicationResult> stopSourceNetworkReplicationAsync(StopSourceNetworkReplicationRequest request) {
+
+        return stopSourceNetworkReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSourceNetworkReplicationResult> stopSourceNetworkReplicationAsync(StopSourceNetworkReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopSourceNetworkReplicationRequest, StopSourceNetworkReplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -422,6 +651,21 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<UpdateLaunchConfigurationResult> updateLaunchConfigurationAsync(UpdateLaunchConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLaunchConfigurationRequest, UpdateLaunchConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLaunchConfigurationTemplateResult> updateLaunchConfigurationTemplateAsync(
+            UpdateLaunchConfigurationTemplateRequest request) {
+
+        return updateLaunchConfigurationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLaunchConfigurationTemplateResult> updateLaunchConfigurationTemplateAsync(
+            UpdateLaunchConfigurationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLaunchConfigurationTemplateRequest, UpdateLaunchConfigurationTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

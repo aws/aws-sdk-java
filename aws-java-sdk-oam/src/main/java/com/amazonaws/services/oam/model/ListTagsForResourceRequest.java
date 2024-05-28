@@ -1,0 +1,247 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.oam.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListTagsForResource" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The ARN of the resource that you want to view tags for.
+     * </p>
+     * <p>
+     * The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     * </p>
+     * <p>
+     * For more information about ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
+     * Logs resources and operations</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks
+     * you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code> permission does not
+     * allow you to tag and untag links and sinks.
+     * </p>
+     * </important>
+     */
+    private String resourceArn;
+
+    /**
+     * <p>
+     * The ARN of the resource that you want to view tags for.
+     * </p>
+     * <p>
+     * The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     * </p>
+     * <p>
+     * For more information about ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
+     * Logs resources and operations</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks
+     * you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code> permission does not
+     * allow you to tag and untag links and sinks.
+     * </p>
+     * </important>
+     * 
+     * @param resourceArn
+     *        The ARN of the resource that you want to view tags for.</p>
+     *        <p>
+     *        The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     *        </p>
+     *        <p>
+     *        The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     *        </p>
+     *        <p>
+     *        For more information about ARN format, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html"
+     *        >CloudWatch Logs resources and operations</a>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links
+     *        or sinks you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code>
+     *        permission does not allow you to tag and untag links and sinks.
+     *        </p>
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource that you want to view tags for.
+     * </p>
+     * <p>
+     * The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     * </p>
+     * <p>
+     * For more information about ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
+     * Logs resources and operations</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks
+     * you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code> permission does not
+     * allow you to tag and untag links and sinks.
+     * </p>
+     * </important>
+     * 
+     * @return The ARN of the resource that you want to view tags for.</p>
+     *         <p>
+     *         The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     *         </p>
+     *         <p>
+     *         The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     *         </p>
+     *         <p>
+     *         For more information about ARN format, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html"
+     *         >CloudWatch Logs resources and operations</a>.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links
+     *         or sinks you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code>
+     *         permission does not allow you to tag and untag links and sinks.
+     *         </p>
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource that you want to view tags for.
+     * </p>
+     * <p>
+     * The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     * </p>
+     * <p>
+     * For more information about ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch
+     * Logs resources and operations</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks
+     * you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code> permission does not
+     * allow you to tag and untag links and sinks.
+     * </p>
+     * </important>
+     * 
+     * @param resourceArn
+     *        The ARN of the resource that you want to view tags for.</p>
+     *        <p>
+     *        The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code>
+     *        </p>
+     *        <p>
+     *        The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code>
+     *        </p>
+     *        <p>
+     *        For more information about ARN format, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html"
+     *        >CloudWatch Logs resources and operations</a>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links
+     *        or sinks you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code>
+     *        permission does not allow you to tag and untag links and sinks.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTagsForResourceRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListTagsForResourceRequest == false)
+            return false;
+        ListTagsForResourceRequest other = (ListTagsForResourceRequest) obj;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListTagsForResourceRequest clone() {
+        return (ListTagsForResourceRequest) super.clone();
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,49 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for
-     * those users who are associated with the queues and have contacts that are in the specified
-     * <code>ContactState</code>.
+     * The filters to apply to returned user data. You can filter up to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Queues: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Routing profiles: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agents: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contact states: 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User hierarchy groups: 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be
+     * passed from queues, routing profiles, agents, and user hierarchy groups.
+     * </p>
+     * <p>
+     * Currently tagging is only supported on the resources that are passed in the filter.
      * </p>
      */
     private UserDataFilters filters;
@@ -55,11 +89,15 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -68,10 +106,14 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -80,11 +122,15 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,15 +141,78 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for
-     * those users who are associated with the queues and have contacts that are in the specified
-     * <code>ContactState</code>.
+     * The filters to apply to returned user data. You can filter up to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Queues: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Routing profiles: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agents: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contact states: 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User hierarchy groups: 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be
+     * passed from queues, routing profiles, agents, and user hierarchy groups.
+     * </p>
+     * <p>
+     * Currently tagging is only supported on the resources that are passed in the filter.
      * </p>
      * 
      * @param filters
-     *        Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved
-     *        only for those users who are associated with the queues and have contacts that are in the specified
-     *        <code>ContactState</code>.
+     *        The filters to apply to returned user data. You can filter up to the following limits:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Queues: 100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Routing profiles: 100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Agents: 100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Contact states: 9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User hierarchy groups: 1
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter
+     *        can be passed from queues, routing profiles, agents, and user hierarchy groups.
+     *        </p>
+     *        <p>
+     *        Currently tagging is only supported on the resources that are passed in the filter.
      */
 
     public void setFilters(UserDataFilters filters) {
@@ -112,14 +221,77 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for
-     * those users who are associated with the queues and have contacts that are in the specified
-     * <code>ContactState</code>.
+     * The filters to apply to returned user data. You can filter up to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Queues: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Routing profiles: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agents: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contact states: 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User hierarchy groups: 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be
+     * passed from queues, routing profiles, agents, and user hierarchy groups.
+     * </p>
+     * <p>
+     * Currently tagging is only supported on the resources that are passed in the filter.
      * </p>
      * 
-     * @return Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved
-     *         only for those users who are associated with the queues and have contacts that are in the specified
-     *         <code>ContactState</code>.
+     * @return The filters to apply to returned user data. You can filter up to the following limits:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Queues: 100
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Routing profiles: 100
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Agents: 100
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Contact states: 9
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         User hierarchy groups: 1
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter
+     *         can be passed from queues, routing profiles, agents, and user hierarchy groups.
+     *         </p>
+     *         <p>
+     *         Currently tagging is only supported on the resources that are passed in the filter.
      */
 
     public UserDataFilters getFilters() {
@@ -128,15 +300,78 @@ public class GetCurrentUserDataRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved only for
-     * those users who are associated with the queues and have contacts that are in the specified
-     * <code>ContactState</code>.
+     * The filters to apply to returned user data. You can filter up to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Queues: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Routing profiles: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agents: 100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Contact states: 9
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User hierarchy groups: 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be
+     * passed from queues, routing profiles, agents, and user hierarchy groups.
+     * </p>
+     * <p>
+     * Currently tagging is only supported on the resources that are passed in the filter.
      * </p>
      * 
      * @param filters
-     *        Filters up to 100 <code>Queues</code>, or up to 9 <code>ContactStates</code>. The user data is retrieved
-     *        only for those users who are associated with the queues and have contacts that are in the specified
-     *        <code>ContactState</code>.
+     *        The filters to apply to returned user data. You can filter up to the following limits:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Queues: 100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Routing profiles: 100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Agents: 100
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Contact states: 9
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User hierarchy groups: 1
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter
+     *        can be passed from queues, routing profiles, agents, and user hierarchy groups.
+     *        </p>
+     *        <p>
+     *        Currently tagging is only supported on the resources that are passed in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

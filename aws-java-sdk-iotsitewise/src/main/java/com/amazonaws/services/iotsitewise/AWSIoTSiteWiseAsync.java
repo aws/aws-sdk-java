@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -481,6 +481,23 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
+     * <p>
+     * You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createAssetModelRequest
      * @return A Java Future containing the result of the CreateAssetModel operation returned by the service.
@@ -498,6 +515,23 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
+     * <p>
+     * You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createAssetModelRequest
      * @param asyncHandler
@@ -514,16 +548,99 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Creates a custom composite model from specified property and hierarchy definitions. There are two types of custom
+     * composite models, <code>inline</code> and <code>component-model-based</code>.
+     * </p>
+     * <p>
+     * Use component-model-based custom composite models to define standard, reusable components. A
+     * component-model-based custom composite model consists of a name, a description, and the ID of the component model
+     * it references. A component-model-based custom composite model has no properties of its own; its referenced
+     * component model provides its associated properties to any created assets. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite
+     * models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * <p>
+     * Use inline custom composite models to organize the properties of an asset model. The properties of inline custom
+     * composite models are local to the asset model where they are included and can't be used to create multiple
+     * assets.
+     * </p>
+     * <p>
+     * To create a component-model-based model, specify the <code>composedAssetModelId</code> of an existing asset model
+     * with <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.
+     * </p>
+     * <p>
+     * To create an inline model, specify the <code>assetModelCompositeModelProperties</code> and don't include an
+     * <code>composedAssetModelId</code>.
+     * </p>
+     * 
+     * @param createAssetModelCompositeModelRequest
+     * @return A Java Future containing the result of the CreateAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.CreateAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAssetModelCompositeModelResult> createAssetModelCompositeModelAsync(
+            CreateAssetModelCompositeModelRequest createAssetModelCompositeModelRequest);
+
+    /**
+     * <p>
+     * Creates a custom composite model from specified property and hierarchy definitions. There are two types of custom
+     * composite models, <code>inline</code> and <code>component-model-based</code>.
+     * </p>
+     * <p>
+     * Use component-model-based custom composite models to define standard, reusable components. A
+     * component-model-based custom composite model consists of a name, a description, and the ID of the component model
+     * it references. A component-model-based custom composite model has no properties of its own; its referenced
+     * component model provides its associated properties to any created assets. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite
+     * models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * <p>
+     * Use inline custom composite models to organize the properties of an asset model. The properties of inline custom
+     * composite models are local to the asset model where they are included and can't be used to create multiple
+     * assets.
+     * </p>
+     * <p>
+     * To create a component-model-based model, specify the <code>composedAssetModelId</code> of an existing asset model
+     * with <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.
+     * </p>
+     * <p>
+     * To create an inline model, specify the <code>assetModelCompositeModelProperties</code> and don't include an
+     * <code>composedAssetModelId</code>.
+     * </p>
+     * 
+     * @param createAssetModelCompositeModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.CreateAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAssetModelCompositeModelResult> createAssetModelCompositeModelAsync(
+            CreateAssetModelCompositeModelRequest createAssetModelCompositeModelRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAssetModelCompositeModelRequest, CreateAssetModelCompositeModelResult> asyncHandler);
+
+    /**
+     * <p>
      * Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import
      * job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more
      * information about how to configure storage settings, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
      * >PutStorageConfiguration</a>.
+     * </p>
+     * <p>
+     * Bulk import is designed to store historical data to IoT SiteWise. It does not trigger computations or
+     * notifications on IoT SiteWise warm or cold tier storage.
      * </p>
      * </important>
      * 
@@ -543,10 +660,14 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * </p>
      * <important>
      * <p>
-     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more
      * information about how to configure storage settings, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
      * >PutStorageConfiguration</a>.
+     * </p>
+     * <p>
+     * Bulk import is designed to store historical data to IoT SiteWise. It does not trigger computations or
+     * notifications on IoT SiteWise warm or cold tier storage.
      * </p>
      * </important>
      * 
@@ -846,6 +967,51 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Deletes a composite model. This action can't be undone. You must delete all assets created from a composite model
+     * before you can delete the model. Also, you can't delete a composite model if a parent asset model exists that
+     * contains a property formula expression that depends on the asset model that you want to delete. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param deleteAssetModelCompositeModelRequest
+     * @return A Java Future containing the result of the DeleteAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.DeleteAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAssetModelCompositeModelResult> deleteAssetModelCompositeModelAsync(
+            DeleteAssetModelCompositeModelRequest deleteAssetModelCompositeModelRequest);
+
+    /**
+     * <p>
+     * Deletes a composite model. This action can't be undone. You must delete all assets created from a composite model
+     * before you can delete the model. Also, you can't delete a composite model if a parent asset model exists that
+     * contains a property formula expression that depends on the asset model that you want to delete. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param deleteAssetModelCompositeModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DeleteAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAssetModelCompositeModelResult> deleteAssetModelCompositeModelAsync(
+            DeleteAssetModelCompositeModelRequest deleteAssetModelCompositeModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAssetModelCompositeModelRequest, DeleteAssetModelCompositeModelResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a dashboard from IoT SiteWise Monitor.
      * </p>
      * 
@@ -1090,6 +1256,37 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves information about an action.
+     * </p>
+     * 
+     * @param describeActionRequest
+     * @return A Java Future containing the result of the DescribeAction operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.DescribeAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeActionResult> describeActionAsync(DescribeActionRequest describeActionRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an action.
+     * </p>
+     * 
+     * @param describeActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAction operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DescribeAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeActionResult> describeActionAsync(DescribeActionRequest describeActionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeActionRequest, DescribeActionResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about an asset.
      * </p>
      * 
@@ -1121,6 +1318,47 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves information about an asset composite model (also known as an asset component). An
+     * <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>. If you want to see
+     * information about the model this is based on, call <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html"
+     * >DescribeAssetModelCompositeModel</a>.
+     * </p>
+     * 
+     * @param describeAssetCompositeModelRequest
+     * @return A Java Future containing the result of the DescribeAssetCompositeModel operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.DescribeAssetCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetCompositeModelResult> describeAssetCompositeModelAsync(
+            DescribeAssetCompositeModelRequest describeAssetCompositeModelRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an asset composite model (also known as an asset component). An
+     * <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>. If you want to see
+     * information about the model this is based on, call <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html"
+     * >DescribeAssetModelCompositeModel</a>.
+     * </p>
+     * 
+     * @param describeAssetCompositeModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssetCompositeModel operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DescribeAssetCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetCompositeModelResult> describeAssetCompositeModelAsync(
+            DescribeAssetCompositeModelRequest describeAssetCompositeModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssetCompositeModelRequest, DescribeAssetCompositeModelResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about an asset model.
      * </p>
      * 
@@ -1149,6 +1387,47 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<DescribeAssetModelResult> describeAssetModelAsync(DescribeAssetModelRequest describeAssetModelRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetModelRequest, DescribeAssetModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about an asset model composite model (also known as an asset model component). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite
+     * models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeAssetModelCompositeModelRequest
+     * @return A Java Future containing the result of the DescribeAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.DescribeAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetModelCompositeModelResult> describeAssetModelCompositeModelAsync(
+            DescribeAssetModelCompositeModelRequest describeAssetModelCompositeModelRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an asset model composite model (also known as an asset model component). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite
+     * models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeAssetModelCompositeModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.DescribeAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetModelCompositeModelResult> describeAssetModelCompositeModelAsync(
+            DescribeAssetModelCompositeModelRequest describeAssetModelCompositeModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssetModelCompositeModelRequest, DescribeAssetModelCompositeModelResult> asyncHandler);
 
     /**
      * <p>
@@ -1673,6 +1952,70 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Executes an action on a target resource.
+     * </p>
+     * 
+     * @param executeActionRequest
+     * @return A Java Future containing the result of the ExecuteAction operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ExecuteAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteActionResult> executeActionAsync(ExecuteActionRequest executeActionRequest);
+
+    /**
+     * <p>
+     * Executes an action on a target resource.
+     * </p>
+     * 
+     * @param executeActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteAction operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ExecuteAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteActionResult> executeActionAsync(ExecuteActionRequest executeActionRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteActionRequest, ExecuteActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Run SQL queries to retrieve metadata and time-series data from asset models, assets, measurements, metrics,
+     * transforms, and aggregates.
+     * </p>
+     * 
+     * @param executeQueryRequest
+     * @return A Java Future containing the result of the ExecuteQuery operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ExecuteQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest executeQueryRequest);
+
+    /**
+     * <p>
+     * Run SQL queries to retrieve metadata and time-series data from asset models, assets, measurements, metrics,
+     * transforms, and aggregates.
+     * </p>
+     * 
+     * @param executeQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteQuery operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ExecuteQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest executeQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteQueryRequest, ExecuteQueryResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
      * aggregates</a> in the <i>IoT SiteWise User Guide</i>.
@@ -2008,6 +2351,72 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves a paginated list of actions for a specific target resource.
+     * </p>
+     * 
+     * @param listActionsRequest
+     * @return A Java Future containing the result of the ListActions operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest listActionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of actions for a specific target resource.
+     * </p>
+     * 
+     * @param listActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListActions operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest listActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListActionsRequest, ListActionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of composite models associated with the asset model
+     * </p>
+     * 
+     * @param listAssetModelCompositeModelsRequest
+     * @return A Java Future containing the result of the ListAssetModelCompositeModels operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.ListAssetModelCompositeModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetModelCompositeModelsResult> listAssetModelCompositeModelsAsync(
+            ListAssetModelCompositeModelsRequest listAssetModelCompositeModelsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of composite models associated with the asset model
+     * </p>
+     * 
+     * @param listAssetModelCompositeModelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetModelCompositeModels operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListAssetModelCompositeModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetModelCompositeModelsResult> listAssetModelCompositeModelsAsync(
+            ListAssetModelCompositeModelsRequest listAssetModelCompositeModelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetModelCompositeModelsRequest, ListAssetModelCompositeModelsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
      * the model before you finish listing all the properties, you need to start all over again.
      * </p>
@@ -2302,6 +2711,41 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListBulkImportJobsResult> listBulkImportJobsAsync(ListBulkImportJobsRequest listBulkImportJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBulkImportJobsRequest, ListBulkImportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of composition relationships for an asset model of type <code>COMPONENT_MODEL</code>.
+     * </p>
+     * 
+     * @param listCompositionRelationshipsRequest
+     * @return A Java Future containing the result of the ListCompositionRelationships operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.ListCompositionRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCompositionRelationshipsResult> listCompositionRelationshipsAsync(
+            ListCompositionRelationshipsRequest listCompositionRelationshipsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of composition relationships for an asset model of type <code>COMPONENT_MODEL</code>.
+     * </p>
+     * 
+     * @param listCompositionRelationshipsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCompositionRelationships operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListCompositionRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCompositionRelationshipsResult> listCompositionRelationshipsAsync(
+            ListCompositionRelationshipsRequest listCompositionRelationshipsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCompositionRelationshipsRequest, ListCompositionRelationshipsResult> asyncHandler);
 
     /**
      * <p>
@@ -2817,6 +3261,95 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<UpdateAssetModelResult> updateAssetModelAsync(UpdateAssetModelRequest updateAssetModelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAssetModelRequest, UpdateAssetModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a composite model and all of the assets that were created from the model. Each asset created from the
+     * model inherits the updated asset model's property and hierarchy definitions. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * If you remove a property from a composite asset model, IoT SiteWise deletes all previous data for that property.
+     * You can’t change the type or data type of an existing property.
+     * </p>
+     * <p>
+     * To replace an existing composite asset model property with a new one with the same <code>name</code>, do the
+     * following:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing property removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes the new property. The new asset
+     * property will have the same <code>name</code> as the previous one and IoT SiteWise will generate a new unique
+     * <code>id</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
+     * 
+     * @param updateAssetModelCompositeModelRequest
+     * @return A Java Future containing the result of the UpdateAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.UpdateAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAssetModelCompositeModelResult> updateAssetModelCompositeModelAsync(
+            UpdateAssetModelCompositeModelRequest updateAssetModelCompositeModelRequest);
+
+    /**
+     * <p>
+     * Updates a composite model and all of the assets that were created from the model. Each asset created from the
+     * model inherits the updated asset model's property and hierarchy definitions. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * If you remove a property from a composite asset model, IoT SiteWise deletes all previous data for that property.
+     * You can’t change the type or data type of an existing property.
+     * </p>
+     * <p>
+     * To replace an existing composite asset model property with a new one with the same <code>name</code>, do the
+     * following:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing property removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes the new property. The new asset
+     * property will have the same <code>name</code> as the previous one and IoT SiteWise will generate a new unique
+     * <code>id</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
+     * 
+     * @param updateAssetModelCompositeModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAssetModelCompositeModel operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.UpdateAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAssetModelCompositeModelResult> updateAssetModelCompositeModelAsync(
+            UpdateAssetModelCompositeModelRequest updateAssetModelCompositeModelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAssetModelCompositeModelRequest, UpdateAssetModelCompositeModelResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -157,6 +157,15 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("SelfManagedKafkaEventSourceConfig", targetDepth)) {
                     context.nextToken();
                     eventSourceMappingConfiguration.setSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("ScalingConfig", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setScalingConfig(ScalingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DocumentDBEventSourceConfig", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setDocumentDBEventSourceConfig(DocumentDBEventSourceConfigJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

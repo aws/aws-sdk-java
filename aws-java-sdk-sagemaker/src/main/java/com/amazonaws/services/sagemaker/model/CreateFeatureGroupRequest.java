@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,20 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
@@ -59,7 +62,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
@@ -122,11 +125,14 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
+     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.
      * </p>
      * <p>
      * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
+     * </p>
+     * <p>
+     * The default value is <code>False</code>.
      * </p>
      */
     private OnlineStoreConfig onlineStoreConfig;
@@ -153,12 +159,22 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Format for the offline store table. Supported formats are Glue (Default) and <a
+     * href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     * To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     * >OfflineStoreConfig</a>.
      * </p>
      */
     private OfflineStoreConfig offlineStoreConfig;
+
+    private ThroughputConfig throughputConfig;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code>
@@ -182,33 +198,39 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param featureGroupName
      *        The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in
-     *        an Amazon Web Services account. The name:</p>
+     *        an Amazon Web Services account.</p>
+     *        <p>
+     *        The name:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must start and end with an alphanumeric character.
+     *        Must start with an alphanumeric character.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     *        Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      *        </p>
      *        </li>
      */
@@ -220,32 +242,38 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
-     *         in an Amazon Web Services account. The name:</p>
+     *         in an Amazon Web Services account.</p>
+     *         <p>
+     *         The name:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must start and end with an alphanumeric character.
+     *         Must start with an alphanumeric character.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     *         Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      *         </p>
      *         </li>
      */
@@ -257,33 +285,39 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param featureGroupName
      *        The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in
-     *        an Amazon Web Services account. The name:</p>
+     *        an Amazon Web Services account.</p>
+     *        <p>
+     *        The name:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must start and end with an alphanumeric character.
+     *        Must start with an alphanumeric character.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     *        Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -309,7 +343,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
@@ -333,7 +367,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must start and end with an alphanumeric character.
+     *        Must start with an alphanumeric character.
      *        </p>
      *        </li>
      *        <li>
@@ -362,7 +396,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
@@ -385,7 +419,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         Must start and end with an alphanumeric character.
+     *         Must start with an alphanumeric character.
      *         </p>
      *         </li>
      *         <li>
@@ -414,7 +448,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must start and end with an alphanumeric character.
+     * Must start with an alphanumeric character.
      * </p>
      * </li>
      * <li>
@@ -438,7 +472,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must start and end with an alphanumeric character.
+     *        Must start with an alphanumeric character.
      *        </p>
      *        </li>
      *        <li>
@@ -806,20 +840,25 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
+     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.
      * </p>
      * <p>
      * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
+     * <p>
+     * The default value is <code>False</code>.
+     * </p>
      * 
      * @param onlineStoreConfig
      *        You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     *        <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is
-     *        <code>False</code>.</p>
+     *        <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
      *        <p>
      *        You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
      *        the <code>OnlineStore</code>.
+     *        </p>
+     *        <p>
+     *        The default value is <code>False</code>.
      */
 
     public void setOnlineStoreConfig(OnlineStoreConfig onlineStoreConfig) {
@@ -829,19 +868,24 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
+     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.
      * </p>
      * <p>
      * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
+     * <p>
+     * The default value is <code>False</code>.
+     * </p>
      * 
      * @return You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     *         <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is
-     *         <code>False</code>.</p>
+     *         <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
      *         <p>
      *         You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
      *         the <code>OnlineStore</code>.
+     *         </p>
+     *         <p>
+     *         The default value is <code>False</code>.
      */
 
     public OnlineStoreConfig getOnlineStoreConfig() {
@@ -851,20 +895,25 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.
+     * <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.
      * </p>
      * <p>
      * You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.
      * </p>
+     * <p>
+     * The default value is <code>False</code>.
+     * </p>
      * 
      * @param onlineStoreConfig
      *        You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the
-     *        <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is
-     *        <code>False</code>.</p>
+     *        <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
      *        <p>
      *        You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
      *        the <code>OnlineStore</code>.
+     *        </p>
+     *        <p>
+     *        The default value is <code>False</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -896,9 +945,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Format for the offline store table. Supported formats are Glue (Default) and <a
+     * href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     * To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     * >OfflineStoreConfig</a>.
      * </p>
      * 
      * @param offlineStoreConfig
@@ -923,9 +980,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        you can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Format for the offline store table. Supported formats are Glue (Default) and <a
+     *        href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     *        To learn more about this parameter, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     *        >OfflineStoreConfig</a>.
      */
 
     public void setOfflineStoreConfig(OfflineStoreConfig offlineStoreConfig) {
@@ -955,9 +1020,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Format for the offline store table. Supported formats are Glue (Default) and <a
+     * href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     * To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     * >OfflineStoreConfig</a>.
      * </p>
      * 
      * @return Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
@@ -981,9 +1054,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *         SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Format for the offline store table. Supported formats are Glue (Default) and <a
+     *         href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     *         To learn more about this parameter, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     *         >OfflineStoreConfig</a>.
      */
 
     public OfflineStoreConfig getOfflineStoreConfig() {
@@ -1013,9 +1094,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Format for the offline store table. Supported formats are Glue (Default) and <a
+     * href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     * To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     * >OfflineStoreConfig</a>.
      * </p>
      * 
      * @param offlineStoreConfig
@@ -1040,14 +1129,48 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        you can reduce Amazon Web Services KMS requests costs by up to 99 percent.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Format for the offline store table. Supported formats are Glue (Default) and <a
+     *        href="https://iceberg.apache.org/">Apache Iceberg</a>.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+     *        To learn more about this parameter, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html"
+     *        >OfflineStoreConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFeatureGroupRequest withOfflineStoreConfig(OfflineStoreConfig offlineStoreConfig) {
         setOfflineStoreConfig(offlineStoreConfig);
+        return this;
+    }
+
+    /**
+     * @param throughputConfig
+     */
+
+    public void setThroughputConfig(ThroughputConfig throughputConfig) {
+        this.throughputConfig = throughputConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ThroughputConfig getThroughputConfig() {
+        return this.throughputConfig;
+    }
+
+    /**
+     * @param throughputConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFeatureGroupRequest withThroughputConfig(ThroughputConfig throughputConfig) {
+        setThroughputConfig(throughputConfig);
         return this;
     }
 
@@ -1231,6 +1354,8 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("OnlineStoreConfig: ").append(getOnlineStoreConfig()).append(",");
         if (getOfflineStoreConfig() != null)
             sb.append("OfflineStoreConfig: ").append(getOfflineStoreConfig()).append(",");
+        if (getThroughputConfig() != null)
+            sb.append("ThroughputConfig: ").append(getThroughputConfig()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getDescription() != null)
@@ -1275,6 +1400,10 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getOfflineStoreConfig() != null && other.getOfflineStoreConfig().equals(this.getOfflineStoreConfig()) == false)
             return false;
+        if (other.getThroughputConfig() == null ^ this.getThroughputConfig() == null)
+            return false;
+        if (other.getThroughputConfig() != null && other.getThroughputConfig().equals(this.getThroughputConfig()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -1301,6 +1430,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFeatureDefinitions() == null) ? 0 : getFeatureDefinitions().hashCode());
         hashCode = prime * hashCode + ((getOnlineStoreConfig() == null) ? 0 : getOnlineStoreConfig().hashCode());
         hashCode = prime * hashCode + ((getOfflineStoreConfig() == null) ? 0 : getOfflineStoreConfig().hashCode());
+        hashCode = prime * hashCode + ((getThroughputConfig() == null) ? 0 : getThroughputConfig().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<String> entityTypes;
     /**
      * <p>
-     * Specifies if ingenstion is enabled or disabled.
+     * Specifies if ingestion is enabled or disabled.
      * </p>
      */
     private String eventIngestion;
@@ -67,6 +67,13 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for
+     * downstream processing of the events.
+     * </p>
+     */
+    private EventOrchestration eventOrchestration;
 
     /**
      * <p>
@@ -360,11 +367,11 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies if ingenstion is enabled or disabled.
+     * Specifies if ingestion is enabled or disabled.
      * </p>
      * 
      * @param eventIngestion
-     *        Specifies if ingenstion is enabled or disabled.
+     *        Specifies if ingestion is enabled or disabled.
      * @see EventIngestion
      */
 
@@ -374,10 +381,10 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies if ingenstion is enabled or disabled.
+     * Specifies if ingestion is enabled or disabled.
      * </p>
      * 
-     * @return Specifies if ingenstion is enabled or disabled.
+     * @return Specifies if ingestion is enabled or disabled.
      * @see EventIngestion
      */
 
@@ -387,11 +394,11 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies if ingenstion is enabled or disabled.
+     * Specifies if ingestion is enabled or disabled.
      * </p>
      * 
      * @param eventIngestion
-     *        Specifies if ingenstion is enabled or disabled.
+     *        Specifies if ingestion is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventIngestion
      */
@@ -403,11 +410,11 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies if ingenstion is enabled or disabled.
+     * Specifies if ingestion is enabled or disabled.
      * </p>
      * 
      * @param eventIngestion
-     *        Specifies if ingenstion is enabled or disabled.
+     *        Specifies if ingestion is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventIngestion
      */
@@ -488,6 +495,52 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for
+     * downstream processing of the events.
+     * </p>
+     * 
+     * @param eventOrchestration
+     *        Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services
+     *        for downstream processing of the events.
+     */
+
+    public void setEventOrchestration(EventOrchestration eventOrchestration) {
+        this.eventOrchestration = eventOrchestration;
+    }
+
+    /**
+     * <p>
+     * Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for
+     * downstream processing of the events.
+     * </p>
+     * 
+     * @return Enables or disables event orchestration. If enabled, you can send event predictions to select AWS
+     *         services for downstream processing of the events.
+     */
+
+    public EventOrchestration getEventOrchestration() {
+        return this.eventOrchestration;
+    }
+
+    /**
+     * <p>
+     * Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for
+     * downstream processing of the events.
+     * </p>
+     * 
+     * @param eventOrchestration
+     *        Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services
+     *        for downstream processing of the events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventTypeRequest withEventOrchestration(EventOrchestration eventOrchestration) {
+        setEventOrchestration(eventOrchestration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -512,7 +565,9 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getEventIngestion() != null)
             sb.append("EventIngestion: ").append(getEventIngestion()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEventOrchestration() != null)
+            sb.append("EventOrchestration: ").append(getEventOrchestration());
         sb.append("}");
         return sb.toString();
     }
@@ -555,6 +610,10 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEventOrchestration() == null ^ this.getEventOrchestration() == null)
+            return false;
+        if (other.getEventOrchestration() != null && other.getEventOrchestration().equals(this.getEventOrchestration()) == false)
+            return false;
         return true;
     }
 
@@ -570,6 +629,7 @@ public class PutEventTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getEntityTypes() == null) ? 0 : getEntityTypes().hashCode());
         hashCode = prime * hashCode + ((getEventIngestion() == null) ? 0 : getEventIngestion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEventOrchestration() == null) ? 0 : getEventOrchestration().hashCode());
         return hashCode;
     }
 

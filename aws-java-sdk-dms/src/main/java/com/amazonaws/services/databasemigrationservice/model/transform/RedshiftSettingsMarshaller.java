@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,8 @@ public class RedshiftSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
+    private static final MarshallingInfo<Boolean> MAPBOOLEANASBOOLEAN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MapBooleanAsBoolean").build();
 
     private static final RedshiftSettingsMarshaller instance = new RedshiftSettingsMarshaller();
 
@@ -134,6 +136,7 @@ public class RedshiftSettingsMarshaller {
             protocolMarshaller.marshall(redshiftSettings.getWriteBufferSize(), WRITEBUFFERSIZE_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(redshiftSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
+            protocolMarshaller.marshall(redshiftSettings.getMapBooleanAsBoolean(), MAPBOOLEANASBOOLEAN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

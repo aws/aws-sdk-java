@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.servicediscovery.AWSServiceDiscoveryClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.servicediscovery.model.*;
+
 import com.amazonaws.services.servicediscovery.model.transform.*;
 
 /**
@@ -719,8 +720,9 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code>
-     * to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS
-     * queries to discover instances.
+     * to discover instances for any type of namespace. <code>DiscoverInstances</code> returns a randomized list of
+     * instances allowing customers to distribute traffic evenly across instances. For public and private DNS
+     * namespaces, you can also use DNS queries to discover instances.
      * </p>
      * 
      * @param discoverInstancesRequest
@@ -783,6 +785,83 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DiscoverInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DiscoverInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Discovers the increasing revision associated with an instance.
+     * </p>
+     * 
+     * @param discoverInstancesRevisionRequest
+     * @return Result of the DiscoverInstancesRevision operation returned by the service.
+     * @throws ServiceNotFoundException
+     *         No service exists with the specified ID.
+     * @throws NamespaceNotFoundException
+     *         No namespace exists with the specified ID.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @throws RequestLimitExceededException
+     *         The operation can't be completed because you've reached the quota for the number of requests. For more
+     *         information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API
+     *         request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
+     * @sample AWSServiceDiscovery.DiscoverInstancesRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DiscoverInstancesRevisionResult discoverInstancesRevision(DiscoverInstancesRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDiscoverInstancesRevision(request);
+    }
+
+    @SdkInternalApi
+    final DiscoverInstancesRevisionResult executeDiscoverInstancesRevision(DiscoverInstancesRevisionRequest discoverInstancesRevisionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(discoverInstancesRevisionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DiscoverInstancesRevisionRequest> request = null;
+        Response<DiscoverInstancesRevisionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DiscoverInstancesRevisionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(discoverInstancesRevisionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServiceDiscovery");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverInstancesRevision");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "data-";
+                String resolvedHostPrefix = String.format("data-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DiscoverInstancesRevisionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DiscoverInstancesRevisionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -991,7 +1070,7 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Gets information about any operation that returns an operation ID in the response, such as a
-     * <code>CreateService</code> request.
+     * <code>CreateHttpNamespace</code> request.
      * </p>
      * <note>
      * <p>
@@ -1293,7 +1372,7 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists summary information for all the services that are associated with one or more specified namespaces.
+     * Lists summary information for all the services that are associated with one or more namespaces.
      * </p>
      * 
      * @param listServicesRequest

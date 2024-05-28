@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -126,7 +126,19 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     private Integer port;
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      */
     private String serverName;
@@ -150,9 +162,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -202,6 +214,38 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean trimSpaceInChar;
+    /**
+     * <p>
+     * When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as
+     * <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     */
+    private Boolean mapBooleanAsBoolean;
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     */
+    private Boolean mapJsonbAsClob;
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     */
+    private String mapLongVarcharAs;
+    /**
+     * <p>
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
+     * </p>
+     */
+    private String databaseMode;
+    /**
+     * <p>
+     * The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     * </p>
+     */
+    private String babelfishDatabaseName;
 
     /**
      * <p>
@@ -874,11 +918,34 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        The host name of the endpoint database. </p>
+     *        <p>
+     *        For an Amazon RDS PostgreSQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *        >DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
+     *        </p>
+     *        <p>
+     *        For an Aurora PostgreSQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     *        >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      */
 
     public void setServerName(String serverName) {
@@ -887,10 +954,33 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      * 
-     * @return Fully qualified domain name of the endpoint.
+     * @return The host name of the endpoint database. </p>
+     *         <p>
+     *         For an Amazon RDS PostgreSQL instance, this is the output of <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *         >DescribeDBInstances</a>, in the
+     *         <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *         field.
+     *         </p>
+     *         <p>
+     *         For an Aurora PostgreSQL instance, this is the output of <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     *         >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      */
 
     public String getServerName() {
@@ -899,11 +989,34 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Fully qualified domain name of the endpoint.
+     * The host name of the endpoint database.
+     * </p>
+     * <p>
+     * For an Amazon RDS PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     * >DescribeDBInstances</a>, in the
+     * <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     * field.
+     * </p>
+     * <p>
+     * For an Aurora PostgreSQL instance, this is the output of <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     * >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * </p>
      * 
      * @param serverName
-     *        Fully qualified domain name of the endpoint.
+     *        The host name of the endpoint database. </p>
+     *        <p>
+     *        For an Amazon RDS PostgreSQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html"
+     *        >DescribeDBInstances</a>, in the
+     *        <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+     *        field.
+     *        </p>
+     *        <p>
+     *        For an Aurora PostgreSQL instance, this is the output of <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html"
+     *        >DescribeDBClusters</a>, in the <code>Endpoint</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -966,9 +1079,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -989,9 +1102,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        <p>
      *        For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     *        href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native
-     *        start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     *        <code>CdcStartPosition</code>, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     *        >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     *        information about using <code>CdcStartPosition</code>, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      *        >CreateReplicationTask</a>, <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1018,9 +1131,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1040,9 +1153,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *         </p>
      *         <p>
      *         For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     *         href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native
-     *         start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     *         <code>CdcStartPosition</code>, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     *         >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     *         information about using <code>CdcStartPosition</code>, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      *         >CreateReplicationTask</a>, <a
      *         href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1069,9 +1182,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1092,9 +1205,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        <p>
      *        For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     *        href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native
-     *        start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     *        <code>CdcStartPosition</code>, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     *        >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     *        information about using <code>CdcStartPosition</code>, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      *        >CreateReplicationTask</a>, <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1399,6 +1512,288 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as
+     * <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @param mapBooleanAsBoolean
+     *        When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans
+     *        as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to
+     *        take effect.
+     */
+
+    public void setMapBooleanAsBoolean(Boolean mapBooleanAsBoolean) {
+        this.mapBooleanAsBoolean = mapBooleanAsBoolean;
+    }
+
+    /**
+     * <p>
+     * When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as
+     * <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @return When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans
+     *         as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to
+     *         take effect.
+     */
+
+    public Boolean getMapBooleanAsBoolean() {
+        return this.mapBooleanAsBoolean;
+    }
+
+    /**
+     * <p>
+     * When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as
+     * <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @param mapBooleanAsBoolean
+     *        When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans
+     *        as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to
+     *        take effect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withMapBooleanAsBoolean(Boolean mapBooleanAsBoolean) {
+        setMapBooleanAsBoolean(mapBooleanAsBoolean);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans as
+     * <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to take effect.
+     * </p>
+     * 
+     * @return When true, lets PostgreSQL migrate the boolean type as boolean. By default, PostgreSQL migrates booleans
+     *         as <code>varchar(5)</code>. You must set this setting on both the source and target endpoints for it to
+     *         take effect.
+     */
+
+    public Boolean isMapBooleanAsBoolean() {
+        return this.mapBooleanAsBoolean;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @param mapJsonbAsClob
+     *        When true, DMS migrates JSONB values as CLOB.
+     */
+
+    public void setMapJsonbAsClob(Boolean mapJsonbAsClob) {
+        this.mapJsonbAsClob = mapJsonbAsClob;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @return When true, DMS migrates JSONB values as CLOB.
+     */
+
+    public Boolean getMapJsonbAsClob() {
+        return this.mapJsonbAsClob;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @param mapJsonbAsClob
+     *        When true, DMS migrates JSONB values as CLOB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withMapJsonbAsClob(Boolean mapJsonbAsClob) {
+        setMapJsonbAsClob(mapJsonbAsClob);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @return When true, DMS migrates JSONB values as CLOB.
+     */
+
+    public Boolean isMapJsonbAsClob() {
+        return this.mapJsonbAsClob;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @param mapLongVarcharAs
+     *        When true, DMS migrates LONG values as VARCHAR.
+     * @see LongVarcharMappingType
+     */
+
+    public void setMapLongVarcharAs(String mapLongVarcharAs) {
+        this.mapLongVarcharAs = mapLongVarcharAs;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @return When true, DMS migrates LONG values as VARCHAR.
+     * @see LongVarcharMappingType
+     */
+
+    public String getMapLongVarcharAs() {
+        return this.mapLongVarcharAs;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @param mapLongVarcharAs
+     *        When true, DMS migrates LONG values as VARCHAR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LongVarcharMappingType
+     */
+
+    public PostgreSQLSettings withMapLongVarcharAs(String mapLongVarcharAs) {
+        setMapLongVarcharAs(mapLongVarcharAs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @param mapLongVarcharAs
+     *        When true, DMS migrates LONG values as VARCHAR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LongVarcharMappingType
+     */
+
+    public PostgreSQLSettings withMapLongVarcharAs(LongVarcharMappingType mapLongVarcharAs) {
+        this.mapLongVarcharAs = mapLongVarcharAs.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
+     * </p>
+     * 
+     * @param databaseMode
+     *        Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *        require some additional configuration, such as Babelfish endpoints.
+     * @see DatabaseMode
+     */
+
+    public void setDatabaseMode(String databaseMode) {
+        this.databaseMode = databaseMode;
+    }
+
+    /**
+     * <p>
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
+     * </p>
+     * 
+     * @return Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *         require some additional configuration, such as Babelfish endpoints.
+     * @see DatabaseMode
+     */
+
+    public String getDatabaseMode() {
+        return this.databaseMode;
+    }
+
+    /**
+     * <p>
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
+     * </p>
+     * 
+     * @param databaseMode
+     *        Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *        require some additional configuration, such as Babelfish endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatabaseMode
+     */
+
+    public PostgreSQLSettings withDatabaseMode(String databaseMode) {
+        setDatabaseMode(databaseMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
+     * </p>
+     * 
+     * @param databaseMode
+     *        Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *        require some additional configuration, such as Babelfish endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatabaseMode
+     */
+
+    public PostgreSQLSettings withDatabaseMode(DatabaseMode databaseMode) {
+        this.databaseMode = databaseMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     * </p>
+     * 
+     * @param babelfishDatabaseName
+     *        The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     */
+
+    public void setBabelfishDatabaseName(String babelfishDatabaseName) {
+        this.babelfishDatabaseName = babelfishDatabaseName;
+    }
+
+    /**
+     * <p>
+     * The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     * </p>
+     * 
+     * @return The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     */
+
+    public String getBabelfishDatabaseName() {
+        return this.babelfishDatabaseName;
+    }
+
+    /**
+     * <p>
+     * The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     * </p>
+     * 
+     * @param babelfishDatabaseName
+     *        The Babelfish for Aurora PostgreSQL database name for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withBabelfishDatabaseName(String babelfishDatabaseName) {
+        setBabelfishDatabaseName(babelfishDatabaseName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1447,7 +1842,17 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         if (getSecretsManagerSecretId() != null)
             sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
         if (getTrimSpaceInChar() != null)
-            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar());
+            sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar()).append(",");
+        if (getMapBooleanAsBoolean() != null)
+            sb.append("MapBooleanAsBoolean: ").append(getMapBooleanAsBoolean()).append(",");
+        if (getMapJsonbAsClob() != null)
+            sb.append("MapJsonbAsClob: ").append(getMapJsonbAsClob()).append(",");
+        if (getMapLongVarcharAs() != null)
+            sb.append("MapLongVarcharAs: ").append(getMapLongVarcharAs()).append(",");
+        if (getDatabaseMode() != null)
+            sb.append("DatabaseMode: ").append(getDatabaseMode()).append(",");
+        if (getBabelfishDatabaseName() != null)
+            sb.append("BabelfishDatabaseName: ").append(getBabelfishDatabaseName());
         sb.append("}");
         return sb.toString();
     }
@@ -1538,6 +1943,26 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getTrimSpaceInChar() != null && other.getTrimSpaceInChar().equals(this.getTrimSpaceInChar()) == false)
             return false;
+        if (other.getMapBooleanAsBoolean() == null ^ this.getMapBooleanAsBoolean() == null)
+            return false;
+        if (other.getMapBooleanAsBoolean() != null && other.getMapBooleanAsBoolean().equals(this.getMapBooleanAsBoolean()) == false)
+            return false;
+        if (other.getMapJsonbAsClob() == null ^ this.getMapJsonbAsClob() == null)
+            return false;
+        if (other.getMapJsonbAsClob() != null && other.getMapJsonbAsClob().equals(this.getMapJsonbAsClob()) == false)
+            return false;
+        if (other.getMapLongVarcharAs() == null ^ this.getMapLongVarcharAs() == null)
+            return false;
+        if (other.getMapLongVarcharAs() != null && other.getMapLongVarcharAs().equals(this.getMapLongVarcharAs()) == false)
+            return false;
+        if (other.getDatabaseMode() == null ^ this.getDatabaseMode() == null)
+            return false;
+        if (other.getDatabaseMode() != null && other.getDatabaseMode().equals(this.getDatabaseMode()) == false)
+            return false;
+        if (other.getBabelfishDatabaseName() == null ^ this.getBabelfishDatabaseName() == null)
+            return false;
+        if (other.getBabelfishDatabaseName() != null && other.getBabelfishDatabaseName().equals(this.getBabelfishDatabaseName()) == false)
+            return false;
         return true;
     }
 
@@ -1565,6 +1990,11 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
+        hashCode = prime * hashCode + ((getMapBooleanAsBoolean() == null) ? 0 : getMapBooleanAsBoolean().hashCode());
+        hashCode = prime * hashCode + ((getMapJsonbAsClob() == null) ? 0 : getMapJsonbAsClob().hashCode());
+        hashCode = prime * hashCode + ((getMapLongVarcharAs() == null) ? 0 : getMapLongVarcharAs().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseMode() == null) ? 0 : getDatabaseMode().hashCode());
+        hashCode = prime * hashCode + ((getBabelfishDatabaseName() == null) ? 0 : getBabelfishDatabaseName().hashCode());
         return hashCode;
     }
 

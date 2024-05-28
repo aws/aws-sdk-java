@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,27 +29,53 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      */
     private String logGroupName;
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
-     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
+     * after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time
+     * are searched.
      * </p>
      * <p>
-     * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
-     * UTC.
+     * The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     * <code>January 1, 1970, 00:00:00 UTC</code>.
      * </p>
      */
     private Long time;
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must specify the ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     */
+    private String logGroupIdentifier;
 
     /**
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group to search.
+     *        The name of the log group to search.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -60,8 +86,16 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
-     * @return The name of the log group to search.
+     * @return The name of the log group to search.</p> <note>
+     *         <p>
+     *         You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *         </p>
      */
 
     public String getLogGroupName() {
@@ -72,9 +106,17 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group to search.
+     *        The name of the log group to search.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,21 +127,22 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
-     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
+     * after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time
+     * are searched.
      * </p>
      * <p>
-     * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
-     * UTC.
+     * The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     * <code>January 1, 1970, 00:00:00 UTC</code>.
      * </p>
      * 
      * @param time
-     *        The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this
-     *        time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are
-     *        searched.</p>
+     *        The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8
+     *        minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the
+     *        current time are searched.</p>
      *        <p>
-     *        The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970,
-     *        00:00:00 UTC.
+     *        The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     *        <code>January 1, 1970, 00:00:00 UTC</code>.
      */
 
     public void setTime(Long time) {
@@ -108,20 +151,21 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
-     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
+     * after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time
+     * are searched.
      * </p>
      * <p>
-     * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
-     * UTC.
+     * The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     * <code>January 1, 1970, 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this
-     *         time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are
-     *         searched.</p>
+     * @return The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8
+     *         minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the
+     *         current time are searched.</p>
      *         <p>
-     *         The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970,
-     *         00:00:00 UTC.
+     *         The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     *         <code>January 1, 1970, 00:00:00 UTC</code>.
      */
 
     public Long getTime() {
@@ -130,26 +174,97 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
-     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
+     * after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time
+     * are searched.
      * </p>
      * <p>
-     * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
-     * UTC.
+     * The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     * <code>January 1, 1970, 00:00:00 UTC</code>.
      * </p>
      * 
      * @param time
-     *        The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this
-     *        time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are
-     *        searched.</p>
+     *        The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8
+     *        minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the
+     *        current time are searched.</p>
      *        <p>
-     *        The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970,
-     *        00:00:00 UTC.
+     *        The <code>time</code> value is specified as epoch time, which is the number of seconds since
+     *        <code>January 1, 1970, 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetLogGroupFieldsRequest withTime(Long time) {
         setTime(time);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must specify the ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view. If the log group is in a source account and you
+     *        are using a monitoring account, you must specify the ARN.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
+     */
+
+    public void setLogGroupIdentifier(String logGroupIdentifier) {
+        this.logGroupIdentifier = logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must specify the ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @return Specify either the name or ARN of the log group to view. If the log group is in a source account and you
+     *         are using a monitoring account, you must specify the ARN.</p> <note>
+     *         <p>
+     *         You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *         </p>
+     */
+
+    public String getLogGroupIdentifier() {
+        return this.logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view. If the log group is in a source account and you are
+     * using a monitoring account, you must specify the ARN.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view. If the log group is in a source account and you
+     *        are using a monitoring account, you must specify the ARN.</p> <note>
+     *        <p>
+     *        You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLogGroupFieldsRequest withLogGroupIdentifier(String logGroupIdentifier) {
+        setLogGroupIdentifier(logGroupIdentifier);
         return this;
     }
 
@@ -168,7 +283,9 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getLogGroupName() != null)
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getTime() != null)
-            sb.append("Time: ").append(getTime());
+            sb.append("Time: ").append(getTime()).append(",");
+        if (getLogGroupIdentifier() != null)
+            sb.append("LogGroupIdentifier: ").append(getLogGroupIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +308,10 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTime() != null && other.getTime().equals(this.getTime()) == false)
             return false;
+        if (other.getLogGroupIdentifier() == null ^ this.getLogGroupIdentifier() == null)
+            return false;
+        if (other.getLogGroupIdentifier() != null && other.getLogGroupIdentifier().equals(this.getLogGroupIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -201,6 +322,7 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupIdentifier() == null) ? 0 : getLogGroupIdentifier().hashCode());
         return hashCode;
     }
 

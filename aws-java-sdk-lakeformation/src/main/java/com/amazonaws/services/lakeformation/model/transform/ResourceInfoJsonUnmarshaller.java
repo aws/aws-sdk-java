@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,14 @@ public class ResourceInfoJsonUnmarshaller implements Unmarshaller<ResourceInfo, 
                 if (context.testExpression("LastModified", targetDepth)) {
                     context.nextToken();
                     resourceInfo.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("WithFederation", targetDepth)) {
+                    context.nextToken();
+                    resourceInfo.setWithFederation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("HybridAccessEnabled", targetDepth)) {
+                    context.nextToken();
+                    resourceInfo.setHybridAccessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

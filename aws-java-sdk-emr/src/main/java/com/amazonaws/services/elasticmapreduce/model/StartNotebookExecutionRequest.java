@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,16 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook to use for notebook execution.
+     * The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      * </p>
      */
     private String editorId;
     /**
      * <p>
-     * The path and file name of the notebook file for this execution, relative to the path specified for the EMR
-     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR
-     * Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-     * request), and you specify a <code>RelativePath</code> of
+     * The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR
+     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon
+     * EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of
+     * this request), and you specify a <code>RelativePath</code> of
      * <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution
      * is
      * <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>
@@ -52,7 +52,7 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
     private String notebookExecutionName;
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      */
     private String notebookParams;
@@ -64,15 +64,15 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
     private ExecutionEngineConfig executionEngine;
     /**
      * <p>
-     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook
-     * execution.
+     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the
+     * notebook execution.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook
-     * execution.
+     * The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
+     * notebook execution.
      * </p>
      */
     private String notebookInstanceSecurityGroupId;
@@ -84,14 +84,38 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution input.
+     * </p>
+     */
+    private NotebookS3LocationFromInput notebookS3Location;
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     */
+    private OutputNotebookS3LocationFromInput outputNotebookS3Location;
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     */
+    private String outputNotebookFormat;
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> environmentVariables;
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook to use for notebook execution.
+     * The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      * </p>
      * 
      * @param editorId
-     *        The unique identifier of the EMR Notebook to use for notebook execution.
+     *        The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      */
 
     public void setEditorId(String editorId) {
@@ -100,10 +124,10 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook to use for notebook execution.
+     * The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      * </p>
      * 
-     * @return The unique identifier of the EMR Notebook to use for notebook execution.
+     * @return The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      */
 
     public String getEditorId() {
@@ -112,11 +136,11 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook to use for notebook execution.
+     * The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      * </p>
      * 
      * @param editorId
-     *        The unique identifier of the EMR Notebook to use for notebook execution.
+     *        The unique identifier of the Amazon EMR Notebook to use for notebook execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,10 +151,10 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path and file name of the notebook file for this execution, relative to the path specified for the EMR
-     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR
-     * Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-     * request), and you specify a <code>RelativePath</code> of
+     * The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR
+     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon
+     * EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of
+     * this request), and you specify a <code>RelativePath</code> of
      * <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution
      * is
      * <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>
@@ -138,9 +162,9 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param relativePath
-     *        The path and file name of the notebook file for this execution, relative to the path specified for the EMR
-     *        Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an
-     *        EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the
+     *        The path and file name of the notebook file for this execution, relative to the path specified for the
+     *        Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you
+     *        create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the
      *        <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of
      *        <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook
      *        execution is
@@ -154,10 +178,10 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path and file name of the notebook file for this execution, relative to the path specified for the EMR
-     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR
-     * Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-     * request), and you specify a <code>RelativePath</code> of
+     * The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR
+     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon
+     * EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of
+     * this request), and you specify a <code>RelativePath</code> of
      * <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution
      * is
      * <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>
@@ -165,9 +189,9 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return The path and file name of the notebook file for this execution, relative to the path specified for the
-     *         EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you
-     *         create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the
-     *         <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of
+     *         Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when
+     *         you create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code>
+     *         (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of
      *         <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook
      *         execution is
      *         <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>
@@ -180,10 +204,10 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The path and file name of the notebook file for this execution, relative to the path specified for the EMR
-     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR
-     * Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
-     * request), and you specify a <code>RelativePath</code> of
+     * The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR
+     * Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon
+     * EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of
+     * this request), and you specify a <code>RelativePath</code> of
      * <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution
      * is
      * <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>
@@ -191,9 +215,9 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param relativePath
-     *        The path and file name of the notebook file for this execution, relative to the path specified for the EMR
-     *        Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an
-     *        EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the
+     *        The path and file name of the notebook file for this execution, relative to the path specified for the
+     *        Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you
+     *        create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the
      *        <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of
      *        <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook
      *        execution is
@@ -249,11 +273,11 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      * 
      * @param notebookParams
-     *        Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     *        Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      */
 
     public void setNotebookParams(String notebookParams) {
@@ -262,10 +286,10 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      * 
-     * @return Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * @return Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      */
 
     public String getNotebookParams() {
@@ -274,11 +298,11 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      * 
      * @param notebookParams
-     *        Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     *        Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,13 +353,13 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook
-     * execution.
+     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the
+     * notebook execution.
      * </p>
      * 
      * @param serviceRole
-     *        The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the
-     *        notebook execution.
+     *        The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for
+     *        the notebook execution.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -344,12 +368,12 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook
-     * execution.
+     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the
+     * notebook execution.
      * </p>
      * 
-     * @return The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the
-     *         notebook execution.
+     * @return The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for
+     *         the notebook execution.
      */
 
     public String getServiceRole() {
@@ -358,13 +382,13 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook
-     * execution.
+     * The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the
+     * notebook execution.
      * </p>
      * 
      * @param serviceRole
-     *        The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the
-     *        notebook execution.
+     *        The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for
+     *        the notebook execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,12 +399,12 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook
-     * execution.
+     * The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
+     * notebook execution.
      * </p>
      * 
      * @param notebookInstanceSecurityGroupId
-     *        The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this
+     *        The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
      *        notebook execution.
      */
 
@@ -390,11 +414,11 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook
-     * execution.
+     * The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
+     * notebook execution.
      * </p>
      * 
-     * @return The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this
+     * @return The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
      *         notebook execution.
      */
 
@@ -404,12 +428,12 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook
-     * execution.
+     * The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
+     * notebook execution.
      * </p>
      * 
      * @param notebookInstanceSecurityGroupId
-     *        The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this
+     *        The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this
      *        notebook execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -509,6 +533,216 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon S3 location for the notebook execution input.
+     * </p>
+     * 
+     * @param notebookS3Location
+     *        The Amazon S3 location for the notebook execution input.
+     */
+
+    public void setNotebookS3Location(NotebookS3LocationFromInput notebookS3Location) {
+        this.notebookS3Location = notebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution input.
+     * </p>
+     * 
+     * @return The Amazon S3 location for the notebook execution input.
+     */
+
+    public NotebookS3LocationFromInput getNotebookS3Location() {
+        return this.notebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution input.
+     * </p>
+     * 
+     * @param notebookS3Location
+     *        The Amazon S3 location for the notebook execution input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartNotebookExecutionRequest withNotebookS3Location(NotebookS3LocationFromInput notebookS3Location) {
+        setNotebookS3Location(notebookS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     * 
+     * @param outputNotebookS3Location
+     *        The Amazon S3 location for the notebook execution output.
+     */
+
+    public void setOutputNotebookS3Location(OutputNotebookS3LocationFromInput outputNotebookS3Location) {
+        this.outputNotebookS3Location = outputNotebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     * 
+     * @return The Amazon S3 location for the notebook execution output.
+     */
+
+    public OutputNotebookS3LocationFromInput getOutputNotebookS3Location() {
+        return this.outputNotebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     * 
+     * @param outputNotebookS3Location
+     *        The Amazon S3 location for the notebook execution output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartNotebookExecutionRequest withOutputNotebookS3Location(OutputNotebookS3LocationFromInput outputNotebookS3Location) {
+        setOutputNotebookS3Location(outputNotebookS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @param outputNotebookFormat
+     *        The output format for the notebook execution.
+     * @see OutputNotebookFormat
+     */
+
+    public void setOutputNotebookFormat(String outputNotebookFormat) {
+        this.outputNotebookFormat = outputNotebookFormat;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @return The output format for the notebook execution.
+     * @see OutputNotebookFormat
+     */
+
+    public String getOutputNotebookFormat() {
+        return this.outputNotebookFormat;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @param outputNotebookFormat
+     *        The output format for the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputNotebookFormat
+     */
+
+    public StartNotebookExecutionRequest withOutputNotebookFormat(String outputNotebookFormat) {
+        setOutputNotebookFormat(outputNotebookFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @param outputNotebookFormat
+     *        The output format for the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputNotebookFormat
+     */
+
+    public StartNotebookExecutionRequest withOutputNotebookFormat(OutputNotebookFormat outputNotebookFormat) {
+        this.outputNotebookFormat = outputNotebookFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     * 
+     * @return The environment variables associated with the notebook execution.
+     */
+
+    public java.util.Map<String, String> getEnvironmentVariables() {
+        if (environmentVariables == null) {
+            environmentVariables = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return environmentVariables;
+    }
+
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     * 
+     * @param environmentVariables
+     *        The environment variables associated with the notebook execution.
+     */
+
+    public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
+        this.environmentVariables = environmentVariables == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(environmentVariables);
+    }
+
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     * 
+     * @param environmentVariables
+     *        The environment variables associated with the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartNotebookExecutionRequest withEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
+        setEnvironmentVariables(environmentVariables);
+        return this;
+    }
+
+    /**
+     * Add a single EnvironmentVariables entry
+     *
+     * @see StartNotebookExecutionRequest#withEnvironmentVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartNotebookExecutionRequest addEnvironmentVariablesEntry(String key, String value) {
+        if (null == this.environmentVariables) {
+            this.environmentVariables = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.environmentVariables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environmentVariables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into EnvironmentVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartNotebookExecutionRequest clearEnvironmentVariablesEntries() {
+        this.environmentVariables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -535,7 +769,15 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
         if (getNotebookInstanceSecurityGroupId() != null)
             sb.append("NotebookInstanceSecurityGroupId: ").append(getNotebookInstanceSecurityGroupId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getNotebookS3Location() != null)
+            sb.append("NotebookS3Location: ").append(getNotebookS3Location()).append(",");
+        if (getOutputNotebookS3Location() != null)
+            sb.append("OutputNotebookS3Location: ").append(getOutputNotebookS3Location()).append(",");
+        if (getOutputNotebookFormat() != null)
+            sb.append("OutputNotebookFormat: ").append(getOutputNotebookFormat()).append(",");
+        if (getEnvironmentVariables() != null)
+            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -583,6 +825,22 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getNotebookS3Location() == null ^ this.getNotebookS3Location() == null)
+            return false;
+        if (other.getNotebookS3Location() != null && other.getNotebookS3Location().equals(this.getNotebookS3Location()) == false)
+            return false;
+        if (other.getOutputNotebookS3Location() == null ^ this.getOutputNotebookS3Location() == null)
+            return false;
+        if (other.getOutputNotebookS3Location() != null && other.getOutputNotebookS3Location().equals(this.getOutputNotebookS3Location()) == false)
+            return false;
+        if (other.getOutputNotebookFormat() == null ^ this.getOutputNotebookFormat() == null)
+            return false;
+        if (other.getOutputNotebookFormat() != null && other.getOutputNotebookFormat().equals(this.getOutputNotebookFormat()) == false)
+            return false;
+        if (other.getEnvironmentVariables() == null ^ this.getEnvironmentVariables() == null)
+            return false;
+        if (other.getEnvironmentVariables() != null && other.getEnvironmentVariables().equals(this.getEnvironmentVariables()) == false)
+            return false;
         return true;
     }
 
@@ -599,6 +857,10 @@ public class StartNotebookExecutionRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getNotebookInstanceSecurityGroupId() == null) ? 0 : getNotebookInstanceSecurityGroupId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNotebookS3Location() == null) ? 0 : getNotebookS3Location().hashCode());
+        hashCode = prime * hashCode + ((getOutputNotebookS3Location() == null) ? 0 : getOutputNotebookS3Location().hashCode());
+        hashCode = prime * hashCode + ((getOutputNotebookFormat() == null) ? 0 : getOutputNotebookFormat().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         return hashCode;
     }
 

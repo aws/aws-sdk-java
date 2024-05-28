@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -693,6 +693,72 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceInstanceResult> createServiceInstanceAsync(CreateServiceInstanceRequest request) {
+
+        return createServiceInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceInstanceResult> createServiceInstanceAsync(final CreateServiceInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateServiceInstanceRequest, CreateServiceInstanceResult> asyncHandler) {
+        final CreateServiceInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateServiceInstanceResult>() {
+            @Override
+            public CreateServiceInstanceResult call() throws Exception {
+                CreateServiceInstanceResult result = null;
+
+                try {
+                    result = executeCreateServiceInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceSyncConfigResult> createServiceSyncConfigAsync(CreateServiceSyncConfigRequest request) {
+
+        return createServiceSyncConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceSyncConfigResult> createServiceSyncConfigAsync(final CreateServiceSyncConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateServiceSyncConfigRequest, CreateServiceSyncConfigResult> asyncHandler) {
+        final CreateServiceSyncConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateServiceSyncConfigResult>() {
+            @Override
+            public CreateServiceSyncConfigResult call() throws Exception {
+                CreateServiceSyncConfigResult result = null;
+
+                try {
+                    result = executeCreateServiceSyncConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServiceTemplateResult> createServiceTemplateAsync(CreateServiceTemplateRequest request) {
 
         return createServiceTemplateAsync(request, null);
@@ -809,6 +875,39 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
 
                 try {
                     result = executeDeleteComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest request) {
+
+        return deleteDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(final DeleteDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler) {
+        final DeleteDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDeploymentResult>() {
+            @Override
+            public DeleteDeploymentResult call() throws Exception {
+                DeleteDeploymentResult result = null;
+
+                try {
+                    result = executeDeleteDeployment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1027,6 +1126,39 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteServiceSyncConfigResult> deleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest request) {
+
+        return deleteServiceSyncConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceSyncConfigResult> deleteServiceSyncConfigAsync(final DeleteServiceSyncConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteServiceSyncConfigRequest, DeleteServiceSyncConfigResult> asyncHandler) {
+        final DeleteServiceSyncConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteServiceSyncConfigResult>() {
+            @Override
+            public DeleteServiceSyncConfigResult call() throws Exception {
+                DeleteServiceSyncConfigResult result = null;
+
+                try {
+                    result = executeDeleteServiceSyncConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteServiceTemplateResult> deleteServiceTemplateAsync(DeleteServiceTemplateRequest request) {
 
         return deleteServiceTemplateAsync(request, null);
@@ -1176,6 +1308,39 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
 
                 try {
                     result = executeGetComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest request) {
+
+        return getDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(final GetDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler) {
+        final GetDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeploymentResult>() {
+            @Override
+            public GetDeploymentResult call() throws Exception {
+                GetDeploymentResult result = null;
+
+                try {
+                    result = executeGetDeployment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1393,6 +1558,39 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcesSummaryResult> getResourcesSummaryAsync(GetResourcesSummaryRequest request) {
+
+        return getResourcesSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcesSummaryResult> getResourcesSummaryAsync(final GetResourcesSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcesSummaryRequest, GetResourcesSummaryResult> asyncHandler) {
+        final GetResourcesSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcesSummaryResult>() {
+            @Override
+            public GetResourcesSummaryResult call() throws Exception {
+                GetResourcesSummaryResult result = null;
+
+                try {
+                    result = executeGetResourcesSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetServiceResult> getServiceAsync(GetServiceRequest request) {
 
         return getServiceAsync(request, null);
@@ -1443,6 +1641,105 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
 
                 try {
                     result = executeGetServiceInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceInstanceSyncStatusResult> getServiceInstanceSyncStatusAsync(GetServiceInstanceSyncStatusRequest request) {
+
+        return getServiceInstanceSyncStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceInstanceSyncStatusResult> getServiceInstanceSyncStatusAsync(final GetServiceInstanceSyncStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceInstanceSyncStatusRequest, GetServiceInstanceSyncStatusResult> asyncHandler) {
+        final GetServiceInstanceSyncStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceInstanceSyncStatusResult>() {
+            @Override
+            public GetServiceInstanceSyncStatusResult call() throws Exception {
+                GetServiceInstanceSyncStatusResult result = null;
+
+                try {
+                    result = executeGetServiceInstanceSyncStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceSyncBlockerSummaryResult> getServiceSyncBlockerSummaryAsync(GetServiceSyncBlockerSummaryRequest request) {
+
+        return getServiceSyncBlockerSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceSyncBlockerSummaryResult> getServiceSyncBlockerSummaryAsync(final GetServiceSyncBlockerSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceSyncBlockerSummaryRequest, GetServiceSyncBlockerSummaryResult> asyncHandler) {
+        final GetServiceSyncBlockerSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceSyncBlockerSummaryResult>() {
+            @Override
+            public GetServiceSyncBlockerSummaryResult call() throws Exception {
+                GetServiceSyncBlockerSummaryResult result = null;
+
+                try {
+                    result = executeGetServiceSyncBlockerSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceSyncConfigResult> getServiceSyncConfigAsync(GetServiceSyncConfigRequest request) {
+
+        return getServiceSyncConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceSyncConfigResult> getServiceSyncConfigAsync(final GetServiceSyncConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceSyncConfigRequest, GetServiceSyncConfigResult> asyncHandler) {
+        final GetServiceSyncConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceSyncConfigResult>() {
+            @Override
+            public GetServiceSyncConfigResult call() throws Exception {
+                GetServiceSyncConfigResult result = null;
+
+                try {
+                    result = executeGetServiceSyncConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1676,6 +1973,39 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
 
                 try {
                     result = executeListComponents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest request) {
+
+        return listDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(final ListDeploymentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler) {
+        final ListDeploymentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDeploymentsResult>() {
+            @Override
+            public ListDeploymentsResult call() throws Exception {
+                ListDeploymentsResult result = null;
+
+                try {
+                    result = executeListDeployments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2685,6 +3015,72 @@ public class AWSProtonAsyncClient extends AWSProtonClient implements AWSProtonAs
 
                 try {
                     result = executeUpdateServicePipeline(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSyncBlockerResult> updateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest request) {
+
+        return updateServiceSyncBlockerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSyncBlockerResult> updateServiceSyncBlockerAsync(final UpdateServiceSyncBlockerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateServiceSyncBlockerRequest, UpdateServiceSyncBlockerResult> asyncHandler) {
+        final UpdateServiceSyncBlockerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateServiceSyncBlockerResult>() {
+            @Override
+            public UpdateServiceSyncBlockerResult call() throws Exception {
+                UpdateServiceSyncBlockerResult result = null;
+
+                try {
+                    result = executeUpdateServiceSyncBlocker(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSyncConfigResult> updateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest request) {
+
+        return updateServiceSyncConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSyncConfigResult> updateServiceSyncConfigAsync(final UpdateServiceSyncConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateServiceSyncConfigRequest, UpdateServiceSyncConfigResult> asyncHandler) {
+        final UpdateServiceSyncConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateServiceSyncConfigResult>() {
+            @Override
+            public UpdateServiceSyncConfigResult call() throws Exception {
+                UpdateServiceSyncConfigResult result = null;
+
+                try {
+                    result = executeUpdateServiceSyncConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

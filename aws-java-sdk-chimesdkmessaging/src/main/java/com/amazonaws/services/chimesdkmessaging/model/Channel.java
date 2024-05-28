@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ElasticChannelConfiguration elasticChannelConfiguration;
+    /**
+     * <p>
+     * Settings that control when a channel expires.
+     * </p>
+     */
+    private ExpirationSettings expirationSettings;
 
     /**
      * <p>
@@ -581,6 +587,46 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Settings that control when a channel expires.
+     * </p>
+     * 
+     * @param expirationSettings
+     *        Settings that control when a channel expires.
+     */
+
+    public void setExpirationSettings(ExpirationSettings expirationSettings) {
+        this.expirationSettings = expirationSettings;
+    }
+
+    /**
+     * <p>
+     * Settings that control when a channel expires.
+     * </p>
+     * 
+     * @return Settings that control when a channel expires.
+     */
+
+    public ExpirationSettings getExpirationSettings() {
+        return this.expirationSettings;
+    }
+
+    /**
+     * <p>
+     * Settings that control when a channel expires.
+     * </p>
+     * 
+     * @param expirationSettings
+     *        Settings that control when a channel expires.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withExpirationSettings(ExpirationSettings expirationSettings) {
+        setExpirationSettings(expirationSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -613,7 +659,9 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (getChannelFlowArn() != null)
             sb.append("ChannelFlowArn: ").append(getChannelFlowArn()).append(",");
         if (getElasticChannelConfiguration() != null)
-            sb.append("ElasticChannelConfiguration: ").append(getElasticChannelConfiguration());
+            sb.append("ElasticChannelConfiguration: ").append(getElasticChannelConfiguration()).append(",");
+        if (getExpirationSettings() != null)
+            sb.append("ExpirationSettings: ").append(getExpirationSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -672,6 +720,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getElasticChannelConfiguration() != null && other.getElasticChannelConfiguration().equals(this.getElasticChannelConfiguration()) == false)
             return false;
+        if (other.getExpirationSettings() == null ^ this.getExpirationSettings() == null)
+            return false;
+        if (other.getExpirationSettings() != null && other.getExpirationSettings().equals(this.getExpirationSettings()) == false)
+            return false;
         return true;
     }
 
@@ -691,6 +743,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedTimestamp() == null) ? 0 : getLastUpdatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getChannelFlowArn() == null) ? 0 : getChannelFlowArn().hashCode());
         hashCode = prime * hashCode + ((getElasticChannelConfiguration() == null) ? 0 : getElasticChannelConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExpirationSettings() == null) ? 0 : getExpirationSettings().hashCode());
         return hashCode;
     }
 

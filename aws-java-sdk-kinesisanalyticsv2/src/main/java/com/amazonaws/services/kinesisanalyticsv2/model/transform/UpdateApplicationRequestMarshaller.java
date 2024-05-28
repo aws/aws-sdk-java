@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class UpdateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptionUpdates").build();
     private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
+    private static final MarshallingInfo<String> RUNTIMEENVIRONMENTUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeEnvironmentUpdate").build();
 
     private static final UpdateApplicationRequestMarshaller instance = new UpdateApplicationRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class UpdateApplicationRequestMarshaller {
             protocolMarshaller.marshall(updateApplicationRequest.getRunConfigurationUpdate(), RUNCONFIGURATIONUPDATE_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getCloudWatchLoggingOptionUpdates(), CLOUDWATCHLOGGINGOPTIONUPDATES_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getConditionalToken(), CONDITIONALTOKEN_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getRuntimeEnvironmentUpdate(), RUNTIMEENVIRONMENTUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

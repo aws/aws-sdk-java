@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The assignment that indicates a principal's limited access to a specified AWS account with a specified permission
- * set.
+ * The assignment that indicates a principal's limited access to a specified Amazon Web Services account with a
+ * specified permission set.
  * </p>
  * <note>
  * <p>
@@ -36,24 +36,18 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the AWS account.
+     * The identifier of the Amazon Web Services account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String permissionSetArn;
-    /**
-     * <p>
-     * The entity type for which the assignment will be created.
-     * </p>
-     */
-    private String principalType;
     /**
      * <p>
      * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
@@ -63,14 +57,20 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String principalId;
+    /**
+     * <p>
+     * The entity type for which the assignment will be created.
+     * </p>
+     */
+    private String principalType;
 
     /**
      * <p>
-     * The identifier of the AWS account.
+     * The identifier of the Amazon Web Services account.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the AWS account.
+     *        The identifier of the Amazon Web Services account.
      */
 
     public void setAccountId(String accountId) {
@@ -79,10 +79,10 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the AWS account.
+     * The identifier of the Amazon Web Services account.
      * </p>
      * 
-     * @return The identifier of the AWS account.
+     * @return The identifier of the Amazon Web Services account.
      */
 
     public String getAccountId() {
@@ -91,11 +91,11 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the AWS account.
+     * The identifier of the Amazon Web Services account.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the AWS account.
+     *        The identifier of the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,14 +107,14 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param permissionSetArn
      *        The ARN of the permission set. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the <i>AWS General Reference</i>.
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setPermissionSetArn(String permissionSetArn) {
@@ -124,13 +124,13 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the permission set. For more information about ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *         Namespaces</a> in the <i>AWS General Reference</i>.
+     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getPermissionSetArn() {
@@ -140,19 +140,77 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ARN of the permission set. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param permissionSetArn
      *        The ARN of the permission set. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the <i>AWS General Reference</i>.
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AccountAssignment withPermissionSetArn(String permissionSetArn) {
         setPermissionSetArn(permissionSetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
+     * </p>
+     * 
+     * @param principalId
+     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *        Identity Store API Reference</a>.
+     */
+
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
+    }
+
+    /**
+     * <p>
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
+     * </p>
+     * 
+     * @return An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *         example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *         Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *         Identity Store API Reference</a>.
+     */
+
+    public String getPrincipalId() {
+        return this.principalId;
+    }
+
+    /**
+     * <p>
+     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
+     * Reference</a>.
+     * </p>
+     * 
+     * @param principalId
+     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
+     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
+     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
+     *        Identity Store API Reference</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountAssignment withPrincipalId(String principalId) {
+        setPrincipalId(principalId);
         return this;
     }
 
@@ -216,64 +274,6 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p>
-     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
-     * Reference</a>.
-     * </p>
-     * 
-     * @param principalId
-     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
-     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
-     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
-     *        Identity Store API Reference</a>.
-     */
-
-    public void setPrincipalId(String principalId) {
-        this.principalId = principalId;
-    }
-
-    /**
-     * <p>
-     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
-     * Reference</a>.
-     * </p>
-     * 
-     * @return An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
-     *         example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
-     *         Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
-     *         Identity Store API Reference</a>.
-     */
-
-    public String getPrincipalId() {
-        return this.principalId;
-    }
-
-    /**
-     * <p>
-     * An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example,
-     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a
-     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API
-     * Reference</a>.
-     * </p>
-     * 
-     * @param principalId
-     *        An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For
-     *        example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity
-     *        Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center
-     *        Identity Store API Reference</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AccountAssignment withPrincipalId(String principalId) {
-        setPrincipalId(principalId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -289,10 +289,10 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getPermissionSetArn() != null)
             sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
-        if (getPrincipalType() != null)
-            sb.append("PrincipalType: ").append(getPrincipalType()).append(",");
         if (getPrincipalId() != null)
-            sb.append("PrincipalId: ").append(getPrincipalId());
+            sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getPrincipalType() != null)
+            sb.append("PrincipalType: ").append(getPrincipalType());
         sb.append("}");
         return sb.toString();
     }
@@ -315,13 +315,13 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
             return false;
-        if (other.getPrincipalType() == null ^ this.getPrincipalType() == null)
-            return false;
-        if (other.getPrincipalType() != null && other.getPrincipalType().equals(this.getPrincipalType()) == false)
-            return false;
         if (other.getPrincipalId() == null ^ this.getPrincipalId() == null)
             return false;
         if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
+            return false;
+        if (other.getPrincipalType() == null ^ this.getPrincipalType() == null)
+            return false;
+        if (other.getPrincipalType() != null && other.getPrincipalType().equals(this.getPrincipalType()) == false)
             return false;
         return true;
     }
@@ -333,8 +333,8 @@ public class AccountAssignment implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
-        hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,11 +39,10 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
     private OutputDataConfig outputDataConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data. For more information, see <a href=
-     * "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     * >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions<
-     * /a>.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     * >Role-based permissions</a>.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -61,9 +60,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
     private String clientRequestToken;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -90,7 +89,7 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a
+     * Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a
      * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
      * indicate its use by the sales department.
      * </p>
@@ -179,19 +178,17 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data. For more information, see <a href=
-     * "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     * >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions<
-     * /a>.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     * >Role-based permissions</a>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     *        >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-
-     *        permissions</a>.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     *        >Role-based permissions</a>.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -200,18 +197,16 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data. For more information, see <a href=
-     * "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     * >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions<
-     * /a>.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     * >Role-based permissions</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     *         >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-
-     *         permissions</a>.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     *         >Role-based permissions</a>.
      */
 
     public String getDataAccessRoleArn() {
@@ -220,19 +215,17 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data. For more information, see <a href=
-     * "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     * >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions<
-     * /a>.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     * >Role-based permissions</a>.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions"
-     *        >https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-
-     *        permissions</a>.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions"
+     *        >Role-based permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,9 +319,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -345,9 +338,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -368,9 +361,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -386,9 +379,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
-     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
-     *         can be either of the following formats:</p>
+     * @return ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *         data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *         VolumeKmsKeyId can be either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -409,9 +402,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -428,9 +421,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -505,14 +498,14 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a
+     * Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a
      * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
      * indicate its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds
-     *         metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *         added to a resource to indicate its use by the sales department.
+     * @return Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata
+     *         to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *         resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -521,15 +514,15 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a
+     * Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a
      * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
      * indicate its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata
+     *        to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -543,7 +536,7 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a
+     * Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a
      * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
      * indicate its use by the sales department.
      * </p>
@@ -554,9 +547,9 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata
+     *        to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,15 +565,15 @@ public class StartDominantLanguageDetectionJobRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a
+     * Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a
      * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
      * indicate its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata
+     *        to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

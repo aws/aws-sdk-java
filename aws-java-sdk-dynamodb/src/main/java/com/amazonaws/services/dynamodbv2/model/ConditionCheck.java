@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,25 +38,32 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, AttributeValue> key;
     /**
      * <p>
-     * Name of the table for the check item request.
+     * Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the table in
+     * this parameter.
      * </p>
      */
     private String tableName;
     /**
      * <p>
-     * A condition that must be satisfied in order for a conditional update to succeed.
+     * A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">
+     * Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String conditionExpression;
     /**
      * <p>
-     * One or more substitution tokens for attribute names in an expression.
+     * One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     * >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> expressionAttributeNames;
     /**
      * <p>
-     * One or more values that can be substituted in an expression.
+     * One or more values that can be substituted in an expression. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     * >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, AttributeValue> expressionAttributeValues;
@@ -145,11 +152,13 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table for the check item request.
+     * Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the table in
+     * this parameter.
      * </p>
      * 
      * @param tableName
-     *        Name of the table for the check item request.
+     *        Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the
+     *        table in this parameter.
      */
 
     public void setTableName(String tableName) {
@@ -158,10 +167,12 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table for the check item request.
+     * Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the table in
+     * this parameter.
      * </p>
      * 
-     * @return Name of the table for the check item request.
+     * @return Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the
+     *         table in this parameter.
      */
 
     public String getTableName() {
@@ -170,11 +181,13 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table for the check item request.
+     * Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the table in
+     * this parameter.
      * </p>
      * 
      * @param tableName
-     *        Name of the table for the check item request.
+     *        Name of the table for the check item request. You can also provide the Amazon Resource Name (ARN) of the
+     *        table in this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +198,16 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that must be satisfied in order for a conditional update to succeed.
+     * A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">
+     * Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionExpression
-     *        A condition that must be satisfied in order for a conditional update to succeed.
+     *        A condition that must be satisfied in order for a conditional update to succeed. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     *        >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setConditionExpression(String conditionExpression) {
@@ -198,10 +216,15 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that must be satisfied in order for a conditional update to succeed.
+     * A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">
+     * Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return A condition that must be satisfied in order for a conditional update to succeed.
+     * @return A condition that must be satisfied in order for a conditional update to succeed. For more information,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     *         >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public String getConditionExpression() {
@@ -210,11 +233,16 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A condition that must be satisfied in order for a conditional update to succeed.
+     * A condition that must be satisfied in order for a conditional update to succeed. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html">
+     * Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionExpression
-     *        A condition that must be satisfied in order for a conditional update to succeed.
+     *        A condition that must be satisfied in order for a conditional update to succeed. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     *        >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,10 +253,14 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more substitution tokens for attribute names in an expression.
+     * One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     * >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return One or more substitution tokens for attribute names in an expression.
+     * @return One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     *         >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getExpressionAttributeNames() {
@@ -237,11 +269,15 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more substitution tokens for attribute names in an expression.
+     * One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     * >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
-     *        One or more substitution tokens for attribute names in an expression.
+     *        One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     *        >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeNames(java.util.Map<String, String> expressionAttributeNames) {
@@ -250,11 +286,15 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more substitution tokens for attribute names in an expression.
+     * One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     * >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
-     *        One or more substitution tokens for attribute names in an expression.
+     *        One or more substitution tokens for attribute names in an expression. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html"
+     *        >Expression attribute names</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,10 +333,14 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more values that can be substituted in an expression.
+     * One or more values that can be substituted in an expression. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     * >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return One or more values that can be substituted in an expression.
+     * @return One or more values that can be substituted in an expression. For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     *         >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
@@ -305,11 +349,15 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more values that can be substituted in an expression.
+     * One or more values that can be substituted in an expression. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     * >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
-     *        One or more values that can be substituted in an expression.
+     *        One or more values that can be substituted in an expression. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     *        >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeValues(java.util.Map<String, AttributeValue> expressionAttributeValues) {
@@ -318,11 +366,15 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more values that can be substituted in an expression.
+     * One or more values that can be substituted in an expression. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     * >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
-     *        One or more values that can be substituted in an expression.
+     *        One or more values that can be substituted in an expression. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html"
+     *        >Condition expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

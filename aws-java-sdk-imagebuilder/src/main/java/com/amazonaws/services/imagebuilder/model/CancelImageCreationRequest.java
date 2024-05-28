@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     * The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      * </p>
      */
     private String imageBuildVersionArn;
@@ -42,11 +42,11 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     * The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     *        The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      */
 
     public void setImageBuildVersionArn(String imageBuildVersionArn) {
@@ -55,10 +55,10 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     * The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     * @return The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      */
 
     public String getImageBuildVersionArn() {
@@ -67,11 +67,11 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     * The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+     *        The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

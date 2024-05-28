@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,21 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * </p>
      */
     private String volumeId;
+    /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     */
+    private String associatedResource;
+    /**
+     * <p>
+     * The ID of the Amazon Web Services account that owns the volume.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     */
+    private String volumeOwnerId;
 
     /**
      * <p>
@@ -257,6 +272,101 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     * 
+     * @param associatedResource
+     *        The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     */
+
+    public void setAssociatedResource(String associatedResource) {
+        this.associatedResource = associatedResource;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     * 
+     * @return The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     */
+
+    public String getAssociatedResource() {
+        return this.associatedResource;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     * 
+     * @param associatedResource
+     *        The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsInstanceBlockDevice withAssociatedResource(String associatedResource) {
+        setAssociatedResource(associatedResource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Web Services account that owns the volume.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     * 
+     * @param volumeOwnerId
+     *        The ID of the Amazon Web Services account that owns the volume.</p>
+     *        <p>
+     *        This parameter is returned only for volumes that are attached to Fargate tasks.
+     */
+
+    public void setVolumeOwnerId(String volumeOwnerId) {
+        this.volumeOwnerId = volumeOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Web Services account that owns the volume.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     * 
+     * @return The ID of the Amazon Web Services account that owns the volume.</p>
+     *         <p>
+     *         This parameter is returned only for volumes that are attached to Fargate tasks.
+     */
+
+    public String getVolumeOwnerId() {
+        return this.volumeOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Web Services account that owns the volume.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     * 
+     * @param volumeOwnerId
+     *        The ID of the Amazon Web Services account that owns the volume.</p>
+     *        <p>
+     *        This parameter is returned only for volumes that are attached to Fargate tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsInstanceBlockDevice withVolumeOwnerId(String volumeOwnerId) {
+        setVolumeOwnerId(volumeOwnerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,7 +385,11 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId());
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
+        if (getAssociatedResource() != null)
+            sb.append("AssociatedResource: ").append(getAssociatedResource()).append(",");
+        if (getVolumeOwnerId() != null)
+            sb.append("VolumeOwnerId: ").append(getVolumeOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -306,6 +420,14 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
             return false;
         if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
+        if (other.getAssociatedResource() == null ^ this.getAssociatedResource() == null)
+            return false;
+        if (other.getAssociatedResource() != null && other.getAssociatedResource().equals(this.getAssociatedResource()) == false)
+            return false;
+        if (other.getVolumeOwnerId() == null ^ this.getVolumeOwnerId() == null)
+            return false;
+        if (other.getVolumeOwnerId() != null && other.getVolumeOwnerId().equals(this.getVolumeOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -318,6 +440,8 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedResource() == null) ? 0 : getAssociatedResource().hashCode());
+        hashCode = prime * hashCode + ((getVolumeOwnerId() == null) ? 0 : getVolumeOwnerId().hashCode());
         return hashCode;
     }
 

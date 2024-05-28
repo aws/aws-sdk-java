@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,25 +35,36 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for the query result.
+     * The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (
+     * <code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the
+     * same documents.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The type of document.
+     * The type of document within the response. For example, a response could include a question-answer that's relevant
+     * to the query.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * One or more additional attributes associated with the query result.
+     * If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     * <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.
+     * </p>
+     */
+    private String format;
+    /**
+     * <p>
+     * One or more additional fields/attributes associated with the query result.
      * </p>
      */
     private java.util.List<AdditionalResultAttribute> additionalAttributes;
     /**
      * <p>
-     * The unique identifier for the document.
+     * The identifier for the document.
      * </p>
      */
     private String documentId;
@@ -79,21 +90,21 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     private String documentURI;
     /**
      * <p>
-     * An array of document attributes assigned to a document in the search results. For example, the document author (
-     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     * An array of document fields/attributes assigned to a document in the search results. For example, the document
+     * author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      */
     private java.util.List<DocumentAttribute> documentAttributes;
     /**
      * <p>
-     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
-     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
+     * Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed
+     * into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
      * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
-     * Amazon Kendra is not confident that the result matches the query.
+     * Amazon Kendra is not confident that the result is relevant to the query.
      * </p>
      */
     private ScoreAttributes scoreAttributes;
@@ -101,18 +112,34 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A token that identifies a particular result from a particular query. Use this token to provide click-through
      * feedback for the result. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      * </p>
      */
     private String feedbackToken;
+    /**
+     * <p>
+     * An excerpt from a table within a document.
+     * </p>
+     */
+    private TableExcerpt tableExcerpt;
+    /**
+     * <p>
+     * Provides details about a collapsed group of search results.
+     * </p>
+     */
+    private CollapsedResultDetail collapsedResultDetail;
 
     /**
      * <p>
-     * The unique identifier for the query result.
+     * The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (
+     * <code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the
+     * same documents.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the query result.
+     *        The unique identifier for the query result item id (<code>Id</code>) and the query result item document id
+     *        (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have
+     *        the same documents.
      */
 
     public void setId(String id) {
@@ -121,10 +148,14 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for the query result.
+     * The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (
+     * <code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the
+     * same documents.
      * </p>
      * 
-     * @return The unique identifier for the query result.
+     * @return The unique identifier for the query result item id (<code>Id</code>) and the query result item document
+     *         id (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you
+     *         have the same documents.
      */
 
     public String getId() {
@@ -133,11 +164,15 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for the query result.
+     * The unique identifier for the query result item id (<code>Id</code>) and the query result item document id (
+     * <code>DocumentId</code>) combined. The value of this field changes with every request, even when you have the
+     * same documents.
      * </p>
      * 
      * @param id
-     *        The unique identifier for the query result.
+     *        The unique identifier for the query result item id (<code>Id</code>) and the query result item document id
+     *        (<code>DocumentId</code>) combined. The value of this field changes with every request, even when you have
+     *        the same documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +183,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of document.
+     * The type of document within the response. For example, a response could include a question-answer that's relevant
+     * to the query.
      * </p>
      * 
      * @param type
-     *        The type of document.
+     *        The type of document within the response. For example, a response could include a question-answer that's
+     *        relevant to the query.
      * @see QueryResultType
      */
 
@@ -162,10 +199,12 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of document.
+     * The type of document within the response. For example, a response could include a question-answer that's relevant
+     * to the query.
      * </p>
      * 
-     * @return The type of document.
+     * @return The type of document within the response. For example, a response could include a question-answer that's
+     *         relevant to the query.
      * @see QueryResultType
      */
 
@@ -175,11 +214,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of document.
+     * The type of document within the response. For example, a response could include a question-answer that's relevant
+     * to the query.
      * </p>
      * 
      * @param type
-     *        The type of document.
+     *        The type of document within the response. For example, a response could include a question-answer that's
+     *        relevant to the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryResultType
      */
@@ -191,11 +232,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of document.
+     * The type of document within the response. For example, a response could include a question-answer that's relevant
+     * to the query.
      * </p>
      * 
      * @param type
-     *        The type of document.
+     *        The type of document within the response. For example, a response could include a question-answer that's
+     *        relevant to the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryResultType
      */
@@ -207,10 +250,89 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attributes associated with the query result.
+     * If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     * <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.
      * </p>
      * 
-     * @return One or more additional attributes associated with the query result.
+     * @param format
+     *        If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     *        <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned
+     *        in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     *        <code>DocumentExcerpt</code>.
+     * @see QueryResultFormat
+     */
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    /**
+     * <p>
+     * If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     * <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.
+     * </p>
+     * 
+     * @return If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     *         <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is
+     *         returned in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     *         <code>DocumentExcerpt</code>.
+     * @see QueryResultFormat
+     */
+
+    public String getFormat() {
+        return this.format;
+    }
+
+    /**
+     * <p>
+     * If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     * <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.
+     * </p>
+     * 
+     * @param format
+     *        If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     *        <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned
+     *        in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     *        <code>DocumentExcerpt</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QueryResultFormat
+     */
+
+    public QueryResultItem withFormat(String format) {
+        setFormat(format);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     * <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned in
+     * <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in <code>DocumentExcerpt</code>.
+     * </p>
+     * 
+     * @param format
+     *        If the <code>Type</code> of document within the response is <code>ANSWER</code>, then it is either a
+     *        <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table answer, a table excerpt is returned
+     *        in <code>TableExcerpt</code>. If it's a text answer, a text excerpt is returned in
+     *        <code>DocumentExcerpt</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QueryResultFormat
+     */
+
+    public QueryResultItem withFormat(QueryResultFormat format) {
+        this.format = format.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more additional fields/attributes associated with the query result.
+     * </p>
+     * 
+     * @return One or more additional fields/attributes associated with the query result.
      */
 
     public java.util.List<AdditionalResultAttribute> getAdditionalAttributes() {
@@ -219,11 +341,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attributes associated with the query result.
+     * One or more additional fields/attributes associated with the query result.
      * </p>
      * 
      * @param additionalAttributes
-     *        One or more additional attributes associated with the query result.
+     *        One or more additional fields/attributes associated with the query result.
      */
 
     public void setAdditionalAttributes(java.util.Collection<AdditionalResultAttribute> additionalAttributes) {
@@ -237,7 +359,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attributes associated with the query result.
+     * One or more additional fields/attributes associated with the query result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -246,7 +368,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param additionalAttributes
-     *        One or more additional attributes associated with the query result.
+     *        One or more additional fields/attributes associated with the query result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +384,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attributes associated with the query result.
+     * One or more additional fields/attributes associated with the query result.
      * </p>
      * 
      * @param additionalAttributes
-     *        One or more additional attributes associated with the query result.
+     *        One or more additional fields/attributes associated with the query result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,11 +399,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for the document.
+     * The identifier for the document.
      * </p>
      * 
      * @param documentId
-     *        The unique identifier for the document.
+     *        The identifier for the document.
      */
 
     public void setDocumentId(String documentId) {
@@ -290,10 +412,10 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for the document.
+     * The identifier for the document.
      * </p>
      * 
-     * @return The unique identifier for the document.
+     * @return The identifier for the document.
      */
 
     public String getDocumentId() {
@@ -302,11 +424,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for the document.
+     * The identifier for the document.
      * </p>
      * 
      * @param documentId
-     *        The unique identifier for the document.
+     *        The identifier for the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,12 +571,12 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes assigned to a document in the search results. For example, the document author (
-     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     * An array of document fields/attributes assigned to a document in the search results. For example, the document
+     * author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * 
-     * @return An array of document attributes assigned to a document in the search results. For example, the document
-     *         author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     * @return An array of document fields/attributes assigned to a document in the search results. For example, the
+     *         document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      */
 
     public java.util.List<DocumentAttribute> getDocumentAttributes() {
@@ -463,13 +585,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes assigned to a document in the search results. For example, the document author (
-     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     * An array of document fields/attributes assigned to a document in the search results. For example, the document
+     * author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * 
      * @param documentAttributes
-     *        An array of document attributes assigned to a document in the search results. For example, the document
-     *        author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     *        An array of document fields/attributes assigned to a document in the search results. For example, the
+     *        document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      */
 
     public void setDocumentAttributes(java.util.Collection<DocumentAttribute> documentAttributes) {
@@ -483,8 +605,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes assigned to a document in the search results. For example, the document author (
-     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     * An array of document fields/attributes assigned to a document in the search results. For example, the document
+     * author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -493,8 +615,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param documentAttributes
-     *        An array of document attributes assigned to a document in the search results. For example, the document
-     *        author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     *        An array of document fields/attributes assigned to a document in the search results. For example, the
+     *        document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,13 +632,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of document attributes assigned to a document in the search results. For example, the document author (
-     * <code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     * An array of document fields/attributes assigned to a document in the search results. For example, the document
+     * author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * </p>
      * 
      * @param documentAttributes
-     *        An array of document attributes assigned to a document in the search results. For example, the document
-     *        author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
+     *        An array of document fields/attributes assigned to a document in the search results. For example, the
+     *        document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,24 +649,24 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
-     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
+     * Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed
+     * into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
      * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
-     * Amazon Kendra is not confident that the result matches the query.
+     * Amazon Kendra is not confident that the result is relevant to the query.
      * </p>
      * 
      * @param scoreAttributes
-     *        Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
-     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+     *        Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is
+     *        placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
      *        <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the
      *        confidence needed for your application.</p>
      *        <p>
      *        The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code>
-     *        and Amazon Kendra is not confident that the result matches the query.
+     *        and Amazon Kendra is not confident that the result is relevant to the query.
      */
 
     public void setScoreAttributes(ScoreAttributes scoreAttributes) {
@@ -553,23 +675,23 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
-     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
+     * Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed
+     * into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
      * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
-     * Amazon Kendra is not confident that the result matches the query.
+     * Amazon Kendra is not confident that the result is relevant to the query.
      * </p>
      * 
-     * @return Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
-     *         result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+     * @return Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is
+     *         placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
      *         <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the
      *         confidence needed for your application.</p>
      *         <p>
      *         The field is only set to <code>LOW</code> when the <code>Type</code> field is set to
-     *         <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.
+     *         <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant to the query.
      */
 
     public ScoreAttributes getScoreAttributes() {
@@ -578,24 +700,24 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
-     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
+     * Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is placed
+     * into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
      * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
-     * Amazon Kendra is not confident that the result matches the query.
+     * Amazon Kendra is not confident that the result is relevant to the query.
      * </p>
      * 
      * @param scoreAttributes
-     *        Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
-     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+     *        Indicates the confidence level of Amazon Kendra providing a relevant result for the query. Each result is
+     *        placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
      *        <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the
      *        confidence needed for your application.</p>
      *        <p>
      *        The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code>
-     *        and Amazon Kendra is not confident that the result matches the query.
+     *        and Amazon Kendra is not confident that the result is relevant to the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,13 +730,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A token that identifies a particular result from a particular query. Use this token to provide click-through
      * feedback for the result. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      * </p>
      * 
      * @param feedbackToken
      *        A token that identifies a particular result from a particular query. Use this token to provide
      *        click-through feedback for the result. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      */
 
     public void setFeedbackToken(String feedbackToken) {
@@ -625,12 +747,12 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A token that identifies a particular result from a particular query. Use this token to provide click-through
      * feedback for the result. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      * </p>
      * 
      * @return A token that identifies a particular result from a particular query. Use this token to provide
      *         click-through feedback for the result. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      */
 
     public String getFeedbackToken() {
@@ -641,18 +763,98 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * A token that identifies a particular result from a particular query. Use this token to provide click-through
      * feedback for the result. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      * </p>
      * 
      * @param feedbackToken
      *        A token that identifies a particular result from a particular query. Use this token to provide
      *        click-through feedback for the result. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryResultItem withFeedbackToken(String feedbackToken) {
         setFeedbackToken(feedbackToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An excerpt from a table within a document.
+     * </p>
+     * 
+     * @param tableExcerpt
+     *        An excerpt from a table within a document.
+     */
+
+    public void setTableExcerpt(TableExcerpt tableExcerpt) {
+        this.tableExcerpt = tableExcerpt;
+    }
+
+    /**
+     * <p>
+     * An excerpt from a table within a document.
+     * </p>
+     * 
+     * @return An excerpt from a table within a document.
+     */
+
+    public TableExcerpt getTableExcerpt() {
+        return this.tableExcerpt;
+    }
+
+    /**
+     * <p>
+     * An excerpt from a table within a document.
+     * </p>
+     * 
+     * @param tableExcerpt
+     *        An excerpt from a table within a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResultItem withTableExcerpt(TableExcerpt tableExcerpt) {
+        setTableExcerpt(tableExcerpt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides details about a collapsed group of search results.
+     * </p>
+     * 
+     * @param collapsedResultDetail
+     *        Provides details about a collapsed group of search results.
+     */
+
+    public void setCollapsedResultDetail(CollapsedResultDetail collapsedResultDetail) {
+        this.collapsedResultDetail = collapsedResultDetail;
+    }
+
+    /**
+     * <p>
+     * Provides details about a collapsed group of search results.
+     * </p>
+     * 
+     * @return Provides details about a collapsed group of search results.
+     */
+
+    public CollapsedResultDetail getCollapsedResultDetail() {
+        return this.collapsedResultDetail;
+    }
+
+    /**
+     * <p>
+     * Provides details about a collapsed group of search results.
+     * </p>
+     * 
+     * @param collapsedResultDetail
+     *        Provides details about a collapsed group of search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResultItem withCollapsedResultDetail(CollapsedResultDetail collapsedResultDetail) {
+        setCollapsedResultDetail(collapsedResultDetail);
         return this;
     }
 
@@ -672,6 +874,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
             sb.append("Id: ").append(getId()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getAdditionalAttributes() != null)
             sb.append("AdditionalAttributes: ").append(getAdditionalAttributes()).append(",");
         if (getDocumentId() != null)
@@ -687,7 +891,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         if (getScoreAttributes() != null)
             sb.append("ScoreAttributes: ").append(getScoreAttributes()).append(",");
         if (getFeedbackToken() != null)
-            sb.append("FeedbackToken: ").append(getFeedbackToken());
+            sb.append("FeedbackToken: ").append(getFeedbackToken()).append(",");
+        if (getTableExcerpt() != null)
+            sb.append("TableExcerpt: ").append(getTableExcerpt()).append(",");
+        if (getCollapsedResultDetail() != null)
+            sb.append("CollapsedResultDetail: ").append(getCollapsedResultDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -709,6 +917,10 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getAdditionalAttributes() == null ^ this.getAdditionalAttributes() == null)
             return false;
@@ -742,6 +954,14 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFeedbackToken() != null && other.getFeedbackToken().equals(this.getFeedbackToken()) == false)
             return false;
+        if (other.getTableExcerpt() == null ^ this.getTableExcerpt() == null)
+            return false;
+        if (other.getTableExcerpt() != null && other.getTableExcerpt().equals(this.getTableExcerpt()) == false)
+            return false;
+        if (other.getCollapsedResultDetail() == null ^ this.getCollapsedResultDetail() == null)
+            return false;
+        if (other.getCollapsedResultDetail() != null && other.getCollapsedResultDetail().equals(this.getCollapsedResultDetail()) == false)
+            return false;
         return true;
     }
 
@@ -752,6 +972,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getAdditionalAttributes() == null) ? 0 : getAdditionalAttributes().hashCode());
         hashCode = prime * hashCode + ((getDocumentId() == null) ? 0 : getDocumentId().hashCode());
         hashCode = prime * hashCode + ((getDocumentTitle() == null) ? 0 : getDocumentTitle().hashCode());
@@ -760,6 +981,8 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDocumentAttributes() == null) ? 0 : getDocumentAttributes().hashCode());
         hashCode = prime * hashCode + ((getScoreAttributes() == null) ? 0 : getScoreAttributes().hashCode());
         hashCode = prime * hashCode + ((getFeedbackToken() == null) ? 0 : getFeedbackToken().hashCode());
+        hashCode = prime * hashCode + ((getTableExcerpt() == null) ? 0 : getTableExcerpt().hashCode());
+        hashCode = prime * hashCode + ((getCollapsedResultDetail() == null) ? 0 : getCollapsedResultDetail().hashCode());
         return hashCode;
     }
 

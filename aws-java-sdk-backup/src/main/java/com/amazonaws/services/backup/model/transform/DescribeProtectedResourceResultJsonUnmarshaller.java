@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,32 @@ public class DescribeProtectedResourceResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("LastBackupTime", targetDepth)) {
                     context.nextToken();
                     describeProtectedResourceResult.setLastBackupTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ResourceName", targetDepth)) {
+                    context.nextToken();
+                    describeProtectedResourceResult.setResourceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastBackupVaultArn", targetDepth)) {
+                    context.nextToken();
+                    describeProtectedResourceResult.setLastBackupVaultArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastRecoveryPointArn", targetDepth)) {
+                    context.nextToken();
+                    describeProtectedResourceResult.setLastRecoveryPointArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestRestoreExecutionTimeMinutes", targetDepth)) {
+                    context.nextToken();
+                    describeProtectedResourceResult.setLatestRestoreExecutionTimeMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestRestoreJobCreationDate", targetDepth)) {
+                    context.nextToken();
+                    describeProtectedResourceResult.setLatestRestoreJobCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp")
+                            .unmarshall(context));
+                }
+                if (context.testExpression("LatestRestoreRecoveryPointCreationDate", targetDepth)) {
+                    context.nextToken();
+                    describeProtectedResourceResult.setLatestRestoreRecoveryPointCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp")
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

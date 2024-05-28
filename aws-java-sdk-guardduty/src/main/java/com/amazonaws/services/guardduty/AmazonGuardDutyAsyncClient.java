@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,22 +26,24 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
- * VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs,
- * and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs and domains) and machine learning to
- * identify unexpected, potentially unauthorized, and malicious activity within your Amazon Web Services environment.
- * This can include issues like escalations of privileges, uses of exposed credentials, or communication with malicious
- * IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances that serve malware or mine
- * bitcoin.
+ * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following foundational
+ * data sources - VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs,
+ * EKS audit logs, DNS logs, Amazon EBS volume data, runtime activity belonging to container workloads, such as Amazon
+ * EKS, Amazon ECS (including Amazon Web Services Fargate), and Amazon EC2 instances. It uses threat intelligence feeds,
+ * such as lists of malicious IPs and domains, and machine learning to identify unexpected, potentially unauthorized,
+ * and malicious activity within your Amazon Web Services environment. This can include issues like escalations of
+ * privileges, uses of exposed credentials, or communication with malicious IPs, domains, or presence of malware on your
+ * Amazon EC2 instances and container workloads. For example, GuardDuty can detect compromised EC2 instances and
+ * container workloads serving malware, or mining bitcoin.
  * </p>
  * <p>
- * GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise. Some examples of this
- * are unauthorized infrastructure deployments such as EC2 instances deployed in a Region that has never been used, or
- * unusual API calls like a password policy change to reduce password strength.
+ * GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise, such as unauthorized
+ * infrastructure deployments like EC2 instances deployed in a Region that has never been used, or unusual API calls
+ * like a password policy change to reduce password strength.
  * </p>
  * <p>
- * GuardDuty informs you of the status of your Amazon Web Services environment by producing security findings that you
- * can view in the GuardDuty console or through Amazon CloudWatch events. For more information, see the <i> <a
+ * GuardDuty informs you about the status of your Amazon Web Services environment by producing security findings that
+ * you can view in the GuardDuty console or through Amazon EventBridge. For more information, see the <i> <a
  * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a> </i>.
  * </p>
  */
@@ -997,6 +999,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetCoverageStatisticsResult> getCoverageStatisticsAsync(GetCoverageStatisticsRequest request) {
+
+        return getCoverageStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCoverageStatisticsResult> getCoverageStatisticsAsync(final GetCoverageStatisticsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCoverageStatisticsRequest, GetCoverageStatisticsResult> asyncHandler) {
+        final GetCoverageStatisticsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCoverageStatisticsResult>() {
+            @Override
+            public GetCoverageStatisticsResult call() throws Exception {
+                GetCoverageStatisticsResult result = null;
+
+                try {
+                    result = executeGetCoverageStatistics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDetectorResult> getDetectorAsync(GetDetectorRequest request) {
 
         return getDetectorAsync(request, null);
@@ -1329,6 +1364,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetOrganizationStatisticsResult> getOrganizationStatisticsAsync(GetOrganizationStatisticsRequest request) {
+
+        return getOrganizationStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationStatisticsResult> getOrganizationStatisticsAsync(final GetOrganizationStatisticsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOrganizationStatisticsRequest, GetOrganizationStatisticsResult> asyncHandler) {
+        final GetOrganizationStatisticsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOrganizationStatisticsResult>() {
+            @Override
+            public GetOrganizationStatisticsResult call() throws Exception {
+                GetOrganizationStatisticsResult result = null;
+
+                try {
+                    result = executeGetOrganizationStatistics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRemainingFreeTrialDaysResult> getRemainingFreeTrialDaysAsync(GetRemainingFreeTrialDaysRequest request) {
 
         return getRemainingFreeTrialDaysAsync(request, null);
@@ -1445,6 +1513,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeInviteMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoverageResult> listCoverageAsync(ListCoverageRequest request) {
+
+        return listCoverageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCoverageResult> listCoverageAsync(final ListCoverageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCoverageRequest, ListCoverageResult> asyncHandler) {
+        final ListCoverageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCoverageResult>() {
+            @Override
+            public ListCoverageResult call() throws Exception {
+                ListCoverageResult result = null;
+
+                try {
+                    result = executeListCoverage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1776,6 +1877,39 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeListThreatIntelSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMalwareScanResult> startMalwareScanAsync(StartMalwareScanRequest request) {
+
+        return startMalwareScanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMalwareScanResult> startMalwareScanAsync(final StartMalwareScanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMalwareScanRequest, StartMalwareScanResult> asyncHandler) {
+        final StartMalwareScanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMalwareScanResult>() {
+            @Override
+            public StartMalwareScanResult call() throws Exception {
+                StartMalwareScanResult result = null;
+
+                try {
+                    result = executeStartMalwareScan(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

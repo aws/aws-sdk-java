@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Boolean outboundCallsEnabled;
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource. For example,
+     * <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -346,6 +353,80 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource. For example,
+     * <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     * </p>
+     * 
+     * @return The tags used to organize, track, or control access for this resource. For example,
+     *         <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource. For example,
+     * <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags used to organize, track, or control access for this resource. For example,
+     *        <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags used to organize, track, or control access for this resource. For example,
+     * <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags used to organize, track, or control access for this resource. For example,
+     *        <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateInstanceRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -368,7 +449,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getInboundCallsEnabled() != null)
             sb.append("InboundCallsEnabled: ").append(getInboundCallsEnabled()).append(",");
         if (getOutboundCallsEnabled() != null)
-            sb.append("OutboundCallsEnabled: ").append(getOutboundCallsEnabled());
+            sb.append("OutboundCallsEnabled: ").append(getOutboundCallsEnabled()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -407,6 +490,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getOutboundCallsEnabled() != null && other.getOutboundCallsEnabled().equals(this.getOutboundCallsEnabled()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -421,6 +508,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
         hashCode = prime * hashCode + ((getInboundCallsEnabled() == null) ? 0 : getInboundCallsEnabled().hashCode());
         hashCode = prime * hashCode + ((getOutboundCallsEnabled() == null) ? 0 : getOutboundCallsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

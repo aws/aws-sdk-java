@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class CreateSecurityProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalMetricsToRetainV2").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> METRICSEXPORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricsExportConfig").build();
 
     private static final CreateSecurityProfileRequestMarshaller instance = new CreateSecurityProfileRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class CreateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(createSecurityProfileRequest.getAdditionalMetricsToRetain(), ADDITIONALMETRICSTORETAIN_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getAdditionalMetricsToRetainV2(), ADDITIONALMETRICSTORETAINV2_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createSecurityProfileRequest.getMetricsExportConfig(), METRICSEXPORTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

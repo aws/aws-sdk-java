@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the domain containing the speaker enrollment jobs.
+     * The identifier of the domain that contains the speaker enrollment jobs.
      * </p>
      */
     private String domainId;
@@ -39,8 +39,8 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
     private String jobStatus;
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages
+     * of results. The default is 100; the maximum allowed page size is also 100.
      * </p>
      */
     private Integer maxResults;
@@ -55,11 +55,11 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the domain containing the speaker enrollment jobs.
+     * The identifier of the domain that contains the speaker enrollment jobs.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the speaker enrollment jobs.
+     *        The identifier of the domain that contains the speaker enrollment jobs.
      */
 
     public void setDomainId(String domainId) {
@@ -68,10 +68,10 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the domain containing the speaker enrollment jobs.
+     * The identifier of the domain that contains the speaker enrollment jobs.
      * </p>
      * 
-     * @return The identifier of the domain containing the speaker enrollment jobs.
+     * @return The identifier of the domain that contains the speaker enrollment jobs.
      */
 
     public String getDomainId() {
@@ -80,11 +80,11 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the domain containing the speaker enrollment jobs.
+     * The identifier of the domain that contains the speaker enrollment jobs.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the speaker enrollment jobs.
+     *        The identifier of the domain that contains the speaker enrollment jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,13 +154,13 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages
+     * of results. The default is 100; the maximum allowed page size is also 100.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-     *        further pages of results. The default is 100; the maximum allowed page size is also 100.
+     *        more pages of results. The default is 100; the maximum allowed page size is also 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -169,12 +169,12 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages
+     * of results. The default is 100; the maximum allowed page size is also 100.
      * </p>
      * 
      * @return The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-     *         further pages of results. The default is 100; the maximum allowed page size is also 100.
+     *         more pages of results. The default is 100; the maximum allowed page size is also 100.
      */
 
     public Integer getMaxResults() {
@@ -183,13 +183,13 @@ public class ListSpeakerEnrollmentJobsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further
-     * pages of results. The default is 100; the maximum allowed page size is also 100.
+     * The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages
+     * of results. The default is 100; the maximum allowed page size is also 100.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-     *        further pages of results. The default is 100; the maximum allowed page size is also 100.
+     *        more pages of results. The default is 100; the maximum allowed page size is also 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

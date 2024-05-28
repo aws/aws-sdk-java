@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -242,8 +242,9 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Uploads position update data for one or more devices to a tracker resource. Amazon Location uses the data when it
-     * reports the last known device position and position history. Amazon Location retains location data for 30 days.
+     * Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon
+     * Location uses the data when it reports the last known device position and position history. Amazon Location
+     * retains location data for 30 days.
      * </p>
      * <note>
      * <p>
@@ -434,6 +435,10 @@ public interface AmazonLocation {
      *         verify your permissions.
      * @throws ValidationException
      *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
      * @throws ThrottlingException
      *         The request was denied because of request throttling.
      * @sample AmazonLocation.CreateGeofenceCollection
@@ -444,14 +449,49 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
-     * location data providers.
+     * Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location
+     * resources to the API key bearer.
+     * </p>
+     * <note>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </note>
+     * 
+     * @param createKeyRequest
+     * @return Result of the CreateKey operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ConflictException
+     *         The request was unsuccessful because of a conflict.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.CreateKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateKeyResult createKey(CreateKeyRequest createKeyRequest);
+
+    /**
+     * <p>
+     * Creates a map resource in your Amazon Web Services account, which provides map tiles of different styles sourced
+     * from global location data providers.
      * </p>
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
-     * employees, you may only use HERE as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -466,6 +506,10 @@ public interface AmazonLocation {
      *         verify your permissions.
      * @throws ValidationException
      *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
      * @throws ThrottlingException
      *         The request was denied because of request throttling.
      * @sample AmazonLocation.CreateMap
@@ -476,16 +520,16 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Creates a place index resource in your AWS account. Use a place index resource to geocode addresses and other
-     * text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by
-     * using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the
-     * <code>SearchPlaceIndexForSuggestions</code> operation.
+     * Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode
+     * addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode
+     * coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using
+     * the <code>SearchPlaceIndexForSuggestions</code> operation.
      * </p>
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
-     * employees, you may only use HERE as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -500,6 +544,10 @@ public interface AmazonLocation {
      *         verify your permissions.
      * @throws ValidationException
      *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
      * @throws ThrottlingException
      *         The request was denied because of request throttling.
      * @sample AmazonLocation.CreatePlaceIndex
@@ -510,7 +558,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Creates a route calculator resource in your AWS account.
+     * Creates a route calculator resource in your Amazon Web Services account.
      * </p>
      * <p>
      * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
@@ -519,8 +567,8 @@ public interface AmazonLocation {
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
-     * employees, you may only use HERE as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -535,6 +583,10 @@ public interface AmazonLocation {
      *         verify your permissions.
      * @throws ValidationException
      *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
      * @throws ThrottlingException
      *         The request was denied because of request throttling.
      * @sample AmazonLocation.CreateRouteCalculator
@@ -545,8 +597,8 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Creates a tracker resource in your AWS account, which lets you retrieve current and historical location of
-     * devices.
+     * Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical
+     * location of devices.
      * </p>
      * 
      * @param createTrackerRequest
@@ -560,6 +612,10 @@ public interface AmazonLocation {
      *         verify your permissions.
      * @throws ValidationException
      *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ServiceQuotaExceededException
+     *         The operation was denied because the request would exceed the maximum <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for
+     *         Amazon Location Service.
      * @throws ThrottlingException
      *         The request was denied because of request throttling.
      * @sample AmazonLocation.CreateTracker
@@ -570,7 +626,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Deletes a geofence collection from your AWS account.
+     * Deletes a geofence collection from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -600,7 +656,31 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Deletes a map resource from your AWS account.
+     * Deletes the specified API key. The API key must have been deactivated more than 90 days previously.
+     * </p>
+     * 
+     * @param deleteKeyRequest
+     * @return Result of the DeleteKey operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.DeleteKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteKeyResult deleteKey(DeleteKeyRequest deleteKeyRequest);
+
+    /**
+     * <p>
+     * Deletes a map resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -630,7 +710,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Deletes a place index resource from your AWS account.
+     * Deletes a place index resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -659,7 +739,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Deletes a route calculator resource from your AWS account.
+     * Deletes a route calculator resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -688,7 +768,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Deletes a tracker resource from your AWS account.
+     * Deletes a tracker resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -739,6 +819,30 @@ public interface AmazonLocation {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeGeofenceCollectionResult describeGeofenceCollection(DescribeGeofenceCollectionRequest describeGeofenceCollectionRequest);
+
+    /**
+     * <p>
+     * Retrieves the API key resource details.
+     * </p>
+     * 
+     * @param describeKeyRequest
+     * @return Result of the DescribeKey operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.DescribeKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeKeyResult describeKey(DescribeKeyRequest describeKeyRequest);
 
     /**
      * <p>
@@ -1068,12 +1172,12 @@ public interface AmazonLocation {
      * <ul>
      * <li>
      * <p>
-     * Customer AWS account
+     * Customer Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Region
+     * Amazon Web Services Region
      * </p>
      * </li>
      * <li>
@@ -1127,7 +1231,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Lists geofence collections in your AWS account.
+     * Lists geofence collections in your Amazon Web Services account.
      * </p>
      * 
      * @param listGeofenceCollectionsRequest
@@ -1173,7 +1277,29 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Lists map resources in your AWS account.
+     * Lists API key resources in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listKeysRequest
+     * @return Result of the ListKeys operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.ListKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListKeysResult listKeys(ListKeysRequest listKeysRequest);
+
+    /**
+     * <p>
+     * Lists map resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listMapsRequest
@@ -1195,7 +1321,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Lists place index resources in your AWS account.
+     * Lists place index resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -1217,7 +1343,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Lists route calculator resources in your AWS account.
+     * Lists route calculator resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listRouteCalculatorsRequest
@@ -1287,7 +1413,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Lists tracker resources in your AWS account.
+     * Lists tracker resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listTrackersRequest
@@ -1437,10 +1563,19 @@ public interface AmazonLocation {
      * <p>
      * Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; operation with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that's already associated with the resource, the new tag value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate up to 50 tags with a resource.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> operation with an Amazon Location Service resource that already has
+     * tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the
+     * resource. If you specify a tag key that's already associated with the resource, the new tag value that you
+     * specify replaces the previous value for that tag.
+     * </p>
+     * <p>
+     * You can associate up to 50 tags with a resource.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -1508,6 +1643,30 @@ public interface AmazonLocation {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateGeofenceCollectionResult updateGeofenceCollection(UpdateGeofenceCollectionRequest updateGeofenceCollectionRequest);
+
+    /**
+     * <p>
+     * Updates the specified properties of a given API key resource.
+     * </p>
+     * 
+     * @param updateKeyRequest
+     * @return Result of the UpdateKey operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied because of insufficient access or permissions. Check with an administrator to
+     *         verify your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling.
+     * @sample AmazonLocation.UpdateKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateKeyResult updateKey(UpdateKeyRequest updateKeyRequest);
 
     /**
      * <p>

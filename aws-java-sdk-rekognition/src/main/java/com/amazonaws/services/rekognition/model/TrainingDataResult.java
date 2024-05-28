@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created
- * during testing.
+ * The data validation manifest created for the training dataset during model training.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,31 +27,30 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The training assets that you supplied for training.
+     * The training data that you supplied.
      * </p>
      */
     private TrainingData input;
     /**
      * <p>
-     * The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     * Reference to images (assets) that were actually used during training with trained model predictions.
      * </p>
      */
     private TrainingData output;
     /**
      * <p>
-     * The location of the data validation manifest. The data validation manifest is created for the training dataset
-     * during model training.
+     * A manifest that you supplied for training, with validation results for each line.
      * </p>
      */
     private ValidationData validation;
 
     /**
      * <p>
-     * The training assets that you supplied for training.
+     * The training data that you supplied.
      * </p>
      * 
      * @param input
-     *        The training assets that you supplied for training.
+     *        The training data that you supplied.
      */
 
     public void setInput(TrainingData input) {
@@ -61,10 +59,10 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The training assets that you supplied for training.
+     * The training data that you supplied.
      * </p>
      * 
-     * @return The training assets that you supplied for training.
+     * @return The training data that you supplied.
      */
 
     public TrainingData getInput() {
@@ -73,11 +71,11 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The training assets that you supplied for training.
+     * The training data that you supplied.
      * </p>
      * 
      * @param input
-     *        The training assets that you supplied for training.
+     *        The training data that you supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +86,11 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     * Reference to images (assets) that were actually used during training with trained model predictions.
      * </p>
      * 
      * @param output
-     *        The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     *        Reference to images (assets) that were actually used during training with trained model predictions.
      */
 
     public void setOutput(TrainingData output) {
@@ -101,10 +99,10 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     * Reference to images (assets) that were actually used during training with trained model predictions.
      * </p>
      * 
-     * @return The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     * @return Reference to images (assets) that were actually used during training with trained model predictions.
      */
 
     public TrainingData getOutput() {
@@ -113,11 +111,11 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     * Reference to images (assets) that were actually used during training with trained model predictions.
      * </p>
      * 
      * @param output
-     *        The images (assets) that were actually trained by Amazon Rekognition Custom Labels.
+     *        Reference to images (assets) that were actually used during training with trained model predictions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,13 +126,11 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The location of the data validation manifest. The data validation manifest is created for the training dataset
-     * during model training.
+     * A manifest that you supplied for training, with validation results for each line.
      * </p>
      * 
      * @param validation
-     *        The location of the data validation manifest. The data validation manifest is created for the training
-     *        dataset during model training.
+     *        A manifest that you supplied for training, with validation results for each line.
      */
 
     public void setValidation(ValidationData validation) {
@@ -143,12 +139,10 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The location of the data validation manifest. The data validation manifest is created for the training dataset
-     * during model training.
+     * A manifest that you supplied for training, with validation results for each line.
      * </p>
      * 
-     * @return The location of the data validation manifest. The data validation manifest is created for the training
-     *         dataset during model training.
+     * @return A manifest that you supplied for training, with validation results for each line.
      */
 
     public ValidationData getValidation() {
@@ -157,13 +151,11 @@ public class TrainingDataResult implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The location of the data validation manifest. The data validation manifest is created for the training dataset
-     * during model training.
+     * A manifest that you supplied for training, with validation results for each line.
      * </p>
      * 
      * @param validation
-     *        The location of the data validation manifest. The data validation manifest is created for the training
-     *        dataset during model training.
+     *        A manifest that you supplied for training, with validation results for each line.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

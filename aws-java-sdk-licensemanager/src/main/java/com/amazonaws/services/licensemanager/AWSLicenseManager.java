@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,12 @@ public interface AWSLicenseManager {
      * <p>
      * Checks out the specified license.
      * </p>
+     * <note>
+     * <p>
+     * If the account that created the license is the same that is performing the check out, you must specify the
+     * account as the beneficiary.
+     * </p>
+     * </note>
      * 
      * @param checkoutLicenseRequest
      * @return Result of the CheckoutLicense operation returned by the service.
@@ -172,8 +178,10 @@ public interface AWSLicenseManager {
 
     /**
      * <p>
-     * Creates a grant for the specified license. A grant shares the use of license entitlements with specific Amazon
-     * Web Services accounts.
+     * Creates a grant for the specified license. A grant shares the use of license entitlements with a specific Amazon
+     * Web Services account, an organization, or an organizational unit (OU). For more information, see <a
+     * href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in
+     * License Manager</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @param createGrantRequest
@@ -201,7 +209,9 @@ public interface AWSLicenseManager {
 
     /**
      * <p>
-     * Creates a new version of the specified grant.
+     * Creates a new version of the specified grant. For more information, see <a
+     * href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in
+     * License Manager</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @param createGrantVersionRequest
@@ -1039,7 +1049,8 @@ public interface AWSLicenseManager {
 
     /**
      * <p>
-     * Lists grants that are received but not accepted.
+     * Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon
+     * Web Services account, your organization, or an organizational unit (OU) to which this member account belongs.
      * </p>
      * 
      * @param listReceivedGrantsRequest
@@ -1064,6 +1075,35 @@ public interface AWSLicenseManager {
      *      target="_top">AWS API Documentation</a>
      */
     ListReceivedGrantsResult listReceivedGrants(ListReceivedGrantsRequest listReceivedGrantsRequest);
+
+    /**
+     * <p>
+     * Lists the grants received for all accounts in the organization.
+     * </p>
+     * 
+     * @param listReceivedGrantsForOrganizationRequest
+     * @return Result of the ListReceivedGrantsForOrganization operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.ListReceivedGrantsForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListReceivedGrantsForOrganizationResult listReceivedGrantsForOrganization(ListReceivedGrantsForOrganizationRequest listReceivedGrantsForOrganizationRequest);
 
     /**
      * <p>
@@ -1092,6 +1132,36 @@ public interface AWSLicenseManager {
      *      target="_top">AWS API Documentation</a>
      */
     ListReceivedLicensesResult listReceivedLicenses(ListReceivedLicensesRequest listReceivedLicensesRequest);
+
+    /**
+     * <p>
+     * Lists the licenses received for all accounts in the organization.
+     * </p>
+     * 
+     * @param listReceivedLicensesForOrganizationRequest
+     * @return Result of the ListReceivedLicensesForOrganization operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy
+     *         associated with this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @sample AWSLicenseManager.ListReceivedLicensesForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListReceivedLicensesForOrganizationResult listReceivedLicensesForOrganization(
+            ListReceivedLicensesForOrganizationRequest listReceivedLicensesForOrganizationRequest);
 
     /**
      * <p>

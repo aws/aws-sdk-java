@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class CaseFilter implements Serializable, Cloneable, StructuredPojo {
     private FieldFilter field;
 
     private CaseFilter not;
+    /**
+     * <p>
+     * Provides "or all" filtering.
+     * </p>
+     */
+    private java.util.List<CaseFilter> orAll;
 
     /**
      * <p>
@@ -180,6 +186,76 @@ public class CaseFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides "or all" filtering.
+     * </p>
+     * 
+     * @return Provides "or all" filtering.
+     */
+
+    public java.util.List<CaseFilter> getOrAll() {
+        return orAll;
+    }
+
+    /**
+     * <p>
+     * Provides "or all" filtering.
+     * </p>
+     * 
+     * @param orAll
+     *        Provides "or all" filtering.
+     */
+
+    public void setOrAll(java.util.Collection<CaseFilter> orAll) {
+        if (orAll == null) {
+            this.orAll = null;
+            return;
+        }
+
+        this.orAll = new java.util.ArrayList<CaseFilter>(orAll);
+    }
+
+    /**
+     * <p>
+     * Provides "or all" filtering.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrAll(java.util.Collection)} or {@link #withOrAll(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param orAll
+     *        Provides "or all" filtering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaseFilter withOrAll(CaseFilter... orAll) {
+        if (this.orAll == null) {
+            setOrAll(new java.util.ArrayList<CaseFilter>(orAll.length));
+        }
+        for (CaseFilter ele : orAll) {
+            this.orAll.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides "or all" filtering.
+     * </p>
+     * 
+     * @param orAll
+     *        Provides "or all" filtering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaseFilter withOrAll(java.util.Collection<CaseFilter> orAll) {
+        setOrAll(orAll);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,7 +272,9 @@ public class CaseFilter implements Serializable, Cloneable, StructuredPojo {
         if (getField() != null)
             sb.append("Field: ").append(getField()).append(",");
         if (getNot() != null)
-            sb.append("Not: ").append(getNot());
+            sb.append("Not: ").append(getNot()).append(",");
+        if (getOrAll() != null)
+            sb.append("OrAll: ").append(getOrAll());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +301,10 @@ public class CaseFilter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNot() != null && other.getNot().equals(this.getNot()) == false)
             return false;
+        if (other.getOrAll() == null ^ this.getOrAll() == null)
+            return false;
+        if (other.getOrAll() != null && other.getOrAll().equals(this.getOrAll()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +316,7 @@ public class CaseFilter implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAndAll() == null) ? 0 : getAndAll().hashCode());
         hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
         hashCode = prime * hashCode + ((getNot() == null) ? 0 : getNot().hashCode());
+        hashCode = prime * hashCode + ((getOrAll() == null) ? 0 : getOrAll().hashCode());
         return hashCode;
     }
 

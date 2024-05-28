@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class CreatePlatformApplicationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * PlatformApplicationArn is returned.
+     * <code>PlatformApplicationArn</code> is returned.
      * </p>
      */
     private String platformApplicationArn;
 
     /**
      * <p>
-     * PlatformApplicationArn is returned.
+     * <code>PlatformApplicationArn</code> is returned.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn is returned.
+     *        <code>PlatformApplicationArn</code> is returned.
      */
 
     public void setPlatformApplicationArn(String platformApplicationArn) {
@@ -48,10 +48,10 @@ public class CreatePlatformApplicationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * PlatformApplicationArn is returned.
+     * <code>PlatformApplicationArn</code> is returned.
      * </p>
      * 
-     * @return PlatformApplicationArn is returned.
+     * @return <code>PlatformApplicationArn</code> is returned.
      */
 
     public String getPlatformApplicationArn() {
@@ -60,11 +60,11 @@ public class CreatePlatformApplicationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * PlatformApplicationArn is returned.
+     * <code>PlatformApplicationArn</code> is returned.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn is returned.
+     *        <code>PlatformApplicationArn</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

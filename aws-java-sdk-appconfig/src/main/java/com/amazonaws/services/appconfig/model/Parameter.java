@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A value such as an Amazon Resource Name (ARN) or an Amazon Simple Notification Service topic entered in an extension
  * when invoked. Parameter values are specified in an extension association. For more information about extensions, see
- * <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with
- * AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+ * <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+ * workflows</a> in the <i>AppConfig User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Parameter" target="_top">AWS API
@@ -43,6 +43,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean required;
+    /**
+     * <p>
+     * Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     * extension association. Dynamic parameters can't be marked <code>Required</code>.
+     * </p>
+     */
+    private Boolean dynamic;
 
     /**
      * <p>
@@ -137,6 +144,66 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     * extension association. Dynamic parameters can't be marked <code>Required</code>.
+     * </p>
+     * 
+     * @param dynamic
+     *        Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     *        extension association. Dynamic parameters can't be marked <code>Required</code>.
+     */
+
+    public void setDynamic(Boolean dynamic) {
+        this.dynamic = dynamic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     * extension association. Dynamic parameters can't be marked <code>Required</code>.
+     * </p>
+     * 
+     * @return Indicates whether this parameter's value can be supplied at the extension's action point instead of
+     *         during extension association. Dynamic parameters can't be marked <code>Required</code>.
+     */
+
+    public Boolean getDynamic() {
+        return this.dynamic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     * extension association. Dynamic parameters can't be marked <code>Required</code>.
+     * </p>
+     * 
+     * @param dynamic
+     *        Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     *        extension association. Dynamic parameters can't be marked <code>Required</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withDynamic(Boolean dynamic) {
+        setDynamic(dynamic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this parameter's value can be supplied at the extension's action point instead of during
+     * extension association. Dynamic parameters can't be marked <code>Required</code>.
+     * </p>
+     * 
+     * @return Indicates whether this parameter's value can be supplied at the extension's action point instead of
+     *         during extension association. Dynamic parameters can't be marked <code>Required</code>.
+     */
+
+    public Boolean isDynamic() {
+        return this.dynamic;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -151,7 +218,9 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRequired() != null)
-            sb.append("Required: ").append(getRequired());
+            sb.append("Required: ").append(getRequired()).append(",");
+        if (getDynamic() != null)
+            sb.append("Dynamic: ").append(getDynamic());
         sb.append("}");
         return sb.toString();
     }
@@ -174,6 +243,10 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRequired() != null && other.getRequired().equals(this.getRequired()) == false)
             return false;
+        if (other.getDynamic() == null ^ this.getDynamic() == null)
+            return false;
+        if (other.getDynamic() != null && other.getDynamic().equals(this.getDynamic()) == false)
+            return false;
         return true;
     }
 
@@ -184,6 +257,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRequired() == null) ? 0 : getRequired().hashCode());
+        hashCode = prime * hashCode + ((getDynamic() == null) ? 0 : getDynamic().hashCode());
         return hashCode;
     }
 

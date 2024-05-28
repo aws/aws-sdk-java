@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,13 @@ public class ReplicaGlobalSecondaryIndex implements Serializable, Cloneable, Str
      * </p>
      */
     private ProvisionedThroughputOverride provisionedThroughputOverride;
+    /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified global secondary index in the specified
+     * replica table.
+     * </p>
+     */
+    private OnDemandThroughputOverride onDemandThroughputOverride;
 
     /**
      * <p>
@@ -129,6 +136,52 @@ public class ReplicaGlobalSecondaryIndex implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified global secondary index in the specified
+     * replica table.
+     * </p>
+     * 
+     * @param onDemandThroughputOverride
+     *        Overrides the maximum on-demand throughput settings for the specified global secondary index in the
+     *        specified replica table.
+     */
+
+    public void setOnDemandThroughputOverride(OnDemandThroughputOverride onDemandThroughputOverride) {
+        this.onDemandThroughputOverride = onDemandThroughputOverride;
+    }
+
+    /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified global secondary index in the specified
+     * replica table.
+     * </p>
+     * 
+     * @return Overrides the maximum on-demand throughput settings for the specified global secondary index in the
+     *         specified replica table.
+     */
+
+    public OnDemandThroughputOverride getOnDemandThroughputOverride() {
+        return this.onDemandThroughputOverride;
+    }
+
+    /**
+     * <p>
+     * Overrides the maximum on-demand throughput settings for the specified global secondary index in the specified
+     * replica table.
+     * </p>
+     * 
+     * @param onDemandThroughputOverride
+     *        Overrides the maximum on-demand throughput settings for the specified global secondary index in the
+     *        specified replica table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicaGlobalSecondaryIndex withOnDemandThroughputOverride(OnDemandThroughputOverride onDemandThroughputOverride) {
+        setOnDemandThroughputOverride(onDemandThroughputOverride);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,7 +196,9 @@ public class ReplicaGlobalSecondaryIndex implements Serializable, Cloneable, Str
         if (getIndexName() != null)
             sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getProvisionedThroughputOverride() != null)
-            sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride());
+            sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride()).append(",");
+        if (getOnDemandThroughputOverride() != null)
+            sb.append("OnDemandThroughputOverride: ").append(getOnDemandThroughputOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -167,6 +222,10 @@ public class ReplicaGlobalSecondaryIndex implements Serializable, Cloneable, Str
         if (other.getProvisionedThroughputOverride() != null
                 && other.getProvisionedThroughputOverride().equals(this.getProvisionedThroughputOverride()) == false)
             return false;
+        if (other.getOnDemandThroughputOverride() == null ^ this.getOnDemandThroughputOverride() == null)
+            return false;
+        if (other.getOnDemandThroughputOverride() != null && other.getOnDemandThroughputOverride().equals(this.getOnDemandThroughputOverride()) == false)
+            return false;
         return true;
     }
 
@@ -177,6 +236,7 @@ public class ReplicaGlobalSecondaryIndex implements Serializable, Cloneable, Str
 
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputOverride() == null) ? 0 : getProvisionedThroughputOverride().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughputOverride() == null) ? 0 : getOnDemandThroughputOverride().hashCode());
         return hashCode;
     }
 

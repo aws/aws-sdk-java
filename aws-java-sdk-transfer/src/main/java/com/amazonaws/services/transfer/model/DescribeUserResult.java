@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private String serverId;
     /**
      * <p>
-     * An array containing the properties of the user account for the <code>ServerID</code> value that you specified.
+     * An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you
+     * specified.
      * </p>
      */
     private DescribedUser user;
@@ -78,12 +79,13 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An array containing the properties of the user account for the <code>ServerID</code> value that you specified.
+     * An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you
+     * specified.
      * </p>
      * 
      * @param user
-     *        An array containing the properties of the user account for the <code>ServerID</code> value that you
-     *        specified.
+     *        An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that
+     *        you specified.
      */
 
     public void setUser(DescribedUser user) {
@@ -92,11 +94,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An array containing the properties of the user account for the <code>ServerID</code> value that you specified.
+     * An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you
+     * specified.
      * </p>
      * 
-     * @return An array containing the properties of the user account for the <code>ServerID</code> value that you
-     *         specified.
+     * @return An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that
+     *         you specified.
      */
 
     public DescribedUser getUser() {
@@ -105,12 +108,13 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * An array containing the properties of the user account for the <code>ServerID</code> value that you specified.
+     * An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you
+     * specified.
      * </p>
      * 
      * @param user
-     *        An array containing the properties of the user account for the <code>ServerID</code> value that you
-     *        specified.
+     *        An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that
+     *        you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -124,6 +124,36 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                 if (context.testExpression("buildType", targetDepth)) {
                     context.nextToken();
                     image.setBuildType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("imageSource", targetDepth)) {
+                    context.nextToken();
+                    image.setImageSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("scanState", targetDepth)) {
+                    context.nextToken();
+                    image.setScanState(ImageScanStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("imageScanningConfiguration", targetDepth)) {
+                    context.nextToken();
+                    image.setImageScanningConfiguration(ImageScanningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("deprecationTime", targetDepth)) {
+                    context.nextToken();
+                    image.setDeprecationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lifecycleExecutionId", targetDepth)) {
+                    context.nextToken();
+                    image.setLifecycleExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("executionRole", targetDepth)) {
+                    context.nextToken();
+                    image.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflows", targetDepth)) {
+                    context.nextToken();
+                    image.setWorkflows(new ListUnmarshaller<WorkflowConfiguration>(WorkflowConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

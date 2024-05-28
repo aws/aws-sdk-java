@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -148,7 +148,9 @@ public interface AmazonSnowball {
      * <p>
      * Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of
      * creation. The address you provide must be located within the serviceable area of your region. If the address is
-     * invalid or unsupported, then an exception is thrown.
+     * invalid or unsupported, then an exception is thrown. If providing an address as a JSON file through the
+     * <code>cli-input-json</code> option, include the full file path. For example,
+     * <code>--cli-input-json file://create-address.json</code>.
      * </p>
      * 
      * @param createAddressRequest
@@ -184,7 +186,7 @@ public interface AmazonSnowball {
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -219,7 +221,7 @@ public interface AmazonSnowball {
      * <ul>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_SSD</b>
+     * Device type: <b>SNC1_SSD</b>
      * </p>
      * <ul>
      * <li>
@@ -236,7 +238,7 @@ public interface AmazonSnowball {
      * <p/></li>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_HDD</b>
+     * Device type: <b>SNC1_HDD</b>
      * </p>
      * <ul>
      * <li>
@@ -318,23 +320,11 @@ public interface AmazonSnowball {
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
-     * <li>
+     * <note>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * This device is replaced with T98.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Capacity: T32
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -378,6 +368,40 @@ public interface AmazonSnowball {
      * </note></li>
      * </ul>
      * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>RACK_5U_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowblade.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Device type: <b>V3_5S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized 210TB
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -397,7 +421,7 @@ public interface AmazonSnowball {
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five nodes.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.CreateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob" target="_top">AWS API
      *      Documentation</a>
@@ -686,10 +710,11 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-     * available on the Amazon Web Services Marketplace.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -698,7 +723,7 @@ public interface AmazonSnowball {
      *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
      *         operation without changing the <code>NextToken</code> string, and try again.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.ListCompatibleImages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages" target="_top">AWS
      *      API Documentation</a>
@@ -745,6 +770,42 @@ public interface AmazonSnowball {
 
     /**
      * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @return Result of the ListPickupLocations operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListPickupLocationsResult listPickupLocations(ListPickupLocationsRequest listPickupLocationsRequest);
+
+    /**
+     * <p>
+     * Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object
+     * containing the supported versions for a particular service.
+     * </p>
+     * 
+     * @param listServiceVersionsRequest
+     * @return Result of the ListServiceVersions operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.ListServiceVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListServiceVersionsResult listServiceVersions(ListServiceVersionsRequest listServiceVersionsRequest);
+
+    /**
+     * <p>
      * While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update
      * some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60
      * minutes after the cluster being created, this action is no longer available.
@@ -765,7 +826,7 @@ public interface AmazonSnowball {
      *         <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try
      *         again.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -798,7 +859,7 @@ public interface AmazonSnowball {
      *         cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster
      *         has exactly five nodes.
      * @throws Ec2RequestFailedException
-     *         Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.
+     *         Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
      * @sample AmazonSnowball.UpdateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob" target="_top">AWS API
      *      Documentation</a>

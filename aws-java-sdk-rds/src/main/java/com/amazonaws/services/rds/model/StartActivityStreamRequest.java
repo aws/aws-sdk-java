@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,8 +55,8 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
     private Boolean applyImmediately;
     /**
      * <p>
-     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
-     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * Specifies whether the database activity stream includes engine-native audit fields. This option applies to an
+     * Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      * </p>
      */
     private Boolean engineNativeAuditFieldsIncluded;
@@ -286,13 +286,13 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
-     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * Specifies whether the database activity stream includes engine-native audit fields. This option applies to an
+     * Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      * </p>
      * 
      * @param engineNativeAuditFieldsIncluded
-     *        Specifies whether the database activity stream includes engine-native audit fields. This option only
-     *        applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     *        Specifies whether the database activity stream includes engine-native audit fields. This option applies to
+     *        an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      */
 
     public void setEngineNativeAuditFieldsIncluded(Boolean engineNativeAuditFieldsIncluded) {
@@ -301,12 +301,12 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
-     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * Specifies whether the database activity stream includes engine-native audit fields. This option applies to an
+     * Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      * </p>
      * 
-     * @return Specifies whether the database activity stream includes engine-native audit fields. This option only
-     *         applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     * @return Specifies whether the database activity stream includes engine-native audit fields. This option applies
+     *         to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      */
 
     public Boolean getEngineNativeAuditFieldsIncluded() {
@@ -315,13 +315,13 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
-     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * Specifies whether the database activity stream includes engine-native audit fields. This option applies to an
+     * Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      * </p>
      * 
      * @param engineNativeAuditFieldsIncluded
-     *        Specifies whether the database activity stream includes engine-native audit fields. This option only
-     *        applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     *        Specifies whether the database activity stream includes engine-native audit fields. This option applies to
+     *        an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,12 +332,12 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
-     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * Specifies whether the database activity stream includes engine-native audit fields. This option applies to an
+     * Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      * </p>
      * 
-     * @return Specifies whether the database activity stream includes engine-native audit fields. This option only
-     *         applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     * @return Specifies whether the database activity stream includes engine-native audit fields. This option applies
+     *         to an Oracle or Microsoft SQL Server DB instance. By default, no engine-native audit fields are included.
      */
 
     public Boolean isEngineNativeAuditFieldsIncluded() {

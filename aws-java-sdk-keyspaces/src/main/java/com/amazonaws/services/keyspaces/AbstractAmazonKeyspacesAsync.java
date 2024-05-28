@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,19 @@ public class AbstractAmazonKeyspacesAsync extends AbstractAmazonKeyspaces implem
     @Override
     public java.util.concurrent.Future<GetTableResult> getTableAsync(GetTableRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTableRequest, GetTableResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request) {
+
+        return getTableAutoScalingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTableAutoScalingSettingsRequest, GetTableAutoScalingSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

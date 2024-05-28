@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      */
     private Integer maxLabels;
@@ -45,10 +46,28 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      */
     private Float minConfidence;
+    /**
+     * <p>
+     * A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while
+     * specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.
+     * </p>
+     */
+    private java.util.List<String> features;
+    /**
+     * <p>
+     * A list of the filters to be applied to returned detected labels and image properties. Specified filters can be
+     * inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories.
+     * The exact label names or label categories must be supplied. For a full list of labels and label categories, see
+     * <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.
+     * </p>
+     */
+    private DetectLabelsSettings settings;
 
     /**
      * <p>
@@ -126,12 +145,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param maxLabels
      *        Maximum number of labels you want the service to return in the response. The service returns the specified
-     *        number of highest confidence labels.
+     *        number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      */
 
     public void setMaxLabels(Integer maxLabels) {
@@ -141,11 +162,13 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @return Maximum number of labels you want the service to return in the response. The service returns the
-     *         specified number of highest confidence labels.
+     *         specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature
+     *         type in the Feature input parameter.
      */
 
     public Integer getMaxLabels() {
@@ -155,12 +178,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Maximum number of labels you want the service to return in the response. The service returns the specified number
-     * of highest confidence labels.
+     * of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param maxLabels
      *        Maximum number of labels you want the service to return in the response. The service returns the specified
-     *        number of highest confidence labels.
+     *        number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,7 +201,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param minConfidence
@@ -184,7 +210,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        labels with confidence lower than this specified value.</p>
      *        <p>
      *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *        greater than or equal to 55 percent.
+     *        greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      */
 
     public void setMinConfidence(Float minConfidence) {
@@ -198,14 +225,16 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @return Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any
      *         labels with confidence lower than this specified value.</p>
      *         <p>
      *         If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *         greater than or equal to 55 percent.
+     *         greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *         Feature input parameter.
      */
 
     public Float getMinConfidence() {
@@ -219,7 +248,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 55 percent.
+     * than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.
      * </p>
      * 
      * @param minConfidence
@@ -227,12 +257,192 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        labels with confidence lower than this specified value.</p>
      *        <p>
      *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *        greater than or equal to 55 percent.
+     *        greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the
+     *        Feature input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectLabelsRequest withMinConfidence(Float minConfidence) {
         setMinConfidence(minConfidence);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while
+     * specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.
+     * </p>
+     * 
+     * @return A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature,
+     *         while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is
+     *         specified GENERAL_LABELS is used by default.
+     * @see DetectLabelsFeatureName
+     */
+
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while
+     * specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.
+     * </p>
+     * 
+     * @param features
+     *        A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature,
+     *        while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is
+     *        specified GENERAL_LABELS is used by default.
+     * @see DetectLabelsFeatureName
+     */
+
+    public void setFeatures(java.util.Collection<String> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<String>(features);
+    }
+
+    /**
+     * <p>
+     * A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while
+     * specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature,
+     *        while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is
+     *        specified GENERAL_LABELS is used by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DetectLabelsFeatureName
+     */
+
+    public DetectLabelsRequest withFeatures(String... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<String>(features.length));
+        }
+        for (String ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while
+     * specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.
+     * </p>
+     * 
+     * @param features
+     *        A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature,
+     *        while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is
+     *        specified GENERAL_LABELS is used by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DetectLabelsFeatureName
+     */
+
+    public DetectLabelsRequest withFeatures(java.util.Collection<String> features) {
+        setFeatures(features);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while
+     * specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified
+     * GENERAL_LABELS is used by default.
+     * </p>
+     * 
+     * @param features
+     *        A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature,
+     *        while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is
+     *        specified GENERAL_LABELS is used by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DetectLabelsFeatureName
+     */
+
+    public DetectLabelsRequest withFeatures(DetectLabelsFeatureName... features) {
+        java.util.ArrayList<String> featuresCopy = new java.util.ArrayList<String>(features.length);
+        for (DetectLabelsFeatureName value : features) {
+            featuresCopy.add(value.toString());
+        }
+        if (getFeatures() == null) {
+            setFeatures(featuresCopy);
+        } else {
+            getFeatures().addAll(featuresCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the filters to be applied to returned detected labels and image properties. Specified filters can be
+     * inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories.
+     * The exact label names or label categories must be supplied. For a full list of labels and label categories, see
+     * <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.
+     * </p>
+     * 
+     * @param settings
+     *        A list of the filters to be applied to returned detected labels and image properties. Specified filters
+     *        can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label
+     *        categories. The exact label names or label categories must be supplied. For a full list of labels and
+     *        label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     *        labels</a>.
+     */
+
+    public void setSettings(DetectLabelsSettings settings) {
+        this.settings = settings;
+    }
+
+    /**
+     * <p>
+     * A list of the filters to be applied to returned detected labels and image properties. Specified filters can be
+     * inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories.
+     * The exact label names or label categories must be supplied. For a full list of labels and label categories, see
+     * <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.
+     * </p>
+     * 
+     * @return A list of the filters to be applied to returned detected labels and image properties. Specified filters
+     *         can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label
+     *         categories. The exact label names or label categories must be supplied. For a full list of labels and
+     *         label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     *         labels</a>.
+     */
+
+    public DetectLabelsSettings getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * <p>
+     * A list of the filters to be applied to returned detected labels and image properties. Specified filters can be
+     * inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories.
+     * The exact label names or label categories must be supplied. For a full list of labels and label categories, see
+     * <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.
+     * </p>
+     * 
+     * @param settings
+     *        A list of the filters to be applied to returned detected labels and image properties. Specified filters
+     *        can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label
+     *        categories. The exact label names or label categories must be supplied. For a full list of labels and
+     *        label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     *        labels</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectLabelsRequest withSettings(DetectLabelsSettings settings) {
+        setSettings(settings);
         return this;
     }
 
@@ -253,7 +463,11 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getMaxLabels() != null)
             sb.append("MaxLabels: ").append(getMaxLabels()).append(",");
         if (getMinConfidence() != null)
-            sb.append("MinConfidence: ").append(getMinConfidence());
+            sb.append("MinConfidence: ").append(getMinConfidence()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -280,6 +494,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMinConfidence() != null && other.getMinConfidence().equals(this.getMinConfidence()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +513,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getMaxLabels() == null) ? 0 : getMaxLabels().hashCode());
         hashCode = prime * hashCode + ((getMinConfidence() == null) ? 0 : getMinConfidence().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 

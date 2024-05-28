@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,14 +45,17 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
     private String description;
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     * thesaurus file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access
+     * to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the
+     * following symbols: _ . : / = + - @.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -192,12 +195,15 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     * thesaurus file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in
-     *        <code>SourceS3Path</code>.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     *        thesaurus file. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -206,11 +212,15 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     * thesaurus file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
-     * @return An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in
-     *         <code>SourceS3Path</code>.
+     * @return The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     *         thesaurus file. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *         Kendra</a>.
      */
 
     public String getRoleArn() {
@@ -219,12 +229,15 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     * thesaurus file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * </p>
      * 
      * @param roleArn
-     *        An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in
-     *        <code>SourceS3Path</code>.
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the
+     *        thesaurus file. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,12 +248,14 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access
+     * to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the
+     * following symbols: _ . : / = + - @.
      * </p>
      * 
-     * @return A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     *         resources and to control access to resources.
+     * @return A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help
+     *         control access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space,
+     *         and any of the following symbols: _ . : / = + - @.
      */
 
     public java.util.List<Tag> getTags() {
@@ -249,13 +264,15 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access
+     * to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the
+     * following symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     *        resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control
+     *        access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any
+     *        of the following symbols: _ . : / = + - @.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -269,8 +286,9 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access
+     * to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the
+     * following symbols: _ . : / = + - @.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -279,8 +297,9 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     *        resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control
+     *        access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any
+     *        of the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,13 +315,15 @@ public class CreateThesaurusRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     * resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access
+     * to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the
+     * following symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your
-     *        resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control
+     *        access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any
+     *        of the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

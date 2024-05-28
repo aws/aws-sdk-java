@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.opensearch.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class DomainConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSOptions").build();
     private static final MarshallingInfo<StructuredPojo> ACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
+    private static final MarshallingInfo<StructuredPojo> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPAddressType").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +60,12 @@ public class DomainConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
     private static final MarshallingInfo<StructuredPojo> CHANGEPROGRESSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeProgressDetails").build();
+    private static final MarshallingInfo<StructuredPojo> OFFPEAKWINDOWOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OffPeakWindowOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SOFTWAREUPDATEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SoftwareUpdateOptions").build();
+    private static final MarshallingInfo<List> MODIFYINGPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModifyingProperties").build();
 
     private static final DomainConfigMarshaller instance = new DomainConfigMarshaller();
 
@@ -78,6 +87,7 @@ public class DomainConfigMarshaller {
             protocolMarshaller.marshall(domainConfig.getClusterConfig(), CLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(domainConfig.getEBSOptions(), EBSOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getAccessPolicies(), ACCESSPOLICIES_BINDING);
+            protocolMarshaller.marshall(domainConfig.getIPAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(domainConfig.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getCognitoOptions(), COGNITOOPTIONS_BINDING);
@@ -89,6 +99,9 @@ public class DomainConfigMarshaller {
             protocolMarshaller.marshall(domainConfig.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getChangeProgressDetails(), CHANGEPROGRESSDETAILS_BINDING);
+            protocolMarshaller.marshall(domainConfig.getOffPeakWindowOptions(), OFFPEAKWINDOWOPTIONS_BINDING);
+            protocolMarshaller.marshall(domainConfig.getSoftwareUpdateOptions(), SOFTWAREUPDATEOPTIONS_BINDING);
+            protocolMarshaller.marshall(domainConfig.getModifyingProperties(), MODIFYINGPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

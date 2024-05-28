@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,32 @@ public class DescribeStateMachineRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the state machine to describe.
+     * The Amazon Resource Name (ARN) of the state machine for which you want the information.
+     * </p>
+     * <p>
+     * If you specify a state machine version ARN, this API returns details about that version. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
      * </p>
      */
     private String stateMachineArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the state machine to describe.
+     * The Amazon Resource Name (ARN) of the state machine for which you want the information.
+     * </p>
+     * <p>
+     * If you specify a state machine version ARN, this API returns details about that version. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
      * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine to describe.
+     *        The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+     *        <p>
+     *        If you specify a state machine version ARN, this API returns details about that version. The version ARN
+     *        is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -47,10 +61,19 @@ public class DescribeStateMachineRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the state machine to describe.
+     * The Amazon Resource Name (ARN) of the state machine for which you want the information.
+     * </p>
+     * <p>
+     * If you specify a state machine version ARN, this API returns details about that version. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the state machine to describe.
+     * @return The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+     *         <p>
+     *         If you specify a state machine version ARN, this API returns details about that version. The version ARN
+     *         is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *         <code>stateMachineARN:1</code>.
      */
 
     public String getStateMachineArn() {
@@ -59,11 +82,20 @@ public class DescribeStateMachineRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the state machine to describe.
+     * The Amazon Resource Name (ARN) of the state machine for which you want the information.
+     * </p>
+     * <p>
+     * If you specify a state machine version ARN, this API returns details about that version. The version ARN is a
+     * combination of state machine ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.
      * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine to describe.
+     *        The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+     *        <p>
+     *        If you specify a state machine version ARN, this API returns details about that version. The version ARN
+     *        is a combination of state machine ARN and the version number separated by a colon (:). For example,
+     *        <code>stateMachineARN:1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

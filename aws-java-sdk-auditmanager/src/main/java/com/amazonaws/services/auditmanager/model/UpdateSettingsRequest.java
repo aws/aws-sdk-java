@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String snsTopic;
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      */
     private AssessmentReportsDestination defaultAssessmentReportsDestination;
@@ -49,6 +49,37 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String kmsKey;
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * </important>
+     */
+    private Boolean evidenceFinderEnabled;
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     */
+    private DeregistrationPolicy deregistrationPolicy;
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     */
+    private DefaultExportDestination defaultExportDestination;
 
     /**
      * <p>
@@ -92,11 +123,11 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
      * @param defaultAssessmentReportsDestination
-     *        The default storage destination for assessment reports.
+     *        The default S3 destination bucket for storing assessment reports.
      */
 
     public void setDefaultAssessmentReportsDestination(AssessmentReportsDestination defaultAssessmentReportsDestination) {
@@ -105,10 +136,10 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
-     * @return The default storage destination for assessment reports.
+     * @return The default S3 destination bucket for storing assessment reports.
      */
 
     public AssessmentReportsDestination getDefaultAssessmentReportsDestination() {
@@ -117,11 +148,11 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default storage destination for assessment reports.
+     * The default S3 destination bucket for storing assessment reports.
      * </p>
      * 
      * @param defaultAssessmentReportsDestination
-     *        The default storage destination for assessment reports.
+     *        The default S3 destination bucket for storing assessment reports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,6 +272,232 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * </important>
+     * 
+     * @param evidenceFinderEnabled
+     *        Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *        evidence finder.</p> <important>
+     *        <p>
+     *        When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *        used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *        again. Your only alternative is to <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *        >deregister</a> and then <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *        >re-register</a> Audit Manager.
+     *        </p>
+     */
+
+    public void setEvidenceFinderEnabled(Boolean evidenceFinderEnabled) {
+        this.evidenceFinderEnabled = evidenceFinderEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * </important>
+     * 
+     * @return Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *         evidence finder.</p> <important>
+     *         <p>
+     *         When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *         used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *         again. Your only alternative is to <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *         >deregister</a> and then <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *         >re-register</a> Audit Manager.
+     *         </p>
+     */
+
+    public Boolean getEvidenceFinderEnabled() {
+        return this.evidenceFinderEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * </important>
+     * 
+     * @param evidenceFinderEnabled
+     *        Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *        evidence finder.</p> <important>
+     *        <p>
+     *        When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *        used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *        again. Your only alternative is to <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *        >deregister</a> and then <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *        >re-register</a> Audit Manager.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSettingsRequest withEvidenceFinderEnabled(Boolean evidenceFinderEnabled) {
+        setEvidenceFinderEnabled(evidenceFinderEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * </important>
+     * 
+     * @return Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *         evidence finder.</p> <important>
+     *         <p>
+     *         When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *         used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *         again. Your only alternative is to <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *         >deregister</a> and then <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *         >re-register</a> Audit Manager.
+     *         </p>
+     */
+
+    public Boolean isEvidenceFinderEnabled() {
+        return this.evidenceFinderEnabled;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     */
+
+    public void setDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        this.deregistrationPolicy = deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @return The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *         data is handled when you deregister Audit Manager.
+     */
+
+    public DeregistrationPolicy getDeregistrationPolicy() {
+        return this.deregistrationPolicy;
+    }
+
+    /**
+     * <p>
+     * The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is
+     * handled when you deregister Audit Manager.
+     * </p>
+     * 
+     * @param deregistrationPolicy
+     *        The deregistration policy for your Audit Manager data. You can use this attribute to determine how your
+     *        data is handled when you deregister Audit Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSettingsRequest withDeregistrationPolicy(DeregistrationPolicy deregistrationPolicy) {
+        setDeregistrationPolicy(deregistrationPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @param defaultExportDestination
+     *        The default S3 destination bucket for storing evidence finder exports.
+     */
+
+    public void setDefaultExportDestination(DefaultExportDestination defaultExportDestination) {
+        this.defaultExportDestination = defaultExportDestination;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @return The default S3 destination bucket for storing evidence finder exports.
+     */
+
+    public DefaultExportDestination getDefaultExportDestination() {
+        return this.defaultExportDestination;
+    }
+
+    /**
+     * <p>
+     * The default S3 destination bucket for storing evidence finder exports.
+     * </p>
+     * 
+     * @param defaultExportDestination
+     *        The default S3 destination bucket for storing evidence finder exports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSettingsRequest withDefaultExportDestination(DefaultExportDestination defaultExportDestination) {
+        setDefaultExportDestination(defaultExportDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,11 +512,17 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSnsTopic() != null)
             sb.append("SnsTopic: ").append(getSnsTopic()).append(",");
         if (getDefaultAssessmentReportsDestination() != null)
-            sb.append("DefaultAssessmentReportsDestination: ").append(getDefaultAssessmentReportsDestination()).append(",");
+            sb.append("DefaultAssessmentReportsDestination: ").append("***Sensitive Data Redacted***").append(",");
         if (getDefaultProcessOwners() != null)
-            sb.append("DefaultProcessOwners: ").append(getDefaultProcessOwners()).append(",");
+            sb.append("DefaultProcessOwners: ").append("***Sensitive Data Redacted***").append(",");
         if (getKmsKey() != null)
-            sb.append("KmsKey: ").append(getKmsKey());
+            sb.append("KmsKey: ").append(getKmsKey()).append(",");
+        if (getEvidenceFinderEnabled() != null)
+            sb.append("EvidenceFinderEnabled: ").append(getEvidenceFinderEnabled()).append(",");
+        if (getDeregistrationPolicy() != null)
+            sb.append("DeregistrationPolicy: ").append(getDeregistrationPolicy()).append(",");
+        if (getDefaultExportDestination() != null)
+            sb.append("DefaultExportDestination: ").append(getDefaultExportDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +554,18 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getKmsKey() != null && other.getKmsKey().equals(this.getKmsKey()) == false)
             return false;
+        if (other.getEvidenceFinderEnabled() == null ^ this.getEvidenceFinderEnabled() == null)
+            return false;
+        if (other.getEvidenceFinderEnabled() != null && other.getEvidenceFinderEnabled().equals(this.getEvidenceFinderEnabled()) == false)
+            return false;
+        if (other.getDeregistrationPolicy() == null ^ this.getDeregistrationPolicy() == null)
+            return false;
+        if (other.getDeregistrationPolicy() != null && other.getDeregistrationPolicy().equals(this.getDeregistrationPolicy()) == false)
+            return false;
+        if (other.getDefaultExportDestination() == null ^ this.getDefaultExportDestination() == null)
+            return false;
+        if (other.getDefaultExportDestination() != null && other.getDefaultExportDestination().equals(this.getDefaultExportDestination()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +578,9 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDefaultAssessmentReportsDestination() == null) ? 0 : getDefaultAssessmentReportsDestination().hashCode());
         hashCode = prime * hashCode + ((getDefaultProcessOwners() == null) ? 0 : getDefaultProcessOwners().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
+        hashCode = prime * hashCode + ((getEvidenceFinderEnabled() == null) ? 0 : getEvidenceFinderEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationPolicy() == null) ? 0 : getDeregistrationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDefaultExportDestination() == null) ? 0 : getDefaultExportDestination().hashCode());
         return hashCode;
     }
 

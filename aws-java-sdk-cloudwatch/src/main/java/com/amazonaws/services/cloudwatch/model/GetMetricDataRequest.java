@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,6 +105,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first
      * and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the
      * oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.
+     * </p>
+     * <p>
+     * If you omit this parameter, the default of <code>TimestampDescending</code> is used.
      * </p>
      */
     private String scanBy;
@@ -631,12 +634,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the
      * oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      * </p>
+     * <p>
+     * If you omit this parameter, the default of <code>TimestampDescending</code> is used.
+     * </p>
      * 
      * @param scanBy
      *        The order in which data points should be returned. <code>TimestampDescending</code> returns the newest
      *        data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      *        <code>TimestampAscending</code> returns the oldest data first and paginates when the
-     *        <code>MaxDatapoints</code> limit is reached.
+     *        <code>MaxDatapoints</code> limit is reached.</p>
+     *        <p>
+     *        If you omit this parameter, the default of <code>TimestampDescending</code> is used.
      * @see ScanBy
      */
 
@@ -650,11 +658,16 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the
      * oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      * </p>
+     * <p>
+     * If you omit this parameter, the default of <code>TimestampDescending</code> is used.
+     * </p>
      * 
      * @return The order in which data points should be returned. <code>TimestampDescending</code> returns the newest
      *         data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      *         <code>TimestampAscending</code> returns the oldest data first and paginates when the
-     *         <code>MaxDatapoints</code> limit is reached.
+     *         <code>MaxDatapoints</code> limit is reached.</p>
+     *         <p>
+     *         If you omit this parameter, the default of <code>TimestampDescending</code> is used.
      * @see ScanBy
      */
 
@@ -668,12 +681,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the
      * oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      * </p>
+     * <p>
+     * If you omit this parameter, the default of <code>TimestampDescending</code> is used.
+     * </p>
      * 
      * @param scanBy
      *        The order in which data points should be returned. <code>TimestampDescending</code> returns the newest
      *        data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      *        <code>TimestampAscending</code> returns the oldest data first and paginates when the
-     *        <code>MaxDatapoints</code> limit is reached.
+     *        <code>MaxDatapoints</code> limit is reached.</p>
+     *        <p>
+     *        If you omit this parameter, the default of <code>TimestampDescending</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScanBy
      */
@@ -689,12 +707,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the
      * oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      * </p>
+     * <p>
+     * If you omit this parameter, the default of <code>TimestampDescending</code> is used.
+     * </p>
      * 
      * @param scanBy
      *        The order in which data points should be returned. <code>TimestampDescending</code> returns the newest
      *        data first and paginates when the <code>MaxDatapoints</code> limit is reached.
      *        <code>TimestampAscending</code> returns the oldest data first and paginates when the
-     *        <code>MaxDatapoints</code> limit is reached.
+     *        <code>MaxDatapoints</code> limit is reached.</p>
+     *        <p>
+     *        If you omit this parameter, the default of <code>TimestampDescending</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScanBy
      */

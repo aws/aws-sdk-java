@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <note>
  * <p>
  * The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors,
- * but the total cannot exceed 250 across all selectors.
+ * but the total cannot exceed 250 across all selectors for the trail.
  * </p>
  * <p>
  * If you are using advanced event selectors, the maximum total number of values for all conditions, across all advanced
@@ -104,7 +104,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -114,52 +114,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * Additional resource types are available through <i>advanced</i> event selectors. For more information about these
+     * additional resource types, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::S3Outposts::Object</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::DynamoDB::Stream</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::Glue::Table</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String type;
     /**
@@ -233,7 +197,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -243,52 +207,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * Additional resource types are available through <i>advanced</i> event selectors. For more information about these
+     * additional resource types, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::S3Outposts::Object</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::DynamoDB::Stream</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::Glue::Table</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
      *        The resource type in which you want to log data events. You can specify the following <i>basic</i> event
@@ -296,7 +224,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS::S3::Object</code>
+     *        <code>AWS::DynamoDB::Table</code>
      *        </p>
      *        </li>
      *        <li>
@@ -306,51 +234,15 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::DynamoDB::Table</code>
+     *        <code>AWS::S3::Object</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The following resource types are also available through <i>advanced</i> event selectors. Basic event
-     *        selector resource types are valid in advanced event selectors, but advanced event selector resource types
-     *        are not valid in basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3Outposts::Object</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::ManagedBlockchain::Node</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3ObjectLambda::AccessPoint</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::Snapshot</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3::AccessPoint</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::DynamoDB::Stream</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::Glue::Table</code>
-     *        </p>
-     *        </li>
+     *        Additional resource types are available through <i>advanced</i> event selectors. For more information
+     *        about these additional resource types, see <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     *        >AdvancedFieldSelector</a>.
      */
 
     public void setType(String type) {
@@ -365,7 +257,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -375,59 +267,23 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * Additional resource types are available through <i>advanced</i> event selectors. For more information about these
+     * additional resource types, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::S3Outposts::Object</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::DynamoDB::Stream</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::Glue::Table</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return The resource type in which you want to log data events. You can specify the following <i>basic</i> event
      *         selector resource types:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AWS::S3::Object</code>
+     *         <code>AWS::DynamoDB::Table</code>
      *         </p>
      *         </li>
      *         <li>
@@ -437,51 +293,15 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS::DynamoDB::Table</code>
+     *         <code>AWS::S3::Object</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The following resource types are also available through <i>advanced</i> event selectors. Basic event
-     *         selector resource types are valid in advanced event selectors, but advanced event selector resource types
-     *         are not valid in basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>AWS::S3Outposts::Object</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::ManagedBlockchain::Node</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::S3ObjectLambda::AccessPoint</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::EC2::Snapshot</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::S3::AccessPoint</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::DynamoDB::Stream</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AWS::Glue::Table</code>
-     *         </p>
-     *         </li>
+     *         Additional resource types are available through <i>advanced</i> event selectors. For more information
+     *         about these additional resource types, see <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     *         >AdvancedFieldSelector</a>.
      */
 
     public String getType() {
@@ -496,7 +316,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>AWS::S3::Object</code>
+     * <code>AWS::DynamoDB::Table</code>
      * </p>
      * </li>
      * <li>
@@ -506,52 +326,16 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AWS::DynamoDB::Table</code>
+     * <code>AWS::S3::Object</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The following resource types are also available through <i>advanced</i> event selectors. Basic event selector
-     * resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in
-     * basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
+     * Additional resource types are available through <i>advanced</i> event selectors. For more information about these
+     * additional resource types, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     * >AdvancedFieldSelector</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>AWS::S3Outposts::Object</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::ManagedBlockchain::Node</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::EC2::Snapshot</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::S3::AccessPoint</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::DynamoDB::Stream</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AWS::Glue::Table</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
      *        The resource type in which you want to log data events. You can specify the following <i>basic</i> event
@@ -559,7 +343,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS::S3::Object</code>
+     *        <code>AWS::DynamoDB::Table</code>
      *        </p>
      *        </li>
      *        <li>
@@ -569,51 +353,15 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS::DynamoDB::Table</code>
+     *        <code>AWS::S3::Object</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The following resource types are also available through <i>advanced</i> event selectors. Basic event
-     *        selector resource types are valid in advanced event selectors, but advanced event selector resource types
-     *        are not valid in basic event selectors. For more information, see <a>AdvancedFieldSelector$Field</a>.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3Outposts::Object</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::ManagedBlockchain::Node</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3ObjectLambda::AccessPoint</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::EC2::Snapshot</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::S3::AccessPoint</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::DynamoDB::Stream</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AWS::Glue::Table</code>
-     *        </p>
-     *        </li>
+     *        Additional resource types are available through <i>advanced</i> event selectors. For more information
+     *        about these additional resource types, see <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html"
+     *        >AdvancedFieldSelector</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

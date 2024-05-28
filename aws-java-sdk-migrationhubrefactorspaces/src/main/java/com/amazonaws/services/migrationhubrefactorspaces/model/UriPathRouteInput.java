@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
     private String activationState;
     /**
      * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     */
+    private Boolean appendSourcePath;
+    /**
+     * <p>
      * Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests
      * must match the source path exactly before they are forwarded to this route's service.
      * </p>
@@ -50,8 +56,9 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
     private java.util.List<String> methods;
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      */
     private String sourcePath;
@@ -113,6 +120,58 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
     public UriPathRouteInput withActivationState(RouteActivationState activationState) {
         this.activationState = activationState.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @param appendSourcePath
+     *        If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     */
+
+    public void setAppendSourcePath(Boolean appendSourcePath) {
+        this.appendSourcePath = appendSourcePath;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     */
+
+    public Boolean getAppendSourcePath() {
+        return this.appendSourcePath;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @param appendSourcePath
+     *        If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UriPathRouteInput withAppendSourcePath(Boolean appendSourcePath) {
+        setAppendSourcePath(appendSourcePath);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, this option appends the source path to the service URL endpoint.
+     */
+
+    public Boolean isAppendSourcePath() {
+        return this.appendSourcePath;
     }
 
     /**
@@ -285,13 +344,15 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      * 
      * @param sourcePath
-     *        The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     *        application.
+     *        This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     *        relative to the base of the application. To use path parameters in the source path, add a variable in
+     *        curly braces. For example, the resource path {user} represents a path parameter called 'user'.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -300,12 +361,14 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      * 
-     * @return The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of
-     *         the application.
+     * @return This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     *         relative to the base of the application. To use path parameters in the source path, add a variable in
+     *         curly braces. For example, the resource path {user} represents a path parameter called 'user'.
      */
 
     public String getSourcePath() {
@@ -314,13 +377,15 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     * application.
+     * This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     * relative to the base of the application. To use path parameters in the source path, add a variable in curly
+     * braces. For example, the resource path {user} represents a path parameter called 'user'.
      * </p>
      * 
      * @param sourcePath
-     *        The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the
-     *        application.
+     *        This is the path that Refactor Spaces uses to match traffic. Paths must start with <code>/</code> and are
+     *        relative to the base of the application. To use path parameters in the source path, add a variable in
+     *        curly braces. For example, the resource path {user} represents a path parameter called 'user'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,6 +408,8 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getActivationState() != null)
             sb.append("ActivationState: ").append(getActivationState()).append(",");
+        if (getAppendSourcePath() != null)
+            sb.append("AppendSourcePath: ").append(getAppendSourcePath()).append(",");
         if (getIncludeChildPaths() != null)
             sb.append("IncludeChildPaths: ").append(getIncludeChildPaths()).append(",");
         if (getMethods() != null)
@@ -367,6 +434,10 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getActivationState() != null && other.getActivationState().equals(this.getActivationState()) == false)
             return false;
+        if (other.getAppendSourcePath() == null ^ this.getAppendSourcePath() == null)
+            return false;
+        if (other.getAppendSourcePath() != null && other.getAppendSourcePath().equals(this.getAppendSourcePath()) == false)
+            return false;
         if (other.getIncludeChildPaths() == null ^ this.getIncludeChildPaths() == null)
             return false;
         if (other.getIncludeChildPaths() != null && other.getIncludeChildPaths().equals(this.getIncludeChildPaths()) == false)
@@ -388,6 +459,7 @@ public class UriPathRouteInput implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActivationState() == null) ? 0 : getActivationState().hashCode());
+        hashCode = prime * hashCode + ((getAppendSourcePath() == null) ? 0 : getAppendSourcePath().hashCode());
         hashCode = prime * hashCode + ((getIncludeChildPaths() == null) ? 0 : getIncludeChildPaths().hashCode());
         hashCode = prime * hashCode + ((getMethods() == null) ? 0 : getMethods().hashCode());
         hashCode = prime * hashCode + ((getSourcePath() == null) ? 0 : getSourcePath().hashCode());

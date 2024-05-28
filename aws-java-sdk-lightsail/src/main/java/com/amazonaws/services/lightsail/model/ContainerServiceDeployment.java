@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,24 +48,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * <code>Activating</code> - The deployment is being created.
+     * <code>ACTIVATING</code> - The deployment is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     * <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      * service. The container service can have only one deployment in an active state at a time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on
+     * <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently running on
      * the container service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
+     * <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
      * for the containers in the deployment to try to determine the reason for the failure.
      * </p>
      * </li>
@@ -141,24 +141,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * <code>Activating</code> - The deployment is being created.
+     * <code>ACTIVATING</code> - The deployment is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     * <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      * service. The container service can have only one deployment in an active state at a time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on
+     * <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently running on
      * the container service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
+     * <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
      * for the containers in the deployment to try to determine the reason for the failure.
      * </p>
      * </li>
@@ -172,24 +172,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Activating</code> - The deployment is being created.
+     *        <code>ACTIVATING</code> - The deployment is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     *        <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      *        service. The container service can have only one deployment in an active state at a time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Inactive</code> - The deployment was previously successfully created, but it is not currently
+     *        <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently
      *        running on the container service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
+     *        <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
      *        events for the containers in the deployment to try to determine the reason for the failure.
      *        </p>
      *        </li>
@@ -210,24 +210,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * <code>Activating</code> - The deployment is being created.
+     * <code>ACTIVATING</code> - The deployment is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     * <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      * service. The container service can have only one deployment in an active state at a time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on
+     * <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently running on
      * the container service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
+     * <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
      * for the containers in the deployment to try to determine the reason for the failure.
      * </p>
      * </li>
@@ -240,24 +240,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Activating</code> - The deployment is being created.
+     *         <code>ACTIVATING</code> - The deployment is being created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Active</code> - The deployment was successfully created, and it's currently running on the
+     *         <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the
      *         container service. The container service can have only one deployment in an active state at a time.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Inactive</code> - The deployment was previously successfully created, but it is not currently
+     *         <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently
      *         running on the container service.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
+     *         <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
      *         events for the containers in the deployment to try to determine the reason for the failure.
      *         </p>
      *         </li>
@@ -278,24 +278,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * <code>Activating</code> - The deployment is being created.
+     * <code>ACTIVATING</code> - The deployment is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     * <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      * service. The container service can have only one deployment in an active state at a time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on
+     * <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently running on
      * the container service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
+     * <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
      * for the containers in the deployment to try to determine the reason for the failure.
      * </p>
      * </li>
@@ -309,24 +309,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Activating</code> - The deployment is being created.
+     *        <code>ACTIVATING</code> - The deployment is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     *        <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      *        service. The container service can have only one deployment in an active state at a time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Inactive</code> - The deployment was previously successfully created, but it is not currently
+     *        <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently
      *        running on the container service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
+     *        <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
      *        events for the containers in the deployment to try to determine the reason for the failure.
      *        </p>
      *        </li>
@@ -349,24 +349,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * <code>Activating</code> - The deployment is being created.
+     * <code>ACTIVATING</code> - The deployment is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     * <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      * service. The container service can have only one deployment in an active state at a time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on
+     * <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently running on
      * the container service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
+     * <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events
      * for the containers in the deployment to try to determine the reason for the failure.
      * </p>
      * </li>
@@ -380,24 +380,24 @@ public class ContainerServiceDeployment implements Serializable, Cloneable, Stru
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Activating</code> - The deployment is being created.
+     *        <code>ACTIVATING</code> - The deployment is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Active</code> - The deployment was successfully created, and it's currently running on the container
+     *        <code>ACTIVE</code> - The deployment was successfully created, and it's currently running on the container
      *        service. The container service can have only one deployment in an active state at a time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Inactive</code> - The deployment was previously successfully created, but it is not currently
+     *        <code>INACTIVE</code> - The deployment was previously successfully created, but it is not currently
      *        running on the container service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
+     *        <code>FAILED</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log
      *        events for the containers in the deployment to try to determine the reason for the failure.
      *        </p>
      *        </li>

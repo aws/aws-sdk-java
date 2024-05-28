@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,14 @@ public class ExecutionResultJsonUnmarshaller implements Unmarshaller<ExecutionRe
                 if (context.testExpression("recordsProcessed", targetDepth)) {
                     context.nextToken();
                     executionResult.setRecordsProcessed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("numParallelProcesses", targetDepth)) {
+                    context.nextToken();
+                    executionResult.setNumParallelProcesses(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("maxPageSize", targetDepth)) {
+                    context.nextToken();
+                    executionResult.setMaxPageSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

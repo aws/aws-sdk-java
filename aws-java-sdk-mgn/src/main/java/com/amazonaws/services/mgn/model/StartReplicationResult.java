@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,34 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Source server application ID.
+     * </p>
+     */
+    private String applicationID;
+    /**
+     * <p>
      * Source server ARN.
      * </p>
      */
     private String arn;
     /**
      * <p>
+     * Source Server connector action.
+     * </p>
+     */
+    private SourceServerConnectorAction connectorAction;
+    /**
+     * <p>
      * Source server data replication info.
      * </p>
      */
     private DataReplicationInfo dataReplicationInfo;
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     */
+    private String fqdnForActionFramework;
     /**
      * <p>
      * Source server archived status.
@@ -79,10 +97,56 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * Source server user provided ID.
+     * </p>
+     */
+    private String userProvidedID;
+    /**
+     * <p>
      * Source server vCenter client id.
      * </p>
      */
     private String vcenterClientID;
+
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     * 
+     * @param applicationID
+     *        Source server application ID.
+     */
+
+    public void setApplicationID(String applicationID) {
+        this.applicationID = applicationID;
+    }
+
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     * 
+     * @return Source server application ID.
+     */
+
+    public String getApplicationID() {
+        return this.applicationID;
+    }
+
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     * 
+     * @param applicationID
+     *        Source server application ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReplicationResult withApplicationID(String applicationID) {
+        setApplicationID(applicationID);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,6 +190,46 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Source Server connector action.
+     * </p>
+     * 
+     * @param connectorAction
+     *        Source Server connector action.
+     */
+
+    public void setConnectorAction(SourceServerConnectorAction connectorAction) {
+        this.connectorAction = connectorAction;
+    }
+
+    /**
+     * <p>
+     * Source Server connector action.
+     * </p>
+     * 
+     * @return Source Server connector action.
+     */
+
+    public SourceServerConnectorAction getConnectorAction() {
+        return this.connectorAction;
+    }
+
+    /**
+     * <p>
+     * Source Server connector action.
+     * </p>
+     * 
+     * @param connectorAction
+     *        Source Server connector action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReplicationResult withConnectorAction(SourceServerConnectorAction connectorAction) {
+        setConnectorAction(connectorAction);
+        return this;
+    }
+
+    /**
+     * <p>
      * Source server data replication info.
      * </p>
      * 
@@ -161,6 +265,46 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
 
     public StartReplicationResult withDataReplicationInfo(DataReplicationInfo dataReplicationInfo) {
         setDataReplicationInfo(dataReplicationInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     * 
+     * @param fqdnForActionFramework
+     *        Source server fqdn for action framework.
+     */
+
+    public void setFqdnForActionFramework(String fqdnForActionFramework) {
+        this.fqdnForActionFramework = fqdnForActionFramework;
+    }
+
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     * 
+     * @return Source server fqdn for action framework.
+     */
+
+    public String getFqdnForActionFramework() {
+        return this.fqdnForActionFramework;
+    }
+
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     * 
+     * @param fqdnForActionFramework
+     *        Source server fqdn for action framework.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReplicationResult withFqdnForActionFramework(String fqdnForActionFramework) {
+        setFqdnForActionFramework(fqdnForActionFramework);
         return this;
     }
 
@@ -505,6 +649,46 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Source server user provided ID.
+     * </p>
+     * 
+     * @param userProvidedID
+     *        Source server user provided ID.
+     */
+
+    public void setUserProvidedID(String userProvidedID) {
+        this.userProvidedID = userProvidedID;
+    }
+
+    /**
+     * <p>
+     * Source server user provided ID.
+     * </p>
+     * 
+     * @return Source server user provided ID.
+     */
+
+    public String getUserProvidedID() {
+        return this.userProvidedID;
+    }
+
+    /**
+     * <p>
+     * Source server user provided ID.
+     * </p>
+     * 
+     * @param userProvidedID
+     *        Source server user provided ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartReplicationResult withUserProvidedID(String userProvidedID) {
+        setUserProvidedID(userProvidedID);
+        return this;
+    }
+
+    /**
+     * <p>
      * Source server vCenter client id.
      * </p>
      * 
@@ -555,10 +739,16 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationID() != null)
+            sb.append("ApplicationID: ").append(getApplicationID()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getConnectorAction() != null)
+            sb.append("ConnectorAction: ").append(getConnectorAction()).append(",");
         if (getDataReplicationInfo() != null)
             sb.append("DataReplicationInfo: ").append(getDataReplicationInfo()).append(",");
+        if (getFqdnForActionFramework() != null)
+            sb.append("FqdnForActionFramework: ").append(getFqdnForActionFramework()).append(",");
         if (getIsArchived() != null)
             sb.append("IsArchived: ").append(getIsArchived()).append(",");
         if (getLaunchedInstance() != null)
@@ -573,6 +763,8 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("SourceServerID: ").append(getSourceServerID()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append("***Sensitive Data Redacted***").append(",");
+        if (getUserProvidedID() != null)
+            sb.append("UserProvidedID: ").append(getUserProvidedID()).append(",");
         if (getVcenterClientID() != null)
             sb.append("VcenterClientID: ").append(getVcenterClientID());
         sb.append("}");
@@ -589,13 +781,25 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
         if (obj instanceof StartReplicationResult == false)
             return false;
         StartReplicationResult other = (StartReplicationResult) obj;
+        if (other.getApplicationID() == null ^ this.getApplicationID() == null)
+            return false;
+        if (other.getApplicationID() != null && other.getApplicationID().equals(this.getApplicationID()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getConnectorAction() == null ^ this.getConnectorAction() == null)
+            return false;
+        if (other.getConnectorAction() != null && other.getConnectorAction().equals(this.getConnectorAction()) == false)
+            return false;
         if (other.getDataReplicationInfo() == null ^ this.getDataReplicationInfo() == null)
             return false;
         if (other.getDataReplicationInfo() != null && other.getDataReplicationInfo().equals(this.getDataReplicationInfo()) == false)
+            return false;
+        if (other.getFqdnForActionFramework() == null ^ this.getFqdnForActionFramework() == null)
+            return false;
+        if (other.getFqdnForActionFramework() != null && other.getFqdnForActionFramework().equals(this.getFqdnForActionFramework()) == false)
             return false;
         if (other.getIsArchived() == null ^ this.getIsArchived() == null)
             return false;
@@ -625,6 +829,10 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUserProvidedID() == null ^ this.getUserProvidedID() == null)
+            return false;
+        if (other.getUserProvidedID() != null && other.getUserProvidedID().equals(this.getUserProvidedID()) == false)
+            return false;
         if (other.getVcenterClientID() == null ^ this.getVcenterClientID() == null)
             return false;
         if (other.getVcenterClientID() != null && other.getVcenterClientID().equals(this.getVcenterClientID()) == false)
@@ -637,8 +845,11 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationID() == null) ? 0 : getApplicationID().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getConnectorAction() == null) ? 0 : getConnectorAction().hashCode());
         hashCode = prime * hashCode + ((getDataReplicationInfo() == null) ? 0 : getDataReplicationInfo().hashCode());
+        hashCode = prime * hashCode + ((getFqdnForActionFramework() == null) ? 0 : getFqdnForActionFramework().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLaunchedInstance() == null) ? 0 : getLaunchedInstance().hashCode());
         hashCode = prime * hashCode + ((getLifeCycle() == null) ? 0 : getLifeCycle().hashCode());
@@ -646,6 +857,7 @@ public class StartReplicationResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getSourceProperties() == null) ? 0 : getSourceProperties().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUserProvidedID() == null) ? 0 : getUserProvidedID().hashCode());
         hashCode = prime * hashCode + ((getVcenterClientID() == null) ? 0 : getVcenterClientID().hashCode());
         return hashCode;
     }

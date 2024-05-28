@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class DescribeAffectedEntitiesForOrganizationRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<List> ORGANIZATIONENTITYACCOUNTFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("organizationEntityAccountFilters").build();
 
     private static final DescribeAffectedEntitiesForOrganizationRequestMarshaller instance = new DescribeAffectedEntitiesForOrganizationRequestMarshaller();
 
@@ -57,6 +59,8 @@ public class DescribeAffectedEntitiesForOrganizationRequestMarshaller {
             protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getLocale(), LOCALE_BINDING);
             protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeAffectedEntitiesForOrganizationRequest.getOrganizationEntityAccountFilters(),
+                    ORGANIZATIONENTITYACCOUNTFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

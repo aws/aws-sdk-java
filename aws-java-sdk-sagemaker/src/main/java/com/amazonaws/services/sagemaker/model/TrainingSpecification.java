@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,12 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.List<HyperParameterTuningJobObjective> supportedTuningJobObjectiveMetrics;
+    /**
+     * <p>
+     * The additional data source used during the training job.
+     * </p>
+     */
+    private AdditionalS3DataSource additionalS3DataSource;
 
     /**
      * <p>
@@ -625,6 +631,46 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The additional data source used during the training job.
+     * </p>
+     * 
+     * @param additionalS3DataSource
+     *        The additional data source used during the training job.
+     */
+
+    public void setAdditionalS3DataSource(AdditionalS3DataSource additionalS3DataSource) {
+        this.additionalS3DataSource = additionalS3DataSource;
+    }
+
+    /**
+     * <p>
+     * The additional data source used during the training job.
+     * </p>
+     * 
+     * @return The additional data source used during the training job.
+     */
+
+    public AdditionalS3DataSource getAdditionalS3DataSource() {
+        return this.additionalS3DataSource;
+    }
+
+    /**
+     * <p>
+     * The additional data source used during the training job.
+     * </p>
+     * 
+     * @param additionalS3DataSource
+     *        The additional data source used during the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingSpecification withAdditionalS3DataSource(AdditionalS3DataSource additionalS3DataSource) {
+        setAdditionalS3DataSource(additionalS3DataSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -651,7 +697,9 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
         if (getTrainingChannels() != null)
             sb.append("TrainingChannels: ").append(getTrainingChannels()).append(",");
         if (getSupportedTuningJobObjectiveMetrics() != null)
-            sb.append("SupportedTuningJobObjectiveMetrics: ").append(getSupportedTuningJobObjectiveMetrics());
+            sb.append("SupportedTuningJobObjectiveMetrics: ").append(getSupportedTuningJobObjectiveMetrics()).append(",");
+        if (getAdditionalS3DataSource() != null)
+            sb.append("AdditionalS3DataSource: ").append(getAdditionalS3DataSource());
         sb.append("}");
         return sb.toString();
     }
@@ -700,6 +748,10 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
         if (other.getSupportedTuningJobObjectiveMetrics() != null
                 && other.getSupportedTuningJobObjectiveMetrics().equals(this.getSupportedTuningJobObjectiveMetrics()) == false)
             return false;
+        if (other.getAdditionalS3DataSource() == null ^ this.getAdditionalS3DataSource() == null)
+            return false;
+        if (other.getAdditionalS3DataSource() != null && other.getAdditionalS3DataSource().equals(this.getAdditionalS3DataSource()) == false)
+            return false;
         return true;
     }
 
@@ -716,6 +768,7 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getMetricDefinitions() == null) ? 0 : getMetricDefinitions().hashCode());
         hashCode = prime * hashCode + ((getTrainingChannels() == null) ? 0 : getTrainingChannels().hashCode());
         hashCode = prime * hashCode + ((getSupportedTuningJobObjectiveMetrics() == null) ? 0 : getSupportedTuningJobObjectiveMetrics().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalS3DataSource() == null) ? 0 : getAdditionalS3DataSource().hashCode());
         return hashCode;
     }
 

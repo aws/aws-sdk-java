@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      */
     private String application;
@@ -43,14 +43,20 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String resource;
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     */
+    private java.util.List<String> options;
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application.
+     *        The name, ID, or ARN of the application.
      */
 
     public void setApplication(String application) {
@@ -59,10 +65,10 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      * 
-     * @return The name or ID of the application.
+     * @return The name, ID, or ARN of the application.
      */
 
     public String getApplication() {
@@ -71,11 +77,11 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application.
+     *        The name, ID, or ARN of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,6 +190,104 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @return Determines whether an application tag is applied or skipped.
+     * @see AssociationOption
+     */
+
+    public java.util.List<String> getOptions() {
+        return options;
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @see AssociationOption
+     */
+
+    public void setOptions(java.util.Collection<String> options) {
+        if (options == null) {
+            this.options = null;
+            return;
+        }
+
+        this.options = new java.util.ArrayList<String>(options);
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOptions(java.util.Collection)} or {@link #withOptions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationOption
+     */
+
+    public AssociateResourceRequest withOptions(String... options) {
+        if (this.options == null) {
+            setOptions(new java.util.ArrayList<String>(options.length));
+        }
+        for (String ele : options) {
+            this.options.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationOption
+     */
+
+    public AssociateResourceRequest withOptions(java.util.Collection<String> options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationOption
+     */
+
+    public AssociateResourceRequest withOptions(AssociationOption... options) {
+        java.util.ArrayList<String> optionsCopy = new java.util.ArrayList<String>(options.length);
+        for (AssociationOption value : options) {
+            optionsCopy.add(value.toString());
+        }
+        if (getOptions() == null) {
+            setOptions(optionsCopy);
+        } else {
+            getOptions().addAll(optionsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +304,9 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResource() != null)
-            sb.append("Resource: ").append(getResource());
+            sb.append("Resource: ").append(getResource()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +333,10 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +348,7 @@ public class AssociateResourceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getApplication() == null) ? 0 : getApplication().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

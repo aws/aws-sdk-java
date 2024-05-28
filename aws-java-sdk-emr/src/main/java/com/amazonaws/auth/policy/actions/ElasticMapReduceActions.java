@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,8 @@ public enum ElasticMapReduceActions implements Action {
     GetAutoTerminationPolicy("elasticmapreduce:GetAutoTerminationPolicy"),
     /** Action for the GetBlockPublicAccessConfiguration operation. */
     GetBlockPublicAccessConfiguration("elasticmapreduce:GetBlockPublicAccessConfiguration"),
+    /** Action for the GetClusterSessionCredentials operation. */
+    GetClusterSessionCredentials("elasticmapreduce:GetClusterSessionCredentials"),
     /** Action for the GetManagedScalingPolicy operation. */
     GetManagedScalingPolicy("elasticmapreduce:GetManagedScalingPolicy"),
     /** Action for the GetStudioSessionMapping operation. */
@@ -91,6 +93,8 @@ public enum ElasticMapReduceActions implements Action {
     ListStudioSessionMappings("elasticmapreduce:ListStudioSessionMappings"),
     /** Action for the ListStudios operation. */
     ListStudios("elasticmapreduce:ListStudios"),
+    /** Action for the ListSupportedInstanceTypes operation. */
+    ListSupportedInstanceTypes("elasticmapreduce:ListSupportedInstanceTypes"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("elasticmapreduce:ModifyCluster"),
     /** Action for the ModifyInstanceFleet operation. */
@@ -115,8 +119,12 @@ public enum ElasticMapReduceActions implements Action {
     RemoveTags("elasticmapreduce:RemoveTags"),
     /** Action for the RunJobFlow operation. */
     RunJobFlow("elasticmapreduce:RunJobFlow"),
+    /** Action for the SetKeepJobFlowAliveWhenNoSteps operation. */
+    SetKeepJobFlowAliveWhenNoSteps("elasticmapreduce:SetKeepJobFlowAliveWhenNoSteps"),
     /** Action for the SetTerminationProtection operation. */
     SetTerminationProtection("elasticmapreduce:SetTerminationProtection"),
+    /** Action for the SetUnhealthyNodeReplacement operation. */
+    SetUnhealthyNodeReplacement("elasticmapreduce:SetUnhealthyNodeReplacement"),
     /** Action for the SetVisibleToAllUsers operation. */
     SetVisibleToAllUsers("elasticmapreduce:SetVisibleToAllUsers"),
     /** Action for the StartNotebookExecution operation. */

@@ -1,0 +1,79 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.sagemaker.model.transform;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.sagemaker.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * SpaceDetailsMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class SpaceDetailsMarshaller {
+
+    private static final MarshallingInfo<String> DOMAINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DomainId").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> SPACESETTINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceSettingsSummary").build();
+    private static final MarshallingInfo<StructuredPojo> SPACESHARINGSETTINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceSharingSettingsSummary").build();
+    private static final MarshallingInfo<StructuredPojo> OWNERSHIPSETTINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnershipSettingsSummary").build();
+    private static final MarshallingInfo<String> SPACEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceDisplayName").build();
+
+    private static final SpaceDetailsMarshaller instance = new SpaceDetailsMarshaller();
+
+    public static SpaceDetailsMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SpaceDetails spaceDetails, ProtocolMarshaller protocolMarshaller) {
+
+        if (spaceDetails == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(spaceDetails.getDomainId(), DOMAINID_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getSpaceName(), SPACENAME_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getSpaceSettingsSummary(), SPACESETTINGSSUMMARY_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getSpaceSharingSettingsSummary(), SPACESHARINGSETTINGSSUMMARY_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getOwnershipSettingsSummary(), OWNERSHIPSETTINGSSUMMARY_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getSpaceDisplayName(), SPACEDISPLAYNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,16 +36,16 @@ public class FormStyle implements Serializable, Cloneable, StructuredPojo {
     private FormStyleConfig horizontalGap;
     /**
      * <p>
-     * The size of the outer padding for the form.
-     * </p>
-     */
-    private FormStyleConfig outerPadding;
-    /**
-     * <p>
      * The spacing for the vertical gap.
      * </p>
      */
     private FormStyleConfig verticalGap;
+    /**
+     * <p>
+     * The size of the outer padding for the form.
+     * </p>
+     */
+    private FormStyleConfig outerPadding;
 
     /**
      * <p>
@@ -84,46 +84,6 @@ public class FormStyle implements Serializable, Cloneable, StructuredPojo {
 
     public FormStyle withHorizontalGap(FormStyleConfig horizontalGap) {
         setHorizontalGap(horizontalGap);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The size of the outer padding for the form.
-     * </p>
-     * 
-     * @param outerPadding
-     *        The size of the outer padding for the form.
-     */
-
-    public void setOuterPadding(FormStyleConfig outerPadding) {
-        this.outerPadding = outerPadding;
-    }
-
-    /**
-     * <p>
-     * The size of the outer padding for the form.
-     * </p>
-     * 
-     * @return The size of the outer padding for the form.
-     */
-
-    public FormStyleConfig getOuterPadding() {
-        return this.outerPadding;
-    }
-
-    /**
-     * <p>
-     * The size of the outer padding for the form.
-     * </p>
-     * 
-     * @param outerPadding
-     *        The size of the outer padding for the form.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FormStyle withOuterPadding(FormStyleConfig outerPadding) {
-        setOuterPadding(outerPadding);
         return this;
     }
 
@@ -168,6 +128,46 @@ public class FormStyle implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size of the outer padding for the form.
+     * </p>
+     * 
+     * @param outerPadding
+     *        The size of the outer padding for the form.
+     */
+
+    public void setOuterPadding(FormStyleConfig outerPadding) {
+        this.outerPadding = outerPadding;
+    }
+
+    /**
+     * <p>
+     * The size of the outer padding for the form.
+     * </p>
+     * 
+     * @return The size of the outer padding for the form.
+     */
+
+    public FormStyleConfig getOuterPadding() {
+        return this.outerPadding;
+    }
+
+    /**
+     * <p>
+     * The size of the outer padding for the form.
+     * </p>
+     * 
+     * @param outerPadding
+     *        The size of the outer padding for the form.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FormStyle withOuterPadding(FormStyleConfig outerPadding) {
+        setOuterPadding(outerPadding);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,10 +181,10 @@ public class FormStyle implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getHorizontalGap() != null)
             sb.append("HorizontalGap: ").append(getHorizontalGap()).append(",");
-        if (getOuterPadding() != null)
-            sb.append("OuterPadding: ").append(getOuterPadding()).append(",");
         if (getVerticalGap() != null)
-            sb.append("VerticalGap: ").append(getVerticalGap());
+            sb.append("VerticalGap: ").append(getVerticalGap()).append(",");
+        if (getOuterPadding() != null)
+            sb.append("OuterPadding: ").append(getOuterPadding());
         sb.append("}");
         return sb.toString();
     }
@@ -203,13 +203,13 @@ public class FormStyle implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHorizontalGap() != null && other.getHorizontalGap().equals(this.getHorizontalGap()) == false)
             return false;
-        if (other.getOuterPadding() == null ^ this.getOuterPadding() == null)
-            return false;
-        if (other.getOuterPadding() != null && other.getOuterPadding().equals(this.getOuterPadding()) == false)
-            return false;
         if (other.getVerticalGap() == null ^ this.getVerticalGap() == null)
             return false;
         if (other.getVerticalGap() != null && other.getVerticalGap().equals(this.getVerticalGap()) == false)
+            return false;
+        if (other.getOuterPadding() == null ^ this.getOuterPadding() == null)
+            return false;
+        if (other.getOuterPadding() != null && other.getOuterPadding().equals(this.getOuterPadding()) == false)
             return false;
         return true;
     }
@@ -220,8 +220,8 @@ public class FormStyle implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHorizontalGap() == null) ? 0 : getHorizontalGap().hashCode());
-        hashCode = prime * hashCode + ((getOuterPadding() == null) ? 0 : getOuterPadding().hashCode());
         hashCode = prime * hashCode + ((getVerticalGap() == null) ? 0 : getVerticalGap().hashCode());
+        hashCode = prime * hashCode + ((getOuterPadding() == null) ? 0 : getOuterPadding().hashCode());
         return hashCode;
     }
 

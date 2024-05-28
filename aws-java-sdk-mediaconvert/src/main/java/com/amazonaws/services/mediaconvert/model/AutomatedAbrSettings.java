@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,9 +29,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AutomatedAbrSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on
-     * the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with
-     * the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
+     * Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition
+     * will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note
+     * that the instantaneous maximum bitrate may vary above the value that you specify.
      */
     private Integer maxAbrBitrate;
     /**
@@ -42,9 +43,9 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
      */
     private Integer maxRenditions;
     /**
-     * Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the
-     * bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert
-     * uses 600,000 (600 kb/s) by default.
+     * Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will
+     * be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
      */
     private Integer minAbrBitrate;
     /**
@@ -55,15 +56,17 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     private java.util.List<AutomatedAbrRule> rules;
 
     /**
-     * Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on
-     * the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with
-     * the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
+     * Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition
+     * will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note
+     * that the instantaneous maximum bitrate may vary above the value that you specify.
      * 
      * @param maxAbrBitrate
-     *        Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper
-     *        limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered
-     *        to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses
-     *        8,000,000 (8 mb/s) by default.
+     *        Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't
+     *        specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your
+     *        highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and
+     *        resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you
+     *        specify.
      */
 
     public void setMaxAbrBitrate(Integer maxAbrBitrate) {
@@ -71,14 +74,16 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on
-     * the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with
-     * the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
+     * Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition
+     * will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note
+     * that the instantaneous maximum bitrate may vary above the value that you specify.
      * 
-     * @return Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper
-     *         limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered
-     *         to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses
-     *         8,000,000 (8 mb/s) by default.
+     * @return Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't
+     *         specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your
+     *         highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and
+     *         resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you
+     *         specify.
      */
 
     public Integer getMaxAbrBitrate() {
@@ -86,15 +91,17 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on
-     * the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with
-     * the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
+     * Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition
+     * will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note
+     * that the instantaneous maximum bitrate may vary above the value that you specify.
      * 
      * @param maxAbrBitrate
-     *        Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper
-     *        limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered
-     *        to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses
-     *        8,000,000 (8 mb/s) by default.
+     *        Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't
+     *        specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your
+     *        highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and
+     *        resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you
+     *        specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,14 +163,15 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the
-     * bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert
-     * uses 600,000 (600 kb/s) by default.
+     * Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will
+     * be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
      * 
      * @param minAbrBitrate
-     *        Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit
-     *        on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value,
-     *        MediaConvert uses 600,000 (600 kb/s) by default.
+     *        Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't
+     *        specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your
+     *        lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary
+     *        below the value that you specify.
      */
 
     public void setMinAbrBitrate(Integer minAbrBitrate) {
@@ -171,13 +179,14 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the
-     * bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert
-     * uses 600,000 (600 kb/s) by default.
+     * Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will
+     * be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
      * 
-     * @return Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower
-     *         limit on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a
-     *         value, MediaConvert uses 600,000 (600 kb/s) by default.
+     * @return Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't
+     *         specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your
+     *         lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary
+     *         below the value that you specify.
      */
 
     public Integer getMinAbrBitrate() {
@@ -185,14 +194,15 @@ public class AutomatedAbrSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the
-     * bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert
-     * uses 600,000 (600 kb/s) by default.
+     * Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a
+     * value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will
+     * be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
      * 
      * @param minAbrBitrate
-     *        Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit
-     *        on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value,
-     *        MediaConvert uses 600,000 (600 kb/s) by default.
+     *        Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't
+     *        specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your
+     *        lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary
+     *        below the value that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

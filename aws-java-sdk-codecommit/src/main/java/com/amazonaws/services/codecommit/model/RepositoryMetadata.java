@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      */
     private String accountId;
@@ -88,14 +88,20 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account associated with the repository.
+     *        The ID of the Amazon Web Services account associated with the repository.
      */
 
     public void setAccountId(String accountId) {
@@ -104,10 +110,10 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      * 
-     * @return The ID of the AWS account associated with the repository.
+     * @return The ID of the Amazon Web Services account associated with the repository.
      */
 
     public String getAccountId() {
@@ -116,11 +122,11 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the AWS account associated with the repository.
+     * The ID of the Amazon Web Services account associated with the repository.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account associated with the repository.
+     *        The ID of the Amazon Web Services account associated with the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,6 +496,46 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryMetadata withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -520,7 +566,9 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
         if (getCloneUrlSsh() != null)
             sb.append("CloneUrlSsh: ").append(getCloneUrlSsh()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -575,6 +623,10 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -593,6 +645,7 @@ public class RepositoryMetadata implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getCloneUrlHttp() == null) ? 0 : getCloneUrlHttp().hashCode());
         hashCode = prime * hashCode + ((getCloneUrlSsh() == null) ? 0 : getCloneUrlSsh().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

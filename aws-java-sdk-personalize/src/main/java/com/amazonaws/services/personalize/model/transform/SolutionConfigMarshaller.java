@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,10 @@ public class SolutionConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoMLConfig").build();
     private static final MarshallingInfo<StructuredPojo> OPTIMIZATIONOBJECTIVE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("optimizationObjective").build();
+    private static final MarshallingInfo<StructuredPojo> TRAININGDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingDataConfig").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOTRAININGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoTrainingConfig").build();
 
     private static final SolutionConfigMarshaller instance = new SolutionConfigMarshaller();
 
@@ -64,6 +68,8 @@ public class SolutionConfigMarshaller {
             protocolMarshaller.marshall(solutionConfig.getFeatureTransformationParameters(), FEATURETRANSFORMATIONPARAMETERS_BINDING);
             protocolMarshaller.marshall(solutionConfig.getAutoMLConfig(), AUTOMLCONFIG_BINDING);
             protocolMarshaller.marshall(solutionConfig.getOptimizationObjective(), OPTIMIZATIONOBJECTIVE_BINDING);
+            protocolMarshaller.marshall(solutionConfig.getTrainingDataConfig(), TRAININGDATACONFIG_BINDING);
+            protocolMarshaller.marshall(solutionConfig.getAutoTrainingConfig(), AUTOTRAININGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

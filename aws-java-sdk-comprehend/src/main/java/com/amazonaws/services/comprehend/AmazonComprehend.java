@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ import com.amazonaws.services.comprehend.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Comprehend is an AWS service for gaining insight into the content of documents. Use these actions to determine
- * the topics contained in your documents, the topics they discuss, the predominant sentiment expressed in them, the
- * predominant language used, and more.
+ * Amazon Comprehend is an Amazon Web Services service for gaining insight into the content of documents. Use these
+ * actions to determine the topics contained in your documents, the topics they discuss, the predominant sentiment
+ * expressed in them, the predominant language used, and more.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -82,10 +82,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -109,10 +108,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -137,10 +135,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -167,10 +164,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -188,7 +184,8 @@ public interface AmazonComprehend {
      * </p>
      * <p>
      * For more information about targeted sentiment, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
      * </p>
      * 
      * @param batchDetectTargetedSentimentRequest
@@ -198,10 +195,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -215,8 +211,37 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Creates a new document classification request to analyze a single document in real-time, using a previously
-     * created and trained custom model and an endpoint.
+     * Creates a classification request to analyze a single document in real-time. <code>ClassifyDocument</code>
+     * supports the following model types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Custom classifier - a custom model that you have created and trained. For input, you can provide plain text, a
+     * single-page document (PDF, Word, or image), or Amazon Textract API output. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Custom
+     * classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Prompt safety classifier - Amazon Comprehend provides a pre-trained model for classifying input prompts for
+     * generative AI applications. For input, you provide English plain text input. For prompt safety classification,
+     * the response includes only the <code>Classes</code> field. For more information about prompt safety classifiers,
+     * see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
+     * safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the system detects errors while processing a page in the input document, the API response includes an
+     * <code>Errors</code> field that describes the errors.
+     * </p>
+     * <p>
+     * If the system detects a document-level error in your input document, the API returns an
+     * <code>InvalidRequestException</code> error response. For details about this exception, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured
+     * documents</a> in the Comprehend Developer Guide.
      * </p>
      * 
      * @param classifyDocumentRequest
@@ -248,10 +273,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.ContainsPiiEntities
@@ -262,11 +286,41 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Creates a dataset to upload training or test data for a model associated with a flywheel. For more information
+     * about datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel
+     * overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param createDatasetRequest
+     * @return Result of the CreateDataset operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDatasetResult createDataset(CreateDatasetRequest createDatasetRequest);
+
+    /**
+     * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
-     * set of training documents that labeled with the categories that you want to use. After the classifier is trained
-     * you can use it to categorize a set of labeled documents into the categories. For more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Document
-     * Classification</a> in the Comprehend Developer Guide.
+     * set of training documents that are labeled with the categories that you want to use. For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training classifier
+     * models</a> in the Comprehend Developer Guide.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -284,10 +338,9 @@ public interface AmazonComprehend {
      *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
      *         request again.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -334,7 +387,7 @@ public interface AmazonComprehend {
     /**
      * <p>
      * Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is
-     * submitted, you can check job status using the API.
+     * submitted, you can check job status using the <code>DescribeEntityRecognizer</code> API.
      * </p>
      * 
      * @param createEntityRecognizerRequest
@@ -352,10 +405,9 @@ public interface AmazonComprehend {
      *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
      *         request again.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -365,6 +417,62 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     CreateEntityRecognizerResult createEntityRecognizer(CreateEntityRecognizerRequest createEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * A flywheel is an Amazon Web Services resource that orchestrates the ongoing training of a model for custom
+     * classification or custom entity recognition. You can create a flywheel to start with an existing trained model,
+     * or Comprehend can create and train a new model.
+     * </p>
+     * <p>
+     * When you create the flywheel, Comprehend creates a data lake in your account. The data lake holds the training
+     * data and test data for all versions of the model.
+     * </p>
+     * <p>
+     * To use a flywheel with an existing trained model, you specify the active model version. Comprehend copies the
+     * model's training data and test data into the flywheel's data lake.
+     * </p>
+     * <p>
+     * To use the flywheel with a new model, you need to provide a dataset for training data (and optional test data)
+     * when you create the flywheel.
+     * </p>
+     * <p>
+     * For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param createFlywheelRequest
+     * @return Result of the CreateFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check the resource and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFlywheelResult createFlywheel(CreateFlywheelRequest createFlywheelRequest);
 
     /**
      * <p>
@@ -459,6 +567,37 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does not delete the data lake or the model
+     * associated with the flywheel.
+     * </p>
+     * <p>
+     * For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteFlywheelRequest
+     * @return Result of the DeleteFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check the resource and try your request again.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFlywheelResult deleteFlywheel(DeleteFlywheelRequest deleteFlywheelRequest);
+
+    /**
+     * <p>
      * Deletes a resource-based policy that is attached to a custom model.
      * </p>
      * 
@@ -475,6 +614,29 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Returns information about the dataset that you specify. For more information about datasets, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeDatasetRequest
+     * @return Result of the DescribeDataset operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDatasetResult describeDataset(DescribeDatasetRequest describeDatasetRequest);
 
     /**
      * <p>
@@ -632,6 +794,52 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Provides configuration information about the flywheel. For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeFlywheelRequest
+     * @return Result of the DescribeFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeFlywheelResult describeFlywheel(DescribeFlywheelRequest describeFlywheelRequest);
+
+    /**
+     * <p>
+     * Retrieve the configuration properties of a flywheel iteration. For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeFlywheelIterationRequest
+     * @return Result of the DescribeFlywheelIteration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeFlywheelIteration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFlywheelIterationResult describeFlywheelIteration(DescribeFlywheelIterationRequest describeFlywheelIterationRequest);
+
+    /**
+     * <p>
      * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -784,9 +992,28 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Inspects text for named entities, and returns information about them. For more information, about named entities,
-     * see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
+     * Detects named entities in input text when you use the pre-trained model. Detects custom entities if you have a
+     * custom entity recognition model.
+     * </p>
+     * <p>
+     * When detecting named entities using the pre-trained model, use plain text as the input. For more information
+     * about named entities, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend
      * Developer Guide.
+     * </p>
+     * <p>
+     * When you use a custom entity recognition model, you can input plain text or you can upload a single-page input
+     * document (text, PDF, Word, or image).
+     * </p>
+     * <p>
+     * If the system detects errors while processing a page in the input document, the API response includes an entry in
+     * <code>Errors</code> for each error.
+     * </p>
+     * <p>
+     * If the system detects a document-level error in your input document, the API returns an
+     * <code>InvalidRequestException</code> error response. For details about this exception, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured
+     * documents</a> in the Comprehend Developer Guide.
      * </p>
      * 
      * @param detectEntitiesRequest
@@ -798,10 +1025,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectEntities
@@ -822,10 +1048,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectKeyPhrases
@@ -847,10 +1072,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectPiiEntities
@@ -872,10 +1096,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSentiment
@@ -898,10 +1121,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSyntax
@@ -916,7 +1138,8 @@ public interface AmazonComprehend {
      * </p>
      * <p>
      * For more information about targeted sentiment, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
      * </p>
      * 
      * @param detectTargetedSentimentRequest
@@ -926,10 +1149,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
-     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
-     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
-     *         languages</a> in the Comprehend Developer Guide.
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectTargetedSentiment
@@ -940,16 +1162,42 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Performs toxicity analysis on the list of text strings that you provide as input. The API response contains a
+     * results list that matches the size of the input list. For more information about toxicity detection, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity detection</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param detectToxicContentRequest
+     * @return Result of the DetectToxicContent operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a>
+     *         in the Comprehend Developer Guide.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DetectToxicContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectToxicContent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DetectToxicContentResult detectToxicContent(DetectToxicContentRequest detectToxicContentRequest);
+
+    /**
+     * <p>
      * Creates a new custom model that replicates a source custom model that you import. The source model can be in your
-     * AWS account or another one.
+     * Amazon Web Services account or another one.
      * </p>
      * <p>
-     * If the source model is in another AWS account, then it must have a resource-based policy that authorizes you to
-     * import it.
+     * If the source model is in another Amazon Web Services account, then it must have a resource-based policy that
+     * authorizes you to import it.
      * </p>
      * <p>
-     * The source model must be in the same AWS region that you're using when you import. You can't import a model
-     * that's in a different region.
+     * The source model must be in the same Amazon Web Services Region that you're using when you import. You can't
+     * import a model that's in a different Region.
      * </p>
      * 
      * @param importModelRequest
@@ -979,6 +1227,31 @@ public interface AmazonComprehend {
      *      Documentation</a>
      */
     ImportModelResult importModel(ImportModelRequest importModelRequest);
+
+    /**
+     * <p>
+     * List the datasets that you have configured in this Region. For more information about datasets, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param listDatasetsRequest
+     * @return Result of the ListDatasets operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDatasets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest);
 
     /**
      * <p>
@@ -1171,6 +1444,52 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Information about the history of a flywheel iteration. For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param listFlywheelIterationHistoryRequest
+     * @return Result of the ListFlywheelIterationHistory operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListFlywheelIterationHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFlywheelIterationHistoryResult listFlywheelIterationHistory(ListFlywheelIterationHistoryRequest listFlywheelIterationHistoryRequest);
+
+    /**
+     * <p>
+     * Gets a list of the flywheels that you have created.
+     * </p>
+     * 
+     * @param listFlywheelsRequest
+     * @return Result of the ListFlywheels operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListFlywheels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFlywheelsResult listFlywheels(ListFlywheelsRequest listFlywheelsRequest);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -1296,8 +1615,9 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Attaches a resource-based policy to a custom model. You can use this policy to authorize an entity in another AWS
-     * account to import the custom model, which replicates it in Amazon Comprehend in their account.
+     * Attaches a resource-based policy to a custom model. You can use this policy to authorize an entity in another
+     * Amazon Web Services account to import the custom model, which replicates it in Amazon Comprehend in their
+     * account.
      * </p>
      * 
      * @param putResourcePolicyRequest
@@ -1316,7 +1636,8 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Starts an asynchronous document classification job. Use the operation to track the progress of the job.
+     * Starts an asynchronous document classification job using a custom classification model. Use the
+     * <code>DescribeDocumentClassificationJob</code> operation to track the progress of the job.
      * </p>
      * 
      * @param startDocumentClassificationJobRequest
@@ -1334,6 +1655,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartDocumentClassificationJob
@@ -1359,6 +1682,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartDominantLanguageDetectionJob
@@ -1393,6 +1718,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartEntitiesDetectionJob
@@ -1417,6 +1744,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartEventsDetectionJob
@@ -1424,6 +1753,31 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StartEventsDetectionJobResult startEventsDetectionJob(StartEventsDetectionJobRequest startEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Start the flywheel iteration.This operation uses any new datasets to train a new model version. For more
+     * information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+     * Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param startFlywheelIterationRequest
+     * @return Result of the StartFlywheelIteration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartFlywheelIteration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartFlywheelIterationResult startFlywheelIteration(StartFlywheelIterationRequest startFlywheelIterationRequest);
 
     /**
      * <p>
@@ -1442,6 +1796,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartKeyPhrasesDetectionJob
@@ -1466,6 +1822,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartPiiEntitiesDetectionJob
@@ -1491,6 +1849,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartSentimentDetectionJob
@@ -1501,8 +1861,8 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the operation to track
-     * the status of a job.
+     * Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation to track the status of a job.
      * </p>
      * 
      * @param startTargetedSentimentDetectionJobRequest
@@ -1516,6 +1876,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartTargetedSentimentDetectionJob
@@ -1542,6 +1904,8 @@ public interface AmazonComprehend {
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.StartTopicsDetectionJob
@@ -1874,6 +2238,29 @@ public interface AmazonComprehend {
      *      Documentation</a>
      */
     UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
+
+    /**
+     * <p>
+     * Update the configuration information for an existing flywheel.
+     * </p>
+     * 
+     * @param updateFlywheelRequest
+     * @return Result of the UpdateFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.UpdateFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFlywheelResult updateFlywheel(UpdateFlywheelRequest updateFlywheelRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

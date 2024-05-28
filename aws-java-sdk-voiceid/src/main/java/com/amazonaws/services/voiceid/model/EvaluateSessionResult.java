@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class EvaluateSessionResult extends com.amazonaws.AmazonWebServiceResult<
     private AuthenticationResult authenticationResult;
     /**
      * <p>
-     * The identifier of the domain containing the session.
+     * The identifier of the domain that contains the session.
      * </p>
      */
     private String domainId;
@@ -111,11 +111,11 @@ public class EvaluateSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The identifier of the domain containing the session.
+     * The identifier of the domain that contains the session.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the session.
+     *        The identifier of the domain that contains the session.
      */
 
     public void setDomainId(String domainId) {
@@ -124,10 +124,10 @@ public class EvaluateSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The identifier of the domain containing the session.
+     * The identifier of the domain that contains the session.
      * </p>
      * 
-     * @return The identifier of the domain containing the session.
+     * @return The identifier of the domain that contains the session.
      */
 
     public String getDomainId() {
@@ -136,11 +136,11 @@ public class EvaluateSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The identifier of the domain containing the session.
+     * The identifier of the domain that contains the session.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the session.
+     *        The identifier of the domain that contains the session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

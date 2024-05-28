@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,16 +78,58 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private java.nio.ByteBuffer message;
     /**
      * <p>
-     * Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default
-     * value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.
+     * Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     * algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are
+     * already hashed.
+     * </p>
+     * <p>
+     * When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which
+     * begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing
+     * algorithm.
      * </p>
      * <important>
      * <p>
      * Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest.
-     * If you use the <code>DIGEST</code> value with a raw message, the security of the verification operation can be
-     * compromised.
+     * If you use the <code>DIGEST</code> value with an unhashed message, the security of the verification operation can
+     * be compromised.
      * </p>
      * </important>
+     * <p>
+     * When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value
+     * must match the length of hashed messages for the specified signing algorithm.
+     * </p>
+     * <p>
+     * You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest
+     * is hashed again while signing. However, if the signed message is hashed once while signing, but twice while
+     * verifying, verification fails, even when the message hasn't changed.
+     * </p>
+     * <p>
+     * The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     * >Offline verification with SM2 key pairs</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String messageType;
     /**
@@ -116,6 +158,17 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -466,26 +519,111 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default
-     * value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.
+     * Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     * algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are
+     * already hashed.
+     * </p>
+     * <p>
+     * When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which
+     * begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing
+     * algorithm.
      * </p>
      * <important>
      * <p>
      * Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest.
-     * If you use the <code>DIGEST</code> value with a raw message, the security of the verification operation can be
-     * compromised.
+     * If you use the <code>DIGEST</code> value with an unhashed message, the security of the verification operation can
+     * be compromised.
      * </p>
      * </important>
+     * <p>
+     * When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value
+     * must match the length of hashed messages for the specified signing algorithm.
+     * </p>
+     * <p>
+     * You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest
+     * is hashed again while signing. However, if the signed message is hashed once while signing, but twice while
+     * verifying, verification fails, even when the message hasn't changed.
+     * </p>
+     * <p>
+     * The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     * >Offline verification with SM2 key pairs</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param messageType
-     *        Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The
-     *        default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+     *        Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     *        algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which
+     *        are already hashed.</p>
+     *        <p>
+     *        When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm,
+     *        which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in
+     *        the signing algorithm.
+     *        </p>
      *        <important>
      *        <p>
      *        Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message
-     *        digest. If you use the <code>DIGEST</code> value with a raw message, the security of the verification
-     *        operation can be compromised.
+     *        digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the
+     *        verification operation can be compromised.
      *        </p>
+     *        </important>
+     *        <p>
+     *        When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code>
+     *        value must match the length of hashed messages for the specified signing algorithm.
+     *        </p>
+     *        <p>
+     *        You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the
+     *        digest is hashed again while signing. However, if the signed message is hashed once while signing, but
+     *        twice while verifying, verification fails, even when the message hasn't changed.
+     *        </p>
+     *        <p>
+     *        The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code>
+     *        value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     *        >Offline verification with SM2 key pairs</a>.
+     *        </p>
+     *        </li>
      * @see MessageType
      */
 
@@ -495,25 +633,110 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default
-     * value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.
+     * Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     * algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are
+     * already hashed.
+     * </p>
+     * <p>
+     * When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which
+     * begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing
+     * algorithm.
      * </p>
      * <important>
      * <p>
      * Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest.
-     * If you use the <code>DIGEST</code> value with a raw message, the security of the verification operation can be
-     * compromised.
+     * If you use the <code>DIGEST</code> value with an unhashed message, the security of the verification operation can
+     * be compromised.
      * </p>
      * </important>
+     * <p>
+     * When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value
+     * must match the length of hashed messages for the specified signing algorithm.
+     * </p>
+     * <p>
+     * You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest
+     * is hashed again while signing. However, if the signed message is hashed once while signing, but twice while
+     * verifying, verification fails, even when the message hasn't changed.
+     * </p>
+     * <p>
+     * The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     * >Offline verification with SM2 key pairs</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The
-     *         default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+     * @return Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     *         algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which
+     *         are already hashed.</p>
+     *         <p>
+     *         When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm,
+     *         which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in
+     *         the signing algorithm.
+     *         </p>
      *         <important>
      *         <p>
      *         Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message
-     *         digest. If you use the <code>DIGEST</code> value with a raw message, the security of the verification
-     *         operation can be compromised.
+     *         digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the
+     *         verification operation can be compromised.
      *         </p>
+     *         </important>
+     *         <p>
+     *         When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code>
+     *         value must match the length of hashed messages for the specified signing algorithm.
+     *         </p>
+     *         <p>
+     *         You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the
+     *         digest is hashed again while signing. However, if the signed message is hashed once while signing, but
+     *         twice while verifying, verification fails, even when the message hasn't changed.
+     *         </p>
+     *         <p>
+     *         The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code>
+     *         value.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     *         >Offline verification with SM2 key pairs</a>.
+     *         </p>
+     *         </li>
      * @see MessageType
      */
 
@@ -523,26 +746,111 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default
-     * value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.
+     * Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     * algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are
+     * already hashed.
+     * </p>
+     * <p>
+     * When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which
+     * begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing
+     * algorithm.
      * </p>
      * <important>
      * <p>
      * Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest.
-     * If you use the <code>DIGEST</code> value with a raw message, the security of the verification operation can be
-     * compromised.
+     * If you use the <code>DIGEST</code> value with an unhashed message, the security of the verification operation can
+     * be compromised.
      * </p>
      * </important>
+     * <p>
+     * When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value
+     * must match the length of hashed messages for the specified signing algorithm.
+     * </p>
+     * <p>
+     * You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest
+     * is hashed again while signing. However, if the signed message is hashed once while signing, but twice while
+     * verifying, verification fails, even when the message hasn't changed.
+     * </p>
+     * <p>
+     * The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     * >Offline verification with SM2 key pairs</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param messageType
-     *        Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The
-     *        default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+     *        Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     *        algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which
+     *        are already hashed.</p>
+     *        <p>
+     *        When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm,
+     *        which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in
+     *        the signing algorithm.
+     *        </p>
      *        <important>
      *        <p>
      *        Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message
-     *        digest. If you use the <code>DIGEST</code> value with a raw message, the security of the verification
-     *        operation can be compromised.
+     *        digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the
+     *        verification operation can be compromised.
      *        </p>
+     *        </important>
+     *        <p>
+     *        When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code>
+     *        value must match the length of hashed messages for the specified signing algorithm.
+     *        </p>
+     *        <p>
+     *        You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the
+     *        digest is hashed again while signing. However, if the signed message is hashed once while signing, but
+     *        twice while verifying, verification fails, even when the message hasn't changed.
+     *        </p>
+     *        <p>
+     *        The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code>
+     *        value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     *        >Offline verification with SM2 key pairs</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -554,26 +862,111 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The default
-     * value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.
+     * Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     * algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which are
+     * already hashed.
+     * </p>
+     * <p>
+     * When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm, which
+     * begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in the signing
+     * algorithm.
      * </p>
      * <important>
      * <p>
      * Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message digest.
-     * If you use the <code>DIGEST</code> value with a raw message, the security of the verification operation can be
-     * compromised.
+     * If you use the <code>DIGEST</code> value with an unhashed message, the security of the verification operation can
+     * be compromised.
      * </p>
      * </important>
+     * <p>
+     * When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code> value
+     * must match the length of hashed messages for the specified signing algorithm.
+     * </p>
+     * <p>
+     * You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the digest
+     * is hashed again while signing. However, if the signed message is hashed once while signing, but twice while
+     * verifying, verification fails, even when the message hasn't changed.
+     * </p>
+     * <p>
+     * The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     * >Offline verification with SM2 key pairs</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param messageType
-     *        Tells KMS whether the value of the <code>Message</code> parameter is a message or message digest. The
-     *        default value, RAW, indicates a message. To indicate a message digest, enter <code>DIGEST</code>.</p>
+     *        Tells KMS whether the value of the <code>Message</code> parameter should be hashed as part of the signing
+     *        algorithm. Use <code>RAW</code> for unhashed messages; use <code>DIGEST</code> for message digests, which
+     *        are already hashed.</p>
+     *        <p>
+     *        When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard signing algorithm,
+     *        which begins with a hash function. When the value is <code>DIGEST</code>, KMS skips the hashing step in
+     *        the signing algorithm.
+     *        </p>
      *        <important>
      *        <p>
      *        Use the <code>DIGEST</code> value only when the value of the <code>Message</code> parameter is a message
-     *        digest. If you use the <code>DIGEST</code> value with a raw message, the security of the verification
-     *        operation can be compromised.
+     *        digest. If you use the <code>DIGEST</code> value with an unhashed message, the security of the
+     *        verification operation can be compromised.
      *        </p>
+     *        </important>
+     *        <p>
+     *        When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the <code>Message</code>
+     *        value must match the length of hashed messages for the specified signing algorithm.
+     *        </p>
+     *        <p>
+     *        You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code> so the
+     *        digest is hashed again while signing. However, if the signed message is hashed once while signing, but
+     *        twice while verifying, verification fails, even when the message hasn't changed.
+     *        </p>
+     *        <p>
+     *        The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code>
+     *        value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_256 use the SHA_256 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_384 use the SHA_384 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Signing algorithms that end in SHA_512 use the SHA_512 hashing algorithm.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SM2DSA uses the SM3 hashing algorithm. For details, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     *        >Offline verification with SM2 key pairs</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -843,6 +1236,94 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VerifyRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -865,7 +1346,9 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         if (getSigningAlgorithm() != null)
             sb.append("SigningAlgorithm: ").append(getSigningAlgorithm()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: ").append(getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -904,6 +1387,10 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -918,6 +1405,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode());
         hashCode = prime * hashCode + ((getSigningAlgorithm() == null) ? 0 : getSigningAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

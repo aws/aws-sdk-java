@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,6 +103,17 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      */
     private RegisteredUserDashboardVisualEmbeddingConfiguration dashboardVisual;
+    /**
+     * <p>
+     * The configuration details for embedding the Generative Q&amp;A experience.
+     * </p>
+     * <p>
+     * For more information about embedding the Generative Q&amp;A experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     */
+    private RegisteredUserGenerativeQnAEmbeddingConfiguration generativeQnA;
 
     /**
      * <p>
@@ -520,6 +531,73 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
     }
 
     /**
+     * <p>
+     * The configuration details for embedding the Generative Q&amp;A experience.
+     * </p>
+     * <p>
+     * For more information about embedding the Generative Q&amp;A experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param generativeQnA
+     *        The configuration details for embedding the Generative Q&amp;A experience.</p>
+     *        <p>
+     *        For more information about embedding the Generative Q&amp;A experience, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *        in the <i>Amazon QuickSight User Guide</i>.
+     */
+
+    public void setGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfiguration generativeQnA) {
+        this.generativeQnA = generativeQnA;
+    }
+
+    /**
+     * <p>
+     * The configuration details for embedding the Generative Q&amp;A experience.
+     * </p>
+     * <p>
+     * For more information about embedding the Generative Q&amp;A experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @return The configuration details for embedding the Generative Q&amp;A experience.</p>
+     *         <p>
+     *         For more information about embedding the Generative Q&amp;A experience, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *         in the <i>Amazon QuickSight User Guide</i>.
+     */
+
+    public RegisteredUserGenerativeQnAEmbeddingConfiguration getGenerativeQnA() {
+        return this.generativeQnA;
+    }
+
+    /**
+     * <p>
+     * The configuration details for embedding the Generative Q&amp;A experience.
+     * </p>
+     * <p>
+     * For more information about embedding the Generative Q&amp;A experience, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param generativeQnA
+     *        The configuration details for embedding the Generative Q&amp;A experience.</p>
+     *        <p>
+     *        For more information about embedding the Generative Q&amp;A experience, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *        in the <i>Amazon QuickSight User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisteredUserEmbeddingExperienceConfiguration withGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfiguration generativeQnA) {
+        setGenerativeQnA(generativeQnA);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -538,7 +616,9 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
         if (getQSearchBar() != null)
             sb.append("QSearchBar: ").append(getQSearchBar()).append(",");
         if (getDashboardVisual() != null)
-            sb.append("DashboardVisual: ").append(getDashboardVisual());
+            sb.append("DashboardVisual: ").append(getDashboardVisual()).append(",");
+        if (getGenerativeQnA() != null)
+            sb.append("GenerativeQnA: ").append(getGenerativeQnA());
         sb.append("}");
         return sb.toString();
     }
@@ -569,6 +649,10 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
             return false;
         if (other.getDashboardVisual() != null && other.getDashboardVisual().equals(this.getDashboardVisual()) == false)
             return false;
+        if (other.getGenerativeQnA() == null ^ this.getGenerativeQnA() == null)
+            return false;
+        if (other.getGenerativeQnA() != null && other.getGenerativeQnA().equals(this.getGenerativeQnA()) == false)
+            return false;
         return true;
     }
 
@@ -581,6 +665,7 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
         hashCode = prime * hashCode + ((getQuickSightConsole() == null) ? 0 : getQuickSightConsole().hashCode());
         hashCode = prime * hashCode + ((getQSearchBar() == null) ? 0 : getQSearchBar().hashCode());
         hashCode = prime * hashCode + ((getDashboardVisual() == null) ? 0 : getDashboardVisual().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeQnA() == null) ? 0 : getGenerativeQnA().hashCode());
         return hashCode;
     }
 

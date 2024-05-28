@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed,
  * along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
  * returned if the request asked for it. For more information, see <a
- * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
- * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html">Provisioned
+ * capacity mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConsumedCapacity" target="_top">AWS API
@@ -34,7 +34,8 @@ public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the table that was affected by the operation.
+     * The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of
+     * a table in the input, you'll see the table ARN in the response.
      * </p>
      */
     private String tableName;
@@ -77,11 +78,13 @@ public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the table that was affected by the operation.
+     * The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of
+     * a table in the input, you'll see the table ARN in the response.
      * </p>
      * 
      * @param tableName
-     *        The name of the table that was affected by the operation.
+     *        The name of the table that was affected by the operation. If you had specified the Amazon Resource Name
+     *        (ARN) of a table in the input, you'll see the table ARN in the response.
      */
 
     public void setTableName(String tableName) {
@@ -90,10 +93,12 @@ public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the table that was affected by the operation.
+     * The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of
+     * a table in the input, you'll see the table ARN in the response.
      * </p>
      * 
-     * @return The name of the table that was affected by the operation.
+     * @return The name of the table that was affected by the operation. If you had specified the Amazon Resource Name
+     *         (ARN) of a table in the input, you'll see the table ARN in the response.
      */
 
     public String getTableName() {
@@ -102,11 +107,13 @@ public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the table that was affected by the operation.
+     * The name of the table that was affected by the operation. If you had specified the Amazon Resource Name (ARN) of
+     * a table in the input, you'll see the table ARN in the response.
      * </p>
      * 
      * @param tableName
-     *        The name of the table that was affected by the operation.
+     *        The name of the table that was affected by the operation. If you had specified the Amazon Resource Name
+     *        (ARN) of a table in the input, you'll see the table ARN in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,37 +25,37 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     * The AWS-generated data store id. This id is in the output from the initial data store creation call.
      * </p>
      */
     private String datastoreId;
     /**
      * <p>
-     * The datastore ARN is generated during the creation of the Data Store and can be found in the output from the
-     * initial Data Store creation call.
+     * The data store ARN is generated during the creation of the data store and can be found in the output from the
+     * initial data store creation call.
      * </p>
      */
     private String datastoreArn;
     /**
      * <p>
-     * The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     * The status of the FHIR data store.
      * </p>
      */
     private String datastoreStatus;
     /**
      * <p>
-     * The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     * The AWS endpoint for the created data store.
      * </p>
      */
     private String datastoreEndpoint;
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     * The AWS-generated data store id. This id is in the output from the initial data store creation call.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     *        The AWS-generated data store id. This id is in the output from the initial data store creation call.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -64,10 +64,10 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     * The AWS-generated data store id. This id is in the output from the initial data store creation call.
      * </p>
      * 
-     * @return The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     * @return The AWS-generated data store id. This id is in the output from the initial data store creation call.
      */
 
     public String getDatastoreId() {
@@ -76,11 +76,11 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     * The AWS-generated data store id. This id is in the output from the initial data store creation call.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.
+     *        The AWS-generated data store id. This id is in the output from the initial data store creation call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +91,13 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The datastore ARN is generated during the creation of the Data Store and can be found in the output from the
-     * initial Data Store creation call.
+     * The data store ARN is generated during the creation of the data store and can be found in the output from the
+     * initial data store creation call.
      * </p>
      * 
      * @param datastoreArn
-     *        The datastore ARN is generated during the creation of the Data Store and can be found in the output from
-     *        the initial Data Store creation call.
+     *        The data store ARN is generated during the creation of the data store and can be found in the output from
+     *        the initial data store creation call.
      */
 
     public void setDatastoreArn(String datastoreArn) {
@@ -106,12 +106,12 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The datastore ARN is generated during the creation of the Data Store and can be found in the output from the
-     * initial Data Store creation call.
+     * The data store ARN is generated during the creation of the data store and can be found in the output from the
+     * initial data store creation call.
      * </p>
      * 
-     * @return The datastore ARN is generated during the creation of the Data Store and can be found in the output from
-     *         the initial Data Store creation call.
+     * @return The data store ARN is generated during the creation of the data store and can be found in the output from
+     *         the initial data store creation call.
      */
 
     public String getDatastoreArn() {
@@ -120,13 +120,13 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The datastore ARN is generated during the creation of the Data Store and can be found in the output from the
-     * initial Data Store creation call.
+     * The data store ARN is generated during the creation of the data store and can be found in the output from the
+     * initial data store creation call.
      * </p>
      * 
      * @param datastoreArn
-     *        The datastore ARN is generated during the creation of the Data Store and can be found in the output from
-     *        the initial Data Store creation call.
+     *        The data store ARN is generated during the creation of the data store and can be found in the output from
+     *        the initial data store creation call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     * The status of the FHIR data store.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     *        The status of the FHIR data store.
      * @see DatastoreStatus
      */
 
@@ -151,10 +151,10 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     * The status of the FHIR data store.
      * </p>
      * 
-     * @return The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     * @return The status of the FHIR data store.
      * @see DatastoreStatus
      */
 
@@ -164,11 +164,11 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     * The status of the FHIR data store.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     *        The status of the FHIR data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -180,11 +180,11 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     * The status of the FHIR data store.
      * </p>
      * 
      * @param datastoreStatus
-     *        The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.
+     *        The status of the FHIR data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -196,11 +196,11 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     * The AWS endpoint for the created data store.
      * </p>
      * 
      * @param datastoreEndpoint
-     *        The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     *        The AWS endpoint for the created data store.
      */
 
     public void setDatastoreEndpoint(String datastoreEndpoint) {
@@ -209,10 +209,10 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     * The AWS endpoint for the created data store.
      * </p>
      * 
-     * @return The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     * @return The AWS endpoint for the created data store.
      */
 
     public String getDatastoreEndpoint() {
@@ -221,11 +221,11 @@ public class CreateFHIRDatastoreResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     * The AWS endpoint for the created data store.
      * </p>
      * 
      * @param datastoreEndpoint
-     *        The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.
+     *        The AWS endpoint for the created data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

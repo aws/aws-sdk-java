@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class TargetGroup implements Serializable, Cloneable {
     private String protocol;
     /**
      * <p>
-     * The port on which the targets are listening. Not used if the target is a Lambda function.
+     * The port on which the targets are listening. This parameter is not used if the target is a Lambda function.
      * </p>
      */
     private Integer port;
@@ -113,7 +113,8 @@ public class TargetGroup implements Serializable, Cloneable {
     private Matcher matcher;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each
+     * target group with only one load balancer.
      * </p>
      */
     private java.util.List<String> loadBalancerArns;
@@ -297,11 +298,12 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the targets are listening. Not used if the target is a Lambda function.
+     * The port on which the targets are listening. This parameter is not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
-     *        The port on which the targets are listening. Not used if the target is a Lambda function.
+     *        The port on which the targets are listening. This parameter is not used if the target is a Lambda
+     *        function.
      */
 
     public void setPort(Integer port) {
@@ -310,10 +312,11 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the targets are listening. Not used if the target is a Lambda function.
+     * The port on which the targets are listening. This parameter is not used if the target is a Lambda function.
      * </p>
      * 
-     * @return The port on which the targets are listening. Not used if the target is a Lambda function.
+     * @return The port on which the targets are listening. This parameter is not used if the target is a Lambda
+     *         function.
      */
 
     public Integer getPort() {
@@ -322,11 +325,12 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on which the targets are listening. Not used if the target is a Lambda function.
+     * The port on which the targets are listening. This parameter is not used if the target is a Lambda function.
      * </p>
      * 
      * @param port
-     *        The port on which the targets are listening. Not used if the target is a Lambda function.
+     *        The port on which the targets are listening. This parameter is not used if the target is a Lambda
+     *        function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,10 +797,12 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each
+     * target group with only one load balancer.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * @return The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use
+     *         each target group with only one load balancer.
      */
 
     public java.util.List<String> getLoadBalancerArns() {
@@ -805,11 +811,13 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each
+     * target group with only one load balancer.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     *        The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use
+     *        each target group with only one load balancer.
      */
 
     public void setLoadBalancerArns(java.util.Collection<String> loadBalancerArns) {
@@ -823,7 +831,8 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each
+     * target group with only one load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -832,7 +841,8 @@ public class TargetGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     *        The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use
+     *        each target group with only one load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -848,11 +858,13 @@ public class TargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     * The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use each
+     * target group with only one load balancer.
      * </p>
      * 
      * @param loadBalancerArns
-     *        The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.
+     *        The Amazon Resource Name (ARN) of the load balancer that routes traffic to this target group. You can use
+     *        each target group with only one load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

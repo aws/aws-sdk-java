@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class SearchRelatedItemsResponseItemJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("content", targetDepth)) {
                     context.nextToken();
                     searchRelatedItemsResponseItem.setContent(RelatedItemContentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("performedBy", targetDepth)) {
+                    context.nextToken();
+                    searchRelatedItemsResponseItem.setPerformedBy(UserUnionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("relatedItemId", targetDepth)) {
                     context.nextToken();

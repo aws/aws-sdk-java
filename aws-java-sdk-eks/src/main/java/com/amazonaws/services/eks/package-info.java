@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,7 +14,7 @@
 /**
  * <p>
  * Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on
- * Amazon Web Services without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an
+ * Amazon Web Services without needing to setup or maintain your own Kubernetes control plane. Kubernetes is an
  * open-source system for automating the deployment, scaling, and management of containerized applications.
  * </p>
  * <p>

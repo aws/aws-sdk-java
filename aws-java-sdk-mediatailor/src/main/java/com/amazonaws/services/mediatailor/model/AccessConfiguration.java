@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source
-     * location. Accepted value: <code>S3_SIGV4</code>.
+     * location.
      * </p>
      * <p>
      * <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your
@@ -54,6 +54,44 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      * <p>
      * • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your
      * MediaTailor VodSource packaging configurations.
+     * </p>
+     * <p>
+     * <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     * MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     * MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4)
+     * authentication to access the resource where your source content is stored.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet these
+     * requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     * <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     * </p>
+     * <p>
+     * • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top level
+     * manifests referenced by the MediaTailor source packaging configurations.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     * principal access in IAM. For more information about configuring access in IAM, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User
+     * Guide.</i>.
+     * </p>
+     * <p>
+     * • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     * manifests referenced by the <code>VodSource</code> packaging configurations.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests
+     * referenced by your MediaTailor <code>VodSource</code> packaging configurations.
      * </p>
      */
     private String accessType;
@@ -67,7 +105,7 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source
-     * location. Accepted value: <code>S3_SIGV4</code>.
+     * location.
      * </p>
      * <p>
      * <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your
@@ -91,10 +129,48 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      * • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your
      * MediaTailor VodSource packaging configurations.
      * </p>
+     * <p>
+     * <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     * MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     * MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4)
+     * authentication to access the resource where your source content is stored.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet these
+     * requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     * <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     * </p>
+     * <p>
+     * • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top level
+     * manifests referenced by the MediaTailor source packaging configurations.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     * principal access in IAM. For more information about configuring access in IAM, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User
+     * Guide.</i>.
+     * </p>
+     * <p>
+     * • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     * manifests referenced by the <code>VodSource</code> packaging configurations.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests
+     * referenced by your MediaTailor <code>VodSource</code> packaging configurations.
+     * </p>
      * 
      * @param accessType
      *        The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your
-     *        source location. Accepted value: <code>S3_SIGV4</code>.</p>
+     *        source location.</p>
      *        <p>
      *        <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access.
      *        If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
@@ -117,6 +193,45 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      *        <p>
      *        • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced
      *        by your MediaTailor VodSource packaging configurations.
+     *        </p>
+     *        <p>
+     *        <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     *        MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     *        MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
+     *        (SigV4) authentication to access the resource where your source content is stored.
+     *        </p>
+     *        <p>
+     *        Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet
+     *        these requirements:
+     *        </p>
+     *        <p>
+     *        • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     *        <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     *        </p>
+     *        <p>
+     *        • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     *        </p>
+     *        <p>
+     *        • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top
+     *        level manifests referenced by the MediaTailor source packaging configurations.
+     *        </p>
+     *        <p>
+     *        Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these
+     *        requirements:
+     *        </p>
+     *        <p>
+     *        • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     *        principal access in IAM. For more information about configuring access in IAM, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM
+     *        User Guide.</i>.
+     *        </p>
+     *        <p>
+     *        • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     *        manifests referenced by the <code>VodSource</code> packaging configurations.
+     *        </p>
+     *        <p>
+     *        • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level
+     *        manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.
      * @see AccessType
      */
 
@@ -127,7 +242,7 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source
-     * location. Accepted value: <code>S3_SIGV4</code>.
+     * location.
      * </p>
      * <p>
      * <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your
@@ -151,9 +266,47 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      * • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your
      * MediaTailor VodSource packaging configurations.
      * </p>
+     * <p>
+     * <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     * MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     * MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4)
+     * authentication to access the resource where your source content is stored.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet these
+     * requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     * <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     * </p>
+     * <p>
+     * • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top level
+     * manifests referenced by the MediaTailor source packaging configurations.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     * principal access in IAM. For more information about configuring access in IAM, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User
+     * Guide.</i>.
+     * </p>
+     * <p>
+     * • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     * manifests referenced by the <code>VodSource</code> packaging configurations.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests
+     * referenced by your MediaTailor <code>VodSource</code> packaging configurations.
+     * </p>
      * 
      * @return The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your
-     *         source location. Accepted value: <code>S3_SIGV4</code>.</p>
+     *         source location.</p>
      *         <p>
      *         <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access.
      *         If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
@@ -176,6 +329,45 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      *         <p>
      *         • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced
      *         by your MediaTailor VodSource packaging configurations.
+     *         </p>
+     *         <p>
+     *         <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     *         MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     *         MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
+     *         (SigV4) authentication to access the resource where your source content is stored.
+     *         </p>
+     *         <p>
+     *         Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet
+     *         these requirements:
+     *         </p>
+     *         <p>
+     *         • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     *         <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     *         </p>
+     *         <p>
+     *         • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     *         </p>
+     *         <p>
+     *         • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top
+     *         level manifests referenced by the MediaTailor source packaging configurations.
+     *         </p>
+     *         <p>
+     *         Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these
+     *         requirements:
+     *         </p>
+     *         <p>
+     *         • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     *         principal access in IAM. For more information about configuring access in IAM, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM
+     *         User Guide.</i>.
+     *         </p>
+     *         <p>
+     *         • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all
+     *         top-level manifests referenced by the <code>VodSource</code> packaging configurations.
+     *         </p>
+     *         <p>
+     *         • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level
+     *         manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.
      * @see AccessType
      */
 
@@ -186,7 +378,7 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source
-     * location. Accepted value: <code>S3_SIGV4</code>.
+     * location.
      * </p>
      * <p>
      * <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your
@@ -210,10 +402,48 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      * • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your
      * MediaTailor VodSource packaging configurations.
      * </p>
+     * <p>
+     * <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     * MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     * MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4)
+     * authentication to access the resource where your source content is stored.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet these
+     * requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     * <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     * </p>
+     * <p>
+     * • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top level
+     * manifests referenced by the MediaTailor source packaging configurations.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     * principal access in IAM. For more information about configuring access in IAM, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User
+     * Guide.</i>.
+     * </p>
+     * <p>
+     * • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     * manifests referenced by the <code>VodSource</code> packaging configurations.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests
+     * referenced by your MediaTailor <code>VodSource</code> packaging configurations.
+     * </p>
      * 
      * @param accessType
      *        The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your
-     *        source location. Accepted value: <code>S3_SIGV4</code>.</p>
+     *        source location.</p>
      *        <p>
      *        <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access.
      *        If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
@@ -236,6 +466,45 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      *        <p>
      *        • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced
      *        by your MediaTailor VodSource packaging configurations.
+     *        </p>
+     *        <p>
+     *        <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     *        MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     *        MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
+     *        (SigV4) authentication to access the resource where your source content is stored.
+     *        </p>
+     *        <p>
+     *        Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet
+     *        these requirements:
+     *        </p>
+     *        <p>
+     *        • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     *        <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     *        </p>
+     *        <p>
+     *        • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     *        </p>
+     *        <p>
+     *        • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top
+     *        level manifests referenced by the MediaTailor source packaging configurations.
+     *        </p>
+     *        <p>
+     *        Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these
+     *        requirements:
+     *        </p>
+     *        <p>
+     *        • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     *        principal access in IAM. For more information about configuring access in IAM, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM
+     *        User Guide.</i>.
+     *        </p>
+     *        <p>
+     *        • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     *        manifests referenced by the <code>VodSource</code> packaging configurations.
+     *        </p>
+     *        <p>
+     *        • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level
+     *        manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessType
      */
@@ -248,7 +517,7 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source
-     * location. Accepted value: <code>S3_SIGV4</code>.
+     * location.
      * </p>
      * <p>
      * <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your
@@ -272,10 +541,48 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      * • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your
      * MediaTailor VodSource packaging configurations.
      * </p>
+     * <p>
+     * <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     * MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     * MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4)
+     * authentication to access the resource where your source content is stored.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet these
+     * requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     * <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     * </p>
+     * <p>
+     * • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top level
+     * manifests referenced by the MediaTailor source packaging configurations.
+     * </p>
+     * <p>
+     * Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these requirements:
+     * </p>
+     * <p>
+     * • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     * principal access in IAM. For more information about configuring access in IAM, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM User
+     * Guide.</i>.
+     * </p>
+     * <p>
+     * • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     * manifests referenced by the <code>VodSource</code> packaging configurations.
+     * </p>
+     * <p>
+     * • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level manifests
+     * referenced by your MediaTailor <code>VodSource</code> packaging configurations.
+     * </p>
      * 
      * @param accessType
      *        The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your
-     *        source location. Accepted value: <code>S3_SIGV4</code>.</p>
+     *        source location.</p>
      *        <p>
      *        <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access.
      *        If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
@@ -298,6 +605,45 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      *        <p>
      *        • The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced
      *        by your MediaTailor VodSource packaging configurations.
+     *        </p>
+     *        <p>
+     *        <code>AUTODETECT_SIGV4</code> - AWS Signature Version 4 authentication for a set of supported services:
+     *        MediaPackage Version 2 and Amazon S3 hosted virtual-style access. If your source location base URL is a
+     *        MediaPackage Version 2 endpoint or an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4
+     *        (SigV4) authentication to access the resource where your source content is stored.
+     *        </p>
+     *        <p>
+     *        Before you can use <code>AUTODETECT_SIGV4</code> with a MediaPackage Version 2 endpoint, you must meet
+     *        these requirements:
+     *        </p>
+     *        <p>
+     *        • You must grant MediaTailor access to your MediaPackage endpoint by granting
+     *        <code>mediatailor.amazonaws.com</code> principal access in an Origin Access policy on the endpoint.
+     *        </p>
+     *        <p>
+     *        • Your MediaTailor source location base URL must be a MediaPackage V2 endpoint.
+     *        </p>
+     *        <p>
+     *        • The caller of the API must have <code>mediapackagev2:GetObject</code> IAM permissions to read all top
+     *        level manifests referenced by the MediaTailor source packaging configurations.
+     *        </p>
+     *        <p>
+     *        Before you can use <code>AUTODETECT_SIGV4</code> with an Amazon S3 bucket, you must meet these
+     *        requirements:
+     *        </p>
+     *        <p>
+     *        • You must grant MediaTailor access to your S3 bucket by granting <code>mediatailor.amazonaws.com</code>
+     *        principal access in IAM. For more information about configuring access in IAM, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a> in the <i>IAM
+     *        User Guide.</i>.
+     *        </p>
+     *        <p>
+     *        • The <code>mediatailor.amazonaws.com</code> service principal must have permissions to read all top-level
+     *        manifests referenced by the <code>VodSource</code> packaging configurations.
+     *        </p>
+     *        <p>
+     *        • The caller of the API must have <code>s3:GetObject</code> IAM permissions to read all top level
+     *        manifests referenced by your MediaTailor <code>VodSource</code> packaging configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessType
      */

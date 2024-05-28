@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,11 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
- * shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside
- * SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH
- * manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate
- * element.
+ * When you enable Precise segment duration in manifests, your DASH manifest shows precise segment durations. The
+ * segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation
+ * level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment
+ * duration information appears in the duration attribute of the SegmentTemplate element.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DashIsoWriteSegmentTimelineInRepresentation {

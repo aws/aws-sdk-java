@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
     private String botName;
     /**
      * <p>
-     * The version of the bot to describe.
+     * The version of the bot that was described.
      * </p>
      */
     private String botVersion;
@@ -84,6 +84,24 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.Date creationDateTime;
+    /**
+     * <p>
+     * A list of the networks to which the bot version you described belongs.
+     * </p>
+     */
+    private java.util.List<ParentBotNetwork> parentBotNetworks;
+    /**
+     * <p>
+     * The type of the bot in the version that was described.
+     * </p>
+     */
+    private String botType;
+    /**
+     * <p>
+     * The members of bot network in the version that was described.
+     * </p>
+     */
+    private java.util.List<BotMember> botMembers;
 
     /**
      * <p>
@@ -167,11 +185,11 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The version of the bot to describe.
+     * The version of the bot that was described.
      * </p>
      * 
      * @param botVersion
-     *        The version of the bot to describe.
+     *        The version of the bot that was described.
      */
 
     public void setBotVersion(String botVersion) {
@@ -180,10 +198,10 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The version of the bot to describe.
+     * The version of the bot that was described.
      * </p>
      * 
-     * @return The version of the bot to describe.
+     * @return The version of the bot that was described.
      */
 
     public String getBotVersion() {
@@ -192,11 +210,11 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The version of the bot to describe.
+     * The version of the bot that was described.
      * </p>
      * 
      * @param botVersion
-     *        The version of the bot to describe.
+     *        The version of the bot that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,6 +565,205 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * A list of the networks to which the bot version you described belongs.
+     * </p>
+     * 
+     * @return A list of the networks to which the bot version you described belongs.
+     */
+
+    public java.util.List<ParentBotNetwork> getParentBotNetworks() {
+        return parentBotNetworks;
+    }
+
+    /**
+     * <p>
+     * A list of the networks to which the bot version you described belongs.
+     * </p>
+     * 
+     * @param parentBotNetworks
+     *        A list of the networks to which the bot version you described belongs.
+     */
+
+    public void setParentBotNetworks(java.util.Collection<ParentBotNetwork> parentBotNetworks) {
+        if (parentBotNetworks == null) {
+            this.parentBotNetworks = null;
+            return;
+        }
+
+        this.parentBotNetworks = new java.util.ArrayList<ParentBotNetwork>(parentBotNetworks);
+    }
+
+    /**
+     * <p>
+     * A list of the networks to which the bot version you described belongs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParentBotNetworks(java.util.Collection)} or {@link #withParentBotNetworks(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param parentBotNetworks
+     *        A list of the networks to which the bot version you described belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotVersionResult withParentBotNetworks(ParentBotNetwork... parentBotNetworks) {
+        if (this.parentBotNetworks == null) {
+            setParentBotNetworks(new java.util.ArrayList<ParentBotNetwork>(parentBotNetworks.length));
+        }
+        for (ParentBotNetwork ele : parentBotNetworks) {
+            this.parentBotNetworks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the networks to which the bot version you described belongs.
+     * </p>
+     * 
+     * @param parentBotNetworks
+     *        A list of the networks to which the bot version you described belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotVersionResult withParentBotNetworks(java.util.Collection<ParentBotNetwork> parentBotNetworks) {
+        setParentBotNetworks(parentBotNetworks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the bot in the version that was described.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot in the version that was described.
+     * @see BotType
+     */
+
+    public void setBotType(String botType) {
+        this.botType = botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot in the version that was described.
+     * </p>
+     * 
+     * @return The type of the bot in the version that was described.
+     * @see BotType
+     */
+
+    public String getBotType() {
+        return this.botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot in the version that was described.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot in the version that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public DescribeBotVersionResult withBotType(String botType) {
+        setBotType(botType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the bot in the version that was described.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot in the version that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public DescribeBotVersionResult withBotType(BotType botType) {
+        this.botType = botType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The members of bot network in the version that was described.
+     * </p>
+     * 
+     * @return The members of bot network in the version that was described.
+     */
+
+    public java.util.List<BotMember> getBotMembers() {
+        return botMembers;
+    }
+
+    /**
+     * <p>
+     * The members of bot network in the version that was described.
+     * </p>
+     * 
+     * @param botMembers
+     *        The members of bot network in the version that was described.
+     */
+
+    public void setBotMembers(java.util.Collection<BotMember> botMembers) {
+        if (botMembers == null) {
+            this.botMembers = null;
+            return;
+        }
+
+        this.botMembers = new java.util.ArrayList<BotMember>(botMembers);
+    }
+
+    /**
+     * <p>
+     * The members of bot network in the version that was described.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBotMembers(java.util.Collection)} or {@link #withBotMembers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param botMembers
+     *        The members of bot network in the version that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotVersionResult withBotMembers(BotMember... botMembers) {
+        if (this.botMembers == null) {
+            setBotMembers(new java.util.ArrayList<BotMember>(botMembers.length));
+        }
+        for (BotMember ele : botMembers) {
+            this.botMembers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The members of bot network in the version that was described.
+     * </p>
+     * 
+     * @param botMembers
+     *        The members of bot network in the version that was described.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotVersionResult withBotMembers(java.util.Collection<BotMember> botMembers) {
+        setBotMembers(botMembers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -577,7 +794,13 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
         if (getFailureReasons() != null)
             sb.append("FailureReasons: ").append(getFailureReasons()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: ").append(getCreationDateTime());
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
+        if (getParentBotNetworks() != null)
+            sb.append("ParentBotNetworks: ").append(getParentBotNetworks()).append(",");
+        if (getBotType() != null)
+            sb.append("BotType: ").append(getBotType()).append(",");
+        if (getBotMembers() != null)
+            sb.append("BotMembers: ").append(getBotMembers());
         sb.append("}");
         return sb.toString();
     }
@@ -632,6 +855,18 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
+        if (other.getParentBotNetworks() == null ^ this.getParentBotNetworks() == null)
+            return false;
+        if (other.getParentBotNetworks() != null && other.getParentBotNetworks().equals(this.getParentBotNetworks()) == false)
+            return false;
+        if (other.getBotType() == null ^ this.getBotType() == null)
+            return false;
+        if (other.getBotType() != null && other.getBotType().equals(this.getBotType()) == false)
+            return false;
+        if (other.getBotMembers() == null ^ this.getBotMembers() == null)
+            return false;
+        if (other.getBotMembers() != null && other.getBotMembers().equals(this.getBotMembers()) == false)
+            return false;
         return true;
     }
 
@@ -650,6 +885,9 @@ public class DescribeBotVersionResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getBotStatus() == null) ? 0 : getBotStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReasons() == null) ? 0 : getFailureReasons().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getParentBotNetworks() == null) ? 0 : getParentBotNetworks().hashCode());
+        hashCode = prime * hashCode + ((getBotType() == null) ? 0 : getBotType().hashCode());
+        hashCode = prime * hashCode + ((getBotMembers() == null) ? 0 : getBotMembers().hashCode());
         return hashCode;
     }
 

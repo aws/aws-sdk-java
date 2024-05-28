@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class ListCustomLineItemsFilter implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.List<String> arns;
+    /**
+     * <p>
+     * The Amazon Web Services accounts in which this custom line item will be applied to.
+     * </p>
+     */
+    private java.util.List<String> accountIds;
 
     /**
      * <p>
@@ -258,6 +264,76 @@ public class ListCustomLineItemsFilter implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The Amazon Web Services accounts in which this custom line item will be applied to.
+     * </p>
+     * 
+     * @return The Amazon Web Services accounts in which this custom line item will be applied to.
+     */
+
+    public java.util.List<String> getAccountIds() {
+        return accountIds;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services accounts in which this custom line item will be applied to.
+     * </p>
+     * 
+     * @param accountIds
+     *        The Amazon Web Services accounts in which this custom line item will be applied to.
+     */
+
+    public void setAccountIds(java.util.Collection<String> accountIds) {
+        if (accountIds == null) {
+            this.accountIds = null;
+            return;
+        }
+
+        this.accountIds = new java.util.ArrayList<String>(accountIds);
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services accounts in which this custom line item will be applied to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccountIds(java.util.Collection)} or {@link #withAccountIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param accountIds
+     *        The Amazon Web Services accounts in which this custom line item will be applied to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomLineItemsFilter withAccountIds(String... accountIds) {
+        if (this.accountIds == null) {
+            setAccountIds(new java.util.ArrayList<String>(accountIds.length));
+        }
+        for (String ele : accountIds) {
+            this.accountIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services accounts in which this custom line item will be applied to.
+     * </p>
+     * 
+     * @param accountIds
+     *        The Amazon Web Services accounts in which this custom line item will be applied to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomLineItemsFilter withAccountIds(java.util.Collection<String> accountIds) {
+        setAccountIds(accountIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -274,7 +350,9 @@ public class ListCustomLineItemsFilter implements Serializable, Cloneable, Struc
         if (getBillingGroups() != null)
             sb.append("BillingGroups: ").append(getBillingGroups()).append(",");
         if (getArns() != null)
-            sb.append("Arns: ").append(getArns());
+            sb.append("Arns: ").append(getArns()).append(",");
+        if (getAccountIds() != null)
+            sb.append("AccountIds: ").append(getAccountIds());
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +379,10 @@ public class ListCustomLineItemsFilter implements Serializable, Cloneable, Struc
             return false;
         if (other.getArns() != null && other.getArns().equals(this.getArns()) == false)
             return false;
+        if (other.getAccountIds() == null ^ this.getAccountIds() == null)
+            return false;
+        if (other.getAccountIds() != null && other.getAccountIds().equals(this.getAccountIds()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +394,7 @@ public class ListCustomLineItemsFilter implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getNames() == null) ? 0 : getNames().hashCode());
         hashCode = prime * hashCode + ((getBillingGroups() == null) ? 0 : getBillingGroups().hashCode());
         hashCode = prime * hashCode + ((getArns() == null) ? 0 : getArns().hashCode());
+        hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,30 @@ public class KubernetesApiCallAction implements Serializable, Cloneable, Structu
      * </p>
      */
     private String parameters;
+    /**
+     * <p>
+     * The resource component in the Kubernetes API call action.
+     * </p>
+     */
+    private String resource;
+    /**
+     * <p>
+     * The name of the sub-resource in the Kubernetes API call action.
+     * </p>
+     */
+    private String subresource;
+    /**
+     * <p>
+     * The name of the namespace where the Kubernetes API call action takes place.
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
+     * The name of the resource in the Kubernetes API call action.
+     * </p>
+     */
+    private String resourceName;
 
     /**
      * <p>
@@ -373,6 +397,166 @@ public class KubernetesApiCallAction implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The resource component in the Kubernetes API call action.
+     * </p>
+     * 
+     * @param resource
+     *        The resource component in the Kubernetes API call action.
+     */
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    /**
+     * <p>
+     * The resource component in the Kubernetes API call action.
+     * </p>
+     * 
+     * @return The resource component in the Kubernetes API call action.
+     */
+
+    public String getResource() {
+        return this.resource;
+    }
+
+    /**
+     * <p>
+     * The resource component in the Kubernetes API call action.
+     * </p>
+     * 
+     * @param resource
+     *        The resource component in the Kubernetes API call action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesApiCallAction withResource(String resource) {
+        setResource(resource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the sub-resource in the Kubernetes API call action.
+     * </p>
+     * 
+     * @param subresource
+     *        The name of the sub-resource in the Kubernetes API call action.
+     */
+
+    public void setSubresource(String subresource) {
+        this.subresource = subresource;
+    }
+
+    /**
+     * <p>
+     * The name of the sub-resource in the Kubernetes API call action.
+     * </p>
+     * 
+     * @return The name of the sub-resource in the Kubernetes API call action.
+     */
+
+    public String getSubresource() {
+        return this.subresource;
+    }
+
+    /**
+     * <p>
+     * The name of the sub-resource in the Kubernetes API call action.
+     * </p>
+     * 
+     * @param subresource
+     *        The name of the sub-resource in the Kubernetes API call action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesApiCallAction withSubresource(String subresource) {
+        setSubresource(subresource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the namespace where the Kubernetes API call action takes place.
+     * </p>
+     * 
+     * @param namespace
+     *        The name of the namespace where the Kubernetes API call action takes place.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The name of the namespace where the Kubernetes API call action takes place.
+     * </p>
+     * 
+     * @return The name of the namespace where the Kubernetes API call action takes place.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The name of the namespace where the Kubernetes API call action takes place.
+     * </p>
+     * 
+     * @param namespace
+     *        The name of the namespace where the Kubernetes API call action takes place.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesApiCallAction withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the resource in the Kubernetes API call action.
+     * </p>
+     * 
+     * @param resourceName
+     *        The name of the resource in the Kubernetes API call action.
+     */
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource in the Kubernetes API call action.
+     * </p>
+     * 
+     * @return The name of the resource in the Kubernetes API call action.
+     */
+
+    public String getResourceName() {
+        return this.resourceName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource in the Kubernetes API call action.
+     * </p>
+     * 
+     * @param resourceName
+     *        The name of the resource in the Kubernetes API call action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesApiCallAction withResourceName(String resourceName) {
+        setResourceName(resourceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -397,7 +581,15 @@ public class KubernetesApiCallAction implements Serializable, Cloneable, Structu
         if (getStatusCode() != null)
             sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters());
+            sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getResource() != null)
+            sb.append("Resource: ").append(getResource()).append(",");
+        if (getSubresource() != null)
+            sb.append("Subresource: ").append(getSubresource()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
+        if (getResourceName() != null)
+            sb.append("ResourceName: ").append(getResourceName());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +632,22 @@ public class KubernetesApiCallAction implements Serializable, Cloneable, Structu
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getResource() == null ^ this.getResource() == null)
+            return false;
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
+            return false;
+        if (other.getSubresource() == null ^ this.getSubresource() == null)
+            return false;
+        if (other.getSubresource() != null && other.getSubresource().equals(this.getSubresource()) == false)
+            return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        if (other.getResourceName() == null ^ this.getResourceName() == null)
+            return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +663,10 @@ public class KubernetesApiCallAction implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getRemoteIpDetails() == null) ? 0 : getRemoteIpDetails().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getSubresource() == null) ? 0 : getSubresource().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
         return hashCode;
     }
 

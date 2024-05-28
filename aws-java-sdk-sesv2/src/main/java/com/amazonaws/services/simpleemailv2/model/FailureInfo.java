@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains the failure details about an import job.
+ * An object that contains the failure details about a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/FailureInfo" target="_top">AWS API
@@ -30,24 +30,24 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 presigned URL that contains all the failed records and related information.
+     * An Amazon S3 pre-signed URL that contains all the failed records and related information.
      * </p>
      */
     private String failedRecordsS3Url;
     /**
      * <p>
-     * A message about why the import job failed.
+     * A message about why the job failed.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * An Amazon S3 presigned URL that contains all the failed records and related information.
+     * An Amazon S3 pre-signed URL that contains all the failed records and related information.
      * </p>
      * 
      * @param failedRecordsS3Url
-     *        An Amazon S3 presigned URL that contains all the failed records and related information.
+     *        An Amazon S3 pre-signed URL that contains all the failed records and related information.
      */
 
     public void setFailedRecordsS3Url(String failedRecordsS3Url) {
@@ -56,10 +56,10 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 presigned URL that contains all the failed records and related information.
+     * An Amazon S3 pre-signed URL that contains all the failed records and related information.
      * </p>
      * 
-     * @return An Amazon S3 presigned URL that contains all the failed records and related information.
+     * @return An Amazon S3 pre-signed URL that contains all the failed records and related information.
      */
 
     public String getFailedRecordsS3Url() {
@@ -68,11 +68,11 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 presigned URL that contains all the failed records and related information.
+     * An Amazon S3 pre-signed URL that contains all the failed records and related information.
      * </p>
      * 
      * @param failedRecordsS3Url
-     *        An Amazon S3 presigned URL that contains all the failed records and related information.
+     *        An Amazon S3 pre-signed URL that contains all the failed records and related information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message about why the import job failed.
+     * A message about why the job failed.
      * </p>
      * 
      * @param errorMessage
-     *        A message about why the import job failed.
+     *        A message about why the job failed.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -96,10 +96,10 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message about why the import job failed.
+     * A message about why the job failed.
      * </p>
      * 
-     * @return A message about why the import job failed.
+     * @return A message about why the job failed.
      */
 
     public String getErrorMessage() {
@@ -108,11 +108,11 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message about why the import job failed.
+     * A message about why the job failed.
      * </p>
      * 
      * @param errorMessage
-     *        A message about why the import job failed.
+     *        A message about why the job failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

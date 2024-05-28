@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,14 +22,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The managed scaling settings for the Auto Scaling group capacity provider.
  * </p>
  * <p>
- * When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group.
+ * When managed scaling is turned on, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group.
  * Amazon ECS manages a target tracking scaling policy using an Amazon ECS managed CloudWatch metric with the specified
  * <code>targetCapacity</code> value as the target value for the metric. For more information, see <a href=
  * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling"
  * >Using managed scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * <p>
- * If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
+ * If managed scaling is off, the user must manage the scaling of the Auto Scaling group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedScaling" target="_top">AWS API
@@ -46,9 +46,11 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
-     * Auto Scaling group being completely used.
+     * The target capacity utilization as a percentage for the capacity provider. The specified value must be greater
+     * than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the capacity provider to
+     * maintain 10% spare capacity, then that means the utilization is 90%, so use a <code>targetCapacity</code> of
+     * <code>90</code>. The default value of <code>100</code> percent results in the Amazon EC2 instances in your Auto
+     * Scaling group being completely used.
      * </p>
      */
     private Integer targetCapacity;
@@ -144,15 +146,19 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
-     * Auto Scaling group being completely used.
+     * The target capacity utilization as a percentage for the capacity provider. The specified value must be greater
+     * than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the capacity provider to
+     * maintain 10% spare capacity, then that means the utilization is 90%, so use a <code>targetCapacity</code> of
+     * <code>90</code>. The default value of <code>100</code> percent results in the Amazon EC2 instances in your Auto
+     * Scaling group being completely used.
      * </p>
      * 
      * @param targetCapacity
-     *        The target capacity value for the capacity provider. The specified value must be greater than
-     *        <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the
-     *        Amazon EC2 instances in your Auto Scaling group being completely used.
+     *        The target capacity utilization as a percentage for the capacity provider. The specified value must be
+     *        greater than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the
+     *        capacity provider to maintain 10% spare capacity, then that means the utilization is 90%, so use a
+     *        <code>targetCapacity</code> of <code>90</code>. The default value of <code>100</code> percent results in
+     *        the Amazon EC2 instances in your Auto Scaling group being completely used.
      */
 
     public void setTargetCapacity(Integer targetCapacity) {
@@ -161,14 +167,18 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
-     * Auto Scaling group being completely used.
+     * The target capacity utilization as a percentage for the capacity provider. The specified value must be greater
+     * than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the capacity provider to
+     * maintain 10% spare capacity, then that means the utilization is 90%, so use a <code>targetCapacity</code> of
+     * <code>90</code>. The default value of <code>100</code> percent results in the Amazon EC2 instances in your Auto
+     * Scaling group being completely used.
      * </p>
      * 
-     * @return The target capacity value for the capacity provider. The specified value must be greater than
-     *         <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the
-     *         Amazon EC2 instances in your Auto Scaling group being completely used.
+     * @return The target capacity utilization as a percentage for the capacity provider. The specified value must be
+     *         greater than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the
+     *         capacity provider to maintain 10% spare capacity, then that means the utilization is 90%, so use a
+     *         <code>targetCapacity</code> of <code>90</code>. The default value of <code>100</code> percent results in
+     *         the Amazon EC2 instances in your Auto Scaling group being completely used.
      */
 
     public Integer getTargetCapacity() {
@@ -177,15 +187,19 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target capacity value for the capacity provider. The specified value must be greater than <code>0</code> and
-     * less than or equal to <code>100</code>. A value of <code>100</code> results in the Amazon EC2 instances in your
-     * Auto Scaling group being completely used.
+     * The target capacity utilization as a percentage for the capacity provider. The specified value must be greater
+     * than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the capacity provider to
+     * maintain 10% spare capacity, then that means the utilization is 90%, so use a <code>targetCapacity</code> of
+     * <code>90</code>. The default value of <code>100</code> percent results in the Amazon EC2 instances in your Auto
+     * Scaling group being completely used.
      * </p>
      * 
      * @param targetCapacity
-     *        The target capacity value for the capacity provider. The specified value must be greater than
-     *        <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code> results in the
-     *        Amazon EC2 instances in your Auto Scaling group being completely used.
+     *        The target capacity utilization as a percentage for the capacity provider. The specified value must be
+     *        greater than <code>0</code> and less than or equal to <code>100</code>. For example, if you want the
+     *        capacity provider to maintain 10% spare capacity, then that means the utilization is 90%, so use a
+     *        <code>targetCapacity</code> of <code>90</code>. The default value of <code>100</code> percent results in
+     *        the Amazon EC2 instances in your Auto Scaling group being completely used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

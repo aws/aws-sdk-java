@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,13 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The framework type, such as a custom framework or a standard framework.
+     * Specifies whether the framework is a standard framework or a custom framework.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     * The compliance type that the framework supports, such as CIS or HIPAA.
      * </p>
      */
     private String complianceType;
@@ -72,7 +72,7 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
     private String logo;
     /**
      * <p>
-     * The sources that Audit Manager collects evidence from for the control.
+     * The control data sources where Audit Manager collects evidence from.
      * </p>
      */
     private String controlSources;
@@ -84,25 +84,25 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ControlSet> controlSets;
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * The IAM user or role that created the framework.
+     * The user or role that created the framework.
      * </p>
      */
     private String createdBy;
     /**
      * <p>
-     * The IAM user or role that most recently updated the framework.
+     * The user or role that most recently updated the framework.
      * </p>
      */
     private String lastUpdatedBy;
@@ -235,11 +235,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The framework type, such as a custom framework or a standard framework.
+     * Specifies whether the framework is a standard framework or a custom framework.
      * </p>
      * 
      * @param type
-     *        The framework type, such as a custom framework or a standard framework.
+     *        Specifies whether the framework is a standard framework or a custom framework.
      * @see FrameworkType
      */
 
@@ -249,10 +249,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The framework type, such as a custom framework or a standard framework.
+     * Specifies whether the framework is a standard framework or a custom framework.
      * </p>
      * 
-     * @return The framework type, such as a custom framework or a standard framework.
+     * @return Specifies whether the framework is a standard framework or a custom framework.
      * @see FrameworkType
      */
 
@@ -262,11 +262,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The framework type, such as a custom framework or a standard framework.
+     * Specifies whether the framework is a standard framework or a custom framework.
      * </p>
      * 
      * @param type
-     *        The framework type, such as a custom framework or a standard framework.
+     *        Specifies whether the framework is a standard framework or a custom framework.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FrameworkType
      */
@@ -278,11 +278,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The framework type, such as a custom framework or a standard framework.
+     * Specifies whether the framework is a standard framework or a custom framework.
      * </p>
      * 
      * @param type
-     *        The framework type, such as a custom framework or a standard framework.
+     *        Specifies whether the framework is a standard framework or a custom framework.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FrameworkType
      */
@@ -294,11 +294,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     * The compliance type that the framework supports, such as CIS or HIPAA.
      * </p>
      * 
      * @param complianceType
-     *        The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     *        The compliance type that the framework supports, such as CIS or HIPAA.
      */
 
     public void setComplianceType(String complianceType) {
@@ -307,10 +307,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     * The compliance type that the framework supports, such as CIS or HIPAA.
      * </p>
      * 
-     * @return The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     * @return The compliance type that the framework supports, such as CIS or HIPAA.
      */
 
     public String getComplianceType() {
@@ -319,11 +319,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     * The compliance type that the framework supports, such as CIS or HIPAA.
      * </p>
      * 
      * @param complianceType
-     *        The compliance type that the new custom framework supports, such as CIS or HIPAA.
+     *        The compliance type that the framework supports, such as CIS or HIPAA.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,11 +414,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sources that Audit Manager collects evidence from for the control.
+     * The control data sources where Audit Manager collects evidence from.
      * </p>
      * 
      * @param controlSources
-     *        The sources that Audit Manager collects evidence from for the control.
+     *        The control data sources where Audit Manager collects evidence from.
      */
 
     public void setControlSources(String controlSources) {
@@ -427,10 +427,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sources that Audit Manager collects evidence from for the control.
+     * The control data sources where Audit Manager collects evidence from.
      * </p>
      * 
-     * @return The sources that Audit Manager collects evidence from for the control.
+     * @return The control data sources where Audit Manager collects evidence from.
      */
 
     public String getControlSources() {
@@ -439,11 +439,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sources that Audit Manager collects evidence from for the control.
+     * The control data sources where Audit Manager collects evidence from.
      * </p>
      * 
      * @param controlSources
-     *        The sources that Audit Manager collects evidence from for the control.
+     *        The control data sources where Audit Manager collects evidence from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,11 +524,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the framework was created.
+     *        The time when the framework was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -537,10 +537,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
-     * @return Specifies when the framework was created.
+     * @return The time when the framework was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -549,11 +549,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the framework was created.
+     *        The time when the framework was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,11 +564,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the framework was most recently updated.
+     *        The time when the framework was most recently updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -577,10 +577,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
-     * @return Specifies when the framework was most recently updated.
+     * @return The time when the framework was most recently updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -589,11 +589,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the framework was most recently updated.
+     *        The time when the framework was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -604,11 +604,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the framework.
+     * The user or role that created the framework.
      * </p>
      * 
      * @param createdBy
-     *        The IAM user or role that created the framework.
+     *        The user or role that created the framework.
      */
 
     public void setCreatedBy(String createdBy) {
@@ -617,10 +617,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the framework.
+     * The user or role that created the framework.
      * </p>
      * 
-     * @return The IAM user or role that created the framework.
+     * @return The user or role that created the framework.
      */
 
     public String getCreatedBy() {
@@ -629,11 +629,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that created the framework.
+     * The user or role that created the framework.
      * </p>
      * 
      * @param createdBy
-     *        The IAM user or role that created the framework.
+     *        The user or role that created the framework.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -644,11 +644,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that most recently updated the framework.
+     * The user or role that most recently updated the framework.
      * </p>
      * 
      * @param lastUpdatedBy
-     *        The IAM user or role that most recently updated the framework.
+     *        The user or role that most recently updated the framework.
      */
 
     public void setLastUpdatedBy(String lastUpdatedBy) {
@@ -657,10 +657,10 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that most recently updated the framework.
+     * The user or role that most recently updated the framework.
      * </p>
      * 
-     * @return The IAM user or role that most recently updated the framework.
+     * @return The user or role that most recently updated the framework.
      */
 
     public String getLastUpdatedBy() {
@@ -669,11 +669,11 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM user or role that most recently updated the framework.
+     * The user or role that most recently updated the framework.
      * </p>
      * 
      * @param lastUpdatedBy
-     *        The IAM user or role that most recently updated the framework.
+     *        The user or role that most recently updated the framework.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -771,7 +771,7 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getLogo() != null)
@@ -779,15 +779,15 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
         if (getControlSources() != null)
             sb.append("ControlSources: ").append(getControlSources()).append(",");
         if (getControlSets() != null)
-            sb.append("ControlSets: ").append(getControlSets()).append(",");
+            sb.append("ControlSets: ").append("***Sensitive Data Redacted***").append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+            sb.append("CreatedBy: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastUpdatedBy() != null)
-            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy()).append(",");
+            sb.append("LastUpdatedBy: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

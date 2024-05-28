@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,9 +13,10 @@
 
 /**
  * <p>
- * With Service Quotas, you can view and manage your quotas easily as your AWS workloads grow. Quotas, also referred to
- * as limits, are the maximum number of resources that you can create in your AWS account. For more information, see the
- * <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service Quotas User Guide</a>.
+ * With Service Quotas, you can view and manage your quotas easily as your Amazon Web Services workloads grow. Quotas,
+ * also referred to as limits, are the maximum number of resources that you can create in your Amazon Web Services
+ * account. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
+ * Quotas User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.servicequotas;

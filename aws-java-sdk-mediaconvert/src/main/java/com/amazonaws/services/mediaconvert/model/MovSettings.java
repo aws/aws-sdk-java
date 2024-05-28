@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,9 +41,9 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private String mpeg2FourCCControl;
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
-     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
-     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon:
+     * Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might
+     * cause file rejections when a recipient of the output file doesn't expect this extra padding.
      */
     private String paddingControl;
     /** Always keep the default value (SELF_CONTAINED) for this setting. */
@@ -235,15 +235,15 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
-     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
-     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon:
+     * Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might
+     * cause file rejections when a recipient of the output file doesn't expect this extra padding.
      * 
      * @param paddingControl
-     *        To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
-     *        compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the
-     *        length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't
-     *        expct this extra padding.
+     *        Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with
+     *        Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note
+     *        that this might cause file rejections when a recipient of the output file doesn't expect this extra
+     *        padding.
      * @see MovPaddingControl
      */
 
@@ -252,14 +252,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
-     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
-     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon:
+     * Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might
+     * cause file rejections when a recipient of the output file doesn't expect this extra padding.
      * 
-     * @return To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
-     *         compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases
-     *         the length of the edit list atom. This might cause file rejections when a recipient of the output file
-     *         doesn't expct this extra padding.
+     * @return Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with
+     *         Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note
+     *         that this might cause file rejections when a recipient of the output file doesn't expect this extra
+     *         padding.
      * @see MovPaddingControl
      */
 
@@ -268,15 +268,15 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
-     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
-     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon:
+     * Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might
+     * cause file rejections when a recipient of the output file doesn't expect this extra padding.
      * 
      * @param paddingControl
-     *        To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
-     *        compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the
-     *        length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't
-     *        expct this extra padding.
+     *        Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with
+     *        Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note
+     *        that this might cause file rejections when a recipient of the output file doesn't expect this extra
+     *        padding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovPaddingControl
      */
@@ -287,15 +287,15 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon compatibility,
-     * set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the length of the edit
-     * list atom. This might cause file rejections when a recipient of the output file doesn't expct this extra padding.
+     * Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with Omneon:
+     * Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note that this might
+     * cause file rejections when a recipient of the output file doesn't expect this extra padding.
      * 
      * @param paddingControl
-     *        To make this output compatible with Omenon, keep the default value, OMNEON. Unless you need Omneon
-     *        compatibility, set this value to NONE. When you keep the default value, OMNEON, MediaConvert increases the
-     *        length of the edit list atom. This might cause file rejections when a recipient of the output file doesn't
-     *        expct this extra padding.
+     *        Unless you need Omneon compatibility: Keep the default value, None. To make this output compatible with
+     *        Omneon: Choose Omneon. When you do, MediaConvert increases the length of the 'elst' edit list atom. Note
+     *        that this might cause file rejections when a recipient of the output file doesn't expect this extra
+     *        padding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovPaddingControl
      */

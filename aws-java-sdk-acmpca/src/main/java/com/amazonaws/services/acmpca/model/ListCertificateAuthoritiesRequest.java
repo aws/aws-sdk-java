@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,9 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
      * Use this parameter when paginating results to specify the maximum number of items to return in the response on
      * each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in
      * the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.
+     * </p>
+     * <p>
+     * Although the maximum value is 1000, the action only returns a maximum of 100 items.
      * </p>
      */
     private Integer maxResults;
@@ -103,12 +106,17 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
      * each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in
      * the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.
      * </p>
+     * <p>
+     * Although the maximum value is 1000, the action only returns a maximum of 100 items.
+     * </p>
      * 
      * @param maxResults
      *        Use this parameter when paginating results to specify the maximum number of items to return in the
      *        response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code>
      *        element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve
-     *        additional items.
+     *        additional items.</p>
+     *        <p>
+     *        Although the maximum value is 1000, the action only returns a maximum of 100 items.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -121,11 +129,16 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
      * each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in
      * the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.
      * </p>
+     * <p>
+     * Although the maximum value is 1000, the action only returns a maximum of 100 items.
+     * </p>
      * 
      * @return Use this parameter when paginating results to specify the maximum number of items to return in the
      *         response on each page. If additional items exist beyond the number you specify, the
      *         <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a
-     *         subsequent request to retrieve additional items.
+     *         subsequent request to retrieve additional items.</p>
+     *         <p>
+     *         Although the maximum value is 1000, the action only returns a maximum of 100 items.
      */
 
     public Integer getMaxResults() {
@@ -138,12 +151,17 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
      * each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in
      * the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.
      * </p>
+     * <p>
+     * Although the maximum value is 1000, the action only returns a maximum of 100 items.
+     * </p>
      * 
      * @param maxResults
      *        Use this parameter when paginating results to specify the maximum number of items to return in the
      *        response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code>
      *        element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve
-     *        additional items.
+     *        additional items.</p>
+     *        <p>
+     *        Although the maximum value is 1000, the action only returns a maximum of 100 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

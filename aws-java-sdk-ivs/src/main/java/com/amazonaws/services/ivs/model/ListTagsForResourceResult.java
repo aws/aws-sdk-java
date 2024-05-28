@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,13 +23,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
-     * <p/>
+     * <p>
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * </p>
      * 
-     * @return
+     * @return Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -37,9 +43,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * </p>
      * 
      * @param tags
+     *        Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -47,9 +56,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     * </p>
      * 
      * @param tags
+     *        Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

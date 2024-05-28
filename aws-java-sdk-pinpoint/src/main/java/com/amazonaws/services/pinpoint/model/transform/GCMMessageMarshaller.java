@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class GCMMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageIconUrl").build();
     private static final MarshallingInfo<String> IMAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageUrl").build();
+    private static final MarshallingInfo<String> PREFERREDAUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredAuthenticationMethod").build();
     private static final MarshallingInfo<String> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Priority").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -87,6 +89,7 @@ public class GCMMessageMarshaller {
             protocolMarshaller.marshall(gCMMessage.getIconReference(), ICONREFERENCE_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageIconUrl(), IMAGEICONURL_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageUrl(), IMAGEURL_BINDING);
+            protocolMarshaller.marshall(gCMMessage.getPreferredAuthenticationMethod(), PREFERREDAUTHENTICATIONMETHOD_BINDING);
             protocolMarshaller.marshall(gCMMessage.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRestrictedPackageName(), RESTRICTEDPACKAGENAME_BINDING);

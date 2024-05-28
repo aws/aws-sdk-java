@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class StartTestRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Start Test for Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Start Test for Source Server IDs.
      * </p>
      */
@@ -37,6 +43,46 @@ public class StartTestRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * Start Test for Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Start Test for Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Start Test for Account ID.
+     * </p>
+     * 
+     * @return Start Test for Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Start Test for Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Start Test for Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTestRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -188,6 +234,8 @@ public class StartTestRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getSourceServerIDs() != null)
             sb.append("SourceServerIDs: ").append(getSourceServerIDs()).append(",");
         if (getTags() != null)
@@ -206,6 +254,10 @@ public class StartTestRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof StartTestRequest == false)
             return false;
         StartTestRequest other = (StartTestRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getSourceServerIDs() == null ^ this.getSourceServerIDs() == null)
             return false;
         if (other.getSourceServerIDs() != null && other.getSourceServerIDs().equals(this.getSourceServerIDs()) == false)
@@ -222,6 +274,7 @@ public class StartTestRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getSourceServerIDs() == null) ? 0 : getSourceServerIDs().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

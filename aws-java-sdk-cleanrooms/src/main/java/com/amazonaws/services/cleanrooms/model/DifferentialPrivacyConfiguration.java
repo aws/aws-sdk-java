@@ -1,0 +1,184 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.cleanrooms.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Specifies the unique identifier for your users.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DifferentialPrivacyConfiguration"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DifferentialPrivacyConfiguration implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The name of the column (such as user_id) that contains the unique identifier of your users whose privacy you want
+     * to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration, you must
+     * conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * </p>
+     */
+    private java.util.List<DifferentialPrivacyColumn> columns;
+
+    /**
+     * <p>
+     * The name of the column (such as user_id) that contains the unique identifier of your users whose privacy you want
+     * to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration, you must
+     * conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * </p>
+     * 
+     * @return The name of the column (such as user_id) that contains the unique identifier of your users whose privacy
+     *         you want to protect. If you want to turn on diﬀerential privacy for two or more tables in a
+     *         collaboration, you must conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     */
+
+    public java.util.List<DifferentialPrivacyColumn> getColumns() {
+        return columns;
+    }
+
+    /**
+     * <p>
+     * The name of the column (such as user_id) that contains the unique identifier of your users whose privacy you want
+     * to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration, you must
+     * conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * </p>
+     * 
+     * @param columns
+     *        The name of the column (such as user_id) that contains the unique identifier of your users whose privacy
+     *        you want to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration,
+     *        you must conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     */
+
+    public void setColumns(java.util.Collection<DifferentialPrivacyColumn> columns) {
+        if (columns == null) {
+            this.columns = null;
+            return;
+        }
+
+        this.columns = new java.util.ArrayList<DifferentialPrivacyColumn>(columns);
+    }
+
+    /**
+     * <p>
+     * The name of the column (such as user_id) that contains the unique identifier of your users whose privacy you want
+     * to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration, you must
+     * conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setColumns(java.util.Collection)} or {@link #withColumns(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param columns
+     *        The name of the column (such as user_id) that contains the unique identifier of your users whose privacy
+     *        you want to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration,
+     *        you must conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DifferentialPrivacyConfiguration withColumns(DifferentialPrivacyColumn... columns) {
+        if (this.columns == null) {
+            setColumns(new java.util.ArrayList<DifferentialPrivacyColumn>(columns.length));
+        }
+        for (DifferentialPrivacyColumn ele : columns) {
+            this.columns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the column (such as user_id) that contains the unique identifier of your users whose privacy you want
+     * to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration, you must
+     * conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * </p>
+     * 
+     * @param columns
+     *        The name of the column (such as user_id) that contains the unique identifier of your users whose privacy
+     *        you want to protect. If you want to turn on diﬀerential privacy for two or more tables in a collaboration,
+     *        you must conﬁgure the same column as the user identiﬁer column in both analysis rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DifferentialPrivacyConfiguration withColumns(java.util.Collection<DifferentialPrivacyColumn> columns) {
+        setColumns(columns);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getColumns() != null)
+            sb.append("Columns: ").append(getColumns());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DifferentialPrivacyConfiguration == false)
+            return false;
+        DifferentialPrivacyConfiguration other = (DifferentialPrivacyConfiguration) obj;
+        if (other.getColumns() == null ^ this.getColumns() == null)
+            return false;
+        if (other.getColumns() != null && other.getColumns().equals(this.getColumns()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getColumns() == null) ? 0 : getColumns().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public DifferentialPrivacyConfiguration clone() {
+        try {
+            return (DifferentialPrivacyConfiguration) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cleanrooms.model.transform.DifferentialPrivacyConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

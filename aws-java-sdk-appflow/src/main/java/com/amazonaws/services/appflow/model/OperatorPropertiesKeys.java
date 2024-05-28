@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,8 @@ public enum OperatorPropertiesKeys {
     CONCAT_FORMAT("CONCAT_FORMAT"),
     SUBFIELD_CATEGORY_MAP("SUBFIELD_CATEGORY_MAP"),
     EXCLUDE_SOURCE_FIELDS_LIST("EXCLUDE_SOURCE_FIELDS_LIST"),
-    INCLUDE_NEW_FIELDS("INCLUDE_NEW_FIELDS");
+    INCLUDE_NEW_FIELDS("INCLUDE_NEW_FIELDS"),
+    ORDERED_PARTITION_KEYS_LIST("ORDERED_PARTITION_KEYS_LIST");
 
     private String value;
 

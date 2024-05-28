@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String templateData;
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     */
+    private java.util.List<MessageHeader> headers;
 
     /**
      * <p>
@@ -191,6 +197,76 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * 
+     * @return The list of message headers that will be added to the email message.
+     */
+
+    public java.util.List<MessageHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * 
+     * @param headers
+     *        The list of message headers that will be added to the email message.
+     */
+
+    public void setHeaders(java.util.Collection<MessageHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<MessageHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The list of message headers that will be added to the email message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Template withHeaders(MessageHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<MessageHeader>(headers.length));
+        }
+        for (MessageHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of message headers that will be added to the email message.
+     * </p>
+     * 
+     * @param headers
+     *        The list of message headers that will be added to the email message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Template withHeaders(java.util.Collection<MessageHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +283,9 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
         if (getTemplateArn() != null)
             sb.append("TemplateArn: ").append(getTemplateArn()).append(",");
         if (getTemplateData() != null)
-            sb.append("TemplateData: ").append(getTemplateData());
+            sb.append("TemplateData: ").append(getTemplateData()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +312,10 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTemplateData() != null && other.getTemplateData().equals(this.getTemplateData()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +327,7 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getTemplateData() == null) ? 0 : getTemplateData().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         return hashCode;
     }
 

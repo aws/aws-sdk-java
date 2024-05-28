@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -50,6 +52,11 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
+     * The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     * characters. Any queries with character lengths outside of this range will throw invalid results.
+     * </p>
+     * </note> <note>
+     * <p>
      * The currently supported value for <code>FieldName</code>: <code>name</code>
      * </p>
      * </note>
@@ -64,11 +71,15 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -77,10 +88,14 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -89,11 +104,15 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,12 +213,22 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
+     * The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     * characters. Any queries with character lengths outside of this range will throw invalid results.
+     * </p>
+     * </note> <note>
+     * <p>
      * The currently supported value for <code>FieldName</code>: <code>name</code>
      * </p>
      * </note>
      * 
      * @param searchCriteria
      *        The search criteria to be used to return security profiles. </p> <note>
+     *        <p>
+     *        The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     *        characters. Any queries with character lengths outside of this range will throw invalid results.
+     *        </p>
+     *        </note> <note>
      *        <p>
      *        The currently supported value for <code>FieldName</code>: <code>name</code>
      *        </p>
@@ -215,11 +244,21 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
+     * The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     * characters. Any queries with character lengths outside of this range will throw invalid results.
+     * </p>
+     * </note> <note>
+     * <p>
      * The currently supported value for <code>FieldName</code>: <code>name</code>
      * </p>
      * </note>
      * 
      * @return The search criteria to be used to return security profiles. </p> <note>
+     *         <p>
+     *         The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     *         characters. Any queries with character lengths outside of this range will throw invalid results.
+     *         </p>
+     *         </note> <note>
      *         <p>
      *         The currently supported value for <code>FieldName</code>: <code>name</code>
      *         </p>
@@ -235,12 +274,22 @@ public class SearchSecurityProfilesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
+     * The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     * characters. Any queries with character lengths outside of this range will throw invalid results.
+     * </p>
+     * </note> <note>
+     * <p>
      * The currently supported value for <code>FieldName</code>: <code>name</code>
      * </p>
      * </note>
      * 
      * @param searchCriteria
      *        The search criteria to be used to return security profiles. </p> <note>
+     *        <p>
+     *        The <code>name</code> field support "contains" queries with a minimum of 2 characters and maximum of 25
+     *        characters. Any queries with character lengths outside of this range will throw invalid results.
+     *        </p>
+     *        </note> <note>
      *        <p>
      *        The currently supported value for <code>FieldName</code>: <code>name</code>
      *        </p>

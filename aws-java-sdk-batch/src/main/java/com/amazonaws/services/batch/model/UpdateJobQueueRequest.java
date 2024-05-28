@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,13 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      */
     private java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrder;
+    /**
+     * <p>
+     * The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state
+     * longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.
+     * </p>
+     */
+    private java.util.List<JobStateTimeLimitAction> jobStateTimeLimitActions;
 
     /**
      * <p>
@@ -487,6 +494,88 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state
+     * longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.
+     * </p>
+     * 
+     * @return The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified
+     *         state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has
+     *         passed.
+     */
+
+    public java.util.List<JobStateTimeLimitAction> getJobStateTimeLimitActions() {
+        return jobStateTimeLimitActions;
+    }
+
+    /**
+     * <p>
+     * The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state
+     * longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.
+     * </p>
+     * 
+     * @param jobStateTimeLimitActions
+     *        The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified
+     *        state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has
+     *        passed.
+     */
+
+    public void setJobStateTimeLimitActions(java.util.Collection<JobStateTimeLimitAction> jobStateTimeLimitActions) {
+        if (jobStateTimeLimitActions == null) {
+            this.jobStateTimeLimitActions = null;
+            return;
+        }
+
+        this.jobStateTimeLimitActions = new java.util.ArrayList<JobStateTimeLimitAction>(jobStateTimeLimitActions);
+    }
+
+    /**
+     * <p>
+     * The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state
+     * longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobStateTimeLimitActions(java.util.Collection)} or
+     * {@link #withJobStateTimeLimitActions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param jobStateTimeLimitActions
+     *        The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified
+     *        state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has
+     *        passed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobQueueRequest withJobStateTimeLimitActions(JobStateTimeLimitAction... jobStateTimeLimitActions) {
+        if (this.jobStateTimeLimitActions == null) {
+            setJobStateTimeLimitActions(new java.util.ArrayList<JobStateTimeLimitAction>(jobStateTimeLimitActions.length));
+        }
+        for (JobStateTimeLimitAction ele : jobStateTimeLimitActions) {
+            this.jobStateTimeLimitActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state
+     * longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.
+     * </p>
+     * 
+     * @param jobStateTimeLimitActions
+     *        The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified
+     *        state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has
+     *        passed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobQueueRequest withJobStateTimeLimitActions(java.util.Collection<JobStateTimeLimitAction> jobStateTimeLimitActions) {
+        setJobStateTimeLimitActions(jobStateTimeLimitActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -507,7 +596,9 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getComputeEnvironmentOrder() != null)
-            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder());
+            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder()).append(",");
+        if (getJobStateTimeLimitActions() != null)
+            sb.append("JobStateTimeLimitActions: ").append(getJobStateTimeLimitActions());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +633,10 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getComputeEnvironmentOrder() != null && other.getComputeEnvironmentOrder().equals(this.getComputeEnvironmentOrder()) == false)
             return false;
+        if (other.getJobStateTimeLimitActions() == null ^ this.getJobStateTimeLimitActions() == null)
+            return false;
+        if (other.getJobStateTimeLimitActions() != null && other.getJobStateTimeLimitActions().equals(this.getJobStateTimeLimitActions()) == false)
+            return false;
         return true;
     }
 
@@ -555,6 +650,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSchedulingPolicyArn() == null) ? 0 : getSchedulingPolicyArn().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getComputeEnvironmentOrder() == null) ? 0 : getComputeEnvironmentOrder().hashCode());
+        hashCode = prime * hashCode + ((getJobStateTimeLimitActions() == null) ? 0 : getJobStateTimeLimitActions().hashCode());
         return hashCode;
     }
 

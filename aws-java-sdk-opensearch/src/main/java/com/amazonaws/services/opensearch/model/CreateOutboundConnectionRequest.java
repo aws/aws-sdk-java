@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>CreateOutboundConnection</a> </code> operation.
+ * Container for the parameters to the <code>CreateOutboundConnection</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,30 +27,42 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      */
     private DomainInformationContainer localDomainInfo;
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      */
     private DomainInformationContainer remoteDomainInfo;
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      */
     private String connectionAlias;
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     */
+    private String connectionMode;
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     */
+    private ConnectionProperties connectionProperties;
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Name and Region of the source (local) domain.
      */
 
     public void setLocalDomainInfo(DomainInformationContainer localDomainInfo) {
@@ -59,10 +71,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * @return Name and Region of the source (local) domain.
      */
 
     public DomainInformationContainer getLocalDomainInfo() {
@@ -71,11 +83,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Name and Region of the source (local) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +98,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Name and Region of the destination (remote) domain.
      */
 
     public void setRemoteDomainInfo(DomainInformationContainer remoteDomainInfo) {
@@ -99,10 +111,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * @return Name and Region of the destination (remote) domain.
      */
 
     public DomainInformationContainer getRemoteDomainInfo() {
@@ -111,11 +123,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Name and Region of the destination (remote) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +138,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias used used by the customer for this cross-cluster connection.
+     *        Name of the connection.
      */
 
     public void setConnectionAlias(String connectionAlias) {
@@ -139,10 +151,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
-     * @return The connection alias used used by the customer for this cross-cluster connection.
+     * @return Name of the connection.
      */
 
     public String getConnectionAlias() {
@@ -151,16 +163,115 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias used used by the customer for this cross-cluster connection.
+     *        Name of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOutboundConnectionRequest withConnectionAlias(String connectionAlias) {
         setConnectionAlias(connectionAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @see ConnectionMode
+     */
+
+    public void setConnectionMode(String connectionMode) {
+        this.connectionMode = connectionMode;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @return The connection mode.
+     * @see ConnectionMode
+     */
+
+    public String getConnectionMode() {
+        return this.connectionMode;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionMode
+     */
+
+    public CreateOutboundConnectionRequest withConnectionMode(String connectionMode) {
+        setConnectionMode(connectionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionMode
+     */
+
+    public CreateOutboundConnectionRequest withConnectionMode(ConnectionMode connectionMode) {
+        this.connectionMode = connectionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     * 
+     * @param connectionProperties
+     *        The <code>ConnectionProperties</code> for the outbound connection.
+     */
+
+    public void setConnectionProperties(ConnectionProperties connectionProperties) {
+        this.connectionProperties = connectionProperties;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     * 
+     * @return The <code>ConnectionProperties</code> for the outbound connection.
+     */
+
+    public ConnectionProperties getConnectionProperties() {
+        return this.connectionProperties;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the outbound connection.
+     * </p>
+     * 
+     * @param connectionProperties
+     *        The <code>ConnectionProperties</code> for the outbound connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOutboundConnectionRequest withConnectionProperties(ConnectionProperties connectionProperties) {
+        setConnectionProperties(connectionProperties);
         return this;
     }
 
@@ -181,7 +292,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
         if (getRemoteDomainInfo() != null)
             sb.append("RemoteDomainInfo: ").append(getRemoteDomainInfo()).append(",");
         if (getConnectionAlias() != null)
-            sb.append("ConnectionAlias: ").append(getConnectionAlias());
+            sb.append("ConnectionAlias: ").append(getConnectionAlias()).append(",");
+        if (getConnectionMode() != null)
+            sb.append("ConnectionMode: ").append(getConnectionMode()).append(",");
+        if (getConnectionProperties() != null)
+            sb.append("ConnectionProperties: ").append(getConnectionProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +323,14 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getConnectionAlias() != null && other.getConnectionAlias().equals(this.getConnectionAlias()) == false)
             return false;
+        if (other.getConnectionMode() == null ^ this.getConnectionMode() == null)
+            return false;
+        if (other.getConnectionMode() != null && other.getConnectionMode().equals(this.getConnectionMode()) == false)
+            return false;
+        if (other.getConnectionProperties() == null ^ this.getConnectionProperties() == null)
+            return false;
+        if (other.getConnectionProperties() != null && other.getConnectionProperties().equals(this.getConnectionProperties()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +342,8 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getLocalDomainInfo() == null) ? 0 : getLocalDomainInfo().hashCode());
         hashCode = prime * hashCode + ((getRemoteDomainInfo() == null) ? 0 : getRemoteDomainInfo().hashCode());
         hashCode = prime * hashCode + ((getConnectionAlias() == null) ? 0 : getConnectionAlias().hashCode());
+        hashCode = prime * hashCode + ((getConnectionMode() == null) ? 0 : getConnectionMode().hashCode());
+        hashCode = prime * hashCode + ((getConnectionProperties() == null) ? 0 : getConnectionProperties().hashCode());
         return hashCode;
     }
 

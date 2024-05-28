@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -195,6 +195,8 @@ public interface AWSBudgets {
      *         You are not authorized to use this operation with the given parameters.
      * @throws ThrottlingException
      *         The number of API requests has exceeded the maximum allowed API request throttling limit for the account.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of tags you can associate with a resource.
      * @sample AWSBudgets.CreateBudget
      */
     CreateBudgetResult createBudget(CreateBudgetRequest createBudgetRequest);
@@ -220,6 +222,8 @@ public interface AWSBudgets {
      *         You are not authorized to use this operation with the given parameters.
      * @throws ThrottlingException
      *         The number of API requests has exceeded the maximum allowed API request throttling limit for the account.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of tags you can associate with a resource.
      * @sample AWSBudgets.CreateBudgetAction
      */
     CreateBudgetActionResult createBudgetAction(CreateBudgetActionRequest createBudgetActionRequest);
@@ -661,6 +665,71 @@ public interface AWSBudgets {
      * @sample AWSBudgets.ExecuteBudgetAction
      */
     ExecuteBudgetActionResult executeBudgetAction(ExecuteBudgetActionRequest executeBudgetActionRequest);
+
+    /**
+     * <p>
+     * Lists tags associated with a budget or budget action resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the account.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @sample AWSBudgets.ListTagsForResource
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Creates tags for a budget or budget action resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the account.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of tags you can associate with a resource.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @sample AWSBudgets.TagResource
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes tags associated with a budget or budget action resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ThrottlingException
+     *         The number of API requests has exceeded the maximum allowed API request throttling limit for the account.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @sample AWSBudgets.UntagResource
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

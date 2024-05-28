@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,12 +34,6 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
     private String instanceArn;
     /**
      * <p>
-     * The ARN of the <code>PermissionSet</code>.
-     * </p>
-     */
-    private String permissionSetArn;
-    /**
-     * <p>
      * The maximum number of results to display for the list call.
      * </p>
      */
@@ -51,6 +45,12 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The ARN of the <code>PermissionSet</code>.
+     * </p>
+     */
+    private String permissionSetArn;
 
     /**
      * <p>
@@ -89,46 +89,6 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
 
     public ListCustomerManagedPolicyReferencesInPermissionSetRequest withInstanceArn(String instanceArn) {
         setInstanceArn(instanceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ARN of the <code>PermissionSet</code>.
-     * </p>
-     * 
-     * @param permissionSetArn
-     *        The ARN of the <code>PermissionSet</code>.
-     */
-
-    public void setPermissionSetArn(String permissionSetArn) {
-        this.permissionSetArn = permissionSetArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the <code>PermissionSet</code>.
-     * </p>
-     * 
-     * @return The ARN of the <code>PermissionSet</code>.
-     */
-
-    public String getPermissionSetArn() {
-        return this.permissionSetArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the <code>PermissionSet</code>.
-     * </p>
-     * 
-     * @param permissionSetArn
-     *        The ARN of the <code>PermissionSet</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListCustomerManagedPolicyReferencesInPermissionSetRequest withPermissionSetArn(String permissionSetArn) {
-        setPermissionSetArn(permissionSetArn);
         return this;
     }
 
@@ -219,6 +179,46 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
     }
 
     /**
+     * <p>
+     * The ARN of the <code>PermissionSet</code>.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the <code>PermissionSet</code>.
+     */
+
+    public void setPermissionSetArn(String permissionSetArn) {
+        this.permissionSetArn = permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the <code>PermissionSet</code>.
+     * </p>
+     * 
+     * @return The ARN of the <code>PermissionSet</code>.
+     */
+
+    public String getPermissionSetArn() {
+        return this.permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the <code>PermissionSet</code>.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the <code>PermissionSet</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCustomerManagedPolicyReferencesInPermissionSetRequest withPermissionSetArn(String permissionSetArn) {
+        setPermissionSetArn(permissionSetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,12 +232,12 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
         sb.append("{");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
-        if (getPermissionSetArn() != null)
-            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPermissionSetArn() != null)
+            sb.append("PermissionSetArn: ").append(getPermissionSetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -256,10 +256,6 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
-        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
-            return false;
-        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -267,6 +263,10 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
+            return false;
+        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
             return false;
         return true;
     }
@@ -277,9 +277,9 @@ public class ListCustomerManagedPolicyReferencesInPermissionSetRequest extends c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
-        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
         return hashCode;
     }
 

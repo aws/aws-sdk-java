@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.
+     * The Amazon Web Services account ID for the account that owns the specified access point.
      * </p>
      */
     private String accountId;
@@ -49,7 +49,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
      * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
      * encoded.
@@ -74,15 +74,25 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * <p>
+     * For same account access point when your bucket and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point
+     * are not in the same account, the <code>BucketAccountId</code> is required.
+     * </p>
+     */
+    private String bucketAccountId;
 
     /**
      * <p>
-     * The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.
+     * The Amazon Web Services account ID for the account that owns the specified access point.
      * </p>
      * 
      * @param accountId
-     *        The Amazon Web Services account ID for the owner of the bucket for which you want to create an access
-     *        point.
+     *        The Amazon Web Services account ID for the account that owns the specified access point.
      */
 
     public void setAccountId(String accountId) {
@@ -91,11 +101,10 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.
+     * The Amazon Web Services account ID for the account that owns the specified access point.
      * </p>
      * 
-     * @return The Amazon Web Services account ID for the owner of the bucket for which you want to create an access
-     *         point.
+     * @return The Amazon Web Services account ID for the account that owns the specified access point.
      */
 
     public String getAccountId() {
@@ -104,12 +113,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.
+     * The Amazon Web Services account ID for the account that owns the specified access point.
      * </p>
      * 
      * @param accountId
-     *        The Amazon Web Services account ID for the owner of the bucket for which you want to create an access
-     *        point.
+     *        The Amazon Web Services account ID for the account that owns the specified access point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,7 +178,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
      * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
      * encoded.
@@ -186,7 +194,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      *        For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
      *        the ARN of the bucket accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *        . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by
      *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
      *        be URL encoded.
@@ -208,7 +216,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
      * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
      * encoded.
@@ -223,7 +231,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      *         For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
      *         the ARN of the bucket accessed in the format
      *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     *         . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *         . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by
      *         account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      *         <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
      *         be URL encoded.
@@ -245,7 +253,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN
      * of the bucket accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account
      * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
      * encoded.
@@ -261,7 +269,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      *        For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify
      *        the ARN of the bucket accessed in the format
      *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
-     *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *        . For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by
      *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
      *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
      *        be URL encoded.
@@ -384,6 +392,73 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * <p>
+     * For same account access point when your bucket and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point
+     * are not in the same account, the <code>BucketAccountId</code> is required.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+     *        <p>
+     *        For same account access point when your bucket and access point belong to the same account owner, the
+     *        <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access
+     *        point are not in the same account, the <code>BucketAccountId</code> is required.
+     */
+
+    public void setBucketAccountId(String bucketAccountId) {
+        this.bucketAccountId = bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * <p>
+     * For same account access point when your bucket and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point
+     * are not in the same account, the <code>BucketAccountId</code> is required.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+     *         <p>
+     *         For same account access point when your bucket and access point belong to the same account owner, the
+     *         <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access
+     *         point are not in the same account, the <code>BucketAccountId</code> is required.
+     */
+
+    public String getBucketAccountId() {
+        return this.bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * <p>
+     * For same account access point when your bucket and access point belong to the same account owner, the
+     * <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access point
+     * are not in the same account, the <code>BucketAccountId</code> is required.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID associated with the S3 bucket associated with this access point.</p>
+     *        <p>
+     *        For same account access point when your bucket and access point belong to the same account owner, the
+     *        <code>BucketAccountId</code> is not required. For cross-account access point when your bucket and access
+     *        point are not in the same account, the <code>BucketAccountId</code> is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccessPointRequest withBucketAccountId(String bucketAccountId) {
+        setBucketAccountId(bucketAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -404,7 +479,9 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getVpcConfiguration() != null)
             sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getPublicAccessBlockConfiguration() != null)
-            sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration());
+            sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration()).append(",");
+        if (getBucketAccountId() != null)
+            sb.append("BucketAccountId: ").append(getBucketAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +517,10 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getPublicAccessBlockConfiguration() != null
                 && other.getPublicAccessBlockConfiguration().equals(this.getPublicAccessBlockConfiguration()) == false)
             return false;
+        if (other.getBucketAccountId() == null ^ this.getBucketAccountId() == null)
+            return false;
+        if (other.getBucketAccountId() != null && other.getBucketAccountId().equals(this.getBucketAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -453,6 +534,7 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPublicAccessBlockConfiguration() == null) ? 0 : getPublicAccessBlockConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getBucketAccountId() == null) ? 0 : getBucketAccountId().hashCode());
         return hashCode;
     }
 

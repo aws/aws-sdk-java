@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code> <a>DescribeOutboundConnections</a> </code> request. Contains the list of connections matching
- * the filter criteria.
+ * Contains a list of connections matching the filter criteria.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -26,24 +25,25 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     * List of outbound connections that match the filter criteria.
      * </p>
      */
     private java.util.List<OutboundConnection> connections;
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Send the request again using the returned token to retrieve the next
+     * page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     * List of outbound connections that match the filter criteria.
      * </p>
      * 
-     * @return A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     * @return List of outbound connections that match the filter criteria.
      */
 
     public java.util.List<OutboundConnection> getConnections() {
@@ -52,11 +52,11 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     * List of outbound connections that match the filter criteria.
      * </p>
      * 
      * @param connections
-     *        A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     *        List of outbound connections that match the filter criteria.
      */
 
     public void setConnections(java.util.Collection<OutboundConnection> connections) {
@@ -70,7 +70,7 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     * List of outbound connections that match the filter criteria.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param connections
-     *        A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     *        List of outbound connections that match the filter criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     * List of outbound connections that match the filter criteria.
      * </p>
      * 
      * @param connections
-     *        A list of <code> <a>OutboundConnection</a> </code> matching the specified filter criteria.
+     *        List of outbound connections that match the filter criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,13 +110,15 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Send the request again using the returned token to retrieve the next
+     * page.
      * </p>
      * 
      * @param nextToken
-     *        If more results are available and NextToken is present, make the next request to the same API with the
-     *        received NextToken to paginate the remaining results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Send the request again using the
+     *        returned token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,12 +127,14 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Send the request again using the returned token to retrieve the next
+     * page.
      * </p>
      * 
-     * @return If more results are available and NextToken is present, make the next request to the same API with the
-     *         received NextToken to paginate the remaining results.
+     * @return When <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Send the request again using the
+     *         returned token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -139,13 +143,15 @@ public class DescribeOutboundConnectionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Send the request again using the returned token to retrieve the next
+     * page.
      * </p>
      * 
      * @param nextToken
-     *        If more results are available and NextToken is present, make the next request to the same API with the
-     *        received NextToken to paginate the remaining results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Send the request again using the
+     *        returned token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

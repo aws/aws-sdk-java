@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class NetworkInterface implements Serializable, Cloneable {
      * </p>
      */
     private String availabilityZone;
+    /**
+     * <p>
+     * The IPv6 address of the network interface within the subnet.
+     * </p>
+     */
+    private String ipv6Address;
 
     /**
      * <p>
@@ -212,6 +218,46 @@ public class NetworkInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IPv6 address of the network interface within the subnet.
+     * </p>
+     * 
+     * @param ipv6Address
+     *        The IPv6 address of the network interface within the subnet.
+     */
+
+    public void setIpv6Address(String ipv6Address) {
+        this.ipv6Address = ipv6Address;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address of the network interface within the subnet.
+     * </p>
+     * 
+     * @return The IPv6 address of the network interface within the subnet.
+     */
+
+    public String getIpv6Address() {
+        return this.ipv6Address;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address of the network interface within the subnet.
+     * </p>
+     * 
+     * @param ipv6Address
+     *        The IPv6 address of the network interface within the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withIpv6Address(String ipv6Address) {
+        setIpv6Address(ipv6Address);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -230,7 +276,9 @@ public class NetworkInterface implements Serializable, Cloneable {
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getIpv6Address() != null)
+            sb.append("Ipv6Address: ").append(getIpv6Address());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +309,10 @@ public class NetworkInterface implements Serializable, Cloneable {
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getIpv6Address() == null ^ this.getIpv6Address() == null)
+            return false;
+        if (other.getIpv6Address() != null && other.getIpv6Address().equals(this.getIpv6Address()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +325,7 @@ public class NetworkInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Address() == null) ? 0 : getIpv6Address().hashCode());
         return hashCode;
     }
 

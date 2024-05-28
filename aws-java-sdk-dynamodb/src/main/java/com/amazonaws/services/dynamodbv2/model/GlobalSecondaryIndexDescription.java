@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,13 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * </p>
      */
     private String indexArn;
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified global secondary index. If you use this parameter,
+     * you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     */
+    private OnDemandThroughput onDemandThroughput;
 
     /**
      * <p>
@@ -1161,6 +1168,52 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The maximum number of read and write units for the specified global secondary index. If you use this parameter,
+     * you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @param onDemandThroughput
+     *        The maximum number of read and write units for the specified global secondary index. If you use this
+     *        parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     */
+
+    public void setOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        this.onDemandThroughput = onDemandThroughput;
+    }
+
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified global secondary index. If you use this parameter,
+     * you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @return The maximum number of read and write units for the specified global secondary index. If you use this
+     *         parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     */
+
+    public OnDemandThroughput getOnDemandThroughput() {
+        return this.onDemandThroughput;
+    }
+
+    /**
+     * <p>
+     * The maximum number of read and write units for the specified global secondary index. If you use this parameter,
+     * you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @param onDemandThroughput
+     *        The maximum number of read and write units for the specified global secondary index. If you use this
+     *        parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GlobalSecondaryIndexDescription withOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        setOnDemandThroughput(onDemandThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1189,7 +1242,9 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
         if (getItemCount() != null)
             sb.append("ItemCount: ").append(getItemCount()).append(",");
         if (getIndexArn() != null)
-            sb.append("IndexArn: ").append(getIndexArn());
+            sb.append("IndexArn: ").append(getIndexArn()).append(",");
+        if (getOnDemandThroughput() != null)
+            sb.append("OnDemandThroughput: ").append(getOnDemandThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1240,6 +1295,10 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
             return false;
         if (other.getIndexArn() != null && other.getIndexArn().equals(this.getIndexArn()) == false)
             return false;
+        if (other.getOnDemandThroughput() == null ^ this.getOnDemandThroughput() == null)
+            return false;
+        if (other.getOnDemandThroughput() != null && other.getOnDemandThroughput().equals(this.getOnDemandThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1257,6 +1316,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getIndexSizeBytes() == null) ? 0 : getIndexSizeBytes().hashCode());
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
         hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughput() == null) ? 0 : getOnDemandThroughput().hashCode());
         return hashCode;
     }
 

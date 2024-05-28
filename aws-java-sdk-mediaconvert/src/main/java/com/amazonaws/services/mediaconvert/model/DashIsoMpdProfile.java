@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
- * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
- * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
- * On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+ * Specify whether your DASH profile is on-demand or main. When you choose Main profile, the service signals
+ * urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand, the service signals
+ * urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output
+ * group setting Segment control to Single file.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DashIsoMpdProfile {

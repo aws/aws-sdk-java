@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,16 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CampaignMarshaller {
 
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> CONNECTINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectInstanceId").build();
     private static final MarshallingInfo<StructuredPojo> DIALERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialerConfig").build();
-    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("id").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> OUTBOUNDCALLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outboundCallConfig").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,11 +60,11 @@ public class CampaignMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(campaign.getId(), ID_BINDING);
             protocolMarshaller.marshall(campaign.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(campaign.getName(), NAME_BINDING);
             protocolMarshaller.marshall(campaign.getConnectInstanceId(), CONNECTINSTANCEID_BINDING);
             protocolMarshaller.marshall(campaign.getDialerConfig(), DIALERCONFIG_BINDING);
-            protocolMarshaller.marshall(campaign.getId(), ID_BINDING);
-            protocolMarshaller.marshall(campaign.getName(), NAME_BINDING);
             protocolMarshaller.marshall(campaign.getOutboundCallConfig(), OUTBOUNDCALLCONFIG_BINDING);
             protocolMarshaller.marshall(campaign.getTags(), TAGS_BINDING);
         } catch (Exception e) {

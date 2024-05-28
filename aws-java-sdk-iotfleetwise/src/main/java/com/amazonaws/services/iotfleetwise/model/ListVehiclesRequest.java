@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,22 @@ public class ListVehiclesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String modelManifestArn;
+    /**
+     * <p>
+     * The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be
+     * <code>Vehicle.Body.Engine.Type</code>.
+     * </p>
+     */
+    private java.util.List<String> attributeNames;
+    /**
+     * <p>
+     * Static information about a vehicle attribute value in string format. For example:
+     * </p>
+     * <p>
+     * <code>"1.3 L R2"</code>
+     * </p>
+     */
+    private java.util.List<String> attributeValues;
     /**
      * <p>
      * A pagination token for the next set of results.
@@ -94,6 +110,174 @@ public class ListVehiclesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public ListVehiclesRequest withModelManifestArn(String modelManifestArn) {
         setModelManifestArn(modelManifestArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be
+     * <code>Vehicle.Body.Engine.Type</code>.
+     * </p>
+     * 
+     * @return The fully qualified names of the attributes. For example, the fully qualified name of an attribute might
+     *         be <code>Vehicle.Body.Engine.Type</code>.
+     */
+
+    public java.util.List<String> getAttributeNames() {
+        return attributeNames;
+    }
+
+    /**
+     * <p>
+     * The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be
+     * <code>Vehicle.Body.Engine.Type</code>.
+     * </p>
+     * 
+     * @param attributeNames
+     *        The fully qualified names of the attributes. For example, the fully qualified name of an attribute might
+     *        be <code>Vehicle.Body.Engine.Type</code>.
+     */
+
+    public void setAttributeNames(java.util.Collection<String> attributeNames) {
+        if (attributeNames == null) {
+            this.attributeNames = null;
+            return;
+        }
+
+        this.attributeNames = new java.util.ArrayList<String>(attributeNames);
+    }
+
+    /**
+     * <p>
+     * The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be
+     * <code>Vehicle.Body.Engine.Type</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param attributeNames
+     *        The fully qualified names of the attributes. For example, the fully qualified name of an attribute might
+     *        be <code>Vehicle.Body.Engine.Type</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVehiclesRequest withAttributeNames(String... attributeNames) {
+        if (this.attributeNames == null) {
+            setAttributeNames(new java.util.ArrayList<String>(attributeNames.length));
+        }
+        for (String ele : attributeNames) {
+            this.attributeNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fully qualified names of the attributes. For example, the fully qualified name of an attribute might be
+     * <code>Vehicle.Body.Engine.Type</code>.
+     * </p>
+     * 
+     * @param attributeNames
+     *        The fully qualified names of the attributes. For example, the fully qualified name of an attribute might
+     *        be <code>Vehicle.Body.Engine.Type</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVehiclesRequest withAttributeNames(java.util.Collection<String> attributeNames) {
+        setAttributeNames(attributeNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Static information about a vehicle attribute value in string format. For example:
+     * </p>
+     * <p>
+     * <code>"1.3 L R2"</code>
+     * </p>
+     * 
+     * @return Static information about a vehicle attribute value in string format. For example:</p>
+     *         <p>
+     *         <code>"1.3 L R2"</code>
+     */
+
+    public java.util.List<String> getAttributeValues() {
+        return attributeValues;
+    }
+
+    /**
+     * <p>
+     * Static information about a vehicle attribute value in string format. For example:
+     * </p>
+     * <p>
+     * <code>"1.3 L R2"</code>
+     * </p>
+     * 
+     * @param attributeValues
+     *        Static information about a vehicle attribute value in string format. For example:</p>
+     *        <p>
+     *        <code>"1.3 L R2"</code>
+     */
+
+    public void setAttributeValues(java.util.Collection<String> attributeValues) {
+        if (attributeValues == null) {
+            this.attributeValues = null;
+            return;
+        }
+
+        this.attributeValues = new java.util.ArrayList<String>(attributeValues);
+    }
+
+    /**
+     * <p>
+     * Static information about a vehicle attribute value in string format. For example:
+     * </p>
+     * <p>
+     * <code>"1.3 L R2"</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributeValues(java.util.Collection)} or {@link #withAttributeValues(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param attributeValues
+     *        Static information about a vehicle attribute value in string format. For example:</p>
+     *        <p>
+     *        <code>"1.3 L R2"</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVehiclesRequest withAttributeValues(String... attributeValues) {
+        if (this.attributeValues == null) {
+            setAttributeValues(new java.util.ArrayList<String>(attributeValues.length));
+        }
+        for (String ele : attributeValues) {
+            this.attributeValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Static information about a vehicle attribute value in string format. For example:
+     * </p>
+     * <p>
+     * <code>"1.3 L R2"</code>
+     * </p>
+     * 
+     * @param attributeValues
+     *        Static information about a vehicle attribute value in string format. For example:</p>
+     *        <p>
+     *        <code>"1.3 L R2"</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListVehiclesRequest withAttributeValues(java.util.Collection<String> attributeValues) {
+        setAttributeValues(attributeValues);
         return this;
     }
 
@@ -224,6 +408,10 @@ public class ListVehiclesRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getModelManifestArn() != null)
             sb.append("ModelManifestArn: ").append(getModelManifestArn()).append(",");
+        if (getAttributeNames() != null)
+            sb.append("AttributeNames: ").append(getAttributeNames()).append(",");
+        if (getAttributeValues() != null)
+            sb.append("AttributeValues: ").append(getAttributeValues()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -246,6 +434,14 @@ public class ListVehiclesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getModelManifestArn() != null && other.getModelManifestArn().equals(this.getModelManifestArn()) == false)
             return false;
+        if (other.getAttributeNames() == null ^ this.getAttributeNames() == null)
+            return false;
+        if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false)
+            return false;
+        if (other.getAttributeValues() == null ^ this.getAttributeValues() == null)
+            return false;
+        if (other.getAttributeValues() != null && other.getAttributeValues().equals(this.getAttributeValues()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -263,6 +459,8 @@ public class ListVehiclesRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelManifestArn() == null) ? 0 : getModelManifestArn().hashCode());
+        hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValues() == null) ? 0 : getAttributeValues().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,18 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
     private CacheHitResult cacheHitResult;
     /**
      * <p>
+     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * </p>
+     */
+    private String failureReason;
+    /**
+     * <p>
+     * Metadata to run the pipeline step.
+     * </p>
+     */
+    private PipelineExecutionStepMetadata metadata;
+    /**
+     * <p>
      * The current attempt of the execution step. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
      * Pipelines steps</a>.
@@ -80,16 +92,10 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
     private Integer attemptCount;
     /**
      * <p>
-     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
      * </p>
      */
-    private String failureReason;
-    /**
-     * <p>
-     * Metadata for the step execution.
-     * </p>
-     */
-    private PipelineExecutionStepMetadata metadata;
+    private SelectiveExecutionResult selectiveExecutionResult;
 
     /**
      * <p>
@@ -392,6 +398,86 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason why the step failed execution. This is only returned if the step failed its execution.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * </p>
+     * 
+     * @return The reason why the step failed execution. This is only returned if the step failed its execution.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason why the step failed execution. This is only returned if the step failed its execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStep withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata to run the pipeline step.
+     * </p>
+     * 
+     * @param metadata
+     *        Metadata to run the pipeline step.
+     */
+
+    public void setMetadata(PipelineExecutionStepMetadata metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
+     * <p>
+     * Metadata to run the pipeline step.
+     * </p>
+     * 
+     * @return Metadata to run the pipeline step.
+     */
+
+    public PipelineExecutionStepMetadata getMetadata() {
+        return this.metadata;
+    }
+
+    /**
+     * <p>
+     * Metadata to run the pipeline step.
+     * </p>
+     * 
+     * @param metadata
+     *        Metadata to run the pipeline step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStep withMetadata(PipelineExecutionStepMetadata metadata) {
+        setMetadata(metadata);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current attempt of the execution step. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
      * Pipelines steps</a>.
@@ -444,81 +530,41 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
      * </p>
      * 
-     * @param failureReason
-     *        The reason why the step failed execution. This is only returned if the step failed its execution.
+     * @param selectiveExecutionResult
+     *        The ARN from an execution of the current pipeline from which results are reused for this step.
      */
 
-    public void setFailureReason(String failureReason) {
-        this.failureReason = failureReason;
+    public void setSelectiveExecutionResult(SelectiveExecutionResult selectiveExecutionResult) {
+        this.selectiveExecutionResult = selectiveExecutionResult;
     }
 
     /**
      * <p>
-     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
      * </p>
      * 
-     * @return The reason why the step failed execution. This is only returned if the step failed its execution.
+     * @return The ARN from an execution of the current pipeline from which results are reused for this step.
      */
 
-    public String getFailureReason() {
-        return this.failureReason;
+    public SelectiveExecutionResult getSelectiveExecutionResult() {
+        return this.selectiveExecutionResult;
     }
 
     /**
      * <p>
-     * The reason why the step failed execution. This is only returned if the step failed its execution.
+     * The ARN from an execution of the current pipeline from which results are reused for this step.
      * </p>
      * 
-     * @param failureReason
-     *        The reason why the step failed execution. This is only returned if the step failed its execution.
+     * @param selectiveExecutionResult
+     *        The ARN from an execution of the current pipeline from which results are reused for this step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PipelineExecutionStep withFailureReason(String failureReason) {
-        setFailureReason(failureReason);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Metadata for the step execution.
-     * </p>
-     * 
-     * @param metadata
-     *        Metadata for the step execution.
-     */
-
-    public void setMetadata(PipelineExecutionStepMetadata metadata) {
-        this.metadata = metadata;
-    }
-
-    /**
-     * <p>
-     * Metadata for the step execution.
-     * </p>
-     * 
-     * @return Metadata for the step execution.
-     */
-
-    public PipelineExecutionStepMetadata getMetadata() {
-        return this.metadata;
-    }
-
-    /**
-     * <p>
-     * Metadata for the step execution.
-     * </p>
-     * 
-     * @param metadata
-     *        Metadata for the step execution.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PipelineExecutionStep withMetadata(PipelineExecutionStepMetadata metadata) {
-        setMetadata(metadata);
+    public PipelineExecutionStep withSelectiveExecutionResult(SelectiveExecutionResult selectiveExecutionResult) {
+        setSelectiveExecutionResult(selectiveExecutionResult);
         return this;
     }
 
@@ -548,12 +594,14 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
             sb.append("StepStatus: ").append(getStepStatus()).append(",");
         if (getCacheHitResult() != null)
             sb.append("CacheHitResult: ").append(getCacheHitResult()).append(",");
-        if (getAttemptCount() != null)
-            sb.append("AttemptCount: ").append(getAttemptCount()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append(getMetadata());
+            sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getAttemptCount() != null)
+            sb.append("AttemptCount: ").append(getAttemptCount()).append(",");
+        if (getSelectiveExecutionResult() != null)
+            sb.append("SelectiveExecutionResult: ").append(getSelectiveExecutionResult());
         sb.append("}");
         return sb.toString();
     }
@@ -596,10 +644,6 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
             return false;
         if (other.getCacheHitResult() != null && other.getCacheHitResult().equals(this.getCacheHitResult()) == false)
             return false;
-        if (other.getAttemptCount() == null ^ this.getAttemptCount() == null)
-            return false;
-        if (other.getAttemptCount() != null && other.getAttemptCount().equals(this.getAttemptCount()) == false)
-            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -607,6 +651,14 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
         if (other.getMetadata() == null ^ this.getMetadata() == null)
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
+        if (other.getAttemptCount() == null ^ this.getAttemptCount() == null)
+            return false;
+        if (other.getAttemptCount() != null && other.getAttemptCount().equals(this.getAttemptCount()) == false)
+            return false;
+        if (other.getSelectiveExecutionResult() == null ^ this.getSelectiveExecutionResult() == null)
+            return false;
+        if (other.getSelectiveExecutionResult() != null && other.getSelectiveExecutionResult().equals(this.getSelectiveExecutionResult()) == false)
             return false;
         return true;
     }
@@ -623,9 +675,10 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStepStatus() == null) ? 0 : getStepStatus().hashCode());
         hashCode = prime * hashCode + ((getCacheHitResult() == null) ? 0 : getCacheHitResult().hashCode());
-        hashCode = prime * hashCode + ((getAttemptCount() == null) ? 0 : getAttemptCount().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getAttemptCount() == null) ? 0 : getAttemptCount().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveExecutionResult() == null) ? 0 : getSelectiveExecutionResult().hashCode());
         return hashCode;
     }
 

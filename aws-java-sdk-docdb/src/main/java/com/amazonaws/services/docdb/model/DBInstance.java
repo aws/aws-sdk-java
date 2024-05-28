@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -196,6 +196,26 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> enabledCloudwatchLogsExports;
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     */
+    private CertificateDetails certificateDetails;
+    /**
+     * <p>
+     * Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean performanceInsightsEnabled;
+    /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     */
+    private String performanceInsightsKMSKeyId;
 
     /**
      * <p>
@@ -1479,6 +1499,152 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @param certificateDetails
+     *        The details of the DB instance's server certificate.
+     */
+
+    public void setCertificateDetails(CertificateDetails certificateDetails) {
+        this.certificateDetails = certificateDetails;
+    }
+
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @return The details of the DB instance's server certificate.
+     */
+
+    public CertificateDetails getCertificateDetails() {
+        return this.certificateDetails;
+    }
+
+    /**
+     * <p>
+     * The details of the DB instance's server certificate.
+     * </p>
+     * 
+     * @param certificateDetails
+     *        The details of the DB instance's server certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withCertificateDetails(CertificateDetails certificateDetails) {
+        setCertificateDetails(certificateDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param performanceInsightsEnabled
+     *        Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     *        <code>false</code>.
+     */
+
+    public void setPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
+        this.performanceInsightsEnabled = performanceInsightsEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     *         <code>false</code>.
+     */
+
+    public Boolean getPerformanceInsightsEnabled() {
+        return this.performanceInsightsEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param performanceInsightsEnabled
+     *        Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     *        <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
+        setPerformanceInsightsEnabled(performanceInsightsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise
+     *         <code>false</code>.
+     */
+
+    public Boolean isPerformanceInsightsEnabled() {
+        return this.performanceInsightsEnabled;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
+     * @param performanceInsightsKMSKeyId
+     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     */
+
+    public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
+        this.performanceInsightsKMSKeyId = performanceInsightsKMSKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
+     * @return The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     */
+
+    public String getPerformanceInsightsKMSKeyId() {
+        return this.performanceInsightsKMSKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
+     * @param performanceInsightsKMSKeyId
+     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
+        setPerformanceInsightsKMSKeyId(performanceInsightsKMSKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1543,7 +1709,13 @@ public class DBInstance implements Serializable, Cloneable {
         if (getDBInstanceArn() != null)
             sb.append("DBInstanceArn: ").append(getDBInstanceArn()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getCertificateDetails() != null)
+            sb.append("CertificateDetails: ").append(getCertificateDetails()).append(",");
+        if (getPerformanceInsightsEnabled() != null)
+            sb.append("PerformanceInsightsEnabled: ").append(getPerformanceInsightsEnabled()).append(",");
+        if (getPerformanceInsightsKMSKeyId() != null)
+            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -1666,6 +1838,18 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
             return false;
+        if (other.getCertificateDetails() == null ^ this.getCertificateDetails() == null)
+            return false;
+        if (other.getCertificateDetails() != null && other.getCertificateDetails().equals(this.getCertificateDetails()) == false)
+            return false;
+        if (other.getPerformanceInsightsEnabled() == null ^ this.getPerformanceInsightsEnabled() == null)
+            return false;
+        if (other.getPerformanceInsightsEnabled() != null && other.getPerformanceInsightsEnabled().equals(this.getPerformanceInsightsEnabled()) == false)
+            return false;
+        if (other.getPerformanceInsightsKMSKeyId() == null ^ this.getPerformanceInsightsKMSKeyId() == null)
+            return false;
+        if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -1701,6 +1885,9 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getCertificateDetails() == null) ? 0 : getCertificateDetails().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceInsightsEnabled() == null) ? 0 : getPerformanceInsightsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         return hashCode;
     }
 

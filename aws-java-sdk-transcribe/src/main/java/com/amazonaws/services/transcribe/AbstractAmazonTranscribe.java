@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public DeleteMedicalScribeJobResult deleteMedicalScribeJob(DeleteMedicalScribeJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMedicalTranscriptionJobResult deleteMedicalTranscriptionJob(DeleteMedicalTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public GetCallAnalyticsJobResult getCallAnalyticsJob(GetCallAnalyticsJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMedicalScribeJobResult getMedicalScribeJob(GetMedicalScribeJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,6 +158,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public ListMedicalScribeJobsResult listMedicalScribeJobs(ListMedicalScribeJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMedicalTranscriptionJobsResult listMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +194,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public StartCallAnalyticsJobResult startCallAnalyticsJob(StartCallAnalyticsJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMedicalScribeJobResult startMedicalScribeJob(StartMedicalScribeJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

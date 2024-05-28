@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,13 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
     private String dataIntegrationAssociationArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN)of the DataIntegration.
+     * The Amazon Resource Name (ARN) of the DataIntegration.
      * </p>
      */
     private String dataIntegrationArn;
     /**
      * <p>
-     * The identifier for teh client that is associated with the DataIntegration association.
+     * The identifier for the client that is associated with the DataIntegration association.
      * </p>
      */
     private String clientId;
@@ -89,11 +89,11 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN)of the DataIntegration.
+     * The Amazon Resource Name (ARN) of the DataIntegration.
      * </p>
      * 
      * @param dataIntegrationArn
-     *        The Amazon Resource Name (ARN)of the DataIntegration.
+     *        The Amazon Resource Name (ARN) of the DataIntegration.
      */
 
     public void setDataIntegrationArn(String dataIntegrationArn) {
@@ -102,10 +102,10 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN)of the DataIntegration.
+     * The Amazon Resource Name (ARN) of the DataIntegration.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN)of the DataIntegration.
+     * @return The Amazon Resource Name (ARN) of the DataIntegration.
      */
 
     public String getDataIntegrationArn() {
@@ -114,11 +114,11 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN)of the DataIntegration.
+     * The Amazon Resource Name (ARN) of the DataIntegration.
      * </p>
      * 
      * @param dataIntegrationArn
-     *        The Amazon Resource Name (ARN)of the DataIntegration.
+     *        The Amazon Resource Name (ARN) of the DataIntegration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier for teh client that is associated with the DataIntegration association.
+     * The identifier for the client that is associated with the DataIntegration association.
      * </p>
      * 
      * @param clientId
-     *        The identifier for teh client that is associated with the DataIntegration association.
+     *        The identifier for the client that is associated with the DataIntegration association.
      */
 
     public void setClientId(String clientId) {
@@ -142,10 +142,10 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier for teh client that is associated with the DataIntegration association.
+     * The identifier for the client that is associated with the DataIntegration association.
      * </p>
      * 
-     * @return The identifier for teh client that is associated with the DataIntegration association.
+     * @return The identifier for the client that is associated with the DataIntegration association.
      */
 
     public String getClientId() {
@@ -154,11 +154,11 @@ public class DataIntegrationAssociationSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier for teh client that is associated with the DataIntegration association.
+     * The identifier for the client that is associated with the DataIntegration association.
      * </p>
      * 
      * @param clientId
-     *        The identifier for teh client that is associated with the DataIntegration association.
+     *        The identifier for the client that is associated with the DataIntegration association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

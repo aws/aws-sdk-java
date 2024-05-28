@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,12 +91,19 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
     /**
      * <p>
-     * Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * Specifies that you want to retrieve details of only those resource shares that use the managed permission with
+     * this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a>.
      * </p>
      */
     private String permissionArn;
+    /**
+     * <p>
+     * Specifies that you want to retrieve details for only those resource shares that use the specified version of the
+     * managed permission.
+     * </p>
+     */
+    private Integer permissionVersion;
 
     /**
      * <p>
@@ -637,15 +644,15 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * Specifies that you want to retrieve details of only those resource shares that use the managed permission with
+     * this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a>.
      * </p>
      * 
      * @param permissionArn
-     *        Specifies that you want to retrieve details of only those resource shares that use the RAM permission with
-     *        this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     *        Name (ARN)</a>.
+     *        Specifies that you want to retrieve details of only those resource shares that use the managed permission
+     *        with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resource Name (ARN)</a>.
      */
 
     public void setPermissionArn(String permissionArn) {
@@ -654,14 +661,14 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * Specifies that you want to retrieve details of only those resource shares that use the managed permission with
+     * this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a>.
      * </p>
      * 
-     * @return Specifies that you want to retrieve details of only those resource shares that use the RAM permission
+     * @return Specifies that you want to retrieve details of only those resource shares that use the managed permission
      *         with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a>.
+     *         Resource Name (ARN)</a>.
      */
 
     public String getPermissionArn() {
@@ -670,20 +677,66 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * Specifies that you want to retrieve details of only those resource shares that use the managed permission with
+     * this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a>.
      * </p>
      * 
      * @param permissionArn
-     *        Specifies that you want to retrieve details of only those resource shares that use the RAM permission with
-     *        this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     *        Name (ARN)</a>.
+     *        Specifies that you want to retrieve details of only those resource shares that use the managed permission
+     *        with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     *        Resource Name (ARN)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetResourceSharesRequest withPermissionArn(String permissionArn) {
         setPermissionArn(permissionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to retrieve details for only those resource shares that use the specified version of the
+     * managed permission.
+     * </p>
+     * 
+     * @param permissionVersion
+     *        Specifies that you want to retrieve details for only those resource shares that use the specified version
+     *        of the managed permission.
+     */
+
+    public void setPermissionVersion(Integer permissionVersion) {
+        this.permissionVersion = permissionVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to retrieve details for only those resource shares that use the specified version of the
+     * managed permission.
+     * </p>
+     * 
+     * @return Specifies that you want to retrieve details for only those resource shares that use the specified version
+     *         of the managed permission.
+     */
+
+    public Integer getPermissionVersion() {
+        return this.permissionVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to retrieve details for only those resource shares that use the specified version of the
+     * managed permission.
+     * </p>
+     * 
+     * @param permissionVersion
+     *        Specifies that you want to retrieve details for only those resource shares that use the specified version
+     *        of the managed permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourceSharesRequest withPermissionVersion(Integer permissionVersion) {
+        setPermissionVersion(permissionVersion);
         return this;
     }
 
@@ -714,7 +767,9 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getPermissionArn() != null)
-            sb.append("PermissionArn: ").append(getPermissionArn());
+            sb.append("PermissionArn: ").append(getPermissionArn()).append(",");
+        if (getPermissionVersion() != null)
+            sb.append("PermissionVersion: ").append(getPermissionVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -761,6 +816,10 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getPermissionArn() != null && other.getPermissionArn().equals(this.getPermissionArn()) == false)
             return false;
+        if (other.getPermissionVersion() == null ^ this.getPermissionVersion() == null)
+            return false;
+        if (other.getPermissionVersion() != null && other.getPermissionVersion().equals(this.getPermissionVersion()) == false)
+            return false;
         return true;
     }
 
@@ -777,6 +836,7 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getPermissionArn() == null) ? 0 : getPermissionArn().hashCode());
+        hashCode = prime * hashCode + ((getPermissionVersion() == null) ? 0 : getPermissionVersion().hashCode());
         return hashCode;
     }
 

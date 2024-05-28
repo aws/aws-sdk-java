@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ import com.amazonaws.services.savingsplans.model.*;
  * </p>
  * <p>
  * <p>
- * Savings Plans are a pricing model that offer significant savings on AWS usage (for example, on Amazon EC2 instances).
- * You commit to a consistent amount of usage, in USD per hour, for a term of 1 or 3 years, and receive a lower price
- * for that usage. For more information, see the <a
- * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS Savings Plans User Guide</a>.
+ * Savings Plans are a pricing model that offer significant savings on Amazon Web Services usage (for example, on Amazon
+ * EC2 instances). You commit to a consistent amount of usage per hour, in the specified currency, for a term of one or
+ * three years, and receive a lower price for that usage. For more information, see the <a
+ * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon Web Services Savings Plans User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -88,7 +88,7 @@ public interface AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans rates.
+     * Describes the rates for the specified Savings Plan.
      * </p>
      * 
      * @param describeSavingsPlanRatesRequest
@@ -122,7 +122,7 @@ public interface AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans offering rates.
+     * Describes the offering rates for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingRatesRequest
@@ -139,7 +139,7 @@ public interface AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans offerings.
+     * Describes the offerings for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingsRequest
@@ -172,6 +172,27 @@ public interface AWSSavingsPlans {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns the specified Savings Plan.
+     * </p>
+     * 
+     * @param returnSavingsPlanRequest
+     * @return Result of the ReturnSavingsPlan operation returned by the service.
+     * @throws ValidationException
+     *         One of the input parameters is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         An unexpected error occurred.
+     * @throws ServiceQuotaExceededException
+     *         A service quota has been exceeded.
+     * @sample AWSSavingsPlans.ReturnSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ReturnSavingsPlanResult returnSavingsPlan(ReturnSavingsPlanRequest returnSavingsPlanRequest);
 
     /**
      * <p>

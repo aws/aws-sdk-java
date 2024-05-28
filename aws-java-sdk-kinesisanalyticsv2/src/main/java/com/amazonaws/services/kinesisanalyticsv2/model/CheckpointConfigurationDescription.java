@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
+ * Describes checkpointing parameters for a Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a
@@ -31,7 +31,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     * Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.
      * </p>
      * <note>
      * <p>
@@ -60,7 +60,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
     private String configurationType;
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -101,7 +101,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     * Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.
      * </p>
      * <note>
      * <p>
@@ -128,8 +128,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
-     *        <note>
+     *        Describes whether the application uses the default checkpointing behavior in Managed Service for Apache
+     *        Flink. </p> <note>
      *        <p>
      *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
      *        are set to other values using APIs or application code:
@@ -160,7 +160,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     * Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.
      * </p>
      * <note>
      * <p>
@@ -186,8 +186,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </ul>
      * </note>
      * 
-     * @return Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
-     *         <note>
+     * @return Describes whether the application uses the default checkpointing behavior in Managed Service for Apache
+     *         Flink. </p> <note>
      *         <p>
      *         If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
      *         are set to other values using APIs or application code:
@@ -218,7 +218,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     * Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.
      * </p>
      * <note>
      * <p>
@@ -245,8 +245,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
-     *        <note>
+     *        Describes whether the application uses the default checkpointing behavior in Managed Service for Apache
+     *        Flink. </p> <note>
      *        <p>
      *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
      *        are set to other values using APIs or application code:
@@ -279,7 +279,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics.
+     * Describes whether the application uses the default checkpointing behavior in Managed Service for Apache Flink.
      * </p>
      * <note>
      * <p>
@@ -306,8 +306,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses the default checkpointing behavior in Kinesis Data Analytics. </p>
-     *        <note>
+     *        Describes whether the application uses the default checkpointing behavior in Managed Service for Apache
+     *        Flink. </p> <note>
      *        <p>
      *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
      *        are set to other values using APIs or application code:
@@ -340,7 +340,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -351,8 +351,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *        <note>
+     *        Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -366,7 +365,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -376,8 +375,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *         <note>
+     * @return Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *         use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -391,7 +389,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -402,8 +400,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *        <note>
+     *        Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -419,7 +416,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -429,8 +426,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *         <note>
+     * @return Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *         use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another

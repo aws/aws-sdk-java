@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Describes which data sources are enabled for the detector.
      * </p>
      */
+    @Deprecated
     private DataSourceConfigurationsResult dataSources;
     /**
      * <p>
@@ -65,6 +66,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Describes the features that have been enabled for the detector.
+     * </p>
+     */
+    private java.util.List<DetectorFeatureConfigurationResult> features;
 
     /**
      * <p>
@@ -312,7 +319,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @param dataSources
      *        Describes which data sources are enabled for the detector.
      */
-
+    @Deprecated
     public void setDataSources(DataSourceConfigurationsResult dataSources) {
         this.dataSources = dataSources;
     }
@@ -324,7 +331,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
      * 
      * @return Describes which data sources are enabled for the detector.
      */
-
+    @Deprecated
     public DataSourceConfigurationsResult getDataSources() {
         return this.dataSources;
     }
@@ -338,7 +345,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        Describes which data sources are enabled for the detector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public GetDetectorResult withDataSources(DataSourceConfigurationsResult dataSources) {
         setDataSources(dataSources);
         return this;
@@ -413,6 +420,76 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Describes the features that have been enabled for the detector.
+     * </p>
+     * 
+     * @return Describes the features that have been enabled for the detector.
+     */
+
+    public java.util.List<DetectorFeatureConfigurationResult> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * Describes the features that have been enabled for the detector.
+     * </p>
+     * 
+     * @param features
+     *        Describes the features that have been enabled for the detector.
+     */
+
+    public void setFeatures(java.util.Collection<DetectorFeatureConfigurationResult> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<DetectorFeatureConfigurationResult>(features);
+    }
+
+    /**
+     * <p>
+     * Describes the features that have been enabled for the detector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        Describes the features that have been enabled for the detector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDetectorResult withFeatures(DetectorFeatureConfigurationResult... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<DetectorFeatureConfigurationResult>(features.length));
+        }
+        for (DetectorFeatureConfigurationResult ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the features that have been enabled for the detector.
+     * </p>
+     * 
+     * @param features
+     *        Describes the features that have been enabled for the detector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDetectorResult withFeatures(java.util.Collection<DetectorFeatureConfigurationResult> features) {
+        setFeatures(features);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,7 +514,9 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getDataSources() != null)
             sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +559,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -495,6 +578,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
         return hashCode;
     }
 

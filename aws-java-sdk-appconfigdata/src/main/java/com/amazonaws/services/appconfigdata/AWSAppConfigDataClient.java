@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.appconfigdata.AWSAppConfigDataClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appconfigdata.model.*;
+
 import com.amazonaws.services.appconfigdata.model.transform.*;
 
 /**
@@ -79,6 +80,13 @@ import com.amazonaws.services.appconfigdata.model.transform.*;
  * In response, AppConfig provides an <code>InitialConfigurationToken</code> to be given to the session's client and
  * used the first time it calls <code>GetLatestConfiguration</code> for that session.
  * </p>
+ * <important>
+ * <p>
+ * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i> use
+ * the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
+ * subsequent call to <code>GetLatestConfiguration</code>.
+ * </p>
+ * </important>
  * <p>
  * When calling <code>GetLatestConfiguration</code>, your client code sends the most recent
  * <code>ConfigurationToken</code> value it has and receives in response:
@@ -104,10 +112,17 @@ import com.amazonaws.services.appconfigdata.model.transform.*;
  * </p>
  * </li>
  * </ul>
+ * <important>
+ * <p>
+ * The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once. To
+ * support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call
+ * uses an expired token, the system returns <code>BadRequestException</code>.
+ * </p>
+ * </important>
  * <p>
  * For more information and to view example CLI commands that show how to retrieve a configuration using the AppConfig
  * Data <code>StartConfigurationSession</code> and <code>GetLatestConfiguration</code> API actions, see <a
- * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
+ * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the
  * configuration</a> in the <i>AppConfig User Guide</i>.
  * </p>
  */
@@ -199,8 +214,8 @@ public class AWSAppConfigDataClient extends AmazonWebServiceClient implements AW
      * Retrieves the latest deployed configuration. This API may return empty configuration data if the client already
      * has the latest version. For more information about this API action and to view example CLI commands that show how
      * to use it with the <a>StartConfigurationSession</a> API action, see <a
-     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
-     * configuration</a> in the <i>AppConfig User Guide</i>.
+     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
+     * the configuration</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -287,8 +302,8 @@ public class AWSAppConfigDataClient extends AmazonWebServiceClient implements AW
      * Starts a configuration session used to retrieve a deployed configuration. For more information about this API
      * action and to view example CLI commands that show how to use it with the <a>GetLatestConfiguration</a> API
      * action, see <a
-     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving the
-     * configuration</a> in the <i>AppConfig User Guide</i>.
+     * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
+     * the configuration</a> in the <i>AppConfig User Guide</i>.
      * </p>
      * 
      * @param startConfigurationSessionRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,13 +52,16 @@ public class ValidatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include
-     * managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs)
-     * that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.
+     * managed and inline policies for IAM roles, users, and groups.
      * </p>
      * <p>
      * Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies
      * for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy
      * or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
+     * </p>
+     * <p>
+     * Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     * organization, organizational unit (OU), or an account.
      * </p>
      */
     private String policyType;
@@ -259,24 +262,29 @@ public class ValidatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include
-     * managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs)
-     * that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.
+     * managed and inline policies for IAM roles, users, and groups.
      * </p>
      * <p>
      * Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies
      * for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy
      * or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     * organization, organizational unit (OU), or an account.
+     * </p>
      * 
      * @param policyType
      *        The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies
-     *        include managed and inline policies for IAM roles, users, and groups. They also include service-control
-     *        policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an
-     *        account.</p>
+     *        include managed and inline policies for IAM roles, users, and groups.</p>
      *        <p>
      *        Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
      *        policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as
      *        identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
+     *        </p>
+     *        <p>
+     *        Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     *        organization, organizational unit (OU), or an account.
      * @see PolicyType
      */
 
@@ -287,23 +295,28 @@ public class ValidatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include
-     * managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs)
-     * that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.
+     * managed and inline policies for IAM roles, users, and groups.
      * </p>
      * <p>
      * Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies
      * for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy
      * or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     * organization, organizational unit (OU), or an account.
+     * </p>
      * 
      * @return The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies
-     *         include managed and inline policies for IAM roles, users, and groups. They also include service-control
-     *         policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an
-     *         account.</p>
+     *         include managed and inline policies for IAM roles, users, and groups.</p>
      *         <p>
      *         Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
      *         policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as
      *         identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
+     *         </p>
+     *         <p>
+     *         Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     *         organization, organizational unit (OU), or an account.
      * @see PolicyType
      */
 
@@ -314,24 +327,29 @@ public class ValidatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include
-     * managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs)
-     * that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.
+     * managed and inline policies for IAM roles, users, and groups.
      * </p>
      * <p>
      * Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies
      * for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy
      * or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     * organization, organizational unit (OU), or an account.
+     * </p>
      * 
      * @param policyType
      *        The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies
-     *        include managed and inline policies for IAM roles, users, and groups. They also include service-control
-     *        policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an
-     *        account.</p>
+     *        include managed and inline policies for IAM roles, users, and groups.</p>
      *        <p>
      *        Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
      *        policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as
      *        identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
+     *        </p>
+     *        <p>
+     *        Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     *        organization, organizational unit (OU), or an account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -344,24 +362,29 @@ public class ValidatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include
-     * managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs)
-     * that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.
+     * managed and inline policies for IAM roles, users, and groups.
      * </p>
      * <p>
      * Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies
      * for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy
      * or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     * organization, organizational unit (OU), or an account.
+     * </p>
      * 
      * @param policyType
      *        The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies
-     *        include managed and inline policies for IAM roles, users, and groups. They also include service-control
-     *        policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an
-     *        account.</p>
+     *        include managed and inline policies for IAM roles, users, and groups.</p>
      *        <p>
      *        Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
      *        policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as
      *        identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy.
+     *        </p>
+     *        <p>
+     *        Service control policies (SCPs) are a type of organization policy attached to an Amazon Web Services
+     *        organization, organizational unit (OU), or an account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

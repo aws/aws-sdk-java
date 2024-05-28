@@ -1,0 +1,189 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.securitylake.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The AWS identity.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AwsIdentity" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AwsIdentity implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The external ID used to estalish trust relationship with the AWS identity.
+     * </p>
+     */
+    private String externalId;
+    /**
+     * <p>
+     * The AWS identity principal.
+     * </p>
+     */
+    private String principal;
+
+    /**
+     * <p>
+     * The external ID used to estalish trust relationship with the AWS identity.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID used to estalish trust relationship with the AWS identity.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID used to estalish trust relationship with the AWS identity.
+     * </p>
+     * 
+     * @return The external ID used to estalish trust relationship with the AWS identity.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID used to estalish trust relationship with the AWS identity.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID used to estalish trust relationship with the AWS identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsIdentity withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS identity principal.
+     * </p>
+     * 
+     * @param principal
+     *        The AWS identity principal.
+     */
+
+    public void setPrincipal(String principal) {
+        this.principal = principal;
+    }
+
+    /**
+     * <p>
+     * The AWS identity principal.
+     * </p>
+     * 
+     * @return The AWS identity principal.
+     */
+
+    public String getPrincipal() {
+        return this.principal;
+    }
+
+    /**
+     * <p>
+     * The AWS identity principal.
+     * </p>
+     * 
+     * @param principal
+     *        The AWS identity principal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsIdentity withPrincipal(String principal) {
+        setPrincipal(principal);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
+        if (getPrincipal() != null)
+            sb.append("Principal: ").append(getPrincipal());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AwsIdentity == false)
+            return false;
+        AwsIdentity other = (AwsIdentity) obj;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
+        if (other.getPrincipal() == null ^ this.getPrincipal() == null)
+            return false;
+        if (other.getPrincipal() != null && other.getPrincipal().equals(this.getPrincipal()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
+        hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public AwsIdentity clone() {
+        try {
+            return (AwsIdentity) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.securitylake.model.transform.AwsIdentityMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

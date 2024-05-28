@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,13 +130,6 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
     private DnsRuleGroupLimitExceededViolation dnsRuleGroupLimitExceededViolation;
     /**
      * <p>
-     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
-     * remediation actions.
-     * </p>
-     */
-    private PossibleRemediationActions possibleRemediationActions;
-    /**
-     * <p>
      * Contains details about the firewall subnet that violates the policy scope.
      * </p>
      */
@@ -172,6 +165,19 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private FirewallSubnetMissingVPCEndpointViolation firewallSubnetMissingVPCEndpointViolation;
+    /**
+     * <p>
+     * Violation detail for the entries in a network ACL resource.
+     * </p>
+     */
+    private InvalidNetworkAclEntriesViolation invalidNetworkAclEntriesViolation;
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     */
+    private PossibleRemediationActions possibleRemediationActions;
 
     /**
      * <p>
@@ -862,52 +868,6 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
-     * remediation actions.
-     * </p>
-     * 
-     * @param possibleRemediationActions
-     *        A list of possible remediation action lists. Each individual possible remediation action is a list of
-     *        individual remediation actions.
-     */
-
-    public void setPossibleRemediationActions(PossibleRemediationActions possibleRemediationActions) {
-        this.possibleRemediationActions = possibleRemediationActions;
-    }
-
-    /**
-     * <p>
-     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
-     * remediation actions.
-     * </p>
-     * 
-     * @return A list of possible remediation action lists. Each individual possible remediation action is a list of
-     *         individual remediation actions.
-     */
-
-    public PossibleRemediationActions getPossibleRemediationActions() {
-        return this.possibleRemediationActions;
-    }
-
-    /**
-     * <p>
-     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
-     * remediation actions.
-     * </p>
-     * 
-     * @param possibleRemediationActions
-     *        A list of possible remediation action lists. Each individual possible remediation action is a list of
-     *        individual remediation actions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResourceViolation withPossibleRemediationActions(PossibleRemediationActions possibleRemediationActions) {
-        setPossibleRemediationActions(possibleRemediationActions);
-        return this;
-    }
-
-    /**
-     * <p>
      * Contains details about the firewall subnet that violates the policy scope.
      * </p>
      * 
@@ -1156,6 +1116,92 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Violation detail for the entries in a network ACL resource.
+     * </p>
+     * 
+     * @param invalidNetworkAclEntriesViolation
+     *        Violation detail for the entries in a network ACL resource.
+     */
+
+    public void setInvalidNetworkAclEntriesViolation(InvalidNetworkAclEntriesViolation invalidNetworkAclEntriesViolation) {
+        this.invalidNetworkAclEntriesViolation = invalidNetworkAclEntriesViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for the entries in a network ACL resource.
+     * </p>
+     * 
+     * @return Violation detail for the entries in a network ACL resource.
+     */
+
+    public InvalidNetworkAclEntriesViolation getInvalidNetworkAclEntriesViolation() {
+        return this.invalidNetworkAclEntriesViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for the entries in a network ACL resource.
+     * </p>
+     * 
+     * @param invalidNetworkAclEntriesViolation
+     *        Violation detail for the entries in a network ACL resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withInvalidNetworkAclEntriesViolation(InvalidNetworkAclEntriesViolation invalidNetworkAclEntriesViolation) {
+        setInvalidNetworkAclEntriesViolation(invalidNetworkAclEntriesViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     * 
+     * @param possibleRemediationActions
+     *        A list of possible remediation action lists. Each individual possible remediation action is a list of
+     *        individual remediation actions.
+     */
+
+    public void setPossibleRemediationActions(PossibleRemediationActions possibleRemediationActions) {
+        this.possibleRemediationActions = possibleRemediationActions;
+    }
+
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     * 
+     * @return A list of possible remediation action lists. Each individual possible remediation action is a list of
+     *         individual remediation actions.
+     */
+
+    public PossibleRemediationActions getPossibleRemediationActions() {
+        return this.possibleRemediationActions;
+    }
+
+    /**
+     * <p>
+     * A list of possible remediation action lists. Each individual possible remediation action is a list of individual
+     * remediation actions.
+     * </p>
+     * 
+     * @param possibleRemediationActions
+     *        A list of possible remediation action lists. Each individual possible remediation action is a list of
+     *        individual remediation actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withPossibleRemediationActions(PossibleRemediationActions possibleRemediationActions) {
+        setPossibleRemediationActions(possibleRemediationActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1199,8 +1245,6 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
             sb.append("DnsDuplicateRuleGroupViolation: ").append(getDnsDuplicateRuleGroupViolation()).append(",");
         if (getDnsRuleGroupLimitExceededViolation() != null)
             sb.append("DnsRuleGroupLimitExceededViolation: ").append(getDnsRuleGroupLimitExceededViolation()).append(",");
-        if (getPossibleRemediationActions() != null)
-            sb.append("PossibleRemediationActions: ").append(getPossibleRemediationActions()).append(",");
         if (getFirewallSubnetIsOutOfScopeViolation() != null)
             sb.append("FirewallSubnetIsOutOfScopeViolation: ").append(getFirewallSubnetIsOutOfScopeViolation()).append(",");
         if (getRouteHasOutOfScopeEndpointViolation() != null)
@@ -1212,7 +1256,11 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         if (getThirdPartyFirewallMissingExpectedRouteTableViolation() != null)
             sb.append("ThirdPartyFirewallMissingExpectedRouteTableViolation: ").append(getThirdPartyFirewallMissingExpectedRouteTableViolation()).append(",");
         if (getFirewallSubnetMissingVPCEndpointViolation() != null)
-            sb.append("FirewallSubnetMissingVPCEndpointViolation: ").append(getFirewallSubnetMissingVPCEndpointViolation());
+            sb.append("FirewallSubnetMissingVPCEndpointViolation: ").append(getFirewallSubnetMissingVPCEndpointViolation()).append(",");
+        if (getInvalidNetworkAclEntriesViolation() != null)
+            sb.append("InvalidNetworkAclEntriesViolation: ").append(getInvalidNetworkAclEntriesViolation()).append(",");
+        if (getPossibleRemediationActions() != null)
+            sb.append("PossibleRemediationActions: ").append(getPossibleRemediationActions());
         sb.append("}");
         return sb.toString();
     }
@@ -1305,10 +1353,6 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         if (other.getDnsRuleGroupLimitExceededViolation() != null
                 && other.getDnsRuleGroupLimitExceededViolation().equals(this.getDnsRuleGroupLimitExceededViolation()) == false)
             return false;
-        if (other.getPossibleRemediationActions() == null ^ this.getPossibleRemediationActions() == null)
-            return false;
-        if (other.getPossibleRemediationActions() != null && other.getPossibleRemediationActions().equals(this.getPossibleRemediationActions()) == false)
-            return false;
         if (other.getFirewallSubnetIsOutOfScopeViolation() == null ^ this.getFirewallSubnetIsOutOfScopeViolation() == null)
             return false;
         if (other.getFirewallSubnetIsOutOfScopeViolation() != null
@@ -1338,6 +1382,15 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getFirewallSubnetMissingVPCEndpointViolation() != null
                 && other.getFirewallSubnetMissingVPCEndpointViolation().equals(this.getFirewallSubnetMissingVPCEndpointViolation()) == false)
+            return false;
+        if (other.getInvalidNetworkAclEntriesViolation() == null ^ this.getInvalidNetworkAclEntriesViolation() == null)
+            return false;
+        if (other.getInvalidNetworkAclEntriesViolation() != null
+                && other.getInvalidNetworkAclEntriesViolation().equals(this.getInvalidNetworkAclEntriesViolation()) == false)
+            return false;
+        if (other.getPossibleRemediationActions() == null ^ this.getPossibleRemediationActions() == null)
+            return false;
+        if (other.getPossibleRemediationActions() != null && other.getPossibleRemediationActions().equals(this.getPossibleRemediationActions()) == false)
             return false;
         return true;
     }
@@ -1371,7 +1424,6 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getDnsRuleGroupPriorityConflictViolation() == null) ? 0 : getDnsRuleGroupPriorityConflictViolation().hashCode());
         hashCode = prime * hashCode + ((getDnsDuplicateRuleGroupViolation() == null) ? 0 : getDnsDuplicateRuleGroupViolation().hashCode());
         hashCode = prime * hashCode + ((getDnsRuleGroupLimitExceededViolation() == null) ? 0 : getDnsRuleGroupLimitExceededViolation().hashCode());
-        hashCode = prime * hashCode + ((getPossibleRemediationActions() == null) ? 0 : getPossibleRemediationActions().hashCode());
         hashCode = prime * hashCode + ((getFirewallSubnetIsOutOfScopeViolation() == null) ? 0 : getFirewallSubnetIsOutOfScopeViolation().hashCode());
         hashCode = prime * hashCode + ((getRouteHasOutOfScopeEndpointViolation() == null) ? 0 : getRouteHasOutOfScopeEndpointViolation().hashCode());
         hashCode = prime * hashCode
@@ -1383,6 +1435,8 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getFirewallSubnetMissingVPCEndpointViolation() == null) ? 0 : getFirewallSubnetMissingVPCEndpointViolation().hashCode());
+        hashCode = prime * hashCode + ((getInvalidNetworkAclEntriesViolation() == null) ? 0 : getInvalidNetworkAclEntriesViolation().hashCode());
+        hashCode = prime * hashCode + ((getPossibleRemediationActions() == null) ? 0 : getPossibleRemediationActions().hashCode());
         return hashCode;
     }
 

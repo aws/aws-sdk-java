@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A custom SMS sender Lambda configuration type.
+ * The properties of a custom SMS sender Lambda trigger.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CustomSMSLambdaVersionConfigType"
@@ -30,28 +30,35 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
-     * Lambda function. The only supported value is <code>V1_0</code>.
+     * The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered
+     * versions add fields that support new features.
+     * </p>
+     * <p>
+     * You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * </p>
      */
     private String lambdaVersion;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
-     * users.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      * </p>
      */
     private String lambdaArn;
 
     /**
      * <p>
-     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
-     * Lambda function. The only supported value is <code>V1_0</code>.
+     * The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered
+     * versions add fields that support new features.
+     * </p>
+     * <p>
+     * You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * </p>
      * 
      * @param lambdaVersion
-     *        Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
-     *        SMS Lambda function. The only supported value is <code>V1_0</code>.
+     *        The user pool trigger version of the request that Amazon Cognito sends to your Lambda function.
+     *        Higher-numbered versions add fields that support new features.</p>
+     *        <p>
+     *        You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * @see CustomSMSSenderLambdaVersionType
      */
 
@@ -61,12 +68,17 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
-     * Lambda function. The only supported value is <code>V1_0</code>.
+     * The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered
+     * versions add fields that support new features.
+     * </p>
+     * <p>
+     * You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * </p>
      * 
-     * @return Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
-     *         SMS Lambda function. The only supported value is <code>V1_0</code>.
+     * @return The user pool trigger version of the request that Amazon Cognito sends to your Lambda function.
+     *         Higher-numbered versions add fields that support new features.</p>
+     *         <p>
+     *         You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * @see CustomSMSSenderLambdaVersionType
      */
 
@@ -76,13 +88,18 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
-     * Lambda function. The only supported value is <code>V1_0</code>.
+     * The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered
+     * versions add fields that support new features.
+     * </p>
+     * <p>
+     * You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * </p>
      * 
      * @param lambdaVersion
-     *        Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
-     *        SMS Lambda function. The only supported value is <code>V1_0</code>.
+     *        The user pool trigger version of the request that Amazon Cognito sends to your Lambda function.
+     *        Higher-numbered versions add fields that support new features.</p>
+     *        <p>
+     *        You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomSMSSenderLambdaVersionType
      */
@@ -94,13 +111,18 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS
-     * Lambda function. The only supported value is <code>V1_0</code>.
+     * The user pool trigger version of the request that Amazon Cognito sends to your Lambda function. Higher-numbered
+     * versions add fields that support new features.
+     * </p>
+     * <p>
+     * You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * </p>
      * 
      * @param lambdaVersion
-     *        Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom
-     *        SMS Lambda function. The only supported value is <code>V1_0</code>.
+     *        The user pool trigger version of the request that Amazon Cognito sends to your Lambda function.
+     *        Higher-numbered versions add fields that support new features.</p>
+     *        <p>
+     *        You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomSMSSenderLambdaVersionType
      */
@@ -112,13 +134,11 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
-     * users.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      * </p>
      * 
      * @param lambdaArn
-     *        The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS
-     *        notifications to users.
+     *        The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      */
 
     public void setLambdaArn(String lambdaArn) {
@@ -127,12 +147,10 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
-     * users.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS
-     *         notifications to users.
+     * @return The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      */
 
     public String getLambdaArn() {
@@ -141,13 +159,11 @@ public class CustomSMSLambdaVersionConfigType implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to
-     * users.
+     * The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      * </p>
      * 
      * @param lambdaArn
-     *        The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS
-     *        notifications to users.
+     *        The Amazon Resource Name (ARN) of the function that you want to assign to your Lambda trigger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

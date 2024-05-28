@@ -15,7 +15,7 @@ a:link, a:visited {
     color:#4A6782;
 }
 a:hover, a:focus {
-    text-decoration:none;
+    text-decoration:underline;
     color:#bb7a2a;
 }
 a:active {
@@ -26,7 +26,7 @@ a[name] {
     color:#353833;
 }
 a[name]:hover {
-    text-decoration:none;
+    text-decoration:underline;
     color:#353833;
 }
 pre {
@@ -126,11 +126,18 @@ Navigation bar styles
     padding:0;
     width:100%;
     clear:right;
-    height:2.8em;
+    height:12em;
     padding-top:10px;
     overflow:hidden;
     font-size:12px;
+    color: white;
+    text-decoration: underline;
 }
+.topNav a:link, .topNav a:active, .topNav a:visited, .bottomNav a:link, .bottomNav a:active, .bottomNav a:visited {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
 .bottomNav {
     margin-top:10px;
     background-color:#4D7A97;
@@ -172,15 +179,9 @@ ul.subNavList li{
     list-style:none;
     float:left;
 }
-.topNav a:link, .topNav a:active, .topNav a:visited, .bottomNav a:link, .bottomNav a:active, .bottomNav a:visited {
-    color:#FFFFFF;
-    text-decoration:none;
-    text-transform:uppercase;
-}
 .topNav a:hover, .bottomNav a:hover {
-    text-decoration:none;
     color:#bb7a2a;
-    text-transform:uppercase;
+    text-decoration:underline;
 }
 .navBarCell1Rev {
     background-color:#F8981D;
@@ -646,11 +647,26 @@ Styles for the search box
 /*
 Styles for feedback links
 */
-#feedback-section {
+.headline-section {
     float: left;
-    margin-top: -18px
+    margin-top: 10px
 }
-#feedback-link-sectioin {
+
+.v1-deprecation-banner {
+    padding: 12px;
+    background: #fdf3d0;
+    border: 2px solid #f7c544;
+    border-left: 10px solid #f7c544;
+    font-size: 14px;
+    float:left;
+    color:#4A6782
+}
+
+.v1-deprecation-banner a:link, .v1-deprecation-banner a:active, .v1-deprecation-banner a:visited {
+    color:#bb7a2a;
+    text-decoration: none;
+}
+
+.divsearch {
     float: right;
-    margin-top: -15px;
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,14 +21,17 @@ import javax.annotation.Generated;
 public enum AcceleratorName {
 
     A100("a100"),
-    V100("v100"),
+    Inferentia("inferentia"),
+    K520("k520"),
     K80("k80"),
-    T4("t4"),
     M60("m60"),
     RadeonProV520("radeon-pro-v520"),
+    T4("t4"),
     Vu9p("vu9p"),
-    Inferentia("inferentia"),
-    K520("k520");
+    V100("v100"),
+    A10g("a10g"),
+    H100("h100"),
+    T4g("t4g");
 
     private String value;
 

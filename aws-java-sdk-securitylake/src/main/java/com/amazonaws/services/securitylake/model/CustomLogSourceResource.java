@@ -1,0 +1,295 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.securitylake.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Amazon Security Lake can collect logs and events from third-party custom sources.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CustomLogSourceResource"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CustomLogSourceResource implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The attributes of a third-party custom source.
+     * </p>
+     */
+    private CustomLogSourceAttributes attributes;
+    /**
+     * <p>
+     * The details of the log provider for a third-party custom source.
+     * </p>
+     */
+    private CustomLogSourceProvider provider;
+    /**
+     * <p>
+     * The name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     */
+    private String sourceName;
+    /**
+     * <p>
+     * The version for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     */
+    private String sourceVersion;
+
+    /**
+     * <p>
+     * The attributes of a third-party custom source.
+     * </p>
+     * 
+     * @param attributes
+     *        The attributes of a third-party custom source.
+     */
+
+    public void setAttributes(CustomLogSourceAttributes attributes) {
+        this.attributes = attributes;
+    }
+
+    /**
+     * <p>
+     * The attributes of a third-party custom source.
+     * </p>
+     * 
+     * @return The attributes of a third-party custom source.
+     */
+
+    public CustomLogSourceAttributes getAttributes() {
+        return this.attributes;
+    }
+
+    /**
+     * <p>
+     * The attributes of a third-party custom source.
+     * </p>
+     * 
+     * @param attributes
+     *        The attributes of a third-party custom source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomLogSourceResource withAttributes(CustomLogSourceAttributes attributes) {
+        setAttributes(attributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the log provider for a third-party custom source.
+     * </p>
+     * 
+     * @param provider
+     *        The details of the log provider for a third-party custom source.
+     */
+
+    public void setProvider(CustomLogSourceProvider provider) {
+        this.provider = provider;
+    }
+
+    /**
+     * <p>
+     * The details of the log provider for a third-party custom source.
+     * </p>
+     * 
+     * @return The details of the log provider for a third-party custom source.
+     */
+
+    public CustomLogSourceProvider getProvider() {
+        return this.provider;
+    }
+
+    /**
+     * <p>
+     * The details of the log provider for a third-party custom source.
+     * </p>
+     * 
+     * @param provider
+     *        The details of the log provider for a third-party custom source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomLogSourceResource withProvider(CustomLogSourceProvider provider) {
+        setProvider(provider);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @param sourceName
+     *        The name for a third-party custom source. This must be a Regionally unique value.
+     */
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    /**
+     * <p>
+     * The name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @return The name for a third-party custom source. This must be a Regionally unique value.
+     */
+
+    public String getSourceName() {
+        return this.sourceName;
+    }
+
+    /**
+     * <p>
+     * The name for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @param sourceName
+     *        The name for a third-party custom source. This must be a Regionally unique value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomLogSourceResource withSourceName(String sourceName) {
+        setSourceName(sourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        The version for a third-party custom source. This must be a Regionally unique value.
+     */
+
+    public void setSourceVersion(String sourceVersion) {
+        this.sourceVersion = sourceVersion;
+    }
+
+    /**
+     * <p>
+     * The version for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @return The version for a third-party custom source. This must be a Regionally unique value.
+     */
+
+    public String getSourceVersion() {
+        return this.sourceVersion;
+    }
+
+    /**
+     * <p>
+     * The version for a third-party custom source. This must be a Regionally unique value.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        The version for a third-party custom source. This must be a Regionally unique value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomLogSourceResource withSourceVersion(String sourceVersion) {
+        setSourceVersion(sourceVersion);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAttributes() != null)
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getProvider() != null)
+            sb.append("Provider: ").append(getProvider()).append(",");
+        if (getSourceName() != null)
+            sb.append("SourceName: ").append(getSourceName()).append(",");
+        if (getSourceVersion() != null)
+            sb.append("SourceVersion: ").append(getSourceVersion());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CustomLogSourceResource == false)
+            return false;
+        CustomLogSourceResource other = (CustomLogSourceResource) obj;
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
+            return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getProvider() == null ^ this.getProvider() == null)
+            return false;
+        if (other.getProvider() != null && other.getProvider().equals(this.getProvider()) == false)
+            return false;
+        if (other.getSourceName() == null ^ this.getSourceName() == null)
+            return false;
+        if (other.getSourceName() != null && other.getSourceName().equals(this.getSourceName()) == false)
+            return false;
+        if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
+            return false;
+        if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getProvider() == null) ? 0 : getProvider().hashCode());
+        hashCode = prime * hashCode + ((getSourceName() == null) ? 0 : getSourceName().hashCode());
+        hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public CustomLogSourceResource clone() {
+        try {
+            return (CustomLogSourceResource) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.securitylake.model.transform.CustomLogSourceResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,10 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the scaling policy.
+     * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
      * </p>
      */
     private String policyName;
@@ -144,6 +148,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -202,7 +218,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -262,18 +278,30 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
      * </p>
      * <p>
-     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      * </p>
      * <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
@@ -312,9 +340,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the scaling policy.
      * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
+     * </p>
      * 
      * @param policyName
-     *        The name of the scaling policy.
+     *        The name of the scaling policy.</p>
+     *        <p>
+     *        You cannot change the name of a scaling policy, but you can delete the original scaling policy and create
+     *        a new scaling policy with the same settings and a different name.
      */
 
     public void setPolicyName(String policyName) {
@@ -325,8 +360,15 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the scaling policy.
      * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
+     * </p>
      * 
-     * @return The name of the scaling policy.
+     * @return The name of the scaling policy.</p>
+     *         <p>
+     *         You cannot change the name of a scaling policy, but you can delete the original scaling policy and create
+     *         a new scaling policy with the same settings and a different name.
      */
 
     public String getPolicyName() {
@@ -337,9 +379,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the scaling policy.
      * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
+     * </p>
      * 
      * @param policyName
-     *        The name of the scaling policy.
+     *        The name of the scaling policy.</p>
+     *        <p>
+     *        You cannot change the name of a scaling policy, but you can delete the original scaling policy and create
+     *        a new scaling policy with the same settings and a different name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,6 +586,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -643,6 +704,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      */
@@ -757,6 +830,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -863,6 +948,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
+     *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *         identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *         </p>
      *         </li>
      */
@@ -977,6 +1074,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1085,6 +1194,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        Example: <code>cluster:mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1148,7 +1269,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1208,6 +1329,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1264,7 +1397,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1325,6 +1458,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1389,7 +1534,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1449,6 +1594,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1504,7 +1661,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1565,6 +1722,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
+     *         SageMaker Serverless endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *         a SageMaker inference component.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1629,7 +1798,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1689,6 +1858,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1745,7 +1926,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1806,6 +1987,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1872,7 +2065,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1932,6 +2125,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1988,7 +2193,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2049,6 +2254,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -2113,7 +2330,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2173,6 +2390,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2229,7 +2458,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2292,6 +2521,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        cluster.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -2303,13 +2544,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
      * </p>
      * <p>
-     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      * </p>
      * <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
@@ -2324,12 +2565,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
      *        <p>
-     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      *        </p>
      *        <p>
      *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
@@ -2350,13 +2591,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
      * </p>
      * <p>
-     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      * </p>
      * <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
@@ -2370,12 +2611,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The policy type. This parameter is required if you are creating a scaling policy.</p>
+     * @return The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *         <p>
      *         The following policy types are supported:
      *         </p>
      *         <p>
-     *         <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *         <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      *         </p>
      *         <p>
      *         <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
@@ -2396,13 +2637,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
      * </p>
      * <p>
-     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      * </p>
      * <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
@@ -2417,12 +2658,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
      *        <p>
-     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      *        </p>
      *        <p>
      *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
@@ -2445,13 +2686,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
      * </p>
      * <p>
-     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      * </p>
      * <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
@@ -2466,12 +2707,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
      *        <p>
-     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      *        </p>
      *        <p>
      *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
@@ -2492,13 +2733,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
      * </p>
      * <p>
-     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      * </p>
      * <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
@@ -2513,12 +2754,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
      *        <p>
-     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR.
      *        </p>
      *        <p>
      *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon

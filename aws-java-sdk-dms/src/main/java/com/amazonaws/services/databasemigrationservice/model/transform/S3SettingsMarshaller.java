@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,8 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddTrailingPaddingCharacter").build();
     private static final MarshallingInfo<String> EXPECTEDBUCKETOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpectedBucketOwner").build();
+    private static final MarshallingInfo<Boolean> GLUECATALOGGENERATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlueCatalogGeneration").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -164,6 +166,7 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getDatePartitionTimezone(), DATEPARTITIONTIMEZONE_BINDING);
             protocolMarshaller.marshall(s3Settings.getAddTrailingPaddingCharacter(), ADDTRAILINGPADDINGCHARACTER_BINDING);
             protocolMarshaller.marshall(s3Settings.getExpectedBucketOwner(), EXPECTEDBUCKETOWNER_BINDING);
+            protocolMarshaller.marshall(s3Settings.getGlueCatalogGeneration(), GLUECATALOGGENERATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

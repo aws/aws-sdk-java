@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,10 @@ public class StepExecutionMarshaller {
             .marshallLocationName("Targets").build();
     private static final MarshallingInfo<StructuredPojo> TARGETLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocation").build();
+    private static final MarshallingInfo<List> TRIGGEREDALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredAlarms").build();
+    private static final MarshallingInfo<StructuredPojo> PARENTSTEPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParentStepDetails").build();
 
     private static final StepExecutionMarshaller instance = new StepExecutionMarshaller();
 
@@ -112,6 +116,8 @@ public class StepExecutionMarshaller {
             protocolMarshaller.marshall(stepExecution.getValidNextSteps(), VALIDNEXTSTEPS_BINDING);
             protocolMarshaller.marshall(stepExecution.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(stepExecution.getTargetLocation(), TARGETLOCATION_BINDING);
+            protocolMarshaller.marshall(stepExecution.getTriggeredAlarms(), TRIGGEREDALARMS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getParentStepDetails(), PARENTSTEPDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

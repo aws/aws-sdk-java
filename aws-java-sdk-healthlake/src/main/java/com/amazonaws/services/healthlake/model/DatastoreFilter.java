@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The filters applied to Data Store query.
+ * The filters applied to data store query.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreFilter" target="_top">AWS API
@@ -30,26 +30,26 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by name.
+     * Allows the user to filter data store results by name.
      * </p>
      */
     private String datastoreName;
     /**
      * <p>
-     * Allows the user to filter Data Store results by status.
+     * Allows the user to filter data store results by status.
      * </p>
      */
     private String datastoreStatus;
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created before the specified date
      * will be included in the results.
      * </p>
      */
     private java.util.Date createdBefore;
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created after the specified date
      * will be included in the results.
      * </p>
      */
@@ -57,11 +57,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by name.
+     * Allows the user to filter data store results by name.
      * </p>
      * 
      * @param datastoreName
-     *        Allows the user to filter Data Store results by name.
+     *        Allows the user to filter data store results by name.
      */
 
     public void setDatastoreName(String datastoreName) {
@@ -70,10 +70,10 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by name.
+     * Allows the user to filter data store results by name.
      * </p>
      * 
-     * @return Allows the user to filter Data Store results by name.
+     * @return Allows the user to filter data store results by name.
      */
 
     public String getDatastoreName() {
@@ -82,11 +82,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by name.
+     * Allows the user to filter data store results by name.
      * </p>
      * 
      * @param datastoreName
-     *        Allows the user to filter Data Store results by name.
+     *        Allows the user to filter data store results by name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by status.
+     * Allows the user to filter data store results by status.
      * </p>
      * 
      * @param datastoreStatus
-     *        Allows the user to filter Data Store results by status.
+     *        Allows the user to filter data store results by status.
      * @see DatastoreStatus
      */
 
@@ -111,10 +111,10 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by status.
+     * Allows the user to filter data store results by status.
      * </p>
      * 
-     * @return Allows the user to filter Data Store results by status.
+     * @return Allows the user to filter data store results by status.
      * @see DatastoreStatus
      */
 
@@ -124,11 +124,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by status.
+     * Allows the user to filter data store results by status.
      * </p>
      * 
      * @param datastoreStatus
-     *        Allows the user to filter Data Store results by status.
+     *        Allows the user to filter data store results by status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -140,11 +140,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows the user to filter Data Store results by status.
+     * Allows the user to filter data store results by status.
      * </p>
      * 
      * @param datastoreStatus
-     *        Allows the user to filter Data Store results by status.
+     *        Allows the user to filter data store results by status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatastoreStatus
      */
@@ -156,12 +156,12 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created before the specified date
      * will be included in the results.
      * </p>
      * 
      * @param createdBefore
-     *        A filter that allows the user to set cutoff dates for records. All Data Stores created before the
+     *        A filter that allows the user to set cutoff dates for records. All data stores created before the
      *        specified date will be included in the results.
      */
 
@@ -171,11 +171,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created before the specified date
      * will be included in the results.
      * </p>
      * 
-     * @return A filter that allows the user to set cutoff dates for records. All Data Stores created before the
+     * @return A filter that allows the user to set cutoff dates for records. All data stores created before the
      *         specified date will be included in the results.
      */
 
@@ -185,12 +185,12 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created before the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created before the specified date
      * will be included in the results.
      * </p>
      * 
      * @param createdBefore
-     *        A filter that allows the user to set cutoff dates for records. All Data Stores created before the
+     *        A filter that allows the user to set cutoff dates for records. All data stores created before the
      *        specified date will be included in the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -202,12 +202,12 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created after the specified date
      * will be included in the results.
      * </p>
      * 
      * @param createdAfter
-     *        A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified
+     *        A filter that allows the user to set cutoff dates for records. All data stores created after the specified
      *        date will be included in the results.
      */
 
@@ -217,11 +217,11 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created after the specified date
      * will be included in the results.
      * </p>
      * 
-     * @return A filter that allows the user to set cutoff dates for records. All Data Stores created after the
+     * @return A filter that allows the user to set cutoff dates for records. All data stores created after the
      *         specified date will be included in the results.
      */
 
@@ -231,12 +231,12 @@ public class DatastoreFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified date
+     * A filter that allows the user to set cutoff dates for records. All data stores created after the specified date
      * will be included in the results.
      * </p>
      * 
      * @param createdAfter
-     *        A filter that allows the user to set cutoff dates for records. All Data Stores created after the specified
+     *        A filter that allows the user to set cutoff dates for records. All data stores created after the specified
      *        date will be included in the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

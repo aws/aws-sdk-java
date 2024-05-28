@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,56 @@ public class EnableControlResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The ARN of the <code>EnabledControl</code> resource.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.
      * </p>
      */
     private String operationIdentifier;
+
+    /**
+     * <p>
+     * The ARN of the <code>EnabledControl</code> resource.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the <code>EnabledControl</code> resource.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the <code>EnabledControl</code> resource.
+     * </p>
+     * 
+     * @return The ARN of the <code>EnabledControl</code> resource.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the <code>EnabledControl</code> resource.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the <code>EnabledControl</code> resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableControlResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -85,6 +131,8 @@ public class EnableControlResult extends com.amazonaws.AmazonWebServiceResult<co
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getOperationIdentifier() != null)
             sb.append("OperationIdentifier: ").append(getOperationIdentifier());
         sb.append("}");
@@ -101,6 +149,10 @@ public class EnableControlResult extends com.amazonaws.AmazonWebServiceResult<co
         if (obj instanceof EnableControlResult == false)
             return false;
         EnableControlResult other = (EnableControlResult) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getOperationIdentifier() == null ^ this.getOperationIdentifier() == null)
             return false;
         if (other.getOperationIdentifier() != null && other.getOperationIdentifier().equals(this.getOperationIdentifier()) == false)
@@ -113,6 +165,7 @@ public class EnableControlResult extends com.amazonaws.AmazonWebServiceResult<co
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getOperationIdentifier() == null) ? 0 : getOperationIdentifier().hashCode());
         return hashCode;
     }

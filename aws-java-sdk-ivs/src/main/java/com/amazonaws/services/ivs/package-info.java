@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,41 +52,45 @@
  * </li>
  * </ul>
  * <p>
- * <b>Resources</b>
- * </p>
- * <p>
- * The following resources contain information about your IVS live stream (see <a
- * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html"> Getting Started with Amazon IVS</a>):
+ * <b>Key Concepts</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Channel — Stores configuration data related to your live stream. You first create a channel and then use the
- * channel’s stream key to start your live stream. See the Channel endpoints for more information.
+ * <b>Channel</b> — Stores configuration data related to your live stream. You first create a channel and then use the
+ * channel’s stream key to start your live stream.
  * </p>
  * </li>
  * <li>
  * <p>
- * Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
- * streaming. See the StreamKey endpoints for more information. <i> <b>Treat the stream key like a secret, since it
- * allows anyone to stream to the channel.</b> </i>
+ * <b>Stream key</b> — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
+ * streaming. <i> <b>Treat the stream key like a secret, since it allows anyone to stream to the channel.</b> </i>
  * </p>
  * </li>
  * <li>
  * <p>
- * Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key
+ * <b>Playback key pair</b> — Video playback may be restricted using playback-authorization tokens, which use public-key
  * encryption. A playback key pair is the public-private pair of keys used to sign and validate the
- * playback-authorization token. See the PlaybackKeyPair endpoints for more information.
+ * playback-authorization token.
  * </p>
  * </li>
  * <li>
  * <p>
- * Recording configuration — Stores configuration related to recording a live stream and where to store the recorded
- * content. Multiple channels can reference the same recording configuration. See the Recording Configuration endpoints
- * for more information.
+ * <b>Recording configuration</b> — Stores configuration related to recording a live stream and where to store the
+ * recorded content. Multiple channels can reference the same recording configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Playback restriction policy</b> — Restricts playback by countries and/or origin sites.
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * For more information about your IVS live stream, also see <a
+ * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html">Getting Started with IVS
+ * Low-Latency Streaming</a>.
+ * </p>
  * <p>
  * <b>Tagging</b>
  * </p>
@@ -141,8 +145,8 @@
  * </p>
  * <p>
  * You generate a signature using valid Amazon Web Services credentials that have permission to perform the requested
- * action. For example, you must sign PutMetadata requests with a signature generated from an IAM user account that has
- * the <code>ivs:PutMetadata</code> permission.
+ * action. For example, you must sign PutMetadata requests with a signature generated from a user account that has the
+ * <code>ivs:PutMetadata</code> permission.
  * </p>
  * <p>
  * For more information:
@@ -212,32 +216,106 @@
  * </li>
  * </ul>
  * <p>
- * <b>StreamKey Endpoints</b>
+ * <b>Playback Restriction Policy Endpoints</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the specified channel ARN.
+ * <a>CreatePlaybackRestrictionPolicy</a> — Creates a new playback restriction policy, for constraining playback by
+ * countries and/or origins.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.
+ * <a>DeletePlaybackRestrictionPolicy</a> — Deletes the specified playback restriction policy
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
+ * <a>GetPlaybackRestrictionPolicy</a> — Gets the specified playback restriction policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified channel.
+ * <a>ListPlaybackRestrictionPolicies</a> — Gets summary information about playback restriction policies.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
+ * <a>UpdatePlaybackRestrictionPolicy</a> — Updates a specified playback restriction policy.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Private Channel Endpoints</b>
+ * </p>
+ * <p>
+ * For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
+ * Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
+ * grant viewers access to private channels (channels enabled for playback authorization).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
+ * tokens, to grant viewers access to private channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
+ * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartViewerSessionRevocation</a> — Starts the process of revoking the viewer session associated with a specified
+ * channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including
+ * that version.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchStartViewerSessionRevocation</a> — Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and
+ * viewer ID pairs simultaneously.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Recording Configuration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateRecordingConfiguration</a> — Creates a new recording configuration, used to enable recording to Amazon S3.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListRecordingConfigurations</a> — Gets summary information about all recording configurations in your account, in
+ * the Amazon Web Services region where the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for the specified ARN.
  * </p>
  * </li>
  * </ul>
@@ -282,62 +360,32 @@
  * </li>
  * </ul>
  * <p>
- * <b>PlaybackKeyPair Endpoints</b>
- * </p>
- * <p>
- * For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
- * Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+ * <b>Stream Key Endpoints</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
- * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
- * grant viewers access to private channels (channels enabled for playback authorization).
+ * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the specified channel ARN.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
- * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
- * tokens, to grant viewers access to private channels.
+ * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
- * generated using the key pair’s <code>privateKey</code>.
- * </p>
- * </li>
- * </ul>
- * <p>
- * <b>RecordingConfiguration Endpoints</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateRecordingConfiguration</a> — Creates a new recording configuration, used to enable recording to Amazon S3.
+ * <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified channel.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for the specified ARN.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ListRecordingConfigurations</a> — Gets summary information about all recording configurations in your account, in
- * the Amazon Web Services region where the API request is processed.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for the specified ARN.
+ * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
  * </p>
  * </li>
  * </ul>

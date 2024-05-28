@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class OtaaV10XMarshaller {
             .marshallLocationName("AppKey").build();
     private static final MarshallingInfo<String> APPEUI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppEui").build();
+    private static final MarshallingInfo<String> JOINEUI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JoinEui").build();
     private static final MarshallingInfo<String> GENAPPKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GenAppKey").build();
 
@@ -52,6 +54,7 @@ public class OtaaV10XMarshaller {
         try {
             protocolMarshaller.marshall(otaaV10X.getAppKey(), APPKEY_BINDING);
             protocolMarshaller.marshall(otaaV10X.getAppEui(), APPEUI_BINDING);
+            protocolMarshaller.marshall(otaaV10X.getJoinEui(), JOINEUI_BINDING);
             protocolMarshaller.marshall(otaaV10X.getGenAppKey(), GENAPPKEY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

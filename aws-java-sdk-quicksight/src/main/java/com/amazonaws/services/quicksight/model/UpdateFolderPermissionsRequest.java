@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,13 +39,15 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
     private String folderId;
     /**
      * <p>
-     * The permissions that you want to grant on a resource.
+     * The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      */
     private java.util.List<ResourcePermission> grantPermissions;
     /**
      * <p>
-     * The permissions that you want to revoke from a resource.
+     * The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      */
     private java.util.List<ResourcePermission> revokePermissions;
@@ -132,10 +134,12 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to grant on a resource.
+     * The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * 
-     * @return The permissions that you want to grant on a resource.
+     * @return The permissions that you want to grant on a resource. Namespace ARNs are not supported
+     *         <code>Principal</code> values for folder permissions.
      */
 
     public java.util.List<ResourcePermission> getGrantPermissions() {
@@ -144,11 +148,13 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to grant on a resource.
+     * The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * 
      * @param grantPermissions
-     *        The permissions that you want to grant on a resource.
+     *        The permissions that you want to grant on a resource. Namespace ARNs are not supported
+     *        <code>Principal</code> values for folder permissions.
      */
 
     public void setGrantPermissions(java.util.Collection<ResourcePermission> grantPermissions) {
@@ -162,7 +168,8 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to grant on a resource.
+     * The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +178,8 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param grantPermissions
-     *        The permissions that you want to grant on a resource.
+     *        The permissions that you want to grant on a resource. Namespace ARNs are not supported
+     *        <code>Principal</code> values for folder permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +195,13 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to grant on a resource.
+     * The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * 
      * @param grantPermissions
-     *        The permissions that you want to grant on a resource.
+     *        The permissions that you want to grant on a resource. Namespace ARNs are not supported
+     *        <code>Principal</code> values for folder permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,10 +212,12 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to revoke from a resource.
+     * The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * 
-     * @return The permissions that you want to revoke from a resource.
+     * @return The permissions that you want to revoke from a resource. Namespace ARNs are not supported
+     *         <code>Principal</code> values for folder permissions.
      */
 
     public java.util.List<ResourcePermission> getRevokePermissions() {
@@ -214,11 +226,13 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to revoke from a resource.
+     * The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * 
      * @param revokePermissions
-     *        The permissions that you want to revoke from a resource.
+     *        The permissions that you want to revoke from a resource. Namespace ARNs are not supported
+     *        <code>Principal</code> values for folder permissions.
      */
 
     public void setRevokePermissions(java.util.Collection<ResourcePermission> revokePermissions) {
@@ -232,7 +246,8 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to revoke from a resource.
+     * The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +256,8 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param revokePermissions
-     *        The permissions that you want to revoke from a resource.
+     *        The permissions that you want to revoke from a resource. Namespace ARNs are not supported
+     *        <code>Principal</code> values for folder permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +273,13 @@ public class UpdateFolderPermissionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The permissions that you want to revoke from a resource.
+     * The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code>
+     * values for folder permissions.
      * </p>
      * 
      * @param revokePermissions
-     *        The permissions that you want to revoke from a resource.
+     *        The permissions that you want to revoke from a resource. Namespace ARNs are not supported
+     *        <code>Principal</code> values for folder permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CallAnalyticsJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallAnalyticsJobName").build();
     private static final MarshallingInfo<String> CALLANALYTICSJOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallAnalyticsJobStatus").build();
+    private static final MarshallingInfo<StructuredPojo> CALLANALYTICSJOBDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallAnalyticsJobDetails").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
     private static final MarshallingInfo<Integer> MEDIASAMPLERATEHERTZ_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -77,6 +79,7 @@ public class CallAnalyticsJobMarshaller {
         try {
             protocolMarshaller.marshall(callAnalyticsJob.getCallAnalyticsJobName(), CALLANALYTICSJOBNAME_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getCallAnalyticsJobStatus(), CALLANALYTICSJOBSTATUS_BINDING);
+            protocolMarshaller.marshall(callAnalyticsJob.getCallAnalyticsJobDetails(), CALLANALYTICSJOBDETAILS_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getMediaSampleRateHertz(), MEDIASAMPLERATEHERTZ_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getMediaFormat(), MEDIAFORMAT_BINDING);

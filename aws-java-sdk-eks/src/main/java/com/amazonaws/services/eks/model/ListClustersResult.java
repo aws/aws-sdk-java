@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,25 +25,32 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified Region.
+     * A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * </p>
      */
     private java.util.List<String> clusters;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified Region.
+     * A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * </p>
      * 
-     * @return A list of all of the clusters for your account in the specified Region.
+     * @return A list of all of the clusters for your account in the specified Amazon Web Services Region.
      */
 
     public java.util.List<String> getClusters() {
@@ -52,11 +59,11 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified Region.
+     * A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param clusters
-     *        A list of all of the clusters for your account in the specified Region.
+     *        A list of all of the clusters for your account in the specified Amazon Web Services Region.
      */
 
     public void setClusters(java.util.Collection<String> clusters) {
@@ -70,7 +77,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified Region.
+     * A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +86,7 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param clusters
-     *        A list of all of the clusters for your account in the specified Region.
+     *        A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +102,11 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all of the clusters for your account in the specified Region.
+     * A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param clusters
-     *        A list of all of the clusters for your account in the specified Region.
+     *        A list of all of the clusters for your account in the specified Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,16 +117,27 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
-     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to
-     *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *        return.
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -128,15 +146,26 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      * 
-     * @return The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
-     *         results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to
-     *         retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *         return.
+     * @return The <code>nextToken</code> value returned from a previous paginated request, where
+     *         <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
+     *         is null when there are no more results to return.</p> <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is used only to retrieve the next items in a
+     *         list and not for other programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -145,16 +174,27 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a
-     * <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was
+     * used and the results exceeded the value of that parameter. Pagination continues from the end of the previous
+     * results that returned the <code>nextToken</code> value. This value is null when there are no more results to
+     * return.
      * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the
-     *        results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to
-     *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *        return.
+     *        The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code>
+     *        was used and the results exceeded the value of that parameter. Pagination continues from the end of the
+     *        previous results that returned the <code>nextToken</code> value. This value is null when there are no more
+     *        results to return.</p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is used only to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

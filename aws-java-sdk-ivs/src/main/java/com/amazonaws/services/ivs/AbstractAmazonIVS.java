@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,17 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public BatchStartViewerSessionRevocationResult batchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateChannelResult createChannel(CreateChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreatePlaybackRestrictionPolicyResult createPlaybackRestrictionPolicy(CreatePlaybackRestrictionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,6 +73,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public DeletePlaybackRestrictionPolicyResult deletePlaybackRestrictionPolicy(DeletePlaybackRestrictionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRecordingConfigurationResult deleteRecordingConfiguration(DeleteRecordingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +94,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
 
     @Override
     public GetPlaybackKeyPairResult getPlaybackKeyPair(GetPlaybackKeyPairRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPlaybackRestrictionPolicyResult getPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +138,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public ListPlaybackRestrictionPoliciesResult listPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRecordingConfigurationsResult listRecordingConfigurations(ListRecordingConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -148,6 +173,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public StartViewerSessionRevocationResult startViewerSessionRevocation(StartViewerSessionRevocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopStreamResult stopStream(StopStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +194,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
 
     @Override
     public UpdateChannelResult updateChannel(UpdateChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePlaybackRestrictionPolicyResult updatePlaybackRestrictionPolicy(UpdatePlaybackRestrictionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

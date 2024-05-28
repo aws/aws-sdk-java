@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,14 +45,15 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
     private String type;
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an
+     * The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an
      * attribute.
      * </p>
      */
     private Float score;
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity.
+     * The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
+     * entity.
      * </p>
      */
     private Float relationshipScore;
@@ -238,13 +239,13 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an
+     * The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an
      * attribute.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an
-     *        attribute.
+     *        The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly
+     *        recognized as an attribute.
      */
 
     public void setScore(Float score) {
@@ -253,12 +254,12 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an
+     * The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an
      * attribute.
      * </p>
      * 
-     * @return The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as
-     *         an attribute.
+     * @return The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly
+     *         recognized as an attribute.
      */
 
     public Float getScore() {
@@ -267,13 +268,13 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an
+     * The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly recognized as an
      * attribute.
      * </p>
      * 
      * @param score
-     *        The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an
-     *        attribute.
+     *        The level of confidence that Amazon Comprehend Medical has that the segment of text is correctly
+     *        recognized as an attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,12 +285,13 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity.
+     * The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
+     * entity.
      * </p>
      * 
      * @param relationshipScore
-     *        The level of confidence that Comprehend Medical has that this attribute is correctly related to this
-     *        entity.
+     *        The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to
+     *        this entity.
      */
 
     public void setRelationshipScore(Float relationshipScore) {
@@ -298,11 +300,12 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity.
+     * The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
+     * entity.
      * </p>
      * 
-     * @return The level of confidence that Comprehend Medical has that this attribute is correctly related to this
-     *         entity.
+     * @return The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to
+     *         this entity.
      */
 
     public Float getRelationshipScore() {
@@ -311,12 +314,13 @@ public class SNOMEDCTAttribute implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity.
+     * The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this
+     * entity.
      * </p>
      * 
      * @param relationshipScore
-     *        The level of confidence that Comprehend Medical has that this attribute is correctly related to this
-     *        entity.
+     *        The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to
+     *        this entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

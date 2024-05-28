@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,7 +79,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private ProtocolDetails protocolDetails;
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      */
     private String domain;
@@ -132,7 +133,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      */
@@ -205,8 +206,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -217,7 +218,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types:
+     * <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -232,7 +235,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> protocols;
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * Specifies the name of the security policy for the server.
      * </p>
      */
     private String securityPolicyName;
@@ -274,12 +277,57 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * workflow.
      * </p>
      * <p>
-     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also
      * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
-     * when a file is open when the session disconnects.
+     * when the server session disconnects while the file is still being uploaded.
      * </p>
      */
     private WorkflowDetails workflowDetails;
+    /**
+     * <p>
+     * Specifies the log groups to which your server logs are sent.
+     * </p>
+     * <p>
+     * To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log
+     * group is as follows:
+     * </p>
+     * <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     * </p>
+     * <p>
+     * If you have previously specified a log group for a server, you can clear it, and in effect turn off structured
+     * logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:
+     * </p>
+     * <p>
+     * <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * </p>
+     */
+    private java.util.List<String> structuredLogDestinations;
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     */
+    private S3StorageOptions s3StorageOptions;
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     */
+    private java.util.List<String> as2ServiceManagedEgressIpAddresses;
 
     /**
      * <p>
@@ -589,11 +637,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @see Domain
      */
 
@@ -603,10 +654,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
-     * @return Specifies the domain of the storage system that is used for file transfers.
+     * @return Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *         available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *         default value is S3.
      * @see Domain
      */
 
@@ -616,11 +670,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -632,11 +689,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -887,7 +947,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -908,7 +968,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -934,7 +994,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -954,7 +1014,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If
      *         you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code>
-     *         parameter or the <code>IdentityProviderDetails</code> data type.
+     *         parameter for the <code>IdentityProviderDetails</code> data type.
      * @see IdentityProviderType
      */
 
@@ -980,7 +1040,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -1001,7 +1061,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -1029,7 +1089,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose
-     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the
+     * this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.
      * </p>
      * 
@@ -1050,7 +1110,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you
      *        choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-     *        or the <code>IdentityProviderDetails</code> data type.
+     *        for the <code>IdentityProviderDetails</code> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -1281,8 +1341,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1293,7 +1353,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types:
+     * <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1341,7 +1403,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *         <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *         <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *         either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1353,7 +1415,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     *         <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *         <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity
+     *         types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     *         <code>API_GATEWAY</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1408,8 +1472,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1420,7 +1484,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types:
+     * <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1469,7 +1535,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1481,7 +1547,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity
+     *        types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     *        <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1541,8 +1609,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1553,7 +1621,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types:
+     * <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1607,7 +1677,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1619,7 +1689,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity
+     *        types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     *        <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1681,8 +1753,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1693,7 +1765,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types:
+     * <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1742,7 +1816,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1754,7 +1828,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity
+     *        types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     *        <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1811,8 +1887,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either
+     * <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1823,7 +1899,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types:
+     * <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     * <code>API_GATEWAY</code>.
      * </p>
      * </li>
      * <li>
@@ -1872,7 +1950,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1884,7 +1962,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
-     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity
+     *        types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or
+     *        <code>API_GATEWAY</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1913,11 +1993,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * Specifies the name of the security policy for the server.
      * </p>
      * 
      * @param securityPolicyName
-     *        Specifies the name of the security policy that is attached to the server.
+     *        Specifies the name of the security policy for the server.
      */
 
     public void setSecurityPolicyName(String securityPolicyName) {
@@ -1926,10 +2006,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * Specifies the name of the security policy for the server.
      * </p>
      * 
-     * @return Specifies the name of the security policy that is attached to the server.
+     * @return Specifies the name of the security policy for the server.
      */
 
     public String getSecurityPolicyName() {
@@ -1938,11 +2018,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the name of the security policy that is attached to the server.
+     * Specifies the name of the security policy for the server.
      * </p>
      * 
      * @param securityPolicyName
-     *        Specifies the name of the security policy that is attached to the server.
+     *        Specifies the name of the security policy for the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2226,18 +2306,18 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * workflow.
      * </p>
      * <p>
-     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also
      * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
-     * when a file is open when the session disconnects.
+     * when the server session disconnects while the file is still being uploaded.
      * </p>
      * 
      * @param workflowDetails
      *        Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      *        workflow.</p>
      *        <p>
-     *        In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *        In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      *        also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
-     *        upload occurs when a file is open when the session disconnects.
+     *        upload occurs when the server session disconnects while the file is still being uploaded.
      */
 
     public void setWorkflowDetails(WorkflowDetails workflowDetails) {
@@ -2250,17 +2330,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * workflow.
      * </p>
      * <p>
-     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also
      * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
-     * when a file is open when the session disconnects.
+     * when the server session disconnects while the file is still being uploaded.
      * </p>
      * 
      * @return Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      *         workflow.</p>
      *         <p>
-     *         In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *         In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      *         also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
-     *         upload occurs when a file is open when the session disconnects.
+     *         upload occurs when the server session disconnects while the file is still being uploaded.
      */
 
     public WorkflowDetails getWorkflowDetails() {
@@ -2273,23 +2353,406 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * workflow.
      * </p>
      * <p>
-     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also
      * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
-     * when a file is open when the session disconnects.
+     * when the server session disconnects while the file is still being uploaded.
      * </p>
      * 
      * @param workflowDetails
      *        Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      *        workflow.</p>
      *        <p>
-     *        In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *        In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      *        also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
-     *        upload occurs when a file is open when the session disconnects.
+     *        upload occurs when the server session disconnects while the file is still being uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribedServer withWorkflowDetails(WorkflowDetails workflowDetails) {
         setWorkflowDetails(workflowDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the log groups to which your server logs are sent.
+     * </p>
+     * <p>
+     * To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log
+     * group is as follows:
+     * </p>
+     * <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     * </p>
+     * <p>
+     * If you have previously specified a log group for a server, you can clear it, and in effect turn off structured
+     * logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:
+     * </p>
+     * <p>
+     * <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * </p>
+     * 
+     * @return Specifies the log groups to which your server logs are sent.</p>
+     *         <p>
+     *         To specify a log group, you must provide the ARN for an existing log group. In this case, the format of
+     *         the log group is as follows:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     *         </p>
+     *         <p>
+     *         For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     *         </p>
+     *         <p>
+     *         If you have previously specified a log group for a server, you can clear it, and in effect turn off
+     *         structured logging, by providing an empty value for this parameter in an <code>update-server</code> call.
+     *         For example:
+     *         </p>
+     *         <p>
+     *         <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     */
+
+    public java.util.List<String> getStructuredLogDestinations() {
+        return structuredLogDestinations;
+    }
+
+    /**
+     * <p>
+     * Specifies the log groups to which your server logs are sent.
+     * </p>
+     * <p>
+     * To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log
+     * group is as follows:
+     * </p>
+     * <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     * </p>
+     * <p>
+     * If you have previously specified a log group for a server, you can clear it, and in effect turn off structured
+     * logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:
+     * </p>
+     * <p>
+     * <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * </p>
+     * 
+     * @param structuredLogDestinations
+     *        Specifies the log groups to which your server logs are sent.</p>
+     *        <p>
+     *        To specify a log group, you must provide the ARN for an existing log group. In this case, the format of
+     *        the log group is as follows:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     *        </p>
+     *        <p>
+     *        For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     *        </p>
+     *        <p>
+     *        If you have previously specified a log group for a server, you can clear it, and in effect turn off
+     *        structured logging, by providing an empty value for this parameter in an <code>update-server</code> call.
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     */
+
+    public void setStructuredLogDestinations(java.util.Collection<String> structuredLogDestinations) {
+        if (structuredLogDestinations == null) {
+            this.structuredLogDestinations = null;
+            return;
+        }
+
+        this.structuredLogDestinations = new java.util.ArrayList<String>(structuredLogDestinations);
+    }
+
+    /**
+     * <p>
+     * Specifies the log groups to which your server logs are sent.
+     * </p>
+     * <p>
+     * To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log
+     * group is as follows:
+     * </p>
+     * <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     * </p>
+     * <p>
+     * If you have previously specified a log group for a server, you can clear it, and in effect turn off structured
+     * logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:
+     * </p>
+     * <p>
+     * <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStructuredLogDestinations(java.util.Collection)} or
+     * {@link #withStructuredLogDestinations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param structuredLogDestinations
+     *        Specifies the log groups to which your server logs are sent.</p>
+     *        <p>
+     *        To specify a log group, you must provide the ARN for an existing log group. In this case, the format of
+     *        the log group is as follows:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     *        </p>
+     *        <p>
+     *        For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     *        </p>
+     *        <p>
+     *        If you have previously specified a log group for a server, you can clear it, and in effect turn off
+     *        structured logging, by providing an empty value for this parameter in an <code>update-server</code> call.
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withStructuredLogDestinations(String... structuredLogDestinations) {
+        if (this.structuredLogDestinations == null) {
+            setStructuredLogDestinations(new java.util.ArrayList<String>(structuredLogDestinations.length));
+        }
+        for (String ele : structuredLogDestinations) {
+            this.structuredLogDestinations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the log groups to which your server logs are sent.
+     * </p>
+     * <p>
+     * To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log
+     * group is as follows:
+     * </p>
+     * <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p>
+     * <p>
+     * For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     * </p>
+     * <p>
+     * If you have previously specified a log group for a server, you can clear it, and in effect turn off structured
+     * logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:
+     * </p>
+     * <p>
+     * <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * </p>
+     * 
+     * @param structuredLogDestinations
+     *        Specifies the log groups to which your server logs are sent.</p>
+     *        <p>
+     *        To specify a log group, you must provide the ARN for an existing log group. In this case, the format of
+     *        the log group is as follows:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     *        </p>
+     *        <p>
+     *        For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+     *        </p>
+     *        <p>
+     *        If you have previously specified a log group for a server, you can clear it, and in effect turn off
+     *        structured logging, by providing an empty value for this parameter in an <code>update-server</code> call.
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withStructuredLogDestinations(java.util.Collection<String> structuredLogDestinations) {
+        setStructuredLogDestinations(structuredLogDestinations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     * 
+     * @param s3StorageOptions
+     *        Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by
+     *        default.</p>
+     *        <p>
+     *        By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     *        option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     *        <code>FILE</code> if you want a mapping to have a file target.
+     */
+
+    public void setS3StorageOptions(S3StorageOptions s3StorageOptions) {
+        this.s3StorageOptions = s3StorageOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     * 
+     * @return Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by
+     *         default.</p>
+     *         <p>
+     *         By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable
+     *         this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
+     *         <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.
+     */
+
+    public S3StorageOptions getS3StorageOptions() {
+        return this.s3StorageOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     * 
+     * @param s3StorageOptions
+     *        Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by
+     *        default.</p>
+     *        <p>
+     *        By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     *        option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     *        <code>FILE</code> if you want a mapping to have a file target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withS3StorageOptions(S3StorageOptions s3StorageOptions) {
+        setS3StorageOptions(s3StorageOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * 
+     * @return The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *         the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *         <p>
+     *         These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *         an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     */
+
+    public java.util.List<String> getAs2ServiceManagedEgressIpAddresses() {
+        return as2ServiceManagedEgressIpAddresses;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * 
+     * @param as2ServiceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *        the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *        <p>
+     *        These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *        an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     */
+
+    public void setAs2ServiceManagedEgressIpAddresses(java.util.Collection<String> as2ServiceManagedEgressIpAddresses) {
+        if (as2ServiceManagedEgressIpAddresses == null) {
+            this.as2ServiceManagedEgressIpAddresses = null;
+            return;
+        }
+
+        this.as2ServiceManagedEgressIpAddresses = new java.util.ArrayList<String>(as2ServiceManagedEgressIpAddresses);
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAs2ServiceManagedEgressIpAddresses(java.util.Collection)} or
+     * {@link #withAs2ServiceManagedEgressIpAddresses(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param as2ServiceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *        the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *        <p>
+     *        These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *        an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withAs2ServiceManagedEgressIpAddresses(String... as2ServiceManagedEgressIpAddresses) {
+        if (this.as2ServiceManagedEgressIpAddresses == null) {
+            setAs2ServiceManagedEgressIpAddresses(new java.util.ArrayList<String>(as2ServiceManagedEgressIpAddresses.length));
+        }
+        for (String ele : as2ServiceManagedEgressIpAddresses) {
+            this.as2ServiceManagedEgressIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * 
+     * @param as2ServiceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *        the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *        <p>
+     *        These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *        an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withAs2ServiceManagedEgressIpAddresses(java.util.Collection<String> as2ServiceManagedEgressIpAddresses) {
+        setAs2ServiceManagedEgressIpAddresses(as2ServiceManagedEgressIpAddresses);
         return this;
     }
 
@@ -2342,7 +2805,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         if (getUserCount() != null)
             sb.append("UserCount: ").append(getUserCount()).append(",");
         if (getWorkflowDetails() != null)
-            sb.append("WorkflowDetails: ").append(getWorkflowDetails());
+            sb.append("WorkflowDetails: ").append(getWorkflowDetails()).append(",");
+        if (getStructuredLogDestinations() != null)
+            sb.append("StructuredLogDestinations: ").append(getStructuredLogDestinations()).append(",");
+        if (getS3StorageOptions() != null)
+            sb.append("S3StorageOptions: ").append(getS3StorageOptions()).append(",");
+        if (getAs2ServiceManagedEgressIpAddresses() != null)
+            sb.append("As2ServiceManagedEgressIpAddresses: ").append(getAs2ServiceManagedEgressIpAddresses());
         sb.append("}");
         return sb.toString();
     }
@@ -2434,6 +2903,19 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getWorkflowDetails() != null && other.getWorkflowDetails().equals(this.getWorkflowDetails()) == false)
             return false;
+        if (other.getStructuredLogDestinations() == null ^ this.getStructuredLogDestinations() == null)
+            return false;
+        if (other.getStructuredLogDestinations() != null && other.getStructuredLogDestinations().equals(this.getStructuredLogDestinations()) == false)
+            return false;
+        if (other.getS3StorageOptions() == null ^ this.getS3StorageOptions() == null)
+            return false;
+        if (other.getS3StorageOptions() != null && other.getS3StorageOptions().equals(this.getS3StorageOptions()) == false)
+            return false;
+        if (other.getAs2ServiceManagedEgressIpAddresses() == null ^ this.getAs2ServiceManagedEgressIpAddresses() == null)
+            return false;
+        if (other.getAs2ServiceManagedEgressIpAddresses() != null
+                && other.getAs2ServiceManagedEgressIpAddresses().equals(this.getAs2ServiceManagedEgressIpAddresses()) == false)
+            return false;
         return true;
     }
 
@@ -2461,6 +2943,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUserCount() == null) ? 0 : getUserCount().hashCode());
         hashCode = prime * hashCode + ((getWorkflowDetails() == null) ? 0 : getWorkflowDetails().hashCode());
+        hashCode = prime * hashCode + ((getStructuredLogDestinations() == null) ? 0 : getStructuredLogDestinations().hashCode());
+        hashCode = prime * hashCode + ((getS3StorageOptions() == null) ? 0 : getS3StorageOptions().hashCode());
+        hashCode = prime * hashCode + ((getAs2ServiceManagedEgressIpAddresses() == null) ? 0 : getAs2ServiceManagedEgressIpAddresses().hashCode());
         return hashCode;
     }
 

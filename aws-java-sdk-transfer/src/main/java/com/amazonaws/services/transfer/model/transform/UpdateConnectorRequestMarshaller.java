@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class UpdateConnectorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessRole").build();
     private static final MarshallingInfo<String> LOGGINGROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingRole").build();
+    private static final MarshallingInfo<StructuredPojo> SFTPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SftpConfig").build();
+    private static final MarshallingInfo<String> SECURITYPOLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityPolicyName").build();
 
     private static final UpdateConnectorRequestMarshaller instance = new UpdateConnectorRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class UpdateConnectorRequestMarshaller {
             protocolMarshaller.marshall(updateConnectorRequest.getAs2Config(), AS2CONFIG_BINDING);
             protocolMarshaller.marshall(updateConnectorRequest.getAccessRole(), ACCESSROLE_BINDING);
             protocolMarshaller.marshall(updateConnectorRequest.getLoggingRole(), LOGGINGROLE_BINDING);
+            protocolMarshaller.marshall(updateConnectorRequest.getSftpConfig(), SFTPCONFIG_BINDING);
+            protocolMarshaller.marshall(updateConnectorRequest.getSecurityPolicyName(), SECURITYPOLICYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

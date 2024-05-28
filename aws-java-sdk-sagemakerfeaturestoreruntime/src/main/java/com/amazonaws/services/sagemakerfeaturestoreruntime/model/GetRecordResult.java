@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class GetRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private java.util.List<FeatureValue> record;
+    /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     */
+    private String expiresAt;
 
     /**
      * <p>
@@ -101,6 +107,46 @@ public class GetRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     * 
+     * @param expiresAt
+     *        The <code>ExpiresAt</code> ISO string of the requested record.
+     */
+
+    public void setExpiresAt(String expiresAt) {
+        this.expiresAt = expiresAt;
+    }
+
+    /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     * 
+     * @return The <code>ExpiresAt</code> ISO string of the requested record.
+     */
+
+    public String getExpiresAt() {
+        return this.expiresAt;
+    }
+
+    /**
+     * <p>
+     * The <code>ExpiresAt</code> ISO string of the requested record.
+     * </p>
+     * 
+     * @param expiresAt
+     *        The <code>ExpiresAt</code> ISO string of the requested record.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecordResult withExpiresAt(String expiresAt) {
+        setExpiresAt(expiresAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +159,9 @@ public class GetRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecord() != null)
-            sb.append("Record: ").append(getRecord());
+            sb.append("Record: ").append(getRecord()).append(",");
+        if (getExpiresAt() != null)
+            sb.append("ExpiresAt: ").append(getExpiresAt());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +180,10 @@ public class GetRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getRecord() != null && other.getRecord().equals(this.getRecord()) == false)
             return false;
+        if (other.getExpiresAt() == null ^ this.getExpiresAt() == null)
+            return false;
+        if (other.getExpiresAt() != null && other.getExpiresAt().equals(this.getExpiresAt()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +193,7 @@ public class GetRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRecord() == null) ? 0 : getRecord().hashCode());
+        hashCode = prime * hashCode + ((getExpiresAt() == null) ? 0 : getExpiresAt().hashCode());
         return hashCode;
     }
 

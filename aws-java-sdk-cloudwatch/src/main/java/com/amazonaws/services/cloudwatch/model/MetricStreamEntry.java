@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,8 @@ public class MetricStreamEntry implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+     * The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and
+     * <code>opentelemetry0.7</code>.
      * </p>
      */
     private String outputFormat;
@@ -311,12 +312,13 @@ public class MetricStreamEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+     * The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and
+     * <code>opentelemetry0.7</code>.
      * </p>
      * 
      * @param outputFormat
-     *        The output format of this metric stream. Valid values are <code>json</code> and
-     *        <code>opentelemetry0.7</code>.
+     *        The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>
+     *        , and <code>opentelemetry0.7</code>.
      * @see MetricStreamOutputFormat
      */
 
@@ -326,11 +328,12 @@ public class MetricStreamEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+     * The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and
+     * <code>opentelemetry0.7</code>.
      * </p>
      * 
-     * @return The output format of this metric stream. Valid values are <code>json</code> and
-     *         <code>opentelemetry0.7</code>.
+     * @return The output format of this metric stream. Valid values are <code>json</code>,
+     *         <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.
      * @see MetricStreamOutputFormat
      */
 
@@ -340,12 +343,13 @@ public class MetricStreamEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+     * The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and
+     * <code>opentelemetry0.7</code>.
      * </p>
      * 
      * @param outputFormat
-     *        The output format of this metric stream. Valid values are <code>json</code> and
-     *        <code>opentelemetry0.7</code>.
+     *        The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>
+     *        , and <code>opentelemetry0.7</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStreamOutputFormat
      */
@@ -357,12 +361,13 @@ public class MetricStreamEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.
+     * The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and
+     * <code>opentelemetry0.7</code>.
      * </p>
      * 
      * @param outputFormat
-     *        The output format of this metric stream. Valid values are <code>json</code> and
-     *        <code>opentelemetry0.7</code>.
+     *        The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>
+     *        , and <code>opentelemetry0.7</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStreamOutputFormat
      */

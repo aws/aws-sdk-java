@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,20 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
+ *
+ * <p>
+ * <b>Migrating to the AWS SDK for Java v2</b>
+ * <p>
+ * For non-HTTP settings, the v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/client/config/ClientOverrideConfiguration.html">ClientOverrideConfiguration</a>
+ *
+ * <p>
+ * For HTTP settings such as maxConnections, you can set them on the SDK client builder through
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/client/builder/SdkSyncClientBuilder.html#httpClientBuilder(software.amazon.awssdk.http.SdkHttpClient.Builder)">
+ *  httpClientBuilder</a>.
+ * <p>
+ * See <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/client-configuration.html">Migration Guide</a>
+ * for more information.
  *
  * @see PredefinedClientConfigurations
  */

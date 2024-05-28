@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,40 +15,44 @@ package com.amazonaws.services.sqs.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemovePermissionRequest Marshaller
+ * RemovePermissionRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemovePermissionRequestMarshaller implements Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
+@SdkInternalApi
+public class RemovePermissionRequestMarshaller {
 
-    public Request<RemovePermissionRequest> marshall(RemovePermissionRequest removePermissionRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<String> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Label").build();
+
+    private static final RemovePermissionRequestMarshaller instance = new RemovePermissionRequestMarshaller();
+
+    public static RemovePermissionRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemovePermissionRequest removePermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removePermissionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemovePermissionRequest> request = new DefaultRequest<RemovePermissionRequest>(removePermissionRequest, "AmazonSQS");
-        request.addParameter("Action", "RemovePermission");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (removePermissionRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(removePermissionRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(removePermissionRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getLabel(), LABEL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (removePermissionRequest.getLabel() != null) {
-            request.addParameter("Label", StringUtils.fromString(removePermissionRequest.getLabel()));
-        }
-
-        return request;
     }
 
 }

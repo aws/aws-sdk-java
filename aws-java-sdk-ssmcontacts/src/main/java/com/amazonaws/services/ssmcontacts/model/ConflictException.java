@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,12 @@ public class ConflictException extends com.amazonaws.services.ssmcontacts.model.
 
     /** Identifier of the resource in use */
     private String resourceId;
-    /** ype of the resource in use */
+    /** Type of the resource in use */
     private String resourceType;
+    /**
+     * List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+     */
+    private java.util.List<DependentEntity> dependentEntities;
 
     /**
      * Constructs a new ConflictException with the specified error message.
@@ -75,10 +79,10 @@ public class ConflictException extends com.amazonaws.services.ssmcontacts.model.
     }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      * 
      * @param resourceType
-     *        ype of the resource in use
+     *        Type of the resource in use
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -87,9 +91,9 @@ public class ConflictException extends com.amazonaws.services.ssmcontacts.model.
     }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      * 
-     * @return ype of the resource in use
+     * @return Type of the resource in use
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -98,15 +102,83 @@ public class ConflictException extends com.amazonaws.services.ssmcontacts.model.
     }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      * 
      * @param resourceType
-     *        ype of the resource in use
+     *        Type of the resource in use
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ConflictException withResourceType(String resourceType) {
         setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+     * 
+     * @return List of dependent entities containing information on relation type and resourceArns linked to the
+     *         resource in use
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("DependentEntities")
+    public java.util.List<DependentEntity> getDependentEntities() {
+        return dependentEntities;
+    }
+
+    /**
+     * List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+     * 
+     * @param dependentEntities
+     *        List of dependent entities containing information on relation type and resourceArns linked to the resource
+     *        in use
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("DependentEntities")
+    public void setDependentEntities(java.util.Collection<DependentEntity> dependentEntities) {
+        if (dependentEntities == null) {
+            this.dependentEntities = null;
+            return;
+        }
+
+        this.dependentEntities = new java.util.ArrayList<DependentEntity>(dependentEntities);
+    }
+
+    /**
+     * List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDependentEntities(java.util.Collection)} or {@link #withDependentEntities(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param dependentEntities
+     *        List of dependent entities containing information on relation type and resourceArns linked to the resource
+     *        in use
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withDependentEntities(DependentEntity... dependentEntities) {
+        if (this.dependentEntities == null) {
+            setDependentEntities(new java.util.ArrayList<DependentEntity>(dependentEntities.length));
+        }
+        for (DependentEntity ele : dependentEntities) {
+            this.dependentEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+     * 
+     * @param dependentEntities
+     *        List of dependent entities containing information on relation type and resourceArns linked to the resource
+     *        in use
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConflictException withDependentEntities(java.util.Collection<DependentEntity> dependentEntities) {
+        setDependentEntities(dependentEntities);
         return this;
     }
 

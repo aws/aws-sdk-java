@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,13 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
- * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT).
- * Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets
- * of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one
- * MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and
- * players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to
- * locate specific data within the asset.
+ * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container is MPEG-2
+ * Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream
+ * program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical
+ * label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT
+ * lists the types of data in a program along with their PID. Downstream systems and players use the program map table
+ * to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsSettings" target="_top">AWS API
  *      Documentation</a>
@@ -37,13 +36,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      */
     private String audioDuration;
     /** The number of audio frames to insert for each PES packet. */
@@ -67,31 +66,19 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value to allow all PTS values.
      */
     private String dataPTSControl;
-    /**
-     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
-     */
+    /** Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. */
     private DvbNitSettings dvbNitSettings;
-    /**
-     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
-     */
+    /** Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. */
     private DvbSdtSettings dvbSdtSettings;
     /**
      * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
      * JSON array. Default is the range 460-479.
      */
     private java.util.List<Integer> dvbSubPids;
-    /**
-     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
-     * work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
-     */
+    /** Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. */
     private DvbTdtSettings dvbTdtSettings;
     /** Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499. */
     private Integer dvbTeletextPid;
@@ -111,8 +98,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /** Controls whether to include the ES Rate field in the PES header. */
     private String esRateInPes;
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
-     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video
+     * EBP markers. To correct this problem, set this value to Force.
      */
     private String forceTsVideoEbpOrder;
     /** The length, in seconds, of each fragment. Only used with EBP markers. */
@@ -155,7 +142,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private String pcrControl;
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
-     * value, the service will use the value for Video PID (VideoPid).
+     * value, the service will use the value for Video PID.
      */
     private Integer pcrPid;
     /**
@@ -165,14 +152,35 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer pmtInterval;
     /** Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480. */
     private Integer pmtPid;
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream
+     * output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport
+     * stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder
+     * buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder
+     * buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+     */
+    private String preventBufferUnderflow;
     /** Specify the packet identifier (PID) of the private metadata stream. Default is 503. */
     private Integer privateMetadataPid;
     /**
-     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
-     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
-     * used for organizing data.
+     * Use Program number to specify the program number used in the program map table (PMT) for this output. Default is
+     * 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing
+     * data.
      */
     private Integer programNumber;
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     */
+    private Integer ptsOffset;
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     */
+    private String ptsOffsetMode;
     /**
      * When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the
      * bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate.
@@ -180,16 +188,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private String rateMode;
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      */
     private M2tsScte35Esam scte35Esam;
     /** Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream. */
     private Integer scte35Pid;
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
-     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      */
     private String scte35Source;
     /**
@@ -277,25 +285,24 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @see M2tsAudioDuration
      */
 
@@ -306,24 +313,23 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @return Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *         sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *         video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *         (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio
-     *         streams with silence or trims them to ensure that the total duration of each audio stream is at least as
-     *         long as the total duration of the video stream. After padding or trimming, the audio stream duration is
-     *         no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only
-     *         to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to
-     *         the end of the file. When you keep the default value, any minor discrepancies between audio and video
-     *         duration will depend on your output audio codec.
+     *         video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *         video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *         total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *         padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *         MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *         unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *         value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @see M2tsAudioDuration
      */
 
@@ -334,25 +340,24 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsAudioDuration
      */
@@ -365,25 +370,24 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsAudioDuration
      */
@@ -607,12 +611,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value to allow all PTS values.
      * 
      * @param dataPTSControl
      *        If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *        (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *        packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *        packets with lesser PTS values). Keep the default value to allow all PTS values.
      * @see M2tsDataPtsControl
      */
 
@@ -623,11 +627,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value to allow all PTS values.
      * 
      * @return If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *         (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *         packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *         packets with lesser PTS values). Keep the default value to allow all PTS values.
      * @see M2tsDataPtsControl
      */
 
@@ -638,12 +642,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value to allow all PTS values.
      * 
      * @param dataPTSControl
      *        If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *        (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *        packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *        packets with lesser PTS values). Keep the default value to allow all PTS values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsDataPtsControl
      */
@@ -656,12 +660,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value to allow all PTS values.
      * 
      * @param dataPTSControl
      *        If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *        (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *        packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *        packets with lesser PTS values). Keep the default value to allow all PTS values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsDataPtsControl
      */
@@ -672,14 +676,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
      * 
      * @param dvbNitSettings
      *        Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
-     *        When you work directly in your JSON job specification, include this object only when your job has a
-     *        transport stream output and the container settings contain the object M2tsSettings.
      */
 
     public void setDvbNitSettings(DvbNitSettings dvbNitSettings) {
@@ -687,13 +687,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
      * 
      * @return Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this
-     *         output. When you work directly in your JSON job specification, include this object only when your job has
-     *         a transport stream output and the container settings contain the object M2tsSettings.
+     *         output.
      */
 
     public DvbNitSettings getDvbNitSettings() {
@@ -701,14 +698,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
      * 
      * @param dvbNitSettings
      *        Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
-     *        When you work directly in your JSON job specification, include this object only when your job has a
-     *        transport stream output and the container settings contain the object M2tsSettings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -718,14 +711,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
      * 
      * @param dvbSdtSettings
      *        Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
-     *        When you work directly in your JSON job specification, include this object only when your job has a
-     *        transport stream output and the container settings contain the object M2tsSettings.
      */
 
     public void setDvbSdtSettings(DvbSdtSettings dvbSdtSettings) {
@@ -733,13 +722,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
      * 
      * @return Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this
-     *         output. When you work directly in your JSON job specification, include this object only when your job has
-     *         a transport stream output and the container settings contain the object M2tsSettings.
+     *         output.
      */
 
     public DvbSdtSettings getDvbSdtSettings() {
@@ -747,14 +733,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
-     * you work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
      * 
      * @param dvbSdtSettings
      *        Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
-     *        When you work directly in your JSON job specification, include this object only when your job has a
-     *        transport stream output and the container settings contain the object M2tsSettings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -834,14 +816,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
-     * work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
      * 
      * @param dvbTdtSettings
-     *        Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When
-     *        you work directly in your JSON job specification, include this object only when your job has a transport
-     *        stream output and the container settings contain the object M2tsSettings.
+     *        Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
      */
 
     public void setDvbTdtSettings(DvbTdtSettings dvbTdtSettings) {
@@ -849,13 +827,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
-     * work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
      * 
-     * @return Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When
-     *         you work directly in your JSON job specification, include this object only when your job has a transport
-     *         stream output and the container settings contain the object M2tsSettings.
+     * @return Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
      */
 
     public DvbTdtSettings getDvbTdtSettings() {
@@ -863,14 +837,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
-     * work directly in your JSON job specification, include this object only when your job has a transport stream
-     * output and the container settings contain the object M2tsSettings.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
      * 
      * @param dvbTdtSettings
-     *        Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When
-     *        you work directly in your JSON job specification, include this object only when your job has a transport
-     *        stream output and the container settings contain the object M2tsSettings.
+     *        Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1107,12 +1077,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
-     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video
+     * EBP markers. To correct this problem, set this value to Force.
      * 
      * @param forceTsVideoEbpOrder
-     *        Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
-     *        before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     *        Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your
+     *        video EBP markers. To correct this problem, set this value to Force.
      * @see M2tsForceTsVideoEbpOrder
      */
 
@@ -1121,11 +1091,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
-     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video
+     * EBP markers. To correct this problem, set this value to Force.
      * 
-     * @return Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
-     *         before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * @return Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your
+     *         video EBP markers. To correct this problem, set this value to Force.
      * @see M2tsForceTsVideoEbpOrder
      */
 
@@ -1134,12 +1104,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
-     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video
+     * EBP markers. To correct this problem, set this value to Force.
      * 
      * @param forceTsVideoEbpOrder
-     *        Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
-     *        before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     *        Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your
+     *        video EBP markers. To correct this problem, set this value to Force.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsForceTsVideoEbpOrder
      */
@@ -1150,12 +1120,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
-     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your video
+     * EBP markers. To correct this problem, set this value to Force.
      * 
      * @param forceTsVideoEbpOrder
-     *        Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
-     *        before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     *        Keep the default value unless you know that your audio EBP markers are incorrectly appearing before your
+     *        video EBP markers. To correct this problem, set this value to Force.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsForceTsVideoEbpOrder
      */
@@ -1562,11 +1532,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
-     * value, the service will use the value for Video PID (VideoPid).
+     * value, the service will use the value for Video PID.
      * 
      * @param pcrPid
      *        Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not
-     *        specify a value, the service will use the value for Video PID (VideoPid).
+     *        specify a value, the service will use the value for Video PID.
      */
 
     public void setPcrPid(Integer pcrPid) {
@@ -1575,10 +1545,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
-     * value, the service will use the value for Video PID (VideoPid).
+     * value, the service will use the value for Video PID.
      * 
      * @return Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not
-     *         specify a value, the service will use the value for Video PID (VideoPid).
+     *         specify a value, the service will use the value for Video PID.
      */
 
     public Integer getPcrPid() {
@@ -1587,11 +1557,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
-     * value, the service will use the value for Video PID (VideoPid).
+     * value, the service will use the value for Video PID.
      * 
      * @param pcrPid
      *        Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not
-     *        specify a value, the service will use the value for Video PID (VideoPid).
+     *        specify a value, the service will use the value for Video PID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1675,6 +1645,93 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream
+     * output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport
+     * stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder
+     * buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder
+     * buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+     * 
+     * @param preventBufferUnderflow
+     *        Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport
+     *        stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase
+     *        your transport stream's bitrate. For most workflows: We recommend that you keep the default value,
+     *        Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if
+     *        MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your
+     *        job will take longer to complete.
+     * @see M2tsPreventBufferUnderflow
+     */
+
+    public void setPreventBufferUnderflow(String preventBufferUnderflow) {
+        this.preventBufferUnderflow = preventBufferUnderflow;
+    }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream
+     * output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport
+     * stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder
+     * buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder
+     * buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+     * 
+     * @return Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your
+     *         transport stream output. Use if you are seeing decoder buffer underflows in your output and are unable to
+     *         increase your transport stream's bitrate. For most workflows: We recommend that you keep the default
+     *         value, Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note
+     *         that if MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced
+     *         and your job will take longer to complete.
+     * @see M2tsPreventBufferUnderflow
+     */
+
+    public String getPreventBufferUnderflow() {
+        return this.preventBufferUnderflow;
+    }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream
+     * output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport
+     * stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder
+     * buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder
+     * buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+     * 
+     * @param preventBufferUnderflow
+     *        Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport
+     *        stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase
+     *        your transport stream's bitrate. For most workflows: We recommend that you keep the default value,
+     *        Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if
+     *        MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your
+     *        job will take longer to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M2tsPreventBufferUnderflow
+     */
+
+    public M2tsSettings withPreventBufferUnderflow(String preventBufferUnderflow) {
+        setPreventBufferUnderflow(preventBufferUnderflow);
+        return this;
+    }
+
+    /**
+     * Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport stream
+     * output. Use if you are seeing decoder buffer underflows in your output and are unable to increase your transport
+     * stream's bitrate. For most workflows: We recommend that you keep the default value, Disabled. To prevent decoder
+     * buffer underflows in your output, when possible: Choose Enabled. Note that if MediaConvert prevents a decoder
+     * buffer underflow in your output, output video quality is reduced and your job will take longer to complete.
+     * 
+     * @param preventBufferUnderflow
+     *        Specify whether MediaConvert automatically attempts to prevent decoder buffer underflows in your transport
+     *        stream output. Use if you are seeing decoder buffer underflows in your output and are unable to increase
+     *        your transport stream's bitrate. For most workflows: We recommend that you keep the default value,
+     *        Disabled. To prevent decoder buffer underflows in your output, when possible: Choose Enabled. Note that if
+     *        MediaConvert prevents a decoder buffer underflow in your output, output video quality is reduced and your
+     *        job will take longer to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M2tsPreventBufferUnderflow
+     */
+
+    public M2tsSettings withPreventBufferUnderflow(M2tsPreventBufferUnderflow preventBufferUnderflow) {
+        this.preventBufferUnderflow = preventBufferUnderflow.toString();
+        return this;
+    }
+
+    /**
      * Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      * 
      * @param privateMetadataPid
@@ -1709,14 +1766,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
-     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
-     * used for organizing data.
+     * Use Program number to specify the program number used in the program map table (PMT) for this output. Default is
+     * 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing
+     * data.
      * 
      * @param programNumber
-     *        Use Program number (programNumber) to specify the program number used in the program map table (PMT) for
-     *        this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream
-     *        containers, used for organizing data.
+     *        Use Program number to specify the program number used in the program map table (PMT) for this output.
+     *        Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used
+     *        for organizing data.
      */
 
     public void setProgramNumber(Integer programNumber) {
@@ -1724,13 +1781,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
-     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
-     * used for organizing data.
+     * Use Program number to specify the program number used in the program map table (PMT) for this output. Default is
+     * 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing
+     * data.
      * 
-     * @return Use Program number (programNumber) to specify the program number used in the program map table (PMT) for
-     *         this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream
-     *         containers, used for organizing data.
+     * @return Use Program number to specify the program number used in the program map table (PMT) for this output.
+     *         Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
+     *         used for organizing data.
      */
 
     public Integer getProgramNumber() {
@@ -1738,19 +1795,146 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
-     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
-     * used for organizing data.
+     * Use Program number to specify the program number used in the program map table (PMT) for this output. Default is
+     * 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used for organizing
+     * data.
      * 
      * @param programNumber
-     *        Use Program number (programNumber) to specify the program number used in the program map table (PMT) for
-     *        this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream
-     *        containers, used for organizing data.
+     *        Use Program number to specify the program number used in the program map table (PMT) for this output.
+     *        Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers, used
+     *        for organizing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public M2tsSettings withProgramNumber(Integer programNumber) {
         setProgramNumber(programNumber);
+        return this;
+    }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     * 
+     * @param ptsOffset
+     *        Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer
+     *        from 0 to 3600. Leave blank to keep the default value 2.
+     */
+
+    public void setPtsOffset(Integer ptsOffset) {
+        this.ptsOffset = ptsOffset;
+    }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     * 
+     * @return Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer
+     *         from 0 to 3600. Leave blank to keep the default value 2.
+     */
+
+    public Integer getPtsOffset() {
+        return this.ptsOffset;
+    }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     * 
+     * @param ptsOffset
+     *        Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer
+     *        from 0 to 3600. Leave blank to keep the default value 2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public M2tsSettings withPtsOffset(Integer ptsOffset) {
+        setPtsOffset(ptsOffset);
+        return this;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @param ptsOffsetMode
+     *        Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *        MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *        that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and
+     *        vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *        manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *        offset.
+     * @see TsPtsOffset
+     */
+
+    public void setPtsOffsetMode(String ptsOffsetMode) {
+        this.ptsOffsetMode = ptsOffsetMode;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @return Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *         MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *         that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds
+     *         and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *         manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *         offset.
+     * @see TsPtsOffset
+     */
+
+    public String getPtsOffsetMode() {
+        return this.ptsOffsetMode;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @param ptsOffsetMode
+     *        Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *        MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *        that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and
+     *        vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *        manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *        offset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TsPtsOffset
+     */
+
+    public M2tsSettings withPtsOffsetMode(String ptsOffsetMode) {
+        setPtsOffsetMode(ptsOffsetMode);
+        return this;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @param ptsOffsetMode
+     *        Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *        MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *        that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and
+     *        vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *        manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *        offset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TsPtsOffset
+     */
+
+    public M2tsSettings withPtsOffsetMode(TsPtsOffset ptsOffsetMode) {
+        this.ptsOffsetMode = ptsOffsetMode.toString();
         return this;
     }
 
@@ -1815,12 +1999,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      * 
      * @param scte35Esam
      *        Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     *        insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML
-     *        (sccXml).
+     *        insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      */
 
     public void setScte35Esam(M2tsScte35Esam scte35Esam) {
@@ -1829,11 +2012,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      * 
      * @return Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     *         insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML
-     *         (sccXml).
+     *         insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      */
 
     public M2tsScte35Esam getScte35Esam() {
@@ -1842,12 +2024,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      * 
      * @param scte35Esam
      *        Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
-     *        insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML
-     *        (sccXml).
+     *        insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1891,17 +2072,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
-     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
      * @param scte35Source
-     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     *        XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
-     *        (include the property scte35Esam).
+     *        For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *        input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *        SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the
+     *        setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * @see M2tsScte35Source
      */
 
@@ -1910,16 +2090,15 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
-     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
-     * @return For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *         appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *         in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     *         XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
-     *         (include the property scte35Esam).
+     * @return For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *         input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *         SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the
+     *         setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * @see M2tsScte35Source
      */
 
@@ -1928,17 +2107,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
-     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
      * @param scte35Source
-     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     *        XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
-     *        (include the property scte35Esam).
+     *        For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *        input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *        SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the
+     *        setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsScte35Source
      */
@@ -1949,17 +2127,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the
-     * setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * 
      * @param scte35Source
-     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM
-     *        XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35
-     *        (include the property scte35Esam).
+     *        For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *        input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *        SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the
+     *        setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsScte35Source
      */
@@ -2371,10 +2548,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("PmtInterval: ").append(getPmtInterval()).append(",");
         if (getPmtPid() != null)
             sb.append("PmtPid: ").append(getPmtPid()).append(",");
+        if (getPreventBufferUnderflow() != null)
+            sb.append("PreventBufferUnderflow: ").append(getPreventBufferUnderflow()).append(",");
         if (getPrivateMetadataPid() != null)
             sb.append("PrivateMetadataPid: ").append(getPrivateMetadataPid()).append(",");
         if (getProgramNumber() != null)
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
+        if (getPtsOffset() != null)
+            sb.append("PtsOffset: ").append(getPtsOffset()).append(",");
+        if (getPtsOffsetMode() != null)
+            sb.append("PtsOffsetMode: ").append(getPtsOffsetMode()).append(",");
         if (getRateMode() != null)
             sb.append("RateMode: ").append(getRateMode()).append(",");
         if (getScte35Esam() != null)
@@ -2517,6 +2700,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPmtPid() != null && other.getPmtPid().equals(this.getPmtPid()) == false)
             return false;
+        if (other.getPreventBufferUnderflow() == null ^ this.getPreventBufferUnderflow() == null)
+            return false;
+        if (other.getPreventBufferUnderflow() != null && other.getPreventBufferUnderflow().equals(this.getPreventBufferUnderflow()) == false)
+            return false;
         if (other.getPrivateMetadataPid() == null ^ this.getPrivateMetadataPid() == null)
             return false;
         if (other.getPrivateMetadataPid() != null && other.getPrivateMetadataPid().equals(this.getPrivateMetadataPid()) == false)
@@ -2524,6 +2711,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getProgramNumber() == null ^ this.getProgramNumber() == null)
             return false;
         if (other.getProgramNumber() != null && other.getProgramNumber().equals(this.getProgramNumber()) == false)
+            return false;
+        if (other.getPtsOffset() == null ^ this.getPtsOffset() == null)
+            return false;
+        if (other.getPtsOffset() != null && other.getPtsOffset().equals(this.getPtsOffset()) == false)
+            return false;
+        if (other.getPtsOffsetMode() == null ^ this.getPtsOffsetMode() == null)
+            return false;
+        if (other.getPtsOffsetMode() != null && other.getPtsOffsetMode().equals(this.getPtsOffsetMode()) == false)
             return false;
         if (other.getRateMode() == null ^ this.getRateMode() == null)
             return false;
@@ -2600,8 +2795,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPcrPid() == null) ? 0 : getPcrPid().hashCode());
         hashCode = prime * hashCode + ((getPmtInterval() == null) ? 0 : getPmtInterval().hashCode());
         hashCode = prime * hashCode + ((getPmtPid() == null) ? 0 : getPmtPid().hashCode());
+        hashCode = prime * hashCode + ((getPreventBufferUnderflow() == null) ? 0 : getPreventBufferUnderflow().hashCode());
         hashCode = prime * hashCode + ((getPrivateMetadataPid() == null) ? 0 : getPrivateMetadataPid().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
+        hashCode = prime * hashCode + ((getPtsOffset() == null) ? 0 : getPtsOffset().hashCode());
+        hashCode = prime * hashCode + ((getPtsOffsetMode() == null) ? 0 : getPtsOffsetMode().hashCode());
         hashCode = prime * hashCode + ((getRateMode() == null) ? 0 : getRateMode().hashCode());
         hashCode = prime * hashCode + ((getScte35Esam() == null) ? 0 : getScte35Esam().hashCode());
         hashCode = prime * hashCode + ((getScte35Pid() == null) ? 0 : getScte35Pid().hashCode());

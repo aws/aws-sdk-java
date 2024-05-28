@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,18 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     */
+    private String deprecationMessage;
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     */
+    private String comment;
 
     /**
      * <p>
@@ -129,6 +141,86 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public void setDeprecationMessage(String deprecationMessage) {
+        this.deprecationMessage = deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @return The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public String getDeprecationMessage() {
+        return this.deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Branch withDeprecationMessage(String deprecationMessage) {
+        setDeprecationMessage(deprecationMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     */
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @return A comment in addition to the description.
+     */
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Branch withComment(String comment) {
+        setComment(comment);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,7 +235,11 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
         if (getFullyQualifiedName() != null)
             sb.append("FullyQualifiedName: ").append(getFullyQualifiedName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDeprecationMessage() != null)
+            sb.append("DeprecationMessage: ").append(getDeprecationMessage()).append(",");
+        if (getComment() != null)
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +262,14 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getDeprecationMessage() == null ^ this.getDeprecationMessage() == null)
+            return false;
+        if (other.getDeprecationMessage() != null && other.getDeprecationMessage().equals(this.getDeprecationMessage()) == false)
+            return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +280,8 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getFullyQualifiedName() == null) ? 0 : getFullyQualifiedName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationMessage() == null) ? 0 : getDeprecationMessage().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 

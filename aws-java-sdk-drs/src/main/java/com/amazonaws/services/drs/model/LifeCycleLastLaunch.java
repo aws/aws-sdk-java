@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class LifeCycleLastLaunch implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private LifeCycleLastLaunchInitiated initiated;
+    /**
+     * <p>
+     * Status of Source Server's last launch.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -76,6 +82,65 @@ public class LifeCycleLastLaunch implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Status of Source Server's last launch.
+     * </p>
+     * 
+     * @param status
+     *        Status of Source Server's last launch.
+     * @see LaunchStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Status of Source Server's last launch.
+     * </p>
+     * 
+     * @return Status of Source Server's last launch.
+     * @see LaunchStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Status of Source Server's last launch.
+     * </p>
+     * 
+     * @param status
+     *        Status of Source Server's last launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchStatus
+     */
+
+    public LifeCycleLastLaunch withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of Source Server's last launch.
+     * </p>
+     * 
+     * @param status
+     *        Status of Source Server's last launch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchStatus
+     */
+
+    public LifeCycleLastLaunch withStatus(LaunchStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +153,9 @@ public class LifeCycleLastLaunch implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInitiated() != null)
-            sb.append("Initiated: ").append(getInitiated());
+            sb.append("Initiated: ").append(getInitiated()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +174,10 @@ public class LifeCycleLastLaunch implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInitiated() != null && other.getInitiated().equals(this.getInitiated()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +187,7 @@ public class LifeCycleLastLaunch implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInitiated() == null) ? 0 : getInitiated().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

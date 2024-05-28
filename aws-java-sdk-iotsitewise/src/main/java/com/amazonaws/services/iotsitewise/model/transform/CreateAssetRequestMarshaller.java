@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,10 @@ public class CreateAssetRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> ASSETDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetDescription").build();
+    private static final MarshallingInfo<String> ASSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("assetId").build();
+    private static final MarshallingInfo<String> ASSETEXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetExternalId").build();
 
     private static final CreateAssetRequestMarshaller instance = new CreateAssetRequestMarshaller();
 
@@ -64,6 +68,8 @@ public class CreateAssetRequestMarshaller {
             protocolMarshaller.marshall(createAssetRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createAssetRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAssetRequest.getAssetDescription(), ASSETDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createAssetRequest.getAssetId(), ASSETID_BINDING);
+            protocolMarshaller.marshall(createAssetRequest.getAssetExternalId(), ASSETEXTERNALID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

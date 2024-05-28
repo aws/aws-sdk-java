@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DisableUserRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to disable.
+     * The unique identifier for the user that you want to deactivate.
      * </p>
      */
     private String userId;
@@ -40,11 +40,11 @@ public class DisableUserRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to disable.
+     * The unique identifier for the user that you want to deactivate.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account that you want to disable.
+     *        The unique identifier for the user that you want to deactivate.
      */
 
     public void setUserId(String userId) {
@@ -53,10 +53,10 @@ public class DisableUserRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to disable.
+     * The unique identifier for the user that you want to deactivate.
      * </p>
      * 
-     * @return The unique identifier for the user account that you want to disable.
+     * @return The unique identifier for the user that you want to deactivate.
      */
 
     public String getUserId() {
@@ -65,11 +65,11 @@ public class DisableUserRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for the user account that you want to disable.
+     * The unique identifier for the user that you want to deactivate.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account that you want to disable.
+     *        The unique identifier for the user that you want to deactivate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the credentials for a GitHub, GitHub Enterprise, or Bitbucket repository.
+ * Information about the credentials for a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket
+ * repository.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceCredentialsInfo" target="_top">AWS
@@ -36,17 +37,24 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
     private String arn;
     /**
      * <p>
-     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or
+     * BITBUCKET.
      * </p>
      */
     private String serverType;
     /**
      * <p>
-     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     * PERSONAL_ACCESS_TOKEN.
+     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN,
+     * or CODECONNECTIONS.
      * </p>
      */
     private String authType;
+    /**
+     * <p>
+     * The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.
+     * </p>
+     */
+    private String resource;
 
     /**
      * <p>
@@ -90,11 +98,13 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or
+     * BITBUCKET.
      * </p>
      * 
      * @param serverType
-     *        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     *        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED,
+     *        or BITBUCKET.
      * @see ServerType
      */
 
@@ -104,10 +114,12 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or
+     * BITBUCKET.
      * </p>
      * 
-     * @return The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     * @return The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB,
+     *         GITLAB_SELF_MANAGED, or BITBUCKET.
      * @see ServerType
      */
 
@@ -117,11 +129,13 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or
+     * BITBUCKET.
      * </p>
      * 
      * @param serverType
-     *        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     *        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED,
+     *        or BITBUCKET.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerType
      */
@@ -133,11 +147,13 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     * The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED, or
+     * BITBUCKET.
      * </p>
      * 
      * @param serverType
-     *        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or BITBUCKET.
+     *        The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, GITLAB, GITLAB_SELF_MANAGED,
+     *        or BITBUCKET.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerType
      */
@@ -149,13 +165,13 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     * PERSONAL_ACCESS_TOKEN.
+     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN,
+     * or CODECONNECTIONS.
      * </p>
      * 
      * @param authType
-     *        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     *        PERSONAL_ACCESS_TOKEN.
+     *        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH,
+     *        PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.
      * @see AuthType
      */
 
@@ -165,12 +181,12 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     * PERSONAL_ACCESS_TOKEN.
+     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN,
+     * or CODECONNECTIONS.
      * </p>
      * 
-     * @return The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     *         PERSONAL_ACCESS_TOKEN.
+     * @return The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH,
+     *         PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.
      * @see AuthType
      */
 
@@ -180,13 +196,13 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     * PERSONAL_ACCESS_TOKEN.
+     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN,
+     * or CODECONNECTIONS.
      * </p>
      * 
      * @param authType
-     *        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     *        PERSONAL_ACCESS_TOKEN.
+     *        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH,
+     *        PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthType
      */
@@ -198,19 +214,62 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     * PERSONAL_ACCESS_TOKEN.
+     * The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN,
+     * or CODECONNECTIONS.
      * </p>
      * 
      * @param authType
-     *        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH, or
-     *        PERSONAL_ACCESS_TOKEN.
+     *        The type of authentication used by the credentials. Valid options are OAUTH, BASIC_AUTH,
+     *        PERSONAL_ACCESS_TOKEN, or CODECONNECTIONS.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthType
      */
 
     public SourceCredentialsInfo withAuthType(AuthType authType) {
         this.authType = authType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.
+     * </p>
+     * 
+     * @param resource
+     *        The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is
+     *        CODECONNECTIONS.
+     */
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    /**
+     * <p>
+     * The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.
+     * </p>
+     * 
+     * @return The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is
+     *         CODECONNECTIONS.
+     */
+
+    public String getResource() {
+        return this.resource;
+    }
+
+    /**
+     * <p>
+     * The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is CODECONNECTIONS.
+     * </p>
+     * 
+     * @param resource
+     *        The connection ARN if your serverType type is GITLAB or GITLAB_SELF_MANAGED and your authType is
+     *        CODECONNECTIONS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCredentialsInfo withResource(String resource) {
+        setResource(resource);
         return this;
     }
 
@@ -231,7 +290,9 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
         if (getServerType() != null)
             sb.append("ServerType: ").append(getServerType()).append(",");
         if (getAuthType() != null)
-            sb.append("AuthType: ").append(getAuthType());
+            sb.append("AuthType: ").append(getAuthType()).append(",");
+        if (getResource() != null)
+            sb.append("Resource: ").append(getResource());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +319,10 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
             return false;
         if (other.getAuthType() != null && other.getAuthType().equals(this.getAuthType()) == false)
             return false;
+        if (other.getResource() == null ^ this.getResource() == null)
+            return false;
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
+            return false;
         return true;
     }
 
@@ -269,6 +334,7 @@ public class SourceCredentialsInfo implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getServerType() == null) ? 0 : getServerType().hashCode());
         hashCode = prime * hashCode + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         return hashCode;
     }
 

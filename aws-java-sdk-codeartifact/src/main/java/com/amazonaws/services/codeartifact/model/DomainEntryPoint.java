@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * repository, the entry point is the external connection that it was ingested from. An external connection is a
  * CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.
  * </p>
+ * <note>
+ * <p>
+ * If a package version exists in a repository and is updated, for example if a package of the same version is added
+ * with additional assets, the package version's <code>DomainEntryPoint</code> will not change from the original package
+ * version's value.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainEntryPoint" target="_top">AWS API
  *      Documentation</a>

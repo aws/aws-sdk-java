@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,9 @@ import javax.annotation.Generated;
  * included in the stack template.
  * </p>
  * <p>
- * For more information about modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to
- * encapsulate and reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.
+ * For more information about modules, see <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and
+ * reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ModuleInfo" target="_top">AWS API
@@ -59,8 +60,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a>
-     * in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     * >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String logicalIdHierarchy;
@@ -167,8 +168,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a>
-     * in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     * >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param logicalIdHierarchy
@@ -183,8 +184,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a
-     *        module</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     *        >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setLogicalIdHierarchy(String logicalIdHierarchy) {
@@ -205,8 +206,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a>
-     * in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     * >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return A concatenated list of the logical IDs of the module or modules containing the resource. Modules are
@@ -220,8 +221,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a
-     *         module</a> in the <i>CloudFormation User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     *         >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public String getLogicalIdHierarchy() {
@@ -242,8 +243,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a>
-     * in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     * >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param logicalIdHierarchy
@@ -258,8 +259,8 @@ public class ModuleInfo implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a
-     *        module</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources"
+     *        >Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

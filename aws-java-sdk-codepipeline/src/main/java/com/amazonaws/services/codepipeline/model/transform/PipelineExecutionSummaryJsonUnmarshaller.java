@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
                     context.nextToken();
                     pipelineExecutionSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusSummary", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionSummary.setStatusSummary(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -77,6 +81,18 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
                 if (context.testExpression("stopTrigger", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionSummary.setStopTrigger(StopExecutionTriggerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("executionMode", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionSummary.setExecutionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("executionType", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionSummary.setExecutionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("rollbackMetadata", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionSummary.setRollbackMetadata(PipelineRollbackMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

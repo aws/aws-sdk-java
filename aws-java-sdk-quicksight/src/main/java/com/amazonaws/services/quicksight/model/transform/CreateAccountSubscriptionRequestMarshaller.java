@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class CreateAccountSubscriptionRequestMarshaller {
             .marshallLocationName("AuthorGroup").build();
     private static final MarshallingInfo<List> READERGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ReaderGroup").build();
+    private static final MarshallingInfo<List> ADMINPROGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AdminProGroup").build();
+    private static final MarshallingInfo<List> AUTHORPROGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthorProGroup").build();
+    private static final MarshallingInfo<List> READERPROGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReaderProGroup").build();
     private static final MarshallingInfo<String> FIRSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FirstName").build();
     private static final MarshallingInfo<String> LASTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +64,8 @@ public class CreateAccountSubscriptionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailAddress").build();
     private static final MarshallingInfo<String> CONTACTNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContactNumber").build();
+    private static final MarshallingInfo<String> IAMIDENTITYCENTERINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IAMIdentityCenterInstanceArn").build();
 
     private static final CreateAccountSubscriptionRequestMarshaller instance = new CreateAccountSubscriptionRequestMarshaller();
 
@@ -86,10 +94,14 @@ public class CreateAccountSubscriptionRequestMarshaller {
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getAdminGroup(), ADMINGROUP_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getAuthorGroup(), AUTHORGROUP_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getReaderGroup(), READERGROUP_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getAdminProGroup(), ADMINPROGROUP_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getAuthorProGroup(), AUTHORPROGROUP_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getReaderProGroup(), READERPROGROUP_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getFirstName(), FIRSTNAME_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getLastName(), LASTNAME_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getEmailAddress(), EMAILADDRESS_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getContactNumber(), CONTACTNUMBER_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getIAMIdentityCenterInstanceArn(), IAMIDENTITYCENTERINSTANCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

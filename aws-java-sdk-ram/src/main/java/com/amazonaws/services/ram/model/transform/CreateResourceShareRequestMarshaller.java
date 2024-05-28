@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class CreateResourceShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<List> PERMISSIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionArns").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
 
     private static final CreateResourceShareRequestMarshaller instance = new CreateResourceShareRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateResourceShareRequestMarshaller {
             protocolMarshaller.marshall(createResourceShareRequest.getAllowExternalPrincipals(), ALLOWEXTERNALPRINCIPALS_BINDING);
             protocolMarshaller.marshall(createResourceShareRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createResourceShareRequest.getPermissionArns(), PERMISSIONARNS_BINDING);
+            protocolMarshaller.marshall(createResourceShareRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

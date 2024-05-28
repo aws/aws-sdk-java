@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,78 @@ public class CreateNetworkInsightsPathRequestMarshaller implements Marshaller<Re
         }
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createNetworkInsightsPathRequest.getClientToken()));
+
+        PathRequestFilter filterAtSource = createNetworkInsightsPathRequest.getFilterAtSource();
+        if (filterAtSource != null) {
+
+            if (filterAtSource.getSourceAddress() != null) {
+                request.addParameter("FilterAtSource.SourceAddress", StringUtils.fromString(filterAtSource.getSourceAddress()));
+            }
+
+            RequestFilterPortRange sourcePortRange = filterAtSource.getSourcePortRange();
+            if (sourcePortRange != null) {
+
+                if (sourcePortRange.getFromPort() != null) {
+                    request.addParameter("FilterAtSource.SourcePortRange.FromPort", StringUtils.fromInteger(sourcePortRange.getFromPort()));
+                }
+
+                if (sourcePortRange.getToPort() != null) {
+                    request.addParameter("FilterAtSource.SourcePortRange.ToPort", StringUtils.fromInteger(sourcePortRange.getToPort()));
+                }
+            }
+
+            if (filterAtSource.getDestinationAddress() != null) {
+                request.addParameter("FilterAtSource.DestinationAddress", StringUtils.fromString(filterAtSource.getDestinationAddress()));
+            }
+
+            RequestFilterPortRange destinationPortRange = filterAtSource.getDestinationPortRange();
+            if (destinationPortRange != null) {
+
+                if (destinationPortRange.getFromPort() != null) {
+                    request.addParameter("FilterAtSource.DestinationPortRange.FromPort", StringUtils.fromInteger(destinationPortRange.getFromPort()));
+                }
+
+                if (destinationPortRange.getToPort() != null) {
+                    request.addParameter("FilterAtSource.DestinationPortRange.ToPort", StringUtils.fromInteger(destinationPortRange.getToPort()));
+                }
+            }
+        }
+
+        PathRequestFilter filterAtDestination = createNetworkInsightsPathRequest.getFilterAtDestination();
+        if (filterAtDestination != null) {
+
+            if (filterAtDestination.getSourceAddress() != null) {
+                request.addParameter("FilterAtDestination.SourceAddress", StringUtils.fromString(filterAtDestination.getSourceAddress()));
+            }
+
+            RequestFilterPortRange sourcePortRange = filterAtDestination.getSourcePortRange();
+            if (sourcePortRange != null) {
+
+                if (sourcePortRange.getFromPort() != null) {
+                    request.addParameter("FilterAtDestination.SourcePortRange.FromPort", StringUtils.fromInteger(sourcePortRange.getFromPort()));
+                }
+
+                if (sourcePortRange.getToPort() != null) {
+                    request.addParameter("FilterAtDestination.SourcePortRange.ToPort", StringUtils.fromInteger(sourcePortRange.getToPort()));
+                }
+            }
+
+            if (filterAtDestination.getDestinationAddress() != null) {
+                request.addParameter("FilterAtDestination.DestinationAddress", StringUtils.fromString(filterAtDestination.getDestinationAddress()));
+            }
+
+            RequestFilterPortRange destinationPortRange = filterAtDestination.getDestinationPortRange();
+            if (destinationPortRange != null) {
+
+                if (destinationPortRange.getFromPort() != null) {
+                    request.addParameter("FilterAtDestination.DestinationPortRange.FromPort", StringUtils.fromInteger(destinationPortRange.getFromPort()));
+                }
+
+                if (destinationPortRange.getToPort() != null) {
+                    request.addParameter("FilterAtDestination.DestinationPortRange.ToPort", StringUtils.fromInteger(destinationPortRange.getToPort()));
+                }
+            }
+        }
 
         return request;
     }

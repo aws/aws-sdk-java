@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
+     * Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to
+     * access the API.
      * </p>
      */
     private String authenticationToken;
@@ -75,19 +76,20 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String locale;
     /**
      * <p>
-     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * Boolean value to determine whether the user is granted Power user privileges.
      * </p>
      */
     private String grantPoweruserPrivileges;
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
+     * Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to
+     * access the API.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the
-     *        API.
+     *        Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator
+     *        credentials to access the API.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -96,11 +98,12 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
+     * Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to
+     * access the API.
      * </p>
      * 
-     * @return Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the
-     *         API.
+     * @return Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator
+     *         credentials to access the API.
      */
 
     public String getAuthenticationToken() {
@@ -109,12 +112,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
+     * Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to
+     * access the API.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the
-     *        API.
+     *        Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator
+     *        credentials to access the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,11 +475,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * Boolean value to determine whether the user is granted Power user privileges.
      * </p>
      * 
      * @param grantPoweruserPrivileges
-     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     *        Boolean value to determine whether the user is granted Power user privileges.
      * @see BooleanEnumType
      */
 
@@ -485,10 +489,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * Boolean value to determine whether the user is granted Power user privileges.
      * </p>
      * 
-     * @return Boolean value to determine whether the user is granted Poweruser privileges.
+     * @return Boolean value to determine whether the user is granted Power user privileges.
      * @see BooleanEnumType
      */
 
@@ -498,11 +502,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * Boolean value to determine whether the user is granted Power user privileges.
      * </p>
      * 
      * @param grantPoweruserPrivileges
-     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     *        Boolean value to determine whether the user is granted Power user privileges.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BooleanEnumType
      */
@@ -514,11 +518,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * Boolean value to determine whether the user is granted Power user privileges.
      * </p>
      * 
      * @param grantPoweruserPrivileges
-     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     *        Boolean value to determine whether the user is granted Power user privileges.
      * @see BooleanEnumType
      */
 
@@ -528,11 +532,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * Boolean value to determine whether the user is granted Power user privileges.
      * </p>
      * 
      * @param grantPoweruserPrivileges
-     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     *        Boolean value to determine whether the user is granted Power user privileges.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BooleanEnumType
      */
@@ -559,9 +563,9 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId()).append(",");
         if (getGivenName() != null)
-            sb.append("GivenName: ").append(getGivenName()).append(",");
+            sb.append("GivenName: ").append("***Sensitive Data Redacted***").append(",");
         if (getSurname() != null)
-            sb.append("Surname: ").append(getSurname()).append(",");
+            sb.append("Surname: ").append("***Sensitive Data Redacted***").append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getStorageRule() != null)

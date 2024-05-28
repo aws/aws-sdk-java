@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The alarms to be deleted.
+     * The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
 
     /**
      * <p>
-     * The alarms to be deleted.
+     * The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * </p>
      * 
-     * @return The alarms to be deleted.
+     * @return The alarms to be deleted. Do not enclose the alarm names in quote marks.
      */
 
     public java.util.List<String> getAlarmNames() {
@@ -49,11 +49,11 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The alarms to be deleted.
+     * The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * </p>
      * 
      * @param alarmNames
-     *        The alarms to be deleted.
+     *        The alarms to be deleted. Do not enclose the alarm names in quote marks.
      */
 
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
@@ -67,7 +67,7 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The alarms to be deleted.
+     * The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param alarmNames
-     *        The alarms to be deleted.
+     *        The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The alarms to be deleted.
+     * The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * </p>
      * 
      * @param alarmNames
-     *        The alarms to be deleted.
+     *        The alarms to be deleted. Do not enclose the alarm names in quote marks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

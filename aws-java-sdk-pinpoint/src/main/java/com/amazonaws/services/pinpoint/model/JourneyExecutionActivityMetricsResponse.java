@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,36 +36,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <ul>
      * <li>
      * <p>
-     * CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of two
+     * CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two
      * paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     * HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      * participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     * MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants down
+     * MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down
      * one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of participants
+     * RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants
      * down one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
+     * WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
      * and time before moving participants to the next activity in a journey.
      * </p>
      * </li>
@@ -114,36 +114,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <ul>
      * <li>
      * <p>
-     * CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of two
+     * CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two
      * paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     * HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      * participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     * MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants down
+     * MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down
      * one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of participants
+     * RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants
      * down one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
+     * WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
      * and time before moving participants to the next activity in a journey.
      * </p>
      * </li>
@@ -154,36 +154,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      *        <ul>
      *        <li>
      *        <p>
-     *        CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of
+     *        CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of
      *        two paths in a journey.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     *        HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      *        participants.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     *        MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants
+     *        MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants
      *        down one of as many as five paths in a journey.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of
+     *        RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of
      *        participants down one of as many as five paths in a journey.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a
+     *        WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a
      *        specific date and time before moving participants to the next activity in a journey.
      *        </p>
      *        </li>
@@ -200,36 +200,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <ul>
      * <li>
      * <p>
-     * CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of two
+     * CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two
      * paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     * HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      * participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     * MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants down
+     * MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down
      * one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of participants
+     * RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants
      * down one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
+     * WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
      * and time before moving participants to the next activity in a journey.
      * </p>
      * </li>
@@ -239,36 +239,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      *         <ul>
      *         <li>
      *         <p>
-     *         CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of
+     *         CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of
      *         two paths in a journey.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     *         HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      *         participants.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     *         MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants
+     *         MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants
      *         down one of as many as five paths in a journey.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of
+     *         RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of
      *         participants down one of as many as five paths in a journey.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a
+     *         WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a
      *         specific date and time before moving participants to the next activity in a journey.
      *         </p>
      *         </li>
@@ -285,36 +285,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <ul>
      * <li>
      * <p>
-     * CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of two
+     * CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of two
      * paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     * HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      * participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     * MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      * </p>
      * </li>
      * <li>
      * <p>
-     * MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants down
+     * MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants down
      * one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of participants
+     * RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants
      * down one of as many as five paths in a journey.
      * </p>
      * </li>
      * <li>
      * <p>
-     * WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
+     * WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date
      * and time before moving participants to the next activity in a journey.
      * </p>
      * </li>
@@ -325,36 +325,36 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      *        <ul>
      *        <li>
      *        <p>
-     *        CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of
+     *        CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants down one of
      *        two paths in a journey.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of
+     *        HOLDOUT – For a holdout activity, which is an activity that stops a journey for a specified percentage of
      *        participants.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MESSAGE - For an email activity, which is an activity that sends an email message to participants.
+     *        MESSAGE – For an email activity, which is an activity that sends an email message to participants.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants
+     *        MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity that sends participants
      *        down one of as many as five paths in a journey.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of
+     *        RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of
      *        participants down one of as many as five paths in a journey.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a
+     *        WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a
      *        specific date and time before moving participants to the next activity in a journey.
      *        </p>
      *        </li>

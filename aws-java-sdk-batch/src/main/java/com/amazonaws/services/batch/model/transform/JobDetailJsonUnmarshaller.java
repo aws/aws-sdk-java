@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -161,6 +161,18 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                     jobDetail.setEksAttempts(new ListUnmarshaller<EksAttemptDetail>(EksAttemptDetailJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("ecsProperties", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setEcsProperties(EcsPropertiesDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("isCancelled", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setIsCancelled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("isTerminated", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setIsTerminated(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

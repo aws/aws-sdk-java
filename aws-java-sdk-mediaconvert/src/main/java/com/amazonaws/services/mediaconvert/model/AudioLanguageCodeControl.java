@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,11 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify which source for language code takes precedence for this audio track. When you choose Follow input
- * (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code
- * on the input track, the service uses the code that you specify in the setting Language code (languageCode or
- * customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you
- * specify.
+ * Specify which source for language code takes precedence for this audio track. When you choose Follow input, the
+ * service uses the language code from the input track if it's present. If there's no languge code on the input track,
+ * the service uses the code that you specify in the setting Language code. When you choose Use configured, the service
+ * uses the language code that you specify.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AudioLanguageCodeControl {

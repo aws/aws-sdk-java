@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeleteTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      */
     private String eventId;
@@ -40,11 +40,11 @@ public class DeleteTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      * 
      * @param eventId
-     *        The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     *        The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      */
 
     public void setEventId(String eventId) {
@@ -53,10 +53,10 @@ public class DeleteTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      * 
-     * @return The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * @return The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      */
 
     public String getEventId() {
@@ -65,11 +65,11 @@ public class DeleteTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      * 
      * @param eventId
-     *        The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     *        The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

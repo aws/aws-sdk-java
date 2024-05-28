@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
     /**
      * <p>
      * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
-     * automatically applied to new accounts in your organization.
+     * automatically applied to new Amazon Web Services accounts in your organization.
      * </p>
      */
     private String serviceQuotaTemplateAssociationStatus;
@@ -35,12 +35,12 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
     /**
      * <p>
      * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
-     * automatically applied to new accounts in your organization.
+     * automatically applied to new Amazon Web Services accounts in your organization.
      * </p>
      * 
      * @param serviceQuotaTemplateAssociationStatus
      *        The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
-     *        template are automatically applied to new accounts in your organization.
+     *        template are automatically applied to new Amazon Web Services accounts in your organization.
      * @see ServiceQuotaTemplateAssociationStatus
      */
 
@@ -51,11 +51,11 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
     /**
      * <p>
      * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
-     * automatically applied to new accounts in your organization.
+     * automatically applied to new Amazon Web Services accounts in your organization.
      * </p>
      * 
      * @return The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
-     *         template are automatically applied to new accounts in your organization.
+     *         template are automatically applied to new Amazon Web Services accounts in your organization.
      * @see ServiceQuotaTemplateAssociationStatus
      */
 
@@ -66,12 +66,12 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
     /**
      * <p>
      * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
-     * automatically applied to new accounts in your organization.
+     * automatically applied to new Amazon Web Services accounts in your organization.
      * </p>
      * 
      * @param serviceQuotaTemplateAssociationStatus
      *        The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
-     *        template are automatically applied to new accounts in your organization.
+     *        template are automatically applied to new Amazon Web Services accounts in your organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceQuotaTemplateAssociationStatus
      */
@@ -84,12 +84,12 @@ public class GetAssociationForServiceQuotaTemplateResult extends com.amazonaws.A
     /**
      * <p>
      * The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are
-     * automatically applied to new accounts in your organization.
+     * automatically applied to new Amazon Web Services accounts in your organization.
      * </p>
      * 
      * @param serviceQuotaTemplateAssociationStatus
      *        The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the
-     *        template are automatically applied to new accounts in your organization.
+     *        template are automatically applied to new Amazon Web Services accounts in your organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceQuotaTemplateAssociationStatus
      */

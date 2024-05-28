@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,21 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * publish or subscribe to the topic.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute applies only to <a
@@ -96,7 +111,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -289,6 +312,21 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * publish or subscribe to the topic.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute applies only to <a
@@ -313,7 +351,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -371,6 +417,22 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         can publish or subscribe to the topic.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while
+     *         creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation
+     *         messages sent by Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code>
+     *         is set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an
+     *         Amazon SNS publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     *         segment data to topic owner account if the sampled flag in the tracing header is true. This is only
+     *         supported on standard topics.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         The following attribute applies only to <a
@@ -396,7 +458,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     *         <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     *         specified Amazon SNS topic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive
+     *         can be replayed from. This point in time is based on the configured message retention period set by the
+     *         topic’s message archiving policy.
      *         </p>
      *         </li>
      *         <li>
@@ -465,6 +535,21 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * publish or subscribe to the topic.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute applies only to <a
@@ -489,7 +574,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -548,6 +641,22 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        can publish or subscribe to the topic.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while
+     *        creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation
+     *        messages sent by Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is
+     *        set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an
+     *        Amazon SNS publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     *        segment data to topic owner account if the sampled flag in the tracing header is true. This is only
+     *        supported on standard topics.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The following attribute applies only to <a
@@ -573,7 +682,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     *        <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     *        specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive
+     *        can be replayed from. This point in time is based on the configured message retention period set by the
+     *        topic’s message archiving policy.
      *        </p>
      *        </li>
      *        <li>
@@ -639,6 +756,21 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * publish or subscribe to the topic.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following attribute applies only to <a
@@ -663,7 +795,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     * <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     * specified Amazon SNS topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive can be
+     * replayed from. This point in time is based on the configured message retention period set by the topic’s message
+     * archiving policy.
      * </p>
      * </li>
      * <li>
@@ -722,6 +862,22 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        can publish or subscribe to the topic.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while
+     *        creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation
+     *        messages sent by Amazon SNS. By default, <code>SignatureVersion</code> is set to <code>1</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is
+     *        set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an
+     *        Amazon SNS publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     *        segment data to topic owner account if the sampled flag in the tracing header is true. This is only
+     *        supported on standard topics.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        The following attribute applies only to <a
@@ -747,7 +903,15 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.
+     *        <code>ArchivePolicy</code> – Adds or updates an inline policy document to archive messages stored in the
+     *        specified Amazon SNS topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BeginningArchiveTime</code> – The earliest starting point at which a message in the topic’s archive
+     *        can be replayed from. This point in time is based on the configured message retention period set by the
+     *        topic’s message archiving policy.
      *        </p>
      *        </li>
      *        <li>

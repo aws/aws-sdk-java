@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,12 +24,25 @@ import javax.annotation.Generated;
 public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * A list of requested partitions.
+     * </p>
+     */
     private java.util.List<UnfilteredPartition> unfilteredPartitions;
-
+    /**
+     * <p>
+     * A continuation token, if the returned list of partitions does not include the last one.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of requested partitions.
+     * </p>
+     * 
+     * @return A list of requested partitions.
      */
 
     public java.util.List<UnfilteredPartition> getUnfilteredPartitions() {
@@ -37,7 +50,12 @@ public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * A list of requested partitions.
+     * </p>
+     * 
      * @param unfilteredPartitions
+     *        A list of requested partitions.
      */
 
     public void setUnfilteredPartitions(java.util.Collection<UnfilteredPartition> unfilteredPartitions) {
@@ -51,12 +69,16 @@ public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * A list of requested partitions.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUnfilteredPartitions(java.util.Collection)} or {@link #withUnfilteredPartitions(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param unfilteredPartitions
+     *        A list of requested partitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +93,12 @@ public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * A list of requested partitions.
+     * </p>
+     * 
      * @param unfilteredPartitions
+     *        A list of requested partitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +108,12 @@ public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * A continuation token, if the returned list of partitions does not include the last one.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if the returned list of partitions does not include the last one.
      */
 
     public void setNextToken(String nextToken) {
@@ -89,7 +121,11 @@ public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * A continuation token, if the returned list of partitions does not include the last one.
+     * </p>
+     * 
+     * @return A continuation token, if the returned list of partitions does not include the last one.
      */
 
     public String getNextToken() {
@@ -97,7 +133,12 @@ public class GetUnfilteredPartitionsMetadataResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * A continuation token, if the returned list of partitions does not include the last one.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if the returned list of partitions does not include the last one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

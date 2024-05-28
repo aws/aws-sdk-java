@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,16 +26,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>TERMINATED</code>.
  * </p>
  * <p>
- * Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token
- * values after this time. Game session logs are retained for 14 days.
+ * Amazon GameLift retains a game session resource for 30 days after the game session ends. You can reuse idempotency
+ * token values after this time. Game session logs are retained for 14 days.
  * </p>
  * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a> |
- * <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a> | <a>StartGameSessionPlacement</a>
- * | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | <a href=
+ * <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
  * >All APIs by task</a>
  * </p>
@@ -115,18 +110,15 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      */
     private String ipAddress;
@@ -156,8 +148,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String dnsName;
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      */
     private Integer port;
@@ -177,7 +169,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
@@ -185,12 +177,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String gameSessionData;
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
@@ -730,19 +721,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *         <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *         <a>SearchGameSessions</a>.
+     * @return A set of key-value pairs that can store custom data in a game session. For example:
+     *         <code>{"Key": "difficulty", "Value": "novice"}</code>.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -751,20 +735,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>.
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -778,11 +755,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -791,12 +765,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -812,20 +782,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,13 +799,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
-     *        and port number.
+     *        The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        address and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -851,11 +814,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      * 
-     * @return The IP address of the game session. To connect to a GameLift game server, an app needs both the IP
+     * @return The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
      *         address and port number.
      */
 
@@ -865,13 +828,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
+     * and port number.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
-     *        and port number.
+     *        The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1030,13 +993,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      * 
      * @param port
-     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the
+     *        IP address and port number.
      */
 
     public void setPort(Integer port) {
@@ -1045,12 +1008,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      * 
-     * @return The port number for the game session. To connect to a GameLift game server, an app needs both the IP
-     *         address and port number.
+     * @return The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the
+     *         IP address and port number.
      */
 
     public Integer getPort() {
@@ -1059,13 +1022,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
-     * port number.
+     * The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * address and port number.
      * </p>
      * 
      * @param port
-     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the
+     *        IP address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1196,14 +1159,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      */
@@ -1215,14 +1178,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @return A set of custom game session properties, formatted as a single string value. This data is passed to a
-     *         game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *         href=
+     *         game server process with a request to start a new game session (see <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
@@ -1234,14 +1196,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1254,26 +1216,23 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
      * 
      * @param matchmakerData
-     *        Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     *        formatted as a string. In addition the matchmaking configuration used, it contains data on all players
-     *        assigned to the match, including player attributes and team assignments. For more details on matchmaker
-     *        data, see <a
+     *        Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data
+     *        is in JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player
+     *        attributes and team assignments. For more details on matchmaker data, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"
-     *        >Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new
-     *        players are added during a successful backfill (see <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
-     *        >StartMatchBackfill</a>).
+     *        >Match Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill
+     *        (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">
+     *        StartMatchBackfill</a>).
      */
 
     public void setMatchmakerData(String matchmakerData) {
@@ -1282,25 +1241,22 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
      * 
-     * @return Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     *         formatted as a string. In addition the matchmaking configuration used, it contains data on all players
-     *         assigned to the match, including player attributes and team assignments. For more details on matchmaker
-     *         data, see <a
+     * @return Information about the matchmaking process that resulted in the game session, if matchmaking was used.
+     *         Data is in JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player
+     *         attributes and team assignments. For more details on matchmaker data, see <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"
-     *         >Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new
-     *         players are added during a successful backfill (see <a
-     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
-     *         >StartMatchBackfill</a>).
+     *         >Match Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill
+     *         (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">
+     *         StartMatchBackfill</a>).
      */
 
     public String getMatchmakerData() {
@@ -1309,26 +1265,23 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     * formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned
-     * to the match, including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data is in
+     * JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are
-     * added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
      * >StartMatchBackfill</a>).
      * </p>
      * 
      * @param matchmakerData
-     *        Information about the matchmaking process that was used to create the game session. It is in JSON syntax,
-     *        formatted as a string. In addition the matchmaking configuration used, it contains data on all players
-     *        assigned to the match, including player attributes and team assignments. For more details on matchmaker
-     *        data, see <a
+     *        Information about the matchmaking process that resulted in the game session, if matchmaking was used. Data
+     *        is in JSON syntax, formatted as a string. Information includes the matchmaker ID as well as player
+     *        attributes and team assignments. For more details on matchmaker data, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"
-     *        >Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new
-     *        players are added during a successful backfill (see <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html"
-     *        >StartMatchBackfill</a>).
+     *        >Match Data</a>. Matchmaker data is updated whenever new players are added during a successful backfill
+     *        (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">
+     *        StartMatchBackfill</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1421,11 +1374,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         if (getGameProperties() != null)
             sb.append("GameProperties: ").append(getGameProperties()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: ").append(getIpAddress()).append(",");
+            sb.append("IpAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getDnsName() != null)
             sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort()).append(",");
+            sb.append("Port: ").append("***Sensitive Data Redacted***").append(",");
         if (getPlayerSessionCreationPolicy() != null)
             sb.append("PlayerSessionCreationPolicy: ").append(getPlayerSessionCreationPolicy()).append(",");
         if (getCreatorId() != null)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,19 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String projectName;
+    /**
+     * <p>
+     * Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * </p>
+     */
+    private String feature;
+    /**
+     * <p>
+     * Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining
+     * is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.
+     * </p>
+     */
+    private String autoUpdate;
 
     /**
      * <p>
@@ -68,6 +81,136 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * </p>
+     * 
+     * @param feature
+     *        Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * @see CustomizationFeature
+     */
+
+    public void setFeature(String feature) {
+        this.feature = feature;
+    }
+
+    /**
+     * <p>
+     * Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * </p>
+     * 
+     * @return Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * @see CustomizationFeature
+     */
+
+    public String getFeature() {
+        return this.feature;
+    }
+
+    /**
+     * <p>
+     * Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * </p>
+     * 
+     * @param feature
+     *        Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomizationFeature
+     */
+
+    public CreateProjectRequest withFeature(String feature) {
+        setFeature(feature);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * </p>
+     * 
+     * @param feature
+     *        Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomizationFeature
+     */
+
+    public CreateProjectRequest withFeature(CustomizationFeature feature) {
+        this.feature = feature.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining
+     * is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.
+     * </p>
+     * 
+     * @param autoUpdate
+     *        Specifies whether automatic retraining should be attempted for the versions of the project. Automatic
+     *        retraining is done as a best effort. Required argument for Content Moderation. Applicable only to
+     *        adapters.
+     * @see ProjectAutoUpdate
+     */
+
+    public void setAutoUpdate(String autoUpdate) {
+        this.autoUpdate = autoUpdate;
+    }
+
+    /**
+     * <p>
+     * Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining
+     * is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.
+     * </p>
+     * 
+     * @return Specifies whether automatic retraining should be attempted for the versions of the project. Automatic
+     *         retraining is done as a best effort. Required argument for Content Moderation. Applicable only to
+     *         adapters.
+     * @see ProjectAutoUpdate
+     */
+
+    public String getAutoUpdate() {
+        return this.autoUpdate;
+    }
+
+    /**
+     * <p>
+     * Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining
+     * is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.
+     * </p>
+     * 
+     * @param autoUpdate
+     *        Specifies whether automatic retraining should be attempted for the versions of the project. Automatic
+     *        retraining is done as a best effort. Required argument for Content Moderation. Applicable only to
+     *        adapters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProjectAutoUpdate
+     */
+
+    public CreateProjectRequest withAutoUpdate(String autoUpdate) {
+        setAutoUpdate(autoUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining
+     * is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.
+     * </p>
+     * 
+     * @param autoUpdate
+     *        Specifies whether automatic retraining should be attempted for the versions of the project. Automatic
+     *        retraining is done as a best effort. Required argument for Content Moderation. Applicable only to
+     *        adapters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProjectAutoUpdate
+     */
+
+    public CreateProjectRequest withAutoUpdate(ProjectAutoUpdate autoUpdate) {
+        this.autoUpdate = autoUpdate.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -80,7 +223,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectName() != null)
-            sb.append("ProjectName: ").append(getProjectName());
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
+        if (getFeature() != null)
+            sb.append("Feature: ").append(getFeature()).append(",");
+        if (getAutoUpdate() != null)
+            sb.append("AutoUpdate: ").append(getAutoUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -99,6 +246,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
             return false;
+        if (other.getFeature() == null ^ this.getFeature() == null)
+            return false;
+        if (other.getFeature() != null && other.getFeature().equals(this.getFeature()) == false)
+            return false;
+        if (other.getAutoUpdate() == null ^ this.getAutoUpdate() == null)
+            return false;
+        if (other.getAutoUpdate() != null && other.getAutoUpdate().equals(this.getAutoUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -108,6 +263,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
+        hashCode = prime * hashCode + ((getFeature() == null) ? 0 : getFeature().hashCode());
+        hashCode = prime * hashCode + ((getAutoUpdate() == null) ? 0 : getAutoUpdate().hashCode());
         return hashCode;
     }
 

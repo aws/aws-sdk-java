@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,60 +28,56 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a
-     * timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number,
-     * (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode
-     * varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified
-     * Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode
-     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to
-     * Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED),
-     * the first frame is the timecode value on the first input frame of the input.
+     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a timecode that
+     * will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF)
+     * or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending
+     * on your setting for Source. * If Source is set to Specified Start, the first input frame is the specified value in
+     * Start Timecode. Anchor Timecode and Start Timecode are used calculate output timecode. * If Source is set to Start
+     * at 0 the first frame is 00:00:00:00. * If Source is set to Embedded, the first frame is the timecode value on the
+     * first input frame of the input.
      */
     private String anchor;
     /**
-     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
-     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
-     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
-     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
-     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
-     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
-     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and
+     * markers are synchronized and that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number
+     * (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source,
+     * the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. *
+     * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to
+     * provide this value.
      */
     private String source;
     /**
-     * Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to
-     * specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
+     * Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the initial
+     * frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      */
     private String start;
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite
-     * the timecode date without affecting the time and frame number. Provide the new date as a string in the format
-     * "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in
-     * the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
-     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the timecode date
+     * without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use
+     * Timestamp offset, you must also enable Insert program-date-time in the output settings. For example, if the date
+     * part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset to
+     * 2003-1-25.
      */
     private String timestampOffset;
 
     /**
-     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a
-     * timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number,
-     * (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode
-     * varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified
-     * Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode
-     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to
-     * Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED),
-     * the first frame is the timecode value on the first input frame of the input.
+     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a timecode that
+     * will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF)
+     * or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending
+     * on your setting for Source. * If Source is set to Specified Start, the first input frame is the specified value in
+     * Start Timecode. Anchor Timecode and Start Timecode are used calculate output timecode. * If Source is set to Start
+     * at 0 the first frame is 00:00:00:00. * If Source is set to Embedded, the first frame is the timecode value on the
+     * first input frame of the input.
      * 
      * @param anchor
-     *        If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify
-     *        a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame
+     *        If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a
+     *        timecode that will match the input video frame to the output video frame. Use 24-hour format with frame
      *        number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for
-     *        Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource)
-     *        is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode
-     *        (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
-     *        Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source
-     *        (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input
-     *        frame of the input.
+     *        Anchor Timecode varies depending on your setting for Source. * If Source is set to Specified Start, the
+     *        first input frame is the specified value in Start Timecode. Anchor Timecode and Start Timecode are used
+     *        calculate output timecode. * If Source is set to Start at 0 the first frame is 00:00:00:00. * If Source is
+     *        set to Embedded, the first frame is the timecode value on the first input frame of the input.
      */
 
     public void setAnchor(String anchor) {
@@ -89,24 +85,21 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a
-     * timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number,
-     * (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode
-     * varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified
-     * Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode
-     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to
-     * Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED),
-     * the first frame is the timecode value on the first input frame of the input.
+     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a timecode that
+     * will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF)
+     * or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending
+     * on your setting for Source. * If Source is set to Specified Start, the first input frame is the specified value in
+     * Start Timecode. Anchor Timecode and Start Timecode are used calculate output timecode. * If Source is set to Start
+     * at 0 the first frame is 00:00:00:00. * If Source is set to Embedded, the first frame is the timecode value on the
+     * first input frame of the input.
      * 
-     * @return If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify
-     *         a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame
+     * @return If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a
+     *         timecode that will match the input video frame to the output video frame. Use 24-hour format with frame
      *         number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for
-     *         Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source
-     *         (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value
-     *         in Start Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output
-     *         timecode. * If Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. *
-     *         If Source (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the
-     *         first input frame of the input.
+     *         Anchor Timecode varies depending on your setting for Source. * If Source is set to Specified Start, the
+     *         first input frame is the specified value in Start Timecode. Anchor Timecode and Start Timecode are used
+     *         calculate output timecode. * If Source is set to Start at 0 the first frame is 00:00:00:00. * If Source
+     *         is set to Embedded, the first frame is the timecode value on the first input frame of the input.
      */
 
     public String getAnchor() {
@@ -114,25 +107,22 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify a
-     * timecode that will match the input video frame to the output video frame. Use 24-hour format with frame number,
-     * (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode
-     * varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource) is set to Specified
-     * Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode (Start). Anchor Timecode
-     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If Source (TimecodeSource) is set to
-     * Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED),
-     * the first frame is the timecode value on the first input frame of the input.
+     * If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a timecode that
+     * will match the input video frame to the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF)
+     * or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for Anchor Timecode varies depending
+     * on your setting for Source. * If Source is set to Specified Start, the first input frame is the specified value in
+     * Start Timecode. Anchor Timecode and Start Timecode are used calculate output timecode. * If Source is set to Start
+     * at 0 the first frame is 00:00:00:00. * If Source is set to Embedded, the first frame is the timecode value on the
+     * first input frame of the input.
      * 
      * @param anchor
-     *        If you use an editing platform that relies on an anchor timecode, use Anchor Timecode (Anchor) to specify
-     *        a timecode that will match the input video frame to the output video frame. Use 24-hour format with frame
+     *        If you use an editing platform that relies on an anchor timecode, use Anchor Timecode to specify a
+     *        timecode that will match the input video frame to the output video frame. Use 24-hour format with frame
      *        number, (HH:MM:SS:FF) or (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for
-     *        Anchor Timecode varies depending on your setting for Source (TimecodeSource). * If Source (TimecodeSource)
-     *        is set to Specified Start (SPECIFIEDSTART), the first input frame is the specified value in Start Timecode
-     *        (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
-     *        Source (TimecodeSource) is set to Start at 0 (ZEROBASED) the first frame is 00:00:00:00. * If Source
-     *        (TimecodeSource) is set to Embedded (EMBEDDED), the first frame is the timecode value on the first input
-     *        frame of the input.
+     *        Anchor Timecode varies depending on your setting for Source. * If Source is set to Specified Start, the
+     *        first input frame is the specified value in Start Timecode. Anchor Timecode and Start Timecode are used
+     *        calculate output timecode. * If Source is set to Start at 0 the first frame is 00:00:00:00. * If Source is
+     *        set to Embedded, the first frame is the timecode value on the first input frame of the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,23 +132,22 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
-     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
-     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
-     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
-     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
-     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
-     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and
+     * markers are synchronized and that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number
+     * (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source,
+     * the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. *
+     * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to
+     * provide this value.
      * 
      * @param source
-     *        Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
-     *        video, audio, captions, and markers are synchronized and that time-based features, such as image inserter,
-     *        work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
-     *        format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input
-     *        video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. *
-     *        Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start
-     *        (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
-     *        timecode (Start) to provide this value.
+     *        Use Source to set how timecodes are handled within this job. To make sure that your video, audio,
+     *        captions, and markers are synchronized and that time-based features, such as image inserter, work
+     *        correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *        format with frame number (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no
+     *        embedded timecode is in the source, the service will use Start at 0 instead. * Start at 0 - Set the
+     *        timecode of the initial frame to 00:00:00:00. * Specified Start - Set the timecode of the initial frame to
+     *        a value other than zero. You use Start timecode to provide this value.
      * @see TimecodeSource
      */
 
@@ -167,22 +156,21 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
-     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
-     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
-     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
-     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
-     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
-     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and
+     * markers are synchronized and that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number
+     * (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source,
+     * the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. *
+     * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to
+     * provide this value.
      * 
-     * @return Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
-     *         video, audio, captions, and markers are synchronized and that time-based features, such as image
-     *         inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are
-     *         in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in
-     *         the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED)
-     *         instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified
-     *         Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
-     *         timecode (Start) to provide this value.
+     * @return Use Source to set how timecodes are handled within this job. To make sure that your video, audio,
+     *         captions, and markers are synchronized and that time-based features, such as image inserter, work
+     *         correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *         format with frame number (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no
+     *         embedded timecode is in the source, the service will use Start at 0 instead. * Start at 0 - Set the
+     *         timecode of the initial frame to 00:00:00:00. * Specified Start - Set the timecode of the initial frame
+     *         to a value other than zero. You use Start timecode to provide this value.
      * @see TimecodeSource
      */
 
@@ -191,23 +179,22 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
-     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
-     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
-     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
-     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
-     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
-     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and
+     * markers are synchronized and that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number
+     * (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source,
+     * the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. *
+     * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to
+     * provide this value.
      * 
      * @param source
-     *        Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
-     *        video, audio, captions, and markers are synchronized and that time-based features, such as image inserter,
-     *        work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
-     *        format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input
-     *        video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. *
-     *        Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start
-     *        (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
-     *        timecode (Start) to provide this value.
+     *        Use Source to set how timecodes are handled within this job. To make sure that your video, audio,
+     *        captions, and markers are synchronized and that time-based features, such as image inserter, work
+     *        correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *        format with frame number (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no
+     *        embedded timecode is in the source, the service will use Start at 0 instead. * Start at 0 - Set the
+     *        timecode of the initial frame to 00:00:00:00. * Specified Start - Set the timecode of the initial frame to
+     *        a value other than zero. You use Start timecode to provide this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeSource
      */
@@ -218,23 +205,22 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video,
-     * audio, captions, and markers are synchronized and that time-based features, such as image inserter, work
-     * correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with
-     * frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded
-     * timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the
-     * timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial
-     * frame to a value other than zero. You use Start timecode (Start) to provide this value.
+     * Use Source to set how timecodes are handled within this job. To make sure that your video, audio, captions, and
+     * markers are synchronized and that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number
+     * (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no embedded timecode is in the source,
+     * the service will use Start at 0 instead. * Start at 0 - Set the timecode of the initial frame to 00:00:00:00. *
+     * Specified Start - Set the timecode of the initial frame to a value other than zero. You use Start timecode to
+     * provide this value.
      * 
      * @param source
-     *        Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your
-     *        video, audio, captions, and markers are synchronized and that time-based features, such as image inserter,
-     *        work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
-     *        format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input
-     *        video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. *
-     *        Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start
-     *        (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start
-     *        timecode (Start) to provide this value.
+     *        Use Source to set how timecodes are handled within this job. To make sure that your video, audio,
+     *        captions, and markers are synchronized and that time-based features, such as image inserter, work
+     *        correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour
+     *        format with frame number (HH:MM:SS:FF). * Embedded - Use the timecode that is in the input video. If no
+     *        embedded timecode is in the source, the service will use Start at 0 instead. * Start at 0 - Set the
+     *        timecode of the initial frame to 00:00:00:00. * Specified Start - Set the timecode of the initial frame to
+     *        a value other than zero. You use Start timecode to provide this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeSource
      */
@@ -245,13 +231,12 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to
-     * specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
+     * Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the initial
+     * frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      * 
      * @param start
-     *        Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode
-     *        (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF)
-     *        or (HH:MM:SS;FF).
+     *        Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the
+     *        initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      */
 
     public void setStart(String start) {
@@ -259,12 +244,11 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to
-     * specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
+     * Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the initial
+     * frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      * 
-     * @return Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode
-     *         (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number,
-     *         (HH:MM:SS:FF) or (HH:MM:SS;FF).
+     * @return Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the
+     *         initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      */
 
     public String getStart() {
@@ -272,13 +256,12 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode (Start) to
-     * specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
+     * Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the initial
+     * frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      * 
      * @param start
-     *        Only use when you set Source (TimecodeSource) to Specified start (SPECIFIEDSTART). Use Start timecode
-     *        (Start) to specify the timecode for the initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF)
-     *        or (HH:MM:SS;FF).
+     *        Only use when you set Source to Specified start. Use Start timecode to specify the timecode for the
+     *        initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or (HH:MM:SS;FF).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,19 +271,18 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite
-     * the timecode date without affecting the time and frame number. Provide the new date as a string in the format
-     * "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in
-     * the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
-     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the timecode date
+     * without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use
+     * Timestamp offset, you must also enable Insert program-date-time in the output settings. For example, if the date
+     * part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset to
+     * 2003-1-25.
      * 
      * @param timestampOffset
-     *        Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to
-     *        overwrite the timecode date without affecting the time and frame number. Provide the new date as a string
-     *        in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time
-     *        (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is
-     *        2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to
-     *        2003-1-25.
+     *        Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the
+     *        timecode date without affecting the time and frame number. Provide the new date as a string in the format
+     *        "yyyy-mm-dd". To use Timestamp offset, you must also enable Insert program-date-time in the output
+     *        settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     *        year later, set Timestamp offset to 2003-1-25.
      */
 
     public void setTimestampOffset(String timestampOffset) {
@@ -308,18 +290,17 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite
-     * the timecode date without affecting the time and frame number. Provide the new date as a string in the format
-     * "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in
-     * the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
-     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the timecode date
+     * without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use
+     * Timestamp offset, you must also enable Insert program-date-time in the output settings. For example, if the date
+     * part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset to
+     * 2003-1-25.
      * 
-     * @return Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to
-     *         overwrite the timecode date without affecting the time and frame number. Provide the new date as a string
-     *         in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time
-     *         (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is
-     *         2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to
-     *         2003-1-25.
+     * @return Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the
+     *         timecode date without affecting the time and frame number. Provide the new date as a string in the format
+     *         "yyyy-mm-dd". To use Timestamp offset, you must also enable Insert program-date-time in the output
+     *         settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     *         year later, set Timestamp offset to 2003-1-25.
      */
 
     public String getTimestampOffset() {
@@ -327,19 +308,18 @@ public class TimecodeConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to overwrite
-     * the timecode date without affecting the time and frame number. Provide the new date as a string in the format
-     * "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time (InsertProgramDateTime) in
-     * the output settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
-     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the timecode date
+     * without affecting the time and frame number. Provide the new date as a string in the format "yyyy-mm-dd". To use
+     * Timestamp offset, you must also enable Insert program-date-time in the output settings. For example, if the date
+     * part of your timecodes is 2002-1-25 and you want to change it to one year later, set Timestamp offset to
+     * 2003-1-25.
      * 
      * @param timestampOffset
-     *        Only applies to outputs that support program-date-time stamp. Use Timestamp offset (TimestampOffset) to
-     *        overwrite the timecode date without affecting the time and frame number. Provide the new date as a string
-     *        in the format "yyyy-mm-dd". To use Time stamp offset, you must also enable Insert program-date-time
-     *        (InsertProgramDateTime) in the output settings. For example, if the date part of your timecodes is
-     *        2002-1-25 and you want to change it to one year later, set Timestamp offset (TimestampOffset) to
-     *        2003-1-25.
+     *        Only applies to outputs that support program-date-time stamp. Use Timestamp offset to overwrite the
+     *        timecode date without affecting the time and frame number. Provide the new date as a string in the format
+     *        "yyyy-mm-dd". To use Timestamp offset, you must also enable Insert program-date-time in the output
+     *        settings. For example, if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     *        year later, set Timestamp offset to 2003-1-25.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

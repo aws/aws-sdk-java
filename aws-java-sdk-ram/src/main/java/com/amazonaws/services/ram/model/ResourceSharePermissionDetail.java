@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an RAM permission.
+ * Information about a RAM managed permission.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceSharePermissionDetail" target="_top">AWS
@@ -30,20 +30,20 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     * (ARN)</a> of this RAM permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * (ARN)</a> of this RAM managed permission.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The version of the permission represented in this structure.
+     * The version of the permission described in this response.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * Specifies whether the version of the permission represented in this response is the default version for this
      * permission.
      * </p>
      */
@@ -82,21 +82,109 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * Specifies whether the version of the permission represented in this response is the default version for all
      * resources of this resource type.
      * </p>
      */
     private Boolean isResourceTypeDefault;
+    /**
+     * <p>
+     * The type of managed permission. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it
+     * with your resource shares, but you can't modify it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You
+     * can associate it with your resource shares and create new versions that have different permissions.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String permissionType;
+    /**
+     * <p>
+     * Indicates what features are available for this resource share. This parameter can have one of the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all
+     * principals you share the resource share with. You can modify these resource shares in RAM using the console or
+     * APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and
+     * then promoted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That
+     * policy did not match any existing managed permissions, so RAM created this customer managed permission
+     * automatically on the customer's behalf based on the attached policy document. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the
+     * customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress. This value
+     * changes to <code>STANDARD</code> when complete.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String featureSet;
+    /**
+     * <p>
+     * The current status of the association between the permission and the resource share. The following are the
+     * possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> – This permission or version is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This permission or version is deleted.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String status;
+    /**
+     * <p>
+     * The tag key and value pairs attached to the resource share.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     * (ARN)</a> of this RAM permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * (ARN)</a> of this RAM managed permission.
      * </p>
      * 
      * @param arn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     *        Name (ARN)</a> of this RAM permission.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Name (ARN)</a> of this RAM managed permission.
      */
 
     public void setArn(String arn) {
@@ -105,12 +193,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     * (ARN)</a> of this RAM permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * (ARN)</a> of this RAM managed permission.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     *         Name (ARN)</a> of this RAM permission.
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Name (ARN)</a> of this RAM managed permission.
      */
 
     public String getArn() {
@@ -119,13 +207,13 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     * (ARN)</a> of this RAM permission.
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * (ARN)</a> of this RAM managed permission.
      * </p>
      * 
      * @param arn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     *        Name (ARN)</a> of this RAM permission.
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Name (ARN)</a> of this RAM managed permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +224,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The version of the permission represented in this structure.
+     * The version of the permission described in this response.
      * </p>
      * 
      * @param version
-     *        The version of the permission represented in this structure.
+     *        The version of the permission described in this response.
      */
 
     public void setVersion(String version) {
@@ -149,10 +237,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The version of the permission represented in this structure.
+     * The version of the permission described in this response.
      * </p>
      * 
-     * @return The version of the permission represented in this structure.
+     * @return The version of the permission described in this response.
      */
 
     public String getVersion() {
@@ -161,11 +249,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The version of the permission represented in this structure.
+     * The version of the permission described in this response.
      * </p>
      * 
      * @param version
-     *        The version of the permission represented in this structure.
+     *        The version of the permission described in this response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,12 +264,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * Specifies whether the version of the permission represented in this response is the default version for this
      * permission.
      * </p>
      * 
      * @param defaultVersion
-     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        Specifies whether the version of the permission represented in this response is the default version for
      *        this permission.
      */
 
@@ -191,11 +279,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * Specifies whether the version of the permission represented in this response is the default version for this
      * permission.
      * </p>
      * 
-     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     * @return Specifies whether the version of the permission represented in this response is the default version for
      *         this permission.
      */
 
@@ -205,12 +293,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * Specifies whether the version of the permission represented in this response is the default version for this
      * permission.
      * </p>
      * 
      * @param defaultVersion
-     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        Specifies whether the version of the permission represented in this response is the default version for
      *        this permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -222,11 +310,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for this
+     * Specifies whether the version of the permission represented in this response is the default version for this
      * permission.
      * </p>
      * 
-     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     * @return Specifies whether the version of the permission represented in this response is the default version for
      *         this permission.
      */
 
@@ -448,12 +536,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * Specifies whether the version of the permission represented in this response is the default version for all
      * resources of this resource type.
      * </p>
      * 
      * @param isResourceTypeDefault
-     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        Specifies whether the version of the permission represented in this response is the default version for
      *        all resources of this resource type.
      */
 
@@ -463,11 +551,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * Specifies whether the version of the permission represented in this response is the default version for all
      * resources of this resource type.
      * </p>
      * 
-     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     * @return Specifies whether the version of the permission represented in this response is the default version for
      *         all resources of this resource type.
      */
 
@@ -477,12 +565,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * Specifies whether the version of the permission represented in this response is the default version for all
      * resources of this resource type.
      * </p>
      * 
      * @param isResourceTypeDefault
-     *        Specifies whether the version of the permission represented in this structure is the default version for
+     *        Specifies whether the version of the permission represented in this response is the default version for
      *        all resources of this resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -494,16 +582,765 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies whether the version of the permission represented in this structure is the default version for all
+     * Specifies whether the version of the permission represented in this response is the default version for all
      * resources of this resource type.
      * </p>
      * 
-     * @return Specifies whether the version of the permission represented in this structure is the default version for
+     * @return Specifies whether the version of the permission represented in this response is the default version for
      *         all resources of this resource type.
      */
 
     public Boolean isResourceTypeDefault() {
         return this.isResourceTypeDefault;
+    }
+
+    /**
+     * <p>
+     * The type of managed permission. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it
+     * with your resource shares, but you can't modify it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You
+     * can associate it with your resource shares and create new versions that have different permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionType
+     *        The type of managed permission. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can
+     *        associate it with your resource shares, but you can't modify it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission.
+     *        You can associate it with your resource shares and create new versions that have different permissions.
+     *        </p>
+     *        </li>
+     * @see PermissionType
+     */
+
+    public void setPermissionType(String permissionType) {
+        this.permissionType = permissionType;
+    }
+
+    /**
+     * <p>
+     * The type of managed permission. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it
+     * with your resource shares, but you can't modify it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You
+     * can associate it with your resource shares and create new versions that have different permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of managed permission. This can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can
+     *         associate it with your resource shares, but you can't modify it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed
+     *         permission. You can associate it with your resource shares and create new versions that have different
+     *         permissions.
+     *         </p>
+     *         </li>
+     * @see PermissionType
+     */
+
+    public String getPermissionType() {
+        return this.permissionType;
+    }
+
+    /**
+     * <p>
+     * The type of managed permission. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it
+     * with your resource shares, but you can't modify it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You
+     * can associate it with your resource shares and create new versions that have different permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionType
+     *        The type of managed permission. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can
+     *        associate it with your resource shares, but you can't modify it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission.
+     *        You can associate it with your resource shares and create new versions that have different permissions.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionType
+     */
+
+    public ResourceSharePermissionDetail withPermissionType(String permissionType) {
+        setPermissionType(permissionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of managed permission. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it
+     * with your resource shares, but you can't modify it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You
+     * can associate it with your resource shares and create new versions that have different permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionType
+     *        The type of managed permission. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can
+     *        associate it with your resource shares, but you can't modify it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission.
+     *        You can associate it with your resource shares and create new versions that have different permissions.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionType
+     */
+
+    public ResourceSharePermissionDetail withPermissionType(PermissionType permissionType) {
+        this.permissionType = permissionType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates what features are available for this resource share. This parameter can have one of the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all
+     * principals you share the resource share with. You can modify these resource shares in RAM using the console or
+     * APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and
+     * then promoted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That
+     * policy did not match any existing managed permissions, so RAM created this customer managed permission
+     * automatically on the customer's behalf based on the attached policy document. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the
+     * customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress. This value
+     * changes to <code>STANDARD</code> when complete.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param featureSet
+     *        Indicates what features are available for this resource share. This parameter can have one of the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to
+     *        all principals you share the resource share with. You can modify these resource shares in RAM using the
+     *        console or APIs. This resource share might have been created by RAM, or it might have been
+     *        <b>CREATED_FROM_POLICY</b> and then promoted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy.
+     *        That policy did not match any existing managed permissions, so RAM created this customer managed
+     *        permission automatically on the customer's behalf based on the attached policy document. This type of
+     *        resource share is visible only to the Amazon Web Services account that created it. You can't modify it in
+     *        RAM unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but
+     *        the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress.
+     *        This value changes to <code>STANDARD</code> when complete.
+     *        </p>
+     *        </li>
+     * @see PermissionFeatureSet
+     */
+
+    public void setFeatureSet(String featureSet) {
+        this.featureSet = featureSet;
+    }
+
+    /**
+     * <p>
+     * Indicates what features are available for this resource share. This parameter can have one of the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all
+     * principals you share the resource share with. You can modify these resource shares in RAM using the console or
+     * APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and
+     * then promoted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That
+     * policy did not match any existing managed permissions, so RAM created this customer managed permission
+     * automatically on the customer's behalf based on the attached policy document. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the
+     * customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress. This value
+     * changes to <code>STANDARD</code> when complete.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates what features are available for this resource share. This parameter can have one of the
+     *         following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to
+     *         all principals you share the resource share with. You can modify these resource shares in RAM using the
+     *         console or APIs. This resource share might have been created by RAM, or it might have been
+     *         <b>CREATED_FROM_POLICY</b> and then promoted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based
+     *         policy. That policy did not match any existing managed permissions, so RAM created this customer managed
+     *         permission automatically on the customer's behalf based on the attached policy document. This type of
+     *         resource share is visible only to the Amazon Web Services account that created it. You can't modify it in
+     *         RAM unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but
+     *         the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     *         progress. This value changes to <code>STANDARD</code> when complete.
+     *         </p>
+     *         </li>
+     * @see PermissionFeatureSet
+     */
+
+    public String getFeatureSet() {
+        return this.featureSet;
+    }
+
+    /**
+     * <p>
+     * Indicates what features are available for this resource share. This parameter can have one of the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all
+     * principals you share the resource share with. You can modify these resource shares in RAM using the console or
+     * APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and
+     * then promoted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That
+     * policy did not match any existing managed permissions, so RAM created this customer managed permission
+     * automatically on the customer's behalf based on the attached policy document. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the
+     * customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress. This value
+     * changes to <code>STANDARD</code> when complete.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param featureSet
+     *        Indicates what features are available for this resource share. This parameter can have one of the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to
+     *        all principals you share the resource share with. You can modify these resource shares in RAM using the
+     *        console or APIs. This resource share might have been created by RAM, or it might have been
+     *        <b>CREATED_FROM_POLICY</b> and then promoted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy.
+     *        That policy did not match any existing managed permissions, so RAM created this customer managed
+     *        permission automatically on the customer's behalf based on the attached policy document. This type of
+     *        resource share is visible only to the Amazon Web Services account that created it. You can't modify it in
+     *        RAM unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but
+     *        the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress.
+     *        This value changes to <code>STANDARD</code> when complete.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionFeatureSet
+     */
+
+    public ResourceSharePermissionDetail withFeatureSet(String featureSet) {
+        setFeatureSet(featureSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates what features are available for this resource share. This parameter can have one of the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all
+     * principals you share the resource share with. You can modify these resource shares in RAM using the console or
+     * APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and
+     * then promoted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That
+     * policy did not match any existing managed permissions, so RAM created this customer managed permission
+     * automatically on the customer's behalf based on the attached policy document. This type of resource share is
+     * visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote
+     * it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the
+     * customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress. This value
+     * changes to <code>STANDARD</code> when complete.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param featureSet
+     *        Indicates what features are available for this resource share. This parameter can have one of the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to
+     *        all principals you share the resource share with. You can modify these resource shares in RAM using the
+     *        console or APIs. This resource share might have been created by RAM, or it might have been
+     *        <b>CREATED_FROM_POLICY</b> and then promoted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy.
+     *        That policy did not match any existing managed permissions, so RAM created this customer managed
+     *        permission automatically on the customer's behalf based on the attached policy document. This type of
+     *        resource share is visible only to the Amazon Web Services account that created it. You can't modify it in
+     *        RAM unless you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but
+     *        the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in progress.
+     *        This value changes to <code>STANDARD</code> when complete.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionFeatureSet
+     */
+
+    public ResourceSharePermissionDetail withFeatureSet(PermissionFeatureSet featureSet) {
+        this.featureSet = featureSet.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the association between the permission and the resource share. The following are the
+     * possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> – This permission or version is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This permission or version is deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The current status of the association between the permission and the resource share. The following are the
+     *        possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> – This permission or version is in the process of being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This permission or version is deleted.
+     *        </p>
+     *        </li>
+     * @see PermissionStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The current status of the association between the permission and the resource share. The following are the
+     * possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> – This permission or version is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This permission or version is deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The current status of the association between the permission and the resource share. The following are
+     *         the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource
+     *         shares.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code> – This permission or version is in the process of being deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> – This permission or version is deleted.
+     *         </p>
+     *         </li>
+     * @see PermissionStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current status of the association between the permission and the resource share. The following are the
+     * possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> – This permission or version is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This permission or version is deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The current status of the association between the permission and the resource share. The following are the
+     *        possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> – This permission or version is in the process of being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This permission or version is deleted.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionStatus
+     */
+
+    public ResourceSharePermissionDetail withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the association between the permission and the resource share. The following are the
+     * possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> – This permission or version is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> – This permission or version is deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param status
+     *        The current status of the association between the permission and the resource share. The following are the
+     *        possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> – This permission or version is in the process of being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> – This permission or version is deleted.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionStatus
+     */
+
+    public ResourceSharePermissionDetail withStatus(PermissionStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag key and value pairs attached to the resource share.
+     * </p>
+     * 
+     * @return The tag key and value pairs attached to the resource share.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag key and value pairs attached to the resource share.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key and value pairs attached to the resource share.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag key and value pairs attached to the resource share.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key and value pairs attached to the resource share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceSharePermissionDetail withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag key and value pairs attached to the resource share.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key and value pairs attached to the resource share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceSharePermissionDetail withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
     }
 
     /**
@@ -535,7 +1372,15 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getIsResourceTypeDefault() != null)
-            sb.append("IsResourceTypeDefault: ").append(getIsResourceTypeDefault());
+            sb.append("IsResourceTypeDefault: ").append(getIsResourceTypeDefault()).append(",");
+        if (getPermissionType() != null)
+            sb.append("PermissionType: ").append(getPermissionType()).append(",");
+        if (getFeatureSet() != null)
+            sb.append("FeatureSet: ").append(getFeatureSet()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -586,6 +1431,22 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
             return false;
         if (other.getIsResourceTypeDefault() != null && other.getIsResourceTypeDefault().equals(this.getIsResourceTypeDefault()) == false)
             return false;
+        if (other.getPermissionType() == null ^ this.getPermissionType() == null)
+            return false;
+        if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
+            return false;
+        if (other.getFeatureSet() == null ^ this.getFeatureSet() == null)
+            return false;
+        if (other.getFeatureSet() != null && other.getFeatureSet().equals(this.getFeatureSet()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -603,6 +1464,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getIsResourceTypeDefault() == null) ? 0 : getIsResourceTypeDefault().hashCode());
+        hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
+        hashCode = prime * hashCode + ((getFeatureSet() == null) ? 0 : getFeatureSet().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

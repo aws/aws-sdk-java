@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,22 +46,36 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * The name for the application.
+     * The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports only
+     * <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * </p>
+     */
+    private java.util.List<EventSubscription> eventSubscriptions;
+    /**
+     * <p>
+     * Name of the application.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Defines the roles and credentials that Resilience Hub would use while creating the application, importing its
+     * resources, and running an assessment.
+     * </p>
+     */
+    private PermissionModel permissionModel;
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String policyArn;
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      */
@@ -214,11 +228,89 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for the application.
+     * The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports only
+     * <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * </p>
+     * 
+     * @return The list of events you would like to subscribe and get notification for. Currently, Resilience Hub
+     *         supports only <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     */
+
+    public java.util.List<EventSubscription> getEventSubscriptions() {
+        return eventSubscriptions;
+    }
+
+    /**
+     * <p>
+     * The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports only
+     * <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * </p>
+     * 
+     * @param eventSubscriptions
+     *        The list of events you would like to subscribe and get notification for. Currently, Resilience Hub
+     *        supports only <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     */
+
+    public void setEventSubscriptions(java.util.Collection<EventSubscription> eventSubscriptions) {
+        if (eventSubscriptions == null) {
+            this.eventSubscriptions = null;
+            return;
+        }
+
+        this.eventSubscriptions = new java.util.ArrayList<EventSubscription>(eventSubscriptions);
+    }
+
+    /**
+     * <p>
+     * The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports only
+     * <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventSubscriptions(java.util.Collection)} or {@link #withEventSubscriptions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param eventSubscriptions
+     *        The list of events you would like to subscribe and get notification for. Currently, Resilience Hub
+     *        supports only <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppRequest withEventSubscriptions(EventSubscription... eventSubscriptions) {
+        if (this.eventSubscriptions == null) {
+            setEventSubscriptions(new java.util.ArrayList<EventSubscription>(eventSubscriptions.length));
+        }
+        for (EventSubscription ele : eventSubscriptions) {
+            this.eventSubscriptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of events you would like to subscribe and get notification for. Currently, Resilience Hub supports only
+     * <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * </p>
+     * 
+     * @param eventSubscriptions
+     *        The list of events you would like to subscribe and get notification for. Currently, Resilience Hub
+     *        supports only <b>Drift detected</b> and <b>Scheduled assessment failure</b> events notification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppRequest withEventSubscriptions(java.util.Collection<EventSubscription> eventSubscriptions) {
+        setEventSubscriptions(eventSubscriptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Name of the application.
      * </p>
      * 
      * @param name
-     *        The name for the application.
+     *        Name of the application.
      */
 
     public void setName(String name) {
@@ -227,10 +319,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for the application.
+     * Name of the application.
      * </p>
      * 
-     * @return The name for the application.
+     * @return Name of the application.
      */
 
     public String getName() {
@@ -239,11 +331,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name for the application.
+     * Name of the application.
      * </p>
      * 
      * @param name
-     *        The name for the application.
+     *        Name of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,18 +346,64 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Defines the roles and credentials that Resilience Hub would use while creating the application, importing its
+     * resources, and running an assessment.
+     * </p>
+     * 
+     * @param permissionModel
+     *        Defines the roles and credentials that Resilience Hub would use while creating the application, importing
+     *        its resources, and running an assessment.
+     */
+
+    public void setPermissionModel(PermissionModel permissionModel) {
+        this.permissionModel = permissionModel;
+    }
+
+    /**
+     * <p>
+     * Defines the roles and credentials that Resilience Hub would use while creating the application, importing its
+     * resources, and running an assessment.
+     * </p>
+     * 
+     * @return Defines the roles and credentials that Resilience Hub would use while creating the application, importing
+     *         its resources, and running an assessment.
+     */
+
+    public PermissionModel getPermissionModel() {
+        return this.permissionModel;
+    }
+
+    /**
+     * <p>
+     * Defines the roles and credentials that Resilience Hub would use while creating the application, importing its
+     * resources, and running an assessment.
+     * </p>
+     * 
+     * @param permissionModel
+     *        Defines the roles and credentials that Resilience Hub would use while creating the application, importing
+     *        its resources, and running an assessment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppRequest withPermissionModel(PermissionModel permissionModel) {
+        setPermissionModel(permissionModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -274,17 +412,17 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     * @return Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *         <code>policy-id</code>. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getPolicyArn() {
@@ -293,18 +431,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,12 +453,12 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
-     * @return The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *         Each tag consists of a key/value pair.
+     * @return Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *         tag consists of a key/value pair.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -329,13 +467,13 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -344,13 +482,13 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,8 +543,12 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getEventSubscriptions() != null)
+            sb.append("EventSubscriptions: ").append(getEventSubscriptions()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPermissionModel() != null)
+            sb.append("PermissionModel: ").append(getPermissionModel()).append(",");
         if (getPolicyArn() != null)
             sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
         if (getTags() != null)
@@ -437,9 +579,17 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEventSubscriptions() == null ^ this.getEventSubscriptions() == null)
+            return false;
+        if (other.getEventSubscriptions() != null && other.getEventSubscriptions().equals(this.getEventSubscriptions()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getPermissionModel() == null ^ this.getPermissionModel() == null)
+            return false;
+        if (other.getPermissionModel() != null && other.getPermissionModel().equals(this.getPermissionModel()) == false)
             return false;
         if (other.getPolicyArn() == null ^ this.getPolicyArn() == null)
             return false;
@@ -460,7 +610,9 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getAssessmentSchedule() == null) ? 0 : getAssessmentSchedule().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEventSubscriptions() == null) ? 0 : getEventSubscriptions().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
         hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

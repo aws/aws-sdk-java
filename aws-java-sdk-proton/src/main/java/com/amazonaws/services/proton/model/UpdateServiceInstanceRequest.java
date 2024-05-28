@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The client token of the service instance to update.
+     * </p>
+     */
+    private String clientToken;
     /**
      * <p>
      * The deployment type. It defines the mode for updating a service instance, as follows:
@@ -104,6 +110,46 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String templateMinorVersion;
+
+    /**
+     * <p>
+     * The client token of the service instance to update.
+     * </p>
+     * 
+     * @param clientToken
+     *        The client token of the service instance to update.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The client token of the service instance to update.
+     * </p>
+     * 
+     * @return The client token of the service instance to update.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The client token of the service instance to update.
+     * </p>
+     * 
+     * @param clientToken
+     *        The client token of the service instance to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceInstanceRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -720,6 +766,8 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDeploymentType() != null)
             sb.append("DeploymentType: ").append(getDeploymentType()).append(",");
         if (getName() != null)
@@ -746,6 +794,10 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof UpdateServiceInstanceRequest == false)
             return false;
         UpdateServiceInstanceRequest other = (UpdateServiceInstanceRequest) obj;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getDeploymentType() == null ^ this.getDeploymentType() == null)
             return false;
         if (other.getDeploymentType() != null && other.getDeploymentType().equals(this.getDeploymentType()) == false)
@@ -778,6 +830,7 @@ public class UpdateServiceInstanceRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());

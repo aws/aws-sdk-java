@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -46,6 +46,12 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     */
+    private Boolean ipv6AllowedForDualStack;
 
     /**
      * <p>
@@ -122,10 +128,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
-     * @return A list of VPC security groups IDs.
+     * @return A list of VPC security group IDs.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -137,11 +143,11 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -155,7 +161,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +170,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +186,11 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,6 +240,58 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @param ipv6AllowedForDualStack
+     *        Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public void setIpv6AllowedForDualStack(Boolean ipv6AllowedForDualStack) {
+        this.ipv6AllowedForDualStack = ipv6AllowedForDualStack;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @return Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public Boolean getIpv6AllowedForDualStack() {
+        return this.ipv6AllowedForDualStack;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @param ipv6AllowedForDualStack
+     *        Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcConfigResponse withIpv6AllowedForDualStack(Boolean ipv6AllowedForDualStack) {
+        setIpv6AllowedForDualStack(ipv6AllowedForDualStack);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @return Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public Boolean isIpv6AllowedForDualStack() {
+        return this.ipv6AllowedForDualStack;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +308,9 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getIpv6AllowedForDualStack() != null)
+            sb.append("Ipv6AllowedForDualStack: ").append(getIpv6AllowedForDualStack());
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +337,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getIpv6AllowedForDualStack() == null ^ this.getIpv6AllowedForDualStack() == null)
+            return false;
+        if (other.getIpv6AllowedForDualStack() != null && other.getIpv6AllowedForDualStack().equals(this.getIpv6AllowedForDualStack()) == false)
+            return false;
         return true;
     }
 
@@ -288,6 +352,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6AllowedForDualStack() == null) ? 0 : getIpv6AllowedForDualStack().hashCode());
         return hashCode;
     }
 

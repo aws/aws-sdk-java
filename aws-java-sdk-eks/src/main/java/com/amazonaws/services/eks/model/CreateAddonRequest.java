@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,13 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to create the add-on for.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      */
     private String addonName;
@@ -85,8 +83,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
-     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is installed on
+     * your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on might fail if
+     * conflicts are detected. This option works differently during the update operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      * </p>
      * </li>
      * </ul>
@@ -104,19 +104,26 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientRequestToken;
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     */
+    private String configurationValues;
 
     /**
      * <p>
-     * The name of the cluster to create the add-on for.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to create the add-on for.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -125,10 +132,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to create the add-on for.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster to create the add-on for.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -137,11 +144,11 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to create the add-on for.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to create the add-on for.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,15 +159,12 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      * 
      * @param addonName
-     *        The name of the add-on. The name must match one of the names returned by <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     *        <code>DescribeAddonVersions</code> </a>.
+     *        The name of the add-on. The name must match one of the names returned by
+     *        <code>DescribeAddonVersions</code>.
      */
 
     public void setAddonName(String addonName) {
@@ -169,14 +173,11 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      * 
-     * @return The name of the add-on. The name must match one of the names returned by <a
-     *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     *         <code>DescribeAddonVersions</code> </a>.
+     * @return The name of the add-on. The name must match one of the names returned by
+     *         <code>DescribeAddonVersions</code>.
      */
 
     public String getAddonName() {
@@ -185,15 +186,12 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names returned by <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      * 
      * @param addonName
-     *        The name of the add-on. The name must match one of the names returned by <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     *        <code>DescribeAddonVersions</code> </a>.
+     *        The name of the add-on. The name must match one of the names returned by
+     *        <code>DescribeAddonVersions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,8 +378,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
-     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is installed on
+     * your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on might fail if
+     * conflicts are detected. This option works differently during the update operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      * </p>
      * </li>
      * </ul>
@@ -409,7 +409,9 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *        <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is
+     *        installed on your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on
+     *        might fail if conflicts are detected. This option works differently during the update operation. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      *        </p>
@@ -446,8 +448,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
-     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is installed on
+     * your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on might fail if
+     * conflicts are detected. This option works differently during the update operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      * </p>
      * </li>
      * </ul>
@@ -474,8 +478,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
-     *         information, see <a
+     *         <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is
+     *         installed on your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the
+     *         add-on might fail if conflicts are detected. This option works differently during the update operation.
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      *         </p>
      *         </li>
@@ -511,8 +517,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
-     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is installed on
+     * your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on might fail if
+     * conflicts are detected. This option works differently during the update operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      * </p>
      * </li>
      * </ul>
@@ -540,7 +548,9 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *        <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is
+     *        installed on your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on
+     *        might fail if conflicts are detected. This option works differently during the update operation. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      *        </p>
@@ -579,8 +589,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more information, see
-     * <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
+     * <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is installed on
+     * your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on might fail if
+     * conflicts are detected. This option works differently during the update operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      * </p>
      * </li>
      * </ul>
@@ -608,7 +620,9 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Preserve</b> – Not supported. You can set this value when updating an add-on though. For more
+     *        <b>Preserve</b> – This is similar to the NONE option. If the self-managed version of the add-on is
+     *        installed on your cluster Amazon EKS doesn't change the add-on resource properties. Creation of the add-on
+     *        might fail if conflicts are detected. This option works differently during the update operation. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateAddon.html">UpdateAddon</a>.
      *        </p>
@@ -669,12 +683,12 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *         a key and an optional value. You define both.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -683,13 +697,13 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -698,13 +712,13 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -742,6 +756,52 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     * 
+     * @param configurationValues
+     *        The set of configuration values for the add-on that's created. The values that you provide are validated
+     *        against the schema returned by <code>DescribeAddonConfiguration</code>.
+     */
+
+    public void setConfigurationValues(String configurationValues) {
+        this.configurationValues = configurationValues;
+    }
+
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     * 
+     * @return The set of configuration values for the add-on that's created. The values that you provide are validated
+     *         against the schema returned by <code>DescribeAddonConfiguration</code>.
+     */
+
+    public String getConfigurationValues() {
+        return this.configurationValues;
+    }
+
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     * 
+     * @param configurationValues
+     *        The set of configuration values for the add-on that's created. The values that you provide are validated
+     *        against the schema returned by <code>DescribeAddonConfiguration</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAddonRequest withConfigurationValues(String configurationValues) {
+        setConfigurationValues(configurationValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -766,7 +826,9 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getConfigurationValues() != null)
+            sb.append("ConfigurationValues: ").append(getConfigurationValues());
         sb.append("}");
         return sb.toString();
     }
@@ -809,6 +871,10 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getConfigurationValues() == null ^ this.getConfigurationValues() == null)
+            return false;
+        if (other.getConfigurationValues() != null && other.getConfigurationValues().equals(this.getConfigurationValues()) == false)
+            return false;
         return true;
     }
 
@@ -824,6 +890,7 @@ public class CreateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getResolveConflicts() == null) ? 0 : getResolveConflicts().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationValues() == null) ? 0 : getConfigurationValues().hashCode());
         return hashCode;
     }
 

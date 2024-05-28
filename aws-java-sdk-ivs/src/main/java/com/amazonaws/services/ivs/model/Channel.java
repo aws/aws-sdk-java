@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String ingestEndpoint;
     /**
      * <p>
+     * Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     * </p>
+     */
+    private Boolean insecureIngest;
+    /**
+     * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * </p>
      */
     private String latencyMode;
@@ -61,49 +66,56 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * Default: "" (empty string, no playback restriction policy is applied).
+     * </p>
+     */
+    private String playbackRestrictionPolicyArn;
+    /**
+     * <p>
      * Channel playback URL.
      * </p>
      */
     private String playbackUrl;
     /**
      * <p>
-     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     */
+    private String preset;
+    /**
+     * <p>
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: ""
      * (empty string, recording is disabled).
      * </p>
      */
     private String recordingConfigurationArn;
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+     * </p>
+     */
+    private Srt srt;
+    /**
+     * <p>
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String type;
 
@@ -244,16 +256,65 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param insecureIngest
+     *        Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     */
+
+    public void setInsecureIngest(Boolean insecureIngest) {
+        this.insecureIngest = insecureIngest;
+    }
+
+    /**
+     * <p>
+     * Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     */
+
+    public Boolean getInsecureIngest() {
+        return this.insecureIngest;
+    }
+
+    /**
+     * <p>
+     * Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param insecureIngest
+     *        Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withInsecureIngest(Boolean insecureIngest) {
+        setInsecureIngest(insecureIngest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.
+     */
+
+    public Boolean isInsecureIngest() {
+        return this.insecureIngest;
+    }
+
+    /**
+     * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * </p>
      * 
      * @param latencyMode
      *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
-     *        Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-     *        respectively.)
+     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * @see ChannelLatencyMode
      */
 
@@ -264,14 +325,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * </p>
      * 
      * @return Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *         <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
-     *         Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-     *         respectively.)
+     *         <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * @see ChannelLatencyMode
      */
 
@@ -282,15 +340,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * </p>
      * 
      * @param latencyMode
      *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
-     *        Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-     *        respectively.)
+     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -303,15 +358,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
-     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * </p>
      * 
      * @param latencyMode
      *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
-     *        Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
-     *        respectively.)
+     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -363,6 +415,52 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * Default: "" (empty string, no playback restriction policy is applied).
+     * </p>
+     * 
+     * @param playbackRestrictionPolicyArn
+     *        Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback
+     *        restriction. Default: "" (empty string, no playback restriction policy is applied).
+     */
+
+    public void setPlaybackRestrictionPolicyArn(String playbackRestrictionPolicyArn) {
+        this.playbackRestrictionPolicyArn = playbackRestrictionPolicyArn;
+    }
+
+    /**
+     * <p>
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * Default: "" (empty string, no playback restriction policy is applied).
+     * </p>
+     * 
+     * @return Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback
+     *         restriction. Default: "" (empty string, no playback restriction policy is applied).
+     */
+
+    public String getPlaybackRestrictionPolicyArn() {
+        return this.playbackRestrictionPolicyArn;
+    }
+
+    /**
+     * <p>
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * Default: "" (empty string, no playback restriction policy is applied).
+     * </p>
+     * 
+     * @param playbackRestrictionPolicyArn
+     *        Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback
+     *        restriction. Default: "" (empty string, no playback restriction policy is applied).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withPlaybackRestrictionPolicyArn(String playbackRestrictionPolicyArn) {
+        setPlaybackRestrictionPolicyArn(playbackRestrictionPolicyArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Channel playback URL.
      * </p>
      * 
@@ -403,13 +501,96 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @param preset
+     *        Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *        <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *        <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *        <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @see TranscodePreset
+     */
+
+    public void setPreset(String preset) {
+        this.preset = preset;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @return Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *         <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *         <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *         <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @see TranscodePreset
+     */
+
+    public String getPreset() {
+        return this.preset;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @param preset
+     *        Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *        <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *        <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *        <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TranscodePreset
+     */
+
+    public Channel withPreset(String preset) {
+        setPreset(preset);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @param preset
+     *        Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *        <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *        <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *        <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TranscodePreset
+     */
+
+    public Channel withPreset(TranscodePreset preset) {
+        this.preset = preset.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: ""
      * (empty string, recording is disabled).
      * </p>
      * 
      * @param recordingConfigurationArn
-     *        Recording-configuration ARN. A value other than an empty string indicates that recording is enabled.
-     *        Default: "" (empty string, recording is disabled).
+     *        Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default:
+     *        "" (empty string, recording is disabled).
      */
 
     public void setRecordingConfigurationArn(String recordingConfigurationArn) {
@@ -418,11 +599,11 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: ""
      * (empty string, recording is disabled).
      * </p>
      * 
-     * @return Recording-configuration ARN. A value other than an empty string indicates that recording is enabled.
+     * @return Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording.
      *         Default: "" (empty string, recording is disabled).
      */
 
@@ -432,13 +613,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: ""
      * (empty string, recording is disabled).
      * </p>
      * 
      * @param recordingConfigurationArn
-     *        Recording-configuration ARN. A value other than an empty string indicates that recording is enabled.
-     *        Default: "" (empty string, recording is disabled).
+     *        Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default:
+     *        "" (empty string, recording is disabled).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,13 +630,55 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
      * </p>
      * 
-     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * @param srt
+     *        Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+     */
+
+    public void setSrt(Srt srt) {
+        this.srt = srt;
+    }
+
+    /**
+     * <p>
+     * Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+     * </p>
+     * 
+     * @return Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+     */
+
+    public Srt getSrt() {
+        return this.srt;
+    }
+
+    /**
+     * <p>
+     * Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+     * </p>
+     * 
+     * @param srt
+     *        Specifies the endpoint and optional passphrase for streaming with the SRT protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withSrt(Srt srt) {
+        setSrt(srt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
+     * </p>
+     * 
+     * @return Tags attached to the resource. Array of 1-50 maps, each of the form
+     *         <code>string:string (key:value)</code>. See <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         Resources</a> for more information, including restrictions that apply to tags and
      *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
@@ -468,15 +691,16 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        . See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> for more information, including restrictions that apply to tags and
      *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
      *        documented there.
@@ -488,15 +712,16 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        . See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> for more information, including restrictions that apply to tags and
      *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
      *        documented there.
@@ -538,49 +763,17 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
      *        resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>
-     *        . Valid values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *        automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *        allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *        bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *        is passed through. This is the default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *        video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up
-     *        to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *        </p>
-     *        </li>
+     *        . For details, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.
      * @see ChannelType
      */
 
@@ -590,48 +783,17 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     * @return Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
      *         resolution or bitrate, the stream probably will disconnect immediately.</i> Default:
-     *         <code>STANDARD</code>. Valid values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *         automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *         allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *         bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *         is passed through. This is the default.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *         video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be
-     *         up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *         </p>
-     *         </li>
+     *         <code>STANDARD</code>. For details, see <a
+     *         href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     *         Types</a>.
      * @see ChannelType
      */
 
@@ -641,49 +803,17 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
      *        resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>
-     *        . Valid values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *        automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *        allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *        bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *        is passed through. This is the default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *        video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up
-     *        to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *        </p>
-     *        </li>
+     *        . For details, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -695,49 +825,17 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
      *        resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>
-     *        . Valid values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *        automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *        allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *        bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *        is passed through. This is the default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *        video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up
-     *        to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *        </p>
-     *        </li>
+     *        . For details, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -765,14 +863,22 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             sb.append("Authorized: ").append(getAuthorized()).append(",");
         if (getIngestEndpoint() != null)
             sb.append("IngestEndpoint: ").append(getIngestEndpoint()).append(",");
+        if (getInsecureIngest() != null)
+            sb.append("InsecureIngest: ").append(getInsecureIngest()).append(",");
         if (getLatencyMode() != null)
             sb.append("LatencyMode: ").append(getLatencyMode()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPlaybackRestrictionPolicyArn() != null)
+            sb.append("PlaybackRestrictionPolicyArn: ").append(getPlaybackRestrictionPolicyArn()).append(",");
         if (getPlaybackUrl() != null)
             sb.append("PlaybackUrl: ").append(getPlaybackUrl()).append(",");
+        if (getPreset() != null)
+            sb.append("Preset: ").append(getPreset()).append(",");
         if (getRecordingConfigurationArn() != null)
             sb.append("RecordingConfigurationArn: ").append(getRecordingConfigurationArn()).append(",");
+        if (getSrt() != null)
+            sb.append("Srt: ").append(getSrt()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
@@ -803,6 +909,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIngestEndpoint() != null && other.getIngestEndpoint().equals(this.getIngestEndpoint()) == false)
             return false;
+        if (other.getInsecureIngest() == null ^ this.getInsecureIngest() == null)
+            return false;
+        if (other.getInsecureIngest() != null && other.getInsecureIngest().equals(this.getInsecureIngest()) == false)
+            return false;
         if (other.getLatencyMode() == null ^ this.getLatencyMode() == null)
             return false;
         if (other.getLatencyMode() != null && other.getLatencyMode().equals(this.getLatencyMode()) == false)
@@ -811,13 +921,25 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPlaybackRestrictionPolicyArn() == null ^ this.getPlaybackRestrictionPolicyArn() == null)
+            return false;
+        if (other.getPlaybackRestrictionPolicyArn() != null && other.getPlaybackRestrictionPolicyArn().equals(this.getPlaybackRestrictionPolicyArn()) == false)
+            return false;
         if (other.getPlaybackUrl() == null ^ this.getPlaybackUrl() == null)
             return false;
         if (other.getPlaybackUrl() != null && other.getPlaybackUrl().equals(this.getPlaybackUrl()) == false)
             return false;
+        if (other.getPreset() == null ^ this.getPreset() == null)
+            return false;
+        if (other.getPreset() != null && other.getPreset().equals(this.getPreset()) == false)
+            return false;
         if (other.getRecordingConfigurationArn() == null ^ this.getRecordingConfigurationArn() == null)
             return false;
         if (other.getRecordingConfigurationArn() != null && other.getRecordingConfigurationArn().equals(this.getRecordingConfigurationArn()) == false)
+            return false;
+        if (other.getSrt() == null ^ this.getSrt() == null)
+            return false;
+        if (other.getSrt() != null && other.getSrt().equals(this.getSrt()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -838,10 +960,14 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAuthorized() == null) ? 0 : getAuthorized().hashCode());
         hashCode = prime * hashCode + ((getIngestEndpoint() == null) ? 0 : getIngestEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getInsecureIngest() == null) ? 0 : getInsecureIngest().hashCode());
         hashCode = prime * hashCode + ((getLatencyMode() == null) ? 0 : getLatencyMode().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPlaybackRestrictionPolicyArn() == null) ? 0 : getPlaybackRestrictionPolicyArn().hashCode());
         hashCode = prime * hashCode + ((getPlaybackUrl() == null) ? 0 : getPlaybackUrl().hashCode());
+        hashCode = prime * hashCode + ((getPreset() == null) ? 0 : getPreset().hashCode());
         hashCode = prime * hashCode + ((getRecordingConfigurationArn() == null) ? 0 : getRecordingConfigurationArn().hashCode());
+        hashCode = prime * hashCode + ((getSrt() == null) ? 0 : getSrt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

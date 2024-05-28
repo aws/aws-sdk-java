@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,7 +114,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private String payerResponsibility;
     /**
      * <p>
-     * Any tags assigned to the service.
+     * The tags assigned to the service.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -986,10 +986,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the service.
+     * The tags assigned to the service.
      * </p>
      * 
-     * @return Any tags assigned to the service.
+     * @return The tags assigned to the service.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1001,11 +1001,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the service.
+     * The tags assigned to the service.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the service.
+     *        The tags assigned to the service.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1019,7 +1019,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the service.
+     * The tags assigned to the service.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1028,7 +1028,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the service.
+     *        The tags assigned to the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1044,11 +1044,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the service.
+     * The tags assigned to the service.
      * </p>
      * 
      * @param tags
-     *        Any tags assigned to the service.
+     *        The tags assigned to the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,14 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.List<String> customDatatypes;
+    /**
+     * <p>
+     * Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are
+     * <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.
+     * </p>
+     */
+    private String serde;
 
     /**
      * <p>
@@ -566,6 +574,81 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are
+     * <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.
+     * </p>
+     * 
+     * @param serde
+     *        Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid
+     *        values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify
+     *        the <code>None</code> value when you want the crawler to do the detection.
+     * @see CsvSerdeOption
+     */
+
+    public void setSerde(String serde) {
+        this.serde = serde;
+    }
+
+    /**
+     * <p>
+     * Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are
+     * <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.
+     * </p>
+     * 
+     * @return Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid
+     *         values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can
+     *         specify the <code>None</code> value when you want the crawler to do the detection.
+     * @see CsvSerdeOption
+     */
+
+    public String getSerde() {
+        return this.serde;
+    }
+
+    /**
+     * <p>
+     * Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are
+     * <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.
+     * </p>
+     * 
+     * @param serde
+     *        Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid
+     *        values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify
+     *        the <code>None</code> value when you want the crawler to do the detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CsvSerdeOption
+     */
+
+    public UpdateCsvClassifierRequest withSerde(String serde) {
+        setSerde(serde);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid values are
+     * <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.
+     * </p>
+     * 
+     * @param serde
+     *        Sets the SerDe for processing CSV in the classifier, which will be applied in the Data Catalog. Valid
+     *        values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify
+     *        the <code>None</code> value when you want the crawler to do the detection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CsvSerdeOption
+     */
+
+    public UpdateCsvClassifierRequest withSerde(CsvSerdeOption serde) {
+        this.serde = serde.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -594,7 +677,9 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
         if (getCustomDatatypeConfigured() != null)
             sb.append("CustomDatatypeConfigured: ").append(getCustomDatatypeConfigured()).append(",");
         if (getCustomDatatypes() != null)
-            sb.append("CustomDatatypes: ").append(getCustomDatatypes());
+            sb.append("CustomDatatypes: ").append(getCustomDatatypes()).append(",");
+        if (getSerde() != null)
+            sb.append("Serde: ").append(getSerde());
         sb.append("}");
         return sb.toString();
     }
@@ -645,6 +730,10 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
             return false;
         if (other.getCustomDatatypes() != null && other.getCustomDatatypes().equals(this.getCustomDatatypes()) == false)
             return false;
+        if (other.getSerde() == null ^ this.getSerde() == null)
+            return false;
+        if (other.getSerde() != null && other.getSerde().equals(this.getSerde()) == false)
+            return false;
         return true;
     }
 
@@ -662,6 +751,7 @@ public class UpdateCsvClassifierRequest implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getAllowSingleColumn() == null) ? 0 : getAllowSingleColumn().hashCode());
         hashCode = prime * hashCode + ((getCustomDatatypeConfigured() == null) ? 0 : getCustomDatatypeConfigured().hashCode());
         hashCode = prime * hashCode + ((getCustomDatatypes() == null) ? 0 : getCustomDatatypes().hashCode());
+        hashCode = prime * hashCode + ((getSerde() == null) ? 0 : getSerde().hashCode());
         return hashCode;
     }
 

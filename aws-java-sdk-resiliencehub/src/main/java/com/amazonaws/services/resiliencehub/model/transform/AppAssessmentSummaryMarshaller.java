@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class AppAssessmentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("complianceStatus").build();
     private static final MarshallingInfo<StructuredPojo> COST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cost").build();
+    private static final MarshallingInfo<String> DRIFTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("driftStatus").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> INVOKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,8 @@ public class AppAssessmentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resiliencyScore").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
 
     private static final AppAssessmentSummaryMarshaller instance = new AppAssessmentSummaryMarshaller();
 
@@ -75,11 +79,13 @@ public class AppAssessmentSummaryMarshaller {
             protocolMarshaller.marshall(appAssessmentSummary.getAssessmentStatus(), ASSESSMENTSTATUS_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getComplianceStatus(), COMPLIANCESTATUS_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getCost(), COST_BINDING);
+            protocolMarshaller.marshall(appAssessmentSummary.getDriftStatus(), DRIFTSTATUS_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getInvoker(), INVOKER_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getResiliencyScore(), RESILIENCYSCORE_BINDING);
             protocolMarshaller.marshall(appAssessmentSummary.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(appAssessmentSummary.getVersionName(), VERSIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

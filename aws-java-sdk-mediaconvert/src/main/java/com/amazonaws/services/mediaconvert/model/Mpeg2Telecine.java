@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,11 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
- * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD)
- * produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video
- * player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert does
- * a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother
- * picture.
+ * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine produces a
+ * 29.97i output. Soft telecine produces an output with a 23.976 output that signals to the video player device to do
+ * the conversion during play back. When you keep the default value, None, MediaConvert does a standard frame rate
+ * conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2Telecine {

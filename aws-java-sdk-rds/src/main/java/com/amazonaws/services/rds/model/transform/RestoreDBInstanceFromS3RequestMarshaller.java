@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -291,6 +291,26 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
 
         if (restoreDBInstanceFromS3Request.getStorageThroughput() != null) {
             request.addParameter("StorageThroughput", StringUtils.fromInteger(restoreDBInstanceFromS3Request.getStorageThroughput()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getManageMasterUserPassword()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(restoreDBInstanceFromS3Request.getMasterUserSecretKmsKeyId()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getDedicatedLogVolume()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(restoreDBInstanceFromS3Request.getCACertificateIdentifier()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getEngineLifecycleSupport() != null) {
+            request.addParameter("EngineLifecycleSupport", StringUtils.fromString(restoreDBInstanceFromS3Request.getEngineLifecycleSupport()));
         }
 
         return request;

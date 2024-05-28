@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,14 +31,20 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same
-     * asset model.
+     * asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the
+     * external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String propertyId;
     /**
      * <p>
      * The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's
-     * ID.
+     * ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
@@ -49,16 +55,28 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String hierarchyId;
+    /**
+     * <p>
+     * The path of the property.
+     * </p>
+     */
+    private java.util.List<AssetModelPropertyPathSegment> propertyPath;
 
     /**
      * <p>
      * The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same
-     * asset model.
+     * asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the
+     * external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param propertyId
      *        The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the
-     *        same asset model.
+     *        same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by
+     *        the external ID. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setPropertyId(String propertyId) {
@@ -68,11 +86,17 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same
-     * asset model.
+     * asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the
+     * external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The ID of the property to use as the variable. You can use the property <code>name</code> if it's from
-     *         the same asset model.
+     *         the same asset model. If the property has an external ID, you can specify <code>externalId:</code>
+     *         followed by the external ID. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getPropertyId() {
@@ -82,12 +106,18 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same
-     * asset model.
+     * asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the
+     * external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param propertyId
      *        The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the
-     *        same asset model.
+     *        same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by
+     *        the external ID. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,7 +129,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's
-     * ID.
+     * ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
@@ -111,7 +144,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param hierarchyId
      *        The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the
-     *        hierarchy's ID.</p>
+     *        hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by
+     *        the external ID. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model
      *        and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that
@@ -127,7 +163,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's
-     * ID.
+     * ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
@@ -138,7 +177,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the
-     *         hierarchy's ID.</p>
+     *         hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by
+     *         the external ID. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same
      *         model and therefore the same <code>propertyId</code>. For example, you might have separately grouped
@@ -154,7 +196,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's
-     * ID.
+     * ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
@@ -166,7 +211,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param hierarchyId
      *        The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the
-     *        hierarchy's ID.</p>
+     *        hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by
+     *        the external ID. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model
      *        and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that
@@ -178,6 +226,76 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
 
     public VariableValue withHierarchyId(String hierarchyId) {
         setHierarchyId(hierarchyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The path of the property.
+     * </p>
+     * 
+     * @return The path of the property.
+     */
+
+    public java.util.List<AssetModelPropertyPathSegment> getPropertyPath() {
+        return propertyPath;
+    }
+
+    /**
+     * <p>
+     * The path of the property.
+     * </p>
+     * 
+     * @param propertyPath
+     *        The path of the property.
+     */
+
+    public void setPropertyPath(java.util.Collection<AssetModelPropertyPathSegment> propertyPath) {
+        if (propertyPath == null) {
+            this.propertyPath = null;
+            return;
+        }
+
+        this.propertyPath = new java.util.ArrayList<AssetModelPropertyPathSegment>(propertyPath);
+    }
+
+    /**
+     * <p>
+     * The path of the property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPropertyPath(java.util.Collection)} or {@link #withPropertyPath(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param propertyPath
+     *        The path of the property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VariableValue withPropertyPath(AssetModelPropertyPathSegment... propertyPath) {
+        if (this.propertyPath == null) {
+            setPropertyPath(new java.util.ArrayList<AssetModelPropertyPathSegment>(propertyPath.length));
+        }
+        for (AssetModelPropertyPathSegment ele : propertyPath) {
+            this.propertyPath.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The path of the property.
+     * </p>
+     * 
+     * @param propertyPath
+     *        The path of the property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VariableValue withPropertyPath(java.util.Collection<AssetModelPropertyPathSegment> propertyPath) {
+        setPropertyPath(propertyPath);
         return this;
     }
 
@@ -196,7 +314,9 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
         if (getPropertyId() != null)
             sb.append("PropertyId: ").append(getPropertyId()).append(",");
         if (getHierarchyId() != null)
-            sb.append("HierarchyId: ").append(getHierarchyId());
+            sb.append("HierarchyId: ").append(getHierarchyId()).append(",");
+        if (getPropertyPath() != null)
+            sb.append("PropertyPath: ").append(getPropertyPath());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +339,10 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHierarchyId() != null && other.getHierarchyId().equals(this.getHierarchyId()) == false)
             return false;
+        if (other.getPropertyPath() == null ^ this.getPropertyPath() == null)
+            return false;
+        if (other.getPropertyPath() != null && other.getPropertyPath().equals(this.getPropertyPath()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +353,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPropertyId() == null) ? 0 : getPropertyId().hashCode());
         hashCode = prime * hashCode + ((getHierarchyId() == null) ? 0 : getHierarchyId().hashCode());
+        hashCode = prime * hashCode + ((getPropertyPath() == null) ? 0 : getPropertyPath().hashCode());
         return hashCode;
     }
 

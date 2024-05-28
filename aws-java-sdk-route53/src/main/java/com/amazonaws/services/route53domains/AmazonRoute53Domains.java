@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,6 +136,42 @@ public interface AmazonRoute53Domains {
      */
     AcceptDomainTransferFromAnotherAwsAccountResult acceptDomainTransferFromAnotherAwsAccount(
             AcceptDomainTransferFromAnotherAwsAccountRequest acceptDomainTransferFromAnotherAwsAccountRequest);
+
+    /**
+     * <p>
+     * Creates a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * <p>
+     * Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may
+     * render your domain name unavailable on the internet if the steps are completed in the wrong order, or with
+     * incorrect timing. For more information about DNSSEC signing, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC
+     * signing</a> in the <i>Route 53 developer guide</i>.
+     * </p>
+     * 
+     * @param associateDelegationSignerToDomainRequest
+     * @return Result of the AssociateDelegationSignerToDomain operation returned by the service.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @throws DnssecLimitExceededException
+     *         This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified
+     *         domain has reached the maximum number of DS records. You can't add any additional DS records unless you
+     *         delete an existing one first.
+     * @sample AmazonRoute53Domains.AssociateDelegationSignerToDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateDelegationSignerToDomainResult associateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest associateDelegationSignerToDomainRequest);
 
     /**
      * <p>
@@ -343,6 +379,33 @@ public interface AmazonRoute53Domains {
      *      target="_top">AWS API Documentation</a>
      */
     DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest);
+
+    /**
+     * <p>
+     * Deletes a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * 
+     * @param disassociateDelegationSignerFromDomainRequest
+     * @return Result of the DisassociateDelegationSignerFromDomain operation returned by the service.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.DisassociateDelegationSignerFromDomain
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateDelegationSignerFromDomainResult disassociateDelegationSignerFromDomain(
+            DisassociateDelegationSignerFromDomainRequest disassociateDelegationSignerFromDomainRequest);
 
     /**
      * <p>
@@ -615,9 +678,39 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation registers a domain. Domains are registered either by Amazon Registrar (for .com, .net, and .org
-     * domains) or by our registrar associate, Gandi (for all other domains). For some top-level domains (TLDs), this
-     * operation requires extra parameters.
+     * Moves a domain from Amazon Web Services to another registrar.
+     * </p>
+     * <p>
+     * Supported actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be
+     * transferred to another registrar.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param pushDomainRequest
+     * @return Result of the PushDomain operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.PushDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PushDomainResult pushDomain(PushDomainRequest pushDomainRequest);
+
+    /**
+     * <p>
+     * This operation registers a domain. For some top-level domains (TLDs), this operation requires extra parameters.
      * </p>
      * <p>
      * When you register a domain, Amazon Route 53 does the following:
@@ -631,20 +724,20 @@ public interface AmazonRoute53Domains {
      * </li>
      * <li>
      * <p>
-     * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of
-     * the renewal date so you can choose whether to renew the registration.
+     * Enables auto renew, so your domain registration will renew automatically each year. We'll notify you in advance
+     * of the renewal date so you can choose whether to renew the registration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Optionally enables privacy protection, so WHOIS queries return contact information either for Amazon Registrar
-     * (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you don't
-     * enable privacy protection, WHOIS queries return the information that you entered for the administrative,
-     * registrant, and technical contacts.
+     * Optionally enables privacy protection, so WHOIS queries return contact for the registrar or the phrase
+     * "REDACTED FOR PRIVACY", or "On behalf of &lt;domain name&gt; owner." If you don't enable privacy protection,
+     * WHOIS queries return the information that you entered for the administrative, registrant, and technical contacts.
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note></li>
      * <li>
@@ -780,8 +873,25 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this
-     * value to the new registrar.
+     * Resend the form of authorization email for this operation.
+     * </p>
+     * 
+     * @param resendOperationAuthorizationRequest
+     * @return Result of the ResendOperationAuthorization operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @sample AmazonRoute53Domains.ResendOperationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ResendOperationAuthorizationResult resendOperationAuthorization(ResendOperationAuthorizationRequest resendOperationAuthorizationRequest);
+
+    /**
+     * <p>
+     * This operation returns the authorization code for the domain. To transfer a domain to another registrar, you
+     * provide this value to the new registrar.
      * </p>
      * 
      * @param retrieveDomainAuthCodeRequest
@@ -802,9 +912,7 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
-     * Transfers a domain from another registrar to Amazon Route 53. When the transfer is complete, the domain is
-     * registered either with Amazon Registrar (for .com, .net, and .org domains) or with our registrar associate, Gandi
-     * (for all other TLDs).
+     * Transfers a domain from another registrar to Amazon Route 53.
      * </p>
      * <p>
      * For more information about transferring domains, see the following topics:
@@ -833,6 +941,15 @@ public interface AmazonRoute53Domains {
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * During the transfer of any country code top-level domains (ccTLDs) to Route 53, except for .cc and .tv, updates
+     * to the owner contact are ignored and the owner contact data from the registry is used. You can update the owner
+     * contact after the transfer is complete. For more information, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html"
+     * >UpdateDomainContact</a>.
+     * </p>
+     * </important>
      * <p>
      * If the registrar for your domain is also the DNS service provider for the domain, we highly recommend that you
      * transfer your DNS service to Route 53 or to another DNS service provider before you transfer your registration.
@@ -951,8 +1068,8 @@ public interface AmazonRoute53Domains {
      * </p>
      * <p>
      * If the update is successful, this method returns an operation ID that you can use to track the progress and
-     * completion of the action. If the request is not completed successfully, the domain registrant will be notified by
-     * email.
+     * completion of the operation. If the request is not completed successfully, the domain registrant will be notified
+     * by email.
      * </p>
      * 
      * @param updateDomainContactRequest
@@ -978,13 +1095,14 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation updates the specified domain contact's privacy setting. When privacy protection is enabled,
-     * contact information such as email address is replaced either with contact information for Amazon Registrar (for
-     * .com, .net, and .org domains) or with contact information for our registrar associate, Gandi.
+     * This operation updates the specified domain contact's privacy setting. When privacy protection is enabled, your
+     * contact information is replaced with contact information for the registrar or with the phrase
+     * "REDACTED FOR PRIVACY", or "On behalf of &lt;domain name&gt; owner."
      * </p>
      * <note>
      * <p>
-     * You must specify the same privacy setting for the administrative, registrant, and technical contacts.
+     * While some domains may allow different privacy settings per contact, we recommend specifying the same privacy
+     * setting for all contacts.
      * </p>
      * </note>
      * <p>

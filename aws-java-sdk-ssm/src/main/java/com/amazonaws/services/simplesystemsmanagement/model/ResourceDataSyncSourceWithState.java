@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,10 +93,10 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
      * <p>
      * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      * automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services
-     * accounts in your organization (or in the selected organization units). For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
+     * accounts in your organization (or in the selected organization units). For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      */
     private Boolean enableAllOpsDataSources;
@@ -457,20 +457,19 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
      * <p>
      * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      * automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services
-     * accounts in your organization (or in the selected organization units). For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
+     * accounts in your organization (or in the selected organization units). For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * 
      * @param enableAllOpsDataSources
      *        When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      *        automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web
      *        Services accounts in your organization (or in the selected organization units). For more information, see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *        >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
-     *        User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">
+     *        Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the
+     *        <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setEnableAllOpsDataSources(Boolean enableAllOpsDataSources) {
@@ -481,19 +480,19 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
      * <p>
      * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      * automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services
-     * accounts in your organization (or in the selected organization units). For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
+     * accounts in your organization (or in the selected organization units). For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * 
      * @return When you create a resource data sync, if you choose one of the Organizations options, then Systems
      *         Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all
      *         Amazon Web Services accounts in your organization (or in the selected organization units). For more
-     *         information, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *         >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
-     *         User Guide</i>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html"
+     *         >Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the
+     *         <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public Boolean getEnableAllOpsDataSources() {
@@ -504,20 +503,19 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
      * <p>
      * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      * automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services
-     * accounts in your organization (or in the selected organization units). For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
+     * accounts in your organization (or in the selected organization units). For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * 
      * @param enableAllOpsDataSources
      *        When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      *        automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web
      *        Services accounts in your organization (or in the selected organization units). For more information, see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *        >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
-     *        User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">
+     *        Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the
+     *        <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,19 +528,19 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
      * <p>
      * When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
      * automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services
-     * accounts in your organization (or in the selected organization units). For more information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     * >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
+     * accounts in your organization (or in the selected organization units). For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * 
      * @return When you create a resource data sync, if you choose one of the Organizations options, then Systems
      *         Manager automatically enables all OpsData sources in the selected Amazon Web Services Regions for all
      *         Amazon Web Services accounts in your organization (or in the selected organization units). For more
-     *         information, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
-     *         >About multiple account and Region resource data syncs</a> in the <i>Amazon Web Services Systems Manager
-     *         User Guide</i>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html"
+     *         >Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the
+     *         <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public Boolean isEnableAllOpsDataSources() {

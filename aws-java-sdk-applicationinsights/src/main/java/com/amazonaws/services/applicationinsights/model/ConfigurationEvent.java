@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigurationEvent implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the resource group of the application to which the configuration event belongs.
+     * </p>
+     */
+    private String resourceGroupName;
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application to which the configuration event belongs.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * The resource monitored by Application Insights.
@@ -64,6 +76,86 @@ public class ConfigurationEvent implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String eventResourceName;
+
+    /**
+     * <p>
+     * The name of the resource group of the application to which the configuration event belongs.
+     * </p>
+     * 
+     * @param resourceGroupName
+     *        The name of the resource group of the application to which the configuration event belongs.
+     */
+
+    public void setResourceGroupName(String resourceGroupName) {
+        this.resourceGroupName = resourceGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource group of the application to which the configuration event belongs.
+     * </p>
+     * 
+     * @return The name of the resource group of the application to which the configuration event belongs.
+     */
+
+    public String getResourceGroupName() {
+        return this.resourceGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the resource group of the application to which the configuration event belongs.
+     * </p>
+     * 
+     * @param resourceGroupName
+     *        The name of the resource group of the application to which the configuration event belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigurationEvent withResourceGroupName(String resourceGroupName) {
+        setResourceGroupName(resourceGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application to which the configuration event belongs.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the owner of the application to which the configuration event belongs.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application to which the configuration event belongs.
+     * </p>
+     * 
+     * @return The AWS account ID for the owner of the application to which the configuration event belongs.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the owner of the application to which the configuration event belongs.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the owner of the application to which the configuration event belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigurationEvent withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -355,6 +447,10 @@ public class ConfigurationEvent implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getResourceGroupName() != null)
+            sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getMonitoredResourceARN() != null)
             sb.append("MonitoredResourceARN: ").append(getMonitoredResourceARN()).append(",");
         if (getEventStatus() != null)
@@ -381,6 +477,14 @@ public class ConfigurationEvent implements Serializable, Cloneable, StructuredPo
         if (obj instanceof ConfigurationEvent == false)
             return false;
         ConfigurationEvent other = (ConfigurationEvent) obj;
+        if (other.getResourceGroupName() == null ^ this.getResourceGroupName() == null)
+            return false;
+        if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
+            return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getMonitoredResourceARN() == null ^ this.getMonitoredResourceARN() == null)
             return false;
         if (other.getMonitoredResourceARN() != null && other.getMonitoredResourceARN().equals(this.getMonitoredResourceARN()) == false)
@@ -413,6 +517,8 @@ public class ConfigurationEvent implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getMonitoredResourceARN() == null) ? 0 : getMonitoredResourceARN().hashCode());
         hashCode = prime * hashCode + ((getEventStatus() == null) ? 0 : getEventStatus().hashCode());
         hashCode = prime * hashCode + ((getEventResourceType() == null) ? 0 : getEventResourceType().hashCode());

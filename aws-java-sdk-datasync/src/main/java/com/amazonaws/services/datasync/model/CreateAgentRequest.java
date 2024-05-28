@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,96 +30,66 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects
-     * that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.
-     * </p>
-     * <p>
-     * The redirect URL returned in the response provides you the activation key for your agent in the query string
-     * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
-     * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * </p>
-     * <p>
-     * For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     * Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      * </p>
      */
     private String activationKey;
     /**
      * <p>
-     * The name you configured for your agent. This value is a text reference that is used to identify the agent in the
-     * console.
+     * Specifies a name for your agent. You can see this name in the DataSync console.
      * </p>
      */
     private String agentName;
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
-     * string. This value helps you manage, filter, and search for your agents.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least one tag for your agent.
      * </p>
-     * <note>
-     * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </note>
      */
     private java.util.List<TagListEntry> tags;
     /**
      * <p>
-     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
-     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
+     * Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks
+     * like <code>vpce-01234d5aff67890e1</code>.
      * </p>
+     * <important>
      * <p>
-     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * The VPC endpoint you use must include the DataSync service name (for example,
+     * <code>com.amazonaws.us-east-2.datasync</code>).
      * </p>
+     * </important>
      */
     private String vpcEndpointId;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
-     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
-     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
-     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
-     * agent must be able to route to all these four network interfaces.
+     * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
+     * subnet where DataSync creates and manages the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> subnetArns;
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     * >SecurityGroupArns</a>.
+     * Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> when <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
 
     /**
      * <p>
-     * Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects
-     * that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.
-     * </p>
-     * <p>
-     * The redirect URL returned in the response provides you the activation key for your agent in the query string
-     * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
-     * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * </p>
-     * <p>
-     * For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     * Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      * </p>
      * 
      * @param activationKey
-     *        Your agent activation key. You can get the activation key either by sending an HTTP GET request with
-     *        redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the
-     *        DataSync console.</p>
-     *        <p>
-     *        The redirect URL returned in the response provides you the activation key for your agent in the query
-     *        string parameter <code>activationKey</code>. It might also include other activation-related parameters;
-     *        however, these are merely defaults. The arguments you pass to this API call determine the actual
-     *        configuration of your agent.
-     *        </p>
-     *        <p>
-     *        For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     *        Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      */
 
     public void setActivationKey(String activationKey) {
@@ -128,29 +98,12 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects
-     * that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.
-     * </p>
-     * <p>
-     * The redirect URL returned in the response provides you the activation key for your agent in the query string
-     * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
-     * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * </p>
-     * <p>
-     * For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     * Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      * </p>
      * 
-     * @return Your agent activation key. You can get the activation key either by sending an HTTP GET request with
-     *         redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the
-     *         DataSync console.</p>
-     *         <p>
-     *         The redirect URL returned in the response provides you the activation key for your agent in the query
-     *         string parameter <code>activationKey</code>. It might also include other activation-related parameters;
-     *         however, these are merely defaults. The arguments you pass to this API call determine the actual
-     *         configuration of your agent.
-     *         </p>
-     *         <p>
-     *         For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     * @return Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      */
 
     public String getActivationKey() {
@@ -159,30 +112,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects
-     * that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.
-     * </p>
-     * <p>
-     * The redirect URL returned in the response provides you the activation key for your agent in the query string
-     * parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these
-     * are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.
-     * </p>
-     * <p>
-     * For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     * Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      * </p>
      * 
      * @param activationKey
-     *        Your agent activation key. You can get the activation key either by sending an HTTP GET request with
-     *        redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the
-     *        DataSync console.</p>
-     *        <p>
-     *        The redirect URL returned in the response provides you the activation key for your agent in the query
-     *        string parameter <code>activationKey</code>. It might also include other activation-related parameters;
-     *        however, these are merely defaults. The arguments you pass to this API call determine the actual
-     *        configuration of your agent.
-     *        </p>
-     *        <p>
-     *        For more information, see Activating an Agent in the <i>DataSync User Guide.</i>
+     *        Specifies your DataSync agent's activation key. If you don't have an activation key, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate your agent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,13 +129,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name you configured for your agent. This value is a text reference that is used to identify the agent in the
-     * console.
+     * Specifies a name for your agent. You can see this name in the DataSync console.
      * </p>
      * 
      * @param agentName
-     *        The name you configured for your agent. This value is a text reference that is used to identify the agent
-     *        in the console.
+     *        Specifies a name for your agent. You can see this name in the DataSync console.
      */
 
     public void setAgentName(String agentName) {
@@ -208,12 +142,10 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name you configured for your agent. This value is a text reference that is used to identify the agent in the
-     * console.
+     * Specifies a name for your agent. You can see this name in the DataSync console.
      * </p>
      * 
-     * @return The name you configured for your agent. This value is a text reference that is used to identify the agent
-     *         in the console.
+     * @return Specifies a name for your agent. You can see this name in the DataSync console.
      */
 
     public String getAgentName() {
@@ -222,13 +154,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name you configured for your agent. This value is a text reference that is used to identify the agent in the
-     * console.
+     * Specifies a name for your agent. You can see this name in the DataSync console.
      * </p>
      * 
      * @param agentName
-     *        The name you configured for your agent. This value is a text reference that is used to identify the agent
-     *        in the console.
+     *        Specifies a name for your agent. You can see this name in the DataSync console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,22 +169,12 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
-     * string. This value helps you manage, filter, and search for your agents.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least one tag for your agent.
      * </p>
-     * <note>
-     * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </note>
      * 
-     * @return The key-value pair that represents the tag that you want to associate with the agent. The value can be an
-     *         empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-     *         <p>
-     *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
-     *         the following special characters: + - = . _ : / @.
-     *         </p>
+     * @return Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *         recommend creating at least one tag for your agent.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -263,23 +183,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
-     * string. This value helps you manage, filter, and search for your agents.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least one tag for your agent.
      * </p>
-     * <note>
-     * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </note>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to associate with the agent. The value can be an
-     *        empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-     *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @.
-     *        </p>
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least one tag for your agent.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -293,15 +203,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
-     * string. This value helps you manage, filter, and search for your agents.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least one tag for your agent.
      * </p>
-     * <note>
-     * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -309,12 +213,8 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to associate with the agent. The value can be an
-     *        empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-     *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @.
-     *        </p>
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least one tag for your agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,23 +230,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty
-     * string. This value helps you manage, filter, and search for your agents.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least one tag for your agent.
      * </p>
-     * <note>
-     * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
-     * </p>
-     * </note>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to associate with the agent. The value can be an
-     *        empty string. This value helps you manage, filter, and search for your agents.</p> <note>
-     *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @.
-     *        </p>
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least one tag for your agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,22 +247,23 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
-     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
+     * Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks
+     * like <code>vpce-01234d5aff67890e1</code>.
      * </p>
+     * <important>
      * <p>
-     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * The VPC endpoint you use must include the DataSync service name (for example,
+     * <code>com.amazonaws.us-east-2.datasync</code>).
      * </p>
+     * </important>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side
-     *        VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
-     *        >Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     *        Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint
+     *        ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
      *        <p>
-     *        VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     *        The VPC endpoint you use must include the DataSync service name (for example,
+     *        <code>com.amazonaws.us-east-2.datasync</code>).
+     *        </p>
      */
 
     public void setVpcEndpointId(String vpcEndpointId) {
@@ -381,21 +272,22 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
-     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
+     * Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks
+     * like <code>vpce-01234d5aff67890e1</code>.
      * </p>
+     * <important>
      * <p>
-     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * The VPC endpoint you use must include the DataSync service name (for example,
+     * <code>com.amazonaws.us-east-2.datasync</code>).
      * </p>
+     * </important>
      * 
-     * @return The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side
-     *         VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
-     *         >Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     * @return Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint
+     *         ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
      *         <p>
-     *         VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     *         The VPC endpoint you use must include the DataSync service name (for example,
+     *         <code>com.amazonaws.us-east-2.datasync</code>).
+     *         </p>
      */
 
     public String getVpcEndpointId() {
@@ -404,22 +296,23 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
-     * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
+     * Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint ID looks
+     * like <code>vpce-01234d5aff67890e1</code>.
      * </p>
+     * <important>
      * <p>
-     * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     * The VPC endpoint you use must include the DataSync service name (for example,
+     * <code>com.amazonaws.us-east-2.datasync</code>).
      * </p>
+     * </important>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side
-     *        VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
-     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
-     *        >Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+     *        Specifies the ID of the VPC endpoint that you want your agent to connect to. For example, a VPC endpoint
+     *        ID looks like <code>vpce-01234d5aff67890e1</code>.</p> <important>
      *        <p>
-     *        VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
+     *        The VPC endpoint you use must include the DataSync service name (for example,
+     *        <code>com.amazonaws.us-east-2.datasync</code>).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,19 +323,16 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
-     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
-     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
-     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
-     * agent must be able to route to all these four network interfaces.
+     * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
+     * subnet where DataSync creates and manages the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
-     *         for each data transfer task. The agent that runs a task must be private. When you start a task that is
-     *         associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the
-     *         task is also private. In this case, DataSync creates four network interfaces for each task in your
-     *         subnet. For a data transfer to work, the agent must be able to route to all these four network
-     *         interfaces.
+     * @return Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
+     *         is the subnet where DataSync creates and manages the <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *         >network interfaces</a> for your transfer. You can only specify one ARN.
      */
 
     public java.util.List<String> getSubnetArns() {
@@ -451,19 +341,17 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
-     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
-     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
-     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
-     * agent must be able to route to all these four network interfaces.
+     * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
+     * subnet where DataSync creates and manages the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
-     *        for each data transfer task. The agent that runs a task must be private. When you start a task that is
-     *        associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task
-     *        is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For
-     *        a data transfer to work, the agent must be able to route to all these four network interfaces.
+     *        Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
+     *        is the subnet where DataSync creates and manages the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> for your transfer. You can only specify one ARN.
      */
 
     public void setSubnetArns(java.util.Collection<String> subnetArns) {
@@ -477,11 +365,10 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
-     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
-     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
-     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
-     * agent must be able to route to all these four network interfaces.
+     * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
+     * subnet where DataSync creates and manages the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -490,11 +377,10 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
-     *        for each data transfer task. The agent that runs a task must be private. When you start a task that is
-     *        associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task
-     *        is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For
-     *        a data transfer to work, the agent must be able to route to all these four network interfaces.
+     *        Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
+     *        is the subnet where DataSync creates and manages the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> for your transfer. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,19 +396,17 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each
-     * data transfer task. The agent that runs a task must be private. When you start a task that is associated with an
-     * agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this
-     * case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the
-     * agent must be able to route to all these four network interfaces.
+     * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
+     * subnet where DataSync creates and manages the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces
-     *        for each data transfer task. The agent that runs a task must be private. When you start a task that is
-     *        associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task
-     *        is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For
-     *        a data transfer to work, the agent must be able to route to all these four network interfaces.
+     *        Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
+     *        is the subnet where DataSync creates and manages the <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> for your transfer. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,14 +417,18 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     * >SecurityGroupArns</a>.
+     * Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> when <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * 
-     * @return The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     *         "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     *         >SecurityGroupArns</a>.
+     * @return Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *         >network interfaces</a> when <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *         >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -549,15 +437,19 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     * >SecurityGroupArns</a>.
+     * Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> when <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     *        >SecurityGroupArns</a>.
+     *        Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> when <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *        >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -571,9 +463,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     * >SecurityGroupArns</a>.
+     * Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> when <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -582,9 +476,11 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     *        >SecurityGroupArns</a>.
+     *        Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> when <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *        >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,15 +496,19 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     * >SecurityGroupArns</a>.
+     * Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     * >network interfaces</a> when <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
-     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
-     *        >SecurityGroupArns</a>.
+     *        Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
+     *        >network interfaces</a> when <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *        >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

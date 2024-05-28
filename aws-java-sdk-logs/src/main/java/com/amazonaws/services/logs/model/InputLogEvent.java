@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,24 +31,25 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      */
     private Long timestamp;
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param timestamp
-     *        The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The time the event occurred, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -57,10 +58,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * @return The time the event occurred, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public Long getTimestamp() {
@@ -69,11 +71,12 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param timestamp
-     *        The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The time the event occurred, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +87,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      * 
      * @param message
-     *        The raw event message.
+     *        The raw event message. Each log event can be no larger than 256 KB.
      */
 
     public void setMessage(String message) {
@@ -97,10 +100,10 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      * 
-     * @return The raw event message.
+     * @return The raw event message. Each log event can be no larger than 256 KB.
      */
 
     public String getMessage() {
@@ -109,11 +112,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The raw event message.
+     * The raw event message. Each log event can be no larger than 256 KB.
      * </p>
      * 
      * @param message
-     *        The raw event message.
+     *        The raw event message. Each log event can be no larger than 256 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

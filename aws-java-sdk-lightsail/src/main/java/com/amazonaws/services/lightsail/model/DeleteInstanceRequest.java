@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private String instanceName;
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the instance.
      * </p>
      */
     private Boolean forceDeleteAddOns;
@@ -80,11 +80,11 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the instance.
      * </p>
      * 
      * @param forceDeleteAddOns
-     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     *        A Boolean value to indicate whether to delete all add-ons for the instance.
      */
 
     public void setForceDeleteAddOns(Boolean forceDeleteAddOns) {
@@ -93,10 +93,10 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the instance.
      * </p>
      * 
-     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * @return A Boolean value to indicate whether to delete all add-ons for the instance.
      */
 
     public Boolean getForceDeleteAddOns() {
@@ -105,11 +105,11 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the instance.
      * </p>
      * 
      * @param forceDeleteAddOns
-     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     *        A Boolean value to indicate whether to delete all add-ons for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the instance.
      * </p>
      * 
-     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * @return A Boolean value to indicate whether to delete all add-ons for the instance.
      */
 
     public Boolean isForceDeleteAddOns() {

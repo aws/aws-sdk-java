@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,18 +101,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already
      * exists in your account, of which you can have only one and cannot modify.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
-     * engine version 2.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     * <code>INVALID_INPUT</code> error.
      * </p>
      * </li>
      * </ul>
@@ -343,18 +331,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * exists in your account, of which you can have only one and cannot modify.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
-     * engine version 2.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -412,18 +388,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that
      *         already exists in your account, of which you can have only one and cannot modify.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     *         on Athena engine version 2.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     *         <code>INVALID_INPUT</code> error.
      *         </p>
      *         </li>
      *         </ul>
@@ -491,18 +455,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * exists in your account, of which you can have only one and cannot modify.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
-     * engine version 2.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -561,18 +513,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that
      *        already exists in your account, of which you can have only one and cannot modify.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on
-     *        Athena engine version 2.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     *        <code>INVALID_INPUT</code> error.
      *        </p>
      *        </li>
      *        </ul>
@@ -640,18 +580,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      * exists in your account, of which you can have only one and cannot modify.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena
-     * engine version 2.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     * <code>INVALID_INPUT</code> error.
-     * </p>
-     * </li>
      * </ul>
      * </li>
      * </ul>
@@ -710,18 +638,6 @@ public class CreateDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that
      *        already exists in your account, of which you can have only one and cannot modify.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on
-     *        Athena engine version 2.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an
-     *        <code>INVALID_INPUT</code> error.
      *        </p>
      *        </li>
      *        </ul>

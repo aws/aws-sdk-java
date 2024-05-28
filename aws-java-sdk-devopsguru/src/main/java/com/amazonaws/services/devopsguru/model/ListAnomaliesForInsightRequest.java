@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class ListAnomaliesForInsightRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String accountId;
+    /**
+     * <p>
+     * Specifies one or more service names that are used to list anomalies.
+     * </p>
+     */
+    private ListAnomaliesForInsightFilters filters;
 
     /**
      * <p>
@@ -278,6 +284,46 @@ public class ListAnomaliesForInsightRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Specifies one or more service names that are used to list anomalies.
+     * </p>
+     * 
+     * @param filters
+     *        Specifies one or more service names that are used to list anomalies.
+     */
+
+    public void setFilters(ListAnomaliesForInsightFilters filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * Specifies one or more service names that are used to list anomalies.
+     * </p>
+     * 
+     * @return Specifies one or more service names that are used to list anomalies.
+     */
+
+    public ListAnomaliesForInsightFilters getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * Specifies one or more service names that are used to list anomalies.
+     * </p>
+     * 
+     * @param filters
+     *        Specifies one or more service names that are used to list anomalies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAnomaliesForInsightRequest withFilters(ListAnomaliesForInsightFilters filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -298,7 +344,9 @@ public class ListAnomaliesForInsightRequest extends com.amazonaws.AmazonWebServi
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: ").append(getAccountId());
+            sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -333,6 +381,10 @@ public class ListAnomaliesForInsightRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -346,6 +398,7 @@ public class ListAnomaliesForInsightRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The content of the email, composed of a subject line, an HTML part, and a text-only part.
+ * The content of the email, composed of a subject line and either an HTML part or a text-only part.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Template" target="_top">AWS API
@@ -28,8 +28,8 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the template. You will refer to this name when you send email using the
-     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or
+     * <code>SendBulkTemplatedEmail</code> operations.
      * </p>
      */
     private String templateName;
@@ -41,7 +41,7 @@ public class Template implements Serializable, Cloneable {
     private String subjectPart;
     /**
      * <p>
-     * The email body that will be visible to recipients whose email clients do not display HTML.
+     * The email body that is visible to recipients whose email clients do not display HTML content.
      * </p>
      */
     private String textPart;
@@ -54,13 +54,13 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the template. You will refer to this name when you send email using the
-     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or
+     * <code>SendBulkTemplatedEmail</code> operations.
      * </p>
      * 
      * @param templateName
-     *        The name of the template. You will refer to this name when you send email using the
-     *        <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     *        The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code>
+     *        or <code>SendBulkTemplatedEmail</code> operations.
      */
 
     public void setTemplateName(String templateName) {
@@ -69,12 +69,12 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the template. You will refer to this name when you send email using the
-     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or
+     * <code>SendBulkTemplatedEmail</code> operations.
      * </p>
      * 
-     * @return The name of the template. You will refer to this name when you send email using the
-     *         <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * @return The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code>
+     *         or <code>SendBulkTemplatedEmail</code> operations.
      */
 
     public String getTemplateName() {
@@ -83,13 +83,13 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the template. You will refer to this name when you send email using the
-     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code> or
+     * <code>SendBulkTemplatedEmail</code> operations.
      * </p>
      * 
      * @param templateName
-     *        The name of the template. You will refer to this name when you send email using the
-     *        <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     *        The name of the template. You use this name when you send email using the <code>SendTemplatedEmail</code>
+     *        or <code>SendBulkTemplatedEmail</code> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email body that will be visible to recipients whose email clients do not display HTML.
+     * The email body that is visible to recipients whose email clients do not display HTML content.
      * </p>
      * 
      * @param textPart
-     *        The email body that will be visible to recipients whose email clients do not display HTML.
+     *        The email body that is visible to recipients whose email clients do not display HTML content.
      */
 
     public void setTextPart(String textPart) {
@@ -153,10 +153,10 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email body that will be visible to recipients whose email clients do not display HTML.
+     * The email body that is visible to recipients whose email clients do not display HTML content.
      * </p>
      * 
-     * @return The email body that will be visible to recipients whose email clients do not display HTML.
+     * @return The email body that is visible to recipients whose email clients do not display HTML content.
      */
 
     public String getTextPart() {
@@ -165,11 +165,11 @@ public class Template implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email body that will be visible to recipients whose email clients do not display HTML.
+     * The email body that is visible to recipients whose email clients do not display HTML content.
      * </p>
      * 
      * @param textPart
-     *        The email body that will be visible to recipients whose email clients do not display HTML.
+     *        The email body that is visible to recipients whose email clients do not display HTML content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -969,6 +969,68 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Create a service instance.
+     * </p>
+     * 
+     * @param createServiceInstanceRequest
+     * @return A Java Future containing the result of the CreateServiceInstance operation returned by the service.
+     * @sample AWSProtonAsync.CreateServiceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServiceInstanceResult> createServiceInstanceAsync(CreateServiceInstanceRequest createServiceInstanceRequest);
+
+    /**
+     * <p>
+     * Create a service instance.
+     * </p>
+     * 
+     * @param createServiceInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateServiceInstance operation returned by the service.
+     * @sample AWSProtonAsyncHandler.CreateServiceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServiceInstanceResult> createServiceInstanceAsync(CreateServiceInstanceRequest createServiceInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateServiceInstanceRequest, CreateServiceInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create the Proton Ops configuration file.
+     * </p>
+     * 
+     * @param createServiceSyncConfigRequest
+     * @return A Java Future containing the result of the CreateServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsync.CreateServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServiceSyncConfigResult> createServiceSyncConfigAsync(CreateServiceSyncConfigRequest createServiceSyncConfigRequest);
+
+    /**
+     * <p>
+     * Create the Proton Ops configuration file.
+     * </p>
+     * 
+     * @param createServiceSyncConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsyncHandler.CreateServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateServiceSyncConfigResult> createServiceSyncConfigAsync(CreateServiceSyncConfigRequest createServiceSyncConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateServiceSyncConfigRequest, CreateServiceSyncConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a service template. The administrator creates a service template to define standardized infrastructure and
      * an optional CI/CD service pipeline. Developers, in turn, select the service template from Proton. If the selected
      * service template includes a service pipeline definition, they provide a link to their source code repository.
@@ -1136,6 +1198,37 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest deleteComponentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the deployment.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @return A Java Future containing the result of the DeleteDeployment operation returned by the service.
+     * @sample AWSProtonAsync.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest deleteDeploymentRequest);
+
+    /**
+     * <p>
+     * Delete the deployment.
+     * </p>
+     * 
+     * @param deleteDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeployment operation returned by the service.
+     * @sample AWSProtonAsyncHandler.DeleteDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest deleteDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResult> asyncHandler);
 
     /**
      * <p>
@@ -1393,6 +1486,37 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Delete the Proton Ops file.
+     * </p>
+     * 
+     * @param deleteServiceSyncConfigRequest
+     * @return A Java Future containing the result of the DeleteServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsync.DeleteServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServiceSyncConfigResult> deleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest deleteServiceSyncConfigRequest);
+
+    /**
+     * <p>
+     * Delete the Proton Ops file.
+     * </p>
+     * 
+     * @param deleteServiceSyncConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsyncHandler.DeleteServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServiceSyncConfigResult> deleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest deleteServiceSyncConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteServiceSyncConfigRequest, DeleteServiceSyncConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * If no other major or minor versions of the service template exist, delete the service template.
      * </p>
      * 
@@ -1575,6 +1699,37 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest getComponentRequest,
             com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get detailed data for a deployment.
+     * </p>
+     * 
+     * @param getDeploymentRequest
+     * @return A Java Future containing the result of the GetDeployment operation returned by the service.
+     * @sample AWSProtonAsync.GetDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest getDeploymentRequest);
+
+    /**
+     * <p>
+     * Get detailed data for a deployment.
+     * </p>
+     * 
+     * @param getDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeployment operation returned by the service.
+     * @sample AWSProtonAsyncHandler.GetDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest getDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler);
 
     /**
      * <p>
@@ -1808,6 +1963,77 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Get counts of Proton resources.
+     * </p>
+     * <p>
+     * For infrastructure-provisioning resources (environments, services, service instances, pipelines), the action
+     * returns staleness counts. A resource is stale when it's behind the recommended version of the Proton template
+     * that it uses and it needs an update to become current.
+     * </p>
+     * <p>
+     * The action returns staleness counts (counts of resources that are up-to-date, behind a template major version, or
+     * behind a template minor version), the total number of resources, and the number of resources that are in a failed
+     * state, grouped by resource type. Components, environments, and service templates return less information - see
+     * the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code> field descriptions.
+     * </p>
+     * <p>
+     * For context, the action also returns the total number of each type of Proton template in the Amazon Web Services
+     * account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton dashboard</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param getResourcesSummaryRequest
+     * @return A Java Future containing the result of the GetResourcesSummary operation returned by the service.
+     * @sample AWSProtonAsync.GetResourcesSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcesSummaryResult> getResourcesSummaryAsync(GetResourcesSummaryRequest getResourcesSummaryRequest);
+
+    /**
+     * <p>
+     * Get counts of Proton resources.
+     * </p>
+     * <p>
+     * For infrastructure-provisioning resources (environments, services, service instances, pipelines), the action
+     * returns staleness counts. A resource is stale when it's behind the recommended version of the Proton template
+     * that it uses and it needs an update to become current.
+     * </p>
+     * <p>
+     * The action returns staleness counts (counts of resources that are up-to-date, behind a template major version, or
+     * behind a template minor version), the total number of resources, and the number of resources that are in a failed
+     * state, grouped by resource type. Components, environments, and service templates return less information - see
+     * the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code> field descriptions.
+     * </p>
+     * <p>
+     * For context, the action also returns the total number of each type of Proton template in the Amazon Web Services
+     * account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/monitoring-dashboard.html">Proton dashboard</a> in the
+     * <i>Proton User Guide</i>.
+     * </p>
+     * 
+     * @param getResourcesSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcesSummary operation returned by the service.
+     * @sample AWSProtonAsyncHandler.GetResourcesSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcesSummaryResult> getResourcesSummaryAsync(GetResourcesSummaryRequest getResourcesSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcesSummaryRequest, GetResourcesSummaryResult> asyncHandler);
+
+    /**
+     * <p>
      * Get detailed data for a service.
      * </p>
      * 
@@ -1869,6 +2095,107 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<GetServiceInstanceResult> getServiceInstanceAsync(GetServiceInstanceRequest getServiceInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetServiceInstanceRequest, GetServiceInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the status of the synced service instance.
+     * </p>
+     * 
+     * @param getServiceInstanceSyncStatusRequest
+     * @return A Java Future containing the result of the GetServiceInstanceSyncStatus operation returned by the
+     *         service.
+     * @sample AWSProtonAsync.GetServiceInstanceSyncStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceInstanceSyncStatusResult> getServiceInstanceSyncStatusAsync(
+            GetServiceInstanceSyncStatusRequest getServiceInstanceSyncStatusRequest);
+
+    /**
+     * <p>
+     * Get the status of the synced service instance.
+     * </p>
+     * 
+     * @param getServiceInstanceSyncStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetServiceInstanceSyncStatus operation returned by the
+     *         service.
+     * @sample AWSProtonAsyncHandler.GetServiceInstanceSyncStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceInstanceSyncStatusResult> getServiceInstanceSyncStatusAsync(
+            GetServiceInstanceSyncStatusRequest getServiceInstanceSyncStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetServiceInstanceSyncStatusRequest, GetServiceInstanceSyncStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get detailed data for the service sync blocker summary.
+     * </p>
+     * 
+     * @param getServiceSyncBlockerSummaryRequest
+     * @return A Java Future containing the result of the GetServiceSyncBlockerSummary operation returned by the
+     *         service.
+     * @sample AWSProtonAsync.GetServiceSyncBlockerSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceSyncBlockerSummaryResult> getServiceSyncBlockerSummaryAsync(
+            GetServiceSyncBlockerSummaryRequest getServiceSyncBlockerSummaryRequest);
+
+    /**
+     * <p>
+     * Get detailed data for the service sync blocker summary.
+     * </p>
+     * 
+     * @param getServiceSyncBlockerSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetServiceSyncBlockerSummary operation returned by the
+     *         service.
+     * @sample AWSProtonAsyncHandler.GetServiceSyncBlockerSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceSyncBlockerSummaryResult> getServiceSyncBlockerSummaryAsync(
+            GetServiceSyncBlockerSummaryRequest getServiceSyncBlockerSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetServiceSyncBlockerSummaryRequest, GetServiceSyncBlockerSummaryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get detailed information for the service sync configuration.
+     * </p>
+     * 
+     * @param getServiceSyncConfigRequest
+     * @return A Java Future containing the result of the GetServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsync.GetServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceSyncConfigResult> getServiceSyncConfigAsync(GetServiceSyncConfigRequest getServiceSyncConfigRequest);
+
+    /**
+     * <p>
+     * Get detailed information for the service sync configuration.
+     * </p>
+     * 
+     * @param getServiceSyncConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsyncHandler.GetServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceSyncConfigResult> getServiceSyncConfigAsync(GetServiceSyncConfigRequest getServiceSyncConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetServiceSyncConfigRequest, GetServiceSyncConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -2124,6 +2451,37 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest listComponentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List deployments. You can filter the result list by environment, service, or a single service instance.
+     * </p>
+     * 
+     * @param listDeploymentsRequest
+     * @return A Java Future containing the result of the ListDeployments operation returned by the service.
+     * @sample AWSProtonAsync.ListDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest listDeploymentsRequest);
+
+    /**
+     * <p>
+     * List deployments. You can filter the result list by environment, service, or a single service instance.
+     * </p>
+     * 
+     * @param listDeploymentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeployments operation returned by the service.
+     * @sample AWSProtonAsyncHandler.ListDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest listDeploymentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler);
 
     /**
      * <p>
@@ -2469,7 +2827,8 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * List service instances with summary data.
+     * List service instances with summary data. This action lists service instances of all services in the Amazon Web
+     * Services account.
      * </p>
      * 
      * @param listServiceInstancesRequest
@@ -2482,7 +2841,8 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * List service instances with summary data.
+     * List service instances with summary data. This action lists service instances of all services in the Amazon Web
+     * Services account.
      * </p>
      * 
      * @param listServiceInstancesRequest
@@ -3532,6 +3892,68 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<UpdateServicePipelineResult> updateServicePipelineAsync(UpdateServicePipelineRequest updateServicePipelineRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateServicePipelineRequest, UpdateServicePipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the service sync blocker by resolving it.
+     * </p>
+     * 
+     * @param updateServiceSyncBlockerRequest
+     * @return A Java Future containing the result of the UpdateServiceSyncBlocker operation returned by the service.
+     * @sample AWSProtonAsync.UpdateServiceSyncBlocker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServiceSyncBlockerResult> updateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest updateServiceSyncBlockerRequest);
+
+    /**
+     * <p>
+     * Update the service sync blocker by resolving it.
+     * </p>
+     * 
+     * @param updateServiceSyncBlockerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateServiceSyncBlocker operation returned by the service.
+     * @sample AWSProtonAsyncHandler.UpdateServiceSyncBlocker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServiceSyncBlockerResult> updateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest updateServiceSyncBlockerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateServiceSyncBlockerRequest, UpdateServiceSyncBlockerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the Proton Ops config file.
+     * </p>
+     * 
+     * @param updateServiceSyncConfigRequest
+     * @return A Java Future containing the result of the UpdateServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsync.UpdateServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServiceSyncConfigResult> updateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest updateServiceSyncConfigRequest);
+
+    /**
+     * <p>
+     * Update the Proton Ops config file.
+     * </p>
+     * 
+     * @param updateServiceSyncConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateServiceSyncConfig operation returned by the service.
+     * @sample AWSProtonAsyncHandler.UpdateServiceSyncConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServiceSyncConfigResult> updateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest updateServiceSyncConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateServiceSyncConfigRequest, UpdateServiceSyncConfigResult> asyncHandler);
 
     /**
      * <p>

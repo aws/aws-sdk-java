@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     private String whitelistCidr;
+    /** The source configuration for cloud flows receiving a stream from a bridge. */
+    private GatewayBridgeSource gatewayBridgeSource;
 
     /**
      * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
@@ -590,6 +592,40 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     * 
+     * @param gatewayBridgeSource
+     *        The source configuration for cloud flows receiving a stream from a bridge.
+     */
+
+    public void setGatewayBridgeSource(GatewayBridgeSource gatewayBridgeSource) {
+        this.gatewayBridgeSource = gatewayBridgeSource;
+    }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     * 
+     * @return The source configuration for cloud flows receiving a stream from a bridge.
+     */
+
+    public GatewayBridgeSource getGatewayBridgeSource() {
+        return this.gatewayBridgeSource;
+    }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     * 
+     * @param gatewayBridgeSource
+     *        The source configuration for cloud flows receiving a stream from a bridge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Source withGatewayBridgeSource(GatewayBridgeSource gatewayBridgeSource) {
+        setGatewayBridgeSource(gatewayBridgeSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -628,7 +664,9 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
         if (getVpcInterfaceName() != null)
             sb.append("VpcInterfaceName: ").append(getVpcInterfaceName()).append(",");
         if (getWhitelistCidr() != null)
-            sb.append("WhitelistCidr: ").append(getWhitelistCidr());
+            sb.append("WhitelistCidr: ").append(getWhitelistCidr()).append(",");
+        if (getGatewayBridgeSource() != null)
+            sb.append("GatewayBridgeSource: ").append(getGatewayBridgeSource());
         sb.append("}");
         return sb.toString();
     }
@@ -701,6 +739,10 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWhitelistCidr() != null && other.getWhitelistCidr().equals(this.getWhitelistCidr()) == false)
             return false;
+        if (other.getGatewayBridgeSource() == null ^ this.getGatewayBridgeSource() == null)
+            return false;
+        if (other.getGatewayBridgeSource() != null && other.getGatewayBridgeSource().equals(this.getGatewayBridgeSource()) == false)
+            return false;
         return true;
     }
 
@@ -723,6 +765,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTransport() == null) ? 0 : getTransport().hashCode());
         hashCode = prime * hashCode + ((getVpcInterfaceName() == null) ? 0 : getVpcInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getWhitelistCidr() == null) ? 0 : getWhitelistCidr().hashCode());
+        hashCode = prime * hashCode + ((getGatewayBridgeSource() == null) ? 0 : getGatewayBridgeSource().hashCode());
         return hashCode;
     }
 

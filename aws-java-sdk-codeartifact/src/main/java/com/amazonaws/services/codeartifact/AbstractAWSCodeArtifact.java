@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public CreatePackageGroupResult createPackageGroup(CreatePackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,16 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public DeleteDomainPermissionsPolicyResult deleteDomainPermissionsPolicy(DeleteDomainPermissionsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePackageResult deletePackage(DeletePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePackageGroupResult deletePackageGroup(DeletePackageGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,6 +98,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public DescribePackageGroupResult describePackageGroup(DescribePackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePackageVersionResult describePackageVersion(DescribePackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +119,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public DisposePackageVersionsResult disposePackageVersions(DisposePackageVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAssociatedPackageGroupResult getAssociatedPackageGroup(GetAssociatedPackageGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,7 +158,22 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public ListAllowedRepositoriesForGroupResult listAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssociatedPackagesResult listAssociatedPackages(ListAssociatedPackagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDomainsResult listDomains(ListDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPackageGroupsResult listPackageGroups(ListPackageGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,7 +208,17 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public ListSubPackageGroupsResult listSubPackageGroups(ListSubPackageGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PublishPackageVersionResult publishPackageVersion(PublishPackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +244,16 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageGroupResult updatePackageGroup(UpdatePackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageGroupOriginConfigurationResult updatePackageGroupOriginConfiguration(UpdatePackageGroupOriginConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

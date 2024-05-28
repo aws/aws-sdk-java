@@ -1,0 +1,705 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.pipes.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The overrides that are sent to a container. An empty container override can be passed in. An example of an empty
+ * container override is <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the
+ * <code>name</code> parameter must be included.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/EcsContainerOverride" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EcsContainerOverride implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The command to send to the container that overrides the default command from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     */
+    private java.util.List<String> command;
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     */
+    private Integer cpu;
+    /**
+     * <p>
+     * The environment variables to send to the container. You can add new environment variables, which are added to the
+     * container at launch, or you can override the existing environment variables from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     */
+    private java.util.List<EcsEnvironmentVariable> environment;
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     */
+    private java.util.List<EcsEnvironmentFile> environmentFiles;
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     */
+    private Integer memory;
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     */
+    private Integer memoryReservation;
+    /**
+     * <p>
+     * The name of the container that receives the override. This parameter is required if any override is specified.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     */
+    private java.util.List<EcsResourceRequirement> resourceRequirements;
+
+    /**
+     * <p>
+     * The command to send to the container that overrides the default command from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @return The command to send to the container that overrides the default command from the Docker image or the task
+     *         definition. You must also specify a container name.
+     */
+
+    public java.util.List<String> getCommand() {
+        return command;
+    }
+
+    /**
+     * <p>
+     * The command to send to the container that overrides the default command from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param command
+     *        The command to send to the container that overrides the default command from the Docker image or the task
+     *        definition. You must also specify a container name.
+     */
+
+    public void setCommand(java.util.Collection<String> command) {
+        if (command == null) {
+            this.command = null;
+            return;
+        }
+
+        this.command = new java.util.ArrayList<String>(command);
+    }
+
+    /**
+     * <p>
+     * The command to send to the container that overrides the default command from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCommand(java.util.Collection)} or {@link #withCommand(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param command
+     *        The command to send to the container that overrides the default command from the Docker image or the task
+     *        definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withCommand(String... command) {
+        if (this.command == null) {
+            setCommand(new java.util.ArrayList<String>(command.length));
+        }
+        for (String ele : command) {
+            this.command.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The command to send to the container that overrides the default command from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param command
+     *        The command to send to the container that overrides the default command from the Docker image or the task
+     *        definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withCommand(java.util.Collection<String> command) {
+        setCommand(command);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param cpu
+     *        The number of <code>cpu</code> units reserved for the container, instead of the default value from the
+     *        task definition. You must also specify a container name.
+     */
+
+    public void setCpu(Integer cpu) {
+        this.cpu = cpu;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @return The number of <code>cpu</code> units reserved for the container, instead of the default value from the
+     *         task definition. You must also specify a container name.
+     */
+
+    public Integer getCpu() {
+        return this.cpu;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param cpu
+     *        The number of <code>cpu</code> units reserved for the container, instead of the default value from the
+     *        task definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withCpu(Integer cpu) {
+        setCpu(cpu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The environment variables to send to the container. You can add new environment variables, which are added to the
+     * container at launch, or you can override the existing environment variables from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @return The environment variables to send to the container. You can add new environment variables, which are
+     *         added to the container at launch, or you can override the existing environment variables from the Docker
+     *         image or the task definition. You must also specify a container name.
+     */
+
+    public java.util.List<EcsEnvironmentVariable> getEnvironment() {
+        return environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to send to the container. You can add new environment variables, which are added to the
+     * container at launch, or you can override the existing environment variables from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to send to the container. You can add new environment variables, which are added
+     *        to the container at launch, or you can override the existing environment variables from the Docker image
+     *        or the task definition. You must also specify a container name.
+     */
+
+    public void setEnvironment(java.util.Collection<EcsEnvironmentVariable> environment) {
+        if (environment == null) {
+            this.environment = null;
+            return;
+        }
+
+        this.environment = new java.util.ArrayList<EcsEnvironmentVariable>(environment);
+    }
+
+    /**
+     * <p>
+     * The environment variables to send to the container. You can add new environment variables, which are added to the
+     * container at launch, or you can override the existing environment variables from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnvironment(java.util.Collection)} or {@link #withEnvironment(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to send to the container. You can add new environment variables, which are added
+     *        to the container at launch, or you can override the existing environment variables from the Docker image
+     *        or the task definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withEnvironment(EcsEnvironmentVariable... environment) {
+        if (this.environment == null) {
+            setEnvironment(new java.util.ArrayList<EcsEnvironmentVariable>(environment.length));
+        }
+        for (EcsEnvironmentVariable ele : environment) {
+            this.environment.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The environment variables to send to the container. You can add new environment variables, which are added to the
+     * container at launch, or you can override the existing environment variables from the Docker image or the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to send to the container. You can add new environment variables, which are added
+     *        to the container at launch, or you can override the existing environment variables from the Docker image
+     *        or the task definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withEnvironment(java.util.Collection<EcsEnvironmentVariable> environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * 
+     * @return A list of files containing the environment variables to pass to a container, instead of the value from
+     *         the container definition.
+     */
+
+    public java.util.List<EcsEnvironmentFile> getEnvironmentFiles() {
+        return environmentFiles;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container, instead of the value from the
+     *        container definition.
+     */
+
+    public void setEnvironmentFiles(java.util.Collection<EcsEnvironmentFile> environmentFiles) {
+        if (environmentFiles == null) {
+            this.environmentFiles = null;
+            return;
+        }
+
+        this.environmentFiles = new java.util.ArrayList<EcsEnvironmentFile>(environmentFiles);
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnvironmentFiles(java.util.Collection)} or {@link #withEnvironmentFiles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container, instead of the value from the
+     *        container definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withEnvironmentFiles(EcsEnvironmentFile... environmentFiles) {
+        if (this.environmentFiles == null) {
+            setEnvironmentFiles(new java.util.ArrayList<EcsEnvironmentFile>(environmentFiles.length));
+        }
+        for (EcsEnvironmentFile ele : environmentFiles) {
+            this.environmentFiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container, instead of the value from the
+     *        container definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withEnvironmentFiles(java.util.Collection<EcsEnvironmentFile> environmentFiles) {
+        setEnvironmentFiles(environmentFiles);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     * 
+     * @param memory
+     *        The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     *        definition. If your container attempts to exceed the memory specified here, the container is killed. You
+     *        must also specify a container name.
+     */
+
+    public void setMemory(Integer memory) {
+        this.memory = memory;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     * 
+     * @return The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     *         definition. If your container attempts to exceed the memory specified here, the container is killed. You
+     *         must also specify a container name.
+     */
+
+    public Integer getMemory() {
+        return this.memory;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     * 
+     * @param memory
+     *        The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     *        definition. If your container attempts to exceed the memory specified here, the container is killed. You
+     *        must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withMemory(Integer memory) {
+        setMemory(memory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     *        definition. You must also specify a container name.
+     */
+
+    public void setMemoryReservation(Integer memoryReservation) {
+        this.memoryReservation = memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @return The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the
+     *         task definition. You must also specify a container name.
+     */
+
+    public Integer getMemoryReservation() {
+        return this.memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     *        definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withMemoryReservation(Integer memoryReservation) {
+        setMemoryReservation(memoryReservation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the container that receives the override. This parameter is required if any override is specified.
+     * </p>
+     * 
+     * @param name
+     *        The name of the container that receives the override. This parameter is required if any override is
+     *        specified.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the container that receives the override. This parameter is required if any override is specified.
+     * </p>
+     * 
+     * @return The name of the container that receives the override. This parameter is required if any override is
+     *         specified.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the container that receives the override. This parameter is required if any override is specified.
+     * </p>
+     * 
+     * @param name
+     *        The name of the container that receives the override. This parameter is required if any override is
+     *        specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @return The type and amount of a resource to assign to a container, instead of the default value from the task
+     *         definition. The only supported resource is a GPU.
+     */
+
+    public java.util.List<EcsResourceRequirement> getResourceRequirements() {
+        return resourceRequirements;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container, instead of the default value from the task
+     *        definition. The only supported resource is a GPU.
+     */
+
+    public void setResourceRequirements(java.util.Collection<EcsResourceRequirement> resourceRequirements) {
+        if (resourceRequirements == null) {
+            this.resourceRequirements = null;
+            return;
+        }
+
+        this.resourceRequirements = new java.util.ArrayList<EcsResourceRequirement>(resourceRequirements);
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceRequirements(java.util.Collection)} or {@link #withResourceRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container, instead of the default value from the task
+     *        definition. The only supported resource is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withResourceRequirements(EcsResourceRequirement... resourceRequirements) {
+        if (this.resourceRequirements == null) {
+            setResourceRequirements(new java.util.ArrayList<EcsResourceRequirement>(resourceRequirements.length));
+        }
+        for (EcsResourceRequirement ele : resourceRequirements) {
+            this.resourceRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container, instead of the default value from the task
+     *        definition. The only supported resource is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcsContainerOverride withResourceRequirements(java.util.Collection<EcsResourceRequirement> resourceRequirements) {
+        setResourceRequirements(resourceRequirements);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getCommand() != null)
+            sb.append("Command: ").append(getCommand()).append(",");
+        if (getCpu() != null)
+            sb.append("Cpu: ").append(getCpu()).append(",");
+        if (getEnvironment() != null)
+            sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getEnvironmentFiles() != null)
+            sb.append("EnvironmentFiles: ").append(getEnvironmentFiles()).append(",");
+        if (getMemory() != null)
+            sb.append("Memory: ").append(getMemory()).append(",");
+        if (getMemoryReservation() != null)
+            sb.append("MemoryReservation: ").append(getMemoryReservation()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getResourceRequirements() != null)
+            sb.append("ResourceRequirements: ").append(getResourceRequirements());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof EcsContainerOverride == false)
+            return false;
+        EcsContainerOverride other = (EcsContainerOverride) obj;
+        if (other.getCommand() == null ^ this.getCommand() == null)
+            return false;
+        if (other.getCommand() != null && other.getCommand().equals(this.getCommand()) == false)
+            return false;
+        if (other.getCpu() == null ^ this.getCpu() == null)
+            return false;
+        if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
+            return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getEnvironmentFiles() == null ^ this.getEnvironmentFiles() == null)
+            return false;
+        if (other.getEnvironmentFiles() != null && other.getEnvironmentFiles().equals(this.getEnvironmentFiles()) == false)
+            return false;
+        if (other.getMemory() == null ^ this.getMemory() == null)
+            return false;
+        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
+            return false;
+        if (other.getMemoryReservation() == null ^ this.getMemoryReservation() == null)
+            return false;
+        if (other.getMemoryReservation() != null && other.getMemoryReservation().equals(this.getMemoryReservation()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getResourceRequirements() == null ^ this.getResourceRequirements() == null)
+            return false;
+        if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
+        hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentFiles() == null) ? 0 : getEnvironmentFiles().hashCode());
+        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public EcsContainerOverride clone() {
+        try {
+            return (EcsContainerOverride) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pipes.model.transform.EcsContainerOverrideMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

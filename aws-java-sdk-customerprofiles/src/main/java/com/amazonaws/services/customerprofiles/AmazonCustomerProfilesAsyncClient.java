@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,19 +27,11 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>Amazon Connect Customer Profiles</fullname>
  * <p>
- * Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information about the Amazon
- * Connect Customer Profiles API, including supported operations, data types, parameters, and schemas.
- * </p>
- * <p>
  * Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors
  * powered by AppFlow that make it easy to combine customer information from third party applications, such as
  * Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your
- * Amazon Connect contact center.
- * </p>
- * <p>
- * If you're new to Amazon Connect , you might find it helpful to also review the <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon Connect Administrator
- * Guide</a>.
+ * Amazon Connect contact center. If you're new to Amazon Connect, you might find it helpful to review the <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon Connect Administrator Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -122,6 +114,41 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCalculatedAttributeDefinitionResult> createCalculatedAttributeDefinitionAsync(
+            CreateCalculatedAttributeDefinitionRequest request) {
+
+        return createCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCalculatedAttributeDefinitionResult> createCalculatedAttributeDefinitionAsync(
+            final CreateCalculatedAttributeDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCalculatedAttributeDefinitionRequest, CreateCalculatedAttributeDefinitionResult> asyncHandler) {
+        final CreateCalculatedAttributeDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCalculatedAttributeDefinitionResult>() {
+            @Override
+            public CreateCalculatedAttributeDefinitionResult call() throws Exception {
+                CreateCalculatedAttributeDefinitionResult result = null;
+
+                try {
+                    result = executeCreateCalculatedAttributeDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request) {
 
         return createDomainAsync(request, null);
@@ -139,6 +166,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeCreateDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventStreamResult> createEventStreamAsync(CreateEventStreamRequest request) {
+
+        return createEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventStreamResult> createEventStreamAsync(final CreateEventStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEventStreamRequest, CreateEventStreamResult> asyncHandler) {
+        final CreateEventStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEventStreamResult>() {
+            @Override
+            public CreateEventStreamResult call() throws Exception {
+                CreateEventStreamResult result = null;
+
+                try {
+                    result = executeCreateEventStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -221,6 +281,41 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCalculatedAttributeDefinitionResult> deleteCalculatedAttributeDefinitionAsync(
+            DeleteCalculatedAttributeDefinitionRequest request) {
+
+        return deleteCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCalculatedAttributeDefinitionResult> deleteCalculatedAttributeDefinitionAsync(
+            final DeleteCalculatedAttributeDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCalculatedAttributeDefinitionRequest, DeleteCalculatedAttributeDefinitionResult> asyncHandler) {
+        final DeleteCalculatedAttributeDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCalculatedAttributeDefinitionResult>() {
+            @Override
+            public DeleteCalculatedAttributeDefinitionResult call() throws Exception {
+                DeleteCalculatedAttributeDefinitionResult result = null;
+
+                try {
+                    result = executeDeleteCalculatedAttributeDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
 
         return deleteDomainAsync(request, null);
@@ -238,6 +333,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeDeleteDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest request) {
+
+        return deleteEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(final DeleteEventStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler) {
+        final DeleteEventStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEventStreamResult>() {
+            @Override
+            public DeleteEventStreamResult call() throws Exception {
+                DeleteEventStreamResult result = null;
+
+                try {
+                    result = executeDeleteEventStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -452,6 +580,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<DetectProfileObjectTypeResult> detectProfileObjectTypeAsync(DetectProfileObjectTypeRequest request) {
+
+        return detectProfileObjectTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectProfileObjectTypeResult> detectProfileObjectTypeAsync(final DetectProfileObjectTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectProfileObjectTypeRequest, DetectProfileObjectTypeResult> asyncHandler) {
+        final DetectProfileObjectTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectProfileObjectTypeResult>() {
+            @Override
+            public DetectProfileObjectTypeResult call() throws Exception {
+                DetectProfileObjectTypeResult result = null;
+
+                try {
+                    result = executeDetectProfileObjectType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutoMergingPreviewResult> getAutoMergingPreviewAsync(GetAutoMergingPreviewRequest request) {
 
         return getAutoMergingPreviewAsync(request, null);
@@ -485,6 +646,76 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeDefinitionResult> getCalculatedAttributeDefinitionAsync(
+            GetCalculatedAttributeDefinitionRequest request) {
+
+        return getCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeDefinitionResult> getCalculatedAttributeDefinitionAsync(
+            final GetCalculatedAttributeDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCalculatedAttributeDefinitionRequest, GetCalculatedAttributeDefinitionResult> asyncHandler) {
+        final GetCalculatedAttributeDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCalculatedAttributeDefinitionResult>() {
+            @Override
+            public GetCalculatedAttributeDefinitionResult call() throws Exception {
+                GetCalculatedAttributeDefinitionResult result = null;
+
+                try {
+                    result = executeGetCalculatedAttributeDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeForProfileResult> getCalculatedAttributeForProfileAsync(
+            GetCalculatedAttributeForProfileRequest request) {
+
+        return getCalculatedAttributeForProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculatedAttributeForProfileResult> getCalculatedAttributeForProfileAsync(
+            final GetCalculatedAttributeForProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCalculatedAttributeForProfileRequest, GetCalculatedAttributeForProfileResult> asyncHandler) {
+        final GetCalculatedAttributeForProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCalculatedAttributeForProfileResult>() {
+            @Override
+            public GetCalculatedAttributeForProfileResult call() throws Exception {
+                GetCalculatedAttributeForProfileResult result = null;
+
+                try {
+                    result = executeGetCalculatedAttributeForProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainResult> getDomainAsync(GetDomainRequest request) {
 
         return getDomainAsync(request, null);
@@ -502,6 +733,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeGetDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest request) {
+
+        return getEventStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(final GetEventStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler) {
+        final GetEventStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEventStreamResult>() {
+            @Override
+            public GetEventStreamResult call() throws Exception {
+                GetEventStreamResult result = null;
+
+                try {
+                    result = executeGetEventStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -683,6 +947,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest request) {
+
+        return getSimilarProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(final GetSimilarProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSimilarProfilesRequest, GetSimilarProfilesResult> asyncHandler) {
+        final GetSimilarProfilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSimilarProfilesResult>() {
+            @Override
+            public GetSimilarProfilesResult call() throws Exception {
+                GetSimilarProfilesResult result = null;
+
+                try {
+                    result = executeGetSimilarProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
 
         return getWorkflowAsync(request, null);
@@ -782,6 +1079,76 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListCalculatedAttributeDefinitionsResult> listCalculatedAttributeDefinitionsAsync(
+            ListCalculatedAttributeDefinitionsRequest request) {
+
+        return listCalculatedAttributeDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculatedAttributeDefinitionsResult> listCalculatedAttributeDefinitionsAsync(
+            final ListCalculatedAttributeDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCalculatedAttributeDefinitionsRequest, ListCalculatedAttributeDefinitionsResult> asyncHandler) {
+        final ListCalculatedAttributeDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCalculatedAttributeDefinitionsResult>() {
+            @Override
+            public ListCalculatedAttributeDefinitionsResult call() throws Exception {
+                ListCalculatedAttributeDefinitionsResult result = null;
+
+                try {
+                    result = executeListCalculatedAttributeDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculatedAttributesForProfileResult> listCalculatedAttributesForProfileAsync(
+            ListCalculatedAttributesForProfileRequest request) {
+
+        return listCalculatedAttributesForProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculatedAttributesForProfileResult> listCalculatedAttributesForProfileAsync(
+            final ListCalculatedAttributesForProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCalculatedAttributesForProfileRequest, ListCalculatedAttributesForProfileResult> asyncHandler) {
+        final ListCalculatedAttributesForProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCalculatedAttributesForProfileResult>() {
+            @Override
+            public ListCalculatedAttributesForProfileResult call() throws Exception {
+                ListCalculatedAttributesForProfileResult result = null;
+
+                try {
+                    result = executeListCalculatedAttributesForProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request) {
 
         return listDomainsAsync(request, null);
@@ -799,6 +1166,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeListDomains(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventStreamsResult> listEventStreamsAsync(ListEventStreamsRequest request) {
+
+        return listEventStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventStreamsResult> listEventStreamsAsync(final ListEventStreamsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventStreamsRequest, ListEventStreamsResult> asyncHandler) {
+        final ListEventStreamsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEventStreamsResult>() {
+            @Override
+            public ListEventStreamsResult call() throws Exception {
+                ListEventStreamsResult result = null;
+
+                try {
+                    result = executeListEventStreams(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -965,6 +1365,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeListProfileObjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request) {
+
+        return listRuleBasedMatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(final ListRuleBasedMatchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRuleBasedMatchesRequest, ListRuleBasedMatchesResult> asyncHandler) {
+        final ListRuleBasedMatchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRuleBasedMatchesResult>() {
+            @Override
+            public ListRuleBasedMatchesResult call() throws Exception {
+                ListRuleBasedMatchesResult result = null;
+
+                try {
+                    result = executeListRuleBasedMatches(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1262,6 +1695,41 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCalculatedAttributeDefinitionResult> updateCalculatedAttributeDefinitionAsync(
+            UpdateCalculatedAttributeDefinitionRequest request) {
+
+        return updateCalculatedAttributeDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCalculatedAttributeDefinitionResult> updateCalculatedAttributeDefinitionAsync(
+            final UpdateCalculatedAttributeDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCalculatedAttributeDefinitionRequest, UpdateCalculatedAttributeDefinitionResult> asyncHandler) {
+        final UpdateCalculatedAttributeDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCalculatedAttributeDefinitionResult>() {
+            @Override
+            public UpdateCalculatedAttributeDefinitionResult call() throws Exception {
+                UpdateCalculatedAttributeDefinitionResult result = null;
+
+                try {
+                    result = executeUpdateCalculatedAttributeDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

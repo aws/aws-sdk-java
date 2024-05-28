@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStateMachineAliasResult> createStateMachineAliasAsync(CreateStateMachineAliasRequest request) {
+
+        return createStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStateMachineAliasResult> createStateMachineAliasAsync(CreateStateMachineAliasRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStateMachineAliasRequest, CreateStateMachineAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteActivityResult> deleteActivityAsync(DeleteActivityRequest request) {
 
         return deleteActivityAsync(request, null);
@@ -75,6 +88,32 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     @Override
     public java.util.concurrent.Future<DeleteStateMachineResult> deleteStateMachineAsync(DeleteStateMachineRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStateMachineRequest, DeleteStateMachineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineAliasResult> deleteStateMachineAliasAsync(DeleteStateMachineAliasRequest request) {
+
+        return deleteStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineAliasResult> deleteStateMachineAliasAsync(DeleteStateMachineAliasRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStateMachineAliasRequest, DeleteStateMachineAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineVersionResult> deleteStateMachineVersionAsync(DeleteStateMachineVersionRequest request) {
+
+        return deleteStateMachineVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineVersionResult> deleteStateMachineVersionAsync(DeleteStateMachineVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStateMachineVersionRequest, DeleteStateMachineVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +145,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMapRunResult> describeMapRunAsync(DescribeMapRunRequest request) {
+
+        return describeMapRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMapRunResult> describeMapRunAsync(DescribeMapRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMapRunRequest, DescribeMapRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStateMachineResult> describeStateMachineAsync(DescribeStateMachineRequest request) {
 
         return describeStateMachineAsync(request, null);
@@ -114,6 +166,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     @Override
     public java.util.concurrent.Future<DescribeStateMachineResult> describeStateMachineAsync(DescribeStateMachineRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStateMachineRequest, DescribeStateMachineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStateMachineAliasResult> describeStateMachineAliasAsync(DescribeStateMachineAliasRequest request) {
+
+        return describeStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStateMachineAliasResult> describeStateMachineAliasAsync(DescribeStateMachineAliasRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStateMachineAliasRequest, DescribeStateMachineAliasResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -186,6 +251,45 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(ListMapRunsRequest request) {
+
+        return listMapRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(ListMapRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMapRunsRequest, ListMapRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineAliasesResult> listStateMachineAliasesAsync(ListStateMachineAliasesRequest request) {
+
+        return listStateMachineAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineAliasesResult> listStateMachineAliasesAsync(ListStateMachineAliasesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStateMachineAliasesRequest, ListStateMachineAliasesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineVersionsResult> listStateMachineVersionsAsync(ListStateMachineVersionsRequest request) {
+
+        return listStateMachineVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineVersionsResult> listStateMachineVersionsAsync(ListStateMachineVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStateMachineVersionsRequest, ListStateMachineVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStateMachinesResult> listStateMachinesAsync(ListStateMachinesRequest request) {
 
         return listStateMachinesAsync(request, null);
@@ -207,6 +311,32 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishStateMachineVersionResult> publishStateMachineVersionAsync(PublishStateMachineVersionRequest request) {
+
+        return publishStateMachineVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishStateMachineVersionResult> publishStateMachineVersionAsync(PublishStateMachineVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PublishStateMachineVersionRequest, PublishStateMachineVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedriveExecutionResult> redriveExecutionAsync(RedriveExecutionRequest request) {
+
+        return redriveExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedriveExecutionResult> redriveExecutionAsync(RedriveExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RedriveExecutionRequest, RedriveExecutionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -303,6 +433,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<TestStateResult> testStateAsync(TestStateRequest request) {
+
+        return testStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestStateResult> testStateAsync(TestStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestStateRequest, TestStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
 
         return untagResourceAsync(request, null);
@@ -316,6 +459,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMapRunResult> updateMapRunAsync(UpdateMapRunRequest request) {
+
+        return updateMapRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMapRunResult> updateMapRunAsync(UpdateMapRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMapRunRequest, UpdateMapRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStateMachineResult> updateStateMachineAsync(UpdateStateMachineRequest request) {
 
         return updateStateMachineAsync(request, null);
@@ -324,6 +480,32 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     @Override
     public java.util.concurrent.Future<UpdateStateMachineResult> updateStateMachineAsync(UpdateStateMachineRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateStateMachineRequest, UpdateStateMachineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStateMachineAliasResult> updateStateMachineAliasAsync(UpdateStateMachineAliasRequest request) {
+
+        return updateStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStateMachineAliasResult> updateStateMachineAliasAsync(UpdateStateMachineAliasRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStateMachineAliasRequest, UpdateStateMachineAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateStateMachineDefinitionResult> validateStateMachineDefinitionAsync(ValidateStateMachineDefinitionRequest request) {
+
+        return validateStateMachineDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateStateMachineDefinitionResult> validateStateMachineDefinitionAsync(ValidateStateMachineDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ValidateStateMachineDefinitionRequest, ValidateStateMachineDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

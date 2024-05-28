@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,18 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
     private Integer metricFilterCount;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the log group.
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing <code>:*</code>
+     * after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions. The
+     * exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't include a
+     * trailing <code>:*</code>.
      * </p>
      */
     private String arn;
@@ -62,10 +73,80 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
     private Long storedBytes;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     */
+    private String dataProtectionStatus;
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> inheritedProperties;
+    /**
+     * <p>
+     * This specifies the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     */
+    private String logGroupClass;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     * <code>:*</code> after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the <code>resourceArn</code> field in tagging APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String logGroupArn;
 
     /**
      * <p>
@@ -218,11 +299,33 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the log group.
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing <code>:*</code>
+     * after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions. The
+     * exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't include a
+     * trailing <code>:*</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the log group.
+     *        The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing
+     *        <code>:*</code> after the log group name. </p>
+     *        <p>
+     *        Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions. The
+     *        exception is when specifying permissions for <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>, and <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     *        >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't
+     *        include a trailing <code>:*</code>.
      */
 
     public void setArn(String arn) {
@@ -231,10 +334,32 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the log group.
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing <code>:*</code>
+     * after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions. The
+     * exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't include a
+     * trailing <code>:*</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the log group.
+     * @return The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing
+     *         <code>:*</code> after the log group name. </p>
+     *         <p>
+     *         Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions.
+     *         The exception is when specifying permissions for <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+     *         >TagResource</a>, <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     *         >UntagResource</a>, and <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     *         >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't
+     *         include a trailing <code>:*</code>.
      */
 
     public String getArn() {
@@ -243,11 +368,33 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the log group.
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing <code>:*</code>
+     * after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions. The
+     * exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't include a
+     * trailing <code>:*</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the log group.
+     *        The Amazon Resource Name (ARN) of the log group. This version of the ARN includes a trailing
+     *        <code>:*</code> after the log group name. </p>
+     *        <p>
+     *        Use this version to refer to the ARN in IAM policies when specifying permissions for most API actions. The
+     *        exception is when specifying permissions for <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>, and <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     *        >ListTagsForResource</a>. The permissions for those three actions require the ARN version that doesn't
+     *        include a trailing <code>:*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +445,11 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -311,10 +458,10 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * @return The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      */
 
     public String getKmsKeyId() {
@@ -323,16 +470,591 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param dataProtectionStatus
+     *        Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *        >PutDataProtectionPolicy</a>.
+     * @see DataProtectionStatus
+     */
+
+    public void setDataProtectionStatus(String dataProtectionStatus) {
+        this.dataProtectionStatus = dataProtectionStatus;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @return Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *         >PutDataProtectionPolicy</a>.
+     * @see DataProtectionStatus
+     */
+
+    public String getDataProtectionStatus() {
+        return this.dataProtectionStatus;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param dataProtectionStatus
+     *        Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *        >PutDataProtectionPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataProtectionStatus
+     */
+
+    public LogGroup withDataProtectionStatus(String dataProtectionStatus) {
+        setDataProtectionStatus(dataProtectionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param dataProtectionStatus
+     *        Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *        >PutDataProtectionPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataProtectionStatus
+     */
+
+    public LogGroup withDataProtectionStatus(DataProtectionStatus dataProtectionStatus) {
+        this.dataProtectionStatus = dataProtectionStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @return Displays all the properties that this log group has inherited from account-level settings.
+     * @see InheritedProperty
+     */
+
+    public java.util.List<String> getInheritedProperties() {
+        if (inheritedProperties == null) {
+            inheritedProperties = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return inheritedProperties;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @see InheritedProperty
+     */
+
+    public void setInheritedProperties(java.util.Collection<String> inheritedProperties) {
+        if (inheritedProperties == null) {
+            this.inheritedProperties = null;
+            return;
+        }
+
+        this.inheritedProperties = new com.amazonaws.internal.SdkInternalList<String>(inheritedProperties);
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInheritedProperties(java.util.Collection)} or {@link #withInheritedProperties(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InheritedProperty
+     */
+
+    public LogGroup withInheritedProperties(String... inheritedProperties) {
+        if (this.inheritedProperties == null) {
+            setInheritedProperties(new com.amazonaws.internal.SdkInternalList<String>(inheritedProperties.length));
+        }
+        for (String ele : inheritedProperties) {
+            this.inheritedProperties.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InheritedProperty
+     */
+
+    public LogGroup withInheritedProperties(java.util.Collection<String> inheritedProperties) {
+        setInheritedProperties(inheritedProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays all the properties that this log group has inherited from account-level settings.
+     * </p>
+     * 
+     * @param inheritedProperties
+     *        Displays all the properties that this log group has inherited from account-level settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InheritedProperty
+     */
+
+    public LogGroup withInheritedProperties(InheritedProperty... inheritedProperties) {
+        com.amazonaws.internal.SdkInternalList<String> inheritedPropertiesCopy = new com.amazonaws.internal.SdkInternalList<String>(inheritedProperties.length);
+        for (InheritedProperty value : inheritedProperties) {
+            inheritedPropertiesCopy.add(value.toString());
+        }
+        if (getInheritedProperties() == null) {
+            setInheritedProperties(inheritedPropertiesCopy);
+        } else {
+            getInheritedProperties().addAll(inheritedPropertiesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * This specifies the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @param logGroupClass
+     *        This specifies the log group class for this log group. There are two classes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *        lower costs.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For details about the features supported by each class, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *        classes</a>
+     * @see LogGroupClass
+     */
+
+    public void setLogGroupClass(String logGroupClass) {
+        this.logGroupClass = logGroupClass;
+    }
+
+    /**
+     * <p>
+     * This specifies the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @return This specifies the log group class for this log group. There are two classes:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *         lower costs.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For details about the features supported by each class, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *         classes</a>
+     * @see LogGroupClass
+     */
+
+    public String getLogGroupClass() {
+        return this.logGroupClass;
+    }
+
+    /**
+     * <p>
+     * This specifies the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @param logGroupClass
+     *        This specifies the log group class for this log group. There are two classes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *        lower costs.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For details about the features supported by each class, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *        classes</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogGroupClass
+     */
+
+    public LogGroup withLogGroupClass(String logGroupClass) {
+        setLogGroupClass(logGroupClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This specifies the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @param logGroupClass
+     *        This specifies the log group class for this log group. There are two classes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *        lower costs.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For details about the features supported by each class, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *        classes</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogGroupClass
+     */
+
+    public LogGroup withLogGroupClass(LogGroupClass logGroupClass) {
+        this.logGroupClass = logGroupClass.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     * <code>:*</code> after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the <code>resourceArn</code> field in tagging APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param logGroupArn
+     *        The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     *        <code>:*</code> after the log group name. </p>
+     *        <p>
+     *        Use this version to refer to the ARN in the following situations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the <code>resourceArn</code> field in tagging APIs
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In IAM policies, when specifying permissions for <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>, and <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     *        >ListTagsForResource</a>.
+     *        </p>
+     *        </li>
+     */
+
+    public void setLogGroupArn(String logGroupArn) {
+        this.logGroupArn = logGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     * <code>:*</code> after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the <code>resourceArn</code> field in tagging APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     *         <code>:*</code> after the log group name. </p>
+     *         <p>
+     *         Use this version to refer to the ARN in the following situations:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In the <code>resourceArn</code> field in tagging APIs
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In IAM policies, when specifying permissions for <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+     *         >TagResource</a>, <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     *         >UntagResource</a>, and <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     *         >ListTagsForResource</a>.
+     *         </p>
+     *         </li>
+     */
+
+    public String getLogGroupArn() {
+        return this.logGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     * <code>:*</code> after the log group name.
+     * </p>
+     * <p>
+     * Use this version to refer to the ARN in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the <code>resourceArn</code> field in tagging APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">
+     * UntagResource</a>, and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param logGroupArn
+     *        The Amazon Resource Name (ARN) of the log group. This version of the ARN doesn't include a trailing
+     *        <code>:*</code> after the log group name. </p>
+     *        <p>
+     *        Use this version to refer to the ARN in the following situations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs APIs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the <code>resourceArn</code> field in tagging APIs
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In IAM policies, when specifying permissions for <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     *        >UntagResource</a>, and <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     *        >ListTagsForResource</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogGroup withLogGroupArn(String logGroupArn) {
+        setLogGroupArn(logGroupArn);
         return this;
     }
 
@@ -361,7 +1083,15 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         if (getStoredBytes() != null)
             sb.append("StoredBytes: ").append(getStoredBytes()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getDataProtectionStatus() != null)
+            sb.append("DataProtectionStatus: ").append(getDataProtectionStatus()).append(",");
+        if (getInheritedProperties() != null)
+            sb.append("InheritedProperties: ").append(getInheritedProperties()).append(",");
+        if (getLogGroupClass() != null)
+            sb.append("LogGroupClass: ").append(getLogGroupClass()).append(",");
+        if (getLogGroupArn() != null)
+            sb.append("LogGroupArn: ").append(getLogGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +1134,22 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getDataProtectionStatus() == null ^ this.getDataProtectionStatus() == null)
+            return false;
+        if (other.getDataProtectionStatus() != null && other.getDataProtectionStatus().equals(this.getDataProtectionStatus()) == false)
+            return false;
+        if (other.getInheritedProperties() == null ^ this.getInheritedProperties() == null)
+            return false;
+        if (other.getInheritedProperties() != null && other.getInheritedProperties().equals(this.getInheritedProperties()) == false)
+            return false;
+        if (other.getLogGroupClass() == null ^ this.getLogGroupClass() == null)
+            return false;
+        if (other.getLogGroupClass() != null && other.getLogGroupClass().equals(this.getLogGroupClass()) == false)
+            return false;
+        if (other.getLogGroupArn() == null ^ this.getLogGroupArn() == null)
+            return false;
+        if (other.getLogGroupArn() != null && other.getLogGroupArn().equals(this.getLogGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -419,6 +1165,10 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getDataProtectionStatus() == null) ? 0 : getDataProtectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getInheritedProperties() == null) ? 0 : getInheritedProperties().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupClass() == null) ? 0 : getLogGroupClass().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupArn() == null) ? 0 : getLogGroupArn().hashCode());
         return hashCode;
     }
 

@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.12.335-SNAPSHOT</version>
+  <version>1.12.731-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,71 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-mailmanager</module>
+    <module>aws-java-sdk-route53profiles</module>
+    <module>aws-java-sdk-controlcatalog</module>
+    <module>aws-java-sdk-deadline</module>
+    <module>aws-java-sdk-codeconnections</module>
+    <module>aws-java-sdk-timestreaminfluxdb</module>
+    <module>aws-java-sdk-chatbot</module>
+    <module>aws-java-sdk-artifact</module>
+    <module>aws-java-sdk-supplychain</module>
+    <module>aws-java-sdk-networkmonitor</module>
+    <module>aws-java-sdk-marketplaceagreement</module>
+    <module>aws-java-sdk-marketplacedeployment</module>
+    <module>aws-java-sdk-cleanroomsml</module>
+    <module>aws-java-sdk-bedrockagent</module>
+    <module>aws-java-sdk-qconnect</module>
+    <module>aws-java-sdk-qbusiness</module>
+    <module>aws-java-sdk-bedrockagentruntime</module>
+    <module>aws-java-sdk-b2bi</module>
+    <module>aws-java-sdk-workspacesthinclient</module>
+    <module>aws-java-sdk-eksauth</module>
+    <module>aws-java-sdk-freetier</module>
+    <module>aws-java-sdk-bcmdataexports</module>
+    <module>aws-java-sdk-repostspace</module>
+    <module>aws-java-sdk-costoptimizationhub</module>
+    <module>aws-java-sdk-inspectorscan</module>
+    <module>aws-java-sdk-trustedadvisor</module>
+    <module>aws-java-sdk-launchwizard</module>
+    <module>aws-java-sdk-datazoneexternal</module>
+    <module>aws-java-sdk-bedrock</module>
+    <module>aws-java-sdk-bedrockruntime</module>
+    <module>aws-java-sdk-neptunedata</module>
+    <module>aws-java-sdk-pcaconnectorad</module>
+    <module>aws-java-sdk-managedblockchainquery</module>
+    <module>aws-java-sdk-entityresolution</module>
+    <module>aws-java-sdk-medicalimaging</module>
+    <module>aws-java-sdk-appfabric</module>
+    <module>aws-java-sdk-verifiedpermissions</module>
+    <module>aws-java-sdk-codegurusecurity</module>
+    <module>aws-java-sdk-paymentcryptography</module>
+    <module>aws-java-sdk-paymentcryptographydata</module>
+    <module>aws-java-sdk-mediapackagev2</module>
+    <module>aws-java-sdk-osis</module>
+    <module>aws-java-sdk-vpclattice</module>
+    <module>aws-java-sdk-ivsrealtime</module>
+    <module>aws-java-sdk-internetmonitor</module>
+    <module>aws-java-sdk-tnb</module>
+    <module>aws-java-sdk-cloudtraildata</module>
+    <module>aws-java-sdk-cleanrooms</module>
+    <module>aws-java-sdk-kendraranking</module>
+    <module>aws-java-sdk-licensemanagerlinuxsubscriptions</module>
+    <module>aws-java-sdk-kinesisvideowebrtcstorage</module>
+    <module>aws-java-sdk-sagemakermetrics</module>
+    <module>aws-java-sdk-pipes</module>
+    <module>aws-java-sdk-sagemakergeospatial</module>
+    <module>aws-java-sdk-docdbelastic</module>
+    <module>aws-java-sdk-omics</module>
+    <module>aws-java-sdk-opensearchserverless</module>
+    <module>aws-java-sdk-securitylake</module>
+    <module>aws-java-sdk-simspaceweaver</module>
+    <module>aws-java-sdk-arczonalshift</module>
+    <module>aws-java-sdk-oam</module>
+    <module>aws-java-sdk-chimesdkvoice</module>
+    <module>aws-java-sdk-ssmsap</module>
+    <module>aws-java-sdk-scheduler</module>
+    <module>aws-java-sdk-resourceexplorer2</module>
     <module>aws-java-sdk-connectcases</module>
     <module>aws-java-sdk-migrationhuborchestrator</module>
     <module>aws-java-sdk-iotfleetwise</module>
@@ -49,7 +114,6 @@
     <module>aws-java-sdk-chimesdkmediapipelines</module>
     <module>aws-java-sdk-ivschat</module>
     <module>aws-java-sdk-pinpointsmsvoicev2</module>
-    <module>aws-java-sdk-gamesparks</module>
     <module>aws-java-sdk-billingconductor</module>
     <module>aws-java-sdk-keyspaces</module>
     <module>aws-java-sdk-amplifyuibuilder</module>
@@ -208,7 +272,6 @@
     <module>aws-java-sdk-chime</module>
     <module>aws-java-sdk-signer</module>
     <module>aws-java-sdk-dlm</module>
-    <module>aws-java-sdk-macie</module>
     <module>aws-java-sdk-eks</module>
     <module>aws-java-sdk-mediatailor</module>
     <module>aws-java-sdk-neptune</module>
@@ -363,12 +426,11 @@
   <properties>
       <awsjavasdk.version>${project.version}</awsjavasdk.version>
       <jackson.version>2.12.6</jackson.version>
-      <jackson.databind.version>2.12.7.1</jackson.databind.version>
-      <ion.java.version>1.0.2</ion.java.version>
+      <jackson.databind.version>2.12.7.2</jackson.databind.version>
       <junit.version>4.12</junit.version>
       <easymock.version>3.2</easymock.version>
       <commons.logging.version>1.1.3</commons.logging.version>
-      <jodatime.version>2.8.1</jodatime.version>
+      <jodatime.version>2.12.7</jodatime.version>
       <wiremock.version>1.55</wiremock.version>
       <log4j.version>1.2.17</log4j.version>
       <hamcrest.all.version>1.3</hamcrest.all.version>
@@ -392,7 +454,8 @@
       <cucumber.guice.version>4.2.3</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
-      <netty.version>4.1.77.Final</netty.version>
+      <netty.version>4.1.108.Final</netty.version>
+      <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -449,6 +512,12 @@
             </includes>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions-maven-plugin.version}</version>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>

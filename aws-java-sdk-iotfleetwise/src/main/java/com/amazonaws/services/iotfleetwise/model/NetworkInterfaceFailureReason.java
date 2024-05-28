@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public enum NetworkInterfaceFailureReason {
     NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS("NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS"),
     CAN_NETWORK_INTERFACE_INFO_IS_NULL("CAN_NETWORK_INTERFACE_INFO_IS_NULL"),
     OBD_NETWORK_INTERFACE_INFO_IS_NULL("OBD_NETWORK_INTERFACE_INFO_IS_NULL"),
-    NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS("NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS");
+    NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS("NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS"),
+    VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL("VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL");
 
     private String value;
 

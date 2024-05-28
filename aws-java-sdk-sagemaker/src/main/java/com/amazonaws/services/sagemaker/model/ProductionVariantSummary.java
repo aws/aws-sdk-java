@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,19 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private ProductionVariantServerlessConfig desiredServerlessConfig;
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     */
+    private ProductionVariantManagedInstanceScaling managedInstanceScaling;
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     */
+    private ProductionVariantRoutingConfig routingConfig;
 
     /**
      * <p>
@@ -515,6 +528,92 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @param managedInstanceScaling
+     *        Settings that control the range in the number of instances that the endpoint provisions as it scales up or
+     *        down to accommodate traffic.
+     */
+
+    public void setManagedInstanceScaling(ProductionVariantManagedInstanceScaling managedInstanceScaling) {
+        this.managedInstanceScaling = managedInstanceScaling;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @return Settings that control the range in the number of instances that the endpoint provisions as it scales up
+     *         or down to accommodate traffic.
+     */
+
+    public ProductionVariantManagedInstanceScaling getManagedInstanceScaling() {
+        return this.managedInstanceScaling;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @param managedInstanceScaling
+     *        Settings that control the range in the number of instances that the endpoint provisions as it scales up or
+     *        down to accommodate traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantSummary withManagedInstanceScaling(ProductionVariantManagedInstanceScaling managedInstanceScaling) {
+        setManagedInstanceScaling(managedInstanceScaling);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     */
+
+    public void setRoutingConfig(ProductionVariantRoutingConfig routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @return Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     */
+
+    public ProductionVariantRoutingConfig getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantSummary withRoutingConfig(ProductionVariantRoutingConfig routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -543,7 +642,11 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
         if (getCurrentServerlessConfig() != null)
             sb.append("CurrentServerlessConfig: ").append(getCurrentServerlessConfig()).append(",");
         if (getDesiredServerlessConfig() != null)
-            sb.append("DesiredServerlessConfig: ").append(getDesiredServerlessConfig());
+            sb.append("DesiredServerlessConfig: ").append(getDesiredServerlessConfig()).append(",");
+        if (getManagedInstanceScaling() != null)
+            sb.append("ManagedInstanceScaling: ").append(getManagedInstanceScaling()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -594,6 +697,14 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getDesiredServerlessConfig() != null && other.getDesiredServerlessConfig().equals(this.getDesiredServerlessConfig()) == false)
             return false;
+        if (other.getManagedInstanceScaling() == null ^ this.getManagedInstanceScaling() == null)
+            return false;
+        if (other.getManagedInstanceScaling() != null && other.getManagedInstanceScaling().equals(this.getManagedInstanceScaling()) == false)
+            return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +722,8 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getVariantStatus() == null) ? 0 : getVariantStatus().hashCode());
         hashCode = prime * hashCode + ((getCurrentServerlessConfig() == null) ? 0 : getCurrentServerlessConfig().hashCode());
         hashCode = prime * hashCode + ((getDesiredServerlessConfig() == null) ? 0 : getDesiredServerlessConfig().hashCode());
+        hashCode = prime * hashCode + ((getManagedInstanceScaling() == null) ? 0 : getManagedInstanceScaling().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
         return hashCode;
     }
 

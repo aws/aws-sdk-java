@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the ACM certificates and code signing configuration parameters that can be used by a given
- * code signing user.
+ * Contains information about the ACM certificates and signing configuration parameters that can be used by a given code
+ * signing user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningProfile" target="_top">AWS API
@@ -73,13 +73,13 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
     private String platformDisplayName;
     /**
      * <p>
-     * The parameters that are available for use by a code signing user.
+     * The parameters that are available for use by a Signer user.
      * </p>
      */
     private java.util.Map<String, String> signingParameters;
     /**
      * <p>
-     * The status of a code signing profile.
+     * The status of a signing profile.
      * </p>
      */
     private String status;
@@ -378,10 +378,10 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters that are available for use by a code signing user.
+     * The parameters that are available for use by a Signer user.
      * </p>
      * 
-     * @return The parameters that are available for use by a code signing user.
+     * @return The parameters that are available for use by a Signer user.
      */
 
     public java.util.Map<String, String> getSigningParameters() {
@@ -390,11 +390,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters that are available for use by a code signing user.
+     * The parameters that are available for use by a Signer user.
      * </p>
      * 
      * @param signingParameters
-     *        The parameters that are available for use by a code signing user.
+     *        The parameters that are available for use by a Signer user.
      */
 
     public void setSigningParameters(java.util.Map<String, String> signingParameters) {
@@ -403,11 +403,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters that are available for use by a code signing user.
+     * The parameters that are available for use by a Signer user.
      * </p>
      * 
      * @param signingParameters
-     *        The parameters that are available for use by a code signing user.
+     *        The parameters that are available for use by a Signer user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,11 +446,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a code signing profile.
+     * The status of a signing profile.
      * </p>
      * 
      * @param status
-     *        The status of a code signing profile.
+     *        The status of a signing profile.
      * @see SigningProfileStatus
      */
 
@@ -460,10 +460,10 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a code signing profile.
+     * The status of a signing profile.
      * </p>
      * 
-     * @return The status of a code signing profile.
+     * @return The status of a signing profile.
      * @see SigningProfileStatus
      */
 
@@ -473,11 +473,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a code signing profile.
+     * The status of a signing profile.
      * </p>
      * 
      * @param status
-     *        The status of a code signing profile.
+     *        The status of a signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningProfileStatus
      */
@@ -489,11 +489,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a code signing profile.
+     * The status of a signing profile.
      * </p>
      * 
      * @param status
-     *        The status of a code signing profile.
+     *        The status of a signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningProfileStatus
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,16 +56,16 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value
-     * when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have
-     * two keys with the same name but different values. If you specify a key without a value, the tag will be created
-     * with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon
-     * Web Services Regions only from the Region in which the trail or event data store was created (also known as its
-     * home region).
+     * Adds one or more tags to a trail, event data store, or channel, up to a limit of 50. Overwrites an existing tag's
+     * value when a new value is specified for an existing tag key. Tag key names must be unique; you cannot have two
+     * keys with the same name but different values. If you specify a key without a value, the tag will be created with
+     * the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web
+     * Services Regions only from the Region in which the trail or event data store was created (also known as its home
+     * Region).
      * </p>
      * 
      * @param addTagsRequest
-     *        Specifies the tags to add to a trail or event data store.
+     *        Specifies the tags to add to a trail, event data store, or channel.
      * @return A Java Future containing the result of the AddTags operation returned by the service.
      * @sample AWSCloudTrailAsync.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags" target="_top">AWS API
@@ -75,16 +75,16 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Adds one or more tags to a trail or event data store, up to a limit of 50. Overwrites an existing tag's value
-     * when a new value is specified for an existing tag key. Tag key names must be unique for a trail; you cannot have
-     * two keys with the same name but different values. If you specify a key without a value, the tag will be created
-     * with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon
-     * Web Services Regions only from the Region in which the trail or event data store was created (also known as its
-     * home region).
+     * Adds one or more tags to a trail, event data store, or channel, up to a limit of 50. Overwrites an existing tag's
+     * value when a new value is specified for an existing tag key. Tag key names must be unique; you cannot have two
+     * keys with the same name but different values. If you specify a key without a value, the tag will be created with
+     * the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web
+     * Services Regions only from the Region in which the trail or event data store was created (also known as its home
+     * Region).
      * </p>
      * 
      * @param addTagsRequest
-     *        Specifies the tags to add to a trail or event data store.
+     *        Specifies the tags to add to a trail, event data store, or channel.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -133,6 +133,39 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<CancelQueryResult> cancelQueryAsync(CancelQueryRequest cancelQueryRequest,
             com.amazonaws.handlers.AsyncHandler<CancelQueryRequest, CancelQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a channel for CloudTrail to ingest events from a partner or external source. After you create a channel,
+     * a CloudTrail Lake event data store can log events from the partner or source that you specify.
+     * </p>
+     * 
+     * @param createChannelRequest
+     * @return A Java Future containing the result of the CreateChannel operation returned by the service.
+     * @sample AWSCloudTrailAsync.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest createChannelRequest);
+
+    /**
+     * <p>
+     * Creates a channel for CloudTrail to ingest events from a partner or external source. After you create a channel,
+     * a CloudTrail Lake event data store can log events from the partner or source that you specify.
+     * </p>
+     * 
+     * @param createChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateChannel operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest createChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler);
 
     /**
      * <p>
@@ -200,11 +233,43 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Deletes a channel.
+     * </p>
+     * 
+     * @param deleteChannelRequest
+     * @return A Java Future containing the result of the DeleteChannel operation returned by the service.
+     * @sample AWSCloudTrailAsync.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest deleteChannelRequest);
+
+    /**
+     * <p>
+     * Deletes a channel.
+     * </p>
+     * 
+     * @param deleteChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChannel operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest deleteChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelRequest, DeleteChannelResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN.
      * After you run <code>DeleteEventDataStore</code>, the event data store enters a <code>PENDING_DELETION</code>
      * state, and is automatically deleted after a wait period of seven days. <code>TerminationProtectionEnabled</code>
-     * must be set to <code>False</code> on the event data store; this operation cannot work if
-     * <code>TerminationProtectionEnabled</code> is <code>True</code>.
+     * must be set to <code>False</code> on the event data store and the <code>FederationStatus</code> must be
+     * <code>DISABLED</code>. You cannot delete an event data store if <code>TerminationProtectionEnabled</code> is
+     * <code>True</code> or the <code>FederationStatus</code> is <code>ENABLED</code>.
      * </p>
      * <p>
      * After you run <code>DeleteEventDataStore</code> on an event data store, you cannot run <code>ListQueries</code>,
@@ -226,8 +291,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Disables the event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN.
      * After you run <code>DeleteEventDataStore</code>, the event data store enters a <code>PENDING_DELETION</code>
      * state, and is automatically deleted after a wait period of seven days. <code>TerminationProtectionEnabled</code>
-     * must be set to <code>False</code> on the event data store; this operation cannot work if
-     * <code>TerminationProtectionEnabled</code> is <code>True</code>.
+     * must be set to <code>False</code> on the event data store and the <code>FederationStatus</code> must be
+     * <code>DISABLED</code>. You cannot delete an event data store if <code>TerminationProtectionEnabled</code> is
+     * <code>True</code> or the <code>FederationStatus</code> is <code>ENABLED</code>.
      * </p>
      * <p>
      * After you run <code>DeleteEventDataStore</code> on an event data store, you cannot run <code>ListQueries</code>,
@@ -251,9 +317,40 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Deletes a trail. This operation must be called from the region in which the trail was created.
-     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail
-     * that is enabled in all regions.
+     * Deletes the resource-based policy attached to the CloudTrail channel.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSCloudTrailAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the resource-based policy attached to the CloudTrail channel.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a trail. This operation must be called from the Region in which the trail was created.
+     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail
+     * that is enabled in all Regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -267,9 +364,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Deletes a trail. This operation must be called from the region in which the trail was created.
-     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail
-     * that is enabled in all regions.
+     * Deletes a trail. This operation must be called from the Region in which the trail was created.
+     * <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail
+     * that is enabled in all Regions.
      * </p>
      * 
      * @param deleteTrailRequest
@@ -288,8 +385,52 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Removes CloudTrail delegated administrator permissions from a member account in an organization.
+     * </p>
+     * 
+     * @param deregisterOrganizationDelegatedAdminRequest
+     *        Removes CloudTrail delegated administrator permissions from a specified member account in an organization
+     *        that is currently designated as a delegated administrator.
+     * @return A Java Future containing the result of the DeregisterOrganizationDelegatedAdmin operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsync.DeregisterOrganizationDelegatedAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest deregisterOrganizationDelegatedAdminRequest);
+
+    /**
+     * <p>
+     * Removes CloudTrail delegated administrator permissions from a member account in an organization.
+     * </p>
+     * 
+     * @param deregisterOrganizationDelegatedAdminRequest
+     *        Removes CloudTrail delegated administrator permissions from a specified member account in an organization
+     *        that is currently designated as a delegated administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterOrganizationDelegatedAdmin operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsyncHandler.DeregisterOrganizationDelegatedAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest deregisterOrganizationDelegatedAdminRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterOrganizationDelegatedAdminRequest, DeregisterOrganizationDelegatedAdminResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched,
-     * and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.
+     * and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and
+     * the delivery status.
+     * </p>
+     * <p>
+     * You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the
+     * <code>QueryAlias</code> parameter returns information about the last query run for the alias.
      * </p>
      * 
      * @param describeQueryRequest
@@ -303,7 +444,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched,
-     * and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.
+     * and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and
+     * the delivery status.
+     * </p>
+     * <p>
+     * You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying the
+     * <code>QueryAlias</code> parameter returns information about the last query run for the alias.
      * </p>
      * 
      * @param describeQueryRequest
@@ -321,7 +467,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for one or more trails associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current Region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -335,7 +481,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Retrieves settings for one or more trails associated with the current region for your account.
+     * Retrieves settings for one or more trails associated with the current Region for your account.
      * </p>
      * 
      * @param describeTrailsRequest
@@ -369,10 +515,115 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about a specific channel. Amazon Web Services services create service-linked channels to get
-     * information about CloudTrail events on your behalf. For more information about service-linked channels, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-     * service-linked channels for CloudTrail by using the CLI.</a>.
+     * Disables Lake query federation on the specified event data store. When you disable federation, CloudTrail
+     * disables the integration with Glue, Lake Formation, and Amazon Athena. After disabling Lake query federation, you
+     * can no longer query your event data in Amazon Athena.
+     * </p>
+     * <p>
+     * No CloudTrail Lake data is deleted when you disable federation and you can continue to run queries in CloudTrail
+     * Lake.
+     * </p>
+     * 
+     * @param disableFederationRequest
+     * @return A Java Future containing the result of the DisableFederation operation returned by the service.
+     * @sample AWSCloudTrailAsync.DisableFederation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableFederationResult> disableFederationAsync(DisableFederationRequest disableFederationRequest);
+
+    /**
+     * <p>
+     * Disables Lake query federation on the specified event data store. When you disable federation, CloudTrail
+     * disables the integration with Glue, Lake Formation, and Amazon Athena. After disabling Lake query federation, you
+     * can no longer query your event data in Amazon Athena.
+     * </p>
+     * <p>
+     * No CloudTrail Lake data is deleted when you disable federation and you can continue to run queries in CloudTrail
+     * Lake.
+     * </p>
+     * 
+     * @param disableFederationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableFederation operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.DisableFederation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableFederationResult> disableFederationAsync(DisableFederationRequest disableFederationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableFederationRequest, DisableFederationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables Lake query federation on the specified event data store. Federating an event data store lets you view the
+     * metadata associated with the event data store in the Glue <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data Catalog</a>
+     * and run SQL queries against your event data using Amazon Athena. The table metadata stored in the Glue Data
+     * Catalog lets the Athena query engine know how to find, read, and process the data that you want to query.
+     * </p>
+     * <p>
+     * When you enable Lake query federation, CloudTrail creates a managed database named <code>aws:cloudtrail</code>
+     * (if the database doesn't already exist) and a managed federated table in the Glue Data Catalog. The event data
+     * store ID is used for the table name. CloudTrail registers the role ARN and event data store in <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation-lake-formation.html">Lake
+     * Formation</a>, the service responsible for allowing fine-grained access control of the federated resources in the
+     * Glue Data Catalog.
+     * </p>
+     * <p>
+     * For more information about Lake query federation, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Federate an event data
+     * store</a>.
+     * </p>
+     * 
+     * @param enableFederationRequest
+     * @return A Java Future containing the result of the EnableFederation operation returned by the service.
+     * @sample AWSCloudTrailAsync.EnableFederation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableFederationResult> enableFederationAsync(EnableFederationRequest enableFederationRequest);
+
+    /**
+     * <p>
+     * Enables Lake query federation on the specified event data store. Federating an event data store lets you view the
+     * metadata associated with the event data store in the Glue <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data Catalog</a>
+     * and run SQL queries against your event data using Amazon Athena. The table metadata stored in the Glue Data
+     * Catalog lets the Athena query engine know how to find, read, and process the data that you want to query.
+     * </p>
+     * <p>
+     * When you enable Lake query federation, CloudTrail creates a managed database named <code>aws:cloudtrail</code>
+     * (if the database doesn't already exist) and a managed federated table in the Glue Data Catalog. The event data
+     * store ID is used for the table name. CloudTrail registers the role ARN and event data store in <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation-lake-formation.html">Lake
+     * Formation</a>, the service responsible for allowing fine-grained access control of the federated resources in the
+     * Glue Data Catalog.
+     * </p>
+     * <p>
+     * For more information about Lake query federation, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Federate an event data
+     * store</a>.
+     * </p>
+     * 
+     * @param enableFederationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableFederation operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.EnableFederation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableFederationResult> enableFederationAsync(EnableFederationRequest enableFederationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableFederationRequest, EnableFederationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific channel.
      * </p>
      * 
      * @param getChannelRequest
@@ -385,10 +636,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about a specific channel. Amazon Web Services services create service-linked channels to get
-     * information about CloudTrail events on your behalf. For more information about service-linked channels, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-     * service-linked channels for CloudTrail by using the CLI.</a>.
+     * Returns information about a specific channel.
      * </p>
      * 
      * @param getChannelRequest
@@ -467,13 +715,13 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>
+     * >Logging management events</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     * Logging data events for trails </a>
+     * Logging data events</a>
      * </p>
      * </li>
      * </ul>
@@ -518,13 +766,13 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>
+     * >Logging management events</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     * Logging data events for trails </a>
+     * Logging data events</a>
      * </p>
      * </li>
      * </ul>
@@ -575,15 +823,21 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Describes the settings for the Insights event selectors that you configured for your trail.
-     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it
-     * is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have
-     * Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>
+     * Describes the settings for the Insights event selectors that you configured for your trail or event data store.
+     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail or event data
+     * store, and if it is, which Insights types are enabled. If you run <code>GetInsightSelectors</code> on a trail or
+     * event data store that does not have Insights events enabled, the operation throws the exception
+     * <code>InsightNotEnabledException</code>
+     * </p>
+     * <p>
+     * Specify either the <code>EventDataStore</code> parameter to get Insights event selectors for an event data store,
+     * or the <code>TrailName</code> parameter to the get Insights event selectors for a trail. You cannot specify these
+     * parameters together.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
-     * >Logging CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+     * >Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param getInsightSelectorsRequest
@@ -596,15 +850,21 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Describes the settings for the Insights event selectors that you configured for your trail.
-     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it
-     * is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have
-     * Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>
+     * Describes the settings for the Insights event selectors that you configured for your trail or event data store.
+     * <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail or event data
+     * store, and if it is, which Insights types are enabled. If you run <code>GetInsightSelectors</code> on a trail or
+     * event data store that does not have Insights events enabled, the operation throws the exception
+     * <code>InsightNotEnabledException</code>
+     * </p>
+     * <p>
+     * Specify either the <code>EventDataStore</code> parameter to get Insights event selectors for an event data store,
+     * or the <code>TrailName</code> parameter to the get Insights event selectors for a trail. You cannot specify these
+     * parameters together.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
-     * >Logging CloudTrail Insights Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+     * >Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param getInsightSelectorsRequest
@@ -623,7 +883,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the
-     * <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+     * <code>StartQuery</code> operation.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -637,7 +897,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the
-     * <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+     * <code>StartQuery</code> operation.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -652,6 +912,37 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<GetQueryResultsResult> getQueryResultsAsync(GetQueryResultsRequest getQueryResultsRequest,
             com.amazonaws.handlers.AsyncHandler<GetQueryResultsRequest, GetQueryResultsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the JSON text of the resource-based policy document attached to the CloudTrail channel.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSCloudTrailAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the JSON text of the resource-based policy document attached to the CloudTrail channel.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -688,8 +979,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery
      * errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns
-     * trail status from a single region. To return trail status from all regions, you must call the operation on each
-     * region.
+     * trail status from a single Region. To return trail status from all Regions, you must call the operation on each
+     * Region.
      * </p>
      * 
      * @param getTrailStatusRequest
@@ -705,8 +996,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery
      * errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns
-     * trail status from a single region. To return trail status from all regions, you must call the operation on each
-     * region.
+     * trail status from a single Region. To return trail status from all Regions, you must call the operation on each
+     * Region.
      * </p>
      * 
      * @param getTrailStatusRequest
@@ -725,11 +1016,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the channels in the current account, and their source names. Amazon Web Services services create
-     * service-linked channels get information about CloudTrail events on your behalf. For more information about
-     * service-linked channels, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-     * service-linked channels for CloudTrail by using the CLI</a>.
+     * Lists the channels in the current account, and their source names.
      * </p>
      * 
      * @param listChannelsRequest
@@ -742,11 +1029,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the channels in the current account, and their source names. Amazon Web Services services create
-     * service-linked channels get information about CloudTrail events on your behalf. For more information about
-     * service-linked channels, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-     * service-linked channels for CloudTrail by using the CLI</a>.
+     * Lists the channels in the current account, and their source names.
      * </p>
      * 
      * @param listChannelsRequest
@@ -764,7 +1047,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about all event data stores in the account, in the current region.
+     * Returns information about all event data stores in the account, in the current Region.
      * </p>
      * 
      * @param listEventDataStoresRequest
@@ -777,7 +1060,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Returns information about all event data stores in the account, in the current region.
+     * Returns information about all event data stores in the account, in the current Region.
      * </p>
      * 
      * @param listEventDataStoresRequest
@@ -859,13 +1142,104 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Returns Insights metrics data for trails that have enabled Insights. The request must include the
+     * <code>EventSource</code>, <code>EventName</code>, and <code>InsightType</code> parameters.
+     * </p>
+     * <p>
+     * If the <code>InsightType</code> is set to <code>ApiErrorRateInsight</code>, the request must also include the
+     * <code>ErrorCode</code> parameter.
+     * </p>
+     * <p>
+     * The following are the available time periods for <code>ListInsightsMetricData</code>. Each cutoff is inclusive.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 3600 seconds (1 hour) are available for 90 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Access to the <code>ListInsightsMetricData</code> API operation is linked to the
+     * <code>cloudtrail:LookupEvents</code> action. To use this operation, you must have permissions to perform the
+     * <code>cloudtrail:LookupEvents</code> action.
+     * </p>
+     * 
+     * @param listInsightsMetricDataRequest
+     * @return A Java Future containing the result of the ListInsightsMetricData operation returned by the service.
+     * @sample AWSCloudTrailAsync.ListInsightsMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInsightsMetricDataResult> listInsightsMetricDataAsync(ListInsightsMetricDataRequest listInsightsMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns Insights metrics data for trails that have enabled Insights. The request must include the
+     * <code>EventSource</code>, <code>EventName</code>, and <code>InsightType</code> parameters.
+     * </p>
+     * <p>
+     * If the <code>InsightType</code> is set to <code>ApiErrorRateInsight</code>, the request must also include the
+     * <code>ErrorCode</code> parameter.
+     * </p>
+     * <p>
+     * The following are the available time periods for <code>ListInsightsMetricData</code>. Each cutoff is inclusive.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Data points with a period of 3600 seconds (1 hour) are available for 90 days.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Access to the <code>ListInsightsMetricData</code> API operation is linked to the
+     * <code>cloudtrail:LookupEvents</code> action. To use this operation, you must have permissions to perform the
+     * <code>cloudtrail:LookupEvents</code> action.
+     * </p>
+     * 
+     * @param listInsightsMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInsightsMetricData operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.ListInsightsMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInsightsMetricDataResult> listInsightsMetricDataAsync(ListInsightsMetricDataRequest listInsightsMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInsightsMetricDataRequest, ListInsightsMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns all public keys whose private keys were used to sign the digest files within the specified time range.
      * The public key is needed to validate digest files that were signed with its corresponding private key.
      * </p>
      * <note>
      * <p>
-     * CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
-     * unique to its region. When you validate a digest file from a specific region, you must look in the same region
+     * CloudTrail uses different private and public key pairs per Region. Each digest file is signed with a private key
+     * unique to its Region. When you validate a digest file from a specific Region, you must look in the same Region
      * for its corresponding public key.
      * </p>
      * </note>
@@ -886,8 +1260,8 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <note>
      * <p>
-     * CloudTrail uses different private and public key pairs per region. Each digest file is signed with a private key
-     * unique to its region. When you validate a digest file from a specific region, you must look in the same region
+     * CloudTrail uses different private and public key pairs per Region. Each digest file is signed with a private key
+     * unique to its Region. When you validate a digest file from a specific Region, you must look in the same Region
      * for its corresponding public key.
      * </p>
      * </note>
@@ -964,7 +1338,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail or event data store in the current region.
+     * Lists the tags for the specified trails, event data stores, or channels in the current Region.
      * </p>
      * 
      * @param listTagsRequest
@@ -978,7 +1352,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the trail or event data store in the current region.
+     * Lists the tags for the specified trails, event data stores, or channels in the current Region.
      * </p>
      * 
      * @param listTagsRequest
@@ -1032,8 +1406,18 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
      * >management events</a> or <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
-     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
-     * within the last 90 days. Lookup supports the following attributes for management events:
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region
+     * within the last 90 days.
+     * </p>
+     * <note>
+     * <p>
+     * <code>LookupEvents</code> returns recent Insights events for trails that enable Insights. To view Insights events
+     * for an event data store, you can run queries on your Insights event data store, and you can also view the Lake
+     * dashboard for Insights.
+     * </p>
+     * </note>
+     * <p>
+     * Lookup supports the following attributes for management events:
      * </p>
      * <ul>
      * <li>
@@ -1103,7 +1487,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * The rate of lookup requests is limited to two per second, per account, per Region. If this limit is exceeded, a
      * throttling error occurs.
      * </p>
      * </important>
@@ -1123,8 +1507,18 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
      * >management events</a> or <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events"
-     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a region
-     * within the last 90 days. Lookup supports the following attributes for management events:
+     * >CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region
+     * within the last 90 days.
+     * </p>
+     * <note>
+     * <p>
+     * <code>LookupEvents</code> returns recent Insights events for trails that enable Insights. To view Insights events
+     * for an event data store, you can run queries on your Insights event data store, and you can also view the Lake
+     * dashboard for Insights.
+     * </p>
+     * </note>
+     * <p>
+     * Lookup supports the following attributes for management events:
      * </p>
      * <ul>
      * <li>
@@ -1194,7 +1588,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * The rate of lookup requests is limited to two per second, per account, per Region. If this limit is exceeded, a
      * throttling error occurs.
      * </p>
      * </important>
@@ -1230,7 +1624,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event
-     * selectors to specify management and data event settings for your trail. By default, trails created without
+     * selectors to specify management and data event settings for your trail. If you want your trail to log Insights
+     * events, be sure the event selector enables logging of the Insights event types you want configured for your
+     * trail. For more information about logging Insights events, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails created without
      * specific event selectors are configured to log all read and write management events, and no data events.
      * </p>
      * <p>
@@ -1270,15 +1668,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ol>
      * <p>
-     * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
+     * The <code>PutEventSelectors</code> operation must be called from the Region in which the trail was created;
      * otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>, <a
+     * >Logging management events</a>, <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails </a>, and <a
+     * >Logging data events</a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1289,7 +1687,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      * href
      * ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1303,7 +1701,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event
-     * selectors to specify management and data event settings for your trail. By default, trails created without
+     * selectors to specify management and data event settings for your trail. If you want your trail to log Insights
+     * events, be sure the event selector enables logging of the Insights event types you want configured for your
+     * trail. For more information about logging Insights events, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails created without
      * specific event selectors are configured to log all read and write management events, and no data events.
      * </p>
      * <p>
@@ -1343,15 +1745,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * </ol>
      * <p>
-     * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
+     * The <code>PutEventSelectors</code> operation must be called from the Region in which the trail was created;
      * otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
-     * >Logging management events for trails </a>, <a
+     * >Logging management events</a>, <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails </a>, and <a
+     * >Logging data events</a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1362,7 +1764,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      * href
      * ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1381,9 +1783,32 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an
-     * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
-     * empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code>
-     * and <code>ApiCallRateInsight</code>.
+     * existing trail or event data store. You also use <code>PutInsightSelectors</code> to turn off Insights event
+     * logging, by passing an empty list of Insights types. The valid Insights event types are
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.
+     * </p>
+     * <p>
+     * To enable Insights on an event data store, you must specify the ARNs (or ID suffix of the ARNs) for the source
+     * event data store (<code>EventDataStore</code>) and the destination event data store (
+     * <code>InsightsDestination</code>). The source event data store logs management events and enables Insights. The
+     * destination event data store logs Insights events based upon the management event activity of the source event
+     * data store. The source and destination event data stores must belong to the same Amazon Web Services account.
+     * </p>
+     * <p>
+     * To log Insights events for a trail, you must specify the name (<code>TrailName</code>) of the CloudTrail trail
+     * for which you want to change or add Insights selectors.
+     * </p>
+     * <p>
+     * To log CloudTrail Insights events on API call volume, the trail or event data store must log <code>write</code>
+     * management events. To log CloudTrail Insights events on API error rate, the trail or event data store must log
+     * <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code> on a trail
+     * to check whether the trail logs management events. You can call <code>GetEventDataStore</code> on an event data
+     * store to check whether the event data store logs management events.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putInsightSelectorsRequest
@@ -1397,9 +1822,32 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an
-     * existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an
-     * empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code>
-     * and <code>ApiCallRateInsight</code>.
+     * existing trail or event data store. You also use <code>PutInsightSelectors</code> to turn off Insights event
+     * logging, by passing an empty list of Insights types. The valid Insights event types are
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.
+     * </p>
+     * <p>
+     * To enable Insights on an event data store, you must specify the ARNs (or ID suffix of the ARNs) for the source
+     * event data store (<code>EventDataStore</code>) and the destination event data store (
+     * <code>InsightsDestination</code>). The source event data store logs management events and enables Insights. The
+     * destination event data store logs Insights events based upon the management event activity of the source event
+     * data store. The source and destination event data stores must belong to the same Amazon Web Services account.
+     * </p>
+     * <p>
+     * To log Insights events for a trail, you must specify the name (<code>TrailName</code>) of the CloudTrail trail
+     * for which you want to change or add Insights selectors.
+     * </p>
+     * <p>
+     * To log CloudTrail Insights events on API call volume, the trail or event data store must log <code>write</code>
+     * management events. To log CloudTrail Insights events on API error rate, the trail or event data store must log
+     * <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code> on a trail
+     * to check whether the trail logs management events. You can call <code>GetEventDataStore</code> on an event data
+     * store to check whether the event data store logs management events.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html"
+     * >Logging CloudTrail Insights events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putInsightSelectorsRequest
@@ -1417,11 +1865,89 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Removes the specified tags from a trail or event data store.
+     * Attaches a resource-based permission policy to a CloudTrail channel that is used for an integration with an event
+     * source outside of Amazon Web Services. For more information about resource-based policies, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html"
+     * >CloudTrail resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSCloudTrailAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Attaches a resource-based permission policy to a CloudTrail channel that is used for an integration with an event
+     * source outside of Amazon Web Services. For more information about resource-based policies, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html"
+     * >CloudTrail resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers an organization’s member account as the CloudTrail <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delegated-administrator.html"
+     * >delegated administrator</a>.
+     * </p>
+     * 
+     * @param registerOrganizationDelegatedAdminRequest
+     *        Specifies an organization member account ID as a CloudTrail delegated administrator.
+     * @return A Java Future containing the result of the RegisterOrganizationDelegatedAdmin operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsync.RegisterOrganizationDelegatedAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest registerOrganizationDelegatedAdminRequest);
+
+    /**
+     * <p>
+     * Registers an organization’s member account as the CloudTrail <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-delegated-administrator.html"
+     * >delegated administrator</a>.
+     * </p>
+     * 
+     * @param registerOrganizationDelegatedAdminRequest
+     *        Specifies an organization member account ID as a CloudTrail delegated administrator.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterOrganizationDelegatedAdmin operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsyncHandler.RegisterOrganizationDelegatedAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest registerOrganizationDelegatedAdminRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterOrganizationDelegatedAdminRequest, RegisterOrganizationDelegatedAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified tags from a trail, event data store, or channel.
      * </p>
      * 
      * @param removeTagsRequest
-     *        Specifies the tags to remove from a trail or event data store.
+     *        Specifies the tags to remove from a trail, event data store, or channel.
      * @return A Java Future containing the result of the RemoveTags operation returned by the service.
      * @sample AWSCloudTrailAsync.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags" target="_top">AWS API
@@ -1431,11 +1957,11 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Removes the specified tags from a trail or event data store.
+     * Removes the specified tags from a trail, event data store, or channel.
      * </p>
      * 
      * @param removeTagsRequest
-     *        Specifies the tags to remove from a trail or event data store.
+     *        Specifies the tags to remove from a trail, event data store, or channel.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1485,6 +2011,45 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param startEventDataStoreIngestionRequest
+     * @return A Java Future containing the result of the StartEventDataStoreIngestion operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsync.StartEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventDataStoreIngestionResult> startEventDataStoreIngestionAsync(
+            StartEventDataStoreIngestionRequest startEventDataStoreIngestionRequest);
+
+    /**
+     * <p>
+     * Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param startEventDataStoreIngestionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEventDataStoreIngestion operation returned by the
+     *         service.
+     * @sample AWSCloudTrailAsyncHandler.StartEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventDataStoreIngestionResult> startEventDataStoreIngestionAsync(
+            StartEventDataStoreIngestionRequest startEventDataStoreIngestionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEventDataStoreIngestionRequest, StartEventDataStoreIngestionResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts an import of logged trail events from a source S3 bucket to a destination event data store. By default,
      * CloudTrail only imports events contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
      * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web Services services. If
@@ -1503,6 +2068,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * When you retry an import, the <code>ImportID</code> parameter is required.
      * </p>
+     * <note>
+     * <p>
+     * If the destination event data store is for an organization, you must use the management account to import trail
+     * events. You cannot use the delegated administrator account for the organization.
+     * </p>
+     * </note>
      * 
      * @param startImportRequest
      * @return A Java Future containing the result of the StartImport operation returned by the service.
@@ -1532,6 +2103,12 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * When you retry an import, the <code>ImportID</code> parameter is required.
      * </p>
+     * <note>
+     * <p>
+     * If the destination event data store is for an organization, you must use the management account to import trail
+     * events. You cannot use the delegated administrator account for the organization.
+     * </p>
+     * </note>
      * 
      * @param startImportRequest
      * @param asyncHandler
@@ -1549,9 +2126,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
-     * enabled in all regions, this operation must be called from the region in which the trail was created. This
-     * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
-     * in all regions.
+     * enabled in all Regions, this operation must be called from the Region in which the trail was created. This
+     * operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled
+     * in all Regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -1566,9 +2143,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
     /**
      * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
-     * enabled in all regions, this operation must be called from the region in which the trail was created. This
-     * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
-     * in all regions.
+     * enabled in all Regions, this operation must be called from the Region in which the trail was created. This
+     * operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled
+     * in all Regions.
      * </p>
      * 
      * @param startLoggingRequest
@@ -1587,9 +2164,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
-     * results to an S3 bucket.
+     * Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed
+     * in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to
+     * an S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a
+     * <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code>
+     * and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -1602,9 +2185,15 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
-     * results to an S3 bucket.
+     * Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed
+     * in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to
+     * an S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartQuery</code> requires you specify either the <code>QueryStatement</code> parameter, or a
+     * <code>QueryAlias</code> and any <code>QueryParameters</code>. In the current release, the <code>QueryAlias</code>
+     * and <code>QueryParameters</code> parameters are used only for the queries that populate the CloudTrail Lake
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -1619,6 +2208,43 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      */
     java.util.concurrent.Future<StartQueryResult> startQueryAsync(StartQueryRequest startQueryRequest,
             com.amazonaws.handlers.AsyncHandler<StartQueryRequest, StartQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To stop ingestion, the event data store <code>Status</code> must be <code>ENABLED</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param stopEventDataStoreIngestionRequest
+     * @return A Java Future containing the result of the StopEventDataStoreIngestion operation returned by the service.
+     * @sample AWSCloudTrailAsync.StopEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventDataStoreIngestionResult> stopEventDataStoreIngestionAsync(
+            StopEventDataStoreIngestionRequest stopEventDataStoreIngestionRequest);
+
+    /**
+     * <p>
+     * Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the
+     * ARN. To stop ingestion, the event data store <code>Status</code> must be <code>ENABLED</code> and the
+     * <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+     * </p>
+     * 
+     * @param stopEventDataStoreIngestionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEventDataStoreIngestion operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.StopEventDataStoreIngestion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventDataStoreIngestionResult> stopEventDataStoreIngestionAsync(
+            StopEventDataStoreIngestionRequest stopEventDataStoreIngestionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEventDataStoreIngestionRequest, StopEventDataStoreIngestionResult> asyncHandler);
 
     /**
      * <p>
@@ -1655,9 +2281,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most
      * circumstances, there is no need to use this action. You can update a trail without stopping it first. This action
-     * is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the
-     * region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
-     * cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.
+     * is the only way to stop recording. For a trail enabled in all Regions, this operation must be called from the
+     * Region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other Regions) of a trail enabled in all Regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -1673,9 +2299,9 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most
      * circumstances, there is no need to use this action. You can update a trail without stopping it first. This action
-     * is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the
-     * region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
-     * cannot be called on the shadow trails (replicated trails in other regions) of a trail enabled in all regions.
+     * is the only way to stop recording. For a trail enabled in all Regions, this operation must be called from the
+     * Region in which the trail was created, or an <code>InvalidHomeRegionException</code> will occur. This operation
+     * cannot be called on the shadow trails (replicated trails in other Regions) of a trail enabled in all Regions.
      * </p>
      * 
      * @param stopLoggingRequest
@@ -1694,12 +2320,54 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
+     * Updates a channel specified by a required channel ARN or UUID.
+     * </p>
+     * 
+     * @param updateChannelRequest
+     * @return A Java Future containing the result of the UpdateChannel operation returned by the service.
+     * @sample AWSCloudTrailAsync.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest updateChannelRequest);
+
+    /**
+     * <p>
+     * Updates a channel specified by a required channel ARN or UUID.
+     * </p>
+     * 
+     * @param updateChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateChannel operation returned by the service.
+     * @sample AWSCloudTrailAsyncHandler.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest updateChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateChannelRequest, UpdateChannelResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the
      * ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws
-     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default,
-     * <code>TerminationProtection</code> is enabled. <code>AdvancedEventSelectors</code> includes or excludes
-     * management and data events in your event data store; for more information about
-     * <code>AdvancedEventSelectors</code>, see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
+     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 7 and 3653 if the
+     * <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if
+     * <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>. By default,
+     * <code>TerminationProtection</code> is enabled.
+     * </p>
+     * <p>
+     * For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management
+     * or data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">
+     * AdvancedEventSelectors</a>.
+     * </p>
+     * <p>
+     * For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or
+     * non-Amazon Web Services events, <code>AdvancedEventSelectors</code> includes events of that type in your event
+     * data store.
      * </p>
      * 
      * @param updateEventDataStoreRequest
@@ -1714,10 +2382,21 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * <p>
      * Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the
      * ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws
-     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default,
-     * <code>TerminationProtection</code> is enabled. <code>AdvancedEventSelectors</code> includes or excludes
-     * management and data events in your event data store; for more information about
-     * <code>AdvancedEventSelectors</code>, see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
+     * an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 7 and 3653 if the
+     * <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code>, or between 7 and 2557 if
+     * <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>. By default,
+     * <code>TerminationProtection</code> is enabled.
+     * </p>
+     * <p>
+     * For event data stores for CloudTrail events, <code>AdvancedEventSelectors</code> includes or excludes management
+     * or data events in your event data store. For more information about <code>AdvancedEventSelectors</code>, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">
+     * AdvancedEventSelectors</a>.
+     * </p>
+     * <p>
+     * For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or
+     * non-Amazon Web Services events, <code>AdvancedEventSelectors</code> includes events of that type in your event
+     * data store.
      * </p>
      * 
      * @param updateEventDataStoreRequest
@@ -1738,7 +2417,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail
      * do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery.
      * If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the
-     * bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an
+     * bucket. <code>UpdateTrail</code> must be called from the Region in which the trail was created; otherwise, an
      * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 
@@ -1756,7 +2435,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail
      * do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery.
      * If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the
-     * bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an
+     * bucket. <code>UpdateTrail</code> must be called from the Region in which the trail was created; otherwise, an
      * <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * 

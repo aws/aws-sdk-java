@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,13 @@ public class WorkerResourceConfig implements Serializable, Cloneable, Structured
      * </p>
      */
     private String disk;
+    /**
+     * <p>
+     * The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     * characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     * </p>
+     */
+    private String diskType;
 
     /**
      * <p>
@@ -168,6 +175,52 @@ public class WorkerResourceConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     * characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     * </p>
+     * 
+     * @param diskType
+     *        The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     *        characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     */
+
+    public void setDiskType(String diskType) {
+        this.diskType = diskType;
+    }
+
+    /**
+     * <p>
+     * The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     * characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     * </p>
+     * 
+     * @return The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     *         characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     */
+
+    public String getDiskType() {
+        return this.diskType;
+    }
+
+    /**
+     * <p>
+     * The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     * characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     * </p>
+     * 
+     * @param diskType
+     *        The disk type for every worker instance of the work type. Shuffle optimized disks have higher performance
+     *        characteristics and are better for shuffle heavy workloads. Default is <code>STANDARD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkerResourceConfig withDiskType(String diskType) {
+        setDiskType(diskType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +237,9 @@ public class WorkerResourceConfig implements Serializable, Cloneable, Structured
         if (getMemory() != null)
             sb.append("Memory: ").append(getMemory()).append(",");
         if (getDisk() != null)
-            sb.append("Disk: ").append(getDisk());
+            sb.append("Disk: ").append(getDisk()).append(",");
+        if (getDiskType() != null)
+            sb.append("DiskType: ").append(getDiskType());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +266,10 @@ public class WorkerResourceConfig implements Serializable, Cloneable, Structured
             return false;
         if (other.getDisk() != null && other.getDisk().equals(this.getDisk()) == false)
             return false;
+        if (other.getDiskType() == null ^ this.getDiskType() == null)
+            return false;
+        if (other.getDiskType() != null && other.getDiskType().equals(this.getDiskType()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +281,7 @@ public class WorkerResourceConfig implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getDisk() == null) ? 0 : getDisk().hashCode());
+        hashCode = prime * hashCode + ((getDiskType() == null) ? 0 : getDiskType().hashCode());
         return hashCode;
     }
 

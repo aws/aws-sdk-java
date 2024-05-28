@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class ResourceToImport implements Serializable, Cloneable {
      * The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported
      * resource types, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     * >Resources that support import operations</a> in the CloudFormation User Guide.
+     * >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String resourceType;
@@ -55,14 +55,14 @@ public class ResourceToImport implements Serializable, Cloneable {
      * The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported
      * resource types, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     * >Resources that support import operations</a> in the CloudFormation User Guide.
+     * >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of
      *        supported resource types, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     *        >Resources that support import operations</a> in the CloudFormation User Guide.
+     *        >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setResourceType(String resourceType) {
@@ -74,13 +74,13 @@ public class ResourceToImport implements Serializable, Cloneable {
      * The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported
      * resource types, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     * >Resources that support import operations</a> in the CloudFormation User Guide.
+     * >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of
      *         supported resource types, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     *         >Resources that support import operations</a> in the CloudFormation User Guide.
+     *         >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public String getResourceType() {
@@ -92,14 +92,14 @@ public class ResourceToImport implements Serializable, Cloneable {
      * The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported
      * resource types, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     * >Resources that support import operations</a> in the CloudFormation User Guide.
+     * >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of
      *        supported resource types, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html"
-     *        >Resources that support import operations</a> in the CloudFormation User Guide.
+     *        >Resources that support import operations</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

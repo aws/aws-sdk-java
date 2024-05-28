@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,25 @@ public class InputDeviceUhdSettingsJsonUnmarshaller implements Unmarshaller<Inpu
                 if (context.testExpression("width", targetDepth)) {
                     context.nextToken();
                     inputDeviceUhdSettings.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("latencyMs", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceUhdSettings.setLatencyMs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("codec", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceUhdSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mediaconnectSettings", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceUhdSettings.setMediaconnectSettings(InputDeviceMediaConnectSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("audioChannelPairs", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceUhdSettings.setAudioChannelPairs(new ListUnmarshaller<InputDeviceUhdAudioChannelPairConfig>(
+                            InputDeviceUhdAudioChannelPairConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

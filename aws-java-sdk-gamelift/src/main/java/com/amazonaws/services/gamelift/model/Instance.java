@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,14 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet
- * can contain zero or more instances.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeInstances</a>
+ * Represents a virtual computing instance that runs game server processes and hosts game sessions. In Amazon GameLift,
+ * one or more instances make up a managed EC2 fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance" target="_top">AWS API
@@ -37,15 +31,16 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the fleet that the instance is in.
+     * A unique identifier for the fleet that the instance belongs to.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      */
     private String fleetArn;
@@ -75,7 +70,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     * >Amazon EC2 Instance IP Addressing</a>.)
+     * >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      * </p>
      * </li>
      * </ul>
@@ -87,13 +82,13 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String dnsName;
     /**
      * <p>
-     * Operating system that is running on this instance.
+     * Operating system that is running on this EC2 instance.
      * </p>
      */
     private String operatingSystem;
     /**
      * <p>
-     * Amazon EC2 instance type that defines the computing resources of this instance.
+     * EC2 instance type that defines the computing resources of this instance.
      * </p>
      */
     private String type;
@@ -111,8 +106,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -141,11 +136,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the fleet that the instance is in.
+     * A unique identifier for the fleet that the instance belongs to.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet that the instance is in.
+     *        A unique identifier for the fleet that the instance belongs to.
      */
 
     public void setFleetId(String fleetId) {
@@ -154,10 +149,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the fleet that the instance is in.
+     * A unique identifier for the fleet that the instance belongs to.
      * </p>
      * 
-     * @return A unique identifier for the fleet that the instance is in.
+     * @return A unique identifier for the fleet that the instance belongs to.
      */
 
     public String getFleetId() {
@@ -166,11 +161,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the fleet that the instance is in.
+     * A unique identifier for the fleet that the instance belongs to.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for the fleet that the instance is in.
+     *        A unique identifier for the fleet that the instance belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,14 +177,15 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -200,13 +196,14 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -217,14 +214,15 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -328,7 +326,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     * >Amazon EC2 Instance IP Addressing</a>.)
+     * >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      * </p>
      * </li>
      * </ul>
@@ -350,7 +348,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -377,7 +375,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     * >Amazon EC2 Instance IP Addressing</a>.)
+     * >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      * </p>
      * </li>
      * </ul>
@@ -398,7 +396,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     *         >Amazon EC2 Instance IP Addressing</a>.)
+     *         >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      *         </p>
      *         </li>
      *         </ul>
@@ -425,7 +423,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     * >Amazon EC2 Instance IP Addressing</a>.)
+     * >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      * </p>
      * </li>
      * </ul>
@@ -447,7 +445,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
-     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        >Amazon Elastic Compute Cloud Instance IP Addressing</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -464,11 +462,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operating system that is running on this instance.
+     * Operating system that is running on this EC2 instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that is running on this instance.
+     *        Operating system that is running on this EC2 instance.
      * @see OperatingSystem
      */
 
@@ -478,10 +476,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operating system that is running on this instance.
+     * Operating system that is running on this EC2 instance.
      * </p>
      * 
-     * @return Operating system that is running on this instance.
+     * @return Operating system that is running on this EC2 instance.
      * @see OperatingSystem
      */
 
@@ -491,11 +489,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operating system that is running on this instance.
+     * Operating system that is running on this EC2 instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that is running on this instance.
+     *        Operating system that is running on this EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -507,11 +505,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operating system that is running on this instance.
+     * Operating system that is running on this EC2 instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that is running on this instance.
+     *        Operating system that is running on this EC2 instance.
      * @see OperatingSystem
      */
 
@@ -521,11 +519,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Operating system that is running on this instance.
+     * Operating system that is running on this EC2 instance.
      * </p>
      * 
      * @param operatingSystem
-     *        Operating system that is running on this instance.
+     *        Operating system that is running on this EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -537,11 +535,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon EC2 instance type that defines the computing resources of this instance.
+     * EC2 instance type that defines the computing resources of this instance.
      * </p>
      * 
      * @param type
-     *        Amazon EC2 instance type that defines the computing resources of this instance.
+     *        EC2 instance type that defines the computing resources of this instance.
      * @see EC2InstanceType
      */
 
@@ -551,10 +549,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon EC2 instance type that defines the computing resources of this instance.
+     * EC2 instance type that defines the computing resources of this instance.
      * </p>
      * 
-     * @return Amazon EC2 instance type that defines the computing resources of this instance.
+     * @return EC2 instance type that defines the computing resources of this instance.
      * @see EC2InstanceType
      */
 
@@ -564,11 +562,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon EC2 instance type that defines the computing resources of this instance.
+     * EC2 instance type that defines the computing resources of this instance.
      * </p>
      * 
      * @param type
-     *        Amazon EC2 instance type that defines the computing resources of this instance.
+     *        EC2 instance type that defines the computing resources of this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -580,11 +578,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon EC2 instance type that defines the computing resources of this instance.
+     * EC2 instance type that defines the computing resources of this instance.
      * </p>
      * 
      * @param type
-     *        Amazon EC2 instance type that defines the computing resources of this instance.
+     *        EC2 instance type that defines the computing resources of this instance.
      * @see EC2InstanceType
      */
 
@@ -594,11 +592,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon EC2 instance type that defines the computing resources of this instance.
+     * EC2 instance type that defines the computing resources of this instance.
      * </p>
      * 
      * @param type
-     *        Amazon EC2 instance type that defines the computing resources of this instance.
+     *        EC2 instance type that defines the computing resources of this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -622,8 +620,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -646,8 +644,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -677,8 +675,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -700,8 +698,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *         successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *         is now considered ready to host game sessions.
+     *         successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *         instance is now considered ready to host game sessions.
      *         </p>
      *         </li>
      *         <li>
@@ -731,8 +729,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -755,8 +753,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -788,8 +786,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -812,8 +810,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -843,8 +841,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -867,8 +865,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -997,7 +995,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: ").append(getIpAddress()).append(",");
+            sb.append("IpAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getDnsName() != null)
             sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getOperatingSystem() != null)

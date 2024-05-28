@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,19 @@ public class GetTemporaryGlueTableCredentialsRequest extends com.amazonaws.Amazo
      * </p>
      */
     private java.util.List<String> supportedPermissionTypes;
+    /**
+     * <p>
+     * The Amazon S3 path for the table.
+     * </p>
+     */
+    private String s3Path;
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     */
+    private QuerySessionContext querySessionContext;
 
     /**
      * <p>
@@ -395,6 +408,92 @@ public class GetTemporaryGlueTableCredentialsRequest extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * The Amazon S3 path for the table.
+     * </p>
+     * 
+     * @param s3Path
+     *        The Amazon S3 path for the table.
+     */
+
+    public void setS3Path(String s3Path) {
+        this.s3Path = s3Path;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 path for the table.
+     * </p>
+     * 
+     * @return The Amazon S3 path for the table.
+     */
+
+    public String getS3Path() {
+        return this.s3Path;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 path for the table.
+     * </p>
+     * 
+     * @param s3Path
+     *        The Amazon S3 path for the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemporaryGlueTableCredentialsRequest withS3Path(String s3Path) {
+        setS3Path(s3Path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     * 
+     * @param querySessionContext
+     *        A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake
+     *        Formation generated authorization identifier and information from the request's authorization context.
+     */
+
+    public void setQuerySessionContext(QuerySessionContext querySessionContext) {
+        this.querySessionContext = querySessionContext;
+    }
+
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     * 
+     * @return A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake
+     *         Formation generated authorization identifier and information from the request's authorization context.
+     */
+
+    public QuerySessionContext getQuerySessionContext() {
+        return this.querySessionContext;
+    }
+
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     * 
+     * @param querySessionContext
+     *        A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake
+     *        Formation generated authorization identifier and information from the request's authorization context.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemporaryGlueTableCredentialsRequest withQuerySessionContext(QuerySessionContext querySessionContext) {
+        setQuerySessionContext(querySessionContext);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -415,7 +514,11 @@ public class GetTemporaryGlueTableCredentialsRequest extends com.amazonaws.Amazo
         if (getAuditContext() != null)
             sb.append("AuditContext: ").append(getAuditContext()).append(",");
         if (getSupportedPermissionTypes() != null)
-            sb.append("SupportedPermissionTypes: ").append(getSupportedPermissionTypes());
+            sb.append("SupportedPermissionTypes: ").append(getSupportedPermissionTypes()).append(",");
+        if (getS3Path() != null)
+            sb.append("S3Path: ").append(getS3Path()).append(",");
+        if (getQuerySessionContext() != null)
+            sb.append("QuerySessionContext: ").append(getQuerySessionContext());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +553,14 @@ public class GetTemporaryGlueTableCredentialsRequest extends com.amazonaws.Amazo
             return false;
         if (other.getSupportedPermissionTypes() != null && other.getSupportedPermissionTypes().equals(this.getSupportedPermissionTypes()) == false)
             return false;
+        if (other.getS3Path() == null ^ this.getS3Path() == null)
+            return false;
+        if (other.getS3Path() != null && other.getS3Path().equals(this.getS3Path()) == false)
+            return false;
+        if (other.getQuerySessionContext() == null ^ this.getQuerySessionContext() == null)
+            return false;
+        if (other.getQuerySessionContext() != null && other.getQuerySessionContext().equals(this.getQuerySessionContext()) == false)
+            return false;
         return true;
     }
 
@@ -463,6 +574,8 @@ public class GetTemporaryGlueTableCredentialsRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getDurationSeconds() == null) ? 0 : getDurationSeconds().hashCode());
         hashCode = prime * hashCode + ((getAuditContext() == null) ? 0 : getAuditContext().hashCode());
         hashCode = prime * hashCode + ((getSupportedPermissionTypes() == null) ? 0 : getSupportedPermissionTypes().hashCode());
+        hashCode = prime * hashCode + ((getS3Path() == null) ? 0 : getS3Path().hashCode());
+        hashCode = prime * hashCode + ((getQuerySessionContext() == null) ? 0 : getQuerySessionContext().hashCode());
         return hashCode;
     }
 

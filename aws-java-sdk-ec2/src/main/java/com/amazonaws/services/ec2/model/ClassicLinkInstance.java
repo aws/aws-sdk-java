@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 /**
  * <note>
  * <p>
- * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in
- * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * Deprecated.
  * </p>
  * </note>
  * <p>
@@ -35,7 +33,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security groups.
+     * The security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
@@ -60,10 +58,10 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security groups.
+     * The security groups.
      * </p>
      * 
-     * @return A list of security groups.
+     * @return The security groups.
      */
 
     public java.util.List<GroupIdentifier> getGroups() {
@@ -75,11 +73,11 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security groups.
+     * The security groups.
      * </p>
      * 
      * @param groups
-     *        A list of security groups.
+     *        The security groups.
      */
 
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
@@ -93,7 +91,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security groups.
+     * The security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -102,7 +100,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param groups
-     *        A list of security groups.
+     *        The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +116,11 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security groups.
+     * The security groups.
      * </p>
      * 
      * @param groups
-     *        A list of security groups.
+     *        The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

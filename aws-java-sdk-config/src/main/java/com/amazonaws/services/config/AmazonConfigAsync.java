@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1415,12 +1415,15 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Returns the current status of the specified configuration recorder. If a configuration recorder is not specified,
-     * this action returns the status of all configuration recorders associated with the account.
+     * Returns the current status of the specified configuration recorder as well as the status of the last recording
+     * event for the recorder. If a configuration recorder is not specified, this action returns the status of all
+     * configuration recorders associated with the account.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * &gt;You can specify only one configuration recorder for each Amazon Web Services Region for each account. For a
+     * detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use
+     * CloudWatch metrics.
      * </p>
      * </note>
      * 
@@ -1437,12 +1440,15 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Returns the current status of the specified configuration recorder. If a configuration recorder is not specified,
-     * this action returns the status of all configuration recorders associated with the account.
+     * Returns the current status of the specified configuration recorder as well as the status of the last recording
+     * event for the recorder. If a configuration recorder is not specified, this action returns the status of all
+     * configuration recorders associated with the account.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * &gt;You can specify only one configuration recorder for each Amazon Web Services Region for each account. For a
+     * detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use
+     * CloudWatch metrics.
      * </p>
      * </note>
      * 
@@ -1485,7 +1491,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * </note>
      * 
@@ -1507,7 +1513,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * </note>
      * 
@@ -1859,7 +1865,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * when you request all the organization Config rules.
      * </p>
      * <p>
-     * <i>For accounts within an organzation</i>
+     * <i>For accounts within an organization</i>
      * </p>
      * <p>
      * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
@@ -1896,7 +1902,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * when you request all the organization Config rules.
      * </p>
      * <p>
-     * <i>For accounts within an organzation</i>
+     * <i>For accounts within an organization</i>
      * </p>
      * <p>
      * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
@@ -1997,7 +2003,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * applicable, when you request all the organization conformance packs.
      * </p>
      * <p>
-     * <i>For accounts within an organzation</i>
+     * <i>For accounts within an organization</i>
      * </p>
      * <p>
      * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
@@ -2034,7 +2040,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * applicable, when you request all the organization conformance packs.
      * </p>
      * <p>
-     * <i>For accounts within an organzation</i>
+     * <i>For accounts within an organization</i>
      * </p>
      * <p>
      * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
@@ -2557,7 +2563,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config
-     * rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with
+     * rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with
      * each rule.
      * </p>
      * 
@@ -2574,7 +2580,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config
-     * rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with
+     * rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with
      * each rule.
      * </p>
      * 
@@ -3079,6 +3085,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
             com.amazonaws.handlers.AsyncHandler<GetOrganizationCustomRulePolicyRequest, GetOrganizationCustomRulePolicyResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+     * resource type. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources
+     * Config Records</a>.
+     * </p>
+     * </important>
      * <p>
      * Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about
      * each state of the resource during the specified time interval. If you specified a retention period to retain your
@@ -3109,6 +3123,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest);
 
     /**
+     * <important>
+     * <p>
+     * For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+     * resource type. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources
+     * Config Records</a>.
+     * </p>
+     * </important>
      * <p>
      * Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about
      * each state of the resource during the specified time interval. If you specified a retention period to retain your
@@ -3142,6 +3164,67 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that
+     * were run. The results indicate which evaluation context was used to evaluate the rules, which resource details
+     * were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration
+     * of the proactive rules.
+     * </p>
+     * <note>
+     * <p>
+     * To see additional information about the evaluation result, such as which rule flagged a resource as
+     * NON_COMPLIANT, use the <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html"
+     * >GetComplianceDetailsByResource</a> API. For more information, see the <a href=
+     * "https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html#API_GetResourceEvaluationSummary_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </note>
+     * 
+     * @param getResourceEvaluationSummaryRequest
+     * @return A Java Future containing the result of the GetResourceEvaluationSummary operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.GetResourceEvaluationSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(
+            GetResourceEvaluationSummaryRequest getResourceEvaluationSummaryRequest);
+
+    /**
+     * <p>
+     * Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that
+     * were run. The results indicate which evaluation context was used to evaluate the rules, which resource details
+     * were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration
+     * of the proactive rules.
+     * </p>
+     * <note>
+     * <p>
+     * To see additional information about the evaluation result, such as which rule flagged a resource as
+     * NON_COMPLIANT, use the <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html"
+     * >GetComplianceDetailsByResource</a> API. For more information, see the <a href=
+     * "https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html#API_GetResourceEvaluationSummary_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </note>
+     * 
+     * @param getResourceEvaluationSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceEvaluationSummary operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.GetResourceEvaluationSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(
+            GetResourceEvaluationSummaryRequest getResourceEvaluationSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceEvaluationSummaryRequest, GetResourceEvaluationSummaryResult> asyncHandler);
 
     /**
      * <p>
@@ -3337,6 +3420,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns a list of proactive resource evaluations.
+     * </p>
+     * 
+     * @param listResourceEvaluationsRequest
+     * @return A Java Future containing the result of the ListResourceEvaluations operation returned by the service.
+     * @sample AmazonConfigAsync.ListResourceEvaluations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest listResourceEvaluationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of proactive resource evaluations.
+     * </p>
+     * 
+     * @param listResourceEvaluationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceEvaluations operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.ListResourceEvaluations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest listResourceEvaluationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceEvaluationsRequest, ListResourceEvaluationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The
      * default is 100.
      * </p>
@@ -3403,6 +3517,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Authorizes the aggregator account and region to collect data from the source account and region.
      * </p>
+     * <note>
+     * <p>
+     * <code>PutAggregationAuthorization</code> is an idempotent API. Subsequent requests won’t create a duplicate
+     * resource if one was already created. If a following request has different <code>tags</code> values, Config will
+     * ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code>
+     * will not be updated, even if they are different.
+     * </p>
+     * </note>
      * 
      * @param putAggregationAuthorizationRequest
      * @return A Java Future containing the result of the PutAggregationAuthorization operation returned by the service.
@@ -3417,6 +3539,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Authorizes the aggregator account and region to collect data from the source account and region.
      * </p>
+     * <note>
+     * <p>
+     * <code>PutAggregationAuthorization</code> is an idempotent API. Subsequent requests won’t create a duplicate
+     * resource if one was already created. If a following request has different <code>tags</code> values, Config will
+     * ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code>
+     * will not be updated, even if they are different.
+     * </p>
+     * </note>
      * 
      * @param putAggregationAuthorizationRequest
      * @param asyncHandler
@@ -3440,29 +3570,35 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
-     * <code>PutConfigRule</code> to create both Config custom rules and Config managed rules.
+     * There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>. You can use
+     * <code>PutConfigRule</code> to create both Config Managed Rules and Config Custom Rules.
      * </p>
      * <p>
-     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
-     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
-     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
-     * need to create an Lambda function that the rule invokes to evaluate your resources. When you use
-     * <code>PutConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
-     * that Lambda assigns to the function. You specify the ARN in the <code>SourceIdentifier</code> key. This key is
-     * part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object.
-     * </p>
-     * <p>
-     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
      * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
      * <code>SourceIdentifier</code> key.
      * </p>
      * <p>
-     * For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do
-     * not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by Config
-     * for new rules.
+     * Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules:
+     * with Lambda functions (<a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function"
+     * > Lambda Developer Guide</a>) and with Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>), a policy-as-code
+     * language. Config custom rules created with Lambda are called <i>Config Custom Lambda Rules</i> and Config custom
+     * rules created with Guard are called <i>Config Custom Policy Rules</i>.
+     * </p>
+     * <p>
+     * If you are adding a new Config Custom Lambda rule, you first need to create an Lambda function that the rule
+     * invokes to evaluate your resources. When you use <code>PutConfigRule</code> to add a Custom Lambda rule to
+     * Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. You specify the ARN
+     * in the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of
+     * the <code>ConfigRule</code> object.
+     * </p>
+     * <p>
+     * For any new Config rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
+     * object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are
+     * generated by Config for new rules.
      * </p>
      * <p>
      * If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>,
@@ -3471,9 +3607,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * For more information about developing and using Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web
-     * Services resource Configurations with Config</a> in the <i>Config Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Resources with
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <code>PutConfigRule</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was
+     * already created. If a following request has different <code>tags</code> values, Config will ignore these
+     * differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be
+     * updated, even if they are different.
+     * </p>
+     * </note>
      * 
      * @param putConfigRuleRequest
      * @return A Java Future containing the result of the PutConfigRule operation returned by the service.
@@ -3491,29 +3635,35 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
-     * <code>PutConfigRule</code> to create both Config custom rules and Config managed rules.
+     * There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>. You can use
+     * <code>PutConfigRule</code> to create both Config Managed Rules and Config Custom Rules.
      * </p>
      * <p>
-     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
-     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
-     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
-     * need to create an Lambda function that the rule invokes to evaluate your resources. When you use
-     * <code>PutConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
-     * that Lambda assigns to the function. You specify the ARN in the <code>SourceIdentifier</code> key. This key is
-     * part of the <code>Source</code> object, which is part of the <code>ConfigRule</code> object.
-     * </p>
-     * <p>
-     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
      * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
      * <code>SourceIdentifier</code> key.
      * </p>
      * <p>
-     * For any new rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do
-     * not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are generated by Config
-     * for new rules.
+     * Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules:
+     * with Lambda functions (<a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function"
+     * > Lambda Developer Guide</a>) and with Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>), a policy-as-code
+     * language. Config custom rules created with Lambda are called <i>Config Custom Lambda Rules</i> and Config custom
+     * rules created with Guard are called <i>Config Custom Policy Rules</i>.
+     * </p>
+     * <p>
+     * If you are adding a new Config Custom Lambda rule, you first need to create an Lambda function that the rule
+     * invokes to evaluate your resources. When you use <code>PutConfigRule</code> to add a Custom Lambda rule to
+     * Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. You specify the ARN
+     * in the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of
+     * the <code>ConfigRule</code> object.
+     * </p>
+     * <p>
+     * For any new Config rule that you add, specify the <code>ConfigRuleName</code> in the <code>ConfigRule</code>
+     * object. Do not specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These values are
+     * generated by Config for new rules.
      * </p>
      * <p>
      * If you are updating a rule that you added previously, you can specify the rule by <code>ConfigRuleName</code>,
@@ -3522,9 +3672,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * For more information about developing and using Config rules, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web
-     * Services resource Configurations with Config</a> in the <i>Config Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Resources with
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <code>PutConfigRule</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one was
+     * already created. If a following request has different <code>tags</code> values, Config will ignore these
+     * differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be
+     * updated, even if they are different.
+     * </p>
+     * </note>
      * 
      * @param putConfigRuleRequest
      * @param asyncHandler
@@ -3565,6 +3723,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
      * >Register a Delegated Administrator</a> in the <i>Config developer guide</i>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests won’t create a duplicate
+     * resource if one was already created. If a following request has different <code>tags</code> values, Config will
+     * ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code>
+     * will not be updated, even if they are different.
+     * </p>
      * </note>
      * 
      * @param putConfigurationAggregatorRequest
@@ -3602,6 +3767,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
      * >Register a Delegated Administrator</a> in the <i>Config developer guide</i>.
      * </p>
+     * </note> <note>
+     * <p>
+     * <code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests won’t create a duplicate
+     * resource if one was already created. If a following request has different <code>tags</code> values, Config will
+     * ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code>
+     * will not be updated, even if they are different.
+     * </p>
      * </note>
      * 
      * @param putConfigurationAggregatorRequest
@@ -3620,19 +3792,21 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a new configuration recorder to record the selected resource configurations.
+     * Creates a new configuration recorder to record configuration changes for specified resource types.
      * </p>
      * <p>
-     * You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing
-     * recorder. To change the role, call the action on the existing configuration recorder and specify a role.
+     * You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing
+     * recorder. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the
+     * Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * <p>
-     * If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is
-     * to record all supported resource types.
+     * If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to
+     * record all supported resource types.
      * </p>
      * </note>
      * 
@@ -3647,19 +3821,21 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a new configuration recorder to record the selected resource configurations.
+     * Creates a new configuration recorder to record configuration changes for specified resource types.
      * </p>
      * <p>
-     * You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing
-     * recorder. To change the role, call the action on the existing configuration recorder and specify a role.
+     * You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code> of an existing
+     * recorder. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html"> <b>Managing the
+     * Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
-     * Currently, you can specify only one configuration recorder per region in your account.
+     * You can specify only one configuration recorder for each Amazon Web Services Region for each account.
      * </p>
      * <p>
-     * If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter specified, the default is
-     * to record all supported resource types.
+     * If the configuration recorder does not have the <code>recordingGroup</code> field specified, the default is to
+     * record all supported resource types.
      * </p>
      * </note>
      * 
@@ -3682,7 +3858,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
      * deployed in an account and a region and across an organization. For information on how many conformance packs you
      * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-     * <b>Service Limits</b> </a> in the Config Developer Guide.
+     * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3708,7 +3884,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
      * deployed in an account and a region and across an organization. For information on how many conformance packs you
      * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-     * <b>Service Limits</b> </a> in the Config Developer Guide.
+     * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3736,8 +3912,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS
-     * topic.
+     * Creates a delivery channel object to deliver configuration information and other compliance information to an
+     * Amazon S3 bucket and Amazon SNS topic. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+     * that Config Sends to an Amazon SNS topic</a>.
      * </p>
      * <p>
      * Before you can create a delivery channel, you must create a configuration recorder.
@@ -3765,8 +3943,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS
-     * topic.
+     * Creates a delivery channel object to deliver configuration information and other compliance information to an
+     * Amazon S3 bucket and Amazon SNS topic. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
+     * that Config Sends to an Amazon SNS topic</a>.
      * </p>
      * <p>
      * Before you can create a delivery channel, you must create a configuration recorder.
@@ -3888,24 +4068,30 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
-     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
-     * <code>PutOrganizationConfigRule</code> to create both Config custom rules and Config managed rules.
+     * There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>. You can use
+     * <code>PutOrganizationConfigRule</code> to create both Config Managed Rules and Config Custom Rules.
      * </p>
      * <p>
-     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
-     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
-     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
-     * need to create an Lambda function in the management account or a delegated administrator that the rule invokes to
-     * evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the
-     * Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you
-     * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
-     * </p>
-     * <p>
-     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
      * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
      * <code>RuleIdentifier</code> key.
+     * </p>
+     * <p>
+     * Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules:
+     * with Lambda functions (<a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function"
+     * > Lambda Developer Guide</a>) and with Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>), a policy-as-code
+     * language. Config custom rules created with Lambda are called <i>Config Custom Lambda Rules</i> and Config custom
+     * rules created with Guard are called <i>Config Custom Policy Rules</i>.
+     * </p>
+     * <p>
+     * If you are adding a new Config Custom Lambda rule, you first need to create an Lambda function in the management
+     * account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an
+     * IAM role in the managed account that can be assumed by the Lambda function. When you use
+     * <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon
+     * Resource Name (ARN) that Lambda assigns to the function.
      * </p>
      * <note>
      * <p>
@@ -3952,24 +4138,30 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
-     * There are two types of rules: Config Custom Rules and Config Managed Rules. You can use
-     * <code>PutOrganizationConfigRule</code> to create both Config custom rules and Config managed rules.
+     * There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>. You can use
+     * <code>PutOrganizationConfigRule</code> to create both Config Managed Rules and Config Custom Rules.
      * </p>
      * <p>
-     * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
-     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
-     * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
-     * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
-     * need to create an Lambda function in the management account or a delegated administrator that the rule invokes to
-     * evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the
-     * Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you
-     * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
-     * </p>
-     * <p>
-     * Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
+     * Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
      * Managed Rules</a>. If you are adding an Config managed rule, you must specify the rule's identifier for the
      * <code>RuleIdentifier</code> key.
+     * </p>
+     * <p>
+     * Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules:
+     * with Lambda functions (<a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function"
+     * > Lambda Developer Guide</a>) and with Guard (<a
+     * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>), a policy-as-code
+     * language. Config custom rules created with Lambda are called <i>Config Custom Lambda Rules</i> and Config custom
+     * rules created with Guard are called <i>Config Custom Policy Rules</i>.
+     * </p>
+     * <p>
+     * If you are adding a new Config Custom Lambda rule, you first need to create an Lambda function in the management
+     * account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an
+     * IAM role in the managed account that can be assumed by the Lambda function. When you use
+     * <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you must specify the Amazon
+     * Resource Name (ARN) that Lambda assigns to the function.
      * </p>
      * <note>
      * <p>
@@ -4001,7 +4193,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
      * many organization conformance packs and how many Config rules you can have per account, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
@@ -4046,7 +4238,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
      * many organization conformance packs and how many Config rules you can have per account, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * the <i>Config Developer Guide</i>.
      * </p>
      * <p>
      * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
@@ -4100,6 +4292,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
+     * <b>Be aware of backward incompatible changes</b>
+     * </p>
+     * <p>
      * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
      * remediations can run.
      * </p>
@@ -4109,6 +4304,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * </note> <note>
      * <p>
+     * <b>Required fields</b>
+     * </p>
+     * <p>
      * For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a
      * value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either
      * as long as it maps to a valid parameter.
@@ -4117,6 +4315,23 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is
      * <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to
      * remediate your resources.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Auto remediation can be initiated even for compliant resources</b>
+     * </p>
+     * <p>
+     * If you enable auto remediation for a specific Config rule using the <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html"
+     * >PutRemediationConfigurations</a> API or the Config console, it initiates the remediation process for all
+     * non-compliant resources for that specific rule. The auto remediation process relies on the compliance data
+     * snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot
+     * schedule will continue to be remediated based on the last known compliance data snapshot.
+     * </p>
+     * <p>
+     * This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap
+     * processor uses a database that can have stale evaluation results based on the last known compliance data
+     * snapshot.
      * </p>
      * </note>
      * 
@@ -4139,6 +4354,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
+     * <b>Be aware of backward incompatible changes</b>
+     * </p>
+     * <p>
      * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
      * remediations can run.
      * </p>
@@ -4148,6 +4366,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * </note> <note>
      * <p>
+     * <b>Required fields</b>
+     * </p>
+     * <p>
      * For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a
      * value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either
      * as long as it maps to a valid parameter.
@@ -4156,6 +4377,23 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is
      * <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to
      * remediate your resources.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Auto remediation can be initiated even for compliant resources</b>
+     * </p>
+     * <p>
+     * If you enable auto remediation for a specific Config rule using the <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html"
+     * >PutRemediationConfigurations</a> API or the Config console, it initiates the remediation process for all
+     * non-compliant resources for that specific rule. The auto remediation process relies on the compliance data
+     * snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot
+     * schedule will continue to be remediated based on the last known compliance data snapshot.
+     * </p>
+     * <p>
+     * This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap
+     * processor uses a database that can have stale evaluation results based on the last known compliance data
+     * snapshot.
      * </p>
      * </note>
      * 
@@ -4176,13 +4414,57 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an existing exception for a specific resource with a specific Config rule.
+     * A remediation exception is when a specified resource is no longer considered for auto-remediation. This API adds
+     * a new exception or updates an existing exception for a specified resource with a specified Config rule.
      * </p>
      * <note>
      * <p>
-     * Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * <b>Exceptions block auto remediation</b>
+     * </p>
+     * <p>
+     * Config generates a remediation exception when a problem occurs running a remediation action for a specified
      * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Manual remediation is recommended when placing an exception</b>
+     * </p>
+     * <p>
+     * When placing an exception on an Amazon Web Services resource, it is recommended that remediation is set as manual
+     * remediation until the given Config rule for the specified resource evaluates the resource as
+     * <code>NON_COMPLIANT</code>. Once the resource has been evaluated as <code>NON_COMPLIANT</code>, you can add
+     * remediation exceptions and change the remediation type back from Manual to Auto if you want to use
+     * auto-remediation. Otherwise, using auto-remediation before a <code>NON_COMPLIANT</code> evaluation result can
+     * delete resources before the exception is applied.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Exceptions can only be performed on non-compliant resources</b>
+     * </p>
+     * <p>
+     * Placing an exception can only be performed on resources that are <code>NON_COMPLIANT</code>. If you use this API
+     * for <code>COMPLIANT</code> resources or resources that are <code>NOT_APPLICABLE</code>, a remediation exception
+     * will not be generated. For more information on the conditions that initiate the possible Config evaluation
+     * results, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts |
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Auto remediation can be initiated even for compliant resources</b>
+     * </p>
+     * <p>
+     * If you enable auto remediation for a specific Config rule using the <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html"
+     * >PutRemediationConfigurations</a> API or the Config console, it initiates the remediation process for all
+     * non-compliant resources for that specific rule. The auto remediation process relies on the compliance data
+     * snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot
+     * schedule will continue to be remediated based on the last known compliance data snapshot.
+     * </p>
+     * <p>
+     * This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap
+     * processor uses a database that can have stale evaluation results based on the last known compliance data
+     * snapshot.
      * </p>
      * </note>
      * 
@@ -4196,13 +4478,57 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an existing exception for a specific resource with a specific Config rule.
+     * A remediation exception is when a specified resource is no longer considered for auto-remediation. This API adds
+     * a new exception or updates an existing exception for a specified resource with a specified Config rule.
      * </p>
      * <note>
      * <p>
-     * Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * <b>Exceptions block auto remediation</b>
+     * </p>
+     * <p>
+     * Config generates a remediation exception when a problem occurs running a remediation action for a specified
      * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Manual remediation is recommended when placing an exception</b>
+     * </p>
+     * <p>
+     * When placing an exception on an Amazon Web Services resource, it is recommended that remediation is set as manual
+     * remediation until the given Config rule for the specified resource evaluates the resource as
+     * <code>NON_COMPLIANT</code>. Once the resource has been evaluated as <code>NON_COMPLIANT</code>, you can add
+     * remediation exceptions and change the remediation type back from Manual to Auto if you want to use
+     * auto-remediation. Otherwise, using auto-remediation before a <code>NON_COMPLIANT</code> evaluation result can
+     * delete resources before the exception is applied.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Exceptions can only be performed on non-compliant resources</b>
+     * </p>
+     * <p>
+     * Placing an exception can only be performed on resources that are <code>NON_COMPLIANT</code>. If you use this API
+     * for <code>COMPLIANT</code> resources or resources that are <code>NOT_APPLICABLE</code>, a remediation exception
+     * will not be generated. For more information on the conditions that initiate the possible Config evaluation
+     * results, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts |
+     * Config Rules</a> in the <i>Config Developer Guide</i>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * <b>Auto remediation can be initiated even for compliant resources</b>
+     * </p>
+     * <p>
+     * If you enable auto remediation for a specific Config rule using the <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html"
+     * >PutRemediationConfigurations</a> API or the Config console, it initiates the remediation process for all
+     * non-compliant resources for that specific rule. The auto remediation process relies on the compliance data
+     * snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot
+     * schedule will continue to be remediated based on the last known compliance data snapshot.
+     * </p>
+     * <p>
+     * This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap
+     * processor uses a database that can have stale evaluation results based on the last known compliance data
+     * snapshot.
      * </p>
      * </note>
      * 
@@ -4335,6 +4661,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Amazon Web Services account and a single Amazon Web Services Region. You can create upto 300 queries in a single
      * Amazon Web Services account and a single Amazon Web Services Region.
      * </p>
+     * <note>
+     * <p>
+     * <code>PutStoredQuery</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one
+     * was already created. If a following request has different <code>tags</code> values, Config will ignore these
+     * differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be
+     * updated, even if they are different.
+     * </p>
+     * </note>
      * 
      * @param putStoredQueryRequest
      * @return A Java Future containing the result of the PutStoredQuery operation returned by the service.
@@ -4350,6 +4684,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Amazon Web Services account and a single Amazon Web Services Region. You can create upto 300 queries in a single
      * Amazon Web Services account and a single Amazon Web Services Region.
      * </p>
+     * <note>
+     * <p>
+     * <code>PutStoredQuery</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if one
+     * was already created. If a following request has different <code>tags</code> values, Config will ignore these
+     * differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be
+     * updated, even if they are different.
+     * </p>
+     * </note>
      * 
      * @param putStoredQueryRequest
      * @param asyncHandler
@@ -4373,7 +4715,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4409,7 +4751,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * For more information about query components, see the <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
-     * </a> section in the Config Developer Guide.
+     * </a> section in the <i>Config Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -4701,6 +5043,81 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply
+     * with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation
+     * context. It runs an execution against the resource details with all of the Config rules in your account that
+     * match with the specified proactive mode and resource type.
+     * </p>
+     * <note>
+     * <p>
+     * Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema.
+     * </p>
+     * <p>
+     * You can find the <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type
+     * schema</a> in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the
+     * following CLI commmand:
+     * <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation User Guide.
+     * </p>
+     * </note>
+     * 
+     * @param startResourceEvaluationRequest
+     * @return A Java Future containing the result of the StartResourceEvaluation operation returned by the service.
+     * @sample AmazonConfigAsync.StartResourceEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest startResourceEvaluationRequest);
+
+    /**
+     * <p>
+     * Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply
+     * with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation
+     * context. It runs an execution against the resource details with all of the Config rules in your account that
+     * match with the specified proactive mode and resource type.
+     * </p>
+     * <note>
+     * <p>
+     * Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema.
+     * </p>
+     * <p>
+     * You can find the <a
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type
+     * schema</a> in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the
+     * following CLI commmand:
+     * <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view">Managing
+     * extensions through the CloudFormation registry</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the CloudFormation User Guide.
+     * </p>
+     * </note>
+     * 
+     * @param startResourceEvaluationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartResourceEvaluation operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.StartResourceEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest startResourceEvaluationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartResourceEvaluationRequest, StartResourceEvaluationResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops recording configurations of the Amazon Web Services resources you have selected to record in your Amazon
      * Web Services account.
      * </p>
@@ -4739,8 +5156,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
-     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
-     * with that resource are deleted as well.
+     * not specified in the request parameters, they are not changed. If existing tags are specified, however, then
+     * their values will be updated. When a resource is deleted, the tags associated with that resource are deleted as
+     * well.
      * </p>
      * 
      * @param tagResourceRequest
@@ -4754,8 +5172,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
-     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
-     * with that resource are deleted as well.
+     * not specified in the request parameters, they are not changed. If existing tags are specified, however, then
+     * their values will be updated. When a resource is deleted, the tags associated with that resource are deleted as
+     * well.
      * </p>
      * 
      * @param tagResourceRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Amazon Personalize can consume real-time user event data, such as <i>stream</i> or <i>click</i> data, and use it for
  * model training either alone or combined with historical data. For more information see <a
- * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
+ * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording item
+ * interaction events</a>.
  * </p>
  */
 @ThreadSafe
@@ -75,6 +76,72 @@ public class AmazonPersonalizeEventsAsyncClient extends AmazonPersonalizeEventsC
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionInteractionsResult> putActionInteractionsAsync(PutActionInteractionsRequest request) {
+
+        return putActionInteractionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionInteractionsResult> putActionInteractionsAsync(final PutActionInteractionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutActionInteractionsRequest, PutActionInteractionsResult> asyncHandler) {
+        final PutActionInteractionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutActionInteractionsResult>() {
+            @Override
+            public PutActionInteractionsResult call() throws Exception {
+                PutActionInteractionsResult result = null;
+
+                try {
+                    result = executePutActionInteractions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionsResult> putActionsAsync(PutActionsRequest request) {
+
+        return putActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionsResult> putActionsAsync(final PutActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutActionsRequest, PutActionsResult> asyncHandler) {
+        final PutActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutActionsResult>() {
+            @Override
+            public PutActionsResult call() throws Exception {
+                PutActionsResult result = null;
+
+                try {
+                    result = executePutActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

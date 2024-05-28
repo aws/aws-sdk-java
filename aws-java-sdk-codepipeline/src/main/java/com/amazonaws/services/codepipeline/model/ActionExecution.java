@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,8 +81,8 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     private String externalExecutionId;
     /**
      * <p>
-     * The URL of a resource external to AWS that is used when running the action (for example, an external repository
-     * URL).
+     * The URL of a resource external to Amazon Web Services that is used when running the action (for example, an
+     * external repository URL).
      * </p>
      */
     private String externalExecutionUrl;
@@ -94,7 +94,7 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
     private Integer percentComplete;
     /**
      * <p>
-     * The details of an error returned by a URL external to AWS.
+     * The details of an error returned by a URL external to Amazon Web Services.
      * </p>
      */
     private ErrorDetails errorDetails;
@@ -462,13 +462,13 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URL of a resource external to AWS that is used when running the action (for example, an external repository
-     * URL).
+     * The URL of a resource external to Amazon Web Services that is used when running the action (for example, an
+     * external repository URL).
      * </p>
      * 
      * @param externalExecutionUrl
-     *        The URL of a resource external to AWS that is used when running the action (for example, an external
-     *        repository URL).
+     *        The URL of a resource external to Amazon Web Services that is used when running the action (for example,
+     *        an external repository URL).
      */
 
     public void setExternalExecutionUrl(String externalExecutionUrl) {
@@ -477,12 +477,12 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URL of a resource external to AWS that is used when running the action (for example, an external repository
-     * URL).
+     * The URL of a resource external to Amazon Web Services that is used when running the action (for example, an
+     * external repository URL).
      * </p>
      * 
-     * @return The URL of a resource external to AWS that is used when running the action (for example, an external
-     *         repository URL).
+     * @return The URL of a resource external to Amazon Web Services that is used when running the action (for example,
+     *         an external repository URL).
      */
 
     public String getExternalExecutionUrl() {
@@ -491,13 +491,13 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The URL of a resource external to AWS that is used when running the action (for example, an external repository
-     * URL).
+     * The URL of a resource external to Amazon Web Services that is used when running the action (for example, an
+     * external repository URL).
      * </p>
      * 
      * @param externalExecutionUrl
-     *        The URL of a resource external to AWS that is used when running the action (for example, an external
-     *        repository URL).
+     *        The URL of a resource external to Amazon Web Services that is used when running the action (for example,
+     *        an external repository URL).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,11 +548,11 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an error returned by a URL external to AWS.
+     * The details of an error returned by a URL external to Amazon Web Services.
      * </p>
      * 
      * @param errorDetails
-     *        The details of an error returned by a URL external to AWS.
+     *        The details of an error returned by a URL external to Amazon Web Services.
      */
 
     public void setErrorDetails(ErrorDetails errorDetails) {
@@ -561,10 +561,10 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an error returned by a URL external to AWS.
+     * The details of an error returned by a URL external to Amazon Web Services.
      * </p>
      * 
-     * @return The details of an error returned by a URL external to AWS.
+     * @return The details of an error returned by a URL external to Amazon Web Services.
      */
 
     public ErrorDetails getErrorDetails() {
@@ -573,11 +573,11 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The details of an error returned by a URL external to AWS.
+     * The details of an error returned by a URL external to Amazon Web Services.
      * </p>
      * 
      * @param errorDetails
-     *        The details of an error returned by a URL external to AWS.
+     *        The details of an error returned by a URL external to Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

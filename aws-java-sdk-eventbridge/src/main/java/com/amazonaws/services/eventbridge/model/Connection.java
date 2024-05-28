@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The authorization type specified for the connection.
      * </p>
+     * <note>
+     * <p>
+     * OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     * </p>
+     * </note>
      */
     private String authorizationType;
     /**
@@ -260,9 +265,17 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The authorization type specified for the connection.
      * </p>
+     * <note>
+     * <p>
+     * OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     * </p>
+     * </note>
      * 
      * @param authorizationType
-     *        The authorization type specified for the connection.
+     *        The authorization type specified for the connection.</p> <note>
+     *        <p>
+     *        OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     *        </p>
      * @see ConnectionAuthorizationType
      */
 
@@ -274,8 +287,16 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The authorization type specified for the connection.
      * </p>
+     * <note>
+     * <p>
+     * OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     * </p>
+     * </note>
      * 
-     * @return The authorization type specified for the connection.
+     * @return The authorization type specified for the connection.</p> <note>
+     *         <p>
+     *         OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     *         </p>
      * @see ConnectionAuthorizationType
      */
 
@@ -287,9 +308,17 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The authorization type specified for the connection.
      * </p>
+     * <note>
+     * <p>
+     * OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     * </p>
+     * </note>
      * 
      * @param authorizationType
-     *        The authorization type specified for the connection.
+     *        The authorization type specified for the connection.</p> <note>
+     *        <p>
+     *        OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionAuthorizationType
      */
@@ -303,9 +332,17 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The authorization type specified for the connection.
      * </p>
+     * <note>
+     * <p>
+     * OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     * </p>
+     * </note>
      * 
      * @param authorizationType
-     *        The authorization type specified for the connection.
+     *        The authorization type specified for the connection.</p> <note>
+     *        <p>
+     *        OAUTH tokens are refreshed when a 401 or 407 response is returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionAuthorizationType
      */

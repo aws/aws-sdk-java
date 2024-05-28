@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class OriginationIdentityMetadata implements Serializable, Cloneable, Str
      * </p>
      */
     private java.util.List<String> numberCapabilities;
+    /**
+     * <p>
+     * The phone number in E.164 format.
+     * </p>
+     */
+    private String phoneNumber;
 
     /**
      * <p>
@@ -272,6 +278,46 @@ public class OriginationIdentityMetadata implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The phone number in E.164 format.
+     * </p>
+     * 
+     * @param phoneNumber
+     *        The phone number in E.164 format.
+     */
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * <p>
+     * The phone number in E.164 format.
+     * </p>
+     * 
+     * @return The phone number in E.164 format.
+     */
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    /**
+     * <p>
+     * The phone number in E.164 format.
+     * </p>
+     * 
+     * @param phoneNumber
+     *        The phone number in E.164 format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OriginationIdentityMetadata withPhoneNumber(String phoneNumber) {
+        setPhoneNumber(phoneNumber);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -290,7 +336,9 @@ public class OriginationIdentityMetadata implements Serializable, Cloneable, Str
         if (getIsoCountryCode() != null)
             sb.append("IsoCountryCode: ").append(getIsoCountryCode()).append(",");
         if (getNumberCapabilities() != null)
-            sb.append("NumberCapabilities: ").append(getNumberCapabilities());
+            sb.append("NumberCapabilities: ").append(getNumberCapabilities()).append(",");
+        if (getPhoneNumber() != null)
+            sb.append("PhoneNumber: ").append(getPhoneNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -321,6 +369,10 @@ public class OriginationIdentityMetadata implements Serializable, Cloneable, Str
             return false;
         if (other.getNumberCapabilities() != null && other.getNumberCapabilities().equals(this.getNumberCapabilities()) == false)
             return false;
+        if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
+            return false;
+        if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
+            return false;
         return true;
     }
 
@@ -333,6 +385,7 @@ public class OriginationIdentityMetadata implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getOriginationIdentity() == null) ? 0 : getOriginationIdentity().hashCode());
         hashCode = prime * hashCode + ((getIsoCountryCode() == null) ? 0 : getIsoCountryCode().hashCode());
         hashCode = prime * hashCode + ((getNumberCapabilities() == null) ? 0 : getNumberCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
         return hashCode;
     }
 

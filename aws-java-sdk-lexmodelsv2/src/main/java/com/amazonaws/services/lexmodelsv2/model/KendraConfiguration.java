@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex
- * searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance.
+ * Provides configuration information for the <code>AMAZON.KendraSearchIntent</code> intent. When you use this intent,
+ * Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's
+ * utterance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/KendraConfiguration" target="_top">AWS
@@ -31,15 +32,16 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to
-     * search. The index must be in the same account and Region as the Amazon Lex bot.
+     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the
+     * Amazon Lex bot.
      * </p>
      */
     private String kendraIndex;
     /**
      * <p>
-     * Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra
-     * index.
+     * Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the
+     * Amazon Kendra index.
      * </p>
      */
     private Boolean queryFilterStringEnabled;
@@ -54,13 +56,15 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to
-     * search. The index must be in the same account and Region as the Amazon Lex bot.
+     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the
+     * Amazon Lex bot.
      * </p>
      * 
      * @param kendraIndex
-     *        The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent
-     *        intent to search. The index must be in the same account and Region as the Amazon Lex bot.
+     *        The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     *        <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region
+     *        as the Amazon Lex bot.
      */
 
     public void setKendraIndex(String kendraIndex) {
@@ -69,12 +73,14 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to
-     * search. The index must be in the same account and Region as the Amazon Lex bot.
+     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the
+     * Amazon Lex bot.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent
-     *         intent to search. The index must be in the same account and Region as the Amazon Lex bot.
+     * @return The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     *         <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region
+     *         as the Amazon Lex bot.
      */
 
     public String getKendraIndex() {
@@ -83,13 +89,15 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to
-     * search. The index must be in the same account and Region as the Amazon Lex bot.
+     * The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the
+     * Amazon Lex bot.
      * </p>
      * 
      * @param kendraIndex
-     *        The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent
-     *        intent to search. The index must be in the same account and Region as the Amazon Lex bot.
+     *        The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the
+     *        <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region
+     *        as the Amazon Lex bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +108,13 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra
-     * index.
+     * Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the
+     * Amazon Kendra index.
      * </p>
      * 
      * @param queryFilterStringEnabled
-     *        Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon
-     *        Kendra index.
+     *        Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query
+     *        the Amazon Kendra index.
      */
 
     public void setQueryFilterStringEnabled(Boolean queryFilterStringEnabled) {
@@ -115,12 +123,12 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra
-     * index.
+     * Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the
+     * Amazon Kendra index.
      * </p>
      * 
-     * @return Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon
-     *         Kendra index.
+     * @return Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query
+     *         the Amazon Kendra index.
      */
 
     public Boolean getQueryFilterStringEnabled() {
@@ -129,13 +137,13 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra
-     * index.
+     * Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the
+     * Amazon Kendra index.
      * </p>
      * 
      * @param queryFilterStringEnabled
-     *        Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon
-     *        Kendra index.
+     *        Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query
+     *        the Amazon Kendra index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,12 +154,12 @@ public class KendraConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra
-     * index.
+     * Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the
+     * Amazon Kendra index.
      * </p>
      * 
-     * @return Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon
-     *         Kendra index.
+     * @return Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query
+     *         the Amazon Kendra index.
      */
 
     public Boolean isQueryFilterStringEnabled() {

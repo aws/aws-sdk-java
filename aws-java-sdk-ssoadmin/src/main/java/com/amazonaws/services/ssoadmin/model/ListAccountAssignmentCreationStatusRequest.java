@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,15 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
 
     /**
      * <p>
+     * Filters results based on the passed attribute value.
+     * </p>
+     */
+    private OperationStatusFilter filter;
+    /**
+     * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String instanceArn;
@@ -46,24 +52,59 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * Filters results based on the passed attribute value.
      * </p>
+     * 
+     * @param filter
+     *        Filters results based on the passed attribute value.
      */
-    private OperationStatusFilter filter;
+
+    public void setFilter(OperationStatusFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * Filters results based on the passed attribute value.
+     * </p>
+     * 
+     * @return Filters results based on the passed attribute value.
+     */
+
+    public OperationStatusFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * Filters results based on the passed attribute value.
+     * </p>
+     * 
+     * @param filter
+     *        Filters results based on the passed attribute value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAccountAssignmentCreationStatusRequest withFilter(OperationStatusFilter filter) {
+        setFilter(filter);
+        return this;
+    }
 
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -73,13 +114,14 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -89,14 +131,15 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,46 +235,6 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
     }
 
     /**
-     * <p>
-     * Filters results based on the passed attribute value.
-     * </p>
-     * 
-     * @param filter
-     *        Filters results based on the passed attribute value.
-     */
-
-    public void setFilter(OperationStatusFilter filter) {
-        this.filter = filter;
-    }
-
-    /**
-     * <p>
-     * Filters results based on the passed attribute value.
-     * </p>
-     * 
-     * @return Filters results based on the passed attribute value.
-     */
-
-    public OperationStatusFilter getFilter() {
-        return this.filter;
-    }
-
-    /**
-     * <p>
-     * Filters results based on the passed attribute value.
-     * </p>
-     * 
-     * @param filter
-     *        Filters results based on the passed attribute value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListAccountAssignmentCreationStatusRequest withFilter(OperationStatusFilter filter) {
-        setFilter(filter);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,14 +246,14 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -265,6 +268,10 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
         if (obj instanceof ListAccountAssignmentCreationStatusRequest == false)
             return false;
         ListAccountAssignmentCreationStatusRequest other = (ListAccountAssignmentCreationStatusRequest) obj;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
@@ -277,10 +284,6 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getFilter() == null ^ this.getFilter() == null)
-            return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
-            return false;
         return true;
     }
 
@@ -289,10 +292,10 @@ public class ListAccountAssignmentCreationStatusRequest extends com.amazonaws.Am
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

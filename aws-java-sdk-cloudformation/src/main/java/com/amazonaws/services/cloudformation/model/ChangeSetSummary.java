@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,6 +104,12 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * </p>
      */
     private String rootChangeSetId;
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     */
+    private Boolean importExistingResources;
 
     /**
      * <p>
@@ -710,6 +716,58 @@ public class ChangeSetSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * 
+     * @param importExistingResources
+     *        Indicates if the change set imports resources that already exist.
+     */
+
+    public void setImportExistingResources(Boolean importExistingResources) {
+        this.importExistingResources = importExistingResources;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * 
+     * @return Indicates if the change set imports resources that already exist.
+     */
+
+    public Boolean getImportExistingResources() {
+        return this.importExistingResources;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * 
+     * @param importExistingResources
+     *        Indicates if the change set imports resources that already exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChangeSetSummary withImportExistingResources(Boolean importExistingResources) {
+        setImportExistingResources(importExistingResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the change set imports resources that already exist.
+     * </p>
+     * 
+     * @return Indicates if the change set imports resources that already exist.
+     */
+
+    public Boolean isImportExistingResources() {
+        return this.importExistingResources;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -744,7 +802,9 @@ public class ChangeSetSummary implements Serializable, Cloneable {
         if (getParentChangeSetId() != null)
             sb.append("ParentChangeSetId: ").append(getParentChangeSetId()).append(",");
         if (getRootChangeSetId() != null)
-            sb.append("RootChangeSetId: ").append(getRootChangeSetId());
+            sb.append("RootChangeSetId: ").append(getRootChangeSetId()).append(",");
+        if (getImportExistingResources() != null)
+            sb.append("ImportExistingResources: ").append(getImportExistingResources());
         sb.append("}");
         return sb.toString();
     }
@@ -807,6 +867,10 @@ public class ChangeSetSummary implements Serializable, Cloneable {
             return false;
         if (other.getRootChangeSetId() != null && other.getRootChangeSetId().equals(this.getRootChangeSetId()) == false)
             return false;
+        if (other.getImportExistingResources() == null ^ this.getImportExistingResources() == null)
+            return false;
+        if (other.getImportExistingResources() != null && other.getImportExistingResources().equals(this.getImportExistingResources()) == false)
+            return false;
         return true;
     }
 
@@ -827,6 +891,7 @@ public class ChangeSetSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIncludeNestedStacks() == null) ? 0 : getIncludeNestedStacks().hashCode());
         hashCode = prime * hashCode + ((getParentChangeSetId() == null) ? 0 : getParentChangeSetId().hashCode());
         hashCode = prime * hashCode + ((getRootChangeSetId() == null) ? 0 : getRootChangeSetId().hashCode());
+        hashCode = prime * hashCode + ((getImportExistingResources() == null) ? 0 : getImportExistingResources().hashCode());
         return hashCode;
     }
 

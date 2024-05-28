@@ -1,0 +1,292 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iot.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * A summary of information about a software package.
+ * </p>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The name for the target software package.
+     * </p>
+     */
+    private String packageName;
+    /**
+     * <p>
+     * The name of the default package version.
+     * </p>
+     */
+    private String defaultVersionName;
+    /**
+     * <p>
+     * The date that the package was created.
+     * </p>
+     */
+    private java.util.Date creationDate;
+    /**
+     * <p>
+     * The date that the package was last updated.
+     * </p>
+     */
+    private java.util.Date lastModifiedDate;
+
+    /**
+     * <p>
+     * The name for the target software package.
+     * </p>
+     * 
+     * @param packageName
+     *        The name for the target software package.
+     */
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    /**
+     * <p>
+     * The name for the target software package.
+     * </p>
+     * 
+     * @return The name for the target software package.
+     */
+
+    public String getPackageName() {
+        return this.packageName;
+    }
+
+    /**
+     * <p>
+     * The name for the target software package.
+     * </p>
+     * 
+     * @param packageName
+     *        The name for the target software package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageSummary withPackageName(String packageName) {
+        setPackageName(packageName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the default package version.
+     * </p>
+     * 
+     * @param defaultVersionName
+     *        The name of the default package version.
+     */
+
+    public void setDefaultVersionName(String defaultVersionName) {
+        this.defaultVersionName = defaultVersionName;
+    }
+
+    /**
+     * <p>
+     * The name of the default package version.
+     * </p>
+     * 
+     * @return The name of the default package version.
+     */
+
+    public String getDefaultVersionName() {
+        return this.defaultVersionName;
+    }
+
+    /**
+     * <p>
+     * The name of the default package version.
+     * </p>
+     * 
+     * @param defaultVersionName
+     *        The name of the default package version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageSummary withDefaultVersionName(String defaultVersionName) {
+        setDefaultVersionName(defaultVersionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date that the package was created.
+     * </p>
+     * 
+     * @param creationDate
+     *        The date that the package was created.
+     */
+
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    /**
+     * <p>
+     * The date that the package was created.
+     * </p>
+     * 
+     * @return The date that the package was created.
+     */
+
+    public java.util.Date getCreationDate() {
+        return this.creationDate;
+    }
+
+    /**
+     * <p>
+     * The date that the package was created.
+     * </p>
+     * 
+     * @param creationDate
+     *        The date that the package was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageSummary withCreationDate(java.util.Date creationDate) {
+        setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date that the package was last updated.
+     * </p>
+     * 
+     * @param lastModifiedDate
+     *        The date that the package was last updated.
+     */
+
+    public void setLastModifiedDate(java.util.Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    /**
+     * <p>
+     * The date that the package was last updated.
+     * </p>
+     * 
+     * @return The date that the package was last updated.
+     */
+
+    public java.util.Date getLastModifiedDate() {
+        return this.lastModifiedDate;
+    }
+
+    /**
+     * <p>
+     * The date that the package was last updated.
+     * </p>
+     * 
+     * @param lastModifiedDate
+     *        The date that the package was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageSummary withLastModifiedDate(java.util.Date lastModifiedDate) {
+        setLastModifiedDate(lastModifiedDate);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getPackageName() != null)
+            sb.append("PackageName: ").append(getPackageName()).append(",");
+        if (getDefaultVersionName() != null)
+            sb.append("DefaultVersionName: ").append(getDefaultVersionName()).append(",");
+        if (getCreationDate() != null)
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getLastModifiedDate() != null)
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PackageSummary == false)
+            return false;
+        PackageSummary other = (PackageSummary) obj;
+        if (other.getPackageName() == null ^ this.getPackageName() == null)
+            return false;
+        if (other.getPackageName() != null && other.getPackageName().equals(this.getPackageName()) == false)
+            return false;
+        if (other.getDefaultVersionName() == null ^ this.getDefaultVersionName() == null)
+            return false;
+        if (other.getDefaultVersionName() != null && other.getDefaultVersionName().equals(this.getDefaultVersionName()) == false)
+            return false;
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null)
+            return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
+            return false;
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
+        hashCode = prime * hashCode + ((getDefaultVersionName() == null) ? 0 : getDefaultVersionName().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public PackageSummary clone() {
+        try {
+            return (PackageSummary) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.PackageSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

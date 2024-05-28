@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     private String modelPackageDescription;
     /**
      * <p>
-     * Specifies details about inference jobs that can be run with models based on this model package, including the
-     * following:
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
      * </p>
      * <ul>
      * <li>
@@ -101,6 +101,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      */
     private java.util.List<Tag> tags;
     /**
@@ -131,22 +135,6 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     private String clientToken;
     /**
      * <p>
-     * The metadata properties associated with the model package versions.
-     * </p>
-     */
-    private java.util.Map<String, String> customerMetadataProperties;
-    /**
-     * <p>
-     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
-     * more information, see the topic on <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
-     * Guide</i>.
-     * </p>
-     */
-    private DriftCheckBaselines driftCheckBaselines;
-    /**
-     * <p>
      * The machine learning domain of your model package and its components. Common machine learning domains include
      * computer vision and natural language processing.
      * </p>
@@ -167,11 +155,30 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     private String task;
     /**
      * <p>
-     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a
-     * single gzip compressed tar archive (.tar.gz suffix).
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally
+     * used in the load test. Each file in the archive must satisfy the size constraints of the <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     * >InvokeEndpoint</a> call.
      * </p>
      */
     private String samplePayloadUrl;
+    /**
+     * <p>
+     * The metadata properties associated with the model package versions.
+     * </p>
+     */
+    private java.util.Map<String, String> customerMetadataProperties;
+    /**
+     * <p>
+     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
+     * more information, see the topic on <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
+     * Guide</i>.
+     * </p>
+     */
+    private DriftCheckBaselines driftCheckBaselines;
     /**
      * <p>
      * An array of additional Inference Specification objects. Each additional Inference Specification specifies
@@ -180,6 +187,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<AdditionalInferenceSpecificationDefinition> additionalInferenceSpecifications;
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     */
+    private String skipModelValidation;
+    /**
+     * <p>
+     * The URI of the source for the model package. If you want to clone a model package, set it to the model package
+     * Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     * </p>
+     */
+    private String sourceUri;
 
     /**
      * <p>
@@ -339,8 +359,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies details about inference jobs that can be run with models based on this model package, including the
-     * following:
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
      * </p>
      * <ul>
      * <li>
@@ -361,8 +381,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param inferenceSpecification
-     *        Specifies details about inference jobs that can be run with models based on this model package, including
-     *        the following:</p>
+     *        Specifies details about inference jobs that you can run with models based on this model package, including
+     *        the following information:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -388,8 +408,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies details about inference jobs that can be run with models based on this model package, including the
-     * following:
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
      * </p>
      * <ul>
      * <li>
@@ -409,8 +429,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return Specifies details about inference jobs that can be run with models based on this model package, including
-     *         the following:</p>
+     * @return Specifies details about inference jobs that you can run with models based on this model package,
+     *         including the following information:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -436,8 +456,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies details about inference jobs that can be run with models based on this model package, including the
-     * following:
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
      * </p>
      * <ul>
      * <li>
@@ -458,8 +478,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param inferenceSpecification
-     *        Specifies details about inference jobs that can be run with models based on this model package, including
-     *        the following:</p>
+     *        Specifies details about inference jobs that you can run with models based on this model package, including
+     *        the following information:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -643,10 +663,18 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @return A list of key value pairs associated with the model. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *         <p>
+     *         If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *         specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *         <code>tag</code> argument.
      */
 
     public java.util.List<Tag> getTags() {
@@ -659,11 +687,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -682,6 +718,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
@@ -690,7 +730,11 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -710,11 +754,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -938,6 +990,198 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The machine learning domain of your model package and its components. Common machine learning domains include
+     * computer vision and natural language processing.
+     * </p>
+     * 
+     * @param domain
+     *        The machine learning domain of your model package and its components. Common machine learning domains
+     *        include computer vision and natural language processing.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * The machine learning domain of your model package and its components. Common machine learning domains include
+     * computer vision and natural language processing.
+     * </p>
+     * 
+     * @return The machine learning domain of your model package and its components. Common machine learning domains
+     *         include computer vision and natural language processing.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * The machine learning domain of your model package and its components. Common machine learning domains include
+     * computer vision and natural language processing.
+     * </p>
+     * 
+     * @param domain
+     *        The machine learning domain of your model package and its components. Common machine learning domains
+     *        include computer vision and natural language processing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
+     * </p>
+     * 
+     * @param task
+     *        The machine learning task your model package accomplishes. Common machine learning tasks include object
+     *        detection and image classification. The following tasks are supported by Inference Recommender:
+     *        <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     *        <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     *        <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+     *        <p>
+     *        Specify "OTHER" if none of the tasks listed fit your use case.
+     */
+
+    public void setTask(String task) {
+        this.task = task;
+    }
+
+    /**
+     * <p>
+     * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
+     * </p>
+     * 
+     * @return The machine learning task your model package accomplishes. Common machine learning tasks include object
+     *         detection and image classification. The following tasks are supported by Inference Recommender:
+     *         <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     *         <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     *         <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+     *         <p>
+     *         Specify "OTHER" if none of the tasks listed fit your use case.
+     */
+
+    public String getTask() {
+        return this.task;
+    }
+
+    /**
+     * <p>
+     * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
+     * and image classification. The following tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+     * </p>
+     * <p>
+     * Specify "OTHER" if none of the tasks listed fit your use case.
+     * </p>
+     * 
+     * @param task
+     *        The machine learning task your model package accomplishes. Common machine learning tasks include object
+     *        detection and image classification. The following tasks are supported by Inference Recommender:
+     *        <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
+     *        <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     *        <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
+     *        <p>
+     *        Specify "OTHER" if none of the tasks listed fit your use case.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withTask(String task) {
+        setTask(task);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally
+     * used in the load test. Each file in the archive must satisfy the size constraints of the <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     * >InvokeEndpoint</a> call.
+     * </p>
+     * 
+     * @param samplePayloadUrl
+     *        The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must
+     *        point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that
+     *        are all equally used in the load test. Each file in the archive must satisfy the size constraints of the
+     *        <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     *        >InvokeEndpoint</a> call.
+     */
+
+    public void setSamplePayloadUrl(String samplePayloadUrl) {
+        this.samplePayloadUrl = samplePayloadUrl;
+    }
+
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally
+     * used in the load test. Each file in the archive must satisfy the size constraints of the <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     * >InvokeEndpoint</a> call.
+     * </p>
+     * 
+     * @return The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must
+     *         point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that
+     *         are all equally used in the load test. Each file in the archive must satisfy the size constraints of the
+     *         <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     *         >InvokeEndpoint</a> call.
+     */
+
+    public String getSamplePayloadUrl() {
+        return this.samplePayloadUrl;
+    }
+
+    /**
+     * <p>
+     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a
+     * single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally
+     * used in the load test. Each file in the archive must satisfy the size constraints of the <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     * >InvokeEndpoint</a> call.
+     * </p>
+     * 
+     * @param samplePayloadUrl
+     *        The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must
+     *        point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that
+     *        are all equally used in the load test. Each file in the archive must satisfy the size constraints of the
+     *        <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax"
+     *        >InvokeEndpoint</a> call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withSamplePayloadUrl(String samplePayloadUrl) {
+        setSamplePayloadUrl(samplePayloadUrl);
+        return this;
+    }
+
+    /**
+     * <p>
      * The metadata properties associated with the model package versions.
      * </p>
      * 
@@ -1070,177 +1314,6 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The machine learning domain of your model package and its components. Common machine learning domains include
-     * computer vision and natural language processing.
-     * </p>
-     * 
-     * @param domain
-     *        The machine learning domain of your model package and its components. Common machine learning domains
-     *        include computer vision and natural language processing.
-     */
-
-    public void setDomain(String domain) {
-        this.domain = domain;
-    }
-
-    /**
-     * <p>
-     * The machine learning domain of your model package and its components. Common machine learning domains include
-     * computer vision and natural language processing.
-     * </p>
-     * 
-     * @return The machine learning domain of your model package and its components. Common machine learning domains
-     *         include computer vision and natural language processing.
-     */
-
-    public String getDomain() {
-        return this.domain;
-    }
-
-    /**
-     * <p>
-     * The machine learning domain of your model package and its components. Common machine learning domains include
-     * computer vision and natural language processing.
-     * </p>
-     * 
-     * @param domain
-     *        The machine learning domain of your model package and its components. Common machine learning domains
-     *        include computer vision and natural language processing.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateModelPackageRequest withDomain(String domain) {
-        setDomain(domain);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification. The following tasks are supported by Inference Recommender:
-     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
-     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
-     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
-     * </p>
-     * <p>
-     * Specify "OTHER" if none of the tasks listed fit your use case.
-     * </p>
-     * 
-     * @param task
-     *        The machine learning task your model package accomplishes. Common machine learning tasks include object
-     *        detection and image classification. The following tasks are supported by Inference Recommender:
-     *        <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
-     *        <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
-     *        <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
-     *        <p>
-     *        Specify "OTHER" if none of the tasks listed fit your use case.
-     */
-
-    public void setTask(String task) {
-        this.task = task;
-    }
-
-    /**
-     * <p>
-     * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification. The following tasks are supported by Inference Recommender:
-     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
-     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
-     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
-     * </p>
-     * <p>
-     * Specify "OTHER" if none of the tasks listed fit your use case.
-     * </p>
-     * 
-     * @return The machine learning task your model package accomplishes. Common machine learning tasks include object
-     *         detection and image classification. The following tasks are supported by Inference Recommender:
-     *         <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
-     *         <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
-     *         <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
-     *         <p>
-     *         Specify "OTHER" if none of the tasks listed fit your use case.
-     */
-
-    public String getTask() {
-        return this.task;
-    }
-
-    /**
-     * <p>
-     * The machine learning task your model package accomplishes. Common machine learning tasks include object detection
-     * and image classification. The following tasks are supported by Inference Recommender:
-     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
-     * <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
-     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.
-     * </p>
-     * <p>
-     * Specify "OTHER" if none of the tasks listed fit your use case.
-     * </p>
-     * 
-     * @param task
-     *        The machine learning task your model package accomplishes. Common machine learning tasks include object
-     *        detection and image classification. The following tasks are supported by Inference Recommender:
-     *        <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> | <code>"TEXT_GENERATION"</code> |
-     *        <code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
-     *        <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p>
-     *        <p>
-     *        Specify "OTHER" if none of the tasks listed fit your use case.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateModelPackageRequest withTask(String task) {
-        setTask(task);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a
-     * single gzip compressed tar archive (.tar.gz suffix).
-     * </p>
-     * 
-     * @param samplePayloadUrl
-     *        The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must
-     *        point to a single gzip compressed tar archive (.tar.gz suffix).
-     */
-
-    public void setSamplePayloadUrl(String samplePayloadUrl) {
-        this.samplePayloadUrl = samplePayloadUrl;
-    }
-
-    /**
-     * <p>
-     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a
-     * single gzip compressed tar archive (.tar.gz suffix).
-     * </p>
-     * 
-     * @return The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must
-     *         point to a single gzip compressed tar archive (.tar.gz suffix).
-     */
-
-    public String getSamplePayloadUrl() {
-        return this.samplePayloadUrl;
-    }
-
-    /**
-     * <p>
-     * The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a
-     * single gzip compressed tar archive (.tar.gz suffix).
-     * </p>
-     * 
-     * @param samplePayloadUrl
-     *        The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must
-     *        point to a single gzip compressed tar archive (.tar.gz suffix).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateModelPackageRequest withSamplePayloadUrl(String samplePayloadUrl) {
-        setSamplePayloadUrl(samplePayloadUrl);
-        return this;
-    }
-
-    /**
-     * <p>
      * An array of additional Inference Specification objects. Each additional Inference Specification specifies
      * artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo
      * to store the compiled artifacts.
@@ -1327,6 +1400,111 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public void setSkipModelValidation(String skipModelValidation) {
+        this.skipModelValidation = skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @return Indicates if you want to skip model validation.
+     * @see SkipModelValidation
+     */
+
+    public String getSkipModelValidation() {
+        return this.skipModelValidation;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public CreateModelPackageRequest withSkipModelValidation(String skipModelValidation) {
+        setSkipModelValidation(skipModelValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if you want to skip model validation.
+     * </p>
+     * 
+     * @param skipModelValidation
+     *        Indicates if you want to skip model validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkipModelValidation
+     */
+
+    public CreateModelPackageRequest withSkipModelValidation(SkipModelValidation skipModelValidation) {
+        this.skipModelValidation = skipModelValidation.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package. If you want to clone a model package, set it to the model package
+     * Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     * </p>
+     * 
+     * @param sourceUri
+     *        The URI of the source for the model package. If you want to clone a model package, set it to the model
+     *        package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     */
+
+    public void setSourceUri(String sourceUri) {
+        this.sourceUri = sourceUri;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package. If you want to clone a model package, set it to the model package
+     * Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     * </p>
+     * 
+     * @return The URI of the source for the model package. If you want to clone a model package, set it to the model
+     *         package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     */
+
+    public String getSourceUri() {
+        return this.sourceUri;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package. If you want to clone a model package, set it to the model package
+     * Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     * </p>
+     * 
+     * @param sourceUri
+     *        The URI of the source for the model package. If you want to clone a model package, set it to the model
+     *        package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withSourceUri(String sourceUri) {
+        setSourceUri(sourceUri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1362,18 +1540,22 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("ModelMetrics: ").append(getModelMetrics()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getCustomerMetadataProperties() != null)
-            sb.append("CustomerMetadataProperties: ").append(getCustomerMetadataProperties()).append(",");
-        if (getDriftCheckBaselines() != null)
-            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getTask() != null)
             sb.append("Task: ").append(getTask()).append(",");
         if (getSamplePayloadUrl() != null)
             sb.append("SamplePayloadUrl: ").append(getSamplePayloadUrl()).append(",");
+        if (getCustomerMetadataProperties() != null)
+            sb.append("CustomerMetadataProperties: ").append(getCustomerMetadataProperties()).append(",");
+        if (getDriftCheckBaselines() != null)
+            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines()).append(",");
         if (getAdditionalInferenceSpecifications() != null)
-            sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications());
+            sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications()).append(",");
+        if (getSkipModelValidation() != null)
+            sb.append("SkipModelValidation: ").append(getSkipModelValidation()).append(",");
+        if (getSourceUri() != null)
+            sb.append("SourceUri: ").append(getSourceUri());
         sb.append("}");
         return sb.toString();
     }
@@ -1436,14 +1618,6 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getCustomerMetadataProperties() == null ^ this.getCustomerMetadataProperties() == null)
-            return false;
-        if (other.getCustomerMetadataProperties() != null && other.getCustomerMetadataProperties().equals(this.getCustomerMetadataProperties()) == false)
-            return false;
-        if (other.getDriftCheckBaselines() == null ^ this.getDriftCheckBaselines() == null)
-            return false;
-        if (other.getDriftCheckBaselines() != null && other.getDriftCheckBaselines().equals(this.getDriftCheckBaselines()) == false)
-            return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
@@ -1456,10 +1630,26 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSamplePayloadUrl() != null && other.getSamplePayloadUrl().equals(this.getSamplePayloadUrl()) == false)
             return false;
+        if (other.getCustomerMetadataProperties() == null ^ this.getCustomerMetadataProperties() == null)
+            return false;
+        if (other.getCustomerMetadataProperties() != null && other.getCustomerMetadataProperties().equals(this.getCustomerMetadataProperties()) == false)
+            return false;
+        if (other.getDriftCheckBaselines() == null ^ this.getDriftCheckBaselines() == null)
+            return false;
+        if (other.getDriftCheckBaselines() != null && other.getDriftCheckBaselines().equals(this.getDriftCheckBaselines()) == false)
+            return false;
         if (other.getAdditionalInferenceSpecifications() == null ^ this.getAdditionalInferenceSpecifications() == null)
             return false;
         if (other.getAdditionalInferenceSpecifications() != null
                 && other.getAdditionalInferenceSpecifications().equals(this.getAdditionalInferenceSpecifications()) == false)
+            return false;
+        if (other.getSkipModelValidation() == null ^ this.getSkipModelValidation() == null)
+            return false;
+        if (other.getSkipModelValidation() != null && other.getSkipModelValidation().equals(this.getSkipModelValidation()) == false)
+            return false;
+        if (other.getSourceUri() == null ^ this.getSourceUri() == null)
+            return false;
+        if (other.getSourceUri() != null && other.getSourceUri().equals(this.getSourceUri()) == false)
             return false;
         return true;
     }
@@ -1481,12 +1671,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getModelMetrics() == null) ? 0 : getModelMetrics().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
-        hashCode = prime * hashCode + ((getDriftCheckBaselines() == null) ? 0 : getDriftCheckBaselines().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getSamplePayloadUrl() == null) ? 0 : getSamplePayloadUrl().hashCode());
+        hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
+        hashCode = prime * hashCode + ((getDriftCheckBaselines() == null) ? 0 : getDriftCheckBaselines().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInferenceSpecifications() == null) ? 0 : getAdditionalInferenceSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getSkipModelValidation() == null) ? 0 : getSkipModelValidation().hashCode());
+        hashCode = prime * hashCode + ((getSourceUri() == null) ? 0 : getSourceUri().hashCode());
         return hashCode;
     }
 

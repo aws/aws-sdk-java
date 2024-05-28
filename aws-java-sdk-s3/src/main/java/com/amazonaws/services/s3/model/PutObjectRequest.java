@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -248,7 +248,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
 
     @Override
     @SuppressWarnings("unchecked")
-    public PutObjectRequest  withFile(File file) {
+    public PutObjectRequest withFile(File file) {
         return super.withFile(file);
     }
 
@@ -260,7 +260,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
 
     @Override
     @SuppressWarnings("unchecked")
-    public PutObjectRequest  withCannedAcl(CannedAccessControlList cannedAcl) {
+    public PutObjectRequest withCannedAcl(CannedAccessControlList cannedAcl) {
         return super.withCannedAcl(cannedAcl);
     }
 
@@ -273,7 +273,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
 
     @Override
     @SuppressWarnings("unchecked")
-    public PutObjectRequest  withInputStream(InputStream inputStream) {
+    public PutObjectRequest withInputStream(InputStream inputStream) {
         return super.withInputStream(inputStream);
     }
 

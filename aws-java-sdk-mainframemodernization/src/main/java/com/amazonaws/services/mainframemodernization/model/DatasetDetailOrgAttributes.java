@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,18 @@ public class DatasetDetailOrgAttributes implements Serializable, Cloneable, Stru
      * </p>
      */
     private GdgDetailAttributes gdg;
+    /**
+     * <p>
+     * The details of a PO type data set.
+     * </p>
+     */
+    private PoDetailAttributes po;
+    /**
+     * <p>
+     * The details of a PS type data set.
+     * </p>
+     */
+    private PsDetailAttributes ps;
     /**
      * <p>
      * The details of a VSAM data set.
@@ -79,6 +91,86 @@ public class DatasetDetailOrgAttributes implements Serializable, Cloneable, Stru
 
     public DatasetDetailOrgAttributes withGdg(GdgDetailAttributes gdg) {
         setGdg(gdg);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of a PO type data set.
+     * </p>
+     * 
+     * @param po
+     *        The details of a PO type data set.
+     */
+
+    public void setPo(PoDetailAttributes po) {
+        this.po = po;
+    }
+
+    /**
+     * <p>
+     * The details of a PO type data set.
+     * </p>
+     * 
+     * @return The details of a PO type data set.
+     */
+
+    public PoDetailAttributes getPo() {
+        return this.po;
+    }
+
+    /**
+     * <p>
+     * The details of a PO type data set.
+     * </p>
+     * 
+     * @param po
+     *        The details of a PO type data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetDetailOrgAttributes withPo(PoDetailAttributes po) {
+        setPo(po);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of a PS type data set.
+     * </p>
+     * 
+     * @param ps
+     *        The details of a PS type data set.
+     */
+
+    public void setPs(PsDetailAttributes ps) {
+        this.ps = ps;
+    }
+
+    /**
+     * <p>
+     * The details of a PS type data set.
+     * </p>
+     * 
+     * @return The details of a PS type data set.
+     */
+
+    public PsDetailAttributes getPs() {
+        return this.ps;
+    }
+
+    /**
+     * <p>
+     * The details of a PS type data set.
+     * </p>
+     * 
+     * @param ps
+     *        The details of a PS type data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetDetailOrgAttributes withPs(PsDetailAttributes ps) {
+        setPs(ps);
         return this;
     }
 
@@ -136,6 +228,10 @@ public class DatasetDetailOrgAttributes implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getGdg() != null)
             sb.append("Gdg: ").append(getGdg()).append(",");
+        if (getPo() != null)
+            sb.append("Po: ").append(getPo()).append(",");
+        if (getPs() != null)
+            sb.append("Ps: ").append(getPs()).append(",");
         if (getVsam() != null)
             sb.append("Vsam: ").append(getVsam());
         sb.append("}");
@@ -156,6 +252,14 @@ public class DatasetDetailOrgAttributes implements Serializable, Cloneable, Stru
             return false;
         if (other.getGdg() != null && other.getGdg().equals(this.getGdg()) == false)
             return false;
+        if (other.getPo() == null ^ this.getPo() == null)
+            return false;
+        if (other.getPo() != null && other.getPo().equals(this.getPo()) == false)
+            return false;
+        if (other.getPs() == null ^ this.getPs() == null)
+            return false;
+        if (other.getPs() != null && other.getPs().equals(this.getPs()) == false)
+            return false;
         if (other.getVsam() == null ^ this.getVsam() == null)
             return false;
         if (other.getVsam() != null && other.getVsam().equals(this.getVsam()) == false)
@@ -169,6 +273,8 @@ public class DatasetDetailOrgAttributes implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGdg() == null) ? 0 : getGdg().hashCode());
+        hashCode = prime * hashCode + ((getPo() == null) ? 0 : getPo().hashCode());
+        hashCode = prime * hashCode + ((getPs() == null) ? 0 : getPs().hashCode());
         hashCode = prime * hashCode + ((getVsam() == null) ? 0 : getVsam().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,12 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
     private String deploymentStatusMessage;
     /**
      * <p>
+     * The ID of the last attempted deployment of this service pipeline.
+     * </p>
+     */
+    private String lastAttemptedDeploymentId;
+    /**
+     * <p>
      * The time when a deployment of the service pipeline was last attempted.
      * </p>
      */
@@ -64,6 +70,12 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastDeploymentSucceededAt;
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service pipeline.
+     * </p>
+     */
+    private String lastSucceededDeploymentId;
     /**
      * <p>
      * The service spec that was used to create the service pipeline.
@@ -270,6 +282,46 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The ID of the last attempted deployment of this service pipeline.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this service pipeline.
+     */
+
+    public void setLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        this.lastAttemptedDeploymentId = lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this service pipeline.
+     * </p>
+     * 
+     * @return The ID of the last attempted deployment of this service pipeline.
+     */
+
+    public String getLastAttemptedDeploymentId() {
+        return this.lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this service pipeline.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this service pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServicePipeline withLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        setLastAttemptedDeploymentId(lastAttemptedDeploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when a deployment of the service pipeline was last attempted.
      * </p>
      * 
@@ -345,6 +397,46 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
 
     public ServicePipeline withLastDeploymentSucceededAt(java.util.Date lastDeploymentSucceededAt) {
         setLastDeploymentSucceededAt(lastDeploymentSucceededAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service pipeline.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this service pipeline.
+     */
+
+    public void setLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        this.lastSucceededDeploymentId = lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service pipeline.
+     * </p>
+     * 
+     * @return The ID of the last successful deployment of this service pipeline.
+     */
+
+    public String getLastSucceededDeploymentId() {
+        return this.lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this service pipeline.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this service pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServicePipeline withLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        setLastSucceededDeploymentId(lastSucceededDeploymentId);
         return this;
     }
 
@@ -528,10 +620,14 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
             sb.append("DeploymentStatus: ").append(getDeploymentStatus()).append(",");
         if (getDeploymentStatusMessage() != null)
             sb.append("DeploymentStatusMessage: ").append("***Sensitive Data Redacted***").append(",");
+        if (getLastAttemptedDeploymentId() != null)
+            sb.append("LastAttemptedDeploymentId: ").append(getLastAttemptedDeploymentId()).append(",");
         if (getLastDeploymentAttemptedAt() != null)
             sb.append("LastDeploymentAttemptedAt: ").append(getLastDeploymentAttemptedAt()).append(",");
         if (getLastDeploymentSucceededAt() != null)
             sb.append("LastDeploymentSucceededAt: ").append(getLastDeploymentSucceededAt()).append(",");
+        if (getLastSucceededDeploymentId() != null)
+            sb.append("LastSucceededDeploymentId: ").append(getLastSucceededDeploymentId()).append(",");
         if (getSpec() != null)
             sb.append("Spec: ").append("***Sensitive Data Redacted***").append(",");
         if (getTemplateMajorVersion() != null)
@@ -570,6 +666,10 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDeploymentStatusMessage() != null && other.getDeploymentStatusMessage().equals(this.getDeploymentStatusMessage()) == false)
             return false;
+        if (other.getLastAttemptedDeploymentId() == null ^ this.getLastAttemptedDeploymentId() == null)
+            return false;
+        if (other.getLastAttemptedDeploymentId() != null && other.getLastAttemptedDeploymentId().equals(this.getLastAttemptedDeploymentId()) == false)
+            return false;
         if (other.getLastDeploymentAttemptedAt() == null ^ this.getLastDeploymentAttemptedAt() == null)
             return false;
         if (other.getLastDeploymentAttemptedAt() != null && other.getLastDeploymentAttemptedAt().equals(this.getLastDeploymentAttemptedAt()) == false)
@@ -577,6 +677,10 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
         if (other.getLastDeploymentSucceededAt() == null ^ this.getLastDeploymentSucceededAt() == null)
             return false;
         if (other.getLastDeploymentSucceededAt() != null && other.getLastDeploymentSucceededAt().equals(this.getLastDeploymentSucceededAt()) == false)
+            return false;
+        if (other.getLastSucceededDeploymentId() == null ^ this.getLastSucceededDeploymentId() == null)
+            return false;
+        if (other.getLastSucceededDeploymentId() != null && other.getLastSucceededDeploymentId().equals(this.getLastSucceededDeploymentId()) == false)
             return false;
         if (other.getSpec() == null ^ this.getSpec() == null)
             return false;
@@ -606,8 +710,10 @@ public class ServicePipeline implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatusMessage() == null) ? 0 : getDeploymentStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeploymentId() == null) ? 0 : getLastAttemptedDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentAttemptedAt() == null) ? 0 : getLastDeploymentAttemptedAt().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentSucceededAt() == null) ? 0 : getLastDeploymentSucceededAt().hashCode());
+        hashCode = prime * hashCode + ((getLastSucceededDeploymentId() == null) ? 0 : getLastSucceededDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
         hashCode = prime * hashCode + ((getTemplateMajorVersion() == null) ? 0 : getTemplateMajorVersion().hashCode());
         hashCode = prime * hashCode + ((getTemplateMinorVersion() == null) ? 0 : getTemplateMinorVersion().hashCode());

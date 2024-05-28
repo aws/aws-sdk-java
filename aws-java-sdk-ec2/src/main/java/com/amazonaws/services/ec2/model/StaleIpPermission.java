@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,15 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is
+     * the ICMP type or -1 (all ICMP types).
      * </p>
      */
     private Integer fromPort;
     /**
      * <p>
-     * The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see
+     * <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
      * </p>
      */
     private String ipProtocol;
@@ -54,8 +54,8 @@ public class StaleIpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> prefixListIds;
     /**
      * <p>
-     * The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the
+     * ICMP code or -1 (all ICMP codes).
      * </p>
      */
     private Integer toPort;
@@ -69,13 +69,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is
+     * the ICMP type or -1 (all ICMP types).
      * </p>
      * 
      * @param fromPort
-     *        The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of
-     *        <code>-1</code> indicates all ICMP types.
+     *        If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6,
+     *        this is the ICMP type or -1 (all ICMP types).
      */
 
     public void setFromPort(Integer fromPort) {
@@ -84,12 +84,12 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is
+     * the ICMP type or -1 (all ICMP types).
      * </p>
      * 
-     * @return The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of
-     *         <code>-1</code> indicates all ICMP types.
+     * @return If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6,
+     *         this is the ICMP type or -1 (all ICMP types).
      */
 
     public Integer getFromPort() {
@@ -98,13 +98,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6, this is
+     * the ICMP type or -1 (all ICMP types).
      * </p>
      * 
      * @param fromPort
-     *        The start of the port range for the TCP and UDP protocols, or an ICMP type number. A value of
-     *        <code>-1</code> indicates all ICMP types.
+     *        If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP or ICMPv6,
+     *        this is the ICMP type or -1 (all ICMP types).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,13 +115,14 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see
+     * <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
      * </p>
      * 
      * @param ipProtocol
-     *        The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or
+     *        number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *        Numbers)</a>.
      */
 
     public void setIpProtocol(String ipProtocol) {
@@ -130,12 +131,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see
+     * <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
      * </p>
      * 
-     * @return The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     * @return The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or
+     *         number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *         Numbers)</a>.
      */
 
     public String getIpProtocol() {
@@ -144,13 +146,14 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number (see
+     * <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
      * </p>
      * 
      * @param ipProtocol
-     *        The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>) or number (see <a
-     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers)</a>.
+     *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or
+     *        number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     *        Numbers)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,13 +310,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the
+     * ICMP code or -1 (all ICMP codes).
      * </p>
      * 
      * @param toPort
-     *        The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of
-     *        <code>-1</code> indicates all ICMP types.
+     *        If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this
+     *        is the ICMP code or -1 (all ICMP codes).
      */
 
     public void setToPort(Integer toPort) {
@@ -322,12 +325,12 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the
+     * ICMP code or -1 (all ICMP codes).
      * </p>
      * 
-     * @return The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of
-     *         <code>-1</code> indicates all ICMP types.
+     * @return If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this
+     *         is the ICMP code or -1 (all ICMP codes).
      */
 
     public Integer getToPort() {
@@ -336,13 +339,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of <code>-1</code>
-     * indicates all ICMP types.
+     * If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the
+     * ICMP code or -1 (all ICMP codes).
      * </p>
      * 
      * @param toPort
-     *        The end of the port range for the TCP and UDP protocols, or an ICMP type number. A value of
-     *        <code>-1</code> indicates all ICMP types.
+     *        If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this
+     *        is the ICMP code or -1 (all ICMP codes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

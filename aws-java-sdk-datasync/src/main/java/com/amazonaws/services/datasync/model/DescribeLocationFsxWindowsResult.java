@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,20 +25,19 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     * The ARN of the FSx for Windows File Server location.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The URL of the FSx for Windows File Server location that was described.
+     * The uniform resource identifier (URI) of the FSx for Windows File Server location.
      * </p>
      */
     private String locationUri;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server
-     * file system.
+     * The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
@@ -50,24 +49,24 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
     private java.util.Date creationTime;
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
+     * The user with the permissions to mount and access the FSx for Windows File Server file system.
      * </p>
      */
     private String user;
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows File Server belongs to.
+     * The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.
      * </p>
      */
     private String domain;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     * The ARN of the FSx for Windows File Server location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     *        The ARN of the FSx for Windows File Server location.
      */
 
     public void setLocationArn(String locationArn) {
@@ -76,10 +75,10 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     * The ARN of the FSx for Windows File Server location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     * @return The ARN of the FSx for Windows File Server location.
      */
 
     public String getLocationArn() {
@@ -88,11 +87,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     * The ARN of the FSx for Windows File Server location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.
+     *        The ARN of the FSx for Windows File Server location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +102,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The URL of the FSx for Windows File Server location that was described.
+     * The uniform resource identifier (URI) of the FSx for Windows File Server location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the FSx for Windows File Server location that was described.
+     *        The uniform resource identifier (URI) of the FSx for Windows File Server location.
      */
 
     public void setLocationUri(String locationUri) {
@@ -116,10 +115,10 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The URL of the FSx for Windows File Server location that was described.
+     * The uniform resource identifier (URI) of the FSx for Windows File Server location.
      * </p>
      * 
-     * @return The URL of the FSx for Windows File Server location that was described.
+     * @return The uniform resource identifier (URI) of the FSx for Windows File Server location.
      */
 
     public String getLocationUri() {
@@ -128,11 +127,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The URL of the FSx for Windows File Server location that was described.
+     * The uniform resource identifier (URI) of the FSx for Windows File Server location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the FSx for Windows File Server location that was described.
+     *        The uniform resource identifier (URI) of the FSx for Windows File Server location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,12 +142,10 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server
-     * file system.
+     * The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File
-     *         Server file system.
+     * @return The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -157,13 +154,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server
-     * file system.
+     * The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File
-     *        Server file system.
+     *        The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -177,8 +172,7 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server
-     * file system.
+     * The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,8 +181,7 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File
-     *        Server file system.
+     *        The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,13 +197,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server
-     * file system.
+     * The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File
-     *        Server file system.
+     *        The ARNs of the security groups that are configured for the FSx for Windows File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,12 +252,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
+     * The user with the permissions to mount and access the FSx for Windows File Server file system.
      * </p>
      * 
      * @param user
-     *        The user who has the permissions to access files and folders in the FSx for Windows File Server file
-     *        system.
+     *        The user with the permissions to mount and access the FSx for Windows File Server file system.
      */
 
     public void setUser(String user) {
@@ -275,11 +265,10 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
+     * The user with the permissions to mount and access the FSx for Windows File Server file system.
      * </p>
      * 
-     * @return The user who has the permissions to access files and folders in the FSx for Windows File Server file
-     *         system.
+     * @return The user with the permissions to mount and access the FSx for Windows File Server file system.
      */
 
     public String getUser() {
@@ -288,12 +277,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
+     * The user with the permissions to mount and access the FSx for Windows File Server file system.
      * </p>
      * 
      * @param user
-     *        The user who has the permissions to access files and folders in the FSx for Windows File Server file
-     *        system.
+     *        The user with the permissions to mount and access the FSx for Windows File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +292,12 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows File Server belongs to.
+     * The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the FSx for Windows File Server belongs to.
+     *        The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs
+     *        to.
      */
 
     public void setDomain(String domain) {
@@ -317,10 +306,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows File Server belongs to.
+     * The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.
      * </p>
      * 
-     * @return The name of the Windows domain that the FSx for Windows File Server belongs to.
+     * @return The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system
+     *         belongs to.
      */
 
     public String getDomain() {
@@ -329,11 +319,12 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Windows domain that the FSx for Windows File Server belongs to.
+     * The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the FSx for Windows File Server belongs to.
+     *        The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs
+     *        to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

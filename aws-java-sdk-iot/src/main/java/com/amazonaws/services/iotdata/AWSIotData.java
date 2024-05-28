@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -154,7 +154,8 @@ public interface AWSIotData {
      * <p>
      * This action returns the message payload of the retained message, which can incur messaging costs. To list only
      * the topic names of the retained messages, call <a
-     * href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_ListRetainedMessages.html"
+     * >ListRetainedMessages</a>.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -271,7 +272,7 @@ public interface AWSIotData {
      * </p>
      * <p>
      * To get the message payload of a retained message, call <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html"
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_GetRetainedMessage.html"
      * >GetRetainedMessage</a> with the topic name of the retained message.
      * </p>
      * <p>
@@ -334,6 +335,8 @@ public interface AWSIotData {
      *         You are not authorized to perform this operation.
      * @throws MethodNotAllowedException
      *         The specified combination of HTTP verb and URI is not supported.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIotData.Publish
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish" target="_top">AWS API
      *      Documentation</a>

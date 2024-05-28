@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -622,6 +622,62 @@ public class AwsSecurityFindingFiltersJsonUnmarshaller implements Unmarshaller<A
                 if (context.testExpression("Sample", targetDepth)) {
                     context.nextToken();
                     awsSecurityFindingFilters.setSample(new ListUnmarshaller<BooleanFilter>(BooleanFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ComplianceSecurityControlId", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setComplianceSecurityControlId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ComplianceAssociatedStandardsId", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setComplianceAssociatedStandardsId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("VulnerabilitiesExploitAvailable", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setVulnerabilitiesExploitAvailable(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("VulnerabilitiesFixAvailable", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setVulnerabilitiesFixAvailable(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ComplianceSecurityControlParametersName", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setComplianceSecurityControlParametersName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ComplianceSecurityControlParametersValue", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setComplianceSecurityControlParametersValue(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("AwsAccountName", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setAwsAccountName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ResourceApplicationName", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setResourceApplicationName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ResourceApplicationArn", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setResourceApplicationArn(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

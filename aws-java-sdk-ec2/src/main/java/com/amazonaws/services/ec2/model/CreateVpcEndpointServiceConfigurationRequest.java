@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,13 +41,13 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     private String privateDnsName;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     * The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkLoadBalancerArns;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> gatewayLoadBalancerArns;
@@ -174,10 +174,10 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     * The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     * @return The Amazon Resource Names (ARNs) of the Network Load Balancers.
      */
 
     public java.util.List<String> getNetworkLoadBalancerArns() {
@@ -189,11 +189,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     * The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * </p>
      * 
      * @param networkLoadBalancerArns
-     *        The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     *        The Amazon Resource Names (ARNs) of the Network Load Balancers.
      */
 
     public void setNetworkLoadBalancerArns(java.util.Collection<String> networkLoadBalancerArns) {
@@ -207,7 +207,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     * The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -216,7 +216,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
      * </p>
      * 
      * @param networkLoadBalancerArns
-     *        The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     *        The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +232,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     * The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * </p>
      * 
      * @param networkLoadBalancerArns
-     *        The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
+     *        The Amazon Resource Names (ARNs) of the Network Load Balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,10 +247,10 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * @return The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      */
 
     public java.util.List<String> getGatewayLoadBalancerArns() {
@@ -262,11 +262,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * </p>
      * 
      * @param gatewayLoadBalancerArns
-     *        The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      */
 
     public void setGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
@@ -280,7 +280,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -289,7 +289,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
      * </p>
      * 
      * @param gatewayLoadBalancerArns
-     *        The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +305,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * </p>
      * 
      * @param gatewayLoadBalancerArns
-     *        The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

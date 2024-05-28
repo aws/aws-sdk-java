@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
     }
 
     @Override
+    public DeleteMessagingStreamingConfigurationsResult deleteMessagingStreamingConfigurations(DeleteMessagingStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
     }
 
     @Override
+    public GetMessagingStreamingConfigurationsResult getMessagingStreamingConfigurations(GetMessagingStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListChannelBansResult listChannelBans(ListChannelBansRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,7 +224,17 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
     }
 
     @Override
+    public PutChannelExpirationSettingsResult putChannelExpirationSettings(PutChannelExpirationSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutChannelMembershipPreferencesResult putChannelMembershipPreferences(PutChannelMembershipPreferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutMessagingStreamingConfigurationsResult putMessagingStreamingConfigurations(PutMessagingStreamingConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

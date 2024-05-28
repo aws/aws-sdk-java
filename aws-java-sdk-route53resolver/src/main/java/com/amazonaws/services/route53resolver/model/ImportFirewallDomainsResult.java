@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,7 @@ public class ImportFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
+     * Status of the import request.
      * </p>
      */
     private String status;
@@ -129,9 +130,11 @@ public class ImportFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Status of the import request.
      * </p>
      * 
      * @param status
+     *        Status of the import request.
      * @see FirewallDomainListStatus
      */
 
@@ -141,9 +144,10 @@ public class ImportFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Status of the import request.
      * </p>
      * 
-     * @return
+     * @return Status of the import request.
      * @see FirewallDomainListStatus
      */
 
@@ -153,9 +157,11 @@ public class ImportFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Status of the import request.
      * </p>
      * 
      * @param status
+     *        Status of the import request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FirewallDomainListStatus
      */
@@ -167,9 +173,11 @@ public class ImportFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Status of the import request.
      * </p>
      * 
      * @param status
+     *        Status of the import request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FirewallDomainListStatus
      */

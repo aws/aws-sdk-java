@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the
-     * parent account to which the user belongs is the owner.
+     * The Amazon Web Services account that created the file system.
      * </p>
      */
     private String ownerId;
@@ -96,7 +95,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     private FileSystemSize sizeInBytes;
     /**
      * <p>
-     * The performance mode of the file system.
+     * The Performance mode of the file system.
      * </p>
      */
     private String performanceMode;
@@ -122,7 +121,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     private String throughputMode;
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      */
@@ -130,7 +129,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for
-     * file systems using One Zone storage classes. For more information, see <a
+     * One Zone file systems. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
      * <i>Amazon EFS User Guide</i>.
      * </p>
@@ -138,9 +137,9 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     private String availabilityZoneName;
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
-     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services
-     * Region, and it has the same location in every Amazon Web Services account.
+     * The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid
+     * only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web Services account.
      * </p>
      */
     private String availabilityZoneId;
@@ -150,16 +149,20 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Describes the protection on the file system.
+     * </p>
+     */
+    private FileSystemProtectionDescription fileSystemProtection;
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the
-     * parent account to which the user belongs is the owner.
+     * The Amazon Web Services account that created the file system.
      * </p>
      * 
      * @param ownerId
-     *        The Amazon Web Services account that created the file system. If the file system was created by an IAM
-     *        user, the parent account to which the user belongs is the owner.
+     *        The Amazon Web Services account that created the file system.
      */
 
     public void setOwnerId(String ownerId) {
@@ -168,12 +171,10 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the
-     * parent account to which the user belongs is the owner.
+     * The Amazon Web Services account that created the file system.
      * </p>
      * 
-     * @return The Amazon Web Services account that created the file system. If the file system was created by an IAM
-     *         user, the parent account to which the user belongs is the owner.
+     * @return The Amazon Web Services account that created the file system.
      */
 
     public String getOwnerId() {
@@ -182,13 +183,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the
-     * parent account to which the user belongs is the owner.
+     * The Amazon Web Services account that created the file system.
      * </p>
      * 
      * @param ownerId
-     *        The Amazon Web Services account that created the file system. If the file system was created by an IAM
-     *        user, the parent account to which the user belongs is the owner.
+     *        The Amazon Web Services account that created the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,11 +621,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The performance mode of the file system.
+     * The Performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The performance mode of the file system.
+     *        The Performance mode of the file system.
      * @see PerformanceMode
      */
 
@@ -636,10 +635,10 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The performance mode of the file system.
+     * The Performance mode of the file system.
      * </p>
      * 
-     * @return The performance mode of the file system.
+     * @return The Performance mode of the file system.
      * @see PerformanceMode
      */
 
@@ -649,11 +648,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The performance mode of the file system.
+     * The Performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The performance mode of the file system.
+     *        The Performance mode of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PerformanceMode
      */
@@ -665,11 +664,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The performance mode of the file system.
+     * The Performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The performance mode of the file system.
+     *        The Performance mode of the file system.
      * @see PerformanceMode
      */
 
@@ -679,11 +678,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The performance mode of the file system.
+     * The Performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The performance mode of the file system.
+     *        The Performance mode of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PerformanceMode
      */
@@ -880,12 +879,12 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     *        The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      *        <code>ThroughputMode</code> set to <code>provisioned</code>.
      */
 
@@ -895,11 +894,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
-     * @return The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems
+     * @return The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems
      *         using <code>ThroughputMode</code> set to <code>provisioned</code>.
      */
 
@@ -909,12 +908,12 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     *        The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using
      *        <code>ThroughputMode</code> set to <code>provisioned</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -927,14 +926,14 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for
-     * file systems using One Zone storage classes. For more information, see <a
+     * One Zone file systems. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
      * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @param availabilityZoneName
      *        Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
-     *        for file systems using One Zone storage classes. For more information, see <a
+     *        for One Zone file systems. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
      *        <i>Amazon EFS User Guide</i>.
      */
@@ -946,13 +945,13 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for
-     * file systems using One Zone storage classes. For more information, see <a
+     * One Zone file systems. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
      * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @return Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid
-     *         only for file systems using One Zone storage classes. For more information, see <a
+     *         only for One Zone file systems. For more information, see <a
      *         href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in
      *         the <i>Amazon EFS User Guide</i>.
      */
@@ -964,14 +963,14 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for
-     * file systems using One Zone storage classes. For more information, see <a
+     * One Zone file systems. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
      * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @param availabilityZoneName
      *        Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
-     *        for file systems using One Zone storage classes. For more information, see <a
+     *        for One Zone file systems. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
      *        <i>Amazon EFS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -984,15 +983,16 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
-     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services
-     * Region, and it has the same location in every Amazon Web Services account.
+     * The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid
+     * only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web Services account.
      * </p>
      * 
      * @param availabilityZoneId
-     *        The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage
-     *        classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web
-     *        Services Region, and it has the same location in every Amazon Web Services account.
+     *        The unique and consistent identifier of the Availability Zone in which the file system is located, and is
+     *        valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for
+     *        the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services
+     *        account.
      */
 
     public void setAvailabilityZoneId(String availabilityZoneId) {
@@ -1001,14 +1001,15 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
-     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services
-     * Region, and it has the same location in every Amazon Web Services account.
+     * The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid
+     * only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web Services account.
      * </p>
      * 
-     * @return The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage
-     *         classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web
-     *         Services Region, and it has the same location in every Amazon Web Services account.
+     * @return The unique and consistent identifier of the Availability Zone in which the file system is located, and is
+     *         valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for
+     *         the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services
+     *         account.
      */
 
     public String getAvailabilityZoneId() {
@@ -1017,15 +1018,16 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
-     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services
-     * Region, and it has the same location in every Amazon Web Services account.
+     * The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid
+     * only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1
+     * Amazon Web Services Region, and it has the same location in every Amazon Web Services account.
      * </p>
      * 
      * @param availabilityZoneId
-     *        The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage
-     *        classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web
-     *        Services Region, and it has the same location in every Amazon Web Services account.
+     *        The unique and consistent identifier of the Availability Zone in which the file system is located, and is
+     *        valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for
+     *        the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1108,6 +1110,46 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Describes the protection on the file system.
+     * </p>
+     * 
+     * @param fileSystemProtection
+     *        Describes the protection on the file system.
+     */
+
+    public void setFileSystemProtection(FileSystemProtectionDescription fileSystemProtection) {
+        this.fileSystemProtection = fileSystemProtection;
+    }
+
+    /**
+     * <p>
+     * Describes the protection on the file system.
+     * </p>
+     * 
+     * @return Describes the protection on the file system.
+     */
+
+    public FileSystemProtectionDescription getFileSystemProtection() {
+        return this.fileSystemProtection;
+    }
+
+    /**
+     * <p>
+     * Describes the protection on the file system.
+     * </p>
+     * 
+     * @param fileSystemProtection
+     *        Describes the protection on the file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemDescription withFileSystemProtection(FileSystemProtectionDescription fileSystemProtection) {
+        setFileSystemProtection(fileSystemProtection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1152,7 +1194,9 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
         if (getAvailabilityZoneId() != null)
             sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFileSystemProtection() != null)
+            sb.append("FileSystemProtection: ").append(getFileSystemProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -1235,6 +1279,10 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFileSystemProtection() == null ^ this.getFileSystemProtection() == null)
+            return false;
+        if (other.getFileSystemProtection() != null && other.getFileSystemProtection().equals(this.getFileSystemProtection()) == false)
+            return false;
         return true;
     }
 
@@ -1260,6 +1308,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getAvailabilityZoneName() == null) ? 0 : getAvailabilityZoneName().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemProtection() == null) ? 0 : getFileSystemProtection().hashCode());
         return hashCode;
     }
 

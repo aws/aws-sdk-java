@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
      * <code>alias/ExampleAlias</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>.
@@ -82,6 +88,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
      * <code>alias/ExampleAlias</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>.
@@ -92,7 +104,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param aliasName
      *        Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
-     *        <code>alias/ExampleAlias</code>. </p>
+     *        <code>alias/ExampleAlias</code>. </p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric
      *        characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with
@@ -110,6 +127,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
      * <code>alias/ExampleAlias</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>.
@@ -119,7 +142,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
-     *         <code>alias/ExampleAlias</code>. </p>
+     *         <code>alias/ExampleAlias</code>. </p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important>
      *         <p>
      *         The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric
      *         characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with
@@ -137,6 +165,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
      * <code>alias/ExampleAlias</code>.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
      * forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>.
@@ -147,7 +181,12 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param aliasName
      *        Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as
-     *        <code>alias/ExampleAlias</code>. </p>
+     *        <code>alias/ExampleAlias</code>. </p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric
      *        characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with

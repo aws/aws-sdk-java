@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,13 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ClusterTimeline timeline;
+    /**
+     * <p>
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ErrorDetail> errorDetails;
 
     /**
      * <p>
@@ -201,6 +208,87 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * </p>
+     * 
+     * @return A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *         structure can contain up to 10 different <code>ErrorDetail</code> tuples.
+     */
+
+    public java.util.List<ErrorDetail> getErrorDetails() {
+        if (errorDetails == null) {
+            errorDetails = new com.amazonaws.internal.SdkInternalList<ErrorDetail>();
+        }
+        return errorDetails;
+    }
+
+    /**
+     * <p>
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * </p>
+     * 
+     * @param errorDetails
+     *        A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *        structure can contain up to 10 different <code>ErrorDetail</code> tuples.
+     */
+
+    public void setErrorDetails(java.util.Collection<ErrorDetail> errorDetails) {
+        if (errorDetails == null) {
+            this.errorDetails = null;
+            return;
+        }
+
+        this.errorDetails = new com.amazonaws.internal.SdkInternalList<ErrorDetail>(errorDetails);
+    }
+
+    /**
+     * <p>
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrorDetails(java.util.Collection)} or {@link #withErrorDetails(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param errorDetails
+     *        A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *        structure can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterStatus withErrorDetails(ErrorDetail... errorDetails) {
+        if (this.errorDetails == null) {
+            setErrorDetails(new com.amazonaws.internal.SdkInternalList<ErrorDetail>(errorDetails.length));
+        }
+        for (ErrorDetail ele : errorDetails) {
+            this.errorDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tuples that provides information about the errors that caused a cluster to terminate. This structure
+     * can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * </p>
+     * 
+     * @param errorDetails
+     *        A list of tuples that provides information about the errors that caused a cluster to terminate. This
+     *        structure can contain up to 10 different <code>ErrorDetail</code> tuples.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterStatus withErrorDetails(java.util.Collection<ErrorDetail> errorDetails) {
+        setErrorDetails(errorDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -217,7 +305,9 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
         if (getStateChangeReason() != null)
             sb.append("StateChangeReason: ").append(getStateChangeReason()).append(",");
         if (getTimeline() != null)
-            sb.append("Timeline: ").append(getTimeline());
+            sb.append("Timeline: ").append(getTimeline()).append(",");
+        if (getErrorDetails() != null)
+            sb.append("ErrorDetails: ").append(getErrorDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +334,10 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeline() != null && other.getTimeline().equals(this.getTimeline()) == false)
             return false;
+        if (other.getErrorDetails() == null ^ this.getErrorDetails() == null)
+            return false;
+        if (other.getErrorDetails() != null && other.getErrorDetails().equals(this.getErrorDetails()) == false)
+            return false;
         return true;
     }
 
@@ -255,6 +349,7 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStateChangeReason() == null) ? 0 : getStateChangeReason().hashCode());
         hashCode = prime * hashCode + ((getTimeline() == null) ? 0 : getTimeline().hashCode());
+        hashCode = prime * hashCode + ((getErrorDetails() == null) ? 0 : getErrorDetails().hashCode());
         return hashCode;
     }
 

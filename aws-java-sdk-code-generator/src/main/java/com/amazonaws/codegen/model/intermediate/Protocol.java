@@ -19,7 +19,6 @@ import com.amazonaws.codegen.protocol.ApiGatewayProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsCborProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsJsonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.Ec2ProtocolMetdataProvider;
-import com.amazonaws.codegen.protocol.IonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.QueryProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.RestJsonProtocolMetdataProvider;
@@ -34,8 +33,7 @@ public enum Protocol {
     CBOR("cbor", new AwsCborProtocolMetadataProvider()),
     QUERY("query", new QueryProtocolMetadataProvider()),
     REST_XML("rest-xml", new RestXmlProtocolMetadataProvider()),
-    API_GATEWAY("api-gateway", new ApiGatewayProtocolMetadataProvider()),
-    ION("ion", new IonProtocolMetadataProvider());
+    API_GATEWAY("api-gateway", new ApiGatewayProtocolMetadataProvider());
 
     private String protocol;
     private ProtocolMetadataProvider metadataProvider;

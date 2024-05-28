@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
     private String userId;
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 500.
+     * The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum
+     * is 50. Otherwise, the maximum is 500.
      * </p>
      */
     private Integer numResults;
@@ -105,6 +106,23 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<Promotion> promotions;
+    /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the
+     * metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code>
+     * and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is
+     * 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a
+     * href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> metadataColumns;
 
     /**
      * <p>
@@ -258,11 +276,13 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 500.
+     * The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum
+     * is 50. Otherwise, the maximum is 500.
      * </p>
      * 
      * @param numResults
-     *        The number of results to return. The default is 25. The maximum is 500.
+     *        The number of results to return. The default is 25. If you are including metadata in recommendations, the
+     *        maximum is 50. Otherwise, the maximum is 500.
      */
 
     public void setNumResults(Integer numResults) {
@@ -271,10 +291,12 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 500.
+     * The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum
+     * is 50. Otherwise, the maximum is 500.
      * </p>
      * 
-     * @return The number of results to return. The default is 25. The maximum is 500.
+     * @return The number of results to return. The default is 25. If you are including metadata in recommendations, the
+     *         maximum is 50. Otherwise, the maximum is 500.
      */
 
     public Integer getNumResults() {
@@ -283,11 +305,13 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 500.
+     * The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum
+     * is 50. Otherwise, the maximum is 500.
      * </p>
      * 
      * @param numResults
-     *        The number of results to return. The default is 25. The maximum is 500.
+     *        The number of results to return. The default is 25. If you are including metadata in recommendations, the
+     *        maximum is 50. Otherwise, the maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -702,6 +726,137 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the
+     * metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code>
+     * and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is
+     * 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a
+     * href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * 
+     * @return If you enabled metadata in recommendations when you created or updated the campaign or recommender,
+     *         specify the metadata columns from your Items dataset to include in item recommendations. The map key is
+     *         <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of
+     *         columns you can provide is 10.</p>
+     *         <p>
+     *         For information about enabling metadata for a campaign, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *         >Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a
+     *         recommender, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *         >Enabling metadata in recommendations for a recommender</a>.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getMetadataColumns() {
+        return metadataColumns;
+    }
+
+    /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the
+     * metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code>
+     * and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is
+     * 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a
+     * href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * 
+     * @param metadataColumns
+     *        If you enabled metadata in recommendations when you created or updated the campaign or recommender,
+     *        specify the metadata columns from your Items dataset to include in item recommendations. The map key is
+     *        <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of
+     *        columns you can provide is 10.</p>
+     *        <p>
+     *        For information about enabling metadata for a campaign, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *        >Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a
+     *        recommender, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *        >Enabling metadata in recommendations for a recommender</a>.
+     */
+
+    public void setMetadataColumns(java.util.Map<String, java.util.List<String>> metadataColumns) {
+        this.metadataColumns = metadataColumns;
+    }
+
+    /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the
+     * metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code>
+     * and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is
+     * 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a
+     * href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     * >Enabling metadata in recommendations for a recommender</a>.
+     * </p>
+     * 
+     * @param metadataColumns
+     *        If you enabled metadata in recommendations when you created or updated the campaign or recommender,
+     *        specify the metadata columns from your Items dataset to include in item recommendations. The map key is
+     *        <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of
+     *        columns you can provide is 10.</p>
+     *        <p>
+     *        For information about enabling metadata for a campaign, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *        >Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a
+     *        recommender, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata"
+     *        >Enabling metadata in recommendations for a recommender</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest withMetadataColumns(java.util.Map<String, java.util.List<String>> metadataColumns) {
+        setMetadataColumns(metadataColumns);
+        return this;
+    }
+
+    /**
+     * Add a single MetadataColumns entry
+     *
+     * @see GetRecommendationsRequest#withMetadataColumns
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest addMetadataColumnsEntry(String key, java.util.List<String> value) {
+        if (null == this.metadataColumns) {
+            this.metadataColumns = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.metadataColumns.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metadataColumns.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MetadataColumns.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest clearMetadataColumnsEntries() {
+        this.metadataColumns = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -730,7 +885,9 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getRecommenderArn() != null)
             sb.append("RecommenderArn: ").append(getRecommenderArn()).append(",");
         if (getPromotions() != null)
-            sb.append("Promotions: ").append(getPromotions());
+            sb.append("Promotions: ").append(getPromotions()).append(",");
+        if (getMetadataColumns() != null)
+            sb.append("MetadataColumns: ").append(getMetadataColumns());
         sb.append("}");
         return sb.toString();
     }
@@ -781,6 +938,10 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getPromotions() != null && other.getPromotions().equals(this.getPromotions()) == false)
             return false;
+        if (other.getMetadataColumns() == null ^ this.getMetadataColumns() == null)
+            return false;
+        if (other.getMetadataColumns() != null && other.getMetadataColumns().equals(this.getMetadataColumns()) == false)
+            return false;
         return true;
     }
 
@@ -798,6 +959,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFilterValues() == null) ? 0 : getFilterValues().hashCode());
         hashCode = prime * hashCode + ((getRecommenderArn() == null) ? 0 : getRecommenderArn().hashCode());
         hashCode = prime * hashCode + ((getPromotions() == null) ? 0 : getPromotions().hashCode());
+        hashCode = prime * hashCode + ((getMetadataColumns() == null) ? 0 : getMetadataColumns().hashCode());
         return hashCode;
     }
 

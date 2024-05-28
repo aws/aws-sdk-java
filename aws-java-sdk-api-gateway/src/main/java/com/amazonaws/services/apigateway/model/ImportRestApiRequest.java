@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      * <code>basepath=prepend</code> or <code>basepath=split</code>.
-     * </p>
-     * <p>
-     * For example, the AWS CLI command to exclude documentation from the imported API is:
-     * </p>
-     * <p>
-     * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -142,12 +136,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
-     * <p>
-     * For example, the AWS CLI command to exclude documentation from the imported API is:
-     * </p>
-     * <p>
-     * The AWS CLI command to set the regional endpoint on the imported API is:
-     * </p>
      * 
      * @return A key-value map of context-specific query string parameters specifying the behavior of different API
      *         importing operations. The following shows operation-specific parameters and their supported values.</p>
@@ -163,12 +151,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      *         <code>basepath=prepend</code> or <code>basepath=split</code>.
-     *         </p>
-     *         <p>
-     *         For example, the AWS CLI command to exclude documentation from the imported API is:
-     *         </p>
-     *         <p>
-     *         The AWS CLI command to set the regional endpoint on the imported API is:
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -192,12 +174,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
-     * <p>
-     * For example, the AWS CLI command to exclude documentation from the imported API is:
-     * </p>
-     * <p>
-     * The AWS CLI command to set the regional endpoint on the imported API is:
-     * </p>
      * 
      * @param parameters
      *        A key-value map of context-specific query string parameters specifying the behavior of different API
@@ -214,12 +190,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      *        <code>basepath=prepend</code> or <code>basepath=split</code>.
-     *        </p>
-     *        <p>
-     *        For example, the AWS CLI command to exclude documentation from the imported API is:
-     *        </p>
-     *        <p>
-     *        The AWS CLI command to set the regional endpoint on the imported API is:
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -243,12 +213,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      * <code>basepath=prepend</code> or <code>basepath=split</code>.
      * </p>
-     * <p>
-     * For example, the AWS CLI command to exclude documentation from the imported API is:
-     * </p>
-     * <p>
-     * The AWS CLI command to set the regional endpoint on the imported API is:
-     * </p>
      * 
      * @param parameters
      *        A key-value map of context-specific query string parameters specifying the behavior of different API
@@ -265,12 +229,6 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>,
      *        <code>basepath=prepend</code> or <code>basepath=split</code>.
-     *        </p>
-     *        <p>
-     *        For example, the AWS CLI command to exclude documentation from the imported API is:
-     *        </p>
-     *        <p>
-     *        The AWS CLI command to set the regional endpoint on the imported API is:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,19 +27,11 @@ import com.amazonaws.services.customerprofiles.model.*;
  * <p>
  * <fullname>Amazon Connect Customer Profiles</fullname>
  * <p>
- * Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides information about the Amazon
- * Connect Customer Profiles API, including supported operations, data types, parameters, and schemas.
- * </p>
- * <p>
  * Amazon Connect Customer Profiles is a unified customer profile for your contact center that has pre-built connectors
  * powered by AppFlow that make it easy to combine customer information from third party applications, such as
  * Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your
- * Amazon Connect contact center.
- * </p>
- * <p>
- * If you're new to Amazon Connect , you might find it helpful to also review the <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon Connect Administrator
- * Guide</a>.
+ * Amazon Connect contact center. If you're new to Amazon Connect, you might find it helpful to review the <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon Connect Administrator Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -83,6 +75,53 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<AddProfileKeyResult> addProfileKeyAsync(AddProfileKeyRequest addProfileKeyRequest,
             com.amazonaws.handlers.AsyncHandler<AddProfileKeyRequest, AddProfileKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles
+     * will be included in the calculated attribute, which can be retrieved for a profile using the <a href=
+     * "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html"
+     * >GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles
+     * within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields
+     * from that <code>ObjectType</code>.
+     * </p>
+     * 
+     * @param createCalculatedAttributeDefinitionRequest
+     * @return A Java Future containing the result of the CreateCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.CreateCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCalculatedAttributeDefinitionResult> createCalculatedAttributeDefinitionAsync(
+            CreateCalculatedAttributeDefinitionRequest createCalculatedAttributeDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles
+     * will be included in the calculated attribute, which can be retrieved for a profile using the <a href=
+     * "https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html"
+     * >GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles
+     * within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields
+     * from that <code>ObjectType</code>.
+     * </p>
+     * 
+     * @param createCalculatedAttributeDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.CreateCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCalculatedAttributeDefinitionResult> createCalculatedAttributeDefinitionAsync(
+            CreateCalculatedAttributeDefinitionRequest createCalculatedAttributeDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCalculatedAttributeDefinitionRequest, CreateCalculatedAttributeDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -148,6 +187,47 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest createDomainRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an event stream, which is a subscription to real-time events, such as when profiles are created and
+     * updated through Amazon Connect Customer Profiles.
+     * </p>
+     * <p>
+     * Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon
+     * Web Services account as the customer profiles domain
+     * </p>
+     * 
+     * @param createEventStreamRequest
+     * @return A Java Future containing the result of the CreateEventStream operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.CreateEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventStreamResult> createEventStreamAsync(CreateEventStreamRequest createEventStreamRequest);
+
+    /**
+     * <p>
+     * Creates an event stream, which is a subscription to real-time events, such as when profiles are created and
+     * updated through Amazon Connect Customer Profiles.
+     * </p>
+     * <p>
+     * Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon
+     * Web Services account as the customer profiles domain
+     * </p>
+     * 
+     * @param createEventStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEventStream operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.CreateEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventStreamResult> createEventStreamAsync(CreateEventStreamRequest createEventStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEventStreamRequest, CreateEventStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -225,6 +305,47 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
+     * Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is
+     * possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own
+     * using the CreateCalculatedAttributeDefinition API if you want it back.
+     * </p>
+     * 
+     * @param deleteCalculatedAttributeDefinitionRequest
+     * @return A Java Future containing the result of the DeleteCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.DeleteCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCalculatedAttributeDefinitionResult> deleteCalculatedAttributeDefinitionAsync(
+            DeleteCalculatedAttributeDefinitionRequest deleteCalculatedAttributeDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is
+     * possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own
+     * using the CreateCalculatedAttributeDefinition API if you want it back.
+     * </p>
+     * 
+     * @param deleteCalculatedAttributeDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.DeleteCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCalculatedAttributeDefinitionResult> deleteCalculatedAttributeDefinitionAsync(
+            DeleteCalculatedAttributeDefinitionRequest deleteCalculatedAttributeDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCalculatedAttributeDefinitionRequest, DeleteCalculatedAttributeDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a specific domain and all of its customer data, such as customer profile attributes and their related
      * objects.
      * </p>
@@ -255,6 +376,37 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest deleteDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables and deletes the specified event stream.
+     * </p>
+     * 
+     * @param deleteEventStreamRequest
+     * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.DeleteEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest);
+
+    /**
+     * <p>
+     * Disables and deletes the specified event stream.
+     * </p>
+     * 
+     * @param deleteEventStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.DeleteEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -448,6 +600,37 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
+     * The process of detecting profile object type mapping by using given objects.
+     * </p>
+     * 
+     * @param detectProfileObjectTypeRequest
+     * @return A Java Future containing the result of the DetectProfileObjectType operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.DetectProfileObjectType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetectProfileObjectTypeResult> detectProfileObjectTypeAsync(DetectProfileObjectTypeRequest detectProfileObjectTypeRequest);
+
+    /**
+     * <p>
+     * The process of detecting profile object type mapping by using given objects.
+     * </p>
+     * 
+     * @param detectProfileObjectTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectProfileObjectType operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.DetectProfileObjectType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetectProfileObjectTypeResult> detectProfileObjectTypeAsync(DetectProfileObjectTypeRequest detectProfileObjectTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectProfileObjectTypeRequest, DetectProfileObjectTypeResult> asyncHandler);
+
+    /**
+     * <p>
      * Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a
      * sample of matching groups from the existing matching results, and applies the automerging settings that you
      * provided. You can then view the number of profiles in the sample, the number of matches, and the number of
@@ -509,6 +692,80 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
+     * Provides more information on a calculated attribute definition for Customer Profiles.
+     * </p>
+     * 
+     * @param getCalculatedAttributeDefinitionRequest
+     * @return A Java Future containing the result of the GetCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.GetCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculatedAttributeDefinitionResult> getCalculatedAttributeDefinitionAsync(
+            GetCalculatedAttributeDefinitionRequest getCalculatedAttributeDefinitionRequest);
+
+    /**
+     * <p>
+     * Provides more information on a calculated attribute definition for Customer Profiles.
+     * </p>
+     * 
+     * @param getCalculatedAttributeDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.GetCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculatedAttributeDefinitionResult> getCalculatedAttributeDefinitionAsync(
+            GetCalculatedAttributeDefinitionRequest getCalculatedAttributeDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCalculatedAttributeDefinitionRequest, GetCalculatedAttributeDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve a calculated attribute for a customer profile.
+     * </p>
+     * 
+     * @param getCalculatedAttributeForProfileRequest
+     * @return A Java Future containing the result of the GetCalculatedAttributeForProfile operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.GetCalculatedAttributeForProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculatedAttributeForProfileResult> getCalculatedAttributeForProfileAsync(
+            GetCalculatedAttributeForProfileRequest getCalculatedAttributeForProfileRequest);
+
+    /**
+     * <p>
+     * Retrieve a calculated attribute for a customer profile.
+     * </p>
+     * 
+     * @param getCalculatedAttributeForProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCalculatedAttributeForProfile operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.GetCalculatedAttributeForProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculatedAttributeForProfileResult> getCalculatedAttributeForProfileAsync(
+            GetCalculatedAttributeForProfileRequest getCalculatedAttributeForProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCalculatedAttributeForProfileRequest, GetCalculatedAttributeForProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a specific domain.
      * </p>
      * 
@@ -537,6 +794,37 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<GetDomainResult> getDomainAsync(GetDomainRequest getDomainRequest,
             com.amazonaws.handlers.AsyncHandler<GetDomainRequest, GetDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the specified event stream in a specific domain.
+     * </p>
+     * 
+     * @param getEventStreamRequest
+     * @return A Java Future containing the result of the GetEventStream operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.GetEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified event stream in a specific domain.
+     * </p>
+     * 
+     * @param getEventStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventStream operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.GetEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -863,6 +1151,41 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
+     * Returns a set of profiles that belong to the same matching group using the <code>matchId</code> or
+     * <code>profileId</code>. You can also specify the type of matching that you want for finding similar profiles
+     * using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+     * </p>
+     * 
+     * @param getSimilarProfilesRequest
+     * @return A Java Future containing the result of the GetSimilarProfiles operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.GetSimilarProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest getSimilarProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a set of profiles that belong to the same matching group using the <code>matchId</code> or
+     * <code>profileId</code>. You can also specify the type of matching that you want for finding similar profiles
+     * using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+     * </p>
+     * 
+     * @param getSimilarProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSimilarProfiles operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.GetSimilarProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest getSimilarProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSimilarProfilesRequest, GetSimilarProfilesResult> asyncHandler);
+
+    /**
+     * <p>
      * Get details of specified workflow.
      * </p>
      * 
@@ -956,6 +1279,80 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
+     * Lists calculated attribute definitions for Customer Profiles
+     * </p>
+     * 
+     * @param listCalculatedAttributeDefinitionsRequest
+     * @return A Java Future containing the result of the ListCalculatedAttributeDefinitions operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.ListCalculatedAttributeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCalculatedAttributeDefinitionsResult> listCalculatedAttributeDefinitionsAsync(
+            ListCalculatedAttributeDefinitionsRequest listCalculatedAttributeDefinitionsRequest);
+
+    /**
+     * <p>
+     * Lists calculated attribute definitions for Customer Profiles
+     * </p>
+     * 
+     * @param listCalculatedAttributeDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCalculatedAttributeDefinitions operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.ListCalculatedAttributeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCalculatedAttributeDefinitionsResult> listCalculatedAttributeDefinitionsAsync(
+            ListCalculatedAttributeDefinitionsRequest listCalculatedAttributeDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCalculatedAttributeDefinitionsRequest, ListCalculatedAttributeDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve a list of calculated attributes for a customer profile.
+     * </p>
+     * 
+     * @param listCalculatedAttributesForProfileRequest
+     * @return A Java Future containing the result of the ListCalculatedAttributesForProfile operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.ListCalculatedAttributesForProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCalculatedAttributesForProfileResult> listCalculatedAttributesForProfileAsync(
+            ListCalculatedAttributesForProfileRequest listCalculatedAttributesForProfileRequest);
+
+    /**
+     * <p>
+     * Retrieve a list of calculated attributes for a customer profile.
+     * </p>
+     * 
+     * @param listCalculatedAttributesForProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCalculatedAttributesForProfile operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.ListCalculatedAttributesForProfile
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCalculatedAttributesForProfileResult> listCalculatedAttributesForProfileAsync(
+            ListCalculatedAttributesForProfileRequest listCalculatedAttributesForProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCalculatedAttributesForProfileRequest, ListCalculatedAttributesForProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of all the domains for an AWS account that have been created.
      * </p>
      * 
@@ -984,6 +1381,37 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all the event streams in a specific domain.
+     * </p>
+     * 
+     * @param listEventStreamsRequest
+     * @return A Java Future containing the result of the ListEventStreams operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.ListEventStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventStreamsResult> listEventStreamsAsync(ListEventStreamsRequest listEventStreamsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all the event streams in a specific domain.
+     * </p>
+     * 
+     * @param listEventStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEventStreams operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.ListEventStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventStreamsResult> listEventStreamsAsync(ListEventStreamsRequest listEventStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEventStreamsRequest, ListEventStreamsResult> asyncHandler);
 
     /**
      * <p>
@@ -1147,6 +1575,37 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<ListProfileObjectsResult> listProfileObjectsAsync(ListProfileObjectsRequest listProfileObjectsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProfileObjectsRequest, ListProfileObjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a set of <code>MatchIds</code> that belong to the given domain.
+     * </p>
+     * 
+     * @param listRuleBasedMatchesRequest
+     * @return A Java Future containing the result of the ListRuleBasedMatches operation returned by the service.
+     * @sample AmazonCustomerProfilesAsync.ListRuleBasedMatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest listRuleBasedMatchesRequest);
+
+    /**
+     * <p>
+     * Returns a set of <code>MatchIds</code> that belong to the given domain.
+     * </p>
+     * 
+     * @param listRuleBasedMatchesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRuleBasedMatches operation returned by the service.
+     * @sample AmazonCustomerProfilesAsyncHandler.ListRuleBasedMatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest listRuleBasedMatchesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRuleBasedMatchesRequest, ListRuleBasedMatchesResult> asyncHandler);
 
     /**
      * <p>
@@ -1510,8 +1969,13 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
-     * Searches for profiles within a specific domain name using name, phone number, email address, account number, or a
-     * custom defined index.
+     * Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone,
+     * _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a
+     * <code>KeyName</code> and <code>Values</code> list.
+     * </p>
+     * <p>
+     * This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s)
+     * pairs using either <code>AND</code> or <code>OR</code> logic.
      * </p>
      * 
      * @param searchProfilesRequest
@@ -1524,8 +1988,13 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
 
     /**
      * <p>
-     * Searches for profiles within a specific domain name using name, phone number, email address, account number, or a
-     * custom defined index.
+     * Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone,
+     * _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a
+     * <code>KeyName</code> and <code>Values</code> list.
+     * </p>
+     * <p>
+     * This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s)
+     * pairs using either <code>AND</code> or <code>OR</code> logic.
      * </p>
      * 
      * @param searchProfilesRequest
@@ -1632,6 +2101,47 @@ public interface AmazonCustomerProfilesAsync extends AmazonCustomerProfiles {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date
+     * range of a calculated attribute will not trigger inclusion of historical data greater than the current date
+     * range.
+     * </p>
+     * 
+     * @param updateCalculatedAttributeDefinitionRequest
+     * @return A Java Future containing the result of the UpdateCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsync.UpdateCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCalculatedAttributeDefinitionResult> updateCalculatedAttributeDefinitionAsync(
+            UpdateCalculatedAttributeDefinitionRequest updateCalculatedAttributeDefinitionRequest);
+
+    /**
+     * <p>
+     * Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date
+     * range of a calculated attribute will not trigger inclusion of historical data greater than the current date
+     * range.
+     * </p>
+     * 
+     * @param updateCalculatedAttributeDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCalculatedAttributeDefinition operation returned by the
+     *         service.
+     * @sample AmazonCustomerProfilesAsyncHandler.UpdateCalculatedAttributeDefinition
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCalculatedAttributeDefinitionResult> updateCalculatedAttributeDefinitionAsync(
+            UpdateCalculatedAttributeDefinitionRequest updateCalculatedAttributeDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCalculatedAttributeDefinitionRequest, UpdateCalculatedAttributeDefinitionResult> asyncHandler);
 
     /**
      * <p>

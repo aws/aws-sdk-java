@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The bundle of specification information for your virtual private server (or <i>instance</i>), including the
-     * pricing plan (e.g., <code>micro_1_0</code>).
+     * pricing plan (<code>micro_x_x</code>).
      * </p>
      */
     private String bundleId;
@@ -113,7 +113,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The IP address type for the instance.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * <p>
      * The default value is <code>dualstack</code>.
@@ -514,12 +515,12 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The bundle of specification information for your virtual private server (or <i>instance</i>), including the
-     * pricing plan (e.g., <code>micro_1_0</code>).
+     * pricing plan (<code>micro_x_x</code>).
      * </p>
      * 
      * @param bundleId
      *        The bundle of specification information for your virtual private server (or <i>instance</i>), including
-     *        the pricing plan (e.g., <code>micro_1_0</code>).
+     *        the pricing plan (<code>micro_x_x</code>).
      */
 
     public void setBundleId(String bundleId) {
@@ -529,11 +530,11 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The bundle of specification information for your virtual private server (or <i>instance</i>), including the
-     * pricing plan (e.g., <code>micro_1_0</code>).
+     * pricing plan (<code>micro_x_x</code>).
      * </p>
      * 
      * @return The bundle of specification information for your virtual private server (or <i>instance</i>), including
-     *         the pricing plan (e.g., <code>micro_1_0</code>).
+     *         the pricing plan (<code>micro_x_x</code>).
      */
 
     public String getBundleId() {
@@ -543,12 +544,12 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The bundle of specification information for your virtual private server (or <i>instance</i>), including the
-     * pricing plan (e.g., <code>micro_1_0</code>).
+     * pricing plan (<code>micro_x_x</code>).
      * </p>
      * 
      * @param bundleId
      *        The bundle of specification information for your virtual private server (or <i>instance</i>), including
-     *        the pricing plan (e.g., <code>micro_1_0</code>).
+     *        the pricing plan (<code>micro_x_x</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -856,7 +857,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The IP address type for the instance.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * <p>
      * The default value is <code>dualstack</code>.
@@ -865,7 +867,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * @param ipAddressType
      *        The IP address type for the instance.</p>
      *        <p>
-     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *        The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *        <code>dualstack</code> for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        The default value is <code>dualstack</code>.
@@ -881,7 +884,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The IP address type for the instance.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * <p>
      * The default value is <code>dualstack</code>.
@@ -889,7 +893,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The IP address type for the instance.</p>
      *         <p>
-     *         The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *         The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *         <code>dualstack</code> for IPv4 and IPv6.
      *         </p>
      *         <p>
      *         The default value is <code>dualstack</code>.
@@ -905,7 +910,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The IP address type for the instance.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * <p>
      * The default value is <code>dualstack</code>.
@@ -914,7 +920,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * @param ipAddressType
      *        The IP address type for the instance.</p>
      *        <p>
-     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *        The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *        <code>dualstack</code> for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        The default value is <code>dualstack</code>.
@@ -932,7 +939,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The IP address type for the instance.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * <p>
      * The default value is <code>dualstack</code>.
@@ -941,7 +949,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * @param ipAddressType
      *        The IP address type for the instance.</p>
      *        <p>
-     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *        The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *        <code>dualstack</code> for IPv4 and IPv6.
      *        </p>
      *        <p>
      *        The default value is <code>dualstack</code>.

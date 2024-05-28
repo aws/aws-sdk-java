@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class DisableKinesisStreamingDestinationResult extends com.amazonaws.Amaz
      * </p>
      */
     private String destinationStatus;
+    /**
+     * <p>
+     * The destination for the Kinesis streaming information that is being enabled.
+     * </p>
+     */
+    private EnableKinesisStreamingConfiguration enableKinesisStreamingConfiguration;
 
     /**
      * <p>
@@ -183,6 +189,47 @@ public class DisableKinesisStreamingDestinationResult extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The destination for the Kinesis streaming information that is being enabled.
+     * </p>
+     * 
+     * @param enableKinesisStreamingConfiguration
+     *        The destination for the Kinesis streaming information that is being enabled.
+     */
+
+    public void setEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration enableKinesisStreamingConfiguration) {
+        this.enableKinesisStreamingConfiguration = enableKinesisStreamingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination for the Kinesis streaming information that is being enabled.
+     * </p>
+     * 
+     * @return The destination for the Kinesis streaming information that is being enabled.
+     */
+
+    public EnableKinesisStreamingConfiguration getEnableKinesisStreamingConfiguration() {
+        return this.enableKinesisStreamingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination for the Kinesis streaming information that is being enabled.
+     * </p>
+     * 
+     * @param enableKinesisStreamingConfiguration
+     *        The destination for the Kinesis streaming information that is being enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisableKinesisStreamingDestinationResult withEnableKinesisStreamingConfiguration(
+            EnableKinesisStreamingConfiguration enableKinesisStreamingConfiguration) {
+        setEnableKinesisStreamingConfiguration(enableKinesisStreamingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -199,7 +246,9 @@ public class DisableKinesisStreamingDestinationResult extends com.amazonaws.Amaz
         if (getStreamArn() != null)
             sb.append("StreamArn: ").append(getStreamArn()).append(",");
         if (getDestinationStatus() != null)
-            sb.append("DestinationStatus: ").append(getDestinationStatus());
+            sb.append("DestinationStatus: ").append(getDestinationStatus()).append(",");
+        if (getEnableKinesisStreamingConfiguration() != null)
+            sb.append("EnableKinesisStreamingConfiguration: ").append(getEnableKinesisStreamingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +275,11 @@ public class DisableKinesisStreamingDestinationResult extends com.amazonaws.Amaz
             return false;
         if (other.getDestinationStatus() != null && other.getDestinationStatus().equals(this.getDestinationStatus()) == false)
             return false;
+        if (other.getEnableKinesisStreamingConfiguration() == null ^ this.getEnableKinesisStreamingConfiguration() == null)
+            return false;
+        if (other.getEnableKinesisStreamingConfiguration() != null
+                && other.getEnableKinesisStreamingConfiguration().equals(this.getEnableKinesisStreamingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -237,6 +291,7 @@ public class DisableKinesisStreamingDestinationResult extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
         hashCode = prime * hashCode + ((getStreamArn() == null) ? 0 : getStreamArn().hashCode());
         hashCode = prime * hashCode + ((getDestinationStatus() == null) ? 0 : getDestinationStatus().hashCode());
+        hashCode = prime * hashCode + ((getEnableKinesisStreamingConfiguration() == null) ? 0 : getEnableKinesisStreamingConfiguration().hashCode());
         return hashCode;
     }
 

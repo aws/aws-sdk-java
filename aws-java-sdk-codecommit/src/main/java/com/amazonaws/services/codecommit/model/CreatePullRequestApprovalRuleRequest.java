@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The content of the approval rule, including the number of approvals needed and the structure of an approval pool
-     * defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.
+     * defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.
      * </p>
      * <note>
      * <p>
@@ -50,10 +50,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
+     * that user:
      * </p>
      * <ul>
      * <li>
@@ -174,7 +175,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The content of the approval rule, including the number of approvals needed and the structure of an approval pool
-     * defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.
+     * defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.
      * </p>
      * <note>
      * <p>
@@ -184,10 +185,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
+     * that user:
      * </p>
      * <ul>
      * <li>
@@ -225,8 +227,8 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * 
      * @param approvalRuleContent
      *        The content of the approval rule, including the number of approvals needed and the structure of an
-     *        approval pool defined for approvals, if any. For more information about approval pools, see the AWS
-     *        CodeCommit User Guide.</p> <note>
+     *        approval pool defined for approvals, if any. For more information about approval pools, see the CodeCommit
+     *        User Guide.</p> <note>
      *        <p>
      *        When you create the content of the approval rule, you can specify approvers in an approval pool in one of
      *        two ways:
@@ -234,11 +236,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for
-     *        both IAM users and federated access users whose name matches the provided resource name. This is a very
-     *        powerful option that offers a great deal of flexibility. For example, if you specify the AWS account
-     *        <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
-     *        that user:
+     *        <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It
+     *        can be used for both IAM users and federated access users whose name matches the provided resource name.
+     *        This is a very powerful option that offers a great deal of flexibility. For example, if you specify the
+     *        Amazon Web Services account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be
+     *        counted as approvals coming from that user:
      *        </p>
      *        <ul>
      *        <li>
@@ -281,7 +283,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The content of the approval rule, including the number of approvals needed and the structure of an approval pool
-     * defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.
+     * defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.
      * </p>
      * <note>
      * <p>
@@ -291,10 +293,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
+     * that user:
      * </p>
      * <ul>
      * <li>
@@ -331,7 +334,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * </note>
      * 
      * @return The content of the approval rule, including the number of approvals needed and the structure of an
-     *         approval pool defined for approvals, if any. For more information about approval pools, see the AWS
+     *         approval pool defined for approvals, if any. For more information about approval pools, see the
      *         CodeCommit User Guide.</p> <note>
      *         <p>
      *         When you create the content of the approval rule, you can specify approvers in an approval pool in one of
@@ -340,11 +343,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for
-     *         both IAM users and federated access users whose name matches the provided resource name. This is a very
-     *         powerful option that offers a great deal of flexibility. For example, if you specify the AWS account
-     *         <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
-     *         that user:
+     *         <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It
+     *         can be used for both IAM users and federated access users whose name matches the provided resource name.
+     *         This is a very powerful option that offers a great deal of flexibility. For example, if you specify the
+     *         Amazon Web Services account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be
+     *         counted as approvals coming from that user:
      *         </p>
      *         <ul>
      *         <li>
@@ -387,7 +390,7 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The content of the approval rule, including the number of approvals needed and the structure of an approval pool
-     * defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.
+     * defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.
      * </p>
      * <note>
      * <p>
@@ -397,10 +400,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM
-     * users and federated access users whose name matches the provided resource name. This is a very powerful option
-     * that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and
-     * <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:
+     * <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It can be
+     * used for both IAM users and federated access users whose name matches the provided resource name. This is a very
+     * powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services
+     * account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
+     * that user:
      * </p>
      * <ul>
      * <li>
@@ -438,8 +442,8 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      * 
      * @param approvalRuleContent
      *        The content of the approval rule, including the number of approvals needed and the structure of an
-     *        approval pool defined for approvals, if any. For more information about approval pools, see the AWS
-     *        CodeCommit User Guide.</p> <note>
+     *        approval pool defined for approvals, if any. For more information about approval pools, see the CodeCommit
+     *        User Guide.</p> <note>
      *        <p>
      *        When you create the content of the approval rule, you can specify approvers in an approval pool in one of
      *        two ways:
@@ -447,11 +451,11 @@ public class CreatePullRequestApprovalRuleRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for
-     *        both IAM users and federated access users whose name matches the provided resource name. This is a very
-     *        powerful option that offers a great deal of flexibility. For example, if you specify the AWS account
-     *        <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from
-     *        that user:
+     *        <b>CodeCommitApprovers</b>: This option only requires an Amazon Web Services account and a resource. It
+     *        can be used for both IAM users and federated access users whose name matches the provided resource name.
+     *        This is a very powerful option that offers a great deal of flexibility. For example, if you specify the
+     *        Amazon Web Services account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be
+     *        counted as approvals coming from that user:
      *        </p>
      *        <ul>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,21 @@ public class PutMetricStreamRequestMarshaller implements Marshaller<Request<PutM
                         request.addParameter("IncludeFilters.member." + includeFiltersListIndex + ".Namespace",
                                 StringUtils.fromString(includeFiltersListValue.getNamespace()));
                     }
+
+                    if (!includeFiltersListValue.getMetricNames().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) includeFiltersListValue.getMetricNames()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> metricNamesList = (com.amazonaws.internal.SdkInternalList<String>) includeFiltersListValue
+                                .getMetricNames();
+                        int metricNamesListIndex = 1;
+
+                        for (String metricNamesListValue : metricNamesList) {
+                            if (metricNamesListValue != null) {
+                                request.addParameter("IncludeFilters.member." + includeFiltersListIndex + ".MetricNames.member." + metricNamesListIndex,
+                                        StringUtils.fromString(metricNamesListValue));
+                            }
+                            metricNamesListIndex++;
+                        }
+                    }
                 }
                 includeFiltersListIndex++;
             }
@@ -74,6 +89,21 @@ public class PutMetricStreamRequestMarshaller implements Marshaller<Request<PutM
                     if (excludeFiltersListValue.getNamespace() != null) {
                         request.addParameter("ExcludeFilters.member." + excludeFiltersListIndex + ".Namespace",
                                 StringUtils.fromString(excludeFiltersListValue.getNamespace()));
+                    }
+
+                    if (!excludeFiltersListValue.getMetricNames().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) excludeFiltersListValue.getMetricNames()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> metricNamesList = (com.amazonaws.internal.SdkInternalList<String>) excludeFiltersListValue
+                                .getMetricNames();
+                        int metricNamesListIndex = 1;
+
+                        for (String metricNamesListValue : metricNamesList) {
+                            if (metricNamesListValue != null) {
+                                request.addParameter("ExcludeFilters.member." + excludeFiltersListIndex + ".MetricNames.member." + metricNamesListIndex,
+                                        StringUtils.fromString(metricNamesListValue));
+                            }
+                            metricNamesListIndex++;
+                        }
                     }
                 }
                 excludeFiltersListIndex++;
@@ -163,6 +193,10 @@ public class PutMetricStreamRequestMarshaller implements Marshaller<Request<PutM
                 }
                 statisticsConfigurationsListIndex++;
             }
+        }
+
+        if (putMetricStreamRequest.getIncludeLinkedAccountsMetrics() != null) {
+            request.addParameter("IncludeLinkedAccountsMetrics", StringUtils.fromBoolean(putMetricStreamRequest.getIncludeLinkedAccountsMetrics()));
         }
 
         return request;

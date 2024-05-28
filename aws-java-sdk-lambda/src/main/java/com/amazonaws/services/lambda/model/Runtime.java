@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,12 +41,23 @@ public enum Runtime {
     Dotnetcore21("dotnetcore2.1"),
     Dotnetcore31("dotnetcore3.1"),
     Dotnet6("dotnet6"),
+    Dotnet8("dotnet8"),
     Nodejs43Edge("nodejs4.3-edge"),
     Go1X("go1.x"),
     Ruby25("ruby2.5"),
     Ruby27("ruby2.7"),
     Provided("provided"),
-    ProvidedAl2("provided.al2");
+    ProvidedAl2("provided.al2"),
+    Nodejs18X("nodejs18.x"),
+    Python310("python3.10"),
+    Java17("java17"),
+    Ruby32("ruby3.2"),
+    Ruby33("ruby3.3"),
+    Python311("python3.11"),
+    Nodejs20X("nodejs20.x"),
+    ProvidedAl2023("provided.al2023"),
+    Python312("python3.12"),
+    Java21("java21");
 
     private String value;
 

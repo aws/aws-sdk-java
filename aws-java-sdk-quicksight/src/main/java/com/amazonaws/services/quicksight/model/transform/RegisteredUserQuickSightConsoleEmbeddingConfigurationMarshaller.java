@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> INITIALPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialPath").build();
+    private static final MarshallingInfo<StructuredPojo> FEATURECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureConfigurations").build();
 
     private static final RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller instance = new RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller();
 
@@ -48,6 +50,7 @@ public class RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(registeredUserQuickSightConsoleEmbeddingConfiguration.getInitialPath(), INITIALPATH_BINDING);
+            protocolMarshaller.marshall(registeredUserQuickSightConsoleEmbeddingConfiguration.getFeatureConfigurations(), FEATURECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

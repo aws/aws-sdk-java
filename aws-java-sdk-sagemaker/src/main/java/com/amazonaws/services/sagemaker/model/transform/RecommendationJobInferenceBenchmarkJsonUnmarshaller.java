@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class RecommendationJobInferenceBenchmarkJsonUnmarshaller implements Unma
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setMetrics(RecommendationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EndpointMetrics", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInferenceBenchmark.setEndpointMetrics(InferenceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("EndpointConfiguration", targetDepth)) {
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setEndpointConfiguration(EndpointOutputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,6 +67,14 @@ public class RecommendationJobInferenceBenchmarkJsonUnmarshaller implements Unma
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InvocationEndTime", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInferenceBenchmark.setInvocationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("InvocationStartTime", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInferenceBenchmark.setInvocationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

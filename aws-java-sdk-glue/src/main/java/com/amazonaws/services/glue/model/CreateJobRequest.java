@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private JobCommand command;
     /**
      * <p>
-     * The default arguments for this job.
+     * The default arguments for every run of this job, specified as name-value pairs.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
@@ -79,15 +79,21 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     * For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by Glue</a> topic in the developer guide.
+     * </p>
+     * <p>
+     * For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray
+     * jobs</a> in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> defaultArguments;
     /**
      * <p>
-     * Non-overridable arguments for this job, specified as name-value pairs.
+     * Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value
+     * pairs.
      * </p>
      */
     private java.util.Map<String, String> nonOverridableArguments;
@@ -128,14 +134,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units
      * (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -147,15 +157,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      */
     private Double maxCapacity;
     /**
@@ -180,8 +186,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private NotificationProperty notificationProperty;
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
-     * the version supported for jobs of type Spark.
+     * In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in
+     * a job. The Python version indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python
+     * and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the
+     * Job command.
      * </p>
      * <p>
      * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
@@ -200,33 +211,54 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer numberOfWorkers;
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
-     * G.025X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or
+     * G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB disk
+     * (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk
+     * (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio),
+     * US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo),
+     * Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
-     * only available for Glue version 3.0 streaming jobs.
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk
+     * (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the
+     * <code>G.4X</code> worker type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low volume
+     * streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk
+     * (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      * </p>
      * </li>
      * </ul>
@@ -260,6 +292,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private SourceControlDetails sourceControlDetails;
+    /**
+     * <p>
+     * This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically
+     * performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.
+     * </p>
+     * <p>
+     * Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the
+     * maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.
+     * </p>
+     */
+    private String maintenanceWindow;
 
     /**
      * <p>
@@ -503,7 +546,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The default arguments for this job.
+     * The default arguments for every run of this job, specified as name-value pairs.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
@@ -519,12 +562,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     * For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by Glue</a> topic in the developer guide.
      * </p>
+     * <p>
+     * For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray
+     * jobs</a> in the developer guide.
+     * </p>
      * 
-     * @return The default arguments for this job.</p>
+     * @return The default arguments for every run of this job, specified as name-value pairs.</p>
      *         <p>
      *         You can specify arguments here that your own job-execution script consumes, as well as arguments that
      *         Glue itself consumes.
@@ -540,9 +588,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         APIs in Python</a> topic in the developer guide.
      *         </p>
      *         <p>
-     *         For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     *         For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      *         href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by Glue</a> topic in the developer guide.
+     *         </p>
+     *         <p>
+     *         For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters
+     *         in Ray jobs</a> in the developer guide.
      */
 
     public java.util.Map<String, String> getDefaultArguments() {
@@ -551,7 +604,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The default arguments for this job.
+     * The default arguments for every run of this job, specified as name-value pairs.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
@@ -567,13 +620,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     * For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by Glue</a> topic in the developer guide.
      * </p>
+     * <p>
+     * For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray
+     * jobs</a> in the developer guide.
+     * </p>
      * 
      * @param defaultArguments
-     *        The default arguments for this job.</p>
+     *        The default arguments for every run of this job, specified as name-value pairs.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue
      *        itself consumes.
@@ -589,9 +647,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
-     *        For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     *        For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by Glue</a> topic in the developer guide.
+     *        </p>
+     *        <p>
+     *        For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters
+     *        in Ray jobs</a> in the developer guide.
      */
 
     public void setDefaultArguments(java.util.Map<String, String> defaultArguments) {
@@ -600,7 +663,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The default arguments for this job.
+     * The default arguments for every run of this job, specified as name-value pairs.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself
@@ -616,13 +679,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Python</a> topic in the developer guide.
      * </p>
      * <p>
-     * For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     * For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
      * Used by Glue</a> topic in the developer guide.
      * </p>
+     * <p>
+     * For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters in Ray
+     * jobs</a> in the developer guide.
+     * </p>
      * 
      * @param defaultArguments
-     *        The default arguments for this job.</p>
+     *        The default arguments for every run of this job, specified as name-value pairs.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue
      *        itself consumes.
@@ -638,9 +706,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        APIs in Python</a> topic in the developer guide.
      *        </p>
      *        <p>
-     *        For information about the key-value pairs that Glue consumes to set up your job, see the <a
+     *        For information about the arguments you can provide to this field when configuring Spark jobs, see the <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by Glue</a> topic in the developer guide.
+     *        </p>
+     *        <p>
+     *        For information about the arguments you can provide to this field when configuring Ray jobs, see <a
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using job parameters
+     *        in Ray jobs</a> in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -679,10 +752,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Non-overridable arguments for this job, specified as name-value pairs.
+     * Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value
+     * pairs.
      * </p>
      * 
-     * @return Non-overridable arguments for this job, specified as name-value pairs.
+     * @return Arguments for this job that are not overridden when providing job arguments in a job run, specified as
+     *         name-value pairs.
      */
 
     public java.util.Map<String, String> getNonOverridableArguments() {
@@ -691,11 +766,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Non-overridable arguments for this job, specified as name-value pairs.
+     * Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value
+     * pairs.
      * </p>
      * 
      * @param nonOverridableArguments
-     *        Non-overridable arguments for this job, specified as name-value pairs.
+     *        Arguments for this job that are not overridden when providing job arguments in a job run, specified as
+     *        name-value pairs.
      */
 
     public void setNonOverridableArguments(java.util.Map<String, String> nonOverridableArguments) {
@@ -704,11 +781,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Non-overridable arguments for this job, specified as name-value pairs.
+     * Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value
+     * pairs.
      * </p>
      * 
      * @param nonOverridableArguments
-     *        Non-overridable arguments for this job, specified as name-value pairs.
+     *        Arguments for this job that are not overridden when providing job arguments in a job run, specified as
+     *        name-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -949,14 +1028,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units
      * (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -968,27 +1051,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      * 
      * @param maxCapacity
      *        For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing
      *        units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power
      *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+     *        href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p>
      *        <p>
-     *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *        For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     *        specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     *        </p>
+     *        <p>
+     *        Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
-     *        shell job or an Apache Spark ETL job:
+     *        shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      *        </p>
      *        <ul>
      *        <li>
@@ -1000,14 +1083,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
-     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
+     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     *        specify a <code>Worker type</code> and the <code>Number of workers</code>.
      */
 
     public void setMaxCapacity(Double maxCapacity) {
@@ -1019,14 +1098,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units
      * (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -1038,26 +1121,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      * 
      * @return For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing
      *         units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power
      *         that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *         href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+     *         href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p>
      *         <p>
-     *         Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *         For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     *         specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     *         </p>
+     *         <p>
+     *         Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *         </p>
      *         <p>
      *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
-     *         shell job or an Apache Spark ETL job:
+     *         shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      *         </p>
      *         <ul>
      *         <li>
@@ -1069,14 +1152,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
+     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
      *         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you
-     *         should specify a <code>Worker type</code> and the <code>Number of workers</code>.
      */
 
     public Double getMaxCapacity() {
@@ -1088,14 +1167,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units
      * (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of
      * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -1107,27 +1190,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      * 
      * @param maxCapacity
      *        For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing
      *        units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power
      *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
-     *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+     *        href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p>
      *        <p>
-     *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *        For Glue version 2.0+ jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     *        specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     *        </p>
+     *        <p>
+     *        Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
-     *        shell job or an Apache Spark ETL job:
+     *        shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      *        </p>
      *        <ul>
      *        <li>
@@ -1139,14 +1222,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
-     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
+     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     *        specify a <code>Worker type</code> and the <code>Number of workers</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1317,8 +1396,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
-     * the version supported for jobs of type Spark.
+     * In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in
+     * a job. The Python version indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python
+     * and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the
+     * Job command.
      * </p>
      * <p>
      * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
@@ -1329,8 +1413,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
-     *        indicates the version supported for jobs of type Spark. </p>
+     *        In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue
+     *        available in a job. The Python version indicates the version supported for jobs of type Spark. </p>
+     *        <p>
+     *        Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray,
+     *        Python and additional libraries available in your Ray job are determined by the <code>Runtime</code>
+     *        parameter of the Job command.
+     *        </p>
      *        <p>
      *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
@@ -1345,8 +1434,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
-     * the version supported for jobs of type Spark.
+     * In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in
+     * a job. The Python version indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python
+     * and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the
+     * Job command.
      * </p>
      * <p>
      * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
@@ -1356,8 +1450,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Jobs that are created without specifying a Glue version default to Glue 0.9.
      * </p>
      * 
-     * @return Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
-     *         indicates the version supported for jobs of type Spark. </p>
+     * @return In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue
+     *         available in a job. The Python version indicates the version supported for jobs of type Spark. </p>
+     *         <p>
+     *         Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of
+     *         Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code>
+     *         parameter of the Job command.
+     *         </p>
      *         <p>
      *         For more information about the available Glue versions and corresponding Spark and Python versions, see
      *         <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer
@@ -1373,8 +1472,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates
-     * the version supported for jobs of type Spark.
+     * In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in
+     * a job. The Python version indicates the version supported for jobs of type Spark.
+     * </p>
+     * <p>
+     * Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python
+     * and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the
+     * Job command.
      * </p>
      * <p>
      * For more information about the available Glue versions and corresponding Spark and Python versions, see <a
@@ -1385,8 +1489,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param glueVersion
-     *        Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version
-     *        indicates the version supported for jobs of type Spark. </p>
+     *        In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue
+     *        available in a job. The Python version indicates the version supported for jobs of type Spark. </p>
+     *        <p>
+     *        Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray,
+     *        Python and additional libraries available in your Ray job are determined by the <code>Runtime</code>
+     *        parameter of the Job command.
+     *        </p>
      *        <p>
      *        For more information about the available Glue versions and corresponding Spark and Python versions, see <a
      *        href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.
@@ -1443,64 +1552,108 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
-     * G.025X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or
+     * G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB disk
+     * (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk
+     * (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio),
+     * US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo),
+     * Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
-     * only available for Glue version 3.0 streaming jobs.
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk
+     * (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the
+     * <code>G.4X</code> worker type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low volume
+     * streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk
+     * (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      * </p>
      * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
-     *        or G.025X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X
+     *        or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
-     *        and 2 executors per worker.
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     *        (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads
+     *        such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB
+     *        disk (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run
+     *        most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB
+     *        disk (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker
+     *        type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services
+     *        Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+     *        (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe
+     *        (Stockholm).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
-     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
-     *        This worker type is only available for Glue version 3.0 streaming jobs.
+     *        For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB
+     *        disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker
+     *        type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services
+     *        Regions as supported for the <code>G.4X</code> worker type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB
+     *        disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low
+     *        volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB
+     *        disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      *        </p>
      *        </li>
      * @see WorkerType
@@ -1512,63 +1665,108 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
-     * G.025X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or
+     * G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB disk
+     * (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk
+     * (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio),
+     * US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo),
+     * Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
-     * only available for Glue version 3.0 streaming jobs.
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk
+     * (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the
+     * <code>G.4X</code> worker type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low volume
+     * streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk
+     * (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
-     *         or G.025X.</p>
+     * @return The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X,
+     *         G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
-     *         and 2 executors per worker.
+     *         For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB
+     *         disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for
+     *         workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run
+     *         most jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *         For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB
+     *         disk (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for
+     *         workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run
+     *         most jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *         For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB
+     *         disk (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for
+     *         jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This
+     *         worker type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web
+     *         Services Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia
+     *         Pacific (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and
+     *         Europe (Stockholm).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
-     *         disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
-     *         This worker type is only available for Glue version 3.0 streaming jobs.
+     *         For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB
+     *         disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for
+     *         jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This
+     *         worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web
+     *         Services Regions as supported for the <code>G.4X</code> worker type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB
+     *         disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low
+     *         volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB
+     *         disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      *         </p>
      *         </li>
      * @see WorkerType
@@ -1580,64 +1778,108 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
-     * G.025X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or
+     * G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB disk
+     * (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk
+     * (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio),
+     * US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo),
+     * Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
-     * only available for Glue version 3.0 streaming jobs.
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk
+     * (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the
+     * <code>G.4X</code> worker type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low volume
+     * streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk
+     * (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      * </p>
      * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
-     *        or G.025X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X
+     *        or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
-     *        and 2 executors per worker.
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     *        (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads
+     *        such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB
+     *        disk (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run
+     *        most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB
+     *        disk (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker
+     *        type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services
+     *        Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+     *        (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe
+     *        (Stockholm).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
-     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
-     *        This worker type is only available for Glue version 3.0 streaming jobs.
+     *        For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB
+     *        disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker
+     *        type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services
+     *        Regions as supported for the <code>G.4X</code> worker type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB
+     *        disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low
+     *        volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB
+     *        disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1651,64 +1893,108 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or
-     * G.025X.
+     * The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or
+     * G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.
+     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB disk
+     * (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for workloads such
+     * as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk
+     * (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio),
+     * US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo),
+     * Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is
-     * only available for Glue version 3.0 streaming jobs.
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk
+     * (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose
+     * workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available
+     * only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the
+     * <code>G.4X</code> worker type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk
+     * (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low volume
+     * streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk
+     * (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      * </p>
      * </li>
      * </ul>
      * 
      * @param workerType
-     *        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X,
-     *        or G.025X.</p>
+     *        The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X
+     *        or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk,
-     *        and 2 executors per worker.
+     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk
+     *        (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads
+     *        such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB
+     *        disk (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run
+     *        most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB
+     *        disk (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker
+     *        type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services
+     *        Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+     *        (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe
+     *        (Stockholm).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB
-     *        disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs.
-     *        This worker type is only available for Glue version 3.0 streaming jobs.
+     *        For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB
+     *        disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for
+     *        jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker
+     *        type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services
+     *        Regions as supported for the <code>G.4X</code> worker type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB
+     *        disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for low
+     *        volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB
+     *        disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1969,6 +2255,79 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically
+     * performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.
+     * </p>
+     * <p>
+     * Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the
+     * maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.
+     * </p>
+     * 
+     * @param maintenanceWindow
+     *        This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue
+     *        periodically performs maintenance activities. During these maintenance windows, Glue will need to restart
+     *        your streaming jobs.</p>
+     *        <p>
+     *        Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up
+     *        the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to
+     *        1:00PM GMT.
+     */
+
+    public void setMaintenanceWindow(String maintenanceWindow) {
+        this.maintenanceWindow = maintenanceWindow;
+    }
+
+    /**
+     * <p>
+     * This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically
+     * performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.
+     * </p>
+     * <p>
+     * Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the
+     * maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.
+     * </p>
+     * 
+     * @return This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue
+     *         periodically performs maintenance activities. During these maintenance windows, Glue will need to restart
+     *         your streaming jobs.</p>
+     *         <p>
+     *         Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up
+     *         the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to
+     *         1:00PM GMT.
+     */
+
+    public String getMaintenanceWindow() {
+        return this.maintenanceWindow;
+    }
+
+    /**
+     * <p>
+     * This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically
+     * performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.
+     * </p>
+     * <p>
+     * Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the
+     * maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.
+     * </p>
+     * 
+     * @param maintenanceWindow
+     *        This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue
+     *        periodically performs maintenance activities. During these maintenance windows, Glue will need to restart
+     *        your streaming jobs.</p>
+     *        <p>
+     *        Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up
+     *        the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to
+     *        1:00PM GMT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withMaintenanceWindow(String maintenanceWindow) {
+        setMaintenanceWindow(maintenanceWindow);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2023,7 +2382,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getExecutionClass() != null)
             sb.append("ExecutionClass: ").append(getExecutionClass()).append(",");
         if (getSourceControlDetails() != null)
-            sb.append("SourceControlDetails: ").append(getSourceControlDetails());
+            sb.append("SourceControlDetails: ").append(getSourceControlDetails()).append(",");
+        if (getMaintenanceWindow() != null)
+            sb.append("MaintenanceWindow: ").append(getMaintenanceWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -2126,6 +2487,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getSourceControlDetails() != null && other.getSourceControlDetails().equals(this.getSourceControlDetails()) == false)
             return false;
+        if (other.getMaintenanceWindow() == null ^ this.getMaintenanceWindow() == null)
+            return false;
+        if (other.getMaintenanceWindow() != null && other.getMaintenanceWindow().equals(this.getMaintenanceWindow()) == false)
+            return false;
         return true;
     }
 
@@ -2156,6 +2521,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getCodeGenConfigurationNodes() == null) ? 0 : getCodeGenConfigurationNodes().hashCode());
         hashCode = prime * hashCode + ((getExecutionClass() == null) ? 0 : getExecutionClass().hashCode());
         hashCode = prime * hashCode + ((getSourceControlDetails() == null) ? 0 : getSourceControlDetails().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceWindow() == null) ? 0 : getMaintenanceWindow().hashCode());
         return hashCode;
     }
 

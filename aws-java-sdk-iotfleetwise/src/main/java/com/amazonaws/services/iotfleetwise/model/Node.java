@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,19 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private Attribute attribute;
+    /**
+     * <p>
+     * Represents a complex or higher-order data structure.
+     * </p>
+     */
+    private CustomStruct struct;
+    /**
+     * <p>
+     * Represents a member of the complex data structure. The <code>datatype</code> of the property can be either
+     * primitive or another <code>struct</code>.
+     * </p>
+     */
+    private CustomProperty property;
 
     /**
      * <p>
@@ -283,6 +296,92 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents a complex or higher-order data structure.
+     * </p>
+     * 
+     * @param struct
+     *        Represents a complex or higher-order data structure.
+     */
+
+    public void setStruct(CustomStruct struct) {
+        this.struct = struct;
+    }
+
+    /**
+     * <p>
+     * Represents a complex or higher-order data structure.
+     * </p>
+     * 
+     * @return Represents a complex or higher-order data structure.
+     */
+
+    public CustomStruct getStruct() {
+        return this.struct;
+    }
+
+    /**
+     * <p>
+     * Represents a complex or higher-order data structure.
+     * </p>
+     * 
+     * @param struct
+     *        Represents a complex or higher-order data structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withStruct(CustomStruct struct) {
+        setStruct(struct);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents a member of the complex data structure. The <code>datatype</code> of the property can be either
+     * primitive or another <code>struct</code>.
+     * </p>
+     * 
+     * @param property
+     *        Represents a member of the complex data structure. The <code>datatype</code> of the property can be either
+     *        primitive or another <code>struct</code>.
+     */
+
+    public void setProperty(CustomProperty property) {
+        this.property = property;
+    }
+
+    /**
+     * <p>
+     * Represents a member of the complex data structure. The <code>datatype</code> of the property can be either
+     * primitive or another <code>struct</code>.
+     * </p>
+     * 
+     * @return Represents a member of the complex data structure. The <code>datatype</code> of the property can be
+     *         either primitive or another <code>struct</code>.
+     */
+
+    public CustomProperty getProperty() {
+        return this.property;
+    }
+
+    /**
+     * <p>
+     * Represents a member of the complex data structure. The <code>datatype</code> of the property can be either
+     * primitive or another <code>struct</code>.
+     * </p>
+     * 
+     * @param property
+     *        Represents a member of the complex data structure. The <code>datatype</code> of the property can be either
+     *        primitive or another <code>struct</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withProperty(CustomProperty property) {
+        setProperty(property);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,7 +400,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         if (getActuator() != null)
             sb.append("Actuator: ").append(getActuator()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getStruct() != null)
+            sb.append("Struct: ").append(getStruct()).append(",");
+        if (getProperty() != null)
+            sb.append("Property: ").append(getProperty());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +435,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
             return false;
+        if (other.getStruct() == null ^ this.getStruct() == null)
+            return false;
+        if (other.getStruct() != null && other.getStruct().equals(this.getStruct()) == false)
+            return false;
+        if (other.getProperty() == null ^ this.getProperty() == null)
+            return false;
+        if (other.getProperty() != null && other.getProperty().equals(this.getProperty()) == false)
+            return false;
         return true;
     }
 
@@ -344,6 +455,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSensor() == null) ? 0 : getSensor().hashCode());
         hashCode = prime * hashCode + ((getActuator() == null) ? 0 : getActuator().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getStruct() == null) ? 0 : getStruct().hashCode());
+        hashCode = prime * hashCode + ((getProperty() == null) ? 0 : getProperty().hashCode());
         return hashCode;
     }
 

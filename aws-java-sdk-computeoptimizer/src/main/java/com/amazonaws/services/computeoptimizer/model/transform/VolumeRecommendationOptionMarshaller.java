@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class VolumeRecommendationOptionMarshaller {
             .marshallLocationName("rank").build();
     private static final MarshallingInfo<StructuredPojo> SAVINGSOPPORTUNITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("savingsOpportunity").build();
+    private static final MarshallingInfo<StructuredPojo> SAVINGSOPPORTUNITYAFTERDISCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("savingsOpportunityAfterDiscounts").build();
 
     private static final VolumeRecommendationOptionMarshaller instance = new VolumeRecommendationOptionMarshaller();
 
@@ -56,6 +58,7 @@ public class VolumeRecommendationOptionMarshaller {
             protocolMarshaller.marshall(volumeRecommendationOption.getPerformanceRisk(), PERFORMANCERISK_BINDING);
             protocolMarshaller.marshall(volumeRecommendationOption.getRank(), RANK_BINDING);
             protocolMarshaller.marshall(volumeRecommendationOption.getSavingsOpportunity(), SAVINGSOPPORTUNITY_BINDING);
+            protocolMarshaller.marshall(volumeRecommendationOption.getSavingsOpportunityAfterDiscounts(), SAVINGSOPPORTUNITYAFTERDISCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

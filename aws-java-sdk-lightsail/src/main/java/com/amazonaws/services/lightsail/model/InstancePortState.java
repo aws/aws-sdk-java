@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
      * specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code>
      * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     * code using the <code>toPort</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -629,6 +636,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * parameter.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     * code using the <code>toPort</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -666,6 +680,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
      *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
      *        code using the <code>toPort</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify
+     *        <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the
+     *        <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.
      *        </p>
      *        </li>
      * @see NetworkProtocol
@@ -714,6 +735,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * parameter.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     * code using the <code>toPort</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The IP protocol name.</p>
@@ -750,6 +778,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *         an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
      *         <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
      *         code using the <code>toPort</code> parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify
+     *         <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the
+     *         <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.
      *         </p>
      *         </li>
      * @see NetworkProtocol
@@ -798,6 +833,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * parameter.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     * code using the <code>toPort</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -835,6 +877,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
      *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
      *        code using the <code>toPort</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify
+     *        <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the
+     *        <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -885,6 +934,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * parameter.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     * code using the <code>toPort</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -922,6 +978,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
      *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
      *        code using the <code>toPort</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify
+     *        <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the
+     *        <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.
      *        </p>
      *        </li>
      * @see NetworkProtocol
@@ -970,6 +1033,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * parameter.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify <code>icmp6</code> as
+     * the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
+     * code using the <code>toPort</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param protocol
@@ -1007,6 +1077,13 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      *        error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the
      *        <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP
      *        code using the <code>toPort</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>icmp6</code> - Internet Control Message Protocol (ICMP) for IPv6. When you specify
+     *        <code>icmp6</code> as the <code>protocol</code>, you must specify the ICMP type using the
+     *        <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

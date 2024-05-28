@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
     private String arn;
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     * The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      * </p>
      */
     private String service;
@@ -66,8 +66,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
     private String eventTypeCategory;
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -212,11 +211,11 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     * The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      * </p>
      * 
      * @param service
-     *        The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     *        The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      */
 
     public void setService(String service) {
@@ -225,10 +224,10 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     * The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      * </p>
      * 
-     * @return The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     * @return The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      */
 
     public String getService() {
@@ -237,11 +236,11 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     * The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      * </p>
      * 
      * @param service
-     *        The Amazon Web Services service that is affected by the event, such as EC2 and RDS.
+     *        The Amazon Web Service that is affected by the event, such as EC2 and RDS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,8 +368,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -396,8 +394,8 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -428,8 +426,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -454,8 +451,8 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
      * </li>
      * </ul>
      * 
-     * @return This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *         account-specific event.</p>
+     * @return This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *         event.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -486,8 +483,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -513,8 +509,8 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -547,8 +543,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -574,8 +569,8 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,12 @@ public class DescribeFolderPermissionsResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String requestId;
+    /**
+     * <p>
+     * The pagination token for the next set of results, or null if there are no more results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -285,6 +291,46 @@ public class DescribeFolderPermissionsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The pagination token for the next set of results, or null if there are no more results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token for the next set of results, or null if there are no more results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token for the next set of results, or null if there are no more results.
+     * </p>
+     * 
+     * @return The pagination token for the next set of results, or null if there are no more results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token for the next set of results, or null if there are no more results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token for the next set of results, or null if there are no more results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFolderPermissionsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -305,7 +351,9 @@ public class DescribeFolderPermissionsResult extends com.amazonaws.AmazonWebServ
         if (getPermissions() != null)
             sb.append("Permissions: ").append(getPermissions()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId());
+            sb.append("RequestId: ").append(getRequestId()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -340,6 +388,10 @@ public class DescribeFolderPermissionsResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +405,7 @@ public class DescribeFolderPermissionsResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
      * this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60
      * seconds.
      * </p>
+     * <p>
+     * For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     * </p>
+     * <p>
+     * For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
+     * </p>
      */
     private Integer attemptDurationSeconds;
 
@@ -43,11 +49,22 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
      * this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60
      * seconds.
      * </p>
+     * <p>
+     * For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     * </p>
+     * <p>
+     * For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
+     * </p>
      * 
      * @param attemptDurationSeconds
      *        The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp.
      *        After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the
-     *        timeout is 60 seconds.
+     *        timeout is 60 seconds.</p>
+     *        <p>
+     *        For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     *        </p>
+     *        <p>
+     *        For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
      */
 
     public void setAttemptDurationSeconds(Integer attemptDurationSeconds) {
@@ -60,10 +77,21 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
      * this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60
      * seconds.
      * </p>
+     * <p>
+     * For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     * </p>
+     * <p>
+     * For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
+     * </p>
      * 
      * @return The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code>
      *         timestamp. After this time passes, Batch terminates your jobs if they aren't finished. The minimum value
-     *         for the timeout is 60 seconds.
+     *         for the timeout is 60 seconds.</p>
+     *         <p>
+     *         For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     *         </p>
+     *         <p>
+     *         For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
      */
 
     public Integer getAttemptDurationSeconds() {
@@ -76,11 +104,22 @@ public class JobTimeout implements Serializable, Cloneable, StructuredPojo {
      * this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the timeout is 60
      * seconds.
      * </p>
+     * <p>
+     * For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     * </p>
+     * <p>
+     * For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
+     * </p>
      * 
      * @param attemptDurationSeconds
      *        The job timeout time (in seconds) that's measured from the job attempt's <code>startedAt</code> timestamp.
      *        After this time passes, Batch terminates your jobs if they aren't finished. The minimum value for the
-     *        timeout is 60 seconds.
+     *        timeout is 60 seconds.</p>
+     *        <p>
+     *        For array jobs, the timeout applies to the child jobs, not to the parent array job.
+     *        </p>
+     *        <p>
+     *        For multi-node parallel (MNP) jobs, the timeout applies to the whole job, not to the individual nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

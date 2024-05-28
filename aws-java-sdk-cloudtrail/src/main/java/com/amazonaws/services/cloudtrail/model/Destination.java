@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the service where CloudTrail delivers events.
+ * Contains information about the destination receiving events.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Destination" target="_top">AWS API
@@ -30,26 +30,28 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of destination for events arriving from a channel. For service-linked channels, the value is
-     * <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration,
+     * the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * For service-linked channels, the value is the name of the Amazon Web Services service.
+     * For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives
+     * events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.
      * </p>
      */
     private String location;
 
     /**
      * <p>
-     * The type of destination for events arriving from a channel. For service-linked channels, the value is
-     * <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration,
+     * the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.
      * </p>
      * 
      * @param type
-     *        The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *        The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake
+     *        integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is
      *        <code>AWS_SERVICE</code>.
      * @see DestinationType
      */
@@ -60,11 +62,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of destination for events arriving from a channel. For service-linked channels, the value is
-     * <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration,
+     * the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.
      * </p>
      * 
-     * @return The type of destination for events arriving from a channel. For service-linked channels, the value is
+     * @return The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake
+     *         integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is
      *         <code>AWS_SERVICE</code>.
      * @see DestinationType
      */
@@ -75,12 +78,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of destination for events arriving from a channel. For service-linked channels, the value is
-     * <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration,
+     * the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.
      * </p>
      * 
      * @param type
-     *        The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *        The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake
+     *        integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is
      *        <code>AWS_SERVICE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
@@ -93,12 +97,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of destination for events arriving from a channel. For service-linked channels, the value is
-     * <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake integration,
+     * the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is <code>AWS_SERVICE</code>.
      * </p>
      * 
      * @param type
-     *        The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *        The type of destination for events arriving from a channel. For channels used for a CloudTrail Lake
+     *        integration, the value is <code>EVENT_DATA_STORE</code>. For service-linked channels, the value is
      *        <code>AWS_SERVICE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
@@ -111,11 +116,14 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For service-linked channels, the value is the name of the Amazon Web Services service.
+     * For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives
+     * events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.
      * </p>
      * 
      * @param location
-     *        For service-linked channels, the value is the name of the Amazon Web Services service.
+     *        For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that
+     *        receives events from a channel. For service-linked channels, the location is the name of the Amazon Web
+     *        Services service.
      */
 
     public void setLocation(String location) {
@@ -124,10 +132,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For service-linked channels, the value is the name of the Amazon Web Services service.
+     * For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives
+     * events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.
      * </p>
      * 
-     * @return For service-linked channels, the value is the name of the Amazon Web Services service.
+     * @return For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that
+     *         receives events from a channel. For service-linked channels, the location is the name of the Amazon Web
+     *         Services service.
      */
 
     public String getLocation() {
@@ -136,11 +147,14 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For service-linked channels, the value is the name of the Amazon Web Services service.
+     * For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that receives
+     * events from a channel. For service-linked channels, the location is the name of the Amazon Web Services service.
      * </p>
      * 
      * @param location
-     *        For service-linked channels, the value is the name of the Amazon Web Services service.
+     *        For channels used for a CloudTrail Lake integration, the location is the ARN of an event data store that
+     *        receives events from a channel. For service-linked channels, the location is the name of the Amazon Web
+     *        Services service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

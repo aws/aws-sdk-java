@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of tags associated with a Data Store.
+     * Returns a list of tags associated with a data store.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Returns a list of tags associated with a Data Store.
+     * Returns a list of tags associated with a data store.
      * </p>
      * 
-     * @return Returns a list of tags associated with a Data Store.
+     * @return Returns a list of tags associated with a data store.
      */
 
     public java.util.List<Tag> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of tags associated with a Data Store.
+     * Returns a list of tags associated with a data store.
      * </p>
      * 
      * @param tags
-     *        Returns a list of tags associated with a Data Store.
+     *        Returns a list of tags associated with a data store.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -62,7 +62,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of tags associated with a Data Store.
+     * Returns a list of tags associated with a data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        Returns a list of tags associated with a Data Store.
+     *        Returns a list of tags associated with a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Returns a list of tags associated with a Data Store.
+     * Returns a list of tags associated with a data store.
      * </p>
      * 
      * @param tags
-     *        Returns a list of tags associated with a Data Store.
+     *        Returns a list of tags associated with a data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

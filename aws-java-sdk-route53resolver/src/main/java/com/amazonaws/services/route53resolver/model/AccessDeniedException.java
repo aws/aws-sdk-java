@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,10 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The current account doesn't have the IAM permissions required to perform the specified Resolver operation.
+ * </p>
+ * <p>
+ * This error can also be thrown when a customer has reached the 5120 character limit for a resource policy for
+ * CloudWatch Logs.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("bandwidthReductionFilter", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setBandwidthReductionFilter(BandwidthReductionFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("bitrate", targetDepth)) {
                     context.nextToken();
                     h264Settings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -67,6 +71,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                 if (context.testExpression("dynamicSubGop", targetDepth)) {
                     context.nextToken();
                     h264Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("endOfStreamMarkers", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setEndOfStreamMarkers(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("entropyEncoding", targetDepth)) {
                     context.nextToken();

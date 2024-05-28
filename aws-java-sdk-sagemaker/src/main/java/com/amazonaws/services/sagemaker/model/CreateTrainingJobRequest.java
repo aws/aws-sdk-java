@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      */
     private java.util.List<Channel> inputDataConfig;
     /**
@@ -119,8 +122,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private ResourceConfig resourceConfig;
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your training job to connect to. Control access to and from your training
+     * container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
@@ -190,7 +194,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private DebugHookConfig debugHookConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      */
     private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
@@ -202,7 +206,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private ProfilerConfig profilerConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
@@ -218,6 +222,26 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     */
+    private RemoteDebugConfig remoteDebugConfig;
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     */
+    private InfraCheckConfig infraCheckConfig;
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     */
+    private SessionChainingConfig sessionChainingConfig;
 
     /**
      * <p>
@@ -609,6 +633,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @return An array of <code>Channel</code> objects. Each channel is a named input source.
      *         <code>InputDataConfig</code> describes the input data and its location. </p>
@@ -624,6 +651,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *         S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *         example, if you specify an EFS location, input data files are available as input streams. They do not
      *         need to be downloaded.
+     *         </p>
+     *         <p>
+     *         Your input must be in the same Amazon Web Services region as your training job.
      */
 
     public java.util.List<Channel> getInputDataConfig() {
@@ -646,6 +676,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param inputDataConfig
      *        An array of <code>Channel</code> objects. Each channel is a named input source.
@@ -662,6 +695,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *        example, if you specify an EFS location, input data files are available as input streams. They do not need
      *        to be downloaded.
+     *        </p>
+     *        <p>
+     *        Your input must be in the same Amazon Web Services region as your training job.
      */
 
     public void setInputDataConfig(java.util.Collection<Channel> inputDataConfig) {
@@ -690,6 +726,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
      * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInputDataConfig(java.util.Collection)} or {@link #withInputDataConfig(java.util.Collection)} if you
      * want to override the existing values.
@@ -710,6 +749,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *        example, if you specify an EFS location, input data files are available as input streams. They do not need
      *        to be downloaded.
+     *        </p>
+     *        <p>
+     *        Your input must be in the same Amazon Web Services region as your training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,6 +781,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you
      * specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
      * </p>
+     * <p>
+     * Your input must be in the same Amazon Web Services region as your training job.
+     * </p>
      * 
      * @param inputDataConfig
      *        An array of <code>Channel</code> objects. Each channel is a named input source.
@@ -755,6 +800,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        S3 bucket to a local directory in the Docker container, or makes it available as input streams. For
      *        example, if you specify an EFS location, input data files are available as input streams. They do not need
      *        to be downloaded.
+     *        </p>
+     *        <p>
+     *        Your input must be in the same Amazon Web Services region as your training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -884,15 +932,17 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your training job to connect to. Control access to and from your training
+     * container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
-     *        access to and from your training container by configuring the VPC. For more information, see <a
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that you want your training job to connect to. Control access to and from
+     *        your training container by configuring the VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      */
@@ -903,14 +953,16 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your training job to connect to. Control access to and from your training
+     * container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
-     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
-     *         access to and from your training container by configuring the VPC. For more information, see <a
+     * @return A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *         object that specifies the VPC that you want your training job to connect to. Control access to and from
+     *         your training container by configuring the VPC. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
      *         Amazon Virtual Private Cloud</a>.
      */
@@ -921,15 +973,17 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
-     * and from your training container by configuring the VPC. For more information, see <a
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that you want your training job to connect to. Control access to and from your training
+     * container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
-     *        access to and from your training container by configuring the VPC. For more information, see <a
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that you want your training job to connect to. Control access to and from
+     *        your training container by configuring the VPC. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
      *        Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1449,10 +1503,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for debugging output tensors.
+     * @return Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
@@ -1461,11 +1515,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
@@ -1479,7 +1533,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1488,7 +1542,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1504,11 +1558,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1597,10 +1651,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
@@ -1609,11 +1663,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
@@ -1627,7 +1681,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1636,7 +1690,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1652,11 +1706,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1774,6 +1828,138 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @param remoteDebugConfig
+     *        Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker,
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a
+     *        training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     */
+
+    public void setRemoteDebugConfig(RemoteDebugConfig remoteDebugConfig) {
+        this.remoteDebugConfig = remoteDebugConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @return Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker,
+     *         see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a
+     *         training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     */
+
+    public RemoteDebugConfig getRemoteDebugConfig() {
+        return this.remoteDebugConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @param remoteDebugConfig
+     *        Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker,
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a
+     *        training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withRemoteDebugConfig(RemoteDebugConfig remoteDebugConfig) {
+        setRemoteDebugConfig(remoteDebugConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public void setInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        this.infraCheckConfig = infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @return Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public InfraCheckConfig getInfraCheckConfig() {
+        return this.infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        setInfraCheckConfig(infraCheckConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     * 
+     * @param sessionChainingConfig
+     *        Contains information about attribute-based access control (ABAC) for the training job.
+     */
+
+    public void setSessionChainingConfig(SessionChainingConfig sessionChainingConfig) {
+        this.sessionChainingConfig = sessionChainingConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     * 
+     * @return Contains information about attribute-based access control (ABAC) for the training job.
+     */
+
+    public SessionChainingConfig getSessionChainingConfig() {
+        return this.sessionChainingConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     * 
+     * @param sessionChainingConfig
+     *        Contains information about attribute-based access control (ABAC) for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withSessionChainingConfig(SessionChainingConfig sessionChainingConfig) {
+        setSessionChainingConfig(sessionChainingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1828,7 +2014,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy());
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getRemoteDebugConfig() != null)
+            sb.append("RemoteDebugConfig: ").append(getRemoteDebugConfig()).append(",");
+        if (getInfraCheckConfig() != null)
+            sb.append("InfraCheckConfig: ").append(getInfraCheckConfig()).append(",");
+        if (getSessionChainingConfig() != null)
+            sb.append("SessionChainingConfig: ").append(getSessionChainingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1932,6 +2124,18 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
+        if (other.getRemoteDebugConfig() == null ^ this.getRemoteDebugConfig() == null)
+            return false;
+        if (other.getRemoteDebugConfig() != null && other.getRemoteDebugConfig().equals(this.getRemoteDebugConfig()) == false)
+            return false;
+        if (other.getInfraCheckConfig() == null ^ this.getInfraCheckConfig() == null)
+            return false;
+        if (other.getInfraCheckConfig() != null && other.getInfraCheckConfig().equals(this.getInfraCheckConfig()) == false)
+            return false;
+        if (other.getSessionChainingConfig() == null ^ this.getSessionChainingConfig() == null)
+            return false;
+        if (other.getSessionChainingConfig() != null && other.getSessionChainingConfig().equals(this.getSessionChainingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1962,6 +2166,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugConfig() == null) ? 0 : getRemoteDebugConfig().hashCode());
+        hashCode = prime * hashCode + ((getInfraCheckConfig() == null) ? 0 : getInfraCheckConfig().hashCode());
+        hashCode = prime * hashCode + ((getSessionChainingConfig() == null) ? 0 : getSessionChainingConfig().hashCode());
         return hashCode;
     }
 

@@ -1,0 +1,77 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.docdbelastic.model;
+
+import javax.annotation.Generated;
+
+/**
+ * 
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public enum Status {
+
+    CREATING("CREATING"),
+    ACTIVE("ACTIVE"),
+    DELETING("DELETING"),
+    UPDATING("UPDATING"),
+    VPC_ENDPOINT_LIMIT_EXCEEDED("VPC_ENDPOINT_LIMIT_EXCEEDED"),
+    IP_ADDRESS_LIMIT_EXCEEDED("IP_ADDRESS_LIMIT_EXCEEDED"),
+    INVALID_SECURITY_GROUP_ID("INVALID_SECURITY_GROUP_ID"),
+    INVALID_SUBNET_ID("INVALID_SUBNET_ID"),
+    INACCESSIBLE_ENCRYPTION_CREDS("INACCESSIBLE_ENCRYPTION_CREDS"),
+    INACCESSIBLE_SECRET_ARN("INACCESSIBLE_SECRET_ARN"),
+    INACCESSIBLE_VPC_ENDPOINT("INACCESSIBLE_VPC_ENDPOINT"),
+    INCOMPATIBLE_NETWORK("INCOMPATIBLE_NETWORK"),
+    MERGING("MERGING"),
+    MODIFYING("MODIFYING"),
+    SPLITTING("SPLITTING"),
+    COPYING("COPYING"),
+    STARTING("STARTING"),
+    STOPPING("STOPPING"),
+    STOPPED("STOPPED");
+
+    private String value;
+
+    private Status(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
+    }
+
+    /**
+     * Use this in place of valueOf.
+     *
+     * @param value
+     *        real value
+     * @return Status corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
+     */
+    public static Status fromValue(String value) {
+        if (value == null || "".equals(value)) {
+            throw new IllegalArgumentException("Value cannot be null or empty!");
+        }
+
+        for (Status enumEntry : Status.values()) {
+            if (enumEntry.toString().equals(value)) {
+                return enumEntry;
+            }
+        }
+
+        throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+    }
+}

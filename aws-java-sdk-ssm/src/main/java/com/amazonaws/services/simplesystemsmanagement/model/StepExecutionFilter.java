@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,7 @@ public class StepExecutionFilter implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     * StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      */
     private String key;
@@ -44,13 +43,11 @@ public class StepExecutionFilter implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     * StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     *        StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @see StepExecutionFilterKey
      */
 
@@ -60,12 +57,10 @@ public class StepExecutionFilter implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     * StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
-     * @return One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     *         StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     * @return One or more keys to limit the results.
      * @see StepExecutionFilterKey
      */
 
@@ -75,13 +70,11 @@ public class StepExecutionFilter implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     * StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     *        StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepExecutionFilterKey
      */
@@ -93,13 +86,11 @@ public class StepExecutionFilter implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     * StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: StepName, Action,
-     *        StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepExecutionFilterKey
      */

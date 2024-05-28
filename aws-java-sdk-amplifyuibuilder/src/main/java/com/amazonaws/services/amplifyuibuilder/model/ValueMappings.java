@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class ValueMappings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ValueMapping> values;
+    /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     */
+    private java.util.Map<String, FormInputBindingPropertiesValue> bindingProperties;
 
     /**
      * <p>
@@ -106,6 +112,74 @@ public class ValueMappings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     * 
+     * @return The information to bind fields to data at runtime.
+     */
+
+    public java.util.Map<String, FormInputBindingPropertiesValue> getBindingProperties() {
+        return bindingProperties;
+    }
+
+    /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     * 
+     * @param bindingProperties
+     *        The information to bind fields to data at runtime.
+     */
+
+    public void setBindingProperties(java.util.Map<String, FormInputBindingPropertiesValue> bindingProperties) {
+        this.bindingProperties = bindingProperties;
+    }
+
+    /**
+     * <p>
+     * The information to bind fields to data at runtime.
+     * </p>
+     * 
+     * @param bindingProperties
+     *        The information to bind fields to data at runtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValueMappings withBindingProperties(java.util.Map<String, FormInputBindingPropertiesValue> bindingProperties) {
+        setBindingProperties(bindingProperties);
+        return this;
+    }
+
+    /**
+     * Add a single BindingProperties entry
+     *
+     * @see ValueMappings#withBindingProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValueMappings addBindingPropertiesEntry(String key, FormInputBindingPropertiesValue value) {
+        if (null == this.bindingProperties) {
+            this.bindingProperties = new java.util.HashMap<String, FormInputBindingPropertiesValue>();
+        }
+        if (this.bindingProperties.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.bindingProperties.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BindingProperties.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValueMappings clearBindingPropertiesEntries() {
+        this.bindingProperties = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +192,9 @@ public class ValueMappings implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getBindingProperties() != null)
+            sb.append("BindingProperties: ").append(getBindingProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +213,10 @@ public class ValueMappings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
+        if (other.getBindingProperties() == null ^ this.getBindingProperties() == null)
+            return false;
+        if (other.getBindingProperties() != null && other.getBindingProperties().equals(this.getBindingProperties()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +226,7 @@ public class ValueMappings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getBindingProperties() == null) ? 0 : getBindingProperties().hashCode());
         return hashCode;
     }
 

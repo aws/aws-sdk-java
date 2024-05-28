@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,6 +89,18 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     */
+    private String batchInferenceJobMode;
+    /**
+     * <p>
+     * The job's theme generation settings.
+     * </p>
+     */
+    private ThemeGenerationConfig themeGenerationConfig;
     /**
      * <p>
      * The status of the batch inference job. The status is one of the following values:
@@ -538,6 +550,105 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The job's mode.
+     * @see BatchInferenceJobMode
+     */
+
+    public void setBatchInferenceJobMode(String batchInferenceJobMode) {
+        this.batchInferenceJobMode = batchInferenceJobMode;
+    }
+
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @return The job's mode.
+     * @see BatchInferenceJobMode
+     */
+
+    public String getBatchInferenceJobMode() {
+        return this.batchInferenceJobMode;
+    }
+
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The job's mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BatchInferenceJobMode
+     */
+
+    public BatchInferenceJob withBatchInferenceJobMode(String batchInferenceJobMode) {
+        setBatchInferenceJobMode(batchInferenceJobMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's mode.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The job's mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BatchInferenceJobMode
+     */
+
+    public BatchInferenceJob withBatchInferenceJobMode(BatchInferenceJobMode batchInferenceJobMode) {
+        this.batchInferenceJobMode = batchInferenceJobMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's theme generation settings.
+     * </p>
+     * 
+     * @param themeGenerationConfig
+     *        The job's theme generation settings.
+     */
+
+    public void setThemeGenerationConfig(ThemeGenerationConfig themeGenerationConfig) {
+        this.themeGenerationConfig = themeGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * The job's theme generation settings.
+     * </p>
+     * 
+     * @return The job's theme generation settings.
+     */
+
+    public ThemeGenerationConfig getThemeGenerationConfig() {
+        return this.themeGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * The job's theme generation settings.
+     * </p>
+     * 
+     * @param themeGenerationConfig
+     *        The job's theme generation settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchInferenceJob withThemeGenerationConfig(ThemeGenerationConfig themeGenerationConfig) {
+        setThemeGenerationConfig(themeGenerationConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the batch inference job. The status is one of the following values:
      * </p>
      * <ul>
@@ -817,6 +928,10 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             sb.append("BatchInferenceJobConfig: ").append(getBatchInferenceJobConfig()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getBatchInferenceJobMode() != null)
+            sb.append("BatchInferenceJobMode: ").append(getBatchInferenceJobMode()).append(",");
+        if (getThemeGenerationConfig() != null)
+            sb.append("ThemeGenerationConfig: ").append(getThemeGenerationConfig()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationDateTime() != null)
@@ -877,6 +992,14 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getBatchInferenceJobMode() == null ^ this.getBatchInferenceJobMode() == null)
+            return false;
+        if (other.getBatchInferenceJobMode() != null && other.getBatchInferenceJobMode().equals(this.getBatchInferenceJobMode()) == false)
+            return false;
+        if (other.getThemeGenerationConfig() == null ^ this.getThemeGenerationConfig() == null)
+            return false;
+        if (other.getThemeGenerationConfig() != null && other.getThemeGenerationConfig().equals(this.getThemeGenerationConfig()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -907,6 +1030,8 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getJobOutput() == null) ? 0 : getJobOutput().hashCode());
         hashCode = prime * hashCode + ((getBatchInferenceJobConfig() == null) ? 0 : getBatchInferenceJobConfig().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobMode() == null) ? 0 : getBatchInferenceJobMode().hashCode());
+        hashCode = prime * hashCode + ((getThemeGenerationConfig() == null) ? 0 : getThemeGenerationConfig().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());

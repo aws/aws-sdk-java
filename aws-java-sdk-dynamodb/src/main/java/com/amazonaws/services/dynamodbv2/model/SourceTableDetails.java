@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,8 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private ProvisionedThroughput provisionedThroughput;
+
+    private OnDemandThroughput onDemandThroughput;
     /**
      * <p>
      * Number of items in the table. Note that this is an approximate value.
@@ -409,6 +411,32 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param onDemandThroughput
+     */
+
+    public void setOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        this.onDemandThroughput = onDemandThroughput;
+    }
+
+    /**
+     * @return
+     */
+
+    public OnDemandThroughput getOnDemandThroughput() {
+        return this.onDemandThroughput;
+    }
+
+    /**
+     * @param onDemandThroughput
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceTableDetails withOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        setOnDemandThroughput(onDemandThroughput);
+        return this;
+    }
+
+    /**
      * <p>
      * Number of items in the table. Note that this is an approximate value.
      * </p>
@@ -649,6 +677,8 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
             sb.append("TableCreationDateTime: ").append(getTableCreationDateTime()).append(",");
         if (getProvisionedThroughput() != null)
             sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
+        if (getOnDemandThroughput() != null)
+            sb.append("OnDemandThroughput: ").append(getOnDemandThroughput()).append(",");
         if (getItemCount() != null)
             sb.append("ItemCount: ").append(getItemCount()).append(",");
         if (getBillingMode() != null)
@@ -695,6 +725,10 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
             return false;
+        if (other.getOnDemandThroughput() == null ^ this.getOnDemandThroughput() == null)
+            return false;
+        if (other.getOnDemandThroughput() != null && other.getOnDemandThroughput().equals(this.getOnDemandThroughput()) == false)
+            return false;
         if (other.getItemCount() == null ^ this.getItemCount() == null)
             return false;
         if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
@@ -718,6 +752,7 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
         hashCode = prime * hashCode + ((getTableCreationDateTime() == null) ? 0 : getTableCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughput() == null) ? 0 : getOnDemandThroughput().hashCode());
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
         hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
         return hashCode;

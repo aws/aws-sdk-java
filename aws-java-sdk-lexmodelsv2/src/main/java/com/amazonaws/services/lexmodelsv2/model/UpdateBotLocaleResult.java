@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,6 +97,12 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.List<String> recommendedActions;
+    /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     * </p>
+     */
+    private GenerativeAISettings generativeAISettings;
 
     /**
      * <p>
@@ -672,6 +678,46 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     * </p>
+     * 
+     * @param generativeAISettings
+     *        Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     */
+
+    public void setGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        this.generativeAISettings = generativeAISettings;
+    }
+
+    /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     * </p>
+     * 
+     * @return Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     */
+
+    public GenerativeAISettings getGenerativeAISettings() {
+        return this.generativeAISettings;
+    }
+
+    /**
+     * <p>
+     * Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     * </p>
+     * 
+     * @param generativeAISettings
+     *        Contains settings for generative AI features powered by Amazon Bedrock for your bot locale.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotLocaleResult withGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        setGenerativeAISettings(generativeAISettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -706,7 +752,9 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
         if (getLastUpdatedDateTime() != null)
             sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getRecommendedActions() != null)
-            sb.append("RecommendedActions: ").append(getRecommendedActions());
+            sb.append("RecommendedActions: ").append(getRecommendedActions()).append(",");
+        if (getGenerativeAISettings() != null)
+            sb.append("GenerativeAISettings: ").append(getGenerativeAISettings());
         sb.append("}");
         return sb.toString();
     }
@@ -769,6 +817,10 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getRecommendedActions() != null && other.getRecommendedActions().equals(this.getRecommendedActions()) == false)
             return false;
+        if (other.getGenerativeAISettings() == null ^ this.getGenerativeAISettings() == null)
+            return false;
+        if (other.getGenerativeAISettings() != null && other.getGenerativeAISettings().equals(this.getGenerativeAISettings()) == false)
+            return false;
         return true;
     }
 
@@ -789,6 +841,7 @@ public class UpdateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getRecommendedActions() == null) ? 0 : getRecommendedActions().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeAISettings() == null) ? 0 : getGenerativeAISettings().hashCode());
         return hashCode;
     }
 

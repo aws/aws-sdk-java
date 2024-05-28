@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,30 +29,33 @@ public class Provider implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
-     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
-     * more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same Amazon
+     * Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> must
+     * have access to the KMS key. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+     * users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      */
     private String keyArn;
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
-     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
-     * more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same Amazon
+     * Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> must
+     * have access to the KMS key. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+     * users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyArn
-     *        Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
-     *        region as the cluster, and if the KMS key was created in a different account, the user must have access to
-     *        the KMS key. For more information, see <a
+     *        Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same
+     *        Amazon Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a>
+     *        must have access to the KMS key. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
-     *        >Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer
+     *        >Allowing users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer
      *        Guide</i>.
      */
 
@@ -62,18 +65,20 @@ public class Provider implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
-     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
-     * more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same Amazon
+     * Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> must
+     * have access to the KMS key. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+     * users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
-     *         region as the cluster, and if the KMS key was created in a different account, the user must have access
-     *         to the KMS key. For more information, see <a href=
+     * @return Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same
+     *         Amazon Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+     *         principal</a> must have access to the KMS key. For more information, see <a href=
      *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
-     *         >Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer
+     *         >Allowing users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer
      *         Guide</i>.
      */
 
@@ -83,19 +88,21 @@ public class Provider implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
-     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
-     * more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same Amazon
+     * Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> must
+     * have access to the KMS key. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
+     * users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyArn
-     *        Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
-     *        region as the cluster, and if the KMS key was created in a different account, the user must have access to
-     *        the KMS key. For more information, see <a
+     *        Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric and created in the same
+     *        Amazon Web Services Region as the cluster. If the KMS key was created in a different account, the <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a>
+     *        must have access to the KMS key. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
-     *        >Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer
+     *        >Allowing users in other accounts to use a KMS key</a> in the <i>Key Management Service Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

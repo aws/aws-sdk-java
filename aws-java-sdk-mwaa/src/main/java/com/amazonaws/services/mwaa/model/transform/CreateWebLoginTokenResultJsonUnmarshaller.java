@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,21 @@ public class CreateWebLoginTokenResultJsonUnmarshaller implements Unmarshaller<C
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("WebToken", targetDepth)) {
+                    context.nextToken();
+                    createWebLoginTokenResult.setWebToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("WebServerHostname", targetDepth)) {
                     context.nextToken();
                     createWebLoginTokenResult.setWebServerHostname(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("WebToken", targetDepth)) {
+                if (context.testExpression("IamIdentity", targetDepth)) {
                     context.nextToken();
-                    createWebLoginTokenResult.setWebToken(context.getUnmarshaller(String.class).unmarshall(context));
+                    createWebLoginTokenResult.setIamIdentity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AirflowIdentity", targetDepth)) {
+                    context.nextToken();
+                    createWebLoginTokenResult.setAirflowIdentity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

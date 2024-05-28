@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,12 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.Date disabledDate;
+    /**
+     * <p>
+     * If the value is set to <i>true</i>, the group is hidden from the address book.
+     * </p>
+     */
+    private Boolean hiddenFromGlobalAddressList;
 
     /**
      * <p>
@@ -329,6 +335,58 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * If the value is set to <i>true</i>, the group is hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If the value is set to <i>true</i>, the group is hidden from the address book.
+     */
+
+    public void setHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        this.hiddenFromGlobalAddressList = hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If the value is set to <i>true</i>, the group is hidden from the address book.
+     * </p>
+     * 
+     * @return If the value is set to <i>true</i>, the group is hidden from the address book.
+     */
+
+    public Boolean getHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If the value is set to <i>true</i>, the group is hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If the value is set to <i>true</i>, the group is hidden from the address book.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGroupResult withHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        setHiddenFromGlobalAddressList(hiddenFromGlobalAddressList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the value is set to <i>true</i>, the group is hidden from the address book.
+     * </p>
+     * 
+     * @return If the value is set to <i>true</i>, the group is hidden from the address book.
+     */
+
+    public Boolean isHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -351,7 +409,9 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getEnabledDate() != null)
             sb.append("EnabledDate: ").append(getEnabledDate()).append(",");
         if (getDisabledDate() != null)
-            sb.append("DisabledDate: ").append(getDisabledDate());
+            sb.append("DisabledDate: ").append(getDisabledDate()).append(",");
+        if (getHiddenFromGlobalAddressList() != null)
+            sb.append("HiddenFromGlobalAddressList: ").append(getHiddenFromGlobalAddressList());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +450,10 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getDisabledDate() != null && other.getDisabledDate().equals(this.getDisabledDate()) == false)
             return false;
+        if (other.getHiddenFromGlobalAddressList() == null ^ this.getHiddenFromGlobalAddressList() == null)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() != null && other.getHiddenFromGlobalAddressList().equals(this.getHiddenFromGlobalAddressList()) == false)
+            return false;
         return true;
     }
 
@@ -404,6 +468,7 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getEnabledDate() == null) ? 0 : getEnabledDate().hashCode());
         hashCode = prime * hashCode + ((getDisabledDate() == null) ? 0 : getDisabledDate().hashCode());
+        hashCode = prime * hashCode + ((getHiddenFromGlobalAddressList() == null) ? 0 : getHiddenFromGlobalAddressList().hashCode());
         return hashCode;
     }
 

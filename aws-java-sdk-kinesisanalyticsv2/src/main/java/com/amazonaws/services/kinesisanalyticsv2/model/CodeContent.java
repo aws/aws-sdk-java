@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data
- * Analytics application.
+ * Specifies either the application code, or the location of the application code, for a Managed Service for Apache
+ * Flink application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CodeContent" target="_top">AWS API
@@ -31,13 +31,13 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Flink-based Kinesis Data Analytics application.
+     * The text-format code for a Managed Service for Apache Flink application.
      * </p>
      */
     private String textContent;
     /**
      * <p>
-     * The zip-format code for a Flink-based Kinesis Data Analytics application.
+     * The zip-format code for a Managed Service for Apache Flink application.
      * </p>
      */
     private java.nio.ByteBuffer zipFileContent;
@@ -50,11 +50,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Flink-based Kinesis Data Analytics application.
+     * The text-format code for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param textContent
-     *        The text-format code for a Flink-based Kinesis Data Analytics application.
+     *        The text-format code for a Managed Service for Apache Flink application.
      */
 
     public void setTextContent(String textContent) {
@@ -63,10 +63,10 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Flink-based Kinesis Data Analytics application.
+     * The text-format code for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The text-format code for a Flink-based Kinesis Data Analytics application.
+     * @return The text-format code for a Managed Service for Apache Flink application.
      */
 
     public String getTextContent() {
@@ -75,11 +75,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Flink-based Kinesis Data Analytics application.
+     * The text-format code for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param textContent
-     *        The text-format code for a Flink-based Kinesis Data Analytics application.
+     *        The text-format code for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +90,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip-format code for a Flink-based Kinesis Data Analytics application.
+     * The zip-format code for a Managed Service for Apache Flink application.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -104,7 +104,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFileContent
-     *        The zip-format code for a Flink-based Kinesis Data Analytics application.
+     *        The zip-format code for a Managed Service for Apache Flink application.
      */
 
     public void setZipFileContent(java.nio.ByteBuffer zipFileContent) {
@@ -113,7 +113,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip-format code for a Flink-based Kinesis Data Analytics application.
+     * The zip-format code for a Managed Service for Apache Flink application.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -123,7 +123,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The zip-format code for a Flink-based Kinesis Data Analytics application.
+     * @return The zip-format code for a Managed Service for Apache Flink application.
      */
 
     public java.nio.ByteBuffer getZipFileContent() {
@@ -132,7 +132,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip-format code for a Flink-based Kinesis Data Analytics application.
+     * The zip-format code for a Managed Service for Apache Flink application.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -146,7 +146,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFileContent
-     *        The zip-format code for a Flink-based Kinesis Data Analytics application.
+     *        The zip-format code for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

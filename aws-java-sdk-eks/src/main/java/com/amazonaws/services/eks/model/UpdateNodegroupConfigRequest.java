@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -39,7 +39,7 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     private String nodegroupName;
     /**
      * <p>
-     * The Kubernetes labels to be applied to the nodes in the node group after the update.
+     * The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      * </p>
      */
     private UpdateLabelsPayload labels;
@@ -65,18 +65,18 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that the managed node group resides in.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -85,10 +85,10 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster that the managed node group resides in.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -97,11 +97,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that the managed node group resides in.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +152,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes labels to be applied to the nodes in the node group after the update.
+     * The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      * </p>
      * 
      * @param labels
-     *        The Kubernetes labels to be applied to the nodes in the node group after the update.
+     *        The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      */
 
     public void setLabels(UpdateLabelsPayload labels) {
@@ -165,10 +165,10 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes labels to be applied to the nodes in the node group after the update.
+     * The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      * </p>
      * 
-     * @return The Kubernetes labels to be applied to the nodes in the node group after the update.
+     * @return The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      */
 
     public UpdateLabelsPayload getLabels() {
@@ -177,11 +177,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Kubernetes labels to be applied to the nodes in the node group after the update.
+     * The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      * </p>
      * 
      * @param labels
-     *        The Kubernetes labels to be applied to the nodes in the node group after the update.
+     *        The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +325,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -338,10 +338,10 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -350,11 +350,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

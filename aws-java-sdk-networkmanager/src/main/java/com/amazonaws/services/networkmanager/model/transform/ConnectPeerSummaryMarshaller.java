@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class ConnectPeerSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> SUBNETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetArn").build();
 
     private static final ConnectPeerSummaryMarshaller instance = new ConnectPeerSummaryMarshaller();
 
@@ -66,6 +68,7 @@ public class ConnectPeerSummaryMarshaller {
             protocolMarshaller.marshall(connectPeerSummary.getConnectPeerState(), CONNECTPEERSTATE_BINDING);
             protocolMarshaller.marshall(connectPeerSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(connectPeerSummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(connectPeerSummary.getSubnetArn(), SUBNETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

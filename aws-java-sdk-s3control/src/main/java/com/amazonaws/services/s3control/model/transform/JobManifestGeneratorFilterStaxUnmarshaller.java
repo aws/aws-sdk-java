@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,31 @@ public class JobManifestGeneratorFilterStaxUnmarshaller implements Unmarshaller<
 
                 if (context.testExpression("ObjectReplicationStatuses/member", targetDepth)) {
                     jobManifestGeneratorFilter.withObjectReplicationStatuses(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("KeyNameConstraint", targetDepth)) {
+                    jobManifestGeneratorFilter.setKeyNameConstraint(KeyNameConstraintStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ObjectSizeGreaterThanBytes", targetDepth)) {
+                    jobManifestGeneratorFilter.setObjectSizeGreaterThanBytes(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ObjectSizeLessThanBytes", targetDepth)) {
+                    jobManifestGeneratorFilter.setObjectSizeLessThanBytes(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MatchAnyStorageClass", targetDepth)) {
+                    jobManifestGeneratorFilter.withMatchAnyStorageClass(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("MatchAnyStorageClass/member", targetDepth)) {
+                    jobManifestGeneratorFilter.withMatchAnyStorageClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

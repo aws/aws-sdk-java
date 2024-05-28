@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,10 @@ public class ExecutionStatsJsonUnmarshaller implements Unmarshaller<ExecutionSta
                 if (context.testExpression("BytesMetered", targetDepth)) {
                     context.nextToken();
                     executionStats.setBytesMetered(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CumulativeBytesScanned", targetDepth)) {
+                    context.nextToken();
+                    executionStats.setCumulativeBytesScanned(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("RecordsIngested", targetDepth)) {
                     context.nextToken();

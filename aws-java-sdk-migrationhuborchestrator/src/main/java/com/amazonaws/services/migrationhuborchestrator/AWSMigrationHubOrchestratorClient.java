@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.migrationhuborchestrator.AWSMigrationHubOrchestrat
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.migrationhuborchestrator.model.*;
+
 import com.amazonaws.services.migrationhuborchestrator.model.transform.*;
 
 /**
@@ -52,9 +53,9 @@ import com.amazonaws.services.migrationhuborchestrator.model.transform.*;
  * <p>
  * <p>
  * This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS
- * Migration Hub Orchestrator. he topic for each action shows the API request parameters and the response.
- * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
- * platform that you're using.
+ * Migration Hub Orchestrator. The topic for each action shows the API request parameters and responses. Alternatively,
+ * you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're
+ * using.
  * </p>
  */
 @ThreadSafe
@@ -83,6 +84,9 @@ public class AWSMigrationHubOrchestratorClient extends AmazonWebServiceClient im
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.migrationhuborchestrator.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhuborchestrator.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.migrationhuborchestrator.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -143,6 +147,72 @@ public class AWSMigrationHubOrchestratorClient extends AmazonWebServiceClient im
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/migrationhuborchestrator/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/migrationhuborchestrator/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates a migration workflow template.
+     * </p>
+     * 
+     * @param createTemplateRequest
+     * @return Result of the CreateTemplate operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         This exception is thrown when an attempt to update or delete a resource would cause an inconsistent
+     *         state.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSMigrationHubOrchestrator.CreateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTemplateResult createTemplate(CreateTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateTemplateResult executeCreateTemplate(CreateTemplateRequest createTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTemplateRequest> request = null;
+        Response<CreateTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHubOrchestrator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -326,6 +396,71 @@ public class AWSMigrationHubOrchestratorClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<CreateWorkflowStepGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateWorkflowStepGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a migration workflow template.
+     * </p>
+     * 
+     * @param deleteTemplateRequest
+     * @return Result of the DeleteTemplate operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
+     * @sample AWSMigrationHubOrchestrator.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTemplateResult deleteTemplate(DeleteTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTemplateResult executeDeleteTemplate(DeleteTemplateRequest deleteTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTemplateRequest> request = null;
+        Response<DeleteTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHubOrchestrator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1725,6 +1860,71 @@ public class AWSMigrationHubOrchestratorClient extends AmazonWebServiceClient im
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a migration workflow template.
+     * </p>
+     * 
+     * @param updateTemplateRequest
+     * @return Result of the UpdateTemplate operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
+     * @sample AWSMigrationHubOrchestrator.UpdateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTemplateResult updateTemplate(UpdateTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTemplateResult executeUpdateTemplate(UpdateTemplateRequest updateTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTemplateRequest> request = null;
+        Response<UpdateTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHubOrchestrator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,14 +13,9 @@
 
 /**
  * <p>
- * With Fleet Hub for AWS IoT Device Management you can build stand-alone web applications for monitoring the health of
- * your device fleets.
+ * With Fleet Hub for IoT Device Management you can build stand-alone web applications for monitoring the health of your
+ * device fleets.
  * </p>
- * <note>
- * <p>
- * Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
- * </p>
- * </note>
  */
 package com.amazonaws.services.iotfleethub;
 

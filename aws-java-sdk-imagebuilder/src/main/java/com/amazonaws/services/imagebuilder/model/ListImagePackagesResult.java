@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class ListImagePackagesResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<ImagePackage> imagePackageList;
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      */
     private String nextToken;
@@ -154,11 +155,14 @@ public class ListImagePackagesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        The next token used for paginated responses. When this field isn't empty, there are additional elements
+     *        that the service hasn't included in this request. Use this token with the next request to retrieve
+     *        additional objects.
      */
 
     public void setNextToken(String nextToken) {
@@ -167,10 +171,13 @@ public class ListImagePackagesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      * 
-     * @return A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * @return The next token used for paginated responses. When this field isn't empty, there are additional elements
+     *         that the service hasn't included in this request. Use this token with the next request to retrieve
+     *         additional objects.
      */
 
     public String getNextToken() {
@@ -179,11 +186,14 @@ public class ListImagePackagesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        The next token used for paginated responses. When this field isn't empty, there are additional elements
+     *        that the service hasn't included in this request. Use this token with the next request to retrieve
+     *        additional objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A notebook execution. An execution is a specific instance that an EMR Notebook is run using the
+ * A notebook execution. An execution is a specific instance that an Amazon EMR Notebook is run using the
  * <code>StartNotebookExecution</code> action.
  * </p>
  * 
@@ -37,13 +37,14 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
     private String notebookExecutionId;
     /**
      * <p>
-     * The unique identifier of the EMR Notebook that is used for the notebook execution.
+     * The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      * </p>
      */
     private String editorId;
     /**
      * <p>
-     * The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.
+     * The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook
+     * execution.
      * </p>
      */
     private ExecutionEngineConfig executionEngine;
@@ -55,7 +56,7 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
     private String notebookExecutionName;
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      */
     private String notebookParams;
@@ -153,9 +154,10 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
     private String lastStateChangeReason;
     /**
      * <p>
-     * The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information
-     * see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">
-     * Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more
+     * information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      */
     private String notebookInstanceSecurityGroupId;
@@ -167,6 +169,30 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     */
+    private NotebookS3LocationForOutput notebookS3Location;
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     */
+    private OutputNotebookS3LocationForOutput outputNotebookS3Location;
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     */
+    private String outputNotebookFormat;
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> environmentVariables;
 
     /**
      * <p>
@@ -210,11 +236,11 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook that is used for the notebook execution.
+     * The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      * </p>
      * 
      * @param editorId
-     *        The unique identifier of the EMR Notebook that is used for the notebook execution.
+     *        The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      */
 
     public void setEditorId(String editorId) {
@@ -223,10 +249,10 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook that is used for the notebook execution.
+     * The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      * </p>
      * 
-     * @return The unique identifier of the EMR Notebook that is used for the notebook execution.
+     * @return The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      */
 
     public String getEditorId() {
@@ -235,11 +261,11 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the EMR Notebook that is used for the notebook execution.
+     * The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      * </p>
      * 
      * @param editorId
-     *        The unique identifier of the EMR Notebook that is used for the notebook execution.
+     *        The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,12 +276,13 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.
+     * The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook
+     * execution.
      * </p>
      * 
      * @param executionEngine
-     *        The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook
-     *        execution.
+     *        The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the
+     *        notebook execution.
      */
 
     public void setExecutionEngine(ExecutionEngineConfig executionEngine) {
@@ -264,11 +291,12 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.
+     * The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook
+     * execution.
      * </p>
      * 
-     * @return The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook
-     *         execution.
+     * @return The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the
+     *         notebook execution.
      */
 
     public ExecutionEngineConfig getExecutionEngine() {
@@ -277,12 +305,13 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook execution.
+     * The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the notebook
+     * execution.
      * </p>
      * 
      * @param executionEngine
-     *        The execution engine, such as an EMR cluster, used to run the EMR notebook and perform the notebook
-     *        execution.
+     *        The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook and perform the
+     *        notebook execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,11 +362,11 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      * 
      * @param notebookParams
-     *        Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     *        Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      */
 
     public void setNotebookParams(String notebookParams) {
@@ -346,10 +375,10 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      * 
-     * @return Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * @return Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      */
 
     public String getNotebookParams() {
@@ -358,11 +387,11 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     * Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * </p>
      * 
      * @param notebookParams
-     *        Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+     *        Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1076,16 +1105,18 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information
-     * see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">
-     * Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more
+     * information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param notebookInstanceSecurityGroupId
-     *        The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more
-     *        information see <a
+     *        The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance.
+     *        For more information see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     *        >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     *        >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management
+     *        Guide</i>.
      */
 
     public void setNotebookInstanceSecurityGroupId(String notebookInstanceSecurityGroupId) {
@@ -1094,15 +1125,17 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information
-     * see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">
-     * Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more
+     * information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
-     * @return The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more
-     *         information see <a href=
+     * @return The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance.
+     *         For more information see <a href=
      *         "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     *         >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     *         >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management
+     *         Guide</i>.
      */
 
     public String getNotebookInstanceSecurityGroupId() {
@@ -1111,16 +1144,18 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more information
-     * see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">
-     * Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     * The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance. For more
+     * information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
+     * >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param notebookInstanceSecurityGroupId
-     *        The unique identifier of the EC2 security group associated with the EMR Notebook instance. For more
-     *        information see <a
+     *        The unique identifier of the Amazon EC2 security group associated with the Amazon EMR Notebook instance.
+     *        For more information see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html"
-     *        >Specifying EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+     *        >Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1219,6 +1254,216 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     * 
+     * @param notebookS3Location
+     *        The Amazon S3 location that stores the notebook execution input.
+     */
+
+    public void setNotebookS3Location(NotebookS3LocationForOutput notebookS3Location) {
+        this.notebookS3Location = notebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     * 
+     * @return The Amazon S3 location that stores the notebook execution input.
+     */
+
+    public NotebookS3LocationForOutput getNotebookS3Location() {
+        return this.notebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location that stores the notebook execution input.
+     * </p>
+     * 
+     * @param notebookS3Location
+     *        The Amazon S3 location that stores the notebook execution input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecution withNotebookS3Location(NotebookS3LocationForOutput notebookS3Location) {
+        setNotebookS3Location(notebookS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     * 
+     * @param outputNotebookS3Location
+     *        The Amazon S3 location for the notebook execution output.
+     */
+
+    public void setOutputNotebookS3Location(OutputNotebookS3LocationForOutput outputNotebookS3Location) {
+        this.outputNotebookS3Location = outputNotebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     * 
+     * @return The Amazon S3 location for the notebook execution output.
+     */
+
+    public OutputNotebookS3LocationForOutput getOutputNotebookS3Location() {
+        return this.outputNotebookS3Location;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location for the notebook execution output.
+     * </p>
+     * 
+     * @param outputNotebookS3Location
+     *        The Amazon S3 location for the notebook execution output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecution withOutputNotebookS3Location(OutputNotebookS3LocationForOutput outputNotebookS3Location) {
+        setOutputNotebookS3Location(outputNotebookS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @param outputNotebookFormat
+     *        The output format for the notebook execution.
+     * @see OutputNotebookFormat
+     */
+
+    public void setOutputNotebookFormat(String outputNotebookFormat) {
+        this.outputNotebookFormat = outputNotebookFormat;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @return The output format for the notebook execution.
+     * @see OutputNotebookFormat
+     */
+
+    public String getOutputNotebookFormat() {
+        return this.outputNotebookFormat;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @param outputNotebookFormat
+     *        The output format for the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputNotebookFormat
+     */
+
+    public NotebookExecution withOutputNotebookFormat(String outputNotebookFormat) {
+        setOutputNotebookFormat(outputNotebookFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output format for the notebook execution.
+     * </p>
+     * 
+     * @param outputNotebookFormat
+     *        The output format for the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputNotebookFormat
+     */
+
+    public NotebookExecution withOutputNotebookFormat(OutputNotebookFormat outputNotebookFormat) {
+        this.outputNotebookFormat = outputNotebookFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     * 
+     * @return The environment variables associated with the notebook execution.
+     */
+
+    public java.util.Map<String, String> getEnvironmentVariables() {
+        if (environmentVariables == null) {
+            environmentVariables = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return environmentVariables;
+    }
+
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     * 
+     * @param environmentVariables
+     *        The environment variables associated with the notebook execution.
+     */
+
+    public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
+        this.environmentVariables = environmentVariables == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(environmentVariables);
+    }
+
+    /**
+     * <p>
+     * The environment variables associated with the notebook execution.
+     * </p>
+     * 
+     * @param environmentVariables
+     *        The environment variables associated with the notebook execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecution withEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
+        setEnvironmentVariables(environmentVariables);
+        return this;
+    }
+
+    /**
+     * Add a single EnvironmentVariables entry
+     *
+     * @see NotebookExecution#withEnvironmentVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecution addEnvironmentVariablesEntry(String key, String value) {
+        if (null == this.environmentVariables) {
+            this.environmentVariables = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.environmentVariables.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environmentVariables.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into EnvironmentVariables.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookExecution clearEnvironmentVariablesEntries() {
+        this.environmentVariables = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1255,7 +1500,15 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
         if (getNotebookInstanceSecurityGroupId() != null)
             sb.append("NotebookInstanceSecurityGroupId: ").append(getNotebookInstanceSecurityGroupId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getNotebookS3Location() != null)
+            sb.append("NotebookS3Location: ").append(getNotebookS3Location()).append(",");
+        if (getOutputNotebookS3Location() != null)
+            sb.append("OutputNotebookS3Location: ").append(getOutputNotebookS3Location()).append(",");
+        if (getOutputNotebookFormat() != null)
+            sb.append("OutputNotebookFormat: ").append(getOutputNotebookFormat()).append(",");
+        if (getEnvironmentVariables() != null)
+            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables());
         sb.append("}");
         return sb.toString();
     }
@@ -1323,6 +1576,22 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getNotebookS3Location() == null ^ this.getNotebookS3Location() == null)
+            return false;
+        if (other.getNotebookS3Location() != null && other.getNotebookS3Location().equals(this.getNotebookS3Location()) == false)
+            return false;
+        if (other.getOutputNotebookS3Location() == null ^ this.getOutputNotebookS3Location() == null)
+            return false;
+        if (other.getOutputNotebookS3Location() != null && other.getOutputNotebookS3Location().equals(this.getOutputNotebookS3Location()) == false)
+            return false;
+        if (other.getOutputNotebookFormat() == null ^ this.getOutputNotebookFormat() == null)
+            return false;
+        if (other.getOutputNotebookFormat() != null && other.getOutputNotebookFormat().equals(this.getOutputNotebookFormat()) == false)
+            return false;
+        if (other.getEnvironmentVariables() == null ^ this.getEnvironmentVariables() == null)
+            return false;
+        if (other.getEnvironmentVariables() != null && other.getEnvironmentVariables().equals(this.getEnvironmentVariables()) == false)
+            return false;
         return true;
     }
 
@@ -1344,6 +1613,10 @@ public class NotebookExecution implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLastStateChangeReason() == null) ? 0 : getLastStateChangeReason().hashCode());
         hashCode = prime * hashCode + ((getNotebookInstanceSecurityGroupId() == null) ? 0 : getNotebookInstanceSecurityGroupId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNotebookS3Location() == null) ? 0 : getNotebookS3Location().hashCode());
+        hashCode = prime * hashCode + ((getOutputNotebookS3Location() == null) ? 0 : getOutputNotebookS3Location().hashCode());
+        hashCode = prime * hashCode + ((getOutputNotebookFormat() == null) ? 0 : getOutputNotebookFormat().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         return hashCode;
     }
 

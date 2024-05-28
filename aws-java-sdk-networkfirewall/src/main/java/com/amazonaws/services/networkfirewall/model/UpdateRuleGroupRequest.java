@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,6 +132,15 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private SourceMetadata sourceMetadata;
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the
+     * rule group for you. To run the stateless rule group analyzer without updating the rule group, set
+     * <code>DryRun</code> to <code>TRUE</code>.
+     * </p>
+     */
+    private Boolean analyzeRuleGroup;
 
     /**
      * <p>
@@ -852,6 +861,82 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the
+     * rule group for you. To run the stateless rule group analyzer without updating the rule group, set
+     * <code>DryRun</code> to <code>TRUE</code>.
+     * </p>
+     * 
+     * @param analyzeRuleGroup
+     *        Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *        behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and
+     *        then updates the rule group for you. To run the stateless rule group analyzer without updating the rule
+     *        group, set <code>DryRun</code> to <code>TRUE</code>.
+     */
+
+    public void setAnalyzeRuleGroup(Boolean analyzeRuleGroup) {
+        this.analyzeRuleGroup = analyzeRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the
+     * rule group for you. To run the stateless rule group analyzer without updating the rule group, set
+     * <code>DryRun</code> to <code>TRUE</code>.
+     * </p>
+     * 
+     * @return Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *         behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and
+     *         then updates the rule group for you. To run the stateless rule group analyzer without updating the rule
+     *         group, set <code>DryRun</code> to <code>TRUE</code>.
+     */
+
+    public Boolean getAnalyzeRuleGroup() {
+        return this.analyzeRuleGroup;
+    }
+
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the
+     * rule group for you. To run the stateless rule group analyzer without updating the rule group, set
+     * <code>DryRun</code> to <code>TRUE</code>.
+     * </p>
+     * 
+     * @param analyzeRuleGroup
+     *        Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *        behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and
+     *        then updates the rule group for you. To run the stateless rule group analyzer without updating the rule
+     *        group, set <code>DryRun</code> to <code>TRUE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRuleGroupRequest withAnalyzeRuleGroup(Boolean analyzeRuleGroup) {
+        setAnalyzeRuleGroup(analyzeRuleGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior
+     * such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and then updates the
+     * rule group for you. To run the stateless rule group analyzer without updating the rule group, set
+     * <code>DryRun</code> to <code>TRUE</code>.
+     * </p>
+     * 
+     * @return Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule
+     *         behavior such as asymmetric routing. If set to <code>TRUE</code>, Network Firewall runs the analysis and
+     *         then updates the rule group for you. To run the stateless rule group analyzer without updating the rule
+     *         group, set <code>DryRun</code> to <code>TRUE</code>.
+     */
+
+    public Boolean isAnalyzeRuleGroup() {
+        return this.analyzeRuleGroup;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -882,7 +967,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEncryptionConfiguration() != null)
             sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
         if (getSourceMetadata() != null)
-            sb.append("SourceMetadata: ").append(getSourceMetadata());
+            sb.append("SourceMetadata: ").append(getSourceMetadata()).append(",");
+        if (getAnalyzeRuleGroup() != null)
+            sb.append("AnalyzeRuleGroup: ").append(getAnalyzeRuleGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -937,6 +1024,10 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getSourceMetadata() != null && other.getSourceMetadata().equals(this.getSourceMetadata()) == false)
             return false;
+        if (other.getAnalyzeRuleGroup() == null ^ this.getAnalyzeRuleGroup() == null)
+            return false;
+        if (other.getAnalyzeRuleGroup() != null && other.getAnalyzeRuleGroup().equals(this.getAnalyzeRuleGroup()) == false)
+            return false;
         return true;
     }
 
@@ -955,6 +1046,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSourceMetadata() == null) ? 0 : getSourceMetadata().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzeRuleGroup() == null) ? 0 : getAnalyzeRuleGroup().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public class SendTextMessageRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationCountryParameters").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DryRun").build();
+    private static final MarshallingInfo<String> PROTECTCONFIGURATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtectConfigurationId").build();
 
     private static final SendTextMessageRequestMarshaller instance = new SendTextMessageRequestMarshaller();
 
@@ -79,6 +81,7 @@ public class SendTextMessageRequestMarshaller {
             protocolMarshaller.marshall(sendTextMessageRequest.getContext(), CONTEXT_BINDING);
             protocolMarshaller.marshall(sendTextMessageRequest.getDestinationCountryParameters(), DESTINATIONCOUNTRYPARAMETERS_BINDING);
             protocolMarshaller.marshall(sendTextMessageRequest.getDryRun(), DRYRUN_BINDING);
+            protocolMarshaller.marshall(sendTextMessageRequest.getProtectConfigurationId(), PROTECTCONFIGURATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

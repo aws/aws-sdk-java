@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -328,4 +328,6 @@ public interface Headers {
     String FWD_VERSION_ID = "x-amz-fwd-header-x-amz-version-id";
 
     String FWD_SSE_BUCKET_KEY_ENABLED = "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled";
+
+    String OPTIONAL_OBJECT_ATTRIBUTE = "x-amz-optional-object-attributes";
 }

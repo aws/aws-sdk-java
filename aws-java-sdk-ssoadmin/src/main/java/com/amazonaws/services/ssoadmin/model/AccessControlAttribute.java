@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access
- * control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the
- * configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity
- * Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
+ * control (ABAC). You can create permissions policies that determine who can access your Amazon Web Services resources
+ * based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>,
+ * IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccessControlAttribute" target="_top">AWS

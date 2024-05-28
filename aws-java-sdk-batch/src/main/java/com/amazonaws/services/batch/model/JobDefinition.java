@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,9 +86,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private RetryStrategy retryStrategy;
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the
+     * job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.
      * </p>
      */
     private ContainerProperties containerProperties;
@@ -101,9 +101,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private JobTimeout timeout;
     /**
      * <p>
-     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used
+     * in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
      * </p>
      * <note>
      * <p>
@@ -137,9 +137,17 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> platformCapabilities;
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is
+     * used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.
+     * </p>
+     */
+    private EcsProperties ecsProperties;
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in
+     * the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>,
+     * or <code>nodeProperties</code>.
      * </p>
      */
     private EksProperties eksProperties;
@@ -556,15 +564,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the
+     * job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific to Amazon ECS based jobs. Valid values are
-     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *        can be specified.
+     *        An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used
+     *        in the job definition, it can't be used in addition to <code>eksProperties</code>,
+     *        <code>ecsProperties</code>, or <code>nodeProperties</code>.
      */
 
     public void setContainerProperties(ContainerProperties containerProperties) {
@@ -573,14 +581,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the
+     * job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.
      * </p>
      * 
-     * @return An object with various properties specific to Amazon ECS based jobs. Valid values are
-     *         <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *         can be specified.
+     * @return An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is
+     *         used in the job definition, it can't be used in addition to <code>eksProperties</code>,
+     *         <code>ecsProperties</code>, or <code>nodeProperties</code>.
      */
 
     public ContainerProperties getContainerProperties() {
@@ -589,15 +597,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the
+     * job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific to Amazon ECS based jobs. Valid values are
-     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *        can be specified.
+     *        An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used
+     *        in the job definition, it can't be used in addition to <code>eksProperties</code>,
+     *        <code>ecsProperties</code>, or <code>nodeProperties</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -654,9 +662,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used
+     * in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
      * </p>
      * <note>
      * <p>
@@ -666,9 +674,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *        can be specified.</p> <note>
+     *        An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code>
+     *        is used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     *        <code>ecsProperties</code>, or <code>eksProperties</code>.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      *        <code>containerProperties</code> instead.
@@ -681,9 +689,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used
+     * in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
      * </p>
      * <note>
      * <p>
@@ -692,9 +700,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     *         <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *         can be specified.</p> <note>
+     * @return An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code>
+     *         is used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     *         <code>ecsProperties</code>, or <code>eksProperties</code>.</p> <note>
      *         <p>
      *         If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      *         <code>containerProperties</code> instead.
@@ -707,9 +715,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used
+     * in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
      * </p>
      * <note>
      * <p>
@@ -719,9 +727,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties that are specific to multi-node parallel jobs. Valid values are
-     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *        can be specified.</p> <note>
+     *        An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code>
+     *        is used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     *        <code>ecsProperties</code>, or <code>eksProperties</code>.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
      *        <code>containerProperties</code> instead.
@@ -992,15 +1000,67 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is
+     * used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @param ecsProperties
+     *        An object that contains the properties for the Amazon ECS resources of a job.When
+     *        <code>ecsProperties</code> is used in the job definition, it can't be used in addition to
+     *        <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.
+     */
+
+    public void setEcsProperties(EcsProperties ecsProperties) {
+        this.ecsProperties = ecsProperties;
+    }
+
+    /**
+     * <p>
+     * An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is
+     * used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @return An object that contains the properties for the Amazon ECS resources of a job.When
+     *         <code>ecsProperties</code> is used in the job definition, it can't be used in addition to
+     *         <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.
+     */
+
+    public EcsProperties getEcsProperties() {
+        return this.ecsProperties;
+    }
+
+    /**
+     * <p>
+     * An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is
+     * used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @param ecsProperties
+     *        An object that contains the properties for the Amazon ECS resources of a job.When
+     *        <code>ecsProperties</code> is used in the job definition, it can't be used in addition to
+     *        <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withEcsProperties(EcsProperties ecsProperties) {
+        setEcsProperties(ecsProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in
+     * the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>,
+     * or <code>nodeProperties</code>.
      * </p>
      * 
      * @param eksProperties
-     *        An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *        can be specified.
+     *        An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is
+     *        used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     *        <code>ecsProperties</code>, or <code>nodeProperties</code>.
      */
 
     public void setEksProperties(EksProperties eksProperties) {
@@ -1009,14 +1069,14 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in
+     * the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>,
+     * or <code>nodeProperties</code>.
      * </p>
      * 
-     * @return An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     *         <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *         can be specified.
+     * @return An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is
+     *         used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     *         <code>ecsProperties</code>, or <code>nodeProperties</code>.
      */
 
     public EksProperties getEksProperties() {
@@ -1025,15 +1085,15 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     * <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.
+     * An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in
+     * the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>,
+     * or <code>nodeProperties</code>.
      * </p>
      * 
      * @param eksProperties
-     *        An object with various properties that are specific to Amazon EKS based jobs. Valid values are
-     *        <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one
-     *        can be specified.
+     *        An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is
+     *        used in the job definition, it can't be used in addition to <code>containerProperties</code>,
+     *        <code>ecsProperties</code>, or <code>nodeProperties</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1149,6 +1209,8 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
         if (getPlatformCapabilities() != null)
             sb.append("PlatformCapabilities: ").append(getPlatformCapabilities()).append(",");
+        if (getEcsProperties() != null)
+            sb.append("EcsProperties: ").append(getEcsProperties()).append(",");
         if (getEksProperties() != null)
             sb.append("EksProperties: ").append(getEksProperties()).append(",");
         if (getContainerOrchestrationType() != null)
@@ -1223,6 +1285,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatformCapabilities() != null && other.getPlatformCapabilities().equals(this.getPlatformCapabilities()) == false)
             return false;
+        if (other.getEcsProperties() == null ^ this.getEcsProperties() == null)
+            return false;
+        if (other.getEcsProperties() != null && other.getEcsProperties().equals(this.getEcsProperties()) == false)
+            return false;
         if (other.getEksProperties() == null ^ this.getEksProperties() == null)
             return false;
         if (other.getEksProperties() != null && other.getEksProperties().equals(this.getEksProperties()) == false)
@@ -1253,6 +1319,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getEcsProperties() == null) ? 0 : getEcsProperties().hashCode());
         hashCode = prime * hashCode + ((getEksProperties() == null) ? 0 : getEksProperties().hashCode());
         hashCode = prime * hashCode + ((getContainerOrchestrationType() == null) ? 0 : getContainerOrchestrationType().hashCode());
         return hashCode;

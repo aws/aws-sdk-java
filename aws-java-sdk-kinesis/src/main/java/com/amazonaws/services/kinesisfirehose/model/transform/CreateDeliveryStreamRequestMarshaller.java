@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,13 @@ public class CreateDeliveryStreamRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpEndpointDestinationConfiguration").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> AMAZONOPENSEARCHSERVERLESSDESTINATIONCONFIGURATION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AmazonOpenSearchServerlessDestinationConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> MSKSOURCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MSKSourceConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SNOWFLAKEDESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowflakeDestinationConfiguration").build();
 
     private static final CreateDeliveryStreamRequestMarshaller instance = new CreateDeliveryStreamRequestMarshaller();
 
@@ -85,6 +92,10 @@ public class CreateDeliveryStreamRequestMarshaller {
             protocolMarshaller.marshall(createDeliveryStreamRequest.getSplunkDestinationConfiguration(), SPLUNKDESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeliveryStreamRequest.getHttpEndpointDestinationConfiguration(), HTTPENDPOINTDESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeliveryStreamRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getAmazonOpenSearchServerlessDestinationConfiguration(),
+                    AMAZONOPENSEARCHSERVERLESSDESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getMSKSourceConfiguration(), MSKSOURCECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getSnowflakeDestinationConfiguration(), SNOWFLAKEDESTINATIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

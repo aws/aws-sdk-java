@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,12 @@ public class DescribeWorkspacesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The name of the user-decoupled WorkSpace.
+     * </p>
+     */
+    private String workspaceName;
 
     /**
      * <p>
@@ -393,6 +399,46 @@ public class DescribeWorkspacesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the user-decoupled WorkSpace.
+     * </p>
+     * 
+     * @param workspaceName
+     *        The name of the user-decoupled WorkSpace.
+     */
+
+    public void setWorkspaceName(String workspaceName) {
+        this.workspaceName = workspaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the user-decoupled WorkSpace.
+     * </p>
+     * 
+     * @return The name of the user-decoupled WorkSpace.
+     */
+
+    public String getWorkspaceName() {
+        return this.workspaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the user-decoupled WorkSpace.
+     * </p>
+     * 
+     * @param workspaceName
+     *        The name of the user-decoupled WorkSpace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeWorkspacesRequest withWorkspaceName(String workspaceName) {
+        setWorkspaceName(workspaceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -415,7 +461,9 @@ public class DescribeWorkspacesRequest extends com.amazonaws.AmazonWebServiceReq
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getWorkspaceName() != null)
+            sb.append("WorkspaceName: ").append(getWorkspaceName());
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +502,10 @@ public class DescribeWorkspacesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getWorkspaceName() == null ^ this.getWorkspaceName() == null)
+            return false;
+        if (other.getWorkspaceName() != null && other.getWorkspaceName().equals(this.getWorkspaceName()) == false)
+            return false;
         return true;
     }
 
@@ -468,6 +520,7 @@ public class DescribeWorkspacesRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceName() == null) ? 0 : getWorkspaceName().hashCode());
         return hashCode;
     }
 

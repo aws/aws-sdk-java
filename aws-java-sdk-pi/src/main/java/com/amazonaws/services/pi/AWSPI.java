@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,44 @@ public interface AWSPI {
 
     /**
      * <p>
+     * Creates a new performance analysis report for a specific time period for the DB instance.
+     * </p>
+     * 
+     * @param createPerformanceAnalysisReportRequest
+     * @return Result of the CreatePerformanceAnalysisReport operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.CreatePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePerformanceAnalysisReportResult createPerformanceAnalysisReport(CreatePerformanceAnalysisReportRequest createPerformanceAnalysisReportRequest);
+
+    /**
+     * <p>
+     * Deletes a performance analysis report.
+     * </p>
+     * 
+     * @param deletePerformanceAnalysisReportRequest
+     * @return Result of the DeletePerformanceAnalysisReport operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.DeletePerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePerformanceAnalysisReportResult deletePerformanceAnalysisReport(DeletePerformanceAnalysisReportRequest deletePerformanceAnalysisReportRequest);
+
+    /**
+     * <p>
      * For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
      * </p>
      * <note>
@@ -127,6 +165,27 @@ public interface AWSPI {
 
     /**
      * <p>
+     * Retrieves the report including the report ID, status, time details, and the insights with recommendations. The
+     * report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include
+     * the <code>description</code> and <code>recommendation</code> fields.
+     * </p>
+     * 
+     * @param getPerformanceAnalysisReportRequest
+     * @return Result of the GetPerformanceAnalysisReport operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.GetPerformanceAnalysisReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPerformanceAnalysisReportResult getPerformanceAnalysisReport(GetPerformanceAnalysisReportRequest getPerformanceAnalysisReportRequest);
+
+    /**
+     * <p>
      * Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned
      * on or off on a specific DB instance.
      * </p>
@@ -148,7 +207,8 @@ public interface AWSPI {
     /**
      * <p>
      * Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific
-     * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
+     * dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate
+     * function for each metric.
      * </p>
      * <note>
      * <p>
@@ -208,6 +268,83 @@ public interface AWSPI {
      *      target="_top">AWS API Documentation</a>
      */
     ListAvailableResourceMetricsResult listAvailableResourceMetrics(ListAvailableResourceMetricsRequest listAvailableResourceMetricsRequest);
+
+    /**
+     * <p>
+     * Lists all the analysis reports created for the DB instance. The reports are sorted based on the start time of
+     * each report.
+     * </p>
+     * 
+     * @param listPerformanceAnalysisReportsRequest
+     * @return Result of the ListPerformanceAnalysisReports operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.ListPerformanceAnalysisReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPerformanceAnalysisReportsResult listPerformanceAnalysisReports(ListPerformanceAnalysisReportsRequest listPerformanceAnalysisReportsRequest);
+
+    /**
+     * <p>
+     * Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds metadata tags to the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the metadata tags from the Amazon RDS Performance Insights resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
      * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      */
     private DashboardSourceEntity sourceEntity;
     /**
@@ -126,6 +130,44 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String themeArn;
+    /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     */
+    private DashboardVersionDefinition definition;
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     */
+    private ValidationStrategy validationStrategy;
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     */
+    private java.util.List<String> folderArns;
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     */
+    private LinkSharingConfiguration linkSharingConfiguration;
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     */
+    private java.util.List<String> linkEntities;
 
     /**
      * <p>
@@ -406,6 +448,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
      * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      * 
      * @param sourceEntity
      *        The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
@@ -420,6 +466,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *        datasets for the placeholders listed in the original. The schema in each dataset must match its
      *        placeholder.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
      */
 
     public void setSourceEntity(DashboardSourceEntity sourceEntity) {
@@ -441,6 +491,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
      * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      * 
      * @return The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>,
      *         you specify the type of object you're using as source. You can only create a dashboard from a template,
@@ -454,6 +508,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *         datasets for the placeholders listed in the original. The schema in each dataset must match its
      *         placeholder.
+     *         </p>
+     *         <p>
+     *         Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *         to be valid.
      */
 
     public DashboardSourceEntity getSourceEntity() {
@@ -475,6 +533,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
      * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
      * 
      * @param sourceEntity
      *        The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
@@ -489,6 +551,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
      *        datasets for the placeholders listed in the original. The schema in each dataset must match its
      *        placeholder.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -835,6 +901,311 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a dashboard.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
+     */
+
+    public void setDefinition(DashboardVersionDefinition definition) {
+        this.definition = definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     * 
+     * @return The definition of a dashboard.</p>
+     *         <p>
+     *         A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     *         </p>
+     *         <p>
+     *         Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *         to be valid.
+     */
+
+    public DashboardVersionDefinition getDefinition() {
+        return this.definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * <p>
+     * Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be
+     * valid.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a dashboard.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     *        </p>
+     *        <p>
+     *        Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request
+     *        to be valid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withDefinition(DashboardVersionDefinition definition) {
+        setDefinition(definition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        The option to relax the validation needed to create a dashboard with definition objects. This option skips
+     *        the validation step for specific errors.
+     */
+
+    public void setValidationStrategy(ValidationStrategy validationStrategy) {
+        this.validationStrategy = validationStrategy;
+    }
+
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @return The option to relax the validation needed to create a dashboard with definition objects. This option
+     *         skips the validation step for specific errors.
+     */
+
+    public ValidationStrategy getValidationStrategy() {
+        return this.validationStrategy;
+    }
+
+    /**
+     * <p>
+     * The option to relax the validation needed to create a dashboard with definition objects. This option skips the
+     * validation step for specific errors.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        The option to relax the validation needed to create a dashboard with definition objects. This option skips
+     *        the validation step for specific errors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withValidationStrategy(ValidationStrategy validationStrategy) {
+        setValidationStrategy(validationStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * 
+     * @return When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     */
+
+    public java.util.List<String> getFolderArns() {
+        return folderArns;
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     */
+
+    public void setFolderArns(java.util.Collection<String> folderArns) {
+        if (folderArns == null) {
+            this.folderArns = null;
+            return;
+        }
+
+        this.folderArns = new java.util.ArrayList<String>(folderArns);
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFolderArns(java.util.Collection)} or {@link #withFolderArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withFolderArns(String... folderArns) {
+        if (this.folderArns == null) {
+            setFolderArns(new java.util.ArrayList<String>(folderArns.length));
+        }
+        for (String ele : folderArns) {
+            this.folderArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * </p>
+     * 
+     * @param folderArns
+     *        When you create the dashboard, Amazon QuickSight adds the dashboard to these folders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withFolderArns(java.util.Collection<String> folderArns) {
+        setFolderArns(folderArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        A structure that contains the permissions of a shareable link to the dashboard.
+     */
+
+    public void setLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        this.linkSharingConfiguration = linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     * 
+     * @return A structure that contains the permissions of a shareable link to the dashboard.
+     */
+
+    public LinkSharingConfiguration getLinkSharingConfiguration() {
+        return this.linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        A structure that contains the permissions of a shareable link to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        setLinkSharingConfiguration(linkSharingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @return A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public java.util.List<String> getLinkEntities() {
+        return linkEntities;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public void setLinkEntities(java.util.Collection<String> linkEntities) {
+        if (linkEntities == null) {
+            this.linkEntities = null;
+            return;
+        }
+
+        this.linkEntities = new java.util.ArrayList<String>(linkEntities);
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLinkEntities(java.util.Collection)} or {@link #withLinkEntities(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withLinkEntities(String... linkEntities) {
+        if (this.linkEntities == null) {
+            setLinkEntities(new java.util.ArrayList<String>(linkEntities.length));
+        }
+        for (String ele : linkEntities) {
+            this.linkEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withLinkEntities(java.util.Collection<String> linkEntities) {
+        setLinkEntities(linkEntities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -865,7 +1236,17 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getDashboardPublishOptions() != null)
             sb.append("DashboardPublishOptions: ").append(getDashboardPublishOptions()).append(",");
         if (getThemeArn() != null)
-            sb.append("ThemeArn: ").append(getThemeArn());
+            sb.append("ThemeArn: ").append(getThemeArn()).append(",");
+        if (getDefinition() != null)
+            sb.append("Definition: ").append(getDefinition()).append(",");
+        if (getValidationStrategy() != null)
+            sb.append("ValidationStrategy: ").append(getValidationStrategy()).append(",");
+        if (getFolderArns() != null)
+            sb.append("FolderArns: ").append(getFolderArns()).append(",");
+        if (getLinkSharingConfiguration() != null)
+            sb.append("LinkSharingConfiguration: ").append(getLinkSharingConfiguration()).append(",");
+        if (getLinkEntities() != null)
+            sb.append("LinkEntities: ").append(getLinkEntities());
         sb.append("}");
         return sb.toString();
     }
@@ -920,6 +1301,26 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
             return false;
+        if (other.getDefinition() == null ^ this.getDefinition() == null)
+            return false;
+        if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
+            return false;
+        if (other.getValidationStrategy() == null ^ this.getValidationStrategy() == null)
+            return false;
+        if (other.getValidationStrategy() != null && other.getValidationStrategy().equals(this.getValidationStrategy()) == false)
+            return false;
+        if (other.getFolderArns() == null ^ this.getFolderArns() == null)
+            return false;
+        if (other.getFolderArns() != null && other.getFolderArns().equals(this.getFolderArns()) == false)
+            return false;
+        if (other.getLinkSharingConfiguration() == null ^ this.getLinkSharingConfiguration() == null)
+            return false;
+        if (other.getLinkSharingConfiguration() != null && other.getLinkSharingConfiguration().equals(this.getLinkSharingConfiguration()) == false)
+            return false;
+        if (other.getLinkEntities() == null ^ this.getLinkEntities() == null)
+            return false;
+        if (other.getLinkEntities() != null && other.getLinkEntities().equals(this.getLinkEntities()) == false)
+            return false;
         return true;
     }
 
@@ -938,6 +1339,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDashboardPublishOptions() == null) ? 0 : getDashboardPublishOptions().hashCode());
         hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
+        hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
+        hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getFolderArns() == null) ? 0 : getFolderArns().hashCode());
+        hashCode = prime * hashCode + ((getLinkSharingConfiguration() == null) ? 0 : getLinkSharingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLinkEntities() == null) ? 0 : getLinkEntities().hashCode());
         return hashCode;
     }
 

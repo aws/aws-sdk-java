@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,15 +48,28 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalEncryptionContext", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setAdditionalEncryptionContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("associatedPortalArns", targetDepth)) {
                     context.nextToken();
                     userSettings.setAssociatedPortalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("cookieSynchronizationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setCookieSynchronizationConfiguration(CookieSynchronizationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("copyAllowed", targetDepth)) {
                     context.nextToken();
                     userSettings.setCopyAllowed(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("customerManagedKey", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setCustomerManagedKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("disconnectTimeoutInMinutes", targetDepth)) {
                     context.nextToken();

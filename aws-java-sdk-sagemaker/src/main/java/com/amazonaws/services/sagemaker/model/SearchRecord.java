@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A single resource returned as part of the <a>Search</a> API response.
+ * A single resource returned as part of the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API response.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord" target="_top">AWS API
@@ -66,22 +67,30 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
     private FeatureGroup featureGroup;
     /**
      * <p>
-     * The properties of a project.
-     * </p>
-     */
-    private Project project;
-    /**
-     * <p>
      * The feature metadata used to search through the features.
      * </p>
      */
     private FeatureMetadata featureMetadata;
     /**
      * <p>
+     * The properties of a project.
+     * </p>
+     */
+    private Project project;
+    /**
+     * <p>
      * The properties of a hyperparameter tuning job.
      * </p>
      */
     private HyperParameterTuningJobSearchEntity hyperParameterTuningJob;
+    /**
+     * <p>
+     * An Amazon SageMaker Model Card that documents details about a machine learning model.
+     * </p>
+     */
+    private ModelCard modelCard;
+
+    private ModelDashboardModel model;
 
     /**
      * <p>
@@ -401,46 +410,6 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The properties of a project.
-     * </p>
-     * 
-     * @param project
-     *        The properties of a project.
-     */
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
-    /**
-     * <p>
-     * The properties of a project.
-     * </p>
-     * 
-     * @return The properties of a project.
-     */
-
-    public Project getProject() {
-        return this.project;
-    }
-
-    /**
-     * <p>
-     * The properties of a project.
-     * </p>
-     * 
-     * @param project
-     *        The properties of a project.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SearchRecord withProject(Project project) {
-        setProject(project);
-        return this;
-    }
-
-    /**
-     * <p>
      * The feature metadata used to search through the features.
      * </p>
      * 
@@ -476,6 +445,46 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     public SearchRecord withFeatureMetadata(FeatureMetadata featureMetadata) {
         setFeatureMetadata(featureMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The properties of a project.
+     * </p>
+     * 
+     * @param project
+     *        The properties of a project.
+     */
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    /**
+     * <p>
+     * The properties of a project.
+     * </p>
+     * 
+     * @return The properties of a project.
+     */
+
+    public Project getProject() {
+        return this.project;
+    }
+
+    /**
+     * <p>
+     * The properties of a project.
+     * </p>
+     * 
+     * @param project
+     *        The properties of a project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withProject(Project project) {
+        setProject(project);
         return this;
     }
 
@@ -520,6 +529,72 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An Amazon SageMaker Model Card that documents details about a machine learning model.
+     * </p>
+     * 
+     * @param modelCard
+     *        An Amazon SageMaker Model Card that documents details about a machine learning model.
+     */
+
+    public void setModelCard(ModelCard modelCard) {
+        this.modelCard = modelCard;
+    }
+
+    /**
+     * <p>
+     * An Amazon SageMaker Model Card that documents details about a machine learning model.
+     * </p>
+     * 
+     * @return An Amazon SageMaker Model Card that documents details about a machine learning model.
+     */
+
+    public ModelCard getModelCard() {
+        return this.modelCard;
+    }
+
+    /**
+     * <p>
+     * An Amazon SageMaker Model Card that documents details about a machine learning model.
+     * </p>
+     * 
+     * @param modelCard
+     *        An Amazon SageMaker Model Card that documents details about a machine learning model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withModelCard(ModelCard modelCard) {
+        setModelCard(modelCard);
+        return this;
+    }
+
+    /**
+     * @param model
+     */
+
+    public void setModel(ModelDashboardModel model) {
+        this.model = model;
+    }
+
+    /**
+     * @return
+     */
+
+    public ModelDashboardModel getModel() {
+        return this.model;
+    }
+
+    /**
+     * @param model
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withModel(ModelDashboardModel model) {
+        setModel(model);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -551,12 +626,16 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
             sb.append("PipelineExecution: ").append(getPipelineExecution()).append(",");
         if (getFeatureGroup() != null)
             sb.append("FeatureGroup: ").append(getFeatureGroup()).append(",");
-        if (getProject() != null)
-            sb.append("Project: ").append(getProject()).append(",");
         if (getFeatureMetadata() != null)
             sb.append("FeatureMetadata: ").append(getFeatureMetadata()).append(",");
+        if (getProject() != null)
+            sb.append("Project: ").append(getProject()).append(",");
         if (getHyperParameterTuningJob() != null)
-            sb.append("HyperParameterTuningJob: ").append(getHyperParameterTuningJob());
+            sb.append("HyperParameterTuningJob: ").append(getHyperParameterTuningJob()).append(",");
+        if (getModelCard() != null)
+            sb.append("ModelCard: ").append(getModelCard()).append(",");
+        if (getModel() != null)
+            sb.append("Model: ").append(getModel());
         sb.append("}");
         return sb.toString();
     }
@@ -611,17 +690,25 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFeatureGroup() != null && other.getFeatureGroup().equals(this.getFeatureGroup()) == false)
             return false;
-        if (other.getProject() == null ^ this.getProject() == null)
-            return false;
-        if (other.getProject() != null && other.getProject().equals(this.getProject()) == false)
-            return false;
         if (other.getFeatureMetadata() == null ^ this.getFeatureMetadata() == null)
             return false;
         if (other.getFeatureMetadata() != null && other.getFeatureMetadata().equals(this.getFeatureMetadata()) == false)
             return false;
+        if (other.getProject() == null ^ this.getProject() == null)
+            return false;
+        if (other.getProject() != null && other.getProject().equals(this.getProject()) == false)
+            return false;
         if (other.getHyperParameterTuningJob() == null ^ this.getHyperParameterTuningJob() == null)
             return false;
         if (other.getHyperParameterTuningJob() != null && other.getHyperParameterTuningJob().equals(this.getHyperParameterTuningJob()) == false)
+            return false;
+        if (other.getModelCard() == null ^ this.getModelCard() == null)
+            return false;
+        if (other.getModelCard() != null && other.getModelCard().equals(this.getModelCard()) == false)
+            return false;
+        if (other.getModel() == null ^ this.getModel() == null)
+            return false;
+        if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
             return false;
         return true;
     }
@@ -641,9 +728,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPipeline() == null) ? 0 : getPipeline().hashCode());
         hashCode = prime * hashCode + ((getPipelineExecution() == null) ? 0 : getPipelineExecution().hashCode());
         hashCode = prime * hashCode + ((getFeatureGroup() == null) ? 0 : getFeatureGroup().hashCode());
-        hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
         hashCode = prime * hashCode + ((getFeatureMetadata() == null) ? 0 : getFeatureMetadata().hashCode());
+        hashCode = prime * hashCode + ((getProject() == null) ? 0 : getProject().hashCode());
         hashCode = prime * hashCode + ((getHyperParameterTuningJob() == null) ? 0 : getHyperParameterTuningJob().hashCode());
+        hashCode = prime * hashCode + ((getModelCard() == null) ? 0 : getModelCard().hashCode());
+        hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
         return hashCode;
     }
 

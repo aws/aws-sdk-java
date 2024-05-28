@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,18 @@ public class NetworkCardInfo implements Serializable, Cloneable {
      * </p>
      */
     private Integer maximumNetworkInterfaces;
+    /**
+     * <p>
+     * The baseline network performance of the network card, in Gbps.
+     * </p>
+     */
+    private Double baselineBandwidthInGbps;
+    /**
+     * <p>
+     * The peak (burst) network performance of the network card, in Gbps.
+     * </p>
+     */
+    private Double peakBandwidthInGbps;
 
     /**
      * <p>
@@ -166,6 +178,86 @@ public class NetworkCardInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The baseline network performance of the network card, in Gbps.
+     * </p>
+     * 
+     * @param baselineBandwidthInGbps
+     *        The baseline network performance of the network card, in Gbps.
+     */
+
+    public void setBaselineBandwidthInGbps(Double baselineBandwidthInGbps) {
+        this.baselineBandwidthInGbps = baselineBandwidthInGbps;
+    }
+
+    /**
+     * <p>
+     * The baseline network performance of the network card, in Gbps.
+     * </p>
+     * 
+     * @return The baseline network performance of the network card, in Gbps.
+     */
+
+    public Double getBaselineBandwidthInGbps() {
+        return this.baselineBandwidthInGbps;
+    }
+
+    /**
+     * <p>
+     * The baseline network performance of the network card, in Gbps.
+     * </p>
+     * 
+     * @param baselineBandwidthInGbps
+     *        The baseline network performance of the network card, in Gbps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkCardInfo withBaselineBandwidthInGbps(Double baselineBandwidthInGbps) {
+        setBaselineBandwidthInGbps(baselineBandwidthInGbps);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The peak (burst) network performance of the network card, in Gbps.
+     * </p>
+     * 
+     * @param peakBandwidthInGbps
+     *        The peak (burst) network performance of the network card, in Gbps.
+     */
+
+    public void setPeakBandwidthInGbps(Double peakBandwidthInGbps) {
+        this.peakBandwidthInGbps = peakBandwidthInGbps;
+    }
+
+    /**
+     * <p>
+     * The peak (burst) network performance of the network card, in Gbps.
+     * </p>
+     * 
+     * @return The peak (burst) network performance of the network card, in Gbps.
+     */
+
+    public Double getPeakBandwidthInGbps() {
+        return this.peakBandwidthInGbps;
+    }
+
+    /**
+     * <p>
+     * The peak (burst) network performance of the network card, in Gbps.
+     * </p>
+     * 
+     * @param peakBandwidthInGbps
+     *        The peak (burst) network performance of the network card, in Gbps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkCardInfo withPeakBandwidthInGbps(Double peakBandwidthInGbps) {
+        setPeakBandwidthInGbps(peakBandwidthInGbps);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +274,11 @@ public class NetworkCardInfo implements Serializable, Cloneable {
         if (getNetworkPerformance() != null)
             sb.append("NetworkPerformance: ").append(getNetworkPerformance()).append(",");
         if (getMaximumNetworkInterfaces() != null)
-            sb.append("MaximumNetworkInterfaces: ").append(getMaximumNetworkInterfaces());
+            sb.append("MaximumNetworkInterfaces: ").append(getMaximumNetworkInterfaces()).append(",");
+        if (getBaselineBandwidthInGbps() != null)
+            sb.append("BaselineBandwidthInGbps: ").append(getBaselineBandwidthInGbps()).append(",");
+        if (getPeakBandwidthInGbps() != null)
+            sb.append("PeakBandwidthInGbps: ").append(getPeakBandwidthInGbps());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +305,14 @@ public class NetworkCardInfo implements Serializable, Cloneable {
             return false;
         if (other.getMaximumNetworkInterfaces() != null && other.getMaximumNetworkInterfaces().equals(this.getMaximumNetworkInterfaces()) == false)
             return false;
+        if (other.getBaselineBandwidthInGbps() == null ^ this.getBaselineBandwidthInGbps() == null)
+            return false;
+        if (other.getBaselineBandwidthInGbps() != null && other.getBaselineBandwidthInGbps().equals(this.getBaselineBandwidthInGbps()) == false)
+            return false;
+        if (other.getPeakBandwidthInGbps() == null ^ this.getPeakBandwidthInGbps() == null)
+            return false;
+        if (other.getPeakBandwidthInGbps() != null && other.getPeakBandwidthInGbps().equals(this.getPeakBandwidthInGbps()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +324,8 @@ public class NetworkCardInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         hashCode = prime * hashCode + ((getNetworkPerformance() == null) ? 0 : getNetworkPerformance().hashCode());
         hashCode = prime * hashCode + ((getMaximumNetworkInterfaces() == null) ? 0 : getMaximumNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getBaselineBandwidthInGbps() == null) ? 0 : getBaselineBandwidthInGbps().hashCode());
+        hashCode = prime * hashCode + ((getPeakBandwidthInGbps() == null) ? 0 : getPeakBandwidthInGbps().hashCode());
         return hashCode;
     }
 

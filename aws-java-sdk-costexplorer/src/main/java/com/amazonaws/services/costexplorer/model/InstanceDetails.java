@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the instances that Amazon Web Services recommends that you purchase.
+ * Details about the reservations that Amazon Web Services recommends that you purchase.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/InstanceDetails" target="_top">AWS API
@@ -30,42 +30,48 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     * The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private EC2InstanceDetails eC2InstanceDetails;
     /**
      * <p>
-     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     * The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private RDSInstanceDetails rDSInstanceDetails;
     /**
      * <p>
-     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     * The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private RedshiftInstanceDetails redshiftInstanceDetails;
     /**
      * <p>
-     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     * The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private ElastiCacheInstanceDetails elastiCacheInstanceDetails;
     /**
      * <p>
-     * The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     * The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      * </p>
      */
     private ESInstanceDetails eSInstanceDetails;
+    /**
+     * <p>
+     * The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     * </p>
+     */
+    private MemoryDBInstanceDetails memoryDBInstanceDetails;
 
     /**
      * <p>
-     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     * The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eC2InstanceDetails
-     *        The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      */
 
     public void setEC2InstanceDetails(EC2InstanceDetails eC2InstanceDetails) {
@@ -74,10 +80,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     * The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     * @return The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      */
 
     public EC2InstanceDetails getEC2InstanceDetails() {
@@ -86,11 +92,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     * The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eC2InstanceDetails
-     *        The Amazon EC2 instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +107,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     * The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param rDSInstanceDetails
-     *        The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      */
 
     public void setRDSInstanceDetails(RDSInstanceDetails rDSInstanceDetails) {
@@ -114,10 +120,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     * The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     * @return The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      */
 
     public RDSInstanceDetails getRDSInstanceDetails() {
@@ -126,11 +132,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     * The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param rDSInstanceDetails
-     *        The Amazon RDS instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon RDS reservations that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +147,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     * The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param redshiftInstanceDetails
-     *        The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      */
 
     public void setRedshiftInstanceDetails(RedshiftInstanceDetails redshiftInstanceDetails) {
@@ -154,10 +160,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     * The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     * @return The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      */
 
     public RedshiftInstanceDetails getRedshiftInstanceDetails() {
@@ -166,11 +172,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     * The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param redshiftInstanceDetails
-     *        The Amazon Redshift instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +187,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     * The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param elastiCacheInstanceDetails
-     *        The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     *        The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      */
 
     public void setElastiCacheInstanceDetails(ElastiCacheInstanceDetails elastiCacheInstanceDetails) {
@@ -194,10 +200,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     * The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     * @return The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      */
 
     public ElastiCacheInstanceDetails getElastiCacheInstanceDetails() {
@@ -206,11 +212,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     * The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param elastiCacheInstanceDetails
-     *        The ElastiCache instances that Amazon Web Services recommends that you purchase.
+     *        The ElastiCache reservations that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +227,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     * The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eSInstanceDetails
-     *        The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      */
 
     public void setESInstanceDetails(ESInstanceDetails eSInstanceDetails) {
@@ -234,10 +240,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     * The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
-     * @return The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     * @return The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      */
 
     public ESInstanceDetails getESInstanceDetails() {
@@ -246,16 +252,56 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     * The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      * </p>
      * 
      * @param eSInstanceDetails
-     *        The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
+     *        The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceDetails withESInstanceDetails(ESInstanceDetails eSInstanceDetails) {
         setESInstanceDetails(eSInstanceDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     * </p>
+     * 
+     * @param memoryDBInstanceDetails
+     *        The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     */
+
+    public void setMemoryDBInstanceDetails(MemoryDBInstanceDetails memoryDBInstanceDetails) {
+        this.memoryDBInstanceDetails = memoryDBInstanceDetails;
+    }
+
+    /**
+     * <p>
+     * The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     * </p>
+     * 
+     * @return The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     */
+
+    public MemoryDBInstanceDetails getMemoryDBInstanceDetails() {
+        return this.memoryDBInstanceDetails;
+    }
+
+    /**
+     * <p>
+     * The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     * </p>
+     * 
+     * @param memoryDBInstanceDetails
+     *        The MemoryDB reservations that Amazon Web Services recommends that you purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceDetails withMemoryDBInstanceDetails(MemoryDBInstanceDetails memoryDBInstanceDetails) {
+        setMemoryDBInstanceDetails(memoryDBInstanceDetails);
         return this;
     }
 
@@ -280,7 +326,9 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
         if (getElastiCacheInstanceDetails() != null)
             sb.append("ElastiCacheInstanceDetails: ").append(getElastiCacheInstanceDetails()).append(",");
         if (getESInstanceDetails() != null)
-            sb.append("ESInstanceDetails: ").append(getESInstanceDetails());
+            sb.append("ESInstanceDetails: ").append(getESInstanceDetails()).append(",");
+        if (getMemoryDBInstanceDetails() != null)
+            sb.append("MemoryDBInstanceDetails: ").append(getMemoryDBInstanceDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +363,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getESInstanceDetails() != null && other.getESInstanceDetails().equals(this.getESInstanceDetails()) == false)
             return false;
+        if (other.getMemoryDBInstanceDetails() == null ^ this.getMemoryDBInstanceDetails() == null)
+            return false;
+        if (other.getMemoryDBInstanceDetails() != null && other.getMemoryDBInstanceDetails().equals(this.getMemoryDBInstanceDetails()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getRedshiftInstanceDetails() == null) ? 0 : getRedshiftInstanceDetails().hashCode());
         hashCode = prime * hashCode + ((getElastiCacheInstanceDetails() == null) ? 0 : getElastiCacheInstanceDetails().hashCode());
         hashCode = prime * hashCode + ((getESInstanceDetails() == null) ? 0 : getESInstanceDetails().hashCode());
+        hashCode = prime * hashCode + ((getMemoryDBInstanceDetails() == null) ? 0 : getMemoryDBInstanceDetails().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,11 @@ public class ListRuleGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String nextMarker;
-    /** <p/> */
+    /**
+     * <p>
+     * Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.
+     * </p>
+     */
     private java.util.List<RuleGroupSummary> ruleGroups;
 
     /**
@@ -90,9 +94,12 @@ public class ListRuleGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.
+     * </p>
      * 
-     * @return
+     * @return Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full
+     *         list.
      */
 
     public java.util.List<RuleGroupSummary> getRuleGroups() {
@@ -100,9 +107,13 @@ public class ListRuleGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.
+     * </p>
      * 
      * @param ruleGroups
+     *        Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full
+     *        list.
      */
 
     public void setRuleGroups(java.util.Collection<RuleGroupSummary> ruleGroups) {
@@ -115,7 +126,9 @@ public class ListRuleGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRuleGroups(java.util.Collection)} or {@link #withRuleGroups(java.util.Collection)} if you want to
@@ -123,6 +136,8 @@ public class ListRuleGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param ruleGroups
+     *        Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full
+     *        list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,9 +152,13 @@ public class ListRuleGroupsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list.
+     * </p>
      * 
      * @param ruleGroups
+     *        Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full
+     *        list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

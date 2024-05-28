@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,12 +99,8 @@ public class StepAdjustment implements Serializable, Cloneable {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * capacity while a negative number removes from the current capacity.
-     * </p>
-     * <p>
-     * The amount by which to scale. The adjustment is based on the value that you specified in the
-     * <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the
-     * current capacity and a negative number subtracts from the current capacity.
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * non-negative value.
      * </p>
      */
     private Integer scalingAdjustment;
@@ -243,21 +239,14 @@ public class StepAdjustment implements Serializable, Cloneable {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * capacity while a negative number removes from the current capacity.
-     * </p>
-     * <p>
-     * The amount by which to scale. The adjustment is based on the value that you specified in the
-     * <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the
-     * current capacity and a negative number subtracts from the current capacity.
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * non-negative value.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     *        capacity while a negative number removes from the current capacity.</p>
-     *        <p>
-     *        The amount by which to scale. The adjustment is based on the value that you specified in the
-     *        <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to
-     *        the current capacity and a negative number subtracts from the current capacity.
+     *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     *        non-negative value.
      */
 
     public void setScalingAdjustment(Integer scalingAdjustment) {
@@ -267,20 +256,13 @@ public class StepAdjustment implements Serializable, Cloneable {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * capacity while a negative number removes from the current capacity.
-     * </p>
-     * <p>
-     * The amount by which to scale. The adjustment is based on the value that you specified in the
-     * <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the
-     * current capacity and a negative number subtracts from the current capacity.
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * non-negative value.
      * </p>
      * 
      * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
-     *         current capacity while a negative number removes from the current capacity.</p>
-     *         <p>
-     *         The amount by which to scale. The adjustment is based on the value that you specified in the
-     *         <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds
-     *         to the current capacity and a negative number subtracts from the current capacity.
+     *         current capacity while a negative number removes from the current capacity. For exact capacity, you must
+     *         specify a non-negative value.
      */
 
     public Integer getScalingAdjustment() {
@@ -290,21 +272,14 @@ public class StepAdjustment implements Serializable, Cloneable {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * capacity while a negative number removes from the current capacity.
-     * </p>
-     * <p>
-     * The amount by which to scale. The adjustment is based on the value that you specified in the
-     * <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the
-     * current capacity and a negative number subtracts from the current capacity.
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * non-negative value.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     *        capacity while a negative number removes from the current capacity.</p>
-     *        <p>
-     *        The amount by which to scale. The adjustment is based on the value that you specified in the
-     *        <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to
-     *        the current capacity and a negative number subtracts from the current capacity.
+     *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     *        non-negative value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

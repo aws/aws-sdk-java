@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,10 @@ public class LFTag implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of possible values an attribute can take.
+     * </p>
+     * <p>
+     * The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You
+     * can use multiple API calls to add more values.
      * </p>
      */
     private java.util.List<String> tagValues;
@@ -86,8 +90,15 @@ public class LFTag implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of possible values an attribute can take.
      * </p>
+     * <p>
+     * The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You
+     * can use multiple API calls to add more values.
+     * </p>
      * 
-     * @return A list of possible values an attribute can take.
+     * @return A list of possible values an attribute can take.</p>
+     *         <p>
+     *         The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50
+     *         values. You can use multiple API calls to add more values.
      */
 
     public java.util.List<String> getTagValues() {
@@ -98,9 +109,16 @@ public class LFTag implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of possible values an attribute can take.
      * </p>
+     * <p>
+     * The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You
+     * can use multiple API calls to add more values.
+     * </p>
      * 
      * @param tagValues
-     *        A list of possible values an attribute can take.
+     *        A list of possible values an attribute can take.</p>
+     *        <p>
+     *        The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50
+     *        values. You can use multiple API calls to add more values.
      */
 
     public void setTagValues(java.util.Collection<String> tagValues) {
@@ -117,13 +135,20 @@ public class LFTag implements Serializable, Cloneable, StructuredPojo {
      * A list of possible values an attribute can take.
      * </p>
      * <p>
+     * The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You
+     * can use multiple API calls to add more values.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagValues(java.util.Collection)} or {@link #withTagValues(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param tagValues
-     *        A list of possible values an attribute can take.
+     *        A list of possible values an attribute can take.</p>
+     *        <p>
+     *        The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50
+     *        values. You can use multiple API calls to add more values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,9 +166,16 @@ public class LFTag implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of possible values an attribute can take.
      * </p>
+     * <p>
+     * The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50 values. You
+     * can use multiple API calls to add more values.
+     * </p>
      * 
      * @param tagValues
-     *        A list of possible values an attribute can take.
+     *        A list of possible values an attribute can take.</p>
+     *        <p>
+     *        The maximum number of values that can be defined for a LF-Tag is 1000. A single API call supports 50
+     *        values. You can use multiple API calls to add more values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

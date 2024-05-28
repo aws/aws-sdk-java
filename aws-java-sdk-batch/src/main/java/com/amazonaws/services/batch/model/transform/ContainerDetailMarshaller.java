@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,12 @@ public class ContainerDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> FARGATEPLATFORMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fargatePlatformConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ephemeralStorage").build();
+    private static final MarshallingInfo<StructuredPojo> RUNTIMEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimePlatform").build();
+    private static final MarshallingInfo<StructuredPojo> REPOSITORYCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryCredentials").build();
 
     private static final ContainerDetailMarshaller instance = new ContainerDetailMarshaller();
 
@@ -123,6 +129,9 @@ public class ContainerDetailMarshaller {
             protocolMarshaller.marshall(containerDetail.getSecrets(), SECRETS_BINDING);
             protocolMarshaller.marshall(containerDetail.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(containerDetail.getFargatePlatformConfiguration(), FARGATEPLATFORMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerDetail.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
+            protocolMarshaller.marshall(containerDetail.getRuntimePlatform(), RUNTIMEPLATFORM_BINDING);
+            protocolMarshaller.marshall(containerDetail.getRepositoryCredentials(), REPOSITORYCREDENTIALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

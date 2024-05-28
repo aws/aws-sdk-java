@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -187,8 +187,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a
      * number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String maxConcurrency;
@@ -197,8 +197,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is
      * <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String maxErrors;
@@ -1392,16 +1392,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a
      * number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxConcurrency
      *        The maximum number of managed nodes that are allowed to run the command at the same time. You can specify
      *        a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For
      *        more information about how to use <code>MaxConcurrency</code>, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-     *        using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services
+     *        Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1413,15 +1413,15 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a
      * number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The maximum number of managed nodes that are allowed to run the command at the same time. You can specify
      *         a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50.
      *         For more information about how to use <code>MaxConcurrency</code>, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-     *         using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services
+     *         Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getMaxConcurrency() {
@@ -1433,16 +1433,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a
      * number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For more
      * information about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxConcurrency
      *        The maximum number of managed nodes that are allowed to run the command at the same time. You can specify
      *        a number of managed nodes, such as 10, or a percentage of nodes, such as 10%. The default value is 50. For
      *        more information about how to use <code>MaxConcurrency</code>, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-     *        using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services
+     *        Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1456,16 +1456,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is
      * <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-     *        using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services
+     *        Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -1477,15 +1477,15 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is
      * <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
      *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *         is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-     *         using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services
+     *         Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public String getMaxErrors() {
@@ -1497,16 +1497,16 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is
      * <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
-     * Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services Systems
+     * Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-     *        using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon Web Services
+     *        Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

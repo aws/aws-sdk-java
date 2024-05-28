@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,13 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private UpdateResult updates;
+    /**
+     * <p>
+     * Additional details of the error returned for the image, including the possible causes of the errors and
+     * troubleshooting information.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ErrorDetails> errorDetails;
 
     /**
      * <p>
@@ -608,6 +615,87 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Additional details of the error returned for the image, including the possible causes of the errors and
+     * troubleshooting information.
+     * </p>
+     * 
+     * @return Additional details of the error returned for the image, including the possible causes of the errors and
+     *         troubleshooting information.
+     */
+
+    public java.util.List<ErrorDetails> getErrorDetails() {
+        if (errorDetails == null) {
+            errorDetails = new com.amazonaws.internal.SdkInternalList<ErrorDetails>();
+        }
+        return errorDetails;
+    }
+
+    /**
+     * <p>
+     * Additional details of the error returned for the image, including the possible causes of the errors and
+     * troubleshooting information.
+     * </p>
+     * 
+     * @param errorDetails
+     *        Additional details of the error returned for the image, including the possible causes of the errors and
+     *        troubleshooting information.
+     */
+
+    public void setErrorDetails(java.util.Collection<ErrorDetails> errorDetails) {
+        if (errorDetails == null) {
+            this.errorDetails = null;
+            return;
+        }
+
+        this.errorDetails = new com.amazonaws.internal.SdkInternalList<ErrorDetails>(errorDetails);
+    }
+
+    /**
+     * <p>
+     * Additional details of the error returned for the image, including the possible causes of the errors and
+     * troubleshooting information.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrorDetails(java.util.Collection)} or {@link #withErrorDetails(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param errorDetails
+     *        Additional details of the error returned for the image, including the possible causes of the errors and
+     *        troubleshooting information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceImage withErrorDetails(ErrorDetails... errorDetails) {
+        if (this.errorDetails == null) {
+            setErrorDetails(new com.amazonaws.internal.SdkInternalList<ErrorDetails>(errorDetails.length));
+        }
+        for (ErrorDetails ele : errorDetails) {
+            this.errorDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional details of the error returned for the image, including the possible causes of the errors and
+     * troubleshooting information.
+     * </p>
+     * 
+     * @param errorDetails
+     *        Additional details of the error returned for the image, including the possible causes of the errors and
+     *        troubleshooting information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceImage withErrorDetails(java.util.Collection<ErrorDetails> errorDetails) {
+        setErrorDetails(errorDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +728,9 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
         if (getOwnerAccountId() != null)
             sb.append("OwnerAccountId: ").append(getOwnerAccountId()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: ").append(getUpdates());
+            sb.append("Updates: ").append(getUpdates()).append(",");
+        if (getErrorDetails() != null)
+            sb.append("ErrorDetails: ").append(getErrorDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -699,6 +789,10 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdates() != null && other.getUpdates().equals(this.getUpdates()) == false)
             return false;
+        if (other.getErrorDetails() == null ^ this.getErrorDetails() == null)
+            return false;
+        if (other.getErrorDetails() != null && other.getErrorDetails().equals(this.getErrorDetails()) == false)
+            return false;
         return true;
     }
 
@@ -718,6 +812,7 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getOwnerAccountId() == null) ? 0 : getOwnerAccountId().hashCode());
         hashCode = prime * hashCode + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
+        hashCode = prime * hashCode + ((getErrorDetails() == null) ? 0 : getErrorDetails().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class ExperimentTemplateSummary implements Serializable, Cloneable, Struc
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     */
+    private String arn;
     /**
      * <p>
      * The description of the experiment template.
@@ -96,6 +102,46 @@ public class ExperimentTemplateSummary implements Serializable, Cloneable, Struc
 
     public ExperimentTemplateSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the experiment template.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the experiment template.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the experiment template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentTemplateSummary withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -301,6 +347,8 @@ public class ExperimentTemplateSummary implements Serializable, Cloneable, Struc
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getCreationTime() != null)
@@ -327,6 +375,10 @@ public class ExperimentTemplateSummary implements Serializable, Cloneable, Struc
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -352,6 +404,7 @@ public class ExperimentTemplateSummary implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());

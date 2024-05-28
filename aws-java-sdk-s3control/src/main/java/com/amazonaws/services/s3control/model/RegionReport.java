@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,13 @@ public class RegionReport implements Serializable, Cloneable {
      * </p>
      */
     private String region;
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access
+     * Point.
+     * </p>
+     */
+    private String bucketAccountId;
 
     /**
      * <p>
@@ -120,6 +127,52 @@ public class RegionReport implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access
+     * Point.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region
+     *        Access Point.
+     */
+
+    public void setBucketAccountId(String bucketAccountId) {
+        this.bucketAccountId = bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access
+     * Point.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this
+     *         Multi-Region Access Point.
+     */
+
+    public String getBucketAccountId() {
+        return this.bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region Access
+     * Point.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID that owns the Amazon S3 bucket that's associated with this Multi-Region
+     *        Access Point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegionReport withBucketAccountId(String bucketAccountId) {
+        setBucketAccountId(bucketAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,7 +187,9 @@ public class RegionReport implements Serializable, Cloneable {
         if (getBucket() != null)
             sb.append("Bucket: ").append(getBucket()).append(",");
         if (getRegion() != null)
-            sb.append("Region: ").append(getRegion());
+            sb.append("Region: ").append(getRegion()).append(",");
+        if (getBucketAccountId() != null)
+            sb.append("BucketAccountId: ").append(getBucketAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +212,10 @@ public class RegionReport implements Serializable, Cloneable {
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
+        if (other.getBucketAccountId() == null ^ this.getBucketAccountId() == null)
+            return false;
+        if (other.getBucketAccountId() != null && other.getBucketAccountId().equals(this.getBucketAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +226,7 @@ public class RegionReport implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getBucketAccountId() == null) ? 0 : getBucketAccountId().hashCode());
         return hashCode;
     }
 

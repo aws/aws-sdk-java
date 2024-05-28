@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     private String providerType;
     /**
      * <p>
-     * The name of the connection to be created. The name must be unique in the calling AWS account.
+     * The name of the connection to be created.
      * </p>
      */
     private String connectionName;
@@ -111,11 +111,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the connection to be created. The name must be unique in the calling AWS account.
+     * The name of the connection to be created.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection to be created. The name must be unique in the calling AWS account.
+     *        The name of the connection to be created.
      */
 
     public void setConnectionName(String connectionName) {
@@ -124,10 +124,10 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the connection to be created. The name must be unique in the calling AWS account.
+     * The name of the connection to be created.
      * </p>
      * 
-     * @return The name of the connection to be created. The name must be unique in the calling AWS account.
+     * @return The name of the connection to be created.
      */
 
     public String getConnectionName() {
@@ -136,11 +136,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the connection to be created. The name must be unique in the calling AWS account.
+     * The name of the connection to be created.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection to be created. The name must be unique in the calling AWS account.
+     *        The name of the connection to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

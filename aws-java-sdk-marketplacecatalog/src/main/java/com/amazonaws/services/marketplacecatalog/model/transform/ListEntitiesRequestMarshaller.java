@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ListEntitiesRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> OWNERSHIPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnershipType").build();
+    private static final MarshallingInfo<StructuredPojo> ENTITYTYPEFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntityTypeFilters").build();
+    private static final MarshallingInfo<StructuredPojo> ENTITYTYPESORT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntityTypeSort").build();
 
     private static final ListEntitiesRequestMarshaller instance = new ListEntitiesRequestMarshaller();
 
@@ -63,6 +69,9 @@ public class ListEntitiesRequestMarshaller {
             protocolMarshaller.marshall(listEntitiesRequest.getSort(), SORT_BINDING);
             protocolMarshaller.marshall(listEntitiesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listEntitiesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listEntitiesRequest.getOwnershipType(), OWNERSHIPTYPE_BINDING);
+            protocolMarshaller.marshall(listEntitiesRequest.getEntityTypeFilters(), ENTITYTYPEFILTERS_BINDING);
+            protocolMarshaller.marshall(listEntitiesRequest.getEntityTypeSort(), ENTITYTYPESORT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

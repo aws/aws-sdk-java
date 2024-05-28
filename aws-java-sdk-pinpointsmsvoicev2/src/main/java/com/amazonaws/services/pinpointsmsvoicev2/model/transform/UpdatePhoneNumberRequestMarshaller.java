@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class UpdatePhoneNumberRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayEnabled").build();
     private static final MarshallingInfo<String> TWOWAYCHANNELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayChannelArn").build();
+    private static final MarshallingInfo<String> TWOWAYCHANNELROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayChannelRole").build();
     private static final MarshallingInfo<Boolean> SELFMANAGEDOPTOUTSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedOptOutsEnabled").build();
     private static final MarshallingInfo<String> OPTOUTLISTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,7 @@ public class UpdatePhoneNumberRequestMarshaller {
             protocolMarshaller.marshall(updatePhoneNumberRequest.getPhoneNumberId(), PHONENUMBERID_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getTwoWayEnabled(), TWOWAYENABLED_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getTwoWayChannelArn(), TWOWAYCHANNELARN_BINDING);
+            protocolMarshaller.marshall(updatePhoneNumberRequest.getTwoWayChannelRole(), TWOWAYCHANNELROLE_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getSelfManagedOptOutsEnabled(), SELFMANAGEDOPTOUTSENABLED_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getOptOutListName(), OPTOUTLISTNAME_BINDING);
             protocolMarshaller.marshall(updatePhoneNumberRequest.getDeletionProtectionEnabled(), DELETIONPROTECTIONENABLED_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,14 +60,12 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
      * The tags to apply to the launch template on creation. To tag the launch template, the resource type must be
      * <code>launch-template</code>.
      * </p>
-     * <note>
      * <p>
      * To specify the tags for the resources that are created when an instance is launched, you must use the
      * <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template
      * data</a> structure.
      * </p>
-     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
@@ -266,23 +264,20 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
      * The tags to apply to the launch template on creation. To tag the launch template, the resource type must be
      * <code>launch-template</code>.
      * </p>
-     * <note>
      * <p>
      * To specify the tags for the resources that are created when an instance is launched, you must use the
      * <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template
      * data</a> structure.
      * </p>
-     * </note>
      * 
      * @return The tags to apply to the launch template on creation. To tag the launch template, the resource type must
-     *         be <code>launch-template</code>.</p> <note>
+     *         be <code>launch-template</code>.</p>
      *         <p>
      *         To specify the tags for the resources that are created when an instance is launched, you must use the
      *         <code>TagSpecifications</code> parameter in the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
      *         template data</a> structure.
-     *         </p>
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -297,24 +292,21 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
      * The tags to apply to the launch template on creation. To tag the launch template, the resource type must be
      * <code>launch-template</code>.
      * </p>
-     * <note>
      * <p>
      * To specify the tags for the resources that are created when an instance is launched, you must use the
      * <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template
      * data</a> structure.
      * </p>
-     * </note>
      * 
      * @param tagSpecifications
      *        The tags to apply to the launch template on creation. To tag the launch template, the resource type must
-     *        be <code>launch-template</code>.</p> <note>
+     *        be <code>launch-template</code>.</p>
      *        <p>
      *        To specify the tags for the resources that are created when an instance is launched, you must use the
      *        <code>TagSpecifications</code> parameter in the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
      *        template data</a> structure.
-     *        </p>
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -331,14 +323,12 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
      * The tags to apply to the launch template on creation. To tag the launch template, the resource type must be
      * <code>launch-template</code>.
      * </p>
-     * <note>
      * <p>
      * To specify the tags for the resources that are created when an instance is launched, you must use the
      * <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template
      * data</a> structure.
      * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
@@ -347,13 +337,12 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
      * 
      * @param tagSpecifications
      *        The tags to apply to the launch template on creation. To tag the launch template, the resource type must
-     *        be <code>launch-template</code>.</p> <note>
+     *        be <code>launch-template</code>.</p>
      *        <p>
      *        To specify the tags for the resources that are created when an instance is launched, you must use the
      *        <code>TagSpecifications</code> parameter in the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
      *        template data</a> structure.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,24 +361,21 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
      * The tags to apply to the launch template on creation. To tag the launch template, the resource type must be
      * <code>launch-template</code>.
      * </p>
-     * <note>
      * <p>
      * To specify the tags for the resources that are created when an instance is launched, you must use the
      * <code>TagSpecifications</code> parameter in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template
      * data</a> structure.
      * </p>
-     * </note>
      * 
      * @param tagSpecifications
      *        The tags to apply to the launch template on creation. To tag the launch template, the resource type must
-     *        be <code>launch-template</code>.</p> <note>
+     *        be <code>launch-template</code>.</p>
      *        <p>
      *        To specify the tags for the resources that are created when an instance is launched, you must use the
      *        <code>TagSpecifications</code> parameter in the <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
      *        template data</a> structure.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,7 +414,7 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
         if (getVersionDescription() != null)
             sb.append("VersionDescription: ").append(getVersionDescription()).append(",");
         if (getLaunchTemplateData() != null)
-            sb.append("LaunchTemplateData: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("LaunchTemplateData: ").append(getLaunchTemplateData()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");

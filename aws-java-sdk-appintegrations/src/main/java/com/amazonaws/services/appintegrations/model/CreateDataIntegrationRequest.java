@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,16 +57,32 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
     private ScheduleConfiguration scheduleConfig;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     */
+    private FileConfiguration fileConfiguration;
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, java.util.List<String>>> objectConfiguration;
 
     /**
      * <p>
@@ -270,10 +286,12 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -282,11 +300,13 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -295,11 +315,13 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +360,17 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -351,10 +379,16 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -363,16 +397,130 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDataIntegrationRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     * 
+     * @param fileConfiguration
+     *        The configuration for what files should be pulled from the source.
+     */
+
+    public void setFileConfiguration(FileConfiguration fileConfiguration) {
+        this.fileConfiguration = fileConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     * 
+     * @return The configuration for what files should be pulled from the source.
+     */
+
+    public FileConfiguration getFileConfiguration() {
+        return this.fileConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what files should be pulled from the source.
+     * </p>
+     * 
+     * @param fileConfiguration
+     *        The configuration for what files should be pulled from the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataIntegrationRequest withFileConfiguration(FileConfiguration fileConfiguration) {
+        setFileConfiguration(fileConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     * 
+     * @return The configuration for what data should be pulled from the source.
+     */
+
+    public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getObjectConfiguration() {
+        return objectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     * 
+     * @param objectConfiguration
+     *        The configuration for what data should be pulled from the source.
+     */
+
+    public void setObjectConfiguration(java.util.Map<String, java.util.Map<String, java.util.List<String>>> objectConfiguration) {
+        this.objectConfiguration = objectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for what data should be pulled from the source.
+     * </p>
+     * 
+     * @param objectConfiguration
+     *        The configuration for what data should be pulled from the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataIntegrationRequest withObjectConfiguration(java.util.Map<String, java.util.Map<String, java.util.List<String>>> objectConfiguration) {
+        setObjectConfiguration(objectConfiguration);
+        return this;
+    }
+
+    /**
+     * Add a single ObjectConfiguration entry
+     *
+     * @see CreateDataIntegrationRequest#withObjectConfiguration
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataIntegrationRequest addObjectConfigurationEntry(String key, java.util.Map<String, java.util.List<String>> value) {
+        if (null == this.objectConfiguration) {
+            this.objectConfiguration = new java.util.HashMap<String, java.util.Map<String, java.util.List<String>>>();
+        }
+        if (this.objectConfiguration.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.objectConfiguration.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ObjectConfiguration.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataIntegrationRequest clearObjectConfigurationEntries() {
+        this.objectConfiguration = null;
         return this;
     }
 
@@ -401,7 +549,11 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getFileConfiguration() != null)
+            sb.append("FileConfiguration: ").append(getFileConfiguration()).append(",");
+        if (getObjectConfiguration() != null)
+            sb.append("ObjectConfiguration: ").append(getObjectConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -444,6 +596,14 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getFileConfiguration() == null ^ this.getFileConfiguration() == null)
+            return false;
+        if (other.getFileConfiguration() != null && other.getFileConfiguration().equals(this.getFileConfiguration()) == false)
+            return false;
+        if (other.getObjectConfiguration() == null ^ this.getObjectConfiguration() == null)
+            return false;
+        if (other.getObjectConfiguration() != null && other.getObjectConfiguration().equals(this.getObjectConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +619,8 @@ public class CreateDataIntegrationRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getScheduleConfig() == null) ? 0 : getScheduleConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getFileConfiguration() == null) ? 0 : getFileConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getObjectConfiguration() == null) ? 0 : getObjectConfiguration().hashCode());
         return hashCode;
     }
 

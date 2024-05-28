@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the properties of an alert manager definition.
+ * The details of an alert manager definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/AlertManagerDefinitionDescription"
@@ -30,36 +30,41 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The date and time that the alert manager definition was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The alert manager definition.
+     * The actual alert manager definition.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      */
     private java.nio.ByteBuffer data;
     /**
      * <p>
-     * The time when the alert manager definition was modified.
+     * The date and time that the alert manager definition was most recently changed.
      * </p>
      */
     private java.util.Date modifiedAt;
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that displays the current status of the alert manager definition..
      * </p>
      */
     private AlertManagerDefinitionStatus status;
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The date and time that the alert manager definition was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the alert manager definition was created.
+     *        The date and time that the alert manager definition was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -68,10 +73,10 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The date and time that the alert manager definition was created.
      * </p>
      * 
-     * @return The time when the alert manager definition was created.
+     * @return The date and time that the alert manager definition was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -80,11 +85,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was created.
+     * The date and time that the alert manager definition was created.
      * </p>
      * 
      * @param createdAt
-     *        The time when the alert manager definition was created.
+     *        The date and time that the alert manager definition was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,7 +100,12 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The alert manager definition.
+     * The actual alert manager definition.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -109,7 +119,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
      * </p>
      * 
      * @param data
-     *        The alert manager definition.
+     *        The actual alert manager definition.</p>
+     *        <p>
+     *        For details about the alert manager definition, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     *        >AlertManagedDefinitionData</a>.
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -118,7 +132,12 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The alert manager definition.
+     * The actual alert manager definition.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -128,7 +147,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
      * {@code position}.
      * </p>
      * 
-     * @return The alert manager definition.
+     * @return The actual alert manager definition.</p>
+     *         <p>
+     *         For details about the alert manager definition, see <a
+     *         href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     *         >AlertManagedDefinitionData</a>.
      */
 
     public java.nio.ByteBuffer getData() {
@@ -137,7 +160,12 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The alert manager definition.
+     * The actual alert manager definition.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -151,7 +179,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
      * </p>
      * 
      * @param data
-     *        The alert manager definition.
+     *        The actual alert manager definition.</p>
+     *        <p>
+     *        For details about the alert manager definition, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     *        >AlertManagedDefinitionData</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +194,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was modified.
+     * The date and time that the alert manager definition was most recently changed.
      * </p>
      * 
      * @param modifiedAt
-     *        The time when the alert manager definition was modified.
+     *        The date and time that the alert manager definition was most recently changed.
      */
 
     public void setModifiedAt(java.util.Date modifiedAt) {
@@ -175,10 +207,10 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was modified.
+     * The date and time that the alert manager definition was most recently changed.
      * </p>
      * 
-     * @return The time when the alert manager definition was modified.
+     * @return The date and time that the alert manager definition was most recently changed.
      */
 
     public java.util.Date getModifiedAt() {
@@ -187,11 +219,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time when the alert manager definition was modified.
+     * The date and time that the alert manager definition was most recently changed.
      * </p>
      * 
      * @param modifiedAt
-     *        The time when the alert manager definition was modified.
+     *        The date and time that the alert manager definition was most recently changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +234,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that displays the current status of the alert manager definition..
      * </p>
      * 
      * @param status
-     *        The status of alert manager definition.
+     *        A structure that displays the current status of the alert manager definition..
      */
 
     public void setStatus(AlertManagerDefinitionStatus status) {
@@ -215,10 +247,10 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that displays the current status of the alert manager definition..
      * </p>
      * 
-     * @return The status of alert manager definition.
+     * @return A structure that displays the current status of the alert manager definition..
      */
 
     public AlertManagerDefinitionStatus getStatus() {
@@ -227,11 +259,11 @@ public class AlertManagerDefinitionDescription implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that displays the current status of the alert manager definition..
      * </p>
      * 
      * @param status
-     *        The status of alert manager definition.
+     *        A structure that displays the current status of the alert manager definition..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

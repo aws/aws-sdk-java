@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A token indicating that there are additional email templates available to be listed. Pass this token to a
-     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     * subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your page size.
      * </p>
      */
     private String nextToken;
@@ -113,12 +113,13 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A token indicating that there are additional email templates available to be listed. Pass this token to a
-     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     * subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your page size.
      * </p>
      * 
      * @param nextToken
      *        A token indicating that there are additional email templates available to be listed. Pass this token to a
-     *        subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     *        subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your page
+     *        size.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,11 +129,12 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A token indicating that there are additional email templates available to be listed. Pass this token to a
-     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     * subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your page size.
      * </p>
      * 
      * @return A token indicating that there are additional email templates available to be listed. Pass this token to a
-     *         subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     *         subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your
+     *         page size.
      */
 
     public String getNextToken() {
@@ -142,12 +144,13 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A token indicating that there are additional email templates available to be listed. Pass this token to a
-     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     * subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your page size.
      * </p>
      * 
      * @param nextToken
      *        A token indicating that there are additional email templates available to be listed. Pass this token to a
-     *        subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
+     *        subsequent call to <code>ListTemplates</code> to retrieve the next set of email templates within your page
+     *        size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

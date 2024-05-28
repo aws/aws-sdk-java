@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,19 +54,24 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String clientRequestToken;
     /**
      * <p>
-     * Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint.
-     * For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
-     * department.
+     * Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a
+     * tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      */
     private String dataAccessRoleArn;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     * </p>
+     */
+    private String flywheelArn;
 
     /**
      * <p>
@@ -248,14 +253,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint.
-     * For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
-     * department.
+     * Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a
+     * tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department.
      * </p>
      * 
-     * @return Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the
-     *         endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by
-     *         the sales department.
+     * @return Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For
+     *         example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
+     *         department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -264,15 +268,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint.
-     * For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
-     * department.
+     * Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a
+     * tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the
-     *        endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by
-     *        the sales department.
+     *        Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For
+     *        example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
+     *        department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -286,9 +289,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint.
-     * For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
-     * department.
+     * Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a
+     * tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -297,9 +299,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the
-     *        endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by
-     *        the sales department.
+     *        Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For
+     *        example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
+     *        department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,15 +317,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint.
-     * For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
-     * department.
+     * Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a
+     * tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the
-     *        endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by
-     *        the sales department.
+     *        Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For
+     *        example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales
+     *        department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,13 +335,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom
+     *        models encrypted with a customer managed key (ModelKmsKeyId).
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -349,12 +350,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained
+     *         custom models encrypted with a customer managed key (ModelKmsKeyId).
      */
 
     public String getDataAccessRoleArn() {
@@ -363,18 +364,58 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models
+     * encrypted with a customer managed key (ModelKmsKeyId).
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom
+     *        models encrypted with a customer managed key (ModelKmsKeyId).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateEndpointRequest withDataAccessRoleArn(String dataAccessRoleArn) {
         setDataAccessRoleArn(dataAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
         return this;
     }
 
@@ -401,7 +442,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDataAccessRoleArn() != null)
-            sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn());
+            sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +483,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDataAccessRoleArn() != null && other.getDataAccessRoleArn().equals(this.getDataAccessRoleArn()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
         return true;
     }
 
@@ -454,6 +501,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
         return hashCode;
     }
 

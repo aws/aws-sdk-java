@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UpdateEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineVersion").build();
     private static final MarshallingInfo<String> ENVIRONMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("environmentId").build();
+    private static final MarshallingInfo<Boolean> FORCEUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceUpdate").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<String> PREFERREDMAINTENANCEWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class UpdateEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(updateEnvironmentRequest.getDesiredCapacity(), DESIREDCAPACITY_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getEnvironmentId(), ENVIRONMENTID_BINDING);
+            protocolMarshaller.marshall(updateEnvironmentRequest.getForceUpdate(), FORCEUPDATE_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(updateEnvironmentRequest.getPreferredMaintenanceWindow(), PREFERREDMAINTENANCEWINDOW_BINDING);
         } catch (Exception e) {

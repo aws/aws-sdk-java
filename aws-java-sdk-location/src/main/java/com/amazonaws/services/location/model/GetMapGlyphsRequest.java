@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles:
      * </p>
      * <ul>
@@ -60,7 +60,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -82,6 +83,46 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code>
+     * | <code>Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     * VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     * <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs
+     * but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      */
     private String fontStack;
     /**
@@ -92,6 +133,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String fontUnicodeRange;
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
     /**
      * <p>
      * The map resource associated with the glyph ﬁle.
@@ -105,7 +153,7 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles:
      * </p>
      * <ul>
@@ -134,7 +182,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -156,12 +205,52 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code>
+     * | <code>Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     * VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     * <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs
+     * but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      * 
      * @param fontStack
      *        A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *        <code>Noto Sans Regular, Arial Unicode</code>.</p>
      *        <p>
-     *        Valid fonts stacks for <a
+     *        Valid font stacks for <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
      *        </p>
      *        <ul>
@@ -190,7 +279,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     *        <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -211,6 +301,46 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid font stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> |
+     *        <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid font stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data</a> styles:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     *        VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     *        <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     *        <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     *        <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     *        <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     *        <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     *        <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     *        <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     *        <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most
+     *        glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     *        </p>
      */
 
     public void setFontStack(String fontStack) {
@@ -223,7 +353,7 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles:
      * </p>
      * <ul>
@@ -252,7 +382,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -274,11 +405,51 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code>
+     * | <code>Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     * VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     * <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs
+     * but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      * 
      * @return A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *         <code>Noto Sans Regular, Arial Unicode</code>.</p>
      *         <p>
-     *         Valid fonts stacks for <a
+     *         Valid font stacks for <a
      *         href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
      *         </p>
      *         <ul>
@@ -308,7 +479,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     *         VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     *         <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -329,6 +501,46 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid font stacks for <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> |
+     *         <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid font stacks for <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data</a> styles:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     *         VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     *         <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     *         <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     *         <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     *         <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     *         <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     *         <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     *         <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     *         <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     *         <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     *         <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most
+     *         glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     *         </p>
      */
 
     public String getFontStack() {
@@ -341,7 +553,7 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>Noto Sans Regular, Arial Unicode</code>.
      * </p>
      * <p>
-     * Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>
      * styles:
      * </p>
      * <ul>
@@ -370,7 +582,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -392,12 +605,52 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>
+     * styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code>
+     * | <code>Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     * VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     * <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs
+     * but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      * 
      * @param fontStack
      *        A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *        <code>Noto Sans Regular, Arial Unicode</code>.</p>
      *        <p>
-     *        Valid fonts stacks for <a
+     *        Valid font stacks for <a
      *        href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles:
      *        </p>
      *        <ul>
@@ -426,7 +679,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     *        <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -447,6 +701,46 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid font stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> |
+     *        <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid font stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data</a> styles:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+     *        VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     *        <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     *        <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     *        <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     *        <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> |
+     *        <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> |
+     *        <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> |
+     *        <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> |
+     *        <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most
+     *        glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,6 +803,52 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMapGlyphsRequest withKey(String key) {
+        setKey(key);
+        return this;
+    }
+
+    /**
+     * <p>
      * The map resource associated with the glyph ﬁle.
      * </p>
      * 
@@ -563,6 +903,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("FontStack: ").append(getFontStack()).append(",");
         if (getFontUnicodeRange() != null)
             sb.append("FontUnicodeRange: ").append(getFontUnicodeRange()).append(",");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getMapName() != null)
             sb.append("MapName: ").append(getMapName());
         sb.append("}");
@@ -587,6 +929,10 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getFontUnicodeRange() != null && other.getFontUnicodeRange().equals(this.getFontUnicodeRange()) == false)
             return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getMapName() == null ^ this.getMapName() == null)
             return false;
         if (other.getMapName() != null && other.getMapName().equals(this.getMapName()) == false)
@@ -601,6 +947,7 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getFontStack() == null) ? 0 : getFontStack().hashCode());
         hashCode = prime * hashCode + ((getFontUnicodeRange() == null) ? 0 : getFontUnicodeRange().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
         return hashCode;
     }

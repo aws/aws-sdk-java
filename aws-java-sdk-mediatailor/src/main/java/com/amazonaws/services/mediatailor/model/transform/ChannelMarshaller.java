@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ChannelMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<List> AUDIENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Audiences").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> CHANNELSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -41,6 +43,8 @@ public class ChannelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FillerSlate").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> LOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogConfiguration").build();
     private static final MarshallingInfo<List> OUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Outputs").build();
     private static final MarshallingInfo<String> PLAYBACKMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,11 +71,13 @@ public class ChannelMarshaller {
 
         try {
             protocolMarshaller.marshall(channel.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(channel.getAudiences(), AUDIENCES_BINDING);
             protocolMarshaller.marshall(channel.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(channel.getChannelState(), CHANNELSTATE_BINDING);
             protocolMarshaller.marshall(channel.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(channel.getFillerSlate(), FILLERSLATE_BINDING);
             protocolMarshaller.marshall(channel.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(channel.getLogConfiguration(), LOGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(channel.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(channel.getPlaybackMode(), PLAYBACKMODE_BINDING);
             protocolMarshaller.marshall(channel.getTags(), TAGS_BINDING);

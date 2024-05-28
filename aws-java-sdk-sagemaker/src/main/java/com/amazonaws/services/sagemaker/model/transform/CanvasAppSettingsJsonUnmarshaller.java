@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,33 @@ public class CanvasAppSettingsJsonUnmarshaller implements Unmarshaller<CanvasApp
                 if (context.testExpression("TimeSeriesForecastingSettings", targetDepth)) {
                     context.nextToken();
                     canvasAppSettings.setTimeSeriesForecastingSettings(TimeSeriesForecastingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelRegisterSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setModelRegisterSettings(ModelRegisterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("WorkspaceSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setWorkspaceSettings(WorkspaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IdentityProviderOAuthSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setIdentityProviderOAuthSettings(new ListUnmarshaller<IdentityProviderOAuthSetting>(
+                            IdentityProviderOAuthSettingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DirectDeploySettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setDirectDeploySettings(DirectDeploySettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KendraSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setKendraSettings(KendraSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("GenerativeAiSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setGenerativeAiSettings(GenerativeAiSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

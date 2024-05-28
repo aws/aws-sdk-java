@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String recipientId;
+    /**
+     * <p>
+     * The ID of the user who made the comment.
+     * </p>
+     */
+    private String contributorId;
 
     /**
      * <p>
@@ -293,6 +299,46 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The ID of the user who made the comment.
+     * </p>
+     * 
+     * @param contributorId
+     *        The ID of the user who made the comment.
+     */
+
+    public void setContributorId(String contributorId) {
+        this.contributorId = contributorId;
+    }
+
+    /**
+     * <p>
+     * The ID of the user who made the comment.
+     * </p>
+     * 
+     * @return The ID of the user who made the comment.
+     */
+
+    public String getContributorId() {
+        return this.contributorId;
+    }
+
+    /**
+     * <p>
+     * The ID of the user who made the comment.
+     * </p>
+     * 
+     * @param contributorId
+     *        The ID of the user who made the comment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CommentMetadata withContributorId(String contributorId) {
+        setContributorId(contributorId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -313,7 +359,9 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
         if (getCommentStatus() != null)
             sb.append("CommentStatus: ").append(getCommentStatus()).append(",");
         if (getRecipientId() != null)
-            sb.append("RecipientId: ").append(getRecipientId());
+            sb.append("RecipientId: ").append(getRecipientId()).append(",");
+        if (getContributorId() != null)
+            sb.append("ContributorId: ").append(getContributorId());
         sb.append("}");
         return sb.toString();
     }
@@ -348,6 +396,10 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getRecipientId() != null && other.getRecipientId().equals(this.getRecipientId()) == false)
             return false;
+        if (other.getContributorId() == null ^ this.getContributorId() == null)
+            return false;
+        if (other.getContributorId() != null && other.getContributorId().equals(this.getContributorId()) == false)
+            return false;
         return true;
     }
 
@@ -361,6 +413,7 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getCommentStatus() == null) ? 0 : getCommentStatus().hashCode());
         hashCode = prime * hashCode + ((getRecipientId() == null) ? 0 : getRecipientId().hashCode());
+        hashCode = prime * hashCode + ((getContributorId() == null) ? 0 : getContributorId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,10 +98,13 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an experiment.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      */
     private java.util.Map<String, String> tags;
     /**
@@ -550,10 +553,13 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an experiment.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @return Assigns one or more tags (key-value pairs) to the experiment.</p>
      *         <p>
@@ -564,8 +570,13 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      *         Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *         characters.
      *         </p>
-     * 
-     * <pre><code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *         <p>
+     *         You can associate as many as 50 tags with an experiment.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -584,10 +595,13 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an experiment.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @param tags
      *        Assigns one or more tags (key-value pairs) to the experiment.</p>
@@ -599,8 +613,12 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      *        Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *        characters.
      *        </p>
-     * 
-     * <pre><code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        You can associate as many as 50 tags with an experiment.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     *        Amazon Web Services resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -619,10 +637,13 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an experiment.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @param tags
      *        Assigns one or more tags (key-value pairs) to the experiment.</p>
@@ -634,9 +655,12 @@ public class CreateExperimentRequest extends com.amazonaws.AmazonWebServiceReque
      *        Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *        characters.
      *        </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        You can associate as many as 50 tags with an experiment.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     *        Amazon Web Services resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,19 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     @Override
     public java.util.concurrent.Future<CreateParticipantConnectionResult> createParticipantConnectionAsync(CreateParticipantConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateParticipantConnectionRequest, CreateParticipantConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeViewResult> describeViewAsync(DescribeViewRequest request) {
+
+        return describeViewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeViewResult> describeViewAsync(DescribeViewRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeViewRequest, DescribeViewResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

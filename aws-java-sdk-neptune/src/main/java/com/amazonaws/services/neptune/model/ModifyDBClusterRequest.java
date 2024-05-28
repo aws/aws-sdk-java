@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -211,7 +211,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     * cluster.
+     * cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the
+     * CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      * </p>
      */
     private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
@@ -224,9 +226,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
@@ -284,8 +284,43 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean copyTagsToSnapshot;
-
+    /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     */
     private ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration;
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard | iopt1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -1496,12 +1531,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     * cluster.
+     * cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the
+     * CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudwatchLogsExportConfiguration
      *        The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     *        cluster.
+     *        cluster. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     *        the CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      */
 
     public void setCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration) {
@@ -1511,11 +1550,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     * cluster.
+     * cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the
+     * CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      * </p>
      * 
      * @return The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     *         cluster.
+     *         cluster. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli"
+     *         >Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      */
 
     public CloudwatchLogsExportConfiguration getCloudwatchLogsExportConfiguration() {
@@ -1525,12 +1568,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     * cluster.
+     * cluster. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the
+     * CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudwatchLogsExportConfiguration
      *        The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
-     *        cluster.
+     *        cluster. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using
+     *        the CLI to publish Neptune audit logs to CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1548,9 +1595,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -1560,9 +1605,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For a list of valid engine versions, see <a
      *        href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
-     *        Amazon Neptune</a>, or call <a
-     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     *        >DescribeDBEngineVersions</a>.
+     *        Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1578,9 +1621,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
@@ -1589,9 +1630,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For a list of valid engine versions, see <a
      *         href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
-     *         Amazon Neptune</a>, or call <a href=
-     *         "https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     *         >DescribeDBEngineVersions</a>.
+     *         Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      */
 
     public String getEngineVersion() {
@@ -1607,9 +1646,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For a list of valid engine versions, see <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon
-     * Neptune</a>, or call <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     * >DescribeDBEngineVersions</a>.
+     * Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -1619,9 +1656,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For a list of valid engine versions, see <a
      *        href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for
-     *        Amazon Neptune</a>, or call <a
-     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions"
-     *        >DescribeDBEngineVersions</a>.
+     *        Amazon Neptune</a>, or call <a>DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2011,7 +2046,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public void setServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
@@ -2019,7 +2068,20 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
+     * @return Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *         Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      */
 
     public ServerlessV2ScalingConfiguration getServerlessV2ScalingConfiguration() {
@@ -2027,12 +2089,183 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the scaling configuration of a Neptune Serverless DB cluster.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune
+     * Serverless</a> in the <i>Amazon Neptune User Guide</i>.
+     * </p>
+     * 
      * @param serverlessV2ScalingConfiguration
+     *        Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon
+     *        Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyDBClusterRequest withServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration) {
         setServerlessV2ScalingConfiguration(serverlessV2ScalingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard | iopt1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param storageType
+     *        The storage type to associate with the DB cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>standard | iopt1</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard | iopt1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The storage type to associate with the DB cluster.</p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>standard | iopt1</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type to associate with the DB cluster.
+     * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard | iopt1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>standard</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param storageType
+     *        The storage type to associate with the DB cluster.</p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>standard | iopt1</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withStorageType(String storageType) {
+        setStorageType(storageType);
         return this;
     }
 
@@ -2085,7 +2318,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getServerlessV2ScalingConfiguration() != null)
-            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration());
+            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -2179,6 +2414,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getServerlessV2ScalingConfiguration() != null
                 && other.getServerlessV2ScalingConfiguration().equals(this.getServerlessV2ScalingConfiguration()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -2206,6 +2445,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

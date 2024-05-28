@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,6 +104,14 @@ public class TrafficDistributionGroupSummary implements Serializable, Cloneable,
      * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     */
+    private Boolean isDefault;
 
     /**
      * <p>
@@ -685,6 +693,74 @@ public class TrafficDistributionGroupSummary implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * 
+     * @param isDefault
+     *        Whether this is the default traffic distribution group created during instance replication. The default
+     *        traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *        default traffic distribution group is deleted as part of the process for deleting a replica.
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * 
+     * @return Whether this is the default traffic distribution group created during instance replication. The default
+     *         traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *         default traffic distribution group is deleted as part of the process for deleting a replica.
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * 
+     * @param isDefault
+     *        Whether this is the default traffic distribution group created during instance replication. The default
+     *        traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *        default traffic distribution group is deleted as part of the process for deleting a replica.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrafficDistributionGroupSummary withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether this is the default traffic distribution group created during instance replication. The default traffic
+     * distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.
+     * </p>
+     * 
+     * @return Whether this is the default traffic distribution group created during instance replication. The default
+     *         traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code> API. The
+     *         default traffic distribution group is deleted as part of the process for deleting a replica.
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -705,7 +781,9 @@ public class TrafficDistributionGroupSummary implements Serializable, Cloneable,
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getIsDefault() != null)
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -740,6 +818,10 @@ public class TrafficDistributionGroupSummary implements Serializable, Cloneable,
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getIsDefault() == null ^ this.getIsDefault() == null)
+            return false;
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
+            return false;
         return true;
     }
 
@@ -753,6 +835,7 @@ public class TrafficDistributionGroupSummary implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         return hashCode;
     }
 

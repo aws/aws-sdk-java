@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      */
     private String assetId;
@@ -98,14 +98,26 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String assetDescription;
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset.
+     * </p>
+     */
+    private java.util.List<AssetCompositeModelSummary> assetCompositeModelSummaries;
+    /**
+     * <p>
+     * The external ID of the asset, if any.
+     * </p>
+     */
+    private String assetExternalId;
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset.
+     *        The ID of the asset, in UUID format.
      */
 
     public void setAssetId(String assetId) {
@@ -114,10 +126,10 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      * 
-     * @return The ID of the asset.
+     * @return The ID of the asset, in UUID format.
      */
 
     public String getAssetId() {
@@ -126,11 +138,11 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset.
+     *        The ID of the asset, in UUID format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,6 +699,116 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset.
+     * </p>
+     * 
+     * @return The list of the immediate child custom composite model summaries for the asset.
+     */
+
+    public java.util.List<AssetCompositeModelSummary> getAssetCompositeModelSummaries() {
+        return assetCompositeModelSummaries;
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset.
+     * </p>
+     * 
+     * @param assetCompositeModelSummaries
+     *        The list of the immediate child custom composite model summaries for the asset.
+     */
+
+    public void setAssetCompositeModelSummaries(java.util.Collection<AssetCompositeModelSummary> assetCompositeModelSummaries) {
+        if (assetCompositeModelSummaries == null) {
+            this.assetCompositeModelSummaries = null;
+            return;
+        }
+
+        this.assetCompositeModelSummaries = new java.util.ArrayList<AssetCompositeModelSummary>(assetCompositeModelSummaries);
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetCompositeModelSummaries(java.util.Collection)} or
+     * {@link #withAssetCompositeModelSummaries(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param assetCompositeModelSummaries
+     *        The list of the immediate child custom composite model summaries for the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetResult withAssetCompositeModelSummaries(AssetCompositeModelSummary... assetCompositeModelSummaries) {
+        if (this.assetCompositeModelSummaries == null) {
+            setAssetCompositeModelSummaries(new java.util.ArrayList<AssetCompositeModelSummary>(assetCompositeModelSummaries.length));
+        }
+        for (AssetCompositeModelSummary ele : assetCompositeModelSummaries) {
+            this.assetCompositeModelSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset.
+     * </p>
+     * 
+     * @param assetCompositeModelSummaries
+     *        The list of the immediate child custom composite model summaries for the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetResult withAssetCompositeModelSummaries(java.util.Collection<AssetCompositeModelSummary> assetCompositeModelSummaries) {
+        setAssetCompositeModelSummaries(assetCompositeModelSummaries);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset, if any.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        The external ID of the asset, if any.
+     */
+
+    public void setAssetExternalId(String assetExternalId) {
+        this.assetExternalId = assetExternalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset, if any.
+     * </p>
+     * 
+     * @return The external ID of the asset, if any.
+     */
+
+    public String getAssetExternalId() {
+        return this.assetExternalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset, if any.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        The external ID of the asset, if any.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetResult withAssetExternalId(String assetExternalId) {
+        setAssetExternalId(assetExternalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -719,7 +841,11 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getAssetStatus() != null)
             sb.append("AssetStatus: ").append(getAssetStatus()).append(",");
         if (getAssetDescription() != null)
-            sb.append("AssetDescription: ").append(getAssetDescription());
+            sb.append("AssetDescription: ").append(getAssetDescription()).append(",");
+        if (getAssetCompositeModelSummaries() != null)
+            sb.append("AssetCompositeModelSummaries: ").append(getAssetCompositeModelSummaries()).append(",");
+        if (getAssetExternalId() != null)
+            sb.append("AssetExternalId: ").append(getAssetExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -778,6 +904,14 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getAssetDescription() != null && other.getAssetDescription().equals(this.getAssetDescription()) == false)
             return false;
+        if (other.getAssetCompositeModelSummaries() == null ^ this.getAssetCompositeModelSummaries() == null)
+            return false;
+        if (other.getAssetCompositeModelSummaries() != null && other.getAssetCompositeModelSummaries().equals(this.getAssetCompositeModelSummaries()) == false)
+            return false;
+        if (other.getAssetExternalId() == null ^ this.getAssetExternalId() == null)
+            return false;
+        if (other.getAssetExternalId() != null && other.getAssetExternalId().equals(this.getAssetExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -797,6 +931,8 @@ public class DescribeAssetResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getAssetLastUpdateDate() == null) ? 0 : getAssetLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getAssetStatus() == null) ? 0 : getAssetStatus().hashCode());
         hashCode = prime * hashCode + ((getAssetDescription() == null) ? 0 : getAssetDescription().hashCode());
+        hashCode = prime * hashCode + ((getAssetCompositeModelSummaries() == null) ? 0 : getAssetCompositeModelSummaries().hashCode());
+        hashCode = prime * hashCode + ((getAssetExternalId() == null) ? 0 : getAssetExternalId().hashCode());
         return hashCode;
     }
 

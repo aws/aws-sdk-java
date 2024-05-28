@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
     private String jobName;
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -158,7 +158,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -196,7 +196,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * 
      * @param jobStatus
-     *        The status of the bulk import job can be one of following values.</p>
+     *        The status of the bulk import job can be one of following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -240,7 +240,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -277,7 +277,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * </ul>
      * 
-     * @return The status of the bulk import job can be one of following values.</p>
+     * @return The status of the bulk import job can be one of following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -321,7 +321,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -359,7 +359,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * 
      * @param jobStatus
-     *        The status of the bulk import job can be one of following values.</p>
+     *        The status of the bulk import job can be one of following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -405,7 +405,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -443,7 +443,7 @@ public class CreateBulkImportJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * 
      * @param jobStatus
-     *        The status of the bulk import job can be one of following values.</p>
+     *        The status of the bulk import job can be one of following values:</p>
      *        <ul>
      *        <li>
      *        <p>

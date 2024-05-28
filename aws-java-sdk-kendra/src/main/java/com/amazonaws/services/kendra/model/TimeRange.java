@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class TimeRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime of the beginning of the time range.
+     * The Unix timestamp for the beginning of the time range.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The UNIX datetime of the end of the time range.
+     * The Unix timestamp for the end of the time range.
      * </p>
      */
     private java.util.Date endTime;
 
     /**
      * <p>
-     * The UNIX datetime of the beginning of the time range.
+     * The Unix timestamp for the beginning of the time range.
      * </p>
      * 
      * @param startTime
-     *        The UNIX datetime of the beginning of the time range.
+     *        The Unix timestamp for the beginning of the time range.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -56,10 +56,10 @@ public class TimeRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime of the beginning of the time range.
+     * The Unix timestamp for the beginning of the time range.
      * </p>
      * 
-     * @return The UNIX datetime of the beginning of the time range.
+     * @return The Unix timestamp for the beginning of the time range.
      */
 
     public java.util.Date getStartTime() {
@@ -68,11 +68,11 @@ public class TimeRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime of the beginning of the time range.
+     * The Unix timestamp for the beginning of the time range.
      * </p>
      * 
      * @param startTime
-     *        The UNIX datetime of the beginning of the time range.
+     *        The Unix timestamp for the beginning of the time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class TimeRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime of the end of the time range.
+     * The Unix timestamp for the end of the time range.
      * </p>
      * 
      * @param endTime
-     *        The UNIX datetime of the end of the time range.
+     *        The Unix timestamp for the end of the time range.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -96,10 +96,10 @@ public class TimeRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime of the end of the time range.
+     * The Unix timestamp for the end of the time range.
      * </p>
      * 
-     * @return The UNIX datetime of the end of the time range.
+     * @return The Unix timestamp for the end of the time range.
      */
 
     public java.util.Date getEndTime() {
@@ -108,11 +108,11 @@ public class TimeRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime of the end of the time range.
+     * The Unix timestamp for the end of the time range.
      * </p>
      * 
      * @param endTime
-     *        The UNIX datetime of the end of the time range.
+     *        The Unix timestamp for the end of the time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class CreateHyperParameterTuningJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmStartConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOTUNE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Autotune").build();
 
     private static final CreateHyperParameterTuningJobRequestMarshaller instance = new CreateHyperParameterTuningJobRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateHyperParameterTuningJobRequestMarshaller {
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getTrainingJobDefinitions(), TRAININGJOBDEFINITIONS_BINDING);
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getWarmStartConfig(), WARMSTARTCONFIG_BINDING);
             protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createHyperParameterTuningJobRequest.getAutotune(), AUTOTUNE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

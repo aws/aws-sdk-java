@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,11 +31,23 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
     private String trailARN;
     /**
      * <p>
-     * A JSON string that contains the insight types you want to log on a trail. In this release,
-     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     * A JSON string that contains the Insight types you want to log on a trail or event data store.
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InsightSelector> insightSelectors;
+    /**
+     * <p>
+     * The ARN of the source event data store that enabled Insights events.
+     * </p>
+     */
+    private String eventDataStoreArn;
+    /**
+     * <p>
+     * The ARN of the destination event data store that logs Insights events.
+     * </p>
+     */
+    private String insightsDestination;
 
     /**
      * <p>
@@ -79,12 +91,12 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A JSON string that contains the insight types you want to log on a trail. In this release,
-     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     * A JSON string that contains the Insight types you want to log on a trail or event data store.
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * </p>
      * 
-     * @return A JSON string that contains the insight types you want to log on a trail. In this release,
-     *         <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     * @return A JSON string that contains the Insight types you want to log on a trail or event data store.
+     *         <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      */
 
     public java.util.List<InsightSelector> getInsightSelectors() {
@@ -96,13 +108,13 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A JSON string that contains the insight types you want to log on a trail. In this release,
-     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     * A JSON string that contains the Insight types you want to log on a trail or event data store.
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * </p>
      * 
      * @param insightSelectors
-     *        A JSON string that contains the insight types you want to log on a trail. In this release,
-     *        <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     *        A JSON string that contains the Insight types you want to log on a trail or event data store.
+     *        <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      */
 
     public void setInsightSelectors(java.util.Collection<InsightSelector> insightSelectors) {
@@ -116,8 +128,8 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A JSON string that contains the insight types you want to log on a trail. In this release,
-     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     * A JSON string that contains the Insight types you want to log on a trail or event data store.
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,8 +138,8 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param insightSelectors
-     *        A JSON string that contains the insight types you want to log on a trail. In this release,
-     *        <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     *        A JSON string that contains the Insight types you want to log on a trail or event data store.
+     *        <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,18 +155,98 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A JSON string that contains the insight types you want to log on a trail. In this release,
-     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     * A JSON string that contains the Insight types you want to log on a trail or event data store.
+     * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * </p>
      * 
      * @param insightSelectors
-     *        A JSON string that contains the insight types you want to log on a trail. In this release,
-     *        <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.
+     *        A JSON string that contains the Insight types you want to log on a trail or event data store.
+     *        <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as Insights types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetInsightSelectorsResult withInsightSelectors(java.util.Collection<InsightSelector> insightSelectors) {
         setInsightSelectors(insightSelectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the source event data store that enabled Insights events.
+     * </p>
+     * 
+     * @param eventDataStoreArn
+     *        The ARN of the source event data store that enabled Insights events.
+     */
+
+    public void setEventDataStoreArn(String eventDataStoreArn) {
+        this.eventDataStoreArn = eventDataStoreArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the source event data store that enabled Insights events.
+     * </p>
+     * 
+     * @return The ARN of the source event data store that enabled Insights events.
+     */
+
+    public String getEventDataStoreArn() {
+        return this.eventDataStoreArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the source event data store that enabled Insights events.
+     * </p>
+     * 
+     * @param eventDataStoreArn
+     *        The ARN of the source event data store that enabled Insights events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInsightSelectorsResult withEventDataStoreArn(String eventDataStoreArn) {
+        setEventDataStoreArn(eventDataStoreArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the destination event data store that logs Insights events.
+     * </p>
+     * 
+     * @param insightsDestination
+     *        The ARN of the destination event data store that logs Insights events.
+     */
+
+    public void setInsightsDestination(String insightsDestination) {
+        this.insightsDestination = insightsDestination;
+    }
+
+    /**
+     * <p>
+     * The ARN of the destination event data store that logs Insights events.
+     * </p>
+     * 
+     * @return The ARN of the destination event data store that logs Insights events.
+     */
+
+    public String getInsightsDestination() {
+        return this.insightsDestination;
+    }
+
+    /**
+     * <p>
+     * The ARN of the destination event data store that logs Insights events.
+     * </p>
+     * 
+     * @param insightsDestination
+     *        The ARN of the destination event data store that logs Insights events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInsightSelectorsResult withInsightsDestination(String insightsDestination) {
+        setInsightsDestination(insightsDestination);
         return this;
     }
 
@@ -173,7 +265,11 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
         if (getTrailARN() != null)
             sb.append("TrailARN: ").append(getTrailARN()).append(",");
         if (getInsightSelectors() != null)
-            sb.append("InsightSelectors: ").append(getInsightSelectors());
+            sb.append("InsightSelectors: ").append(getInsightSelectors()).append(",");
+        if (getEventDataStoreArn() != null)
+            sb.append("EventDataStoreArn: ").append(getEventDataStoreArn()).append(",");
+        if (getInsightsDestination() != null)
+            sb.append("InsightsDestination: ").append(getInsightsDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +292,14 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getInsightSelectors() != null && other.getInsightSelectors().equals(this.getInsightSelectors()) == false)
             return false;
+        if (other.getEventDataStoreArn() == null ^ this.getEventDataStoreArn() == null)
+            return false;
+        if (other.getEventDataStoreArn() != null && other.getEventDataStoreArn().equals(this.getEventDataStoreArn()) == false)
+            return false;
+        if (other.getInsightsDestination() == null ^ this.getInsightsDestination() == null)
+            return false;
+        if (other.getInsightsDestination() != null && other.getInsightsDestination().equals(this.getInsightsDestination()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +310,8 @@ public class GetInsightSelectorsResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getTrailARN() == null) ? 0 : getTrailARN().hashCode());
         hashCode = prime * hashCode + ((getInsightSelectors() == null) ? 0 : getInsightSelectors().hashCode());
+        hashCode = prime * hashCode + ((getEventDataStoreArn() == null) ? 0 : getEventDataStoreArn().hashCode());
+        hashCode = prime * hashCode + ((getInsightsDestination() == null) ? 0 : getInsightsDestination().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below
- * these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial
- * configuration.
+ * The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above
+ * or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after
+ * initial configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ComputeLimits" target="_top">AWS API
@@ -38,33 +38,33 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
     private String unitType;
     /**
      * <p>
-     * The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      */
     private Integer minimumCapacityUnits;
     /**
      * <p>
-     * The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      */
     private Integer maximumCapacityUnits;
     /**
      * <p>
-     * The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and
-     * measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary.
-     * The parameter is used to split capacity allocation between On-Demand and Spot Instances.
+     * The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance
+     * groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this
+     * boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances.
      * </p>
      */
     private Integer maximumOnDemandCapacityUnits;
     /**
      * <p>
-     * The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances
-     * for instance groups and measured through units for instance fleets. The core units are not allowed to scale
-     * beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
+     * The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or
+     * instances for instance groups and measured through units for instance fleets. The core units are not allowed to
+     * scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
      * </p>
      */
     private Integer maximumCoreCapacityUnits;
@@ -130,14 +130,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
      * @param minimumCapacityUnits
-     *        The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and
-     *        measured through units for instance fleets. Managed scaling activities are not allowed beyond this
+     *        The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups
+     *        and measured through units for instance fleets. Managed scaling activities are not allowed beyond this
      *        boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
      *        initial configuration.
      */
@@ -148,14 +148,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
-     * @return The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and
-     *         measured through units for instance fleets. Managed scaling activities are not allowed beyond this
-     *         boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
+     * @return The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance
+     *         groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond
+     *         this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
      *         initial configuration.
      */
 
@@ -165,14 +165,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
      * @param minimumCapacityUnits
-     *        The lower boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and
-     *        measured through units for instance fleets. Managed scaling activities are not allowed beyond this
+     *        The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups
+     *        and measured through units for instance fleets. Managed scaling activities are not allowed beyond this
      *        boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
      *        initial configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -185,14 +185,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
      * @param maximumCapacityUnits
-     *        The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and
-     *        measured through units for instance fleets. Managed scaling activities are not allowed beyond this
+     *        The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups
+     *        and measured through units for instance fleets. Managed scaling activities are not allowed beyond this
      *        boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
      *        initial configuration.
      */
@@ -203,14 +203,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
-     * @return The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and
-     *         measured through units for instance fleets. Managed scaling activities are not allowed beyond this
-     *         boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
+     * @return The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance
+     *         groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond
+     *         this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
      *         initial configuration.
      */
 
@@ -220,14 +220,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and measured
-     * through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit
-     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and
+     * measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The
+     * limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
      * @param maximumCapacityUnits
-     *        The upper boundary of EC2 units. It is measured through vCPU cores or instances for instance groups and
-     *        measured through units for instance fleets. Managed scaling activities are not allowed beyond this
+     *        The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups
+     *        and measured through units for instance fleets. Managed scaling activities are not allowed beyond this
      *        boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after
      *        initial configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -240,15 +240,16 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and
-     * measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary.
-     * The parameter is used to split capacity allocation between On-Demand and Spot Instances.
+     * The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance
+     * groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this
+     * boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances.
      * </p>
      * 
      * @param maximumOnDemandCapacityUnits
-     *        The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance
-     *        groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond
-     *        this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances.
+     *        The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for
+     *        instance groups and measured through units for instance fleets. The On-Demand units are not allowed to
+     *        scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot
+     *        Instances.
      */
 
     public void setMaximumOnDemandCapacityUnits(Integer maximumOnDemandCapacityUnits) {
@@ -257,14 +258,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and
-     * measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary.
-     * The parameter is used to split capacity allocation between On-Demand and Spot Instances.
+     * The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance
+     * groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this
+     * boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances.
      * </p>
      * 
-     * @return The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance
-     *         groups and measured through units for instance fleets. The On-Demand units are not allowed to scale
-     *         beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot
+     * @return The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for
+     *         instance groups and measured through units for instance fleets. The On-Demand units are not allowed to
+     *         scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot
      *         Instances.
      */
 
@@ -274,15 +275,16 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance groups and
-     * measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary.
-     * The parameter is used to split capacity allocation between On-Demand and Spot Instances.
+     * The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance
+     * groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this
+     * boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances.
      * </p>
      * 
      * @param maximumOnDemandCapacityUnits
-     *        The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances for instance
-     *        groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond
-     *        this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances.
+     *        The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for
+     *        instance groups and measured through units for instance fleets. The On-Demand units are not allowed to
+     *        scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot
+     *        Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,14 +295,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances
-     * for instance groups and measured through units for instance fleets. The core units are not allowed to scale
-     * beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
+     * The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or
+     * instances for instance groups and measured through units for instance fleets. The core units are not allowed to
+     * scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
      * </p>
      * 
      * @param maximumCoreCapacityUnits
-     *        The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or
-     *        instances for instance groups and measured through units for instance fleets. The core units are not
+     *        The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores
+     *        or instances for instance groups and measured through units for instance fleets. The core units are not
      *        allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and
      *        task nodes.
      */
@@ -311,13 +313,13 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances
-     * for instance groups and measured through units for instance fleets. The core units are not allowed to scale
-     * beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
+     * The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or
+     * instances for instance groups and measured through units for instance fleets. The core units are not allowed to
+     * scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
      * </p>
      * 
-     * @return The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or
-     *         instances for instance groups and measured through units for instance fleets. The core units are not
+     * @return The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores
+     *         or instances for instance groups and measured through units for instance fleets. The core units are not
      *         allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core
      *         and task nodes.
      */
@@ -328,14 +330,14 @@ public class ComputeLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or instances
-     * for instance groups and measured through units for instance fleets. The core units are not allowed to scale
-     * beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
+     * The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or
+     * instances for instance groups and measured through units for instance fleets. The core units are not allowed to
+     * scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes.
      * </p>
      * 
      * @param maximumCoreCapacityUnits
-     *        The upper boundary of EC2 units for core node type in a cluster. It is measured through vCPU cores or
-     *        instances for instance groups and measured through units for instance fleets. The core units are not
+     *        The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores
+     *        or instances for instance groups and measured through units for instance fleets. The core units are not
      *        allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and
      *        task nodes.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ListGroupsRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filters").build();
 
     private static final ListGroupsRequestMarshaller instance = new ListGroupsRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListGroupsRequestMarshaller {
             protocolMarshaller.marshall(listGroupsRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(listGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listGroupsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listGroupsRequest.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

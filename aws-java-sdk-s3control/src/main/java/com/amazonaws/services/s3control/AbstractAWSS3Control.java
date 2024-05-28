@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,26 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public AssociateAccessGrantsIdentityCenterResult associateAccessGrantsIdentityCenter(AssociateAccessGrantsIdentityCenterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAccessGrantResult createAccessGrant(CreateAccessGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAccessGrantsInstanceResult createAccessGrantsInstance(CreateAccessGrantsInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAccessGrantsLocationResult createAccessGrantsLocation(CreateAccessGrantsLocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAccessPointResult createAccessPoint(CreateAccessPointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +69,31 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public CreateMultiRegionAccessPointResult createMultiRegionAccessPoint(CreateMultiRegionAccessPointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStorageLensGroupResult createStorageLensGroup(CreateStorageLensGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessGrantResult deleteAccessGrant(DeleteAccessGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessGrantsInstanceResult deleteAccessGrantsInstance(DeleteAccessGrantsInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessGrantsInstanceResourcePolicyResult deleteAccessGrantsInstanceResourcePolicy(DeleteAccessGrantsInstanceResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessGrantsLocationResult deleteAccessGrantsLocation(DeleteAccessGrantsLocationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +133,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public DeleteBucketReplicationResult deleteBucketReplication(DeleteBucketReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteBucketTaggingResult deleteBucketTagging(DeleteBucketTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -118,12 +168,47 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public DeleteStorageLensGroupResult deleteStorageLensGroup(DeleteStorageLensGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeJobResult describeJob(DescribeJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeMultiRegionAccessPointOperationResult describeMultiRegionAccessPointOperation(DescribeMultiRegionAccessPointOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DissociateAccessGrantsIdentityCenterResult dissociateAccessGrantsIdentityCenter(DissociateAccessGrantsIdentityCenterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessGrantResult getAccessGrant(GetAccessGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessGrantsInstanceResult getAccessGrantsInstance(GetAccessGrantsInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessGrantsInstanceForPrefixResult getAccessGrantsInstanceForPrefix(GetAccessGrantsInstanceForPrefixRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessGrantsInstanceResourcePolicyResult getAccessGrantsInstanceResourcePolicy(GetAccessGrantsInstanceResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessGrantsLocationResult getAccessGrantsLocation(GetAccessGrantsLocationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,12 +263,22 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetBucketReplicationResult getBucketReplication(GetBucketReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetBucketTaggingResult getBucketTagging(GetBucketTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetBucketVersioningResult getBucketVersioning(GetBucketVersioningRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataAccessResult getDataAccess(GetDataAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,6 +303,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetMultiRegionAccessPointRoutesResult getMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -219,6 +319,26 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public GetStorageLensConfigurationTaggingResult getStorageLensConfigurationTagging(GetStorageLensConfigurationTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetStorageLensGroupResult getStorageLensGroup(GetStorageLensGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessGrantsResult listAccessGrants(ListAccessGrantsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessGrantsInstancesResult listAccessGrantsInstances(ListAccessGrantsInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessGrantsLocationsResult listAccessGrantsLocations(ListAccessGrantsLocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -253,6 +373,21 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public ListStorageLensGroupsResult listStorageLensGroups(ListStorageLensGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAccessGrantsInstanceResourcePolicyResult putAccessGrantsInstanceResourcePolicy(PutAccessGrantsInstanceResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAccessPointConfigurationForObjectLambdaResult putAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -274,6 +409,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public PutBucketPolicyResult putBucketPolicy(PutBucketPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBucketReplicationResult putBucketReplication(PutBucketReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -313,12 +453,37 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public SubmitMultiRegionAccessPointRoutesResult submitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccessGrantsLocationResult updateAccessGrantsLocation(UpdateAccessGrantsLocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateJobPriorityResult updateJobPriority(UpdateJobPriorityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateJobStatusResult updateJobStatus(UpdateJobStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStorageLensGroupResult updateStorageLensGroup(UpdateStorageLensGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

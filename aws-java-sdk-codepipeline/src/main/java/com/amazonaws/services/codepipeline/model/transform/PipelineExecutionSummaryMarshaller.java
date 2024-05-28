@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class PipelineExecutionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineExecutionId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> STATUSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusSummary").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -42,6 +44,12 @@ public class PipelineExecutionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trigger").build();
     private static final MarshallingInfo<StructuredPojo> STOPTRIGGER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTrigger").build();
+    private static final MarshallingInfo<String> EXECUTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionMode").build();
+    private static final MarshallingInfo<String> EXECUTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionType").build();
+    private static final MarshallingInfo<StructuredPojo> ROLLBACKMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rollbackMetadata").build();
 
     private static final PipelineExecutionSummaryMarshaller instance = new PipelineExecutionSummaryMarshaller();
 
@@ -61,11 +69,15 @@ public class PipelineExecutionSummaryMarshaller {
         try {
             protocolMarshaller.marshall(pipelineExecutionSummary.getPipelineExecutionId(), PIPELINEEXECUTIONID_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionSummary.getStatusSummary(), STATUSSUMMARY_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getSourceRevisions(), SOURCEREVISIONS_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getTrigger(), TRIGGER_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getStopTrigger(), STOPTRIGGER_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionSummary.getExecutionMode(), EXECUTIONMODE_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionSummary.getExecutionType(), EXECUTIONTYPE_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionSummary.getRollbackMetadata(), ROLLBACKMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

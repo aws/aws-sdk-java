@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited
- * time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>.
+ * Amazon Web Services account security credentials that allow interactions with Amazon GameLift resources. The
+ * credentials are temporary and valid for a limited time span. You can request fresh credentials at any time.
  * </p>
+ * <p>
+ * Amazon Web Services security credentials consist of three parts: an access key ID, a secret access key, and a session
+ * token. You must use all three parts together to authenticate your access requests.
+ * </p>
+ * <p>
+ * You need Amazon Web Services credentials for the following tasks:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>. To get access
+ * for this task, call <a>RequestUploadCredentials</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * To remotely connect to an active Amazon GameLift fleet instances. To get remote access, call <a>GetComputeAccess</a>.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Credentials" target="_top">AWS API
  *      Documentation</a>
@@ -31,30 +51,30 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Temporary key allowing access to the Amazon GameLift S3 account.
+     * The access key ID that identifies the temporary security credentials.
      * </p>
      */
     private String accessKeyId;
     /**
      * <p>
-     * Temporary secret key allowing access to the Amazon GameLift S3 account.
+     * The secret access key that can be used to sign requests.
      * </p>
      */
     private String secretAccessKey;
     /**
      * <p>
-     * Token used to associate a specific build ID with the files uploaded using these credentials.
+     * The token that users must pass to the service API to use the temporary credentials.
      * </p>
      */
     private String sessionToken;
 
     /**
      * <p>
-     * Temporary key allowing access to the Amazon GameLift S3 account.
+     * The access key ID that identifies the temporary security credentials.
      * </p>
      * 
      * @param accessKeyId
-     *        Temporary key allowing access to the Amazon GameLift S3 account.
+     *        The access key ID that identifies the temporary security credentials.
      */
 
     public void setAccessKeyId(String accessKeyId) {
@@ -63,10 +83,10 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Temporary key allowing access to the Amazon GameLift S3 account.
+     * The access key ID that identifies the temporary security credentials.
      * </p>
      * 
-     * @return Temporary key allowing access to the Amazon GameLift S3 account.
+     * @return The access key ID that identifies the temporary security credentials.
      */
 
     public String getAccessKeyId() {
@@ -75,11 +95,11 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Temporary key allowing access to the Amazon GameLift S3 account.
+     * The access key ID that identifies the temporary security credentials.
      * </p>
      * 
      * @param accessKeyId
-     *        Temporary key allowing access to the Amazon GameLift S3 account.
+     *        The access key ID that identifies the temporary security credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +110,11 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Temporary secret key allowing access to the Amazon GameLift S3 account.
+     * The secret access key that can be used to sign requests.
      * </p>
      * 
      * @param secretAccessKey
-     *        Temporary secret key allowing access to the Amazon GameLift S3 account.
+     *        The secret access key that can be used to sign requests.
      */
 
     public void setSecretAccessKey(String secretAccessKey) {
@@ -103,10 +123,10 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Temporary secret key allowing access to the Amazon GameLift S3 account.
+     * The secret access key that can be used to sign requests.
      * </p>
      * 
-     * @return Temporary secret key allowing access to the Amazon GameLift S3 account.
+     * @return The secret access key that can be used to sign requests.
      */
 
     public String getSecretAccessKey() {
@@ -115,11 +135,11 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Temporary secret key allowing access to the Amazon GameLift S3 account.
+     * The secret access key that can be used to sign requests.
      * </p>
      * 
      * @param secretAccessKey
-     *        Temporary secret key allowing access to the Amazon GameLift S3 account.
+     *        The secret access key that can be used to sign requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +150,11 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Token used to associate a specific build ID with the files uploaded using these credentials.
+     * The token that users must pass to the service API to use the temporary credentials.
      * </p>
      * 
      * @param sessionToken
-     *        Token used to associate a specific build ID with the files uploaded using these credentials.
+     *        The token that users must pass to the service API to use the temporary credentials.
      */
 
     public void setSessionToken(String sessionToken) {
@@ -143,10 +163,10 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Token used to associate a specific build ID with the files uploaded using these credentials.
+     * The token that users must pass to the service API to use the temporary credentials.
      * </p>
      * 
-     * @return Token used to associate a specific build ID with the files uploaded using these credentials.
+     * @return The token that users must pass to the service API to use the temporary credentials.
      */
 
     public String getSessionToken() {
@@ -155,11 +175,11 @@ public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Token used to associate a specific build ID with the files uploaded using these credentials.
+     * The token that users must pass to the service API to use the temporary credentials.
      * </p>
      * 
      * @param sessionToken
-     *        Token used to associate a specific build ID with the files uploaded using these credentials.
+     *        The token that users must pass to the service API to use the temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

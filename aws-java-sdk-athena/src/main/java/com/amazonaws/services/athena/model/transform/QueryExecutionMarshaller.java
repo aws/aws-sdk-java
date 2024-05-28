@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class QueryExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementType").build();
     private static final MarshallingInfo<StructuredPojo> RESULTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> RESULTREUSECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultReuseConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> QUERYEXECUTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryExecutionContext").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,10 @@ public class QueryExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
     private static final MarshallingInfo<List> EXECUTIONPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionParameters").build();
+    private static final MarshallingInfo<String> SUBSTATEMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubstatementType").build();
+    private static final MarshallingInfo<StructuredPojo> QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryResultsS3AccessGrantsConfiguration").build();
 
     private static final QueryExecutionMarshaller instance = new QueryExecutionMarshaller();
 
@@ -69,12 +75,15 @@ public class QueryExecutionMarshaller {
             protocolMarshaller.marshall(queryExecution.getQuery(), QUERY_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatementType(), STATEMENTTYPE_BINDING);
             protocolMarshaller.marshall(queryExecution.getResultConfiguration(), RESULTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(queryExecution.getResultReuseConfiguration(), RESULTREUSECONFIGURATION_BINDING);
             protocolMarshaller.marshall(queryExecution.getQueryExecutionContext(), QUERYEXECUTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(queryExecution.getWorkGroup(), WORKGROUP_BINDING);
             protocolMarshaller.marshall(queryExecution.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(queryExecution.getExecutionParameters(), EXECUTIONPARAMETERS_BINDING);
+            protocolMarshaller.marshall(queryExecution.getSubstatementType(), SUBSTATEMENTTYPE_BINDING);
+            protocolMarshaller.marshall(queryExecution.getQueryResultsS3AccessGrantsConfiguration(), QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

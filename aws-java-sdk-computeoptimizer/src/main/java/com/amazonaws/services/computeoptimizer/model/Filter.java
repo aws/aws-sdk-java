@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,16 +39,34 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example,
-     * <code>Ec2Instance</code>).
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example,
+     * <code>Ec2Instance</code>.
      * </p>
      * <p>
-     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     * example, <code>CPUUnderprovisioned</code>).
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     * example, <code>CPUUnderprovisioned</code>.
+     * </p>
+     * <p>
+     * Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     * example, <code>Redis</code>.
+     * </p>
+     * <p>
+     * You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key
+     * in the filter name and the tag value as the filter value. For example, to find all recommendations that have a
+     * tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for
+     * the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your
+     * recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.
      * </p>
      */
     private String name;
@@ -199,31 +217,68 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example,
-     * <code>Ec2Instance</code>).
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example,
+     * <code>Ec2Instance</code>.
      * </p>
      * <p>
-     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     * example, <code>CPUUnderprovisioned</code>).
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     * example, <code>CPUUnderprovisioned</code>.
+     * </p>
+     * <p>
+     * Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     * example, <code>Redis</code>.
+     * </p>
+     * <p>
+     * You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key
+     * in the filter name and the tag value as the filter value. For example, to find all recommendations that have a
+     * tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for
+     * the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your
+     * recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to return recommendations with a specific finding classification (for
-     *        example, <code>Underprovisioned</code>).
+     *        Specify <code>Finding</code> to return recommendations with a specific finding classification. For
+     *        example, <code>Underprovisioned</code>.
      *        </p>
      *        <p>
-     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for
-     *        example, <code>Ec2Instance</code>).
+     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For
+     *        example, <code>Ec2Instance</code>.
      *        </p>
      *        <p>
-     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     *        example, <code>CPUUnderprovisioned</code>).
+     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     *        example, <code>CPUUnderprovisioned</code>.
+     *        </p>
+     *        <p>
+     *        Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     *        example, <code>Redis</code>.
+     *        </p>
+     *        <p>
+     *        You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *        </p>
+     *        <p>
+     *        A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the
+     *        tag key in the filter name and the tag value as the filter value. For example, to find all recommendations
+     *        that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify
+     *        <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        <p>
+     *        A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all
+     *        of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For
+     *        example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag
+     *        keys assigned.
      * @see FilterName
      */
 
@@ -236,30 +291,67 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example,
-     * <code>Ec2Instance</code>).
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example,
+     * <code>Ec2Instance</code>.
      * </p>
      * <p>
-     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     * example, <code>CPUUnderprovisioned</code>).
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     * example, <code>CPUUnderprovisioned</code>.
+     * </p>
+     * <p>
+     * Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     * example, <code>Redis</code>.
+     * </p>
+     * <p>
+     * You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key
+     * in the filter name and the tag value as the filter value. For example, to find all recommendations that have a
+     * tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for
+     * the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your
+     * recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.
      * </p>
      * 
      * @return The name of the filter.</p>
      *         <p>
-     *         Specify <code>Finding</code> to return recommendations with a specific finding classification (for
-     *         example, <code>Underprovisioned</code>).
+     *         Specify <code>Finding</code> to return recommendations with a specific finding classification. For
+     *         example, <code>Underprovisioned</code>.
      *         </p>
      *         <p>
-     *         Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for
-     *         example, <code>Ec2Instance</code>).
+     *         Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For
+     *         example, <code>Ec2Instance</code>.
      *         </p>
      *         <p>
-     *         Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code
-     *         (for example, <code>CPUUnderprovisioned</code>).
+     *         Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code.
+     *         For example, <code>CPUUnderprovisioned</code>.
+     *         </p>
+     *         <p>
+     *         Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     *         example, <code>Redis</code>.
+     *         </p>
+     *         <p>
+     *         You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *         </p>
+     *         <p>
+     *         A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the
+     *         tag key in the filter name and the tag value as the filter value. For example, to find all
+     *         recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
+     *         specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *         </p>
+     *         <p>
+     *         A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all
+     *         of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For
+     *         example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag
+     *         keys assigned.
      * @see FilterName
      */
 
@@ -272,31 +364,68 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example,
-     * <code>Ec2Instance</code>).
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example,
+     * <code>Ec2Instance</code>.
      * </p>
      * <p>
-     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     * example, <code>CPUUnderprovisioned</code>).
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     * example, <code>CPUUnderprovisioned</code>.
+     * </p>
+     * <p>
+     * Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     * example, <code>Redis</code>.
+     * </p>
+     * <p>
+     * You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key
+     * in the filter name and the tag value as the filter value. For example, to find all recommendations that have a
+     * tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for
+     * the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your
+     * recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to return recommendations with a specific finding classification (for
-     *        example, <code>Underprovisioned</code>).
+     *        Specify <code>Finding</code> to return recommendations with a specific finding classification. For
+     *        example, <code>Underprovisioned</code>.
      *        </p>
      *        <p>
-     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for
-     *        example, <code>Ec2Instance</code>).
+     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For
+     *        example, <code>Ec2Instance</code>.
      *        </p>
      *        <p>
-     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     *        example, <code>CPUUnderprovisioned</code>).
+     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     *        example, <code>CPUUnderprovisioned</code>.
+     *        </p>
+     *        <p>
+     *        Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     *        example, <code>Redis</code>.
+     *        </p>
+     *        <p>
+     *        You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *        </p>
+     *        <p>
+     *        A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the
+     *        tag key in the filter name and the tag value as the filter value. For example, to find all recommendations
+     *        that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify
+     *        <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        <p>
+     *        A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all
+     *        of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For
+     *        example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag
+     *        keys assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterName
      */
@@ -311,31 +440,68 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The name of the filter.
      * </p>
      * <p>
-     * Specify <code>Finding</code> to return recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).
+     * Specify <code>Finding</code> to return recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.
      * </p>
      * <p>
-     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example,
-     * <code>Ec2Instance</code>).
+     * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example,
+     * <code>Ec2Instance</code>.
      * </p>
      * <p>
-     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     * example, <code>CPUUnderprovisioned</code>).
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     * example, <code>CPUUnderprovisioned</code>.
+     * </p>
+     * <p>
+     * Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     * example, <code>Redis</code>.
+     * </p>
+     * <p>
+     * You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key
+     * in the filter name and the tag value as the filter value. For example, to find all recommendations that have a
+     * tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for
+     * the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your
+     * recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can
+     * find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
-     *        Specify <code>Finding</code> to return recommendations with a specific finding classification (for
-     *        example, <code>Underprovisioned</code>).
+     *        Specify <code>Finding</code> to return recommendations with a specific finding classification. For
+     *        example, <code>Underprovisioned</code>.
      *        </p>
      *        <p>
-     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for
-     *        example, <code>Ec2Instance</code>).
+     *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For
+     *        example, <code>Ec2Instance</code>.
      *        </p>
      *        <p>
-     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for
-     *        example, <code>CPUUnderprovisioned</code>).
+     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For
+     *        example, <code>CPUUnderprovisioned</code>.
+     *        </p>
+     *        <p>
+     *        Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For
+     *        example, <code>Redis</code>.
+     *        </p>
+     *        <p>
+     *        You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *        </p>
+     *        <p>
+     *        A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the
+     *        tag key in the filter name and the tag value as the filter value. For example, to find all recommendations
+     *        that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify
+     *        <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        <p>
+     *        A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all
+     *        of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For
+     *        example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag
+     *        keys assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterName
      */

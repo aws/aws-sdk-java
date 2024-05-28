@@ -1,0 +1,773 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * A list of overrides that modify the asset bundle resource configuration before the resource is imported.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleImportJobOverrideParameters"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AssetBundleImportJobOverrideParameters implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * An optional structure that configures resource ID overrides to be applied within the import job.
+     * </p>
+     */
+    private AssetBundleImportJobResourceIdOverrideConfiguration resourceIdOverrideConfiguration;
+    /**
+     * <p>
+     * A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobVPCConnectionOverrideParameters> vPCConnections;
+    /**
+     * <p>
+     * A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobRefreshScheduleOverrideParameters> refreshSchedules;
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobDataSourceOverrideParameters> dataSources;
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobDataSetOverrideParameters> dataSets;
+    /**
+     * <p>
+     * A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobThemeOverrideParameters> themes;
+    /**
+     * <p>
+     * A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobAnalysisOverrideParameters> analyses;
+    /**
+     * <p>
+     * A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     */
+    private java.util.List<AssetBundleImportJobDashboardOverrideParameters> dashboards;
+
+    /**
+     * <p>
+     * An optional structure that configures resource ID overrides to be applied within the import job.
+     * </p>
+     * 
+     * @param resourceIdOverrideConfiguration
+     *        An optional structure that configures resource ID overrides to be applied within the import job.
+     */
+
+    public void setResourceIdOverrideConfiguration(AssetBundleImportJobResourceIdOverrideConfiguration resourceIdOverrideConfiguration) {
+        this.resourceIdOverrideConfiguration = resourceIdOverrideConfiguration;
+    }
+
+    /**
+     * <p>
+     * An optional structure that configures resource ID overrides to be applied within the import job.
+     * </p>
+     * 
+     * @return An optional structure that configures resource ID overrides to be applied within the import job.
+     */
+
+    public AssetBundleImportJobResourceIdOverrideConfiguration getResourceIdOverrideConfiguration() {
+        return this.resourceIdOverrideConfiguration;
+    }
+
+    /**
+     * <p>
+     * An optional structure that configures resource ID overrides to be applied within the import job.
+     * </p>
+     * 
+     * @param resourceIdOverrideConfiguration
+     *        An optional structure that configures resource ID overrides to be applied within the import job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withResourceIdOverrideConfiguration(
+            AssetBundleImportJobResourceIdOverrideConfiguration resourceIdOverrideConfiguration) {
+        setResourceIdOverrideConfiguration(resourceIdOverrideConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle
+     *         that is imported.
+     */
+
+    public java.util.List<AssetBundleImportJobVPCConnectionOverrideParameters> getVPCConnections() {
+        return vPCConnections;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param vPCConnections
+     *        A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that
+     *        is imported.
+     */
+
+    public void setVPCConnections(java.util.Collection<AssetBundleImportJobVPCConnectionOverrideParameters> vPCConnections) {
+        if (vPCConnections == null) {
+            this.vPCConnections = null;
+            return;
+        }
+
+        this.vPCConnections = new java.util.ArrayList<AssetBundleImportJobVPCConnectionOverrideParameters>(vPCConnections);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVPCConnections(java.util.Collection)} or {@link #withVPCConnections(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param vPCConnections
+     *        A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that
+     *        is imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withVPCConnections(AssetBundleImportJobVPCConnectionOverrideParameters... vPCConnections) {
+        if (this.vPCConnections == null) {
+            setVPCConnections(new java.util.ArrayList<AssetBundleImportJobVPCConnectionOverrideParameters>(vPCConnections.length));
+        }
+        for (AssetBundleImportJobVPCConnectionOverrideParameters ele : vPCConnections) {
+            this.vPCConnections.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param vPCConnections
+     *        A list of overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that
+     *        is imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withVPCConnections(java.util.Collection<AssetBundleImportJobVPCConnectionOverrideParameters> vPCConnections) {
+        setVPCConnections(vPCConnections);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle
+     *         that is imported.
+     */
+
+    public java.util.List<AssetBundleImportJobRefreshScheduleOverrideParameters> getRefreshSchedules() {
+        return refreshSchedules;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param refreshSchedules
+     *        A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle
+     *        that is imported.
+     */
+
+    public void setRefreshSchedules(java.util.Collection<AssetBundleImportJobRefreshScheduleOverrideParameters> refreshSchedules) {
+        if (refreshSchedules == null) {
+            this.refreshSchedules = null;
+            return;
+        }
+
+        this.refreshSchedules = new java.util.ArrayList<AssetBundleImportJobRefreshScheduleOverrideParameters>(refreshSchedules);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRefreshSchedules(java.util.Collection)} or {@link #withRefreshSchedules(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param refreshSchedules
+     *        A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle
+     *        that is imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withRefreshSchedules(AssetBundleImportJobRefreshScheduleOverrideParameters... refreshSchedules) {
+        if (this.refreshSchedules == null) {
+            setRefreshSchedules(new java.util.ArrayList<AssetBundleImportJobRefreshScheduleOverrideParameters>(refreshSchedules.length));
+        }
+        for (AssetBundleImportJobRefreshScheduleOverrideParameters ele : refreshSchedules) {
+            this.refreshSchedules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param refreshSchedules
+     *        A list of overrides for any <code>RefreshSchedule</code> resources that are present in the asset bundle
+     *        that is imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withRefreshSchedules(
+            java.util.Collection<AssetBundleImportJobRefreshScheduleOverrideParameters> refreshSchedules) {
+        setRefreshSchedules(refreshSchedules);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that
+     *         is imported.
+     */
+
+    public java.util.List<AssetBundleImportJobDataSourceOverrideParameters> getDataSources() {
+        return dataSources;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param dataSources
+     *        A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     *        imported.
+     */
+
+    public void setDataSources(java.util.Collection<AssetBundleImportJobDataSourceOverrideParameters> dataSources) {
+        if (dataSources == null) {
+            this.dataSources = null;
+            return;
+        }
+
+        this.dataSources = new java.util.ArrayList<AssetBundleImportJobDataSourceOverrideParameters>(dataSources);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataSources(java.util.Collection)} or {@link #withDataSources(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dataSources
+     *        A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withDataSources(AssetBundleImportJobDataSourceOverrideParameters... dataSources) {
+        if (this.dataSources == null) {
+            setDataSources(new java.util.ArrayList<AssetBundleImportJobDataSourceOverrideParameters>(dataSources.length));
+        }
+        for (AssetBundleImportJobDataSourceOverrideParameters ele : dataSources) {
+            this.dataSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param dataSources
+     *        A list of overrides for any <code>DataSource</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withDataSources(java.util.Collection<AssetBundleImportJobDataSourceOverrideParameters> dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is
+     *         imported.
+     */
+
+    public java.util.List<AssetBundleImportJobDataSetOverrideParameters> getDataSets() {
+        return dataSets;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * 
+     * @param dataSets
+     *        A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is
+     *        imported.
+     */
+
+    public void setDataSets(java.util.Collection<AssetBundleImportJobDataSetOverrideParameters> dataSets) {
+        if (dataSets == null) {
+            this.dataSets = null;
+            return;
+        }
+
+        this.dataSets = new java.util.ArrayList<AssetBundleImportJobDataSetOverrideParameters>(dataSets);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataSets(java.util.Collection)} or {@link #withDataSets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param dataSets
+     *        A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withDataSets(AssetBundleImportJobDataSetOverrideParameters... dataSets) {
+        if (this.dataSets == null) {
+            setDataSets(new java.util.ArrayList<AssetBundleImportJobDataSetOverrideParameters>(dataSets.length));
+        }
+        for (AssetBundleImportJobDataSetOverrideParameters ele : dataSets) {
+            this.dataSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * 
+     * @param dataSets
+     *        A list of overrides for any <code>DataSet</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withDataSets(java.util.Collection<AssetBundleImportJobDataSetOverrideParameters> dataSets) {
+        setDataSets(dataSets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is
+     *         imported.
+     */
+
+    public java.util.List<AssetBundleImportJobThemeOverrideParameters> getThemes() {
+        return themes;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * 
+     * @param themes
+     *        A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is
+     *        imported.
+     */
+
+    public void setThemes(java.util.Collection<AssetBundleImportJobThemeOverrideParameters> themes) {
+        if (themes == null) {
+            this.themes = null;
+            return;
+        }
+
+        this.themes = new java.util.ArrayList<AssetBundleImportJobThemeOverrideParameters>(themes);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setThemes(java.util.Collection)} or {@link #withThemes(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param themes
+     *        A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withThemes(AssetBundleImportJobThemeOverrideParameters... themes) {
+        if (this.themes == null) {
+            setThemes(new java.util.ArrayList<AssetBundleImportJobThemeOverrideParameters>(themes.length));
+        }
+        for (AssetBundleImportJobThemeOverrideParameters ele : themes) {
+            this.themes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is imported.
+     * </p>
+     * 
+     * @param themes
+     *        A list of overrides for any <code>Theme</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withThemes(java.util.Collection<AssetBundleImportJobThemeOverrideParameters> themes) {
+        setThemes(themes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     *         imported.
+     */
+
+    public java.util.List<AssetBundleImportJobAnalysisOverrideParameters> getAnalyses() {
+        return analyses;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param analyses
+     *        A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     *        imported.
+     */
+
+    public void setAnalyses(java.util.Collection<AssetBundleImportJobAnalysisOverrideParameters> analyses) {
+        if (analyses == null) {
+            this.analyses = null;
+            return;
+        }
+
+        this.analyses = new java.util.ArrayList<AssetBundleImportJobAnalysisOverrideParameters>(analyses);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAnalyses(java.util.Collection)} or {@link #withAnalyses(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param analyses
+     *        A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withAnalyses(AssetBundleImportJobAnalysisOverrideParameters... analyses) {
+        if (this.analyses == null) {
+            setAnalyses(new java.util.ArrayList<AssetBundleImportJobAnalysisOverrideParameters>(analyses.length));
+        }
+        for (AssetBundleImportJobAnalysisOverrideParameters ele : analyses) {
+            this.analyses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param analyses
+     *        A list of overrides for any <code>Analysis</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withAnalyses(java.util.Collection<AssetBundleImportJobAnalysisOverrideParameters> analyses) {
+        setAnalyses(analyses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @return A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     *         imported.
+     */
+
+    public java.util.List<AssetBundleImportJobDashboardOverrideParameters> getDashboards() {
+        return dashboards;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param dashboards
+     *        A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     *        imported.
+     */
+
+    public void setDashboards(java.util.Collection<AssetBundleImportJobDashboardOverrideParameters> dashboards) {
+        if (dashboards == null) {
+            this.dashboards = null;
+            return;
+        }
+
+        this.dashboards = new java.util.ArrayList<AssetBundleImportJobDashboardOverrideParameters>(dashboards);
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDashboards(java.util.Collection)} or {@link #withDashboards(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dashboards
+     *        A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withDashboards(AssetBundleImportJobDashboardOverrideParameters... dashboards) {
+        if (this.dashboards == null) {
+            setDashboards(new java.util.ArrayList<AssetBundleImportJobDashboardOverrideParameters>(dashboards.length));
+        }
+        for (AssetBundleImportJobDashboardOverrideParameters ele : dashboards) {
+            this.dashboards.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     * imported.
+     * </p>
+     * 
+     * @param dashboards
+     *        A list of overrides for any <code>Dashboard</code> resources that are present in the asset bundle that is
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobOverrideParameters withDashboards(java.util.Collection<AssetBundleImportJobDashboardOverrideParameters> dashboards) {
+        setDashboards(dashboards);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getResourceIdOverrideConfiguration() != null)
+            sb.append("ResourceIdOverrideConfiguration: ").append(getResourceIdOverrideConfiguration()).append(",");
+        if (getVPCConnections() != null)
+            sb.append("VPCConnections: ").append(getVPCConnections()).append(",");
+        if (getRefreshSchedules() != null)
+            sb.append("RefreshSchedules: ").append(getRefreshSchedules()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources()).append(",");
+        if (getDataSets() != null)
+            sb.append("DataSets: ").append(getDataSets()).append(",");
+        if (getThemes() != null)
+            sb.append("Themes: ").append(getThemes()).append(",");
+        if (getAnalyses() != null)
+            sb.append("Analyses: ").append(getAnalyses()).append(",");
+        if (getDashboards() != null)
+            sb.append("Dashboards: ").append(getDashboards());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AssetBundleImportJobOverrideParameters == false)
+            return false;
+        AssetBundleImportJobOverrideParameters other = (AssetBundleImportJobOverrideParameters) obj;
+        if (other.getResourceIdOverrideConfiguration() == null ^ this.getResourceIdOverrideConfiguration() == null)
+            return false;
+        if (other.getResourceIdOverrideConfiguration() != null
+                && other.getResourceIdOverrideConfiguration().equals(this.getResourceIdOverrideConfiguration()) == false)
+            return false;
+        if (other.getVPCConnections() == null ^ this.getVPCConnections() == null)
+            return false;
+        if (other.getVPCConnections() != null && other.getVPCConnections().equals(this.getVPCConnections()) == false)
+            return false;
+        if (other.getRefreshSchedules() == null ^ this.getRefreshSchedules() == null)
+            return false;
+        if (other.getRefreshSchedules() != null && other.getRefreshSchedules().equals(this.getRefreshSchedules()) == false)
+            return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
+        if (other.getDataSets() == null ^ this.getDataSets() == null)
+            return false;
+        if (other.getDataSets() != null && other.getDataSets().equals(this.getDataSets()) == false)
+            return false;
+        if (other.getThemes() == null ^ this.getThemes() == null)
+            return false;
+        if (other.getThemes() != null && other.getThemes().equals(this.getThemes()) == false)
+            return false;
+        if (other.getAnalyses() == null ^ this.getAnalyses() == null)
+            return false;
+        if (other.getAnalyses() != null && other.getAnalyses().equals(this.getAnalyses()) == false)
+            return false;
+        if (other.getDashboards() == null ^ this.getDashboards() == null)
+            return false;
+        if (other.getDashboards() != null && other.getDashboards().equals(this.getDashboards()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getResourceIdOverrideConfiguration() == null) ? 0 : getResourceIdOverrideConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVPCConnections() == null) ? 0 : getVPCConnections().hashCode());
+        hashCode = prime * hashCode + ((getRefreshSchedules() == null) ? 0 : getRefreshSchedules().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
+        hashCode = prime * hashCode + ((getDataSets() == null) ? 0 : getDataSets().hashCode());
+        hashCode = prime * hashCode + ((getThemes() == null) ? 0 : getThemes().hashCode());
+        hashCode = prime * hashCode + ((getAnalyses() == null) ? 0 : getAnalyses().hashCode());
+        hashCode = prime * hashCode + ((getDashboards() == null) ? 0 : getDashboards().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public AssetBundleImportJobOverrideParameters clone() {
+        try {
+            return (AssetBundleImportJobOverrideParameters) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.quicksight.model.transform.AssetBundleImportJobOverrideParametersMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

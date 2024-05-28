@@ -1,0 +1,507 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.omics.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * A run group.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/RunGroupListItem" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RunGroupListItem implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The group's ARN.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * The group's ID.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
+     * The group's name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The group's maximum CPU count setting.
+     * </p>
+     */
+    private Integer maxCpus;
+    /**
+     * <p>
+     * The group's maximum concurrent run setting.
+     * </p>
+     */
+    private Integer maxRuns;
+    /**
+     * <p>
+     * The group's maximum duration setting in minutes.
+     * </p>
+     */
+    private Integer maxDuration;
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     */
+    private Integer maxGpus;
+
+    /**
+     * <p>
+     * The group's ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The group's ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The group's ARN.
+     * </p>
+     * 
+     * @return The group's ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The group's ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The group's ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The group's ID.
+     * </p>
+     * 
+     * @param id
+     *        The group's ID.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The group's ID.
+     * </p>
+     * 
+     * @return The group's ID.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The group's ID.
+     * </p>
+     * 
+     * @param id
+     *        The group's ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The group's name.
+     * </p>
+     * 
+     * @param name
+     *        The group's name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The group's name.
+     * </p>
+     * 
+     * @return The group's name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The group's name.
+     * </p>
+     * 
+     * @param name
+     *        The group's name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The group's maximum CPU count setting.
+     * </p>
+     * 
+     * @param maxCpus
+     *        The group's maximum CPU count setting.
+     */
+
+    public void setMaxCpus(Integer maxCpus) {
+        this.maxCpus = maxCpus;
+    }
+
+    /**
+     * <p>
+     * The group's maximum CPU count setting.
+     * </p>
+     * 
+     * @return The group's maximum CPU count setting.
+     */
+
+    public Integer getMaxCpus() {
+        return this.maxCpus;
+    }
+
+    /**
+     * <p>
+     * The group's maximum CPU count setting.
+     * </p>
+     * 
+     * @param maxCpus
+     *        The group's maximum CPU count setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withMaxCpus(Integer maxCpus) {
+        setMaxCpus(maxCpus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The group's maximum concurrent run setting.
+     * </p>
+     * 
+     * @param maxRuns
+     *        The group's maximum concurrent run setting.
+     */
+
+    public void setMaxRuns(Integer maxRuns) {
+        this.maxRuns = maxRuns;
+    }
+
+    /**
+     * <p>
+     * The group's maximum concurrent run setting.
+     * </p>
+     * 
+     * @return The group's maximum concurrent run setting.
+     */
+
+    public Integer getMaxRuns() {
+        return this.maxRuns;
+    }
+
+    /**
+     * <p>
+     * The group's maximum concurrent run setting.
+     * </p>
+     * 
+     * @param maxRuns
+     *        The group's maximum concurrent run setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withMaxRuns(Integer maxRuns) {
+        setMaxRuns(maxRuns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The group's maximum duration setting in minutes.
+     * </p>
+     * 
+     * @param maxDuration
+     *        The group's maximum duration setting in minutes.
+     */
+
+    public void setMaxDuration(Integer maxDuration) {
+        this.maxDuration = maxDuration;
+    }
+
+    /**
+     * <p>
+     * The group's maximum duration setting in minutes.
+     * </p>
+     * 
+     * @return The group's maximum duration setting in minutes.
+     */
+
+    public Integer getMaxDuration() {
+        return this.maxDuration;
+    }
+
+    /**
+     * <p>
+     * The group's maximum duration setting in minutes.
+     * </p>
+     * 
+     * @param maxDuration
+     *        The group's maximum duration setting in minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withMaxDuration(Integer maxDuration) {
+        setMaxDuration(maxDuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the group was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     * 
+     * @return When the group was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * When the group was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        When the group was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @param maxGpus
+     *        The maximum GPUs that can be used by a run group.
+     */
+
+    public void setMaxGpus(Integer maxGpus) {
+        this.maxGpus = maxGpus;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @return The maximum GPUs that can be used by a run group.
+     */
+
+    public Integer getMaxGpus() {
+        return this.maxGpus;
+    }
+
+    /**
+     * <p>
+     * The maximum GPUs that can be used by a run group.
+     * </p>
+     * 
+     * @param maxGpus
+     *        The maximum GPUs that can be used by a run group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunGroupListItem withMaxGpus(Integer maxGpus) {
+        setMaxGpus(maxGpus);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getMaxCpus() != null)
+            sb.append("MaxCpus: ").append(getMaxCpus()).append(",");
+        if (getMaxRuns() != null)
+            sb.append("MaxRuns: ").append(getMaxRuns()).append(",");
+        if (getMaxDuration() != null)
+            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getMaxGpus() != null)
+            sb.append("MaxGpus: ").append(getMaxGpus());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RunGroupListItem == false)
+            return false;
+        RunGroupListItem other = (RunGroupListItem) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getMaxCpus() == null ^ this.getMaxCpus() == null)
+            return false;
+        if (other.getMaxCpus() != null && other.getMaxCpus().equals(this.getMaxCpus()) == false)
+            return false;
+        if (other.getMaxRuns() == null ^ this.getMaxRuns() == null)
+            return false;
+        if (other.getMaxRuns() != null && other.getMaxRuns().equals(this.getMaxRuns()) == false)
+            return false;
+        if (other.getMaxDuration() == null ^ this.getMaxDuration() == null)
+            return false;
+        if (other.getMaxDuration() != null && other.getMaxDuration().equals(this.getMaxDuration()) == false)
+            return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getMaxGpus() == null ^ this.getMaxGpus() == null)
+            return false;
+        if (other.getMaxGpus() != null && other.getMaxGpus().equals(this.getMaxGpus()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMaxCpus() == null) ? 0 : getMaxCpus().hashCode());
+        hashCode = prime * hashCode + ((getMaxRuns() == null) ? 0 : getMaxRuns().hashCode());
+        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getMaxGpus() == null) ? 0 : getMaxGpus().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RunGroupListItem clone() {
+        try {
+            return (RunGroupListItem) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.omics.model.transform.RunGroupListItemMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

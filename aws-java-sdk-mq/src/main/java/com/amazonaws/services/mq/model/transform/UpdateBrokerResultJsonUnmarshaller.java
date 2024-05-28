@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,6 +89,22 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                     updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("dataReplicationMetadata", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setDataReplicationMetadata(DataReplicationMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dataReplicationMode", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setDataReplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pendingDataReplicationMetadata", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setPendingDataReplicationMetadata(DataReplicationMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("pendingDataReplicationMode", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setPendingDataReplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

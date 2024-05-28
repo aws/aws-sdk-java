@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,14 +30,58 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Used to stop Incident Manager from creating multiple incident records for the same incident.
+     * The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same
+     * account.
      * </p>
+     * <p>
+     * A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain the same string in the
+     * <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager
+     * deduplicates the newer incident into the existing incident.
+     * </p>
+     * <note>
+     * <p>
+     * By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch
+     * alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication
+     * for these resource types.
+     * </p>
+     * </note>
      */
     private String dedupeString;
     /**
      * <p>
      * The impact of the incident on your customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer impact;
     /**
@@ -69,11 +113,38 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Used to stop Incident Manager from creating multiple incident records for the same incident.
+     * The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same
+     * account.
      * </p>
+     * <p>
+     * A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain the same string in the
+     * <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager
+     * deduplicates the newer incident into the existing incident.
+     * </p>
+     * <note>
+     * <p>
+     * By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch
+     * alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication
+     * for these resource types.
+     * </p>
+     * </note>
      * 
      * @param dedupeString
-     *        Used to stop Incident Manager from creating multiple incident records for the same incident.
+     *        The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the
+     *        same account.</p>
+     *        <p>
+     *        A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you
+     *        specify a deduplication string, Incident Manager searches for open incidents that contain the same string
+     *        in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident
+     *        Manager deduplicates the newer incident into the existing incident.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon
+     *        CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to
+     *        prevent duplication for these resource types.
+     *        </p>
      */
 
     public void setDedupeString(String dedupeString) {
@@ -82,10 +153,37 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Used to stop Incident Manager from creating multiple incident records for the same incident.
+     * The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same
+     * account.
      * </p>
+     * <p>
+     * A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain the same string in the
+     * <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager
+     * deduplicates the newer incident into the existing incident.
+     * </p>
+     * <note>
+     * <p>
+     * By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch
+     * alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication
+     * for these resource types.
+     * </p>
+     * </note>
      * 
-     * @return Used to stop Incident Manager from creating multiple incident records for the same incident.
+     * @return The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the
+     *         same account.</p>
+     *         <p>
+     *         A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you
+     *         specify a deduplication string, Incident Manager searches for open incidents that contain the same string
+     *         in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident
+     *         Manager deduplicates the newer incident into the existing incident.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon
+     *         CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to
+     *         prevent duplication for these resource types.
+     *         </p>
      */
 
     public String getDedupeString() {
@@ -94,11 +192,38 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Used to stop Incident Manager from creating multiple incident records for the same incident.
+     * The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same
+     * account.
      * </p>
+     * <p>
+     * A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain the same string in the
+     * <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager
+     * deduplicates the newer incident into the existing incident.
+     * </p>
+     * <note>
+     * <p>
+     * By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch
+     * alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication
+     * for these resource types.
+     * </p>
+     * </note>
      * 
      * @param dedupeString
-     *        Used to stop Incident Manager from creating multiple incident records for the same incident.
+     *        The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the
+     *        same account.</p>
+     *        <p>
+     *        A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you
+     *        specify a deduplication string, Incident Manager searches for open incidents that contain the same string
+     *        in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident
+     *        Manager deduplicates the newer incident into the existing incident.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon
+     *        CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to
+     *        prevent duplication for these resource types.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,9 +236,68 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The impact of the incident on your customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param impact
-     *        The impact of the incident on your customers and applications.
+     *        The impact of the incident on your customers and applications.</p>
+     *        <p class="title">
+     *        <b>Supported impact codes</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>1</code> - Critical
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>2</code> - High
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>3</code> - Medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>4</code> - Low
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5</code> - No Impact
+     *        </p>
+     *        </li>
      */
 
     public void setImpact(Integer impact) {
@@ -124,8 +308,67 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The impact of the incident on your customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The impact of the incident on your customers and applications.
+     * @return The impact of the incident on your customers and applications.</p>
+     *         <p class="title">
+     *         <b>Supported impact codes</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>1</code> - Critical
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>2</code> - High
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>3</code> - Medium
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>4</code> - Low
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5</code> - No Impact
+     *         </p>
+     *         </li>
      */
 
     public Integer getImpact() {
@@ -136,9 +379,68 @@ public class IncidentTemplate implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The impact of the incident on your customers and applications.
      * </p>
+     * <p class="title">
+     * <b>Supported impact codes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>1</code> - Critical
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>2</code> - High
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>3</code> - Medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>4</code> - Low
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5</code> - No Impact
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param impact
-     *        The impact of the incident on your customers and applications.
+     *        The impact of the incident on your customers and applications.</p>
+     *        <p class="title">
+     *        <b>Supported impact codes</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>1</code> - Critical
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>2</code> - High
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>3</code> - Medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>4</code> - Low
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5</code> - No Impact
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

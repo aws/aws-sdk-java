@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -139,6 +139,13 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
     private String distanceUnit;
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
+    /**
+     * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
      * compatibility.
      * </p>
@@ -157,6 +164,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider,
+     * and only within Southeast Asia.
+     * </p>
+     * <p>
+     * <code>Truck</code> is not available for Grab.
+     * </p>
+     * <p>
+     * For more information about using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     * Location Service Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Default Value: <code>Car</code>
      * </p>
@@ -1043,6 +1064,52 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CalculateRouteMatrixRequest withKey(String key) {
+        setKey(key);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
      * compatibility.
      * </p>
@@ -1061,6 +1128,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider,
+     * and only within Southeast Asia.
+     * </p>
+     * <p>
+     * <code>Truck</code> is not available for Grab.
+     * </p>
+     * <p>
+     * For more information about using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     * Location Service Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Default Value: <code>Car</code>
      * </p>
@@ -1083,6 +1164,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data
+     *        provider, and only within Southeast Asia.
+     *        </p>
+     *        <p>
+     *        <code>Truck</code> is not available for Grab.
+     *        </p>
+     *        <p>
+     *        For more information about using Grab as a data provider, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     *        Location Service Developer Guide</i>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default Value: <code>Car</code>
      * @see TravelMode
@@ -1112,6 +1207,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider,
+     * and only within Southeast Asia.
+     * </p>
+     * <p>
+     * <code>Truck</code> is not available for Grab.
+     * </p>
+     * <p>
+     * For more information about using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     * Location Service Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Default Value: <code>Car</code>
      * </p>
@@ -1133,6 +1242,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
+     *         <p>
+     *         <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data
+     *         provider, and only within Southeast Asia.
+     *         </p>
+     *         <p>
+     *         <code>Truck</code> is not available for Grab.
+     *         </p>
+     *         <p>
+     *         For more information about using Grab as a data provider, see <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     *         Location Service Developer Guide</i>.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default Value: <code>Car</code>
      * @see TravelMode
@@ -1162,6 +1285,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider,
+     * and only within Southeast Asia.
+     * </p>
+     * <p>
+     * <code>Truck</code> is not available for Grab.
+     * </p>
+     * <p>
+     * For more information about using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     * Location Service Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Default Value: <code>Car</code>
      * </p>
@@ -1184,6 +1321,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data
+     *        provider, and only within Southeast Asia.
+     *        </p>
+     *        <p>
+     *        <code>Truck</code> is not available for Grab.
+     *        </p>
+     *        <p>
+     *        For more information about using Grab as a data provider, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     *        Location Service Developer Guide</i>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default Value: <code>Car</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1215,6 +1366,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider,
+     * and only within Southeast Asia.
+     * </p>
+     * <p>
+     * <code>Truck</code> is not available for Grab.
+     * </p>
+     * <p>
+     * For more information about using Grab as a data provider, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     * Location Service Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Default Value: <code>Car</code>
      * </p>
@@ -1237,6 +1402,20 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data
+     *        provider, and only within Southeast Asia.
+     *        </p>
+     *        <p>
+     *        <code>Truck</code> is not available for Grab.
+     *        </p>
+     *        <p>
+     *        For more information about using Grab as a data provider, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon
+     *        Location Service Developer Guide</i>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default Value: <code>Car</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1335,6 +1514,8 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("DestinationPositions: ").append("***Sensitive Data Redacted***").append(",");
         if (getDistanceUnit() != null)
             sb.append("DistanceUnit: ").append(getDistanceUnit()).append(",");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getTravelMode() != null)
             sb.append("TravelMode: ").append(getTravelMode()).append(",");
         if (getTruckModeOptions() != null)
@@ -1381,6 +1562,10 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getDistanceUnit() != null && other.getDistanceUnit().equals(this.getDistanceUnit()) == false)
             return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getTravelMode() == null ^ this.getTravelMode() == null)
             return false;
         if (other.getTravelMode() != null && other.getTravelMode().equals(this.getTravelMode()) == false)
@@ -1404,6 +1589,7 @@ public class CalculateRouteMatrixRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDepartureTime() == null) ? 0 : getDepartureTime().hashCode());
         hashCode = prime * hashCode + ((getDestinationPositions() == null) ? 0 : getDestinationPositions().hashCode());
         hashCode = prime * hashCode + ((getDistanceUnit() == null) ? 0 : getDistanceUnit().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getTravelMode() == null) ? 0 : getTravelMode().hashCode());
         hashCode = prime * hashCode + ((getTruckModeOptions() == null) ? 0 : getTruckModeOptions().hashCode());
         return hashCode;

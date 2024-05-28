@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class AccountGroupingMarshaller {
 
     private static final MarshallingInfo<List> LINKEDACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LinkedAccountIds").build();
+    private static final MarshallingInfo<Boolean> AUTOASSOCIATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoAssociate").build();
 
     private static final AccountGroupingMarshaller instance = new AccountGroupingMarshaller();
 
@@ -48,6 +50,7 @@ public class AccountGroupingMarshaller {
 
         try {
             protocolMarshaller.marshall(accountGrouping.getLinkedAccountIds(), LINKEDACCOUNTIDS_BINDING);
+            protocolMarshaller.marshall(accountGrouping.getAutoAssociate(), AUTOASSOCIATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

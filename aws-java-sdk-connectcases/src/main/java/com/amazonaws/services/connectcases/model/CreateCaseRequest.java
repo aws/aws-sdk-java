@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,10 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
@@ -43,6 +46,8 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<FieldValue> fields;
+
+    private UserUnion performedBy;
     /**
      * <p>
      * A unique identifier of a template.
@@ -52,11 +57,17 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -65,10 +76,16 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -77,11 +94,17 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,6 +224,32 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @param performedBy
+     */
+
+    public void setPerformedBy(UserUnion performedBy) {
+        this.performedBy = performedBy;
+    }
+
+    /**
+     * @return
+     */
+
+    public UserUnion getPerformedBy() {
+        return this.performedBy;
+    }
+
+    /**
+     * @param performedBy
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCaseRequest withPerformedBy(UserUnion performedBy) {
+        setPerformedBy(performedBy);
+        return this;
+    }
+
+    /**
      * <p>
      * A unique identifier of a template.
      * </p>
@@ -258,6 +307,8 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getFields() != null)
             sb.append("Fields: ").append(getFields()).append(",");
+        if (getPerformedBy() != null)
+            sb.append("PerformedBy: ").append(getPerformedBy()).append(",");
         if (getTemplateId() != null)
             sb.append("TemplateId: ").append(getTemplateId());
         sb.append("}");
@@ -286,6 +337,10 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getFields() != null && other.getFields().equals(this.getFields()) == false)
             return false;
+        if (other.getPerformedBy() == null ^ this.getPerformedBy() == null)
+            return false;
+        if (other.getPerformedBy() != null && other.getPerformedBy().equals(this.getPerformedBy()) == false)
+            return false;
         if (other.getTemplateId() == null ^ this.getTemplateId() == null)
             return false;
         if (other.getTemplateId() != null && other.getTemplateId().equals(this.getTemplateId()) == false)
@@ -301,6 +356,7 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode());
+        hashCode = prime * hashCode + ((getPerformedBy() == null) ? 0 : getPerformedBy().hashCode());
         hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
         return hashCode;
     }

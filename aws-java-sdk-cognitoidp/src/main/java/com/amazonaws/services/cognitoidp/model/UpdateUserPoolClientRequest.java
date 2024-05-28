@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,7 +99,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -109,20 +109,51 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private Integer idTokenValidity;
     /**
      * <p>
-     * The units in which the validity times are represented. The default unit for RefreshToken is days, and the default
-     * for ID and access tokens is hours.
+     * The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.
      * </p>
      */
     private TokenValidityUnitsType tokenValidityUnits;
     /**
      * <p>
-     * The read-only attributes of the user pool.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      */
     private java.util.List<String> readAttributes;
     /**
      * <p>
-     * The writeable attributes of the user pool.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
+     * </p>
+     * <p>
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      */
     private java.util.List<String> writeAttributes;
@@ -303,8 +334,41 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> allowedOAuthScopes;
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      */
     private Boolean allowedOAuthFlowsUserPoolClient;
@@ -770,7 +834,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -787,8 +851,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        ID token for 10 hours.
      *        </p>
      *        <p>
-     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     *        is displayed below in seconds.
+     *        The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     *        displayed below in seconds.
      *        </p>
      *        <p>
      *        If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one
@@ -810,7 +874,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -827,8 +891,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         their ID token for 10 hours.
      *         </p>
      *         <p>
-     *         The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     *         is displayed below in seconds.
+     *         The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     *         displayed below in seconds.
      *         </p>
      *         <p>
      *         If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one
@@ -850,7 +914,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
      * </p>
      * <p>
-     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
      * displayed below in seconds.
      * </p>
      * <p>
@@ -867,8 +931,8 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        ID token for 10 hours.
      *        </p>
      *        <p>
-     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     *        is displayed below in seconds.
+     *        The default time unit for <code>IdTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     *        displayed below in seconds.
      *        </p>
      *        <p>
      *        If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one
@@ -883,13 +947,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented. The default unit for RefreshToken is days, and the default
-     * for ID and access tokens is hours.
+     * The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.
      * </p>
      * 
      * @param tokenValidityUnits
-     *        The units in which the validity times are represented. The default unit for RefreshToken is days, and the
-     *        default for ID and access tokens is hours.
+     *        The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     *        RefreshToken is days, and the default for ID and access tokens is hours.
      */
 
     public void setTokenValidityUnits(TokenValidityUnitsType tokenValidityUnits) {
@@ -898,12 +962,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented. The default unit for RefreshToken is days, and the default
-     * for ID and access tokens is hours.
+     * The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.
      * </p>
      * 
-     * @return The units in which the validity times are represented. The default unit for RefreshToken is days, and the
-     *         default for ID and access tokens is hours.
+     * @return The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     *         RefreshToken is days, and the default for ID and access tokens is hours.
      */
 
     public TokenValidityUnitsType getTokenValidityUnits() {
@@ -912,13 +976,13 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented. The default unit for RefreshToken is days, and the default
-     * for ID and access tokens is hours.
+     * The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.
      * </p>
      * 
      * @param tokenValidityUnits
-     *        The units in which the validity times are represented. The default unit for RefreshToken is days, and the
-     *        default for ID and access tokens is hours.
+     *        The time units you use when you set the duration of ID, access, and refresh tokens. The default unit for
+     *        RefreshToken is days, and the default for ID and access tokens is hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -929,10 +993,33 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read-only attributes of the user pool.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * 
-     * @return The read-only attributes of the user pool.
+     * @return The list of user attributes that you want your app client to have read-only access to. After your user
+     *         authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *         attribute in this list. An example of this kind of activity is when your user selects a link to view
+     *         their profile information. Your app makes a <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *         >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *         <p>
+     *         When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *         of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *         user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *         doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *         response if you have specified your own custom set of read attributes.
      */
 
     public java.util.List<String> getReadAttributes() {
@@ -941,11 +1028,34 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read-only attributes of the user pool.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * 
      * @param readAttributes
-     *        The read-only attributes of the user pool.
+     *        The list of user attributes that you want your app client to have read-only access to. After your user
+     *        authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *        attribute in this list. An example of this kind of activity is when your user selects a link to view their
+     *        profile information. Your app makes a <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *        >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *        <p>
+     *        When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *        of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *        user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *        doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *        response if you have specified your own custom set of read attributes.
      */
 
     public void setReadAttributes(java.util.Collection<String> readAttributes) {
@@ -959,7 +1069,19 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read-only attributes of the user pool.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -968,7 +1090,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param readAttributes
-     *        The read-only attributes of the user pool.
+     *        The list of user attributes that you want your app client to have read-only access to. After your user
+     *        authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *        attribute in this list. An example of this kind of activity is when your user selects a link to view their
+     *        profile information. Your app makes a <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *        >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *        <p>
+     *        When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *        of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *        user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *        doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *        response if you have specified your own custom set of read attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -984,11 +1117,34 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read-only attributes of the user pool.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * 
      * @param readAttributes
-     *        The read-only attributes of the user pool.
+     *        The list of user attributes that you want your app client to have read-only access to. After your user
+     *        authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *        attribute in this list. An example of this kind of activity is when your user selects a link to view their
+     *        profile information. Your app makes a <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *        >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *        <p>
+     *        When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *        of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *        user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *        doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *        response if you have specified your own custom set of read attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -999,10 +1155,48 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The writeable attributes of the user pool.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
+     * </p>
+     * <p>
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
-     * @return The writeable attributes of the user pool.
+     * @return The list of user attributes that you want your app client to have write access to. After your user
+     *         authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *         for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *         form to update their profile information and they change their last name. Your app then makes an <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *         >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *         <p>
+     *         When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the
+     *         values of the Standard attributes of your user pool. When your user pool has write access to these
+     *         default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only
+     *         populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of
+     *         write attributes.
+     *         </p>
+     *         <p>
+     *         If your app client allows users to sign in through an IdP, this array must include all attributes that
+     *         you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *         application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *         Cognito throws an error when it tries to update the attribute. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *         >Specifying IdP Attribute Mappings for Your user pool</a>.
      */
 
     public java.util.List<String> getWriteAttributes() {
@@ -1011,11 +1205,49 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The writeable attributes of the user pool.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
+     * </p>
+     * <p>
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
      * @param writeAttributes
-     *        The writeable attributes of the user pool.
+     *        The list of user attributes that you want your app client to have write access to. After your user
+     *        authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *        for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *        form to update their profile information and they change their last name. Your app then makes an <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *        >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *        <p>
+     *        When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values
+     *        of the Standard attributes of your user pool. When your user pool has write access to these default
+     *        attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     *        <code>WriteAttributes</code> in the API response if you have specified your own custom set of write
+     *        attributes.
+     *        </p>
+     *        <p>
+     *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
+     *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *        application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *        Cognito throws an error when it tries to update the attribute. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *        >Specifying IdP Attribute Mappings for Your user pool</a>.
      */
 
     public void setWriteAttributes(java.util.Collection<String> writeAttributes) {
@@ -1029,7 +1261,26 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The writeable attributes of the user pool.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
+     * </p>
+     * <p>
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1038,7 +1289,26 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param writeAttributes
-     *        The writeable attributes of the user pool.
+     *        The list of user attributes that you want your app client to have write access to. After your user
+     *        authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *        for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *        form to update their profile information and they change their last name. Your app then makes an <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *        >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *        <p>
+     *        When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values
+     *        of the Standard attributes of your user pool. When your user pool has write access to these default
+     *        attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     *        <code>WriteAttributes</code> in the API response if you have specified your own custom set of write
+     *        attributes.
+     *        </p>
+     *        <p>
+     *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
+     *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *        application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *        Cognito throws an error when it tries to update the attribute. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *        >Specifying IdP Attribute Mappings for Your user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1054,11 +1324,49 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The writeable attributes of the user pool.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
+     * </p>
+     * <p>
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
      * @param writeAttributes
-     *        The writeable attributes of the user pool.
+     *        The list of user attributes that you want your app client to have write access to. After your user
+     *        authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *        for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *        form to update their profile information and they change their last name. Your app then makes an <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *        >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *        <p>
+     *        When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values
+     *        of the Standard attributes of your user pool. When your user pool has write access to these default
+     *        attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     *        <code>WriteAttributes</code> in the API response if you have specified your own custom set of write
+     *        attributes.
+     *        </p>
+     *        <p>
+     *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
+     *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *        application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *        Cognito throws an error when it tries to update the attribute. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *        >Specifying IdP Attribute Mappings for Your user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2719,13 +3027,78 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
      * @param allowedOAuthFlowsUserPoolClient
-     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *        user pools.
+     *        Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *        <p>
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *        following features in your app client.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CallBackURLs</code>: Callback URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     *        grants.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *        or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *        <code>false</code>.
      */
 
     public void setAllowedOAuthFlowsUserPoolClient(Boolean allowedOAuthFlowsUserPoolClient) {
@@ -2734,12 +3107,77 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
-     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *         user pools.
+     * @return Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *         <p>
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *         following features in your app client.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CallBackURLs</code>: Callback URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth
+     *         2.0 grants.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *         or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *         <code>false</code>.
      */
 
     public Boolean getAllowedOAuthFlowsUserPoolClient() {
@@ -2748,13 +3186,78 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
      * @param allowedOAuthFlowsUserPoolClient
-     *        Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *        user pools.
+     *        Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *        <p>
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *        following features in your app client.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CallBackURLs</code>: Callback URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     *        grants.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *        or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *        <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2765,12 +3268,77 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user
-     * pools.
+     * Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.
+     * </p>
+     * <p>
+     * <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the following
+     * features in your app client.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CallBackURLs</code>: Callback URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LogoutURLs</code>: Sign-out redirect URLs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth 2.0
+     * grants.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code> or
+     * <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to <code>false</code>
+     * .
      * </p>
      * 
-     * @return Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito
-     *         user pools.
+     * @return Set to <code>true</code> to use OAuth 2.0 features in your user pool app client.</p>
+     *         <p>
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> must be <code>true</code> before you can configure the
+     *         following features in your app client.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CallBackURLs</code>: Callback URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LogoutURLs</code>: Sign-out redirect URLs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and client credentials OAuth
+     *         2.0 grants.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To use OAuth 2.0 features, configure one of these features in the Amazon Cognito console or set
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a <code>CreateUserPoolClient</code>
+     *         or <code>UpdateUserPoolClient</code> API request. If you don't set a value for
+     *         <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs, it defaults to
+     *         <code>false</code>.
      */
 
     public Boolean isAllowedOAuthFlowsUserPoolClient() {

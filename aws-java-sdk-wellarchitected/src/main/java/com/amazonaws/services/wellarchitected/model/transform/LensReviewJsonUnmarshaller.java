@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,10 @@ public class LensReviewJsonUnmarshaller implements Unmarshaller<LensReview, Json
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("JiraConfiguration", targetDepth)) {
+                    context.nextToken();
+                    lensReview.setJiraConfiguration(JiraSelectedQuestionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("UpdatedAt", targetDepth)) {
                     context.nextToken();
                     lensReview.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -91,6 +95,17 @@ public class LensReviewJsonUnmarshaller implements Unmarshaller<LensReview, Json
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
                     lensReview.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Profiles", targetDepth)) {
+                    context.nextToken();
+                    lensReview.setProfiles(new ListUnmarshaller<WorkloadProfile>(WorkloadProfileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PrioritizedRiskCounts", targetDepth)) {
+                    context.nextToken();
+                    lensReview.setPrioritizedRiskCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

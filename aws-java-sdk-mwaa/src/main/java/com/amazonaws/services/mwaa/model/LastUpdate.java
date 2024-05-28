@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The status of the last update on the environment.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
      * The day and time of the last update on the environment.
      * </p>
      */
@@ -47,12 +53,65 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String source;
+
     /**
      * <p>
      * The status of the last update on the environment.
      * </p>
+     * 
+     * @param status
+     *        The status of the last update on the environment.
+     * @see UpdateStatus
      */
-    private String status;
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the last update on the environment.
+     * </p>
+     * 
+     * @return The status of the last update on the environment.
+     * @see UpdateStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the last update on the environment.
+     * </p>
+     * 
+     * @param status
+     *        The status of the last update on the environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UpdateStatus
+     */
+
+    public LastUpdate withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the last update on the environment.
+     * </p>
+     * 
+     * @param status
+     *        The status of the last update on the environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UpdateStatus
+     */
+
+    public LastUpdate withStatus(UpdateStatus status) {
+        this.status = status.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -181,65 +240,6 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The status of the last update on the environment.
-     * </p>
-     * 
-     * @param status
-     *        The status of the last update on the environment.
-     * @see UpdateStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status of the last update on the environment.
-     * </p>
-     * 
-     * @return The status of the last update on the environment.
-     * @see UpdateStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status of the last update on the environment.
-     * </p>
-     * 
-     * @param status
-     *        The status of the last update on the environment.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see UpdateStatus
-     */
-
-    public LastUpdate withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of the last update on the environment.
-     * </p>
-     * 
-     * @param status
-     *        The status of the last update on the environment.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see UpdateStatus
-     */
-
-    public LastUpdate withStatus(UpdateStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,14 +251,14 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getError() != null)
             sb.append("Error: ").append(getError()).append(",");
         if (getSource() != null)
-            sb.append("Source: ").append(getSource()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Source: ").append(getSource());
         sb.append("}");
         return sb.toString();
     }
@@ -273,6 +273,10 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof LastUpdate == false)
             return false;
         LastUpdate other = (LastUpdate) obj;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -285,10 +289,6 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
         return true;
     }
 
@@ -297,10 +297,10 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -1,0 +1,349 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ssoadmin.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * Filters response results.
+     * </p>
+     */
+    private ListApplicationsFilter filter;
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center application under which the operation will run. For more information about
+     * ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     * Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     */
+    private String instanceArn;
+    /**
+     * <p>
+     * Specifies the total number of results that you want included in each response. If additional items exist beyond
+     * the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include
+     * the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the
+     * next set of results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
+     * </p>
+     */
+    private String nextToken;
+
+    /**
+     * <p>
+     * Filters response results.
+     * </p>
+     * 
+     * @param filter
+     *        Filters response results.
+     */
+
+    public void setFilter(ListApplicationsFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * Filters response results.
+     * </p>
+     * 
+     * @return Filters response results.
+     */
+
+    public ListApplicationsFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * Filters response results.
+     * </p>
+     * 
+     * @param filter
+     *        Filters response results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withFilter(ListApplicationsFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center application under which the operation will run. For more information about
+     * ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     * Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center application under which the operation will run. For more information
+     *        about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     *        Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     */
+
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center application under which the operation will run. For more information about
+     * ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     * Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @return The ARN of the IAM Identity Center application under which the operation will run. For more information
+     *         about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     *         and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     */
+
+    public String getInstanceArn() {
+        return this.instanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center application under which the operation will run. For more information about
+     * ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     * Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center application under which the operation will run. For more information
+     *        about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
+     *        Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the total number of results that you want included in each response. If additional items exist beyond
+     * the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include
+     * the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the
+     * next set of results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
+     * </p>
+     * 
+     * @param maxResults
+     *        Specifies the total number of results that you want included in each response. If additional items exist
+     *        beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not
+     *        null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the
+     *        operation to get the next set of results. Note that the service might return fewer results than the
+     *        maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *        operation to ensure that you receive all of the results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * Specifies the total number of results that you want included in each response. If additional items exist beyond
+     * the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include
+     * the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the
+     * next set of results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
+     * </p>
+     * 
+     * @return Specifies the total number of results that you want included in each response. If additional items exist
+     *         beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not
+     *         null). Include the specified value as the <code>NextToken</code> request parameter in the next call to
+     *         the operation to get the next set of results. Note that the service might return fewer results than the
+     *         maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *         operation to ensure that you receive all of the results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * Specifies the total number of results that you want included in each response. If additional items exist beyond
+     * the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include
+     * the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the
+     * next set of results. Note that the service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
+     * of the results.
+     * </p>
+     * 
+     * @param maxResults
+     *        Specifies the total number of results that you want included in each response. If additional items exist
+     *        beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not
+     *        null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the
+     *        operation to get the next set of results. Note that the service might return fewer results than the
+     *        maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *        operation to ensure that you receive all of the results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
+     * </p>
+     * 
+     * @return Specifies that you want to receive the next page of results. Valid only if you received a
+     *         <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *         available. Set this parameter to the value provided by the previous call's <code>NextToken</code>
+     *         response to request the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code>
+     * response in the previous request. If you did, it indicates that more output is available. Set this parameter to
+     * the value provided by the previous call's <code>NextToken</code> response to request the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        Specifies that you want to receive the next page of results. Valid only if you received a
+     *        <code>NextToken</code> response in the previous request. If you did, it indicates that more output is
+     *        available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response
+     *        to request the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListApplicationsRequest == false)
+            return false;
+        ListApplicationsRequest other = (ListApplicationsRequest) obj;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
+            return false;
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListApplicationsRequest clone() {
+        return (ListApplicationsRequest) super.clone();
+    }
+
+}

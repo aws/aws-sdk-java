@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,12 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Boolean outboundCallsEnabled;
+    /**
+     * <p>
+     * This URL allows contact center users to access the Amazon Connect admin website.
+     * </p>
+     */
+    private String instanceAccessUrl;
 
     /**
      * <p>
@@ -506,6 +512,46 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * This URL allows contact center users to access the Amazon Connect admin website.
+     * </p>
+     * 
+     * @param instanceAccessUrl
+     *        This URL allows contact center users to access the Amazon Connect admin website.
+     */
+
+    public void setInstanceAccessUrl(String instanceAccessUrl) {
+        this.instanceAccessUrl = instanceAccessUrl;
+    }
+
+    /**
+     * <p>
+     * This URL allows contact center users to access the Amazon Connect admin website.
+     * </p>
+     * 
+     * @return This URL allows contact center users to access the Amazon Connect admin website.
+     */
+
+    public String getInstanceAccessUrl() {
+        return this.instanceAccessUrl;
+    }
+
+    /**
+     * <p>
+     * This URL allows contact center users to access the Amazon Connect admin website.
+     * </p>
+     * 
+     * @param instanceAccessUrl
+     *        This URL allows contact center users to access the Amazon Connect admin website.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSummary withInstanceAccessUrl(String instanceAccessUrl) {
+        setInstanceAccessUrl(instanceAccessUrl);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -534,7 +580,9 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
         if (getInboundCallsEnabled() != null)
             sb.append("InboundCallsEnabled: ").append(getInboundCallsEnabled()).append(",");
         if (getOutboundCallsEnabled() != null)
-            sb.append("OutboundCallsEnabled: ").append(getOutboundCallsEnabled());
+            sb.append("OutboundCallsEnabled: ").append(getOutboundCallsEnabled()).append(",");
+        if (getInstanceAccessUrl() != null)
+            sb.append("InstanceAccessUrl: ").append(getInstanceAccessUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -585,6 +633,10 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getOutboundCallsEnabled() != null && other.getOutboundCallsEnabled().equals(this.getOutboundCallsEnabled()) == false)
             return false;
+        if (other.getInstanceAccessUrl() == null ^ this.getInstanceAccessUrl() == null)
+            return false;
+        if (other.getInstanceAccessUrl() != null && other.getInstanceAccessUrl().equals(this.getInstanceAccessUrl()) == false)
+            return false;
         return true;
     }
 
@@ -602,6 +654,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getInstanceStatus() == null) ? 0 : getInstanceStatus().hashCode());
         hashCode = prime * hashCode + ((getInboundCallsEnabled() == null) ? 0 : getInboundCallsEnabled().hashCode());
         hashCode = prime * hashCode + ((getOutboundCallsEnabled() == null) ? 0 : getOutboundCallsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getInstanceAccessUrl() == null) ? 0 : getInstanceAccessUrl().hashCode());
         return hashCode;
     }
 

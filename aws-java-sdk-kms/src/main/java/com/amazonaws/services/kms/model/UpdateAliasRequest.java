@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
      * name.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      */
     private String aliasName;
     /**
@@ -43,8 +49,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
-     * must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the
-     * same key usage.
+     * must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they
+     * must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or key ARN of the KMS key.
@@ -79,11 +85,21 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
      * name.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * 
      * @param aliasName
      *        Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed
      *        by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to
-     *        change the alias name.
+     *        change the alias name.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
      */
 
     public void setAliasName(String aliasName) {
@@ -96,10 +112,20 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
      * name.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * 
      * @return Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code>
      *         followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use
-     *         <code>UpdateAlias</code> to change the alias name.
+     *         <code>UpdateAlias</code> to change the alias name.</p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
      */
 
     public String getAliasName() {
@@ -112,11 +138,21 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias
      * name.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * 
      * @param aliasName
      *        Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed
      *        by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to
-     *        change the alias name.
+     *        change the alias name.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,8 +171,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
-     * must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the
-     * same key usage.
+     * must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they
+     * must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or key ARN of the KMS key.
@@ -171,8 +207,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Services managed key</a>.</p>
      *        <p>
      *        The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target
-     *        KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they
-     *        must have the same key usage.
+     *        KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both
+     *        HMAC) and they must have the same key usage.
      *        </p>
      *        <p>
      *        Specify the key ID or key ARN of the KMS key.
@@ -213,8 +249,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
-     * must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the
-     * same key usage.
+     * must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they
+     * must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or key ARN of the KMS key.
@@ -248,8 +284,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         Services managed key</a>.</p>
      *         <p>
      *         The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target
-     *         KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they
-     *         must have the same key usage.
+     *         KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both
+     *         HMAC) and they must have the same key usage.
      *         </p>
      *         <p>
      *         Specify the key ID or key ARN of the KMS key.
@@ -290,8 +326,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
-     * must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the
-     * same key usage.
+     * must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they
+     * must have the same key usage.
      * </p>
      * <p>
      * Specify the key ID or key ARN of the KMS key.
@@ -326,8 +362,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Services managed key</a>.</p>
      *        <p>
      *        The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target
-     *        KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they
-     *        must have the same key usage.
+     *        KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both
+     *        HMAC) and they must have the same key usage.
      *        </p>
      *        <p>
      *        Specify the key ID or key ARN of the KMS key.

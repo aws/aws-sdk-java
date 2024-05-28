@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,29 @@ public class InstanceMetadataJsonUnmarshaller implements Unmarshaller<InstanceMe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("InstanceArn", targetDepth)) {
+                if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    instanceMetadata.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    instanceMetadata.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IdentityStoreId", targetDepth)) {
                     context.nextToken();
                     instanceMetadata.setIdentityStoreId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InstanceArn", targetDepth)) {
+                    context.nextToken();
+                    instanceMetadata.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    instanceMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OwnerAccountId", targetDepth)) {
+                    context.nextToken();
+                    instanceMetadata.setOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    instanceMetadata.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

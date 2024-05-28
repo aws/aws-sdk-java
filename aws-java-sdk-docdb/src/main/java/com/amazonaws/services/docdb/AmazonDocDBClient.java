@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.docdb.waiters.AmazonDocDBWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.docdb.model.*;
+
 import com.amazonaws.services.docdb.model.transform.*;
 
 /**
@@ -52,7 +53,9 @@ import com.amazonaws.services.docdb.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * Amazon DocumentDB API documentation
+ * Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon DocumentDB makes it easy to set up,
+ * operate, and scale MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you can run the same
+ * application code and use the same drivers and tools that you use with MongoDB.
  * </p>
  */
 @ThreadSafe
@@ -3972,6 +3975,70 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Switches over the specified secondary Amazon DocumentDB cluster to be the new primary Amazon DocumentDB cluster
+     * in the global database cluster.
+     * </p>
+     * 
+     * @param switchoverGlobalClusterRequest
+     * @return Result of the SwitchoverGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @throws InvalidDBClusterStateException
+     *         The cluster isn't in a valid state.
+     * @sample AmazonDocDB.SwitchoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/SwitchoverGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GlobalCluster switchoverGlobalCluster(SwitchoverGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeSwitchoverGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeSwitchoverGlobalCluster(SwitchoverGlobalClusterRequest switchoverGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(switchoverGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SwitchoverGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SwitchoverGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(switchoverGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SwitchoverGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

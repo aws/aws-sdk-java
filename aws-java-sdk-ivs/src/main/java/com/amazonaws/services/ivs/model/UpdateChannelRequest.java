@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,9 +39,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean authorized;
     /**
      * <p>
+     * Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     * </p>
+     */
+    private Boolean insecureIngest;
+    /**
+     * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
-     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers.
      * </p>
      */
     private String latencyMode;
@@ -53,34 +58,34 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
-     * empty string indicates that recording is enabled
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * If this is set to an empty string, playback restriction policy is disabled.
+     * </p>
+     */
+    private String playbackRestrictionPolicyArn;
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     */
+    private String preset;
+    /**
+     * <p>
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set
+     * to an empty string, recording is disabled.
      * </p>
      */
     private String recordingConfigurationArn;
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String type;
 
@@ -178,15 +183,65 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param insecureIngest
+     *        Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     */
+
+    public void setInsecureIngest(Boolean insecureIngest) {
+        this.insecureIngest = insecureIngest;
+    }
+
+    /**
+     * <p>
+     * Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     */
+
+    public Boolean getInsecureIngest() {
+        return this.insecureIngest;
+    }
+
+    /**
+     * <p>
+     * Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param insecureIngest
+     *        Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withInsecureIngest(Boolean insecureIngest) {
+        setInsecureIngest(insecureIngest);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the channel allows insecure RTMP and SRT ingest. Default: <code>false</code>.
+     */
+
+    public Boolean isInsecureIngest() {
+        return this.insecureIngest;
+    }
+
+    /**
+     * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
-     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers.
      * </p>
      * 
      * @param latencyMode
      *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *        <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
-     *        <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     *        <code>LOW</code> for near-real-time interaction with viewers.
      * @see ChannelLatencyMode
      */
 
@@ -197,13 +252,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
-     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers.
      * </p>
      * 
      * @return Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *         <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
-     *         <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     *         <code>LOW</code> for near-real-time interaction with viewers.
      * @see ChannelLatencyMode
      */
 
@@ -214,14 +267,12 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
-     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers.
      * </p>
      * 
      * @param latencyMode
      *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *        <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
-     *        <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     *        <code>LOW</code> for near-real-time interaction with viewers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -234,14 +285,12 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
-     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     * <code>LOW</code> for near-real-time interaction with viewers.
      * </p>
      * 
      * @param latencyMode
      *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
-     *        <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
-     *        <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
+     *        <code>LOW</code> for near-real-time interaction with viewers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -293,13 +342,142 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
-     * empty string indicates that recording is enabled
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * If this is set to an empty string, playback restriction policy is disabled.
+     * </p>
+     * 
+     * @param playbackRestrictionPolicyArn
+     *        Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback
+     *        restriction. If this is set to an empty string, playback restriction policy is disabled.
+     */
+
+    public void setPlaybackRestrictionPolicyArn(String playbackRestrictionPolicyArn) {
+        this.playbackRestrictionPolicyArn = playbackRestrictionPolicyArn;
+    }
+
+    /**
+     * <p>
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * If this is set to an empty string, playback restriction policy is disabled.
+     * </p>
+     * 
+     * @return Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback
+     *         restriction. If this is set to an empty string, playback restriction policy is disabled.
+     */
+
+    public String getPlaybackRestrictionPolicyArn() {
+        return this.playbackRestrictionPolicyArn;
+    }
+
+    /**
+     * <p>
+     * Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction.
+     * If this is set to an empty string, playback restriction policy is disabled.
+     * </p>
+     * 
+     * @param playbackRestrictionPolicyArn
+     *        Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback
+     *        restriction. If this is set to an empty string, playback restriction policy is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withPlaybackRestrictionPolicyArn(String playbackRestrictionPolicyArn) {
+        setPlaybackRestrictionPolicyArn(playbackRestrictionPolicyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @param preset
+     *        Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *        <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *        <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *        <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @see TranscodePreset
+     */
+
+    public void setPreset(String preset) {
+        this.preset = preset;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @return Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *         <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *         <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *         <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @see TranscodePreset
+     */
+
+    public String getPreset() {
+        return this.preset;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @param preset
+     *        Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *        <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *        <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *        <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TranscodePreset
+     */
+
+    public UpdateChannelRequest withPreset(String preset) {
+        setPreset(preset);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     * <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     * <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>),
+     * <code>preset</code> is the empty string (<code>""</code>).
+     * </p>
+     * 
+     * @param preset
+     *        Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and
+     *        <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is
+     *        <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and
+     *        <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TranscodePreset
+     */
+
+    public UpdateChannelRequest withPreset(TranscodePreset preset) {
+        this.preset = preset.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set
+     * to an empty string, recording is disabled.
      * </p>
      * 
      * @param recordingConfigurationArn
-     *        Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than
-     *        an empty string indicates that recording is enabled
+     *        Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this
+     *        is set to an empty string, recording is disabled.
      */
 
     public void setRecordingConfigurationArn(String recordingConfigurationArn) {
@@ -308,12 +486,12 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
-     * empty string indicates that recording is enabled
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set
+     * to an empty string, recording is disabled.
      * </p>
      * 
-     * @return Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than
-     *         an empty string indicates that recording is enabled
+     * @return Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this
+     *         is set to an empty string, recording is disabled.
      */
 
     public String getRecordingConfigurationArn() {
@@ -322,13 +500,13 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
-     * empty string indicates that recording is enabled
+     * Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set
+     * to an empty string, recording is disabled.
      * </p>
      * 
      * @param recordingConfigurationArn
-     *        Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than
-     *        an empty string indicates that recording is enabled
+     *        Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this
+     *        is set to an empty string, recording is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,48 +517,17 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *        resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *        automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *        allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *        bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *        is passed through. This is the default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *        video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up
-     *        to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *        </p>
-     *        </li>
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>
+     *        . For details, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.
      * @see ChannelType
      */
 
@@ -390,47 +537,17 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *         resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *         automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *         allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *         bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *         is passed through. This is the default.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *         video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be
-     *         up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *         </p>
-     *         </li>
+     * @return Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     *         resolution or bitrate, the stream probably will disconnect immediately.</i> Default:
+     *         <code>STANDARD</code>. For details, see <a
+     *         href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     *         Types</a>.
      * @see ChannelType
      */
 
@@ -440,48 +557,17 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *        resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *        automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *        allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *        bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *        is passed through. This is the default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *        video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up
-     *        to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *        </p>
-     *        </li>
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>
+     *        . For details, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -493,48 +579,17 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     * resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For
+     * details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
+     * Types</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     * automatically give viewers the best experience for their devices and network conditions. Transcoding allows
-     * higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to
-     * 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is
-     * the default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     * video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5
-     * Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *        resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to
-     *        automatically give viewers the best experience for their devices and network conditions. Transcoding
-     *        allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and
-     *        bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio
-     *        is passed through. This is the default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s
-     *        video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up
-     *        to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.
-     *        </p>
-     *        </li>
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input
+     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>
+     *        . For details, see <a
+     *        href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -560,10 +615,16 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Arn: ").append(getArn()).append(",");
         if (getAuthorized() != null)
             sb.append("Authorized: ").append(getAuthorized()).append(",");
+        if (getInsecureIngest() != null)
+            sb.append("InsecureIngest: ").append(getInsecureIngest()).append(",");
         if (getLatencyMode() != null)
             sb.append("LatencyMode: ").append(getLatencyMode()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPlaybackRestrictionPolicyArn() != null)
+            sb.append("PlaybackRestrictionPolicyArn: ").append(getPlaybackRestrictionPolicyArn()).append(",");
+        if (getPreset() != null)
+            sb.append("Preset: ").append(getPreset()).append(",");
         if (getRecordingConfigurationArn() != null)
             sb.append("RecordingConfigurationArn: ").append(getRecordingConfigurationArn()).append(",");
         if (getType() != null)
@@ -590,6 +651,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAuthorized() != null && other.getAuthorized().equals(this.getAuthorized()) == false)
             return false;
+        if (other.getInsecureIngest() == null ^ this.getInsecureIngest() == null)
+            return false;
+        if (other.getInsecureIngest() != null && other.getInsecureIngest().equals(this.getInsecureIngest()) == false)
+            return false;
         if (other.getLatencyMode() == null ^ this.getLatencyMode() == null)
             return false;
         if (other.getLatencyMode() != null && other.getLatencyMode().equals(this.getLatencyMode()) == false)
@@ -597,6 +662,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getPlaybackRestrictionPolicyArn() == null ^ this.getPlaybackRestrictionPolicyArn() == null)
+            return false;
+        if (other.getPlaybackRestrictionPolicyArn() != null && other.getPlaybackRestrictionPolicyArn().equals(this.getPlaybackRestrictionPolicyArn()) == false)
+            return false;
+        if (other.getPreset() == null ^ this.getPreset() == null)
+            return false;
+        if (other.getPreset() != null && other.getPreset().equals(this.getPreset()) == false)
             return false;
         if (other.getRecordingConfigurationArn() == null ^ this.getRecordingConfigurationArn() == null)
             return false;
@@ -616,8 +689,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAuthorized() == null) ? 0 : getAuthorized().hashCode());
+        hashCode = prime * hashCode + ((getInsecureIngest() == null) ? 0 : getInsecureIngest().hashCode());
         hashCode = prime * hashCode + ((getLatencyMode() == null) ? 0 : getLatencyMode().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPlaybackRestrictionPolicyArn() == null) ? 0 : getPlaybackRestrictionPolicyArn().hashCode());
+        hashCode = prime * hashCode + ((getPreset() == null) ? 0 : getPreset().hashCode());
         hashCode = prime * hashCode + ((getRecordingConfigurationArn() == null) ? 0 : getRecordingConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

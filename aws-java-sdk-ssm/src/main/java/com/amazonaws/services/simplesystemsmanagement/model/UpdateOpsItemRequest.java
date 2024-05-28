@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      */
     private String description;
@@ -59,8 +58,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
@@ -95,7 +94,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
@@ -151,16 +150,20 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Date plannedEndTime;
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     */
+    private String opsItemArn;
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      * 
      * @param description
-     *        Update the information about the OpsItem. Provide enough information so that users reading this OpsItem
-     *        for the first time understand the issue.
+     *        User-defined text that contains information about the OpsItem, in Markdown format.
      */
 
     public void setDescription(String description) {
@@ -169,12 +172,10 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      * 
-     * @return Update the information about the OpsItem. Provide enough information so that users reading this OpsItem
-     *         for the first time understand the issue.
+     * @return User-defined text that contains information about the OpsItem, in Markdown format.
      */
 
     public String getDescription() {
@@ -183,13 +184,11 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      * 
      * @param description
-     *        Update the information about the OpsItem. Provide enough information so that users reading this OpsItem
-     *        for the first time understand the issue.
+     *        User-defined text that contains information about the OpsItem, in Markdown format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,8 +224,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -255,7 +254,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *         OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *         >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -290,8 +289,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -321,7 +320,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -356,8 +355,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -387,7 +386,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -708,14 +707,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
@@ -728,13 +727,13 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      *         >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
@@ -747,14 +746,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
@@ -769,14 +768,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      * >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
      *        >Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
@@ -1129,6 +1128,46 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public void setOpsItemArn(String opsItemArn) {
+        this.opsItemArn = opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @return The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public String getOpsItemArn() {
+        return this.opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withOpsItemArn(String opsItemArn) {
+        setOpsItemArn(opsItemArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1169,7 +1208,9 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPlannedStartTime() != null)
             sb.append("PlannedStartTime: ").append(getPlannedStartTime()).append(",");
         if (getPlannedEndTime() != null)
-            sb.append("PlannedEndTime: ").append(getPlannedEndTime());
+            sb.append("PlannedEndTime: ").append(getPlannedEndTime()).append(",");
+        if (getOpsItemArn() != null)
+            sb.append("OpsItemArn: ").append(getOpsItemArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1244,6 +1285,10 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPlannedEndTime() != null && other.getPlannedEndTime().equals(this.getPlannedEndTime()) == false)
             return false;
+        if (other.getOpsItemArn() == null ^ this.getOpsItemArn() == null)
+            return false;
+        if (other.getOpsItemArn() != null && other.getOpsItemArn().equals(this.getOpsItemArn()) == false)
+            return false;
         return true;
     }
 
@@ -1267,6 +1312,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getActualEndTime() == null) ? 0 : getActualEndTime().hashCode());
         hashCode = prime * hashCode + ((getPlannedStartTime() == null) ? 0 : getPlannedStartTime().hashCode());
         hashCode = prime * hashCode + ((getPlannedEndTime() == null) ? 0 : getPlannedEndTime().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemArn() == null) ? 0 : getOpsItemArn().hashCode());
         return hashCode;
     }
 

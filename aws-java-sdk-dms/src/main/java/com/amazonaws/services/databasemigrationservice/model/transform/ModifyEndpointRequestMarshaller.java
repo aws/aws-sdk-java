@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,8 @@ public class ModifyEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExactSettings").build();
     private static final MarshallingInfo<StructuredPojo> GCPMYSQLSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GcpMySQLSettings").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESTREAMSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestreamSettings").build();
 
     private static final ModifyEndpointRequestMarshaller instance = new ModifyEndpointRequestMarshaller();
 
@@ -143,6 +145,7 @@ public class ModifyEndpointRequestMarshaller {
             protocolMarshaller.marshall(modifyEndpointRequest.getRedisSettings(), REDISSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getExactSettings(), EXACTSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getGcpMySQLSettings(), GCPMYSQLSETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getTimestreamSettings(), TIMESTREAMSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

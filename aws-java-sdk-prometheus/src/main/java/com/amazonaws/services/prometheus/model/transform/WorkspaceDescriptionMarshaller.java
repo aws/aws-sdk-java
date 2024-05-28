@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class WorkspaceDescriptionMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyArn").build();
     private static final MarshallingInfo<String> PROMETHEUSENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prometheusEndpoint").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -63,6 +65,7 @@ public class WorkspaceDescriptionMarshaller {
             protocolMarshaller.marshall(workspaceDescription.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getKmsKeyArn(), KMSKEYARN_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getPrometheusEndpoint(), PROMETHEUSENDPOINT_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getTags(), TAGS_BINDING);

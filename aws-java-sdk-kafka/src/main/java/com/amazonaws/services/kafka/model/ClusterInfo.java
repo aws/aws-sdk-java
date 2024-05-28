@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -139,6 +139,12 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String storageMode;
+    /**
+     * <p>
+     * Determines if there is an action required from the customer.
+     * </p>
+     */
+    private String customerActionStatus;
 
     /**
      * <p>
@@ -1098,6 +1104,73 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Determines if there is an action required from the customer.
+     * </p>
+     * 
+     * @param customerActionStatus
+     *        <p>
+     *        Determines if there is an action required from the customer.
+     *        </p>
+     * @see CustomerActionStatus
+     */
+
+    public void setCustomerActionStatus(String customerActionStatus) {
+        this.customerActionStatus = customerActionStatus;
+    }
+
+    /**
+     * <p>
+     * Determines if there is an action required from the customer.
+     * </p>
+     * 
+     * @return <p>
+     *         Determines if there is an action required from the customer.
+     *         </p>
+     * @see CustomerActionStatus
+     */
+
+    public String getCustomerActionStatus() {
+        return this.customerActionStatus;
+    }
+
+    /**
+     * <p>
+     * Determines if there is an action required from the customer.
+     * </p>
+     * 
+     * @param customerActionStatus
+     *        <p>
+     *        Determines if there is an action required from the customer.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomerActionStatus
+     */
+
+    public ClusterInfo withCustomerActionStatus(String customerActionStatus) {
+        setCustomerActionStatus(customerActionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines if there is an action required from the customer.
+     * </p>
+     * 
+     * @param customerActionStatus
+     *        <p>
+     *        Determines if there is an action required from the customer.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomerActionStatus
+     */
+
+    public ClusterInfo withCustomerActionStatus(CustomerActionStatus customerActionStatus) {
+        this.customerActionStatus = customerActionStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1146,7 +1219,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         if (getZookeeperConnectStringTls() != null)
             sb.append("ZookeeperConnectStringTls: ").append(getZookeeperConnectStringTls()).append(",");
         if (getStorageMode() != null)
-            sb.append("StorageMode: ").append(getStorageMode());
+            sb.append("StorageMode: ").append(getStorageMode()).append(",");
+        if (getCustomerActionStatus() != null)
+            sb.append("CustomerActionStatus: ").append(getCustomerActionStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1237,6 +1312,10 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStorageMode() != null && other.getStorageMode().equals(this.getStorageMode()) == false)
             return false;
+        if (other.getCustomerActionStatus() == null ^ this.getCustomerActionStatus() == null)
+            return false;
+        if (other.getCustomerActionStatus() != null && other.getCustomerActionStatus().equals(this.getCustomerActionStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1264,6 +1343,7 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getZookeeperConnectString() == null) ? 0 : getZookeeperConnectString().hashCode());
         hashCode = prime * hashCode + ((getZookeeperConnectStringTls() == null) ? 0 : getZookeeperConnectStringTls().hashCode());
         hashCode = prime * hashCode + ((getStorageMode() == null) ? 0 : getStorageMode().hashCode());
+        hashCode = prime * hashCode + ((getCustomerActionStatus() == null) ? 0 : getCustomerActionStatus().hashCode());
         return hashCode;
     }
 

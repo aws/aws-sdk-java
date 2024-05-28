@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CreateTrustAnchorRequestMarshaller {
             .marshallLocationName("enabled").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<List> NOTIFICATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notificationSettings").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class CreateTrustAnchorRequestMarshaller {
         try {
             protocolMarshaller.marshall(createTrustAnchorRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(createTrustAnchorRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createTrustAnchorRequest.getNotificationSettings(), NOTIFICATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(createTrustAnchorRequest.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(createTrustAnchorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

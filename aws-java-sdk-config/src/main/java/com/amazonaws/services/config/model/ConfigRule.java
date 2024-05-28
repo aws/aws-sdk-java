@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,22 +21,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Config rules evaluate the configuration settings of your Amazon Web Services resources. A rule can run when Config
  * detects a configuration change to an Amazon Web Services resource or at a periodic frequency that you choose (for
- * example, every 24 hours). There are two types of rules: Config Managed Rules and Config Custom Rules. Managed rules
- * are predefined, customizable rules created by Config. For a list of managed rules, see <a
+ * example, every 24 hours). There are two types of rules: <i>Config Managed Rules</i> and <i>Config Custom Rules</i>.
+ * </p>
+ * <p>
+ * Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see <a
  * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config
  * Managed Rules</a>.
  * </p>
  * <p>
- * Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a
- * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a policy-as-code
- * language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda uses custom code
- * that you upload to evaluate a custom rule. It is invoked by events that are published to it by an event source, which
- * Config invokes when the custom rule is initiated.
+ * Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules: with
+ * Lambda functions (<a href=
+ * "https://docs.aws.amazon.com/config/latest/developerguide/gettingstarted-concepts.html#gettingstarted-concepts-function"
+ * > Lambda Developer Guide</a>) and with Guard (<a
+ * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>), a policy-as-code
+ * language. Config custom rules created with Lambda are called <i>Config Custom Lambda Rules</i> and Config custom
+ * rules created with Guard are called <i>Config Custom Policy Rules</i>.
  * </p>
  * <p>
  * For more information about developing and using Config rules, see <a
- * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services
- * resource Configurations with Config</a> in the <i>Config Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Resource with Config
+ * Rules</a> in the <i>Config Developer Guide</i>.
  * </p>
  * <note>
  * <p>
@@ -162,6 +166,13 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String createdBy;
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration> evaluationModes;
 
     /**
      * <p>
@@ -1046,6 +1057,87 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * 
+     * @return The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *         value is Detective evaluation mode only.
+     */
+
+    public java.util.List<EvaluationModeConfiguration> getEvaluationModes() {
+        if (evaluationModes == null) {
+            evaluationModes = new com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration>();
+        }
+        return evaluationModes;
+    }
+
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * 
+     * @param evaluationModes
+     *        The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *        value is Detective evaluation mode only.
+     */
+
+    public void setEvaluationModes(java.util.Collection<EvaluationModeConfiguration> evaluationModes) {
+        if (evaluationModes == null) {
+            this.evaluationModes = null;
+            return;
+        }
+
+        this.evaluationModes = new com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration>(evaluationModes);
+    }
+
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvaluationModes(java.util.Collection)} or {@link #withEvaluationModes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param evaluationModes
+     *        The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *        value is Detective evaluation mode only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigRule withEvaluationModes(EvaluationModeConfiguration... evaluationModes) {
+        if (this.evaluationModes == null) {
+            setEvaluationModes(new com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration>(evaluationModes.length));
+        }
+        for (EvaluationModeConfiguration ele : evaluationModes) {
+            this.evaluationModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * 
+     * @param evaluationModes
+     *        The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *        value is Detective evaluation mode only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigRule withEvaluationModes(java.util.Collection<EvaluationModeConfiguration> evaluationModes) {
+        setEvaluationModes(evaluationModes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1076,7 +1168,9 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
         if (getConfigRuleState() != null)
             sb.append("ConfigRuleState: ").append(getConfigRuleState()).append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy());
+            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+        if (getEvaluationModes() != null)
+            sb.append("EvaluationModes: ").append(getEvaluationModes());
         sb.append("}");
         return sb.toString();
     }
@@ -1131,6 +1225,10 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
             return false;
+        if (other.getEvaluationModes() == null ^ this.getEvaluationModes() == null)
+            return false;
+        if (other.getEvaluationModes() != null && other.getEvaluationModes().equals(this.getEvaluationModes()) == false)
+            return false;
         return true;
     }
 
@@ -1149,6 +1247,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaximumExecutionFrequency() == null) ? 0 : getMaximumExecutionFrequency().hashCode());
         hashCode = prime * hashCode + ((getConfigRuleState() == null) ? 0 : getConfigRuleState().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationModes() == null) ? 0 : getEvaluationModes().hashCode());
         return hashCode;
     }
 

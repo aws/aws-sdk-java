@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class ActionExecutionDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> UPDATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("updatedBy").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<StructuredPojo> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class ActionExecutionDetailMarshaller {
             protocolMarshaller.marshall(actionExecutionDetail.getActionName(), ACTIONNAME_BINDING);
             protocolMarshaller.marshall(actionExecutionDetail.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(actionExecutionDetail.getLastUpdateTime(), LASTUPDATETIME_BINDING);
+            protocolMarshaller.marshall(actionExecutionDetail.getUpdatedBy(), UPDATEDBY_BINDING);
             protocolMarshaller.marshall(actionExecutionDetail.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(actionExecutionDetail.getInput(), INPUT_BINDING);
             protocolMarshaller.marshall(actionExecutionDetail.getOutput(), OUTPUT_BINDING);

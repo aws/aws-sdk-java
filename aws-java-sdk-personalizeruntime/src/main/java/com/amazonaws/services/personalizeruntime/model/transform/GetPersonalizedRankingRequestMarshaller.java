@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class GetPersonalizedRankingRequestMarshaller {
             .marshallLocationName("filterArn").build();
     private static final MarshallingInfo<Map> FILTERVALUES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filterValues").build();
+    private static final MarshallingInfo<Map> METADATACOLUMNS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("metadataColumns").build();
 
     private static final GetPersonalizedRankingRequestMarshaller instance = new GetPersonalizedRankingRequestMarshaller();
 
@@ -64,6 +66,7 @@ public class GetPersonalizedRankingRequestMarshaller {
             protocolMarshaller.marshall(getPersonalizedRankingRequest.getContext(), CONTEXT_BINDING);
             protocolMarshaller.marshall(getPersonalizedRankingRequest.getFilterArn(), FILTERARN_BINDING);
             protocolMarshaller.marshall(getPersonalizedRankingRequest.getFilterValues(), FILTERVALUES_BINDING);
+            protocolMarshaller.marshall(getPersonalizedRankingRequest.getMetadataColumns(), METADATACOLUMNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,15 +19,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use this structure to define one extended metric that RUM will send to CloudWatch or CloudWatch Evidently. For more
- * information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Additional
- * metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+ * Use this structure to define one extended metric or custom metric that RUM will send to CloudWatch or CloudWatch
+ * Evidently. For more information, see <a href=
+ * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-and-extended-metrics.html">
+ * Custom metrics and extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
  * </p>
  * <p>
+ * This structure is validated differently for extended metrics and custom metrics. For extended metrics that are sent
+ * to the <code>AWS/RUM</code> namespace, the following validations apply:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The <code>Namespace</code> parameter must be omitted or set to <code>AWS/RUM</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Only certain combinations of values for <code>Name</code>, <code>ValueKey</code>, and <code>EventPattern</code> are
- * valid. In addition to what is displayed in the list below, the <code>EventPattern</code> can also include information
- * used by the <code>DimensionKeys</code> field.
+ * valid. In addition to what is displayed in the following list, the <code>EventPattern</code> can also include
+ * information used by the <code>DimensionKeys</code> field.
  * </p>
  * <ul>
  * <li>
@@ -104,6 +115,163 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.session_start_event"]}</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * If <code>Name</code> is <code>PageViewCount</code>, then <code>ValueKey</code>must be null and the
+ * <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.page_view_event"]}</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If <code>Name</code> is <code>Http4xxCount</code>, then <code>ValueKey</code>must be null and the
+ * <code>EventPattern</code> must include
+ * <code>{"event_type": ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",400,"&lt;",500]}]}}} }</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If <code>Name</code> is <code>Http5xxCount</code>, then <code>ValueKey</code>must be null and the
+ * <code>EventPattern</code> must include
+ * <code>{"event_type": ["com.amazon.rum.http_event"],"event_details":{"response":{"status":[{"numeric":["&gt;=",500,"&lt;=",599]}]}}} }</code>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
+ * <p>
+ * For custom metrics, the following validation rules apply:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The namespace can't be omitted and can't be <code>AWS/RUM</code>. You can use the <code>AWS/RUM</code> namespace only
+ * for extended metrics.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * All dimensions listed in the <code>DimensionKeys</code> field must be present in the value of
+ * <code>EventPattern</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The values that you specify for <code>ValueKey</code>, <code>EventPattern</code>, and <code>DimensionKeys</code> must
+ * be fields in RUM events, so all first-level keys in these fields must be one of the keys in the list later in this
+ * section.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If you set a value for <code>EventPattern</code>, it must be a JSON object.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For every non-empty <code>event_details</code>, there must be a non-empty <code>event_type</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If <code>EventPattern</code> contains an <code>event_details</code> field, it must also contain an
+ * <code>event_type</code>. For every built-in <code>event_type</code> that you use, you must use a value for
+ * <code>event_details</code> that corresponds to that <code>event_type</code>. For information about event details that
+ * correspond to event types, see <a href=
+ * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-datacollected.html#CloudWatch-RUM-datacollected-eventDetails"
+ * > RUM event details</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * In <code>EventPattern</code>, any JSON array must contain only one value.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Valid key values for first-level keys in the <code>ValueKey</code>, <code>EventPattern</code>, and
+ * <code>DimensionKeys</code> fields:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>account_id</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>application_Id</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>application_version</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>application_name</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>batch_id</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>event_details</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>event_id</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>event_interaction</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>event_timestamp</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>event_type</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>event_version</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>log_stream</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>metadata</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>sessionId</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>user_details</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>userId</code>
+ * </p>
+ * </li>
  * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/MetricDefinitionRequest" target="_top">AWS API
@@ -118,7 +286,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in
-     * CloudWatch. Valid values for the entries in this field are the following:
+     * CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      * </p>
      * <ul>
      * <li>
@@ -152,10 +320,10 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * For both extended metrics and custom metrics, all dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.
+     * </p>
      */
     private java.util.Map<String, String> dimensionKeys;
     /**
@@ -187,14 +355,15 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     * If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      * </p>
      */
     private String eventPattern;
     /**
      * <p>
-     * The name for the metric that is defined in this structure. Valid values are the following:
+     * The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you
+     * like. For extended metrics, valid values are the following:
      * </p>
      * <ul>
      * <li>
@@ -257,6 +426,16 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
     private String name;
     /**
      * <p>
+     * If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric
+     * namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.
+     * </p>
+     * <p>
+     * You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
      * The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.
      * </p>
      */
@@ -266,12 +445,12 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * The field within the event object that the metric value is sourced from.
      * </p>
      * <p>
-     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to
-     * count the number of events that the filter catches.
+     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want to count
+     * the number of events that the filter catches.
      * </p>
      * <p>
-     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will
-     * handle data extraction from the event.
+     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently will handle
+     * data extraction from the event.
      * </p>
      */
     private String valueKey;
@@ -282,7 +461,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in
-     * CloudWatch. Valid values for the entries in this field are the following:
+     * CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      * </p>
      * <ul>
      * <li>
@@ -316,15 +495,15 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * For both extended metrics and custom metrics, all dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.
+     * </p>
      * 
      * @return Use this field only if you are sending the metric to CloudWatch.</p>
      *         <p>
      *         This field is a map of field paths to dimension names. It defines the dimensions to associate with this
-     *         metric in CloudWatch. Valid values for the entries in this field are the following:
+     *         metric in CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -358,8 +537,9 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      *         </p>
      *         </li>
      *         </ul>
-     * 
-     * <pre><code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
+     *         <p>
+     *         For both extended metrics and custom metrics, all dimensions listed in this field must also be included
+     *         in <code>EventPattern</code>.
      */
 
     public java.util.Map<String, String> getDimensionKeys() {
@@ -372,7 +552,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in
-     * CloudWatch. Valid values for the entries in this field are the following:
+     * CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      * </p>
      * <ul>
      * <li>
@@ -406,16 +586,16 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * For both extended metrics and custom metrics, all dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.
+     * </p>
      * 
      * @param dimensionKeys
      *        Use this field only if you are sending the metric to CloudWatch.</p>
      *        <p>
      *        This field is a map of field paths to dimension names. It defines the dimensions to associate with this
-     *        metric in CloudWatch. Valid values for the entries in this field are the following:
+     *        metric in CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -449,8 +629,9 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      *        </p>
      *        </li>
      *        </ul>
-     * 
-     * <pre><code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        For both extended metrics and custom metrics, all dimensions listed in this field must also be included in
+     *        <code>EventPattern</code>.
      */
 
     public void setDimensionKeys(java.util.Map<String, String> dimensionKeys) {
@@ -463,7 +644,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in
-     * CloudWatch. Valid values for the entries in this field are the following:
+     * CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      * </p>
      * <ul>
      * <li>
@@ -497,16 +678,16 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </p>
      * </li>
      * </ul>
-     * 
-     * <pre>
-     * <code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * For both extended metrics and custom metrics, all dimensions listed in this field must also be included in
+     * <code>EventPattern</code>.
+     * </p>
      * 
      * @param dimensionKeys
      *        Use this field only if you are sending the metric to CloudWatch.</p>
      *        <p>
      *        This field is a map of field paths to dimension names. It defines the dimensions to associate with this
-     *        metric in CloudWatch. Valid values for the entries in this field are the following:
+     *        metric in CloudWatch. For extended metrics, valid values for the entries in this field are the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -540,9 +721,9 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      *        </p>
      *        </li>
      *        </ul>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt; All dimensions listed in this field must also be included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        For both extended metrics and custom metrics, all dimensions listed in this field must also be included in
+     *        <code>EventPattern</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,7 +789,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     * If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      * </p>
      * 
@@ -640,7 +821,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      *        </li>
      *        </ul>
      *        <p>
-     *        If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     *        If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      *        <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      */
 
@@ -677,7 +858,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     * If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      * </p>
      * 
@@ -709,7 +890,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      *         </li>
      *         </ul>
      *         <p>
-     *         If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     *         If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      *         <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      */
 
@@ -746,7 +927,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
-     * If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     * If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      * <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      * </p>
      * 
@@ -778,7 +959,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      *        </li>
      *        </ul>
      *        <p>
-     *        If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in
+     *        If the metrics destination is <code>CloudWatch</code> and the event also matches a value in
      *        <code>DimensionKeys</code>, then the metric is published with the specified dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -790,7 +971,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name for the metric that is defined in this structure. Valid values are the following:
+     * The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you
+     * like. For extended metrics, valid values are the following:
      * </p>
      * <ul>
      * <li>
@@ -851,7 +1033,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param name
-     *        The name for the metric that is defined in this structure. Valid values are the following:</p>
+     *        The name for the metric that is defined in this structure. For custom metrics, you can specify any name
+     *        that you like. For extended metrics, valid values are the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -916,7 +1099,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name for the metric that is defined in this structure. Valid values are the following:
+     * The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you
+     * like. For extended metrics, valid values are the following:
      * </p>
      * <ul>
      * <li>
@@ -976,7 +1160,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * 
-     * @return The name for the metric that is defined in this structure. Valid values are the following:</p>
+     * @return The name for the metric that is defined in this structure. For custom metrics, you can specify any name
+     *         that you like. For extended metrics, valid values are the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1041,7 +1226,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name for the metric that is defined in this structure. Valid values are the following:
+     * The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you
+     * like. For extended metrics, valid values are the following:
      * </p>
      * <ul>
      * <li>
@@ -1102,7 +1288,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param name
-     *        The name for the metric that is defined in this structure. Valid values are the following:</p>
+     *        The name for the metric that is defined in this structure. For custom metrics, you can specify any name
+     *        that you like. For extended metrics, valid values are the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1169,6 +1356,70 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric
+     * namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.
+     * </p>
+     * <p>
+     * You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     * </p>
+     * 
+     * @param namespace
+     *        If this structure is for a custom metric instead of an extended metrics, use this parameter to define the
+     *        metric namespace for that custom metric. Do not specify this parameter if this structure is for an
+     *        extended metric.</p>
+     *        <p>
+     *        You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric
+     * namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.
+     * </p>
+     * <p>
+     * You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     * </p>
+     * 
+     * @return If this structure is for a custom metric instead of an extended metrics, use this parameter to define the
+     *         metric namespace for that custom metric. Do not specify this parameter if this structure is for an
+     *         extended metric.</p>
+     *         <p>
+     *         You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric
+     * namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.
+     * </p>
+     * <p>
+     * You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     * </p>
+     * 
+     * @param namespace
+     *        If this structure is for a custom metric instead of an extended metrics, use this parameter to define the
+     *        metric namespace for that custom metric. Do not specify this parameter if this structure is for an
+     *        extended metric.</p>
+     *        <p>
+     *        You cannot use any string that starts with <code>AWS/</code> for your namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricDefinitionRequest withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
      * The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.
      * </p>
      * 
@@ -1215,23 +1466,23 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * The field within the event object that the metric value is sourced from.
      * </p>
      * <p>
-     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to
-     * count the number of events that the filter catches.
+     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want to count
+     * the number of events that the filter catches.
      * </p>
      * <p>
-     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will
-     * handle data extraction from the event.
+     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently will handle
+     * data extraction from the event.
      * </p>
      * 
      * @param valueKey
      *        The field within the event object that the metric value is sourced from.</p>
      *        <p>
-     *        If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just
-     *        want to count the number of events that the filter catches.
+     *        If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want
+     *        to count the number of events that the filter catches.
      *        </p>
      *        <p>
-     *        If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently
-     *        will handle data extraction from the event.
+     *        If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently will
+     *        handle data extraction from the event.
      */
 
     public void setValueKey(String valueKey) {
@@ -1243,21 +1494,21 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * The field within the event object that the metric value is sourced from.
      * </p>
      * <p>
-     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to
-     * count the number of events that the filter catches.
+     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want to count
+     * the number of events that the filter catches.
      * </p>
      * <p>
-     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will
-     * handle data extraction from the event.
+     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently will handle
+     * data extraction from the event.
      * </p>
      * 
      * @return The field within the event object that the metric value is sourced from.</p>
      *         <p>
-     *         If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just
-     *         want to count the number of events that the filter catches.
+     *         If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want
+     *         to count the number of events that the filter catches.
      *         </p>
      *         <p>
-     *         If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently
+     *         If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently
      *         will handle data extraction from the event.
      */
 
@@ -1270,23 +1521,23 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
      * The field within the event object that the metric value is sourced from.
      * </p>
      * <p>
-     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to
-     * count the number of events that the filter catches.
+     * If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want to count
+     * the number of events that the filter catches.
      * </p>
      * <p>
-     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will
-     * handle data extraction from the event.
+     * If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently will handle
+     * data extraction from the event.
      * </p>
      * 
      * @param valueKey
      *        The field within the event object that the metric value is sourced from.</p>
      *        <p>
-     *        If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just
-     *        want to count the number of events that the filter catches.
+     *        If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you want
+     *        to count the number of events that the filter catches.
      *        </p>
      *        <p>
-     *        If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently
-     *        will handle data extraction from the event.
+     *        If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw. Evidently will
+     *        handle data extraction from the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1313,6 +1564,8 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
             sb.append("EventPattern: ").append(getEventPattern()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getUnitLabel() != null)
             sb.append("UnitLabel: ").append(getUnitLabel()).append(",");
         if (getValueKey() != null)
@@ -1343,6 +1596,10 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
         if (other.getUnitLabel() == null ^ this.getUnitLabel() == null)
             return false;
         if (other.getUnitLabel() != null && other.getUnitLabel().equals(this.getUnitLabel()) == false)
@@ -1362,6 +1619,7 @@ public class MetricDefinitionRequest implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDimensionKeys() == null) ? 0 : getDimensionKeys().hashCode());
         hashCode = prime * hashCode + ((getEventPattern() == null) ? 0 : getEventPattern().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getUnitLabel() == null) ? 0 : getUnitLabel().hashCode());
         hashCode = prime * hashCode + ((getValueKey() == null) ? 0 : getValueKey().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,14 @@ public class RedshiftDataParameters implements Serializable, Cloneable, Structur
      * </p>
      */
     private Boolean withEvent;
+    /**
+     * <p>
+     * One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the
+     * order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If
+     * any SQL statement fails, then because they are run as one transaction, all work is rolled back.
+     * </p>
+     */
+    private java.util.List<String> sqls;
 
     /**
      * <p>
@@ -326,6 +334,96 @@ public class RedshiftDataParameters implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the
+     * order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If
+     * any SQL statement fails, then because they are run as one transaction, all work is rolled back.
+     * </p>
+     * 
+     * @return One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially
+     *         in the order of the array. Subsequent SQL statements don't start until the previous statement in the
+     *         array completes. If any SQL statement fails, then because they are run as one transaction, all work is
+     *         rolled back.
+     */
+
+    public java.util.List<String> getSqls() {
+        return sqls;
+    }
+
+    /**
+     * <p>
+     * One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the
+     * order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If
+     * any SQL statement fails, then because they are run as one transaction, all work is rolled back.
+     * </p>
+     * 
+     * @param sqls
+     *        One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially
+     *        in the order of the array. Subsequent SQL statements don't start until the previous statement in the array
+     *        completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled
+     *        back.
+     */
+
+    public void setSqls(java.util.Collection<String> sqls) {
+        if (sqls == null) {
+            this.sqls = null;
+            return;
+        }
+
+        this.sqls = new java.util.ArrayList<String>(sqls);
+    }
+
+    /**
+     * <p>
+     * One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the
+     * order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If
+     * any SQL statement fails, then because they are run as one transaction, all work is rolled back.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSqls(java.util.Collection)} or {@link #withSqls(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param sqls
+     *        One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially
+     *        in the order of the array. Subsequent SQL statements don't start until the previous statement in the array
+     *        completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled
+     *        back.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftDataParameters withSqls(String... sqls) {
+        if (this.sqls == null) {
+            setSqls(new java.util.ArrayList<String>(sqls.length));
+        }
+        for (String ele : sqls) {
+            this.sqls.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the
+     * order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If
+     * any SQL statement fails, then because they are run as one transaction, all work is rolled back.
+     * </p>
+     * 
+     * @param sqls
+     *        One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially
+     *        in the order of the array. Subsequent SQL statements don't start until the previous statement in the array
+     *        completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled
+     *        back.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftDataParameters withSqls(java.util.Collection<String> sqls) {
+        setSqls(sqls);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -344,11 +442,13 @@ public class RedshiftDataParameters implements Serializable, Cloneable, Structur
         if (getDbUser() != null)
             sb.append("DbUser: ").append(getDbUser()).append(",");
         if (getSql() != null)
-            sb.append("Sql: ").append(getSql()).append(",");
+            sb.append("Sql: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatementName() != null)
             sb.append("StatementName: ").append(getStatementName()).append(",");
         if (getWithEvent() != null)
-            sb.append("WithEvent: ").append(getWithEvent());
+            sb.append("WithEvent: ").append(getWithEvent()).append(",");
+        if (getSqls() != null)
+            sb.append("Sqls: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -387,6 +487,10 @@ public class RedshiftDataParameters implements Serializable, Cloneable, Structur
             return false;
         if (other.getWithEvent() != null && other.getWithEvent().equals(this.getWithEvent()) == false)
             return false;
+        if (other.getSqls() == null ^ this.getSqls() == null)
+            return false;
+        if (other.getSqls() != null && other.getSqls().equals(this.getSqls()) == false)
+            return false;
         return true;
     }
 
@@ -401,6 +505,7 @@ public class RedshiftDataParameters implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getSql() == null) ? 0 : getSql().hashCode());
         hashCode = prime * hashCode + ((getStatementName() == null) ? 0 : getStatementName().hashCode());
         hashCode = prime * hashCode + ((getWithEvent() == null) ? 0 : getWithEvent().hashCode());
+        hashCode = prime * hashCode + ((getSqls() == null) ? 0 : getSqls().hashCode());
         return hashCode;
     }
 

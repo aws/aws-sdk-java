@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -209,6 +209,32 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("Domain", StringUtils.fromString(createDBInstanceRequest.getDomain()));
         }
 
+        if (createDBInstanceRequest.getDomainFqdn() != null) {
+            request.addParameter("DomainFqdn", StringUtils.fromString(createDBInstanceRequest.getDomainFqdn()));
+        }
+
+        if (createDBInstanceRequest.getDomainOu() != null) {
+            request.addParameter("DomainOu", StringUtils.fromString(createDBInstanceRequest.getDomainOu()));
+        }
+
+        if (createDBInstanceRequest.getDomainAuthSecretArn() != null) {
+            request.addParameter("DomainAuthSecretArn", StringUtils.fromString(createDBInstanceRequest.getDomainAuthSecretArn()));
+        }
+
+        if (!createDBInstanceRequest.getDomainDnsIps().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getDomainDnsIps()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> domainDnsIpsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getDomainDnsIps();
+            int domainDnsIpsListIndex = 1;
+
+            for (String domainDnsIpsListValue : domainDnsIpsList) {
+                if (domainDnsIpsListValue != null) {
+                    request.addParameter("DomainDnsIps.member." + domainDnsIpsListIndex, StringUtils.fromString(domainDnsIpsListValue));
+                }
+                domainDnsIpsListIndex++;
+            }
+        }
+
         if (createDBInstanceRequest.getCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBInstanceRequest.getCopyTagsToSnapshot()));
         }
@@ -313,6 +339,34 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
         if (createDBInstanceRequest.getStorageThroughput() != null) {
             request.addParameter("StorageThroughput", StringUtils.fromInteger(createDBInstanceRequest.getStorageThroughput()));
+        }
+
+        if (createDBInstanceRequest.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(createDBInstanceRequest.getManageMasterUserPassword()));
+        }
+
+        if (createDBInstanceRequest.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(createDBInstanceRequest.getMasterUserSecretKmsKeyId()));
+        }
+
+        if (createDBInstanceRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(createDBInstanceRequest.getCACertificateIdentifier()));
+        }
+
+        if (createDBInstanceRequest.getDBSystemId() != null) {
+            request.addParameter("DBSystemId", StringUtils.fromString(createDBInstanceRequest.getDBSystemId()));
+        }
+
+        if (createDBInstanceRequest.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(createDBInstanceRequest.getDedicatedLogVolume()));
+        }
+
+        if (createDBInstanceRequest.getMultiTenant() != null) {
+            request.addParameter("MultiTenant", StringUtils.fromBoolean(createDBInstanceRequest.getMultiTenant()));
+        }
+
+        if (createDBInstanceRequest.getEngineLifecycleSupport() != null) {
+            request.addParameter("EngineLifecycleSupport", StringUtils.fromString(createDBInstanceRequest.getEngineLifecycleSupport()));
         }
 
         return request;

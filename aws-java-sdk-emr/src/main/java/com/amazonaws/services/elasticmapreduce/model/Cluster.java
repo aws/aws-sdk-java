@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      */
     private String name;
@@ -48,15 +48,15 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private ClusterStatus status;
     /**
      * <p>
-     * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID,
-     * IAM instance profile, and so on.
+     * Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name,
+     * subnet ID, IAM instance profile, and so on.
      * </p>
      */
     private Ec2InstanceAttributes ec2InstanceAttributes;
     /**
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -74,8 +74,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
-     * The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later,
-     * excluding EMR 6.0.0.
+     * The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later,
+     * excluding Amazon EMR 6.0.0.
      * </p>
      */
     private String logEncryptionKmsKeyId;
@@ -111,22 +111,29 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Boolean autoTerminate;
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
-     * call or user intervention, or in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by
+     * an API call or user intervention, or in the event of a cluster error.
      * </p>
      */
     private Boolean terminationProtected;
     /**
      * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     */
+    private Boolean unhealthyNodeReplacement;
+    /**
+     * <p>
      * Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the
-     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster
+     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster
      * actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that
-     * created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM
-     * permissions policies attached to other IAM principals.
+     * created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of
+     * IAM permissions policies attached to other IAM principals.
      * </p>
      * <p>
-     * The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API
-     * <a>RunJobFlow</a> command, the CLI <a
+     * The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR
+     * API <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or
      * the Amazon Web Services Management Console.
      * </p>
@@ -153,9 +160,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      */
     private Integer normalizedInstanceHours;
@@ -168,7 +175,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String masterPublicDnsName;
     /**
      * <p>
-     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR
+     * cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
@@ -181,8 +189,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
-     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
-     * instance group.
+     * role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2
+     * instances in an instance group.
      * </p>
      */
     private String autoScalingRole;
@@ -195,29 +203,29 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
      * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
      * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
-     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and
      * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      */
     private String scaleDownBehavior;
     /**
      * <p>
-     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
      * cluster uses a custom AMI.
      * </p>
      */
     private String customAmiId;
     /**
      * <p>
-     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     * Available in Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 4.x and later.
      * </p>
      */
     private Integer ebsRootVolumeSize;
     /**
      * <p>
-     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
-     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI
+     * package repositories apply when an instance boots using the AMI.
      * </p>
      */
     private String repoUpgradeOnBoot;
@@ -260,6 +268,20 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String oSReleaseLabel;
+    /**
+     * <p>
+     * The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance.
+     * Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     */
+    private Integer ebsRootVolumeIops;
+    /**
+     * <p>
+     * The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     */
+    private Integer ebsRootVolumeThroughput;
 
     /**
      * <p>
@@ -303,11 +325,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      * 
      * @param name
-     *        The name of the cluster.
+     *        The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      */
 
     public void setName(String name) {
@@ -316,10 +338,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      */
 
     public String getName() {
@@ -328,11 +350,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      * 
      * @param name
-     *        The name of the cluster.
+     *        The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,13 +405,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID,
-     * IAM instance profile, and so on.
+     * Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name,
+     * subnet ID, IAM instance profile, and so on.
      * </p>
      * 
      * @param ec2InstanceAttributes
-     *        Provides information about the EC2 instances in a cluster grouped by category. For example, key name,
-     *        subnet ID, IAM instance profile, and so on.
+     *        Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key
+     *        name, subnet ID, IAM instance profile, and so on.
      */
 
     public void setEc2InstanceAttributes(Ec2InstanceAttributes ec2InstanceAttributes) {
@@ -398,12 +420,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID,
-     * IAM instance profile, and so on.
+     * Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name,
+     * subnet ID, IAM instance profile, and so on.
      * </p>
      * 
-     * @return Provides information about the EC2 instances in a cluster grouped by category. For example, key name,
-     *         subnet ID, IAM instance profile, and so on.
+     * @return Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key
+     *         name, subnet ID, IAM instance profile, and so on.
      */
 
     public Ec2InstanceAttributes getEc2InstanceAttributes() {
@@ -412,13 +434,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID,
-     * IAM instance profile, and so on.
+     * Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key name,
+     * subnet ID, IAM instance profile, and so on.
      * </p>
      * 
      * @param ec2InstanceAttributes
-     *        Provides information about the EC2 instances in a cluster grouped by category. For example, key name,
-     *        subnet ID, IAM instance profile, and so on.
+     *        Provides information about the Amazon EC2 instances in a cluster grouped by category. For example, key
+     *        name, subnet ID, IAM instance profile, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,7 +452,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -441,7 +463,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param instanceCollectionType
      *        <p>
-     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      *        versions.
      *        </p>
      *        </note>
@@ -459,7 +481,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -469,7 +491,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return <p>
-     *         The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding
+     *         The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding
      *         5.0.x versions.
      *         </p>
      *         </note>
@@ -487,7 +509,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -498,7 +520,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param instanceCollectionType
      *        <p>
-     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      *        versions.
      *        </p>
      *        </note>
@@ -518,7 +540,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -529,7 +551,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param instanceCollectionType
      *        <p>
-     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      *        versions.
      *        </p>
      *        </note>
@@ -547,7 +569,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -558,7 +580,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param instanceCollectionType
      *        <p>
-     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      *        versions.
      *        </p>
      *        </note>
@@ -617,13 +639,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later,
-     * excluding EMR 6.0.0.
+     * The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later,
+     * excluding Amazon EMR 6.0.0.
      * </p>
      * 
      * @param logEncryptionKmsKeyId
-     *        The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and
-     *        later, excluding EMR 6.0.0.
+     *        The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and
+     *        later, excluding Amazon EMR 6.0.0.
      */
 
     public void setLogEncryptionKmsKeyId(String logEncryptionKmsKeyId) {
@@ -632,12 +654,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later,
-     * excluding EMR 6.0.0.
+     * The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later,
+     * excluding Amazon EMR 6.0.0.
      * </p>
      * 
-     * @return The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and
-     *         later, excluding EMR 6.0.0.
+     * @return The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and
+     *         later, excluding Amazon EMR 6.0.0.
      */
 
     public String getLogEncryptionKmsKeyId() {
@@ -646,13 +668,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and later,
-     * excluding EMR 6.0.0.
+     * The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and later,
+     * excluding Amazon EMR 6.0.0.
      * </p>
      * 
      * @param logEncryptionKmsKeyId
-     *        The KMS key used for encrypting log files. This attribute is only available with EMR version 5.30.0 and
-     *        later, excluding EMR 6.0.0.
+     *        The KMS key used for encrypting log files. This attribute is only available with Amazon EMR 5.30.0 and
+     *        later, excluding Amazon EMR 6.0.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -871,13 +893,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
-     * call or user intervention, or in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by
+     * an API call or user intervention, or in the event of a cluster error.
      * </p>
      * 
      * @param terminationProtected
-     *        Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
-     *        an API call or user intervention, or in the event of a cluster error.
+     *        Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being
+     *        terminated by an API call or user intervention, or in the event of a cluster error.
      */
 
     public void setTerminationProtected(Boolean terminationProtected) {
@@ -886,12 +908,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
-     * call or user intervention, or in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by
+     * an API call or user intervention, or in the event of a cluster error.
      * </p>
      * 
-     * @return Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
-     *         an API call or user intervention, or in the event of a cluster error.
+     * @return Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being
+     *         terminated by an API call or user intervention, or in the event of a cluster error.
      */
 
     public Boolean getTerminationProtected() {
@@ -900,13 +922,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
-     * call or user intervention, or in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by
+     * an API call or user intervention, or in the event of a cluster error.
      * </p>
      * 
      * @param terminationProtected
-     *        Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
-     *        an API call or user intervention, or in the event of a cluster error.
+     *        Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being
+     *        terminated by an API call or user intervention, or in the event of a cluster error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -917,12 +939,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by an API
-     * call or user intervention, or in the event of a cluster error.
+     * Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by
+     * an API call or user intervention, or in the event of a cluster error.
      * </p>
      * 
-     * @return Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from being terminated by
-     *         an API call or user intervention, or in the event of a cluster error.
+     * @return Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being
+     *         terminated by an API call or user intervention, or in the event of a cluster error.
      */
 
     public Boolean isTerminationProtected() {
@@ -931,15 +953,75 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @param unhealthyNodeReplacement
+     *        Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within
+     *        the cluster.
+     */
+
+    public void setUnhealthyNodeReplacement(Boolean unhealthyNodeReplacement) {
+        this.unhealthyNodeReplacement = unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded
+     *         within the cluster.
+     */
+
+    public Boolean getUnhealthyNodeReplacement() {
+        return this.unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @param unhealthyNodeReplacement
+     *        Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within
+     *        the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withUnhealthyNodeReplacement(Boolean unhealthyNodeReplacement) {
+        setUnhealthyNodeReplacement(unhealthyNodeReplacement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded
+     *         within the cluster.
+     */
+
+    public Boolean isUnhealthyNodeReplacement() {
+        return this.unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
      * Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the
-     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster
+     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster
      * actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that
-     * created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM
-     * permissions policies attached to other IAM principals.
+     * created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of
+     * IAM permissions policies attached to other IAM principals.
      * </p>
      * <p>
-     * The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API
-     * <a>RunJobFlow</a> command, the CLI <a
+     * The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR
+     * API <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or
      * the Amazon Web Services Management Console.
      * </p>
@@ -947,12 +1029,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @param visibleToAllUsers
      *        Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
      *        with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform
-     *        EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM
-     *        principal that created the cluster and the Amazon Web Services account root user can perform EMR actions,
-     *        regardless of IAM permissions policies attached to other IAM principals.</p>
+     *        Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the
+     *        IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon
+     *        EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
      *        <p>
-     *        The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR
-     *        API <a>RunJobFlow</a> command, the CLI <a
+     *        The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon
+     *        EMR API <a>RunJobFlow</a> command, the CLI <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      *        command, or the Amazon Web Services Management Console.
      */
@@ -964,26 +1046,26 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the
-     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster
+     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster
      * actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that
-     * created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM
-     * permissions policies attached to other IAM principals.
+     * created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of
+     * IAM permissions policies attached to other IAM principals.
      * </p>
      * <p>
-     * The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API
-     * <a>RunJobFlow</a> command, the CLI <a
+     * The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR
+     * API <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or
      * the Amazon Web Services Management Console.
      * </p>
      * 
      * @return Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
      *         with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform
-     *         EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM
-     *         principal that created the cluster and the Amazon Web Services account root user can perform EMR actions,
-     *         regardless of IAM permissions policies attached to other IAM principals.</p>
+     *         Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only
+     *         the IAM principal that created the cluster and the Amazon Web Services account root user can perform
+     *         Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
      *         <p>
-     *         The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR
-     *         API <a>RunJobFlow</a> command, the CLI <a
+     *         The default value is <code>true</code> if a value is not provided when creating a cluster using the
+     *         Amazon EMR API <a>RunJobFlow</a> command, the CLI <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      *         command, or the Amazon Web Services Management Console.
      */
@@ -995,14 +1077,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the
-     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster
+     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster
      * actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that
-     * created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM
-     * permissions policies attached to other IAM principals.
+     * created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of
+     * IAM permissions policies attached to other IAM principals.
      * </p>
      * <p>
-     * The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API
-     * <a>RunJobFlow</a> command, the CLI <a
+     * The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR
+     * API <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or
      * the Amazon Web Services Management Console.
      * </p>
@@ -1010,12 +1092,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @param visibleToAllUsers
      *        Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
      *        with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform
-     *        EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM
-     *        principal that created the cluster and the Amazon Web Services account root user can perform EMR actions,
-     *        regardless of IAM permissions policies attached to other IAM principals.</p>
+     *        Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the
+     *        IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon
+     *        EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
      *        <p>
-     *        The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR
-     *        API <a>RunJobFlow</a> command, the CLI <a
+     *        The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon
+     *        EMR API <a>RunJobFlow</a> command, the CLI <a
      *        href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      *        command, or the Amazon Web Services Management Console.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1029,26 +1111,26 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the
-     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster
+     * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster
      * actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that
-     * created the cluster and the Amazon Web Services account root user can perform EMR actions, regardless of IAM
-     * permissions policies attached to other IAM principals.
+     * created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of
+     * IAM permissions policies attached to other IAM principals.
      * </p>
      * <p>
-     * The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR API
-     * <a>RunJobFlow</a> command, the CLI <a
+     * The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR
+     * API <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or
      * the Amazon Web Services Management Console.
      * </p>
      * 
      * @return Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated
      *         with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform
-     *         EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM
-     *         principal that created the cluster and the Amazon Web Services account root user can perform EMR actions,
-     *         regardless of IAM permissions policies attached to other IAM principals.</p>
+     *         Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only
+     *         the IAM principal that created the cluster and the Amazon Web Services account root user can perform
+     *         Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
      *         <p>
-     *         The default value is <code>true</code> if a value is not provided when creating a cluster using the EMR
-     *         API <a>RunJobFlow</a> command, the CLI <a
+     *         The default value is <code>true</code> if a value is not provided when creating a cluster using the
+     *         Amazon EMR API <a>RunJobFlow</a> command, the CLI <a
      *         href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      *         command, or the Amazon Web Services Management Console.
      */
@@ -1246,16 +1328,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
      *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
-     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2
+     *        instance that is roughly four times more expensive would result in the normalized instance hours being
+     *        incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
@@ -1265,15 +1347,15 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
-     *         that is roughly four times more expensive would result in the normalized instance hours being incremented
-     *         by four. This result is only an approximation and does not reflect the actual billing rate.
+     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2
+     *         instance that is roughly four times more expensive would result in the normalized instance hours being
+     *         incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public Integer getNormalizedInstanceHours() {
@@ -1283,16 +1365,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
-     * four times more expensive would result in the normalized instance hours being incremented by four. This result is
-     * only an approximation and does not reflect the actual billing rate.
+     * for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is
+     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
+     * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
      *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
-     *        is roughly four times more expensive would result in the normalized instance hours being incremented by
-     *        four. This result is only an approximation and does not reflect the actual billing rate.
+     *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2
+     *        instance that is roughly four times more expensive would result in the normalized instance hours being
+     *        incremented by four. This result is only an approximation and does not reflect the actual billing rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1349,11 +1431,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR
+     * cluster.
      * </p>
      * 
-     * @return Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR
-     *         cluster.
+     * @return Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the
+     *         Amazon EMR cluster.
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -1365,11 +1448,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR
+     * cluster.
      * </p>
      * 
      * @param configurations
-     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the
+     *        Amazon EMR cluster.
      */
 
     public void setConfigurations(java.util.Collection<Configuration> configurations) {
@@ -1383,7 +1468,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR
+     * cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1392,7 +1478,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param configurations
-     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the
+     *        Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1408,11 +1495,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the Amazon EMR
+     * cluster.
      * </p>
      * 
      * @param configurations
-     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of configurations that are supplied to the
+     *        Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1464,14 +1553,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
-     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
-     * instance group.
+     * role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2
+     * instances in an instance group.
      * </p>
      * 
      * @param autoScalingRole
      *        An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
-     *        The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2
-     *        instances in an instance group.
+     *        The IAM role provides permissions that the automatic scaling feature requires to launch and terminate
+     *        Amazon EC2 instances in an instance group.
      */
 
     public void setAutoScalingRole(String autoScalingRole) {
@@ -1481,13 +1570,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
-     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
-     * instance group.
+     * role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2
+     * instances in an instance group.
      * </p>
      * 
      * @return An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
-     *         The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2
-     *         instances in an instance group.
+     *         The IAM role provides permissions that the automatic scaling feature requires to launch and terminate
+     *         Amazon EC2 instances in an instance group.
      */
 
     public String getAutoScalingRole() {
@@ -1497,14 +1586,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM
-     * role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an
-     * instance group.
+     * role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2
+     * instances in an instance group.
      * </p>
      * 
      * @param autoScalingRole
      *        An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
-     *        The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2
-     *        instances in an instance group.
+     *        The IAM role provides permissions that the automatic scaling feature requires to launch and terminate
+     *        Amazon EC2 instances in an instance group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1522,7 +1611,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
      * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
      * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
-     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and
      * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
@@ -1535,7 +1624,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
      *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
      *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
-     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR
      *        earlier than 5.1.0.
      * @see ScaleDownBehavior
      */
@@ -1553,7 +1642,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
      * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
      * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
-     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and
      * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
@@ -1565,8 +1654,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *         nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless
      *         of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and
      *         blocks instance termination if it could lead to HDFS corruption.
-     *         <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and later, and is
-     *         the default for versions of Amazon EMR earlier than 5.1.0.
+     *         <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and later, and
+     *         is the default for versions of Amazon EMR earlier than 5.1.0.
      * @see ScaleDownBehavior
      */
 
@@ -1583,7 +1672,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
      * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
      * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
-     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and
      * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
@@ -1596,7 +1685,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
      *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
      *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
-     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR
      *        earlier than 5.1.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScaleDownBehavior
@@ -1616,7 +1705,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
      * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
      * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
-     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and
      * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
@@ -1629,7 +1718,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
      *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
      *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
-     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR
      *        earlier than 5.1.0.
      * @see ScaleDownBehavior
      */
@@ -1647,7 +1736,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks
      * from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
      * behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to
-     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version 4.1.0 and
+     * HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR releases 4.1.0 and
      * later, and is the default for versions of Amazon EMR earlier than 5.1.0.
      * </p>
      * 
@@ -1660,7 +1749,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      *        to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the
      *        instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks
      *        instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is
-     *        available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+     *        available only in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon EMR
      *        earlier than 5.1.0.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScaleDownBehavior
@@ -1673,12 +1762,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
      * cluster uses a custom AMI.
      * </p>
      * 
      * @param customAmiId
-     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *        Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
      *        the cluster uses a custom AMI.
      */
 
@@ -1688,11 +1777,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
      * cluster uses a custom AMI.
      * </p>
      * 
-     * @return Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     * @return Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
      *         the cluster uses a custom AMI.
      */
 
@@ -1702,12 +1791,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
      * cluster uses a custom AMI.
      * </p>
      * 
      * @param customAmiId
-     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *        Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
      *        the cluster uses a custom AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1719,13 +1808,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     * Available in Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 4.x and later.
      * </p>
      * 
      * @param ebsRootVolumeSize
-     *        The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
-     *        instance. Available in Amazon EMR version 4.x and later.
+     *        The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     *        instance. Available in Amazon EMR releases 4.x and later.
      */
 
     public void setEbsRootVolumeSize(Integer ebsRootVolumeSize) {
@@ -1734,12 +1823,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     * Available in Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 4.x and later.
      * </p>
      * 
-     * @return The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
-     *         instance. Available in Amazon EMR version 4.x and later.
+     * @return The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     *         instance. Available in Amazon EMR releases 4.x and later.
      */
 
     public Integer getEbsRootVolumeSize() {
@@ -1748,13 +1837,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance.
-     * Available in Amazon EMR version 4.x and later.
+     * The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 4.x and later.
      * </p>
      * 
      * @param ebsRootVolumeSize
-     *        The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2
-     *        instance. Available in Amazon EMR version 4.x and later.
+     *        The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     *        instance. Available in Amazon EMR releases 4.x and later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1765,13 +1854,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
-     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI
+     * package repositories apply when an instance boots using the AMI.
      * </p>
      * 
      * @param repoUpgradeOnBoot
-     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
-     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux
+     *        AMI package repositories apply when an instance boots using the AMI.
      * @see RepoUpgradeOnBoot
      */
 
@@ -1781,12 +1870,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
-     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI
+     * package repositories apply when an instance boots using the AMI.
      * </p>
      * 
-     * @return Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
-     *         the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @return Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux
+     *         AMI package repositories apply when an instance boots using the AMI.
      * @see RepoUpgradeOnBoot
      */
 
@@ -1796,13 +1885,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
-     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI
+     * package repositories apply when an instance boots using the AMI.
      * </p>
      * 
      * @param repoUpgradeOnBoot
-     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
-     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux
+     *        AMI package repositories apply when an instance boots using the AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepoUpgradeOnBoot
      */
@@ -1814,13 +1903,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
-     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI
+     * package repositories apply when an instance boots using the AMI.
      * </p>
      * 
      * @param repoUpgradeOnBoot
-     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
-     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux
+     *        AMI package repositories apply when an instance boots using the AMI.
      * @see RepoUpgradeOnBoot
      */
 
@@ -1830,13 +1919,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
-     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux AMI
+     * package repositories apply when an instance boots using the AMI.
      * </p>
      * 
      * @param repoUpgradeOnBoot
-     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
-     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that the Amazon Linux
+     *        AMI package repositories apply when an instance boots using the AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepoUpgradeOnBoot
      */
@@ -2141,6 +2230,98 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance.
+     * Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeIops
+     *        The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance.
+     *        Available in Amazon EMR releases 6.15.0 and later.
+     */
+
+    public void setEbsRootVolumeIops(Integer ebsRootVolumeIops) {
+        this.ebsRootVolumeIops = ebsRootVolumeIops;
+    }
+
+    /**
+     * <p>
+     * The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance.
+     * Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     * 
+     * @return The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     *         instance. Available in Amazon EMR releases 6.15.0 and later.
+     */
+
+    public Integer getEbsRootVolumeIops() {
+        return this.ebsRootVolumeIops;
+    }
+
+    /**
+     * <p>
+     * The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance.
+     * Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeIops
+     *        The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance.
+     *        Available in Amazon EMR releases 6.15.0 and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withEbsRootVolumeIops(Integer ebsRootVolumeIops) {
+        setEbsRootVolumeIops(ebsRootVolumeIops);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeThroughput
+     *        The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each
+     *        Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.
+     */
+
+    public void setEbsRootVolumeThroughput(Integer ebsRootVolumeThroughput) {
+        this.ebsRootVolumeThroughput = ebsRootVolumeThroughput;
+    }
+
+    /**
+     * <p>
+     * The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     * 
+     * @return The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each
+     *         Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.
+     */
+
+    public Integer getEbsRootVolumeThroughput() {
+        return this.ebsRootVolumeThroughput;
+    }
+
+    /**
+     * <p>
+     * The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2
+     * instance. Available in Amazon EMR releases 6.15.0 and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeThroughput
+     *        The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each
+     *        Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withEbsRootVolumeThroughput(Integer ebsRootVolumeThroughput) {
+        setEbsRootVolumeThroughput(ebsRootVolumeThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2176,6 +2357,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             sb.append("AutoTerminate: ").append(getAutoTerminate()).append(",");
         if (getTerminationProtected() != null)
             sb.append("TerminationProtected: ").append(getTerminationProtected()).append(",");
+        if (getUnhealthyNodeReplacement() != null)
+            sb.append("UnhealthyNodeReplacement: ").append(getUnhealthyNodeReplacement()).append(",");
         if (getVisibleToAllUsers() != null)
             sb.append("VisibleToAllUsers: ").append(getVisibleToAllUsers()).append(",");
         if (getApplications() != null)
@@ -2213,7 +2396,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getPlacementGroups() != null)
             sb.append("PlacementGroups: ").append(getPlacementGroups()).append(",");
         if (getOSReleaseLabel() != null)
-            sb.append("OSReleaseLabel: ").append(getOSReleaseLabel());
+            sb.append("OSReleaseLabel: ").append(getOSReleaseLabel()).append(",");
+        if (getEbsRootVolumeIops() != null)
+            sb.append("EbsRootVolumeIops: ").append(getEbsRootVolumeIops()).append(",");
+        if (getEbsRootVolumeThroughput() != null)
+            sb.append("EbsRootVolumeThroughput: ").append(getEbsRootVolumeThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -2275,6 +2462,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (other.getTerminationProtected() == null ^ this.getTerminationProtected() == null)
             return false;
         if (other.getTerminationProtected() != null && other.getTerminationProtected().equals(this.getTerminationProtected()) == false)
+            return false;
+        if (other.getUnhealthyNodeReplacement() == null ^ this.getUnhealthyNodeReplacement() == null)
+            return false;
+        if (other.getUnhealthyNodeReplacement() != null && other.getUnhealthyNodeReplacement().equals(this.getUnhealthyNodeReplacement()) == false)
             return false;
         if (other.getVisibleToAllUsers() == null ^ this.getVisibleToAllUsers() == null)
             return false;
@@ -2352,6 +2543,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOSReleaseLabel() != null && other.getOSReleaseLabel().equals(this.getOSReleaseLabel()) == false)
             return false;
+        if (other.getEbsRootVolumeIops() == null ^ this.getEbsRootVolumeIops() == null)
+            return false;
+        if (other.getEbsRootVolumeIops() != null && other.getEbsRootVolumeIops().equals(this.getEbsRootVolumeIops()) == false)
+            return false;
+        if (other.getEbsRootVolumeThroughput() == null ^ this.getEbsRootVolumeThroughput() == null)
+            return false;
+        if (other.getEbsRootVolumeThroughput() != null && other.getEbsRootVolumeThroughput().equals(this.getEbsRootVolumeThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -2372,6 +2571,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());
         hashCode = prime * hashCode + ((getAutoTerminate() == null) ? 0 : getAutoTerminate().hashCode());
         hashCode = prime * hashCode + ((getTerminationProtected() == null) ? 0 : getTerminationProtected().hashCode());
+        hashCode = prime * hashCode + ((getUnhealthyNodeReplacement() == null) ? 0 : getUnhealthyNodeReplacement().hashCode());
         hashCode = prime * hashCode + ((getVisibleToAllUsers() == null) ? 0 : getVisibleToAllUsers().hashCode());
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
@@ -2391,6 +2591,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
         hashCode = prime * hashCode + ((getPlacementGroups() == null) ? 0 : getPlacementGroups().hashCode());
         hashCode = prime * hashCode + ((getOSReleaseLabel() == null) ? 0 : getOSReleaseLabel().hashCode());
+        hashCode = prime * hashCode + ((getEbsRootVolumeIops() == null) ? 0 : getEbsRootVolumeIops().hashCode());
+        hashCode = prime * hashCode + ((getEbsRootVolumeThroughput() == null) ? 0 : getEbsRootVolumeThroughput().hashCode());
         return hashCode;
     }
 

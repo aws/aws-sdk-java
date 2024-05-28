@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,9 +146,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -192,9 +190,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -240,7 +236,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an analysis in Amazon QuickSight.
+     * Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an
+     * <code>AnalysisDefinition</code>.
      * </p>
      * 
      * @param createAnalysisRequest
@@ -253,7 +250,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an analysis in Amazon QuickSight.
+     * Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an
+     * <code>AnalysisDefinition</code>.
      * </p>
      * 
      * @param createAnalysisRequest
@@ -271,7 +269,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the
+     * Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a
+     * template, see the
      * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
      * API operation.
      * </p>
@@ -292,7 +291,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the
+     * Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a
+     * template, see the
      * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
      * API operation.
      * </p>
@@ -443,7 +443,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000
-     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.
+     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services
+     * Support.
      * </p>
      * <p>
      * The permissions resource is
@@ -466,7 +467,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000
-     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.
+     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services
+     * Support.
      * </p>
      * <p>
      * The permissions resource is
@@ -657,8 +659,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a template from an existing Amazon QuickSight analysis or template. You can use the resulting template to
-     * create a dashboard.
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @return A Java Future containing the result of the CreateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRefreshScheduleResult> createRefreshScheduleAsync(CreateRefreshScheduleRequest createRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRefreshScheduleResult> createRefreshScheduleAsync(CreateRefreshScheduleRequest createRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRefreshScheduleRequest, CreateRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.
+     * </p>
+     * 
+     * @param createRoleMembershipRequest
+     * @return A Java Future containing the result of the CreateRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest createRoleMembershipRequest);
+
+    /**
+     * <p>
+     * Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.
+     * </p>
+     * 
+     * @param createRoleMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest createRoleMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRoleMembershipRequest, CreateRoleMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
+     * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
      * <p>
      * A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis
@@ -677,8 +741,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a template from an existing Amazon QuickSight analysis or template. You can use the resulting template to
-     * create a dashboard.
+     * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
+     * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
      * <p>
      * A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis
@@ -807,6 +871,101 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a new Q topic.
+     * </p>
+     * 
+     * @param createTopicRequest
+     * @return A Java Future containing the result of the CreateTopic operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTopicResult> createTopicAsync(CreateTopicRequest createTopicRequest);
+
+    /**
+     * <p>
+     * Creates a new Q topic.
+     * </p>
+     * 
+     * @param createTopicRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTopic operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTopicResult> createTopicAsync(CreateTopicRequest createTopicRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a topic refresh schedule.
+     * </p>
+     * 
+     * @param createTopicRefreshScheduleRequest
+     * @return A Java Future containing the result of the CreateTopicRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTopicRefreshScheduleResult> createTopicRefreshScheduleAsync(
+            CreateTopicRefreshScheduleRequest createTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a topic refresh schedule.
+     * </p>
+     * 
+     * @param createTopicRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTopicRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTopicRefreshScheduleResult> createTopicRefreshScheduleAsync(
+            CreateTopicRefreshScheduleRequest createTopicRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRefreshScheduleRequest, CreateTopicRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new VPC connection.
+     * </p>
+     * 
+     * @param createVPCConnectionRequest
+     * @return A Java Future containing the result of the CreateVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVPCConnectionResult> createVPCConnectionAsync(CreateVPCConnectionRequest createVPCConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a new VPC connection.
+     * </p>
+     * 
+     * @param createVPCConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVPCConnectionResult> createVPCConnectionAsync(CreateVPCConnectionRequest createVPCConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVPCConnectionRequest, CreateVPCConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web
      * Services account and Amazon QuickSight namespace.
      * </p>
@@ -839,6 +998,47 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(
             DeleteAccountCustomizationRequest deleteAccountCustomizationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountCustomizationRequest, DeleteAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation
+     * will result in an error message if you have configured your account termination protection settings to
+     * <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code>
+     * API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make
+     * another call to the <code>DeleteAccountSubscription</code> API.
+     * </p>
+     * 
+     * @param deleteAccountSubscriptionRequest
+     * @return A Java Future containing the result of the DeleteAccountSubscription operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountSubscriptionResult> deleteAccountSubscriptionAsync(
+            DeleteAccountSubscriptionRequest deleteAccountSubscriptionRequest);
+
+    /**
+     * <p>
+     * Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation
+     * will result in an error message if you have configured your account termination protection settings to
+     * <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code>
+     * API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make
+     * another call to the <code>DeleteAccountSubscription</code> API.
+     * </p>
+     * 
+     * @param deleteAccountSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccountSubscription operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountSubscriptionResult> deleteAccountSubscriptionAsync(
+            DeleteAccountSubscriptionRequest deleteAccountSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountSubscriptionRequest, DeleteAccountSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -956,6 +1156,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteDataSetResult> deleteDataSetAsync(DeleteDataSetRequest deleteDataSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDataSetRequest, DeleteDataSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @return A Java Future containing the result of the DeleteDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataSetRefreshPropertiesResult> deleteDataSetRefreshPropertiesAsync(
+            DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataSetRefreshPropertiesResult> deleteDataSetRefreshPropertiesAsync(
+            DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataSetRefreshPropertiesRequest, DeleteDataSetRefreshPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -1149,6 +1384,49 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes all access scopes and authorized targets that are associated with a service from the Amazon QuickSight
+     * IAM Identity Center application.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.
+     * </p>
+     * 
+     * @param deleteIdentityPropagationConfigRequest
+     * @return A Java Future containing the result of the DeleteIdentityPropagationConfig operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DeleteIdentityPropagationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIdentityPropagationConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIdentityPropagationConfigResult> deleteIdentityPropagationConfigAsync(
+            DeleteIdentityPropagationConfigRequest deleteIdentityPropagationConfigRequest);
+
+    /**
+     * <p>
+     * Deletes all access scopes and authorized targets that are associated with a service from the Amazon QuickSight
+     * IAM Identity Center application.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.
+     * </p>
+     * 
+     * @param deleteIdentityPropagationConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIdentityPropagationConfig operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteIdentityPropagationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIdentityPropagationConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIdentityPropagationConfigResult> deleteIdentityPropagationConfigAsync(
+            DeleteIdentityPropagationConfigRequest deleteIdentityPropagationConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIdentityPropagationConfigRequest, DeleteIdentityPropagationConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
      * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
      * assets, you use the API operations for the relevant asset.
@@ -1181,6 +1459,101 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest deleteNamespaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @return A Java Future containing the result of the DeleteRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRefreshScheduleRequest, DeleteRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes custom permissions from the role.
+     * </p>
+     * 
+     * @param deleteRoleCustomPermissionRequest
+     * @return A Java Future containing the result of the DeleteRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(
+            DeleteRoleCustomPermissionRequest deleteRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Removes custom permissions from the role.
+     * </p>
+     * 
+     * @param deleteRoleCustomPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(
+            DeleteRoleCustomPermissionRequest deleteRoleCustomPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleCustomPermissionRequest, DeleteRoleCustomPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a group from a role.
+     * </p>
+     * 
+     * @param deleteRoleMembershipRequest
+     * @return A Java Future containing the result of the DeleteRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest deleteRoleMembershipRequest);
+
+    /**
+     * <p>
+     * Removes a group from a role.
+     * </p>
+     * 
+     * @param deleteRoleMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest deleteRoleMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleMembershipRequest, DeleteRoleMembershipResult> asyncHandler);
 
     /**
      * <p>
@@ -1312,8 +1685,72 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the Amazon QuickSight user that is associated with the identity of the Identity and Access Management
-     * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
+     * Deletes a topic.
+     * </p>
+     * 
+     * @param deleteTopicRequest
+     * @return A Java Future containing the result of the DeleteTopic operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(DeleteTopicRequest deleteTopicRequest);
+
+    /**
+     * <p>
+     * Deletes a topic.
+     * </p>
+     * 
+     * @param deleteTopicRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTopic operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(DeleteTopicRequest deleteTopicRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param deleteTopicRefreshScheduleRequest
+     * @return A Java Future containing the result of the DeleteTopicRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTopicRefreshScheduleResult> deleteTopicRefreshScheduleAsync(
+            DeleteTopicRefreshScheduleRequest deleteTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param deleteTopicRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTopicRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTopicRefreshScheduleResult> deleteTopicRefreshScheduleAsync(
+            DeleteTopicRefreshScheduleRequest deleteTopicRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRefreshScheduleRequest, DeleteTopicRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the
+     * call. The IAM user isn't deleted as a result of this call.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1326,8 +1763,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the Amazon QuickSight user that is associated with the identity of the Identity and Access Management
-     * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
+     * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the
+     * call. The IAM user isn't deleted as a result of this call.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1373,6 +1810,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteUserByPrincipalIdResult> deleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserByPrincipalIdRequest, DeleteUserByPrincipalIdResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a VPC connection.
+     * </p>
+     * 
+     * @param deleteVPCConnectionRequest
+     * @return A Java Future containing the result of the DeleteVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVPCConnectionResult> deleteVPCConnectionAsync(DeleteVPCConnectionRequest deleteVPCConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes a VPC connection.
+     * </p>
+     * 
+     * @param deleteVPCConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVPCConnectionResult> deleteVPCConnectionAsync(DeleteVPCConnectionRequest deleteVPCConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVPCConnectionRequest, DeleteVPCConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -1578,7 +2046,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's
+     * Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's
      * subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name,
      * subscription status, authentication type, edition, and notification email address.
      * </p>
@@ -1594,7 +2062,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's
+     * Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's
      * subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name,
      * subscription status, authentication type, edition, and notification email address.
      * </p>
@@ -1646,6 +2114,55 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Provides a detailed description of the definition of an analysis.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of an Analysis, for instance if you are trying to check the
+     * status of a recently created or updated Analysis, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
+     * <code>DescribeAnalysis</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeAnalysisDefinitionRequest
+     * @return A Java Future containing the result of the DescribeAnalysisDefinition operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAnalysisDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisDefinitionResult> describeAnalysisDefinitionAsync(
+            DescribeAnalysisDefinitionRequest describeAnalysisDefinitionRequest);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of an analysis.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of an Analysis, for instance if you are trying to check the
+     * status of a recently created or updated Analysis, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
+     * <code>DescribeAnalysis</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeAnalysisDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAnalysisDefinition operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAnalysisDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisDefinitionResult> describeAnalysisDefinitionAsync(
+            DescribeAnalysisDefinitionRequest describeAnalysisDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnalysisDefinitionRequest, DescribeAnalysisDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides the read and write permissions for an analysis.
      * </p>
      * 
@@ -1679,6 +2196,100 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes an existing export job.
+     * </p>
+     * <p>
+     * Poll job descriptions after a job starts to know the status of the job. When a job succeeds, a URL is provided to
+     * download the exported assets' data from. Download URLs are valid for five minutes after they are generated. You
+     * can call the <code>DescribeAssetBundleExportJob</code> API for a new download URL as needed.
+     * </p>
+     * <p>
+     * Job descriptions are available for 14 days after the job starts.
+     * </p>
+     * 
+     * @param describeAssetBundleExportJobRequest
+     * @return A Java Future containing the result of the DescribeAssetBundleExportJob operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeAssetBundleExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetBundleExportJobResult> describeAssetBundleExportJobAsync(
+            DescribeAssetBundleExportJobRequest describeAssetBundleExportJobRequest);
+
+    /**
+     * <p>
+     * Describes an existing export job.
+     * </p>
+     * <p>
+     * Poll job descriptions after a job starts to know the status of the job. When a job succeeds, a URL is provided to
+     * download the exported assets' data from. Download URLs are valid for five minutes after they are generated. You
+     * can call the <code>DescribeAssetBundleExportJob</code> API for a new download URL as needed.
+     * </p>
+     * <p>
+     * Job descriptions are available for 14 days after the job starts.
+     * </p>
+     * 
+     * @param describeAssetBundleExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssetBundleExportJob operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAssetBundleExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetBundleExportJobResult> describeAssetBundleExportJobAsync(
+            DescribeAssetBundleExportJobRequest describeAssetBundleExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssetBundleExportJobRequest, DescribeAssetBundleExportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing import job.
+     * </p>
+     * <p>
+     * Poll job descriptions after starting a job to know when it has succeeded or failed. Job descriptions are
+     * available for 14 days after job starts.
+     * </p>
+     * 
+     * @param describeAssetBundleImportJobRequest
+     * @return A Java Future containing the result of the DescribeAssetBundleImportJob operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeAssetBundleImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetBundleImportJobResult> describeAssetBundleImportJobAsync(
+            DescribeAssetBundleImportJobRequest describeAssetBundleImportJobRequest);
+
+    /**
+     * <p>
+     * Describes an existing import job.
+     * </p>
+     * <p>
+     * Poll job descriptions after starting a job to know when it has succeeded or failed. Job descriptions are
+     * available for 14 days after job starts.
+     * </p>
+     * 
+     * @param describeAssetBundleImportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssetBundleImportJob operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAssetBundleImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssetBundleImportJobResult> describeAssetBundleImportJobAsync(
+            DescribeAssetBundleImportJobRequest describeAssetBundleImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssetBundleImportJobRequest, DescribeAssetBundleImportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides a summary for a dashboard.
      * </p>
      * 
@@ -1707,6 +2318,55 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DescribeDashboardResult> describeDashboardAsync(DescribeDashboardRequest describeDashboardRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDashboardRequest, DescribeDashboardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of a dashboard.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of a dashboard, for instance if you are trying to check the
+     * status of a recently created or updated dashboard, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
+     * <code>DescribeDashboard</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeDashboardDefinitionRequest
+     * @return A Java Future containing the result of the DescribeDashboardDefinition operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeDashboardDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDashboardDefinitionResult> describeDashboardDefinitionAsync(
+            DescribeDashboardDefinitionRequest describeDashboardDefinitionRequest);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of a dashboard.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of a dashboard, for instance if you are trying to check the
+     * status of a recently created or updated dashboard, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
+     * <code>DescribeDashboard</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeDashboardDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDashboardDefinition operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeDashboardDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDashboardDefinitionResult> describeDashboardDefinitionAsync(
+            DescribeDashboardDefinitionRequest describeDashboardDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDashboardDefinitionRequest, DescribeDashboardDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -1742,6 +2402,100 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<DescribeDashboardPermissionsResult> describeDashboardPermissionsAsync(
             DescribeDashboardPermissionsRequest describeDashboardPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDashboardPermissionsRequest, DescribeDashboardPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing snapshot job.
+     * </p>
+     * <p>
+     * Poll job descriptions after a job starts to know the status of the job. For information on available status
+     * codes, see <code>JobStatus</code>.
+     * </p>
+     * 
+     * @param describeDashboardSnapshotJobRequest
+     * @return A Java Future containing the result of the DescribeDashboardSnapshotJob operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeDashboardSnapshotJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDashboardSnapshotJobResult> describeDashboardSnapshotJobAsync(
+            DescribeDashboardSnapshotJobRequest describeDashboardSnapshotJobRequest);
+
+    /**
+     * <p>
+     * Describes an existing snapshot job.
+     * </p>
+     * <p>
+     * Poll job descriptions after a job starts to know the status of the job. For information on available status
+     * codes, see <code>JobStatus</code>.
+     * </p>
+     * 
+     * @param describeDashboardSnapshotJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDashboardSnapshotJob operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeDashboardSnapshotJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDashboardSnapshotJobResult> describeDashboardSnapshotJobAsync(
+            DescribeDashboardSnapshotJobRequest describeDashboardSnapshotJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDashboardSnapshotJobRequest, DescribeDashboardSnapshotJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the result of an existing snapshot job that has finished running.
+     * </p>
+     * <p>
+     * A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code> status when you poll the job
+     * with a <code>DescribeDashboardSnapshotJob</code> API call.
+     * </p>
+     * <p>
+     * If the job has not finished running, this operation returns a message that says
+     * <code>Dashboard Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+     * </p>
+     * 
+     * @param describeDashboardSnapshotJobResultRequest
+     * @return A Java Future containing the result of the DescribeDashboardSnapshotJobResult operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeDashboardSnapshotJobResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDashboardSnapshotJobResultResult> describeDashboardSnapshotJobResultAsync(
+            DescribeDashboardSnapshotJobResultRequest describeDashboardSnapshotJobResultRequest);
+
+    /**
+     * <p>
+     * Describes the result of an existing snapshot job that has finished running.
+     * </p>
+     * <p>
+     * A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code> status when you poll the job
+     * with a <code>DescribeDashboardSnapshotJob</code> API call.
+     * </p>
+     * <p>
+     * If the job has not finished running, this operation returns a message that says
+     * <code>Dashboard Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+     * </p>
+     * 
+     * @param describeDashboardSnapshotJobResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDashboardSnapshotJobResult operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeDashboardSnapshotJobResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDashboardSnapshotJobResultResult> describeDashboardSnapshotJobResultAsync(
+            DescribeDashboardSnapshotJobResultRequest describeDashboardSnapshotJobResultRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDashboardSnapshotJobResultRequest, DescribeDashboardSnapshotJobResultResult> asyncHandler);
 
     /**
      * <p>
@@ -1812,6 +2566,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<DescribeDataSetPermissionsResult> describeDataSetPermissionsAsync(
             DescribeDataSetPermissionsRequest describeDataSetPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDataSetPermissionsRequest, DescribeDataSetPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @return A Java Future containing the result of the DescribeDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataSetRefreshPropertiesResult> describeDataSetRefreshPropertiesAsync(
+            DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataSetRefreshPropertiesResult> describeDataSetRefreshPropertiesAsync(
+            DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDataSetRefreshPropertiesRequest, DescribeDataSetRefreshPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -2143,6 +2932,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes all customer managed key registrations in a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param describeKeyRegistrationRequest
+     * @return A Java Future containing the result of the DescribeKeyRegistration operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeKeyRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKeyRegistrationResult> describeKeyRegistrationAsync(DescribeKeyRegistrationRequest describeKeyRegistrationRequest);
+
+    /**
+     * <p>
+     * Describes all customer managed key registrations in a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param describeKeyRegistrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeKeyRegistration operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeKeyRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKeyRegistrationResult> describeKeyRegistrationAsync(DescribeKeyRegistrationRequest describeKeyRegistrationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeKeyRegistrationRequest, DescribeKeyRegistrationResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the current namespace.
      * </p>
      * 
@@ -2171,6 +2991,72 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest describeNamespaceRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeNamespaceRequest, DescribeNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @return A Java Future containing the result of the DescribeRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRefreshScheduleResult> describeRefreshScheduleAsync(DescribeRefreshScheduleRequest describeRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRefreshScheduleResult> describeRefreshScheduleAsync(DescribeRefreshScheduleRequest describeRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRefreshScheduleRequest, DescribeRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes all custom permissions that are mapped to a role.
+     * </p>
+     * 
+     * @param describeRoleCustomPermissionRequest
+     * @return A Java Future containing the result of the DescribeRoleCustomPermission operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(
+            DescribeRoleCustomPermissionRequest describeRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Describes all custom permissions that are mapped to a role.
+     * </p>
+     * 
+     * @param describeRoleCustomPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRoleCustomPermission operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(
+            DescribeRoleCustomPermissionRequest describeRoleCustomPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRoleCustomPermissionRequest, DescribeRoleCustomPermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -2233,6 +3119,55 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DescribeTemplateAliasResult> describeTemplateAliasAsync(DescribeTemplateAliasRequest describeTemplateAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTemplateAliasRequest, DescribeTemplateAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of a template.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of a template, for instance if you are trying to check the
+     * status of a recently created or updated template, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
+     * <code>DescribeTemplate</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeTemplateDefinitionRequest
+     * @return A Java Future containing the result of the DescribeTemplateDefinition operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeTemplateDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTemplateDefinitionResult> describeTemplateDefinitionAsync(
+            DescribeTemplateDefinitionRequest describeTemplateDefinitionRequest);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of a template.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of a template, for instance if you are trying to check the
+     * status of a recently created or updated template, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
+     * <code>DescribeTemplate</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeTemplateDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTemplateDefinition operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTemplateDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTemplateDefinitionResult> describeTemplateDefinitionAsync(
+            DescribeTemplateDefinitionRequest describeTemplateDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTemplateDefinitionRequest, DescribeTemplateDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -2362,6 +3297,134 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes a topic.
+     * </p>
+     * 
+     * @param describeTopicRequest
+     * @return A Java Future containing the result of the DescribeTopic operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicResult> describeTopicAsync(DescribeTopicRequest describeTopicRequest);
+
+    /**
+     * <p>
+     * Describes a topic.
+     * </p>
+     * 
+     * @param describeTopicRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTopic operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicResult> describeTopicAsync(DescribeTopicRequest describeTopicRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicRequest, DescribeTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the permissions of a topic.
+     * </p>
+     * 
+     * @param describeTopicPermissionsRequest
+     * @return A Java Future containing the result of the DescribeTopicPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicPermissionsResult> describeTopicPermissionsAsync(DescribeTopicPermissionsRequest describeTopicPermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the permissions of a topic.
+     * </p>
+     * 
+     * @param describeTopicPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTopicPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicPermissionsResult> describeTopicPermissionsAsync(DescribeTopicPermissionsRequest describeTopicPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicPermissionsRequest, DescribeTopicPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the status of a topic refresh.
+     * </p>
+     * 
+     * @param describeTopicRefreshRequest
+     * @return A Java Future containing the result of the DescribeTopicRefresh operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeTopicRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicRefreshResult> describeTopicRefreshAsync(DescribeTopicRefreshRequest describeTopicRefreshRequest);
+
+    /**
+     * <p>
+     * Describes the status of a topic refresh.
+     * </p>
+     * 
+     * @param describeTopicRefreshRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTopicRefresh operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTopicRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicRefreshResult> describeTopicRefreshAsync(DescribeTopicRefreshRequest describeTopicRefreshRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicRefreshRequest, DescribeTopicRefreshResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param describeTopicRefreshScheduleRequest
+     * @return A Java Future containing the result of the DescribeTopicRefreshSchedule operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicRefreshScheduleResult> describeTopicRefreshScheduleAsync(
+            DescribeTopicRefreshScheduleRequest describeTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param describeTopicRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTopicRefreshSchedule operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTopicRefreshScheduleResult> describeTopicRefreshScheduleAsync(
+            DescribeTopicRefreshScheduleRequest describeTopicRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicRefreshScheduleRequest, DescribeTopicRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a user, given the user name.
      * </p>
      * 
@@ -2390,6 +3453,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DescribeUserResult> describeUserAsync(DescribeUserRequest describeUserRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUserRequest, DescribeUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a VPC connection.
+     * </p>
+     * 
+     * @param describeVPCConnectionRequest
+     * @return A Java Future containing the result of the DescribeVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeVPCConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVPCConnectionResult> describeVPCConnectionAsync(DescribeVPCConnectionRequest describeVPCConnectionRequest);
+
+    /**
+     * <p>
+     * Describes a VPC connection.
+     * </p>
+     * 
+     * @param describeVPCConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeVPCConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVPCConnectionResult> describeVPCConnectionAsync(DescribeVPCConnectionRequest describeVPCConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVPCConnectionRequest, DescribeVPCConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -2846,6 +3940,80 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Lists all asset bundle export jobs that have been taken place in the last 14 days. Jobs created more than 14 days
+     * ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs,
+     * <code>ListAssetBundleExportJobs</code> only returns the most recent job that uses the repeated job ID.
+     * </p>
+     * 
+     * @param listAssetBundleExportJobsRequest
+     * @return A Java Future containing the result of the ListAssetBundleExportJobs operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListAssetBundleExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetBundleExportJobsResult> listAssetBundleExportJobsAsync(
+            ListAssetBundleExportJobsRequest listAssetBundleExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all asset bundle export jobs that have been taken place in the last 14 days. Jobs created more than 14 days
+     * ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs,
+     * <code>ListAssetBundleExportJobs</code> only returns the most recent job that uses the repeated job ID.
+     * </p>
+     * 
+     * @param listAssetBundleExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetBundleExportJobs operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListAssetBundleExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetBundleExportJobsResult> listAssetBundleExportJobsAsync(
+            ListAssetBundleExportJobsRequest listAssetBundleExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetBundleExportJobsRequest, ListAssetBundleExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs created more than 14 days ago
+     * are deleted forever and are not returned. If you are using the same job ID for multiple jobs,
+     * <code>ListAssetBundleImportJobs</code> only returns the most recent job that uses the repeated job ID.
+     * </p>
+     * 
+     * @param listAssetBundleImportJobsRequest
+     * @return A Java Future containing the result of the ListAssetBundleImportJobs operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListAssetBundleImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetBundleImportJobsResult> listAssetBundleImportJobsAsync(
+            ListAssetBundleImportJobsRequest listAssetBundleImportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs created more than 14 days ago
+     * are deleted forever and are not returned. If you are using the same job ID for multiple jobs,
+     * <code>ListAssetBundleImportJobs</code> only returns the most recent job that uses the repeated job ID.
+     * </p>
+     * 
+     * @param listAssetBundleImportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetBundleImportJobs operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListAssetBundleImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetBundleImportJobsResult> listAssetBundleImportJobsAsync(
+            ListAssetBundleImportJobsRequest listAssetBundleImportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetBundleImportJobsRequest, ListAssetBundleImportJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all the versions of the dashboards in the Amazon QuickSight subscription.
      * </p>
      * 
@@ -3100,7 +4268,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists IAM policy assignments in the current Amazon QuickSight account.
+     * Lists the IAM policy assignments in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -3113,7 +4281,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists IAM policy assignments in the current Amazon QuickSight account.
+     * Lists the IAM policy assignments in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -3131,8 +4299,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to
-     * the specified user and group or groups that the user belongs to.
+     * Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies
+     * assigned to the specified user and group, or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -3147,8 +4315,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to
-     * the specified user and group or groups that the user belongs to.
+     * Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies
+     * assigned to the specified user and group, or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -3165,6 +4333,47 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<ListIAMPolicyAssignmentsForUserResult> listIAMPolicyAssignmentsForUserAsync(
             ListIAMPolicyAssignmentsForUserRequest listIAMPolicyAssignmentsForUserRequest,
             com.amazonaws.handlers.AsyncHandler<ListIAMPolicyAssignmentsForUserRequest, ListIAMPolicyAssignmentsForUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all services and authorized targets that the Amazon QuickSight IAM Identity Center application can access.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.
+     * </p>
+     * 
+     * @param listIdentityPropagationConfigsRequest
+     * @return A Java Future containing the result of the ListIdentityPropagationConfigs operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.ListIdentityPropagationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIdentityPropagationConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIdentityPropagationConfigsResult> listIdentityPropagationConfigsAsync(
+            ListIdentityPropagationConfigsRequest listIdentityPropagationConfigsRequest);
+
+    /**
+     * <p>
+     * Lists all services and authorized targets that the Amazon QuickSight IAM Identity Center application can access.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.
+     * </p>
+     * 
+     * @param listIdentityPropagationConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIdentityPropagationConfigs operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.ListIdentityPropagationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIdentityPropagationConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIdentityPropagationConfigsResult> listIdentityPropagationConfigsAsync(
+            ListIdentityPropagationConfigsRequest listIdentityPropagationConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIdentityPropagationConfigsRequest, ListIdentityPropagationConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -3229,6 +4438,68 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<ListNamespacesResult> listNamespacesAsync(ListNamespacesRequest listNamespacesRequest,
             com.amazonaws.handlers.AsyncHandler<ListNamespacesRequest, ListNamespacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @return A Java Future containing the result of the ListRefreshSchedules operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest listRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRefreshSchedules operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest listRefreshSchedulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRefreshSchedulesRequest, ListRefreshSchedulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all groups that are associated with a role.
+     * </p>
+     * 
+     * @param listRoleMembershipsRequest
+     * @return A Java Future containing the result of the ListRoleMemberships operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListRoleMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest listRoleMembershipsRequest);
+
+    /**
+     * <p>
+     * Lists all groups that are associated with a role.
+     * </p>
+     * 
+     * @param listRoleMembershipsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRoleMemberships operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListRoleMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest listRoleMembershipsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRoleMembershipsRequest, ListRoleMembershipsResult> asyncHandler);
 
     /**
      * <p>
@@ -3449,6 +4720,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Lists all of the refresh schedules for a topic.
+     * </p>
+     * 
+     * @param listTopicRefreshSchedulesRequest
+     * @return A Java Future containing the result of the ListTopicRefreshSchedules operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListTopicRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTopicRefreshSchedulesResult> listTopicRefreshSchedulesAsync(
+            ListTopicRefreshSchedulesRequest listTopicRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists all of the refresh schedules for a topic.
+     * </p>
+     * 
+     * @param listTopicRefreshSchedulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTopicRefreshSchedules operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListTopicRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTopicRefreshSchedulesResult> listTopicRefreshSchedulesAsync(
+            ListTopicRefreshSchedulesRequest listTopicRefreshSchedulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTopicRefreshSchedulesRequest, ListTopicRefreshSchedulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the topics within an account.
+     * </p>
+     * 
+     * @param listTopicsRequest
+     * @return A Java Future containing the result of the ListTopics operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListTopics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(ListTopicsRequest listTopicsRequest);
+
+    /**
+     * <p>
+     * Lists all of the topics within an account.
+     * </p>
+     * 
+     * @param listTopicsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTopics operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListTopics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(ListTopicsRequest listTopicsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
      * </p>
      * 
@@ -3511,8 +4846,78 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an Amazon QuickSight user, whose identity is associated with the Identity and Access Management (IAM)
-     * identity or role specified in the request.
+     * Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVPCConnectionsRequest
+     * @return A Java Future containing the result of the ListVPCConnections operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListVPCConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListVPCConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVPCConnectionsResult> listVPCConnectionsAsync(ListVPCConnectionsRequest listVPCConnectionsRequest);
+
+    /**
+     * <p>
+     * Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVPCConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVPCConnections operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListVPCConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListVPCConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVPCConnectionsResult> listVPCConnectionsAsync(ListVPCConnectionsRequest listVPCConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVPCConnectionsRequest, ListVPCConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @return A Java Future containing the result of the PutDataSetRefreshProperties operation returned by the service.
+     * @sample AmazonQuickSightAsync.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataSetRefreshPropertiesResult> putDataSetRefreshPropertiesAsync(
+            PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDataSetRefreshProperties operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataSetRefreshPropertiesResult> putDataSetRefreshPropertiesAsync(
+            PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDataSetRefreshPropertiesRequest, PutDataSetRefreshPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM)
+     * identity or role specified in the request. When you register a new user from the Amazon QuickSight API, Amazon
+     * QuickSight generates a registration URL. The user accesses this registration URL to create their account. Amazon
+     * QuickSight doesn't send a registration email to users who are registered from the Amazon QuickSight API. If you
+     * want new users to receive a registration email, then add those users in the Amazon QuickSight console. For more
+     * information on registering a new user in the Amazon QuickSight console, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users"> Inviting users to
+     * access Amazon QuickSight</a>.
      * </p>
      * 
      * @param registerUserRequest
@@ -3525,8 +4930,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an Amazon QuickSight user, whose identity is associated with the Identity and Access Management (IAM)
-     * identity or role specified in the request.
+     * Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM)
+     * identity or role specified in the request. When you register a new user from the Amazon QuickSight API, Amazon
+     * QuickSight generates a registration URL. The user accesses this registration URL to create their account. Amazon
+     * QuickSight doesn't send a registration email to users who are registered from the Amazon QuickSight API. If you
+     * want new users to receive a registration email, then add those users in the Amazon QuickSight console. For more
+     * information on registering a new user in the Amazon QuickSight console, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users"> Inviting users to
+     * access Amazon QuickSight</a>.
      * </p>
      * 
      * @param registerUserRequest
@@ -3661,6 +5072,68 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Use the <code>SearchDataSets</code> operation to search for datasets that belong to an account.
+     * </p>
+     * 
+     * @param searchDataSetsRequest
+     * @return A Java Future containing the result of the SearchDataSets operation returned by the service.
+     * @sample AmazonQuickSightAsync.SearchDataSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDataSetsResult> searchDataSetsAsync(SearchDataSetsRequest searchDataSetsRequest);
+
+    /**
+     * <p>
+     * Use the <code>SearchDataSets</code> operation to search for datasets that belong to an account.
+     * </p>
+     * 
+     * @param searchDataSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchDataSets operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.SearchDataSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDataSetsResult> searchDataSetsAsync(SearchDataSetsRequest searchDataSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchDataSetsRequest, SearchDataSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.
+     * </p>
+     * 
+     * @param searchDataSourcesRequest
+     * @return A Java Future containing the result of the SearchDataSources operation returned by the service.
+     * @sample AmazonQuickSightAsync.SearchDataSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDataSourcesResult> searchDataSourcesAsync(SearchDataSourcesRequest searchDataSourcesRequest);
+
+    /**
+     * <p>
+     * Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.
+     * </p>
+     * 
+     * @param searchDataSourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchDataSources operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.SearchDataSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDataSourcesResult> searchDataSourcesAsync(SearchDataSourcesRequest searchDataSourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchDataSourcesRequest, SearchDataSourcesResult> asyncHandler);
+
+    /**
+     * <p>
      * Searches the subfolders in a folder.
      * </p>
      * 
@@ -3725,6 +5198,383 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Starts an Asset Bundle export job.
+     * </p>
+     * <p>
+     * An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset
+     * dependencies in the same job. Export jobs run asynchronously and can be polled with a
+     * <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that
+     * contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a
+     * <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight account can run up to 5 export jobs
+     * concurrently.
+     * </p>
+     * <p>
+     * The API caller must have the necessary permissions in their IAM role to access each resource before the resources
+     * can be exported.
+     * </p>
+     * 
+     * @param startAssetBundleExportJobRequest
+     * @return A Java Future containing the result of the StartAssetBundleExportJob operation returned by the service.
+     * @sample AmazonQuickSightAsync.StartAssetBundleExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAssetBundleExportJobResult> startAssetBundleExportJobAsync(
+            StartAssetBundleExportJobRequest startAssetBundleExportJobRequest);
+
+    /**
+     * <p>
+     * Starts an Asset Bundle export job.
+     * </p>
+     * <p>
+     * An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset
+     * dependencies in the same job. Export jobs run asynchronously and can be polled with a
+     * <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that
+     * contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a
+     * <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight account can run up to 5 export jobs
+     * concurrently.
+     * </p>
+     * <p>
+     * The API caller must have the necessary permissions in their IAM role to access each resource before the resources
+     * can be exported.
+     * </p>
+     * 
+     * @param startAssetBundleExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAssetBundleExportJob operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.StartAssetBundleExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAssetBundleExportJobResult> startAssetBundleExportJobAsync(
+            StartAssetBundleExportJobRequest startAssetBundleExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAssetBundleExportJobRequest, StartAssetBundleExportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an Asset Bundle import job.
+     * </p>
+     * <p>
+     * An Asset Bundle import job imports specified Amazon QuickSight assets into an Amazon QuickSight account. You can
+     * also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the
+     * bundle file that you provide are used to create or update a new or existing asset in your Amazon QuickSight
+     * account. Each Amazon QuickSight account can run up to 5 import jobs concurrently.
+     * </p>
+     * <p>
+     * The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>, and <code>"update"</code>
+     * permissions in their IAM role to access each resource type that is contained in the bundle file before the
+     * resources can be imported.
+     * </p>
+     * 
+     * @param startAssetBundleImportJobRequest
+     * @return A Java Future containing the result of the StartAssetBundleImportJob operation returned by the service.
+     * @sample AmazonQuickSightAsync.StartAssetBundleImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAssetBundleImportJobResult> startAssetBundleImportJobAsync(
+            StartAssetBundleImportJobRequest startAssetBundleImportJobRequest);
+
+    /**
+     * <p>
+     * Starts an Asset Bundle import job.
+     * </p>
+     * <p>
+     * An Asset Bundle import job imports specified Amazon QuickSight assets into an Amazon QuickSight account. You can
+     * also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the
+     * bundle file that you provide are used to create or update a new or existing asset in your Amazon QuickSight
+     * account. Each Amazon QuickSight account can run up to 5 import jobs concurrently.
+     * </p>
+     * <p>
+     * The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>, and <code>"update"</code>
+     * permissions in their IAM role to access each resource type that is contained in the bundle file before the
+     * resources can be imported.
+     * </p>
+     * 
+     * @param startAssetBundleImportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAssetBundleImportJob operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.StartAssetBundleImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAssetBundleImportJobResult> startAssetBundleImportJobAsync(
+            StartAssetBundleImportJobRequest startAssetBundleImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAssetBundleImportJobRequest, StartAssetBundleImportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an asynchronous job that generates a snapshot of a dashboard's output. You can request one or several of
+     * the following format configurations in each API call.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1 Paginated PDF
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1 Excel workbook that includes up to 5 table or pivot table visuals
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 CSVs from table or pivot table visuals
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The status of a submitted job can be polled with the <code>DescribeDashboardSnapshotJob</code> API. When you call
+     * the <code>DescribeDashboardSnapshotJob</code> API, check the <code>JobStatus</code> field in the response. Once
+     * the job reaches a <code>COMPLETED</code> or <code>FAILED</code> status, use the
+     * <code>DescribeDashboardSnapshotJobResult</code> API to obtain the URLs for the generated files. If the job fails,
+     * the <code>DescribeDashboardSnapshotJobResult</code> API returns detailed information about the error that
+     * occurred.
+     * </p>
+     * <p>
+     * <b>StartDashboardSnapshotJob API throttling</b>
+     * </p>
+     * <p>
+     * Amazon QuickSight utilizes API throttling to create a more consistent user experience within a time span for
+     * customers when they call the <code>StartDashboardSnapshotJob</code>. By default, 12 jobs can run simlutaneously
+     * in one Amazon Web Services account and users can submit up 10 API requests per second before an account is
+     * throttled. If an overwhelming number of API requests are made by the same user in a short period of time, Amazon
+     * QuickSight throttles the API calls to maintin an optimal experience and reliability for all Amazon QuickSight
+     * users.
+     * </p>
+     * <p>
+     * <b>Common throttling scenarios</b>
+     * </p>
+     * <p>
+     * The following list provides information about the most commin throttling scenarios that can occur.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>A large number of <code>SnapshotExport</code> API jobs are running simultaneously on an Amazon Web Services
+     * account.</b> When a new <code>StartDashboardSnapshotJob</code> is created and there are already 12 jobs with the
+     * <code>RUNNING</code> status, the new job request fails and returns a <code>LimitExceededException</code> error.
+     * Wait for a current job to comlpete before you resubmit the new job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A large number of API requests are submitted on an Amazon Web Services account.</b> When a user makes more
+     * than 10 API calls to the Amazon QuickSight API in one second, a <code>ThrottlingException</code> is returned.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If your use case requires a higher throttling limit, contact your account admin or <a
+     * href="http://aws.amazon.com/contact-us/">Amazon Web ServicesSupport</a> to explore options to tailor a more
+     * optimal expereince for your account.
+     * </p>
+     * <p>
+     * <b>Best practices to handle throttling</b>
+     * </p>
+     * <p>
+     * If your use case projects high levels of API traffic, try to reduce the degree of frequency and parallelism of
+     * API calls as much as you can to avoid throttling. You can also perform a timing test to calculate an estimate for
+     * the total processing time of your projected load that stays within the throttling limits of the Amazon QuickSight
+     * APIs. For example, if your projected traffic is 100 snapshot jobs before 12:00 PM per day, start 12 jobs in
+     * parallel and measure the amount of time it takes to proccess all 12 jobs. Once you obtain the result, multiply
+     * the duration by 9, for example <code>(12 minutes * 9 = 108 minutes)</code>. Use the new result to determine the
+     * latest time at which the jobs need to be started to meet your target deadline.
+     * </p>
+     * <p>
+     * The time that it takes to process a job can be impacted by the following factors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The dataset type (Direct Query or SPICE).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of the dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The complexity of the calculated fields that are used in the dashboard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of visuals that are on a sheet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The types of visuals that are on the sheet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of formats and snapshots that are requested in the job configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of the generated snapshots.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startDashboardSnapshotJobRequest
+     * @return A Java Future containing the result of the StartDashboardSnapshotJob operation returned by the service.
+     * @sample AmazonQuickSightAsync.StartDashboardSnapshotJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDashboardSnapshotJobResult> startDashboardSnapshotJobAsync(
+            StartDashboardSnapshotJobRequest startDashboardSnapshotJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous job that generates a snapshot of a dashboard's output. You can request one or several of
+     * the following format configurations in each API call.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1 Paginated PDF
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1 Excel workbook that includes up to 5 table or pivot table visuals
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 CSVs from table or pivot table visuals
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The status of a submitted job can be polled with the <code>DescribeDashboardSnapshotJob</code> API. When you call
+     * the <code>DescribeDashboardSnapshotJob</code> API, check the <code>JobStatus</code> field in the response. Once
+     * the job reaches a <code>COMPLETED</code> or <code>FAILED</code> status, use the
+     * <code>DescribeDashboardSnapshotJobResult</code> API to obtain the URLs for the generated files. If the job fails,
+     * the <code>DescribeDashboardSnapshotJobResult</code> API returns detailed information about the error that
+     * occurred.
+     * </p>
+     * <p>
+     * <b>StartDashboardSnapshotJob API throttling</b>
+     * </p>
+     * <p>
+     * Amazon QuickSight utilizes API throttling to create a more consistent user experience within a time span for
+     * customers when they call the <code>StartDashboardSnapshotJob</code>. By default, 12 jobs can run simlutaneously
+     * in one Amazon Web Services account and users can submit up 10 API requests per second before an account is
+     * throttled. If an overwhelming number of API requests are made by the same user in a short period of time, Amazon
+     * QuickSight throttles the API calls to maintin an optimal experience and reliability for all Amazon QuickSight
+     * users.
+     * </p>
+     * <p>
+     * <b>Common throttling scenarios</b>
+     * </p>
+     * <p>
+     * The following list provides information about the most commin throttling scenarios that can occur.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>A large number of <code>SnapshotExport</code> API jobs are running simultaneously on an Amazon Web Services
+     * account.</b> When a new <code>StartDashboardSnapshotJob</code> is created and there are already 12 jobs with the
+     * <code>RUNNING</code> status, the new job request fails and returns a <code>LimitExceededException</code> error.
+     * Wait for a current job to comlpete before you resubmit the new job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A large number of API requests are submitted on an Amazon Web Services account.</b> When a user makes more
+     * than 10 API calls to the Amazon QuickSight API in one second, a <code>ThrottlingException</code> is returned.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If your use case requires a higher throttling limit, contact your account admin or <a
+     * href="http://aws.amazon.com/contact-us/">Amazon Web ServicesSupport</a> to explore options to tailor a more
+     * optimal expereince for your account.
+     * </p>
+     * <p>
+     * <b>Best practices to handle throttling</b>
+     * </p>
+     * <p>
+     * If your use case projects high levels of API traffic, try to reduce the degree of frequency and parallelism of
+     * API calls as much as you can to avoid throttling. You can also perform a timing test to calculate an estimate for
+     * the total processing time of your projected load that stays within the throttling limits of the Amazon QuickSight
+     * APIs. For example, if your projected traffic is 100 snapshot jobs before 12:00 PM per day, start 12 jobs in
+     * parallel and measure the amount of time it takes to proccess all 12 jobs. Once you obtain the result, multiply
+     * the duration by 9, for example <code>(12 minutes * 9 = 108 minutes)</code>. Use the new result to determine the
+     * latest time at which the jobs need to be started to meet your target deadline.
+     * </p>
+     * <p>
+     * The time that it takes to process a job can be impacted by the following factors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The dataset type (Direct Query or SPICE).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of the dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The complexity of the calculated fields that are used in the dashboard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of visuals that are on a sheet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The types of visuals that are on the sheet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of formats and snapshots that are requested in the job configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of the generated snapshots.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startDashboardSnapshotJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDashboardSnapshotJob operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.StartDashboardSnapshotJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDashboardSnapshotJobResult> startDashboardSnapshotJobAsync(
+            StartDashboardSnapshotJobRequest startDashboardSnapshotJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDashboardSnapshotJobRequest, StartDashboardSnapshotJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource.
      * </p>
      * <p>
@@ -3737,7 +5587,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data
-     * source, dashboard, and template.
+     * source, dashboard, template, topic, and user.
      * </p>
      * <p>
      * Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except
@@ -3746,9 +5596,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <ul>
      * <li>
      * <p>
-     * You can't use tags to track costs for Amazon QuickSight. This isn't possible because you can't tag the resources
-     * that Amazon QuickSight costs are based on, for example Amazon QuickSight storage capacity (SPICE), number of
-     * users, type of users, and usage metrics.
+     * Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources that Amazon QuickSight
+     * costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.
      * </p>
      * </li>
      * <li>
@@ -3780,7 +5629,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data
-     * source, dashboard, and template.
+     * source, dashboard, template, topic, and user.
      * </p>
      * <p>
      * Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except
@@ -3789,9 +5638,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <ul>
      * <li>
      * <p>
-     * You can't use tags to track costs for Amazon QuickSight. This isn't possible because you can't tag the resources
-     * that Amazon QuickSight costs are based on, for example Amazon QuickSight storage capacity (SPICE), number of
-     * users, type of users, and usage metrics.
+     * Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources that Amazon QuickSight
+     * costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.
      * </p>
      * </li>
      * <li>
@@ -4033,6 +5881,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateDashboardResult> updateDashboardAsync(UpdateDashboardRequest updateDashboardRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDashboardRequest, UpdateDashboardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @return A Java Future containing the result of the UpdateDashboardLinks operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest updateDashboardLinksRequest);
+
+    /**
+     * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDashboardLinks operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest updateDashboardLinksRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDashboardLinksRequest, UpdateDashboardLinksResult> asyncHandler);
 
     /**
      * <p>
@@ -4366,8 +6245,53 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules.
-     * You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.
+     * Adds or updates services and authorized targets to configure what the Amazon QuickSight IAM Identity Center
+     * application can access.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts using IAM Identity Center
+     * </p>
+     * 
+     * @param updateIdentityPropagationConfigRequest
+     * @return A Java Future containing the result of the UpdateIdentityPropagationConfig operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.UpdateIdentityPropagationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIdentityPropagationConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIdentityPropagationConfigResult> updateIdentityPropagationConfigAsync(
+            UpdateIdentityPropagationConfigRequest updateIdentityPropagationConfigRequest);
+
+    /**
+     * <p>
+     * Adds or updates services and authorized targets to configure what the Amazon QuickSight IAM Identity Center
+     * application can access.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts using IAM Identity Center
+     * </p>
+     * 
+     * @param updateIdentityPropagationConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateIdentityPropagationConfig operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateIdentityPropagationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIdentityPropagationConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIdentityPropagationConfigResult> updateIdentityPropagationConfigAsync(
+            UpdateIdentityPropagationConfigRequest updateIdentityPropagationConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateIdentityPropagationConfigRequest, UpdateIdentityPropagationConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the content and status of IP rules. Traffic from a source is allowed when the source satisfies either the
+     * <code>IpRestrictionRule</code>, <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>.
+     * To use this operation, you must provide the entire map of rules. You can use the
+     * <code>DescribeIpRestriction</code> operation to get the current rule map.
      * </p>
      * 
      * @param updateIpRestrictionRequest
@@ -4380,8 +6304,10 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules.
-     * You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.
+     * Updates the content and status of IP rules. Traffic from a source is allowed when the source satisfies either the
+     * <code>IpRestrictionRule</code>, <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>.
+     * To use this operation, you must provide the entire map of rules. You can use the
+     * <code>DescribeIpRestriction</code> operation to get the current rule map.
      * </p>
      * 
      * @param updateIpRestrictionRequest
@@ -4396,6 +6322,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateIpRestrictionResult> updateIpRestrictionAsync(UpdateIpRestrictionRequest updateIpRestrictionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIpRestrictionRequest, UpdateIpRestrictionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a customer managed key in a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateKeyRegistrationRequest
+     * @return A Java Future containing the result of the UpdateKeyRegistration operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateKeyRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateKeyRegistrationResult> updateKeyRegistrationAsync(UpdateKeyRegistrationRequest updateKeyRegistrationRequest);
+
+    /**
+     * <p>
+     * Updates a customer managed key in a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateKeyRegistrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateKeyRegistration operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateKeyRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateKeyRegistrationResult> updateKeyRegistrationAsync(UpdateKeyRegistrationRequest updateKeyRegistrationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateKeyRegistrationRequest, UpdateKeyRegistrationResult> asyncHandler);
 
     /**
      * <p>
@@ -4451,6 +6408,105 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(
             UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @return A Java Future containing the result of the UpdateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest updateRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest updateRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRefreshScheduleRequest, UpdateRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the custom permissions that are associated with a role.
+     * </p>
+     * 
+     * @param updateRoleCustomPermissionRequest
+     * @return A Java Future containing the result of the UpdateRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(
+            UpdateRoleCustomPermissionRequest updateRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Updates the custom permissions that are associated with a role.
+     * </p>
+     * 
+     * @param updateRoleCustomPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(
+            UpdateRoleCustomPermissionRequest updateRoleCustomPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleCustomPermissionRequest, UpdateRoleCustomPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the SPICE capacity configuration for a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateSPICECapacityConfigurationRequest
+     * @return A Java Future containing the result of the UpdateSPICECapacityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.UpdateSPICECapacityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSPICECapacityConfigurationResult> updateSPICECapacityConfigurationAsync(
+            UpdateSPICECapacityConfigurationRequest updateSPICECapacityConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the SPICE capacity configuration for a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateSPICECapacityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSPICECapacityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateSPICECapacityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSPICECapacityConfigurationResult> updateSPICECapacityConfigurationAsync(
+            UpdateSPICECapacityConfigurationRequest updateSPICECapacityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSPICECapacityConfigurationRequest, UpdateSPICECapacityConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -4844,6 +6900,101 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Updates a topic.
+     * </p>
+     * 
+     * @param updateTopicRequest
+     * @return A Java Future containing the result of the UpdateTopic operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTopicResult> updateTopicAsync(UpdateTopicRequest updateTopicRequest);
+
+    /**
+     * <p>
+     * Updates a topic.
+     * </p>
+     * 
+     * @param updateTopicRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTopic operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTopicResult> updateTopicAsync(UpdateTopicRequest updateTopicRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicRequest, UpdateTopicResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the permissions of a topic.
+     * </p>
+     * 
+     * @param updateTopicPermissionsRequest
+     * @return A Java Future containing the result of the UpdateTopicPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTopicPermissionsResult> updateTopicPermissionsAsync(UpdateTopicPermissionsRequest updateTopicPermissionsRequest);
+
+    /**
+     * <p>
+     * Updates the permissions of a topic.
+     * </p>
+     * 
+     * @param updateTopicPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTopicPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTopicPermissionsResult> updateTopicPermissionsAsync(UpdateTopicPermissionsRequest updateTopicPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicPermissionsRequest, UpdateTopicPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a topic refresh schedule.
+     * </p>
+     * 
+     * @param updateTopicRefreshScheduleRequest
+     * @return A Java Future containing the result of the UpdateTopicRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTopicRefreshScheduleResult> updateTopicRefreshScheduleAsync(
+            UpdateTopicRefreshScheduleRequest updateTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Updates a topic refresh schedule.
+     * </p>
+     * 
+     * @param updateTopicRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTopicRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTopicRefreshScheduleResult> updateTopicRefreshScheduleAsync(
+            UpdateTopicRefreshScheduleRequest updateTopicRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicRefreshScheduleRequest, UpdateTopicRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an Amazon QuickSight user.
      * </p>
      * 
@@ -4872,5 +7023,36 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest updateUserRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a VPC connection.
+     * </p>
+     * 
+     * @param updateVPCConnectionRequest
+     * @return A Java Future containing the result of the UpdateVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVPCConnectionResult> updateVPCConnectionAsync(UpdateVPCConnectionRequest updateVPCConnectionRequest);
+
+    /**
+     * <p>
+     * Updates a VPC connection.
+     * </p>
+     * 
+     * @param updateVPCConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVPCConnection operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVPCConnectionResult> updateVPCConnectionAsync(UpdateVPCConnectionRequest updateVPCConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVPCConnectionRequest, UpdateVPCConnectionResult> asyncHandler);
 
 }

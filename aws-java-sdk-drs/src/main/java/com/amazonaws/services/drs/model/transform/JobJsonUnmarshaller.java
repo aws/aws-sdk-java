@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,12 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 if (context.testExpression("jobID", targetDepth)) {
                     context.nextToken();
                     job.setJobID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("participatingResources", targetDepth)) {
+                    context.nextToken();
+                    job.setParticipatingResources(new ListUnmarshaller<ParticipatingResource>(ParticipatingResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("participatingServers", targetDepth)) {
                     context.nextToken();

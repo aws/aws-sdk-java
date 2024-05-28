@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class UpdateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Updates the parts of the map configuration that can be updated, including the political view.
+     * </p>
+     */
+    private MapConfigurationUpdate configurationUpdate;
+    /**
+     * <p>
      * Updates the description for the map resource.
      * </p>
      */
@@ -44,6 +50,46 @@ public class UpdateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
     @Deprecated
     private String pricingPlan;
+
+    /**
+     * <p>
+     * Updates the parts of the map configuration that can be updated, including the political view.
+     * </p>
+     * 
+     * @param configurationUpdate
+     *        Updates the parts of the map configuration that can be updated, including the political view.
+     */
+
+    public void setConfigurationUpdate(MapConfigurationUpdate configurationUpdate) {
+        this.configurationUpdate = configurationUpdate;
+    }
+
+    /**
+     * <p>
+     * Updates the parts of the map configuration that can be updated, including the political view.
+     * </p>
+     * 
+     * @return Updates the parts of the map configuration that can be updated, including the political view.
+     */
+
+    public MapConfigurationUpdate getConfigurationUpdate() {
+        return this.configurationUpdate;
+    }
+
+    /**
+     * <p>
+     * Updates the parts of the map configuration that can be updated, including the political view.
+     * </p>
+     * 
+     * @param configurationUpdate
+     *        Updates the parts of the map configuration that can be updated, including the political view.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMapRequest withConfigurationUpdate(MapConfigurationUpdate configurationUpdate) {
+        setConfigurationUpdate(configurationUpdate);
+        return this;
+    }
 
     /**
      * <p>
@@ -196,6 +242,8 @@ public class UpdateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConfigurationUpdate() != null)
+            sb.append("ConfigurationUpdate: ").append(getConfigurationUpdate()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getMapName() != null)
@@ -216,6 +264,10 @@ public class UpdateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof UpdateMapRequest == false)
             return false;
         UpdateMapRequest other = (UpdateMapRequest) obj;
+        if (other.getConfigurationUpdate() == null ^ this.getConfigurationUpdate() == null)
+            return false;
+        if (other.getConfigurationUpdate() != null && other.getConfigurationUpdate().equals(this.getConfigurationUpdate()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -236,6 +288,7 @@ public class UpdateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConfigurationUpdate() == null) ? 0 : getConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());

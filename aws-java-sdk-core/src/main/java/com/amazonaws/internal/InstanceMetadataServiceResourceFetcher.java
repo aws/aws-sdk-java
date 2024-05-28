@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.auth.profile.internal.BasicProfileConfigFileLoader;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.amazonaws.util.EC2MetadataUtils;
 import java.io.IOException;
@@ -30,24 +31,31 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import static com.amazonaws.SDKGlobalConfiguration.AWS_EC2_METADATA_V1_DISABLED_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_EC2_METADATA_V1_DISABLED_PROFILE_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_EC2_METADATA_V1_DISABLED_SYSTEM_PROPERTY;
+
 /**
  * Fetch resources from EC2 Instance Metadata Service.
  */
 @SdkInternalApi
 public final class InstanceMetadataServiceResourceFetcher extends EC2ResourceFetcher {
     private static final Log LOG = LogFactory.getLog(InstanceMetadataServiceResourceFetcher.class);
-
+    private final BasicProfileConfigFileLoader profileConfigFileLoader ;
     private static final String EC2_TOKEN_ROOT = "/latest/api/token";
     private static final String TOKEN_TTL_HEADER = "x-aws-ec2-metadata-token-ttl-seconds";
     private static final String TOKEN_HEADER = "x-aws-ec2-metadata-token";
     private static final String DEFAULT_TOKEN_TTL = "21600";
 
     private InstanceMetadataServiceResourceFetcher() {
+        this.profileConfigFileLoader = BasicProfileConfigFileLoader.INSTANCE;
     }
 
     @SdkTestInternalApi
-    InstanceMetadataServiceResourceFetcher(ConnectionUtils connectionUtils) {
+    InstanceMetadataServiceResourceFetcher(ConnectionUtils connectionUtils,
+                                           BasicProfileConfigFileLoader configFileLoader) {
         super(connectionUtils);
+        profileConfigFileLoader = configFileLoader;
     }
 
     public static InstanceMetadataServiceResourceFetcher getInstance() {
@@ -70,6 +78,13 @@ public final class InstanceMetadataServiceResourceFetcher extends EC2ResourceFet
 
         if (token != null) {
             newHeaders.put(TOKEN_HEADER, token);
+        } else if (SDKGlobalConfiguration.isEc2MetadataV1Disabled() || isEc2MetadataV1DisabledInProfileFile()) {
+            String errorMsg = String.format("Failed to retrieve IMDS token, and fallback to IMDS v1 is disabled via " +
+                            "the %s environment variable and/or %s system property and/or %s profile property.",
+                    AWS_EC2_METADATA_V1_DISABLED_ENV_VAR,
+                    AWS_EC2_METADATA_V1_DISABLED_SYSTEM_PROPERTY,
+                    AWS_EC2_METADATA_V1_DISABLED_PROFILE_PROPERTY);
+            throw new AmazonClientException(errorMsg);
         }
 
         return doReadResource(endpoint, retryPolicy, newHeaders);
@@ -130,5 +145,16 @@ public final class InstanceMetadataServiceResourceFetcher extends EC2ResourceFet
 
     private static final class InstanceMetadataServiceResourceFetcherHolder {
         private static final InstanceMetadataServiceResourceFetcher INSTANCE = new InstanceMetadataServiceResourceFetcher();
+    }
+
+    private boolean isEc2MetadataV1DisabledInProfileFile() {
+        return profileConfigFileLoader != null &&
+                profileConfigFileLoader.getProfile() != null &&
+                isPropertyTrue(profileConfigFileLoader.getProfile()
+                        .getPropertyValue(AWS_EC2_METADATA_V1_DISABLED_PROFILE_PROPERTY));
+    }
+
+    private static boolean isPropertyTrue(final String property) {
+        return property != null && property.equalsIgnoreCase("true");
     }
 }

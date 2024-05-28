@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Input for GetEndpointAttributes action.
+ * Input for <code>GetEndpointAttributes</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes" target="_top">AWS API
@@ -30,18 +30,18 @@ public class GetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn for GetEndpointAttributes input.
+     * <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      * </p>
      */
     private String endpointArn;
 
     /**
      * <p>
-     * EndpointArn for GetEndpointAttributes input.
+     * <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      * </p>
      * 
      * @param endpointArn
-     *        EndpointArn for GetEndpointAttributes input.
+     *        <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -50,10 +50,10 @@ public class GetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn for GetEndpointAttributes input.
+     * <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      * </p>
      * 
-     * @return EndpointArn for GetEndpointAttributes input.
+     * @return <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      */
 
     public String getEndpointArn() {
@@ -62,11 +62,11 @@ public class GetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * EndpointArn for GetEndpointAttributes input.
+     * <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      * </p>
      * 
      * @param endpointArn
-     *        EndpointArn for GetEndpointAttributes input.
+     *        <code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes supported operating systems in AWS OpsWorks Stacks.
+ * Describes supported operating systems in OpsWorks Stacks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/OperatingSystem" target="_top">AWS API
@@ -30,13 +30,13 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      */
     private String id;
@@ -48,7 +48,7 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     * Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OperatingSystemConfigurationManager> configurationManagers;
@@ -73,11 +73,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      * 
      * @param name
-     *        The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     *        The name of the operating system, such as <code>Amazon Linux 2</code>.
      */
 
     public void setName(String name) {
@@ -86,10 +86,10 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      * 
-     * @return The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     * @return The name of the operating system, such as <code>Amazon Linux 2</code>.
      */
 
     public String getName() {
@@ -98,11 +98,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The name of the operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      * 
      * @param name
-     *        The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+     *        The name of the operating system, such as <code>Amazon Linux 2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      * 
      * @param id
-     *        The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     *        The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      */
 
     public void setId(String id) {
@@ -126,10 +126,10 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      * 
-     * @return The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     * @return The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      */
 
     public String getId() {
@@ -138,11 +138,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     * The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      * </p>
      * 
      * @param id
-     *        The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+     *        The ID of a supported operating system, such as <code>Amazon Linux 2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,10 +193,10 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     * Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * </p>
      * 
-     * @return Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     * @return Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      */
 
     public java.util.List<OperatingSystemConfigurationManager> getConfigurationManagers() {
@@ -208,11 +208,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     * Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * </p>
      * 
      * @param configurationManagers
-     *        Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     *        Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      */
 
     public void setConfigurationManagers(java.util.Collection<OperatingSystemConfigurationManager> configurationManagers) {
@@ -226,7 +226,7 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     * Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -235,7 +235,7 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param configurationManagers
-     *        Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     *        Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +251,11 @@ public class OperatingSystem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     * Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * </p>
      * 
      * @param configurationManagers
-     *        Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.
+     *        Supported configuration manager name and versions for an OpsWorks Stacks operating system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

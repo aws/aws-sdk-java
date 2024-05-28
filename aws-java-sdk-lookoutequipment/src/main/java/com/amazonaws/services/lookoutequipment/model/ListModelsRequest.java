@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,42 +27,42 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Specifies the maximum number of ML models to list.
+     * Specifies the maximum number of machine learning models to list.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The status of the ML model.
+     * The status of the machine learning model.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The beginning of the name of the ML models being listed.
+     * The beginning of the name of the machine learning models being listed.
      * </p>
      */
     private String modelNameBeginsWith;
     /**
      * <p>
-     * The beginning of the name of the dataset of the ML models to be listed.
+     * The beginning of the name of the dataset of the machine learning models to be listed.
      * </p>
      */
     private String datasetNameBeginsWith;
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      * 
      * @param nextToken
-     *        An opaque pagination token indicating where to continue the listing of ML models.
+     *        An opaque pagination token indicating where to continue the listing of machine learning models.
      */
 
     public void setNextToken(String nextToken) {
@@ -71,10 +71,10 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      * 
-     * @return An opaque pagination token indicating where to continue the listing of ML models.
+     * @return An opaque pagination token indicating where to continue the listing of machine learning models.
      */
 
     public String getNextToken() {
@@ -83,11 +83,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An opaque pagination token indicating where to continue the listing of ML models.
+     * An opaque pagination token indicating where to continue the listing of machine learning models.
      * </p>
      * 
      * @param nextToken
-     *        An opaque pagination token indicating where to continue the listing of ML models.
+     *        An opaque pagination token indicating where to continue the listing of machine learning models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the maximum number of ML models to list.
+     * Specifies the maximum number of machine learning models to list.
      * </p>
      * 
      * @param maxResults
-     *        Specifies the maximum number of ML models to list.
+     *        Specifies the maximum number of machine learning models to list.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -111,10 +111,10 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the maximum number of ML models to list.
+     * Specifies the maximum number of machine learning models to list.
      * </p>
      * 
-     * @return Specifies the maximum number of ML models to list.
+     * @return Specifies the maximum number of machine learning models to list.
      */
 
     public Integer getMaxResults() {
@@ -123,11 +123,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the maximum number of ML models to list.
+     * Specifies the maximum number of machine learning models to list.
      * </p>
      * 
      * @param maxResults
-     *        Specifies the maximum number of ML models to list.
+     *        Specifies the maximum number of machine learning models to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The status of the ML model.
+     * The status of the machine learning model.
      * </p>
      * 
      * @param status
-     *        The status of the ML model.
+     *        The status of the machine learning model.
      * @see ModelStatus
      */
 
@@ -152,10 +152,10 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The status of the ML model.
+     * The status of the machine learning model.
      * </p>
      * 
-     * @return The status of the ML model.
+     * @return The status of the machine learning model.
      * @see ModelStatus
      */
 
@@ -165,11 +165,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The status of the ML model.
+     * The status of the machine learning model.
      * </p>
      * 
      * @param status
-     *        The status of the ML model.
+     *        The status of the machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */
@@ -181,11 +181,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The status of the ML model.
+     * The status of the machine learning model.
      * </p>
      * 
      * @param status
-     *        The status of the ML model.
+     *        The status of the machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */
@@ -197,11 +197,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the name of the ML models being listed.
+     * The beginning of the name of the machine learning models being listed.
      * </p>
      * 
      * @param modelNameBeginsWith
-     *        The beginning of the name of the ML models being listed.
+     *        The beginning of the name of the machine learning models being listed.
      */
 
     public void setModelNameBeginsWith(String modelNameBeginsWith) {
@@ -210,10 +210,10 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the name of the ML models being listed.
+     * The beginning of the name of the machine learning models being listed.
      * </p>
      * 
-     * @return The beginning of the name of the ML models being listed.
+     * @return The beginning of the name of the machine learning models being listed.
      */
 
     public String getModelNameBeginsWith() {
@@ -222,11 +222,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the name of the ML models being listed.
+     * The beginning of the name of the machine learning models being listed.
      * </p>
      * 
      * @param modelNameBeginsWith
-     *        The beginning of the name of the ML models being listed.
+     *        The beginning of the name of the machine learning models being listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +237,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the name of the dataset of the ML models to be listed.
+     * The beginning of the name of the dataset of the machine learning models to be listed.
      * </p>
      * 
      * @param datasetNameBeginsWith
-     *        The beginning of the name of the dataset of the ML models to be listed.
+     *        The beginning of the name of the dataset of the machine learning models to be listed.
      */
 
     public void setDatasetNameBeginsWith(String datasetNameBeginsWith) {
@@ -250,10 +250,10 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the name of the dataset of the ML models to be listed.
+     * The beginning of the name of the dataset of the machine learning models to be listed.
      * </p>
      * 
-     * @return The beginning of the name of the dataset of the ML models to be listed.
+     * @return The beginning of the name of the dataset of the machine learning models to be listed.
      */
 
     public String getDatasetNameBeginsWith() {
@@ -262,11 +262,11 @@ public class ListModelsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The beginning of the name of the dataset of the ML models to be listed.
+     * The beginning of the name of the dataset of the machine learning models to be listed.
      * </p>
      * 
      * @param datasetNameBeginsWith
-     *        The beginning of the name of the dataset of the ML models to be listed.
+     *        The beginning of the name of the dataset of the machine learning models to be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

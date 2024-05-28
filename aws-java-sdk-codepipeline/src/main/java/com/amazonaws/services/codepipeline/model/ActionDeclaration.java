@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * The action's configuration. These are key-value pairs that specify input values for an action. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      * CloudFormation action type in CodePipeline, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     * >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with
+     * >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with
      * examples, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.
+     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is
@@ -92,7 +92,7 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
     private String roleArn;
     /**
      * <p>
-     * The action declaration's AWS Region, such as us-east-1.
+     * The action declaration's Amazon Web Services Region, such as us-east-1.
      * </p>
      */
     private String region;
@@ -103,6 +103,14 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String namespace;
+    /**
+     * <p>
+     * A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This
+     * attribute is available only to the manual approval ActionType.
+     * </p>
+     */
+    private Integer timeoutInMinutes;
 
     /**
      * <p>
@@ -229,13 +237,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * The action's configuration. These are key-value pairs that specify input values for an action. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      * CloudFormation action type in CodePipeline, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     * >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with
+     * >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with
      * examples, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.
+     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is
@@ -251,13 +259,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * @return The action's configuration. These are key-value pairs that specify input values for an action. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     *         >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     *         >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      *         CloudFormation action type in CodePipeline, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     *         >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template
-     *         snippets with examples, see <a href=
+     *         >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets
+     *         with examples, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     *         >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User
+     *         >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User
      *         Guide</i>.</p>
      *         <p>
      *         The values can be represented in either JSON or YAML format. For example, the JSON configuration item
@@ -279,13 +287,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * The action's configuration. These are key-value pairs that specify input values for an action. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      * CloudFormation action type in CodePipeline, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     * >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with
+     * >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with
      * examples, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.
+     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is
@@ -302,13 +310,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      *        The action's configuration. These are key-value pairs that specify input values for an action. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     *        >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     *        >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      *        CloudFormation action type in CodePipeline, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     *        >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets
+     *        >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets
      *        with examples, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     *        >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User
+     *        >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User
      *        Guide</i>.</p>
      *        <p>
      *        The values can be represented in either JSON or YAML format. For example, the JSON configuration item
@@ -330,13 +338,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      * The action's configuration. These are key-value pairs that specify input values for an action. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     * >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      * CloudFormation action type in CodePipeline, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     * >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with
+     * >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with
      * examples, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.
+     * >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is
@@ -353,13 +361,13 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
      *        The action's configuration. These are key-value pairs that specify input values for an action. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
-     *        >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS
+     *        >Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the
      *        CloudFormation action type in CodePipeline, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html"
-     *        >Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets
+     *        >Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets
      *        with examples, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html"
-     *        >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User
+     *        >Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User
      *        Guide</i>.</p>
      *        <p>
      *        The values can be represented in either JSON or YAML format. For example, the JSON configuration item
@@ -594,11 +602,11 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The action declaration's AWS Region, such as us-east-1.
+     * The action declaration's Amazon Web Services Region, such as us-east-1.
      * </p>
      * 
      * @param region
-     *        The action declaration's AWS Region, such as us-east-1.
+     *        The action declaration's Amazon Web Services Region, such as us-east-1.
      */
 
     public void setRegion(String region) {
@@ -607,10 +615,10 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The action declaration's AWS Region, such as us-east-1.
+     * The action declaration's Amazon Web Services Region, such as us-east-1.
      * </p>
      * 
-     * @return The action declaration's AWS Region, such as us-east-1.
+     * @return The action declaration's Amazon Web Services Region, such as us-east-1.
      */
 
     public String getRegion() {
@@ -619,11 +627,11 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The action declaration's AWS Region, such as us-east-1.
+     * The action declaration's Amazon Web Services Region, such as us-east-1.
      * </p>
      * 
      * @param region
-     *        The action declaration's AWS Region, such as us-east-1.
+     *        The action declaration's Amazon Web Services Region, such as us-east-1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -679,6 +687,58 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This
+     * attribute is available only to the manual approval ActionType.
+     * </p>
+     * 
+     * @param timeoutInMinutes
+     *        A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified
+     *        in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline
+     *        </a>. This attribute is available only to the manual approval ActionType.
+     */
+
+    public void setTimeoutInMinutes(Integer timeoutInMinutes) {
+        this.timeoutInMinutes = timeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This
+     * attribute is available only to the manual approval ActionType.
+     * </p>
+     * 
+     * @return A timeout duration in minutes that can be applied against the ActionType’s default timeout value
+     *         specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for
+     *         CodePipeline </a>. This attribute is available only to the manual approval ActionType.
+     */
+
+    public Integer getTimeoutInMinutes() {
+        return this.timeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This
+     * attribute is available only to the manual approval ActionType.
+     * </p>
+     * 
+     * @param timeoutInMinutes
+     *        A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified
+     *        in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline
+     *        </a>. This attribute is available only to the manual approval ActionType.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionDeclaration withTimeoutInMinutes(Integer timeoutInMinutes) {
+        setTimeoutInMinutes(timeoutInMinutes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -707,7 +767,9 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: ").append(getNamespace());
+            sb.append("Namespace: ").append(getNamespace()).append(",");
+        if (getTimeoutInMinutes() != null)
+            sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -758,6 +820,10 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
             return false;
+        if (other.getTimeoutInMinutes() == null ^ this.getTimeoutInMinutes() == null)
+            return false;
+        if (other.getTimeoutInMinutes() != null && other.getTimeoutInMinutes().equals(this.getTimeoutInMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -775,6 +841,7 @@ public class ActionDeclaration implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
         return hashCode;
     }
 

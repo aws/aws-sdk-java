@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,6 +123,36 @@ public class DocDbSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String secretsManagerSecretId;
+    /**
+     * <p>
+     * If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may
+     * cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes
+     * during migration, set this parameter to <code>false</code>.
+     * </p>
+     */
+    private Boolean useUpdateLookUp;
+    /**
+     * <p>
+     * If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint
+     * is a DocumentDB elastic cluster.
+     * </p>
+     * <p>
+     * When this setting is <code>true</code>, note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean replicateShardCollections;
 
     /**
      * <p>
@@ -777,6 +807,250 @@ public class DocDbSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may
+     * cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes
+     * during migration, set this parameter to <code>false</code>.
+     * </p>
+     * 
+     * @param useUpdateLookUp
+     *        If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This
+     *        may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and
+     *        deletes during migration, set this parameter to <code>false</code>.
+     */
+
+    public void setUseUpdateLookUp(Boolean useUpdateLookUp) {
+        this.useUpdateLookUp = useUpdateLookUp;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may
+     * cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes
+     * during migration, set this parameter to <code>false</code>.
+     * </p>
+     * 
+     * @return If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This
+     *         may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and
+     *         deletes during migration, set this parameter to <code>false</code>.
+     */
+
+    public Boolean getUseUpdateLookUp() {
+        return this.useUpdateLookUp;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may
+     * cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes
+     * during migration, set this parameter to <code>false</code>.
+     * </p>
+     * 
+     * @param useUpdateLookUp
+     *        If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This
+     *        may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and
+     *        deletes during migration, set this parameter to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocDbSettings withUseUpdateLookUp(Boolean useUpdateLookUp) {
+        setUseUpdateLookUp(useUpdateLookUp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may
+     * cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes
+     * during migration, set this parameter to <code>false</code>.
+     * </p>
+     * 
+     * @return If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This
+     *         may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and
+     *         deletes during migration, set this parameter to <code>false</code>.
+     */
+
+    public Boolean isUseUpdateLookUp() {
+        return this.useUpdateLookUp;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint
+     * is a DocumentDB elastic cluster.
+     * </p>
+     * <p>
+     * When this setting is <code>true</code>, note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param replicateShardCollections
+     *        If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target
+     *        endpoint is a DocumentDB elastic cluster.</p>
+     *        <p>
+     *        When this setting is <code>true</code>, note the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     *        </p>
+     *        </li>
+     */
+
+    public void setReplicateShardCollections(Boolean replicateShardCollections) {
+        this.replicateShardCollections = replicateShardCollections;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint
+     * is a DocumentDB elastic cluster.
+     * </p>
+     * <p>
+     * When this setting is <code>true</code>, note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target
+     *         endpoint is a DocumentDB elastic cluster.</p>
+     *         <p>
+     *         When this setting is <code>true</code>, note the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getReplicateShardCollections() {
+        return this.replicateShardCollections;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint
+     * is a DocumentDB elastic cluster.
+     * </p>
+     * <p>
+     * When this setting is <code>true</code>, note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param replicateShardCollections
+     *        If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target
+     *        endpoint is a DocumentDB elastic cluster.</p>
+     *        <p>
+     *        When this setting is <code>true</code>, note the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocDbSettings withReplicateShardCollections(Boolean replicateShardCollections) {
+        setReplicateShardCollections(replicateShardCollections);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint
+     * is a DocumentDB elastic cluster.
+     * </p>
+     * <p>
+     * When this setting is <code>true</code>, note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target
+     *         endpoint is a DocumentDB elastic cluster.</p>
+     *         <p>
+     *         When this setting is <code>true</code>, note the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isReplicateShardCollections() {
+        return this.replicateShardCollections;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -809,7 +1083,11 @@ public class DocDbSettings implements Serializable, Cloneable, StructuredPojo {
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
-            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId());
+            sb.append("SecretsManagerSecretId: ").append(getSecretsManagerSecretId()).append(",");
+        if (getUseUpdateLookUp() != null)
+            sb.append("UseUpdateLookUp: ").append(getUseUpdateLookUp()).append(",");
+        if (getReplicateShardCollections() != null)
+            sb.append("ReplicateShardCollections: ").append(getReplicateShardCollections());
         sb.append("}");
         return sb.toString();
     }
@@ -868,6 +1146,14 @@ public class DocDbSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecretsManagerSecretId() != null && other.getSecretsManagerSecretId().equals(this.getSecretsManagerSecretId()) == false)
             return false;
+        if (other.getUseUpdateLookUp() == null ^ this.getUseUpdateLookUp() == null)
+            return false;
+        if (other.getUseUpdateLookUp() != null && other.getUseUpdateLookUp().equals(this.getUseUpdateLookUp()) == false)
+            return false;
+        if (other.getReplicateShardCollections() == null ^ this.getReplicateShardCollections() == null)
+            return false;
+        if (other.getReplicateShardCollections() != null && other.getReplicateShardCollections().equals(this.getReplicateShardCollections()) == false)
+            return false;
         return true;
     }
 
@@ -887,6 +1173,8 @@ public class DocDbSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
+        hashCode = prime * hashCode + ((getUseUpdateLookUp() == null) ? 0 : getUseUpdateLookUp().hashCode());
+        hashCode = prime * hashCode + ((getReplicateShardCollections() == null) ? 0 : getReplicateShardCollections().hashCode());
         return hashCode;
     }
 

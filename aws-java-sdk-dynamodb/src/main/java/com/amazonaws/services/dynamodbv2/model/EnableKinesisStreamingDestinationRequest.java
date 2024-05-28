@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      */
     private String tableName;
@@ -37,14 +38,22 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
      * </p>
      */
     private String streamArn;
+    /**
+     * <p>
+     * The source for the Kinesis streaming information that is being enabled.
+     * </p>
+     */
+    private EnableKinesisStreamingConfiguration enableKinesisStreamingConfiguration;
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the DynamoDB table.
+     *        The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     *        parameter.
      */
 
     public void setTableName(String tableName) {
@@ -53,10 +62,12 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
-     * @return The name of the DynamoDB table.
+     * @return The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     *         parameter.
      */
 
     public String getTableName() {
@@ -65,11 +76,13 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the DynamoDB table.
+     *        The name of the DynamoDB table. You can also provide the Amazon Resource Name (ARN) of the table in this
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,6 +132,47 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The source for the Kinesis streaming information that is being enabled.
+     * </p>
+     * 
+     * @param enableKinesisStreamingConfiguration
+     *        The source for the Kinesis streaming information that is being enabled.
+     */
+
+    public void setEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration enableKinesisStreamingConfiguration) {
+        this.enableKinesisStreamingConfiguration = enableKinesisStreamingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The source for the Kinesis streaming information that is being enabled.
+     * </p>
+     * 
+     * @return The source for the Kinesis streaming information that is being enabled.
+     */
+
+    public EnableKinesisStreamingConfiguration getEnableKinesisStreamingConfiguration() {
+        return this.enableKinesisStreamingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The source for the Kinesis streaming information that is being enabled.
+     * </p>
+     * 
+     * @param enableKinesisStreamingConfiguration
+     *        The source for the Kinesis streaming information that is being enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableKinesisStreamingDestinationRequest withEnableKinesisStreamingConfiguration(
+            EnableKinesisStreamingConfiguration enableKinesisStreamingConfiguration) {
+        setEnableKinesisStreamingConfiguration(enableKinesisStreamingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +187,9 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
         if (getTableName() != null)
             sb.append("TableName: ").append(getTableName()).append(",");
         if (getStreamArn() != null)
-            sb.append("StreamArn: ").append(getStreamArn());
+            sb.append("StreamArn: ").append(getStreamArn()).append(",");
+        if (getEnableKinesisStreamingConfiguration() != null)
+            sb.append("EnableKinesisStreamingConfiguration: ").append(getEnableKinesisStreamingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +212,11 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
             return false;
         if (other.getStreamArn() != null && other.getStreamArn().equals(this.getStreamArn()) == false)
             return false;
+        if (other.getEnableKinesisStreamingConfiguration() == null ^ this.getEnableKinesisStreamingConfiguration() == null)
+            return false;
+        if (other.getEnableKinesisStreamingConfiguration() != null
+                && other.getEnableKinesisStreamingConfiguration().equals(this.getEnableKinesisStreamingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +227,7 @@ public class EnableKinesisStreamingDestinationRequest extends com.amazonaws.Amaz
 
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
         hashCode = prime * hashCode + ((getStreamArn() == null) ? 0 : getStreamArn().hashCode());
+        hashCode = prime * hashCode + ((getEnableKinesisStreamingConfiguration() == null) ? 0 : getEnableKinesisStreamingConfiguration().hashCode());
         return hashCode;
     }
 
